@@ -76,6 +76,12 @@
 </div>
 {% endif %}
 
+{% if not state.youtube_video_id %}
+{% call ui.alert("Video preview unavailable", "info") %}
+<p>Add a YouTube URL for this interview on the <a href="{{ url_for('upload_page') }}">Upload page</a> to enable inline video playback.</p>
+{% endcall %}
+{% endif %}
+
 <section class="pf-v6-c-card">
     <div class="pf-v6-c-card__header">
         <div class="pf-v6-c-card__title">
@@ -86,42 +92,83 @@
         {% for clip in cd.clips %}
         {% set clip_score = clip.scores.total_score | default(0) %}
         <div class="chapter-card">
-            <div class="app-row-start">
-                <div class="app-fill">
-                    <div class="app-row-between">
-                        <div>
-                            <div class="chapter-num">{{ clip.clip_id }} — {{ clip.clip_title }}</div>
-                            <div class="chapter-time">{{ clip.timestamp_start | hms }} → {{ clip.timestamp_end | hms }}{% if clip.duration %} · {{ clip.duration | hms }}{% endif %}</div>
-                        </div>
-                        <div class="app-masthead-value">{{ clip_score }}/100</div>
-                    </div>
-                    {% if clip.thematic_tags is defined %}
-                    <div class="app-inline-list app-mt-sm">
-                        {% for topic in clip.thematic_tags.main_topics | default([]) %}
-                        <span class="score-badge score-pass">{{ topic }}</span>
-                        {% endfor %}
-                        {% for event in clip.thematic_tags.key_events | default([]) %}
-                        <span class="score-badge score-neutral">{{ event }}</span>
-                        {% endfor %}
-                    </div>
-                    {% endif %}
-                    {% if clip.content_summary is defined and clip.content_summary.primary_focus %}
-                    <details class="app-compact-details">
-                        <summary>Content summary</summary>
-                        <div class="app-mt-sm">{{ clip.content_summary.primary_focus }}</div>
-                    </details>
+            {# ── Header row: title / timestamps / score / watch button ── #}
+            <div class="app-row-between">
+                <div class="app-fill" style="min-width: 0;">
+                    <div class="chapter-num">{{ clip.clip_id }} — {{ clip.clip_title }}</div>
+                    <div class="chapter-time">{{ clip.timestamp_start | hms }} → {{ clip.timestamp_end | hms }}{% if clip.duration %} · {{ clip.duration | hms }}{% endif %}</div>
+                </div>
+                <div class="app-row-center app-shrink-0" style="gap: 0.75rem; align-self: flex-start;">
+                    <span style="font-weight: 700;">{{ clip_score }}/100</span>
+                    {% if state.youtube_video_id %}
+                    <button type="button"
+                            class="pf-v6-c-button pf-m-secondary pf-m-small app-clip-watch-btn"
+                            aria-expanded="false"
+                            aria-controls="clip-player-{{ loop.index }}">
+                        <i class="fas fa-play" aria-hidden="true"></i> Watch
+                    </button>
                     {% endif %}
                 </div>
-                {% if state.youtube_video_id %}
-                <div class="app-shrink-0">
-                    <iframe class="app-video-frame"
-                        title="Video preview for clip {{ clip.clip_id }} — {{ clip.clip_title }}"
-                        src="https://www.youtube.com/embed/{{ state.youtube_video_id }}?start={{ clip.timestamp_start | to_seconds }}&end={{ clip.timestamp_end | to_seconds }}"
-                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                {% endif %}
             </div>
+
+            {# ── Tags ── #}
+            {% if clip.thematic_tags is defined %}
+            <div class="app-inline-list app-mt-sm">
+                {% for topic in clip.thematic_tags.main_topics | default([]) %}
+                <span class="score-badge score-pass">{{ topic }}</span>
+                {% endfor %}
+                {% for event in clip.thematic_tags.key_events | default([]) %}
+                <span class="score-badge score-neutral">{{ event }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {# ── Content summary toggle ── #}
+            {% if clip.content_summary is defined and clip.content_summary.primary_focus %}
+            <details class="app-compact-details">
+                <summary>Content summary</summary>
+                <div class="app-mt-sm">{{ clip.content_summary.primary_focus }}</div>
+            </details>
+            {% endif %}
+
+            {# ── Expandable video player + transcript ── #}
+            {% if state.youtube_video_id %}
+            <div id="clip-player-{{ loop.index }}" class="app-clip-player" hidden>
+                <div class="app-clip-player-inner">
+                    <iframe class="app-clip-player-frame"
+                            data-src="https://www.youtube-nocookie.com/embed/{{ state.youtube_video_id }}?start={{ clip.timestamp_start | to_seconds }}&end={{ clip.timestamp_end | to_seconds }}&autoplay=1&rel=0"
+                            title="Video preview: {{ clip.clip_title }}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="app-clip-transcript">
+                        {% if clip.transcript_excerpts is defined %}
+                        {% set te = clip.transcript_excerpts %}
+                        {% if te.opening_lines is defined and te.opening_lines.text %}
+                        <div class="app-clip-excerpt">
+                            <div class="app-clip-excerpt-label">Opening{% if te.opening_lines.timestamp %} <span class="app-muted">· {{ te.opening_lines.timestamp | hms }}</span>{% endif %}</div>
+                            <blockquote class="app-clip-quote">{{ te.opening_lines.text }}</blockquote>
+                        </div>
+                        {% endif %}
+                        {% if te.key_moment is defined and te.key_moment.text %}
+                        <div class="app-clip-excerpt">
+                            <div class="app-clip-excerpt-label">Key moment{% if te.key_moment.timestamp %} <span class="app-muted">· {{ te.key_moment.timestamp | hms }}</span>{% endif %}</div>
+                            <blockquote class="app-clip-quote app-clip-quote--key">{{ te.key_moment.text }}</blockquote>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        {% if clip.engagement_assessment is defined %}
+                        {% set ea = clip.engagement_assessment %}
+                        {% if ea.standout_moment is defined and ea.standout_moment.description %}
+                        <div class="app-clip-standout">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <em>{{ ea.standout_moment.description }}</em>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
@@ -156,6 +203,55 @@
 {% block scripts %}
 <script>
     wireRunButton('clips-form', 'run-btn', 'Extracting clips...');
+
+    // ── Clip player toggle ──────────────────────────────────────────────
+    // One player open at a time. iframe uses data-src for lazy loading so
+    // YouTube is not hit for every clip on page load.
+    (function () {
+        var activePanel = null;
+        var activeBtn   = null;
+
+        function closePlayer(panel, btn) {
+            panel.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerHTML = '<i class="fas fa-play" aria-hidden="true"></i> Watch';
+            var iframe = panel.querySelector('iframe');
+            if (iframe) iframe.removeAttribute('src');   // stop playback
+        }
+
+        function openPlayer(panel, btn) {
+            panel.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+            btn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i> Close';
+            var iframe = panel.querySelector('iframe[data-src]');
+            if (iframe && !iframe.src) {
+                iframe.src = iframe.dataset.src;         // lazy load
+            }
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        document.querySelectorAll('.app-clip-watch-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var panel = document.getElementById(btn.getAttribute('aria-controls'));
+                if (!panel) return;
+                var isOpen = !panel.hidden;
+
+                if (activePanel && activePanel !== panel) {
+                    closePlayer(activePanel, activeBtn);
+                }
+
+                if (isOpen) {
+                    closePlayer(panel, btn);
+                    activePanel = null;
+                    activeBtn   = null;
+                } else {
+                    openPlayer(panel, btn);
+                    activePanel = panel;
+                    activeBtn   = btn;
+                }
+            });
+        });
+    })();
 
     document.querySelectorAll('.pf-v6-c-tabs__link[role="tab"]').forEach(function (tab) {
         tab.addEventListener('click', function () {

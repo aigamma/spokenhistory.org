@@ -189,8 +189,10 @@ def _step_enabled(step_id: str, state_obj: dict) -> bool:
         return bool(state_obj.get("text_blocks") and steps_enabled.get("engagement"))
     if step_id == "clips":
         return bool(state_obj.get("text_blocks") and steps_enabled.get("clips"))
-    if step_id in {"results", "batch"}:
+    if step_id == "results":
         return bool(state_obj.get("main_summary"))
+    if step_id == "batch":
+        return True
     return False
 
 
@@ -383,6 +385,7 @@ def _new_state():
         # video preview (optional)
         "youtube_url": "",
         "youtube_video_id": None,
+        "video_links_map": {},
 
         # processor instance
         "processor": None,
@@ -502,6 +505,7 @@ def _render_upload(api_key_error=None):
         api_key_present=bool(session_api_key),
         api_key_masked=mask_api_key(session_api_key),
         api_key_error=api_key_error,
+        dev_mode=_is_dev_mode(),
     )
 
 
@@ -961,6 +965,21 @@ def upload_run():
     yt_url = request.form.get('youtube_url', '').strip()
     state["youtube_url"] = yt_url
     state["youtube_video_id"] = extract_youtube_id(yt_url)
+
+    # Optional video links JSON (batch: basename → youtube_video_id)
+    video_links_file = request.files.get('video_links_json')
+    video_links_map = {}
+    if video_links_file and video_links_file.filename:
+        try:
+            entries = json.loads(video_links_file.read().decode('utf-8'))
+            for entry in entries:
+                tf  = entry.get('transcript_file', '')
+                url = entry.get('videoEmbedLink', '')
+                if tf and url:
+                    video_links_map[secure_filename(os.path.basename(tf))] = extract_youtube_id(url)
+        except Exception:
+            pass  # silently ignore malformed JSON
+    state["video_links_map"] = video_links_map
 
     # Optional primary source info JSON (single-interview metadata)
     primary_source_file = request.files.get('primary_source_json')
@@ -1910,11 +1929,22 @@ def results_continue_batch():
     
     sid = _get_session_id()
     params = _capture_batch_params()
-    params["video_links_map"] = {}
-    
-    # Include the first (already processed) interview in results
+    video_links_map = state.get("video_links_map") or {}
+    params["video_links_map"] = video_links_map
+    print(f"[batch] video_links_map keys: {list(video_links_map.keys())}")
+
+    # Include the first (already processed) interview in results.
+    # For youtube_video_id: prefer the explicit text-field value; fall back to
+    # the uploaded video_links_map keyed by the SRT basename.
+    first_srt_basename = os.path.basename(state["srt_path"] or "")
+    first_yt_id = (
+        state.get("youtube_video_id")
+        or video_links_map.get(first_srt_basename)
+        or video_links_map.get(secure_filename(first_srt_basename))
+    )
     first_result = {
-        "interview_name": os.path.basename(state["srt_path"] or "unknown").replace('.srt', ''),
+        "interview_name": first_srt_basename.replace('.srt', ''),
+        "youtube_video_id": first_yt_id,
         "text_blocks": state["text_blocks"],
         "block_topics": state["block_topics"],
         "toc_bundle": state["toc_bundle"],
@@ -1955,6 +1985,255 @@ def results_continue_batch():
     thread.start()
     
     return redirect(url_for('batch_progress'))
+
+
+def _safe_clip_text(clip, outer_key, inner_key, text_key='text'):
+    """Safely extract a text field from a clip sub-object.
+
+    The clip schema is sometimes returned with dict sub-objects and sometimes
+    with lists (e.g. transcript_excerpts can be a list of excerpt dicts).
+    This helper handles both shapes gracefully.
+    """
+    outer = clip.get(outer_key)
+    if not outer:
+        return ''
+    # If the outer value is a list, search for an item whose key matches
+    if isinstance(outer, list):
+        for item in outer:
+            if isinstance(item, dict):
+                val = item.get(inner_key) or item.get(text_key, '')
+                if val and isinstance(val, str):
+                    return val
+                if isinstance(val, dict):
+                    return val.get(text_key, '') or val.get('description', '')
+        return ''
+    if not isinstance(outer, dict):
+        return ''
+    inner = outer.get(inner_key)
+    if not inner:
+        return ''
+    if isinstance(inner, str):
+        return inner
+    if isinstance(inner, dict):
+        return inner.get(text_key, '') or inner.get('description', '')
+    return ''
+
+
+@app.route('/review')
+def review_page():
+    """Collection browser — per-interview accordion with inline clip players."""
+    sid = _get_session_id()
+    with _BATCH_LOCK:
+        job = _BATCH_JOBS.get(sid)
+    if not job:
+        return redirect(url_for('batch_page'))
+
+    results        = job.get('results', {})
+    interview_order = job.get('interview_order', list(results.keys()))
+    is_running     = job.get('running', False)
+
+    # ── Per-interview stats ────────────────────────────────────────────
+    interview_stats = {}
+    for name in interview_order:
+        r = results.get(name, {})
+        clips      = []
+        avg_score  = None
+        topics     = []
+        vid_id     = r.get('youtube_video_id')
+
+        cd = r.get('clips_data') or {}
+        raw_clips = cd.get('clips', []) if isinstance(cd, dict) else []
+        clips = raw_clips
+
+        scores = [
+            c.get('scores', {}).get('total_score', 0)
+            for c in clips
+            if c.get('scores', {}).get('total_score') is not None
+        ]
+        avg_score = round(sum(scores) / len(scores), 1) if scores else None
+
+        for c in clips:
+            tt = c.get('thematic_tags', {})
+            topics += tt.get('main_topics', [])
+
+        # Infer status — real pipeline never writes result["status"],
+        # so derive it from what's actually in the result dict.
+        explicit = r.get('status')
+        if explicit:
+            inferred_status = explicit
+        elif r.get('error'):
+            inferred_status = 'error'
+        elif r.get('main_summary') or raw_clips:
+            inferred_status = 'done'
+        elif r.get('_processing'):
+            inferred_status = 'processing'
+        else:
+            inferred_status = 'pending'
+
+        interview_stats[name] = {
+            'clips':      clips,
+            'clip_count': len(clips),
+            'avg_score':  avg_score,
+            'topics':     list(dict.fromkeys(topics)),
+            'youtube_video_id': vid_id,
+            'status':     inferred_status,
+        }
+
+    # ── Batch-level analytics ─────────────────────────────────────────
+    done_results = [s for s in interview_stats.values() if s['status'] == 'done']
+    all_clips    = [c for s in done_results for c in s['clips']]
+    all_scores   = [
+        c.get('scores', {}).get('total_score', 0)
+        for c in all_clips
+        if c.get('scores', {}).get('total_score') is not None
+    ]
+    all_topics_flat = [t for s in done_results for t in s['topics']]
+    topic_counts = {}
+    for t in all_topics_flat:
+        topic_counts[t] = topic_counts.get(t, 0) + 1
+    top_topics = sorted(topic_counts, key=lambda t: -topic_counts[t])[:10]
+
+    total_cost = sum(
+        (results.get(name, {}).get('cost_data') or {}).get('total_cost_usd', 0) or 0
+        for name in interview_order
+    )
+
+    analytics = {
+        'total_interviews': len(interview_order),
+        'done_interviews':  len(done_results),
+        'total_clips':      len(all_clips),
+        'avg_score':        round(sum(all_scores) / len(all_scores), 1) if all_scores else None,
+        'total_cost':       total_cost,
+        'top_topics':       top_topics,
+    }
+
+    # Build JS-ready data (seconds-converted timestamps, pre-formatted strings)
+    review_json = {}
+    for name in interview_order:
+        st = interview_stats[name]
+        clips_js = []
+        for clip in st['clips']:
+            start_s = to_seconds_filter(clip.get('timestamp_start', 0))
+            end_s   = to_seconds_filter(clip.get('timestamp_end', 0))
+            clips_js.append({
+                'id':       clip.get('clip_id', ''),
+                'title':    clip.get('clip_title', ''),
+                'start':    start_s,
+                'end':      end_s,
+                'startHms': hms_filter(clip.get('timestamp_start', '')),
+                'endHms':   hms_filter(clip.get('timestamp_end', '')),
+                'score':    clip.get('scores', {}).get('total_score', 0),
+                'topics':   clip.get('thematic_tags', {}).get('main_topics', []),
+                'events':   clip.get('thematic_tags', {}).get('key_events', []),
+                'summary':  (clip.get('content_summary') or {}).get('primary_focus', ''),
+                'opening':  _safe_clip_text(clip, 'transcript_excerpts', 'opening_lines'),
+                'keyMoment': _safe_clip_text(clip, 'transcript_excerpts', 'key_moment'),
+                'standout': _safe_clip_text(clip, 'engagement_assessment', 'standout_moment', 'description'),
+            })
+        # Extract main summary text — real pipeline stores a dict or string;
+        # dev mode stores a plain string.
+        ms = r.get('main_summary', '')
+        if isinstance(ms, dict):
+            ms_text = (ms.get('summary') or ms.get('text') or
+                       ms.get('main_summary') or ms.get('overview') or '')
+            if isinstance(ms_text, dict):
+                ms_text = ''
+        else:
+            ms_text = str(ms) if ms else ''
+
+        review_json[name] = {
+            'videoId':     st['youtube_video_id'],
+            'clips':       clips_js,
+            'topics':      st['topics'],
+            'avgScore':    st['avg_score'],
+            'clipCount':   st['clip_count'],
+            'status':      st['status'],
+            'mainSummary': ms_text,
+        }
+
+    return render_template(
+        'review.html',
+        state=state,
+        results=results,
+        interview_order=interview_order,
+        interview_stats=interview_stats,
+        is_running=is_running,
+        analytics=analytics,
+        review_json=review_json,
+    )
+
+
+@app.route('/dev/quick-review', methods=['POST'])
+def dev_quick_review():
+    """Dev-mode shortcut: build a fake completed batch job and jump to /review.
+
+    Reads video links from:
+      1. An optionally uploaded video_links_json file in the POST body, OR
+      2. state["video_links_map"] already stored from the Upload page.
+    Falls back to a set of generic fake interviews if neither is available.
+    """
+    if not _is_dev_mode():
+        return redirect(url_for('upload_page'))
+
+    sid = _get_session_id()
+
+    # ── Resolve video links map ───────────────────────────────────────
+    # Allow an optional fresh JSON upload directly from the batch page form
+    video_links_map = {}
+    vl_file = request.files.get('video_links_json')
+    if vl_file and vl_file.filename:
+        try:
+            entries = json.loads(vl_file.read().decode('utf-8'))
+            for entry in entries:
+                tf  = entry.get('transcript_file', '')
+                url = entry.get('videoEmbedLink', '')
+                if tf and url:
+                    video_links_map[secure_filename(os.path.basename(tf))] = extract_youtube_id(url)
+        except Exception:
+            pass
+
+    # Fall back to the map already stored on the session state
+    if not video_links_map:
+        video_links_map = state.get("video_links_map") or {}
+
+    # ── Build fake interviews ─────────────────────────────────────────
+    if video_links_map:
+        # One interview per entry in the map
+        interviews = [
+            (basename.replace('.srt', ''), yt_id)
+            for basename, yt_id in video_links_map.items()
+        ]
+    else:
+        # Generic placeholders so the page is still useful without a JSON file
+        interviews = [
+            ("Sample Interview — Civil Rights Leader A", None),
+            ("Sample Interview — Civil Rights Leader B", None),
+            ("Sample Interview — Civil Rights Leader C", None),
+        ]
+
+    results        = {}
+    interview_order = []
+    for name, yt_id in interviews:
+        result = _make_dev_batch_result(name, youtube_video_id=yt_id)
+        results[name] = result
+        interview_order.append(name)
+
+    with _BATCH_LOCK:
+        _BATCH_JOBS[sid] = {
+            "running": False,
+            "progress": {
+                "current":      len(interviews),
+                "total":        len(interviews),
+                "current_name": "",
+                "current_step": "Done",
+                "completed":    interview_order[:],
+            },
+            "results":          results,
+            "interview_order":  interview_order,
+        }
+
+    state["batch_started"] = True
+    return redirect(url_for('review_page'))
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -2014,6 +2293,76 @@ _BATCH_LOCK = Lock()
 _BATCH_JOBS = {}   # sid -> job dict
 
 
+def _make_dev_batch_result(interview_name, youtube_video_id=None):
+    """Return a realistic-looking fake result for dev-mode batch testing."""
+    import random, math
+    rng = random.Random(interview_name)  # deterministic per name
+
+    def rand_score(lo, hi):
+        return rng.randint(lo, hi)
+
+    clips = []
+    n_clips = rng.randint(3, 7)
+    topics_pool = [
+        "Civil Rights Movement", "Voting Rights", "Community Organizing",
+        "Police Brutality", "School Desegregation", "NAACP", "Sit-ins",
+        "Freedom Rides", "Economic Justice", "Black Power",
+    ]
+    t = 60
+    for i in range(1, n_clips + 1):
+        duration = rng.randint(90, 420)
+        clip_topics = rng.sample(topics_pool, k=rng.randint(1, 3))
+        score = rand_score(45, 97)
+        clips.append({
+            "clip_id": f"CLIP-{i:02d}",
+            "clip_title": f"Sample clip {i} — {clip_topics[0]}",
+            "timestamp_start": t,
+            "timestamp_end": t + duration,
+            "duration": duration,
+            "scores": {"total_score": score},
+            "thematic_tags": {
+                "main_topics": clip_topics,
+                "key_events": [],
+            },
+            "content_summary": {"primary_focus": f"Dev-mode placeholder content for clip {i}."},
+            "transcript_excerpts": {
+                "opening_lines": {"text": "Dev mode — no real transcript.", "timestamp": t},
+                "key_moment": {"text": "Key moment placeholder.", "timestamp": t + duration // 2},
+            },
+            "engagement_assessment": {
+                "standout_moment": {"description": "Standout moment placeholder."},
+            },
+        })
+        t += duration + rng.randint(10, 60)
+
+    avg_score = round(sum(c["scores"]["total_score"] for c in clips) / len(clips), 1)
+
+    return {
+        "interview_name": interview_name,
+        "error": None,
+        "youtube_video_id": youtube_video_id,
+        "status": "done",
+        "clips_data": {
+            "clips": clips,
+            "extraction_summary": {
+                "total_clips_extracted": len(clips),
+                "average_clip_score": avg_score,
+                "total_clips_duration": sum(c["duration"] for c in clips),
+                "topic_coverage": list({t for c in clips for t in c["thematic_tags"]["main_topics"]}),
+            },
+        },
+        "main_summary": f"Dev-mode summary for {interview_name}.",
+        "cost_usd": round(rng.uniform(0.05, 0.40), 4),
+        "cost_data": {
+            "total_cost_usd": round(rng.uniform(0.05, 0.40), 4),
+            "total_prompt_tokens": rng.randint(8000, 40000),
+            "total_completion_tokens": rng.randint(1000, 6000),
+            "call_count": rng.randint(6, 14),
+            "call_log": [],
+        },
+    }
+
+
 def _capture_batch_params():
     """Snapshot all user-configured prompts and settings from the current session state."""
     return {
@@ -2048,6 +2397,7 @@ def _capture_batch_params():
         "clips_token_limit":         state["clips_token_limit"],
         "steps_enabled":             dict(state["steps_enabled"]),
         "api_key":                   current_api_key(),
+        "dev_mode":                  _is_dev_mode(),
     }
 
 
@@ -2304,8 +2654,10 @@ def _process_single_interview(srt_path, interview_name, params, progress_fn, you
 
 def _run_batch(sid, srt_files, params):
     """Background thread: process all SRT files sequentially."""
+    import time as _time
     job = _BATCH_JOBS[sid]
     total = len(srt_files)
+    dev_mode = params.get("dev_mode", False)
 
     for i, (name, path) in enumerate(srt_files):
         # Initialize partial result for this interview
@@ -2334,14 +2686,23 @@ def _run_batch(sid, srt_files, params):
         try:
             srt_basename = os.path.basename(path)
             yt_id = params.get("video_links_map", {}).get(srt_basename)
+            print(f"[batch] {name}: srt_basename={srt_basename!r}, yt_id={yt_id!r}")
             psi = params.get("primary_source_map", {}).get(srt_basename)
-            result = _process_single_interview(
-                path, name, params, update_step,
-                youtube_video_id=yt_id,
-                partial_result=partial_result,
-                save_partial_fn=save_partial,
-                primary_source_info=psi,
-            )
+
+            if dev_mode:
+                # Dev mode: skip the real pipeline, return fake data instantly
+                _time.sleep(0.15)  # tiny pause so the progress UI feels real
+                update_step("Done (dev mode)")
+                result = _make_dev_batch_result(name, youtube_video_id=yt_id)
+            else:
+                result = _process_single_interview(
+                    path, name, params, update_step,
+                    youtube_video_id=yt_id,
+                    partial_result=partial_result,
+                    save_partial_fn=save_partial,
+                    primary_source_info=psi,
+                )
+
             # Mark as complete
             result.pop("_processing", None)
             result.pop("_current_step", None)
@@ -2380,7 +2741,7 @@ def batch_page():
     # Check that user has actually completed a single-interview run
     has_config = bool(params["labeling_sys_prompt"] and params["main_summary_sys_prompt"])
 
-    return render_template('batch_upload.html', state=state, params=params, has_config=has_config)
+    return render_template('batch_upload.html', state=state, params=params, has_config=has_config, dev_mode=_is_dev_mode())
 
 
 @app.route('/batch/start', methods=['POST'])

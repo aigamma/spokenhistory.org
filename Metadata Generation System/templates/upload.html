@@ -23,6 +23,8 @@
 {% endif %}
 
 <form action="{{ url_for('upload_run') }}" method="post" enctype="multipart/form-data" id="upload-form" class="pf-v6-c-form app-stack">
+
+    {# ── Card 1: Interview source ───────────────────────────────────── #}
     <section class="pf-v6-c-card">
         <div class="pf-v6-c-card__header">
             <div class="pf-v6-c-card__title">
@@ -30,53 +32,36 @@
             </div>
         </div>
         <div class="pf-v6-c-card__body app-stack">
-            <div class="app-grid-2">
-                <div class="pf-v6-c-form__group">
-                    <div class="pf-v6-c-form__group-label">
-                        {{ ui.label_with_info("OpenAI API key", "Stored only for this browser session. Leave blank to keep the current session key.", "api-key-input") }}
-                    </div>
-                    <div class="pf-v6-c-form__group-control">
-                        <span class="pf-v6-c-form-control"><input
-                            id="api-key-input"
-                            type="password"
-                            name="api_key"
-                            placeholder="{% if dev_mode %}Not required in dev mode{% else %}Paste an OpenAI API key{% endif %}"
-                            autocomplete="off"
-                            {% if not api_key_present and not dev_mode %}required{% endif %}
-                            {% if dev_mode %}disabled{% endif %}
-                        ></span>
-                        {% if dev_mode %}
-                        <p class="pf-v6-c-form__helper-text">Dev mode is on.</p>
-                        {% elif api_key_present %}
-                        <p class="pf-v6-c-form__helper-text">Current key: {{ api_key_masked }}</p>
-                        {% endif %}
-                        <div class="app-actions">
-                            <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank" rel="noopener noreferrer" class="pf-v6-c-button pf-m-secondary">Get API key</a>
-                            {# <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank" rel="noopener noreferrer" class="pf-v6-c-button pf-m-secondary">Where to find it</a> #}
-                        </div>
-                    </div>
-                </div>
 
-                <div class="pf-v6-c-form__group">
-                    <div class="pf-v6-c-form__group-label">
-                        {{ ui.label_with_info("Video preview URL", "Optional. Enables contextual video embeds on TOC, chapter, summary, and clip screens.", "youtube-url") }}
-                    </div>
-                    <div class="pf-v6-c-form__group-control">
-                        <span class="pf-v6-c-form-control"><input id="youtube-url" type="url" name="youtube_url" value="{{ state.youtube_url }}" placeholder="https://www.youtube.com/watch?v=..."></span>
+            {# API key — prerequisite, shown first and full-width #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    {{ ui.label_with_info("OpenAI API key", "Stored only for this browser session. Leave blank to keep the current session key.", "api-key-input") }}
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control"><input
+                        id="api-key-input"
+                        type="password"
+                        name="api_key"
+                        placeholder="{% if dev_mode %}Not required in dev mode{% else %}Paste an OpenAI API key{% endif %}"
+                        autocomplete="off"
+                        {% if not api_key_present and not dev_mode %}required{% endif %}
+                        {% if dev_mode %}disabled{% endif %}
+                    ></span>
+                    {% if dev_mode %}
+                    <p class="pf-v6-c-form__helper-text">Dev mode is on.</p>
+                    {% elif api_key_present %}
+                    <p class="pf-v6-c-form__helper-text">Current key: {{ api_key_masked }}</p>
+                    {% endif %}
+                    <div class="app-actions">
+                        <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank" rel="noopener noreferrer" class="pf-v6-c-button pf-m-secondary">Get API key</a>
                     </div>
                 </div>
             </div>
 
-            <label class="app-row-center-gap">
-                <input type="checkbox" name="use_sample" id="use-sample-checkbox">
-                <span>Use the bundled Amos C. Brown sample interview instead of uploading a ZIP.</span>
-            </label>
+            <hr class="pf-v6-c-divider">
 
-            <label class="app-row-center-gap">
-                <input type="checkbox" name="use_transcripts" id="use-transcripts-checkbox">
-                <span>Use the bundled batch of 4 sample interviews instead of uploading a ZIP.</span>
-            </label>
-
+            {# Upload zone — primary source #}
             <input type="file" name="srt_file" id="srt-input" accept=".zip" required class="app-file-input-hidden" aria-hidden="true" tabindex="-1">
             <div class="pf-v6-c-file-upload" id="upload-zone">
                 <div class="upload-zone">
@@ -85,9 +70,59 @@
                 </div>
                 <div class="pf-v6-c-file-upload__helper-text">ZIP transcript input</div>
             </div>
+
+            {# YouTube URL — metadata about this specific interview, lives next to the upload #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    {{ ui.label_with_info("YouTube URL", "Optional. Enables video playback on chapter, summary, and clip screens.", "youtube-url") }}
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control"><input id="youtube-url" type="url" name="youtube_url" value="{{ state.youtube_url }}" placeholder="https://www.youtube.com/watch?v=..."></span>
+                </div>
+            </div>
+
+            {# Video links JSON — batch counterpart to YouTube URL; stored in session so "Process remaining" can use it #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    {{ ui.label_with_info("Video links", "Maps each transcript filename to a YouTube URL — enables video playback in Collection Review. Expected JSON fields: transcript_file and videoEmbedLink.", "video-links-input") }}
+                    <span class="pf-v6-c-label pf-m-compact" style="margin-left:0.5rem;">
+                        <span class="pf-v6-c-label__content">optional</span>
+                    </span>
+                    <span class="pf-v6-c-label pf-m-compact pf-m-blue" style="margin-left:0.25rem;">
+                        <span class="pf-v6-c-label__content">batch</span>
+                    </span>
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control">
+                        <input type="file" name="video_links_json" id="video-links-input" accept=".json">
+                    </span>
+                    {% if state.video_links_map %}
+                    <p class="pf-v6-c-form__helper-text">{{ state.video_links_map | length }} link(s) currently loaded.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <hr class="pf-v6-c-divider">
+
+            {# Bundled samples — clearly an alternative to uploading #}
+            <div class="app-stack" style="gap:0.625rem;">
+                <span class="pf-v6-c-form__label" style="margin:0;">
+                    <span class="pf-v6-c-form__label-text">Or use a bundled sample</span>
+                </span>
+                <label class="app-row-center-gap">
+                    <input type="checkbox" name="use_sample" id="use-sample-checkbox">
+                    <span>Amos C. Brown — single interview</span>
+                </label>
+                <label class="app-row-center-gap">
+                    <input type="checkbox" name="use_transcripts" id="use-transcripts-checkbox">
+                    <span>4-interview batch sample</span>
+                </label>
+            </div>
+
         </div>
     </section>
 
+    {# ── Card 2: Processing controls ───────────────────────────────── #}
     <section class="pf-v6-c-card">
         <div class="pf-v6-c-card__header">
             <div class="pf-v6-c-card__title">
@@ -158,6 +193,18 @@
     </div>
 </form>
 
+{% if dev_mode and state.video_links_map %}
+<div style="margin-top:1rem;">
+    <form method="POST" action="{{ url_for('dev_quick_review') }}" enctype="multipart/form-data">
+        <button type="submit" class="pf-v6-c-button pf-m-warning">
+            <i class="fas fa-forward" aria-hidden="true"></i>
+            Skip to Review Collection
+            <span style="font-weight:400;font-size:0.875rem;"> — {{ state.video_links_map | length }} video link(s) loaded</span>
+        </button>
+    </form>
+</div>
+{% endif %}
+
 {% if state.srt_path %}
 {{ ui.status_card("Loaded transcript", None, [
     ("Source", "Bundled sample interview" if state.using_sample else state.srt_path),
@@ -170,12 +217,12 @@
 
 {% block scripts %}
 <script>
-    const fileInput = document.getElementById('srt-input');
-    const fileLabel = document.getElementById('file-label');
-    const sampleCheckbox = document.getElementById('use-sample-checkbox');
+    const fileInput     = document.getElementById('srt-input');
+    const fileLabel     = document.getElementById('file-label');
+    const sampleCheckbox     = document.getElementById('use-sample-checkbox');
     const transcriptsCheckbox = document.getElementById('use-transcripts-checkbox');
-    const uploadZone = document.getElementById('upload-zone');
-    const browseBtn = document.getElementById('file-browse-btn');
+    const uploadZone    = document.getElementById('upload-zone');
+    const browseBtn     = document.getElementById('file-browse-btn');
 
     browseBtn.addEventListener('click', function () {
         fileInput.click();
@@ -188,8 +235,8 @@
     function setZoneActive(isActive) {
         if (isBundledSelected()) return;
         const zone = uploadZone.querySelector('.upload-zone');
-        zone.style.borderColor = isActive ? 'var(--pf-t--global--color--brand--default)' : '';
-        zone.style.backgroundColor = isActive ? 'var(--pf-t--global--background--color--secondary--hover)' : '';
+        zone.style.borderColor       = isActive ? 'var(--pf-t--global--color--brand--default)' : '';
+        zone.style.backgroundColor   = isActive ? 'var(--pf-t--global--background--color--secondary--hover)' : '';
     }
 
     function showDefaultLabel() {
@@ -211,15 +258,13 @@
         const zone = uploadZone.querySelector('.upload-zone');
         if (isBundledSelected()) {
             fileInput.required = false;
-            fileInput.value = '';
+            fileInput.value    = '';
             zone.style.opacity = '0.65';
             uploadZone.classList.add('app-inactive');
             browseBtn.disabled = true;
-            if (sampleCheckbox.checked) {
-                fileLabel.innerHTML = '<strong>Bundled sample selected</strong> — no upload needed';
-            } else {
-                fileLabel.innerHTML = '<strong>Bundled batch selected</strong> — no upload needed';
-            }
+            fileLabel.innerHTML = sampleCheckbox.checked
+                ? '<strong>Bundled sample selected</strong> — no upload needed'
+                : '<strong>Bundled batch selected</strong> — no upload needed';
         } else {
             fileInput.required = true;
             zone.style.opacity = '1';
@@ -235,20 +280,21 @@
         });
     }
 
-    // Make checkboxes mutually exclusive
-    sampleCheckbox.addEventListener('change', function() {
+    // Sample checkboxes are mutually exclusive
+    sampleCheckbox.addEventListener('change', function () {
         if (this.checked) transcriptsCheckbox.checked = false;
         updateSourceMode();
     });
-    transcriptsCheckbox.addEventListener('change', function() {
+    transcriptsCheckbox.addEventListener('change', function () {
         if (this.checked) sampleCheckbox.checked = false;
         updateSourceMode();
     });
+
     document.querySelectorAll('.app-grid-3 .chapter-card input[type="checkbox"]').forEach(function (checkbox) {
         checkbox.addEventListener('change', updateOptionalModuleCards);
     });
 
-    fileInput.addEventListener('change', function() {
+    fileInput.addEventListener('change', function () {
         if (this.files.length > 0) {
             applySelectedFile(this.files[0]);
         } else if (!isBundledSelected()) {
@@ -256,31 +302,29 @@
         }
     });
 
-    ['dragenter', 'dragover'].forEach(function(eventName) {
-        uploadZone.addEventListener(eventName, function(event) {
+    ['dragenter', 'dragover'].forEach(function (eventName) {
+        uploadZone.addEventListener(eventName, function (event) {
             event.preventDefault();
             event.stopPropagation();
             setZoneActive(true);
         });
     });
 
-    ['dragleave', 'dragend'].forEach(function(eventName) {
-        uploadZone.addEventListener(eventName, function(event) {
+    ['dragleave', 'dragend'].forEach(function (eventName) {
+        uploadZone.addEventListener(eventName, function (event) {
             event.preventDefault();
             event.stopPropagation();
             setZoneActive(false);
         });
     });
 
-    uploadZone.addEventListener('drop', function(event) {
+    uploadZone.addEventListener('drop', function (event) {
         event.preventDefault();
         event.stopPropagation();
         setZoneActive(false);
-
         if (isBundledSelected()) return;
         const files = event.dataTransfer.files;
         if (!files || files.length === 0) return;
-
         const file = files[0];
         const transfer = new DataTransfer();
         transfer.items.add(file);
@@ -294,34 +338,28 @@
     wireRunButton('upload-form', 'run-btn', 'Running blocking...');
 
     (function () {
-        var slider = document.getElementById('block-size-slider');
-        var thumb = slider.querySelector('.pf-v6-c-slider__thumb');
+        var slider     = document.getElementById('block-size-slider');
+        var thumb      = slider.querySelector('.pf-v6-c-slider__thumb');
         var hiddenInput = document.getElementById('block-size-input');
-        var valDisplay = document.getElementById('block-size-val');
+        var valDisplay  = document.getElementById('block-size-val');
         var MIN = 10, MAX = 80;
 
-        function toPercent(val) {
-            return (val - MIN) / (MAX - MIN) * 100;
-        }
-
-        function clamp(val) {
-            return Math.max(MIN, Math.min(MAX, Math.round(val)));
-        }
+        function toPercent(val) { return (val - MIN) / (MAX - MIN) * 100; }
+        function clamp(val)     { return Math.max(MIN, Math.min(MAX, Math.round(val))); }
 
         function applyValue(val) {
             val = clamp(val);
             thumb.setAttribute('aria-valuenow', val);
             thumb.setAttribute('aria-valuetext', val + ' segments per block');
             slider.style.setProperty('--pf-v6-c-slider--value', toPercent(val) + '%');
-            hiddenInput.value = val;
+            hiddenInput.value    = val;
             valDisplay.textContent = val;
         }
 
         function valueFromClientX(clientX) {
             var rail = slider.querySelector('.pf-v6-c-slider__rail');
             var rect = rail.getBoundingClientRect();
-            var pct = (clientX - rect.left) / rect.width;
-            return MIN + pct * (MAX - MIN);
+            return MIN + ((clientX - rect.left) / rect.width) * (MAX - MIN);
         }
 
         function startDrag(startX) {
@@ -329,30 +367,29 @@
             function onTouchMove(e) { applyValue(valueFromClientX(e.touches[0].clientX)); }
             function stop() {
                 document.removeEventListener('mousemove', onMouseMove);
-                document.removeEventListener('mouseup', stop);
+                document.removeEventListener('mouseup',   stop);
                 document.removeEventListener('touchmove', onTouchMove);
-                document.removeEventListener('touchend', stop);
+                document.removeEventListener('touchend',  stop);
             }
             document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', stop);
+            document.addEventListener('mouseup',   stop);
             document.addEventListener('touchmove', onTouchMove, { passive: false });
-            document.addEventListener('touchend', stop);
+            document.addEventListener('touchend',  stop);
             applyValue(valueFromClientX(startX));
         }
 
         thumb.addEventListener('mousedown', function (e) { e.preventDefault(); startDrag(e.clientX); });
         thumb.addEventListener('touchstart', function (e) { e.preventDefault(); startDrag(e.touches[0].clientX); }, { passive: false });
-
         slider.querySelector('.pf-v6-c-slider__rail').addEventListener('mousedown', function (e) {
             e.preventDefault();
             startDrag(e.clientX);
         });
 
         thumb.addEventListener('keydown', function (e) {
-            var val = parseInt(thumb.getAttribute('aria-valuenow'), 10);
+            var val     = parseInt(thumb.getAttribute('aria-valuenow'), 10);
             var handled = true;
             if      (e.key === 'ArrowRight' || e.key === 'ArrowUp')   applyValue(val + 1);
-            else if (e.key === 'ArrowLeft'  || e.key === 'ArrowDown')  applyValue(val - 1);
+            else if (e.key === 'ArrowLeft'  || e.key === 'ArrowDown') applyValue(val - 1);
             else if (e.key === 'PageUp')   applyValue(val + 5);
             else if (e.key === 'PageDown') applyValue(val - 5);
             else if (e.key === 'Home')     applyValue(MIN);

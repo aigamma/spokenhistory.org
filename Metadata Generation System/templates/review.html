@@ -1,0 +1,646 @@
+{% extends "base.html" %}
+{% import "macros.html" as ui %}
+
+{% block title %}Collection Review{% endblock %}
+
+{% block content %}
+{{ ui.page_header("Collection Review", "Browse and play interviews with generated metadata.", "Batch") }}
+
+{% if is_running %}
+{% call ui.alert("Batch still running", "info") %}
+<p>{{ analytics.done_interviews }} of {{ analytics.total_interviews }} interviews complete. <a href="{{ url_for('batch_progress') }}">View progress →</a></p>
+{% endcall %}
+{% endif %}
+
+{# ── Analytics strip ─────────────────────────────────────────────── #}
+<div class="app-review-analytics">
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Interviews</div>
+        <div class="app-summary-stat-value">
+            {{ analytics.done_interviews }}<span class="app-summary-stat-sub"> / {{ analytics.total_interviews }}</span>
+        </div>
+    </div>
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Total clips</div>
+        <div class="app-summary-stat-value">{{ analytics.total_clips }}</div>
+    </div>
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Avg clip score</div>
+        <div class="app-summary-stat-value">{{ "%.1f"|format(analytics.avg_score) if analytics.avg_score is not none else '—' }}</div>
+    </div>
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Total cost</div>
+        <div class="app-summary-stat-value">${{ "%.2f"|format(analytics.total_cost) }}</div>
+    </div>
+</div>
+
+{% if analytics.top_topics %}
+<div class="pf-v6-c-card app-rv-top-topics">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Top topics across collection</h2>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body">
+        <div class="app-inline-list">
+            {% for topic in analytics.top_topics %}
+            <span class="pf-v6-c-label pf-m-green pf-m-compact">
+                <span class="pf-v6-c-label__content">{{ topic }}</span>
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{# ═══════════════════════════════════════════════════════════════════
+   GRID VIEW
+═══════════════════════════════════════════════════════════════════ #}
+<div id="rv-grid-view">
+
+    {# Filter bar #}
+    <div class="app-review-filter-bar">
+        <div>
+            <label class="pf-v6-c-form__label" for="rv-search">
+                <span class="pf-v6-c-form__label-text">Search</span>
+            </label>
+            <span class="pf-v6-c-form-control"><input type="search" id="rv-search" placeholder="Name or topic…" style="width:200px;"></span>
+        </div>
+        <div>
+            <label class="pf-v6-c-form__label" for="rv-sort">
+                <span class="pf-v6-c-form__label-text">Sort by</span>
+            </label>
+            <span class="pf-v6-c-form-control">
+                <select id="rv-sort">
+                    <option value="order">Batch order</option>
+                    <option value="score-desc">Score (high → low)</option>
+                    <option value="score-asc">Score (low → high)</option>
+                    <option value="clips-desc">Most clips</option>
+                    <option value="name">Name (A→Z)</option>
+                </select>
+            </span>
+        </div>
+        <div>
+            <label class="pf-v6-c-form__label" for="rv-filter-video">
+                <span class="pf-v6-c-form__label-text">Video</span>
+            </label>
+            <span class="pf-v6-c-form-control">
+                <select id="rv-filter-video">
+                    <option value="">All</option>
+                    <option value="yes">Has video</option>
+                    <option value="no">No video</option>
+                </select>
+            </span>
+        </div>
+    </div>
+
+    {# Interview grid #}
+    <div class="app-rv-grid" id="rv-card-grid">
+        {% for name in interview_order %}
+        {% set st = interview_stats[name] %}
+        {% set vid = st.youtube_video_id %}
+        <div class="app-rv-card{% if not vid %} app-rv-card--no-video{% endif %}"
+             data-name="{{ name | lower }}"
+             data-topics="{{ st.topics | join(' ') | lower }}"
+             data-score="{{ st.avg_score | default(0) }}"
+             data-clips="{{ st.clip_count }}"
+             data-order="{{ loop.index }}"
+             data-has-video="{{ 'yes' if vid else 'no' }}"
+             data-interview-key="{{ loop.index0 }}"
+             data-iname="{{ name | e }}">
+
+            {# Thumbnail #}
+            <div class="app-rv-thumb">
+                {% if vid %}
+                <img src="https://img.youtube.com/vi/{{ vid }}/hqdefault.jpg"
+                     alt="Thumbnail for {{ name }}"
+                     loading="lazy"
+                     onerror="this.style.display='none'">
+                <div class="app-rv-thumb-overlay">
+                    <div class="app-rv-play-icon"><i class="fas fa-play" style="margin-left:2px;" aria-hidden="true"></i></div>
+                </div>
+                {% else %}
+                <div class="app-rv-thumb-placeholder">
+                    <i class="fas fa-video-slash" aria-hidden="true"></i>
+                </div>
+                {% endif %}
+            </div>
+
+            {# Card body #}
+            <div class="app-rv-card-body">
+                <div class="app-rv-card-name">{{ name }}</div>
+                <div class="app-rv-card-meta">
+                    {% if st.status == 'done' %}
+                        <span>{{ st.clip_count }} clip{{ 's' if st.clip_count != 1 }}</span>
+                        {% if st.avg_score is not none %}<span>avg {{ st.avg_score }}/100</span>{% endif %}
+                        {% if not vid %}<span class="app-muted">no video</span>{% endif %}
+                    {% elif st.status == 'error' %}
+                        <span class="pf-v6-c-label pf-m-red pf-m-compact">
+                            <span class="pf-v6-c-label__content">Error</span>
+                        </span>
+                    {% else %}
+                        <span class="pf-v6-c-label pf-m-compact">
+                            <span class="pf-v6-c-label__content">Pending</span>
+                        </span>
+                    {% endif %}
+                </div>
+                {% if st.topics %}
+                <div class="app-rv-card-topics">
+                    {% for t in st.topics[:3] %}
+                    <span class="pf-v6-c-label pf-m-green pf-m-compact">
+                        <span class="pf-v6-c-label__content">{{ t }}</span>
+                    </span>
+                    {% endfor %}
+                    {% if st.topics | length > 3 %}
+                    <span class="pf-v6-c-label pf-m-compact">
+                        <span class="pf-v6-c-label__content">+{{ st.topics | length - 3 }}</span>
+                    </span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div id="rv-empty" hidden>
+        <div class="pf-v6-c-empty-state pf-m-sm">
+            <div class="pf-v6-c-empty-state__header">
+                <div class="pf-v6-c-empty-state__title">
+                    <h2 class="pf-v6-c-empty-state__title-text">No interviews match your filters</h2>
+                </div>
+            </div>
+            <div class="pf-v6-c-empty-state__body">
+                Try adjusting your search or filter selections.
+            </div>
+        </div>
+    </div>
+</div>
+
+{# ═══════════════════════════════════════════════════════════════════
+   PLAYER VIEW  (hidden until an interview is opened)
+   Mirrors the editorial layout of InterviewPlayer.jsx:
+     – Large title + red mono subtitle
+     – Video (dominant left) + description panel (right)
+     – Prev / Next chapter nav below the video
+     – Full-width chapter list below the main area
+     – Description modal (overlay)
+═══════════════════════════════════════════════════════════════════ #}
+<div id="rv-player-view" hidden>
+
+    {# ── Back navigation ── #}
+    <div class="app-rv-back-nav">
+        <button type="button" class="pf-v6-c-button pf-m-secondary" id="rv-back-btn">
+            <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-arrow-left" aria-hidden="true"></i></span>
+            Back to collection
+        </button>
+    </div>
+
+    {# ── Editorial title block ── #}
+    <div class="app-rv-player-title-block">
+        <h1 class="app-rv-player-title" id="rv-player-name"></h1>
+        <div class="app-rv-player-subtitle" id="rv-player-subtitle"></div>
+    </div>
+
+    {# ── Main area: dominant video + description side panel ── #}
+    <div class="app-rv-main-area">
+
+        {# Left: video column #}
+        <div class="app-rv-video-col">
+            <div class="app-rv-video-wrap" id="rv-video-wrap" style="display:none;">
+                <div id="rv-yt-player"></div>
+                <div class="app-rv-spinner" id="rv-spinner">
+                    <i class="fas fa-circle-notch fa-spin" aria-hidden="true"></i> Loading player…
+                </div>
+            </div>
+            <div class="app-rv-no-video" id="rv-no-video" style="display:none;">
+                <i class="fas fa-video-slash" aria-hidden="true"></i>
+                <span>No video linked for this interview.</span>
+                <a href="{{ url_for('upload_page') }}" class="pf-v6-c-button pf-m-link pf-m-inline">Add a YouTube URL on Upload</a>
+            </div>
+        </div>
+
+        {# Right: description side panel #}
+        <div class="app-rv-side-panel">
+            <div class="pf-v6-c-content app-rv-side-desc" id="rv-side-desc"></div>
+            <button type="button" class="pf-v6-c-button pf-m-link app-rv-desc-btn" id="rv-desc-btn" style="display:none;">
+                View Interview Description
+                <span class="pf-v6-c-button__icon pf-m-end"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+            </button>
+            <div class="app-rv-side-topics" id="rv-side-topics"></div>
+        </div>
+    </div>
+
+    {# ── Player controls — full-width PF card with chapter navigation ── #}
+    <div class="pf-v6-c-card app-rv-controls-card">
+        <div class="pf-v6-c-card__body">
+            <div class="app-rv-controls-inner">
+                <div class="app-actions app-rv-controls-actions">
+                    <button type="button" class="pf-v6-c-button pf-m-secondary" id="rv-prev-btn" disabled>
+                        <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-chevron-left" aria-hidden="true"></i></span>
+                        Prev. Chapter
+                    </button>
+                    <button type="button" class="pf-v6-c-button pf-m-secondary" id="rv-next-btn" disabled>
+                        Next Chapter
+                        <span class="pf-v6-c-button__icon pf-m-end"><i class="fas fa-chevron-right" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+                {# PF label used as a read-only status indicator for chapter position #}
+                <span class="pf-v6-c-label pf-m-compact app-rv-chapter-counter" id="rv-chapter-counter">
+                    <span class="pf-v6-c-label__content" id="rv-chapter-counter-text"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    {# ── Interview chapter list — full width below controls ── #}
+    <div class="app-rv-chapters-section">
+        <h2 class="pf-v6-c-title pf-m-2xl app-rv-chapters-heading">Interview Chapters</h2>
+        <div id="rv-clip-list">
+            <div class="app-rv-no-clips">Select an interview to view chapters.</div>
+        </div>
+    </div>
+
+    {# ── Description modal — PF modal-box inside a custom fixed overlay ── #}
+    <div class="app-rv-desc-modal" id="rv-desc-modal" style="display:none;">
+        <div class="pf-v6-c-modal-box pf-m-md" role="dialog" aria-modal="true" aria-labelledby="rv-modal-title">
+            <div class="pf-v6-c-modal-box__close">
+                <button class="pf-v6-c-button pf-m-plain" type="button" id="rv-desc-modal-close" aria-label="Close dialog">
+                    <i class="fas fa-times" aria-hidden="true"></i>
+                </button>
+            </div>
+            <header class="pf-v6-c-modal-box__header">
+                <div class="pf-v6-c-modal-box__header-main">
+                    <h1 class="pf-v6-c-modal-box__title pf-v6-c-title pf-m-2xl" id="rv-modal-title">Interview Description</h1>
+                </div>
+            </header>
+            <div class="pf-v6-c-modal-box__body pf-v6-c-content" id="rv-desc-modal-body"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="app-actions app-rv-bottom-actions">
+    <a href="{{ url_for('batch_results') }}" class="pf-v6-c-button pf-m-secondary">
+        <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-arrow-left" aria-hidden="true"></i></span>
+        Batch results
+    </a>
+    <a href="{{ url_for('batch_download') }}" class="pf-v6-c-button pf-m-secondary">
+        <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-download" aria-hidden="true"></i></span>
+        Download ZIP
+    </a>
+</div>
+
+<script id="rv-data-script" type="application/json">{{ review_json | tojson }}</script>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+(function () {
+    'use strict';
+
+    // ── Data ────────────────────────────────────────────────────────
+    var REVIEW_DATA = JSON.parse(document.getElementById('rv-data-script').textContent);
+
+    // ── YouTube IFrame API ──────────────────────────────────────────
+    var ytPlayer   = null;
+    var pollTimer  = null;
+    var ytApiReady = false;
+
+    (function injectYTApi() {
+        var tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        document.body.appendChild(tag);
+    })();
+
+    window.onYouTubeIframeAPIReady = function () {
+        ytApiReady = true;
+        if (window._pendingVideoId) {
+            createPlayer(window._pendingVideoId);
+            window._pendingVideoId = null;
+        }
+    };
+
+    function createPlayer(videoId) {
+        if (ytPlayer) {
+            try { ytPlayer.destroy(); } catch(e) {}
+            ytPlayer = null;
+        }
+        var wrap = document.getElementById('rv-video-wrap');
+        var old  = document.getElementById('rv-yt-player');
+        if (old) old.remove();
+        var div = document.createElement('div');
+        div.id = 'rv-yt-player';
+        wrap.insertBefore(div, wrap.firstChild);
+        document.getElementById('rv-spinner').classList.remove('hidden');
+        ytPlayer = new YT.Player('rv-yt-player', {
+            videoId: videoId,
+            width: '100%',
+            height: '100%',
+            playerVars: { controls: 1, rel: 0, modestbranding: 1, autoplay: 0 },
+            events: {
+                onReady: function () {
+                    document.getElementById('rv-spinner').classList.add('hidden');
+                    startPolling();
+                },
+            },
+        });
+    }
+
+    function destroyPlayer() {
+        clearInterval(pollTimer);
+        pollTimer = null;
+        if (ytPlayer) {
+            try { ytPlayer.destroy(); } catch(e) {}
+            ytPlayer = null;
+        }
+        var wrap = document.getElementById('rv-video-wrap');
+        var old  = document.getElementById('rv-yt-player');
+        if (old) old.remove();
+        var div = document.createElement('div');
+        div.id = 'rv-yt-player';
+        wrap.insertBefore(div, wrap.firstChild);
+    }
+
+    // ── Chapter state ───────────────────────────────────────────────
+    var currentChapterIdx = 0;
+    var totalChapters     = 0;
+    var currentClips      = [];
+
+    function setChapter(idx) {
+        if (totalChapters === 0) return;
+        currentChapterIdx = Math.max(0, Math.min(idx, totalChapters - 1));
+
+        // Counter text lives inside the pf-v6-c-label__content span
+        var counterText = document.getElementById('rv-chapter-counter-text');
+        if (counterText) {
+            counterText.textContent = 'Chapter ' + (currentChapterIdx + 1) + ' of ' + totalChapters;
+        }
+
+        // Button states
+        var prevBtn = document.getElementById('rv-prev-btn');
+        var nextBtn = document.getElementById('rv-next-btn');
+        if (prevBtn) prevBtn.disabled = currentChapterIdx <= 0;
+        if (nextBtn) nextBtn.disabled = currentChapterIdx >= totalChapters - 1;
+
+        // Highlight active chapter item
+        document.querySelectorAll('.app-rv-chapter-item').forEach(function (el, i) {
+            el.classList.toggle('app-rv-chapter-item--active', i === currentChapterIdx);
+        });
+    }
+
+    // ── Polling: sync active chapter to playback time ───────────────
+    function startPolling() {
+        clearInterval(pollTimer);
+        pollTimer = setInterval(function () {
+            if (!ytPlayer || typeof ytPlayer.getCurrentTime !== 'function') return;
+            var t = ytPlayer.getCurrentTime();
+            var activeIdx = 0;
+            for (var i = currentClips.length - 1; i >= 0; i--) {
+                if (t >= currentClips[i].start) { activeIdx = i; break; }
+            }
+            if (activeIdx !== currentChapterIdx) {
+                setChapter(activeIdx);
+                var items = document.querySelectorAll('.app-rv-chapter-item');
+                if (items[activeIdx]) {
+                    items[activeIdx].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            }
+        }, 500);
+    }
+
+    function seekTo(seconds) {
+        if (ytPlayer && typeof ytPlayer.seekTo === 'function') {
+            ytPlayer.seekTo(seconds, true);
+            ytPlayer.playVideo();
+        }
+    }
+    window.seekTo = seekTo;
+
+    // ── Chapter navigation buttons ──────────────────────────────────
+    document.getElementById('rv-prev-btn').addEventListener('click', function () {
+        var target = currentChapterIdx - 1;
+        if (target >= 0 && currentClips[target]) {
+            seekTo(currentClips[target].start);
+            setChapter(target);
+        }
+    });
+    document.getElementById('rv-next-btn').addEventListener('click', function () {
+        var target = currentChapterIdx + 1;
+        if (target < totalChapters && currentClips[target]) {
+            seekTo(currentClips[target].start);
+            setChapter(target);
+        }
+    });
+
+    // ── Description modal ───────────────────────────────────────────
+    function openModal()  { document.getElementById('rv-desc-modal').style.display = 'flex'; }
+    function closeModal() { document.getElementById('rv-desc-modal').style.display = 'none'; }
+
+    document.getElementById('rv-desc-btn').addEventListener('click', openModal);
+    document.getElementById('rv-desc-modal-close').addEventListener('click', closeModal);
+    document.getElementById('rv-desc-modal').addEventListener('click', function (e) {
+        if (e.target === this) closeModal();
+    });
+
+    // ── Chapter list rendering ──────────────────────────────────────
+
+    // Maps a score to the appropriate PF label color modifier
+    function scorePfColor(score) {
+        if (score >= 80) return 'pf-m-green';
+        if (score >= 60) return 'pf-m-orange';
+        return 'pf-m-red';
+    }
+
+    // Wraps text in a compact PF label — color is an optional PF modifier string
+    function pfLabel(text, color) {
+        var colorMod = color ? ' ' + color : '';
+        return '<span class="pf-v6-c-label pf-m-compact' + colorMod + '">' +
+                   '<span class="pf-v6-c-label__content">' + text + '</span>' +
+               '</span>';
+    }
+
+    function renderClips(clips, hasVideo) {
+        currentClips  = clips;
+        totalChapters = clips.length;
+
+        var list = document.getElementById('rv-clip-list');
+        if (!clips.length) {
+            list.innerHTML = '<div class="app-rv-no-clips">No chapters extracted for this interview.</div>';
+            return;
+        }
+
+        list.innerHTML = clips.map(function (clip, idx) {
+
+            // ── Timestamp — pf-v6-c-button pf-m-link when clickable, plain span when not ──
+            var label   = 'Chapter ' + String(idx + 1).padStart(2, '0') + ' | ' + escHtml(clip.startHms);
+            var tsHtml  = hasVideo
+                ? '<button type="button" class="pf-v6-c-button pf-m-link app-rv-chapter-ts" onclick="seekTo(' + clip.start + ')">' + label + '</button>'
+                : '<span class="app-rv-chapter-ts app-rv-chapter-ts--no-video">' + label + '</span>';
+
+            // ── Score — pf-v6-c-label with green / orange / red modifier ──
+            var scoreHtml = (clip.score != null)
+                ? '<div class="app-rv-chapter-score">' +
+                      pfLabel(clip.score + '/100', scorePfColor(clip.score)) +
+                  '</div>'
+                : '';
+
+            // ── Keyword chips — neutral (default) compact PF labels ──
+            var kwHtml = (clip.topics || []).map(function (t) {
+                return pfLabel(escHtml(t));
+            }).join('');
+
+            // ── Quote ──
+            var quoteText = clip.keyMoment || clip.opening || '';
+            var quoteHtml = quoteText
+                ? '<blockquote class="app-rv-chapter-quote">' + escHtml(quoteText) + '</blockquote>'
+                : '';
+
+            return '<div class="app-rv-chapter-item" data-start="' + clip.start + '" data-end="' + clip.end + '">' +
+                       tsHtml +
+                       '<div class="app-rv-chapter-body">' +
+                           '<div class="app-rv-chapter-left">' +
+                               '<div class="pf-v6-c-title pf-m-2xl app-rv-chapter-topic">' + escHtml(clip.title) + '</div>' +
+                               scoreHtml +
+                               (kwHtml ? '<div class="app-rv-chapter-keywords">' + kwHtml + '</div>' : '') +
+                           '</div>' +
+                           '<div class="app-rv-chapter-right">' +
+                               (clip.summary
+                                   ? '<div class="pf-v6-c-content app-rv-chapter-summary">' + escHtml(clip.summary) + '</div>'
+                                   : '') +
+                               quoteHtml +
+                           '</div>' +
+                       '</div>' +
+                   '</div>';
+        }).join('');
+    }
+
+    function escHtml(str) {
+        return String(str || '')
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ── Open interview (grid → player) ──────────────────────────────
+    function openInterview(name) {
+        var data = REVIEW_DATA[name];
+        if (!data || data.status !== 'done') return;
+
+        document.getElementById('rv-grid-view').hidden   = true;
+        document.getElementById('rv-player-view').hidden = false;
+
+        // Title
+        document.getElementById('rv-player-name').textContent = name;
+
+        // Subtitle — render as PF label chips (chapter count in blue, avg score colour-coded)
+        var subLabels = [];
+        if (data.clipCount != null) {
+            subLabels.push(pfLabel(data.clipCount + ' chapter' + (data.clipCount !== 1 ? 's' : ''), 'pf-m-blue'));
+        }
+        if (data.avgScore != null) {
+            subLabels.push(pfLabel('avg ' + data.avgScore + '/100', scorePfColor(data.avgScore)));
+        }
+        document.getElementById('rv-player-subtitle').innerHTML = subLabels.join('');
+
+        // Side panel: truncated main summary
+        var sideDesc  = document.getElementById('rv-side-desc');
+        var descBtn   = document.getElementById('rv-desc-btn');
+        var modalBody = document.getElementById('rv-desc-modal-body');
+        if (data.mainSummary) {
+            var full  = data.mainSummary;
+            var short = full.length > 300 ? full.substring(0, 300).replace(/\s\S+$/, '') + '…' : full;
+            sideDesc.textContent  = short;
+            modalBody.textContent = full;
+            descBtn.style.display = full.length > 300 ? '' : 'none';
+        } else {
+            sideDesc.textContent  = '';
+            modalBody.textContent = 'No description available.';
+            descBtn.style.display = 'none';
+        }
+
+        // Side panel: topic chips — green PF labels
+        document.getElementById('rv-side-topics').innerHTML =
+            (data.topics || []).map(function (t) {
+                return pfLabel(escHtml(t), 'pf-m-green');
+            }).join('');
+
+        renderClips(data.clips || [], !!data.videoId);
+        setChapter(0);
+
+        // Video
+        var wrap    = document.getElementById('rv-video-wrap');
+        var spinner = document.getElementById('rv-spinner');
+        var noVideo = document.getElementById('rv-no-video');
+        if (data.videoId) {
+            wrap.style.display    = '';
+            noVideo.style.display = 'none';
+            spinner.classList.remove('hidden');
+            if (ytApiReady) {
+                createPlayer(data.videoId);
+            } else {
+                window._pendingVideoId = data.videoId;
+            }
+        } else {
+            wrap.style.display    = 'none';
+            noVideo.style.display = 'flex';
+            spinner.classList.add('hidden');
+            destroyPlayer();
+        }
+
+        document.getElementById('rv-player-view').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // ── Back button ─────────────────────────────────────────────────
+    document.getElementById('rv-back-btn').addEventListener('click', function () {
+        destroyPlayer();
+        closeModal();
+        document.getElementById('rv-player-view').hidden = true;
+        document.getElementById('rv-grid-view').hidden   = false;
+    });
+
+    // ── Card click (event delegation) ───────────────────────────────
+    document.getElementById('rv-card-grid').addEventListener('click', function (e) {
+        var card = e.target.closest('.app-rv-card:not(.app-rv-card--no-video)');
+        if (!card) return;
+        var name = card.dataset.iname;
+        if (name) openInterview(name);
+    });
+
+    // ── Grid filter + sort ──────────────────────────────────────────
+    var searchInput = document.getElementById('rv-search');
+    var sortSelect  = document.getElementById('rv-sort');
+    var videoSelect = document.getElementById('rv-filter-video');
+    var grid        = document.getElementById('rv-card-grid');
+    var emptyMsg    = document.getElementById('rv-empty');
+
+    function applyFilters() {
+        var q      = searchInput.value.toLowerCase().trim();
+        var sortBy = sortSelect.value;
+        var vidF   = videoSelect.value;
+        var cards  = Array.from(grid.querySelectorAll('.app-rv-card'));
+        var visible = cards.filter(function (c) {
+            if (vidF && c.dataset.hasVideo !== vidF) return false;
+            if (q && !(c.dataset.name.includes(q) || c.dataset.topics.includes(q))) return false;
+            return true;
+        });
+        cards.forEach(function (c) { c.hidden = true; });
+        visible.forEach(function (c) { c.hidden = false; });
+        visible.sort(function (a, b) {
+            if (sortBy === 'score-desc') return parseFloat(b.dataset.score||0) - parseFloat(a.dataset.score||0);
+            if (sortBy === 'score-asc')  return parseFloat(a.dataset.score||0) - parseFloat(b.dataset.score||0);
+            if (sortBy === 'clips-desc') return parseInt(b.dataset.clips||0)   - parseInt(a.dataset.clips||0);
+            if (sortBy === 'name')       return a.dataset.name.localeCompare(b.dataset.name);
+            return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+        });
+        visible.forEach(function (c) { grid.appendChild(c); });
+        emptyMsg.hidden = visible.length > 0;
+    }
+
+    searchInput.addEventListener('input',  applyFilters);
+    sortSelect.addEventListener('change',  applyFilters);
+    videoSelect.addEventListener('change', applyFilters);
+
+})();
+</script>
+{% endblock %}

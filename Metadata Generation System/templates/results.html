@@ -599,11 +599,33 @@
         <div class="results-divider-top">
             {% for clip in cd.clips %}
             {% set clip_score = clip.scores.total_score | default(0) %}
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; margin-bottom: 5px; gap: 8px;">
-                <span style="color: #666; flex-shrink: 0;">{{ clip.clip_id }}</span>
-                <span style="color: #bbb; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ clip.clip_title }}</span>
-                <span style="color: #888; flex-shrink: 0;">{{ clip.timestamp_start | hms }} → {{ clip.timestamp_end | hms }}</span>
-                <span style="font-weight: 600; flex-shrink: 0; color: {% if clip_score >= 80 %}#8e8{% elif clip_score >= 60 %}#ee8{% else %}#e88{% endif %};">{{ clip_score }}</span>
+            <div style="margin-bottom: 8px; padding: 8px; border: 1px solid #20252b; border-radius: 6px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; gap: 8px;">
+                    <span style="color: #666; flex-shrink: 0;">{{ clip.clip_id }}</span>
+                    <span style="color: #bbb; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ clip.clip_title }}</span>
+                    <span style="color: #888; flex-shrink: 0;">{{ clip.timestamp_start | hms }} → {{ clip.timestamp_end | hms }}</span>
+                    <span style="font-weight: 600; flex-shrink: 0; color: {% if clip_score >= 80 %}#8e8{% elif clip_score >= 60 %}#ee8{% else %}#e88{% endif %};">{{ clip_score }}</span>
+                    {% if state.youtube_video_id %}
+                    <button type="button"
+                            class="pf-v6-c-button pf-m-secondary pf-m-small app-clip-watch-btn"
+                            style="font-size: 11px; padding: 2px 8px; flex-shrink: 0;"
+                            aria-expanded="false"
+                            aria-controls="res-clip-player-{{ loop.index }}">
+                        <i class="fas fa-play" aria-hidden="true"></i> Watch
+                    </button>
+                    {% endif %}
+                </div>
+                {% if state.youtube_video_id %}
+                <div id="res-clip-player-{{ loop.index }}" class="app-clip-player app-clip-player--compact" hidden>
+                    <div class="app-clip-player-inner">
+                        <iframe class="app-clip-player-frame"
+                                data-src="https://www.youtube-nocookie.com/embed/{{ state.youtube_video_id }}?start={{ clip.timestamp_start | to_seconds }}&end={{ clip.timestamp_end | to_seconds }}&autoplay=1&rel=0"
+                                title="Video preview: {{ clip.clip_title }}"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
@@ -630,6 +652,40 @@
 
 {% block scripts %}
 <script>
+    // ── Clip player toggle (same pattern as clips.html) ─────────────────
+    (function () {
+        var activePanel = null;
+        var activeBtn   = null;
+
+        function closePlayer(panel, btn) {
+            panel.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerHTML = '<i class="fas fa-play" aria-hidden="true"></i> Watch';
+            var iframe = panel.querySelector('iframe');
+            if (iframe) iframe.removeAttribute('src');
+        }
+
+        function openPlayer(panel, btn) {
+            panel.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+            btn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i> Close';
+            var iframe = panel.querySelector('iframe[data-src]');
+            if (iframe && !iframe.src) { iframe.src = iframe.dataset.src; }
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        document.querySelectorAll('.app-clip-watch-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var panel = document.getElementById(btn.getAttribute('aria-controls'));
+                if (!panel) return;
+                var isOpen = !panel.hidden;
+                if (activePanel && activePanel !== panel) { closePlayer(activePanel, activeBtn); }
+                if (isOpen) { closePlayer(panel, btn); activePanel = null; activeBtn = null; }
+                else        { openPlayer(panel, btn);  activePanel = panel; activeBtn = btn; }
+            });
+        });
+    })();
+
     const fullData = {
         main_summary: {{ state.main_summary | tojson if state.main_summary else 'null' }},
         chapters: {{ state.chapters | tojson if state.chapters else '[]' }},

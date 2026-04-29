@@ -31,30 +31,41 @@
             </div>
         </div>
         <div class="pf-v6-c-card__body app-stack">
+
+            {# Primary upload: transcript ZIP #}
             <div class="pf-v6-c-file-upload" id="upload-zone">
                 <div class="pf-v6-c-file-upload__file-select">
                     <input type="file" name="batch_zip" id="zip-input" accept=".zip" required class="pf-v6-u-display-none">
                     <div class="upload-zone" onclick="document.getElementById('zip-input').click()">
-                        <div class="upload-label" id="file-label"><strong>Click to select</strong> a ZIP file containing `.srt` files</div>
+                        <div class="upload-label" id="file-label"><strong>Click to select</strong> a ZIP file containing <code>.srt</code> files</div>
                     </div>
                 </div>
                 <div class="pf-v6-c-file-upload__helper-text">The ZIP can contain <code>.srt</code> files at any folder depth. Non-SRT files are ignored.</div>
             </div>
-        </div>
-    </section>
 
-    <section class="pf-v6-c-card">
-        <div class="pf-v6-c-card__header">
-            <div class="pf-v6-c-card__title">
-                <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Optional video links JSON</h2>
+            <hr class="pf-v6-c-divider">
+
+            {# Secondary: video links — compact form field, visually subordinate to the ZIP zone #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    <label class="pf-v6-c-form__label" for="video-links-input">
+                        <span class="pf-v6-c-form__label-text">Video links</span>
+                    </label>
+                    <span class="pf-v6-c-label pf-m-compact" style="margin-left:0.5rem;">
+                        <span class="pf-v6-c-label__content">optional</span>
+                    </span>
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control">
+                        <input type="file" name="video_links_json" id="video-links-input" accept=".json">
+                    </span>
+                    <p class="pf-v6-c-form__helper-text">
+                        Maps each transcript filename to a YouTube URL — enables video playback in Collection Review.
+                        Expected fields: <code>transcript_file</code> and <code>videoEmbedLink</code>.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="pf-v6-c-card__body app-stack">
-            <label class="upload-zone" for="video-links-input">
-                <input type="file" name="video_links_json" id="video-links-input" accept=".json" class="pf-v6-u-display-none">
-                <div id="json-label"><strong>Click to select</strong> an `interviewee-video-links.json` file</div>
-            </label>
-            <div class="app-muted">Expected fields: <code>transcript_file</code> and <code>videoEmbedLink</code>.</div>
+
         </div>
     </section>
 
@@ -78,6 +89,44 @@
         <a href="{{ url_for('results_page') }}" class="pf-v6-c-button pf-m-secondary">Back to results</a>
     </div>
 </form>
+
+{% if dev_mode %}
+<div class="pf-v6-c-card" style="margin-top:1.5rem;border-color:var(--pf-t--global--status--warning--color--default);">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text" style="color:var(--pf-t--global--status--warning--color--default);">
+                <i class="fas fa-flask" aria-hidden="true"></i> Dev mode — Quick review test
+            </h2>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body app-stack">
+        <p class="pf-v6-c-form__helper-text">
+            Skips the full pipeline. Builds a fake completed batch job using your video links JSON and
+            jumps straight to Review Collection with generated placeholder clips and scores.<br>
+            Uses the JSON already uploaded on the Upload page, or upload a fresh one here.
+        </p>
+        <form method="POST" action="{{ url_for('dev_quick_review') }}" enctype="multipart/form-data" class="app-stack">
+            <div>
+                <label class="pf-v6-c-form__label" style="font-size:0.875rem;font-weight:600;">
+                    Video links JSON
+                    <span style="font-weight:400;color:var(--pf-t--global--text--color--subtle);"> — optional, overrides Upload page JSON</span>
+                </label>
+                <div style="display:flex;gap:0.75rem;align-items:center;margin-top:0.375rem;">
+                    <input type="file" name="video_links_json" id="qr-json-input" accept=".json" style="font-size:0.875rem;">
+                    <span id="qr-json-hint" style="font-size:0.8125rem;color:var(--pf-t--global--text--color--subtle);">
+                        {% if state.video_links_map %}Using {{ state.video_links_map | length }} link(s) from Upload page{% else %}No links loaded{% endif %}
+                    </span>
+                </div>
+            </div>
+            <div class="app-actions">
+                <button type="submit" class="pf-v6-c-button pf-m-warning">
+                    <i class="fas fa-forward" aria-hidden="true"></i> Skip to Review Collection
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
 {% endif %}
 {% endblock %}
 
@@ -89,16 +138,6 @@
         fileInput.addEventListener('change', function() {
             if (this.files.length > 0) {
                 fileLabel.innerHTML = '<strong>' + this.files[0].name + '</strong>';
-            }
-        });
-    }
-
-    const jsonInput = document.getElementById('video-links-input');
-    const jsonLabel = document.getElementById('json-label');
-    if (jsonInput) {
-        jsonInput.addEventListener('change', function() {
-            if (this.files.length > 0) {
-                jsonLabel.innerHTML = '<strong>' + this.files[0].name + '</strong>';
             }
         });
     }
