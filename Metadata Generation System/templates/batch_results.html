@@ -136,6 +136,9 @@
     <a href="{{ url_for('batch_download') }}" class="pf-v6-c-button pf-m-secondary">
         Download ZIP{% if is_running %} ({{ results|length }} of {{ interview_order|length }} complete){% endif %}
     </a>
+    {% if not is_running and has_any_clips %}
+    <a href="{{ url_for('batch_playlist_page') }}" class="pf-v6-c-button pf-m-secondary">View Playlists</a>
+    {% endif %}
     <a href="{{ url_for('batch_page') }}" class="pf-v6-c-button pf-m-secondary">Run another batch</a>
     <form method="POST" action="{{ url_for('reset_session') }}" class="pf-v6-u-display-inline" onsubmit="return confirm('Start over? All pipeline results for this session will be cleared.');">
         <button type="submit" class="pf-v6-c-button pf-m-secondary">Start over</button>

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# User-uploaded video data (large runtime files)
+uploads/
+
+# Runtime collection data (app creates this directory automatically)
+collections/
+
+# Logs
+logs/
+*.log

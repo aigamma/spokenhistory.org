@@ -181,11 +181,22 @@
                 </button>
                 <div class="pf-v6-c-masthead__brand app-brand-block">
                     <span class="pf-v6-c-title pf-m-xl">Metadata Generation System</span>
-                    <span class="app-brand-subtitle">Civil Rights History Project</span>
                 </div>
             </div>
             <div class="pf-v6-c-masthead__content">
                 <div class="app-masthead-row">
+                    {% if state.collection_id %}
+                    <div class="app-masthead-context">
+                        <p class="app-masthead-label">Collection</p>
+                        <p class="app-masthead-value">
+                            <a href="{{ url_for('collections_page') }}" class="app-masthead-collection-link" title="Back to collections">
+                                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                                {{ state.collection_name or 'Unnamed collection' }}
+                            </a>
+                        </p>
+                    </div>
+                    <span class="app-masthead-divider" aria-hidden="true"></span>
+                    {% endif %}
                     <div class="app-masthead-context">
                         <p class="app-masthead-label">Current interview</p>
                         <p class="app-masthead-value">

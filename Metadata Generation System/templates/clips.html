@@ -87,19 +87,117 @@
         <div class="pf-v6-c-card__title">
             <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Clips</h2>
         </div>
+        <div class="pf-v6-c-card__actions">
+            <span class="app-muted" style="font-size:0.8rem;">
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Click the pencil icon on any field to edit
+            </span>
+        </div>
     </div>
     <div class="pf-v6-c-card__body app-stack">
         {% for clip in cd.clips %}
         {% set clip_score = clip.scores.total_score | default(0) %}
-        <div class="chapter-card">
-            {# ── Header row: title / timestamps / score / watch button ── #}
-            <div class="app-row-between">
+        {% set score_overridden = clip.scores._overridden | default(false) if clip.scores is defined else false %}
+        {% set is_flagged = clip._revision_flag is defined and clip._revision_flag %}
+        {% set score_class = 'pf-m-green' if clip_score >= 80 else ('pf-m-orange' if clip_score >= 60 else 'pf-m-red') %}
+
+        <div class="chapter-card{% if is_flagged %} app-clip-flagged{% endif %}" id="clip-card-{{ loop.index }}">
+
+            {# ── Header row ── #}
+            <div class="app-row-between app-clip-header">
                 <div class="app-fill" style="min-width: 0;">
-                    <div class="chapter-num">{{ clip.clip_id }} — {{ clip.clip_title }}</div>
+
+                    {# Inline-edit: clip title #}
+                    <div class="pf-v6-c-inline-edit app-ie-title"
+                         id="ie-title-{{ loop.index }}"
+                         data-clip-id="{{ clip.clip_id | e }}"
+                         data-field="clip_title">
+                        <div class="pf-v6-c-inline-edit__group">
+                            <span class="pf-v6-c-inline-edit__value">
+                                <span class="chapter-num">
+                                    <span class="app-clip-id-prefix">{{ clip.clip_id }} — </span><span class="app-clip-title-text">{{ clip.clip_title }}</span>
+                                </span>
+                            </span>
+                            <span class="pf-v6-c-inline-edit__action pf-m-enable-editable">
+                                <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Edit clip title">
+                                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="pf-v6-c-inline-edit__group pf-m-input-group">
+                            <div class="pf-v6-c-inline-edit__input">
+                                <span class="pf-v6-c-form-control">
+                                    <input type="text" value="{{ clip.clip_title | e }}" maxlength="200" aria-label="Clip title">
+                                </span>
+                            </div>
+                            <div class="pf-v6-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+                                <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Save title">
+                                        <i class="fas fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="pf-v6-c-inline-edit__action">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Cancel edit">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="chapter-time">{{ clip.timestamp_start | hms }} → {{ clip.timestamp_end | hms }}{% if clip.duration %} · {{ clip.duration | hms }}{% endif %}</div>
                 </div>
-                <div class="app-row-center app-shrink-0" style="gap: 0.75rem; align-self: flex-start;">
-                    <span style="font-weight: 700;">{{ clip_score }}/100</span>
+
+                <div class="app-row-center app-shrink-0 app-clip-actions" style="gap: 0.5rem; align-self: flex-start;">
+
+                    {# Inline-edit: score override #}
+                    <div class="pf-v6-c-inline-edit app-ie-score"
+                         id="ie-score-{{ loop.index }}"
+                         data-clip-id="{{ clip.clip_id | e }}"
+                         data-field="score_override">
+                        <div class="pf-v6-c-inline-edit__group" style="align-items: center; gap: 0.25rem;">
+                            <span class="pf-v6-c-inline-edit__value">
+                                <span class="pf-v6-c-label pf-m-compact {{ score_class }}{% if score_overridden %} app-score-overridden{% endif %}">
+                                    <span class="pf-v6-c-label__content app-score-display">{{ clip_score }}/100</span>
+                                </span>
+                            </span>
+                            <span class="pf-v6-c-inline-edit__action pf-m-enable-editable">
+                                <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Override score">
+                                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="pf-v6-c-inline-edit__group pf-m-input-group" style="align-items: center;">
+                            <div class="pf-v6-c-inline-edit__input">
+                                <span class="pf-v6-c-form-control" style="width: 4.5rem;">
+                                    <input type="number" value="{{ clip_score }}" min="0" max="100" aria-label="Score override (0–100)">
+                                </span>
+                            </div>
+                            <div class="pf-v6-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+                                <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Save score">
+                                        <i class="fas fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="pf-v6-c-inline-edit__action">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Cancel">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Flag for revision button #}
+                    <button type="button"
+                            class="pf-v6-c-button pf-m-plain pf-m-small app-flag-btn{% if is_flagged %} app-flag-btn--active{% endif %}"
+                            data-clip-id="{{ clip.clip_id | e }}"
+                            data-clip-title="{{ clip.clip_title | e }}"
+                            data-flag="{{ clip._revision_flag | e if is_flagged else '' }}"
+                            aria-label="{% if is_flagged %}Revision flagged — click to edit{% else %}Flag for revision{% endif %}"
+                            title="{% if is_flagged %}Flagged: {{ clip._revision_flag | e }}{% else %}Flag for revision{% endif %}">
+                        <i class="fas fa-flag" aria-hidden="true"></i>
+                    </button>
+
                     {% if state.youtube_video_id %}
                     <button type="button"
                             class="pf-v6-c-button pf-m-secondary pf-m-small app-clip-watch-btn"
@@ -111,24 +209,103 @@
                 </div>
             </div>
 
-            {# ── Tags ── #}
-            {% if clip.thematic_tags is defined %}
-            <div class="app-inline-list app-mt-sm">
-                {% for topic in clip.thematic_tags.main_topics | default([]) %}
-                <span class="score-badge score-pass">{{ topic }}</span>
-                {% endfor %}
-                {% for event in clip.thematic_tags.key_events | default([]) %}
-                <span class="score-badge score-neutral">{{ event }}</span>
-                {% endfor %}
-            </div>
-            {% endif %}
+            {# ── Tags — inline-editable ── #}
+            {% set main_topics = clip.thematic_tags.main_topics | default([]) if clip.thematic_tags is defined else [] %}
+            {% set key_events  = clip.thematic_tags.key_events  | default([]) if clip.thematic_tags is defined else [] %}
 
-            {# ── Content summary toggle ── #}
-            {% if clip.content_summary is defined and clip.content_summary.primary_focus %}
-            <details class="app-compact-details">
-                <summary>Content summary</summary>
-                <div class="app-mt-sm">{{ clip.content_summary.primary_focus }}</div>
-            </details>
+            <div class="pf-v6-c-inline-edit app-ie-tags app-mt-sm"
+                 id="ie-tags-{{ loop.index }}"
+                 data-clip-id="{{ clip.clip_id | e }}"
+                 data-field="main_topics">
+                <div class="pf-v6-c-inline-edit__group" style="flex-wrap: wrap; gap: 0.4rem; align-items: center;">
+                    <div class="pf-v6-c-inline-edit__value app-clip-tags app-inline-list">
+                        {% for topic in main_topics %}
+                        <span class="pf-v6-c-label pf-m-compact pf-m-green"><span class="pf-v6-c-label__content">{{ topic }}</span></span>
+                        {% endfor %}
+                        {% for event in key_events %}
+                        <span class="pf-v6-c-label pf-m-compact"><span class="pf-v6-c-label__content">{{ event }}</span></span>
+                        {% endfor %}
+                        {% if not main_topics and not key_events %}
+                        <span class="app-muted" style="font-size:0.8rem;">No topics tagged</span>
+                        {% endif %}
+                    </div>
+                    <span class="pf-v6-c-inline-edit__action pf-m-enable-editable">
+                        <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Edit topics">
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                </div>
+                <div class="pf-v6-c-inline-edit__group pf-m-input-group" style="align-items: center;">
+                    <div class="pf-v6-c-inline-edit__input" style="flex: 1;">
+                        <span class="pf-v6-c-form-control" style="width: 100%;">
+                            <input type="text"
+                                   value="{{ main_topics | join(', ') }}"
+                                   placeholder="topic1, topic2, topic3"
+                                   aria-label="Edit topics (comma-separated)">
+                        </span>
+                    </div>
+                    <div class="pf-v6-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+                        <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                            <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Save topics">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="pf-v6-c-inline-edit__action">
+                            <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Cancel">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# ── Content summary — inline-editable ── #}
+            {% set summary_text = clip.content_summary.primary_focus if clip.content_summary is defined and clip.content_summary.primary_focus else '' %}
+            <div class="pf-v6-c-inline-edit app-ie-summary app-mt-sm"
+                 id="ie-summary-{{ loop.index }}"
+                 data-clip-id="{{ clip.clip_id | e }}"
+                 data-field="content_summary">
+                <details class="app-compact-details">
+                    <summary>
+                        Content summary
+                        <span class="pf-v6-c-inline-edit__action pf-m-enable-editable" style="display:inline-flex; margin-inline-start:0.4rem;">
+                            <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Edit summary"
+                                    onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('ie-summary-{{ loop.index }}').classList.add('pf-m-inline-editable'); document.getElementById('ie-summary-{{ loop.index }}').querySelector('details').open=true;">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </summary>
+                    <div class="pf-v6-c-inline-edit__value app-mt-sm" id="ie-summary-val-{{ loop.index }}">{{ summary_text }}</div>
+                    <div class="pf-v6-c-inline-edit__group pf-m-input-group app-mt-sm" style="flex-direction:column; gap:0.5rem;">
+                        <span class="pf-v6-c-form-control">
+                            <textarea rows="3" aria-label="Edit content summary" style="width:100%;">{{ summary_text | e }}</textarea>
+                        </span>
+                        <div class="pf-v6-c-inline-edit__group pf-m-action-group" style="gap:0.5rem;">
+                            <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                                <button class="pf-v6-c-button pf-m-primary pf-m-small" type="button" aria-label="Save summary">
+                                    <i class="fas fa-check" aria-hidden="true"></i> Save
+                                </button>
+                            </div>
+                            <div class="pf-v6-c-inline-edit__action">
+                                <button class="pf-v6-c-button pf-m-secondary pf-m-small" type="button" aria-label="Cancel">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            {# ── Flagged note display ── #}
+            {% if is_flagged %}
+            <div class="pf-v6-c-helper-text app-clip-flag-note" id="flag-note-{{ loop.index }}">
+                <div class="pf-v6-c-helper-text__item pf-m-warning">
+                    <span class="pf-v6-c-helper-text__item-icon"><i class="fas fa-flag" aria-hidden="true"></i></span>
+                    <span class="pf-v6-c-helper-text__item-text">Flagged for revision: {{ clip._revision_flag }}</span>
+                </div>
+            </div>
+            {% else %}
+            <div class="pf-v6-c-helper-text app-clip-flag-note" id="flag-note-{{ loop.index }}" hidden></div>
             {% endif %}
 
             {# ── Expandable video player + transcript ── #}
@@ -198,6 +375,41 @@
     <a href="{{ url_for('results_page') }}" class="pf-v6-c-button pf-m-primary">Continue to results</a>
 </div>
 {% endif %}
+
+{# ── Flag-for-revision modal (shared, one instance) ── #}
+<div class="app-rv-desc-modal" id="flag-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="flag-modal-title">
+    <div class="pf-v6-c-modal-box pf-m-sm">
+        <div class="pf-v6-c-modal-box__close">
+            <button class="pf-v6-c-button pf-m-plain" type="button" id="flag-modal-close" aria-label="Close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <header class="pf-v6-c-modal-box__header">
+            <h1 class="pf-v6-c-modal-box__title pf-v6-c-title pf-m-xl" id="flag-modal-title">Flag for revision</h1>
+            <p class="pf-v6-c-modal-box__description" id="flag-modal-clip-name"></p>
+        </header>
+        <div class="pf-v6-c-modal-box__body">
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    <label class="pf-v6-c-form__label" for="flag-note-input">
+                        <span class="pf-v6-c-form__label-text">Revision note</span>
+                    </label>
+                    <span class="pf-v6-c-form__helper-text">Describe what needs to be changed. This note is saved with the clip and exported with your results.</span>
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control">
+                        <textarea id="flag-note-input" rows="4" maxlength="1000" placeholder="e.g. Re-summarize with focus on voting rights. The title undersells the emotional impact."></textarea>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <footer class="pf-v6-c-modal-box__footer">
+            <button type="button" class="pf-v6-c-button pf-m-primary" id="flag-modal-save">Save flag</button>
+            <button type="button" class="pf-v6-c-button pf-m-link" id="flag-modal-clear">Clear flag</button>
+            <button type="button" class="pf-v6-c-button pf-m-link" id="flag-modal-cancel">Cancel</button>
+        </footer>
+    </div>
+</div>
 {% endblock %}
 
 {% block scripts %}
@@ -205,8 +417,6 @@
     wireRunButton('clips-form', 'run-btn', 'Extracting clips...');
 
     // ── Clip player toggle ──────────────────────────────────────────────
-    // One player open at a time. iframe uses data-src for lazy loading so
-    // YouTube is not hit for every clip on page load.
     (function () {
         var activePanel = null;
         var activeBtn   = null;
@@ -216,7 +426,7 @@
             btn.setAttribute('aria-expanded', 'false');
             btn.innerHTML = '<i class="fas fa-play" aria-hidden="true"></i> Watch';
             var iframe = panel.querySelector('iframe');
-            if (iframe) iframe.removeAttribute('src');   // stop playback
+            if (iframe) iframe.removeAttribute('src');
         }
 
         function openPlayer(panel, btn) {
@@ -224,9 +434,7 @@
             btn.setAttribute('aria-expanded', 'true');
             btn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i> Close';
             var iframe = panel.querySelector('iframe[data-src]');
-            if (iframe && !iframe.src) {
-                iframe.src = iframe.dataset.src;         // lazy load
-            }
+            if (iframe && !iframe.src) iframe.src = iframe.dataset.src;
             panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
@@ -235,28 +443,19 @@
                 var panel = document.getElementById(btn.getAttribute('aria-controls'));
                 if (!panel) return;
                 var isOpen = !panel.hidden;
-
-                if (activePanel && activePanel !== panel) {
-                    closePlayer(activePanel, activeBtn);
-                }
-
-                if (isOpen) {
-                    closePlayer(panel, btn);
-                    activePanel = null;
-                    activeBtn   = null;
-                } else {
-                    openPlayer(panel, btn);
-                    activePanel = panel;
-                    activeBtn   = btn;
-                }
+                if (activePanel && activePanel !== panel) closePlayer(activePanel, activeBtn);
+                if (isOpen) { closePlayer(panel, btn); activePanel = null; activeBtn = null; }
+                else        { openPlayer(panel, btn);  activePanel = panel; activeBtn = btn; }
             });
         });
     })();
 
+    // ── Prompt tab switching ────────────────────────────────────────────
     document.querySelectorAll('.pf-v6-c-tabs__link[role="tab"]').forEach(function (tab) {
         tab.addEventListener('click', function () {
             var section = tab.getAttribute('data-section');
-            document.querySelectorAll('.pf-v6-c-tabs__link[role="tab"]').forEach(function (t) {
+            if (!section) return;   // skip tabs without data-section (e.g. playlist tabs)
+            document.querySelectorAll('.pf-v6-c-tabs__link[role="tab"][data-section]').forEach(function (t) {
                 var isActive = t === tab;
                 t.setAttribute('aria-selected', isActive ? 'true' : 'false');
                 t.setAttribute('tabindex', isActive ? '0' : '-1');
@@ -267,5 +466,224 @@
             });
         });
     });
+
+    // ── Inline-edit wiring ──────────────────────────────────────────────
+    function escHtml(str) {
+        return String(str || '')
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function saveClipField(clipId, field, value, onSuccess, onError) {
+        fetch('/edit/clip', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({ clip_id: clipId, field: field, value: value }),
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            if (data.ok) onSuccess();
+            else if (onError) onError(data.error || 'Save failed');
+        })
+        .catch(function () { if (onError) onError('Network error'); });
+    }
+
+    document.querySelectorAll('.pf-v6-c-inline-edit[data-clip-id]').forEach(function (ie) {
+        var clipId   = ie.dataset.clipId;
+        var field    = ie.dataset.field;
+        var editBtn  = ie.querySelector('.pf-m-enable-editable button');
+        var saveBtn  = ie.querySelector('.pf-m-valid button');
+        var cancelEl = ie.querySelector('.pf-m-action-group .pf-v6-c-inline-edit__action:not(.pf-m-valid) button');
+        var input    = ie.querySelector('input, textarea');
+
+        if (!editBtn || !saveBtn || !input) return;  // summary uses custom wiring
+
+        editBtn.addEventListener('click', function () {
+            ie.classList.add('pf-m-inline-editable');
+            input.focus();
+            if (input.select) input.select();
+        });
+
+        if (cancelEl) {
+            cancelEl.addEventListener('click', function () {
+                ie.classList.remove('pf-m-inline-editable');
+            });
+        }
+
+        saveBtn.addEventListener('click', function () {
+            var val = input.value;
+            saveBtn.disabled = true;
+            saveClipField(clipId, field, val, function () {
+                applyEdit(ie, field, val);
+                ie.classList.remove('pf-m-inline-editable');
+                saveBtn.disabled = false;
+            }, function (err) {
+                saveBtn.disabled = false;
+                alert('Could not save: ' + err);
+            });
+        });
+
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && field !== 'content_summary') saveBtn.click();
+            if (e.key === 'Escape' && cancelEl) cancelEl.click();
+        });
+    });
+
+    // Summary inline-edit wiring (uses textarea + custom open button)
+    document.querySelectorAll('.app-ie-summary[data-clip-id]').forEach(function (ie) {
+        var clipId  = ie.dataset.clipId;
+        var input   = ie.querySelector('textarea');
+        var saveBtn = ie.querySelector('.pf-m-valid button');
+        var cancelEl = ie.querySelector('.pf-v6-c-inline-edit__action:not(.pf-m-valid) button:not([onclick])');
+
+        if (!input || !saveBtn) return;
+
+        if (cancelEl) {
+            cancelEl.addEventListener('click', function () {
+                ie.classList.remove('pf-m-inline-editable');
+            });
+        }
+
+        saveBtn.addEventListener('click', function () {
+            var val = input.value;
+            saveBtn.disabled = true;
+            saveClipField(clipId, 'content_summary', val, function () {
+                applyEdit(ie, 'content_summary', val);
+                ie.classList.remove('pf-m-inline-editable');
+                saveBtn.disabled = false;
+            }, function (err) {
+                saveBtn.disabled = false;
+                alert('Could not save: ' + err);
+            });
+        });
+    });
+
+    function applyEdit(ie, field, value) {
+        var card = ie.closest('.chapter-card');
+        if (field === 'clip_title') {
+            var titleEl = ie.querySelector('.app-clip-title-text');
+            if (titleEl) titleEl.textContent = value;
+        } else if (field === 'score_override') {
+            var score  = parseInt(value, 10);
+            var label  = ie.querySelector('.pf-v6-c-label');
+            var dispEl = ie.querySelector('.app-score-display');
+            if (dispEl) dispEl.textContent = score + '/100';
+            if (label) {
+                label.classList.remove('pf-m-green', 'pf-m-orange', 'pf-m-red');
+                label.classList.add(score >= 80 ? 'pf-m-green' : score >= 60 ? 'pf-m-orange' : 'pf-m-red');
+                label.classList.add('app-score-overridden');
+                label.title = 'Score overridden';
+            }
+        } else if (field === 'main_topics') {
+            var tags    = value.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+            var tagsEl  = ie.querySelector('.app-clip-tags');
+            if (tagsEl) {
+                tagsEl.innerHTML = tags.length
+                    ? tags.map(function (t) {
+                        return '<span class="pf-v6-c-label pf-m-compact pf-m-green">' +
+                               '<span class="pf-v6-c-label__content">' + escHtml(t) + '</span></span>';
+                      }).join('')
+                    : '<span class="app-muted" style="font-size:0.8rem;">No topics tagged</span>';
+            }
+            var input = ie.querySelector('input');
+            if (input) input.value = tags.join(', ');
+        } else if (field === 'content_summary') {
+            var valDiv = ie.querySelector('.pf-v6-c-inline-edit__value');
+            if (valDiv) valDiv.textContent = value;
+        }
+    }
+
+    // ── Flag-for-revision modal ─────────────────────────────────────────
+    (function () {
+        var modal    = document.getElementById('flag-modal');
+        var noteEl   = document.getElementById('flag-note-input');
+        var nameEl   = document.getElementById('flag-modal-clip-name');
+        var saveBtn  = document.getElementById('flag-modal-save');
+        var clearBtn = document.getElementById('flag-modal-clear');
+        var cancelBtn = document.getElementById('flag-modal-cancel');
+        var closeBtn = document.getElementById('flag-modal-close');
+        var activeClipId = null;
+        var activeBtn    = null;
+
+        function openModal(clipId, clipTitle, existingNote) {
+            activeClipId = clipId;
+            activeBtn    = document.querySelector('.app-flag-btn[data-clip-id="' + clipId + '"]');
+            if (nameEl) nameEl.textContent = clipTitle || '';
+            if (noteEl) noteEl.value = existingNote || '';
+            modal.style.display = 'flex';
+            if (noteEl) noteEl.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            activeClipId = null;
+            activeBtn    = null;
+        }
+
+        function persistFlag(note) {
+            fetch('/flag/clip', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ clip_id: activeClipId, note: note }),
+            })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.ok) { alert('Could not save flag: ' + (data.error || '')); return; }
+                updateFlagUI(activeClipId, note);
+                closeModal();
+            })
+            .catch(function () { alert('Network error saving flag'); });
+        }
+
+        function updateFlagUI(clipId, note) {
+            var btn = document.querySelector('.app-flag-btn[data-clip-id="' + clipId + '"]');
+            if (!btn) return;
+            btn.dataset.flag = note;
+            if (note) {
+                btn.classList.add('app-flag-btn--active');
+                btn.setAttribute('title', 'Flagged: ' + note);
+                btn.setAttribute('aria-label', 'Revision flagged — click to edit');
+            } else {
+                btn.classList.remove('app-flag-btn--active');
+                btn.setAttribute('title', 'Flag for revision');
+                btn.setAttribute('aria-label', 'Flag for revision');
+            }
+            // Update the flag note helper text below the card
+            var card    = btn.closest('.chapter-card');
+            var noteDiv = card ? card.querySelector('.app-clip-flag-note') : null;
+            if (noteDiv) {
+                if (note) {
+                    noteDiv.innerHTML =
+                        '<div class="pf-v6-c-helper-text__item pf-m-warning">' +
+                        '<span class="pf-v6-c-helper-text__item-icon"><i class="fas fa-flag" aria-hidden="true"></i></span>' +
+                        '<span class="pf-v6-c-helper-text__item-text">Flagged for revision: ' + escHtml(note) + '</span>' +
+                        '</div>';
+                    noteDiv.hidden = false;
+                    card.classList.add('app-clip-flagged');
+                } else {
+                    noteDiv.innerHTML = '';
+                    noteDiv.hidden    = true;
+                    card.classList.remove('app-clip-flagged');
+                }
+            }
+        }
+
+        document.querySelectorAll('.app-flag-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                openModal(btn.dataset.clipId, btn.dataset.clipTitle, btn.dataset.flag);
+            });
+        });
+
+        if (saveBtn)   saveBtn.addEventListener('click',   function () { persistFlag(noteEl ? noteEl.value.trim() : ''); });
+        if (clearBtn)  clearBtn.addEventListener('click',  function () { persistFlag(''); });
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+        if (closeBtn)  closeBtn.addEventListener('click',  closeModal);
+
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.style.display !== 'none') closeModal();
+        });
+    })();
 </script>
 {% endblock %}

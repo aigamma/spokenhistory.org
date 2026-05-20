@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections — Metadata Generation System</title>
+    <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@6.4.0/patternfly.css">
+    <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@6.4.0/patternfly-addons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        html.pf-v6-theme-dark body { background: var(--pf-t--global--background--color--primary--default); }
+
+        .app-coll-shell {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Top bar ── */
+        .app-coll-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.875rem 2rem;
+            background: var(--pf-t--global--background--color--secondary--default);
+            border-bottom: 1px solid var(--pf-t--global--border--color--default);
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .app-coll-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
+        }
+        .app-coll-brand-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--pf-t--global--text--color--regular);
+            line-height: 1.2;
+        }
+        .app-coll-brand-sub {
+            font-size: 0.775rem;
+            color: var(--pf-t--global--text--color--subtle);
+        }
+        .app-coll-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* ── Hero ── */
+        .app-coll-hero {
+            padding: 3rem 2rem 2rem;
+            max-width: 56rem;
+        }
+        .app-coll-hero-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem;
+            line-height: 1.2;
+        }
+        .app-coll-hero-desc {
+            font-size: 1rem;
+            color: var(--pf-t--global--text--color--subtle);
+            margin: 0;
+            max-width: 42rem;
+        }
+
+        /* ── Content area ── */
+        .app-coll-main {
+            flex: 1;
+            padding: 0 2rem 3rem;
+        }
+        .app-coll-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        /* ── Gallery grid ── */
+        .app-coll-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+            gap: 1.25rem;
+        }
+
+        /* ── Collection card ── */
+        .app-coll-card {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--pf-t--global--border--color--default);
+            border-radius: 6px;
+            background: var(--pf-t--global--background--color--secondary--default);
+            transition: box-shadow 140ms ease, border-color 140ms ease;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .app-coll-card:hover,
+        .app-coll-card:focus-within {
+            box-shadow: 0 0 0 2px var(--pf-t--global--color--brand--default);
+            border-color: var(--pf-t--global--color--brand--default);
+        }
+        .app-coll-card__accent {
+            height: 4px;
+            background: var(--pf-t--global--color--brand--default);
+        }
+        .app-coll-card__body {
+            flex: 1;
+            padding: 1.25rem 1.25rem 0.75rem;
+        }
+        .app-coll-card__name {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 0.375rem;
+            line-height: 1.3;
+        }
+        .app-coll-card__desc {
+            font-size: 0.85rem;
+            color: var(--pf-t--global--text--color--subtle);
+            margin: 0 0 1rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .app-coll-card__stats {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+        .app-coll-card__stat {
+            display: flex;
+            flex-direction: column;
+        }
+        .app-coll-card__stat-value {
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .app-coll-card__stat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--pf-t--global--text--color--subtle);
+            margin-top: 0.1rem;
+        }
+        .app-coll-card__date {
+            font-size: 0.75rem;
+            color: var(--pf-t--global--text--color--subtle);
+        }
+        .app-coll-card__footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.625rem 1.25rem;
+            border-top: 1px solid var(--pf-t--global--border--color--default);
+            background: var(--pf-t--global--background--color--primary--default);
+        }
+        .app-coll-card__open-btn {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ── Empty state ── */
+        .pf-v6-c-empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .pf-v6-c-empty-state__header,
+        .pf-v6-c-empty-state__body,
+        .pf-v6-c-empty-state__footer {
+            width: 100%;
+        }
+    </style>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (stored === 'dark' || (!stored && prefersDark)) {
+                document.documentElement.classList.add('pf-v6-theme-dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+<div class="app-coll-shell">
+
+    {# ── Top bar ── #}
+    <header class="app-coll-header">
+        <div class="app-coll-brand">
+            <span class="app-coll-brand-title">Metadata Generation System</span>
+        </div>
+        <div class="app-coll-header-actions">
+            <button type="button" class="pf-v6-c-button pf-m-plain" id="theme-toggle-btn" aria-label="Toggle theme">
+                <i class="fas fa-moon" aria-hidden="true" id="theme-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    {# ── Hero ── #}
+    <div class="app-coll-hero">
+        <h1 class="app-coll-hero-title">Your Collections</h1>
+        <p class="app-coll-hero-desc">
+            Each collection is a self-contained project — upload transcripts, run the metadata pipeline, and save everything together. Create one collection per interview series, subject area, or funding deliverable.
+        </p>
+    </div>
+
+    {# ── Main content ── #}
+    <main class="app-coll-main">
+        <div class="app-coll-section-header">
+            <span class="pf-v6-c-title pf-m-lg">
+                {% if collections %}{{ collections|length }} collection{{ 's' if collections|length != 1 }}{% else %}No collections yet{% endif %}
+            </span>
+            <button type="button" class="pf-v6-c-button pf-m-primary" id="new-coll-btn">
+                <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                New collection
+            </button>
+        </div>
+
+        {% if collections %}
+        <div class="app-coll-gallery" role="list">
+            {% for coll in collections %}
+            <article class="app-coll-card" role="listitem" tabindex="0"
+                     onclick="window.location='{{ url_for('collection_open', cid=coll.id) }}'"
+                     onkeydown="if(event.key==='Enter'||event.key===' ')window.location='{{ url_for('collection_open', cid=coll.id) }}'">
+                <div class="app-coll-card__accent"></div>
+                <div class="app-coll-card__body">
+                    <p class="app-coll-card__name">{{ coll.name }}</p>
+                    {% if coll.description %}
+                    <p class="app-coll-card__desc">{{ coll.description }}</p>
+                    {% else %}
+                    <p class="app-coll-card__desc app-muted">No description</p>
+                    {% endif %}
+                    <div class="app-coll-card__stats">
+                        <div class="app-coll-card__stat">
+                            <span class="app-coll-card__stat-value">{{ coll.interview_count }}</span>
+                            <span class="app-coll-card__stat-label">Interview{{ 's' if coll.interview_count != 1 }}</span>
+                        </div>
+                        <div class="app-coll-card__stat">
+                            <span class="app-coll-card__stat-value">{{ coll.total_clips }}</span>
+                            <span class="app-coll-card__stat-label">Clips</span>
+                        </div>
+                        {% if coll.avg_score is not none %}
+                        <div class="app-coll-card__stat">
+                            <span class="app-coll-card__stat-value {% if coll.avg_score >= 80 %}app-score-high{% elif coll.avg_score >= 60 %}app-score-medium{% else %}app-score-low{% endif %}">{{ coll.avg_score }}</span>
+                            <span class="app-coll-card__stat-label">Avg score</span>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <p class="app-coll-card__date">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        Updated {{ coll.updated_at[:10] if coll.updated_at else 'never' }}
+                    </p>
+                </div>
+                <div class="app-coll-card__footer">
+                    <span class="pf-v6-c-button pf-m-link pf-m-inline app-coll-card__open-btn">
+                        {% if coll.interview_count > 0 %}Open collection{% else %}Start adding interviews{% endif %}
+                        <i class="fas fa-arrow-right" aria-hidden="true" style="margin-inline-start:0.3rem;"></i>
+                    </span>
+                    <form method="POST" action="{{ url_for('collection_delete', cid=coll.id) }}"
+                          onsubmit="event.stopPropagation(); return confirm('Delete &quot;{{ coll.name | e }}&quot;? This cannot be undone.');">
+                        <button type="submit" class="pf-v6-c-button pf-m-plain pf-m-small"
+                                onclick="event.stopPropagation()"
+                                aria-label="Delete collection {{ coll.name | e }}"
+                                title="Delete collection">
+                            <i class="fas fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% else %}
+        {# ── Empty state ── #}
+        <div class="pf-v6-c-empty-state pf-m-lg">
+            <div class="pf-v6-c-empty-state__header">
+                <div class="pf-v6-c-empty-state__icon">
+                    <i class="fas fa-folder-open" aria-hidden="true" style="font-size: 3rem; color: var(--pf-t--global--text--color--subtle);"></i>
+                </div>
+                <div class="pf-v6-c-empty-state__title">
+                    <h2 class="pf-v6-c-empty-state__title-text">No collections yet</h2>
+                </div>
+            </div>
+            <div class="pf-v6-c-empty-state__body">
+                Collections keep your interviews and generated metadata organized as a project.
+                Create one to get started.
+            </div>
+            <div class="pf-v6-c-empty-state__footer">
+                <div class="pf-v6-c-empty-state__actions">
+                    <button type="button" class="pf-v6-c-button pf-m-primary" id="new-coll-btn-empty">
+                        <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                        Create your first collection
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+</div>
+
+{# ── New collection modal ── #}
+<div class="app-rv-desc-modal" id="new-coll-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="ncm-title">
+    <div class="pf-v6-c-modal-box pf-m-sm">
+        <div class="pf-v6-c-modal-box__close">
+            <button class="pf-v6-c-button pf-m-plain" type="button" id="ncm-close" aria-label="Close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+        </div>
+        <header class="pf-v6-c-modal-box__header">
+            <h1 class="pf-v6-c-modal-box__title pf-v6-c-title pf-m-2xl" id="ncm-title">New collection</h1>
+            <p class="pf-v6-c-modal-box__description">Give this project a name. You can add interviews and run the metadata pipeline after creating it.</p>
+        </header>
+        <div class="pf-v6-c-modal-box__body">
+            <form method="POST" action="{{ url_for('collection_new') }}" id="new-coll-form" class="pf-v6-c-form">
+                <div class="pf-v6-c-form__group">
+                    <div class="pf-v6-c-form__group-label">
+                        <label class="pf-v6-c-form__label" for="ncm-name">
+                            <span class="pf-v6-c-form__label-text">Collection name</span>
+                            <span class="pf-v6-c-form__label-required" aria-hidden="true"> *</span>
+                        </label>
+                    </div>
+                    <div class="pf-v6-c-form__group-control">
+                        <span class="pf-v6-c-form-control">
+                            <input type="text" id="ncm-name" name="name" maxlength="100" required
+                                   placeholder="e.g. 1960s Voting Rights Interviews">
+                        </span>
+                    </div>
+                </div>
+                <div class="pf-v6-c-form__group">
+                    <div class="pf-v6-c-form__group-label">
+                        <label class="pf-v6-c-form__label" for="ncm-desc">
+                            <span class="pf-v6-c-form__label-text">Description</span>
+                            <span class="pf-v6-c-form__label-text pf-m-optional"> (optional)</span>
+                        </label>
+                    </div>
+                    <div class="pf-v6-c-form__group-control">
+                        <span class="pf-v6-c-form-control">
+                            <textarea id="ncm-desc" name="description" rows="3" maxlength="500"
+                                      placeholder="Who was interviewed, what time period, which grant or project…"></textarea>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <footer class="pf-v6-c-modal-box__footer">
+            <button type="submit" form="new-coll-form" class="pf-v6-c-button pf-m-primary" id="ncm-submit">
+                <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-folder-plus" aria-hidden="true"></i></span>
+                Create and open
+            </button>
+            <button type="button" class="pf-v6-c-button pf-m-link" id="ncm-cancel">Cancel</button>
+        </footer>
+    </div>
+</div>
+
+<script>
+    // ── Theme toggle ──────────────────────────────────────────────────
+    (function () {
+        var btn  = document.getElementById('theme-toggle-btn');
+        var icon = document.getElementById('theme-icon');
+        function apply(dark) {
+            document.documentElement.classList.toggle('pf-v6-theme-dark', dark);
+            if (icon) { icon.className = dark ? 'fas fa-sun' : 'fas fa-moon'; }
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+        }
+        if (btn) {
+            btn.addEventListener('click', function () {
+                apply(!document.documentElement.classList.contains('pf-v6-theme-dark'));
+            });
+        }
+        // Sync icon to current state
+        if (document.documentElement.classList.contains('pf-v6-theme-dark') && icon) {
+            icon.className = 'fas fa-sun';
+        }
+    })();
+
+    // ── New collection modal ──────────────────────────────────────────
+    (function () {
+        var modal  = document.getElementById('new-coll-modal');
+        var nameEl = document.getElementById('ncm-name');
+
+        function openModal() {
+            modal.style.display = 'flex';
+            if (nameEl) { nameEl.value = ''; nameEl.focus(); }
+        }
+        function closeModal() { modal.style.display = 'none'; }
+
+        var btns = [
+            document.getElementById('new-coll-btn'),
+            document.getElementById('new-coll-btn-empty'),
+        ];
+        btns.forEach(function (b) { if (b) b.addEventListener('click', openModal); });
+
+        var closeBtn  = document.getElementById('ncm-close');
+        var cancelBtn = document.getElementById('ncm-cancel');
+        if (closeBtn)  closeBtn.addEventListener('click',  closeModal);
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.style.display !== 'none') closeModal();
+        });
+
+        // Prevent card click from firing when clicking the delete button
+        document.querySelectorAll('.app-coll-card form').forEach(function (f) {
+            f.addEventListener('click', function (e) { e.stopPropagation(); });
+        });
+    })();
+</script>
+</body>
+</html>

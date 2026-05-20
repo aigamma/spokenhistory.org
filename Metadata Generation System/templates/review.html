@@ -244,6 +244,12 @@
                         Next Chapter
                         <span class="pf-v6-c-button__icon pf-m-end"><i class="fas fa-chevron-right" aria-hidden="true"></i></span>
                     </button>
+                    {% if analytics.total_clips > 0 %}
+                    <a href="{{ url_for('batch_playlist_page') }}" class="pf-v6-c-button pf-m-secondary">
+                        <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-list" aria-hidden="true"></i></span>
+                        View Playlists
+                    </a>
+                    {% endif %}
                 </div>
                 {# PF label used as a read-only status indicator for chapter position #}
                 <span class="pf-v6-c-label pf-m-compact app-rv-chapter-counter" id="rv-chapter-counter">
@@ -289,6 +295,12 @@
         <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-download" aria-hidden="true"></i></span>
         Download ZIP
     </a>
+    {% if analytics.total_clips > 0 %}
+    <a href="{{ url_for('batch_playlist_page') }}" class="pf-v6-c-button pf-m-secondary">
+        <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-list" aria-hidden="true"></i></span>
+        View Playlists
+    </a>
+    {% endif %}
 </div>
 
 <script id="rv-data-script" type="application/json">{{ review_json | tojson }}</script>
@@ -525,7 +537,7 @@
     // ── Open interview (grid → player) ──────────────────────────────
     function openInterview(name) {
         var data = REVIEW_DATA[name];
-        if (!data || data.status !== 'done') return;
+        if (!data || data.status === 'error' || data.status === 'pending') return;
 
         document.getElementById('rv-grid-view').hidden   = true;
         document.getElementById('rv-player-view').hidden = false;
@@ -600,8 +612,10 @@
     });
 
     // ── Card click (event delegation) ───────────────────────────────
+    // No-video interviews can still be opened — description and clips
+    // display without the player.
     document.getElementById('rv-card-grid').addEventListener('click', function (e) {
-        var card = e.target.closest('.app-rv-card:not(.app-rv-card--no-video)');
+        var card = e.target.closest('.app-rv-card');
         if (!card) return;
         var name = card.dataset.iname;
         if (name) openInterview(name);

@@ -190,6 +190,9 @@
 
     <div class="app-actions">
         <button type="submit" class="pf-v6-c-button pf-m-primary" id="run-btn">{% if state.text_blocks %}<i class="fas fa-check app-btn-check" aria-hidden="true"></i> {% endif %}Run blocking</button>
+        <button type="submit" class="pf-v6-c-button pf-m-secondary" id="quick-run-btn">
+            <i class="fas fa-bolt" aria-hidden="true"></i> Quick Run — full pipeline with defaults
+        </button>
     </div>
 </form>
 
@@ -336,6 +339,18 @@
     updateOptionalModuleCards();
 
     wireRunButton('upload-form', 'run-btn', 'Running blocking...');
+
+    // Quick Run button: change form action then submit normally (navigates to progress page)
+    (function () {
+        var qrBtn  = document.getElementById('quick-run-btn');
+        var form   = document.getElementById('upload-form');
+        if (!qrBtn || !form) return;
+        qrBtn.addEventListener('click', function () {
+            form.action = '{{ url_for("quick_run") }}';
+            qrBtn.disabled = true;
+            qrBtn.innerHTML = '<span class="spinner"></span>Starting quick run...';
+        });
+    })();
 
     (function () {
         var slider     = document.getElementById('block-size-slider');

@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% import "macros.html" as ui %}
+{% set active_step = 'upload' %}
+
+{% block title %}Quick Run — Pipeline Demo{% endblock %}
+
+{% block content %}
+{{ ui.page_header("Quick Run", "Running the full pipeline with default settings.", job.interview_name) }}
+
+<section class="pf-v6-c-card">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Pipeline progress</h2>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body app-stack">
+        <div id="qr-status-text" class="app-masthead-value">Starting...</div>
+        <div class="pf-v6-c-progress" id="qr-progress" role="progressbar"
+             aria-label="Quick run progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="pf-v6-c-progress__description" id="qr-step-label">Initializing</div>
+            <div class="pf-v6-c-progress__status" aria-hidden="true">
+                <span class="pf-v6-c-progress__measure" id="qr-percent">0%</span>
+            </div>
+            <div class="pf-v6-c-progress__bar" role="presentation">
+                <div class="pf-v6-c-progress__indicator" id="qr-fill" style="width: 0%; transition: width 0.4s ease;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pf-v6-c-card">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Steps</h2>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body">
+        <ul class="qr-step-list" id="qr-step-list">
+            {% for step in all_steps %}
+            <li class="qr-step-item" data-step="{{ step }}">
+                <span class="qr-step-icon">
+                    <i class="fas fa-circle" aria-hidden="true"></i>
+                </span>
+                <span class="qr-step-name">{{ step }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<div id="qr-done-actions" class="app-actions" style="display:none;">
+    <a href="{{ url_for('results_page') }}" class="pf-v6-c-button pf-m-primary">View results</a>
+    <a href="{{ url_for('upload_page') }}" class="pf-v6-c-button pf-m-secondary">Run another</a>
+</div>
+<div id="qr-error-box" class="pf-v6-c-alert pf-m-danger" style="display:none;" aria-live="polite">
+    <div class="pf-v6-c-alert__icon"><i class="fas fa-exclamation-circle" aria-hidden="true"></i></div>
+    <p class="pf-v6-c-alert__title" id="qr-error-text">Pipeline failed.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<style>
+    .qr-step-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .qr-step-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
+        transition: background 0.2s;
+        color: var(--pf-t--global--text--color--subtle);
+    }
+    .qr-step-item.qr-active {
+        background: var(--pf-t--global--background--color--secondary--default);
+        color: var(--pf-t--global--text--color--regular);
+    }
+    .qr-step-item.qr-done {
+        color: var(--pf-t--global--color--status--success--default, #3e8635);
+    }
+    .qr-step-icon { width: 1.25rem; text-align: center; }
+    .qr-step-item.qr-active .qr-step-icon i { animation: qr-spin 1s linear infinite; color: var(--pf-t--global--color--brand--default); }
+    .qr-step-item.qr-done .qr-step-icon i { color: var(--pf-t--global--color--status--success--default, #3e8635); }
+    @keyframes qr-spin { to { transform: rotate(360deg); } }
+    .qr-step-name { font-size: 0.9rem; }
+</style>
+<script>
+    const ALL_STEPS = {{ all_steps | tojson }};
+    const statusText  = document.getElementById('qr-status-text');
+    const stepLabel   = document.getElementById('qr-step-label');
+    const progressBar = document.getElementById('qr-progress');
+    const fill        = document.getElementById('qr-fill');
+    const pct         = document.getElementById('qr-percent');
+    const doneActions = document.getElementById('qr-done-actions');
+    const errorBox    = document.getElementById('qr-error-box');
+    const errorText   = document.getElementById('qr-error-text');
+    const stepItems   = document.querySelectorAll('.qr-step-item');
+
+    function stepIndex(name) {
+        return ALL_STEPS.indexOf(name);
+    }
+
+    function renderSteps(currentStep, done) {
+        const ci = done ? ALL_STEPS.length : stepIndex(currentStep);
+        stepItems.forEach(function (li, i) {
+            li.classList.remove('qr-active', 'qr-done');
+            const icon = li.querySelector('i');
+            if (i < ci || done) {
+                li.classList.add('qr-done');
+                icon.className = 'fas fa-check-circle';
+            } else if (i === ci && !done) {
+                li.classList.add('qr-active');
+                icon.className = 'fas fa-circle-notch';
+            } else {
+                icon.className = 'fas fa-circle';
+            }
+        });
+    }
+
+    function updateProgress(step, done) {
+        const ci = done ? ALL_STEPS.length : Math.max(0, stepIndex(step));
+        const total = ALL_STEPS.length;
+        const p = done ? 100 : Math.round((ci / total) * 100);
+        const visual = done ? 100 : Math.max(p, 8);
+
+        fill.style.width = visual + '%';
+        progressBar.setAttribute('aria-valuenow', String(p));
+        pct.textContent = p + '%';
+        stepLabel.textContent = done ? 'Complete' : (step || 'Working…');
+        statusText.textContent = done ? 'Pipeline complete!' : ('Running: ' + (step || '…'));
+        renderSteps(step, done);
+    }
+
+    function poll() {
+        fetch('{{ url_for("quick_run_status") }}')
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.error && data.step === 'Error') {
+                    errorText.textContent = 'Pipeline failed: ' + data.error;
+                    errorBox.style.display = 'flex';
+                    statusText.textContent = 'Pipeline failed.';
+                    fill.style.width = '0%';
+                    return;
+                }
+
+                if (!data.running && data.step === 'Complete') {
+                    updateProgress(data.step, true);
+                    doneActions.style.display = 'flex';
+                    setTimeout(function () {
+                        window.location = '{{ url_for("results_page") }}';
+                    }, 1200);
+                    return;
+                }
+
+                updateProgress(data.step, false);
+
+                if (data.running) {
+                    setTimeout(poll, 2000);
+                }
+            })
+            .catch(function () {
+                setTimeout(poll, 5000);
+            });
+    }
+
+    poll();
+</script>
+{% endblock %}

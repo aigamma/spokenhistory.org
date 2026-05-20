@@ -5,6 +5,7 @@ individually controllable steps.
 """
 
 import copy
+import datetime
 import json
 import os
 import re
@@ -32,6 +33,9 @@ app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY') or os.urandom(24)
 app.config['UPLOAD_FOLDER'] = os.path.join(BASE_DIR, 'uploads')
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+COLLECTIONS_DIR = os.path.join(BASE_DIR, 'collections')
+os.makedirs(COLLECTIONS_DIR, exist_ok=True)
 
 
 # ── engagement rubric max scores ───────────────────────────────────────
@@ -401,6 +405,10 @@ def _new_state():
 
         # optional primary source metadata for the current interview
         "primary_source_info": None,
+
+        # active collection (persisted on disk; None if not in a collection)
+        "collection_id":   None,
+        "collection_name": None,
     }
 
 
@@ -421,6 +429,85 @@ def _get_state():
 
 
 state = LocalProxy(_get_state)
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  COLLECTIONS — named projects that group interviews and their metadata
+# ══════════════════════════════════════════════════════════════════════
+
+def _collection_path(cid: str) -> str:
+    return os.path.join(COLLECTIONS_DIR, f"{cid}.json")
+
+
+def _load_collection(cid: str) -> dict | None:
+    path = _collection_path(cid)
+    if not os.path.isfile(path):
+        return None
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def _save_collection(coll: dict) -> None:
+    coll['updated_at'] = datetime.datetime.utcnow().isoformat()
+    with open(_collection_path(coll['id']), 'w', encoding='utf-8') as f:
+        json.dump(coll, f, indent=2, ensure_ascii=False, default=str)
+
+
+def _all_collections() -> list:
+    """Return all collection dicts sorted newest first."""
+    colls = []
+    try:
+        for fname in os.listdir(COLLECTIONS_DIR):
+            if not fname.endswith('.json'):
+                continue
+            try:
+                with open(os.path.join(COLLECTIONS_DIR, fname), 'r', encoding='utf-8') as f:
+                    colls.append(json.load(f))
+            except Exception:
+                pass
+    except FileNotFoundError:
+        pass
+    return sorted(colls, key=lambda c: c.get('created_at', ''), reverse=True)
+
+
+def _collection_card(coll: dict) -> dict:
+    """Compute display stats for a collection card."""
+    interviews = coll.get('interviews', {})
+    total_clips = sum(
+        len((r.get('clips_data') or {}).get('clips', []))
+        for r in interviews.values()
+    )
+    all_scores = [
+        c.get('scores', {}).get('total_score')
+        for r in interviews.values()
+        for c in (r.get('clips_data') or {}).get('clips', [])
+        if c.get('scores', {}).get('total_score') is not None
+    ]
+    return {
+        'id':               coll['id'],
+        'name':             coll.get('name', 'Unnamed collection'),
+        'description':      coll.get('description', ''),
+        'created_at':       coll.get('created_at', ''),
+        'updated_at':       coll.get('updated_at', ''),
+        'interview_count':  len(interviews),
+        'total_clips':      total_clips,
+        'avg_score':        round(sum(all_scores) / len(all_scores), 1) if all_scores else None,
+    }
+
+
+def _autosave_interview(cid: str | None, interview_name: str, result: dict) -> None:
+    """Save one interview result into the collection JSON file on disk."""
+    if not cid:
+        return
+    coll = _load_collection(cid)
+    if not coll:
+        return
+    coll.setdefault('interviews', {})[interview_name] = result
+    _save_collection(coll)
+
 
 
 def _set_active_progress(sid: str, payload: dict):
@@ -840,6 +927,13 @@ _DEV_CLIPS_DATA = {
                 "key_events": ["personal testimony"],
             },
             "content_summary": {"primary_focus": "Firsthand account of experiencing racial segregation as a child in rural Mississippi."},
+            "transcript_excerpts": {
+                "opening_lines": {"text": "I grew up about forty miles outside of Jackson, and from the time I could walk I understood there were places we simply could not go.", "timestamp": "00:03:20"},
+                "key_moment": {"text": "My mother would take us to the back entrance of the doctor's office. It wasn't until I was older that I understood what that meant for her dignity.", "timestamp": "00:05:00"},
+            },
+            "engagement_assessment": {
+                "standout_moment": {"description": "The speaker's voice breaks slightly when recalling their mother's silent acceptance of segregated treatment — a detail that grounds the historical in the deeply personal."},
+            },
         },
         {
             "clip_id": "CLIP_002",
@@ -853,6 +947,13 @@ _DEV_CLIPS_DATA = {
                 "key_events": ["civil disobedience"],
             },
             "content_summary": {"primary_focus": "Detailed recollection of the first arrest during a lunch counter sit-in protest."},
+            "transcript_excerpts": {
+                "opening_lines": {"text": "We had trained for weeks. When the moment came, we sat down at the counter, ordered coffee, and waited. The manager came over almost immediately.", "timestamp": "00:19:10"},
+                "key_moment": {"text": "When they put the handcuffs on me I remember thinking — this is exactly what we were supposed to do. Fear turned into something closer to peace.", "timestamp": "00:21:05"},
+            },
+            "engagement_assessment": {
+                "standout_moment": {"description": "The counterintuitive description of calm replacing fear at the moment of arrest is a striking psychological insight that makes the nonviolent discipline viscerally understandable."},
+            },
         },
         {
             "clip_id": "CLIP_003",
@@ -866,6 +967,13 @@ _DEV_CLIPS_DATA = {
                 "key_events": ["I Have a Dream speech"],
             },
             "content_summary": {"primary_focus": "Eyewitness account of Dr. King's 'I Have a Dream' speech at the 1963 March on Washington."},
+            "transcript_excerpts": {
+                "opening_lines": {"text": "We had come down from Baltimore on a chartered bus, maybe sixty of us. By the time we got to the Mall it was already — you have to understand — it was a sea of people.", "timestamp": "00:33:45"},
+                "key_moment": {"text": "When he said 'I have a dream,' the crowd just — the sound changed. It went from a crowd to something unified. I felt it in my chest.", "timestamp": "00:36:10"},
+            },
+            "engagement_assessment": {
+                "standout_moment": {"description": "The physical description of the crowd's collective response — 'I felt it in my chest' — is an exceptional piece of primary-source sensory testimony about one of the most documented moments in American history."},
+            },
         },
         {
             "clip_id": "CLIP_004",
@@ -879,6 +987,13 @@ _DEV_CLIPS_DATA = {
                 "key_events": ["personal reflection"],
             },
             "content_summary": {"primary_focus": "Heartfelt message about civic responsibility and the importance of historical memory."},
+            "transcript_excerpts": {
+                "opening_lines": {"text": "Young people ask me sometimes — was it worth it? And I always say, the question you should ask is: what would have happened if we hadn't shown up?", "timestamp": "00:55:30"},
+                "key_moment": {"text": "History doesn't move on its own. It needs people willing to be uncomfortable, willing to be counted. That's what I want them to take from this.", "timestamp": "00:57:20"},
+            },
+            "engagement_assessment": {
+                "standout_moment": {"description": "The reframing of 'was it worth it?' into 'what if we hadn't shown up?' is a rhetorically powerful pivot that encapsulates the moral stakes of the movement in a single sentence."},
+            },
         },
     ],
     "extraction_summary": {
@@ -904,7 +1019,83 @@ def dev_mode_toggle():
 #  STEP 1 — UPLOAD / BLOCKING
 # ══════════════════════════════════════════════════════════════════════
 
-@app.route('/', methods=['GET'])
+@app.route('/')
+def home():
+    return redirect(url_for('collections_page'))
+
+
+@app.route('/collections', methods=['GET'])
+def collections_page():
+    cards = [_collection_card(c) for c in _all_collections()]
+    return render_template('collections.html', state=state, collections=cards)
+
+
+@app.route('/collections/new', methods=['POST'])
+def collection_new():
+    name        = request.form.get('name', '').strip()[:100]
+    description = request.form.get('description', '').strip()[:500]
+    if not name:
+        return redirect(url_for('collections_page'))
+
+    cid = uuid4().hex
+    now = datetime.datetime.utcnow().isoformat()
+    coll = {
+        'id':           cid,
+        'name':         name,
+        'description':  description,
+        'created_at':   now,
+        'updated_at':   now,
+        'interviews':   {},
+    }
+    _save_collection(coll)
+
+    # Reset pipeline and bind the new collection to the current session
+    sid = _get_session_id()
+    with _STATE_LOCK:
+        _SESSION_STATES[sid] = _new_state()
+    state['collection_id']   = cid
+    state['collection_name'] = name
+    return redirect(url_for('upload_page'))
+
+
+@app.route('/collections/<cid>/open')
+def collection_open(cid):
+    """Load a saved collection into the session and navigate to its content."""
+    coll = _load_collection(cid)
+    if not coll:
+        return redirect(url_for('collections_page'))
+
+    state['collection_id']   = cid
+    state['collection_name'] = coll.get('name', '')
+
+    interviews = coll.get('interviews', {})
+    if not interviews:
+        return redirect(url_for('upload_page'))
+
+    sid = _get_session_id()
+    with _BATCH_LOCK:
+        _BATCH_JOBS[sid] = {
+            'running':          False,
+            'progress':         {},
+            'results':          dict(interviews),
+            'interview_order':  list(interviews.keys()),
+        }
+    state['batch_started'] = True
+    return redirect(url_for('review_page'))
+
+
+@app.route('/collections/<cid>/delete', methods=['POST'])
+def collection_delete(cid):
+    path = _collection_path(cid)
+    if os.path.isfile(path):
+        os.remove(path)
+    if state.get('collection_id') == cid:
+        state['collection_id']   = None
+        state['collection_name'] = None
+    return redirect(url_for('collections_page'))
+
+
+@app.route('/upload', methods=['GET'])
 def upload_page():
     return _render_upload()
 
@@ -1149,6 +1340,268 @@ def upload_run():
 @app.route('/blocking/output', methods=['GET'])
 def blocking_output():
     return render_template('blocking_output.html', state=state)
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  QUICK RUN — upload + full pipeline in one shot (background thread)
+# ══════════════════════════════════════════════════════════════════════
+
+_QUICK_RUN_STEPS = [
+    "Parsing SRT",
+    "Labeling",
+    "Building TOC",
+    "Chapterization",
+    "Main summary",
+    "Chapter summaries",
+    "Question detection",
+    "Tuning main summary",
+    "Scoring chapters",
+    "Engagement scoring",
+    "Clip extraction",
+]
+
+
+@app.route('/quick-run', methods=['POST'])
+def quick_run():
+    """Upload a file and run the full pipeline with default settings in one shot."""
+    submitted_api_key = (request.form.get('api_key') or '').strip()
+    if submitted_api_key and submitted_api_key != current_api_key():
+        state["api_key"] = submitted_api_key
+        state["processor"] = None
+    elif not has_api_key():
+        if _is_dev_mode():
+            state["api_key"] = "dev-mode"
+            state["processor"] = None
+        else:
+            return _render_upload('Enter an API key before running the pipeline.')
+
+    use_sample = request.form.get('use_sample') == 'on'
+    use_transcripts = request.form.get('use_transcripts') == 'on'
+    uploaded_file = request.files.get('srt_file')
+
+    if not use_sample and not use_transcripts and (not uploaded_file or not uploaded_file.filename):
+        return _render_upload('Select a file or bundled sample to quick-run the pipeline.')
+
+    block_size = int(request.form.get('block_size', 23))
+    steps_enabled = {
+        "questions":   request.form.get('enable_questions')  == 'on',
+        "engagement":  request.form.get('enable_engagement') == 'on',
+        "clips":       request.form.get('enable_clips')       == 'on',
+    }
+    state["steps_enabled"] = steps_enabled
+    state["question_placement"] = "after_summary"
+
+    yt_url = request.form.get('youtube_url', '').strip()
+    state["youtube_url"] = yt_url
+    state["youtube_video_id"] = extract_youtube_id(yt_url)
+    youtube_video_id = state["youtube_video_id"]
+
+    primary_source_file = request.files.get('primary_source_json')
+    if primary_source_file and primary_source_file.filename:
+        try:
+            state["primary_source_info"] = json.loads(primary_source_file.read().decode('utf-8'))
+        except Exception:
+            state["primary_source_info"] = None
+    else:
+        state["primary_source_info"] = None
+    primary_source_info = state.get("primary_source_info")
+
+    # Resolve file path
+    _reset_downstream()
+    session_dir = _session_upload_dir(reset=True)
+
+    if use_sample:
+        filepath = _find_path('interview.srt')
+        if not filepath:
+            return _render_upload('The bundled sample interview file was not found.')
+        state["using_sample"] = True
+        interview_name = 'interview'
+    elif not use_transcripts and uploaded_file and uploaded_file.filename.lower().endswith('.zip'):
+        zip_path = os.path.join(session_dir, secure_filename(uploaded_file.filename))
+        uploaded_file.save(zip_path)
+        srt_files = []
+        try:
+            with zipfile.ZipFile(zip_path, 'r') as zf:
+                for member in zf.namelist():
+                    if member.lower().endswith('.srt') and not member.startswith('__MACOSX'):
+                        basename = os.path.basename(member)
+                        if not basename:
+                            continue
+                        dest = os.path.join(session_dir, secure_filename(basename))
+                        with zf.open(member) as src, open(dest, 'wb') as dst:
+                            dst.write(src.read())
+                        srt_files.append((basename.replace('.srt', ''), dest))
+        except zipfile.BadZipFile:
+            return _render_upload('Invalid zip file.')
+        if not srt_files:
+            return _render_upload('No .srt files found in the zip.')
+        srt_files.sort(key=lambda x: x[0])
+        interview_name, filepath = srt_files[0]
+        state["using_sample"] = False
+    elif use_transcripts:
+        sample_zip = os.path.join(BASE_DIR, 'sample_batch.zip')
+        if not os.path.isfile(sample_zip):
+            return _render_upload('Bundled sample batch zip not found on server.')
+        srt_files = []
+        with zipfile.ZipFile(sample_zip, 'r') as zf:
+            for member in zf.namelist():
+                if member.lower().endswith('.srt') and not member.startswith('__MACOSX'):
+                    basename = os.path.basename(member)
+                    if not basename:
+                        continue
+                    dest = os.path.join(session_dir, secure_filename(basename))
+                    with zf.open(member) as src, open(dest, 'wb') as dst:
+                        dst.write(src.read())
+                    srt_files.append((basename.replace('.srt', ''), dest))
+        if not srt_files:
+            return _render_upload('No .srt files found in the sample batch zip.')
+        srt_files.sort(key=lambda x: x[0])
+        interview_name, filepath = srt_files[0]
+        state["using_sample"] = False
+    else:
+        if not uploaded_file.filename.lower().endswith('.srt'):
+            return _render_upload('Please upload an .srt or .zip file.')
+        filename = secure_filename(uploaded_file.filename)
+        filepath = os.path.join(session_dir, filename)
+        uploaded_file.save(filepath)
+        state["using_sample"] = False
+        interview_name = filename.replace('.srt', '')
+
+    state["srt_path"] = filepath
+    state["block_size"] = block_size
+
+    # Load all default prompts up front (on the request thread, before background starts)
+    params = {
+        "block_size":                    block_size,
+        "labeling_sys_prompt":           load_prompt_file('label_text_blocks_for_toc_system.txt'),
+        "labeling_user_prompt":          load_prompt_file('label_text_blocks_for_toc_user.txt'),
+        "chapterization_sys_prompt":     load_prompt_file('detect_topic_transitions_system.txt'),
+        "chapterization_user_prompt":    load_prompt_file('detect_topic_transitions_user.txt'),
+        "main_summary_sys_prompt":       load_prompt_file('generate_main_summary_system.txt'),
+        "main_summary_user_prompt":      load_prompt_file('generate_main_summary_user.txt'),
+        "chapter_sys_prompt":            load_prompt_file('generate_chapter_system.txt'),
+        "chapter_user_prompt":           load_prompt_file('generate_chapter_user.txt'),
+        "questions_sys_prompt":          load_prompt_file('generate_questions_system.txt'),
+        "questions_user_prompt":         load_prompt_file('generate_questions_user.txt'),
+        "questions_rewrite_sys_prompt":  load_prompt_file('rewrite_questions_system.txt'),
+        "questions_rewrite_user_prompt": load_prompt_file('rewrite_questions_user.txt'),
+        "questions_context_max_rows":    14,
+        "questions_context_before_chars": 220,
+        "questions_context_after_chars": 140,
+        "question_placement":            "after_summary",
+        "eval_sys_prompt":               load_prompt_file('score_summary_system.txt'),
+        "eval_user_prompt":              load_prompt_file('score_summary_user.txt'),
+        "revision_sys_prompt":           load_prompt_file('regenerate_main_summary_system.txt'),
+        "revision_user_prompt":          load_prompt_file('regenerate_main_summary_user.txt'),
+        "quality_threshold":             80,
+        "accuracy_threshold":            80,
+        "max_retries":                   3,
+        "engagement_sys_prompt":         load_prompt_file('engagement_system.txt'),
+        "engagement_rubric":             load_prompt_file('engagement_rubric.txt'),
+        "engagement_schema":             load_prompt_file('engagement_schema.txt'),
+        "clips_combined_prompt":         _assemble_clips_prompt(_load_clips_prompt_sections()),
+        "clips_token_limit":             30000,
+        "steps_enabled":                 steps_enabled,
+        "api_key":                       current_api_key(),
+        "dev_mode":                      _is_dev_mode(),
+    }
+
+    sid = _get_session_id()
+    with _QUICK_RUN_LOCK:
+        _QUICK_RUN_JOBS[sid] = {
+            "running":        True,
+            "step":           "Starting",
+            "error":          None,
+            "interview_name": interview_name,
+        }
+
+    def _do_quick_run():
+        import time as _time
+        try:
+            if params.get("dev_mode"):
+                for step in _QUICK_RUN_STEPS:
+                    _time.sleep(0.12)
+                    with _QUICK_RUN_LOCK:
+                        if sid in _QUICK_RUN_JOBS:
+                            _QUICK_RUN_JOBS[sid]["step"] = step
+                result = _make_dev_batch_result(interview_name, youtube_video_id=youtube_video_id)
+            else:
+                def _progress(step_name):
+                    with _QUICK_RUN_LOCK:
+                        if sid in _QUICK_RUN_JOBS:
+                            _QUICK_RUN_JOBS[sid]["step"] = step_name
+
+                result = _process_single_interview(
+                    filepath, interview_name, params, _progress,
+                    youtube_video_id=youtube_video_id,
+                    primary_source_info=primary_source_info,
+                )
+
+            # Copy pipeline outputs back into the session state so /results works normally
+            with _STATE_LOCK:
+                s = _SESSION_STATES.get(sid)
+                if s:
+                    s["text_blocks"]        = result.get("text_blocks")
+                    s["block_topics"]       = result.get("block_topics")
+                    s["toc_bundle"]         = result.get("toc_bundle")
+                    s["chapter_breaks"]     = result.get("chapter_breaks")
+                    s["chapter_breaks_preview"] = result.get("chapter_breaks_preview")
+                    s["main_summary"]       = result.get("main_summary")
+                    s["chapters"]           = result.get("chapters")
+                    s["questions_rows"]     = result.get("questions")
+                    s["questions_stats"]    = result.get("questions_stats")
+                    s["questions_ran"]      = True
+                    s["tuning_results"]     = result.get("tuning_results")
+                    s["engagement_scores"]  = result.get("engagement_scores")
+                    s["clips_data"]         = result.get("clips_data")
+                    s["results_visited"]    = False
+
+            with _QUICK_RUN_LOCK:
+                if sid in _QUICK_RUN_JOBS:
+                    _QUICK_RUN_JOBS[sid]["running"] = False
+                    _QUICK_RUN_JOBS[sid]["step"]    = "Complete"
+
+            # Auto-save to collection if one is active
+            _autosave_interview(
+                _SESSION_STATES.get(sid, {}).get("collection_id"),
+                interview_name,
+                result,
+            )
+        except Exception as exc:
+            with _QUICK_RUN_LOCK:
+                if sid in _QUICK_RUN_JOBS:
+                    _QUICK_RUN_JOBS[sid]["running"] = False
+                    _QUICK_RUN_JOBS[sid]["step"]    = "Error"
+                    _QUICK_RUN_JOBS[sid]["error"]   = str(exc)
+
+    threading.Thread(target=_do_quick_run, daemon=True).start()
+    return redirect(url_for('quick_run_progress'))
+
+
+@app.route('/quick-run/progress', methods=['GET'])
+def quick_run_progress():
+    sid = _get_session_id()
+    with _QUICK_RUN_LOCK:
+        job = _QUICK_RUN_JOBS.get(sid)
+    if not job:
+        return redirect(url_for('upload_page'))
+    return render_template('quick_run_progress.html', state=state, job=job,
+                           all_steps=_QUICK_RUN_STEPS)
+
+
+@app.route('/quick-run/status', methods=['GET'])
+def quick_run_status():
+    sid = _get_session_id()
+    with _QUICK_RUN_LOCK:
+        job = _QUICK_RUN_JOBS.get(sid)
+    if not job:
+        return jsonify({"running": False, "step": "Not started", "error": "No job found"})
+    return jsonify({
+        "running":        job.get("running", False),
+        "step":           job.get("step", ""),
+        "error":          job.get("error"),
+        "interview_name": job.get("interview_name", ""),
+    })
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -1881,6 +2334,67 @@ def clips_run():
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  METADATA EDITING — in-place updates without re-running the pipeline
+# ══════════════════════════════════════════════════════════════════════
+
+@app.route('/edit/clip', methods=['POST'])
+def edit_clip():
+    """Update an editable field on a clip in session state."""
+    data    = request.get_json(force=True) or {}
+    clip_id = str(data.get('clip_id', ''))
+    field   = data.get('field', '')
+    value   = data.get('value')
+
+    _EDITABLE = {'clip_title', 'score_override', 'main_topics', 'content_summary'}
+    if field not in _EDITABLE:
+        return jsonify({'ok': False, 'error': 'Unknown field'}), 400
+
+    clips_data = state.get('clips_data') or {}
+    clips      = clips_data.get('clips', []) if isinstance(clips_data, dict) else []
+    target     = next((c for c in clips if str(c.get('clip_id', '')) == clip_id), None)
+    if target is None:
+        return jsonify({'ok': False, 'error': 'Clip not found'}), 404
+
+    if field == 'clip_title':
+        target['clip_title'] = str(value)[:200].strip()
+    elif field == 'score_override':
+        try:
+            score = max(0, min(100, int(value)))
+        except (TypeError, ValueError):
+            return jsonify({'ok': False, 'error': 'Score must be 0–100'}), 400
+        target.setdefault('scores', {})['total_score'] = score
+        target['scores']['_overridden'] = True
+    elif field == 'main_topics':
+        tags = [t.strip() for t in str(value).split(',') if t.strip()][:20]
+        target.setdefault('thematic_tags', {})['main_topics'] = tags
+    elif field == 'content_summary':
+        target.setdefault('content_summary', {})['primary_focus'] = str(value)[:600].strip()
+
+    return jsonify({'ok': True})
+
+
+@app.route('/flag/clip', methods=['POST'])
+def flag_clip():
+    """Attach or clear a revision note on a clip."""
+    data    = request.get_json(force=True) or {}
+    clip_id = str(data.get('clip_id', ''))
+    note    = str(data.get('note', '')).strip()[:1000]
+
+    clips_data = state.get('clips_data') or {}
+    clips      = clips_data.get('clips', []) if isinstance(clips_data, dict) else []
+    target     = next((c for c in clips if str(c.get('clip_id', '')) == clip_id), None)
+    if target is None:
+        return jsonify({'ok': False, 'error': 'Clip not found'}), 404
+
+    if note:
+        target['_revision_flag'] = note
+    else:
+        target.pop('_revision_flag', None)
+
+    return jsonify({'ok': True})
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  RESULTS — final output + download
 # ══════════════════════════════════════════════════════════════════════
 
@@ -1888,6 +2402,24 @@ def clips_run():
 def results_page():
     pending = state.get("pending_batch_files")
     state["results_visited"] = True
+
+    # Auto-save to the active collection whenever the results page is visited
+    cid = state.get('collection_id')
+    if cid and (state.get('main_summary') or state.get('clips_data')):
+        srt_base = os.path.basename(state.get('srt_path') or '')
+        iname    = srt_base.replace('.srt', '') if srt_base else 'Interview'
+        result   = {
+            'interview_name':    iname,
+            'youtube_video_id':  state.get('youtube_video_id'),
+            'main_summary':      state.get('main_summary'),
+            'chapters':          state.get('chapters'),
+            'toc_bundle':        state.get('toc_bundle'),
+            'clips_data':        state.get('clips_data'),
+            'engagement_scores': state.get('engagement_scores'),
+            'questions_rows':    state.get('questions_rows'),
+        }
+        _autosave_interview(cid, iname, result)
+
     return render_template('results.html', state=state, pending_batch_count=len(pending) if pending else 0)
 
 
@@ -1911,6 +2443,15 @@ def results_download():
         "clips_data": state["clips_data"],
     }
 
+    # Attach playlists if clips exist
+    clips_data = state.get("clips_data") or {}
+    raw_clips = clips_data.get("clips", []) if isinstance(clips_data, dict) else []
+    if raw_clips:
+        yt_id = state.get("youtube_video_id") or ""
+        interview_name = os.path.basename(state.get("srt_path") or "Interview").replace(".srt", "")
+        enriched = _normalize_clips_for_playlist(raw_clips, yt_id, interview_name)
+        result["playlist"] = _build_playlists(enriched)
+
     payload = json.dumps(result, indent=2, ensure_ascii=False, default=str).encode('utf-8')
     return send_file(
         BytesIO(payload),
@@ -1930,7 +2471,8 @@ def results_continue_batch():
     sid = _get_session_id()
     params = _capture_batch_params()
     video_links_map = state.get("video_links_map") or {}
-    params["video_links_map"] = video_links_map
+    params["video_links_map"]  = video_links_map
+    params["collection_id"]    = state.get("collection_id")
     print(f"[batch] video_links_map keys: {list(video_links_map.keys())}")
 
     # Include the first (already processed) interview in results.
@@ -2291,6 +2833,9 @@ def run_progress():
 
 _BATCH_LOCK = Lock()
 _BATCH_JOBS = {}   # sid -> job dict
+
+_QUICK_RUN_LOCK = Lock()
+_QUICK_RUN_JOBS = {}   # sid -> job dict
 
 
 def _make_dev_batch_result(interview_name, youtube_video_id=None):
@@ -2709,6 +3254,9 @@ def _run_batch(sid, srt_files, params):
             with _BATCH_LOCK:
                 job["results"][name] = result
                 job["progress"]["completed"] = [n for n, r in job["results"].items() if not r.get("_processing")]
+
+            # Persist to collection if one is bound to this session
+            _autosave_interview(params.get("collection_id"), name, result)
         except Exception as e:
             traceback.print_exc()
             with _BATCH_LOCK:
@@ -2820,6 +3368,7 @@ def batch_start():
         except Exception:
             pass  # silently ignore malformed JSON
     params["primary_source_map"] = primary_source_map
+    params["collection_id"]     = state.get("collection_id")
 
     # Initialize job
     with _BATCH_LOCK:
@@ -2882,6 +3431,11 @@ def batch_results():
     selected = request.args.get('i', order[0] if order else None)
     selected_result = job["results"].get(selected)
 
+    has_any_clips = any(
+        bool((r.get('clips_data') or {}).get('clips'))
+        for r in job["results"].values()
+    )
+
     return render_template(
         'batch_results.html',
         state=state,
@@ -2890,6 +3444,7 @@ def batch_results():
         selected=selected,
         selected_result=selected_result,
         is_running=job.get("running", False),
+        has_any_clips=has_any_clips,
     )
 
 
@@ -2904,11 +3459,121 @@ def batch_download():
 
     buf = BytesIO()
     with zipfile.ZipFile(buf, 'w', zipfile.ZIP_DEFLATED) as zf:
+        all_enriched = []
         for name, result in job["results"].items():
             payload = json.dumps(result, indent=2, ensure_ascii=False, default=str)
             zf.writestr(f"{name}.json", payload)
+            cd = result.get("clips_data") or {}
+            raw_clips = cd.get("clips", []) if isinstance(cd, dict) else []
+            yt_id = result.get("youtube_video_id") or ""
+            all_enriched.extend(_normalize_clips_for_playlist(raw_clips, yt_id, name))
+        if all_enriched:
+            playlists = _build_playlists(all_enriched)
+            zf.writestr("playlist_short.json", json.dumps(playlists["short"], indent=2, ensure_ascii=False, default=str))
+            zf.writestr("playlist_long.json", json.dumps(playlists["long"], indent=2, ensure_ascii=False, default=str))
     buf.seek(0)
     return send_file(buf, mimetype='application/zip', as_attachment=True, download_name='batch_results.zip')
+
+
+# ── Playlist helpers ───────────────────────────────────────────────────
+
+def _srt_timestamp_to_seconds(ts: str) -> float:
+    """Convert 'HH:MM:SS,mmm' or 'HH:MM:SS.mmm' to seconds."""
+    if not ts:
+        return 0.0
+    ts = ts.replace(',', '.')
+    parts = ts.split(':')
+    try:
+        h, m, s = float(parts[0]), float(parts[1]), float(parts[2])
+        return h * 3600 + m * 60 + s
+    except (IndexError, ValueError):
+        return 0.0
+
+
+def _normalize_clips_for_playlist(clips: list, youtube_video_id: str, interview_name: str) -> list:
+    """Enrich raw clip dicts with derived fields needed by the player."""
+    enriched = []
+    for clip in clips:
+        start = _srt_timestamp_to_seconds(clip.get('timestamp_start', ''))
+        end = _srt_timestamp_to_seconds(clip.get('timestamp_end', ''))
+        score = (clip.get('scores') or {}).get('total_score')
+        km = (clip.get('transcript_excerpts') or {}).get('key_moment') or {}
+        enriched.append({
+            'clip_title': clip.get('clip_title', ''),
+            'interview_name': interview_name,
+            'youtube_video_id': youtube_video_id,
+            'timestamp_start': clip.get('timestamp_start', ''),
+            'timestamp_end': clip.get('timestamp_end', ''),
+            'start_seconds': start,
+            'end_seconds': end,
+            'score': score,
+            'key_moment_text': km.get('text', ''),
+            'thematic_tags': clip.get('thematic_tags') or {},
+        })
+    return enriched
+
+
+def _build_playlists(enriched_clips: list, min_score: int = 60) -> dict:
+    """Return short (top 3) and long (score >= min_score) playlists."""
+    scoreable = [c for c in enriched_clips if c.get('score') is not None]
+    sorted_clips = sorted(scoreable, key=lambda c: -(c['score']))
+    short = sorted_clips[:3]
+    long_ = [c for c in sorted_clips if c['score'] >= min_score]
+    return {'short': short, 'long': long_}
+
+
+@app.route('/playlist')
+def playlist_page():
+    """Single-interview playlist viewer."""
+    clips_data = state.get('clips_data') or {}
+    raw_clips  = clips_data.get('clips', []) if isinstance(clips_data, dict) else []
+    yt_id      = state.get('youtube_video_id') or ''
+    srt_base   = os.path.basename(state.get('srt_path') or '')
+    interview_name = srt_base.replace('.srt', '') if srt_base else 'Interview'
+
+    enriched  = _normalize_clips_for_playlist(raw_clips, yt_id, interview_name)
+    playlists = _build_playlists(enriched)
+
+    return render_template(
+        'playlist.html',
+        state=state,
+        playlists=playlists,
+        interview_name=interview_name,
+        is_batch=False,
+        back_url=url_for('results_page'),
+        has_clips=bool(raw_clips),
+        has_scored_clips=bool(playlists['short'] or playlists['long']),
+    )
+
+
+@app.route('/batch/playlist')
+def batch_playlist_page():
+    """Cross-interview playlist viewer from batch results."""
+    sid = _get_session_id()
+    with _BATCH_LOCK:
+        job = _BATCH_JOBS.get(sid)
+    if not job:
+        return redirect(url_for('batch_page'))
+
+    all_enriched = []
+    for name, result in job.get('results', {}).items():
+        cd        = result.get('clips_data') or {}
+        raw_clips = cd.get('clips', []) if isinstance(cd, dict) else []
+        yt_id     = result.get('youtube_video_id') or ''
+        all_enriched.extend(_normalize_clips_for_playlist(raw_clips, yt_id, name))
+
+    playlists = _build_playlists(all_enriched)
+
+    return render_template(
+        'playlist.html',
+        state=_get_state(),
+        playlists=playlists,
+        interview_name='All Interviews',
+        is_batch=True,
+        back_url=url_for('review_page'),
+        has_clips=bool(all_enriched),
+        has_scored_clips=bool(playlists['short'] or playlists['long']),
+    )
 
 
 # ══════════════════════════════════════════════════════════════════════

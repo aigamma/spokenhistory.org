@@ -1,0 +1,360 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as ui %}
+
+{% block title %}Playlists — {{ interview_name }} | Civil Rights History{% endblock %}
+
+{% block content %}
+<div class="app-playlist-page">
+    <nav aria-label="Breadcrumb" class="pf-v6-c-breadcrumb app-playlist-breadcrumb">
+        <ol class="pf-v6-c-breadcrumb__list" role="list">
+            <li class="pf-v6-c-breadcrumb__item">
+                <a href="{{ back_url }}" class="pf-v6-c-breadcrumb__link">
+                    {% if is_batch %}Collection Review{% else %}Results{% endif %}
+                </a>
+            </li>
+            <li class="pf-v6-c-breadcrumb__item pf-m-current" aria-current="page">
+                Playlists
+            </li>
+        </ol>
+    </nav>
+
+    {{ ui.page_header(
+        "Playlists",
+        interview_name,
+        eyebrow="Clip Playlists"
+    ) }}
+
+    {% if not has_clips %}
+    {{ ui.empty_state(
+        "No clips available",
+        "Run the Clips step to generate playlist-ready excerpts for this interview.",
+        action_href=back_url,
+        action_label="Back to " ~ ("Collection Review" if is_batch else "Results")
+    ) }}
+    {% elif not has_scored_clips %}
+    {{ ui.empty_state(
+        "Clips found, but none are scored",
+        "Clip scores are required to build playlists. Re-run the Clips step to generate scores.",
+        action_href=back_url,
+        action_label="Back to " ~ ("Collection Review" if is_batch else "Results")
+    ) }}
+    {% else %}
+    <div class="app-playlist-layout">
+        <!-- ── Left: player + now-playing info ── -->
+        <div class="app-playlist-player-col">
+            <div class="app-playlist-player-wrap">
+                <div id="yt-player"></div>
+                <div class="app-playlist-no-video pf-v6-c-empty-state pf-m-sm" id="no-video-notice" hidden>
+                    <div class="pf-v6-c-empty-state__body">No YouTube video linked for this clip.</div>
+                </div>
+            </div>
+
+            <div class="pf-v6-c-card pf-m-compact app-playlist-nowplaying" id="now-playing-card">
+                <div class="pf-v6-c-card__body">
+                    <p class="app-playlist-nowplaying-label">Now playing</p>
+                    <p class="app-playlist-nowplaying-title" id="np-title">—</p>
+                    <div class="app-playlist-nowplaying-meta">
+                        <span id="np-score-wrap"></span>
+                        {% if is_batch %}
+                        <span class="app-muted" id="np-interview"></span>
+                        {% endif %}
+                        <span class="app-muted" id="np-timestamps"></span>
+                    </div>
+                    <p class="app-playlist-nowplaying-excerpt" id="np-excerpt"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Right: tabs + clip list ── -->
+        <div class="app-playlist-sidebar-col">
+            <div class="pf-v6-c-tabs app-playlist-tabs" id="playlist-tabs">
+                <ul class="pf-v6-c-tabs__list" role="tablist" aria-label="Playlist type">
+                    <li class="pf-v6-c-tabs__item pf-m-current" role="presentation" id="tab-short-item">
+                        <button class="pf-v6-c-tabs__link" role="tab" id="tab-short" aria-controls="panel-short" aria-selected="true"
+                                onclick="switchTab('short')">
+                            <span class="pf-v6-c-tabs__item-text">
+                                Highlight Reel
+                                <span class="pf-v6-c-label pf-m-compact pf-m-blue" style="margin-inline-start:0.4rem;">
+                                    <span class="pf-v6-c-label__content">{{ playlists.short | length }}</span>
+                                </span>
+                            </span>
+                        </button>
+                    </li>
+                    <li class="pf-v6-c-tabs__item" role="presentation" id="tab-long-item">
+                        <button class="pf-v6-c-tabs__link" role="tab" id="tab-long" aria-controls="panel-long" aria-selected="false"
+                                onclick="switchTab('long')">
+                            <span class="pf-v6-c-tabs__item-text">
+                                Full Playlist
+                                <span class="pf-v6-c-label pf-m-compact" style="margin-inline-start:0.4rem;">
+                                    <span class="pf-v6-c-label__content">{{ playlists.long | length }}</span>
+                                </span>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="app-playlist-clip-list" id="clip-list" role="list" aria-label="Clips in playlist">
+                <!-- populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <div class="app-actions app-playlist-bottom-actions">
+        <a href="{{ back_url }}" class="pf-v6-c-button pf-m-secondary">
+            <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-arrow-left" aria-hidden="true"></i></span>
+            {% if is_batch %}Back to Collection{% else %}Back to Results{% endif %}
+        </a>
+        <form method="POST" action="{{ url_for('reset_session') }}" class="pf-v6-u-display-inline"
+              onsubmit="return confirm('Start a new project? All current pipeline results will be cleared.');">
+            <button type="submit" class="pf-v6-c-button pf-m-secondary">
+                <span class="pf-v6-c-button__icon pf-m-start"><i class="fas fa-plus" aria-hidden="true"></i></span>
+                Start new project
+            </button>
+        </form>
+    </div>
+    {% endif %}
+</div>
+
+<script id="playlist-data" type="application/json">
+{{ playlists | tojson }}
+</script>
+{% endblock %}
+
+{% block scripts %}
+{% if has_scored_clips %}
+<script>
+(function () {
+    var playlists    = JSON.parse(document.getElementById('playlist-data').textContent);
+    var currentTab   = 'short';
+    var currentIdx   = 0;
+    var player       = null;
+    var playerReady  = false;
+    var pendingClip  = null;
+    var clipWatcher  = null;   // interval that detects clip end via polling
+
+    // ── Helpers ────────────────────────────────────────────────────────
+    function scoreColor(score) {
+        if (score == null) return '';
+        if (score >= 75) return 'pf-m-green';
+        if (score >= 50) return 'pf-m-orange';
+        return 'pf-m-red';
+    }
+
+    // Convert SRT timestamp "HH:MM:SS,mmm" → "M:SS" or "H:MM:SS"
+    function fmtTs(ts) {
+        if (!ts) return '';
+        var clean = ts.replace(',', '.');
+        var parts = clean.split(':');
+        if (parts.length < 3) return clean;
+        var h     = parseInt(parts[0], 10);
+        var m     = parseInt(parts[1], 10);
+        var s     = parseInt(parseFloat(parts[2]), 10);
+        var total = h * 3600 + m * 60 + s;
+        var dh    = Math.floor(total / 3600);
+        var dm    = Math.floor((total % 3600) / 60);
+        var ds    = total % 60;
+        var mm    = String(dm).padStart(2, '0');
+        var ss    = String(ds).padStart(2, '0');
+        return dh > 0 ? dh + ':' + mm + ':' + ss : dm + ':' + ss;
+    }
+
+    function currentList() {
+        return playlists[currentTab] || [];
+    }
+
+    // ── Clip-end watcher ───────────────────────────────────────────────
+    // YouTube's ENDED event fires when the *video* ends, not when the
+    // clip's endSeconds is reached. We poll getCurrentTime() instead.
+    function startClipWatcher(endSeconds) {
+        clearInterval(clipWatcher);
+        if (!endSeconds || endSeconds <= 0) return;
+        clipWatcher = setInterval(function () {
+            if (!playerReady || !player) return;
+            try {
+                if (player.getCurrentTime() >= endSeconds - 0.4) {
+                    clearInterval(clipWatcher);
+                    playNext();
+                }
+            } catch (e) {}
+        }, 350);
+    }
+
+    // ── UI updates ─────────────────────────────────────────────────────
+    function renderClipList() {
+        var list      = currentList();
+        var container = document.getElementById('clip-list');
+        if (!list.length) {
+            container.innerHTML =
+                '<div class="pf-v6-c-empty-state pf-m-sm" role="listitem">' +
+                '<div class="pf-v6-c-empty-state__body">No clips in this playlist.</div></div>';
+            return;
+        }
+        container.innerHTML = list.map(function (clip, idx) {
+            var score      = clip.score;
+            var colorClass = scoreColor(score);
+            var isActive   = (idx === currentIdx);
+            return (
+                '<div class="app-playlist-clip-item pf-v6-c-card pf-m-compact' +
+                    (isActive ? ' app-playlist-clip-item--active' : '') + '"' +
+                    ' role="listitem" tabindex="0"' +
+                    ' onclick="playClip(' + idx + ')"' +
+                    ' onkeydown="if(event.key===\'Enter\'||event.key===\' \')playClip(' + idx + ')"' +
+                    ' id="clip-item-' + idx + '">' +
+                  '<div class="pf-v6-c-card__body">' +
+                    '<div class="app-playlist-clip-meta">' +
+                      (isActive
+                        ? '<span class="pf-v6-c-label pf-m-compact pf-m-blue app-playlist-now-label"><span class="pf-v6-c-label__content">&#9654; Playing</span></span>'
+                        : '<span class="app-playlist-clip-num">' + (idx + 1) + '</span>') +
+                      (score != null
+                        ? '<span class="pf-v6-c-label pf-m-compact ' + colorClass + '"><span class="pf-v6-c-label__content">' + score + '</span></span>'
+                        : '') +
+                    '</div>' +
+                    '<p class="app-playlist-clip-title">' + escHtml(clip.clip_title || 'Untitled clip') + '</p>' +
+                    (clip.interview_name
+                      ? '<p class="app-muted app-playlist-clip-interview">' + escHtml(clip.interview_name) + '</p>'
+                      : '') +
+                    '<p class="app-muted app-playlist-clip-ts">' +
+                      fmtTs(clip.timestamp_start) + ' – ' + fmtTs(clip.timestamp_end) +
+                    '</p>' +
+                  '</div>' +
+                '</div>'
+            );
+        }).join('');
+    }
+
+    function escHtml(str) {
+        return String(str || '')
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function updateNowPlaying(clip) {
+        var titleEl    = document.getElementById('np-title');
+        var scoreWrap  = document.getElementById('np-score-wrap');
+        var interviewEl = document.getElementById('np-interview');
+        var tsEl       = document.getElementById('np-timestamps');
+        var excerptEl  = document.getElementById('np-excerpt');
+
+        if (!clip) { if (titleEl) titleEl.textContent = '—'; return; }
+
+        if (titleEl)    titleEl.textContent = clip.clip_title || 'Untitled clip';
+        if (scoreWrap) {
+            scoreWrap.innerHTML = clip.score != null
+                ? '<span class="pf-v6-c-label pf-m-compact ' + scoreColor(clip.score) + '">' +
+                  '<span class="pf-v6-c-label__content">Score: ' + clip.score + '</span></span>'
+                : '';
+        }
+        if (interviewEl) interviewEl.textContent = clip.interview_name || '';
+        if (tsEl)        tsEl.textContent = fmtTs(clip.timestamp_start) + ' – ' + fmtTs(clip.timestamp_end);
+        if (excerptEl)   excerptEl.textContent = clip.key_moment_text || '';
+    }
+
+    // ── Playback ───────────────────────────────────────────────────────
+    function loadClipIntoPlayer(clip) {
+        var noVideo  = document.getElementById('no-video-notice');
+        var playerEl = document.getElementById('yt-player');
+
+        clearInterval(clipWatcher);
+
+        if (!clip.youtube_video_id) {
+            if (noVideo)  noVideo.hidden = false;
+            if (playerEl) playerEl.style.display = 'none';
+            return;
+        }
+        if (noVideo)  noVideo.hidden = true;
+        if (playerEl) playerEl.style.display = '';
+
+        if (!playerReady || !player) { pendingClip = clip; return; }
+
+        player.loadVideoById({
+            videoId:      clip.youtube_video_id,
+            startSeconds: clip.start_seconds || 0,
+            endSeconds:   clip.end_seconds   || undefined,
+        });
+        startClipWatcher(clip.end_seconds);
+    }
+
+    window.playClip = function (idx) {
+        var list = currentList();
+        if (idx < 0 || idx >= list.length) return;
+        currentIdx = idx;
+        renderClipList();
+        var clip = list[idx];
+        updateNowPlaying(clip);
+        loadClipIntoPlayer(clip);
+        var item = document.getElementById('clip-item-' + idx);
+        if (item) item.scrollIntoView({ block: 'nearest' });
+    };
+
+    function playNext() {
+        var list = currentList();
+        if (currentIdx + 1 < list.length) playClip(currentIdx + 1);
+    }
+
+    window.switchTab = function (tab) {
+        currentTab = tab;
+        currentIdx = 0;
+        clearInterval(clipWatcher);
+
+        var shortItem = document.getElementById('tab-short-item');
+        var longItem  = document.getElementById('tab-long-item');
+        var shortBtn  = document.getElementById('tab-short');
+        var longBtn   = document.getElementById('tab-long');
+
+        if (tab === 'short') {
+            if (shortItem) shortItem.classList.add('pf-m-current');
+            if (longItem)  longItem.classList.remove('pf-m-current');
+            if (shortBtn)  shortBtn.setAttribute('aria-selected', 'true');
+            if (longBtn)   longBtn.setAttribute('aria-selected', 'false');
+        } else {
+            if (longItem)  longItem.classList.add('pf-m-current');
+            if (shortItem) shortItem.classList.remove('pf-m-current');
+            if (longBtn)   longBtn.setAttribute('aria-selected', 'true');
+            if (shortBtn)  shortBtn.setAttribute('aria-selected', 'false');
+        }
+
+        renderClipList();
+        var first = currentList()[0];
+        if (first) { updateNowPlaying(first); loadClipIntoPlayer(first); }
+    };
+
+    // ── YouTube IFrame API ─────────────────────────────────────────────
+    window.onYouTubeIframeAPIReady = function () {
+        player = new YT.Player('yt-player', {
+            width:  '100%',
+            height: '100%',
+            playerVars: { rel: 0, modestbranding: 1, origin: window.location.origin },
+            events: {
+                onReady: function () {
+                    playerReady = true;
+                    if (pendingClip) {
+                        var c    = pendingClip;
+                        pendingClip = null;
+                        player.loadVideoById({
+                            videoId:      c.youtube_video_id,
+                            startSeconds: c.start_seconds || 0,
+                            endSeconds:   c.end_seconds   || undefined,
+                        });
+                        startClipWatcher(c.end_seconds);
+                    }
+                },
+            },
+        });
+    };
+
+    // ── Init ───────────────────────────────────────────────────────────
+    renderClipList();
+    var firstClip = currentList()[0];
+    if (firstClip) {
+        updateNowPlaying(firstClip);
+        pendingClip = firstClip;
+    }
+
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+})();
+</script>
+{% endif %}
+{% endblock %}
