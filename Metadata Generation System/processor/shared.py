@@ -272,15 +272,42 @@ def load_prompt(ctx: ProcessorContext, filename: str) -> str:
 # ── Facts helpers ──────────────────────────────────────────────────────
 
 def get_relevant_facts(ctx: ProcessorContext, text: str) -> List[Dict[str, str]]:
-    """Scan text for known events, return matching facts."""
+    """Scan text for known events, return matching facts.
+
+    Matches the canonical event name (the dict key) and any aliases
+    listed in the entry's optional 'aliases' field. Aliases let a single
+    canonical entry catch multiple natural transcript phrasings without
+    polluting civil_rights_facts.json with duplicate entries -- for
+    example, 'Birmingham church bombing' and '16th Street Baptist' can
+    both match the canonical 'Sixteenth Street Baptist Church bombing'
+    entry via that entry's aliases list.
+
+    Matching uses word-boundary-anchored regex (\\b...\\b) rather than
+    a bare substring check so short aliases like 'SCLC', 'CORE', or
+    'MFDP' do not false-match against unrelated substrings (e.g.,
+    'scleroderma', 'scorecard', 'mfdpie'). Backward compatible: entries
+    without an 'aliases' field continue to match exactly as before, just
+    with the added word-boundary strictness.
+    """
     relevant = []
     text_lower = text.lower()
     for event_name, fact_data in ctx.facts.items():
-        if event_name.lower() in text_lower:
-            relevant.append({
-                "event": event_name,
-                "summary": fact_data.get("summary", "")
-            })
+        # Build the list of phrases to search for: the canonical event
+        # name plus any aliases declared in the entry. Lowercase for
+        # case-insensitive matching.
+        candidates = [event_name.lower()]
+        aliases = fact_data.get("aliases") or []
+        if isinstance(aliases, list):
+            candidates.extend(str(a).lower() for a in aliases if a)
+
+        for c in candidates:
+            pattern = r"\b" + re.escape(c) + r"\b"
+            if re.search(pattern, text_lower):
+                relevant.append({
+                    "event": event_name,
+                    "summary": fact_data.get("summary", "")
+                })
+                break  # One match per entry is enough; avoid duplicates.
     return relevant
 
 
