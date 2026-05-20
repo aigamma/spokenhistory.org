@@ -1,426 +1,689 @@
 {% extends "base.html" %}
+{% import "macros.html" as ui %}
 {% set active_step = 'clips' %}
 
 {% block title %}9. Clip Extraction — Pipeline Demo{% endblock %}
 
 {% block content %}
-<div class="step-header">
-    <h1>Step 9 — Clip Extraction</h1>
-    <p>Identify all viable clips from the interview for thematic playlists, educational materials, and museum exhibits. Each clip is scored on Topic/Event Coverage and Engagement Quality.</p>
-</div>
+{{ ui.page_header("Step 9 — Clip Extraction", "Identify and score viable clips.", "Pipeline step") }}
 
-<form action="{{ url_for('clips_run') }}" method="post" id="clips-form">
-    <div class="panel">
-        <div class="panel-label">Settings</div>
-        <div style="display: flex; align-items: center; gap: 16px; font-size: 13px;">
-            <label for="token_limit" style="color: #aaa;">Token limit per batch:</label>
-            <input type="number" id="token_limit" name="token_limit" value="{{ state.clips_token_limit | default(30000) }}" min="4000" max="200000" step="1000"
-                style="width: 120px; background: #1a1d21; border: 1px solid #333; color: #eee; padding: 4px 8px; border-radius: 4px; font-size: 13px;">
-            <span style="color: #555; font-size: 12px;">(batches sized by chapter word counts)</span>
+{% if clips_error %}
+{% call ui.alert("Clip extraction failed", "danger") %}
+<p>{{ clips_error }}</p>
+{% endcall %}
+{% endif %}
+
+{{ ui.status_card("Clip extraction status", None, [
+    ("Token limit", state.clips_token_limit | default(30000)),
+    ("Clips extracted", state.clips_data.clips|length if state.clips_data and state.clips_data.clips is defined else 0),
+]) }}
+
+<form action="{{ url_for('clips_run') }}" method="post" id="clips-form" class="pf-v6-c-form app-stack">
+    {% call ui.advanced_section("Advanced extraction settings", False, "Token limit and prompt sections.") %}
+    <div class="app-grid-3">
+        <div class="pf-v6-c-form__group">
+            <div class="pf-v6-c-form__group-label">
+                <label class="pf-v6-c-form__label" for="token_limit"><span class="pf-v6-c-form__label-text">Token limit per batch</span></label>
+            </div>
+            <div class="pf-v6-c-form__group-control">
+                <span class="pf-v6-c-form-control"><input type="number" id="token_limit" name="token_limit" value="{{ state.clips_token_limit | default(30000) }}" min="4000" max="200000" step="1000"></span>
+            </div>
         </div>
     </div>
-
-    <div class="panel">
-        <div class="panel-label">System Prompt Sections</div>
-
-        {# Tab bar #}
-        <div class="prompt-tab-bar" style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; border-bottom: 1px solid #2a2d31; padding-bottom: 8px;">
+    <div class="pf-v6-c-tabs" role="region" aria-label="Clip prompt sections">
+        <ul class="pf-v6-c-tabs__list" role="tablist">
             {% for section_id, label, filename in prompt_sections %}
-            <button type="button"
-                class="prompt-tab-btn{% if loop.first %} active{% endif %}"
-                onclick="showPromptTab('{{ section_id }}')"
-                data-section="{{ section_id }}"
-                style="padding: 4px 12px; font-size: 12px; background: {% if loop.first %}#2d5a8e{% else %}#1a1d21{% endif %}; color: {% if loop.first %}#eee{% else %}#777{% endif %}; border: 1px solid #333; border-radius: 4px; cursor: pointer;">
-                {{ label }}
-            </button>
+            <li class="pf-v6-c-tabs__item{% if loop.first %} pf-m-current{% endif %}" role="presentation">
+                <button type="button" class="pf-v6-c-tabs__link" role="tab" id="tab-{{ section_id }}" aria-controls="panel-{{ section_id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}" data-section="{{ section_id }}"><span class="pf-v6-c-tabs__item-text">{{ label }}</span></button>
+            </li>
             {% endfor %}
-        </div>
-
-        {# Tab panes #}
-        {% for section_id, label, filename in prompt_sections %}
-        <div id="prompt-tab-{{ section_id }}" class="prompt-tab-pane" style="display: {% if loop.first %}block{% else %}none{% endif %};">
-            <textarea name="prompt_section_{{ section_id }}" class="prompt-box" style="min-height: 400px;">{{ state.clips_prompt_sections.get(section_id, '') }}</textarea>
-        </div>
-        {% endfor %}
+        </ul>
     </div>
+    {% for section_id, label, filename in prompt_sections %}
+    <section id="panel-{{ section_id }}" role="tabpanel" aria-labelledby="tab-{{ section_id }}" tabindex="0" class="prompt-tab-pane"{% if not loop.first %} hidden{% endif %}>
+        <textarea name="prompt_section_{{ section_id }}" class="prompt-box app-tall">{{ state.clips_prompt_sections.get(section_id, '') }}</textarea>
+    </section>
+    {% endfor %}
+    {% endcall %}
 
-    <div class="btn-row">
-        <button type="submit" class="btn btn-primary" id="run-btn">Run Clip Extraction</button>
-        <a href="{{ url_for('engagement_page') if state.steps_enabled.engagement else url_for('tuning_page') }}" class="btn btn-secondary">← Back</a>
+    <div class="app-actions">
+        <button type="submit" class="pf-v6-c-button pf-m-primary" id="run-btn">{% if state.clips_data %}<i class="fas fa-check app-btn-check" aria-hidden="true"></i> {% endif %}Run clip extraction</button>
+        <a href="{{ url_for('engagement_page') if state.steps_enabled.engagement else url_for('tuning_page') }}" class="pf-v6-c-button pf-m-secondary">Back</a>
     </div>
 </form>
 
-{% if clips_error %}
-<div class="panel" style="margin-top: 24px; border-color: #b42318;">
-    <div class="panel-label" style="color: #f04438;">Extraction Error</div>
-    <div class="output-block" style="color: #f5f5f5;">{{ clips_error }}</div>
-</div>
-{% endif %}
-
 {% if state.clips_data and state.clips_data.clips is defined %}
 {% set cd = state.clips_data %}
-
-{# ── SECTION 1: Summary ── #}
-<div class="panel" style="margin-top: 24px;">
-    <div class="panel-label">Extraction Summary</div>
-
-    {# Interview metadata row #}
-    {% if cd.interview_metadata is defined %}
-    {% set im = cd.interview_metadata %}
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; font-size: 13px;">
-        {% if im.interviewee_name %}
-        <div><span style="color: #666;">Interviewee:</span> <span style="color: #ccc;">{{ im.interviewee_name }}</span></div>
-        {% endif %}
-        {% if im.interview_date %}
-        <div><span style="color: #666;">Date:</span> <span style="color: #ccc;">{{ im.interview_date }}</span></div>
-        {% endif %}
-        {% if im.total_duration %}
-        <div><span style="color: #666;">Duration:</span> <span style="color: #ccc;">{{ im.total_duration }}</span></div>
-        {% endif %}
-        {% if im.total_segments %}
-        <div><span style="color: #666;">Segments:</span> <span style="color: #ccc;">{{ im.total_segments }}</span></div>
-        {% endif %}
-        {% if im.total_words %}
-        <div><span style="color: #666;">Words:</span> <span style="color: #ccc;">{{ im.total_words }}</span></div>
-        {% endif %}
+{% if cd.extraction_summary is defined %}
+{% set es = cd.extraction_summary %}
+<div class="app-summary-grid">
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Total clips</div>
+        <div class="app-summary-stat-value">{{ es.total_clips_extracted | default(es.total_clips | default(0)) }}</div>
     </div>
-    {% endif %}
-
-    {# Key extraction stats #}
-    {% if cd.extraction_summary is defined %}
-    {% set es = cd.extraction_summary %}
-    <div style="display: flex; gap: 24px; align-items: baseline; margin-bottom: 16px; flex-wrap: wrap;">
-        <div>
-            <span style="font-size: 32px; font-weight: 700; color: #8ad;">{{ es.total_clips_extracted | default(0) }}</span>
-            <span style="font-size: 13px; color: #666; margin-left: 4px;">clips</span>
-        </div>
-        {% if es.average_clip_score is defined %}
-        <div>
-            <span style="font-size: 24px; font-weight: 600; color:
-                {% if es.average_clip_score >= 80 %}#8e8
-                {% elif es.average_clip_score >= 60 %}#ee8
-                {% else %}#e88{% endif %};">
-                {{ "%.1f"|format(es.average_clip_score) }}
-            </span>
-            <span style="font-size: 13px; color: #666; margin-left: 4px;">avg score</span>
-        </div>
-        {% endif %}
-        {% if es.total_clips_duration %}
-        <div>
-            <span style="font-size: 18px; font-weight: 600; color: #ccc;">{{ es.total_clips_duration }}</span>
-            <span style="font-size: 13px; color: #666; margin-left: 4px;">total duration</span>
-        </div>
-        {% endif %}
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Average score</div>
+        <div class="app-summary-stat-value">{{ "%.1f"|format(es.average_clip_score) if es.average_clip_score is defined else '—' }}</div>
     </div>
-
-    {# Score distribution #}
-    {% if es.score_distribution is defined %}
-    <div style="margin-bottom: 16px;">
-        <div style="font-size: 12px; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Score Distribution</div>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            {% for range_label, count in es.score_distribution.items() %}
-            {% if count > 0 %}
-            <span class="score-badge {% if range_label.startswith('9') or range_label.startswith('8') %}score-pass{% else %}score-fail{% endif %}" style="font-size: 12px;">
-                {{ range_label }}: {{ count }}
-            </span>
-            {% endif %}
-            {% endfor %}
-        </div>
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Total duration</div>
+        <div class="app-summary-stat-value">{{ es.total_clips_duration | hms if es.total_clips_duration else '—' }}</div>
     </div>
-    {% endif %}
-
-    {# Topic coverage #}
-    {% if es.topic_coverage is defined %}
-    <div style="margin-bottom: 8px;">
-        <div style="font-size: 12px; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Topic Coverage</div>
-        <div style="display: grid; gap: 6px;">
-            {% for topic, count in es.topic_coverage.items() %}
-            {% if count > 0 %}
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <span style="font-size: 12px; color: #aaa; min-width: 280px;">{{ topic }}</span>
-                <div style="flex: 1; height: 6px; background: #1a1d21; border-radius: 3px; overflow: hidden; max-width: 200px;">
-                    <div style="height: 100%; width: {{ [count * 15, 100] | min }}%; background: #2d5a8e; border-radius: 3px;"></div>
-                </div>
-                <span style="font-size: 12px; color: #666;">{{ count }}</span>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
+    <div class="app-summary-stat">
+        <div class="app-summary-stat-label">Topic coverage</div>
+        <div class="app-summary-stat-value">{{ es.topic_coverage|length if es.topic_coverage is defined else 0 }}</div>
     </div>
-    {% endif %}
-
-    {# Event coverage #}
-    {% if es.event_coverage is defined and es.event_coverage %}
-    <div>
-        <div style="font-size: 12px; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Key Events Covered</div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-            {% for event, count in es.event_coverage.items() %}
-            {% if count > 0 %}
-            <span style="font-size: 12px; color: #8ad; background: #1a2a3a; padding: 3px 8px; border-radius: 4px;">{{ event }} ({{ count }})</span>
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-    {% endif %}
-</div>
-
-{# ── SECTION 2: Individual Clips ── #}
-{% if cd.clips %}
-<div class="panel">
-    <div class="panel-label">Clips ({{ cd.clips | length }})</div>
-
-    {% for clip in cd.clips %}
-    {% set clip_score = clip.scores.total_score | default(0) %}
-    <div class="chapter-card" style="margin-bottom: 16px; border-left: 3px solid
-        {% if clip_score >= 80 %}#2d6a2d
-        {% elif clip_score >= 60 %}#6a6a2d
-        {% else %}#3a3a4a{% endif %};">
-        <div style="display: flex; gap: 16px; align-items: flex-start;">
-        <div style="flex: 1; min-width: 0;">
-
-        {# Clip header #}
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap;">
-            <div>
-                <div class="chapter-num" style="font-size: 14px;">
-                    {{ clip.clip_id }} — {{ clip.clip_title }}
-                </div>
-                <div class="chapter-time" style="margin-top: 2px;">
-                    {{ clip.timestamp_start }} → {{ clip.timestamp_end }}
-                    {% if clip.duration %} · {{ clip.duration }}{% endif %}
-                    {% if clip.segment_start is defined %} · seg {{ clip.segment_start }}–{{ clip.segment_end }}{% endif %}
-                </div>
-            </div>
-            <div style="text-align: right; flex-shrink: 0;">
-                <span style="font-size: 22px; font-weight: 700; color:
-                    {% if clip_score >= 80 %}#8e8
-                    {% elif clip_score >= 60 %}#ee8
-                    {% else %}#e88{% endif %};">
-                    {{ clip_score }}/100
-                </span>
-            </div>
-        </div>
-
-        {# Score breakdown #}
-        {% if clip.scores is defined %}
-        <div style="display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: #777; flex-wrap: wrap;">
-            {% if clip.scores.topic_event_coverage is defined %}
-            {% set tec = clip.scores.topic_event_coverage %}
-            <div>
-                <span style="color: #555;">Topic/Event:</span>
-                <span style="color: #aaa; font-weight: 600;">{{ tec.total }}/50</span>
-                <span style="color: #444;"> (relevance {{ tec.topic_relevance }}/25, specificity {{ tec.event_specificity }}/25)</span>
-            </div>
-            {% endif %}
-            {% if clip.scores.engagement_quality is defined %}
-            {% set eq = clip.scores.engagement_quality %}
-            <div>
-                <span style="color: #555;">Engagement:</span>
-                <span style="color: #aaa; font-weight: 600;">{{ eq.total }}/50</span>
-                <span style="color: #444;"> (narrative {{ eq.narrative_power }}/20, emotion {{ eq.emotional_resonance }}/15, access {{ eq.accessibility }}/15)</span>
-            </div>
-            {% endif %}
-        </div>
-        {% endif %}
-
-        {# Thematic tags #}
-        {% if clip.thematic_tags is defined %}
-        <div style="margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
-            {% for topic in clip.thematic_tags.main_topics | default([]) %}
-            <span style="font-size: 11px; background: #1a2a3a; color: #8ad; padding: 2px 7px; border-radius: 3px;">{{ topic }}</span>
-            {% endfor %}
-            {% for event in clip.thematic_tags.key_events | default([]) %}
-            <span style="font-size: 11px; background: #2a1a1a; color: #e88; padding: 2px 7px; border-radius: 3px;">{{ event }}</span>
-            {% endfor %}
-            {% for kw in clip.thematic_tags.additional_keywords | default([]) %}
-            <span style="font-size: 11px; background: #1a1d21; color: #666; padding: 2px 7px; border-radius: 3px;">{{ kw }}</span>
-            {% endfor %}
-        </div>
-        {% endif %}
-
-        {# Content summary #}
-        {% if clip.content_summary is defined %}
-        {% set cs = clip.content_summary %}
-        <div style="margin-top: 10px; font-size: 13px; color: #bbb;">
-            {% if cs.primary_focus %}<p style="margin: 0 0 6px;">{{ cs.primary_focus }}</p>{% endif %}
-            {% if cs.why_valuable %}<p style="margin: 0; color: #888; font-style: italic;">{{ cs.why_valuable }}</p>{% endif %}
-        </div>
-        {% if cs.key_details %}
-        <ul style="margin: 8px 0 0; padding-left: 16px; font-size: 12px; color: #777;">
-            {% for detail in cs.key_details %}
-            <li style="margin-bottom: 2px;">{{ detail }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endif %}
-
-        {# Transcript excerpts #}
-        {% if clip.transcript_excerpts is defined %}
-        {% set te = clip.transcript_excerpts %}
-        <div style="margin-top: 10px; display: grid; gap: 6px;">
-            {% if te.opening_lines is defined and te.opening_lines.text %}
-            <div style="font-size: 12px;">
-                <span style="color: #555; text-transform: uppercase; letter-spacing: 0.04em;">Opening</span>
-                <span style="color: #666; margin-left: 6px;">{{ te.opening_lines.timestamp }}</span>
-                <div style="color: #bbb; font-style: italic; margin-top: 2px; padding-left: 8px; border-left: 2px solid #2a2d31;">"{{ te.opening_lines.text[:200] }}{% if te.opening_lines.text|length > 200 %}…{% endif %}"</div>
-            </div>
-            {% endif %}
-            {% if te.key_moment is defined and te.key_moment.text %}
-            <div style="font-size: 12px;">
-                <span style="color: #555; text-transform: uppercase; letter-spacing: 0.04em;">Key Moment</span>
-                <span style="color: #666; margin-left: 6px;">{{ te.key_moment.timestamp }}</span>
-                <div style="color: #ccc; font-style: italic; margin-top: 2px; padding-left: 8px; border-left: 2px solid #4a5a2a;">"{{ te.key_moment.text[:200] }}{% if te.key_moment.text|length > 200 %}…{% endif %}"</div>
-            </div>
-            {% endif %}
-            {% if te.closing_lines is defined and te.closing_lines.text %}
-            <div style="font-size: 12px;">
-                <span style="color: #555; text-transform: uppercase; letter-spacing: 0.04em;">Closing</span>
-                <span style="color: #666; margin-left: 6px;">{{ te.closing_lines.timestamp }}</span>
-                <div style="color: #aaa; font-style: italic; margin-top: 2px; padding-left: 8px; border-left: 2px solid #2a2d31;">"{{ te.closing_lines.text[:200] }}{% if te.closing_lines.text|length > 200 %}…{% endif %}"</div>
-            </div>
-            {% endif %}
-        </div>
-        {% endif %}
-
-        {# Standout moment #}
-        {% if clip.engagement_assessment is defined and clip.engagement_assessment.standout_moment is defined %}
-        {% set sm = clip.engagement_assessment.standout_moment %}
-        {% if sm.description %}
-        <div style="margin-top: 8px; font-size: 12px; color: #8ad; background: #0d1a28; padding: 6px 10px; border-radius: 4px;">
-            ★ <strong>Standout:</strong> {{ sm.description }}
-            {% if sm.timestamp %}<span style="color: #555; margin-left: 6px;">{{ sm.timestamp }}</span>{% endif %}
-        </div>
-        {% endif %}
-        {% endif %}
-
-        {# Technical notes #}
-        {% if clip.technical_notes is defined %}
-        {% set tn = clip.technical_notes %}
-        <div style="margin-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-            {% if tn.standalone_quality %}
-            <span style="font-size: 11px; color: #666;">
-                Standalone: <span style="color: {% if tn.standalone_quality == 'excellent' %}#8e8{% elif tn.standalone_quality == 'good' %}#ee8{% else %}#e88{% endif %};">{{ tn.standalone_quality }}</span>
-            </span>
-            {% endif %}
-            {% if tn.content_warnings %}
-            {% for w in tn.content_warnings %}
-            <span style="font-size: 11px; background: #3a1a1a; color: #e88; padding: 2px 6px; border-radius: 3px;">⚠ {{ w }}</span>
-            {% endfor %}
-            {% endif %}
-            {% if tn.editorial_notes %}
-            <span style="font-size: 11px; color: #555; font-style: italic;">{{ tn.editorial_notes }}</span>
-            {% endif %}
-        </div>
-        {% endif %}
-
-        </div>{# /flex: 1 content column #}
-        {% if state.youtube_video_id %}
-        <div style="flex-shrink: 0; padding-top: 4px;">
-            <iframe width="280" height="158"
-                src="https://www.youtube.com/embed/{{ state.youtube_video_id }}?start={{ clip.timestamp_start | to_seconds }}&end={{ clip.timestamp_end | to_seconds }}"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style="border-radius: 6px; display: block;">
-            </iframe>
-        </div>
-        {% endif %}
-        </div>{# /flex wrapper #}
-
-    </div>
-    {% endfor %}
 </div>
 {% endif %}
 
-{# ── SECTION 3: Extraction Notes (final section) ── #}
+{% if not state.youtube_video_id %}
+{% call ui.alert("Video preview unavailable", "info") %}
+<p>Add a YouTube URL for this interview on the <a href="{{ url_for('upload_page') }}">Upload page</a> to enable inline video playback.</p>
+{% endcall %}
+{% endif %}
+
+<section class="pf-v6-c-card">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Clips</h2>
+        </div>
+        <div class="pf-v6-c-card__actions">
+            <span class="app-muted" style="font-size:0.8rem;">
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Click the pencil icon on any field to edit
+            </span>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body app-stack">
+        {% for clip in cd.clips %}
+        {% set clip_score = clip.scores.total_score | default(0) %}
+        {% set score_overridden = clip.scores._overridden | default(false) if clip.scores is defined else false %}
+        {% set is_flagged = clip._revision_flag is defined and clip._revision_flag %}
+        {% set score_class = 'pf-m-green' if clip_score >= 80 else ('pf-m-orange' if clip_score >= 60 else 'pf-m-red') %}
+
+        <div class="chapter-card{% if is_flagged %} app-clip-flagged{% endif %}" id="clip-card-{{ loop.index }}">
+
+            {# ── Header row ── #}
+            <div class="app-row-between app-clip-header">
+                <div class="app-fill" style="min-width: 0;">
+
+                    {# Inline-edit: clip title #}
+                    <div class="pf-v6-c-inline-edit app-ie-title"
+                         id="ie-title-{{ loop.index }}"
+                         data-clip-id="{{ clip.clip_id | e }}"
+                         data-field="clip_title">
+                        <div class="pf-v6-c-inline-edit__group">
+                            <span class="pf-v6-c-inline-edit__value">
+                                <span class="chapter-num">
+                                    <span class="app-clip-id-prefix">{{ clip.clip_id }} — </span><span class="app-clip-title-text">{{ clip.clip_title }}</span>
+                                </span>
+                            </span>
+                            <span class="pf-v6-c-inline-edit__action pf-m-enable-editable">
+                                <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Edit clip title">
+                                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="pf-v6-c-inline-edit__group pf-m-input-group">
+                            <div class="pf-v6-c-inline-edit__input">
+                                <span class="pf-v6-c-form-control">
+                                    <input type="text" value="{{ clip.clip_title | e }}" maxlength="200" aria-label="Clip title">
+                                </span>
+                            </div>
+                            <div class="pf-v6-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+                                <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Save title">
+                                        <i class="fas fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="pf-v6-c-inline-edit__action">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Cancel edit">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chapter-time">{{ clip.timestamp_start | hms }} → {{ clip.timestamp_end | hms }}{% if clip.duration %} · {{ clip.duration | hms }}{% endif %}</div>
+                </div>
+
+                <div class="app-row-center app-shrink-0 app-clip-actions" style="gap: 0.5rem; align-self: flex-start;">
+
+                    {# Inline-edit: score override #}
+                    <div class="pf-v6-c-inline-edit app-ie-score"
+                         id="ie-score-{{ loop.index }}"
+                         data-clip-id="{{ clip.clip_id | e }}"
+                         data-field="score_override">
+                        <div class="pf-v6-c-inline-edit__group" style="align-items: center; gap: 0.25rem;">
+                            <span class="pf-v6-c-inline-edit__value">
+                                <span class="pf-v6-c-label pf-m-compact {{ score_class }}{% if score_overridden %} app-score-overridden{% endif %}">
+                                    <span class="pf-v6-c-label__content app-score-display">{{ clip_score }}/100</span>
+                                </span>
+                            </span>
+                            <span class="pf-v6-c-inline-edit__action pf-m-enable-editable">
+                                <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Override score">
+                                    <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="pf-v6-c-inline-edit__group pf-m-input-group" style="align-items: center;">
+                            <div class="pf-v6-c-inline-edit__input">
+                                <span class="pf-v6-c-form-control" style="width: 4.5rem;">
+                                    <input type="number" value="{{ clip_score }}" min="0" max="100" aria-label="Score override (0–100)">
+                                </span>
+                            </div>
+                            <div class="pf-v6-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+                                <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Save score">
+                                        <i class="fas fa-check" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                                <div class="pf-v6-c-inline-edit__action">
+                                    <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Cancel">
+                                        <i class="fas fa-times" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Flag for revision button #}
+                    <button type="button"
+                            class="pf-v6-c-button pf-m-plain pf-m-small app-flag-btn{% if is_flagged %} app-flag-btn--active{% endif %}"
+                            data-clip-id="{{ clip.clip_id | e }}"
+                            data-clip-title="{{ clip.clip_title | e }}"
+                            data-flag="{{ clip._revision_flag | e if is_flagged else '' }}"
+                            aria-label="{% if is_flagged %}Revision flagged — click to edit{% else %}Flag for revision{% endif %}"
+                            title="{% if is_flagged %}Flagged: {{ clip._revision_flag | e }}{% else %}Flag for revision{% endif %}">
+                        <i class="fas fa-flag" aria-hidden="true"></i>
+                    </button>
+
+                    {% if state.youtube_video_id %}
+                    <button type="button"
+                            class="pf-v6-c-button pf-m-secondary pf-m-small app-clip-watch-btn"
+                            aria-expanded="false"
+                            aria-controls="clip-player-{{ loop.index }}">
+                        <i class="fas fa-play" aria-hidden="true"></i> Watch
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+
+            {# ── Tags — inline-editable ── #}
+            {% set main_topics = clip.thematic_tags.main_topics | default([]) if clip.thematic_tags is defined else [] %}
+            {% set key_events  = clip.thematic_tags.key_events  | default([]) if clip.thematic_tags is defined else [] %}
+
+            <div class="pf-v6-c-inline-edit app-ie-tags app-mt-sm"
+                 id="ie-tags-{{ loop.index }}"
+                 data-clip-id="{{ clip.clip_id | e }}"
+                 data-field="main_topics">
+                <div class="pf-v6-c-inline-edit__group" style="flex-wrap: wrap; gap: 0.4rem; align-items: center;">
+                    <div class="pf-v6-c-inline-edit__value app-clip-tags app-inline-list">
+                        {% for topic in main_topics %}
+                        <span class="pf-v6-c-label pf-m-compact pf-m-green"><span class="pf-v6-c-label__content">{{ topic }}</span></span>
+                        {% endfor %}
+                        {% for event in key_events %}
+                        <span class="pf-v6-c-label pf-m-compact"><span class="pf-v6-c-label__content">{{ event }}</span></span>
+                        {% endfor %}
+                        {% if not main_topics and not key_events %}
+                        <span class="app-muted" style="font-size:0.8rem;">No topics tagged</span>
+                        {% endif %}
+                    </div>
+                    <span class="pf-v6-c-inline-edit__action pf-m-enable-editable">
+                        <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Edit topics">
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                </div>
+                <div class="pf-v6-c-inline-edit__group pf-m-input-group" style="align-items: center;">
+                    <div class="pf-v6-c-inline-edit__input" style="flex: 1;">
+                        <span class="pf-v6-c-form-control" style="width: 100%;">
+                            <input type="text"
+                                   value="{{ main_topics | join(', ') }}"
+                                   placeholder="topic1, topic2, topic3"
+                                   aria-label="Edit topics (comma-separated)">
+                        </span>
+                    </div>
+                    <div class="pf-v6-c-inline-edit__group pf-m-action-group pf-m-icon-group">
+                        <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                            <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Save topics">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="pf-v6-c-inline-edit__action">
+                            <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Cancel">
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# ── Content summary — inline-editable ── #}
+            {% set summary_text = clip.content_summary.primary_focus if clip.content_summary is defined and clip.content_summary.primary_focus else '' %}
+            <div class="pf-v6-c-inline-edit app-ie-summary app-mt-sm"
+                 id="ie-summary-{{ loop.index }}"
+                 data-clip-id="{{ clip.clip_id | e }}"
+                 data-field="content_summary">
+                <details class="app-compact-details">
+                    <summary>
+                        Content summary
+                        <span class="pf-v6-c-inline-edit__action pf-m-enable-editable" style="display:inline-flex; margin-inline-start:0.4rem;">
+                            <button class="pf-v6-c-button pf-m-plain pf-m-small" type="button" aria-label="Edit summary"
+                                    onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('ie-summary-{{ loop.index }}').classList.add('pf-m-inline-editable'); document.getElementById('ie-summary-{{ loop.index }}').querySelector('details').open=true;">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                            </button>
+                        </span>
+                    </summary>
+                    <div class="pf-v6-c-inline-edit__value app-mt-sm" id="ie-summary-val-{{ loop.index }}">{{ summary_text }}</div>
+                    <div class="pf-v6-c-inline-edit__group pf-m-input-group app-mt-sm" style="flex-direction:column; gap:0.5rem;">
+                        <span class="pf-v6-c-form-control">
+                            <textarea rows="3" aria-label="Edit content summary" style="width:100%;">{{ summary_text | e }}</textarea>
+                        </span>
+                        <div class="pf-v6-c-inline-edit__group pf-m-action-group" style="gap:0.5rem;">
+                            <div class="pf-v6-c-inline-edit__action pf-m-valid">
+                                <button class="pf-v6-c-button pf-m-primary pf-m-small" type="button" aria-label="Save summary">
+                                    <i class="fas fa-check" aria-hidden="true"></i> Save
+                                </button>
+                            </div>
+                            <div class="pf-v6-c-inline-edit__action">
+                                <button class="pf-v6-c-button pf-m-secondary pf-m-small" type="button" aria-label="Cancel">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            {# ── Flagged note display ── #}
+            {% if is_flagged %}
+            <div class="pf-v6-c-helper-text app-clip-flag-note" id="flag-note-{{ loop.index }}">
+                <div class="pf-v6-c-helper-text__item pf-m-warning">
+                    <span class="pf-v6-c-helper-text__item-icon"><i class="fas fa-flag" aria-hidden="true"></i></span>
+                    <span class="pf-v6-c-helper-text__item-text">Flagged for revision: {{ clip._revision_flag }}</span>
+                </div>
+            </div>
+            {% else %}
+            <div class="pf-v6-c-helper-text app-clip-flag-note" id="flag-note-{{ loop.index }}" hidden></div>
+            {% endif %}
+
+            {# ── Expandable video player + transcript ── #}
+            {% if state.youtube_video_id %}
+            <div id="clip-player-{{ loop.index }}" class="app-clip-player" hidden>
+                <div class="app-clip-player-inner">
+                    <iframe class="app-clip-player-frame"
+                            data-src="https://www.youtube-nocookie.com/embed/{{ state.youtube_video_id }}?start={{ clip.timestamp_start | to_seconds }}&end={{ clip.timestamp_end | to_seconds }}&autoplay=1&rel=0"
+                            title="Video preview: {{ clip.clip_title }}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    <div class="app-clip-transcript">
+                        {% if clip.transcript_excerpts is defined %}
+                        {% set te = clip.transcript_excerpts %}
+                        {% if te.opening_lines is defined and te.opening_lines.text %}
+                        <div class="app-clip-excerpt">
+                            <div class="app-clip-excerpt-label">Opening{% if te.opening_lines.timestamp %} <span class="app-muted">· {{ te.opening_lines.timestamp | hms }}</span>{% endif %}</div>
+                            <blockquote class="app-clip-quote">{{ te.opening_lines.text }}</blockquote>
+                        </div>
+                        {% endif %}
+                        {% if te.key_moment is defined and te.key_moment.text %}
+                        <div class="app-clip-excerpt">
+                            <div class="app-clip-excerpt-label">Key moment{% if te.key_moment.timestamp %} <span class="app-muted">· {{ te.key_moment.timestamp | hms }}</span>{% endif %}</div>
+                            <blockquote class="app-clip-quote app-clip-quote--key">{{ te.key_moment.text }}</blockquote>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        {% if clip.engagement_assessment is defined %}
+                        {% set ea = clip.engagement_assessment %}
+                        {% if ea.standout_moment is defined and ea.standout_moment.description %}
+                        <div class="app-clip-standout">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <em>{{ ea.standout_moment.description }}</em>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
 {% if cd.extraction_notes is defined %}
-{% set en = cd.extraction_notes %}
-<div class="panel">
-    <div class="panel-label">Extraction Notes</div>
-
-    {% if en.interview_strengths %}
-    <div style="margin-bottom: 12px;">
-        <div style="font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Interview Strengths</div>
-        <div style="font-size: 13px; color: #bbb;">{{ en.interview_strengths }}</div>
+{% call ui.advanced_section("Extraction notes", False) %}
+    <div class="app-stack">
+        {% if cd.extraction_notes.interview_strengths %}
+        <div><strong>Interview strengths:</strong> {{ cd.extraction_notes.interview_strengths }}</div>
+        {% endif %}
+        {% if cd.extraction_notes.coverage_gaps %}
+        <div><strong>Coverage gaps:</strong> {{ cd.extraction_notes.coverage_gaps }}</div>
+        {% endif %}
     </div>
-    {% endif %}
+{% endcall %}
+{% endif %}
 
-    {% if en.coverage_gaps %}
-    <div style="margin-bottom: 12px;">
-        <div style="font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Coverage Gaps</div>
-        <div style="font-size: 13px; color: #888;">{{ en.coverage_gaps }}</div>
-    </div>
-    {% endif %}
+<div class="app-actions">
+    <a href="{{ url_for('results_page') }}" class="pf-v6-c-button pf-m-primary">Continue to results</a>
+    <button type="button" class="pf-v6-c-button pf-m-secondary" onclick="if(confirm('Re-run clip extraction? Current clips will be replaced.')) document.getElementById('clips-form').submit();">Re-run extraction</button>
+</div>
+{% else %}
+{{ ui.empty_state("No clips yet", "Run clip extraction to continue.") }}
 
-    {% if en.highest_scoring_clips %}
-    <div style="margin-bottom: 12px;">
-        <div style="font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Highest Scoring Clips</div>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
-            {% for clip_id in en.highest_scoring_clips %}
-            <span style="font-size: 12px; background: #1a2a1a; color: #8e8; padding: 3px 8px; border-radius: 4px; font-weight: 600;">{{ clip_id }}</span>
-            {% endfor %}
+<div class="app-actions">
+    <a href="{{ url_for('results_page') }}" class="pf-v6-c-button pf-m-primary">Continue to results</a>
+</div>
+{% endif %}
+
+{# ── Flag-for-revision modal (shared, one instance) ── #}
+<div class="app-rv-desc-modal" id="flag-modal" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="flag-modal-title">
+    <div class="pf-v6-c-modal-box pf-m-sm">
+        <div class="pf-v6-c-modal-box__close">
+            <button class="pf-v6-c-button pf-m-plain" type="button" id="flag-modal-close" aria-label="Close">
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
         </div>
-    </div>
-    {% endif %}
-
-    {% if en.recommended_for_topics is defined %}
-    <div>
-        <div style="font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;">Recommended by Topic</div>
-        <div style="display: grid; gap: 6px;">
-            {% for topic, clip_ids in en.recommended_for_topics.items() %}
-            {% if clip_ids %}
-            <div style="font-size: 12px;">
-                <span style="color: #8ad;">{{ topic }}:</span>
-                <span style="color: #666; margin-left: 6px;">{{ clip_ids | join(', ') }}</span>
+        <header class="pf-v6-c-modal-box__header">
+            <h1 class="pf-v6-c-modal-box__title pf-v6-c-title pf-m-xl" id="flag-modal-title">Flag for revision</h1>
+            <p class="pf-v6-c-modal-box__description" id="flag-modal-clip-name"></p>
+        </header>
+        <div class="pf-v6-c-modal-box__body">
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    <label class="pf-v6-c-form__label" for="flag-note-input">
+                        <span class="pf-v6-c-form__label-text">Revision note</span>
+                    </label>
+                    <span class="pf-v6-c-form__helper-text">Describe what needs to be changed. This note is saved with the clip and exported with your results.</span>
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control">
+                        <textarea id="flag-note-input" rows="4" maxlength="1000" placeholder="e.g. Re-summarize with focus on voting rights. The title undersells the emotional impact."></textarea>
+                    </span>
+                </div>
             </div>
-            {% endif %}
-            {% endfor %}
         </div>
+        <footer class="pf-v6-c-modal-box__footer">
+            <button type="button" class="pf-v6-c-button pf-m-primary" id="flag-modal-save">Save flag</button>
+            <button type="button" class="pf-v6-c-button pf-m-link" id="flag-modal-clear">Clear flag</button>
+            <button type="button" class="pf-v6-c-button pf-m-link" id="flag-modal-cancel">Cancel</button>
+        </footer>
     </div>
-    {% endif %}
-</div>
-{% endif %}
-
-<div class="btn-row" style="margin-top: 16px;">
-    <button type="button" class="btn btn-secondary" onclick="document.getElementById('clips-form').submit()">Re-run Extraction</button>
-</div>
-
-{% endif %}
-
-<div class="btn-row" style="margin-top: 16px;">
-    <a href="{{ url_for('results_page') }}" class="btn btn-primary">Continue to Results →</a>
-    {% if not state.clips_data %}
-    <span style="font-size: 12px; color: #666; margin-left: 8px;">You can skip this step</span>
-    {% endif %}
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script>
-    document.getElementById('clips-form').addEventListener('submit', function() {
-        document.getElementById('run-btn').innerHTML = '<span class="spinner"></span>Extracting clips (this may take 2-4 minutes)...';
-        document.getElementById('run-btn').disabled = true;
+    wireRunButton('clips-form', 'run-btn', 'Extracting clips...');
+
+    // ── Clip player toggle ──────────────────────────────────────────────
+    (function () {
+        var activePanel = null;
+        var activeBtn   = null;
+
+        function closePlayer(panel, btn) {
+            panel.hidden = true;
+            btn.setAttribute('aria-expanded', 'false');
+            btn.innerHTML = '<i class="fas fa-play" aria-hidden="true"></i> Watch';
+            var iframe = panel.querySelector('iframe');
+            if (iframe) iframe.removeAttribute('src');
+        }
+
+        function openPlayer(panel, btn) {
+            panel.hidden = false;
+            btn.setAttribute('aria-expanded', 'true');
+            btn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i> Close';
+            var iframe = panel.querySelector('iframe[data-src]');
+            if (iframe && !iframe.src) iframe.src = iframe.dataset.src;
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        document.querySelectorAll('.app-clip-watch-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var panel = document.getElementById(btn.getAttribute('aria-controls'));
+                if (!panel) return;
+                var isOpen = !panel.hidden;
+                if (activePanel && activePanel !== panel) closePlayer(activePanel, activeBtn);
+                if (isOpen) { closePlayer(panel, btn); activePanel = null; activeBtn = null; }
+                else        { openPlayer(panel, btn);  activePanel = panel; activeBtn = btn; }
+            });
+        });
+    })();
+
+    // ── Prompt tab switching ────────────────────────────────────────────
+    document.querySelectorAll('.pf-v6-c-tabs__link[role="tab"]').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            var section = tab.getAttribute('data-section');
+            if (!section) return;   // skip tabs without data-section (e.g. playlist tabs)
+            document.querySelectorAll('.pf-v6-c-tabs__link[role="tab"][data-section]').forEach(function (t) {
+                var isActive = t === tab;
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                t.setAttribute('tabindex', isActive ? '0' : '-1');
+                t.parentElement.classList.toggle('pf-m-current', isActive);
+            });
+            document.querySelectorAll('[role="tabpanel"]').forEach(function (panel) {
+                panel.hidden = panel.id !== 'panel-' + section;
+            });
+        });
     });
 
-    function showPromptTab(sectionId) {
-        // Hide all panes
-        document.querySelectorAll('.prompt-tab-pane').forEach(function(el) {
-            el.style.display = 'none';
+    // ── Inline-edit wiring ──────────────────────────────────────────────
+    function escHtml(str) {
+        return String(str || '')
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function saveClipField(clipId, field, value, onSuccess, onError) {
+        fetch('/edit/clip', {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify({ clip_id: clipId, field: field, value: value }),
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+            if (data.ok) onSuccess();
+            else if (onError) onError(data.error || 'Save failed');
+        })
+        .catch(function () { if (onError) onError('Network error'); });
+    }
+
+    document.querySelectorAll('.pf-v6-c-inline-edit[data-clip-id]').forEach(function (ie) {
+        var clipId   = ie.dataset.clipId;
+        var field    = ie.dataset.field;
+        var editBtn  = ie.querySelector('.pf-m-enable-editable button');
+        var saveBtn  = ie.querySelector('.pf-m-valid button');
+        var cancelEl = ie.querySelector('.pf-m-action-group .pf-v6-c-inline-edit__action:not(.pf-m-valid) button');
+        var input    = ie.querySelector('input, textarea');
+
+        if (!editBtn || !saveBtn || !input) return;  // summary uses custom wiring
+
+        editBtn.addEventListener('click', function () {
+            ie.classList.add('pf-m-inline-editable');
+            input.focus();
+            if (input.select) input.select();
         });
-        // Deactivate all buttons
-        document.querySelectorAll('.prompt-tab-btn').forEach(function(btn) {
-            btn.style.background = '#1a1d21';
-            btn.style.color = '#777';
+
+        if (cancelEl) {
+            cancelEl.addEventListener('click', function () {
+                ie.classList.remove('pf-m-inline-editable');
+            });
+        }
+
+        saveBtn.addEventListener('click', function () {
+            var val = input.value;
+            saveBtn.disabled = true;
+            saveClipField(clipId, field, val, function () {
+                applyEdit(ie, field, val);
+                ie.classList.remove('pf-m-inline-editable');
+                saveBtn.disabled = false;
+            }, function (err) {
+                saveBtn.disabled = false;
+                alert('Could not save: ' + err);
+            });
         });
-        // Show selected pane
-        var pane = document.getElementById('prompt-tab-' + sectionId);
-        if (pane) pane.style.display = 'block';
-        // Activate selected button
-        var activeBtn = document.querySelector('.prompt-tab-btn[data-section="' + sectionId + '"]');
-        if (activeBtn) {
-            activeBtn.style.background = '#2d5a8e';
-            activeBtn.style.color = '#eee';
+
+        input.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' && field !== 'content_summary') saveBtn.click();
+            if (e.key === 'Escape' && cancelEl) cancelEl.click();
+        });
+    });
+
+    // Summary inline-edit wiring (uses textarea + custom open button)
+    document.querySelectorAll('.app-ie-summary[data-clip-id]').forEach(function (ie) {
+        var clipId  = ie.dataset.clipId;
+        var input   = ie.querySelector('textarea');
+        var saveBtn = ie.querySelector('.pf-m-valid button');
+        var cancelEl = ie.querySelector('.pf-v6-c-inline-edit__action:not(.pf-m-valid) button:not([onclick])');
+
+        if (!input || !saveBtn) return;
+
+        if (cancelEl) {
+            cancelEl.addEventListener('click', function () {
+                ie.classList.remove('pf-m-inline-editable');
+            });
+        }
+
+        saveBtn.addEventListener('click', function () {
+            var val = input.value;
+            saveBtn.disabled = true;
+            saveClipField(clipId, 'content_summary', val, function () {
+                applyEdit(ie, 'content_summary', val);
+                ie.classList.remove('pf-m-inline-editable');
+                saveBtn.disabled = false;
+            }, function (err) {
+                saveBtn.disabled = false;
+                alert('Could not save: ' + err);
+            });
+        });
+    });
+
+    function applyEdit(ie, field, value) {
+        var card = ie.closest('.chapter-card');
+        if (field === 'clip_title') {
+            var titleEl = ie.querySelector('.app-clip-title-text');
+            if (titleEl) titleEl.textContent = value;
+        } else if (field === 'score_override') {
+            var score  = parseInt(value, 10);
+            var label  = ie.querySelector('.pf-v6-c-label');
+            var dispEl = ie.querySelector('.app-score-display');
+            if (dispEl) dispEl.textContent = score + '/100';
+            if (label) {
+                label.classList.remove('pf-m-green', 'pf-m-orange', 'pf-m-red');
+                label.classList.add(score >= 80 ? 'pf-m-green' : score >= 60 ? 'pf-m-orange' : 'pf-m-red');
+                label.classList.add('app-score-overridden');
+                label.title = 'Score overridden';
+            }
+        } else if (field === 'main_topics') {
+            var tags    = value.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+            var tagsEl  = ie.querySelector('.app-clip-tags');
+            if (tagsEl) {
+                tagsEl.innerHTML = tags.length
+                    ? tags.map(function (t) {
+                        return '<span class="pf-v6-c-label pf-m-compact pf-m-green">' +
+                               '<span class="pf-v6-c-label__content">' + escHtml(t) + '</span></span>';
+                      }).join('')
+                    : '<span class="app-muted" style="font-size:0.8rem;">No topics tagged</span>';
+            }
+            var input = ie.querySelector('input');
+            if (input) input.value = tags.join(', ');
+        } else if (field === 'content_summary') {
+            var valDiv = ie.querySelector('.pf-v6-c-inline-edit__value');
+            if (valDiv) valDiv.textContent = value;
         }
     }
+
+    // ── Flag-for-revision modal ─────────────────────────────────────────
+    (function () {
+        var modal    = document.getElementById('flag-modal');
+        var noteEl   = document.getElementById('flag-note-input');
+        var nameEl   = document.getElementById('flag-modal-clip-name');
+        var saveBtn  = document.getElementById('flag-modal-save');
+        var clearBtn = document.getElementById('flag-modal-clear');
+        var cancelBtn = document.getElementById('flag-modal-cancel');
+        var closeBtn = document.getElementById('flag-modal-close');
+        var activeClipId = null;
+        var activeBtn    = null;
+
+        function openModal(clipId, clipTitle, existingNote) {
+            activeClipId = clipId;
+            activeBtn    = document.querySelector('.app-flag-btn[data-clip-id="' + clipId + '"]');
+            if (nameEl) nameEl.textContent = clipTitle || '';
+            if (noteEl) noteEl.value = existingNote || '';
+            modal.style.display = 'flex';
+            if (noteEl) noteEl.focus();
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            activeClipId = null;
+            activeBtn    = null;
+        }
+
+        function persistFlag(note) {
+            fetch('/flag/clip', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({ clip_id: activeClipId, note: note }),
+            })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (!data.ok) { alert('Could not save flag: ' + (data.error || '')); return; }
+                updateFlagUI(activeClipId, note);
+                closeModal();
+            })
+            .catch(function () { alert('Network error saving flag'); });
+        }
+
+        function updateFlagUI(clipId, note) {
+            var btn = document.querySelector('.app-flag-btn[data-clip-id="' + clipId + '"]');
+            if (!btn) return;
+            btn.dataset.flag = note;
+            if (note) {
+                btn.classList.add('app-flag-btn--active');
+                btn.setAttribute('title', 'Flagged: ' + note);
+                btn.setAttribute('aria-label', 'Revision flagged — click to edit');
+            } else {
+                btn.classList.remove('app-flag-btn--active');
+                btn.setAttribute('title', 'Flag for revision');
+                btn.setAttribute('aria-label', 'Flag for revision');
+            }
+            // Update the flag note helper text below the card
+            var card    = btn.closest('.chapter-card');
+            var noteDiv = card ? card.querySelector('.app-clip-flag-note') : null;
+            if (noteDiv) {
+                if (note) {
+                    noteDiv.innerHTML =
+                        '<div class="pf-v6-c-helper-text__item pf-m-warning">' +
+                        '<span class="pf-v6-c-helper-text__item-icon"><i class="fas fa-flag" aria-hidden="true"></i></span>' +
+                        '<span class="pf-v6-c-helper-text__item-text">Flagged for revision: ' + escHtml(note) + '</span>' +
+                        '</div>';
+                    noteDiv.hidden = false;
+                    card.classList.add('app-clip-flagged');
+                } else {
+                    noteDiv.innerHTML = '';
+                    noteDiv.hidden    = true;
+                    card.classList.remove('app-clip-flagged');
+                }
+            }
+        }
+
+        document.querySelectorAll('.app-flag-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                openModal(btn.dataset.clipId, btn.dataset.clipTitle, btn.dataset.flag);
+            });
+        });
+
+        if (saveBtn)   saveBtn.addEventListener('click',   function () { persistFlag(noteEl ? noteEl.value.trim() : ''); });
+        if (clearBtn)  clearBtn.addEventListener('click',  function () { persistFlag(''); });
+        if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+        if (closeBtn)  closeBtn.addEventListener('click',  closeModal);
+
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.style.display !== 'none') closeModal();
+        });
+    })();
 </script>
 {% endblock %}

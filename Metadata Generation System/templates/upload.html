@@ -1,165 +1,235 @@
 {% extends "base.html" %}
+{% import "macros.html" as ui %}
 {% set active_step = 'upload' %}
 
 {% block title %}1. Upload — Pipeline Demo{% endblock %}
 
 {% block content %}
-<div class="step-header">
-    <h1>Step 1 — Upload & Blocking</h1>
-    <p>Upload a ZIP interview package or run the bundled sample interview.</p>
-    <p style="color: #555; font-size: 15px; line-height: 1.6; margin-top: 6px;">This pipeline simplifies the process of turning an interview into usable metadata for your archive or web application, providing focused chapters, high quality summaries, a table of contents with labeled clips and timestamps, and associated keywords with individual chapters and interviews.</p>
-</div>
+{{ ui.page_header("Step 1 — Upload and Blocking", "Choose a transcript source and run blocking.", "Pipeline entry") }}
 
-<form action="{{ url_for('upload_run') }}" method="post" enctype="multipart/form-data" id="upload-form">
-    <div class="panel">
-        <div class="panel-label">OpenAI API Key</div>
-        <label style="display:block;">
-            <input
-                type="password"
-                name="api_key"
-                placeholder="Paste an OpenAI API key"
-                autocomplete="off"
-                {% if not api_key_present %}required{% endif %}
-                style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #d0d7de; margin-top: 8px;"
-            >
-        </label>
-        <p style="margin: 10px 0 0; font-size: 14px; color: #555;">
-            {% if api_key_present %}
-                Current browser-session key: {{ api_key_masked }}. Leave this blank to keep using it, or paste a new one. Your API key is used only for your current session and is not shared with other users.
-            {% else %}
-                Your API key is used only for your current session and is not shared with other users.
-            {% endif %}
-        </p>
-        <div class="output-block" style="margin-top: 12px; font-size: 14px; line-height: 1.6;">
-            <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank" rel="noopener noreferrer" style="color: #0550ae;">Get an OpenAI API key</a><br>
-            <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank" rel="noopener noreferrer" style="color: #0550ae;">Where to find your API key</a>
-        </div>
-        {% if api_key_error %}
-        <div class="output-block" style="margin-top: 12px; color: #b42318;">{{ api_key_error }}</div>
-        {% endif %}
-    </div>
+{{ ui.status_card("Current session", None, [
+    ("Loaded file", "Bundled sample interview" if state.using_sample else (state.srt_path.rsplit('\\', 1)[-1] if state.srt_path else "None")),
+    ("Block size", state.block_size),
+    ("Questions", "Enabled" if state.steps_enabled.questions else "Disabled"),
+    ("Engagement", "Enabled" if state.steps_enabled.engagement else "Disabled"),
+    ("Clips", "Enabled" if state.steps_enabled.clips else "Disabled"),
+]) }}
 
-    <div class="panel">
-        <div class="panel-label">Interview Source</div>
-        <label style="display:flex; align-items:center; gap:10px; margin-bottom: 14px; cursor:pointer;">
-            <input type="checkbox" name="use_sample" id="use-sample-checkbox">
-            <span>Use sample interview of Amos C. Brown</span>
-        </label>
+{% if api_key_error %}
+{% set _is_key_error = 'API key' in api_key_error or 'api key' in api_key_error %}
+{% call ui.alert("API key required" if _is_key_error else "Upload error", "danger") %}
+<p>{{ api_key_error }}</p>
+{% endcall %}
+{% endif %}
 
-        <label style="display:flex; align-items:center; gap:10px; margin-bottom: 14px; cursor:pointer;">
-            <input type="checkbox" name="use_transcripts" id="use-transcripts-checkbox">
-            <span>Use bundled batch (4 interviews)</span>
-        </label>
+<form action="{{ url_for('upload_run') }}" method="post" enctype="multipart/form-data" id="upload-form" class="pf-v6-c-form app-stack">
 
-        <div
-            class="upload-zone"
-            id="upload-zone"
-            onclick="if (!document.getElementById('use-sample-checkbox').checked && !document.getElementById('use-transcripts-checkbox').checked) document.getElementById('srt-input').click()"
-            style="transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;"
-        >
-            <input type="file" name="srt_file" id="srt-input" accept=".zip" required>
-            <div class="upload-label" id="file-label">
-                <strong>Click or drag and drop</strong> a .zip file
+    {# ── Card 1: Interview source ───────────────────────────────────── #}
+    <section class="pf-v6-c-card">
+        <div class="pf-v6-c-card__header">
+            <div class="pf-v6-c-card__title">
+                <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Interview source</h2>
             </div>
         </div>
-    </div>
+        <div class="pf-v6-c-card__body app-stack">
 
-    <div class="panel">
-        <div class="panel-label">Block Size</div>
-        <div class="slider-group">
-            <label>
-                Number of SRT segments per block:
-                <span class="slider-value" id="block-size-val">{{ state.block_size }}</span>
-            </label>
-            <input type="range" name="block_size" min="10" max="80" value="{{ state.block_size }}"
-                   oninput="document.getElementById('block-size-val').textContent = this.value">
-        </div>
-    </div>
-
-    <div class="panel">
-        <div class="panel-label">Optional Modules</div>
-
-        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; margin-bottom: 6px;">
-            <input type="checkbox" name="enable_questions" {% if state.steps_enabled.questions %}checked{% endif %}>
-            <span>Question Detection</span>
-        </label>
-        <p style="margin: 0 0 10px 28px; font-size: 12px; color: #666;">
-            Detects likely interviewer questions and places the Questions tab after the Summary step.
-        </p>
-
-        <input type="hidden" name="question_placement" value="after_summary">
-
-        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
-            <input type="checkbox" name="enable_engagement" {% if state.steps_enabled.engagement %}checked{% endif %}>
-            <span>Engagement Scoring</span>
-        </label>
-        <p style="margin: 6px 0 0 28px; font-size: 12px; color: #666;">
-            Scores the interview across Narrative Quality, Historical Value, Emotional Resonance, and Accessibility (uses an additional API call).
-        </p>
-        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; margin-top: 12px;">
-            <input type="checkbox" name="enable_clips" {% if state.steps_enabled.clips %}checked{% endif %}>
-            <span>Clip Extraction</span>
-        </label>
-        <p style="margin: 6px 0 0 28px; font-size: 12px; color: #666;">
-            Identifies all viable clips scored on Topic/Event Coverage and Engagement Quality, for use in thematic playlists and educational databases (uses an additional API call).
-        </p>
-    </div>
-
-    <div class="panel">
-        <div class="panel-label">Primary Source Info (optional)</div>
-        <label style="display: block; cursor: pointer;">
-            <input type="file" name="primary_source_json" id="primary-source-input" accept=".json" style="display:none;">
-            <div id="primary-source-label" style="font-size: 13px; color: #666; padding: 10px; border: 1px dashed #333; border-radius: 8px; text-align: center; cursor: pointer;">
-                <strong style="color: #aaa;">Click to select</strong> a JSON file with interviewee metadata
+            {# API key — prerequisite, shown first and full-width #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    {{ ui.label_with_info("OpenAI API key", "Stored only for this browser session. Leave blank to keep the current session key.", "api-key-input") }}
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control"><input
+                        id="api-key-input"
+                        type="password"
+                        name="api_key"
+                        placeholder="{% if dev_mode %}Not required in dev mode{% else %}Paste an OpenAI API key{% endif %}"
+                        autocomplete="off"
+                        {% if not api_key_present and not dev_mode %}required{% endif %}
+                        {% if dev_mode %}disabled{% endif %}
+                    ></span>
+                    {% if dev_mode %}
+                    <p class="pf-v6-c-form__helper-text">Dev mode is on.</p>
+                    {% elif api_key_present %}
+                    <p class="pf-v6-c-form__helper-text">Current key: {{ api_key_masked }}</p>
+                    {% endif %}
+                    <div class="app-actions">
+                        <a href="https://platform.openai.com/settings/organization/api-keys" target="_blank" rel="noopener noreferrer" class="pf-v6-c-button pf-m-secondary">Get API key</a>
+                    </div>
+                </div>
             </div>
-        </label>
-        <p style="margin-top: 8px; font-size: 12px; color: #666;">
-            JSON object with fields such as <code style="color: #aaa;">interviewer</code>, <code style="color: #aaa;">interview_date</code>, <code style="color: #aaa;">biographical_history</code>, etc.
-            When provided, this information is used to improve accuracy during summarization and tuning (correct names, dates, and facts).
-        </p>
-    </div>
 
-    <div class="panel">
-        <div class="panel-label">Video Preview (optional)</div>
-        <label style="display:block;">
-            <input
-                type="url"
-                name="youtube_url"
-                value="{{ state.youtube_url }}"
-                placeholder="https://www.youtube.com/watch?v=..."
-                style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #333; background: #1a1d21; color: #ccc; font-size: 14px; margin-top: 6px; box-sizing: border-box;"
-            >
-        </label>
-        <p style="margin: 6px 0 0; font-size: 12px; color: #666;">
-            Paste a YouTube link to enable in-context video previews on the TOC, Chapters, Summaries and Clips pages. Leave blank to skip.
-        </p>
-    </div>
+            <hr class="pf-v6-c-divider">
 
-    <div class="btn-row">
-        <button type="submit" class="btn btn-primary" id="run-btn">Run Blocking</button>
+            {# Upload zone — primary source #}
+            <input type="file" name="srt_file" id="srt-input" accept=".zip" required class="app-file-input-hidden" aria-hidden="true" tabindex="-1">
+            <div class="pf-v6-c-file-upload" id="upload-zone">
+                <div class="upload-zone">
+                    <div class="upload-label" id="file-label"><strong>Click or drag and drop</strong> a ZIP file containing transcript data</div>
+                    <button type="button" class="pf-v6-c-button pf-m-secondary" id="file-browse-btn">Choose file</button>
+                </div>
+                <div class="pf-v6-c-file-upload__helper-text">ZIP transcript input</div>
+            </div>
+
+            {# YouTube URL — metadata about this specific interview, lives next to the upload #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    {{ ui.label_with_info("YouTube URL", "Optional. Enables video playback on chapter, summary, and clip screens.", "youtube-url") }}
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control"><input id="youtube-url" type="url" name="youtube_url" value="{{ state.youtube_url }}" placeholder="https://www.youtube.com/watch?v=..."></span>
+                </div>
+            </div>
+
+            {# Video links JSON — batch counterpart to YouTube URL; stored in session so "Process remaining" can use it #}
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    {{ ui.label_with_info("Video links", "Maps each transcript filename to a YouTube URL — enables video playback in Collection Review. Expected JSON fields: transcript_file and videoEmbedLink.", "video-links-input") }}
+                    <span class="pf-v6-c-label pf-m-compact" style="margin-left:0.5rem;">
+                        <span class="pf-v6-c-label__content">optional</span>
+                    </span>
+                    <span class="pf-v6-c-label pf-m-compact pf-m-blue" style="margin-left:0.25rem;">
+                        <span class="pf-v6-c-label__content">batch</span>
+                    </span>
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <span class="pf-v6-c-form-control">
+                        <input type="file" name="video_links_json" id="video-links-input" accept=".json">
+                    </span>
+                    {% if state.video_links_map %}
+                    <p class="pf-v6-c-form__helper-text">{{ state.video_links_map | length }} link(s) currently loaded.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <hr class="pf-v6-c-divider">
+
+            {# Bundled samples — clearly an alternative to uploading #}
+            <div class="app-stack" style="gap:0.625rem;">
+                <span class="pf-v6-c-form__label" style="margin:0;">
+                    <span class="pf-v6-c-form__label-text">Or use a bundled sample</span>
+                </span>
+                <label class="app-row-center-gap">
+                    <input type="checkbox" name="use_sample" id="use-sample-checkbox">
+                    <span>Amos C. Brown — single interview</span>
+                </label>
+                <label class="app-row-center-gap">
+                    <input type="checkbox" name="use_transcripts" id="use-transcripts-checkbox">
+                    <span>4-interview batch sample</span>
+                </label>
+            </div>
+
+        </div>
+    </section>
+
+    {# ── Card 2: Processing controls ───────────────────────────────── #}
+    <section class="pf-v6-c-card">
+        <div class="pf-v6-c-card__header">
+            <div class="pf-v6-c-card__title">
+                <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Processing controls</h2>
+            </div>
+        </div>
+        <div class="pf-v6-c-card__body app-stack">
+            <div class="pf-v6-c-form__group">
+                <div class="pf-v6-c-form__group-label">
+                    <label class="pf-v6-c-form__label" id="block-size-label">
+                        <span class="pf-v6-c-form__label-text">Segments per block</span>
+                        {{ ui.info_tip("Larger blocks create fewer, longer chapters. Smaller blocks create more granular topics. Default 23 works well for most interviews.", "Segments per block help") }}
+                    </label>
+                </div>
+                <div class="pf-v6-c-form__group-control">
+                    <div class="app-slider-row">
+                        <div class="pf-v6-c-slider" id="block-size-slider"
+                            style="--pf-v6-c-slider--value: {{ ((state.block_size - 10) / 70 * 100) | round(2) }}%">
+                            <div class="pf-v6-c-slider__main">
+                                <div class="pf-v6-c-slider__rail">
+                                    <div class="pf-v6-c-slider__rail-track"></div>
+                                </div>
+                                <div class="pf-v6-c-slider__thumb"
+                                    role="slider"
+                                    tabindex="0"
+                                    aria-labelledby="block-size-label"
+                                    aria-valuemin="10"
+                                    aria-valuemax="80"
+                                    aria-valuenow="{{ state.block_size }}"
+                                    aria-valuetext="{{ state.block_size }} segments per block">
+                                </div>
+                            </div>
+                        </div>
+                        <span class="app-slider-value" id="block-size-val" aria-hidden="true">{{ state.block_size }}</span>
+                    </div>
+                    <input type="hidden" name="block_size" id="block-size-input" value="{{ state.block_size }}">
+                </div>
+            </div>
+
+            <div class="app-grid-3">
+                <label class="chapter-card pf-v6-u-display-block{% if not state.steps_enabled.questions %} app-inactive{% endif %}">
+                    <div class="app-row-label">
+                        <input type="checkbox" name="enable_questions" {% if state.steps_enabled.questions %}checked{% endif %}>
+                        <strong>Question Detection</strong>{{ ui.info_tip("Identifies interviewer questions and places review after summary generation.", "Question detection help") }}
+                    </div>
+                </label>
+
+                <label class="chapter-card pf-v6-u-display-block{% if not state.steps_enabled.engagement %} app-inactive{% endif %}">
+                    <div class="app-row-label">
+                        <input type="checkbox" name="enable_engagement" {% if state.steps_enabled.engagement %}checked{% endif %}>
+                        <strong>Engagement Scoring</strong>{{ ui.info_tip("Adds narrative, historical, emotional, and accessibility scoring with extra API usage.", "Engagement scoring help") }}
+                    </div>
+                </label>
+
+                <label class="chapter-card pf-v6-u-display-block{% if not state.steps_enabled.clips %} app-inactive{% endif %}">
+                    <div class="app-row-label">
+                        <input type="checkbox" name="enable_clips" {% if state.steps_enabled.clips %}checked{% endif %}>
+                        <strong>Clip Extraction</strong>{{ ui.info_tip("Finds and scores viable clips for playlists, exhibits, and educational use.", "Clip extraction help") }}
+                    </div>
+                </label>
+            </div>
+            <input type="hidden" name="question_placement" value="after_summary">
+        </div>
+    </section>
+
+    <div class="app-actions">
+        <button type="submit" class="pf-v6-c-button pf-m-primary" id="run-btn">{% if state.text_blocks %}<i class="fas fa-check app-btn-check" aria-hidden="true"></i> {% endif %}Run blocking</button>
+        <button type="submit" class="pf-v6-c-button pf-m-secondary" id="quick-run-btn">
+            <i class="fas fa-bolt" aria-hidden="true"></i> Quick Run — full pipeline with defaults
+        </button>
     </div>
 </form>
 
-{% if state.srt_path %}
-<div class="panel" style="margin-top: 24px;">
-    <div class="panel-label">Current File</div>
-    <div class="output-block">
-        <pre>{% if state.using_sample %}Source: Bundled sample interview (interview.srt){% else %}File: {{ state.srt_path }}{% endif %}
-Segments: {{ state.segments|length if state.segments else 'N/A' }}
-Block size: {{ state.block_size }}
-Text blocks: {{ state.text_blocks|length if state.text_blocks else 'N/A' }}</pre>
-    </div>
+{% if dev_mode and state.video_links_map %}
+<div style="margin-top:1rem;">
+    <form method="POST" action="{{ url_for('dev_quick_review') }}" enctype="multipart/form-data">
+        <button type="submit" class="pf-v6-c-button pf-m-warning">
+            <i class="fas fa-forward" aria-hidden="true"></i>
+            Skip to Review Collection
+            <span style="font-weight:400;font-size:0.875rem;"> — {{ state.video_links_map | length }} video link(s) loaded</span>
+        </button>
+    </form>
 </div>
+{% endif %}
+
+{% if state.srt_path %}
+{{ ui.status_card("Loaded transcript", None, [
+    ("Source", "Bundled sample interview" if state.using_sample else state.srt_path),
+    ("Segments", state.segments|length if state.segments else "N/A"),
+    ("Text blocks", state.text_blocks|length if state.text_blocks else "N/A"),
+    ("Block size", state.block_size),
+]) }}
 {% endif %}
 {% endblock %}
 
 {% block scripts %}
 <script>
-    const fileInput = document.getElementById('srt-input');
-    const fileLabel = document.getElementById('file-label');
-    const sampleCheckbox = document.getElementById('use-sample-checkbox');
+    const fileInput     = document.getElementById('srt-input');
+    const fileLabel     = document.getElementById('file-label');
+    const sampleCheckbox     = document.getElementById('use-sample-checkbox');
     const transcriptsCheckbox = document.getElementById('use-transcripts-checkbox');
-    const uploadZone = document.getElementById('upload-zone');
+    const uploadZone    = document.getElementById('upload-zone');
+    const browseBtn     = document.getElementById('file-browse-btn');
+
+    browseBtn.addEventListener('click', function () {
+        fileInput.click();
+    });
 
     function isBundledSelected() {
         return sampleCheckbox.checked || transcriptsCheckbox.checked;
@@ -167,61 +237,67 @@ Text blocks: {{ state.text_blocks|length if state.text_blocks else 'N/A' }}</pre
 
     function setZoneActive(isActive) {
         if (isBundledSelected()) return;
-        uploadZone.style.borderColor = isActive ? '#0550ae' : '';
-        uploadZone.style.backgroundColor = isActive ? 'rgba(5, 80, 174, 0.06)' : '';
-        uploadZone.style.transform = isActive ? 'scale(1.01)' : '';
+        const zone = uploadZone.querySelector('.upload-zone');
+        zone.style.borderColor       = isActive ? 'var(--pf-t--global--color--brand--default)' : '';
+        zone.style.backgroundColor   = isActive ? 'var(--pf-t--global--background--color--secondary--hover)' : '';
     }
 
     function showDefaultLabel() {
-        fileLabel.innerHTML = '<strong>Click or drag and drop</strong> a .zip file';
+        fileLabel.innerHTML = '<strong>Click or drag and drop</strong> a ZIP file containing transcript data';
     }
 
     function applySelectedFile(file) {
         if (!file) return;
-
         const isZip = file.name.toLowerCase().endsWith('.zip');
         if (!isZip) {
             fileInput.value = '';
-            fileLabel.innerHTML = '<strong>Invalid file.</strong> Please use a .zip file';
+            fileLabel.innerHTML = '<strong>Invalid file.</strong> Please use a ZIP file';
             return;
         }
-
         fileLabel.innerHTML = '<strong>' + file.name + '</strong>';
     }
 
     function updateSourceMode() {
+        const zone = uploadZone.querySelector('.upload-zone');
         if (isBundledSelected()) {
             fileInput.required = false;
-            fileInput.value = '';
-            uploadZone.style.opacity = '0.65';
-            uploadZone.style.cursor = 'default';
-            uploadZone.style.borderColor = '';
-            uploadZone.style.backgroundColor = '';
-            uploadZone.style.transform = '';
-            if (sampleCheckbox.checked) {
-                fileLabel.innerHTML = '<strong>Bundled sample selected</strong> — no upload needed';
-            } else {
-                fileLabel.innerHTML = '<strong>Bundled batch selected</strong> — no upload needed';
-            }
+            fileInput.value    = '';
+            zone.style.opacity = '0.65';
+            uploadZone.classList.add('app-inactive');
+            browseBtn.disabled = true;
+            fileLabel.innerHTML = sampleCheckbox.checked
+                ? '<strong>Bundled sample selected</strong> — no upload needed'
+                : '<strong>Bundled batch selected</strong> — no upload needed';
         } else {
             fileInput.required = true;
-            uploadZone.style.opacity = '1';
-            uploadZone.style.cursor = 'pointer';
+            zone.style.opacity = '1';
+            uploadZone.classList.remove('app-inactive');
+            browseBtn.disabled = false;
             showDefaultLabel();
         }
     }
 
-    // Make checkboxes mutually exclusive
-    sampleCheckbox.addEventListener('change', function() {
+    function updateOptionalModuleCards() {
+        document.querySelectorAll('.app-grid-3 .chapter-card input[type="checkbox"]').forEach(function (checkbox) {
+            checkbox.closest('.chapter-card')?.classList.toggle('app-inactive', !checkbox.checked);
+        });
+    }
+
+    // Sample checkboxes are mutually exclusive
+    sampleCheckbox.addEventListener('change', function () {
         if (this.checked) transcriptsCheckbox.checked = false;
         updateSourceMode();
     });
-    transcriptsCheckbox.addEventListener('change', function() {
+    transcriptsCheckbox.addEventListener('change', function () {
         if (this.checked) sampleCheckbox.checked = false;
         updateSourceMode();
     });
 
-    fileInput.addEventListener('change', function() {
+    document.querySelectorAll('.app-grid-3 .chapter-card input[type="checkbox"]').forEach(function (checkbox) {
+        checkbox.addEventListener('change', updateOptionalModuleCards);
+    });
+
+    fileInput.addEventListener('change', function () {
         if (this.files.length > 0) {
             applySelectedFile(this.files[0]);
         } else if (!isBundledSelected()) {
@@ -229,32 +305,29 @@ Text blocks: {{ state.text_blocks|length if state.text_blocks else 'N/A' }}</pre
         }
     });
 
-    ['dragenter', 'dragover'].forEach(function(eventName) {
-        uploadZone.addEventListener(eventName, function(event) {
+    ['dragenter', 'dragover'].forEach(function (eventName) {
+        uploadZone.addEventListener(eventName, function (event) {
             event.preventDefault();
             event.stopPropagation();
             setZoneActive(true);
         });
     });
 
-    ['dragleave', 'dragend'].forEach(function(eventName) {
-        uploadZone.addEventListener(eventName, function(event) {
+    ['dragleave', 'dragend'].forEach(function (eventName) {
+        uploadZone.addEventListener(eventName, function (event) {
             event.preventDefault();
             event.stopPropagation();
             setZoneActive(false);
         });
     });
 
-    uploadZone.addEventListener('drop', function(event) {
+    uploadZone.addEventListener('drop', function (event) {
         event.preventDefault();
         event.stopPropagation();
         setZoneActive(false);
-
         if (isBundledSelected()) return;
-
         const files = event.dataTransfer.files;
         if (!files || files.length === 0) return;
-
         const file = files[0];
         const transfer = new DataTransfer();
         transfer.items.add(file);
@@ -263,21 +336,82 @@ Text blocks: {{ state.text_blocks|length if state.text_blocks else 'N/A' }}</pre
     });
 
     updateSourceMode();
+    updateOptionalModuleCards();
 
-    const primarySourceInput = document.getElementById('primary-source-input');
-    const primarySourceLabel = document.getElementById('primary-source-label');
+    wireRunButton('upload-form', 'run-btn', 'Running blocking...');
 
-    primarySourceInput.addEventListener('change', function() {
-        if (this.files.length > 0) {
-            primarySourceLabel.innerHTML = '<strong style="color:#aaa;">' + this.files[0].name + '</strong>';
-        } else {
-            primarySourceLabel.innerHTML = '<strong style="color:#aaa;">Click to select</strong> a JSON file with interviewee metadata';
+    // Quick Run button: change form action then submit normally (navigates to progress page)
+    (function () {
+        var qrBtn  = document.getElementById('quick-run-btn');
+        var form   = document.getElementById('upload-form');
+        if (!qrBtn || !form) return;
+        qrBtn.addEventListener('click', function () {
+            form.action = '{{ url_for("quick_run") }}';
+            qrBtn.disabled = true;
+            qrBtn.innerHTML = '<span class="spinner"></span>Starting quick run...';
+        });
+    })();
+
+    (function () {
+        var slider     = document.getElementById('block-size-slider');
+        var thumb      = slider.querySelector('.pf-v6-c-slider__thumb');
+        var hiddenInput = document.getElementById('block-size-input');
+        var valDisplay  = document.getElementById('block-size-val');
+        var MIN = 10, MAX = 80;
+
+        function toPercent(val) { return (val - MIN) / (MAX - MIN) * 100; }
+        function clamp(val)     { return Math.max(MIN, Math.min(MAX, Math.round(val))); }
+
+        function applyValue(val) {
+            val = clamp(val);
+            thumb.setAttribute('aria-valuenow', val);
+            thumb.setAttribute('aria-valuetext', val + ' segments per block');
+            slider.style.setProperty('--pf-v6-c-slider--value', toPercent(val) + '%');
+            hiddenInput.value    = val;
+            valDisplay.textContent = val;
         }
-    });
 
-    document.getElementById('upload-form').addEventListener('submit', function() {
-        document.getElementById('run-btn').innerHTML = '<span class="spinner"></span>Processing...';
-        document.getElementById('run-btn').disabled = true;
-    });
+        function valueFromClientX(clientX) {
+            var rail = slider.querySelector('.pf-v6-c-slider__rail');
+            var rect = rail.getBoundingClientRect();
+            return MIN + ((clientX - rect.left) / rect.width) * (MAX - MIN);
+        }
+
+        function startDrag(startX) {
+            function onMouseMove(e) { applyValue(valueFromClientX(e.clientX)); }
+            function onTouchMove(e) { applyValue(valueFromClientX(e.touches[0].clientX)); }
+            function stop() {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup',   stop);
+                document.removeEventListener('touchmove', onTouchMove);
+                document.removeEventListener('touchend',  stop);
+            }
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup',   stop);
+            document.addEventListener('touchmove', onTouchMove, { passive: false });
+            document.addEventListener('touchend',  stop);
+            applyValue(valueFromClientX(startX));
+        }
+
+        thumb.addEventListener('mousedown', function (e) { e.preventDefault(); startDrag(e.clientX); });
+        thumb.addEventListener('touchstart', function (e) { e.preventDefault(); startDrag(e.touches[0].clientX); }, { passive: false });
+        slider.querySelector('.pf-v6-c-slider__rail').addEventListener('mousedown', function (e) {
+            e.preventDefault();
+            startDrag(e.clientX);
+        });
+
+        thumb.addEventListener('keydown', function (e) {
+            var val     = parseInt(thumb.getAttribute('aria-valuenow'), 10);
+            var handled = true;
+            if      (e.key === 'ArrowRight' || e.key === 'ArrowUp')   applyValue(val + 1);
+            else if (e.key === 'ArrowLeft'  || e.key === 'ArrowDown') applyValue(val - 1);
+            else if (e.key === 'PageUp')   applyValue(val + 5);
+            else if (e.key === 'PageDown') applyValue(val - 5);
+            else if (e.key === 'Home')     applyValue(MIN);
+            else if (e.key === 'End')      applyValue(MAX);
+            else handled = false;
+            if (handled) e.preventDefault();
+        });
+    })();
 </script>
 {% endblock %}

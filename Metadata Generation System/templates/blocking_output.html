@@ -1,36 +1,45 @@
 {% extends "base.html" %}
+{% import "macros.html" as ui %}
 {% set active_step = 'upload' %}
 
 {% block title %}1. Blocking Output — Pipeline Demo{% endblock %}
 
 {% block content %}
-<div class="step-header">
-    <h1>Step 1 — Blocking Output</h1>
-    <p>SRT parsed into {{ state.text_blocks|length if state.text_blocks else 0 }} text blocks of {{ state.block_size }} segments each.</p>
-</div>
+{{ ui.page_header("Step 1 — Blocking Output", "Review generated text blocks.", "Output review") }}
 
 {% if state.text_blocks %}
-<div class="btn-row" style="margin-bottom: 16px;">
-    <a href="{{ url_for('upload_page') }}" class="btn btn-secondary">← Restart</a>
-    <a href="{{ url_for('labeling_page') }}" class="btn btn-primary">Continue to Labeling →</a>
-</div>
+{{ ui.status_card("Blocking complete", None, [
+    ("Blocks", state.text_blocks|length),
+    ("Segments per block", state.block_size),
+    ("Transcript source", "Bundled sample interview" if state.using_sample else state.srt_path.rsplit('\\', 1)[-1]),
+]) }}
 
-<div class="panel">
-    <div class="panel-label">Text Blocks ({{ state.text_blocks|length }})</div>
-    {% for block in state.text_blocks %}
-    <div class="chapter-card">
-        <div class="chapter-num">Block {{ loop.index }}</div>
-        <div class="chapter-time">{{ block.start_time }} → {{ block.end_time }} · Segments {{ block.start_idx }}–{{ block.end_idx }}</div>
-        <div class="chapter-snippet">{{ block.text[:300] if block.text else '' }}{% if block.text and block.text|length > 300 %}...{% endif %}</div>
+<section class="pf-v6-c-card">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Text blocks</h2>
+        </div>
     </div>
-    {% endfor %}
+    <div class="pf-v6-c-card__body app-stack">
+        {% for block in state.text_blocks %}
+        <div class="chapter-card">
+            <div class="chapter-num">Block {{ loop.index }}</div>
+            <div class="chapter-time">{{ block.start_time | hms }} → {{ block.end_time | hms }}</div>
+            <div class="chapter-snippet app-mt-sm">{{ block.text[:300] if block.text else '' }}{% if block.text and block.text|length > 300 %}...{% endif %}</div>
+            <details class="app-compact-details">
+                <summary>Segment range</summary>
+                <div class="chapter-time app-mt-xs">Segments {{ block.start_idx }}–{{ block.end_idx }}</div>
+            </details>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<div class="app-actions">
+    <a href="{{ url_for('upload_page') }}" class="pf-v6-c-button pf-m-secondary">Restart</a>
+    <a href="{{ url_for('labeling_page') }}" class="pf-v6-c-button pf-m-primary">Continue to labeling</a>
 </div>
 {% else %}
-<div class="panel">
-    <div class="output-block"><pre>No text blocks generated. Go back and upload an SRT file.</pre></div>
-</div>
-<div class="btn-row">
-    <a href="{{ url_for('upload_page') }}" class="btn btn-primary">← Back to Upload</a>
-</div>
+{{ ui.empty_state("No text blocks generated", "Run blocking from upload first.", url_for('upload_page'), "Back to upload") }}
 {% endif %}
 {% endblock %}

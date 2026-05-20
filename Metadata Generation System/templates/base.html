@@ -1,111 +1,718 @@
+{% set metrics = get_metrics_summary(state) %}
+{% set pipeline_steps = get_pipeline_steps(state, active_step | default('')) %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Civil Rights History - Pipeline Demo{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@6.4.0/patternfly.css">
+    <link rel="stylesheet" href="https://unpkg.com/@patternfly/patternfly@6.4.0/patternfly-addons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=static_version('style.css')) }}">
+    <style>
+        /* Inline overrides — these load with the HTML so they are not cached
+           independently of the rest of the page. Last-loaded after style.css
+           so they win on equal specificity. */
+
+        /* Masthead: keep brand and controls in separate flex regions. The
+           min-width: 0 rules are what let long titles/current-file text
+           truncate instead of painting over neighboring masthead content. */
+        .pf-v6-c-masthead {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        .pf-v6-c-masthead__main {
+            display: flex;
+            flex: 0 1 auto;
+            min-width: 0;
+            max-width: min(40rem, 45vw);
+            column-gap: 0.75rem;
+            align-items: center;
+        }
+        .pf-v6-c-masthead__content {
+            flex: 1 1 0;
+            min-width: 0;
+        }
+        .app-brand-block {
+            min-width: 0;
+        }
+        .app-brand-block .pf-v6-c-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .app-masthead-row {
+            min-width: 0;
+        }
+        @media (max-width: 1100px) {
+            .pf-v6-c-masthead {
+                flex-wrap: wrap;
+            }
+            .pf-v6-c-masthead__main,
+            .pf-v6-c-masthead__content {
+                flex-basis: 100%;
+                max-width: none;
+            }
+        }
+
+        /* Mini-rail: hide labels, size rows, draw connector lines.
+           Step-main is hidden with display:none — the one property needed.
+           Connector cells get min-height so the ::before line has room to
+           span between icon centres. All rules for .app-stepper are merged
+           into one block here to avoid order-of-declaration confusion. */
+        html.app-sidebar-collapsed .app-stepper {
+            --pf-v6-c-progress-stepper--m-vertical__step-main--MarginBlockEnd: 0 !important;
+            --pf-v6-c-progress-stepper--GridTemplateColumns: 1fr !important;
+            --pf-v6-c-progress-stepper--m-vertical--GridTemplateColumns: 1fr !important;
+            /* PF6 may set grid-template-rows (e.g. auto 1fr per step). Explicit
+               rows persist even when step-main is display:none, which would leave
+               an orphaned 1fr row between step 1 and step 2. Reset to none so
+               every row is implicit and sized equally by grid-auto-rows. */
+            --pf-v6-c-progress-stepper--GridTemplateRows: none !important;
+            --pf-v6-c-progress-stepper--m-vertical--GridTemplateRows: none !important;
+            grid-template-rows: none !important;
+            width: 100%;
+            flex: 1 1 auto;
+            justify-content: center;
+            grid-auto-rows: minmax(44px, 1fr) !important;
+        }
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step-main {
+            display: none !important;
+        }
+        /* The <li> step has display:contents so it has no rendered box.
+           Style the connector cell directly. Two separate rules are merged
+           here to avoid duplicate selectors. */
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step-connector {
+            position: relative;
+            justify-content: center;
+            min-height: 44px;
+            height: 100%;
+            overflow: visible;
+        }
+        /* Connector line positioning in mini-rail mode.
+           PF6 default: ::before starts at inset-block-start:0 (top of cell).
+           With icons vertically centred, this leaves a gap of half a row-height
+           between each icon and the line connecting to it.
+           Fix: start the line at -50% (= centre of the PREVIOUS cell) and give
+           it height:100% (= one full row). It then runs exactly from the centre
+           of the previous icon to the centre of the current icon.
+           Step 1 has no previous icon, so suppress its ::before. */
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step-connector::before {
+            display: block !important;
+            position: absolute !important;
+            inset-block-start: -50% !important;
+            height: 100% !important;
+            inset-inline-start: 50% !important;
+            transform: translateX(-50%) !important;
+        }
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step:first-child .pf-v6-c-progress-stepper__step-connector::before {
+            display: none !important;
+        }
+        /* PF6 suppresses the ::before on the last step with content:none and higher
+           specificity. Match that specificity and restore content + all positioning. */
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step:last-child .pf-v6-c-progress-stepper__step-connector::before {
+            content: "" !important;
+            display: block !important;
+            position: absolute !important;
+            inset-block-start: -50% !important;
+            height: 100% !important;
+            inset-inline-start: 50% !important;
+            transform: translateX(-50%) !important;
+            width: 0 !important;
+            border-inline-start: var(--pf-v6-c-progress-stepper__step-connector--before--BorderInlineStartWidth, 2px) solid var(--pf-v6-c-progress-stepper__step-connector--before--BorderInlineStartColor, var(--pf-t--global--border--color--default)) !important;
+        }
+        html.app-sidebar-collapsed .pf-v6-c-page__sidebar-body {
+            display: flex !important;
+            flex-direction: column;
+        }
+        html.app-sidebar-collapsed .pf-v6-c-page__sidebar,
+        html.app-sidebar-collapsed .pf-v6-c-page__sidebar-body,
+        html.app-sidebar-collapsed .app-sidebar {
+            overflow: visible !important;
+        }
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step-icon {
+            cursor: pointer;
+            position: relative;
+            transition: transform 120ms ease, box-shadow 120ms ease, outline-color 120ms ease;
+        }
+        html.app-sidebar-collapsed .app-stepper .pf-v6-c-progress-stepper__step-icon:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 0 4px rgba(45, 90, 142, 0.22), 0 2px 8px rgba(0, 0, 0, 0.18);
+            outline: 1px solid rgba(103, 179, 255, 0.55);
+            outline-offset: 2px;
+        }
+        /* Tooltip is a PF6 .pf-v6-c-tooltip element appended to <body> by JS.
+           Body-level placement with position:fixed escapes the sidebar's
+           stacking context so it always renders above all page content. */
+        #app-rail-tooltip {
+            position: fixed !important;
+            z-index: 9999;
+            pointer-events: none;
+        }
+    </style>
+    <script>
+        (function () {
+            var stored = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (stored === 'dark' || (!stored && prefersDark)) {
+                document.documentElement.classList.add('pf-v6-theme-dark');
+            }
+            if (localStorage.getItem('sidebarCollapsed') === '1') {
+                document.documentElement.classList.add('app-sidebar-collapsed');
+            }
+        })();
+    </script>
 </head>
 <body>
-    <nav class="pipeline-nav">
-        <div class="nav-title">CR History Pipeline</div>
-        <div class="nav-steps">
-            <a href="{{ url_for('upload_page') }}" class="nav-step {% if active_step == 'upload' %}active{% endif %} {% if state.segments %}done{% endif %}">
-                1. Upload
-            </a>
-            <a href="{{ url_for('labeling_page') }}" class="nav-step {% if active_step == 'labeling' %}active{% endif %} {% if state.block_topics %}done{% endif %} {% if not state.text_blocks %}disabled{% endif %}">
-                2. Labeling
-            </a>
-            <a href="{{ url_for('toc_page') }}" class="nav-step {% if active_step == 'toc' %}active{% endif %} {% if state.toc_bundle %}done{% endif %} {% if not state.block_topics %}disabled{% endif %}">
-                3. TOC
-            </a>
-            <a href="{{ url_for('chapterization_page') }}" class="nav-step {% if active_step == 'chapterization' %}active{% endif %} {% if state.chapter_breaks %}done{% endif %} {% if not state.block_topics %}disabled{% endif %}">
-                4. Chapters
-            </a>
-            <a href="{{ url_for('summarization_page') }}" class="nav-step {% if active_step == 'summarization' %}active{% endif %} {% if state.chapters %}done{% endif %} {% if not state.chapter_breaks %}disabled{% endif %}">
-                5. Summary
-            </a>
-            <a href="{{ url_for('questions_page') }}" class="nav-step {% if active_step == 'questions' %}active{% endif %} {% if state.questions_ran %}done{% endif %} {% if not state.steps_enabled.questions or not (state.main_summary or state.chapters) %}disabled{% endif %}">
-                6. Questions
-            </a>
-            <a href="{{ url_for('tuning_page') }}" class="nav-step {% if active_step == 'tuning' %}active{% endif %} {% if state.tuning_results %}done{% endif %} {% if not state.main_summary or (state.steps_enabled.questions and state.question_placement == 'after_summary' and not state.questions_ran) %}disabled{% endif %}">
-                7. Tuning
-            </a>
-            <a href="{{ url_for('engagement_page') }}" class="nav-step {% if active_step == 'engagement' %}active{% endif %} {% if state.engagement_scores %}done{% endif %} {% if not state.text_blocks or not state.steps_enabled.engagement %}disabled{% endif %}">
-                8. Engagement
-            </a>
-            <a href="{{ url_for('clips_page') }}" class="nav-step {% if active_step == 'clips' %}active{% endif %} {% if state.clips_data %}done{% endif %} {% if not state.text_blocks or not state.steps_enabled.clips %}disabled{% endif %}">
-                9. Clips
-            </a>
-            <a href="{{ url_for('results_page') }}" class="nav-step {% if active_step == 'results' %}active{% endif %} {% if not state.main_summary %}disabled{% endif %}">
-                10. Results
-            </a>
-            <a href="{{ url_for('batch_page') }}" class="nav-step {% if active_step == 'batch' %}active{% endif %} {% if not state.main_summary %}disabled{% endif %}">
-                11. Batch
-            </a>
-        </div>
-    </nav>
+    <a class="pf-v6-c-button pf-m-primary pf-v6-u-screen-reader" href="#main-content">Skip to content</a>
 
-    {% if state and state.step_metrics %}
-    <div class="metrics-bar">
-        <details class="metrics-details">
-            <summary class="metrics-summary">
-                <span class="metrics-summary-left">
-                    Pipeline metrics &mdash;
-                    total time: <strong>{{ state.step_metrics[-1].cumulative_s | fmt_duration }}</strong>
-                    &nbsp;|&nbsp;
-                    total tokens: <strong>{{ "{:,}".format(state.step_metrics[-1].cumulative_tokens) }}</strong>
-                </span>
-                <span class="metrics-toggle">Details &#9660;</span>
-            </summary>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Step</th>
-                        <th>Step time</th>
-                        <th>Step tokens</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for m in state.step_metrics %}
-                    <tr>
-                        <td>{{ m.step }}</td>
-                        <td>{{ m.elapsed_s | fmt_duration }}</td>
-                        <td>{{ "{:,}".format(m.tokens) }}</td>
-                    </tr>
+    <div class="pf-v6-c-page app-page-shell">
+        <header class="pf-v6-c-masthead pf-m-display-inline">
+            <div class="pf-v6-c-masthead__main">
+                <button type="button"
+                        class="pf-v6-c-button pf-m-plain app-sidebar-toggle"
+                        id="sidebar-toggle-btn"
+                        aria-label="Toggle pipeline sidebar"
+                        aria-controls="app-sidebar"
+                        aria-expanded="true">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="pf-v6-c-masthead__brand app-brand-block">
+                    <span class="pf-v6-c-title pf-m-xl">Metadata Generation System</span>
+                </div>
+            </div>
+            <div class="pf-v6-c-masthead__content">
+                <div class="app-masthead-row">
+                    {% if state.collection_id %}
+                    <div class="app-masthead-context">
+                        <p class="app-masthead-label">Collection</p>
+                        <p class="app-masthead-value">
+                            <a href="{{ url_for('collections_page') }}" class="app-masthead-collection-link" title="Back to collections">
+                                <i class="fas fa-folder-open" aria-hidden="true"></i>
+                                {{ state.collection_name or 'Unnamed collection' }}
+                            </a>
+                        </p>
+                    </div>
+                    <span class="app-masthead-divider" aria-hidden="true"></span>
+                    {% endif %}
+                    <div class="app-masthead-context">
+                        <p class="app-masthead-label">Current interview</p>
+                        <p class="app-masthead-value">
+                            {% if state.using_sample %}
+                            Bundled sample interview
+                            {% elif state.srt_path %}
+                            {{ state.srt_path.rsplit('\\', 1)[-1] }}
+                            {% else %}
+                            No file loaded
+                            {% endif %}
+                        </p>
+                    </div>
+                    <span class="app-masthead-divider" aria-hidden="true"></span>
+                    <details class="app-metrics-popover">
+                        <summary class="pf-v6-c-button pf-m-secondary pf-m-small">
+                            Pipeline metrics
+                            {% if metrics %}
+                            <span class="app-metrics-summary">{{ metrics.total_time | fmt_duration }} · {{ "{:,}".format(metrics.total_tokens) }} tokens · ${{ "%.4f"|format(metrics.total_cost_usd) }}</span>
+                            {% else %}
+                            <span class="app-metrics-summary">No runs yet</span>
+                            {% endif %}
+                        </summary>
+                        <div class="pf-v6-c-card app-metrics-card">
+                            <div class="pf-v6-c-card__body">
+                                {% if metrics %}
+                                <dl class="pf-v6-c-description-list pf-m-horizontal-on-md app-meta-list">
+                                    <div class="pf-v6-c-description-list__group">
+                                        <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">Total time</span></dt>
+                                        <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">{{ metrics.total_time | fmt_duration }}</span></dd>
+                                    </div>
+                                    <div class="pf-v6-c-description-list__group">
+                                        <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">Total tokens</span></dt>
+                                        <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">{{ "{:,}".format(metrics.total_tokens) }}</span></dd>
+                                    </div>
+                                    <div class="pf-v6-c-description-list__group">
+                                        <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">Token cost</span></dt>
+                                        <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">${{ "%.4f"|format(metrics.total_cost_usd) }}</span></dd>
+                                    </div>
+                                </dl>
+                                <table class="pf-v6-c-table pf-m-compact app-metrics-table" role="grid" aria-label="Pipeline metrics">
+                                    <thead>
+                                        <tr>
+                                            <th>Step</th>
+                                            <th>Elapsed</th>
+                                            <th>Tokens</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in metrics.rows %}
+                                        <tr>
+                                            <td>{{ item.step }}</td>
+                                            <td>{{ item.elapsed_s | fmt_duration }}</td>
+                                            <td>{{ "{:,}".format(item.tokens) }}</td>
+                                            <td>${{ "%.4f"|format(item.cost_usd | default(0)) }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% else %}
+                                <p class="pf-v6-u-color-200">Run a pipeline step to populate timing and token usage.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </details>
+                    <div class="app-masthead-end">
+                        <button type="button" class="pf-v6-c-button pf-m-plain app-theme-btn" id="theme-toggle-btn" aria-label="Switch to dark mode">
+                            <i class="fas fa-moon" aria-hidden="true" id="theme-icon"></i>
+                        </button>
+                        <button type="button" class="pf-v6-c-button pf-m-plain app-help-btn" id="help-open-btn" aria-label="Open user guide">
+                            <i class="fas fa-circle-question" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div><!-- /.app-masthead-row -->
+            </div>
+        </header>
+
+        <div class="pf-v6-c-page__sidebar pf-m-light app-sidebar-wrapper" id="app-sidebar">
+            <div class="pf-v6-c-page__sidebar-body app-sidebar">
+                {# <div class="pf-v6-c-content app-sidebar-header">
+                    <h2>Pipeline</h2>
+                    <p>Follow each stage from transcript upload to downloadable metadata.</p>
+                </div> #}
+                <ol class="pf-v6-c-progress-stepper pf-m-vertical app-stepper" aria-label="Pipeline steps">
+                    {% for step in pipeline_steps %}
+                    <li class="pf-v6-c-progress-stepper__step {% if step.status == 'success' %}pf-m-success{% elif step.status == 'warning' %}pf-m-warning{% elif step.status == 'danger' %}pf-m-danger{% elif step.is_current %}pf-m-current{% elif step.status == 'off' %}pf-m-pending app-step--off{% elif step.status == 'pending' %}pf-m-pending{% else %}pf-m-info{% endif %}"
+                        aria-label="{{ step.label }}{% if step.is_toggled_off %} (disabled){% else %} {{ step.status }}{% endif %}"
+                        data-label="{{ step.number }}. {{ step.label }}{% if step.is_toggled_off %} (off){% endif %}">
+                        <div class="pf-v6-c-progress-stepper__step-connector">
+                            <span class="pf-v6-c-progress-stepper__step-icon" aria-hidden="true">
+                                {% if step.status == 'success' %}
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                                {% elif step.status == 'warning' %}
+                                <i class="fas fa-exclamation" aria-hidden="true"></i>
+                                {% elif step.status == 'danger' %}
+                                <i class="fas fa-times" aria-hidden="true"></i>
+                                {% elif step.is_current %}
+                                <i class="fas fa-spinner app-step-spinner" aria-hidden="true"></i>
+                                {% else %}
+                                {{ step.number }}
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="pf-v6-c-progress-stepper__step-main">
+                            {% if step.is_enabled %}
+                            <a href="{{ url_for(step.endpoint) }}" class="pf-v6-c-progress-stepper__step-title app-step-link" {% if step.is_current %}aria-current="step"{% endif %}>
+                                {{ step.number }}. {{ step.label }}
+                            </a>
+                            {% else %}
+                            <div class="pf-v6-c-progress-stepper__step-title app-step-link app-step-link--disabled">
+                                {{ step.number }}. {{ step.label }}
+                                {% if step.is_toggled_off %}
+                                <span class="pf-v6-c-label pf-m-compact pf-m-outline"><span class="pf-v6-c-label__content">Off</span></span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="pf-v6-c-progress-stepper__step-description">{{ step.description }}</div>
+                        </div>
+                    </li>
                     {% endfor %}
-                </tbody>
-                <tfoot>
-                    <tr class="metrics-total">
-                        <td>Total</td>
-                        <td><strong>{{ state.step_metrics[-1].cumulative_s | fmt_duration }}</strong></td>
-                        <td><strong>{{ "{:,}".format(state.step_metrics[-1].cumulative_tokens) }}</strong></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </details>
-    </div>
-    {% endif %}
+                </ol>
+            </div>
+        </div>
 
-    <main class="container">
-        {% block content %}{% endblock %}
-    </main>
+        <main class="pf-v6-c-page__main" id="main-content" tabindex="-1">
+            {% if dev_mode %}
+            <div class="app-dev-banner">
+                <i class="fas fa-flask" aria-hidden="true"></i>
+                Dev mode active — pipeline steps use mock data, no API tokens will be consumed.
+            </div>
+            {% endif %}
+            <section class="pf-v6-c-page__main-section pf-m-light">
+                <div class="pf-v6-c-page__main-body app-main-body">
+                    {% block content %}{% endblock %}
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script>
-        // Disable nav links that aren't ready yet
-        document.querySelectorAll('.nav-step.disabled').forEach(el => {
-            el.addEventListener('click', e => e.preventDefault());
-        });
-
-        // Flip the metrics toggle arrow when opened/closed
-        const metricsDetails = document.querySelector('.metrics-details');
-        if (metricsDetails) {
-            const toggle = metricsDetails.querySelector('.metrics-toggle');
-            metricsDetails.addEventListener('toggle', () => {
-                toggle.textContent = metricsDetails.open ? 'Details \u25b2' : 'Details \u25bc';
+    function wireRunButton(formId, btnId, runningLabel) {
+        var form = document.getElementById(formId);
+        var btn = document.getElementById(btnId);
+        if (!form || !btn) return;
+        form.addEventListener('submit', function (event) {
+            if (form.dataset.appSubmitting === '1') return;
+            event.preventDefault();
+            form.dataset.appSubmitting = '1';
+            btn.innerHTML = '<span class="spinner"></span>' + runningLabel;
+            btn.disabled = true;
+            // Disable any sibling submit buttons in the same form (e.g. main + chapters in summarization)
+            form.querySelectorAll('button[type="submit"]').forEach(function (b) {
+                if (b !== btn) b.disabled = true;
             });
-        }
+            // Inject a sliding indeterminate progress bar inside the form so the user
+            // sees motion during long-running steps. Bar replaces itself if present.
+            var existing = form.querySelector('.app-indeterminate-progress');
+            if (existing) existing.remove();
+            var bar = document.createElement('div');
+            bar.className = 'app-indeterminate-progress';
+            bar.innerHTML = '<div class="pf-v6-c-progress pf-m-indeterminate pf-m-sm" role="progressbar" aria-label="' + (runningLabel || 'Processing') + '" aria-valuemin="0" aria-valuemax="100"><div class="pf-v6-c-progress__description app-live-progress-description">' + (runningLabel || 'Processing...') + '</div><div class="pf-v6-c-progress__bar" role="presentation"><div class="pf-v6-c-progress__indicator app-live-progress-indicator" style="width: 0%;"></div></div></div>';
+            // Place it just before the action row if we can find one; otherwise append to form
+            var actions = form.querySelector('.app-actions');
+            if (actions && actions.parentNode) {
+                actions.parentNode.insertBefore(bar, actions);
+            } else {
+                form.appendChild(bar);
+            }
+            var progressEl = bar.querySelector('.pf-v6-c-progress');
+            var indicator = bar.querySelector('.app-live-progress-indicator');
+            var description = bar.querySelector('.app-live-progress-description');
+            var detail = null;
+            var polling = true;
+            function updateProgress() {
+                if (!polling) return;
+                fetch('{{ url_for("run_progress") }}', { headers: { 'Accept': 'application/json' } })
+                    .then(function (r) { return r.json(); })
+                    .then(function (data) {
+                        var p = data.progress;
+                        if (!p || !data.running) return;
+                        var percent = p.percent;
+                        if (p.step && description) description.textContent = p.step;
+                        if (p.detail && detail) detail.textContent = p.detail;
+                        if (typeof percent === 'number') {
+                            var visualPercent = percent < 100 ? Math.max(percent, 12) : percent;
+                            progressEl.classList.remove('pf-m-indeterminate');
+                            progressEl.setAttribute('aria-valuenow', String(percent));
+                            requestAnimationFrame(function () {
+                                indicator.style.width = visualPercent + '%';
+                            });
+                        }
+                    })
+                    .catch(function () {});
+            }
+            var pollId = window.setInterval(updateProgress, 800);
+            updateProgress();
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    var formData = new FormData(form);
+                    if (btn.name && !formData.has(btn.name)) {
+                        formData.append(btn.name, btn.value || '');
+                    }
+                    fetch(form.action || window.location.href, {
+                        method: (form.method || 'POST').toUpperCase(),
+                        body: formData,
+                        headers: { 'X-Requested-With': 'pipeline-form' }
+                    })
+                        .then(function (response) {
+                            if (response.redirected && response.url) {
+                                window.history.replaceState(null, '', response.url);
+                            }
+                            return response.text();
+                        })
+                        .then(function (html) {
+                            polling = false;
+                            window.clearInterval(pollId);
+                            document.open();
+                            document.write(html);
+                            document.close();
+                        })
+                        .catch(function () {
+                            polling = false;
+                            window.clearInterval(pollId);
+                            form.dataset.appSubmitting = '0';
+                            form.submit();
+                        });
+                });
+            });
+        });
+    }
     </script>
+
     {% block scripts %}{% endblock %}
+
+    <script>
+        (function () {
+            // Body-appended PF6 tooltip for all .app-info-tip elements.
+            // Fixed positioning escapes any stacking context or overflow:hidden
+            // on ancestor containers (cards, form groups, page layout).
+            var infoTooltip = document.createElement('div');
+            infoTooltip.id = 'app-info-tooltip';
+            infoTooltip.className = 'pf-v6-c-tooltip pf-m-top';
+            infoTooltip.setAttribute('role', 'tooltip');
+            infoTooltip.setAttribute('aria-hidden', 'true');
+            infoTooltip.hidden = true;
+            infoTooltip.innerHTML =
+                '<div class="pf-v6-c-tooltip__arrow"></div>' +
+                '<div class="pf-v6-c-tooltip__content"></div>';
+            document.body.appendChild(infoTooltip);
+            var infoTooltipContent = infoTooltip.querySelector('.pf-v6-c-tooltip__content');
+
+            document.querySelectorAll('.app-info-tip').forEach(function (tip) {
+                var text = tip.getAttribute('data-tip') || '';
+                var icon = tip.querySelector('.app-info-tip__icon');
+                if (!text || !icon) return;
+
+                function show() {
+                    var rect = icon.getBoundingClientRect();
+                    infoTooltipContent.textContent = text;
+                    infoTooltip.hidden = false;
+                    infoTooltip.removeAttribute('aria-hidden');
+                    infoTooltip.style.left = Math.round(rect.left + rect.width / 2) + 'px';
+                    infoTooltip.style.top = (rect.top - 8) + 'px';
+                    infoTooltip.style.transform = 'translateX(-50%) translateY(-100%)';
+                }
+                function hide() {
+                    infoTooltip.hidden = true;
+                    infoTooltip.setAttribute('aria-hidden', 'true');
+                }
+
+                tip.addEventListener('mouseenter', show);
+                tip.addEventListener('focus', show);
+                tip.addEventListener('mouseleave', hide);
+                tip.addEventListener('blur', hide);
+            });
+        })();
+    </script>
+
+    <!-- ── Help / User guide modal ── -->
+    <div class="pf-v6-c-backdrop app-help-backdrop" id="help-backdrop" hidden aria-hidden="true">
+        <div class="pf-v6-l-bullseye">
+            <div class="pf-v6-c-modal-box pf-m-md" role="dialog" aria-modal="true" aria-labelledby="help-modal-title" id="help-modal">
+                <div class="pf-v6-c-modal-box__header">
+                    <div class="pf-v6-c-modal-box__header-main">
+                        <h2 class="pf-v6-c-modal-box__title" id="help-modal-title">
+                            <i class="fas fa-circle-question app-modal-title-icon" aria-hidden="true"></i>
+                            User Guide
+                        </h2>
+                    </div>
+                    <div class="pf-v6-c-modal-box__close">
+                        <button class="pf-v6-c-button pf-m-plain" type="button" aria-label="Close guide" id="help-modal-close-x">
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="pf-v6-c-modal-box__body app-help-body">
+                    <div class="pf-v6-c-content">
+                        <p>This tool processes oral history interview transcripts through a multi-step AI pipeline to produce structured metadata for the Smithsonian Civil Rights History Project archive.</p>
+                        <p>The pipeline turns a transcript into structured metadata for archives, web applications, and demos. It builds text blocks, labels topics, generates chapters and summaries, then optionally scores engagement and extracts clips.</p>
+                        <p class="app-muted">Batch processing uses the same configuration, so a clean first run on the Upload page becomes the source of truth for the rest of the pipeline.</p>
+                        <h2>Pipeline steps</h2>
+                    </div>
+                    <dl class="pf-v6-c-description-list">
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">1. Upload</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Upload an SRT transcript file and set your OpenAI API key. Optional modules (Questions, Engagement, Clips) can be toggled here.</span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">2. Labeling</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">The transcript is split into blocks and each block is labeled with a topic category and subtopics by the AI.</span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">3. Table of Contents</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Labeled blocks are merged into a hierarchical table of contents with timestamps. You can edit the raw JSON before continuing.</span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">4. Chapterization</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Topic transitions are detected to divide the interview into chapters. Chapter boundaries can be adjusted manually.</span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">5. Summarization</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">An overall summary and per-chapter summaries are generated. System and user prompts are fully editable before running.</span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">6. Questions</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Suggested research questions are generated from the interview content. <em>Optional — enable on the Upload page.</em></span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">7. Tuning</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Summaries are scored against quality and accuracy thresholds. Failing summaries are automatically regenerated up to the configured retry limit.</span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">8. Engagement</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Each chapter is scored for public engagement potential. <em>Optional — enable on the Upload page.</em></span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">9. Clips</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">Key excerpts are identified as candidate video clips with start/end timestamps. <em>Optional — enable on the Upload page.</em></span></dd>
+                        </div>
+                        <div class="pf-v6-c-description-list__group">
+                            <dt class="pf-v6-c-description-list__term"><span class="pf-v6-c-description-list__text">10. Results</span></dt>
+                            <dd class="pf-v6-c-description-list__description"><span class="pf-v6-c-description-list__text">All outputs are bundled into a downloadable <code>results.json</code> file ready for archival ingest.</span></dd>
+                        </div>
+                    </dl>
+                    <div class="pf-v6-c-content">
+                        <h2>Dev mode</h2>
+                        <p>Run the full pipeline with mock data — no API key required and no tokens consumed. Useful for testing the UI and reviewing output formats.</p>
+                        <form method="POST" action="{{ url_for('dev_mode_toggle') }}" class="app-dev-toggle-form">
+                            <button type="submit" class="app-dev-toggle-btn{% if dev_mode %} is-active{% endif %}">
+                                <i class="fas fa-flask" aria-hidden="true"></i>
+                                {% if dev_mode %}Dev mode: ON — click to turn off{% else %}Dev mode: OFF — click to turn on{% endif %}
+                            </button>
+                        </form>
+                        <h2>Tips</h2>
+                        <ul>
+                            <li>If a step produces unexpected output, expand the <strong>Advanced</strong> section to edit the prompts before re-running.</li>
+                            <li>The <strong>Pipeline metrics</strong> button in the header shows elapsed time and token usage per step.</li>
+                            <li>Chapter boundaries on the Chapterization page can be adjusted in the raw JSON before continuing.</li>
+                            <li>Use <strong>Start over</strong> on the Results page to clear the session and process a new interview.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pf-v6-c-modal-box__footer">
+                    <button type="button" class="pf-v6-c-button pf-m-primary" id="help-modal-close-btn">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('sidebar-toggle-btn');
+            if (!btn) return;
+            var html = document.documentElement;
+            function sync() {
+                var collapsed = html.classList.contains('app-sidebar-collapsed');
+                btn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+                btn.setAttribute('aria-label', collapsed ? 'Show pipeline sidebar' : 'Hide pipeline sidebar');
+            }
+            sync();
+            btn.addEventListener('click', function () {
+                var collapsed = html.classList.toggle('app-sidebar-collapsed');
+                localStorage.setItem('sidebarCollapsed', collapsed ? '1' : '0');
+                sync();
+            });
+
+            // Create a single shared PF6 tooltip element appended to <body>.
+            // Body-level placement with position:fixed means it is completely
+            // outside the sidebar's stacking context, so it can never be
+            // clipped or painted behind sibling page regions.
+            var railTooltip = document.createElement('div');
+            railTooltip.id = 'app-rail-tooltip';
+            railTooltip.className = 'pf-v6-c-tooltip pf-m-right';
+            railTooltip.setAttribute('role', 'tooltip');
+            railTooltip.setAttribute('aria-hidden', 'true');
+            railTooltip.hidden = true;
+            railTooltip.innerHTML =
+                '<div class="pf-v6-c-tooltip__arrow"></div>' +
+                '<div class="pf-v6-c-tooltip__content"></div>';
+            document.body.appendChild(railTooltip);
+            var railTooltipContent = railTooltip.querySelector('.pf-v6-c-tooltip__content');
+
+            // PF6 sets `.pf-v6-c-progress-stepper__step { display: contents }`,
+            // so the <li> has no rendered box. Wire click and tooltip to the
+            // visible icon bubble instead.
+            document.querySelectorAll('.app-stepper .pf-v6-c-progress-stepper__step').forEach(function (step) {
+                var icon = step.querySelector('.pf-v6-c-progress-stepper__step-icon');
+                var link = step.querySelector('a.app-step-link');
+                var label = step.getAttribute('data-label') || '';
+
+                if (icon && link) {
+                    icon.addEventListener('click', function (e) {
+                        if (!html.classList.contains('app-sidebar-collapsed')) return;
+                        if (e.target.closest('a')) return;
+                        e.preventDefault();
+                        window.location.href = link.getAttribute('href');
+                    });
+                }
+
+                if (icon && label) {
+                    icon.addEventListener('mouseenter', function () {
+                        if (!html.classList.contains('app-sidebar-collapsed')) return;
+                        var rect = icon.getBoundingClientRect();
+                        railTooltipContent.textContent = label;
+                        railTooltip.hidden = false;
+                        railTooltip.removeAttribute('aria-hidden');
+                        railTooltip.style.left = (rect.right + 10) + 'px';
+                        railTooltip.style.top = Math.round(rect.top + rect.height / 2) + 'px';
+                        railTooltip.style.transform = 'translateY(-50%)';
+                    });
+                    icon.addEventListener('mouseleave', function () {
+                        railTooltip.hidden = true;
+                        railTooltip.setAttribute('aria-hidden', 'true');
+                    });
+                }
+            });
+        })();
+
+        (function () {
+            var btn = document.getElementById('theme-toggle-btn');
+            var icon = document.getElementById('theme-icon');
+            var html = document.documentElement;
+
+            function syncIcon() {
+                var isDark = html.classList.contains('pf-v6-theme-dark');
+                icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+                btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            }
+
+            syncIcon();
+
+            btn.addEventListener('click', function () {
+                html.classList.toggle('pf-v6-theme-dark');
+                localStorage.setItem('theme', html.classList.contains('pf-v6-theme-dark') ? 'dark' : 'light');
+                syncIcon();
+            });
+        })();
+
+        (function () {
+            var backdrop = document.getElementById('help-backdrop');
+            var modal = document.getElementById('help-modal');
+            var openBtn = document.getElementById('help-open-btn');
+            var closeX = document.getElementById('help-modal-close-x');
+            var closeBtn = document.getElementById('help-modal-close-btn');
+            var FOCUSABLE = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+            function getFocusable() {
+                return Array.prototype.filter.call(
+                    modal.querySelectorAll(FOCUSABLE),
+                    function (el) { return !el.hasAttribute('hidden') && el.offsetParent !== null; }
+                );
+            }
+
+            function openModal() {
+                backdrop.hidden = false;
+                backdrop.removeAttribute('aria-hidden');
+                closeX.focus();
+            }
+
+            function closeModal() {
+                backdrop.hidden = true;
+                backdrop.setAttribute('aria-hidden', 'true');
+                openBtn.focus();
+            }
+
+            openBtn.addEventListener('click', openModal);
+            closeX.addEventListener('click', closeModal);
+            closeBtn.addEventListener('click', closeModal);
+
+            backdrop.addEventListener('click', function (e) {
+                if (e.target === backdrop || e.target === backdrop.firstElementChild) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (backdrop.hidden) return;
+                if (e.key === 'Escape') {
+                    closeModal();
+                    return;
+                }
+                if (e.key === 'Tab') {
+                    var focusable = getFocusable();
+                    if (!focusable.length) return;
+                    var first = focusable[0];
+                    var last = focusable[focusable.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

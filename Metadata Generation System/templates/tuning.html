@@ -1,178 +1,168 @@
 {% extends "base.html" %}
+{% import "macros.html" as ui %}
 {% set active_step = 'tuning' %}
 
 {% block title %}7. Tuning — Pipeline Demo{% endblock %}
 
 {% block content %}
-<div class="step-header">
-    <h1>Step 7 — Tuning</h1>
-    <p>This step scores summaries against a standardized rubric, generates feedback for improvement, and regenerates summaries. Score thresholds determine when the LLM considers summaries to be good enough to stop tuning.</p>
-</div>
+{{ ui.page_header("Step 7 — Tuning", "Score and regenerate summaries.", "Pipeline step") }}
 
-<form action="{{ url_for('tuning_run') }}" method="post" id="tuning-form">
-    <!-- Threshold controls -->
-    <div class="panel">
-        <div class="panel-label">Parameters</div>
-        <div class="controls-row">
-            <div class="control-group">
-                <label>Quality Threshold (0–100)</label>
-                <input type="number" name="quality_threshold" min="0" max="100" value="{{ state.quality_threshold }}">
+{{ ui.status_card("Tuning status", None, [
+    ("Quality threshold", state.quality_threshold),
+    ("Accuracy threshold", state.accuracy_threshold),
+    ("Max retries", state.max_retries),
+    ("Latest run", "Available" if state.tuning_results else "Not run"),
+]) }}
+
+<form action="{{ url_for('tuning_run') }}" method="post" id="tuning-form" class="pf-v6-c-form app-stack">
+    {% call ui.advanced_section("Advanced scoring controls", False, "Thresholds and prompts.") %}
+    <div class="app-grid-3">
+        <div class="pf-v6-c-form__group">
+            <div class="pf-v6-c-form__group-label">
+                <label class="pf-v6-c-form__label" for="quality-threshold"><span class="pf-v6-c-form__label-text">Quality threshold</span></label>
             </div>
-            <div class="control-group">
-                <label>Accuracy Threshold (0–100)</label>
-                <input type="number" name="accuracy_threshold" min="0" max="100" value="{{ state.accuracy_threshold }}">
+            <div class="pf-v6-c-form__group-control">
+                <span class="pf-v6-c-form-control"><input type="number" id="quality-threshold" name="quality_threshold" min="0" max="100" value="{{ state.quality_threshold }}"></span>
             </div>
-            <div class="control-group">
-                <label>Max Retries (1–15)</label>
-                <input type="number" name="max_retries" min="1" max="15" value="{{ state.max_retries }}">
+        </div>
+        <div class="pf-v6-c-form__group">
+            <div class="pf-v6-c-form__group-label">
+                <label class="pf-v6-c-form__label" for="accuracy-threshold"><span class="pf-v6-c-form__label-text">Accuracy threshold</span></label>
+            </div>
+            <div class="pf-v6-c-form__group-control">
+                <span class="pf-v6-c-form-control"><input type="number" id="accuracy-threshold" name="accuracy_threshold" min="0" max="100" value="{{ state.accuracy_threshold }}"></span>
+            </div>
+        </div>
+        <div class="pf-v6-c-form__group">
+            <div class="pf-v6-c-form__group-label">
+                <label class="pf-v6-c-form__label" for="max-retries"><span class="pf-v6-c-form__label-text">Max retries</span></label>
+            </div>
+            <div class="pf-v6-c-form__group-control">
+                <span class="pf-v6-c-form-control"><input type="number" id="max-retries" name="max_retries" min="1" max="15" value="{{ state.max_retries }}"></span>
             </div>
         </div>
     </div>
-
-    <!-- Eval prompts -->
-    <div class="panel">
-        <div class="panel-label">Evaluation Prompts (Main Summary)</div>
-        <div class="prompt-grid">
-            <div>
-                <div class="panel-label" style="margin-top: 8px;">System Prompt</div>
-                <textarea name="eval_sys_prompt" class="prompt-box">{{ state.eval_sys_prompt }}</textarea>
-            </div>
-            <div>
-                <div class="panel-label" style="margin-top: 8px;">User Prompt</div>
-                <textarea name="eval_user_prompt" class="prompt-box">{{ state.eval_user_prompt }}</textarea>
-            </div>
+    <div class="prompt-grid">
+        <div class="panel">
+            <div class="panel-label">Evaluation system prompt</div>
+            <textarea name="eval_sys_prompt" class="prompt-box">{{ state.eval_sys_prompt }}</textarea>
+        </div>
+        <div class="panel">
+            <div class="panel-label">Evaluation user prompt</div>
+            <textarea name="eval_user_prompt" class="prompt-box">{{ state.eval_user_prompt }}</textarea>
+        </div>
+        <div class="panel">
+            <div class="panel-label">Revision system prompt</div>
+            <textarea name="revision_sys_prompt" class="prompt-box">{{ state.revision_sys_prompt }}</textarea>
+        </div>
+        <div class="panel">
+            <div class="panel-label">Revision user prompt</div>
+            <textarea name="revision_user_prompt" class="prompt-box">{{ state.revision_user_prompt }}</textarea>
         </div>
     </div>
+    {% endcall %}
 
-    <!-- Revision prompts -->
-    <div class="panel">
-        <div class="panel-label">Revision Prompts (Main Summary)</div>
-        <div class="prompt-grid">
-            <div>
-                <div class="panel-label" style="margin-top: 8px;">System Prompt</div>
-                <textarea name="revision_sys_prompt" class="prompt-box">{{ state.revision_sys_prompt }}</textarea>
-            </div>
-            <div>
-                <div class="panel-label" style="margin-top: 8px;">User Prompt</div>
-                <textarea name="revision_user_prompt" class="prompt-box">{{ state.revision_user_prompt }}</textarea>
-            </div>
-        </div>
-    </div>
-
-    <div class="btn-row">
-        <button type="submit" class="btn btn-primary" id="run-btn">Run Scoring & Regeneration</button>
-        <a href="{{ url_for('questions_page') if state.steps_enabled.questions and state.question_placement == 'after_summary' else url_for('summarization_page') }}" class="btn btn-secondary">← Back</a>
+    <div class="app-actions">
+        <button type="submit" class="pf-v6-c-button pf-m-primary" id="run-btn">{% if state.tuning_results %}<i class="fas fa-check app-btn-check" aria-hidden="true"></i> {% endif %}Run scoring and regeneration</button>
+        <a href="{{ url_for('questions_page') if state.steps_enabled.questions and state.question_placement == 'after_summary' else url_for('summarization_page') }}" class="pf-v6-c-button pf-m-secondary">Back</a>
     </div>
 </form>
 
 {% if state.tuning_results %}
-<div class="btn-row" style="margin-top: 16px; margin-bottom: 16px;">
-    <a href="{{ url_for('engagement_page') if state.steps_enabled.engagement else url_for('results_page') }}" class="btn btn-primary">Continue to {{ 'Engagement' if state.steps_enabled.engagement else 'Results' }} →</a>
-    <button type="button" class="btn btn-secondary" onclick="document.getElementById('tuning-form').submit()">Re-run Tuning</button>
-</div>
-{% endif %}
-
-<!-- Results -->
-{% if state.tuning_results %}
-<div style="margin-top: 24px;">
-
-    <!-- Main summary scores -->
-    {% if state.tuning_results.main_summary %}
-    {% set ms = state.tuning_results.main_summary %}
-    <div class="panel">
-        <div class="panel-label">Main Summary Scores</div>
-        <div style="margin-bottom: 12px;">
+{% if state.tuning_results.main_summary %}
+{% set ms = state.tuning_results.main_summary %}
+<section class="pf-v6-c-card">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Main summary scores</h2>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body app-stack">
+        <div>
             {% if ms.scores.accuracy_score is defined and ms.scores.quality_score is defined %}
-            <span class="score-badge {% if ms.scores.accuracy_score >= state.accuracy_threshold %}score-pass{% else %}score-fail{% endif %}">
-                Accuracy: {{ ms.scores.accuracy_score }}
-            </span>
-            <span class="score-badge {% if ms.scores.quality_score >= state.quality_threshold %}score-pass{% else %}score-fail{% endif %}">
-                Quality: {{ ms.scores.quality_score }}
-            </span>
+            {{ ui.score_label("Accuracy: " ~ ms.scores.accuracy_score, ms.scores.accuracy_score, state.accuracy_threshold, state.accuracy_threshold - 15) }}
+            {{ ui.score_label("Quality: " ~ ms.scores.quality_score, ms.scores.quality_score, state.quality_threshold, state.quality_threshold - 15) }}
             {% elif ms.scores.error is defined %}
-            <span class="score-badge score-fail">Scoring failed: {{ ms.scores.error }}</span>
+            <span class="pf-v6-c-label pf-m-red pf-m-compact"><span class="pf-v6-c-label__content">Scoring failed: {{ ms.scores.error }}</span></span>
             {% else %}
-            <span class="score-badge score-fail">Scores unavailable</span>
+            <span class="pf-v6-c-label pf-m-red pf-m-compact"><span class="pf-v6-c-label__content">Scores unavailable</span></span>
             {% endif %}
             {% if ms.regenerated %}
-            <span style="font-size: 12px; color: #aa8;">Regenerated {{ ms.retries }}x</span>
+            <span class="app-muted">Regenerated {{ ms.retries }}x</span>
             {% endif %}
         </div>
-
         {% if ms.scores.errors is defined and ms.scores.errors %}
-        <div style="font-size: 13px; color: #e88; margin-bottom: 12px;">
-            <strong>Issues:</strong>
+        <details class="app-compact-details">
+            <summary>Scoring issues</summary>
+            <div class="app-muted app-mt-sm">
             {% for err in ms.scores.errors %}
-            <div style="margin-left: 12px;">• {{ err }}</div>
+            <div>• {{ err }}</div>
             {% endfor %}
-        </div>
+            </div>
+        </details>
         {% endif %}
-
         {% if ms.summary.summary is defined %}
-        <div class="output-block">
-            <pre>{{ ms.summary.summary }}</pre>
-        </div>
-        {% endif %}
-
-        {% if ms.summary.key_themes is defined and ms.summary.key_themes %}
-        <div style="margin-top: 10px; font-size: 13px; color: #aaa;">
-            <strong style="color: #ccc;">Key Themes:</strong> {{ ms.summary.key_themes | join(', ') }}
-        </div>
-        {% endif %}
-
-        {% if ms.summary.historical_significance is defined and ms.summary.historical_significance %}
-        <div style="margin-top: 8px; font-size: 13px; color: #aaa;">
-            <strong style="color: #ccc;">Historical Significance:</strong> {{ ms.summary.historical_significance }}
-        </div>
+        <details class="app-compact-details">
+            <summary>Generated summary</summary>
+            <div class="output-block app-mt-sm"><pre>{{ ms.summary.summary }}</pre></div>
+        </details>
         {% endif %}
     </div>
-    {% endif %}
+</section>
+{% endif %}
 
-    <!-- Chapter scores -->
-    {% if state.tuning_results.chapters %}
-    <div class="panel">
-        <div class="panel-label">Chapter Scores</div>
+{% if state.tuning_results.chapters %}
+<section class="pf-v6-c-card">
+    <div class="pf-v6-c-card__header">
+        <div class="pf-v6-c-card__title">
+            <h2 class="pf-v6-c-card__title-text pf-v6-c-title pf-m-lg">Chapter scores</h2>
+        </div>
+    </div>
+    <div class="pf-v6-c-card__body app-stack">
         {% for item in state.tuning_results.chapters %}
         <div class="chapter-card">
             <div class="chapter-num">Chapter {{ item.chapter.chapter_number }} — {{ item.chapter.title }}</div>
-            <div style="margin-top: 6px;">
+            <div class="app-mt-sm">
                 {% if item.scores.accuracy_score is defined and item.scores.quality_score is defined %}
-                <span class="score-badge {% if item.scores.accuracy_score >= state.accuracy_threshold %}score-pass{% else %}score-fail{% endif %}">
-                    Accuracy: {{ item.scores.accuracy_score }}
-                </span>
-                <span class="score-badge {% if item.scores.quality_score >= state.quality_threshold %}score-pass{% else %}score-fail{% endif %}">
-                    Quality: {{ item.scores.quality_score }}
-                </span>
+                {{ ui.score_label("Accuracy: " ~ item.scores.accuracy_score, item.scores.accuracy_score, state.accuracy_threshold, state.accuracy_threshold - 15) }}
+                {{ ui.score_label("Quality: " ~ item.scores.quality_score, item.scores.quality_score, state.quality_threshold, state.quality_threshold - 15) }}
                 {% elif item.scores.error is defined %}
-                <span class="score-badge score-fail">Scoring failed: {{ item.scores.error }}</span>
+                <span class="pf-v6-c-label pf-m-red pf-m-compact"><span class="pf-v6-c-label__content">Scoring failed: {{ item.scores.error }}</span></span>
                 {% else %}
-                <span class="score-badge score-fail">Scores unavailable</span>
+                <span class="pf-v6-c-label pf-m-red pf-m-compact"><span class="pf-v6-c-label__content">Scores unavailable</span></span>
                 {% endif %}
             </div>
             {% if item.scores.errors is defined and item.scores.errors %}
-            <div style="font-size: 12px; color: #e88; margin-top: 6px;">
+            <details class="app-compact-details">
+                <summary>Scoring issues</summary>
+                <div class="app-muted app-mt-sm">
                 {% for err in item.scores.errors %}
                 <div>• {{ err }}</div>
                 {% endfor %}
-            </div>
+                </div>
+            </details>
             {% endif %}
-
-            <!-- Editable chapter summary -->
-            <textarea class="output-box" style="min-height: 100px; margin-top: 8px;">{{ item.chapter.summary }}</textarea>
+            <details class="app-compact-details">
+                <summary>Chapter summary</summary>
+                <div class="output-block app-mt-sm"><pre>{{ item.chapter.summary }}</pre></div>
+            </details>
         </div>
         {% endfor %}
     </div>
-    {% endif %}
+</section>
+{% endif %}
 
+<div class="app-actions">
+    <a href="{{ url_for('engagement_page') if state.steps_enabled.engagement else url_for('results_page') }}" class="pf-v6-c-button pf-m-primary">Continue to {{ 'engagement' if state.steps_enabled.engagement else 'results' }}</a>
+    <button type="button" class="pf-v6-c-button pf-m-secondary" onclick="if(confirm('Re-run tuning? Current scores will be replaced.')) document.getElementById('tuning-form').submit();">Re-run tuning</button>
 </div>
+{% else %}
+{{ ui.empty_state("No tuning results yet", "Run scoring and regeneration to continue.") }}
 {% endif %}
 {% endblock %}
 
 {% block scripts %}
 <script>
-    document.getElementById('tuning-form').addEventListener('submit', function() {
-        document.getElementById('run-btn').innerHTML = '<span class="spinner"></span>Running...';
-        document.getElementById('run-btn').disabled = true;
-    });
+    wireRunButton('tuning-form', 'run-btn', 'Running...');
 </script>
 {% endblock %}
