@@ -256,6 +256,137 @@ def score_with_claude(
     return parsed
 
 
+def tune_with_dual_scoring(
+    ctx,
+    summary: Dict[str, Any],
+    transcript: str,
+    content_type: str = "main_summary",
+    quality_threshold: int = 80,
+    accuracy_threshold: int = 80,
+    max_retries: int = 3,
+    smithsonian_accuracy_threshold: int = 90,
+    smithsonian_quality_threshold: int = 90,
+    claude_model: Optional[str] = None,
+    claude_api_key: Optional[str] = None,
+    rubric: Optional[str] = None,
+    primary_source_info: Optional[Dict[str, Any]] = None,
+    eval_sys_prompt: Optional[str] = None,
+    eval_user_prompt: Optional[str] = None,
+    revision_sys_prompt: Optional[str] = None,
+    revision_user_prompt: Optional[str] = None,
+) -> Dict[str, Any]:
+    """Orchestrate dual-scorer tuning: existing OpenAI loop + independent Claude pass.
+
+    Step 1: run the existing OpenAI tuning loop with the OpenAI thresholds
+            (default 80/80). The loop iterates regenerate-until-pass and
+            returns its best attempt.
+    Step 2: take the final summary and score it independently with Claude
+            using the adversarial scoring prompt baked into claude_scorer.py.
+    Step 3: apply the Smithsonian-grade thresholds (default 90/90) to both
+            scorers via combined_publication_decision and produce the
+            publishable bool plus the decision_path.
+
+    The OpenAI thresholds and Smithsonian-grade thresholds are intentionally
+    separated. The OpenAI loop iterates against the 80/80 bar (the threshold
+    it has historically been tuned for); the publication gate is the stricter
+    90/90 bar that BOTH scorers must clear independently. This preserves the
+    existing pipeline's regeneration behavior while applying a stricter
+    publication gate on the final result.
+
+    Smithsonian-grade publication requires:
+      - OpenAI accuracy >= 90 AND quality >= 90
+      - Claude accuracy >= 90 AND quality >= 90 AND zero unsupported_claims
+
+    Disagreement between the two scorers (one passes, one fails) blocks
+    publication and routes the summary into the human-review queue.
+
+    Args:
+        ctx: ProcessorContext (the existing pipeline's shared config object).
+        summary: the draft summary dict to tune.
+        transcript: the source transcript text.
+        content_type: "main_summary" or "chapter".
+        quality_threshold: OpenAI loop threshold (default 80, the existing
+            pipeline's historical value).
+        accuracy_threshold: OpenAI loop threshold (default 80).
+        max_retries: OpenAI loop retry budget (default 3).
+        smithsonian_accuracy_threshold: publication-gate threshold for both
+            scorers (default 90).
+        smithsonian_quality_threshold: publication-gate threshold (default 90).
+        claude_model: optional Claude model override; defaults to claude-opus-4-7.
+        claude_api_key: optional Claude API key; defaults to ANTHROPIC_API_KEY.
+        rubric: rubric text; defaults to ctx.rubric (loaded from StandardizedRubric_1.md).
+        primary_source_info: interviewee metadata (optional).
+        eval_sys_prompt, eval_user_prompt, revision_sys_prompt,
+            revision_user_prompt: optional prompt overrides passed through
+            to run_tuning_loop, same semantics as the existing pipeline.
+
+    Returns:
+        Augmented dict with all keys from run_tuning_loop's result
+        (summary, scores, regenerated, retries) PLUS:
+          - openai_scores: alias of scores for symmetry in combined output
+          - claude_scores: result of score_with_claude
+          - publication_decision: result of combined_publication_decision
+          - publishable: shortcut bool from publication_decision
+
+    Caller can route based on publication_decision["human_review_required"]:
+        True  -> send to review queue (task #14)
+        False -> publish (only happens when publication_decision["publishable"] is True)
+    """
+    # Local imports to avoid eager loading of the OpenAI dependency when only
+    # the Claude scorer is needed (e.g., in unit tests of claude_scorer alone).
+    from .tuning import run_tuning_loop
+
+    # Step 1: existing OpenAI tuning loop.
+    tuning_result = run_tuning_loop(
+        ctx,
+        summary=summary,
+        transcript=transcript,
+        content_type=content_type,
+        quality_threshold=quality_threshold,
+        accuracy_threshold=accuracy_threshold,
+        max_retries=max_retries,
+        eval_sys_prompt=eval_sys_prompt,
+        eval_user_prompt=eval_user_prompt,
+        revision_sys_prompt=revision_sys_prompt,
+        revision_user_prompt=revision_user_prompt,
+        primary_source_info=primary_source_info,
+    )
+
+    openai_scores = tuning_result.get("scores", {}) or {}
+    final_summary = tuning_result["summary"]
+
+    # Step 2: independent Claude scoring of the final OpenAI-tuned summary.
+    if rubric is None:
+        rubric = getattr(ctx, "rubric", "") or ""
+
+    claude_scores = score_with_claude(
+        summary_dict=final_summary,
+        transcript=transcript,
+        content_type=content_type,
+        rubric=rubric,
+        model=claude_model,
+        api_key=claude_api_key,
+        primary_source_info=primary_source_info,
+    )
+
+    # Step 3: combined publication decision against the stricter Smithsonian
+    # thresholds. This gate is independent of the OpenAI loop's pass/fail.
+    publication_decision = combined_publication_decision(
+        openai_scores=openai_scores,
+        claude_scores=claude_scores,
+        accuracy_threshold=smithsonian_accuracy_threshold,
+        quality_threshold=smithsonian_quality_threshold,
+    )
+
+    return {
+        **tuning_result,
+        "openai_scores": openai_scores,
+        "claude_scores": claude_scores,
+        "publication_decision": publication_decision,
+        "publishable": publication_decision["publishable"],
+    }
+
+
 def combined_publication_decision(
     openai_scores: Dict[str, Any],
     claude_scores: Dict[str, Any],
