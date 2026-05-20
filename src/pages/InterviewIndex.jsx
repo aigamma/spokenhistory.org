@@ -287,9 +287,9 @@ export default function InterviewIndex() {
           </div>
 
           {/* Right side controls */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4 sm:gap-8">
             {/* Sort by dropdown */}
-            <div className="w-40 h-6 relative">
+            <div className="w-32 sm:w-40 h-6 relative">
               <select 
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -352,8 +352,8 @@ export default function InterviewIndex() {
                         className="h-8 w-8 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex-shrink-0 absolute left-0 top-1"
                         style={{ filter: 'invert(35%) sepia(89%) saturate(2893%) hue-rotate(345deg) brightness(97%) contrast(93%)' }}
                       />
-                      {/* Name that slides right on hover */}
-                      <div className="text-stone-900 text-4xl font-bold font-['Source_Serif_4'] transition-all duration-300 group-hover:text-[#F2483C] group-hover:underline group-hover:translate-x-11">
+                      {/* Name that slides right on hover (desktop only; the slide and hover affordances do not apply to touch devices) */}
+                      <div className="text-stone-900 text-2xl sm:text-3xl lg:text-4xl font-bold font-['Source_Serif_4'] transition-all duration-300 group-hover:text-[#F2483C] group-hover:underline lg:group-hover:translate-x-11">
                         {interview.name}
                       </div>
                       {/* Role and duration stay in place */}
