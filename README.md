@@ -95,6 +95,12 @@ A card-based directory of AI-curated civil rights topics drawn from the `events_
 
 ---
 
+## Contributors
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for the full roster of project leads, code contributors, and research partners — with notes on each person's focus areas and contribution period. Every contributor to this project (code, design, research, prompts, documentation, infrastructure, or curatorial work) is welcome to add or revise their own entry.
+
+---
+
 ## Acknowledgments
 
 - [Library of Congress Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project) for the original interview content

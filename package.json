@@ -14,6 +14,12 @@
     "calculate-topics": "node scripts/firebase/calculate-top-topics.cjs"
   },
   "homepage": "https://jsovelove.github.io/civil-rights-history-project/",
+  "contributors": [
+    { "name": "Jack Sovelove", "url": "https://github.com/jsovelove" },
+    { "name": "Sophia Zhuk", "url": "https://github.com/sophiazhuk" },
+    { "name": "Ron Chesko", "url": "https://github.com/ron-chesko" },
+    { "name": "Eric Allione", "url": "https://github.com/aigamma" }
+  ],
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
