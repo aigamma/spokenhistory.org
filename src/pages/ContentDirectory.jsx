@@ -256,10 +256,10 @@ export default function ContentDirectory() {
           </div>
 
           {/* Stats summary */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 mb-8 border border-white/20">
-            <div className="flex justify-between items-center">
+          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 mb-8 border border-white/20">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
               <div className="flex flex-col items-center p-4 rounded-xl" style={{ backgroundColor: 'rgba(242, 72, 60, 0.1)' }}>
-                <div className="text-2xl font-bold mb-2" style={{ 
+                <div className="text-2xl font-bold mb-2" style={{
                   color: '#F2483C',
                   fontFamily: 'Freight Text Pro, Lora, serif'
                 }}>
@@ -269,7 +269,7 @@ export default function ContentDirectory() {
                   TOTAL PEOPLE
                 </div>
               </div>
-              <div className="text-sm text-black/60" style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}>
+              <div className="text-sm text-black/60 text-center sm:text-right" style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}>
                 For topic and keyword statistics, visit the{' '}
                 <a href="#/topic-glossary" className="text-red-500 hover:underline" style={{ color: '#F2483C' }}>
                   Topic Glossary
@@ -283,7 +283,7 @@ export default function ContentDirectory() {
             <nav className="-mb-px flex space-x-8">
               <button
                 onClick={() => setActiveTab('clips')}
-                className={`pb-4 px-1 border-b-2 font-medium text-base transition-colors ${
+                className={`pb-4 px-3 border-b-2 font-medium text-base transition-colors ${
                   activeTab === 'clips'
                     ? 'text-black border-black'
                     : 'border-transparent text-black/60 hover:text-black hover:border-black/30'
@@ -294,7 +294,7 @@ export default function ContentDirectory() {
               </button>
               <button
                 onClick={() => setActiveTab('people')}
-                className={`pb-4 px-1 border-b-2 font-medium text-base transition-colors ${
+                className={`pb-4 px-3 border-b-2 font-medium text-base transition-colors ${
                   activeTab === 'people'
                     ? 'text-black border-black'
                     : 'border-transparent text-black/60 hover:text-black hover:border-black/30'
