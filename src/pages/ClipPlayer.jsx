@@ -146,7 +146,7 @@ export default function ClipPlayer() {
     : clipData.keywords?.split(',') || []
 
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-6">
+    <div className="max-w-3xl mx-auto p-4 sm:p-6 space-y-6">
       {/* Interviewee Name as Link */}
       <div>
         <h1
