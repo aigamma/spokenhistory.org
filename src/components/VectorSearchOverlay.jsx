@@ -447,54 +447,84 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
           </>
         )}
 
-        {/* Search section - positioned differently based on header state */}
+        {/* Search section - positioned differently based on header state.
+            Was max-w-[1632px] absolute left-12 (and on results state
+            absolute left-0 right-0 px-12). On mobile the px-12 was
+            48px on each side, leaving only 264px content width on a
+            360px phone, AND the absolute top:140/156px was based on
+            the desktop header heights. Now: top scales 100/116 on
+            mobile -> 140/156 from sm, padding scales px-4 -> px-12,
+            and the absolute-left:48 becomes left-4 on mobile so the
+            search bar sits 16px from each edge. */}
         <div className={`max-w-[1632px] w-full h-14 ${
-          (isSearching || results.length > 0) 
-            ? 'absolute left-0 right-0 px-12' // Full width below standard header with padding
-            : 'absolute left-12' // Original position for large title layout, no padding
-        }`} style={{ 
-          top: (isSearching || results.length > 0) ? '140px' : '156px' 
+          (isSearching || results.length > 0)
+            ? 'absolute left-0 right-0 px-4 sm:px-6 md:px-8 lg:px-12'
+            : 'absolute left-4 right-4 sm:left-12 sm:right-auto'
+        }`} style={{
+          top: (isSearching || results.length > 0) ? 'clamp(100px, 18vh, 140px)' : 'clamp(140px, 22vh, 156px)'
         }}>
           <form onSubmit={handleSearch} className="w-full h-full flex max-w-[1632px] search-container">
             {/* Search input */}
             <div className="flex-1 h-14 relative border-l border-t border-b border-stone-900 bg-white">
+              <label htmlFor="vector-search-input" className="sr-only">Search the archive</label>
               {/* Search label - only show when input is empty */}
               {!searchQuery && (
-                <div className="absolute left-6 top-1/2 transform -translate-y-1/2 text-black text-2xl font-light font-['Inter'] pointer-events-none">
+                <div className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 text-black text-lg sm:text-xl md:text-2xl font-light font-['Inter'] pointer-events-none">
                   Search
                 </div>
               )}
               <input
+                id="vector-search-input"
                 type="text"
                 value={searchQuery}
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 placeholder=""
-                className="w-full h-full px-6 text-black text-2xl font-light font-['Inter'] bg-transparent border-none outline-none placeholder-gray-400 flex items-center"
+                className="w-full h-full px-4 sm:px-6 text-black text-lg sm:text-xl md:text-2xl font-light font-['Inter'] bg-transparent border-none outline-none placeholder-gray-400 flex items-center"
                 style={{ lineHeight: '56px' }}
                 autoFocus
+                role="combobox"
+                aria-expanded={showSuggestions && suggestions.length > 0}
+                aria-controls="vector-search-suggestions"
+                aria-autocomplete="list"
+                autoCapitalize="none"
+                autoCorrect="off"
               />
-              
-              {/* Autocomplete suggestions dropdown */}
+
+              {/* Autocomplete suggestions dropdown.
+                  Was a <div> list with onClick + onMouseEnter on each
+                  row -- not keyboard accessible (the input's
+                  handleKeyDown still drives selection via arrow keys,
+                  so the keyboard worked, but the touch/screen-reader
+                  story was broken). Now each row is a real <button>
+                  with role="option" so the input's role="combobox" +
+                  aria-controls relationship is complete. */}
               {showSuggestions && suggestions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 bg-white border-l border-r border-b border-stone-900 z-10 max-h-80 overflow-y-auto">
+                <ul
+                  id="vector-search-suggestions"
+                  role="listbox"
+                  aria-label="Search suggestions"
+                  className="absolute top-full left-0 right-0 bg-white border-l border-r border-b border-stone-900 z-10 max-h-80 overflow-y-auto list-none m-0 p-0"
+                >
                   {suggestions.map((suggestion, index) => (
-                    <div
-                      key={suggestion.id}
-                      className={`px-6 py-3 cursor-pointer transition-colors border-b border-gray-200 last:border-b-0 ${
-                        index === selectedSuggestionIndex 
-                          ? 'bg-gray-100' 
-                          : 'hover:bg-gray-50'
-                      }`}
-                      onClick={() => selectSuggestion(suggestion)}
-                      onMouseEnter={() => setSelectedSuggestionIndex(index)}
-                    >
-                      <div className="text-black text-2xl font-light font-['Inter']">
-                        {suggestion.keyword}
-                      </div>
-                    </div>
+                    <li key={suggestion.id} role="option" aria-selected={index === selectedSuggestionIndex}>
+                      <button
+                        type="button"
+                        className={`w-full text-left px-4 sm:px-6 py-3 min-h-11 cursor-pointer transition-colors border-b border-gray-200 last:border-b-0 bg-transparent border-l-0 border-r-0 border-t-0 ${
+                          index === selectedSuggestionIndex
+                            ? 'bg-gray-100'
+                            : 'hover:bg-gray-50'
+                        }`}
+                        onClick={() => selectSuggestion(suggestion)}
+                        onMouseEnter={() => setSelectedSuggestionIndex(index)}
+                      >
+                        <span className="text-black text-lg sm:text-xl md:text-2xl font-light font-['Inter']">
+                          {suggestion.keyword}
+                        </span>
+                      </button>
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
             </div>
             
@@ -557,169 +587,193 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
           </div>
         )}
 
-        {/* Results section - New Figma-based layout */}
+        {/* Results section - New Figma-based layout.
+            Comprehensive mobile + a11y pass: top offset was 220px
+            unconditional (designed for the desktop header + search
+            row); on a phone where the header takes ~150px + search
+            takes ~100px, 220px is too low and the results overlap.
+            Now scales 200px on mobile -> 220px from sm up. The inner
+            padding drops from px-12 to px-4 sm:px-6 md:px-8 lg:px-12;
+            the text-8xl titles scale 4xl -> 8xl; the 3-column grid
+            stacks 1 -> 2 -> 3; the 765px-wide definition column
+            becomes w-full on mobile so it stacks under the search
+            term title; and every <div onClick> in this section was
+            converted to a real <button>. */}
         {(isSearching || results.length > 0) && (
-          <div className="absolute left-0 right-0 bottom-0 overflow-y-auto" style={{ 
-            top: '220px',
-            backgroundColor: '#EBEAE9'
-          }}>
+          <div
+            className="absolute left-0 right-0 bottom-0 overflow-y-auto"
+            style={{
+              top: 'clamp(200px, 25vh, 220px)',
+              backgroundColor: '#EBEAE9',
+            }}
+          >
             {isSearching ? (
-              <div className="flex justify-center items-center py-12">
-                <div className="w-8 h-8 border-2 border-gray-300 border-t-black rounded-full animate-spin"></div>
+              <div className="flex justify-center items-center py-12" role="status" aria-live="polite">
+                <div className="w-8 h-8 border-2 border-gray-300 border-t-black rounded-full animate-spin" aria-hidden="true"></div>
+                <span className="sr-only">Searching</span>
               </div>
             ) : results.length > 0 ? (
-              <div className="px-12 pb-12">
+              <div className="px-4 sm:px-6 md:px-8 lg:px-12 pb-12">
                 {/* Search Term Section */}
-                <div className="w-full mb-12">
-                  <div className="w-full inline-flex flex-col justify-start items-start gap-6">
-                    {/* Divider line and search results count */}
-                    <div className="w-full h-8 relative">
-                      <div className="w-full h-0 left-0 top-[31px] absolute outline outline-1 outline-offset-[-0.50px] outline-black" />
-                      <div className="w-full h-5 left-0 top-0 absolute">
-                        <div className="justify-start text-red-500 text-base font-light font-['Chivo_Mono']">
-                          {results.length} search results for "{searchQuery}"
-                        </div>
+                <div className="w-full mb-8 sm:mb-12">
+                  <div className="w-full inline-flex flex-col justify-start items-start gap-4 sm:gap-6">
+                    {/* Divider line and search results count.
+                        Replaced the absolute-positioned line + text
+                        layout with a normal-flow flex-column: the
+                        count sits above a thin border-b black line.
+                        The old absolute layout depended on the parent
+                        being exactly h-8 (32px), and on small viewports
+                        the count text wrapped to two lines and got
+                        clipped by the 32px container. */}
+                    <div className="w-full pb-2 border-b border-black">
+                      <div className="text-red-500 text-base font-light font-['Chivo_Mono']">
+                        {results.length} search results for "{searchQuery}"
                       </div>
                     </div>
-                    
-                    {/* Search term title and definition */}
-                    <div className="w-full flex justify-between items-start gap-12">
-                      {/* Large search term title */}
+
+                    {/* Search term title and definition.
+                        Stacks vertically on mobile, side-by-side at
+                        lg. Definition column drops the hardcoded
+                        w-[765px] in favor of lg:w-2/5 so it shares
+                        width proportionally with the title. */}
+                    <div className="w-full flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 lg:gap-12">
                       <div className="flex-1">
-                        <div className="justify-start text-black text-8xl font-medium font-['Acumin_Pro']">
+                        <h2 className="text-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
                           {searchQuery}
-                        </div>
+                        </h2>
                       </div>
-                      
-                      {/* Definition section */}
-                      <div className="w-[765px]">
-                        <div className="justify-start text-stone-900 text-3xl font-medium font-['FreightText_Pro']">
+
+                      <div className="w-full lg:w-2/5">
+                        <p className="text-stone-900 text-xl sm:text-2xl md:text-3xl font-medium font-['FreightText_Pro']">
                           {topicDefinition || `${searchQuery} is a significant topic in the Civil Rights Movement. Explore interviews and stories from activists who experienced and shaped this important aspect of history.`}
-                        </div>
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Watch Related Interviews Button */}
-                <div className="w-full mb-12">
-                  <div 
-                    className="inline-flex justify-start items-center gap-2.5 mb-8 cursor-pointer hover:opacity-70 transition-opacity"
+                {/* Watch Related Interviews Button.
+                    Converted from <div onClick> to real <button> with
+                    aria-label, min-h-11, and content-sized hit area.
+                    The chevron is now an SVG with viewBox so it
+                    scales cleanly. */}
+                <div className="w-full mb-8 sm:mb-12">
+                  <button
+                    type="button"
+                    className="inline-flex justify-start items-center gap-2.5 min-h-11 mb-8 cursor-pointer hover:opacity-70 transition-opacity bg-transparent border-0 p-0"
                     onClick={() => {
                       navigate(`/playlist-builder?keywords=${encodeURIComponent(searchQuery)}`);
                       handleClose();
                     }}
+                    aria-label={`Watch related interviews for ${searchQuery}`}
                   >
-                    <div className="text-center justify-start text-stone-900 text-xl font-light font-['Chivo_Mono']">
+                    <span className="text-stone-900 text-lg sm:text-xl font-light font-['Chivo_Mono']">
                       Watch Related Interviews
-                    </div>
-                    <div className="w-3.5 h-2.5 outline outline-1 outline-offset-[-0.50px] outline-stone-900" />
-                  </div>
+                    </span>
+                    <svg className="w-4 h-3" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                      <path d="M0 6h14M9 1l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-stone-900" />
+                    </svg>
+                  </button>
                 </div>
 
-                {/* Interviews Section */}
-                <div className="w-full mb-12">
-                  <div className="w-full inline-flex flex-col justify-start items-start gap-6">
-                    {/* Section divider and title */}
-                    <div className="w-full h-8 relative">
-                      <div className="w-full h-0 left-0 top-[31px] absolute outline outline-1 outline-offset-[-0.50px] outline-black" />
-                    </div>
-                    <div className="justify-start">
-                      <span className="text-red-500 text-8xl font-medium font-['Acumin_Pro']">
+                {/* Interviews Section. text-8xl section header scales
+                    4xl -> 8xl; grid is 1 -> 2 -> 3 columns. */}
+                <div className="w-full mb-8 sm:mb-12">
+                  <div className="w-full inline-flex flex-col justify-start items-start gap-4 sm:gap-6">
+                    <div className="w-full pb-2 border-b border-black" />
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
+                      <span className="text-red-500">
                         {results.length.toString().padStart(2, '0')}
                       </span>
-                      <span className="text-black text-8xl font-medium font-['Acumin_Pro']"> Interviews</span>
-                    </div>
+                      <span className="text-black"> Interviews</span>
+                    </h2>
                   </div>
 
-                  {/* Interview grid - 3 columns */}
-                  <div className="grid grid-cols-3 gap-8 mt-12">
+                  {/* Interview grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
                     {results.map((result) => (
-                      <div 
-                        key={result.id} 
-                        className="group cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                      <button
+                        type="button"
+                        key={result.id}
+                        className="group cursor-pointer hover:opacity-90 transition-opacity duration-200 bg-transparent border-0 p-0 text-left"
                         onClick={() => navigateToClip(result.documentId, result.segmentId)}
+                        aria-label={`Watch clip with ${result.personName || 'unknown speaker'}: ${result.clipTitle || 'untitled segment'}`}
                       >
                         <div className="flex flex-col gap-4">
-                          {/* Interview thumbnail */}
                           <div className="w-full aspect-[4/3] bg-zinc-300 relative overflow-hidden">
                             {result.thumbnailUrl ? (
-                              <img 
-                                src={result.thumbnailUrl} 
-                                alt={result.personName || result.documentId} 
+                              <img
+                                src={result.thumbnailUrl}
+                                alt=""
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               />
                             ) : (
                               <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400">
-                                <svg className="h-16 w-16 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg className="h-16 w-16 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
                               </div>
                             )}
                           </div>
-                          
-                          {/* Interview info - Clean spacing */}
+
                           <div className="flex flex-col gap-2">
-                            {/* Speaker name */}
-                            <h3 className="text-stone-900 text-2xl font-bold leading-tight" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                            <h3 className="text-stone-900 text-xl sm:text-2xl font-bold leading-tight" style={{ fontFamily: 'Source Serif 4, serif' }}>
                               {result.personName || "Unknown Speaker"}
                             </h3>
-                            
-                            {/* Clip title and duration */}
                             <p className="text-stone-900 text-sm font-light font-['Chivo_Mono'] leading-relaxed">
                               {result.clipTitle || "Untitled Segment"} | {result.timestamp || "Duration Unknown"}
                             </p>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     ))}
                   </div>
                 </div>
 
-                {/* Related Topics Section */}
+                {/* Related Topics Section.
+                    Same scaling as Interviews. Tag-cloud pills now
+                    <button>s with aria-label. */}
                 <div className="w-full">
-                  <div className="w-full inline-flex flex-col justify-start items-start gap-6">
-                    {/* Section divider and title */}
-                    <div className="w-full h-8 relative">
-                      <div className="w-full h-0 left-0 top-[31px] absolute outline outline-1 outline-offset-[-0.50px] outline-black" />
-                    </div>
-                    <div className="justify-start">
-                      <span className="text-red-500 text-8xl font-medium font-['Acumin_Pro']">
+                  <div className="w-full inline-flex flex-col justify-start items-start gap-4 sm:gap-6">
+                    <div className="w-full pb-2 border-b border-black" />
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
+                      <span className="text-red-500">
                         {Math.min(21, Array.from(new Set([
-                          ...results.flatMap(result => 
+                          ...results.flatMap(result =>
                             result.keywords ? result.keywords.split(",").map(kw => kw.trim()) : []
                           ),
                           ...results.flatMap(result => result.relatedEvents || []),
                           ...results.map(result => result.mainTopicCategory).filter(Boolean)
                         ])).length).toString().padStart(2, '0')}
                       </span>
-                      <span className="text-black text-8xl font-medium font-['Acumin_Pro']"> Related Topics</span>
-                    </div>
+                      <span className="text-black"> Related Topics</span>
+                    </h2>
                   </div>
 
-                  {/* Related topics tag cloud */}
-                  <div className="w-full mt-8">
-                    <div className="flex flex-wrap gap-4">
+                  <div className="w-full mt-6 sm:mt-8">
+                    <div className="flex flex-wrap gap-3 sm:gap-4">
                       {Array.from(new Set([
-                        ...results.flatMap(result => 
+                        ...results.flatMap(result =>
                           result.keywords ? result.keywords.split(",").map(kw => kw.trim()) : []
                         ),
                         ...results.flatMap(result => result.relatedEvents || []),
                         ...results.map(result => result.mainTopicCategory).filter(Boolean)
                       ])).slice(0, 21).map((keyword, i) => (
-                        <div
+                        <button
+                          type="button"
                           key={i}
-                          className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+                          className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center bg-white hover:bg-gray-50 transition-colors cursor-pointer"
                           onClick={(e) => {
                             e.stopPropagation();
                             setSearchQuery(keyword);
                             handleSearch({ preventDefault: () => {} });
                           }}
+                          aria-label={`Search for ${keyword}`}
                         >
-                          <div className="text-center text-black text-base font-light font-['Chivo_Mono']">
+                          <span className="text-center text-black text-sm sm:text-base font-light font-['Chivo_Mono']">
                             {keyword}
-                          </div>
-                        </div>
+                          </span>
+                        </button>
                       ))}
                     </div>
                   </div>
