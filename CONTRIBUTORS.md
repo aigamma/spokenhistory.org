@@ -4,46 +4,39 @@ The Civil Rights History Project is a collaborative undertaking. This file recor
 
 If you contributed and aren't listed below, please open a pull request adding yourself in the appropriate section, or ask anyone already listed to add you.
 
-_Last updated: 2026-05-20._
+_Last updated: 2026-05-20. This roster is reconciled with the Project Team and Student Interns sections on the live About page (`src/pages/About.jsx`); the two surfaces are kept in sync._
 
 ---
 
-## Project Leadership
+## Project Team
 
-- **Dustin Ohara** — Project owner. Directional control over the repository and the broader research effort. Maintains the partnership with the Smithsonian National Museum of African American History and Culture (NMAAHC) for the underlying interview collection.
+- **Dustin O'Hara, PhD** ([dustinohara.com](https://dustinohara.com/)) — Principal Investigator and Project Director. Directional control over the repository and the broader research effort. Maintains the partnership with the Library of Congress American Folklife Center and the Smithsonian National Museum of African American History and Culture (NMAAHC) for the underlying interview collection.
 
-- **Jack Sovelove** ([@jsovelove](https://github.com/jsovelove)) — Co-lead and primary architect. Built the foundation of every layer of the system: the 7-step Python/Flask metadata-generation pipeline (blocking, labeling, TOC building, chapterization, summarization, iterative tuning, engagement scoring), the React frontend (interview index, playlist builder, topic glossary, scroll-driven civil rights timeline), the Firebase Firestore + Cloud Functions backend, the vector-search and embedding infrastructure, the feedback-reporting flow (Canny integration, captcha, popup), and the standardized rubric for summary quality evaluation. Authored or co-authored the great majority of documentation in the repository.
+- **Jack Sovelove** ([@jsovelove](https://github.com/jsovelove)) — Co-Principal Investigator and Software Developer. Co-lead and primary architect. Built the foundation of every layer of the system: the 7-step Python/Flask metadata-generation pipeline (blocking, labeling, TOC building, chapterization, summarization, iterative tuning, engagement scoring), the React frontend (interview index, playlist builder, topic glossary, scroll-driven civil rights timeline), the Firebase Firestore + Cloud Functions backend, the vector-search and embedding infrastructure, the feedback-reporting flow (Canny integration, captcha, popup), and the standardized rubric for summary quality evaluation. Authored or co-authored the great majority of documentation in the repository.
+
+- **Sofia Choi** — Designer & Visual Curation. Established the visual language that the rest of the team builds within: the cream + civil-rights-red palette (#EBEAE9 background, #F2483C accent), the Inter / Source Serif Pro / Source Serif 4 / Chivo Mono / Lora typographic stack, and the visual treatment of the scroll-driven landing-page timeline. (Distinct from Sophia Zhuk, who is in the Student Interns section below.)
+
+## Student Interns
+
+- **Sophia Zhuk** ([@sophiazhuk](https://github.com/sophiazhuk)) — Software Development. Led the PatternFly UI redesign branch — refactored the frontend to the PatternFly design system, then merged it back to master (PR #1, May 20, 2026). Built the collections feature, video player, and playlist UX polish that shipped with the PatternFly merge. Improved the metadata pipeline's Flask UI: progress bars across pipeline steps, more specific error messages on `upload.html`, hh:mm:ss time formatting on `blocking_output.html`. 9 commits to date, April 19, 2026 – ongoing.
+
+- **Maya Galley** — Software Development and Metadata Design. Contributed to the metadata-generation pipeline architecture and to the design of the structured outputs that the React frontend renders against.
+
+- **Alina Sokolova** — Concept Design. Contributed to the early conceptual design of the project's scope and presentation.
+
+- **Ron Chesko** ([@ron-chesko](https://github.com/ron-chesko)) — Software Development. UI updates and code-integration work during the PatternFly redesign window. 4 commits to date, April 2, 2026 – April 23, 2026.
+
+---
+
+## May 2026 Smithsonian-Grade Overhaul
+
+- **Eric Allione** ([@aigamma](https://github.com/aigamma)) — Smithsonian-grade quality overhaul. Hardened the metadata-pipeline tuning loop with a Claude Opus 4.7 external second-opinion scorer (`processor/claude_scorer.py`), the dual-scorer publication gate (`tune_with_dual_scoring`), and the human-review queue (`processor/review_queue.py` producer + `src/pages/ReviewQueue.jsx` admin UI); expanded `civil_rights_facts.json` ground-truth coverage from 18 to 31 events and added an alias-list matcher (`shared.py::get_relevant_facts`); built the mobile-friendly advisory banner replacing the prior hard-block (`src/components/MobileAdvisory.jsx`); contributed the contributors ledger itself; mobile responsiveness audit on Interview Index.
 
 ---
 
-## Code Contributors
+## Institutional Affiliation
 
-The following developers have committed code to the repository. Commit counts are a `git log --all` snapshot as of the date above and will grow.
-
-### Jack Sovelove ([@jsovelove](https://github.com/jsovelove))
-
-- **100 commits.** February 2025 – ongoing.
-- Repository creator, primary committer across every subsystem.
-- Recent focus (late 2025 – early 2026): metadata generation folder organization, documentation tightening, asset migration (GIF → video), home page polish, topic glossary search, feedback and issue reporting infrastructure, captcha integration.
-
-### Sophia Zhuk ([@sophiazhuk](https://github.com/sophiazhuk))
-
-- **9 commits.** April 19, 2026 – ongoing.
-- Led the PatternFly UI redesign branch — refactored the frontend to the PatternFly design system, then merged it back to master (PR #1, May 20, 2026).
-- Built the collections feature, video player, and playlist UX polish that shipped with the PatternFly merge.
-- Improved the metadata pipeline's Flask UI: progress bars across pipeline steps, more specific error messages on `upload.html`, hh:mm:ss time formatting on `blocking_output.html`.
-
-### Ron Chesko ([@ron-chesko](https://github.com/ron-chesko))
-
-- **4 commits.** April 2, 2026 – April 23, 2026.
-- UI updates and code-integration work during the PatternFly redesign window.
-
-### Eric Allione ([@aigamma](https://github.com/aigamma))
-
-- May 2026 – ongoing.
-- Working on the Smithsonian-grade quality overhaul: hardening the metadata-pipeline tuning loop (raising thresholds, adding Claude Opus as an external second-opinion scorer, replacing best-attempt-kept publication with a human-review queue), expanding the `civil_rights_facts.json` ground-truth corpus, the mobile-friendly frontend redesign, the password-gated staging site, and the planned remote MCP server that will expose the archive to Claude Desktop and Claude.ai Custom Connectors users.
-
----
+- **[Western Washington University (WWU)](https://www.wwu.edu/)** — Home institution of the project. Pilot grant from WWU supports the work.
 
 ## Source Materials and Research Partners
 
