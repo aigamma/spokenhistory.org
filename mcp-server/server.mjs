@@ -128,6 +128,11 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
 // ── Helpers ─────────────────────────────────────────────────────────
 
 function cosineSimilarity(a, b) {
+  // Caller is responsible for ensuring a.length === b.length. We
+  // do NOT loop a second time to check that here because this hot path
+  // runs once per document in the embeddings collection on every search
+  // call (potentially thousands of invocations per query); pushing the
+  // length check up to the caller avoids paying for it inside the loop.
   let dot = 0, magA = 0, magB = 0
   for (let i = 0; i < a.length; i++) {
     dot += a[i] * b[i]
@@ -146,10 +151,45 @@ async function embedQuery(text) {
   return res.data[0].embedding
 }
 
+// Hard caps and floors on user-supplied parameters. The MCP client is
+// usually a well-behaved LLM but the surface is internet-facing so we
+// validate as if it were any other public endpoint. The query cap of
+// 4000 chars is roughly the upper bound of useful semantic-search
+// queries (text-embedding-3-small accepts up to 8191 tokens but most
+// useful queries are short) and prevents one client from running up a
+// large OpenAI embeddings bill by sending a megabyte of text. The limit
+// cap of 50 prevents one query from pulling the entire ranked corpus
+// over the wire when the model probably only needed the top 10.
+const MAX_QUERY_LENGTH = 4000
+const MAX_LIMIT = 50
+const DEFAULT_LIMIT = 10
+const MIN_LIMIT = 1
+
+function clampLimit(rawLimit) {
+  const n = Number(rawLimit)
+  if (!Number.isFinite(n)) return DEFAULT_LIMIT
+  return Math.max(MIN_LIMIT, Math.min(MAX_LIMIT, Math.floor(n)))
+}
+
 // ── Tool implementations ────────────────────────────────────────────
 
-async function searchTranscripts({ query, limit = 10 }) {
-  const queryEmbedding = await embedQuery(query)
+async function searchTranscripts({ query, limit = DEFAULT_LIMIT }) {
+  if (typeof query !== 'string') {
+    throw new Error('query must be a string')
+  }
+  const trimmed = query.trim()
+  if (trimmed.length === 0) {
+    throw new Error('query must not be empty after trimming')
+  }
+  if (trimmed.length > MAX_QUERY_LENGTH) {
+    throw new Error(
+      `query exceeds maximum length (${trimmed.length} > ${MAX_QUERY_LENGTH} characters)`,
+    )
+  }
+  const clampedLimit = clampLimit(limit)
+
+  const queryEmbedding = await embedQuery(trimmed)
+  const queryDim = queryEmbedding.length
 
   // The existing Cloud Function vectorSearch in functions/index.js does
   // pagination + filter logic; we replicate the core lookup here.
@@ -159,7 +199,19 @@ async function searchTranscripts({ query, limit = 10 }) {
   const scored = []
   snapshot.forEach((doc) => {
     const data = doc.data()
-    if (!data.embedding) return
+    if (!data.embedding || !Array.isArray(data.embedding)) return
+    // Skip documents whose embedding dimensionality does not match the
+    // query embedding's. Different embedding models produce different
+    // dimensionalities (text-embedding-3-small = 1536, ada-002 = 1536,
+    // text-embedding-3-large = 3072, gte-small = 384). If the
+    // embeddings collection contains documents from a previous model
+    // generation, cosineSimilarity would silently produce NaN by
+    // indexing past the end of the shorter array; filtering here
+    // surfaces the data inconsistency as a missing-from-results signal
+    // rather than as NaN-poisoned ranking.
+    if (data.embedding.length !== queryDim) return
+    const sim = cosineSimilarity(queryEmbedding, data.embedding)
+    if (!Number.isFinite(sim)) return
     scored.push({
       id: doc.id,
       documentId: data.documentId || data.interviewId || data.topicId,
@@ -170,11 +222,11 @@ async function searchTranscripts({ query, limit = 10 }) {
       interviewName: data.interviewName || data.name || '',
       type: data.type || (data.topicId ? 'topic' : data.interviewId ? 'interview' : 'clip'),
       videoEmbedLink: data.videoEmbedLink || null,
-      similarity: cosineSimilarity(queryEmbedding, data.embedding),
+      similarity: sim,
     })
   })
   scored.sort((a, b) => b.similarity - a.similarity)
-  return scored.slice(0, limit)
+  return scored.slice(0, clampedLimit)
 }
 
 async function getTranscript({ interview_id }) {
@@ -197,9 +249,15 @@ async function getTranscript({ interview_id }) {
 }
 
 async function listLeaders({ limit = 200 }) {
+  // Cap list_leaders at 500 -- the archive has ~150 interviewees today
+  // but the cap leaves headroom for collection growth without letting a
+  // caller request the entire database in one call. Below 500, honor
+  // the caller's request verbatim.
+  const n = Number(limit)
+  const safeLimit = Number.isFinite(n) && n > 0 ? Math.min(Math.floor(n), 500) : 200
   const snapshot = await db
     .collection(COLLECTION_INTERVIEW_INDEX)
-    .limit(limit)
+    .limit(safeLimit)
     .get()
   return snapshot.docs.map((doc) => {
     const d = doc.data()
