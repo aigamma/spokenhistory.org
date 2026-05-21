@@ -115,7 +115,21 @@ service cloud.firestore {
     match /userPlaylists/{playlistId} {
       allow read: if resource.data.isPublic == true || isOwner(resource.data.userId);
       allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
-      allow update, delete: if isOwner(resource.data.userId);
+
+      // Update: the owner can update, but the update CANNOT change the
+      // userId field. The previous rule `allow update: if isOwner(resource.data.userId)`
+      // checked only the existing-document's userId, which let the
+      // owner reassign the playlist to a different user by including a
+      // new userId in their update payload. On the next update the new
+      // userId would be the gating field, so the original owner would
+      // lose access while the new uid would gain it -- an ownership-
+      // hijacking primitive. Requiring request.resource.data.userId ==
+      // resource.data.userId forbids userId mutation on every update so
+      // an owner cannot transfer their playlist out from under
+      // themselves (intentionally or accidentally).
+      allow update: if isOwner(resource.data.userId) &&
+        request.resource.data.userId == resource.data.userId;
+      allow delete: if isOwner(resource.data.userId);
     }
 
     // ── Default deny ────────────────────────────────────────────────
