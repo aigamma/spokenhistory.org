@@ -14,6 +14,35 @@ from .shared import (
 
 
 # ---------------------------------------------------------------------------
+# Defensive type coercion for model-supplied score fields. The OpenAI
+# scorers return whatever shape the model produces; if the model emits
+# accuracy_score as a string ("85"), a float (85.5), a bool, or None,
+# the downstream comparisons in run_tuning_loop would crash with a
+# TypeError or compare unintended values. Matches the equivalent
+# helper in claude_scorer.py landed in commit 297f47d.
+# ---------------------------------------------------------------------------
+
+def _coerce_score(value) -> int:
+    """Coerce a model-supplied score to an int in [0, 100], falling back
+    to 0 on any parse failure."""
+    if isinstance(value, bool):
+        return 0
+    if isinstance(value, (int, float)):
+        try:
+            n = int(value)
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, min(100, n))
+    if isinstance(value, str):
+        try:
+            n = int(float(value.strip()))
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, min(100, n))
+    return 0
+
+
+# ---------------------------------------------------------------------------
 # Prompt pre-loading — avoids repeated disk reads across loop iterations
 # and parallel workers.  Called once, results passed into the hot path.
 # ---------------------------------------------------------------------------
@@ -288,8 +317,17 @@ def run_tuning_loop(
                           user_prompt=eval_user_prompt,
                           primary_source_info=primary_source_info)
 
-        acc = scores.get('accuracy_score', 0)
-        qual = scores.get('quality_score', 0)
+        # Coerce scores to int [0, 100] so the comparisons below cannot
+        # crash on type-confused model output (e.g., accuracy_score
+        # returned as the string "85" or the float 85.5, or as null/
+        # missing). The OpenAI scoring path does not type-coerce model
+        # output; without this guard, scores.get('accuracy_score', 0)
+        # returning a string would crash the next line's acc >=
+        # accuracy_threshold comparison with TypeError in Python 3.
+        # Matches the defensive-coercion pattern landed in
+        # claude_scorer._coerce_score (commit 297f47d).
+        acc = _coerce_score(scores.get('accuracy_score'))
+        qual = _coerce_score(scores.get('quality_score'))
         total = acc + qual
         final_acc, final_qual = acc, qual
         print(f"  Accuracy: {acc}/100, Quality: {qual}/100")
