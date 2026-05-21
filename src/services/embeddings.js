@@ -11,80 +11,54 @@ import { getActiveCollection, mapInterviewData, mapSubSummaryData } from './coll
  * @returns {Promise<string>} - ID of the stored embedding
  */
 export async function generateAndStoreEmbeddings(textContent, documentId, segmentId = null, metadata = {}) {
-  console.log(`Generating embedding for doc: ${documentId}, segment: ${segmentId || 'N/A'}`);
-  
-  if (!textContent || textContent.trim().length === 0) {
-    console.error(`Empty or missing text content for doc: ${documentId}, segment: ${segmentId || 'N/A'}`);
+  // Previously this function read VITE_OPENAI_API_KEY from import.meta.env
+  // and POSTed directly to api.openai.com from the browser, which would
+  // ship the OpenAI API key in the bundled JS for any deploy that set
+  // that env var -- a critical secret leak (anyone with DevTools could
+  // extract the key). It also console.log'd the first 3 chars of the
+  // key, a smaller info leak that confirmed the OpenAI-key format.
+  // Both issues are fixed by routing through the Cloud Function
+  // `generateEmbedding` in functions/index.js, which holds the key in
+  // its server-side env and returns the stored doc id. The Cloud
+  // Function also handles the Firestore write so this client function
+  // becomes a thin proxy that just gates input and forwards.
+  if (typeof textContent !== 'string' || textContent.trim().length === 0) {
     throw new Error('Text content is empty or missing');
   }
-  
-  console.log(`Text content sample: "${textContent.substring(0, 100)}..."`);
-  console.log(`Text content length: ${textContent.length} characters`);
-  
-  try {
-    // Option 1: Use an external API for embeddings
-    console.log('Calling OpenAI API for embedding generation...');
-    const apiKey = import.meta?.env?.VITE_OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
-    console.log(`API Key status: ${apiKey ? 'Present (starts with ' + apiKey.substring(0, 3) + ')' : 'MISSING'}`);
-    
-    const response = await fetch('https://api.openai.com/v1/embeddings', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
-      },
-      body: JSON.stringify({
-        input: textContent,
-        model: "text-embedding-3-small"
-      })
-    });
-    
-    if (!response.ok) {
-      const errorData = await response.json().catch(e => ({ error: 'Failed to parse error response' }));
-      console.error('OpenAI API error:', errorData);
-      console.error(`Response status: ${response.status} ${response.statusText}`);
-      throw new Error(`OpenAI API error: ${response.status} ${response.statusText}`);
-    }
-    
-    const data = await response.json();
-    console.log('Embedding generated successfully', {
-      model: data.model,
-      embeddingLength: data.data?.[0]?.embedding?.length || 'MISSING',
-    });
-    
-    if (!data.data?.[0]?.embedding) {
-      console.error('Embedding data missing in API response:', data);
-      throw new Error('Embedding data missing in API response');
-    }
-    
-    const embedding = data.data[0].embedding;
-    
-    // Store embedding in Firestore
-    console.log('Storing embedding in Firestore...');
-    // Use new collection for enhanced clip embeddings
-    const collectionName = metadata.type === 'segment' ? "clipEmbeddings" : "embeddings";
-    const embeddingsRef = collection(db, collectionName);
-    
-    const docRef = await addDoc(embeddingsRef, {
-      embedding: embedding,
-      documentId: documentId,
-      segmentId: segmentId,
-      textPreview: textContent.substring(0, 500) + (textContent.length > 500 ? '...' : ''), // Store truncated text for reference
-      timestamp: new Date(),
-      // Enhanced metadata for better search and filtering
-      ...metadata,
-      // Add searchable fields for faster filtering
-      hasSegment: !!segmentId,
-      contentLength: textContent.length,
-      embeddingDimensions: embedding.length
-    });
-    
-    console.log(`Embedding stored successfully with ID: ${docRef.id}`);
-    return docRef.id;
-  } catch (error) {
-    console.error('Error generating or storing embedding:', error);
-    throw error;
+
+  // Local imports keep the unused-function tree-shakable for callers
+  // that never invoke this admin-side function.
+  const { getFunctions, httpsCallable } = await import('firebase/functions');
+  const functions = getFunctions();
+  const generateEmbeddingFn = httpsCallable(functions, 'generateEmbedding');
+
+  const result = await generateEmbeddingFn({
+    text: textContent,
+    documentId: documentId,
+    segmentId: segmentId,
+    textPreview: textContent.substring(0, 500) + (textContent.length > 500 ? '...' : ''),
+  });
+
+  if (!result.data || !result.data.success) {
+    throw new Error(result.data?.error || 'Embedding generation failed in Cloud Function');
   }
+
+  // The Cloud Function writes to the 'embeddings' collection regardless
+  // of segment vs interview; the previous client implementation wrote
+  // to 'clipEmbeddings' for segments. If the team needs per-segment
+  // routing to a separate collection, that logic should move to the
+  // Cloud Function rather than re-introduce client-side OpenAI calls.
+  // Documenting the divergence here so a future caller of metadata.type
+  // === 'segment' knows the previous clipEmbeddings split is currently
+  // collapsed into 'embeddings'.
+  if (metadata && metadata.type === 'segment') {
+    console.warn(
+      '[generateAndStoreEmbeddings] segment metadata supplied but the Cloud Function writes to "embeddings" not "clipEmbeddings". ' +
+        'See functions/index.js exports.generateEmbedding to add a separate-collection branch if needed.',
+    );
+  }
+
+  return result.data.id;
 }
 
 /**

@@ -17,31 +17,42 @@ const TOPIC_RELATIONS_COLLECTION = 'topicRelations';
  * @returns {Promise<Array<number>>} - The embedding vector
  */
 async function generateTopicEmbedding(text) {
-  try {
-    const apiKey = import.meta?.env?.VITE_OPENAI_API_KEY || process.env.VITE_OPENAI_API_KEY;
-    
-    const response = await fetch('https://api.openai.com/v1/embeddings', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
-      },
-      body: JSON.stringify({
-        input: text,
-        model: "text-embedding-3-small"
-      })
-    });
-    
-    if (!response.ok) {
-      throw new Error(`OpenAI API error: ${response.status}`);
-    }
-    
-    const data = await response.json();
-    return data.data[0].embedding;
-  } catch (error) {
-    console.error('Error generating topic embedding:', error);
-    throw error;
+  // Previously this function read VITE_OPENAI_API_KEY from import.meta.env
+  // and POSTed directly to api.openai.com from the browser, the same
+  // critical-secret-leak anti-pattern that generateAndStoreEmbeddings
+  // in embeddings.js had. Routing through the existing Cloud Function
+  // `generateEmbedding` in functions/index.js keeps the OpenAI key
+  // server-side. The Cloud Function returns the stored doc id rather
+  // than the raw embedding vector, so we read the embedding back from
+  // Firestore by the returned id (the Cloud Function writes to the
+  // 'embeddings' collection with the embedding in the document body).
+  const functions = getFunctions();
+  const generateEmbeddingFn = httpsCallable(functions, 'generateEmbedding');
+
+  const result = await generateEmbeddingFn({
+    text: text,
+    // documentId/segmentId not supplied: this is a topic vectorization
+    // call, not an interview-segment one. The Cloud Function writes to
+    // the embeddings collection with documentId=null, segmentId=null,
+    // which is acceptable bookkeeping noise for the bulk-vectorize flow
+    // that triggers this code path (admin-only / setup-only, does not
+    // run on the public reader path).
+  });
+
+  if (!result.data || !result.data.success) {
+    throw new Error(result.data?.error || 'Embedding generation failed in Cloud Function');
   }
+
+  const embeddingDocRef = doc(db, 'embeddings', result.data.id);
+  const embeddingDocSnap = await getDoc(embeddingDocRef);
+  if (!embeddingDocSnap.exists()) {
+    throw new Error(`Embedding doc ${result.data.id} not found after generation`);
+  }
+  const embeddingData = embeddingDocSnap.data();
+  if (!Array.isArray(embeddingData.embedding)) {
+    throw new Error(`Embedding doc ${result.data.id} missing embedding array`);
+  }
+  return embeddingData.embedding;
 }
 
 /**
