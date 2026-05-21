@@ -158,7 +158,19 @@ def audit_citations(
     except Exception as e:
         return {"error": f"Claude API call failed: {str(e)}"}
 
-    raw_text = response.content[0].text
+    # Defensively extract the first text content block, same pattern as
+    # claude_scorer.py: the Anthropic API can return non-text blocks
+    # (tool_use) or an empty content array in edge cases, and a bare
+    # response.content[0].text access would raise on either.
+    raw_text = ""
+    for block in response.content or []:
+        text = getattr(block, "text", None)
+        if text:
+            raw_text = text
+            break
+    if not raw_text:
+        return {"error": "Claude API returned no text content blocks"}
+
     cleaned = _strip_markdown_fences(raw_text)
 
     try:

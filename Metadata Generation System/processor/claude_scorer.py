@@ -231,7 +231,20 @@ def score_with_claude(
     except Exception as e:
         return {"error": f"Claude API call failed: {str(e)}"}
 
-    raw_text = response.content[0].text
+    # Defensively extract the first text content block. The Anthropic
+    # API can return non-text blocks (tool_use) or an empty content
+    # array in edge cases; the bare response.content[0].text access
+    # this used to do would raise on either. We walk the content array
+    # for the first .text-bearing block instead.
+    raw_text = ""
+    for block in response.content or []:
+        text = getattr(block, "text", None)
+        if text:
+            raw_text = text
+            break
+    if not raw_text:
+        return {"error": "Claude API returned no text content blocks"}
+
     cleaned = _strip_markdown_fences(raw_text)
 
     try:
