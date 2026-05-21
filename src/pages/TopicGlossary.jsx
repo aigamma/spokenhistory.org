@@ -782,12 +782,12 @@ export default function TopicGlossary() {
       <div className="w-full px-4 sm:px-8 lg:px-12 mb-8">
         <div className="flex justify-between items-center flex-wrap gap-4">
           {/* Search Section */}
-          <div className="flex items-center gap-6">
-            <div className="w-12 h-12 relative">
+          <div className="flex items-center gap-6 flex-1 sm:flex-initial min-w-0">
+            <div className="w-12 h-12 relative flex-shrink-0">
               <div className="w-2.5 h-0 absolute left-[38.34px] top-[37.79px] origin-top-left rotate-[-133.05deg] border-2 border-stone-900"></div>
               <div className="w-6 h-6 absolute left-[10px] top-[13.17px] origin-top-left rotate-[-5.18deg] rounded-full border-2 border-stone-900"></div>
             </div>
-            <div className="min-w-64 h-6 flex items-center gap-4">
+            <div className="min-w-0 flex-1 sm:min-w-64 sm:flex-initial h-6 flex items-center gap-4">
               <input
                 type="text"
                 placeholder="Search"
@@ -806,29 +806,31 @@ export default function TopicGlossary() {
               <div className="flex items-center gap-0 bg-gray-200 rounded-full border border-stone-900 overflow-hidden">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`px-4 py-2 text-sm transition-colors ${
+                  className={`px-4 py-2 min-h-11 text-sm transition-colors ${
                     viewMode === 'grid'
                       ? 'text-white'
                       : 'text-stone-900 hover:text-stone-600'
                   }`}
-                  style={{ 
+                  style={{
                     fontFamily: 'Chivo Mono, monospace',
                     backgroundColor: viewMode === 'grid' ? '#F2483C' : 'transparent'
                   }}
+                  aria-pressed={viewMode === 'grid'}
                 >
                   Grid
                 </button>
                 <button
                   onClick={() => setViewMode('graph')}
-                  className={`px-4 py-2 text-sm transition-colors ${
+                  className={`px-4 py-2 min-h-11 text-sm transition-colors ${
                     viewMode === 'graph'
                       ? 'text-white'
                       : 'text-stone-900 hover:text-stone-600'
                   }`}
-                  style={{ 
+                  style={{
                     fontFamily: 'Chivo Mono, monospace',
                     backgroundColor: viewMode === 'graph' ? '#F2483C' : 'transparent'
                   }}
+                  aria-pressed={viewMode === 'graph'}
                 >
                   Network
                 </button>
