@@ -87,7 +87,20 @@ function parseArgs(argv) {
     else if (arg === '--dry-run') args.dryRun = true
     else if (arg === '--filter-key') args.filterKey = argv[++i]
     else if (arg === '--filter-value') args.filterValue = argv[++i]
-    else if (arg === '--concurrency') args.concurrency = parseInt(argv[++i], 10) || DEFAULT_CONCURRENCY
+    else if (arg === '--concurrency') {
+      const raw = parseInt(argv[++i], 10)
+      // Validate concurrency is a positive integer. Without this guard,
+      // a negative value (--concurrency -5) would pass the parseInt
+      // truthy check and then break the inner-loop flush: the condition
+      // `tasks.length >= concurrency` becomes `length >= -5` which is
+      // always true, and the subsequent `tasks.splice(0, -5)` removes
+      // zero items because Array.splice with a negative deleteCount
+      // clamps to zero, so the tasks array grows unboundedly without
+      // ever issuing concurrent Firestore writes. Falling back to the
+      // default is safer than the failure mode of running with the
+      // user's malformed value.
+      args.concurrency = Number.isFinite(raw) && raw >= 1 ? raw : DEFAULT_CONCURRENCY
+    }
     else if (arg === '--include-subcollections') args.includeSubCollections = true
     else if (arg === '--help' || arg === '-h') {
       printUsage()
@@ -192,6 +205,18 @@ async function copyCollection({
 
   if (includeSubCollections && KNOWN_SUB_COLLECTIONS[collName]) {
     for (const doc of snapshot.docs) {
+      // Only recurse into sub-collections of parent documents that
+      // passed the parent-level filter. The previous implementation
+      // iterated all snapshot.docs unconditionally, which meant that
+      // with --filter-key X --filter-value Y --include-subcollections,
+      // the subSummaries of docs that were filter-rejected at the
+      // parent level would still be copied -- a silent corruption of
+      // the destination project where some interviews had no
+      // top-level doc but did have child chapter docs. Re-applying
+      // shouldCopyDoc here ensures the destination is internally
+      // consistent: a sub-collection child exists only when its
+      // parent doc was also copied.
+      if (!shouldCopyDoc(doc.data(), filterKey, filterValue)) continue
       const subParentPath = `${srcCollPath}/${doc.id}`
       for (const subName of KNOWN_SUB_COLLECTIONS[collName]) {
         await copyCollection({
