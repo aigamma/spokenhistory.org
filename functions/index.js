@@ -284,9 +284,27 @@ async function performVectorSearch(queryEmbedding, limit = 10, filters = {}, col
     // Set up for next batch
     lastDoc = batchSnapshot.docs[batchSnapshot.docs.length - 1];
 
-    // Break if we have enough high-quality results
-    if (results.length >= limit * 2 && results[0].similarity > 0.7) {
-      hasMoreDocuments = false;
+    // Break if we have enough high-quality results. The previous
+    // implementation checked results[0].similarity, but results is only
+    // sorted inside the prune branch above (which fires when length >
+    // limit * 3) -- for the in-between case where results.length is in
+    // [limit * 2, limit * 3], results[0] is just the first-inserted
+    // doc, not the highest-similarity one. The early-exit then fired
+    // (or failed to fire) based on a value with no semantic relationship
+    // to the actual best similarity, producing inconsistent search
+    // result counts depending on document insertion order in the
+    // embeddings collection. Fixed by computing the actual max
+    // similarity in one O(n) pass before the comparison, which is
+    // cheap (results is at most a few hundred items at this point and
+    // the function only does this check once per batch).
+    if (results.length >= limit * 2) {
+      let maxSimilarity = 0;
+      for (const r of results) {
+        if (r.similarity > maxSimilarity) maxSimilarity = r.similarity;
+      }
+      if (maxSimilarity > 0.7) {
+        hasMoreDocuments = false;
+      }
     }
   }
 
