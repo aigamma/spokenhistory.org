@@ -26,13 +26,16 @@ export function AuthProvider({ children }) {
 
   // Listen for auth state changes
   useEffect(() => {
-    console.log("Setting up auth listener");
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log("Auth state changed:", user ? user.email : "No user");
+      // Don't log user.email -- the browser console can be screen-shared,
+      // saved by browser-developer-tools logging extensions, or otherwise
+      // exposed in ways the signed-in user may not expect. Log only the
+      // signed-in / signed-out state.
+      console.log('Auth state changed:', user ? 'signed in' : 'signed out')
       setUser(user)
       setLoading(false)
     }, (error) => {
-      console.error("Auth state change error:", error);
+      console.error('Auth state change error:', error)
       setError(error.message)
       setLoading(false)
     })
@@ -45,12 +48,17 @@ export function AuthProvider({ children }) {
   const login = async (email, password) => {
     try {
       setError(null)
-      console.log("Attempting login with:", email);
+      // Don't log the email or password. Firebase Auth's own internal
+      // logging surfaces enough metadata for debugging without us also
+      // writing PII into the browser console.
       const result = await signInWithEmailAndPassword(auth, email, password)
       setUser(result.user)
       return result.user
     } catch (error) {
-      console.error("Login error:", error);
+      // Log the error code (e.g., 'auth/user-not-found') for debugging
+      // but not the full Firebase error object which can include the
+      // attempted email and other context.
+      console.error('Login error:', error.code || 'unknown')
       setError(error.message)
       throw error
     }
@@ -60,11 +68,10 @@ export function AuthProvider({ children }) {
   const logout = async () => {
     try {
       setError(null)
-      console.log("Logging out user");
       await firebaseSignOut(auth)
       setUser(null)
     } catch (error) {
-      console.error("Logout error:", error);
+      console.error('Logout error:', error.code || 'unknown')
       setError(error.message)
       throw error
     }
