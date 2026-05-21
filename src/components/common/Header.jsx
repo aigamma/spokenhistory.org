@@ -45,7 +45,9 @@ export default function Header() {
               {/* Hamburger menu icon -- w-11 h-11 on mobile gives a WCAG 2.2 AA-compliant 44x44 tap target; lg restores the original w-12 + auto height */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Open menu"
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMenuOpen}
+                aria-controls="site-navigation-menu"
                 className="w-11 h-11 lg:w-12 lg:h-auto flex flex-col justify-center lg:justify-start items-end gap-1 hover:opacity-70 transition-opacity"
               >
                 <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
@@ -75,9 +77,17 @@ export default function Header() {
       )}
 
       {/* Sidebar */}
-      <div className={`fixed top-0 right-0 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl h-full px-4 sm:px-6 lg:px-9 py-4 sm:py-6 lg:py-9 shadow-xl z-50 flex justify-start items-start transition-transform duration-300 ease-in-out overflow-hidden ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-      }`} style={{ backgroundColor: '#F2483C' }}>
+      <div
+        id="site-navigation-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Site navigation"
+        aria-hidden={!isMenuOpen}
+        className={`fixed top-0 right-0 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl h-full px-4 sm:px-6 lg:px-9 py-4 sm:py-6 lg:py-9 shadow-xl z-50 flex justify-start items-start transition-transform duration-300 ease-in-out overflow-hidden ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        style={{ backgroundColor: '#F2483C' }}
+      >
         <div className="w-full h-full flex flex-col justify-start items-start gap-2 sm:gap-4 lg:gap-12">
           {/* Header */}
           <div className="w-full flex justify-between items-center pb-2 sm:pb-3 lg:pb-6 border-b border-black">
@@ -86,9 +96,10 @@ export default function Header() {
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="p-2 outline outline-2 outline-offset-[-1px] outline-black hover:opacity-70 transition-opacity"
+              aria-label="Close menu"
+              className="inline-flex items-center justify-center min-w-11 min-h-11 p-2 outline outline-2 outline-offset-[-1px] outline-black hover:opacity-70 transition-opacity"
             >
-              <X size={20} strokeWidth={1.5} />
+              <X size={20} strokeWidth={1.5} aria-hidden="true" />
             </button>
           </div>
 
