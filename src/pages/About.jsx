@@ -65,7 +65,7 @@ export default function About() {
         {/* About the Project Section */}
         <div className="pt-4 pb-16">
           <div className="border-b border-black pb-4 mb-8">
-            <h1 className="text-stone-900 text-6xl lg:text-8xl font-medium font-['Inter']">About the Project</h1>
+            <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-medium font-['Inter']">About the Project</h1>
           </div>
           
           {/* Main Description */}
@@ -139,7 +139,7 @@ export default function About() {
         {/* Team Section */}
         <div className="py-16">
           <div className="border-b border-black pb-4 mb-16">
-            <h2 className="text-red-500 text-6xl lg:text-8xl font-medium font-['Inter']">Project Team</h2>
+            <h2 className="text-red-500 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-medium font-['Inter']">Project Team</h2>
           </div>
           
           {/* Team Grid */}
@@ -179,7 +179,7 @@ export default function About() {
         {/* Student Interns Section */}
         <div className="py-16">
           <div className="border-b border-black pb-4 mb-16">
-            <h2 className="text-red-500 text-6xl lg:text-8xl font-medium font-['Inter']">Student Interns</h2>
+            <h2 className="text-red-500 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-medium font-['Inter']">Student Interns</h2>
           </div>
           
           {/* Interns Grid */}
