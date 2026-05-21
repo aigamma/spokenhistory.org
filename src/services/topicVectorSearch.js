@@ -187,7 +187,7 @@ export async function vectorizeAllTopics(topics, progressCallback = null, status
  * @param {number} options.minSimilarity - Minimum similarity threshold (default: 0.3)
  * @returns {Promise<Array<Object>>} - Array of matching topics with similarity scores
  */
-export async function searchTopicsSemanticaly(searchQuery, options = {}) {
+export async function searchTopicsSemantically(searchQuery, options = {}) {
   const {
     limit = 20,
     category = null,

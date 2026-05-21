@@ -12,7 +12,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { collection, getDocs, collectionGroup } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { 
-  searchTopicsSemanticaly, 
+  searchTopicsSemantically, 
   checkTopicVectorizationStatus 
 } from '../services/topicVectorSearch';
 import { useAuth } from '../contexts/AuthContext';
@@ -336,7 +336,7 @@ export default function TopicGlossary() {
         setSemanticSearchLoading(true);
         
         try {
-          const semanticResults = await searchTopicsSemanticaly(searchTerm, {
+          const semanticResults = await searchTopicsSemantically(searchTerm, {
             limit: 40,
             category: categoryFilter === 'all' ? null : categoryFilter,
             minSimilarity: 0.4
