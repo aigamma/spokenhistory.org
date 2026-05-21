@@ -327,3 +327,50 @@ a:focus-visible,
     overflow-x: hidden;
   }
 }
+
+/* ---------------------------------------------------------------------
+   Color contrast accessibility tokens.
+
+   The brand color #F2483C (civil-rights red) on the brand background
+   #EBEAE9 (cream) measures 3.05:1 contrast ratio. WCAG 2.2 AA:
+     - Normal text (under 18pt regular / 14pt bold): minimum 4.5:1 -> FAILS
+     - Large text (18pt+ or 14pt+ bold):              minimum 3.0:1 -> PASSES
+     - UI components / icons / borders:               minimum 3.0:1 -> PASSES
+
+   So the brand red is COMPLIANT for use as large headings, accent
+   labels in oversize body, button fills with white text against
+   "large text" sizing, and decorative borders. It is NOT compliant
+   for small body text such as the "5 search results for X" labels
+   or the "Chapter 01 | 00:14:32" timestamps that appear at text-base
+   (16px = 12pt) font weight light.
+
+   Two tokens are provided as CSS custom properties + Tailwind-style
+   utility classes:
+     --civil-red:           #F2483C  -- the brand color, large-text only
+     --civil-red-strong:    #B23E2F  -- darker variant, 4.86:1 on cream,
+                                        WCAG AA compliant for normal text
+   The .text-civil-red-body utility class uses --civil-red-strong and
+   should replace text-red-500 in any usage where the text is BELOW
+   18pt and NOT bold. Existing usage of text-red-500 on large text
+   (text-xl+, text-2xl headings) does not need to change -- those
+   already pass under the 3:1 large-text rule.
+
+   For component authors: when emitting red labels at text-base or
+   text-sm, use className="text-civil-red-body" instead of
+   className="text-red-500".
+   --------------------------------------------------------------------- */
+:root {
+  --civil-red: #F2483C;
+  --civil-red-strong: #B23E2F;
+  --civil-cream: #EBEAE9;
+  --civil-ink: #1c1917;
+}
+
+.text-civil-red-body {
+  color: var(--civil-red-strong);
+}
+
+.bg-civil-red-strong {
+  background-color: var(--civil-red-strong);
+}
+

@@ -54,6 +54,13 @@ Validate with `python scripts/validate_facts.py` (runs in `Metadata Generation S
 - **Named firebase-admin app**: `processor/review_queue.py` uses a named app (`review_queue_app`) so it doesn't collide with default-app initialization elsewhere in the process.
 - **Fail-closed publication**: dual-scoring disagreement -> human review queue, not auto-publish. Per-claim citation failures -> block, not skip.
 
+## Accessibility tokens
+
+- **Brand red `#F2483C` on cream `#EBEAE9` = 3.05:1 contrast.** Passes WCAG 2.2 AA only for large text (18pt+, or 14pt+ bold). FAILS the 4.5:1 minimum for normal body text. For small red labels (text-sm, text-base), use the `.text-civil-red-body` utility class (`#B23E2F`, measured 4.86:1, WCAG AA compliant). CSS tokens for both live in `src/index.css`.
+- **Stone-900 `#1c1917` on cream `#EBEAE9` = 14.1:1**, passes AAA. Default body text.
+- **`*:focus-visible` global rule** in `src/index.css` restores a 2px red outline with 2-3px offset on every focused interactive element (Tailwind's preflight reset suppresses the browser default).
+- **`prefers-reduced-motion`** is respected globally; animation/transition durations collapse to 0.01ms.
+
 ## Things that look broken but aren't
 
 - The legacy `llm-hyper-audio` references in `scripts/firebase/*.cjs` are by filename only -- the actual service-account JSON files are gitignored. Don't try to "fix" the filenames.
