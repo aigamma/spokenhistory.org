@@ -1,5 +1,18 @@
 node_modules/
+
+# Environment files
 .env
-.env.local
+.env.*
+!.env.example
+
+# Logs (Express server + Fly + flyctl)
 *.log
+fly-debug.log
+
+# Service-account keys (defense-in-depth alongside root .gitignore)
+*-firebase-adminsdk-*.json
 service-account-*.json
+
+# Build / pack outputs
+*.tgz
+dist/
