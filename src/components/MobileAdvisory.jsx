@@ -94,7 +94,7 @@ export default function MobileAdvisory() {
       <button
         type="button"
         onClick={handleDismiss}
-        className="flex-shrink-0 text-black hover:opacity-70 transition-opacity p-1 -m-1"
+        className="flex-shrink-0 inline-flex items-center justify-center min-w-11 min-h-11 -mr-2 text-black hover:opacity-70 transition-opacity"
         aria-label="Dismiss desktop recommendation"
       >
         <svg
