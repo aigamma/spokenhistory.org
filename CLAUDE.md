@@ -57,5 +57,5 @@ Validate with `python scripts/validate_facts.py` (runs in `Metadata Generation S
 ## Things that look broken but aren't
 
 - The legacy `llm-hyper-audio` references in `scripts/firebase/*.cjs` are by filename only -- the actual service-account JSON files are gitignored. Don't try to "fix" the filenames.
-- `script_chapters_batch` in `tuning.py` returns an empty list on length mismatch -- this is intentional fallback to per-chapter scoring, not a silent failure.
+- `score_chapters_batch` in `tuning.py` returns an empty list on length mismatch -- this is intentional fallback to per-chapter scoring, not a silent failure.
 - `MobileAdvisory` looks like an overlay but is actually a dismissable banner -- the original `MobileOverlay` hard-block was replaced in the overhaul.
