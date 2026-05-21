@@ -3073,6 +3073,12 @@ def _process_single_interview(srt_path, interview_name, params, progress_fn, you
     progress_fn("Tuning main summary")
     tuning_results = {"main_summary": None, "chapters": []}
     if main_summary:
+        # Pass interview_name as interview_id so the dual-scoring helper
+        # can enqueue not-publishable summaries into the human-review
+        # queue with the correct interview association. Without
+        # interview_id, dual_scoring_helper logs a warning and silently
+        # skips the enqueue (the publication decision still stands, but
+        # the reviewer UI never sees the item).
         tuning_result = run_tuning_loop(
             ctx,
             summary=main_summary,
@@ -3086,6 +3092,7 @@ def _process_single_interview(srt_path, interview_name, params, progress_fn, you
             revision_sys_prompt=params["revision_sys_prompt"],
             revision_user_prompt=params["revision_user_prompt"],
             primary_source_info=primary_source_info,
+            interview_id=interview_name,
         )
         tuning_results["main_summary"] = tuning_result
         result["main_summary"] = tuning_result["summary"]
