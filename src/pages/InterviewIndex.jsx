@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../services/firebase';
-import { searchInterviewsSemanticaly, checkInterviewVectorizationStatus } from '../services/interviewVectorSearch';
+import { searchInterviewsSemantically, checkInterviewVectorizationStatus } from '../services/interviewVectorSearch';
 import arrowRight from '../assetts/vectors/arrow right.svg';
 
 /**
@@ -77,7 +77,7 @@ export default function InterviewIndex() {
     const performSemanticSearch = async () => {
       try {
         setSemanticSearchLoading(true);
-        const results = await searchInterviewsSemanticaly(searchTerm, {
+        const results = await searchInterviewsSemantically(searchTerm, {
           limit: 50,
           minSimilarity: 0.3
         });

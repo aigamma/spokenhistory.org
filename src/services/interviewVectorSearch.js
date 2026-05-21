@@ -18,7 +18,7 @@ const INTERVIEW_EMBEDDINGS_COLLECTION = 'interviewEmbeddings';
  * @param {number} options.minSimilarity - Minimum similarity threshold (default: 0.3)
  * @returns {Promise<Array<Object>>} - Array of matching interviews with similarity scores
  */
-export async function searchInterviewsSemanticaly(searchQuery, options = {}) {
+export async function searchInterviewsSemantically(searchQuery, options = {}) {
   const {
     limit = 20,
     minSimilarity = 0.3
