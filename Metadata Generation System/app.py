@@ -2042,7 +2042,8 @@ def tuning_run():
     ctx = get_ctx()
     transcript = state["plaintext_transcript"]
 
-    from processor.tuning import run_tuning_loop, score_chapter, score_chapters_batch
+    from processor.tuning import score_chapter, score_chapters_batch
+    from processor.dual_scoring_helper import run_tuning_loop_or_dual as run_tuning_loop
     from processor.blocking import extract_plaintext_section
 
     tuning_results = {"main_summary": None, "chapters": []}
@@ -2959,7 +2960,8 @@ def _process_single_interview(srt_path, interview_name, params, progress_fn, you
     from processor.toc import build_hierarchical_toc
     from processor.chapterization import detect_topic_transitions, build_chapter_preview
     from processor.summarization import generate_main_summary, generate_chapters
-    from processor.tuning import run_tuning_loop, score_chapter, score_chapters_batch
+    from processor.tuning import score_chapter, score_chapters_batch
+    from processor.dual_scoring_helper import run_tuning_loop_or_dual as run_tuning_loop
     from processor.questions import compute_question_stats, generate_questions, normalize_question_rows
 
     # Create a fresh ProcessorContext for this interview
