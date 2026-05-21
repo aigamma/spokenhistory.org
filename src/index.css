@@ -226,11 +226,104 @@ For Adobe Fonts, add to your HTML head:
     bottom: -0.25rem;
     border-width: 1px;
   }
-  
+
   .red-border-effect::after {
     top: -0.5rem;
     left: -0.5rem;
     right: -0.5rem;
     bottom: -0.5rem;
   }
-} 
+}
+
+/* ---------------------------------------------------------------------
+   Mobile / orientation / accessibility globals.
+
+   The project has a per-page Tailwind responsive layout for portrait
+   mobile (the sm: prefix), but until this section landed there was no
+   global rule for the harder cases:
+   1. Short-landscape (phone rotated to landscape): viewport height is
+      often <= 480px, which means the standard py-6 / py-9 header eats
+      ~25-30% of usable vertical space and the on-screen keyboard wipes
+      out the rest. The header collapses here.
+   2. Focus-visible: many interactive elements (buttons, links, inputs)
+      relied on the default browser outline, which the Tailwind base
+      reset suppresses on many browsers. The :focus-visible default
+      restores a visible 2px outline for keyboard users without bringing
+      back the mouse-click ring.
+   3. prefers-reduced-motion: any animation under .animate-* or
+      transition-* is suppressed for users who set the OS preference.
+   4. The .mobile-collapsible-header class is applied to the site header
+      and, on short-landscape viewports, compresses its vertical padding
+      and the logo font-size so the header takes the minimum vertical
+      space possible without losing brand identity.
+
+   The breakpoints used here:
+   - max-height: 480px is the standard threshold for "short" viewports
+     (iPhone in landscape is 414x896 -> 896x414, well under 480).
+   - The orientation: landscape predicate is a safety belt: a desktop
+     window narrowed to 500x400 still gets the relaxed layout because
+     desktop short windows are usually intentional, and a phone in
+     portrait will never be under 480 tall.
+   --------------------------------------------------------------------- */
+
+@media (orientation: landscape) and (max-height: 480px) {
+  .mobile-collapsible-header {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .mobile-collapsible-header .site-logo-text {
+    font-size: 1.5rem !important;
+    line-height: 1.75rem !important;
+  }
+  .mobile-collapsible-header .site-logo-text br {
+    display: none;
+  }
+}
+
+/* Restore a visible focus indicator for keyboard navigation.
+   Excludes inputs/textareas which already have a focus-within ring
+   handled by the per-component styles. */
+*:focus-visible {
+  outline: 2px solid #F2483C;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible {
+  outline: 2px solid #F2483C;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect the user's reduced-motion preference. The .animate-fadeIn
+   and .animate-pulse-blue classes above use keyframe animations; this
+   block neutralizes them for users who opted out. The 0.01ms duration
+   keeps the transition-* utilities functionally instant rather than
+   suppressed entirely, which keeps logic-dependent states (the menu
+   open/close, the modal show/hide) from looking broken. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* When users zoom in (Safari/Chrome pinch-zoom or browser-level zoom
+   above 200%), the viewport meta tag in index.html allows scaling.
+   But fixed-width elements with explicit pixel widths can still cause
+   horizontal scroll. The site-wide guard below catches the most common
+   shape: a flex/grid child that overflows because its content is wider
+   than the viewport. Pages that intentionally need horizontal scroll
+   (e.g., the Figma timeline on Home.jsx) opt out by setting
+   .allow-overflow-x on the root container of that surface. */
+@media (max-width: 480px) {
+  body:not(.allow-overflow-x) {
+    overflow-x: hidden;
+  }
+}

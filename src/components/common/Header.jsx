@@ -29,14 +29,20 @@ export default function Header() {
     <>
       {/* Header */}
       <header className="relative" style={{ backgroundColor: '#EBEAE9' }}>
-        <div className="w-full px-4 sm:px-8 lg:px-12 py-6 lg:py-9">
+        {/* The .mobile-collapsible-header / .site-logo-text marker classes
+            let src/index.css collapse the header height and shrink the
+            wordmark when the viewport is in short-landscape (height <=
+            480px, e.g. a phone rotated sideways). Desktop and portrait
+            mobile layouts are unaffected -- the rule is gated on
+            (orientation: landscape) and (max-height: 480px). */}
+        <div className="w-full px-4 sm:px-8 lg:px-12 py-6 lg:py-9 mobile-collapsible-header">
           <div className="flex justify-between items-start">
             {/* Logo/Title */}
             <Link to="/" className="text-decoration-none">
               <div>
-                <span className="text-stone-900 text-4xl font-normal font-['Source_Serif_Pro']">Civil Rights </span>
+                <span className="site-logo-text text-stone-900 text-4xl font-normal font-['Source_Serif_Pro']">Civil Rights </span>
                 <br />
-                <span className="text-stone-900 text-4xl font-bold font-['Source_Serif_Pro'] leading-9">History Project</span>
+                <span className="site-logo-text text-stone-900 text-4xl font-bold font-['Source_Serif_Pro'] leading-9">History Project</span>
               </div>
             </Link>
 

@@ -228,40 +228,69 @@ export default function InterviewIndex() {
 
         {/* Controls Row */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-10 md:mb-12 lg:mb-[48px]">
-          {/* Search Section */}
-          <div className="flex items-center gap-6 flex-wrap">
-            {/* Search Icon and Input */}
-            <div className="flex items-center gap-6">
-              <div className="w-12 h-12 relative">
-                <div className="w-2.5 h-0 absolute left-[38.34px] top-[37.79px] origin-top-left rotate-[-133.05deg] border-2 border-stone-900"></div>
-                <div className="w-6 h-6 absolute left-[10px] top-[13.17px] origin-top-left rotate-[-5.18deg] rounded-full border-2 border-stone-900" />
-              </div>
+          {/* Search Section. Replaced the previous custom-drawn magnifier
+              (two absolute-positioned divs at hardcoded pixel positions
+              inside a w-12 container, which rendered as a fragile
+              line-art glyph that did not scale and had no semantic
+              meaning to a screen reader) with an inline SVG that has
+              proper viewBox-based scaling, aria-hidden so it is not
+              double-announced alongside the input's placeholder, and a
+              size that matches the surrounding text. The gap was also
+              reduced from gap-6 (24px) to gap-3 (12px) so the icon and
+              input read as one visual unit. */}
+          <div className="flex items-center gap-3 sm:gap-6 flex-wrap">
+            <div className="flex items-center gap-3">
+              <svg
+                className="w-6 h-6 sm:w-7 sm:h-7 text-stone-900 flex-shrink-0"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="2" />
+                <path d="M15.5 15.5L20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+              <label htmlFor="interview-search" className="sr-only">Search interviews</label>
               <input
+                id="interview-search"
                 type="text"
                 placeholder={useSemanticSearch ? "Search by themes..." : "Search in index"}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="text-stone-900 text-base sm:text-lg md:text-xl font-light bg-transparent border-none outline-none w-40 sm:w-48 md:w-60"
+                className="text-stone-900 text-base sm:text-lg md:text-xl font-light bg-transparent border-none outline-none w-40 sm:w-48 md:w-60 min-h-11"
                 style={{ fontFamily: 'Chivo Mono, monospace' }}
               />
               {semanticSearchLoading && (
-                <div className="w-5 h-5 border-2 border-stone-900/20 rounded-full animate-spin" style={{
-                  borderTopColor: '#F2483C'
-                }}></div>
+                <div
+                  className="w-5 h-5 border-2 border-stone-900/20 rounded-full animate-spin flex-shrink-0"
+                  style={{ borderTopColor: '#F2483C' }}
+                  role="status"
+                  aria-label="Searching"
+                />
               )}
             </div>
             
-            {/* Search Mode Toggle */}
+            {/* Search Mode Toggle. The two buttons inside the toggle
+                were px-3 py-1 (24px+24px=48px wide x 12px+12px+text=~32px
+                tall), short of the WCAG 2.2 AA 44x44 tap-target rule.
+                Bumped padding and added min-h-11 so each button is at
+                least 44px tall. role="group" + aria-pressed on each
+                button gives screen readers the toggle semantics that
+                the bare onClick handlers did not previously announce. */}
             {isVectorized && (
-              <div className="flex items-center gap-2 px-3 py-2 bg-gray-200 rounded border border-stone-900">
+              <div
+                className="flex items-center gap-2 p-1 bg-gray-200 rounded border border-stone-900"
+                role="group"
+                aria-label="Search mode"
+              >
                 <button
                   onClick={() => setUseSemanticSearch(false)}
-                  className={`px-3 py-1 text-sm rounded transition-colors ${
+                  aria-pressed={!useSemanticSearch}
+                  className={`px-3 py-2 min-h-11 text-sm rounded transition-colors ${
                     !useSemanticSearch
                       ? 'text-white'
                       : 'text-stone-900 hover:text-stone-600'
                   }`}
-                  style={{ 
+                  style={{
                     fontFamily: 'Chivo Mono, monospace',
                     backgroundColor: !useSemanticSearch ? '#F2483C' : 'transparent'
                   }}
@@ -270,12 +299,13 @@ export default function InterviewIndex() {
                 </button>
                 <button
                   onClick={() => setUseSemanticSearch(true)}
-                  className={`px-3 py-1 text-sm rounded transition-colors ${
+                  aria-pressed={useSemanticSearch}
+                  className={`px-3 py-2 min-h-11 text-sm rounded transition-colors ${
                     useSemanticSearch
                       ? 'text-white'
                       : 'text-stone-900 hover:text-stone-600'
                   }`}
-                  style={{ 
+                  style={{
                     fontFamily: 'Chivo Mono, monospace',
                     backgroundColor: useSemanticSearch ? '#F2483C' : 'transparent'
                   }}
@@ -288,12 +318,21 @@ export default function InterviewIndex() {
 
           {/* Right side controls */}
           <div className="flex items-center gap-4 sm:gap-8">
-            {/* Sort by dropdown */}
-            <div className="w-32 sm:w-40 h-6 relative">
-              <select 
+            {/* Sort by dropdown. The container is now self-sizing
+                (no fixed w-32 / w-40) and the dropdown arrow is anchored
+                to the right edge with right-0 rather than the previous
+                absolute left-[168px], which floated the arrow off the
+                container by 40px on mobile (where w-32 = 128px but the
+                arrow lived at left:168px). The select element itself
+                has min-h-11 to clear the WCAG 2.2 AA 44x44 tap target
+                rule that an h-6 hit area never met. */}
+            <div className="relative min-h-11 flex items-center">
+              <label htmlFor="sort-by" className="sr-only">Sort interviews</label>
+              <select
+                id="sort-by"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="text-stone-900 text-xl font-light bg-transparent border-none outline-none cursor-pointer appearance-none pr-6"
+                className="text-stone-900 text-base sm:text-lg md:text-xl font-light bg-transparent border-none outline-none cursor-pointer appearance-none pr-6 min-h-11"
                 style={{ fontFamily: 'Chivo Mono, monospace' }}
               >
                 <option value="A-Z">Sort by: A-Z</option>
@@ -301,7 +340,14 @@ export default function InterviewIndex() {
                 <option value="Duration (High-Low)">Duration (High-Low)</option>
                 <option value="Duration (Low-High)">Duration (Low-High)</option>
               </select>
-              <div className="w-4 h-3 absolute left-[168px] top-[3px] origin-top-left rotate-90 border border-stone-900" />
+              <svg
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none text-stone-900"
+                viewBox="0 0 12 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
           </div>
         </div>
