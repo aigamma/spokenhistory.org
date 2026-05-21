@@ -14,8 +14,11 @@ dist-ssr
 
 .env
 
-# Firebase service account keys
+# Firebase service account keys (any project)
 llm-hyper-audio-firebase-adminsdk-fbsvc-*.json
+civil-rights-history-project-firebase-adminsdk-*.json
+*-firebase-adminsdk-*.json
+service-account-*.json
 
 # Editor directories and files
 .vscode/*
