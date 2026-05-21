@@ -1,0 +1,27 @@
+# EditorConfig is awesome: https://EditorConfig.org
+#
+# Captures the project's line-ending, indent, and trailing-whitespace
+# conventions so editors honor them without per-developer config. Most
+# of the codebase is JSX/JS/Python and the team uses LF line endings;
+# Windows contributors who don't normalize get CRLF warnings on every
+# commit until git autocrlf or this file kicks in.
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.py]
+indent_size = 4
+
+[*.md]
+# Markdown trailing whitespace is sometimes meaningful (two-space line break).
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
