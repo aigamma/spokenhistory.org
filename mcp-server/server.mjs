@@ -96,7 +96,15 @@ if (saJson) {
     process.exit(1)
   }
 } else if (saPath) {
-  firebaseCredential = cert(saPath)
+  try {
+    firebaseCredential = cert(saPath)
+  } catch (err) {
+    console.error(
+      `FIREBASE_SERVICE_ACCOUNT_PATH (${saPath}) could not be loaded as a service-account JSON:`,
+      err.message,
+    )
+    process.exit(1)
+  }
 } else {
   console.error(
     'Either FIREBASE_SERVICE_ACCOUNT_JSON (inline JSON) or ' +
@@ -105,7 +113,12 @@ if (saJson) {
   process.exit(1)
 }
 
-initializeApp({ credential: firebaseCredential })
+try {
+  initializeApp({ credential: firebaseCredential })
+} catch (err) {
+  console.error('firebase-admin initializeApp failed:', err.message)
+  process.exit(1)
+}
 const db = getFirestore()
 
 // ── OpenAI init ──────────────────────────────────────────────────────
