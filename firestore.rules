@@ -1,0 +1,130 @@
+rules_version = '2';
+
+// Firestore security rules for the civil-rights-history-project Firebase
+// project (the new clean replacement for llm-hyper-audio).
+//
+// Posture: public-readable archive with authenticated-only writes. The
+// project README frames the goal as making the Library of Congress
+// civil rights oral history collection "genuinely accessible for civic
+// education, research, and institutional accountability," so the
+// content collections are world-readable. Writes are restricted to
+// authenticated team members (Firebase Auth users) because the data is
+// the team's curatorial work product and should not be modifiable by
+// anonymous visitors.
+//
+// The review_queue collection (Smithsonian-grade publication gate) is
+// the one exception to the public-read posture: only authenticated
+// users can read it, because the queue's contents include pre-publication
+// summaries that may contain hallucinations Claude flagged for review and
+// surfacing those to the public would defeat the purpose of the gate.
+//
+// Deploy with: firebase deploy --only firestore:rules
+// Or: edit and live-test in the Firebase Console -> Firestore -> Rules.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Helper functions ────────────────────────────────────────────
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // ── Public-readable content collections ────────────────────────
+    // The site's primary purpose is making this archive accessible.
+    // Anonymous reads are allowed; only signed-in team members can write.
+
+    match /interviewIndex/{interviewId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+
+      // Per-interview chapter summaries live in a sub-collection.
+      match /subSummaries/{segmentId} {
+        allow read: if true;
+        allow write: if isAuthenticated();
+      }
+    }
+
+    match /events_and_topics/{topicId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /embeddings/{embeddingId} {
+      // Embeddings power semantic search; the vector data itself is not
+      // user-readable in a meaningful way (1536 floats), but the
+      // associated text previews are useful, so allow read.
+      allow read: if true;
+      // Writes happen via the generateEmbedding Cloud Function with
+      // Admin SDK credentials; client-side writes are blocked.
+      allow write: if false;
+    }
+
+    // Older keyword collections referenced in shared.py's
+    // _load_keyword_collection fallback chain.
+    match /keywords/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    match /keywords_cleaned/{document=**} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // ── Review queue (Smithsonian-grade publication gate) ──────────
+    // The review_queue collection holds pre-publication summaries that
+    // failed the dual-scorer gate. Items contain unflagged hallucinations
+    // by definition, so anonymous reads are blocked -- surfacing this
+    // content to the public would defeat the gate's purpose.
+
+    match /review_queue/{itemId} {
+      // Read: authenticated team members only (they triage via the
+      // React /review-queue admin UI).
+      allow read: if isAuthenticated();
+
+      // Create: blocked from clients. Items are written into this
+      // collection by the Python producer in processor/review_queue.py
+      // running with Admin SDK credentials (FIREBASE_SERVICE_ACCOUNT_PATH),
+      // not by client code. The Admin SDK bypasses Security Rules, so
+      // this 'allow create: if false' restricts only browser-side writes.
+      allow create: if false;
+
+      // Update: authenticated team members. The reviewer's approve /
+      // reject / send-back decision goes through markReviewed in
+      // src/services/reviewQueue.js, which is a client-side update from
+      // the /review-queue admin UI.
+      allow update: if isAuthenticated();
+
+      // Delete: blocked entirely. Queue items are part of the audit
+      // trail and should not be deleted from the client; if a record
+      // truly needs removal, the team can do it via the Admin SDK or
+      // the Firebase Console with explicit intent.
+      allow delete: if false;
+    }
+
+    // ── Per-user data (if added later) ──────────────────────────────
+    // Pattern for future user-scoped collections (saved playlists,
+    // bookmarks, viewing history) so the pattern is in place when
+    // someone wants it.
+
+    match /userPlaylists/{playlistId} {
+      allow read: if resource.data.isPublic == true || isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if isOwner(resource.data.userId);
+    }
+
+    // ── Default deny ────────────────────────────────────────────────
+    // Any collection not matched above is denied by default. This is
+    // the secure default and prevents accidentally exposing or accepting
+    // writes for collections introduced later without explicit rules.
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
