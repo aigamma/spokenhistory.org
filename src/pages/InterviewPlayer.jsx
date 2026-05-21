@@ -571,7 +571,7 @@ export default function InterviewPlayer() {
           <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium mb-4" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
             {mainSummary?.name || documentName}
           </h1>
-          <div className="text-red-500 text-base font-mono">
+          <div className="text-civil-red-body text-base font-mono">
             {mainSummary?.roleSimplified && `${mainSummary.roleSimplified} | `}
             {totalDuration > 0 && `${Math.round(totalDuration / 60)} minutes`}
           </div>
@@ -640,7 +640,7 @@ export default function InterviewPlayer() {
               </div>
 
               {subSummaries.length > 0 && (
-                <div className="text-red-500 text-base font-mono" aria-live="polite">
+                <div className="text-civil-red-body text-base font-mono" aria-live="polite">
                   Chapter {currentSegmentIndex + 1} of {subSummaries.length}
                 </div>
               )}
@@ -661,7 +661,7 @@ export default function InterviewPlayer() {
                 {/* Button to view full description */}
                 <button
                   onClick={() => setShowDescriptionModal(true)}
-                  className="text-red-500 text-base font-mono hover:text-red-700 transition-colors cursor-pointer min-h-11 inline-flex items-center"
+                  className="text-civil-red-body text-base font-mono hover:text-red-700 transition-colors cursor-pointer min-h-11 inline-flex items-center"
                 >
                   View Interview Description
                 </button>
@@ -693,7 +693,7 @@ export default function InterviewPlayer() {
               <div key={summary.id || index} className="w-full mb-8">
                 <button
                   type="button"
-                  className="text-red-500 text-base font-mono mb-2 cursor-pointer hover:text-red-700 transition-colors min-h-11 inline-flex items-center text-left disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-civil-red-body text-base font-mono mb-2 cursor-pointer hover:text-red-700 transition-colors min-h-11 inline-flex items-center text-left disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={() => {
                     const seconds = convertTimestampToSeconds(summary.timestamp);
                     handleTimestampClick(seconds);

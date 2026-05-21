@@ -218,7 +218,7 @@ export default function InterviewIndex() {
 
         {/* Interview count and total minutes */}
         <div className="mb-[31px]">
-          <span className="text-red-500 text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+          <span className="text-civil-red-body text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
             {filteredInterviews.length} Interviews, {totalMinutes} minutes
           </span>
         </div>

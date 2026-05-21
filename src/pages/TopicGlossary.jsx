@@ -771,7 +771,7 @@ export default function TopicGlossary() {
 
         {/* Topic count */}
         <div className="mb-[31px]">
-          <span className="text-red-500 text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+          <span className="text-civil-red-body text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
             {filteredTopics.length} Topics {categoryFilter !== 'all' ? `(${categoryFilter})` : ''}
           </span>
         </div>

@@ -583,7 +583,7 @@ const PlaylistBuilder = () => {
         {/* Background loading indicator - only show when loading */}
         {backgroundLoading && (
         <div className="px-4 sm:px-6 md:px-8 lg:px-12 pt-4">
-          <div className="flex items-center gap-2 text-red-500 text-base font-light font-mono">
+          <div className="flex items-center gap-2 text-civil-red-body text-base font-light font-mono">
             <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-red-500" role="status" aria-label="Loading clips" />
             <span className="text-sm">Loading remaining clips...</span>
           </div>
@@ -666,7 +666,7 @@ const PlaylistBuilder = () => {
                   onClick={() => navigate(`/interview-player?documentName=${encodeURIComponent(currentVideo.documentName)}`)}
                   aria-label={`Watch full interview${currentVideo.name ? ` with ${currentVideo.name}` : ''}`}
                 >
-                  <span className="text-red-500 text-base font-light font-mono">Watch Full Interview</span>
+                  <span className="text-civil-red-body text-base font-light font-mono">Watch Full Interview</span>
                   <img src={ArrowRightIcon} alt="" aria-hidden="true" className="w-5 h-4" style={{filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'}} />
                 </button>
               )}
