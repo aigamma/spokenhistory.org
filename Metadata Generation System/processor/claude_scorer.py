@@ -287,6 +287,8 @@ def tune_with_dual_scoring(
     eval_user_prompt: Optional[str] = None,
     revision_sys_prompt: Optional[str] = None,
     revision_user_prompt: Optional[str] = None,
+    near_threshold_tolerance: int = 3,
+    min_improvement: int = 3,
 ) -> Dict[str, Any]:
     """Orchestrate dual-scorer tuning: existing OpenAI loop + independent Claude pass.
 
@@ -349,7 +351,14 @@ def tune_with_dual_scoring(
     # the Claude scorer is needed (e.g., in unit tests of claude_scorer alone).
     from .tuning import run_tuning_loop
 
-    # Step 1: existing OpenAI tuning loop.
+    # Step 1: existing OpenAI tuning loop. near_threshold_tolerance and
+    # min_improvement are threaded through so the early-exit semantics
+    # are identical to a direct run_tuning_loop call. If those were
+    # dropped here (as the original implementation did), toggling
+    # USE_DUAL_SCORING would silently change tuning behavior for callers
+    # that pass non-default values -- the dispatcher's promise of
+    # behavior parity on the tuning-loop side would only hold for
+    # callers using the default 3/3 thresholds.
     tuning_result = run_tuning_loop(
         ctx,
         summary=summary,
@@ -363,6 +372,8 @@ def tune_with_dual_scoring(
         revision_sys_prompt=revision_sys_prompt,
         revision_user_prompt=revision_user_prompt,
         primary_source_info=primary_source_info,
+        near_threshold_tolerance=near_threshold_tolerance,
+        min_improvement=min_improvement,
     )
 
     openai_scores = tuning_result.get("scores", {}) or {}

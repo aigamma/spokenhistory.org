@@ -116,6 +116,8 @@ def run_tuning_loop_or_dual(
         revision_user_prompt=revision_user_prompt,
         primary_source_info=primary_source_info,
         rubric=getattr(ctx, "rubric", None),
+        near_threshold_tolerance=near_threshold_tolerance,
+        min_improvement=min_improvement,
     )
 
     pub = result.get("publication_decision", {}) or {}
