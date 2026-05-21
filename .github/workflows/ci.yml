@@ -72,7 +72,7 @@ jobs:
       - name: Compile-check all Python modules
         run: |
           cd "Metadata Generation System"
-          python -m compileall -q processor/ app.py srt_parser.py
+          python -m compileall -q processor/ scripts/ app.py srt_parser.py
 
       - name: Import smoke-test the new Smithsonian-grade modules
         run: |
