@@ -617,29 +617,43 @@ const PlaylistBuilder = () => {
               {/* Navigation buttons - left aligned */}
               <div className="flex items-center gap-8">
                 {/* Previous Chapter */}
-                <div className="w-48 h-6 cursor-pointer hover:opacity-80" onClick={handlePrevious}>
+                <button
+                  type="button"
+                  className="w-48 min-h-11 cursor-pointer hover:opacity-80 bg-transparent border-0 p-0"
+                  onClick={handlePrevious}
+                  aria-label="Previous chapter"
+                >
                   <div className="inline-flex justify-between items-center w-full">
-                    <img src={ArrowLeftIcon} alt="Previous" className="w-5 h-4" />
+                    <img src={ArrowLeftIcon} alt="" className="w-5 h-4" />
                     <div className="text-stone-900 text-xl font-light font-mono">Prev. Chapter</div>
                   </div>
-                </div>
+                </button>
 
                 {/* Next Chapter */}
-                <div className="w-44 h-6 cursor-pointer hover:opacity-80" onClick={handleNext}>
+                <button
+                  type="button"
+                  className="w-44 min-h-11 cursor-pointer hover:opacity-80 bg-transparent border-0 p-0"
+                  onClick={handleNext}
+                  aria-label="Next chapter"
+                >
                   <div className="inline-flex justify-between items-center w-full">
                     <div className="text-stone-900 text-xl font-light font-mono">Next Chapter</div>
-                    <img src={ArrowRightIcon} alt="Next" className="w-5 h-4" />
+                    <img src={ArrowRightIcon} alt="" className="w-5 h-4" />
                   </div>
-                </div>
+                </button>
               </div>
 
               {/* Watch Full Interview - right aligned */}
               {currentVideo && (
-                <div className="inline-flex items-center gap-2.5 cursor-pointer hover:opacity-80"
-                     onClick={() => navigate(`/interview-player?documentName=${encodeURIComponent(currentVideo.documentName)}`)}>
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-2.5 min-h-11 cursor-pointer hover:opacity-80 bg-transparent border-0 p-0"
+                  onClick={() => navigate(`/interview-player?documentName=${encodeURIComponent(currentVideo.documentName)}`)}
+                  aria-label={`Watch full interview${currentVideo.name ? ` with ${currentVideo.name}` : ''}`}
+                >
                   <div className="text-red-500 text-base font-light font-mono">Watch Full Interview</div>
-                  <img src={ArrowRightIcon} alt="Right Arrow" className="w-5 h-4" style={{filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'}} />
-                </div>
+                  <img src={ArrowRightIcon} alt="" className="w-5 h-4" style={{filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'}} />
+                </button>
               )}
             </div>
             
@@ -651,7 +665,7 @@ const PlaylistBuilder = () => {
                      <div
                        key={index}
                        data-property-1="Default"
-                       className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-red-500 hover:outline-red-500 transition-colors duration-200 group"
+                       className="px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-red-500 hover:outline-red-500 transition-colors duration-200 group"
                        onClick={() => navigate(`?keywords=${encodeURIComponent(tag)}`)}
                      >
                        <div className="text-center justify-start text-black text-base font-light font-['Chivo_Mono'] group-hover:text-white capitalize">
@@ -699,15 +713,18 @@ const PlaylistBuilder = () => {
               <h2 className="text-black text-5xl font-medium" style={{fontFamily: 'Inter, sans-serif'}}>Playlist</h2>
               {/* Playlist navigation arrows */}
               <div className="flex items-center gap-4">
-                <button 
-                  className="cursor-pointer hover:opacity-80 disabled:opacity-30" 
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center min-w-11 min-h-11 cursor-pointer hover:opacity-80 disabled:opacity-30 bg-transparent border-0"
                   onClick={handlePlaylistPrevious}
                   disabled={playlistStartIndex === 0 || isAnimating}
+                  aria-label="Previous playlist items"
                 >
-                  <img src={SimpleArrowLeftIcon} alt="Previous" className="w-4 h-7" />
+                  <img src={SimpleArrowLeftIcon} alt="" className="w-4 h-7" />
                 </button>
-                <button 
-                  className="cursor-pointer hover:opacity-80 disabled:opacity-30" 
+                <button
+                  type="button"
+                  className="inline-flex items-center justify-center min-w-11 min-h-11 cursor-pointer hover:opacity-80 disabled:opacity-30 bg-transparent border-0"
                   onClick={handlePlaylistNext}
                   disabled={(() => {
                     // Calculate total items including related topic squares
@@ -716,8 +733,9 @@ const PlaylistBuilder = () => {
                     const maxStartIndex = Math.max(0, totalItems - itemsPerView);
                     return playlistStartIndex >= maxStartIndex || isAnimating;
                   })()}
+                  aria-label="Next playlist items"
                 >
-                  <img src={SimpleArrowRightIcon} alt="Next" className="w-4 h-7" />
+                  <img src={SimpleArrowRightIcon} alt="" className="w-4 h-7" />
                 </button>
               </div>
             </div>
