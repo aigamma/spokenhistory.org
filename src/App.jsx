@@ -15,6 +15,7 @@ import ContentDirectory from './pages/ContentDirectory'
 import TopicGlossary from './pages/TopicGlossary'
 import InterviewIndex from './pages/InterviewIndex'
 import About from './pages/About'
+import ReviewQueue from './pages/ReviewQueue'
 
 
 export default function App() {
@@ -94,6 +95,14 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <About />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/review-queue" element={
+        <ProtectedRoute>
+          <Layout>
+            <ReviewQueue />
           </Layout>
         </ProtectedRoute>
       } />
