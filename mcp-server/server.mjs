@@ -230,17 +230,40 @@ async function searchTranscripts({ query, limit = DEFAULT_LIMIT }) {
 }
 
 async function getTranscript({ interview_id }) {
-  const docRef = db.collection(COLLECTION_INTERVIEW_INDEX).doc(interview_id)
+  if (typeof interview_id !== 'string') {
+    throw new Error('interview_id must be a string')
+  }
+  const trimmedId = interview_id.trim()
+  if (trimmedId.length === 0) {
+    throw new Error('interview_id must not be empty after trimming')
+  }
+  // Firestore document IDs cannot contain forward slashes (Firestore
+  // uses them as path separators inside the collection/doc hierarchy),
+  // cannot be exactly '.' or '..' (path-segment reserved), and have an
+  // upper byte limit of 1500. Catching these here surfaces the error as
+  // a clean MCP tool-call failure rather than as a Firestore-internal
+  // exception that would leak path-internals into the client error
+  // message.
+  if (trimmedId.includes('/')) {
+    throw new Error('interview_id must not contain forward slashes')
+  }
+  if (trimmedId === '.' || trimmedId === '..') {
+    throw new Error('interview_id is reserved (cannot be "." or "..")')
+  }
+  if (Buffer.byteLength(trimmedId, 'utf8') > 1500) {
+    throw new Error('interview_id exceeds Firestore document ID limit (1500 bytes)')
+  }
+  const docRef = db.collection(COLLECTION_INTERVIEW_INDEX).doc(trimmedId)
   const docSnap = await docRef.get()
   if (!docSnap.exists) {
-    return { error: `No interview found with id ${interview_id}` }
+    return { error: `No interview found with id ${trimmedId}` }
   }
   const interview = { id: docSnap.id, ...docSnap.data() }
 
   // Sub-summaries (chapters) live in a sub-collection.
   const subSnap = await db
     .collection(COLLECTION_INTERVIEW_INDEX)
-    .doc(interview_id)
+    .doc(trimmedId)
     .collection('subSummaries')
     .get()
   const chapters = subSnap.docs.map((d) => ({ id: d.id, ...d.data() }))
