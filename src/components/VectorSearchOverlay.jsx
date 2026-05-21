@@ -348,9 +348,14 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className={`fixed inset-0 z-50 transition-opacity duration-300 ease-out ${
-      isAnimating ? 'opacity-100' : 'opacity-0'
-    }`}>
+    <div
+      className={`fixed inset-0 z-50 transition-opacity duration-300 ease-out ${
+        isAnimating ? 'opacity-100' : 'opacity-0'
+      }`}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Search"
+    >
       {/* Backdrop */}
       <div 
         className={`absolute inset-0 transition-all duration-300 ease-out ${
@@ -384,9 +389,10 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                 {/* Close button in header style */}
                 <button
                   onClick={handleClose}
-                  className="p-1 text-black hover:opacity-70 transition-opacity"
+                  aria-label="Close search"
+                  className="inline-flex items-center justify-center min-w-11 min-h-11 p-1 text-black hover:opacity-70 transition-opacity"
                 >
-                  <X size={18} className="lg:w-6 lg:h-6" />
+                  <X size={18} className="lg:w-6 lg:h-6" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -397,9 +403,10 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
             {/* Close button */}
             <button
               onClick={handleClose}
+              aria-label="Close search"
               className="absolute top-6 right-12 z-10 w-12 h-12 flex items-center justify-center hover:opacity-70 transition-opacity"
             >
-              <div className="w-6 h-6 outline outline-2 outline-offset-[-1px] outline-black">
+              <div className="w-6 h-6 outline outline-2 outline-offset-[-1px] outline-black" aria-hidden="true">
                 <X size={24} strokeWidth={2} />
               </div>
             </button>
