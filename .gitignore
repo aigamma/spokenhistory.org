@@ -14,6 +14,17 @@ dist-ssr
 
 .env
 
+# Python (Metadata Generation System / scripts/)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
 # Firebase service account keys (any project)
 llm-hyper-audio-firebase-adminsdk-fbsvc-*.json
 civil-rights-history-project-firebase-adminsdk-*.json
