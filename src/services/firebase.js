@@ -32,7 +32,22 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "llm-hyper-audio.firebasestorage.app",
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "530304773274",
   appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:530304773274:web:1764f58974d6c2fd060323",
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-HFEKE65YC6"
+}
+
+// measurementId is optional -- it enables Firebase Analytics and is
+// only present when the team has explicitly enabled Analytics on the
+// project. For the civil-rights-history-project Firebase the team has
+// chosen NOT to enable Analytics (the right privacy posture for an
+// oral history archive), so the firebaseConfig has no measurementId
+// field at all. We only attach measurementId when the env var is set
+// AND non-empty -- a hardcoded fallback to the old llm-hyper-audio
+// measurement ID would silently send analytics events to the wrong
+// project on any deploy that didn't override the env var, which is
+// exactly the silent-misrouting problem the env-var override pattern
+// was supposed to solve.
+const measurementId = import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
+if (measurementId && measurementId.trim().length > 0) {
+  firebaseConfig.measurementId = measurementId
 }
 
 const app = initializeApp(firebaseConfig)
