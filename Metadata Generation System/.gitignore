@@ -3,6 +3,21 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Environment files (OpenAI / Anthropic / Firebase keys go via process env or
+# the Flask UI input, never in tracked .env files)
+.env
+.env.*
+!.env.example
 
 # User-uploaded video data (large runtime files)
 uploads/
@@ -13,3 +28,7 @@ collections/
 # Logs
 logs/
 *.log
+
+# Service-account keys (defense-in-depth alongside root .gitignore)
+*-firebase-adminsdk-*.json
+service-account-*.json
