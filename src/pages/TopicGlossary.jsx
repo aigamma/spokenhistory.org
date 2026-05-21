@@ -760,9 +760,11 @@ export default function TopicGlossary() {
       <div ref={contentRef} className="min-h-screen">
         {/* Header Section */}
         <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 pb-6">
-        {/* Main heading */}
+        {/* Main heading. text-8xl on mobile pushed "Topic Glossary"
+            across two lines and overlapped the topic count beneath it.
+            Now scales 4xl/5xl/6xl/7xl/8xl. */}
         <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-[32px]">
-          <h1 className="text-stone-900 text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
             Topic Glossary
           </h1>
         </div>
@@ -780,30 +782,51 @@ export default function TopicGlossary() {
 
       {/* Controls Section */}
       <div className="w-full px-4 sm:px-8 lg:px-12 mb-8">
-        <div className="flex justify-between items-center flex-wrap gap-4">
-          {/* Search Section */}
-          <div className="flex items-center gap-6 flex-1 sm:flex-initial min-w-0">
-            <div className="w-12 h-12 relative flex-shrink-0">
-              <div className="w-2.5 h-0 absolute left-[38.34px] top-[37.79px] origin-top-left rotate-[-133.05deg] border-2 border-stone-900"></div>
-              <div className="w-6 h-6 absolute left-[10px] top-[13.17px] origin-top-left rotate-[-5.18deg] rounded-full border-2 border-stone-900"></div>
-            </div>
-            <div className="min-w-0 flex-1 sm:min-w-64 sm:flex-initial h-6 flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4">
+          {/* Search Section. Replaced the custom-drawn magnifier (two
+              absolute-positioned divs with rotate + hardcoded pixel
+              positions inside a w-12 container, same fragile pattern
+              that was on InterviewIndex) with an inline SVG. The
+              container's gap was reduced from 6 to 3 so the icon reads
+              as part of the search affordance, and the input is now
+              min-h-11 so the hit area meets WCAG 2.2 AA 44x44 on tap. */}
+          <div className="flex items-center gap-3 flex-1 sm:flex-initial min-w-0">
+            <svg
+              className="w-6 h-6 sm:w-7 sm:h-7 text-stone-900 flex-shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="2" />
+              <path d="M15.5 15.5L20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <div className="min-w-0 flex-1 sm:min-w-64 sm:flex-initial flex items-center gap-4">
+              <label htmlFor="topic-search" className="sr-only">Search topics</label>
               <input
+                id="topic-search"
                 type="text"
                 placeholder="Search"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="text-stone-900 text-xl font-light bg-transparent border-none outline-none w-full"
+                className="text-stone-900 text-lg sm:text-xl font-light bg-transparent border-none outline-none w-full min-h-11"
                 style={{ fontFamily: 'Chivo Mono, monospace' }}
+                autoCapitalize="none"
+                autoCorrect="off"
               />
             </div>
           </div>
 
-          {/* Filter Section with View Mode Toggle */}
-          <div className="flex items-center gap-6">
+          {/* Filter Section with View Mode Toggle.
+              On mobile this row wraps below the search; on desktop it
+              sits on the right of the row. */}
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
             {/* View Mode Toggle (only show during search with results) */}
             {searchTerm && filteredTopics.length > 0 && relatedMatches.length > 0 && (
-              <div className="flex items-center gap-0 bg-gray-200 rounded-full border border-stone-900 overflow-hidden">
+              <div
+                className="flex items-center gap-0 bg-gray-200 rounded-full border border-stone-900 overflow-hidden"
+                role="group"
+                aria-label="View mode"
+              >
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`px-4 py-2 min-h-11 text-sm transition-colors ${
@@ -838,10 +861,12 @@ export default function TopicGlossary() {
             )}
 
             <div className="flex items-center gap-4">
+              <label htmlFor="category-filter" className="sr-only">Filter by category</label>
               <select
+                id="category-filter"
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
-                className="text-stone-900 text-xl font-light bg-transparent border-none outline-none"
+                className="text-stone-900 text-lg sm:text-xl font-light bg-transparent border-none outline-none min-h-11 pr-2 cursor-pointer"
                 style={{ fontFamily: 'Chivo Mono, monospace' }}
               >
                 <option value="all">All Categories</option>
