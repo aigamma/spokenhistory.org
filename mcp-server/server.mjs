@@ -72,14 +72,40 @@ const COLLECTION_INTERVIEW_INDEX = 'interviewIndex'
 const COLLECTION_EMBEDDINGS = 'embeddings'
 
 // ── Firebase Admin init ─────────────────────────────────────────────
+// Two ways to provide service-account credentials, in priority order:
+//   1. FIREBASE_SERVICE_ACCOUNT_JSON  -- the full JSON inline. Preferred
+//      for Fly.io / Railway / Render and any other host where secrets
+//      are env vars rather than mounted files. Set via:
+//          flyctl secrets set FIREBASE_SERVICE_ACCOUNT_JSON="$(cat sa.json)"
+//   2. FIREBASE_SERVICE_ACCOUNT_PATH  -- absolute path to a JSON file.
+//      Preferred for local development and for hosts that mount secrets
+//      as files (Kubernetes, Docker volumes, GCE metadata).
+// If both are set, the inline JSON wins so the env var takes precedence
+// over a stale file path. If neither is set, the process exits early
+// with a clear error rather than failing at first Firestore call.
 
+const saJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON
 const saPath = process.env.FIREBASE_SERVICE_ACCOUNT_PATH
-if (!saPath) {
-  console.error('FIREBASE_SERVICE_ACCOUNT_PATH env var is required')
+
+let firebaseCredential
+if (saJson) {
+  try {
+    firebaseCredential = cert(JSON.parse(saJson))
+  } catch (err) {
+    console.error('FIREBASE_SERVICE_ACCOUNT_JSON is not valid JSON:', err.message)
+    process.exit(1)
+  }
+} else if (saPath) {
+  firebaseCredential = cert(saPath)
+} else {
+  console.error(
+    'Either FIREBASE_SERVICE_ACCOUNT_JSON (inline JSON) or ' +
+      'FIREBASE_SERVICE_ACCOUNT_PATH (file path) env var is required',
+  )
   process.exit(1)
 }
 
-initializeApp({ credential: cert(saPath) })
+initializeApp({ credential: firebaseCredential })
 const db = getFirestore()
 
 // ── OpenAI init ──────────────────────────────────────────────────────
