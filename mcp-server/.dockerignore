@@ -1,0 +1,45 @@
+# Build-context exclusions for `docker build` / `flyctl deploy`.
+#
+# The Dockerfile uses explicit COPY commands (package.json, server.mjs,
+# and node_modules from the deps stage), so files NOT in those COPY
+# commands cannot be included in the final image. But every file in
+# the build directory is uploaded to the Docker daemon as the build
+# context, which (a) slows the build proportional to the size of the
+# directory, and (b) creates a defense-in-depth risk that a future
+# Dockerfile change adding a wider COPY pattern could accidentally
+# include credentials or local-only files. The .dockerignore closes
+# both concerns.
+
+# Local development node_modules (the image installs its own).
+node_modules/
+
+# Environment files (Fly.io secrets are the prod path; .env is local only).
+.env
+.env.*
+
+# Service-account credentials (defense-in-depth alongside the project
+# root .gitignore which already excludes these from version control).
+*-firebase-adminsdk-*.json
+service-account-*.json
+
+# Local logs and debug output.
+*.log
+fly-debug.log
+
+# Test and build artifacts.
+*.tgz
+dist/
+coverage/
+
+# Editor / OS files.
+.DS_Store
+.idea/
+.vscode/
+
+# Git metadata (the image does not need .git).
+.git/
+.gitignore
+
+# Docker config itself.
+.dockerignore
+Dockerfile
