@@ -1,0 +1,19 @@
+# Subdirectories that have their own ESLint config + dependencies and
+# should NOT be scanned by the root `eslint . --ext js,jsx` command.
+#
+# functions/ has its own .eslintrc.js that extends "google" (via
+# functions/devDependencies eslint-config-google). The root node_modules
+# does NOT carry eslint-config-google, so a recursive root scan that
+# walked into functions/ would fail with "couldn't find the config
+# google" -- which is exactly what was breaking the GitHub Actions CI
+# Frontend job from commit d2b4114 (the CI workflow's addition) onward.
+#
+# mcp-server/ is a separate Node package with its own potential lint
+# config; excluding it from the root scan keeps the root lint focused
+# on src/ + scripts/ + the top-level config files.
+functions/
+mcp-server/
+
+# Build output
+dist/
+node_modules/
