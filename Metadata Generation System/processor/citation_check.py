@@ -189,7 +189,49 @@ def audit_citations(
         "unsupported": 0,
     })
 
+    # Type-coerce the fields the downstream consumer (fraction_supported,
+    # plus any future review-queue 'citation_audit' renderer) expects.
+    # Same defensive pattern landed in claude_scorer.py: a model that
+    # emits "total_claims": "20" (string) or "claims": null would
+    # otherwise crash a downstream int comparison or list iteration.
+    # Inlining the helpers here (rather than importing from
+    # claude_scorer) keeps this module independently importable -- a
+    # caller running just the citation audit without the full dual-scorer
+    # stack does not need to drag in claude_scorer's other helpers.
+    if not isinstance(parsed.get("claims"), list):
+        parsed["claims"] = []
+    stats = parsed.get("summary_stats")
+    if not isinstance(stats, dict):
+        stats = {}
+    parsed["summary_stats"] = {
+        "total_claims": _coerce_count(stats.get("total_claims")),
+        "supported": _coerce_count(stats.get("supported")),
+        "partially_supported": _coerce_count(stats.get("partially_supported")),
+        "unsupported": _coerce_count(stats.get("unsupported")),
+    }
+
     return parsed
+
+
+def _coerce_count(value) -> int:
+    """Coerce a model-supplied count to a non-negative int, falling back
+    to 0 on parse failure. Same intent as claude_scorer._coerce_int but
+    inlined here so citation_check stays independently importable."""
+    if isinstance(value, bool):
+        return 0
+    if isinstance(value, (int, float)):
+        try:
+            n = int(value)
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, n)
+    if isinstance(value, str):
+        try:
+            n = int(float(value.strip()))
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, n)
+    return 0
 
 
 def fraction_supported(audit: Dict[str, Any]) -> float:
@@ -202,11 +244,16 @@ def fraction_supported(audit: Dict[str, Any]) -> float:
     counts against the fraction.
 
     Returns 0.0 if the audit failed (no claims extracted) or if the
-    audit returned an error.
+    audit returned an error. Robust against malformed audit dicts:
+    audit.get returns None if the key is missing, _coerce_count
+    converts any non-numeric value to 0, so a malformed audit returns
+    0.0 instead of crashing.
     """
-    stats = audit.get("summary_stats", {}) or {}
-    total = stats.get("total_claims") or 0
+    stats = audit.get("summary_stats") if isinstance(audit, dict) else None
+    if not isinstance(stats, dict):
+        return 0.0
+    total = _coerce_count(stats.get("total_claims"))
     if total <= 0:
         return 0.0
-    supported = stats.get("supported") or 0
+    supported = _coerce_count(stats.get("supported"))
     return supported / total
