@@ -12,12 +12,11 @@ Checks performed:
   - Every entry value is an object with at least
     wikipedia_title (str), description (str), summary (str) keys.
   - Optional 'aliases' key, if present, is a list of non-empty strings.
-  - No duplicate keys (json.load already enforces this; this is
-    defense-in-depth via explicit count).
+  - NO DUPLICATE KEYS at the top level (the json module silently
+    overwrites duplicates by default; this validator hooks
+    object_pairs_hook to detect them explicitly).
   - Summary length is at least 100 characters (catches truncated entries
     accidentally introduced by Edit operations).
-  - No entry's summary contains the markdown fences or 'Wikipedia source'
-    artifacts that would indicate a bot-style truncation error.
 
 Usage:
     python scripts/validate_facts.py
@@ -38,11 +37,28 @@ def validate(path: Path, quiet: bool = False) -> int:
         print(f"ERROR: file not found: {path}", file=sys.stderr)
         return 1
 
+    # Detect duplicate top-level keys -- json.load silently overwrites by
+    # default, so a typo or copy-paste error that creates a duplicate
+    # entry name would land in the file without warning and shadow the
+    # earlier definition. The object_pairs_hook receives the (key, value)
+    # pairs in document order, lets us validate uniqueness, then returns
+    # a dict for the regular loader.
+    def _detect_duplicates(pairs):
+        seen = set()
+        for key, _value in pairs:
+            if key in seen:
+                raise ValueError(f"duplicate top-level key: {key!r}")
+            seen.add(key)
+        return dict(pairs)
+
     try:
         with path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
+            data = json.load(f, object_pairs_hook=_detect_duplicates)
     except json.JSONDecodeError as e:
         print(f"ERROR: invalid JSON in {path}: {e}", file=sys.stderr)
+        return 1
+    except ValueError as e:
+        print(f"ERROR: {path}: {e}", file=sys.stderr)
         return 1
 
     if not isinstance(data, dict):
