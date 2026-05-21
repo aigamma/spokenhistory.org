@@ -42,20 +42,22 @@ export default function Header() {
 
             {/* Navigation Icons - stacked vertically */}
             <div className="flex flex-col items-end gap-3">
-              {/* Hamburger menu icon */}
-              <button 
+              {/* Hamburger menu icon -- w-11 h-11 on mobile gives a WCAG 2.2 AA-compliant 44x44 tap target; lg restores the original w-12 + auto height */}
+              <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="w-8 lg:w-12 flex flex-col justify-start items-end gap-1 hover:opacity-70 transition-opacity"
+                aria-label="Open menu"
+                className="w-11 h-11 lg:w-12 lg:h-auto flex flex-col justify-center lg:justify-start items-end gap-1 hover:opacity-70 transition-opacity"
               >
                 <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
                 <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
                 <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
               </button>
-              
-              {/* Search button */}
-              <button 
+
+              {/* Search button -- p-3 on mobile expands the 18px icon to a ~42px tap target (further enlarged by the surrounding header padding); lg restores the original p-1 + 24px icon */}
+              <button
                 onClick={() => setIsSearchOpen(true)}
-                className="p-1 text-black hover:opacity-70 transition-opacity"
+                aria-label="Open search"
+                className="p-3 lg:p-1 text-black hover:opacity-70 transition-opacity"
               >
                 <Search size={18} className="lg:w-6 lg:h-6" />
               </button>
