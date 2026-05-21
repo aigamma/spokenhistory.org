@@ -1,0 +1,60 @@
+# Normalize line endings across the repo. All text files get LF on
+# checkout regardless of the contributor's OS (Windows defaults to CRLF
+# via core.autocrlf=true, which produces the noisy "LF will be replaced
+# by CRLF" warning on every git add of a new file from Windows). This
+# file is the git-side complement to /.editorconfig.
+
+# Default: any file git treats as text gets LF line endings.
+* text=auto eol=lf
+
+# Source code: explicit text+LF for grep-friendliness and stable diffs.
+*.js   text eol=lf
+*.jsx  text eol=lf
+*.mjs  text eol=lf
+*.cjs  text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.py   text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.svg  text eol=lf
+*.txt  text eol=lf
+*.srt  text eol=lf
+*.vtt  text eol=lf
+
+Dockerfile      text eol=lf
+*.Dockerfile    text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+.editorconfig   text eol=lf
+
+# Binaries: explicit -text so git never tries to normalize them.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.mp4 binary
+*.webm binary
+*.mp3 binary
+*.wav binary
+*.flac binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+
+# Vite / npm lock file: text, but tell git to skip diffs because the
+# file is machine-generated and the diff is too noisy to be useful.
+package-lock.json text eol=lf -diff
