@@ -866,7 +866,7 @@ export default function Home() {
             {/* Description - Slightly larger for emphasis */}
             <div className="flex justify-center relative">
               {/* Pin Image - Absolutely positioned to the left */}
-              <div className="absolute left-[-500px] top-0">
+              <div className="hidden xl:block absolute left-[-500px] top-0" aria-hidden="true">
                 {marchForDemocraticSchoolsPinLoading ? (
                   <div className="w-96 h-96 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
                     <span className="text-gray-500">Loading pin...</span>
@@ -897,7 +897,7 @@ export default function Home() {
               </Link>
               
               {/* NOW Pin - Absolutely positioned to the right, higher up */}
-              <div className="absolute right-[-400px] top-[-280px]">
+              <div className="hidden xl:block absolute right-[-400px] top-[-280px]" aria-hidden="true">
                 {nowPinLoading ? (
                   <div className="w-96 h-96 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[15deg]">
                     <span className="text-gray-500">Loading pin...</span>
@@ -1137,7 +1137,7 @@ export default function Home() {
           
           {/* Quote - Positioned above GIF and to the left */}
           <div className="mt-32 lg:mt-40 -ml-2 sm:-ml-4 lg:-ml-6">
-            <div className="w-[600px] justify-start text-stone-900 text-4xl font-normal font-['Source_Serif_4']">
+            <div className="w-full max-w-[600px] justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl font-normal font-['Source_Serif_4']">
               "[Elizabeth Eckford] said something that any fifteen year old kid would say... 'I never thought people could be so cruel.'"
             </div>
           </div>
@@ -1161,7 +1161,7 @@ export default function Home() {
           
           {/* Second Quote - Positioned below GIF and to the right */}
           <div className="mt-12 lg:mt-16 flex justify-end -mr-2 sm:-mr-4 lg:-mr-6">
-            <div className="w-[600px] justify-start text-stone-900 text-4xl font-normal font-['Source_Serif_4']">
+            <div className="w-full max-w-[600px] justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl font-normal font-['Source_Serif_4']">
               "I never thought people could be so cruel." — Moses J. Newson
             </div>
           </div>
@@ -1304,7 +1304,7 @@ export default function Home() {
           {/* Quote - Positioned below and to the right */}
           <div className="mt-12 lg:mt-16 flex justify-end -mr-2 sm:-mr-4 lg:-mr-6 relative">
             {/* SNCC Overcome Pin - Positioned to the left of the quote */}
-            <div className="absolute left-[-50px] top-[40px] z-50">
+            <div className="hidden xl:block absolute left-[-50px] top-[40px] z-50" aria-hidden="true">
               {snccOvercomePinLoading ? (
                 <div className="w-72 h-72 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
                   <span className="text-gray-500">Loading pin...</span>
@@ -1322,7 +1322,7 @@ export default function Home() {
               )}
             </div>
             
-            <div className="w-[800px]">
+            <div className="w-full max-w-[800px]">
               <p className="text-stone-900 text-4xl font-normal font-['Source_Serif_4']">
                 "When you stepped off that bus and you looked around and you saw these people crawling around, trying to get the smoke out of their chest, and people crawling and coughing and gagging, it was one of those sights that make you wonder why Americans are doing that sort of thing to fellow Americans who were just trying to exercise their rights."
               </p>
@@ -1501,7 +1501,7 @@ export default function Home() {
           {/* Centered Quote */}
           <div className="flex justify-center mt-48 lg:mt-72 relative">
             {/* March on Washington Pin - Left side, higher above */}
-            <div className="absolute left-[-350px] top-[-150px] z-50">
+            <div className="hidden xl:block absolute left-[-350px] top-[-150px] z-50" aria-hidden="true">
               {marchOnWashingtonPinLoading ? (
                 <div className="w-64 h-64 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
                   <span className="text-gray-500">Loading pin...</span>
@@ -1520,7 +1520,7 @@ export default function Home() {
             </div>
             
             {/* Washington Freedom March Pin - Left side, further below */}
-            <div className="absolute left-[-300px] top-[200px] z-50">
+            <div className="hidden xl:block absolute left-[-300px] top-[200px] z-50" aria-hidden="true">
               {washingtonFreedomMarchPinLoading ? (
                 <div className="w-64 h-64 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
                   <span className="text-gray-500">Loading pin...</span>
@@ -1539,7 +1539,7 @@ export default function Home() {
             </div>
             
             {/* Emancipation March Pin - Right side, above */}
-            <div className="absolute right-[-350px] top-[-150px] z-50">
+            <div className="hidden xl:block absolute right-[-350px] top-[-150px] z-50" aria-hidden="true">
               {emancipationMarchPinLoading ? (
                 <div className="w-64 h-64 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
                   <span className="text-gray-500">Loading pin...</span>
@@ -1558,7 +1558,7 @@ export default function Home() {
             </div>
             
             {/* SNCC Vote Pin - Right side, below */}
-            <div className="absolute right-[-300px] top-[200px] z-50">
+            <div className="hidden xl:block absolute right-[-300px] top-[200px] z-50" aria-hidden="true">
               {snccVotePinLoading ? (
                 <div className="w-64 h-64 bg-gray-200 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
                   <span className="text-gray-500">Loading pin...</span>
@@ -1576,7 +1576,7 @@ export default function Home() {
               )}
             </div>
             
-            <div ref={marchOnWashingtonQuoteRef} className="w-[905px] text-center justify-start text-stone-900 text-5xl font-normal font-['Source_Serif_4']">
+            <div ref={marchOnWashingtonQuoteRef} className="w-full max-w-[905px] text-center justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal font-['Source_Serif_4']">
               "And so what I remember first was seeing all those people. It was an incredible sight. A nineteen year-old from Mississippi who had never seen huge numbers. In fact no one on that platform had seen numbers like that before. But I remember seeing people march, coming and coming and coming and they just kept coming. "
             </div>
           </div>
@@ -1808,7 +1808,7 @@ export default function Home() {
           
           {/* Malcolm X Quote */}
           <div className="mt-12 lg:mt-16 flex justify-start -ml-2 sm:-ml-4 lg:-ml-6">
-            <div className="w-[1608px] justify-start">
+            <div className="w-full max-w-[1608px] justify-start">
               <p className="text-stone-900 text-6xl font-normal font-['Source_Serif_4']">
                 "In the same way that Marx is the fundamental critic of capitalism, and Fanon is the fundamental critic of colonialism, to my mind, Malcolm is the fundamental critic of American racism."
               </p>
