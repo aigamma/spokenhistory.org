@@ -38,11 +38,44 @@ service cloud.firestore {
     // The site's primary purpose is making this archive accessible.
     // Anonymous reads are allowed; only signed-in team members can write.
 
+    // metadataV2 is the active interview-data collection (the default
+    // returned by src/services/collectionMapper.js getActiveCollection).
+    // Every interview document has a subSummaries sub-collection of
+    // chapter-level documents.
+    match /metadataV2/{interviewId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+
+      match /subSummaries/{segmentId} {
+        allow read: if true;
+        allow write: if isAuthenticated();
+      }
+    }
+
+    // interviewSummaries is the legacy interview-data collection. Read
+    // access kept open so legacy code paths (KeywordDirectory.jsx,
+    // ClipsDirectory.jsx, RelatedClips.jsx, MapVisualization.jsx --
+    // each hardcodes "interviewSummaries" rather than going through
+    // getActiveCollection) continue to work until they are migrated to
+    // metadataV2.
+    match /interviewSummaries/{interviewId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+
+      match /subSummaries/{segmentId} {
+        allow read: if true;
+        allow write: if isAuthenticated();
+      }
+    }
+
+    // interviewIndex is a separate top-level collection used by the
+    // main InterviewIndex.jsx page-list view. Each document is a
+    // summary record (name, role, totalMinutes, thumbnail) -- the
+    // detail data lives in metadataV2 / interviewSummaries.
     match /interviewIndex/{interviewId} {
       allow read: if true;
       allow write: if isAuthenticated();
 
-      // Per-interview chapter summaries live in a sub-collection.
       match /subSummaries/{segmentId} {
         allow read: if true;
         allow write: if isAuthenticated();
@@ -50,6 +83,13 @@ service cloud.firestore {
     }
 
     match /events_and_topics/{topicId} {
+      allow read: if true;
+      allow write: if isAuthenticated();
+    }
+
+    // timelineEvents drives the scroll-driven home-page timeline
+    // (TimelineVisualization.jsx).
+    match /timelineEvents/{eventId} {
       allow read: if true;
       allow write: if isAuthenticated();
     }
@@ -64,6 +104,13 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    // clipEmbeddings is the per-clip variant referenced in
+    // src/services/embeddings.js searchClipsByTopic.
+    match /clipEmbeddings/{embeddingId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
     // Older keyword collections referenced in shared.py's
     // _load_keyword_collection fallback chain.
     match /keywords/{document=**} {
@@ -74,6 +121,19 @@ service cloud.firestore {
     match /keywords_cleaned/{document=**} {
       allow read: if true;
       allow write: if isAuthenticated();
+    }
+
+    // ── User feedback (anonymous create, admin-only read) ──────────
+    // The inline feedback flow (src/hooks/useInlineFeedback.js) lets
+    // any visitor (anonymous or authenticated) submit a feedback
+    // record with their selected text + description + optional email.
+    // Anyone can create; only authenticated team members can read or
+    // act on the submissions.
+
+    match /feedback/{feedbackId} {
+      allow read: if isAuthenticated();
+      allow create: if true;
+      allow update, delete: if isAuthenticated();
     }
 
     // ── Review queue (Smithsonian-grade publication gate) ──────────
