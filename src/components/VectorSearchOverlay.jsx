@@ -416,7 +416,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
              the right edge of a 360px phone since the inner control
              starts at right=48px and is 48px wide -- pinning it
              flush against the viewport. Switched to right-4 sm:right-12
-             so mobile gets a comfortable 16px gutter. */}
+             so mobile gets a comfortable 16px gutter. */
           <>
             {/* Close button */}
             <button
