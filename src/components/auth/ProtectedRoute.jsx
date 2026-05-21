@@ -7,8 +7,11 @@ export default function ProtectedRoute({ children }) {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin" />
+      <div className="flex justify-center items-center min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+        <div
+          className="w-12 h-12 border-4 border-black/20 rounded-full animate-spin"
+          style={{ borderTopColor: '#F2483C' }}
+        />
       </div>
     )
   }
