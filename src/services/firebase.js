@@ -14,24 +14,38 @@ import {
 } from './collectionMapper.js'
 
 // Firebase Web SDK config. Each field reads its value from a VITE_*
-// env var first (so a .env file or a CI build env can swap the
-// project without editing this file), and falls back to the
-// hardcoded llm-hyper-audio values if no env var is set. This lets
-// Eric stand up the new civil-rights-history-project Firebase project
-// and point the build at it by setting six env vars in .env without
-// touching this code -- the migration documented in CLAUDE.md as
-// task #6 (Stand up new clean Firebase project) becomes a config-only
-// change rather than a code change. Firebase apiKey is a public
-// identifier (it ships in every built bundle and is not a secret per
-// Firebase docs at firebase.google.com/docs/projects/api-keys), so the
-// fallback values are safe to keep in source control.
+// env var. The previous implementation kept hardcoded fallbacks to
+// the legacy llm-hyper-audio project so a developer without .env
+// configured could still run the app, but those hardcoded values
+// matched Google's API-key pattern (the AIza prefix) and triggered
+// Netlify's secrets scanner to fail the deploy with a false-positive
+// "exposed secrets" error -- the values are public per Firebase docs
+// (firebase.google.com/docs/projects/api-keys) but the scanner does
+// not know that. Removing the fallbacks eliminates the false positive
+// at the source while also making misconfiguration loud rather than
+// silent (the SDK will throw a clear "missing config" error if any
+// required field is undefined, which is better than initializing
+// against the legacy project by accident).
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDGolxlZNoEzk7z46ZMtSk9YsP32MlH45Q",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "llm-hyper-audio.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "llm-hyper-audio",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "llm-hyper-audio.firebasestorage.app",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "530304773274",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:530304773274:web:1764f58974d6c2fd060323",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+}
+
+// Fail-fast guard. The Firebase SDK accepts undefined fields silently
+// and the resulting client will throw an obscure error later when the
+// first auth or firestore call is made; surfacing the missing-config
+// at module load makes the failure mode obvious during development.
+const requiredKeys = ['apiKey', 'authDomain', 'projectId', 'storageBucket', 'messagingSenderId', 'appId']
+const missing = requiredKeys.filter((k) => !firebaseConfig[k])
+if (missing.length > 0) {
+  throw new Error(
+    `Missing required Firebase config env vars: ${missing.map((k) => 'VITE_FIREBASE_' + k.replace(/([A-Z])/g, '_$1').toUpperCase()).join(', ')}. ` +
+      `Copy them from the Firebase Console (Project settings -> Your apps -> Web app -> SDK setup and configuration) into .env locally or into the Netlify environment-variables panel for deploys.`,
+  )
 }
 
 // measurementId is optional -- it enables Firebase Analytics and is
