@@ -190,7 +190,7 @@ const DecadeSection = ({ decade, subtitle }) => (
         
         {/* Subtitle - Right side on desktop, centered on mobile */}
         <div className="text-center lg:text-left lg:pl-8">
-          <p className="text-red-500 text-xl sm:text-2xl lg:text-3xl xl:text-5xl font-light font-['Inter'] leading-tight">{subtitle}</p>
+          <p className="text-civil-red-body text-xl sm:text-2xl lg:text-3xl xl:text-5xl font-light font-['Inter'] leading-tight">{subtitle}</p>
         </div>
       </div>
     </div>
@@ -782,7 +782,7 @@ export default function Home() {
               </h1>
 
               {/* Statistics */}
-              <p className="text-red-500 text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono']">145 Interviews</p>
+              <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono']">145 Interviews</p>
 
 
             </div>
@@ -818,7 +818,7 @@ export default function Home() {
                 block: 'start'
               });
             }}
-            className="inline-block text-red-500 text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] hover:underline cursor-pointer bg-transparent border-none p-0"
+            className="inline-block text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] hover:underline cursor-pointer bg-transparent border-none p-0"
           >
             View the Timeline
           </button>
@@ -843,7 +843,7 @@ export default function Home() {
             {/* Date Badge - Centered */}
             <div className="flex justify-center">
               <div className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">May 17, 1954</span>
+                <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">May 17, 1954</span>
               </div>
             </div>
 
@@ -931,7 +931,7 @@ export default function Home() {
           {/* Centered Date Badge */}
           <div className="flex justify-center mb-6 lg:mb-8">
             <div className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">August 28th, 1955</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">August 28th, 1955</span>
             </div>
           </div>
 
@@ -1016,7 +1016,7 @@ export default function Home() {
           {/* Centered Date Badge */}
           <div className="flex justify-start mb-6 lg:mb-8">
             <div ref={montgomeryDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">December 4th, 1955</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">December 4th, 1955</span>
             </div>
           </div>
 
@@ -1085,7 +1085,7 @@ export default function Home() {
               {/* Date Badge above title */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={littleRockDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">September 4th, 1957</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">September 4th, 1957</span>
                 </div>
               </div>
 
@@ -1182,7 +1182,7 @@ export default function Home() {
           {/* Centered Date Badge */}
           <div className="flex justify-center mb-6 lg:mb-8">
             <div ref={snccDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">1960</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">1960</span>
             </div>
           </div>
 
@@ -1248,7 +1248,7 @@ export default function Home() {
           {/* Left-aligned Date Badge */}
             <div className="flex justify-start mb-6 lg:mb-8">
               <div ref={freedomRidersDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">May 4th, 1961</span>
+                <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">May 4th, 1961</span>
               </div>
             </div>
 
@@ -1345,7 +1345,7 @@ export default function Home() {
               {/* Date Badge above title */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={medgarEversDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">June 12th, 1963</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">June 12th, 1963</span>
                 </div>
               </div>
 
@@ -1445,7 +1445,7 @@ export default function Home() {
           {/* Left-aligned Date Badge */}
           <div className="flex justify-start mb-6 lg:mb-8">
             <div ref={marchOnWashingtonDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">August 28th, 1963</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">August 28th, 1963</span>
             </div>
           </div>
 
@@ -1588,7 +1588,7 @@ export default function Home() {
           {/* Centered Date Badge */}
           <div className="flex justify-center mb-6 lg:mb-8">
             <div ref={freedomSummerDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">1964</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">1964</span>
             </div>
           </div>
 
@@ -1660,7 +1660,7 @@ export default function Home() {
           {/* Left-aligned Date Badge */}
           <div className="flex justify-start mb-6 lg:mb-8">
             <div ref={civilRightsActDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">July 2nd, 1964</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">July 2nd, 1964</span>
             </div>
           </div>
 
@@ -1754,7 +1754,7 @@ export default function Home() {
               {/* Date Badge above title - Left aligned */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={malcolmXDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">February 21st, 1965</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">February 21st, 1965</span>
                 </div>
               </div>
 
@@ -1841,7 +1841,7 @@ export default function Home() {
               {/* Date Badge above title - Left aligned */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={selmaDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">March 7-25th, 1965</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">March 7-25th, 1965</span>
                 </div>
               </div>
 
@@ -1952,7 +1952,7 @@ export default function Home() {
           {/* Centered Date Badge */}
           <div className="flex justify-center mb-6 lg:mb-8">
             <div ref={votingRightsActDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">August 6th, 1965</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">August 6th, 1965</span>
             </div>
           </div>
 
@@ -2026,7 +2026,7 @@ export default function Home() {
           {/* Centered Date Badge */}
           <div className="flex justify-center mb-6 lg:mb-8">
             <div ref={blackPantherDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-              <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">1966</span>
+              <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">1966</span>
             </div>
           </div>
 
@@ -2142,7 +2142,7 @@ export default function Home() {
               {/* Date Badge above title - Left aligned */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={brownBeretsDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">1967</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">1967</span>
                 </div>
               </div>
 
@@ -2208,7 +2208,7 @@ export default function Home() {
               {/* Date Badge above title - Left aligned */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={longHotSummerDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">1967</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">1967</span>
                 </div>
               </div>
 
@@ -2274,7 +2274,7 @@ export default function Home() {
               {/* Left-aligned Date Badge */}
               <div className="flex justify-start mb-4 lg:mb-6">
                 <div ref={mlkDateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                  <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">April 4th, 1968</span>
+                  <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">April 4th, 1968</span>
                 </div>
               </div>
 
@@ -2424,7 +2424,7 @@ export default function Home() {
                 {/* Date Badge above title - Left aligned */}
                 <div className="flex justify-start mb-4 lg:mb-6">
                   <div ref={civilRightsAct1968DateRef} className="inline-flex px-3 py-2 lg:px-4 lg:py-3 border border-red-500 bg-transparent">
-                    <span className="text-red-500 text-lg lg:text-xl font-normal font-['Chivo_Mono']">April 11th, 1968</span>
+                    <span className="text-civil-red-body text-lg lg:text-xl font-normal font-['Chivo_Mono']">April 11th, 1968</span>
                   </div>
                 </div>
 
@@ -2508,7 +2508,7 @@ export default function Home() {
           <h2 className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4'] mb-6 lg:mb-8">
             Discover the rest of the archive
           </h2>
-          <p className="text-red-500 text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] mb-6 lg:mb-8">131 Interviews, 13340 Minutes</p>
+          <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] mb-6 lg:mb-8">131 Interviews, 13340 Minutes</p>
           
           <Link
             to="/topic-glossary"

@@ -279,7 +279,7 @@ export default function TopicGlossary({ onViewAllClips }) {
 
         {/* Topic count */}
         <div className="mb-4">
-          <span className="text-red-500 text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+          <span className="text-civil-red-body text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
             {filteredTopics.length} Keywords
           </span>
         </div>

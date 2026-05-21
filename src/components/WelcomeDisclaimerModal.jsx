@@ -56,7 +56,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
               <h2 id="welcome-modal-title" className="text-black text-3xl lg:text-4xl font-medium font-['Inter'] leading-tight mb-2">
                 Welcome to the Civil Rights History Project
               </h2>
-              <p className="text-red-500 text-lg lg:text-xl font-light font-['Chivo_Mono']">
+              <p className="text-civil-red-body text-lg lg:text-xl font-light font-['Chivo_Mono']">
                 Important Information About This Research Tool
               </p>
             </div>
