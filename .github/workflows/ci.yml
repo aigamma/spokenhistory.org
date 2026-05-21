@@ -1,0 +1,80 @@
+name: CI
+
+# Runs on every push to any branch and on every pull request targeting
+# master. Two parallel jobs validate the two halves of the project
+# (the React/Vite frontend + Node Cloud Functions + Node MCP server,
+# and the Python/Flask Metadata Generation System). Either job failing
+# blocks the PR from merging once branch protection is set up.
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  frontend:
+    name: Frontend (ESLint, Vite build, Node parse)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+        env:
+          # Vite needs a non-failing build env. The Firebase config is
+          # hardcoded in src/services/firebase.js for now so no env vars
+          # are required at build time; this block is reserved for when
+          # the team moves to VITE_FIREBASE_* env vars.
+          NODE_ENV: production
+
+      - name: Node syntax check on Cloud Functions
+        run: |
+          cd functions
+          npm ci
+          node --check index.js
+
+      - name: Node syntax check on MCP server
+        run: node --check mcp-server/server.mjs
+
+  python:
+    name: Metadata Generation System (Python parse)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'Metadata Generation System/requirements.txt'
+
+      - name: Install Python dependencies
+        run: |
+          cd "Metadata Generation System"
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compile-check all Python modules
+        run: |
+          cd "Metadata Generation System"
+          python -m compileall -q processor/ app.py srt_parser.py
+
+      - name: Import smoke-test the new Smithsonian-grade modules
+        run: |
+          cd "Metadata Generation System"
+          python -c "from processor import claude_scorer, review_queue, citation_check, dual_scoring_helper; print('All new modules import OK')"
