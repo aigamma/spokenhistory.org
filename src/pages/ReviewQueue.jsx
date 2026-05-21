@@ -90,6 +90,22 @@ export default function ReviewQueue() {
 
   async function handleAction(decision) {
     if (!selected || !user) return
+    // Guard against a signed-in user without an email address on record.
+    // markReviewed in src/services/reviewQueue.js now requires a non-empty
+    // reviewerEmail (audit-trail integrity), so a user authenticated via
+    // a flow that does not surface an email (anonymous auth, certain
+    // OAuth providers that decline to share email, a Firebase Auth
+    // account that was created with a phone number only) would otherwise
+    // hit the service-side validation as an opaque "reviewerEmail must
+    // be a non-empty string" message inside window.alert. Catching it
+    // here gives the reviewer an actionable next step instead.
+    if (!user.email || user.email.trim().length === 0) {
+      window.alert(
+        'You must be signed in with an email address to mark a review item. ' +
+          'Sign out and sign back in with a Google account or an email/password account that has an email on file.',
+      )
+      return
+    }
     setSubmitting(true)
     try {
       const summaryWasEdited =
