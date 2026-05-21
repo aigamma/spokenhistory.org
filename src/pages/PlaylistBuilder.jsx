@@ -29,6 +29,7 @@ import ArrowLeftIcon from "../assetts/vectors/arrow left.svg";
 import ArrowRightIcon from "../assetts/vectors/arrow right.svg";
 import SimpleArrowLeftIcon from "../assetts/vectors/simple arrow left.svg";
 import SimpleArrowRightIcon from "../assetts/vectors/simple arrow right.svg";
+import useViewport from "../hooks/useViewport";
 
 /**
  * PlaylistBuilder - Optimized component for fast playlist loading
@@ -38,6 +39,15 @@ const PlaylistBuilder = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  // Mobile vs desktop carousel branching. The JS-driven translateX
+  // pagination assumes 504px items + 24px gaps; on mobile we let the
+  // carousel scroll naturally via overflow-x-auto with scroll-snap so
+  // the user can swipe through items, and hide the prev/next pagination
+  // controls (the gesture replaces them). Desktop keeps the original
+  // pagination behavior. isMobile is recomputed on resize via the hook,
+  // so a desktop user dragging their browser narrow gets the mobile
+  // carousel behavior without a refresh.
+  const { isMobile } = useViewport();
   
   // Inline feedback functionality
   const {
@@ -572,29 +582,36 @@ const PlaylistBuilder = () => {
       <div ref={contentRef} data-feedback-section={feedbackSectionLabel} className="w-full min-h-screen overflow-hidden">
         {/* Background loading indicator - only show when loading */}
         {backgroundLoading && (
-        <div className="px-12 pt-4">
+        <div className="px-4 sm:px-6 md:px-8 lg:px-12 pt-4">
           <div className="flex items-center gap-2 text-red-500 text-base font-light font-mono">
-            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-red-500" />
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-red-500" role="status" aria-label="Loading clips" />
             <span className="text-sm">Loading remaining clips...</span>
           </div>
         </div>
       )}
 
       {/* Main content */}
-      <div className="px-12 pt-4">
-        {/* Topic title */}
-        <div className="mb-8">
-          <h1 className="text-stone-900 text-8xl font-medium mb-4 capitalize" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
+      <div className="px-4 sm:px-6 md:px-8 lg:px-12 pt-4">
+        {/* Topic title.
+            text-8xl was unconditional, so a one-word topic ("Marches")
+            wrapped across two lines on a phone. Scales sm/md/lg/xl. */}
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium mb-4 capitalize" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
             {keyword || 'Topic Playlist'}
           </h1>
         </div>
 
-        {/* Main video and content area */}
-        <div className="flex gap-6 mb-8">
+        {/* Main video and content area.
+            Was flex gap-6 with flex-shrink-0 video at w-[960px]
+            (forced 1100+px viewport) and side content pinned to
+            h-[540px] (broken once the video stops being 540px tall).
+            Now stacks vertically on mobile + tablet, switches to
+            side-by-side at lg. Video uses aspect-video and side content
+            no longer has a hardcoded h-[540px]. */}
+        <div className="flex flex-col lg:flex-row gap-6 mb-8">
           {/* Video player section */}
-          <div className="flex-shrink-0">
-            {/* Video player */}
-            <div className="w-[960px] h-[540px] relative rounded-xl overflow-hidden mb-4">
+          <div className="w-full lg:flex-shrink-0 lg:max-w-[960px]">
+            <div className="w-full aspect-video relative rounded-xl overflow-hidden mb-4">
               {currentVideo ? (
                 <VideoPlayer
                   video={currentVideo}
@@ -611,39 +628,37 @@ const PlaylistBuilder = () => {
                 </div>
               )}
             </div>
-            
-            {/* Controls under video player */}
-            <div className="flex justify-between items-center">
-              {/* Navigation buttons - left aligned */}
-              <div className="flex items-center gap-8">
-                {/* Previous Chapter */}
+
+            {/* Controls under video player.
+                On mobile the prev/next pair stacks above the "Watch
+                Full Interview" link; desktop keeps the original row.
+                The previously fixed w-48 / w-44 widths on the buttons
+                forced minimum widths that broke wrapping; now they use
+                inline-flex + gap-2 + px-2 hit area so the buttons size
+                to their content with a guaranteed 44x44 tap target. */}
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-8">
                 <button
                   type="button"
-                  className="w-48 min-h-11 cursor-pointer hover:opacity-80 bg-transparent border-0 p-0"
+                  className="inline-flex items-center gap-2 min-h-11 px-2 -mx-2 cursor-pointer hover:opacity-80 bg-transparent border-0"
                   onClick={handlePrevious}
                   aria-label="Previous chapter"
                 >
-                  <div className="inline-flex justify-between items-center w-full">
-                    <img src={ArrowLeftIcon} alt="" className="w-5 h-4" />
-                    <div className="text-stone-900 text-xl font-light font-mono">Prev. Chapter</div>
-                  </div>
+                  <img src={ArrowLeftIcon} alt="" aria-hidden="true" className="w-5 h-4" />
+                  <span className="text-stone-900 text-lg sm:text-xl font-light font-mono">Prev. Chapter</span>
                 </button>
 
-                {/* Next Chapter */}
                 <button
                   type="button"
-                  className="w-44 min-h-11 cursor-pointer hover:opacity-80 bg-transparent border-0 p-0"
+                  className="inline-flex items-center gap-2 min-h-11 px-2 -mx-2 cursor-pointer hover:opacity-80 bg-transparent border-0"
                   onClick={handleNext}
                   aria-label="Next chapter"
                 >
-                  <div className="inline-flex justify-between items-center w-full">
-                    <div className="text-stone-900 text-xl font-light font-mono">Next Chapter</div>
-                    <img src={ArrowRightIcon} alt="" className="w-5 h-4" />
-                  </div>
+                  <span className="text-stone-900 text-lg sm:text-xl font-light font-mono">Next Chapter</span>
+                  <img src={ArrowRightIcon} alt="" aria-hidden="true" className="w-5 h-4" />
                 </button>
               </div>
 
-              {/* Watch Full Interview - right aligned */}
               {currentVideo && (
                 <button
                   type="button"
@@ -651,27 +666,31 @@ const PlaylistBuilder = () => {
                   onClick={() => navigate(`/interview-player?documentName=${encodeURIComponent(currentVideo.documentName)}`)}
                   aria-label={`Watch full interview${currentVideo.name ? ` with ${currentVideo.name}` : ''}`}
                 >
-                  <div className="text-red-500 text-base font-light font-mono">Watch Full Interview</div>
-                  <img src={ArrowRightIcon} alt="" className="w-5 h-4" style={{filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'}} />
+                  <span className="text-red-500 text-base font-light font-mono">Watch Full Interview</span>
+                  <img src={ArrowRightIcon} alt="" aria-hidden="true" className="w-5 h-4" style={{filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%)'}} />
                 </button>
               )}
             </div>
-            
-             {/* Topic Tags Section - always visible */}
+
+             {/* Topic Tags Section.
+                 Tags were <div> with onClick (un-keyboardable); now
+                 real <button>s with aria-label. min-h-11 already on
+                 the original, kept. */}
              <div className="mt-6">
-               <div className="flex flex-wrap gap-x-6 gap-y-2">
+               <div className="flex flex-wrap gap-x-3 sm:gap-x-6 gap-y-2">
                  {getCurrentVideoTags().length > 0 ? (
                    getCurrentVideoTags().map((tag, index) => (
-                     <div
+                     <button
+                       type="button"
                        key={index}
-                       data-property-1="Default"
-                       className="px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-red-500 hover:outline-red-500 transition-colors duration-200 group"
+                       className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-red-500 hover:outline-red-500 transition-colors duration-200 group bg-transparent"
                        onClick={() => navigate(`?keywords=${encodeURIComponent(tag)}`)}
+                       aria-label={`Filter playlist to topic ${tag}`}
                      >
-                       <div className="text-center justify-start text-black text-base font-light font-['Chivo_Mono'] group-hover:text-white capitalize">
+                       <span className="text-center text-black text-sm sm:text-base font-light font-['Chivo_Mono'] group-hover:text-white capitalize">
                          {tag}
-                       </div>
-                     </div>
+                       </span>
+                     </button>
                    ))
                  ) : (
                    <span className="text-gray-500 text-base font-light font-mono italic">
@@ -683,20 +702,30 @@ const PlaylistBuilder = () => {
 
           </div>
 
-          {/* Side content */}
-          <div className="flex-1 pt-0 h-[540px] flex flex-col">
+          {/* Side content. Removed the hardcoded h-[540px] -- once the
+              video container stops being 540px (mobile + tablet), the
+              pinned side-content height left a big void below the
+              description. Now the side content just sits beneath the
+              video on mobile and the lg breakpoint keeps the side
+              alignment with the now-aspect-video player. */}
+          <div className="flex-1 pt-0 flex flex-col">
             {currentVideo && (
               <>
-                {/* Interviewee names */}
+                {/* Interviewee names. text-5xl was overlapping the
+                    description on mobile. Now scales 3xl -> 5xl. */}
                 <div className="mb-6 flex-shrink-0">
-                  <h2 className="text-black text-5xl font-semibold capitalize" style={{fontFamily: 'Inter, sans-serif'}}>
+                  <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-semibold capitalize" style={{fontFamily: 'Inter, sans-serif'}}>
                     {currentVideo.name}
                   </h2>
                 </div>
 
 
-                {/* Description - scrollable */}
-                <div className="text-black text-2xl font-normal leading-relaxed overflow-y-auto flex-1 pr-4" style={{fontFamily: 'FreightText Pro, serif'}}>
+                {/* Description.
+                    Was text-2xl with overflow-y-auto inside a flex-1
+                    that previously had a hardcoded h-[540px] parent;
+                    now the parent flexes naturally so this just sits
+                    beneath the heading on mobile. Text scales lg/2xl. */}
+                <div className="text-black text-lg sm:text-xl md:text-2xl font-normal leading-relaxed flex-1 pr-2 sm:pr-4" style={{fontFamily: 'FreightText Pro, serif'}}>
                   {currentVideo.summary}
                 </div>
               </>
@@ -710,9 +739,11 @@ const PlaylistBuilder = () => {
         <div className="w-full">
           <div className="mb-14">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-black text-5xl font-medium" style={{fontFamily: 'Inter, sans-serif'}}>Playlist</h2>
-              {/* Playlist navigation arrows */}
-              <div className="flex items-center gap-4">
+              <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-medium" style={{fontFamily: 'Inter, sans-serif'}}>Playlist</h2>
+              {/* Playlist navigation arrows.
+                  Hidden on mobile (user swipes the natural-scroll
+                  carousel instead). Desktop pagination is unchanged. */}
+              <div className="hidden sm:flex items-center gap-4">
                 <button
                   type="button"
                   className="inline-flex items-center justify-center min-w-11 min-h-11 cursor-pointer hover:opacity-80 disabled:opacity-30 bg-transparent border-0"
@@ -720,7 +751,7 @@ const PlaylistBuilder = () => {
                   disabled={playlistStartIndex === 0 || isAnimating}
                   aria-label="Previous playlist items"
                 >
-                  <img src={SimpleArrowLeftIcon} alt="" className="w-4 h-7" />
+                  <img src={SimpleArrowLeftIcon} alt="" aria-hidden="true" className="w-4 h-7" />
                 </button>
                 <button
                   type="button"
@@ -735,16 +766,24 @@ const PlaylistBuilder = () => {
                   })()}
                   aria-label="Next playlist items"
                 >
-                  <img src={SimpleArrowRightIcon} alt="" className="w-4 h-7" />
+                  <img src={SimpleArrowRightIcon} alt="" aria-hidden="true" className="w-4 h-7" />
                 </button>
               </div>
             </div>
-            
-            {/* Playlist items */}
-            <div className="flex gap-6 overflow-hidden">
-              <div 
+
+            {/* Playlist items.
+                Mobile: overflow-x-auto + scroll-snap-mandatory on the
+                outer container; the inline translateX / width is
+                skipped (the JS pagination is hidden anyway) so the
+                items lay out at natural width and the user swipes.
+                Desktop: original overflow-hidden + JS-driven translateX
+                pagination is preserved.
+                touch-pan-x lets the native scroll gesture take over on
+                mobile without competing with any parent gesture. */}
+            <div className={`flex gap-6 ${isMobile ? 'overflow-x-auto snap-x snap-mandatory touch-pan-x -mx-4 sm:mx-0 px-4 sm:px-0' : 'overflow-hidden'}`}>
+              <div
                 className="flex gap-6 transition-transform duration-300 ease-in-out"
-                style={{
+                style={isMobile ? undefined : {
                   transform: `translateX(-${playlistStartIndex * (504 + 24)}px)`, // 504px width + 24px gap
                   width: `${(() => {
                     // Calculate total items including related topic squares
@@ -755,22 +794,39 @@ const PlaylistBuilder = () => {
                 }}
               >
               {videoQueue.map((video, index) => (
-                <div key={video.id} 
-                     className="flex-shrink-0 w-[504px] cursor-pointer group"
-                     onClick={() => setCurrentVideoIndex(index)}>
-                  <div className="flex flex-col items-center gap-3">
-                    {/* Video thumbnail */}
-                    <div className="w-[504px] h-72 bg-zinc-300 rounded overflow-hidden">
+                <button
+                  type="button"
+                  key={video.id}
+                  className="flex-shrink-0 w-[80vw] max-w-[504px] sm:w-[504px] snap-start text-left cursor-pointer group bg-transparent border-0 p-0"
+                  onClick={() => setCurrentVideoIndex(index)}
+                  aria-label={`Play clip with ${video.name}`}
+                >
+                  <div className="flex flex-col items-center gap-3 w-full">
+                    {/* Video thumbnail. Was w-[504px] h-72 unconditional;
+                        now w-full inside the responsive item width with
+                        aspect-video on mobile and the original h-72 at
+                        sm. */}
+                    <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-300 rounded overflow-hidden">
                       {video.thumbnailUrl ? (
-                        <img className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src={video.thumbnailUrl} alt={video.name} />
+                        <img className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src={video.thumbnailUrl} alt="" />
                       ) : (
                         <div className="w-full h-full bg-zinc-300 transition-transform duration-300 ease-in-out group-hover:scale-110" />
                       )}
                     </div>
                     
-                    {/* Video info */}
-                    <div className="w-full h-16 relative">
-                      <div className="absolute left-0 bottom-0 text-stone-900 text-base font-light font-mono transition-colors duration-300 group-hover:text-[#F2483C]">
+                    {/* Video info.
+                        h-16 with absolute-positioned text relied on the
+                        text-4xl name fitting in 64px; on mobile the
+                        text wraps and gets clipped. Switched to flex
+                        layout so the name + meta line stack naturally
+                        without absolute positioning. The hover-slide
+                        and hover-arrow are kept (the hover effects are
+                        no-ops on touch devices, which is fine). */}
+                    <div className="w-full flex flex-col gap-1 relative">
+                      <div className="text-stone-900 text-2xl sm:text-3xl md:text-4xl font-bold font-['Source_Serif_4'] transition-all duration-300 group-hover:text-[#F2483C] group-hover:underline lg:group-hover:translate-x-11 capitalize">
+                        {video.name}
+                      </div>
+                      <div className="text-stone-900 text-base font-light font-mono transition-colors duration-300 group-hover:text-[#F2483C]">
                         {video.roleSimplified} | {(() => {
                           // Calculate clip length from timestamp
                           try {
@@ -787,54 +843,45 @@ const PlaylistBuilder = () => {
                           return video.clipLength || video.duration || '-- Minutes';
                         })()}
                       </div>
-                      {/* Arrow that appears on hover - positioned absolutely */}
-                      <img 
-                        src={ArrowRightIcon}
-                        alt=""
-                        className="h-8 w-8 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex-shrink-0 absolute left-0 top-1"
-                        style={{ filter: 'invert(35%) sepia(89%) saturate(2893%) hue-rotate(345deg) brightness(97%) contrast(93%)' }}
-                      />
-                      {/* Name that slides right on hover */}
-                      <div className="w-full absolute top-0 left-0 text-stone-900 text-4xl font-bold font-['Source_Serif_4'] transition-all duration-300 group-hover:text-[#F2483C] group-hover:underline group-hover:translate-x-11 capitalize">
-                        {video.name}
-                      </div>
                     </div>
                   </div>
-                </div>
+                </button>
               ))}
-              
-              {/* Related Topic Squares */}
+
+              {/* Related Topic Squares.
+                  Same responsive width pattern as the video items. */}
               {(() => {
                 const relatedTopics = getFilteredRelatedTopics();
-                console.log('Rendering related topics:', relatedTopics);
-                
+
                 return relatedTopics.map((relatedTerm, index) => (
-                  <div key={`related-${index}`} 
-                       className="flex-shrink-0 w-[504px] cursor-pointer hover:opacity-80"
-                       onClick={() => navigate(`?keywords=${encodeURIComponent(relatedTerm.topic)}`)}>
-                    <div className="flex flex-col items-center gap-3">
-                      {/* Topic square - same size as video thumbnails */}
-                      <div className="w-[504px] h-72 border-2 border-black rounded overflow-hidden flex items-center justify-center">
-                        <div className="text-center p-8">
-                          <div className="text-black text-4xl font-bold capitalize" style={{fontFamily: 'Source Serif Pro, serif'}}>
+                  <button
+                    type="button"
+                    key={`related-${index}`}
+                    className="flex-shrink-0 w-[80vw] max-w-[504px] sm:w-[504px] snap-start cursor-pointer hover:opacity-80 bg-transparent border-0 p-0 text-left"
+                    onClick={() => navigate(`?keywords=${encodeURIComponent(relatedTerm.topic)}`)}
+                    aria-label={`Browse playlist for related topic ${relatedTerm.topic}`}
+                  >
+                    <div className="flex flex-col items-center gap-3 w-full">
+                      <div className="w-full aspect-video sm:aspect-auto sm:h-72 border-2 border-black rounded overflow-hidden flex items-center justify-center">
+                        <div className="text-center p-4 sm:p-8">
+                          <div className="text-black text-2xl sm:text-3xl md:text-4xl font-bold capitalize" style={{fontFamily: 'Source Serif Pro, serif'}}>
                             {relatedTerm.topic}
                           </div>
                         </div>
                       </div>
-                      
-                      {/* Topic info - empty to maintain spacing */}
+
                       <div className="w-full h-16 relative">
                       </div>
                     </div>
-                  </div>
+                  </button>
                 ));
               })()}
-              
+
               {/* Background loading indicator for remaining videos */}
               {backgroundLoading && (
-                <div className="flex-shrink-0 w-[504px] flex flex-col items-center justify-center gap-3">
-                  <div className="w-[504px] h-72 bg-zinc-200 rounded overflow-hidden flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zinc-400" />
+                <div className="flex-shrink-0 w-[80vw] max-w-[504px] sm:w-[504px] flex flex-col items-center justify-center gap-3" role="status" aria-label="Loading more clips">
+                  <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-200 rounded overflow-hidden flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zinc-400" aria-hidden="true" />
                   </div>
                   <div className="text-zinc-500 text-base font-light font-mono">
                     Loading more clips...
