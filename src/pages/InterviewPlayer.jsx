@@ -560,11 +560,15 @@ export default function InterviewPlayer() {
         <div
           ref={contentRef}
           data-feedback-section={interviewSectionLabel}
-          className="px-12 pt-4"
+          className="px-4 sm:px-6 md:px-8 lg:px-12 pt-4"
         >
-        {/* Interview title */}
-        <div className="mb-8">
-          <h1 className="text-stone-900 text-8xl font-medium mb-4" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
+        {/* Interview title.
+            Was text-8xl unconditionally; on a 360px phone that 96px
+            heading wraps a single first name across two or three lines
+            and pushes the video below the fold. Scales now from
+            text-4xl on mobile up to text-8xl at xl. */}
+        <div className="mb-6 sm:mb-8">
+          <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium mb-4" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
             {mainSummary?.name || documentName}
           </h1>
           <div className="text-red-500 text-base font-mono">
@@ -573,70 +577,91 @@ export default function InterviewPlayer() {
           </div>
         </div>
 
-        {/* Main video and content area */}
-        <div className="flex gap-6 mb-8">
+        {/* Main video and content area.
+            Was flex gap-6 with flex-shrink-0 video at w-[960px], which
+            forced horizontal scroll on every viewport under ~1100px.
+            Now stacks vertically on mobile/tablet (flex-col) and
+            switches to side-by-side at lg. The video itself is now
+            w-full inside an aspect-video container so it scales fluidly
+            and fills available width while preserving 16:9. */}
+        <div className="flex flex-col lg:flex-row gap-6 mb-8">
           {/* Video player section */}
-          <div className="flex-shrink-0">
-            {/* Video player */}
-            <div className="w-[960px] h-[540px] relative rounded-xl overflow-hidden mb-4">
+          <div className="w-full lg:flex-shrink-0 lg:max-w-[960px]">
+            {/* Video player.
+                aspect-video (16:9) replaces the hardcoded 540px height
+                so the player height tracks the responsive width. */}
+            <div className="w-full aspect-video relative rounded-xl overflow-hidden mb-4">
               <div className="absolute inset-0 bg-black" ref={setContainerEl}></div>
               {!playerReady && (
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 pointer-events-none">
-                  <div className="w-16 h-16 border-4 border-white/50 border-t-white rounded-full animate-spin"></div>
+                <div
+                  className="absolute inset-0 flex items-center justify-center bg-black/30 pointer-events-none"
+                  role="status"
+                  aria-live="polite"
+                >
+                  <div className="w-16 h-16 border-4 border-white/50 border-t-white rounded-full animate-spin" aria-hidden="true"></div>
+                  <span className="sr-only">Loading video player</span>
                 </div>
               )}
             </div>
-            
-            {/* Chapter Navigation Controls */}
-            <div className="flex justify-between items-center mt-4">
-              {/* Navigation buttons - left aligned */}
-              <div className="flex items-center gap-8">
-                {/* Previous Chapter */}
-                <div 
-                  className={`w-48 h-6 cursor-pointer hover:opacity-80 ${currentSegmentIndex === 0 ? 'opacity-30 cursor-not-allowed' : ''}`} 
-                  onClick={handlePreviousChapter}
-                >
-                  <div className="inline-flex justify-between items-center w-full">
-                    <img src={ArrowLeftIcon} alt="Previous" className="w-5 h-4" />
-                    <div className="text-stone-900 text-xl font-light font-mono">Prev. Chapter</div>
-                  </div>
-                </div>
 
-                {/* Next Chapter */}
-                <div 
-                  className={`w-44 h-6 cursor-pointer hover:opacity-80 ${currentSegmentIndex >= subSummaries.length - 1 ? 'opacity-30 cursor-not-allowed' : ''}`} 
-                  onClick={handleNextChapter}
+            {/* Chapter Navigation Controls.
+                The prev/next chapter affordances were 24px-tall divs
+                without role="button" or keyboard handlers, well below
+                the 44x44 WCAG 2.2 AA tap-target rule and unreachable by
+                keyboard. Converted to real <button> elements with
+                min-h-11, aria-labels, and disabled state instead of
+                CSS opacity (which still allowed the click handler to
+                fire on a disabled-looking control). On mobile the chip
+                pair stacks above the "Chapter N of M" indicator;
+                desktop keeps the original row layout. */}
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mt-4">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-8">
+                <button
+                  type="button"
+                  onClick={handlePreviousChapter}
+                  disabled={currentSegmentIndex === 0}
+                  aria-label="Previous chapter"
+                  className="inline-flex items-center gap-2 min-h-11 px-2 -mx-2 cursor-pointer hover:opacity-80 disabled:opacity-30 disabled:cursor-not-allowed"
                 >
-                  <div className="inline-flex justify-between items-center w-full">
-                    <div className="text-stone-900 text-xl font-light font-mono">Next Chapter</div>
-                    <img src={ArrowRightIcon} alt="Next" className="w-5 h-4" />
-                  </div>
-                </div>
+                  <img src={ArrowLeftIcon} alt="" aria-hidden="true" className="w-5 h-4" />
+                  <span className="text-stone-900 text-lg sm:text-xl font-light font-mono">Prev. Chapter</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleNextChapter}
+                  disabled={currentSegmentIndex >= subSummaries.length - 1}
+                  aria-label="Next chapter"
+                  className="inline-flex items-center gap-2 min-h-11 px-2 -mx-2 cursor-pointer hover:opacity-80 disabled:opacity-30 disabled:cursor-not-allowed"
+                >
+                  <span className="text-stone-900 text-lg sm:text-xl font-light font-mono">Next Chapter</span>
+                  <img src={ArrowRightIcon} alt="" aria-hidden="true" className="w-5 h-4" />
+                </button>
               </div>
 
-              {/* Current Chapter Info - right aligned */}
               {subSummaries.length > 0 && (
-                <div className="text-red-500 text-base font-mono">
+                <div className="text-red-500 text-base font-mono" aria-live="polite">
                   Chapter {currentSegmentIndex + 1} of {subSummaries.length}
                 </div>
               )}
             </div>
-            
+
           </div>
 
-          {/* Side content */}
+          {/* Side content. On mobile this sits beneath the video; on
+              desktop it sits to the right as before. */}
           <div className="flex-1 pt-0">
             {mainSummary && (
               <>
                 {/* Role */}
-                <div className="text-black text-2xl font-normal leading-relaxed mb-6" style={{fontFamily: '"Source Serif 4", serif'}}>
+                <div className="text-black text-xl sm:text-2xl font-normal leading-relaxed mb-6" style={{fontFamily: '"Source Serif 4", serif'}}>
                   {mainSummary.role || mainSummary.roleSimplified || 'No role information available'}
                 </div>
-                
+
                 {/* Button to view full description */}
                 <button
                   onClick={() => setShowDescriptionModal(true)}
-                  className="text-red-500 text-base font-mono hover:text-red-700 transition-colors cursor-pointer"
+                  className="text-red-500 text-base font-mono hover:text-red-700 transition-colors cursor-pointer min-h-11 inline-flex items-center"
                 >
                   View Interview Description
                 </button>
@@ -645,49 +670,66 @@ export default function InterviewPlayer() {
           </div>
         </div>
 
-      {/* Interview Segments */}
-      <div className="w-full px-12 space-y-8">
+      {/* Interview Segments.
+          Was px-12 unconditional + the per-segment row was
+          flex gap-8 items-start with a hardcoded w-[503px] topic column
+          and a max-w-[804px] summary column, which forced 1307px of
+          horizontal layout the moment any segment rendered. Now
+          responsive: px-4 -> px-12 progressive, and each segment row
+          stacks (flex-col) on mobile + tablet and only switches to
+          side-by-side at lg. Topic column drops the fixed w-[503px]
+          in favor of lg:w-2/5 so the columns share width proportionally
+          rather than competing for the same 503px on a 1024px tablet.
+          The keyword pills are now real <button>s with min-h-11 (they
+          were divs with onClick, breaking keyboard access and the
+          44x44 tap target). The chapter timestamp link is also a real
+          button now for the same reason. */}
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 space-y-8">
         <div className="w-full">
           <div className="mb-14">
-            <h2 className="text-black text-5xl font-medium mb-6" style={{fontFamily: 'Inter, sans-serif'}}>Interview Chapters</h2>
-            
+            <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-medium mb-6" style={{fontFamily: 'Inter, sans-serif'}}>Interview Chapters</h2>
+
             {subSummaries.map((summary, index) => (
               <div key={summary.id || index} className="w-full mb-8">
-                <div 
-                  className="text-red-500 text-base font-mono mb-2 cursor-pointer hover:text-red-700 transition-colors"
+                <button
+                  type="button"
+                  className="text-red-500 text-base font-mono mb-2 cursor-pointer hover:text-red-700 transition-colors min-h-11 inline-flex items-center text-left disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={() => {
                     const seconds = convertTimestampToSeconds(summary.timestamp);
                     handleTimestampClick(seconds);
                   }}
                   disabled={!playerReady}
+                  aria-label={`Jump to chapter ${index + 1}`}
                 >
                   Chapter {String(index + 1).padStart(2, '0')} | {summary.timestamp ? summary.timestamp.split(' - ')[0].replace(/[\[\]]/g, '').replace(',000', '').trim() : 'Unknown time'}
-                </div>
-                
-                <div className="flex gap-8 items-start">
-                  <div className="w-[503px]">
-                    <div className="text-stone-900 text-4xl font-bold font-['Source_Serif_4'] mb-4">
+                </button>
+
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+                  <div className="w-full lg:w-2/5">
+                    <div className="text-stone-900 text-2xl sm:text-3xl md:text-4xl font-bold font-['Source_Serif_4'] mb-4">
                       {summary.topic || `Segment ${index + 1}`}
                     </div>
-                    
+
                     {/* Keywords for this segment */}
                     <div className="flex flex-wrap gap-3 mb-6">
                       {formatKeywords(summary.keywords).slice(0, 3).map((keyword, idx) => (
-                        <div 
+                        <button
+                          type="button"
                           key={idx}
-                          className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+                          className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
                           onClick={() => navigate(`/playlist-builder?keywords=${encodeURIComponent(keyword)}`)}
+                          aria-label={`Browse playlist for keyword ${keyword}`}
                         >
-                          <div className="text-center justify-start text-black text-base font-light font-['Chivo_Mono']">
+                          <span className="text-center text-black text-sm sm:text-base font-light font-['Chivo_Mono']">
                             {keyword}
-                          </div>
-                        </div>
+                          </span>
+                        </button>
                       ))}
                     </div>
                   </div>
-                  
-                  <div className="flex-1 max-w-[804px]">
-                    <div className="text-black text-2xl font-normal leading-relaxed" style={{fontFamily: '"Source Serif 4", serif'}}>
+
+                  <div className="flex-1 w-full">
+                    <div className="text-black text-lg sm:text-xl md:text-2xl font-normal leading-relaxed" style={{fontFamily: '"Source Serif 4", serif'}}>
                       {summary.summary}
                     </div>
                   </div>
@@ -699,35 +741,52 @@ export default function InterviewPlayer() {
       </div>
 
 
-      {/* Related Interviews Section */}
+      {/* Related Interviews Section.
+          Same responsive treatment as the title block: text-8xl was
+          shrinking the related-row headline to ~12 chars per line on
+          mobile, padding was px-12 unconditional, and each card was a
+          <div> with onClick (un-keyboardable). Now responsive padding,
+          progressive headline sizing, and the card row is a real
+          <button> with aria-label so keyboard / screen reader users
+          can navigate. */}
       {relatedInterviews.length > 0 && (
-        <div className="w-full px-12 py-16">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16">
           <div className="w-full">
             <div className="mb-8">
               <div className="w-full h-px border-t border-black mb-6"></div>
-              <div className="text-stone-900 text-8xl font-medium" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
+              <div className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
                 <span className="text-stone-900">Related</span>
                 <span className="text-red-500"> </span>
                 <span className="text-stone-900">Interviews</span>
               </div>
             </div>
-            
+
             {/* Related interviews grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8">
               {relatedInterviews.map((interview) => {
                 const thumbnailUrl = getThumbnailUrl(interview.videoEmbedLink)
                 return (
-                  <div 
-                    key={interview.id} 
-                    className="w-full cursor-pointer group"
+                  <button
+                    type="button"
+                    key={interview.id}
+                    className="w-full text-left cursor-pointer group"
                     onClick={() => navigate(`/interview-player?documentName=${encodeURIComponent(interview.id)}`)}
+                    aria-label={`Open interview with ${interview.documentName || interview.name}`}
                   >
-                    {/* Thumbnail */}
-                    <div className="w-full h-72 bg-zinc-300 mb-3 rounded overflow-hidden relative group-hover:opacity-90 transition-opacity">
+                    {/* Thumbnail.
+                        h-72 (288px) was reasonable for desktop but
+                        rendered each card 288px tall on a 360px-wide
+                        single-column mobile layout, making the related
+                        list feel taller than the page above. Now
+                        responsive: aspect-video on mobile so the card
+                        height tracks the card width; explicit h-72 only
+                        at sm and up where the multi-column grid keeps
+                        each card narrow. */}
+                    <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-300 mb-3 rounded overflow-hidden relative group-hover:opacity-90 transition-opacity">
                       {thumbnailUrl ? (
-                        <img 
-                          src={thumbnailUrl} 
-                          alt={interview.documentName}
+                        <img
+                          src={thumbnailUrl}
+                          alt=""
                           className="w-full h-full object-cover"
                         />
                       ) : (
@@ -736,17 +795,17 @@ export default function InterviewPlayer() {
                         </div>
                       )}
                     </div>
-                    
+
                     {/* Interview name */}
-                    <div className="text-stone-900 text-4xl font-bold font-['Source_Serif_4'] mb-2 group-hover:text-red-500 transition-colors">
+                    <div className="text-stone-900 text-2xl sm:text-3xl lg:text-4xl font-bold font-['Source_Serif_4'] mb-2 group-hover:text-red-500 transition-colors">
                       {interview.documentName || interview.name}
                     </div>
-                    
+
                     {/* Role and metadata */}
                     <div className="text-stone-900 text-base font-mono">
                       {interview.roleSimplified || interview.role || 'Unknown Role'}
                     </div>
-                  </div>
+                  </button>
                 )
               })}
             </div>
