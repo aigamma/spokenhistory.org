@@ -43,7 +43,7 @@ export default function Visualizations() {
   const tabs = ['timeline', 'map'];
   
   return (
-    <div className="max-w-7xl mx-auto p-6 bg-gray-50 min-h-screen font-body">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 min-h-screen font-body">
       {/* Hero Section - Main title and introduction */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-heading font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text mb-6">
@@ -63,7 +63,7 @@ export default function Visualizations() {
               <li key={tab} className="flex-1">
                 <button
                   onClick={() => setActiveTab(tab)}
-                  className={`w-full py-4 px-1 text-sm text-center transition-all duration-300 cursor-pointer border-0 font-body ${
+                  className={`w-full py-4 px-3 text-sm text-center transition-all duration-300 cursor-pointer border-0 font-body ${
                     activeTab === tab 
                       ? 'bg-indigo-50 text-blue-800 font-semibold border-b-2 border-blue-600' 
                       : 'bg-transparent text-gray-500 font-normal border-b-0'
