@@ -54,6 +54,12 @@ def main() -> int:
         failures.append(f"import processor.citation_check._coerce_count: {e}")
         citation_coerce_count = None
 
+    try:
+        from processor.claude_scorer import _coerce_int as claude_coerce_int
+    except Exception as e:
+        failures.append(f"import processor.claude_scorer._coerce_int: {e}")
+        claude_coerce_int = None
+
     # ── Score helpers: should clamp to [0, 100] ─────────────────────
     score_cases = [
         # (input, expected_after_coercion, label)
@@ -110,18 +116,30 @@ def main() -> int:
         ([], 0, "list rejected"),
     ]
 
-    if citation_coerce_count is not None:
+    # Run the count cases against both citation_check._coerce_count AND
+    # claude_scorer._coerce_int -- they are parallel-named helpers with
+    # the same semantics (non-negative unbounded int coercion), and the
+    # corpus relies on both behaving identically so that the
+    # supported_claims_count field from the Claude scorer (handled by
+    # _coerce_int) and the per-claim counts from the citation auditor
+    # (handled by _coerce_count) produce the same shape of result.
+    for helper_name, helper in [
+        ("citation_check._coerce_count", citation_coerce_count),
+        ("claude_scorer._coerce_int", claude_coerce_int),
+    ]:
+        if helper is None:
+            continue
         for inp, expected, label in count_cases:
             try:
-                got = citation_coerce_count(inp)
+                got = helper(inp)
             except Exception as e:
                 failures.append(
-                    f"citation_check._coerce_count({inp!r}) raised {type(e).__name__}: {e}"
+                    f"{helper_name}({inp!r}) raised {type(e).__name__}: {e}"
                 )
                 continue
             if got != expected:
                 failures.append(
-                    f"citation_check._coerce_count({inp!r}) = {got!r} (expected {expected!r}) [{label}]"
+                    f"{helper_name}({inp!r}) = {got!r} (expected {expected!r}) [{label}]"
                 )
 
     # ── Report ──────────────────────────────────────────────────────
@@ -133,8 +151,9 @@ def main() -> int:
 
     print(
         "OK: all coerce-helper tests passed. Verified "
-        f"{len(score_cases) * 2 + len(count_cases)} cases across "
-        "tuning._coerce_score, claude_scorer._coerce_score, citation_check._coerce_count."
+        f"{len(score_cases) * 2 + len(count_cases) * 2} cases across "
+        "tuning._coerce_score, claude_scorer._coerce_score, "
+        "citation_check._coerce_count, claude_scorer._coerce_int."
     )
     return 0
 
