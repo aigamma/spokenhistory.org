@@ -42,7 +42,7 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6 bg-gray-50 min-h-screen font-sans flex flex-col items-center justify-center">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 min-h-screen font-sans flex flex-col items-center justify-center">
       {/* Search header and form */}
       <div className="w-full max-w-3xl text-center mb-16">
         <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
