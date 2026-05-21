@@ -401,13 +401,40 @@ app.get('/healthz', (req, res) => res.json({ ok: true }))
 // upgrade and the bidirectional message stream over HTTP per the MCP
 // spec; clients (Claude Desktop, Claude.ai Custom Connectors) connect
 // by POSTing JSON-RPC messages here.
+//
+// Express v4 does NOT auto-catch promise rejections from async route
+// handlers (Express v5 does, but the deployment target is v4 per the
+// existing package.json pin), so the body is wrapped in an explicit
+// try / catch. On error we log the underlying exception server-side
+// and return a clean JSON 500 to the client rather than letting the
+// rejection propagate as an unhandled promise that could crash the
+// Node process under default --unhandled-rejections=throw behavior.
 app.post('/mcp', async (req, res) => {
   const transport = new StreamableHTTPServerTransport({
     sessionIdGenerator: undefined, // stateless mode; each request is independent
   })
   res.on('close', () => transport.close().catch(() => {}))
-  await mcpServer.connect(transport)
-  await transport.handleRequest(req, res, req.body)
+  try {
+    await mcpServer.connect(transport)
+    await transport.handleRequest(req, res, req.body)
+  } catch (err) {
+    console.error('MCP /mcp handler error:', err)
+    if (!res.headersSent) {
+      res.status(500).json({
+        jsonrpc: '2.0',
+        error: {
+          code: -32603,
+          message: 'Internal MCP server error',
+        },
+        id: req.body?.id ?? null,
+      })
+    }
+    try {
+      await transport.close()
+    } catch {
+      // Already closed or never opened; ignore.
+    }
+  }
 })
 
 const PORT = parseInt(process.env.PORT, 10) || 3001
