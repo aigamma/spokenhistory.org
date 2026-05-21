@@ -3,31 +3,47 @@ import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
+// Non-routable domain appended to bare-username logins before they are
+// passed to Firebase Email/Password Auth, which requires an email-shaped
+// identifier. .local is reserved by IANA and never resolvable on the
+// public internet, so no real mail server can collide with it. A team
+// member who types just `wwu` becomes `wwu@civilrightsproject.local` to
+// Firebase; anyone who already has an email-shaped login (such as the
+// admin account at eric@aigamma.com) types it in full and the input
+// passes through unchanged.
+const USERNAME_DOMAIN = 'civilrightsproject.local';
+
+function normalizeIdentifier(input) {
+  const trimmed = (input || '').trim();
+  if (!trimmed) return '';
+  return trimmed.includes('@') ? trimmed : `${trimmed}@${USERNAME_DOMAIN}`;
+}
+
 export default function Login() {
-  const [email, setEmail] = useState('');
+  const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  
+
   const { login } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   // Get the redirect path from location state or default to home
   const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!email || !password) {
-      setErrorMessage('Please enter both email and password');
+
+    if (!identifier || !password) {
+      setErrorMessage('Please enter both username and password');
       return;
     }
-    
+
     try {
       setLoading(true);
       setErrorMessage('');
-      await login(email, password);
+      await login(normalizeIdentifier(identifier), password);
       navigate(from, { replace: true });
     } catch (error) {
       // Log only error.code -- the full Firebase error object includes
@@ -36,13 +52,18 @@ export default function Login() {
       console.error('Login error:', error.code || 'unknown');
       let message = 'Failed to log in';
       
-      // Map Firebase error messages to user-friendly messages
+      // Map Firebase error messages to user-friendly messages. The
+      // identifier-field copy is generic ("username or email") so the
+      // user-facing messages stay generic too -- saying "no account
+      // found with this email" would be confusing for a member who
+      // logged in with the bare-username form.
       if (error.code === 'auth/invalid-email') {
-        message = 'Invalid email address';
-      } else if (error.code === 'auth/user-not-found') {
-        message = 'No account found with this email';
+        message = 'Invalid username or email';
+      } else if (error.code === 'auth/user-not-found' ||
+                 error.code === 'auth/invalid-credential') {
+        message = 'Incorrect username or password';
       } else if (error.code === 'auth/wrong-password') {
-        message = 'Incorrect password';
+        message = 'Incorrect username or password';
       } else if (error.code === 'auth/too-many-requests') {
         message = 'Too many failed login attempts. Please try again later';
       }
@@ -82,22 +103,25 @@ export default function Login() {
         
         <form className="mt-6" onSubmit={handleSubmit}>
           <div className="mb-6">
-            <label 
-              htmlFor="email-address" 
+            <label
+              htmlFor="identifier"
               className="block text-sm font-medium text-gray-700 mb-2"
             >
-              Email address
+              Username or email
             </label>
             <input
-              id="email-address"
-              name="email"
-              type="email"
-              autoComplete="email"
+              id="identifier"
+              name="identifier"
+              type="text"
+              autoComplete="username"
               required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={identifier}
+              onChange={(e) => setIdentifier(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="you@example.com"
+              placeholder="username"
+              autoCapitalize="none"
+              autoCorrect="off"
+              spellCheck="false"
             />
           </div>
           
@@ -160,13 +184,7 @@ export default function Login() {
           
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-500">
-              Don't have an account?{' '}
-              <a 
-                href="#" 
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
-              >
-                Sign up
-              </a>
+              Team members: use the credentials provided by your project lead.
             </p>
           </div>
         </form>
