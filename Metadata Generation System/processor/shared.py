@@ -21,6 +21,19 @@ MAIN_TOPICS = [
     "Historical Figures & Turning Points"
 ]
 
+# NOTE: This list is the closed set of named events that the chapterization
+# step uses to populate the per-chapter `related_events` field. It is
+# intentionally smaller than the civil_rights_facts.json corpus (which is
+# the open ground-truth grounding source for the summarization /
+# regeneration prompts, expanded across multiple commits during the
+# Smithsonian-grade overhaul to 47 entries covering events, organizations,
+# court cases, and major-figure biographies).
+#
+# Adding an event here changes pipeline output for every chapter the
+# matcher decides it touches, so the list should grow deliberately rather
+# than auto-derived from the facts file. The facts file's grounding role
+# is additive and benefits from a larger corpus; this assignment role is
+# enumerative and benefits from a curated short list.
 CIVIL_RIGHTS_EVENTS = [
     "The Lynching of Emmett Till",
     "Montgomery Bus Boycott",
