@@ -5,10 +5,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import useViewport from '../../hooks/useViewport';
 
 /**
  * ForceDirectedTopicGraph - Interactive network visualization of semantically related topics
- * 
+ *
  * @param {Object} props
  * @param {Array} props.topics - Array of topic objects with similarity scores
  * @param {string} props.searchQuery - The search query (center node)
@@ -17,8 +18,8 @@ import * as d3 from 'd3';
  * @param {number} props.height - Height of the visualization
  * @param {number} props.similarityThreshold - Minimum similarity to show edge (0-1)
  */
-export default function ForceDirectedTopicGraph({ 
-  topics = [], 
+export default function ForceDirectedTopicGraph({
+  topics = [],
   searchQuery = '',
   onTopicClick,
   width = 1200,
@@ -28,6 +29,13 @@ export default function ForceDirectedTopicGraph({
   const svgRef = useRef(null);
   const [selectedNode, setSelectedNode] = useState(null);
   const [hoveredNode, setHoveredNode] = useState(null);
+  // Mobile branching: bigger font sizes so labels stay readable when
+  // the SVG viewBox scales down to fit a 360px viewport, and the
+  // info card converts from hover-only (impossible on touch) to
+  // tap-toggled. The hook updates on resize/orientation change so a
+  // desktop user dragging the window narrow gets the mobile treatment
+  // without a refresh.
+  const { isMobile } = useViewport();
 
   // Simple color scheme - one color for topics, brand color for search
   const topicNodeColor = '#57534e';    // stone-600 (neutral, professional)
@@ -169,16 +177,40 @@ export default function ForceDirectedTopicGraph({
           .attr('stroke-width', 2);
       })
       .on('click', function(event, d) {
-        if (!d.isSearch && onTopicClick) {
-          onTopicClick(d.label);
+        // Mobile: a tap toggles the info card (first tap shows the
+        // card, second tap on the same node navigates). Desktop: a
+        // click goes straight to the topic playlist because the
+        // info card was already visible during hover.
+        if (d.isSearch) {
+          setSelectedNode(d);
+          return;
         }
-        setSelectedNode(d);
+        if (isMobile) {
+          if (selectedNode && selectedNode.id === d.id) {
+            // Second tap on the same node -> navigate.
+            if (onTopicClick) onTopicClick(d.label);
+            setSelectedNode(null);
+          } else {
+            // First tap -> show info card.
+            setSelectedNode(d);
+            setHoveredNode(d);
+          }
+        } else {
+          if (onTopicClick) onTopicClick(d.label);
+          setSelectedNode(d);
+        }
       });
 
-    // Add labels
+    // Add labels.
+    // Mobile bumps font sizes so labels remain readable after the
+    // SVG viewBox scales down to fit a phone-width container. The
+    // search node label stays prominently larger than topic labels in
+    // both modes so the center of the network is visually anchored.
+    const searchFontSize = isMobile ? 26 : 18;
+    const topicFontSize = isMobile ? 18 : 12;
     node.append('text')
       .text(d => d.label)
-      .attr('font-size', d => d.isSearch ? 18 : 12)
+      .attr('font-size', d => d.isSearch ? searchFontSize : topicFontSize)
       .attr('font-weight', d => d.isSearch ? 'bold' : 'normal')
       .attr('font-family', 'Chivo Mono, monospace')
       .attr('fill', '#1c1917') // stone-900
@@ -229,32 +261,76 @@ export default function ForceDirectedTopicGraph({
     };
   }, [topics, searchQuery, width, height, similarityThreshold, onTopicClick]);
 
+  // Mobile uses the tap-pinned selectedNode for the info card
+  // (because hover does not exist on touch); desktop uses the live
+  // hoveredNode. The fallback to selectedNode on mobile is also what
+  // makes the second-tap-to-navigate UX possible -- the card has to
+  // stay visible after the first tap for the user to see what they're
+  // about to navigate to. The card itself docks to the bottom of the
+  // viewport on mobile (full-width, no top-right pinning that the
+  // d3-zoom transform would have pushed off-screen) and stays in the
+  // top-right corner on desktop where the original pattern works.
+  const cardNode = isMobile ? selectedNode : hoveredNode;
+  const showCard = cardNode && !cardNode.isSearch;
+
   return (
     <div className="relative w-full h-full bg-transparent rounded border border-stone-900">
-      {/* SVG Canvas */}
-      <svg ref={svgRef} className="w-full h-full bg-transparent" />
+      {/* SVG Canvas. role="img" + aria-label gives a screen-reader
+          announcement; the graph itself is not screen-reader
+          accessible (force-directed networks rarely are), but the
+          surrounding TopicGlossary page presents the same data as a
+          card grid that IS accessible, so the graph is treated as a
+          decorative alternative presentation. */}
+      <svg
+        ref={svgRef}
+        className="w-full h-full bg-transparent"
+        role="img"
+        aria-label={`Force-directed network of ${topics.length} topics related to ${searchQuery}`}
+      />
 
-      {/* Hovered Node Info */}
-      {hoveredNode && !hoveredNode.isSearch && (
-        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded border border-stone-900 shadow-lg max-w-sm">
-          <div className="text-lg font-bold mb-2 text-stone-900" style={{ fontFamily: 'Source Serif 4, serif' }}>
-            {hoveredNode.label}
+      {/* Topic info card.
+          Mobile: docked to the bottom of the SVG, full width,
+          dismissable via the X button. Desktop: top-right corner. */}
+      {showCard && (
+        <div
+          className={
+            isMobile
+              ? 'absolute left-2 right-2 bottom-2 bg-white/95 backdrop-blur-sm p-4 rounded border border-stone-900 shadow-lg'
+              : 'absolute top-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded border border-stone-900 shadow-lg max-w-sm'
+          }
+          role="status"
+          aria-live="polite"
+        >
+          {isMobile && (
+            <button
+              type="button"
+              onClick={() => setSelectedNode(null)}
+              aria-label="Dismiss topic info"
+              className="absolute top-1 right-1 inline-flex items-center justify-center min-w-11 min-h-11 text-stone-900 hover:opacity-70"
+            >
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+          <div className="text-lg font-bold mb-2 text-stone-900 pr-12" style={{ fontFamily: 'Source Serif 4, serif' }}>
+            {cardNode.label}
           </div>
-          {hoveredNode.description && (
+          {cardNode.description && (
             <div className="text-sm mb-3 text-stone-700 leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
-              {hoveredNode.description.length > 200 
-                ? hoveredNode.description.substring(0, 200) + '...'
-                : hoveredNode.description
+              {cardNode.description.length > 200
+                ? cardNode.description.substring(0, 200) + '...'
+                : cardNode.description
               }
             </div>
           )}
           <div className="space-y-1 text-xs border-t border-stone-900 pt-2" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-            {hoveredNode.interviewCount && (
-              <div className="text-stone-600">{hoveredNode.interviewCount} interviews • {hoveredNode.clipCount || 0} clips</div>
+            {cardNode.interviewCount && (
+              <div className="text-stone-600">{cardNode.interviewCount} interviews • {cardNode.clipCount || 0} clips</div>
             )}
           </div>
           <div className="mt-2 text-xs text-stone-500" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-            Click to view clips
+            {isMobile ? 'Tap topic again to view clips' : 'Click to view clips'}
           </div>
         </div>
       )}

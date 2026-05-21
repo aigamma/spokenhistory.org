@@ -908,8 +908,13 @@ export default function TopicGlossary() {
             </span>
           </div>
         ) : viewMode === 'graph' && searchTerm && relatedMatches.length > 0 ? (
-          /* Force-Directed Network Graph View */
-          <div className="w-full" style={{ height: '800px' }}>
+          /* Force-Directed Network Graph View.
+              Height was hardcoded 800px which on a 360x740 phone in
+              portrait pushed the graph below the fold AND past the
+              page footer. Now clamps with min(80vh, 800px) so the
+              graph never consumes more than 80% of viewport height
+              and the surrounding header + filters stay visible. */
+          <div className="w-full" style={{ height: 'min(80vh, 800px)' }}>
             <ForceDirectedTopicGraph
               topics={semanticResults}
               searchQuery={searchTerm}
