@@ -123,11 +123,12 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
               )}
             </div>
             <button
+              type="button"
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 transition"
-              aria-label="Close"
+              className="inline-flex items-center justify-center min-w-11 min-h-11 text-gray-400 hover:text-gray-600 transition"
+              aria-label="Close feedback dialog"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
