@@ -176,9 +176,29 @@ function extractEndTime(timestamp) {
  * @returns {string} Collection name to use
  */
 export const getActiveCollection = () => {
-  // Feature flag - can be controlled via environment variable or config
-  const USE_METADATA_V2 = process.env.REACT_APP_USE_METADATA_V2 === 'true' || true;
-  return USE_METADATA_V2 ? 'metadataV2' : 'interviewSummaries';
+  // Feature flag for the collection to read from. The default is the
+  // current metadataV2 collection; an opt-out via the
+  // VITE_USE_METADATA_V2=false env var forces the legacy
+  // interviewSummaries collection (useful for A/B comparison during
+  // the migration window). The previous implementation read
+  // process.env.REACT_APP_USE_METADATA_V2 which is a Create-React-App
+  // convention and does NOT work under Vite (process.env is not
+  // populated in the Vite client runtime, and the VITE_ prefix is the
+  // required convention for env vars exposed to the browser bundle).
+  // The previous implementation also had `|| true` as a tail clause
+  // which short-circuited the entire env-var read to always-true
+  // regardless of the value, so the feature flag was effectively
+  // non-functional -- the function always returned 'metadataV2'. The
+  // new implementation uses import.meta.env.VITE_USE_METADATA_V2 which
+  // Vite replaces at build time, and the default-when-unset remains
+  // true so existing builds (no env var configured) behave identically.
+  const envValue = import.meta.env.VITE_USE_METADATA_V2;
+  // Only the explicit string 'false' opts out; any other value or
+  // omission keeps the metadataV2 default. This is conservative on
+  // purpose -- a misconfigured env var should not silently switch
+  // collections.
+  const useV2 = envValue !== 'false';
+  return useV2 ? 'metadataV2' : 'interviewSummaries';
 };
 
 /**
