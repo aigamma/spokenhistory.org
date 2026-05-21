@@ -73,13 +73,35 @@ export async function getQueueStats() {
  *   rejecting.
  */
 export async function markReviewed(docId, { decision, reviewerEmail, reviewerNotes, finalSummary }) {
+  // docId guards: empty / non-string / slash-containing IDs would either
+  // crash doc() with an obscure SDK error or, in the slash case,
+  // silently rebind the doc reference to a nested path (the same
+  // primitive the MCP server fixed in 46e038e for getTranscript). The
+  // audit trail depends on every markReviewed call landing on the
+  // intended doc, so failing fast here with a clear error is much
+  // better than writing into an unintended sub-collection document.
+  if (typeof docId !== 'string' || docId.trim().length === 0) {
+    throw new Error('docId must be a non-empty string')
+  }
+  if (docId.includes('/')) {
+    throw new Error('docId must not contain forward slashes (would rebind to a nested path)')
+  }
   if (!TERMINAL_STATUSES.includes(decision)) {
     throw new Error(`Invalid decision: ${decision}. Must be one of ${TERMINAL_STATUSES.join(', ')}`)
+  }
+  // reviewerEmail must be a non-empty string. The audit trail is the
+  // primary product of the review queue -- a queue document with
+  // reviewer_email = null is unattributable and defeats the purpose of
+  // the gate. Requiring the email here means a caller that forgets to
+  // pass the field gets a clear error rather than silently writing an
+  // unattributable decision.
+  if (typeof reviewerEmail !== 'string' || reviewerEmail.trim().length === 0) {
+    throw new Error('reviewerEmail must be a non-empty string')
   }
   const update = {
     status: decision,
     reviewed_at: serverTimestamp(),
-    reviewer_email: reviewerEmail,
+    reviewer_email: reviewerEmail.trim(),
     reviewer_notes: reviewerNotes || null,
   }
   if (finalSummary !== undefined && finalSummary !== null) {
