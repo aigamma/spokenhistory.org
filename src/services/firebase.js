@@ -13,14 +13,26 @@ import {
   getDocumentIdVariants
 } from './collectionMapper.js'
 
+// Firebase Web SDK config. Each field reads its value from a VITE_*
+// env var first (so a .env file or a CI build env can swap the
+// project without editing this file), and falls back to the
+// hardcoded llm-hyper-audio values if no env var is set. This lets
+// Eric stand up the new civil-rights-history-project Firebase project
+// and point the build at it by setting six env vars in .env without
+// touching this code -- the migration documented in CLAUDE.md as
+// task #6 (Stand up new clean Firebase project) becomes a config-only
+// change rather than a code change. Firebase apiKey is a public
+// identifier (it ships in every built bundle and is not a secret per
+// Firebase docs at firebase.google.com/docs/projects/api-keys), so the
+// fallback values are safe to keep in source control.
 const firebaseConfig = {
-  apiKey: "AIzaSyDGolxlZNoEzk7z46ZMtSk9YsP32MlH45Q",
-  authDomain: "llm-hyper-audio.firebaseapp.com",
-  projectId: "llm-hyper-audio",
-  storageBucket: "llm-hyper-audio.firebasestorage.app",
-  messagingSenderId: "530304773274",
-  appId: "1:530304773274:web:1764f58974d6c2fd060323",
-  measurementId: "G-HFEKE65YC6"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDGolxlZNoEzk7z46ZMtSk9YsP32MlH45Q",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "llm-hyper-audio.firebaseapp.com",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "llm-hyper-audio",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "llm-hyper-audio.firebasestorage.app",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "530304773274",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:530304773274:web:1764f58974d6c2fd060323",
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || "G-HFEKE65YC6"
 }
 
 const app = initializeApp(firebaseConfig)
