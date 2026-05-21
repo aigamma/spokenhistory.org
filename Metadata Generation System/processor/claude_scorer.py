@@ -266,7 +266,68 @@ def score_with_claude(
     parsed.setdefault("publishable", False)
     parsed.setdefault("publishable_rationale", "")
 
+    # Type-coerce score fields so downstream comparisons in
+    # combined_publication_decision (c_acc >= 90, etc.) cannot crash with
+    # a TypeError when the model emits a stringified number like
+    # "accuracy_score": "90" instead of an int. Temperature=0.0 reduces
+    # but does not eliminate this risk -- model-output JSON can drift in
+    # rare cases. The coercion is intentionally permissive: int("90.5")
+    # works via the float() round-trip, "high" and None fall back to 0,
+    # so the publication gate fails closed (a malformed score becomes 0
+    # which fails the 90 threshold) rather than crashing the pipeline.
+    parsed["accuracy_score"] = _coerce_score(parsed.get("accuracy_score"))
+    parsed["quality_score"] = _coerce_score(parsed.get("quality_score"))
+    parsed["supported_claims_count"] = _coerce_int(parsed.get("supported_claims_count"))
+
+    # Coerce unsupported_claims to a list. The downstream len() call in
+    # combined_publication_decision would crash on a None or a string.
+    if not isinstance(parsed.get("unsupported_claims"), list):
+        parsed["unsupported_claims"] = []
+
     return parsed
+
+
+def _coerce_score(value) -> int:
+    """Coerce a model-supplied score to an int in [0, 100], falling back
+    to 0 on any parse failure. Used to defend combined_publication_decision
+    against TypeError on malformed scorer responses."""
+    if isinstance(value, bool):  # bool is a subclass of int; reject explicitly
+        return 0
+    if isinstance(value, (int, float)):
+        try:
+            n = int(value)
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, min(100, n))
+    if isinstance(value, str):
+        try:
+            n = int(float(value.strip()))
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, min(100, n))
+    return 0
+
+
+def _coerce_int(value) -> int:
+    """Coerce a model-supplied integer to a non-negative int, falling
+    back to 0 on any parse failure. Companion to _coerce_score for
+    fields like supported_claims_count that are counts rather than
+    bounded 0-100 scores."""
+    if isinstance(value, bool):
+        return 0
+    if isinstance(value, (int, float)):
+        try:
+            n = int(value)
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, n)
+    if isinstance(value, str):
+        try:
+            n = int(float(value.strip()))
+        except (ValueError, OverflowError):
+            return 0
+        return max(0, n)
+    return 0
 
 
 def tune_with_dual_scoring(
