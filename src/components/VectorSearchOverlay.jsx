@@ -377,14 +377,27 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
           <header className="relative" style={{ backgroundColor: '#EBEAE9' }}>
             <div className="w-full px-4 sm:px-8 lg:px-12 py-6 lg:py-9">
               <div className="flex justify-between items-start">
-                {/* Logo/Title */}
-                <div className="cursor-pointer" onClick={handleClose}>
+                {/* Logo/Title.
+                    Was <div onClick> -- not keyboard-accessible and not
+                    announced as an interactive control. Switched to
+                    real <button> with type="button", aria-label, and
+                    bg/border resets so it visually matches the prior
+                    <div> while being announced as "Close search and
+                    return to site" to screen readers. The wordmark
+                    sizing matches the site Header so dismissing the
+                    overlay feels like returning home. */}
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  aria-label="Close search and return to site"
+                  className="cursor-pointer text-left bg-transparent border-0 p-0 min-h-11"
+                >
                   <div style={{ fontFamily: 'Source Serif 4, serif' }}>
-                    <span className="text-stone-900 text-4xl font-normal">Civil Rights </span>
+                    <span className="text-stone-900 text-3xl sm:text-4xl font-normal">Civil Rights </span>
                     <br />
-                    <span className="text-stone-900 text-4xl font-bold leading-9">History Project</span>
+                    <span className="text-stone-900 text-3xl sm:text-4xl font-bold leading-9">History Project</span>
                   </div>
-                </div>
+                </button>
 
                 {/* Close button in header style */}
                 <button
@@ -398,22 +411,34 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
             </div>
           </header>
         ) : (
-          /* Original Large Title Layout for Empty State */
+          /* Original Large Title Layout for Empty State.
+             Close button was right-12 (48px from edge) which is past
+             the right edge of a 360px phone since the inner control
+             starts at right=48px and is 48px wide -- pinning it
+             flush against the viewport. Switched to right-4 sm:right-12
+             so mobile gets a comfortable 16px gutter. */}
           <>
             {/* Close button */}
             <button
               onClick={handleClose}
               aria-label="Close search"
-              className="absolute top-6 right-12 z-10 w-12 h-12 flex items-center justify-center hover:opacity-70 transition-opacity"
+              className="absolute top-4 right-4 sm:top-6 sm:right-12 z-10 min-w-11 min-h-11 flex items-center justify-center hover:opacity-70 transition-opacity"
             >
-              <div className="w-6 h-6 outline outline-2 outline-offset-[-1px] outline-black" aria-hidden="true">
+              <div className="w-6 h-6 outline outline-2 outline-offset-[-1px] outline-black flex items-center justify-center" aria-hidden="true">
                 <X size={24} strokeWidth={2} />
               </div>
             </button>
 
-            {/* Large Title */}
-            <div className="w-full h-20 absolute left-12 top-9">
-              <div className="text-stone-900 text-6xl font-normal leading-[66.46px]" style={{ fontFamily: 'Source Serif 4, serif' }}>
+            {/* Large Title.
+                text-6xl with leading-[66.46px] was an exact-pixel match
+                for the Figma design at desktop width. On mobile, 60px
+                text + 66.46px line-height pushed the title across two
+                lines and overlapped the close button. Now scales
+                3xl/4xl/5xl/6xl, and the absolute positioning is
+                relaxed on mobile (left-4 top-4) so the title clears
+                the top-right close button. */}
+            <div className="absolute left-4 sm:left-12 top-16 sm:top-9 right-16 sm:right-auto">
+              <div className="text-stone-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-tight sm:leading-none" style={{ fontFamily: 'Source Serif 4, serif' }}>
                 <span className="font-normal">Civil Rights </span>
                 <span className="font-bold tracking-[2.56px]">History</span>
                 <span className="font-bold"> Project</span>
@@ -488,53 +513,46 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
           </form>
         </div>
 
-        {/* Topic suggestion tags */}
+        {/* Topic suggestion tags.
+            Was absolute left-12 top:240px -- pinned to a layout point
+            that worked only at desktop width and only with the large
+            title above at its desktop position. With the empty-state
+            title now responsive (mobile uses smaller text + lower
+            top), this row also flows with the page rather than being
+            absolutely positioned. Suggestion pills converted from
+            <div onClick> to real <button>s with aria-label and
+            min-h-11 for tap-target compliance. */}
         {!isSearching && results.length === 0 && (
-          <div className="absolute left-12" style={{ top: '240px' }}>
-            <div className="flex flex-wrap gap-4 items-center">
-              <div 
-                className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors"
-                onClick={() => {
-                  setSearchQuery('Desegregation');
-                  handleSearch({ preventDefault: () => {} });
-                }}
-              >
-                <div className="text-center text-black text-base font-light font-['Chivo_Mono']">Desegregation</div>
-              </div>
-              <div 
-                className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors"
-                onClick={() => {
-                  setSearchQuery('Little Rock Nine');
-                  handleSearch({ preventDefault: () => {} });
-                }}
-              >
-                <div className="text-center text-black text-base font-light font-['Chivo_Mono']">Little Rock Nine</div>
-              </div>
-              <div 
-                className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors"
-                onClick={() => {
-                  setSearchQuery('Black Panther Party');
-                  handleSearch({ preventDefault: () => {} });
-                }}
-              >
-                <div className="text-center text-black text-base font-light font-['Chivo_Mono']">Black Panther Party</div>
-              </div>
-              <div 
-                className="px-6 py-3 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors"
-                onClick={() => {
-                  setSearchQuery('Student Nonviolent Coordinating Committee');
-                  handleSearch({ preventDefault: () => {} });
-                }}
-              >
-                <div className="text-center text-black text-base font-light font-['Chivo_Mono']">Student Nonviolent Coordinating Committee</div>
-              </div>
-              <div 
-                className="inline-flex justify-start items-center gap-2.5 ml-8 cursor-pointer hover:opacity-70 transition-opacity"
+          <div className="absolute left-4 right-4 sm:left-12 sm:right-12 top-[180px] sm:top-[240px]">
+            <div className="flex flex-wrap gap-3 sm:gap-4 items-center">
+              {[
+                'Desegregation',
+                'Little Rock Nine',
+                'Black Panther Party',
+                'Student Nonviolent Coordinating Committee',
+              ].map((suggestion) => (
+                <button
+                  type="button"
+                  key={suggestion}
+                  className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 transition-colors bg-transparent"
+                  onClick={() => {
+                    setSearchQuery(suggestion);
+                    handleSearch({ preventDefault: () => {} });
+                  }}
+                  aria-label={`Search for ${suggestion}`}
+                >
+                  <span className="text-center text-black text-sm sm:text-base font-light font-['Chivo_Mono']">{suggestion}</span>
+                </button>
+              ))}
+              <button
+                type="button"
+                className="inline-flex justify-start items-center gap-2.5 sm:ml-8 min-h-11 cursor-pointer hover:opacity-70 transition-opacity bg-transparent border-0"
                 onClick={() => navigate('/topic-glossary')}
+                aria-label="Open the Topic Glossary page"
               >
-                <div className="text-center text-stone-900 text-base font-light font-['Chivo_Mono']">See Topic Glossary</div>
-                <div className="w-3.5 h-2.5 outline outline-1 outline-offset-[-0.50px] outline-stone-900"></div>
-              </div>
+                <span className="text-center text-stone-900 text-sm sm:text-base font-light font-['Chivo_Mono']">See Topic Glossary</span>
+                <span className="w-3.5 h-2.5 outline outline-1 outline-offset-[-0.50px] outline-stone-900" aria-hidden="true"></span>
+              </button>
             </div>
           </div>
         )}
