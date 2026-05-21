@@ -50,6 +50,16 @@ _VALID_TERMINAL_STATUSES = (STATUS_APPROVED, STATUS_REJECTED, STATUS_NEEDS_REVIS
 
 _db_singleton = None
 
+# Use a named firebase-admin app instead of the default app, so this
+# module's Firestore client is isolated from any other module in the
+# same process that might initialize firebase-admin against a different
+# Firebase project. Without a named app, two modules calling
+# initialize_app() would either silently share the same default app
+# (potentially pointed at the wrong project) or raise "already exists"
+# on the second call -- both failure modes that the named-app pattern
+# eliminates.
+_APP_NAME = "review_queue_app"
+
 
 def _get_db():
     """Lazy-initialize the firebase-admin Firestore client.
@@ -86,10 +96,16 @@ def _get_db():
     # crashing the upstream pipeline on a configuration mistake instead
     # of just logging and continuing.
     try:
-        if not firebase_admin._apps:
+        # Initialize our named app if it does not yet exist; otherwise reuse
+        # the existing named app. Using firebase_admin.get_app(_APP_NAME)
+        # raises ValueError when the named app does not exist, which is the
+        # signal to initialize it.
+        try:
+            app = firebase_admin.get_app(_APP_NAME)
+        except ValueError:
             cred = credentials.Certificate(sa_path)
-            firebase_admin.initialize_app(cred)
-        _db_singleton = firestore.client()
+            app = firebase_admin.initialize_app(cred, name=_APP_NAME)
+        _db_singleton = firestore.client(app)
     except Exception as exc:
         print(
             f"[review_queue] Firebase Admin init failed (FIREBASE_SERVICE_ACCOUNT_PATH={sa_path}): "
