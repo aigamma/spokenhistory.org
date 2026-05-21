@@ -78,3 +78,8 @@ jobs:
         run: |
           cd "Metadata Generation System"
           python -c "from processor import claude_scorer, review_queue, citation_check, dual_scoring_helper; print('All new modules import OK')"
+
+      - name: Validate civil_rights_facts.json structure
+        run: |
+          cd "Metadata Generation System"
+          python scripts/validate_facts.py
