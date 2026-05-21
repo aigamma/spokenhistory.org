@@ -30,7 +30,10 @@ export default function Login() {
       await login(email, password);
       navigate(from, { replace: true });
     } catch (error) {
-      console.error('Login error:', error);
+      // Log only error.code -- the full Firebase error object includes
+      // customData with the attempted email, which is PII that should
+      // not land in the browser console. Same pattern as AuthContext.
+      console.error('Login error:', error.code || 'unknown');
       let message = 'Failed to log in';
       
       // Map Firebase error messages to user-friendly messages
