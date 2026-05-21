@@ -104,3 +104,8 @@ jobs:
         run: |
           cd "Metadata Generation System"
           python scripts/validate_facts.py
+
+      - name: Test model-output coerce helpers
+        run: |
+          cd "Metadata Generation System"
+          python scripts/check_coerce_helpers.py
