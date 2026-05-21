@@ -18,6 +18,25 @@ const OpenAI = require("openai");
 initializeApp();
 const db = getFirestore();
 
+// Input-validation upper bounds. These cap caller-supplied strings to
+// prevent (a) runaway OpenAI bills when a buggy client submits a
+// megabyte of text to an embedding call, (b) crashes inside the
+// OpenAI SDK on non-string inputs that the !field truthy check above
+// would otherwise let through, and (c) Firestore document-size limits
+// being silently exceeded when stored text fields blow past 1MB. The
+// 30000-character embedding cap covers ~8000 tokens which is just
+// under the text-embedding-3-small per-request limit (8191 tokens);
+// the 4000-char query cap is conservative for semantic search where
+// most useful queries are well under 1000 chars; the 5000-char Canny
+// title/details caps reflect Canny's own server-side limits documented
+// in their API reference.
+const MAX_EMBEDDING_TEXT_LENGTH = 30000;
+const MAX_SEARCH_QUERY_LENGTH = 4000;
+const MAX_CANNY_TITLE_LENGTH = 200;
+const MAX_CANNY_DETAILS_LENGTH = 5000;
+const DEFAULT_SEARCH_LIMIT = 10;
+const MAX_SEARCH_LIMIT = 100;
+
 let openai;
 let currentApiKey = "";
 
@@ -264,9 +283,17 @@ exports.generateEmbedding = onCall({
   initializeOpenAIClient(); // Ensure client is up-to-date
   try {
     const {text, documentId, segmentId, textPreview} = request.data;
-    if (!text) {
-      logger.warn("generateEmbedding called without text");
-      throw new Error("Missing required 'text' field");
+    if (typeof text !== "string") {
+      logger.warn("generateEmbedding called with non-string text");
+      throw new Error("Field 'text' must be a string");
+    }
+    if (text.length === 0) {
+      logger.warn("generateEmbedding called with empty text");
+      throw new Error("Field 'text' must not be empty");
+    }
+    if (text.length > MAX_EMBEDDING_TEXT_LENGTH) {
+      logger.warn(`generateEmbedding called with oversized text (${text.length} chars, max ${MAX_EMBEDDING_TEXT_LENGTH})`);
+      throw new Error(`Field 'text' exceeds maximum length (${text.length} > ${MAX_EMBEDDING_TEXT_LENGTH} characters)`);
     }
     logger.info(`Generating embedding for ${text.length} characters`);
     if (currentApiKey === "dummy_key_for_initialization") {
@@ -314,10 +341,25 @@ exports.vectorSearch = onCall({
   initializeOpenAIClient(); // Ensure client is up-to-date
   try {
     const {query, limit, filters, collection} = request.data;
-    if (!query) {
-      logger.warn("Vector search called without a query");
-      throw new Error("Missing required 'query' field");
+    if (typeof query !== "string") {
+      logger.warn("vectorSearch called with non-string query");
+      throw new Error("Field 'query' must be a string");
     }
+    if (query.length === 0) {
+      logger.warn("vectorSearch called with empty query");
+      throw new Error("Field 'query' must not be empty");
+    }
+    if (query.length > MAX_SEARCH_QUERY_LENGTH) {
+      logger.warn(`vectorSearch called with oversized query (${query.length} chars, max ${MAX_SEARCH_QUERY_LENGTH})`);
+      throw new Error(`Field 'query' exceeds maximum length (${query.length} > ${MAX_SEARCH_QUERY_LENGTH} characters)`);
+    }
+    // Clamp limit to a safe range. Number(undefined) === NaN so we
+    // also need to handle that case via the !Number.isFinite branch.
+    let safeLimit = Number(limit);
+    if (!Number.isFinite(safeLimit) || safeLimit <= 0) {
+      safeLimit = DEFAULT_SEARCH_LIMIT;
+    }
+    safeLimit = Math.min(Math.floor(safeLimit), MAX_SEARCH_LIMIT);
     const previewLength = query.length > 50 ? 50 : query.length;
     logger.info(`Searching: "${query.substring(0, previewLength)}..." with filters:`, filters || "none");
     if (currentApiKey === "dummy_key_for_initialization") {
@@ -334,7 +376,7 @@ exports.vectorSearch = onCall({
     logger.info(`Generated query embedding with ${queryEmbedding.length} dimensions`);
     const searchCollection = collection || "embeddings";
     logger.info(`Searching in collection: ${searchCollection}`);
-    const results = await performVectorSearch(queryEmbedding, limit || 10, filters || {}, searchCollection);
+    const results = await performVectorSearch(queryEmbedding, safeLimit, filters || {}, searchCollection);
     logger.info(`Found ${results.length} results`);
     return {
       success: true,
@@ -360,9 +402,21 @@ exports.submitCannyFeedback = onCall({
   try {
     const {title, details, authorEmail, authorName, boardID} = request.data;
 
-    if (!title || !details) {
-      logger.warn("submitCannyFeedback called without required fields");
-      throw new Error("Missing required 'title' or 'details' field");
+    if (typeof title !== "string" || title.length === 0) {
+      logger.warn("submitCannyFeedback called with invalid title");
+      throw new Error("Field 'title' must be a non-empty string");
+    }
+    if (typeof details !== "string" || details.length === 0) {
+      logger.warn("submitCannyFeedback called with invalid details");
+      throw new Error("Field 'details' must be a non-empty string");
+    }
+    if (title.length > MAX_CANNY_TITLE_LENGTH) {
+      logger.warn(`submitCannyFeedback called with oversized title (${title.length} chars)`);
+      throw new Error(`Field 'title' exceeds maximum length (${title.length} > ${MAX_CANNY_TITLE_LENGTH} characters)`);
+    }
+    if (details.length > MAX_CANNY_DETAILS_LENGTH) {
+      logger.warn(`submitCannyFeedback called with oversized details (${details.length} chars)`);
+      throw new Error(`Field 'details' exceeds maximum length (${details.length} > ${MAX_CANNY_DETAILS_LENGTH} characters)`);
     }
 
     const cannyApiKey = process.env.CANNY_API_KEY;
