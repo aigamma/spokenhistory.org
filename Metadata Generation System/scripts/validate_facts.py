@@ -17,6 +17,10 @@ Checks performed:
     object_pairs_hook to detect them explicitly).
   - Summary length is at least 100 characters (catches truncated entries
     accidentally introduced by Edit operations).
+  - NO CROSS-ENTRY ALIAS COLLISIONS (an alias that appears in multiple
+    entries' aliases lists, or an alias that duplicates another entry's
+    key). Surfacing both entries for the same query inflates the
+    grounding context and is an alias-list-normalization regression.
 
 Usage:
     python scripts/validate_facts.py
@@ -99,6 +103,34 @@ def validate(path: Path, quiet: bool = False) -> int:
                         errors.append(f"entry '{key}': aliases[{i}] is not a string")
                     elif not alias.strip():
                         errors.append(f"entry '{key}': aliases[{i}] is empty")
+
+    # Cross-entry alias collision check. Build a case-insensitive map of
+    # every alias (and entry key) to the entries that claim it; any
+    # entry-set of size > 1 is a collision. Adding a key here as if it
+    # were an implicit alias catches both alias-vs-alias collisions and
+    # alias-vs-other-entry-key collisions.
+    from collections import defaultdict
+    alias_owners = defaultdict(list)
+    for key, value in data.items():
+        if not isinstance(value, dict):
+            continue
+        alias_owners[key.lower()].append(key)
+        aliases = value.get("aliases", [])
+        if isinstance(aliases, list):
+            for alias in aliases:
+                if isinstance(alias, str) and alias.strip():
+                    alias_owners[alias.lower()].append(key)
+
+    for alias, owners in sorted(alias_owners.items()):
+        # Deduplicate within a single entry's own aliases list -- if the
+        # same entry lists the same alias twice (a separate problem
+        # caught above by the aliases[i] checks), we don't want to
+        # report it as a cross-entry collision too.
+        unique_owners = sorted(set(owners))
+        if len(unique_owners) > 1:
+            errors.append(
+                f"alias {alias!r} claimed by multiple entries: {unique_owners}"
+            )
 
     if errors:
         print(f"FAIL: {len(errors)} structural problem(s) in {path}:", file=sys.stderr)
