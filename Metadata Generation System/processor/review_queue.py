@@ -77,11 +77,25 @@ def _get_db():
     if not sa_path or not os.path.exists(sa_path):
         return None
 
-    if not firebase_admin._apps:
-        cred = credentials.Certificate(sa_path)
-        firebase_admin.initialize_app(cred)
-
-    _db_singleton = firestore.client()
+    # Wrap the credentials load and the app init in a try/except so a
+    # malformed JSON, an invalid service account, or any other initialize
+    # failure degrades gracefully (returns None) rather than raising out
+    # of every queue operation. The "promise" of this module is that the
+    # publication decision is correct even when the side-effect enqueue
+    # cannot land; an exception here would break that promise by
+    # crashing the upstream pipeline on a configuration mistake instead
+    # of just logging and continuing.
+    try:
+        if not firebase_admin._apps:
+            cred = credentials.Certificate(sa_path)
+            firebase_admin.initialize_app(cred)
+        _db_singleton = firestore.client()
+    except Exception as exc:
+        print(
+            f"[review_queue] Firebase Admin init failed (FIREBASE_SERVICE_ACCOUNT_PATH={sa_path}): "
+            f"{exc}. Queue operations will skip and return None until this is fixed."
+        )
+        _db_singleton = None
     return _db_singleton
 
 
