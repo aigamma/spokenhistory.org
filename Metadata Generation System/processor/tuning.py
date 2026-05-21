@@ -192,6 +192,18 @@ def score_chapters_batch(
         )
         return []
 
+    # Coerce per-result accuracy_score / quality_score in-place so the
+    # consumer of this list (the per-chapter loop in the main tuning
+    # path) sees clean ints regardless of model-output type drift. Same
+    # defensive pattern landed in run_tuning_loop's score reads via
+    # _coerce_score. Without this, a batch call where any single
+    # entry's accuracy_score came back as "85" (string) would crash
+    # the downstream comparison when that chapter is processed.
+    for entry in results:
+        if isinstance(entry, dict):
+            entry['accuracy_score'] = _coerce_score(entry.get('accuracy_score'))
+            entry['quality_score'] = _coerce_score(entry.get('quality_score'))
+
     return results
 
 
