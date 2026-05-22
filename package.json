@@ -43,7 +43,6 @@
     "@visx/zoom": "^3.12.0",
     "d3": "^7.9.0",
     "d3-hierarchy": "^3.1.2",
-    "dagre": "^0.8.5",
     "firebase": "^11.3.1",
     "framer-motion": "^12.4.4",
     "leaflet": "^1.9.4",
@@ -51,7 +50,6 @@
     "lucide-react": "^0.475.0",
     "mathjs": "^14.2.1",
     "node-fetch": "^2.7.0",
-    "papaparse": "^5.5.2",
     "prismjs": "^1.30.0",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
@@ -65,12 +63,9 @@
     "react-simple-code-editor": "^0.14.1",
     "react-vertical-timeline-component": "^3.5.3",
     "react-youtube": "^10.1.0",
-    "reactflow": "^11.11.4",
     "recharts": "^2.15.1",
     "three": "^0.152.2",
-    "timelinejs3": "^3.4.0",
-    "wavesurfer.js": "^7.9.4",
-    "xlsx": "^0.18.5"
+    "timelinejs3": "^3.4.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.7",
