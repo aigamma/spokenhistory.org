@@ -4,6 +4,25 @@ Flask app that breaks the interview processing pipeline into
 individually controllable steps.
 """
 
+import sys
+
+# Force UTF-8 on stdout / stderr at module load so Unicode characters
+# in progress prints (the ✓/✗ symbols in processor/tuning.py at lines
+# 357, 373, 387, 409, 419 and the → in processor/clips.py:114) do not
+# crash the pipeline under Windows cp1252 default console encoding.
+# Verified 2026-05-22: without this guard, the run_sample.py PoC died
+# on the first "✓ Passed threshold" print after the tuning loop's
+# Accuracy: 85/100, Quality: 80/100 pass. errors='replace' is a
+# defense-in-depth fallback for any chars not covered by UTF-8.
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        if sys.stderr.encoding and sys.stderr.encoding.lower() != "utf-8":
+            sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass  # noisy console encoding, but the app shouldn't crash for it
+
 import copy
 import datetime
 import json
