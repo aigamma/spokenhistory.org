@@ -895,7 +895,7 @@ export default function Home() {
             <div className="flex justify-center relative">
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("brown v. board")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
               
               {/* NOW Pin - Absolutely positioned to the right, higher up */}
@@ -955,7 +955,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("emmett till")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1040,7 +1040,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("montgomery")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1106,7 +1106,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("little rock")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1206,7 +1206,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("sncc")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1272,7 +1272,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom rides")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1366,7 +1366,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("medgar evers")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1469,7 +1469,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("march on washington")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1644,7 +1644,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom summer")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -1683,7 +1683,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("civil rights act")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -1775,7 +1775,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("malcolm x")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -1862,7 +1862,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/interviews?topic=${encodeURIComponent("Selma to Montgomery")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -2002,7 +2002,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("voting rights act")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -2050,7 +2050,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("black panther party")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -2163,7 +2163,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/interviews?topic=${encodeURIComponent("Brown Berets")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -2229,7 +2229,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/interviews?topic=${encodeURIComponent("The Long Hot Summer")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -2295,7 +2295,7 @@ export default function Home() {
               {/* Watch Related Interviews Link */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("martin luther king")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
-                <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
             </div>
 
@@ -2445,7 +2445,7 @@ export default function Home() {
                 {/* Watch Related Interviews Link */}
                 <Link to={`/interviews?topic=${encodeURIComponent("Civil Rights Act of 1968")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                   <span>Watch Related Interviews</span>
-                  <img src={arrowRightIcon} alt="Arrow right" className="w-5 h-4" />
+                  <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
                 </Link>
               </div>
 
