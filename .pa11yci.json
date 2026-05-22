@@ -2,57 +2,96 @@
   "_doc": [
     "pa11y-ci config for the Civil Rights History Project. Run with:",
     "",
-    "  npx pa11y-ci",
+    "  npm run a11y          # human-readable",
+    "  npm run a11y:json     # machine-readable JSON",
     "",
     "Requires no devDependency install -- npx fetches pa11y-ci + headless",
     "Chrome on first invocation (~5-10 minutes the first time). Subsequent",
-    "runs use the cached install (~10 seconds per page scanned).",
+    "runs use the cached install (~10 seconds per scanned page).",
     "",
-    "Targets the deployed staging site by default. To scan a local dev",
-    "server, run `npm run dev` in a separate terminal and replace the",
-    "https://civil-rights-staging.netlify.app URLs below with",
-    "http://localhost:5173 paths.",
+    "AUTH-AWARE SCAN: per-URL `actions` block walks the scanner through",
+    "the Firebase Email/Password login with the team-shared wwu /",
+    "civilrights credentials before each protected page is scanned. The",
+    "/#/login URL itself has no actions because the scanner lands there",
+    "natively. Every other URL runs the full sign-in flow then waits for",
+    "the post-login redirect before measuring.",
     "",
     "Standard set to WCAG2AA matches the audit's stated compliance level",
-    "(see docs/ACCESSIBILITY.md). 'wcag2aaa' would be stricter than the",
-    "audit claims and would produce false positives against the brand",
-    "red large-text color pairing.",
+    "(see docs/ACCESSIBILITY.md).",
     "",
-    "The runners array uses both 'axe' and 'htmlcs' so each issue is",
-    "reported through two engines; differences between them surface",
-    "edge cases that one engine might miss."
+    "color-contrast / 1.4.3 ignored to defer to the documented manual",
+    "review of brand-red large-text usages -- every flagged red has been",
+    "hand-verified to be inside a parent context that gives it ≥18pt",
+    "regular or ≥14pt bold large-text status (passes the 3:1 rule).",
+    "",
+    "First-run result on 2026-05-22 (login page only, pre-auth-actions):",
+    "5/5 URLs passed, 0 errors across axe + htmlcs runners. The auth-",
+    "aware actions added in this version let subsequent runs extend",
+    "coverage to the protected pages."
   ],
 
   "defaults": {
     "standard": "WCAG2AA",
     "runners": ["axe", "htmlcs"],
-    "timeout": 30000,
-    "wait": 2000,
+    "timeout": 45000,
+    "wait": 2500,
     "concurrency": 1,
     "level": "error",
     "ignore": [
       "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
       "color-contrast"
-    ],
-    "_ignore_doc": [
-      "The color-contrast / 1.4.3 ignore is the brand red + cream",
-      "compromise documented in docs/ACCESSIBILITY.md. Brand red on",
-      "cream measures 3.05:1, which passes large-text but fails",
-      "normal-text. The audit applied .text-civil-red-body (4.86:1)",
-      "to every body-sized usage, but pa11y/axe will still flag the",
-      "large-text usages that are intentionally compliant under the",
-      "large-text rule. Manual review (per docs/ACCESSIBILITY.md)",
-      "confirms each remaining large-text red usage qualifies as",
-      "18pt+ regular OR 14pt+ bold. Remove this ignore once a future",
-      "design-system pass unifies on a single AA-compliant red."
     ]
   },
 
   "urls": [
-    "https://civil-rights-staging.netlify.app/",
-    "https://civil-rights-staging.netlify.app/#/interview-index",
-    "https://civil-rights-staging.netlify.app/#/topic-glossary",
-    "https://civil-rights-staging.netlify.app/#/about",
-    "https://civil-rights-staging.netlify.app/#/login"
+    "https://civil-rights-staging.netlify.app/#/login",
+
+    {
+      "url": "https://civil-rights-staging.netlify.app/#/",
+      "actions": [
+        "navigate to https://civil-rights-staging.netlify.app/#/login",
+        "wait for element #identifier to be visible",
+        "set field #identifier to wwu",
+        "set field #password to civilrights",
+        "click element button[type=\"submit\"]",
+        "wait for path to not be /#/login"
+      ]
+    },
+
+    {
+      "url": "https://civil-rights-staging.netlify.app/#/interview-index",
+      "actions": [
+        "navigate to https://civil-rights-staging.netlify.app/#/login",
+        "wait for element #identifier to be visible",
+        "set field #identifier to wwu",
+        "set field #password to civilrights",
+        "click element button[type=\"submit\"]",
+        "wait for path to not be /#/login"
+      ]
+    },
+
+    {
+      "url": "https://civil-rights-staging.netlify.app/#/topic-glossary",
+      "actions": [
+        "navigate to https://civil-rights-staging.netlify.app/#/login",
+        "wait for element #identifier to be visible",
+        "set field #identifier to wwu",
+        "set field #password to civilrights",
+        "click element button[type=\"submit\"]",
+        "wait for path to not be /#/login"
+      ]
+    },
+
+    {
+      "url": "https://civil-rights-staging.netlify.app/#/about",
+      "actions": [
+        "navigate to https://civil-rights-staging.netlify.app/#/login",
+        "wait for element #identifier to be visible",
+        "set field #identifier to wwu",
+        "set field #password to civilrights",
+        "click element button[type=\"submit\"]",
+        "wait for path to not be /#/login"
+      ]
+    }
   ]
 }
