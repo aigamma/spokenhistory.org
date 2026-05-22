@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Search as SearchIcon } from 'lucide-react';
 import { vectorSearch } from '../services/embeddings';
 import { enhanceSearchResults } from '../services/firebase';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 /**
  * VectorSearchPage - Semantic search interface using vector embeddings
@@ -13,9 +14,11 @@ import { enhanceSearchResults } from '../services/firebase';
  * @returns {React.ReactElement} The semantic search page
  */
 export default function VectorSearchPage() {
+  useDocumentTitle('Semantic Search');
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   /**
@@ -48,12 +51,14 @@ export default function VectorSearchPage() {
     if (!searchQuery.trim()) return;
     
     setIsSearching(true);
+    setError(null);
     try {
       const searchResults = await vectorSearch(searchQuery, 20);
       const enhancedResults = await enhanceSearchResults(searchResults);
       setResults(enhancedResults);
-    } catch (error) {
-      console.error("Error during vector search:", error);
+    } catch (err) {
+      console.error("Error during vector search:", err);
+      setError('Search failed. Please try again.');
     } finally {
       setIsSearching(false);
     }
@@ -82,33 +87,53 @@ export default function VectorSearchPage() {
         <form onSubmit={handleSearch} className="w-full">
           <div className="relative w-full">
             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-              <SearchIcon className="w-5 h-5 text-gray-500" />
+              <SearchIcon className="w-5 h-5 text-gray-500" aria-hidden="true" />
             </div>
-            
+
+            <label htmlFor="vector-search-query" className="sr-only">
+              Search by concepts, themes, and meaning
+            </label>
             <input
+              id="vector-search-query"
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search..."
-              className="w-full pl-12 pr-32 py-5 border border-gray-200 bg-white rounded-xl shadow-sm outline-none text-base text-gray-900 transition-all duration-300 focus:shadow-blue-300 focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-12 pr-32 py-5 min-h-11 border border-gray-200 bg-white rounded-xl shadow-sm outline-none text-base text-gray-900 transition-all duration-300 focus:shadow-blue-300 focus:ring-2 focus:ring-blue-500"
+              autoCapitalize="none"
+              autoCorrect="off"
+              aria-invalid={!!error}
+              aria-describedby={error ? 'vector-search-error' : undefined}
             />
-            
+
             <button
               type="submit"
               disabled={isSearching}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-sm border-none cursor-pointer transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover:shadow-md disabled:opacity-70"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 px-6 py-2.5 min-h-11 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-sm border-none cursor-pointer transition-all duration-300 hover:from-blue-700 hover:to-indigo-700 hover:shadow-md disabled:opacity-70"
             >
               {isSearching ? 'Searching...' : 'Search'}
             </button>
           </div>
+
+          {error && (
+            <div
+              id="vector-search-error"
+              role="alert"
+              aria-live="assertive"
+              className="mt-3 text-sm text-red-700"
+            >
+              {error}
+            </div>
+          )}
         </form>
       </div>
 
       {/* Results */}
       {isSearching ? (
-        // Loading state
-        <div className="p-12 flex justify-center">
-          <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
+        // Loading state with screen-reader announcement
+        <div className="p-12 flex justify-center" role="status" aria-live="polite">
+          <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin" aria-hidden="true"></div>
+          <span className="sr-only">Searching</span>
         </div>
       ) : results.length > 0 ? (
         // Results display
@@ -116,12 +141,14 @@ export default function VectorSearchPage() {
           <h2 className="text-xl font-semibold mb-4 text-gray-900">
             Found {results.length} result{results.length !== 1 ? 's' : ''}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {results.map((result) => (
-              <div 
-                key={result.id} 
-                className="bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+              <button
+                type="button"
+                key={result.id}
+                className="text-left bg-white rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow cursor-pointer border-0 p-0"
                 onClick={() => navigateToClip(result.documentId, result.segmentId)}
+                aria-label={`Watch clip: ${result.topic || 'untitled segment'}${result.personName ? ` with ${result.personName}` : ''}`}
               >
                 {/* Thumbnail with timestamp overlay */}
                 <div className="relative pb-[56.25%] bg-gray-200">
@@ -181,7 +208,7 @@ export default function VectorSearchPage() {
                     {(result.similarity * 100).toFixed(1)}% match
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
