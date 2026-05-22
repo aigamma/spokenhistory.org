@@ -134,11 +134,15 @@ export default function ClipPlayer() {
     if (mainSummary && clipData && window.YT?.Player) initPlayer()
   }, [mainSummary, clipData])
 
-  // Error state
-  if (error) return <div className="p-6 text-red-600">{error}</div>
-  
-  // Loading state
-  if (!mainSummary || !clipData) return <div className="p-6">Loading...</div>
+  // Error state. role="alert" + aria-live so screen readers announce
+  // the failure when it lands; previously the message just appeared
+  // silently in the DOM without screen reader notification.
+  if (error) return <div className="p-6 text-red-600" role="alert" aria-live="assertive">{error}</div>
+
+  // Loading state. role="status" + aria-live so screen readers
+  // announce that the page is loading rather than presenting an
+  // empty page that looks like nothing happened.
+  if (!mainSummary || !clipData) return <div className="p-6" role="status" aria-live="polite">Loading...</div>
 
   // Process keywords into array format regardless of input format
   const keywords = Array.isArray(clipData.keywords)
@@ -147,14 +151,25 @@ export default function ClipPlayer() {
 
   return (
     <div className="max-w-3xl mx-auto p-4 sm:p-6 space-y-6">
-      {/* Interviewee Name as Link */}
+      {/* Interviewee Name as Link.
+          Was <h1 onClick> -- looked like a link, behaved like a link,
+          but was un-keyboardable and announced as a heading rather
+          than as a navigable control. Now a real button styled to
+          match the previous appearance; the heading is preserved as
+          the button's child h1 so screen readers still announce the
+          heading semantic ("heading level 1: Maynard E. Moore") in
+          addition to the button affordance ("Open full interview"). */}
       <div>
-        <h1
-          className="text-3xl font-bold text-blue-700 hover:underline cursor-pointer"
+        <button
+          type="button"
           onClick={() => navigate(`/interview-player?documentName=${encodeURIComponent(documentName)}`)}
+          className="text-left bg-transparent border-0 p-0 cursor-pointer hover:underline min-h-11"
+          aria-label={`Open full interview with ${mainSummary.name}`}
         >
-          {mainSummary.name}
-        </h1>
+          <h1 className="text-3xl font-bold text-blue-700">
+            {mainSummary.name}
+          </h1>
+        </button>
       </div>
 
       {/* Clip Info */}
@@ -167,17 +182,23 @@ export default function ClipPlayer() {
           <span>{clipData.timestamp}</span>
         </div>
 
-        {/* Clickable Keywords */}
+        {/* Clickable Keywords.
+            Was <span onClick> -- un-keyboardable. Now <button>s with
+            aria-label so screen readers announce the destination.
+            min-h-11 added to meet the WCAG 2.2 AA 44x44 tap target;
+            previously px-2 py-1 + text-xs gave ~22px height. */}
         {keywords.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-2">
             {keywords.map((k, idx) => (
-              <span
+              <button
+                type="button"
                 key={idx}
-                className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs flex items-center gap-1 cursor-pointer hover:bg-blue-200"
+                className="bg-blue-100 text-blue-800 px-3 py-2 min-h-11 rounded-full text-xs flex items-center gap-1 cursor-pointer hover:bg-blue-200 border-0"
                 onClick={() => navigate(`/playlist-builder?keywords=${encodeURIComponent(k)}`)}
+                aria-label={`Browse playlist for keyword ${k.trim()}`}
               >
-                <Tag size={12} /> {k}
-              </span>
+                <Tag size={12} aria-hidden="true" /> {k}
+              </button>
             ))}
           </div>
         )}
