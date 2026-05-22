@@ -626,7 +626,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                         the count text wrapped to two lines and got
                         clipped by the 32px container. */}
                     <div className="w-full pb-2 border-b border-black">
-                      <div className="text-red-500 text-base font-light font-['Chivo_Mono']">
+                      <div className="text-civil-red-body text-base font-light font-['Chivo_Mono']">
                         {results.length} search results for "{searchQuery}"
                       </div>
                     </div>

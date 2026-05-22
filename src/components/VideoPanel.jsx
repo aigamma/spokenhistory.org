@@ -287,9 +287,9 @@ const VideoPanel = ({
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className={`fixed right-0 top-0 h-full bg-white shadow-lg transition-all duration-300 z-50 flex flex-col
-        ${isMinimized ? 'w-64' : 'w-[500px]'}`}
+        ${isMinimized ? 'w-64' : 'w-full sm:w-[500px]'}`}
     >
       {/* Header */}
       <div className="p-3 bg-gray-100 border-b flex justify-between items-center">
