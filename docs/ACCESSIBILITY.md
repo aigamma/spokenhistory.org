@@ -12,6 +12,22 @@ Audit standard target: **WCAG 2.2 Level AA**.
 
 **Deferred** (1): IntegratedTimeline video-scrubber thumbnails (lines 232, 394) — the scrubber's `<div onClick>` pattern requires arrow-key keyboard semantics for the timeline scrub, which is a separate design decision rather than a simple `<button>` swap. Tracked for a future iteration.
 
+**Dead code deleted** (3): MobileAdvisory (the "best on desktop" banner — premise no longer accurate after the audit), ConfirmationModel (unused 27-line non-compliant confirm dialog stub), ShuffleButton (unused 15-line button missing focus indicator + tap target + aria-label). All three risked being copy-pasted as templates by future contributors before the gaps were noticed.
+
+## Cross-cutting infrastructure shipped
+
+- **Skip-link** (`src/components/common/Layout.jsx`) — WCAG 2.2 SC 2.4.1 Bypass Blocks. sr-only "Skip to main content" anchor that appears as a high-contrast pill on Tab focus, targets `#main-content` on `<main tabIndex={-1}>`.
+- **`useDocumentTitle` hook** (`src/hooks/useDocumentTitle.js`) — WCAG 2.4.2 Page Titled. Adopted on all 14 pages; produces distinct browser tab titles per route. Dynamic on InterviewPlayer (interviewee name), PlaylistBuilder (active keyword), ClipPlayer (interviewee:topic composition).
+- **`useViewport` hook** (`src/hooks/useViewport.js`) — orientation-aware layout (`isMobile`, `isPortrait`, `isLandscape`, `isShortLandscape`). Drives mobile carousel branching, force-directed graph touch UX, short-landscape header collapse.
+- **Top-level ErrorBoundary** (`src/components/ErrorBoundary.jsx`) — closes the blank-white-page failure mode that React's default error handling produces when a child component throws unhandled.
+- **NotFound 404 page** (`src/pages/NotFound.jsx`) — replaces the silent `<Navigate to="/" replace />` catch-all. Shows attempted path + 4 suggested destinations + `useDocumentTitle("Page not found")` + skip-link compatible.
+- **`.text-civil-red-body` utility** (`src/index.css`) — accessible darker variant (#B23E2F, 4.86:1 on cream) of the brand red for body-text-sized labels that fail the 4.5:1 normal-text rule with the brand `#F2483C` (3.05:1).
+- **`*:focus-visible` global rule** (`src/index.css`) — 2px civil-rights-red outline with 2-3px offset, restored after Tailwind preflight's reset. Scoped to keyboard navigation only.
+- **`prefers-reduced-motion`** (`src/index.css`) — global respect; animation/transition durations collapse to 0.01ms when the OS preference is set.
+- **`.mobile-collapsible-header`** (`src/index.css`) — short-landscape header collapse for phones rotated sideways.
+- **Modal focus management on all 5 site modals** — Header slide-out menu (Esc + focus-enter + focus-restore via hamburgerRef + menuCloseRef); VectorSearchOverlay (Esc + click-outside + focus-restore via searchTriggerRef); WelcomeDisclaimerModal (Esc + focus-enter to close button); FeedbackModal (Esc + focus-enter to description textarea); PeopleGrid person detail (Esc + arrow-key navigation + role=dialog).
+- **Daily pa11y-ci CI workflow** (`.github/workflows/a11y.yml`) — 09:00 UTC daily scan against staging; workflow_dispatch for manual runs; uploads failure screenshots + JSON report as 14-day artifacts.
+
 ## Findings + remediations
 
 ### Color contrast
