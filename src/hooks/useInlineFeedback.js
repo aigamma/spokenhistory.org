@@ -168,7 +168,17 @@ export function useInlineFeedback({ user, sectionLabel = 'Content' }) {
         createdAt: serverTimestamp(),
       });
 
-      alert('Thank you! Your feedback has been submitted.');
+      // Success-path UX: the modal closes (setShowFeedbackModal(false)
+      // below), which is the natural confirmation signal the user
+      // sees. The previous alert('Thank you!') was an extra modal
+      // interrupt on top of an already-closing modal -- redundant for
+      // sighted users, invisible to screen readers (alert() is
+      // inconsistently announced across NVDA/JAWS/VoiceOver), and a
+      // mobile UX hazard (the alert overlay could be dismissed
+      // unintentionally with an edge swipe). Removed. If future
+      // research finds users genuinely missing the success signal,
+      // the right fix is a toast or in-modal success state, not a
+      // browser alert.
       console.log('Feedback saved to Firestore');
 
       // Clear selection
