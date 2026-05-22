@@ -28,11 +28,7 @@
     { "name": "Eric Allione", "url": "https://github.com/aigamma" }
   ],
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
     "@knight-lab/timelinejs": "^3.9.6",
-    "@mui/lab": "^6.0.0-beta.28",
-    "@mui/material": "^6.4.5",
     "@react-three/drei": "^9.80.0",
     "@react-three/fiber": "^8.15.0",
     "@tailwindcss/vite": "^4.0.9",
@@ -40,7 +36,6 @@
     "d3-hierarchy": "^3.1.2",
     "firebase": "^11.3.1",
     "leaflet": "^1.9.4",
-    "lodash": "^4.17.21",
     "lucide-react": "^0.475.0",
     "node-fetch": "^2.7.0",
     "react": "^18.2.0",
