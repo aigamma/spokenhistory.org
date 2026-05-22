@@ -9,6 +9,7 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
+  const [error, setError] = useState(null);
   const recaptchaRef = useRef(null);
   const descriptionRef = useRef(null);
   const detailsToRender = Array.isArray(contextDetails)
@@ -46,20 +47,22 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setError(null);
+
     if (!description.trim()) {
-      alert('Please describe the issue before submitting.');
+      setError('Please describe the issue before submitting.');
+      descriptionRef.current?.focus();
       return;
     }
 
     // Check for CAPTCHA token
     if (!captchaToken) {
-      alert('Please complete the CAPTCHA verification before submitting.');
+      setError('Please complete the CAPTCHA verification before submitting.');
       return;
     }
 
     setIsSubmitting(true);
-    
+
     try {
       await onSubmit({
         description: description.trim(),
@@ -67,9 +70,9 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
         captchaToken, // Include CAPTCHA token in submission
       });
       onClose();
-    } catch (error) {
-      console.error('Error submitting feedback:', error);
-      alert('Sorry, there was an error submitting your feedback. Please try again.');
+    } catch (err) {
+      console.error('Error submitting feedback:', err);
+      setError('Sorry, there was an error submitting your feedback. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -240,6 +243,25 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
             </div>
           </div>
 
+          {/* Inline error message. Replaces the previous three
+              alert() calls (validation, captcha, submission failure)
+              with role="alert" + aria-live="assertive" announcement
+              that screen readers fire immediately and that doesn't
+              break the page flow with a modal interrupt over the
+              modal itself. Sits above the action buttons so the user
+              sees the error context-adjacent to the Submit button
+              that triggered it. */}
+          {error && (
+            <div
+              id="feedback-modal-error"
+              role="alert"
+              aria-live="assertive"
+              className="text-sm text-red-700 -mt-2"
+            >
+              {error}
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
             <button
@@ -253,6 +275,7 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
             <button
               type="submit"
               disabled={isSubmitting}
+              aria-describedby={error ? 'feedback-modal-error' : undefined}
               className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed min-w-[100px]"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Issue'}
