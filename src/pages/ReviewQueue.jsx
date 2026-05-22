@@ -17,6 +17,7 @@
 
 import { useState, useEffect } from 'react'
 import { useAuth } from '../contexts/AuthContext'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import {
   listPendingReviewItems,
   getQueueStats,
@@ -40,6 +41,7 @@ const DECISION_PATH_LABEL = {
 }
 
 export default function ReviewQueue() {
+  useDocumentTitle('Review Queue')
   const { user } = useAuth()
   const [items, setItems] = useState([])
   const [stats, setStats] = useState({})

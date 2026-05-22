@@ -11,6 +11,7 @@ import { useState, useEffect, createContext, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { collection, getDocs, collectionGroup } from 'firebase/firestore';
 import { db } from '../services/firebase';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { 
   searchTopicsSemantically, 
   checkTopicVectorizationStatus 
@@ -39,6 +40,7 @@ const TopicGlossaryCacheContext = createContext();
  * @returns {React.ReactElement} Topic glossary page
  */
 export default function TopicGlossary() {
+  useDocumentTitle('Topic Glossary');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [topicData, setTopicData] = useState([]);

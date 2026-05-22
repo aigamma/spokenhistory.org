@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/common/Footer';
 import WWULogo from '../assetts/logos/wwu-logo--full-color_2.png';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 /**
  * LandingCollageImage - Component for loading Landing Collage image from Firebase
@@ -57,6 +58,7 @@ const LandingCollageImage = () => {
  * @returns {React.ReactElement} The about page
  */
 export default function About() {
+  useDocumentTitle('About');
   return (
     <div className="min-h-screen overflow-hidden" style={{ backgroundColor: '#EBEAE9' }}>
       {/* Main Content */}

@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { searchInterviewsSemantically, checkInterviewVectorizationStatus } from '../services/interviewVectorSearch';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import arrowRight from '../assetts/vectors/arrow right.svg';
 
 /**
@@ -27,6 +28,7 @@ import arrowRight from '../assetts/vectors/arrow right.svg';
  * @returns {React.ReactElement} Interview index page
  */
 export default function InterviewIndex() {
+  useDocumentTitle('Interview Index');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [interviews, setInterviews] = useState([]);

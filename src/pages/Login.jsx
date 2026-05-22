@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 // Non-routable domain appended to bare-username logins before they are
 // passed to Firebase Email/Password Auth, which requires an email-shaped
@@ -20,6 +21,7 @@ function normalizeIdentifier(input) {
 }
 
 export default function Login() {
+  useDocumentTitle('Sign in');
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
