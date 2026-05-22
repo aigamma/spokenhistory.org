@@ -260,39 +260,51 @@ export default function PeopleGrid() {
           onClick={handleBackdropClick}
         ></div>
 
-        {/* Left navigation arrow - positioned outside the modal */}
+        {/* Left navigation arrow - bumped from w-10 h-10 (40x40) to
+            min-w-11 min-h-11 (44x44) to meet the WCAG 2.2 AA tap
+            target rule. Arrow keys also navigate (handled by the
+            keydown effect at line ~191). */}
         <button
-          className="absolute left-4 md:left-8 z-50 bg-black bg-opacity-60 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-colors"
+          className="absolute left-4 md:left-8 z-50 bg-black bg-opacity-60 text-white rounded-full min-w-11 min-h-11 flex items-center justify-center hover:bg-opacity-80 transition-colors"
           onClick={(e) => {
             e.stopPropagation();
             onPrev();
           }}
-          aria-label="Previous person"
+          aria-label="Previous person (or press the left arrow key)"
         >
           <ChevronLeftIcon />
         </button>
 
-        {/* Right navigation arrow - positioned outside the modal */}
+        {/* Right navigation arrow - same 44x44 fix. */}
         <button
-          className="absolute right-4 md:right-8 z-50 bg-black bg-opacity-60 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-80 transition-colors"
+          className="absolute right-4 md:right-8 z-50 bg-black bg-opacity-60 text-white rounded-full min-w-11 min-h-11 flex items-center justify-center hover:bg-opacity-80 transition-colors"
           onClick={(e) => {
             e.stopPropagation();
             onNext();
           }}
-          aria-label="Next person"
+          aria-label="Next person (or press the right arrow key)"
         >
           <ChevronRightIcon />
         </button>
 
-        {/* Modal content */}
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl max-w-md w-full overflow-hidden animate-fadeIn z-50 relative border border-white/30">
+        {/* Modal content. role="dialog" + aria-modal + aria-labelledby
+            give the modal proper dialog semantics. Without these, the
+            div was just a styled container -- screen readers treated
+            it as part of the document flow rather than as a modal that
+            interrupts the normal navigation. */}
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="person-modal-title"
+          className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl max-w-md w-full overflow-hidden animate-fadeIn z-50 relative border border-white/30"
+        >
           {/* Modal Header */}
           <div className="relative">
             {person.thumbnailUrl && (
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={person.thumbnailUrl}
-                  alt={person.name}
+                  alt=""
                   className="w-full h-full object-cover scale-125"
                 />
               </div>
@@ -300,6 +312,7 @@ export default function PeopleGrid() {
             {/* Close button. Was w-8 h-8 (32x32) which fails the WCAG
                 2.2 AA 44x44 tap target rule. Now min-w-11 min-h-11. */}
             <button
+              type="button"
               className="absolute top-2 right-2 bg-black bg-opacity-60 text-white rounded-full min-w-11 min-h-11 flex items-center justify-center hover:bg-opacity-80 transition-colors"
               onClick={onClose}
               aria-label="Close person details"
@@ -310,7 +323,7 @@ export default function PeopleGrid() {
 
           {/* Modal Body */}
           <div className="p-6">
-            <h2 className="text-2xl font-bold text-black mb-2" style={{
+            <h2 id="person-modal-title" className="text-2xl font-bold text-black mb-2" style={{
               fontFamily: 'Freight Text Pro, Lora, serif'
             }}>{person.name}</h2>
             <p className="text-black/70 mb-6 font-mono tracking-wide text-sm">{person.role}</p>
