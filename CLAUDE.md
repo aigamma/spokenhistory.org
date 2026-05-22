@@ -2,6 +2,22 @@
 
 Project context: an open-source AI system that transforms the Library of Congress Civil Rights History Project oral history archive (600+ hours of interviews, produced in collaboration with the Smithsonian NMAAHC) into structured, searchable metadata. The Smithsonian has been scrutinizing the team's AI-generated summaries for hallucinations -- the quality bar is "Smithsonian-grade publication," not "good enough for a research demo."
 
+## Current sprint status (as of 2026-05-21)
+
+**Hard deadline: Wednesday 2026-05-27 team meeting at WWU.**
+
+Staging deploy: https://civil-rights-staging.netlify.app — live, Firebase-backed (project `civil-rights-history-project`, Firestore `nam7`), Email/Password auth gate (Eric admin + `wwu`/`civilrights` team-shared). Firestore is empty of content; pipeline has not yet been run on the 135 raw Whisper transcripts in `transcripts/raw/`.
+
+What's done as of 2026-05-21: dual-scorer + citation auditor + human-review queue substrate (commits 297f47d, ecde562, 5bcb591, f50bbdb, 297f47d, 50dcf49); 60-entry ground-truth corpus with cross-entry collision validator (commits 4358213, 781d67a, 77d4503); Cloud Functions + MCP server + Firestore rules code complete; comprehensive mobile + WCAG 2.2 AA audit applied across 8 pages and components (commits 150da11 through 783d419). MobileAdvisory banner removed (783d419) — site no longer needs the "best on desktop" hedge.
+
+What needs operational action (not code work):
+1. **Deploy Cloud Functions to new Firebase project.** Requires Blaze billing on `civil-rights-history-project` + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`.
+2. **Deploy MCP server to Fly.io.** Requires `flyctl auth login` then `fly deploy` in `mcp-server/`.
+3. **Run pipeline on the 135 transcripts.** From `Metadata Generation System/`: `python app.py` to start the Flask UI, submit each .srt, or invoke `_process_single_interview` directly with `USE_DUAL_SCORING=1` env var. Each transcript at the dual-scoring + citation-audit threshold takes ~5-15 minutes of OpenAI + Claude API time.
+4. **Open PR to upstream** `jsovelove/civil-rights-history-project`. Currently 117 commits ahead.
+
+What's NOT load-bearing for Wednesday: any further mobile polish, any further accessibility sweep, any further pipeline hardening. The five-track core overhaul is done; what remains is ops + content generation.
+
 ## Architecture
 
 Five subsystems, each in its own directory:
@@ -65,4 +81,6 @@ Validate with `python scripts/validate_facts.py` (runs in `Metadata Generation S
 
 - The legacy `llm-hyper-audio` references in `scripts/firebase/*.cjs` are by filename only -- the actual service-account JSON files are gitignored. Don't try to "fix" the filenames.
 - `score_chapters_batch` in `tuning.py` returns an empty list on length mismatch -- this is intentional fallback to per-chapter scoring, not a silent failure.
-- `MobileAdvisory` looks like an overlay but is actually a dismissable banner -- the original `MobileOverlay` hard-block was replaced in the overhaul.
+- `MobileAdvisory` no longer exists. The component was deleted on 2026-05-21 (commit 783d419) after the mobile audit closed out the issues the banner was hedging against. Earlier commit messages reference it; those references are historical, not current state.
+- The site uses two reds: `text-red-500` (Tailwind, `#F2483C`, brand) for large text only; `text-civil-red-body` (custom utility, `#B23E2F`) for any text below 18pt or 14pt-bold. See "Accessibility tokens" section above for the rule.
+- `text-civil-red-body` and `.bg-civil-red-strong` are CSS custom classes defined in `src/index.css` -- they do not appear in Tailwind's class scanner output but they ARE valid utility classes. If a linter or content-purge step ever flags them as unused, configure it to whitelist these names.
