@@ -64,14 +64,48 @@ import app as _app
 PROMPTS = _app.load_prompt_file
 
 
-def main():
-    # Pick the shortest transcript -- Maynard E. Moore, 152 lines, 5KB.
+def find_srt(arg_name=None):
+    """Resolve a transcript SRT path from a CLI arg or fall back to the
+    shortest .srt in transcripts/raw/. The arg can be:
+      - a literal interview name ("Charles Melvin Sherrod") -> looks for
+        the matching transcripts/raw/<name>_interview_*/*.srt
+      - a direct path to a .srt file
+      - omitted -> picks the smallest .srt (Maynard E. Moore, 152 lines)
+    """
     raw = PROJECT_ROOT / "transcripts" / "raw"
-    target_dir = raw / "Maynard E. Moore_interview_20250704_235635"
-    srt_path = target_dir / "Maynard E. Moore_interview_transcript_20250704_235635.srt"
-    assert srt_path.exists(), f"transcript not found at {srt_path}"
 
-    interview_name = "Maynard E. Moore"
+    if arg_name:
+        candidate = Path(arg_name)
+        if candidate.is_file() and candidate.suffix == ".srt":
+            return candidate, candidate.stem.split("_interview_")[0].replace("_", " ")
+        # Treat as interview-name prefix; find the first matching dir.
+        for d in sorted(raw.iterdir()):
+            if d.is_dir() and d.name.lower().startswith(arg_name.lower()):
+                srts = list(d.glob("*.srt"))
+                if srts:
+                    return srts[0], d.name.split("_interview_")[0]
+        raise SystemExit(f"could not resolve transcript from arg: {arg_name!r}")
+
+    # Default: smallest .srt in raw/.
+    candidates = []
+    for d in raw.iterdir():
+        if not d.is_dir():
+            continue
+        for s in d.glob("*.srt"):
+            candidates.append((s.stat().st_size, s, d.name))
+    if not candidates:
+        raise SystemExit("no .srt files found in transcripts/raw/")
+    candidates.sort()
+    _, srt, dirname = candidates[0]
+    return srt, dirname.split("_interview_")[0]
+
+
+def main():
+    target_arg = sys.argv[1] if len(sys.argv) > 1 else None
+    srt_path, interview_name = find_srt(target_arg)
+    print(f"Processing: {interview_name}")
+    print(f"SRT path: {srt_path}")
+    print()
     start = time.time()
 
     params = {
