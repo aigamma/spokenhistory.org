@@ -297,11 +297,12 @@ export default function PeopleGrid() {
                 />
               </div>
             )}
-            {/* Close button */}
+            {/* Close button. Was w-8 h-8 (32x32) which fails the WCAG
+                2.2 AA 44x44 tap target rule. Now min-w-11 min-h-11. */}
             <button
-              className="absolute top-2 right-2 bg-black bg-opacity-60 text-white rounded-full w-8 h-8 flex items-center justify-center hover:bg-opacity-80 transition-colors"
+              className="absolute top-2 right-2 bg-black bg-opacity-60 text-white rounded-full min-w-11 min-h-11 flex items-center justify-center hover:bg-opacity-80 transition-colors"
               onClick={onClose}
-              aria-label="Close"
+              aria-label="Close person details"
             >
               <XIcon />
             </button>
@@ -346,13 +347,22 @@ export default function PeopleGrid() {
     return (
       <div className="flex flex-col items-center space-y-2">
         <div></div>
-        {/* Square card container */}
-        <div
-          className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-md 
-                    overflow-hidden shadow-md cursor-pointer transition-all duration-200
+        {/* Square card container.
+            Was <div onClick> -- not keyboard accessible and the parent
+            <div> wrapper around it had no semantic role. Now a real
+            <button> with aria-label, type="button" to prevent
+            accidental form submission inside any future <form>, and
+            the original size/transition classes preserved. min size
+            is already w-20 h-20 (80x80) which exceeds the 44x44 tap
+            target rule. */}
+        <button
+          type="button"
+          className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-md
+                    overflow-hidden shadow-md cursor-pointer transition-all duration-200 bg-transparent border-0 p-0
                     ${isSelected ? 'ring-4' : 'hover:ring-2 hover:ring-black/30'}`}
           onClick={() => setSelectedPerson(person)}
-          style={{ 
+          aria-label={`View interview with ${person.name}`}
+          style={{
             touchAction: 'manipulation',
             ringColor: isSelected ? '#F2483C' : undefined
           }}
@@ -372,7 +382,7 @@ export default function PeopleGrid() {
               <span className="text-black/40 text-xs font-mono">No photo</span>
             </div>
           )}
-        </div>
+        </button>
 
         {/* Name below card */}
         <div className="text-center w-full">

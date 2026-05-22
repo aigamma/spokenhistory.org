@@ -268,7 +268,7 @@ export default function TopicGlossary({ onViewAllClips }) {
   return (
     <div className="min-h-screen bg-gray-200">
       {/* Header Section */}
-      <div className="px-12 pt-9 pb-6">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-12 pt-6 sm:pt-9 pb-6">
         {/* Logo/Title */}
         <div className="mb-8">
           <div className="text-stone-900 text-4xl font-normal" style={{ fontFamily: 'Freight Text Pro, serif' }}>
@@ -286,7 +286,7 @@ export default function TopicGlossary({ onViewAllClips }) {
 
         {/* Main heading */}
         <div className="mb-6">
-          <h1 className="text-stone-900 text-8xl font-medium" style={{ fontFamily: 'Acumin Pro, sans-serif' }}>
+          <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium" style={{ fontFamily: 'Acumin Pro, sans-serif' }}>
             Topic Glossary
           </h1>
         </div>
@@ -343,7 +343,7 @@ export default function TopicGlossary({ onViewAllClips }) {
       </div>
 
       {/* Topics Grid */}
-      <div className="px-12 pb-12">
+      <div className="px-4 sm:px-6 md:px-8 lg:px-12 pb-12">
         {filteredTopics.length === 0 ? (
           <div className="text-center py-16">
             <span className="text-stone-900 text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
