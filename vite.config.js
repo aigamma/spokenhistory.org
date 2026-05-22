@@ -22,5 +22,20 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-  }
+  },
+  esbuild: {
+    // Strip console.log and debugger statements from production builds.
+    // The codebase has ~150 console.log calls spread across pages,
+    // hooks, and services -- most are legacy breadcrumbs (Firebase
+    // fetch counts, semantic search timings, navigation traces) that
+    // were useful during development but are noise + potential
+    // privacy leakage in production. Stripping them via esbuild's
+    // pure-call elimination keeps the source intact (so devs running
+    // `npm run dev` still see the logs) but removes them from the
+    // shipped bundle that end users load. console.error and
+    // console.warn are preserved because they signal genuine
+    // problems the team needs to see in the wild.
+    pure: ['console.log', 'console.debug', 'console.info'],
+    drop: ['debugger'],
+  },
 })
