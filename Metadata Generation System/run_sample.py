@@ -78,12 +78,25 @@ def find_srt(arg_name=None):
         candidate = Path(arg_name)
         if candidate.is_file() and candidate.suffix == ".srt":
             return candidate, candidate.stem.split("_interview_")[0].replace("_", " ")
-        # Treat as interview-name prefix; find the first matching dir.
+        # Match: prefix first, then substring fallback (case-insensitive).
+        # Surnames in the middle of a multi-name interview directory
+        # ("Charles Melvin Sherrod_interview_...") should still resolve
+        # when the user types just "Sherrod".
+        arg_lower = arg_name.lower()
+        prefix_matches = []
+        substr_matches = []
         for d in sorted(raw.iterdir()):
-            if d.is_dir() and d.name.lower().startswith(arg_name.lower()):
-                srts = list(d.glob("*.srt"))
-                if srts:
-                    return srts[0], d.name.split("_interview_")[0]
+            if not d.is_dir():
+                continue
+            name_lower = d.name.lower()
+            if name_lower.startswith(arg_lower):
+                prefix_matches.append(d)
+            elif arg_lower in name_lower:
+                substr_matches.append(d)
+        for d in prefix_matches + substr_matches:
+            srts = list(d.glob("*.srt"))
+            if srts:
+                return srts[0], d.name.split("_interview_")[0]
         raise SystemExit(f"could not resolve transcript from arg: {arg_name!r}")
 
     # Default: smallest .srt in raw/.
