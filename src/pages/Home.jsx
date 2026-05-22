@@ -945,7 +945,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The brutal murder of 14-year-old Emmett Till in Mississippi became a pivotal catalyst in the civil rights movement, highlighting the pervasive racial violence and injustice in the United States. The extensive media coverage helped galvanize public opinion and energized activists to fight for racial equality.
                 </TopicLinkedText>
               </p>
@@ -1030,7 +1030,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Initiated by Rosa Parks' refusal to give up her bus seat to a white man in Montgomery, Alabama, this pivotal event marked a significant moment in the Civil Rights Movement.
                 </TopicLinkedText>
               </p>
@@ -1096,7 +1096,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Little Rock Nine's integration at Little Rock Central High School marked a significant point in the American civil rights movement, highlighting resistance to desegregation and federal intervention.
                 </TopicLinkedText>
               </p>
@@ -1196,7 +1196,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Student Nonviolent Coordinating Committee (SNCC) played a critical role in the Civil Rights Movement, known for organizing student activism for racial equality. The organization facilitated voter registration drives, sit-ins, and freedom rides and was a pivotal part of the movement's strategy for nonviolent direct action. The involvement of SNCC and similar groups has had lasting effects on the push for civil rights.
                 </TopicLinkedText>
               </p>
@@ -1262,7 +1262,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Sponsored by the Congress for Racial Equality (CORE) and the Student Nonviolent Coordinating Committee, Freedom Rides were a series of bus trips through the American South by civil rights activists who sought to challenge and desegregate interstate transportation facilities following Supreme Court rulings. Despite facing severe violence, the activists drew national attention to the civil rights struggle and forced federal intervention.
                 </TopicLinkedText>
               </p>
@@ -1356,7 +1356,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Medgar Evers, a prominent civil rights activist and field secretary for the NAACP, was assassinated outside his home in Jackson, Mississippi. His murder marked a turning point in the civil rights movement, increasing the urgency and determination of activists who faced growing hostility and violence. Evers' assassination underscored the dangers faced by those fighting for racial equality and galvanized ongoing efforts for civil rights legislation.
                 </TopicLinkedText>
               </p>
@@ -1459,7 +1459,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   This historic event was a major civil rights demonstration, where Martin Luther King Jr. delivered his iconic 'I Have a Dream' speech. It was pivotal in advocating for civil and economic rights for African Americans, showcasing the frustration with the Kennedy administration's inaction against racial violence.
                 </TopicLinkedText>
               </p>
@@ -1634,7 +1634,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Freedom Summer was a 1964 voter registration drive organized by CORE, the NAACP, and SNCC aimed at increasing the number of registered Black voters in Mississippi. This grassroots effort was part of the larger civil rights movement striving for racial equality in voting rights and was characterized by significant activism and resistance. It included Freedom Schools, which acted as educational centers for prospective voters.
                 </TopicLinkedText>
               </p>
@@ -1673,7 +1673,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Signed by Lyndon B. Johnson, this landmark act declared an official end to legal segregation, outlawing discrimination based on race, color, religion, sex, or national origin.
                 </TopicLinkedText>
               </p>
@@ -1765,7 +1765,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   While preparing to speak for the Organization of Afro-American Unity, activist Malcolm X was murdered. Malcolm X's uncompromising message of self-determination for African Americans laid the groundwork for organizations to make moves outside the legal framework of the American system. His international approach and recognition of the connection between Black American struggles and anti-imperial struggles in the Third World made him revolutionary within the Civil Rights Movement and brought him international acclaim.
                 </TopicLinkedText>
               </p>
@@ -1852,7 +1852,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Despite the legal end of segregation, there was little material change in many Southern States. In Alabama, African Americans were still disenfranchised as White officials employed tactics of intimidation and harassment to prevent them from exercising the right to vote. The murder of activist Jimmie Lee Jackson by state troopers sparked the 54-mile march from Selma to Montgomery. Demonstrators were met with state violence, resulting in media attention from across the country. President Lyndon B. Johnson used the attention to call for the passing of the Voting Rights Act of 1965, which was enacted on August 6th of that year.
                 </TopicLinkedText>
               </p>
@@ -1992,7 +1992,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Voting Rights Act was a landmark act meant to enforce the constitutional voting rights of racial minorities, especially in the South.
                 </TopicLinkedText>
               </p>
@@ -2040,7 +2040,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Black Panther Party was established in 1966 as a revolutionary organization advocating for African American self-defense and community welfare programs. The Panthers' initiatives included the establishment of community social programs such as free breakfast for children and health clinics. The party was also known for its stance against police brutality and for promoting black empowerment. Women's roles in the party were significant, although challenges in gender dynamics existed.
                 </TopicLinkedText>
               </p>
@@ -2153,7 +2153,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Chicano Movement was a civil rights movement extending from the 1940s into the 1970s with the goal of achieving Mexican American empowerment, combating discrimination, and promoting cultural pride. It correlated with the broader push for civil rights and influenced identity politics and activism among Mexican Americans. The Brown Beret's modeled themselves after the Black Panther Party and played a major role in Chicano activism.
                 </TopicLinkedText>
               </p>
@@ -2219,7 +2219,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Long Hot Summer was a series of major civil disturbance occurring over the summer of 1967, spurred by racial tensions, poverty, and allegations of police brutality toward the African-American community. It was part of a wave of urban uprisings across the United States during the 1960s. This event significantly impacted the civil rights movement by highlighting systemic issues in urban areas and prompting calls for reform.
                 </TopicLinkedText>
               </p>
@@ -2285,7 +2285,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The most prominent Civil Rights Activist of his era, and the leader of the movement at large, Dr. Martin Luther King Jr. was murdered after giving a speech in Memphis, Tennessee. Riots tore through the streets of major cities across the United States in response to the murder.
                 </TopicLinkedText>
               </p>
@@ -2435,7 +2435,7 @@ export default function Home() {
 
                 {/* Description */}
                 <p className="text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
-                  <TopicLinkedText linkClassName="text-red-500 hover:underline cursor-pointer font-medium">
+                  <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                     Signed into law during the riots following Dr. King's assassination, this act expands upon the 1964 Civil Rights Act by declaring it illegal to discriminate in the rental and financing of housing, contributing to the development of equal housing opportunities.
                   </TopicLinkedText>
                 </p>

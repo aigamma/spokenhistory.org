@@ -250,8 +250,8 @@ export default function ContentDirectory() {
               fontFamily: 'Freight Text Pro, Lora, serif',
               fontWeight: 400
             }}>
-              Browse and search through clips and people from the Civil Rights History Collection. 
-              Visit the <a href="#/topic-glossary" className="text-red-500 hover:underline" style={{ color: '#F2483C' }}>Topic Glossary</a> to explore keywords and topics.
+              Browse and search through clips and people from the Civil Rights History Collection.
+              Visit the <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>Topic Glossary</a> to explore keywords and topics.
             </p>
           </div>
 
@@ -271,7 +271,7 @@ export default function ContentDirectory() {
               </div>
               <div className="text-sm text-black/60 text-center sm:text-right" style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}>
                 For topic and keyword statistics, visit the{' '}
-                <a href="#/topic-glossary" className="text-red-500 hover:underline" style={{ color: '#F2483C' }}>
+                <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>
                   Topic Glossary
                 </a>
               </div>
