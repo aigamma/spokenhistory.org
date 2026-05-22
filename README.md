@@ -9,8 +9,24 @@ This repository contains two things:
 2. **A metadata generation pipeline** (`Metadata Generation System/`) — a standalone Python/Flask tool that processes raw interview transcripts through a 7-step AI pipeline to produce the structured metadata that the web app is built on. It generates chapter breaks, summaries, topic classifications, keywords, and engagement scores for each interview, and exports results as JSON ready for Firestore upload.
 
 **Live site:** https://www.civil-rights-history.org/
+**Staging:** https://civil-rights-staging.netlify.app (Firebase project `civil-rights-history-project`)
 
+---
 
+## What's new in the May 2026 overhaul
+
+The Smithsonian has been scrutinizing AI-generated summaries for hallucinations; the team raised the bar from "good enough for a research demo" to "Smithsonian-grade publication." This branch adds the substrate to meet that bar:
+
+- **Dual-scorer publication gate.** `processor/claude_scorer.py` runs Claude Opus 4.7 as an independent second-opinion scorer after the OpenAI tuning loop; the publication threshold is now 90/90 on BOTH scorers (up from 80/80 on one). Disagreement routes to human review rather than auto-publishing. Enable with `USE_DUAL_SCORING=1` env var. See `processor/dual_scoring_helper.py` for the dispatch.
+- **Per-claim citation audit.** `processor/citation_check.py` checks every factual claim in a summary against the transcript text. Unsupported claims block publication and surface in the review queue with severity-coded annotations.
+- **Human-review queue.** Failed-gate summaries land in Firestore `review_queue` (producer: `processor/review_queue.py`). Reviewers triage at `/review-queue` (consumer: `src/pages/ReviewQueue.jsx`) — approve, reject, or send back for revision.
+- **Ground-truth corpus.** `Metadata Generation System/civil_rights_facts.json` now has 60 entries (51 with alias lists) covering Big Six leadership, SCLC inner circle, foundational pre-Movement intellectuals (Du Bois, Wells, Murray, Height), major events, and legal precedents (Plessy → Brown → Loving). Validate with `python scripts/validate_facts.py`.
+- **Pipeline-to-Firestore bridge.** `scripts/pipeline-to-firestore.mjs` takes a JSON output from the pipeline and writes it into the new Firebase project's `interviewIndex/{slug}/subSummaries/{chapter_NN}` schema. `--dry-run` validates shape without auth.
+- **Sample-transcript driver.** `Metadata Generation System/run_sample.py` runs the smallest .srt end-to-end as a single-command integration test. Measured cost on a 152-line transcript: $0.035, runtime 64.6s, first-attempt OpenAI score 85/80 (passed the 80/80 threshold without dual-scorer revisions).
+- **Comprehensive mobile + WCAG 2.2 AA audit.** Every primary page and major component swept for tap targets, orientation handling, focus indicators, and color contrast. New utility class `.text-civil-red-body` (#B23E2F, 4.86:1 on cream) for small red text where the brand red (#F2483C, 3.05:1) fails normal-text AA. The `MobileAdvisory` "best on desktop" banner removed because the audit closed every issue it was hedging against.
+- **`useViewport` hook.** `src/hooks/useViewport.js` exposes `isMobile / isTablet / isDesktop / isPortrait / isLandscape / isShortLandscape` driven by `matchMedia('(orientation: landscape)')` + window resize. Consumed by the carousel components and the force-directed graph to branch behavior for touch devices.
+
+**For contributors and operators:** see `CLAUDE.md` for the canonical project guide (architecture, validation commands, defensive patterns, accessibility tokens, current sprint status, deployment chain).
 
 ---
 
