@@ -61,7 +61,21 @@ Pass 1/2/3 corrections for the 8 entries above were generated against the *broke
 
 ---
 
-## Problem 2 — Cross-contamination items (~22 misfiled Pass 2 rows)
+## Problem 2 — Cross-contamination items (~22 misfiled Pass 2 rows) — **RESOLVED 2026-05-22 (Phase 1a)**
+
+### Resolved 2026-05-22 evening
+
+All 22 items addressed by `transcripts/fix_cross_contamination.py`:
+- 15 drops (procedural noise rows self-flagged "not in this transcript")
+- 7 moves with `<target>.P2.RELOC[<source>.P2.<row>]` provenance markers
+- 1 adversarial-flag drop (#130.P2.115 — canonical content already at 129.P2.115)
+- 4 prose edits (#102 Subject + Pass 2 Notes; #110 Pass 3 confidence-resolutions annotation)
+- 2 reclassifications during investigation: #25.13 (not contamination — two Whisper variants of same person); #110.P2.16 (legitimate Pass 2 row; Pass 3 confusion was the issue, not the Pass 2 row)
+
+Pre/post Pass-2 row count delta: -15 net. Script is idempotent (verified). Original 22-item table preserved below for audit history.
+
+### Original 2026-05-22 morning punch-list (now resolved)
+
 
 Pass 2 rows written into the wrong entry's table. Flagged in Pass 3 anomaly reports. Items exist in master MD but in wrong locations.
 
@@ -94,7 +108,21 @@ Pass 2 rows written into the wrong entry's table. Flagged in Pass 3 anomaly repo
 
 ---
 
-## Problem 3 — Catalog back-fill (~500 patterns)
+## Problem 3 — Catalog back-fill (~500 patterns) — **RESOLVED 2026-05-22 (Phase 1b)**
+
+### Resolved 2026-05-22 evening
+
+`transcripts/build_catalog_extension.py` (re-runnable, sentinel-bounded for idempotency) appended a 893-line "Cross-corpus catalog — Phase 1b back-fill extension (added 2026-05-22)" subsection to `CLEANED_TRANSCRIPTS_REVIEW.md`:
+- 881 raw rows extracted from 127 staging files
+- **792 unique canonical patterns** after dedup
+- 7 new catalog sections proposed (J–P) + 42-row catch-all Z
+- Sections A–I extended in place with 509 new rows; A–I body byte-identical to HEAD
+- Per-entry tables untouched
+
+Top 10 by recurrence: Stokely Carmichael (6), SNCC (6), Medgar Evers (5), Thurgood Marshall (5), Fannie Lou Hamer (4), COINTELPRO (4), Hattiesburg (4), James Forman (3), KKK (3), Joe Mosnier (3).
+
+### Original 2026-05-22 morning punch-list (now resolved)
+
 
 Pass 3 supervisors surfaced roughly 500 new Whisper-failure patterns that should be added to the "Cross-corpus recurring error patterns" section at the top of the master MD (sections A–I). Patterns currently live only inside individual Pass 3 blocks.
 
@@ -126,7 +154,20 @@ Pass 3 supervisors surfaced roughly 500 new Whisper-failure patterns that should
 
 ---
 
-## Problem 4 — Adversarial-review flag aggregation (~500 items)
+## Problem 4 — Adversarial-review flag aggregation (~500 items) — **RESOLVED 2026-05-22 (Phase 1c)**
+
+### Resolved 2026-05-22 evening
+
+`transcripts/build_adversarial_feed.py` (deterministic, hash-stable) produced `transcripts/adversarial_review_feed.json` (439 KB, 10,371 lines):
+- **825 items** across 125 entries (#9 and #42 correctly excluded — both Pass 3 supervisors marked "all rows resolved")
+- 100% schema-coverage (all 10 required fields populated)
+- 11-category controlled vocabulary; top 3 categories (canonical-figure-identification + geographic-place-name + organization-or-event-name) = 65% of items
+- Top 5 entries by adversarial-flag density: #34 Thelwell (16), #129 Leventhal (15), #52 Patton (14), #132 Walker (14), #30 Zellner (13)
+
+Schema version 1.0. Downstream Kiro/Kimi/Codex/Gemini ensemble can append `ensemble_resolution` / `ensemble_confidence` fields keyed by `(entry_number, row_id)`.
+
+### Original 2026-05-22 morning punch-list (now resolved)
+
 
 Pass 3 blocks each contain an "Adversarial-review flags" sub-table — items where Pass 3 supervisors couldn't resolve canonicality and deferred to the user's multi-model ensemble (Kiro/Kimi/Codex/Gemini).
 

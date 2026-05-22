@@ -64,6 +64,174 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ---
 
+### Session 3 — 2026-05-22 (evening): audit hygiene + Pass 4 re-grounding + pipeline + Weaviate scaffolding
+
+**End-of-session summary:** *(populated in Phase 5)*
+
+**Agents:**
+- Claude Opus 4.7 (parent / orchestrator)
+- *(subagent counts populated per-phase)*
+
+**Wall-clock:** *(populated per-phase)*
+
+**Scope:** Five-phase agenda per `transcripts/NEXT_SESSION_PROMPT.md` (2026-05-22 evening drop). Phase 1: audit hygiene (cross-contamination cleanup + catalog back-fill + adversarial-review feed). Phase 2: Pass 4 re-grounding against expanded 140-entry corpus. Phase 3: `scripts/apply_corrections.py` for raw→corrected transcript preprocessing. Phase 4: Weaviate ingestion scaffolding (schema + embed + ingest + retrieve + tests). Phase 5: session finalization.
+
+**Methodology shift from Session 2:** Per the per-phase document-update protocol in the prompt, `AUDIT_TRAIL.md` and `OPEN_PROBLEMS.md` are updated *during* the session (incremental phase sub-sections, resolved-items annotations) rather than at session close. Each phase concludes with a single atomic commit that bundles code/data changes + doc updates. This is intended to keep the contract documents accurate even if the session is interrupted mid-run, and to give Eric real-time visibility on GitHub.
+
+#### Phase 1 — Audit hygiene
+
+**Agents:** Claude Opus 4.7 (parent) + 2 general-purpose subagents in parallel (Phase 1b + Phase 1c).
+**Wall-clock:** ~30 minutes (Phase 1a sequential ~10 min; Phase 1b + 1c parallel ~20 min wall-clock, ~37 min serial-equivalent).
+**Scope:** Cross-contamination cleanup (Problem 2), catalog back-fill (Problem 3), adversarial-review feed (Problem 4).
+
+##### Phase 1a — Cross-contamination cleanup
+
+Wrote `transcripts/fix_cross_contamination.py` (sole parent agent). Defined an action manifest covering all 22 items flagged in `OPEN_PROBLEMS.md` Problem 2, then disambiguated 2 of them after investigation:
+
+- **#25.13 reclassified** — not actually cross-contamination; two Whisper variants of the same Bogalusa activist within #25's own transcript. Pass 3 already flagged for adversarial review. No action taken.
+- **#110.P2.16 reclassified** — legitimate Pass 2 row (`Su City -> Sioux City`). The Pass 3 confidence-resolutions block mis-cited it with content from a different row ("White Fair Hotel" from #108 Carter). Applied a prose-edit annotation to the Pass 3 row marking it as a supervisor mis-attribution; preserved the Pass 2 row.
+- **#130.P2.115 reclassified** — adversarial-flag row, not a Pass 2 correction row. Canonical content already at 129.P2.115 (Rev. Eric Schiller). Dropped the noise flag from #130.
+
+Final action breakdown:
+- 15 drops (procedural noise rows that were self-flagged "not in this transcript" by their original Pass 2 author)
+- 7 moves (rows relocated to the correct entry's Pass 2 table with `<target>.P2.RELOC[<source>.P2.<row>]` provenance markers and dated relocation notes)
+- 1 adversarial-flag drop (#130.P2.115)
+- 4 prose edits (#102 Subject paragraph + Pass 2 Notes; #110 Pass 3 confidence-resolutions annotation; #102 anomaly-list resolved-marker)
+- 2 reclassifications (#25.13 not contamination; #110.P2.16 legitimate Pass 2 row + Pass 3 confusion)
+
+Pre/post Pass-2 row count delta: -15 net (-22 drops + 14 move-in/move-out balance). Master MD: 5,998,907 → 5,995,961 chars (-2,946). Script verified idempotent (second dry-run produces zero changes).
+
+##### Phase 1b — Catalog back-fill (parallel subagent)
+
+Spawned 1 general-purpose subagent. Subagent wrote `transcripts/build_catalog_extension.py` (re-runnable, sentinel-bounded for idempotency) and appended a 893-line "Cross-corpus catalog — Phase 1b back-fill extension (added 2026-05-22)" subsection between Section I and the Progress Tracker.
+
+**Coverage:**
+- 881 raw "Pass 3 missed-pattern catches" rows extracted from 127 staging files
+- **792 unique canonical patterns** after dedup (recurrence-counted, provenance-tracked)
+- 24 patterns filtered as confirmation-only placeholders or noise
+- 7 new catalog sections proposed beyond A–I (sections J–P + Z catch-all):
+  - J — Publications (12 rows)
+  - K — Military (18 rows)
+  - L — Institutional/legal (32 rows)
+  - M — Pan-African/international (12 rows)
+  - N — Foreign-language (12 rows)
+  - O — Music/arts (28 rows)
+  - P — Cross-entry meta (127 rows)
+  - Z — Unsorted catch-all (42 rows flagged for manual review)
+- Sections A–H extended in place with 509 new rows total (largest extension: section F geographic at 182, section C SNCC/SCLC/NAACP figures at 103)
+- Top 10 by recurrence: Stokely Carmichael (6), SNCC (6), Medgar Evers (5), Thurgood Marshall (5), Fannie Lou Hamer (4), COINTELPRO (4), Hattiesburg (4), James Forman (3), Ku Klux Klan (3), Joe Mosnier (3)
+
+**Quality notes:**
+- Tiered keyword routing (regex on correction → explicit "Catalog #X" tag → Whisper-span match → context fallback)
+- Word-boundary regex to prevent substring matches
+- Sections A–I byte-identical to HEAD (verified)
+- Per-entry tables untouched
+
+##### Phase 1c — Adversarial-review feed (parallel subagent)
+
+Spawned 1 general-purpose subagent. Subagent wrote `transcripts/build_adversarial_feed.py` (deterministic, hash-stable across reruns) and produced `transcripts/adversarial_review_feed.json` (439 KB, 10,371 lines).
+
+**Coverage:**
+- **825 items** extracted across 125 entries (#9 Booker/Newson and #42 Hopkins correctly excluded — both Pass 3 supervisors marked "all rows resolved")
+- 100% schema-coverage (all 10 required fields populated per item)
+- 148 items with `row_id_aliases` (multi-ID rows split on `/`)
+- 166 items with non-null `candidate_correction` (arrow-form rows)
+- 438 items with non-empty `transcript_excerpt`
+
+**Distribution by category (11-category controlled vocabulary):**
+- canonical-figure-identification: 263 (32%)
+- geographic-place-name: 153 (19%)
+- organization-or-event-name: 118 (14%)
+- local-figure-identification: 88 (11%)
+- other: 44 (5%)
+- legal-or-political-term: 39 (5%)
+- severely-garbled: 32 (4%)
+- quotation-or-document-title: 28 (3%)
+- speaker-originating: 25 (3%)
+- chronology-or-date: 24 (3%)
+- specialized-vocabulary: 11 (1%)
+
+**Top 5 entries by adversarial-flag density:** #34 Thelwell (16), #129 Leventhal (15), #52 Patton (14), #132 Walker (14), #30 Zellner (13).
+
+Top 3 categories account for 65% of all flagged items.
+
+**Anomalies / handoff notes:**
+- Categorization is heuristic (keyword-based on Item + Reason text); single-line item descriptions sometimes contain overlapping signals. Downstream Kiro/Kimi/Codex/Gemini ensemble can override `category` if needed — all underlying fields are preserved verbatim.
+- Schema version 1.0; future ensemble outputs may add `ensemble_resolution` / `ensemble_confidence` fields keyed by `(entry_number, row_id)`.
+
+**Strategic decision recorded during Phase 1:** RAG-substrate stack pivot from Weaviate-on-Fly.io to Supabase pgvector after Eric reviewed the aigamma.com RAG infrastructure he already runs (`rag_documents` table with gte-small embeddings + `discord_chat_memory` with voyage-3 + chat_logs eval loop). Phase 4 will scaffold to Supabase pgvector, with explicit framing that the additive value is voyage-3 production scale + voyage-rerank-2 + multi-class relational schema + citation auditing + ground-truth corpus grounding — NOT basic pgvector mechanics (which Eric already runs in production).
+
+**Phase 1 handoff to Phase 2:** Pass 4 re-grounding will read the (now cleaned-up) master MD, the (now-extended) catalog, and the expanded `civil_rights_facts.json`. The adversarial feed's 825 items become the primary candidates for re-grounding promotion — many should resolve cleanly against the 80 new corpus entries.
+
+#### Phase 2 — Pass 4 re-grounding
+
+*(populated when Phase 2 completes)*
+
+#### Phase 3 — Pipeline integration scaffolding
+
+*(populated when Phase 3 completes)*
+
+#### Phase 4 — Weaviate ingestion scaffolding
+
+*(populated when Phase 4 completes)*
+
+#### Phase 5 — Session finalization
+
+*(populated when Phase 5 completes)*
+
+**Session 3 closure note (added 2026-05-22, Session 4):** Session 3 completed Phase 1 (audit hygiene: cross-contamination cleanup + catalog back-fill + adversarial-review feed). Phases 2–5 were not executed in Session 3. Session 4 supersedes the Pass-4-re-grounding work that Session 3 Phase 2 was scoped to do, with a stricter methodology (one-transcript-per-agent) per Eric's directive. The other Session 3 phases (3 pipeline-integration, 4 Weaviate scaffolding, 5 finalization) remain unfilled and are deferred to a later session.
+
+---
+
+### Session 4 — 2026-05-22 (later): Pass 4 sweeping QA + fact-check (one-transcript-per-agent architecture)
+
+**End-of-session summary:** *(populated in finalization step)*
+
+**Agents:**
+- Claude Opus 4.7 (parent / orchestrator)
+- 127 general-purpose subagents, each strictly scoped to ONE entry — spawned in parallel batches across multiple messages
+
+**Wall-clock:** *(populated at session close)*
+
+**Scope:** Pass 4 sweeping quality-assurance + fact-check pass across all 127 audit-able entries. Same skip-set as prior passes: {28, 31, 46, 64, 95}. Pass 4 is the fourth audit pass over the corpus and the **first pass after the Phase D corpus expansion (60→140) and the Phase 1b catalog extension** — every previously low/medium/adversarial-flagged row is being re-grounded against substantially more canonical ground truth than Pass 3 had access to.
+
+**Methodology shift from Session 2/3:**
+- **One-transcript-per-agent strict isolation.** Each subagent is scoped to exactly one entry's content; cross-contamination is foreclosed at the data layer (the master MD is never read by a subagent — only its pre-sliced per-entry chunk).
+- **Pre-slicing firewall.** Before any subagent runs, `transcripts/slice_master_md.py` extracts each entry's section from the 6.1 MB master MD into `transcripts/per_entry_slices/entry_NN.md` (127 files, ~5.9 MB total). Each subagent reads exactly: its slice + its Pass 3 staging file + the ground-truth corpus. No subagent reads any other entry's data, and no subagent reads the master MD.
+- **Parallel batches across messages.** Subagents are spawned in multiple parallel batches of ~25 per message. Each batch's wall-clock = slowest single subagent in the batch. Staging files are committed and pushed after each batch so progress is visible on GitHub at milestone boundaries.
+- **Per-entry deliverable explicit.** Each subagent writes a single Pass 4 staging file: `transcripts/pass4_stage/entry_NN.md`. The file structure mirrors Pass 3's: confidence resolutions, new catches / corrections, ground-truth corpus candidates, adversarial-review flag updates, audit-complete marker.
+
+**Why this methodology shift:** Session 2's Phase A used 18 supervisors handling ~5 entries each — that arrangement was correlated with the ~22 cross-contamination items that Session 3 Phase 1a had to clean up afterward (`transcripts/fix_cross_contamination.py`). The user's directive in opening Session 4 was: "each agent can only look at one transcript at a time — before, when I attempted to use 132 separate agents, there were massive cross-contamination errors where it would be reading more than one document and then blending them together." This audit pass therefore enforces the one-transcript-per-agent rule architecturally, not just by prompt convention.
+
+#### Phase 1 — Slicing infrastructure + Session 4 initialization
+
+**Agents:** Claude Opus 4.7 (parent, no subagents)
+**Wall-clock:** ~10 minutes
+**Deliverables:**
+- `transcripts/slice_master_md.py` — re-runnable per-entry slicer with manifest output
+- `transcripts/per_entry_slices/` — 127 entry slice files + `manifest.json` (entry_num → subject + raw_dir + slice_path + pass3_path + slice_size_bytes)
+- `transcripts/AUDIT_TRAIL.md` — this Session 4 entry initialized
+- 1 warning recorded: entry #35 ("Elbert 'Big Man' Howard") raw-directory path uses straight quotes in master MD but the filesystem dir uses curly quotes — cosmetic mismatch, does not affect Pass 4 (slicing extracts the section regardless; the raw-transcript spot-check, if needed, can be done via the actual filesystem name)
+
+**Slice size distribution:**
+- Median: 44,585 bytes
+- Largest 5: #34 Thelwell 102 KB, #129 Leventhal 92 KB, #115 McKinney 90 KB, #100 Branch+Smith 80 KB, #17 McLaurin 76 KB
+- Smallest 5: #18 Sherrod 18 KB, #88 Moore 20 KB, #16 McDew 22 KB, #55 Brown 23 KB, #23 Browner 24 KB
+
+#### Phase 2 — Parallel Pass 4 subagent batches
+
+*(populated as batches complete; one sub-block per batch with batch-scope and metrics)*
+
+#### Phase 3 — Merge Pass 4 staging into master MD
+
+*(populated when merge completes)*
+
+#### Phase 4 — Audit-document finalization (this AUDIT_TRAIL.md + OPEN_PROBLEMS.md + Progress Tracker)
+
+*(populated at session close)*
+
+---
+
 ### Session 2 — 2026-05-22: Pass 2 + tail-sweep + Pass 3 + corpus expansion (parallel-subagent architecture)
 
 **Agents:**
