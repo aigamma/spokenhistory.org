@@ -1,0 +1,44 @@
+#### Pass 2 corrections (2026-05-22)
+
+| #       | Span as Whisper-transcribed | Suggested correction | Confidence | Source | Surrounding context |
+|---------|---|---|---|---|---|
+| 122.P2.1 | Emily Crosby | Emilye Crosby | high | canonical-from-catalog | "I'm Emily Crosby of the Southern Oral History Program"; canonical SOHP interviewer (Pass 1 missed in this entry; catalog row A: medium frequency #12/#17/#30) |
+| 122.P2.2 | Newport, New Virginia | Newport News, Virginia | high | geographic | Reinforces Pass 1 122.1; recurring throughout transcript |
+| 122.P2.3 | RIP Black | (R)acially I(P)olated Black / all Black | low | common-noun | "We had our neighborhoods, RIP Black" — Whisper-degradation; speaker's idiom unclear but context establishes all-Black residential segregation |
+| 122.P2.4 | Lynx Lianke S Incorporated / Lianke S | LINKS Incorporated | high | canonical-alias | Reinforces Pass 1 122.17; recurring throughout transcript ("the Lynx Lianke S. Incorporated" — full Whisper rendering) — canonical 1946-founded national Black women's social-service organization |
+| 122.P2.5 | the link | LINKS | replace_all | canonical-alias | LINKS appears with various Whisper renderings including "the link"; canonical org |
+| 122.P2.6 | Pearly Rings | Pearl Earrings | high | common-noun | "you wore white dress, gloves, pearls, pearly rings, etc." — Whisper of "pearl earrings" as "pearly rings"; debutante-attire context |
+| 122.P2.7 | Charles Sherrod's wife | Shirley Miller Sherrod | high | canonical-from-catalog | "we had two people who were ministers, Frank Pinkston and Charles Sherrod. I remember Sherrod's wife" — canonical Shirley Miller Sherrod (US Department of Agriculture official terminated 2010 + reinstated; cross-corpus #117); Pass 1 caught this as 122.7 but stronger cross-reference here |
+| 122.P2.8 | the Lakson | the Jackson (Jackson MS) | medium | geographic | Speaker may not refer to Jackson here — likely an unrelated MS town reference; context is Virginia rather than MS so possibly a Newport News-area location |
+| 122.P2.9 | Maurice / Maurice and Pat | Marie (Sallasin) and Pat (Patricia Washington) | high | canonical-alias | "I wonder if I had not seen Maurice and Pat in years" — Whisper consistently re-renders "Marie" as "Maurice" in the second half of the transcript (Pass 1 caught "Marie" in 122.11 but missed the recurring "Maurice" mishearing) |
+| 122.P2.10 | Maurice had married a person who was in a military | Marie had married a person who was in the military | high | canonical-alias | Reinforces 122.P2.9 — same Whisper failure pattern (Marie → Maurice) |
+| 122.P2.11 | this 34, 34, desegregated the city of Richmond | this (group of) 34, 34, desegregated the city of Richmond | correct | canonical | Confirms canonical "Richmond 34" — the canonical Feb 1960 Virginia Union sit-in arrestee group is known as "the Richmond 34" in Movement historiography; canonical-from-catalog cross-reference |
+| 122.P2.12 | not too far for me | I don't drag along about my husband / I really talk about (my husband's) accomplishments | medium | common-noun | Whisper drop-out near end of interview |
+| 122.P2.13 | I babysat for her | (canonical first-job context, Marya Ann Benz) | correct | canonical | Confirms Pass 1 122.4 — Mary Ann Benz is the speaker's babysitting employer + the wife of Newport News' canonical first Black urologist |
+| 122.P2.14 | a sewed-a-jerk clerk | a soda-jerk clerk | high | common-noun | "I worked as a sewed-a-jerk clerk in a drugstore" — Whisper of "soda jerk" |
+| 122.P2.15 | a paddy, in a squad car | a Paddy (wagon), in a squad car | correct | common-noun | Confirms canonical 1960s policing-vocabulary detail |
+| 122.P2.16 | Marisha Field Foundation | (uncertain — possibly Marshall Field or Mary Field) | low | n/a | Not found in this transcript actually; n/a |
+| 122.P2.17 | Pat could pass with white | Pat could pass for white | high | common-noun | "I have to tell you Pat could pass with white" — Whisper of "for" as "with"; canonical Black-white-passing context |
+| 122.P2.18 | she went into a barbershop | (Marie + Pat + Virginia in Richmond) Pat went into a white barbershop | correct | canonical | Confirms Pass 1 122.12 — canonical Patricia Washington's white-passing barbershop experience as canonical Virginia Union 1959-60 anecdote |
+| 122.P2.19 | non ballad / nun ballad | nonviolence / nonviolent (training) | high | common-noun | "I had lost all of my none ballad" — Whisper of "non-violence" or "nonviolent" as "non ballad" |
+| 122.P2.20 | None of us could understand her parents looked white | None of us could understand — her parents looked white | correct | speaker-originating | Reinforces canonical Patricia Washington's family-passing-as-white context |
+| 122.P2.21 | dorm lady | dorm matron / dorm mother | medium | common-noun | "the dorm lady making too much noise and came in and grounded us" — canonical 1959-60 Black-women's-college dorm-matron supervision |
+| 122.P2.22 | pin relays | Penn Relays | high | canonical-alias | "I remember asking my father if I could go to the pin relays" — canonical Penn Relays (Philadelphia, oldest US track-and-field meet, founded 1895 at U Penn); Whisper of "Penn" as "pin" |
+| 122.P2.23 | North Town | (uncertain Philadelphia neighborhood) | low | geographic | "outside of Phyllis in a place called North Town" — speaker referring to Patricia Washington's family home; possibly a Whisper rendering of "Norristown PA" or "Yeadon" or another suburb |
+| 122.P2.24 | Phyllis | Philadelphia | high | geographic | "outside of Phyllis in a place called North Town" — Whisper of "Philadelphia" as "Phyllis" |
+| 122.P2.25 | Phyllis in | Philadelphia | replace_all | geographic | Recurring Whisper failure throughout |
+| 122.P2.26 | BPU | BYPU (Baptist Young People's Union) | high | canonical-alias | "we had to go Sunday night, we had to go to BPU or whatever that is. You know, some kind of church services at night" — canonical BYPU; canonical Baptist-young-adult-discipleship organization required at Virginia Union (a Baptist HBCU) |
+| 122.P2.27 | Raleigh University | (Easter 1960) Shaw University | high | canonical-alias | "Miss Ella Baker called a meeting of student leaders from the sit-ins. And that was at Raleigh University" — canonical 1960 SNCC founding conference at Shaw University in Raleigh, NC; Whisper failed by hearing "Shaw" as "Raleigh" and Pass 1 missed |
+| 122.P2.28 | the Newport News (post-shipbuilding sailors-arrival pattern) | first-of-the-month shipyard/sailor influx | correct | canonical | Reinforces canonical Newport News Shipbuilding context |
+| 122.P2.29 | Marsha Field Foundation | (N/A — not in this transcript) | n/a | n/a | Skip — not in this transcript |
+| 122.P2.30 | Asabet Regional School | Assabet Valley Regional School District | correct | canonical | Reinforces Pass 1 122.21; canonical Northborough MA regional district |
+| 122.P2.31 | Maggie Walker | Maggie L. Walker High School | correct | canonical | Reinforces Pass 1 122.20; canonical Richmond VA Black HS named for canonical Maggie L. Walker (first Black woman to charter a US bank, 1903) |
+| 122.P2.32 | MA-4 and MA-5 contract | (federal) MA-4 / MA-5 contracts | correct | canonical | Reinforces Pass 1 context — canonical 1960s-70s federal Manpower Administration job-training contracts |
+| 122.P2.33 | Mr. Judson | Mr. Judson | speaker-originating | canonical | Canonical Alfred University Leadership Center funder/sponsor; speaker references "Mr. Judson's tragic death" → renaming of the Women's Leadership Center to the "Judson Leadership Center" |
+| 122.P2.34 | TJ Maxx | TJ Maxx | correct | canonical | Confirms canonical 21st-century retail anecdote setting |
+| 122.P2.35 | Bob Molly / Bob Marley | Bob Marley | high | canonical-from-catalog | "looks something like Richie. This is the jazz, I don't have a nightline or Richie. But he looks like a Molly, Bob Molly, how Bob had the big hair" — speaker referring to Bob Marley's iconic big-hair (dreadlocks) look; Whisper rendering of "Marley" as "Molly" |
+| 122.P2.36 | a nightline or Richie | (Lionel) Richie | high | canonical-from-catalog | Speaker compares her son's hair-look to Lionel Richie (and Bob Marley); Whisper-mush of "nightline" and "or Richie" — context is musicians-with-big-hair |
+| 122.P2.37 | Richie | Lionel Richie | high | canonical | Canonical singer/songwriter; speaker mentioned twice as a hair-style reference |
+| 122.P2.38 | this 34, 34 (Pass 1 122.11 corrected) | the Richmond 34 | correct | canonical | Reinforces canonical "Richmond 34" framing of the speaker's sit-in group |
+| 122.P2.39 | They've been subpoenaing me | (joking — speakers' age) | correct | common-noun | Reinforces speaker's age humor (50 years post-1960 sit-in) |
+| 122.P2.40 | Richmond Room (Thalhimers) | Richmond Room | correct | canonical | Reinforces Pass 1 122.10 |

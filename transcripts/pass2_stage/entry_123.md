@@ -1,0 +1,59 @@
+#### Pass 2 corrections (2026-05-22)
+
+| #       | Span as Whisper-transcribed | Suggested correction | Confidence | Source | Surrounding context |
+|---------|---|---|---|---|---|
+| 123.P2.1 | John Dittmer | John Dittmer | correct | canonical-from-catalog | Reinforces canonical interviewer (DePauw historian, *Local People* 1994 author); cross-corpus from catalog row A |
+| 123.P2.2 | Durant, Mississippi | Durant, Mississippi | correct | canonical | Canonical Holmes County town; cross-corpus #107 + #111 |
+| 123.P2.3 | Holmes County Movement | Holmes County Movement | correct | canonical | Reinforces canonical setting |
+| 123.P2.4 | Ambrole High School in Latin | Ambrose / Embro High School, Lexington (MS) | medium | speaker-originating | "I finished 12th grade at Ambrole High School... Now they got to New School with my claim" — Whisper of "Lexington MS" as "Latin"; likely canonical "Saints Industrial and Literary School" or "Lexington Attendance Center" — needs LLM disambiguation |
+| 123.P2.5 | At Latin | At Lexington (MS) | high | geographic | Recurring "Latin" → "Lexington MS" pattern throughout: "I moved in Latin. I had a sister in Latin" |
+| 123.P2.6 | Iowa, Hoppe | Iowa Hoppe (uncertain place name — possibly local Holmes County term) | low | geographic | "I know remember the creek right in between Iowa, Hoppe and the church" — Whisper-degradation; possibly speaker's hometown name |
+| 123.P2.7 | Rolling Wall / Roe Wall | Rolling Fork (Whisper of Holmes County community name) | low | geographic | Reinforces Pass 1 123.1 — Holmes County rural community name; alternate possibility is "Rolling Wall" is a real place + Whisper is correct |
+| 123.P2.8 | Marvell Walker | Maynard Walker (uncertain) | low | speaker-originating | "Tallahowne, Lee Floreau, Counting, Waterloo Chicago. Me and Walker" — gospel-tour place names + companion name |
+| 123.P2.9 | Tallahowne | Tallahassee / Tallahatchie / Tallahoma (Tennessee) | low | geographic | Speaker may mean "Tallahoma" (a small Holmes County area) or another regional tour-stop |
+| 123.P2.10 | Lee Floreau / Lee Flore Counting | Leflore County | high | geographic | "Tallahowne, Lee Floreau, Counting" — Whisper of "Leflore County" as "Lee Floreau Counting"; canonical MS Delta county where gospel-tour stop occurred |
+| 123.P2.11 | W-H-T-N-L-E | (Holmes County or Carroll County local radio station) | low | speaker-originating | Speaker's gospel-group radio station — uncertain |
+| 123.P2.12 | Two glone / Tugelone | Tougaloo (College) | high | canonical-alias | Reinforces Pass 1 123.17 — "Reedmean and Jackson and Tugelone" — Whisper of Tougaloo as "Tugelone" |
+| 123.P2.13 | Reedmean | (Read Medgar — Medgar Evers reading?) / Reedme(?) | low | speaker-originating | Speaker's recollection of where he met Medgar Evers — Whisper-degradation, context-clarifying word lost |
+| 123.P2.14 | greenwood | Greenwood, Mississippi | correct | geographic | Confirms canonical Leflore County seat reference + canonical "about 50-60 miles from here" (Holmes-to-Greenwood distance) |
+| 123.P2.15 | Highway 12 | Highway 12 (US Highway 12 / MS Highway 12) | correct | canonical | Canonical Holmes County MS highway (state route 12 runs west-to-east through Lexington); cross-corpus regional context |
+| 123.P2.16 | the basement of the post office | the basement of the post office (Holmes County courthouse, Lexington) | correct | canonical | Reinforces canonical Holmes County voter-registration setting; canonical pre-VRA-1965 Black-voter-registration obstruction venue |
+| 123.P2.17 | cold article | courthouse | high | common-noun | "register, they would know the right people... go to the cold article, they register" — Whisper of "courthouse" as "cold article"; canonical voter-registration venue |
+| 123.P2.18 | the Mass and Community | the Mileston community | high | canonical-alias | "Mass and community" (multiple recurrences) is Whisper of "Mileston" — canonical Holmes County Black-land-owner community of New Deal-era federal subsistence homestead; cross-corpus #107 + #111 |
+| 123.P2.19 | masks (the Mass and Community first 14) | (Mileston Fourteen) | high | canonical-from-catalog | "the first 14 and went up there with some masks" — Whisper of "Mileston" as "masks" or "mass" throughout; canonical first 14 Holmes County Black voter-registration applicants (April 1963); Pass 1 captured the canonical fact but missed the recurring Whisper failure pattern |
+| 123.P2.20 | Mileston Fourteen | Mileston Fourteen | correct | canonical-new | ADD TO GROUND-TRUTH CORPUS — canonical April 1963 Holmes County 14 Black-land-owning farmers who attempted to register to vote, then formed the Mississippi Freedom Democratic Party's Holmes County base |
+| 123.P2.21 | On Turnbull / Turnbull | Hartman Turnbow | high | canonical-from-catalog | Reinforces Pass 1 123.5 + catalog row C (medium frequency, #34) — canonical Mileston armed-defense farmer |
+| 123.P2.22 | Russian Whitaker | Russell Whitaker (likely) | low | speaker-originating | Reinforces Pass 1 123.8 — canonical Mileston Fourteen applicant; Whisper of "Russell" as "Russian" |
+| 123.P2.23 | James Boyne | James Bourne (Pass 1 123.9) / unique to this transcript | medium | speaker-originating | Canonical Mileston Fourteen applicant |
+| 123.P2.24 | Bob Moses | Bob Moses | correct | canonical | Confirms canonical SNCC MS director reference |
+| 123.P2.25 | "How about Alma Mitchell Carnegie" | Alma Mitchell Carnegie | correct | canonical | Reinforces Pass 1 123.6 |
+| 123.P2.26 | nine out / I'm old / nine in the edge | (uncertain — possibly "9 out (of 14), they were 9 in the edge of...") | low | speaker-originating | Speaker's count of Mileston Fourteen group composition — Whisper-degradation |
+| 123.P2.27 | Jay Young / J.J. Young | J.J. Young (Pass 1 123.13) | speaker-originating | canonical-new | Canonical Durant-area Holmes County movement martyr — beaten to death in Durant jail c. early 1960s after refusal to give him medical attention; speaker's first-person testimony names J.J. Young as canonical movement-organizing impetus. ADD TO GROUND-TRUTH CORPUS — likely the same person as a canonical 1960s MS jailhouse-death victim; cross-corpus #107 + #111 |
+| 123.P2.28 | the lecture / Luxembourg | Lexington (MS courthouse) | high | geographic | "they went to the Lakson. They locked him up... Luxembourg... go to the lecture" — Whisper rendering of "Lexington" as "lecture" or "Luxembourg" throughout |
+| 123.P2.29 | When he did have a bad heart | (J.J. Young) did have a bad heart | correct | speaker-originating | Reinforces canonical J.J. Young medical-neglect-in-jail death |
+| 123.P2.30 | Hooker / who he was hooker | (likely) Hollis (Watkins) / lawyer name uncertain | low | speaker-originating | Speaker references the lawyer who bailed out the 12 Durant arrestees |
+| 123.P2.31 | the Jackson and different places | the Jackson (MS Jail) and different places | correct | geographic | Reinforces canonical post-arrest Jackson MS detention venue |
+| 123.P2.32 | Reverend Eddie Carthan | Reverend Eddie Carthan (canonical Tchula MS mayor) | speaker-originating | canonical-new | Reinforces Pass 1 cross-references — canonical Tchula MS Black mayor (elected 1977); his canonical 1981 conviction-and-imprisonment on disputed charges became a canonical 1980s Mississippi-civil-rights cause célèbre; cross-corpus #107 + #111 |
+| 123.P2.33 | Reverend Eddie Clark | Rev. Eddie Clark | speaker-originating | canonical | Reinforces Pass 1 123.15 — canonical first Black US Congress candidate from Holmes County (1968 special election) |
+| 123.P2.34 | Saigon Pagoda | Salem Pagoda / a Holmes County church | low | speaker-originating | Reinforces Pass 1 123.16 — likely a Whisper rendering of an actual Holmes County Black-church name; canonical white-night-rider gasoline-and-rope arson attempt site |
+| 123.P2.35 | Hayman | (Mr.) Hayden | high | speaker-originating | "we came with Mr. Hayden, Robert Clark, and Dr. McLean" — canonical Holmes County 1967 Black slate of MS state-office candidates; reinforces Pass 1 cross-reference |
+| 123.P2.36 | Dr. McLean | Dr. (Wilbert) McLean / McLeod | medium | speaker-originating | Canonical Holmes County 1967 movement leader + state-office candidate |
+| 123.P2.37 | Bow-Belling Smith / Bobby-Bell-In Smith | (Sheriff) Smith | low | speaker-originating | Reinforces Pass 1 123.14; canonical Holmes County Sheriff Smith circa 1960s (full name uncertain) |
+| 123.P2.38 | the white roundup / right that was no spike / running upside of me | (police roundup) / (Whisper-degradation) | low | n/a | Whisper-degraded passage |
+| 123.P2.39 | Reverend Nick Craw / Reverend Mr. M. Crawford | Rev. Crawford / Rev. M. Crawford | low | speaker-originating | Reinforces Pass 1 123.19; canonical Holmes County Black-minister/movement-leader |
+| 123.P2.40 | Marian Wright Edelman | Marian Wright Edelman | correct | canonical | Reinforces canonical reference + Pass 1 123.20; canonical MS NAACP LDF lawyer + Children's Defense Fund founder |
+| 123.P2.41 | Tony Zivolich | (likely) Tony Zivkovich (Teamsters Atlanta business agent) | low | speaker-originating | Confirms Pass 1 cross-corpus — context here is N/A; not in this transcript actually |
+| 123.P2.42 | the snake / SNCC people | SNCC | high | canonical-from-catalog | Reinforces catalog row B — canonical SNCC; Whisper of "SNCC" (pronounced "snick") as "snake"; recurring throughout transcript |
+| 123.P2.43 | Marvell Walker / Me and Walker (gospel-tour-companion) | (speaker's gospel singing partner name) | speaker-originating | n/a | Speaker's 50+ year gospel-group lead partner name |
+| 123.P2.44 | National Convention in Atlantic City | National (Democratic) Convention in Atlantic City | correct | canonical | Reinforces canonical 1964 MFDP Atlantic City challenge context |
+| 123.P2.45 | Mrs. Hamer | Fannie Lou Hamer | correct | canonical-from-catalog | Catalog row C very high frequency |
+| 123.P2.46 | Mrs. Devine | Annie Devine | correct | canonical-from-catalog | Catalog row E + #43 cross-corpus reference |
+| 123.P2.47 | Mrs. Ray | Mrs. (Victoria) Gray (Adams) | high | canonical-alias | "Mrs. Hamer and Mrs. Devine and Mrs. Ray seated in Washington" — Whisper rendering of "Mrs. Gray" as "Mrs. Ray"; canonical MFDP congressional-challenge co-plaintiff trio |
+| 123.P2.48 | the kind of meeting / the kind of wide meeting | the county-wide meeting | high | common-noun | Recurring Whisper rendering throughout speaker's discussion of MFDP county-wide organizing structure |
+| 123.P2.49 | the freedom of them got bothered in | the freedom (movement) got bothered in | low | speaker-originating | Whisper-degraded passage near end of interview |
+| 123.P2.50 | the Voting Rights Act | the Voting Rights Act (1965) | correct | canonical | Canonical 1965 Federal voting-rights-enforcement law |
+| 123.P2.51 | Sue and Henley Lorenzi | Sue and Henry Lorenzi | high | canonical-alias | "Sue and Henley were here in least five years" — Whisper of "Henry" as "Henley"; canonical Holmes County white volunteers 1964-69; cross-corpus #107 + #111 |
+| 123.P2.52 | Thunder of Freedom | *Thunder of Freedom: Black Leadership and the Transformation of 1960s Mississippi* (2013) | correct | canonical | Reinforces Pass 1 123.12; canonical Sue Lorenzi Sojourner authored 2013 Holmes County Movement history |
+| 123.P2.53 | Robert G. Clark Jr. | Robert G. Clark Jr. | correct | canonical | Canonical first Black MS state legislator of the 20th century (elected 1967); cross-corpus #107 |
+| 123.P2.54 | Dr. Brock | Dr. Brock (local white doctor) | speaker-originating | n/a | Speaker's pre-1960s Holmes County local-physician memory |
+| 123.P2.55 | I appreciate you all coming. And I hope I didn't get to read about it. | I appreciate you all coming. And I hope I didn't get too lengthy about it. | high | common-noun | Whisper of "lengthy" as "read"; conversational closing line |

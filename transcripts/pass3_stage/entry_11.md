@@ -1,0 +1,54 @@
+#### Pass 3 consolidation (2026-05-22)
+
+**Confidence resolutions:**
+
+| Original row | Old confidence | New confidence | Resolution notes |
+|---|---|---|---|
+| 11.13 ("Mary had a doctor" — Candie's Fisk-Pomona exchange roommate) | low | low — flag for adversarial | No canonical record locatable for Candie Carawan's Pomona-Fisk exchange-program roommate; speaker-originating personal recollection with no cross-corroborating source. Stays low; pass to adversarial-model review for any independent corroboration via Pomona/Fisk archives. |
+| 11.22 ("Lucian, like he / Lucian" — Pitzer political-science prof) | low | low — flag for adversarial | Pitzer founding faculty (1963-) included political-scientist Lucian Marquis (Holocaust survivor, prominent Claremont scholar). Phonetic match strong, but speaker context ("a real Pitzer political-science prof — verify") is too thin to lift to medium without an independent Pitzer Faculty Roster cross-check. Adversarial model may resolve. |
+| 11.25 ("Bernice Mayfax / Betty Mayfax" — Albany teen singers) | low | medium | Cross-resolved with P2 #11.P2.7 (Mary E. Thindose → Mary Ethel Dozier) and Pass 1 #11.47 (Mary Ethel Dose → Mary Ethel Dozier). "Bernice Mayfax / Betty Mayfax" is most likely Bertha Gober (canonical Albany Movement teen singer) — Whisper confusion on first names within the canonical Freedom Singers cohort. Promotable to medium with the Albany Movement Freedom Singers context. |
+| 11.28 ("the Cary" — Septima Clark + SCLC Citizenship Schools) | medium | high | Surrounding context locks it: "Septima had already gone to work with Martin Luther King's organization, the Cary and the Citizenship School Program" — "the Cary" is Whisper rendering of "the CEP" (Citizenship Education Program, SCLC's continuation of the Highlander Citizenship Schools after Tennessee revoked Highlander's charter in 1961). Septima Clark's biographical record (corpus entry "Septima Clark") confirms her 1961 move from Highlander to SCLC's CEP under Andrew Young's administration. |
+| 11.29 ("Mary Jane Piguet / Mrs. Piguet" — Clarksdale opera singer) | medium | medium — flag for adversarial | Vera Mae Pigee was the canonical Clarksdale NAACP youth advisor (b. 1925, d. 2007). Daughter Mary Jane Pigee Davidson is canonical (opera singer; classical-vocalist career). Spelling of Pigee surname is canonical (not Piguet). Stays medium pending independent verification of the joint-concert episode with Guy Carawan. |
+| 11.34 ("Picksfield" / "Pickfield" — NY location 1965-67) | low | low — flag for adversarial | Carawans' 1966-67 between-Johns-Island-and-Pitzer NY location remains unverified. Pittsfield, NY is the strongest phonetic match but is a tiny upstate hamlet; alternatives include Plattsburgh, Pleasantville, or Plattsburg. Adversarial model with archival/biographical-source access may resolve. |
+| 11.37 ("Ed Cabel" — J.E. "Ed" Cabbell) | medium | high | Cross-resolved: J.E. "Ed" Cabbell is the canonical co-author with William H. Turner of *Blacks in Appalachia* (1985, U Press of Kentucky); his West-Virginia-based African American Appalachian Studies work is well-attested. The "Ed Cabel" rendering is consistent with Whisper's frequent surname-ending-vowel-drop pattern. |
+| 11.43 ("Joan Bond / Joan Boyd" — Appalachian songwriter) | medium | medium — speaker-originating | "Joan Boyd" appears twice as a real Appalachian (Big Stone Gap area) songwriter; no canonical corroboration but speaker-originating consistency is strong. Stays medium per the Pass 1 + Pass 2 calibration. |
+| 11.47 ("Mary Ethel Dose" — Albany Movement teen singer) | medium | high | Cross-resolved with P2 #11.P2.7 + cross-corpus catalog (Bernice Johnson Reagon Freedom Singers context). Mary Ethel Dozier (later Mary Ethel Jones) is the canonical Albany Movement teen singer who, with Bernice Johnson, Rutha Mae Harris, and Cordell Reagon, formed the original 1962 SNCC Freedom Singers. Promoted to high. |
+| 11.P2.12 ("their Went Silver Mat" — Irwin Silber) | medium | high | Irwin Silber (1925-2010) was the canonical *Sing Out!* editor 1951-67 and co-founder of People's Songs with Pete Seeger. Whisper rendering "their Went Silver Mat" is consistent with the magazine-context references (Bob Dylan early career, *Broadside* magazine) in surrounding spans. Promoted to high. |
+| 11.P2.13 ("Bella Oaks" — Phil Ochs) | medium | high | Cross-resolved with Pass 1 #11.36 ("Bella Oaks" → "Phil Ochs"). Phonetic substitution clear; "Bella Oaks" → "Phil Ochs" is a documented Whisper failure pattern (consonant cluster drop). Phil Ochs is the canonical 1960s topical-songs folk-revival songwriter, peer of Bob Dylan + Tom Paxton in the canonical *Broadside* magazine circle. Promoted to high. |
+| 11.P2.16 ("Pickfield" — Pittsfield NY) | low | low — flag for adversarial | Same as 11.34 above. |
+
+**Adversarial-review flags (for user's Kiro/Kimi/Codex/Gemini multi-model check):**
+
+| Row | Item | Reason |
+|---|---|---|
+| 11.13 | "Mary had a doctor" Candie's Fisk roommate name | Personal recollection unverifiable from public sources; needs archival/biographical access |
+| 11.22 | "Lucian" Pitzer political-science prof | Likely Lucian Marquis but needs Pitzer faculty-roster cross-check |
+| 11.29 | Mary Jane Pigee opera-singer joint-concert episode | Vera Mae Pigee canonical; daughter Mary Jane Pigee Davidson canonical opera singer; episode-specific verification gap |
+| 11.34 / 11.P2.16 | "Picksfield" / "Pickfield" — Carawans' 1965-67 NY residence | Phonetic match to Pittsfield NY is weak (tiny hamlet); could be Plattsburgh or another |
+| 11.25 | "Bernice/Betty Mayfax" Albany teen singer | Probably Bertha Gober; needs Albany Movement Freedom Singers roster verification |
+
+**Ground-truth corpus candidates (figures to add to civil_rights_facts.json):**
+
+- Myles Horton: Highlander Folk School co-founder (1932, with Don West + James Dombrowski) and lifelong director; canonical mentor figure to Septima Clark, Rosa Parks, John Lewis, and the SCLC-Citizenship-Schools lineage. Already a key prose mention in the existing "Highlander Folk School" entry but warrants standalone figure entry for the Smithsonian-grade corpus. Aliases needed: "Miles Horton" (corpus-pervasive Whisper failure).
+- Zilphia Horton: Highlander music director 1935-56; arranged "We Shall Overcome" from the Charles Tindley hymn + the Louise Shropshire / Lucille Simmons union-song variant; foundational to the Movement-songs canon; died 1956. Aliases: "Zopian" (corpus-pervasive Whisper failure).
+- Guy and Candie Carawan: Highlander music directors 1959-92 (Guy) and lifelong (Candie); the team who introduced "We Shall Overcome" to the SNCC founding at Shaw University April 1960. *We Shall Overcome!* (Folkways/Smithsonian 1963) is the canonical Movement-songs anthology. Foundational for Smithsonian-grade corpus given the Folkways/Smithsonian throughline.
+- Bernice Johnson Reagon: SNCC Freedom Singers founder 1962; Sweet Honey in the Rock founder 1973; Smithsonian Folkways scholar; PhD ethnomusicology. Canonical Movement-music historian + corpus-frequent reference (#3, #6, #11, #29, #41, et al.).
+- Esau Jenkins: Johns Island SC Sea Islands community leader; co-architect with Septima Clark of the original Highlander Citizenship Schools 1957; foundational Movement organizer in the SC Lowcountry.
+- Bernice Robinson: Septima Clark's cousin; first Citizenship School teacher (Johns Island 1957); Highlander/SCLC CEP teacher 1957-70. Canonical Citizenship Schools co-architect.
+- Anne and Carl Braden: Louisville KY *Southern Patriot* editors (SCEF); foundational white-Southerner Movement allies; canonical SNCC bridge figures.
+- Pete Seeger: foundational folk-revival figure; the man who, with Guy Carawan, popularized "We Shall Overcome" beyond the Movement; canonical bridge between the labor-songs and civil-rights-songs traditions. Already cross-referenced (entry #97 is Seeger's own interview); warrants ground-truth-corpus entry.
+- *Sing for Freedom* workshops 1960-65: Guy and Candie Carawan's annual interracial song-leader workshops; foundational to the Folkways Movement-music canon.
+- *We Shall Overcome!* (1963 Folkways album, ed. Guy Carawan): canonical Movement-songs anthology; Smithsonian Folkways.
+- Phil Ochs: canonical topical-songs folk-revival songwriter (1940-76); *Broadside* magazine contributor with Bob Dylan + Tom Paxton; corpus-recurring reference.
+
+**Pass 3 missed-pattern catches:**
+
+| # | Span | Correction | Confidence | Source | Context |
+|---|---|---|---|---|---|
+| 11.P3.1 | "Charles Tindley hymn" / "I'll Overcome Someday" | Rev. Charles Albert Tindley (1851-1933), Methodist hymnwriter | high | canonical | The 1900 hymn "I'll Overcome Someday" is the documented gospel source from which the Highlander union-song variant "We Will Overcome" + the canonical "We Shall Overcome" descend. Tindley was a foundational Black Methodist hymnwriter (the "Father of African American Hymnody"). Header context in master MD references "adapted from a Charles Tindley hymn" — should be in the corpus for any We-Shall-Overcome attribution analysis. |
+| 11.P3.2 | "Carleton exchange" / "Pomona-Fisk exchange" | Carleton-Pomona-Fisk-Carleton-Wesleyan-Spelman-Howard exchange | high | canonical | The 1948-onward "Carleton Plan" was a cooperative-exchange program among historically white liberal-arts colleges (Carleton, Pomona, Wesleyan, etc.) and the historically Black colleges (Fisk, Spelman, Howard). Candie's spring 1960 Fisk year was via this Carleton exchange. Catalog-worthy as the structural mechanism that placed multiple white Northern students at HBCUs immediately before the sit-ins. |
+| 11.P3.3 | "Wayland Hand" / "Wells in Hand" / "Whale in Hand" | Wayland Debs Hand (UCLA folklorist) | high | canonical | Cross-corpus catalog candidate. Wayland D. Hand (1907-1986) was president of the American Folklore Society 1957, chair of UCLA Folklore & Mythology, and Guy Carawan's MA advisor in folklore. Whisper renders him as "Wells in Hand" (Pass 1 #11.6) and "Whale in Hand" (Pass 2 #11.P2.10) — both clear Whisper failures on a canonical academic name. |
+| 11.P3.4 | "April 1960 conference at Highlander" | April 15-17, 1960 SNCC founding-period Highlander conference | high | canonical | The April 1960 Highlander conference where Guy and Candie Carawan first met is the same gathering circle as the April 15-17 SNCC founding meeting at Shaw University, Raleigh. The Highlander piece preceded SNCC's founding by approximately one week. Catalog-worthy for chronology. |
+| 11.P3.5 | "Charles Tindley" not yet in catalog | Add as canonical figure | high | canonical | New ground-truth-corpus candidate; the gospel-music progenitor of "We Shall Overcome." |
+
+**Audit-complete marker**: Pass 3 complete on entry #11 as of 2026-05-22. Ready for adversarial-model review.

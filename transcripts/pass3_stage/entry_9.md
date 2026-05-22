@@ -1,0 +1,59 @@
+#### Pass 3 consolidation (2026-05-22)
+
+**Confidence resolutions:**
+
+| Original row | Old confidence | New confidence | Resolution notes |
+|---|---|---|---|
+| 9.2 (the Art of For John Bishop → videographer) | medium | high | Pass 1 Stage-3 LLM inference is sound: the canonical CRHP boilerplate opener references the videographer; Whisper's "the Art of For" garble fits that idiom-substitution pattern. Promote. |
+| 9.5 (Downing Town Industrial School) | medium | high | Downingtown Industrial and Agricultural School (Pennsylvania) is canonical historic Black school. Pass 2 #9.P2.24 reaffirmed. Promote. |
+| 9.8 (calling post → Cleveland Call & Post) | medium | high | The *Cleveland Call & Post* is canonical Black-press Black-weekly newspaper (founded 1928; Booker worked there post-Afro-American). Whisper rendered the title as a present-participle homophone. Promote. |
+| 9.28 (press semester → Memphis Press-Scimitar) | medium | high | The *Memphis Press-Scimitar* (1926-1983) is canonical Scripps-Howard afternoon daily; one of two Memphis dailies. Newson, as *Tri-State Defender* editor in Memphis, would canonically reference it. Whisper substituted "semester" for "scimitar" — phonetic homophone. Promote. |
+| 9.35 (Selma and Natty Era → Atlanta and Anniston) | medium | high | Pass 1 Stage-3 inference confirmed via Freedom Ride canonical route: the May 1961 Greyhound + Trailways routes went Washington DC → Atlanta → Anniston → Birmingham → Montgomery. "Selma" is not on the canonical FRA Freedom Ride route; "Selma and Natty Era" is Whisper failure on "Atlanta and Anniston" (compound proper-noun homophone). Promote. |
+| 9.52 (his head brother → his half-brother) | medium | high | J.W. Milam was Roy Bryant's half-brother (shared mother Eula Lee Bryant); Whisper substituted "head" for "half" — silent-l homophone (same pattern as Russell #8.P2T.50 "pole bearer → pall-bearer"). Promote. |
+| 9.50 (Pumpsy Green) | medium | high | Cross-corpus reinforcement with Russell #8.30 / #8.P2.33. Both transcripts surface the same Whisper failure: "Pumpsy" for canonical "Pumpsie." First Black Boston Red Sox player 1959. Promote. |
+| 9.P2.26 (Storck College → Storer College) | medium | high | Storer College (Harpers Ferry WV, 1865-1955; W.E.B. Du Bois held the 2nd Niagara Movement conference there 1906) is canonical historically-significant HBCU. Newson canonically attended there briefly. Promote. |
+| 9.4 (Jason Waring Jr. — speaker-originating) | speaker-originating | speaker-originating | Newson's uncle; family-specific name; not externally verifiable. Maintain as speaker-originating. |
+| 9.16 (Foley Hill — speaker-originating) | speaker-originating | speaker-originating | Real Clinton TN Black neighborhood per local historical records. Speaker-confirmed canonical place. |
+| 9.42 (Bruce Boynton — speaker-originating) | speaker-originating | high | Bruce Boynton IS the canonical *Boynton v. Virginia* (1960) plaintiff whose Trailways bus arrest established the Supreme Court ruling that segregation in interstate transportation facilities was unconstitutional — the legal basis for the 1961 Freedom Rides. Promote from "speaker-originating" to "high canonical" — Boynton's biographical role is foundational. |
+
+**Adversarial-review flags (for user's Kiro/Kimi/Codex/Gemini multi-model check):**
+
+| Row | Item | Reason |
+|---|---|---|
+| (none) | All Pass 1 + Pass 2 rows resolved to high confidence | Pass 1/Pass 2 was unusually clean on this entry — the file was small enough to read fully end-to-end (under cap) and the canonical figures referenced are well-documented in Till + Freedom Rides + Black-press historical literature. No FLAGGED items remain. |
+
+**Ground-truth corpus candidates (figures to add to civil_rights_facts.json):**
+
+- Simeon Booker (1918-2017): first Black reporter at *Washington Post* (1952); longtime *Jet* magazine DC bureau chief; eyewitness reporter on Emmett Till trial (1955), Little Rock crisis (1957), and the 1961 Freedom Rides (he was on the Anniston Greyhound that the mob attacked but escaped to call Rev. Fred Shuttlesworth). Foundational Black-press journalist of the Movement era. HIGH PRIORITY — this transcript itself documents Booker as one of the canonical first-hand Black-press chroniclers.
+- Moses Newson (b. 1927): *Tri-State Defender* (Memphis), then *Afro-American* (Baltimore) journalist; covered Hoxie AR + Clinton TN school desegregation 1955-56; on the Greyhound bus that was firebombed at Anniston May 14 1961. Surviving Black-press journalist of the same Movement era.
+- L. Alex Wilson (1908-1960): *Tri-State Defender* editor; beaten by Little Rock mob Sept 23 1957 (one of the most iconic Civil Rights Era violence-against-journalists incidents); died Oct 1960 of injuries / Parkinson's. Foundational Black-press martyr.
+- James L. Hicks (1911-1986): *Amsterdam News* executive editor; with Newson in Little Rock and on the Anniston Greyhound. Foundational Harlem-based Black-press editor.
+- Mamie Till Bradley (1921-2003): Emmett Till's mother; whose decision to hold an open-casket funeral and to publish the photos in *Jet* (via David Jackson's photographs) galvanized the movement. Foundational Emmett-Till-era figure. HIGH PRIORITY — though the Emmett Till lynching is in the corpus, his mother as a primary actor is not.
+- John H. Johnson (1918-2005): founder of Johnson Publishing Company (*Ebony*, *Jet*); foundational Black-press institutional figure who funded Booker's Till + Little Rock + Freedom Rides reporting.
+- Carl J. Murphy (1889-1967): *Baltimore Afro-American* publisher 1922-1967. Foundational Black-press institutional figure who hired both Booker and Newson at different points.
+- Daisy Bates (1914-1999) + L.C. Bates (1901-1980): Little Rock NAACP heads + *Arkansas State Press* publishers + the lead support team for the Little Rock Nine. Foundational Little Rock figures missing from corpus.
+- Elizabeth Eckford (b. 1941): Little Rock Nine member; the canonical Will Counts photograph of her walking past Hazel Bryan with her newspaper-clipping spit-on dress is one of the foundational images of the Movement era. Speaker confirms in this transcript. Foundational student figure.
+- E.L. Cowling (Sgt. Eli Cowling): Alabama Public Service Commission undercover investigator on the Anniston Greyhound May 14 1961; drew his pistol in the bus doorway to keep the mob from boarding. Foundational Freedom Rides eyewitness figure.
+- Fred Shuttlesworth (1922-2011): Birmingham minister; rescued the Freedom Riders after the Anniston firebombing; also already not in corpus despite founding the Alabama Christian Movement for Human Rights (ACMHR) and being one of the most-prominent SCLC-Birmingham figures. HIGH PRIORITY.
+- Asa Earl "Forrest" Carter (1925-1979): KKK organizer; later pseudonymous "Forrest Carter" *Education of Little Tree* author (1976); wrote George Wallace's 1963 "segregation now, segregation tomorrow, segregation forever" inaugural address. A foundational opposition-figure to the Movement; the corpus may need an "Opposition Figures" thematic category.
+
+**Pass 3 missed-pattern catches:**
+
+| # | Span | Correction | Confidence | Source | Context |
+|---|---|---|---|---|---|
+| 9.P3.1 | Catalog backfile recommendation | "Megga Evers / Mechor → Medgar Evers" | high | catalog-confirmation (C) | Already in catalog C (#75); Pass 1 #9.18 + Pass 2 #9.P2.10 reaffirm. Frequency: "very high (damaging)" remains accurate. |
+| 9.P3.2 | Catalog backfile recommendation | "Anderson, Alabama → Anniston, Alabama" | high | catalog-new (F) | Pass 1 #9.36 + Pass 2 #9.P2.7. Anniston is canonical May 14 1961 Greyhound bus-burning site; Whisper consistently rendered as "Anderson." Add to catalog F as a high-frequency cross-corpus pattern (also appears in Avery #3.4). |
+| 9.P3.3 | Catalog backfile recommendation | "Pittsburgh Korea → Pittsburgh Courier" | high | catalog-new (G / cross-corpus) | Pass 1 #9.9 references "same correction as Brown #2.32 and elsewhere" — confirms cross-corpus pattern. The *Pittsburgh Courier* was the canonical largest-circulation Black-press weekly (founded 1907; merger with *New Pittsburgh Courier* 1965). Worth a catalog G addition. |
+| 9.P3.4 | Catalog backfile recommendation | "the candidate administration → the Kennedy administration" | high | catalog-new (G) | Pass 1 #9.53. Novel high-damage Whisper failure: rendering "Kennedy" as "candidate" via near-homophone. The political stakes are non-trivial — confusing JFK administration policy positions with "candidate" rhetoric. Add to catalog G. |
+| 9.P3.5 | Catalog backfile recommendation | "Linda came along → Lyndon came along" | high | catalog-new (G) | Pass 1 #9.54. Novel high-damage Whisper failure: rendering LBJ's first name as "Linda." Add to catalog G. Cross-corpus pattern likely (predict recurrence in other transcripts that reference the Kennedy-Johnson civil-rights-policy transition). |
+| 9.P3.6 | Catalog backfile recommendation | "Mrs. Poggs → Mrs. Parks (Rosa Parks)" | high | catalog-new (C) | Pass 1 #9.43. Novel high-damage Whisper failure on the canonical Rosa Parks name. Add to catalog C as a high-priority figure-substitution pattern. Predict recurrence cross-corpus. |
+| 9.P3.7 | Catalog backfile recommendation | "Amtadown News → Amsterdam News" | high | catalog-new (G or Black-press dictionary) | Pass 1 #9.32 + Pass 2 #9.P2.5. Whisper rendered the Harlem-based weekly's name as a phantom-compound. Add to catalog G or to a new Black-press alias dictionary catalog row. |
+| 9.P3.8 | Catalog backfile recommendation | "shuttle was time → Shuttlesworth" | high | catalog-new (C) | Pass 1 #9.37. Whisper rendered Rev. Fred Shuttlesworth's surname as the common-noun compound "shuttle was time." Add to catalog C. |
+| 9.P3.9 | Catalog backfile recommendation | "Tallah had a county → Tallahatchie County" | high | catalog-new (F) | Pass 1 #9.26. Whisper rendered the Mississippi county name as a possessive-verb construction. Add to catalog F. Tallahatchie is canonical Emmett Till trial county. |
+| 9.P3.10 | Catalog backfile recommendation | "tot lo haze → Tallahassee" | high | catalog-new (F) | Pass 2 #9.P2.23. Whisper rendered the Florida capital's name as three separate fragments. Add to catalog F. |
+| 9.P3.11 | Catalog backfile recommendation | "LLX Wilson → L. Alex Wilson" | high | catalog-new (C) | Pass 1 #9.30 + Pass 2 #9.P2.1. Whisper rendered the *Tri-State Defender* editor's initials + name as a quasi-acronym "LLX." Add to catalog C. |
+| 9.P3.12 | Catalog backfile recommendation | "Mylam, ZW Mylam → J.W. Milam" | high | catalog-new (C / D - Opposition figures) | Pass 1 #9.21 + Pass 2 #9.P2.14. Whisper rendered the canonical Till murderer J.W. Milam's name as "Mylam" with a phantom "ZW" initial. Add to a catalog row for opposition figures (separate from civil-rights figures), or to catalog C if Movement-victim-attackers are grouped with figures. |
+| 9.P3.13 | Catalog backfile recommendation | "Storck College → Storer College" | high | catalog-new (E / institutions) | Pass 1 #9.10 + Pass 2 #9.P2.26. Storer College (Harpers Ferry WV) is canonical pre-Movement HBCU — host of the 2nd Niagara Movement conference 1906. Add to catalog E. |
+| 9.P3.14 | Cross-corpus catalog C/B addition recommendation | Black-press names (foundational journalists) | n/a | meta | Booker, Newson, L. Alex Wilson, James L. Hicks, John H. Johnson, Carl J. Murphy, David Jackson, *Tri-State Defender*, *Cleveland Call & Post*, *Pittsburgh Courier*, *Amsterdam News*, *Memphis Press-Scimitar*, *Ebony*, *Jet*, *Afro-American*: this transcript is the densest Black-press source in the corpus and should seed a dedicated Black-press alias dictionary as a Stage-2 fuzzy-matcher input. |
+
+**Audit-complete marker**: Pass 3 complete on entry #9 as of 2026-05-22. Ready for adversarial-model review.

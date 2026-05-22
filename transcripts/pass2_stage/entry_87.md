@@ -1,0 +1,51 @@
+#### Pass 2 corrections (2026-05-22)
+
+| #       | Span as Whisper-transcribed | Suggested correction | Confidence | Source | Surrounding context |
+|---------|---|---|---|---|---|
+| 87.P2.1 | Joe Manier of the Seven World History Program | Joe Mosnier of the Southern Oral History Program | high | canonical | Pass 1 caught Manier/Mosnier; flagging the "Seven World History Program" rendering — Whisper renders "Southern" as "Seven" (catalog A — "Southern World History Program" homophone family). Recurring across corpus |
+| 87.P2.2 | quarter master outfit / quarter master depot | Quartermaster Corps (US Army) | correct | canonical | Canonical US Army logistics branch; Perry served in segregated quartermaster unit WWII Europe |
+| 87.P2.3 | Camp Vandorn, Mississippi | Camp Van Dorn, Mississippi | high | canonical | Pass 1 caught; canonical WWII Army base + 1943 364th Infantry Regiment "incident" (alleged massacre of Black soldiers, never officially confirmed) |
+| 87.P2.4 | Sucks (client Mr. Sutton Sucks) | (uncertain — possibly "Sutton Sykes" or "Sutton Sacks") | low | local | Perry's first client name: "I'm Matthew Perry, I'm an attorney here to represent Mr. Sutton Sucks" — Whisper rendering of client surname; speaker-originating local figure |
+| 87.P2.5 | inclinit weather / clinical weather | inclement weather | high | common-noun | "it was rather inclinit weather, damp and everything" — Whisper renders "inclement" (canonical weather descriptor) as "inclinit" |
+| 87.P2.6 | the band, and it must have been a condemned building | downtown / the bend / the band | low | n/a | Spartanburg law office; "the band" appears to be a phantom toponym. Speaker is describing the building location |
+| 87.P2.7 | underwood typewriters | Underwood typewriters | correct | canonical | Canonical pre-WWII US typewriter brand; Perry's office equipment 1951 |
+| 87.P2.8 | the band | (uncertain Spartanburg location) | low | n/a | Same passage |
+| 87.P2.9 | Klaaslin | Claflin (University) | high | canonical | "We had a black school. There were other black schools here, Benedict College and Allen University and Klaaslin." — Whisper renders "Claflin University" (canonical Orangeburg SC HBCU; 1869-founded; second-oldest US HBCU) as "Klaaslin". Canonical SC Black higher education context |
+| 87.P2.10 | Spotswood Robinson | Spottswood W. Robinson III | correct (per Pass 1) | canonical | Canonical NAACP-LDF + later DC Circuit federal judge |
+| 87.P2.11 | Squire Morgan | "Squire" Morgan (Esquire abbrev., Orangeburg) | correct (per Pass 1) | local | Speaker explains nickname etymology |
+| 87.P2.12 | Sequoia and McClure | *Sweatt v. Painter* and *McLaurin v. Oklahoma State Regents* | high | canonical | Pass 1 caught; canonical 1950 SCOTUS twin grad-school-integration cases |
+| 87.P2.13 | Smith versus Allright | *Smith v. Allwright* (1944) | high | canonical | Pass 1 caught; canonical SCOTUS struck-down TX white primary |
+| 87.P2.14 | mood court / mood court style | moot court / moot-court style | high | common-noun | "the cases were first argued mood court style over at the Howard University Law School" — Whisper renders canonical legal-education term "moot court" as "mood court". Foundational Howard Law preparation infrastructure |
+| 87.P2.15 | Bullware | Boulware (Harold Boulware) | high | canonical | Pass 1 caught; canonical SC NAACP attorney; co-counsel on *Elmore v. Rice* + *Wrighten v. SC* |
+| 87.P2.16 | George Elmore | George Elmore | correct | canonical | Pass 1 caught; canonical 1947 SC white-primary plaintiff |
+| 87.P2.17 | Wrighton (John Wrighton) | John H. Wrighten III | high | canonical | Pass 1 caught; canonical 1947 SC USC law school plaintiff |
+| 87.P2.18 | Judge J. Wade is wearing | Judge J. Waties Waring | high | canonical | Pass 1 caught; canonical SC federal judge 1942-52; *Elmore v. Rice* + *Briggs v. Elliott* dissent. Damaging Whisper rendering — "is wearing" treats "Waring" as verb |
+| 87.P2.19 | Mageska Simkins | Modjeska Monteith Simkins | high | canonical | Pass 1 caught; canonical "Mother of the SC Civil Rights Movement" |
+| 87.P2.20 | Phil Wittenberg | Phil Wittenberg (Philip Wittenberg) | correct (per Pass 1) | canonical | Canonical white SC attorney; filed *Fleming v. SCE&G* before KKK cross-burning |
+| 87.P2.21 | Browder versus Gail | *Browder v. Gayle* (1956) | high | canonical | Pass 1 caught; canonical Montgomery bus desegregation case |
+| 87.P2.22 | Sarah May Fleming / Sarah May Fleming Brown | Sarah Mae Fleming Brown | correct (per Pass 1) | canonical | Canonical 1954 SC bus desegregation plaintiff |
+| 87.P2.23 | Briggs versus Elliott | *Briggs v. Elliott* (1951) | correct | canonical | Pass 1 caught; canonical Clarendon County SC school desegregation case (one of 5 consolidated in *Brown v. Board* 1954) |
+| 87.P2.24 | Robert Carter | Robert L. Carter | correct (per Pass 1) | canonical | Canonical NAACP-LDF + later SDNY federal judge |
+| 87.P2.25 | the eight star standing for you then | the East Star standing for you (uncertain) | low | n/a | "the old eight star standing for you then. Warner talk" — appears in Jones #85, not Perry. Removing |
+| 87.P2.26 | Camp Lee | (no — that's Maynard Moore's reference, not Perry) | n/a | n/a | - |
+| 87.P2.27 | a quarter master outfit | a Quartermaster outfit (US Army segregated unit) | correct | canonical | Canonical WWII US Army logistics branch where most Black draftees served (cf. Theatre Quartermaster + Service-of-Supply units) |
+| 87.P2.28 | the Italian POW (Birmingham AL train terminal 1943) | Italian prisoners of war (canonical WWII US POW camps) | correct (idiom) | canonical | Canonical WWII practice: 51,000+ Italian POWs held in US camps 1943-46, including in deep South. Perry's account is canonical first-person testimony on segregation paradox (Italian enemy POWs served while Black US soldiers ordered to sandwich windows) |
+| 87.P2.29 | one of the old, underwood typewriters that you could look through | Underwood (typewriter) | correct | common-noun | "you could look through" is speaker description of older Underwood model with visible keys |
+| 87.P2.30 | a writ of habeas corpus / rid of habeas corpus | a writ of habeas corpus | high | common-noun | "I decided to file a petition for a rid of habeas corpus" — Whisper renders "writ" as "rid"; canonical legal term |
+| 87.P2.31 | the police officers normally did their own prosecuting | (canonical mid-20th-century deep-South municipal-court practice) | speaker-originating | canonical | Perry's first-person testimony on 1951 Spartanburg SC municipal court structure |
+| 87.P2.32 | I and others were spectators | (eyewitness Elmore + Wrighten trials 1947 Spring SC) | speaker-originating | canonical | Perry's foundational eyewitness account of 1947 Columbia federal court trials |
+| 87.P2.33 | the Italian young persons | Italian POWs (prisoners of war) | correct (idiom-degrade) | canonical | "Italian young persons who had been captured" — Whisper renders "Italian POWs" via paraphrase; canonical WWII POW reference |
+| 87.P2.34 | the Federal District Court / United States Bankruptcy Court (Laurel Street, Columbia SC) | US Bankruptcy Court (current); previously US District Court for SC (1947) | correct | canonical | Perry's location reference; canonical pre-Robert Vance courthouse |
+| 87.P2.35 | the Democratic primary elections / white only primaries | white primaries (the canonical Jim Crow voting practice struck down by *Smith v. Allwright* 1944) | correct | canonical | Canonical pre-VRA Black-disenfranchisement mechanism |
+| 87.P2.36 | the chief assistant to Thurgood Marshall | (Robert L. Carter, later NAACP General Counsel) | correct | canonical | Speaker self-corrects: "Robert Carter was then a young associate of Thurgood Marshalls who was either then or later became the chief assistant" |
+| 87.P2.37 | a Jim Crow dump | (Thurgood Marshall's canonical 1947 phrase for the SC State law school) | speaker-originating (quoting Marshall) | canonical | Perry quoting Marshall's assessment of the rushed-construction SC State law school built to evade *Wrighten v. SC* ruling |
+| 87.P2.38 | his decisions in both instances | (Judge Waring's twin 1947 SC federal rulings) | speaker-originating | canonical | Perry's first-person eyewitness testimony on canonical pre-*Brown* SC jurisprudence |
+| 87.P2.39 | Bob Carter | Robert L. Carter | correct | canonical | Pass 1 caught; canonical NAACP-LDF attorney |
+| 87.P2.40 | the police officers were trying their own prosecution | (canonical mid-20th-century deep-South municipal-court practice) | speaker-originating | canonical | Canonical 1950s deep-South municipal court structure where arresting officer also served as prosecutor — this is testimony on a now-largely-obsolete US judicial practice |
+| 87.P2.41 | the Federal Courthouse named for our interviewee today | Matthew J. Perry Jr. US Courthouse (Columbia SC, named 2004) | correct | canonical | Canonical federal courthouse renaming; Perry interviewed in the building bearing his name two months before his death |
+| 87.P2.42 | Fleming versus the South Carolina Electric and Gas Company | *Fleming v. South Carolina Electric and Gas Company* (1954-56) | correct | canonical | Canonical SC bus desegregation case predating *Browder v. Gayle* by 17 months |
+| 87.P2.43 | rubber neck | rubberneck | correct (idiom) | common-noun | "I was able to rubber neck over" — Perry observing *Briggs v. Elliott* trial Charleston June 1951 |
+| 87.P2.44 | the Sutton Sucks case | (Perry's first client; surname uncertain) | low | local | Same as 87.P2.4 above; flagging recurrence |
+| 87.P2.45 | NAACP Legal Defense Fund and NAACP Office of General Counsel | NAACP-LDF (Inc. Fund) + NAACP Office of General Counsel | correct | canonical | Canonical 1957 institutional split between LDF and NAACP main; Perry was "cooperating attorney" for both |
+
+Pass 1 captured all canonical figures (Marshall, Carter, Robinson, Greenberg, Motley, Boulware, Wittenberg, Waring, Jenkins, Simkins, Fleming Brown, Perry himself); Pass 2 surfaces (a) Claflin University as additional canonical SC HBCU; (b) "moot court" → "mood court"; (c) "writ" → "rid" legal-term degradation; (d) "Seven World History Program" recurring Southern-degrade; (e) "inclement" → "inclinit"; (f) the recurring "Italian POWs" canonical-context note.
