@@ -2,6 +2,20 @@
 
 Project context: an open-source AI system that transforms the Library of Congress Civil Rights History Project oral history archive (600+ hours of interviews, produced in collaboration with the Smithsonian NMAAHC) into structured, searchable metadata. The Smithsonian has been scrutinizing the team's AI-generated summaries for hallucinations -- the quality bar is "Smithsonian-grade publication," not "good enough for a research demo."
 
+## Pacing constraints
+
+**Eric is on Claude Max 20x with consistent unused weekly headroom** and pre-paid overage credits that have never been touched. Do not throttle token usage, insert sleep gaps between iterations, or split independent work across wakeups to conserve prompt cache. Optimize for **wall-clock time and visible progress**, not tokens or cache hit rate.
+
+**Hard deadline 2026-05-27 is 5–6 days away as of 2026-05-22.** Pace work accordingly.
+
+**Do not use `/loop` for backlog work.** `/loop` is for event-gated polling (CI runs, file watches, remote queues) or calendar cadences (daily, weekly). For "burn through N known independent items," spawn N parallel `Agent` subagents in a single message — wall-clock = slowest single subagent, not the sum. An 89-item transcript-audit backlog finishes in ~10 minutes via parallel subagents, not hours of 270s sleep pulses.
+
+**For genuine multi-hour persistence** (overnight work, scheduled cleanups, work that must survive session close), use `/schedule` (cron in Anthropic's cloud). Eric's real reason for reaching toward `/loop` is continuity across his errands/sleep windows, not a preference for sleep pulses — `/schedule` is the right answer for that, not `/loop`.
+
+**Do not ask for confirmation between batches of independent work.** Run to completion.
+
+External rate limits (OpenAI, Firebase, Fly.io, GitHub, Netlify) still apply. This rule is about Anthropic-side conservatism only.
+
 ## Current sprint status (as of 2026-05-21)
 
 **Hard deadline: Wednesday 2026-05-27 team meeting at WWU.**
