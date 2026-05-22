@@ -456,7 +456,9 @@ export default function PeopleGrid() {
             }}>
               {searchTerm ? `${filteredPeople.length} of ${people.length} People` : `${people.length} People`}
             </h2>
+            <label htmlFor="people-grid-search" className="sr-only">Search people by name</label>
             <input
+              id="people-grid-search"
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
