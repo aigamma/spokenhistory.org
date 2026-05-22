@@ -30,6 +30,7 @@ import ArrowRightIcon from "../assetts/vectors/arrow right.svg";
 import SimpleArrowLeftIcon from "../assetts/vectors/simple arrow left.svg";
 import SimpleArrowRightIcon from "../assetts/vectors/simple arrow right.svg";
 import useViewport from "../hooks/useViewport";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 /**
  * PlaylistBuilder - Optimized component for fast playlist loading
@@ -39,6 +40,10 @@ const PlaylistBuilder = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  // Dynamic page title with the active keyword. Falls back to "Playlist"
+  // before any keyword is selected.
+  const keywordForTitle = searchParams.get('keywords');
+  useDocumentTitle(keywordForTitle ? `${keywordForTitle} playlist` : 'Playlist');
   // Mobile vs desktop carousel branching. The JS-driven translateX
   // pagination assumes 504px items + 24px gaps; on mobile we let the
   // carousel scroll naturally via overflow-x-auto with scroll-snap so

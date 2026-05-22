@@ -32,6 +32,7 @@ import FeedbackModal from '../components/FeedbackModal';
 import SelectionFeedbackButton from '../components/SelectionFeedbackButton';
 import WelcomeDisclaimerModal from '../components/WelcomeDisclaimerModal';
 import { useInlineFeedback } from '../hooks/useInlineFeedback';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 // Simple feedback - just save to Firestore
 const FEEDBACK_ENABLED = true;
@@ -266,6 +267,7 @@ const EmmettTillVideo = () => {
  * Home - Timeline-based landing page matching Figma design
  */
 export default function Home() {
+  useDocumentTitle(null); // Home page uses bare site name as its title
   const { user } = useAuth();
   const [landingImageUrl, setLandingImageUrl] = useState(null);
   const [imageLoading, setImageLoading] = useState(true);

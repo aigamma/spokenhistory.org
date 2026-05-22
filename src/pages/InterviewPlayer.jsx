@@ -11,6 +11,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import { getInterviewData, getInterviewSegments, getAllInterviews } from '../services/firebase'
 import { useAuth } from '../contexts/AuthContext'
 import { useInlineFeedback } from '../hooks/useInlineFeedback'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 import FeedbackModal from '../components/FeedbackModal'
 import SelectionFeedbackButton from '../components/SelectionFeedbackButton'
 import Header from '../components/common/Header'
@@ -72,6 +73,17 @@ export default function InterviewPlayer() {
     documentName
 
   const interviewSectionLabel = interviewSubject ? `Interview: ${interviewSubject}` : 'Interview'
+
+  // Dynamic page title: shows the interviewee name as soon as the
+  // Firestore fetch resolves; before that, shows the document slug
+  // (still better than the generic site name). Falls back to a
+  // bare "Interview" label if nothing is available.
+  useDocumentTitle(
+    mainSummary?.name ||
+    (Array.isArray(mainSummary?.intervieweeNames) && mainSummary.intervieweeNames.filter(Boolean).join(', ')) ||
+    documentName ||
+    'Interview'
+  )
 
   // Inline feedback functionality
   const {
