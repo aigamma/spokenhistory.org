@@ -1,0 +1,217 @@
+# rag/ — Civil Rights History Project RAG layer
+
+Retrieval scaffolding for the Smithsonian-grade publication pipeline. The
+substrate is Pinecone (Builder tier, separate project from worldthought
+under the same organization) + Voyage AI (voyage-3 embeddings + rerank-2).
+
+## Why Pinecone Builder + Voyage AI
+
+See `docs/RAG_SUBSTRATE_DECISION.md` for the full decision record. Short
+version:
+
+- Pinecone Builder ($20/mo flat, multi-project) hosts both worldthought
+  and civil rights under one billing relationship
+- Managed substrate is the right team-handoff profile for the WWU
+  academic stakeholders (zero ops burden on them)
+- Voyage-3 (1024-dim) + voyage-rerank-2 is the standard Smithsonian-grade
+  retrieval stack — significantly better than gte-small on semantically
+  dense corpora like oral history transcripts
+- Cost ceiling: ~$22–25/mo all-in (Pinecone $20 + Voyage ~$2–5)
+
+## Architecture
+
+```
+[ user query ]
+      |
+      v
+[ rag/retrieve.mjs: embedQuery → pineconeQuery → voyageRerank ]
+      |
+      v
+[ top-N passages with metadata ]
+      |
+      v
+[ chat / LLM context builder (downstream — not in this module) ]
+```
+
+Ingest:
+
+```
+[ transcripts/raw/ ]
+      |
+      v (scripts/apply_corrections.py)
+      |
+[ transcripts/corrected/ ]
+      |
+      v (rag/ingest.mjs)
+      |
+[ rag/chunker.mjs ] -- time-aware for .srt/.vtt, paragraph-aware for .txt
+      |
+      v
+[ rag/embed.mjs ] -- Voyage voyage-3 input_type=document
+      |
+      v
+[ Pinecone civil-rights index ]
+```
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `shared.mjs` | Env-var resolution, Pinecone/Voyage HTTP helpers, walker, paths |
+| `chunker.mjs` | Time-aware (.srt/.vtt) and paragraph-aware (.txt) chunking |
+| `embed.mjs` | Voyage embedding batch helper with retry+backoff |
+| `ingest.mjs` | Walker + ingest CLI (CLI flags: `--entries`, `--include-ground-truth`, `--prune`, `--dry-run`) |
+| `retrieve.mjs` | Two-stage retrieve: Pinecone hybrid query → Voyage rerank-2 |
+| `.env.example` | Env-var template (copy to `.env.local`, never commit) |
+
+## Index design
+
+One Pinecone index `civil-rights`, single namespace `''` (default).
+Filtering and isolation are handled via metadata, not namespaces. This
+keeps cross-interview semantic search natural while letting filters
+restrict to a single interview when needed.
+
+### Vector ID format
+
+`<chunk_type>::<entry-N|global>::<source-safe>::<chunk-index>::<hash>`
+
+Examples:
+- `transcript_segment::entry-73::Kathleen_Cleaver__interview_2025...::42::a1b2c3d4`
+- `ground_truth_fact::global::civil_rights_facts_Stokely_Carmichael::0::4f5a6b7c`
+
+Deterministic IDs enable idempotent re-ingest. Unchanged chunks are
+detected by content-hash collision and skipped without an embedding call.
+
+### Metadata schema
+
+Every vector carries these fields (some optional):
+
+| Field | Type | Always present? |
+|---|---|---|
+| `chunk_type` | enum: `transcript_segment` \| `summary_chapter` \| `ground_truth_fact` | yes |
+| `entry_number` | int | yes for transcript_segment + summary_chapter |
+| `entry_subject` | string | yes for transcript_segment + summary_chapter |
+| `source_path` | string (repo-relative) | yes |
+| `source_ext` | string (`.txt`, `.srt`, `.vtt`, `.json`) | yes for transcript_segment |
+| `chunk_index` | int | yes |
+| `content_hash` | string (16-hex sha256 prefix) | yes |
+| `text` | string (the chunk content itself) | yes |
+| `timestamp_start_seconds` | float | only for time-aware chunks |
+| `timestamp_end_seconds` | float | only for time-aware chunks |
+| `cue_count` | int | only for time-aware chunks |
+| `canonical_name` | string | only for ground_truth_fact |
+| `aliases` | string[] | only for ground_truth_fact |
+
+### Hybrid retrieval
+
+The Pinecone index should be created with both dense and sparse vectors
+enabled (Pinecone now supports this on all tiers, including Builder). The
+retrieve.mjs module is written to use dense-only by default; once the
+index is provisioned with sparse support, switch the retrieval call to
+the `/query` endpoint with `sparse_vector` to get BM25 + cosine fusion.
+
+For day-one deployment, dense-only is fine. The hybrid path is documented
+here for the post-MVP retrieval tightening.
+
+## Setup steps (one-time)
+
+These actions happen in Pinecone's web console (Eric / authorized
+admin). The code in this directory is the application layer; the index
+itself is provisioned out-of-band.
+
+1. **Create new Pinecone project** under your organization, named
+   `civil-rights-prod` (or similar). Builder tier supports multiple
+   projects.
+2. **Create an index** in that project:
+   - Name: `civil-rights`
+   - Dimension: `1024` (voyage-3)
+   - Metric: `cosine`
+   - Type: Serverless (Builder default)
+   - Cloud + region: closest to your Netlify edge (e.g., `aws-us-east-1`)
+   - Hybrid: enable sparse + dense, if available on Builder (else dense-only)
+3. **Copy index credentials** (API key + index host URL) into
+   `.env.local` per `.env.example`.
+4. **Get a Voyage AI API key** at https://dash.voyageai.com/. Add to
+   `.env.local`.
+
+## Setup steps (per ingest run)
+
+```bash
+# 1. Produce corrected transcripts from raw via the audit overlay
+python scripts/apply_corrections.py
+
+# 2. Embed + upsert into Pinecone (idempotent on content hash)
+node --env-file=rag/.env.local rag/ingest.mjs
+
+# 3. Optionally include the ground-truth corpus
+node --env-file=rag/.env.local rag/ingest.mjs --include-ground-truth
+
+# 4. After a re-pass on the audit overlay, re-run the ingest. Only the
+#    changed chunks will be re-embedded.
+node --env-file=rag/.env.local rag/ingest.mjs
+
+# 5. To remove orphaned vectors after deletions:
+node --env-file=rag/.env.local rag/ingest.mjs --prune
+```
+
+## Retrieval (from a chat function)
+
+```javascript
+import { retrieve } from './rag/retrieve.mjs';
+
+const results = await retrieve(userQuestion, {
+  topK: 30,
+  topN: 8,
+  filter: { entry_number: { $eq: 73 } },  // optional
+});
+
+// results: [
+//   {
+//     id: 'transcript_segment::entry-73::...',
+//     pinecone_score: 0.91,
+//     rerank_score: 0.87,
+//     text: 'And we went down to Greenwood, Mississippi, where Stokely...',
+//     metadata: { entry_number: 73, entry_subject: 'Kathleen Cleaver',
+//                 timestamp_start_seconds: 1842.3, ... },
+//   },
+//   ...
+// ]
+```
+
+## Substrate-adapter portability
+
+The Pinecone-specific HTTP calls live in `shared.mjs` (headers + endpoints)
+and the upper-level functions in `ingest.mjs` + `retrieve.mjs`. To migrate
+to a different substrate (Weaviate, Supabase pgvector, Qdrant), the file
+surface to swap is:
+
+- `shared.mjs` — endpoint + header config
+- `ingest.mjs::listAllVectorIds`, `::upsertVectors`, `::deleteVectorIds`
+- `retrieve.mjs::pineconeQuery` (rename + reshape per new substrate)
+
+The chunking (`chunker.mjs`), embedding (`embed.mjs`), and rerank
+(`retrieve.mjs::voyageRerank`) layers are substrate-agnostic and stay
+identical across migrations.
+
+A panic-button migration to Supabase pgvector would be ~1–2 days of
+work: re-implement the three Pinecone helpers against the Supabase
+client SDK, change ingest output table, change retrieve query to SQL.
+The application contract (the shape returned by `retrieve()`) stays
+the same.
+
+## Cost expectations
+
+| Item | Frequency | Cost |
+|---|---|---|
+| One-time ingest (~70K chunks × ~500 tokens) | once | ~$2.10 in Voyage embedding |
+| Steady-state query embedding (~3–15K queries/mo × ~20 tokens) | monthly | <$0.02 |
+| Voyage rerank-2 on top-K retrievals | monthly | ~$1–3 |
+| Pinecone Builder (covers civil-rights + worldthought) | monthly | $20 flat |
+| **Total monthly RAG infrastructure** | | **~$22–25** |
+
+## Status as of 2026-05-22
+
+- ✅ Phase 4 scaffolding complete (this directory)
+- ⏳ Pinecone civil-rights project + index: not yet provisioned (one-time admin action)
+- ⏳ First ingest: pending Pinecone provisioning + `scripts/apply_corrections.py` running
+- ⏳ Chat function: not yet written (downstream of this scaffolding)
