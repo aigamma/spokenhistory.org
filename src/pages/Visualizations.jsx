@@ -9,6 +9,7 @@
 import { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import VisualizationContainer from '../components/visualization/VisualizationContainer.jsx';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 /**
  * Visualizations - Main visualization interface component
@@ -22,6 +23,7 @@ import VisualizationContainer from '../components/visualization/VisualizationCon
  * @returns {React.ReactElement} The visualizations page with tabbed interface
  */
 export default function Visualizations() {
+  useDocumentTitle('Visualizations');
   /**
    * State to track the currently active visualization tab
    * Options: 'timeline', 'keywords', 'map'

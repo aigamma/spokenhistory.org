@@ -11,6 +11,7 @@
 import { useState, createContext, useEffect } from 'react';
 import ClipsDirectory from '../components/ClipsDirectory';
 import PeopleGrid from '../components/PeopleGrid';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 /**
  * Context for sharing cache state and operations across directory components
@@ -30,6 +31,7 @@ export const DirectoryCacheContext = createContext(null);
  * @returns {React.ReactElement} The directory interface with tabs and content panels
  */
 export default function ContentDirectory() {
+  useDocumentTitle('Content Directory');
   // Active tab state (clips or people)
   const [activeTab, setActiveTab] = useState('clips');
   // Search term state for the clips tab

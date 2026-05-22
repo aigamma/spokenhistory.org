@@ -9,6 +9,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search as SearchIcon } from 'lucide-react';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 /**
  * SearchPage - Primary search interface for the application
@@ -22,6 +23,7 @@ import { Search as SearchIcon } from 'lucide-react';
  * @returns {React.ReactElement} The search page interface
  */
 export default function SearchPage() {
+  useDocumentTitle('Search');
   // State for the keywords input field
   const [keywords, setKeywords] = useState('');
   // Inline validation error state. Replaces the previous browser

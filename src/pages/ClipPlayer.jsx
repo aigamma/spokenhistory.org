@@ -11,6 +11,7 @@ import { useSearchParams, useNavigate } from 'react-router-dom'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../services/firebase'
 import { Clock, Tag } from 'lucide-react'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 /**
  * ClipPlayer - Page for playing individual interview clips
@@ -35,6 +36,15 @@ export default function ClipPlayer() {
 
   const [mainSummary, setMainSummary] = useState(null)
   const [clipData, setClipData] = useState(null)
+
+  // Dynamic title from the interviewee + clip topic once the
+  // Firestore fetches resolve. Before that, falls back to "Clip"
+  // + the documentName slug.
+  useDocumentTitle(
+    clipData?.topic && mainSummary?.name
+      ? `${mainSummary.name}: ${clipData.topic}`
+      : (mainSummary?.name || documentName || 'Clip')
+  )
   const [error, setError] = useState(null)
   const [playerReady, setPlayerReady] = useState(false)
   const playerRef = useRef(null)

@@ -4,9 +4,12 @@ import { useSearchParams } from 'react-router-dom'
 import { collection, getDocs, doc, getDoc, updateDoc } from 'firebase/firestore'
 import { db } from '../services/firebase'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import { useDocumentTitle } from '../hooks/useDocumentTitle'
 
 export default function PlaylistEditor() {
   const [searchParams] = useSearchParams()
+  const keyword = searchParams.get('keywords')
+  useDocumentTitle(keyword ? `Edit: ${keyword} playlist` : 'Edit playlist')
   const [videoQueue, setVideoQueue] = useState([])
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const [loading, setLoading] = useState(true)
