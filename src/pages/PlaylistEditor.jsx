@@ -100,32 +100,48 @@ export default function PlaylistEditor() {
 
             <div className="mb-4">
               <div className="flex justify-between items-center mb-2">
-                <h3 className="text-xl font-semibold">Playlist Summary</h3>
+                <h3 className="text-xl font-semibold" id="playlist-summary-heading">Playlist Summary</h3>
+                {/* Edit button. text-blue-500 (#3b82f6 = 4.0:1 on white)
+                    fails WCAG AA normal text; bumped to text-blue-700
+                    (#1d4ed8 = 8.6:1, passes AAA). Emoji removed from
+                    the visible label and aria-label spelled out for
+                    screen readers; min-h-11 brings the hit area to
+                    44x44. */}
                 <button
+                  type="button"
                   onClick={handleEditDescription}
-                  className="text-blue-500 hover:text-blue-700"
+                  className="text-blue-700 hover:text-blue-900 min-h-11 px-2 -mx-2 inline-flex items-center"
+                  aria-label="Edit playlist summary"
                 >
-                  ✏️ Edit
+                  <span aria-hidden="true" className="mr-1">✏️</span>
+                  Edit
                 </button>
               </div>
 
               {isEditingDescription ? (
                 <div className="space-y-2">
+                  <label htmlFor="playlist-summary-edit" className="sr-only">
+                    Edit playlist summary text
+                  </label>
                   <textarea
+                    id="playlist-summary-edit"
                     value={editedDescription}
                     onChange={(e) => setEditedDescription(e.target.value)}
                     className="w-full h-40 p-2 border rounded"
+                    aria-describedby="playlist-summary-heading"
                   />
                   <div className="flex justify-end space-x-2">
                     <button
+                      type="button"
                       onClick={() => setIsEditingDescription(false)}
-                      className="px-4 py-2 text-gray-600 hover:text-gray-800"
+                      className="px-4 py-2 min-h-11 text-gray-700 hover:text-gray-900"
                     >
                       Cancel
                     </button>
                     <button
+                      type="button"
                       onClick={handleSaveDescription}
-                      className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                      className="px-4 py-2 min-h-11 bg-blue-600 text-white rounded hover:bg-blue-700"
                     >
                       Save
                     </button>
@@ -194,27 +210,39 @@ export default function PlaylistEditor() {
                   </Droppable>
                 </DragDropContext>
 
-                {/* Playback Controls */}
-                <div className="flex justify-center space-x-4">
+                {/* Playback Controls.
+                    Icon-only buttons need aria-label so screen readers
+                    announce the function (skip_previous / pause /
+                    skip_next material icon names are not exposed as
+                    accessible names). min-w-11 min-h-11 brings each
+                    button to WCAG 2.2 AA 44x44; previously p-2 alone
+                    gave ~32px (small icon + 8px padding each side). */}
+                <div className="flex justify-center space-x-4" role="group" aria-label="Playback controls">
                   <button
+                    type="button"
                     onClick={handleSkipPrevious}
                     disabled={currentVideoIndex === 0}
-                    className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                    aria-label="Previous clip"
+                    className="min-w-11 min-h-11 p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center"
                   >
-                    <span className="material-icons">skip_previous</span>
+                    <span className="material-icons" aria-hidden="true">skip_previous</span>
                   </button>
                   <button
+                    type="button"
                     onClick={handlePlayPause}
-                    className="p-2 rounded-full bg-blue-500 hover:bg-blue-600 text-white"
+                    aria-label="Play or pause"
+                    className="min-w-11 min-h-11 p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white inline-flex items-center justify-center"
                   >
-                    <span id="playPauseIcon" className="material-icons">pause</span>
+                    <span id="playPauseIcon" className="material-icons" aria-hidden="true">pause</span>
                   </button>
                   <button
+                    type="button"
                     onClick={handleSkipNext}
                     disabled={currentVideoIndex === videoQueue.length - 1}
-                    className="p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                    aria-label="Next clip"
+                    className="min-w-11 min-h-11 p-2 rounded-full bg-gray-200 hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center"
                   >
-                    <span className="material-icons">skip_next</span>
+                    <span className="material-icons" aria-hidden="true">skip_next</span>
                   </button>
                 </div>
 
