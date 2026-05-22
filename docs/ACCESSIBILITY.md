@@ -53,6 +53,10 @@ Added `aria-label` to every icon-only button (hamburger, X close, search magnifi
 
 Global `*:focus-visible` rule in `src/index.css` restores a 2px civil-rights-red outline with 2-3px offset on every focused interactive element. Tailwind's preflight reset suppresses the browser default focus ring; this rule re-enables it specifically for keyboard navigation (focus-visible) without bringing back the mouse-click focus ring.
 
+### Modal focus management (WCAG 2.4.3 Focus Order + ARIA dialog pattern)
+
+The slide-out menu in `src/components/common/Header.jsx` follows the WAI-ARIA Authoring Practices dialog dismissal pattern: pressing `Escape` while the menu is open closes it, focus moves into the dialog (to the close button) on open, and focus returns to the hamburger trigger on close. The effect hook in the Header component manages both the document-level `keydown` listener and the focus restoration. The 50ms deferred focus is intentional -- it lets the slide-in CSS transition finish positioning the close button before screen readers announce the focus change, avoiding the jarring "focus moved before the element arrived" experience.
+
 ### Bypass blocks (WCAG 2.2 SC 2.4.1)
 
 Skip-link in `src/components/common/Layout.jsx` -- visually hidden until focused via keyboard Tab, then appears as a high-contrast pill at the top-left of the viewport. Targets `#main-content`. The `<main>` below carries `id="main-content"` and `tabIndex={-1}` so the link target receives focus correctly when activated. Lets keyboard users press Tab once on page load and Enter to bypass the repeated header navigation (hamburger menu + search button + slide-out sidebar = 5+ Tab presses on every page) and land directly on the content.

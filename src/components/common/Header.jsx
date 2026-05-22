@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  Search, 
+import {
+  Search,
   X
 } from 'lucide-react';
 import VectorSearchOverlay from '../VectorSearchOverlay';
@@ -23,6 +23,43 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const hamburgerRef = useRef(null);
+  const menuCloseRef = useRef(null);
+
+  // Esc-to-close + focus restoration for the slide-out menu.
+  // WCAG 2.4.3 (Focus Order) + ARIA Authoring Practices for dialogs:
+  // when the menu opens, move focus into it (to the close button) so a
+  // keyboard user lands inside the dialog; when the menu closes,
+  // return focus to the hamburger trigger so the user resumes from
+  // where they invoked the dialog rather than jumping to top of page.
+  // Esc handler is the standard dialog-dismiss affordance documented
+  // in the WAI-ARIA Authoring Practices.
+  useEffect(() => {
+    if (!isMenuOpen) return undefined;
+
+    const handleKey = (e) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+
+    // Defer the focus call until the slide-in transition has positioned
+    // the close button in the viewport; without this the focus moves to
+    // the close button before it visually arrives, which screen readers
+    // and JAWS users perceive as the focus jumping somewhere unexpected.
+    const t = setTimeout(() => {
+      menuCloseRef.current?.focus();
+    }, 50);
+
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      clearTimeout(t);
+      // Restore focus to the hamburger that opened the menu, so the
+      // keyboard user picks up where they left off.
+      hamburgerRef.current?.focus();
+    };
+  }, [isMenuOpen]);
 
 
   return (
@@ -50,6 +87,7 @@ export default function Header() {
             <div className="flex flex-col items-end gap-3">
               {/* Hamburger menu icon -- w-11 h-11 on mobile gives a WCAG 2.2 AA-compliant 44x44 tap target; lg restores the original w-12 + auto height */}
               <button
+                ref={hamburgerRef}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={isMenuOpen}
@@ -101,6 +139,7 @@ export default function Header() {
               Menu
             </div>
             <button
+              ref={menuCloseRef}
               onClick={() => setIsMenuOpen(false)}
               aria-label="Close menu"
               className="inline-flex items-center justify-center min-w-11 min-h-11 p-2 outline outline-2 outline-offset-[-1px] outline-black hover:opacity-70 transition-opacity"
