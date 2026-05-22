@@ -37,12 +37,12 @@ jobs:
     # + Chromium download + 5-URL scan typically completes in 5-8 minutes.
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - name: Setup Node 20
-        uses: actions/setup-node@v4
+      - name: Setup Node 24
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: Run pa11y-ci against staging
         # --yes auto-approves the npx install (pa11y-ci is not in
