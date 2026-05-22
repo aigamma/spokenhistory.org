@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * Modal that displays on first visit to explain the AI-driven research nature of the site
  * and how to use the feedback system
  */
 export default function WelcomeDisclaimerModal({ onClose }) {
+  const closeButtonRef = useRef(null);
+
   // Lock body scroll when modal is open
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -23,6 +25,21 @@ export default function WelcomeDisclaimerModal({ onClose }) {
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
+
+  // Move keyboard focus into the dialog on mount so screen readers
+  // announce the dialog title rather than continuing to read the
+  // page behind the backdrop. The 50ms defer lets the modal's
+  // fade-in render before focus moves in -- without it the focus
+  // ring briefly appears mid-animation and screen readers may
+  // announce the close button before the dialog has fully opened.
+  // This modal auto-shows on first visit so there is no prior
+  // trigger to restore focus to on close; the next Tab after close
+  // naturally lands on the skip-link or the first focusable
+  // element in the underlying page.
+  useEffect(() => {
+    const t = setTimeout(() => closeButtonRef.current?.focus(), 50);
+    return () => clearTimeout(t);
+  }, []);
 
   const handleBackdropClick = (e) => {
     // Only close if clicking directly on the backdrop, not its children
@@ -61,11 +78,13 @@ export default function WelcomeDisclaimerModal({ onClose }) {
               </p>
             </div>
             <button
+              ref={closeButtonRef}
+              type="button"
               onClick={onClose}
-              className="text-black hover:text-red-500 transition ml-4 flex-shrink-0"
-              aria-label="Close"
+              className="inline-flex items-center justify-center min-w-11 min-h-11 text-black hover:text-red-500 transition ml-4 flex-shrink-0"
+              aria-label="Close welcome dialog"
             >
-              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

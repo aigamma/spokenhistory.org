@@ -10,6 +10,7 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
   const recaptchaRef = useRef(null);
+  const descriptionRef = useRef(null);
   const detailsToRender = Array.isArray(contextDetails)
     ? contextDetails.filter((detail) => detail && detail.value)
     : [];
@@ -32,6 +33,16 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
+
+  // Move keyboard focus into the dialog on mount. Lands on the
+  // description textarea (the primary action) rather than the close
+  // button, because the user just selected text to report -- they
+  // want to type their feedback immediately, not dismiss. 50ms defer
+  // lets the fade-in animation complete first.
+  useEffect(() => {
+    const t = setTimeout(() => descriptionRef.current?.focus(), 50);
+    return () => clearTimeout(t);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -178,6 +189,7 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
             </label>
             <textarea
               id="description"
+              ref={descriptionRef}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               onClick={(e) => e.stopPropagation()}
