@@ -1,5 +1,5 @@
 // src/App.jsx
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Layout from './components/common/Layout'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import Home from './pages/Home'
@@ -15,6 +15,7 @@ import TopicGlossary from './pages/TopicGlossary'
 import InterviewIndex from './pages/InterviewIndex'
 import About from './pages/About'
 import ReviewQueue from './pages/ReviewQueue'
+import NotFound from './pages/NotFound'
 
 
 export default function App() {
@@ -123,8 +124,17 @@ export default function App() {
       />
 
 
-      {/* Catch all route */}
-      <Route path="*" element={<Navigate to="/" replace />} />
+      {/* Catch all route. Was <Navigate to="/" replace /> which
+          silently redirected mistyped URLs to home with no feedback;
+          users (and search-engine bots) lost the signal that the URL
+          they tried didn't exist. Now renders a proper 404 page that
+          shows the attempted path and lists the real navigation
+          destinations. NotFound is intentionally OUTSIDE
+          <ProtectedRoute> so even unauthenticated users hitting an
+          unknown URL see the 404 rather than getting bounced to the
+          login screen with no indication the URL was broken in the
+          first place. */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
     </>
   )
