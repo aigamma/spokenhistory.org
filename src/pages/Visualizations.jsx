@@ -54,31 +54,53 @@ export default function Visualizations() {
         </p>
       </div>
       
-      {/* Visualization Section - Contains tabs and visualization container */}
+      {/* Visualization Section - Contains tabs and visualization container.
+          Tabs converted to the WAI-ARIA Authoring Practices tabs pattern:
+          role="tablist" on the container, role="tab" + aria-selected on
+          each button, role="tabpanel" + aria-labelledby on the content
+          panel. Without these roles, screen readers announce each tab
+          just as a generic button rather than as part of a tab set,
+          and there's no way for a screen reader user to know what tab
+          is currently selected. */}
       <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 mb-6">
-        {/* Tab Navigation - Allows switching between visualization types */}
+        {/* Tab Navigation */}
         <div className="border-b border-gray-200">
-          <ul className="flex flex-wrap m-0 p-0 list-none">
-            {tabs.map((tab) => (
-              <li key={tab} className="flex-1">
+          <div role="tablist" aria-label="Visualization type" className="flex flex-wrap">
+            {tabs.map((tab) => {
+              const label = tab.charAt(0).toUpperCase() + tab.slice(1)
+              const isActive = activeTab === tab
+              return (
                 <button
+                  key={tab}
+                  type="button"
+                  role="tab"
+                  id={`tab-${tab}`}
+                  aria-selected={isActive}
+                  aria-controls={`tabpanel-${tab}`}
+                  tabIndex={isActive ? 0 : -1}
                   onClick={() => setActiveTab(tab)}
-                  className={`w-full py-4 px-3 text-sm text-center transition-all duration-300 cursor-pointer border-0 font-body ${
-                    activeTab === tab 
-                      ? 'bg-indigo-50 text-blue-800 font-semibold border-b-2 border-blue-600' 
-                      : 'bg-transparent text-gray-500 font-normal border-b-0'
+                  className={`flex-1 py-4 px-3 min-h-11 text-sm text-center transition-all duration-300 cursor-pointer border-0 font-body ${
+                    isActive
+                      ? 'bg-indigo-50 text-blue-800 font-semibold border-b-2 border-blue-600'
+                      : 'bg-transparent text-gray-600 font-normal border-b-0 hover:text-gray-800'
                   }`}
                 >
-                  {/* Capitalize first letter of tab name for display */}
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                  {label}
                 </button>
-              </li>
-            ))}
-          </ul>
+              )
+            })}
+          </div>
         </div>
-        
-        {/* Visualization Content - Renders the active visualization component */}
-        <div className="p-6">
+
+        {/* Visualization Content. role="tabpanel" + id matching the
+            active tab's aria-controls so screen readers tie the panel
+            to the selected tab. */}
+        <div
+          className="p-6"
+          role="tabpanel"
+          id={`tabpanel-${activeTab}`}
+          aria-labelledby={`tab-${activeTab}`}
+        >
           <VisualizationContainer activeVisualization={activeTab} />
         </div>
       </div>
