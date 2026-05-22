@@ -36,7 +36,19 @@
     "",
     "First-run result on 2026-05-22 (no actions): 5/5 URLs passed, 0",
     "errors across axe + htmlcs runners. The login page conforms to",
-    "WCAG 2.2 AA per the automated scanner."
+    "WCAG 2.2 AA per the automated scanner.",
+    "",
+    "chromeLaunchConfig.args is required for the GitHub Actions runner",
+    "(ubuntu-24.04). Ubuntu 23.10+ ships with AppArmor restrictions on",
+    "unprivileged user namespaces, which blocks Chromium's default",
+    "sandbox initialization and fails the scan at browser launch with a",
+    "'No usable sandbox' fatal error. The --no-sandbox flag bypasses",
+    "the sandbox (safe in CI because the only content being rendered is",
+    "the trusted staging deploy under our own control, not arbitrary",
+    "user input). --disable-setuid-sandbox is the matched older-style",
+    "flag. --disable-dev-shm-usage routes shared memory through /tmp",
+    "instead of the runner's small /dev/shm tmpfs, preventing OOM on",
+    "larger pages."
   ],
 
   "defaults": {
@@ -49,7 +61,10 @@
     "ignore": [
       "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
       "color-contrast"
-    ]
+    ],
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"]
+    }
   },
 
   "urls": [
