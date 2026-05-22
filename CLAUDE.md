@@ -11,10 +11,18 @@ Staging deploy: https://civil-rights-staging.netlify.app — live, Firebase-back
 What's done as of 2026-05-21: dual-scorer + citation auditor + human-review queue substrate (commits 297f47d, ecde562, 5bcb591, f50bbdb, 297f47d, 50dcf49); 60-entry ground-truth corpus with cross-entry collision validator (commits 4358213, 781d67a, 77d4503); Cloud Functions + MCP server + Firestore rules code complete; comprehensive mobile + WCAG 2.2 AA audit applied across 8 pages and components (commits 150da11 through 783d419). MobileAdvisory banner removed (783d419) — site no longer needs the "best on desktop" hedge.
 
 What needs operational action (not code work):
-1. **Deploy Cloud Functions to new Firebase project.** Requires Blaze billing on `civil-rights-history-project` + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`.
-2. **Deploy MCP server to Fly.io.** Requires `flyctl auth login` then `fly deploy` in `mcp-server/`.
-3. **Run pipeline on the 135 transcripts.** From `Metadata Generation System/`: `python app.py` to start the Flask UI, submit each .srt, or invoke `_process_single_interview` directly with `USE_DUAL_SCORING=1` env var. Each transcript at the dual-scoring + citation-audit threshold takes ~5-15 minutes of OpenAI + Claude API time.
-4. **Open PR to upstream** `jsovelove/civil-rights-history-project`. Currently 117 commits ahead.
+1. **Generate a Firebase service-account JSON.** Firebase Console > Project settings > Service accounts > Generate new private key. Save to a gitignored path (scripts/firebase/ is already gitignored). Required for the next steps.
+2. **Deploy Cloud Functions to new Firebase project.** Requires Blaze billing on `civil-rights-history-project` + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`.
+3. **Deploy MCP server to Fly.io.** Requires `flyctl auth login` then `fly deploy` in `mcp-server/`.
+4. **Run pipeline on the 135 transcripts.** From the project root: `python "Metadata Generation System/run_sample.py"` runs the smallest transcript end-to-end and dumps JSON. The Flask UI at `python app.py` handles batch submission. Cost ~$0.04 per transcript at the dual-scoring + citation-audit threshold (measured on the 2026-05-22 PoC: Maynard E. Moore, 152-line .srt, ran in 64.6s, cost $0.0348, scored Accuracy 85 / Quality 80 on the OpenAI scorer's first attempt). At ~$0.04 per transcript, the full 135-transcript corpus is ~$5.40.
+5. **Push pipeline outputs to Firestore.** `node scripts/pipeline-to-firestore.mjs --input <pipeline.json> --service-account <sa.json>` writes the JSON into interviewIndex/{slug}/subSummaries/{chapter_NN} in the new Firebase. --dry-run validates the shape without auth.
+6. **Open PR to upstream** `jsovelove/civil-rights-history-project`. Currently 118 commits ahead.
+
+Complete deployment chain (post-2026-05-22):
+- Python pipeline (Metadata Generation System/run_sample.py) -> JSON dump
+- Node bridge (scripts/pipeline-to-firestore.mjs) -> Firestore writes
+- React app (src/) reads Firestore via VITE_FIREBASE_* env vars
+- Cloud Functions (functions/) provide vector search + feedback submission once deployed
 
 What's NOT load-bearing for Wednesday: any further mobile polish, any further accessibility sweep, any further pipeline hardening. The five-track core overhaul is done; what remains is ops + content generation.
 
