@@ -32,41 +32,66 @@ export default function Footer() {
             </h3>
           </div>
           
-          {/* Navigation Links */}
-          <nav className="flex justify-center lg:justify-end gap-2 sm:gap-4 lg:gap-6 xl:gap-8">
-            <Link 
-              to="/visualizations" 
-              className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold font-['Inter'] hover:underline"
+          {/* Navigation Links. Cream (#EBEAE9) on the brand red
+              (#F2483C) measures 3.05:1, which passes the 3:1
+              large-text rule but FAILS the 4.5:1 normal-text rule.
+              For WCAG 2.2 AA compliance every link below has to
+              qualify as large text -- 18pt+ regular OR 14pt+ bold.
+              Bumped the mobile size from text-sm (10.5pt) to
+              text-base (12pt), then progressively up to text-2xl
+              at xl. At text-base bold (12pt) we are still under the
+              14pt-bold threshold by 1.5 pt; that is the unfortunate
+              minimum-size compromise of the brand red + cream pairing
+              in the footer. To force every breakpoint over the line
+              we would need either (a) text-lg bold minimum (13.5pt
+              bold, still just under 14pt) or (b) text-xl bold minimum
+              (15pt bold, passes) at the cost of a much larger mobile
+              footer. The chosen text-base/sm:text-lg/lg:text-xl/
+              xl:text-2xl progression gets text-lg-bold (just under
+              the line) at sm and clearly-large at lg+, accepting the
+              mobile edge case rather than visually dominating the
+              page on small screens.
+              Added min-h-11 + inline-flex on each link so the tap
+              area is at least 44x44 even when the text itself is
+              smaller (previous text-sm gave ~16px tall hit areas).
+              aria-current="page" support could go here later if we
+              want active-link highlighting, but the Footer currently
+              renders the same links on every page so it would always
+              be active-something. */}
+          <nav className="flex flex-wrap justify-center lg:justify-end gap-2 sm:gap-4 lg:gap-6 xl:gap-8" aria-label="Footer navigation">
+            <Link
+              to="/visualizations"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline"
               style={{ color: '#EBEAE9' }}
             >
               Timeline
             </Link>
-            <Link 
-              to="/interview-index" 
-              className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold font-['Inter'] hover:underline"
+            <Link
+              to="/interview-index"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline"
               style={{ color: '#EBEAE9' }}
             >
               Index
             </Link>
-            <Link 
-              to="/topic-glossary" 
-              className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold font-['Inter'] hover:underline"
+            <Link
+              to="/topic-glossary"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline"
               style={{ color: '#EBEAE9' }}
             >
               Glossary
             </Link>
-            <Link 
-              to="/about" 
-              className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold font-['Inter'] hover:underline"
+            <Link
+              to="/about"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline"
               style={{ color: '#EBEAE9' }}
             >
               About
             </Link>
-            <a 
-              href="https://www.loc.gov" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold font-['Inter'] hover:underline whitespace-nowrap"
+            <a
+              href="https://www.loc.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline whitespace-nowrap"
               style={{ color: '#EBEAE9' }}
             >
               Library of Congress
