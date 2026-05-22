@@ -58,15 +58,38 @@ import path from 'path'
 const args = parseArgs(process.argv.slice(2))
 
 function parseArgs(argv) {
-  const out = { input: null, serviceAccount: null, dryRun: false, slug: null }
+  const out = {
+    input: null,
+    serviceAccount: null,
+    dryRun: false,
+    slug: null,
+    // Default 'interviewIndex' matches the migrate-script default and
+    // the InterviewIndex.jsx listing-page read. But many other React
+    // pages (ClipPlayer, ClipsDirectory, KeywordDirectory, MetadataPanel,
+    // RelatedClips, MapVisualization) read from 'interviewSummaries'
+    // -- a legacy upstream collection name. To populate both targets,
+    // run the script twice with --collection interviewIndex and
+    // --collection interviewSummaries. The upstream is mid-migration
+    // between the two; see src/services/collectionMapper.js for the
+    // V1/V2 dispatcher that some pages use.
+    collection: 'interviewIndex',
+    bothCollections: false,
+  }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     if (a === '--input') out.input = argv[++i]
     else if (a === '--service-account') out.serviceAccount = argv[++i]
     else if (a === '--dry-run') out.dryRun = true
     else if (a === '--slug') out.slug = argv[++i]
+    else if (a === '--collection') out.collection = argv[++i]
+    else if (a === '--both-collections') out.bothCollections = true
     else if (a === '--help' || a === '-h') {
-      console.log('Usage: node scripts/pipeline-to-firestore.mjs --input <json> --service-account <json> [--dry-run] [--slug <override>]')
+      console.log('Usage: node scripts/pipeline-to-firestore.mjs --input <json> --service-account <json> [options]')
+      console.log('Options:')
+      console.log('  --dry-run               Validate shape without writing')
+      console.log('  --slug <override>       Override the auto-generated slug')
+      console.log('  --collection <name>     Target collection (default: interviewIndex)')
+      console.log('  --both-collections      Write to BOTH interviewIndex and interviewSummaries')
       process.exit(0)
     } else {
       console.error(`unknown arg: ${a}`)
@@ -167,12 +190,18 @@ async function main() {
   console.log(`Summary:   ${interviewDoc.summary.slice(0, 80)}${interviewDoc.summary.length > 80 ? '…' : ''}`)
   console.log(`Cost:      $${(trimmedCost?.total_cost_usd || 0).toFixed(4)}`)
 
+  const targets = args.bothCollections
+    ? ['interviewIndex', 'interviewSummaries']
+    : [args.collection]
+
   if (args.dryRun) {
     console.log('\n--dry-run set: not authenticating to Firebase, not writing.')
     console.log('Would write:')
-    console.log(`  interviewIndex/${slug}`)
-    for (const sub of subSummaryDocs) {
-      console.log(`  interviewIndex/${slug}/subSummaries/${sub.id}`)
+    for (const t of targets) {
+      console.log(`  ${t}/${slug}`)
+      for (const sub of subSummaryDocs) {
+        console.log(`  ${t}/${slug}/subSummaries/${sub.id}`)
+      }
     }
     return
   }
@@ -193,20 +222,27 @@ async function main() {
   initializeApp({ credential: cert(sa) })
   const db = getFirestore()
 
-  // Write the parent doc first.
-  await db.collection('interviewIndex').doc(slug).set(interviewDoc, { merge: true })
-  console.log(`\nWrote interviewIndex/${slug}`)
+  // Write to each target collection. The loop is sequential because
+  // we want each collection's writes to surface as a coherent block
+  // in the log, not interleaved; the per-target parallel subSummary
+  // writes inside handle the throughput.
+  let totalDocs = 0
+  for (const targetCollection of targets) {
+    await db.collection(targetCollection).doc(slug).set(interviewDoc, { merge: true })
+    console.log(`\nWrote ${targetCollection}/${slug}`)
+    totalDocs += 1
 
-  // Then each subSummary in parallel (small N, safe).
-  await Promise.all(
-    subSummaryDocs.map(async (sub) => {
-      const { id, ...rest } = sub
-      await db.collection('interviewIndex').doc(slug).collection('subSummaries').doc(id).set(rest, { merge: true })
-      console.log(`Wrote interviewIndex/${slug}/subSummaries/${id}`)
-    }),
-  )
+    await Promise.all(
+      subSummaryDocs.map(async (sub) => {
+        const { id, ...rest } = sub
+        await db.collection(targetCollection).doc(slug).collection('subSummaries').doc(id).set(rest, { merge: true })
+        console.log(`Wrote ${targetCollection}/${slug}/subSummaries/${id}`)
+      }),
+    )
+    totalDocs += subSummaryDocs.length
+  }
 
-  console.log(`\nDone. ${1 + subSummaryDocs.length} Firestore document(s) written.`)
+  console.log(`\nDone. ${totalDocs} Firestore document(s) written across ${targets.length} collection(s).`)
 }
 
 main().catch((err) => {
