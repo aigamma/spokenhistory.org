@@ -25,6 +25,7 @@ export default function Header() {
   const location = useLocation();
   const hamburgerRef = useRef(null);
   const menuCloseRef = useRef(null);
+  const searchTriggerRef = useRef(null);
 
   // Esc-to-close + focus restoration for the slide-out menu.
   // WCAG 2.4.3 (Focus Order) + ARIA Authoring Practices for dialogs:
@@ -101,6 +102,7 @@ export default function Header() {
 
               {/* Search button -- p-3 on mobile expands the 18px icon to a ~42px tap target (further enlarged by the surrounding header padding); lg restores the original p-1 + 24px icon */}
               <button
+                ref={searchTriggerRef}
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Open search"
                 className="p-3 lg:p-1 text-black hover:opacity-70 transition-opacity"
@@ -214,11 +216,23 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Search Overlay */}
+      {/* Search Overlay. The onClose callback also restores focus to
+          the search trigger button so the keyboard user picks up
+          where they invoked the dialog rather than at the top of
+          the page. The Header is the only opener of this overlay,
+          so centralizing the focus-restore here keeps the
+          VectorSearchOverlay component itself trigger-agnostic. */}
       {isSearchOpen && (
-        <VectorSearchOverlay 
+        <VectorSearchOverlay
           isOpen={isSearchOpen}
-          onClose={() => setIsSearchOpen(false)}
+          onClose={() => {
+            setIsSearchOpen(false);
+            // requestAnimationFrame defers the focus call until the
+            // overlay's slide-out transition has finished so the
+            // focus ring doesn't briefly appear inside the overlay
+            // mid-collapse.
+            requestAnimationFrame(() => searchTriggerRef.current?.focus());
+          }}
         />
       )}
     </>
