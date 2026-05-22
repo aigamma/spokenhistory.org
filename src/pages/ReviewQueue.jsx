@@ -51,6 +51,7 @@ export default function ReviewQueue() {
   const [editedSummary, setEditedSummary] = useState('')
   const [reviewerNotes, setReviewerNotes] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [actionError, setActionError] = useState(null)
 
   useEffect(() => {
     loadData()
@@ -92,19 +93,19 @@ export default function ReviewQueue() {
 
   async function handleAction(decision) {
     if (!selected || !user) return
+    setActionError(null)
     // Guard against a signed-in user without an email address on record.
-    // markReviewed in src/services/reviewQueue.js now requires a non-empty
+    // markReviewed in src/services/reviewQueue.js requires a non-empty
     // reviewerEmail (audit-trail integrity), so a user authenticated via
     // a flow that does not surface an email (anonymous auth, certain
     // OAuth providers that decline to share email, a Firebase Auth
     // account that was created with a phone number only) would otherwise
     // hit the service-side validation as an opaque "reviewerEmail must
-    // be a non-empty string" message inside window.alert. Catching it
-    // here gives the reviewer an actionable next step instead.
+    // be a non-empty string" message. Catching it here gives the
+    // reviewer an actionable next step instead.
     if (!user.email || user.email.trim().length === 0) {
-      window.alert(
-        'You must be signed in with an email address to mark a review item. ' +
-          'Sign out and sign back in with a Google account or an email/password account that has an email on file.',
+      setActionError(
+        'You must be signed in with an email address to mark a review item. Sign out and sign back in with an account that has an email on file.',
       )
       return
     }
@@ -126,7 +127,7 @@ export default function ReviewQueue() {
       await loadData()
     } catch (e) {
       console.error('Failed to update review item', e)
-      window.alert('Failed to save: ' + (e.message || 'unknown error'))
+      setActionError('Failed to save: ' + (e.message || 'unknown error'))
     } finally {
       setSubmitting(false)
     }
@@ -170,6 +171,7 @@ export default function ReviewQueue() {
       onBack={handleBack}
       onAction={handleAction}
       submitting={submitting}
+      actionError={actionError}
     />
   }
 
@@ -242,7 +244,7 @@ function ListView({ items, stats, onSelect }) {
 }
 
 
-function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setReviewerNotes, onBack, onAction, submitting }) {
+function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setReviewerNotes, onBack, onAction, submitting, actionError }) {
   const claims = item.claude_scores?.unsupported_claims || []
 
   return (
@@ -350,27 +352,45 @@ function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setR
           />
         </section>
 
+        {actionError && (
+          <section
+            id="review-queue-action-error"
+            role="alert"
+            aria-live="assertive"
+            className="mb-4 p-4 bg-red-100 border-2 border-red-500 text-red-800"
+            style={{ fontFamily: 'Source Serif Pro, serif' }}
+          >
+            {actionError}
+          </section>
+        )}
+
         <section className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <button
+            type="button"
             onClick={() => onAction(STATUS_APPROVED)}
             disabled={submitting}
-            className="px-6 py-3 text-white font-bold border-2 border-black disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-describedby={actionError ? 'review-queue-action-error' : undefined}
+            className="px-6 py-3 min-h-11 text-white font-bold border-2 border-black disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ backgroundColor: '#2A8F4A', fontFamily: 'Inter, sans-serif' }}
           >
             Approve for publication
           </button>
           <button
+            type="button"
             onClick={() => onAction(STATUS_NEEDS_REVISION)}
             disabled={submitting}
-            className="px-6 py-3 text-black font-bold border-2 border-black disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-describedby={actionError ? 'review-queue-action-error' : undefined}
+            className="px-6 py-3 min-h-11 text-black font-bold border-2 border-black disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ backgroundColor: '#E89B2A', fontFamily: 'Inter, sans-serif' }}
           >
             Send back for revision
           </button>
           <button
+            type="button"
             onClick={() => onAction(STATUS_REJECTED)}
             disabled={submitting}
-            className="px-6 py-3 text-white font-bold border-2 border-black disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-describedby={actionError ? 'review-queue-action-error' : undefined}
+            className="px-6 py-3 min-h-11 text-white font-bold border-2 border-black disabled:opacity-50 disabled:cursor-not-allowed"
             style={{ backgroundColor: '#F2483C', fontFamily: 'Inter, sans-serif' }}
           >
             Reject
