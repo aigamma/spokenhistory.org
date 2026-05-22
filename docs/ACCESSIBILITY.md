@@ -87,6 +87,8 @@ Every commit ran through CI (`.github/workflows/ci.yml`): ESLint, Vite build, No
 
 A future external audit pass (axe-core, pa11y, or WAVE) is the right next step before the publication-grade claim. The internal audit documented above is the WCAG 2.2 AA review the team committed to for the Wednesday 2026-05-27 meeting.
 
+**Automated scanner config now lives at the repo root.** Run `npm run a11y` (or `npm run a11y:json` for machine-readable output) to fire pa11y-ci against the staging deploy. Config in `.pa11yci.json` -- standard set to WCAG2AA, both axe and htmlcs runners enabled, color-contrast ignored to defer to the documented manual review of brand red large-text usages (every flagged red has been hand-verified to be inside a parent context that gives it ≥18pt regular or ≥14pt bold large-text status). First run takes 5-10 minutes because npx downloads pa11y-ci + headless Chrome; subsequent runs are ~10 seconds per scanned URL. The audit shipped scans for the 5 highest-traffic public surfaces: home, interview index, topic glossary, about, login.
+
 ---
 
 For implementation specifics, see CLAUDE.md "Accessibility tokens" section and the commit log (50+ commits between 2026-05-21 and 2026-05-22 with `audit`, `contrast`, `a11y`, `mobile`, or `tap target` in the message).
