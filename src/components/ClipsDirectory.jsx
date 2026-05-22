@@ -261,12 +261,14 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
               }}>
                 Found {clipResults.length} clip{clipResults.length !== 1 ? 's' : ''}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {clipResults.map((clip) => (
-                  <div 
-                    key={clip.id} 
-                    className="bg-white/60 rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow cursor-pointer border border-white/40"
+                  <button
+                    type="button"
+                    key={clip.id}
+                    className="text-left bg-white/60 rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow cursor-pointer border border-white/40 p-0"
                     onClick={() => handleViewClip(clip.documentName, clip.id)}
+                    aria-label={`Watch clip: ${clip.topic || clip.documentName}${clip.personName ? ` with ${clip.personName}` : ''}`}
                   >
                     {/* Clip thumbnail with timestamp overlay */}
                     <div className="relative pb-[56.25%] bg-black/10">
@@ -291,9 +293,12 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
                     </div>
                     {/* Clip metadata */}
                     <div className="p-4">
-                      {/* Topic as clip title */}
+                      {/* Topic as clip title. Brand red #F2483C at
+                          text-base = 12pt failed WCAG 2.2 AA 4.5:1.
+                          Switched to the accessible darker variant
+                          #B23E2F (4.86:1) so the heading meets AA. */}
                       <h3 className="text-base font-medium mb-1 line-clamp-1" style={{
-                        color: '#F2483C',
+                        color: '#B23E2F',
                         fontFamily: 'Freight Text Pro, Lora, serif'
                       }}>
                         {clip.topic || "Untitled Clip"}
@@ -311,15 +316,20 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
                         {clip.summary}
                       </p>
                       
-                      {/* Keywords */}
+                      {/* Keywords. text-xs (12px = 9pt) is below the
+                          large-text threshold; brand red #F2483C on
+                          the very-light red tint (10% opacity over a
+                          white-ish parent) measures even worse than
+                          on the cream background. Switched to the
+                          accessible darker variant #B23E2F. */}
                       <div className="flex flex-wrap gap-1">
                         {(clip.keywords || "").split(",").map((kw, i) => (
-                          <span 
-                            key={i} 
+                          <span
+                            key={i}
                             className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium font-mono tracking-wide"
                             style={{
-                              backgroundColor: 'rgba(242, 72, 60, 0.1)',
-                              color: '#F2483C'
+                              backgroundColor: 'rgba(178, 62, 47, 0.12)',
+                              color: '#B23E2F'
                             }}
                           >
                             {kw.trim()}
@@ -327,7 +337,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
