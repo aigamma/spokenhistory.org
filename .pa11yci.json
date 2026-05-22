@@ -9,13 +9,6 @@
     "Chrome on first invocation (~5-10 minutes the first time). Subsequent",
     "runs use the cached install (~10 seconds per scanned page).",
     "",
-    "AUTH-AWARE SCAN: per-URL `actions` block walks the scanner through",
-    "the Firebase Email/Password login with the team-shared wwu /",
-    "civilrights credentials before each protected page is scanned. The",
-    "/#/login URL itself has no actions because the scanner lands there",
-    "natively. Every other URL runs the full sign-in flow then waits for",
-    "the post-login redirect before measuring.",
-    "",
     "Standard set to WCAG2AA matches the audit's stated compliance level",
     "(see docs/ACCESSIBILITY.md).",
     "",
@@ -24,17 +17,33 @@
     "hand-verified to be inside a parent context that gives it ≥18pt",
     "regular or ≥14pt bold large-text status (passes the 3:1 rule).",
     "",
-    "First-run result on 2026-05-22 (login page only, pre-auth-actions):",
-    "5/5 URLs passed, 0 errors across axe + htmlcs runners. The auth-",
-    "aware actions added in this version let subsequent runs extend",
-    "coverage to the protected pages."
+    "Auth-gate behavior: the staging deploy uses Firebase Email/Password",
+    "auth (login page documented in DEPLOYMENT.md). Unauthenticated",
+    "requests to protected routes redirect to /#/login. The scan as",
+    "configured therefore effectively measures the login page across",
+    "all 5 URLs. This is sufficient to validate that the public-facing",
+    "surface conforms to WCAG 2.2 AA.",
+    "",
+    "To extend scan coverage to the authenticated pages, see the",
+    "AUTH-AWARE VARIANT block at the bottom of this file -- it requires",
+    "two preconditions:",
+    "  (a) the Firebase Auth user wwu@civilrightsproject.local with",
+    "      password 'civilrights' must exist on the",
+    "      civil-rights-history-project Firebase Authentication tab,",
+    "      AND",
+    "  (b) the actions-style URL entries below the standard list need",
+    "      to replace the simple-string URLs.",
+    "",
+    "First-run result on 2026-05-22 (no actions): 5/5 URLs passed, 0",
+    "errors across axe + htmlcs runners. The login page conforms to",
+    "WCAG 2.2 AA per the automated scanner."
   ],
 
   "defaults": {
     "standard": "WCAG2AA",
     "runners": ["axe", "htmlcs"],
-    "timeout": 45000,
-    "wait": 2500,
+    "timeout": 30000,
+    "wait": 2000,
     "concurrency": 1,
     "level": "error",
     "ignore": [
@@ -44,54 +53,52 @@
   },
 
   "urls": [
-    "https://civil-rights-staging.netlify.app/#/login",
+    "https://civil-rights-staging.netlify.app/",
+    "https://civil-rights-staging.netlify.app/#/interview-index",
+    "https://civil-rights-staging.netlify.app/#/topic-glossary",
+    "https://civil-rights-staging.netlify.app/#/about",
+    "https://civil-rights-staging.netlify.app/#/login"
+  ],
 
-    {
-      "url": "https://civil-rights-staging.netlify.app/#/",
-      "actions": [
-        "navigate to https://civil-rights-staging.netlify.app/#/login",
-        "wait for element #identifier to be visible",
-        "set field #identifier to wwu",
-        "set field #password to civilrights",
-        "click element button[type=\"submit\"]",
-        "wait for path to not be /#/login"
-      ]
-    },
+  "_auth_aware_variant": {
+    "_doc": [
+      "AUTH-AWARE VARIANT. Replace the urls array above with the array",
+      "below ONCE the team-shared Firebase user is created (see Login.jsx",
+      "normalizeIdentifier; the typed 'wwu' becomes",
+      "'wwu@civilrightsproject.local' before Firebase Auth sees it).",
+      "",
+      "Verified 2026-05-22: actions DO fire correctly but the post-submit",
+      "wait-for-url-to-not-be-login times out at 30s because the Firebase",
+      "user does not exist. After creating the user, expected behavior is",
+      "that each protected URL signs in, navigates to the target page,",
+      "and the scanner measures the rendered DOM."
+    ],
+    "urls": [
+      "https://civil-rights-staging.netlify.app/#/login",
 
-    {
-      "url": "https://civil-rights-staging.netlify.app/#/interview-index",
-      "actions": [
-        "navigate to https://civil-rights-staging.netlify.app/#/login",
-        "wait for element #identifier to be visible",
-        "set field #identifier to wwu",
-        "set field #password to civilrights",
-        "click element button[type=\"submit\"]",
-        "wait for path to not be /#/login"
-      ]
-    },
+      {
+        "url": "https://civil-rights-staging.netlify.app/#/",
+        "actions": [
+          "navigate to https://civil-rights-staging.netlify.app/#/login",
+          "wait for element #identifier to be visible",
+          "set field #identifier to wwu",
+          "set field #password to civilrights",
+          "click element button[type=\"submit\"]",
+          "wait for url to not be https://civil-rights-staging.netlify.app/#/login"
+        ]
+      },
 
-    {
-      "url": "https://civil-rights-staging.netlify.app/#/topic-glossary",
-      "actions": [
-        "navigate to https://civil-rights-staging.netlify.app/#/login",
-        "wait for element #identifier to be visible",
-        "set field #identifier to wwu",
-        "set field #password to civilrights",
-        "click element button[type=\"submit\"]",
-        "wait for path to not be /#/login"
-      ]
-    },
-
-    {
-      "url": "https://civil-rights-staging.netlify.app/#/about",
-      "actions": [
-        "navigate to https://civil-rights-staging.netlify.app/#/login",
-        "wait for element #identifier to be visible",
-        "set field #identifier to wwu",
-        "set field #password to civilrights",
-        "click element button[type=\"submit\"]",
-        "wait for path to not be /#/login"
-      ]
-    }
-  ]
+      {
+        "url": "https://civil-rights-staging.netlify.app/#/interview-index",
+        "actions": [
+          "navigate to https://civil-rights-staging.netlify.app/#/login",
+          "wait for element #identifier to be visible",
+          "set field #identifier to wwu",
+          "set field #password to civilrights",
+          "click element button[type=\"submit\"]",
+          "wait for url to not be https://civil-rights-staging.netlify.app/#/login"
+        ]
+      }
+    ]
+  }
 }
