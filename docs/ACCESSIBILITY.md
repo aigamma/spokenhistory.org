@@ -53,6 +53,10 @@ Added `aria-label` to every icon-only button (hamburger, X close, search magnifi
 
 Global `*:focus-visible` rule in `src/index.css` restores a 2px civil-rights-red outline with 2-3px offset on every focused interactive element. Tailwind's preflight reset suppresses the browser default focus ring; this rule re-enables it specifically for keyboard navigation (focus-visible) without bringing back the mouse-click focus ring.
 
+### Bypass blocks (WCAG 2.2 SC 2.4.1)
+
+Skip-link in `src/components/common/Layout.jsx` -- visually hidden until focused via keyboard Tab, then appears as a high-contrast pill at the top-left of the viewport. Targets `#main-content`. The `<main>` below carries `id="main-content"` and `tabIndex={-1}` so the link target receives focus correctly when activated. Lets keyboard users press Tab once on page load and Enter to bypass the repeated header navigation (hamburger menu + search button + slide-out sidebar = 5+ Tab presses on every page) and land directly on the content.
+
 ### prefers-reduced-motion
 
 Global rule in `src/index.css` neutralizes animation + transition durations to 0.01ms for users who have the OS preference enabled. Catches users with vestibular disorders, motion sensitivity, or low-power devices.
