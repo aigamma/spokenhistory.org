@@ -1,0 +1,68 @@
+name: A11y
+
+# Runs pa11y-ci against the deployed staging site once per day at 09:00 UTC
+# (a cadence that gives the daily editor enough notice if an a11y regression
+# lands without polluting every push with an extra 5-10 minute scan job).
+# Also runnable on demand via workflow_dispatch.
+#
+# The scan currently covers the login page only because the Firebase auth
+# gate redirects unauthenticated requests to /#/login; the audit's stated
+# WCAG 2.2 AA compliance for authenticated pages still rests on the
+# per-commit manual review documented in docs/ACCESSIBILITY.md, not on this
+# automated scan. Once the team-shared Firebase user is created (see
+# DEPLOYMENT.md step 3 + the _auth_aware_variant block in .pa11yci.json),
+# this workflow extends naturally to all 5 listed URLs without additional
+# changes here.
+
+on:
+  schedule:
+    # 09:00 UTC daily. The site is hosted in us-east-2 (Netlify cmh region)
+    # so an early-morning-ET scan catches any drift before the workday
+    # starts on the East Coast where the LoC + Smithsonian are.
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+# Cancel any in-flight scan when a new one is queued. The scan itself is
+# read-only (no writes to Firestore, Netlify, or anything else) so
+# cancelling mid-flight is safe.
+concurrency:
+  group: a11y-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  scan:
+    name: pa11y-ci WCAG 2.2 AA scan
+    runs-on: ubuntu-latest
+    # 15 minutes is a wide margin -- a fresh checkout + pa11y-ci install
+    # + Chromium download + 5-URL scan typically completes in 5-8 minutes.
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run pa11y-ci against staging
+        # --yes auto-approves the npx install (pa11y-ci is not in
+        # devDependencies; deliberate, see .pa11yci.json header). The
+        # implicit `npm run a11y` would also work but invoking npx directly
+        # keeps the workflow legible without the package.json indirection.
+        run: npx --yes pa11y-ci
+        env:
+          # Force pa11y-ci to use the bundled Chromium rather than trying
+          # to find a system Chrome (which Ubuntu's runner image has, but
+          # the version differs from what pa11y expects).
+          PUPPETEER_SKIP_DOWNLOAD: '0'
+
+      - name: Upload pa11y artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pa11y-failure-screenshots
+          path: |
+            pa11y-screenshots/
+            .pa11yci-report.json
+          retention-days: 14
+          if-no-files-found: warn
