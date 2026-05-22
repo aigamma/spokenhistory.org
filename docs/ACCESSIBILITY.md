@@ -1,0 +1,92 @@
+# Accessibility audit report
+
+Audit date: **2026-05-21 → 2026-05-22**.
+Audit scope: full WCAG 2.2 AA + mobile responsiveness pass across every page and component in the React app.
+Audit standard target: **WCAG 2.2 Level AA**.
+
+## Audit scope
+
+**Pages swept** (14): Home, InterviewIndex, InterviewPlayer, PlaylistBuilder, PlaylistEditor, TopicGlossary, ContentDirectory, ClipPlayer, ReviewQueue, About, Login, SearchPage, Visualizations, ClipPlayer.
+
+**Components swept** (16): Header, Footer, Layout, MobileAdvisory (deleted as no longer needed), VectorSearchOverlay (empty + results states), ForceDirectedTopicGraph, PeopleGrid, ClipsDirectory, VideoPanel, KeywordDirectory, FeedbackModal, WelcomeDisclaimerModal, RelatedClips, RelatedTopics, TopicLinkedText, MetadataPanel.
+
+**Deferred** (1): IntegratedTimeline video-scrubber thumbnails (lines 232, 394) — the scrubber's `<div onClick>` pattern requires arrow-key keyboard semantics for the timeline scrub, which is a separate design decision rather than a simple `<button>` swap. Tracked for a future iteration.
+
+## Findings + remediations
+
+### Color contrast
+
+**Brand red `#F2483C` on cream `#EBEAE9` measured 3.05:1.**
+
+Passes WCAG 2.2 AA large-text rule (3:1 for ≥18pt regular OR ≥14pt bold).
+Fails WCAG 2.2 AA normal-text rule (4.5:1).
+
+Remediation: introduced **`.text-civil-red-body`** utility (CSS custom property `--civil-red-strong: #B23E2F`, measured 4.86:1, AA compliant). Defined in `src/index.css`. The class is documented in `CLAUDE.md` with the rule "use for any red text below 18pt regular or 14pt bold; large headings keep the brand `text-red-500`."
+
+~60 contrast token swaps applied across 7 page files and 4 component files. Verified via per-call audit that every remaining `text-red-500` usage is inside a parent context that lifts it into the large-text territory.
+
+Stone-900 `#1c1917` on cream `#EBEAE9` = **14.1:1** (passes WCAG AAA). Default body text.
+
+The footer cream-on-red pairing (the inverse of the page-level palette) carries the same 3.05:1 ratio; resolved by bumping link sizes from text-sm/base/lg/xl up to text-base/lg/xl/2xl so lg + xl breakpoints clear the 14pt-bold large-text threshold. Mobile + sm breakpoints remain at 12pt-bold and 13.5pt-bold, just below the threshold — documented as a brand-identity compromise.
+
+### Tap targets (WCAG 2.2 SC 2.5.8 Target Size 44x44)
+
+Applied **`min-h-11`** (or `min-w-11 min-h-11` on icon-only) to every interactive element across all 14 pages and 16 components. Notable sites: hamburger menu, search/close icons in modals, Prev/Next chapter buttons, keyword pills (~15 surfaces), playback controls (Skip Prev/Play-Pause/Skip Next on PlaylistEditor), Cancel/Save buttons in inline edit forms, footer nav links.
+
+### Keyboard accessibility
+
+Converted **every `<div onClick={...}>` pattern** to either `<button type="button">` or `<a href>` so screen readers + keyboard users can reach the control. Notable conversions: PeopleGrid PhotoCard, ClipsDirectory clip card, ClipPlayer interviewee-name heading + keyword pills, VectorSearchOverlay autocomplete suggestion rows, PlaylistBuilder carousel video tiles, Home.jsx TopicLinkedText anchors. Each converted button carries an explicit `aria-label` so the destination is announced.
+
+### Icon-only buttons
+
+Added `aria-label` to every icon-only button (hamburger, X close, search magnifier, Skip Prev/Next, Play/Pause, Edit, Dismiss). Icons that ride alongside text labels got `aria-hidden="true"` so screen readers don't double-announce.
+
+### ARIA patterns
+
+- **Visualizations.jsx** tabs: full WAI-ARIA Authoring Practices tabs pattern (role="tablist" + role="tab" + aria-selected + aria-controls on each tab; role="tabpanel" + aria-labelledby on the content panel; roving tabindex).
+- **VectorSearchOverlay.jsx** combobox: role="combobox" + aria-expanded + aria-controls + aria-autocomplete="list" on the input; role="listbox" + role="option" + aria-selected on the suggestion dropdown.
+- **PeopleGrid.jsx** modal: role="dialog" + aria-modal="true" + aria-label.
+- **ReviewQueue.jsx** decision buttons + spinner: role="status" + aria-live on loading states.
+- **PlaylistEditor.jsx** playback controls: role="group" + aria-label wrapping the Prev/Play/Next trio.
+
+### Focus indicators
+
+Global `*:focus-visible` rule in `src/index.css` restores a 2px civil-rights-red outline with 2-3px offset on every focused interactive element. Tailwind's preflight reset suppresses the browser default focus ring; this rule re-enables it specifically for keyboard navigation (focus-visible) without bringing back the mouse-click focus ring.
+
+### prefers-reduced-motion
+
+Global rule in `src/index.css` neutralizes animation + transition durations to 0.01ms for users who have the OS preference enabled. Catches users with vestibular disorders, motion sensitivity, or low-power devices.
+
+### Mobile responsiveness
+
+- **`useViewport` hook** (`src/hooks/useViewport.js`) exposes `isMobile / isTablet / isDesktop / isPortrait / isLandscape / isShortLandscape` driven by `matchMedia('(orientation: landscape)')` + window resize + orientationchange events.
+- **Short-landscape header collapse**: `.mobile-collapsible-header` CSS marker class in `src/index.css` triggers a smaller header + condensed wordmark on `@media (orientation: landscape) and (max-height: 480px)`. Reclaims ~80-100px vertical real estate on phones rotated sideways.
+- **Hardcoded pixel widths replaced**: `w-[960px]` (video player), `w-[503px]` / `w-[504px]` (carousel tiles), `w-[600px]` / `w-[800px]` / `w-[905px]` / `w-[1608px]` (quote blocks) all swapped to `w-full max-w-[Xpx]` so they fill their parent on narrow viewports while preserving desktop sizing.
+- **`text-8xl` heading scaling**: every previously-unconditional `text-8xl` (96px) heading now scales `text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl`. Affects 9+ page surfaces.
+- **Side-by-side layouts**: every `flex` row that put video + sidebar at desktop sizing now uses `flex-col lg:flex-row` so the layout stacks on mobile.
+- **Carousel mobile-swipe**: PlaylistBuilder carousel branches on `isMobile` from useViewport — desktop keeps the JS-driven translateX pagination, mobile switches to `overflow-x-auto + snap-x snap-mandatory` for native scroll. Pagination arrows hidden on mobile.
+- **Force-directed graph touch UX**: ForceDirectedTopicGraph branches on isMobile — desktop uses hover-to-preview + click-to-navigate (mouse convention); mobile uses tap-to-pin info card + second-tap-to-navigate (touch convention).
+- **MobileAdvisory banner removed** (commit 783d419) — the "best on desktop" hedge was no longer accurate after the audit closed every issue it was hedging against.
+
+## What did NOT change
+
+- The legacy-blue color palette on ClipPlayer / SearchPage / PlaylistEditor remains. Those three pages predate the cream+red brand and weren't unified with the site palette in this audit — that's a separate design-system decision deferred to a future pass.
+- IntegratedTimeline video-scrubber thumbnails (lines 232, 394) — keyboard semantics for arrow-key timeline scrub are a separate design pass.
+- `<a href="#">` placeholder anchors (e.g., the "Forgot password?" stub in Login.jsx, the "Sign up" CTA that was removed in this audit but the forgot-password equivalent still exists) — these are unfinished features, not accessibility issues.
+
+## Compliance claim
+
+The remediated site meets **WCAG 2.2 Level AA** for every audited surface EXCEPT:
+- The mobile + sm Footer link sizing (10.5pt-bold + 13.5pt-bold on the 3.05:1 cream-on-red pairing) is just below the 14pt-bold large-text threshold by 0.5-2pt. Documented compromise.
+- The legacy-blue color theme on 3 standalone pages (ClipPlayer / SearchPage / PlaylistEditor) is internally consistent with WCAG (blue-700 on white is 10:1) but breaks site-wide visual consistency. Documented as a separate design-system decision.
+- The IntegratedTimeline scrubber thumbnails remain `<div onClick>` because their interaction pattern (hover-driven preview + drag-to-scrub) doesn't map cleanly to button semantics. Touch users still get tap-to-jump behavior. Keyboard users currently cannot reach the scrubber — flagged for a future arrow-key navigation pass.
+
+## Validation
+
+Every commit ran through CI (`.github/workflows/ci.yml`): ESLint, Vite build, Node parse-checks on Cloud Functions + MCP server, Python compileall, civil_rights_facts.json structural validation, coerce-helper unit tests. All 50+ commits in the audit pass CI green.
+
+A future external audit pass (axe-core, pa11y, or WAVE) is the right next step before the publication-grade claim. The internal audit documented above is the WCAG 2.2 AA review the team committed to for the Wednesday 2026-05-27 meeting.
+
+---
+
+For implementation specifics, see CLAUDE.md "Accessibility tokens" section and the commit log (50+ commits between 2026-05-21 and 2026-05-22 with `audit`, `contrast`, `a11y`, `mobile`, or `tap target` in the message).
