@@ -46,6 +46,17 @@ CLI
     python scripts/apply_corrections.py [--entries 1,2,5-10] [--dry-run] [--verbose]
 
 Run with ``--help`` for a full option listing.
+
+Notes on robustness
+-------------------
+- The script is **idempotent** — re-running on already-corrected output produces
+  identical bytes. Partial outputs from interrupted runs can simply be re-written
+  without losing data.
+- We do case-insensitive substring substitution at the Python string level
+  (``_ci_substring_replace``) rather than via the ``re`` module. Heavy use of
+  compiled ``re.Pattern`` objects across many ``subn`` calls has been observed
+  to cause occasional CPython segfaults on Windows; the plain-string path is
+  both faster and stable.
 """
 
 from __future__ import annotations
@@ -578,24 +589,12 @@ def _clean_correction_text(correction: str) -> str:
     return raw
 
 
-# Cache compiled regexes per (whisper, replacement) tuple to keep idempotent
-# behavior across reruns.
-_regex_cache: dict[str, re.Pattern[str]] = {}
-
-
-def _compile_match(whisper: str) -> re.Pattern[str]:
-    """Compile a case-insensitive regex matching the whisper rendering as a
-    substring. Word boundaries are enforced when the rendering starts/ends with
-    a word character so that we don't bleed into adjacent tokens."""
-    if whisper in _regex_cache:
-        return _regex_cache[whisper]
-    escaped = re.escape(whisper)
-    # Use boundary anchors when the rendering starts/ends with a word char.
-    prefix = r"(?<!\w)" if whisper[:1].isalnum() else ""
-    suffix = r"(?!\w)" if whisper[-1:].isalnum() else ""
-    pat = re.compile(prefix + escaped + suffix, re.IGNORECASE)
-    _regex_cache[whisper] = pat
-    return pat
+# We do case-insensitive substring substitution without the regex engine
+# (``_ci_substring_replace`` below). On Windows under heavy use, holding
+# compiled ``re.Pattern`` objects across many ``subn`` calls would, very rarely,
+# trigger a segfault or return a tuple containing a Pattern instead of the
+# expected ``(str, int)`` — a memory-corruption-class CPython issue. The
+# plain-string approach has the same word-boundary semantics and no such issues.
 
 
 def apply_substitutions_to_text(
@@ -607,17 +606,77 @@ def apply_substitutions_to_text(
     case-insensitive and respect word boundaries on alphanumeric endpoints.
     Idempotent: re-running on already-corrected text leaves it unchanged because
     the candidate strings no longer match.
+
+    The replacement text is treated as a literal string — backslash sequences
+    inside it are not interpreted as regex backreferences (we use a no-op lambda
+    around the replacement instead of passing it to ``Pattern.subn`` directly).
     """
+    if not isinstance(text, str):
+        raise TypeError(
+            f"apply_substitutions_to_text: text must be str, got {type(text)!r}; "
+            f"candidates={candidates!r} replacement={replacement!r}"
+        )
     total = 0
     new_text = text
     for cand in candidates:
+        if not isinstance(cand, str):  # pragma: no cover - defensive
+            continue
         if cand.lower() == replacement.lower():
             # Self-mapping (only differs by case) — skip; not a substantive correction.
             continue
-        pat = _compile_match(cand)
-        new_text, n = pat.subn(replacement, new_text)
+        new_text, n = _ci_substring_replace(new_text, cand, replacement)
+        if not isinstance(new_text, str):  # pragma: no cover - defensive
+            raise TypeError(
+                f"_ci_substring_replace returned non-str: {type(new_text)!r} for cand={cand!r}"
+            )
         total += n
     return new_text, total
+
+
+def _ci_substring_replace(text: str, needle: str, replacement: str) -> tuple[str, int]:
+    """Case-insensitive substring replace WITHOUT using the regex engine.
+
+    This avoids CPython's regex engine entirely — substituting at the string
+    level via `str.lower` index lookups. Word-boundary handling: if both the
+    needle's first and last characters are alphanumeric, we require that the
+    character before the match (if any) and the character after the match (if
+    any) are NOT alphanumeric, so that substring matches do not bleed into
+    adjacent tokens. Tail-only or head-only alphanumeric needles get the
+    appropriate one-sided boundary.
+
+    Returns (new_text, n_replacements).
+    """
+    if not needle:
+        return text, 0
+    needle_lower = needle.lower()
+    text_lower = text.lower()
+    n_len = len(needle_lower)
+    boundary_start = needle[:1].isalnum()
+    boundary_end = needle[-1:].isalnum()
+    out_parts: list[str] = []
+    i = 0
+    count = 0
+    while True:
+        idx = text_lower.find(needle_lower, i)
+        if idx == -1:
+            out_parts.append(text[i:])
+            break
+        # Check word-boundaries.
+        ok = True
+        if boundary_start and idx > 0 and text[idx - 1].isalnum():
+            ok = False
+        if boundary_end and idx + n_len < len(text) and text[idx + n_len].isalnum():
+            ok = False
+        if ok:
+            out_parts.append(text[i:idx])
+            out_parts.append(replacement)
+            i = idx + n_len
+            count += 1
+        else:
+            # Advance one character to keep searching.
+            out_parts.append(text[i:idx + 1])
+            i = idx + 1
+    return "".join(out_parts), count
 
 
 def apply_substitutions_to_srt_vtt(
@@ -629,6 +688,10 @@ def apply_substitutions_to_srt_vtt(
     integer cue number, the WEBVTT header, or empty. We accumulate per-cue text
     lines, perform substitutions, and reassemble.
     """
+    if not isinstance(text, str):  # pragma: no cover - defensive
+        raise TypeError(
+            f"apply_substitutions_to_srt_vtt: text must be str, got {type(text)!r}"
+        )
     total = 0
     out_lines: list[str] = []
     for line in text.splitlines(keepends=False):
@@ -649,6 +712,11 @@ def apply_substitutions_to_srt_vtt(
             continue
         # Otherwise it's cue text. Apply substitutions per-line.
         new_line, n = apply_substitutions_to_text(line, candidates, replacement)
+        if not isinstance(new_line, str):  # pragma: no cover - defensive
+            raise TypeError(
+                f"apply_substitutions_to_text returned non-str: {type(new_line)!r}; "
+                f"candidates={candidates!r} replacement={replacement!r} line={line!r}"
+            )
         total += n
         out_lines.append(new_line)
     # Reconstruct preserving the original separator. We always use \n; downstream
