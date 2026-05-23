@@ -62,7 +62,7 @@ Pass 1/2/3 corrections for the 8 entries above were generated against the *broke
 
 ---
 
-## Problem 2 — Cross-contamination items (~22 misfiled Pass 2 rows) — **RESOLVED 2026-05-22 (Phase 1a)**
+## Problem 2 — Cross-contamination items (~22 misfiled Pass 2 rows) — **RESOLVED 2026-05-22 (Phase 1a + Phase 1a-follow-on)**
 
 ### Resolved 2026-05-22 evening
 
@@ -74,6 +74,23 @@ All 22 items addressed by `transcripts/fix_cross_contamination.py`:
 - 2 reclassifications during investigation: #25.13 (not contamination — two Whisper variants of same person); #110.P2.16 (legitimate Pass 2 row; Pass 3 confusion was the issue, not the Pass 2 row)
 
 Pre/post Pass-2 row count delta: -15 net. Script is idempotent (verified). Original 22-item table preserved below for audit history.
+
+### Phase 1a follow-on cleanup (2026-05-22 evening, post-Session-4 close)
+
+After Session 4 merged Pass 4 sweeping QA + fact-check into the master MD (commit `32516a3`), an additional 46 cross-contamination retractions surfaced — Pass 4's `Re-grounding demotions` and `Adversarial-review flag updates` sub-tables explicitly directed retraction of phantom Pass 1 rows, hallucinated Pass 2 rows, drifted Pass 3 rows, and Pass-3 "DROP — unrecoverable" Whisper-degradation rows. The Session 4 `merge_pass4.py` script only INSERTED Pass 4 blocks; it did NOT modify the prior-pass rows that Pass 4 had marked for retraction. So Pass 4's retraction directives were *annotated alongside* the still-present rows rather than *physically applied*.
+
+**Phase 1a follow-on resolution:**
+- `transcripts/extract_retractions.py` — scans 355 staging files for retraction signals
+- `transcripts/build_cross_contamination_audit.py` — cross-references against master MD, bucket-classifies
+- `transcripts/fix_cross_contamination_pass4.py` — atomic transactional removal with content-match heuristic
+- `transcripts/cross_contamination_audit.json` — 68-candidate audit artifact (46 physically_remove + 22 known false positives)
+- `transcripts/cross_contamination_audit_summary.md` — human-readable summary
+
+**Cleanup applied:** 84 row lines removed across 22 entries. Master MD: 9,279,632 → 9,257,591 chars (−22,041). Verified idempotent. Top affected entries: #59 Lawson (−7 rows, NAG/SNCC cross-contamination from #60 Mulholland), #43 / #60 / #107 / #118 / #130 (3 rows each).
+
+**Meta-cross-contamination discovered:** Pass 3 supervisor for entry #59 typed wrong entry numbers when copying row references — `60.P2.9 Jane Rosette` was incorrectly logged as `59.P2.9` in Pass 3 tables. The content-match heuristic in the fix script preserved the legit Pass 2 row `59.P2.9 brighten → Brighton (Birmingham)` while removing the contaminated Pass 3 references. Same root-cause pattern as Session 2's Pass-2 cross-contamination, now manifesting at the Pass-3 layer.
+
+**Smithsonian/LoC publication-gate status:** The audit overlay's row-level corrections tables (Pass 1 / Pass 2 / Pass 3) are now substantively clean of cross-contamination. Remaining governance items: Problem 8 (Subject-paragraph publication-blocking corrections) and the intentional `(not in transcript)` cross-corpus reference rows (audit-trail markers, not hallucinations).
 
 ### Original 2026-05-22 morning punch-list (now resolved)
 

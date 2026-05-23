@@ -101,6 +101,31 @@ Final action breakdown:
 
 Pre/post Pass-2 row count delta: -15 net (-22 drops + 14 move-in/move-out balance). Master MD: 5,998,907 → 5,995,961 chars (-2,946). Script verified idempotent (second dry-run produces zero changes).
 
+##### Phase 1a follow-on (2026-05-22 evening, post-Session-4 close)
+
+After Session 4 merged Pass 4 sweeping QA + fact-check into the master MD (commit `32516a3`, +3.17 MB), the user requested a comprehensive verification + fix to ensure Pass 4's cross-contamination retractions were *physically applied* to the master MD rather than merely *annotated alongside* the still-present rows. The Session 4 merge script (`merge_pass4.py`) only inserted Pass 4 blocks; it did not modify the Pass 1 / Pass 2 / Pass 3 correction rows that Pass 4 had marked for retraction.
+
+**Agents:** Claude Opus 4.7 (parent, no subagents — direct script work as required by the task prompt).
+**Wall-clock:** ~90 minutes (extraction iteration + content-match heuristics + verification).
+**Deliverables:**
+- `transcripts/extract_retractions.py` — scans Pass 2 / Pass 2-tail / Pass 3 / Pass 4 staging files for retraction signals (RETRACTED / REMOVE / DROP / phantom / strike / withdraw / not-in-transcript / etc.) and emits raw candidate JSON. Refined through 3 iterations to balance recall (Eric's "be exhaustive" directive) against precision (avoiding false-positive removals of legitimate cross-corpus reference rows).
+- `transcripts/build_cross_contamination_audit.py` — cross-references raw candidates against the master MD, classifies into 5 buckets (`already_clean` / `annotated_but_still_present` / `no_annotation_in_master` / `ambiguous_human_review` / `known_false_positive`) and applies a 22-item false-positive override list (sub-attribution corrections, positive resolutions misclassified by keyword match, intentional `(not in transcript)` placeholder rows, rows referenced as confirming evidence rather than retraction targets).
+- `transcripts/cross_contamination_audit.json` — 68-candidate audit with verbatim Pass 4 reasoning, signal keyword matched, confidence-in-retraction, master-MD state, action, and (where applicable) current row text.
+- `transcripts/fix_cross_contamination_pass4.py` — atomic transactional removal script with content-match heuristic to handle meta-cross-contamination (where Pass 3/Pass 4 mislabels a row reference, e.g. `59.P2.9 Jane Rosette` actually belongs to `60.P2.9`). Removes only the row(s) whose CONTENT matches the candidate's reason; preserves legitimate rows that happen to share the same ID. Idempotent (verified via second dry-run = no-op).
+- `transcripts/cross_contamination_audit_summary.md` — human-readable summary of the bucket counts, top retraction signal categories, top affected entries, high-impact retractions of note, and anomalies discovered.
+
+**Action breakdown:**
+- 46 candidates `physically_remove` (cleanup applied)
+- 22 candidates `skip_no_action` (false positives per manual override list)
+- 0 candidates `ambiguous_human_review` (content-match heuristic resolved all ambiguity)
+- 38 candidates were `annotated_but_still_present` (Pass 4 block had retraction note but the actual row remained); 8 were `no_annotation_in_master` (Pass 3 "DROP — unrecoverable" directives that never got a Pass 4 follow-up annotation)
+
+**Cleanup applied:** 84 total row lines removed across 22 entries. Master MD: 9,279,632 → 9,257,591 chars (−22,041). Per-entry Pass-1 / Pass-2 / Pass-3 row deltas printed in the script's dry-run log. Top 5 most-affected entries: #59 Lawson (−7 rows, NAG/SNCC cross-contamination from #60 Mulholland), #43 / #60 / #107 / #118 / #130 (3 rows each).
+
+**Meta-cross-contamination discovered:** The Pass 3 supervisor for entry #59 typed the wrong entry number when copying row references from another entry's batch — putting `60.P2.9 Jane Rosette → Jan Rosett` (entry #60 Mulholland's NAG cohort context) into entry #59's Pass 3 confidence-resolution and adversarial-flag tables labeled as `59.P2.9`. Pass 4 author then carried the misattribution forward. The fix script's content-match heuristic correctly preserved the legit Pass 2 row `59.P2.9 brighten → Brighton (Birmingham)` while removing the contaminated Pass 3 references. This is the same root-cause-pattern as the original Pass 2 cross-contamination (batched parallel supervisors conflating cohort lists across entries), just now manifesting at Pass 3.
+
+**Smithsonian/LoC publication-gate assessment:** The audit overlay's row-level corrections tables (Pass 1 / Pass 2 / Pass 3) are now substantively clean of cross-contamination. The two remaining governance items are tracked under OPEN_PROBLEMS Problem 8 (Subject-paragraph publication-blocking corrections, ~120+ instances) and the intentional `(not in transcript)` cross-corpus reference rows (audit-trail markers, not hallucinations — could be cleaned in a separate pass but not load-bearing for the Wednesday deadline).
+
 ##### Phase 1b — Catalog back-fill (parallel subagent)
 
 Spawned 1 general-purpose subagent. Subagent wrote `transcripts/build_catalog_extension.py` (re-runnable, sentinel-bounded for idempotency) and appended a 893-line "Cross-corpus catalog — Phase 1b back-fill extension (added 2026-05-22)" subsection between Section I and the Progress Tracker.
