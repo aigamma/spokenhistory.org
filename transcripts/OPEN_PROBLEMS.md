@@ -1,6 +1,6 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
-**Last updated:** 2026-05-22 (post-Session-4 Pass 4 sweep)
+**Last updated:** 2026-05-23 (post-Layer-5 fidelity-deploy)
 **Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~9.3 MB post-Pass-4)
 **Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (140 entries, 291 aliases — ~80+ Pass-4 candidates pending corpus commit)
 **Hard deadline:** 2026-05-27 WWU team meeting (5 days from this writing)
@@ -327,7 +327,42 @@ Approach 2 is the Smithsonian-grade recommendation; approach 1 is the deadline-d
 
 ---
 
-## Problem 9 — Layer 5 corpus-global fidelity findings (1,758 advisory items) — NEW (surfaced by Layer 5 follow-on sweep 2026-05-22/23)
+## Problem 9 — Layer 5 corpus-global fidelity findings (1,758 advisory items) — **PARTIALLY RESOLVED 2026-05-23 (Layer 5 fidelity-deploy)**
+
+### Resolved 2026-05-23 (Layer 5 fidelity-deploy)
+
+`transcripts/fix_layer5_findings.py` (atomic, idempotent, verified via second dry-run = 0 changes) applied the high-confidence subset of Layer 5 findings to the master MD:
+
+| Layer 5 dimension | Action | Count |
+| --- | --- | ---: |
+| D1 canonical-figure phantoms | Annotated `[LAYER-5: phantom-rendering, fuzzy=NN.N, ensemble-adjudication-pending]` | **130** |
+| D1 low-impact phantoms | Physically removed (124 entries affected) + per-entry Layer 5 removal-log annotation | **770** |
+| D2 high-majority normalizations (≥80% share + ≥4 occ) | Rewrote correction cell + audit annotation preserving original | **7** |
+| D2 ambiguous (<80% majority or <4 occ) | Annotated `[LAYER-5: D2-ambiguous, ensemble-adjudication-pending]` | **1,174** |
+| D3 catalog contradictions | Annotated `[LAYER-5: D3-catalog-contradiction (catalog 'X': 'canon'), ensemble-adjudication-pending]` | **179** |
+| **Total rows mutated** | | **2,260** |
+
+Master MD: 9,257,591 → 9,112,733 chars (−144,858 chars). The 7 D2 normalizations applied:
+- "already in catalog section A" → "Joe Mosnier" (#29.P3.8, 96% of 24)
+- "SNCC office" → "SNCC (Student Nonviolent Coordinating Committee)" (#53.P2.10, 96% of 22)
+- "(James) Forman (uncertain)" → "James Forman" (#90.P2.15, 90% of 10)
+- "Jim Forman" → "James Forman (Jim Forman)" (#3.17, 80% of 10)
+- "Jim Forman" → "James Forman (Jim Forman)" (#7.23, 80% of 10)
+- "Rev. Hosea Williams" → "Hosea Williams" (#105.51, 90% of 10)
+- "Dinky (Constance) Romilly Forman" → "Dinky Romilly (Constance \"Dinky\" Romilly)" (#124.P2.18, 80% of 5)
+
+**What's still open (deferred to adversarial multi-model ensemble per the prompt's "annotate-don't-resolve" constraint for ambiguous cases):**
+
+1. **130 D1 canonical-figure phantom rows** — annotated with fuzzy score, awaiting ensemble adjudication. For each, the ensemble should either (a) confirm phantom + propose the actual Whisper rendering Whisper produced (so the row becomes correctable), or (b) flag the row for deletion.
+2. **1,174 D2 ambiguous rows** — annotated for ensemble decision on which canonical form to standardize. These are below the 80% majority threshold (most are 50/50 splits) where auto-resolution would be guessing.
+3. **179 D3 catalog contradictions** — annotated for ensemble triage; per the Layer 5 summary's analysis these break down as ~40 real disagreements, ~120 different-referent false positives, ~30 minor formatting variance. The ensemble should separate the real disagreements (which feed back into catalog or per-entry-row updates) from the false positives (which just need a no-op confirmation).
+4. **800+ D1 sub-canonical-figure phantoms** — these were NOT annotated by the deploy (the deploy's canonical-figure detection only flagged the ~130 rows whose correction text matches a name in `civil_rights_facts.json` ≥5 chars). The remaining ~800 are not in the ensemble's primary queue but remain in the master MD; the Layer 5 JSON has them for any future deeper sweep.
+5. **D4 cross-entry biographical consistency (0 findings)** — methodology-limited (regex approach). A future LLM-based extraction pass would surface `(figure, claim, value, source)` records for cross-entry validation.
+
+All annotations are searchable via `grep "\\[LAYER-5:" transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` — the ensemble can read each annotated row, decide, and emit a structured response keyed by `(entry_number, row_id)` similar to how `transcripts/adversarial_review_feed.json` was structured for the Pass 3 adversarial feed.
+
+### Original 2026-05-22/23 punch-list (now partially resolved)
+
 
 Layer 5 is the final Claude-side fidelity audit before the user hands off the audit overlay to the adversarial multi-model ensemble (Kiro / Kimi / Codex / Gemini + others). Unlike Pass 1 / 2 / 3 / 4 (all per-entry), Layer 5 treats `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (9.26 MB / 41,036 lines) as a single corpus-global artifact and audits four fidelity dimensions no per-entry pass could detect. Findings are **advisory** — the four artifacts (JSON + summary + parser + pipeline) are committed for the adversarial ensemble to triage; Layer 5 does NOT auto-mutate the master MD.
 

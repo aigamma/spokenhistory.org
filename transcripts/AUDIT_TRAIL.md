@@ -312,6 +312,62 @@ Top 3 categories account for 65% of all flagged items.
 
 **Handoff to the adversarial ensemble:** the four artifacts (JSON + summary + parser + pipeline) are committed. Eric's Kiro/Kimi/Codex/Gemini ensemble should prioritize the canonical-figure phantom subset (top-10 in summary), then the maiden-vs-married name normalizations (D2), then the catalog reconciliation candidates (D3 real disagreements). Adversarial findings should feed back into a final master-MD revision pass, after which the overlay is ready for `scripts/apply_corrections.py` to produce `transcripts/corrected/`.
 
+#### Layer 5 fidelity-deploy follow-on (2026-05-23 early-morning, post-Layer-5 production application)
+
+After Layer 5 produced 1,758 advisory findings (`transcripts/layer5_fidelity_audit.json`, summary + commit `6a70838`), the user requested production application of the high-confidence subset to the master MD ahead of the adversarial multi-model ensemble handoff. This sub-section documents the deploy.
+
+**Agents:** Claude Opus 4.7 (parent, no subagents — direct script work per user directive).
+**Wall-clock:** ~45 minutes (script development + dry-run iteration + idempotency fixes + apply + documentation).
+**Deliverables:**
+- `transcripts/fix_layer5_findings.py` — atomic, idempotent four-phase deploy script that selectively mutates the master MD based on Layer 5 findings. Distinguishes (a) canonical-figure phantom rows (annotate-for-ensemble), (b) low-impact phantom rows (physically remove + per-entry audit log), (c) high-majority D2 normalizations ≥80% share with ≥4 occurrences (rewrite correction cell + audit annotation preserving the original), (d) ambiguous D2 + all D3 contradictions (annotate-for-ensemble). Canonical-figure detection consults `Metadata Generation System/civil_rights_facts.json` (140 entries, 448 unique names+aliases after Phase D expansion). Two non-trivial bugs caught during iteration: (1) `find_row_line` was matching Pass 3 annotation rows that reference an earlier row via `(context)` parenthetical syntax — fixed by requiring row_id to be directly followed by a pipe-cell-separator; (2) `append_to_notes` was using ` | ` as separator which created a NEW table cell rather than appending to the existing notes cell, breaking idempotency on subsequent runs — fixed by switching to ` // ` separator. A third fix tightened the minimum-pipe-count threshold from 3 to 6 to exclude 3-column adversarial-flag tables from being treated as the original correction row.
+
+**Action breakdown (single atomic apply, verified idempotent via second dry-run):**
+
+| Layer 5 dimension | Action | Count |
+| --- | --- | ---: |
+| D1 canonical-figure phantoms | Annotate `[LAYER-5: phantom-rendering, fuzzy=NN.N, ensemble-adjudication-pending]` | 130 |
+| D1 low-impact phantoms | Physically remove + per-entry Layer 5 removal log | 770 (across 124 entries) |
+| D2 high-majority normalizations (≥80% + ≥4 occ) | Rewrite correction cell + annotation preserving original | 7 |
+| D2 ambiguous (<80% majority or <4 occ) | Annotate `[LAYER-5: D2-ambiguous, ensemble-adjudication-pending]` | 1,174 |
+| D3 catalog contradictions | Annotate `[LAYER-5: D3-catalog-contradiction (catalog 'X': 'canon'), ensemble-adjudication-pending]` | 179 |
+| **Total rows mutated** | | **2,260** |
+
+Master MD size delta: 9,257,591 → 9,112,733 chars (−144,858 chars / ~−1.6%). The shrink is dominated by the 770 physical removals; the ~1,500 annotations added back ~150 KB of notes-cell text.
+
+**D2 normalizations applied (the 7 highest-confidence corpus-wide name harmonizations):**
+
+| Entry | Row | Original correction | Normalized correction | Share | Total occ |
+| --- | --- | --- | --- | ---: | ---: |
+| #29 | 29.P3.8 | "already in catalog section A" | "Joe Mosnier" | 96% | 24 |
+| #53 | 53.P2.10 | "SNCC office" | "SNCC (Student Nonviolent Coordinating Committee)" | 96% | 22 |
+| #90 | 90.P2.15 | "(James) Forman (uncertain)" | "James Forman" | 90% | 10 |
+| #3 | 3.17 | "Jim Forman" | "James Forman (Jim Forman)" | 80% | 10 |
+| #7 | 7.23 | "Jim Forman" | "James Forman (Jim Forman)" | 80% | 10 |
+| #105 | 105.51 | "Rev. Hosea Williams" | "Hosea Williams" | 90% | 10 |
+| #124 | 124.P2.18 | "Dinky (Constance) Romilly Forman" | "Dinky Romilly (Constance \"Dinky\" Romilly)" | 80% | 5 |
+
+Each normalization preserves the original correction in a `[LAYER-5: D2-normalized 'X' -> 'Y' (majority NN% of M occ)]` audit annotation appended to the notes cell, so the ensemble can spot-check the normalization and reverse it if needed.
+
+**D1 removal distribution (top 5 entries by phantom-removal count):** #124 Tillow −23 (Senate-era figures padded with bookkeeping rows), #26 D'Army Bailey −19, #53 Simmons −19, #52 Patton −18, #125 Parker −18.
+
+**Phase B per-entry audit log:** each of the 124 affected entries gets a one-line `*Layer 5 removed N low-impact phantom rendering rows (whisper renderings not present in raw).*` annotation inserted after its Status line, preserving institutional auditability of what was removed.
+
+**What was explicitly deferred (per the prompt's "annotate-don't-resolve" constraint for ambiguous cases):**
+- 800+ D1 phantom canonical-figure rows that didn't reach the canonical-name-detection threshold (fuzzy <85 but rendering not in raw) — these are the ensemble's adjudication queue.
+- 1,174 D2 ambiguous rows (majority <80% or total <4 occ) — all annotated, none auto-resolved.
+- 179 D3 catalog-vs-per-entry contradictions — all annotated, none auto-resolved (per prompt: "if the D3 contradiction is purely formatting and one form has clear majority, apply the normalization" — the implementation defers ALL D3 to the ensemble rather than risk wrongly auto-resolving genuine catalog-disambiguation cases like "Dinky Romilly" vs "Dinky Forman" or "Janet Jemmott Moses" vs "Dona Moses née Richards").
+
+**Constraints satisfied:**
+- **Idempotent**: second dry-run produces 0 changes (`Master MD size: 9,112,733 → 9,112,733 chars (+0)`).
+- **Atomic**: single read of master MD, all mutations in memory, single write back.
+- **Catalog sections A–Z + extensions untouched**: catalog rows are excluded from D1/D2/D3 source data by Layer 5's own filters (sections H / I / P / Z). The master-MD edits only touch per-entry correction tables.
+- **Per-entry Subject paragraphs untouched**: Problem 8 territory; the script only mutates row lines inside markdown tables.
+- **`transcripts/raw/` never read or written**: the script operates only on the master MD overlay.
+
+**Smithsonian/LoC publication-gate impact:** The 770 low-impact phantom removals eliminate dead-weight rows that would have silently no-op'd in `scripts/apply_corrections.py` preprocessing. The 130 canonical-figure phantom annotations + 1,174 D2 ambiguous annotations + 179 D3 contradiction annotations are the ensemble's structured punch-list — each annotation contains enough context (fuzzy score, original variant, catalog canonical, majority share) for an adversarial model to make a decision without re-running Layer 5. The 7 normalizations are corpus-wide consistency improvements that directly raise institutional credibility (the audit overlay now uses a single canonical form for high-frequency figures rather than ~5% variant inconsistency).
+
+**Handoff:** the master MD is now in a state where (a) `scripts/apply_corrections.py` will produce cleaner output (no silent no-ops from the 770 removed phantoms), and (b) the adversarial ensemble has a focused triage queue (130 + 1,174 + 179 = 1,483 annotated rows tagged with explicit Layer 5 markers searchable via `grep "\\[LAYER-5:"` against the master MD).
+
 ---
 
 ### Session 4 — 2026-05-22 (later): Pass 4 sweeping QA + fact-check (one-transcript-per-agent architecture)

@@ -108,6 +108,8 @@ The Smithsonian (NMAAHC) and Library of Congress are gating publication on AI-ha
 - `e0a1dbf` — Session 3 Phase 5 finalization (aggregate metrics + end-of-session summary)
 - `847f763` — Cross-contamination follow-on cleanup (sub-section added to existing Session 3 Phase 1a, not a new session entry)
 - `e325d79` — Session 4 initial entry + Session 3 Phase 1 back-fill (cross-session coordination note example)
+- `6a70838` — Layer 5 corpus-global fidelity sweep (4-dimension audit, advisory artifacts, Session 3 follow-on sub-section)
+- *(post-Layer-5-deploy commit, this session)* — Layer 5 fidelity-deploy follow-on (770 phantom removals + 1,483 ensemble annotations + 7 normalizations; added as sub-section to existing Session 3 Layer 5 entry, not a new session)
 
 ## Documentation map
 
