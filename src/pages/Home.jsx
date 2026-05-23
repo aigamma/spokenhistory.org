@@ -176,8 +176,8 @@ const SmartRay = ({
  * DecadeSection - Component for decade headers
  */
 const DecadeSection = ({ decade, subtitle }) => (
-  <div className="relative mb-16 lg:mb-24 mt-20 lg:mt-32">
-        <div className="pt-8 lg:pt-20 px-2">
+  <div className="relative mb-8 lg:mb-16 mt-4 lg:mt-12">
+    <div className="pt-2 lg:pt-8 px-2">
       {/* Grid layout for desktop, stacked for mobile */}
       <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 max-w-7xl mx-auto">
         {/* Central timeline marker - hidden on mobile, centered with decade text */}
@@ -775,7 +775,7 @@ export default function Home() {
       >
 
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-8 lg:px-12 pt-2 pb-24 lg:pt-3 lg:pb-32 flex items-start z-10" style={{ minHeight: '100vh' }}>
+      <section className="relative px-4 sm:px-8 lg:px-12 pt-2 pb-12 lg:pt-3 lg:pb-32 flex flex-col lg:flex-row lg:items-start z-10 lg:min-h-screen">
         <div className="w-full mt-2 lg:mt-3">
           <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
             {/* Text Content */}
@@ -814,12 +814,12 @@ export default function Home() {
           </div>
         </div>
 
-        {/* View Timeline Link - Positioned at viewport bottom, independent of content */}
-        <div className="absolute left-4 sm:left-8 lg:left-12 bottom-32 lg:bottom-40 z-50">
+        {/* View Timeline Link - in flow on mobile, absolute bottom-left on desktop */}
+        <div className="mt-8 lg:mt-0 lg:absolute lg:left-12 lg:bottom-40 z-50">
           <button
             ref={timelineRef}
             onClick={() => {
-              timelineStartRef.current?.scrollIntoView({ 
+              timelineStartRef.current?.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
               });
@@ -831,13 +831,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Flowing Ray Elements - absolute positioning relative to page */}
-      <SmartRay targetRef={timelineRef} vertical={600} gap={15} verticalOffset={-4.1} horizontalOffset={3.4} opacity="opacity-100" />
-      
-      
+      {/* Flowing Ray Elements - absolute positioning relative to page (desktop only) */}
+      <SmartRay targetRef={timelineRef} vertical={280} gap={15} verticalOffset={-4.1} horizontalOffset={3.4} opacity="opacity-100" />
+
+
 
       {/* Timeline Content */}
-      <section ref={timelineStartRef} className="px-2 sm:px-4 lg:px-6 py-8 lg:py-16 max-w-7xl mx-auto">
+      <section ref={timelineStartRef} className="px-2 sm:px-4 lg:px-6 py-4 lg:py-8 max-w-7xl mx-auto">
         {/* 1950s Section */}
         <DecadeSection decade="1950s" subtitle="Discrimination and Desegregation" />
 
