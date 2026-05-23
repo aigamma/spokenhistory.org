@@ -18,7 +18,13 @@ merged = []
 warnings = []
 
 for n in PARTIAL_READS:
-    stage_file = STAGE / f"entry_{n}.md"
+    # Staging files were renamed 2026-05-22 from entry_N.md to entry_NNN_subject_slug.md
+    # for institutional auditability. See transcripts/rename_staging_files.py.
+    matches = sorted(STAGE.glob(f"entry_{n:03d}_*.md"))
+    if matches:
+        stage_file = matches[0]
+    else:
+        stage_file = STAGE / f"entry_{n}.md"
     if not stage_file.exists():
         warnings.append(f"No tail-sweep staging file for entry {n}")
         continue

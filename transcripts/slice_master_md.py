@@ -26,6 +26,30 @@ ENTRY_RANGE = range(1, 133)
 
 OUT_DIR.mkdir(exist_ok=True)
 
+# Subject-name slugification for the institutional-auditability naming
+# convention (entry_NNN_subject_slug.md). Kept in sync with the canonical
+# implementation at transcripts/rename_staging_files.py::slugify.
+def _slugify(subject: str, max_len: int = 60) -> str:
+    s = subject.lower()
+    diacritic_map = str.maketrans(
+        "áàâäãåéèêëíìîïóòôöõúùûüñçß",
+        "aaaaaaeeeeiiiiooooouuuunc" + "s",
+    )
+    s = s.translate(diacritic_map)
+    s = s.replace("&", " and ")
+    s = re.sub(r"[''`\".,;:]", "", s)
+    s = re.sub(r"[^a-z0-9]+", "_", s)
+    s = re.sub(r"_+", "_", s)
+    s = s.strip("_")
+    if len(s) > max_len:
+        cut = s[:max_len]
+        last_underscore = cut.rfind("_")
+        if last_underscore > max_len * 0.6:
+            s = cut[:last_underscore]
+        else:
+            s = cut
+    return s
+
 content = MASTER.read_text(encoding="utf-8")
 
 heading_re = re.compile(r"^### (\d+)\. (.+?)$", re.MULTILINE)
@@ -59,10 +83,19 @@ for n in ENTRY_RANGE:
     if raw_dir_name and not (RAW_DIR / raw_dir_name).exists():
         warnings.append(f"Entry {n}: declared raw dir '{raw_dir_name}' does not exist")
 
-    slice_path = OUT_DIR / f"entry_{n}.md"
+    # Output slices use the institutional-auditability naming convention
+    # (entry_NNN_subject_slug.md, 2026-05-22 rename). Subject slug derived from
+    # the parsed entry heading; see transcripts/rename_staging_files.py::slugify.
+    subject_slug = _slugify(subject)
+    slice_path = OUT_DIR / f"entry_{n:03d}_{subject_slug}.md"
     slice_path.write_text(section, encoding="utf-8")
 
-    pass3_path = PASS3_DIR / f"entry_{n}.md"
+    # Pass 3 staging files were also renamed in 2026-05-22; glob handles both.
+    pass3_matches = sorted(PASS3_DIR.glob(f"entry_{n:03d}_*.md"))
+    if pass3_matches:
+        pass3_path = pass3_matches[0]
+    else:
+        pass3_path = PASS3_DIR / f"entry_{n}.md"
     has_pass3 = pass3_path.exists()
     if not has_pass3:
         warnings.append(f"Entry {n}: no Pass 3 staging file")
