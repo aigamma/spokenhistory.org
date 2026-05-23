@@ -1,0 +1,44 @@
+---
+description: Project-wide context for the Civil Rights History Project transcript-audit + RAG-substrate work. Points Cursor (in chat, Composer, or agent mode — including when driven by Kimi or other models routed through Cursor) at the authoritative project documentation.
+alwaysApply: true
+---
+
+# Civil Rights History Project — Cursor context
+
+This is the **Civil Rights History Project** (`aigamma/civil-rights-history-project` on GitHub). Open-source AI system that transforms the Library of Congress Civil Rights History Project oral history archive (135 interviews, 600+ hours, produced with the Smithsonian NMAAHC) into structured searchable metadata. The Smithsonian/LoC quality bar is "publication-grade," not "good enough for a research demo."
+
+## Authoritative documents (read these first)
+
+Cursor: before answering substantive questions or proposing edits in this repo, ensure you have the context from these files. They are the project's binding conventions; do not infer project structure from filenames alone.
+
+1. **[`CLAUDE.md`](mdc:CLAUDE.md)** — the canonical project guide. Contains:
+   - Architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
+   - Pacing constraints (Claude Max 20x — no token throttling; parallel subagents preferred for backlog work)
+   - The Smithsonian-grade publication gate (dual-scorer + citation-auditor + review queue)
+   - Ground-truth corpus location and validation
+   - **Audit documentation discipline** — strict per-phase update protocol for `transcripts/AUDIT_TRAIL.md` (longitudinal session log), `transcripts/OPEN_PROBLEMS.md` (punch list), `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (non-destructive corrections overlay), and `Metadata Generation System/civil_rights_facts.json` (additions-only ground-truth corpus)
+   - **Documentation map** — inventory of ~17 human-facing markdown docs vs ~440 machine-generated per-entry staging files, with role-specific reading order
+   - Validation commands (npm run build, node --check, python -m compileall, etc.)
+   - Defensive patterns established in the overhaul
+   - Accessibility tokens (brand-red contrast rules, focus-visible behavior)
+   - Things that look broken but aren't (gotchas list)
+
+2. **[`AGENTS.md`](mdc:AGENTS.md)** — short cross-vendor agent-discovery delegator. Same content this file delegates to, in the broader `AGENTS.md` convention used by Codex / Aider / Kimi-CLI / generic LangChain-based tools / the ensemble lanes Eric is bringing up.
+
+3. **[`transcripts/AUDIT_TRAIL.md`](mdc:transcripts/AUDIT_TRAIL.md)** — longitudinal audit history across sessions. Read for: what passes have been run, what coverage each entry received, the inferential-scoring framework that the downstream ensemble will use for grading.
+
+4. **[`transcripts/OPEN_PROBLEMS.md`](mdc:transcripts/OPEN_PROBLEMS.md)** — active punch list. Read for: what work remains.
+
+## What NOT to read for project context
+
+The directories `transcripts/pass2_stage/`, `transcripts/pass2_tail_stage/`, `transcripts/pass3_stage/`, `transcripts/pass4_stage/`, and `transcripts/per_entry_slices/` contain ~440 per-entry machine-generated audit-staging files (one per audit-able entry per pass). These are **not documentation**; they are intermediate audit artifacts consumed by merge scripts. Reading them for project context will saturate your context window without informing your understanding of the project. Read `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` instead — it is the merged result.
+
+## Quick start for new Cursor session
+
+Composer / Agent mode: start any non-trivial task by ensuring `CLAUDE.md` is in context. The "Audit documentation discipline" section is non-negotiable for any work that touches the four core governance documents — failing to follow it leaves the audit overlay inconsistent and breaks downstream institutional review.
+
+Chat mode for short questions: `CLAUDE.md`'s "Documentation map" section gives you role-specific reading order (audit work / RAG work / accessibility-frontend / deployment-DevOps / pipeline-Python). Use it to scope what to read.
+
+## Why this file exists
+
+Cursor reads `.cursor/rules/*.mdc` files automatically. With `alwaysApply: true`, this rule is injected into Cursor's system prompt for every chat/Composer/Agent invocation in this repository. The content is intentionally a pointer to `CLAUDE.md` rather than a duplicate of it, so the canonical project conventions live in exactly one place and never drift between Cursor's view and Claude Code's view of the same project. The same pattern applies to the root-level `AGENTS.md` (which other vendor tools discover) and any future agent-specific rule files (`.github/copilot-instructions.md`, etc.).
