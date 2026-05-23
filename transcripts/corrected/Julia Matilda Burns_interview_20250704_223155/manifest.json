@@ -1,0 +1,939 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Julia Matilda Burns_interview_20250704_223155",
+  "entry_number": 70,
+  "entry_subject": "Julia Matilda Burns",
+  "applied_corrections": [
+    {
+      "row_id": "70.2",
+      "whisper": "Chula",
+      "correction": "Tchula",
+      "confidence": "high",
+      "occurrences": 24,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.3",
+      "whisper": "Matilda Julia Burns",
+      "correction": "Julia Matilda Burns",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.4",
+      "whisper": "Hunters County",
+      "correction": "Humphreys County",
+      "confidence": "high",
+      "occurrences": 15,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.5",
+      "whisper": "Belzona",
+      "correction": "Belzoni",
+      "confidence": "high",
+      "occurrences": 30,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.9",
+      "whisper": "Hunford / Hunford County",
+      "correction": "Humphreys County",
+      "confidence": "high",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.13",
+      "whisper": "Cleaver",
+      "correction": "Eldridge Cleaver",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.14",
+      "whisper": "Afro-Law Tennyson",
+      "correction": "Alfred Lord Tennyson",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.18",
+      "whisper": "Mausher off",
+      "correction": "Abe Osheroff",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.19",
+      "whisper": "Mauson community center",
+      "correction": "Mileston Community Center",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.20",
+      "whisper": "Mauson",
+      "correction": "Mileston",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.22",
+      "whisper": "Quentown",
+      "correction": "Sue",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.23",
+      "whisper": "Sue",
+      "correction": "Sue Lorenzi",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.24",
+      "whisper": "Reverend Arrell Whitaker",
+      "correction": "Rev. Arrell Whitaker",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.30",
+      "whisper": "CDGM",
+      "correction": "Child Development Group of Mississippi",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.33",
+      "whisper": "snake / snickered",
+      "correction": "SNCC",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.36",
+      "whisper": "Kruger",
+      "correction": "Cruger",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.37",
+      "whisper": "Durenton",
+      "correction": "Durant",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.42",
+      "whisper": "Dr. Mallory / Arena C Mallory",
+      "correction": "Dr. Arenia C. Mallory",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.45",
+      "whisper": "Milton Island Corporation",
+      "correction": "Mileston Cooperative",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.47",
+      "whisper": "the Meetri Shipgun",
+      "correction": "Dr. Demitri Shimkin",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.48",
+      "whisper": "Dr. Shemkin",
+      "correction": "Dr. Demitri Shimkin",
+      "confidence": "high",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.52",
+      "whisper": "Peoriel",
+      "correction": "Peoria",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.2",
+      "whisper": "the power security administration / Farm and home and homes / farming home administration",
+      "correction": "the Farm Security Administration (FSA)",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.4",
+      "whisper": "three-dreet",
+      "correction": "third grade",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.6",
+      "whisper": "Emmett Till / Emmett Teal",
+      "correction": "Emmett Till",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.7",
+      "whisper": "the bail zone",
+      "correction": "Belzoni",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.9",
+      "whisper": "Malcolm X",
+      "correction": "Malcolm X College",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.11",
+      "whisper": "Soul On Ice / Soul On Ice was so far as Soul",
+      "correction": "Soul on Ice",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.23",
+      "whisper": "Mississippi Freedom Nevercrack Card",
+      "correction": "Mississippi Freedom Democratic Party",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.24",
+      "whisper": "Kruger Chula Academy / Kruger / Cruger",
+      "correction": "Cruger-Tchula Academy",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.27",
+      "whisper": "Saint-Socatabas",
+      "correction": "Saints Industrial School",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.32",
+      "whisper": "Robert Kennedy Economic Development",
+      "correction": "Robert F. Kennedy Economic Development",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.38",
+      "whisper": "the cheer and didn't get scared and run",
+      "correction": "the children didn't get scared and run",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.41",
+      "whisper": "full Sunday in the month",
+      "correction": "fourth Sunday in the month",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.42",
+      "whisper": "the Brown voices board of education",
+      "correction": "Brown v. Board of Education",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P2.43",
+      "whisper": "one bill of cotton",
+      "correction": "one bale of cotton",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P4.1",
+      "whisper": "Valin",
+      "correction": "(Mississippi) Valley",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P4.5",
+      "whisper": "the Indian School Board",
+      "correction": "the end (of my time) on the school board",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P4.6",
+      "whisper": "Chugalum",
+      "correction": "Tchula",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P4.15",
+      "whisper": "the freedom of summer day",
+      "correction": "the Freedom Summer",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "70.P4.22",
+      "whisper": "I went to Mississippi State, what the Delta State",
+      "correction": "I went to (Mississippi) State, (no) Delta State",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "70.6",
+      "whisper": "Margaret Griffin and Trevenu Griffin",
+      "candidate_correction": "Margaret Griffin and Trevenu (Travenue?) Griffin",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's parents — unclear spelling of father's first name"
+    },
+    {
+      "row_id": "70.17",
+      "whisper": "John Motors",
+      "candidate_correction": "(uncertain — possibly General Motors)",
+      "confidence": "low",
+      "notes": "\"He went to New York and got a job with John Motors\"; possibly a small auto-related employer, or Whisper error for General Motors"
+    },
+    {
+      "row_id": "70.25",
+      "whisper": "Reverend Russell",
+      "candidate_correction": "Rev. Russell",
+      "confidence": "speaker-originating",
+      "notes": "Local Holmes County Movement clergy"
+    },
+    {
+      "row_id": "70.26",
+      "whisper": "Emma Nolow Williams",
+      "candidate_correction": "Emma Lou Williams",
+      "confidence": "medium",
+      "notes": "\"a little young lady about a name of Emma Nolow Williams\"; \"Nolow\" likely Whisper for \"Lou\" or \"No[la]\""
+    },
+    {
+      "row_id": "70.27",
+      "whisper": "Bernie Smangum",
+      "candidate_correction": "Bernice Mangum",
+      "confidence": "medium",
+      "notes": "\"Bernie Smangum, right? Yes, she was a teacher\"; Bernice Mangum is plausible local Holmes County teacher name"
+    },
+    {
+      "row_id": "70.28",
+      "whisper": "F.D. Marshall",
+      "candidate_correction": "F.D. Marshall",
+      "confidence": "speaker-originating",
+      "notes": "Mileston-area Movement worker"
+    },
+    {
+      "row_id": "70.29",
+      "whisper": "Roosevelt Bank Monologue",
+      "candidate_correction": "(uncertain — possibly Mileston-area community name)",
+      "confidence": "low",
+      "notes": "\"Roosevelt Bank Monologue community\"; possibly \"Roosevelt Bank Mineola\" or \"Roosevelt Bend\""
+    },
+    {
+      "row_id": "70.31",
+      "whisper": "John Ball",
+      "candidate_correction": "John Ball",
+      "confidence": "speaker-originating",
+      "notes": "Canonical Greenwood-based MS NAACP / SNCC operative // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "70.32",
+      "whisper": "SB Marshall",
+      "candidate_correction": "S.B. Marshall",
+      "confidence": "speaker-originating",
+      "notes": "Marshall High School principal (Tchula, MS)"
+    },
+    {
+      "row_id": "70.38",
+      "whisper": "Cardis",
+      "candidate_correction": "(Cruger or Cardis?) — likely Cruger",
+      "confidence": "low",
+      "notes": "\"There was a merchant in Belzona, there was a merchant in Cardis\"; possibly Cruger MS"
+    },
+    {
+      "row_id": "70.39",
+      "whisper": "Bucsden boys",
+      "candidate_correction": "(speaker recall — local Buxton/Bucksden family)",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's neighbor family in Belzoni area"
+    },
+    {
+      "row_id": "70.41",
+      "whisper": "Antoine Patrick",
+      "candidate_correction": "Antoine Patrick",
+      "confidence": "speaker-originating",
+      "notes": "Local Tchula resident who attended Ole Miss"
+    },
+    {
+      "row_id": "70.43",
+      "whisper": "Saint-Socatabas",
+      "candidate_correction": "Saints (College Holmes County) Mallory",
+      "confidence": "medium",
+      "notes": "\"Dr. Mallory, the Saint-Socatabas name for her\"; possibly \"Sant-Socatabas\" or local nickname // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "70.44",
+      "whisper": "Martin Smith",
+      "candidate_correction": "Martin Smith",
+      "confidence": "speaker-originating",
+      "notes": "White Holmes County School Board member who Burns ran against (died night before election)"
+    },
+    {
+      "row_id": "70.49",
+      "whisper": "Robert Kennedy Economic Development",
+      "candidate_correction": "Robert F. Kennedy Economic Development",
+      "confidence": "medium",
+      "notes": "Likely reference to RFK's April 1967 Mississippi Delta poverty tour with Sen. Joseph Clark and the subsequent OEO-funded Delta economic-development initiatives"
+    },
+    {
+      "row_id": "70.50",
+      "whisper": "rather than the clock",
+      "candidate_correction": "(uncertain local name)",
+      "confidence": "low",
+      "notes": "\"rather than the clock, it was the chairperson of that\"; likely a person's name garbled by Whisper"
+    },
+    {
+      "row_id": "70.51",
+      "whisper": "William Dean",
+      "candidate_correction": "William Dean",
+      "confidence": "speaker-originating",
+      "notes": "Holmes County's first Black school superintendent (late 1980s)"
+    },
+    {
+      "row_id": "70.54",
+      "whisper": "Hadith",
+      "candidate_correction": "(uncertain — possibly Hodges or Hadassah)",
+      "confidence": "low",
+      "notes": "\"I was telling Ms. Hadith\"; speaker recall — possibly a producer name on set"
+    },
+    {
+      "row_id": "70.55",
+      "whisper": "Attorney Boyd",
+      "candidate_correction": "Attorney Boyd",
+      "confidence": "speaker-originating",
+      "notes": "Local Mississippi attorney who linked Emmett Till case to his activism"
+    },
+    {
+      "row_id": "70.P2.3",
+      "whisper": "the little do-fund, a little bit harder. And find a hot bag book",
+      "candidate_correction": "(uncertain — the Dick-and-Jane primers or a regionally-named first-grade reader)",
+      "confidence": "low",
+      "notes": "\"I got the little do-fund, the little paper bag book. Find another do-fund, a little bit harder. And find a hot bag book in one year. And so many worries. And that time it was considered a three-dreet\" — likely \"Dick-and-Jane\" early-reading series mis-heard; \"three-dreet\" likely \"third-grade\""
+    },
+    {
+      "row_id": "70.P2.8",
+      "whisper": "jewbie",
+      "candidate_correction": "duty",
+      "confidence": "low",
+      "notes": "speaker recall — context unclear; cluster may need re-listening"
+    },
+    {
+      "row_id": "70.P2.12",
+      "whisper": "We Boat",
+      "candidate_correction": "Wieboldt's",
+      "confidence": "medium",
+      "notes": "\"He was working at a couple of places called We Boat. We Boat in Chicago? Big department, still\" — canonical Wieboldt Stores, the Chicago department-store chain (1883–1987); Whisper compression of \"Wieboldt's\""
+    },
+    {
+      "row_id": "70.P2.14",
+      "whisper": "Bucsden boys",
+      "candidate_correction": "(uncertain — local Belzoni-area family, possibly Buxton or Bucksden)",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.39 logged. Pass 2 confirms full context: \"There were a family of boys down below us, the Bucsden boys. They had to go to town every Saturday night... the father had to go back there Sunday morning and get them out of jail\" — local Humphreys County family name preserved as speaker-recall"
+    },
+    {
+      "row_id": "70.P2.15",
+      "whisper": "SB Marshall / Marshall High School",
+      "candidate_correction": "S.B. Marshall",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.16 and #70.32 logged. Pass 2 confirms surrounding context: SB Marshall was the principal who hired Burns back in fall 1966 after she returned from Chicago"
+    },
+    {
+      "row_id": "70.P2.16",
+      "whisper": "John Ball",
+      "candidate_correction": "John Ball",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.31 logged. Pass 2 confirms full context: \"there was a man by the name of John Ball, I believe it was John, came out of Greenwood... He came by the school and was telling me what was going on\" — Greenwood SNCC operative who came to talk to Burns about Movement organizing in Holmes County // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "70.P2.21",
+      "whisper": "Reverend Arrell Whitaker",
+      "candidate_correction": "Rev. Arrell Whitaker",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.24 logged. Pass 2 confirms full context: \"I don't know if anyone ever mentioned to you, Reverend Whitaker... they all worked together. Reverend Russell\" — Tchula MS Black Methodist minister + Holmes County Movement leader"
+    },
+    {
+      "row_id": "70.P2.22",
+      "whisper": "Bernie Smangum",
+      "candidate_correction": "Bernice Mangum",
+      "confidence": "medium",
+      "notes": "Pass 1 #70.27 logged. Pass 2 confirms: \"Bernie Smangum, right? Yes, she was a teacher\" — local Holmes County teacher, Bernie's was working in the Boston (Mileston) class"
+    },
+    {
+      "row_id": "70.P2.29",
+      "whisper": "Martin Smith",
+      "candidate_correction": "Martin Smith",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.44 logged. Pass 2 confirms in transcript: \"Martin Smith. I never forget it down there\" — speaker's white incumbent opponent who died the night before the school board election Burns won in 1971"
+    },
+    {
+      "row_id": "70.P2.33",
+      "whisper": "rather than the clock",
+      "candidate_correction": "(uncertain — possibly speaker recall of a person's name)",
+      "confidence": "low",
+      "notes": "Pass 1 #70.50 logged. Pass 2 confirms transcript text: \"Robert Kennedy Economic Development. And rather than the clock, it was the chairperson of that\" — likely a person's surname garbled by Whisper. Plausibly \"Rev. [Hawkins] McLemore\" or similar Holmes County figure"
+    },
+    {
+      "row_id": "70.P2.34",
+      "whisper": "William Dean",
+      "candidate_correction": "William Dean",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.51 logged. Pass 2 confirms: late 1980s appointment marker for the first Black superintendent"
+    },
+    {
+      "row_id": "70.P2.36",
+      "whisper": "Ms. Hadith",
+      "candidate_correction": "(uncertain — possibly a producer or interview-team member, name garbled by Whisper)",
+      "confidence": "low",
+      "notes": "\"I was telling Ms. Hadith that a number of civil rights activists\" — speaker referring to someone with project context; could be Hadassah-style name or a producer name"
+    },
+    {
+      "row_id": "70.P2.37",
+      "whisper": "Attorney Boyd",
+      "candidate_correction": "Attorney Boyd",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.55 logged. Pass 2 confirms full context: \"Attorney Boyd and their lives, from that point on, they realized something had to be done, because that could have been them\" — local Mississippi attorney whose Emmett-Till awakening Burns is recounting"
+    },
+    {
+      "row_id": "70.P2.39",
+      "whisper": "the apartment",
+      "candidate_correction": "(the projects/apartment-style public housing)",
+      "confidence": "speaker-originating",
+      "notes": "\"in the cities like Lexington and Pickens and Goodman and Durant, they built apartments. They called them, I guess, the apartment\" — canonical Holmes County urbanization-after-plantation pattern that Burns is describing in the migration-and-population-shift research finding"
+    },
+    {
+      "row_id": "70.P2.44",
+      "whisper": "the auction",
+      "candidate_correction": "(possibly \"the rationing\" or \"the auction\" — speaker recall)",
+      "confidence": "low",
+      "notes": "\"with the auction and all of that, we had, we worked but we had to be some living, didn't have any money though\" — unclear referent in 1940s-era farming testimony"
+    },
+    {
+      "row_id": "70.P2.46",
+      "whisper": "Emma Nolow Williams",
+      "candidate_correction": "Emma Lou Williams",
+      "confidence": "medium",
+      "notes": "Pass 1 #70.26 logged. Pass 2 confirms: \"a little young lady about a name of Emma Nolow Williams... worked in that class also\" — local Mileston Movement teacher"
+    },
+    {
+      "row_id": "70.P2.47",
+      "whisper": "F.D. Marshall (Roosevelt Bank Monologue)",
+      "candidate_correction": "F.D. Marshall",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #70.28 / #70.29 logged. Pass 2 confirms: speaker explicitly names \"F.D. Marshall\" as a Mileston-area Movement worker and identifies him from \"the Roosevelt Bank Monologue community\" — likely \"Roosevelt Bend\" or similar local toponym"
+    },
+    {
+      "row_id": "70.P2.49",
+      "whisper": "And then I got the little do-fund",
+      "candidate_correction": "(uncertain — first-grade primer, possibly the early Mississippi \"Dick and Jane\"-style reader)",
+      "confidence": "low",
+      "notes": "Same passage as 70.P2.3 — first occurrence; \"do-fund\" is unrecognizable as standard reading-curriculum terminology"
+    },
+    {
+      "row_id": "70.P2.50",
+      "whisper": "NL no more from a drop of less",
+      "candidate_correction": "NAACP letter",
+      "confidence": "low",
+      "notes": "Speaker's recall is opaque in this clause; preserved as transcript artifact"
+    },
+    {
+      "row_id": "70.P3.3",
+      "whisper": "\"took the truck\" (rural-Black-church circuit-rider context) / \"fourth Sunday\"",
+      "candidate_correction": "Confirmed via P2 #70.P2.41 as \"fourth Sunday\" — but the surrounding \"Our pastor, he was the fourth Sunday in the month\" pattern is a canonical Black Methodist Episcopal",
+      "confidence": "medium",
+      "notes": "Pattern not in cross-corpus catalog yet; add to section G (common-noun/idiom errors). // [LAYER-5: D3-catalog-contradiction (catalog 'L-ext': '\"took the truck\" (rural-Black-church circuit-rider context) / \"fourth Sunday\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "70.P3.6",
+      "whisper": "\"Quentown\" → \"Sue\" (Lorenzi) pattern",
+      "candidate_correction": "Pass 2 #70.P2.20 noted as worth catalog-flagging but did not add it. This is a unique Whisper rendering: \"Henry Lorenzi, Quentown\" → \"Henry Lorenzi, Sue\" — distinctive enough to add to cross-corpus catalog section C as a low-frequency-but-distinctive Whisper degradation",
+      "confidence": "medium",
+      "notes": "Pattern is low frequency but high distinctiveness; worth cataloging. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "70.P4.2",
+      "whisper": "Clare Ried and Bells on it / Clare Reid / Bells on it",
+      "candidate_correction": "Clarice Reid",
+      "confidence": "medium",
+      "notes": "\"I don't know where you heard of Clare Ried and Bells on it. That was one of my students.\" Reading: Clarice Reid as a former Burns student in Belzoni (Humphreys County) during her 1959 student-teaching practicum. The \"Bells on it\" is Whisper compression of \"in Belzoni.\" A \"Dr. Clarice Reid\" was a prominent Mississippi-born African-American pediatric hematologist at the NIH National Heart Lung and Blood Institute (Sickle Cell Disease Branch director); plausibly the same person Burns is recalling."
+    },
+    {
+      "row_id": "70.P4.3",
+      "whisper": "Cara Harris",
+      "candidate_correction": "Cara Harris",
+      "confidence": "speaker-originating",
+      "notes": "\"Clare Ried and Cara Harris and Selvam Mohu turned out to be very productive people.\" Local Belzoni student name; no canonical anchor; recorded as preserved."
+    },
+    {
+      "row_id": "70.P4.4",
+      "whisper": "Selvam Mohu",
+      "candidate_correction": "(uncertain — possibly Selvia Mahoney or Sylvia Mohundro)",
+      "confidence": "low",
+      "notes": "Same passage; local Belzoni student name; surname unidentifiable from speaker recall alone."
+    },
+    {
+      "row_id": "70.P4.7",
+      "whisper": "the Indian school district / Indian",
+      "candidate_correction": "(the new / their own school district)",
+      "confidence": "speaker-originating",
+      "notes": "Same Whisper pattern as P4.5 — appears to be a recurring acoustic confusion for closed-vowel words at the start of nominal phrases."
+    },
+    {
+      "row_id": "70.P4.8",
+      "whisper": "a sister in Civil setting",
+      "candidate_correction": "a sister (still on the home place) in Silver setting",
+      "confidence": "medium",
+      "notes": "\"I have a sister still on the home place in civil setting.\" Reading: \"civil setting\" is Whisper artifact for \"Silver City\" — canonical Humphreys County town adjacent to Belzoni, where Burns's family farm was located. (Silver City, MS is a documented Humphreys County small town near Belzoni.)"
+    },
+    {
+      "row_id": "70.P4.10",
+      "whisper": "not in the bill / I didn't know in the bill",
+      "candidate_correction": "(uncertain — possibly \"didn't know any better\" or \"in the building\")",
+      "confidence": "low",
+      "notes": "\"I didn't know in the bill that I'm standing up there in the hallway just talking to him about what I was going to do\" — opaque clause; either \"in the building\" (where the principal could overhear) or a speaker false-start. Flagged for adversarial review."
+    },
+    {
+      "row_id": "70.P4.12",
+      "whisper": "the auction",
+      "candidate_correction": "(the WWII-era rationing / agricultural quota auction system)",
+      "confidence": "medium",
+      "notes": "\"with the auction and all of that, we had, we worked but we had to be some living.\" Pass 3 (70.P2.44) flagged this as uncertain. Pass 4 hypothesis: 1940s-era federal agricultural-quota auction system (AAA / Production Marketing Administration cotton-quota auctions) — Burns's father would have sold his cotton at a regional auction warehouse. Plausible reading; promotion to medium."
+    },
+    {
+      "row_id": "70.P4.13",
+      "whisper": "Robert Kennedy Economic Development. And rather than the clock, it was the chairperson of that",
+      "candidate_correction": "Robert Kennedy Economic Development. And Rev. (something) \"Crock\"",
+      "confidence": "low",
+      "notes": "Same as Pass 3 #70.P3.x flagged passage. New hypothesis: speaker is naming a \"Rev. Crock\" or \"Rev. Crook\" or similar local Holmes County Movement minister as the chairperson of the RFK Economic Development board for Mississippi Delta. Holds at low; the \"rather than\" phrasing is Whisper artifact for a surname."
+    },
+    {
+      "row_id": "70.P4.16",
+      "whisper": "Reporter / Work long / Reporter. Work long? No",
+      "candidate_correction": "(uncertain — possibly an interviewer aside about a specific Freedom Summer volunteer)",
+      "confidence": "low",
+      "notes": "Closing exchange is fragmentary; interviewer appears to ask about a specific Freedom Summer \"reporter\" or volunteer; flagged as opaque."
+    },
+    {
+      "row_id": "70.P4.17",
+      "whisper": "the director of banks",
+      "candidate_correction": "the Director of",
+      "confidence": "low",
+      "notes": "\"I think we're off to take now with the director of banks again.\" Likely Whisper for a project-director surname; could be \"Bunch\" (Lonnie Bunch III was Smithsonian NMAAHC founding director through 2019, plausible 2013 visit to the project)."
+    },
+    {
+      "row_id": "70.P4.18",
+      "whisper": "I'm for gun, we're part",
+      "candidate_correction": "(uncertain — speaker false start about James Herbert White's origin)",
+      "confidence": "low",
+      "notes": "\"And he came out of Tennessee, I'm for gun, we're part. Now, came out of Tennessee\" — speaker self-corrects and confirms Tennessee origin for MVSU founding president James Herbert White (canonical — White was indeed Tennessee-born). The opaque clause is speaker false-start, not factual error."
+    },
+    {
+      "row_id": "70.P4.19",
+      "whisper": "even though they were known in our community, even the boys go everywhere",
+      "candidate_correction": "even though they were (white), in our community, even the boys go everywhere",
+      "confidence": "medium",
+      "notes": "\"even though they were known in our community, even the boys go everywhere, so to say\" — Whisper compression: \"known\" should be \"white\"; the racial referent is clear from immediately surrounding text about Emmett Till and his father's warnings about white girls."
+    },
+    {
+      "row_id": "70.P4.20",
+      "whisper": "They were lier than one, on when they were afraid",
+      "candidate_correction": "They were leerier than (anything) when they were afraid",
+      "confidence": "medium",
+      "notes": "Whisper homophone \"lier\" for \"leerier\" in 1960s vernacular about Civil Rights workers' wariness of Belzoni MS — known violent town."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "70.P4.9",
+      "reason": "n/a confidence"
+    },
+    {
+      "row_id": "70.P4.21",
+      "reason": "n/a confidence"
+    }
+  ],
+  "files_processed": [
+    "Julia Matilda Burns_interview_transcript_20250704_223155.srt",
+    "Julia Matilda Burns_interview_transcript_20250704_223155.txt",
+    "Julia Matilda Burns_interview_transcript_20250704_223155.vtt"
+  ],
+  "stats": {
+    "applied": 41,
+    "pending": 53,
+    "skipped": 2
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.6595,
+    "confidence_tier": "publication-block",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.5638,
+      "adversarial_flag_density": 0.0957,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 9,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

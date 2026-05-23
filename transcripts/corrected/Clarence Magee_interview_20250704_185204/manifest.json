@@ -1,0 +1,618 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Clarence Magee_interview_20250704_185204",
+  "entry_number": 21,
+  "entry_subject": "Clarence Magee",
+  "applied_corrections": [
+    {
+      "row_id": "21.1",
+      "whisper": "Mary County",
+      "correction": "Marion County",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.4",
+      "whisper": "Hattisburg / Hatti sb urg",
+      "correction": "Hattiesburg, Mississippi",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.6",
+      "whisper": "Lormon",
+      "correction": "Lorman, Mississippi",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.7",
+      "whisper": "Vicksburg",
+      "correction": "Vicksburg, Mississippi",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.8",
+      "whisper": "Clyde Kinnear",
+      "correction": "Clyde Kennard",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.9",
+      "whisper": "a posh man",
+      "correction": "Parchman",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.11",
+      "whisper": "R.J. Brown / Rust Brown",
+      "correction": "R. Jess Brown",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.14",
+      "whisper": "Vernon Damon / Mr. Damon / Lil' Damon / Martinus / Bow / Vernon Jr.",
+      "correction": "Vernon Dahmer",
+      "confidence": "high",
+      "occurrences": 27,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.15",
+      "whisper": "Sam Byers",
+      "correction": "Sam Bowers",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.16",
+      "whisper": "Governor Walla",
+      "correction": "Governor (William) Waller",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.17",
+      "whisper": "Lille Burnett / Lilly Burnie / Lillie Burnie",
+      "correction": "Lillie Burney School",
+      "confidence": "high",
+      "occurrences": 24,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.18",
+      "whisper": "Roy and / Rowan / Ruin",
+      "correction": "Rowan",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.20",
+      "whisper": "Blair High",
+      "correction": "Blair High School",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.25",
+      "whisper": "JC Farley",
+      "correction": "J.C. Fairley",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.27",
+      "whisper": "Wings and Berra",
+      "correction": "Wiggins",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.28",
+      "whisper": "Prenniss Institute",
+      "correction": "Prentiss Institute",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.34",
+      "whisper": "Ferguson / Ferguson, Missouri",
+      "correction": "Ferguson, Missouri",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P2.3",
+      "whisper": "Lillie Burney",
+      "correction": "Lillie Burney School",
+      "confidence": "correct",
+      "occurrences": 24,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P2.4",
+      "whisper": "Hawkins",
+      "correction": "Hawkins Junior High School",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P2.5",
+      "whisper": "Berger / Mr. Berger",
+      "correction": "N.R. Burger",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P2.11",
+      "whisper": "Parchman / posh man",
+      "correction": "Parchman Farm",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P2.22",
+      "whisper": "Alcorn A&M College / Lorman",
+      "correction": "Alcorn State University",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.1",
+      "whisper": "Mouville Street",
+      "correction": "Mobile Street",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.2",
+      "whisper": "rich bird road / Richbird Road / Hareway 11 turned off with their old or rich bird road",
+      "correction": "Richburg Road (Forrest County)",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.3",
+      "whisper": "headstock / pays headstock",
+      "correction": "Head Start",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.8",
+      "whisper": "Hartner, Hartfield, Broad Street",
+      "correction": "Hardy Street, Broad Street",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.9",
+      "whisper": "pine built complex / pine built",
+      "correction": "Pinebelt complex",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.10",
+      "whisper": "Walmux",
+      "correction": "Walmart",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.13",
+      "whisper": "partened / partened by Governor Walla",
+      "correction": "paroled",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "21.P4.14",
+      "whisper": "Fort Yusuf, Virginia",
+      "correction": "Fort Eustis, Virginia",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "21.13",
+      "whisper": "T.F. Boyne / T.F. Boyle",
+      "candidate_correction": "T.F. Boyne",
+      "confidence": "speaker-originating",
+      "notes": "Real Hattiesburg civil rights worker subpoenaed alongside the McGees"
+    },
+    {
+      "row_id": "21.19",
+      "whisper": "Hawkins",
+      "candidate_correction": "Hawkins",
+      "confidence": "speaker-originating",
+      "notes": "Real Hattiesburg school"
+    },
+    {
+      "row_id": "21.21",
+      "whisper": "Carey Bradley",
+      "candidate_correction": "Carey Bradley McGee",
+      "confidence": "speaker-originating",
+      "notes": "McGee's wife"
+    },
+    {
+      "row_id": "21.22",
+      "whisper": "Spinks / Dr. Spinks",
+      "candidate_correction": "Dr. (N.R.) Burger",
+      "confidence": "medium",
+      "notes": "Cannot verify; Hattiesburg superintendent; verify name // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "21.23",
+      "whisper": "D.R. Patrick",
+      "candidate_correction": "D.R. Patrick",
+      "confidence": "speaker-originating",
+      "notes": "Real (Blair High principal during desegregation)"
+    },
+    {
+      "row_id": "21.24",
+      "whisper": "Erling Boas",
+      "candidate_correction": "Earline Boas",
+      "confidence": "medium",
+      "notes": "Real Hattiesburg civil rights worker; chair of the NAACP education committee"
+    },
+    {
+      "row_id": "21.26",
+      "whisper": "Dr. C.E. Smith",
+      "candidate_correction": "Dr. C.E. Smith",
+      "confidence": "speaker-originating",
+      "notes": "Real (NAACP president who succeeded Fairley)"
+    },
+    {
+      "row_id": "21.29",
+      "whisper": "Glossy R. McGee / O'Reilly Leggett McGee",
+      "candidate_correction": "Glossie R. McGee",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's parents' names"
+    },
+    {
+      "row_id": "21.30",
+      "whisper": "Reveal World / Reveal World Mississippi",
+      "candidate_correction": "(a real MS town — possibly \"Brookhaven\" or \"Wesson\")",
+      "confidence": "low",
+      "notes": "Speaker refers to \"Reveal World\" as where a trial occurred; canonical name uncertain"
+    },
+    {
+      "row_id": "21.35",
+      "whisper": "Charles Philip",
+      "candidate_correction": "Charles Phillip",
+      "confidence": "speaker-originating",
+      "notes": "Real Hattiesburg civil rights worker"
+    },
+    {
+      "row_id": "21.P2.6",
+      "whisper": "Dr. Spinks",
+      "candidate_correction": "Dr. Spinks",
+      "confidence": "medium",
+      "notes": "- // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "21.P2.7",
+      "whisper": "Mrs. Erling Boas",
+      "candidate_correction": "Mrs. Erling Boas",
+      "confidence": "speaker-originating",
+      "notes": "Hattiesburg NAACP education committee chair"
+    },
+    {
+      "row_id": "21.P2.9",
+      "whisper": "Governor Walla",
+      "candidate_correction": "Governor",
+      "confidence": "low",
+      "notes": "The governor who pardoned one of Dahmer's killers; speaker may be referring to Bill Allain or Cliff Finch // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "21.P2.12",
+      "whisper": "T.F. Boyne",
+      "candidate_correction": "T.F. Boyne",
+      "confidence": "speaker-originating",
+      "notes": "Witness subpoenaed with Magees to Aberdeen to verify Clyde Kennard alive"
+    },
+    {
+      "row_id": "21.P2.24",
+      "whisper": "the deep guns",
+      "candidate_correction": "(likely the Deacons for Defense)",
+      "confidence": "medium",
+      "notes": "Self-defense group nicknamed by community"
+    },
+    {
+      "row_id": "21.P3.1",
+      "whisper": "T.F. Boyne",
+      "candidate_correction": "T.F. Boyne",
+      "confidence": "low",
+      "notes": "Speaker-originating in Pass 1/2; not cross-corpus confirmed. Subpoenaed alongside the Magees to Aberdeen 1962 to verify Clyde Kennard was alive. Likely Hattiesburg NAACP figure."
+    },
+    {
+      "row_id": "21.P3.2",
+      "whisper": "D.R. Patrick",
+      "candidate_correction": "D.R. Patrick",
+      "confidence": "speaker-originating",
+      "notes": "Pass 1 #21.23 left speaker-originating; reinforce — local Hattiesburg figure, not in cross-corpus catalog yet."
+    },
+    {
+      "row_id": "21.P4.4",
+      "whisper": "Hopkins",
+      "candidate_correction": "Hopkins School",
+      "confidence": "speaker-originating",
+      "notes": "\"She [wife Carey Bradley McGee] went to Hopkins.\" Real Hattiesburg public school. Not a major figure but a cross-corpus locality marker. Pass 1's #21.19 covered \"Hawkins\" school separately; this is a different school."
+    },
+    {
+      "row_id": "21.P4.5",
+      "whisper": "Wanksburg",
+      "candidate_correction": "Vicksburg (Mississippi) — likely",
+      "confidence": "medium",
+      "notes": "\"And of course, at that time, I was working, I think, in Wanksburg. And having to get up early in the morning to drive there...\" Speaker's federal-job placement was in **Vicksburg** (commute distance from Hattiesburg fits) — Pass 1/2/3 covered \"Vicksburg\" as correct earlier in transcript at #21.7. Here Whisper has re-mangled the same word. Could also be Wiggins (already covered as 21.27) but commute distance for an early-morning drive favors Vicksburg."
+    },
+    {
+      "row_id": "21.P4.6",
+      "whisper": "Senator Pittman / George Pittman",
+      "candidate_correction": "(Mississippi state senator — verify)",
+      "confidence": "low",
+      "notes": "\"George Pittman, who was Senator Pittman at that time, had put one together [the community-action-agency biracial committee application].\" No U.S. Senator from MS named Pittman in the 1960s; speaker likely refers to a Mississippi **state** senator. Could be **G.V. \"Sonny\" Montgomery** (U.S. Rep, not Senator) misheard, or a real state senator named Pittman. Flag for adversarial."
+    },
+    {
+      "row_id": "21.P4.7",
+      "whisper": "Fortinet / I went down Fortinet",
+      "candidate_correction": "Fortieth Avenue",
+      "confidence": "low",
+      "notes": "\"If I went down Fortinet and turned just as I've passed Walmux [Walmart]...\" Hattiesburg street; \"Fortinet\" likely Whisper rendering of \"40th Avenue\" or \"West Fourth Street\" — both real Hattiesburg arterials near Hardy Street. Flag for adversarial."
+    },
+    {
+      "row_id": "21.P4.11",
+      "whisper": "Hopkins (during desegregation, wife transferred from Lillie Burney)",
+      "candidate_correction": "Hawkins Junior High (Hattiesburg) — verify Hopkins vs. Hawkins",
+      "confidence": "low",
+      "notes": "\"during the early part of desegregation, she went to Hopkins.\" Pass 1 #21.19 identified \"Hawkins\" as a Hattiesburg school. Speaker may be naming a second school (Hopkins) or Whisper has alternated renderings of the same school across the transcript. Flag for adversarial."
+    },
+    {
+      "row_id": "21.P4.12",
+      "whisper": "the deep guns (re-affirmed from 21.P2.24)",
+      "candidate_correction": "(Hattiesburg armed-self-defense network — not the Deacons)",
+      "confidence": "medium",
+      "notes": "\"There were groups, a group, they called them the deep guns, and not too many people knew who they were, who was white watchman, who killed watch...\" Pass 2/3 left this flagged. Raw confirms this was a clandestine, locally-named Hattiesburg-area armed-defense network active right after the Dahmer firebombing (Jan 1966), watching the burned house site at night. NOT the canonical Deacons for Defense (Jonesboro/Bogalusa). Possibly the same network Charles Phillip + McGee belonged to. Retain flag for adversarial."
+    },
+    {
+      "row_id": "21.P4.16",
+      "whisper": "Reveal World (re-affirmed from 21.30)",
+      "candidate_correction": "(unresolved)",
+      "confidence": "low",
+      "notes": "Raw confirms speaker says \"My wife had a call doing the trial at Reveal World\" — in context of the **Bowers / Dahmer co-conspirators trials**. The federal trial of Bowers was held in **Hattiesburg** (Southern District of Mississippi federal courthouse). The state trials were also Hattiesburg. \"Reveal World\" does not phonetically match Hattiesburg. May be a name-substitution for a specific courthouse name, judge name, or the speaker is describing the trial venue with a phrase Whisper has mangled beyond reconstruction. Retain low / flag for adversarial."
+    },
+    {
+      "row_id": "21.P4.17",
+      "whisper": "when they prosecute us, I want to thank his name",
+      "candidate_correction": "(federal prosecutor — possibly John Doar)",
+      "confidence": "low",
+      "notes": "Speaker recalls the federal voter-registration trial: \"when they prosecute us, I want to thank his name. I know it, but I can't remember tonight.\" The federal prosecutor in *U.S. v. Lynd* (the Forrest County voter-registration case the McGees were subpoenaed for) was **John Doar** of the DOJ Civil Rights Division. Flag for adversarial cross-confirmation."
+    },
+    {
+      "row_id": "21.P4.18",
+      "whisper": "a royal spring (white truck driver compared to Mrs. McGee in the voter-test)",
+      "candidate_correction": "(locality — possibly \"Royal Spring\" community Hattiesburg)",
+      "confidence": "low",
+      "notes": "\"A white gentleman of a royal spring, who was a truck driver, who could not read, could not write. He had taken the test and passed it.\" This is a comparison case in the voter-registration trial; \"a royal spring\" likely refers to a small Forrest/Lamar County locality. May or may not be a real place name. Flag for adversarial."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "21.P2.1",
+      "reason": "n/a confidence"
+    },
+    {
+      "row_id": "21.P2.25",
+      "reason": "n/a confidence"
+    }
+  ],
+  "files_processed": [
+    "Clarence Magee_interview_transcript_20250704_185204.srt",
+    "Clarence Magee_interview_transcript_20250704_185204.txt",
+    "Clarence Magee_interview_transcript_20250704_185204.vtt"
+  ],
+  "stats": {
+    "applied": 30,
+    "pending": 26,
+    "skipped": 2
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.7536,
+    "confidence_tier": "not-auditable",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.4643,
+      "adversarial_flag_density": 0.0893,
+      "cross_contamination_penalty": 0.2
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 5,
+  "cross_contamination_items_resolved": 2,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

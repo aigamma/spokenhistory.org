@@ -1,0 +1,665 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Walter Bruce_interview_20250705_022102",
+  "entry_number": 123,
+  "entry_subject": "Walter Bruce",
+  "applied_corrections": [
+    {
+      "row_id": "123.5",
+      "whisper": "On Turnbull / Turnbull",
+      "correction": "(Hartman) Turnbow",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.10",
+      "whisper": "Holmes Hill Towns / Hill Towns of Durant, West, and Goodman",
+      "correction": "Holmes Hill Towns of Durant, West, and Goodman",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.11",
+      "whisper": "Sue Lorenzi Sojourner / Susan Lorenzi Sojourner",
+      "correction": "Sue Lorenzi Sojourner",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.12",
+      "whisper": "Thunder of Freedom",
+      "correction": "Thunder of Freedom: Black Activism in Holmes County, Mississippi",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.15",
+      "whisper": "Reverend Eddie Clark",
+      "correction": "Rev. Eddie Clark",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.17",
+      "whisper": "Tugelone",
+      "correction": "Tougaloo",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.10",
+      "whisper": "Lee Floreau / Lee Flore Counting",
+      "correction": "Leflore County",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.14",
+      "whisper": "greenwood",
+      "correction": "Greenwood, Mississippi",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.17",
+      "whisper": "cold article",
+      "correction": "courthouse",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.18",
+      "whisper": "the Mass and Community",
+      "correction": "the Mileston community",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.25",
+      "whisper": "\"How about Alma Mitchell Carnegie\"",
+      "correction": "Alma Mitchell Carnegie",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.28",
+      "whisper": "the lecture / Luxembourg",
+      "correction": "Lexington",
+      "confidence": "high",
+      "occurrences": 10,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.29",
+      "whisper": "When he did have a bad heart",
+      "correction": "(J.J. Young) did have a bad heart",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.42",
+      "whisper": "the snake / SNCC people",
+      "correction": "SNCC",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.44",
+      "whisper": "National Convention in Atlantic City",
+      "correction": "National (Democratic) Convention in Atlantic City",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.45",
+      "whisper": "Mrs. Hamer",
+      "correction": "Fannie Lou Hamer",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.46",
+      "whisper": "Mrs. Devine",
+      "correction": "Annie Devine",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.47",
+      "whisper": "Mrs. Ray",
+      "correction": "Mrs. (Victoria) Gray",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.48",
+      "whisper": "the kind of meeting / the kind of wide meeting",
+      "correction": "the county-wide meeting",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.51",
+      "whisper": "Sue and Henley Lorenzi",
+      "correction": "Sue and Henry Lorenzi",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.52",
+      "whisper": "Thunder of Freedom",
+      "correction": "Thunder of Freedom: Black Leadership and the Transformation of 1960s Mississippi",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P4.3",
+      "whisper": "\"the snake\" / \"snakes people\"",
+      "correction": "SNCC",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P4.4",
+      "whisper": "\"fired into bird\" / \"Turnbo's house was fired into bird\"",
+      "correction": "Turnbow's house was firebombed",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P4.12",
+      "whisper": "\"Yes, that right after the first beginning\"",
+      "correction": "Yes, that's right after the first beginning\"",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "123.P2.55",
+      "whisper": "I appreciate you all coming. And I hope I didn't get to read about it.",
+      "correction": "I appreciate you all coming. And I hope I didn't get too lengthy about it",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    },
+    {
+      "row_id": "123.P4.5",
+      "whisper": "\"Holmes County decision in 1969, the US Supreme Court\"",
+      "correction": "Alexander v. Holmes County Board of Education",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    },
+    {
+      "row_id": "123.P4.11",
+      "whisper": "\"We pointed him. He was a 24-year-old school up there\"",
+      "correction": "We appointed [Bruce] — he was [for] the white school up there",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "123.1",
+      "whisper": "Rolling Wall / Roe Wall",
+      "candidate_correction": "Rolling Wall",
+      "confidence": "speaker-originating",
+      "notes": "- // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.2",
+      "whisper": "Ambrole School in Latin",
+      "candidate_correction": "Ambrose School in Lexington",
+      "confidence": "low",
+      "notes": "Speaker's high school; identification uncertain"
+    },
+    {
+      "row_id": "123.3",
+      "whisper": "Mayor Levin",
+      "candidate_correction": "(likely Henry Lorenzi-related) Mayor",
+      "confidence": "low",
+      "notes": "-"
+    },
+    {
+      "row_id": "123.7",
+      "whisper": "Ralph Hayse",
+      "candidate_correction": "Ralph Hayse",
+      "confidence": "medium",
+      "notes": "Canonical Mileston 14 applicant"
+    },
+    {
+      "row_id": "123.8",
+      "whisper": "Russian Whitaker",
+      "candidate_correction": "(likely) Russell Whitaker",
+      "confidence": "medium",
+      "notes": "Canonical Mileston 14 applicant // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.9",
+      "whisper": "James Boyne",
+      "candidate_correction": "James Bourne",
+      "confidence": "medium",
+      "notes": "Possible cross-corpus #100 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.14",
+      "whisper": "Bowl-Belling Smith / Smith (sheriff)",
+      "candidate_correction": "(likely) Sheriff Smith",
+      "confidence": "medium",
+      "notes": "Canonical Durant-area sheriff // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.16",
+      "whisper": "Saigon Pagoda",
+      "candidate_correction": "(likely) Sai-Gon Pagoda",
+      "confidence": "low",
+      "notes": "- // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.19",
+      "whisper": "Reverend Mr. M. Crawford / Reverend Crawford",
+      "candidate_correction": "(likely) Rev. Crawford",
+      "confidence": "low",
+      "notes": "- // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.6",
+      "whisper": "Iowa, Hoppe",
+      "candidate_correction": "Iowa Hoppe",
+      "confidence": "low",
+      "notes": "\"I know remember the creek right in between Iowa, Hoppe and the church\" — Whisper-degradation; possibly speaker's hometown name"
+    },
+    {
+      "row_id": "123.P2.7",
+      "whisper": "Rolling Wall / Roe Wall",
+      "candidate_correction": "Rolling Fork",
+      "confidence": "low",
+      "notes": "Reinforces Pass 1 123.1 — Holmes County rural community name; alternate possibility is \"Rolling Wall\" is a real place + Whisper is correct // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.8",
+      "whisper": "Marvell Walker",
+      "candidate_correction": "Maynard Walker",
+      "confidence": "low",
+      "notes": "\"Tallahowne, Lee Floreau, Counting, Waterloo Chicago. Me and Walker\" — gospel-tour place names + companion name"
+    },
+    {
+      "row_id": "123.P2.9",
+      "whisper": "Tallahowne",
+      "candidate_correction": "Tallahassee",
+      "confidence": "low",
+      "notes": "Speaker may mean \"Tallahoma\" (a small Holmes County area) or another regional tour-stop"
+    },
+    {
+      "row_id": "123.P2.11",
+      "whisper": "W-H-T-N-L-E",
+      "candidate_correction": "(Holmes County or Carroll County local radio station)",
+      "confidence": "low",
+      "notes": "Speaker's gospel-group radio station — uncertain"
+    },
+    {
+      "row_id": "123.P2.13",
+      "whisper": "Reedmean",
+      "candidate_correction": "(Read Medgar — Medgar Evers reading?)",
+      "confidence": "low",
+      "notes": "Speaker's recollection of where he met Medgar Evers — Whisper-degradation, context-clarifying word lost"
+    },
+    {
+      "row_id": "123.P2.22",
+      "whisper": "Russian Whitaker",
+      "candidate_correction": "Russell Whitaker",
+      "confidence": "low",
+      "notes": "Reinforces Pass 1 123.8 — canonical Mileston Fourteen applicant; Whisper of \"Russell\" as \"Russian\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.23",
+      "whisper": "James Boyne",
+      "candidate_correction": "James Bourne (Pass 1 123.9)",
+      "confidence": "medium",
+      "notes": "Canonical Mileston Fourteen applicant // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.26",
+      "whisper": "nine out / I'm old / nine in the edge",
+      "candidate_correction": "(uncertain — possibly \"9 out (of 14), they were 9 in the edge of...\")",
+      "confidence": "low",
+      "notes": "Speaker's count of Mileston Fourteen group composition — Whisper-degradation"
+    },
+    {
+      "row_id": "123.P2.27",
+      "whisper": "Jay Young / J.J. Young",
+      "candidate_correction": "J.J. Young",
+      "confidence": "speaker-originating",
+      "notes": "Canonical Durant-area Holmes County movement martyr — beaten to death in Durant jail c. early 1960s after refusal to give him medical attention; speaker's first-person testimony names J.J. Young as canonical movement-organizing impetus. ADD TO GROUND-TRUTH CORPUS — likely the same person as a canonical 1960s MS jailhouse-death victim; cross-corpus #107 + #111"
+    },
+    {
+      "row_id": "123.P2.30",
+      "whisper": "Hooker / who he was hooker",
+      "candidate_correction": "(likely) Hollis (Watkins)",
+      "confidence": "low",
+      "notes": "Speaker references the lawyer who bailed out the 12 Durant arrestees"
+    },
+    {
+      "row_id": "123.P2.32",
+      "whisper": "Reverend Eddie Carthan",
+      "candidate_correction": "Reverend Eddie Carthan",
+      "confidence": "speaker-originating",
+      "notes": "Reinforces Pass 1 cross-references — canonical Tchula MS Black mayor (elected 1977); his canonical 1981 conviction-and-imprisonment on disputed charges became a canonical 1980s Mississippi-civil-rights cause célèbre; cross-corpus #107 + #111"
+    },
+    {
+      "row_id": "123.P2.33",
+      "whisper": "Reverend Eddie Clark",
+      "candidate_correction": "Rev. Eddie Clark",
+      "confidence": "speaker-originating",
+      "notes": "Reinforces Pass 1 123.15 — canonical first Black US Congress candidate from Holmes County (1968 special election)"
+    },
+    {
+      "row_id": "123.P2.34",
+      "whisper": "Saigon Pagoda",
+      "candidate_correction": "Salem Pagoda",
+      "confidence": "low",
+      "notes": "Reinforces Pass 1 123.16 — likely a Whisper rendering of an actual Holmes County Black-church name; canonical white-night-rider gasoline-and-rope arson attempt site // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.36",
+      "whisper": "Dr. McLean",
+      "candidate_correction": "Dr. (Wilbert) McLean",
+      "confidence": "medium",
+      "notes": "Canonical Holmes County 1967 movement leader + state-office candidate // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.37",
+      "whisper": "Bow-Belling Smith / Bobby-Bell-In Smith",
+      "candidate_correction": "(Sheriff) Smith",
+      "confidence": "low",
+      "notes": "Reinforces Pass 1 123.14; canonical Holmes County Sheriff Smith circa 1960s (full name uncertain)"
+    },
+    {
+      "row_id": "123.P2.38",
+      "whisper": "the white roundup / right that was no spike / running upside of me",
+      "candidate_correction": "(police roundup) /",
+      "confidence": "low",
+      "notes": "Whisper-degraded passage"
+    },
+    {
+      "row_id": "123.P2.39",
+      "whisper": "Reverend Nick Craw / Reverend Mr. M. Crawford",
+      "candidate_correction": "Rev. Crawford",
+      "confidence": "low",
+      "notes": "Reinforces Pass 1 123.19; canonical Holmes County Black-minister/movement-leader // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.41",
+      "whisper": "Tony Zivolich",
+      "candidate_correction": "(likely) Tony Zivkovich",
+      "confidence": "low",
+      "notes": "Confirms Pass 1 cross-corpus — context here is N/A; not in this transcript actually // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "123.P2.43",
+      "whisper": "Marvell Walker / Me and Walker (gospel-tour-companion)",
+      "candidate_correction": "(speaker's gospel singing partner name)",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's 50+ year gospel-group lead partner name"
+    },
+    {
+      "row_id": "123.P2.49",
+      "whisper": "the freedom of them got bothered in",
+      "candidate_correction": "the freedom (movement) got bothered in",
+      "confidence": "low",
+      "notes": "Whisper-degraded passage near end of interview"
+    },
+    {
+      "row_id": "123.P2.54",
+      "whisper": "Dr. Brock",
+      "candidate_correction": "Dr. Brock",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's pre-1960s Holmes County local-physician memory"
+    },
+    {
+      "row_id": "123.P3.8",
+      "whisper": "\"Reedmean → uncertain Medgar-Evers-meeting context\" (Pass 2 123.P2.13)",
+      "candidate_correction": "Speaker's recollection unresolved",
+      "confidence": "low",
+      "notes": "Pass 2 left unresolved; multi-model could disambiguate from speaker's Medgar Evers reference context"
+    },
+    {
+      "row_id": "123.P3.10",
+      "whisper": "\"Bow-Belling Smith / Bobby-Bell-In Smith → Sheriff Smith\" speaker-originating",
+      "candidate_correction": "Holmes County 1960s Sheriff",
+      "confidence": "low",
+      "notes": "Pass 2 captured the multi-rendering; canonical sheriff name needs SME confirmation"
+    },
+    {
+      "row_id": "123.P4.1",
+      "whisper": "\"the nation\" / \"the nation drug store\"",
+      "candidate_correction": "(likely) a national-chain drug store (Rexall, Walgreens, or similar), name unverified",
+      "confidence": "low",
+      "notes": "\"And then later on, the nation, and then he had... Well, the day the barbed, they had... You know, when you... You could buy ice train there, but they had two signs\" — refers to Durant ice-cream/drugstore desegregation venue; Subject paragraph's \"Renaissance pharmacy\" identification is unsupported"
+    },
+    {
+      "row_id": "123.P4.7",
+      "whisper": "\"Ralph Hase / Ralph Hayse ran for Congress\"",
+      "candidate_correction": "Ralph Hayse",
+      "confidence": "medium",
+      "notes": "\"I believe Ralph Hays ran for Congress in that district\" — Dittmer-corroborated detail not previously noted; expands the canonical Mileston 14 / Hayse profile beyond voter-registration to electoral candidate. Worth ground-truth confirmation."
+    },
+    {
+      "row_id": "123.P4.9",
+      "whisper": "\"Mayor Levin... He was still right, lawyer. Yeah, I knew me, yeah. Yeah, home was county\"",
+      "candidate_correction": "Mayor Levin (Durant, MS) — civil-rights-supporting white attorney",
+      "confidence": "low",
+      "notes": "New Pass 4 context: Levin was identified by Bruce as a still-living white lawyer + Durant mayor who supported school-board integration; possibly Sue Lorenzi Sojourner's husband Henry's relation — speaker says Levin \"got involved with us up here at the school\" re: Durant High School board appointment of two Black members. Resolves Pass 1 123.3 partially: Levin was the white lawyer/mayor, not a Lorenzi-relation."
+    },
+    {
+      "row_id": "123.P4.10",
+      "whisper": "\"Mr. D. F. One\"",
+      "candidate_correction": "(likely) Mr. D.F. Owen (or similar) — Bruce's fellow Black appointee to Durant City School board",
+      "confidence": "low",
+      "notes": "\"They pointed me and Mr. D. F. One, so we just... The school was a 42-black that served up there on that board\" — speaker's recall of fellow Black board appointee; full name not in any prior Pass; needs SME confirmation"
+    },
+    {
+      "row_id": "123.P4.13",
+      "whisper": "\"Saigon Pagoda at church\" (Pass 1 123.16, Pass 2 123.P2.34)",
+      "candidate_correction": "Mt. Pisgah",
+      "confidence": "low",
+      "notes": "Pass 4 listening: \"we met up at the church over there called Saigon Pagoda at church\" — possibly \"Mount Pisgah\" (a recurring Holmes County Black-church name) rendered as \"Saigon Pagoda\"; OR \"St. Pagoda\" (no such canonical church); needs Holmes County church-registry lookup"
+    },
+    {
+      "row_id": "123.P4.14",
+      "whisper": "\"the kid girl\" / \"they wouldn't go to crack or they thought they had killed it\"",
+      "candidate_correction": "(Whisper-degraded interracial-relationship anecdote, Carroll County school)",
+      "confidence": "low",
+      "notes": "Long passage near end about a Black student dating a white teacher's daughter (or similar) in Carroll County, where Bruce intervened to prevent a \"rape\" framing and the student \"ain't missing\"; Whisper-degraded but consequential anecdote about Bruce's regional civil-rights problem-solving role. Should be flagged for adversarial review for narrative reconstruction."
+    },
+    {
+      "row_id": "123.P4.17",
+      "whisper": "\"the fire that was no spike / right that was no spike\"",
+      "candidate_correction": "the white roundup",
+      "confidence": "low",
+      "notes": "Pass 2 123.P2.38 already flagged Whisper-degraded passage; Pass 4 adds context: likely refers to a Wednesday-night meeting attack where white attackers shot up the meeting hall (Bruce's canonical \"shoot all the top of that bed\" episode); context-resolved"
+    }
+  ],
+  "skipped_rows": [],
+  "files_processed": [
+    "Walter Bruce_interview_transcript_20250705_022102.srt",
+    "Walter Bruce_interview_transcript_20250705_022102.txt",
+    "Walter Bruce_interview_transcript_20250705_022102.vtt"
+  ],
+  "stats": {
+    "applied": 27,
+    "pending": 40,
+    "skipped": 0
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.7761,
+    "confidence_tier": "not-auditable",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.597,
+      "adversarial_flag_density": 0.1791,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 12,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

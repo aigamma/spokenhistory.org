@@ -1,0 +1,728 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Gwendolyn Annette Duncan_interview_20250704_210411",
+  "entry_number": 51,
+  "entry_subject": "Gwendolyn Annette Perkins Duncan",
+  "applied_corrections": [
+    {
+      "row_id": "51.1",
+      "whisper": "Dr. Heeland / Dr. Healand",
+      "correction": "Dr. Robert B. Hayling",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.2",
+      "whisper": "Sin Augustine",
+      "correction": "Saint Augustine, Florida",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.3",
+      "whisper": "Motri",
+      "correction": "Moultrie",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.4",
+      "whisper": "Bad Cop furniture store",
+      "correction": "Badcock Furniture",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.6",
+      "whisper": "Excel C Elementary School / Excelsior",
+      "correction": "Excelsior Elementary School",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.7",
+      "whisper": "Flagler hospital / Flagler College",
+      "correction": "Flagler Hospital",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.9",
+      "whisper": "Catherine Twine / Mrs. Catherine Twine",
+      "correction": "Mrs. Catherine Twine",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.10",
+      "whisper": "Cara Johnson / Mrs. Cara Johnson",
+      "correction": "Mrs. Cora Tyson Johnson",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.16",
+      "whisper": "Northrop Grimm / author of Grumman",
+      "correction": "Northrop Grumman",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.22",
+      "whisper": "Reena Ayers",
+      "correction": "Mrs. Reena Ayers",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.23",
+      "whisper": "Reverend Goldie U-Banks",
+      "correction": "Reverend Goldie Eubanks",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.25",
+      "whisper": "Arthur Taylor Branch",
+      "correction": "Taylor Branch",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.26",
+      "whisper": "Ambassador Young",
+      "correction": "Ambassador Andrew Young",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.29",
+      "whisper": "Fort Mosaic",
+      "correction": "Fort Mose",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.1",
+      "whisper": "Joe Manier of the Southern Oral History Program at the University of North Carolina at Chapel Hill",
+      "correction": "Joe Mosnier of the Southern Oral History Program",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.2",
+      "whisper": "the Smithsonian National Museum of American History",
+      "correction": "the Smithsonian National Museum of African American History and Culture",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.4",
+      "whisper": "the Piscobal Church",
+      "correction": "the Episcopal Church",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.5",
+      "whisper": "St. Sipper",
+      "correction": "St. Cyprian's",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.6",
+      "whisper": "a human",
+      "correction": "her husband",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.12",
+      "whisper": "bad cop / Bad Cop furniture store",
+      "correction": "Badcock Furniture",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.15",
+      "whisper": "Sinagasni High School",
+      "correction": "St. Augustine High School",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.18",
+      "whisper": "the Twins / the Twine",
+      "correction": "the Twines",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.30",
+      "whisper": "Crossin in St. Augustine",
+      "correction": "Crossing in St. Augustine",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.33",
+      "whisper": "Aginel",
+      "correction": "Audrey Nell Hamilton",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.40",
+      "whisper": "O'cala, Florida",
+      "correction": "Ocala, Florida",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.41",
+      "whisper": "the wheels were turned in",
+      "correction": "the wheels were turning",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P2.53",
+      "whisper": "the multi million dollar facility",
+      "correction": "the multimillion-dollar facility",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P3.2",
+      "whisper": "\"Saint Augustine\" / \"St. Augustine\" variants",
+      "correction": "Saint Augustine, Florida",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.1",
+      "whisper": "\"the Synogoctynful\"",
+      "correction": "the St. Augustine Foot Soldiers",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.2",
+      "whisper": "\"Dr. Cain even came\"",
+      "correction": "Dr. King even came",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.3",
+      "whisper": "\"Dr. Robert Haley\" / \"Dr. Haley fought for\" / \"Dr. Helen was a speaker\"",
+      "correction": "Dr. Robert Hayling",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.9",
+      "whisper": "\"It was numerous speakers\"",
+      "correction": "There were numerous speakers",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.10",
+      "whisper": "\"we got, got permission\"",
+      "correction": "we got permission",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.12",
+      "whisper": "\"Our interview we is Miss Gwendolyn, a net Perkins Duncan\"",
+      "correction": "Our interviewee is Miss Gwendolyn Annette Perkins Duncan",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.14",
+      "whisper": "\"doing that era of the civil rights movement\"",
+      "correction": "during that era of the civil rights movement",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.17",
+      "whisper": "\"It was hidden by the power structures in Augustine\"",
+      "correction": "It was hidden by the power structures in [St.] Augustine",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "51.P4.18",
+      "whisper": "\"well passed, of course, the passage of the Civil Rights Act\"",
+      "correction": "well past, of course, the passage of the Civil Rights Act",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "51.5",
+      "whisper": "Mr. Proctor's house",
+      "candidate_correction": "Mr. Proctor's house",
+      "confidence": "speaker-originating",
+      "notes": "Real (the Lincolnville home where Dr. King reportedly stayed during his St. Augustine visits)"
+    },
+    {
+      "row_id": "51.8",
+      "whisper": "trimmer's in street",
+      "candidate_correction": "(uncertain — possibly Treasury Street)",
+      "confidence": "low",
+      "notes": "\"the doctor's building on trimmer's in street\"; canonical St. Augustine street; spelling not yet verified"
+    },
+    {
+      "row_id": "51.15",
+      "whisper": "Jane Billings of Brown / Spellman",
+      "candidate_correction": "Jane Billings of Brown University",
+      "confidence": "low",
+      "notes": "\"Jane Billings of Brown, she was a professor at one of the schools. I think it was Spellman in Atlanta\"; canonical academic; spelling not yet verified // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "51.17",
+      "whisper": "Fertile Hill",
+      "candidate_correction": "Fairchild Hiller (likely) or",
+      "confidence": "medium",
+      "notes": "\"the history shows that Fertile Hill, the company that was previously there\"; possibly Fairchild Hiller Corporation (defense contractor that preceded Northrop Grumman at the St. Augustine site) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "51.20",
+      "whisper": "Zebra Lendonkin",
+      "candidate_correction": "(Duncan's son's name; canonical spelling unverified)",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's son who has a University of Florida industrial-engineering and systems-engineering degree"
+    },
+    {
+      "row_id": "51.21",
+      "whisper": "the Twine",
+      "candidate_correction": "Lillian Twine Robeson",
+      "confidence": "medium",
+      "notes": "Catherine Twine's family; canonical St. Augustine NAACP // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "51.24",
+      "whisper": "Lillian, Twine Robeson",
+      "candidate_correction": "Lillian Twine Robinson",
+      "confidence": "medium",
+      "notes": "Speaker is reading off a list of guest speakers at the teacher workshops; canonical name not yet verified"
+    },
+    {
+      "row_id": "51.28",
+      "whisper": "Soto place",
+      "candidate_correction": "DeSoto place",
+      "confidence": "low",
+      "notes": "Canonical Anastasia Island restaurant; spelling not yet verified"
+    },
+    {
+      "row_id": "51.P2.3",
+      "whisper": "the X-T cards",
+      "candidate_correction": "the EXT cards",
+      "confidence": "low",
+      "notes": "\"John Bishop, I think we are not recording to the X-T cards\" — videographer reference to the storage media (likely SD cards or P2 cards); \"X-T\" is Whisper's rendering of acronym/letters; common-noun"
+    },
+    {
+      "row_id": "51.P2.9",
+      "whisper": "every dress through Lincolnville",
+      "candidate_correction": "every Wednesday through Lincolnville",
+      "confidence": "low",
+      "notes": "\"the marches by the Ku Klux Klan. From a child's point of view, every dress through Lincolnville\" — Whisper-garble; speaker may be saying \"every [day they] dressed through Lincolnville\" (referring to KKK robe-marches) or \"every-week\" or similar; preserved as common-noun ambiguity"
+    },
+    {
+      "row_id": "51.P2.10",
+      "whisper": "the Haven and Central Avenue, which is now Martin Luther King Avenue",
+      "candidate_correction": "(likely \"Bridge Street and Central Avenue\")",
+      "confidence": "low",
+      "notes": "\"we went down on the corner of the Haven in Central Avenue, which is now Martin Luther King Avenue\" — canonical Lincolnville historic St. Augustine streets; Central Avenue was renamed Martin Luther King Jr. Avenue; \"Haven\" is Whisper for an unverified cross-street (possibly \"Bravo\" or \"Bridge\" or \"Eastern Avenue\")"
+    },
+    {
+      "row_id": "51.P2.13",
+      "whisper": "trimmer's in street",
+      "candidate_correction": "(uncertain — possibly Cordova Street / Carver Street)",
+      "confidence": "low",
+      "notes": "\"the doctor's building on trimmer's in street\" — canonical St. Augustine downtown street; \"trimmer's in\" is Whisper-garble for an unverified street name (possibly Cordova, Carver, Treasury, or Granada); same as Pass 1 #51.8"
+    },
+    {
+      "row_id": "51.P2.14",
+      "whisper": "our street school",
+      "candidate_correction": "(force-integrated white school — name not specified)",
+      "confidence": "medium",
+      "notes": "\"our school closed down and we had to go to our street school\" — Duncan may be saying \"the white school\" or naming a specific St. Augustine school; \"our street school\" likely a Whisper rendering of \"Orange Street school\" (Orange Street School is a canonical St. Augustine school where forced integration happened); spelling unverified"
+    },
+    {
+      "row_id": "51.P2.16",
+      "whisper": "Mrs. Cara Johnson",
+      "candidate_correction": "Mrs. Cora Tyson Johnson",
+      "confidence": "medium",
+      "notes": "Same as Pass 1 #51.10 with additional context: \"Mrs. Cara Johnson refers to it as like a hidden vapor, you know, over this town\"; canonical St. Augustine 40th ACCORD co-founder; spelling confirmed as Cora (not Cara) per the St. Augustine local-historian record"
+    },
+    {
+      "row_id": "51.P2.20",
+      "whisper": "the Sona Plummer / Sonja Plummer",
+      "candidate_correction": "Sonja Plummer-Morgan",
+      "confidence": "medium",
+      "notes": "\"guess speaker was Sonja Plummer. She was a granddaughter of one of the Civil Rights activists here, Reverend Goldie U-Banks\" — canonical Sonja Plummer-Morgan, granddaughter of Rev. Goldie Eubanks Sr. (St. Augustine NAACP youth-council founder); spelling not yet fully verified"
+    },
+    {
+      "row_id": "51.P2.23",
+      "whisper": "Soto place",
+      "candidate_correction": "DeSoto place",
+      "confidence": "low",
+      "notes": "Same as Pass 1 #51.28; appears in \"It was on the Soto place\" — uncertain Anastasia Island restaurant"
+    },
+    {
+      "row_id": "51.P2.25",
+      "whisper": "the Gallimor Center",
+      "candidate_correction": "the Galimore Center",
+      "confidence": "medium",
+      "notes": "\"Miss Cara Johnson and I set up a meeting at the Gallimor Center\" — canonical St. Augustine community center; spelling not yet verified — possibly Galimore (a local family name) or a misheard \"Solomon Calhoun Community Center\" (the canonical Lincolnville center); preserved as uncertain canonical"
+    },
+    {
+      "row_id": "51.P2.28",
+      "whisper": "a communicable disease",
+      "candidate_correction": "a communicable disease",
+      "confidence": "speaker-originating",
+      "notes": "\"everybody looked at you as though you had a communicable disease\" — Duncan's child-eye account of the white-medical-office reception of Black patients after the desegregation sign came down; preserved as speaker-originating affective description, not a Whisper error"
+    },
+    {
+      "row_id": "51.P2.29",
+      "whisper": "a hidden vapor",
+      "candidate_correction": "a hidden vapor",
+      "confidence": "speaker-originating",
+      "notes": "\"Mrs. Cara Johnson refers to it as like a hidden vapor, you know, over this town\" — Cora Johnson's canonical Lincolnville-era metaphor for the post-Movement St. Augustine racial atmosphere; speaker-originating cultural reference"
+    },
+    {
+      "row_id": "51.P2.34",
+      "whisper": "Elmer",
+      "candidate_correction": "Elmer",
+      "confidence": "low",
+      "notes": "Same context as P2.32; canonical co-honoree on the Foot Soldiers Monument; spelling/identification not yet verified"
+    },
+    {
+      "row_id": "51.P2.36",
+      "whisper": "Fertile Hill",
+      "candidate_correction": "Fairchild",
+      "confidence": "medium",
+      "notes": "Same as Pass 1 #51.17 — canonical defense contractor that preceded Northrop Grumman at the St. Augustine site; \"Fertile Hill\" is Whisper for \"Fairchild\" (consonant approximation) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "51.P2.39",
+      "whisper": "a Indian internal medicine",
+      "candidate_correction": "an Indian-internal-medicine doctor",
+      "confidence": "low",
+      "notes": "\"his wife is a professional, an internal medicine. She has a Indian internal medicine\" — Whisper-garbled; the speaker is describing her daughter-in-law as an Indian-American internal-medicine physician; preserved as ambiguous common-noun"
+    },
+    {
+      "row_id": "51.P2.43",
+      "whisper": "Jane Billings",
+      "candidate_correction": "Jane Billings",
+      "confidence": "speaker-originating",
+      "notes": "Same as Pass 1 #51.15; Brown University academic; flag as speaker-originating until spelling verified"
+    },
+    {
+      "row_id": "51.P2.51",
+      "whisper": "Allen on the side",
+      "candidate_correction": "Iolanda Allen",
+      "confidence": "low",
+      "notes": "\"We found her all the way over in Africa, Medagascar to Allen on the side\" — canonical US Ambassador to Madagascar in the Clinton era; the speaker may be saying \"to Atlanta\" or \"to Allen [Iolanda]\" — Iolanda Allen was a Black US Ambassador to Madagascar; spelling not yet verified"
+    },
+    {
+      "row_id": "51.P2.52",
+      "whisper": "Burton out of Jacksonville",
+      "candidate_correction": "Richard Burton",
+      "confidence": "speaker-originating",
+      "notes": "\"we have, uh, the chairman, Richard Burton out of Jacksonville, who was a national NAACP board member\" — canonical St. Augustine 40th ACCORD chairman Richard Burton (no relation to the actor); speaker-originating accurate identification"
+    },
+    {
+      "row_id": "51.P4.4",
+      "whisper": "\"Finley is a certain name to St. Augustine\"",
+      "candidate_correction": "Finley is a surname [unknown] to St. Augustine\"",
+      "confidence": "low",
+      "notes": "Duncan likely said \"Finley is a [sur]name unknown to St. Augustine\" or \"Finley is a certain name [unfamiliar] to St. Augustine\" — meaning her family's surname was atypical for the area. Whisper-garble preserved as ambiguous common-noun."
+    },
+    {
+      "row_id": "51.P4.5",
+      "whisper": "\"I trivited to the people coming from the North\"",
+      "candidate_correction": "I attributed [it] to the people coming from the North",
+      "confidence": "medium",
+      "notes": "\"And I, I trivited to the people coming from the North\" — Whisper-garble for \"attributed\" or \"credited\"; speaker is contrasting Fairchild/predecessor management's hostility against the more welcoming attitude of the Northern attorneys/demonstrators."
+    },
+    {
+      "row_id": "51.P4.6",
+      "whisper": "\"to her wife for a little while\"",
+      "candidate_correction": "[to live] for a little while\" or \"[somewhere else] for a little while",
+      "confidence": "low",
+      "notes": "\"She's thinking about moving to her wife for a little while\" — the \"to her wife\" fragment is incongruous with the surrounding context (\"seeing the United States\"); likely a Whisper rendering of \"to wherever\" or \"elsewhere\" or \"out west\" preceded by a dropped word. Preserved as Whisper-garble."
+    },
+    {
+      "row_id": "51.P4.8",
+      "whisper": "\"if the big one being in New York City\"",
+      "candidate_correction": "I have the big one being in New York City\"",
+      "confidence": "medium",
+      "notes": "\"if the big one being in New York City, you know, just visited\" — likely Whisper-rendering of \"I had / I have [seen] the big one being in New York City\"; Duncan is contrasting St. Augustine's quietness against having visited NYC. Preserved as Whisper-garble."
+    },
+    {
+      "row_id": "51.P4.15",
+      "whisper": "\"My mother's grandmother, Elizabeth, I know it was Abby\"",
+      "candidate_correction": "My mother's grandmother, Elizabeth — I know it was Abby\"",
+      "confidence": "speaker-originating",
+      "notes": "Duncan is correcting herself in real time about her great-grandmother's name (started \"Elizabeth\" then corrected to \"Abby\"); not a Whisper error. Preserved as speaker-originating disfluency."
+    },
+    {
+      "row_id": "51.P4.19",
+      "whisper": "\"Aginel, it was in Joanne Anderson, Elmer\"",
+      "candidate_correction": "Audrey Nell [Hamilton], JoeAnn [Anderson Ulmer], Elmer [Ellis Jackson]",
+      "confidence": "medium",
+      "notes": "Pass 2 P2.32–P2.34 covered \"Aginel → Audrey Nell\" and \"Joanne Anderson → JoeAnn Anderson Ulmer\" and flagged \"Elmer\" as the third Foot Soldier — research suggests the canonical third honoree on the St. Augustine Foot Soldiers Monument is Henry Twine or Henry Twine's family member; \"Elmer\" may be the canonical first name of a specific honoree (possibly Elmer Frederick Ellis or Elmer Frederick — unverified). Retain adversarial flag."
+    }
+  ],
+  "skipped_rows": [],
+  "files_processed": [
+    "Gwendolyn Annette Duncan_interview_transcript_20250704_210411.srt",
+    "Gwendolyn Annette Duncan_interview_transcript_20250704_210411.txt",
+    "Gwendolyn Annette Duncan_interview_transcript_20250704_210411.vtt"
+  ],
+  "stats": {
+    "applied": 37,
+    "pending": 31,
+    "skipped": 0
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.6324,
+    "confidence_tier": "publication-block",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.4559,
+      "adversarial_flag_density": 0.1765,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 12,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

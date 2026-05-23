@@ -1,0 +1,623 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Harold K. Brown_interview_20250704_212356",
+  "entry_number": 55,
+  "entry_subject": "Harold K. Brown",
+  "applied_corrections": [
+    {
+      "row_id": "55.1",
+      "whisper": "Christmas Attics Center",
+      "correction": "Crispus Attucks Center",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.2",
+      "whisper": "Old Black Joke",
+      "correction": "Old Black Joe\"",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.3",
+      "whisper": "Fort Mommouth",
+      "correction": "Fort Monmouth, NJ",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.5",
+      "whisper": "Elkhohon Valley / Elkhohon",
+      "correction": "El Cajon Valley",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.6",
+      "whisper": "Logan Heights / Southeast San Diego",
+      "correction": "Logan Heights",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.8",
+      "whisper": "Lerone Bennett / Before the Mayflower",
+      "correction": "Lerone Bennett Jr",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.9",
+      "whisper": "Jack Kimbrough",
+      "correction": "Dr. Jack Kimbrough",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.11",
+      "whisper": "the Soutu",
+      "correction": "Lesotho",
+      "confidence": "high",
+      "occurrences": 19,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.12",
+      "whisper": "Miseru",
+      "correction": "Maseru",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.15",
+      "whisper": "Whitney Young",
+      "correction": "Whitney M. Young Jr",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.16",
+      "whisper": "us movement",
+      "correction": "US Organization",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.1",
+      "whisper": "Guhashankar from the Library of Congress",
+      "correction": "Guha Shankar",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.2",
+      "whisper": "David Klein (Virginia Tech History Department)",
+      "correction": "David Cline",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.3",
+      "whisper": "Media Generation and UCLA (John Bishop affiliation)",
+      "correction": "Media Generation",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.8",
+      "whisper": "Camp Gordon, Georgia",
+      "correction": "Camp Gordon",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.9",
+      "whisper": "Shreeport (Louisiana)",
+      "correction": "Shreveport, Louisiana",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.10",
+      "whisper": "La Mesa (CA)",
+      "correction": "La Mesa, California",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.15",
+      "whisper": "San Diego Gas and Electric Company (SDG&E)",
+      "correction": "San Diego Gas & Electric",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.16",
+      "whisper": "mail ins / coin ins (Western Region CORE tactics)",
+      "correction": "mail-ins",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.18",
+      "whisper": "basouto leaders",
+      "correction": "Basotho leaders",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.19",
+      "whisper": "the king of the suit to (under house arrest, opposed apartheid)",
+      "correction": "King Moshoeshoe II of Lesotho",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.20",
+      "whisper": "prime minister (the Lesotho PM who went along with apartheid)",
+      "correction": "Prime Minister Chief Leabua Jonathan",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.28",
+      "whisper": "Lerone Bennett / Lerone Bennett Jr. / \"the Rome Bennett\"",
+      "correction": "Lerone Bennett Jr",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.30",
+      "whisper": "\"Bernie Sanders\"",
+      "correction": "Senator Bernie Sanders",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.35",
+      "whisper": "Hillary (Hillary Clinton, web/donations 2016)",
+      "correction": "Hillary Rodham Clinton",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.36",
+      "whisper": "Jesse Jackson (PUSH founder)",
+      "correction": "Reverend Jesse L. Jackson Sr",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.37",
+      "whisper": "Jim Farmer (CORE founder)",
+      "correction": "James L. Farmer Jr",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.38",
+      "whisper": "John Lewis (\"John, John\")",
+      "correction": "Representative John Lewis",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.43",
+      "whisper": "the suit to (recurring rendering for Lesotho)",
+      "correction": "Lesotho",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P3.6",
+      "whisper": "the rev of Sharpton",
+      "correction": "Reverend Al Sharpton",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.1",
+      "whisper": "knee girl / knee grows / Negroes (mixed Whisper rendering of \"Negro / Negroes\")",
+      "correction": "Negro",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.2",
+      "whisper": "Wissoutu (referring to country where Brown served Peace Corps)",
+      "correction": "Lesotho",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.3",
+      "whisper": "our partied",
+      "correction": "apartheid",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.4",
+      "whisper": "a part-time was very strong",
+      "correction": "apartheid was very strong",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.5",
+      "whisper": "trotsky-itis / trotsky IH's",
+      "correction": "Trotskyites",
+      "confidence": "high",
+      "occurrences": 7,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.6",
+      "whisper": "the peace movement / piece movement",
+      "correction": "the peace movement",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.8",
+      "whisper": "501C, three / 501C three",
+      "correction": "501(c)",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.9",
+      "whisper": "a new evaluation / a kind of a thrilling, a good, a new evaluation",
+      "correction": "ululation",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P4.18",
+      "whisper": "Charsey Affairs (US Embassy Lesotho)",
+      "correction": "Chargé d'Affaires",
+      "confidence": "correct",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "55.P2.41",
+      "whisper": "Florida McKissick (recurring rendering of Floyd)",
+      "correction": "Floyd McKissick",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    },
+    {
+      "row_id": "55.P4.11",
+      "whisper": "\"Wells Fargo had been holding the position for me also, but they could meet my salary requirement\"",
+      "correction": "...but they couldn't meet my salary requirement",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "55.P2.4",
+      "whisper": "Mrs. Emma Brown",
+      "candidate_correction": "Mrs. Emma Brown",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's mother"
+    },
+    {
+      "row_id": "55.P2.5",
+      "whisper": "Cassandra Shea (junior high homeroom teacher)",
+      "candidate_correction": "Cassandra Shea",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's York PA junior high homeroom teacher; introduced him to college concept // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "55.P2.39",
+      "whisper": "Charles (\"Charles, I mean Lewis\")",
+      "candidate_correction": "(uncertain — possibly Charles Sherrod or Charles McDew)",
+      "confidence": "low",
+      "notes": "Brown stumbled over Lewis's first name; possible reference to Charles Sherrod (#18) or Charles McDew (#16)"
+    },
+    {
+      "row_id": "55.P3.9",
+      "whisper": "mail ins / coin ins",
+      "candidate_correction": "mail-ins",
+      "confidence": "speaker-originating",
+      "notes": "Tactical innovation by Brown's San Diego CORE; speaker-originating West-Coast-CORE direct-action vocabulary; note in glossary, not catalog"
+    },
+    {
+      "row_id": "55.P4.10",
+      "whisper": "Mrs. Hill / Mrs. Shea / Cassandra Shea",
+      "candidate_correction": "Cassandra Shay",
+      "confidence": "speaker-originating",
+      "notes": "Speaker's York PA junior high homeroom teacher; spelling ambiguity between \"Shea\" / \"Shay\" / \"Shea\" — single-source unverifiable; downgrade to surface-spelling-ambiguous."
+    },
+    {
+      "row_id": "55.P4.14",
+      "whisper": "imminary",
+      "candidate_correction": "(likely \"etcetera\" or \"and other\" — context unclear)",
+      "confidence": "low",
+      "notes": "\"they didn't hire blacks even as, with because of those, those, those, baggers... much less than other positions of cashier and imaginary.\" — Whisper renders an ambiguous filler word as \"imaginary\" / \"imminary\"; possibly speaker said \"and so on\" or \"etcetera\" or a specific grocery-store role. Low confidence; flag for adversarial."
+    },
+    {
+      "row_id": "55.P4.15",
+      "whisper": "block blocking",
+      "candidate_correction": "block-busting",
+      "confidence": "medium",
+      "notes": "\"But we've got to find a way to show our kids that, you know, say, oh, how brown, Mr. Brown is a millionaire. He is, yeah. Who he played for? Exactly. Exactly. And they've got to see examples of that... At least they see it happening with one of the block blocking, you know, these the guy in the music industry.\" — Brown appears to be using \"block\" colloquially (i.e., \"guys from the block\") rather than referencing block-busting; rendering may be correct. Demote to medium and flag for adversarial."
+    },
+    {
+      "row_id": "55.P4.19",
+      "whisper": "med meetings",
+      "candidate_correction": "(likely \"all meetings\" or \"many meetings\")",
+      "confidence": "low",
+      "notes": "\"I was just dead set against that because I was very, very interested in surn with self-determination. And I used that term in med meetings in core.\" — Whisper renders ambiguous filler as \"med\"; possibly \"all\" or \"many.\" Low confidence."
+    },
+    {
+      "row_id": "55.P4.20",
+      "whisper": "ass of people / there's the ass of people",
+      "candidate_correction": "a heck of a lot of people",
+      "confidence": "low",
+      "notes": "\"But the reply to that, I heard someone say, well, delegate to whom. You know, who? There's the ass of people there.\" — Whisper renders ambiguous noun phrase as \"ass of\"; possibly \"lots of\" or \"a host of.\" Low confidence; flag for adversarial."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "55.P2.44",
+      "reason": "n/a confidence"
+    }
+  ],
+  "files_processed": [
+    "Harold K. Brown_interview_transcript_20250704_212356.srt",
+    "Harold K. Brown_interview_transcript_20250704_212356.txt",
+    "Harold K. Brown_interview_transcript_20250704_212356.vtt"
+  ],
+  "stats": {
+    "applied": 41,
+    "pending": 9,
+    "skipped": 1
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.2,
+    "confidence_tier": "medium",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.18,
+      "adversarial_flag_density": 0.02,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 1,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

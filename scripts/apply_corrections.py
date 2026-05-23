@@ -80,10 +80,39 @@ DEFAULT_MASTER_MD = REPO_ROOT / "transcripts" / "CLEANED_TRANSCRIPTS_REVIEW.md"
 DEFAULT_RAW_DIR = REPO_ROOT / "transcripts" / "raw"
 DEFAULT_OUT_DIR = REPO_ROOT / "transcripts" / "corrected"
 
-SCRIPT_VERSION = "1.0"
+SCRIPT_VERSION = "1.1"  # bumped 2026-05-23: per-entry review_metadata wired in
 TODAY = date.today().isoformat()
 
 logger = logging.getLogger("apply_corrections")
+
+# ---------------------------------------------------------------------------
+# Per-entry review-metadata helper (transcripts/review_metadata.py)
+# ---------------------------------------------------------------------------
+
+# Add transcripts/ to sys.path so we can import the standardized review-history
+# + inferential-uncertainty metadata helper. The helper is co-located with the
+# audit overlay rather than under scripts/ because its data inputs
+# (AUDIT_TRAIL.md, adversarial_review_feed.json, cross_contamination_audit.json,
+# layer5_fidelity_audit.json, civil_rights_facts.json) all live in transcripts/
+# or alongside it.
+_TRANSCRIPTS_DIR = REPO_ROOT / "transcripts"
+if str(_TRANSCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(_TRANSCRIPTS_DIR))
+
+try:
+    from review_metadata import build_review_metadata  # type: ignore
+except ImportError:
+    # If the helper is unavailable, fall back to a no-op stub so the
+    # preprocessor still works in environments without the audit overlay.
+    def build_review_metadata(entry_num: int, applied_count: int, pending_count: int) -> dict:
+        return {
+            "review_history": None,
+            "known_issues": [],
+            "inferential_uncertainty": None,
+            "ground_truth_corpus_version": None,
+            "ground_truth_corpus_path": None,
+            "_metadata_unavailable": "review_metadata.py not importable from sys.path",
+        }
 
 # ---------------------------------------------------------------------------
 # Confidence taxonomy
@@ -912,6 +941,17 @@ def process_entry(
             )
         )
 
+    # Build per-entry review-metadata block (review_history + known_issues +
+    # inferential_uncertainty + ground_truth_corpus_version). The downstream
+    # adversarial-model grader (Kiro/Kimi/Codex/Gemini ensemble) reads this
+    # block to know how many passes the entry received, what residual
+    # uncertainty remains, and what known issues block publication.
+    review_meta = build_review_metadata(
+        entry_num=entry.number,
+        applied_count=len(applied_log),
+        pending_count=len(pending_log),
+    )
+
     manifest = {
         "generated": TODAY,
         "script_version": SCRIPT_VERSION,
@@ -927,6 +967,14 @@ def process_entry(
             "pending": len(pending_log),
             "skipped": len(skipped),
         },
+        # Per-entry review-history + uncertainty metadata block
+        "review_history": review_meta.get("review_history"),
+        "known_issues": review_meta.get("known_issues", []),
+        "inferential_uncertainty": review_meta.get("inferential_uncertainty"),
+        "adversarial_review_flag_count": review_meta.get("adversarial_review_flag_count", 0),
+        "cross_contamination_items_resolved": review_meta.get("cross_contamination_items_resolved", 0),
+        "ground_truth_corpus_version": review_meta.get("ground_truth_corpus_version"),
+        "ground_truth_corpus_path": review_meta.get("ground_truth_corpus_path"),
     }
 
     if not dry_run:

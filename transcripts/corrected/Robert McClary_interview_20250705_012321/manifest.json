@@ -1,0 +1,328 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Robert McClary_interview_20250705_012321",
+  "entry_number": 109,
+  "entry_subject": "Robert McClary",
+  "applied_corrections": [
+    {
+      "row_id": "109.1",
+      "whisper": "Dr. Hassan Kwame, Jeff Rees",
+      "correction": "Dr. Hasan Kwame Jeffries",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.3",
+      "whisper": "Robert LaClaire / McLary",
+      "correction": "Robert McClary",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.4",
+      "whisper": "PD Putnam Hospital",
+      "correction": "Phoebe Putney Hospital",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.5",
+      "whisper": "Shiraah / Sharad",
+      "correction": "(Charles) Sherrod",
+      "confidence": "high",
+      "occurrences": 15,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.7",
+      "whisper": "Albany (Movement)",
+      "correction": "Albany Movement",
+      "confidence": "correct",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.9",
+      "whisper": "Southwest Jordan",
+      "correction": "Southwest Georgia",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.P2.8",
+      "whisper": "A peel that",
+      "correction": "appeal that",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.P2.10",
+      "whisper": "I was going to school with over the street",
+      "correction": "(likely) \"I was going to school across the street",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.P2.12",
+      "whisper": "electrically",
+      "correction": "elect locally\"",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.P2.13",
+      "whisper": "calories",
+      "correction": "counties",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.P3.7",
+      "whisper": "\"Tennis\"",
+      "correction": "Tenants",
+      "confidence": "high",
+      "occurrences": 4,
+      "file_paths": [
+        ".srt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "109.P2.7",
+      "whisper": "Tennis... And people are getting the bone. Tennis is getting the bone",
+      "correction": "(likely) \"Tenants... people are getting the bone",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "109.P2.9",
+      "whisper": "He took over. They took away",
+      "candidate_correction": "He took over (the assault). They took (him) away",
+      "confidence": "speaker-originating",
+      "notes": "Speaker recounting the canonical assault at SNCC office: another staff member intervened; police took the attacker away"
+    },
+    {
+      "row_id": "109.P2.11",
+      "whisper": "school board, I was making a board",
+      "candidate_correction": "school board",
+      "confidence": "speaker-originating",
+      "notes": "Speaker references local school board confrontation in Norway/Newton/Southwest GA town"
+    },
+    {
+      "row_id": "109.P2.16",
+      "whisper": "I was working in the building",
+      "candidate_correction": "I was working in the building",
+      "confidence": "speaker-originating",
+      "notes": "Speaker references SNCC field office work"
+    },
+    {
+      "row_id": "109.P2.18",
+      "whisper": "one of the other staff members",
+      "candidate_correction": "one of the other (SNCC) staff members",
+      "confidence": "speaker-originating",
+      "notes": "Refers to Albany SNCC colleague who intervened during the assault"
+    },
+    {
+      "row_id": "109.P2.24",
+      "whisper": "He's poor. I don't know what I heard. He's dead",
+      "candidate_correction": "He's poor. I don't know — I heard he's dead",
+      "confidence": "speaker-originating",
+      "notes": "Speaker recounting fate of his father / father-figure who refused to flee his hometown after a physical confrontation with a white man"
+    },
+    {
+      "row_id": "109.P3.5",
+      "whisper": "\"Mother's Beach / Mother Macedonia Beach\"",
+      "candidate_correction": "uncertain Albany GA address",
+      "confidence": "low",
+      "notes": "Pass 1 109.10 + Pass 2 109.P2.5; could not resolve identification. Flag as unresolved item for future audio re-check."
+    },
+    {
+      "row_id": "109.P3.9",
+      "whisper": "\"Black male\"",
+      "candidate_correction": "Black mayor",
+      "confidence": "medium",
+      "notes": "Pass 2 109.P2.6. Recurring Whisper homophone substitution in Civil-Rights-Movement narratives about Black-elected-official histories. Add to common-noun catalog (political-office terminology)."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "109.6",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.8",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.10",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.11",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.12",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.1",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.2",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.3",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.4",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.5",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.6",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.15",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.17",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.19",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.20",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.22",
+      "reason": "unknown confidence 'flag'"
+    },
+    {
+      "row_id": "109.P2.23",
+      "reason": "unknown confidence 'flag'"
+    }
+  ],
+  "files_processed": [
+    "Robert McClary_interview_transcript_20250705_012321.srt",
+    "Robert McClary_interview_transcript_20250705_012321.txt",
+    "Robert McClary_interview_transcript_20250705_012321.vtt"
+  ],
+  "stats": {
+    "applied": 12,
+    "pending": 7,
+    "skipped": 17
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "D",
+      "Pass 2": "D",
+      "Pass 3": "D"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [
+    "severe-whisper-degradation"
+  ],
+  "inferential_uncertainty": {
+    "score": 1.0,
+    "confidence_tier": "not-auditable",
+    "components": {
+      "base": 0.7,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.325,
+      "low_confidence_residual_ratio": 0.3684,
+      "adversarial_flag_density": 0.4211,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 8,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

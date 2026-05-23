@@ -1,0 +1,805 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "Mary Jones_interview_20250704_235019",
+  "entry_number": 85,
+  "entry_subject": "Mary Jones",
+  "applied_corrections": [
+    {
+      "row_id": "85.8",
+      "whisper": "Monroe High School",
+      "correction": "Monroe Comprehensive High School",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.10",
+      "whisper": "Mr. A.C. Sugs",
+      "correction": "A.C. Searles",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.11",
+      "whisper": "Pitch book",
+      "correction": "Pittsburgh Courier",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.13",
+      "whisper": "Sergeant Shriver",
+      "correction": "Sargent Shriver",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.16",
+      "whisper": "Dr. William Anderson",
+      "correction": "Dr. William G. Anderson",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.17",
+      "whisper": "Shaveen, Attorney King",
+      "correction": "Chevene \"C.B.\" King + (Slater) King",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.19",
+      "whisper": "Page",
+      "correction": "Marion S. Page",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.24",
+      "whisper": "Eat your Smith",
+      "correction": "Etheridge Smith",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.26",
+      "whisper": "Robert Benning, big junior",
+      "correction": "Robert Benning Jr",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.27",
+      "whisper": "Miss McCree Harris",
+      "correction": "McCree Harris",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.28",
+      "whisper": "Cardinal L.A. (Montgomery incident)",
+      "correction": "Rosa Parks",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.3",
+      "whisper": "bird speed",
+      "correction": "bird seed",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.4",
+      "whisper": "hold a grass",
+      "correction": "hoe the grass",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.5",
+      "whisper": "Howing",
+      "correction": "hoeing",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.6",
+      "whisper": "poor corn",
+      "correction": "pulling corn",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.7",
+      "whisper": "peaked nuts",
+      "correction": "peanuts",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.11",
+      "whisper": "task master",
+      "correction": "taskmaster",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.15",
+      "whisper": "head start problem",
+      "correction": "Head Start program",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.16",
+      "whisper": "the wall poverty",
+      "correction": "the War on Poverty",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.26",
+      "whisper": "photo registration",
+      "correction": "voter registration",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.28",
+      "whisper": "Carl, junior high",
+      "correction": "Carver Junior High School",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.1",
+      "whisper": "\"I lived it on a farm seat\"",
+      "correction": "I lived on a farm see\"",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.2",
+      "whisper": "\"My grandmother, who real me\"",
+      "correction": "My grandmother, who reared me",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.3",
+      "whisper": "\"75 said\"",
+      "correction": "75 cents",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.4",
+      "whisper": "\"we would say that money\"",
+      "correction": "we would save that money",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.7",
+      "whisper": "\"this at a supporter\"",
+      "correction": "Miss Alice Porter",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.8",
+      "whisper": "\"we went out to do peanuts and coden\"",
+      "correction": "we went out to do peanuts and cotton",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.10",
+      "whisper": "\"the freedom writers\"",
+      "correction": "the Freedom Riders",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.12",
+      "whisper": "\"I went to, uh, Baker, kind of jail\"",
+      "correction": "I went to, uh, Baker County jail",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.15",
+      "whisper": "\"one bit\"",
+      "correction": "one bed",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.17",
+      "whisper": "\"blackout peas\"",
+      "correction": "black-eyed peas",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.20",
+      "whisper": "\"I could think his name, told with preaching them\"",
+      "correction": "I can't think of his name, talked with Pritchett (and) them",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.26",
+      "whisper": "\"the criteria club\" / \"the criterion club here had organized\"",
+      "correction": "the Criterion Club",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.32",
+      "whisper": "\"They had a walk at B\"",
+      "correction": "They had to walk a beat",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.34",
+      "whisper": "\"I'm a Resilient\"",
+      "correction": "I'm a Reservist\"",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.35",
+      "whisper": "\"He went back and acted duty\"",
+      "correction": "He went back to active duty",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P4.37",
+      "whisper": "\"Looking at stories on the TV\"",
+      "correction": "Looking at\" /",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "85.P2.13",
+      "whisper": "Mr. A.C. Sugs / Miss A.C. Sugs",
+      "correction": "A.C. Searles",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    },
+    {
+      "row_id": "85.P4.19",
+      "whisper": "\"if you decided with us, blacks, like now they won't call us black\"",
+      "correction": "if you sided with us, blacks — like now, they won't call us black",
+      "confidence": "high",
+      "occurrences": 1,
+      "file_paths": [
+        ".txt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "85.2",
+      "whisper": "Bertha McIntosh",
+      "candidate_correction": "Bertha McIntosh",
+      "confidence": "speaker-originating",
+      "notes": "Grandmother"
+    },
+    {
+      "row_id": "85.3",
+      "whisper": "Mr. Kina",
+      "candidate_correction": "Mr. Kine",
+      "confidence": "speaker-originating",
+      "notes": "Speaker recall"
+    },
+    {
+      "row_id": "85.5",
+      "whisper": "First, but third / Visited rather",
+      "candidate_correction": "First Bethel Baptist Church",
+      "confidence": "medium",
+      "notes": "Speaker says W.E.B. Du Bois visited the church in her childhood — historically plausible (Du Bois was at Atlanta U. 1897-1910 + 1934-44) but uncertain // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "85.6",
+      "whisper": "Miss Willime Jackson",
+      "candidate_correction": "Willie Mae Jackson",
+      "confidence": "medium",
+      "notes": "-"
+    },
+    {
+      "row_id": "85.7",
+      "whisper": "Miss Celeste Scott",
+      "candidate_correction": "Celeste Scott",
+      "confidence": "speaker-originating",
+      "notes": "-"
+    },
+    {
+      "row_id": "85.9",
+      "whisper": "Jimmy Lee Jones",
+      "candidate_correction": "Jimmy Lee Jones",
+      "confidence": "speaker-originating",
+      "notes": "First husband"
+    },
+    {
+      "row_id": "85.12",
+      "whisper": "put curd",
+      "candidate_correction": "(uncertain — possibly *Pittsburgh Courier* alt or *Black Dispatch* or similar)",
+      "confidence": "flagged-for-adversarial-review",
+      "notes": "Same passage"
+    },
+    {
+      "row_id": "85.15",
+      "whisper": "Mr. McNair",
+      "candidate_correction": "(Albany school principal; uncertain)",
+      "confidence": "speaker-originating",
+      "notes": "-"
+    },
+    {
+      "row_id": "85.18",
+      "whisper": "Thomas Chapman",
+      "candidate_correction": "Thomas Chapman",
+      "confidence": "speaker-originating",
+      "notes": "Canonical Criterion Club + Albany Movement member"
+    },
+    {
+      "row_id": "85.32",
+      "whisper": "James Gray's Albany Herald + Chantine",
+      "candidate_correction": "James H. Gray + Albany Herald +",
+      "confidence": "medium",
+      "notes": "Possibly *Albany Herald*'s weekly supplement"
+    },
+    {
+      "row_id": "85.P2.2",
+      "whisper": "Miss Alice Porter",
+      "candidate_correction": "Alice Porter",
+      "confidence": "speaker-originating",
+      "notes": "Albany childhood — old woman who supervised neighborhood kids in field labor; speaker-originating canonical local figure"
+    },
+    {
+      "row_id": "85.P2.9",
+      "whisper": "slot-loan / slot loan / slot",
+      "candidate_correction": "small loan",
+      "confidence": "medium",
+      "notes": "\"Because of full pants, they bought that little slot of land. We call it slot-loan...Yeah, slot.\" — speaker may be describing either a small acreage purchased on a \"small loan\" or a \"small lot\"; phonetic uncertainty in context"
+    },
+    {
+      "row_id": "85.P2.10",
+      "whisper": "Because of full pants",
+      "candidate_correction": "(uncertain — possibly \"they had a few pennies\" or similar idiom)",
+      "confidence": "low",
+      "notes": "Same passage; clearly garbled; speaker explaining how grandmother bought the small farm"
+    },
+    {
+      "row_id": "85.P2.12",
+      "whisper": "Pitch book, put curd",
+      "candidate_correction": "Pittsburgh Courier + Atlanta Daily World",
+      "confidence": "medium",
+      "notes": "Pass 1 caught *Pittsburgh Courier*; \"put curd\" may be *Atlanta Daily World* (canonical Atlanta Black paper) or another Black newspaper Mary Jones was reading; context is Albany civil-rights news sources"
+    },
+    {
+      "row_id": "85.P2.17",
+      "whisper": "I'd go in home with that",
+      "candidate_correction": "(uncertain — possibly \"I would have gone on home with it\" or \"I'd go on home with that\")",
+      "confidence": "flagged-for-adversarial-review",
+      "notes": "Speaker discussing her education progression; pension/retirement context"
+    },
+    {
+      "row_id": "85.P2.18",
+      "whisper": "First, but third / First but third",
+      "candidate_correction": "First Bethel",
+      "confidence": "medium",
+      "notes": "Pass 1 noted; reframing — \"first but third is the Baptist church\" — Whisper rendering of \"First Bethel\" (likely First Bethel Baptist Church, canonical Albany Black church) as \"first but third\" (homophone for \"Bethel\"). Du Bois visited canonical // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "85.P2.19",
+      "whisper": "new boss, a tenant at church",
+      "candidate_correction": "New Bethel",
+      "confidence": "flagged-for-adversarial-review",
+      "notes": "Speaker discussing church naming; \"It's like a new boss, a tenant at church\" — Whisper substitutes \"new boss, a tenant\" for some church-name phrase"
+    },
+    {
+      "row_id": "85.P2.22",
+      "whisper": "Chantine",
+      "candidate_correction": "(uncertain — possibly *The Albany Chronicle* or similar weekly)",
+      "confidence": "flagged-for-adversarial-review",
+      "notes": "\"all been here, had printed and also on the, uh, Chantine, uh, which was James Gray's news vapor\" — Whisper rendering of an Albany publication name; Pass 1 noted as uncertain"
+    },
+    {
+      "row_id": "85.P2.23",
+      "whisper": "a challenge, a good year in call",
+      "candidate_correction": "a challenge to good-year-in-call",
+      "confidence": "flagged-for-adversarial-review",
+      "notes": "Speaker discussing children-led march and adult-led response; passage clearly garbled"
+    },
+    {
+      "row_id": "85.P2.25",
+      "whisper": "motry",
+      "candidate_correction": "(Cordele or Tifton)",
+      "confidence": "medium",
+      "notes": "\"I was taking people to to motry\" — context is Cordele/Tifton shopping during boycott; \"motry\" appears to be a different town name (or possibly \"Macon\" rendered as \"motry\")"
+    },
+    {
+      "row_id": "85.P4.5",
+      "whisper": "\"we would worry about five\"",
+      "candidate_correction": "we would (work",
+      "confidence": "medium",
+      "notes": "\"I would say around about seven o'clock... And they would have food for us to eat... And we would worry about five. Five.\" Speaker is describing the work-day ending around 5 PM. Whisper substitutes \"worry\" for the action verb (likely \"work till\" or \"quit at\")."
+    },
+    {
+      "row_id": "85.P4.6",
+      "whisper": "\"didn't need a chef around\"",
+      "candidate_correction": "didn't need a chaperone\"",
+      "confidence": "low",
+      "notes": "\"So we didn't need a chef around like we did this at a supporter.\" Phonetic garble. Context: walking-distance child laborers in their own neighborhood didn't need adult escort/transport. \"Chef\" is clearly wrong; \"chaperone\" is a plausible candidate but Whisper-garbled. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.9",
+      "whisper": "\"I had to do the then\"",
+      "candidate_correction": "I had to do my hair then\"",
+      "confidence": "low",
+      "notes": "\"the freedom writers... they met them come out of my husband, hadn't gone back into duty then, I had to do the then so they all went down to the train station\". Speaker discussing arrival of Freedom Riders. Whisper garbles a domestic-task phrase. Cannot resolve. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.11",
+      "whisper": "\"they had a fit back there\"",
+      "candidate_correction": "we had a fit back there\"",
+      "confidence": "low",
+      "notes": "\"And he was saying about the old, the people, the, the grownups, they too scared the march so they pushed the children out. They do their work. Right. And boy, we had a fit back there.\" Speaker's reaction to James Gray editorial alleging adults pushed children to march. \"Fit\" (rage/outrage) is the canonical Black-vernacular reading; possibly Whisper-correct as transcribed. Low-confidence catch only because the surrounding sentence is otherwise garbled."
+    },
+    {
+      "row_id": "85.P4.13",
+      "whisper": "\"from where he said it over here\"",
+      "candidate_correction": "from where you're sitting over here\"",
+      "confidence": "medium",
+      "notes": "Speaker's gestural description of jail-cell size: \"it wasn't biggest, it was about biggest from where he said it over here.\" Whisper renders an indexical \"you're sitting\" as \"he said it\". Common Whisper failure on second-person pronouns + present-tense be-verb fusion."
+    },
+    {
+      "row_id": "85.P4.16",
+      "whisper": "\"the British earth people\"",
+      "candidate_correction": "(uncertain — possibly \"the breath of the people\" / \"the brothers'-and-sisters' earthly people\")",
+      "confidence": "low",
+      "notes": "Crowded-jail passage; severely Whisper-garbled. Cannot resolve. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.21",
+      "whisper": "\"Folks was going to come Miller\"",
+      "candidate_correction": "Folks were going to Coleman/Cordele/(Sylvester) Miller\" /",
+      "confidence": "low",
+      "notes": "Black Christmas Boycott 1961 destination context: \"Folks was going to come Miller and call the ill place like that\". \"Come Miller\" likely degrades a Georgia town name (Camilla? Cordele? Coleman?). Camilla, GA is ~24 mi south of Albany — phonetically plausible match for \"come Miller\". Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.22",
+      "whisper": "\"they wouldn't have any blacks of monkeys\"",
+      "candidate_correction": "they wouldn't have any black so-called monkeys\"",
+      "confidence": "low",
+      "notes": "Daughter's basketball/integration context. Garbled; speaker quoting white-administrator language about excluded Black students. Cannot resolve. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.23",
+      "whisper": "\"a grid big of something like a bond\"",
+      "candidate_correction": "a great big something like a barn",
+      "confidence": "medium",
+      "notes": "First Bethel Baptist Church childhood-school description: \"It was a grid big of something like a bond that the white folks had given us.\" Speaker describing a barn-like structure the white community handed to the Black congregation. \"Grid big\" -> \"great big\"; \"bond\" -> \"barn\". Recurring Whisper noun-degradation pattern in regional speech."
+    },
+    {
+      "row_id": "85.P4.24",
+      "whisper": "\"Inserting that big junior\"",
+      "candidate_correction": "It's certain that's the junior\"",
+      "confidence": "low",
+      "notes": "Same passage as Pass 1 row 85.26: \"Robert Benning, big junior. Inserting that big junior. Because it's what we call it.\" Whisper-degraded explanatory phrase. \"Inserting that big junior\" appears to be a Whisper garble of an explanation about why \"Jr.\" appears in the name. Cannot fully resolve. Already cataloged as Pass 3 row 85.P3.4 catalog-worthy. Flag for completeness."
+    },
+    {
+      "row_id": "85.P4.25",
+      "whisper": "\"had a day out me\"",
+      "candidate_correction": "had agreed with me\"",
+      "confidence": "low",
+      "notes": "Neighbor child-care arrangement during jail term: \"my neighbor next door, she was overseeing them. Because she had a day out me to go to jail.\" Whisper garble of a verbal agreement/arrangement phrase. Cannot resolve. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.28",
+      "whisper": "\"my crew went childworn\"",
+      "candidate_correction": "Miss McCree Harris told (him)\"",
+      "confidence": "low",
+      "notes": "Same passage as 85.P4.27. Cannot resolve confidently. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.30",
+      "whisper": "\"his name gonna see. He was working it. They feel wrong.\"",
+      "candidate_correction": "his name [was] John C. He was working at the Phoebe (Hospital)\"",
+      "confidence": "low",
+      "notes": "Robert Benning Jr. passage; severely garbled. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.31",
+      "whisper": "\"your folks, they have regular uniforms\"",
+      "candidate_correction": "the first folks, they had regular uniforms\"",
+      "confidence": "low",
+      "notes": "First Black Albany police officers passage: \"They had a walk at B. You folks, they have regular uniforms.\" Whisper degrades a pronoun + count phrase. Cannot resolve. Flag adversarial."
+    },
+    {
+      "row_id": "85.P4.36",
+      "whisper": "\"the old, uh, jail, which was on, uh, uh, uh, I can't think of that street now, but I know it wasn't Flint\"",
+      "candidate_correction": "(street name — Pine? Oglethorpe? Roosevelt?)",
+      "confidence": "low",
+      "notes": "Speaker recalls 1961 jail-march route. Albany street name not recalled. Flag adversarial."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "85.P3.1",
+      "reason": "unknown confidence 'catalog-worthy'"
+    },
+    {
+      "row_id": "85.P3.2",
+      "reason": "unknown confidence 'catalog reference'"
+    },
+    {
+      "row_id": "85.P3.3",
+      "reason": "unknown confidence 'catalog reference'"
+    },
+    {
+      "row_id": "85.P3.4",
+      "reason": "unknown confidence 'catalog reference'"
+    },
+    {
+      "row_id": "85.P3.5",
+      "reason": "unknown confidence 'catalog reference'"
+    },
+    {
+      "row_id": "85.P3.6",
+      "reason": "unknown confidence 'catalog reference'"
+    },
+    {
+      "row_id": "85.P3.7",
+      "reason": "n/a confidence"
+    }
+  ],
+  "files_processed": [
+    "Mary Jones_interview_transcript_20250704_235019.srt",
+    "Mary Jones_interview_transcript_20250704_235019.txt",
+    "Mary Jones_interview_transcript_20250704_235019.vtt"
+  ],
+  "stats": {
+    "applied": 39,
+    "pending": 35,
+    "skipped": 7
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.5811,
+    "confidence_tier": "publication-block",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.473,
+      "adversarial_flag_density": 0.1081,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 8,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

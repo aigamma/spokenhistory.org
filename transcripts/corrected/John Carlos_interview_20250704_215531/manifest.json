@@ -1,0 +1,825 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "John Carlos_interview_20250704_215531",
+  "entry_number": 62,
+  "entry_subject": "John Carlos",
+  "applied_corrections": [
+    {
+      "row_id": "62.1",
+      "whisper": "Linux Avenue / Lennox Avenue",
+      "correction": "Lenox Avenue",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.2",
+      "whisper": "Savoy Barroom",
+      "correction": "Savoy Ballroom",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.4",
+      "whisper": "Heron",
+      "correction": "heroin",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.6",
+      "whisper": "Joe Yancy / Mr. Levy",
+      "correction": "Joe Yancy /",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.9",
+      "whisper": "Machine of Metal Trades",
+      "correction": "School of Machine and Metal Trades",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.10",
+      "whisper": "16th Street Armory",
+      "correction": "168th Street Armory",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.13",
+      "whisper": "East Texas State",
+      "correction": "East Texas State University",
+      "confidence": "correct",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.15",
+      "whisper": "Adam Clayton Powell Senior / Junior",
+      "correction": "Adam Clayton Powell Sr",
+      "confidence": "correct",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.16",
+      "whisper": "Abyssinia Baptist Church",
+      "correction": "Abyssinian Baptist Church",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.17",
+      "whisper": "Marcus Govy",
+      "correction": "Marcus Garvey",
+      "confidence": "high",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.19",
+      "whisper": "Marka Max / Mark Max",
+      "correction": "Malcolm X",
+      "confidence": "high",
+      "occurrences": 24,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.22",
+      "whisper": "Tommy Smith",
+      "correction": "Tommie Smith",
+      "confidence": "high",
+      "occurrences": 21,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.23",
+      "whisper": "Peed and no more",
+      "correction": "Peter Norman",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.24",
+      "whisper": "Harry Edwards / Professor Edwards",
+      "correction": "Dr. Harry Edwards",
+      "confidence": "correct",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.25",
+      "whisper": "Ken Knows / Ken Noel",
+      "correction": "Ken Noel",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.27",
+      "whisper": "trade bond mod",
+      "correction": "Trayvon Martin",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.29",
+      "whisper": "Jesse on his dead",
+      "correction": "Jesse Owens",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.30",
+      "whisper": "Hank Aaron / Willie Mays",
+      "correction": "Hank Aaron",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.33",
+      "whisper": "Hitler",
+      "correction": "Adolf Hitler",
+      "confidence": "correct",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.34",
+      "whisper": "Mr. Putin / President of Russia",
+      "correction": "Vladimir Putin",
+      "confidence": "correct",
+      "occurrences": 15,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.1",
+      "whisper": "Camden, South Carolina",
+      "correction": "Camden, SC",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.2",
+      "whisper": "First World War",
+      "correction": "World War I",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.3",
+      "whisper": "Cotton Club",
+      "correction": "The Cotton Club",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.15",
+      "whisper": "Elgin Bell",
+      "correction": "Elgin Baylor",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.16",
+      "whisper": "Wilk Chamon / Wilt Chambon",
+      "correction": "Wilt Chamberlain",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.17",
+      "whisper": "Rutgers tournament",
+      "correction": "Rucker Park",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.20",
+      "whisper": "Joe Yancy",
+      "correction": "Joseph \"Joe\" Yancey",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.24",
+      "whisper": "Machine of Metal Trades / Machine and Metal Trades",
+      "correction": "School of Machine and Metal Trades",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.28",
+      "whisper": "the PSL",
+      "correction": "PSAL",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.30",
+      "whisper": "East Texas State",
+      "correction": "East Texas State University",
+      "confidence": "correct",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.35",
+      "whisper": "Paul Robeson / Paul Robson / Paul Robinson",
+      "correction": "Paul Robeson",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.42",
+      "whisper": "Harry Edwards / Professor Edwards",
+      "correction": "Dr. Harry Edwards",
+      "confidence": "correct",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.48",
+      "whisper": "Hitler",
+      "correction": "Adolf Hitler",
+      "confidence": "correct",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.54",
+      "whisper": "Karim / Kareem",
+      "correction": "Kareem Abdul-Jabbar",
+      "confidence": "high",
+      "occurrences": 18,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.61",
+      "whisper": "Olympic Committee",
+      "correction": "International Olympic Committee",
+      "confidence": "correct",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.64",
+      "whisper": "Gandhi",
+      "correction": "Mahatma Gandhi",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.68",
+      "whisper": "Liz Taylor / Rock Hudson / John Wayne",
+      "correction": "Elizabeth Taylor",
+      "confidence": "correct",
+      "occurrences": 15,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.71",
+      "whisper": "Sochi / Finns",
+      "correction": "Sochi",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.73",
+      "whisper": "Australia / Sydney",
+      "correction": "Sydney",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.75",
+      "whisper": "Texas Ranger",
+      "correction": "Texas Ranger statue",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.76",
+      "whisper": "the Olympic Project for Human Rights button",
+      "correction": "OPHR button",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P2.77",
+      "whisper": "the Paul brunt thrown / Paul (Harvard rowing team)",
+      "correction": "Paul Hoffman",
+      "confidence": "high",
+      "occurrences": 21,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P4.2",
+      "whisper": "\"I had bees\" / \"I was heading bees on\" (SRT lines 3067, 3071)",
+      "correction": "I had beads\"",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P4.6",
+      "whisper": "\"Bobby moral\" / \"Bobby Moral\" (SRT lines 2295, 2299, 2303)",
+      "correction": "Bobby Morrow",
+      "confidence": "high",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P4.10",
+      "whisper": "\"the army\" / \"out the army\" (SRT lines 681, 683)",
+      "correction": "the armory",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P4.20",
+      "whisper": "\"Jesse Ones\" / \"Jesse Owens\" (SRT line 2323)",
+      "correction": "Jesse Owens",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "62.5",
+      "whisper": "Detective Lester / Mr. Lessing / Detective Brown",
+      "candidate_correction": "Detective Lester",
+      "confidence": "speaker-originating",
+      "notes": "Canonical NYPD 32nd Precinct detectives who steered Carlos to the New York Pioneer Club // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "62.12",
+      "whisper": "Pete Peterson",
+      "candidate_correction": "Pete Peterson",
+      "confidence": "speaker-originating",
+      "notes": "Canonical East Texas State University track recruiter who saw Carlos run in NJ"
+    },
+    {
+      "row_id": "62.14",
+      "whisper": "Dennis Dice",
+      "candidate_correction": "Dennis Dice",
+      "confidence": "speaker-originating",
+      "notes": "Canonical Jamaican-American fellow East Texas State track athlete"
+    },
+    {
+      "row_id": "62.P2.6",
+      "whisper": "King Kong",
+      "candidate_correction": "King Kong\"",
+      "confidence": "speaker-originating",
+      "notes": "\"the drug of choice for many individuals was a thing called King Kong. King Kong was a bootleg liquor\" — speaker-originating 1950s Harlem slang for high-proof bootleg liquor; not an error, but flag as cultural lexicon"
+    },
+    {
+      "row_id": "62.P2.18",
+      "whisper": "Detective Lester / Mr. Luster / Mr. Lessing",
+      "candidate_correction": "Detective Lester",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — recurring Whisper rendering variants"
+    },
+    {
+      "row_id": "62.P2.19",
+      "whisper": "Detective Brown",
+      "candidate_correction": "Detective Brown",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — Carlos's mentor-figure who steered him to the NY Pioneer Club // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "62.P2.21",
+      "whisper": "Mr. Levy",
+      "candidate_correction": "(uncertain NYPC coach)",
+      "confidence": "low",
+      "notes": "(Pass 1 noted) — speaker-originating NYPC coach; spelling unverified"
+    },
+    {
+      "row_id": "62.P2.25",
+      "whisper": "16th Street Armory / 168th Street Armory",
+      "candidate_correction": "168th Street Armory",
+      "confidence": "medium",
+      "notes": "(Pass 1 noted) — canonical NYC indoor-track armory venue"
+    },
+    {
+      "row_id": "62.P2.29",
+      "whisper": "Pete Peterson",
+      "candidate_correction": "Pete Peterson",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — East Texas State University track recruiter"
+    },
+    {
+      "row_id": "62.P2.31",
+      "whisper": "Dennis Dice",
+      "candidate_correction": "Dennis Dice",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — Jamaican-American East Texas State track teammate"
+    },
+    {
+      "row_id": "62.P2.52",
+      "whisper": "Hepsy Carlos",
+      "candidate_correction": "Hepsy Carlos",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — Carlos's sister"
+    },
+    {
+      "row_id": "62.P2.53",
+      "whisper": "Earl Carlos / Earl Junior / Andrew",
+      "candidate_correction": "Earl Carlos",
+      "confidence": "speaker-originating",
+      "notes": "Carlos's father (Earl Sr., WWI veteran Camden SC) and older brothers Earl Jr. + Andrew // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "62.P2.55",
+      "whisper": "Dr. Tassel / Dr. Tasel",
+      "candidate_correction": "Dr. Jon Whitmore",
+      "confidence": "medium",
+      "notes": "\"I went to the president, Dr. Tassel at the time\" — refers to whoever was San Jose State president at the time the Smith/Carlos statues were dedicated (October 2005); flag for confirmation; possibly Dr. Don Kassing (interim president 2004-08)"
+    },
+    {
+      "row_id": "62.P2.59",
+      "whisper": "Canaan Miles",
+      "candidate_correction": "(uncertain — possibly Cain & Miles partners or a place)",
+      "confidence": "low",
+      "notes": "Carlos's recollection unclear; possibly the name of a small business / training partner"
+    },
+    {
+      "row_id": "62.P2.79",
+      "whisper": "\"split the pea in half\" / \"God's law vs man's law\"",
+      "candidate_correction": "(correct — speaker's foundational Robin Hood framing)",
+      "confidence": "speaker-originating",
+      "notes": "Canonical Carlos framing"
+    },
+    {
+      "row_id": "62.P2.80",
+      "whisper": "Detective Brown smacked me upside my head",
+      "candidate_correction": "(correct — canonical first-person account)",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — Canonical pre-civil-rights-era NYC-Black-youth interaction style"
+    },
+    {
+      "row_id": "62.P2.81",
+      "whisper": "Earl Carlos",
+      "candidate_correction": "Earl Carlos Sr",
+      "confidence": "speaker-originating",
+      "notes": "Carlos's father (b. ~1899-1900 Camden SC; NYC shoemaker; WWI veteran) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "62.P3.4",
+      "whisper": "\"Robin Hood\" framing",
+      "candidate_correction": "(correct speaker phrasing)",
+      "confidence": "speaker-originating",
+      "notes": "Carlos's \"split the pea in half — God's law vs. man's law\" framing is foundational canonical first-person material. Flag for possible Smithsonian-grade summary quote."
+    },
+    {
+      "row_id": "62.P4.7",
+      "whisper": "\"Terry Barnett\" / \"Terry Ames, Terry Burnett\" (SRT lines 2311, 2315, 2767)",
+      "candidate_correction": "Terry Barnett",
+      "confidence": "low",
+      "notes": "\"Terry Barnett White fellow... I put Terry Barnett in the class of John Brown and Peter Norman\" — canonical speaker-context white teammate at East Texas State who befriended Carlos and supported him against the racist East Texas State coach. The transcript also renders as \"Terry Ames, Terry Burnett\" suggesting Whisper instability. Flag as speaker-originating name requiring East Texas State 1966-67 roster lookup."
+    },
+    {
+      "row_id": "62.P4.8",
+      "whisper": "\"Mr. Bryant\" / \"Detective Brown\" (SRT line 543 vs. broader corpus)",
+      "candidate_correction": "Detective Brown",
+      "confidence": "speaker-originating",
+      "notes": "Line 543: \"I missed the Lester and Mr. Bryant. They were out of a 32nd precinct right there in 135th Street.\" — \"Mr. Bryant\" appears here as a Whisper rendering of \"Mr. Brown\" (the same character Pass 1-3 stabilized as \"Detective Brown\"). Note this third Whisper variant (\"Bryant\") for the same speaker referent. Not a new error but a new variant of an existing one — flag for catalog completeness."
+    },
+    {
+      "row_id": "62.P4.11",
+      "whisper": "\"Rhythmas\" (SRT line 855)",
+      "candidate_correction": "Rice",
+      "confidence": "low",
+      "notes": "\"they had songs about boys high, do we Clinton, Rhythmas, they had no songs from me at Machina Metal Traits\" — Carlos lists rival NYC high schools with track-program songs. \"Boys High\" = Boys High School Brooklyn; \"DeWitt Clinton\" = DeWitt Clinton High School Bronx; \"Rhythmas\" is unclear — possibly Rice High School (Harlem, all-boys Catholic, with strong basketball tradition) or another NYC school. Flag as low for HS-roster cross-check."
+    },
+    {
+      "row_id": "62.P4.12",
+      "whisper": "\"Sonom\" / \"our friend Sonom\" (SRT line 35)",
+      "candidate_correction": "(uncertain — likely \"Sonia\" or a Carlos family member)",
+      "confidence": "low",
+      "notes": "Interviewer David Klein at intro: \"We also have Elaine Nichols here from the museum and our friend Sonom is also joining us today.\" — \"Sonom\" is not a standard English name and is likely a Whisper failure on \"Sonia\" (or another family-name); could be Carlos's daughter or another in-room companion. Flag for production-notes verification."
+    },
+    {
+      "row_id": "62.P4.13",
+      "whisper": "\"Frankie Barn\" (SRT line 659)",
+      "candidate_correction": "Frankie Barnes",
+      "confidence": "low",
+      "notes": "\"Jimmy Brown and guys like that. Frankie Barn. They out there running 660s.\" — Carlos's NY Pioneer Club teammates running 660-yard intervals. \"Frankie Barn\" is likely a clipped Whisper rendering of \"Frankie Barnes\" or similar. Flag for NYPC-roster lookup."
+    },
+    {
+      "row_id": "62.P4.14",
+      "whisper": "\"Jimmy Brown\" (SRT line 659)",
+      "candidate_correction": "Jimmy Brown",
+      "confidence": "speaker-originating",
+      "notes": "Carlos lists \"Jimmy Brown\" among his New York Pioneer Club training partners. Almost certainly NOT the same Jim Brown (Cleveland Browns NFL Hall of Famer, b. 1936, Manhasset NY) — context here is a NYPC distance runner. Flag for NYPC-roster lookup to disambiguate."
+    },
+    {
+      "row_id": "62.P4.17",
+      "whisper": "\"BWH\" / \"the working BWH\" (SRT line 619)",
+      "candidate_correction": "BMT\"",
+      "confidence": "low",
+      "notes": "\"I recall my mother going out one night to work. And I guess about an hour she came back\" — Carlos describes his mother's commute. The Whisper rendering \"BWH\" is unclear; could be \"BMT\" (Brooklyn-Manhattan Transit) or simply a stuttered \"to work\" rendering. Flag for low-confidence cleanup."
+    },
+    {
+      "row_id": "62.P4.21",
+      "whisper": "\"the deputate\" (SRT line 279)",
+      "candidate_correction": "the day\"",
+      "confidence": "low",
+      "notes": "\"I would say with the drug trade, the deputate at the time, there was a professional type of drugs that some of these professional doctors had...\" — Whisper rendering \"the deputate\" is nonsense; likely a clipped phrase (\"the day in town\" or \"depending on the patient\"). Flag for low-confidence cleanup."
+    },
+    {
+      "row_id": "62.P4.22",
+      "whisper": "\"Jefferson and Scott\" (SRT line 3371)",
+      "candidate_correction": "(uncertain — possibly \"Jefferson Scott\" or two-name reference)",
+      "confidence": "low",
+      "notes": "\"a lot of kids, Jefferson and Scott, you know, everywhere you still sit in your liberal, but you at the Olympics\" — Carlos lists athletes whose energy he carries with him. \"Jefferson and Scott\" could be two athletes, one (Jefferson Scott), or a Whisper failure on a different name. Flag for low-confidence cleanup."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "62.P2.69",
+      "reason": "n/a confidence"
+    },
+    {
+      "row_id": "62.P3.3",
+      "reason": "unknown confidence 'catalog'"
+    },
+    {
+      "row_id": "62.P3.5",
+      "reason": "notes indicate drop: Pass 2 row 62.P2.75 caught this. The bronze Texas Ranger sta"
+    },
+    {
+      "row_id": "62.P4.5",
+      "reason": "notes indicate drop: \"We took the poor machine out there merely because I represe"
+    }
+  ],
+  "files_processed": [
+    "John Carlos_interview_transcript_20250704_215531.srt",
+    "John Carlos_interview_transcript_20250704_215531.txt",
+    "John Carlos_interview_transcript_20250704_215531.vtt"
+  ],
+  "stats": {
+    "applied": 46,
+    "pending": 27,
+    "skipped": 4
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.4247,
+    "confidence_tier": "low",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.3699,
+      "adversarial_flag_density": 0.0548,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 4,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}

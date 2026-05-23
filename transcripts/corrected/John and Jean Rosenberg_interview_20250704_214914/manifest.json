@@ -1,0 +1,897 @@
+{
+  "generated": "2026-05-23",
+  "script_version": "1.1",
+  "raw_dir": "John and Jean Rosenberg_interview_20250704_214914",
+  "entry_number": 61,
+  "entry_subject": "John and Jean Rosenberg",
+  "applied_corrections": [
+    {
+      "row_id": "61.6",
+      "whisper": "SA-16 / Grumman Albatross",
+      "correction": "SA-16 Grumman Albatross",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.8",
+      "whisper": "Roman Hassan",
+      "correction": "Rohm and Haas",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.9",
+      "whisper": "Julius Chambers",
+      "correction": "Julius LeVonne Chambers",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.12",
+      "whisper": "Bob Owen / David Norman / Frank Dunbaugh / Frank Schwelb / Gerald Stern",
+      "correction": "Civil Rights Division attorneys cohort",
+      "confidence": "correct",
+      "occurrences": 24,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.13",
+      "whisper": "Jerry Hyalbrun / Jerry Hyalburn",
+      "correction": "Gerald \"Jerry\" Heilbron",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.17",
+      "whisper": "Hazel Brandon Smith / Hazel Brandt Smith",
+      "correction": "Hazel Brannon Smith",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.20",
+      "whisper": "Gordon Martin",
+      "correction": "Gordon A. Martin Jr",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.23",
+      "whisper": "Jim Clark / Wilson Baker / Dallas County",
+      "correction": "Sheriff Jim Clark",
+      "confidence": "correct",
+      "occurrences": 33,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.25",
+      "whisper": "Judge Cox",
+      "correction": "Judge W. Harold Cox",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.27",
+      "whisper": "LaFlaur County",
+      "correction": "Leflore County",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.31",
+      "whisper": "Dorothy Shelton / Dorothy Landsberg",
+      "correction": "Dorothy Shelton Landsberg",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.1",
+      "whisper": "voila leozu / viola leozu / liuzzo",
+      "correction": "Viola Liuzzo",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.2",
+      "whisper": "Apple Red / Apple Action Research and Defense Fund",
+      "correction": "Appalred",
+      "confidence": "high",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.3",
+      "whisper": "Harry Coddle",
+      "correction": "Harry M. Caudill",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.4",
+      "whisper": "Comberlands / Cumberland",
+      "correction": "Cumberlands",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.5",
+      "whisper": "White Spurg",
+      "correction": "Whitesburg, KY",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.6",
+      "whisper": "Preston's Burg",
+      "correction": "Prestonsburg, KY",
+      "confidence": "high",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.7",
+      "whisper": "mountain eagle",
+      "correction": "The Mountain Eagle",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.10",
+      "whisper": "Adolf Hitler / Hitler",
+      "correction": "Adolf Hitler",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.12",
+      "whisper": "Gastonia",
+      "correction": "Gastonia, NC",
+      "confidence": "correct",
+      "occurrences": 39,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.13",
+      "whisper": "Spartanburg",
+      "correction": "Spartanburg, SC",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.15",
+      "whisper": "SA-16 / Grumman Albatross",
+      "correction": "SA-16",
+      "confidence": "correct",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.18",
+      "whisper": "John Dorr / John Doar",
+      "correction": "John Doar",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.26",
+      "whisper": "Steve Pollock",
+      "correction": "Stephen J. Pollak",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.27",
+      "whisper": "Nick Flannery",
+      "correction": "Nicholas deB. Katzenbach? — actually probably Nick Katzenbach?",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.29",
+      "whisper": "John Mitchell",
+      "correction": "John N. Mitchell",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.30",
+      "whisper": "Cyrus Vance",
+      "correction": "Cyrus R. Vance",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.31",
+      "whisper": "Joe Sullivan",
+      "correction": "Joseph A. Sullivan",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.33",
+      "whisper": "Carol County",
+      "correction": "Carroll County, MS",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.40",
+      "whisper": "Judge Connolly",
+      "correction": "Judge Ben C. Connally",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.42",
+      "whisper": "Judge Wisdom / minor wisdom",
+      "correction": "Judge John Minor Wisdom",
+      "confidence": "high",
+      "occurrences": 39,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.43",
+      "whisper": "Judge Brown",
+      "correction": "Judge John R. Brown",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.44",
+      "whisper": "Judge Bell",
+      "correction": "Judge Griffin B. Bell",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.46",
+      "whisper": "Marin Wright, Edelman",
+      "correction": "Marian Wright Edelman",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.47",
+      "whisper": "Children's Offense Fund",
+      "correction": "Children's Defense Fund",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.50",
+      "whisper": "Lieutenant Governor Johnson",
+      "correction": "Lt. Gov. Paul B. Johnson Jr",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.51",
+      "whisper": "Lyndon Johnson",
+      "correction": "Lyndon B. Johnson",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.52",
+      "whisper": "Bobby Kennedy",
+      "correction": "Robert F. Kennedy",
+      "confidence": "correct",
+      "occurrences": 15,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.53",
+      "whisper": "Senator Eastland",
+      "correction": "Senator James O. Eastland",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.54",
+      "whisper": "James R. Ray",
+      "correction": "James Earl Ray",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.57",
+      "whisper": "LaFlaur / Leflore",
+      "correction": "Leflore County, MS",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.58",
+      "whisper": "itabina, Mississippi",
+      "correction": "Itta Bena, MS",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.60",
+      "whisper": "Greenwood",
+      "correction": "Greenwood, MS",
+      "confidence": "correct",
+      "occurrences": 33,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.62",
+      "whisper": "Selma to Montgomery",
+      "correction": "Selma to Montgomery March",
+      "confidence": "correct",
+      "occurrences": 9,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.64",
+      "whisper": "Jim Clark",
+      "correction": "Sheriff Jim Clark",
+      "confidence": "correct",
+      "occurrences": 33,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.66",
+      "whisper": "A.Z. Hicks / Hicks family",
+      "correction": "Robert \"Bob\" Hicks",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.68",
+      "whisper": "Bogalusa",
+      "correction": "Bogalusa, LA",
+      "confidence": "correct",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.71",
+      "whisper": "Lawrence Giot",
+      "correction": "Lawrence Guyot",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.78",
+      "whisper": "Terry Lensner",
+      "correction": "Terry F. Lenzner",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.79",
+      "whisper": "Dorothy Shelton / Dorothy Landsberg",
+      "correction": "Dorothy Shelton Landsberg",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.80",
+      "whisper": "the never button",
+      "correction": "Never\" segregationist button",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.81",
+      "whisper": "Mud Creek",
+      "correction": "Mud Creek Clinic",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P2.82",
+      "whisper": "Pikeville",
+      "correction": "Pikeville, KY",
+      "confidence": "correct",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.1",
+      "whisper": "\"General Iowa State Park\"",
+      "correction": "Jenny Wiley State Resort Park",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.2",
+      "whisper": "\"annual trust division\"",
+      "correction": "Antitrust Division",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.3",
+      "whisper": "\"Jerry Auburn\"",
+      "correction": "Jerome A. \"Jerry\" Heilbron",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.4",
+      "whisper": "\"into oldness into the University of Mississippi\"",
+      "correction": "into Ole Miss",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.6",
+      "whisper": "\"Floor County\"",
+      "correction": "Leflore County, MS",
+      "confidence": "high",
+      "occurrences": 6,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.8",
+      "whisper": "\"Hazel Brandt and Smith's paper was bomb\"",
+      "correction": "Hazel Brannon Smith's paper was bombed",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "61.P4.9",
+      "whisper": "\"hot in card and greenville\"",
+      "correction": "Hodding Carter",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    }
+  ],
+  "pending_context": [
+    {
+      "row_id": "61.5",
+      "whisper": "C Park",
+      "candidate_correction": "C.E. Park",
+      "confidence": "medium",
+      "notes": "Canonical Duke trustee; Gastonia native; spelling not yet fully verified"
+    },
+    {
+      "row_id": "61.18",
+      "whisper": "Foot Campbell",
+      "candidate_correction": "Foot\" Campbell",
+      "confidence": "speaker-originating",
+      "notes": "Canonical 1960s Yazoo County MS Circuit Clerk / voting registrar"
+    },
+    {
+      "row_id": "61.P2.9",
+      "whisper": "C Park",
+      "candidate_correction": "C.E. Park",
+      "confidence": "medium",
+      "notes": "(Pass 1 noted) — canonical Duke trustee; Gastonia native; spelling not fully verified"
+    },
+    {
+      "row_id": "61.P2.14",
+      "whisper": "Abe Jenkins (Charleston SC)",
+      "candidate_correction": "Abe Jenkins",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — Rosenberg's Air Force radar operator from Charleston SC; the foundational train-segregation-in-DC formative incident"
+    },
+    {
+      "row_id": "61.P2.25",
+      "whisper": "Jerry Hyalbrun / Jerry Hyalburn",
+      "candidate_correction": "Jerome A. \"Jerry\" Heilbron",
+      "confidence": "medium",
+      "notes": "\"There had been a series of church burnings... I worked with a lawyer named Jerry Hyalbrun who had practiced in Fort Smith Arkansas\" — canonical Fort Smith AR-based civil rights attorney who joined the Civil Rights Division; later Community Relations Service; spelling not fully verified // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "row_id": "61.P2.32",
+      "whisper": "Lou Couter",
+      "candidate_correction": "Louis B. \"Lou\" Coutter",
+      "confidence": "low",
+      "notes": "\"this picture of, this is James Farmer leading the March... One of them is Lou Couter and the other is John Rosenberg when we were at that March\" — canonical Civil Rights Division attorney; spelling unverified"
+    },
+    {
+      "row_id": "61.P2.34",
+      "whisper": "Foot Campbell (Yazoo County)",
+      "candidate_correction": "Foot\" Campbell",
+      "confidence": "speaker-originating",
+      "notes": "(Pass 1 noted) — canonical Yazoo County MS Circuit Clerk in the 1960s; the foundational 38-pistol-shot-into-floor intimidation episode"
+    },
+    {
+      "row_id": "61.P2.41",
+      "whisper": "Judge Thomas",
+      "candidate_correction": "Judge Daniel Thomas",
+      "confidence": "medium",
+      "notes": "\"the case was then assigned to Judge Thomas who was the chief judge in the Southern District. He had kept the mobile school system pretty well segregated\" — canonical US District Judge for Southern District of Alabama; the 1966 Selma election-recount case in Dallas County (Jim Clark vs. Wilson Baker)"
+    },
+    {
+      "row_id": "61.P2.55",
+      "whisper": "Mr. Eskridge",
+      "candidate_correction": "Mr. Eskridge",
+      "confidence": "speaker-originating",
+      "notes": "\"if you knew Fannie Lou Hamer or Mr. Eskridge, and she's out there chopping cotton or thinking she might lose her job or Eskridge is set all out there by himself, he wants just all he wants is to get his kid into school\" — speaker-originating reference to a MS Civil Rights Movement parent figure"
+    },
+    {
+      "row_id": "61.P2.59",
+      "whisper": "Balance Do",
+      "candidate_correction": "Baptist Town",
+      "confidence": "low",
+      "notes": "\"Black section is known as Balance Do\" — canonical Itta Bena MS Black neighborhood; possibly \"Balance Due\" / \"Baptist Town\" — flag for confirmation"
+    },
+    {
+      "row_id": "61.P2.73",
+      "whisper": "Gondolezo",
+      "candidate_correction": "(uncertain Italian/last name)",
+      "confidence": "low",
+      "notes": "\"Roman Hassan\" was already addressed; flag for follow-up"
+    },
+    {
+      "row_id": "61.P2.83",
+      "whisper": "Greater Germantown Business Association",
+      "candidate_correction": "(cross-ref to #63 Churchville)",
+      "confidence": "speaker-originating",
+      "notes": "(Mistaken — this is in #63 Churchville transcript, not Rosenberg; ignore)"
+    },
+    {
+      "row_id": "61.P4.5",
+      "whisper": "\"McChain Marshall McChain\"",
+      "candidate_correction": "James P. McShane",
+      "confidence": "medium",
+      "notes": "\"I have a really nice picture in him and I can get a McChain Marshall McChain and John with James Meredith being confronted by Lieutenant Governor Johnson when they weren't going to admit him\" (line 803) -- the canonical reference is to James P. McShane, the US Chief Marshal who personally escorted Meredith onto the Ole Miss campus September 1962 and was a foundational figure alongside Doar in the registration. Whisper has garbled \"McShane, Marshal McShane\" into \"McChain Marshall McChain.\" Identification at medium pending second-source confirmation but the Meredith-escort context is unambiguous."
+    },
+    {
+      "row_id": "61.P4.7",
+      "whisper": "\"Coast Park Simulator\"",
+      "candidate_correction": "(uncertain — possibly \"post-Park situation\" or interviewer phrasing)",
+      "confidence": "low",
+      "notes": "\"And for you personally, I don't know whether if there are African Americans in your classes at Duke or was this really for you the first time to be in Coast Park Simulator?\" (line 611) -- the phrase is a Whisper garble in an interviewer question; the underlying intent appears to be \"a fully integrated setting\" or \"post-segregation situation\" but the source phrase cannot be recovered with confidence. Flag for adversarial review."
+    },
+    {
+      "row_id": "61.P4.10",
+      "whisper": "\"Mrs. Ippie Bernie\"",
+      "candidate_correction": "(unidentified — likely \"Mrs. ___ Bernie\" — possibly \"Mrs. Effie / Yip / Ippy Bernie\" connected to the Meridian FBI-informant context)",
+      "confidence": "low",
+      "notes": "\"it was not the way quite the way Mrs. Ippie Bernie put it\" (line 1511) -- reference in the context of an unnamed Mississippi Burning FBI-informant story; the speaker is contrasting \"Mrs. Ippie Bernie's\" version of events against the FBI agent's actual conduct. Identification cannot be made from internal context alone. Flag for adversarial review."
+    }
+  ],
+  "skipped_rows": [
+    {
+      "row_id": "61.P3.4",
+      "reason": "unknown confidence 'canonical'"
+    }
+  ],
+  "files_processed": [
+    "John and Jean Rosenberg_interview_transcript_20250704_214914.srt",
+    "John and Jean Rosenberg_interview_transcript_20250704_214914.txt",
+    "John and Jean Rosenberg_interview_transcript_20250704_214914.vtt"
+  ],
+  "stats": {
+    "applied": 60,
+    "pending": 15,
+    "skipped": 1
+  },
+  "review_history": {
+    "correction_passes_complete": [
+      "Pass 1",
+      "Pass 2",
+      "Pass 3"
+    ],
+    "audit_sweeps_complete": [
+      "Cross-contamination Phase 1a (2026-05-22, commit e325d79)",
+      "Cross-contamination follow-on cleanup (2026-05-22, commit 847f763)",
+      "Layer 5 corpus-global fidelity sweep (2026-05-22/23)"
+    ],
+    "pass_count_total": 6,
+    "pass_coverage_flags": {
+      "Pass 1": "F",
+      "Pass 2": "F",
+      "Pass 3": "F"
+    },
+    "coverage_flag_legend": {
+      "F": "Full transcript read end-to-end",
+      "P-NN": "Partial read covered NN% of bytes",
+      "T": "Tail-sweep applied (full coverage restored)",
+      "S": "SKIPPED (empty source dir / 3+-speaker pipeline failure)",
+      "R": "Redirect (covered via joint interview)",
+      "D": "Severe Whisper degradation",
+      "M": "Mid-sentence source truncation (not retry-resolvable)"
+    }
+  },
+  "known_issues": [],
+  "inferential_uncertainty": {
+    "score": 0.2933,
+    "confidence_tier": "low",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.2,
+      "adversarial_flag_density": 0.0933,
+      "cross_contamination_penalty": 0.0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+  },
+  "adversarial_review_flag_count": 7,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+}
