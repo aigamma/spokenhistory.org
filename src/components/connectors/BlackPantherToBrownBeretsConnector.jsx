@@ -12,6 +12,10 @@ export default function BlackPantherToBrownBeretsConnector({ fromRef, toRef }) {
 
   useEffect(() => {
     const updateConnector = () => {
+      if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+        setConnectorPath({ segments: [], show: false });
+        return;
+      }
       if (fromRef.current && toRef.current) {
         const fromRect = fromRef.current.getBoundingClientRect();
         const toRect = toRef.current.getBoundingClientRect();

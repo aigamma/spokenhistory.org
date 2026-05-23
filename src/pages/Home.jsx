@@ -111,6 +111,10 @@ const SmartRay = ({
 
   useEffect(() => {
     const updateRay = () => {
+      if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+        setRayConfig({ x: 0, y: 0, width: 0 });
+        return;
+      }
       if (targetRef.current && typeof window !== 'undefined') {
         const rect = targetRef.current.getBoundingClientRect();
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -183,9 +187,9 @@ const DecadeSection = ({ decade, subtitle }) => (
         
         {/* Decade - Left side on desktop, centered on mobile */}
         <div className={`text-center ${decade.includes(' ') ? 'lg:text-left sm:-ml-4 md:-ml-8 lg:-ml-32' : 'lg:text-right lg:pr-8'}`}>
-          <h2 className="mb-4 lg:mb-6 whitespace-nowrap">
-            <span className="text-red-500 text-5xl sm:text-6xl lg:text-7xl xl:text-9xl font-extralight font-['Inter']">{decade.split(' ')[0]}</span>
-            <span className="text-red-500 text-5xl sm:text-6xl lg:text-7xl xl:text-9xl font-medium font-['Inter']"> {decade.split(' ').slice(1).join(' ')}</span>
+          <h2 className="mb-4 lg:mb-6 lg:whitespace-nowrap">
+            <span className="text-red-500 text-4xl sm:text-6xl lg:text-7xl xl:text-9xl font-extralight font-['Inter']">{decade.split(' ')[0]}</span>
+            <span className="text-red-500 text-4xl sm:text-6xl lg:text-7xl xl:text-9xl font-medium font-['Inter']"> {decade.split(' ').slice(1).join(' ')}</span>
           </h2>
         </div>
         
@@ -852,7 +856,7 @@ export default function Home() {
             
 
             {/* Brown v. Board Quote */}
-            <p className="text-black text-5xl font-normal font-['Source_Serif_4'] leading-relaxed">
+            <p className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4'] leading-relaxed">
             "We conclude that, in the field of public education, the doctrine of "<em>separate but equal</em>" has no place. Separate educational facilities are <em>inherently unequal</em>. Therefore, we hold that the plaintiffs and others similarly situated for whom the actions have been brought are, by reason of the segregation complained of, deprived of the equal protection of the laws guaranteed by the Fourteenth Amendment. This disposition makes unnecessary any discussion whether such segregation also <em>violates the Due Process Clause</em> of the Fourteenth Amendment."
             </p>
 
@@ -977,23 +981,23 @@ export default function Home() {
 
       {/* Emmett Till GIF and Quote Section - Full Viewport Width */}
       <div className="w-full relative z-10">
-        <div className="flex">
-          {/* GIF Section - Left portion */}
-          <div className="w-3/5 h-[500px] sm:h-[600px] lg:h-[700px] xl:h-[800px] flex-shrink-0">
+        <div className="flex flex-col lg:flex-row">
+          {/* GIF Section - Stacked on mobile, left portion on desktop */}
+          <div className="w-full lg:w-3/5 h-[260px] sm:h-[400px] lg:h-[700px] xl:h-[800px] flex-shrink-0">
             <EmmettTillVideo />
           </div>
-          
-          {/* Red Rectangle with Quote - Wider right portion */}
-          <div 
+
+          {/* Red Rectangle with Quote - Stacked on mobile, right portion on desktop */}
+          <div
             ref={redRectangleRef}
-            className="w-2/5 h-[500px] sm:h-[600px] lg:h-[700px] xl:h-[800px] flex flex-col justify-center p-4 sm:p-6 lg:p-8 xl:p-10" 
+            className="w-full lg:w-2/5 min-h-[260px] sm:min-h-[400px] lg:h-[700px] xl:h-[800px] flex flex-col justify-center p-6 sm:p-8 lg:p-8 xl:p-10"
             style={{ backgroundColor: '#F2483C' }}
           >
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">
-              <p className="font-normal font-['Source_Serif_4'] text-left leading-relaxed" style={{ color: '#1E1E1E', fontSize: '40px' }}>
+              <p className="font-normal font-['Source_Serif_4'] text-left leading-relaxed text-xl sm:text-2xl md:text-3xl lg:text-[40px] lg:leading-tight" style={{ color: '#1E1E1E' }}>
                 "I remember being with [Mamie Till] when we stayed up all night waiting on the body to come in from, uh, Mississippi. And when it did come in, she demanded that the body be open, 'so they – the world can see what they did to my boy.'"
               </p>
-              <cite className="font-normal font-['Source_Serif_4'] not-italic text-left block" style={{ color: '#1E1E1E', fontSize: '40px' }}>
+              <cite className="font-normal font-['Source_Serif_4'] not-italic text-left block text-xl sm:text-2xl md:text-3xl lg:text-[40px]" style={{ color: '#1E1E1E' }}>
                 — Simeon Booker
               </cite>
             </div>
@@ -1325,7 +1329,7 @@ export default function Home() {
             </div>
             
             <div className="w-full max-w-[800px]">
-              <p className="text-stone-900 text-4xl font-normal font-['Source_Serif_4']">
+              <p className="text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Source_Serif_4']">
                 "When you stepped off that bus and you looked around and you saw these people crawling around, trying to get the smoke out of their chest, and people crawling and coughing and gagging, it was one of those sights that make you wonder why Americans are doing that sort of thing to fellow Americans who were just trying to exercise their rights."
               </p>
             </div>
@@ -1594,8 +1598,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Simple ray going up from date to quote */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 -top-32 lg:-top-40">
+          {/* Simple ray going up from date to quote - desktop only */}
+          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 -top-32 lg:-top-40">
             <div className="w-px h-32 lg:h-40 bg-red-500 opacity-100"></div>
             <div className="absolute -top-2 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
           </div>
@@ -1811,10 +1815,10 @@ export default function Home() {
           {/* Malcolm X Quote */}
           <div className="mt-12 lg:mt-16 flex justify-start -ml-2 sm:-ml-4 lg:-ml-6">
             <div className="w-full max-w-[1608px] justify-start">
-              <p className="text-stone-900 text-6xl font-normal font-['Source_Serif_4']">
+              <p className="text-stone-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']">
                 "In the same way that Marx is the fundamental critic of capitalism, and Fanon is the fundamental critic of colonialism, to my mind, Malcolm is the fundamental critic of American racism."
               </p>
-              <cite className="text-stone-900 text-2xl font-light font-['Chivo_Mono'] not-italic block mt-4">
+              <cite className="text-stone-900 text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] not-italic block mt-4">
                 William Strickland
               </cite>
             </div>
@@ -1831,8 +1835,8 @@ export default function Home() {
         <div className="relative mb-32 mt-48 lg:mt-72">
           {/* Event Content */}
           
-          {/* Simple ray going up from date */}
-          <div className="absolute left-24 lg:left-28 -top-32 lg:-top-40">
+          {/* Simple ray going up from date - desktop only */}
+          <div className="hidden lg:block absolute left-24 lg:left-28 -top-32 lg:-top-40">
             <div className="w-px h-32 lg:h-40 bg-red-500 opacity-100"></div>
             <div className="absolute -top-2 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
           </div>
@@ -1894,19 +1898,19 @@ export default function Home() {
           </div>
           
           {/* Selma Quote and GIF Section */}
-          <div className="mt-24 lg:mt-32 flex -ml-2 sm:-ml-4 lg:-ml-6">
-            {/* Quote - Left side */}
-            <div className="w-[804px] justify-start text-stone-900 text-4xl font-normal font-['Source_Serif_4']">
+          <div className="mt-24 lg:mt-32 flex flex-col lg:flex-row -ml-2 sm:-ml-4 lg:-ml-6">
+            {/* Quote - Top on mobile, left on desktop */}
+            <div className="w-full lg:w-[804px] justify-start text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Source_Serif_4']">
               "I was the only one that crossed the bridge and got to the other side and went into houses to drag people out, you know, who had been, had been gassed. I can still smell the gas. Uh, the shoes and the things laying on the side and the, the goons with their clubs lining the road, along with the, with the National Guard
             </div>
-            
-            {/* Selma GIF - Right side */}
-            <div className="flex-1 ml-8 lg:ml-12">
+
+            {/* Selma GIF - Bottom on mobile, right on desktop */}
+            <div className="w-full mt-8 lg:mt-0 lg:flex-1 lg:ml-8 xl:ml-12">
               <div className="h-64 sm:h-80 lg:h-96">
-                <video 
-                  autoPlay 
-                  loop 
-                  muted 
+                <video
+                  autoPlay
+                  loop
+                  muted
                   playsInline
                   className="w-full h-full object-cover"
                   aria-label="Selma Protester Confrontation video"
@@ -1915,21 +1919,20 @@ export default function Home() {
                   <source src="https://res.cloudinary.com/dgbrj4suu/video/upload/v1762836464/civil-rights/GIFs/Selma%2C-Protester-Confrontation.webm" type="video/webm" />
                 </video>
               </div>
-              <div className="mt-4 -ml-16">
-                <p className="text-stone-900 font-normal font-['Source_Serif_4'] whitespace-nowrap" style={{ fontSize: '40px', lineHeight: '100%', letterSpacing: '-1%' }}>
+              <div className="mt-4 lg:-ml-16">
+                <p className="text-stone-900 font-normal font-['Source_Serif_4'] text-xl sm:text-2xl md:text-3xl lg:text-[40px] lg:whitespace-nowrap" style={{ lineHeight: '100%', letterSpacing: '-1%' }}>
                   – it was a horrible scene, horrible scene. "
                 </p>
-                <p className="text-stone-900 font-light font-['Chivo_Mono'] text-right mt-12" style={{ fontSize: '24px', lineHeight: '100%' }}>
+                <p className="text-stone-900 font-light font-['Chivo_Mono'] text-right mt-8 lg:mt-12 text-base sm:text-lg md:text-xl lg:text-2xl" style={{ lineHeight: '100%' }}>
                   Dr. Alfred Moldovan
                 </p>
-                <a 
-                  href="https://archive.org/details/gov.archives.arc.53422" 
-                  target="_blank" 
+                <a
+                  href="https://archive.org/details/gov.archives.arc.53422"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors block mt-6"
-                  style={{ 
-                    fontSize: '16px', 
-                    lineHeight: '100%', 
+                  className="text-black font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors block mt-6 text-sm sm:text-base"
+                  style={{
+                    lineHeight: '100%',
                     textDecoration: 'underline',
                     textDecorationStyle: 'solid',
                     textDecorationSkipInk: 'auto'
@@ -2082,23 +2085,23 @@ export default function Home() {
           </div>
           
           {/* Quote and Bobby Seale GIF Section */}
-          <div className="mt-24 lg:mt-32 flex -ml-2 sm:-ml-4 lg:-ml-6">
-            {/* Quote - Left side */}
-            <div className="w-[804px] relative">
-              <p className="text-stone-900 text-4xl font-normal font-['Source_Serif_4']">
+          <div className="mt-24 lg:mt-32 flex flex-col lg:flex-row -ml-2 sm:-ml-4 lg:-ml-6">
+            {/* Quote - Top on mobile, left on desktop */}
+            <div className="w-full lg:w-[804px] relative">
+              <p className="text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Source_Serif_4']">
                 "Essentially, the Black Panther Party was a twentieth-century version of the hopes and demands and desires of an oppressed black community, rearticulated in a new set of words."
               </p>
-              <p className="absolute bottom-0 left-0 text-stone-900 font-light font-['Chivo_Mono']" style={{ fontSize: '24px', lineHeight: '100%' }}>
+              <p className="mt-4 text-stone-900 font-light font-['Chivo_Mono'] text-lg sm:text-xl lg:text-2xl lg:absolute lg:bottom-0 lg:left-0 lg:mt-0" style={{ lineHeight: '100%' }}>
                 Kathleen Cleaver
               </p>
             </div>
-            
-            {/* Bobby Seale GIF - Right side */}
-            <div className="ml-8 lg:ml-12 w-[400px] lg:w-[550px] h-80 sm:h-96 lg:h-[500px] relative z-10">
-              <video 
-                autoPlay 
-                loop 
-                muted 
+
+            {/* Bobby Seale GIF - Bottom on mobile, right on desktop */}
+            <div className="mt-8 lg:mt-0 lg:ml-8 xl:ml-12 w-full lg:w-[400px] xl:w-[550px] h-64 sm:h-80 lg:h-[500px] relative z-10">
+              <video
+                autoPlay
+                loop
+                muted
                 playsInline
                 className="w-full h-full object-cover"
                 aria-label="Bobby Seale video"
@@ -2106,16 +2109,16 @@ export default function Home() {
                 <source src="https://res.cloudinary.com/dgbrj4suu/video/upload/v1762835719/civil-rights/GIFs/Bobby-Seale.mp4" type="video/mp4" />
                 <source src="https://res.cloudinary.com/dgbrj4suu/video/upload/v1762835719/civil-rights/GIFs/Bobby-Seale.webm" type="video/webm" />
               </video>
-              
-              {/* Black Panther Pin - Top right */}
-              <div className="absolute -top-40 -right-32">
+
+              {/* Black Panther Pin - desktop only, otherwise floats off-screen */}
+              <div className="hidden lg:block absolute -top-40 -right-32">
                 {pantherPinLoading ? (
                   <div className="w-48 h-48 bg-gray-200 animate-pulse flex items-center justify-center">
                     <span className="text-gray-500 text-xs">Loading pin...</span>
                   </div>
                 ) : pantherPinUrl ? (
-                  <img 
-                    className="w-48 h-48" 
+                  <img
+                    className="w-48 h-48"
                     src={pantherPinUrl}
                     alt="Black Panther Pin"
                   />
@@ -2328,9 +2331,9 @@ export default function Home() {
           
           {/* Posters and Quote Section */}
           <div className="mt-24 lg:mt-32 -ml-2 sm:-ml-4 lg:-ml-6">
-            <div className="flex">
-              {/* Man Poster - Left side */}
-              <div className="w-[350px] h-[530px]">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start">
+              {/* Man Poster - Top on mobile, left on desktop */}
+              <div className="w-full max-w-[350px] aspect-[35/53] lg:h-[530px] lg:aspect-auto">
                 {manPosterLoading ? (
                   <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
                     <span className="text-gray-500">Loading poster...</span>
@@ -2347,23 +2350,23 @@ export default function Home() {
                   </div>
                 )}
               </div>
-              
+
               {/* Quote and Honor King Poster Column */}
-              <div className="ml-8 lg:ml-12">
+              <div className="mt-8 lg:mt-0 lg:ml-8 xl:ml-12 w-full lg:w-auto">
                 {/* Quote */}
-                <div className="w-[350px] justify-start text-stone-900 text-3xl font-normal font-['Source_Serif_4'] mb-8">
+                <div className="w-full max-w-[350px] mx-auto lg:mx-0 justify-start text-stone-900 text-xl sm:text-2xl lg:text-3xl font-normal font-['Source_Serif_4'] mb-8">
                   "...[Martin] was saying that the change that must happen was not legal. The change that must happen was moral and spiritual, right, and that was the basis upon which we were move..."
                 </div>
-                
+
                 {/* Citation */}
-                <p className="text-stone-900 font-light font-['Chivo_Mono'] mb-8" style={{ fontSize: '24px', lineHeight: '100%' }}>
+                <p className="text-stone-900 font-light font-['Chivo_Mono'] mb-8 text-lg sm:text-xl lg:text-2xl text-center lg:text-left" style={{ lineHeight: '100%' }}>
                   C.T. Vivian
                 </p>
-                
+
                 {/* Honor King Poster and GIF row */}
-                <div className="flex items-start">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start">
                   {/* Honor King Poster */}
-                  <div className="w-[350px] h-[530px]">
+                  <div className="w-full max-w-[350px] aspect-[35/53] sm:h-[530px] sm:aspect-auto">
                     {honorKingPosterLoading ? (
                       <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
                         <span className="text-gray-500">Loading poster...</span>
@@ -2380,14 +2383,14 @@ export default function Home() {
                       </div>
                     )}
                   </div>
-                  
-                  {/* Long Hot Summer GIF - Right of poster, aligned with top */}
-                  <div className="ml-8 space-y-2">
-                    <div className="w-[300px] h-[400px]">
-                      <video 
-                        autoPlay 
-                        loop 
-                        muted 
+
+                  {/* Long Hot Summer GIF - Below poster on mobile, right of poster on sm+ */}
+                  <div className="mt-8 sm:mt-0 sm:ml-8 space-y-2 w-full sm:w-auto">
+                    <div className="w-full max-w-[300px] aspect-[3/4] sm:h-[400px] sm:aspect-auto mx-auto sm:mx-0">
+                      <video
+                        autoPlay
+                        loop
+                        muted
                         playsInline
                         className="w-full h-full object-cover"
                         aria-label="Long Hot Summer video"
@@ -2396,11 +2399,11 @@ export default function Home() {
                         <source src="https://res.cloudinary.com/dgbrj4suu/video/upload/v1762835996/civil-rights/GIFs/Long-Hot-Summer.webm" type="video/webm" />
                       </video>
                     </div>
-                    <a 
-                      href="https://archive.org/details/68riotsTBDreel/WJZ-NEWSFILM-001.mov" 
-                      target="_blank" 
+                    <a
+                      href="https://archive.org/details/68riotsTBDreel/WJZ-NEWSFILM-001.mov"
+                      target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black text-base font-light font-['Chivo_Mono'] text-left underline hover:text-red-500 transition-colors block"
+                      className="text-black text-base font-light font-['Chivo_Mono'] text-center sm:text-left underline hover:text-red-500 transition-colors block"
                       style={{ lineHeight: '100%' }}
                     >
                       Baltimore Riots
@@ -2472,8 +2475,8 @@ export default function Home() {
           </div>
           
           {/* Quote */}
-          <div className="mt-8 flex justify-center">
-            <div className="w-[876px] text-center justify-start text-stone-900 text-5xl font-normal font-['Source_Serif_4']">"The movement was pointing out America's hypocrisy. Them brothers and sisters who went out, and came back, and brought knowledge and stuff, empowered us over a long period of time. It empowered us. And by them empowering us, man, it took our psyche to another level."</div>
+          <div className="mt-8 flex justify-center px-4 sm:px-6 lg:px-0">
+            <div className="w-full max-w-[876px] text-center justify-start text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4']">"The movement was pointing out America's hypocrisy. Them brothers and sisters who went out, and came back, and brought knowledge and stuff, empowered us over a long period of time. It empowered us. And by them empowering us, man, it took our psyche to another level."</div>
           </div>
           
           {/* Selma Get Right GIF - Centered */}
