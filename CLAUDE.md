@@ -68,6 +68,47 @@ The publication threshold is 90/90 on BOTH scorers independently. Disagreement (
 
 Validate with `python scripts/validate_facts.py` (runs in `Metadata Generation System/`).
 
+## Audit documentation discipline (READ THIS IF YOU TOUCH THE TRANSCRIPT AUDIT)
+
+The transcript-audit work has accumulated four core governance documents at `transcripts/`. Any agent doing work that affects the audit overlay, the per-entry corrections, the audit-progress tracking, or the open-problems queue MUST follow the discipline below. The documents are designed to be machine-parseable (downstream scorers + ensemble reviewers) and human-readable (project stakeholders + the Smithsonian/LoC institutional review).
+
+### The four governance documents
+
+| Document | Purpose | Update discipline |
+|---|---|---|
+| `transcripts/AUDIT_TRAIL.md` | Longitudinal effort log across sessions, agents, and models. Records WHAT was done, WHEN, BY WHOM, with WHAT COVERAGE. The data substrate for inferential error-rate scoring. | **Per-phase incremental updates, not session-end-only.** Every multi-step session creates a new `### Session N` entry near the top of the `## Session log` section. Each phase appends a sub-section as it completes (not when the whole session ends). Follow the "Session entry template" at the bottom of the file. |
+| `transcripts/OPEN_PROBLEMS.md` | Active punch-list of what still needs doing. Numbered Problems (1, 2, 3, ...) — never delete, only annotate as RESOLVED with a dated sub-section that preserves the original entry below. | Mark resolved Problems with `## Problem N — <title> — **RESOLVED YYYY-MM-DD (Phase/Session reference)**` followed by a `### Resolved YYYY-MM-DD <date qualifier>` sub-section, then a preserved-for-history sub-section. New problems get appended as `## Problem N+1` with current `**Last updated:** YYYY-MM-DD` at the top of the file. |
+| `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` | The corrections overlay — per-entry Pass 1/2/3/4 tables with row IDs, Whisper renderings, canonical corrections, confidence tiers, source attribution. ~9.3 MB, ~26,000+ lines as of 2026-05-22. | **Non-destructive overlay**: `transcripts/raw/` files are NEVER modified. Corrections accumulate here. Per-entry tables use the row-ID convention `<entry>.<row>` for Pass 1, `<entry>.P2.<row>` for Pass 2, `<entry>.P3.<row>` for Pass 3, `<entry>.P4.<row>` for Pass 4, and `<target>.P2.RELOC[<source>.P2.<row>]` for cross-contamination relocations. Confidence tiers: `correct` / `high` / `medium` / `low` / `speaker-originating` / `flagged-for-adversarial-review` / `n/a`. |
+| `Metadata Generation System/civil_rights_facts.json` | Ground-truth corpus (140 entries, 291 aliases as of 2026-05-22). Used by `processor/shared.py::get_relevant_facts` to ground the LLM scorer's accuracy claims. | **Additions only — no deletions of existing entries.** Validate after every edit with `cd "Metadata Generation System" && python scripts/validate_facts.py`. The validator catches schema regressions and alias collisions. |
+
+### Per-phase update protocol for AUDIT_TRAIL.md
+
+When a session has multiple phases:
+
+1. **At session start:** add a new `### Session N — YYYY-MM-DD: <short label>` entry near the top of the `## Session log` section. Initialize with End-of-session summary placeholder, Agents, Wall-clock, Scope, Methodology fields. Add placeholder sub-section headers for each anticipated phase (`#### Phase 1`, `#### Phase 2`, etc.) with `*(populated when Phase N completes)*`.
+2. **At each phase completion (before the phase's commit):** replace the placeholder with the real phase sub-section. Include: agents spawned (counts), wall-clock, files created/modified, coverage metrics, anomalies surfaced, handoff notes for the next phase.
+3. **At session close:** populate the End-of-session summary at the top of the entry (one paragraph: what got done, next priority, blockers).
+4. **The commit that lands phase N's code/data changes MUST also include the phase N sub-section update.** Atomicity matters — if the session terminates between phase completion and doc update, the docs lie.
+5. **For follow-on work after the session is "closed":** append a sub-section to the existing Session N entry (e.g., `#### Phase 1a follow-on — cross-contamination cleanup (2026-05-22 evening)`). Do NOT create a new Session N+1 entry for follow-on work to the same session.
+
+### Cross-session coordination
+
+If two sessions are running in parallel (which has happened — Session 3 + Session 4 ran simultaneously on 2026-05-22), they each maintain their own session entry in AUDIT_TRAIL.md. Add a "Coordination note" in the late-arriving session's entry explaining what the parallel session was doing and where their work fits in the broader audit history.
+
+### Inferential-scoring-framework hookup
+
+`transcripts/AUDIT_TRAIL.md` has an "Inferential scoring framework" section that defines per-entry uncertainty scoring. The Per-entry coverage matrix is the structured input to that framework. Any agent that adds rows to the coverage matrix or modifies the Pass coverage flags (F/P/T/S/R/D/M) should preserve the structure so downstream scorer scripts can parse it.
+
+### Why this discipline matters
+
+The Smithsonian (NMAAHC) and Library of Congress are gating publication on AI-hallucination-fact-check rigor. The audit overlay + AUDIT_TRAIL are the institutional credibility instrument. A future reviewer or replacement engineer must be able to read these documents and reconstruct exactly what was audited, by whom, with what coverage, and what residual error remains. Per-phase incremental updates prevent the docs from drifting out of sync with the actual state of the corpus.
+
+### Recent example commits to follow as templates
+
+- `e0a1dbf` — Session 3 Phase 5 finalization (aggregate metrics + end-of-session summary)
+- `847f763` — Cross-contamination follow-on cleanup (sub-section added to existing Session 3 Phase 1a, not a new session entry)
+- `e325d79` — Session 4 initial entry + Session 3 Phase 1 back-fill (cross-session coordination note example)
+
 ## Validation commands
 
 - **React build**: `npm run build` (from project root)
