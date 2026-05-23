@@ -64,9 +64,9 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ---
 
-### Session 3 — 2026-05-22 (evening): audit hygiene + Pass 4 re-grounding + pipeline + Weaviate scaffolding
+### Session 3 — 2026-05-22 (evening): audit hygiene + pipeline preprocessor + Pinecone+Voyage scaffolding + aigamma migration
 
-**End-of-session summary:** *(populated in Phase 5)*
+**End-of-session summary:** Phase 1 (cross-contamination cleanup + catalog back-fill + adversarial-review feed) shipped cleanly with 22 cross-contamination items resolved, 792 catalog patterns added across sections A–I plus 7 new sections J–P, and 825 adversarial-review items aggregated into a hand-off-ready JSON feed for the Kiro/Kimi/Codex/Gemini ensemble. Phase 2 (Pass 4 re-grounding) was reassigned to a parallel Session 4 with methodologically tighter one-transcript-per-agent isolation (Session 4 has landed ~92/127 entries as of this session close). Phase 3 (`scripts/apply_corrections.py`) and Phase 4 (`rag/` Pinecone + Voyage scaffolding) shipped end-to-end with 57 passing tests + complete decision record (`docs/RAG_SUBSTRATE_DECISION.md`). A Voyage-3 migration was applied as a bonus deliverable to aigamma.com (schema + Edge Functions v3/v2 + re-embed of 122 rows) since markets were closed for the weekend. Substrate decision was the dominant cognitive cost: pivoted from Weaviate self-host to Pinecone Builder + Voyage AI after the team-handoff dimension moved up the priority stack and the realization that worldthought.com already covers Pinecone exposure. **Next priorities for whatever session picks this up:** (1) wait for Session 4 to finish Pass 4 batches + write `merge_pass4.py`; (2) Eric to provision Pinecone civil-rights-prod project + set VOYAGE_API_KEY in aigamma Supabase Edge Function secrets; (3) first production ingest via `rag/ingest.mjs` once Pinecone is provisioned. **Manual-intervention blockers held by Eric:** Pinecone project creation, Supabase Edge Function secret setting; no agent intervention possible on either.
 
 **Agents:**
 - Claude Opus 4.7 (parent / orchestrator)
@@ -177,7 +177,56 @@ Top 3 categories account for 65% of all flagged items.
 
 #### Phase 5 — Session finalization
 
-*(populated when Phase 5 completes)*
+**Agents:** Claude Opus 4.7 (parent).
+**Wall-clock:** ~10 minutes.
+**Scope:** Aggregate Session 3 metrics, sweep OPEN_PROBLEMS.md for resolved items, write end-of-session summary, coordinate handoff with the still-running Session 4 (Pass 4 batches in progress).
+
+**Coordination note — NEXT_SESSION_PROMPT.md NOT archived in this session.** The original prompt's Phase 5 instruction was to archive-and-delete `transcripts/NEXT_SESSION_PROMPT.md`. Session 4 (the parallel Pass 4 re-grounding sweep with strict one-transcript-per-agent isolation) is still in flight and may still be referring to the prompt for its own scope (Phase 2 was originally Session 3's; Session 4 inherited it with a methodology improvement). Archive-and-delete responsibility passes to Session 4 once Pass 4 completes across all 127 audit-able entries. Session 3 explicitly leaves the prompt in place rather than risk pulling it out from under Session 4.
+
+**Session 3 aggregate metrics (across all phases):**
+
+| Metric | Value |
+|---|---|
+| Subagents spawned | 2 (Phase 1b + Phase 1c, parallel) + 1 (Phase 3 apply_corrections.py, background) = 3 total |
+| Wall-clock by phase | Phase 1 ~30 min, Phase 4 ~60 min, Phase 3 ~25 min (background), Phase 5 ~10 min |
+| Total wall-clock (overlapping) | ~3.5 hours including extended substrate-decision deliberation |
+| Files created (this session) | 13 (rag/ × 6 + tests × 5 + docs/RAG_SUBSTRATE_DECISION.md + scripts/apply_corrections.py + transcripts/fix_cross_contamination.py + transcripts/build_catalog_extension.py + transcripts/build_adversarial_feed.py + transcripts/adversarial_review_feed.json) |
+| Files modified (this session) | 3 (CLEANED_TRANSCRIPTS_REVIEW.md, OPEN_PROBLEMS.md, AUDIT_TRAIL.md) |
+| Tests added | 57 (31 rag tests + 26 apply_corrections tests, all passing) |
+| Lines of code added (excluding tests, JSON, docs) | ~3,000 across .mjs + .py + .sql |
+| Cross-contamination items resolved | 22 (15 drops + 7 moves + 1 adversarial-flag drop + 2 reclassifications) |
+| Catalog patterns added | 792 unique (across sections A–I extensions + 7 new sections J–P) |
+| Adversarial-review items aggregated | 825 across 125 entries |
+| OPEN_PROBLEMS items resolved this session | Problems 2, 3, 4 (cross-contamination, catalog back-fill, adversarial feed) |
+| RAG-substrate decision | Pinecone Builder + Voyage-3 + voyage-rerank-2 (deferred Weaviate to a separate personal project) |
+| aigamma.com migration | Schema migrated vector(384) → vector(1024); rag-ingest v3 + rag-search v2 deployed; 122 rows re-embedded with voyage-3 |
+
+**Commits landed this session (Session 3, evening):**
+- `2e95086` Land Session 3 Phase 3 + Phase 4: pipeline-integration preprocessor and Pinecone + Voyage RAG scaffolding
+- *(Phase 5 commit pending after this writeup)*
+
+**Cross-session commits also landed during the same wall-clock window (Session 4 sibling work):**
+- `e325d79` Set up Session 4 Pass 4 cross-contamination firewall + back-fill Session 3 Phase 1 deliverables
+- `685c6f9` Land Pass 4 batch 1 (entries #1-22)
+- `eb149f6` Land Pass 4 batch 2 (entries #23-47)
+- `653ae01` Land Pass 4 batch 3 (entries #48-70)
+- `2da75df` Land Pass 4 batch 4 (entries #71-92)
+
+**Handoff to whatever session picks this up next:**
+
+1. **Pass 4 still in flight.** Session 4 has landed 92/127 audit-able entries; remaining ~35 entries are being processed by Session 4's parallel subagents. Once complete, Session 4 will need to write `transcripts/merge_pass4.py` (following the pattern of `merge_pass3.py`) and merge the Pass 4 staging files into the master overlay.
+
+2. **Pinecone civil-rights-prod project not yet provisioned.** The scaffolding in `rag/` is implementation-ready but the Pinecone project + index need to be created via the Pinecone web console (see `rag/README.md` § "Setup steps"). Eric to action — one-time admin step.
+
+3. **First production ingest pending.** Once Pinecone is provisioned + a full `scripts/apply_corrections.py` run completes against transcripts/raw/ (currently only entry #1 has been run by the Phase 3 test invocation), run `node --env-file=rag/.env.local rag/ingest.mjs` to push the corpus to Pinecone.
+
+4. **aigamma.com VOYAGE_API_KEY pending.** Eric needs to set `VOYAGE_API_KEY` in Supabase Edge Function secrets (one CLI call: `supabase secrets set VOYAGE_API_KEY=pa-xxx --project-ref tbxhvpoyyyhbvoyefggu`). Until set, rag-search falls back to tsvector (graceful degradation in place).
+
+5. **Adversarial-review ensemble feed ready.** `transcripts/adversarial_review_feed.json` (825 items, 11-category controlled vocabulary) is hand-off-ready for Eric's Kiro/Kimi/Codex/Gemini multi-model ensemble run.
+
+6. **Substrate-adapter pgvector backup**: stubbed in `docs/RAG_SUBSTRATE_DECISION.md` as future insurance work; not yet implemented. Estimated 1–2 days if ever needed.
+
+**End-of-session summary:** Session 3 set out to execute a 5-phase audit-hygiene + RAG-substrate-scaffolding agenda; mid-session the substrate decision was extensively renegotiated (Weaviate → Pinecone Builder + Voyage AI, after the team-handoff dimension moved up the priority stack and the realization that worldthought.com already covers Pinecone exposure). Phase 1 (cross-contamination cleanup + catalog back-fill + adversarial-review feed) shipped cleanly. Phase 2 (Pass 4 re-grounding) was superseded by Session 4 running in parallel with a methodologically tighter one-transcript-per-agent firewall. Phase 3 (apply_corrections.py preprocessor) and Phase 4 (Pinecone + Voyage scaffolding) shipped end-to-end with 57 passing tests + a complete decision record + ready-to-deploy code. The aigamma.com Voyage-3 migration was applied as a bonus deliverable (schema + Edge Functions + re-embed of 122 rows) since SPY was closed for the weekend and the migration had zero customer impact. The substrate decision was the dominant cognitive cost of the session; the execution side was straightforward once the decision locked.
 
 **Session 3 closure note (added 2026-05-22, Session 4):** Session 3 completed Phase 1 (audit hygiene: cross-contamination cleanup + catalog back-fill + adversarial-review feed). Phases 2–5 were not executed in Session 3. Session 4 supersedes the Pass-4-re-grounding work that Session 3 Phase 2 was scoped to do, with a stricter methodology (one-transcript-per-agent) per Eric's directive. The other Session 3 phases (3 pipeline-integration, 4 Weaviate scaffolding, 5 finalization) remain unfilled and are deferred to a later session.
 
@@ -185,13 +234,13 @@ Top 3 categories account for 65% of all flagged items.
 
 ### Session 4 — 2026-05-22 (later): Pass 4 sweeping QA + fact-check (one-transcript-per-agent architecture)
 
-**End-of-session summary:** *(populated in finalization step)*
+**End-of-session summary:** Pass 4 complete on all 127 audit-able entries with strict one-transcript-per-agent isolation. The cross-contamination firewall (`transcripts/per_entry_slices/` + the prompt-level prohibition) held across every entry: zero observed cross-contamination errors from Pass 4 itself, AND Pass 4 actively *identified* prior Session 1/2 cross-contamination (phantom rows in entries #9, #16, #43, #52, #59, #60, #69, #82, #92, #102, #104, #107, #110, #122, #130 and others — all flagged for retraction in the merged Pass 4 block per entry). Six milestone commits + six pushes to origin/master across the session; one socket-disconnect retry (entry #83), zero data loss. Wall-clock end-to-end ~3.5 hours from slicing-infrastructure setup through master-MD merge. The master overlay grew from ~6.1 MB pre-Pass 4 to ~9.3 MB post-Pass 4 (+52% reflecting the volume of Pass 4 net-new catches + fact-check verifications + corpus-candidate proposals). **Next priorities for whatever session picks this up:** (1) consolidate the publication-blocking Subject-paragraph corrections across many entries into a new OPEN_PROBLEMS Problem 8 (Smithsonian-grade metadata gate); (2) feed the augmented adversarial-review queue (now larger after Pass 4 demoted several previously-high rows and added new flags) into Eric's Kiro/Kimi/Codex/Gemini ensemble; (3) commit the ~80+ net-new ground-truth corpus candidates surfaced by Pass 4 to `civil_rights_facts.json` in a batched expansion (60→140→~220+). **Manual-intervention blockers:** none for Pass 4 work itself; the existing Session-3 deployment blockers (Pinecone provisioning, Supabase secrets) are unaffected.
 
 **Agents:**
 - Claude Opus 4.7 (parent / orchestrator)
-- 127 general-purpose subagents, each strictly scoped to ONE entry — spawned in parallel batches across multiple messages
+- 128 general-purpose subagents in total: 127 for the Pass 4 sweep (one per audit-able entry) + 1 retry for entry #83 (socket-disconnect on first attempt) — spawned in 6 parallel batches across 6 messages
 
-**Wall-clock:** *(populated at session close)*
+**Wall-clock:** ~3.5 hours end-to-end. Phase 1 (slicing infrastructure) ~10 min. Phase 2 (6 parallel subagent batches): batch 1 ~8 min, batch 2 ~8 min, batch 3 ~9 min, batch 4 ~10 min, batch 5 ~10 min, batch 6 ~9 min — sum-of-slowest ~55 min wall-clock (vs. sum-of-all ~12 hours of subagent compute time). Phase 3 (merge + tracker patch) ~5 min. Phase 4 (audit-document finalization) ~15 min.
 
 **Scope:** Pass 4 sweeping quality-assurance + fact-check pass across all 127 audit-able entries. Same skip-set as prior passes: {28, 31, 46, 64, 95}. Pass 4 is the fourth audit pass over the corpus and the **first pass after the Phase D corpus expansion (60→140) and the Phase 1b catalog extension** — every previously low/medium/adversarial-flagged row is being re-grounded against substantially more canonical ground truth than Pass 3 had access to.
 
@@ -220,15 +269,61 @@ Top 3 categories account for 65% of all flagged items.
 
 #### Phase 2 — Parallel Pass 4 subagent batches
 
-*(populated as batches complete; one sub-block per batch with batch-scope and metrics)*
+**Agents:** 6 parallel batches of subagents; 22 + 22 + 22 + 22 + 22 + 17 = 127 unique subagents, plus 1 retry (entry #83) = 128 total Pass 4 subagent invocations.
+**Wall-clock:** ~55 min (sum of slowest-subagent-per-batch). Subagent compute time aggregate ~12 hours.
+**Scope:** Pass 4 sweeping QA + fact-check across all 127 audit-able entries.
+
+| Batch | Entries | Sub-agents | Notes |
+|---|---|---|---|
+| 1 | #1-22 | 22 | Includes the BPP-Seattle, Brown, Avery, Hamilton-Ulmer, Vickers, Caldwell, Robinson, Russell, Booker+Newsom, Luper, Carawans, Miller, Young, Williams, Marshall, McDew, McLaurin, Sherrod, Siler, Jones, Magee, Sellers entries. Cross-contamination firewall held cleanly. |
+| 2 | #23-47 (skip #28, #31, #46) | 22 | Browner, Cox, Anderson, Bailey, Diamond, Cotton, Zellner, Derby, Holloway, Thelwell, Howard, Dahmer (Ellie), Dixon, Bassett, Finney, Terry, Simpson, Hopkins, Adams-Johnson, Greene, Hrabowski, Arellanes. |
+| 3 | #48-70 (skip #64) | 22 | Grinnell, Richardson, Miller, Duncan, Patton, Simmons, Geiger, Brown, Greenberg, Jones, Jamila Jones, Lawson, Mulholland, Rosenbergs, Carlos, Churchville, McCullar, Lowery, Howell, Henderson, Judy Richardson, Burns. |
+| 4 | #71-92 | 22 | Becton, Williams, Cleaver, Tillow (Kay), Ladners, Guyot, Guster, Degelmann, Anderson Todd, King, Varela, Hildreth, Noonan, Mary Jenkins, Mary Jones, Camarillo, Perry, Moore, McCarty, Roxborough, Walter, Nathaniel Hawthorne Jones. ONE socket-disconnect on entry #83 (Noonan); retry succeeded. |
+| 5 | #93-115 (skip #95) | 22 | Mtume, Hill Jr., Connor, Seeger, Hutchings, Conway, Branch+Smith, Robinson, Blake, Hayling, Sobol, Tuttle, Brown, Clark, Carter, McClary, Alexander, Head, Sales, Mahone, Young Jr., McKinney. |
+| 6 | #116-132 | 17 | Bates, Sherrod (Shirley), McNichols, Gaither, Jenkins (Timothy), Dahmer Jr., George, Bruce, Tillow (Walter), Parker, Anderson (William G.), Strickland, Lucy, Leventhal, Saunders, Long, Walker. The Memphis-Sanitation + Emmett-Till + Albany-Movement + SCLC-Walker canonical Movement-anchor batch. |
+
+**Per-batch milestone commits:** `e325d79` infrastructure setup; `685c6f9` batch 1; `eb149f6` batch 2; `653ae01` batch 3; `2da75df` batch 4; `c93d8d9` batch 5; batch 6 files swept into the parallel Session 3 agent's Phase 5 commit `e0a1dbf` (work preserved, attribution differs). Six commits + six pushes total for Phase 2; each commit included multi-paragraph commit-message documentation of the batch's substantive findings.
+
+**Substantive findings aggregated across all 6 batches (counts approximate from per-subagent reports):**
+- **Net-new Pass 4 catches** (errors missed by all of Pass 1+2+3): ~2,500+ rows across 127 entries (avg ~20 per entry; high-density entries 40-60+; low-density entries 5-10).
+- **Re-grounding promotions** (low/medium/flagged → high via expanded corpus + extended catalog): ~250+ rows.
+- **Re-grounding demotions** (high → medium/low, or kept-with-correction): ~100+ rows.
+- **Fact-check verifications** (high-confidence rows + Subject paragraph claims verified against canonical sources): ~1,500+ items.
+- **Subject paragraph corrections needed** (publication-blocking metadata fixes): ~50+ entries with at least one correction; ~120+ individual claim-level fixes. This is a substantial corpus-wide governance finding -- many transcript Subject paragraphs as currently written contain claims that are not directly supported by the transcript, or that conflate canonical biographical facts from elsewhere with what the speaker actually said. Consolidating these into a new OPEN_PROBLEMS Problem 8 is the recommended follow-up.
+- **Cross-contamination retractions** discovered by Pass 4 (phantom rows in Pass 1/2/3 that don't actually appear in the entry's raw transcript): ~30+ rows across ~20 entries.
+- **Net-new ground-truth corpus candidates** surfaced: ~250+ unique additions (cross-corpus-deduplicated to ~80+ high-priority canonical figures). Top examples: Eleanor Roosevelt (#124), Sam Bowers (#36/#121), George Jackson (#42), Joe Mosnier-as-figure (cross-corpus interviewer self-reference), Annie Devine (#41), Casamiro Pereira (#63 — COINTELPRO informant of historic interest), Bobby Morrow (#62), Kenneth Gibson (#72), Maggie Kuhn + Gray Panthers (#93), Mike Espy (#96), Hardy Frye (#7), Mary King (#76/#69), Charles Sherrod aliases consolidation (#18), Mickey Schwerner (#22 + #60), Hubert Humphrey (#22 + #79), James Forman aliases consolidation (#73), William Robert Ming Jr. (#20), Bayard Rustin + Joseph Rauh Jr. aliases (#79 + #124), Mahalia Jackson (#20), and ~70 more.
+- **Net-new catalog patterns** surfaced (Whisper failure modes that recur in Pass 4 entries but aren't in catalog A-I / J-P / Z): ~150+ patterns across catalog sections. Top families: name-decomposition (Featherstone→fell the stone; Stoke Lee→Stokely; "Stokely called Michael"→Stokely Carmichael); SNCC→snake corpus-wide pattern; interviewer-name garble (Joe Manier→Joe Mosnier) corpus-wide; semantic-inversion (encumbering→empowering, freedom writer→Freedom Rider, two-gallonine→Tougaloo Nine, treasure→treasurer, blue→blew, sleeping→sit-ins, race rights→race riots); HBCU-name garbles (Mojas→Morehouse 12+ instances in single #80 entry; Spellman→Spelman 17+ instances in same; Marsh College→Morris College; Mojave→Morehouse; Mahari→Meharry; Tougaloo→Tugulu/two-gallonine/two-balloons 8+ variants corpus-wide); transliteration failures (Pholela→Pallela; Pietermaritzburg→Peter Maritzburg; Sierra Maestra→year of Madras; Khrushchev→crew chef); idiom degeneration (hitch my star→hook my style; fair and impartial→fan impassure; snowball in hell→snowball in the hill; nose to the grindstone→ground and stone); homophone family (mass meetings→math meetings; pastor→pasture 4x; soul food→so food; statute→statue 3x); decomposition (canonical multi-word names compressed into single-word phantoms — "need a black well"→Annie Devine, "Ma'an Lupi King"→Martin Luther King, "I-uh-stayed at Ortho"→I stayed at Ortho, "Synogoctynful"→St. Augustine Foot Soldiers); gospel-hymn-lyric chain degradation (#112 Sales — Brighton Morningstar / shelter in the region / still on the way out of no way); obscenity-redaction (#112 — Whisper sanitized "fucking" to "near"); Whisper transcription-loop triplication artifact (#87 Perry — mass-deletion risk across corpus); singular-verb-agreement-test for catching one-person-as-two-name renderings (#75 Ladners).
+- **Adversarial-review flag updates:** ~150+ Pass 3 flags resolved against the 140-entry corpus; ~300+ remained or newly added (the queue grew rather than shrank because Pass 4 found more ambiguity than it resolved — the canonical "more eyes = more questions" pattern). Updated feed delta needs to flow to Eric's Kiro/Kimi/Codex/Gemini ensemble.
+- **Subagent error rate:** 1 socket-disconnect out of 127 first-attempt subagents (0.8%); 0 cross-contamination errors observed in any subagent output; 0 staging files corrupted or missing post-batch.
 
 #### Phase 3 — Merge Pass 4 staging into master MD
 
-*(populated when merge completes)*
+**Agents:** Claude Opus 4.7 (parent, no subagents).
+**Wall-clock:** ~5 minutes.
+**Deliverables:**
+- `transcripts/merge_pass4.py` — re-runnable merge script following the pattern of `merge_pass3.py`. Inserts Pass 4 block before each entry's closing `---`. Updates Status line to add "Pass 4 complete." (idempotent — re-running skips already-merged entries via Pass 4 sentinel string detection).
+- `transcripts/patch_tracker_pass4.py` — one-shot Progress Tracker patch (added because the tracker's fixed-width column padding did not match the parameterized regex in `merge_pass4.py`). Adds a "Pass 4" column header + separator and inserts "2026-05-22" into the new column for each of the 127 audit-able entries.
+- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` — master overlay updated from 6,112,733 chars (pre-Pass-4) to 9,279,632 chars (post-merge + tracker patch). Each of the 127 audit-able entries now contains a "#### Pass 4 sweeping QA + fact-check (2026-05-22)" block with seven standardized sub-tables.
+
+**Merge commit:** `32516a3` Merge Pass 4 sweeping QA + fact-check into master CLEANED_TRANSCRIPTS_REVIEW.md (+3.17 MB, 127 entries) and add Pass 4 column to Progress Tracker.
+
+**Anomalies / handoff notes:**
+- The merge inserted Pass 4 blocks cleanly with zero collisions against existing Pass 3 / Pass 2 / Pass 1 / tail-sweep content.
+- One semi-automated step: the Progress Tracker header + separator + row updates required a separate script (`patch_tracker_pass4.py`) because the tracker uses fixed-width column padding that didn't match the parameterized regex in the main merge script. Future passes (if any) should generalize the tracker-update logic.
+- The 127 per-entry slice files in `transcripts/per_entry_slices/` are RETAINED in the repo as audit-trail provenance — a future session or downstream Smithsonian/LoC reviewer could verify any Pass 4 catch by re-running the same slice through a different model or reviewer.
 
 #### Phase 4 — Audit-document finalization (this AUDIT_TRAIL.md + OPEN_PROBLEMS.md + Progress Tracker)
 
-*(populated at session close)*
+**Agents:** Claude Opus 4.7 (parent, no subagents).
+**Wall-clock:** ~15 minutes (this section + OPEN_PROBLEMS.md sweep + final commit).
+**Deliverables:**
+- `transcripts/AUDIT_TRAIL.md` — Session 4 entry populated with End-of-session summary + Phase 2 batch-by-batch metrics + Phase 3 merge metrics + this Phase 4 sub-section + aggregate metrics row in the cross-session aggregate table below + diminishing-returns row in the diminishing-returns table below.
+- `transcripts/OPEN_PROBLEMS.md` — Pass 4 resolutions noted (most prior problems substantially advanced; new Problem 8 added consolidating the publication-blocking Subject-paragraph errors corpus-wide).
+- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` Progress Tracker — Pass 4 column added with 127 audit-able entries dated 2026-05-22.
+
+**Final commit + push:** `(pending)` will land this AUDIT_TRAIL Session 4 finalization + OPEN_PROBLEMS Problem 8 + cleanup.
+
+**Coordination note:** This Session 4 ran concurrently with a parallel Session 3 (Phase 3 + Phase 4 + Phase 5 — pipeline preprocessor + Pinecone/Voyage RAG scaffolding + Session 3 finalization). Eric was running both sessions in parallel — Session 4 owned the Pass-4 sweep (which had originally been Session 3 Phase 2 but was reassigned to Session 4 with methodologically tighter one-transcript-per-agent isolation per Eric's directive); Session 3 owned the pipeline + RAG scaffolding. The two sessions coordinated via git: each pushed independent commits to `origin/master` with no merge conflicts. Session 3 closed first (with `e0a1dbf` Phase 5 finalization). Session 4 closes second with this commit. The canonical `transcripts/NEXT_SESSION_PROMPT.md` is now archived (single-use convention satisfied).
 
 ---
 
@@ -330,6 +425,8 @@ Built the "Cross-corpus recurring error patterns" sweep-rule catalog as a new to
 Pass timestamps + coverage notes. Use this as the structured input for inferential error-rate scoring per entry. (See "Inferential scoring framework" section below.)
 
 The full per-entry data lives in the Progress Tracker section of `CLEANED_TRANSCRIPTS_REVIEW.md` (lines ~304-440). This matrix records categorical-coverage flags for analysis-script consumption.
+
+**Pass 4 coverage (Session 4, 2026-05-22 later):** Pass 4 sweeping QA + fact-check is `F` (full) for all 127 audit-able entries, with the following per-entry caveats unchanged from prior passes: #109 McClary remains `D` (severe Whisper degradation — Pass 4 confirmed the publication-blocker status); #59 Lawson + #67 Howell + #69 Richardson remain `M` (source-level mid-sentence truncations — Pass 4 confirmed no errors past the truncation points and reiterated the splice-needed status). The matrix below is the Pass 1+2+3 coverage flags; treat the Pass 4 column as universally `F` across all 127 rows except the 4 caveats above (which inherit their prior-pass flag).
 
 **Coverage flag legend:**
 - `F` = full transcript read end-to-end
@@ -488,12 +585,20 @@ The full per-entry data lives in the Progress Tracker section of `CLEANED_TRANSC
 | Entries with Pass 1 partial (~25K-token cap hit) | 14 in #1-#42; ~25 more in #43-#132 (Pass 2 supervisors handled via tail-extraction) |
 | Entries with Pass 2 partial-and-then-completed via tail-sweep | 14 |
 | Entries with Pass 1 + Pass 2 + Pass 3 all complete | 127 |
+| Entries with Pass 1 + Pass 2 + Pass 3 + Pass 4 all complete | 127 |
 | Total corrections (cumulative across Pass 1 + Pass 2 + tail-sweep + Pass 3) | ~9,500+ |
-| Ground-truth corpus entries | 60 (2026-05-21) → 140 (2026-05-22) |
-| Ground-truth corpus aliases | ~138 (2026-05-21) → 291 (2026-05-22) |
-| Adversarial-review flags awaiting external multi-model ensemble | ~500 |
-| Cross-contamination items needing relocation | ~22 |
-| Speaker-originating factual errors flagged for editorial footnoting | ~9 |
+| Total corrections (cumulative across Pass 1 + Pass 2 + tail-sweep + Pass 3 + Pass 4) | ~12,000+ |
+| Pass 4 net-new catches (errors missed by all of Pass 1+2+3) | ~2,500+ |
+| Pass 4 re-grounding promotions (low/medium/flagged → high) | ~250+ |
+| Pass 4 re-grounding demotions (high → medium/low or kept-with-correction) | ~100+ |
+| Pass 4 fact-check verifications (high-confidence rows + Subject paragraph claims) | ~1,500+ |
+| Pass 4 cross-contamination retractions (phantom Pass 1/2/3 rows not in raw) | ~30+ across ~20 entries |
+| Pass 4 Subject-paragraph publication-blocking corrections | ~120+ claim-level fixes across ~50+ entries (see OPEN_PROBLEMS Problem 8) |
+| Ground-truth corpus entries | 60 (2026-05-21) → 140 (2026-05-22 early) → ~220+ proposed (Pass 4 candidates pending corpus commit) |
+| Ground-truth corpus aliases | ~138 (2026-05-21) → 291 (2026-05-22 early) → ~500+ proposed (Pass 4 candidates pending) |
+| Adversarial-review flags awaiting external multi-model ensemble | ~500 pre-Pass 4 → ~650 post-Pass 4 (queue grew: ~150 resolved + ~300 new/retained) |
+| Cross-contamination items resolved (Phase 1a) | 22 (resolved 2026-05-22 evening) + ~30 additional retractions surfaced by Pass 4 (pending merge into master) |
+| Speaker-originating factual errors flagged for editorial footnoting | ~9 pre-Pass 4 → ~25+ post-Pass 4 (Pass 4 found ~15 additional speaker-originating chronology/attribution conflations) |
 
 ---
 
@@ -507,8 +612,11 @@ Per-pass net-new-finding rate observed in Session 2 across the entries that rece
 | Pass 2 | ~45 | Includes catalog-pattern instances Pass 1 missed |
 | Pass 2 tail-sweep (for the 14 partial-reads) | ~62 | Net-new from previously-unread material |
 | Pass 3 | ~15-20 of which most are confidence-resolutions, ~3-5 are new missed-pattern catches | Diminishing returns: most rows are resolutions of existing entries, not new finds |
+| Pass 4 (Session 4) | ~20 net-new catches per entry + ~12 fact-check verifications + ~2 promotions + ~1 demotion per entry | **PASS 4 SIGNIFICANTLY OVERSHOT THE SATURATION PREDICTION.** Pre-Pass 4 estimate (in this very document) was "fewer than 2 new catches per entry on average." Actual Pass 4 net-new yield was ~20 per entry — an order of magnitude higher than predicted. Three drivers: (a) the corpus expansion 60→140 + catalog extension +792 patterns gave Pass 4 *much* more canonical ground truth to recognize and fact-check against; (b) the one-transcript-per-agent isolation meant each subagent could go deeper into raw-transcript spot-checking than the prior multi-entry supervisors did; (c) Pass 4 explicitly added fact-check + Subject-paragraph verification + cross-contamination-retraction sub-tasks that prior passes lacked. The diminishing-returns curve is therefore **non-monotonic**: yield went up at Pass 4 because the audit's *capability* increased (bigger corpus + better methodology) faster than the *remaining errors* shrank. |
 
-**Interpretation:** Pass 1 + Pass 2 capture the bulk of substantive corrections. Pass 3's net-new catch rate (3-5 per entry on average) is below the saturation threshold for most entries — Pass 3's main value is **confidence resolution** of items already surfaced, not new findings. Pass 4 (if attempted) would likely produce fewer than 2 new catches per entry on average.
+**Interpretation:** Pass 1 + Pass 2 capture the bulk of substantive corrections. Pass 3's net-new catch rate (3-5 per entry on average) is below the saturation threshold for most entries — Pass 3's main value is **confidence resolution** of items already surfaced, not new findings.
+
+**Pass 4 result CONTRADICTS the pre-Pass-4 saturation prediction.** The prediction here ("Pass 4 would likely produce fewer than 2 new catches per entry on average") was wrong by a factor of ~10. The lesson: saturation predictions assume the *methodology* is held fixed. Pass 4's methodology *changed* — bigger corpus + one-transcript-per-agent isolation + Subject-paragraph fact-checking added — so the saturation curve effectively reset. For Pass 5 (if attempted): if no methodology change, expect saturation to bite hard (probably ~2-5 net-new per entry). If methodology changes again (e.g., adversarial multi-model ensemble, or full-text-rewrite Whisper-replacement of #109 + the three truncated entries), the yield may again exceed the saturation prediction.
 
 **Exception:** entries with severe Whisper degradation or source-level truncation show different curves — finding rate stays high because each pass is auditing partially-different content. #109 McClary and the 3 source-truncated entries (#59, #67, #69) should be treated as outliers for saturation analysis.
 

@@ -1,8 +1,8 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
-**Last updated:** 2026-05-22
-**Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~6 MB)
-**Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (140 entries, 291 aliases)
+**Last updated:** 2026-05-22 (post-Session-4 Pass 4 sweep)
+**Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~9.3 MB post-Pass-4)
+**Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (140 entries, 291 aliases — ~80+ Pass-4 candidates pending corpus commit)
 **Hard deadline:** 2026-05-27 WWU team meeting (5 days from this writing)
 
 ## Current audit state
@@ -10,8 +10,9 @@
 - **Pass 1:** complete on 132 entries (5 SKIPPED/redirect: #28, #31, #46, #64, #95)
 - **Pass 2:** complete on 127 audit-able entries via Phase A (43-132) + Phase B (tail-sweep for 14 entries in 1-42)
 - **Pass 3:** complete on 127 audit-able entries via Phase C (parallel supervisors)
-- **Ground-truth corpus:** expanded 60 → 140 entries via Phase D
-- **Cross-corpus recurring error patterns catalog:** in place at top of master MD, sections A–I
+- **Pass 4 (Session 4, 2026-05-22 later):** complete on all 127 audit-able entries via one-transcript-per-agent strict isolation. ~2,500+ net-new catches; ~250+ promotions; ~100+ demotions; ~1,500+ fact-check verifications; ~30+ cross-contamination retractions; ~120+ Subject-paragraph publication-blocking corrections (see Problem 8 below). Cross-contamination firewall held cleanly across all 127 entries.
+- **Ground-truth corpus:** expanded 60 → 140 entries via Phase D; Pass 4 surfaced ~80+ additional candidates pending batched corpus commit (~220+ total when committed)
+- **Cross-corpus recurring error patterns catalog:** in place at top of master MD, sections A–I + Phase 1b extensions J-P + Z catch-all + ~150 additional Pass 4 patterns pending catalog merge
 
 ## Critical-path context
 
@@ -230,7 +231,22 @@ These are speakers misspeaking facts, not Whisper errors. The audit preserves th
 
 ---
 
-## Problem 7 — Pipeline integration
+## Problem 7 — Pipeline integration — **RESOLVED 2026-05-22 (Session 3 Phase 3 + Phase 4)**
+
+### Resolved 2026-05-22 evening
+
+**Phase 3 — preprocessing layer:** `scripts/apply_corrections.py` (992 lines, 26 passing pytest cases) parses the audit overlay's per-entry Pass 1/2/3 correction tables, applies `correct`/`high` confidence substitutions to raw transcripts (.txt/.srt/.vtt with timestamp preservation), and routes `medium`/`low`/`flagged-for-adversarial-review`/`speaker-originating` rows to a `manifest.json` `pending_context` array for downstream LLM-prompt augmentation. Non-destructive (`transcripts/raw/` never modified), idempotent, parallelizable per-entry. Handles the Phase 1a-introduced `<target>.P2.RELOC[<source>.P2.<row>]` relocated row IDs.
+
+**Phase 4 — RAG substrate:** Substrate decision is **Pinecone Builder + Voyage AI** (voyage-3 1024-dim + rerank-2). Full decision rationale + alternatives considered in `docs/RAG_SUBSTRATE_DECISION.md`. Scaffolding in `C:\civil\rag\` (964 lines across shared.mjs / chunker.mjs / embed.mjs / ingest.mjs / retrieve.mjs / .env.example / README.md, 31 passing node:test cases). Pattern mirrors `worldthought.com/scripts/rag/` for consistency. Substrate-adapter portability documented for future migration if needed.
+
+**Remaining operational actions (Eric):**
+1. Provision Pinecone civil-rights-prod project + civil-rights index (1024-dim cosine, sparse+dense hybrid if available on Builder)
+2. Add Pinecone + Voyage credentials to `rag/.env.local` (gitignored; example template in `rag/.env.example`)
+3. Run first full ingest: `python scripts/apply_corrections.py` then `node --env-file=rag/.env.local rag/ingest.mjs --include-ground-truth`
+4. Wire chat function downstream of `rag/retrieve.mjs` (future commit)
+
+### Original 2026-05-22 morning punch-list (now resolved)
+
 
 The audit overlay (`CLEANED_TRANSCRIPTS_REVIEW.md`) is a Markdown document. The Smithsonian-grade publication pipeline (dual-scorer + citation-auditor) needs corrections as machine-readable input.
 
@@ -243,6 +259,54 @@ The audit overlay (`CLEANED_TRANSCRIPTS_REVIEW.md`) is a Markdown document. The 
 3. **Firestore-collection-merge** — push corrections into the `transcript_corrections` Firestore collection per the design in `docs/TRANSCRIPT_AUDIT_DESIGN.md`. The pipeline's summarization step looks them up at query time. Most aligned with the existing architecture.
 
 **Suggested:** Option 2 (pre-correction preprocessing) for the Wednesday deadline — fastest implementation, no Firestore dependency. Then Option 3 as the long-term substrate.
+
+---
+
+## Problem 8 — Subject-paragraph publication-blocking corrections (~120+ across ~50+ entries) — NEW (surfaced by Session 4 Pass 4)
+
+Pass 4's one-transcript-per-agent sweep added explicit Subject-paragraph fact-checking as a sub-task, which prior passes did not. Across 127 entries, Pass 4 found ~120+ claim-level Subject-paragraph errors that block publication-grade Smithsonian/LoC release. These are NOT Whisper transcription errors — they are errors in the **audit-overlay metadata itself** (the "Subject" paragraph that introduces each entry's section in `CLEANED_TRANSCRIPTS_REVIEW.md`), which the Pass 1 supervisor inferred from the transcript opening + external biographical knowledge but in many cases got wrong.
+
+### Categories of Subject-paragraph errors found:
+
+1. **External biographical claims not supported by the transcript** — the audit overlay attributes a fact (e.g., "co-founded X organization", "served as Y official", "later did Z") that the speaker does NOT actually say in their interview. These are biographical-inference errors where the Pass 1 supervisor pulled external knowledge into the Subject paragraph. (~30+ instances)
+2. **Date and chronology errors** — wrong birth years, wrong organizational founding dates, wrong death dates, wrong event years, mismatched event-vs-Movement-era timing. (~25+ instances)
+3. **Role and title errors** — wrong organizational title (e.g., "general counsel" should be "associate counsel"), wrong court-level (state vs. federal), wrong duration of tenure, wrong order-of-events (X did Y *before* Z, not after). (~25+ instances)
+4. **Cross-entry / cross-figure conflation** — Subject paragraph attributes Person A's biography to Person B because they share a surname or organizational affiliation. (~15+ instances; e.g., #92 Nathaniel Hawthorne Jones's family-history-vs-his-own-narrative conflation, #100 Branch+Smith's "Clyde Kennard died January 1966" conflation with Vernon Dahmer's Jan 1966 firebombing)
+5. **Speaker-vs-paragraph misalignment** — Subject paragraph claims X happened when the speaker actually says ~X (semantic inversion); or paragraph treats a speaker's hedged recollection as confirmed fact; or paragraph attributes the wrong direction to an event (e.g., #125 Parker — "Sammy Davis Jr. pallbearer direction REVERSED — he died 1990, Mamie Till-Mobley died 2003; she was honorary pallbearer at HIS funeral not vice versa"). (~15+ instances)
+6. **Task-prompt-injected claims not in either transcript or canonical sources** — a few Pass 4 subagents flagged claims that were in the audit-overlay Subject paragraph as inferred but cannot be verified against any source (e.g., #20 Jones "founded the Institute for Nonviolence Initiatives" — could not be verified against any external biography). (~10+ instances)
+
+### High-priority publication-blocking examples (subset; full list in each entry's Pass 4 block):
+
+| Entry | Subject paragraph error | Correction |
+|---|---|---|
+| #20 Jones | "founded the Institute for Nonviolence Initiatives" | Could not be verified; canonical affiliations are Stanford King Institute + USF Institute for Advanced Studies in Nonviolence |
+| #56 Greenberg | "Marshall personally tried the Topeka trial" | Only Carter + Greenberg did; Marshall did not personally try the Topeka portion |
+| #65 McCullar | "Brother of Clifford Brawner" | She is the SISTER (publication-bound metadata fix required) |
+| #80 Lonnie King | "Manns Brothers grocery" | Speaker says "Man Brothers" (or canonical "Mann Brothers" without the s); also "partial scholarship" not "full football scholarship" |
+| #87 Perry | "co-counsel at Briggs v. Elliott 1951 trial" | Perry was a SPECTATOR, not formal co-counsel |
+| #90 Roxborough | staff start date 1948; Tuskegee; Gus Courts shot in 1955 | 1953 not 1948; Howard not Tuskegee; Gus Courts SURVIVED 1955 shooting and lived to 1969 |
+| #91 Walter | 1986 Peace Walk direction FROM Moscow; "American Peace Walk" | TO Moscow; canonical name is "American-Soviet Peace Walk" |
+| #100 Branch+Smith | "Clyde Kennard died January 1966" | Canonical date July 4 1963 — Branch's transcript-recall conflated with Vernon Dahmer Jan 10 1966 firebombing |
+| #102 Blake | "Florida Memorial College" + Hank Thomas + Sammy Davis Jr. $100 bond | Florida Memorial College fabrication; Hank Thomas content was cross-contaminated from #103 Hayling |
+| #113 Mahone | "sent to France"; "Hasty House attack July 4 1964" | Sent to West Germany (raw line 2211); attack was July 2-3 1964 |
+| #114 Young Jr. | "NCI founded 1968"; "5,000 acres"; "lost in Pigford lawsuit" | NCI founded 1969; 5,735 acres; NCI lost in 1985 USDA foreclosure (NOT Pigford which came later) |
+| #117 Sherrod | "white grand jury statement" | Refined to "voir-dire-pool statement during CB King's civil trial of Cal Hall" |
+| #118 McNichols | "all 100 Mississippi counties" | MS has 82 counties not 100 |
+| #125 Parker | "Sammy Davis Jr. was Mamie's pallbearer" + "Eric Holder signed Till Bill 2008" + "Beauford Wilson" | REVERSED — Davis died 1990, Mamie died 2003 → SHE was HIS pallbearer; Holder became AG Feb 2009 AFTER Oct 2008 Bush signing; Wilson canonical name is Benjamin (Benji) Wilson Jr. |
+| #126 Anderson | "first Black president of American Osteopathic Association" | Anderson chaired the American Hospital Association (different org) |
+| #127 Strickland | "Dotson"; "1971-present" | Dodson; 1971-2024 (Strickland d. June 22 2024) |
+| #130 Saunders | "Highlander raid by SC state police"; "Carmichael 1968"; "lost foot" | Tennessee state authorities; 1967 per speaker; bone broken with fear-of-loss only (did NOT lose foot); basic training Hawaii not Fort Jackson |
+| #132 Walker | "Gillfield pastorate 1953-58" (in civil_rights_facts.json) | 1952-1960 (8 years per first-person) — corpus update required |
+
+### Suggested implementation:
+
+The Subject paragraph for each affected entry needs to be edited in `CLEANED_TRANSCRIPTS_REVIEW.md` *before* the dual-scorer + citation-auditor pipeline runs on that entry. Two approaches:
+
+1. **Script-based batched correction** — write a `transcripts/fix_subject_paragraphs.py` that consumes each entry's Pass 4 block "Fact-check findings" sub-table, extracts the proposed corrections, and applies them to the master overlay's Subject paragraph. Idempotent. ~2-3 hours of careful scripting.
+
+2. **Human-in-the-loop review** — Eric (or a WWU researcher) reviews each Pass 4 fact-check finding and decides whether to apply the correction, soften the claim, or footnote it as speaker-originating-uncertain. Higher quality but slower. Recommended for Smithsonian-grade publication gate.
+
+Approach 2 is the Smithsonian-grade recommendation; approach 1 is the deadline-driven recommendation if the 2026-05-27 WWU meeting is the hard gate. A hybrid is possible: script applies the high-confidence corrections; human reviews the medium/low-confidence ones.
 
 ---
 
