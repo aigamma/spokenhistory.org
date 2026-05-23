@@ -13,6 +13,8 @@ GitHub Copilot: this file is auto-injected into your context for any chat / inli
 - Validation commands (`npm run build`, `node --check`, `python -m compileall`, etc.)
 - Defensive patterns and gotchas
 
+Note: `CLAUDE.md` also contains a "Pacing constraints" section that is Claude-Code-specific (references Eric's Anthropic billing relationship and parallel-subagent patterns native to Claude Code's harness). That section does not apply to Copilot — read past it.
+
 ## What NOT to suggest reading or editing
 
 - `transcripts/raw/` — the canonical source data. **Never modify these files.** Corrections go to the audit overlay (`CLEANED_TRANSCRIPTS_REVIEW.md`) or to `transcripts/corrected/` (the script output), never to raw.

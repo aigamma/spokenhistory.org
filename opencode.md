@@ -6,11 +6,13 @@ If OpenCode also discovers this file (some configurations read root-level `openc
 
 ## What `CLAUDE.md` contains
 
-- Architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
-- Pacing constraints (Claude Max 20x — no token throttling; parallel subagents preferred for backlog work)
-- The Smithsonian-grade publication gate
+- Project architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
+- The Smithsonian-grade publication gate (dual-scorer + citation-auditor + human-review queue)
 - **Audit documentation discipline** — non-negotiable per-phase update protocol for the four governance documents in `transcripts/`
 - **Documentation map** — distinguishes ~17 human-facing markdown docs from ~440 machine-generated per-entry staging files
+- Validation commands and defensive patterns
+
+Note: `CLAUDE.md` also contains a "Pacing constraints" section that is Claude-Code-specific (it references Eric's Anthropic billing relationship and parallel-subagent patterns native to Claude Code's harness). That section does not apply to OpenCode or any other agent that doesn't share Claude Code's runtime — read past it.
 
 ## Do not read these for project context
 

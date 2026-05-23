@@ -12,8 +12,7 @@ This is the **Civil Rights History Project** (`aigamma/civil-rights-history-proj
 Cursor: before answering substantive questions or proposing edits in this repo, ensure you have the context from these files. They are the project's binding conventions; do not infer project structure from filenames alone.
 
 1. **[`CLAUDE.md`](mdc:CLAUDE.md)** — the canonical project guide. Contains:
-   - Architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
-   - Pacing constraints (Claude Max 20x — no token throttling; parallel subagents preferred for backlog work)
+   - Project architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
    - The Smithsonian-grade publication gate (dual-scorer + citation-auditor + review queue)
    - Ground-truth corpus location and validation
    - **Audit documentation discipline** — strict per-phase update protocol for `transcripts/AUDIT_TRAIL.md` (longitudinal session log), `transcripts/OPEN_PROBLEMS.md` (punch list), `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (non-destructive corrections overlay), and `Metadata Generation System/civil_rights_facts.json` (additions-only ground-truth corpus)
@@ -22,6 +21,8 @@ Cursor: before answering substantive questions or proposing edits in this repo, 
    - Defensive patterns established in the overhaul
    - Accessibility tokens (brand-red contrast rules, focus-visible behavior)
    - Things that look broken but aren't (gotchas list)
+
+   Note: `CLAUDE.md` also contains a "Pacing constraints" section that is Claude-Code-specific (references Eric's Anthropic billing relationship and parallel-subagent patterns native to Claude Code's harness). That section does not apply to Cursor — read past it.
 
 2. **[`AGENTS.md`](mdc:AGENTS.md)** — short cross-vendor agent-discovery delegator. Same content this file delegates to, in the broader `AGENTS.md` convention used by Codex / Aider / Kimi-CLI / generic LangChain-based tools / the ensemble lanes Eric is bringing up.
 

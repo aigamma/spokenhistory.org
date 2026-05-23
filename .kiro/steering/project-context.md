@@ -9,8 +9,7 @@ Kiro: this file is auto-included in your context for all sessions in this reposi
 ## Authoritative documents (read these first)
 
 1. **`CLAUDE.md`** at the repository root — the canonical project guide. Read end-to-end before substantive work. Contains:
-   - Architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
-   - Pacing constraints (Claude Max 20x — no token throttling; parallel subagents preferred for backlog work)
+   - Project architecture (5 subsystems: `src/`, `functions/`, `Metadata Generation System/`, `mcp-server/`, `scripts/`)
    - The Smithsonian-grade publication gate (dual-scorer + citation-auditor + review queue)
    - Ground-truth corpus location + validation
    - **Audit documentation discipline** — strict per-phase update protocol for `transcripts/AUDIT_TRAIL.md`, `transcripts/OPEN_PROBLEMS.md`, `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md`, and `Metadata Generation System/civil_rights_facts.json`
@@ -19,6 +18,8 @@ Kiro: this file is auto-included in your context for all sessions in this reposi
    - Defensive patterns
    - Accessibility tokens
    - Gotchas list ("things that look broken but aren't")
+
+   Note: `CLAUDE.md` also contains a "Pacing constraints" section that is Claude-Code-specific (references Eric's Anthropic billing relationship and parallel-subagent patterns native to Claude Code's harness). That section does not apply to Kiro — read past it.
 
 2. **`AGENTS.md`** at the repository root — short cross-vendor delegator that also points to `CLAUDE.md`. Read if you encounter it in repos via AGENTS.md-convention; it delegates the same way.
 
