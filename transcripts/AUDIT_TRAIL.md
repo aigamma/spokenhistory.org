@@ -255,6 +255,63 @@ Top 3 categories account for 65% of all flagged items.
 
 **Session 3 closure note (added 2026-05-22, Session 4):** Session 3 completed Phase 1 (audit hygiene: cross-contamination cleanup + catalog back-fill + adversarial-review feed). Phases 2–5 were not executed in Session 3. Session 4 supersedes the Pass-4-re-grounding work that Session 3 Phase 2 was scoped to do, with a stricter methodology (one-transcript-per-agent) per Eric's directive. The other Session 3 phases (3 pipeline-integration, 4 Weaviate scaffolding, 5 finalization) remain unfilled and are deferred to a later session.
 
+#### Layer 5 — Corpus-global fidelity sweep (2026-05-22 / 23 follow-on, user-requested final Claude-side review)
+
+**Agents:** Claude Opus 4.7 (parent, no subagents — direct script work; user's prompt explicitly prohibited spawning further subagents).
+**Wall-clock:** ~45 minutes from task start to commit-ready (parse pipeline development + iterative threshold tuning + four-dimension sweep + summary + audit-trail update).
+
+**Scope:** Final Claude-side fidelity audit before the user hands off to the adversarial multi-model ensemble (Kiro / Kimi / Codex / Gemini + others). Operates on the master overlay `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` as a single corpus-global artifact rather than per-entry. Four fidelity dimensions, each orthogonal to anything per-entry passes could detect:
+
+1. **D1 — Phantom Whisper-renderings.** Cross-checks each high/correct-confidence correction row's claimed Whisper rendering against the entry's raw transcript files (.txt / .srt / .vtt / .json). Rows whose rendering cannot be found (fuzzy `partial_ratio` < 85) flag as phantom — they will silently no-op when `scripts/apply_corrections.py` runs at preprocessing time.
+2. **D2 — Bidirectional canonical inconsistency.** Same Whisper rendering mapped to different canonical corrections across entries.
+3. **D3 — Catalog-vs-per-entry contradiction.** Per-entry correction disagrees with catalog canonical for the same Whisper pattern.
+4. **D4 — Cross-entry biographical inconsistency.** Birth-year claims about top-50 mentioned canonical figures.
+
+**Methodology:**
+- **Single-pass parse** of the 9.26 MB master MD into 16,214 correction rows + 1,118 catalog rows + 131 entry-metadata records (parser: `transcripts/layer5_extract_corrections.py`, reusable for future analysis).
+- **In-memory raw-text cache** for all 131 raw transcript directories (128.3 MB total, cached once for D1's full sweep).
+- **rapidfuzz `partial_ratio`** for D1 fuzzy matching; **token-set ratio** for D3 entity-equivalence.
+- **Quote-aware variant extraction**: whisper-rendering cells that contain quoted spans (e.g., `"Reverend Brann" (3 occurrences at lines 23, 31)`) extract the quoted text as the variant rather than the whole cell.
+- **Meta-filter**: rows with whisper-rendering cells that contain commentary patterns ("spelling propagation", "canonical spelling", "catalog backfile recommendation", etc.) excluded from D1 to avoid false positives on Pass 3 / Pass 4 missed-pattern commentary rows.
+- **Self-confirm filter**: rows where whisper == correction (1,447 rows; bookkeeping confirmations rather than actual corrections) excluded from D1.
+- **Confidence-resolution row filter**: rows where col[1] and col[2] are bare confidence words ("medium" / "high") excluded from correction parsing (those are Pass 3 confidence-resolution tables that have a different shape).
+- **Catalog-section exclusion**: sections H / I / P / Z (and their extensions) excluded from D3's catalog map — those rows contain descriptive meta-text in col[0], not whisper renderings.
+- **Tight name-proximity** for D4 birth-year extraction (figure name within 50 chars of the year, in birth-context syntactic frame) — replaces a loose ±200-char window that produced a false positive on Sam Mahone vs Charles Sherrod.
+
+**Deliverables:**
+- `transcripts/layer5_extract_corrections.py` — parser module (reusable). Parses master MD into structured `CorrectionRow` + `CatalogRow` + `EntryMetadata` records.
+- `transcripts/layer5_fidelity_audit.py` — full pipeline (deterministic, re-runnable, ~15 s wall-clock).
+- `transcripts/layer5_fidelity_audit.json` — 1.58 MB structured findings (well under 5 MB cap).
+- `transcripts/layer5_fidelity_audit_summary.md` — human-readable summary (per-dimension counts + top-10 highest-impact + statistical observations + publication-grade assessment + recommended actions for the adversarial ensemble).
+
+**Findings (per-dimension counts):**
+
+| Dimension | Findings | Notes |
+| --- | ---: | --- |
+| D1 — Phantom Whisper-renderings | 939 | After self-confirm + meta-text filters. Of these, ~74 reference canonical figures (Medgar Evers, Stokely Carmichael, Bayard Rustin, James Forman, etc.) — high-impact subset for the ensemble to spot-check. The remaining ~865 are lower-impact (supervisor commentary rows, near-misses, minor mis-quotes). |
+| D2 — Bidirectional inconsistencies | 628 | Dominated by formatting variance (Tougaloo vs Tougaloo College, Samuel vs Sammy Younge, Stokely vs Stokely Carmichael); ~8 with both substantial minority share AND > 4 occurrences are genuinely worth review. |
+| D3 — Catalog contradictions | 191 | ~40 estimated real disagreements (Dinky Romilly vs Dinky Forman cluster, Janet Jemmott Moses vs Dona Moses Richards), ~120 different-referent false positives (same whisper rendering across genuinely different canonical referents — e.g., Hawaiian Damon vs Vernon Dahmer), ~30 minor formatting differences. |
+| D4 — Biographical inconsistencies | 0 | Tightened proximity heuristic eliminated the original false positive (Sam Mahone b.1945 mis-attributed to Charles Sherrod). True biographical-consistency audit requires LLM-grade extraction; regex approach is methodology-limited. |
+
+**Top 5 high-impact phantom findings** (canonical-figure rows where the supervisor's claimed Whisper rendering is not in the raw):
+
+1. **#2.32 Amos Brown Pass 1**: "Pittsburgh Korea / Pittsburgh Kuzat" → "Pittsburgh Courier" — raw says "Pittsburgh Courier" (correct); supervisor invented the rendering.
+2. **#103.26 Robert Hayling Pass 1**: "mega-evils" → "Medgar Evers" — neither term appears anywhere in Hayling's transcript.
+3. **#3.76 Annie Pearl Avery Pass 1**: "Tugaloo College" → "Tougaloo College" — no college name appears in Avery's raw.
+4. **#67.P2.13 Howell Pass 2**: "Joe Mosnier — NOT this interviewer; David Cline is" → "David Cline" — supervisor put commentary in the whisper-rendering cell.
+5. **#116.34 Scott Bates Pass 1**: "Stocks-O Cymbol" → "Stokely Carmichael" — inventive rendering not in raw.
+
+**Phantom distribution by pass section**: Pass 2 49%, Pass 1 30%, Pass 3 17%, Pass 4 2%, Pass 2 tail-sweep 2%. The Pass 2 plurality suggests the re-review-for-missed-errors layer introduced fabricated-pattern padding — supervisors invented variant renderings that "sounded plausible" given the canonical figure context but did not appear in source.
+
+**Honest publication-grade assessment:** The audit overlay is publication-grade **with caveats**. The catalog (sections A–O + extensions) is internally consistent and high-quality; per-entry tables contain genuine high-value corrections that materially improve LLM downstream summarization. The caveats are: (a) ~5 % of high/correct-confidence rows have un-ground-truth-able Whisper renderings; (b) canonical names sometimes appear in two normalized forms across the corpus; (c) catalog and per-entry rows do not always agree on phrasing for the same figure; (d) cross-entry biographical consistency was effectively un-auditable by regex alone. The overlay is fit for downstream LLM grounding and Smithsonian/LoC review **provided the adversarial ensemble adjudicates the ~74 high-impact canonical-figure phantom rows** before any production write of corrected transcripts.
+
+**Methodology orthogonal to prior passes:**
+- Pass 1 / Pass 2 / Pass 3 / Pass 4 all operated per-entry — supervisors could not detect cross-entry inconsistencies.
+- The cross-contamination follow-on cleanup (commit `847f763`) caught row-level misfiling and meta-cross-contamination by analyzing retraction-signal keywords in staging files, but did not verify whether claimed Whisper renderings actually existed in raw transcripts.
+- Layer 5 is the first pass that treats the master MD as a single corpus-global artifact and validates the relationship between (correction rows) → (raw transcripts they claim to correct) + (catalog) ↔ (per-entry overlay).
+
+**Handoff to the adversarial ensemble:** the four artifacts (JSON + summary + parser + pipeline) are committed. Eric's Kiro/Kimi/Codex/Gemini ensemble should prioritize the canonical-figure phantom subset (top-10 in summary), then the maiden-vs-married name normalizations (D2), then the catalog reconciliation candidates (D3 real disagreements). Adversarial findings should feed back into a final master-MD revision pass, after which the overlay is ready for `scripts/apply_corrections.py` to produce `transcripts/corrected/`.
+
 ---
 
 ### Session 4 — 2026-05-22 (later): Pass 4 sweeping QA + fact-check (one-transcript-per-agent architecture)

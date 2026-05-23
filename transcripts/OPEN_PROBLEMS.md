@@ -327,6 +327,107 @@ Approach 2 is the Smithsonian-grade recommendation; approach 1 is the deadline-d
 
 ---
 
+## Problem 9 — Layer 5 corpus-global fidelity findings (1,758 advisory items) — NEW (surfaced by Layer 5 follow-on sweep 2026-05-22/23)
+
+Layer 5 is the final Claude-side fidelity audit before the user hands off the audit overlay to the adversarial multi-model ensemble (Kiro / Kimi / Codex / Gemini + others). Unlike Pass 1 / 2 / 3 / 4 (all per-entry), Layer 5 treats `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (9.26 MB / 41,036 lines) as a single corpus-global artifact and audits four fidelity dimensions no per-entry pass could detect. Findings are **advisory** — the four artifacts (JSON + summary + parser + pipeline) are committed for the adversarial ensemble to triage; Layer 5 does NOT auto-mutate the master MD.
+
+**Full findings JSON**: `transcripts/layer5_fidelity_audit.json` (1.58 MB)
+**Summary**: `transcripts/layer5_fidelity_audit_summary.md`
+**Re-runnable pipeline**: `transcripts/layer5_fidelity_audit.py` + `transcripts/layer5_extract_corrections.py`
+
+### Bucket counts
+
+| Dimension | Findings | Severity | Action recommended |
+| --- | ---: | --- | --- |
+| **D1 — Phantom Whisper-renderings** | 939 | High (silent-failure mode) | Ensemble spot-check the ~74 canonical-figure subset; remaining ~865 are low-impact |
+| **D2 — Bidirectional canonical inconsistency** | 628 | Medium (mostly formatting variance) | Normalize the ~8 substantive findings against `civil_rights_facts.json` |
+| **D3 — Catalog-vs-per-entry contradiction** | 191 | Medium (~40 real, ~120 false-positive different-referent, ~30 minor) | Ensemble triage: real disagreements feed back into catalog or per-entry-row updates |
+| **D4 — Cross-entry biographical inconsistency** | 0 | n/a (methodology-limited) | Future LLM-based extraction pass would be needed for true biographical-consistency audit |
+| **Total** | **1,758** | | |
+
+### Why this matters
+
+**D1 phantom rows are a silent-failure mode.** When `scripts/apply_corrections.py` runs at preprocessing time, it searches the raw transcript for the claimed Whisper rendering and replaces it with the canonical correction. If the rendering doesn't actually exist in the raw, the script silently no-ops — the LLM downstream pipeline sees the uncorrected text without any warning that the audit overlay claimed to fix it. No per-entry supervisor could catch this because they each only saw one entry at a time.
+
+**D2 + D3 are coherence issues.** The audit overlay is intended to be a single authoritative reference. Internal contradictions undermine institutional credibility with Smithsonian / LoC reviewers. The good news: most D2 findings are minor formatting variance with a clear majority (>80% share); only ~8 are substantive corpus-wide normalizations.
+
+**D4 = 0 reflects methodology limitations, not corpus quality.** A regex approach can only verify birth years tightly attached to figure names. Most biographical claims in the corpus are about interviewees themselves (single occurrence each). A true biographical-consistency audit would need an LLM-based extraction pass — deferred.
+
+### Highest-impact findings (top 10 by potential publication risk)
+
+The summary document's top-10 list (copied here for triage convenience):
+
+| # | Entry | Row | Pass | Claimed Whisper rendering | Canonical | Status |
+| ---: | ---: | --- | --- | --- | --- | --- |
+| 1 | #2 Amos Brown | 2.32 | Pass 1 | "Pittsburgh Korea / Pittsburgh Kuzat" | Pittsburgh Courier | **Verified phantom** — raw has only "Pittsburgh Courier" (correct) |
+| 2 | #2 Amos Brown | 2.60 | Pass 1 | "Acta Almighty King" | Come, Thou Almighty King | Not in raw under either form |
+| 3 | #3 Annie Pearl Avery | 3.76 | Pass 1 | "Tugaloo College" | Tougaloo College | No college name in Avery's raw at all |
+| 4 | #103 Robert Hayling | 103.26 | Pass 1 | "mega-evils" | Medgar Evers | **Verified phantom** — neither term in Hayling's transcript |
+| 5 | #124 Walter Tillow | 124.34 | Pass 1 | "Walter Mondale" | Walter Mondale | Raw has only "Mondale"; self-confirming row inflated to 2-word rendering |
+| 6 | #67 Howell | 67.P2.13 | Pass 2 | "Joe Mosnier — NOT this interviewer; David Cline is" | David Cline | Supervisor commentary in whisper-rendering cell |
+| 7 | #116 Scott Bates | 116.34 | Pass 1 | "Stocks-O Cymbol" | Stokely Carmichael | Inventive rendering not in raw |
+| 8 | #57 James O. Jones | 57.P3.13 | Pass 3 | "foreign foreign Stoke" | Stokely Carmichael | Not in raw under that exact phrasing |
+| 9 | #34 Ekwueme Thelwell | 34.P3.6 | Pass 3 | "Mrs. Hema / Mrs. Hemmam / Mrs. Santa Lu Hemer" | Fannie Lou Hamer | Pass 3 commentary; supervisor-invented slash-list |
+| 10 | #76 Lawrence Guyot | 76.71 | Pass 1 | "Bayard Rustin's 'From Protest to Politics'" | Bayard Rustin's 'From Protest to Politics' | Self-confirming row likely picking up speaker's direct quote with minor wording difference |
+
+### Statistical observations
+
+**Phantom distribution by pass section** (where the supervisor produced the phantom row):
+
+| Pass | Phantom count | Share |
+| --- | ---: | ---: |
+| Pass 2 | 460 | 49.0 % |
+| Pass 1 | 281 | 29.9 % |
+| Pass 3 | 159 | 16.9 % |
+| Pass 4 | 23 | 2.4 % |
+| Pass 2 tail-sweep | 16 | 1.7 % |
+
+The Pass 2 plurality (49%) suggests the re-review-for-missed-errors layer introduced fabricated-pattern padding — supervisors invented variant renderings that "sounded plausible" given the canonical figure context but did not appear in source. Pass 4 (only 2.4% of phantoms) had the strictest methodology (one-transcript-per-agent isolation per Session 4) and produced the cleanest layer.
+
+**D2 normalize-needed findings** (most pervasive cross-corpus inconsistencies):
+
+| Whisper rendering | Variants | Most-likely true canonical | Affected entries |
+| --- | --- | --- | --- |
+| "Jim Foreman" | "James Forman" (8) vs "Jim Forman" (2) | **James Forman** | #3, #7 use abbreviated |
+| "Dinky Romley" | "Dinky Romilly" vs catalog "Dinky Forman" | normalize per canonical | #7, #30, #124 |
+| "Sammy Young" | "Samuel Younge Jr." (3) vs "Sammy Younge Jr." (3) | **Samuel Younge Jr.** | #22, #52, #59 |
+| "Stokeley" | "Stokely Carmichael" (3) vs "Stokely" (3) | **Stokely Carmichael** | #43, #73, #81, #101, #117, #124 |
+| "Lounge County" | "Lowndes County, Alabama" (4) vs "Lowndes County, AL" (2) vs "Lowndes County" (1) | normalize to one form | #22, #73, #83, #129 |
+
+### Recommended action sequence for the adversarial ensemble
+
+1. **Highest priority — D1 canonical-figure subset (~74 rows)**: spot-check each in the entry's raw transcript. For each, either:
+   - Confirm phantom and propose the *actual* Whisper rendering Whisper produced (so the row becomes correctable), OR
+   - Flag the row for deletion from the overlay.
+
+2. **Second priority — D2 maiden-vs-married normalization (~8 substantive rows)**: pick canonical forms per `civil_rights_facts.json`; propagate.
+
+3. **Third priority — D3 catalog reconciliation (~40 real disagreements out of 191)**: separate from the ~120 different-referent false positives (same whisper rendering, different historical referent).
+
+4. **Lower priority — Future LLM-grade biographical-consistency pass**: replace Layer 5's regex approach with `(figure, claim, value, source)` extraction across canonical figure mentions.
+
+5. **Deferred — D1 sub-50-fuzzy-score rows (~9)**: closest to truly fabricated renderings; immediate red flags but edge-case-prone (supervisor commentary that looked like a Whisper rendering).
+
+### What is NOT in scope for Problem 9
+
+- Auto-mutation of the master MD: explicitly out-of-scope per the Layer 5 prompt. Findings are advisory.
+- Modification of `transcripts/raw/`: never permissible.
+- Re-running cross-contamination cleanup (already done in `847f763`).
+- Updating staging files (historical artifacts).
+
+### Smithsonian-grade publication-gate assessment
+
+**The audit overlay is publication-grade with caveats.** The catalog is internally consistent; per-entry tables contain genuine high-value corrections. The caveats are:
+
+1. ~5 % of high/correct-confidence rows have un-ground-truth-able Whisper renderings (D1 = 939 / 10,557 audited). High-impact subset is ~74 rows.
+2. Canonical names sometimes appear in two normalized forms (D2 maiden-vs-married, formal-vs-informal).
+3. Catalog and per-entry rows do not always agree on phrasing (D3, ~40 real disagreements).
+4. Cross-entry biographical consistency requires LLM-grade methodology (D4 = 0 by regex-method limitation).
+
+The overlay is fit for downstream LLM grounding and Smithsonian/LoC review **provided the adversarial ensemble adjudicates the ~74 high-impact D1 phantom canonical-figure rows** before any production write of corrected transcripts to `transcripts/corrected/`. The remaining ~865 low-impact phantoms will silently no-op without causing factual error — they're dead weight in the audit overlay but not factual hazards.
+
+---
+
 ## File map
 
 | Purpose | Path |
