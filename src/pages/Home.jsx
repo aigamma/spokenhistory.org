@@ -775,7 +775,7 @@ export default function Home() {
       >
 
       {/* Hero Section */}
-      <section className="relative px-4 sm:px-8 lg:px-12 pt-2 pb-12 lg:pt-3 lg:pb-32 flex flex-col lg:flex-row lg:items-start z-10 lg:min-h-screen">
+      <section className="relative px-4 sm:px-8 lg:px-12 pt-2 pb-12 lg:pt-3 lg:pb-16 flex flex-col z-10">
         <div className="w-full mt-2 lg:mt-3">
           <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
             {/* Text Content */}
@@ -814,8 +814,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* View Timeline Link - in flow on mobile, absolute bottom-left on desktop */}
-        <div className="mt-8 lg:mt-0 lg:absolute lg:left-12 lg:bottom-40 z-50">
+        {/* View Timeline Link - normal flow at all viewports, content-sized hero */}
+        <div className="mt-8 lg:mt-12 z-50">
           <button
             ref={timelineRef}
             onClick={() => {
