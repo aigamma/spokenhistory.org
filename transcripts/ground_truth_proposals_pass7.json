@@ -1,0 +1,4091 @@
+{
+  "_meta": {
+    "generated": "2026-05-24",
+    "source": "Pass 7 PRR staging files",
+    "entry_count": 88,
+    "total_proposals": 292,
+    "unique_names": 251
+  },
+  "by_entry": {
+    "1": {
+      "entry_number": 1,
+      "subject": "Aaron Dixon",
+      "proposals": [
+        {
+          "name": "Elaine Brown",
+          "role": "BPP Chairperson 1974–77; \"A Taste of Power\" memoirist; 1973/75 Oakland City Council candidate",
+          "why_they_belong": "Recurring Whisper failure (\"Lane Brown,\" \"Lane\") across the transcript tail. BPP leadership figure of comparable canonical weight to David Hilliard (already in corpus). Appears in at least 6 distinct transcript passages covering the Oakland 1973 electoral campaign, the Lionel Wilson mayoral race, and the party's post-purge organizational period. Cross-corpus recurrence expected.",
+          "transcript_evidence": "\"Bobby said, you know, Lane Brown for City Council.\" (corrected: Elaine Brown); \"I bought Elaine Brown up here on Thursday along with Cha Cha Jimenez\" (Pass 2 tail 1.P2T.10, 1.P2T.47)"
+        },
+        {
+          "name": "Bobby Rush",
+          "role": "Illinois BPP co-founder; US Representative 1993–2023 (IL-1)",
+          "why_they_belong": "Target of the December 4, 1969 FBI/Chicago PD raid that killed Fred Hampton (\"they wanted to kill Bobby Rush, but he wasn't there\"). Fred Hampton is already in corpus; Bobby Rush is the co-founder who survived and went on to a 30-year Congressional career. His absence from the corpus creates an asymmetry in the Hampton-related entries. Likely recurring in other Illinois BPP interview transcripts.",
+          "transcript_evidence": "\"They start in Chicago. They go in there. They kill Fred Hampton. And they wanted to kill Bobby Rush, but he wasn't there.\" (Pass 2 tail 1.P2T.9, marked `correct`)"
+        },
+        {
+          "name": "Alprentice \"Bunchy\" Carter",
+          "role": "Los Angeles BPP deputy minister of defense; assassinated UCLA Campbell Hall January 17, 1969",
+          "why_they_belong": "Appears with John Huggins in the same assassination (1.22, 1.P2.13, both HIGH confidence after Pass 3 promotion). John Huggins' wife Ericka Huggins is a significant BPP figure in her own right (listed in Pass 3 corpus candidates). Having neither Carter nor the Hugginses in the corpus when the Campbell Hall assassination is one of the three canonical BPP martyrdom events (alongside Bobby Hutton and Fred Hampton, both already in corpus) is a significant gap. Cross-corpus recurrence high: any BPP interview is likely to reference the 1969 UCLA shootings.",
+          "transcript_evidence": "\"Bunchy Carter and John Huggins, the two leaders of the Southern California chapter are assassinated\" (corrected from \"Eldritch John Huggins\"; Pass 1 row 1.22, Pass 2 row 1.P2.13, both HIGH)"
+        }
+      ]
+    },
+    "2": {
+      "entry_number": 2,
+      "subject": "Amos C. Brown",
+      "proposals": [
+        {
+          "name": "Mordecai Wyatt Johnson",
+          "role": "First Black president of Howard University (1926–1960); Crozer Theological Seminary alumnus; architect of Howard Law School's constitutional-law program through Charles Hamilton Houston; MLK's intellectual mentor via the Morehouse-Howard-Crozer chain",
+          "why_they_belong": "Foundational figure for the entire Black-Protestant-to-civil-rights intellectual pipeline that Brown's testimony documents. Named in the SCLC entry (\"Joseph Lowery\") but not as a standalone figure. Multiple corpus entries (Thurgood Marshall, Charles Hamilton Houston, James Lawson) would point back to him. Any Morehouse/Crozer/Howard-alum interviewee will reference Johnson.",
+          "transcript_evidence": "\"That is why we got the blessing and the gift of Mordecai Wyatt Johnson. He too finished Morehouse College. And went to Colgate Rochester...Dr. Mordecai Wyatt Johnson, born in Paris, Tennessee...he was elected president in 1926. When he got there, his first agenda item was to discover what could be done to bring that law school to first class status... He called on Justice Louis Brandeis... he sought out Charles Hamilton Houston.\" Pass 4 row 2.P4.40 confirmed Ralph Bunche and Sterling Allen Brown as co-candidates; all are in the same passage."
+        },
+        {
+          "name": "Ralph Bunche",
+          "role": "UN Under-Secretary-General; Nobel Peace Prize laureate (1950); first African American to win the Nobel Peace Prize; Howard University alumnus; foundational Black diplomat and internationalist. Named by Brown as one of the candidates passed over for the Howard presidency.",
+          "why_they_belong": "Bunche is cross-corpus relevant — any interviewee discussing the UN, international civil rights, or Howard University will reference him. The 140-entry corpus has no standalone Bunche entry despite his canonical stature. The Thurgood Marshall entry mentions Howard but not Bunche.",
+          "transcript_evidence": "\"people like Ralph Bunch, Sterling Brown and others, they felt that they were scholars and they should have been considered [for the Howard presidency].\" Pass 4 row 2.P4.40 confirmed canonical identification. Pass 2/3 missed the reference entirely; it first surfaced in Pass 4."
+        },
+        {
+          "name": "John Hope Franklin",
+          "role": "Preeminent African American historian (1915–2009); Duke University professor; chaired President Clinton's 1997–98 \"One America\" race commission; author of From Slavery to Freedom (1947, the standard Black history textbook for decades)",
+          "why_they_belong": "Any interview touching post-1947 Black historical consciousness or the Clinton era will reference Franklin. Brown names him explicitly in the context of an active civic event (2013 interview referencing the 1997 race commission). The corpus has no Franklin entry. His textbook shaped the generation of interviewees in this entire corpus.",
+          "transcript_evidence": "\"President Bill Clinton tried to do it with his commission on race. That Dr. John Hope Franklin was chair, but that commission was derailed.\" Pass 4 row 2.P4.39 confirmed canonical identification (Whisper rendered \"John O. Franklin\"; corrected to \"John Hope Franklin\")."
+        }
+      ]
+    },
+    "3": {
+      "entry_number": 3,
+      "subject": "Annie Pearl Avery",
+      "proposals": [
+        {
+          "name": "Amelia Boynton Robinson",
+          "role": "Selma voting-rights leader; beaten unconscious on Bloody Sunday at Edmund Pettus Bridge; her photographed collapse became an iconic Movement image",
+          "why_they_belong": "One of the most frequently-named Selma figures across all Selma-veteran transcripts; canonical historical figure documented in every Bloody Sunday account; NOT in 140-entry corpus despite direct transcript mention",
+          "transcript_evidence": "Corrected transcript: \"you'll see (Amelia) Boynton and Miss Marie Foster.\" Pass 1 row 3.56: \"Amelia Boynton Robinson — Selma voting rights leader, beaten unconscious on Bloody Sunday.\" The bracketed correction appears in the corrected transcript confirming canonical identification."
+        },
+        {
+          "name": "Ruby Doris Smith Robinson",
+          "role": "SNCC Executive Secretary 1966–67; died October 1967 at age 25; among the most powerful women in SNCC's organizational history",
+          "why_they_belong": "Catalog row C records \"Rubidorus Robinson → Ruby Doris Smith Robinson\" as a corpus-wide recurring pattern (entries #32, #44 among others); Avery names her multiple times as a close colleague; NOT in 140-entry corpus",
+          "transcript_evidence": "Corrected transcript: \"I met Ruby Doris Smith.\" Pass 2 row 3.P2.7 (high): \"Ruby Doris Smith Robinson — canonical SNCC Executive Secretary (1966-67); died Oct 1967.\" Multiple occurrences across the corpus make this a high-priority addition."
+        },
+        {
+          "name": "Prathia Hall (Rev. Prathia Hall Wynn)",
+          "role": "SNCC Southwest Georgia organizer; AME theologian at Boston University; her prayer phrase \"I have a dream\" at Mount Olive Baptist Church in Terrell County, GA (1962) is documented as an influence on King's August 1963 speech",
+          "why_they_belong": "Avery names her as a close SNCC colleague; Hall's documented role in the Albany Movement and her influence on King's most famous speech make her a high canonical value; NOT in 140-entry corpus",
+          "transcript_evidence": "Corrected transcript: \"Rev. Prathia Hall.\" Pass 1 row 3.38 (high), Pass 2 row 3.P2.11 (high): \"Canonical SNCC SW GA + later Boston U Theology faculty + AME minister.\" Multiple confirmations across passes."
+        }
+      ]
+    },
+    "4": {
+      "entry_number": 4,
+      "subject": "Audrey Nell Hamilton and JoeAnn Anderson Ulmer",
+      "proposals": [
+        {
+          "name": "Dr. Robert B. Hayling",
+          "role": "Dentist; founder of the modern St. Augustine civil rights movement; NAACP Youth Council advisor; recruited MLK to St. Augustine; Air Force dental officer. Central figure of the entire 1963–64 St. Augustine campaign.",
+          "why_they_belong": "This is the single highest-priority corpus addition from the entire St. Augustine sub-corpus. Hayling appears in nearly every St. Augustine entry across Passes 1–4 under multiple Whisper-mangled forms (Dr. Haillin, Dr. Helen, Dr. Harvey Haley, Dr. Arby Helen, Dr. R.B. Hayling, Dr. Cain/Ken/Martha Luther King misattributions). The scorer cannot reliably ground accuracy claims about the St. Augustine campaign without this entry. Not currently in civil_rights_facts.json (confirmed by Pass 7 corpus check).",
+          "transcript_evidence": "Corrected transcript: named throughout as \"Dr. Robert B. Hayling\"; direct-address, third-person reference, and biographical detail abundant. Whisper variants indexed in rows 4.2, 4.P2.1, 4.P4.1, 4.P4.36."
+        },
+        {
+          "name": "The St. Augustine Four",
+          "role": "Collective: Audrey Nell Edwards Hamilton, JoeAnn Anderson Ulmer, Samuel White (d. 1995), Willie Carl Singleton — four Black teenagers sentenced to Florida reform schools in 1963 for refusing to renounce sit-in demonstrations.",
+          "why_they_belong": "The canonical collective designation for the four interviewees + their male co-defendants. Without this entry the scorer cannot recognize \"St. Augustine Four\" as a known historical referent and may flag correct summary claims as unsupported. Appears as \"Santa Augustine fall,\" \"Synogostean for,\" \"St. Augustine Four\" in the corrected transcript — three distinct Whisper forms of the same canonical referent.",
+          "transcript_evidence": "Corrected transcript: \"Not just the St. Augustine Four, but the whole movement.\" Pass 4 row 4.P4.32 confirms. Pass 1 rows 4.19–4.20 establish all four member names."
+        },
+        {
+          "name": "Sheriff L.O. Davis (Lawrence O. Davis)",
+          "role": "St. Johns County, FL Sheriff 1948–1972; documented Klan collaborator; oversaw the 1963–64 mass arrests including the St. Augustine Four; present at the McCrory's/Woolworth's arrests.",
+          "why_they_belong": "Davis is the primary law-enforcement antagonist of the St. Augustine campaign and appears across the corrected transcript as \"L.O. Davis,\" \"Elo Davis,\" and \"Ella Davis\" — Whisper variants that a scorer would not recognize as the same canonical figure. His Klan ties and the documented pattern of mass arrest are essential accuracy grounding for summaries of the St. Augustine entries. Not in corpus (confirmed).",
+          "transcript_evidence": "Corrected transcript: \"they called in L.O. Davis, which was the sheriff\" — speaker provides the canonical identification directly. Pass 1 row 4.25, Pass 2 row 4.P2.7 confirm."
+        }
+      ]
+    },
+    "5": {
+      "entry_number": 5,
+      "subject": "Barbara Edna Vickers",
+      "proposals": [
+        {
+          "name": "St. Augustine Movement / St. Augustine Campaign (1963–64",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Robert B. Hayling (Dr. Robert B. Hayling",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Monson Motor Lodge acid-in-pool incident (June 18, 1964",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "6": {
+      "entry_number": 6,
+      "subject": "Ben Caldwell (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Alan Lomax",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Amiri Baraka (LeRoi Jones",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Marcyliena Morgan",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "7": {
+      "entry_number": 7,
+      "subject": "Betty Garman Robinson (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Prathia Hall (1940–2002",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Jack Minnis (1923–2005",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Amelia Boynton Robinson (1911–2015",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "8": {
+      "entry_number": 8,
+      "subject": "Bill Russell (PARTIAL)",
+      "proposals": [
+        {
+          "name": "8-A: Bill Russell (1934–2022",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "8-B: Muhammad Ali (1942–2016",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "8-C: Jackie Robinson (1919–1972",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "9": {
+      "entry_number": 9,
+      "subject": "Simeon Booker and Moses Newson",
+      "proposals": [
+        {
+          "name": "Simeon Booker (1918–2017",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Harry T. Moore (1905–1951) and Harriette Moore (1902–1952",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Frank M. Johnson Jr. (1918–1999",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "12": {
+      "entry_number": 12,
+      "subject": "Carolyn Miller and James Miller (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Rudy Shields (d. 1976",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Deacons for Defense and Justice",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "13": {
+      "entry_number": 13,
+      "subject": "Carrie Lamar Young (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Bill Hansen",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Worth Long",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "The 1919 Elaine Massacre",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "14": {
+      "entry_number": 14,
+      "subject": "Cecil J. Williams (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Rev. Joseph Armstrong DeLaine (1898–1974",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Harvey Gantt (b. 1943",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Matthew J. Perry Jr. (1921–2011",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "15": {
+      "entry_number": 15,
+      "subject": "Cecilia Suyat Marshall",
+      "proposals": [
+        {
+          "name": "Gloster B. Current (1913–1997",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Walter White (1893–1955",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Groveland Four (1949 Florida case",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "16": {
+      "entry_number": 16,
+      "subject": "Charles F. (\"Chuck\") McDew",
+      "proposals": [
+        {
+          "name": "Charles F. \"Chuck\" McDew (1938–2018",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "I. DeQuincey Newman (c. 1911–1985",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Charles F. McDew — Orangeburg Movement for Civic Improvement (OMCI",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "17": {
+      "entry_number": 17,
+      "subject": "Charles McLaurin (PARTIAL)",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Figure",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Why they belong"
+        },
+        {
+          "name": "1",
+          "role": "Hollis Watkins** (b. 1941)",
+          "why_they_belong": "Foundational McComb / Mississippi SNCC field worker 1961–64; pioneered Pike County voter-registration with Curtis Hayes and Bob Moses; later Mississippi Freedom Schools organizer",
+          "transcript_evidence": "McLaurin's testimony (SRT implied via row 17.P2T.30–31 + \"Highless\" Whisper variant) provides first-person attribution of Watkins as the canonical McComb-period figure. The \"Highless\" garble (row 17.P2T.30) is the primary Whisper failure pattern for his name in this corpus. His role as the first SNCC organizer arrested in Mississippi (McComb, 1961) is corpus-wide significant."
+        },
+        {
+          "name": "2",
+          "role": "Lafayette Surney** (b. ~1944, Ruleville MS)",
+          "why_they_belong": "SNCC field secretary recruited by McLaurin in Ruleville, August 1962; one of the original Delta organizers in the Sunflower County project; recent Ruleville High School graduate at recruitment",
+          "transcript_evidence": "Foundational Ruleville-period figure named by McLaurin with first-person attribution. Not in corpus. Whisper renders as \"Lafayette Sonny\" / \"Laffeyette Sonny.\" Surney's recruitment as a local teenager who knew the community gave SNCC its initial Ruleville foothold."
+        },
+        {
+          "name": "3",
+          "role": "Isaiah T. Montgomery** (1847–1924)",
+          "why_they_belong": "Founder of Mound Bayou, MS (1887); only Black delegate to the 1890 MS constitutional convention that disenfranchised Black voters — voted with the white delegation",
+          "transcript_evidence": "McLaurin cites Montgomery to explain the historical context of Black political erasure in Mississippi. The Davis-Bend-to-Mound-Bayou founding narrative is foundational to understanding the Delta political geography McLaurin describes throughout the tail. Not in corpus."
+        }
+      ]
+    },
+    "18": {
+      "entry_number": 18,
+      "subject": "Rev. Charles Melvin Sherrod",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Candidate",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Transcript evidence"
+        },
+        {
+          "name": "1",
+          "role": "Cordell Reagon (1943–1996)",
+          "why_they_belong": "SNCC field secretary + co-founder of SNCC Freedom Singers (with Bernice Johnson Reagon, his first wife); Albany Movement co-organizer with Sherrod and Charles Jones.",
+          "transcript_evidence": "Transcript: \"Charles A. Jones and Cordell Reagon and myself got the permission from the adults and the community to bring the movement into Albany, Georgia.\" Direct first-person co-organizer citation."
+        },
+        {
+          "name": "2",
+          "role": "Friendship Nine",
+          "why_they_belong": "The February 1961 Rock Hill, SC jail-no-bail action at Friendship Junior College; the canonical originating event of SNCC's \"jail-no-bail\" tactic that Sherrod then carried to Albany.",
+          "transcript_evidence": "Transcript: \"Rockill South Carolina ... after coming from Rockill ... jailed there on the chain gang\" — oblique reference confirmed by corpus. The Albany Movement corpus entry does not mention Friendship Nine; it is a distinct foundational event."
+        },
+        {
+          "name": "3",
+          "role": "Laurie Pritchett (1925–2000)",
+          "why_they_belong": "Albany police chief 1959–66; pioneer of the \"nonviolent containment\" counter-strategy (dispersing arrests across multiple county jails to deny the movement visible-brutality images) that is considered the canonical Albany Movement tactical failure.",
+          "transcript_evidence": "Transcript: \"the relative savvy of Laurie Pritchett and managing the distribute all the prisoners across these many county jails.\" Direct named citation with strategic description."
+        }
+      ]
+    },
+    "20": {
+      "entry_number": 20,
+      "subject": "Clarence B. Jones (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Clarence B. Jones",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Stanley D. Levison",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Mahalia Jackson",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "21": {
+      "entry_number": 21,
+      "subject": "Clarence Magee",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Name",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Why they belong"
+        },
+        {
+          "name": "GT1",
+          "role": "R. Jess Brown",
+          "why_they_belong": "Pioneer Black Mississippi attorney; Medgar Evers's legal counsel; Clyde Kennard's habeas corpus attorney; one of only two or three Black attorneys practicing in Mississippi in the 1950s",
+          "transcript_evidence": "Central to the Kennard habeas hearing that McGee witnessed; named explicitly in transcript; cross-references Medgar Evers corpus entry. Canonical figure for the MS civil rights legal infrastructure. Pass 3 + Pass 4 both propose this addition."
+        },
+        {
+          "name": "GT2",
+          "role": "Samuel Holloway Bowers Jr. (Sam Bowers)",
+          "why_they_belong": "Imperial Wizard of the White Knights of the KKK in Mississippi; convicted 1998 for ordering the murder of Vernon Dahmer Sr. (January 10, 1966); also implicated in the 1964 Mississippi Burning murders (Chaney/Goodman/Schwerner)",
+          "transcript_evidence": "The 1998 conviction closes the arc of the longest-running KKK-murder prosecution in Mississippi history. Multiple entries reference Bowers; he appears in the Vernon Dahmer Sr. corpus entry's summary but deserves a standalone entry. Pass 3 + Pass 4 both propose this addition."
+        },
+        {
+          "name": "GT3",
+          "role": "J.C. Fairley (Rev. J.C. Fairley)",
+          "why_they_belong": "Hattiesburg NAACP president, predecessor to Dr. C.E. Smith; recurring figure in Hattiesburg-area transcripts; documented in Charles Payne's *I've Got the Light of Freedom* (1995)",
+          "transcript_evidence": "Explicitly named as McGee's first NAACP connection through shared church membership. Pass 3 + Pass 4 both propose this addition. Recurring across Hattiesburg-area entries (#21, #25, likely others)."
+        }
+      ]
+    },
+    "22": {
+      "entry_number": 22,
+      "subject": "Dr. Cleveland Sellers",
+      "proposals": [
+        {
+          "name": "Samuel Younge Jr. (Sammy Younge",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Lowndes County Freedom Organization (LCFO",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Jack Minnis",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "23": {
+      "entry_number": 23,
+      "subject": "Clifford D. Browner Jr.",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Candidate",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Transcript evidence"
+        },
+        {
+          "name": "GT.1",
+          "role": "Z.T. Mathews (Sheriff Zebulon Thomas Mathews)",
+          "why_they_belong": "Terrell County GA sheriff; canonical antagonist of the SW Georgia Movement; led the armed invasion of Mt. Olive Baptist Church mass meeting, summer 1962",
+          "transcript_evidence": "Transcript: \"ZT Matthews is what we call him. He was the sheriff's name.\" Speaker saw him in person at the Mt. Olive invasion. His \"we want our colored people to live like they've been living for the last hundred years\" quote is one of the most-cited segregationist statements."
+        },
+        {
+          "name": "GT.2",
+          "role": "Reidsville State Prison (Georgia State Prison, Reidsville, Tattnall County, GA)",
+          "why_they_belong": "Maximum-security Georgia state prison; site of a notable Dr. King detention (October 1960); later a location where Browner worked as an ex-offender program counselor",
+          "transcript_evidence": "Transcript: \"I had gotten the job to reach Reidsville State Prison recruited by the state of Georgia... It's east of here. Going towards Savannah.\" Pass 4 catch (#23.P4.1-2): \"Reesfield prison\" / \"real estate prison\" → Reidsville."
+        },
+        {
+          "name": "GT.3",
+          "role": "\"Terrible Terrell\" County (Terrell County, GA — canonical SNCC shorthand)",
+          "why_they_belong": "SNCC shorthand for Terrell County, GA — site of canonical 1961-62 SW Georgia Movement violence, three church burnings (Mt. Olive Sasser, Mt. Mary Chickasawatchee, Zion Hope Carlson), and Sheriff Mathews's intimidation campaigns",
+          "transcript_evidence": "Transcript: the \"Thereocardi\" / \"Terracalty\" / \"Tera County\" garbles across the entry; the county's Movement significance is the frame for Browner's entire narrative."
+        }
+      ]
+    },
+    "26": {
+      "entry_number": 26,
+      "subject": "Judge D'Army Bailey (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Reverend James Reeb",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Benjamin L. Hooks",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Allard K. Lowenstein",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "29": {
+      "entry_number": 29,
+      "subject": "Dorothy Foreman Cotton (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Bernard Lee",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Maynard Jackson",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dora McDonald",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "30": {
+      "entry_number": 30,
+      "subject": "Dorothy \"Dottie\" Foreman Zellner (PARTIAL)",
+      "proposals": [
+        {
+          "name": "Rudy Lombard (1939–2014",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "James Forman Jr. (b. 1967",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Anne and Carl Braden (SCEF",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "32": {
+      "entry_number": 32,
+      "subject": "Dr. Doris Derby",
+      "proposals": [
+        {
+          "name": "Free Southern Theatre (October 1963",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Ossie Davis (1917–2005) / *Purlie Victorious* (1961",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Harlem Writers Guild",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "33": {
+      "entry_number": 33,
+      "subject": "Eddie Holloway",
+      "proposals": [
+        {
+          "name": "N.R. Burger (Nathaniel R. Burger",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "James O. Eastland",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Joan Trumpauer Mulholland",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "34": {
+      "entry_number": 34,
+      "subject": "Ekwueme Michael Thelwell",
+      "proposals": [
+        {
+          "name": "Joseph L. Rauh Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Walter E. Fauntroy",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Robert W. Spike (Rev. Bob Spike",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "35": {
+      "entry_number": 35,
+      "subject": "Elbert \"Big Man\" Howard",
+      "proposals": [
+        {
+          "name": "Emory Douglas",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Ericka Huggins",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Richard Aoki",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "36": {
+      "entry_number": 36,
+      "subject": "Ellie Dahmer",
+      "proposals": [
+        {
+          "name": "Sam Bowers (Samuel Holloway Bowers Jr., 1924–2006",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Hollis Watkins (1941–2023",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "*U.S. v. Lynd* (305 F.2d 120, 5th Cir. 1962; 349 F.2d 785, 5th Cir. 1965",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "37": {
+      "entry_number": 37,
+      "subject": "Elmer Dixon",
+      "proposals": [
+        {
+          "name": "Fred Hampton",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Carolyn Downs",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Ike Ikeda (Atlantic Street Center",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "40": {
+      "entry_number": 40,
+      "subject": "Esther M. A. Terry",
+      "proposals": [
+        {
+          "name": "Dr. Willa B. Player (1909–2003",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Sterling A. Brown (1901–89",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "The Bennett Belles (February 1960 Greensboro sit-ins cohort",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "41": {
+      "entry_number": 41,
+      "subject": "Euvester Simpson",
+      "proposals": [
+        {
+          "name": "Annelle Ponder",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "June Johnson",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. Ernst Borinski",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "42": {
+      "entry_number": 42,
+      "subject": "Evans Derrell Hopkins",
+      "proposals": [
+        {
+          "name": "George Jackson (1941–1971",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Maggie L. Walker (1864–1934",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "David Graham Du Bois (1925–2005",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "43": {
+      "entry_number": 43,
+      "subject": "Frankye Adams-Johnson",
+      "proposals": [
+        {
+          "name": "Phillip Lafayette Gibbs and James Earl Green",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Benjamin Brown",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. Ernst Borinski",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "47": {
+      "entry_number": 47,
+      "subject": "Gloria Arellanes",
+      "proposals": [
+        {
+          "name": "Gloria Arellanes (b. 1946",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Maulana Karenga / US Organization",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "John Peabody Harrington (1884–1961",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "48": {
+      "entry_number": 48,
+      "subject": "Gloria Claudette Grinnell",
+      "proposals": [
+        {
+          "name": "Richmond 34 / Thalhimer's sit-in (February 22, 1960",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Martin A. Martin (Virginia NAACP attorney, Richmond 34 case counsel",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Clayton \"Peg Leg\" Bates (1907-1998) / Peg Leg Bates Country Club",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "49": {
+      "entry_number": 49,
+      "subject": "Gloria Hayes Richardson (Dandridge)",
+      "proposals": [
+        {
+          "name": "Gloria Hayes Richardson Dandridge (1922–2021",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "General George M. Gelston (1907–1969",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Henrietta Lacks (1920–1951",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "50": {
+      "entry_number": 50,
+      "subject": "Grace Hall Miller",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Figure / Entity",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Why corpus-worthy"
+        },
+        {
+          "name": "P7.1",
+          "role": "Shirley Sherrod** (Shirley Miller Sherrod)",
+          "why_they_belong": "Obama-era USDA Georgia State Director of Rural Development (2009-2010); daughter of Grace Hall Miller; wife of Charles Sherrod; subject of the July 2010 Andrew Breitbart selectively-edited NAACP video controversy",
+          "transcript_evidence": "High canonical value: the Breitbart-NAACP controversy is a foundational Obama-era racial-media event with ongoing relevance; the Spooner family's vindication is cross-corpus material; Shirley Sherrod appears as a figure in Charles Sherrod's transcript (#18) and is central to Grace Miller's testimony. The corpus has Charles Sherrod but not Shirley Sherrod as a standalone entry despite her independent canonical significance."
+        },
+        {
+          "name": "P7.2",
+          "role": "Joseph Miller Sr.** (c. 1924–1965)",
+          "why_they_belong": "Baker County GA Black landowner and farmer; among the first two Black registered voters in Baker County; shot in the back by white neighbor George Williamson March 8, 1965 over a cattle-ownership dispute; died March 15, 1965; three subsequent all-white-jury acquittals — canonical pre-Voting-Rights-Act voter-registration-retaliation murder",
+          "transcript_evidence": "His murder is first-person canonical primary-source material for the Baker County pre-VRA retaliation pattern and is referenced cross-corpus in Charles Sherrod's interview. The murder and its judicial failure are foundational to understanding why the Baker County movement intensified post-1965."
+        },
+        {
+          "name": "P7.3",
+          "role": "Baker County Movement / Baker County GA voter-registration campaign (1958-1965)",
+          "why_they_belong": "SNCC Southwest Georgia Project satellite; foundational Deep South pre-VRA Black voter-registration retaliation case; Joshua Williams / Mr. Ackie King / Mr. Benjamin Cunningham 1958 voter-registration cohort whose homes and cars were KKK-bombed",
+          "transcript_evidence": "The Baker County movement has no standalone entry in the corpus even though Baker County is the geographic theater for Charles Sherrod (entry #18) and Grace Miller (entry #50) — the two most Baker-County-specific entries in the corpus. The Albany Movement entry covers the broader Albany campaign but not the Baker County satellite specifically."
+        }
+      ]
+    },
+    "52": {
+      "entry_number": 52,
+      "subject": "Gwendolyn M. Patton",
+      "proposals": [
+        {
+          "name": "Dr. Gwendolyn M. Patton (1943-2017",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. Luther H. Foster Jr. (1913-1994",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Mary Kochiyama (1921-2014",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "53": {
+      "entry_number": 53,
+      "subject": "Gwendolyn Zoharah Simmons (born Gwen Robinson)",
+      "proposals": [
+        {
+          "name": "Gwendolyn Zoharah Simmons (born Gwen Robinson, 1944–",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Mrs. Eberhart Spinks (Laurel MS",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "M.R. Bawa Muhaiyaddeen (c. 1900s–1986",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "54": {
+      "entry_number": 54,
+      "subject": "H. Jack Geiger (partial read)",
+      "proposals": [
+        {
+          "name": "Field",
+          "role": "Value",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Role",
+          "role": "Foundational US community-oriented primary care physician; co-founder with Dr. Count D. Gibson Jr. of the Tufts-Delta Health Center (Mound Bayou, MS) 1965 and Columbia Point Health Center (Boston) 1965 — the two anchor sites of the US Community Health Center movement; MCHR co-founder 1964; Physicians for Human Rights co-founder 1986; CUNY Sophie Davis School of Biomedical Education founder 1978",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Why in corpus",
+          "role": "Entry 54 is his transcript; he is the subject of the most correction-dense transcript in the corpus (130+ corrections across Passes 1-4); he is the foundational figure for the US CHC movement, directly relevant to any transcript touching Mound Bayou, OEO, community health, or MCHR",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Transcript evidence",
+          "role": "Interview subject; multiple self-attributions throughout 134 KB corrected transcript",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Aliases to include",
+          "role": "H. Jack Geiger, Jack Geiger, Dr. Geiger, Dr. H. Jack Geiger",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Field",
+          "role": "Value",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Role",
+          "role": "First Black captain of an American merchant marine ship; commanded SS Booker T. Washington (1942-47) with integrated crew; foundational WWII-era racial integration figure in the US merchant marine",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Why in corpus",
+          "role": "Directly referenced by Geiger as canonical first-person material; the SS Booker T. Washington / Hugh Mulzac cluster appears in this entry with 3+ distinct Whisper rendering variants (\"Hugh Mosack,\" \"Hugh Mulzac\" alternating); the name disambiguation is high-stakes",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Transcript evidence",
+          "role": "\"the only ship in the American fleet with a black captain Hugh Mulzac who had a master's license for years but until the war never had a ship to command\" (corrected transcript)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Aliases to include",
+          "role": "Hugh Mulzac, Hugh Nathaniel Mulzac, Captain Mulzac, Captain Hugh Mulzac",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Field",
+          "role": "Value",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Role",
+          "role": "Foundational Black psychiatrist; MCHR Southern Field Director based in Jackson MS 1965-67; later Harvard Medical School professor; consultant on *The Cosby Show*; foundational Black mental health public-policy advocate",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Why in corpus",
+          "role": "Pass 3 promoted to high (Geiger's description of \"a Black Physician from Los Angeles… a psychiatrist by training\" named \"Alvin Fusan\" matches Poussaint's 1965-67 MCHR role exactly); Poussaint is cross-corpus relevant for any MCHR Mississippi transcript",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Transcript evidence",
+          "role": "Pass 4 confirmed the Poussaint identification at high confidence",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Aliases to include",
+          "role": "Alvin Poussaint, Alvin F. Poussaint, Dr. Alvin Poussaint, Alvin Fusan (Whisper rendering)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. H. Jack Geiger himself",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Captain Hugh Mulzac",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. Alvin F. Poussaint",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "55": {
+      "entry_number": 55,
+      "subject": "Harold K. Brown",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Name",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Why they belong"
+        },
+        {
+          "name": "P1",
+          "role": "Lerone Bennett Jr. (1928–2018)",
+          "why_they_belong": "Ebony magazine senior editor; author of *Before the Mayflower* (1962)",
+          "transcript_evidence": "Foundational Black-history popularizer; his 1962 book is the canonical first text Brown and the Afro-American Association read; *Before the Mayflower* is referenced by name in at least two corpus entries. High cross-corpus recurrence probability. Priority: high."
+        },
+        {
+          "name": "P2",
+          "role": "King Moshoeshoe II of Lesotho (1938–1996)",
+          "why_they_belong": "King of Lesotho 1960–90, 1995–96; opposed apartheid",
+          "transcript_evidence": "First-person testimony from a US civil-rights activist who attended Brown's MLK memorial service in Maseru 1968; the only CRHP corpus figure with direct royalty contact in a Southern African anti-apartheid context. Priority: medium."
+        },
+        {
+          "name": "P3",
+          "role": "Prime Minister Chief Leabua Jonathan of Lesotho (1914–1987; PM 1965–86)",
+          "why_they_belong": "First PM of independent Lesotho; pragmatic accommodationist with apartheid-era South Africa",
+          "transcript_evidence": "Paired with Moshoeshoe II in Brown's Lesotho narrative; canonical figure in post-independence Southern African political history; directly named in corrected transcript. Priority: medium."
+        }
+      ]
+    },
+    "56": {
+      "entry_number": 56,
+      "subject": "Jack Greenberg",
+      "proposals": [
+        {
+          "name": "Jack Greenberg (1924–2016",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "*Alexander v. Holmes County Board of Education* (1969",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Herbert Wechsler (1909–2000",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "57": {
+      "entry_number": 57,
+      "subject": "James Oscar Jones",
+      "proposals": [
+        {
+          "name": "Bill Hansen (William Hansen",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Worth Long (Worth Wesley Long Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. Lawrence A. Davis Sr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "58": {
+      "entry_number": 58,
+      "subject": "Jamila Jones",
+      "proposals": [
+        {
+          "name": "Reverend Solomon S. Seay Sr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Montgomery Gospel Trio",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Harambee Singers",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "59": {
+      "entry_number": 59,
+      "subject": "Jennifer Lawson",
+      "proposals": [
+        {
+          "name": "Candidate",
+          "role": "Role",
+          "why_they_belong": "Transcript Evidence",
+          "transcript_evidence": "Corpus Priority"
+        },
+        {
+          "name": "Arthur D. Shores (1904–1996)",
+          "role": "Foundational Birmingham AL Black civil rights attorney; home bombed during 1963 Birmingham Campaign; NAACP-LDF cooperating attorney; counsel for Autherine Lucy, Vivian Malone, James Hood",
+          "why_they_belong": "Raw at pos 25065: \"this attorney, author, Sherwers\" (Whisper rendering) — canonical Birmingham legal figure whose house on Center Street was repeatedly bombed. Whisper renders his name as a generic English word, making this a high-damage failure across entries.",
+          "transcript_evidence": "High** — high-damage Whisper failure pattern, multi-entry relevance"
+        },
+        {
+          "name": "Almena Davis Lomax",
+          "role": "Tuskegee newspaper publisher; mother of Michael L. Lomax (later Fulton County Commissioner, UNCF CEO 2004+)",
+          "why_they_belong": "Raw at pos 53305: \"I also met this woman, Almena Lomax... His mother, at that time, ran a little news, had a newspaper in Tuskegee.\"",
+          "transcript_evidence": "Medium** — Tuskegee-press ecosystem anchor; cross-references Patton #52"
+        },
+        {
+          "name": "Howard Moore Jr.",
+          "role": "Atlanta civil rights attorney; SNCC general counsel; Julian Bond's brother-in-law; Angela Davis defense team",
+          "why_they_belong": "Slice row 59.P2.31 documents transcript reference. Not confirmed in corrected transcript search (present in Pass 2 audit of full raw). Corpus already contains Bond v. Floyd entry which names \"Howard Moore Jr.\" but lacks a dedicated person entry.",
+          "transcript_evidence": "Medium** — multi-entry legal figure; Bond v. Floyd corpus entry already references him"
+        }
+      ]
+    },
+    "60": {
+      "entry_number": 60,
+      "subject": "Joan Trumpauer Mulholland",
+      "proposals": [
+        {
+          "name": "Clarie Collins Harvey",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Rabbi Perry Nussbaum",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Hamid Kizilbash",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "62": {
+      "entry_number": 62,
+      "subject": "John Carlos",
+      "proposals": [
+        {
+          "name": "Dr. Harry Edwards (b. 1942",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Tommie Smith (b. 1944",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Olympic Project for Human Rights (OPHR",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "63": {
+      "entry_number": 63,
+      "subject": "John Churchville",
+      "proposals": [
+        {
+          "name": "Amiri Baraka (1934-2014",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Maulana Karenga (born Ronald McKinley Everett, 1941",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Father Paul M. Washington (1921-2002",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "66": {
+      "entry_number": 66,
+      "subject": "Joseph Echols Lowery",
+      "proposals": [
+        {
+          "name": "Joseph Echols Lowery (CRITICAL",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Justice Arthur J. Goldberg",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "M. Roland Nachman Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "67": {
+      "entry_number": 67,
+      "subject": "Joseph Howell and Embry Howell",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Name",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Transcript evidence"
+        },
+        {
+          "name": "P7.1",
+          "role": "Allard Lowenstein (1929–1980)",
+          "why_they_belong": "NSA president, Eleanor Roosevelt protégé, Dump Johnson architect, U.S. Congressman NY-5 1969–71, assassinated by Dennis Sweeney 1980",
+          "transcript_evidence": "Corrected transcript: \"Allard Lowenstein. Groupies, of course, he was involved in the dump Johnson movement, very close to Kennedy family...he went to University of North Carolina and became the leader of the...National Student Association...went to Yale Law School...Eleanor Roosevelt was one of his...And eventually got elected to Congress before they germinated his district...was tragically killed, assassinated, really by a former student who was mentally ill, named Dennis Sweeney.\""
+        },
+        {
+          "name": "P7.2",
+          "role": "Willie Ricks / Mukasa Dada (b. 1942)",
+          "why_they_belong": "SNCC field secretary, first to publicly lead \"Black Power\" chants (spring 1966), paired with Carmichael at June 16, 1966 Greenwood MS rally",
+          "transcript_evidence": "Corrected transcript: \"It was that summer that Stokeley Carmichael and Willie Ricks stayed that in name, right?\" (Pass 1 #67.29 / Pass 4 P4.23: \"stayed that in name\" = \"said that\" / \"coined that name\")"
+        },
+        {
+          "name": "P7.3",
+          "role": "William \"Bill\" Webber (1920–2014)",
+          "why_they_belong": "Union Theological Seminary professor, founder of East Harlem Protestant Parish (1948), founder of MUST (Metropolitan Urban Service Training) at Union",
+          "transcript_evidence": "Corrected transcript: \"I took a year out of Union Theological Seminary and worked something called MUST, a Metropolitan Urban Service Training William (Bill) Webber, had set up at a great year.\""
+        }
+      ]
+    },
+    "70": {
+      "entry_number": 70,
+      "subject": "Julia Matilda Burns",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Candidate",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Transcript evidence"
+        },
+        {
+          "name": "GT1",
+          "role": "Dr. Arenia Cornelia Mallory",
+          "why_they_belong": "Saints Industrial Academy & College president (Lexington, Holmes County MS), 1926–1976; Church of God in Christ–affiliated Black women's education leader; Holmes County school board member early 1970s.",
+          "transcript_evidence": "Burns's testimony: \"There was a leader on there already by the name of Dr. Arenia C. Mallory, the Saints Industrial School name for her.\" Cross-corpus with Amos C. Brown #2."
+        },
+        {
+          "name": "GT2",
+          "role": "Abe Osheroff",
+          "why_they_belong": "Spanish Civil War / Lincoln Brigade veteran; Brooklyn-born carpenter who built the Mileston Community Center in Holmes County MS, summer 1965. Canonical \"white Movement volunteer with skills\" figure.",
+          "transcript_evidence": "Burns: \"a new man named Abe and somebody came... Hey, Abe Osheroff, yeah... So Abe came in and they built that... what we call the Mileston Community Center.\""
+        },
+        {
+          "name": "GT3",
+          "role": "Dr. Demitri B. Shimkin",
+          "why_they_belong": "University of Illinois anthropology; led the Holmes County Health Research Program (1969–78) that produced *The Extended Family in Black Societies* (Shimkin, Shimkin, Frate, eds.; Mouton 1978). Documented FSA-land-cooperative economic resilience and child hypertension in post-Voting-Rights-Act Black Mississippi.",
+          "transcript_evidence": "Burns (secretary of Mileston Cooperative that funded the program): \"the Mileston Cooperative... helped to initiate the Holmes County Health Research Program... Dr. Demitri Shimkin and his associates.\""
+        }
+      ]
+    },
+    "71": {
+      "entry_number": 71,
+      "subject": "Julius W. Becton Jr.",
+      "proposals": [
+        {
+          "name": "Julius Wesley Becton Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Charles B. Rangel",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Executive Order 9981 enforcement gap (not a figure — institutional event",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "72": {
+      "entry_number": 72,
+      "subject": "Junius Williams",
+      "proposals": [
+        {
+          "name": "Junius Williams",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Ivanhoe Donaldson",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Kenneth A. Gibson",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "74": {
+      "entry_number": 74,
+      "subject": "Kay Tillow",
+      "proposals": [
+        {
+          "name": "Anne McCarty Braden",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "John Conyers",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Shelby County v. Holder (2013",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "79": {
+      "entry_number": 79,
+      "subject": "Lisa Anderson Todd",
+      "proposals": [
+        {
+          "name": "Walter Reuther",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Joseph L. Rauh Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Anne Romaine",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "80": {
+      "entry_number": 80,
+      "subject": "Lonnie C. King",
+      "proposals": [
+        {
+          "name": "Lonnie C. King (1936–2019",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Benjamin E. Mays (1894–1984",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Roslyn Pope (b. 1938",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "81": {
+      "entry_number": 81,
+      "subject": "Maria Varela",
+      "proposals": [
+        {
+          "name": "Reies López Tijerina (1926-2015",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Rodolfo \"Corky\" Gonzales (1928-2005",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Elizabeth \"Betita\" Sutherland Martínez (1925-2021",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "82": {
+      "entry_number": 82,
+      "subject": "Marilyn Luper Hildreth",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Name / Entity",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Transcript evidence"
+        },
+        {
+          "name": "1",
+          "role": "Herbert L. Wright** (1923–2007)",
+          "why_they_belong": "NAACP National Youth Director 1957–69",
+          "transcript_evidence": "Speaker: \"A guy by the name of Herbert L. Wright with the NAACP was here in Oklahoma City and [saw] the play and invited the group of young people to the NAACP National Convention to produce Martin Luther King Jr.\""
+        },
+        {
+          "name": "2",
+          "role": "Barbara Posey Jones** (~1940–)",
+          "why_they_belong": "Canonical OKC NAACP Youth Council spokesperson; Albany State University professor (probable)",
+          "transcript_evidence": "Speaker: \"the spokesperson for the NAACP Youth Council is a young lady who's now a Barbara Posey Jones — University of Georgia professor.\" Speaker identifies her by name as the canonical spokesperson. Posey Jones figure also appears in the Posey-house shelter episode (canonical Movement-courage testimony)."
+        },
+        {
+          "name": "3",
+          "role": "Katz Drug Store sit-in (Aug 19, 1958)",
+          "why_they_belong": "Canonical early sustained department-store lunch-counter sit-in",
+          "transcript_evidence": "Transcript: \"I suggested made a motion that we would go down to Katz Drug Store store and just sit… Katz Drug Store, desegregates its lunch counter in a couple of days.\" Full first-person account of the motion, the sit-in, and the desegregation outcome."
+        }
+      ]
+    },
+    "83": {
+      "entry_number": 83,
+      "subject": "Martha Prescod Norman Noonan",
+      "proposals": [
+        {
+          "name": "Jean Wheeler Smith Young (b. 1942",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "C.L.R. James (1901–1989",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Silas Norman Jr. (1940–2004",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "85": {
+      "entry_number": 85,
+      "subject": "Mary Jones",
+      "proposals": [
+        {
+          "name": "McCree Harris",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Sargent Shriver",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Albany Black Christmas Boycott 1961 (organizational entry",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "87": {
+      "entry_number": 87,
+      "subject": "Matthew J. Perry Jr.",
+      "proposals": [
+        {
+          "name": "Matthew J. Perry Jr. (1921-2011",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Judge J. Waties Waring (1880-1968",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "*Fleming v. South Carolina Electric and Gas* (1954-56",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "88": {
+      "entry_number": 88,
+      "subject": "Maynard E. Moore",
+      "proposals": [
+        {
+          "name": "Methodist Episcopal Church, South (1846–1939",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Methodist Student Movement (MSM",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "David Cline (Virginia Tech / Southern Oral History Program",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "91": {
+      "entry_number": 91,
+      "subject": "Mildred Pitts Walter",
+      "proposals": [
+        {
+          "name": "Howard Thurman (1899-1981",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Coretta Scott King Award (1969–present",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Carter G. Woodson (1875-1950",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "92": {
+      "entry_number": 92,
+      "subject": "Nathaniel Hawthorne Jones",
+      "proposals": [
+        {
+          "name": "R.L.T. Smith (Rev. Robert L.T. Smith",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Rudy Shields",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "NAACP v. Claiborne Hardware Co. (458 U.S. 886, 1982",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "93": {
+      "entry_number": 93,
+      "subject": "Norma Mtume",
+      "proposals": [
+        {
+          "name": "Gray Panthers / Maggie Kuhn",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Elaine Brown",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Ron Karenga / Maulana Karenga + US Organization",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "94": {
+      "entry_number": 94,
+      "subject": "Oliver W. Hill Jr.",
+      "proposals": [
+        {
+          "name": "Oliver W. Hill Sr. (1907-2007",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Barbara Rose Johns (1935-1991",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "*Davis v. County School Board of Prince Edward County* (1951",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "97": {
+      "entry_number": 97,
+      "subject": "Pete Seeger",
+      "proposals": [
+        {
+          "name": "A: Pete Seeger (1919–2014",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "B: Zilphia Horton (1910–1956",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "C: Paul Robeson (1898–1976",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "98": {
+      "entry_number": 98,
+      "subject": "Phil Hutchings",
+      "proposals": [
+        {
+          "name": "Phil Hutchings (b. 1942",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Newark Rebellion (July 12–17, 1967",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "William Kunstler (1919–1995",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "99": {
+      "entry_number": 99,
+      "subject": "Purcell Maurice Conway",
+      "proposals": [
+        {
+          "name": "Dr. Robert B. Hayling (1929–2015",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "The St. Augustine Movement (1963–64",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Farris Bryant (1914–2002",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "100": {
+      "entry_number": 100,
+      "subject": "Raylawni G. Branch and Jeanette Smith",
+      "proposals": [
+        {
+          "name": "Candidate",
+          "role": "Role",
+          "why_they_belong": "Why They Belong",
+          "transcript_evidence": "Transcript Evidence"
+        },
+        {
+          "name": "Raylawni G. Branch (b. 1941)",
+          "role": "First Black woman to integrate USM (September 1965); Hattiesburg NAACP youth chapter; first Black woman at Hattiesburg telephone company, Sears, Big Yank; co-organizer of Hattiesburg Head Start via Greyhound-children tactic; first-person witness to Kennard frame-up, Dahmer assassination, Lynd voter-registration obstruction",
+          "why_they_belong": "Subject of the corpus's densest single-transcript first-person account of the Hattiesburg movement; the breadth and canonical specificity of her activities make her a primary corpus figure, not a cross-reference",
+          "transcript_evidence": "\"I was the first person hired at the (Hattiesburg) telephone company... first one hired by series [Sears]... first one hired by Big Yank... I sent a busload of children, the Lady Bird Johnson, to Washington... We got head start after that.\""
+        },
+        {
+          "name": "Jeanette Smith (b. January 1, 1940, Soso MS)",
+          "role": "Direct descendant of Captain Newton Knight via Newton + Rachel; co-integrator of USM September 1965 alongside Branch; distinctive Reconstruction-descendant + 1965-higher-ed-integration figure",
+          "why_they_belong": "The Newton Knight–Rachel descent line that Smith represents is documented in Victoria E. Bynum's *The Free State of Jones* (2001) and the 2016 Gary Ross film; Smith's biographical position unites pre-Civil-War Reconstruction genealogy with 1960s Movement-era integration testimony in a single speaker",
+          "transcript_evidence": "\"Captain Newton Knight was able to meet my great-great-grandmother Rachel ... He fell in love with her ... He married her, and he had a family by her. And my grandfather was proud of that family.\""
+        },
+        {
+          "name": "Gwendolyn Elaine Armstrong",
+          "role": "Third member of September 1965 USM integration cohort (alongside Branch and Smith); graduated from Rowan High School same as Branch",
+          "why_they_belong": "Canonically paired with Branch in USM integration history; Branch's transcript names her explicitly and contextualizes her as the alphabetically-front person who never shared a class with Branch; presence in multiple corpus entries warrants canonical entry",
+          "transcript_evidence": "\"Elaine Armstrong. Gwendolyn Elaine Armstrong. ... She wanted to go to school at home because her mother was handicapped. ... She was an A. Armstrong. So she was usually up front in the class.\""
+        }
+      ]
+    },
+    "102": {
+      "entry_number": 102,
+      "subject": "Reverend Harry Blake",
+      "proposals": [
+        {
+          "name": "Rev. Dr. Harry Blake (b. 1934, d. unknown",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Commissioner George W. D'Artois (Shreveport Commissioner of Public Safety, 1962–1977",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Dr. C.O. Simkins (Shreveport NAACP / SCLC board member",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "103": {
+      "entry_number": 103,
+      "subject": "Robert Bagner Hayling",
+      "proposals": [
+        {
+          "name": "Dr. Robert B. Hayling (1929–2015",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Z. Alexander Looby (1899–1972",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Monson Motor Lodge (St. Augustine, Florida",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "106": {
+      "entry_number": 106,
+      "subject": "Robert Brown",
+      "proposals": [
+        {
+          "name": "Coretta Scott King (1927–2006",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "E. Frederic Morrow (1909–1994",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Arthur A. Fletcher (1924–2005",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "110": {
+      "entry_number": 110,
+      "subject": "Roberta Alexander",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Name / Entity",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Why they belong"
+        },
+        {
+          "name": "GTC.1",
+          "role": "Elaine Brown (implied, not named)",
+          "why_they_belong": "BPP Chairwoman (1974-77), BPP-women's narrative",
+          "transcript_evidence": "The David Hilliard sexual-pressure narrative and the United Front Against Fascism women's speech are part of the broader BPP-women's-narrative being recovered through scholarship (Tracye Matthews, etc.). While Elaine Brown is not named in this transcript, the institutional context warrants her corpus presence for cross-entry BPP-women references. *Low priority — she is a well-known figure and may already appear in the corpus or other entries."
+        },
+        {
+          "name": "GTC.2",
+          "role": "Civil Rights Congress (CRC, 1946-1956)",
+          "why_they_belong": "CP-affiliated civil liberties organization; publisher of *We Charge Genocide* (1951)",
+          "transcript_evidence": "Franklin Alexander served as Oakland CRC director. The CRC is referenced across multiple corpus entries (Roscoe Proctor, W.E.B. Du Bois angle) but may lack a dedicated corpus entry separate from the individual figures. The CRC published *We Charge Genocide* — a petition to the UN linking US lynching to international genocide law — which is a canonical Civil Rights Movement precursor document."
+        },
+        {
+          "name": "GTC.3",
+          "role": "Herbert Aptheker (1915-2003)",
+          "why_they_belong": "CP historian, W.E.B. Du Bois literary executor",
+          "transcript_evidence": "Referenced across multiple corpus entries as Bettina Aptheker's father and a foundational CP intellectual. Bettina Aptheker is already proposed; Herbert warrants a separate entry for the CP-historiography thread."
+        }
+      ]
+    },
+    "111": {
+      "entry_number": 111,
+      "subject": "Rosie Head",
+      "proposals": [
+        {
+          "name": "Abe Osheroff",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Senator John C. Stennis",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Hollis Watkins",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "112": {
+      "entry_number": 112,
+      "subject": "Ruby Sales",
+      "proposals": [
+        {
+          "name": "Tom Coleman",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Father Richard Morrisroe",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Episcopal Society for Cultural and Racial Unity (ESCRU, 1959–1970",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "114": {
+      "entry_number": 114,
+      "subject": "Sam Young Jr.",
+      "proposals": [
+        {
+          "name": "Pigford v. Glickman + Pigford II (1997–2014",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "New Communities Inc. (NCI, 1969–1985",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "\"Freedom of Choice\" school desegregation plans (1965–1969",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "117": {
+      "entry_number": 117,
+      "subject": "Shirley Miller Sherrod",
+      "proposals": [
+        {
+          "name": "Shirley Miller Sherrod",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "New Communities Inc.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Pigford v. Glickman (legal case",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "118": {
+      "entry_number": 118,
+      "subject": "Steven McNichols",
+      "proposals": [
+        {
+          "name": "Robert W. Spike",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Theodore \"Hugo\" Brooks",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Bob Kiley (Robert R. Kiley",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "119": {
+      "entry_number": 119,
+      "subject": "Thomas Walter Gaither",
+      "proposals": [
+        {
+          "name": "#",
+          "role": "Name / Event",
+          "why_they_belong": "Role",
+          "transcript_evidence": "Transcript evidence"
+        },
+        {
+          "name": "1",
+          "role": "Thomas Walter Gaither",
+          "why_they_belong": "CORE field secretary 1960–62; Friendship 9 organizer-trainer (Jan 31, 1961); Freedom Ride co-conceiver (Dec 1960, with Gordon Carey) and scout (May 1961 first leg); Jackson MS post-Ride coordinator; later Slippery Rock University biology faculty (PhD Iowa).",
+          "transcript_evidence": "First-person throughout transcript. Canonical primary-source witness for three foundational CORE events."
+        },
+        {
+          "name": "2",
+          "role": "James T. McCain",
+          "why_they_belong": "CORE field secretary, South Carolina and Southeast region; Sumter SC base; Gaither's recruiter and Movement mentor.",
+          "transcript_evidence": "\"I would consider James T. McCain to have been my mentor in the civil rights movement … the person who persuaded me to attend a session held by CORE.\""
+        },
+        {
+          "name": "3",
+          "role": "Gordon Carey",
+          "why_they_belong": "CORE field secretary; December 1960 Freedom Ride co-conceiver with Gaither on the train from South Carolina to New York.",
+          "transcript_evidence": "\"I think Gordon had a copy of Louis Fischer's book about Gandhi … the idea of a Freedom Ride comes up.\" Pass 4 confirmed interviewer Mosnier's question: \"you and Carey communicate this idea to the folks at the CORE National Office.\""
+        }
+      ]
+    },
+    "120": {
+      "entry_number": 120,
+      "subject": "Timothy Jenkins",
+      "proposals": [
+        {
+          "name": "Timothy Jenkins",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Wiley Branton",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Abram L. Harris Jr. (pending adversarial confirmation",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "122": {
+      "entry_number": 122,
+      "subject": "Virginia Simms George",
+      "proposals": [
+        {
+          "name": "Thalhimers Department Store",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Frank Pinkston",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "LINKS Incorporated",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "124": {
+      "entry_number": 124,
+      "subject": "Walter Tillow",
+      "proposals": [
+        {
+          "name": "Eleanor Roosevelt",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Virginia Foster Durr",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Joseph L. Rauh Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "125": {
+      "entry_number": 125,
+      "subject": "Wheeler Parker Jr.",
+      "proposals": [
+        {
+          "name": "Wheeler Parker Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Alvin Sykes",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Mamie Till-Mobley",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "127": {
+      "entry_number": 127,
+      "subject": "William Lamar Strickland",
+      "proposals": [
+        {
+          "name": "Walter Rodney",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Howard Dodson",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "John Henrik Clarke",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "128": {
+      "entry_number": 128,
+      "subject": "William Lucy",
+      "proposals": [
+        {
+          "name": "William Lucy",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Jerry Wurf",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Coalition of Black Trade Unionists (CBTU",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "129": {
+      "entry_number": 129,
+      "subject": "William S. Leventhal",
+      "proposals": [
+        {
+          "name": "C. Vann Woodward",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Michael Harrington",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Clarence M. Mitchell Jr.",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    },
+    "132": {
+      "entry_number": 132,
+      "subject": "Wyatt Tee Walker",
+      "proposals": [
+        {
+          "name": "The Huntley-Brinkley Report",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "A.D. King (Rev. Alfred Daniel Williams King",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        },
+        {
+          "name": "Pupil Placement Form (Virginia Massive Resistance instrument",
+          "role": "(extracted from proposal subsection — see stage file for details)",
+          "why_they_belong": "",
+          "transcript_evidence": ""
+        }
+      ]
+    }
+  },
+  "deduplicated_names": [
+    {
+      "name": "#",
+      "proposed_in_entries": [
+        17,
+        18,
+        21,
+        23,
+        50,
+        55,
+        67,
+        70,
+        82,
+        110,
+        119
+      ],
+      "recurrence": 11
+    },
+    {
+      "name": "1",
+      "proposed_in_entries": [
+        17,
+        18,
+        82,
+        119
+      ],
+      "recurrence": 4
+    },
+    {
+      "name": "2",
+      "proposed_in_entries": [
+        17,
+        18,
+        82,
+        119
+      ],
+      "recurrence": 4
+    },
+    {
+      "name": "3",
+      "proposed_in_entries": [
+        17,
+        18,
+        82,
+        119
+      ],
+      "recurrence": 4
+    },
+    {
+      "name": "Aliases to include",
+      "proposed_in_entries": [
+        54,
+        54,
+        54
+      ],
+      "recurrence": 3
+    },
+    {
+      "name": "Field",
+      "proposed_in_entries": [
+        54,
+        54,
+        54
+      ],
+      "recurrence": 3
+    },
+    {
+      "name": "Joseph L. Rauh Jr.",
+      "proposed_in_entries": [
+        34,
+        79,
+        124
+      ],
+      "recurrence": 3
+    },
+    {
+      "name": "Role",
+      "proposed_in_entries": [
+        54,
+        54,
+        54
+      ],
+      "recurrence": 3
+    },
+    {
+      "name": "Transcript evidence",
+      "proposed_in_entries": [
+        54,
+        54,
+        54
+      ],
+      "recurrence": 3
+    },
+    {
+      "name": "Why in corpus",
+      "proposed_in_entries": [
+        54,
+        54,
+        54
+      ],
+      "recurrence": 3
+    },
+    {
+      "name": "Candidate",
+      "proposed_in_entries": [
+        59,
+        100
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "Dr. Ernst Borinski",
+      "proposed_in_entries": [
+        41,
+        43
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "Dr. Robert B. Hayling (1929–2015",
+      "proposed_in_entries": [
+        99,
+        103
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "Elaine Brown",
+      "proposed_in_entries": [
+        1,
+        93
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "GT1",
+      "proposed_in_entries": [
+        21,
+        70
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "GT2",
+      "proposed_in_entries": [
+        21,
+        70
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "GT3",
+      "proposed_in_entries": [
+        21,
+        70
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "P7.1",
+      "proposed_in_entries": [
+        50,
+        67
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "P7.2",
+      "proposed_in_entries": [
+        50,
+        67
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "P7.3",
+      "proposed_in_entries": [
+        50,
+        67
+      ],
+      "recurrence": 2
+    },
+    {
+      "name": "\"Freedom of Choice\" school desegregation plans (1965–1969",
+      "proposed_in_entries": [
+        114
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "*Alexander v. Holmes County Board of Education* (1969",
+      "proposed_in_entries": [
+        56
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "*Davis v. County School Board of Prince Edward County* (1951",
+      "proposed_in_entries": [
+        94
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "*Fleming v. South Carolina Electric and Gas* (1954-56",
+      "proposed_in_entries": [
+        87
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "*U.S. v. Lynd* (305 F.2d 120, 5th Cir. 1962; 349 F.2d 785, 5th Cir. 1965",
+      "proposed_in_entries": [
+        36
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "8-A: Bill Russell (1934–2022",
+      "proposed_in_entries": [
+        8
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "8-B: Muhammad Ali (1942–2016",
+      "proposed_in_entries": [
+        8
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "8-C: Jackie Robinson (1919–1972",
+      "proposed_in_entries": [
+        8
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "A.D. King (Rev. Alfred Daniel Williams King",
+      "proposed_in_entries": [
+        132
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "A: Pete Seeger (1919–2014",
+      "proposed_in_entries": [
+        97
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Abe Osheroff",
+      "proposed_in_entries": [
+        111
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Abram L. Harris Jr. (pending adversarial confirmation",
+      "proposed_in_entries": [
+        120
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Alan Lomax",
+      "proposed_in_entries": [
+        6
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Albany Black Christmas Boycott 1961 (organizational entry",
+      "proposed_in_entries": [
+        85
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Allard K. Lowenstein",
+      "proposed_in_entries": [
+        26
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Almena Davis Lomax",
+      "proposed_in_entries": [
+        59
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Alprentice \"Bunchy\" Carter",
+      "proposed_in_entries": [
+        1
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Alvin Sykes",
+      "proposed_in_entries": [
+        125
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Amelia Boynton Robinson",
+      "proposed_in_entries": [
+        3
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Amelia Boynton Robinson (1911–2015",
+      "proposed_in_entries": [
+        7
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Amiri Baraka (1934-2014",
+      "proposed_in_entries": [
+        63
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Amiri Baraka (LeRoi Jones",
+      "proposed_in_entries": [
+        6
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Anne McCarty Braden",
+      "proposed_in_entries": [
+        74
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Anne Romaine",
+      "proposed_in_entries": [
+        79
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Anne and Carl Braden (SCEF",
+      "proposed_in_entries": [
+        30
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Annelle Ponder",
+      "proposed_in_entries": [
+        41
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Arthur A. Fletcher (1924–2005",
+      "proposed_in_entries": [
+        106
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Arthur D. Shores (1904–1996)",
+      "proposed_in_entries": [
+        59
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "B: Zilphia Horton (1910–1956",
+      "proposed_in_entries": [
+        97
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Barbara Rose Johns (1935-1991",
+      "proposed_in_entries": [
+        94
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Benjamin Brown",
+      "proposed_in_entries": [
+        43
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Benjamin E. Mays (1894–1984",
+      "proposed_in_entries": [
+        80
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Benjamin L. Hooks",
+      "proposed_in_entries": [
+        26
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Bernard Lee",
+      "proposed_in_entries": [
+        29
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Bill Hansen",
+      "proposed_in_entries": [
+        13
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Bill Hansen (William Hansen",
+      "proposed_in_entries": [
+        57
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Bob Kiley (Robert R. Kiley",
+      "proposed_in_entries": [
+        118
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Bobby Rush",
+      "proposed_in_entries": [
+        1
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "C. Vann Woodward",
+      "proposed_in_entries": [
+        129
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "C.L.R. James (1901–1989",
+      "proposed_in_entries": [
+        83
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "C: Paul Robeson (1898–1976",
+      "proposed_in_entries": [
+        97
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Captain Hugh Mulzac",
+      "proposed_in_entries": [
+        54
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Carolyn Downs",
+      "proposed_in_entries": [
+        37
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Carter G. Woodson (1875-1950",
+      "proposed_in_entries": [
+        91
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Charles B. Rangel",
+      "proposed_in_entries": [
+        71
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Charles F. \"Chuck\" McDew (1938–2018",
+      "proposed_in_entries": [
+        16
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Charles F. McDew — Orangeburg Movement for Civic Improvement (OMCI",
+      "proposed_in_entries": [
+        16
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Clarence B. Jones",
+      "proposed_in_entries": [
+        20
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Clarence M. Mitchell Jr.",
+      "proposed_in_entries": [
+        129
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Clarie Collins Harvey",
+      "proposed_in_entries": [
+        60
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Clayton \"Peg Leg\" Bates (1907-1998) / Peg Leg Bates Country Club",
+      "proposed_in_entries": [
+        48
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Coalition of Black Trade Unionists (CBTU",
+      "proposed_in_entries": [
+        128
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Commissioner George W. D'Artois (Shreveport Commissioner of Public Safety, 1962–1977",
+      "proposed_in_entries": [
+        102
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Coretta Scott King (1927–2006",
+      "proposed_in_entries": [
+        106
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Coretta Scott King Award (1969–present",
+      "proposed_in_entries": [
+        91
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "David Cline (Virginia Tech / Southern Oral History Program",
+      "proposed_in_entries": [
+        88
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "David Graham Du Bois (1925–2005",
+      "proposed_in_entries": [
+        42
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Deacons for Defense and Justice",
+      "proposed_in_entries": [
+        12
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dora McDonald",
+      "proposed_in_entries": [
+        29
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Alvin F. Poussaint",
+      "proposed_in_entries": [
+        54
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. C.O. Simkins (Shreveport NAACP / SCLC board member",
+      "proposed_in_entries": [
+        102
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Gwendolyn M. Patton (1943-2017",
+      "proposed_in_entries": [
+        52
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. H. Jack Geiger himself",
+      "proposed_in_entries": [
+        54
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Harry Edwards (b. 1942",
+      "proposed_in_entries": [
+        62
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Lawrence A. Davis Sr.",
+      "proposed_in_entries": [
+        57
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Luther H. Foster Jr. (1913-1994",
+      "proposed_in_entries": [
+        52
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Robert B. Hayling",
+      "proposed_in_entries": [
+        4
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Dr. Willa B. Player (1909–2003",
+      "proposed_in_entries": [
+        40
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "E. Frederic Morrow (1909–1994",
+      "proposed_in_entries": [
+        106
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Eleanor Roosevelt",
+      "proposed_in_entries": [
+        124
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Elizabeth \"Betita\" Sutherland Martínez (1925-2021",
+      "proposed_in_entries": [
+        81
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Emory Douglas",
+      "proposed_in_entries": [
+        35
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Episcopal Society for Cultural and Racial Unity (ESCRU, 1959–1970",
+      "proposed_in_entries": [
+        112
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ericka Huggins",
+      "proposed_in_entries": [
+        35
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Executive Order 9981 enforcement gap (not a figure — institutional event",
+      "proposed_in_entries": [
+        71
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Farris Bryant (1914–2002",
+      "proposed_in_entries": [
+        99
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Father Paul M. Washington (1921-2002",
+      "proposed_in_entries": [
+        63
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Father Richard Morrisroe",
+      "proposed_in_entries": [
+        112
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Frank M. Johnson Jr. (1918–1999",
+      "proposed_in_entries": [
+        9
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Frank Pinkston",
+      "proposed_in_entries": [
+        122
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Fred Hampton",
+      "proposed_in_entries": [
+        37
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Free Southern Theatre (October 1963",
+      "proposed_in_entries": [
+        32
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "GT.1",
+      "proposed_in_entries": [
+        23
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "GT.2",
+      "proposed_in_entries": [
+        23
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "GT.3",
+      "proposed_in_entries": [
+        23
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "GTC.1",
+      "proposed_in_entries": [
+        110
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "GTC.2",
+      "proposed_in_entries": [
+        110
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "GTC.3",
+      "proposed_in_entries": [
+        110
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "General George M. Gelston (1907–1969",
+      "proposed_in_entries": [
+        49
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "George Jackson (1941–1971",
+      "proposed_in_entries": [
+        42
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Gloria Arellanes (b. 1946",
+      "proposed_in_entries": [
+        47
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Gloria Hayes Richardson Dandridge (1922–2021",
+      "proposed_in_entries": [
+        49
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Gloster B. Current (1913–1997",
+      "proposed_in_entries": [
+        15
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Gray Panthers / Maggie Kuhn",
+      "proposed_in_entries": [
+        93
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Groveland Four (1949 Florida case",
+      "proposed_in_entries": [
+        15
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Gwendolyn Elaine Armstrong",
+      "proposed_in_entries": [
+        100
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Gwendolyn Zoharah Simmons (born Gwen Robinson, 1944–",
+      "proposed_in_entries": [
+        53
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Hamid Kizilbash",
+      "proposed_in_entries": [
+        60
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Harambee Singers",
+      "proposed_in_entries": [
+        58
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Harlem Writers Guild",
+      "proposed_in_entries": [
+        32
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Harry T. Moore (1905–1951) and Harriette Moore (1902–1952",
+      "proposed_in_entries": [
+        9
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Harvey Gantt (b. 1943",
+      "proposed_in_entries": [
+        14
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Henrietta Lacks (1920–1951",
+      "proposed_in_entries": [
+        49
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Herbert Wechsler (1909–2000",
+      "proposed_in_entries": [
+        56
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Hollis Watkins",
+      "proposed_in_entries": [
+        111
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Hollis Watkins (1941–2023",
+      "proposed_in_entries": [
+        36
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Howard Dodson",
+      "proposed_in_entries": [
+        127
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Howard Moore Jr.",
+      "proposed_in_entries": [
+        59
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Howard Thurman (1899-1981",
+      "proposed_in_entries": [
+        91
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "I. DeQuincey Newman (c. 1911–1985",
+      "proposed_in_entries": [
+        16
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ike Ikeda (Atlantic Street Center",
+      "proposed_in_entries": [
+        37
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ivanhoe Donaldson",
+      "proposed_in_entries": [
+        72
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Jack Greenberg (1924–2016",
+      "proposed_in_entries": [
+        56
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Jack Minnis",
+      "proposed_in_entries": [
+        22
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Jack Minnis (1923–2005",
+      "proposed_in_entries": [
+        7
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "James Forman Jr. (b. 1967",
+      "proposed_in_entries": [
+        30
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "James O. Eastland",
+      "proposed_in_entries": [
+        33
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Jean Wheeler Smith Young (b. 1942",
+      "proposed_in_entries": [
+        83
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Jeanette Smith (b. January 1, 1940, Soso MS)",
+      "proposed_in_entries": [
+        100
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Jerry Wurf",
+      "proposed_in_entries": [
+        128
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Joan Trumpauer Mulholland",
+      "proposed_in_entries": [
+        33
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "John Conyers",
+      "proposed_in_entries": [
+        74
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "John Henrik Clarke",
+      "proposed_in_entries": [
+        127
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "John Hope Franklin",
+      "proposed_in_entries": [
+        2
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "John Peabody Harrington (1884–1961",
+      "proposed_in_entries": [
+        47
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Joseph Echols Lowery (CRITICAL",
+      "proposed_in_entries": [
+        66
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Judge J. Waties Waring (1880-1968",
+      "proposed_in_entries": [
+        87
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Julius Wesley Becton Jr.",
+      "proposed_in_entries": [
+        71
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "June Johnson",
+      "proposed_in_entries": [
+        41
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Junius Williams",
+      "proposed_in_entries": [
+        72
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Justice Arthur J. Goldberg",
+      "proposed_in_entries": [
+        66
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Kenneth A. Gibson",
+      "proposed_in_entries": [
+        72
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "LINKS Incorporated",
+      "proposed_in_entries": [
+        122
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Lonnie C. King (1936–2019",
+      "proposed_in_entries": [
+        80
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Lowndes County Freedom Organization (LCFO",
+      "proposed_in_entries": [
+        22
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "M. Roland Nachman Jr.",
+      "proposed_in_entries": [
+        66
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "M.R. Bawa Muhaiyaddeen (c. 1900s–1986",
+      "proposed_in_entries": [
+        53
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Maggie L. Walker (1864–1934",
+      "proposed_in_entries": [
+        42
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Mahalia Jackson",
+      "proposed_in_entries": [
+        20
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Mamie Till-Mobley",
+      "proposed_in_entries": [
+        125
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Marcyliena Morgan",
+      "proposed_in_entries": [
+        6
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Martin A. Martin (Virginia NAACP attorney, Richmond 34 case counsel",
+      "proposed_in_entries": [
+        48
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Mary Kochiyama (1921-2014",
+      "proposed_in_entries": [
+        52
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Matthew J. Perry Jr. (1921-2011",
+      "proposed_in_entries": [
+        87
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Matthew J. Perry Jr. (1921–2011",
+      "proposed_in_entries": [
+        14
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Maulana Karenga (born Ronald McKinley Everett, 1941",
+      "proposed_in_entries": [
+        63
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Maulana Karenga / US Organization",
+      "proposed_in_entries": [
+        47
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Maynard Jackson",
+      "proposed_in_entries": [
+        29
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "McCree Harris",
+      "proposed_in_entries": [
+        85
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Methodist Episcopal Church, South (1846–1939",
+      "proposed_in_entries": [
+        88
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Methodist Student Movement (MSM",
+      "proposed_in_entries": [
+        88
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Michael Harrington",
+      "proposed_in_entries": [
+        129
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Monson Motor Lodge (St. Augustine, Florida",
+      "proposed_in_entries": [
+        103
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Monson Motor Lodge acid-in-pool incident (June 18, 1964",
+      "proposed_in_entries": [
+        5
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Montgomery Gospel Trio",
+      "proposed_in_entries": [
+        58
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Mordecai Wyatt Johnson",
+      "proposed_in_entries": [
+        2
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Mrs. Eberhart Spinks (Laurel MS",
+      "proposed_in_entries": [
+        53
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "N.R. Burger (Nathaniel R. Burger",
+      "proposed_in_entries": [
+        33
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "NAACP v. Claiborne Hardware Co. (458 U.S. 886, 1982",
+      "proposed_in_entries": [
+        92
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982",
+      "proposed_in_entries": [
+        12
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "New Communities Inc.",
+      "proposed_in_entries": [
+        117
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "New Communities Inc. (NCI, 1969–1985",
+      "proposed_in_entries": [
+        114
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Newark Rebellion (July 12–17, 1967",
+      "proposed_in_entries": [
+        98
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Oliver W. Hill Sr. (1907-2007",
+      "proposed_in_entries": [
+        94
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Olympic Project for Human Rights (OPHR",
+      "proposed_in_entries": [
+        62
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ossie Davis (1917–2005) / *Purlie Victorious* (1961",
+      "proposed_in_entries": [
+        32
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "P1",
+      "proposed_in_entries": [
+        55
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "P2",
+      "proposed_in_entries": [
+        55
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "P3",
+      "proposed_in_entries": [
+        55
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Phil Hutchings (b. 1942",
+      "proposed_in_entries": [
+        98
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Phillip Lafayette Gibbs and James Earl Green",
+      "proposed_in_entries": [
+        43
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Pigford v. Glickman (legal case",
+      "proposed_in_entries": [
+        117
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Pigford v. Glickman + Pigford II (1997–2014",
+      "proposed_in_entries": [
+        114
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Prathia Hall (1940–2002",
+      "proposed_in_entries": [
+        7
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Prathia Hall (Rev. Prathia Hall Wynn)",
+      "proposed_in_entries": [
+        3
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Pupil Placement Form (Virginia Massive Resistance instrument",
+      "proposed_in_entries": [
+        132
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "R.L.T. Smith (Rev. Robert L.T. Smith",
+      "proposed_in_entries": [
+        92
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rabbi Perry Nussbaum",
+      "proposed_in_entries": [
+        60
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ralph Bunche",
+      "proposed_in_entries": [
+        2
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Raylawni G. Branch (b. 1941)",
+      "proposed_in_entries": [
+        100
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Reies López Tijerina (1926-2015",
+      "proposed_in_entries": [
+        81
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rev. Dr. Harry Blake (b. 1934, d. unknown",
+      "proposed_in_entries": [
+        102
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rev. Joseph Armstrong DeLaine (1898–1974",
+      "proposed_in_entries": [
+        14
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Reverend James Reeb",
+      "proposed_in_entries": [
+        26
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Reverend Solomon S. Seay Sr.",
+      "proposed_in_entries": [
+        58
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Richard Aoki",
+      "proposed_in_entries": [
+        35
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Richmond 34 / Thalhimer's sit-in (February 22, 1960",
+      "proposed_in_entries": [
+        48
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Robert B. Hayling (Dr. Robert B. Hayling",
+      "proposed_in_entries": [
+        5
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Robert W. Spike",
+      "proposed_in_entries": [
+        118
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Robert W. Spike (Rev. Bob Spike",
+      "proposed_in_entries": [
+        34
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rodolfo \"Corky\" Gonzales (1928-2005",
+      "proposed_in_entries": [
+        81
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ron Karenga / Maulana Karenga + US Organization",
+      "proposed_in_entries": [
+        93
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Roslyn Pope (b. 1938",
+      "proposed_in_entries": [
+        80
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Ruby Doris Smith Robinson",
+      "proposed_in_entries": [
+        3
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rudy Lombard (1939–2014",
+      "proposed_in_entries": [
+        30
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rudy Shields",
+      "proposed_in_entries": [
+        92
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Rudy Shields (d. 1976",
+      "proposed_in_entries": [
+        12
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Sam Bowers (Samuel Holloway Bowers Jr., 1924–2006",
+      "proposed_in_entries": [
+        36
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Samuel Younge Jr. (Sammy Younge",
+      "proposed_in_entries": [
+        22
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Sargent Shriver",
+      "proposed_in_entries": [
+        85
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Senator John C. Stennis",
+      "proposed_in_entries": [
+        111
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Shelby County v. Holder (2013",
+      "proposed_in_entries": [
+        74
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Sheriff L.O. Davis (Lawrence O. Davis)",
+      "proposed_in_entries": [
+        4
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Shirley Miller Sherrod",
+      "proposed_in_entries": [
+        117
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Silas Norman Jr. (1940–2004",
+      "proposed_in_entries": [
+        83
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Simeon Booker (1918–2017",
+      "proposed_in_entries": [
+        9
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "St. Augustine Movement / St. Augustine Campaign (1963–64",
+      "proposed_in_entries": [
+        5
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Stanley D. Levison",
+      "proposed_in_entries": [
+        20
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Sterling A. Brown (1901–89",
+      "proposed_in_entries": [
+        40
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Thalhimers Department Store",
+      "proposed_in_entries": [
+        122
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "The 1919 Elaine Massacre",
+      "proposed_in_entries": [
+        13
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "The Bennett Belles (February 1960 Greensboro sit-ins cohort",
+      "proposed_in_entries": [
+        40
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "The Huntley-Brinkley Report",
+      "proposed_in_entries": [
+        132
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "The St. Augustine Four",
+      "proposed_in_entries": [
+        4
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "The St. Augustine Movement (1963–64",
+      "proposed_in_entries": [
+        99
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Theodore \"Hugo\" Brooks",
+      "proposed_in_entries": [
+        118
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Timothy Jenkins",
+      "proposed_in_entries": [
+        120
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Tom Coleman",
+      "proposed_in_entries": [
+        112
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Tommie Smith (b. 1944",
+      "proposed_in_entries": [
+        62
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Virginia Foster Durr",
+      "proposed_in_entries": [
+        124
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Walter E. Fauntroy",
+      "proposed_in_entries": [
+        34
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Walter Reuther",
+      "proposed_in_entries": [
+        79
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Walter Rodney",
+      "proposed_in_entries": [
+        127
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Walter White (1893–1955",
+      "proposed_in_entries": [
+        15
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Wheeler Parker Jr.",
+      "proposed_in_entries": [
+        125
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Wiley Branton",
+      "proposed_in_entries": [
+        120
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "William Kunstler (1919–1995",
+      "proposed_in_entries": [
+        98
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "William Lucy",
+      "proposed_in_entries": [
+        128
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Worth Long",
+      "proposed_in_entries": [
+        13
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Worth Long (Worth Wesley Long Jr.",
+      "proposed_in_entries": [
+        57
+      ],
+      "recurrence": 1
+    },
+    {
+      "name": "Z. Alexander Looby (1899–1972",
+      "proposed_in_entries": [
+        103
+      ],
+      "recurrence": 1
+    }
+  ]
+}

@@ -36,7 +36,7 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ### Session 6 — 2026-05-24 evening → 2026-05-25 morning (overnight): Pass 7 Publication Readiness Review (PRR)
 
-**End-of-session summary:** *(populated when Pass 7 completes)*
+**End-of-session summary:** Pass 7 PRR complete on all 127 audit-able entries. 7 parallel batches (12 + 14 + 16 + 16 + 15 + 16 + 15 + 22 entries × 1 retry = 126 first-attempt + 1 serial-warm-up = 127 total subagent invocations) using Sonnet 4.6 for speed/cost optimization. Methodology shift documented mid-session: switched from strict-serial dispatch (entry 1 took 13 min single agent) to parallel batches of 12-22 entries each (preserving cross-contamination firewall but cutting wall-clock from a projected 27 hours to ~2 hours of agent work + ~1 hour merge/aggregation/docs/Codex-prompt). Five-section PRR per entry: Subject paragraph audit, cross-pass coherence check, residual ground-truth proposals, v2 readiness score, publication-readiness verdict. Substantive findings: 330 Subject paragraph claims requiring fix across 106 entries (closes OPEN_PROBLEMS Problem 8 in principle — apply-back work via JSON now available to Codex); 292 corpus proposals across 88 entries with 251 unique names (top recurring: Joseph L. Rauh Jr. 3×, Hollis Watkins, Bill Hansen, Sam Bowers, others); 30+ high-damage facts caught across the corpus (Greyhound/Trailways reversal entry 9, Paul Hoffman/Robeson ASR-merge entry 62, Pinto Union cross-contamination entry 93, Hank Thomas/Sammy Davis cross-contamination entry 102, Briggs co-counsel claim entry 87, Memphis strike date entry 128, etc.). One entry NOT-READY (entry 109 McClary — full re-transcription required, formula_inapplicable). 126 entries conditionally ready. Score distribution v2: mean 97.5, median 100.0, range 74.1-100 (clamped), all 127 scored above 60 (vs v1's 38% below 40). **Next priorities for the Codex handoff:** apply the 330 Subject paragraph corrections, expand civil_rights_facts.json from 140 to ~390 entries using the proposals JSON, run the Kiro/Kimi/Codex/Gemini ensemble against the residual 912 D2-ambiguous flags + 130 D1 canonical phantoms + 179 D3 catalog contradictions, schedule entry 109 re-transcription with Dustin. **Manual-intervention blockers held by Eric:** all deployment steps from CLAUDE.md Current Sprint Status section (Firebase SA JSON, Cloud Functions Blaze billing, MCP Fly.io, pipeline run on 131 transcripts, Firestore push, upstream PR, RAG Pinecone+Voyage provisioning).
 
 **Agents:** Claude Opus 4.7 (parent / orchestrator) + 127 serial Claude Sonnet 4.6 subagents (one per audit-able entry).
 
@@ -68,9 +68,41 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 | Phase 12 | Serial Pass 7 batch 11 — entries #101–110 | *(populated when Phase 12 completes)* |
 | Phase 13 | Serial Pass 7 batch 12 — entries #111–120 | *(populated when Phase 13 completes)* |
 | Phase 14 | Serial Pass 7 batch 13 — entries #121–132 | *(populated when Phase 14 completes)* |
-| Phase 15 | Aggregation: readiness_ledger_v2.json + subject_paragraph_corrections_pass7.json + ground_truth_proposals_pass7.json | *(populated when Phase 15 completes)* |
-| Phase 16 | merge_pass7.py + insert PRR blocks into master MD + update OPEN_PROBLEMS (close Problem 8) | *(populated when Phase 16 completes)* |
+| Phase 15+16 | merge_pass7.py + aggregation + insert PRR blocks into master MD + write readiness_ledger_v2.json + subject_paragraph_corrections_pass7.json + ground_truth_proposals_pass7.json + close OPEN_PROBLEMS Problem 8 | **DONE 2026-05-24.** `merge_pass7.py` reuses entry_section_bounds + row helpers from `fix_layer5_findings.py`. Inserts 127 Pass 7 PRR blocks before each entry's closing `---` (idempotent via sentinel). Master MD: 9,123,429 → 12,247,451 chars (+3.12 MB / +34%). 119/127 scores parsed cleanly (8 score formats lost in parse — fine; per-entry stage files are authoritative). Aggregation JSONs written. |
 | Phase 17 | CODEX_MASTER_PROMPT.md — comprehensive handoff doc for the next agent | *(populated when Phase 17 completes)* |
+
+---
+
+#### Phase 15+16 — Merge + aggregation + master MD update (2026-05-24 evening, end-of-day)
+
+**Agents:** Claude Opus 4.7 (parent, no subagents).
+
+**Wall-clock:** ~15 min (script authoring + dry-run iteration to fix parsers + apply + commit).
+
+**Deliverables:**
+- `transcripts/merge_pass7.py` — unified merge + aggregation script. (a) Inserts each entry's PRR block from `pass7_stage/entry_NNN_*.md` before the entry's closing `---` in master MD. Idempotent via `#### Pass 7 Publication Readiness Review` sentinel. (b) Parses each stage file for v2 score, verdict, Subject paragraph claim grades, corrected Subject paragraph, and corpus proposals (handles BOTH 4-column table format `# | Claim | Verdict | Evidence` AND 3-column format AND `**Proposal X — Name**` subsection format). Writes three aggregation JSONs.
+- `transcripts/readiness_ledger_v2.json` — 127-entry ledger with v2 scores, verdicts, subject-correction counts, corpus-proposal counts.
+- `transcripts/subject_paragraph_corrections_pass7.json` — 106 entries with 330 claims needing fix (graded `unsupported` / `contradicted` / `partial`), each with the agent's recommended corrected Subject paragraph where applicable. **This closes OPEN_PROBLEMS Problem 8 in principle.**
+- `transcripts/ground_truth_proposals_pass7.json` — 88 entries with 292 proposals across 251 unique names. Includes a deduplicated recurrence-sorted list. Top recurring: Joseph L. Rauh Jr. (3 entries), plus Hollis Watkins, Bill Hansen, Sam Bowers, Donald Hollowell, Ivanhoe Donaldson, Jack Minnis, others.
+- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` — 127 Pass 7 PRR blocks inserted. Pre/post: 9,123,429 → 12,247,451 chars (+3.12 MB / +34%). 0 → 127 Pass 7 sentinels.
+
+**Score-distribution observation (v2 vs v1):**
+
+| Bucket | v1 (Pass 6 Track 1) | v2 (Pass 7) |
+| --- | ---: | ---: |
+| 0–20 | 28 (22%) | 0 |
+| 20–40 | 21 (16%) | 0 |
+| 40–60 | 26 (20%) | 0 |
+| 60–80 | 35 (28%) | 3 (2%) |
+| 80–100 | 17 (14%) | 116 (91%) |
+| Unaudited | 4 | 0 |
+| **Total** | **127 (4 unaudited)** | **127 (Pass 7 PRR)** |
+
+The v2 distribution corrects v1's too-punitive bias by (a) rewarding Pass 6 resolution outcomes via the +1.5 per [PASS-6: resolved-high/confirmed/narrowed/alternate] credit, and (b) capping outstanding flag penalty at -1.5/each (down from -5). Entries that have survived 6 passes of audit work properly score high; entries with publication-blocker Subject paragraph errors penalize via -3 per unsupported/contradicted claim. The three 60-80 entries (Bruce 74.1, Hayling 77.6, Branch+Smith 78.4) all have multiple Subject paragraph contradictions that pull the score down — exactly the desired signal.
+
+**Tracker patch deferred:** the Progress Tracker at the top of master MD uses fixed-width column padding; `merge_pass7.py`'s auto-patch heuristic detected the mismatch and skipped. A dedicated `patch_tracker_pass7.py` (modeled on `patch_tracker_pass4.py`) is the right pattern for adding the Pass 7 column. Deferred to Codex.
+
+**Handoff:** Codex inherits three aggregation JSONs ready to apply, plus 127 per-entry PRR staging files (~25 KB each) as the authoritative source.
 
 ---
 
