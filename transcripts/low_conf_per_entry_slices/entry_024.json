@@ -1,0 +1,34 @@
+{
+  "entry_number": 24,
+  "subject": "Courtland Cox",
+  "corrected_transcript_dir": "transcripts/corrected/Courtland Cox_interview_20250704_190608",
+  "low_confidence_items": [
+    {
+      "entry_number": 24,
+      "subject": "Courtland Cox",
+      "pass_section": "Pass 1",
+      "row_id": "24.11",
+      "whisper": "Conrad Snowden",
+      "correction": "Frank M. Snowden Jr. (likely)",
+      "notes": "Real Howard classicist // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 24,
+      "subject": "Courtland Cox",
+      "pass_section": "Pass 1",
+      "row_id": "24.49",
+      "whisper": "Mary Barack",
+      "correction": "Barack Obama Sr. (possibly)",
+      "notes": "\"There were a lot of people, Barack Obama, I mean, Mary Barack was there\"; Barack Obama Sr. (Barack II's father) was at the Sixth Pan-African Congress 1974 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 24,
+      "subject": "Courtland Cox",
+      "pass_section": "Pass 2",
+      "row_id": "24.P2.37",
+      "whisper": "Mary Barack (1974 Tanzania)",
+      "correction": "(likely) Mary Frances Berry or Maya Angelou (Barack/Berry confusion)",
+      "notes": "Possibly a Whisper homophone error for a canonical Pan-African Congress attendee // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

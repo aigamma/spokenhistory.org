@@ -1,0 +1,46 @@
+{
+  "entry_number": 118,
+  "subject": "Steven McNichols",
+  "items": [
+    {
+      "row_id": "118.43",
+      "whisper": "Trinket County",
+      "original_candidate": "(probably) Tunica County (MS)",
+      "resolution": "rejected",
+      "new_candidate": "[Whisper hallucination — no Mississippi county is mentioned in this passage]",
+      "evidence": "The Library of Congress's professionally-transcribed version of this same interview (Steven McNichols oral history, LoC AFC2010/039, interview conducted by Dr. David P. Cline, transcribed by Sally C. Council, March 1, 2013) renders this passage as: \"When I was with SNCC and with MFDP, Walter Russo's brother showed up in Washington and took us out to dinner, which was nice.\" There is NO Mississippi county mentioned, NO 'watcher,' and NO 'Tim Dimmer.' Whisper completely hallucinated the entire phrase about a county and a watcher's name. The candidate corrections (Tunica County, Sunflower County) have no archival support. Recommend retracting both 118.43 and 118.P2.13 corrections entirely and flagging this passage as Whisper-degraded.",
+      "external_sources": [
+        "https://www.loc.gov/item/2015669157/",
+        "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0058_McNichols_transcript/afc2010039_crhp0058_McNichols_transcript.pdf"
+      ]
+    },
+    {
+      "row_id": "118.44",
+      "whisper": "Tim Dimmer",
+      "original_candidate": "(probably) Tim Jenkins",
+      "resolution": "rejected",
+      "new_candidate": "[Whisper hallucination — no person named 'Tim' appears in this passage]",
+      "evidence": "The Library of Congress's professionally-transcribed version of this same interview (LoC AFC2010/039, transcribed by Sally C. Council) renders this passage as: \"Walter Russo's brother showed up in Washington and took us out to dinner, which was nice.\" There is NO 'Tim Dimmer,' NO 'Tim Jenkins,' and NO watcher in the LoC transcript. Tim Jenkins (canonical Howard/NSA SNCC figure documented at snccdigital.org/people/tim-jenkins/) is unrelated to this anecdote, which is about a dinner in Washington with Walter Reuther's brother (Roy or Victor Reuther — both UAW civil-rights figures), not about poll-watching in Mississippi. The Pass 1 / Pass 2 / Pass 3 cascade attempted to make sense of garbled Whisper audio by reaching for the canonical 'Three Charleses + Jenkins' figure, but the LoC transcript shows the actual content is entirely different (a dinner anecdote, not a Mississippi poll-watcher placement). Recommend retraction.",
+      "external_sources": [
+        "https://www.loc.gov/item/2015669157/",
+        "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0058_McNichols_transcript/afc2010039_crhp0058_McNichols_transcript.pdf",
+        "https://snccdigital.org/people/tim-jenkins/"
+      ]
+    },
+    {
+      "row_id": "118.P2.13",
+      "whisper": "Tim Dimmer / Trinket County",
+      "original_candidate": "Tim Jenkins / Sunflower County (or possibly Tunica)",
+      "resolution": "rejected",
+      "new_candidate": "[Whisper-hallucinated passage — actual LoC text: 'Walter Russo's brother showed up in Washington and took us out to dinner, which was nice.']",
+      "evidence": "The Library of Congress's professional transcript (LoC AFC2010/039, McNichols interview, transcribed by Sally C. Council) makes clear that this passage contains NO Mississippi county, NO poll watcher, NO Tim Jenkins, and NO UAW-funded surveillance episode. The actual narrative is a brief aside about being taken to dinner in Washington by Walter Reuther's brother during McNichols's tenure on the MFDP Congressional Strategy Committee. The Pass 2 elaboration that introduced 'UAW-funded surveillance in a Mississippi county' and the cross-corpus reach to the canonical 'Three Charleses + Jenkins' SNCC delegate (#120) are entirely manufactured from Whisper noise — the LoC transcript shows no such content exists. Walter Reuther's brothers were Roy Reuther (AFL-CIO voter registration director under George Meany, 1962/1964) and Victor Reuther; either is a plausible referent for 'Walter [Reuther]'s brother showed up in Washington' given the 1964-65 MFDP Congressional Strategy Committee timeframe. Recommend full retraction of the watcher/county/Tim-Jenkins narrative and replacement with the LoC-attested dinner passage.",
+      "external_sources": [
+        "https://www.loc.gov/item/2015669157/",
+        "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0058_McNichols_transcript/afc2010039_crhp0058_McNichols_transcript.pdf",
+        "https://en.wikipedia.org/wiki/Roy_Reuther",
+        "https://snccdigital.org/people/tim-jenkins/",
+        "https://snccdigital.org/events/mfdp-congressional-challenge/"
+      ]
+    }
+  ]
+}

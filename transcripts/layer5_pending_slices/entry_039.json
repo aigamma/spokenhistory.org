@@ -1,0 +1,35 @@
+{
+  "entry_number": 39,
+  "subject": "Ernest Adolphus Finney Jr.",
+  "source_dir": "transcripts/raw/Ernest Adolphus Finney_interview_20250704_202033/",
+  "pending_count": 3,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "39.28",
+      "whisper_rendering": "Orangeburg Massacre (Feb 8, 1968)",
+      "correction": "Orangeburg Massacre",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Real (the February 8, 1968 SC Highway Patrol shooting of Black students at SC State, killing Samuel Hammond, Henry Smith, and Delano Middleton \u2014 three years before Kent State; foundational racially-motivated state-violence event of the long civil rights movement) // [LAYER-5: phantom-rendering, fuzzy=84.2, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "39.P3.1",
+      "whisper_rendering": "\"the Rosa Parks bus boycott\" reference",
+      "correction": "Montgomery Bus Boycott",
+      "confidence": "correct",
+      "source": "civil_rights_facts.json",
+      "notes": "Already canonical in corpus (line 9); if Finney mentions Montgomery as a movement turning point, this is canonical. Verification flag. // [LAYER-5: phantom-rendering, fuzzy=53.8, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "39.P3.3",
+      "whisper_rendering": "\"Brown v. Board\" timeline anchor",
+      "correction": "Brown v. Board of Education (May 17, 1954)",
+      "confidence": "correct",
+      "source": "civil_rights_facts.json",
+      "notes": "Finney entered SC State Law in 1951 and graduated 1954 (\"just months before Brown\"); the timeline anchor is canonical (corpus line 107). No new catch. // [LAYER-5: phantom-rendering, fuzzy=57.1, ensemble-adjudication-pending]"
+    }
+  ]
+}

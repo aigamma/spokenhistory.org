@@ -1,0 +1,32 @@
+{
+  "entry_number": 117,
+  "subject": "Shirley Miller Sherrod",
+  "items": [
+    {
+      "row_id": "117.30",
+      "whisper": "Jose (a SNCC organizer)",
+      "original_candidate": "(probably) Joyce (a SNCC organizer)",
+      "resolution": "rejected",
+      "new_candidate": "Aunt Josey Miller (Shirley Miller Sherrod's aunt, not a SNCC organizer)",
+      "evidence": "The transcript's narrative anchors this person to two unmistakable facts: she was the woman who 'threw her body across [Charles Sherrod]' on bloody Saturday in Albany, and she was a five-foot-tall 'fire brand' who drove one of the cars in the 1965 caravan from Baker County to Washington. The Civil Rights Movement Veterans (CRM Vet) site, in its 2011 nomination of the Sherrods for the Presidential Medal of Freedom, states verbatim: 'Shirley's Aunt Josey Miller, who was nearby, ran and threw her body over Charles' during the June 1964 beating by white men with axe handles in Newton. The same Aunt Josey is also referenced in published accounts of the Southwest Georgia movement. The Whisper rendering 'On Josie' (and the second occurrence 'on Josie') is best read as 'Aunt Josey' — the 'on' is an aural mishearing of 'Aunt.' She was Shirley's maternal-family relative and a Baker County movement participant, NOT a SNCC field organizer, so the original candidate's parenthetical descriptor ('a SNCC organizer') is also wrong. The spelling 'Josey' (not 'Josie' or 'Joyce') is confirmed by CRM Vet.",
+      "external_sources": [
+        "https://www.crmvet.org/anc/11pmf.htm",
+        "https://snccdigital.org/our-voices/strong-people/part-1/",
+        "https://www.inquirer.com/philly/blogs/attytood/Hosie_Miller_Shirley_Sherrods_dad_and_a_casualty_in_a_forgotten_war.html"
+      ]
+    },
+    {
+      "row_id": "117.31",
+      "whisper": "Charles Pruzin",
+      "original_candidate": "(likely) Charles Pruzan",
+      "resolution": "unresolved",
+      "new_candidate": "[unverified — no transcript anchor]",
+      "evidence": "The string 'Pruzin', 'Pruzan', 'Pruzen', 'Bruzin', or any near-phonetic variant does not appear in the raw Whisper .txt, .srt, or .vtt for the Shirley Miller Sherrod interview, nor in the corrected versions. No 'Charles' other than Charles Sherrod (her husband) is named in this transcript; the named SNCC/movement figures mentioned by Shirley are Charles Sherrod, Ed Anderson, Don Anderson, Bobby Jones, Reven Wells, Bob Swann, Slater King, CB King, Mary Ellen Lorde, Marvell Smith, Charles Prejean's organization (Federation of Southern Cooperatives) is implicated by context but Prejean himself is not named. The slice note 'Possible cross-corpus organizer' suggests this row was a phantom hypothesis inserted from external corpus lookup rather than from a Whisper rendering in THIS entry. The closest real-world figure phonetically and contextually plausible is Charles O. Prejean (1941-, founding Executive Director of the Federation of Southern Cooperatives 1967-1985, deeply connected to the Sherrods and to New Communities Inc.), but without a transcript anchor I cannot adjudicate. Recommend retiring this row or flagging it explicitly as 'phantom — no source-line anchor' so downstream consumers do not treat it as a transcript correction.",
+      "external_sources": [
+        "https://geo.coop/articles/tribute-charles-o-prejean",
+        "https://www.federation.coop/",
+        "https://cltroots.org/the-guide/early-hybrids-breeding-and-seeding-the-clt-model/georgia-seedbed"
+      ]
+    }
+  ]
+}

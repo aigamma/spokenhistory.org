@@ -1,0 +1,66 @@
+{
+  "entry_number": 124,
+  "subject": "Walter Tillow",
+  "items": [
+    {
+      "row_id": "124.14",
+      "whisper": "Dinky Romley",
+      "original_candidate": "Dinky Romilly (Dorothy Miller Zellner; or Dottie Miller's sister)",
+      "resolution": "rejected",
+      "new_candidate": "Constancia \"Dinky\" Romilly",
+      "evidence": "Transcript context: \"the next room down was Dinky Romilly who was kind of (Jim) Forman['s] secretary\" — describing the SNCC Atlanta office layout. External sources unambiguously identify Constancia \"Dinky\" Romilly as the SNCC Atlanta-office fundraiser/Friends-of-SNCC coordinator who joined in fall 1963, later partnered with Jim Forman (two sons: Chaka Forman and James Forman Jr.). She is the daughter of Jessica Mitford and Esmond Romilly — NOT Dorothy Miller's sister and NOT an alias for Dorothy Miller Zellner. The Pass-1 candidate's parenthetical aliasing to Dorothy Miller / Dottie Zellner is a confusion of two distinct SNCC women and must be rejected. The Layer-5 catalog 'C' rendering (\"Dinky Forman (Constance 'Dinky' Romilly Forman)\") is closer but slightly anachronistic for 1963-64 context — at the time of these events she was unmarried and known professionally as Dinky Romilly.",
+      "external_sources": [
+        "https://snccdigital.org/inside-sncc/sncc-national-office/friends-of-sncc/",
+        "https://en.wikipedia.org/wiki/James_Forman",
+        "https://www.geantesinvisibles.com/en/biography/constancia-dinky-romilly/",
+        "https://highlandscurrent.org/2022/10/28/something-you-dont-know-about-me-dinky-romilly/"
+      ]
+    },
+    {
+      "row_id": "124.26",
+      "whisper": "Alomex",
+      "original_candidate": "(canonical) \"I'm Going to Sit at the Welcome Table\" / Allomex",
+      "resolution": "narrowed",
+      "new_candidate": "\"I'm Gonna Sit at the Welcome Table\"",
+      "evidence": "Transcript context: \"What was that... the record Freedom in the Air? Well the (Guy + Candie) Carawan are part of it in alomex\" — Tillow is naming a song that appears on the SNCC-pressed Carawan-era freedom-song record (the unreleased Pete Seeger-recorded pressing). Whisper's \"alomex\" is a phonetic mangling of the cadence \"a-welcome-ta-ble.\" The canonical title — confirmed by Smithsonian Folkways, PBS American Experience, and CRMVet's freedom-song catalog — is \"I'm Gonna Sit at the Welcome Table\" (not \"I'm Going to...\"). The candidate's \"Allomex\" alternate is just a respelling of the Whisper artifact and should be dropped; \"I'm Gonna Sit at the Welcome Table\" is the correct narrowed rendering. Guy Carawan taught this song along with \"Keep Your Eyes on the Prize\" and \"We Shall Overcome\" as part of the Highlander freedom-song program; it fits the surrounding discussion of Carawan-led SNCC recordings.",
+      "external_sources": [
+        "https://www.crmvet.org/info/fsong.htm",
+        "https://folkways.si.edu/hollis-watkins/im-gonna-sit-at-the-welcome-table/african-american-music-american-history-historical-song-struggle-protest/track/smithsonian",
+        "https://www.pbs.org/wgbh/americanexperience/features/soundtrack-lyrics/",
+        "https://en.wikipedia.org/wiki/Freedom_song"
+      ]
+    },
+    {
+      "row_id": "124.P2.34",
+      "whisper": "alomex",
+      "original_candidate": "\"I'm Going to Sit at the Welcome Table\" / Allomex",
+      "resolution": "narrowed",
+      "new_candidate": "\"I'm Gonna Sit at the Welcome Table\"",
+      "evidence": "This row is the Pass-2 reinforcement of 124.26 — same Whisper string, same context, same resolution. The canonical title per Smithsonian Folkways and CRMVet is \"I'm Gonna Sit at the Welcome Table\" (with \"Gonna,\" not \"Going to\"). Drop the \"Allomex\" alternate (it's the Whisper artifact, not a real Movement-song title). Note: the transcript's .srt shows only ONE occurrence of \"alomex\" — Pass 2 row 34 appears to be re-annotating the same instance that Pass 1 row 26 captured, not a second occurrence.",
+      "external_sources": [
+        "https://www.crmvet.org/info/fsong.htm",
+        "https://folkways.si.edu/hollis-watkins/im-gonna-sit-at-the-welcome-table/african-american-music-american-history-historical-song-struggle-protest/track/smithsonian"
+      ]
+    },
+    {
+      "row_id": "124.P2.63",
+      "whisper": "Tony Zivolich",
+      "original_candidate": "Tony Zivkovich",
+      "resolution": "rejected",
+      "new_candidate": "Tony Zivalich",
+      "evidence": "Transcript context: \"There was some Teamsters guy from Tony Zivolich from Atlanta. He was a Business agent and big Teamsters local in Atlanta\" — Tillow is naming an Atlanta Teamsters business agent who attended a Southern Organizing Committee labor workshop at Highlander circa 1964-65. The International Brotherhood of Teamsters' own historical record (Gideon Parham biography) names him as \"Tony Zivalich\": \"Parham was active in the civil rights movement and often worked closely with Teamster friend and Southern Conference colleague Tony Zivalich on civil rights issues.\" Zivalich was later a primary organizer in the Alliance for Labor Action and replaced William Genoese as Director of Organizing for the Teamsters. The Pass-2 candidate \"Zivkovich\" is wrong by one consonant cluster; the correct spelling \"Zivalich\" is verified by the union's own institutional history.",
+      "external_sources": [
+        "https://teamster.org/2017/02/gideon-parham-black-trade-unionist-and-teamster-leader/"
+      ]
+    },
+    {
+      "row_id": "124.P2.120",
+      "whisper": "being Wilson, I was his name",
+      "original_candidate": "Ben Wilson / Benjamin Wilson",
+      "resolution": "unresolved",
+      "new_candidate": "[CROSS-CONTAMINATION ARTIFACT — string does not appear in entry #124 transcript; retain Whisper rendering or drop row]",
+      "evidence": "Exhaustive search of both the .txt and .srt for entry #124 (Walter Tillow) finds NO occurrence of any of: \"Wilson,\" \"being Wilson,\" \"Ben Wilson,\" \"Benjamin Wilson,\" or \"basketball.\" The Pass-2 slice's own notes confirm this: \"Canonical Chicago basketball player — not in this transcript (cross-corpus with #125 Parker).\" This row is a cross-entry contamination artifact that was erroneously stamped onto Tillow's overlay during Pass 2; the underlying claim belongs in entry #125 (Parker), not here. Recommended remediation: remove row 124.P2.120 from the entry-124 overlay entirely (it has no source string to correct), and let the Parker-entry audit handle the Ben/Benjamin Wilson basketball reference where it actually lives. Cannot externally verify a name that is not in the transcript.",
+      "external_sources": []
+    }
+  ]
+}

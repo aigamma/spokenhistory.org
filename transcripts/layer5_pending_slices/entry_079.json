@@ -1,0 +1,350 @@
+{
+  "entry_number": 79,
+  "subject": "Lisa Anderson Todd",
+  "source_dir": "transcripts/raw/Lisa Anderson Todd_interview_20250704_231814/",
+  "pending_count": 38,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "79.13",
+      "whisper_rendering": "Dr. Barinsky",
+      "correction": "Dr. (Ernst) Borinski",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Recurring // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "79.29",
+      "whisper_rendering": "Hottie Carter",
+      "correction": "Hodding Carter (II/III)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical Greenville MS *Delta Democrat-Times* white moderate journalist; the Carter family's housekeeper Dorothy Jones invited the SNCC volunteers to swim in their pool // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "79.30",
+      "whisper_rendering": "Spotswood Robinson",
+      "correction": "Spottswood W. Robinson III",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical NAACP Legal Defense Fund attorney; later DC Circuit federal judge // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "79.39",
+      "whisper_rendering": "Anne Romain",
+      "correction": "Anne Romaine",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical SNCC oral historian (1966-67 Anne Romaine collection at UNC archives + Highlander) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'E-ext': 'Recurring Whisper drop of final \"e\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "79.44",
+      "whisper_rendering": "Joe Rao",
+      "correction": "Joseph L. Rauh Jr.",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical UAW general counsel; MFDP Atlantic City legal counsel // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "79.52",
+      "whisper_rendering": "Jerry and Lamar Britten",
+      "correction": "Jerry and Lamar Britton",
+      "confidence": "medium",
+      "source": "local",
+      "notes": "Greenville Black drugstore owners; Speaker's host family for 2nd half of summer 1964 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.19",
+      "whisper_rendering": "Spotswood Robinson",
+      "correction": "Spottswood W. Robinson III",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #79.30 confirmed \u2014 canonical NAACP LDF attorney; later DC Circuit federal judge // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.25",
+      "whisper_rendering": "Dr. Barinsky",
+      "correction": "Dr. (Ernst) Borinski",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #79.13 reinforced // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.38",
+      "whisper_rendering": "Tugulu... Tugelow",
+      "correction": "Tougaloo",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "Multiple variant renderings throughout // [LAYER-5: phantom-rendering, fuzzy=58.8, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.48",
+      "whisper_rendering": "Tugulu",
+      "correction": "Tougaloo",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "recurring // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.51",
+      "whisper_rendering": "Joe Rao",
+      "correction": "Joseph L. Rauh Jr.",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #79.44 reinforced \u2014 canonical UAW general counsel; MFDP Atlantic City legal counsel // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.59",
+      "whisper_rendering": "Cherokee",
+      "correction": "Issaquena (or Sharkey) County",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "\"Muriel was working in Cherokee with... Isakwena. She went to...\" \u2014 speaker self-corrects from Cherokee (NC tribe, not a MS county) to Issaquena MS; Whisper does not catch self-correction. Canonical Issaquena County MS (Mayersville, the seat) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'F-ext': 'Whisper preserves speaker\\'s \"Cherokee\" error but does not catch the self-correct'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.63",
+      "whisper_rendering": "Howdy on her... Hotting Carter / Hottie Carter",
+      "correction": "Hodding Carter (II/III)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #79.29 + transcript pool-swimming anecdote confirmation \u2014 canonical Greenville white moderate journalist // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.64",
+      "whisper_rendering": "Heidi Carter",
+      "correction": "Hodding Carter (III)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Charlie Cobb referred to it in his interview at Southern Mississippi\" \u2014 canonical Hodding Carter III, Greenville-born journalist + Loyalist Democrats co-founder + later State Dept (Carter admin); cross-corpus with Guyot #76.61 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.68",
+      "whisper_rendering": "Mrs. Britten / Jerry and Lamar Britten",
+      "correction": "Mr. and Mrs. Jerry Britton / Mr. and Mrs. Lamar Britton",
+      "confidence": "medium",
+      "source": "local",
+      "notes": "Pass 1 #79.52 reinforced \u2014 Greenville Black drugstore owners; speaker's host family second half summer 1964 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.80",
+      "whisper_rendering": "the latest committee for civil rights under law",
+      "correction": "the Lawyers' Committee for Civil Rights Under Law",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Whisper \"latest\" homophone for \"Lawyers'\"; canonical 1963-founded national civil rights legal organization // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.88",
+      "whisper_rendering": "Morgan Lewis and Bacchius",
+      "correction": "Morgan, Lewis & Bockius",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Whisper \"Bacchius\" for \"Bockius\"; canonical Philadelphia/DC-based law firm where speaker practiced government contracts ~10 years // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.91",
+      "whisper_rendering": "Walter Ruther",
+      "correction": "Walter Reuther",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Walter Ruther, who arrived on Tuesday in the middle of the night. And he worked with the Mondale subcommittee to come up with the president\" \u2014 canonical UAW president Walter Reuther; Whisper \"Ruther\" omits \"e\"; \"president\" likely \"compromise\" or \"proposal\" Whisper error // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.101",
+      "whisper_rendering": "Hottie Carter / Hotting Carter / Heidi Carter",
+      "correction": "Hodding Carter (II + III)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Recurring Whisper variants of \"Hodding\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.102",
+      "whisper_rendering": "Connolly of Texas",
+      "correction": "Gov. John Connally of Texas",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Governor John Connolly of Texas\" \u2014 canonical Gov. John Connally Jr. (TX 1963-69); Whisper \"Connolly\" for \"Connally\"; LBJ's TX political ally + JFK assassination Dallas wounded // [LAYER-5: D3-catalog-contradiction (catalog 'F-ext': '(Gov. John) Connally Jr. (TX)'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.105",
+      "whisper_rendering": "Lawrence of the Committee",
+      "correction": "Chairman (David) Lawrence of the Credentials Committee",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Chairman Lawrence of the Committee\" \u2014 canonical David L. Lawrence, former PA Governor + 1964 DNC Credentials Committee Chairman // [LAYER-5: D3-catalog-contradiction (catalog 'E-ext': 'David L. Lawrence (Credentials Committee Chair)'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.107",
+      "whisper_rendering": "Bill Consler",
+      "correction": "Bill Kunstler",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Bill Consler and Arthur Canoei would become counsel\" \u2014 cross-corpus with Guyot #76.51 (Kansler) \u2014 canonical William Kunstler // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': 'Recurring Whisper rendering of canonical movement lawyer'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.108",
+      "whisper_rendering": "Arthur Canoei",
+      "correction": "Arthur Kinoy",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "recurring (cross-corpus pattern) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Arthur Canoei\" / \"Canoa\" -> \"Arthur Kinoy\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.112",
+      "whisper_rendering": "Hiding Carter family / Hotting Carter / Heidi Carter",
+      "correction": "Hodding Carter family",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "recurring // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': 'Recurring Whisper renderings of canonical Hodding Carter II/III; cross-corpus wi'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "79.P2.141",
+      "whisper_rendering": "the symbolic to seat offer",
+      "correction": "the symbolic two-seat offer",
+      "confidence": "high",
+      "source": "common-noun",
+      "notes": "Pass 1 #79.P2.139 \u2014 recurring \"to seat\" / \"two seat\" Whisper homophone (cross-ref Guyot #76 same pattern) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'O-ext': 'Whisper homophone confusion: \"to seek/seat/seat\" \u2014 canonical 1964 MFDP Atlantic '), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.1",
+      "whisper_rendering": "\"world history\" -> \"oral history\" recurring interviewer-template homophone",
+      "correction": "Whisper recurring homophone in interview-opening template",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Already in catalog A (\"Southern World History Program\" -> \"Southern Oral History Program\") but the bare \"world history\" garble in other interview-opening templates needs its own sweep row. Add to catalog A frequency notation. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.2",
+      "whisper_rendering": "\"Walter Ruther\" -> \"Walter Reuther\"",
+      "correction": "Severe Whisper omission of \"e\" in UAW president's surname",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog C (canonical figures). Reuther was central to the canonical 1964 Atlantic City MFDP pressure operation; getting the name right is load-bearing for the speaker's distinctive scholarly contribution. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'L-ext': '\"Walter Ruther\" -> \"Walter Reuther\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.3",
+      "whisper_rendering": "\"Morgan Lewis and Bacchius\" -> \"Morgan, Lewis & Bockius\"",
+      "correction": "Severe Whisper garble of canonical major DC/Philadelphia law firm name",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog C or new sub-section \"civil-rights-adjacent legal institutions.\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Morgan Lewis and Bacchius\" -> \"Morgan, Lewis & Bockius\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.4",
+      "whisper_rendering": "\"the latest committee for civil rights under law\" -> \"Lawyers' Committee for Civil Rights Under Law\"",
+      "correction": "Severe Whisper homophone of canonical 1963-founded civil-rights legal organization",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog B (civil rights organizations & federal agencies). // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.6",
+      "whisper_rendering": "\"Bill Consler\" -> \"Bill Kunstler\"",
+      "correction": "Recurring Whisper rendering of canonical movement lawyer",
+      "confidence": "high",
+      "source": "catalog-new (cross-corpus)",
+      "notes": "Already cross-corpus with Guyot #76.51 (\"Kansler\"); add as a \"Kunstler variants\" entry in catalog C. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.7",
+      "whisper_rendering": "\"Arthur Canoei\" / \"Canoa\" -> \"Arthur Kinoy\"",
+      "correction": "Severe Whisper garble; cross-corpus with Guyot #76.52 (\"Kanaui\")",
+      "confidence": "high",
+      "source": "catalog-new (cross-corpus)",
+      "notes": "Pattern reinforced. Add to catalog C. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Arthur Canoei\" / \"Canoa\" -> \"Arthur Kinoy\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.8",
+      "whisper_rendering": "\"Anne Romain\" -> \"Anne Romaine\"",
+      "correction": "Recurring Whisper drop of final \"e\"",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog E (pre-Movement and supporting figures). Anne Romaine is the PRIMARY archival source for Anderson Todd's MFDP research \u2014 getting the name right is load-bearing. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.9",
+      "whisper_rendering": "\"Spotswood Robinson\" -> \"Spottswood W. Robinson III\"",
+      "correction": "Whisper drops the second \"t\" in canonical NAACP LDF attorney's first name",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog C. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'L-ext': 'Spottswood W. Robinson III'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.12",
+      "whisper_rendering": "\"Cherokee\" -> \"Issaquena\" / \"Sharkey\" county self-correction",
+      "correction": "Whisper preserves speaker's \"Cherokee\" error but does not catch the self-correction structurally",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog F geographic. Issaquena County MS (Mayersville seat) was canonical SNCC field territory; speaker confuses it briefly with the Cherokee Nation (NC) before self-correcting. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.14",
+      "whisper_rendering": "\"to seat\" / \"to seek\" Whisper homophone confusion at MFDP convention",
+      "correction": "Cross-corpus with Guyot #76.P3.13",
+      "confidence": "high",
+      "source": "catalog-existing",
+      "notes": "Reinforces. Add Anderson Todd #79 to the row's \"Example entries\" column. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': '\"to seat\" / \"to seek\" Whisper homophone confusion at MFDP convention'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.16",
+      "whisper_rendering": "\"Heidi Booth\" -> \"Heather Booth\" recurring Whisper homophone",
+      "correction": "First-name garble of canonical SNCC + Citizen Action founder",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog C. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.17",
+      "whisper_rendering": "\"Heidi Carter\" / \"Hotting Carter\" / \"Hottie Carter\" -> \"Hodding Carter\" cluster",
+      "correction": "Recurring Whisper renderings of canonical Hodding Carter II/III; cross-corpus with Guyot #76.61 (\"Harding Carter\")",
+      "confidence": "high",
+      "source": "catalog-new (cross-corpus)",
+      "notes": "Add a \"Hodding Carter variants\" entry in catalog C with the full Whisper-rendering variant list. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "79.P3.20",
+      "whisper_rendering": "\"Mississippi students union, the high school students\" -> \"Mississippi Student Union\"",
+      "correction": "Recurring Whisper compression of canonical MFDP youth organization name",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog B. // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': 'Mississippi Student Union'), ensemble-adjudication-pending]"
+    }
+  ]
+}

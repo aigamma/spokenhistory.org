@@ -1,6 +1,6 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
-**Last updated:** 2026-05-23 (post-Layer-5 fidelity-deploy)
+**Last updated:** 2026-05-24 (Pass 6 low-confidence residual round committed retroactively + governance gap noted)
 **Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~9.3 MB post-Pass-4)
 **Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (140 entries, 291 aliases — ~80+ Pass-4 candidates pending corpus commit)
 **Hard deadline:** 2026-05-27 WWU team meeting (5 days from this writing)
@@ -327,7 +327,24 @@ Approach 2 is the Smithsonian-grade recommendation; approach 1 is the deadline-d
 
 ---
 
-## Problem 9 — Layer 5 corpus-global fidelity findings (1,758 advisory items) — **PARTIALLY RESOLVED 2026-05-23 (Layer 5 fidelity-deploy)**
+## Problem 9 — Layer 5 corpus-global fidelity findings (1,758 advisory items) — **PARTIALLY RESOLVED 2026-05-23 (Layer 5 fidelity-deploy) + 2026-05-24 (Pass 6 partial coverage of D2-ambiguous residual)**
+
+### Additional progress 2026-05-24 (Pass 6 low-confidence residual round)
+
+Pass 6 (Session 5, see AUDIT_TRAIL.md) addressed **~9% of the D2-ambiguous residual (~104 items of ~1,174)** via per-entry adversarial resolution:
+
+| Track | Coverage | Status |
+| --- | --- | --- |
+| Track 3 — Low-conf adversarial resolution | 40 entries / 82 items resolved (39 rejected, 21 unresolved, 10 narrowed, 4 confirmed, 4 alternate, 4 resolved-high) | **Resolutions generated, NOT applied to master MD.** No `apply_low_conf_resolutions.py` exists yet. The 82 vetted resolutions are sitting in `transcripts/low_conf_resolutions/entry_NNN.json` awaiting an apply-back script. |
+| Track 4 — Layer 5 pending residual | 11 entries sliced (#2, #11, #15, #34, #38, #39, #74, #76, #79, #100, #113) | **Sliced only — no resolution agent ever ran.** No `layer5_pending_resolutions/` directory exists. Either spawn 11 parallel subagents or scope-acknowledge deferral to the Kiro/Kimi/Codex/Gemini ensemble. |
+
+**Net effect on this Problem:** the ~1,070 D2-ambiguous rows that Pass 6 did not touch are still annotated `[LAYER-5: D2-ambiguous, ensemble-adjudication-pending]` and still belong to the ensemble handoff. The ~82+22 rows Pass 6 picked up are NOT yet reflected in master MD; once Track 3+4's apply-back lands, the ensemble handoff queue shrinks by ~104 items.
+
+**Next-session action items to fully close Track 3+4:**
+
+1. Write `transcripts/apply_low_conf_resolutions.py` (consume `low_conf_resolutions/`, rewrite master MD `correction` cells, preserve original via Layer 6 audit annotation in Notes column; idempotent). ~1–2 hrs.
+2. Spawn 11 parallel resolution subagents for Track 4 (single message, all parallel; ~10 min wall-clock). Write outputs to a new `layer5_pending_resolutions/` directory and run the same apply-back script.
+3. Re-run `scripts/apply_corrections.py` to refresh the 19 stale `transcripts/corrected/<entry>/manifest.json` files (Pass 6 Track 2 mutated the .txt files but did not regenerate manifests).
 
 ### Resolved 2026-05-23 (Layer 5 fidelity-deploy)
 

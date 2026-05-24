@@ -1,0 +1,35 @@
+{
+  "entry_number": 38,
+  "subject": "Emmett W. Bassett and Priscilla Tietjen Bassett",
+  "source_dir": "transcripts/raw/Emmett W. Bassett and Priscilla Tietjen Bassett_interview_20250704_201849/",
+  "pending_count": 3,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "38.24",
+      "whisper_rendering": "Bob Rustin / Tester",
+      "correction": "Bayard Rustin",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Bob Rustin had left this group and had gone to Africa to try to stop the French bomb\"; canonical Bayard Rustin (1912\u201387); his 1959 trip to Ghana attempting to interfere with French nuclear testing in the Sahara // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "38.P2.6",
+      "whisper_rendering": "Ella Baker (implied via In Friendship)",
+      "correction": "Ella Baker",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "The canonical In Friendship co-founder (with Rustin, Levison, Thomas) at the 1955 New York committee that the Bassetts were active in; same as Cotton #29.14 reference // [LAYER-5: phantom-rendering, fuzzy=70.0, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "38.P3.4",
+      "whisper_rendering": "\"Lyndon Johnson\" / \"LBJ\" in War-on-Poverty context",
+      "correction": "Lyndon B. Johnson",
+      "confidence": "correct",
+      "source": "civil_rights_facts.json",
+      "notes": "LBJ is canonical (in corpus line 294). The Pass 2 tail-sweep row 38.P2T.1 mention of Harrington's *The Other America* catalyzing the War on Poverty implicitly cites LBJ. No correction needed but worth confirming canonical context. // [LAYER-5: phantom-rendering, fuzzy=78.6, ensemble-adjudication-pending]"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "entry_number": 34,
+  "subject": "Ekwueme Michael Thelwell",
+  "source_dir": "transcripts/raw/Ekwueme Michael Thelwell_interview_20250704_200252/",
+  "pending_count": 30,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "34.9",
+      "whisper_rendering": "Charlotte Cobb",
+      "correction": "Charlie Cobb (Charles E. Cobb Jr.)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"There was Quirtland Cox, as was Charlotte Cobb\"; Charlie Cobb is the canonical form (the SNCC field secretary, later journalist) \u2014 \"Charlotte\" is a gendered Whisper error // [LAYER-5: D3-catalog-contradiction (catalog 'C': 'Charles E. Cobb Jr. (Charlie Cobb)'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "34.11",
+      "whisper_rendering": "Slave Sellers",
+      "correction": "Cleve Sellers (Cleveland Sellers)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"As was slave sellers who came from South Carolina into Nug\"; canonical SNCC leader (transcript #22); \"Slave Sellers\" is a particularly damaging Whisper error // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': 'Cleveland L. Sellers Jr. (\"Cleve Sellers\")'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "34.15",
+      "whisper_rendering": "the bomb (Birmingham)",
+      "correction": "the Bombingham / Birmingham",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "\"He was from out of the bomb\"; \"Bombingham\" was the canonical SNCC/SCLC nickname for Birmingham during the 1963 bombings // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "34.50",
+      "whisper_rendering": "Tugulu",
+      "correction": "Tougaloo",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Same canonical pattern as Derby #32.22, Holloway #33.40, Sellers #22 // [LAYER-5: phantom-rendering, fuzzy=66.7, ensemble-adjudication-pending] // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "34.P2.12",
+      "whisper_rendering": "the bomb / out of the bomb",
+      "correction": "(Bombingham) Birmingham, Alabama",
+      "confidence": "speaker-originating",
+      "source": "canonical",
+      "notes": "Additional context for Pass-1 #34.15; \"Bombingham\" was the SNCC/SCLC nickname for Birmingham in the bombing era (1957\u201363) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.1",
+      "whisper_rendering": "former (recurring; \"former meets me\", \"former nurse wanted me\")",
+      "correction": "Forman (James Forman)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"And former meets me, our sense of why to meet me and drive me up to the SNCC office\"; \"I'm very flattered that former nurse wanted me, don't worry\"; canonical James Forman, SNCC executive secretary \u2014 Whisper repeatedly substitutes \"former\" for \"Forman\"; recurring catalog pattern (#22, #30, #32, #44) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.18",
+      "whisper_rendering": "the polygiotoe",
+      "correction": "the prologue (?)",
+      "confidence": "low",
+      "source": "common-noun",
+      "notes": "Same context as #34.P2T.17 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.28",
+      "whisper_rendering": "MSR final",
+      "correction": "MFDP first / Ms. (Fannie Lou) Hamer",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"first MSR final to Hema\"; likely \"first Mrs. Hamer\" \u2014 Thelwell's first introduction to Hamer // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.29",
+      "whisper_rendering": "MSNP candidates",
+      "correction": "MFDP candidates",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Mrs. Santa Lu Hemer, MSNP candidates, is what we call them\"; canonical MFDP (Mississippi Freedom Democratic Party) \u2014 recurring catalog pattern // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.30",
+      "whisper_rendering": "MFBP letterhead",
+      "correction": "MFDP letterhead",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"I sent it out on MFDP letterhead. And I hadn't thought about it\"; later \"It was sent out on the MFBP letterhead as a...\"; canonical MFDP // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.41",
+      "whisper_rendering": "Robert Spake / Bob Spake / Bob Speck (recurring)",
+      "correction": "Robert Spike (Rev. Robert W. Spike)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"after discussions with Robert Spake and the Arabisans\"; \"Bob Speck, I said, Jesus Christ\"; \"Bob Spake said, glad you came\"; canonical Rev. Robert W. Spike (1923\u201366), executive director of the National Council of Churches' Commission on Religion and Race; Freedom Summer organizer; murdered Oct 1966 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'O-ext': 'Bob Spike (Rev. Robert W. Spike)'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.46",
+      "whisper_rendering": "Joe Roe / Joe Ro / Joe Rao (recurring)",
+      "correction": "Joseph Rauh / Joe Rauh (Joseph L. Rauh Jr.)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"you better discuss it with Joe Roe. And Bob said, well, I just left Joe Roe's office. And Joe said we could be seated\"; canonical Joseph L. Rauh Jr. (1911\u201392), UAW general counsel, ADA co-founder, key DC civil-rights lobbyist; argued the MFDP credentials case at the 1964 Atlantic City convention // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.48",
+      "whisper_rendering": "Rad Featherstone / Ralph (recurring)",
+      "correction": "Ralph Featherstone (SNCC field secretary)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"And we recruited Rad Featherstone. Now Feather...\"; canonical Ralph Featherstone (SNCC field secretary; assistant director of Freedom Schools 1964; killed in 1970 Bel Air MD car-bomb with Che Payne); deserves ground-truth corpus entry // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.49",
+      "whisper_rendering": "Stiklpande / Stiklpande coffees / Snickoffees",
+      "correction": "Snick coffees / SNCC's office",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"we'd saw it at the clothes and we'd get boxes... So they used to come in\"; \"the Stiklpande safe way and stop and shop\"; canonical SNCC's clothing-and-food drives \u2014 Whisper rendering \"Snick offices\" as \"Stiklpande\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': 'SNCC'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.85",
+      "whisper_rendering": "Senator Bob Castanmar from Wisconsin",
+      "correction": "(Rep.) Robert Kastenmeier of Wisconsin",
+      "confidence": "high",
+      "source": "canonical-new",
+      "notes": "\"Guy from Wisconsin, Castanmar, Senator Bob Castanmar from Wisconsin. The most interesting thing is that at Edita was standing up to this SNCC book, she married one of Castanmar's sons or something like that\"; canonical Robert W. Kastenmeier (1924\u20132015), Democratic Congressman (not senator) from Wisconsin's 2nd district 1959\u201391; voting-rights ally // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.98",
+      "whisper_rendering": "Joe Rao / Joe Rao felt that very strong",
+      "correction": "Joe Rauh (Joseph L. Rauh Jr.)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Additional in-transcript instance of #34.P2T.46 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.109",
+      "whisper_rendering": "waspegai / waspigay",
+      "correction": "WASP-gay / white-Anglo-Saxon-Protestant gay",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "\"very dignified waspegai, who looked like central caste\"; speaker's intersectional descriptor \u2014 Paul Moore was a white WASP and was bisexual (publicly disclosed posthumously by daughter Honor Moore) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.111",
+      "whisper_rendering": "Bob Speck",
+      "correction": "Bob Spike (Rev. Robert W. Spike)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Same as #34.P2T.41 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.114",
+      "whisper_rendering": "Mr. Charlie / blues from Mr. Charlie",
+      "correction": "*Blues for Mister Charlie* (James Baldwin play, 1964)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"blues from Mr. Charlie, Walgreens, played, had been on Broadway and created a great leader controversy\"; canonical *Blues for Mister Charlie* (James Baldwin, 1964 Broadway) \u2014 about the Emmett Till murder // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.121",
+      "whisper_rendering": "Macomb",
+      "correction": "McComb, Mississippi",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "\"He became project director in Macomb\"; canonical McComb, Pike County MS \u2014 recurring catalog pattern #F // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.131",
+      "whisper_rendering": "Goodman, Shunian, Traynor",
+      "correction": "Goodman, Schwerner, Chaney",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"we got in the door because of Goodman, Shunian, Traynor, because we took all those things to the National State Conventions\"; canonical Goodman/Schwerner/Chaney \u2014 recurring catalog pattern // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2 tail-sweep",
+      "row_id": "34.P2T.155",
+      "whisper_rendering": "Walter Ruther / Reuther (recurring)",
+      "correction": "Walter Reuther (UAW president)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Walter Ruther sent out a telegram\"; \"called this meeting and gets who he brings to speak for him. But of course, got bad always\"; canonical Walter Reuther (1907\u201370), UAW president 1946\u201370, AFL-CIO vice president // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.1",
+      "whisper_rendering": "\"Snick\" / \"Stiklpande\" recurring throughout",
+      "correction": "SNCC (\"Snick\" pronunciation)",
+      "confidence": "high",
+      "source": "catalog #B",
+      "notes": "Catalog #B already lists \"snake / sneak / Snick / Sudamont / Student Non-Balance Association\" as the SNCC rendering set; Pass-2 #34.P2T.49 adds the novel \"Stiklpande\" variant. Pass 3 confirms this is a new catalog-#B candidate variant to back-file: \"Snick\" + Stik/Pande compounds suggesting Whisper's struggle with the partial-acronym \"SNCC\" + \"office\" stem (\"Snick office\" \u2192 \"Stiklpande\"). // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.2",
+      "whisper_rendering": "\"former\" / \"former meets me\" recurring as \"Forman\"",
+      "correction": "James Forman (catalog #C entry)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass-2 #34.P2T.1 catches this; Pass 3 cross-references to catalog #C \"Foreman / Jim Foreman \u2192 James Forman\" \u2014 the doubled-vowel-insertion + common-noun-substitution pattern. New variant to back-file: \"former\" (homonym substitution, distinct from \"Foreman\" doubled-vowel form). // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.5",
+      "whisper_rendering": "\"Bob Speck\" / \"Bob Spake\" (Pass-2 #34.P2T.41 / .P2T.111)",
+      "correction": "Bob Spike (Rev. Robert W. Spike)",
+      "confidence": "high",
+      "source": "new catalog",
+      "notes": "Two distinct Whisper renderings for the same canonical NCC figure; back-file to catalog #C as a new entry. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.6",
+      "whisper_rendering": "\"Mrs. Hema / Mrs. Hemmam / Mrs. Santa Lu Hemer\" (Pass-2 #34.P2T.27)",
+      "correction": "Fannie Lou Hamer (catalog #C entry)",
+      "confidence": "high",
+      "source": "catalog #C",
+      "notes": "Confirms catalog #C \"Fan of Lou Hamer / Final Luhamer / Mrs. Vanity Lou Hamer \u2192 Fannie Lou Hamer\"; the \"Santa Lu Hemer\" variant is novel and should be back-filed. // [LAYER-5: phantom-rendering, fuzzy=64.4, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.7",
+      "whisper_rendering": "\"Sons of Malcolm\" / \"Acura\" / \"Castanmar from Wisconsin\" \u2014 all Pan-African + Congressional cross-references",
+      "correction": "Catalog gaps",
+      "confidence": "high",
+      "source": "catalog #C/#D",
+      "notes": "The Thelwell transcript surfaces an unusually-dense cluster of Black-congressional figures (Dawson, Powell, Nix, Hawkins, Mink, Conyers) that don't yet have catalog #C entries; recommend a new catalog subsection \"C.1 Black congressional figures (1964\u201380)\" to consolidate. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'D': 'Sons of Malcolm (1966 pre-naming of BPP, honoring Malcolm X)'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.8",
+      "whisper_rendering": "\"MSR final\" / \"MSNP candidates\" / \"MFBP letterhead\" (Pass-2 #34.P2T.28 / .P2T.29 / .P2T.30)",
+      "correction": "MFDP (Mississippi Freedom Democratic Party)",
+      "confidence": "high",
+      "source": "catalog #B",
+      "notes": "Catalog #B already lists \"MFDP\" but the variants here (MSR/MSNP/MFBP \u2014 all 3-4-letter mishearings) are new catalog-back-file candidates demonstrating the high failure rate on this acronym. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.9",
+      "whisper_rendering": "\"the goodman and churned\" / \"Goodman, Shunian, Traynor\" (Pass-2 #34.P2T.57 / .P2T.131)",
+      "correction": "Schwerner, Goodman, Chaney",
+      "confidence": "high",
+      "source": "catalog #G",
+      "notes": "Confirms catalog #G \"swan, swan, swan, and chaining \u2192 Schwerner, Chaney\" \u2014 adds the \"churned\" and \"Shunian\" / \"Traynor\" variants. Back-file. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "34.P3.11",
+      "whisper_rendering": "\"the Alsop brothers\" descriptor \"waspegai\" (Pass-2 #34.P2T.108 / .P2T.109)",
+      "correction": "Paul Moore Jr. as WASP-gay descriptor",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "Speaker's intersectional descriptor for Bishop Paul Moore Jr. is preserved as speaker-originating; Pass 3 notes this is one of the most-canonical first-person disclosures of the intersection of WASP-establishment and LGBTQ identity in 1960s civil-rights movement; warrants preservation as-is. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "entry_number": 113,
+  "subject": "Sam Mahone",
+  "source_dir": "transcripts/raw/Sam Mahone_interview_20250705_013850/",
+  "pending_count": 15,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "113.12",
+      "whisper_rendering": "stick activists / Stiff",
+      "correction": "SNCC",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Recurring // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "113.14",
+      "whisper_rendering": "Sheriff Chapel / Fred Chapel",
+      "correction": "Sheriff Fred Chappell",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "\"the sheriff's chapel\"; canonical Americus sheriff; King's \"meanest man in the world\" quote // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "113.28",
+      "whisper_rendering": "two glue",
+      "correction": "Tougaloo (College)",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Recurring // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "113.29",
+      "whisper_rendering": "Mary Kate Bell Fishbel / Medicaid Fish Bill",
+      "correction": "Mary Kate Bell Fishbel",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "\"Medicaid Fish Bill was the first woman to qualify for the Democratic primary in some of the counties\"; canonical 1965 Americus white-line voter arrest // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.13",
+      "whisper_rendering": "stick activists",
+      "correction": "SNCC activists",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "Recurring throughout transcript; Whisper consistently renders SNCC as \"stick\" or \"snake\" or \"sticks\" or \"stick rookers\"; cross-corpus very high // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.26",
+      "whisper_rendering": "sit at prison",
+      "correction": "the Sumter County prison farm",
+      "confidence": "high",
+      "source": "common-noun",
+      "notes": "\"they sent us to prison, to sit at prison\" \u2014 Whisper rendered \"Sumter prison\" or \"the city prison\" as \"sit at prison\"; canonical Sumter County penal farm // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.39",
+      "whisper_rendering": "sit at prison",
+      "correction": "Sumter County prison farm / sentence to prison",
+      "confidence": "high",
+      "source": "common-noun",
+      "notes": "Same as P2.26 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.40",
+      "whisper_rendering": "Sheriff Chapel",
+      "correction": "Sheriff (Fred) Chappell",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "Pass 1 caught (113.14); canonical Americus \"meanest man in the world\" sheriff (King's quote) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.72",
+      "whisper_rendering": "Medicaid Fish Bill",
+      "correction": "Mary Kate (Bell) Fishbel",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "Pass 1 caught (113.29); same canonical figure rendered \"Medicaid Fish Bill\" in Whisper output // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.91",
+      "whisper_rendering": "sit at prison",
+      "correction": "sentence prison / Sumter prison",
+      "confidence": "high",
+      "source": "common-noun",
+      "notes": "Same as P2.26 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.92",
+      "whisper_rendering": "two glue",
+      "correction": "Tougaloo (College)",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "Pass 1 caught (113.28); recurring catalog pattern // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.115",
+      "whisper_rendering": "South of Georgia",
+      "correction": "South Georgia / Southwest Georgia",
+      "confidence": "medium",
+      "source": "geographic",
+      "notes": "Recurring throughout transcript // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "113.P2.119",
+      "whisper_rendering": "South of Georgia",
+      "correction": "Southwest Georgia",
+      "confidence": "medium",
+      "source": "geographic",
+      "notes": "\"Southwest Georgia project for Communification\" was the canonical project name; Whisper rendered \"South of Georgia\" elsewhere // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "113.P3.1",
+      "whisper_rendering": "\"Civil Rights Act of 1964\" reference (canonical July 2, 1964 signing \u2014 also relevant to canonical July 4 attack)",
+      "correction": "Civil Rights Act of 1964 (signed July 2, 1964 by LBJ)",
+      "confidence": "correct",
+      "source": "civil_rights_facts.json",
+      "notes": "The transcript references the canonical July 1964 Hasty House attack as occurring \"the night the Civil Rights Act was signed\"; Civil Rights Act was signed July 2, 1964, so the attack was July 2-3, 1964 (not July 4). Reinforce canonical date for adversarial reviewer; civil_rights_facts.json has \"Civil Rights Act of 1964\" entry (line 51). // [LAYER-5: phantom-rendering, fuzzy=70.8, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "113.P3.2",
+      "whisper_rendering": "\"Tougaloo (College)\" scholarships to Mahone 1966",
+      "correction": "Tougaloo College (Jackson MS HBCU)",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Pass 1 caught \"two glue \u2192 Tougaloo\" (113.28). Reinforce: Tougaloo is the canonical MS HBCU + anti-Vietnam-protest organizing site Mahone references for his post-Americus 1966 cohort. Worth catalog-row-F geographic reinforcement. // [LAYER-5: phantom-rendering, fuzzy=58.8, ensemble-adjudication-pending]"
+    }
+  ]
+}

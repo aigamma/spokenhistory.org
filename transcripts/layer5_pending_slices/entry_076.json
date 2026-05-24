@@ -1,0 +1,287 @@
+{
+  "entry_number": 76,
+  "subject": "Lawrence Guyot",
+  "source_dir": "transcripts/raw/Lawrence Guyot_interview_20250704_230421/",
+  "pending_count": 31,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.10",
+      "whisper_rendering": "Tukeloo / Tugulu / Tu Glue",
+      "correction": "Tougaloo College",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Recurring // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.18",
+      "whisper_rendering": "the Tugeloo Nine",
+      "correction": "the Tougaloo Nine",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Canonical March 27, 1961 Jackson Municipal Library sit-in (the canonical first MS sit-in) // [LAYER-5: phantom-rendering, fuzzy=68.8, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.24",
+      "whisper_rendering": "Levin Brown",
+      "correction": "LeVon Brown",
+      "confidence": "medium",
+      "source": "canonical",
+      "notes": "Canonical SNCC field worker (Mississippi) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.43",
+      "whisper_rendering": "Warthall County",
+      "correction": "Walthall County, Mississippi",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Canonical SW MS county // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.45",
+      "whisper_rendering": "Faris County",
+      "correction": "Forrest County, Mississippi",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Canonical Hattiesburg MS county // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.65",
+      "whisper_rendering": "Cassuh-bach / Katzenbach",
+      "correction": "Nicholas Katzenbach",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical US Att Gen 1965\u201366 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.66",
+      "whisper_rendering": "Walter Fontroy / Walter Fountain",
+      "correction": "Walter Fauntroy",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical SCLC + DC delegate to Congress 1971\u201391 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "76.71",
+      "whisper_rendering": "Bayard Rustin's \"From Protest to Politics\"",
+      "correction": "Bayard Rustin's \"From Protest to Politics\" (*Commentary* Feb 1965)",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Canonical Rustin essay arguing for SNCC-style direct action to give way to political coalition-building // [LAYER-5: phantom-rendering, fuzzy=62.5, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.35",
+      "whisper_rendering": "Warthall County",
+      "correction": "Walthall County",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Pass 1 #76.43 confirmed // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.41",
+      "whisper_rendering": "Howdy Spurry",
+      "correction": "Hattiesburg",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "\"then I leave then go to Howdy Spurry\" + \"We were driving in a car from Howdy Spurry, Staxon\" \u2014 Whisper renders \"Hattiesburg\" as \"Howdy Spurry\"; catalog pattern (F #21, #33, #36) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'F-ext': 'High-frequency severe Whisper geographic garble pair in same transcript span'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.45",
+      "whisper_rendering": "Linda Johnson",
+      "correction": "Lyndon Johnson",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"there was a request by Linda Johnson to be a moratorium on demonstrations\" \u2014 Whisper \"Linda\" for \"Lyndon\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.53",
+      "whisper_rendering": "Hadisburg",
+      "correction": "Hattiesburg",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Catalog pattern (F \u2014 pervasive) \u2014 variant rendering throughout // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.57",
+      "whisper_rendering": "swan-a-chain and good men",
+      "correction": "Schwerner, Chaney, and Goodman",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "\"represent the government in the case of swan-a-chain and good men\" \u2014 catalog pattern (G \u2014 \"swan, swan, swan, and chaining\" \u2192 \"Schwerner, Chaney\"; #41, #44); canonical 1967 *United States v. Price* federal civil rights conspiracy trial of the Mississippi Burning defendants // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.59",
+      "whisper_rendering": "Cassuh-bach / Katzenbach, who was then testified",
+      "correction": "Nicholas Katzenbach, who then testified",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #76.65 confirmed \u2014 canonical US Att Gen 1965-66 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.64",
+      "whisper_rendering": "Lewis Martin",
+      "correction": "Louis Martin",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"Lewis Martin and others talked to the President to call Dr. King's wife\" \u2014 canonical Louis E. Martin, longtime DNC Black voter-outreach strategist, 1960 campaign architect of the JFK-to-Coretta phone call // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.69",
+      "whisper_rendering": "Hot Maternity Boat",
+      "correction": "Hartman Turnbow",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "\"Hot Maternity Boat, as you know, is a man who's accused of destroying his house, setting his house on fire\" \u2014 severe Whisper garble of \"Hartman Turnbow\" (catalog C); same story as Pass 1 #76.33 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Hot Maternity Boat\" / \"Mr. Timebow\" -> \"Hartman Turnbow\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.70",
+      "whisper_rendering": "Mr. Timebow",
+      "correction": "Mr. Turnbow",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Variant rendering same passage // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Hot Maternity Boat\" / \"Mr. Timebow\" -> \"Hartman Turnbow\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.81",
+      "whisper_rendering": "Allah comes to voting rights act",
+      "correction": "along comes the Voting Rights Act",
+      "confidence": "high",
+      "source": "common-noun",
+      "notes": "\"And Allah comes to voting rights act\" \u2014 Whisper \"Allah\" for \"along\" (Pass 1 didn't catch this homophone) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.82",
+      "whisper_rendering": "Vodernich Act",
+      "correction": "Voting Rights Act (1965)",
+      "confidence": "high",
+      "source": "common-noun",
+      "notes": "\"the impact of the 1965 Vodernich Act\" \u2014 Whisper severe garble of \"Voting Rights\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.102",
+      "whisper_rendering": "Gloucester Current",
+      "correction": "Gloster Current",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"You got Gloucester Current, you got Roy Wilkins\" \u2014 canonical Gloster B. Current, NAACP Director of Branches 1947-78; Whisper \"Gloucester\" for \"Gloster\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "76.P2.114",
+      "whisper_rendering": "Faris County",
+      "correction": "Forrest County",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Pass 1 #76.45 reinforced \u2014 catalog pattern; Hattiesburg's county // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.2",
+      "whisper_rendering": "\"Howdy Spurry\" -> \"Hattiesburg\" + \"Staxon\" -> \"Jackson\" co-occurrence",
+      "correction": "High-frequency severe Whisper geographic garble pair in same transcript span",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Pass 2 caught these individually; Pass 3 promotes to a paired catalog F entry given they co-occur in the same Hattiesburg-to-Jackson route description. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.3",
+      "whisper_rendering": "\"Allah comes to voting rights act\" -> \"along comes the Voting Rights Act\"",
+      "correction": "Theological misattribution \u2014 Whisper \"Allah\" homophone for \"along\"",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "High-damage homophone failure; would publish in Smithsonian summary as a theological framing if not caught. Add to catalog G. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.4",
+      "whisper_rendering": "\"Vodernich Act\" -> \"Voting Rights Act\"",
+      "correction": "Severe Whisper garble of canonical 1965 federal statute",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "High-damage canonical-statute-name garble. Add to catalog G common-noun. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'G-ext': '\"Vodernich Act\" -> \"Voting Rights Act\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.5",
+      "whisper_rendering": "\"Hot Maternity Boat\" / \"Mr. Timebow\" -> \"Hartman Turnbow\"",
+      "correction": "Recurring severe Whisper rendering of canonical Holmes County leader",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "High-damage canonical-figure garble; co-occurs with \"Hartman Turnbull\" from existing catalog C. Promote \"Hot Maternity Boat\" to catalog C alongside existing entry. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Hot Maternity Boat\" / \"Mr. Timebow\" -> \"Hartman Turnbow\"'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.6",
+      "whisper_rendering": "\"Hardly lot\" -> \"Hardy Lott\"",
+      "correction": "Greenwood MS segregationist attorney who defended Byron De La Beckwith at the Medgar Evers murder trials",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Canonical adversary figure not in master catalog; should be added to catalog C (Mississippi segregationist legal apparatus). // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': 'Hardy Lott'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.7",
+      "whisper_rendering": "\"Gloucester Current\" -> \"Gloster Current\"",
+      "correction": "NAACP Director of Branches 1947-78 (longest tenure of any NAACP national staff member); canonical Roy Wilkins lieutenant",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog C (NAACP figures). // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': 'Gloster Current'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.8",
+      "whisper_rendering": "\"Lewis Martin\" -> \"Louis Martin\"",
+      "correction": "DNC Black voter-outreach strategist; 1960 JFK-to-Coretta phone-call architect",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to catalog E (pre-Movement and supporting figures). // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'E-ext': 'Louis Martin'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.10",
+      "whisper_rendering": "\"swan-a-chain and good men\" -> \"Schwerner, Chaney, and Goodman\"",
+      "correction": "Already in catalog G as variant; Pass 3 confirms severity and adds Guyot context",
+      "confidence": "high",
+      "source": "catalog-existing",
+      "notes": "Reinforces catalog G existing pattern; Guyot's reference is during *United States v. Price* (1967) federal civil rights conspiracy trial. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.12",
+      "whisper_rendering": "\"Bollock-Courtney Committee\" -> Student Nonviolent Coordinating Committee",
+      "correction": "Severe Whisper garble of full SNCC name",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "High-damage garble of the canonical organization full name. Add to catalog B alongside existing \"snake/sneak/Snick\" variants. // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': 'Student Nonviolent Coordinating Committee'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "76.P3.13",
+      "whisper_rendering": "\"the symbolic to seat offer\" / \"1,200 telegrams... to seek\" -> \"two-seat\" / \"to seat\"",
+      "correction": "Whisper homophone confusion: \"to seek/seat/seat\" \u2014 canonical 1964 MFDP Atlantic City compromise terminology",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Cross-corpus with Anderson Todd #79.P2.141; same homophone pair. Add to catalog G as a sweep pattern for MFDP convention discussions. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

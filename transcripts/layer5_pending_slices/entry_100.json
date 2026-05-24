@@ -1,0 +1,359 @@
+{
+  "entry_number": 100,
+  "subject": "Raylawni G. Branch and Jeanette Smith",
+  "source_dir": "transcripts/raw/Raylawni G. Branch and Jeanette Smith_interview_20250705_004222/",
+  "pending_count": 39,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.11",
+      "whisper_rendering": "Coffinchett",
+      "correction": "Coffeyville (MS, near Yazoo) or \"Hot Coffee\" (Covington County MS)",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "\"she ran off from it's a little area out near Prenniss, Coffinchett\"; uncertain \u2014 both candidates are real small MS communities near Prentiss; could also be \"Coffeeville\" (MS) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.13",
+      "whisper_rendering": "Cagins / cagin",
+      "correction": "Cajun(s)",
+      "confidence": "high",
+      "source": "Stage-3 LLM",
+      "notes": "\"Frenchmen out of originally out of Newfoundland and they... and the Native Americans\"; speaker means Cajuns (Acadians from Nova Scotia, not Newfoundland \u2014 possibly speaker's own historical conflation, not a Whisper error) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.19",
+      "whisper_rendering": "Mr. Damon",
+      "correction": "Mr. (Vernon) Dahmer",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "\"Mr. Damon was before Mr. Fairly\" \u2014 confirmed via context as Dahmer (NAACP president before JC Fairley); also \"Mr. Damon was one of them\" (referring to Shady Grove Baptist Church congregation, which is canonical Vernon Dahmer's church) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.20",
+      "whisper_rendering": "Mr. Damer",
+      "correction": "Mr. (Vernon) Dahmer",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "\"Mr. Damer died January 10th, 1966\"; canonical Vernon Dahmer's assassination by Klan firebombing // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.21",
+      "whisper_rendering": "Mr. Damard",
+      "correction": "Mr. (Vernon) Dahmer",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Same canonical date \"January 10, 1966\" \u2014 confirmed identification // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.35",
+      "whisper_rendering": "Mr. Knauer",
+      "correction": "Mr. (Clyde) Kennard",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "\"they tried to talk him out of coming out here each time that last time he came, he came alone... they tried to talk Mr. Knauer out of them?\"; same person, alternate Whisper rendering // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.36",
+      "whisper_rendering": "Mr. Canard",
+      "correction": "Mr. (Clyde) Kennard",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "\"Mr. Canard had come to Hadithworth to help his mother\"; same person; recurring throughout the transcript // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'E': 'Clyde Kennard (MS Southern College pre-Meredith integration martyr)'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.40",
+      "whisper_rendering": "Smith-Trucks' door / Smith-Juckstown / Smith",
+      "correction": "Smith's Drug Store",
+      "confidence": "high",
+      "source": "Stage-3 LLM",
+      "notes": "\"They would meet at Smith-Trucks' door\"; \"Smith in the beginning. Smith-Juckstown\"; canonical Smith Drug Store at Mobile and Sixth in Hattiesburg, frequent NAACP-meeting site // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.42",
+      "whisper_rendering": "Mr. Berger",
+      "correction": "Mr. Burger (or Burger Berger)",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "\"Mr. Berger, who was the Black principal, if I have to identify people, Black or White, who was the Black principal over in Rowan\"; speaker's identification of the Rowan High School principal; need to verify name with Hattiesburg school records // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.46",
+      "whisper_rendering": "Joyce, Joyce, born, brown, who is now a Yarnboro",
+      "correction": "Joyce Brown (Yarborough)",
+      "confidence": "medium",
+      "source": "Stage-3 LLM",
+      "notes": "\"Joyce, Joyce, born, brown, who is now a Yarnboro\"; \"Yarnboro\" is likely Whisper for \"Yarborough\" (married name); speaker's circle // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.53",
+      "whisper_rendering": "Dr. Mason / Dr. Smith",
+      "correction": "(likely) Dr. (James) Mason / Dr. Aaron Shirley",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "\"they had an organization among themselves\"; speaker references unnamed MS Black-doctor network (Dr. Mason, Dr. Smith) without further detail; could correspond to Drs. Aaron Shirley, James Anderson, James Mason \u2014 canonical Medical Committee for Human Rights MS chapter doctors // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.54",
+      "whisper_rendering": "Robert Beach",
+      "correction": "Robert Beach",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "Hattiesburg-area organizer; speaker's circle; treat as speaker's actual recollection // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.62",
+      "whisper_rendering": "Methodist Hospital / Forge general",
+      "correction": "Methodist Hospital / Forrest General Hospital",
+      "confidence": "medium",
+      "source": "Stage-3 LLM",
+      "notes": "\"Far General Hospital, it was called Methodist Hospital. It's now merit-wessling out on 98\"; canonical Forrest General Hospital (now Merit Health Wesley) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.63",
+      "whisper_rendering": "Pearson v. Murray / \"Peyton DeVille\"",
+      "correction": "Pearson v. Murray (1936) / Missouri ex rel. Gaines v. Canada (1938) \u2014 out-of-state tuition equalization",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "\"if there was something that you wanted to do that wasn't taught in Mississippi, you could be sitting out of the state in the state with Peyton DeVille\"; the canonical \"out-of-state tuition\" segregation evasion \u2014 sending Black students out-of-state for graduate/professional school to avoid integrating in-state grad schools; \"Peyton DeVille\" is Whisper-garbled; possible candidates: \"paying tuition\" or a specific case-name reference // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.64",
+      "whisper_rendering": "Marjorie James",
+      "correction": "Marjorie James (Mrs. Mary James)",
+      "confidence": "medium",
+      "source": "local",
+      "notes": "\"Mrs. James had prepared us well on how on the Constitution... Mrs. Marjorie James with our world history teacher\"; Rowan High School teacher; identification // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.65",
+      "whisper_rendering": "Methodist hospital / parchment",
+      "correction": "Parchman Farm / Mississippi State Penitentiary",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"they later, I think, they still sent him on parchment\"; canonical Parchman Farm where Clyde Kennard was sent after the 1962 frame-up trial // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "100.68",
+      "whisper_rendering": "Mrs. Campbell / Miss Emma Campbell",
+      "correction": "Miss Emma Campbell",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "Hattiesburg-summer cooking-organizer; speaker's circle // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.5",
+      "whisper_rendering": "Mr. Damon / Mr. Damer / Mr. Damard",
+      "correction": "Vernon Dahmer",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Cross-references Pass 1 #100.18-21 \u2014 six Whisper-rendering variants of \"Dahmer\" in this single transcript: Damon, Damer, Damard, Namor (Verna, Namor split), and direct \"Vernon Damer\"; recurring canonical pattern catalog row E // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.9",
+      "whisper_rendering": "Cajun / cagins",
+      "correction": "Cajun(s) (Acadian descendants)",
+      "confidence": "high",
+      "source": "Stage-3 LLM",
+      "notes": "\"they're still calling themselves cagins. They speak with a little accent\" \u2014 canonical Louisiana Acadian-descent ethnic group; Pass 1 #100.13 confirmed // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.17",
+      "whisper_rendering": "Coffinchett",
+      "correction": "Coffee (?) \u2014 uncertain Jefferson Davis County MS community",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "Cross-references Pass 1 #100.11 \u2014 uncertain MS community near Prentiss; possible candidates: Coffeyville MS, \"Hot Coffee\" MS (Covington County), Coffeville (Yalobusha County); speaker recalls her grandmother fleeing pregnancy from a \"little area out near Prenniss\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.25",
+      "whisper_rendering": "Brown decision / Brown vs Borge",
+      "correction": "Brown v. Board of Education",
+      "confidence": "high",
+      "source": "canonical-from-catalog",
+      "notes": "\"this is before Brown\" \u2014 cross-corpus catalog row G \"Brown vs Borge \u2192 Brown v. Board\" pattern; in this transcript \"Brown\" is rendered correctly but a single occurrence; canonical 1954 SCOTUS school-desegregation case // [LAYER-5: phantom-rendering, fuzzy=64.3, ensemble-adjudication-pending] // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.26",
+      "whisper_rendering": "Peyton DeVille",
+      "correction": "(uncertain \u2014 possibly *Pearson v. Murray* (1936) or *Missouri ex rel. Gaines v. Canada* (1938))",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "Cross-references Pass 1 #100.63 \u2014 Whisper-mangled possibly referring to \"*Pearson v. Murray*\" (1936) or the out-of-state-tuition equalization gambit; speaker describes \"there was a law on the book that I don't know if it's still there... If there was something that you wanted to do that wasn't taught in Mississippi, you could be sitting out of the state in the state with Peyton DeVille\" \u2014 canonical pre-Brown MS evasion of in-state grad-school integration via paying out-of-state tuition // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.31",
+      "whisper_rendering": "Mrs. James / Marjorie James",
+      "correction": "Mrs. Marjorie James",
+      "confidence": "speaker-originating",
+      "source": "local",
+      "notes": "Cross-references Pass 1 #100.64 \u2014 Rowan High School world-history teacher who prepared Branch on the Mississippi Constitution; Pass 1 already identified // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.33",
+      "whisper_rendering": "Clyde Kenart / Mr. Knauer / Mr. Canard / Clyde Canard",
+      "correction": "Clyde Kennard",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Cross-references Pass 1 #100.34-37 \u2014 4+ Whisper-rendering variants in this single transcript: Kenart, Knauer, Canard, Canard; canonical pre-Meredith MS-higher-ed integration martyr; cross-corpus catalog row E recurring pattern // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.34",
+      "whisper_rendering": "Robert / Johnny Lee Roberts",
+      "correction": "Johnny Lee Roberts",
+      "confidence": "medium",
+      "source": "canonical-new",
+      "notes": "Cross-references Pass 1 #100.41 \u2014 canonical false-witness Johnny Lee Roberts (the Forrest County feed-store worker who falsely testified Kennard ordered the chicken feed Roberts swept up); Jerry Mitchell's 2006-onward investigation eventually got Roberts to tell Branch the true story (Roberts had been instructed by white feed-store owners) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.41",
+      "whisper_rendering": "Dr. Mason / Dr. Smith",
+      "correction": "Dr. James Mason / Dr. Smith / (likely Dr. Aaron Shirley + Dr. James Anderson MCHR-MS chapter members)",
+      "confidence": "low",
+      "source": "Stage-3 LLM",
+      "notes": "Cross-references Pass 1 #100.53 \u2014 speaker references unnamed MS Black-doctor network; possible canonical referents include Dr. Aaron Shirley, Dr. James Anderson, Dr. Aaron Henry's medical-corps cohort // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.42",
+      "whisper_rendering": "Robert Beach",
+      "correction": "Robert Beach",
+      "confidence": "speaker-originating",
+      "source": "local",
+      "notes": "Cross-references Pass 1 #100.54 \u2014 Hattiesburg-area organizer who arranged the Greyhound-bus tactic // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.49",
+      "whisper_rendering": "Methodist Hospital / Far General / Forge General / Forrest General",
+      "correction": "Forrest General Hospital (formerly Methodist Hospital)",
+      "confidence": "medium",
+      "source": "canonical-alias",
+      "notes": "Cross-references Pass 1 #100.62 \u2014 canonical Forrest General Hospital (now Merit Health Wesley); previously known as Methodist Hospital; integrated under federal Hill-Burton compliance pressure from Branch's husband's NAACP-led litigation // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.67",
+      "whisper_rendering": "Joyce, Joyce, born, brown, who is now a Yarnboro",
+      "correction": "Joyce Brown Yarborough",
+      "confidence": "medium",
+      "source": "local",
+      "notes": "Cross-references Pass 1 #100.46 \u2014 Hattiesburg telephone company worker; Branch's circle; \"Yarnboro\" is Whisper rendering of \"Yarborough\" (married name) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.76",
+      "whisper_rendering": "Hadithworth / Hadithwords / had his Berg / Hadisburg / Haddie's Burg",
+      "correction": "Hattiesburg",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Cross-references Pass 1 #100.8 \u2014 multiple Whisper-rendering variants of \"Hattiesburg\" in this single transcript including the rare \"Hadithworth\" variant; cross-corpus catalog row F recurring pattern // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.79",
+      "whisper_rendering": "Mr. Berger",
+      "correction": "(N.R. Burger) \u2014 likely Pass 1 candidate / different from Hattiesburg N.R. Burger",
+      "confidence": "low",
+      "source": "canonical-new",
+      "notes": "Cross-references Pass 1 #100.42 \u2014 speaker identifies a Black principal at Rowan; possibly canonical N.R. Burger (catalog row E, Rowan HS principal; \"delicate walk\" canonical phrase) \u2014 but Branch refers to him as principal of Rowan, which suggests an N.R. Burger reference; canonical Hattiesburg figure // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.81",
+      "whisper_rendering": "NAACP membership receipts in Bible",
+      "correction": "NAACP membership receipts",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Branch's first-person account of finding her grandmothers' NAACP membership receipts hidden in their Bibles \u2014 canonical Southern Black NAACP-membership-concealment pattern // [LAYER-5: phantom-rendering, fuzzy=55.9, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.84",
+      "whisper_rendering": "Marion / Marion Chinese extraction",
+      "correction": "Marian (Chinese-American woman)",
+      "confidence": "low",
+      "source": "speaker-originating",
+      "notes": "\"She and a girl of Chinese extraction. Her name was Marion\" \u2014 Jill Wakeman's San Francisco food-kitchen co-founder; speaker's recall, uncertain spelling // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.85",
+      "whisper_rendering": "Aaron Henry",
+      "correction": "Aaron E. Henry",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Cross-corpus catalog row I cross-reference; canonical MS NAACP president, MFDP co-chair; not directly referenced in Branch/Smith transcript but contextually adjacent // [LAYER-5: phantom-rendering, fuzzy=63.6, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.99",
+      "whisper_rendering": "Smith-Juckstown",
+      "correction": "Smith Drug Store",
+      "confidence": "high",
+      "source": "Stage-3 LLM",
+      "notes": "Variant of Pass 1 #100.40 \u2014 same canonical Hattiesburg NAACP-meeting site // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "100.P2.119",
+      "whisper_rendering": "the freedom writers",
+      "correction": "the Freedom Riders",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"the students and the freedom writers came to town\" \u2014 Whisper homophone \"writers\" for \"Riders\"; canonical CORE Freedom Riders // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "100.P3.1",
+      "whisper_rendering": "\"Oil History\" \u2192 \"Oral History\" (catalog-A new)",
+      "correction": "Oral History",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Pass 2 #100.P2.2 caught the recurring \"Oral History\" \u2192 \"Oil History\" Whisper-rendering pattern in the opening-narration USM Center introduction. Worth catalog-A addition as a corpus-distinctive interview-introduction-frame failure (parallels the \"Southern World History\" \u2192 \"Southern Oral History\" recurring pattern). // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "100.P3.4",
+      "whisper_rendering": "\"Clyde Kennard\" 4-variant cluster (catalog-E reinforce)",
+      "correction": "Clyde Kennard",
+      "confidence": "high",
+      "source": "catalog-reinforce",
+      "notes": "Pass 2 #100.P2.33 documents 4 Whisper-rendering variants: Kenart, Knauer, Canard, Canard. Worth extending catalog-E row \"Clackenaw / Canard / Mr. Canard \u2192 Clyde Kennard\" variant list with all four. // [LAYER-5: phantom-rendering, fuzzy=84.6, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "100.P3.9",
+      "whisper_rendering": "\"the freedom writers\" \u2192 Freedom Riders (catalog-G new)",
+      "correction": "Freedom Riders",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Pass 2 #100.P2.119 catches this. Canonical CORE Freedom Rides (1961) homophone Whisper failure. Worth catalog-G addition; cross-references the canonical \"Freedom Writers\" 2007 film which may be confounding the Whisper output. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

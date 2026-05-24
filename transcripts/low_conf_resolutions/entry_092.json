@@ -1,0 +1,40 @@
+{
+  "entry_number": 92,
+  "subject": "Nathaniel Hawthorne Jones",
+  "items": [
+    {
+      "row_id": "92.19",
+      "whisper": "Pad and Stove",
+      "original_candidate": "(Pat / Patton dormitory) — uncertain Alcorn site",
+      "resolution": "unresolved",
+      "new_candidate": "[unverified building name; literal Whisper: \"pad and stove\" / \"pet and stove\"]",
+      "evidence": "External archival sources confirm the surrounding factual frame: in April 1966 Mississippi highway patrolmen used tear gas to disperse approximately 500 demonstrators at Alcorn A&M (now Alcorn State University) in Lorman, Mississippi, with 35 arrested at a dormitory from which bricks and bottles were thrown at patrol cars; the demonstrations targeted Alcorn president J. D. Boyd and were aligned with the Port Gibson / Claiborne County movement that Jones helped lead (sources: AP wire via El Paso Times 4/5/1966; Mississippi Civil Rights Project; Mississippi Encyclopedia; Library of Congress finding aid for Jones's 2015 interview). However, no consulted external source (Alcorn historic district inventory, MS Civil Rights Project, Mississippi Encyclopedia, CRM Vet, SNCC Digital Gateway, Wikipedia Alcorn dormitory listings) names the specific dormitory involved, and none mentions a building called \"Patton\" or \"Pat-and-Stove\" on the Alcorn campus. The surrounding Whisper transcript is severely garbled in this passage (e.g., \"old Alcorn in Moan\" for \"Lorman\"; \"tillgit\" for \"tear gas\"; \"hook my horse\" of unclear referent), giving low confidence that the phonetic string \"pad/pet and stove\" preserves the original well enough to support phonetic reconstruction. Per Smithsonian-grade fail-closed discipline, retain the literal Whisper rendering flagged \"[unverified]\" rather than confidently inserting an unattested building name. A Crosby \"A Little Taste of Freedom\" page-level read or direct Alcorn archives consultation could resolve.",
+      "external_sources": [
+        "https://www.newspapers.com/newspage/434164976/",
+        "https://www.blackfacts.com/fact/state-troopers-used-tear-gas-to-stop-demonstrations",
+        "https://www.loc.gov/item/2016655408/",
+        "https://mississippiencyclopedia.org/entries/port-gibson-claiborne-county-civil-rights-movement/",
+        "https://en.wikipedia.org/wiki/Alcorn_State_University_Historic_District",
+        "https://en.wikipedia.org/wiki/Alcorn_State_University",
+        "https://collegeaftermath.com/dorm/dorms-at-alcorn-state-university/",
+        "https://julianjohnsonlaw.com/the-forgotten-stories-of-black-student-activism/"
+      ]
+    },
+    {
+      "row_id": "92.P2.19",
+      "whisper": "\"Pad and Stove\"",
+      "original_candidate": "\"Patton dormitory\" or \"Pat-and-Stove\" (uncertain Alcorn building)",
+      "resolution": "unresolved",
+      "new_candidate": "[unverified building name; literal Whisper: \"pad and stove\" / \"pet and stove\"]",
+      "evidence": "Same underlying utterance as 92.19, re-flagged by Pass 2. External archival corroboration confirms the April 1966 Alcorn A&M tear-gas demonstration and the dormitory-arrests frame but does not identify the specific dormitory by name in any source consulted (AP newspaper account; Mississippi Civil Rights Project; Mississippi Encyclopedia; Alcorn Historic District Wikipedia; Living New Deal Lanier Hall record). Of the named Alcorn dormitories of the era (Lanier Hall 1939, Dormitory No. 2 and No. 3 c. 1855, plus later female halls Burrus, Robinson, Foster), none phonetically maps to \"pad/pet and stove\" with sufficient confidence to publish as a canonical correction. The surrounding Whisper passage is severely degraded (multiple non-recoverable strings within five seconds of the candidate), elevating the risk that \"pad and stove\" is itself a compound mis-segmentation rather than a recognizable building. Recommend retaining the literal Whisper rendering with an \"[unverified]\" flag in the published overlay and routing this passage to human review against the original audio. Do not insert \"Patton\" or any phonetic-guess canonical name absent corroboration.",
+      "external_sources": [
+        "https://www.newspapers.com/newspage/434164976/",
+        "https://mississippiencyclopedia.org/entries/port-gibson-claiborne-county-civil-rights-movement/",
+        "https://en.wikipedia.org/wiki/Alcorn_State_University_Historic_District",
+        "https://livingnewdeal.org/sites/alcorn-state-university-lanier-hall-lorman-ms/",
+        "https://collegeaftermath.com/dorm/dorms-at-alcorn-state-university/",
+        "https://www.loc.gov/item/2016655408/"
+      ]
+    }
+  ]
+}

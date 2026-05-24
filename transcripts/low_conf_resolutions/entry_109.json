@@ -1,0 +1,33 @@
+{
+  "entry_number": 109,
+  "subject": "Robert McClary",
+  "items": [
+    {
+      "row_id": "109.8",
+      "whisper": "Petna Dalico",
+      "original_candidate": "Pete Daniel (likely)",
+      "resolution": "rejected",
+      "new_candidate": "Petna N'daliko",
+      "evidence": "The transcript context is the standard CRHP intro: 'I'm with videographer, Petna Dalico in Albany Movement, Georgia on the campus of Albany Movement State University' before naming the Smithsonian NMAAHC + Library of Congress as the project's joint sponsors. The McClary interview was conducted by Hasan Kwame Jeffries in Albany, GA, 2013-03-09 (LoC item 2015669163). The Smithsonian Folklife Magazine 'Behind the Scenes of the Civil Rights History Project' essay and the LoC About this Collection page both name the three CRHP videographers as Charlie Weber, John Bishop, and Petna N'daliko -- the latter is the Goma-born filmmaker Petna Ndaliko Katondolo (African Film Festival NY directors page). Pete Daniel is a Southern historian with SOHP-adjacent work but was never a CRHP videographer; the phonetic match 'Petna Dalico' -> 'Petna N'daliko' is unambiguous given the videographer credit context.",
+      "external_sources": [
+        "https://folklife.si.edu/talkstory/behind-the-scenes-of-the-civil-rights-history-project",
+        "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
+        "https://www.loc.gov/item/2015669163/",
+        "https://africanfilmny.org/directors/petna-ndaliko-katondolo/"
+      ]
+    },
+    {
+      "row_id": "109.P2.1",
+      "whisper": "Petna Dalico",
+      "original_candidate": "Pete Daniel (likely cameraman)",
+      "resolution": "rejected",
+      "new_candidate": "Petna N'daliko",
+      "evidence": "Same whisper rendering as 109.8 from the same intro line crediting the CRHP videographer. Pass 2 flagged the Pete Daniel ID as low-confidence, and external archival sources confirm that flag was correct: the three credited CRHP videographers across all 109 interviews (2010-2016) are Charlie Weber, John Bishop, and Petna N'daliko per the Smithsonian Folklife Magazine production essay and the LoC Civil Rights History Project collection page. The canonical CRHP/LoC credit spelling is 'Petna N'daliko'; the filmmaker himself uses 'Petna Ndaliko Katondolo' in his African Film Festival credits. Either spelling is defensible; recommend 'Petna N'daliko' to match the institutional credit used by the project's own publication.",
+      "external_sources": [
+        "https://folklife.si.edu/talkstory/behind-the-scenes-of-the-civil-rights-history-project",
+        "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
+        "https://africanfilmny.org/directors/petna-ndaliko-katondolo/"
+      ]
+    }
+  ]
+}

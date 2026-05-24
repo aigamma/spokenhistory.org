@@ -1,0 +1,48 @@
+{
+  "entry_number": 24,
+  "subject": "Courtland Cox",
+  "items": [
+    {
+      "row_id": "24.11",
+      "whisper": "Conrad Snowden",
+      "original_candidate": "Frank M. Snowden Jr. (likely)",
+      "resolution": "confirmed",
+      "new_candidate": "Frank M. Snowden Jr.",
+      "evidence": "Transcript context places this name in the same passage as Sterling A. Brown, with Cox describing Howard University faculty who 'adopted us as their children' and 'tried to give us all the encouragement they could.' Frank M. Snowden Jr. (1911-2007) was a long-tenured Howard University professor and chair of the Classics Department (joined faculty 1940, served over 40 years), Dean of the College of Arts and Sciences, and renowned scholar of Blacks in classical antiquity (author of 'Blacks in Antiquity'). He overlapped exactly with Cox's Howard years (1960-) and is the only well-documented Howard professor named Snowden in that period. Whisper substituted the first name 'Frank' with the phonetically nearby 'Conrad,' a known Whisper error pattern for short male first names.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Frank_M._Snowden_Jr.",
+        "https://blackpast.org/african-american-history/snowden-frank-m-jr-1911-2007/",
+        "https://www.neh.gov/about/awards/national-humanities-medals/frank-m-snowden-jr",
+        "https://snccdigital.org/inside-sncc/establishing-sncc/campus-affiliates/nonviolent-action-group-nag/"
+      ]
+    },
+    {
+      "row_id": "24.49",
+      "whisper": "Mary Barack",
+      "original_candidate": "Barack Obama Sr. (possibly)",
+      "resolution": "rejected",
+      "new_candidate": "Amiri Baraka (Imamu Amiri Baraka)",
+      "evidence": "The transcript context is decisive: Cox is recalling 6PAC 1974 attendees and stumbles audibly: 'there were a lot of people, Barack Obama, I mean, Mary Barack was there.' The 'I mean' is a real-time self-correction, not a second name. Barack Obama Sr. has no documented connection to the 6th Pan-African Congress; in 1974 he was a senior Kenyan government economist in Nairobi with no recorded delegate role. Amiri Baraka (Imamu Amiri Baraka), by contrast, is a thoroughly documented 6PAC delegate who delivered the major speech 'Revolutionary Culture and the Future of Pan African Culture' at Dar es Salaam in June 1974, marking his public turn from cultural nationalism to Marxism-Leninism. The phonetic mapping 'A-MIR-i Ba-RA-ka' to Whisper's 'Mary Barack' is tight, and Cox's confusion between 'Barack Obama' and 'Baraka' is exactly the cognitive slip the self-correction captures.",
+      "external_sources": [
+        "https://mltoday.com/amiri-baraka-has-died-long-live-baraka/",
+        "https://blackagendareport.com/content/amiri-baraka-has-died-long-live-baraka",
+        "https://snccdigital.org/events/6th-pan-african-congress/",
+        "https://en.wikipedia.org/wiki/Barack_Obama_Sr."
+      ]
+    },
+    {
+      "row_id": "24.P2.37",
+      "whisper": "Mary Barack (1974 Tanzania)",
+      "original_candidate": "(likely) Mary Frances Berry or Maya Angelou (Barack/Berry confusion)",
+      "resolution": "rejected",
+      "new_candidate": "Amiri Baraka (Imamu Amiri Baraka)",
+      "evidence": "Same item as 24.49 (Pass 2 re-flag). The Pass 2 candidates Mary Frances Berry and Maya Angelou were reasonable phonetic guesses but neither matches the surrounding stumble pattern. Mary Frances Berry was listed as a 6PAC sponsor but is not documented as in attendance in Dar es Salaam; Maya Angelou has no documented 6PAC 1974 attendance. Amiri Baraka was a confirmed delegate who delivered a major 1974 address there, and his name phonetically maps to Whisper's 'Mary Barack' much more tightly than 'Mary Berry.' Cox's adjacent 'Barack Obama' false-start is the exact confusion that Baraka's name would trigger in a senior speaker recalling 1974 attendees decades later.",
+      "external_sources": [
+        "https://mltoday.com/amiri-baraka-has-died-long-live-baraka/",
+        "https://blackagendareport.com/content/amiri-baraka-has-died-long-live-baraka",
+        "https://snccdigital.org/events/6th-pan-african-congress/",
+        "https://www.tandfonline.com/doi/abs/10.1080/10999940600882947"
+      ]
+    }
+  ]
+}

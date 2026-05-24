@@ -1,0 +1,23 @@
+{
+  "entry_number": 14,
+  "subject": "Cecil J. Williams (PARTIAL)",
+  "items": [
+    {
+      "row_id": "14.35",
+      "whisper": "Slade / Slay Ed",
+      "original_candidate": "Strom Thurmond (likely) / Senator (Ernest) Hollings (possible)",
+      "resolution": "rejected",
+      "new_candidate": "[unverified] (literal Whisper 'Slay it' retained; most plausible reading is 'the state' but no archival source confirms a single named actor)",
+      "evidence": "The transcript context is Harvey Gantt's January 28, 1963 enrollment at Clemson University, which Cecil J. Williams covered as a Jet Magazine photographer. The full Whisper line is 'Slay it in order to contain this particular incident though has ordered the school closed just for Harvey Gantt's admittance and all of the faculty has been ordered to lead [leave] the campus.' Both original candidates are demonstrably wrong: Strom Thurmond was a US Senator with no authority over Clemson and is not documented as present that day; Ernest 'Fritz' Hollings left the governorship roughly two weeks before Gantt's enrollment (Donald S. Russell was inaugurated on January 15, 1963 per SC Archives and SC Encyclopedia). The actors documented in archival sources as orchestrating the controlled-campus environment that day were Clemson President R.C. Edwards (issued an expulsion-threat statement and led the 'conspiracy for peace' planning per the LDF Recollection account and PBS 'Education of Harvey Gantt' transcript) and SLED Chief Pete Strom (organized police protection — note this is likely the actual referent of the adjacent line 1347's 'Strom Thurmond,' a separate row not under adjudication here). Two sentences later in this same transcript, Williams himself attributes the keep-employees-away decision to 'the University administration,' which would point to Edwards rather than any state-level official. Phonetically, 'Slay it / Slay Ed / Slade' could plausibly be Whisper mishearing 'the state' (state -> slate -> slay it), but I cannot confirm with archival certainty which named actor Williams intended. Per the Smithsonian-grade rule that a literal flagged Whisper rendering is preferable to an invented canonical name, I mark this rejected on the original candidates and recommend retaining a literal/unverified flag rather than asserting Edwards, Pete Strom, or 'the state' without direct corroboration.",
+      "external_sources": [
+        "https://greenbookofsc.com/locations/integration-with-dignity-1963/",
+        "https://ldfrecollection.org/stories/harvey-gantt-from-desegregating-clemson-to-becoming-charlotte-s-first-black-mayor",
+        "https://www.pbs.org/video/the-education-of-harvey-gantt-ewBTjh/",
+        "https://www.scencyclopedia.org/sce/entries/hollings-ernest-frederick/",
+        "https://www.scencyclopedia.org/sce/entries/russell-donald-stewart/",
+        "https://www.archivesindex.sc.gov/guide/staterecords/rg0550.htm",
+        "https://digital.library.sc.edu/exhibits/champions/volume-3-2/part-i/harvey-gantt-part-2/"
+      ]
+    }
+  ]
+}

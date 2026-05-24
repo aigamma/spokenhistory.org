@@ -1,0 +1,21 @@
+{
+  "entry_number": 66,
+  "subject": "Joseph Echols Lowery",
+  "items": [
+    {
+      "row_id": "66.P2.22",
+      "whisper": "first phase, three embers the man",
+      "original_candidate": "First Federal Reserve / first phase three numbers — uncertain",
+      "resolution": "unresolved",
+      "new_candidate": "And the [unverified: \"first phase, three embers\"] the man who was paid it.",
+      "evidence": "Context: Lowery is recounting that after the Supreme Court reversed the Sullivan v. NY Times verdict in 1964, the state refunded the proceeds of his auctioned 1958 Chrysler. The full passage reads: 'They had to give it back to us. And we gave it back to the organization which had furnished the money. And the first phase, three embers the man who was paid it.' External corroboration (Wikipedia, Bhamwiki, encyclopedia summaries) confirms the broad story — R.B. (Rufus) DeWitt of the Mobile YMCA bid on the car at auction; Lowery's Warren Street Methodist congregation pooled funds to reimburse DeWitt; the recovered Supreme Court refund was donated back to the movement. However, no external source quotes the specific sentence Lowery utters here, and the Whisper output 'first phase, three embers' is not phonetically or semantically interpretable as any known organization name, dollar figure, or stock phrase. The most likely reading is a brief disfluent utterance meaning roughly 'we first reimbursed the man who paid it' or 'and the church first paid the man who was paid it' — but both are speculative reconstructions of a speaker disfluency, not verified canonical text. Per the Smithsonian-grade discipline, a literal Whisper rendering with [unverified] flag is preferable to a fabricated canonical phrase. The slice's original candidates ('First Federal Reserve' and 'first phase three numbers') are likewise unsupported by any external archival source. The original candidate is therefore rejected as unverifiable, and the Whisper rendering should be preserved with an explicit [unverified] annotation in the corrections overlay so downstream reviewers can audit it against the original audio if available.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Joseph_Lowery",
+        "https://www.bhamwiki.com/w/Joseph_Lowery",
+        "https://www.dearbornymca.org/about",
+        "https://kinginstitute.stanford.edu/lowery-joseph-echols",
+        "https://www.loc.gov/item/2015669122/"
+      ]
+    }
+  ]
+}

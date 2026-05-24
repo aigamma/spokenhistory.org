@@ -1,0 +1,36 @@
+{
+  "entry_number": 65,
+  "subject": "Johnnie Ruth McCullar",
+  "items": [
+    {
+      "row_id": "65.2",
+      "whisper": "Petna Dalico",
+      "original_candidate": "Petna Dadelica (videographer; spelling unverified)",
+      "resolution": "rejected",
+      "new_candidate": "Petna Ndaliko",
+      "evidence": "The transcript context is the opening LoC/Smithsonian boilerplate: interviewer Hasan Kwame Jeffries says \"I'm with videographer Petna Dalico in Albany, Georgia on the campus of Albany State University\" on March 9, 2013. Smithsonian Folklife Magazine's \"Behind the Scenes of the Civil Rights History Project\" identifies Petna N'daliko (also rendered Petna Ndaliko, full name Petna Ndaliko Katondolo) as one of three videographers (with Charlie Weber and John Bishop) who filmed all 109 CRHP interviews. He is a Congolese filmmaker (born Goma, DRC; founder of Yole!Africa) — corroborated by African Film Festival Inc., IFFR, IMDb, and Berlinale. The Whisper rendering \"Petna Dalico\" is a phonetic mishearing of \"Petna Ndaliko\" (silent/elided initial \"N\", \"k\" → \"c\"). The Pass-1 candidate \"Petna Dadelica\" and Pass-2 candidate \"Petna Lo Castro\" are both fabricated phonetic guesses with no archival basis; both are rejected in favor of the canonical Smithsonian-attested spelling.",
+      "external_sources": [
+        "https://folklife.si.edu/talkstory/behind-the-scenes-of-the-civil-rights-history-project",
+        "https://africanfilmny.org/directors/petna-ndaliko-katondolo/",
+        "https://iffr.com/en/person/petna-ndaliko-katondolo",
+        "https://www.imdb.com/name/nm4333458/",
+        "https://nmaahc.si.edu/explore/initiatives/civil-rights-history-project"
+      ]
+    },
+    {
+      "row_id": "65.P2.12",
+      "whisper": "Petna Dalico",
+      "original_candidate": "Petna Lo Castro (uncertain — videographer name varies across corpus)",
+      "resolution": "rejected",
+      "new_candidate": "Petna Ndaliko",
+      "evidence": "Same evidence as 65.2: this is a duplicate flag of the same opening-boilerplate videographer credit. Smithsonian Folklife Magazine canonically names the videographer as Petna N'daliko / Petna Ndaliko (full: Petna Ndaliko Katondolo), confirmed against African Film Festival Inc., IMDb, IFFR, and Berlinale. The Pass-2 hypothesis \"Petna Lo Castro\" is unsupported by any archival source and appears to be an unrelated phonetic invention. The canonical Smithsonian credit applies uniformly across all 109 CRHP interviews filmed by Ndaliko, so cross-corpus consistency is achieved by adopting \"Petna Ndaliko\" everywhere this videographer is named.",
+      "external_sources": [
+        "https://folklife.si.edu/talkstory/behind-the-scenes-of-the-civil-rights-history-project",
+        "https://africanfilmny.org/directors/petna-ndaliko-katondolo/",
+        "https://iffr.com/en/person/petna-ndaliko-katondolo",
+        "https://www.imdb.com/name/nm4333458/",
+        "https://nmaahc.si.edu/explore/initiatives/civil-rights-history-project"
+      ]
+    }
+  ]
+}

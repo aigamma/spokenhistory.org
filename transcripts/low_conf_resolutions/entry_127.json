@@ -1,0 +1,38 @@
+{
+  "entry_number": 127,
+  "subject": "William Lamar Strickland",
+  "items": [
+    {
+      "row_id": "127.31",
+      "whisper": "Manny Schoenberg / Manny Sherman",
+      "original_candidate": "(likely) Manny Schoenberg / Marvin Sherman",
+      "resolution": "rejected",
+      "new_candidate": "Manning Marable",
+      "evidence": "The literal whisper rendering 'Manny Schoenberg / Manny Sherman' does NOT exist in the raw Whisper output (transcripts/raw/William Lamar Strickland_interview_20250705_023846/...json). An exhaustive scan of the raw JSON for -berg suffixes returns zero hits, and no 'Sherman' string appears anywhere. The only 'many <name>' sequence Whisper produced is 'many Marable' — clearly Whisper's mis-transcription of 'Manning Marable,' the late Columbia University historian and author of the 2011 Malcolm X: A Life of Reinvention. Strickland devotes a substantial portion of this interview to critiquing Marable's biography (he later co-edited A Lie of Reinvention: Correcting Manning Marable's Malcolm X), and the corrected SRT already renders the canonical name 'Manning Marable' correctly at line 2615. The Pass 1 auditor appears to have hallucinated two candidate canonical names from a Whisper string that does not exist. Neither 'Manny Schoenberg' nor 'Manny Sherman' (nor 'Marvin Schoenberg' nor 'Marv Sherman') appears in any canonical Strickland biography, the NSM finding aid (NYPL Schomburg SCM-20927), the SNCC Digital Gateway, the IBW records, or any of the Strickland obituaries (Bay State Banner, Amherst Indy, Amsterdam News, UMass memoriam).",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Manning_Marable",
+        "https://en.wikipedia.org/wiki/Malcolm_X:_A_Life_of_Reinvention",
+        "https://blackcommentator.com/445/445_remembering_malcolm_strickland_ed_bd.php",
+        "https://archives.nypl.org/scm/20927",
+        "https://snccdigital.org/inside-sncc/alliances-relationships/northern-student-movement/",
+        "https://www.umass.edu/news/article/memoriam-william-strickland",
+        "https://baystatebanner.com/2024/05/01/bill-strickland-a-long-life-of-teaching-inspiring-and-activism/"
+      ]
+    },
+    {
+      "row_id": "127.P2.97",
+      "whisper": "Manny Schoenberg / Manny Sherman",
+      "original_candidate": "Marvin Schoenberg (likely) / Marv Sherman",
+      "resolution": "rejected",
+      "new_candidate": "Manning Marable",
+      "evidence": "Same finding as 127.31 — this Pass 2 row explicitly reinforces Pass 1 #127.31 (per the slice notes), and inherits the same phantom-whisper problem. The raw Whisper JSON contains no -berg word and no 'Sherman'; the only proximate token is 'many Marable' = 'Manning Marable.' The Pass 2 auditor offered a different conjectured first name (Marvin instead of Manny) but neither variant has any external corroboration. Strickland's 2011 critique of Marable's Malcolm X biography is canonically documented (BlackCommentator.com 'Remembering Malcolm' essay; the A Lie of Reinvention anthology Strickland co-edited; the corrected SRT lines 2615 and 2891 where Whisper renders 'Manning' acceptably and 'many Marable' awkwardly). Rejecting both Pass 1 and Pass 2 candidates and substituting the canonical 'Manning Marable' preserves Smithsonian-grade rigor — a literal phantom would have warranted 'unresolved,' but here the underlying speaker reference is unambiguous and already correctly rendered elsewhere in the corrected transcript. Recommend that downstream cleanup either remove row 127.P2.97 (and 127.31) from the pending-context list or annotate them as 'phantom-whisper, no source string exists, canonical referent is Manning Marable (already covered).'",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Manning_Marable",
+        "https://blackcommentator.com/445/445_remembering_malcolm_strickland_ed_bd.php",
+        "https://www.worldcat.org/title/lie-of-reinvention-correcting-manning-marables-malcolm-x/oclc/849937068",
+        "https://archives.nypl.org/scm/20927",
+        "https://www.amherstindy.org/2024/05/03/in-memoriam-william-t-strickland/"
+      ]
+    }
+  ]
+}

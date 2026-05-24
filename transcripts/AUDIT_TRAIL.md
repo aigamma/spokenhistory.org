@@ -34,6 +34,70 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+### Session 5 — 2026-05-23 → 2026-05-24: Pass 6 low-confidence residual QA round (retrospective entry)
+
+**End-of-session summary:** Pass 6 is the informal name for a post-Layer-5 cleanup wave executed late 2026-05-23 (after the Layer 5 fidelity-deploy `2669753` and the Stage 3 Layer 5 deploy `389ae4f`). It runs four orthogonal tracks across the corpus: (1) per-entry publication-readiness scoring; (2) heuristic Whisper→canonical mutation sweep against the corrected/ output; (3) per-entry adversarial resolution of the highest-density `LAYER-5: D2-ambiguous` flag set; (4) per-entry slicing of an additional Layer 5 pending subset for a future resolution pass. Tracks 1–3 produced substantive output; Track 4 stopped at slicing (no resolution agent has yet been spawned). This Session entry is **authored retroactively** as part of the 2026-05-24 commit that brings the wave under version control — the original Pass 6 session did not author its own AUDIT_TRAIL entry, violating the per-phase atomicity discipline mandated in CLAUDE.md. Going forward, every milestone in this session and future sessions commits + pushes; uncommitted working-tree state is treated as a process failure, not as "in-flight."
+
+**Agents:** Claude Opus 4.7 (parent + ~40 low-confidence resolution subagents in Track 3); precise per-track subagent count not recorded by the original session.
+
+**Wall-clock:** ~2.5 hours (script authoring + execution) across 2026-05-23 evening; AUDIT_TRAIL + OPEN_PROBLEMS retroactive authoring + commit/push 2026-05-24 (~30 min).
+
+**Scope:** 127 audit-able entries (Tracks 1–2) + 40 entries with the highest LAYER-5: D2-ambiguous concentration (Track 3) + 11 entries identified as carrying un-resolved Layer 5 findings (Track 4). Same skip-set as prior passes: {28, 31, 46, 64, 95}.
+
+#### Track 1 — Per-entry publication-readiness scoring (complete)
+
+**Deliverables:**
+- `transcripts/calculate_transcript_readiness.py` — parses master MD via the existing `layer5_extract_corrections.py` helper; scores each entry 0–100 from a four-term heuristic: starts at 100, subtracts 5 per outstanding flag (flagged-for-adversarial-review + LAYER-5: annotations), 0.1 per initial Pass-1/Pass-2 error, 0.05 per unique canonical (complexity penalty), adds 2 per pass-depth-layer endured. Includes a guard against the false-positive "perfect 100" failure mode for unaudited entries (4 entries with `source_dir` set but zero correction rows emit `readiness_confidence: null, status: "unaudited"` instead of the misleading score=100).
+- `transcripts/readiness_ledger.json` — 131-entry ledger (127 scored + 4 unaudited): mean 47.7, median 52.0, min 0.0, max 100.0. Distribution: 28 entries score 0–20 (heavy outstanding-flag load), 21 score 20–40, 26 score 40–60, 35 score 60–80, 17 score 80–100. Concretely: 38% of the corpus scores below 40 by this metric — the natural prioritization input for the remaining 3-day push before the 2026-05-27 deadline.
+
+**Coverage:** all 131 entries (including the 4 unaudited skipped/redirect entries flagged with null readiness).
+
+**Limitations:** the score formula is heuristic — weights live only in script comments, not in any audit doc. If readiness scores are communicated to WWU/Smithsonian, the formula should be made transparent.
+
+#### Track 2 — Heuristic Whisper→canonical mutation sweep (complete, applied to corrected/)
+
+**Deliverables:**
+- `transcripts/run_qa_batch.py` + `transcripts/mutate_transcript.py` — paired orchestrator + mutator. The orchestrator iterates each `transcripts/corrected/<entry>/` directory; for each entry, applies 13 hardcoded Whisper→canonical patterns drawn from Layer 5 findings and recurring corpus-wide failure modes: "mega-evils" → Medgar Evers, "Tugaloo College" → Tougaloo College, "Stocks-O Cymbol" / "Stokeley" → Stokely Carmichael, "Jim Foreman" → James Forman, "Sammy Young" → Samuel Younge Jr., "Lounge County" → Lowndes County, "Acta Almighty King" → Come Thou Almighty King, "Pittsburgh Korea" / "Pittsburgh Kuzat" → Pittsburgh Courier, "Dinky Romley" → Dinky Romilly, "snake office" → SNCC office. The generic "snake" → "SNCC" expansion is explicitly skipped as too risky for an unscoped global replace.
+- Modified 19 entries / 57 files (.srt + .vtt + .txt per entry) under `transcripts/corrected/`. Net delta: 149 insertions / 149 deletions. The volume-weighted entries are SNCC-era interviewees who name-drop Carmichael heavily: Kathleen Cleaver (36 lines), Gwendolyn M. Patton (12), Phil Hutchings (10).
+
+**Coverage:** all 127 corrected/ entries processed; 19 hit at least one pattern; 108 were idempotent no-ops.
+
+**Known incompletion:** per-entry `manifest.json` files in the 19 affected entry directories are now ~18 hours older than the .txt files they document (manifests stamped 2026-05-23 ~01:00; .txt files modified 2026-05-23 ~19:34). The audit-chain signature in each affected manifest no longer matches the file it describes. Resolution: re-run `scripts/apply_corrections.py` to regenerate manifests — but the regen must run AFTER the Track 3 apply-back lands so the regenerated output captures both Track 2's heuristic mutations and Track 3's adversarial resolutions in one pass.
+
+#### Track 3 — Per-entry adversarial resolution of LAYER-5: D2-ambiguous flags (generated, NOT applied)
+
+**Deliverables:**
+- `transcripts/low_confidence_residual.json` — flat list of 82 items pulled from the master MD (entries with `[LAYER-5: D2-ambiguous, ensemble-adjudication-pending]` annotation in Notes). Each item has entry_number, subject, pass_section, row_id, whisper, correction, notes.
+- `transcripts/low_conf_per_entry_slices/` — 40 per-entry input slices grouping the 82 items by entry. Used as input by ~40 parallel resolution subagents.
+- `transcripts/low_conf_resolutions/` — 40 per-entry output files (1:1 with the input slices). Each item has a `resolution` field (one of: `narrowed` / `resolved-high` / `rejected` / `confirmed` / `unresolved` / `alternate`), a `new_candidate` value, multi-paragraph `evidence` derived from transcript context + ground-truth corpus lookup + external archival sources (SNCC Digital Gateway, CRMVet, Library of Congress finding aids, university archives), and an `external_sources` URL list.
+- Resolution-type distribution across the 82 items: 39 rejected (Pass 2/3 hypothesis judged to be speculation without corroboration), 21 unresolved (genuinely ambiguous after adversarial lookup), 10 narrowed (correction refined to a more cautious form), 4 confirmed (original Pass 2/3 hypothesis upheld), 4 alternate (a different canonical candidate proposed), 4 resolved-high (high-confidence canonical identification reached).
+
+**Critical incompletion: no apply-back script exists.** The 82 resolutions are sitting in `low_conf_resolutions/*.json`. Zero of them have been written back to the `correction` column of the corresponding rows in `CLEANED_TRANSCRIPTS_REVIEW.md`. Verification: `grep -c "Becky Mills [unverified" transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (the entry_007 new_candidate) returns 0. Until an `apply_low_conf_resolutions.py` is written and run, the Smithsonian-publication overlay shows the un-adjudicated Pass 2/3 speculations, not the adversarially-vetted resolutions.
+
+#### Track 4 — Layer 5 pending residual (sliced only, not resolved)
+
+**Deliverables:**
+- `transcripts/layer5_pending_slices/` — 11 per-entry input slices for entries identified as carrying un-resolved Layer 5 findings: #2, #11, #15, #34, #38, #39, #74, #76, #79, #100, #113.
+
+**Critical incompletion: no resolution agent ever ran.** There is no `layer5_pending_resolutions/` directory. Slices were generated and then the wave stalled. Either: (a) spawn 11 parallel subagents in a single message to produce resolutions (~10 min wall-clock per the CLAUDE.md pacing guidance for parallel-subagent work); or (b) scope-acknowledge that these defer to the Kiro/Kimi/Codex/Gemini ensemble and remove the slice directory.
+
+#### Coverage relative to total Layer 5 residual
+
+The Layer 5 fidelity-deploy (`2669753`) annotated 1,174 D2-ambiguous rows for ensemble adjudication. Pass 6 Tracks 3+4 cover 82 + ~22 estimated (for the 11 Track 4 entries at average ~2 items each) = ~104 items, or **~9% of the D2-ambiguous residual**. The remaining ~1,070 D2-ambiguous rows are still annotated and waiting for the Kiro/Kimi/Codex/Gemini ensemble handoff per OPEN_PROBLEMS Problem 9.
+
+#### Handoff to whatever session picks this up
+
+1. **[BLOCKER] Write `transcripts/apply_low_conf_resolutions.py`** — consume the 40 `low_conf_resolutions/entry_NNN.json` files; for each item, locate the corresponding row in master MD by `(entry_number, row_id)`; rewrite the `correction` column based on `resolution` type (`narrowed`/`resolved-high`/`alternate` → write `new_candidate`; `rejected` → annotate as rejected + retain original; `confirmed` → annotate as confirmed; `unresolved` → annotate as remaining for ensemble). Preserve a Layer 6 audit annotation in Notes column. Idempotent. ~1–2 hrs to script.
+2. **[BLOCKER] Spawn 11 parallel resolution subagents for Track 4** — one per `layer5_pending_slices/entry_NNN.json`; outputs go to a new `layer5_pending_resolutions/` directory. Same prompt template as Track 3. Then write a corresponding apply-back step (can share infrastructure with Track 3's apply-back).
+3. **[MEDIUM] Re-run `scripts/apply_corrections.py`** after Tracks 1+2's apply-back lands — to refresh the 19 stale `manifest.json` files in `transcripts/corrected/` so the audit-chain signature matches the .txt file it documents.
+4. **[OPTIONAL] Expand Track 2's heuristic pattern set** OR supersede it with a generic alias-driven applier that consumes the 291 aliases in `civil_rights_facts.json`. Track 2 currently covers <10% of the high-frequency Whisper failure modes the corpus could mechanically catch.
+
+#### Process learnings
+
+- The fact that this Session entry is being authored retroactively is itself a finding. The original Pass 6 session executed work but did not commit + push it, leaving 66 files in working-tree limbo for ~24 hours and creating a governance gap. Per the user's standing directive ("I always want everything pushed after every moderate milestone"), going forward: every milestone — including intermediate checkpoints — commits and pushes. Uncommitted working-tree state is a process failure, not a "work-in-progress" state. The same visibility-gap pattern that commits `e325d79` and `8591d74` previously had to back-fill is what motivated CLAUDE.md's per-phase atomicity discipline; that discipline now needs project-wide enforcement, not just within audit-document updates.
+
+---
+
 ### Session 1 — 2026-05-21: Pass 1 initial sweep (single-session, foreground)
 
 **Agents:** Claude Opus 4.7 (single conversation, no parallel subagents)

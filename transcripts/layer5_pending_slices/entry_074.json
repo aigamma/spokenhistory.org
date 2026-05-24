@@ -1,0 +1,260 @@
+{
+  "entry_number": 74,
+  "subject": "Kay Tillow",
+  "source_dir": "transcripts/raw/Kay Tillow_interview_20250704_225452/",
+  "pending_count": 28,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.6",
+      "whisper_rendering": "Anne Brayden",
+      "correction": "Anne Braden",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical Southern Conference Educational Fund (SCEF) leader, author of *The Wall Between* (1958) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.11",
+      "whisper_rendering": "Carroll (40 miles from Metropolis)",
+      "correction": "Cairo (Illinois)",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Canonical SW Illinois Civil Rights demonstration site // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.12",
+      "whisper_rendering": "champagne Illinois",
+      "correction": "Champaign, Illinois",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Canonical UIUC location // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.15",
+      "whisper_rendering": "Conor Cruzel Brian",
+      "correction": "Conor Cruise O'Brien",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical Irish writer/diplomat; chancellor of University of Ghana 1962\u201365 (took \"Cantanga and Back\") // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.23",
+      "whisper_rendering": "Monegal, Tennessee",
+      "correction": "Monteagle, Tennessee",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Canonical Highlander's original location // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'O-ext': 'Single occurrence but canonical Highlander location 1932-62. Worth catalog row i'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.24",
+      "whisper_rendering": "Jim Dumbbrowski",
+      "correction": "James Dombrowski",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical SCEF executive director // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.30",
+      "whisper_rendering": "Eleanor Flexner's As Century of Struggle",
+      "correction": "Eleanor Flexner's *A Century of Struggle*",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Canonical 1959 women's history book // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "74.42",
+      "whisper_rendering": "Wilkesbury",
+      "correction": "Wilkes-Barre (Pennsylvania)",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Canonical NE PA city // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.1",
+      "whisper_rendering": "Conor Cruzel Brian",
+      "correction": "Conor Cruise O'Brien",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #74.15 logged. Pass 2 confirms \u2014 canonical Irish writer/diplomat/UN representative in Katanga 1961; later Vice-Chancellor (chief executive officer) of University of Ghana 1962\u201365 during Tillow's 1962 study abroad. Author of *To Katanga and Back* (1962) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.2",
+      "whisper_rendering": "took a tanga and back",
+      "correction": "*To Katanga and Back* (Conor Cruise O'Brien memoir, 1962)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"he had written, took a tanga and back, and all of that story\" \u2014 Whisper compression of book title \"To Katanga and Back\"; canonical Cold-War-Africa memoir of UN's failed Katanga intervention (1960\u201361) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'F-ext': 'Note: Pass 2 #73.P2.3 explicitly marks this as \"belongs to #74 Kay Tillow contex'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.4",
+      "whisper_rendering": "Anne Brayden",
+      "correction": "Anne McCarty Braden",
+      "confidence": "high",
+      "source": "canonical-new",
+      "notes": "Pass 1 #74.6 logged. Pass 2 confirms multiple additional occurrences \u2014 canonical Southern Conference Educational Fund (SCEF) leader, author of *The Wall Between* (1958); Tillow's primary intellectual mentor along with husband Carl Braden. Should be added to civil_rights_facts.json as foundational Southern white-civil-rights-organizer figure // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.10",
+      "whisper_rendering": "Carroll",
+      "correction": "Cairo (Illinois)",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Pass 1 #74.11 logged. Pass 2 confirms \u2014 canonical SW Illinois Civil Rights demonstration site (1962 SNCC campaign); Whisper homophone substitutes Carroll for Cairo // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.11",
+      "whisper_rendering": "champagne Illinois",
+      "correction": "Champaign, Illinois",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Pass 1 #74.12 logged. Pass 2 confirms \u2014 canonical UIUC (University of Illinois at Urbana-Champaign) location; Tillow attended 1960\u201364 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.21",
+      "whisper_rendering": "Monegal, Tennessee",
+      "correction": "Monteagle, Tennessee",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Pass 1 #74.23 logged. Pass 2 confirms \u2014 canonical Highlander original location 1932\u201362 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'O-ext': 'Single occurrence but canonical Highlander location 1932-62. Worth catalog row i'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.22",
+      "whisper_rendering": "Jim Dumbbrowski",
+      "correction": "James A. Dombrowski",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #74.24 logged. Pass 2 confirms \u2014 canonical Southern Conference Educational Fund (SCEF) executive director; co-founder of Highlander Folk School (with Myles Horton) in 1932 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.27",
+      "whisper_rendering": "Eleanor Flexner's As Century of Struggle",
+      "correction": "*Century of Struggle: The Woman's Rights Movement in the United States* (Eleanor Flexner, 1959)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 #74.30 logged. Pass 2 confirms \u2014 canonical 1959 women's history textbook; Carl Braden assigned it to young SNCC activists // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.28",
+      "whisper_rendering": "March on Frankfurt",
+      "correction": "March on Frankfort (Kentucky)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "\"There was a jobs, March on Frankfurt for Jobs in Freedom. And that was March 5th of 1964\" \u2014 canonical March 5, 1964 Kentucky civil rights march on Frankfort KY (the capital), echoing the 1963 March on Washington for Jobs and Freedom // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'F-ext': 'High-distortion Whisper rendering of canonical Kentucky civil rights event (Marc'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.34",
+      "whisper_rendering": "Wilkesbury",
+      "correction": "Wilkes-Barre, Pennsylvania",
+      "confidence": "high",
+      "source": "geographic",
+      "notes": "Pass 1 #74.42 logged. Pass 2 confirms \u2014 canonical NE PA city; site of Mercy Hospital 1199 organizing campaign // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'L-ext': '\"Wilkesbury\" \u2192 Wilkes-Barre PA'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "74.P2.41",
+      "whisper_rendering": "Rodolf Shalom",
+      "correction": "Rodef Shalom Congregation (Pittsburgh)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Same passage \u2014 canonical Pittsburgh Reform Jewish synagogue founded 1856; its rabbi oversaw the 1969 1199 election at the Jewish Home and Hospital // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'N-ext': 'Whisper rendering \"Rodolf Shalom\" of canonical 1856-founded Pittsburgh Reform sy'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.1",
+      "whisper_rendering": "\"took a tanga and back\" \u2192 *To Katanga and Back*",
+      "correction": "This row was misplaced under Cleaver #73 (P2 #73.P2.3) and removed there; properly attributed to Tillow #74. Pass 2 #74.P2.2 has the correct attribution. Confirms book-title rendering pattern: \"took a tanga and back / to tanga and back \u2192 *To Katanga and Back* (Conor Cruise O'Brien 1962)\". Add to catalog under canonical-books section or section H.",
+      "confidence": "high",
+      "source": "catalog-new + cross-entry-cleanup",
+      "notes": "Catalog row for canonical 1962 Cold-War-Africa memoir. Also confirms #73.P2.3 should be physically removed from Cleaver corrections table. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'F-ext': 'Note: Pass 2 #73.P2.3 explicitly marks this as \"belongs to #74 Kay Tillow contex'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.3",
+      "whisper_rendering": "\"Conor Cruzel Brian\" \u2192 Conor Cruise O'Brien",
+      "correction": "Distinctive Whisper failure for canonical Irish writer/diplomat/Ghana Vice-Chancellor. Worth catalog row in section E or new \"international Cold-War-Africa figures\" subsection.",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add: \"Conor Cruzel Brian / Cruzel Brian \u2192 Conor Cruise O'Brien (UN/Ghana Vice-Chancellor; *To Katanga and Back* 1962)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'O-ext': '\"Conor Cruzel Brian\" \u2192 Conor Cruise O\\'Brien'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.4",
+      "whisper_rendering": "\"Carroll\" \u2192 Cairo IL (Whisper homophone)",
+      "correction": "Pass 1 #74.11 logged. Pass 3 adds to cross-corpus catalog as a homophone-substitution pattern in section F.",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to section F: \"Carroll IL \u2192 Cairo IL (SW Illinois Civil Rights demonstration site; SNCC 1962 campaign)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.5",
+      "whisper_rendering": "\"champagne Illinois\" \u2192 Champaign IL",
+      "correction": "Pass 1 #74.12 logged. Pass 3 catalogs as section F entry.",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to section F: \"champagne IL \u2192 Champaign IL (UIUC; University of Illinois at Urbana-Champaign)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.6",
+      "whisper_rendering": "\"Wilkesbury\" \u2192 Wilkes-Barre PA",
+      "correction": "Distinctive Whisper failure for canonical PA city; 1199 organizing site. Worth catalog row.",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to section F: \"Wilkesbury \u2192 Wilkes-Barre PA (1199 organizing site early 1970s)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'L-ext': '\"Wilkesbury\" \u2192 Wilkes-Barre PA'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.7",
+      "whisper_rendering": "\"March on Frankfurt\" \u2192 March on Frankfort (KY)",
+      "correction": "High-distortion Whisper rendering of canonical Kentucky civil rights event (March 5 1964 \u2014 KY echo of 1963 March on Washington for Jobs and Freedom). Worth cataloging in section H or new \"specific march events\" subsection.",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add: \"March on Frankfurt \u2192 March on Frankfort (KY, March 5 1964, jobs/freedom march on state capital)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.8",
+      "whisper_rendering": "\"1199\" + canonical Title VI-leveraged hospital desegregation (Tillow's closing testimony)",
+      "correction": "Tillow's testimony that 1965 Medicare's Title VI-compliance provision integrated Southern hospitals \"all of a sudden\" \u2014 faster than the 1964 Civil Rights Act alone \u2014 is canonical historical analysis worth flagging in downstream summary-grounding. Connects Civil Rights legal regime to healthcare integration.",
+      "confidence": "n/a",
+      "source": "summary-context",
+      "notes": "Worth highlighting for Smithsonian-summary grounding; the Title VI hospital-desegregation argument is under-known in popular Civil Rights history. // [LAYER-5: D3-catalog-contradiction (catalog 'L-ext': '\"1199\" + canonical Title VI-leveraged hospital desegregation (Tillow\\'s closing t'), ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.9",
+      "whisper_rendering": "\"Rodolf Shalom\" \u2192 Rodef Shalom Congregation (Pittsburgh)",
+      "correction": "Whisper rendering \"Rodolf Shalom\" of canonical 1856-founded Pittsburgh Reform synagogue. Worth catalog row in section B (organizations) or new section on faith-institution-civil-rights crossover.",
+      "confidence": "medium",
+      "source": "catalog-new",
+      "notes": "Add: \"Rodolf Shalom \u2192 Rodef Shalom Congregation (Pittsburgh Reform synagogue; oversaw 1969 1199 election)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "74.P3.10",
+      "whisper_rendering": "\"Monegal, Tennessee\" \u2192 Monteagle TN",
+      "correction": "Single occurrence but canonical Highlander location 1932-62. Worth catalog row in section F.",
+      "confidence": "high",
+      "source": "catalog-new",
+      "notes": "Add to section F: \"Monegal TN \u2192 Monteagle TN (canonical Highlander Folk School location 1932-62)\". // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

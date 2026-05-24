@@ -1,0 +1,25 @@
+{
+  "entry_number": 109,
+  "subject": "Robert McClary",
+  "corrected_transcript_dir": "transcripts/corrected/Robert McClary_interview_20250705_012321",
+  "low_confidence_items": [
+    {
+      "entry_number": 109,
+      "subject": "Robert McClary",
+      "pass_section": "Pass 1",
+      "row_id": "109.8",
+      "whisper": "Petna Dalico",
+      "correction": "Pete Daniel (likely)",
+      "notes": "Videographer; canonical historian Pete Daniel has done SOHP-affiliated work // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 109,
+      "subject": "Robert McClary",
+      "pass_section": "Pass 2",
+      "row_id": "109.P2.1",
+      "whisper": "Petna Dalico",
+      "correction": "Pete Daniel (likely cameraman)",
+      "notes": "Cross-reference Pass 1 109.8; canonical historian Pete Daniel could have been on SOHP-affiliated work, but this is a low-confidence ID \u2014 Whisper severely garbled the videographer credit // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

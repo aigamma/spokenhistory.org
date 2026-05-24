@@ -1,0 +1,20 @@
+{
+  "entry_number": 106,
+  "subject": "Robert Brown",
+  "items": [
+    {
+      "row_id": "106.P2.29",
+      "whisper": "Burrington High School",
+      "original_candidate": "Burroughs HS / Berrington HS (Newark NJ)",
+      "resolution": "rejected",
+      "new_candidate": "William Penn High School (High Point, North Carolina) — N/A for this entry; flag is a Layer 5 false-positive cross-reference from #108 (Carter)",
+      "evidence": "Direct text search of the corrected Robert Brown transcript (.srt) for 'Burrington', 'Burroughs', 'Berrington', 'Barringer', 'Burr', 'Berr', 'Barr', and 'Newark' returns ZERO matches — the rendering 'Burrington High School' does not appear in Brown's transcript at all. Brown's actual high school is named explicitly and repeatedly in lines 695, 699, 707, 747, 751, 755 as 'William Penn High School', described as 'founded by the Quakers who dominated the area in North Carolina', and he 'graduated from there in the 12th' grade. Brown's biography is rooted entirely in High Point / Anson County, North Carolina (line 19: interview conducted in High Point NC; line 59: grandmother from Anson County, Eastern NC) — there is no Newark NJ connection. External verification via Wikipedia and the William Penn Project confirms William Penn High School (High Point, NC) was a Quaker-founded school for African American students (1891–1968, renamed William Penn in 1927) whose students initiated the first high-school-led sit-in at a Woolworth's on Feb 11, 1960. The slice's own note ('for Brown, no equivalent') correctly flagged this as a cross-reference from #108 Carter (Newark NJ Barringer HS) that should not have propagated to #106. No correction is needed in Brown's overlay for this row; the row_id 106.P2.29 should be retired as a no-op or recorded as 'not applicable — Layer 5 cross-reference false positive'.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/William_Penn_High_School_(North_Carolina)",
+        "https://www.williampennproject.org/blank-1",
+        "https://www.highpoint.edu/library/william-penn-collection/",
+        "https://greensboro.com/william-penn-high-school-has-had-a-lasting-influence-black-history/article_9464c0a9-cdf0-5b7b-b60e-eec0b584b357.html"
+      ]
+    }
+  ]
+}

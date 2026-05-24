@@ -1,0 +1,38 @@
+{
+  "entry_number": 114,
+  "subject": "Sam Young, Jr.",
+  "items": [
+    {
+      "row_id": "114.15",
+      "whisper": "Heel in / heel in Southwest Georgia",
+      "original_candidate": "(canonical) Lee County / land transaction",
+      "resolution": "unresolved",
+      "new_candidate": "[unverified — literal Whisper rendering 'heel in' retained]",
+      "evidence": "The full transcript passage is: 'Sherrod went to New York and found out that the land was for sale, or heel in, in Southwest Georgia.' External archival sources (SNCC Digital Gateway, Wikipedia, International CLT, Schumacher Center, Facing South) all confirm that the New Communities Inc. tract was located in Lee County, Georgia, north of Albany, and that Sherrod did travel frequently to New York for fundraising. However, NONE of those sources document how the land was first discovered (as opposed to who closed the purchase — Slater King's real-estate contacts), and none use the phrase 'heel in' or 'heir-in' to describe the transaction's status. 'Heel in' as a horticultural term (covering bareroot plants in soil) does not fit this conversational context. 'Heir property' is a real and salient term in Black-land-loss discourse, but external sources describe the Lee County tract as conventionally purchased from prior (white) owners, not as heir property. The candidate 'Lee County' is plausible meaning-wise (since the land WAS in Lee County) but does not match the phonetic shape of 'heel in.' Smithsonian-grade discipline forbids inventing a canonical from a phonetic guess; the literal Whisper rendering flagged '[unverified]' is preferable to a confident substitution.",
+      "external_sources": [
+        "https://snccdigital.org/events/new-communities-formed-in-southwest-georgia/",
+        "https://en.wikipedia.org/wiki/New_Communities",
+        "https://www.cltweb.org/resources/clt-case-studies/new-communities/",
+        "https://sncclegacyproject.org/new-communities/",
+        "https://www.facingsouth.org/2022/11/archives-remembering-rev-charles-sherrod-and-new-communities",
+        "https://centerforneweconomics.org/publications/a-new-community-for-southwest-georgia/",
+        "https://www.merriam-webster.com/dictionary/heel%20in"
+      ]
+    },
+    {
+      "row_id": "114.P2.68",
+      "whisper": "the land was for sale, or heel in",
+      "original_candidate": "the land for sale / a heel-in (uncertain)",
+      "resolution": "unresolved",
+      "new_candidate": "the land was for sale, or heel in [unverified]",
+      "evidence": "This is the same passage as 114.15, surfaced under Pass 2 cross-check. The Pass 2 candidate honestly preserved the '(uncertain)' flag — the right Smithsonian-grade posture. External archival corroboration is unavailable: no published source (SNCC Digital, Civil Eats, Schumacher Center, Facing South, History News Network, CLT Web, Wikipedia, New Communities Inc.'s own site) reproduces the speaker's specific phrasing about how Sherrod first learned the land was available. Charles Sherrod's own 2011 LoC oral history (CLT Roots interview) does not mention this New York anecdote. The LoC's official transcript of the Sam Young Jr. interview (afc2010039_crhp0066) is Cloudflare-protected and not accessible via WebFetch from this environment, so the canonical LoC rendering could not be cross-checked. Recommend retaining the literal Whisper rendering with an '[unverified]' flag rather than substituting an invented canonical.",
+      "external_sources": [
+        "https://snccdigital.org/events/new-communities-formed-in-southwest-georgia/",
+        "https://en.wikipedia.org/wiki/New_Communities",
+        "https://cltroots.org/interviews/charles-sherrod-interview",
+        "https://www.loc.gov/item/afc2010039_crhp0066",
+        "https://www.facingsouth.org/2022/11/archives-remembering-rev-charles-sherrod-and-new-communities"
+      ]
+    }
+  ]
+}

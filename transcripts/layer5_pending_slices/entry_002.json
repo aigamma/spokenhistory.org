@@ -1,0 +1,35 @@
+{
+  "entry_number": 2,
+  "subject": "Amos C. Brown",
+  "source_dir": "transcripts/raw/Amos C. Brown_interview_20250704_172044/",
+  "pending_count": 3,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "2.14",
+      "whisper_rendering": "Mechor",
+      "correction": "Medgar (Evers)",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Same person // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "2.P2.10",
+      "whisper_rendering": "Macomb",
+      "correction": "McComb, Mississippi",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Canonical Pike County MS town; canonical SNCC project site under Bob Moses 1961 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "2.P2.12",
+      "whisper_rendering": "Reverend William A. Benda",
+      "correction": "Rev. William Albert Bender",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Canonical Tougaloo College chaplain 1942-50 + MS NAACP president // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

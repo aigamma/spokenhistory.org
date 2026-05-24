@@ -1,0 +1,79 @@
+{
+  "entry_number": 123,
+  "subject": "Walter Bruce",
+  "corrected_transcript_dir": "transcripts/corrected/Walter Bruce_interview_20250705_022102",
+  "low_confidence_items": [
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 1",
+      "row_id": "123.8",
+      "whisper": "Russian Whitaker",
+      "correction": "(likely) Russell Whitaker",
+      "notes": "Canonical Mileston 14 applicant // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 1",
+      "row_id": "123.16",
+      "whisper": "Saigon Pagoda",
+      "correction": "(likely) Sai-Gon Pagoda / Holmes County church",
+      "notes": "- // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 1",
+      "row_id": "123.19",
+      "whisper": "Reverend Mr. M. Crawford / Reverend Crawford",
+      "correction": "(likely) Rev. Crawford",
+      "notes": "- // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 2",
+      "row_id": "123.P2.7",
+      "whisper": "Rolling Wall / Roe Wall",
+      "correction": "Rolling Fork (Whisper of Holmes County community name)",
+      "notes": "Reinforces Pass 1 123.1 \u2014 Holmes County rural community name; alternate possibility is \"Rolling Wall\" is a real place + Whisper is correct // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 2",
+      "row_id": "123.P2.22",
+      "whisper": "Russian Whitaker",
+      "correction": "Russell Whitaker (likely)",
+      "notes": "Reinforces Pass 1 123.8 \u2014 canonical Mileston Fourteen applicant; Whisper of \"Russell\" as \"Russian\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 2",
+      "row_id": "123.P2.34",
+      "whisper": "Saigon Pagoda",
+      "correction": "Salem Pagoda / a Holmes County church",
+      "notes": "Reinforces Pass 1 123.16 \u2014 likely a Whisper rendering of an actual Holmes County Black-church name; canonical white-night-rider gasoline-and-rope arson attempt site // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 2",
+      "row_id": "123.P2.39",
+      "whisper": "Reverend Nick Craw / Reverend Mr. M. Crawford",
+      "correction": "Rev. Crawford / Rev. M. Crawford",
+      "notes": "Reinforces Pass 1 123.19; canonical Holmes County Black-minister/movement-leader // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "entry_number": 123,
+      "subject": "Walter Bruce",
+      "pass_section": "Pass 2",
+      "row_id": "123.P2.41",
+      "whisper": "Tony Zivolich",
+      "correction": "(likely) Tony Zivkovich (Teamsters Atlanta business agent)",
+      "notes": "Confirms Pass 1 cross-corpus \u2014 context here is N/A; not in this transcript actually // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    }
+  ]
+}

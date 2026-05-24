@@ -1,0 +1,22 @@
+{
+  "entry_number": 119,
+  "subject": "Thomas Walter Gaither",
+  "items": [
+    {
+      "row_id": "119.32",
+      "whisper": "Reverend Albert Apples Church",
+      "original_candidate": "(likely) Rev. Robert S. Graetz's church or First Baptist Church Montgomery",
+      "resolution": "narrowed",
+      "new_candidate": "Reverend Ralph Abernathy's church (First Baptist Church, Montgomery)",
+      "evidence": "The surrounding transcript context is decisive: Gaither says his Montgomery assignment came 'right after the bus was burned in Anniston' (May 14, 1961) and that he 'lived in the home of Ralph Avenathy' (Whisper rendering of Abernathy), then describes 'after the event in the church, Montgomery was under martial law' with 'thousands of whites...outside the rally at Reverend Albert Apples Church.' This is unambiguously the May 21, 1961 First Baptist Church siege, where ~1,500 Freedom Riders and supporters were trapped inside by a 3,000-strong white mob until federal marshals and the federalized National Guard relieved them. Ralph Abernathy pastored First Baptist Church Montgomery from 1952-1961 (per Wikipedia, Encyclopedia of Alabama, and PBS American Experience), and the church is in the civil_rights_facts.json corpus under 'Ralph Abernathy' with aliases including 'Reverend Abernathy.' The original candidate's 'Rev. Robert S. Graetz' alternative is rejected: Graetz pastored Trinity Lutheran (a white Lutheran congregation that hosted MIA meetings during the 1955-56 bus boycott), not the besieged May 1961 church. 'Albert Apples' is a Whisper phonetic corruption of 'Ralph Abernathy' (Albert<-Ralph, Apples<-Abernathy), consistent with the same speaker's adjacent rendering 'Ralph Avenathy' two sentences earlier.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/First_Baptist_Church_(Montgomery,_Alabama)",
+        "https://en.wikipedia.org/wiki/Ralph_Abernathy",
+        "https://encyclopediaofalabama.org/article/ralph-david-abernathy/",
+        "https://www.pbs.org/wgbh/americanexperience/features/meet-players-movement-leaders/",
+        "https://calendar.eji.org/racial-injustice/may/21",
+        "https://snccdigital.org/people/tom-gaither/"
+      ]
+    }
+  ]
+}

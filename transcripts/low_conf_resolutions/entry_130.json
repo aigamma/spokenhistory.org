@@ -1,0 +1,46 @@
+{
+  "entry_number": 130,
+  "subject": "William Saunders",
+  "items": [
+    {
+      "row_id": "130.21",
+      "whisper": "Rob Nell",
+      "original_candidate": "Rob Nell (likely Robin Talley or similar; or Bobby Bell)",
+      "resolution": "rejected",
+      "new_candidate": "Arthur Ravenel (Jr.)",
+      "evidence": "The transcript context (Saunders SRT lines 2541-2563) places 'Rob Nell' in a sentence about Charleston's Cooper River bridge: Saunders contrasts a freshman senator (rendered 'Gailan' = Ernest 'Fritz' Hollings, the SC freshman US Senator who in the late 1960s claimed he could build the bridge) with the people who actually built it '25 years later' alongside Jim Clyburn. Per Wikipedia and the SC Encyclopedia on the Arthur Ravenel Jr. Bridge, retired US Congressman Arthur Ravenel Jr. ran for the SC State Senate in 1995-96 specifically to solve the Cooper River bridge funding problem; he helped establish the SC Infrastructure Bank and worked federal/state partnerships to fund the bridge, which opened in 2005 and was named the Arthur Ravenel Jr. Bridge by fellow lawmakers in his honor. The phonetic match 'Rob Nell' -> 'Ravenel' (/RAV-eh-nel/) is strong, the geographic context (Charleston, Cooper River bridge) is exact, the political pairing with Jim Clyburn (SC's federal Democratic heavyweight) matches the bipartisan local-federal coalition that secured funding, and the ~25-year gap from late-1960s Hollings to mid-1990s Ravenel matches Saunders's timeline. Neither 'Robin Talley' nor 'Bobby Bell' nor 'Robert F. Bobby Hill' surface in any Cooper River bridge source.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Arthur_Ravenel_Jr._Bridge",
+        "https://www.scencyclopedia.org/sce/entries/cooper-river-bridges/",
+        "https://schistory.org/july-2005-arthur-ravenel-jr-bridge-opens-to-traffic/"
+      ]
+    },
+    {
+      "row_id": "130.24",
+      "whisper": "Sherry LeBetus",
+      "original_candidate": "Cheryl LaBatts (possible) / unknown",
+      "resolution": "alternate",
+      "new_candidate": "Sherie Labedis (Sherie Holbrook Labedis)",
+      "evidence": "The slice notes describe this row as 'a SCOPE researcher / writer of a SCOPE-veteran book.' Sherie Holbrook Labedis is the published author of 'You Came Here to Die, Didn't You: Registering Black Voters One Soul at a Time,' a memoir of her 1965 SCLC SCOPE (Summer Community Organization and Political Education) experience as a UC Berkeley student volunteer registering voters in Pineville, Berkeley County, South Carolina (per crmvet.org veteran bio and her author site). The phonetic match 'Sherry LeBetus' -> 'Sherie Labedis' is essentially exact (/sher-ee la-BAY-dis/). She is the canonical SCOPE-veteran-as-author figure; no 'Cheryl LaBatts' surfaces in any SCOPE roster or memoir database. CAVEAT: the literal string 'Sherry LeBetus' does not appear anywhere in either the raw Whisper output or the corrected transcript for this interview - this row appears to be a citation/research-aid annotation from the audit overlay rather than a transcribed utterance, so the resolution applies to the audit annotation's referent rather than to a misheard transcript word. Geography fits (Labedis worked in Berkeley County, adjacent to Saunders's Charleston/Johns Island area) but no direct documented contact between Saunders and Labedis was found in the available archival sources, so 'alternate' rather than 'confirmed.'",
+      "external_sources": [
+        "https://www.crmvet.org/vet/labedis.htm",
+        "https://sherielabedis.com/",
+        "https://goodreads.com/en/book/show/10291082-you-came-here-to-die-didn-t-you",
+        "https://sherieholbrooklabedis.wordpress.com/2015/01/23/summer-community-organization-and-political-education-scope-project/"
+      ]
+    },
+    {
+      "row_id": "130.P2.62",
+      "whisper": "Rob Nell",
+      "original_candidate": "Robert F. \"Bobby\" Hill / Robin Talley (likely a SC state legislator)",
+      "resolution": "rejected",
+      "new_candidate": "Arthur Ravenel (Jr.)",
+      "evidence": "Same row as 130.21 - this is the Pass 2 echo of the Pass 1 finding. External adjudication (Wikipedia, SC Encyclopedia, SC Historical Society) consistently identifies Arthur Ravenel Jr. as the SC State Senator who - alongside the federal-side support that included James Clyburn - secured funding for the Cooper River bridge that opened 2005 and now bears his name. The Pass 2 candidates 'Robert F. Bobby Hill' (a Savannah, GA civil-rights attorney - wrong state, wrong specialty) and 'Robin Talley' (no matching SC legislator found in archival searches) are not supported by any Cooper River bridge source. 'Ravenel' is the only candidate whose biographical specifics (SC State Senator post-1995, Cooper River bridge funding champion, bipartisan partnership with Clyburn) match all of Saunders's transcript signals.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Arthur_Ravenel_Jr._Bridge",
+        "https://www.scencyclopedia.org/sce/entries/cooper-river-bridges/",
+        "https://schistory.org/july-2005-arthur-ravenel-jr-bridge-opens-to-traffic/"
+      ]
+    }
+  ]
+}

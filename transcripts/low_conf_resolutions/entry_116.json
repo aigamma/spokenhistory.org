@@ -1,0 +1,35 @@
+{
+  "entry_number": 116,
+  "subject": "Scott Bates",
+  "items": [
+    {
+      "row_id": "116.P2.10",
+      "whisper": "Reverend Albert Apples Church",
+      "original_candidate": "Rev. Robert S. Graetz (or similar) — uncertain",
+      "resolution": "unresolved",
+      "new_candidate": "[misallocated row — string not present in Scott Bates transcript; recommend relocating to entry #119 per Pass 2 cross-reference note]",
+      "evidence": "Exhaustive search of the Scott Bates corrected transcript (both .txt and .srt) for 'Albert', 'Apples', 'Apple', 'Reverend', 'Rev.', 'Graetz', and adjacent church references returned no match. The slice's own Pass 2 note explicitly states 'not in Bates transcript; cross-reference 119.32 noted', confirming this row was misattributed to entry #116 during Pass 2 staging. Because the row's source utterance lives in a different entry (#119), no in-entry adjudication is possible. Per firewall rules I did not read the #119 slice or transcript; the recommendation is purely that the row be relocated by the merge supervisor. The candidate 'Rev. Robert S. Graetz' (white Lutheran pastor in Montgomery during the bus boycott, ally of Rosa Parks/MIA) is a plausible canonical figure but cannot be confirmed without the originating utterance, and Bates himself never references Graetz or the Montgomery bus boycott in his oral history (his focus is Sewanee, Highlander Folk School, NAACP work in Franklin County TN, and the SNCC founding meeting).",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Robert_Graetz",
+        "https://snccdigital.org/people/stokely-carmichael/"
+      ]
+    },
+    {
+      "row_id": "116.P2.36",
+      "whisper": "the Courter store",
+      "original_candidate": "(likely) the Confederate store / monument",
+      "resolution": "unresolved",
+      "new_candidate": "the Courter store [unverified — retain literal Whisper rendering]",
+      "evidence": "Context in the Bates transcript (SRT lines 5371-5419) places this phrase in a rambling segue about the founding of the 'Black Panthers' (Whisper renders 'black pants'), the March Against Fear, and Stokely Carmichael's 'you got to do it yourself' moment at Highlander Folk School. Bates is conflating the 1965 Lowndes County (AL) Black Panther / LCFO organizing with the 1966 Mississippi Meredith March; his diction is loose and elliptical. External archival sources (Wikipedia 'March Against Fear', SNCC Digital Gateway 'Meredith March', Mississippi Encyclopedia, the National Archives 'Turn this Town Out' essay, and the Greenwood MS 'Black Power' historical marker at Broad Street Park) contain no reference to any 'Courter store', 'Confederate store/monument', 'Carter store', or any Klan-affiliated commercial landmark on the March Against Fear route through Hernando, Grenada, Greenwood, Indianola, Belzoni, Yazoo City, Canton, or Jackson. The most-cited Movement 'store' landmark in this geographic/temporal cluster is Varner's Cash Store in Hayneville, Alabama (site of Jonathan Daniels's August 20, 1965 martyrdom) — which Bates as an Episcopalian at Sewanee would plausibly have known and possibly conflated into his Mississippi-march narrative — but the phonetic distance 'Courter' → 'Varner' / 'Cash' is too large to assert with Smithsonian-grade confidence, and the slice's tentative 'Confederate store/monument' is unsupported by any archival source. Recommend retaining the literal Whisper rendering with an '[unverified]' flag rather than substituting a fabricated canonical name.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/March_Against_Fear",
+        "https://snccdigital.org/events/meredith-march/",
+        "https://mississippiencyclopedia.org/entries/the-march-against-fear/",
+        "https://rediscovering-black-history.blogs.archives.gov/2016/06/07/turn-this-town-out-stokely-carmichael-black-power-and-the-march-against-fear/",
+        "https://www.hmdb.org/m.asp?m=77423",
+        "https://www.nps.gov/places/jonathan-daniels-murder-site-cash-s-store.htm",
+        "https://en.wikipedia.org/wiki/Jonathan_Daniels"
+      ]
+    }
+  ]
+}

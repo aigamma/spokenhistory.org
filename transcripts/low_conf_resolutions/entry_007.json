@@ -1,0 +1,20 @@
+{
+  "entry_number": 7,
+  "subject": "Betty Garman Robinson (PARTIAL)",
+  "items": [
+    {
+      "row_id": "7.P2.17",
+      "whisper": "Becky Mills",
+      "original_candidate": "Becky Adams (likely Adams-Mills)",
+      "resolution": "narrowed",
+      "new_candidate": "Becky Mills [unverified surname; possibly Adams-Mills]",
+      "evidence": "Transcript context: 'so I go to California thinking that I'm going to with this other woman Becky Mills that we're going to start an STS [SDS] chapter. And we just somehow never get it off the ground...' This is the speaker's would-be SDS-Berkeley co-organizer at UC Berkeley in fall 1961 / 1962. Whisper consistently mishears 'SDS' as 'STS' in this transcript, but the name 'Becky Mills' is rendered consistently in the single occurrence in-transcript. The Pass 2 hypothesis 'Becky Adams (likely Adams-Mills)' has no external corroboration in SNCC Digital Gateway, CRMVet, Library of Congress finding aids, the UBalt Betty Garman Robinson Papers, or web search for SDS Berkeley 1961-62 organizers. Ground-truth corpus (civil_rights_facts.json) contains no Mills/Adams/Adams-Mills entry. The 'Adams-Mills' hyphenation appears to be Pass 2 speculation, not derived from a citable source. Retain the literal Whisper rendering 'Becky Mills' as the safest candidate; flag the surname as unverified pending archival lookup (e.g., UBalt SDS chapter records, Skidmore alumni records, or Garman Robinson's personal papers).",
+      "external_sources": [
+        "https://snccdigital.org/people/betty-garman-robinson/",
+        "https://www.crmvet.org/mem/bettyg.htm",
+        "https://archivesspace.ubalt.edu/repositories/2/resources/213",
+        "https://www.loc.gov/item/2016655415"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "entry_number": 83,
+  "subject": "Martha Prescod Norman Noonan",
+  "items": [
+    {
+      "row_id": "83.P2.21",
+      "whisper": "Mrs. Cippy / Mrs. Sippy",
+      "original_candidate": "Mrs. Cippy (uncertain — speaker mid-recall)",
+      "resolution": "rejected",
+      "new_candidate": "Mississippi",
+      "evidence": "The transcript context at SRT cues 388-393 (~40:27-41:04) is unambiguous: the interviewer asks Noonan to contrast 'the way Charles Sherrod was running the Albany Project and the way the things were being run in Greenwood,' and Noonan begins her answer with 'Well, Mrs. Cippy was...' before audibly restarting her thought and pivoting to 'Charles Sherrod's project... there were white volunteers in Albany. There were a couple of white volunteers in Mississippi, two men, but they never left the office.' The discourse structure (the prompt was an Albany-vs-Greenwood/Mississippi contrast; the immediately following sentences set up the parallel 'white volunteers in Albany / white volunteers in Mississippi') and the well-attested phonetic mishearing of 'Mississippi' as 'Mrs.-Sippy' (the 'Mrs. M, Mrs. I, Mrs. SSI, Mrs. SSI, Mrs. PPI' rhyme is a long-standing English-language elementary spelling pattern that Whisper has reproduced as a literal honorific) together make 'Mississippi' the only reading that fits both the syntax ('Mississippi was...' is a natural sentence opening; 'Mrs. Cippy was...' would be the introduction of a person never again referenced) and the topic. Searches of the SNCC Digital Gateway profile of Martha Prescod Norman, the crmvet.org 1988 Prescod speech, the LoC and Civil Rights Digital Library catalog records for this oral history, and the New Georgia Encyclopedia / King Institute Albany Movement articles surface no SNCC-era figure named 'Mrs. Cippy' or 'Mrs. Sippy' in either Albany or Greenwood; the local Mississippi figures attested in Prescod's own writing are Fannie Lou Hamer, Amzie Moore, and Hartman Turnbow. Recommended canonical rendering: 'Well, Mississippi was —' (em-dash to signal the self-interruption that the SRT timing already shows).",
+      "external_sources": [
+        "https://snccdigital.org/people/martha-prescod-norman/",
+        "https://www.crmvet.org/comm/prescodm.htm",
+        "https://www.loc.gov/item/2015669179/",
+        "https://crdl.usg.edu/record/loc_crhp_crhp0080",
+        "https://snccdigital.org/people/charles-sherrod/",
+        "https://snccdigital.org/events/albany-movement-formed/",
+        "https://kinginstitute.stanford.edu/albany-movement"
+      ]
+    }
+  ]
+}

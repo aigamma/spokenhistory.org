@@ -1,0 +1,134 @@
+{
+  "entry_number": 15,
+  "subject": "Cecilia Suyat Marshall",
+  "source_dir": "transcripts/raw/Cecilia Suyat Marshall_interview_20250704_182251/",
+  "pending_count": 14,
+  "pending_items": [
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.3",
+      "whisper_rendering": "Royal Wilkins",
+      "correction": "Roy Wilkins",
+      "confidence": "high",
+      "source": "canonical-alias",
+      "notes": "Real (NAACP Executive Secretary 1955\u201377); same Whisper failure as Brown #2.21 // [LAYER-5: phantom-rendering, fuzzy=84.6, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.4",
+      "whisper_rendering": "Gloucester Current",
+      "correction": "Gloster B. Current",
+      "confidence": "medium",
+      "source": "canonical",
+      "notes": "Real (NAACP Director of Branches 1946\u201367); canonical first name is \"Gloster\" not \"Gloucester\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.12",
+      "whisper_rendering": "Robert Carter / Bob Carter",
+      "correction": "Robert L. Carter",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "Real (NAACP attorney; later US District Judge SDNY) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.17",
+      "whisper_rendering": "Lou Jefferson",
+      "correction": "Louis Jefferson",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "Real (African American artist; Morningside Gardens neighbor) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.24",
+      "whisper_rendering": "their good",
+      "correction": "Thurgood",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Multiple Whisper occurrences of \"their good\" = \"Thurgood\" // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.25",
+      "whisper_rendering": "Bob Carter",
+      "correction": "Robert Carter",
+      "confidence": "speaker-originating",
+      "source": "n/a",
+      "notes": "Same as #15.12 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.27",
+      "whisper_rendering": "Travores Aid / Travelers Aid",
+      "correction": "Travelers Aid",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Real social service organization (now Travelers Aid International) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.30",
+      "whisper_rendering": "NAACP Legal Defense Fund",
+      "correction": "NAACP Legal Defense and Educational Fund",
+      "confidence": "correct",
+      "source": "canonical",
+      "notes": "Real (LDF; spun off from the NAACP in 1957) // [LAYER-5: phantom-rendering, fuzzy=79.2, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 1",
+      "row_id": "15.32",
+      "whisper_rendering": "John (Marshall)",
+      "correction": "John W. Marshall",
+      "confidence": "medium",
+      "source": "canonical",
+      "notes": "Real (the younger son; later director of US Marshals Service) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 2",
+      "row_id": "15.P2.13",
+      "whisper_rendering": "Travores Aid",
+      "correction": "Travelers Aid International (likely)",
+      "confidence": "medium",
+      "source": "canonical-alias",
+      "notes": "Canonical American social-services organization Marshall served on board of // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "15.P3.1",
+      "whisper_rendering": "\"their good\" \u2192 \"Thurgood\"",
+      "correction": "Thurgood Marshall",
+      "confidence": "high",
+      "source": "catalog-from-P1 (#15.24)",
+      "notes": "Already corrected in Pass 1 row 15.24; should be back-filed into cross-corpus catalog row C as new high-confidence Whisper rendering of \"Thurgood Marshall\" \u2014 a foundational figure repeatedly mangled across the corpus. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "15.P3.2",
+      "whisper_rendering": "\"Sirgood / Theragos / Sirgood Marshal\" \u2192 \"Thurgood Marshall\"",
+      "correction": "Thurgood Marshall",
+      "confidence": "high",
+      "source": "catalog-from-P1 (#15.1)",
+      "notes": "Same as above; the multi-variant Whisper failure on Thurgood Marshall's first name belongs in the cross-corpus catalog row C alongside Medgar Evers, Stokely Carmichael, and other foundational figures who suffer pervasive Whisper failures. // [LAYER-5: phantom-rendering, fuzzy=70.6, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "15.P3.3",
+      "whisper_rendering": "NAACP National Office (NYC, 20 West 40th Street \u2192 later 1790 Broadway)",
+      "correction": "NAACP National Headquarters",
+      "confidence": "high",
+      "source": "canonical-new",
+      "notes": "The 1948-onward NAACP HQ at 20 West 40th Street NYC (later 1790 Broadway, then Baltimore) is the canonical NAACP work-site Cecilia Marshall and Gloster Current operated from. Should be a catalog entry as canonical Movement venue. // [LAYER-5: phantom-rendering, fuzzy=76.2, ensemble-adjudication-pending]"
+    },
+    {
+      "pass_section": "Pass 3",
+      "row_id": "15.P3.4",
+      "whisper_rendering": "\"NAACP Legal Defense Fund\" carefully distinguished from \"NAACP organization\"",
+      "correction": "LDF (1957 spinoff) vs NAACP parent organization",
+      "confidence": "high",
+      "source": "canonical",
+      "notes": "Pass 1 notes flagged the distinction the speaker carefully maintains. The 1957 spinoff (NAACP Legal Defense and Educational Fund, \"LDF\" / \"Inc Fund\") under Marshall's leadership was legally separate from the parent NAACP for IRS-501c3-fundraising and litigation-strategy reasons. This is a substantive distinction other corpus transcripts conflate; the catalog should flag the distinction for any LLM summary downstream. // [LAYER-5: phantom-rendering, fuzzy=79.2, ensemble-adjudication-pending]"
+    }
+  ]
+}
