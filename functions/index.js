@@ -350,18 +350,32 @@ exports.generateEmbedding = onCall({
     const embedding = embeddingResponse.data[0].embedding;
     logger.info(`Generated embedding with ${embedding.length} dimensions`);
 
+    // Deterministic ID so re-embedding the same segment overwrites
+    // the prior vector instead of writing a duplicate alongside it.
+    // The previous `.add()` path used auto-generated random IDs, which
+    // turned every re-ingest into a wipe-and-reload (or worse: silent
+    // duplication that NaN-poisons the cosine-similarity ranker, since
+    // performVectorSearch has no de-dup pass). Keyed on documentId +
+    // segmentId because those are the natural source-identifying fields
+    // the caller passes; we sanitize them to the Firestore document-ID
+    // character set (no slashes, no leading dot, <= 1500 bytes per
+    // https://firebase.google.com/docs/firestore/quotas#limits).
+    const safeKey = (s) => String(s || 'orphan')
+      .replace(/[\/.#$\[\]]/g, '_')
+      .slice(0, 700);
+    const embeddingId = `${safeKey(documentId)}__${safeKey(segmentId || 'whole')}`;
     const embeddingDoc = {
       embedding: embedding,
       documentId: documentId || null,
       segmentId: segmentId || null,
       textPreview: textPreview || text.substring(0, 200),
-      createdAt: new Date(),
+      updatedAt: new Date(),
     };
-    const docRef = await db.collection("embeddings").add(embeddingDoc);
-    logger.info(`Stored embedding with ID: ${docRef.id}`);
+    await db.collection("embeddings").doc(embeddingId).set(embeddingDoc, {merge: true});
+    logger.info(`Stored embedding with ID: ${embeddingId}`);
     return {
       success: true,
-      id: docRef.id,
+      id: embeddingId,
     };
   } catch (error) {
     logger.error("Error in generateEmbedding function:", error.message, error.stack);
