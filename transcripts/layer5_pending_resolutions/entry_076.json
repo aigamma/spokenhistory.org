@@ -1,0 +1,285 @@
+{
+  "entry_number": 76,
+  "subject": "Lawrence Guyot",
+  "items": [
+    {
+      "row_id": "76.10",
+      "whisper": "Tukeloo / Tugulu / Tu Glue",
+      "original_candidate": "Tougaloo College",
+      "resolution": "confirmed",
+      "new_candidate": "Tougaloo College",
+      "evidence": "The raw transcript contains 'Tuvalu College' and 'Tugeloo' which are clearly Whisper phonetic garbles of Tougaloo. Guyot's biographical context overwhelmingly supports this: he discusses 'I just passed the academic test for entrance in Tougaloo College' (corrected version), meeting Rev. Ed King, John Salter Jr, Ernst Borinski (Jewish refugee professor, canonical Tougaloo faculty), A.A. Branch, Dory and Joyce Ladner — all canonical Tougaloo associates. Tougaloo College (founded 1869, Madison County MS) is verified in the facts corpus with aliases ['Tougaloo', 'Tougaloo Southern Christian College']. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.18",
+      "whisper": "the Tugeloo Nine",
+      "original_candidate": "the Tougaloo Nine",
+      "resolution": "unresolved",
+      "new_candidate": "the Tougaloo Nine",
+      "evidence": "Phantom-rendering flag is correct: the raw transcript does not actually contain 'the Tugeloo Nine' as a phrase. The only 'nine' in raw is 'nine other people human rights' in a different context. 'Tougaloo Nine' refers to the canonical March 27, 1961 Jackson Municipal Library sit-in, but Guyot does not appear to discuss this event in this interview's transcript. The Pass 1 entry appears to be a misattribution — either the row was inserted in error or the phrase appeared in a passage that was subsequently cleaned out. Conservative call: mark unresolved pending re-verification that this whisper rendering actually appears in the source. The historical 'Tougaloo Nine' is real; its presence in this specific transcript is not corroborated.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.24",
+      "whisper": "Levin Brown",
+      "original_candidate": "LeVon Brown",
+      "resolution": "confirmed",
+      "new_candidate": "LeVon Brown",
+      "evidence": "The corrected transcript renders this as 'LeVon Brown' in two separate contexts: (1) listed among Freedom House residents at 714 Rose Street Jackson MS alongside Bob Moses, Diane Nash, the Ladner sisters, James Bevel, Tom Gaither, Paul Brooks; and (2) immediately after 'Sheila Michaels' in the freedom-rider list. LeVon Brown is a canonical SNCC Mississippi field worker associated with the Freedom Rides and Jackson MS organizing in 1961. The Whisper substitution 'Levin' for 'LeVon' is a plausible phonetic confusion. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.43",
+      "whisper": "Warthall County",
+      "original_candidate": "Walthall County, Mississippi",
+      "resolution": "confirmed",
+      "new_candidate": "Walthall County, Mississippi",
+      "evidence": "Corrected transcript: 'We took John Door to Walthall County, Mississippi. And we introduced John Door to a man named John Hardy. John Hardy was a SNCC activist who went, brought some people into the register to vote.' This matches canonical history: John Hardy was a SNCC voter-registration worker pistol-whipped by registrar John Q. Wood in Tylertown, Walthall County, on September 7, 1961. The DOJ filed United States v. Wood seeking an injunction. Walthall County is in southwest Mississippi (Pike-Marion-Lincoln corridor of early SNCC organizing). Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.45",
+      "whisper": "Faris County",
+      "original_candidate": "Forrest County, Mississippi",
+      "resolution": "confirmed",
+      "new_candidate": "Forrest County, Mississippi",
+      "evidence": "Corrected transcript explicitly contains 'He is the registrar in Forrest County, Mississippi' in reference to Theron Lynd, the registrar Guyot discusses at length. Forrest County (county seat Hattiesburg) is canonically where Lynd refused to register Black voters; United States v. Lynd (1962-66, Fifth Circuit) is the seminal voter-registration contempt case. Guyot was jailed in Hattiesburg (Forrest County seat) repeatedly. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.65",
+      "whisper": "Cassuh-bach / Katzenbach",
+      "original_candidate": "Nicholas Katzenbach",
+      "resolution": "confirmed",
+      "new_candidate": "Nicholas Katzenbach",
+      "evidence": "Corrected transcript: 'Nicholas Nicholas Katzenbach, who then testified before the judiciary committee said, I'm convinced of the Constitutionality of all of this except the right of illiterates to vote.' This is canonical: Nicholas Katzenbach was Acting Attorney General (1964-65) then Attorney General (1965-66) under LBJ, and testified before the Senate Judiciary Committee on the Voting Rights Act in March 1965. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.66",
+      "whisper": "Walter Fontroy / Walter Fountain",
+      "original_candidate": "Walter Fauntroy",
+      "resolution": "confirmed",
+      "new_candidate": "Walter Fauntroy",
+      "evidence": "Corrected transcript: 'one of the biggest opponents is Walter Fauntroy, Reverend Walter Fauntroy, who's Dr. King's lieutenant here' (referring to same-sex marriage opposition in DC). Walter Fauntroy is canonical: SCLC DC bureau director under King, DC delegate to US Congress 1971-91, ordained Baptist minister. The Whisper substitutions 'Fontroy/Fountain' for 'Fauntroy' are plausible phonetic garbles. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.71",
+      "whisper": "Bayard Rustin's \"From Protest to Politics\"",
+      "original_candidate": "Bayard Rustin's \"From Protest to Politics\" (*Commentary* Feb 1965)",
+      "resolution": "confirmed",
+      "new_candidate": "Bayard Rustin's \"From Protest to Politics\" (Commentary Feb 1965)",
+      "evidence": "Raw transcript actually contains: 'by Rustin comes out late after that with an article called The Difference between Politics and Protest in Commentary Magazine.' The Whisper rendering of the title is garbled but the Commentary Magazine attribution and authorship are clear. The canonical essay is Bayard Rustin, 'From Protest to Politics: The Future of the Civil Rights Movement,' Commentary, February 1965 — the seminal essay arguing that SNCC-style direct-action protest must give way to coalition political organizing. The phantom-rendering fuzzy=62.5 flag reflects that 'From Protest to Politics' is the canonical title, not Whisper's actual garble; the correction substitutes the canonical title for the garbled one. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.35",
+      "whisper": "Warthall County",
+      "original_candidate": "Walthall County",
+      "resolution": "confirmed",
+      "new_candidate": "Walthall County",
+      "evidence": "Pass 2 reinforcement of Pass 1 #76.43. Same evidence: corrected transcript contains 'Walthall County, Mississippi' in the John Doar / John Hardy voter-registration context. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.41",
+      "whisper": "Howdy Spurry",
+      "original_candidate": "Hattiesburg",
+      "resolution": "confirmed",
+      "new_candidate": "Hattiesburg",
+      "evidence": "Corrected transcript contains 'I leave then go to Hattiesburg' and 'We were driving in a car from Hattiesburg, Staxon' — both in the post-Medgar Evers funeral / Winona aftermath narrative. Hattiesburg is canonically Guyot's primary organizing base (Forrest County seat). The Whisper garble 'Howdy Spurry' for 'Hattiesburg' is severe but the contextual fit is overwhelming — Guyot says 'I would be in Hattiesburg, Mississippi, or in Jackson, or in Greenwood' as his typical 1964 location. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.45",
+      "whisper": "Linda Johnson",
+      "original_candidate": "Lyndon Johnson",
+      "resolution": "confirmed",
+      "new_candidate": "Lyndon Johnson",
+      "evidence": "Corrected transcript: 'there was a request by Lyndon Johnson to be a moratorium on demonstrations' — context is immediately after the JFK assassination (November 1963), discussing the SNCC response. Lyndon Johnson is canonical; the moratorium request is documented in Theodore H. White's account. Lyndon appears multiple times throughout the interview ('Lyndon Johnson said it best', 'Lyndon Johnson calls a press conference', etc). Whisper homophone 'Linda' for 'Lyndon' is plausible. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.53",
+      "whisper": "Hadisburg",
+      "original_candidate": "Hattiesburg",
+      "resolution": "confirmed",
+      "new_candidate": "Hattiesburg",
+      "evidence": "Same canonical referent as #76.P2.41. Hattiesburg appears 8+ times in the corrected transcript as Guyot's organizing base. Whisper variant rendering. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.57",
+      "whisper": "swan-a-chain and good men",
+      "original_candidate": "Schwerner, Chaney, and Goodman",
+      "resolution": "confirmed",
+      "new_candidate": "Schwerner, Chaney, and Goodman",
+      "evidence": "Raw transcript confirms tokens 'swan', 'chain', and 'good men' all present. Corrected transcript: 'I watched John Doerr testify, represent the government in the case of Schwerner, Chaney, and Goodman. And he said, you know, he quoted Lincoln.' This is canonical: United States v. Price (1967), the federal civil rights conspiracy trial of the Mississippi Burning defendants, where John Doar (DOJ Civil Rights Division) prosecuted and quoted Lincoln's Gettysburg Address ('the world will little note nor long remember...'). Catalog G pattern. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.59",
+      "whisper": "Cassuh-bach / Katzenbach, who was then testified",
+      "original_candidate": "Nicholas Katzenbach, who then testified",
+      "resolution": "confirmed",
+      "new_candidate": "Nicholas Katzenbach, who then testified",
+      "evidence": "Pass 2 reinforcement of Pass 1 #76.65. Same context: Katzenbach Senate Judiciary Committee testimony on VRA 1965 constitutionality of literacy provisions. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.64",
+      "whisper": "Lewis Martin",
+      "original_candidate": "Louis Martin",
+      "resolution": "confirmed",
+      "new_candidate": "Louis Martin",
+      "evidence": "Corrected transcript: 'Louis Martin and others talked to the President to call Dr. King's wife, Coretta Scott King.' Context: Guyot discussing the 1960 October JFK-to-Coretta phone call after MLK's Atlanta arrest. Louis E. Martin (1912-97) was canonically the DNC deputy chairman and Black voter-outreach strategist who architected the JFK call to Coretta — documented in Branch's Parting the Waters and Garrow's Bearing the Cross. Whisper 'Lewis' for 'Louis' is a plausible homophone substitution. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.69",
+      "whisper": "Hot Maternity Boat",
+      "original_candidate": "Hartman Turnbow",
+      "resolution": "confirmed",
+      "new_candidate": "Hartman Turnbow",
+      "evidence": "Corrected transcript: 'Hartman Turnbow, as you know, is a man who's accused of destroying his house, setting his house on fire. His wife and his daughter is in this house and he comes out shooting and he kills a white man.' Canonical: Hartman Turnbow (Holmes County MS) was a SNCC-supported Black landowner whose house was firebombed by Klansmen on April 9, 1963; he returned fire and was then arson-charged. Multiple corrected references throughout. The Whisper garble 'Hot Maternity Boat' for 'Hartman Turnbow' is severe but matches catalog C pattern. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.70",
+      "whisper": "Mr. Timebow",
+      "original_candidate": "Mr. Turnbow",
+      "resolution": "confirmed",
+      "new_candidate": "Mr. Turnbow",
+      "evidence": "Same canonical referent as #76.P2.69. Variant rendering in same passage. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.81",
+      "whisper": "Allah comes to voting rights act",
+      "original_candidate": "along comes the Voting Rights Act",
+      "resolution": "confirmed",
+      "new_candidate": "along comes the Voting Rights Act",
+      "evidence": "Corrected transcript: 'And along comes the Voting Rights Act.' Context: Guyot is describing how Theron Lynd-style segregationist registrar resistance throughout Mississippi necessitated federal legislation. The homophone Whisper substitution 'Allah' for 'along' is severe and a textbook high-damage hallucination — if uncorrected it would publish as theological framing in a Smithsonian summary. Catalog G common-noun. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.82",
+      "whisper": "Vodernich Act",
+      "original_candidate": "Voting Rights Act (1965)",
+      "resolution": "confirmed",
+      "new_candidate": "Voting Rights Act (1965)",
+      "evidence": "Corrected transcript context: 'So you get an idea of the impact of the 1965 Voting Rights Act' (referring to Guyot's uncle running for Alderman in Pass Christian in 1966). Voting Rights Act of 1965 is canonical (Public Law 89-110, signed August 6, 1965). Severe Whisper garble of canonical statute. Catalog G common-noun. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.102",
+      "whisper": "Gloucester Current",
+      "original_candidate": "Gloster Current",
+      "resolution": "confirmed",
+      "new_candidate": "Gloster Current",
+      "evidence": "Corrected transcript: 'You got Gloster Current, you got Roy Wilkins, you got Julian, I mean, uh, Courtland Cox, you got James Farmer' — context is the post-1964 Atlantic City convention NYC meeting on Mississippi strategy. Gloster B. Current (1913-97) was canonically NAACP Director of Branches 1947-78, the longest-tenured NAACP national staff member. Whisper substitution 'Gloucester' for 'Gloster' is a plausible name-normalization error. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P2.114",
+      "whisper": "Faris County",
+      "original_candidate": "Forrest County",
+      "resolution": "confirmed",
+      "new_candidate": "Forrest County",
+      "evidence": "Pass 2 reinforcement of Pass 1 #76.45. Same canonical referent: Theron Lynd registrar in Forrest County (Hattiesburg). Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.2",
+      "whisper": "\"Howdy Spurry\" -> \"Hattiesburg\" + \"Staxon\" -> \"Jackson\" co-occurrence",
+      "original_candidate": "High-frequency severe Whisper geographic garble pair in same transcript span",
+      "resolution": "confirmed",
+      "new_candidate": "High-frequency severe Whisper geographic garble pair in same transcript span (catalog F-ext)",
+      "evidence": "Pattern-level promotion. Both 'Howdy Spurry' (Hattiesburg) and 'Staxon' (Jackson) co-occur in the corrected transcript passage: 'We were driving in a car from Hattiesburg, Staxon.' The 'Staxon' rendering remains in the corrected text and may need its own future cleanup, but the paired Hattiesburg-to-Jackson route description is canonical to Guyot's Mississippi geography. Catalog F-ext promotion warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.3",
+      "whisper": "\"Allah comes to voting rights act\" -> \"along comes the Voting Rights Act\"",
+      "original_candidate": "Theological misattribution — Whisper \"Allah\" homophone for \"along\"",
+      "resolution": "confirmed",
+      "new_candidate": "Theological misattribution — Whisper \"Allah\" homophone for \"along\" (catalog G-ext)",
+      "evidence": "Pattern-level promotion. High-damage homophone failure that would publish as theological framing in a Smithsonian summary if uncatalogued. Pass 2 #76.P2.81 documents the specific instance; Pass 3 promotes to catalog G common-noun pattern for downstream sweeping. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.4",
+      "whisper": "\"Vodernich Act\" -> \"Voting Rights Act\"",
+      "original_candidate": "Severe Whisper garble of canonical 1965 federal statute",
+      "resolution": "confirmed",
+      "new_candidate": "Severe Whisper garble of canonical 1965 federal statute (catalog G-ext)",
+      "evidence": "Pattern-level promotion. Pass 2 #76.P2.82 documents the specific instance. High-damage canonical-statute-name garble. Catalog G common-noun promotion warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.5",
+      "whisper": "\"Hot Maternity Boat\" / \"Mr. Timebow\" -> \"Hartman Turnbow\"",
+      "original_candidate": "Recurring severe Whisper rendering of canonical Holmes County leader",
+      "resolution": "confirmed",
+      "new_candidate": "Recurring severe Whisper rendering of canonical Holmes County leader Hartman Turnbow (catalog C-ext)",
+      "evidence": "Pattern-level promotion. Both variant renderings ('Hot Maternity Boat' and 'Mr. Timebow') refer to the same canonical figure across the same passage. Hartman Turnbow is the Holmes County SNCC-supported Black landowner from the April 1963 firebombing incident. Catalog C promotion (Mississippi indigenous movement figures) warranted alongside existing 'Hartman Turnbull' variant. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.6",
+      "whisper": "\"Hardly lot\" -> \"Hardy Lott\"",
+      "original_candidate": "Greenwood MS segregationist attorney who defended Byron De La Beckwith at the Medgar Evers murder trials",
+      "resolution": "confirmed",
+      "new_candidate": "Hardy Lott (Greenwood MS segregationist attorney, defended Byron De La Beckwith) — catalog C-ext",
+      "evidence": "Corrected transcript: 'Hardy Lott, a segregationist lawyer who defends Byron De La Beckwith says to me in the, the Leflore County Courthouse one, you should be very proud of how many people you all got coming down in the Leflore County.' This is canonical: Hardy Lott was a Greenwood Mississippi attorney who served on Byron De La Beckwith's defense team in the 1964 Medgar Evers murder trials (which ended in hung juries). Catalog C-ext promotion (Mississippi segregationist legal apparatus) warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.7",
+      "whisper": "\"Gloucester Current\" -> \"Gloster Current\"",
+      "original_candidate": "NAACP Director of Branches 1947-78 (longest tenure of any NAACP national staff member); canonical Roy Wilkins lieutenant",
+      "resolution": "confirmed",
+      "new_candidate": "Gloster B. Current (NAACP Director of Branches 1947-78) — catalog B-ext / C-ext",
+      "evidence": "Pattern-level promotion. Pass 2 #76.P2.102 documents the specific instance. Gloster B. Current (1913-97) was canonically NAACP Director of Branches 1947-78, served alongside Roy Wilkins, Henry Lee Moon, and Clarence Mitchell as the NAACP inner circle. Catalog C promotion (NAACP figures) warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.8",
+      "whisper": "\"Lewis Martin\" -> \"Louis Martin\"",
+      "original_candidate": "DNC Black voter-outreach strategist; 1960 JFK-to-Coretta phone-call architect",
+      "resolution": "confirmed",
+      "new_candidate": "Louis E. Martin (DNC Black voter-outreach strategist) — catalog E-ext",
+      "evidence": "Pattern-level promotion. Pass 2 #76.P2.64 documents the specific instance. Louis E. Martin (1912-97), known as the 'godfather of Black politics,' served as DNC deputy chairman under Kennedy and Johnson, architected the 1960 JFK-to-Coretta phone call, and later served on the Carter White House staff. Catalog E (pre-Movement and supporting figures) promotion warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.10",
+      "whisper": "\"swan-a-chain and good men\" -> \"Schwerner, Chaney, and Goodman\"",
+      "original_candidate": "Already in catalog G as variant; Pass 3 confirms severity and adds Guyot context",
+      "resolution": "confirmed",
+      "new_candidate": "Schwerner, Chaney, and Goodman (already in catalog G; Pass 3 adds United States v. Price 1967 trial context per Guyot)",
+      "evidence": "Pattern-level reinforcement of existing catalog G entry. Pass 2 #76.P2.57 documents the specific instance. Guyot's reference is during the United States v. Price (1967) federal civil rights conspiracy trial of the Mississippi Burning defendants; he describes John Doar's prosecution and Lincoln-quote closing. Catalog reinforcement warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.12",
+      "whisper": "\"Bollock-Courtney Committee\" -> Student Nonviolent Coordinating Committee",
+      "original_candidate": "Severe Whisper garble of full SNCC name",
+      "resolution": "confirmed",
+      "new_candidate": "Student Nonviolent Coordinating Committee (SNCC) — catalog B-ext",
+      "evidence": "Pattern-level promotion. The corrected transcript contains multiple references to 'the student of the nonviolent court in any committee' (Whisper garble of 'Student Nonviolent Coordinating Committee') in Guyot's closing remarks. SNCC's full name is canonical (founded April 1960 at Shaw University; Ella Baker convened). Catalog B promotion (canonical organization full-name garbles, alongside existing 'snake/sneak/Snick' variants for the acronym) warranted. Confidence: high.",
+      "external_sources": []
+    },
+    {
+      "row_id": "76.P3.13",
+      "whisper": "\"the symbolic to seat offer\" / \"1,200 telegrams... to seek\" -> \"two-seat\" / \"to seat\"",
+      "original_candidate": "Whisper homophone confusion: \"to seek/seat/seat\" — canonical 1964 MFDP Atlantic City compromise terminology",
+      "resolution": "confirmed",
+      "new_candidate": "Whisper homophone confusion in MFDP convention discussions: 'to seek/seat/seat' — canonical 1964 MFDP Atlantic City two-seat compromise (catalog G-ext, cross-corpus)",
+      "evidence": "Cross-corpus pattern reinforcement. The 1964 MFDP delegation's rejection of the two-seat compromise at the Atlantic City Democratic National Convention is canonical (Aug 22-26, 1964; Hubert Humphrey/Walter Reuther/Joseph Rauh negotiated; Fannie Lou Hamer's Credentials Committee testimony preempted by LBJ press conference). The Whisper homophone 'seek/seat/seat' garble appears in the corrected transcript (which still contains residual Layer-5 annotation markers near 'And then there are 1,200 telegrams saying...' and 'We would then offer a compromise of two people'). Cross-corpus reinforcement with Anderson Todd #79.P2.141. Confidence: high.",
+      "external_sources": []
+    }
+  ]
+}

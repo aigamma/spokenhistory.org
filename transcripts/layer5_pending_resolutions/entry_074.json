@@ -1,0 +1,258 @@
+{
+  "entry_number": 74,
+  "subject": "Kay Tillow",
+  "items": [
+    {
+      "row_id": "74.6",
+      "whisper": "Anne Brayden",
+      "original_candidate": "Anne Braden",
+      "resolution": "resolved-high",
+      "new_candidate": "Anne Braden",
+      "evidence": "Transcript explicitly names 'The Wall Between by Anne Braden' as the book given to Tillow by her Presbyterian minister. Anne Braden (1924-2006) is canonical Southern white civil-rights organizer, Southern Conference Educational Fund (SCEF) field secretary, author of The Wall Between (1958) recounting the Wade house bombing and her and Carl Braden's sedition charges. The facts.json corpus already confirms Anne Braden in the Bob Zellner entry as SCEF sponsor of his SNCC field-secretary position. Tillow's narrative also names 'Carl and Anne Braden' explicitly later in the transcript ('I met Carl and Anne Braden') and references 'The Southern Patriot' (the SCEF newspaper they edited). Whisper rendering 'Brayden' is a near-homophone substitution; resolution is unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.11",
+      "whisper": "Carroll (40 miles from Metropolis)",
+      "original_candidate": "Cairo (Illinois)",
+      "resolution": "resolved-high",
+      "new_candidate": "Cairo, Illinois",
+      "evidence": "Transcript context: 'there were SNCC demonstrations in Cairo, which was about 40 miles away' from Metropolis IL, where Tillow grew up. Cairo IL (pronounced 'KAY-roh') sits at the southern tip of Illinois at the Ohio/Mississippi confluence, approximately 40 miles WSW of Metropolis IL — geographically exact match. Cairo IL was a canonical SNCC organizing target in summer 1962 (NAACP youth + SNCC voter-registration/desegregation campaigns including Mary McCollum, named in the same transcript passage with a 'huge gash' from one of the demonstrations). Carroll IL is a completely different town with no civil rights demonstration history. Whisper homophone substitution is standard ('Cairo' → 'Carroll' is documented across the corpus, including the Pass 3 catalog row).",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.12",
+      "whisper": "champagne Illinois",
+      "original_candidate": "Champaign, Illinois",
+      "resolution": "resolved-high",
+      "new_candidate": "Champaign, Illinois",
+      "evidence": "Transcript: 'I went to the University of Illinois then... my first picket line was at the University of Illinois against some store that wouldn't hire African-Americans... and Champaign, Illinois as well.' University of Illinois at Urbana-Champaign (UIUC) is the canonical flagship Illinois state university; Tillow attended 1960-64 (her own narrative timeline supports this: graduated high school 1960, went to Ghana junior year abroad 1962, returned 1963, ultimately graduated 1967 after leaving in 1964 for movement work). Whisper rendering 'champagne' is a standard homophone failure; 'Champaign IL' is the only valid disambiguation given the UIUC context.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.15",
+      "whisper": "Conor Cruzel Brian",
+      "original_candidate": "Conor Cruise O'Brien",
+      "resolution": "resolved-high",
+      "new_candidate": "Conor Cruise O'Brien",
+      "evidence": "Transcript: 'I learned a lot in Africa from Conor Cruise O'Brien, was the chancellor of the university, and he had written, To Katanga and Back, and all of that story.' Tillow went to Ghana on junior year abroad 1962. Conor Cruise O'Brien (1917-2008), Irish writer/diplomat/UN official, was Vice-Chancellor of the University of Ghana 1962-65 (succeeded Kwame Nkrumah in that role). He was UN Secretary-General Hammarskjold's representative in Katanga during the 1961 Congo Crisis intervention; his memoir 'To Katanga and Back: A UN Case History' was published 1962. The transcript explicitly names him as chancellor of the university and as author of the Katanga book — both canonically verified. Whisper rendering 'Cruzel Brian' is a recognizable phonetic compression of 'Cruise O'Brien'.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.23",
+      "whisper": "Monegal, Tennessee",
+      "original_candidate": "Monteagle, Tennessee",
+      "resolution": "resolved-high",
+      "new_candidate": "Monteagle, Tennessee",
+      "evidence": "Transcript context: discussion of Highlander Folk School and its original location ('it was burned down. I think that was in Monteagle, Tennessee'). The facts.json corpus explicitly states: 'Highlander Folk School... founded in 1932 by Myles Horton, Don West, and James Dombrowski near Monteagle, Tennessee.' Monteagle TN was Highlander's location from 1932 until 1962, when Tennessee revoked its charter; it then moved to Knoxville and later to New Market TN. Whisper rendering 'Monegal' is a documented degradation pattern. Resolution is institutionally canonical and unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.24",
+      "whisper": "Jim Dumbbrowski",
+      "original_candidate": "James Dombrowski",
+      "resolution": "resolved-high",
+      "new_candidate": "James Dombrowski",
+      "evidence": "Transcript: 'There were James Dombrowski being there. He was one of the old, sketch [SCEF] people.' James A. Dombrowski (1897-1983) was executive director of the Southern Conference Educational Fund (SCEF), and a co-founder of Highlander Folk School (1932) with Myles Horton and Don West — confirmed in facts.json Highlander entry. Tillow's narrative places him at a Highlander workshop alongside Carl and Anne Braden, which is biographically exact (Dombrowski + Braden were the SCEF inner circle). Whisper rendering 'Jim Dumbbrowski' is a standard phonetic mangling; resolution is unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.30",
+      "whisper": "Eleanor Flexner's As Century of Struggle",
+      "original_candidate": "Eleanor Flexner's *A Century of Struggle*",
+      "resolution": "resolved-high",
+      "new_candidate": "Eleanor Flexner's *Century of Struggle: The Woman's Rights Movement in the United States* (1959)",
+      "evidence": "Transcript: 'When did I read Eleanor Flexner's A Century of Struggle on Women? We read a lot of stuff... Carl and Anne Braden had us reading.' Eleanor Flexner's 'Century of Struggle: The Woman's Rights Movement in the United States' (Harvard University Press, 1959) is canonical first-generation US women's history scholarship. Whisper rendering 'As Century of Struggle' is a one-vowel error ('A' heard as 'As'). The Pass 2 row 74.P2.27 expands the title to the full canonical form. Resolution unambiguous; full title preferred per Pass 2 expansion.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.42",
+      "whisper": "Wilkesbury",
+      "original_candidate": "Wilkes-Barre (Pennsylvania)",
+      "resolution": "resolved-high",
+      "new_candidate": "Wilkes-Barre, Pennsylvania",
+      "evidence": "Transcript: 'I worked in Wilkes-Barre where we organized the registered nurses and all of the whole hospital... And that was Mercy Hospital in Wilkes-Barre.' Wilkes-Barre PA is canonical NE Pennsylvania city (population ~40k); Mercy Hospital Wilkes-Barre is a real hospital that existed during the 1199P organizing campaigns of the early 1970s. Tillow's narrative explicitly ties this to her National Union of Hospital and Health Care Employees (1199) work after 1969. Whisper rendering 'Wilkesbury' is a standard phonetic mangling of the hyphenated French-origin name (pronounced WILKS-bear-ee or WILKS-burr-ee). Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.1",
+      "whisper": "Conor Cruzel Brian",
+      "original_candidate": "Conor Cruise O'Brien",
+      "resolution": "resolved-high",
+      "new_candidate": "Conor Cruise O'Brien",
+      "evidence": "Duplicate of 74.15 with Pass 2 verification adding biographical specificity (UN representative in Katanga 1961, Vice-Chancellor of University of Ghana 1962-65, author of To Katanga and Back 1962). All biographical details independently verifiable. Tillow's 1962 Ghana junior-year-abroad timeline aligns exactly with O'Brien's UoG Vice-Chancellorship. Resolution is canonically unambiguous; Pass 2's added detail strengthens but does not modify the original Pass 1 resolution.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.2",
+      "whisper": "took a tanga and back",
+      "original_candidate": "*To Katanga and Back* (Conor Cruise O'Brien memoir, 1962)",
+      "resolution": "resolved-high",
+      "new_candidate": "*To Katanga and Back: A UN Case History* (Conor Cruise O'Brien, 1962)",
+      "evidence": "Transcript: 'he [O'Brien] had written, took a tanga and back, and all of that story.' Whisper compression of 'To Katanga' into 'took a tanga' is a recognizable speech-recognition failure on the prepositional-phrase boundary + foreign word ('Katanga' = southern Congo province seceded under Tshombe 1960-63). The full book title is 'To Katanga and Back: A UN Case History' (Hutchinson, 1962), O'Brien's memoir of his time as UN Secretary-General Hammarskjold's representative during the Katanga Crisis. Pass 3 row 74.P3.1 also confirms this is properly attributed to Tillow #74 (not Cleaver #73, where it was originally misplaced). Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.4",
+      "whisper": "Anne Brayden",
+      "original_candidate": "Anne McCarty Braden",
+      "resolution": "resolved-high",
+      "new_candidate": "Anne McCarty Braden",
+      "evidence": "Full-name expansion of 74.6 resolution. Anne McCarty Braden (1924-2006), born Anita McCarty in Louisville KY, married Carl Braden 1948, co-author/author of The Wall Between (1958), SCEF field secretary, lifelong civil rights organizer. The 'McCarty' middle name (her birth surname) is canonical and used in published biographies (e.g., Catherine Fosl's 'Subversive Southerner: Anne Braden and the Struggle for Racial Justice in the Cold War South' 2002). Pass 2 source notes this should be added to civil_rights_facts.json as foundational Southern white-civil-rights-organizer figure — a defensible recommendation given her recurrence across multiple corpus entries. Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.10",
+      "whisper": "Carroll",
+      "original_candidate": "Cairo (Illinois)",
+      "resolution": "resolved-high",
+      "new_candidate": "Cairo, Illinois",
+      "evidence": "Duplicate of 74.11 confirming the homophone-substitution pattern. Pass 2 confirms canonical SW Illinois Civil Rights demonstration site (1962 SNCC campaign). Geographic match (40 miles from Metropolis IL, southern tip of Illinois) and Tillow's biographical placement (summer 1962 NAACP/SNCC participation) make resolution unambiguous. Standard Whisper homophone failure.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.11",
+      "whisper": "champagne Illinois",
+      "original_candidate": "Champaign, Illinois",
+      "resolution": "resolved-high",
+      "new_candidate": "Champaign, Illinois",
+      "evidence": "Duplicate of 74.12 confirming the homophone-substitution pattern. Pass 2 confirms canonical UIUC location; Tillow attended 1960-64. Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.21",
+      "whisper": "Monegal, Tennessee",
+      "original_candidate": "Monteagle, Tennessee",
+      "resolution": "resolved-high",
+      "new_candidate": "Monteagle, Tennessee",
+      "evidence": "Duplicate of 74.23 confirming the canonical Highlander Folk School location 1932-62. facts.json Highlander entry explicitly confirms 'near Monteagle, Tennessee'. Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.22",
+      "whisper": "Jim Dumbbrowski",
+      "original_candidate": "James A. Dombrowski",
+      "resolution": "resolved-high",
+      "new_candidate": "James A. Dombrowski",
+      "evidence": "Full-name expansion of 74.24. James Anderson Dombrowski (1897-1983) co-founded Highlander Folk School with Myles Horton and Don West in 1932 (confirmed in facts.json Highlander and Horton entries) and served as SCEF executive director from 1947 until 1966. The middle initial 'A.' is canonical (per published biographies, e.g., Frank Adams' 'James A. Dombrowski: An American Heretic, 1897-1983' 1992). Tillow's narrative places him in SCEF/Highlander/Braden circle, exactly matching his biographical role. Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.27",
+      "whisper": "Eleanor Flexner's As Century of Struggle",
+      "original_candidate": "*Century of Struggle: The Woman's Rights Movement in the United States* (Eleanor Flexner, 1959)",
+      "resolution": "resolved-high",
+      "new_candidate": "*Century of Struggle: The Woman's Rights Movement in the United States* (Eleanor Flexner, 1959)",
+      "evidence": "Full-title expansion of 74.30. Eleanor Flexner (1908-1995) published 'Century of Struggle: The Woman's Rights Movement in the United States' with Harvard University Press in 1959 — the first comprehensive scholarly history of American women's rights organizing through suffrage. Tillow's mention of Carl Braden assigning it to young SNCC activists is biographically plausible (Carl Braden was strongly invested in cross-movement reading lists). Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.28",
+      "whisper": "March on Frankfurt",
+      "original_candidate": "March on Frankfort (Kentucky)",
+      "resolution": "resolved-high",
+      "new_candidate": "March on Frankfort (Kentucky), March 5, 1964",
+      "evidence": "Transcript: 'we marched on Frankfurt with the people who organized from Louisville for, there was a jobs, March on Frankfort for Jobs in Freedom. And that was March 5th of 1964.' The March on Frankfort KY (March 5, 1964) was a canonical Kentucky civil rights event — approximately 10,000 marchers on the Kentucky state capitol demanding state-level public accommodations legislation (which passed as Kentucky Civil Rights Act of 1966). Speakers included Martin Luther King Jr., Jackie Robinson, and Peter Yarrow. The name 'March on Frankfort for Jobs and Freedom' deliberately echoed the August 1963 March on Washington for Jobs and Freedom. Whisper rendering 'Frankfurt' is a homophone substitution (the German city vs. the KY state capital). Resolution canonically unambiguous; Tillow's explicit date (March 5, 1964) matches the historical record.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.34",
+      "whisper": "Wilkesbury",
+      "original_candidate": "Wilkes-Barre, Pennsylvania",
+      "resolution": "resolved-high",
+      "new_candidate": "Wilkes-Barre, Pennsylvania",
+      "evidence": "Duplicate of 74.42. Tillow's narrative explicitly names 'Wilkes-Barre' as the site of Mercy Hospital 1199 organizing. Wilkes-Barre PA is the only canonical disambiguation. Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P2.41",
+      "whisper": "Rodolf Shalom",
+      "original_candidate": "Rodef Shalom Congregation (Pittsburgh)",
+      "resolution": "resolved-high",
+      "new_candidate": "Rodef Shalom Congregation (Pittsburgh)",
+      "evidence": "Transcript: 'We found a rabbi from Rodef Shalom Congregation, who was going to hold this election.' Rodef Shalom Congregation is a canonical Reform Jewish congregation in Pittsburgh PA, founded 1856 — one of the oldest Reform synagogues west of the Alleghenies. Its rabbi in 1969 was Walter Jacob (Senior Rabbi 1966-1996), who was active in civil rights and labor causes. Tillow's account of the rabbi overseeing the 1199 union-recognition election at the Jewish Home and Hospital for the Aged (Christmas Eve 1969 sit-in followed by January/February 1970 election) is biographically plausible — Jewish Home + Reform rabbi from a flagship congregation is the canonical intermediary structure for such a faith-based labor arbitration. Whisper rendering 'Rodolf Shalom' is a recognizable phonetic mangling (Hebrew 'Rodef Shalom' = 'pursuer of peace'). Resolution unambiguous.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.1",
+      "whisper": "\"took a tanga and back\" → *To Katanga and Back*",
+      "original_candidate": "This row was misplaced under Cleaver #73 (P2 #73.P2.3) and removed there; properly attributed to Tillow #74. Pass 2 #74.P2.2 has the correct attribution. Confirms book-title rendering pattern: \"took a tanga and back / to tanga and back → *To Katanga and Back* (Conor Cruise O'Brien 1962)\". Add to catalog under canonical-books section or section H.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'took a tanga and back / to tanga and back → *To Katanga and Back* (Conor Cruise O'Brien, 1962)' — Kay Tillow #74 attribution; previously misplaced under Cleaver #73",
+      "evidence": "This is a Pass 3 catalog/governance row, not a per-instance correction. Confirms (a) the canonical attribution to Kay Tillow's Ghana narrative (1962), (b) the cross-corpus catalog entry under canonical-books or section H, and (c) the cross-entry cleanup that physically removed #73.P2.3 from the Cleaver corrections table where it had been misplaced. All three sub-claims are independently verifiable: Tillow attribution matches the transcript at row 74.P2.2; canonical pattern is a recognized Whisper compression of 'To Katanga and Back'; cross-entry cleanup is a standard Pass 4 firewall operation. Confirmed as catalog row.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.3",
+      "whisper": "\"Conor Cruzel Brian\" → Conor Cruise O'Brien",
+      "original_candidate": "Distinctive Whisper failure for canonical Irish writer/diplomat/Ghana Vice-Chancellor. Worth catalog row in section E or new \"international Cold-War-Africa figures\" subsection.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'Conor Cruzel Brian / Cruzel Brian → Conor Cruise O'Brien (UN/Ghana Vice-Chancellor; *To Katanga and Back* 1962)' — section E or new 'international Cold-War-Africa figures' subsection",
+      "evidence": "Pass 3 catalog/governance row. The Whisper failure pattern 'Conor Cruzel Brian / Cruzel Brian' is distinctive (the apostrophe in O'Brien is dropped and 'Cruise O'Brien' is heard as 'Cruzel Brian' — a syllable-boundary failure on the elided possessive). Catalog placement in section E (canonical international figures) or a new 'international Cold-War-Africa figures' subsection is editorially defensible. Confirmed as catalog row.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.4",
+      "whisper": "\"Carroll\" → Cairo IL (Whisper homophone)",
+      "original_candidate": "Pass 1 #74.11 logged. Pass 3 adds to cross-corpus catalog as a homophone-substitution pattern in section F.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'Carroll IL → Cairo IL (SW Illinois Civil Rights demonstration site; SNCC 1962 campaign)' — section F",
+      "evidence": "Pass 3 catalog/governance row. The Cairo IL → 'Carroll' homophone substitution is recurrent across the corpus (the pronunciation 'KAY-roh' for Cairo IL is non-obvious to speech-recognition models trained on the Egyptian-city pronunciation 'KYE-roh'; the closest familiar US place-name is Carroll IA or Carroll County IL). Catalog placement in section F (geographic substitutions) is correct. Confirmed as catalog row.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.5",
+      "whisper": "\"champagne Illinois\" → Champaign IL",
+      "original_candidate": "Pass 1 #74.12 logged. Pass 3 catalogs as section F entry.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'champagne IL → Champaign IL (UIUC; University of Illinois at Urbana-Champaign)' — section F",
+      "evidence": "Pass 3 catalog/governance row. The Champaign IL → 'champagne' homophone substitution is well-documented (the French-spelling-but-English-pronunciation of 'Champaign' as 'SHAM-pain' is identical to the beverage; Whisper consistently substitutes the more common word). Catalog placement in section F (geographic substitutions) is correct. Confirmed as catalog row.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.6",
+      "whisper": "\"Wilkesbury\" → Wilkes-Barre PA",
+      "original_candidate": "Distinctive Whisper failure for canonical PA city; 1199 organizing site. Worth catalog row.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'Wilkesbury → Wilkes-Barre PA (1199 organizing site early 1970s)' — section F",
+      "evidence": "Pass 3 catalog/governance row. The Wilkes-Barre PA → 'Wilkesbury' substitution reflects Whisper's failure on the hyphenated French-origin name (correct pronunciation is WILKS-bear-ee or WILKS-burr-ee, often heard as the suffix '-bury'). Catalog placement in section F is correct. Confirmed as catalog row.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.7",
+      "whisper": "\"March on Frankfurt\" → March on Frankfort (KY)",
+      "original_candidate": "High-distortion Whisper rendering of canonical Kentucky civil rights event (March 5 1964 — KY echo of 1963 March on Washington for Jobs and Freedom). Worth cataloging in section H or new \"specific march events\" subsection.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'March on Frankfurt → March on Frankfort (KY, March 5 1964, jobs/freedom march on state capital)' — section H or new 'specific march events' subsection",
+      "evidence": "Pass 3 catalog/governance row. The Frankfort KY (state capital) → 'Frankfurt' substitution is a homophone failure where Whisper defaults to the more globally famous German city. The March 5, 1964 March on Frankfort is a canonical event in Kentucky civil rights history (Martin Luther King Jr., Jackie Robinson, Peter Yarrow as speakers; ~10,000 marchers; lobbied for what became the Kentucky Civil Rights Act of 1966). Catalog placement in section H or new 'specific march events' subsection is editorially defensible. Confirmed as catalog row.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.8",
+      "whisper": "\"1199\" + canonical Title VI-leveraged hospital desegregation (Tillow's closing testimony)",
+      "original_candidate": "Tillow's testimony that 1965 Medicare's Title VI-compliance provision integrated Southern hospitals \"all of a sudden\" — faster than the 1964 Civil Rights Act alone — is canonical historical analysis worth flagging in downstream summary-grounding. Connects Civil Rights legal regime to healthcare integration.",
+      "resolution": "confirmed",
+      "new_candidate": "Summary-grounding flag confirmed: Tillow's Title VI / Medicare 1965 hospital desegregation argument is canonical and under-known in popular Civil Rights history. Worth highlighting in downstream Smithsonian-grade summary grounding.",
+      "evidence": "Pass 3 summary-context row (confidence 'n/a' — not a correction but a downstream-summary-grounding flag). Tillow's argument is historically accurate: when Medicare was enacted in July 1965, Title VI of the Civil Rights Act of 1964 was applied to hospital eligibility for Medicare funds (the 'Title VI compliance' provision). Hospitals seeking the new Medicare funding stream had to desegregate to receive federal money — a far faster integration mechanism than litigation under Title II/VII of the 1964 Civil Rights Act alone. This is canonical 'fiscal federalism as civil rights enforcement' analysis (David Barton Smith's 'The Power to Heal: Civil Rights, Medicare, and the Struggle to Transform America's Health Care System' 2016 is the foundational secondary source). Flag confirmed as summary-grounding asset.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.9",
+      "whisper": "\"Rodolf Shalom\" → Rodef Shalom Congregation (Pittsburgh)",
+      "original_candidate": "Whisper rendering \"Rodolf Shalom\" of canonical 1856-founded Pittsburgh Reform synagogue. Worth catalog row in section B (organizations) or new section on faith-institution-civil-rights crossover.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'Rodolf Shalom → Rodef Shalom Congregation (Pittsburgh Reform synagogue; oversaw 1969 1199 election)' — section B (organizations) or new faith-institution-civil-rights subsection. Confidence tier: medium (Pass 3 source rating preserved).",
+      "evidence": "Pass 3 catalog/governance row at confidence 'medium' (preserved). The Rodef Shalom Congregation Pittsburgh founding date (1856), denomination (Reform Judaism), and role as the rabbi-of-record for the 1969 Jewish Home and Hospital 1199 election are all verifiable. The Whisper rendering 'Rodolf Shalom' (substituting the Germanic male name 'Rudolf/Rodolf' for the Hebrew 'Rodef') is a recognizable phonetic substitution. Catalog placement in section B (organizations) is defensible. Confirmed as catalog row at medium confidence per Pass 3 source assessment.",
+      "external_sources": []
+    },
+    {
+      "row_id": "74.P3.10",
+      "whisper": "\"Monegal, Tennessee\" → Monteagle TN",
+      "original_candidate": "Single occurrence but canonical Highlander location 1932-62. Worth catalog row in section F.",
+      "resolution": "confirmed",
+      "new_candidate": "Catalog row confirmed: 'Monegal TN → Monteagle TN (canonical Highlander Folk School location 1932-62)' — section F",
+      "evidence": "Pass 3 catalog/governance row. Monteagle TN was Highlander's canonical location from 1932 founding until 1962, when Tennessee revoked the school's charter (per facts.json Highlander entry). The 'Monegal' Whisper failure reflects difficulty with the unusual Tennessee place-name (Monteagle is pronounced 'MON-tee-gull'; Whisper compresses to 'Monegal'). Catalog placement in section F is correct. Confirmed as catalog row.",
+      "external_sources": []
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "entry_number": 15,
+  "subject": "Cecilia Suyat Marshall",
+  "items": [
+    {
+      "row_id": "15.3",
+      "whisper": "Royal Wilkins",
+      "original_candidate": "Roy Wilkins",
+      "resolution": "resolved-high",
+      "new_candidate": "Roy Wilkins",
+      "evidence": "The ground-truth corpus at Metadata Generation System/civil_rights_facts.json confirms 'Roy Wilkins' as an entry: 'American civil rights leader (1901-1981), executive director of the NAACP from 1955 to 1977.' Cecilia Suyat Marshall worked in the NAACP National Office where Roy Wilkins served as Executive Secretary and later as Executive Director (succeeding Walter White); her testimony placing him at the New York headquarters alongside Walter White is consistent with documented institutional history.\n\nNotably, the actual raw transcript at transcripts/raw/Cecilia Suyat Marshall_interview_20250704_182251/*.txt does not contain the string 'Royal Wilkins' in any source format (.txt, .srt, .vtt, .json) — all three appearances of his name render as 'Roy Wilkins' correctly. The 'Royal Wilkins' phantom rendering noted in the slice may originate from a prior pass's record-keeping artifact or a cross-corpus catalog reference to a Whisper failure pattern seen in other entries (the note flags 'same Whisper failure as Brown #2.21'). Regardless of the phantom-rendering provenance, the canonical identity is unambiguous and corpus-confirmed.\n\nResolution: high-confidence. D2 flag can be cleared. Roy Wilkins is the correct canonical referent in this entry by speaker's own usage, by corpus confirmation, and by independent historical record.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Roy_Wilkins"]
+    },
+    {
+      "row_id": "15.4",
+      "whisper": "Gloucester Current",
+      "original_candidate": "Gloster B. Current",
+      "resolution": "resolved-high",
+      "new_candidate": "Gloster B. Current",
+      "evidence": "Cecilia Suyat Marshall's testimony explicitly identifies her boss as 'the director of branches' at the NAACP National Office. Historical record confirms Gloster B. Current (1913-1997) served as NAACP Director of Branches from 1946 through 1967. The canonical spelling is 'Gloster' (not the British city 'Gloucester' that Whisper produced from the homophonic confusion).\n\nThe interviewer in the transcript actually offers the misspelling 'Gloucester Current' as a question and Marshall affirms 'Gloucester Current, yes' — but this is the interviewer reading from notes mishearing the name, then Marshall politely confirming the referent (a common interview-courtesy phenomenon). The substantive identification — director of branches at NAACP National Office, hired the field secretaries, called 'Bubo' by close friends, 'pitch black' in complexion per the Franklin Williams story — uniquely identifies Gloster B. Current in NAACP institutional history. He is not in the 140-entry ground-truth corpus, but the historical record is clear and well-documented.\n\nResolution: high-confidence. D2 flag can be cleared. Gloster B. Current is the correct canonical identification with the canonical first-name spelling.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Gloster_B._Current", "https://naacp.org/find-resources/history-explained/civil-rights-leaders/gloster-b-current"]
+    },
+    {
+      "row_id": "15.12",
+      "whisper": "Robert Carter / Bob Carter",
+      "original_candidate": "Robert L. Carter",
+      "resolution": "resolved-high",
+      "new_candidate": "Robert L. Carter",
+      "evidence": "The ground-truth corpus at Metadata Generation System/civil_rights_facts.json confirms 'Robert L. Carter' with the description: 'American civil rights attorney and federal judge (1917-2012), NAACP General Counsel 1956-1968, federal judge SDNY 1972-2012' and aliases ['Robert Lee Carter', 'Judge Carter']. Marshall's testimony explicitly places 'Bob Carter' as 'one of Theragos first assistants there' (i.e., one of Thurgood Marshall's first assistants at the NAACP legal team), which is exactly the documented historical role — Carter served as NAACP Assistant General Counsel under Thurgood Marshall, co-argued Brown v. Board, and succeeded Marshall as General Counsel in 1956.\n\nThe speaker's own usage 'Bob Carter' is a familiar/informal form ('speaker-originating'), but Robert L. Carter is the published canonical name in the corpus, on his federal-judiciary bench profile, and in NAACP institutional records.\n\nResolution: high-confidence. D2 flag can be cleared.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Robert_L._Carter"]
+    },
+    {
+      "row_id": "15.17",
+      "whisper": "Lou Jefferson",
+      "original_candidate": "Louis Jefferson",
+      "resolution": "narrowed",
+      "new_candidate": "Lou Jefferson (speaker-originating; canonical form likely Louis Jefferson)",
+      "evidence": "The transcript places 'Lou Jefferson, who was a great artist' as a resident of the Morningside Gardens co-op community where the Marshalls lived, alongside other named neighbors (Ed Dudley, Richard Parrish, George Dockery, Bob Carter). 'Lou' is plausibly a familiar form of 'Louis,' but I cannot independently verify which canonical form ('Louis Jefferson,' 'Lou Jefferson' as a stage/working name, or another underlying given name) the artist used as his professional identity. Louis Jefferson (1933-2006) is documented as a Harlem-based African American artist associated with Morningside Heights, but the slice's confidence designation 'speaker-originating' and source 'n/a' confirm this candidate has not been ground-truthed against an authoritative archive.\n\nGiven the slice's own 'speaker-originating' tier and the absence of a corpus entry, the conservative move is to preserve the speaker's actual rendering 'Lou Jefferson' as the primary identification with a parenthetical canonical candidate, rather than substituting 'Louis Jefferson' as if it were established. The 'D2-ambiguous' flag should be narrowed rather than fully cleared because the canonical-vs-familiar form is genuinely uncertain.\n\nResolution: narrowed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "15.24",
+      "whisper": "their good",
+      "original_candidate": "Thurgood",
+      "resolution": "resolved-high",
+      "new_candidate": "Thurgood",
+      "evidence": "The ground-truth corpus confirms 'Thurgood Marshall' as 'American civil rights lawyer and U.S. Supreme Court Justice (1908-1993), lead counsel in Brown v. Board of Education and first Black justice on the Supreme Court' with alias 'Justice Marshall'. Cecilia Suyat Marshall was married to Thurgood Marshall from 1955 until his death in 1993; she is uniquely positioned to refer to him by his given name.\n\nWhisper's mis-rendering of 'Thurgood' as 'their good' (a homophone-like reduction common to AI ASR systems when an unfamiliar proper noun is parsed as common words) is a well-documented failure pattern across this corpus and in Whisper's general behavior on names. The raw transcript contains the literal string 'their good' once and additional renderings including 'third Marshal', 'Theragos', and 'Sirgood' — all of which the speaker would have pronounced as 'Thurgood'. The identification is unambiguous given the speaker is Thurgood Marshall's widow describing her husband.\n\nResolution: high-confidence. D2 flag can be cleared. The phantom-rendering 'their good' is one of multiple Whisper failure modes for 'Thurgood' in this entry; the canonical name is corpus-confirmed and contextually beyond question.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Thurgood_Marshall"]
+    },
+    {
+      "row_id": "15.25",
+      "whisper": "Bob Carter",
+      "original_candidate": "Robert Carter",
+      "resolution": "resolved-high",
+      "new_candidate": "Robert L. Carter",
+      "evidence": "Same referent as row 15.12. The corpus entry 'Robert L. Carter' (NAACP General Counsel 1956-1968; federal judge SDNY 1972-2012) with aliases ['Robert Lee Carter', 'Judge Carter'] is unambiguous. The speaker's familiar form 'Bob Carter' should be normalized to the canonical 'Robert L. Carter' for downstream metadata consistency, matching the resolution at row 15.12.\n\nI'm using 'Robert L. Carter' rather than 'Robert Carter' (the slice's correction) to align with the corpus's canonical entry name, which includes the middle initial. This is the form used in his federal-judiciary commission, on his published opinions, and in his autobiography 'A Matter of Law' (2005).\n\nResolution: high-confidence. D2 flag can be cleared.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Robert_L._Carter"]
+    },
+    {
+      "row_id": "15.27",
+      "whisper": "Travores Aid / Travelers Aid",
+      "original_candidate": "Travelers Aid",
+      "resolution": "resolved-high",
+      "new_candidate": "Travelers Aid",
+      "evidence": "The speaker explicitly says 'I have the Travores Aid. I used to be on the board of Travores Aid' — Whisper has consistently mis-rendered 'Travelers' as 'Travores' in this entry. Travelers Aid (now Travelers Aid International) is a real social-services organization founded in 1851 that provides assistance to travelers in crisis at transportation hubs (airports, train stations, bus terminals). The organization has an active board structure, is plausibly something Cecilia Marshall would have served on as a prominent Washington-area philanthropist and the widow of a Supreme Court Justice, and the phonetic distance from 'Travelers Aid' to 'Travores Aid' is small enough to be a recognizable Whisper failure mode.\n\nThe organization is not in the 140-entry ground-truth corpus (which focuses on civil-rights-specific institutions), but its existence and Marshall's plausible board membership are independently verifiable.\n\nResolution: high-confidence. D2 flag can be cleared.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Travelers_Aid_International", "https://travelersaid.org/"]
+    },
+    {
+      "row_id": "15.30",
+      "whisper": "NAACP Legal Defense Fund",
+      "original_candidate": "NAACP Legal Defense and Educational Fund",
+      "resolution": "resolved-high",
+      "new_candidate": "NAACP Legal Defense and Educational Fund",
+      "evidence": "The ground-truth corpus confirms the entry 'NAACP Legal Defense Fund' with wikipedia_title 'NAACP Legal Defense and Educational Fund' and aliases ['NAACP LDF', 'LDF', 'Inc Fund', 'NAACP Legal Defense and Educational Fund']. Description: 'NAACP Legal Defense and Educational Fund (LDF) litigation team led by Thurgood Marshall that argued Brown v. Board of Education before the U.S. Supreme Court.'\n\nThe full legal name of the organization spun off from the NAACP in 1957 is 'NAACP Legal Defense and Educational Fund, Inc.' — commonly shortened to 'LDF' or the older 'Inc Fund' designation. The speaker uses the short form 'Legal Defense Fund' which is colloquially correct but elides the 'and Educational' portion of the formal corporate name. For Smithsonian-grade metadata, the canonical full name is preferred.\n\nThe slice tier 'correct' and source 'canonical' already reflect this; the D2 flag was raised for ensemble adjudication on the long-vs-short-form question. Resolution: prefer the canonical long form 'NAACP Legal Defense and Educational Fund' for metadata, while noting that the colloquial 'Legal Defense Fund' and 'LDF' are also correct.\n\nResolution: high-confidence. D2 flag can be cleared.",
+      "external_sources": ["https://www.naacpldf.org/", "https://en.wikipedia.org/wiki/NAACP_Legal_Defense_and_Educational_Fund"]
+    },
+    {
+      "row_id": "15.32",
+      "whisper": "John (Marshall)",
+      "original_candidate": "John W. Marshall",
+      "resolution": "resolved-high",
+      "new_candidate": "John W. Marshall",
+      "evidence": "The transcript's closing exchange establishes that John is the younger son and that 'He was well to begin with Marshall and then became the director of the Marshall service. And he's now with the Transportation Department.' This is a direct identification of John W. Marshall (born 1958), the second son of Thurgood and Cecilia Marshall, who served as the 8th Director of the United States Marshals Service from 1999 to 2001 under President Clinton, and who later served as Virginia Secretary of Public Safety from 2002-2010.\n\nThe Whisper rendering 'director of the Marshall service' is a homophonic mis-rendering of 'director of the U.S. Marshals Service' — and the speaker's own confusion ('he was well to begin with Marshall' / 'He was deputy U.S. Marshal to begin with' is a plausible underlying utterance) further supports the identification. The 'Transportation Department' reference is consistent with John W. Marshall's documented post-2010 service in Virginia transportation roles.\n\nThis identification is unambiguous given: (a) speaker is John W. Marshall's mother; (b) the role description (Marshals Service director, later Transportation) uniquely identifies him in U.S. federal personnel records; (c) the named son is contemporaneously alive (born 1958). Not in the 140-entry ground-truth corpus, but historically well-documented.\n\nResolution: high-confidence. D2 flag can be cleared.",
+      "external_sources": ["https://en.wikipedia.org/wiki/John_W._Marshall", "https://www.usmarshals.gov/who-we-are/history/historical-personnel/director-john-w-marshall"]
+    },
+    {
+      "row_id": "15.P2.13",
+      "whisper": "Travores Aid",
+      "original_candidate": "Travelers Aid International (likely)",
+      "resolution": "narrowed",
+      "new_candidate": "Travelers Aid (modern name: Travelers Aid International)",
+      "evidence": "Same referent as row 15.27. The speaker's contemporaneous usage in the 1950s-1990s era would have been 'Travelers Aid' or 'Travelers Aid Society' — the organization rebranded to 'Travelers Aid International' in more recent decades, but Marshall's board service likely predates the 'International' suffix. The cautious move is to use the historical name 'Travelers Aid' with the modern 'Travelers Aid International' noted as the current-era successor.\n\nThe Pass 2 candidate 'Travelers Aid International (likely)' is forward-projecting the current organizational name onto historical board service; for metadata fidelity, the historical form is preferable when the speaker's era of involvement predates the rebrand. This is a narrowing of the candidate to be more historically precise rather than substituting an alternative identification.\n\nResolution: narrowed.",
+      "external_sources": ["https://travelersaid.org/about/history/"]
+    },
+    {
+      "row_id": "15.P3.1",
+      "whisper": "\"their good\" → \"Thurgood\"",
+      "original_candidate": "Thurgood Marshall",
+      "resolution": "resolved-high",
+      "new_candidate": "Thurgood Marshall",
+      "evidence": "Same Pass 1 referent as row 15.24, now elevated for the cross-corpus catalog. The catalog should record 'their good' as a recurring Whisper-failure rendering of 'Thurgood' (homophone-driven mis-parse of an unfamiliar proper noun into common-word fragments). This entry alone produces multiple distinct Whisper renderings for the name — 'their good', 'third Marshal', 'Theragos', 'Sirgood' — confirming the failure pattern is robust and worth catalog-level documentation alongside other foundational names that suffer pervasive Whisper failures (Medgar Evers, Stokely Carmichael).\n\nThe identification of 'Thurgood Marshall' as the canonical referent is unambiguous given the speaker is his widow and the ground-truth corpus carries the entry directly.\n\nResolution: high-confidence. D2 flag can be cleared; catalog promotion of the Whisper-failure pattern is the appropriate next action.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Thurgood_Marshall"]
+    },
+    {
+      "row_id": "15.P3.2",
+      "whisper": "\"Sirgood / Theragos / Sirgood Marshal\" → \"Thurgood Marshall\"",
+      "original_candidate": "Thurgood Marshall",
+      "resolution": "resolved-high",
+      "new_candidate": "Thurgood Marshall",
+      "evidence": "Same referent as rows 15.24 and 15.P3.1. The multi-variant Whisper failures on 'Thurgood Marshall' from a single entry (the speaker being his widow) are unambiguous — every variant rendering ('Sirgood', 'Theragos', 'Sirgood Marshal', 'their good', 'third Marshal') is contextually pinned to Thurgood Marshall by the surrounding biographical content (NAACP legal counsel, Brown v. Board, the marriage proposal narrative, the Supreme Court reference).\n\nCorpus entry confirms canonical identification. Catalog-level documentation of the Whisper-failure variants is the appropriate downstream action; this row's D2 flag can be cleared.\n\nResolution: high-confidence.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Thurgood_Marshall"]
+    },
+    {
+      "row_id": "15.P3.3",
+      "whisper": "NAACP National Office (NYC, 20 West 40th Street → later 1790 Broadway)",
+      "original_candidate": "NAACP National Headquarters",
+      "resolution": "narrowed",
+      "new_candidate": "NAACP National Office (New York City; specific street address not stated in transcript)",
+      "evidence": "The transcript refers to 'the NAACP office, the National Office in New York' but does NOT mention specific street addresses (20 West 40th Street, 1790 Broadway, or any other address). The Pass 3 note's proposal to record '20 West 40th Street NYC (later 1790 Broadway, then Baltimore)' as canonical metadata for this entry is correct historical context for NAACP headquarters location history, but it is extrapolation beyond what the speaker actually said in this interview.\n\nFor a per-entry canonical metadata record, the appropriate identification is 'NAACP National Office (New York City)' — what the speaker actually referenced — rather than a fully-elaborated street-address timeline that the speaker did not provide. The street-address timeline is appropriate for a corpus-global venue-catalog entry, but should not be back-attributed to this entry as if the speaker had specified addresses.\n\nThis is a narrowing of the canonical candidate to match what the transcript actually evidences. The D2 ambiguity is genuine: the Pass 3 candidate over-specifies relative to the speaker's actual words.\n\nResolution: narrowed.",
+      "external_sources": ["https://naacp.org/about/history"]
+    },
+    {
+      "row_id": "15.P3.4",
+      "whisper": "\"NAACP Legal Defense Fund\" carefully distinguished from \"NAACP organization\"",
+      "original_candidate": "LDF (1957 spinoff) vs NAACP parent organization",
+      "resolution": "resolved-high",
+      "new_candidate": "NAACP Legal Defense and Educational Fund (LDF, 1957 spinoff) — distinct from NAACP parent organization",
+      "evidence": "The substantive distinction is historically accurate and corpus-confirmed: the NAACP Legal Defense and Educational Fund became legally separate from the parent NAACP in 1957, primarily for IRS-501(c)(3) tax-status reasons (the LDF could accept tax-deductible donations for litigation; the parent NAACP, as a 501(c)(4), could not). The two organizations were sometimes in tension after the split — most famously when LDF refused to drop the 'NAACP' from its name despite NAACP requests in the 1970s-80s, leading to NAACP v. NAACP Legal Defense and Educational Fund, Inc. (1985).\n\nThe corpus entry 'NAACP Legal Defense Fund' with description 'NAACP Legal Defense and Educational Fund (LDF) litigation team led by Thurgood Marshall' implicitly preserves this distinction. Cecilia Marshall's testimony explicitly references both her husband's leadership of 'the legal counsel there' (i.e., LDF) and her own board service on 'the Legal Defense Fund' (i.e., LDF).\n\nThe distinction should be preserved in downstream LLM-summary metadata so that summaries don't conflate the two organizations. The flag is canonically correct and should be cleared in favor of an instruction-to-downstream-summarizers form.\n\nResolution: high-confidence. D2 flag can be cleared with the disambiguation note preserved as metadata.",
+      "external_sources": ["https://www.naacpldf.org/about-us/history/", "https://en.wikipedia.org/wiki/NAACP_Legal_Defense_and_Educational_Fund"]
+    }
+  ]
+}

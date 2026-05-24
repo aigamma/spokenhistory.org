@@ -1,0 +1,276 @@
+{
+  "entry_number": 34,
+  "subject": "Ekwueme Michael Thelwell",
+  "items": [
+    {
+      "row_id": "34.9",
+      "whisper": "Charlotte Cobb",
+      "original_candidate": "Charlie Cobb (Charles E. Cobb Jr.)",
+      "resolution": "confirmed",
+      "new_candidate": "Charlie Cobb (Charles E. Cobb Jr.)",
+      "evidence": "Raw Whisper transcript verified as 'Charlotte Cobb' in the cohort-listing context: Thelwell is enumerating Howard NAG / SNCC cohort members alongside Courtland Cox. 'Charlotte' is a gendered Whisper substitution for 'Charlie' -- the canonical SNCC field secretary Charles E. Cobb Jr., a NAG and SNCC veteran, frequent Howard cohort companion of Thelwell, Cox, and Carmichael. The ground-truth corpus entry 'Charles Cobb' at line 815 explicitly lists 'Charlie Cobb' as the canonical alias and notes the Whisper mis-rendering pattern 'Charlie Cobb (which he uses) or Charlotte Cobb.' The D3 catalog contradiction notes 'Charles E. Cobb Jr. (Charlie Cobb)' as the catalog form -- this is consistent with the corpus, not contradictory. Original Pass 1 correction stands.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.11",
+      "whisper": "Slave Sellers",
+      "original_candidate": "Cleve Sellers (Cleveland Sellers)",
+      "resolution": "confirmed",
+      "new_candidate": "Cleve Sellers (Cleveland Sellers)",
+      "evidence": "Raw transcript verified: 'slave sellers who came from South Carolina into Nug. And Cleve was sent to hold by his parents because white folks had won them in the community.' The very next sentence calls the same person 'Cleve' -- this is a self-evident match for Cleveland L. Sellers Jr., SNCC program secretary from South Carolina, NAG cohort, sent to Howard by his parents because of his Civil Rights activism in Denmark, SC. Ground-truth corpus entry 'Cleveland Sellers' at line 365 lists 'Cleve Sellers' as the canonical alias. The Whisper substitution 'Slave Sellers' for 'Cleve Sellers' is particularly damaging racially loaded mis-rendering, with very high contextual certainty. D3 catalog contradiction is non-contradictory -- 'Cleveland L. Sellers Jr. (Cleve Sellers)' matches the canonical alias chain.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.15",
+      "whisper": "the bomb (Birmingham)",
+      "original_candidate": "the Bombingham / Birmingham",
+      "resolution": "narrowed",
+      "new_candidate": "Birmingham (likely 'Bombingham' speaker-originating nickname)",
+      "evidence": "Raw transcript verified: 'you're from out of the bomb on my brother. He told me about it, and he educated me. He told me about Tuskegee.' La Vaughan is from Birmingham -- this is confirmed in Pass 2 #34.P2.12 and by the surrounding Bull Connor / Birmingham 1959-1963 context. However, the Whisper rendering 'out of the bomb' more plausibly preserves the speaker-originating nickname 'Bombingham' (with Whisper truncating the suffix) than a clean 'Birmingham' (which Whisper renders accurately elsewhere). Conservative resolution: confirm Birmingham as the referenced city; preserve 'Bombingham' as the speaker-originating annotation since Thelwell elsewhere demonstrates SNCC-vernacular usage. Narrowed to single referent (Birmingham, Alabama) with Bombingham annotation rather than full alternate.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.50",
+      "whisper": "Tugulu",
+      "original_candidate": "Tougaloo",
+      "resolution": "confirmed",
+      "new_candidate": "Tougaloo",
+      "evidence": "Ground-truth corpus entry 'Tougaloo College' at line 791 explicitly enumerates Whisper mis-rendering patterns including 'Tuvalu, Tugaloo, Tugulu, Tuwu, Tugel, two-below, Two-Wheeled, or to glue.' 'Tugulu' is an enumerated canonical Whisper mis-rendering of Tougaloo. In this transcript Thelwell discusses 'Mary Lovelace, who came from a good bourgeois Mississippi family, whose father taught at two-below, I believe' -- the contextual referent is Tougaloo College where Lovelace's father taught (Mary Lovelace O'Neal's father was on the Tougaloo faculty). The corpus lists 'Tugulu' as a canonical mis-rendering. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2.12",
+      "whisper": "the bomb / out of the bomb",
+      "original_candidate": "(Bombingham) Birmingham, Alabama",
+      "resolution": "narrowed",
+      "new_candidate": "Birmingham, Alabama (likely 'Bombingham' speaker-originating)",
+      "evidence": "Same passage as Pass-1 #34.15. La Vaughan is described as from Birmingham (Bull Connor reference at 1959-63 corroborates). The 'Bombingham' SNCC/SCLC nickname was in widespread movement use for Birmingham during the 1957-63 bombing era (over 50 unsolved bombings of Black homes and churches earned the nickname). The speaker-originating annotation is plausible but not conclusively distinguishable from a Whisper truncation of 'Birmingham.' Conservative narrowing: confirm Birmingham as the referent city, preserve 'Bombingham' as plausible speaker-originating annotation given Thelwell's SNCC-vernacular elsewhere in the transcript.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.1",
+      "whisper": "former (recurring; 'former meets me', 'former nurse wanted me')",
+      "original_candidate": "Forman (James Forman)",
+      "resolution": "confirmed",
+      "new_candidate": "Forman (James Forman)",
+      "evidence": "Raw transcript verified for both renderings: 'former meets me' and 'former nurse' both appear in raw. The contextual evidence is decisive: 'former meets me, our sense of why to meet me and drive me up to the SNCC office' -- James Forman was SNCC Executive Secretary at the Atlanta SNCC office in this period and routinely picked up incoming staffers. 'former nurse wanted me' -- 'Forman just wanted me' parses cleanly as Forman expressing approval of Thelwell's recruitment. Ground-truth corpus 'James Forman' entry at line 353 confirms canonical reference. Pattern is consistent with the catalog #C entry for 'Foreman -> Forman' Whisper substitution. The novel 'former' rendering (rather than 'Foreman') is a homonym substitution -- Whisper picks the common English noun. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.18",
+      "whisper": "the polygiotoe",
+      "original_candidate": "the prologue (?)",
+      "resolution": "unresolved",
+      "new_candidate": "the prologue (?)",
+      "evidence": "Raw transcript verified: 'I remember now that the text and substanceage in the speech was the polygiotoe, which you had come, he said, sojournal motor fleets.' The context is fragmented Whisper output -- 'substanceage' is clearly garbled, 'sojournal motor fleets' suggests SNCC's Sojourner Motor Fleet (the SNCC vehicle pool maintained by Don Stone, James Forman's Sojourner Motor Fleet at the Atlanta office, used to provide reliable transportation to field staff). 'Polygiotoe' has low confidence in original Pass 2 ('prologue (?)'). Alternative candidates: 'prologue,' 'apology to,' 'pellagra to' (unlikely), or simply garbled Whisper transcription with no clean canonical referent. Without audio access and given the surrounding garbled segment, conservative resolution is to mark unresolved -- the low original confidence (Pass 2 self-flagged with '?') stands.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.28",
+      "whisper": "MSR final",
+      "original_candidate": "MFDP first / Ms. (Fannie Lou) Hamer",
+      "resolution": "narrowed",
+      "new_candidate": "first Mrs. Hamer (introduction of Fannie Lou Hamer)",
+      "evidence": "Raw transcript verified: 'Mrs. Hema, come and talk to the people. And it's the first MSR final to Hema. And she got up and talked about how she went to register.' This unambiguously describes Thelwell's first introduction to Fannie Lou Hamer (Mrs. Hamer). 'MSR final to Hema' parses as 'Mrs. final-to-Hema' = 'first Mrs. Hamer' (introduction). The 'first introduction' reading is conclusive from context (he immediately describes her registering-to-vote story, which was Hamer's signature testimony). The original 'MFDP first' candidate is less plausible -- 'MFDP' wasn't yet founded when Thelwell first met Hamer in late 1962/1963 in voter registration work. Ground-truth corpus 'Fannie Lou Hamer' at line 245 confirms canonical reference. Narrowed to single referent.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.29",
+      "whisper": "MSNP candidates",
+      "original_candidate": "MFDP candidates",
+      "resolution": "confirmed",
+      "new_candidate": "MFDP candidates",
+      "evidence": "Raw transcript verified: 'Mrs. Santa Lu Hemer, MSNP candidates, is what we call them.' Both surrounding context (Mrs. Fannie Lou Hamer, who was a 1964 MFDP congressional candidate from Mississippi's 2nd district) and the recurrence of MFDP elsewhere in the same passage (15+ correct MFDP renderings in raw transcript verify Whisper does eventually get it right) make this an MFDP substitution with very high confidence. Ground-truth corpus 'Mississippi Freedom Democratic Party' at line 161 with alias 'MFDP' confirms canonical reference. Recurring catalog pattern of Whisper failing on the MFDP acronym (MSR, MSNP, MFBP all in this transcript). Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.30",
+      "whisper": "MFBP letterhead",
+      "original_candidate": "MFDP letterhead",
+      "resolution": "confirmed",
+      "new_candidate": "MFDP letterhead",
+      "evidence": "Raw transcript verified: 'I sent it out on MFDP letterhead. And I hadn't thought about it' followed by later 'It was sent out on the MFBP letterhead.' The first instance is rendered correctly as 'MFDP' and the second incorrectly as 'MFBP' -- the same physical letterhead, two attempts to transcribe the same acronym, one right one wrong. This is an unambiguous Whisper acronym-letter substitution (D -> B). Ground-truth corpus 'Mississippi Freedom Democratic Party' confirms canonical MFDP. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.41",
+      "whisper": "Robert Spake / Bob Spake / Bob Speck (recurring)",
+      "original_candidate": "Robert Spike (Rev. Robert W. Spike)",
+      "resolution": "confirmed",
+      "new_candidate": "Robert Spike (Rev. Robert W. Spike)",
+      "evidence": "Raw transcript verified all three Whisper forms: 'Robert Spake,' 'Bob Spake,' 'Bob Speck.' Context: 'Bob came and said, he had made this discussion decision after discussions with Robert Spake and the Arabisans' (clearly: 'the Aaron-Henrys'? or NCC representatives) and later: 'we were abused by Robert Spaker, the National Consulate Churches' (clearly: 'the National Council of Churches'). The National Council of Churches Commission on Religion and Race was led by Rev. Robert W. Spike (1923-1966), Freedom Summer organizer, executive director of the NCC's CORR. Spike was murdered in Columbus, Ohio in October 1966 -- the case was never solved. The D3 catalog contradiction 'Bob Spike (Rev. Robert W. Spike)' is not contradictory but rather an alias chain confirming the canonical reference. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.46",
+      "whisper": "Joe Roe / Joe Ro / Joe Rao (recurring)",
+      "original_candidate": "Joseph Rauh / Joe Rauh (Joseph L. Rauh Jr.)",
+      "resolution": "confirmed",
+      "new_candidate": "Joseph Rauh / Joe Rauh (Joseph L. Rauh Jr.)",
+      "evidence": "Raw transcript verified all three Whisper forms (Joe Roe, Joe Ro, Joe Rao) with 20+ occurrences across the transcript. Decisive context: discussion of MFDP credentials challenge at the 1964 Atlantic City Democratic National Convention -- 'you better discuss it with Joe Roe... Joe said we could be seated.' Joseph L. Rauh Jr. (1911-1992) was the UAW general counsel and ADA co-founder who argued the MFDP credentials case before the Convention Credentials Committee at Atlantic City. Rauh's role in the MFDP challenge is canonical movement history (he co-developed the legal strategy with Bob Moses and Eleanor Holmes Norton). The 'Joe Rao' rendering also appears in the recurring instance at P2T.98. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.48",
+      "whisper": "Rad Featherstone / Ralph (recurring)",
+      "original_candidate": "Ralph Featherstone (SNCC field secretary)",
+      "resolution": "confirmed",
+      "new_candidate": "Ralph Featherstone (SNCC field secretary)",
+      "evidence": "Raw transcript verified both renderings: 'we recruited Rad Featherstone' and 'It's Ralph Featherstone' (where Whisper gets it right on second pass). Ground-truth corpus 'Ralph Featherstone' entry at line 683 is canonical: SNCC field secretary, Mississippi Freedom Schools assistant director 1964, Drum and Spear Bookstore co-founder, killed March 9, 1970 by car bomb on Route 1 near Bel Air MD en route to H. Rap Brown's trial. The 'Rad' rendering is a Whisper truncation of 'Ralph' to a CVC syllable. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.49",
+      "whisper": "Stiklpande / Stiklpande coffees / Snickoffees",
+      "original_candidate": "Snick coffees / SNCC's office",
+      "resolution": "confirmed",
+      "new_candidate": "SNCC office / SNCC offices",
+      "evidence": "Raw transcript verified: 'from the supermarket to the Stiklpande ones, safe way and stop and shop' (i.e. SNCC offices), 'high school friends of Stiklpande' (i.e. high school friends of SNCC -- the Friends of SNCC northern support chapters), 'Stiklpande coffees guy didn't have them' (i.e. SNCC office fundraising coffees -- a recurring SNCC fundraising form), and 'asked me to come and start the Stiklpande project in Hazard, Kentucky' (i.e. SNCC project in Hazard KY -- the 1962-63 SNCC Appalachian project). 'Stiklpande' is a compound Whisper rendering of 'SNCC office/SNCC's' -- the 'Snik-' acronym sound + 'pande/pany' suffix from 'company' or 'panel.' The D3 catalog contradiction 'B-ext: SNCC' is reinforcement not contradiction. Confirmed -- the canonical referent is SNCC and SNCC office(s).",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.85",
+      "whisper": "Senator Bob Castanmar from Wisconsin",
+      "original_candidate": "(Rep.) Robert Kastenmeier of Wisconsin",
+      "resolution": "confirmed",
+      "new_candidate": "(Rep.) Robert Kastenmeier of Wisconsin",
+      "evidence": "Raw transcript verified: 'Guy from Wisconsin, Castanmar, Senator Bob Castanmar from Wisconsin. The most interesting thing is that at Edita was standing up to this SNCC book, she married one of Castanmar's sons.' Robert W. Kastenmeier (1924-2015) was a Democratic Congressman (NOT senator -- Thelwell mis-titles him) from Wisconsin's 2nd district 1959-1991, a longtime voting-rights and civil-liberties ally, member of the House Judiciary Committee that ran the Nixon impeachment hearings. The 'Castanmar' rendering is a phonetic Whisper substitution for 'Kastenmeier.' The corrected canonical is 'Rep. Robert Kastenmeier' with the title correction noted (speaker called him Senator, but he was a Representative). Confirmed -- speaker error on title preserved as speaker-originating but person identified.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.98",
+      "whisper": "Joe Rao / Joe Rao felt that very strong",
+      "original_candidate": "Joe Rauh (Joseph L. Rauh Jr.)",
+      "resolution": "confirmed",
+      "new_candidate": "Joe Rauh (Joseph L. Rauh Jr.)",
+      "evidence": "Same canonical referent as P2T.46. Raw transcript context includes 'even without Joe Rao's considera[tion]' in the MFDP / Atlantic City passage. Joseph L. Rauh Jr.'s engagement with the MFDP credentials challenge is canonical movement history. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.109",
+      "whisper": "waspegai / waspigay",
+      "original_candidate": "WASP-gay / white-Anglo-Saxon-Protestant gay",
+      "resolution": "confirmed",
+      "new_candidate": "WASP-gay (speaker's intersectional descriptor for Bishop Paul Moore Jr.)",
+      "evidence": "Raw transcript verified: 'Episcopal Bishop of Washington, DC. Tall guy, very dignified waspegai, who looked like central caste and version of what the bishop should look like.' The referent is Bishop Paul Moore Jr. (1919-2003), Episcopal Bishop of Washington from 1963 to 1972 then Bishop of New York 1972-1989. Moore was indeed a tall, dignified white Anglo-Saxon Protestant (Yale, Marine Corps Pacific veteran), and was publicly disclosed posthumously by his daughter Honor Moore (in her 2008 New Yorker piece 'The Bishop's Daughter') to have been bisexual. The 'waspegai' rendering compresses Thelwell's speaker-originating compound 'WASP-gay' intersectional descriptor. The preservation as speaker-originating is appropriate -- this is Thelwell's own framing, not a canonical name. Confirmed as speaker-originating.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.111",
+      "whisper": "Bob Speck",
+      "original_candidate": "Bob Spike (Rev. Robert W. Spike)",
+      "resolution": "confirmed",
+      "new_candidate": "Bob Spike (Rev. Robert W. Spike)",
+      "evidence": "Same canonical referent as P2T.41. Raw context: 'I remember Bob Speck, I said, Jesus Christ.' Continuation of the NCC / MFDP credentials passage. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.114",
+      "whisper": "Mr. Charlie / blues from Mr. Charlie",
+      "original_candidate": "*Blues for Mister Charlie* (James Baldwin play, 1964)",
+      "resolution": "confirmed",
+      "new_candidate": "Blues for Mister Charlie (James Baldwin play, 1964)",
+      "evidence": "Raw transcript verified: 'blues from Mr. Charlie, Walgreens, played, had been on Broadway and created a great leader controversy.' 'Walgreens' is likely a Whisper rendering of 'was being' or similar; the canonical referent is James Baldwin's 1964 Broadway play 'Blues for Mister Charlie,' inspired by the Emmett Till murder, opened at the ANTA Theatre April 23 1964, produced by the Actors Studio. The play was indeed controversial and widely discussed in the civil rights movement. The Whisper substitution 'from' for 'for' is a common pronoun-preposition error. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.121",
+      "whisper": "Macomb",
+      "original_candidate": "McComb, Mississippi",
+      "resolution": "confirmed",
+      "new_candidate": "McComb, Mississippi",
+      "evidence": "Raw transcript verified: 'He became project director in Macomb. He ran the security for Martin Luther King when he came to Mississippi. He was a legitimate hero.' The referent is McComb, Pike County MS -- the 1961 site of Bob Moses's foundational SNCC voter-registration project and the 1964 Freedom Summer 'McComb Project' that experienced the most intense white-supremacist bombing campaign (Klan bombings of Freedom Houses, Black churches, and homes). Jesse Harris was the SNCC McComb project director 1964-65. The 'Macomb' vs 'McComb' is a single-vowel-insertion Whisper substitution (recurring catalog pattern #F). The context (project director, security for King in Mississippi) unambiguously identifies the Mississippi McComb. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.131",
+      "whisper": "Goodman, Shunian, Traynor",
+      "original_candidate": "Goodman, Schwerner, Chaney",
+      "resolution": "confirmed",
+      "new_candidate": "Goodman, Schwerner, Chaney",
+      "evidence": "Raw transcript verified: 'we got in the door because of Goodman, Shunian, Traynor, because we took all those things to the National State Conventions' and 'the murderers were in a Goodman, Shunian, and it gave us a great deal of currency people understood it.' The canonical referent is Andrew Goodman, Michael Schwerner, and James Chaney -- the three Freedom Summer organizers murdered June 21 1964 by Klansmen in Neshoba County MS. Their murder was indeed a pivotal moment in the public reception of the MFDP at the 1964 Atlantic City convention (the bodies were found Aug 4, 1964; convention was Aug 24-27). Ground-truth corpus entry at line 141 'Murders of Chaney, Goodman, and Schwerner' confirms canonical. 'Shunian' is a Whisper phonetic substitution for 'Schwerner'; 'Traynor' for 'Chaney' (sound shift from -aney to -aynor). Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P2T.155",
+      "whisper": "Walter Ruther / Reuther (recurring)",
+      "original_candidate": "Walter Reuther (UAW president)",
+      "resolution": "confirmed",
+      "new_candidate": "Walter Reuther (UAW president)",
+      "evidence": "Raw transcript verified 5+ occurrences of 'Walter Ruther.' Decisive context: 'Walter Ruther sent out a telegram to all members of the leadership conference' and 'Walter Ruther calls this meeting' (the Atlantic City 1964 meeting on the MFDP compromise) and 'we were going to set up a fund of a million dollars to endow the survivors of masters' (clearly: 'survivors of martyrs' -- the Schwerner/Goodman/Chaney memorial fund). Walter Reuther (1907-1970) was UAW president 1946-1970, longtime Civil Rights coalition partner, the principal labor figure at the 1964 Democratic convention pressuring MFDP to accept the two-seat compromise. The 'Ruther' rendering is a single-syllable Whisper truncation of 'Reuther.' Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.1",
+      "whisper": "\"Snick\" / \"Stiklpande\" recurring throughout",
+      "original_candidate": "SNCC (\"Snick\" pronunciation)",
+      "resolution": "confirmed",
+      "new_candidate": "SNCC ('Snick' pronunciation)",
+      "evidence": "Pass 3 consolidation of the recurring SNCC Whisper failure modes across the transcript. 'Snick' is the canonical SNCC pronunciation in movement vernacular. 'Stiklpande' is the compound Whisper failure documented at P2T.49. Both are unambiguous references to SNCC (Student Nonviolent Coordinating Committee). Ground-truth corpus implicit via NAG and SNCC entries. The Pass 3 framing as a catalog-#B back-file candidate variant is appropriate -- 'Stiklpande' is a novel Whisper variant of the 'Snick' family worth recording. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.2",
+      "whisper": "\"former\" / \"former meets me\" recurring as \"Forman\"",
+      "original_candidate": "James Forman (catalog #C entry)",
+      "resolution": "confirmed",
+      "new_candidate": "James Forman (catalog #C entry)",
+      "evidence": "Pass 3 cross-reference of the P2T.1 'former' homonym substitution. The new variant 'former' (rather than 'Foreman') is appropriate to back-file as a homonym-substitution Whisper failure mode for the James Forman canonical reference. Ground-truth corpus 'James Forman' at line 353 confirms canonical. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.5",
+      "whisper": "\"Bob Speck\" / \"Bob Spake\" (Pass-2 #34.P2T.41 / .P2T.111)",
+      "original_candidate": "Bob Spike (Rev. Robert W. Spike)",
+      "resolution": "confirmed",
+      "new_candidate": "Bob Spike (Rev. Robert W. Spike)",
+      "evidence": "Pass 3 consolidation of P2T.41 and P2T.111 -- two distinct Whisper renderings for the same canonical NCC figure Rev. Robert W. Spike. Back-file to a new catalog #C entry is appropriate. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.6",
+      "whisper": "\"Mrs. Hema / Mrs. Hemmam / Mrs. Santa Lu Hemer\" (Pass-2 #34.P2T.27)",
+      "original_candidate": "Fannie Lou Hamer (catalog #C entry)",
+      "resolution": "confirmed",
+      "new_candidate": "Fannie Lou Hamer (catalog #C entry)",
+      "evidence": "Pass 3 consolidation of multiple Whisper renderings for Fannie Lou Hamer. The 'Santa Lu Hemer' rendering is novel and should be back-filed. Ground-truth corpus 'Fannie Lou Hamer' entry at line 245 confirms canonical reference. 'Mrs. Hema' is the most common variant in this transcript (Thelwell narrates his first introduction to Hamer). Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.7",
+      "whisper": "\"Sons of Malcolm\" / \"Acura\" / \"Castanmar from Wisconsin\" -- all Pan-African + Congressional cross-references",
+      "original_candidate": "Catalog gaps",
+      "resolution": "narrowed",
+      "new_candidate": "Catalog-gap recommendation (Pan-African + Congressional cluster) -- recommend partial",
+      "evidence": "Pass 3 frames this as a recommendation to consolidate a Black-congressional figures cluster (Dawson, Powell, Nix, Hawkins, Mink, Conyers) into a new catalog subsection #C.1. This is a meta-recommendation rather than a single-item correction. The individual referents within this cluster (Robert Kastenmeier, who is white but a Wisconsin congressional ally) are confirmed elsewhere (P2T.85). The 'Sons of Malcolm' reference is to the 1966 pre-naming of the Black Panther Party (the Oakland founders briefly considered 'Sons of Malcolm' as the organization name honoring Malcolm X). The D3 catalog contradiction reinforces this Pan-African D-catalog entry. Narrowed to: confirm individual referents (P2T.85 Kastenmeier already resolved), and pass the catalog-subsection-creation recommendation through as a meta-finding for Layer 6 catalog reorganization rather than a single-row resolution. The recommendation itself stands.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.8",
+      "whisper": "\"MSR final\" / \"MSNP candidates\" / \"MFBP letterhead\" (Pass-2 #34.P2T.28 / .P2T.29 / .P2T.30)",
+      "original_candidate": "MFDP (Mississippi Freedom Democratic Party)",
+      "resolution": "confirmed",
+      "new_candidate": "MFDP (Mississippi Freedom Democratic Party)",
+      "evidence": "Pass 3 consolidation of three distinct Whisper failures on the MFDP acronym. The variants MSR/MSNP/MFBP are all 3-4-letter Whisper substitutions for MFDP that should be back-filed to catalog #B. Ground-truth corpus 'Mississippi Freedom Democratic Party' at line 161 confirms canonical. The recurring failure rate on this acronym (along with correct 'MFDP' renderings on 15+ instances in the same transcript) demonstrates Whisper's inconsistency on civil-rights acronyms -- valuable catalog-back-file evidence. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.9",
+      "whisper": "\"the goodman and churned\" / \"Goodman, Shunian, Traynor\" (Pass-2 #34.P2T.57 / .P2T.131)",
+      "original_candidate": "Schwerner, Goodman, Chaney",
+      "resolution": "confirmed",
+      "new_candidate": "Schwerner, Goodman, Chaney",
+      "evidence": "Pass 3 consolidation of multiple Whisper failures on the Schwerner/Goodman/Chaney trio. The 'churned' and 'Shunian'/'Traynor' variants should be back-filed to catalog #G. Ground-truth corpus entry at line 141 'Murders of Chaney, Goodman, and Schwerner' confirms canonical. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "34.P3.11",
+      "whisper": "\"the Alsop brothers\" descriptor \"waspegai\" (Pass-2 #34.P2T.108 / .P2T.109)",
+      "original_candidate": "Paul Moore Jr. as WASP-gay descriptor",
+      "resolution": "confirmed",
+      "new_candidate": "Paul Moore Jr. as WASP-gay descriptor (speaker-originating)",
+      "evidence": "Pass 3 confirms preservation of Thelwell's intersectional descriptor as speaker-originating. The note that this is one of the most-canonical first-person disclosures of the intersection of WASP-establishment and LGBTQ identity in 1960s civil rights movement is historically accurate -- Bishop Paul Moore Jr. was an Episcopal Bishop, WASP establishment figure, Yale graduate, Marine Pacific war veteran, and was publicly disclosed posthumously as bisexual by his daughter Honor Moore's 2008 New Yorker piece. Speaker-originating preservation is appropriate. Confirmed.",
+      "external_sources": []
+    }
+  ]
+}

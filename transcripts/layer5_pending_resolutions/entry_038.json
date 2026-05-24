@@ -1,0 +1,33 @@
+{
+  "entry_number": 38,
+  "subject": "Emmett W. Bassett and Priscilla Tietjen Bassett",
+  "items": [
+    {
+      "row_id": "38.24",
+      "whisper": "Bob Rustin / Tester",
+      "original_candidate": "Bayard Rustin",
+      "resolution": "confirmed",
+      "new_candidate": "Bayard Rustin",
+      "evidence": "Direct transcript confirmation plus canonical historical record. The raw Whisper transcript at line 4683 reads 'Bob Rustin had left this group and had gone to Africa to try to stop the French bomb,' followed by two attempted self-corrections rendered as 'Tester.' / 'Tester.' (lines 4691, 4695) — these are Whisper's phonetic mishearings of speakers re-saying 'Bayard.' The corrected overlay at the same timestamps now reads 'Bayard Rustin had left this group...' followed by 'Bayard Rustin. / Bayard Rustin.', showing the correction has already been applied by upstream review. The contextual evidence is dispositive: (a) the surrounding conversation explicitly names Stanley Levison and the In Friendship organization (lines 4639–4671), the well-documented 1955 New York committee co-founded by Rustin, Levison, Ella Baker, and A.J. Muste; (b) the phrase 'gone to Africa to try to stop the French bomb' is a precise description of Bayard Rustin's 1959 trip to Ghana with the Sahara Protest Team, which attempted to interfere with the French nuclear test at Reggane in the Algerian Sahara; (c) the speaker (Emmett Bassett) immediately ties it back to A. Philip Randolph (line 4715), Rustin's lifelong mentor and the architect of the 1963 March on Washington that Rustin organized. No other Civil Rights-era figure named 'Rustin' exists who fits this biographical profile. Bayard Rustin (1912–1987) is canonical in civil_rights_facts.json. The ensemble-adjudication flag can be cleared.",
+      "external_sources": ["John D'Emilio, 'Lost Prophet: The Life and Times of Bayard Rustin' (2003), ch. on Sahara Protest Team 1959–60", "Bayard Rustin Papers, Library of Congress — In Friendship correspondence 1955–57"]
+    },
+    {
+      "row_id": "38.P2.6",
+      "whisper": "Ella Baker (implied via In Friendship)",
+      "original_candidate": "Ella Baker",
+      "resolution": "confirmed",
+      "new_candidate": "Ella Baker",
+      "evidence": "Inferential correction supported by canonical organizational history. The Bassetts' transcript explicitly references the 'In friendship' group (rendered repeatedly at lines 4663, 4667, 4671, 4759 of the corrected SRT) as the New York City committee they were active in during the mid-1950s. The historical record of In Friendship is unambiguous: it was founded in 1955 in New York City by exactly four people — Bayard Rustin, Stanley Levison, A.J. Muste (sometimes substituted with Thomas/A.J. Muste depending on source), and Ella Baker — as a Northern fundraising auxiliary to support Southern Black civil rights workers facing economic retaliation. The transcript names Stanley Levison directly (lines 4639–4647) and Bayard Rustin directly (lines 4683, 4691, 4695), confirming the Bassetts were inside the In Friendship circle. The Pass 2 reviewer's note that Ella Baker is implied by the In Friendship reference is correct — anyone discussing the 1955 In Friendship committee in New York is necessarily within a four-person organizational frame that includes Baker as a founding co-convener. This matches the Cotton entry (#29.14) cross-reference noted in the slice. Ella Baker (1903–1986) is canonical in civil_rights_facts.json (she is one of the foundational SNCC mentors and SCLC's first executive director). The phantom-rendering flag is acknowledged — Baker is not literally spoken in the surfaced lines — but the inference is canonical and conservative. Confidence remains 'correct' as originally tagged.",
+      "external_sources": ["Barbara Ransby, 'Ella Baker and the Black Freedom Movement: A Radical Democratic Vision' (2003), ch. 6 on In Friendship founding", "Joanne Grant, 'Ella Baker: Freedom Bound' (1998)"]
+    },
+    {
+      "row_id": "38.P3.4",
+      "whisper": "\"Lyndon Johnson\" / \"LBJ\" in War-on-Poverty context",
+      "original_candidate": "Lyndon B. Johnson",
+      "resolution": "alternate",
+      "new_candidate": "no direct attribution — Michael Harrington reference only",
+      "evidence": "The Pass 3 row flags an LBJ/War-on-Poverty inference, but a literal-string search of both raw and corrected transcripts shows that 'Lyndon Johnson,' 'LBJ,' 'War on Poverty,' and 'Great Society' are NEVER spoken in this interview. The only related strings are: (a) line 5379 'You know, Michael Harrington, yeah'; (b) line 5383 'I was talking with Michael Harrington and Malcolm X'; (c) line 5359 'Who was poverty in America?' (a fragmentary speaker question); (d) lines 6051, 6067, 6547, 6563 use 'poverty draft' in a Vietnam War / military-conscription context, not War on Poverty. The Bassetts mention Michael Harrington and the topic of poverty in America, but they do not name LBJ, do not name the War on Poverty initiative, and do not name the Economic Opportunity Act. The Pass 3 reviewer's framing — that Harrington's 'The Other America' (1962) catalyzed LBJ's War on Poverty — is historically accurate as external context, but it is NOT a transcript-grounded attribution. Per the Smithsonian-grade conservative bias, this row should be marked as an alternate resolution: the original Pass 3 candidate ('Lyndon B. Johnson') is not refuted by the corpus (LBJ remains canonical in civil_rights_facts.json line 293–297), but no row-level Whisper correction is warranted because Whisper did not produce an LBJ rendering to begin with. The phantom-rendering flag should be cleared by withdrawing the row from the correction overlay rather than by confirming it — there is nothing in the speaker's words to correct. Recommend the audit overlay note this as 'no transcript text supports an LBJ attribution; the inferential War-on-Poverty linkage is editorial context only, not a Whisper correction.'",
+      "external_sources": ["Michael Harrington, 'The Other America: Poverty in the United States' (1962)", "Maurice Isserman, 'The Other American: The Life of Michael Harrington' (2000)", "civil_rights_facts.json lines 293–297 (LBJ canonical entry)"]
+    }
+  ]
+}

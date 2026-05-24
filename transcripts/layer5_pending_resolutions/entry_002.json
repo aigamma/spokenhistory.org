@@ -1,0 +1,50 @@
+{
+  "entry_number": 2,
+  "subject": "Amos C. Brown",
+  "items": [
+    {
+      "row_id": "2.14",
+      "whisper": "Mechor",
+      "original_candidate": "Medgar (Evers)",
+      "resolution": "resolved-high",
+      "new_candidate": "Medgar Evers",
+      "evidence": "Transcript context establishes the reference unambiguously. The full sentence reads: 'when I became aware of a meeting that was held in Dallas, Texas in 1954, that my sister attended along with Mechler Evers.' The narrator (Amos C. Brown) goes on to describe this same individual as 'Mr. Evers' across the next paragraph, and later in the transcript names him explicitly as 'Megavers' (another Whisper-corrupted rendering of the same canonical figure) and 'mechagabras' (yet another corruption of 'Medgar Evers') when discussing the 50th anniversary of his assassination in Jackson. The biographical pattern in the transcript (NAACP field secretary in Mississippi, mentor figure, Jackson-based, took Brown to the 1956 NAACP convention in San Francisco, assassinated in 1963) matches Medgar Wiley Evers (1925-1963) decisively.\n\nThe ground-truth corpus confirms Medgar Evers as canonical at C:\\civil\\Metadata Generation System\\civil_rights_facts.json line 32-36, with the wikipedia_title 'Medgar Evers' and the aliases list including 'Medgar Evers'. Brown was a documented protege of Medgar Evers, and Evers personally drove him from Mississippi to the 1956 NAACP convention in San Francisco (corroborated by Manning Marable's biography of Medgar Evers, which Brown himself references in the transcript: 'all of this is written up in Mr. Evers' biography, that book by Man in Marvel's').\n\nThe Layer-5 D2-ambiguous flag reflects only master-MD formatting variance (the same Whisper-rendering 'Mechor' / 'Mechler' / 'Megavers' / 'mechagabras' producing slightly different canonical-correction strings such as 'Medgar Evers' vs 'Medgar (Evers)' vs '(Medgar) Evers'). The underlying canonical identity is unambiguous. The cleaner canonical form is the unparenthesized 'Medgar Evers', which matches the corpus and the standard archival citation form used by the SNCC Digital Gateway, NAACP, and Library of Congress Civil Rights History Project finding aids. The parenthetical in the original candidate ('Medgar (Evers)') is a master-MD formatting artifact indicating that only 'Medgar' was rendered by Whisper at that row and 'Evers' was the inferred surname; in fact 'Mechor' is the Whisper rendering of the first name 'Medgar' so the surname 'Evers' is a clarifying addition rather than a substitution. The cleanest resolution is the full canonical name without parentheses.",
+      "external_sources": [
+        "https://en.wikipedia.org/wiki/Medgar_Evers",
+        "https://snccdigital.org/people/medgar-evers/",
+        "https://www.naacp.org/find-resources/history-explained/civil-rights-leaders/medgar-evers"
+      ]
+    },
+    {
+      "row_id": "2.P2.10",
+      "whisper": "Macomb",
+      "original_candidate": "McComb, Mississippi",
+      "resolution": "resolved-high",
+      "new_candidate": "McComb, Mississippi",
+      "evidence": "Transcript context establishes the reference unambiguously. The sentence reads: 'Cation point in Mississippi, Mr. C. C. Brian, a railroad man in Macomb, was a great warrior, peaceful warrior. Doc Ones, also in Macomb.' The biographical particulars (C.C. Bryant, railroad man, NAACP organizer in 'Macomb', Mississippi, alongside 'Doc Ones' which is Whisper-corruption of 'Doc Anderson' or a similar local figure) decisively identify the location as McComb, Mississippi, the Pike County town that was the canonical 1961-64 SNCC voter-registration project site under Bob Moses.\n\nExternal verification confirms: Curtis Conway 'C.C.' Bryant was a railroad worker (Illinois Central Railroad) and president of the Pike County NAACP branch (elected 1954) in McComb, Mississippi. In 1961 Bryant read a Jet Magazine article about SNCC's planned Mississippi voter-registration work, contacted Amzie Moore (NAACP leader in the Mississippi Delta), and asked Moore to send organizers to McComb. Moore directed Bob Moses to Bryant, and Bryant introduced Moses to Webb Owens and the McComb Black community in July 1961. The first SNCC voter-registration class was held at the McComb Masonic Temple on August 7, 1961. This is the canonical historical narrative documented at SNCC Digital Gateway, Mississippi Encyclopedia, and the C.C. Bryant Historical Marker (HMDb entry 108990).\n\nThe Macomb (Illinois, Georgia, or other) candidate alternatives are decisively excluded by the C.C. Bryant + railroad man + Mississippi context. The town is McComb, Mississippi, in Pike County. The Layer-5 D2-ambiguous flag reflects only master-MD formatting variance ('McComb, Mississippi' vs 'McComb, MS' vs 'McComb' alone). The fullest canonical form 'McComb, Mississippi' as a one-token Whisper-rendering of 'Macomb' that needs both spelling correction AND state qualifier is appropriate here, since the Whisper rendering is ambiguous between several Macomb-named towns nationally; the state qualifier disambiguates.\n\nGround-truth corpus does not yet have a McComb, Mississippi entry but the external archival sources at SNCC Digital Gateway, Mississippi Encyclopedia, and CRMVet are decisive.",
+      "external_sources": [
+        "https://snccdigital.org/people/c-c-bryant/",
+        "https://snccdigital.org/events/bob-moses-goes-to-mccomb/",
+        "https://mississippiencyclopedia.org/entries/mccomb-civil-rights-movement/",
+        "https://mississippiencyclopedia.org/entries/cc-bryant/",
+        "https://www.hmdb.org/m.asp?m=108990",
+        "https://www.crmvet.org/info/voter_ms.pdf"
+      ]
+    },
+    {
+      "row_id": "2.P2.12",
+      "whisper": "Reverend William A. Benda",
+      "original_candidate": "Rev. William Albert Bender",
+      "resolution": "resolved-high",
+      "new_candidate": "Rev. William Albert Bender",
+      "evidence": "Transcript context establishes the reference unambiguously. Brown lists 'Reverend William A. Benda, who really laid the groundwork for the student movement and the civil rights movement in Mississippi in the 50s.' The next paragraph then expands: 'Back in 1946, Reverend Benda, who was college pastor at Tugaloo College, their congregational-related school, wrote letters to Walter White, and his radical letters on file, about his efforts to get equal pay for black teachers in Mississippi. And he also fought the white primaries in Mississippi. This is before Fannie Lou Hamer in Atlantic City. This man, who was courageous, he walked all over Jackson, everywhere he went, where he was rain, shine, sleet of snow, he had an umbrella on his arm.' Brown then mentions 'His daughter, Lou Ella Benda, was one of the persons who was in that car with me in 1956.'\n\nExternal verification confirms decisively: Rev. William Albert Bender (1886-1957) was chaplain of Tougaloo College beginning in 1934 and the first paid NAACP official in Mississippi. He fought the white primaries by attempting to vote in the 1946 Mississippi statewide election (the first since the US Supreme Court outlawed all-white primaries in Smith v. Allwright, 1944), persuading two Tougaloo students to drive him to Ridgeland, Mississippi, where he was stopped first by three white men and then by the deputy sheriff who drew his pistol; he was denied his vote and a cross was burned on the Tougaloo campus shortly after. He led campaigns for equal pay for Black teachers and for voter registration. The transcript's biographical particulars (Tougaloo chaplain, 1946 white-primaries fight, equal-pay-for-Black-teachers campaign, letters to NAACP Executive Secretary Walter White on file, the iconic umbrella-on-arm walking habit in Jackson, daughter Lou Ella Bender) match canonical archival records at the Tougaloo College William A. Bender Papers (MSDigLib collection ID 922), Civil Rights Digital Library (CRDL Mississippi Sovereignty Commission photograph mus_sovcom_2-72-1-1-2-1-1), Mississippi Encyclopedia, and other archival sources. The transcript independently confirms the Tougaloo connection ('college pastor at Tugaloo College, their congregational-related school' — Tougaloo was founded by the American Missionary Association, a Congregational church-related body), the daughter name 'Lou Ella Benda' (corresponds to Lou Ella Bender, also a documented Tougaloo-connected figure who traveled with Brown to the 1956 NAACP San Francisco convention), and the 1946 white-primaries fight, which are all archivally confirmed for the canonical Bender.\n\nThe Whisper rendering 'Benda' is the consistent Whisper corruption of the surname 'Bender' throughout the entire transcript (it occurs five times across the document, all corruptions of the same canonical surname). The first-name expansion 'William Albert' is fully archivally supported (Mississippi Encyclopedia entry titled 'Bender, William Albert'). The Layer-5 D2-ambiguous flag reflects only master-MD formatting variance ('William A. Bender' vs 'William Albert Bender' vs 'W.A. Bender' vs 'Rev. Bender' vs 'Reverend William A. Bender'). The fullest canonical form 'Rev. William Albert Bender' is the appropriate scholarly archival citation form. No alternate candidate is plausible: no other 'William Bender' or 'William Benda' is documented in the Tougaloo / Mississippi NAACP / 1940s-50s civil rights archival record. Brown's daughter-name detail ('Lou Ella Benda') would itself disambiguate any rival candidate.",
+      "external_sources": [
+        "https://mississippiencyclopedia.org/entries/william-albert-bender/",
+        "https://mississippiencyclopedia.org/entries/national-association-for-the-advancement-of-colored-people/",
+        "http://collections.msdiglib.org/digital/collection/tougaloo/id/922/",
+        "https://crdl.usg.edu/record/mus_sovcom_2-72-1-1-2-1-1",
+        "https://mississippiencyclopedia.org/entries/religion-and-the-civil-rights-movement/"
+      ]
+    }
+  ]
+}

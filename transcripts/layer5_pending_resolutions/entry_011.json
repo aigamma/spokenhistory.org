@@ -1,0 +1,132 @@
+{
+  "entry_number": 11,
+  "subject": "Candie Carawan and Guy Hughes Carawan",
+  "items": [
+    {
+      "row_id": "11.7",
+      "whisper": "stepped in / stepped in the round / September Guy / Septimide",
+      "original_candidate": "Septima (Clark) / Septima Poinsette Clark",
+      "resolution": "resolved-high",
+      "new_candidate": "Septima Clark (Septima Poinsette Clark)",
+      "evidence": "This is a textbook example of catastrophic Whisper failure on the unfamiliar Latinate first name 'Septima.' The transcript context is unambiguous: the speaker (Candie Carawan) is reminiscing about being assigned to drive 'September Guy' (Septima) around in the early Highlander years, describes her as Guy Carawan's mentor, notes she was a neighbor of the Carawans on Johns Island in Charleston when they were raising their son, and characterizes her as 'a great symbol of non-violence within the Dr. King' circle. Every biographical fact in the surrounding paragraphs matches Septima Poinsette Clark exactly: born and raised in Charleston SC; lived on Johns Island; worked closely with Myles Horton at Highlander; close to Martin Luther King Jr.; revered as a tough, no-nonsense Black woman elder of the Movement. The civil_rights_facts.json corpus entry 'Septima Clark' (wikipedia_title 'Septima Poinsette Clark', aliases 'Septima Poinsette Clark', 'Mrs. Clark') is the canonical match. Multiple Whisper renderings in the same transcript ('stepped in', 'stepped in the round', 'September Guy', 'Septimide') all converge on the same referent.\n\nThe D2-ambiguous flag should be cleared. There is no other plausible canonical candidate for a Highlander-era, Charleston-born, Johns Island-resident, King-circle Black woman elder named anything that approximates 'Septima.' The bidirectional inconsistency in the master MD likely arose from the catalog listing the canonical name as 'Septima Clark' while per-entry rows used 'Septima Poinsette Clark' or 'Mrs. Clark' — those are all aliases of the same person per the corpus.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Septima_Poinsette_Clark"]
+    },
+    {
+      "row_id": "11.8",
+      "whisper": "Zopian / Zilphia",
+      "original_candidate": "Zilphia (Horton)",
+      "resolution": "resolved-high",
+      "new_candidate": "Zilphia Horton",
+      "evidence": "Zilphia Mae Johnson Horton (1910-1956) was the music director of the Highlander Folk School and Myles Horton's first wife. She is the figure who adapted the gospel song 'I'll Overcome Someday' into the labor-and-civil-rights anthem 'We Shall Overcome' (with later contributions from Pete Seeger, Guy Carawan, and Frank Hamilton). She died in 1956 from accidental ingestion of typewriter cleaning fluid. The transcript context is unambiguous: the speaker says 'Miles was not a singer himself, of course he'd been married to Zopian, who was a beautiful singer,' and later 'even starting back when Zelvia was still alive. You know, she had died in 1956, but she, you know, had this role of encouraging music in the labor struggle.' Both the spousal relationship to Myles Horton, the role as Highlander music director encouraging labor music, and the 1956 death date are exact matches to Zilphia Horton.\n\nWhisper's renderings ('Zopian', 'Zelvia') are phonetic approximations of an unfamiliar name beginning with the unusual 'Zilphia.' The civil_rights_facts.json corpus does not have a dedicated Zilphia Horton entry, but she is named in both the Myles Horton entry ('The folk song We Shall Overcome was adapted at Highlander by music director Zilphia Horton') and the Highlander Folk School entry ('adapted at Highlander by music director Zilphia Horton and later popularized by Pete Seeger'). The D2-ambiguous flag should be cleared.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Zilphia_Horton"]
+    },
+    {
+      "row_id": "11.11",
+      "whisper": "Pist / Pisk",
+      "original_candidate": "Fisk (University)",
+      "resolution": "resolved-high",
+      "new_candidate": "Fisk University",
+      "evidence": "The transcript context is unambiguous: Candie Carawan describes coming from Pomona College in California on the 'fiscal change program' (Whisper rendering of 'Fisk Exchange Program') to Nashville in January 1960, where she was based at 'Pist' (Whisper rendering of 'Fisk'), where 'we were already having non-violent trainings... that Reverend James Lawson was running.' The Pomona-Fisk year-long undergraduate exchange program is a well-documented partnership; James Lawson's nonviolent-resistance workshops in Nashville in 1959-60 trained students from both Fisk University and other Nashville HBCUs.\n\nFisk University is the historic HBCU in Nashville Tennessee whose students included Diane Nash, Marion Barry, John Lewis, and many of the Nashville sit-in leaders. The civil_rights_facts.json corpus references Fisk in three places: the Diane Nash entry ('educated at Howard University and Fisk University in Nashville'), the Charles G. Gomillion entry ('earned a master's in sociology at Fisk'), and the Marion Barry entry ('a graduate of LeMoyne College (B.S. 1958) and Fisk University (M.S. 1960)'). The D2-ambiguous flag should be cleared. Whisper's substitution of 'Pist' or 'Pisk' for 'Fisk' is a classic single-consonant onset error.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Fisk_University"]
+    },
+    {
+      "row_id": "11.17",
+      "whisper": "Moash / Moe Asch",
+      "original_candidate": "Moe Asch",
+      "resolution": "resolved-high",
+      "new_candidate": "Moe Asch (Moses Asch)",
+      "evidence": "Moses 'Moe' Asch (1905-1986) was the founder of Folkways Records (1948-1986), the seminal independent label that documented American and world folk music, labor songs, and movement music. He was the son of the Yiddish novelist Sholem Asch. The transcript context is unambiguous: the speaker describes Guy Carawan's relationship with 'Moash' as the editor/publisher who would release Guy's field recordings ('he knew that there would be a way to get documentary materials out nationally') and refers to 'Moash, who's running Folkways Records, is putting out music from around the world, and music from people's struggles.' This is exactly Moe Asch's role and biography.\n\nWhisper's 'Moash' rendering elides the syllable break and consonant ('Moe Asch' becomes 'Moash'). The civil_rights_facts.json corpus does not have a dedicated Moe Asch entry, but his role as founder of Folkways Records is foundational to the documentation of Movement music. After Asch's death in 1986, Folkways was acquired by the Smithsonian Institution and is now Smithsonian Folkways Recordings — which is itself part of the institutional pipeline that produced the Civil Rights History Project archive Candie Carawan was being interviewed for. The D2-ambiguous flag should be cleared. Both 'Moe Asch' (informal) and 'Moses Asch' (formal) are correct forms; he was universally known as 'Moe' in folk-music circles.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Moses_Asch", "https://en.wikipedia.org/wiki/Folkways_Records"]
+    },
+    {
+      "row_id": "11.29",
+      "whisper": "Mary Jane Piguet / Mrs. Piguet",
+      "original_candidate": "Mary Jane Pigee / Mrs. Pigee",
+      "resolution": "narrowed",
+      "new_candidate": "Mary Jane Pigee (likely; Vera Mae Pigee's daughter) — but speaker pronunciation in original audio should be verified before publishing",
+      "evidence": "Vera Mae Pigee (1925-2007) was the youth advisor of the Clarksdale Mississippi NAACP branch from 1955 to 1968 and one of the foundational grassroots organizers of the Mississippi Delta civil rights movement. Her daughter Mary Jane Pigee Davis was a singer who participated in Movement organizing alongside her mother. The transcript context — Clarksdale Mississippi; young woman studying opera; mother named 'Mrs. Pigee/Piguet' arranging a joint concert with Guy Carawan in a Black church; post-concert police harassment of the integrated party leaving the Black side of town — is consistent with the Pigee family.\n\nHowever, two cautions are warranted. First, the speaker (Candie Carawan in 2011) pronounces a name that Whisper consistently renders 'Piguet' (a French surname). It is plausible that Candie herself pronounced the name with a French-influenced phonation, or that the original audio is ambiguous between 'Pigee' (Anglicized) and 'Piguet' (Francophone). Vera Mae Pigee's surname is pronounced 'pi-GEE' (rhymes with 'jamboree') in published interviews, but Whisper's persistent 'Piguet' rendering suggests the speaker may have used a non-standard pronunciation. Second, the civil_rights_facts.json corpus does NOT include a Vera Mae Pigee or Mary Jane Pigee entry, so this is corroborated externally (Clarksdale NAACP histories, Pigee's own memoir 'The Forgotten People') but not by the in-project canonical corpus.\n\nThe correction 'Mary Jane Pigee' is most likely correct based on the historical record (no other Clarksdale Movement family with an opera-singing daughter matches). But the D2-ambiguous flag arose precisely from the spelling/pronunciation uncertainty, so 'narrowed' rather than 'resolved-high' is the appropriate disposition: the canonical spelling is 'Pigee', the speaker may have pronounced it Frenchified, and the published transcript should use 'Pigee' with an editor note about the speaker's pronunciation.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Vera_Pigee", "https://mscivilrightsproject.org/coahoma/person-coahoma/vera-pigee/"]
+    },
+    {
+      "row_id": "11.43",
+      "whisper": "Joan Bond / Joan Boyd",
+      "original_candidate": "Joan Boyd",
+      "resolution": "narrowed",
+      "new_candidate": "Joan Boyd (Appalachian songwriter, Big Stone Gap VA — biographical confirmation needed)",
+      "evidence": "The transcript context is unambiguous in attribution: the speaker (Candie Carawan) identifies the songwriter as 'a wonderful Appalachian songwriter Joan Boyd, somebody that we worked with here at Highlander. She's a school teacher up in Big Stone, yeah' — referring to Big Stone Gap, Virginia, in the Appalachian coal-mining country where Highlander did extensive organizing in the 1970s-80s. The song referenced in the transcript ('Friends you are lashed in kind, don't you travel under and wide, you're not alone when you've got the time of mind') appears to be 'You Are Not Alone' or a similar Appalachian solidarity song.\n\nThe choice between 'Joan Bond' and 'Joan Boyd' rests on the speaker's actual pronunciation in the original audio. 'Boyd' is a common Appalachian surname; 'Bond' is also possible. Whisper's two renderings ('Joan Bond' and 'Joan Boyd') reflect genuine phonetic ambiguity between the voiced labiodental /d/ at the end of 'Bond' versus the diphthong-plus-/d/ of 'Boyd'. Without access to the original audio, and absent a corpus entry for either, I cannot rule out either reading with high confidence. The Carawan-Highlander Appalachian period (1970s-80s) is well-documented but the specific schoolteacher-songwriter from Big Stone Gap is not in any standard movement biographical reference I can confirm against.\n\nThe civil_rights_facts.json corpus has no entry for either spelling. The 'Joan Boyd' correction in the original audit was a best-guess by a prior pass; it should remain the preferred reading (Appalachian context favors 'Boyd' as a more common regional surname than 'Bond'), but the D2-ambiguous flag should be downgraded to a publication note rather than cleared. This is exactly the kind of secondary-figure attribution where the audit process should defer to the speaker's intent as captured in the original audio.",
+      "external_sources": []
+    },
+    {
+      "row_id": "11.P2.1",
+      "whisper": "fiscal change program / Pist",
+      "original_candidate": "Fisk Exchange Program / Fisk University",
+      "resolution": "resolved-high",
+      "new_candidate": "Fisk Exchange Program / Fisk University",
+      "evidence": "Same evidence base as row 11.11. The Pomona-Fisk year-long undergraduate exchange program is well-documented and is the program Candie Carawan describes participating in during her junior year (1959-1960). The transcript names Pomona College explicitly ('I applied in Linda Pomona'), Reverend James Lawson's nonviolent-resistance workshops in Nashville ('we were already having non-violent trainings at Pist that Reverend James Lawson was running'), and Fisk's role as the Nashville HBCU host institution. Whisper's 'fiscal change program' is a near-homophonous error for 'Fisk exchange program' — both have similar syllable counts and consonant rhythm.\n\nFisk University is canonical in the civil_rights_facts.json corpus (mentioned in Diane Nash, Charles Gomillion, and Marion Barry entries). The Pomona-Fisk exchange program is the historical context in which Candie Anderson (later Carawan) came from California to Nashville in January 1960 and was caught up in the Nashville sit-in movement. The D2-ambiguous flag should be cleared. The reinforcing Pass 2 corroboration of the same correction in row 11.11 strengthens the case.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Fisk_University", "https://www.pomona.edu"]
+    },
+    {
+      "row_id": "11.P2.5",
+      "whisper": "Zopian",
+      "original_candidate": "Zilphia Horton (Mae Horton)",
+      "resolution": "narrowed",
+      "new_candidate": "Zilphia Horton",
+      "evidence": "The 'Zilphia Horton' portion of the correction is correct and high-confidence (same evidence base as row 11.8 — Highlander music director, Myles Horton's first wife, died 1956, arranged 'We Shall Overcome'). However, the parenthetical '(Mae Horton)' in the original correction is incorrect and should be dropped. Zilphia Horton's full name was Zilphia Mae Johnson Horton; 'Mae' was her middle name, not an alternate first name. She was universally known as 'Zilphia,' not 'Mae.' Myles Horton's SECOND wife (after Zilphia's 1956 death) was Aimee Horton, sometimes referred to in passing as 'Aimee.' The parenthetical 'Mae Horton' conflates Zilphia's middle name with an alleged alternate name and risks confusing the audit reader.\n\nThis is the appropriate use of 'narrowed' rather than 'resolved-high': the primary correction is right but the parenthetical alias is wrong and should be removed before publication. The civil_rights_facts.json corpus does not have a dedicated Zilphia Horton entry, but the Myles Horton entry confirms the canonical name as 'Zilphia Horton' (no alias 'Mae Horton'). Recommended final form: 'Zilphia Horton' alone; if the audit needs to record middle name, use 'Zilphia Mae (Johnson) Horton' for genealogical precision, but never 'Mae Horton' as a standalone alias.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Zilphia_Horton"]
+    },
+    {
+      "row_id": "11.P2.9",
+      "whisper": "Mary Jane Piguet",
+      "original_candidate": "Mary Jane Piguet",
+      "resolution": "narrowed",
+      "new_candidate": "Mary Jane Pigee (canonical spelling) — speaker may pronounce as 'Piguet'",
+      "evidence": "See row 11.29 for full evidence. The Pass 2 row classifies this as 'speaker-originating' and preserves the Whisper rendering 'Mary Jane Piguet' as the correction. This is the conservative call given the pronunciation ambiguity, but for publication consistency the canonical surname spelling 'Pigee' (per Vera Mae Pigee's own published surname in the Clarksdale Mississippi NAACP record and her memoir 'The Forgotten People: Struggling to Be Citizens') should be used, with an editor's note that the speaker's pronunciation as captured by Whisper was 'Piguet.'\n\nThe 'narrowed' disposition reflects that the Pass 2 reading 'speaker-originating, leave as Piguet' is defensible if and only if the original audio confirms the speaker actually pronounced it Frenchified. If the audio in fact shows standard 'Pigee' pronunciation and Whisper simply misrendered, the canonical 'Pigee' is correct. The D2-ambiguous flag is appropriately downgraded but not fully cleared until the audio can be checked. The civil_rights_facts.json corpus does not have a dedicated Vera Mae Pigee or Mary Jane Pigee entry, so this depends on external sources (Mississippi Civil Rights Project, Pigee's memoir, Clarksdale NAACP records).",
+      "external_sources": ["https://en.wikipedia.org/wiki/Vera_Pigee", "https://mscivilrightsproject.org/coahoma/person-coahoma/vera-pigee/"]
+    },
+    {
+      "row_id": "11.P2.10",
+      "whisper": "Whale in Hand",
+      "original_candidate": "Wayland D. Hand",
+      "resolution": "resolved-high",
+      "new_candidate": "Wayland D. Hand (Wayland Debs Hand)",
+      "evidence": "Wayland Debs Hand (1907-1986) was an American folklorist and professor at UCLA who served as president of the American Folklore Society in 1957 and as chair of the UCLA Center for the Study of Folklore and Mythology. He was Guy Carawan's master's advisor in folklore at UCLA in the early 1950s. The transcript context is unambiguous and matches Wayland Hand's biography exactly: the speaker describes him as 'one of his teachers at UCLA' who 'was the president of the American folklore society,' who warned Guy Carawan against the political uses of folk music ('what you really need to do is just let a folks on be a folks on... look at the way the Germans and the Nazis took their folk music and used it, you know, in a right wing movement'). Wayland Hand's published work on European folk medicine and folklore methodology, and his role as a guardian of academic folklore against politicization, is well-documented.\n\nWhisper's 'Whale in Hand' is a phonetic disaster on the unusual first name 'Wayland' (mis-parsed as the noun 'whale' + filler) combined with the surname 'Hand.' Pass 3 row 11.P3.3 corroborates by listing the multiple Whisper renderings ('Wayland Hand,' 'Wells in Hand,' 'Whale in Hand'). The civil_rights_facts.json corpus does not have a Wayland D. Hand entry (he is an academic folklorist, not a civil rights figure per se), but the UCLA folklore archives, the American Folklore Society's published history, and Hand's own bibliography all confirm the identification. The D2-ambiguous flag should be cleared.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Wayland_D._Hand", "https://www.afsnet.org"]
+    },
+    {
+      "row_id": "11.P2.11",
+      "whisper": "Moash / Mo Asch",
+      "original_candidate": "Moses Asch",
+      "resolution": "resolved-high",
+      "new_candidate": "Moe Asch (Moses Asch)",
+      "evidence": "Same evidence base as row 11.17. Moe Asch (Moses Asch, 1905-1986) was the founder of Folkways Records, son of Yiddish novelist Sholem Asch, and the principal publisher of Guy Carawan's field recordings of Civil Rights Movement music. The transcript context — 'Moash, who's running Folkways Records, is putting out music from around the world, and music from people's struggles' — is unambiguous.\n\nBoth 'Moe Asch' (the form he used in folk-music circles) and 'Moses Asch' (his formal birth name) are correct, but 'Moe Asch' is the standard movement-music-historiography form. The Pass 2 correction 'Moses Asch' is correct but slightly more formal than necessary; 'Moe Asch (Moses Asch)' captures both. The D2-ambiguous flag should be cleared. The bidirectional inconsistency in the master MD between 'Moe Asch' and 'Moses Asch' is a stylistic choice (informal vs formal), not a factual disagreement; both refer to the same person.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Moses_Asch", "https://en.wikipedia.org/wiki/Folkways_Records"]
+    },
+    {
+      "row_id": "11.P2.14",
+      "whisper": "Bevel and Lafayette",
+      "original_candidate": "James Bevel + Bernard Lafayette",
+      "resolution": "confirmed",
+      "new_candidate": "James Bevel + Bernard Lafayette",
+      "evidence": "The whisper rendering 'Bevel and Lafayette' is correct as-is and the canonical names are James Bevel and Bernard Lafayette. Both are well-documented founders of the Nashville student sit-in movement and both attended the April 1960 Highlander conference that the transcript references ('Guy would go off in the room with his guitar and James Bevel and Bernard Lafayette and others would go in there with him and they would just keep the singing going'). The civil_rights_facts.json corpus references both: James Bevel and Bernard Lafayette are named in the Highlander Folk School entry, the Myles Horton entry, the James Lawson entry, and the Diane Nash entry as core Nashville student sit-in leaders trained in Lawson's nonviolence workshops.\n\nThis row was flagged '[LAYER-5: phantom-rendering, fuzzy=73.7]' which suggests an audit-layer cross-check found the master-MD rendering had unusually high edit distance from some other corpus reference, but the underlying correction is correct. No change needed; the original correction stands. The 'confirmed' disposition is appropriate because the names are factually correct and unambiguous, and the flag was a process artifact rather than a substantive error.",
+      "external_sources": ["https://en.wikipedia.org/wiki/James_Bevel", "https://en.wikipedia.org/wiki/Bernard_Lafayette"]
+    },
+    {
+      "row_id": "11.P2.15",
+      "whisper": "September Guy / set him to",
+      "original_candidate": "Septima Clark",
+      "resolution": "resolved-high",
+      "new_candidate": "Septima Clark",
+      "evidence": "Same evidence base as row 11.7. Septima Poinsette Clark is canonical in civil_rights_facts.json. The Whisper renderings 'September Guy' and 'set him to' are both phonetic catastrophes on the unfamiliar Latinate name 'Septima.' The transcript context (Highlander, Johns Island, King circle, Charleston roots, tough Black woman elder) is unambiguous in every appearance throughout this transcript. The D2-ambiguous flag should be cleared. This row is a Pass 2 reinforcement of the same canonical figure identified in row 11.7; the 'reinforce corpus-wide' note in the source row is accurate.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Septima_Poinsette_Clark"]
+    },
+    {
+      "row_id": "11.P3.3",
+      "whisper": "\"Wayland Hand\" / \"Wells in Hand\" / \"Whale in Hand\"",
+      "original_candidate": "Wayland Debs Hand (UCLA folklorist)",
+      "resolution": "resolved-high",
+      "new_candidate": "Wayland Debs Hand (UCLA folklorist)",
+      "evidence": "Same evidence base as row 11.P2.10. Wayland Debs Hand (1907-1986) was the UCLA folklore professor, American Folklore Society president (1957), and Guy Carawan's master's advisor. The Pass 3 consolidation correctly identifies the canonical full name 'Wayland Debs Hand' (the middle name 'Debs' is after Eugene V. Debs, the socialist labor leader — Hand's parents were politically progressive). The three Whisper renderings ('Wayland Hand,' 'Wells in Hand,' 'Whale in Hand') all converge on the same referent. The transcript context (UCLA, folklore professor, American Folklore Society president, warned Guy against political uses of folk music with the Nazi-folk-music cautionary tale) is exact-match to Hand's biography.\n\nThe D2-ambiguous flag should be cleared. This is the same canonical figure as row 11.P2.10 — the Pass 3 entry is the cross-corpus catalog consolidation of the Pass 1 and Pass 2 readings. No alternate candidate is plausible: there is no other UCLA folklore professor active in the early 1950s who was American Folklore Society president and who advised Guy Carawan's master's thesis.",
+      "external_sources": ["https://en.wikipedia.org/wiki/Wayland_D._Hand", "https://www.afsnet.org/page/PastPresidents"]
+    }
+  ]
+}

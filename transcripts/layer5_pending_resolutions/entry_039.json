@@ -1,0 +1,33 @@
+{
+  "entry_number": 39,
+  "subject": "Ernest Adolphus Finney Jr.",
+  "items": [
+    {
+      "row_id": "39.28",
+      "whisper": "Orangeburg Massacre (Feb 8, 1968)",
+      "original_candidate": "Orangeburg Massacre",
+      "resolution": "confirmed",
+      "new_candidate": "Orangeburg Massacre",
+      "evidence": "Transcript directly references the event in Finney's own discussion of his Civil Rights Commission resignation: 'In 1968, obviously early 1968, there's the horrible all the shootings at Orange and Orange Berk, the so-called Orange Berk Massacre. And a year later, watching the federal government's reaction to that, and it's the next administration's refusal to open a re-investigation. Not only did I resign, but a man by the name of Ben Payton resigned... Because we felt that the federal government was not using all of its powers to see what the situation was and to investigate. And I was chairman of the US Commission on Civil Rights at that time.' Finney explicitly names the 'Orange Berk Massacre' (Whisper's spelling variant of Orangeburg) and ties it to early 1968, matching the canonical Feb 8, 1968 event. The Orangeburg Massacre is a well-documented foundational event: SC Highway Patrol opened fire on Black students protesting segregation of the All Star Bowling Lanes, killing Samuel Hammond, Henry Smith, and Delano Middleton at South Carolina State College in Orangeburg three years before Kent State. Finney lived in Orangeburg from approximately 1945-46 onward (attended Claflin College, taught/practiced nearby), making this event personally and geographically central to his testimony. The canonical correction 'Orangeburg Massacre' (without parenthetical date) is the standard form used in the corpus and matches the surrounding context. The Layer 5 phantom-rendering flag is rejected — this is a real Whisper-rendered reference, not a phantom.\n\nThe parenthetical '(Feb 8, 1968)' in the Whisper rendering appears to be an annotation injection rather than spoken text, but the underlying reference to 'Orange Berk Massacre' / Orangeburg Massacre is verified directly in transcript. Confidence is high: speaker, event, and approximate date all corroborate.",
+      "external_sources": []
+    },
+    {
+      "row_id": "39.P3.1",
+      "whisper": "\"the Rosa Parks bus boycott\" reference",
+      "original_candidate": "Montgomery Bus Boycott",
+      "resolution": "rejected",
+      "new_candidate": "",
+      "evidence": "No mention of Rosa Parks, Montgomery, bus boycott, or any related 1955-56 Alabama protest appears anywhere in the transcript. A direct grep of the full ~33 KB transcript text for the terms 'Rosa', 'Parks', 'Montgomery', 'bus boycott', or 'boycott' returned zero matches. Finney's testimony focuses on his own biographical arc (Smithfield Virginia birth, family move to Claflin/Orangeburg ~1945-46, SC State Law School 1952-1954, Brown decision reaction, Sumter NAACP work starting 1960, Friendship Nine and James T. McCain CORE representation, state House election 1972, Supreme Court 1985, Chief Justice 1994, Abbeville County School District case) and on South Carolina-specific civil rights events. There is no narrative pivot in the transcript where Montgomery would naturally come up — Finney does not discuss SCLC, King's organizing biography, or the inciting events of the modern movement outside SC. The Pass 3 'verification flag' for this canonical anchor cannot be substantiated. This is a phantom rendering: the original Pass 3 row was speculative ('if Finney mentions Montgomery as a movement turning point') and verification confirms he does not. Reject the canonical insertion; do not add Montgomery Bus Boycott to entry 039's correction overlay.\n\nThe Layer 5 fuzzy score of 53.8 reinforces low confidence — the term lacks any actual transcript anchor. Conservative bias dictates rejection rather than speculative association.",
+      "external_sources": []
+    },
+    {
+      "row_id": "39.P3.3",
+      "whisper": "\"Brown v. Board\" timeline anchor",
+      "original_candidate": "Brown v. Board of Education (May 17, 1954)",
+      "resolution": "confirmed",
+      "new_candidate": "Brown v. Board of Education",
+      "evidence": "Transcript directly references Brown twice in a single exchange about Finney's bar passage and his recollection of the decision: 'On graduating and taking the bar, that would have been early summer 1954, which was just then weeks after the Brown decision. That's correct. Do you happen to recall your reaction to Brown and its discussion on the campus and things? Well, as I recall it, the reaction was ecstatic. There was what we had wanted and what we had hoped for and what we hoped the Supreme Court would do in its decision. And of course, there was some trepidation because we did not know what the implementing decision was going to be and it ended up being longer, taking longer than we had hoped.' The timeline anchor is directly verifiable: Finney graduated SC State Law School and took the bar in early summer 1954, weeks after the May 17, 1954 Brown decision. This matches the canonical corpus entry (civil_rights_facts.json line 107) for Brown v. Board of Education. The Pass 3 flag is confirmed by the transcript — the 'Brown' reference is real, the 1954 timeline is real, and Finney provides personal civil-rights-era context (ecstatic reaction, anticipation of implementing decision Brown II). Standardized form 'Brown v. Board of Education' without parenthetical date is appropriate for the correction overlay; the date is already captured in the ground-truth corpus and need not be embedded as parenthetical noise in the correction column.\n\nThe Layer 5 fuzzy score of 57.1 is low because the Whisper rendering is just the bare term 'Brown' in context, but the proximate date anchor ('early summer 1954, weeks after the Brown decision') unambiguously identifies the Supreme Court case. Confidence high.",
+      "external_sources": []
+    }
+  ]
+}

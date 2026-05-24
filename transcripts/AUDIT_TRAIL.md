@@ -96,6 +96,39 @@ The Layer 5 fidelity-deploy (`2669753`) annotated 1,174 D2-ambiguous rows for en
 
 - The fact that this Session entry is being authored retroactively is itself a finding. The original Pass 6 session executed work but did not commit + push it, leaving 66 files in working-tree limbo for ~24 hours and creating a governance gap. Per the user's standing directive ("I always want everything pushed after every moderate milestone"), going forward: every milestone — including intermediate checkpoints — commits and pushes. Uncommitted working-tree state is a process failure, not a "work-in-progress" state. The same visibility-gap pattern that commits `e325d79` and `8591d74` previously had to back-fill is what motivated CLAUDE.md's per-phase atomicity discipline; that discipline now needs project-wide enforcement, not just within audit-document updates.
 
+#### Phase 5 — Track 3 + Track 4 deployment to master MD (2026-05-24 evening)
+
+**Agents:** Claude Opus 4.7 (parent) + 11 parallel Track 4 resolution subagents (one per layer5_pending entry: #2, #11, #15, #34, #38, #39, #74, #76, #79, #100, #113).
+
+**Wall-clock:** Track 4 subagents ~8 min (sum-of-slowest of the 11 parallel agents). Apply-back script authoring + dry-run + apply ~10 min. AUDIT_TRAIL + OPEN_PROBLEMS update + commit/push ~5 min. Total ~25 min.
+
+**Deliverables:**
+- `transcripts/layer5_pending_resolutions/` — 11 per-entry resolution files (218 items total) from the parallel Track 4 batch. Resolution-type distribution: 147 confirmed, 42 resolved-high, 23 narrowed, 4 unresolved, 1 alternate, 1 rejected.
+- `transcripts/apply_low_conf_resolutions.py` — unified apply-back script that consumes BOTH `low_conf_resolutions/` (Track 3, 82 items / 40 entries) AND `layer5_pending_resolutions/` (Track 4, 218 items / 11 entries). Reuses entry-section-bounds + row-line-finding + cell-split/join helpers from `transcripts/fix_layer5_findings.py`. Idempotent (skips rows already carrying `[PASS-6:]` marker). Atomic (read once, mutate in memory, write once). Pre/post char + D2-marker + PASS-6-marker verification.
+- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` — mutated in place. Pre: 9,112,733 chars / 1,174 D2-ambiguous markers / 0 PASS-6 markers. Post: 9,123,429 chars (+10,696) / 912 D2-ambiguous markers (-262) / 290 PASS-6 markers (+290).
+
+**Coverage (300 items dispatched, 290 mutated, 10 skipped as already-Pass-6):**
+
+| Resolution type | Count | Master MD effect |
+| --- | ---: | --- |
+| confirmed | 151 | Correction stays; D2 marker cleared; `[PASS-6: confirmed]` appended |
+| resolved-high | 46 | Correction may be refined; D2 marker cleared; `[PASS-6: resolved-high]` appended |
+| rejected | 40 | Original correction stays as supervisor record; D2 marker cleared; `[PASS-6: rejected — speculation without corroboration]` appended (downstream consumers should prefer literal Whisper rendering) |
+| narrowed | 26 | Correction cell replaced with cautious `new_candidate`; D2 marker cleared; `[PASS-6: narrowed]` appended |
+| unresolved | 22 | Correction stays; D2 marker replaced with `[PASS-6: unresolved-escalated-to-ensemble]` |
+| alternate | 5 | Correction cell replaced with different canonical candidate; D2 marker cleared; `[PASS-6: alternate]` appended |
+| **Total mutated** | **290** | **50 correction-cell updates total across narrowed+alternate+resolved-high** |
+
+**Spot-check examples (post-apply):**
+- Row 2.14 "Mechor" → was `Medgar (Evers)`, now `Medgar Evers` (parenthetical dropped per Track 4 resolved-high resolution); notes show `[PASS-6: resolved-high | see transcripts/layer5_pending_resolutions/entry_002.json]`
+- Row 7.P2.17 "Becky Mills" → was `Becky Adams (likely Adams-Mills)`, now `Becky Mills [unverified surname; possibly Adams-Mills]` per Track 3 narrowed resolution; notes show `[PASS-6: narrowed | see transcripts/low_conf_resolutions/entry_007.json]`
+
+**Residual D2-ambiguous markers in master MD post-apply: 912** (down from 1,174). The 262-marker delta is smaller than the 290 rows mutated because some Pass 6 resolution items targeted rows that did NOT carry a D2 marker in master MD (e.g., catalog-recommendation Pass 3 rows where the slice was sourced from broader criteria than just D2). Those rows still received the `[PASS-6:]` annotation for audit provenance, but had no D2 marker to clear. The remaining 912 D2-ambiguous rows belong to the Kiro/Kimi/Codex/Gemini ensemble handoff per OPEN_PROBLEMS Problem 9.
+
+**Handoff to next session/agent:**
+- Re-run `scripts/apply_corrections.py` to regenerate `transcripts/corrected/<entry>/*.txt` outputs with the Track 3+4 resolutions baked in, AND to refresh the 19 stale `manifest.json` files from the prior Pass 6 Track 2 heuristic mutation sweep. Per-entry audit chain signatures will then match the .txt files they document.
+- Pass 7 (overnight serial creative re-assessment) is the next phase per the standing goal; see Session 6 entry above (placeholder) once it begins.
+
 ---
 
 ### Session 1 — 2026-05-21: Pass 1 initial sweep (single-session, foreground)

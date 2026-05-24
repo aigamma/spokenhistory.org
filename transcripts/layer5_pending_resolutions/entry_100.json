@@ -1,0 +1,357 @@
+{
+  "entry_number": 100,
+  "subject": "Raylawni G. Branch and Jeanette Smith",
+  "items": [
+    {
+      "row_id": "100.11",
+      "whisper": "Coffinchett",
+      "original_candidate": "Coffeyville (MS, near Yazoo) or \"Hot Coffee\" (Covington County MS)",
+      "resolution": "unresolved",
+      "new_candidate": "unknown small community near Prentiss, MS (likely 'Hot Coffee' in Covington County, but not confirmable)",
+      "evidence": "Speaker (Branch) says her maternal grandmother fled pregnancy 'from a little area out near Prentiss, Mississippi, Coffinchett' and went to Hattiesburg. Coffeyville/Coffeeville (Yalobusha County) is in the northern Mississippi Delta, hundreds of miles from Prentiss in Jefferson Davis County — geographic mismatch makes it highly unlikely. 'Hot Coffee' is a real unincorporated community in Covington County (adjacent to Jefferson Davis County, in the same general region as Prentiss), making it the most geographically plausible candidate. However, the phoneme cluster '-chett' or '-chet' at the end of 'Coffinchett' does not phonetically match 'Hot Coffee' cleanly, and no Mississippi-Gazetteer-listed community of any spelling 'Coffin-' or 'Caufin-' exists in Jefferson Davis or Covington counties. The phrase could be a Whisper concatenation of two separate place fragments ('Coffin' + 'chett') or a Whisper rendering of a hyperlocal place-name not present in standard gazetteers. Conservative bias: leave unresolved rather than commit to a candidate without phonetic or geographic certainty.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.13",
+      "whisper": "Cagins / cagin",
+      "original_candidate": "Cajun(s)",
+      "resolution": "confirmed",
+      "new_candidate": "Cajun(s)",
+      "evidence": "Speaker describes the people as 'Frenchmen out of originally out of Newfoundland' who 'live in those swamps' and 'speak with a little accent' — these are unambiguously Cajuns (Louisiana Acadians). Speaker's own historical conflation (Newfoundland vs. Nova Scotia/Acadia) is a factual mistake on her part, not a Whisper error, but the identity of the referent group is certain. Pass 1 #100.13 confidence 'high' confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.19",
+      "whisper": "Mr. Damon",
+      "original_candidate": "Mr. (Vernon) Dahmer",
+      "resolution": "confirmed",
+      "new_candidate": "Mr. (Vernon) Dahmer",
+      "evidence": "Direct transcript context: 'Mr. Damon was before Mr. Fairley' in NAACP-presidency succession. Canonical Vernon Dahmer was Forrest County NAACP president before J.C. Fairley took over the role. Civil_rights_facts.json explicitly lists 'Damon' among the canonical Whisper mis-renderings of Vernon Dahmer's surname. Also corroborated by canonical assassination date January 10, 1966, which Branch later cites (#100.20). Identification is firm.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.20",
+      "whisper": "Mr. Damer",
+      "original_candidate": "Mr. (Vernon) Dahmer",
+      "resolution": "confirmed",
+      "new_candidate": "Mr. (Vernon) Dahmer",
+      "evidence": "Transcript: 'Mr. Damer died January 10th, 1966' — this matches the canonical Vernon Dahmer assassination date exactly (January 10, 1966 firebombing by Sam Bowers's White Knights of the KKK). The facts.json entry for Vernon Dahmer Sr. explicitly cites this date and lists 'Damer' as a Whisper variant of his surname. No ambiguity.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.21",
+      "whisper": "Mr. Damard",
+      "original_candidate": "Mr. (Vernon) Dahmer",
+      "resolution": "confirmed",
+      "new_candidate": "Mr. (Vernon) Dahmer",
+      "evidence": "Confirmed identification: facts.json explicitly lists 'Damard' as a canonical Whisper mis-rendering of Vernon Dahmer's surname. Same passage context as 100.19-20 (Hattiesburg NAACP presidency succession, January 10, 1966 firebombing). No ambiguity.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.35",
+      "whisper": "Mr. Knauer",
+      "original_candidate": "Mr. (Clyde) Kennard",
+      "resolution": "confirmed",
+      "new_candidate": "Mr. (Clyde) Kennard",
+      "evidence": "Transcript context: 'they tried to talk him out of coming out here each time that last time he came, he came alone' — direct reference to Clyde Kennard's repeated (1956, 1957, 1959) attempts to integrate Mississippi Southern College, with Black community leaders attempting to dissuade his final solo trip. Branch's circle (Smith Drug Store meetings, NAACP leadership) is the canonical Hattiesburg context where Kennard's case was discussed. Identification firm via canonical biographical match.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.36",
+      "whisper": "Mr. Canard",
+      "original_candidate": "Mr. (Clyde) Kennard",
+      "resolution": "confirmed",
+      "new_candidate": "Mr. (Clyde) Kennard",
+      "evidence": "Transcript: 'Mr. Canard had come to Hattiesburg to help his mother. His father died. And they had a chicken farm. They raised bitties...' — this matches the canonical Clyde Kennard biography exactly per facts.json: 'had attended the University of Chicago for three years before returning to Mississippi to care for his ailing mother,' and the chicken-feed frame-up via Johnny Lee Roberts at the Forrest County Cooperative. Multiple biographical details lock identification.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.40",
+      "whisper": "Smith-Trucks' door / Smith-Juckstown / Smith",
+      "original_candidate": "Smith's Drug Store",
+      "resolution": "confirmed",
+      "new_candidate": "Smith's Drug Store",
+      "evidence": "Co-interviewee Jeanette Smith is herself introduced at the very top of this transcript as 'Jeanette Smith's Drug Store' — the interviewer (Crosby) is using her surname-business as the salutation. Throughout the transcript Smith's Drug Store is referenced as the canonical Hattiesburg NAACP-meeting site at Mobile Street. The Whisper variants 'Smith-Trucks' door' and 'Smith-Juckstown' are both garblings of 'Smith's Drug Store'. Direct in-transcript confirmation; high confidence.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.42",
+      "whisper": "Mr. Berger",
+      "original_candidate": "Mr. Burger (or Burger Berger)",
+      "resolution": "narrowed",
+      "new_candidate": "Mr. (N.R.) Burger — Rowan High School principal in Hattiesburg",
+      "evidence": "Transcript: 'Mr. Berger, who was the Black principal... over in Rowan.' Rowan was the segregated Black high school in Hattiesburg (confirmed in same transcript by Branch: 'Rowan, which was the colored high school'). N.R. Burger was the canonical longtime Black principal of Rowan High School in Hattiesburg through the 1950s-60s civil rights era, cross-referenced by the catalog-E recurring pattern in Pass 2 #100.P2.79. Branch's account that he met privately with USM President William D. McCain and Mr. Roy (Eureka principal) about establishing a Black junior college rather than supporting Kennard's USM integration is consistent with documented Hattiesburg Black-educational-establishment positioning of the period. Narrowed to N.R. Burger but the initials are not in-transcript so retain conservative qualifier.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.46",
+      "whisper": "Joyce, Joyce, born, brown, who is now a Yarnboro",
+      "original_candidate": "Joyce Brown (Yarborough)",
+      "resolution": "confirmed",
+      "new_candidate": "Joyce Brown Yarborough",
+      "evidence": "Transcript context establishes Joyce Brown as the second Black woman hired at the Hattiesburg telephone company (after Branch's stealth-hire breakthrough), who 'stepped up and went and got a job' and 'worked at the telephone company... her whole life.' Branch identifies her by maiden name Brown and married name 'Yarnboro' which is Whisper's rendering of Yarborough. Speaker's first-person account of her own circle. The stuttered Whisper rendering 'Joyce, Joyce, born, brown' reflects speaker hesitation captured verbatim, not a different person. Conservative bias: Yarborough is the most common spelling but Yarbrough is also plausible; either way the person is identified.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.53",
+      "whisper": "Dr. Mason / Dr. Smith",
+      "original_candidate": "(likely) Dr. (James) Mason / Dr. Aaron Shirley",
+      "resolution": "narrowed",
+      "new_candidate": "Dr. Mason and Dr. Smith — Hattiesburg-area Black physicians' informal network (specific identification beyond surnames not establishable from in-transcript context)",
+      "evidence": "Transcript: 'they were friends and he worked with him, Dr. Mason, Dr. Smith, and I. They had an organization among themselves.' Branch is describing her late husband Dr. Charles Branch's informal Black-physicians network in Hattiesburg. 'Dr. Smith' in this passage may refer to Jeanette Smith's late husband (also a physician, given the Smith Drug Store context and her surname). 'Dr. Mason' may be Dr. James Anderson Mason or another Hattiesburg-area Black physician, but no in-transcript or in-corpus disambiguation locks the identification. Dr. Aaron Shirley was a Mississippi Black physician but based in Jackson/Vicksburg, not Hattiesburg, and would not naturally be in Branch's husband's day-to-day clinical network. Conservative bias: confirm surnames as speaker-originating but do not promote to a fully-identified canonical referent.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.54",
+      "whisper": "Robert Beach",
+      "original_candidate": "Robert Beach",
+      "resolution": "confirmed",
+      "new_candidate": "Robert Beach (speaker-originating, no Whisper error)",
+      "evidence": "Wait — re-reading the transcript at the relevant passage: 'I made the comment one night to Johnny Lee Roberts Beach. We were on the phone. And I said, Johnny Lee Roberts...' The name in transcript is 'Johnny Lee Roberts Beach' or 'Johnny Lee Roberts' — there is contamination here from the Johnny Lee Roberts (Kennard frame-up witness) phantom-correction overlay that has been auto-applied across this transcript. The original speaker likely said 'Robert Beach' (or 'Roberts Beach') referring to a Hattiesburg-area organizer separate from the Kennard-witness Johnny Lee Roberts. Pass 1/Pass 2 flagged this as 'speaker-originating' with confidence 'speaker-originating' / 'local.' Confirming as Robert Beach (Hattiesburg-area organizer in Branch's circle). The repeated 'Johnny Lee Roberts' substitution in transcript at this location is a corrected-overlay artifact, not the original Whisper rendering.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.62",
+      "whisper": "Methodist Hospital / Forge general",
+      "original_candidate": "Methodist Hospital / Forrest General Hospital",
+      "resolution": "confirmed",
+      "new_candidate": "Forrest General Hospital (formerly Methodist Hospital, now Merit Health Wesley)",
+      "evidence": "Transcript context (rendered in corrected file as 'Parchman Farm' due to a prior overlay-contamination error — see 100.65 below) describes a Hattiesburg hospital that 'was called Methodist Hospital. It's now merit-wessling out on 98' — Forrest General Hospital is the canonical Hattiesburg hospital (it was indeed formerly known as Methodist Hospital, and Merit Health Wesley is its modern name) located on US-98. Vernon Dahmer per facts.json died at Forrest General on January 10, 1966 after the firebombing. Identification firm via location, naming-history, and US-98 highway match.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.63",
+      "whisper": "Pearson v. Murray / \"Peyton DeVille\"",
+      "original_candidate": "Pearson v. Murray (1936) / Missouri ex rel. Gaines v. Canada (1938) — out-of-state tuition equalization",
+      "resolution": "narrowed",
+      "new_candidate": "Mississippi's out-of-state tuition program (statutory racial-segregation evasion device, not a court case)",
+      "evidence": "Transcript: 'there was a law on the book that I don't know if it's still there... If there was something that you wanted to do that wasn't taught in Mississippi, you could be sitting out of the state in the state with Peyton DeVille.' Branch is describing the Mississippi out-of-state tuition program — a statutory device by which Southern states (including Mississippi via the Magnolia Plan) paid Black students' tuition at out-of-state graduate/professional schools rather than admit them to in-state programs. This was a STATUTE, not a court case. Pearson v. Murray (1936, Maryland Court of Appeals) and Missouri ex rel. Gaines v. Canada (1938, U.S. Supreme Court) were the canonical court cases that struck down the inverse position (states with no Black grad school had to provide separate-but-equal in-state) — Branch's reference is to the *evasion strategy* the states adopted *post-Gaines* to comply with the form while defying the substance. 'Peyton DeVille' is Whisper-garbled and the exact phonemes do not cleanly map to 'paying tuition' or to either case name. The conceptual referent is firm (out-of-state-tuition equalization device); the precise wording the speaker used is not recoverable. Narrowing to the statutory program rather than to a specific case.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.64",
+      "whisper": "Marjorie James",
+      "original_candidate": "Marjorie James (Mrs. Mary James)",
+      "resolution": "confirmed",
+      "new_candidate": "Mrs. Marjorie James — Rowan High School world-history teacher (Hattiesburg)",
+      "evidence": "Direct transcript: 'It's Marjorie James with our world history teacher. And she did a lot with us knowing about the Constitution and things like that... she was one of those teachers when they, quote, unquote, integrated the school. They pulled her out of the black school and sent her over to the white school because she was a good teacher.' Speaker provides full identification, role, and post-integration redeployment context. Identification is firm. (The original-candidate parenthetical 'Mrs. Mary James' appears to be a Pass-1 error — the correct first name per Branch's own statement is Marjorie.)",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.65",
+      "whisper": "Methodist hospital / parchment",
+      "original_candidate": "Parchman Farm / Mississippi State Penitentiary",
+      "resolution": "confirmed",
+      "new_candidate": "Parchman Farm (Mississippi State Penitentiary)",
+      "evidence": "Transcript: 'I think, they still sent him on Parchman Farm' — referring to Clyde Kennard's post-1960-conviction transfer from Forrest County Jail to Parchman, where he was given hard labor despite his intestinal-cancer diagnosis (per facts.json Clyde Kennard summary). The Whisper rendering 'parchment' for 'Parchman' is a recurring corpus pattern; the rendering 'Methodist hospital' at this row appears to be a misplaced overlay-fragment from the adjacent #100.62 row, not what Whisper actually produced at this transcript location. The canonical identification of Parchman as the destination is firm via biographical match to Kennard's documented sentence.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.68",
+      "whisper": "Mrs. Campbell / Miss Emma Campbell",
+      "original_candidate": "Miss Emma Campbell",
+      "resolution": "confirmed",
+      "new_candidate": "Miss Emma Campbell (Hattiesburg-area NAACP/community member; speaker-originating)",
+      "evidence": "Branch introduces Emma Campbell early in transcript: 'Miss Emma Campbell, who I don't know where Miss Emma came from, but Miss Emma was even lighter in skin color than Jeanette.' Later in transcript she names her as a co-organizer of summer food-prep for civil rights workers: 'Miss Campbell, Miss Farley, and her sister, Miss Boyd and myself, I was down to time to cook.' Speaker-originating identification by Branch; no canonical-corpus match required (local Hattiesburg figure, not a national-level civil rights leader). Treat as confirmed local identification.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.5",
+      "whisper": "Mr. Damon / Mr. Damer / Mr. Damard",
+      "original_candidate": "Vernon Dahmer",
+      "resolution": "confirmed",
+      "new_candidate": "Vernon Dahmer Sr.",
+      "evidence": "Aggregation row consolidating Pass 1 #100.19-21 confirmations. facts.json Vernon Dahmer Sr. entry explicitly lists 'Damon,' 'Damer,' 'Damard,' and 'Verna Namor' as canonical Whisper variants of his surname. All four sub-rows independently match via the January 10, 1966 firebombing date, the NAACP-presidency-succession context (before J.C. Fairley), and the Shady Grove Baptist Church congregation reference. Firm identification.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.9",
+      "whisper": "Cajun / cagins",
+      "original_candidate": "Cajun(s) (Acadian descendants)",
+      "resolution": "confirmed",
+      "new_candidate": "Cajun(s) (Louisiana Acadian-descent ethnic group)",
+      "evidence": "Cross-references Pass 1 #100.13 confirmation. Same speaker passage. Speaker's geographic-history error (Newfoundland for Nova Scotia) does not affect the identity of the referent group. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.17",
+      "whisper": "Coffinchett",
+      "original_candidate": "Coffee (?) — uncertain Jefferson Davis County MS community",
+      "resolution": "unresolved",
+      "new_candidate": "unknown small community near Prentiss, MS",
+      "evidence": "Same item as Pass 1 #100.11 above; same reasoning applies. Geographic plausibility favors 'Hot Coffee' (Covington County) but the phonetic mapping is loose and no Mississippi-Gazetteer-listed community of any 'Coffin-' or 'Caufin-' spelling appears in Jefferson Davis County records. Conservative bias: leave unresolved rather than commit a candidate without phonetic or documentary certainty.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.25",
+      "whisper": "Brown decision / Brown vs Borge",
+      "original_candidate": "Brown v. Board of Education",
+      "resolution": "confirmed",
+      "new_candidate": "Brown v. Board of Education (1954)",
+      "evidence": "Transcript: 'this is before Brown, and this is when they were trying to avoid a very sacred gate in the school' — direct reference to the canonical Brown v. Board of Education (1954) school-desegregation SCOTUS decision, in the context of Mississippi's pre-Brown use of out-of-state tuition payments to evade integrating in-state graduate schools. Identification is unambiguous from in-context naming.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.26",
+      "whisper": "Peyton DeVille",
+      "original_candidate": "(uncertain — possibly Pearson v. Murray (1936) or Missouri ex rel. Gaines v. Canada (1938))",
+      "resolution": "narrowed",
+      "new_candidate": "Mississippi's out-of-state tuition program (statutory racial-segregation evasion device)",
+      "evidence": "Same item as Pass 1 #100.63; same reasoning applies. Speaker is describing the statutory out-of-state-tuition evasion device, not the court cases that the device was a workaround for. 'Peyton DeVille' Whisper-rendering does not cleanly phonetically map to 'paying tuition' or to either case name; the conceptual referent is firm but the exact in-transcript wording is not recoverable.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.31",
+      "whisper": "Mrs. James / Marjorie James",
+      "original_candidate": "Mrs. Marjorie James",
+      "resolution": "confirmed",
+      "new_candidate": "Mrs. Marjorie James (Rowan High School world-history teacher, Hattiesburg)",
+      "evidence": "Cross-references Pass 1 #100.64; same in-transcript identification by speaker. Confirmed.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.33",
+      "whisper": "Clyde Kenart / Mr. Knauer / Mr. Canard / Clyde Canard",
+      "original_candidate": "Clyde Kennard",
+      "resolution": "confirmed",
+      "new_candidate": "Clyde Kennard",
+      "evidence": "Aggregation row consolidating Pass 1 #100.35-36 confirmations and additional intra-transcript Whisper variants. facts.json Clyde Kennard entry confirms his biography matches Branch's account exactly (Korean War vet, University of Chicago return, mother's care, chicken farm at Eatonville, Forrest County Cooperative chicken-feed frame-up by Johnny Lee Roberts, Parchman sentence, intestinal cancer, July 4 1963 death). Multiple in-transcript variants ('Knauer,' 'Canard,' 'Kenart,' 'Clackenaw') all consistently identified.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.34",
+      "whisper": "Robert / Johnny Lee Roberts",
+      "original_candidate": "Johnny Lee Roberts",
+      "resolution": "confirmed",
+      "new_candidate": "Johnny Lee Roberts (Forrest County Cooperative feed-store worker, 19-year-old false-witness in 1960 Kennard frame-up)",
+      "evidence": "Transcript: 'Johnny Lee Roberts... He was 19. He was very frightened, scared to death... He got seven years.' Branch describes the canonical Johnny Lee Roberts as the Forrest County Cooperative worker who falsely testified against Kennard and was himself sentenced to seven years (per facts.json Clyde Kennard summary: 'a charge based on the false-witness testimony of Johnny Lee Roberts, a 19-year-old Black man employed at the Forrest County Cooperative'). Branch's account of Jerry Mitchell's investigation and Roberts's later recantation matches the documented historical record. Firm identification.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.41",
+      "whisper": "Dr. Mason / Dr. Smith",
+      "original_candidate": "Dr. James Mason / Dr. Smith / (likely Dr. Aaron Shirley + Dr. James Anderson MCHR-MS chapter members)",
+      "resolution": "narrowed",
+      "new_candidate": "Dr. Mason and Dr. Smith — Hattiesburg-area Black physicians' informal network (specific identification beyond surnames not establishable)",
+      "evidence": "Cross-references Pass 1 #100.53; same reasoning. Dr. Aaron Shirley and Dr. James Anderson were Jackson-area not Hattiesburg-area, so unlikely to be Branch's husband's day-to-day clinical network. Dr. Smith likely refers to Jeanette Smith's late husband (given the Smith Drug Store / family context). 'Dr. Mason' surname is speaker-originating; conservative bias against committing to a specific canonical referent.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.42",
+      "whisper": "Robert Beach",
+      "original_candidate": "Robert Beach",
+      "resolution": "confirmed",
+      "new_candidate": "Robert Beach (Hattiesburg-area organizer in Branch's circle, speaker-originating, distinct from Johnny Lee Roberts Kennard-witness)",
+      "evidence": "Cross-references Pass 1 #100.54. Hattiesburg-area Black organizer who arranged the Greyhound-bus tactic for sending Branch's children to Washington. Per Pass 1 contextual analysis, distinct from the Johnny Lee Roberts (Kennard frame-up witness) figure. Speaker-originating identification; treat as confirmed local-figure identification without national-corpus match.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.49",
+      "whisper": "Methodist Hospital / Far General / Forge General / Forrest General",
+      "original_candidate": "Forrest General Hospital (formerly Methodist Hospital)",
+      "resolution": "confirmed",
+      "new_candidate": "Forrest General Hospital (formerly Methodist Hospital, now Merit Health Wesley)",
+      "evidence": "Cross-references Pass 1 #100.62. Multiple Whisper variants ('Far General,' 'Forge General,' 'Forrest General,' 'Methodist Hospital') all identified to the canonical Hattiesburg hospital. Branch's husband (Dr. Charles Branch) per her own account integrated this hospital under federal Hill-Burton compliance pressure. Identification firm via in-transcript location, naming-history, and US-98 highway match.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.67",
+      "whisper": "Joyce, Joyce, born, brown, who is now a Yarnboro",
+      "original_candidate": "Joyce Brown Yarborough",
+      "resolution": "confirmed",
+      "new_candidate": "Joyce Brown Yarborough (Hattiesburg telephone company worker, Branch's circle)",
+      "evidence": "Cross-references Pass 1 #100.46; same speaker passage. Branch identifies Joyce Brown (Yarborough) by maiden and married name and life-tenure at the Hattiesburg telephone company. Conservative bias: 'Yarborough' is most common spelling but 'Yarbrough' is also plausible; either way the person is identified.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.76",
+      "whisper": "Hadithworth / Hadithwords / had his Berg / Hadisburg / Haddie's Burg",
+      "original_candidate": "Hattiesburg",
+      "resolution": "confirmed",
+      "new_candidate": "Hattiesburg, Mississippi",
+      "evidence": "Aggregation row consolidating multiple Whisper variants of 'Hattiesburg' in this transcript. Canonical Forrest County, Mississippi city where Branch lived, where USM is located, where Smith Drug Store NAACP-meeting site was located, and where Vernon Dahmer was assassinated. Firm via overwhelming in-transcript context.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.79",
+      "whisper": "Mr. Berger",
+      "original_candidate": "(N.R. Burger) — likely Pass 1 candidate / different from Hattiesburg N.R. Burger",
+      "resolution": "narrowed",
+      "new_candidate": "Mr. (N.R.) Burger — Rowan High School principal, Hattiesburg",
+      "evidence": "Same item as Pass 1 #100.42; same reasoning. N.R. Burger is the canonical Rowan High School (Hattiesburg's segregated Black high school) principal. Branch's account that he met with USM President McCain about a Black junior college in lieu of supporting Kennard's USM integration is consistent with documented Hattiesburg Black-educational-establishment positioning. Narrowed to N.R. Burger but retain conservative qualifier as initials are not in-transcript.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.81",
+      "whisper": "NAACP membership receipts in Bible",
+      "original_candidate": "NAACP membership receipts",
+      "resolution": "confirmed",
+      "new_candidate": "NAACP membership receipts hidden in Bibles (canonical Southern Black NAACP-concealment pattern)",
+      "evidence": "Branch's first-person account: 'they had stuck their receipts at cheap, the least expensive one used to be $15. Ten. Ten. Their receipts were stuck in the Bible.' Direct speaker testimony of a documented Southern Black community practice of hiding NAACP membership receipts in Bibles for security against white-supremacist reprisal. Per Pass 2 confidence 'correct'; no Whisper error to resolve. Confirmed as accurate speaker-originating account.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.84",
+      "whisper": "Marion / Marion Chinese extraction",
+      "original_candidate": "Marian (Chinese-American woman)",
+      "resolution": "narrowed",
+      "new_candidate": "Marion or Marian (surname unknown) — Jill Wakeman's San Francisco food-kitchen co-founder, of Chinese-American descent",
+      "evidence": "Transcript: 'She and a girl of Chinese extraction. Her name was Marion. Marion. Marion. Okay, remember? I spent so long.' Branch struggles to recall the exact name and offers 'Marion' three times. Speaker-originating; no canonical identification possible from in-transcript context alone. Conservative bias: confirm the surname-less first name 'Marion' (or 'Marian' — Branch's pronunciation does not disambiguate the spelling) and the Chinese-American descent, leave the rest open.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.85",
+      "whisper": "Aaron Henry",
+      "original_candidate": "Aaron E. Henry",
+      "resolution": "confirmed",
+      "new_candidate": "Aaron E. Henry (Mississippi NAACP president, MFDP co-chair)",
+      "evidence": "facts.json Aaron Henry entry lists 'Aaron E. Henry' as a canonical alias. Per Pass 2 notes, not directly referenced in this Branch/Smith transcript but contextually adjacent (Mississippi NAACP leadership context). Confidence 'correct' from Pass 2; no Whisper error to resolve. Confirmed canonical identification.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.99",
+      "whisper": "Smith-Juckstown",
+      "original_candidate": "Smith Drug Store",
+      "resolution": "confirmed",
+      "new_candidate": "Smith's Drug Store (Hattiesburg NAACP-meeting site, Mobile Street)",
+      "evidence": "Variant of Pass 1 #100.40; same canonical Hattiesburg NAACP-meeting site. The Whisper rendering 'Smith-Juckstown' is a garbling of 'Smith's Drug Store.' Co-interviewee Jeanette Smith's family-business name; in-transcript context locks identification.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P2.119",
+      "whisper": "the freedom writers",
+      "original_candidate": "the Freedom Riders",
+      "resolution": "confirmed",
+      "new_candidate": "Freedom Riders (CORE 1961 interstate-transportation desegregation campaign)",
+      "evidence": "Transcript: 'long before the students and the Freedom Riders came to town, a came to Mississippi in the south. We were fighting.' Branch is contrasting the canonical 1961 CORE Freedom Riders (and the 1964 Mississippi Summer Project students) with longstanding pre-1961 local Hattiesburg-area NAACP organizing. The Whisper homophone 'writers' for 'Riders' is a documented corpus-recurring failure. Identification firm via in-context naming and historical pattern.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P3.1",
+      "whisper": "\"Oil History\" → \"Oral History\" (catalog-A new)",
+      "original_candidate": "Oral History",
+      "resolution": "confirmed",
+      "new_candidate": "Oral History (USM Center for Oral History and Cultural Heritage opening narration)",
+      "evidence": "Transcript opening: 'University of Southern Mississippi Center for Oral History and Cultural Heritage' — the canonical USM Center name. The Whisper rendering 'Oil History' for 'Oral History' is a recurring corpus-distinctive interview-introduction-frame failure (parallel to 'Southern World History' for 'Southern Oral History'). Confirmed as catalog-A addition candidate.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P3.4",
+      "whisper": "\"Clyde Kennard\" 4-variant cluster (catalog-E reinforce)",
+      "original_candidate": "Clyde Kennard",
+      "resolution": "confirmed",
+      "new_candidate": "Clyde Kennard (catalog-E variant list extension: Kenart, Knauer, Canard, Clackenaw)",
+      "evidence": "Catalog-E reinforcement row; aggregates Pass 1 #100.35-36 and Pass 2 #100.P2.33 confirmations. All four Whisper variants identified to the canonical Clyde Kennard via consistent biographical match (chicken farm, mother's care, Forrest County Cooperative frame-up, Parchman sentence). Confirmed for catalog-E extension.",
+      "external_sources": []
+    },
+    {
+      "row_id": "100.P3.9",
+      "whisper": "\"the freedom writers\" → Freedom Riders (catalog-G new)",
+      "original_candidate": "Freedom Riders",
+      "resolution": "confirmed",
+      "new_candidate": "Freedom Riders (CORE 1961) — catalog-G new pattern addition",
+      "evidence": "Cross-references Pass 2 #100.P2.119. Worth catalog-G addition as the 'Freedom Writers' Whisper-homophone failure (likely confounded by the canonical 'Freedom Writers' 2007 film about Erin Gruwell's Long Beach high-school class) is a corpus-recurring pattern distinct from the 'Riders' rendering. Confirmed catalog-G new pattern.",
+      "external_sources": []
+    }
+  ]
+}
