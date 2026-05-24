@@ -72,7 +72,21 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 #### Phase 2 — Expand ground-truth corpus from Pass 7 proposals
 
-*(populated when Phase 2 completes)*
+**Status:** DONE 2026-05-24.
+
+**Deliverables:**
+- `Metadata Generation System/scripts/expand_facts_from_pass7.py` — reproducible Pass 7 corpus-expansion script. It consumes `transcripts/ground_truth_proposals_pass7.json`, normalizes proposal names, recovers shifted table rows where the candidate name landed in the role column, enriches subsection-style proposals from that entry's own `transcripts/pass7_stage/entry_NNN_*.md` file, filters parser-noise rows, avoids existing key/alias collisions, and can regenerate from a git baseline via `--base-ref`.
+- `Metadata Generation System/civil_rights_facts.json` — expanded from 140 to 378 valid entries. Net-new additions: 238. Candidate accounting: 242 normalized Pass 7 candidates, 238 additions, 31 parser-noise rows skipped, 4 proposals already covered by existing entries (`Fred Hampton`, `James Reeb`, `Lowndes County Freedom Organization`, `Samuel Younge Jr.`).
+
+**Verification:**
+- `python "Metadata Generation System\scripts\expand_facts_from_pass7.py" --base-ref HEAD` reports `Existing entries: 140`, `Additions: 238`, `Projected entries: 378`.
+- `python scripts\validate_facts.py` from `Metadata Generation System/` passes: `OK: civil_rights_facts.json has 378 valid entries (208 with aliases)`.
+- Alias hygiene spot-check found 0 date-only/proposal-prefix/unbalanced-parenthesis aliases.
+- Suspicious-key scan found 0 long prose/parser-field keys after the shifted-table recovery fix.
+
+**Anomalies:**
+- The Pass 7 aggregate advertised 251 unique names and a rough 140-to-390 expansion target. After filtering parser noise, merging duplicate name forms, and skipping already-existing facts, the reproducible corpus lands at 378 entries rather than exactly 390.
+- Some proposals only supplied a candidate name and source-entry reference; where the stage file did not expose Role/Why/Evidence bullets in a parseable proposal block, the script creates a generic but schema-valid grounding entry rather than inventing biographical facts.
 
 #### Phase 3 — Run pipeline + dual scoring + citation audit
 

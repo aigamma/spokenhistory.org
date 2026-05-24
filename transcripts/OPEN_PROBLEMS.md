@@ -1,8 +1,8 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
-**Last updated:** 2026-05-24 Session 7 Phase 1 (Problem 8 fully RESOLVED: Pass 7 Subject paragraph corrections applied to master MD, corrected transcript outputs regenerated, targeted ASR-bleed catches patched)
+**Last updated:** 2026-05-24 Session 7 Phase 2 (Problem 8 fully RESOLVED; Pass 7 ground-truth corpus proposals expanded and validated)
 **Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~12.2 MB post-Pass-7 apply-back)
-**Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (140 entries, 291 aliases — ~80+ Pass-4 candidates pending corpus commit)
+**Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (378 valid entries after Session 7 Phase 2 Pass 7 proposal expansion)
 **Hard deadline:** 2026-05-27 WWU team meeting (3 days from this writing)
 
 ## Current audit state
