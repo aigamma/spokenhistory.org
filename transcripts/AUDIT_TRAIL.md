@@ -34,6 +34,46 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+### Session 6 — 2026-05-24 evening → 2026-05-25 morning (overnight): Pass 7 Publication Readiness Review (PRR)
+
+**End-of-session summary:** *(populated when Pass 7 completes)*
+
+**Agents:** Claude Opus 4.7 (parent / orchestrator) + 127 serial Claude Sonnet 4.6 subagents (one per audit-able entry).
+
+**Wall-clock:** *(populated when Pass 7 completes)*
+
+**Scope:** Pass 7 PRR (closing pass before Codex handoff) across all 127 audit-able entries. Same skip-set as prior passes: {28, 31, 46, 64, 95}. Pass 7 design + scoring formula v2 documented in `transcripts/PASS7_DESIGN.md` (see commit landing the design).
+
+**Methodology:**
+- Serial subagent dispatch — strict one-transcript-per-agent cross-contamination firewall (per the standing goal directive).
+- Sonnet 4.6 subagents instead of Opus 4.7 for cost + wall-clock optimization on the well-scoped per-entry template task.
+- Parent prompt cache kept hot via continuous tool-calling within 5-min windows (per Eric's standing pacing constraint).
+- Per-entry deliverable: one staging file at `transcripts/pass7_stage/entry_NNN_subject_slug.md` covering: Subject paragraph audit (closes Problem 8), cross-pass coherence check, residual ground-truth proposals, Pass 7 v2 score, publication-readiness verdict.
+
+**Phase plan:**
+
+| Phase | Scope | Status |
+| --- | --- | --- |
+| Phase 1 | Setup: PASS7_DESIGN.md + Session 6 placeholder + pass7_stage/ scaffolding + initial commit/push | *(populated when Phase 1 completes)* |
+| Phase 2 | Serial Pass 7 batch 1 — entries #1–10 (skipping skip-set members) | *(populated when Phase 2 completes)* |
+| Phase 3 | Serial Pass 7 batch 2 — entries #11–20 | *(populated when Phase 3 completes)* |
+| Phase 4 | Serial Pass 7 batch 3 — entries #21–30 (skipping #28) | *(populated when Phase 4 completes)* |
+| Phase 5 | Serial Pass 7 batch 4 — entries #31–40 (skipping #31) | *(populated when Phase 5 completes)* |
+| Phase 6 | Serial Pass 7 batch 5 — entries #41–50 (skipping #46) | *(populated when Phase 6 completes)* |
+| Phase 7 | Serial Pass 7 batch 6 — entries #51–60 | *(populated when Phase 7 completes)* |
+| Phase 8 | Serial Pass 7 batch 7 — entries #61–70 (skipping #64) | *(populated when Phase 8 completes)* |
+| Phase 9 | Serial Pass 7 batch 8 — entries #71–80 | *(populated when Phase 9 completes)* |
+| Phase 10 | Serial Pass 7 batch 9 — entries #81–90 | *(populated when Phase 10 completes)* |
+| Phase 11 | Serial Pass 7 batch 10 — entries #91–100 (skipping #95) | *(populated when Phase 11 completes)* |
+| Phase 12 | Serial Pass 7 batch 11 — entries #101–110 | *(populated when Phase 12 completes)* |
+| Phase 13 | Serial Pass 7 batch 12 — entries #111–120 | *(populated when Phase 13 completes)* |
+| Phase 14 | Serial Pass 7 batch 13 — entries #121–132 | *(populated when Phase 14 completes)* |
+| Phase 15 | Aggregation: readiness_ledger_v2.json + subject_paragraph_corrections_pass7.json + ground_truth_proposals_pass7.json | *(populated when Phase 15 completes)* |
+| Phase 16 | merge_pass7.py + insert PRR blocks into master MD + update OPEN_PROBLEMS (close Problem 8) | *(populated when Phase 16 completes)* |
+| Phase 17 | CODEX_MASTER_PROMPT.md — comprehensive handoff doc for the next agent | *(populated when Phase 17 completes)* |
+
+---
+
 ### Session 5 — 2026-05-23 → 2026-05-24: Pass 6 low-confidence residual QA round (retrospective entry)
 
 **End-of-session summary:** Pass 6 is the informal name for a post-Layer-5 cleanup wave executed late 2026-05-23 (after the Layer 5 fidelity-deploy `2669753` and the Stage 3 Layer 5 deploy `389ae4f`). It runs four orthogonal tracks across the corpus: (1) per-entry publication-readiness scoring; (2) heuristic Whisper→canonical mutation sweep against the corrected/ output; (3) per-entry adversarial resolution of the highest-density `LAYER-5: D2-ambiguous` flag set; (4) per-entry slicing of an additional Layer 5 pending subset for a future resolution pass. Tracks 1–3 produced substantive output; Track 4 stopped at slicing (no resolution agent has yet been spawned). This Session entry is **authored retroactively** as part of the 2026-05-24 commit that brings the wave under version control — the original Pass 6 session did not author its own AUDIT_TRAIL entry, violating the per-phase atomicity discipline mandated in CLAUDE.md. Going forward, every milestone in this session and future sessions commits + pushes; uncommitted working-tree state is treated as a process failure, not as "in-flight."
