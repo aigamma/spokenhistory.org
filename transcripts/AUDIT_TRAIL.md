@@ -51,7 +51,24 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 #### Phase 1 — Apply Pass 7 Subject paragraph corrections
 
-*(populated when Phase 1 completes)*
+**Status:** DONE 2026-05-24.
+
+**Deliverables:**
+- `transcripts/apply_subject_corrections.py` — deterministic Pass 7 apply-back script. It reads `subject_paragraph_corrections_pass7.json`, pulls authoritative rewrites from `transcripts/pass7_stage/entry_NNN_*.md`, applies replacement-instruction PRR files, includes the three supplemental hard-stop entries missed by the aggregate JSON (#96 Connor, #108 Carter, #130 Saunders), removes one stale header metadata line (#71), and strips PRR edit-note artifacts from publication Subject paragraphs.
+- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` — Pass 7 Subject paragraph corrections applied. From committed HEAD baseline: 109 targets, 109 corrected paragraphs extracted, 108 Subject lines changed, 1 supplemental metadata line removed, 1 already current. Current idempotency check: 109 already current, 0 changes.
+- `transcripts/corrected/` — regenerated via `python scripts\apply_corrections.py` after the Subject apply-back (`Processed: 122 / 131 entries (skipped 9); Applied corrections: 6661; Pending-context rows: 2756; Skipped rows: 608`) and patched for the late Pass 7 ASR-bleed catches in John Carlos, Clarence B. Jones, and Norma Mtume.
+
+**Verification:**
+- `python transcripts\apply_subject_corrections.py --dry-run --base-ref HEAD` succeeds with 109 extracted paragraphs and 108 Subject-line changes from baseline.
+- `python transcripts\apply_subject_corrections.py --dry-run` is idempotent on current master (`Subject lines changed: 0`, `Already current: 109`).
+- Targeted hard-stop Subject checks pass 13/13: Greyhound/Trailways reversal (#9), Watts chronology (#47), Richardson March-on-Washington wording (#49), Greenberg tenure (#56), Jones/Dozier trio (#58), Perry Briggs spectator vs Fleming co-counsel (#87), Connor/Espy/Thompson (#96), Kennard chronology (#100), Blake cross-contamination (#102), Carter Linden NJ (#108), Parker/Sammy Davis direction (#125), Lucy Memphis settlement (#128), Saunders Highlander/Stokely/foot claims (#130).
+- Publication-facing Subject lines have 0 remaining hits for PRR/edit markers or the known ASR-bleed strings checked in this phase.
+- Corrected transcript `.txt`/`.srt`/`.vtt` surfaces have 0 hits for the targeted bad strings: `Paul Hoffman Robeson/Roberson`, `Earl, Adam Clayton Powell Sr, Andrew`, `Daniel H. Krenge`, `De Iongh't`, Ruby Sales `I was in dead`, and Norma Mtume `Pinto Union`. `Pinto Union` remains only in the legitimate Mateo Camarillo transcript and in provenance `manifest.json` original-whisper fields.
+
+**Anomalies:**
+- The Pass 7 aggregate JSON had null `corrected_subject_paragraph` payloads; the stage files were authoritative.
+- Some PRR rewrites carried bracketed `NOTE:` and `Cross-references corrections:` prose into extracted paragraphs. The apply script now strips those before publication.
+- `manifest.json` files preserve original Whisper strings in `whisper` fields by design; verification treated transcript text surfaces as the publication output and did not falsify provenance fields.
 
 #### Phase 2 — Expand ground-truth corpus from Pass 7 proposals
 
