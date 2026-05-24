@@ -153,7 +153,10 @@ def audit_citations(
                 }
             ],
             messages=[{"role": "user", "content": user_prompt}],
-            temperature=0.0,
+            # Claude Opus 4.7 rejects `temperature` (HTTP 400 "deprecated for
+            # this model"). Determinism comes from the strict JSON-shape
+            # contract in CITATION_CHECK_SYSTEM_PROMPT, not the temperature
+            # setting. See claude_scorer.py for the same rationale.
         )
     except Exception as e:
         return {"error": f"Claude API call failed: {str(e)}"}

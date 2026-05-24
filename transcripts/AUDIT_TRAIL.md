@@ -112,7 +112,24 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ##### Phase 3b — Single-transcript smoke test
 
-*(populated when Phase 3b completes)*
+**Status:** DONE 2026-05-24. Bug found + fixed + verified.
+
+**Bug surfaced:** First smoke-test run (`run_sample.py` on Maynard E. Moore, 152-line .srt) completed in 62.4s but inspection of `run_sample_output.json` showed `claude_scores: {"error": "..."}` and `citation_audit: {"error": "..."}`. The error message from both: `Error code: 400 — 'temperature' is deprecated for this model.` Claude Opus 4.7 rejects the `temperature` parameter that `claude_scorer.py:229` and `citation_check.py:156` were both passing. The Anthropic Python SDK's `MessageCreateParamsBase` still types `temperature` as a valid `float`, but the model-side endpoint for `claude-opus-4-7` enforces the deprecation. This was a pre-existing bug in `claude_scorer.py` (predates Phase 3a) that was masked by the Claude scorer always failing silently; Phase 3a's citation-audit wiring exposed it because the fail-closed gate now surfaces Claude errors into the publication decision rationale rather than dropping them.
+
+**Fix:** removed `temperature=0.0` from `processor/claude_scorer.py` and `processor/citation_check.py`, with inline comments documenting the Opus 4.7 rejection so a future model-swap can decide whether to restore it. Determinism on these gates is dominated by the strict JSON-shape contract in the system prompts, not by temperature pinning — the docs explicitly note "even with temperature of 0.0 the results will not be fully deterministic."
+
+**Verification:** Re-ran `run_sample.py` after the fix. Wall-clock jumped 62.4s → 89.5s — the extra ~27s is the two Opus 4.7 calls (scorer + auditor) actually executing instead of 400-erroring. Inspection of `run_sample_output.json` confirms:
+- `tuning_results.main_summary.claude_scores`: accuracy 92, quality 86, 1 unsupported_claims flagged. No error key.
+- `tuning_results.main_summary.citation_audit`: 12 claims extracted, 10 supported / 2 partial / 0 unsupported. No error key. First three claims (Petersburg upbringing, Civil War history, commercial / military hub) all status=supported with reasonable claim text — the auditor is genuinely reading the transcript.
+- `tuning_results.main_summary.publication_decision`: `publishable=False`, `human_review_required=True`, `decision_path=both_blocked_citation_blocked`, rationale concatenates OpenAI 85/80 + Claude 92/86 + 1 unsupported + 0 / 2 citation flags. Fail-closed gate firing as designed.
+- OpenAI cost via `cost_data.total_cost_usd`: $0.0348 (matches the 2026-05-22 PoC). Anthropic cost not yet tracked in `cost_data` — separate enhancement, not blocking.
+
+**Anomalies:**
+- `run_sample.py:179` checks `result['publication_decision']` at the top level, but the dual-scoring path nests it under `result['tuning_results']['main_summary']['publication_decision']`. The "Publication decision: ..." print line never fires. Cosmetic only — the JSON dump contains the full decision. A one-line patch could surface it; deferring to keep Phase 3b minimal.
+- `run_sample.py` reads from `transcripts/raw/`, NOT `transcripts/corrected/`. The smoke test exercised raw Maynard E. Moore text. For Phase 3c (full-corpus run) the pipeline's batch path must target the post-Phase-1 corrected text, otherwise the 109 Pass 7 Subject corrections + the ASR-bleed repairs to John Carlos / Clarence B. Jones / Norma Mtume are wasted on the pipeline.
+- The legacy `Error loading keyword collection: No module named 'firebase_config'` warning on startup is unrelated; the keyword-collection feature is optional Firestore-backed enrichment that the pipeline degrades around. Documented as a known-noisy warning in Phase 3c notes if it shows up there too.
+
+**Cost extrapolation for Phase 3c:** at $0.0348 OpenAI + ~comparable Anthropic for the dual-scorer + audit call (~$0.07 / transcript total), 131 transcripts come to ~$9–12 in API spend. Wall-clock at 89.5s / transcript serial = ~3.3 hours; could be parallelized with concurrency limits per CLAUDE.md's "no token throttling" pacing rule.
 
 ##### Phase 3c — Full-corpus pipeline run on 131 transcripts
 

@@ -226,7 +226,13 @@ def score_with_claude(
                 }
             ],
             messages=[{"role": "user", "content": user_prompt}],
-            temperature=0.0,  # Maximum determinism for scoring consistency.
+            # NOTE: `temperature` was previously pinned to 0.0 for scoring
+            # determinism, but Claude Opus 4.7 returns HTTP 400 "temperature
+            # is deprecated for this model" when the parameter is supplied.
+            # Determinism on this gate is dominated by the strict JSON-shape
+            # contract in CLAUDE_SCORER_SYSTEM_PROMPT, not by temperature
+            # pinning. If a future model swap reinstates temperature support,
+            # restore the explicit 0.0 here.
         )
     except Exception as e:
         return {"error": f"Claude API call failed: {str(e)}"}
