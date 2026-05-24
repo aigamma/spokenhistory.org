@@ -34,6 +34,47 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+### Session 7 — 2026-05-24: Codex publication-readiness apply + deployment
+
+**End-of-session summary:** *(populated at session close)*
+
+**Agents:** Codex GPT-5 (parent / implementation agent). No per-entry subagents spawned at session initialization.
+
+**Wall-clock:** in progress.
+
+**Scope:** Execute the six Codex handoff priorities: apply Pass 7 Subject paragraph corrections; expand the ground-truth corpus; run the corrected-transcript pipeline with dual scoring and citation audit; push pipeline outputs to Firestore; deploy Cloud Functions + MCP server + Pinecone/Voyage RAG ingest; open upstream PR to `jsovelove/civil-rights-history-project`.
+
+**Methodology:**
+- Preserve the cross-contamination firewall: per-entry source-of-truth reads come from `transcripts/pass7_stage/` and `transcripts/per_entry_slices/`, not ad hoc master-MD browsing.
+- Keep phase commits atomic: each phase's code/data changes land with this Session 7 sub-section update.
+- Verify each priority before moving to the next, per the Codex handoff gate.
+
+#### Phase 1 — Apply Pass 7 Subject paragraph corrections
+
+*(populated when Phase 1 completes)*
+
+#### Phase 2 — Expand ground-truth corpus from Pass 7 proposals
+
+*(populated when Phase 2 completes)*
+
+#### Phase 3 — Run pipeline + dual scoring + citation audit
+
+*(populated when Phase 3 completes)*
+
+#### Phase 4 — Push pipeline outputs to Firestore
+
+*(populated when Phase 4 completes)*
+
+#### Phase 5 — Deploy Cloud Functions + MCP server + RAG ingest
+
+*(populated when Phase 5 completes)*
+
+#### Phase 6 — Open upstream PR
+
+*(populated when Phase 6 completes)*
+
+---
+
 ### Session 6 — 2026-05-24 evening → 2026-05-25 morning (overnight): Pass 7 Publication Readiness Review (PRR)
 
 **End-of-session summary:** Pass 7 PRR complete on all 127 audit-able entries. 7 parallel batches (12 + 14 + 16 + 16 + 15 + 16 + 15 + 22 entries × 1 retry = 126 first-attempt + 1 serial-warm-up = 127 total subagent invocations) using Sonnet 4.6 for speed/cost optimization. Methodology shift documented mid-session: switched from strict-serial dispatch (entry 1 took 13 min single agent) to parallel batches of 12-22 entries each (preserving cross-contamination firewall but cutting wall-clock from a projected 27 hours to ~2 hours of agent work + ~1 hour merge/aggregation/docs/Codex-prompt). Five-section PRR per entry: Subject paragraph audit, cross-pass coherence check, residual ground-truth proposals, v2 readiness score, publication-readiness verdict. Substantive findings: 330 Subject paragraph claims requiring fix across 106 entries (closes OPEN_PROBLEMS Problem 8 in principle — apply-back work via JSON now available to Codex); 292 corpus proposals across 88 entries with 251 unique names (top recurring: Joseph L. Rauh Jr. 3×, Hollis Watkins, Bill Hansen, Sam Bowers, others); 30+ high-damage facts caught across the corpus (Greyhound/Trailways reversal entry 9, Paul Hoffman/Robeson ASR-merge entry 62, Pinto Union cross-contamination entry 93, Hank Thomas/Sammy Davis cross-contamination entry 102, Briggs co-counsel claim entry 87, Memphis strike date entry 128, etc.). One entry NOT-READY (entry 109 McClary — full re-transcription required, formula_inapplicable). 126 entries conditionally ready. Score distribution v2: mean 97.5, median 100.0, range 74.1-100 (clamped), all 127 scored above 60 (vs v1's 38% below 40). **Next priorities for the Codex handoff:** apply the 330 Subject paragraph corrections, expand civil_rights_facts.json from 140 to ~390 entries using the proposals JSON, run the Kiro/Kimi/Codex/Gemini ensemble against the residual 912 D2-ambiguous flags + 130 D1 canonical phantoms + 179 D3 catalog contradictions, schedule entry 109 re-transcription with Dustin. **Manual-intervention blockers held by Eric:** all deployment steps from CLAUDE.md Current Sprint Status section (Firebase SA JSON, Cloud Functions Blaze billing, MCP Fly.io, pipeline run on 131 transcripts, Firestore push, upstream PR, RAG Pinecone+Voyage provisioning).
