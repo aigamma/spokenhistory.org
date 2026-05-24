@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-23",
+  "generated": "2026-05-24",
   "script_version": "1.1",
   "raw_dir": "Candie Carawan and Guy Hughes Carawan_interview_20250704_180614",
   "entry_number": 11,
@@ -68,7 +68,7 @@
     {
       "row_id": "11.7",
       "whisper": "stepped in / stepped in the round / September Guy / Septimide",
-      "correction": "Septima (Clark)",
+      "correction": "Septima Clark",
       "confidence": "high",
       "occurrences": 15,
       "file_paths": [
@@ -80,9 +80,9 @@
     {
       "row_id": "11.8",
       "whisper": "Zopian / Zilphia",
-      "correction": "Zilphia",
+      "correction": "Zilphia Horton",
       "confidence": "high",
-      "occurrences": 3,
+      "occurrences": 6,
       "file_paths": [
         ".srt",
         ".txt",
@@ -92,7 +92,7 @@
     {
       "row_id": "11.11",
       "whisper": "Pist / Pisk",
-      "correction": "Fisk",
+      "correction": "Fisk University",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -544,9 +544,9 @@
     {
       "row_id": "11.29",
       "whisper": "Mary Jane Piguet / Mrs. Piguet",
-      "candidate_correction": "Mary Jane Pigee",
+      "candidate_correction": "Mary Jane Pigee (likely; Vera Mae Pigee's daughter) — but speaker pronunciation in original audio should be verified before publishing",
       "confidence": "medium",
-      "notes": "Real Clarksdale civil rights family (Vera Mae Pigee was the Clarksdale NAACP youth advisor; daughter Mary Jane sang opera) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Real Clarksdale civil rights family (Vera Mae Pigee was the Clarksdale NAACP youth advisor; daughter Mary Jane sang opera) // [PASS-6: narrowed"
     },
     {
       "row_id": "11.32",
@@ -588,14 +588,14 @@
       "whisper": "Joan Bond / Joan Boyd",
       "candidate_correction": "Joan Boyd",
       "confidence": "speaker-originating",
-      "notes": "Same as #11.38 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Same as #11.38 // [PASS-6: narrowed"
     },
     {
       "row_id": "11.P2.9",
       "whisper": "Mary Jane Piguet",
-      "candidate_correction": "Mary Jane Piguet",
+      "candidate_correction": "Mary Jane Pigee (canonical spelling) — speaker may pronounce as 'Piguet",
       "confidence": "speaker-originating",
-      "notes": "Clarksdale MS opera singer Guy did joint concert with // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Clarksdale MS opera singer Guy did joint concert with // [PASS-6: narrowed"
     },
     {
       "row_id": "11.P2.16",
