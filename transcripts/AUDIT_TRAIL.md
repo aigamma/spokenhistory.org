@@ -38,7 +38,7 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 **End-of-session summary:** *(populated at session close)*
 
-**Agents:** Codex GPT-5 (parent / implementation agent). No per-entry subagents spawned at session initialization.
+**Agents:** Codex GPT-5 (parent / implementation agent for Phases 1–2 and Phase 3a authorship) hit its usage limit during Phase 3 and froze with the citation-audit wiring uncommitted on disk. **Claude Opus 4.7** picked up the session 2026-05-24 afternoon, verified Codex's repo state, committed the deferred Phase 3a wiring, and continues from Phase 3b forward. No per-entry subagents spawned at session initialization.
 
 **Wall-clock:** in progress.
 
@@ -90,7 +90,33 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 #### Phase 3 — Run pipeline + dual scoring + citation audit
 
-*(populated when Phase 3 completes)*
+##### Phase 3a — Wire citation_check into dual-scoring path
+
+**Status:** DONE 2026-05-24 (Claude Opus 4.7 picked up Codex's deferred wiring after Codex hit usage limit).
+
+**Deliverables:**
+- `Metadata Generation System/processor/claude_scorer.py` — `tune_with_dual_scoring()` now runs `citation_check.audit_citations()` as Step 4 after the dual-scoring publication decision. Result is threaded into `publication_decision` with two new counters (`citation_unsupported_count`, `citation_partially_supported_count`) and a fail-closed gate: any `error` returned by the audit, or any non-zero `unsupported` / `partially_supported` count, forces `publishable=False`, `human_review_required=True`, and tags the `decision_path` (`*_citation_error` or `*_citation_blocked`). The full citation audit dict is returned in the result for the review-queue payload.
+- `Metadata Generation System/processor/dual_scoring_helper.py` — passes the new `citation_audit` dict from the tuning result into `enqueue_for_review`.
+- `Metadata Generation System/processor/review_queue.py` — accepts an optional `citation_audit` parameter and stores it on the Firestore review-queue document so the React `ReviewQueue.jsx` consumer can render claim-by-claim evidence next to the holistic scores.
+- Two intentional prompt-file deletions (`transcripts/CODEX_MASTER_PROMPT.md`, `transcripts/CODEX_PROMPT.md`) folded into this commit so the working tree settles clean. Eric removed them deliberately after the Codex handoff was consumed; their content lives in this AUDIT_TRAIL Session 7 entry and in `transcripts/session_prompts/archive/`.
+
+**Verification:**
+- `"C:\Program Files\Python311\python.exe" -m compileall -q "Metadata Generation System/processor/"` is clean.
+- `_coerce_int` helper exists at `claude_scorer.py:311`, so the new counter coercion has no NameError risk.
+- `citation_check.audit_citations()` returns `{"error": ...}` **only on actual failure** (anthropic API exception, empty content blocks, JSON parse failure); the success path returns `{"claims": [...], "summary_stats": {...}}` without an `error` key. The gate `if citation_error:` is therefore correctly fail-closed only on real failures, not on every successful audit.
+- `python -c "import openai; print(openai.__version__)"` reports `2.38.0`; `anthropic` SDK importable. Codex's prior "missing openai package" diagnosis was incorrect — the project Python at `C:\Program Files\Python311\python.exe` has both SDKs.
+
+**Anomalies:**
+- Codex's session-end report claimed the integration test failed because `openai` wasn't installed. The package IS installed; Codex either invoked Python from a sandbox shim that didn't see site-packages or hit a relative-import error and misdiagnosed it. Phase 3b (smoke test) will exercise the wiring end-to-end against the real APIs to confirm.
+- Mid-session agent handoff (Codex GPT-5 → Claude Opus 4.7) — per `CLAUDE.md` "Cross-session coordination" convention, the original session entry is preserved and the continuation agent is named in the Agents line above. Phase 3a forward is Claude Opus 4.7's authorship.
+
+##### Phase 3b — Single-transcript smoke test
+
+*(populated when Phase 3b completes)*
+
+##### Phase 3c — Full-corpus pipeline run on 131 transcripts
+
+*(populated when Phase 3c completes)*
 
 #### Phase 4 — Push pipeline outputs to Firestore
 

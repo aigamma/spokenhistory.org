@@ -140,6 +140,7 @@ def run_tuning_loop_or_dual(
                     transcript_excerpt=transcript,
                     openai_scores=result.get("openai_scores", {}) or {},
                     claude_scores=result.get("claude_scores", {}) or {},
+                    citation_audit=result.get("citation_audit", {}) or {},
                     publication_decision=pub,
                     chapter_number=chapter_number,
                     pipeline_run_id=pipeline_run_id,

@@ -463,10 +463,73 @@ def tune_with_dual_scoring(
         quality_threshold=smithsonian_quality_threshold,
     )
 
+    # Step 4: per-claim citation audit. The holistic Claude scorer reports
+    # unsupported claims, but the citation auditor gives reviewers a claim-by-
+    # claim evidence map. Smithsonian-grade publication fails closed if any
+    # claim is unsupported or only partially supported, or if the audit itself
+    # cannot run.
+    summary_text = ""
+    if isinstance(final_summary, dict):
+        summary_text = str(
+            final_summary.get("summary")
+            or final_summary.get("text")
+            or final_summary.get("main_summary")
+            or ""
+        )
+    else:
+        summary_text = str(final_summary or "")
+
+    citation_audit: Dict[str, Any]
+    if summary_text.strip():
+        from .citation_check import audit_citations
+
+        citation_audit = audit_citations(
+            summary_text=summary_text,
+            transcript=transcript,
+            api_key=claude_api_key,
+        )
+    else:
+        citation_audit = {"error": "No summary text available for citation audit"}
+
+    citation_stats = citation_audit.get("summary_stats") if isinstance(citation_audit, dict) else {}
+    if not isinstance(citation_stats, dict):
+        citation_stats = {}
+    citation_unsupported = _coerce_int(citation_stats.get("unsupported"))
+    citation_partial = _coerce_int(citation_stats.get("partially_supported"))
+    citation_error = citation_audit.get("error") if isinstance(citation_audit, dict) else "invalid citation audit"
+    publication_decision = dict(publication_decision)
+    publication_decision["citation_unsupported_count"] = citation_unsupported
+    publication_decision["citation_partially_supported_count"] = citation_partial
+    if citation_error:
+        publication_decision.update(
+            {
+                "publishable": False,
+                "human_review_required": True,
+                "decision_path": f"{publication_decision.get('decision_path', 'unknown')}_citation_error",
+                "rationale": (
+                    f"{publication_decision.get('rationale', '')} "
+                    f"Citation audit failed closed: {citation_error}"
+                ).strip(),
+            }
+        )
+    elif citation_unsupported or citation_partial:
+        publication_decision.update(
+            {
+                "publishable": False,
+                "human_review_required": True,
+                "decision_path": f"{publication_decision.get('decision_path', 'unknown')}_citation_blocked",
+                "rationale": (
+                    f"{publication_decision.get('rationale', '')} Citation audit blocked publication: "
+                    f"{citation_unsupported} unsupported and {citation_partial} partially supported claims."
+                ),
+            }
+        )
+
     return {
         **tuning_result,
         "openai_scores": openai_scores,
         "claude_scores": claude_scores,
+        "citation_audit": citation_audit,
         "publication_decision": publication_decision,
         "publishable": publication_decision["publishable"],
     }

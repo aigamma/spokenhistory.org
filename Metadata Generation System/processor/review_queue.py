@@ -125,6 +125,7 @@ def enqueue_for_review(
     publication_decision: Dict[str, Any],
     chapter_number: Optional[int] = None,
     pipeline_run_id: Optional[str] = None,
+    citation_audit: Optional[Dict[str, Any]] = None,
 ) -> Optional[str]:
     """Add a not-yet-publishable summary to the review queue.
 
@@ -179,6 +180,7 @@ def enqueue_for_review(
         "transcript_excerpt": transcript_excerpt[:6000],
         "openai_scores": openai_scores,
         "claude_scores": claude_scores,
+        "citation_audit": citation_audit,
         "publication_decision": publication_decision,
         "pipeline_run_id": pipeline_run_id,
         "status": STATUS_PENDING,
