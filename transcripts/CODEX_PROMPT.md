@@ -1,3 +1,7 @@
+/goal Ship the Civil Rights History Project to publication-ready state before the 2026-05-27 WWU deadline. Specifically: (1) Apply all 330 Subject paragraph corrections from transcripts/subject_paragraph_corrections_pass7.json to master MD and propagate to transcripts/corrected/ output. (2) Expand Metadata Generation System/civil_rights_facts.json from 140 to ~390 entries using transcripts/ground_truth_proposals_pass7.json. (3) Run the Metadata Generation System pipeline + dual scoring + citation audit on all 131 audit-able transcripts. (4) Push pipeline outputs to Firestore via scripts/pipeline-to-firestore.mjs. (5) Deploy Cloud Functions (firebase deploy --only functions) + MCP server (fly deploy in mcp-server/) + RAG ingest (rag/ingest.mjs against provisioned Pinecone + Voyage). (6) Open upstream PR to jsovelove/civil-rights-history-project. Document continuously in transcripts/AUDIT_TRAIL.md as Session 7 with per-phase atomic commits (every phase commit must include the corresponding AUDIT_TRAIL update). Commit and push at every moderate milestone — uncommitted working tree is a process failure. Verify completion per the verification checklist below before claiming the goal met.
+
+---
+
 # CODEX — Master prompt
 
 **Created:** 2026-05-24 end-of-day, by Claude Opus 4.7
