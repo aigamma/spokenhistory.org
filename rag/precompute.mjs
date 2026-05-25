@@ -137,10 +137,14 @@ async function pineconeListAllIds(namespace = '') {
 
 async function pineconeFetchById(ids, namespace = '') {
   if (ids.length === 0) return {};
-  // /vectors/fetch takes up to 1000 ids per call.
+  // Pinecone's /vectors/fetch is a GET with `ids` as repeated query
+  // parameters. Our IDs are ~200 chars (the deterministic
+  // chunk_type::entry-N::source-safe::idx::hash format), so 100 IDs
+  // per call exceeds typical HTTP URL length limits (~8KB) and returns
+  // 414 from the Pinecone proxy. 10 per call keeps URLs under ~2.5KB.
   const out = {};
-  for (let i = 0; i < ids.length; i += 100) {
-    const batch = ids.slice(i, i + 100);
+  for (let i = 0; i < ids.length; i += 10) {
+    const batch = ids.slice(i, i + 10);
     const params = new URLSearchParams({ namespace });
     for (const id of batch) params.append('ids', id);
     const res = await fetch(`${PINECONE_HOST}/vectors/fetch?${params}`, {
@@ -155,6 +159,26 @@ async function pineconeFetchById(ids, namespace = '') {
     Object.assign(out, data?.vectors || {});
   }
   return out;
+}
+
+// Bounded-concurrency mapper. Spawns up to `concurrency` workers that
+// pull items off the input array sequentially. Used to fan out
+// Pinecone /query calls during precomputeRelated without hitting
+// the Builder-tier QPS ceiling. Concurrency=20 stays well under
+// Pinecone's published ~100 QPS limit.
+async function pMap(items, fn, concurrency = 20) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  const worker = async () => {
+    while (true) {
+      const idx = cursor++;
+      if (idx >= items.length) return;
+      results[idx] = await fn(items[idx], idx);
+    }
+  };
+  const workerCount = Math.min(concurrency, items.length);
+  await Promise.all(Array.from({ length: workerCount }, worker));
+  return results;
 }
 
 // Issue an id-based query against Pinecone. Returns the topK matches
@@ -246,14 +270,24 @@ async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespac
       per_chunk: {},
       related_entry_summary: {}, // entry_number -> { entry_subject, count, top_score }
     };
-    for (const chunkId of rec.ids) {
-      const matches = await pineconeQueryById(chunkId, {
-        topK: relatedTopK,
-        filter: { entry_number: { $ne: n } },
-        namespace,
-      });
-      // Parse chunk_index from the chunkId (5th segment).
-      const chunkIdx = Number(chunkId.split('::')[3]);
+    // Fan out per-chunk queries with bounded concurrency. Single-
+    // threaded would take ~chunks_per_entry × 0.5s per entry; with
+    // concurrency=20 each entry's queries complete in roughly
+    // ceil(chunks/20) × 0.5s.
+    const perChunkResults = await pMap(
+      rec.ids,
+      async (chunkId) => {
+        const matches = await pineconeQueryById(chunkId, {
+          topK: relatedTopK,
+          filter: { entry_number: { $ne: n } },
+          namespace,
+        });
+        const chunkIdx = Number(chunkId.split('::')[3]);
+        return { chunkIdx, matches };
+      },
+      20,
+    );
+    for (const { chunkIdx, matches } of perChunkResults) {
       const top5 = matches.slice(0, 5).map((m) => {
         const meta = m.metadata || {};
         return {
@@ -271,7 +305,6 @@ async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespac
         };
       });
       out.per_chunk[String(chunkIdx)] = top5;
-      // Aggregate
       for (const m of matches) {
         const en = m.metadata?.entry_number;
         if (en == null || en === n) continue;
