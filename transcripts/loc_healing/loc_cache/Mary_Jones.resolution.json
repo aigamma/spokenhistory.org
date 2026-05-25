@@ -1,0 +1,20 @@
+{
+  "subject": "Mary Jones",
+  "subject_safe": "Mary_Jones",
+  "status": "xml_fetch_failed",
+  "candidates": [
+    {
+      "score": 1.0,
+      "id": "http://www.loc.gov/item/2015669169/",
+      "title": "Mary Jones oral history interview conducted by Will Griffin in Albany, Georgia, 2013 March 09",
+      "contributor": [
+        "jones, mary a.",
+        "civil rights history project (u.s.)",
+        "griffin, willie james"
+      ],
+      "url": "https://www.loc.gov/item/2015669169/"
+    }
+  ],
+  "xml_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0070_Jones_transcript/afc2010039_crhp0070_Jones_transcript.xml",
+  "error": "GET https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0070_Jones_transcript/afc2010039_crhp0070_Jones_transcript.xml failed after 3 retries: IncompleteRead(31692 bytes read, 18300 more expected)"
+}

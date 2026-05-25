@@ -972,17 +972,53 @@ def get_audit_canon_set(entry_number: int) -> set[str]:
     return (_AUDIT_CANON_BY_ENTRY or {}).get(entry_number, set())
 
 
+def _name_tokens(name: str) -> list[str]:
+    """Lowercased significant tokens from a name, stripping quoted nicknames,
+    middle initials, periods, and parentheticals. So 'Calvin "Cal" Luper' and
+    'Calvin Luper' both yield ['calvin', 'luper']; 'Charles F. McDew' yields
+    ['charles', 'mcdew']."""
+    # Drop quoted nicknames "..." and parentheticals (...)
+    n = re.sub(r'"[^"]*"', " ", name)
+    n = re.sub(r"\([^)]*\)", " ", n)
+    # Strip middle initials (single letter + optional period)
+    tokens = re.findall(r"[A-Za-z][A-Za-z\-']+", n.lower())
+    return tokens
+
+
 def guess_entry_number(subject: str) -> int:
-    """Look up entry number from CLEANED_TRANSCRIPTS_REVIEW.md headings."""
+    """Look up entry number from CLEANED_TRANSCRIPTS_REVIEW.md headings.
+
+    Match strategy:
+      1. Exact match on heading text.
+      2. Substring containment either direction.
+      3. Token-set equality on first+last name tokens (handles quoted nicknames
+         and middle initials).
+    """
     _build_master_md_indices()
     if not _ENTRY_NUMBER_CACHE:
         return 0
     # Try exact match first
     if subject in _ENTRY_NUMBER_CACHE:
         return _ENTRY_NUMBER_CACHE[subject]
-    # Try fuzzy
+    subject_toks = _name_tokens(subject)
+    if not subject_toks:
+        return 0
+    # Try fuzzy substring
     for name, num in _ENTRY_NUMBER_CACHE.items():
         if subject.lower() in name.lower() or name.lower() in subject.lower():
+            return num
+    # Try first-and-last token match (Calvin Luper vs Calvin "Cal" Luper)
+    subject_first_last = (subject_toks[0], subject_toks[-1])
+    for name, num in _ENTRY_NUMBER_CACHE.items():
+        name_toks = _name_tokens(name)
+        if not name_toks:
+            continue
+        if (name_toks[0], name_toks[-1]) == subject_first_last:
+            return num
+    # Last-name-only match as a final fallback (for entries like joint interviews)
+    for name, num in _ENTRY_NUMBER_CACHE.items():
+        name_toks = _name_tokens(name)
+        if subject_toks[-1] in name_toks:
             return num
     return 0
 
