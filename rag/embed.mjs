@@ -18,7 +18,12 @@ import {
   voyageHeaders,
 } from './shared.mjs';
 
-const DEFAULT_BATCH = 32;
+// Voyage embedding API supports up to 128 inputs per call. The earlier
+// default of 32 was conservative; bumped to 128 for ingest throughput
+// (4× fewer round-trips). A typical civil-rights chunk is ~500 tokens,
+// so a batch of 128 stays well under Voyage's 120K-token-per-request
+// ceiling.
+const DEFAULT_BATCH = 128;
 const MAX_RETRIES = 4;
 const INITIAL_BACKOFF_MS = 500;
 

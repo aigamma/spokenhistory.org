@@ -44,7 +44,11 @@ import {
 import { chunkSource } from './chunker.mjs';
 import { embedTexts } from './embed.mjs';
 
-const UPSERT_BATCH = 32;
+// Matched to the embed-batch ceiling (Voyage caps at 128 inputs per
+// call). Pinecone serverless accepts up to 1000 vectors per upsert,
+// so this isn't a Pinecone limit — it's keeping the round-trip pair
+// (embed + upsert) at the same size so neither side dominates.
+const UPSERT_BATCH = 128;
 
 // ---------------------------------------------------------------------------
 // Idempotency: deterministic IDs + content hashing
