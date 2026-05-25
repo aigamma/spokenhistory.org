@@ -2,7 +2,9 @@
 
 **Location of batch:** `C:\TRANSCRIPTS\` (root of C: drive, all-caps directory name)
 **File count:** 104 `.txt` files
-**Source:** Almost certainly LoC's published transcript text (downloaded plain-text edition or text-extracted from PDFs and cleaned). Format: editor-cleaned prose with ALL-CAPS / initials speaker labels, em-dashes, curly quotes. NOT Whisper output.
+**Source:** Whisper AI transcription from YouTube uploads of the interviews — same source family as our existing 131 raw/ Whisper transcripts, just a separate ASR pass. The clean appearance (initials speaker labels like `DC:`/`AD:`, em-dashes, curly quotes) likely comes from a different Whisper variant or post-processor (Whisper large-v3 + WhisperX speaker-diarization is a plausible toolchain) rather than from human editing of the transcript text.
+
+**IMPORTANT CORRECTION:** I initially mis-read these as LoC's editor-cleaned reference text based on the LoC-catalog-style filenames + the editorial-feeling formatting. Eric clarified they are Whisper-from-YouTube output. The implications for how to use them shift accordingly — see "Differential diagnostics" below.
 
 ## Structural classification
 
@@ -37,55 +39,69 @@ These interviewees ARE in the master MD as entry headings but were never fully a
 
 ### Category C — Matches existing healed entries (95)
 
-These interviewees are already in `corrected/` with the Pass 1-8 audit overlay applied. The batch text is LoC's clean-edited reference text for the SAME interview, in a form we don't currently have:
+These interviewees are already in `corrected/` with the Pass 1-8 audit overlay applied. The batch text is a SEPARATE Whisper-from-YouTube pass on the same interview — a second ASR output, not an authoritative reference.
 
-- We have Whisper-derived `corrected/<entry>/*.srt|txt|vtt` (with audit corrections applied)
-- We've pulled LoC's XML (or pypdf-extracted PDF text) into `transcripts/loc_healing/loc_cache/`
-- The batch text is a THIRD form: clean plain-text LoC transcript
+**Three forms of the same interview now exist for each Category C entry:**
 
-**Comparison to existing references:**
+- Our `raw/<entry>/*.srt|txt|vtt` — first Whisper pass (the original ingest the project started with)
+- Our `corrected/<entry>/*.srt|txt|vtt` — first Whisper pass with Pass 1-8 audit corrections applied
+- The batch text — second Whisper pass (probably different model variant / post-processor)
 
-- Our Whisper raw + audit corrections: differs substantively (different transcription source)
-- Our pypdf-extracted LoC PDF text: differs in encoding (smart-quote artifacts in pypdf output, em-dashes preserved as `—` in batch). The batch is CLEANER.
-- Our LoC XML extract: closer match but still some divergence in wording (the batch may be a different LoC edition or a re-edited form)
+Compared to the existing references:
+- **Vs. our raw/:** different Whisper interpretation of the same audio. Wording diverges in many places; the batch sometimes has more readable prose because of better speaker diarization, but it's still ASR output with its own hallucination risk.
+- **Vs. LoC's authoritative transcript:** the batch is NOT authoritative. It's another ASR pass. LoC's published transcript (XML or PDF) remains the canonical source for healing.
 
-**Possible uses:**
+### Differential diagnostics — the actual valuable use
 
-1. **Re-heal Pass 8 against the batch text** instead of our pypdf-extracted PDF text — the batch is cleaner, so the divergence detection would produce fewer encoding-artifact false-positives and possibly catch more real ASR errors.
-2. **Cross-validation source** — for each existing entry, compare three forms (audited corrected/, LoC XML, batch text) to surface high-confidence canonical text.
-3. **Replace `loc_cache/<subject>.pdf.txt` with `loc_cache/<subject>.batch.txt`** for the entries where the batch text is materially cleaner than what pypdf gave us.
+The batch's main value is as a **second-opinion ASR pass** for surfacing Whisper uncertainty. Where our raw/ Whisper and the batch's Whisper *agree* on a word, that word is likely reliable. Where they *disagree*, the disagreement is itself a high-signal flag:
 
-### Sanity check: file is LoC's edition vs student's own transcription
+- "Both Whisper passes produced the same hallucination" is rare (independent models making the same mistake)
+- "The two Whispers produced different renderings of the same audio" usually means at least one is wrong, and an LoC cross-check resolves it definitively
 
-Sample wording comparison for Aaron Dixon:
+**Practical workflow this enables:**
 
-| Source | Opening question (Pass-1-corrected raw → cue 4 area) |
+1. For each Category C entry, align our raw/ Whisper against the batch's Whisper at the word level (same difflib alignment used in Pass 8).
+2. Flag the divergences as "ASR-uncertain candidates."
+3. For each ASR-uncertain candidate, check against LoC's authoritative text (already cached in `transcripts/loc_healing/loc_cache/`).
+4. Where LoC has a third-different rendering: high-confidence ASR error in both Whispers; promote LoC's reading.
+5. Where LoC matches one of the two Whisper renderings: high-confidence that the matching Whisper is correct; the other was a hallucination.
+6. Where LoC has no transcript for that passage (e.g., a section the editor cut): leave both Whisper readings as candidates for SME review.
+
+This is a more sensitive ASR-error detector than what Pass 8 alone can do, because Pass 8 only catches errors where LoC's text materially diverges from our raw — and Pass 8 misses errors where our raw and LoC happen to share a hallucination class. Two-Whisper-vs-LoC catches an additional layer.
+
+### Sample wording comparison (Aaron Dixon)
+
+| Source | Opening question area |
 |---|---|
 | Our Whisper SRT (raw) | "where and how they may have been put together" |
 | Our LoC XML extract | "where and how they may have been put together" |
 | Batch text | "where, and how they may have influenced you as you grew up" |
 
-The batch differs from BOTH our raw and our XML extract on the same passage. This suggests the batch is either (a) a different LoC edition published after we pulled the XML, OR (b) a re-edited form (possibly by the student). Eric should confirm the source with Dustin to determine whether the batch is canonical-LoC or canonical-student.
+Three different renderings of the same audio passage. The first two agree (our raw + LoC XML). The batch's wording is distinct — likely a Whisper variant that hallucinated differently. **None of the three is necessarily right without listening to the audio.** This is exactly the kind of case where the differential-diagnostics workflow would surface an SME-review flag.
 
 ## Recommended next steps
 
 ### Quick wins (one short session each)
 
-1. **Ingest the 6 Category-A genuinely-new interviews** — these directly extend the corpus.
-   - If audio is available: re-run Whisper to get the SRT, then `transcripts/ingestion/ingest_new_transcript.py`.
-   - If not: write the text-only adapter described in `transcripts/ingestion/README.md` and ingest via that path.
-
-2. **Ingest the 3 Category-B SKIPPED/DEFERRED entries** — these have audit overlay records but no raw/. The batch text gives us their transcript content; we can add them to corrected/ with synthesized timestamps and a `loc_healing` section.
+1. **Ingest the 6 Category-A genuinely-new interviews + 3 Category-B SKIPPED/DEFERRED entries (9 total).** These extend the corpus to interviews we have NO existing data for.
+   - The batch's Whisper output gives us the text content but no SRT/VTT timestamps (the .txt file is plain prose).
+   - For full integration with the playlist generator, audio is needed to re-run Whisper with timestamps. Eric should ask Dustin if audio files are available for these 9.
+   - If audio isn't available, ingest via the text-only adapter (synthesized cue-level timestamps; coarser playlist precision but still useful for search/retrieval).
 
 ### Medium-term (one focused session)
 
-3. **Decide on batch-as-canonical-LoC for Category C** — compare a sample of 10 entries' batch text against LoC XML to confirm whether the batch is a cleaner edition we should adopt. If yes, re-heal Pass 8 against the batch text for those 95 entries; the heal counts should change slightly (fewer encoding-artifact false-positives in the SME-review bucket).
-
-4. **Sanity-check the source with Dustin** — confirm where the student got the .txt files. If they're LoC published text, treat them as canonical. If they're the student's own re-transcription, treat them as a fourth reference layer alongside our raw / XML / PDF references.
+2. **Differential-diagnostics pass against the 95 Category-C entries.** For each:
+   - Align our raw/ Whisper against the batch's Whisper at the word level.
+   - Surface every disagreement as an "ASR-uncertain candidate."
+   - For each candidate, look up the cached LoC XML/PDF reference and adjudicate (LoC wins; both Whispers wrong is high-confidence ASR-bleed; one Whisper matches LoC means the other is wrong).
+   - Use the verdicts to enrich the Pass 8 SME-review bucket — promote high-confidence corrections that Pass 8 alone missed.
+   - This is bounded model work: probably ~50-200 ASR-uncertain candidates per entry × 95 entries = ~5000-20000 differential candidates to classify. Linear-LoC-API doesn't apply here because we don't hit LoC again (we already cached its text); we just compare locally.
 
 ### Long-term (separate work stream)
 
-5. **For Categories A and B**, consider asking Dustin if audio files are available so we can re-run Whisper and integrate them into the full Pass 8 LoC-healing path rather than relying on synthesized timestamps.
+3. **For Categories A and B**, if audio files are available, prefer re-running Whisper with our existing pipeline (Whisper-large-v3 + WhisperX speaker-diarization + standard SRT/VTT output) to integrate them fully into the corpus rather than relying on the student's prose-only transcripts. The streamlined ingestion pipeline (`transcripts/ingestion/ingest_new_transcript.py`) handles them end-to-end once raw/ files exist in the expected format.
+
+4. **Evaluate whether the student's Whisper-pass is materially better than our raw/.** If WhisperX with speaker diarization caught speaker turns we missed, the student's pass could become a reference for re-doing our raw/ ingest with the better toolchain. This is an architectural question (do we want a corpus-wide re-Whisper?) — not urgent.
 
 ## Files
 
@@ -99,7 +115,8 @@ The encoding marker `utf_8` appears at the top of each file. Speaker labels are 
 
 ## Open questions for Eric to ask Dustin
 
-1. Where did the student source these `.txt` files? (LoC website / LoC PDFs / their own transcription / a combination)
-2. Are audio files available for the Category A and B interviews?
-3. Is the student planning to send more interviews beyond these 104?
-4. Should Pass 8 be re-run against the batch text for Category C entries?
+1. ~~Where did the student source these `.txt` files?~~ — **Answered: Whisper AI transcription from YouTube uploads, mostly or entirely.** Same source family as our raw/ Whisper output; the student's pass uses a different model variant or post-processor (Whisper large-v3 + WhisperX speaker-diarization is the likely toolchain, based on the `DC:`/`AD:` initials-style speaker labels in the .txt files).
+2. **Which Whisper toolchain did the student use?** Confirming this lets us decide whether the student's pass is a better-quality baseline than ours (e.g., if they used Whisper large-v3 while ours used a smaller model). Specifically: model name (whisper-1 / large-v2 / large-v3 / WhisperX), whether VAD was on, whether speaker diarization was applied.
+3. **Are audio files (or YouTube URLs) available for the Category A and B 9-entry batch?** If yes, we re-Whisper with our toolchain to integrate them fully into corrected/. If no, the text-only ingestion path applies (synthesized timestamps).
+4. **Is the student planning to send more interviews beyond these 104?**
+5. **Did the student do any post-processing beyond Whisper?** (e.g., manual speaker labeling, manual typo fixes, manual em-dash insertion). If yes, the text is partially human-curated and may be more reliable than pure-ASR output in places.
