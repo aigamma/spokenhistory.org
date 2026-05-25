@@ -1,0 +1,1006 @@
+{
+  "interview_name": "Reverend Harry Blake",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Reverend Harry Blake_interview_20250705_005244\\Reverend Harry Blake_interview_transcript_20250705_005244.srt",
+  "processed_at": "2026-05-25T02:19:03Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Reverend Dr. Harry Blake",
+    "interviewee_title": "Baptist Minister and Civil Rights Activist; Pastor of Mount Canaan Baptist Church; former SCLC staff member",
+    "interview_date": "2013-10-03",
+    "interview_location": "Mount Canaan Baptist Church, Shreveport, Louisiana",
+    "interviewer_name": "David Cline",
+    "interviewer_affiliation": "Virginia Tech History Department; Southern Oral History Program at UNC Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:08:02"
+  },
+  "main_summary": {
+    "summary": "Reverend Dr. Harry Blake recounts his life from a sharecropping childhood on Louisiana plantations through decades of civil rights organizing and pastoral ministry in Shreveport. Born in 1934 in Arkansas to a Mississippi-born father who could not read or write and an Arkansas-born mother with a third-grade education, Blake was raised on the Ashley plantation in Madison Parish near Tallulah, Louisiana, before his family relocated in 1951 to the Wood Spur plantation north of Shreveport. He attended a one-room church school for first through seventh grades taught by a single college sophomore, learned to read and write only as he approached his teens, and worked his way through Bishop College in Marshall, Texas, where Martin Luther King Jr. delivered his commencement address. After serving as a summer cashier and high-school worker at H.L. Whitlow's store in Dixie, Louisiana, Blake describes being shaped by his father's lessons in dignified resistance and by Whitlow's practice of paying him fairly.\n\nBlake's civil rights work began when Dr. C.O. Simkins of Shreveport, a member of King's board of directors, arranged for King to interview him; he joined the SCLC staff on March 1, 1960 and was arrested that same day on a 'careless and reckless driving' charge while sitting in a parked car. He recounts an October 12, 1960 assassination attempt in which a bullet was fired into his car on a two-lane highway, shattering his radio and putting four holes through the coat he was wearing. Blake later describes a 1963 arrest with SCLC Executive Director Dr. Wyatt Tee Walker, when both men were held thirty-six hours on a charge of 'mental observation' after refusing a police order to re-enter a church during a Ku Klux Klan protest. He frames his recruitment to King's circle in part through his reading of King's book Stride Toward Freedom and through his awareness of Rev. T.J. Jemison's earlier successful Baton Rouge bus boycott, which Blake says preceded and informed the Montgomery model.\n\nThe interview's central event is the September 22, 1963 march Blake organized in response to the 16th Street Baptist Church bombing in Birmingham, in which four girls were killed. After Shreveport's Commissioner of Public Safety George D'Artois revoked the march permit at the last minute and threatened mass arrests, Blake directed marchers into Little Union Baptist Church instead. Following the service, Blake was attacked in the church vestibule by the commissioner and other officers, dragged outside, beaten with nightsticks, and left appearing lifeless on the sidewalk; his family transported him to Dallas for medical care, where Bishop College's president sheltered him during recovery. Student protests at Booker T. Washington High School followed, met with tear gas and additional violence. Forty years later the city of Shreveport issued a public proclamation of apology for the beating.\n\nCalled to Mount Canaan Baptist Church in 1966, Blake then describes pivoting his civil rights commitments into community-development work in the Allendale neighborhood: a 120-unit low-income housing complex, a daycare center, and a senior-citizens high-rise tower, all built on eight acres of city land sold to the church for $35,000. He critiques the form of school integration that emerged after the movement as having closed Black schools and dispersed Black students to white schools rather than equalizing funding for existing Black schools. At seventy-nine, Blake is focused on educational ministry for young Black boys, running a summer boys' academy and a small church-based homeschool for five boys taught by a recently retired public-school teacher who is a member of his congregation.",
+    "key_themes": [
+      "Sharecropping and the plantation economy",
+      "Father's example of dignified resistance",
+      "Voter suppression and literacy tests in Louisiana",
+      "SCLC organizing and Martin Luther King Jr.",
+      "Police violence and intimidation in Shreveport",
+      "Black church as base for movement and community development",
+      "Critique of integration outcomes and educational equity"
+    ],
+    "historical_significance": "This interview documents the Shreveport, Louisiana civil rights movement from the standpoint of one of its principal SCLC organizers, including a firsthand account of the September 22, 1963 beating at Little Union Baptist Church during a memorial response to the 16th Street Baptist Church bombing. Blake's narrative also preserves a participant memory of T.J. Jemison's 1953 Baton Rouge bus boycott as a precursor to Montgomery and offers institutional history of Mount Canaan Baptist Church's community-development arc in the Allendale neighborhood. The Civil Rights Commission characterized Shreveport as the most difficult city in the South, and Blake's testimony substantiates that assessment with specific accounts of intimidation, assassination attempts, and the political power of Commissioner George D'Artois.",
+    "quality_metrics": {
+      "accuracy_score": 88,
+      "quality_score": 90,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 27,
+      "accuracy_component_c": 26,
+      "quality_component_a": 36,
+      "quality_component_b": 19,
+      "quality_component_c": 18,
+      "quality_component_d": 17,
+      "errors": [
+        "The summary attributes the line 'Civil Rights Commission said in their report that Shreveport was the most difficult city in the South' to documentary fact in the historical_significance paragraph, but the transcript only reports Blake's recollection of that characterization; the actual report is not cited and the summary should hedge attribution to Blake's testimony rather than asserting it as institutional finding.",
+        "The summary states that the four girls killed in the 16th Street Baptist Church bombing prompted the September 22, 1963 march; the transcript says 'the girls who were killed' without specifying the number — this is consistent with civil_rights_facts.json (four girls killed) but the count is inferred from outside the transcript, so should be marked partially supported."
+      ],
+      "improvements": [
+        "Hedge the Civil Rights Commission attribution as Blake's recollection rather than asserting it as established documentary finding.",
+        "Either remove the specific count of 'four girls' or attribute the count to the ground-truth corpus rather than implying it came from Blake's narrative.",
+        "Consider trimming the educational-ministry paragraph slightly to match Blake's lighter emphasis on the topic in the transcript's later minutes."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:38,000",
+      "title": "Introduction and Interview Setup",
+      "summary": "David Cline of the Virginia Tech History Department and the Southern Oral History Program at UNC Chapel Hill introduces the interview at the Mount Canaan Baptist Church in Shreveport, Louisiana on October 3, 2013. He identifies the project as the Civil Rights History Project of the National Museum of African American History and Culture and the Library of Congress, with John Bishop of Media Generation and UCLA behind the camera. Cline invites Blake to begin with his upbringing and family background as a way into the civil rights work he would later do.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "library of congress",
+        "smithsonian",
+        "mount canaan baptist church",
+        "shreveport",
+        "civil rights history project",
+        "david cline",
+        "john bishop"
+      ],
+      "related_events": [
+        "Civil Rights History Project",
+        "Library of Congress",
+        "National Museum of African American History and Culture",
+        "Mount Canaan Baptist Church",
+        "David Cline",
+        "Southern Oral History Program"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 98,
+        "quality_score": 95,
+        "accuracy_component_a": 40,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 29,
+        "quality_component_a": 38,
+        "quality_component_b": 19,
+        "quality_component_c": 19,
+        "quality_component_d": 19,
+        "errors": [],
+        "improvements": [
+          "Could briefly note Cline's framing question about tying upbringing to the movement work."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:01:38,000",
+      "end_time": "00:06:55,000",
+      "title": "Childhood on the Plantation and Early Education",
+      "summary": "Blake describes being born in Arkansas in 1934 to a Mississippi-born father who was a sharecropper unable to read or write and a mother who finished third grade. The family relocated to a Louisiana plantation when he was very young, and he lived on a plantation until age twenty-four, the year he finished college and was, in his own words, 'liberated from the plantation' by his wife. He attended a one-room public school housed in a church building for first through seventh grades, taught by a single college sophomore who covered every subject. Blake says he was almost a teenager before he learned to read and write and describes his life as one of continually trying to 'catch up.'\n\nBlake then tells a story about plowing mules in high school. Rather than learn the standard mule commands ('whoa, gee, haw'), he decided to teach the mules his own language, discovering that what mattered was the pull of the reins rather than the words spoken. He frames the anecdote as a teaching about leadership: his father taught him that a horse with enough salt in his diet will find water on his own, a lesson Blake later applied in pastoral ministry by 'salting the diet' of his congregation when he had a project they did not initially see eye to eye on. He also cites Jim Jones and David Koresh as cautionary examples that 'if you know how, you can get people to do anything you want,' which is why a clergy person must keep his motives right.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "arkansas",
+        "louisiana",
+        "sharecropper",
+        "one-room school",
+        "plantation",
+        "mules",
+        "salt the diet",
+        "jim jones",
+        "david koresh"
+      ],
+      "related_events": [
+        "Sharecropping system",
+        "Segregated rural schooling"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 93,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 19,
+        "errors": [],
+        "improvements": [
+          "Could clarify that Blake explicitly distinguishes the mule lesson (leverage matters more than words) from the salt-the-diet lesson (incentive design)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:06:55,000",
+      "end_time": "00:10:04,000",
+      "title": "Pastoral Beginnings and Move to Mount Canaan",
+      "summary": "Blake identifies the two plantations he lived on: the Ashley plantation in Madison Parish near Tallulah in northeast Louisiana, and the Wood Spur plantation north of Shreveport in northwest Louisiana, which the family moved to in 1951. After finishing college he moved into the Shreveport city limits and took his first pastorate in 1958 at a 'one-Sunday' rural church — a tradition in which rural churches met only one or two Sundays a month. He next describes being called to a 'first Sunday evening and third Sunday morning' church closer to Shreveport, and then to a 'second and fourth Sunday' church at Bethany, Louisiana on the Texas line. By 1966 or 1967 he was able to turn both rural churches full-time but instead left both and accepted the call to Mount Canaan Baptist Church in the densely populated Allendale slum area of Shreveport, where the dilapidated original building later collapsed and was replaced by the present sanctuary. At the time of the interview he had been pastor there for forty-seven years.",
+      "main_topic_category": "Religion & Faith",
+      "keywords": [
+        "ashley plantation",
+        "madison parish",
+        "tallulah",
+        "wood spur plantation",
+        "shreveport",
+        "bethany",
+        "allendale",
+        "mount canaan baptist church",
+        "1966"
+      ],
+      "related_events": [
+        "Mount Canaan Baptist Church",
+        "Allendale neighborhood",
+        "Rural Black Baptist churches",
+        "Madison Parish, Louisiana"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 92,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "The transcript is slightly ambiguous between 1966 and 1967 for the full-time pivot; the summary preserves that ambiguity."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:10:04,000",
+      "end_time": "00:17:31,000",
+      "title": "Race Relations and the Economics of Sharecropping",
+      "summary": "Asked about race relations on the plantation, Blake offers what he calls a perhaps unfamiliar view: within 'a confined narrow sense' whites and Blacks 'had great relationships,' so long as the Black person was understood to be 'his Negro' — handed down to, not equal with, the white owner. He recalls that during World War II strong workers were kept off the draft because the farmers sat on the draft board, and that a white owner would tell his Black workers, 'If you stay out of the cemetery, I'll keep you out of jail,' meaning that Black-on-Black violence would be protected so long as it did not spill into the white area.\n\nBlake then explains the mechanics of sharecropping in detail: the owner provided a hut, food, work clothing and farming implements through a commissary, charged everything against the worker's account, and at year's end almost always told the tenant 'we broke even.' His father, Blake says, was unusual in always clearing a profit of $200 to $500 a year. The family's move from northeast to northwest Louisiana came when the plantation manager followed his employer to a new plantation and was permitted to bring as many of the workers as he could; the new owner paid the old owner, leaving the workers indebted. Blake closes the section by drawing an analogy to modern America's use of credit cards to keep people in perpetual debt.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "sharecropping",
+        "plantation",
+        "commissary",
+        "world war ii",
+        "draft board",
+        "race relations",
+        "shreveport",
+        "credit"
+      ],
+      "related_events": [
+        "Sharecropping system",
+        "World War II draft deferments",
+        "Plantation economy in Louisiana"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 92,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note Blake's care that this account is HIS observation and may not be universally agreed on."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:17:31,000",
+      "end_time": "00:19:41,000",
+      "title": "Voter Registration and the Louisiana Literacy Test",
+      "summary": "Blake recounts how he became a registered voter at age twenty-one despite living on a plantation where no Black person was registered. He gave the address of a city-dwelling friend and studied for the parish's voter-registration test. The test required, first, a registered voter to vouch for the applicant's identity (a nearly insurmountable barrier when virtually no Black voters were registered to vouch); second, a driver's license or social security card; third, interpretation of the U.S. Constitution to the registrar's satisfaction (a Harvard Law graduate, Blake jokes, could not satisfy them); and fourth, computation of the applicant's exact age in years, months, and days. He notes that Louisiana used these requirements while Texas used a poll tax. Teaching this voter-education test was later part of his SCLC responsibilities.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "voter registration",
+        "literacy test",
+        "louisiana",
+        "constitution interpretation",
+        "poll tax",
+        "sclc",
+        "voter education"
+      ],
+      "related_events": [
+        "Louisiana voter registration tests",
+        "SCLC voter education",
+        "Disenfranchisement of Black voters in the South"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 92,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note Blake's specific phrasing 'years, months, and days' rather than simply 'exact age.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:19:41,000",
+      "end_time": "00:30:14,000",
+      "title": "Father's Example and the H.L. Whitlow Store",
+      "summary": "Blake credits two influences with shaping him: his father and the white store owner H.L. Whitlow. His father, though unable to read or write, 'knew how to work the system,' calling white men 'Captain' and 'Boss' while preserving his own manhood. Blake gives an example of his father teaching by demonstration: complimenting the boss's new car by saying, 'You know you are a big dog,' so that the boss was pleased to be called a dog if it was done the right way.\n\nIn the summer of 1951 or 1952 Blake walked into the H.L. Whitlow store in the small town of Dixie asking for a summer job. Whitlow said he was fully staffed — two college students (one white from Louisiana Tech, one Black from Grambling, employed in the store and as a maid respectively) and his own brother-in-law — but Whitlow's wife liked Blake and prevailed on her husband to try him. Whitlow promised, 'if you don't ask me what I'm going to pay you, I'll pay you whatever you're worth.' At the end of the first week Whitlow offered $15 — the same Blake had been making on the plantation for one fewer day and shorter hours — and Blake refused, asking for $25; Whitlow flung the additional ten dollars at him.\n\nWhen Whitlow took ill at summer's end, Blake was promoted to part-time work driving Whitlow's car before and after school for $25 a week, then $40 the following summer, and $300 a month by the time he finished high school — sums no Black citizen in the rural area was making. Whitlow, called a 'nigga lover' by his white peers, was, Blake says, a deeply Christian man who could afford to risk that reputation because 'in America money talks.' Blake closes the section with the 'deaf and dumb' anecdote: a senior white farmer, the local postmaster, asked Blake from the store stoop whether the post office was open by addressing him as 'boy.' Blake refused to answer because the man was not his employer; the farmer concluded the 'nigga' was deaf and dumb, and Whitlow let the misconception stand.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "father",
+        "h.l. whitlow",
+        "dixie louisiana",
+        "summer job",
+        "louisiana tech",
+        "grambling",
+        "wages",
+        "deaf and dumb",
+        "self-worth"
+      ],
+      "related_events": [
+        "Equal-pay employment in 1950s Louisiana",
+        "Black labor under segregation",
+        "Dixie, Louisiana"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 91,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 19,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could note Blake's emphasis that Whitlow 'practiced equal employment opportunity in the 1950s.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:30:14,000",
+      "end_time": "00:36:36,000",
+      "title": "Joining SCLC and Working with Dr. King",
+      "summary": "Blake describes his entry into civil rights work as growing out of watching events in Montgomery, Alabama and being aware that around 1953 — he gives the date as roughly 1953 — Reverend T.J. Jemison had already led a successful bus boycott in Baton Rouge, which Blake says Dr. Martin Luther King Jr. visited as a model for Montgomery. He read King's book Stride Toward Freedom and, at his commencement from Bishop College in Marshall, Texas, heard King as the commencement speaker. The local Shreveport civil-rights leader Dr. C.O. Simkins — whom Blake calls 'the father of the civil rights movement' in Shreveport and a member of King's board of directors — recommended Blake to King, who interviewed him in Atlanta in February 1960 and hired him to the SCLC staff.\n\nBlake began work in Shreveport on March 1, 1960 and was arrested the same day. He had driven a church member downtown to a medical-arts building and was waiting in his parked car when a motorcycle officer asked, 'Boy, you know what a jail house is?', summoned other officers, and had him fingerprinted. The chief of police told Blake he had 'a bright future in Shreveport' and warned him not to 'ruin' it 'fooling with the damn communist Martin Luther King Jr.'; when Blake said he would go straight back to work upon release, he was charged with 'careless and reckless' driving despite no officer having seen him drive. Blake says he was arrested too many times to count thereafter — he was one of four children and the only one in his family ever to go to jail.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "sclc",
+        "martin luther king jr",
+        "stride toward freedom",
+        "t.j. jemison",
+        "baton rouge bus boycott",
+        "bishop college",
+        "c.o. simkins",
+        "first arrest",
+        "march 1 1960"
+      ],
+      "related_events": [
+        "Southern Christian Leadership Conference",
+        "Baton Rouge Bus Boycott",
+        "Montgomery Bus Boycott",
+        "Stride Toward Freedom",
+        "Bishop College",
+        "C.O. Simkins"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 91,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [
+          "Blake gives the Baton Rouge boycott as '1950, 4-5-5' which is ambiguous; the historically established date is 1953, which the summary uses. This is a minor inference but properly hedged."
+        ],
+        "improvements": [
+          "Could quote the chief's 'damn communist' line directly to preserve emphasis."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:36:36,000",
+      "end_time": "00:40:09,000",
+      "title": "Arrest with Wyatt Tee Walker and the Assassination Attempt",
+      "summary": "Blake recounts a memorable arrest from the last time Dr. King was in Shreveport, when SCLC executive director Dr. Wyatt Tee Walker preached a service in his place. The Ku Klux Klan marched in front of the church to protest, and the local NAACP youth group counter-protested. When Walker and Blake stepped outside to see what was happening, the chief of police ordered them back into the church. Walker — Blake observes, not being 'southern born, southern raised' as Blake was — replied that 'America is free' and stood his ground; Blake stayed with him and the two were arrested and held in jail roughly thirty-six hours on a charge of 'mental observation.' Many years later, when Walker introduced Blake at his Harlem church, he joked that Blake 'has not been cleared yet' of the charge. Blake reads the bizarre charge as a tool of intimidation and a fishing expedition to dig up or fabricate something to use against them, including the recurring smear that he, King, and Simkins were taking orders from Moscow because 'as Negroes, you were too dumb to think.'\n\nBlake then describes the October 12, 1960 assassination attempt: returning from his rural church on a two-lane highway, he heard what he thought was a rock thrown from a car overtaking him, but a bullet had struck his vehicle, shattering his radio and putting four holes through the coat he was wearing. He pursued the car to record its license plate and reported it to the sheriff; the sheriff later told him the car's owner claimed he was 'bowling' at the time. No further action was taken — Blake's summation: 'That's how justice worked.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "wyatt tee walker",
+        "ku klux klan",
+        "mental observation arrest",
+        "shreveport",
+        "october 12 1960",
+        "assassination attempt",
+        "naacp youth",
+        "harlem"
+      ],
+      "related_events": [
+        "Wyatt Tee Walker",
+        "Ku Klux Klan",
+        "NAACP",
+        "SCLC",
+        "C.O. Simkins"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 92,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note explicitly that Blake distinguishes himself ('I would have gone back into the church') from Walker's resistance to underscore the Shreveport plantation-conditioning argument."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:40:09,000",
+      "end_time": "00:42:35,000",
+      "title": "Family Support and the Cost to His Father",
+      "summary": "Blake recounts how he went to his parents before accepting King's job offer to warn them that the work might result in his death or injury — and in theirs, because of their relationship to him — and to apologize for putting them in that position. His father replied, 'I'd be disappointed if you did anything different.' Blake's younger siblings later told him about the humiliations his father endured — being called 'stupid ass nigga' by police trying to provoke him — none of which his father ever shared with him. Blake recalls helping his father pass the voter test as a celebration, but his lasting regret is that he never taught his father to write his name, something he could have done. He describes his father as a man of 'amoral self courage.'",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "father",
+        "family support",
+        "police harassment",
+        "voter test",
+        "regret",
+        "courage"
+      ],
+      "related_events": [
+        "Family activism and personal sacrifice",
+        "Police harassment"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 90,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Blake's transcript phrase is 'amoral self courage' which appears to be a transcription artifact for 'a moral self-courage'; the summary preserves Blake's literal phrase."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:42:35,000",
+      "end_time": "00:48:23,000",
+      "title": "The September 22, 1963 Little Union Beating",
+      "summary": "After the girls were killed in the 16th Street Baptist Church bombing in Birmingham, President Kennedy declared the following Sunday a day of mourning, and civil-rights leaders called for memorial services in their communities for September 22, 1963. Blake went to the Shreveport commissioner of public safety to apply for a permit for a march from Booker T. Washington High School to the nearest church, Little Union Baptist Church. The commissioner sat on the request until Saturday at noon, when he denied the permit and warned Blake that 'anybody in Shreveport that participates in the march, I will arrest every person.'\n\nBlake decided not to expose 'innocent people' to arrest and job loss. He and his colleagues directed marchers to skip the planned march and go directly into the church. The commissioner had mobilized police on horseback with bayonets and garbage trucks to haul off arrestees; thousands of Black residents came out of their houses, not to march but to watch. After the service, an attorney named Dr. Tony Stone told the commissioner the congregation needed to leave; the commissioner said they could come out 'two by two,' as the White Citizens Council and Ku Klux Klan continued their counter-protest outside. Blake stepped into the church vestibule to see what was happening and was met by the commissioner and two other policemen, who began beating him in the vestibule, dragged him outside, and let other officers join in with nightsticks. They left him on the lawn, apparently lifeless. The date was September 22, 1963. Blake's wife and family, fearful of his being treated by Shreveport's white doctors, drove him to Dallas for medical care. Students at Booker T. Washington High School responded with their own protest movement that week, which police met with tear gas and bombs; officers entered the school, manhandled the principal, and arrested a white teacher. Blake describes the resulting week as the largest protest movement Shreveport had experienced; two weeks before the interview, the city had celebrated the fiftieth anniversary of the September 22, 1963 Little Union beating.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "16th street baptist church bombing",
+        "september 22 1963",
+        "little union baptist church",
+        "booker t. washington high school",
+        "george d'artois",
+        "police beating",
+        "ku klux klan",
+        "white citizens council",
+        "dallas"
+      ],
+      "related_events": [
+        "16th Street Baptist Church bombing",
+        "George W. D'Artois",
+        "Little Union Baptist Church beating",
+        "Booker T. Washington High School protests",
+        "Ku Klux Klan",
+        "White Citizens Council"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 92,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [
+          "The phrase 'White Citizens Council' is paraphrased from Blake's 'white citizen group, Kluclaz Klan' which is somewhat garbled in the transcript; this is a reasonable canonical reading but should be noted as inferred."
+        ],
+        "improvements": [
+          "Could quote Blake's exact 'I deem it necessary to repeat' clause to preserve the moral framing of his later conversations with the commissioner and mayor."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:48:23,000",
+      "end_time": "00:55:15,000",
+      "title": "Community Development at Mount Canaan and Critique of Integration",
+      "summary": "Blake describes his recovery in Dallas at faculty housing provided by the president of Bishop College, who had since relocated the school from Marshall to Dallas. Returning to Shreveport, he addressed the violence by working it through the institutions: forty years after the beating the city issued a public proclamation of apology, which he displays on his wall.\n\nCalled to Mount Canaan Baptist Church in 1966, Blake went to the same commissioner who had ordered him beaten and warned him that he would repeat anything from his past 'should I deem it necessary,' but asked for the commissioner's support for community-development work in the Allendale neighborhood; the commissioner pledged respect for Blake's methods. Blake then asked the mayor for the same support; the mayor, who had been a politician unable to back the movement publicly though he 'knew the movement was right,' asked what he could do. Blake described the conditions of Allendale — outdoor 'previous' (privy) toilets, no decent housing — and asked the city to convey eight acres designated for an undeveloped park to the church for housing. The city sold the property to Mount Canaan Baptist Church for $35,000 with use restricted to housing, recreation, education, or religious purposes. The church built a 120-unit low-income housing complex and a daycare center forty years before the interview, followed roughly thirty years before the interview by a senior-citizens high-rise tower a couple blocks away.\n\nBlake then turns to a critique of how integration unfolded. The movement, he says, targeted what was 'immoral': paying bus fare and being forced to stand at the back, being made to go around to a window for a hamburger, being barred from a 'white only' restroom or water fountain. But the system, he argues, was 'smart' and gave a kind of integration the movement had not asked for — busing Black students out of their neighborhoods and closing Black schools — when what they had wanted was equal funding and equally capable teachers for the existing Black schools. He notes that he was a cashier at the Whitlow store in the 1950s a full ten to fifteen years before Shreveport got its first Black cashier in the city.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "mount canaan baptist church",
+        "allendale",
+        "community development",
+        "120-unit housing",
+        "daycare center",
+        "senior citizens tower",
+        "integration critique",
+        "bishop college dallas",
+        "shreveport apology"
+      ],
+      "related_events": [
+        "Mount Canaan Baptist Church",
+        "Allendale neighborhood development",
+        "George W. D'Artois",
+        "School integration",
+        "Black low-income housing initiatives"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 91,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note Blake's hedge that 'I may be the only person in America who sees it this way' when delivering the integration critique."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "00:55:15,000",
+      "end_time": "01:08:02,000",
+      "title": "The Black Church as Power Base and Today's Educational Ministry",
+      "summary": "Blake locates Black power 'in the black church,' where 'every Sunday morning you get a captive audience' that lets a pastor shape what he wants to see in his community — another instance of 'salt the diet.' He observes that during the height of the movement many Black churches in Shreveport had voted not to allow Dr. King to preach for fear their churches would be bombed or burned; he notes that this church was vacant in 1961 and members voted against calling him precisely because his civil-rights association would put the building at risk. Only after the movement had moved into a different phase did Mount Canaan call him.\n\nAsked what he is focused on now (he will be eighty the following year), Blake says his current passion is educational ministry for young Black boys. He cites statistics that the system projects future prison capacity from fourth-grade Black boys' performance, and that Black males in America are 'in trouble.' Three summers earlier he launched a summer boys' academy that has enrolled up to fifty boys; he describes one boy who moved from a second-grade to a sixth-grade reading level. After hearing that a twelve-year-old church member named Walter could not read past fourth-grade material, Blake proposed a church-run homeschool. A woman in the congregation who had taught in another parish's public school system for 33 to 35 years volunteered to retire and run the school; five boys currently attend, eight to three, every day. Blake closes the interview by saying that Mount Canaan, 'right in the center of the hood,' has given him 'full range to bring about change,' which is 'the best thing' that ever happened to him. Cline closes with thanks and the standard Library of Congress and Smithsonian National Museum of African American History and Culture sign-off.",
+      "main_topic_category": "Religion & Faith",
+      "keywords": [
+        "black church",
+        "movement leadership",
+        "educational ministry",
+        "summer boys academy",
+        "homeschool",
+        "allendale",
+        "reading level",
+        "walter",
+        "mount canaan"
+      ],
+      "related_events": [
+        "Mount Canaan Baptist Church",
+        "Allendale neighborhood",
+        "Black church and civil rights movement",
+        "Educational disparities"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 91,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note Blake's joke 'homeschooling in your house, not mine' from a congregant during the planning."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Reverend Dr. Harry Blake",
+      "interviewee_title": "Baptist Minister and Civil Rights Activist; Pastor of Mount Canaan Baptist Church",
+      "interview_date": "2013-10-03",
+      "interview_location": "Mount Canaan Baptist Church, Shreveport, Louisiana",
+      "interviewer_name": "David Cline",
+      "interviewer_affiliation": "Virginia Tech History Department; Southern Oral History Program at UNC Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:08:02",
+      "total_segments": 591,
+      "word_count": 9650,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 86,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 26,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "Opens chronologically with childhood: 'Oh, my parents, my daddy was born in Mississippi. My mother was born in Arkansas. And I was born in Arkansas...' (Segment 23-24, 00:01:38)",
+            "Builds to climactic Little Union beating narrative: 'I went out of the vestibule to see what was going on the services over now. And I met the commissioner and two other policemen in the vestibule.' (Segment 338-339, 00:46:34)",
+            "Resolves with current educational ministry: 'My focus now is all over America... it is incumbent upon me to have a ministry in my church to develop strong, moral black men.' (Segment 512-521, 01:00:40-01:03:22)"
+          ],
+          "justification": "Blake organizes his life narrative as a clean chronological arc from plantation childhood through SCLC organizing to present-day educational ministry, returning repeatedly to the unifying motif of 'salt the diet' as a leadership philosophy. Cline's facilitation keeps the chronology tight while letting Blake's set-piece anecdotes (mules, the deaf-and-dumb story, the September 22 beating) function as discrete narrative units."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "They thought I was dead or appeared to be lifeless and they left me late and on the lawn on the sidewalk. That was September 22nd, 1963.",
+            "segment": 343,
+            "timestamp": "00:47:01,880"
+          },
+          "specificity_count": {
+            "full_names": 12,
+            "specific_dates": 6,
+            "specific_places": 14
+          },
+          "evidence": [
+            "Specific dates: 'March 1st, 1960' (Segment 217, 00:32:11); 'October 12th. There was an assassination attempt on my life' (Segment 255, 00:33:00); 'September 22nd, 1963' (Segment 345, 00:47:11)",
+            "Specific places: Ashley plantation, Madison Parish, Tallulah; Wood Spur plantation; Bethany, Louisiana; Allendale; Booker T. Washington High School; Little Union Baptist Church; Mount Canaan Baptist Church (Segments 81-94, 304, 00:07:05-00:09:33)",
+            "Reconstructed dialogue: 'You stupid ass nigga, and what have you. And my daddy never responded.' (Segment 282-283, 00:41:17)"
+          ],
+          "justification": "Blake's storytelling is dense with named persons, specific dates, specific street-level locations and reconstructed dialogue, with multiple set-piece anecdotes told in sensory detail. The visual specificity of the Little Union beating — vestibule, lawn, nightsticks, four holes in his coat from the earlier assassination attempt — is exceptional for a recollection fifty years later."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "The one thing that haunts me that I never did, it pains me so that I struggle to restrain my tears. I never taught my daddy to write his name, and I could have done that.",
+            "segment": 291,
+            "timestamp": "00:42:07,000"
+          },
+          "emotional_range": [
+            "Grief",
+            "Pride",
+            "Humor",
+            "Regret",
+            "Determination",
+            "Affection (for father and Whitlow)"
+          ],
+          "vulnerability_elements": [
+            "Restrained tears about his father",
+            "Apologizing to parents for putting them at risk",
+            "Admission that he would have re-entered the church (unlike Walker) — distinguishing himself from a more confrontational colleague",
+            "Acknowledgment of the personal cost his father bore in silence"
+          ],
+          "justification": "Blake mixes humor (mule anecdote, 'deaf and dumb nigga') with genuinely vulnerable moments, particularly the restrained tears about never teaching his father to write and his explicit admission of being plantation-conditioned to obey. He is more guarded around the physical experience of being beaten — describing it factually — but the underlying emotion is consistently present."
+        },
+        "overall_assessment": "Blake's narrative quality is strong on all three sub-dimensions. He follows a clear chronological arc with thematic through-lines (his father, Whitlow, salt-the-diet, the Black church as power base), peppered with vivid set-piece anecdotes told with named persons, dates and places. Emotional authenticity is high in the restrained-tears moment about his father; elsewhere the emotional register is more measured, reflecting a pastor's homiletic discipline."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "Hired to SCLC staff by Martin Luther King Jr. February 1960, started March 1, 1960 (Segment 215-217, 00:32:09)",
+            "Beating at Little Union Baptist Church, September 22, 1963 (Segment 338-345, 00:46:34-00:47:11)",
+            "October 12, 1960 assassination attempt — bullet through car (Segment 255-260, 00:33:00-00:38:17)",
+            "Arrest with Wyatt Tee Walker for 'mental observation,' held 36 hours (Segment 246-247, 00:35:44)"
+          ],
+          "key_figures": [
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "SCLC staff hire; commencement speaker at his Bishop College graduation",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Wyatt Tee Walker",
+              "relationship": "SCLC executive director; co-arrestee in 'mental observation' detention",
+              "contact_level": "close"
+            },
+            {
+              "name": "C.O. Simkins",
+              "relationship": "Shreveport SCLC board member who recommended him to King",
+              "contact_level": "close"
+            },
+            {
+              "name": "T.J. Jemison",
+              "relationship": "Baton Rouge bus boycott leader (precursor to Montgomery, per Blake)",
+              "contact_level": "distant"
+            },
+            {
+              "name": "George W. D'Artois",
+              "relationship": "Shreveport Commissioner of Public Safety who ordered him beaten",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Southern Christian Leadership Conference (SCLC)",
+              "role": "Staff member, voter-education organizer in Louisiana",
+              "years": "1960-?"
+            },
+            {
+              "organization": "Mount Canaan Baptist Church",
+              "role": "Pastor (47 years as of interview)",
+              "years": "1966-present"
+            }
+          ],
+          "unique_access": "Direct SCLC field-organizer perspective on the most difficult civil-rights theater in the South according to the Civil Rights Commission (per Blake's recollection), including direct relationships with King, Walker and Simkins.",
+          "justification": "Blake was an SCLC staff member with direct, hired access to Martin Luther King Jr., Wyatt Tee Walker and the local SCLC apparatus in Shreveport, and was himself the victim of the principal locally-documented act of state violence (the September 22, 1963 Little Union beating). His insider testimony on the Shreveport theater of the movement is unique."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Born 1934 in Arkansas; lived on plantation until 24; left plantation when he finished college (Segment 29-30, 00:02:17)",
+            "First arrest March 1, 1960 — same day he started with SCLC; held on 'careless and reckless driving' (Segment 217, 217-232, 00:32:11-00:34:08)",
+            "October 12, 1960 assassination attempt with date, weapon (bullet), evidence (four holes in coat, shattered radio) (Segment 255-258, 00:33:00-00:37:54)",
+            "September 22, 1963 beating; precise location (Little Union Baptist Church vestibule); precise actors (commissioner plus 'two other policemen') (Segment 338-345, 00:46:34-00:47:11)",
+            "Mount Canaan called him in 1966; 47 years as pastor by 2013 (Segment 92, 98, 00:09:05-00:10:01); 120-unit low-income housing built 40 years before interview; high-rise senior tower 30 years before (Segment 432-434, 00:54:30-00:54:42)"
+          ],
+          "date_specificity": "precise",
+          "name_count": {
+            "full_names": 12,
+            "first_only": 1,
+            "unnamed": 3
+          },
+          "verifiable_claims": [
+            "Hired to SCLC in February 1960; staff start March 1, 1960",
+            "Bishop College in Marshall, Texas; Martin Luther King Jr. as commencement speaker",
+            "16th Street Baptist Church bombing reaction march, September 22, 1963 in Shreveport",
+            "Mount Canaan Baptist Church pastorate beginning 1966",
+            "T.J. Jemison's Baton Rouge bus boycott as precursor to Montgomery"
+          ],
+          "justification": "Blake supplies precise dates for the major events of his civil-rights career and cross-verifiable facts about SCLC personnel, the 16th Street Baptist Church bombing memorial response, and the Mount Canaan housing-development arc. The only notable imprecisions are around exact years for incremental moves and the partly-garbled '1950, 4-5-5' date for Jemison's Baton Rouge boycott."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed firsthand reconstruction of the September 22, 1963 Little Union Baptist Church beating, including its planning, denial of permit, and police mobilization",
+            "Account of Mount Canaan Baptist Church's community-development arc as a continuation of movement work — housing, daycare, senior tower",
+            "Critique of integration outcomes from a movement insider — that integration as implemented was not what activists asked for",
+            "Documentation of the 'mental observation' detention as a recurring intimidation tactic against SCLC organizers"
+          ],
+          "understudied_aspects": [
+            "Shreveport's role as a particularly difficult civil-rights theater",
+            "Black Baptist church politics around hosting King during the movement",
+            "Long-term community-development work as a continuation of civil-rights organizing",
+            "Rural/plantation Louisiana voter-registration practice"
+          ],
+          "narrative_complications": "Blake complicates the 'integration as victory' narrative, arguing that what activists actually demanded was equal funding for existing Black schools rather than busing Black students into white schools, and that the form of integration delivered amounted to a 'duping' of the movement.",
+          "historiographical_value": "Historians of the Shreveport civil-rights movement, of SCLC field operations in Louisiana, and of post-1965 Black community-development work in southern cities would all find this an unusually detailed firsthand source. The September 22 beating in particular is documented with rare on-scene specificity.",
+          "justification": "Blake adds substantial new detail to under-documented terrain (Shreveport SCLC operations and the September 22 beating), and his critique of integration outcomes is the kind of insider revisionist analysis that complicates dominant narratives. Slight downward weighting only because some of the broader movement context is well-covered elsewhere."
+        },
+        "overall_assessment": "Historical value is high: Blake is a direct SCLC staff member with firsthand involvement in a specific, well-dated act of state violence (Little Union, September 22, 1963), close relationships with multiple major movement figures, and a long-running community-development arc that extends the movement's logic into housing, daycare, senior care, and now educational ministry. His critique of integration is a substantive historiographical contribution from inside the movement."
+      },
+      "emotional_resonance": {
+        "total": 21,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "Blake describes a journey from being plantation-conditioned to obey ('I was disciplined mentally to be obedient') to becoming a movement organizer willing to be beaten — and then to transforming his civil-rights commitments into long-running community-development work in Allendale and now educational ministry for at-risk Black boys.",
+          "key_turning_points": [
+            "Reading Stride Toward Freedom and being assigned King as commencement speaker at Bishop College (Segment 211-212, 00:31:09-00:31:30)",
+            "Walking into Whitlow's store and demanding $25/week (Segment 184-188, 00:25:18-00:26:22)",
+            "Telling his parents he would take a job that might kill them (Segment 273-274, 00:40:18)",
+            "Surviving the Little Union beating and being able later to negotiate with the same commissioner (Segment 392-407, 00:51:29-00:52:25)"
+          ],
+          "before_after_contrast": "From a teenage farm worker who would not learn 'mule language' to an SCLC organizer who could call a white commissioner to negotiate housing for the Allendale community — and finally to a 79-year-old pastor running a homeschool in his church for boys at risk of being tracked into prison.",
+          "inspirational_quality": "Yes — the arc from a one-room church school where he learned to read in his teens to commanding a 120-unit housing development and an ongoing educational ministry is inspirational without being self-aggrandizing. Blake explicitly credits his father, Whitlow, his wife, and his congregation rather than claiming personal exceptionalism.",
+          "justification": "Blake articulates an authentic personal-growth arc with named pivotal moments and credits external influences (father, Whitlow, King, his congregation). The transformation from plantation laborer to civil-rights organizer to community-development pastor is genuine and well-supported."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "The Little Union Baptist Church beating by Commissioner D'Artois and police, leaving Blake apparently lifeless on the sidewalk",
+              "segment_range": "338-345",
+              "timestamp_range": "00:46:34,000 - 00:47:11,000",
+              "stakes": "Blake's life; the safety of the entire Black community in Shreveport"
+            },
+            {
+              "description": "October 12, 1960 assassination attempt — bullet through car, four holes in his coat",
+              "segment_range": "255-260",
+              "timestamp_range": "00:33:00,000 - 00:38:17,000",
+              "stakes": "Blake's life"
+            },
+            {
+              "description": "Confronting the commissioner who had ordered him beaten, telling him he would 'repeat' anything he had done in the past 'should I deem it necessary'",
+              "segment_range": "392-407",
+              "timestamp_range": "00:51:29,000 - 00:52:25,000",
+              "stakes": "Blake's standing as a new pastor and the viability of his community-development program"
+            },
+            {
+              "description": "Standing his ground with Wyatt Tee Walker outside the church during the Klan protest and being arrested for 'mental observation'",
+              "segment_range": "242-247",
+              "timestamp_range": "00:35:22,000 - 00:36:01,000",
+              "stakes": "Personal liberty; mental-health stigma"
+            }
+          ],
+          "conflict_types": [
+            "Physical violence by state actors",
+            "Verbal humiliation as harassment tactic",
+            "Economic coercion (sharecropping)",
+            "Political/bureaucratic obstruction (permit denial, fabricated charges)"
+          ],
+          "emotional_range": "From fear and humiliation (father being called names by police, the deaf-and-dumb anecdote) through danger (assassination attempt, beating) to triumph (cash-and-land deal with the city, 50th-anniversary celebration of the beating).",
+          "justification": "Multiple high-stakes moments are vividly reconstructed with clear physical and moral stakes. The Little Union beating is the central peak, but the assassination attempt and the post-beating negotiation with the commissioner add genuine dramatic peaks and valleys."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Father-son relationships and intergenerational influence",
+            "Learning to find dignity in humiliating conditions",
+            "The cost of moral courage on one's family",
+            "The arc of community responsibility from young activism to elder mentorship",
+            "Faith as a foundation for civic action"
+          ],
+          "relatable_struggles": [
+            "Working through school against economic odds",
+            "Negotiating wages with an employer",
+            "Telling family about a dangerous job decision",
+            "Carrying lifelong regret about something undone (not teaching his father to write)"
+          ],
+          "human_moments": [
+            "'I never taught my daddy to write his name, and I could have done that' (Segment 293, 00:42:18)",
+            "'I'd be disappointed if you did anything different' — his father's response (Segment 278, 00:40:59)",
+            "Blake's joke about Whitlow flinging the additional ten dollars at him (Segment 188, 00:26:10)",
+            "'Homeschooling in your house, not mine' — a congregant's joke during the planning (Segment 540, 01:04:56)"
+          ],
+          "connection_points": "Family love and intergenerational regret, the search for fair pay, the joy of small victories, the patience of community building — all universally human moments held within the specific Black-southern, sharecropping, civil-rights context.",
+          "justification": "Blake repeatedly bridges from the specific (his father, Whitlow, Walter the twelve-year-old boy) to the universal (father-son love, fair pay, the cost of courage, intergenerational repair). Audiences from any background can connect with the central emotional beats."
+        },
+        "overall_assessment": "Emotional resonance is strong across all three sub-dimensions. The transformation arc from plantation laborer to community-developing pastor is genuine, the dramatic peaks (Little Union beating, assassination attempt) are vividly reconstructed, and the relatable human moments (the father-son regret, the wage-negotiation, the bumbling homeschool planning) anchor the political stakes in universal human emotion."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "rare",
+          "barriers": [
+            "Occasional southern-Black-Baptist church idioms (e.g., 'salt the diet,' 'one-Sunday church') that Blake usefully explains in context",
+            "Brief reference to 'his Negro' as a historical idiom, framed as period-appropriate language Blake intentionally uses",
+            "Some passages where the transcript appears to have minor Whisper-ASR errors ('amoral self courage,' 'previous toilets,' '1950, 4-5-5'); a listener following the audio would not hear these as errors"
+          ],
+          "justification": "Blake is a trained preacher and communicates clearly throughout, defining specialized terms (salt the diet, one-Sunday church, commissary) in context. Dialect is slight and does not impede comprehension. The few unclear passages appear to be transcription artifacts rather than Blake's articulation."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Whitlow store anecdote and wage-negotiation (Segments 172-188, 00:22:24-00:26:22)",
+            "Little Union beating reconstruction (Segments 297-345, 00:42:46-00:47:11)",
+            "Post-beating negotiations with the commissioner and the mayor (Segments 392-417, 00:51:29-00:53:06)"
+          ],
+          "slow_sections": [
+            "The opening introduction segments (1-21, 00:00:00-00:01:38) are slow as Cline establishes setup",
+            "Sharecropping economics segment (Segments 119-136, 00:13:01-00:16:03) is detail-dense and slower-paced",
+            "Closing minutes about the homeschool (Segments 543-580, 01:05:05-01:07:35) wind down at a slower pace"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Cline's open-ended questions let Blake build set-piece anecdotes that hold attention for 5-10 minute stretches; transitions between chapters are natural and rarely require backtracking.",
+          "justification": "The interview maintains good narrative rhythm with clear dramatic peaks. Cline facilitates well, prompting at the right moments and rarely interrupting Blake's set-pieces. Some slower technical-economic passages drag, but the central narrative arc is sustained."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Sharecropping debt as an antecedent to modern credit-card debt",
+            "Plantation conditioning as an obstacle to direct resistance",
+            "The Black church as a continuous power base across movement eras",
+            "Integration as actually implemented vs. what activists asked for",
+            "School-to-prison pipeline framing in his current educational work"
+          ],
+          "contemporary_relevance": "Blake explicitly connects sharecropping to modern credit-card debt, the form of integration delivered in the 1960s-70s to today's failing urban schools and to projected prison capacity for fourth-grade Black boys, and frames his church-based homeschool as a response to that pipeline.",
+          "meaning_making": "Yes — Blake repeatedly draws explicit 'so what' connections, turning specific anecdotes into general principles ('salt the diet,' 'in America money talks,' 'every Sunday morning you get a captive audience') that link personal experience to broader patterns of power and resistance.",
+          "justification": "Blake is exceptionally skilled at moving from specific anecdote to general principle and from historical experience to contemporary relevance. His critiques of integration and his school-to-prison framing of educational work explicitly connect 1960s organizing to 2010s conditions."
+        },
+        "overall_assessment": "Accessibility is solid throughout. Blake is an articulate preacher whose dialect is slight and whose specialized idioms are self-defined. The interview's pacing has minor lulls but recovers, and Blake is exceptional at drawing broader thematic connections from specific anecdotes — particularly his critique of integration outcomes and his framing of contemporary educational disparities."
+      }
+    },
+    "overall_assessment": "Reverend Harry Blake's interview is a high-value Civil Rights History Project oral history that combines an insider SCLC organizer's firsthand testimony — including a vividly reconstructed account of the September 22, 1963 Little Union Baptist Church beating and the October 12, 1960 assassination attempt — with a sustained pastoral and community-development arc that extends from the movement era into the present. Blake is an articulate, structurally disciplined storyteller who connects specific anecdotes to broader principles (salt the diet, the cost of integration as delivered) and who anchors political stakes in universal human moments (his unpaid regret about not teaching his father to write his name). The interview is strong across narrative quality, historical value, emotional resonance, and accessibility, with only minor weaknesses around occasional pacing lulls in the sharecropping-economics middle and around emotional guardedness in describing his own beating.",
+    "key_strengths": [
+      "Direct SCLC staff perspective on a difficult and under-documented theater (Shreveport, Louisiana) with vivid firsthand reconstruction of the September 22, 1963 Little Union beating",
+      "Sustained thematic through-line ('salt the diet' from mules to pastoral leadership to congregational community development) that gives the interview unusual narrative coherence",
+      "Substantive historiographical critique of integration outcomes as actually delivered vs. what activists demanded, articulated from inside the movement"
+    ],
+    "key_limitations": [
+      "Occasional emotional guardedness around his own physical suffering (the Little Union beating is described factually rather than viscerally) limits the deepest emotional access",
+      "Some transcript-ASR artifacts ('amoral self courage,' 'previous toilets,' '1950, 4-5-5') would benefit from listening to the audio to confirm Blake's exact phrasing",
+      "Slight imprecision around years for some incremental career moves (1966 vs. 1967 for the pivot to full-time rural ministry) and around the Baton Rouge bus boycott date"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-25",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Blake was born in 1934 in Arkansas to a Mississippi-born father who was a sharecropper unable to read or write and an Arkansas-born mother who finished third grade.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 23-29: 'my daddy was born in Mississippi. My mother was born in Arkansas. And I was born in Arkansas... My background is that of a plantation. My daddy was a sharecropper who could not read a write. I think my mother finished third grade. So I was reared and lived on a plantation having been born in 1934.'",
+        "rationale": "Blake states all of these biographical facts directly and contiguously in the transcript."
+      },
+      {
+        "claim": "Blake was raised on the Ashley plantation in Madison Parish near Tallulah, Louisiana, before his family relocated in 1951 to the Wood Spur plantation north of Shreveport.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 80-82: 'I lived on two plantations. One was in northeast Louisiana in Madison Parish, Tallulah, Louisiana, and the name of that plantation was the Ashley plantation. Left there in 1951 and moved to Northwest Louisiana's Shreveport... and the plantation north of Shreveport was the Wood Spur plantation.'",
+        "rationale": "Both plantations, both locations, and the 1951 move date are stated directly."
+      },
+      {
+        "claim": "Blake attended a one-room church school for first through seventh grades taught by a single college sophomore.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 33-36: 'It was a public school... The plantation owner established your school in a church building for first through seventh grades. And that teacher was not really a college graduate. She was a college sophomore. She taught first through seventh grade, every subject.'",
+        "rationale": "Blake states the one-room school, the church building, the first-through-seventh grade scope, and the sophomore teacher directly."
+      },
+      {
+        "claim": "Blake attended Bishop College in Marshall, Texas, where Martin Luther King Jr. delivered his commencement address.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 211-212: 'It just so happened, I went to a small black church college in Marshall, Texas, Bishop College. And Martin Luther King Jr was my commencement speaker.'",
+        "rationale": "Blake states Bishop College, Marshall Texas, and King as commencement speaker directly."
+      },
+      {
+        "claim": "Dr. C.O. Simkins of Shreveport, a member of King's SCLC board of directors, recommended Blake to King.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 213-214: 'The local civil rights leader here that I call, we call the father of the civil rights movement. Dr. C.O. Simkins was on Martin Luther King Jr's board of directors. And he asked Martin to interview me when I graduated and hired me to work in Louisiana, Southern, Southern most area.'",
+        "rationale": "Blake names Simkins, identifies him as on King's board, and credits him with the introduction."
+      },
+      {
+        "claim": "King interviewed Blake in Atlanta in February 1960 and hired him to the SCLC staff, with Blake starting work on March 1, 1960.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 215-217: 'in February of 1960, Martin invited me, Dr. King invited me to Atlanta to interview me and hired me on his staff... February of 1960, I started to work here in three board, March 1st. I was arrested first time, March 1st.'",
+        "rationale": "Blake states the February 1960 interview, the Atlanta location, the hiring, and the March 1 start date directly."
+      },
+      {
+        "claim": "Blake was arrested on his first day on the SCLC staff (March 1, 1960) on a 'careless and reckless driving' charge while sitting in a parked car.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 217-234: 'I was arrested first time, March 1st... I had taken a member downtown, they had a medical arts building... I was sitting in my car waiting on them to come. And a policeman on a motorcycle... So my first offense was careless and reckless driving and neither police officer had seen me drive... in a park vehicle.'",
+        "rationale": "Blake states the date, the parked car, the charge, and that neither officer saw him drive."
+      },
+      {
+        "claim": "On October 12, 1960 a bullet was fired into Blake's car on a two-lane highway, shattering his radio and putting four holes through the coat he was wearing.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 255-258: 'I came on the staff, March 1st, 1960, October 12th. There was an assassination attempt on my life. I was driving from my rural church on a two-lane highway... I heard this noise. I thought he had thrown a rock, but they had shot in my car. And that the split second, the bullet came. I then followed to just my radio and the impact of the glass from the bullet to four holes in the coat I was wearing.'",
+        "rationale": "Blake states the date, the two-lane highway, the bullet, the shattered radio, and the four holes in his coat directly."
+      },
+      {
+        "claim": "Blake and SCLC Executive Director Dr. Wyatt Tee Walker were arrested and held thirty-six hours on a charge of 'mental observation' after Walker refused a police order to re-enter a church during a Ku Klux Klan protest.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 239-247: 'He is executive director Dr. Wyatt Tee Walker and I. He had this service where King was preaching. The Ku Klux Klan protested the service... And Dr. Walker said, America is free. We can stand wherever we choose to stand... And they arrested us, put us in jail for mental observation. We stayed there, I think, 36 hours.'",
+        "rationale": "Blake identifies Walker as executive director, names the Klan protest, recounts Walker's refusal to retreat, and gives the 'mental observation' charge and 36-hour detention."
+      },
+      {
+        "claim": "Blake had read King's book Stride Toward Freedom before joining the SCLC staff.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 211: 'Well, I watched and I read Martin Luther King Jr's book, Stride Toward Freedom and was impressed with him.'",
+        "rationale": "Blake states the book title and his having read it directly."
+      },
+      {
+        "claim": "Rev. T.J. Jemison had organized a successful bus boycott in Baton Rouge, which Dr. King visited as a model for the Montgomery bus boycott.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 208-210: 'As a matter of fact, it may be 1950, 455 in Baton Rouge, Louisiana. The Rev. T.J. Jemison had already staged a successful bus boycott. One king knew about that and came to Baton Rouge to model the Montgomery boycott by what had happened in Baton Rouge.'",
+        "rationale": "Blake names Jemison, the Baton Rouge boycott, and the influence on King and Montgomery. The 1953 date in the summary is the historically established date (the transcript's '1950, 455' is partly garbled but consistent with 1953-1955)."
+      },
+      {
+        "claim": "Following the 16th Street Baptist Church bombing in Birmingham (in which Blake says 'the girls' were killed), Blake organized a memorial march in Shreveport for September 22, 1963.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 298-304: 'The girls who were killed in 16th Street Baptist Church bombing, President Kennedy declared the next Sunday at day of morning. The civil rights leaders suggested that we would have memorial services in our communities that Sunday, September 22nd. I went to our commission form of government then was a commission, a commission form of government. I went to the commission of public safety to get a permit to have a march from Book of Washington High School to the closest church, Little Union Baptist Church.'",
+        "rationale": "The transcript supports the bombing, the deaths of 'the girls' (without specifying four), Kennedy's day of mourning, the September 22 date, and the planned march from Booker T. Washington High School to Little Union Baptist Church. The specific count of four girls in the main summary is inferred from the historical record / ground-truth corpus, not from Blake's transcript directly, so this claim is marked partially supported with the count attributed to the ground-truth corpus."
+      },
+      {
+        "claim": "Commissioner of Public Safety George D'Artois revoked the march permit at the last minute and threatened mass arrests.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 302-315: 'I went to the commission of public safety to get a permit to have a march... Saturday noon, he summoned me to his office and said, permit tonight... He said, well, let me tell you, anybody in street food participates in the march. I will arrest every person participating.'",
+        "rationale": "Blake states the late-Saturday revocation and the arrest threat directly. The transcript names 'Commissioner D'Artois' explicitly at Segment 370 ('Commissioner (George) D'Artois was a violent man'), and George W. D'Artois is in the ground-truth corpus as Shreveport Commissioner of Public Safety 1962-1977."
+      },
+      {
+        "claim": "Blake directed marchers into Little Union Baptist Church instead and was attacked in the church vestibule, dragged outside, beaten with nightsticks, and left appearing lifeless on the sidewalk.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 317-344: 'I didn't want, if I can use this expression, innocent people participating in the march, getting arrested, losing their jobs. So here's what we did, no key. We got the word out. Me at the site where the march was to begin and they did, we told them, just go into the church... I went out of the vestibule to see what was going on the services over now. And I met the commissioner and two other policemen in the vestibule. And they'd manhandle me and began to beat me inside the vestibule of church, drug me on the outside and every policeman who could get close enough to get a piece of my head with his nice stick. They thought I was dead or appeared to be lifeless and they left me late and on the lawn on the sidewalk.'",
+        "rationale": "Blake describes the diversion of marchers into the church and the vestibule beating, drag-out, nightsticks ('nice stick' is a transcript artifact for nightstick), and being left for dead — all in his own words."
+      },
+      {
+        "claim": "Blake's family transported him to Dallas for medical care, where Bishop College's president sheltered him during recovery.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 347-365: 'My wife was fearful. My family was fearful of me getting medical attention from the white doctors through me to Dallas... President of my school that was in Marshall had moved to Dallas, Texas, Bishop College. And that president of the school put me in faculty housing until I recovered and came back to report my wife and two children at that time.'",
+        "rationale": "Blake states the Dallas transport, the family's fear of white doctors, the Bishop College president's relocation, and the faculty housing accommodation directly."
+      },
+      {
+        "claim": "Forty years after the beating, the city of Shreveport issued a public proclamation of apology for what had happened to Blake.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 387-389: '40 years subsequent to the day that I was beaten, the city did, and I'll show it to you on the wall, a public proclamation of apology for what had happened to me.'",
+        "rationale": "Blake states the 40-year timeline, the proclamation form, and the apology directly."
+      },
+      {
+        "claim": "Blake was called to Mount Canaan Baptist Church in 1966 and at the time of the 2013 interview had been pastor for 47 years.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 92, 98: 'To satisfy my conscience, I left both of those churches because I didn't want to go to one or the other and came to this church, which was 1966... So I've been here since 1966, 47 years this year.'",
+        "rationale": "Blake states 1966 as the year of his call and 47 years as the tenure directly."
+      },
+      {
+        "claim": "Mount Canaan Baptist Church built a 120-unit low-income housing complex on eight acres of city land sold to the church for $35,000, along with a daycare center and (some 30 years before the interview) a senior-citizens high-rise tower.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 425-434: 'the city owns eight acres of land that's supposed to be a park, which has never been developed. I want you to give that to my church, to build housing. He said the city can't sell property, but give me a little time. He had an autonomous past that said property shall be sold to Mount Caenam Baptist Church for $35,000... we built 40 years ago a 120 unit housing for low income families and daycare center. And then some 30 years ago, we built a high rise senior citizens tower next to that building.'",
+        "rationale": "Blake states the eight acres, the $35,000 sale price, the 120-unit housing, the daycare, the 40-year timeline, and the 30-year-old senior-citizens tower directly."
+      },
+      {
+        "claim": "Blake critiques school integration as actually delivered: he argues the movement wanted equal funding for existing Black schools, not busing Black students out of their neighborhoods into white schools while Black schools were closed.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 451-461: 'I may be the only person in America who sees it this way. I don't think Martin Luther King Jr, I know I didn't. We were concerned about the kind of integration we got, particularly in school. We weren't asking for them to integrate the schools necessary, necessarily, but give the black school the same funding and the same capable teachers that you give to the white school... They took control and gave us a kind of integration that we weren't looking for. Brushed us from our neighborhoods to the white schools and closed black schools.'",
+        "rationale": "Blake states the equal-funding demand, the unwanted form of integration, the busing critique, and the closing of Black schools directly."
+      },
+      {
+        "claim": "Three summers before the interview, Blake launched a summer boys' academy that enrolled up to fifty boys, and he is now running a small church-based homeschool for five boys, taught by a recently retired public-school teacher from the congregation.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 527-557: 'three summers ago, I started a summer boys as a academy. I remember, I think we've had up to 50 in that... there's a young woman in this church who sympathized with my passion. I said, pastor, I've been teaching in the system, the other parish. I think she said for 33 or 35 years, I hadn't planned the retire this year, but I will retire... I will turn my papers in next week to come over here and help you with that school... And we have five boys in that school... From eight to three.'",
+        "rationale": "Blake states the three-summer history, the up-to-50 enrollment, the volunteer teacher, the five-boy enrollment, and the 8-to-3 hours directly."
+      },
+      {
+        "claim": "Blake describes the Civil Rights Commission as having said that Shreveport was the most difficult city in the South.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 266: 'However, the Civil Rights Commission said in their report that Shreveport was the most difficult city in the South.'",
+        "rationale": "Blake makes this attribution directly, so the claim that 'Blake says this' is supported. However, the main summary in its historical_significance paragraph treats this as established documentary fact rather than as Blake's recollection. This is partially supported because the underlying Commission report is not separately cited in the transcript; the framing should be Blake's testimony, not asserted documentary fact."
+      },
+      {
+        "claim": "The interview was conducted by David Cline of the Virginia Tech History Department and the Southern Oral History Program at UNC Chapel Hill, with John Bishop of Media Generation and UCLA behind the camera, at Mount Canaan Baptist Church in Shreveport, Louisiana on October 3, 2013.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 8-16: 'Today is October the 3rd, 2013. We're in Shreveport, Louisiana, and the beautiful sanctuary of the Mount Canaan Baptist Church with Reverend Dr. Harry Blake... This is David Cline talking of the Virginia Louisiana Tech History Department and also working with the Southern Oral History Program at UNC Chapel Hill... Behind the camera today is John Bishop of Media Generation and UCLA.'",
+        "rationale": "All of these facts (date, location, interviewer, interviewer affiliation, cameraman) are stated directly in the introduction. (The transcript says 'Virginia Louisiana Tech' which appears to be an ASR artifact for 'Virginia Tech' — the summary uses the canonical institution name.)"
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 22,
+      "supported": 20,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_passed_citation_blocked_2_partial",
+    "rationale": "Main summary accuracy_score is 88 and quality_score is 90, with accuracy just below the 90 threshold. More decisively, the citation audit identifies two partially-supported claims that block the fail-closed publication gate: (1) the historical_significance paragraph treats the Civil Rights Commission's characterization of Shreveport as the most difficult city in the South as documentary fact when the transcript only supports it as Blake's recollection, and (2) the specific count of 'four girls' killed in the 16th Street Baptist Church bombing is consistent with the ground-truth corpus but is not in Blake's transcript verbatim, so the count is inferred from outside the transcript. Both are correctable on revision: hedging the Civil Rights Commission attribution to 'Blake recalls' and either dropping the four-girl count or attributing it to the ground-truth corpus would close both blocks. Routing to human review is the correct outcome under the dual-scoring + citation-audit gate; the interview itself is substantively a strong publication candidate after these light edits."
+  }
+}
