@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-24",
+  "generated": "2026-05-25",
   "script_version": "1.1",
   "raw_dir": "Norma Mtume_interview_20250705_001313",
   "entry_number": 93,
@@ -330,18 +330,6 @@
       ]
     },
     {
-      "row_id": "93.P2.25",
-      "whisper": "\"Brown Berets\" / \"Pinto Union\"",
-      "correction": "Brown Berets",
-      "confidence": "correct",
-      "occurrences": 6,
-      "file_paths": [
-        ".srt",
-        ".txt",
-        ".vtt"
-      ]
-    },
-    {
       "row_id": "93.P2.34",
       "whisper": "\"Drew\" / \"Charles R. Drew\"",
       "correction": "Charles R. Drew",
@@ -521,6 +509,14 @@
   ],
   "skipped_rows": [
     {
+      "row_id": "93.23",
+      "reason": "notes indicate drop: Pass 7 removed Pinto Union as cross-corpus contamination fro"
+    },
+    {
+      "row_id": "93.P2.25",
+      "reason": "notes indicate drop: Pinto Union removed by Pass 7 as cross-corpus contamination "
+    },
+    {
       "row_id": "93.P2.37",
       "reason": "n/a confidence"
     },
@@ -571,9 +567,9 @@
     "Norma Mtume_interview_transcript_20250705_001313.vtt"
   ],
   "stats": {
-    "applied": 35,
+    "applied": 34,
     "pending": 13,
-    "skipped": 11
+    "skipped": 13
   },
   "review_history": {
     "correction_passes_complete": [
@@ -604,14 +600,14 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.375,
+    "score": 0.383,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.0,
-      "low_confidence_residual_ratio": 0.2708,
-      "adversarial_flag_density": 0.1042,
+      "low_confidence_residual_ratio": 0.2766,
+      "adversarial_flag_density": 0.1064,
       "cross_contamination_penalty": 0.0
     },
     "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"

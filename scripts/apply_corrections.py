@@ -662,6 +662,76 @@ def apply_substitutions_to_text(
     return new_text, total
 
 
+# Short-needle protection: for needles <=3 alphabetic chars (e.g. "Don", "Red",
+# "Tim", "PUM"), refuse matches where the needle is adjacent to either:
+#   (a) an apostrophe-followed-by-contraction-suffix:  't 'll 'd 'm 've 're
+#       (e.g. don't, won't, I'd, we'll, you've, they're, I'm) -- these are
+#       contractions, not occurrences of the short needle as a standalone word.
+#   (b) a hyphen on either side (e.g. "B-Pum", "red-and-futtle") -- hyphen
+#       compounds where the needle is part of a different lexeme.
+# Apostrophe-followed-by-"s" is treated as a possessive marker and the match
+# IS accepted, so "Tim's" -> "Tim Jenkins's" and "Don's" -> "Daniel's" still
+# happen for genuine name replacements. Long needles (>=4 chars) bypass this
+# protection -- possessives like "Bobby Seale's" continue to receive the
+# canonical-expansion replacement unchanged.
+#
+# Verified corruption sources observed on 2026-05-24 (before this guard):
+#   row 20.12   "Don"  -> "Daniel H. Krenge De Iongh"   ("don't" hits, x192)
+#   row 8.P2.26 "Red"  -> "Red Auerbach"                ("red-and-futtle", "ex-red"; x15)
+#   row 63.P4.23 "PUM" -> "BPUM (Black People's Unity Movement)" ("B-Pum"; x3)
+# (Two earlier-flagged rows -- 7.P2.15 "Tim" and 65.39 "GBI" -- were
+# false-positives in the original audit: their hits at "Tim's" / "GBI's" are
+# legitimate possessive replacements and are allowed by the rule below.)
+_SHORT_NEEDLE_MAX_LEN = 3
+_APOSTROPHE_CHARS = "'‘’ʼʻ"
+_HYPHEN_CHARS = "-‑‒–—"  # ASCII hyphen + Unicode hyphens/dashes
+_CONTRACTION_SUFFIXES = ("t", "ll", "d", "m", "ve", "re")
+
+
+def _short_needle_blocked_after(text: str, pos: int) -> bool:
+    """Return True if the char(s) starting at ``pos`` form a contraction-suffix
+    or a hyphen-compound continuation that should block a short-needle match.
+
+    Allows apostrophe+s (possessive). Blocks apostrophe+any-other-contraction
+    suffix and hyphen-followed-by-alphanumeric.
+    """
+    if pos >= len(text):
+        return False
+    c = text[pos]
+    if c in _APOSTROPHE_CHARS:
+        rest = text[pos + 1 : pos + 4].lower()
+        # 's = possessive; allow the replacement to proceed.
+        if rest.startswith("s") and (
+            len(rest) == 1 or not rest[1].isalnum()
+        ):
+            return False
+        # Other contractions: block.
+        for suffix in _CONTRACTION_SUFFIXES:
+            if rest.startswith(suffix) and (
+                len(rest) == len(suffix) or not rest[len(suffix)].isalnum()
+            ):
+                return True
+        return False
+    if c in _HYPHEN_CHARS:
+        # hyphen followed by an alphanumeric = compound continuation
+        if pos + 1 < len(text) and text[pos + 1].isalnum():
+            return True
+    return False
+
+
+def _short_needle_blocked_before(text: str, pos: int) -> bool:
+    """Return True if the char(s) ending at ``pos`` form a hyphen-compound
+    that should block a short-needle match (e.g. ``ex-Red``)."""
+    if pos < 0:
+        return False
+    c = text[pos]
+    if c in _HYPHEN_CHARS:
+        # preceded by alphanumeric = compound
+        if pos > 0 and text[pos - 1].isalnum():
+            return True
+    return False
+
+
 def _ci_substring_replace(text: str, needle: str, replacement: str) -> tuple[str, int]:
     """Case-insensitive substring replace WITHOUT using the regex engine.
 
@@ -673,6 +743,12 @@ def _ci_substring_replace(text: str, needle: str, replacement: str) -> tuple[str
     adjacent tokens. Tail-only or head-only alphanumeric needles get the
     appropriate one-sided boundary.
 
+    Short-needle protection (added 2026-05-25): for needles <=3 alphabetic
+    chars, additionally block contraction-suffix neighbours ('t / 'll / 'd /
+    'm / 've / 're) and hyphen-compound neighbours, while still allowing
+    possessive 's. See module-level comments for the audited corruption
+    sources this guards against.
+
     Returns (new_text, n_replacements).
     """
     if not needle:
@@ -682,6 +758,12 @@ def _ci_substring_replace(text: str, needle: str, replacement: str) -> tuple[str
     n_len = len(needle_lower)
     boundary_start = needle[:1].isalnum()
     boundary_end = needle[-1:].isalnum()
+
+    needle_stripped = needle.strip()
+    short_needle = (
+        len(needle_stripped) <= _SHORT_NEEDLE_MAX_LEN and needle_stripped.isalpha()
+    )
+
     out_parts: list[str] = []
     i = 0
     count = 0
@@ -696,6 +778,13 @@ def _ci_substring_replace(text: str, needle: str, replacement: str) -> tuple[str
             ok = False
         if boundary_end and idx + n_len < len(text) and text[idx + n_len].isalnum():
             ok = False
+        if ok and short_needle:
+            # Extra protection: refuse matches adjacent to contraction-suffixes
+            # or hyphen-compounds. Possessive 's still passes.
+            if _short_needle_blocked_after(text, idx + n_len):
+                ok = False
+            elif idx > 0 and _short_needle_blocked_before(text, idx - 1):
+                ok = False
         if ok:
             out_parts.append(text[i:idx])
             out_parts.append(replacement)

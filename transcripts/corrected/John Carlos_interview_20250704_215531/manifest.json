@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-24",
+  "generated": "2026-05-25",
   "script_version": "1.1",
   "raw_dir": "John Carlos_interview_20250704_215531",
   "entry_number": 62,
@@ -556,6 +556,30 @@
         ".txt",
         ".vtt"
       ]
+    },
+    {
+      "row_id": "62.P7.1",
+      "whisper": "Earl, Adam Clayton Powell Sr, Andrew, Carlos",
+      "correction": "Earl Jr., Andrew, John Carlos",
+      "confidence": "high",
+      "occurrences": 3,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
+    },
+    {
+      "row_id": "62.P7.2",
+      "whisper": "Paul Hoffman Robeson",
+      "correction": "Paul Robeson",
+      "confidence": "high",
+      "occurrences": 12,
+      "file_paths": [
+        ".srt",
+        ".txt",
+        ".vtt"
+      ]
     }
   ],
   "pending_context": [
@@ -773,7 +797,7 @@
     "John Carlos_interview_transcript_20250704_215531.vtt"
   ],
   "stats": {
-    "applied": 46,
+    "applied": 48,
     "pending": 27,
     "skipped": 4
   },
@@ -806,14 +830,14 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4247,
+    "score": 0.4133,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.0,
-      "low_confidence_residual_ratio": 0.3699,
-      "adversarial_flag_density": 0.0548,
+      "low_confidence_residual_ratio": 0.36,
+      "adversarial_flag_density": 0.0533,
       "cross_contamination_penalty": 0.0
     },
     "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
