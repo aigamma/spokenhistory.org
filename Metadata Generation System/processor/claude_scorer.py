@@ -117,7 +117,7 @@ def score_with_claude(
     api_key: Optional[str] = None,
     transcript_char_limit: int = 12000,
     primary_source_info: Optional[Dict[str, Any]] = None,
-    max_tokens: int = 2000,
+    max_tokens: int = 4000,
 ) -> Dict[str, Any]:
     """Score a generated summary independently using Claude.
 
@@ -151,9 +151,12 @@ def score_with_claude(
             to 200K tokens, so this could be raised; default matches the
             OpenAI scorer for apples-to-apples comparison.
         primary_source_info: interviewee reference dict (optional).
-        max_tokens: response size cap. Default 2000 is enough for a few
-            dozen flagged claims plus the rationale; raise for chapters
-            with many issues.
+        max_tokens: response size cap. Default 4000 (raised from 2000
+            after the 2026-05-24 batch pilot — Aaron Dixon's score hit
+            "Unterminated string" mid-JSON at the 2000 cap on a
+            heavily-flagged summary; the longer rationale strings on
+            big transcripts overflow 2000 routinely). Raise further
+            for chapters with many issues.
 
     Returns:
         Score dict (see above). On API failure, returns
