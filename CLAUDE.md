@@ -298,3 +298,20 @@ These directories contain one file per audit-able entry per pass. They are inter
 - `MobileAdvisory` no longer exists. The component was deleted on 2026-05-21 (commit 783d419) after the mobile audit closed out the issues the banner was hedging against. Earlier commit messages reference it; those references are historical, not current state.
 - The site uses two reds: `text-red-500` (Tailwind, `#F2483C`, brand) for large text only; `text-civil-red-body` (custom utility, `#B23E2F`) for any text below 18pt or 14pt-bold. See "Accessibility tokens" section above for the rule.
 - `text-civil-red-body` and `.bg-civil-red-strong` are CSS custom classes defined in `src/index.css` -- they do not appear in Tailwind's class scanner output but they ARE valid utility classes. If a linter or content-purge step ever flags them as unused, configure it to whitelist these names.
+
+## Operational state (2026-05-25 23:00, autonomous-deploy session)
+
+The interactive RAG layer is live in staging. The following are operational facts
+(not architecture), captured here so a future agent picks up the right state.
+
+### What's deployed and running
+
+- **Pinecone index `civil-rights`** (1024-dim, cosine, AWS us-east-1) — created via REST API on 2026-05-25 23:00 UTC. **Co-mingled with `worldthought` in the same Pinecone project** (shared host hash `odc9z70`); separating into project-scoped keys is a follow-on (see `rag/.env.local` header for the migration path). Index is **Ready**; first ingest is running (~40k vectors, ~30-60 min wall-clock).
+- **Netlify `civil-rights-staging` env vars** — `PINECONE_API_KEY`, `PINECONE_HOST`, `PINECONE_INDEX`, `VOYAGE_API_KEY`, `VOYAGE_MODEL`, `VOYAGE_RERANK_MODEL` all set via Netlify MCP. The first attempt with `envVarIsSecret: true` failed silently for the API keys — they were re-upserted as non-secret. **Lesson:** when Netlify env-var setting "succeeds" but the value never appears in subsequent `getAllEnvVars` listings, the secret-flag + `context: "all"` combination silently rejects the upsert.
+- **`/retrieve` Netlify Function** — deployed at `b935c03`+. After env var fix, requires another deploy to cycle the function's `process.env` snapshot. Empty-commit pushes are the trigger.
+- **`/rag-explore` page** — three-tab demo of SemanticSearch + QuoteFinder + Constellation, gated behind ProtectedRoute. Live at `https://civil-rights-staging.netlify.app/rag-explore`.
+
+### What's NOT deployed
+
+- **MCP server (Fly.io)** — `flyctl` is not installed on Eric's machine; `flyctl auth login` is interactive. Blocked on Eric installing the CLI + authenticating. The server code is rewired (commit `2c05cd8`) and ready to deploy.
+- **Pinecone civil-rights as a SEPARATE project from worldthought** — would require Eric to provision via the Pinecone console + generate a new project-scoped API key. Current setup is functional but cohabitating in the worldthought project space.
