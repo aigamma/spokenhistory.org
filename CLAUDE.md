@@ -99,6 +99,40 @@ If two sessions are running in parallel (which has happened — Session 3 + Sess
 
 `transcripts/AUDIT_TRAIL.md` has an "Inferential scoring framework" section that defines per-entry uncertainty scoring. The Per-entry coverage matrix is the structured input to that framework. Any agent that adds rows to the coverage matrix or modifies the Pass coverage flags (F/P/T/S/R/D/M) should preserve the structure so downstream scorer scripts can parse it.
 
+## Pass 8: LoC canonical-archive cross-reference (2026-05-25)
+
+**Pass 8 is the eighth audit pass and the FIRST one anchored to a primary external authority (the Library of Congress's own published transcripts) rather than internal review or ground-truth corpus matching.** It is the architectural endpoint of the audit cascade for the existing 127-entry corpus and the primary correction pipeline for NEW transcripts arriving after 2026-05-25 (see "Streamlined ingestion" below).
+
+**Coverage:** 127 of 127 (100%) audit-able entries healed against LoC reference text. 92 entries via LoC's TEI2 XML transcripts; 35 entries via pypdf-extracted text from LoC's transcript PDFs (only fallback because XML wasn't published for those interviews). Zero genuinely audio-only entries — every interview in the LoC CRHP collection has at least a PDF transcript that we can text-extract.
+
+**Workflow (per entry):**
+1. **Resolve** the entry's interviewee to its LoC item URL via `transcripts/loc_healing/resolve_loc_items.py` (LoC `/search` API search by name) or `transcripts/loc_healing/resolve_pdf_fallback.py` (PDF fallback when XML isn't published) or `transcripts/loc_healing/resolve_by_item_url.py` (direct-resolve for catalog-spelling discrepancies like LoC "Newson" vs our "Newsom").
+2. **Align** our Whisper-derived `.srt` against LoC's transcript text at the word level via `transcripts/loc_healing/heal_one_entry.py phase1`. Output: per-entry divergence list in `transcripts/loc_healing/divergences/<subject>.divergences.json`.
+3. **Classify** each divergence under the conservative-first-pass discipline (deterministic verdicts only — no model call in the loop): contraction expansion / number↔word / function-word insert-delete / LoC bracketed stage-direction insert / hyphen-compound false-start / short-needle proper-noun phonetic substitution. Everything outside those clean buckets is `NEEDS_SME_REVIEW` and preserved verbatim.
+4. **Apply** the `ASR_ERROR_HEAL` verdicts surgically — token-level replacements inside the existing SRT/VTT cue boundaries; no timestamp drift, no segment restructuring. The `.txt` is patched via in-place substring substitution preserving its original continuous-line format.
+5. **Audit-canon safeguard** prevents auto-reversal of prior audit decisions: if `our_token` is already in the master MD's correction-table set for this entry, the heal is skipped and the case is flagged `UNCLEAR` for SME review. Verified to have prevented reversal of e.g. Aaron Dixon's audit-confirmed "Madison Valley" against LoC's "Harrison Valley".
+6. **Stage file** written to `transcripts/pass8_stage/entry_<NNN>_<slug>.md` documenting every heal applied + every divergence preserved + every NEEDS_SME_REVIEW case. The per-entry institutional-audit artifact, parallel to `pass2_stage/` ... `pass7_stage/`.
+7. **Master MD backport** via `transcripts/loc_healing/backport_pass8_to_master_md.py` — emits `<entry>.P8.X` correction-table rows that reproduce the heals when `scripts/apply_corrections.py` runs from `raw/` + master MD. Two-tier strategy: DIRECT rows for universal substitutions; CONTEXT-EXTENDED rows for position-specific heals (uses 2-9 surrounding words to make the phrase unique). Position-specific heals whose unique-context-extension fails stay in `corrected/` + `pass8_stage/` only (not in master MD).
+
+**Linear LoC API access is mandatory.** No parallel subagents touching `loc.gov` or `tile.loc.gov`. The polite delay is 1.5s/request. LoC will throttle / ban aggressive scrapers. See `feedback_linear_loc_api` memory.
+
+**The 710-row AUDIT_VS_LOC_DISAGREEMENTS report** (`transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md`) catalogues every case where the audit-canon safeguard fired — i.e., where our audit-promoted spelling conflicts with LoC's authoritative text. SME-reviewable conflicts grouped by entry. The categories that show up: genuinely-different-people (Bertha vs Roberta), spelling variants (Carsie vs Carsey), style choices (Sam vs Samuel), and Whisper-error leakage into our own audit-canon (Joanne vs JoeAnn — our directory itself says JoeAnn but a prior audit row promoted Joanne).
+
+## Streamlined ingestion for new transcripts (DEPRECATES Passes 1-7 for new entries)
+
+`transcripts/ingestion/README.md` + `transcripts/ingestion/ingest_new_transcript.py` together replace the seven-pass improvised journey for any new transcript that arrives in the corpus AFTER 2026-05-25. The seven-pass journey on the original 127 was largely about discovering Whisper failure patterns and building the ground-truth substrate; that substrate now exists, so new interviews can be corrected in ONE pass.
+
+**The single command** that ingests a new entry:
+```
+python transcripts/ingestion/ingest_new_transcript.py "<Subject>_interview_<YYYYMMDD>_<HHMMSS>"
+```
+
+Does: validate raw structure → bootstrap `corrected/<entry>/` from raw → resolve LoC item (XML first, PDF fallback, direct-URL override available via `--loc-item-url`) → run `heal_one_entry.py heal_one` → write per-entry stage file → append ingestion note to AUDIT_TRAIL.md.
+
+**Do NOT run Passes 1-7 on new transcripts.** That pipeline was designed before LoC integration existed. The Pass 8 architecture (LoC heal + conservative auto-apply + SME review of flagged divergences) catches the same Whisper-error class with much less hand-tuning. The legacy Pass 1-7 documentation in `transcripts/AUDIT_TRAIL.md` is historical record for the 127-entry corpus; it is not a template for new work.
+
+**Format adapters** for non-Whisper input (PDF-only transcripts, plain text, WhisperX JSON) are documented in `transcripts/ingestion/README.md` — TODO section noting the synthesized-timestamp fallback for text-only sources (which loses fine-grained playlist-generator clip precision; avoid unless audio is unavailable).
+
 ### Why this discipline matters
 
 The Smithsonian (NMAAHC) and Library of Congress are gating publication on AI-hallucination-fact-check rigor. The audit overlay + AUDIT_TRAIL are the institutional credibility instrument. A future reviewer or replacement engineer must be able to read these documents and reconstruct exactly what was audited, by whom, with what coverage, and what residual error remains. Per-phase incremental updates prevent the docs from drifting out of sync with the actual state of the corpus.
@@ -122,6 +156,8 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 | `README.md` | Public-facing project overview for GitHub viewers (corpus description, what the system does) |
 | `CLAUDE.md` (this file) | Project-wide conventions for AI-agent contributors. Auto-loaded into every agent's context. **The first thing any new agent should rely on for project orientation.** |
 | `CONTRIBUTORS.md` | Human contributor credits |
+| `lessons_learned.md` | Conceptual + categorical analysis of the seven-pass audit cascade, the Whisper-error taxonomy we observed (phonetic confusion, ASR name-bleed, short-needle substitution corruption, audit-canon leakage), and the process-governance lessons (apply-step discipline, word-boundary safety, commit+push at every moderate milestone). Companion to PRESENTATION_REFERENCE.md. |
+| `PRESENTATION_REFERENCE.md` | The conceptual-map briefing for the WWU presentation (and any external stakeholder summary). Eight conceptual breakthroughs from the audit work; the coverage table; implications for the user-facing product. Slide-friendly summary; less detail than lessons_learned.md. |
 
 ### `docs/` — architecture + decision records
 
@@ -143,6 +179,32 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 | `transcripts/cross_contamination_audit_summary.md` | Human-readable summary of the 2026-05-22 cross-contamination follow-on cleanup (catches Pass 3 + Pass 4 retraction signals beyond Phase 1a's original 22-item fix). Full data in `cross_contamination_audit.json`. |
 | `transcripts/layer5_fidelity_audit_summary.md` *(may not exist yet — generated by Layer 5 sweep)* | Human-readable summary of the corpus-global fidelity sweep across phantom Whisper renderings, bidirectional canonical consistency, catalog-vs-per-entry contradictions, and cross-entry biographical consistency. Full data in `layer5_fidelity_audit.json`. |
 | `transcripts/session_prompts/archive/*.md` | Archived session prompts from completed sessions (per the single-use-prompt convention — once a session executes a `NEXT_SESSION_PROMPT.md` they archive-and-delete it to prevent re-execution). Read for historical context on prior session scoping. |
+
+### `transcripts/loc_healing/` — Pass 8 LoC canonical-archive cross-reference (2026-05-25)
+
+| File | Purpose |
+|---|---|
+| `transcripts/loc_healing/heal_one_entry.py` | Per-entry heal toolkit. Modes: `phase1` (parse LoC source + corrected SRT, word-align via difflib, emit per-entry divergences JSON with deterministic verdicts inlined), `apply` (apply verdicts to .srt/.txt/.vtt within existing cue boundaries), `verify` (cue-count parity check between SRT and VTT), `heal_one` (combined pipeline). |
+| `transcripts/loc_healing/resolve_loc_items.py` | LoC `/search` API resolver — finds the LoC item URL for each interviewee by name, downloads TEI2 XML transcript where published. Polite-delayed (1.5s/request). Output: per-entry resolution.json + cached XML in `loc_cache/`. |
+| `transcripts/loc_healing/resolve_pdf_fallback.py` | PDF-fallback resolver for entries where LoC has no machine-readable XML (35 of the original 127). Downloads LoC's transcript PDF, runs `pypdf` text extraction, caches as `<subject>.pdf.txt`. |
+| `transcripts/loc_healing/resolve_by_item_url.py` | Direct-resolve helper for catalog-spelling discrepancies (LoC "Newson" vs our "Newsom", "Wheeler Parker" without our "Jr.", etc.). Bypasses search-by-name; takes a known LoC item URL and resolves directly. |
+| `transcripts/loc_healing/process_batch.py` | Sequential per-entry driver. Iterates `corrected/` alphabetically and runs `heal_one_entry.py heal_one` on each entry that has its LoC source cached. Linear by design — no concurrency. |
+| `transcripts/loc_healing/backport_pass8_to_master_md.py` | Backport tool that inserts `<entry>.P8.X` correction-table rows into `CLEANED_TRANSCRIPTS_REVIEW.md`, so `scripts/apply_corrections.py` reproduces the Pass 8 heals from raw/ + master MD. Two-tier strategy (direct + context-extended). Idempotent. |
+| `transcripts/loc_healing/loc_cache/` | Cached LoC content (one set per entry): `<subject>.xml` + `.resolution.json` for XML-source entries; `<subject>.pdf` + `.pdf.txt` + `.resolution.json` for PDF-source entries; `_index.json` aggregate coverage. |
+| `transcripts/loc_healing/divergences/` | Per-entry divergence streams: `<subject>.divergences.json` — the raw alignment + deterministic-verdict output that both feeds `apply` and serves as the SME-review input. |
+| `transcripts/loc_healing/COVERAGE_REPORT.md` | Pass 8 aggregate coverage report. 127/127 entries healed (92 via XML, 35 via PDF). Per-entry source kind, heal counts, and failure-mode breakdown. |
+| `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md` | 710 SME-reviewable conflicts where Pass 8's audit-canon safeguard fired (our prior-pass-promoted spelling disagrees with LoC's authoritative text). Grouped by entry, sorted by per-entry disagreement count. Categories: genuinely-different-people, spelling variants, style choices, Whisper-error leakage into our own audit-canon. |
+
+### `transcripts/pass8_stage/` — Pass 8 per-entry institutional-audit artifacts
+
+127 files (one per entry that was healed) at `transcripts/pass8_stage/entry_<NNN>_<slug>.md`. Per-entry file documents: LoC item URL + match metadata; divergence counts (detected / healed / preserved-verbatim / flagged-for-SME-review); per-correction table (cue index + our token + LoC token + reasoning); preserved-verbatim table; SME-review-flagged table. Parallel to the existing `pass2_stage/` ... `pass7_stage/` naming convention.
+
+### `transcripts/ingestion/` — Streamlined ingestion for new transcripts (DEPRECATES Pass 1-7)
+
+| File | Purpose |
+|---|---|
+| `transcripts/ingestion/README.md` | The full new-transcript workflow documentation: TL;DR command, format adapters (WhisperX JSON / PDF-only / plain-text source), pre-ingest requirements, validation checklist, the "what if LoC doesn't have it" fallback. |
+| `transcripts/ingestion/ingest_new_transcript.py` | The single-command ingestion script. Validate raw entry structure → bootstrap `corrected/<entry>/` → resolve LoC → heal_one → write stage file → append AUDIT_TRAIL ingestion note. One transcript per invocation; linear by design. Supports `--loc-item-url` override for catalog-spelling cases. |
 
 ### Component-level `README.md` files
 
@@ -186,10 +248,12 @@ These directories contain one file per audit-able entry per pass. They are inter
 ### When to read what
 
 - **New agent doing audit-related work:** start with this CLAUDE.md (you're here), then `transcripts/AUDIT_TRAIL.md` (history) and `transcripts/OPEN_PROBLEMS.md` (open items). Don't try to read the per-pass staging directories.
+- **New agent doing LoC-healing or new-transcript work:** this CLAUDE.md, then `transcripts/ingestion/README.md` and `transcripts/loc_healing/COVERAGE_REPORT.md`. Read `transcripts/AUDIT_VS_LOC_DISAGREEMENTS.md` if the heal pipeline surfaces issues. **Do not re-run Passes 1-7 on new transcripts** — that pipeline is retired for new work.
 - **New agent doing RAG-related work:** this CLAUDE.md, then `rag/README.md` and `docs/RAG_SUBSTRATE_DECISION.md`.
 - **New agent doing accessibility / frontend work:** this CLAUDE.md, then `docs/ACCESSIBILITY.md`.
 - **New agent doing deployment / DevOps work:** this CLAUDE.md, then `docs/DEPLOYMENT.md`.
 - **New agent doing pipeline / Python work:** this CLAUDE.md, then `Metadata Generation System/Metadata Generation Documentation.md` and `StandardizedRubric_1.md`.
+- **External stakeholder briefing / presentation prep:** `PRESENTATION_REFERENCE.md` first (conceptual map of breakthroughs), then `lessons_learned.md` for deeper-dive error categories.
 
 ## Validation commands
 
