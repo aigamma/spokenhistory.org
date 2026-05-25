@@ -1,0 +1,10 @@
+# Netlify SPA fallback — serve index.html for any unknown path so the
+# React Router (BrowserRouter) handles client-side routing. Without this,
+# direct GETs / bookmarks / shared links to client-side routes
+# (/about, /interview-index, /rag-explore, etc.) return 404 from
+# Netlify's edge before React ever loads.
+#
+# /retrieve and /.netlify/functions/* are still handled by the
+# Function runtime — Netlify routes function paths before applying
+# this catch-all.
+/*    /index.html   200
