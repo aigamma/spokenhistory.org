@@ -31,11 +31,17 @@ format_results() {
 import json, sys
 data = json.load(sys.stdin)
 for r in data.get("results", []):
-    print(f"  → {r.get(\"entrySubject\")} (entry {r.get(\"entryNumber\")})")
-    print(f"    {r.get(\"suggestedCitation\")}")
-    print(f"    relevance={r.get(\"similarity\")}  tier={r.get(\"uncertaintyTier\")}")
+    subj = r.get("entrySubject")
+    num = r.get("entryNumber")
+    cite = r.get("suggestedCitation")
+    sim = r.get("similarity")
+    tier = r.get("uncertaintyTier")
     preview = (r.get("textPreview") or "").replace("\n", " ")[:200]
-    print(f"    \"{preview}\"\n")
+    print("  -> " + str(subj) + " (entry " + str(num) + ")")
+    print("    " + str(cite))
+    print("    relevance=" + str(sim) + "  tier=" + str(tier))
+    print("    \"" + preview + "\"")
+    print()
 '
   else
     cat
