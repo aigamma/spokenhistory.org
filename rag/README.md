@@ -62,6 +62,7 @@ Ingest:
 | `embed.mjs` | Voyage embedding batch helper with retry+backoff |
 | `ingest.mjs` | Walker + ingest CLI (CLI flags: `--entries`, `--include-ground-truth`, `--prune`, `--dry-run`) |
 | `retrieve.mjs` | Two-stage retrieve: Pinecone hybrid query → Voyage rerank-2 |
+| `precompute.mjs` | After ingest, emits static JSON for the interactive-features layer (related passages per entry + per-chunk, per-entry centroids, 2D PCA constellation). Runs against any Pinecone index with the same metadata shape — civil-rights and worldthought.com share the script. CLI flags: `--feature {related,centroids,constellation}`, `--entries`, `--centroid-sample`, `--dry-run`. |
 | `.env.example` | Env-var template (copy to `.env.local`, never commit) |
 
 ## Index design
