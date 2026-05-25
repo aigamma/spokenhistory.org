@@ -1,0 +1,1673 @@
+# LoC-vs-our-audit disagreements
+
+**Generated:** 2026-05-25
+**Source:** `transcripts/loc_healing/divergences/*.divergences.json` â€” every
+divergence where the deterministic auto-heal classifier marked `UNCLEAR`
+because our token is already in the master-MD audit-canon set (a prior
+audit pass promoted this spelling as canonical).
+
+**What this captures:** cases where LoC's authoritative transcript text
+says ONE form (e.g., "JoeAnn") while our audit overlay's prior-pass
+correction promoted a DIFFERENT form (e.g., "Joanne") for the same position.
+
+**Why this matters:** these are the rows the SME needs to adjudicate.
+Pass 8's audit-canon safeguard prevented auto-reversal â€” the heals were
+NOT applied, your `corrected/` transcripts still carry the audit-promoted
+spelling. If LoC's spelling is the correct one, the master MD's
+correction-table row for this entry needs an update, and the heal can be
+re-applied in a future targeted pass.
+
+**Categories of conflict you'll see:**
+
+1. **Genuinely different people** (e.g., Bertha vs Roberta) â€” one is right,
+   one is wrong, and the wrong one represents a real factual error in
+   one of the two sources.
+2. **Spelling variants of the same name** (e.g., Carsie vs Carsey,
+   Mants vs Mantz, Nabrit vs Nabritt) â€” both forms are plausible; the
+   canonical archival spelling needs SME confirmation.
+3. **Style choices** (e.g., Sam vs Samuel, King vs King's) â€” possessive
+   markers, abbreviated vs full forms, etc.
+4. **Whisper-error leakage into our audit-canon** (e.g., Joanne vs JoeAnn
+   where the directory itself says JoeAnn) â€” these are cases where a
+   prior audit row promoted the Whisper-failure form as canonical. The
+   audit-canon entry for these is itself in error and should be revisited.
+
+
+## Coverage
+
+- Total LoC-vs-audit disagreements detected: **710**
+- Distinct entries with at least one disagreement: **114**
+
+## Per-entry breakdown
+
+Entries sorted by disagreement count (highest first):
+
+| Entry | Disagreement count |
+|---|---|
+| William S. Leventhal | 35 |
+| Ekwueme Michael Thelwell | 34 |
+| Rick Tuttle | 28 |
+| Reginald Robinson | 20 |
+| Lisa Anderson Todd | 19 |
+| Clarence B. Jones | 18 |
+| Charles McLaurin | 16 |
+| Ladners | 15 |
+| Lawrence Guyot | 15 |
+| William G. Anderson | 14 |
+| Ben Caldwell | 13 |
+| Emmett W. Bassett and Priscilla Tietjen Bassett | 13 |
+| Linda Fuller Degelmann | 13 |
+| Timothy Jenkins | 13 |
+| Dorothy Zellner | 12 |
+| Eddie Holloway | 12 |
+| Esther M. A. Terry | 12 |
+| Amos C. Brown | 11 |
+| Audrey Nell Hamilton and JoeAnn Anderson Ulmer | 11 |
+| D'Army Bailey | 11 |
+| Lonnie C. King | 11 |
+| Robert Bagner Hayling | 11 |
+| H. Jack Geiger | 10 |
+| Juadine Henderson | 10 |
+| Mateo Camarillo | 9 |
+| Robert Brown | 9 |
+| Ruby Sales | 9 |
+| Charles Siler | 8 |
+| Leesco Guster | 8 |
+| Betty Garman Robinson | 7 |
+| Cecil J. Williams | 7 |
+| Clarence Magee | 7 |
+| Junius Williams | 7 |
+| Phil Hutchings | 7 |
+| Raylawni G. Branch and Jeanette Smith | 7 |
+| Steven McNichols | 7 |
+| Bill Russell | 6 |
+| Carrie Lamar Young | 6 |
+| Gwendolyn Annette Duncan | 6 |
+| Jamila Jones | 6 |
+| Judy Richardson | 6 |
+| William Saunders | 6 |
+| Cynthia Baker Anderson and Fletcher Anderson | 5 |
+| Evans Derrell Hopkins | 5 |
+| John Churchville | 5 |
+| Julia Matilda Burns | 5 |
+| Nathaniel Hawthorne Jones | 5 |
+| Roberta Alexander | 5 |
+| Scott Bates | 5 |
+| Walter Tillow | 5 |
+| Aaron Dixon | 4 |
+| Annie Pearl Avery | 4 |
+| Barbara Edna Vickers | 4 |
+| Courtland Cox | 4 |
+| Dorothy Foreman Cotton | 4 |
+| Freddie Greene | 4 |
+| Grace Miller | 4 |
+| Jennifer Lawson | 4 |
+| Joan Trumpauer Mulholland | 4 |
+| Johnnie Ruth McCullar | 4 |
+| Julius W. Becton | 4 |
+| Mary Jones | 4 |
+| Michael D. McCarty | 4 |
+| Richard Barry Sobol | 4 |
+| Robert L. Carter | 4 |
+| Shirley Miller Sherrod | 4 |
+| Thomas Walter Gaither | 4 |
+| Wheeler Parker, Jr. | 4 |
+| William Lamar Strickland | 4 |
+| Carolyn Miller and James Miller | 3 |
+| Cecilia Suyat Marshall | 3 |
+| Dr. Doris Derby | 3 |
+| Elbert “Big Man” Howard | 3 |
+| Elmer Dixon | 3 |
+| Euvester Simpson | 3 |
+| Frankye Adams-Johnson | 3 |
+| Gloria Arellanes | 3 |
+| Gwendolyn M. Patton | 3 |
+| James Oscar Jones | 3 |
+| Maria Varela | 3 |
+| Martha Prescod Norman Noonan | 3 |
+| Matthew J. Perry | 3 |
+| Reverend Harry Blake | 3 |
+| Vernon Dahmer, Jr. | 3 |
+| Virginia Simms George | 3 |
+| Worth W. Long | 3 |
+| Ernest Adolphus Finney | 2 |
+| John Carlos | 2 |
+| Joseph Echols Lowery | 2 |
+| Kathleen Cleaver | 2 |
+| Mary Jenkins | 2 |
+| Mildred Bond Roxborough | 2 |
+| Mildred Pitts Walter | 2 |
+| Norma Mtume | 2 |
+| Robert G. Clark, Jr., | 2 |
+| Wyatt Tee Walker | 2 |
+| Candie Carawan and Guy Hughes Carawan | 1 |
+| Charles Melvin Sherrod | 1 |
+| Cleveland Sellers | 1 |
+| Clifford Browner | 1 |
+| Dion Diamond | 1 |
+| Gloria Hayes Richardson | 1 |
+| Gwendolyn Zoharah Simmons | 1 |
+| Harold K. Brown | 1 |
+| Jack Greenberg | 1 |
+| Joseph Howell and Embry Howell | 1 |
+| Oliver W. Hill, Jr. | 1 |
+| Peggy Jean Connor | 1 |
+| Pete Seeger | 1 |
+| Purcell Maurice Conway | 1 |
+| Rosie Head | 1 |
+| Sam Mahone | 1 |
+| Samuel Berry McKinney | 1 |
+| William Lucy | 1 |
+
+---
+
+## Per-entry detail tables
+
+### William S. Leventhal
+
+_35 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 6 | 8 | `Willie` | `Willy` | interviewer. I'm with John Bishop, the videographer, and Willie Leventhal. And Willie wanted to thank you very |
+| 100 | 58 | `Jack` | `Jackie` | in that movie than otherwise. And in the Jack Robinson movie, which came out this weekend, there |
+| 103 | 58 | `Jack` | `Jackie` | great scene with Harrison Ford, Willie Terrells, the Jack Robinson actor. I was just there and there's |
+| 105 | 58 | `Andrew` | `Andy` | who was imitating you. And I talked to Andrew Young about the movie and Andy said, the |
+| 110 | 59 | `Andrew` | `Andy` | civil rights game. I was one that got Andrew Young involved through my RBI involvement went with |
+| 197 | 86 | `SCOPE` | `S-C-O-P-E,` | political education project, which was known as scope, SCOPE project, and made the National Nelson at UCLA. |
+| 199 | 87 | `Bunche` | `Bunch` | at UCLA. I'm quite sure because of Ralph Bunche and Jackie Robinson, each of whom had been |
+| 221 | 95 | `Willie` | `Willy` | over with the orders, only take pictures of Willie Leventhal. And of course, he took six pictures. |
+| 308 | 122 | `America` | `Americus` | advisor. In fact, when I was arrested in America with John R. Lewis and others of the |
+| 391 | 135 | `Mickey` | `Micky` | that was killed with James, James, Cheney and Mickey Schwerner. So Dr. King, I remember there were |
+| 636 | 224 | `Andrew` | `Andy` | outside the party. Dr. King and scope and Andrew Young, and they wanted to move within the |
+| 638 | 225 | `Andrew` | `Andy` | Party and overturn the worst racist counties. And Andrew Young has told me that those same 120 |
+| 654 | 230 | `America.` | `Americus.` | were starting to shoot back. That happened in America. Unfortunately, a bystander who was white, who had |
+| 686 | 240 | `Clark,` | `Clarke,` | skills and media, there's a lady named Kit Clark, who I just saw about with scope, whose |
+| 787 | 268 | `Andrew` | `Andy` | is going to kill my daughter. And what Andrew Young always said, he said, if it had |
+| 866 | 286 | `Georgia,` | `George,` | game with the Macon Bombers in Round Oak, Georgia, which was in the middle of a cow |
+| 983 | 313 | `King,` | `King's` | leadership of Hosea Williams William of the Dr. King, Summer 65 student volunteers, there's Hosea Williams and |
+| 992 | 315 | `Andrew` | `Andy` | get the media. I have an interview with Andrew Young in the book you have about that, |
+| 1198 | 390 | `Tom` | `Tommy` | kept getting hurt, and I kept running into Tom Griffin, who got drafted number four in the |
+| 1204 | 392 | `Tom` | `Tommy` | six foot four. I wasn't going to beat Tom Griffin out. That just wasn't going to happen. |
+| 1402 | 445 | `Jack` | `Jackie` | third oldest fields. That was used for the Jack Robinson film that just came out. Most of |
+| 1425 | 449 | `America?` | `Americus?` | And you arrested both in Macon and in America? I was. You want to hear those? Two |
+| 1473 | 465 | `America,` | `Americus.` | She lived with Gloria Wise's family, Gloria in America, Gloria Wise is one of the four women |
+| 1751 | 554 | `America.` | `Americus.` | called down there. Actually quite interesting introduction to America. We went down at night. It was the |
+| 1981 | 615 | `Willie,` | `"Willy,"` | it wasn't Rev. Willie Bolden. And he said, Willie, he said to me, I can't get arrested |
+| 2053 | 635 | `America` | `Americus` | the other nice things that was happening in America was as they released people not from the |
+| 2075 | 644 | `America` | `Americus` | Nelson of the LA Times down there. But America was where I got to meet, kind of |
+| 2117 | 656 | `Andrew` | `Andy` | by LeRoy Collins, former governor of Florida, who Andrew Young was a friend of, and he was |
+| 2243 | 681 | `America.` | `Americus,` | it didn't matter. There were no Citroens in America. And all the white people knew that if |
+| 2410 | 728 | `America.` | `Americus.` | the staff. They want me to be in America. I'll come back. You see, you're deserting the |
+| 2473 | 743 | `Tuttle` | `Tuttle's` | this in my book. Here's what Richard "Rick" Tuttle said, how important Scope was, which is ironic |
+| 2677 | 798 | `America.` | `Americus.` | staff now. So I went on staff in America. And I said, you know, I knew my |
+| 2834 | 848 | `Rick` | `Ricks` | It finally Stokely Carmichael got the message. Willie Rick saw me at the 2007. I was late |
+| 2867 | 854 | `King` | `King's` | with another guy, a young guy in Dr. King staff. And we're working off stress due in |
+| 3059 | 919 | `America.` | `Americus.` | in America. They didn't talk to you in America. They shot at you. But in making, they |
+
+### Ekwueme Michael Thelwell
+
+_34 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 272 | 191 | `Frank` | `Hank` | Clay Thelbenjerman, and said, you know, he and Frank were very close growing up. So, principally, he |
+| 2098 | 1702 | `Joseph` | `Joe` | Rauh. And Bob said, well, I just left Joseph Rauh's office. And Joe said we could be |
+| 2100 | 1705 | `Joseph` | `Joe` | And Joe said we could be seated. What? Joseph Rauh said what? He said Joe said we |
+| 2103 | 1709 | `Joseph` | `Joe` | Who will move in the meeting? Well, if Joseph Rauh said that, then maybe there's a possibility. |
+| 2107 | 1712 | `Joseph` | `Joe` | support. Just under basis of Bob saying that Joseph Rauh said we could have been seated. Because |
+| 2369 | 1908 | `School.` | `Schools.` | Featherstone was a great assistant director to Freedom School. And he was the operative director because, what's |
+| 2694 | 2100 | `Theatre` | `Theater` | a white witnesses. And we rented the National Theatre in Washington. We contacted a lot of prominent |
+| 2955 | 2214 | `Jim` | `Jimmy` | bootlegs because the stores were in open. And Jim got to swing over it and says, well, |
+| 2965 | 2220 | `Jim` | `Jimmy` | None of us were there for God and Jim never did. So when his woman says, you |
+| 3143 | 2334 | `Devine` | `Divine` | recruited Mrs. Hamer, Mrs. (Victoria) Gray, Mrs. Annie Devine to run in the second district, the third |
+| 3196 | 2361 | `Joseph` | `Joe` | we're going to go challenge the election. Now, Joseph Rauh, who is UAW general counsel and ADA |
+| 3217 | 2370 | `Joseph` | `Joe` | of currency people understood it. So, even without Joseph Rauh's considerable influence, and his happen written the |
+| 3225 | 2376 | `Joseph` | `Joe` | apolitical, didn't understand patronage and responsibility, or irresponsible. Joseph Rauh felt that very strong. I remem |
+| 3240 | 2384 | `Joseph` | `Joe` | that was, that was my first conversation with Joseph Rauh. My first conversation with Joseph Rauh should |
+| 3241 | 2385 | `Joseph` | `Joe` | conversation with Joseph Rauh. My first conversation with Joseph Rauh should have talked about what Ben 3 |
+| 3280 | 2408 | `Joseph` | `Joe` | to do? And then somebody says, call up Joseph Rauh. So who the hell is Joseph Rauh? |
+| 3282 | 2409 | `Joseph` | `Joe` | up Joseph Rauh. So who the hell is Joseph Rauh? This was earlier, you know, when I |
+| 3299 | 2421 | `Joseph` | `Joe` | I should have paid close attention to what Joseph Rauh said to me. I said, well, Mike, |
+| 3308 | 2428 | `Joseph` | `Joe` | perpetrator to be from the district government was Joseph Rauh's man. Whoever told me and gave me |
+| 3311 | 2429 | `Joseph` | `Joe` | gave me the number to call him was Joseph Rauh's man. And what he wanted was patronage, |
+| 3333 | 2451 | `Joseph` | `Joe` | Mitchell Jr. The general executive secretary is always Joseph Rauh. The red here, the leader who represents |
+| 3492 | 2565 | `Will` | `Wilt` | old school, was perfectly capable of not seeing Will Chamberlain if he rose from the floor. And |
+| 3547 | 2610 | `John` | `Jan` | for six o'clock that evening. And myself and John and some other volunteers stood outside the door |
+| 4037 | 3007 | `Andrew` | `Andy` | in Farma would say it for CORE. And Andrew Young called me up. In fact, he called |
+| 4114 | 3097 | `Joseph` | `Joe` | obviously in great disarray. And the leadership of Joseph Rauh and Clarence Mitchell Jr were completely scattered |
+| 4128 | 3109 | `Joseph` | `Joe` | into a vacuum to take over because obviously Joseph Rauh and Mitchell were discredited to the NAACP |
+| 4212 | 3169 | `Rides` | `Riders` | a young Mississippi black man, when the Freedom Rides had finally come free from Alabama, his head |
+| 4225 | 3174 | `Rides` | `Riders` | it to the bus station when these Freedom Rides come and watch you film up completely. And |
+| 4237 | 3178 | `Rides.` | `Riders,` | the bus station to meet up the Freedom Rides. Which is when I think the single most |
+| 4249 | 3183 | `Rides` | `Riders` | with the Freedom Rides, with the black Freedom Rides as the white ones walked into the black, |
+| 4257 | 3188 | `Rides` | `Riders` | sent the Freedom Rides someplace else. The Freedom Rides had some modest protection because after all the |
+| 4362 | 3293 | `Sidney` | `Sid` | oh my God, I got a letter from Sidney Kaplan offering me a fellowship, but they threw |
+| 4400 | 3327 | `Andrew` | `Andy` | wasn't even from Dr. King. It was from Andrew Young, calling for Dr. King to clarify something |
+| 4421 | 3345 | `Lawrence` | `Clarence` | I walked into the room and there is Lawrence Mitchell, Pufferman Hoffen. And he's saying, yes, I |
+
+### Rick Tuttle
+
+_28 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 202 | 224 | `Tuttle` | `Tuttle's` | the joke was, oh my god, coach, it's Tuttle shooting hand. They put me in the games |
+| 204 | 226 | `Tuttle` | `Tuttle's` | the games anyway, I had a ball. It's Tuttle shooting hand, the coach said, so what? And |
+| 329 | 302 | `Corrill,` | `Corwin,` | Angeles, former United States Attorney. He and Bruce Corrill, along with a man named Paul Cable, who's |
+| 339 | 307 | `Corrill` | `Corwin` | for the issue, never anything else. And Bruce Corrill and Stephen S. Trott are two of the |
+| 410 | 335 | `NSA,` | `NSAer,` | and they thought of me as a fellow NSA, having had this background, and so on. I |
+| 494 | 357 | `Norman` | `Norm` | perspective. I better do it. And I asked Norman about it, we sometimes have a graham crackers |
+| 618 | 385 | `Mississippi.` | `Mississippian.` | in Los Angeles. But he's originally a native Mississippi. So none of them. And I showed up. |
+| 784 | 414 | `Karl` | `Carl` | New York Times at the time and also Karl Fleming at Newsweek. Well, we divided up calls |
+| 921 | 444 | `Andrew` | `Andy` | we could go and get them bailed out. Andrew Young flew in. Andrew Young actually drove in. |
+| 1004 | 465 | `William,` | `Williams,` | walked back, we talked about it. Wesley and William, small colleges, common ground, and so on. When |
+| 1015 | 469 | `Iyer,` | `Ayer,` | And also a man named Youngman, named Joe Iyer, who was 19 or so a student at |
+| 1168 | 562 | `Andrew` | `Andy` | the National Guard. A day or so later, Andrew Young, Andrew Young and James Bevel, James Bevel, |
+| 1192 | 578 | `Andrew` | `Andy` | me up. That's one thing. They picked up Andrew Young and James Bevel. They picked up two |
+| 1493 | 822 | `Emily` | `Emily's` | Haven, that, you know, Fred Toddle, Fred Mary, Emily Son, is in jail down there in Savannah, |
+| 1495 | 824 | `Waxler,` | `Wexler,` | Savannah, and so on, the word reached Izzy Waxler, who was head of the Anti-Defamation League, a |
+| 1524 | 852 | `Buchsbaum,` | `Bushbaum,` | good friend of the family, and reached Aaron Buchsbaum, who was an attorney in Savannah, starting a |
+| 1537 | 860 | `Buchsbaum,` | `Bushbaum,` | so a Sally, and co-incidently, also reached Aaron Buchsbaum, had a person reach Aaron Buchsbaum, someone who |
+| 1538 | 861 | `Buchsbaum,` | `Bushbaum,` | reached Aaron Buchsbaum, had a person reach Aaron Buchsbaum, someone who said, well, Aaron, this isn't my |
+| 1540 | 865 | `Buchsbaum` | `Bushbaum` | our conversations at law school. Turned out, Aaron Buchsbaum and Dr. William "Bill" Waxler were, uh, family |
+| 1542 | 865 | `Waxler` | `Wexler` | Turned out, Aaron Buchsbaum and Dr. William "Bill" Waxler were, uh, family members who marriage in Savannah, |
+| 1545 | 867 | `Buchsbaum` | `Bushbaum` | family members who marriage in Savannah, and Aaron Buchsbaum agreed to represent me, and William Waxler to |
+| 1546 | 868 | `Waxler` | `Wexler` | Aaron Buchsbaum agreed to represent me, and William Waxler to put up his property, that a stranger |
+| 1565 | 883 | `Buchsbaum` | `Bushbaum` | uh, it turned out that when, um, Aaron Buchsbaum came and it represented me, and he said, |
+| 1598 | 906 | `Buchsbaum` | `Bushbaum` | I could trust my own judgment, but Aaron Buchsbaum also saw it with somewhat more independent eye, |
+| 1609 | 912 | `Buchsbaum` | `Bushbaum` | Was it just that I saw it, Aaron Buchsbaum saw it, independent of me, contacted my folks |
+| 1655 | 947 | `Frank` | `Francis` | and this lady had married a man named Frank Cherry, Frank Cherry. Frank Cherry went on to |
+| 1702 | 987 | `Waxler,` | `Wexler,` | to Mr. Aaron Buchsbaum, Aaron Buchsbaum, and Mr. Waxler, and whether I was here, went to another |
+| 1974 | 1229 | `Controller.` | `Comptroller.` | was elected four terms as Los Angeles City Controller. And some of the fights we were engaged |
+
+### Reginald Robinson
+
+_20 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 330 | 299 | `Willie"` | `Willy` | one time. His name is Mr. William "Little Willie" Adams. He came to our rescue in terms |
+| 355 | 320 | `Marcia,` | `Marsha` | the (Baltimore) Afro-American newspaper family and her daughter, Marcia, were also a big influence in my getting |
+| 457 | 362 | `Beaman's` | `Beeman's?]` | went back to Atlanta and gathered at BB Beaman's and made the decisions of what we were |
+| 480 | 370 | `Angela` | `Angie` | blinded kill steam and there's Peggy Dammon there's Angela Butler. And we were joined by Bill Hansen |
+| 486 | 372 | `Crisfield,` | `Crestview,` | mouth folk. The intentions was to go to Crisfield, Maryland sit in at the governor and then |
+| 488 | 372 | `Crisfield,` | `Crestview,` | the governor and then Governor Tawes restaurant in Crisfield, Maryland. This is at Christmas time 61 and |
+| 664 | 492 | `Hansen.` | `Hansen's.` | And his credentials was much different than Bill Hansen. He was not trying to hide. But the |
+| 830 | 616 | `Cleveland` | `Cleve` | sneak people in here. And this is before Cleveland gets shot and everything else. We don't want |
+| 1065 | 884 | `Bascom.` | `Bascomb` | students. And then there was people like Reverend Bascom. And Reverend Vernon Dobson and Reverend Frank Williams. |
+| 1253 | 1089 | `Bobby` | `Bobbie` | story. I mean, Judy is a wonderful person. Bobby Yancy, you know, when we first learned how |
+| 1453 | 1365 | `Don` | `Donald` | a man out there by the name of Don Warden. I said, okay, then I told Tim |
+| 1457 | 1368 | `Don` | `Donald` | okay. Look him up. So I looked up Don Warden. I got with Don Warden and then |
+| 1458 | 1369 | `Don` | `Donald` | I looked up Don Warden. I got with Don Warden and then I met him as his |
+| 1588 | 1512 | `Bobby` | `Bobbie` | that project and we came on back and Bobby gave me the option to meet her in |
+| 1711 | 1633 | `Edgel,` | `Edgehill` | in Atlantic City by the name of Reggie Edgel, and all of a sudden, we started getting |
+| 1785 | 1718 | `Gwen` | `Glen` | in McComb, in which we did. That's how Gwen Green and Travis Britt, and Ruby Doris Smith |
+| 2130 | 2107 | `Parks` | `Park` | on, they didn't find out that he owned Parks Sausage Co. You know what Parks Sausage Co |
+| 2132 | 2108 | `Parks` | `Park` | he owned Parks Sausage Co. You know what Parks Sausage Co is? Parks Sausage Co is a |
+| 2134 | 2108 | `Parks` | `Park` | Co. You know what Parks Sausage Co is? Parks Sausage Co is a sausage that's been out |
+| 2150 | 2116 | `Theatre,` | `Theater` | down to Pikesville MD. He owned a Royal Theatre, which was all a part of the Chitlin' |
+
+### Lisa Anderson Todd
+
+_19 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 46 | 66 | `Fannie` | `Fanny` | that went to Ruleville and had dinner at Fannie Lou Hamer's home. And she told the story |
+| 116 | 164 | `Schutt,` | `Shut,` | status of the civil-pending civil rights bill. Jane Schutt, a remarkable white woman from Jackson, Mississippi, was |
+| 163 | 210 | `Fannie` | `Fanny` | Who is this? I had no idea who Fannie Lou Hamer was. So what was it like? |
+| 288 | 362 | `Vail,` | `Vale` | and quickly made when I came home, Pat Vail, and I traveled by bus from Greenville to |
+| 301 | 382 | `Sheffield` | `Sheffland` | in high school from a wonderful family, the Sheffield family, and Short Hills, her younger sister Nancy |
+| 303 | 383 | `Sheffield` | `Sheffland` | mother, I think, spent time talking to Mrs. Sheffield and comparing notes and... So we kind of |
+| 371 | 460 | `Trotman,` | `Troutman,` | team, one black and one white, and Pam Trotman, I think I went with often. She was |
+| 494 | 689 | `Chappell,` | `Chapel,` | conducted. Because there was a local man, Mr. Chappell, who was active in the Democratic Party. I |
+| 507 | 710 | `Rollins,` | `Rowlins` | volunteers and Pat knew her quite well. Willie Rollins, I believe, was elected then. I can't think |
+| 525 | 734 | `Fannie` | `Fanny` | place. And they came in on Sunday and Fannie Lou Hamer led the singing. And it was |
+| 615 | 848 | `Student` | `Student's` | instigated by the local chapter of the Mississippi Student Union, the high school students. And they wanted |
+| 702 | 945 | `Nishani` | `Neshani` | work, isn't it? But his daughter, I think, Nishani Frazier, is at Miami University and she's been |
+| 710 | 955 | `Sen.` | `Senator` | was there and she was saying hello to Sen. Paul Simon. I remember that. That's when I |
+| 864 | 1062 | `McLemore` | `Macklemore,` | workers like Frank Smith, Reggie Robinson, and Leslie McLemore who were working out of the Washington office |
+| 868 | 1064 | `Fannie` | `Fanny` | the most effective part of that hearing was Fannie Lou Hamer's testimony". He argued and obtained the |
+| 1081 | 1171 | `Students` | `Student` | was a second year law student. the Law Students Civil Rights Research Council I got involved with |
+| 1086 | 1173 | `Danner` | `Danaher` | about exam time I was invited by James Danner to his office to talk about Mississippi because |
+| 1156 | 1191 | `Students` | `Student` | I was an employee directly of the Law Students Civil Rights Research Council I never I never |
+| 1187 | 1196 | `Vicki` | `Vicky` | general counsel's office. I think my close friend Vicki Popkin was I think she was working in |
+
+### Clarence B. Jones
+
+_18 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 757 | 304 | `Bert,` | `Burt` | owned the village gate, nightclub, and his brother, Bert, owned the nightclub with him except Bert went |
+| 758 | 304 | `Bert` | `Burt` | brother, Bert, owned the nightclub with him except Bert went to medical school to John Hopkins. So, |
+| 761 | 305 | `Bert` | `Burt` | So, while, while Art was running the nightclub, Bert was in medical school to John Hopkins. But |
+| 1047 | 404 | `Ann` | `Anne` | woman in like five years. And she was Ann Norton. Ann Norton had gone to Sarah Lawrence. |
+| 1048 | 404 | `Ann` | `Anne` | like five years. And she was Ann Norton. Ann Norton had gone to Sarah Lawrence. And when |
+| 1055 | 407 | `Theatre` | `Theater` | New York now working for the American National Theatre Company. What's that? What's, you know, an American |
+| 1057 | 407 | `Theatre` | `Theater` | What's that? What's, you know, an American National Theatre Company? What are you doing? What are you |
+| 1070 | 409 | `Theatre` | `Theater` | she says, well, you know, the American National Theatre is having our annual thing on Broadway. Would |
+| 1074 | 410 | `Theatre` | `Theater` | sure. So I go to the American National Theatre Company's production of Dam Yankees, okay? Gwen Verden, |
+| 1105 | 420 | `Romare` | `Romy` | UCLA at one point. One of the before Romare Bearden and Romare Bearden and one of the |
+| 1108 | 420 | `Ann.` | `Anne,` | was the best man at my wedding to Ann. And Fran Barrett was, I guess, the maid |
+| 1109 | 420 | `Ann.` | `Anne.` | was, I guess, the maid of honor to Ann. We were, we were getting very good friends. |
+| 1116 | 423 | `Ann` | `Anne` | a wedding cake and all of that. When Ann and I were dating, I learned, I mean, |
+| 1127 | 425 | `Daniel` | `Daniël` | an international banker from Holland. His name is Daniel H. Crena de Iongh, C-R-E-N-E-A, small D-E, capital |
+| 1282 | 473 | `Patrician.` | `Patricia,` | had the most love was a Sister Mary Patrician. And she said to me, she made me |
+| 1384 | 516 | `Revue` | `Review` | have a friend who's a general counsel of Revue Productions, but a name of Leslie Scharlaw. And |
+| 1720 | 692 | `Phil` | `Philip` | consent, and what tip the discussion was a Phil Randolph. Because yes, I think that, I think |
+| 1906 | 803 | `Joseph` | `Joe` | called the Omega Boys Club. And by Dr. Joseph Marshall Jr, he recognizes this. He recognizes that |
+
+### Charles McLaurin
+
+_16 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 153 | 120 | `Robinson.` | `Robertson.` | Marisee Jones Elementary School and of course Smith Robinson. I didn't go to that school but a |
+| 708 | 329 | `Levin` | `Levon` | get and one was James Jones, Ralph Floyd, Levin Brown and a guy by the name of |
+| 1337 | 699 | `Levin` | `Levon` | met there with Sam Block and Sam Block, Levin Brown, maybe Willett Peacock, I'm not sure whether |
+| 1340 | 699 | `Levin` | `Levon` | sure whether Peacock come in later, but anyway Levin Brown from Jackson, one of my friends who |
+| 1359 | 705 | `Barnes` | `Barnes's` | a SNCC office on the second floor of Barnes studio and so Sam did that. And when |
+| 1373 | 708 | `Levin` | `Levon` | run out of that office and Sam and Levin Brown and whoever else was there with their |
+| 1479 | 737 | `Tri-State` | `Tristate` | had helped him by setting him up with Tri-State Bank of Memphis. And because the banks wouldn't |
+| 1653 | 779 | `Williams` | `William` | there was a mass meeting being held at Williams Chapel M.B. Church in Ruleville, Mississippi of that |
+| 2697 | 1091 | `Randolph` | `Randy` | near Greenwood on his way with Bob and Randolph Blackwell in the car. And when Jim and |
+| 2715 | 1094 | `Cleveland` | `Cleve` | doors were opened. And Sam then met with Cleveland Jordan, the father of David Jordan, David Jordan, |
+| 2722 | 1096 | `Doar,` | `Dorr,` | with the Justice Department and they sent John Doar, a Justice Department attorney, investigator down. And Doerl |
+| 3246 | 1425 | `Hamer,` | `Hamer-and` | when Dr. King killed. But you and Miss Hamer, not just you and Miss Hamer, but I |
+| 3300 | 1448 | `Joseph` | `Joe` | took place between Hubert H. Humphrey, Walter Mondale, Joseph Rauh Jr, Walter Reuther, Dr. Aaron Henry, Rev. |
+| 3442 | 1485 | `Jenkins,` | `Jenkin,` | is strong, freeing here in Indiana, and Eunice Jenkins, our freeing. These are people employed in the |
+| 3447 | 1486 | `Jenkins` | `Jenkin,` | loved work with me as the same. Eunice Jenkins and I, Jim is strong, drove to Maxwelline |
+| 3633 | 1558 | `Bannerman` | `Beneman` | was the director of Delta Ministry. And Charles Bannerman was the president and CEO of MACE (Mississippi |
+
+### Ladners
+
+_15 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 14 | 5 | `Dorie` | `Doris` | and privileged today to have with us Miss Dorie Ann Ladner. Dory. And Dr. Joyce Ann Ladner, |
+| 61 | 39 | `Joace,` | `Joyce` | Parish, Louisiana, he couldn't attend. So my sister, Joace, worked in the March on Washington office coordinating |
+| 79 | 47 | `Joace` | `Joyce` | wanted to change John's speech. But I'll let Joace talk about that because she was involved back |
+| 92 | 57 | `Joace,` | `"Joyce,` | from Ruby Doris Smith Robinson and Rubidys said, Joace, Medgar Evers has been killed. And I said, |
+| 234 | 159 | `Barrett,` | `Barry` | was later my roommate at Tougaloo, and Joyce Barrett, who worked with SNCC in Southwest Georgia, and |
+| 1078 | 892 | `Joe,` | `Joyce` | but the people around us. And when we, Joe, and I would hear this, and we want |
+| 1259 | 1056 | `Dave` | `Dave's,` | him to his car and talked about him. Dave is a mixed heritage. He discussed that with |
+| 1496 | 1245 | `Barry,` | `Berry,` | Megas office, and Tom Hayden, Charles McDew, Marion Barry, John Lewis, Dion Diamond, all these young people |
+| 1728 | 1384 | `Sellers'` | `Sellers's` | we stopped in Denmark, South Carolina, at Cleve Sellers' parents' home. And we showered, changed, and his |
+| 2021 | 1515 | `Hartman` | `Hartmann` | And I was assigned with Mr. and Mrs. Hartman Turnbow. Mr. Turnbull, we always called his wife |
+| 2104 | 1557 | `Willard` | `Woulard` | going into cemeteries looking for a Benjamin F. Willard who was born in 1805 and rocking him |
+| 2107 | 1558 | `Willard,` | `Woulard,` | And we didn't find what we found Benjamin Willard, Jr. who was in the Confederate war. And |
+| 2108 | 1559 | `Willard` | `Woulard` | that both sides get collected was that Benjamin Willard had around 11 children, no, 13. And five, |
+| 2123 | 1563 | `Willard` | `Woulard` | born 1825. And our great-grandfather was born, Jerry Willard was born in 1870, around 1869, 1870. And |
+| 2126 | 1564 | `Willard.` | `Woulard.` | was a father of my grandfather, Joseph Collins Willard. And Joseph Collins will marry Martha Gates. And |
+
+### Lawrence Guyot
+
+_15 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 263 | 232 | `Andrew` | `Andy` | a national celebrity. She becomes a woman who Andrew Young takes to meet with Senator Frank Church |
+| 367 | 299 | `Lot,` | `Lott,` | in the Leflore County. I said, well, Mr. Lot, I understand we got them coming down and |
+| 481 | 394 | `Andrew` | `Andy` | happened. I just didn't know who. And then Andrew Young, James Bevel, and Frank Smith come to |
+| 493 | 400 | `Galler,` | `Goller` | two things that saved our lives. One, Roberta Galler, and other people from across the country start |
+| 786 | 592 | `Tom` | `Thomas` | Bevel was there. Diane Nash Nash was there. Tom Gaither was there. Paul Brooks was there. Dory |
+| 790 | 598 | `LeVon` | `Lavon` | was there. Moses was there. I was there. LeVon Brown was there. And what it served as |
+| 812 | 610 | `Ford,` | `Forwood` | Jerry Ford, Mr. Ford, who later becomes President Ford, because his bishop called him and said, you |
+| 882 | 647 | `Hodding` | `Harding` | Harry Bruin, myself, met with Charles Evers and Hodding Carter III. And they looked at the names |
+| 1000 | 708 | `Medgar` | `Edgar` | that was NAACP-led. He worked very closely with Medgar Evers and he worked very closely with Rev. |
+| 1103 | 763 | `Forrest` | `Forest` | in Forrest County, Mississippi. He's the registrar in Forrest County, Mississippi. He takes to position that he's |
+| 1127 | 777 | `Judges` | `Judge` | Doerr, when they're trying Theron, introduces me to Judges Brown, Tuttle, and Bell. The Fifth Circuit Court |
+| 1155 | 803 | `Andrew` | `Andy` | things worse than that. Griffin Bell said to Andrew Young, don't testify against Bork. And of course, |
+| 1158 | 804 | `Andrew` | `Andy` | against Bork. And of course, as you know, Andrew Young, too, is credit testified against Bork. No, |
+| 1183 | 817 | `MFDP.` | `NFDP.` | to Washington, set up an office for the MFDP. Well, he starts up from what he does. |
+| 1307 | 902 | `Hart` | `Harp` | get it for you is a guy named Hart Davis at the University of Southern Florida. I |
+
+### William G. Anderson
+
+_14 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 115 | 55 | `Airmen` | `Airman` | the military. I would have been a Tuskegee Airmen if they'd taken me. But since I couldn't |
+| 481 | 204 | `D'Aderian` | `Dederian` | was a group of surgeons at Finosibatic Hospital. D'Aderian was a key one. Slocke of D'Aderian. He |
+| 486 | 205 | `D'Aderian.` | `Dederian.` | practice. His partner was named Taviner. Taviner and D'Aderian. They said we don't want you to bury |
+| 500 | 210 | `Bird` | `Bud` | my wife in one of these conversations with Bird and Ginger Edwards. She says, we're going to |
+| 503 | 210 | `Bird` | `Bud` | we're going to go back and talk to Bird and Ginger again. You want to stay here |
+| 511 | 215 | `Bird` | `Bud` | was going back. So we were talking with Bird and Ginger Edwards. They sent me to another |
+| 515 | 216 | `Bird` | `Bud` | the last time I went to talk to Bird and Ginger they said pack your bag. You're |
+| 728 | 316 | `Kelly` | `Kelley` | anything but they would meet with you. Asa Kelly was the mayor. And Asa Kelly was stretching |
+| 729 | 317 | `Kelly` | `Kelley` | you. Asa Kelly was the mayor. And Asa Kelly was stretching a little bit. He was probably |
+| 733 | 321 | `Kelly` | `Kelley` | that demanded that they not do anything. Asa Kelly on occasion had me to come to his |
+| 1234 | 808 | `Elliott.` | `Elliot.` | frankly, the hostel local federal judge. J. Robert Elliott. Exactly. Robert Elliott. I know. He issues an |
+| 1235 | 810 | `Elliott.` | `Elliot.` | local federal judge. J. Robert Elliott. Exactly. Robert Elliott. I know. He issues an injunction, I mean, |
+| 1345 | 928 | `Kelly,` | `Kelley,` | he was basically a decent man as was Kelly, but trapped. So you think it's interesting. So |
+| 1360 | 939 | `Connor` | `Conner` | perpetrate any violence against the people because Bull Connor set the example that this is the last |
+
+### Ben Caldwell
+
+_13 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 7 | 14 | `Klein.` | `Cline.` | Library of Congress. The interviewer today is David Klein. Our videographer is John Bishop and we are |
+| 28 | 27 | `Seminar.` | `Seminars.` | in Philadelphia and also in Robert Flaherty Film Seminar. And I got to see the The Land |
+| 78 | 63 | `Pancho` | `Poncho` | the United States that came in. And that Pancho Villa, Geronimo, Cochise, the Butterfield Overland Mail. All |
+| 102 | 79 | `Pancho` | `Poncho` | bunch of people who were like, you know, Pancho Villa and Zapata were the Latino people that |
+| 739 | 474 | `Clarke` | `Clark` | package together where it was like what Shirley Clarke had taught us about using media in a |
+| 894 | 562 | `Klein` | `Cline,` | I used to co-teach a class with Norman Klein and he calls California the history of forgetting. |
+| 1066 | 657 | `I-Phresh` | `I-Fresh.` | understanding it so we ended up calling it I-Phresh and so and I blended it with the |
+| 1227 | 741 | `Rastafarians` | `Rastas` | lot of the, there wouldn't have been the Rastafarians without it. Because they were able to whip |
+| 1241 | 749 | `I-Phresh,` | `I-Fresh,` | and I started writing. And so then the, I-Phresh, the Nubian was really about young people who |
+| 1395 | 850 | `Clarke,` | `Clark,` | that celebrate Africa in a prideful way? Shirley Clarke, the thing that she said after she saw |
+| 1501 | 918 | `Pacific` | `Pac` | a private own when it isn't owned by Pacific Bell. So we could hack it and get |
+| 1524 | 928 | `Cuban` | `Cubans,` | concept is regeneration and this is regeneration to Cuban I mean to Brazilians is to have a |
+| 1828 | 1249 | `Marcyliena` | `Marcelina` | studying with it because I have this friend Marcyliena Morgan that ended up doing a study on |
+
+### Emmett W. Bassett and Priscilla Tietjen Bassett
+
+_13 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 111 | 71 | `Dotson.` | `Dodson,` | brought his cousin up. Her name was Ida Dotson. And she had gone to school at Chestnut |
+| 116 | 76 | `Dotson,` | `Dodson,` | father had gone to. And this teacher, Ida Dotson, had gone to him too. So she felt |
+| 132 | 89 | `Bassett,` | `Bassetts,` | maybe Tennessee, a few from Tennessee. And the Bassett, the white Bassett and my grandfather was given |
+| 133 | 89 | `Bassett` | `Bassetts,` | few from Tennessee. And the Bassett, the white Bassett and my grandfather was given to the Bassett's |
+| 135 | 89 | `Bassett's` | `Bassetts'` | Bassett and my grandfather was given to the Bassett's father when he married a daughter. He married |
+| 138 | 92 | `Bassett's.` | `Bassetts.` | was a Turner. But he stayed with the Bassett's. They didn't put him out in the little |
+| 153 | 101 | `Bassett's,` | `Bassetts,` | what some of those families told me, the Bassett's, that he knew more and more history than |
+| 167 | 108 | `Bassett's` | `Bassetts` | through to me as a kid that the Bassett's were going to get $6 million from the |
+| 457 | 395 | `Carver` | `Carver's` | And I only worked at Dr. George Washington Carver Place for about 12 years. 12 hours a |
+| 1190 | 1160 | `Stanley` | `Stan` | used to come up every week. You mean Stanley Levison... Stanley Levison. Stanley Levison. Yeah, I keep |
+| 1191 | 1161 | `Stanley` | `Stan` | come up every week. You mean Stanley Levison... Stanley Levison. Stanley Levison. Yeah, I keep thinking of |
+| 1192 | 1162 | `Stanley` | `Stan` | every week. You mean Stanley Levison... Stanley Levison. Stanley Levison. Yeah, I keep thinking of him. Stan. |
+| 1650 | 1764 | `Douglass'` | `Douglass's` | noted that you were much motivated by Frederick Douglass' observation that without struggle, there is no progress. |
+
+### Linda Fuller Degelmann
+
+_13 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 51 | 74 | `Huntingdon` | `Huntington` | up a law practice in Montgomery. I attended Huntingdon College, which was, I think, all white at |
+| 67 | 98 | `MacDonald` | `McDonald` | to Klan rallies to speak on behalf of MacDonald Gallion. They never were members of the Klan. |
+| 86 | 118 | `Rides,` | `Ride.` | see the beatings that occurred from the Freedom Rides, but of course I heard them talk about |
+| 119 | 148 | `Durgan,` | `Durgin,` | with at Broadway United Church of Christ, Dr. Durgan, was on the board of Tougaloo College. And |
+| 129 | 153 | `Durgan` | `Durgin` | started Southern Poverty Law Center. And so, Dr. Durgan said, well, I'm on the board for to |
+| 137 | 157 | `Durgan` | `Durgin` | ourselves in the New York City area. Dr. Durgan provided an office for Millard (Dean) Fuller to |
+| 437 | 416 | `Browne` | `Brown` | can remember hearing about a story of Conrad Browne was walking down the street with a guy. |
+| 648 | 708 | `Carter` | `Carters` | was over in planes. Of course, where the Carter still lived. Yeah, there was secret service in |
+| 814 | 877 | `Johns` | `John's` | were starting work in Appalachia. Those were on Johns Island, South Carolina, where there was a lot |
+| 990 | 983 | `Huntingdon` | `Huntington` | we actually started meeting in the chapel of Huntingdon College. They let us use that on Sunday |
+| 997 | 986 | `Allen` | `Al` | like, oh, well, we eventually hired one. But Allen Henry was one of our visiting ministers until |
+| 1188 | 1068 | `Rides?` | `Ride?` | back to that same incident with the Freedom Rides? I never asked him that question, but I |
+| 1236 | 1101 | `Carter,` | `Carters,` | have grandchildren. I've heard similar things from the Carter, Jimmy and Roslyn Carter, how they would relate |
+
+### Timothy Jenkins
+
+_13 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 7 | 11 | `Philadelphia.` | `Philadelphians.` | your family? My mother and father were long-term Philadelphia. My father originated from Richmond, Virginia. And my |
+| 166 | 177 | `College.` | `College-Holloway,` | who's now the dean of students at Yale College. John Holloway, Jonathan Holloway, on the history of |
+| 170 | 180 | `Bunche.` | `Bunch,` | professors. E. Franklin Frazier, he was a Ralph Bunche. And there was a Samuille Harris, the famous |
+| 213 | 219 | `Howard` | `Howards` | man among boys. But my association with the Howard continued after my graduation because the year following |
+| 407 | 308 | `Capahosic,` | `Cappahosic,` | of focus meeting that was held at the Capahosic, Virginia, in which the Kennedy administration operatives were |
+| 433 | 323 | `Charles` | `Charlie` | education campaign. And at that conference we had Charles Jones, Charles Surrod and Chuck McDew as participant |
+| 491 | 354 | `Taconic` | `Laconic` | was supported by the New World Foundation, the Taconic Foundation. It may have had some Ford money. |
+| 576 | 406 | `Maestra` | `Madres` | being like a Che Guevara in the Sierra Maestra that would come back to re-establish SNCC if |
+| 647 | 432 | `Charles` | `Charlie` | city called Deal. Chuck McDew, Charles Sharad and Charles Jones and I were driving in this old |
+| 653 | 435 | `Charles` | `Charlie` | McDew and I didn't want to pay anything. Charles Jones and Charlie Sharad wanted to pay something. |
+| 886 | 571 | `Auto` | `Automobile` | captured in leaflets and handouts by the United Auto Workers (UAW) and the United Auto Workers (UAW) |
+| 915 | 586 | `Ole` | `Old` | he was a native born, Mississippi, went to Ole Miss and was also a Harvard Law graduate. |
+| 1064 | 684 | `WHUT-TV,` | `WHUT,` | exclude. I helped put together the broadcast station, WHUT-TV, which is the only full commercial station that |
+
+### Dorothy Zellner
+
+_12 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 285 | 345 | `Angeline` | `Angie` | think of the last name. Stevens, exactly. And Angeline Butler. Angeline Butler was in that group from |
+| 286 | 346 | `Angeline` | `Angie` | the last name. Stevens, exactly. And Angeline Butler. Angeline Butler was in that group from Nashville. That's |
+| 320 | 386 | `Angeline` | `Angie` | the name of which I can't remember, but Angeline Butler remembered. And they wouldn't serve us. You |
+| 633 | 870 | `Leslie` | `Les` | of the SID and movement. Heavily edited by Leslie Dunbar, of course, and I think appropriately so. |
+| 738 | 1013 | `James` | `Jane's` | exactly. And Julian was Jane. Julian Bond. And James brother. And we started right away working on |
+| 1099 | 1412 | `Our` | `Your` | And here he was singing With God on Our Side". I mean, I don't know what people |
+| 1183 | 1512 | `Leslie` | `Les` | immoderate pleasure in introducing my daughter, Margaret, to Leslie Dunbar. And saying, this is the man who |
+| 1543 | 1870 | `Norman?` | `Forman?` | you were close to in the SNCC, like Norman? Well, my overriding impression of those years was |
+| 1544 | 1871 | `Norman` | `Forman` | my overriding impression of those years was that Norman was in deep psychic distress. Let's see, his |
+| 1679 | 1991 | `Ann` | `Anne` | could to smear the civil rights movement. So Ann was a survivor of this, and Miss Baker |
+| 1682 | 1991 | `Ann` | `Anne` | ever, they ever thought of calling her, but Ann was always in danger of being called. And |
+| 2035 | 2182 | `Katherine` | `Catherine` | was, she was a complicated character. I did. Katherine Ruby Zellner. And also, I left her father's |
+
+### Eddie Holloway
+
+_12 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 10 | 12 | `Gibson` | `Jimison` | and father, Beatrice Holloway. Actually, she was a Gibson before she moved from York, Alabama and my |
+| 100 | 90 | `Royal` | `Rowan` | there through nine years and then went to Royal High School, located on Royal Street, but later |
+| 107 | 99 | `Teachers` | `Teacher's` | Mrs. Sip, who was president of the Mississippi Teachers Association, lived across the street. There was an |
+| 122 | 108 | `Teachers` | `Teacher's` | that don't know. And I think the Mississippi Teachers Association was primarily African Americans. I remember being |
+| 146 | 132 | `Mount` | `Mt.` | grade teacher, was a Sunday School teacher at Mount Carmel Baptist Church. Throughout the course of my |
+| 266 | 282 | `Penney` | `Penney's` | in something magazine. I don't know what JC Penney or Sears, they would see combination of yellow |
+| 294 | 312 | `Mays.` | `Mays's.` | the Say Hey Burger restaurant. That was Willie Mays. They would take me to the Birmingham Black |
+| 296 | 313 | `Barons` | `Barons's` | They would take me to the Birmingham Black Barons stadium where Willie Mays and others played. They |
+| 421 | 447 | `Conner` | `Connor` | snippets of hot topics? I talked to Ms. Conner the other day and she said that, actually |
+| 427 | 451 | `Conner` | `Connor` | about that? I don't recall that. And Ms. Conner lived three doors for me. So I was |
+| 853 | 872 | `Kennard` | `Kennard's` | or whether he had a role in Clyde Kennard effort to come here. I'm not sure. I've |
+| 934 | 968 | `Conner` | `Connor` | this crossover with the interviews? I think Ms. Conner was a willing worker. She was hands and |
+
+### Esther M. A. Terry
+
+_12 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 299 | 421 | `Roslyn` | `Ros` | got to West Virginia to meet Roslyn's mother. Roslyn went home with me that very, very first |
+| 756 | 701 | `UNC-Chapel` | `Chapel` | you describe your ambition and your experience in UNC-Chapel Hill. I think I have a lot of |
+| 800 | 711 | `UNC-Chapel` | `Chapel` | my mom really pushed this idea. Go to UNC-Chapel Hill. Now this is after the Greensboro sit-ins |
+| 802 | 711 | `UNC-Chapel` | `Chapel` | all of that. So now it's go to UNC-Chapel Hill. I think my mom thought all right |
+| 807 | 712 | `UNC-Chapel` | `Chapel` | did say she wanted me to go to UNC-Chapel Hill. And she said, because you'll be nearer |
+| 808 | 712 | `UNC-Chapel` | `Chapel` | kind of proud that I would go to UNC-Chapel Hill. So I did. I went to UNC-Chapel |
+| 809 | 712 | `UNC-Chapel` | `Chapel` | UNC-Chapel Hill. So I did. I went to UNC-Chapel Hill. There's a funny story about UNC-Chapel Hill. |
+| 810 | 713 | `UNC-Chapel` | `Chapel` | to UNC-Chapel Hill. There's a funny story about UNC-Chapel Hill. I left here and I went to |
+| 812 | 714 | `UNC-Chapel` | `Chapel` | back, God read it to come back to UNC-Chapel Hill. She gave me my money. That was |
+| 816 | 715 | `UNC-Chapel` | `Chapel` | before I got home, I had called to UNC-Chapel Hill to ask to apply for graduate housing. |
+| 830 | 719 | `UNC-Chapel` | `Chapel` | white roommate. And there was a ruling at UNC-Chapel Hill at that time that that was not |
+| 849 | 727 | `UNC-Chapel` | `Chapel` | I managed to get a master's degree at UNC-Chapel Hill without much fanfare. The faculty and the |
+
+### Amos C. Brown
+
+_11 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 52 | 28 | `Revival.` | `Revivals.` | to Los Angeles to witness the Azusa Street Revival. My point being, by giving all this background |
+| 145 | 120 | `Carsie` | `Carsey` | not ride any bus in segregated emulation. And Carsie Hall, a letter carrier, and was an attorney. |
+| 233 | 206 | `Ezell` | `Ezella` | of Congress, there was a young man named Ezell Blair Jr, who was an alternate youth-gut delegate |
+| 332 | 326 | `Oliver` | `Olivet` | Moss, still alive, past the Maritus of the Oliver Baptist Church of Cleveland, Ohio, and Lonnie King, |
+| 369 | 379 | `Barber.` | `Barbour.` | a very close friend of Dr. J. Pius Barber. Dr. Barber was editor of the National Baptist |
+| 370 | 380 | `Barber` | `Barbour` | close friend of Dr. J. Pius Barber. Dr. Barber was editor of the National Baptist Voice, a |
+| 419 | 424 | `Nabrit.` | `Nabritt.` | the council and the mentorship of one James Nabrit. It was that team that went before the |
+| 474 | 466 | `Satchel,` | `Satchell,` | during reconstruction from Virginia. And he and Charles Satchel, the first black pastor of Third Baptist, were |
+| 484 | 473 | `Satchel,` | `Satchell,` | lawyer who labored along with my predecessor, Charles Satchel, for equality of opportunity. So I told all |
+| 525 | 499 | `Baptist,` | `Baptists` | I reminded them also, we would not be Baptist, if we did not have the freedom to |
+| 915 | 778 | `Baptist.` | `Baptists.` | policy and social justice commission of the Southern Baptist. That's the largest Protestant nomination in the nation. |
+
+### Audrey Nell Hamilton and JoeAnn Anderson Ulmer
+
+_11 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 15 | 11 | `Joanne` | `JoeAnn` | right. Mrs. Audrey Nell Edwards Hamilton, and Ms. Joanne Anderson Olmer, and Dr. Haillin is with us |
+| 125 | 102 | `Samuel` | `Sam` | my cotton. Joanne, myself, Willie Carl Singleton and Samuel White. And Dolores and Rosemary and Harris went |
+| 216 | 219 | `Joanne,` | `JoeAnn,` | to be still OK. So they came, took Joanne, myself, and Dolores, and Rosemary, and Harris will |
+| 344 | 376 | `King` | `King's` | even to bring Dr. King in because Dr. King movement did not start until three months after |
+| 501 | 512 | `Joanne,` | `JoeAnn.` | didn't want to talk about, like me and Joanne, me and Joanne talked about it because I |
+| 502 | 512 | `Joanne` | `JoeAnn` | talk about, like me and Joanne, me and Joanne talked about it because I was, experience was |
+| 665 | 637 | `Joanne,` | `JoeAnn,` | going to give you and your young friend, Joanne, a relaxing, a relaxing time at my home |
+| 682 | 648 | `Joanne,` | `"JoeAnn,` | being on a plane. We were, I said, Joanne, look at that. We walking out, like the |
+| 888 | 831 | `Kingsville.` | `Gainesville.` | Jacksonville. I have a son. He stays in Kingsville. So they grown. But I raised him here. |
+| 1022 | 966 | `Joanne` | `JoeAnn` | your thoughts over there to yourself and after Joanne left the room. I always say you probably |
+| 1023 | 967 | `Joanne's` | `"JoeAnn's` | the room. I always say you probably say Joanne's a good old, you know what? But it's |
+
+### D'Army Bailey
+
+_11 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 77 | 37 | `Students` | `Student` | black and half white, sponsored by the National Students Association. And we were studying race issues, and |
+| 261 | 179 | `Sugarmon,` | `Sugarman,` | of the leading Black businessmen and also Russell Sugarmon, who ran for the Commission of Public Works. |
+| 440 | 317 | `Students` | `Student` | the National Convention of the United States National Students Association as one of the two delegates from |
+| 900 | 558 | `Student` | `Students` | others. And the idea with the LSCRRC Law Student Civil Rights Research Council was that the lawyers |
+| 999 | 651 | `Hurder,` | `Herder,` | were on strike. And the first suspect, Alex Hurder, I think, was his name. He is now |
+| 1023 | 672 | `Philip` | `Phil` | go out to work with Cummins Engine Foundation. Philip Sorensen and had made me... and offered me |
+| 1128 | 741 | `Sadaukai,` | `Sadauki,` | Foundation. And he contacted John Lewis and Owusu Sadaukai, who was the leader of a black nationalist |
+| 1154 | 752 | `Foundation` | `Fund,` | a project, I could go to the Norman Foundation or the Vanguard Foundation that I think was |
+| 1163 | 756 | `Foundation.` | `Fund.` | the new world? Debbie was with the Norman Foundation. Norman Foundation. And there was Taconic Foundation. There |
+| 1164 | 757 | `Foundation.` | `Fund.` | world? Debbie was with the Norman Foundation. Norman Foundation. And there was Taconic Foundation. There was Rockefeller |
+| 1374 | 903 | `Wilmot` | `Wilmont` | me and Irish Simmons, my colleague. But then Wilmot Sweeney, who was a conservative Black Council member, |
+
+### Lonnie C. King
+
+_11 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 9 | 5 | `World` | `Oral` | here in Atlanta as part of the Southern World History Project. Civil Rights History Project sponsored by |
+| 682 | 642 | `Roslyn` | `Rosalyn` | document was written, well, actually what happened is Roslyn called me tonight before we go back and |
+| 689 | 647 | `Roslyn,` | `Rosalyn,` | but the others haven't done anything. I said, Roslyn, it's show time. We've got to have a |
+| 701 | 655 | `Roslyn` | `Rosalyn` | comments, by and large, about 9.5% of what Roslyn had written everybody agreed with. It was published, |
+| 866 | 778 | `Cross` | `Cross's` | those guys doing that period of time. So Cross contract was not renewed in May. So I |
+| 914 | 822 | `Cross,` | `Crosby,` | I suppose to be in this culture. Dr. Cross, I see this whole thing as a kin |
+| 1025 | 923 | `Morehouse'` | `Morehouse's` | going downtown. We weeped at Spelman's campus and Morehouse' campus. I was asking about that. I was |
+| 1386 | 1159 | `Schala,` | `Scholar,` | along with another economics major named Dr. Hugo Schala, who taught me by John Foster Dulles' policy |
+| 1427 | 1182 | `Rich,` | `Richards,` | the keys away, basically. And I said, Mr. Rich, I will be back in the fall when |
+| 1556 | 1281 | `Holman` | `Holburn` | was, see, once we hired Mr. M. Carl Holman to come in and be the editor, who |
+| 1730 | 1404 | `Marian` | `Marianne` | was Julian, Ben Brown, I think Marion Smith, Marian Wright Edelman. And I believe it must have |
+
+### Robert Bagner Hayling
+
+_11 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 35 | 30 | `Francis` | `Frances` | I had a sister who is deceased now, Francis Hayling. And then my youngest sister, Yvonne Hayling |
+| 36 | 31 | `Clark,` | `Clarke` | Hayling. And then my youngest sister, Yvonne Hayling Clark, is now retired living in Sarasota, Florida. We |
+| 46 | 41 | `Officer` | `Officers` | as a laboratory technician to make application to Officer Candidate School. And I was fortunate enough to |
+| 79 | 62 | `Mandana.` | `Madonna.` | puppy, a dog. And we named the dog, Mandana. And we enjoyed training, watching the dog grow |
+| 120 | 94 | `Looby.` | `Luby` | jurisprudence or dental law instructor was Z. Alexander Looby. And it ended up that he was the |
+| 361 | 214 | `Mount` | `Mt.` | family to Gainesville, Florida. He acquired a good Mount Carmel Baptist Church in Gainesville, Florida. Mrs. Rev. |
+| 388 | 229 | `Fulwood` | `Fullerwood` | yes. A lady by the name of Fannie Fulwood was the president of the local NAACP chapter. |
+| 885 | 408 | `Pendman's` | `Pennington's` | they had the rights to go to Mr. Pendman's restaurant and order a meal or whatever they |
+| 1057 | 477 | `Eubanks` | `Eubanks's` | Dr. King and we honored the Rev. Goldie Eubanks family with the Dr. Hale and award of |
+| 1112 | 489 | `Earl` | `Errol` | and that they had mentioned and especially Commissioner Earl Jones that most cities had pay tribute to |
+| 1119 | 490 | `Maddie` | `Mattie` | tremendous tribute and that Earl Jones's mother Mrs. Maddie Jones had been an assistant to me for |
+
+### H. Jack Geiger
+
+_10 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 133 | 106 | `Randolph,` | `Randolph's` | a letter from Bayard Rustin, A. A. Philip Randolph, great organizing deputy. And he must have got |
+| 326 | 218 | `Jeremiah` | `Jerome` | things I remember about it is Jeremiah Stamler, Jeremiah Stamler, one of the great hypertension researchers at |
+| 614 | 391 | `Joe` | `Jo` | from that period. I don't think I met Joe Disparti or Phyllis Cunningham. Then that came a |
+| 670 | 437 | `Winnick.` | `Winik.` | of one of their doctors or dentists, Dr. Winnick. And this was called the Winnick Clinic, I |
+| 671 | 438 | `Winnick` | `Winik` | dentists, Dr. Winnick. And this was called the Winnick Clinic, I remember, staffed by nurses, including Joe |
+| 672 | 438 | `Joe` | `Jo` | Winnick Clinic, I remember, staffed by nurses, including Joe Disparti and Phyllis Cunningham, just doing free medical |
+| 764 | 489 | `Tufts` | `Tuft's` | miles from downtown Boston, with which Count and Tufts Department of Preventive Medicine had had an ongoing |
+| 771 | 493 | `Sanford` | `Sandy` | I reappeared at OEO. I had said 30,000 Sanford Kravitz. It said 300,000. I appeared with a |
+| 980 | 654 | `Joe` | `Jo` | I gave a copy of the grant to Joe Disparti. We were, Milesden had closed but we |
+| 985 | 659 | `Joe` | `Jo` | that wasn't conscious. I gave the grant to Joe Disparti. She gave it to a doctor. She |
+
+### Juadine Henderson
+
+_10 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 499 | 716 | `Mount` | `Mt.` | a mass meeting that night. I think at Mount Zion Church, which is closer to town. And |
+| 884 | 1347 | `Gillian,` | `Gillion,` | so. I met some young woman named Gwen Gillian, I think. And she had her hair natural. |
+| 930 | 1445 | `Marjorie` | `Maijorie` | Not Bishop. No. Absolutely not. No. No. So Marjorie Hyatt, Linda Wilson, who was active in Hattiesburg, |
+| 952 | 1476 | `Jamella` | `Jamila` | who came here with her hair like that. Jamella Stokes from Hadisburg said to her, I've never |
+| 1024 | 1606 | `Motel` | `Hotel` | with her to Memphis. Stayed at the Lorraine Motel where King had been assassinated. And met these |
+| 1028 | 1611 | `Mount` | `Mt.` | buses to come to DC, I went to Mount Beulah. And I was supposed to go back |
+| 1133 | 1785 | `Curtis'` | `Curtis's` | didn't do very well with it, but Mimi, Curtis' former wife, had guessed money. Did I get |
+| 1233 | 1916 | `Othar` | `Otha` | was going on. So, um, was the Turner? Othar Turner came after Sid Hemphill. They have a, |
+| 1495 | 2357 | `Michele` | `Michelle` | off to New York in 1974 to the Michele Clark Fellowship Program at Columbia. And became a |
+| 1521 | 2398 | `Mount` | `Mt.` | job at the end of the summer in Mount Vernon, New York, working for the Daily Argus. |
+
+### Mateo Camarillo
+
+_9 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 24 | 12 | `Rufina` | `Rafina,` | the early beginning of the century. My mom Rufina was born in Campo which is a community |
+| 670 | 280 | `Park` | `Parks` | Tomasa Camarillo, who's still the president of Chicano Park steering committee to this day. And, many of |
+| 887 | 359 | `McDonald's,` | `McDonalds,` | franchising business was McDonald's. So I focused on McDonald's, even though I knew the founder, Jack in |
+| 898 | 360 | `McDonald's.` | `McDonalds.` | I decided to apply for a franchise for McDonald's. They turned me down twice, said I was |
+| 913 | 365 | `McDonald's` | `McDonalds` | have than representatives of the people that even McDonald's has to deal with? And at the start |
+| 1055 | 408 | `McDonald's.` | `McDonalds,` | contributed through the Golden 500, privately outside of McDonald's. We also had Hispanic based Golden, and we |
+| 1135 | 430 | `Mayans,` | `Mayas,` | example, was an expert on the Aztecs, the Mayans, the Toltecs, the Chichimecs and their art and |
+| 1136 | 430 | `Toltecs,` | `Toltecas,` | an expert on the Aztecs, the Mayans, the Toltecs, the Chichimecs and their art and culture. And |
+| 1166 | 438 | `Sen.` | `Senator` | was in the 80s. And we worked with Sen. Orrin Hatch, Republican, and Sen. Edward "Ted" Kennedy, |
+
+### Robert Brown
+
+_9 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 88 | 104 | `Woolworth` | `Woolworth's` | young boy and a young kid, was the Woolworth store. Because they would have a variety of |
+| 91 | 106 | `Woolworth` | `Woolworth's` | of S.H. Kress and some of the others. Woolworth would always seem to have good, holiday stuff |
+| 95 | 107 | `Woolworth` | `Woolworth's` | stuff. So I like to go into the Woolworth store. And my grandmother would take me to |
+| 97 | 109 | `Woolworth` | `Woolworth's` | Woolworth store. So in the back of the Woolworth store, there were the water fountains. You had |
+| 910 | 465 | `Bob` | `Bobby` | on that. And then a few months later, Bob Kennedy is killed in California. And it was |
+| 1043 | 568 | `Frederic` | `Frederick` | started telling me about this story about E. Frederic Morrow, who was in the White House when |
+| 1046 | 570 | `Frederic` | `Frederick` | know you probably heard. You might know E. Frederic Morrow. He said Fred Mar was a top |
+| 1330 | 820 | `Niel` | `Neil` | was to leave, I got a call from Niel van Heerden, who was one of the top |
+| 1390 | 869 | `Shultz,` | `Schultz,` | the A&C. I passed it on to George Shultz, who was Secretary of State. I passed it |
+
+### Ruby Sales
+
+_9 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 197 | 106 | `Allen` | `Al` | local pun, hanging out, you know, quoting poetry, Allen Ginsberg. And so I did not have any |
+| 351 | 168 | `Mosley,` | `Mosely,` | register people to vote, Stokely Carmichael, Mary Nell Mosley, my friend who had come with me from |
+| 390 | 186 | `Hulett` | `Hewlett,` | of Mrs. McBill or Mr. Jackson or (John) Hulett or Clara Maul? Well, I met (John) Hulett. |
+| 400 | 191 | `Maul` | `Mall` | Keeping one's word in such violent circumstances. Clara Maul was like a wild stallion in a very |
+| 414 | 200 | `Maul.` | `Mall.` | person at that particular time. I'm not Clara Maul. Clara Maul was my friend in addition to |
+| 415 | 201 | `Maul` | `Mall` | that particular time. I'm not Clara Maul. Clara Maul was my friend in addition to being a |
+| 418 | 207 | `Maul` | `Mall` | And she owned a bar. And so Clara Maul was off limits to local white mobs. And |
+| 559 | 292 | `John.` | `Jon` | sense out of the loss of our friend John. And knowing that we had to go to |
+| 712 | 358 | `Charles` | `Charlie` | a little while into Albany and worked with Charles Sherrod. I don't know if you remember that. |
+
+### Charles Siler
+
+_8 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 33 | 31 | `UNC` | `UNC's` | This is David Klein talking. David Klein from UNC Southern Oral History Project and Virginia Tech. And |
+| 260 | 227 | `Bruce,` | `Brew,` | I've got a friend in Baton Rouge, Mayo, Bruce, who was from Marvin Robinson + Donald Moss |
+| 389 | 298 | `Wess` | `Wes` | new audience. Rani's daughter, Desi, is married to Wess Anderson. Rani, I think, is still running a |
+| 685 | 449 | `Charles` | `Charlie` | love. Charles was one of my heroes because Charles Evers, you know, Charles Evers said, you ever |
+| 686 | 449 | `Charles` | `Charlie` | of my heroes because Charles Evers, you know, Charles Evers said, you ever hit me all you |
+| 756 | 473 | `NAACP` | `NAA` | Willis Thomas and the guys at the Hollywood NAACP in the seventies. But I was drafted in |
+| 822 | 494 | `Southern` | `Southernite` | my freshman year at Southern. Here is another Southern who showed up in the office. So head |
+| 1194 | 679 | `Bradford,` | `Bradfords.` | who were to jail with me, the Willie Bradford, Willie Bradford jerked me away from a door |
+
+### Leesco Guster
+
+_8 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 1 | 2 | `Emilye` | `Emily` | of African American History and Culture. This is Emilye Crosby on December 3rd, 2015 with Mrs. Leesco |
+| 3 | 2 | `Guster` | `Güster` | Crosby on December 3rd, 2015 with Mrs. Leesco Guster in her home in Port Gibson, Mississippi. We |
+| 434 | 572 | `Mae` | `May` | had all of that. All the nights, Lily Mae Williams was the chairperson. They had my wells. |
+| 480 | 620 | `Colton,` | `Collins,` | before the movement started? Uh-huh. Yeah, uh, Mr. Colton, Ms. Colton, Nate John, Jessie Johnson, uh, uh, |
+| 481 | 620 | `Colton,` | `Collins,` | movement started? Uh-huh. Yeah, uh, Mr. Colton, Ms. Colton, Nate John, Jessie Johnson, uh, uh, what is |
+| 877 | 1047 | `Bobbi` | `Bobby` | with? You said they called you in there? Bobbi Gage. Bobbi Gage. He was a lawyer, too. |
+| 1095 | 1302 | `Kenneth` | `Kenny` | I never thought we'd have a mural. But, Kenneth Ross is smart. He's very smart. Yeah. What |
+| 1125 | 1332 | `Carlos` | `Carl` | found those people out to be selfish. Now, Carlos was my friend, close friend. Margot, we were |
+
+### Betty Garman Robinson
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 647 | 364 | `Steinem` | `Steinern` | I don't know it's a thing that Gloria Steinem is connected to it's funded by the CIA |
+| 792 | 507 | `McCray` | `McCrae` | that I remember are like Wilson Brown and McCray and people that like Wilson Brown and McCray |
+| 794 | 508 | `McCray` | `McCrae` | McCray and people that like Wilson Brown and McCray were running the printing press and they were |
+| 817 | 544 | `Northern` | `Norther` | Young Christian students, SDS, and one other organization, Northern Student Movement. So it was four organizations of |
+| 911 | 653 | `Carol` | `Carole` | Carol Merritt and one other woman. Joyce Brown, Carol Merritt, myself and one other woman, all three |
+| 1568 | 1365 | `Septima` | `Séptima` | pre-the-siddings, I think they were already doing the Septima Clark for example and Rosa Parks went to |
+| 1572 | 1367 | `Paulo` | `Paolo` | to have people discuss their situation. The (a.k.a.) Paulo Freire, to do this process of consciousness raising. |
+
+### Cecil J. Williams
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 602 | 180 | `Wilkinson` | `Wilkes` | where I went to a basketball game in Wilkinson High School and I took pictures for a |
+| 841 | 228 | `Court` | `Court's` | their children in a test of the Supreme Court ruling. So Orangeburg again becomes an early testing |
+| 1117 | 271 | `Court` | `Court's` | trying to make the words of the Supreme Court ruling they're trying to make it live out |
+| 1315 | 312 | `Orangeburg` | `Orangeburg's` | here and here in this incident here. but Orangeburg involvement in the civil rights movement. seemingly it |
+| 1333 | 318 | `Court` | `Court's` | to implement and make to make the Supreme Court ruling really a reality. so they would affect |
+| 1730 | 398 | `Act` | `Acts` | after 1963, 64 and 65, the Voting Rights Act and the other civil rights legislation taking place. |
+| 1837 | 421 | `Nelson` | `Anderson` | the story in detail and he and Jack Nelson did a very good reportage on that. My |
+
+### Clarence Magee
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 4 | 3 | `McGee` | `Magee,` | 2015. And I'm here with Thames to Clarence McGee and we're at the University of Southern Mississippi |
+| 6 | 3 | `Royal` | `Oral` | Southern Mississippi from the McCain Library at the Royal History and Cultural Heritage Center. The Center for |
+| 13 | 6 | `McGee,` | `Magee,` | and Culture. So thank you very much, Mr. McGee, for joining us today. You're welcome. I was |
+| 39 | 25 | `McGee` | `Magee` | five. My parents are the late Glossy R. McGee and O'Reilly, Leggett McGee. We grew up in |
+| 41 | 25 | `McGee.` | `Magee.` | the late Glossy R. McGee and O'Reilly, Leggett McGee. We grew up in the rural area of |
+| 582 | 538 | `Hopkins.` | `Hawkins.` | the early part of desecligation, she went to Hopkins. And then I took her away from the |
+| 1371 | 1252 | `Boyne,` | `Bourne,` | subpoenaed along with one other black man, T.F. Boyne, to go to Aberdeen, Mississippi, to be witnesses |
+
+### Junius Williams
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 829 | 612 | `Arano` | `Aronow` | in South Carolina. And the guy named Fred Arano was driving the car. And he was apparently, |
+| 1361 | 1210 | `Thurmond` | `Thurman` | Union Project people. And she and her husband, Thurmond Smith, were like mainstays at the organization. That's |
+| 1509 | 1270 | `Hutchings,` | `Hutchins,` | accused me of living with his hell-raiser, Phil Hutchings, who everybody knows as a hell-raiser because he's |
+| 1561 | 1286 | `Hughes'` | `Hughes's` | too. I got permission to look at Governor Hughes' papers down in Trenton. He and I became |
+| 1653 | 1319 | `Animate` | `Annamae` | Newark Rebellion was over once Oliver Lofton and Animate Shepherd from the Legal Services Project, that's where |
+| 1702 | 1336 | `Karinga` | `Karenga` | Karenga. He became very much influenced by what Karinga was doing in Los Angeles with his group |
+| 1753 | 1356 | `NAPA.` | `N-A-P-A.` | organization called the Newark Area Planning Association, NAPA, NAPA. And I had been in New Haven and |
+
+### Phil Hutchings
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 837 | 370 | `Shachtmanite` | `Shachtman` | had left and formed what was called the Shachtmanite Tendency, which went into Trotskyism. But Tom was |
+| 859 | 374 | `Howard` | `Howard's` | of each other's things, brought controversial speakers to Howard campus. The first one we brought Malcolm X. |
+| 921 | 393 | `Race` | `Rice` | to go to this place called the White Race Inn. That was a Chinese restaurant. And Maryland |
+| 928 | 396 | `Race` | `Rice` | this particular day we went to the White Race Inn. We sat down, kind of, we weren't |
+| 2269 | 1123 | `Cleveland` | `Cleve` | kind of debrief and with the Bard trip, Cleveland Sellers went up with us and then Stokely |
+| 3216 | 1548 | `Habana` | `Havana` | enjoy the country so I was at the Habana Libre it's they called O'Hillton Hotel and one |
+| 3226 | 1553 | `Habana` | `Havana` | the things I decided to do in the Habana Libre I said there's this fish here every |
+
+### Raylawni G. Branch and Jeanette Smith
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 63 | 43 | `Jeanette.` | `Jeannette,` | Emma was even lighter in skin color than Jeanette. And Mr. Kelly, I think, was some way |
+| 67 | 48 | `Prentiss,` | `Prentice,` | And I too come from family out around Prentiss, Mississippi, a little village called Mount Carmel, Mississippi. |
+| 81 | 56 | `Jeanette` | `Jeannette` | it before I die, where people are like Jeanette and I. We were never taught to hate |
+| 114 | 74 | `Brock` | `Brach` | My mother's first job I remember was at Brock Candy Company. And my mother was so fair |
+| 283 | 137 | `Holloway.` | `Halloway.` | real name. On birth certificate, it says Christine Holloway. They mixed my grandmother's name, which was Phanimae |
+| 327 | 152 | `Rowan` | `Rohan` | Colonel Johnny Lee Roberts Hall. And my uncle Rowan were first cousins. So him being green-eyed and |
+| 974 | 780 | `Jeanette` | `Jeannette` | like jail. Jail has become a business. As Jeanette stated, long before the students and the Freedom |
+
+### Steven McNichols
+
+_7 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 331 | 384 | `Rider".` | `Ride.` | a freedom writer, when that's on the Freedom Rider". So they got Mr. Theodore "Hugo" Brooks to |
+| 365 | 416 | `Rider".` | `Ride.` | that's when I'm volunteering for the Houston Freedom Rider". And that's when they started putting it together. |
+| 368 | 420 | `Arnold` | `Earl` | again. So the director of LA Corps was... Arnold Walters. And he was being challenged by a |
+| 402 | 456 | `Rider".` | `Ride.` | you together? Oh yeah, they sponsored the Freedom Rider". They got the money, they wanted tickets, and |
+| 432 | 499 | `Berkeley.` | `Brooklyn,` | 11 of us. And Bob Coppin was from Berkeley. And I didn't know this, but apparently he |
+| 739 | 848 | `Stevenson,` | `Stephenson,` | pounding. He got the telegrams pounding. And Joe Stevenson, the youngest one of our group, flipped over |
+| 1310 | 1511 | `Rider"` | `Ride` | and then we split up, and the Freedom Rider" was over. And when I was introduced to |
+
+### Bill Russell
+
+_6 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 5 | 20 | `Diaz.` | `Dias.` | have Mr. Russell's longtime assistant and friend Anita Diaz. And we are here to record an interview |
+| 219 | 214 | `Isabel` | `Isabella` | friend of mine wrote a book about it, Isabel Wilkerson, the The Warmth of Other Suns. I've |
+| 712 | 726 | `Celtic` | `Celtics` | a little bit? You played on the storied Celtic teams, you won 11 championships in 13 years. |
+| 2059 | 2113 | `Jones` | `Chones` | a watch. The other four are Andrew Jim Jones and either Caldwell Jones or Chocolate Thunder. You're |
+| 2065 | 2119 | `Jones.` | `Chones.` | Caldwell Jones and... Of the six or... Jim Jones. There will be a six or a bad-ish. |
+| 2074 | 2125 | `Magic,` | `Magic's` | in the league in footspeed. So this guy, Magic, playing at the center, he can't... He never |
+
+### Carrie Lamar Young
+
+_6 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 404 | 210 | `Devaro` | `Debro` | family church was first Baptist church Alexa. Reverend Devaro was our pastor. And Mr. I think his |
+| 520 | 324 | `Glasgow` | `Glascoe` | early 60s? Only because of people like Myrtle Glasgow and Howard Himmelbaum. Tell me about those folks. |
+| 1332 | 947 | `Grace` | `Graves.` | time. And another young woman his secretary Barbara Grace she was white. And I think Barbara may |
+| 1422 | 1014 | `Earle,` | `Earl,` | Tellenham, McGehee, Arkansas. Earle, Arkansas, I was in Earle, Arkansas the night that they had decided they |
+| 1515 | 1079 | `Broadway` | `Broadwater` | So Bobby Brown from Little Rock, Arkansas, Bob Broadway from Blackwood, which is like Northeast Arkansas, who |
+| 1519 | 1085 | `KOKY-AM,` | `KOKY` | teacher. And he was a news announcer with KOKY-AM, radio station. Let's take a little break. We're |
+
+### Gwendolyn Annette Duncan
+
+_6 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 35 | 19 | `Finley,` | `Findley,` | my great grandfather, my great-great grandfather, Thomas A. Finley, lived in St. Augustine and in Lincolnville. I |
+| 37 | 21 | `Finley` | `Findley` | driving force to leave this family to come? Finley is a certain name to St. Augustine. And |
+| 57 | 27 | `Abby.` | `Abbie,` | My mother's grandmother, Elizabeth, I know it was Abby. She lived right directly across from the church, |
+| 98 | 45 | `Badcock` | `Babcock` | Badcock Furniture. And I used to think that Badcock Furniture, they were bad people. But it was |
+| 289 | 165 | `Elmer.` | `Ulmer.` | Audrey Nell Hamilton, it was in Joanne Anderson, Elmer. We have a lady who's a hundred, she'll |
+| 429 | 245 | `Robeson.` | `Roberson.` | Hayling. We had brought in Miss Lillian, Twine Robeson. Uh, There were numerous speakers to share their |
+
+### Jamila Jones
+
+_6 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 172 | 114 | `Mount` | `Mt.` | different churches. Which was in church? Mine was Mount Zion AME Zion Church. Was any of the |
+| 173 | 114 | `AME` | `A.M.E.` | Which was in church? Mine was Mount Zion AME Zion Church. Was any of the other girls |
+| 256 | 160 | `Riders` | `Singers` | while you were in high school? The Freedom Riders will come into being toward the end of |
+| 286 | 171 | `Antoinette` | `Antonette` | And there was a girl, her name was Antoinette Carson, and she had her license at the |
+| 379 | 231 | `Matti` | `Mattie` | another singer that was in the Harambee Singers, Matti Casey Pierce, Pierce Now, went to Bernie's house |
+| 453 | 273 | `Buses` | `Bus` | you wrote? He wrote Ain't Gonna Ride No Buses No More". And it's interesting how he wrote |
+
+### Judy Richardson
+
+_6 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 156 | 68 | `Patriots` | `Patriot's` | her. And so she protested about how in Patriots Park, there were these Communists singing these songs, |
+| 253 | 142 | `Trippi,` | `Trippy,` | it at the plant. And so, and then Trippi, who was this tall white guy, Trippi was |
+| 605 | 417 | `Suckle,` | `Suckel` | students. It would be... Because I remember Mark Suckle, who later goes down into the National Office. |
+| 1153 | 773 | `Bumpurs` | `Bumpers` | beach racially motivated violence. It's, you know, Eleanor Bumpurs is 69 years old, gets off by officers |
+| 1199 | 784 | `Fayer,` | `Payer,` | jumping off point. Always, it's something on Steve Fayer, who was the white writer and just a |
+| 1889 | 1044 | `Izvestia` | `Vestía` | of course, Russia was taking, you know, as Izvestia would put headlines when the Birmingham bombing, church |
+
+### William Saunders
+
+_6 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 7 | 5 | `Prof.` | `Professor` | Congress. Our interview today will be conducted by Prof. Kerry Taylor, Dept. of History, The Citadel here |
+| 521 | 130 | `Have` | `Had` | that's all it's back on. We're okay. Okay. Have that been your first visit to Harlem? Yeah, |
+| 862 | 232 | `DPO` | `D.P.O.` | at the sector, the sick off factory, the DPO hall, and we got to the point that |
+| 922 | 248 | `Muslim` | `Muslims` | Robinson. And he was the leader of the Muslim here. And he was really an elegant speaker |
+| 1278 | 458 | `AME` | `A.M.E.` | I want you to go to Morris Brown AME Church and Emanuel AME Church (likely) tonight. And |
+| 1342 | 503 | `Andrew` | `Andy` | stuff on the night, wasn't that. I mean, Andrew Young blew up. I mean, he got to |
+
+### Cynthia Baker Anderson and Fletcher Anderson
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 708 | 486 | `Jane` | `James` | They were tough... Perkins. Reese Perkins. And... Willie Jane Preston. They were there. They were there. And... |
+| 765 | 577 | `Lewis` | `Louis` | and and donated to us. So people like Lewis Lomax and other people from California brought... And |
+| 769 | 580 | `Jane` | `James` | already have one. We had people like Willie Jane Preston and all had served in the military. |
+| 985 | 767 | `Jane` | `James` | like I say, were with us. Was Willie Jane Preston. And his brother Oliver Preston. And they |
+| 1290 | 989 | `Sam,` | `Sims` | of A.D. Young, Robert "Bob" Hicks and Charles Sam, to make a difference in Bogolosa and in |
+
+### Evans Derrell Hopkins
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 9 | 5 | `Derrell` | `Darryl` | an all-history and a view with Mr. Evans Derrell Hopkins, and Evans Derrell Hopkins for the light |
+| 28 | 16 | `Margaret` | `Marguerite` | all right. I had one sister, my mother, Margaret Hopkins, Margaret Swanson Hopkins from the Swanson family, |
+| 29 | 16 | `Margaret` | `Marguerite` | I had one sister, my mother, Margaret Hopkins, Margaret Swanson Hopkins from the Swanson family, and my |
+| 1235 | 539 | `Hughie` | `Huey` | at one time, I think Bobby Seale and Hughie Newton even thought about calling it the Sons |
+| 1256 | 543 | `Hughie` | `Huey` | what we call an international philosophy or what Hughie Newton called an intercommunal philosophy, saying that the |
+
+### John Churchville
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 153 | 90 | `Maines` | `Mains` | I had two teachers that I remember. Mrs. Maines and Mrs. Corn. These were teachers who were |
+| 392 | 169 | `Yahya` | `Yahia` | and by the way, my Muslim name is Yahya Abdul Hamid. And so that was who I |
+| 452 | 194 | `Ahmadiyya` | `Ahmadhyia` | was in New York, and I had this Ahmadiyya Muslim Community background. And then when I got |
+| 770 | 404 | `Holsaert,` | `Holsart,` | something to the movement. Bernice sticks out, Faith Holsaert, who was in our camp. Sticks out, Bob |
+| 773 | 405 | `Mants,` | `Mantz,` | who was in our camp. Sticks out, Bob Mants, who I worked with, who was, I'm telling |
+
+### Julia Matilda Burns
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 7 | 7 | `Trevenu` | `Trevania` | brother and three sisters, mother Margaret Griffin, father Trevenu Griffin. By the age of three we moved |
+| 236 | 200 | `Methodist` | `Methodists` | to the Baptist church, even though we were Methodist by faith. And we would go every Sunday |
+| 344 | 329 | `Cara` | `Carrie` | all together different from her. Clare Ried and Cara Harris and Selvam Mohu turned out to be |
+| 675 | 658 | `Antoine` | `Antwayn` | accepted. I don't know what you heard of Antoine Patrick, the Patrick down on my cellar. He |
+| 676 | 658 | `Patrick` | `Patricks` | know what you heard of Antoine Patrick, the Patrick down on my cellar. He finished at Ole |
+
+### Nathaniel Hawthorne Jones
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 680 | 371 | `Ellis` | `Allie` | the ball and... Mr. Griffin? Mr. Griffin. Mr. Ellis Collins. Ellis, he had a learning. Griffin and |
+| 681 | 372 | `Ellis,` | `Allie,` | and... Mr. Griffin? Mr. Griffin. Mr. Ellis Collins. Ellis, he had a learning. Griffin and I didn't |
+| 684 | 375 | `Griffin,` | `Griffin-in` | learning. I'd say, age, grade, learning. And then Griffin, the sixth grade, I believe, was. But anyway, |
+| 1024 | 791 | `Evers.` | `Evers-yeah.` | forget the other fellow's name, but anyway, Charles Evers. Steve Marseaux. Oh, he is. Yeah, for me, |
+| 1919 | 1591 | `Smith` | `Smith's` | you know, really, some of us, like, Reverend Smith and, and that's Colin, and we would never, |
+
+### Roberta Alexander
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 311 | 449 | `Paris,` | `Perris,` | sun, and this would be 100 degrees. In Paris, California, then sometimes you go out and say, |
+| 318 | 458 | `Ette` | `Etty` | want to see me, you have to see Ette also in the kids. And so they came. |
+| 513 | 675 | `Yankis` | `"Yanquis` | fifth floor to the second floor, you know, Yankis fuera de Vietnam". My juice is 1967 in |
+| 675 | 751 | `Bowen` | `Bowling,` | was also some protection his name was Bobby Bowen and he was from the Richmond area so. |
+| 1261 | 1071 | `Paris,` | `Perris,` | family together, going to a holiness church in Paris, California. She had to go too. You know, |
+
+### Scott Bates
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 309 | 329 | `Evansville,` | `Evanston,` | Illinois. We did have a black maid in Evansville, Illinois, because in Evansville, the blacks would arrive |
+| 310 | 330 | `Evansville,` | `Evanston,` | a black maid in Evansville, Illinois, because in Evansville, the blacks would arrive from Chicago every morning |
+| 383 | 411 | `War` | `Antiwar` | in Vietnam, anti-Vietnam War. Yeah, at War work. War work, yeah, anti-war work. And the fellowship reconciliation |
+| 1228 | 1120 | `May` | `Mae` | Justice is grave. You know May Justice about May Justice, I guess. And May Justice and the |
+| 1230 | 1121 | `May` | `Mae` | May Justice about May Justice, I guess. And May Justice and the whole Horton family is buried |
+
+### Walter Tillow
+
+_5 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 378 | 208 | `McCracken.` | `McCrackin.` | newspapers in Cincinnati, you know. So they knew McCracken. So it was just a matter of they |
+| 411 | 237 | `McFerren.` | `McFerrin.` | the movement there was a guy named John McFerren. He had a gas station grocery store, small, |
+| 686 | 412 | `Sair` | `Sayer,` | tiny office Four of his Bob Wald Mike Sair myself Julian You know in that office then |
+| 754 | 450 | `Ruth-Etta` | `Rutha` | Reagon and Original pre there was another woman Ruth-Etta Harris. Yeah, you know, she was still going |
+| 1184 | 715 | `Green` | `Green's` | know, what have you and uh So Mrs. Green strategy was to give a loyalty oath to |
+
+### Aaron Dixon
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 190 | 143 | `Madison` | `Harrison` | connected to a series of other neighborhoods. There's Madison Valley. There's Madrona. There's Leschi. There's Mount Bak |
+| 474 | 381 | `Richmond.` | `Richman.` | this program from this Jewish woman named Mrs. Richmond. I went to school with her daughter. She |
+| 1717 | 1453 | `Bertha` | `Roberta` | her, she's an old friend. Oh, wow, wow. Bertha Alexander, man. If this tall woman, right? Yeah, |
+| 1756 | 1496 | `Kline,` | `Klein,` | the governor's office meeting with him. And Tony Kline, who was a head legal person in the |
+
+### Annie Pearl Avery
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 579 | 263 | `Mants.` | `Mantz.` | him up in the, and I met Bob Mants. Bob Mants. And, Rev. Prathia Hall. And I'm |
+| 745 | 342 | `Gaston,` | `Gadsden,` | sign, and I was placed in jail in Gaston, Alabama, where the next day or two some |
+| 1063 | 598 | `Clair` | `Clare` | And so, every morning, we got up. St. Clair was teaching me how to use a shotgun, |
+| 1090 | 632 | `Clair` | `Clare` | got a gun. And the only thing St. Clair was doing, without the back door, it was |
+
+### Barbara Edna Vickers
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 326 | 143 | `I'd` | `I'll` | movie theater. And he was a gambler. And I'd say [he was] a very good gambler because |
+| 631 | 260 | `Kathy` | `Cathy` | So we did this. And I went to Kathy one day. It just kept. I just kept |
+| 706 | 277 | `Freddie` | `Freddy` | got Del Kahn to play and Freddie Thompson, Freddie Thompson was one of the ones that was |
+| 761 | 289 | `Earl` | `Errol` | going to participate and think. And City Commissioner, Earl Jones, he said that he had $5,000 a |
+
+### Courtland Cox
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 285 | 98 | `Cramton` | `Crampton` | amazing. It was amazing. They had just built Cramton Auditorium at Howard University. The capacity was 1500. |
+| 445 | 161 | `John` | `John's` | because I assume I was trying to promote John speech. I mean, that's why you do that. |
+| 618 | 234 | `Hulett` | `Hewlett` | over time, you know, convincing people like John Hulett and others to run for sheriff and others |
+| 1094 | 522 | `Anne` | `Ann` | And we decided Anne Holloway + Marvin Holloway, Anne Holloway + Marvin Holloway, Charlie Cobb, Judy Richardson. |
+
+### Dorothy Foreman Cotton
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 716 | 467 | `Lily` | `Lillie` | being there that I talk about. Young woman, Lily Hunter. I can't believe I'm blocking on an |
+| 727 | 470 | `Lily` | `Lillie` | working there. But definitely, Ms. Ella Baker. And Lily Hunter had moved up from Montgomery as I |
+| 1637 | 723 | `Frantz` | `Franz` | I remember Stokely Carmichael they like talking about Frantz Fanon and some of a writers and that |
+| 1780 | 803 | `King` | `King's` | Alabama and this is three years after Dr. King death and Andrew Young said uh they they |
+
+### Freddie Greene
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 4 | 2 | `Greene` | `Green` | on December 10th, 2015, and we're with Freddie Greene at the Library of Congress. This is part |
+| 635 | 478 | `McGee` | `McGhee` | Johnson's mother was involved in the movement. The McGee family who owned a farm. They didn't live |
+| 653 | 495 | `McGee` | `McGhee` | get out and do things. You had the McGee family, you had the Johnson's, and you had |
+| 654 | 495 | `Johnson's,` | `Johnsons,` | You had the McGee family, you had the Johnson's, and you had us, the Greens, and you |
+
+### Grace Miller
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 13 | 14 | `Nanny` | `Nannie` | Joe Nathan Hall. Okay. My mother was named Nanny Hall, and I was the sixth child, six |
+| 23 | 17 | `County,` | `Countian,` | and I met my husband, he's the Baker County, too. His name was Jose Miller Sr., and |
+| 80 | 79 | `BTU` | `BYU` | to prayer meeting. We had to go to BTU at church. And they taught us value. My |
+| 1180 | 1096 | `Spooner` | `Spooners` | Spooner, the mayor, Spooner who won. And the Spooner heard it on the, well, one of the |
+
+### Jennifer Lawson
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 2 | 2 | `Emily` | `Emilye` | of African American History and Culture. This is Emily Crosby with Jennifer Lawson in her home in |
+| 907 | 693 | `Mitchell,` | `Mitchel,` | people who... There was a woman, Dr. Doris Mitchell, who was a resident of Tuskegee, and who |
+| 1273 | 1145 | `Fay` | `Fey` | So you Ruby Darius, Karen Edmonds Spellman, and Fay Bellamy Powell, what were you all arrested for? |
+| 1291 | 1159 | `Fay` | `Fey` | at the same pace that we're walking. And Fay then finally says, and what are you looking |
+
+### Joan Trumpauer Mulholland
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 713 | 937 | `Carsie` | `Carsey` | but you had Jack H. Young Sr and Carsie Hall. I think our just brought out local |
+| 1032 | 1238 | `Chaffey,` | `Chaffee,` | key figure in the state. And so, Lois Chaffey, who was a dorm mother, they're not really |
+| 1065 | 1274 | `Pearlena` | `Perleana` | Tougaloo sitting down. Annie, Moody, Memphis, Norman and Pearlena Lewis. And they were sitting together with Memphis |
+| 1229 | 1471 | `King.` | `Kings.` | and Annie and I came back with the King. This is by the way and Moody who |
+
+### Johnnie Ruth McCullar
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 5 | 6 | `Brawner` | `Browner` | of Congress. We are here with Johnnie Ruth Brawner McCullar. Thank you so much for being here |
+| 11 | 12 | `Brawner` | `Browner` | And your parents? What were their names? Clifford Brawner and Johnnie Lou Brawner. And they, too, were |
+| 12 | 12 | `Brawner.` | `Browner.` | were their names? Clifford Brawner and Johnnie Lou Brawner. And they, too, were from the area. They |
+| 336 | 445 | `Terrible` | `Terrell` | made it even stronger? As Secretary of the Terrible Movement, what was some of the things that |
+
+### Julius W. Becton
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 763 | 780 | `Pohang,` | `P'ohang` | I want to battalion to go up, to Pohang, to protect an airfield. Okay. So, as we |
+| 916 | 1001 | `Korean` | `Koreans` | first defeat. When the Chinese and the North Korean attacked US forces and chased them out of |
+| 989 | 1071 | `Sloan` | `Sloane` | operations, military specialties, but not by race. And Sloan said, put them where they're needed. Put them |
+| 1893 | 1822 | `Fort` | `Fought` | which proved to be very important later on. Fort the war, we got a couple of citations, |
+
+### Mary Jones
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 92 | 95 | `It's` | `That's` | church. First but third is the Baptist church. It's one of the oldest churches in the Southwest |
+| 126 | 149 | `Celeste` | `Celestine` | And from fourth through seventh it was Miss Celeste Scott. Miss Celeste Scott. Uh-huh. Okay. So after |
+| 388 | 443 | `Etheridge` | `Etris` | uh-huh. I thought that was, uh, Etheridge Smith. Etheridge Smith. Uh-huh. David Hyde. Robert Benning. Robert Benning. |
+| 400 | 448 | `Etheridge` | `Etris` | names. How many day I go? You said, Etheridge Smith, David Hyde and Robert Benning Jr. And |
+
+### Michael D. McCarty
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 22 | 39 | `Saint` | `St.` | so I went to Saint-Threnda Bar Elementary School, Saint Ignatius College Prep. On both all on the |
+| 96 | 137 | `Saint` | `St.` | started a black student organization to say, because Saint Ignatius is like this very prestigious college prep. |
+| 247 | 367 | `Revolution` | `Revelation` | white folks. And you can see in American Revolution 2, it's on YouTube, you can see the |
+| 252 | 374 | `Panther` | `Panthers` | well, what do you think about what the Panther said? And I paraphrase it like this. But |
+
+### Richard Barry Sobol
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 82 | 37 | `Schwarzschild,` | `Schwartzchild,` | I met the director of the program, Henry Schwarzschild, at the home of one of these two |
+| 239 | 110 | `Act` | `Acts` | on every day after school. The Civil Rights Act had just passed. I'll put it this way. |
+| 248 | 116 | `EEOC` | `EOC` | for a summer was to work on the EEOC charge which was a prerequisite to filing a |
+| 743 | 617 | `Ferriday,` | `Faraday,` | motels in these towns. I would go to Ferriday, Louisiana, which was another civil rights hotspot, ...cross |
+
+### Robert L. Carter
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 192 | 129 | `Barringer` | `Barrington` | had very different experience in your book at Barringer High School, where you went for two years, |
+| 585 | 357 | `Constitution` | `Constitutional` | Constitution Hall by the DAR. she had desegregated Constitution Hall. And she had de-segregated, I mean, they |
+| 642 | 408 | `Court` | `Court's` | learned although my feeling was that the Supreme Court changes followed the vote and that political change |
+| 919 | 843 | `NAACP` | `NAACP's` | very country-ballton... and I... knew nothing about the NAACP tradition... I didn't... I hadn't heard of Thurgood |
+
+### Shirley Miller Sherrod
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 256 | 86 | `Ike` | `Ikie` | a judge a man by the name of Ike King and and Carl Broadway led that effort |
+| 261 | 86 | `Ike` | `Ikie` | bombed Carl Broadway's car I think they bombed Ike King's car and they planted a moonshine on |
+| 631 | 281 | `Scrut` | `Scroot,` | the new sheriff. So they were campaigning for Scrut and we were out there for my mother. |
+| 1100 | 451 | `Eufaula,` | `Eufala,` | was I never forget I was over near Eufaula, Alabama when it suddenly dawn on me. We |
+
+### Thomas Walter Gaither
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 45 | 26 | `AME` | `A.M.E.` | Pleasant Grove school. Pleasant Grove was a nearby AME Zion church. So for the first seven years |
+| 87 | 57 | `AME,` | `A.M.E.` | Children's Day at the local church. Pleasant Grove, AME, Zion Church. The district that my church was |
+| 840 | 358 | `Carey` | `Cary` | and I remember meeting Jimmy McDonald and Gordon Carey and Marvin Rich and so forth and being |
+| 1038 | 464 | `Carey` | `Cary` | at Claflin College. And I think that Gordon Carey was there and James T. McCain may have |
+
+### Wheeler Parker, Jr.
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 23 | 20 | `Bryant's` | `Bryant` | markers and the Emmett Till markers at the Bryant's Grocery and Meat Market number one. And it |
+| 375 | 344 | `There's` | `There've` | me. I don't think he really ever heard. There's been questions about that. So when is it |
+| 652 | 554 | `It's` | `I'm` | didn't say anything and they didn't do anything. It's still scared. They went to the next room. |
+| 1336 | 805 | `I'm` | `I've` | I come and talk. Being eyewitness, I guess I'm just learning how much it means to them. |
+
+### William Lamar Strickland
+
+_4 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 349 | 129 | `Parris` | `Paris` | being in boot camp, and the, uh, in Parris Island + the Camp + then "Le Jeune", |
+| 779 | 295 | `Hamer's` | `Hamer` | times. People get tired. As Mrs. (Fannie Lou) Hamer's says, people get tired of being sick and |
+| 889 | 320 | `Hamer's` | `Hamer` | white congressman. So they nominated Mrs. (Fannie Lou) Hamer's and Victoria Gray Adams and Annie Devine. And |
+| 1189 | 498 | `Jimmie` | `Jimmy` | march was supposed to be for... to carry Jimmie Lee Jackson's body to the Capitol. But SCLC |
+
+### Carolyn Miller and James Miller
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 140 | 122 | `McKay,` | `McCay,` | you get ready to go to Alcorn, Dan McKay, who is the share of KG, dad, some |
+| 860 | 812 | `Gladio.` | `Gladule.` | the fish market. We was all by Mr. Gladio. Yeah. That was the only white business on |
+| 1838 | 1772 | `Evers` | `Everest` | respond when Rudy Shields Shields and then Charles Evers followed behind Rudy Shields and they were working |
+
+### Cecilia Suyat Marshall
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 320 | 259 | `Louis` | `Lou` | were going on. They were wonderful, wonderful. And Louis Jefferson, who was a great artist, lived there. |
+| 360 | 314 | `Travelers` | `Traveler's` | Yeah. So is it? Then I have the Travelers Aid. I used to be on the board |
+| 361 | 315 | `Travelers` | `Traveler's` | I used to be on the board of Travelers Aid and Board of the Legal Defense Fund. |
+
+### Dr. Doris Derby
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 54 | 23 | `Episcopalian` | `Episcopal` | Episcopalian, and so we went officially to the Episcopalian Church. But my three girlfriends who lived on |
+| 61 | 25 | `Episcopalian` | `Episcopal` | I was active in other ways in the Episcopalian Church. There was several people from the Caribbean |
+| 560 | 188 | `Terrible` | `Terrell` | or in Terrell County. She's called Terrible Terrible, Terrible County. And I was just starting to learn |
+
+### Elbert “Big Man” Howard
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 3 | 3 | `Klein` | `Cline,` | in Santa Rosa, California. And this is David Klein from the History Department at Virginia Tech. And |
+| 580 | 385 | `Indian` | `Indians` | the young lords and, you know, the American Indian Movement. And he did a great coalition of |
+| 1140 | 633 | `Kunstler` | `Künstler` | you know. And so in the meantime, William Kunstler had located us. And he came and told |
+
+### Elmer Dixon
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 107 | 82 | `Aunt` | `"Auntie` | fact, everybody in the neighborhood called the woman Aunt Barbara. So she was like, you know, the |
+| 473 | 240 | `Nairamor` | `Naramore` | at Garfield and the phone rang and Mr. Nairamor said that they, someone in the office wants |
+| 655 | 324 | `Organization.` | `Association,` | a symbol. They were the Lowndes County Freedom Organization. And they had the symbol of the Black |
+
+### Euvester Simpson
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 676 | 557 | `Gillon` | `Gilliam` | else was in that office? I met Gwen Gillon that summer. She worked because she was a |
+| 732 | 613 | `McGhee` | `McGee` | Well, in Greenwood, of course, they had the McGhee brothers, you know, they were integrating theaters and |
+| 940 | 880 | `Bavender.` | `Babendure,` | right? You know. So I really liked Mr. Bavender. And I had other teachers too, that I |
+
+### Frankye Adams-Johnson
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 283 | 101 | `Rides` | `Riders` | began to tell me about the the Freedom Rides and things that was going on here in |
+| 477 | 250 | `Cleve` | `Cleave` | was the first black man to attend. Then, Cleve McDowell, Cleve McDowell, MacDonald, I believe it was. |
+| 1642 | 1543 | `COINTELPRO` | `COINTEL` | and I exposed to, to the kind of COINTELPRO terrorism that was going on during that period, |
+
+### Gloria Arellanes
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 28 | 16 | `Arellanes's` | `Arellanes` | my mother, but we're dealing with my father. Arellanes's was not, and still isn't a very common |
+| 47 | 25 | `Chicanos` | `Chícanos` | school we had race riots. We're only the Chicanos would be arrested. And we were made fun |
+| 339 | 143 | `Chicanos.` | `Chícanos.` | if violence goes down, we don't touch the Chicanos. If violence goes down in the Chicano community, |
+
+### Gwendolyn M. Patton
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 147 | 84 | `Odessa,` | `Idessa` | of mine, along with some other ladies, Mrs. Odessa, Williams later became ready. They all jumped into |
+| 1094 | 1068 | `King` | `King's` | we go to Dexter Avenue Baptist Church, Dr. King Church. And we're in there, and we wake |
+| 1183 | 1207 | `Lynn` | `Len` | overnight one night in one of the campsites. Lynn Chandler was there. I remember him so well. |
+
+### James Oscar Jones
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 577 | 246 | `Jones` | `Jones's` | said, this is one of my boys. Ernest Jones boys. Them boys are sweet kind. I mean, |
+| 636 | 276 | `Hain` | `Haynie` | Well, I got to live somewhere. And Dr. Hain said, put him in your house over there. |
+| 909 | 435 | `Joanne` | `Joanna` | the girl Joanne. And now, as a fact, Joanne is a professor at Pinebluff at college. And |
+
+### Maria Varela
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 446 | 351 | `College,` | `Village.` | then across the state road, there was Tougaloo College, where people who worked at the college lived, |
+| 498 | 369 | `SNCC` | `SNCC's` | found out later, but as far as on SNCC staff know, but there were people who came |
+| 500 | 369 | `Kathy` | `Cathy` | came down. I think there's a woman named Kathy Cade who did some work. There's another woman, |
+
+### Martha Prescod Norman Noonan
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 182 | 167 | `Jeffrey,` | `Jeffries,` | was just so, I think it was Sharon Jeffrey, Mike Zweig, Kathy Innes, Dick Slee, and myself. |
+| 244 | 234 | `Hirschfeld,` | `Hershfeld,` | Bernard and the Friends of Snicket Group, Elizabeth Hirschfeld, who was a Freedom Rider, was the main |
+| 584 | 603 | `Andrew` | `Andy` | just met him a couple times. I think Andrew Young was there more. We got to know |
+
+### Matthew J. Perry
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 547 | 190 | `Fleming` | `Flemming` | case that evolved from 54 to 56, the Fleming case on Interstate travel. And I wonder if |
+| 574 | 200 | `Fleming` | `Flemming` | Sarah Mae Fleming, she later became Sarah Mae Fleming Brown, a young black woman traveling to her |
+| 635 | 215 | `Fleming` | `Flemming` | made Ms. Rosa Parks famous. But Sarah Mae Fleming Brown's case was the first one on the |
+
+### Reverend Harry Blake
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 146 | 162 | `Captain"` | `"Cap'n"` | homage to the white man. He'd call him Captain" and "Boss", and what have you. But he |
+| 239 | 213 | `Simkins` | `Simpkins,` | father of the civil rights movement. Dr. C.O. Simkins was on Martin Luther King Jr's board of |
+| 301 | 253 | `Simkins,` | `Simpkins,` | Martin Luther King Jr and Dr. (Dr. C.O.) Simkins, who was here in Shreveport. We were getting |
+
+### Vernon Dahmer, Jr.
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 19 | 13 | `Ellie` | `Ellen` | born to George, Vernon F. Dahmer Jr, and Ellie Kelly, Vernon F. Dahmer Jr. He was the |
+| 164 | 140 | `Jeanette.` | `Jeannette.` | was called that white Negro. Jeanette, which one? Jeanette. Oh, Jeanette, I know it's Jeanette. Yeah, she |
+| 165 | 141 | `Jeanette,` | `Jeannette!` | that white Negro. Jeanette, which one? Jeanette. Oh, Jeanette, I know it's Jeanette. Yeah, she said she |
+
+### Virginia Simms George
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 172 | 110 | `Marion` | `Marian` | thing, there was a lawyer. Her name was Marion L. Poe. And she was the first African |
+| 226 | 147 | `Philadelphia` | `Philly` | Patricia Washington was from there, from outside of Philadelphia in a place called North Town. And so |
+| 428 | 379 | `BYPU` | `BPU,` | go Sunday night, we had to go to BYPU or whatever that is. You know, some kind |
+
+### Worth W. Long
+
+_3 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 24 | 17 | `AME` | `A.M.E.` | network, with an African Methodist Episcopal Zion Church, AME Zion Church. And I used to, she would |
+| 123 | 63 | `AME` | `A.M.E.` | Alex Barnes, who headed the paper for the AME Zion Church, it's called the... I can't do |
+| 265 | 120 | `Hayti,` | `H-A-Y-T-I,` | Because I lived on the edge of Hayti, Hayti, Hayti. And this community was self-sustaining. Two, you |
+
+### Ernest Adolphus Finney
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 42 | 20 | `Morgan` | `Morehead` | taught at Morgan State University. And while at Morgan State University, according to the stirs they told |
+| 307 | 174 | `Equality,` | `Equality's` | I remember it. And the Congress of Racial Equality, field secretary, was a gentleman by the name |
+
+### John Carlos
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 326 | 166 | `Yancy` | `Yancey` | there. And when I was talking to Mr. Yancy and Joseph "Joe" Yancey /. And they told |
+| 1988 | 843 | `Olympics` | `Olympic` | the Olympics and in Munich, you at the Olympics games over there in Sydney. Somebody called me |
+
+### Joseph Echols Lowery
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 110 | 39 | `Prichard.` | `Pritchett.` | had a couple KKK had considerable routes in Prichard. And so we chose one day to ride. |
+| 448 | 156 | `Marengo` | `Merengo` | would have seized as they did Abernathy in Marengo County because they found out about his land. |
+
+### Kathleen Cleaver
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 1024 | 404 | `Panther.` | `Panthers.` | way before he ever heard of the Black Panther. So we have this absurd of energy, of |
+| 1060 | 418 | `Panther.` | `Panthers."` | the Tour of the Leaver for the Black Panther. So what I want you to see is |
+
+### Mary Jenkins
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 4 | 2 | `Willie` | `Will` | is Saturday, March 9, 2013. My name is Willie Griffin and I am a research associate with |
+| 9 | 9 | `Francis` | `Frances` | and place of birth? My name is Mary Francis Jenkins. I just missed that, I was in |
+
+### Mildred Bond Roxborough
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 163 | 64 | `Lillie` | `Lily` | And it also had as its president, Dr. Lillie M. Jackson, who was very well known throughout |
+| 644 | 259 | `Philip` | `Phillip` | Mrs. Roosevelt to work with Walter White and Philip Randolph and get the President, then Roosevelt, to |
+
+### Mildred Pitts Walter
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 163 | 268 | `Mozelle` | `Mozella` | well on the way. And her name was Mozelle Moore. Very interesting. And did you start looking |
+| 402 | 655 | `Bois'` | `Bois's` | the Los Angeles Times and all of Du Bois' books and James Baldwin's book. Well, I didn't |
+
+### Norma Mtume
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 18 | 14 | `Omawale` | `Omowale` | so he chose M. Tume. His name is Omawale Mtume and it means the sun returns. And |
+| 593 | 377 | `Clinic` | `Clinics` | we had the Women's Health Collective, Haydashbury Free Clinic sent folks over to teach us about substance |
+
+### Robert G. Clark, Jr.,
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 1047 | 693 | `Newman` | `Newman's` | NAACP Convention in Vicksburg. And that's in Buddie Newman District. He lived in the Yazoo County". But |
+| 1126 | 757 | `Winter` | `Winter's` | that session, I went to Governor Governor William Winter office. I said, Governor Wattas, I said, if |
+
+### Wyatt Tee Walker
+
+_2 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 3 | 2 | `Smithsonian` | `Smithsonian's` | here in Chester, Virginia, on behalf of the Smithsonian National Museum of African American History and Culture, |
+| 214 | 192 | `Louis` | `Lou` | know, some remarkable, it was a failure. And Louis Lomax never came to Albany. Only there was |
+
+### Candie Carawan and Guy Hughes Carawan
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 114 | 45 | `Island` | `Islands` | know, about going to the church of the Island and just kind of helped his behavior. They |
+
+### Charles Melvin Sherrod
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 47 | 29 | `Criterion` | `Criteria` | trying to get people registered to vote. The Criterion Club in Albany, Georgia went to the City |
+
+### Cleveland Sellers
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 501 | 506 | `Reginald` | `Reggie` | Patisse, from how it actually goes up. And Reginald Robinson is in Cambridge, Maryland. And then it |
+
+### Clifford Browner
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 405 | 303 | `Robertson` | `Robinson` | meetings? Ah, yes. They were classmates there. Emma Robertson is the one that lived next door to |
+
+### Dion Diamond
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 522 | 457 | `Planning` | `Planet` | work for the local anti-poverty organization, the United Planning Organization. Back then, of course, that was when |
+
+### Gloria Hayes Richardson
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 1293 | 806 | `Branche` | `Branch` | was with Savage and Phil Savage and Stanley Branche at the City Council having a meeting. He |
+
+### Gwendolyn Zoharah Simmons
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 432 | 229 | `Lynelle` | `Linnel` | she had taken two others in. And so, Lynelle Barrett and, oh my goodness, Marion Davidson, both |
+
+### Harold K. Brown
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 49 | 49 | `Shea,` | `Shay,` | entered junior high school. My home-room teacher, Cassandra Shea, just sort of adopted me and she was |
+
+### Jack Greenberg
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 319 | 165 | `VII` | `II` | public accommodation was just titled to easy. Title VII of the Civil Rights Act of 1964 was |
+
+### Joseph Howell and Embry Howell
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 377 | 302 | `Charles` | `Charlie` | to such a... Well, it was because of Charles Sherrod. Like everybody recruited all of us out. |
+
+### Oliver W. Hill, Jr.
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 87 | 108 | `Pentecost.` | `Pentecosts.` | of him during those early years. Name the Pentecost. And Mr. Black family. But Mr. Pentecost was |
+
+### Peggy Jean Connor
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 675 | 672 | `Tussle` | `Tusa` | No. This was after. Because I remember Dr. Tussle went down there and got some bricks. And |
+
+### Pete Seeger
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 95 | 59 | `Miles` | `Myles'` | of the barn, along with a curious Horton Miles teenage daughter. And that photograph has been well |
+
+### Purcell Maurice Conway
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 916 | 332 | `Rights` | `Right` | St. Augustine is it's reacting to the Civil Rights Act's passage to the Voting Rights Act of |
+
+### Rosie Head
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 714 | 543 | `Helen` | `Helene` | another lady. Her name was Helen, I believe. Helen Richardson? And Helen, you mean there was another |
+
+### Sam Mahone
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 634 | 487 | `Roberta` | `Robertina` | first students to integrate the white high school, Roberta Freeman, and her boyfriend. They were at Parking |
+
+### Samuel Berry McKinney
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 147 | 136 | `Rauschenbusch` | `Rauschenbusch's` | Rauschenbusch died while he was still a student. Rauschenbusch Mark was left on quite a number of |
+
+### William Lucy
+
+_1 disagreement(s)._
+
+| # | Cue | Our (audit-canon) | LoC | Context |
+|---|---|---|---|---|
+| 259 | 189 | `Bilik.` | `Billick.` | to me about his fellow by the Al Bilik. And our unions are very, very, I mean, |
+

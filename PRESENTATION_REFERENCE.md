@@ -110,17 +110,18 @@ The Smithsonian and LoC are evaluating us on rigor, not just output. A persisten
 | Metric | Value |
 |---|---|
 | Total interviews in audit-able corpus | 127 |
-| Interviews healed against LoC reference text | **122 (96.1%)** |
-| Healed via LoC TEI2 XML | 87 |
+| Interviews healed against LoC reference text | **127 (100%)** |
+| Healed via LoC TEI2 XML | 92 |
 | Healed via LoC transcript PDF (extracted) | 35 |
-| Not yet healed (spelling-discrepancy resolver misses) | 5 |
 | Audio-only on LoC (no transcript available at all) | **0** |
-| Total ASR-error heals applied across all entries | ~3,500 |
+| Total ASR-error heals applied across all entries | ~3,700 |
 | Total divergences flagged for SME review | ~95,000 |
 | Apply failures | 0 |
 | Cue-count / timestamp verification failures | 0 |
 
-For the WWU presentation: **the LoC has machine-extractable transcripts for every interview in our corpus, and we have aligned our Whisper-derived text against LoC's text for 122 of the 127. The remaining 5 are recoverable with alternative-spelling re-searches against LoC's catalog.**
+For the WWU presentation: **the Library of Congress has machine-extractable transcripts for every one of the 127 interviews in our corpus, and we have cross-validated our Whisper-derived text against LoC's text for all 127. Coverage is complete.**
+
+The path to 100% required three resolver passes: an initial XML-driven pass that resolved 86 entries; a PDF-fallback pass (using `pypdf` to extract text from LoC's transcript PDFs where no XML was available) that recovered 35 more; and a final direct-resolve pass for 6 entries that the search-by-interviewee-name matcher had missed due to catalog-spelling differences (LoC's "Moses Newson" vs our "Newsom"; LoC's "Wheeler Parker" without our "Jr."; LoC's "Doris Adelaide Derby" vs our "Dr. Doris Derby"; etc.) plus one transient XML download retry.
 
 ---
 

@@ -36,7 +36,13 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ### Session 8 — 2026-05-25: Pass 8 LoC canonical-archive cross-reference
 
-**End-of-session summary:** Pass 8 healed 86 of 127 audit-able transcripts against the Library of Congress's TEI2 XML transcripts for the Civil Rights History Project collection. 1,774 ASR-error heals applied, 32,118 divergences deterministically preserved as editorial smoothing / speaker disfluency, 87,735 divergences flagged for SME review under the conservative-first-pass discipline. 0 apply failures and 0 cue-count verification failures across all 86 entries. The 41 unhealed entries break down as 35 with LoC PDF-only items (no XML available for word alignment; PDF-OCR pass is the recovery path), 5 with likely spelling-discrepancy resolver misses (Booker+Newson vs our Newsom, Wheeler Parker without our Jr., etc.), and 1 transient XML download failure (Mary Jones; `--refresh` re-run would recover). Full coverage report at `transcripts/loc_healing/COVERAGE_REPORT.md`. Apply-before-push discipline observed throughout — every commit shipped both the analysis (per-entry stage file + divergences JSON) AND the healed transcript content in `corrected/<entry>/`. No "abstract recommendations land first, application later" governance gap of the kind that produced the staleness Eric surfaced earlier this morning.
+**End-of-session summary:** Pass 8 healed all 127 audit-able transcripts against the Library of Congress's transcripts for the Civil Rights History Project collection — 100% coverage. The path to 100% took three resolver passes: (1) initial XML-driven resolver resolved 86 entries; (2) PDF-fallback pass (pypdf extraction from LoC's transcript PDFs) recovered all 35 entries that had no machine-readable XML; (3) direct-resolve pass (using known LoC item URLs) recovered the final 6 entries — Mary Jones (transient XML download retry) plus 5 catalog-spelling discrepancies (Booker+**Newson** vs our Newsom, Wheeler Parker without our Jr., Doris Adelaide Derby vs our Dr. Doris Derby, Linda Fuller Degelmann under a non-standard title form, and Dorie Ann Ladner + Joyce Ladner for the joint "Ladners" interview). The 41 entries initially classified as unhealable were ALL recoverable — zero genuinely-audio-only members in the corpus, contradicting the original Phase 1 read.
+
+Final counts: 92 entries healed via TEI2 XML; 35 via pypdf-extracted PDF text; ~1,900 ASR-error heals applied; ~32,000 divergences deterministically preserved as editorial smoothing / speaker disfluency; ~95,000 divergences flagged for SME review under the conservative-first-pass discipline; 0 apply failures; 0 cue-count verification failures.
+
+Additional artifact: `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md` — 710 cases where the auto-heal's audit-canon safeguard fired because our prior-pass-promoted spelling disagrees with LoC's authoritative text. These are SME-reviewable conflicts where a previous audit row may need updating. The safeguard correctly prevented automatic reversal of our audit decisions; the report lets the team adjudicate each case.
+
+Apply-before-push discipline observed throughout — every commit shipped both the analysis (per-entry stage file + divergences JSON) AND the healed transcript content in `corrected/<entry>/`. No "abstract recommendations land first, application later" governance gap of the kind that produced the staleness Eric surfaced earlier this morning.
 
 **Agents:** Claude Opus 4.7 (main session orchestrator) + per-entry Claude Sonnet 4.6 subagents (one subagent per transcript for Phase 2 word-level divergence classification + surgical heal application). The one-agent-per-transcript discipline (per `feedback_one_agent_per_transcript`) is preserved: no batched transcripts inside a single agent. Phase 1 is deterministic Python with no model in the loop.
 
@@ -135,6 +141,72 @@ This is read-only against LoC's public API (`loc.gov` JSON endpoints, `tile.loc.
 - The 21 PASS-6 unresolved-escalated-to-ensemble rows have not been individually adjudicated against LoC. A future targeted pass can re-evaluate each of those 21 rows against the matching cached LoC transcript and promote / drop / sustain the row.
 - The 11 stale-Pass-7-slice entries from this morning's audit (#6, #7, #8, #12, #13, #14, #17, #20, #26, #29, #30) have NOT been re-run through Pass 7 PRR. They HAVE received Pass 8 LoC healing, which provides independent cross-validation. Pass 7 PRR re-run is now lower priority than originally estimated.
 - The 87,735 NEEDS_SME_REVIEW divergences await a per-entry model-classification pass (one Sonnet 4.6 subagent per transcript reading the stage file's NEEDS_SME_REVIEW table). This would promote a subset to applied heals; the rest would be marked PRESERVE_VERBATIM_AFTER_REVIEW.
+
+#### Phase 4 (follow-on) — PDF-fallback for the 35 PDF-only entries
+
+**Status:** DONE 2026-05-25 (after Phase 3 closed; sub-section appended per the CLAUDE.md "follow-on work to the same session" convention).
+
+**Trigger:** Eric pointed out that the Phase 1 XML-only restriction was a scaffolding decision, not a hard requirement. LoC's CRHP collection has transcript PDFs for every entry the XML pass had marked `no_transcript`. PDF-OCR (or in our case, pypdf text extraction since LoC's PDFs are text-layer not scanned) was the obvious recovery path.
+
+**Deliverables:**
+- `transcripts/loc_healing/resolve_pdf_fallback.py` — new resolver that for each `no_transcript` entry fetches the LoC item JSON, finds the transcript-resource PDF URL, downloads + caches the PDF, and runs pypdf text extraction.
+- `transcripts/loc_healing/loc_cache/<subject>.pdf` + `<subject>.pdf.txt` — cached PDFs and extracted text per entry (35 entries).
+- `heal_one_entry.py::parse_loc_pdf_text` — new parser that consumes pypdf-extracted text, identifies speaker turns (ALL-CAPS or initials prefix + `:`), strips page-footer noise (`Betty Garman Robinson 1`), strips header metadata lines, normalizes smart-quote artifacts. Falls back to PDF text when XML cache is missing.
+
+**Coverage:**
+- 35 of 35 `no_transcript` entries had transcript PDFs available
+- 0 audio-only entries (the strategic short-list Eric requested is empty)
+- All 35 entries successfully healed via PDF-derived LoC text + the same conservative-first-pass apply pipeline
+
+**Verification:**
+- Sample PDF text extraction confirmed clean (curly-quote U+2019 preserved through pypdf, normalized by our existing unicode-normalization step)
+- PyMuPDF spot-check showed identical extraction quality to pypdf; no library-swap warranted
+- All 35 PDF-healed entries pass cue-count verification (SRT cue count == VTT cue count, pre- and post-apply)
+
+**Anomalies:** LoC's CDN (tile.loc.gov) returned several transient `IncompleteRead` errors during PDF downloads. The resolver's 3-retry exponential-backoff handled them; one entry (Mary Jones) required a `--refresh` re-run.
+
+#### Phase 5 (follow-on) — Direct-resolve for catalog-spelling discrepancies
+
+**Status:** DONE 2026-05-25.
+
+**Trigger:** After Phase 4, 5 entries remained as `no_candidates` (LoC search returned no item under our directory-name spelling). Manual research showed LoC has each one under a different catalog form. The fix was a direct-resolve helper that bypasses the search-by-name path when the LoC item URL is known.
+
+**Catalog discrepancies recovered:**
+
+| Our directory                       | LoC catalog form                       | LoC item ID  |
+|-------------------------------------|----------------------------------------|--------------|
+| `Booker and Newsom`                 | Simeon Booker and Moses **Newson**     | 2015669130   |
+| `Wheeler Parker, Jr.`               | Wheeler Parker (no Jr. suffix)         | 2015669110   |
+| `Dr. Doris Derby`                   | Doris Adelaide Derby (full middle name) | 2015669107  |
+| `Linda Fuller Degelmann`            | Linda Fuller Degelmann interview (no "oral history" qualifier) | 2015669188 |
+| `Ladners`                           | Dorie Ann Ladner and Joyce Ladner      | 2015669153   |
+
+All 5 entries had TEI2 XML available — no PDF fallback needed.
+
+**Deliverables:**
+- `transcripts/loc_healing/resolve_by_item_url.py` — direct-resolve helper.
+- `transcripts/loc_healing/loc_cache/<subject>.xml` for each of the 5 (newly cached).
+- Updated `resolution.json` files with `manual_direct_resolve: true` flag for provenance.
+- 5 entries successfully healed (123 ASR-error heals applied across them).
+
+**Coverage outcome:** 127 of 127 (100%). The 41 originally-unhealable entries were ALL recoverable; zero are genuinely audio-only.
+
+#### Phase 6 (follow-on) — AUDIT_VS_LOC_DISAGREEMENTS report
+
+**Status:** DONE 2026-05-25.
+
+**Trigger:** Eric requested research and fixes "within reason" with no time pressure. The deterministic auto-heal classifier's audit-canon safeguard correctly fired 710 times across 114 entries to prevent reversing prior audit decisions, but those 710 cases ARE real LoC-vs-audit disagreements that deserve SME visibility.
+
+**Deliverables:**
+- `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md` — consolidated report of all 710 disagreements, grouped by entry, with our token / LoC token / cue / surrounding context. Sorted by per-entry disagreement count.
+
+**Categories surfaced in the report:**
+1. Genuinely different people (Bertha vs Roberta — different BPP members)
+2. Spelling variants of the same name (Carsie vs Carsey, Mants vs Mantz, Nabrit vs Nabritt)
+3. Style choices (Sam vs Samuel, possessive markers, abbreviated vs full forms)
+4. Whisper-error leakage into our audit-canon (Joanne vs JoeAnn — our directory itself says JoeAnn; prior audit row promoted the Whisper-failure spelling)
+
+**Outcome:** The report becomes the SME-review input for the next master-MD update pass; each disagreement gets a per-entry adjudication (LoC wins / our audit wins / both forms acceptable as variants).
 
 ---
 
