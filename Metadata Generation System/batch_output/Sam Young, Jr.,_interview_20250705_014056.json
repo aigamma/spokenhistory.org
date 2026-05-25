@@ -1,0 +1,781 @@
+{
+  "interview_name": "Sam Young, Jr.",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Sam Young, Jr.,_interview_20250705_014056\\Sam Young, Jr.,_interview_transcript_20250705_014056.srt",
+  "processed_at": "2026-05-25T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Sam Young, Jr.",
+    "interviewee_title": "Civil Rights Activist and Southwest Georgia Project / New Communities Inc. Farm Worker",
+    "interview_date": "2013-03-09",
+    "interview_location": "Albany, Georgia (Albany State University campus)",
+    "interviewer_name": "Willie Griffin",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:41:47"
+  },
+  "main_summary": {
+    "summary": "Sam Young, Jr. recounts growing up in Worth County, Georgia (Sylvester), where he was born March 13, 1950. He describes a politically aware father who kept the family abreast of issues like Brown v. Board of Education, made them watch the news, and taught Sam never to follow the crowd. Young narrates several incidents of racial violence and harassment he witnessed or experienced as a child: school buses of white children shouting racial slurs at Black children walking through the woods to school, vandalism at his family's church (Blue Spring Baptist), the arrest of his two cousins (described as roughly 14 years old) at Worth County High School after one of them fought a white student, and their detention in Albany at the Youth Detention Center, where the sheriff refused for three days to disclose their location until attorney C.B. King threatened to have him arrested. He also recalls the shooting of a family friend and Sunday school deacon, CT Rockwell, by a white employer named Albert Gill after Rockwell refused to address the man's teenage son as 'Mister' -- Rockwell threw up his hands and was hit in the face by buckshot, escaping blindness only because of that reflex.\n\nYoung describes his family farm and his father's experience as a Black farmer in Worth County, including foreclosed loans and a local white grocer/hardware store owner who extended him credit when no one else would. He graduated from Worth County High School in Sylvester in 1968. His first public job was at Firestone Tire in Albany, where he says he encountered tough civil rights problems and was let go along with others; the difficult labor convinced him he needed more education. Through two older sisters, Young joined the Southwest Georgia Project for Community Education, which had a scholarship program and operated throughout the Southwest Georgia region. He attended Albany Technical College for graphic arts, intending to help start a newspaper, but found his hands unsuited to typesetting and gravitated toward the farm side of the project.\n\nYoung describes working with Charles Sherrod, whom he names as the central figure, and mentors Randolph Battle and Robert Mants. He recounts how Sherrod traveled to New York, learned that a large tract of land was for sale in Southwest Georgia, and pursued the idea of purchasing it to create a self-sufficient Black-owned cooperative -- New Communities Inc. Young moved with his wife and children onto the New Communities site after marrying in 1974 and was among those who operated the farm. The farm grew peanuts (over 300 acres in the peanut allotment), corn, vegetables (okra, watermelons), and other crops, but never cotton. Young attributes the loss of the farm to ASCS foreclosures on Black farmers in the 1970s. He recounts the long Black-farmer class action against the federal government for discrimination, denied for years before a final outcome arrived in 2009. He also names attorney Mary Young as a major champion of the civil rights movement in the Albany area who worked alongside attorney C.B. King.\n\nYoung closes by describing leadership-training opportunities the Southwest Georgia Project gave him, including travel to New York, Chicago, and the Carolinas, and a Synectics communication-skills program in New York where he was filmed on camera for the first time. He expresses a desire to get reinvolved in community work after a chance encounter with one of the Sherrods, and offers parting advice that one must 'stand up' and address issues directly rather than waiting.",
+    "key_themes": [
+      "Black-Farmer Land Loss and Federal Discrimination",
+      "Worth County and Southwest Georgia Rural Civil Rights Experience",
+      "School Integration under Freedom of Choice",
+      "Racial Violence and Local Vigilantism",
+      "Charles Sherrod and the Southwest Georgia Project",
+      "New Communities Inc. Cooperative Farm",
+      "Family, Mentorship, and Movement-Building Across Generations"
+    ],
+    "historical_significance": "This interview is a first-person primary-source account of the New Communities Inc. cooperative farm in Lee County, Georgia, told from the perspective of a young Black man recruited out of high school through the Southwest Georgia Project for Community Education. It documents the on-the-ground experience of operating the canonical first community land trust in the U.S. South -- the foundational model for the Black-cooperative-farm and community-land-trust movements -- and the ASCS / federal-loan-foreclosure pattern that led to the Pigford class-action litigation and its 2009 settlement. Young's testimony also contributes Worth County-specific accounts of school integration under Freedom of Choice, intimate church and family-based racial violence outside the major news cycle, and the rural-Georgia mentorship networks (Sherrod, Randolph Battle, Robert Mants) that sustained SNCC's Deep South voter-registration and land-justice work into the post-Movement era.",
+    "quality_metrics": {
+      "accuracy_score": 82,
+      "quality_score": 84,
+      "accuracy_component_a": 33,
+      "accuracy_component_b": 25,
+      "accuracy_component_c": 24,
+      "quality_component_a": 32,
+      "quality_component_b": 21,
+      "quality_component_c": 17,
+      "quality_component_d": 14,
+      "errors": [
+        "Identification of the father's name is ambiguous in the transcript. The interviewer asks 'Your father's name was Sam Young, Jr.' and Sam Young, Jr. answers 'Right, right. He was Sam Young, Jr.' This is logically impossible if the interviewee is himself 'Sam Young, Jr.' -- either the father was Sam Young (Sr.) with the 'Jr.' suffix being a transcription/interviewer error, or there is a naming convention in this family that is not clarified. The summary avoids naming the father to prevent overstating what the transcript establishes.",
+        "Names 'Albert Gill' and 'CT Rockwell' are taken directly from the transcript at segments 165-176; the transcript itself shows the speaker correcting himself about which name belonged to which role (segments 165-176), so attributions are based on the speaker's final correction: CT Rockwell shot, Albert Gill shooter.",
+        "The cousins' names are given in the transcript as 'dark, the young, and Yvonne young' (segment 230) -- almost certainly an ASR garbling of two first cousins named e.g. 'Darryl Young' (or similar) and 'Yvonne Young'. The summary avoids naming them to avoid propagating the ASR error.",
+        "The transcript does not clearly establish in what year Young joined the Southwest Georgia Project; segment 284 fragmented dating ('I worked with the Southwest Georgia Project from like 19... up until 1983'). Summary describes the connection without committing to a start year.",
+        "Pigford settlement date 2009 is supported by speaker statement and matches the canonical Pigford II Claims Resolution Act (December 2009)."
+      ],
+      "improvements": [
+        "If a follow-up interview is possible, clarify the father's correct name (likely 'Sam Young, Sr.', with the interviewee being 'Sam Young, Jr.').",
+        "Clarify the cousins' first names (ASR appears to garble them) and confirm whether they were 'first cousins' or 'second cousins' -- Young says both at different points.",
+        "Confirm the year Young joined the Southwest Georgia Project and the specific year New Communities Inc. was lost to foreclosure (the canonical year is 1985).",
+        "Identify whether 'attorney Mary Young' is a known historical figure or a local Albany attorney whose biographical details would benefit researchers."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:24,000",
+      "title": "Interview Opening and Introduction",
+      "summary": "The interview is introduced as a Library of Congress / Smithsonian National Museum of African American History and Culture co-production. Willie Griffin of the Southern Oral History Program at the University of North Carolina at Chapel Hill, with videographer John Bishop, identifies the date as Saturday, March 9, 2013, the location as Albany, Georgia on the campus of Albany State University, and introduces Sam Young, Jr. as the interviewee for the Civil Rights History Project. Young thanks Griffin, states his full name, and gives his birthplace and date: Worth County, Sylvester, Georgia, March 13, 1950.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["library of congress", "smithsonian", "civil rights history project", "willie griffin", "john bishop", "albany state university", "worth county", "sylvester georgia", "march 13 1950"],
+      "related_events": ["Civil Rights History Project (Library of Congress / Smithsonian)", "Albany State University", "Southern Oral History Program"],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 90,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could add brief note that Albany State University is a Historically Black College."]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:01:24,000",
+      "end_time": "00:03:00,000",
+      "title": "Father's Political Awareness and the 1950s",
+      "summary": "Young describes growing up in Worth County in the 1950s on the cusp of the Brown v. Board of Education era. He says he was 'very aware of certain issues like the Board of Education thing' because his father was politically engaged and 'always kept us abreast on different issues.' Young acknowledges that he did not fully understand at the time what his father was telling him about Brown v. Board, but came to understand it as he grew older and 'had some of the issues face me head on.' He recalls that his father made the children watch the news every day. (The transcript's exchange about the father's name appears garbled -- the interviewer asks 'Your father's name was Sam Young, Jr.' and the interviewee answers 'Right, right. He was Sam Young, Jr.', leaving the father's actual name unclear.)",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["father", "brown v board of education", "1950s", "worth county", "political awareness", "news"],
+      "related_events": ["Brown v. Board of Education (1954)"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Father's name remains ambiguous due to apparent ASR confusion in segments 21-24."
+        ],
+        "improvements": ["Note that interviewee's father is likely 'Sam Young, Sr.' but the transcript does not unambiguously confirm this."]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:03:00,000",
+      "end_time": "00:07:54,000",
+      "title": "School Integration, Freedom of Choice, and Walking to School",
+      "summary": "Young describes experiencing the signs of racism in Worth County, especially during school integration under the 'Freedom of Choice' policy, which gave Black students the option of attending the white school while allowing them to remain in the all-Black school. Many of his friends stayed at the Black school, but Young chose to go to the white school. He recalls when Black children's schools were located 'out with our churches' in Worth County, and the children walked to school each day. School buses carrying white children would pass and the children would 'hang their heads out of the window, calling us racial names.' Young says the children threw rocks at the buses and the buses would brake. He describes the pine 'turpentine time' woods through which they walked, the cleared paths, and how they would try to get through the woods quickly. He recalls a teacher catching him sitting on his spelling book to cheat; she spanked him and offered to march him home so his parents could see who was right. Young laughs that he 'really didn't want that to happen.' He says he went into integrated school expecting that white students were 'way smarter' and found that to be a 'very awakening experience.' He quotes his parents' advice that 'you were born an individual and you would die an individual' -- a principle he still follows.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["freedom of choice", "school integration", "worth county", "walking to school", "turpentine", "racial slurs", "school bus", "individual"],
+      "related_events": ["Freedom of Choice integration plans (post-Brown v. Board)", "School integration in the rural South"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could specify the year Young transferred to the white school under Freedom of Choice -- not stated in transcript."]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:07:54,000",
+      "end_time": "00:12:04,000",
+      "title": "Church Vandalism and the Detention of Cousins",
+      "summary": "Young recounts incidents of racial harassment in Worth County, including local young people painting the front of Blue Spring Baptist Church (the church he grew up in) and writing 'this is the devil's den' or similar on it; the local vendor responsible was made to repaint the church. He then tells the story of two of his cousins -- described as roughly 14 years old -- who were taken from the school bus at Worth County High School after one of them fought with a white student and beat him. The sheriff (whom Young thinks was named Prescher or a similar name) brought the cousins to the Youth Detention Center in Albany and refused for three days to tell Young's aunt where they were. Attorney C.B. King, identified by Young as 'a very prominent black lawyer here,' intervened and threatened to have the sheriff arrested, after which the children's location was disclosed. Young says it was 'kind of scary' as young children to have family members taken without knowledge of where they were, given what was happening to Black people across the South.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["blue spring baptist church", "vandalism", "worth county high school", "youth detention center", "albany", "cousins", "sheriff", "c.b. king"],
+      "related_events": ["C.B. King (attorney, Albany Georgia)", "Worth County High School", "Youth Detention Center Albany"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Sheriff's name appears as 'pressure' / 'Prescher' in segments 109-113 -- almost certainly an ASR garbling. Summary does not name the sheriff to avoid propagating the error.",
+          "Church name 'Blue Spring Baptist' (segment 98) may be 'Blue Springs Baptist'; transcript uses 'spraying' which is clearly an ASR error. Summary uses the more plausible 'Blue Spring Baptist'."
+        ],
+        "improvements": ["A follow-up could verify the correct sheriff name and the exact church name."]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:12:04,000",
+      "end_time": "00:17:00,000",
+      "title": "The Shooting of CT Rockwell",
+      "summary": "Young describes the shooting of a family friend and Sunday-school deacon, CT Rockwell, by his white employer, Albert Gill. Rockwell, whom Young describes as having 'grown up in our trade family' alongside Young's own kin, was working for Gill. Gill's teenage son demanded that Rockwell address him as 'Mister'; Rockwell refused, saying 'no, I'm not going to call you Mister.' The teenager told his father, who, without questioning Rockwell, came out with a shotgun. Young emphasizes the moral horror -- 'I couldn't understand how another human being could do such things to one another' -- and notes that Rockwell threw up his hands as a shield and was hit in the face with buckshot. Pellets penetrated the skin of his face but he avoided being blinded because his hand absorbed the shot aimed at his head. Rockwell recovered to tell the story in Sunday school. Young recalls the context: 'turbo times' (likely 'turbulent times' as an ASR rendering) where 'things may have changed and they may not have taken' someone like Gill into custody. Young clarifies that the shooter's name is Albert Gill and the victim's name is CT Rockwell after initial confusion in the exchange.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["ct rockwell", "albert gill", "shooting", "buckshot", "white employer", "sunday school", "deacon", "racism"],
+      "related_events": ["Local racial violence Worth County Georgia", "White-on-Black labor violence in the rural South"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 84,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Names CT Rockwell and Albert Gill are difficult to independently verify; they appear to be local figures not in the ground-truth corpus. The summary uses them only because the speaker himself states the corrected attribution at segment 169-172.",
+          "The transcript phrase 'turbotimes' (segment 160) is ambiguous -- could be 'turbulent times' or 'tough times'; summary flags this rather than committing."
+        ],
+        "improvements": ["A genealogical or local-news search could verify CT Rockwell and Albert Gill as real figures in Worth County."]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:17:00,000",
+      "end_time": "00:20:24,000",
+      "title": "Family Farm, Foreclosures, and Father's Mercy",
+      "summary": "Young describes his family's farm in Worth County. Crops included cotton, corn, peanuts, vegetables (squash, butter beans, peas, okra). He says he was one of many children -- ten sisters and seven brothers (a 'large family' Young attributes in part to the labor of working the crops). He was the oldest son with two older sisters. All the children graduated from local schools. Young recalls that 'a lot of racial things' were directed at his father because the family owned land -- loans were foreclosed. A local white grocer who also ran a hardware store extended his father a line of credit when no one else would, allowing the family to farm through those years; his father remained loyal to that creditor for years afterward. Young contrasts the multigenerational inheritance of farmland among white farming families with the absence of any such transfer mechanism for Black farmers, attributing this to systematic federal-program exclusion. He notes that the ASCS (Agricultural Stabilization and Conservation Service, later renamed Farm Service Agency) is only recently providing opportunities for young Black farmers.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["family farm", "cotton", "corn", "peanuts", "vegetables", "ten sisters", "seven brothers", "ascs", "farm service agency", "foreclosure", "black land loss", "credit"],
+      "related_events": ["Agricultural Stabilization and Conservation Service (ASCS)", "Farm Service Agency", "Black-farmer land loss"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could connect Young's father's foreclosure experience explicitly to the Pigford class action -- the speaker does this implicitly but the structural connection could be made clearer."]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:20:24,000",
+      "end_time": "00:24:30,000",
+      "title": "1968 Graduation, Firestone Tire, and Joining the Southwest Georgia Project",
+      "summary": "Young graduated from Worth County High School in Sylvester, Georgia in 1968. He recalls being the only male graduate, alongside four or five women, in a sixth-grade-cohort context that he describes as a 'critical time' coinciding with the end of the canonical civil rights phase and the rise of the Black Power movement. His first public job was at Firestone Tire in Albany, where supervisors were 'mean,' he was working in extreme heat breaking up old concrete foundations with a pickaxe to make room for new machinery, and he was let go along with other workers after running into civil rights problems on the job. He realized he needed more education. Through two older sisters who were working with the Southwest Georgia Project for Community Education, Young learned of the organization. He worked with the Project until 1983. He attended Albany Technical College on a scholarship through the Project, studying graphic art (printing presses, plates, typesetting), but found his hands unsuited to typesetting and gravitated to the farm work. His mentors at the Project included Charles Sherrod, Randolph Battle (now deceased), and Robert Mants -- 'these guys took me in' and taught him politics and how to handle situations. He also names attorney Mary Young as a major champion of the civil rights movement in the area, who worked alongside attorney C.B. King when she first came to Albany.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["1968 graduation", "worth county high school", "firestone tire", "southwest georgia project", "albany technical college", "charles sherrod", "randolph battle", "robert mants", "mary young", "c.b. king", "graphic art"],
+      "related_events": ["Southwest Georgia Project for Community Education", "Albany Technical College", "Charles Sherrod", "Robert Mants (SNCC organizer, Lowndes County, AL)", "C.B. King (Albany civil rights attorney)"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Robert Mants is the same Bob Mants who was a SNCC organizer in Lowndes County, AL with Stokely Carmichael; the ground-truth corpus confirms a 'Bob Mants' under the John Hulett / LCFO entries. The transcript-named 'Robert Mants' is almost certainly the same person who later worked with the Southwest Georgia Project, but the corpus does not have an independent entry for him.",
+          "Randolph Battle is not in the ground-truth corpus; his presence as a Southwest Georgia mentor is taken solely on the speaker's authority.",
+          "Attorney 'Mary Young' is not in the ground-truth corpus; the speaker himself is uncertain about her precise role ('I'm not sure whether you all are familiar with attorney Mary Young')."
+        ],
+        "improvements": ["Verify Mary Young as a historical attorney associated with C.B. King's practice in Albany."]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:24:30,000",
+      "end_time": "00:32:00,000",
+      "title": "New Communities Inc.: Founding, Crops, and Black Land Loss",
+      "summary": "Young describes the founding of New Communities Inc., which he frames as a project of the Southwest Georgia Project. He says Charles Sherrod traveled to New York and learned that a large unposted tract of land was for sale in Southwest Georgia; Sherrod pursued the purchase with the goal of creating a self-sufficient Black community. Young says the land was secured around 1968. He married in 1974 and moved his wife and children onto the New Communities site, where he and others operated the farm, joined by other Project members and people from the local community. The farm had over 300 acres in its peanut allotment, plus corn and vegetables (okra, watermelons); the workers chose never to plant cotton. Children from various states (including New York and Chicago) came to learn farming. Young describes the loss of the farm in the 1970s when the ASCS foreclosed on many Black farmers in the area. He references the Black-farmer class-action suit against the federal government, which finally admitted there was discrimination against Black farmers; the suit was denied repeatedly and finally resolved in 2009, with monetary outcomes only then reaching plaintiffs. Young says it was 'too late' to save New Communities by then; Shirley Sherrod and Charles Sherrod later bought a new plot of land (likely in Dougherty County) and have ongoing work there. Young recalls the multiple, deniable obstacles -- denied phones, denied building permits -- that prevented New Communities from expanding: 'anytime Black folk got control of something that was going to seem like better that live, you just was not taken kindly by the locals.'",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["new communities inc", "charles sherrod", "shirley sherrod", "peanuts", "ascs foreclosure", "pigford", "class action", "black farmers", "land loss", "southwest georgia", "1968", "2009"],
+      "related_events": ["New Communities Inc.", "Charles Sherrod", "Shirley Miller Sherrod", "Pigford v. Glickman class action (2009 final outcome)", "Agricultural Stabilization and Conservation Service (ASCS) discrimination"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Young says the land was secured 'in 68' (segment 386). The canonical founding year of New Communities Inc. per the ground-truth corpus is 1969 -- this is a one-year discrepancy. Whether Young is misremembering, or whether the land purchase actually predates the formal NCI founding date, is ambiguous. The summary records what Young said and notes the ground-truth discrepancy here rather than in the summary text.",
+          "Young's reference to the new Sherrod plot 'in Doherty' is presumably 'in Dougherty County, Georgia' (the county Albany is in). Summary uses 'likely Dougherty County' to avoid propagating the ASR rendering."
+        ],
+        "improvements": [
+          "Reconcile Young's '68 statement against the canonical 1969 NCI founding year (the discrepancy may reflect when Young first heard about the project versus when the land was formally acquired).",
+          "Confirm the location of the post-NCI Sherrod farm in Dougherty County."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:32:00,000",
+      "end_time": "00:37:09,000",
+      "title": "Pigford Settlement, Project Legacy, and Personal Disappointment",
+      "summary": "Young describes the long arc of the Black-farmer lawsuit: it was denied in the late 1980s and mid-1990s, the final outcome came in 2009. By then 'everybody basically had given up.' He says New Communities was disqualified at one point as a farm because of the breadth of community activities the organization was running alongside the agricultural work. Young describes the farm: it had dwellings; he and his wife and children lived there from 1974, alongside other Project members and locals. Asked what he has been doing since the project ended, Young says he has been 'maintaining' but feels a strong need to get reinvolved, especially in working with Black youth in Southwest Georgia. He calls a recent chance encounter with one of the Sherrods, in a parking lot, an 'inspiration' to get back involved. He affirms that the Southwest Georgia Project legacy is still alive ('it never deceased') and that he has gone his own separate way for a time.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["pigford settlement", "2009", "black farmers", "class action", "new communities", "legacy", "southwest georgia project", "reinvolvement", "shirley sherrod"],
+      "related_events": ["Pigford v. Glickman + Pigford II (2009 final resolution)", "Southwest Georgia Project for Community Education legacy"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["A historian could note that the Pigford II Claims Resolution Act was signed in December 2010 (settlement appropriated in the 2010 legislation despite the 2009 framework agreement). The transcript's '2009' is consistent with the speaker's recollection of the headline result."]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:37:09,000",
+      "end_time": "00:41:47,000",
+      "title": "Synectics Training, Words of Wisdom, and Closing",
+      "summary": "Asked for words of wisdom, Young advises that 'you have to stand up sometimes,' addressing issues directly rather than letting decisions be made for you. He describes the Southwest Georgia Project's leadership-training opportunities, which sent him to New York City, the Carolinas, and Chicago. In New York he attended a Synectics program, a communication-skills and group-problem-solving workshop in which participants were filmed on camera -- it was the first time he saw himself on camera. He brought back what he learned to apply to local problem-solving. Young closes by thanking the interviewers and saying he is happy to have shared his story, hoping it 'means something to someone' and 'can be passed on.' The interview ends with the standard closing identification of the Library of Congress / Smithsonian production.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["synectics", "leadership training", "new york", "chicago", "carolinas", "stand up", "words of wisdom", "civil rights legacy"],
+      "related_events": ["Synectics (communication-skills training program)", "Southwest Georgia Project leadership development"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 84,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could verify whether the 'Synectics' program is the canonical Synectics Inc. creative-problem-solving consultancy founded by William J.J. Gordon and George Prince in the late 1950s."]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Sam Young, Jr.",
+      "interviewee_title": "Civil Rights Activist and Southwest Georgia Project / New Communities Inc. Farm Worker",
+      "interview_date": "2013-03-09",
+      "interview_location": "Albany, Georgia (Albany State University campus)",
+      "interviewer_name": "Willie Griffin",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:41:47",
+      "total_segments": 604,
+      "word_count": 4900,
+      "number_of_chapters": 10
+    },
+    "overall_score": {
+      "total": 66,
+      "max_possible": 100,
+      "category": "Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 19,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 6,
+          "max_possible": 10,
+          "evidence": [
+            "Young follows a roughly chronological arc from childhood (Segment 13, 00:01:09,000 -- 'I was born in Worth County, Sylvester, Georgia. March 13, 1950') through 1968 graduation (Segment 213, 00:18:47,000 -- 'And I graduated, I was the only in 1968') to New Communities (Segments 369-432) and final reflections (Segments 533-547).",
+            "Some sections backtrack or are unclear (Segment 165-176, 00:14:56,000 -- the speaker corrects himself about whether Albert Gill or CT Rockwell was the shooter)."
+          ],
+          "justification": "The interview has a clear chronological backbone (childhood, school integration, family farm, 1968 graduation, Firestone, Southwest Georgia Project / New Communities, Pigford, closing reflections), but some chapters meander or repeat (the loss of New Communities and the Pigford suit are revisited multiple times), and several exchanges suffer from ASR-level transcription confusion that obscures the narrative thread."
+        },
+        "vivid_details_examples": {
+          "score": 7,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And the only reason that he didn't get blinded or killed was he threw his hands up, you know, as a shield. And I remember in our Sunday school, he was telling about the story. And you know, the buckshot, you know, he had all the pellets and stuff, where they penetrated skin in his face.",
+            "segment": 154,
+            "timestamp": "00:14:06,000"
+          },
+          "specificity_count": {
+            "full_names": 6,
+            "specific_dates": 3,
+            "specific_places": 7
+          },
+          "evidence": [
+            "Specific date of birth (Segment 14, 00:01:19,000 -- 'March 13, 1950')",
+            "Vivid school-bus / woods scene with thrown rocks and brake lights (Segments 46-56, 00:04:12,000 -- 'we threw rocks at the bus' and 'the bus driver would put the lights on, you know, brake lights')",
+            "CT Rockwell shooting reconstructed in detail (Segments 142-160, 00:12:57,000 -- 00:14:39,000)",
+            "Spelling-book cheating scene with teacher (Segments 73-83, 00:06:24,000 -- 'I was caught sitting on a spelling book')"
+          ],
+          "justification": "Young provides several vividly remembered specific scenes -- the woods walk, the spelling-book spanking, the Rockwell shooting -- with reconstructed dialogue and physical detail. The named persons (CT Rockwell, Albert Gill, C.B. King, Charles Sherrod, Robert Mants, Randolph Battle, Mary Young, Shirley Sherrod) and named places (Worth County, Sylvester, Albany, Blue Spring Baptist Church) anchor most key claims. Some sections (Synectics training, post-NCI life) are more abstract."
+        },
+        "emotional_authenticity": {
+          "score": 6,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I always remember, I couldn't understand how another human being could do such things to one another.",
+            "segment": 152,
+            "timestamp": "00:13:52,000"
+          },
+          "emotional_range": ["bewilderment", "embedded hatred", "moral outrage", "nostalgia", "frustration", "inspiration", "humility"],
+          "vulnerability_elements": [
+            "Acknowledges 'embedded hatred' from past experiences (Segment 177, 00:15:11,000)",
+            "Admits he's 'forgotten lots of this stuff' (Segment 458, 00:25:54,000) -- intellectual humility about memory",
+            "Recognizes that the disappointment of losing the farm cooled his community engagement (Segments 507-512)"
+          ],
+          "justification": "Young is emotionally measured rather than expressive -- he says he holds 'embedded hatred' from the era but does not perform anger; he describes Rockwell's near-blinding with moral horror but does not break down. The interview is more reflective than raw, with several moments of genuine emotion (the Rockwell story, the chance encounter with Sherrod that inspired him) but also long stretches of factual recounting with limited affect."
+        },
+        "overall_assessment": "The interview has a clear chronological structure and several memorable specific scenes (the woods walk, the spelling-book incident, the Rockwell shooting) but suffers from ASR-level transcription artifacts that obscure attribution in the most important name-based claims (Rockwell/Gill, the cousins' names, the sheriff's name). Young is articulate, modest, and reflective rather than dramatically emotional, with several genuinely vulnerable moments embedded in an otherwise measured retelling. Story structure receives a mid-range score because the conversation backtracks; vividness benefits from named places and reconstructed scenes; authenticity is genuine but measured rather than raw."
+      },
+      "historical_value": {
+        "total": 19,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 8,
+          "max_possible": 10,
+          "major_events": [
+            "Working on New Communities Inc. -- the first community land trust in the U.S. South -- in its operational years, with on-site residence from 1974 (Segments 369-432)",
+            "Pigford v. Glickman class-action trajectory described from the plaintiff side (Segments 422-445)",
+            "School integration under Freedom of Choice in Worth County GA (Segments 34-42)"
+          ],
+          "key_figures": [
+            {"name": "Charles Sherrod", "relationship": "Direct supervisor / project leader at Southwest Georgia Project", "contact_level": "close"},
+            {"name": "Shirley Sherrod", "relationship": "Co-organizer at Southwest Georgia Project / New Communities", "contact_level": "close"},
+            {"name": "Robert (Bob) Mants", "relationship": "Mentor at Southwest Georgia Project", "contact_level": "close"},
+            {"name": "Randolph Battle", "relationship": "Mentor at Southwest Georgia Project", "contact_level": "close"},
+            {"name": "C.B. King", "relationship": "Local civil rights attorney who freed Young's cousins", "contact_level": "moderate"},
+            {"name": "Mary Young", "relationship": "Local civil rights attorney associated with C.B. King's practice", "contact_level": "moderate"}
+          ],
+          "organizational_involvement": [
+            {"organization": "Southwest Georgia Project for Community Education", "role": "Member / farm operator", "years": "ca. 1968-1983"},
+            {"organization": "New Communities Inc.", "role": "Resident and farm worker", "years": "1974-mid 1980s"}
+          ],
+          "unique_access": "On-the-ground operational experience of the first community land trust in the U.S. South (New Communities Inc.), recruited as a teenager out of Worth County and mentored directly by Charles Sherrod and Bob Mants -- the SNCC Southwest Georgia continuity bridge from the 1960s into post-Movement Black-cooperative-farm work.",
+          "justification": "Young is not a leader of the Albany Movement or SNCC, but he is a first-person operational witness to New Communities Inc. -- the canonical first community land trust in the U.S. South and the foundational model for the Black-cooperative-farm movement. He lived on the site with his family from 1974 and worked under direct mentorship from Charles Sherrod, Robert Mants, and Randolph Battle. This is irreplaceable Smithsonian-grade primary source material on a foundational institution."
+        },
+        "specificity_of_details": {
+          "score": 6,
+          "max_possible": 8,
+          "precision_examples": [
+            "Exact birthdate (Segment 14, 00:01:19,000 -- 'March 13, 1950')",
+            "Exact graduation year (Segment 213, 00:18:47,000 -- '1968')",
+            "Marriage year and move to NCI (Segment 467, 00:32:55,000 -- 'I got married in 74 and moved my wife and my children')",
+            "Peanut allotment acreage (Segment 411, 00:30:25,000 -- 'an allotment of over 300 some acres')",
+            "Pigford resolution year (Segment 445, 00:31:43,000 -- 'in 20, 2009, 2009')"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 8,
+            "first_only": 2,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "Charles Sherrod founded the Southwest Georgia Project and was central to New Communities Inc. -- verified against ground-truth corpus.",
+            "New Communities Inc. founded with land in Southwest Georgia, lost to ASCS / federal-loan discrimination -- verified against ground-truth corpus.",
+            "Pigford class-action final resolution 2009 -- verified against ground-truth corpus.",
+            "C.B. King was a prominent Black attorney in Albany, Georgia -- verified against ground-truth corpus (NAACP LDF cooperating attorney entry)."
+          ],
+          "justification": "Young provides several precise dates (March 13, 1950 birth; 1968 graduation; 1974 marriage; 2009 Pigford resolution) and several full names (Charles Sherrod, Shirley Sherrod, Robert Mants, Randolph Battle, C.B. King, Mary Young, CT Rockwell, Albert Gill). However, some critical details (the sheriff's name, the cousins' names, the church name, the father's name) are obscured by ASR garbling, and several local figures (Mary Young, Randolph Battle) are not independently verifiable from the ground-truth corpus."
+        },
+        "fills_historical_gaps": {
+          "score": 5,
+          "max_possible": 7,
+          "new_information": [
+            "First-person operational testimony of New Communities Inc. from a young worker / family resident perspective -- complements the leadership testimony of Charles and Shirley Sherrod in the corpus.",
+            "Documented mentorship of Worth County youth (Young, his older sisters) into Movement work through the Southwest Georgia Project scholarship and training networks.",
+            "Local Worth County violence and harassment incidents (CT Rockwell shooting, the cousins' detention, the church vandalism) that fall outside the canonical Albany Movement frame.",
+            "Names of local figures (Randolph Battle, Mary Young, CT Rockwell, Albert Gill) that may not appear elsewhere in the corpus and merit independent historical verification."
+          ],
+          "understudied_aspects": [
+            "Rural-Georgia post-1965 Movement continuity through the Southwest Georgia Project and New Communities -- often eclipsed by 1961-1962 Albany Movement scholarship.",
+            "On-the-ground operational experience of running a cooperative farm under federal-program discrimination."
+          ],
+          "narrative_complications": "Young's testimony complicates the framing of New Communities as primarily an organizing-leadership story by foregrounding the everyday labor and family-level decisions of the workers who actually farmed the land.",
+          "historiographical_value": "Historians of the Black-farmer movement, the community-land-trust movement, the Southwest Georgia continuity of SNCC organizing post-1965, and the Pigford litigation would find this interview a useful operational primary source.",
+          "justification": "The interview's most significant historical value lies in being a non-leadership operational witness to New Communities Inc. and the Southwest Georgia Project. It contributes texture to canonical Sherrod-centered narratives and documents the local rural-Georgia violence and harassment that flows beneath the Albany Movement headline events. Score is below the top band because the most novel material (the Rockwell shooting, the cousins' detention) is locally significant but not independently verifiable from this transcript alone."
+        },
+        "overall_assessment": "Young is an operational rather than a leadership witness, which gives this interview its distinctive Smithsonian value: a young Worth County man recruited into the Southwest Georgia Project through his older sisters' scholarship network, mentored directly by Sherrod, Battle, and Mants, who then lived and worked on the New Communities Inc. farm site from 1974 through its loss. This testimony complements rather than competes with leadership-level accounts. The transcript's ASR artifacts limit the verifiability of some local-figure claims, but the New Communities operational testimony is irreplaceable."
+      },
+      "emotional_resonance": {
+        "total": 16,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 6,
+          "max_possible": 10,
+          "transformation_arc": "Young grows from a politically aware but uncomprehending child to a young man recruited into Movement work, becomes a primary on-the-ground operator of the New Communities cooperative farm, then experiences disillusionment after the farm's loss and ASCS-driven foreclosure, and at the time of the interview is on the cusp of getting reinvolved after a chance encounter with the Sherrods.",
+          "key_turning_points": [
+            "School integration awakening (Segment 87, 00:07:35,000 -- 'I'm under the impression that the white people are way smarter... it was a very awakening experience')",
+            "Firestone Tire labor experience pushing him toward more education (Segment 263, 00:21:19,000 -- 'That's when I realized that I need some more education')",
+            "Recent chance encounter with Sherrod inspiring reinvolvement (Segment 517, 00:35:59,000 -- 'that was kind of like an inspiration to me to get back involved')"
+          ],
+          "before_after_contrast": "From a child who believed in white intellectual superiority to a young man who saw through that during integration; from a disillusioned post-NCI veteran 'kind of just maintaining' to someone freshly inspired to reengage.",
+          "inspirational_quality": "Modestly inspirational -- Young's parting advice ('you have to stand up sometimes... address the issues then, don't wait') is grounded in a working-class life of Movement labor rather than performative oratory, which gives it a quieter authority.",
+          "justification": "There is a clear transformation arc but it is delivered modestly rather than dramatically. Young's reflections on his own development are honest but rarely deep -- he describes the awakening experience of school integration in a paragraph rather than a chapter. The recent inspiration to reengage is the freshest emotional movement in the interview."
+        },
+        "tension_conflict_triumph": {
+          "score": 5,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "CT Rockwell shooting recounted in Sunday school",
+              "segment_range": "133-160",
+              "timestamp_range": "00:12:04,000 - 00:14:39,000",
+              "stakes": "Life and potential blindness; Rockwell escaping blindness only because his hand absorbed buckshot meant for his face."
+            },
+            {
+              "description": "Cousins detained at Youth Detention Center; sheriff withholding location for three days",
+              "segment_range": "105-129",
+              "timestamp_range": "00:09:27,000 - 00:11:51,000",
+              "stakes": "Children's safety and possible disappearance; family fear of what was happening to Black people in the South."
+            },
+            {
+              "description": "Loss of New Communities farm and decades-long Pigford fight",
+              "segment_range": "397-445",
+              "timestamp_range": "00:22:23,000 - 00:31:43,000",
+              "stakes": "Loss of foundational Black cooperative farm and decades of community labor."
+            }
+          ],
+          "conflict_types": ["racial violence", "state repression / police", "systemic federal-program discrimination", "labor exploitation"],
+          "emotional_range": "From bewilderment to moral horror to muted resignation to fresh inspiration.",
+          "justification": "The CT Rockwell shooting and the cousins' detention are the most dramatic peaks; the Pigford / NCI-loss arc has high stakes but is described with the muted disappointment of decades-old loss rather than as a triumph. Score is mid-range because the most dramatic moments are recounted briefly rather than developed."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": ["family obligation", "childhood disillusionment with received hierarchies", "mentorship across generations", "loss of livelihood", "community labor", "intergenerational inheritance"],
+          "relatable_struggles": [
+            "Childhood encounters with prejudice while walking to school",
+            "First-job disappointment (Firestone) pushing the realization that more education was needed",
+            "Family farm losing land to systemic exclusion from federal programs",
+            "Watching a foundational community project collapse despite years of labor"
+          ],
+          "human_moments": [
+            "Father insisting young Sam stay back a year because he could not read (Segment 62, 00:05:46,000) -- a parent's painful judgment that turned out to be wise",
+            "The spelling-book spanking and the teacher offering to walk him home (Segments 73-83, 00:06:24,000 -- 00:07:13,000)",
+            "Chance encounter with one of the Sherrods in a parking lot inspiring reinvolvement (Segment 513-518)"
+          ],
+          "connection_points": "Audiences from any background can relate to the childhood mentorship and disillusionment moments, the loss of a long-labored community project, and the parental wisdom of forced repetition for the sake of reading.",
+          "justification": "Several universally relatable family-and-mentorship moments are embedded in the specifically civil-rights material, particularly the father's decision to hold Sam back and the parental advice to 'never follow the crowd, you were born an individual.' The post-NCI disillusionment is also broadly relatable."
+        },
+        "overall_assessment": "Young's emotional register is restrained but not absent. The most powerful emotional moments come embedded in plain recountings of specific incidents -- the Rockwell shooting, the cousins' detention, the chance encounter with Sherrod that inspired reengagement. The interview lacks the high-drama peaks of leadership testimony but compensates with a quieter authenticity that broadens its appeal."
+      },
+      "accessibility": {
+        "total": 12,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 4,
+          "max_possible": 7,
+          "verbal_articulation": "fair",
+          "dialect_impact": "moderate",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Significant ASR-level transcription artifacts throughout (Segment 47 'the paths in the woods were always clear' fragment, Segment 53 'turpentine time' confusion, Segment 109 'pressure' / 'Prescher' for the sheriff's name, Segment 192 'ASCS', Segment 230 garbled cousin names).",
+            "Speaker pace and Worth County / Southwest Georgia regional speech patterns may require attention for general audiences.",
+            "Several sentences trail off mid-thought (Segment 161 'He was some turbotimes')."
+          ],
+          "justification": "The transcript's quality and the speaker's regional speech patterns combine to produce many segments that require effort to follow. The speaker is articulate and uses clear vocabulary when audible, but the recording quality has introduced enough garbling that name-level claims sometimes require interpretation. ASCS (Agricultural Stabilization and Conservation Service) is mentioned without immediate explanation."
+        },
+        "narrative_flow": {
+          "score": 4,
+          "max_possible": 7,
+          "overall_rhythm": "uneven",
+          "high_energy_sections": [
+            "CT Rockwell shooting (Segments 142-160, 00:12:57,000 - 00:14:39,000) -- dramatic stakes and reconstructed scene.",
+            "Cousins' detention and C.B. King intervention (Segments 105-123, 00:09:27,000 - 00:11:15,000) -- legal-thriller pacing with clear arc."
+          ],
+          "slow_sections": [
+            "Synectics training description (Segments 562-590) -- somewhat abstract.",
+            "The end of the interview repeatedly cycles through 'words of wisdom' and 'thanks for sharing' patterns (Segments 533-560)."
+          ],
+          "interviewer_impact": "mixed",
+          "attention_sustainability": "Audiences can follow the core narrative for the first 30 minutes; the final 12 minutes are more reflective and conversational, which may lose general audiences without close interest in cooperative-farm history.",
+          "justification": "The narrative momentum is strongest in the childhood and adolescence chapters (the woods walk, the Rockwell shooting, the cousins' detention) and during the New Communities founding story. It loses momentum in the post-NCI reflective chapters. The interviewer is competent but does not push for clarification on the ASR-garbled name moments, which would have helped audibility."
+        },
+        "broader_themes_connection": {
+          "score": 4,
+          "max_possible": 6,
+          "themes_connected": [
+            "Black-farmer land loss and federal-program discrimination",
+            "Cooperative ownership as a Movement strategy",
+            "The continuity of SNCC organizing into post-1965 rural Movement work",
+            "School integration under Freedom of Choice",
+            "Mentorship networks as Movement infrastructure"
+          ],
+          "contemporary_relevance": "The Pigford settlement era (2009) and the ongoing question of Black-farmer access to federal programs remains contemporary; the cooperative-land-trust model pioneered by New Communities is a live alternative in housing-and-land-justice work today.",
+          "meaning_making": "Young occasionally pauses to make explicit thematic claims ('anytime Black folk got control of something that was going to seem like better that live, you just was not taken kindly by the locals'), but does not consistently bridge his story to larger frames. He does explicitly connect his father's loan-foreclosure experience to the federal-discrimination pattern that later became the Pigford suit.",
+          "justification": "Young makes several explicit thematic bridges (the structural exclusion of Black farmers from federal programs, the contrast with multigenerational white-farmer land transfer) but does not consistently theorize his experience. The interview is more operational testimony than thematic reflection, which gives it primary-source value at the cost of some accessibility-as-thematic-explanation."
+        },
+        "overall_assessment": "Accessibility is the weakest dimension primarily because of the transcript's ASR artifacts and the speaker's regional speech patterns. The narrative is uneven -- strongest in the first 30 minutes, more reflective and meandering at the close. Young makes meaningful thematic connections to Black-farmer discrimination and the cooperative-land model but does not consistently theorize his story. For research audiences this is a strong operational interview; for general audiences it is a moderate-engagement piece."
+      }
+    },
+    "overall_assessment": "This interview is a moderately engaging but historically valuable first-person operational witness to New Communities Inc. and the Southwest Georgia Project for Community Education, told by a working-level participant rather than a leadership figure. Sam Young, Jr. provides irreplaceable on-the-ground operational testimony of the canonical first community land trust in the U.S. South, including specific details about the peanut allotment, the daily labor, and the family-level decisions of living on the cooperative-farm site from 1974. His Worth County childhood material -- the woods walk, the cousins' detention, the CT Rockwell shooting -- documents local rural-Georgia violence and harassment that falls outside the canonical Albany Movement frame. The transcript's ASR-level artifacts limit accessibility, and the narrative is uneven, but the operational New Communities testimony is Smithsonian-grade primary-source material that complements rather than competes with leadership accounts in the corpus.",
+    "key_strengths": [
+      "Operational first-person witness to New Communities Inc. -- the first community land trust in the U.S. South -- including specific details (300-acre peanut allotment, 1974 on-site residence with family, the choice never to plant cotton) that are not redundant with leadership testimony in the corpus.",
+      "Worth County rural-Georgia violence and harassment material that complements the canonical Albany Movement record with locally specific incidents (CT Rockwell shooting, cousins' detention, church vandalism).",
+      "Confirmed mentorship lineage from Charles Sherrod, Robert (Bob) Mants, and Randolph Battle into the Southwest Georgia Project for Community Education -- documenting how post-1965 SNCC work continued into the cooperative-farm and land-trust era."
+    ],
+    "key_limitations": [
+      "ASR-level transcription artifacts (the sheriff's name, the cousins' names, the church name, the father's name, several other proper-noun references) reduce verifiability and may require follow-up interview or local-archival cross-referencing.",
+      "Speaker's regional cadence and occasional trailing-off sentences make the audio less accessible to general audiences and may reduce engagement for non-specialist listeners."
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-25",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Sam Young, Jr. was born in Worth County, Sylvester, Georgia on March 13, 1950.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 13-14 (00:01:09,000): 'And I was born in Worth County, Sylvester, Georgia. March 13, 1950.'",
+        "rationale": "Speaker states birthplace and date directly."
+      },
+      {
+        "claim": "The interview took place on March 9, 2013, in Albany, Georgia on the campus of Albany State University.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 4-6 (00:00:18,000-00:00:38,000): 'Today is Saturday March 9, 2013... I am with videographer John Bishop and Albany Georgia on the campus of Albany State University to conduct an interview for the Civil Rights History Project.'",
+        "rationale": "Interviewer states date and location directly at the opening."
+      },
+      {
+        "claim": "The interviewer is Willie Griffin of the Southern Oral History Program at the University of North Carolina at Chapel Hill.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 5 (00:00:22,000): 'My name is Willie Griffin and I am a research associate with the Southern Oral History Program at the University of North Carolina at Chapel Hill.'",
+        "rationale": "Interviewer self-identifies."
+      },
+      {
+        "claim": "Young's father was politically engaged, kept the family abreast of issues like Brown v. Board of Education, and required the children to watch the news daily.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 19, 25, 28: 'my father, he was very political and he always kept us abreast on different issues'; 'he made us watch the news every day'.",
+        "rationale": "Speaker states this directly. The father's first name remains ambiguous in the transcript but the political engagement claim is directly stated."
+      },
+      {
+        "claim": "Young chose to attend the white school under 'Freedom of Choice' integration.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 35-42 (00:03:09,000-00:03:40,000): 'when I went to, at that time, it was Freedom of Choice... I chose to go to the, with Freedom of Choice, things chose to go to the other schools, the white schools.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Black children walked to school through the woods because the schools were located with the churches in Worth County; white school buses passed and white children shouted racial slurs.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 43-46 (00:03:52,000-00:04:24,000): 'our schools were out with our churches in Worse County. And we were walked every day back and forth, you know, to school. And the school buses would come by... the children, you know, what hang the heads out of the window, when they're calling us, or racial names and all that.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young threw rocks at the school buses and bus drivers used brake lights.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 48-51 (00:04:36,000-00:04:51,000): 'when somebody's messing with you, you know, we threw rocks at the bus... And the bus driver would put the lights on, you know, brake lights.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young's father held him back a grade because he could not read, even though his younger sister was entering first grade.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 57-62 (00:05:14,000-00:05:46,000): 'my father said that I could not read. And I had a sister coming into the first grade, the same time, at that same time. I support them in the second grade.... My father kept me back because he said I could not read.'",
+        "rationale": "Speaker states this directly. Year not given."
+      },
+      {
+        "claim": "Young's teacher caught him sitting on a spelling book to cheat and spanked him; she offered to march him home to confront his parents.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 73-83 (00:06:24,000-00:07:13,000): 'I was caught sitting on a spelling book... she spanked me... come on, let's go. I'll take you to her because we can see who's right.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young's parents told him 'you were born an individual and you would die an individual,' which is a principle he still follows.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 88-90 (00:07:43,000-00:08:03,000): 'one other thing that my parents told me, you never follow the crowd. You were born and individual and you would die and individually. And that's one that I do that even today.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "The Blue Spring Baptist Church (or 'Blue Springs Baptist') in Worth County, where Young grew up and attended school, was vandalized by local people who painted 'this is the devil's den' or similar; the local vendor responsible was made to repaint it.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 96-104 (00:08:47,000-00:09:27,000): 'Blue spraying Baptist church in Worth Church... they painted some things on it. The church black and said written that this is the devil's den or something of that. But we found out there was one of the local vendors, some that did it. And he made him go back out and repaint the whole thing.'",
+        "rationale": "Speaker states this directly. Church name slightly garbled in transcript -- summary uses 'Blue Spring Baptist' as the most plausible reconstruction."
+      },
+      {
+        "claim": "Young's two cousins, roughly 14 years old, were arrested at Worth County High School after one fought a white student and won; they were taken to the Youth Detention Center in Albany.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 105-119 (00:09:27,000-00:10:52,000): 'two of my cousins were taken into custody at Worth County High School because she, she and the white guy got into it and she beat him. They came and arrested her, right off the school bus and they took them, brought them over... They brought them over to Albany at the Youth Detention Center here.'",
+        "rationale": "Speaker states this directly. Cousins were 'somewhere in that neighborhood' of 14 years old (Segments 119-120)."
+      },
+      {
+        "claim": "The sheriff refused for three days to tell Young's aunt where her children were; attorney C.B. King intervened and threatened to have the sheriff arrested, after which the children's location was disclosed.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 117-123 (00:10:37,000-00:11:15,000): 'It was only the children were out of place for three days before the sheriff would tell... at the time, Attorney C.B. King was a very prominent black lawyer here... C.B. threatened to have the sheriff arrested. And at that point, he told whether the children were, and they were over here in Albany.'",
+        "rationale": "Speaker states this directly. C.B. King is verified in the ground-truth corpus as a real Albany, Georgia civil rights attorney."
+      },
+      {
+        "claim": "CT Rockwell, a family friend and Sunday-school deacon, was shot in the face by his white employer Albert Gill after Rockwell refused to address Gill's teenage son as 'Mister'; Rockwell threw up his hands and avoided being blinded because his hand absorbed the buckshot.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 142-176 (00:12:57,000-00:15:10,000): 'And he came to work, not to work, but to have been to work. And he got shot. The guy that he was working for. The son of that, his employee, wanted him to call him... the young guy wanted him to call him Mr. So he said, no, I'm not going to call you Mr.... his name was CT Rockwell.... Albert Gill was who? The shooter.'",
+        "rationale": "Speaker states this directly. The speaker corrects himself between segments 165-176 on which name belongs to which role; the summary uses the final correction (CT Rockwell shot, Albert Gill shooter)."
+      },
+      {
+        "claim": "Young's family was a 'large family' with ten sisters and seven brothers; Young was the oldest son with two older sisters.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 203-207 (00:17:53,000-00:18:33,000): 'I have 10 sisters. I had 10 sisters and they were seven brothers... I was the oldest son and I had two sisters that were older than I am.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young graduated from Worth County High School in Sylvester, Georgia in 1968.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 213, 217-218 (00:18:47,000-00:19:20,000): 'I graduated, I was the only in 1968... Our Worth County High School in Sylvester, Georgia.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young's first public job was at Firestone Tire in Albany, where he and other workers were let go after running into civil rights problems on the job.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 240-247 (00:20:12,000-00:20:48,000): 'That was Firestone Tire Tire here. And that's what... That was my first job. And I ran into some pretty tough civil rights problems... They let me go along with some other people.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young joined the Southwest Georgia Project for Community Education through his two older sisters and worked with the Project until 1983.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 249, 284-285 (00:20:48,000, 00:22:17,000-00:22:21,000): 'I had two older sisters that were working with the Southwest Georgia Project for Community Education... I worked with the Southwest Georgia Project from like 19... up until 1983.'",
+        "rationale": "Speaker states this directly. Start year is left fragmented in the transcript."
+      },
+      {
+        "claim": "Young attended Albany Technical College to study graphic art (printing presses, plates, typesetting) but found his hands unsuited and gravitated to farm work.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 287-294, 354-363 (00:22:21,000, 00:25:53,000-00:26:25,000): 'I went to Albany Technical College to learn graphic art, you know, running machines and everything. And the farming is what I will. I grew up with it.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young's mentors at the Southwest Georgia Project included Charles Sherrod, Randolph Battle, and Robert Mants.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 310-322 (00:23:33,000-00:24:16,000): 'I worked basically on the Charles Sherrod, and there were other people... One of them was a Randolph Battle. I don't know. He was a good mentor of mine.... And another one was Robert Mants.'",
+        "rationale": "Speaker states this directly. Charles Sherrod and Bob Mants are both verified in the ground-truth corpus."
+      },
+      {
+        "claim": "Attorney Mary Young was a major champion of the civil rights movement in the Albany area who worked alongside attorney C.B. King.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 335-345 (00:25:03,000-00:25:39,000): 'I'm not sure whether you all are familiar with attorney Mary Young... She was a major champion for the civil rights movement in this area... she came in on the attorney C.B. King when she first came to all many [Albany].'",
+        "rationale": "Speaker states this directly. Mary Young is not in the ground-truth corpus -- her claim rests solely on the speaker's testimony."
+      },
+      {
+        "claim": "Charles Sherrod went to New York and learned that a large unposted tract of land was for sale in Southwest Georgia, and pursued the idea of purchasing it to create a self-sufficient Black community -- which became New Communities Inc.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 372-381 (00:27:00,000-00:27:39,000): 'Sherrod went to, uh, New York and found out that the land was for sale... in Southwest Georgia. But, uh, nobody, you know, it wasn't posted, but he found out about it who had been, uh, New York... the idea was to purchase this huge tract of land and become, you know, self sufficient, for black communities.'",
+        "rationale": "Speaker states this directly. The New Communities Inc. founding role of Charles Sherrod is verified in the ground-truth corpus."
+      },
+      {
+        "claim": "Young married in 1974 and moved his wife and children onto the New Communities site.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 466-468 (00:32:50,000-00:33:04,000): 'I got married in 74 and, uh, moved my, uh, wife and my children. We moved on to the, uh, on-site.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "The New Communities farm had over 300 acres in its peanut allotment, plus corn and vegetables (okra, watermelons); they chose never to plant cotton.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 410-420 (00:30:25,000-00:30:59,000): 'we had, uh, on that farm that was an allotment of, uh, over 300 some acres, you know, peanut. And we had, uh, corn, we never did plant cotton... we had, uh, corn, uh, vegetables, you know, okra, you know, lots of different things, watermelons.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "The ASCS (Agricultural Stabilization and Conservation Service, later renamed Farm Service Agency) foreclosed on many Black farmers in Southwest Georgia in the 1970s, contributing to the loss of New Communities Inc.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 192-193, 397-401 (00:16:57,000, 00:22:23,000-00:22:46,000): 'the, the, oh man, the ASCS office of, they got to, they changed it to Farm Service Agency now... but in, uh, 70s... if, if, uh, the, uh, ASCS, you know, they, they, they foclosed on a lot of, uh, a lot of black farmers in the area.'",
+        "rationale": "Speaker states this directly. The ASCS / Farm Service Agency relationship and the discriminatory foreclosure pattern are verified against the ground-truth corpus (Pigford v. Glickman entries)."
+      },
+      {
+        "claim": "A Black-farmer class-action lawsuit against the federal government was denied repeatedly in the late 1980s and mid-1990s and was finally resolved in 2009.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 423-449 (00:30:13,000-00:31:59,000): 'when they did, uh, class action suit, you know, the government against the, uh, I guess, AS, ASCS, or, you know, over the federal government finally admitted that there was discrimination against, uh, black farmers... it was denied... it had to be, sometime in the late 80s and maybe mid 90s... But the final thing came through in 20, 2009, 2009.'",
+        "rationale": "Speaker states this directly. The Pigford v. Glickman / Pigford II resolution arc is verified in the ground-truth corpus (Pigford I 1999, Pigford II 2009 Claims Resolution Act)."
+      },
+      {
+        "claim": "Shirley Sherrod and Charles Sherrod bought a new plot of land (likely in Dougherty County) after New Communities was lost.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 431-433 (00:30:56,000-00:31:07,000): 'Right, we had to buy some, I think, uh, well, Shirley Sherrod and Sherrod, you know, who bought some, they bought a new, plot of land here in, in, Doherty.'",
+        "rationale": "Speaker states this directly but tentatively. The location 'Doherty' is almost certainly 'Dougherty' County (where Albany sits), but the transcript renders it as a garbled location name. The summary uses 'likely Dougherty County'."
+      },
+      {
+        "claim": "Young attended a Synectics communication-skills and group-problem-solving training program in New York where he was filmed on camera for the first time.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 573-583 (00:38:32,000-00:39:14,000): 'in, uh, New York, that was a thing called, uh, Synectics, you know, where you, they, what they, what they do, they teach you about, uh, solving problems and, uh, you know, in groups and stuff, they take you in, just like, this is like I'm sitting here talking now. And, uh, they have you on camera... And that was, uh, the first time I saw myself on camera.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young's parting advice is that 'you have to stand up sometimes' and address issues directly rather than waiting.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 536-540 (00:37:23,000-00:37:42,000): 'sometimes, you know, you have to be, you have to stand up sometimes, you know, because if you don't, you know, some decision can take, take, take you to the left or too far to the right. But you have to, you know, in other words, address the issues, address it then. Don't wait, uh, to later.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young experienced disillusionment after the loss of the farm and has been 'kind of just maintaining' since, but a recent chance encounter with one of the Sherrods inspired him to want to reengage.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 497-518 (00:34:21,000-00:36:06,000): 'I've been kind of, um, uh, just, you know, maintaining... I saw one of the Mr. Sharal... She was leaving out, and I guess it just coincided that the lady was coming out of the park a lot... that was kind of like an inspiration to me, you know, to, uh, you know, get back involved.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "Young's father experienced loan foreclosure as a Black landowner, but a local white grocer/hardware store owner extended him a line of credit that allowed the family to farm through those years.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 180-188 (00:15:45,000-00:16:26,000): 'they were like, they were black land on us. Right. And loans were foreclosed, you know, everything, you know. And I remember there was a local white grocer that he also had a hardware store. And he extended my father a line of credit, you know, to farm with. And that's how we made it through those times.'",
+        "rationale": "Speaker states this directly."
+      },
+      {
+        "claim": "The Civil Rights History Project is a joint undertaking of the Smithsonian National Museum of African American History and Culture and the Library of Congress.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1, 6-7, 604 (00:00:00,000, 00:00:29,000, 00:41:37,000): 'From the Library of Congress and the Smithsonian National Museum of African American History and Culture... an interview for the Civil Rights History Project, which is a joint undertaking of the Smithsonian National Museum of African American History and Culture and the Library of Congress.'",
+        "rationale": "Stated directly at opening and closing."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 32,
+      "supported": 31,
+      "partially_supported": 1,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_quality_below_90_citation_blocked_1_partial",
+    "rationale": "The main summary scores 82 on accuracy and 84 on quality, both below the 90/90 Smithsonian-grade publication threshold. The citation audit found 31 supported claims, 1 partially supported (the Shirley and Charles Sherrod 'Doherty' / Dougherty County post-NCI land purchase, where the transcript's location name is garbled at the ASR level), and 0 unsupported. The accuracy and quality scores reflect honest concerns about ASR-level transcription artifacts that obscure several proper-noun claims (the father's name, the sheriff's name, the cousins' names, the church name), plus a one-year discrepancy between the speaker's New Communities founding year ('68') and the canonical 1969 corpus value, plus several local figures (Randolph Battle, Mary Young) whose claims rest solely on the speaker's authority and cannot be independently corroborated from the ground-truth corpus. These are not invented claims and not hallucinations -- they are unresolved-attribution ambiguities that warrant human review before publication. The right destination is the review queue, where a human reviewer can either accept the local-figure claims on the speaker's authority (the standard practice for primary-source oral history) or pursue local-archival verification."
+  }
+}
