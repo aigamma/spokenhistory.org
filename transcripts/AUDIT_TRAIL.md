@@ -34,6 +34,69 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+### Session 8 — 2026-05-25: Pass 8 LoC canonical-archive cross-reference
+
+**End-of-session summary:** *(populated at session close)*
+
+**Agents:** Claude Opus 4.7 (main session orchestrator) + per-entry Claude Sonnet 4.6 subagents (one subagent per transcript for Phase 2 word-level divergence classification + surgical heal application). The one-agent-per-transcript discipline (per `feedback_one_agent_per_transcript`) is preserved: no batched transcripts inside a single agent. Phase 1 is deterministic Python with no model in the loop.
+
+**Wall-clock:** in progress (started 2026-05-25 ~13:00).
+
+**Scope:** Heal each of the 127 audit-able interview transcripts in `transcripts/corrected/<entry>/` against its corresponding Library of Congress source-of-truth — LoC's structured TEI2 XML transcript when available. LoC text wins where it disagrees with our Whisper-derived text on matters of canonical fact (proper names, place names, dates, attributions). Our files remain the master archive; corrections apply token-level within existing timestamped SRT/VTT cue boundaries to preserve the segment structure + metadata layer.
+
+This is read-only against LoC's public API (`loc.gov` JSON endpoints, `tile.loc.gov` for transcript-XML storage). Nothing is submitted to LoC. The audit overlay's existing pass discipline — row-ID convention `<entry>.P8.X`, confidence tiers, three-stage cascade with LoC-XML as the canonical Stage-1 source — continues to apply.
+
+**Methodology:**
+- **LINEAR processing only.** No parallel subagents touching LoC. Eric's explicit constraint (memory: `feedback_linear_loc_api`): aggressive querying gets the IP labeled as an attacker and blocked at the National Archive. 1.5s polite delay between requests; one subagent at a time for per-entry classification; sequential progression through the 127 entries.
+- **Apply-before-push discipline.** Every commit ships both the analysis (per-entry stage file in `pass8_stage/`) AND the applied heal in `corrected/<entry>/`. No "abstract recommendations land first, application later" — that is the exact failure pattern that produced the staleness gap closed in commit `a80a77c`.
+- **Per-entry artifact convention.** Per-entry granular evidence lives in `transcripts/pass8_stage/entry_<NNN>_<slug>.md`, matching the existing `pass2_stage/`, `pass3_stage/`, ..., `pass7_stage/` naming. AUDIT_TRAIL.md gets the longitudinal session-level summary + aggregate metrics + cross-references to the stage files.
+- **Stop conditions.** Spelling-discrepancy surprise (`Crena de Iongh` / `Krenge` class — names where our overlay's canonical spelling diverges from LoC's authoritative spelling); LoC `403` / `429` throttling response; any per-entry content-verification failure (cue count change, timestamp drift, healed token not actually present in the post-apply file).
+- **Verification by content, not exit status.** After applying corrections to each entry, read the file back and confirm the healed tokens are present, the SRT cue indices match the pre-heal count, and 3 spot-check timestamps are unchanged.
+
+#### Phase 1 — Resolve all 127 entries to LoC items + cache transcript XML
+
+**Status:** *(populated when Phase 1 completes)*
+
+**Deliverables:**
+- `transcripts/loc_healing/resolve_loc_items.py` — deterministic resolver (verified working on Aaron Dixon as the fail-fast check during this session's setup; match score 0.95, correctly disambiguated from brother Elmer Dixon).
+- `transcripts/loc_healing/loc_cache/<subject>.xml` — cached transcript TEI2 XML per entry (where LoC has one).
+- `transcripts/loc_healing/loc_cache/<subject>.resolution.json` — per-entry resolution metadata (match score, LoC item URL, XML URL, ambiguity flag).
+- `transcripts/loc_healing/loc_cache/_index.json` — aggregate coverage index (status counts, ambiguous list, no-transcript list, search-failed list).
+
+**Verification:**
+- Manual spot-check of 3 resolved entries: confirm LoC item URL is the expected `/item/NNNNN` URL, the XML downloads successfully, the XML body contains the expected interviewee's prose.
+- Confirm `_index.json` reports ~120+ `ok` results (LoC carries transcript XML for the majority of CRHP interviews; some have audio-only or PDF-only items).
+
+**Anomalies:** *(populated when Phase 1 completes)*
+
+#### Phase 2 — Per-entry word-align + classify + heal + verify + stage-file
+
+**Status:** *(populated when Phase 2 completes)*
+
+**Deliverables:**
+- 127 (or however many `Phase 1` resolved successfully) per-entry files under `transcripts/pass8_stage/entry_<NNN>_<slug>.md`. Per-entry file format: LoC item URL + match metadata, divergence counts (detected / healed / preserved-verbatim / unresolved), per-correction table (SRT segment ID + our token + LoC token + verdict + reasoning), preserved-verbatim table, unresolved-for-human-review list.
+- Updated `transcripts/corrected/<entry>/<entry>.srt|txt|vtt` files with applied heals. Heals are surgical token-level replacements within existing cue boundaries; no segment restructuring, no retiming, no wholesale prose substitution.
+- Updated `transcripts/corrected/<entry>/manifest.json` files with new `loc_healing` section recording the heal counts + cite-source URL.
+- Where LoC adjudicates a previously-low-confidence Pass-N row to canonical-correct, a new `<entry>.P8.X` row is added to `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` with `high` confidence and LoC item URL as the source. This resolves Pass-6-unresolved-escalated-to-ensemble rows via LoC as the authoritative ensemble verdict.
+
+**Verification:**
+- Per-entry content checks: cue count equal pre- and post-heal; 3 spot-check timestamps unchanged; healed tokens present in the post-heal SRT.
+- Cross-corpus check after all entries processed: `python scripts/apply_corrections.py --dry-run` is idempotent (already-applied heals + master MD state are internally consistent).
+
+**Anomalies:** *(populated as Phase 2 progresses)*
+
+#### Phase 3 — Coverage report + master MD updates + session close
+
+**Status:** *(populated when Phase 3 completes)*
+
+**Deliverables:**
+- `transcripts/loc_healing/COVERAGE_REPORT.md` — aggregate coverage report. Tables: total entries healed, total divergences detected, breakdown of verdicts (ASR_ERROR_HEAL / EDITORIAL_SMOOTHING / SPEAKER_DISFLUENCY / UNCLEAR), entries with no LoC transcript text (LoC has item but only audio/PDF), entries flagged for SME review.
+- AUDIT_TRAIL.md end-of-session summary.
+- Updated `OPEN_PROBLEMS.md` resolving items addressed by this session (in particular: any of the 21 PASS-6 unresolved-escalated rows that LoC adjudicated).
+- Archive `transcripts/session_prompts/NEXT_SESSION_PROMPT.md` to `transcripts/session_prompts/archive/NEXT_SESSION_PROMPT_2026-05-25_loc-healing-completed.md` per the single-use convention.
+
+---
+
 ### Session 7 — 2026-05-24: Codex publication-readiness apply + deployment
 
 **End-of-session summary:** *(populated at session close)*
