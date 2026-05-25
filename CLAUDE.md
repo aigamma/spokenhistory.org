@@ -214,6 +214,7 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 | `rag/CONFERENCE_PREP.md` | London-conference brief (2026-06): what's in the corpus, how the embeddings represent it, what queries the presentation will exercise, what's still left to wire up. The "philosophy of embedding" framing for stakeholder communication. |
 | `mcp-server/README.md` | Engineering reference for the MCP server (post-2026-05-25 Pinecone+Voyage rewire). Architecture, local dev, deployment, env vars, citation-payload shape. |
 | `mcp-server/USAGE_GUIDE.md` | End-user / researcher / Anthropic-Connector-Directory submission doc. Audience, what's in the corpus, connection setup, three worked examples (grant citation, quote verification, curriculum dev), citation format reference (Chicago/APA/MLA), provenance/transparency notes. **Read this if asked about how to use the MCP connector or its value proposition.** |
+| `netlify/functions/README.md` | Netlify Function endpoints (server-side proxies that keep API keys out of the client bundle). Currently: `retrieve.mjs` for the public semantic-search proxy used by the frontend RAG components. |
 | `functions/README.md` | Cloud Functions (Firebase) layer documentation |
 
 ### `Metadata Generation System/` — the Python pipeline
