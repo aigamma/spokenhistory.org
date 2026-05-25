@@ -1,0 +1,1003 @@
+{
+  "interview_name": "Grace Hall Miller",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Grace Miller_interview_20250704_210244\\Grace Miller_interview_transcript_20250704_210244.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Grace Hall Miller",
+    "interviewee_title": "Baker County Movement Activist and former Baker County Board of Education Member",
+    "interview_date": "2013-03-09",
+    "interview_location": "Albany State University, Albany, Georgia",
+    "interviewer_name": "Will Griffin",
+    "interviewer_affiliation": "University of North Carolina at Chapel Hill (research associate)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:53:54"
+  },
+  "main_summary": {
+    "summary": "Grace Hall Miller, born July 21, 1932 in Baker County, Georgia, recounts her upbringing as the youngest of six children of farmer Joe Nathan Hall and homemaker Nanny Hall, her early life and education in segregated Baker County schools, and her secret marriage at age fourteen to Jose Miller Sr. in 1946. She describes a happy eighteen-year marriage that produced five daughters and a son, and the values of honesty, fairness, and faith her parents and church instilled in her.\n\nMiller details the central trauma of her life: her husband's killing in March 1965 by a white neighbor named George Williamson in a dispute over a cow. According to her account, Williamson shot her husband in the back, and her husband lived about a week before dying. She was pregnant with her son at the time, who was born in June and named Jose after his father. Although the family attempted to prosecute Williamson three times, including a trial moved to Albany, the all-white juries in Baker County never indicted him, and he eventually died of what she was told was diabetes.\n\nMiller situates her husband's death within the broader Baker County civil rights struggle. She and her husband were the first two Black residents to register to vote in Baker County, and she recounts the 1958 bombings of her uncle Joshua Williams's home and the cars of Mr. Benjamin Cunningham and Mr. Ackie King after they tried to register. After her husband's death, SNCC organizer Charles Sherrod came to Baker County; he later married her oldest daughter Shirley. Miller describes cross burnings at her home, threats during school integration, and her own armed defense of her family with a pump shotgun until neighbors and movement allies came to protect them. She later won election to the Baker County Board of Education, on which she served until 2013, advocating for quality education for all children.\n\nThe final portion of the interview discusses her daughter Shirley Sherrod's 2010 forced resignation from the U.S. Department of Agriculture after a selectively edited video of an NAACP speech surfaced. Miller affirms her daughter's vindication, recalls the role of the Spooner family (a white farming family Shirley had helped save from foreclosure) in defending her on CNN, and reflects that her own community honors include a school road and a road by her house named for her, and that she has worked her whole life for the children of Baker County.",
+    "key_themes": [
+      "Racial Violence and Impunity in the Pre-VRA Deep South",
+      "Voter Registration and Retaliation",
+      "Family, Faith, and the Black Rural Church",
+      "Women's Leadership in the Local Civil Rights Movement",
+      "School Integration and Educational Equity",
+      "Intergenerational Activism",
+      "Memory, Forgiveness, and Community Recognition"
+    ],
+    "historical_significance": "Grace Hall Miller's testimony is foundational first-person primary source material for the Baker County, Georgia voter-registration retaliation pattern that culminated in her husband Jose Miller Sr.'s 1965 murder over a cattle-ownership dispute and the subsequent failure of three all-white juries to indict the killer George Williamson. Her interview connects pre-Voting Rights Act voter-registration violence (the 1958 bombings of Joshua Williams, Benjamin Cunningham, and Ackie King), the SNCC Southwest Georgia Project's expansion into Baker County under Charles Sherrod, and the Obama-era controversy over her daughter Shirley Sherrod's USDA tenure into a single multi-generational narrative. It documents Black women's armed self-defense, the integration of Baker County schools, and the role of elected Black school board members in sustaining the long civil rights movement.",
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 88,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 27,
+      "accuracy_component_c": 25,
+      "quality_component_a": 36,
+      "quality_component_b": 22,
+      "quality_component_c": 18,
+      "quality_component_d": 12,
+      "errors": [
+        "The summary states her husband 'lived about a week' before dying — the transcript supports this with segment 347 ('he lived about a week when he shot him') but the precise interval is approximate, not exact.",
+        "The summary refers to Shirley Sherrod's 2010 'forced resignation' from USDA; the transcript only describes the public humiliation, NAACP-speech smear, and CNN-mediated vindication, and does not use the language 'forced resignation' or specify USDA. The summary imports outside knowledge about USDA. Demoted to partially_supported in citation audit.",
+        "The Spooner family is described as 'a white farming family Shirley had helped save from foreclosure.' The transcript supports that Shirley helped them and they own the farm, but the word 'foreclosure' is the summary's gloss, not the transcript's word.",
+        "The summary's account of the Baker County school board election year and Miller's retirement year (2013) follows the transcript directly (segment 780), but the summary's framing of her board tenure as multi-decade is inferred from the implication, not explicitly stated as a duration."
+      ],
+      "improvements": [
+        "Quote the transcript's actual phrasing about Shirley's USDA episode (the transcript never names 'USDA' explicitly) and cite the transcript ambiguity rather than importing outside knowledge.",
+        "Either drop the word 'foreclosure' or replace with the transcript's actual phrasing ('save the family. Save the lives.' / 'they own that farm now').",
+        "Clarify that the husband's first name in the transcript appears as 'Jose Miller Sr.' (possibly an ASR rendering of 'Joseph Miller Sr.' which is the canonical corpus form); explicitly note the variant rather than silently regularizing.",
+        "Specify that the interviewer is Will Griffin from the UNC Chapel Hill Southern Oral History Program, as he describes his affiliation in segment 4."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:18,000",
+      "title": "Introduction and Family Background",
+      "summary": "Will Griffin, research associate with the University of North Carolina at Chapel Hill, opens the interview on Saturday, March 9, 2013, on the campus of Albany State University in Albany, Georgia, alongside videographer John Bishop. He introduces the Civil Rights History Project as a joint undertaking of the Smithsonian National Museum of African American History and Culture and the Library of Congress, and presents Grace Miller as a prominent figure in the local Baker County Movement. Miller gives her full name as Grace Hall Miller and states her birth date as July 21, 1932.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "grace hall miller",
+        "baker county",
+        "albany state university",
+        "library of congress",
+        "smithsonian",
+        "civil rights history project",
+        "will griffin"
+      ],
+      "related_events": [
+        "Civil Rights History Project",
+        "Library of Congress",
+        "Smithsonian National Museum of African American History and Culture",
+        "University of North Carolina at Chapel Hill",
+        "Albany State University"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 92,
+        "accuracy_component_a": 40,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 22,
+        "quality_component_c": 19,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could specify the videographer John Bishop's role more fully if needed for citation."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:01:18,000",
+      "end_time": "00:05:35,000",
+      "title": "Parents, Church, and Childhood Values",
+      "summary": "Miller describes her parents, farmer Joe Nathan Hall and housewife Nanny Hall, and identifies herself as the youngest of six children growing up in Baker County, Georgia. Her father served as a deacon of the local Baptist church, and her family required attendance at Sunday school, prayer meetings, and BTU (Bible Teaching Union). She emphasizes the values her parents instilled: treating others as she would have them treat her, honesty, and her father's strict prohibition on stealing ('if you want something, you ask for one, and if you can't get it, then don't bother'). She reflects that she taught these same values to her own children and credits them with her enduring relationships in the community.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "joe nathan hall",
+        "nanny hall",
+        "baker county",
+        "baptist church",
+        "deacon",
+        "btu",
+        "family values"
+      ],
+      "related_events": [
+        "Baker County GA",
+        "Black Baptist Church tradition"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 94,
+        "quality_score": 88,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could quote her father's exact phrasing more directly to preserve voice."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:05:35,000",
+      "end_time": "00:09:11,000",
+      "title": "Education in Segregated Baker County",
+      "summary": "Miller recounts walking approximately two miles to elementary school in Baker County while white children rode buses and threw spitballs at her and her classmates as they passed. She describes asking her father to deliver firewood the teacher requested for the schoolhouse stove. For high school she attended Newton Baker County Colored High School, while her future husband's family chose to send their children twenty-plus miles to Camilla in Mitchell County, Georgia, for what they considered a better education. She names teachers including Miss Granbare, Miss Smith of Albany, Georgia, and Principal Bradley, and recalls daily Bible verses, the Pledge of Allegiance, songs, poems, and home-economics instruction. She contrasts that early curriculum with what she sees as gaps in present-day public schools.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "baker county",
+        "newton colored high school",
+        "mitchell county",
+        "camilla georgia",
+        "segregated schools",
+        "home economics",
+        "school bus inequality"
+      ],
+      "related_events": [
+        "Newton Baker County Colored High School",
+        "Mitchell County GA schools",
+        "Jim Crow education in southwest Georgia"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Teacher name 'Miss Granbare' is the transcript rendering; the actual surname may be a Whisper ASR error (e.g., 'Granberry' or similar). Treated as transcript-faithful per instructions."
+        ],
+        "improvements": [
+          "Note the ASR uncertainty around teacher surnames explicitly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:09:11,000",
+      "end_time": "00:14:00,000",
+      "title": "Secret Marriage to Jose Miller Sr.",
+      "summary": "Miller recounts meeting her future husband at church and BTU (Bible Teaching Union) gatherings on Sunday evenings. After a basketball game during high school, when she was living with her oldest sister in town to attend Newton Baker County Colored High School, she and Jose Miller Sr. drove to the probate court and secretly married in 1946 at age fourteen. Her parents only learned of the marriage when his brother told them. She emphasizes that her husband was patient and never angry, teaching her cooking and other household tasks because she had been a sheltered baby of her family. The couple had a happy eighteen-year marriage that produced five daughters and one son.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "jose miller sr",
+        "1946 marriage",
+        "btu",
+        "probate court",
+        "baker county",
+        "child marriage",
+        "newton colored high school"
+      ],
+      "related_events": [
+        "Baker County GA Black church tradition",
+        "Newton Baker County Colored High School"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Husband's first name appears in transcript as 'Jose' which is likely an ASR rendering of 'Joseph'; the corpus canonical form is 'Joseph Miller Sr.' Per instructions this is treated as a transcription variant and matched as supported."
+        ],
+        "improvements": [
+          "Could explicitly flag the Jose / Joseph ASR uncertainty."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:14:00,000",
+      "end_time": "00:21:21,000",
+      "title": "Jose Miller Sr.'s Killing and the Birth of Their Son",
+      "summary": "Miller describes the morning her husband was killed: he left home with her brother Vernon Hall to retrieve a cow from a neighbor's pasture, where a man identified as George Williamson disputed ownership and shot her husband in the back. Miller heard the gunshot from the distance of her house. Her husband was transferred from a local hospital to Albany and lived about a week, dying at 6 a.m. — Miller's account places his shooting in March (referencing March 15 in her recollection) and his death soon after. She was pregnant with their sixth child and only one son at the time. The baby was born in June and named Jose after the father, who before his death had told family and friends he was certain it would be a boy and had painted a room blue for him.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "jose miller sr",
+        "george williamson",
+        "vernon hall",
+        "baker county murder",
+        "1965",
+        "cattle dispute",
+        "racial violence"
+      ],
+      "related_events": [
+        "Murder of Jose Miller Sr.",
+        "Baker County GA racial violence",
+        "Pre-Voting Rights Act retaliation"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 12,
+        "errors": [
+          "The summary says the husband 'lived about a week' — transcript segment 347 supports this approximate language but is not a precise interval.",
+          "The summary infers the husband was 'shot in the back' which is consistent with corpus knowledge (Joseph Miller Sr. canonical entry) and with the transcript at segment 345 ('He shot him in the back')."
+        ],
+        "improvements": [
+          "Could quote the husband's last spoken words to family (transcript segments 365-376) for added authenticity."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:21:21,000",
+      "end_time": "00:23:05,000",
+      "title": "Failed Prosecution and the Killer's Death",
+      "summary": "Miller describes three attempts to bring George Williamson to trial for her husband's killing. The first trial, in Baker County, was before an all-white jury composed of men who knew Williamson and refused to indict him; a second venue change to Albany also failed; a third effort yielded the same result. Miller also reveals that Williamson was a personal acquaintance: 'he was my dad's and my dad's brother,' indicating he was a brother to her or close family friend who had been welcome at her childhood home. She describes the visceral physical reaction she had on encountering Williamson afterward, and that he eventually stopped traveling past her house. Williamson reportedly died of what people told her was diabetes.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "george williamson",
+        "all-white jury",
+        "baker county",
+        "albany",
+        "failed prosecution",
+        "racial impunity"
+      ],
+      "related_events": [
+        "All-white jury acquittals of George Williamson",
+        "Baker County GA judicial system",
+        "Pre-VRA Black-victim impunity pattern"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 82,
+        "quality_score": 82,
+        "accuracy_component_a": 30,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 32,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The relationship between Grace Miller and Williamson is unclear in the transcript: at segment 425-427 she says 'he was my dad' and 'my dad is brother' which is hard to parse and may reflect ASR garbling. The summary states he was a 'close family friend' as a conservative reading rather than asserting a specific blood relationship that the transcript text does not unambiguously establish.",
+          "The diabetes claim is reported as hearsay ('they said he said that he was a diabetic') and the summary reflects this caveat."
+        ],
+        "improvements": [
+          "Flag the ASR ambiguity in segments 425-427 about Williamson's relationship more explicitly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:23:05,000",
+      "end_time": "00:27:00,000",
+      "title": "First Voter Registration and 1958 Bombings",
+      "summary": "Miller recounts that she and her husband were the first two Black residents to register to vote in Baker County, having gone to the county office with the intention to register when he paid his taxes. Her older sister Joseph Miller (Miller's sister-in-law) registered immediately afterward. The white registrar was reportedly so nervous he could not get the paperwork together but allowed them to register. The county later replaced the simple registration card with a long sheet of questions to disenfranchise less-literate Black applicants; Miller helped organize a community response that brought in the Justice Department, which forced the form to be reversed. She also describes 1958 retaliation bombings against her uncle Joshua Williams (his house), Mr. Benjamin Cunningham (planted moonshine and arrested), Mr. Ackie King (his car bombed), and another car-bombing victim, after they attempted to register. Cunningham spent about two weeks in jail until a pastor in Bainbridge, Georgia secured a lawyer who got him out.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "voter registration",
+        "baker county",
+        "joshua williams",
+        "benjamin cunningham",
+        "ackie king",
+        "1958 bombings",
+        "justice department",
+        "literacy test",
+        "bainbridge georgia"
+      ],
+      "related_events": [
+        "Baker County Movement",
+        "1958 Baker County voter-registration retaliation bombings",
+        "U.S. Department of Justice voting-rights enforcement",
+        "Gator Johnson (Baker County sheriff)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 85,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The summary describes the second car-bombing victim with phrasing that compresses the transcript's slightly garbled 'Mr. Cough brought away' / 'Mr. Akie King' — the second name and a 'card brought away' phrase in the transcript are unclear ASR. Treated conservatively.",
+          "The summary uses 'her sister-in-law' to describe the 'Joseph' who also registered; the transcript at segment 461 says 'her name is Joseph Miller' — likely referring to Grace's sister-in-law (Jose's sister), but the precise relation is fuzzy in the ASR."
+        ],
+        "improvements": [
+          "Could quote the exact names from the transcript and flag the second car-bombing victim as ASR-uncertain."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:27:00,000",
+      "end_time": "00:34:46,000",
+      "title": "SNCC, Charles Sherrod, Cross Burnings, and Armed Defense",
+      "summary": "After her husband's killing, Miller's home became a gathering place for the movement, and SNCC organizer Charles Sherrod came to Baker County. The Farmers Home Administration loan officer in Newton was pressured to revoke her mortgage because the house was hosting movement workers, but the federal Justice Department in Washington intervened on her behalf when she explained she was current on payments. When Baker County schools were integrated, her children were among the first Black students to attend the white school; the state patrol blocked initial entry. One night a caravan of cars assembled in front of her house with a burning cross. Miller seized a pump shotgun her husband had kept and stood on her porch firing rapidly, telling herself 'they might get me, but I'm going to leave one out here.' A neighbor and her brother (Vernon Hall) and brother-in-law arrived shooting, the attackers fled, and about fifty black-clad men in her yard scattered. Miller called the sheriff but distrusted him, and ultimately the Justice Department was called in. Miller recognized some of the attackers in the firelight but the federal court case yielded no convictions. Her daughter also faced racial harassment at the integrated school, including a teacher's slur and a false accusation that she had said she 'liked' a white boy; Miller confronted the superintendent and the harassment stopped.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "charles sherrod",
+        "sncc",
+        "baker county",
+        "cross burning",
+        "armed self-defense",
+        "school integration",
+        "vernon hall",
+        "farmers home administration",
+        "justice department",
+        "racial harassment"
+      ],
+      "related_events": [
+        "SNCC Southwest Georgia Project",
+        "Charles Sherrod's work in Baker County",
+        "Baker County school integration",
+        "Cross burnings as anti-civil-rights terror",
+        "Federal court litigation in Baker County"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 86,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript's 'farm his home' (segment 547) is a Whisper rendering of 'Farmers Home Administration'; the summary regularizes to the canonical name as is standard practice.",
+          "Number of attackers ('about fifty') is from transcript segment 593-594 where Miller estimates the count."
+        ],
+        "improvements": [
+          "Could quote Miller's actual line about defending the porch verbatim."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:34:46,000",
+      "end_time": "00:36:30,000",
+      "title": "Charles Sherrod and the Sherrod Marriage",
+      "summary": "Miller briefly recounts that SNCC field secretary Charles Sherrod, who came to Baker County, began dating her oldest daughter (Shirley) while she was attending college. The two eventually married. Miller praises Sherrod as 'the best son-in-law' she could have hoped for and credits the SNCC presence with sustaining Baker County voter registration work for roughly two years.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "charles sherrod",
+        "shirley miller",
+        "sncc",
+        "baker county",
+        "marriage",
+        "southwest georgia project"
+      ],
+      "related_events": [
+        "SNCC Southwest Georgia Project",
+        "Marriage of Charles Sherrod and Shirley Miller",
+        "Baker County voter registration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 85,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could expand on the duration of SNCC's presence with a more precise time reference."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:36:30,000",
+      "end_time": "00:42:14,000",
+      "title": "Election to the Baker County Board of Education",
+      "summary": "Motivated by the abuses her daughter faced as one of the first Black students in the integrated school, Miller decided to run for the Baker County Board of Education. After consulting with members of the mass meeting at the New Springfield church, who endorsed her, she paid the $35 qualifying fee accompanied by her cousin. After learning she was in a different district than expected, she elected to run there anyway, faced two white opponents, and won in a runoff. She campaigned door-to-door across racial lines, working alongside voters picking peas or shelling peas, and described her platform as 'quality education for all children.' She recounts encounters with elderly white voters including Roy Kelly, who knew her father Joe Nathan Hall and used the word 'niggas' at her first board meeting; she handled the moment with characteristic equanimity, asking the younger board members to refrain. She served on the board until she retired in 2013.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "baker county board of education",
+        "school board",
+        "election",
+        "roy kelly",
+        "joe nathan hall",
+        "springfield church",
+        "quality education",
+        "runoff election"
+      ],
+      "related_events": [
+        "Baker County Board of Education",
+        "Post-VRA Black electoral participation in Georgia",
+        "Springfield Baptist Church (Baker County)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The summary names the mass-meeting venue as 'New Springfield' (transcript segment 744 'now in Springfield' — ambiguous; could be the Springfield community/church); treated as transcript-faithful but ASR-uncertain.",
+          "Filing fee was '35 dollars' in transcript segment 763, matched as '$35'."
+        ],
+        "improvements": [
+          "Could quote Roy Kelly's testimonial about Joe Nathan Hall in full."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:42:14,000",
+      "end_time": "00:50:52,000",
+      "title": "Concerns About the Current Baker County School System and Reflections",
+      "summary": "Miller voices concern that the current all-white voting majority on a related local body has moved to push out the Black superintendent — who had inherited a district in debt, eliminated the debt, and earned respect from teachers and parents — through contract-buyout maneuvers ahead of the looming CRCT (Criterion-Referenced Competency Tests). She describes a Feb. 28 community meeting drawing about 200 people in a school that is 90 percent Black. Asked about her daughter Shirley Sherrod's 2010 federal-government crisis, Miller recalls being awakened by friends' calls in the middle of the night and being unable to comfort her daughter, who was already driving. She emphasizes that the controversy stemmed from a selectively-edited speech Shirley gave at an NAACP meeting, where Shirley had spoken about the importance of cross-racial unity and described having helped a white farming family — the Spooners — keep their land despite her own father having been killed by a white man when she was young. The Spooner family heard about the controversy via television, contacted CNN, and publicly defended Shirley. Miller closes with reflections on her eightieth birthday, the naming of a school road and a road by her house in her honor, her hope that young people learn the history of what she and her generation faced, and her abiding philosophy that quality education for all children is the path to community improvement.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "shirley sherrod",
+        "usda",
+        "naacp speech",
+        "andrew breitbart controversy",
+        "spooner family",
+        "cnn",
+        "baker county school superintendent",
+        "crct",
+        "historical memory",
+        "naming honors"
+      ],
+      "related_events": [
+        "Shirley Sherrod NAACP speech controversy (2010)",
+        "Spooner family farm rescue",
+        "Baker County Board of Education contemporary politics",
+        "Criterion-Referenced Competency Tests (CRCT)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 84,
+        "accuracy_component_a": 31,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The summary names 'USDA' and 'Andrew Breitbart' in keyword form, but neither name appears in the transcript text. These are imported from canonical context. The chapter summary itself avoids these specific names and refers only to what the transcript establishes ('federal-government crisis,' 'selectively edited speech').",
+          "The CRCT expansion ('Criterion-Referenced Competency Tests') is glossed for clarity; the transcript only says 'CRCT test'."
+        ],
+        "improvements": [
+          "Remove the 'andrew breitbart controversy' keyword if strict transcript-fidelity is required, since the name is not spoken."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "00:50:52,000",
+      "end_time": "00:53:54,760",
+      "title": "Closing on Shirley Sherrod and the Spooner Family",
+      "summary": "Miller details that her daughter Shirley Sherrod was 'the first director of agriculture of Ag and state of Georgia' (the first Black state-level USDA Rural Development director for Georgia, in the corpus context). She suggests the 2010 NAACP-speech controversy was 'set up' from the beginning by someone who knew she was speaking. She recounts how the Spooner family — whose son saw the controversy on television — reached Shirley through CNN at her house, told the network they wished to speak with her, and publicly vindicated her account. Miller notes that the Spooner family ended up owning their farm thanks to Shirley's help in finding them a lawyer at the last minute, and that they continue to maintain the property. The interview closes with thanks from interviewer Will Griffin and the standard Library of Congress / Smithsonian National Museum of African American History and Culture sign-off.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "shirley sherrod",
+        "spooner family",
+        "cnn",
+        "naacp speech",
+        "agriculture director",
+        "georgia",
+        "library of congress closing"
+      ],
+      "related_events": [
+        "Shirley Sherrod's tenure as USDA Georgia State Director of Rural Development",
+        "Spooner family vindication on CNN",
+        "Civil Rights History Project closing"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 84,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Miller's exact phrasing of Shirley's title is 'first director of agriculture of Ag and state of Georgia' (segment 1073-1074), which is itself ASR-imperfect; the summary preserves the actual phrasing and adds canonical context in parentheses.",
+          "The summary does not name Andrew Breitbart in this chapter even though the canonical 2010 controversy involves him — the transcript itself does not name him."
+        ],
+        "improvements": [
+          "Could quote the closing thanks more verbatim if cite-fidelity is critical."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Grace Hall Miller",
+      "interviewee_title": "Baker County Movement Activist and former Baker County Board of Education Member",
+      "interview_date": "2013-03-09",
+      "interview_location": "Albany State University, Albany, Georgia",
+      "interviewer_name": "Will Griffin",
+      "interviewer_affiliation": "University of North Carolina at Chapel Hill (research associate)",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:53:54",
+      "total_segments": 1138,
+      "word_count": 9200,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 80,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 24,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with full name and birth date at the interviewer's prompt: 'My name is Grace Hall Miller. My date of birth was due July the 21st, 1932.' (Segments 9-10, 00:01:03,000)",
+            "Chronological arc moves from childhood through marriage, husband's killing, voter registration, and into school-board service: 'And then they started to move me in Baker County after that.' (Segment 386, 00:19:52,000)",
+            "Closes with reflection on legacy: 'I feel like I have done my best for that county.' (Segment 1060, 00:50:35,680)"
+          ],
+          "justification": "The interview follows a clear chronological arc from Miller's childhood through her husband's killing, the Baker County movement, and her school board service. The interviewer effectively keeps her on track despite some looping back. Transitions between topics are usually prompted by the interviewer rather than fluid in the narrator's own delivery, which keeps the score below masterful."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And I was on the porch and I was pumping that gun. The fastest I could. I said they might get me, but I'm going to leave one out here.",
+            "segment": 581,
+            "timestamp": "00:29:09,000"
+          },
+          "specificity_count": {
+            "full_names": 14,
+            "specific_dates": 5,
+            "specific_places": 8
+          },
+          "evidence": [
+            "Specific dates and ages: 'July the 21st, 1932' (Segment 10, 00:01:06,000)",
+            "Detailed scene of the killing: 'they took the [neighbor's] pasture with a cow.' (Segment 334, 00:17:22,000)",
+            "Cross-burning night with sensory detail: 'It's a lot of cars. And I jumped up and you could see the cross burning.' (Segments 570-571, 00:28:42,000)"
+          ],
+          "justification": "Miller offers consistently vivid concrete details: full names (Joe Nathan Hall, Nanny Hall, Jose Miller Sr., George Williamson, Vernon Hall, Joshua Williams, Benjamin Cunningham, Ackie King, Roy Kelly), specific dates (1932 birth, 1946 marriage, March 1965 killing, 2013 retirement), and reconstructed dialogue. The porch shotgun scene is among the most cinematic moments. Some lower-key reflective passages lack the same sensory density."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "And I can't hardly talk about it up until this day. I really can't. It's something that I hope nobody ever ever happened to.",
+            "segment": 274,
+            "timestamp": "00:14:15,000"
+          },
+          "emotional_range": [
+            "grief",
+            "fear",
+            "anger",
+            "love",
+            "pride",
+            "hope",
+            "gratitude",
+            "righteous indignation"
+          ],
+          "vulnerability_elements": [
+            "Admits jealousy of her children's relationship with her husband (Segments 36-40)",
+            "Says she 'can't hardly talk about' her husband's death almost five decades later (Segment 274)",
+            "Acknowledges that meeting Williamson made her blood 'go up to top my head' and that she had to pray for help with her feelings (Segments 438-440)",
+            "Cries on the way to comfort her daughter Shirley in 2010 (Segment 950)"
+          ],
+          "justification": "Miller is unusually vulnerable for a Civil Rights History Project interviewee: she discusses her grief almost five decades after her husband's killing, her struggle to forgive the killer, and her own emotional collapse on hearing about her daughter Shirley's 2010 ordeal. Her affect comes through as raw, not performed."
+        },
+        "overall_assessment": "Miller's narrative is emotionally rich and densely detailed, with a clear chronological arc that the interviewer Will Griffin helps maintain. Reconstructed dialogue and named individuals throughout give the testimony a 'you-are-there' quality, particularly in the porch-shotgun and superintendent-office confrontations. The structure is slightly looser than masterful because she occasionally backtracks and depends on the interviewer to redirect."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "First Black couple to register to vote in Baker County, Georgia (Segment 453, 00:23:18,000)",
+            "First-person primary witness to her husband Jose Miller Sr.'s March 1965 killing by George Williamson, a foundational pre-Voting Rights Act voter-registration retaliation murder (Segments 322-380)",
+            "Direct witness to 1958 retaliation bombings against the Baker County voter-registration cohort: Joshua Williams (uncle), Benjamin Cunningham, and Ackie King (Segments 479-507)",
+            "Personal witness to SNCC's Southwest Georgia Project expansion into Baker County (Segments 530-727)",
+            "Cross-burning attack on her home and her armed defense (Segments 561-612)",
+            "Mother of Shirley Sherrod, USDA Rural Development State Director for Georgia (2009-2010) — provides family-side firsthand perspective on the 2010 Andrew Breitbart selectively-edited NAACP video controversy (Segments 939-1133)"
+          ],
+          "key_figures": [
+            {
+              "name": "Charles Sherrod",
+              "relationship": "Son-in-law (husband of her oldest daughter Shirley)",
+              "contact_level": "close"
+            },
+            {
+              "name": "Shirley Miller Sherrod",
+              "relationship": "Daughter",
+              "contact_level": "close"
+            },
+            {
+              "name": "Joshua Williams",
+              "relationship": "Uncle; 1958 retaliation bombing victim",
+              "contact_level": "close"
+            },
+            {
+              "name": "Benjamin Cunningham",
+              "relationship": "Friend; 1958 bombing/moonshine-frame target",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Ackie King",
+              "relationship": "Friend; 1958 car-bombing victim",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Roy Kelly",
+              "relationship": "Elderly white Baker County board acquaintance who knew her father",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Baker County Board of Education",
+              "role": "Elected member",
+              "years": "Until 2013 retirement (multi-decade tenure implied by transcript)"
+            },
+            {
+              "organization": "Baker County Movement / SNCC Southwest Georgia Project (community host)",
+              "role": "Community organizer; home was a movement meeting place",
+              "years": "1965 onward"
+            }
+          ],
+          "unique_access": "Insider knowledge of pre-Voting Rights Act Black voter registration in southwest Georgia; firsthand account of a voter-registration retaliation murder and the subsequent failure of three trials; family-side perspective on the 2010 Shirley Sherrod USDA controversy; direct witness to SNCC's Baker County operations.",
+          "justification": "Miller occupies a rare intersection: she was personally present at the founding moments of Baker County Black voter registration, lost her husband to documented retaliation violence, hosted SNCC organizers in her home, became the mother-in-law of Charles Sherrod, and watched her daughter become a nationally-televised political controversy. This breadth of firsthand access across roughly fifty-five years is unusual."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Birth date: 'July the 21st, 1932' (Segment 10, 00:01:06,000)",
+            "Marriage year and county: 'we got married in 1946... in Baker County' (Segment 18, 00:01:46,000)",
+            "Husband's killing month: 'March, 15th' (Segments 278-279, 00:14:30,000)",
+            "Baby son's birth: 'the baby was born in June' (Segment 311, 00:16:02,000)",
+            "Qualifying fee: '$35' for school board candidacy (Segment 763, 00:37:16,000)",
+            "Retirement year: 'I've been on their the board until 2013, I resigned' (Segment 780, 00:38:05,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 14,
+            "first_only": 4,
+            "unnamed": 8
+          },
+          "verifiable_claims": [
+            "Grace Hall Miller born July 21, 1932 in Baker County, Georgia",
+            "Married Jose Miller Sr. in 1946 in Baker County",
+            "Her husband was shot in the back by white neighbor George Williamson in March 1965 over a cattle dispute and died about a week later",
+            "Three failed trials of Williamson (Baker County, Albany, and a third venue) all yielded no indictment by all-white juries",
+            "1958 retaliation bombings against Joshua Williams (her uncle), Benjamin Cunningham, and Ackie King after they attempted to register to vote",
+            "Grace Miller served on the Baker County Board of Education until 2013",
+            "Charles Sherrod married Miller's oldest daughter (Shirley)",
+            "Shirley Sherrod's 2010 NAACP speech controversy, including the Spooner family's televised vindication via CNN"
+          ],
+          "justification": "Miller provides many precise dates, full names, and verifiable facts, with most major claims independently cross-referenceable against the corpus ground truth. A few names appear in ASR-garbled form (e.g., 'Cough brought away' for a 1958 bombing victim), reducing precision slightly below exceptional."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Granular first-person detail on the 1965 Baker County voter-registration retaliation murder of her husband, including the three-trial failure pattern",
+            "Family-side perspective on the 2010 Shirley Sherrod USDA controversy from the Sherrod family matriarch",
+            "Black-women's-armed-self-defense narrative in a rural southwest Georgia cross-burning context",
+            "Multi-generational continuity: pre-VRA voter registration leading through SNCC-era violence to twenty-first-century federal-policy fights"
+          ],
+          "understudied_aspects": [
+            "Rural southwest Georgia (Baker County) Black voter registration history outside the better-documented Albany Movement core",
+            "Black women's leadership on Southern school boards in the post-VRA decades",
+            "Long arc connecting 1958 voter registration retaliation to 2010 USDA media controversy through a single family"
+          ],
+          "narrative_complications": "Complicates the standard narrative that the Voting Rights Act resolved Black voter access in the South: Miller and her husband registered in 1958, faced bombings, lost her husband to a 1965 cattle-dispute pretext killing, and never obtained justice from local juries even into the post-VRA era.",
+          "historiographical_value": "Foundational primary source for historians studying pre-VRA voter-registration retaliation, the long civil rights movement in southwest Georgia, the Sherrod family's multi-generational activism, and Black women's local political leadership.",
+          "justification": "Although the broad outlines of the Baker County movement and the 2010 Sherrod controversy are documented elsewhere, Miller's first-person account provides the family-side primary source material that anchors and complicates published accounts, especially the multi-generational continuity from 1958 to 2010."
+        },
+        "overall_assessment": "This is a high-historical-value interview that documents pre-Voting Rights Act voter-registration retaliation, the personal cost of organizing in a Deep South county where federal intervention was inconsistent, and the family-side perspective on a national media controversy four decades later. The breadth of firsthand access and the verifiability of specific names and dates make it strong source material."
+      },
+      "emotional_resonance": {
+        "total": 21,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "From sheltered fourteen-year-old bride who 'didn't know how to cook, didn't know how to wash, didn't know how to do anything' through the trauma of widowhood and pregnancy, to community defender with a shotgun on her porch, to elected school board member who builds working relationships across racial lines for forty-plus years.",
+          "key_turning_points": [
+            "Husband's killing in March 1965 (Segments 322-380)",
+            "Decision to register to vote in 1958 (Segments 453-470)",
+            "Cross-burning attack and armed self-defense (Segments 561-612)",
+            "Decision to run for Board of Education to be 'a voice for the kids' (Segments 731-740)"
+          ],
+          "before_after_contrast": "From a young woman whose husband 'had to teach me everything' to an eighty-year-old community matriarch with a road named for her and forty-plus years of school-board service.",
+          "inspirational_quality": "Miller's arc from grief and powerlessness to elected office and community building offers a model of perseverance in the face of state-tolerated racial violence.",
+          "justification": "The transformation arc is clear and authentic — sheltered teenage bride to armed community defender to long-serving elected official — though Miller spends more time on events than on explicit reflection about how she changed, keeping the score below the top band."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Husband's killing and week-long deathbed vigil",
+              "segment_range": "322-380",
+              "timestamp_range": "00:16:45,000 - 00:19:29,000",
+              "stakes": "Husband's life; impending birth of son; family's future"
+            },
+            {
+              "description": "Cross burning and porch-shotgun defense of family",
+              "segment_range": "561-612",
+              "timestamp_range": "00:28:13,000 - 00:30:42,000",
+              "stakes": "Lives of Miller and her children; community safety"
+            },
+            {
+              "description": "Confrontation with school superintendent over false accusation against her daughter",
+              "segment_range": "675-709",
+              "timestamp_range": "00:33:08,000 - 00:34:42,000",
+              "stakes": "Daughter's safety and reputation; precedent for racial harassment in integrated schools"
+            },
+            {
+              "description": "School board candidacy and runoff victory",
+              "segment_range": "740-810",
+              "timestamp_range": "00:36:09,000 - 00:39:23,000",
+              "stakes": "Black political representation; quality of education for Baker County children"
+            }
+          ],
+          "conflict_types": [
+            "Racial violence",
+            "Judicial impunity",
+            "Personal grief",
+            "Family-protection",
+            "Electoral competition",
+            "Intergenerational political crisis"
+          ],
+          "emotional_range": "From grief and terror to defiant courage to civic pride and reflective satisfaction.",
+          "justification": "Multiple high-stakes moments are vividly described, with palpable physical danger and clear consequences. The porch-shotgun and superintendent confrontations are particularly cinematic."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Young love and secret marriage",
+            "Sudden widowhood with young children",
+            "Single-parent perseverance",
+            "Faith and community",
+            "Maternal protectiveness",
+            "Civic duty",
+            "Forgiveness and grudge-holding"
+          ],
+          "relatable_struggles": [
+            "Pregnant widow without prior work experience navigating financial survival",
+            "Mother defending her child from institutional racism",
+            "First-time political candidate door-knocking across hostile territory",
+            "Aging parent watching her adult child face a national crisis from afar"
+          ],
+          "human_moments": [
+            "Miller's husband painting the baby's room blue and giving out cigars before the birth he never lived to see (Segments 293-296, 00:15:15,000)",
+            "Miller's mother urging her to try for one more child the night before she died (Segments 285-289, 00:14:52,000)",
+            "Miller's first attempt at cooking ('I had stirred it' with chewing gum, husband suggesting they eat out, Segments 229-244, 00:11:56,000)"
+          ],
+          "connection_points": "Family love, grief, raising children alone, defending what is yours, civic engagement — all transcend the specific Baker County context and connect to a wide audience.",
+          "justification": "The everyday moments of marriage and parenting amid extraordinary violence make the story accessible to audiences who have not lived through Jim Crow."
+        },
+        "overall_assessment": "Miller's testimony resonates emotionally because the universal human experiences — young love, widowhood, motherhood, civic duty — are inseparable from the Civil Rights-era violence and resistance she describes. The interview's emotional through-line, from a sheltered fourteen-year-old to a community matriarch with a road named for her, is genuinely affecting."
+      },
+      "accessibility": {
+        "total": 13,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "moderate",
+          "jargon_use": "rare",
+          "barriers": [
+            "Some southwest Georgia rural dialect that may require attentive listening for unfamiliar audiences",
+            "ASR transcription suggests occasional grammatical compressions ('we would be in the end of Baker County') that may reflect speech-pattern variation",
+            "Several proper nouns are ASR-garbled in transcript (e.g., 'farm his home' for Farmers Home Administration; 'Cough brought away' for a 1958 victim's name; 'Grace Little' for 'Grace Miller')"
+          ],
+          "justification": "Miller speaks clearly and at a measured pace, but her southwest Georgia rural diction and the resulting ASR artifacts in the transcript create moderate barriers to comprehension for unfamiliar listeners or downstream consumers."
+        },
+        "narrative_flow": {
+          "score": 4,
+          "max_possible": 7,
+          "overall_rhythm": "uneven",
+          "high_energy_sections": [
+            "Husband's killing and deathbed vigil (Segments 322-380, 00:16:45,000-00:19:29,000) — emotionally intense and tightly focused",
+            "Cross-burning and armed defense (Segments 561-612, 00:28:13,000-00:30:42,000) — vivid action sequence",
+            "School board campaign (Segments 740-810, 00:36:09,000-00:39:23,000) — narrative momentum on the path to victory"
+          ],
+          "slow_sections": [
+            "Early cooking-and-marriage anecdotes (Segments 229-244, 00:11:56,000-00:12:32,000) — discursive personal narrative that requires interviewer redirection",
+            "Failed prosecution chapter (Segments 414-447, 00:21:28,000-00:22:56,000) — emotionally compressed and ASR-garbled, hard to follow without reference to corpus knowledge",
+            "Spooner family vindication sequence (Segments 1093-1132, 00:52:08,000-00:53:33,000) — names blur together and the chronology is hard to track without prior knowledge"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Engaged listeners can sustain attention for the full 54 minutes; casual listeners may drift in the discursive personal anecdotes early in the interview.",
+          "justification": "Pacing is uneven: emotionally intense sections (husband's killing, cross burning, school board run) command full attention, while early personal anecdotes and late-interview policy commentary slow the rhythm. Will Griffin's directive questions keep the interview moving but cannot fully smooth the transitions."
+        },
+        "broader_themes_connection": {
+          "score": 4,
+          "max_possible": 6,
+          "themes_connected": [
+            "Pre-VRA Black voter registration in the Deep South",
+            "Federal vs. local jurisdictional gaps in civil rights enforcement",
+            "Long civil rights movement continuity (1958 - 2010+)",
+            "Black women's leadership in local electoral politics",
+            "Selective-edit media controversies and racial justice"
+          ],
+          "contemporary_relevance": "Connects to ongoing debates about voter suppression, school-board political realignments, federal media accountability, and the legacy of racial violence in the rural South. Particularly relevant to readers interested in the Shirley Sherrod / Spooner / Andrew Breitbart 2010 controversy as primary-source family material.",
+          "meaning_making": "Miller explicitly invites young people to 'know your history' and connects her personal experiences to the value of voter education, school-board representation, and intergenerational responsibility.",
+          "justification": "Miller does make explicit connections from personal experience to broader themes, but most of the connecting work is left to the listener; the interview leans more reportorial than analytical."
+        },
+        "overall_assessment": "The interview is accessible to attentive listeners but presents barriers for general audiences: moderate dialect impact, ASR garbling of key proper nouns, uneven pacing, and reliance on the listener to draw most of the historiographical connections. It is well-suited as a primary-source archival recording but would benefit from explanatory framing for classroom or public-history use."
+      }
+    },
+    "overall_assessment": "Grace Hall Miller's interview is a high-value primary source for the pre-Voting Rights Act Baker County voter-registration retaliation pattern, the SNCC Southwest Georgia Project's local roots, and the multi-generational arc connecting 1958 voter registration through her husband's 1965 killing to her daughter Shirley Sherrod's 2010 USDA controversy. The narrative is emotionally rich, factually dense, and structurally clear with the interviewer's help. Limitations include moderate dialect impact, ASR artifacts in proper-noun rendering, and reliance on the listener to connect personal events to broader historiographical themes.",
+    "key_strengths": [
+      "Exceptional firsthand-witness access spanning fifty-five years of civil rights history in southwest Georgia, including a documented voter-registration retaliation murder",
+      "Vivid, emotionally authentic delivery with reconstructed dialogue, named individuals, and concrete sensory detail (porch-shotgun scene, cross-burning attack, superintendent confrontation)",
+      "Multi-generational continuity through her daughter Shirley Sherrod's 2010 USDA crisis offers rare family-side primary source for a nationally televised media controversy"
+    ],
+    "key_limitations": [
+      "Moderate southwest Georgia dialect and ASR transcription artifacts in proper nouns create accessibility barriers for general audiences",
+      "Pacing is uneven; early personal anecdotes meander and late-interview policy commentary lacks the dramatic momentum of the central chapters"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Grace Hall Miller was born July 21, 1932 in Baker County, Georgia.",
+        "status": "supported",
+        "supporting_excerpt": "My name is Grace Hall Miller. My date of birth was due July the 21st, 1932. (Segments 9-10)",
+        "rationale": "Miller states her name and birth date verbatim; Baker County is her stated place of upbringing."
+      },
+      {
+        "claim": "She was the youngest of six children of farmer Joe Nathan Hall and homemaker Nanny Hall.",
+        "status": "supported",
+        "supporting_excerpt": "Yes, my father was named Joe Nathan Hall... My mother was named Nanny Hall, and I was the sixth child, six of us, and I was the baby of the group... My father was a farmer, and my mother was a housewife. (Segments 12-16)",
+        "rationale": "Directly established in the transcript."
+      },
+      {
+        "claim": "She married Jose Miller Sr. in 1946 in Baker County at age fourteen.",
+        "status": "supported",
+        "supporting_excerpt": "His name was Jose Miller Sr., and we got married in 1946, then in 1946, in Baker County. (Segment 18)... 14. (Segment 204, in answer to 'how old were you?')",
+        "rationale": "Year, county, husband's name, and age all directly stated."
+      },
+      {
+        "claim": "The couple had five daughters and one son.",
+        "status": "supported",
+        "supporting_excerpt": "We had five girls and one boy. (Segment 32)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Her husband Jose Miller Sr. was killed in March 1965 by white neighbor George Williamson over a cattle-ownership dispute.",
+        "status": "supported",
+        "supporting_excerpt": "He got killed in March. (Segment 278) ... March, 15th. (Segment 279)... my husband walked out the pastor... and the guy, he shot him. (Segment 343)... George Williamson. (Segment 354). And the year of the shooting is corroborated by Miller's age statement and her son's June birth that year.",
+        "rationale": "All key elements — month, shooter's name, cattle-dispute context, and the shot-in-the-back location — are explicit in the transcript. The year 1965 is reliably inferable from Miller's statement that 'I've been on their the board until 2013, I resigned' combined with her age and the 'eight years' wait before her son's birth that she ties to her mother's death."
+      },
+      {
+        "claim": "Her husband was shot in the back and lived about a week before dying.",
+        "status": "supported",
+        "supporting_excerpt": "He shot him in the back. (Segment 345)... It might have been a little buckshot, because he lived about a week when he shot him. (Segment 347)",
+        "rationale": "Both elements stated directly in the transcript."
+      },
+      {
+        "claim": "Miller was pregnant with her sixth child (her only son) at the time of her husband's death; the baby was born in June and named Jose after his father.",
+        "status": "supported",
+        "supporting_excerpt": "But he got killed in March. And the baby was born in June. (Segments 310-311)... they wouldn't let me name nothing but Jose. (Segment 313)... we go ahead and trap her boy. (Segment 291, paraphrase of conversation with her dying mother about trying for a boy)",
+        "rationale": "Birth month, naming, and pregnancy context are all stated in the transcript."
+      },
+      {
+        "claim": "George Williamson was tried three times — initially in Baker County, then in Albany, and a third effort — and was never indicted, by all-white juries.",
+        "status": "supported",
+        "supporting_excerpt": "We tried to. (Segment 414)... On three separate occasions, right? Right. (Segments 415-416)... They had an all-white year [jury]. (Segment 418)... So the next time we came to Albany, and never happened. (Segment 423)... And he was never arrested or questioned anything? (Segment 424, interviewer)",
+        "rationale": "Three trial attempts, all-white jury, Albany venue change, and lack of indictment all explicit in the transcript."
+      },
+      {
+        "claim": "Williamson eventually died of what people told her was diabetes.",
+        "status": "supported",
+        "supporting_excerpt": "He finally died. They didn't even like him up. They didn't even end dating. (Segments 409-411)... They said he said that he was a diabetic. That's what they said. (Segments 433-434)",
+        "rationale": "Death and diabetes hearsay both in the transcript."
+      },
+      {
+        "claim": "Miller and her husband were the first two Black residents to register to vote in Baker County.",
+        "status": "supported",
+        "supporting_excerpt": "We was the first two that registered in Baker County. (Segment 453)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "In 1958, Miller's uncle Joshua Williams's home was bombed, and the cars of Benjamin Cunningham and Ackie King were also bombed, after attempting to register to vote.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Mr. Benjamin Cunning, a card brought away. And Mr. Ackie King. Joshua Williams. That was my uncle. (Segments 482-485)... And that night they came back and bombed his house. (Segment 490)... Mr. Cough brought away. They bombed his car. Mr. Ackie King, they bombed his car. (Segments 491-493). Note: The interviewer mentions 'in 1950... in 1958' as context (Segment 479) and Miller confirms her uncle was involved.",
+        "rationale": "The names Joshua Williams, Benjamin Cunningham, and Ackie King are stated, as is the bombing of the uncle's house and the King car. The Cunningham bombing is described as a moonshine frame-up and arrest, not a car bombing — the summary's phrasing 'cars of... Cunningham' is a partial misreading. The interviewer dates the bombings to 1958. Demoted to partially_supported because the Cunningham bombing detail conflates two distinct incidents (moonshine-planting arrest vs. car bombing of King)."
+      },
+      {
+        "claim": "Charles Sherrod came to Baker County, dated, and married Miller's oldest daughter Shirley.",
+        "status": "supported",
+        "supporting_excerpt": "Yeah, Sherrod I came in there... He started dating my oldest daughter. (Segments 722-724)... He got married to us all that's about oldest daughter. (Segment 726)",
+        "rationale": "Sherrod's arrival, the dating, and the marriage to Miller's oldest daughter all directly stated."
+      },
+      {
+        "claim": "Miller served on the Baker County Board of Education until 2013.",
+        "status": "supported",
+        "supporting_excerpt": "And I've been on their the board until 2013, I resigned. I retired from it. (Segments 780-781)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Miller's election platform was 'quality education for all children.'",
+        "status": "supported",
+        "supporting_excerpt": "I said, they told them, I said, I'm for quality education for all I choose [children]. (Segment 793)... my platform is quite a good education for all I choose [children]. (Segment 803)",
+        "rationale": "Stated verbatim (with ASR-garbled 'I choose' rendering of 'children')."
+      },
+      {
+        "claim": "Shirley Sherrod faced a 2010 federal-government crisis stemming from a selectively-edited speech she gave at an NAACP meeting.",
+        "status": "partially_supported",
+        "supporting_excerpt": "While somebody had a meeting, they knew she was speaking at this NAACP meeting. And while somebody had to sneak around to try to get some information. So I feel like it was sort of set up at this like that she was in. (Segments 1076-1081)... So the story was that she went to this NAACP meeting and gave a speech and spoke about it. (Segment 1084)",
+        "rationale": "The NAACP-meeting speech, the selective recording, and the public controversy are all stated. The transcript does not explicitly say 'federal-government crisis' or name USDA — those are imported by the summary from canonical context. Demoted to partially_supported because the federal/USDA framing is summary-imposed, although the underlying event is well-supported."
+      },
+      {
+        "claim": "The Spooner family, whom Shirley Sherrod had helped save their farm, defended her on CNN.",
+        "status": "supported",
+        "supporting_excerpt": "And the Spooner heard it on the, well, one of the songs that he was watching at TV. And he told his mother, went up to the house to tell his mother, the mother father said, they got your friend in trouble. They said, turn on TV... they called CNN. His song got CNN. And he was at CNN, it was at her house. (Segments 1096-1106)... They found them. And they own that farm now. (Segments 1119-1120)",
+        "rationale": "The Spooner family, the television discovery, the CNN call, and the farm ownership are all directly stated."
+      },
+      {
+        "claim": "A school road and a road near Miller's house were named in her honor while she was still alive.",
+        "status": "supported",
+        "supporting_excerpt": "I don't think it's nobody if you go to have two roles [roads] named after me. The school role is named Grace Little [Miller] Circus [Circle]. And the role, because by my house, it's named Grace Little [Miller] Road. So I just don't think, but I didn't wait till I die. They did it while I'm alive. (Segments 1048-1053)",
+        "rationale": "The transcript directly establishes two roads/circles named for Miller during her lifetime. The exact road names appear ASR-garbled ('Grace Little' likely 'Grace Miller'), which the summary handles by paraphrasing rather than naming exactly."
+      },
+      {
+        "claim": "The interview was conducted on Saturday, March 9, 2013, on the campus of Albany State University, Albany, Georgia, by Will Griffin (UNC Chapel Hill) with videographer John Bishop.",
+        "status": "supported",
+        "supporting_excerpt": "Alright, today is Saturday, March 9, 2013. My name is Will Griffin and I am a research associate with the University of North Carolina at Chapel Hill, or History Program. I am with a videographer, John Bishop, and Albany Georgia on the campus of Albany State University to conduct an interview for the Civil Rights History Project. (Segments 3-5)",
+        "rationale": "All elements directly stated."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 18,
+      "supported": 16,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_2_partial",
+    "rationale": "The interview summary is well-grounded in the transcript with no fully unsupported claims, but two claims are partially_supported (the 1958 Cunningham bombing detail conflates a moonshine-frame arrest with the King car bombing, and the 2010 Shirley Sherrod controversy is framed as a USDA / federal-government crisis when the transcript itself does not name USDA). The main-summary accuracy score of 87 and quality score of 88 both fall below the 90/90 Smithsonian-grade publication threshold. Per the fail-closed gate, the summary routes to human review for: (a) cleanup of the Cunningham/King bombing distinction, (b) explicit handling of the USDA/Andrew Breitbart canonical context (either remove the imported framing or document its provenance), and (c) ASR-uncertainty notation on proper nouns including 'Jose' (likely 'Joseph'), 'Grace Little' (likely 'Grace Miller'), 'farm his home' (likely 'Farmers Home Administration'), 'Granbare' (likely 'Granberry'), and 'Cough brought away' (unresolved 1958 bombing-victim name). Human review is the correct destination."
+  }
+}

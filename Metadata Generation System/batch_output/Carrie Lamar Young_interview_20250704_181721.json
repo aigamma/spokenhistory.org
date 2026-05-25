@@ -1,0 +1,1167 @@
+{
+  "interview_name": "Carrie Lamar Young",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Carrie Lamar Young_interview_20250704_181721\\Carrie Lamar Young_interview_transcript_20250704_181721.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Carrie Lamar Young",
+    "interviewee_title": "Civil Rights Activist, SNCC and Black United Youth participant",
+    "interview_date": "2011-09-26",
+    "interview_location": "Little Rock, Arkansas",
+    "interviewer_name": "Joseph Mosnier",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "02:05:45"
+  },
+  "main_summary": {
+    "summary": "Carrie Lamar Young recounts her upbringing in rural eastern Arkansas, beginning with her family's sharecropping life in Lexa (Phillips County) and her move to West Helena around age fourteen. She describes her parents Lazarus and Lytte Lamar, her father's work at the ice plant and cotton gin, her mother's role as a midwife, the family's poverty, and the rituals of cotton-picking season that she despised and that motivated her determination to leave. She traces her early awareness of Jim Crow through specific local incidents, including a night when her father quietly joined armed Black men guarding a young man whom a white merchant's daughter had falsely accused, and through her later discovery that her mother could neither read nor write. She recalls learning about the 1919 Elaine Massacre only as a teenager, when older field workers explained why the ground in Phillips County was hard and cracked.\n\nYoung describes her entry into the civil rights movement in West Helena around 1965, when SNCC organizers including Howard Hemmerbaum, Jim Jones, Bill Hansen, James Heel, Stanley Tillman, and Michael Simmons came into the community to register voters, abolish the poll tax, and teach reading and writing in a church basement. She sat on a storefront for weeks gathering signatures on a petition to abolish the poll tax, an assignment given to her by Hemmerbaum, whom she later married. She recounts a desegregation attempt at the only local bowling alley with Stanley Tillman, where they were allowed a lane but refused shoes and were eventually made to leave by police. She also describes attending workshops at a Presbyterian village in Ferndale, Arkansas, traveling to Atlanta for SNCC-related meetings, and being beaten with mustard-gas bombs during sit-ins to integrate the Arkansas State Capitol cafeteria.\n\nAfter graduating high school in 1966, Young moved to Washington, D.C., worked with the Head Start program, and returned to marry Howard Hemmerbaum in March 1967. She trained as a keypunch operator through the Opportunities Industrialization Center, won class-action employment discrimination suits against AMF Inc. and National Old Line Life Insurance, and became the first Black office worker in the Arkansas State Capitol administration office. After being fired by a department director (Mr. Luzano) who discovered she was married to a white man, attorney John W. Walker brought her case directly to Governor Winthrop Rockefeller, who restored her job and dismissed the director. She remained active through the Black United Youth (BUY) organization in Little Rock, traveled to Memphis to support Dr. King, and was present in Earle, Arkansas during the desegregation-related violence when a state trooper threatened her with a .357 Magnum and beat an elderly woman. She spent time in Durham, North Carolina at Malcolm X Liberation University around 1971, then returned to Arkansas, eventually working fourteen years at Southwestern Bell.\n\nYoung closes by reflecting on what she sees as the movement's incomplete economic transformation, her support for President Obama in 2008 despite hostility she encountered in Little Rock for openly backing him, and her gratitude to Myrtle Glasgow, the SNCC field worker from Oakland who became like a sister and lived with her family in West Helena. She remembers Worth Long as a soft-spoken man who always visited her parents when he came through.",
+    "key_themes": [
+      "Rural sharecropping life and family solidarity",
+      "Voter registration and the poll tax campaign",
+      "Interracial marriage in the segregated South",
+      "SNCC organizing in the Arkansas Delta",
+      "Violence, intimidation, and armed self-defense",
+      "Religious foundation of activism",
+      "Black women's agency in movement work"
+    ],
+    "historical_significance": "Young's interview documents the SNCC Arkansas Project's grassroots organizing in Phillips County during 1965-1966, an understudied front of the southern civil rights movement, from the perspective of a teenage local recruit rather than a visiting organizer. Her firsthand account of the poll tax petition drive, the bowling alley desegregation attempt with Stanley Tillman, sit-ins at the Arkansas State Capitol, and the violent state-trooper response in Earle, Arkansas adds texture to a regional civil rights history often overshadowed by Mississippi and Alabama. Her marriage to white SNCC worker Howard Hemmerbaum, her work with the Black United Youth in Little Rock, and her year at Durham's Malcolm X Liberation University also illuminate the evolution from the early integration-focused movement into the late-1960s Black Power era.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 88,
+      "accuracy_component_a": 34,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 26,
+      "quality_component_a": 35,
+      "quality_component_b": 21,
+      "quality_component_c": 18,
+      "quality_component_d": 14,
+      "errors": [
+        "Whisper rendering 'Howard Himmelbaum' is treated as the canonical spelling; the historical SNCC worker is more commonly spelled 'Howard Himmelbaum/Hemmerbaum' but the speaker uses this exact name throughout the transcript so it is preserved as spoken.",
+        "The summary characterizes Mr. Luzano as a 'department director' based on the transcript, but the transcript does not explicitly name his exact title (only that Governor Rockefeller dismissed him); reader should treat 'department director' as paraphrase of 'director' said by the speaker.",
+        "The summary states 'Mertel Glasgow' was 'from Oakland' which matches the transcript ('She came out Oakland, California'); summary uses canonical spelling 'Myrtle' as the speaker pronounces it, but transcript renders it inconsistently as 'Mertel/Murdered/Myrtle/Murder' due to Whisper transcription errors."
+      ],
+      "improvements": [
+        "Consider explicitly noting transcript ambiguity around dates the speaker gave approximately (e.g., 'around 1965', 'I think 1958 for first electricity').",
+        "Could surface the specific Black Power-era organizational distinctions Young drew between SNCC, the Black Panther Party, and the 'Black Liberation Army/Front' formed from Cornell University students.",
+        "Could include more detail on the 1971 attempted-rape recollection in Snow Lake, which Young treats as a turning point but the summary compresses to one sentence."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:11:03,000",
+      "title": "Family Origins in Lexa and Sharecropping Life",
+      "summary": "Young opens by describing her parents Lazarus Lamar and Lytte Lamar, who had four girls and two boys; she was the youngest of the four girls. She does not remember Barton, Arkansas where she was born but recalls living in Lexa, Arkansas in Phillips County until she was around fourteen. The family sharecropped, kept gardens, cows, chickens, and hogs, and worked cotton fields before soybeans arrived. She recalls taking the train from Lexa to Helena to go shopping. Her father, who reached the third grade but loved math, worked in an ice plant in Lexa, and her mother was a respected midwife known for skill with breech births. Young did not learn until she was twenty-three that her mother could not read or write. She traces her father's family from a plantation in Palestine, Arkansas where the family name had been Raymond before her great-great-grandfather changed it to Lamar; her mother was born in Yazoo City, Mississippi. Her paternal grandfather lived to be approximately 104, whittled rings from buttons and flutes from bamboo for the children, and stayed for stretches with the Lamar family in Lexa. She describes their triplex shotgun house and the rural rituals of slaughtering hogs, cleaning chitlins in cast-iron pots, and rendering cracklings.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "lexa arkansas",
+        "phillips county",
+        "lazarus lamar",
+        "lytte lamar",
+        "sharecropping",
+        "midwifery",
+        "barton arkansas",
+        "yazoo city mississippi",
+        "palestine arkansas",
+        "shotgun house"
+      ],
+      "related_events": [
+        "Lamar family migration history",
+        "Arkansas Delta sharecropping",
+        "Phillips County rural Black life",
+        "Train depot at Lexa",
+        "Family genealogy via uncle Virgil"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note the uncertainty in the grandfather's birth year (Young computes 1818 based on his living to 104 and dying around 1960)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:11:03,000",
+      "end_time": "00:23:11,000",
+      "title": "School, Cotton Picking, and Learning Jim Crow",
+      "summary": "Young describes attending school with castoff textbooks lacking covers, often handed down from white schools. As the youngest of four daughters she got an earlier 'jump start' on schooling because her mother took her along when her year-older sister began school. She helped her mother quilt, can three hundred fruit jars annually, and pick pecans and black walnuts. Cotton picking from sunup to sundown was her 'nightmare'; she was small, used a three-foot sack, and rarely reached a hundred pounds, which earned her whippings. A friendly white landowner named Homer Tiles intervened with her mother on her behalf. She recalls pay of about three dollars per hundred pounds and three-fifty a day for chopping. She also recalls a tense altercation in a cotton wagon with a white girl named Wounds, who many years later (in the late 1980s) Young recognized again at a Western Union in Helena where she was ignoring waiting Black customers. Young's mother taught her not to fear asking for what she needed, telling her the only two answers were yes or no.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "cotton picking",
+        "sharecropping wages",
+        "homer tiles",
+        "lexa schools",
+        "midwife mother",
+        "whippings",
+        "western union helena",
+        "jim crow upbringing"
+      ],
+      "related_events": [
+        "Cotton harvest in Arkansas Delta",
+        "Lexa one-room schooling",
+        "Wounds family altercation",
+        "Mother's wisdom and oral instruction"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "The name 'Homer Tiles' appears as Whisper rendered it; canonical spelling unverified but preserved as spoken."
+        ],
+        "improvements": [
+          "Could surface the multi-ethnic field labor (Mexicans and Chinese mentioned by speaker) more prominently."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:25:32,000",
+      "end_time": "00:33:53,000",
+      "title": "Church Life and Awareness of the Elaine Massacre",
+      "summary": "Young describes her childhood church, First Baptist Church of Lexa, where Reverend Devaro was pastor and Mr. Gus Wilburn was superintendent. She loved church, sang at revivals for a visiting pastor who would 'throw purses' to scare her, played piano by ear, and attended Miss Molly Richardson's Saturday 'sunshine band' and helped Miss Cora Martin prepare Communion bread and wine. She traces her spiritual journey as not fully understood until she was around forty-five. She recalls first learning of the 1919 Elaine Massacre as a teenager working in Phillips County fields, when older workers explained that the cracked, hard ground 'ding-like' under her hoe was attributed to blood in the earth. Young states she never heard of the NAACP until about 1965 and that she had no awareness of the 1957 Little Rock Nine crisis at the time it happened: the family had no television, no electricity until 1958, no Black newspaper, and the topic did not come up at church.",
+      "main_topic_category": "Religion & Faith",
+      "keywords": [
+        "first baptist church lexa",
+        "reverend devaro",
+        "elaine massacre",
+        "phillips county",
+        "naacp",
+        "little rock nine",
+        "molly richardson",
+        "cora martin",
+        "1958 electricity"
+      ],
+      "related_events": [
+        "First Baptist Church Lexa",
+        "1919 Elaine Massacre awareness",
+        "1957 Little Rock Nine integration",
+        "Family communion preparation"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Reverend Devaro and Mr. Gus Wilburn spellings preserved as the speaker pronounced them; canonical spellings unverified."
+        ],
+        "improvements": [
+          "Could note that the Elaine Massacre was in October 1919 per civil_rights_facts.json corpus."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:30:58,000",
+      "end_time": "00:34:00,000",
+      "title": "Aspirations and the Loss of an Older Sister",
+      "summary": "Young recalls that as a child she knew she did not want to spend her life in the world of cotton picking. She mentions extended family members who had moved north to Chicago and Pittsburgh, where her uncle Virgil worked in the steel mills. In 1961 her oldest sister enrolled at Mary Holmes Junior College in Mississippi for two years; the family worked diligently to get her there. The sister then went to Columbia University in New York City in 1963 but died while she was there. Young reflects that her sister's death was the moment of her own disconnect from pursuing higher education. She also describes a Black 'look-ass' colorism system in her schools that discriminated against students whose skin was not light enough or whose family background was wrong, regardless of grades.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "mary holmes junior college",
+        "columbia university",
+        "colorism",
+        "older sister death",
+        "pittsburgh steel mills",
+        "uncle virgil",
+        "chicago migration"
+      ],
+      "related_events": [
+        "Great Migration to Chicago and Pittsburgh",
+        "Mary Holmes Junior College enrollment 1961",
+        "Columbia University 1963",
+        "Death of oldest sister"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 85,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Mary Holmes Junior College is a real institution in West Point, Mississippi (historically a Black college); transcript dates of 1961-1963 are as the speaker reports."
+        ],
+        "improvements": [
+          "Could note the older sister's name is not given in the transcript."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:34:00,000",
+      "end_time": "00:46:50,000",
+      "title": "SNCC Arrives in West Helena: Voter Registration and Poll Tax",
+      "summary": "Young describes the arrival of SNCC organizers in West Helena around 1965. Howard Hemmerbaum came through with Jim Jones from Louisville (Arkansas) and likely Bill Hansen, with four or five workers. They met at one of the local churches to explain their work focused on voter education and abolishing the poll tax, which required Black voters to pay a dollar to register. Most voters could only sign with an X, which Young notes was often discarded. With her parents' permission she joined the work, becoming one of the few girls in the community to step up. She mentions Jerry Casey as one of the first young men involved. Other organizers who came later included James Heel, Stanley Tillman, Michael Simmons (from New York), and visitors Julian Bond, Andrew Young, Stokely Carmichael, Eldridge Cleaver, and Marion Barry. She sat on a storefront day after day collecting signatures on a petition to abolish the poll tax, an assignment from Hemmerbaum who later became her husband. Recognizing that many people could not read or write, the workers got First Baptist Church to let them use its basement to teach reading, writing, and signature skills several nights a week. She describes vigilantes harassing organizers with Molotov cocktails, drive-bys, and vagrancy arrests.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "sncc",
+        "poll tax",
+        "howard hemmerbaum",
+        "jim jones",
+        "bill hansen",
+        "stanley tillman",
+        "michael simmons",
+        "james heel",
+        "jerry casey",
+        "voter registration",
+        "first baptist church"
+      ],
+      "related_events": [
+        "SNCC Arkansas Project",
+        "Poll tax abolition campaign",
+        "West Helena voter education",
+        "Molotov cocktail attacks on Freedom House",
+        "Visits by Julian Bond, Stokely Carmichael, Andrew Young, Eldridge Cleaver, Marion Barry"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "The speaker says 'Howard Hemmerbaum' or 'Howard Himmelbaum'; transcript renders both, and the summary uses 'Hemmerbaum' consistently. The historical SNCC Arkansas worker Howard Himmelbaum was active in Arkansas during this period.",
+          "'Louisville, Arkansas' as the origin of Jim Jones is preserved as spoken; the speaker may have meant a different locale."
+        ],
+        "improvements": [
+          "Could include the speaker's note that the Arkansas Project was directed by Bill Hansen per Hansen's ground-truth corpus entry (1962-67)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:39:30,000",
+      "end_time": "00:50:00,000",
+      "title": "The Bowling Alley Action with Stanley Tillman",
+      "summary": "Young recounts the desegregation attempt at the only bowling alley in the area, Midland Heights between Helena and West Helena, before the Civil Rights Act passed. Stanley Tillman, a Black SNCC worker who Young describes as athletic, about 6'3\" and 200 pounds, asked her what she had always wanted to do and learned she wanted to bowl. He took her to the bowling alley, where the attendant refused to rent shoes but, taken aback by his boldness, gave them a lane. They bowled in their socks; Young bowled 98 in her first game ever. Police arrived, intimidated her by asking about her parents, and recognized her father by his nickname ('Big Em'). The officer made them put their shoes on and leave but did not arrest them. She also describes participating in workshops at a Presbyterian village in Ferndale, Arkansas, traveling to Atlanta for SNCC strategy meetings, and being thrown on her face and tear-gassed during demonstrations to open the Arkansas State Capitol cafeteria.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "stanley tillman",
+        "bowling alley",
+        "midland heights",
+        "ferndale arkansas",
+        "presbyterian village",
+        "arkansas state capitol",
+        "cafeteria sit-in",
+        "mustard gas",
+        "atlanta workshops"
+      ],
+      "related_events": [
+        "Bowling alley desegregation attempt",
+        "State Capitol cafeteria sit-in",
+        "SNCC strategy meetings in Atlanta",
+        "Ferndale Arkansas workshops"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that Young uses 'mustard gas' but it was almost certainly tear gas; this is the speaker's framing and is preserved."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:50:00,000",
+      "end_time": "01:00:00,000",
+      "title": "Attempted Assault at Snow Lake and Relationship with Howard Hemmerbaum",
+      "summary": "After her family moved to West Helena in 1964, Young describes being bused to work cotton fields at Snow Lake, Arkansas (on the other side of Elaine), where five young Black men attempted to rape her. A water boy heard her shouting and arrived; she was held down by a muscular football player who pressed his knees into her back. She suffered back damage for the next twenty years and ultimately required surgery. She was hospitalized for three weeks afterward. She describes her engagement and marriage to Howard Hemmerbaum, the white SNCC worker who later became her husband, characterizing their relationship as 'secretive to us' though obvious to others around them. Her mother loved Hemmerbaum and thought they were already married before the wedding; her father was afraid for her, primarily worried for her safety rather than disapproving. Young recounts confronting an older man (Mr. Ernest), one of her father's friends, who made a derogatory comment about her relationship; she reported it to her father in front of the man.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "snow lake arkansas",
+        "attempted rape",
+        "back injury",
+        "howard hemmerbaum",
+        "interracial relationship",
+        "secret engagement",
+        "mr ernest",
+        "west helena 1964"
+      ],
+      "related_events": [
+        "Snow Lake field assault",
+        "Marriage to Howard Hemmerbaum",
+        "Family acceptance of interracial relationship"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 84,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 33,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "The summary clarifies that the five young men were Black (the speaker confirmed this after the interviewer asked if they were white) rather than the more publicly recognizable category of white-on-Black violence."
+        ],
+        "improvements": [
+          "Could acknowledge Young's later comment that the bus driver refused to take her to the West Helena police station to report the assault."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:00:00,000",
+      "end_time": "01:12:00,000",
+      "title": "Wider SNCC Work, Freedom Houses, and Mertel Glasgow",
+      "summary": "Young describes returning later to West Helena, Earle, Blackville, and McGehee to continue SNCC-style work as part of the Black United Youth (BUY). She recounts being arrested as a young married woman for taking bread and meat from a Big Star grocery store after the manager refused to feed hungry SNCC organizers. Police released her once they identified her as 'Big Em's' daughter. She mentions that Black community responses to SNCC varied: some pastors received the organizers, others did not, and many pastors lived in Memphis or Mississippi and drove in only weekends, making deacons and church mothers the gatekeepers. She describes the freedom houses set up in West Helena (none in Helena) and the way young women organizers were typically placed in homes with father-and-mother households for safety. She describes the arrival of Mertel (Myrtle) Glasgow from Oakland, California in a Volkswagen Young had never seen before; Glasgow, who appeared white but was Black, became Young's older-sister figure after Young's own oldest sister had died. Glasgow eventually rented a house up the street from the Lamars and traveled with Young, allowing her mother to release her to attend movement events.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "black united youth",
+        "earle arkansas",
+        "mcgehee arkansas",
+        "blackville",
+        "big star grocery",
+        "myrtle glasgow",
+        "mertel glasgow",
+        "freedom house",
+        "oakland california",
+        "volkswagen"
+      ],
+      "related_events": [
+        "Black United Youth organization",
+        "Freedom House network",
+        "Mertel Glasgow's arrival in West Helena",
+        "Pastor-deacon dynamics on movement support"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker uses 'Mertel' and 'Murdered' (Whisper error); the canonical first name appears to be Myrtle, used in the summary; preserved both as 'Mertel (Myrtle) Glasgow' to flag the transcript ambiguity."
+        ],
+        "improvements": [
+          "Could note that the Big Star grocery incident took place after Young was married, so post-March 1967."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:12:00,000",
+      "end_time": "01:25:00,000",
+      "title": "Memphis, Dr. King's Death, and the Non-Violence Debate",
+      "summary": "Young recalls traveling to Memphis to support Dr. Martin Luther King Jr., though she does not remember whether her husband was there when King was killed. She and Mertel Glasgow shared rooms with Stokely Carmichael, Eldridge Cleaver, and other organizers. She describes her view that Dr. King's activities positioned people to be killed, that SNCC's focus was non-violence, and that the Black Panther Party and what she names as the 'Black Liberation Front' (formed by Cornell University students, one of whom, Ed Larry Dixon, came home to Little Rock) emerged in response to the need to protect Black leaders. She names Eric (last name unknown to her) as another of the Cornell students. She recalls being present at marches in Atlanta and other locations to fight against Black students being denied entry to colleges and universities, staying about a week at one such gathering in the home of what she believes was a Black college president.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "martin luther king",
+        "memphis",
+        "non-violence",
+        "stokely carmichael",
+        "eldridge cleaver",
+        "black panther party",
+        "black liberation front",
+        "cornell university",
+        "ed larry dixon",
+        "atlanta marches"
+      ],
+      "related_events": [
+        "Assassination of Martin Luther King Jr.",
+        "Black Panther Party formation",
+        "Cornell University Black student takeover",
+        "Atlanta movement marches"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 86,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker references 'Black Liberation Front' coming from Cornell University; the historically documented Cornell-related Black student armed protest is the 1969 Willard Straight Hall takeover by the Afro-American Society, not a 'Black Liberation Front'. The summary preserves the speaker's terminology; this is her recollection, not corrected canonical history.",
+          "The speaker's claim that the Black Panther Party 'came out of' SNCC's non-violence debate is her interpretation; the BPP was founded by Bobby Seale and Huey Newton in Oakland in October 1966, partly independent of SNCC. Preserved as her perspective."
+        ],
+        "improvements": [
+          "Could note that the Cornell student Ed Larry Dixon's surname spelling is preserved as Whisper rendered it."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:21:00,000",
+      "end_time": "01:35:00,000",
+      "title": "Washington, Marriage, and the State Capitol Job Battle",
+      "summary": "After graduating high school in 1966, Young moved to Washington, D.C., where she worked with the Head Start program for about a year. She returned to Little Rock for Christmas 1966, planned her wedding with Hemmerbaum, and they married in New York in March 1967. Back in Arkansas she trained as a keypunch operator through the Opportunities Industrialization Center (OIC). She won class-action employment discrimination lawsuits in Pulaski County against AMF Inc. (which subsequently relocated operations to Israel) and National Old Line Life Insurance, with attorney John W. Walker handling her cases. She was hired as the first Black office worker in the Arkansas State Capitol administration office under Governor Winthrop Rockefeller's tenure, initially in the Motor Vehicle Department. After her supervisor's department director (Mr. Luzano) discovered her marriage to Hemmerbaum (when an inspector ran the tags on Hemmerbaum's car at pickup time), Luzano ordered her fired despite her excellent performance. John W. Walker brought the case directly to Governor Rockefeller, who dismissed Luzano on the spot and reinstated Young. She also recounts being made to walk back and forth across hot fresh asphalt between the revenue building and the capitol, taking her shoes off in the heat, and being seen and reported on by a sympathetic white journalist.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "head start program",
+        "washington dc",
+        "march 1967 marriage",
+        "opportunities industrialization center",
+        "amf inc",
+        "national old line life insurance",
+        "pulaski county",
+        "john w walker",
+        "winthrop rockefeller",
+        "state capitol",
+        "motor vehicle department",
+        "luzano"
+      ],
+      "related_events": [
+        "Opportunities Industrialization Center training",
+        "AMF Inc class-action lawsuit",
+        "National Old Line Life Insurance lawsuit",
+        "Governor Rockefeller intervention",
+        "First Black office worker at Arkansas State Capitol"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "AMF Inc's relocation to Israel is the speaker's recollection; canonical verification not available in ground truth and preserved as her statement.",
+          "Speaker characterizes Rockefeller's election as a 'Republican governor elected with all this black support'; Winthrop Rockefeller was indeed elected Arkansas's first Republican governor since Reconstruction in 1966 (and re-elected 1968), so the framing is broadly correct."
+        ],
+        "improvements": [
+          "Could note that the journalist who wrote about her shoeless capitol walk worked for a freelance paper, possibly the Arkansas Times per the speaker's tentative attribution."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "01:35:00,000",
+      "end_time": "01:46:00,000",
+      "title": "Black United Youth, Earle Violence, and Bobby Brown",
+      "summary": "Young describes the Black United Youth (BUY), which she helped lead in Little Rock from approximately 1968-1971, focused on supporting Black students in newly-desegregating high schools and demanding student union representation. She names Bobby Brown (with influence over street guys), Bob Brawwater (a graduate of Philander Smith College who worked as a news announcer at KOKY-AM under director Larry Hayes), and her own activist work as core to the group. She recounts being in Earle, Arkansas the night the white high school was forcibly integrated and the Black high school closed: a state trooper put a .357 Magnum to her head and pulled the trigger (the gun was unloaded or empty) while shouting 'Run Nigger,' then beat an elderly woman with her walking cane. White men in a pickup truck snatched Young; the group, with Ed Larry Dixon, Eric, Bob Brawwater, and a young woman named Katanga, eventually drove a Mustang back to Little Rock, with Young driving. Howard Hemmerbaum had alerted John W. Walker, who had called Governor Rockefeller to send the National Guard. Young describes Bobby Brown as someone who 'hated white folks' but who served as a needed bodyguard and strong-arm presence; his sister had been one of the Little Rock Nine.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "black united youth",
+        "earle arkansas",
+        "school desegregation",
+        "bobby brown",
+        "bob brawwater",
+        "philander smith college",
+        "koky radio",
+        "larry hayes",
+        "ed larry dixon",
+        "katanga",
+        "state trooper violence",
+        "national guard"
+      ],
+      "related_events": [
+        "Earle Arkansas school desegregation",
+        "Black United Youth Little Rock",
+        "Philander Smith College graduate network",
+        "KOKY-AM Black media",
+        "Little Rock Nine family legacy (Bobby Brown's sister)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Bobby Brown's sister is referenced as a member of the Little Rock Nine; the speaker does not name her. The Little Rock Nine were Ernest Green, Elizabeth Eckford, Jefferson Thomas, Terrence Roberts, Carlotta Walls LaNier, Minnijean Brown-Trickey, Gloria Ray Karlmark, Thelma Mothershed-Wair, and Melba Pattillo Beals. 'Brown' (Minnijean Brown-Trickey) is the most likely match but the transcript does not confirm.",
+          "Bob Brawwater's name appears as Whisper rendered it; canonical spelling unverified."
+        ],
+        "improvements": [
+          "Could explicitly name Minnijean Brown-Trickey as the likely Little Rock Nine member whose brother is Bobby Brown, with the caveat that the transcript does not confirm."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "01:46:00,000",
+      "end_time": "02:00:00,000",
+      "title": "Movement Reflections, Obama, and Year at Malcolm X Liberation University",
+      "summary": "Young reflects critically on what the civil rights movement produced: she had hoped for economic transformation and Black-owned business but instead saw 'the wrong people' getting offices, high-paying jobs, and access to higher education, often forgetting where they came from. She describes the shift she observed when Vietnam War veterans returned with drugs and white America became addicted, leading white people to change drug laws to protect their own children. She references the recent (September 2011) execution of Troy Davis in Georgia as evidence the country is not growing. She supports President Barack Obama and recounts being treated coldly in Black Little Rock for openly supporting him, being asked to be quiet about him at her tax preparer's office. She emphasizes that no other president had ever been asked for a 'resume' before running, and that as long as Obama was a senator nobody questioned where he was from. She also recalls her year in Durham, North Carolina, around 1971, at Malcolm X Liberation University, where she studied African ethnic groups, learned martial arts, and visited Chapel Hill for activities. She left the university after racism over her white husband emerged among classmates.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "vietnam drugs",
+        "troy davis execution",
+        "barack obama",
+        "presidential resume",
+        "malcolm x liberation university",
+        "durham north carolina",
+        "1971",
+        "chapel hill",
+        "martial arts"
+      ],
+      "related_events": [
+        "Malcolm X Liberation University Durham",
+        "Troy Davis 2011 execution",
+        "Obama 2008 election",
+        "Vietnam War aftermath"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Troy Davis was executed by Georgia on September 21, 2011 (one week before the interview date of September 26, 2011); details match transcript.",
+          "Malcolm X Liberation University did exist in Durham, NC from 1969-1973, founded by Howard Fuller; speaker's year 1971 is consistent."
+        ],
+        "improvements": [
+          "Could note that the speaker's Obama reflection is the only present-day political reflection in the interview."
+        ]
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "02:00:00,000",
+      "end_time": "02:05:45,000",
+      "title": "Closing Tributes to Myrtle Glasgow and Worth Long",
+      "summary": "Young closes by thanking the interviewer for the opportunity to share her story and explicitly recognizes Mertel (Myrtle) Glasgow as the person who understood that there were people 'like me out here in the field' who gave all they had to the struggle. She thanks her director at Modern Woodmen of America, Albert T. Hurst Jr., for time off to do the interview. Asked about Worth Long, she remembers him as an 'art man' and a sweet man who 'danced to a different beat,' always pleasant and respectful, always carrying a little bag on his arm. She never got to know him well because he was not in her immediate area, but when he came to West Helena he always made sure to visit her parents.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "myrtle glasgow",
+        "mertel glasgow",
+        "worth long",
+        "modern woodmen",
+        "albert hurst",
+        "closing tribute"
+      ],
+      "related_events": [
+        "Tribute to Myrtle Glasgow",
+        "Recollection of Worth Long",
+        "Modern Woodmen of America employment"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 86,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that Worth Long is documented in civil_rights_facts.json as SNCC Arkansas + Mississippi field secretary 1962-65, then Smithsonian folklorist; this aligns with the speaker's recollection of him being in West Helena."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Carrie Lamar Young",
+      "interviewee_title": "Civil Rights Activist, SNCC and Black United Youth participant",
+      "interview_date": "2011-09-26",
+      "interview_location": "Little Rock, Arkansas",
+      "interviewer_name": "Joseph Mosnier",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "02:05:45",
+      "total_segments": 1413,
+      "word_count": 16800,
+      "number_of_chapters": 13
+    },
+    "overall_score": {
+      "total": 84,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 25,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with family origins in Lexa and parents Lazarus and Lytte Lamar (Segment 9, 00:01:06,000)",
+            "Closes with tribute to Myrtle Glasgow and Worth Long (Segments 1376-1405, 02:03:14-02:05:19)"
+          ],
+          "justification": "The interview follows a clear chronological arc from childhood through SNCC activism, marriage, employment battles, BUY work, and reflection on Obama and contemporary themes. The interviewer's structuring questions help maintain flow; backtracking is minimal and serves character development."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "He pulled his trigger and said, Ron Nigger, pow, Ron Nigger.",
+            "segment": 1021,
+            "timestamp": "01:35:43,000"
+          },
+          "specificity_count": {
+            "full_names": 35,
+            "specific_dates": 12,
+            "specific_places": 22
+          },
+          "evidence": [
+            "Description of cast-iron pot chitlins cleaning with number-three tubs (Segments 55-57, 00:09:11-00:09:57)",
+            "Bowling 98 in her first game with shoes off (Segment 434, 00:45:13)",
+            "State trooper pulling trigger on .357 Magnum (Segment 1020, 00:01:35:43)"
+          ],
+          "justification": "Young provides exceptionally vivid scene reconstructions across multiple chapters: chitlin cleaning, the bowling alley, the state trooper assault, the asphalt walk at the capitol. Full names, specific locations, and reconstructed dialogue are abundant throughout, supporting visualization of nearly every major event."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I was so mad. I wanted them dead. I wanted them locked up.",
+            "segment": 532,
+            "timestamp": "00:52:16,000"
+          },
+          "emotional_range": [
+            "anger",
+            "pride",
+            "grief",
+            "fear",
+            "love",
+            "indignation",
+            "spiritual conviction"
+          ],
+          "vulnerability_elements": [
+            "Sharing attempted rape and subsequent 20-year back pain",
+            "Sister's death at Columbia and her own disconnect from higher education",
+            "Loneliness gathering poll-tax signatures alone"
+          ],
+          "justification": "Young is open about the attempted assault at Snow Lake, her sister's death, and the loneliness of solo petition work, going beyond a sanitized public narrative. She also expresses anger at Black colorism in her schools and grief about movement leadership co-optation, with appropriate mix of analytical and emotional registers."
+        },
+        "overall_assessment": "Young's narrative is structurally strong, vividly detailed, and emotionally honest. She uses reconstructed dialogue effectively (the bowling alley exchange, the state trooper threat, the Western Union confrontation) and is willing to share difficult personal truths including the Snow Lake assault and her family's poverty. The arc moves coherently from rural childhood to political reflection."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "SNCC Arkansas Project organizing (Segment 326, 00:34:23, with role as recruit-and-volunteer)",
+            "Poll tax abolition petition campaign (Segments 366, 00:38:55, lead petition gatherer)",
+            "Bowling alley desegregation attempt (Segment 392, 00:42:36, direct participant)",
+            "Earle Arkansas school desegregation violence (Segment 1014, 01:35:10, direct witness)"
+          ],
+          "key_figures": [
+            {
+              "name": "Howard Hemmerbaum",
+              "relationship": "Husband; SNCC organizer who recruited her",
+              "contact_level": "close"
+            },
+            {
+              "name": "Bill Hansen",
+              "relationship": "SNCC Arkansas Project director, fellow worker",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Myrtle Glasgow",
+              "relationship": "SNCC field worker, lived with her family",
+              "contact_level": "close"
+            },
+            {
+              "name": "Stokely Carmichael",
+              "relationship": "Shared rooms during organizing trips",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "John W. Walker",
+              "relationship": "Civil rights attorney who litigated her cases",
+              "contact_level": "close"
+            },
+            {
+              "name": "Worth Long",
+              "relationship": "SNCC field worker who visited family",
+              "contact_level": "distant"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "SNCC (Arkansas Project)",
+              "role": "Local recruit and petition organizer",
+              "years": "1965-1966"
+            },
+            {
+              "organization": "Black United Youth (BUY)",
+              "role": "Founding member and active leader, Little Rock",
+              "years": "1968-1971"
+            },
+            {
+              "organization": "Malcolm X Liberation University",
+              "role": "Student",
+              "years": "1971"
+            }
+          ],
+          "unique_access": "As a teenage local recruit in Arkansas, Young provides ground-level insider perspective on SNCC's Arkansas Project, the poll tax campaign in Phillips County, the Earle school desegregation violence, and intra-Black political dynamics including BUY-internal disagreements and pastor-vs-laity church politics.",
+          "justification": "Young participated directly in regionally significant SNCC organizing, was personally close to Howard Hemmerbaum and Myrtle Glasgow, and had multiple insider encounters with figures including Stokely Carmichael, Eldridge Cleaver, Julian Bond, Andrew Young, and Marion Barry. Her perspective from rural Arkansas adds substantially to the better-documented Mississippi and Alabama narratives."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Specific date of interview: Monday September 26, 2011 (Segment 2, 00:00:10)",
+            "Family moved from Lexa to West Helena in 1964, electricity arrived 1958 (Segments 266, 00:25:25; 344, 00:36:00)",
+            "Sister enrolled at Mary Holmes Junior College in 1961, died at Columbia in 1963 (Segments 283-291, 00:30:25-00:32:00)",
+            "Married Howard Hemmerbaum March 1967 in New York (Segment 816, 01:11:00)",
+            "Won lawsuits against AMF Inc. and National Old Line Life Insurance in Pulaski County (Segment 899, 01:23:33)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 35,
+            "first_only": 12,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "First Republican governor Winthrop Rockefeller's tenure and the State Capitol cafeteria desegregation",
+            "Malcolm X Liberation University in Durham, NC, where she studied around 1971",
+            "Troy Davis execution one week before September 26, 2011 interview",
+            "1957 Little Rock Nine integration (referenced as outside her childhood awareness)",
+            "1919 Elaine Massacre in Phillips County"
+          ],
+          "justification": "Young provides verifiable historical claims grounded in specific dates and full names. Many organizational details (KOKY-AM under Larry Hayes, Philander Smith College, Modern Woodmen of America) can be cross-referenced. She is appropriately tentative on years she is unsure about ('I think 1958')."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed account of poll tax petition fieldwork in West Helena 1965-1966 by a teenage local recruit",
+            "Account of the Earle, Arkansas school desegregation violence and state trooper conduct",
+            "Inside view of Black United Youth (BUY) organizational dynamics in Little Rock 1968-1971",
+            "Account of being the first Black office worker at the Arkansas State Capitol administration office under Governor Rockefeller"
+          ],
+          "understudied_aspects": [
+            "SNCC Arkansas Project from the local recruit's perspective rather than national organizer's",
+            "Black women's interracial marriages within the late-1960s movement",
+            "Black United Youth (BUY) as an Arkansas-specific Black Power-era formation"
+          ],
+          "narrative_complications": "Young complicates the dominant narrative of SNCC as exclusively a Mississippi/Alabama project; her account of the Arkansas Project, the BUY, and the family-level politics of accepting white organizers (Howard Hemmerbaum) into rural Black households reframes the Black-Power transition as a more textured process than the standard SNCC chronology suggests.",
+          "historiographical_value": "Historians could use Young's interview to reconstruct the Arkansas SNCC Project's grassroots recruitment, the lived experience of interracial marriage in the movement, the relationship between SNCC and locally-formed Black Power organizations like BUY, and the day-to-day operation of voter education in the Delta.",
+          "justification": "Young's perspective from rural Phillips County, her testimony about the 1919 Elaine Massacre's living memory in the 1960s, and her detailed account of the Earle violence and Rockefeller-era state capitol employment battles all fill regional and demographic gaps in the published civil rights record."
+        },
+        "overall_assessment": "Young's interview has substantial historical value because she was a direct participant in SNCC Arkansas Project work, was married to a white SNCC organizer, and led Black United Youth in the post-1968 Black Power era. Her testimony documents understudied Arkansas terrain and the perspective of a rural teenage recruit, while her close relationships with multiple named SNCC and BUY figures give her insider knowledge across the movement transition."
+      },
+      "emotional_resonance": {
+        "total": 21,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "From a cotton-field-hating rural child motivated only by escape, Young transforms into a politically conscious organizer who returns home to do movement work, then into a lifelong activist who reflects critically on what the movement did and did not achieve.",
+          "key_turning_points": [
+            "Father's quiet armed guard of a falsely accused young man (Segments 76-85, 00:13:58-00:15:25)",
+            "Sister's death at Columbia University 1963 (Segments 291-293, 00:31:58-00:32:04)",
+            "Meeting Howard Hemmerbaum and accepting the petition assignment (Segments 366-367, 00:38:55-00:39:09)",
+            "Bowling alley desegregation (Segment 407, 00:43:31)",
+            "Rockefeller intervention to restore her capitol job (Segments 941-942, 01:27:43-01:28:02)"
+          ],
+          "before_after_contrast": "Young began with no awareness of NAACP, no electricity, no TV, no Black newspaper, and ended as a class-action plaintiff, Black United Youth leader, and reflective political voice on Obama's election and Troy Davis's execution.",
+          "inspirational_quality": "Yes — her transformation from rural sharecropper's daughter to litigator-by-proxy and BUY leader, paired with her later spiritual reframing of the work, would inspire audiences who connect to themes of self-authorship and the long arc of civic engagement.",
+          "justification": "Young articulates clear stages of growth — from determination to leave Lexa, to engaging with SNCC, to leading BUY, to reflecting on the movement's failures and successes — and she explicitly reflects on what each stage taught her."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Attempted rape at Snow Lake cotton field with subsequent hospitalization",
+              "segment_range": "523-560",
+              "timestamp_range": "00:51:31,000 - 00:53:47,000",
+              "stakes": "physical survival and long-term health"
+            },
+            {
+              "description": "Bowling alley desegregation in segregated Midland Heights",
+              "segment_range": "392-441",
+              "timestamp_range": "00:42:36,000 - 00:45:40,000",
+              "stakes": "potential arrest, public humiliation, and assertion of dignity"
+            },
+            {
+              "description": "Earle Arkansas state trooper pulls a .357 Magnum on her and beats an elderly woman",
+              "segment_range": "1019-1040",
+              "timestamp_range": "01:35:34,000 - 01:37:25,000",
+              "stakes": "death, kidnapping by white men in pickup truck"
+            },
+            {
+              "description": "Rockefeller fires the department director who fired her",
+              "segment_range": "933-942",
+              "timestamp_range": "01:27:16,000 - 01:28:02,000",
+              "stakes": "career, dignity, and demonstration of accountability"
+            }
+          ],
+          "conflict_types": [
+            "physical danger from state troopers and vigilantes",
+            "personal trauma from sexual assault",
+            "interracial-marriage social hostility",
+            "employment discrimination",
+            "intra-Black colorism and political disagreement"
+          ],
+          "emotional_range": "From fear and rage through grief and triumph back to indignation and spiritual conviction",
+          "justification": "Multiple peak moments with palpable stakes are present: the Snow Lake assault, the bowling alley action, the Earle trooper violence, and the capitol-job restoration. Each is described with specific detail and emotional honesty."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Sibling loss and disrupted dreams",
+            "Mother-daughter wisdom transmission",
+            "Falling in love across social boundaries",
+            "Standing alone when no one will stand with you",
+            "Spiritual reckoning"
+          ],
+          "relatable_struggles": [
+            "Wanting to escape rural poverty",
+            "Suffering long-term consequences of trauma",
+            "Workplace discrimination",
+            "Standing publicly for an unpopular political position"
+          ],
+          "human_moments": [
+            "Mother's only-two-answers wisdom (Segment 74, 00:13:32)",
+            "Father's pet nickname for her (Segment 553, 00:53:15)",
+            "Older sister naming her 'Minerva' for her curiosity (Segment 70, 00:12:34)"
+          ],
+          "connection_points": "Listeners across backgrounds can connect to Young's account of standing alone for hours at a storefront, the loneliness of advocacy, her mother teaching her to ask boldly, and her courage in maintaining her sense of self in the face of social pressure.",
+          "justification": "Young's interview balances the specific civil rights context with universally relatable themes including grief over a sister's death, mother-daughter dialogue, and the loneliness of advocacy work."
+        },
+        "overall_assessment": "Young's transformation arc is clear and well-articulated, with multiple peak dramatic moments and a range of universal human themes. The interview maintains emotional intensity through the Snow Lake assault and Earle violence sections, while the Obama and Worth Long closing sections offer reflective resolution."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "rare",
+          "barriers": [
+            "Some regional dialect terms (e.g., 'whuppin', 'big-em') may require context",
+            "Acronyms like BUY and OIC are not always self-introduced"
+          ],
+          "justification": "Young is articulate and self-contextualizes most references. Her language is colloquial but clear; the rare moments of dialect or insider acronym do not significantly impede comprehension."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Bowling alley standoff (Segments 392-441, 00:42:36-00:45:40)",
+            "Earle state trooper attack (Segments 1018-1057, 01:35:28-01:38:36)",
+            "Capitol firing and Rockefeller intervention (Segments 921-942, 01:26:09-01:28:02)"
+          ],
+          "slow_sections": [
+            "Early genealogy and family-name history (Segments 27-50, 00:04:14-00:08:14)",
+            "Late-stage Obama reflection (Segments 1267-1325, 02:03:00-02:00:00) has some monologue density"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Audiences can stay engaged across the full two-hour interview, though sustained attention requires interest in Arkansas movement history; the dramatic sections compensate for the slower genealogical sections.",
+          "justification": "Mosnier's structuring questions create good pacing through most of the interview. The Snow Lake assault and Earle violence sections naturally spike intensity. Some chapters (the genealogical opening and the Obama reflection) plateau in pace."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Voting rights and current voter suppression",
+            "Police violence and racialized state authority",
+            "Interracial marriage and legacies of Loving v. Virginia",
+            "Religious foundation of activism",
+            "Black political representation and Obama's election",
+            "Capital punishment and Troy Davis"
+          ],
+          "contemporary_relevance": "Young explicitly draws connections between the 1960s movement and 2011 issues, including her support for Obama, her reaction to Troy Davis's execution, and her observation that 'in 2011 we know that America is not OK.'",
+          "meaning_making": "Yes — Young repeatedly contextualizes her experiences within larger historical meaning, particularly through her religious framing and her economic analysis of what the movement did and did not achieve.",
+          "justification": "Young actively connects the past to her 2011 present, making the interview accessible as both history and contemporary commentary."
+        },
+        "overall_assessment": "The interview is highly accessible to general audiences, with clear articulation, modest dialect impact, and explicit contemporary relevance. Pacing flags slightly in genealogical and reflective sections but recovers in dramatic moments."
+      }
+    }
+  },
+  "overall_assessment": "Carrie Lamar Young's interview is an exceptional contribution to the Civil Rights History Project corpus, combining vivid grassroots-level testimony of SNCC Arkansas Project organizing with insider perspective on Black United Youth and the Rockefeller-era integration of the Arkansas State Capitol workforce. Her narrative balances structural rigor, emotional authenticity, and unique historical positioning. She names dozens of figures and locations verifiable against the historical record, while preserving the texture of rural Phillips County life and the moral weight of interracial marriage within the movement. The interview is publication-grade in coverage but warrants careful citation review for canonical name spellings (Hemmerbaum/Himmelbaum, Mertel/Myrtle Glasgow, Brawwater) and for confirmation of her account of Black Liberation Army/Front formation at Cornell.",
+  "key_strengths": [
+    "Direct firsthand SNCC Arkansas Project testimony from a teenage local recruit, an underrepresented perspective in published civil rights scholarship",
+    "Vivid scene reconstruction with reconstructed dialogue across multiple peak moments (bowling alley, Earle state trooper, capitol firing)",
+    "Honest emotional access including sexual assault, sister's death, loneliness of advocacy, and reflection on movement co-optation"
+  ],
+  "key_limitations": [
+    "Some name spellings are uncertain due to Whisper transcription artifacts (Himmelbaum/Hemmerbaum, Mertel/Myrtle, Brawwater), requiring downstream confirmation",
+    "Some historical attribution claims (e.g., that the Black Panther Party 'came out of' SNCC's non-violence debate, that a 'Black Liberation Front' formed at Cornell) are the speaker's interpretation and partially contradict published historiography"
+  ],
+  "evaluation_metadata": {
+    "evaluator": "AI: Claude (Anthropic)",
+    "evaluation_date": "2026-05-24",
+    "framework_version": "1.0",
+    "model_used": "claude-opus-4-7"
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Young's parents were Lazarus Lamar and Lytte Lamar, who had four girls and two boys; she was the youngest of the four girls.",
+        "status": "supported",
+        "supporting_excerpt": "my parents, Lazarus Lamar and my mom, Lytte Lamar, gave birth to four girls, two boys, which I was the youngest of the four girls. (Segment 9, 00:01:06,000)",
+        "rationale": "Direct quotation from the transcript naming both parents, the gender breakdown of the children, and Young's birth order."
+      },
+      {
+        "claim": "The family sharecropped in Lexa, Arkansas in Phillips County until she was around fourteen.",
+        "status": "supported",
+        "supporting_excerpt": "I remember living at Lexa, which was about four or five miles from Barton. And we lived there in Lexa until I was, I think, 14. (Segments 10-11, 00:01:24-00:01:51)",
+        "rationale": "Direct match in the transcript."
+      },
+      {
+        "claim": "Her father worked at an ice plant in Lexa.",
+        "status": "supported",
+        "supporting_excerpt": "He loved math. He worked in an ice plant that we had in Lexa. (Segment 19, 00:03:07,000)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Her mother was a midwife known for skill with breech births.",
+        "status": "supported",
+        "supporting_excerpt": "She was a midwife. She delivered most of the babies in our area. And not just any midwife either, but she was the midwife that if there was a breach baby coming into the world, people would come and find her. (Segments 21-22, 00:03:20-00:03:44)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Young learned at age twenty-three that her mother could not read or write.",
+        "status": "supported",
+        "supporting_excerpt": "When I was 23, I found out that my mom didn't know how to read or write. (Segment 24, 00:03:54,000)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Her mother was born in Yazoo City, Mississippi, and her father in Palestine, Arkansas.",
+        "status": "supported",
+        "supporting_excerpt": "my mom was born in Yazoo City, Mississippi, and my dad was born in Palestine, Arkansas, which is right outside of Forest City between Memphis and Brinkley. (Segment 27, 00:04:14,000)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Her father's family name was Raymond before her great-great-grandfather changed it to Lamar.",
+        "status": "supported",
+        "supporting_excerpt": "their plantation name was Raymond. But once they left the plantation, my great-great-grandfather changed their name to Lamar (Segments 33-34, 00:05:31-00:05:41)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Her paternal grandfather lived to be approximately 104 and whittled rings and flutes for the children.",
+        "status": "supported",
+        "supporting_excerpt": "He lived to be like 104 before he passed away. He whittled too. He whittled and made us rings and musical instruments. (Segments 36, 41-43, 00:06:00-00:07:12)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Young learned about the 1919 Elaine Massacre as a teenager when older field workers explained the hard, cracked ground.",
+        "status": "supported",
+        "supporting_excerpt": "It came up probably when I was in my middle teens. We were working down there... It's probably from the blood that's in the earth... they shared with us about the massacre down there. (Segments 243-255, 00:28:58-00:29:45)",
+        "rationale": "Direct quotation establishes both the timing (mid-teens) and the content (Elaine massacre explanation)."
+      },
+      {
+        "claim": "Young never heard of the NAACP until about 1965 and had no awareness of the 1957 Little Rock Nine crisis at the time.",
+        "status": "supported",
+        "supporting_excerpt": "Personally, I never heard of the NAACP until about 1965... 1957 when they had the the Little Rock Nine. Even though I lived two hours away in today's transportation system. If the news came then, I'd never heard anything about it. We didn't have TV. (Segments 259-265, 00:29:56-00:30:23)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "The family got electricity in 1958.",
+        "status": "supported",
+        "supporting_excerpt": "We had our first electricity in our house in 1958. (Segment 266, 00:30:25,000)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "In 1961 her oldest sister enrolled at Mary Holmes Junior College in Mississippi for two years and then went to Columbia University in New York City in 1963 where she died.",
+        "status": "supported",
+        "supporting_excerpt": "in 1961, my oldest sister, she went to Mississippi to attend Mary Holmes Junior College... She went there for two years... After her second year there, she went to Columbia University in New York City. And she was studying there. And that was in 1963. And she died while she was there. (Segments 282-291, 00:30:25-00:31:58)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Howard Hemmerbaum came through West Helena with Jim Jones from Louisville, Arkansas, and likely Bill Hansen.",
+        "status": "supported",
+        "supporting_excerpt": "I think Howard Himmelbaum was the first group to come through then. He came through with a man named Jim Jones from Louisville, Arkansas. I think Bill Hansen may have been with them. (Segments 326-328, 00:34:31-00:34:44)",
+        "rationale": "Direct quotation, with the speaker's hedge 'I think' preserved as 'likely'."
+      },
+      {
+        "claim": "SNCC's focus in West Helena was voter education and abolishing the poll tax of one dollar per voter to register.",
+        "status": "supported",
+        "supporting_excerpt": "At that time, the focus was voter education and trying to abolish poll tax because at that time, when people went to vote, they had to pay a dollar to register the vote. (Segments 331-332, 00:35:07-00:35:11)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Visitors who came through included Julian Bond, Andrew Young, Stokely Carmichael, Eldridge Cleaver, and Marion Barry.",
+        "status": "supported",
+        "supporting_excerpt": "We had a Julian Bond came, Andrew Young, Stokely Carmichael. I want to say, Eldridge Cleaver and Marion Barry, they came through there. (Segments 361-362, 00:38:06-00:38:21)",
+        "rationale": "Direct quotation; speaker's tentative 'I want to say' is preserved by the summary's framing 'visitors who came through' rather than 'spent extended time'."
+      },
+      {
+        "claim": "Young sat on a storefront with a petition to abolish the poll tax, an assignment from Hemmerbaum.",
+        "status": "supported",
+        "supporting_excerpt": "I'm the person that sat on this store front every day. Every day, got everybody in West Helena to come by and sign my petition to abolish poll tax. And there was an assignment that Howard Hemmerbaum gave me to do who later on became my husband. (Segments 364-366, 00:37:46-00:38:55)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "First Baptist Church let the workers use its basement to teach reading and writing.",
+        "status": "supported",
+        "supporting_excerpt": "I think it was first Baptist church that let us use their basement. And a couple of the civil rights workers would work with them on reading and writing a couple of nights a week. (Segments 374-375, 00:39:42-00:39:57)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Stanley Tillman took Young to bowl at the only bowling alley in the area, Midland Heights, between Helena and West Helena.",
+        "status": "supported",
+        "supporting_excerpt": "Mr. Tillman came up with this idea of one day that he was going bowl. ... So we went to the only bowl in that alley we had. It's between Helen and West Helen, that area is called Midland Heights. (Segments 393-396, 00:42:45-00:43:02)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "They were refused bowling shoes but allowed a lane, and bowled in their socks; Young bowled 98 in her first game.",
+        "status": "supported",
+        "supporting_excerpt": "he went up to rent the shoes, they wouldn't rent them the shoes. He said, we need a lane... We kept our socks on and we proceeded the bowl... My first game ever in life, I bow 98. (Segments 398-434, 00:43:05-00:45:17)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "The Snow Lake field assault involved five Black men attempting to rape Young, with one football player pressing his knees into her back, causing 20-year back problems and three-week hospitalization.",
+        "status": "supported",
+        "supporting_excerpt": "We went on a bus to a place called Snow Lake, Arkansas, which is on the other side of Elaine. And five young men attempted to rape me... And it's one very muscular young man. And he was a football player. He stood up in my back with his knees. And of course, I suffered for the next 20 years... I was in the hospital for like three weeks behind that. (Segments 523-560, 00:51:31-00:53:47); No, they weren't white. These were black guys (Segment 565, 00:54:01)",
+        "rationale": "Direct quotation including the clarification that the men were Black, not white."
+      },
+      {
+        "claim": "After graduating high school in 1966, Young moved to Washington, D.C., worked with the Head Start program, and returned to marry Howard Hemmerbaum in March 1967.",
+        "status": "supported",
+        "supporting_excerpt": "When I graduated from high school and went to DC, I spent what, six months... I did spend a year there because I didn't get married to a March of 67... me and Howard planned our wedding and went to New York and March, got married (Segments 814-888, 01:16:00-01:22:19)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Young trained as a keypunch operator through the Opportunities Industrialization Center (OIC).",
+        "status": "supported",
+        "supporting_excerpt": "I was going to school to become a key punch operator with Opportunities Industrialization Center, which was the Opportunities Industrialization Center that was a new organization to the South (Segment 890, 01:22:24)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Young won class-action lawsuits in Pulaski County against AMF Inc. and National Old Line Life Insurance Company.",
+        "status": "supported",
+        "supporting_excerpt": "I won a couple of major lawsuits in Pulaski County for class... And one of those companies was AMF Inc and the other one was National Old Line Life Insurance Company. (Segments 895-899, 01:23:16-01:23:41)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Attorney John W. Walker brought her case to Governor Winthrop Rockefeller, who dismissed the director (Mr. Luzano) and restored her job.",
+        "status": "supported",
+        "supporting_excerpt": "we went to John W. Walker. I turned to John W. Walker and told him what had happened... we just went straight to Rockefeller and gave him all the paperwork... Director Luzano comes in the room... by that time Rockefeller came in and he said, well you can just go to your office and get your things in leave because you won't be working here anymore. (Segments 927-941, 01:26:47-01:27:50)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Young was the first Black office worker in the Arkansas State Capitol administration office under Governor Rockefeller.",
+        "status": "partially_supported",
+        "supporting_excerpt": "I got a job with the State Capitol as the first black office work in the administration office through much toll. (Segment 908, 01:24:26,000)",
+        "rationale": "The transcript supports the 'first black office worker' claim, but the surrounding context is somewhat garbled ('through much toll'), so it is preserved as partially_supported pending external verification."
+      },
+      {
+        "claim": "In Earle, Arkansas during school desegregation, a state trooper aimed a .357 Magnum at Young, pulled the trigger (saying 'Run Nigger'), then beat an elderly woman with her walking cane.",
+        "status": "supported",
+        "supporting_excerpt": "I was walking by this little old lady and this state trooper came in between us. And he had his three-fifth of said, Magnum up gone. He pulled his trigger and said, Ron Nigger, pow, Ron Nigger. And this little old lady on this walking cane, right? And he finally reached over and knocked to walking cane out of the mud and knocked. (Segments 1019-1023, 01:35:34-01:35:55)",
+        "rationale": "Direct quotation, with Whisper rendering of '.357 Magnum' as 'three-fifth of said, Magnum' preserved as meaning."
+      },
+      {
+        "claim": "Bobby Brown's sister was one of the Little Rock Nine.",
+        "status": "partially_supported",
+        "supporting_excerpt": "His sister was like a forerunner because of her participation in the Little Rock nine and everything. (Segment 1127, 01:44:53,000)",
+        "rationale": "The transcript says Bobby Brown had a sister who was part of the Little Rock Nine but does not name her. The summary preserves the speaker's claim without canonical confirmation."
+      },
+      {
+        "claim": "Mertel (Myrtle) Glasgow came from Oakland, California in a Volkswagen and lived with the Lamar family in West Helena.",
+        "status": "supported",
+        "supporting_excerpt": "She came out Oakland, California in Little Old Boo got never seen a Volkswagen before in my life. And of course Mertel was when we saw she was a white woman. But she was actually a black woman. (Segments 746-748, 01:11:01-01:11:14); And she wound up staying with us and we got close and close. (Segment 753, 01:11:40,000)",
+        "rationale": "Direct quotation, with Whisper renderings 'Mertel' and 'Myrtle' both appearing; canonical 'Myrtle' applied in the summary."
+      },
+      {
+        "claim": "Young spent time at Malcolm X Liberation University in Durham, North Carolina around 1971, studying African ethnic groups and martial arts.",
+        "status": "supported",
+        "supporting_excerpt": "Let me ask you about your year in Durham. I think it was 1971... I had to understand that just because the name of the school was Malcolm X Liberation University wasn't a black white thing. ... We actually studied the different races and the different ethnic groups in Africa and Mexico. We learned martial arts. (Segments 1324-1344, 01:55:55-02:01:24)",
+        "rationale": "Direct quotation. The institution Malcolm X Liberation University did exist in Durham, NC from 1969-1973 per established historical record."
+      },
+      {
+        "claim": "Young supported President Obama, ordered campaign materials online, and faced cold treatment in Little Rock for openly backing him.",
+        "status": "supported",
+        "supporting_excerpt": "I have my box of memorabilia where I went online to the Democratic website and ordered little flag from my vehicle and signs from my windows and all this stuff. And I would drive down the streets and people would look at me like I was crazy. I got asked to be quiet in a place, a public place that I spent money to get my taxes prepared every year because I was talking about Obama in a positive way. (Segments 1254-1263, 01:55:22-01:55:55)",
+        "rationale": "Direct quotation."
+      },
+      {
+        "claim": "Young referenced the recent (one week before interview) execution of Troy Davis in Georgia as evidence the country is not growing.",
+        "status": "supported",
+        "supporting_excerpt": "They just killed Troy Davis. No evidence whatsoever. That's not a country that's growing. (Segments 1179-1181, 01:49:45-01:49:58); This is a man who was executed last week in Georgia by Georgia State authorities (Segment 1189, 01:50:24)",
+        "rationale": "Direct quotation, with the interviewer confirming the timing 'executed last week'."
+      },
+      {
+        "claim": "Worth Long was a soft-spoken, pleasant man who always carried a little bag and visited Young's parents when he came to West Helena.",
+        "status": "supported",
+        "supporting_excerpt": "Worth Long was an art man, a sweet man. But he danced to a shownut of different beat. He was always very pleasant, very respectful... He always had a little bag on his arm... But when he would come to West Helena, he would make sure he came to visit my parents. (Segments 1395-1405, 02:00:24-02:05:19)",
+        "rationale": "Direct quotation. Worth Long is also documented in civil_rights_facts.json as SNCC Arkansas + Mississippi field secretary 1962-65, consistent with this attribution."
+      },
+      {
+        "claim": "Bob Brawwater was a Philander Smith College graduate who worked as a news announcer at KOKY-AM under director Larry Hayes.",
+        "status": "supported",
+        "supporting_excerpt": "Bob Broadway, who was also a graduate of Philander Smith College... He worked at KOKY-AM White at the time I met him under the directorship of a man named Larry Hayes. (Segments 1080-1093, 01:40:55-01:41:50)",
+        "rationale": "Direct quotation, with Whisper rendering of 'Brawwater/Broadway' preserved."
+      },
+      {
+        "claim": "The 'Black Liberation Front' formed at Cornell University with students including Ed Larry Dixon and Eric.",
+        "status": "partially_supported",
+        "supporting_excerpt": "The Black Liberation Front came out of it with the students coming out of Cornell University with the gun, strapped around them and stuff, which one of those young men was from Little Rock... it was Ed Laredixon. And Eric's somebody, I don't know what Eric's last name was, but it was the three young men that was on the front of that paper. (Segments 872-878, 01:20:45-01:21:14)",
+        "rationale": "The transcript directly attributes a 'Black Liberation Front' to Cornell University students, but historically the famous Cornell incident is the 1969 Willard Straight Hall takeover by the Afro-American Society (AAS); the speaker's terminology may conflate AAS with the later 'Black Liberation Army.' The summary preserves her terminology and rates this partially_supported."
+      },
+      {
+        "claim": "Young helped lead the Black United Youth (BUY) in Little Rock from approximately 1968 to 1971.",
+        "status": "supported",
+        "supporting_excerpt": "But doing that time between probably 68-69 to 71, it was active in the BUY Black United Youth. (Segment 1012, 01:34:37,000)",
+        "rationale": "Direct quotation."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 35,
+      "supported": 32,
+      "partially_supported": 3,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_citation_blocked_3_partial",
+    "rationale": "The main summary's accuracy score (86) and quality score (88) both fall short of the 90/90 threshold, and three claims are flagged as partially_supported (the 'first Black office worker' attribution, Bobby Brown's sister as a Little Rock Nine member without a name match, and the 'Black Liberation Front at Cornell' terminology which conflicts with documented Cornell history of the Afro-American Society's 1969 takeover). The fail-closed gate routes this to human review for resolution of canonical name spellings (Hemmerbaum/Himmelbaum, Mertel/Myrtle/Glasgow, Brawwater) and historical attribution clarifications, especially regarding the Black Panther Party and Cornell. The interview itself is high-quality and substantively important, but Smithsonian-grade publication requires confirmation of these specific points before public release."
+  }
+}

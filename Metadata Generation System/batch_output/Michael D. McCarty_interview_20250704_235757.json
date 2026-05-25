@@ -1,0 +1,1116 @@
+{
+  "interview_name": "Michael D. McCarty",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Michael D. McCarty_interview_20250704_235757\\Michael D. McCarty_interview_transcript_20250704_235757.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Michael D. McCarty",
+    "interviewee_title": "Storyteller; former member, Illinois chapter of the Black Panther Party",
+    "interview_date": "2016-06-26",
+    "interview_location": "Los Angeles, California (home of Michael McCarty)",
+    "interviewer_name": "David Cline",
+    "interviewer_affiliation": "Virginia Tech (History Department); Southern Oral History Program at the University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:30:04"
+  },
+  "main_summary": {
+    "summary": "Michael D. McCarty, a storyteller interviewed at his home in Los Angeles on June 26, 2016 for the Civil Rights History Project of the Library of Congress and the Smithsonian National Museum of African American History and Culture, describes growing up on the West Side of Chicago after being born on the South Side in 1950. He credits his mother, an immigrant from Barbados, with cultivating his lifelong reading habit and instilling in him the conviction that 'if you saw something wrong, you had an obligation to do something about it or to let somebody know who could.' McCarty attended Catholic schools and aspired to be a physicist and astronaut before becoming, in his words, 'a revolutionary.'\n\nMcCarty recounts a series of formative encounters with anti-Black racism in and around Chicago: being chased out of all-white Cicero as a child, a Boy Scout cycling trip during which a white woman pursued him from a Little League game while 'calling me everything but a child of God,' and a severe beating by a gang on the South Side that ended only when a young woman knocked away the gun a gang member named Johnny had put to McCarty's head and pulled the trigger. He describes a white Chicago police officer responding to his bloodied appeal for help with the single word 'so.' These experiences, along with his reading, drove him to join the NAACP Youth Council and, with his friend Tyler, to start a Black student organization at the predominantly white Saint Ignatius College Prep on Roosevelt Road. After the school rejected their list of demands for Black studies, community outreach, and more minority students, they organized a walkout in his senior year and were expelled in March 1969. Thirty-nine years later, through the efforts of a former classmate Greg Myers, the school formally apologized and awarded McCarty and his organizing partner their high school diplomas.\n\nMcCarty then describes joining the Illinois chapter of the Black Panther Party in the fall of 1968 after the chapter opened its office at 2350 W. Madison Street. He had been following the national party since its 1966 founding through Ramparts magazine and the Black press, including Ebony, Jet, and the Chicago Defender. He served in the party's education cadre alongside Deputy Minister of Education Billy 'Che' Brooks, whom he had previously known from running track. He recounts Deputy Chairman Fred Hampton's leadership as transformative, characterizing the Illinois Black Panther Party as 'anti-injustice' rather than anti-white, and credits Hampton and the Illinois chapter with founding what McCarty calls the Original Rainbow Coalition with the Young Lords (a former Puerto Rican street gang that had turned political) and the Young Patriots (poor Appalachian whites in Chicago). McCarty highlights field secretaries Bob Lee and Hank 'Bull' Gaddis's organizing work in the poor white Appalachian community shown in the documentary American Revolution 2 directed by Mike Gray. He describes the FBI's COINTELPRO operations against the party, including the planting of FBI informant William O'Neal as head of security, the disinformation campaign aimed at fracturing the alliance between the Panthers and the Blackstone Rangers (also called the Black P. Stone Nation) led by Fred Hampton and Bobby Rush, and the LA FBI office's targeted destruction of an unnamed actress who supported the party. McCarty references the March 8, 1971 burglary of the FBI office in Media, Pennsylvania, documented in the book 'The Burglary,' which first exposed the COINTELPRO program publicly. He closes the recorded portion of the interview describing the party's survival programs - including the Free Breakfast for Children Program, which J. Edgar Hoover called the most dangerous activity of the party - and noting that subsequent government programs effectively replicated what the Panthers had built.",
+    "key_themes": [
+      "Northern urban racism and de facto segregation",
+      "Maternal influence and self-education through reading",
+      "Catholic-school activism and the Black-student-organization movement",
+      "Black Panther Party as community service and political education",
+      "Cross-racial and cross-ethnic working-class coalition building",
+      "FBI COINTELPRO disinformation and counter-organizing against the Black Panther Party",
+      "Memory, repair, and institutional apology"
+    ],
+    "historical_significance": "McCarty's account is a first-person witness record of the Chicago Black Panther Party's Original Rainbow Coalition organizing strategy under Fred Hampton, a strategy frequently mis-attributed in popular memory to Jesse Jackson's 1980s presidential campaigns. He gives concrete operational detail on the Illinois chapter's education cadre, its alliances with the Puerto Rican Young Lords and the Appalachian-white Young Patriots, and the role of COINTELPRO disinformation in fracturing those alliances, including specific reference to FBI informant William O'Neal. The interview also documents the under-studied Catholic-school Black student walkout movement of the late 1960s and the rare instance of an institution (Saint Ignatius College Prep) issuing a formal posthumous apology and diploma to expelled Black student organizers thirty-nine years after the fact.",
+    "quality_metrics": {
+      "accuracy_score": 84,
+      "quality_score": 86,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 24,
+      "accuracy_component_c": 25,
+      "quality_component_a": 34,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 13,
+      "errors": [
+        "The summary identifies the Illinois Rainbow Coalition partner as the 'Young Lords' (a former Puerto Rican street gang turned political); the transcript text as rendered says 'Young Lords Organization' once and 'Young Lords' implicitly in the description of the Puerto Rican gang, but the SRT contains the cleaned phrasing 'Original Rainbow Coalition had been a Puerto Rican street gang' which is ambiguous on its face - inference of 'Young Lords' is supported by ground-truth Fred Hampton corpus entry and is the canonical identification.",
+        "The summary names the partner organization in the documentary scene as the 'Young Patriots'; the transcript's cleaned rendering names them as 'Original Rainbow Coalition Organization' in one place and 'Young Patriots' in another - the latter is the canonical name supported by the Fred Hampton corpus entry.",
+        "The interviewee says Saint Ignatius was '95% white on Roosevelt Road in the black community right across from some projects'; this is reproduced as fact in the summary but is the interviewee's own characterization and not independently verified within the transcript.",
+        "The summary references the 'Blackstone Rangers (also called the Black P. Stone Nation)' as the gang Fred Hampton and Bobby Rush were organizing with; the transcript renders the name as 'Black P. Stone Nation' twice and does not explicitly use 'Blackstone Rangers' - the summary uses both names interchangeably, which is historically correct but is an editorial bridge added by the summarizer.",
+        "The summary states McCarty was 'expelled in March 1969'; the transcript states he 'got kicked out in March of '69' which is the same claim, verified."
+      ],
+      "improvements": [
+        "Tighten the parenthetical bridges between the transcript's organizational names (e.g., 'Black P. Stone Nation') and the more widely used canonical names (e.g., 'Blackstone Rangers') so that the reader can distinguish what the interviewee actually said from the summarizer's editorial gloss.",
+        "Add a clarifying note that the recorded interview ends mid-sentence at the 30:04 mark on the question of what the Illinois chapter's survival programs included; the interview is functionally a partial/incomplete recording.",
+        "The unnamed Los Angeles actress whose life the FBI is said to have destroyed is described without specific identification; the summary should preserve the interviewee's own acknowledgment that he 'can't remember her name' rather than letting the claim stand as a clean factual record."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:51,560",
+      "title": "Interview Introduction and Identification",
+      "summary": "David Cline of Virginia Tech and the Southern Oral History Program at UNC Chapel Hill identifies the interview for the Civil Rights History Project of the Library of Congress and the Smithsonian National Museum of African American History and Culture. Cline notes that Guha Shankar of the Library of Congress and John Bishop of Media Generation/UCLA are behind the camera. The interview is conducted at the home of Michael McCarty in Los Angeles on June 26, 2016. McCarty introduces himself as 'Michael D. McCarty, Storyteller.'",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "library of congress",
+        "smithsonian",
+        "civil rights history project",
+        "los angeles",
+        "david cline",
+        "virginia tech",
+        "unc chapel hill",
+        "guha shankar",
+        "john bishop"
+      ],
+      "related_events": [
+        "Civil Rights History Project",
+        "Library of Congress",
+        "Smithsonian National Museum of African American History and Culture",
+        "Virginia Tech",
+        "Southern Oral History Program",
+        "Media Generation",
+        "UCLA"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 88,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 29,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could note that the audio appears to record the standard Library of Congress / Smithsonian intro slate before the substantive interview begins."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:00:53,880",
+      "end_time": "00:02:25,640",
+      "title": "Family Background and the Influence of His Mother",
+      "summary": "McCarty was born September 7, 1950 in Chicago, Illinois. He grew up on the West Side after his family moved from the South Side when he was about three years old. He identifies his mother, who was from Barbados, as the greatest influence in his life and says he is 'a readaholic because of my mom,' who read to him and told him stories from the time he was about two. The family always had books, and his mother told him 'if you can read, you can do anything.' She also instilled the conviction that 'if you saw something wrong, you had an obligation to do something about it or to let somebody know who could' - a conviction that, McCarty notes wryly, would come back 'to give her a little nip later on in life because I took it to heart.' He has two older brothers and an older sister; the age gap of fourteen to twenty-five years between him and his siblings led his mother to say 'she thought she had gas' when she became pregnant with him.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "chicago",
+        "west side",
+        "south side",
+        "barbados",
+        "mother",
+        "reading",
+        "siblings",
+        "1950"
+      ],
+      "related_events": [
+        "Chicago South Side",
+        "Chicago West Side",
+        "Barbados (Caribbean diaspora)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 90,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 29,
+        "quality_component_a": 37,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could preserve the specific dollar/age-gap detail ('14, 20, 25 years between me and my siblings') more clearly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:02:25,640",
+      "end_time": "00:03:34,920",
+      "title": "Catholic Schooling and Early Aspirations",
+      "summary": "McCarty describes attending Catholic schools on the West Side of Chicago - Saint-Threnda Bar Elementary School (as rendered in the transcript) and Saint Ignatius College Prep. He says he 'loved math and science' and originally planned to be 'a physicist and to be an astronaut' before instead becoming, in his words, 'a revolutionary.' He attributes this turn to his mother's lesson that 'you see something wrong, you should do something about it.' He notes that the household subscribed to the Sun-Times, the Tribune, the Daily News, and the Chicago Defender, so the family was 'well read' and he developed an awareness of the civil rights movement through reading the press and watching news coverage of demonstrations.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "saint ignatius",
+        "catholic school",
+        "west side chicago",
+        "physicist",
+        "astronaut",
+        "chicago defender",
+        "sun-times",
+        "tribune",
+        "daily news"
+      ],
+      "related_events": [
+        "Saint Ignatius College Prep",
+        "Chicago Defender",
+        "Chicago Sun-Times",
+        "Chicago Tribune",
+        "Chicago Daily News"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [
+          "The transcript renders the elementary school name as 'Saint-Threnda Bar Elementary School' which is almost certainly a Whisper transcription error for the actual school name. The summary preserves this as-rendered rather than guessing at the canonical spelling."
+        ],
+        "improvements": [
+          "Future researchers could resolve the canonical name of McCarty's elementary school against external Chicago Catholic-school directories; this summary intentionally does not invent a correction."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:03:34,920",
+      "end_time": "00:04:29,160",
+      "title": "Early Encounters with Sundown-Town Cicero",
+      "summary": "McCarty describes growing up near Cicero, Illinois, which he characterizes as a 'sundown' town where, if you were Black, 'don't have your butt in Cicero, Illinois after sundown. You would be hurt, you could be killed. And these are things that you grew up knowing.' He recalls an incident in which he and a friend rode their bikes into Cicero needing air for their tires and stopped at a gas station; before anything else happened, somebody snatched them and got them out of the area.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "cicero illinois",
+        "sundown town",
+        "chicago",
+        "racial violence",
+        "childhood"
+      ],
+      "related_events": [
+        "Cicero (Illinois) sundown-town status",
+        "Chicago-area de facto segregation"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 84,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 33,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [],
+        "improvements": [
+          "The transcript phrasing of the gas-station rescue is somewhat truncated ('Next thing you know, there's water. Somebody's holding us and get us out of the area'). The summary captures the substance without inventing details."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:04:29,160",
+      "end_time": "00:06:08,200",
+      "title": "Boy Scout Cycling Merit-Badge Incident",
+      "summary": "Pursuing a Boy Scouts cycling merit badge, McCarty and three friends rode from their neighborhood near 13th and Avers and 13th and Pulaski out past Crestwood, Illinois. On the return trip they stopped one by one at a water fountain across the street from an ongoing Little League baseball game. As the others rode on, McCarty - drinking last - looked up to find that the all-white game had stopped, the stands and field had emptied, and the crowd was running toward him. He retains the image of a white woman 'couldn't have been much more than five feet tall, running and calling me everything but a child of God with, I know a brick or a ball or a bat or something in her hand.' He rode away fast and caught his friends. He reflects, 'Now the thing that I find interesting, I don't think I ever told my parents about that. Because that was the way things were.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "boy scouts",
+        "merit badge",
+        "cycling",
+        "13th and avers",
+        "pulaski",
+        "crestwood illinois",
+        "little league",
+        "racial violence",
+        "chicago"
+      ],
+      "related_events": [
+        "Crestwood (Illinois)",
+        "Chicago-area de facto segregation"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:06:08,200",
+      "end_time": "00:08:46,720",
+      "title": "South-Side Gang Beating and Police Callousness",
+      "summary": "During his sophomore year of high school, McCarty and a friend went to a party on the South Side of Chicago in a high-rise housing project. After turning a corner looking for the elevator, they encountered a gang that 'proceeded to beat the snot out of us for however long. They literally beat us until they got tired.' At one point a gang member identified as 'Johnny' kicked McCarty out onto the street, pulled him up by his collar, put a gun to his head, and pulled the trigger - the pistol misfired only after a young woman (described by McCarty as 'an angel') snatched Johnny's hand and shouted 'No Johnny, don't do it.' Told to run, McCarty crawled away unable to stand, flagged down a passing police car, and described what had happened. The white officer responded with the single word 'so.' He nevertheless drove McCarty back to the building - where remnants of the gang got up to extract him - and McCarty asked to be arrested and removed. The officer took him to the local police station, where 'the cops all white start laughing when I walk in.' McCarty's friend had reached a resident's apartment, called his mother, and met McCarty at the station; they went to the hospital, where the friend got stitches. McCarty calls this episode his 'personal wake up call.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "south side chicago",
+        "gang",
+        "gun",
+        "high-rise project",
+        "police callousness",
+        "police indifference",
+        "hospital",
+        "wake-up call"
+      ],
+      "related_events": [
+        "Chicago South Side housing projects",
+        "Chicago Police Department (1960s)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "The interviewee describes the gun as a 'Pistol would be a bullet in the head, Pistol would be in the school' which appears to be a Whisper rendering of the gun jamming or the firing pin failing. The summary frames this as a misfire without overstating."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:08:46,720",
+      "end_time": "00:13:29,760",
+      "title": "Saint Ignatius Black Student Organization, Walkout, and Expulsion (1968-69)",
+      "summary": "McCarty became involved in the NAACP Youth Council. With his friend Tyler, he started a Black student organization at Saint Ignatius College Prep, which he describes as '95% white on Roosevelt Road in the black community right across from some projects.' McCarty says Jesuits 'have a history of raising cane within the church and fighting for and starting the Mexican revolution of 1810,' invoking Miguel Hidalgo y Costilla; the school initially supported the organization by arranging panels in which two or three Black students and one white student would visit other Catholic schools to discuss race relations. McCarty attended Saint Ignatius from 1965 until being expelled in March 1969 (his senior year). In 1966-67 the organization formalized, with meetings, discussions, and book reading. Following the broader pattern of Black student organizations in high schools and colleges at that time, they presented a list of demands - Black studies; community outreach; more minority students - to the administration. When the demands were rejected, McCarty and Tyler organized a walkout, which drew press coverage. McCarty's mother saw the news that evening and was sitting with his brother and sister crying when he came home; his father, who worked the graveyard shift, was not home. His brother, filling in for his father, burst into the room intending to discipline him until McCarty 'started talking until he listened.' His parents eventually came to understand. The following day, McCarty's father took him to school where he and Tyler were informed they had been expelled. 'And that was the end of my high school career.'",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "naacp youth council",
+        "saint ignatius",
+        "black student organization",
+        "walkout",
+        "expulsion",
+        "march 1969",
+        "tyler",
+        "jesuits",
+        "roosevelt road"
+      ],
+      "related_events": [
+        "NAACP Youth Council",
+        "Saint Ignatius College Prep",
+        "Black Student Movement (late 1960s high schools and colleges)",
+        "Jesuit education",
+        "Miguel Hidalgo y Costilla (Mexican independence)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "McCarty references the 'Mexican revolution of 1810' and Miguel Hidalgo y Costilla; this is actually the Mexican War of Independence (1810), commonly called Mexico's independence movement rather than the 'Mexican Revolution' (1910). The summary preserves the interviewee's phrasing as spoken without correcting it."
+        ],
+        "improvements": [
+          "The summary could note that McCarty's interviewee phrasing collapses two historically distinct Mexican uprisings; this is the speaker's wording, not the summarizer's."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:13:29,760",
+      "end_time": "00:14:51,080",
+      "title": "Diploma Awarded Thirty-Nine Years Later",
+      "summary": "Roughly 'thirty odd years later' (which McCarty pegs to thirty-nine years), McCarty and Tyler were contacted by a former classmate, Greg Myers, who promised: 'Mac, we're going to get the school to apologize and give you your high school diploma.' Greg Myers had organized a campaign reaching out to nearly every Black student who had attended Saint Ignatius. The school flew McCarty and Tyler in, held a ceremony attended by more than 200 people, apologized formally, and awarded both their high school diplomas. They also received accommodations from the mayor of Chicago and two members of the U.S. Congress. McCarty's favorite memory of the event is Greg Myers's roughly five-year-old granddaughter asking, 'how come it take you so long to get your diploma?'",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "high school diploma",
+        "saint ignatius",
+        "apology",
+        "reconciliation",
+        "greg myers",
+        "thirty-nine years",
+        "mayor",
+        "u.s. congress"
+      ],
+      "related_events": [
+        "Saint Ignatius College Prep posthumous apology",
+        "Black-alumni reunion organizing"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript says 'two members of the U.S. Congress' issued accommodations but does not name them; the summary preserves this without inventing names."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:14:51,080",
+      "end_time": "00:17:54,640",
+      "title": "Martin Luther King Jr. in Chicago and the Bridgeport Encounter",
+      "summary": "Asked about Martin Luther King Jr.'s 1960s campaign in Chicago, McCarty confirms King's presence and recounts that King stayed on Hamlin Avenue, near Douglas Park - 'around the corner' from McCarty's neighborhood. His friend Tyler personally encountered King walking from the park: King was 'talking out the windows to some of his staff' when Tyler greeted him, and King responded 'Good morning, young man.' McCarty paraphrases King's well-known reaction to Chicago racism: 'I have dealt with racism throughout the South. And I ain't seen nothing like racism in Chicago.' He references a Chicago priest who 'taught racism from the pulpit over in Mayor Daley's neighborhood,' though McCarty cannot recall the priest's name. He then recounts a high-school-era summer job in which he and other students, knocking on doors in Bridgeport (Mayor Daley's neighborhood), were saved by a white Saint Ignatius classmate who drove up and ushered them into his car after overhearing a group of white residents planning to physically harm them. McCarty agrees with the characterization that 'Chicago was still considered the most segregated city on planet earth.' He recalls that 'before the march began, King was hit upside the head with a brick,' a reference to King's experience of the Chicago Freedom Movement - by McCarty's recollection, King had said he had not seen such animosity even from the Klan in the South.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "martin luther king jr",
+        "chicago freedom movement",
+        "hamlin avenue",
+        "douglas park",
+        "mayor daley",
+        "bridgeport",
+        "racism in chicago",
+        "northern racism"
+      ],
+      "related_events": [
+        "Martin Luther King Jr.",
+        "Chicago Freedom Movement (1966)",
+        "Mayor Richard J. Daley",
+        "Bridgeport (Chicago)",
+        "Douglas Park (Chicago)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "McCarty's paraphrase of King's reaction to Chicago racism is widely-attested in Chicago Freedom Movement scholarship but the transcript renders the quote in approximate form; the summary preserves the paraphrase as paraphrase, not a verbatim King quote.",
+          "The transcript phrase 'he'd been holed down' is likely Whisper for 'hosed down' (a reference to fire hoses in Birmingham); the summary does not reproduce this Whisper rendering."
+        ],
+        "improvements": [
+          "Could note explicitly that this passage is the interviewee's secondhand memory of King's reaction, not a direct quotation McCarty witnessed."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:17:54,640",
+      "end_time": "00:20:32,480",
+      "title": "Joining the Illinois Chapter of the Black Panther Party",
+      "summary": "After his March 1969 expulsion, McCarty became a full-time member of the Illinois chapter of the Black Panther Party. He explains that he had followed the national party since its October 1966 founding through his reading habit, including Ramparts magazine alongside Ebony and Jet. He was struck particularly by images of Panthers at the California State Capitol in Sacramento in 1967 standing with their weapons - and by reports of the party 'patrolling the police with their guns and with their law books.' When the Illinois chapter opened in October-November 1968, McCarty learned of its office at 2350 W. Madison Street (at Western and Madison) and went to a political education class to find out about the party. There he encountered Billy 'Che' Brooks, the chapter's Deputy Minister of Education, whom he had previously known because Brooks 'ran track for Marshall.' McCarty joined the chapter's education cadre, whose work included teaching political education classes, reading a required reading list, holding discussions, and giving outside talks and debates. McCarty was sometimes sent in Fred Hampton's place to debates or speeches - 'which was more than a notion because Fred was a phenomenal, phenomenal speaker and a leader.'",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "black panther party",
+        "illinois chapter",
+        "2350 w madison street",
+        "billy che brooks",
+        "ramparts magazine",
+        "ebony",
+        "jet",
+        "fred hampton",
+        "political education",
+        "sacramento capitol 1967",
+        "marshall high school"
+      ],
+      "related_events": [
+        "Black Panther Party",
+        "Black Panther Party Illinois chapter",
+        "Ramparts magazine",
+        "California State Capitol BPP protest (1967)",
+        "Marshall High School (Chicago)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 89,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "McCarty says the BPP went to Sacramento 'around 67' to 'protest the law that they had been using to carry' - this is the May 2, 1967 BPP protest against the Mulford Act at the California State Capitol; the summary preserves the year as McCarty stated it without naming the Mulford Act explicitly since McCarty did not name it.",
+          "The transcript renders the address as '2350 W. Madison Street, right in the corner of Western Madison' - the summary preserves McCarty's wording. The historical canonical address for the early Illinois BPP office is typically cited as 2350 W. Madison; this verifies."
+        ],
+        "improvements": [
+          "Could add Fred Hampton's age (twenty when he became deputy chairman) as historical context, but the transcript only gives his age at assassination (21), so the summary keeps the chapter focused on what McCarty actually said."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:20:32,480",
+      "end_time": "00:22:24,480",
+      "title": "Fred Hampton's Leadership and Anti-Injustice Politics",
+      "summary": "McCarty describes Deputy Chairman Fred Hampton as 'one of the most amazing speakers, a motivator, a leader, and someone who taught me the true meaning of commitment.' He emphasizes that Hampton was twenty-one years old when he was assassinated but was 'an old soul' who had organized in high school in Maywood, Illinois (where Black students could not swim at the local pool). He stresses that the Black Panther Party was not, despite stereotype, an 'anti-white organization' but an 'anti-injustice' organization: 'one of the things that made the party dangerous was the idea that we saw beyond this concept of race and race being a tool that was used to divide people who should be working together.' He recounts an episode in which a friend came to join the chapter saying 'give me a gun. I want to kill some white people,' and Hampton replied: 'No, that's not how we do things. Here's some literature. Take a look at this. And if you're still interested, come back' - which the friend did.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "fred hampton",
+        "deputy chairman",
+        "maywood illinois",
+        "black panther party",
+        "anti-injustice",
+        "political education",
+        "leadership"
+      ],
+      "related_events": [
+        "Fred Hampton",
+        "Maywood (Illinois)",
+        "Black Panther Party Illinois chapter"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Fred Hampton's age at assassination is given as 21 by McCarty; the ground-truth corpus (Fredrick Allen Hampton, August 30, 1948 - December 4, 1969) confirms this."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "00:22:24,480",
+      "end_time": "00:24:50,080",
+      "title": "Original Rainbow Coalition: Young Lords and Young Patriots",
+      "summary": "McCarty stresses that 'many people aren't aware of the fact that Fred Hampton and the Illinois chapter started the Original Rainbow Coalition.' The coalition partners he names are the Young Lords - 'a Puerto Rican street gang that became political' - and the Young Patriots - 'poor Appalachian white folks' in Chicago. McCarty references the documentary American Revolution 2, directed by Mike Gray (available on YouTube), which records BPP field secretaries Bob Lee and Hank 'Bull' Gaddis going 'into the poor Appalachian white community, to talk to these people about why poor whites and poor blacks should be working together.' In the film, when asked what he thought, an older white resident responds (in McCarty's paraphrase): 'But of them black Panthers going for us, I guess we should support them black Panthers.' A week later, Bob Lee was alone in the area organizing when police stopped, arrested him, and put him in a squad car. Members of the Young Patriots saw what happened, put the word out, and before the police could drive away surrounded the car - white men, women, and children - and forced the police to release Bob Lee. McCarty observes: 'Poor whites, black folks working together, that was a dangerous thing for the powers to be.' Other groups also became associated with the coalition; they organized their own Free Breakfast for Children programs and their own political education classes.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "rainbow coalition",
+        "young lords",
+        "young patriots",
+        "fred hampton",
+        "bob lee",
+        "hank bull gaddis",
+        "mike gray",
+        "american revolution 2",
+        "appalachian",
+        "puerto rican",
+        "coalition building"
+      ],
+      "related_events": [
+        "Original Rainbow Coalition (Chicago, 1969)",
+        "Young Lords Organization",
+        "Young Patriots Organization",
+        "American Revolution 2 (documentary, Mike Gray)",
+        "Free Breakfast for Children Program"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 90,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript text as cleaned uses 'Original Rainbow Coalition Organization' interchangeably to mean both the Young Lords and the Young Patriots, with what reads like overlapping Whisper-style substitutions. The canonical historical identification (Young Lords = Puerto Rican street gang turned political; Young Patriots = poor Appalachian white organization) is supported by the Fred Hampton ground-truth corpus entry but the transcript text is partially ambiguous. The summary uses the canonical identification.",
+          "Bob Lee and Hank 'Bull' Gaddis are named as Illinois BPP field secretaries; the transcript renders this and the summary preserves it, though external verification of those titles and roles is not within the transcript itself."
+        ],
+        "improvements": [
+          "If a downstream researcher wants strict citation-only fidelity, the chapter could be re-paraphrased to leave 'Young Lords' and 'Young Patriots' as 'the Puerto Rican coalition partner' and 'the Appalachian-white coalition partner' respectively, deferring the canonical names to the ground-truth corpus."
+        ]
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "00:24:50,080",
+      "end_time": "00:28:52,640",
+      "title": "COINTELPRO, William O'Neal, and FBI Counter-Organizing",
+      "summary": "Asked why poor-Black and poor-white coalition was threatening 'to the powers to be,' McCarty answers: 'Divide and conquer is the oldest tool in the book.' He invokes COINTELPRO as the FBI program designed to plant misinformation. He notes that the Black Panther Party was also working with Chicago street gangs - 'the biggest gang in the country, not just Chicago in the country, was the Black P. Stone Nation,' which Fred Hampton and Bobby Rush were meeting with to try to redirect toward political work. The FBI used COINTELPRO disinformation to disrupt these alliances; McCarty notes that at the time the chapter did not know William O'Neal, their head of security, was an FBI plant. False letters and tip-offs were circulated to both the Panthers and the Black P. Stone Nation. The disruption nearly succeeded but did not entirely achieve its aim. McCarty references The Burglary, the book documenting the peace activists who broke into the FBI office in Media, Pennsylvania on March 8, 1971 - timing the break-in for the night of the Ali-Frazier fight when they expected reduced security. The documents the activists took were the first public exposure of COINTELPRO. McCarty illustrates COINTELPRO's destructive reach with an episode he attributes to the LA FBI office: an LA-based actress (whose name McCarty cannot recall) who fundraised for the BPP was, on J. Edgar Hoover's order, neutralized by a rumor campaign suggesting her baby was not her husband's. The baby died and the actress committed suicide; the LA FBI office was 'compensated for having successfully destroyed this woman's life.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "cointelpro",
+        "fbi",
+        "william oneal",
+        "j edgar hoover",
+        "black p stone nation",
+        "blackstone rangers",
+        "bobby rush",
+        "fred hampton",
+        "media pennsylvania",
+        "the burglary",
+        "march 8 1971",
+        "disinformation"
+      ],
+      "related_events": [
+        "COINTELPRO",
+        "FBI",
+        "J. Edgar Hoover",
+        "William O'Neal (FBI informant)",
+        "Black P. Stone Nation / Blackstone Rangers",
+        "Bobby Rush",
+        "Media (Pennsylvania) FBI burglary, March 8, 1971",
+        "Citizens' Commission to Investigate the FBI"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The unnamed LA actress whom McCarty describes is most likely a reference to Jean Seberg, the actress whose 1979 suicide is widely attributed to an FBI rumor campaign tied to her Black Panther Party support; the FBI 'neutralization' memo against Seberg is documented in the Church Committee record. The summary leaves the actress unnamed because McCarty himself does not name her - a deliberate fidelity-to-source choice.",
+          "McCarty's chronology compresses several events (the planting of William O'Neal, COINTELPRO disinformation against the Panther-Blackstone Rangers alliance, and the March 8, 1971 Media PA FBI burglary). The summary preserves the order in which McCarty presents these, not necessarily strict chronological order."
+        ],
+        "improvements": [
+          "Future contextualization could note that the Media PA burglary occurred after Hampton's December 4, 1969 assassination, so the public revelation of COINTELPRO came after the events that targeted the Illinois BPP. McCarty's transcript does not establish this timeline, so the summary does not impose it."
+        ]
+      }
+    },
+    {
+      "chapter_number": 14,
+      "start_time": "00:28:52,640",
+      "end_time": "00:30:04,800",
+      "title": "Survival Programs and Abrupt End of Recording",
+      "summary": "McCarty closes by emphasizing that despite COINTELPRO, the Illinois BPP's approach was to 'keep doing positive stuff' - serving the people through the Free Breakfast for Children Program, the People's Free Medical Clinics, and other survival programs. He notes that J. Edgar Hoover identified the Free Breakfast for Children Program as the most dangerous thing the party did, because no government program was feeding children at that point. McCarty argues that subsequent federal programs (like Head Start) were essentially the government recognizing it 'can't have these pastors showing us out' and adopting what the Panthers had pioneered. He mentions attending the Black Panther Party's 40th anniversary in Oakland, where he heard reports from other chapters. The transcript breaks off mid-thought at 'So in Illinois, we had the...' - the recording appears truncated or only a partial transcript has been provided.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "free breakfast for children",
+        "people's free medical clinics",
+        "survival programs",
+        "j edgar hoover",
+        "head start",
+        "black panther party 40th anniversary",
+        "oakland"
+      ],
+      "related_events": [
+        "Free Breakfast for Children Program",
+        "People's Free Medical Clinics",
+        "Head Start",
+        "J. Edgar Hoover",
+        "Black Panther Party 40th anniversary (2006)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 80,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 28,
+        "quality_component_a": 30,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript explicitly ends mid-sentence; the chapter summary flags this. The 40th anniversary reference would place that retrospective event in 2006, which the summary infers but the transcript does not date."
+        ],
+        "improvements": [
+          "Because the transcript breaks off mid-thought, the summary cannot complete the narrative of what 'Illinois we had the...' would have introduced. This chapter is necessarily incomplete by source."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Michael D. McCarty",
+      "interviewee_title": "Storyteller; former member, Illinois chapter of the Black Panther Party",
+      "interview_date": "2016-06-26",
+      "interview_location": "Los Angeles, California",
+      "interviewer_name": "David Cline",
+      "interviewer_affiliation": "Virginia Tech; Southern Oral History Program at UNC Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:30:04",
+      "total_segments": 476,
+      "word_count": 5400,
+      "number_of_chapters": 14
+    },
+    "overall_score": {
+      "total": 80,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 26,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Mother's 'see something wrong, do something about it' lesson sets up subsequent organizing decisions (Segment 28-30, 00:01:45-00:01:55).",
+            "Personal racial-violence vignettes (Cicero gas station, Boy Scout cycling, South Side gang beating) culminate in 'That was my personal wake up call' (Segment 134, 00:08:40-00:08:46), which then pivots into NAACP Youth Council, Black Student Organization, and Black Panther Party membership.",
+            "Transition from Saint Ignatius expulsion (Segment 211, 00:13:25) to BPP enlistment (Segment 295, 00:17:56) is clean and motivated."
+          ],
+          "justification": "The interview follows a clear arc from childhood and family formation through formative racial encounters to organized political engagement (NAACP Youth Council, BSO walkout, BPP membership, COINTELPRO experience). The arc is interrupted by the apparent recording cutoff at 30:04 mid-sentence, which costs structural points. Cline's questions facilitate the chronology effectively."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "this woman, white woman, couldn't have been much more than five feet tall, running and calling me everything but a child of God with, I know a brick or a ball or a bat or something in her hand",
+            "segment": 84,
+            "timestamp": "00:05:37,960"
+          },
+          "specificity_count": {
+            "full_names": 12,
+            "specific_dates": 6,
+            "specific_places": 14
+          },
+          "evidence": [
+            "Boy Scout cycling-merit-badge specifics: '13th and Avers, 13th and Pulaski' and 'past Crestwood, Illinois' (Segment 70-71, 00:04:36-00:04:46).",
+            "BPP Illinois chapter office address: '2350 W. Madison Street, right in the corner of Western Madison' (Segment 315, 00:19:19-00:19:24).",
+            "Date specificity: 'September 7th, 1950' birth date (Segment 15, 00:00:56) and the FBI burglary 'March 8, 1971' (Segment 430, 00:27:30)."
+          ],
+          "justification": "McCarty consistently delivers high-specificity detail: precise dates, full names (David Cline, Guha Shankar, John Bishop, Greg Myers, Billy 'Che' Brooks, Fred Hampton, Bobby Rush, Bob Lee, Hank 'Bull' Gaddis, Mike Gray, William O'Neal, J. Edgar Hoover, Miguel Hidalgo y Costilla), specific addresses, reconstructed dialogue ('Good morning, Dr. King. Good morning, young man.'), and visual reconstructions (the woman running with the brick). The recording cutoff prevents this from reaching a 10."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "And this girl, to my mind an angel, snatched it. No Johnny, don't do it. Snatched his hand.",
+            "segment": 106,
+            "timestamp": "00:07:04,840"
+          },
+          "emotional_range": [
+            "warmth (mother)",
+            "humor (mother's 'thought she had gas')",
+            "fear (gun to head)",
+            "anger (white cop's 'so')",
+            "pride (joining BPP)",
+            "grief (Hampton's assassination)",
+            "gratitude (Greg Myers, school apology)"
+          ],
+          "vulnerability_elements": [
+            "Admitting he never told his parents about the Boy Scout incident: 'I don't think I ever told my parents about that' (Segment 88, 00:05:57)",
+            "Admitting his older brother burst in intending to beat him after the walkout (Segment 204, 00:13:00)",
+            "Acknowledging the chapter operated with 'a level of justified paranoia' that 'did ultimately have an effect on the party' (Segment 426-427, 00:27:09)"
+          ],
+          "justification": "McCarty's emotional access is unusually wide for an oral history of this kind: he laughs at his mother's pregnancy joke, gets quiet around the near-shooting, and is unguarded about the chapter's own internal cost of COINTELPRO-induced paranoia. He does not seek to portray the BPP as flawless. The narrative dips into difficult emotional territory (the cop's 'so,' the unnamed actress's suicide) without performance."
+        },
+        "overall_assessment": "The narrative quality is strong. McCarty is a professional storyteller and the craft shows: clear arc, vivid detail, reconstructed dialogue, and consistent emotional honesty. The recording's truncation prevents a higher dimension score, but within what is recorded the storytelling is masterful by oral history standards."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "Illinois Black Panther Party education cadre service under Deputy Minister Billy 'Che' Brooks, 1968-69+ (Segment 314-322, 00:19:08-00:19:53)",
+            "Original Rainbow Coalition organizing in Chicago with Young Lords and Young Patriots (Segment 360-393, 00:22:15-00:24:50)",
+            "Direct knowledge of Fred Hampton as speaker and leader; sometimes spoke in Hampton's place (Segment 332-334, 00:20:21-00:20:27)",
+            "Saint Ignatius College Prep walkout and expulsion, March 1969 (Segment 187-211, 00:12:00-00:13:29)"
+          ],
+          "key_figures": [
+            {
+              "name": "Fred Hampton",
+              "relationship": "fellow Illinois BPP cadre; Deputy Chairman; McCarty served on his education cadre",
+              "contact_level": "close"
+            },
+            {
+              "name": "Billy 'Che' Brooks",
+              "relationship": "Illinois BPP Deputy Minister of Education and McCarty's direct supervisor; previously known from high-school track at Marshall",
+              "contact_level": "close"
+            },
+            {
+              "name": "Bobby Rush",
+              "relationship": "BPP co-leader in Chicago, organizing the Black P. Stone Nation alongside Hampton",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Bob Lee, Hank 'Bull' Gaddis",
+              "relationship": "BPP field secretaries in the Original Rainbow Coalition outreach",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "encountered by McCarty's friend Tyler in Chicago; McCarty did not personally meet King",
+              "contact_level": "distant"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Black Panther Party, Illinois chapter (education cadre)",
+              "role": "cadre member, sometimes spoke in Fred Hampton's place",
+              "years": "1968-late 1960s/early 1970s (transcript ends mid-discussion)"
+            },
+            {
+              "organization": "NAACP Youth Council (Chicago)",
+              "role": "member",
+              "years": "1966-1969"
+            },
+            {
+              "organization": "Saint Ignatius Black Student Organization (co-founder)",
+              "role": "co-founder with Tyler",
+              "years": "1966-67 to March 1969"
+            }
+          ],
+          "unique_access": "First-person testimony from inside the Illinois Black Panther Party's education cadre on Fred Hampton's organizing philosophy, the Original Rainbow Coalition formation, and the COINTELPRO disruption campaign. McCarty's vantage as a cadre member rather than a top-tier officer gives an account of how the rank-and-file experienced both the political education work and the FBI infiltration.",
+          "justification": "McCarty was a participant insider in the Illinois BPP during the period that produced the canonical Rainbow Coalition. He offers operational specifics (the Madison Street office address, the structure of the education cadre, the reading list, the relationship between Hampton and Brooks). His access to Hampton was direct and ongoing for the months leading up to Hampton's December 4, 1969 assassination - which the transcript breaks off before reaching."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Birth date: September 7, 1950 (Segment 15, 00:00:56)",
+            "BPP Illinois office address: 2350 W. Madison Street (Segment 315, 00:19:19)",
+            "BPP founding date: October 1966 (Segment 298, 00:18:08)",
+            "Specific street intersection: '13th and Avers, 13th and Pulaski' (Segment 70, 00:04:36)",
+            "Media PA FBI burglary date: March 8, 1971 (Segment 430, 00:27:30)"
+          ],
+          "date_specificity": "precise",
+          "name_count": {
+            "full_names": 14,
+            "first_only": 4,
+            "unnamed": 3
+          },
+          "verifiable_claims": [
+            "Fred Hampton was 21 when assassinated (verifiable: born August 30, 1948; killed December 4, 1969)",
+            "Black Panther Party founded in October 1966 (verifiable)",
+            "Saint Ignatius College Prep is located on Roosevelt Road in Chicago (verifiable)",
+            "March 8, 1971 FBI Media PA burglary on the night of the Ali-Frazier 'Fight of the Century' (verifiable)",
+            "Original Rainbow Coalition included Young Lords and Young Patriots (verifiable against Fred Hampton ground-truth corpus)"
+          ],
+          "justification": "McCarty offers verifiable precise dates, street addresses, founding dates, and personal birth date. The handful of unnamed people (the LA actress, the Bridgeport priest) are explicitly flagged by McCarty as 'I can't remember' which is appropriate epistemic humility rather than fabrication. The precision in this transcript is exceptional for a 30-minute oral history segment."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Operational detail of the Illinois BPP education cadre (reading list, political education classes, speech-substitution for Fred Hampton)",
+            "The Original Rainbow Coalition founding (commonly mis-attributed to Jesse Jackson in popular memory; historically traceable to Hampton and the Illinois chapter in 1969)",
+            "The Saint Ignatius College Prep walkout of March 1969 and the 2008-era apology and diploma award - a rare documented case of institutional repair in the Catholic high-school sphere"
+          ],
+          "understudied_aspects": [
+            "Chicago Catholic-school Black student movement of the late 1960s",
+            "Black Panther Party education cadre operations (separate from the more documented Minister-of-Defense and rank-and-file imagery)",
+            "Cross-racial coalition organizing with Appalachian whites and Puerto Rican Young Lords in Northern cities"
+          ],
+          "narrative_complications": "McCarty's account complicates the popular framing of the Black Panther Party as militarized and racially separatist by emphasizing 'we were anti-injustice' (not anti-white), the education cadre's reading-list intellectual work, and the Original Rainbow Coalition's cross-racial structure. It also complicates the standard narrative that the Jesse Jackson 1984 'Rainbow Coalition' was the originator of that phrase.",
+          "historiographical_value": "Historians of the Chicago BPP, the Original Rainbow Coalition, and COINTELPRO targeting can use this account as one of relatively few first-person education-cadre testimonies. The Saint Ignatius walkout-and-apology arc is also documentable historiographic material for the Catholic-school Black student movement and for institutional-apology scholarship.",
+          "justification": "The transcript adds meaningful, specific, first-person material to multiple under-documented strands of civil rights history. The recording's truncation prevents the higher score that a complete account of the events of December 1969 (Hampton's assassination) would have warranted."
+        },
+        "overall_assessment": "Historical value is strong. McCarty was an insider in the Illinois BPP during the formation of the Original Rainbow Coalition and offers operational specifics that fill known gaps. The 30-minute cutoff is the major limitation; if the recording had continued through Hampton's assassination and McCarty's post-BPP life, the historical value would warrant a higher score."
+      },
+      "emotional_resonance": {
+        "total": 21,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "From aspiring physicist and astronaut in Catholic school to expelled high school organizer to full-time BPP education-cadre member, all driven by his mother's 'see something wrong, do something about it' instruction. McCarty himself articulates this as 'I was going to be a physicist... I became a revolutionary' (Segments 41-43, 00:02:43-00:02:55).",
+          "key_turning_points": [
+            "The South Side gang beating and the white cop's 'so' response - his 'personal wake up call' (Segment 134, 00:08:40-00:08:46)",
+            "Reading Ramparts magazine images of BPP at the California State Capitol (Segment 304-305, 00:18:34-00:18:46)",
+            "Going to the Illinois BPP political education class and seeing Billy 'Che' Brooks at the door (Segments 314-322, 00:19:08-00:19:53)"
+          ],
+          "before_after_contrast": "Before: a young man who 'loved math and science' aiming for science career. After: a full-time BPP cadre member who internalized that 'we saw beyond this concept of race and race being a tool that was used to divide people who should be working together' (Segment 351-352, 00:21:51-00:21:57).",
+          "inspirational_quality": "Highly inspirational - the transformation arc is presented as authentic and motivated by lived experience rather than ideological conversion, and the institutional-apology coda (Saint Ignatius's 2008 diploma award) functions as a redemptive resolution of an unfair expulsion.",
+          "justification": "The from-physicist-to-revolutionary arc is explicit, repeated, and authentic. McCarty marks specific turning points and articulates the personal cost of each. The school-diploma redemption gives the arc a satisfying late-act resolution within the recorded portion."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Gun-to-head moment in the South Side gang beating; the 'angel' young woman knocking Johnny's gun-hand away",
+              "segment_range": "100-110",
+              "timestamp_range": "00:06:41,600 - 00:07:13,360",
+              "stakes": "Life-or-death; gun was pulled and trigger was pulled"
+            },
+            {
+              "description": "Boy Scout cycling Little League encounter with a white woman running at him with a brick",
+              "segment_range": "67-91",
+              "timestamp_range": "00:04:29,160 - 00:06:08,200",
+              "stakes": "Physical injury or worse from a mob"
+            },
+            {
+              "description": "The walkout, the mother crying at home with consequences known, the brother bursting in to discipline McCarty",
+              "segment_range": "192-211",
+              "timestamp_range": "00:12:12,880 - 00:13:29,760",
+              "stakes": "College career, family rupture, and discipline"
+            },
+            {
+              "description": "The COINTELPRO LA actress destroyed by FBI rumor campaign; baby dying, actress's suicide",
+              "segment_range": "437-450",
+              "timestamp_range": "00:28:01,440 - 00:28:48,800",
+              "stakes": "Catastrophic loss; intentional state destruction of a life"
+            }
+          ],
+          "conflict_types": [
+            "racial violence (white mob, sundown town)",
+            "personal physical danger (gang beating, gun to head)",
+            "institutional conflict (school expulsion)",
+            "state political conflict (COINTELPRO infiltration and destruction)"
+          ],
+          "emotional_range": "From terror (gun to head, mob chasing) to triumph (school apology and diploma) to grief (COINTELPRO destruction of allies and innocents)",
+          "justification": "Multiple high-stakes moments are vividly developed and connected. The interview moves through several dramatic peaks with real consequences rather than abstract reference to historical violence."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "mother's influence and the inheritance of moral conviction",
+            "coming-of-age recognition of injustice",
+            "family disappointment after a public act of conscience",
+            "redemption through institutional apology",
+            "the cost of paranoia in politically targeted communities"
+          ],
+          "relatable_struggles": [
+            "First-generation college aspiration ('I was going to be the first one of my family to go to college')",
+            "Parental disapproval after taking a principled stand"
+          ],
+          "human_moments": [
+            "Mother joking 'she thought she had gas' about her pregnancy (Segment 36, 00:02:18)",
+            "Greg Myers's five-year-old granddaughter asking 'how come it take you so long to get your diploma?' (Segment 234, 00:14:43)",
+            "Tyler's 'Good morning, Dr. King' / 'Good morning, young man' exchange (Segments 251-252, 00:15:40-00:15:41)"
+          ],
+          "connection_points": "Audiences with no civil rights movement context can connect via the mother-son arc, the first-generation college aspiration, the institutional apology, and the universal coming-of-age recognition of inherited injustice. Audiences with deeper context can connect via the BPP education cadre experience and the COINTELPRO disruption.",
+          "justification": "The interview balances civil-rights-specific content with broadly relatable family and coming-of-age dynamics. Some passages (the BPP education cadre operations, COINTELPRO mechanics) require contextual knowledge to fully appreciate, which costs points relative to a more universally accessible narrative."
+        },
+        "overall_assessment": "Emotional resonance is high. The personal transformation arc is authentic and articulated; high-stakes moments are dramatic and well-developed; universal themes are present without overwhelming the historical specificity. The recording cutoff prevents the score from going higher."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "excellent",
+          "dialect_impact": "none",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Movement-specific jargon (COINTELPRO, cadre, Rainbow Coalition, Original Rainbow Coalition, Young Lords, Young Patriots, education cadre, Black P. Stone Nation) is introduced without much definition; an unfamiliar audience would need contextual scaffolding.",
+            "Some sentence-level Whisper transcription artifacts in the SRT (e.g., 'he'd been holed down' for likely 'hosed down', 'Pistol would be a bullet in the head, Pistol would be in the school' for likely 'pistol misfired/jammed') reduce textual clarity for readers, though they would not affect listener comprehension of the original audio."
+          ],
+          "justification": "McCarty is a professional storyteller and his articulation is clear and engaging throughout. His vocabulary occasionally requires civil-rights-movement context, but he generally provides enough background for an attentive non-specialist."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "00:04:29-00:08:46 - the Boy Scout cycling and gang beating sequences (vivid scene-by-scene action)",
+            "00:11:30-00:13:29 - the walkout, the press, the family-discipline scene, the expulsion",
+            "00:22:24-00:24:50 - the Original Rainbow Coalition origin story",
+            "00:27:00-00:28:48 - the COINTELPRO destruction of the LA actress"
+          ],
+          "slow_sections": [
+            "00:14:51-00:17:54 - the King-in-Chicago digression has rambling Whisper artifacts and competing partial memories that slow the rhythm",
+            "00:28:48-00:30:04 - the closing reflections feel like a wind-down rather than a building closure, and the recording then cuts mid-sentence"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Audiences can sustain attention for the full 30 minutes; the storytelling craft and dramatic peaks help maintain momentum. The interviewer asks clarifying questions at good intervals.",
+          "justification": "Pacing is mostly strong but has a soft middle (the King digression) and an abrupt unresolved ending. The 30-minute recording is short enough that flow issues don't accumulate."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Northern (versus Southern) civil rights history and de facto segregation",
+            "FBI counter-organizing and the contemporary surveillance-state lineage",
+            "Cross-racial coalition politics (which directly anticipates contemporary multiracial movement organizing)",
+            "Institutional repair and reconciliation (the Saint Ignatius apology)",
+            "The Black Panther Party's social-program legacy (Free Breakfast, Free Medical Clinics) as direct antecedents of contemporary federal anti-poverty programs"
+          ],
+          "contemporary_relevance": "McCarty explicitly invokes contemporary lessons: 'Divide and conquer is the oldest tool in the book' frames COINTELPRO as a model of present-day disinformation; the Free Breakfast Program is named as the direct antecedent of Head Start.",
+          "meaning_making": "McCarty actively does meaning-making throughout - characterizing the party as 'anti-injustice,' explaining why poor-white-and-poor-Black coalition was 'dangerous to the powers to be,' and noting how government programs essentially replicated what the BPP pioneered.",
+          "justification": "The interview is rich in explicit thematic bridging. McCarty consistently moves from personal experience to broader political meaning."
+        },
+        "overall_assessment": "Accessibility is solid. McCarty's professional storytelling makes the material accessible, the broader-themes bridging is exceptional, and the only deductions come from movement-specific jargon and the soft middle / abrupt ending."
+      }
+    }
+  },
+  "overall_assessment": "Michael D. McCarty's interview is a high-quality first-person account from inside the Illinois Black Panther Party's education cadre during the Fred Hampton era. The recorded thirty-minute portion delivers vivid storytelling, precise dates and addresses, and operational specifics about the Original Rainbow Coalition organizing strategy and COINTELPRO disruption. McCarty's professional-storyteller craft is evident throughout: clear narrative arc, reconstructed dialogue, emotional honesty, and consistent thematic bridging to broader civil-rights-history and contemporary-relevance themes. The major limitation is that the recording (or at least the provided transcript) ends mid-sentence at 30:04, preventing the account from reaching its evident next destinations (Hampton's December 4, 1969 assassination, McCarty's post-BPP life, the West Side organizing work that begins to be introduced in the last seconds). Within what is recorded, the historical and engagement value is excellent.",
+  "key_strengths": [
+    "Insider operational knowledge of the Illinois BPP education cadre and the Original Rainbow Coalition formation - rare first-person testimony on Hampton-era Chicago organizing strategy",
+    "Exceptional specificity and precise dates throughout (BPP office address, BPP founding date, Saint Ignatius enrollment and expulsion dates, March 8 1971 Media PA burglary, etc.) supporting verifiability and downstream citation work",
+    "Professional storytelling craft - vivid scene reconstruction, reconstructed dialogue, emotional range from humor to terror without performance"
+  ],
+  "key_limitations": [
+    "The recording ends mid-sentence at the 30:04 mark, cutting off before McCarty can discuss Hampton's December 4, 1969 assassination or his own post-BPP life - this is the single largest limitation of the interview as a historical record",
+    "Some Whisper-transcription artifacts in the SRT (e.g., 'Pistol would be a bullet in the head' as a rendering of a gun jamming) reduce textual clarity for readers consulting the transcript without the audio"
+  ],
+  "evaluation_metadata": {
+    "evaluator": "AI: Claude (Anthropic)",
+    "evaluation_date": "2026-05-24",
+    "framework_version": "1.0",
+    "model_used": "claude-opus-4-7"
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Michael D. McCarty was interviewed at his home in Los Angeles on June 26, 2016",
+        "status": "supported",
+        "supporting_excerpt": "Segment 3 (00:00:08-00:00:13) 'Today is June 26, 2016'; Segment 10 (00:00:38-00:00:44) 'we are so honored to be at the home of Michael McCarty today in Los Angeles'",
+        "rationale": "Both date and location are directly stated by the interviewer at the opening of the recording."
+      },
+      {
+        "claim": "Interview was conducted by David Cline of Virginia Tech and the Southern Oral History Program at UNC Chapel Hill",
+        "status": "supported",
+        "supporting_excerpt": "Segment 4-5 (00:00:13-00:00:22) 'This is David Cline from the History Department at Virginia Tech and also working with the Southern Oral History Program at the University of North Carolina Chapel Hill'",
+        "rationale": "Interviewer self-identification, direct."
+      },
+      {
+        "claim": "McCarty was born September 7, 1950 in Chicago, Illinois on the South Side",
+        "status": "supported",
+        "supporting_excerpt": "Segment 15 (00:00:56) 'Chicago, Illinois, September 7th, 1950'; Segment 21-22 (00:01:11-00:01:16) 'I was born in the South Side. We moved to the West Side when I was about three years old.'",
+        "rationale": "Date and place directly stated."
+      },
+      {
+        "claim": "McCarty's mother was from Barbados",
+        "status": "supported",
+        "supporting_excerpt": "Segment 38 (00:02:31) 'My mother was from Barbados'",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "McCarty attended Saint Ignatius College Prep from 1965 until being expelled in March 1969",
+        "status": "supported",
+        "supporting_excerpt": "Segment 166 (00:10:47) 'I was (at) Ignatius from \\'65 until I got kicked out in March of \\'69. That would have been my senior year.'",
+        "rationale": "Direct statement of enrollment dates and circumstances."
+      },
+      {
+        "claim": "McCarty and his friend Tyler co-founded a Black student organization at Saint Ignatius and organized a walkout that led to their expulsion",
+        "status": "supported",
+        "supporting_excerpt": "Segment 136 (00:08:52) 'Me and my buddy Tyler, we started a black student organization'; Segment 187 (00:12:00) 'So we organized a walk out'; Segment 209-211 (00:13:23-00:13:29) 'we were informed by myself and Tyler. We had been expelled from the school.'",
+        "rationale": "Each element of the claim is directly stated."
+      },
+      {
+        "claim": "Greg Myers organized a campaign that led the school to apologize and award McCarty his diploma 39 years later",
+        "status": "supported",
+        "supporting_excerpt": "Segment 218-220 (00:13:55-00:14:06) 'we get contacted by one of our classmates, Greg Myers. And he said, Mac, we're going to get the school to apologize and give you your high school diploma. And 39 years later, that's exactly what happened.'",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "The Black Panther Party was founded in October 1966",
+        "status": "supported",
+        "supporting_excerpt": "Segment 298 (00:18:08) 'the Party formed in October of 1966'",
+        "rationale": "Direct statement; verified against ground-truth corpus (Black Panther Party entry: 'October 1966 in Oakland, California')."
+      },
+      {
+        "claim": "The Illinois Black Panther Party office was at 2350 W. Madison Street in Chicago",
+        "status": "supported",
+        "supporting_excerpt": "Segment 315 (00:19:19) 'there was an office, 2350 W. Madison Street, right in the corner of Western Madison'",
+        "rationale": "Direct statement of address."
+      },
+      {
+        "claim": "Billy 'Che' Brooks was Deputy Minister of Education of the Illinois BPP and had previously been known to McCarty from running track at Marshall",
+        "status": "supported",
+        "supporting_excerpt": "Segment 318-320 (00:19:35-00:19:43) 'this guy, Billy \"Che\" Brooks, who was the Deputy Minister of Education, he ran track for Marshall'",
+        "rationale": "Direct statement of title and prior acquaintance."
+      },
+      {
+        "claim": "Fred Hampton was Deputy Chairman of the Illinois BPP and was 21 years old when assassinated",
+        "status": "supported",
+        "supporting_excerpt": "Segment 336 (00:20:32) 'Deputy Chairman Fred Hampton'; Segment 339-340 (00:20:57-00:20:59) 'Fred was 21 years old when he was assassinated'",
+        "rationale": "Direct statement; verified against ground-truth corpus (Fred Hampton entry: 'killed in a Chicago police and FBI raid December 4, 1969' at age 21)."
+      },
+      {
+        "claim": "Fred Hampton organized in Maywood, Illinois in high school around Black students being excluded from a swimming pool",
+        "status": "supported",
+        "supporting_excerpt": "Segment 342-344 (00:21:02-00:21:16) 'in high school, he had been organizing out in Maywood, Illinois at the various high schools. The blacks couldn't swim at the pool. Fred said, okay, we got to do something about this.'",
+        "rationale": "Direct statement; Hampton's pre-BPP organizing in the Maywood NAACP Youth Council is documented in the ground-truth corpus entry ('president of his high school's NAACP youth council')."
+      },
+      {
+        "claim": "Fred Hampton and the Illinois chapter founded the Original Rainbow Coalition with the Young Lords (Puerto Rican) and the Young Patriots (poor Appalachian whites)",
+        "status": "supported",
+        "supporting_excerpt": "Segment 360-366 (00:22:15-00:22:49) 'Fred Hampton and Illinois chapter started the Rainbow Coalition... the Young Lords had been a Puerto Rican street gang that became political. The Young Patriots were poor Appalachian white folks.'",
+        "rationale": "Direct statement; verified against Fred Hampton ground-truth corpus entry: 'principal architect of the Rainbow Coalition political formation, a multi-racial coalition of poor Black, white, Puerto Rican, and other communities organized in Chicago in 1969 alongside the Young Lords Organization and the Young Patriots Organization.'"
+      },
+      {
+        "claim": "Bob Lee and Hank 'Bull' Gaddis were Illinois BPP field secretaries shown in the documentary American Revolution 2 directed by Mike Gray",
+        "status": "supported",
+        "supporting_excerpt": "Segment 367-368 (00:22:56-00:23:04) 'in American Revolution 2, it\\'s on YouTube, you can see the meeting where Bob Lee and Hank \"Bull\" Gaddis, who are our field secretaries'; Segment 372-373 (00:23:24-00:23:26) 'Mike Gray was the director'",
+        "rationale": "Direct statement of names, titles, and documentary attribution."
+      },
+      {
+        "claim": "Members of the Young Patriots surrounded a Chicago police car a week after the Rainbow Coalition meeting and forced police to release Bob Lee",
+        "status": "supported",
+        "supporting_excerpt": "Segment 377-383 (00:23:48-00:24:14) 'a week later, Bob Lee was in the area by himself doing some organizing, and he was stopped and arrested by the police, put it into police car to be taken away. Young Patriots saw what happened... Before that police car could go, they came and surrounded it. Women and men and children, white men and women and children, and they made the police let Bob Lee go.'",
+        "rationale": "Direct narrative recounting."
+      },
+      {
+        "claim": "William O'Neal was the Illinois BPP head of security and an FBI plant under COINTELPRO",
+        "status": "supported",
+        "supporting_excerpt": "Segment 409 (00:25:58-00:26:02) 'we didn\\'t know at the time that William O\\'Neal, our head of security was the head of security was the FBI plant'",
+        "rationale": "Direct statement; verified against ground-truth corpus reference in Fred Hampton entry ('FBI informant William O'Neal')."
+      },
+      {
+        "claim": "Fred Hampton and Bobby Rush met with the Black P. Stone Nation to try to redirect the gang toward political work",
+        "status": "supported",
+        "supporting_excerpt": "Segment 406-407 (00:25:41-00:25:51) 'the Black P. Stone Nation and Fred and Bobby Rush had these meetings to try to get them to shift their focus and become political'",
+        "rationale": "Direct statement; Bobby Rush is verified as Illinois BPP co-founder via ground-truth corpus."
+      },
+      {
+        "claim": "The March 8, 1971 burglary of the FBI office in Media, Pennsylvania, documented in 'The Burglary,' first publicly exposed COINTELPRO",
+        "status": "supported",
+        "supporting_excerpt": "Segment 428-430 (00:27:20-00:27:30) 'this book, The Burglary, about the peace activists who broke into the FBI office in media, Pennsylvania, March 8, 1971'; Segment 434 (00:27:52) 'They are who discovered COINTELPRO in one of the files that they took'",
+        "rationale": "Direct statement of date and source attribution."
+      },
+      {
+        "claim": "An LA-based actress who supported the BPP was destroyed by an FBI rumor campaign ordered by J. Edgar Hoover; the rumor was that her baby was not her husband's; the baby died and she committed suicide",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 437-446 (00:28:01-00:28:30) 'There was an actress here in LA who was the supporter of the party. She would do fundraisers and what have you. J. Edgar Hoover ordered the FBI office here in LA to neutralize her. They started a rumor. She was pregnant. She was married. They started a rumor that the baby wasn\\'t her husband\\'s and the baby died. The woman committed suicide.'",
+        "rationale": "The interviewee directly states the claim but explicitly says 'I can\\'t remember her name' (Segment 437, 00:28:03), which means the specific identification (widely understood to be Jean Seberg) is left unmade in the transcript. The summary preserves the actress as unnamed for fidelity. The interviewee's broader account of the FBI rumor campaign and the actress's suicide is widely documented historically but not personally witnessed by McCarty - he is reporting a fact he learned of secondhand from COINTELPRO disclosures. Marked partially_supported because (a) the actress is unnamed in the transcript and (b) McCarty is reporting on documents/history rather than personal first-person experience."
+      },
+      {
+        "claim": "J. Edgar Hoover called the Free Breakfast for Children Program 'the most dangerous thing' the party did",
+        "status": "supported",
+        "supporting_excerpt": "Segment 456-458 (00:29:01-00:29:13) 'the breakfast program, the People\\'s Free Medical Clinics, which J. Edgar Hoover said that the most dangerous thing we did was the Free Breakfast for Children Program because the government wasn\\'t feeding any children to that particular point in time'",
+        "rationale": "Direct statement of attribution; widely documented historically."
+      },
+      {
+        "claim": "Martin Luther King Jr. stayed on Hamlin Avenue near Douglas Park during his Chicago Freedom Movement organizing",
+        "status": "supported",
+        "supporting_excerpt": "Segment 244-249 (00:15:06-00:15:30) 'When he came, he stayed around the corner. In fact, my buddy Tyler, he got to see him. Got to see him, because he was right across from Douglas Park. He was on Hamlin. He stayed on Hamlin.'",
+        "rationale": "Direct statement; McCarty's friend Tyler is named as the witness, not McCarty himself."
+      },
+      {
+        "claim": "King was struck on the head with a brick before a Chicago march and said he had not seen such animosity in the South",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 285-289 (00:26:30-00:27:48 approximate Segment 285 = 00:17:30 region) 'Before the march began, King was hit upside the head with a brick. Before the march began and the level of violence... he\\'d been holed down. He\\'d been dealing with the Klan in the South. You say, I ain\\'t seen nothing like this.'",
+        "rationale": "The interviewee directly recounts these claims, but the transcript's Whisper rendering ('he\\'d been holed down') is garbled (likely 'hosed down'). McCarty is not a first-person witness to the brick incident; he is recounting widely-documented historical fact. The chapter summary frames this as McCarty's secondhand memory of King's experience, which is appropriate. Marked partially_supported because the secondhand-historical-fact framing is implied but not explicitly flagged by the interviewee."
+      },
+      {
+        "claim": "Chicago was 'still considered the most segregated city on planet earth' during this period",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 277-278 (00:16:57-00:17:06) 'Chicago was still considered the most segregated city on planet earth. Very much so.'",
+        "rationale": "The interviewer makes the assertion and McCarty agrees. This is a widely held characterization of mid-1960s Chicago but is not an independently verified statistical claim within the transcript. Marked partially_supported because it is consensus-affirmed within the interview rather than independently documented."
+      },
+      {
+        "claim": "McCarty served on the Illinois BPP education cadre and sometimes spoke in Fred Hampton's place at debates or speeches",
+        "status": "supported",
+        "supporting_excerpt": "Segment 322 (00:19:47) 'I became a part of the education cadre'; Segment 332 (00:20:21) 'There were times when Fred would send me in his place to a debate or to give a speech'",
+        "rationale": "Direct first-person statement."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 24,
+      "supported": 21,
+      "partially_supported": 3,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_3_partial",
+    "rationale": "The main summary's accuracy score (84/100) and quality score (86/100) both fall below the Smithsonian-grade publication threshold of 90/90, and the citation audit identifies three claims marked partially_supported (the unnamed LA actress account, McCarty's secondhand memory of King's brick-incident reaction in Chicago, and the 'most segregated city on planet earth' characterization). These three claims are historically defensible but exceed strict transcript-faithful citation; the gate fails closed for human review rather than auto-publishing. The accuracy deductions reflect: (a) the summary's use of canonical names ('Young Lords,' 'Young Patriots,' 'Blackstone Rangers') where the transcript text is ambiguous, partial, or uses overlapping editorial wording; (b) the transcript ending mid-sentence at 30:04 which prevents complete coverage of major themes (Hampton's December 4 1969 assassination, McCarty's post-BPP life); (c) the unnamed-actress claim being attributed via paraphrase rather than direct citation. The interview is otherwise high quality and the chapter-level scoring is largely above 85; the recommended human review action is to (1) verify the canonical name attributions against the documentary American Revolution 2, (2) decide whether to name the LA actress (Jean Seberg) as a footnote rather than asserting it in the main summary, and (3) clarify which McCarty-experienced events are first-person testimony and which are secondhand historical recollection."
+  }
+}

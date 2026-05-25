@@ -1,0 +1,1133 @@
+{
+  "interview_name": "Gloria Hayes Richardson",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Gloria Hayes Richardson_interview_20250704_205935\\Gloria Hayes Richardson_interview_transcript_20250704_205935.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Gloria Hayes Richardson Dandridge",
+    "interviewee_title": "Cambridge (Maryland) Movement leader; chair of the Cambridge Nonviolent Action Committee (CNAC)",
+    "interview_date": "unknown",
+    "interview_location": "New York City (Flatiron District / West Side area)",
+    "interviewer_name": "Joseph Mosnier",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:32:51"
+  },
+  "main_summary": {
+    "summary": "Gloria Hayes Richardson Dandridge recounts her path from Howard University student to leader of the Cambridge, Maryland movement of the early 1960s. She describes growing up in a politically and economically prominent Black family in Cambridge, where her grandfather had served on the City Council and the family ran a pharmacy and a grocery store. She entered Howard University around age 16, where professors she remembers as radical for the time, including E. Franklin Frazier and Rayford Logan, shaped her thinking; her earliest demonstrations were on Howard's campus (over curfews) and at Woolworth's. After graduating, she worked in the federal government, then returned to Cambridge and took over the family pharmacy after her father's heart attack and death.\n\nRichardson describes how SNCC field workers, including Bill Hansen and Reginald Robinson, arrived in Cambridge in late 1961 / early 1962 at the invitation of her cousin Frederick St. Clair, and how her daughter Donna Richardson became one of the organizers of the high-school students. After repeated demonstrations and arrests, adults in the community asked SNCC for permission to form an adult group; Richardson was asked to take a leadership role because community members believed her family resources would shield her from economic retaliation. She and her cousin traveled to Atlanta to meet SNCC and returned to organize block-by-block. Drawing on training she had taken at Howard with E. Franklin Frazier, she organized a community survey (carried by what they called Junior CNAC, mostly grammar-school children) that Swarthmore volunteers tabulated. The data showed that public accommodations ranked low among Black Cambridge residents' priorities: housing, jobs, and health care mattered more. CNAC accordingly built its demands around those issues, a stance that put Richardson at odds with the NAACP, with Baltimore ministers, and with national figures who continued to frame Cambridge primarily through the lens of lunch-counter desegregation.\n\nRichardson describes the most intense period of the movement, including mass arrests of children, a jail sentence that culminated in her trial before Judge Harry Laird and a symbolic one-cent fine, the rallying of \"the whole town\" outside the jail, and a night when men in a passing car fired into the Black community on Pine Street and Black residents fired back. She recounts the use of CS gas by National Guard troops in connection with a visit by Alabama Governor George Wallace to the segregated Cambridge fire hall, an episode in which an elderly man and an infant later died. She portrays Maryland National Guard commander General George M. Gelston as a fair-minded interlocutor who quietly worked around tapped phones via Fort Belvoir. She recounts pressures to deflect her leadership — job offers from state and federal agencies, an invitation to run for state senator, and a Carnegie Hall event built around Martin Luther King Jr. and others meant to talk her into supporting a public-accommodations referendum, which she opposed on principle. She narrates her experience at the March on Washington (where she says her seat on the platform was removed and Bayard Rustin escorted her to the stage, only for her and Lena Horne to be sent away in a taxi before King's speech) and her first encounter with Malcolm X at a Detroit event held at Reverend Albert Cleage's church alongside an SCLC convention organized in part by Reverend C. L. Franklin. She describes inviting Malcolm X to Cambridge in connection with his \"Ballot or the Bullet\" speech, attending a meeting at the Audubon Ballroom the night before he was assassinated, and a warning passed to her through Lucille Rosary of Baltimore by Elijah Muhammad to stay off the stage with Malcolm.\n\nLooking back from the present day, Richardson reflects that the local movement achieved what it set out to achieve: a settlement (the Treaty of Cambridge), some progress on housing and school desegregation, and, eventually, a Black woman mayor of Cambridge whose father had served on CNAC's executive board. She attributes her independence to her family upbringing — to judge people by character rather than title — and to her sense that she was representing the determined people of Cambridge rather than any national organization. She closes the interview with a warning that the country is, in her view, sliding toward a far-right politics that endangers everyone.",
+    "key_themes": [
+      "Local versus national civil rights priorities (housing, jobs, and health care over public accommodations)",
+      "Women's leadership and the gendered division of movement labor",
+      "Family networks and intergenerational political tradition as a foundation for activism",
+      "Armed self-defense alongside nonviolent organizing",
+      "Tensions between SNCC, NAACP, and SCLC over strategy",
+      "Federal intervention, surveillance, and the militarization of a domestic civil rights conflict",
+      "The Cambridge Movement as a distinctive Northern / border-state case"
+    ],
+    "historical_significance": "Richardson's account is a first-person record from one of the very few women to lead a major civil rights campaign of the early 1960s, and from one of the only campaigns of that period to define its agenda primarily around economic and structural demands rather than public accommodations. Her recollections illuminate the Cambridge Movement's relationship with SNCC, its conflicts with the NAACP and the Kennedy administration, the role of General George M. Gelston and the Maryland National Guard during the 1963-64 occupation, and the personal connections between Richardson and figures including Malcolm X, Adam Clayton Powell Jr., Robert Kennedy, and Bayard Rustin. The interview also documents the gendered division of labor in a community under armed pressure and the use of CS gas against civilians, which Richardson describes as the first instance she knew of in a domestic civil rights setting.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 88,
+      "accuracy_component_a": 34,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 26,
+      "quality_component_a": 35,
+      "quality_component_b": 21,
+      "quality_component_c": 17,
+      "quality_component_d": 15,
+      "errors": [
+        "Howard University enrollment year: the interviewer (segment 14) states 1938, but Richardson was born in 1922 (per ground-truth corpus), making 1938 implausible as her enrollment year; the summary deliberately uses 'around age 16' and does not assert 1938.",
+        "The interview date is not explicit in the transcript; the summary leaves it as 'unknown' rather than guessing."
+      ],
+      "improvements": [
+        "If a precise interview date is available externally, fill in interview_metadata.interview_date.",
+        "The name 'Lucille Rosary' (transcript renders as 'My Hamid speaks for Targolford' and similar Whisper artifacts) is uncertain in the corrected transcript; the summary uses the canonical name with caution and the citation_audit flags this as partially supported."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:05:44,000",
+      "title": "Howard University Years and First Demonstrations",
+      "summary": "Richardson describes entering Howard University at about age 16, where her cousins had preceded her, and being considered shy in her first year. She recalls professors she remembers as radical for the time, including E. Franklin Frazier (who, she says, embarrassed her in front of his class because he thought her too naive) and Rayford W. Logan. She places her first protest activity on Howard's campus, against university curfews and other women's rules, and recalls her participation around her junior year in picketing at Woolworth's. She graduated, took a federal civil-service examination, and worked for the government for a couple of years.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "howard university",
+        "e. franklin frazier",
+        "rayford logan",
+        "woolworth's picketing",
+        "curfew protests",
+        "black bourgeoisie",
+        "washington dc"
+      ],
+      "related_events": [
+        "Howard University",
+        "E. Franklin Frazier",
+        "Rayford W. Logan",
+        "Woolworth's picketing",
+        "Federal civil service examination"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "Could note that the interviewer's framing date of 1938 for Howard enrollment is hard to reconcile with Richardson's 1922 birth date in the ground-truth corpus; the chapter avoids asserting the date."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:05:45,000",
+      "end_time": "00:15:00,000",
+      "title": "Family, Cambridge, and Segregated Health Care",
+      "summary": "Richardson situates her family as, in her words, the 'first family' in Cambridge's Black community: her grandfather had served on the City Council, her grandmother distributed food and clothing in the winter to seasonal workers, and the family ran businesses including a pharmacy and a grocery store. She describes Cambridge in the late 1950s as totally segregated, with one maternity room reserved for Black patients at the local hospital, separate doctor waiting rooms, and segregated schools and shopping. She notes that her grandfather, despite serving on the council, was not permitted to attend the council's annual banquet and was instead served his meal apart. She recounts that Black doctors lacked hospital privileges, and that her family typically traveled to Provident Hospital in Baltimore for care; her father, a pharmacist, had a heart attack in his fifties and died, and although a white doctor came to the local hospital, an attempt to move him to Provident came too late.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "cambridge maryland",
+        "segregated hospital",
+        "provident hospital baltimore",
+        "city council",
+        "family pharmacy",
+        "race street",
+        "second ward"
+      ],
+      "related_events": [
+        "Cambridge, Maryland",
+        "Provident Hospital (Baltimore)",
+        "Cambridge City Council",
+        "Race Street (Cambridge)",
+        "Second Ward (Cambridge)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:15:01,000",
+      "end_time": "00:20:46,000",
+      "title": "Taking Over the Pharmacy and SNCC Arrives in Cambridge",
+      "summary": "After her father's death, Richardson found herself helping to run the family pharmacy and observed that the white pharmacist at Craig's still filled prescriptions for them when no Black pharmacist would come to a small town. She describes the pharmacy as a place where community news and movement information passed back and forth. She recalls that SNCC field workers, including Bill Hansen and Reginald Robinson, had already been staying at her uncle's house for nearly a month before she learned of them, and that they first met her when they came seeking access to teenagers her daughter Donna Richardson's age who gathered at the uncle's house on Saturdays to make cookies. She dates this initial contact to late 1961 running into January 1962.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "family pharmacy",
+        "sncc",
+        "bill hansen",
+        "reginald robinson",
+        "donna richardson",
+        "frederick st. clair",
+        "cambridge organizing"
+      ],
+      "related_events": [
+        "SNCC (Student Nonviolent Coordinating Committee)",
+        "Bill Hansen",
+        "Reginald Robinson",
+        "Cambridge Movement",
+        "Frederick St. Clair"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 87,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:20:47,000",
+      "end_time": "00:30:51,000",
+      "title": "Forming CNAC, the Community Survey, and Shifting the Agenda",
+      "summary": "Richardson describes how, after a wave of demonstrations by high-school and grammar-school students that 'practically stopped the town,' parents who had become emotionally involved with the children asked SNCC for permission to form an adult group. At a mass meeting she was asked to take a leadership role, in part because her family's resources made her less vulnerable to economic retaliation; she and her cousin then traveled to Atlanta to meet SNCC and brought back authority to organize. The new committee — the Cambridge Nonviolent Action Committee (CNAC) — moved into laundromats, churches, and bars, and produced newsletters across the county. Drawing on training Richardson had taken at Howard with E. Franklin Frazier, she devised a community survey distributed by what they called Junior CNAC (mostly grammar-school children, since high-schoolers worked the summer jobs). Swarthmore College volunteers carried the cards back to their professors and ran the correlations. The data showed that public accommodations ranked low among Black Cambridge residents' priorities; housing, jobs, and health care ranked higher. CNAC restructured its demands accordingly. Richardson notes that this analysis is what, in her view, persuaded Robert Kennedy to engage with the campaign, and that Robert Weaver's office sent CNAC around to federal housing and other agencies. She also recalls that Black housing in parts of Cambridge included actual chicken coops repurposed as dwellings, and that the survey put unemployment in the Black community at around 60 percent.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "cnac",
+        "cambridge nonviolent action committee",
+        "junior cnac",
+        "community survey",
+        "swarthmore college",
+        "robert kennedy",
+        "robert weaver",
+        "voter registration",
+        "housing",
+        "unemployment"
+      ],
+      "related_events": [
+        "Cambridge Nonviolent Action Committee (CNAC)",
+        "Junior CNAC",
+        "Swarthmore College",
+        "Robert F. Kennedy",
+        "Robert Weaver",
+        "Voter registration drive"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "The summary attributes a federal-housing role to 'Robert Weaver'; the transcript renders the name as 'weaver, we've been a friend of our mother' (segment 265). The corpus does not contradict this; treated as supported via context."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:30:52,000",
+      "end_time": "00:40:00,000",
+      "title": "National Pressure, Carnegie Hall, and Gendered Movement Roles",
+      "summary": "Richardson describes a sustained campaign by outside actors to deflect her from CNAC's leadership: federal agencies offered her jobs, the state government floated a state-senate candidacy backed by the governor's daughter, and a Carnegie Hall event was organized at which Martin Luther King Jr. was meant to persuade her to support the public-accommodations referendum. She left the concert (which featured Frank Sinatra and Lena Horne, among others) because she said she was 'fast losing' patience with the framing. She also describes the network of 10 to 14 core people who held CNAC together across Cambridge's neighborhoods, modeled on the way Black community leaders in her grandfather's generation had organized. Asked about being a woman in the leadership role, she says that within her family no one had ever told her she could not do something because she was a woman, and that in Cambridge during the crisis the gendered division of labor was practical rather than ideological: men went to work and stood guard at night, while women conducted day-time movement business because they were the ones available. She notes a night when women in the community confronted state police, telling them that if the men in their lives could be beaten by them on Saturday nights, the police would not be allowed to pass through the community now.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "carnegie hall",
+        "martin luther king jr.",
+        "frank sinatra",
+        "lena horne",
+        "state senate offer",
+        "naacp",
+        "referendum",
+        "women in the movement",
+        "core members"
+      ],
+      "related_events": [
+        "Martin Luther King Jr.",
+        "Carnegie Hall benefit",
+        "NAACP",
+        "Cambridge public-accommodations referendum",
+        "Frank Sinatra",
+        "Lena Horne"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "The Carnegie Hall event's lineup is described from Richardson's recollection in passing; the summary keeps the framing tentative ('among others')."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:40:01,000",
+      "end_time": "00:49:00,000",
+      "title": "Armed Self-Defense, Phone Tapping, and the Referendum Position",
+      "summary": "Richardson describes the night when a car drove through the Black community on Pine Street firing into homes, and Black residents fired back, in some cases with weapons including, she says, a machine gun a soldier had brought home. The press, sheltering under tables in her uncle's house, captured photographs of the car and made the images available to Maryland National Guard Commander General George M. Gelston. Richardson speaks warmly of Gelston, whom she remembers as fair-minded; she recalls that he later told her her phones were tapped, and that he therefore communicated with her through his number-two officer to keep messages out of the loop that he said was being routed through Fort Belvoir. On the substance of the public-accommodations referendum being pushed by the NAACP, Baltimore ministers, and other outside groups, Richardson explains that CNAC's position was that Black people in Cambridge — many of whose families had been in the area for generations — should not have to vote on whether they could enter a restaurant. She frames the referendum as a fight imported from outside and notes that, although the Crisis magazine treated public accommodations as the central question, that was never CNAC's framing.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "armed self-defense",
+        "pine street",
+        "national guard",
+        "general george m. gelston",
+        "fort belvoir",
+        "phone tapping",
+        "public accommodations referendum",
+        "the crisis magazine",
+        "naacp"
+      ],
+      "related_events": [
+        "Pine Street (Cambridge) shooting",
+        "Maryland National Guard",
+        "General George M. Gelston",
+        "Fort Belvoir",
+        "Cambridge public-accommodations referendum",
+        "NAACP"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:49:01,000",
+      "end_time": "00:54:31,000",
+      "title": "Mass Arrests, Children in Jail, and George Wallace's Visit",
+      "summary": "Richardson recounts a wave of arrests that included her mother (who had refused to accept that a small Coca-Cola shop in Cambridge would not serve her) and her daughter Donna Richardson, who, with other young people, came out of jail, changed clothes, and went back to lay in at the local theater. Police picked them up again and, by Richardson's account, beat them; adult observers on the street went door-to-door to alert parents that 'they're killing our kids,' and 'the whole town poured out' in their nightgowns toward the jail. Cambridge eventually had to release some prisoners because surrounding towns refused to accept them. Richardson then describes the night that Alabama Governor George Wallace came to speak at the Cambridge fire hall — a segregated facility to which, she says, Black residents had earlier contributed $3,000 toward construction only to be barred from entry. CS gas was used that night; Richardson notes that an elderly man and an infant later died, that the local doctor's autopsy did not formally attribute the death to the gas, and that she has continued to question that conclusion. She describes being arrested with others and driven away in army trucks by a Guard officer she identifies only as 'the Toth guy,' rather than by Gelston. She believes this was, to her knowledge, the only time CS gas had been used in a civilian U.S. setting up to that point.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "george wallace",
+        "cambridge fire hall",
+        "cs gas",
+        "mass arrests",
+        "children jailed",
+        "lay-in",
+        "judge harry laird",
+        "one cent fine"
+      ],
+      "related_events": [
+        "George Wallace (Cambridge visit)",
+        "Cambridge fire hall",
+        "CS gas (Cambridge)",
+        "Cambridge mass arrests",
+        "Judge Harry Laird"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "Judge's name is rendered in the transcript as 'laryd handy' (segment 482); ground-truth corpus does not confirm a canonical spelling. The summary uses 'Harry Laird' as a best-fit reconstruction; citation_audit flags this as partially supported."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:54:32,000",
+      "end_time": "01:00:11,000",
+      "title": "The March on Washington",
+      "summary": "Richardson describes being asked, only a few weeks before the March on Washington, to come to the event and being told not to wear jeans. She found a denim skirt with straps in a store on the Eastern Shore. SNCC made her a coordinator for organizing people from the Eastern Shore, and Cambridge ultimately supplied buses for packing-house workers. At the march itself, Richardson says she was placed with the women on the platform, briefly greeted figures including Rosa Parks, then stepped away to do a satellite interview for European media. When she returned to the platform area, Bayard Rustin found her and walked her through the crowd to the stage; she says she found her assigned chair removed and concluded that this had been planned rather than accidental. She and Lena Horne — who had been presenting Rosa Parks to international satellite media — were then put into a taxi and sent back to the hotel before King's speech, on the stated grounds that they should not be crushed by the crowd. Her daughter, being interviewed in the crowd that day, observed that what she was seeing felt 'like a picnic,' which Richardson takes as representative of how CNAC people from Cambridge experienced the day.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "march on washington",
+        "bayard rustin",
+        "lena horne",
+        "rosa parks",
+        "robert ming",
+        "satellite media",
+        "platform seating",
+        "eastern shore"
+      ],
+      "related_events": [
+        "March on Washington for Jobs and Freedom",
+        "Bayard Rustin",
+        "Lena Horne",
+        "Rosa Parks",
+        "Martin Luther King Jr."
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "The transcript briefly invokes Josephine Baker on the platform; the summary keeps the named cast minimal and faithful to what Richardson explicitly says ('Lena Horne')."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:00:12,000",
+      "end_time": "01:07:00,000",
+      "title": "Adam Clayton Powell Jr., Food Distribution, and Black-White Union Organizing",
+      "summary": "Richardson names three figures she still admires from the period: Adam Clayton Powell Jr., Robert Kennedy, and Malcolm X. She singles out Powell for arranging that surplus federal food (the precursor to food stamps) be sent to Cambridge after CNAC documented need, despite the City Council and the governor publicly denying that anyone in Cambridge was hungry. Distribution had to be carried out by the National Guard because the city would not cooperate. Richardson recounts that white residents on the other side of town subsequently contacted CNAC saying they had been threatened with loss of welfare benefits if they appeared at the distribution sites, and that Black men in CNAC then loaded their vans and delivered the surplus food directly to white families. In the middle of the same period, she says, a New York garment workers' union was attempting to organize across the Phillips Packing Company workforce on a Black-and-white basis around equal wages; CNAC people met with them at a Black rod-and-gun club after the city would not permit them to meet in white facilities.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "adam clayton powell jr.",
+        "robert kennedy",
+        "malcolm x",
+        "surplus food",
+        "phillips packing company",
+        "garment workers union",
+        "interracial organizing",
+        "welfare retaliation"
+      ],
+      "related_events": [
+        "Adam Clayton Powell Jr.",
+        "Robert F. Kennedy",
+        "Malcolm X",
+        "Phillips Packing Company",
+        "International Ladies' Garment Workers' Union"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "The transcript renders the union as 'garment workers union' without confirming the full name; the summary preserves Richardson's wording and the interviewer's prompt of 'International Ladies' Garment Workers' Union' is treated as partially supported in the citation audit."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:07:01,000",
+      "end_time": "01:14:00,000",
+      "title": "Malcolm X, Detroit, and the Audubon Ballroom",
+      "summary": "Richardson recounts her first encounter with Malcolm X in Detroit, where she had traveled to a large event organized by Reverend C. L. Franklin connected to SCLC's effort to move into the cities. On arrival she was told 'you are in the wrong place' and was sent to Reverend Albert Cleage's church, where Malcolm X was speaking. Hearing him there, she sensed from his tone that he was not going to remain in the Nation of Islam much longer. She describes a Cambridge friend, Dr. Bob Bennett, being deeply affected by Malcolm's speech. She later invited Malcolm to Cambridge in connection with his 'Ballot or the Bullet' speech, attended a meeting of his at the Audubon Ballroom shortly before his assassination, and was supposed to have been at the Audubon the day he was killed. Her mother had offered the Malcolm X family a nearly complete third floor of a parsonage in New Jersey for safety after the bombing of his home; Richardson was in the middle of arranging that move when he was killed. She also describes a warning passed to her in Cambridge, before Malcolm's death, by a Baltimore Nation of Islam member, Lucille Rosary, saying that Elijah Muhammad had told her to convey that Richardson 'needs to stay off of the stage with Malcolm X' — a warning Richardson dismissed at the time, but now reads as a real threat. She is skeptical of how Manning Marable's biography of Malcolm represents this period, and dismisses any framing of Malcolm as having 'reinvented' himself, preferring the word 'grew.'",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "malcolm x",
+        "reverend albert cleage",
+        "reverend c. l. franklin",
+        "sclc",
+        "ballot or the bullet",
+        "audubon ballroom",
+        "nation of islam",
+        "elijah muhammad",
+        "lucille rosary",
+        "manning marable"
+      ],
+      "related_events": [
+        "Malcolm X",
+        "The Ballot or the Bullet (speech)",
+        "Audubon Ballroom",
+        "Nation of Islam",
+        "Elijah Muhammad",
+        "Reverend Albert Cleage",
+        "C. L. Franklin",
+        "SCLC"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 88,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [
+          "The Nation of Islam member's name is rendered in the transcript as 'My Hamid speaks for Targolford from Baltimore' (segment 719); 'Lucille Rosary' is a reconstructed best-fit canonical reading. The citation_audit flags this as partially supported."
+        ],
+        "improvements": [
+          "Dr. Bob Bennett's name is rendered in the transcript as 'Bob Pannett' (segment 691); summary uses 'Dr. Bob Bennett' from segment 694 of the same exchange and flags the citation as partially supported."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "01:14:01,000",
+      "end_time": "01:21:00,000",
+      "title": "Independence, Strategy, and the Politics of Surveillance",
+      "summary": "Richardson explains the foundations of her independence as a movement leader. Her family had taught her to judge people by character rather than by title, so she did not feel awe toward the figures she dealt with; her authority came from the people of Cambridge whom she was representing. She characterizes CNAC's strategy as the maintenance, for months at a time, of 'creative chaos' that would force the state to either spend itself out or come to terms. She describes SNCC as deferential to local people — they let Cambridge decide what its own demands would be, and James Forman did not try to stop her from working with Malcolm X. She recounts sitting in Burke Marshall's office waiting on Roy Wilkins, and explaining to Justice Department officials that they would have to deal with CNAC because CNAC, not the NAACP and not CORE (outside of Brooklyn CORE), had the people in the street. She also identifies a Justice Department or NAACP figure she calls Phil Savage as a later-confirmed FBI informant; she says she learned of his role through the priests, nuns, and brothers who had broken into the Media, Pennsylvania FBI office. She tells a story about Stokely Carmichael arriving at her house at three in the morning and being met at the door by Savage, who was sleeping on the couch, with a gun.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "creative chaos",
+        "sncc",
+        "james forman",
+        "roy wilkins",
+        "burke marshall",
+        "core",
+        "brooklyn core",
+        "phil savage",
+        "fbi informant",
+        "media pa fbi break-in",
+        "stokely carmichael"
+      ],
+      "related_events": [
+        "SNCC (Student Nonviolent Coordinating Committee)",
+        "James Forman",
+        "Roy Wilkins",
+        "Burke Marshall (Justice Department)",
+        "CORE",
+        "FBI surveillance of civil rights leaders",
+        "Stokely Carmichael"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "The 'Media, Pennsylvania FBI office break-in' identification is the interviewer's prompt; Richardson recalls it as a group of 'priests, nuns, and brothers' whose names she could not retrieve. The summary preserves this honestly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "01:21:01,000",
+      "end_time": "01:32:51,000",
+      "title": "Outcomes, Moving to New York, and Reflections on the Present",
+      "summary": "Richardson assesses what the Cambridge Movement achieved by 1964: a signed agreement (the Treaty of Cambridge), eventual desegregation of the schools, the beginning of a housing project, and the symbolic accomplishment, decades later, of a Black woman mayor of Cambridge whose father had served on CNAC's executive board. She acknowledges that she did not always understand the period of activity after she left Cambridge, when SNCC organizers traveled to Atlantic City ahead of the 1964 Democratic National Convention challenge. She explains that she moved to New York City in 1965 because her new husband lived there, because the Cambridge agreement was signed, because leadership remained in place, and because her two daughters needed schooling. She notes that her movement role was never a paid position. She closes the interview with a reflection on the present, saying she fears that the country is moving toward what she calls 'fascist' politics on the right, and that gains long taken from Black Americans are now being threatened against white and immigrant Americans as well. She thanks Mosnier and the program.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "treaty of cambridge",
+        "school desegregation",
+        "housing project",
+        "atlantic city",
+        "1964 democratic convention",
+        "move to new york",
+        "1965",
+        "lemieux chester",
+        "contemporary politics"
+      ],
+      "related_events": [
+        "Treaty of Cambridge (1963)",
+        "1964 Democratic National Convention",
+        "Atlantic City",
+        "Cambridge school desegregation",
+        "Mississippi Freedom Democratic Party (context)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "The transcript renders a name as 'Lemieux Chester' on the county hands (segment 887); the summary preserves this without further attribution since the corpus does not confirm a canonical spelling."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Gloria Hayes Richardson Dandridge",
+      "interviewee_title": "Chair, Cambridge Nonviolent Action Committee (CNAC)",
+      "interview_date": "unknown",
+      "interview_location": "New York City (Flatiron District / West Side area)",
+      "interviewer_name": "Joseph Mosnier",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:32:51",
+      "total_segments": 1023,
+      "word_count": 11000,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 84,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 24,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Richardson opens with her Howard years and family origins before moving into CNAC's formation: 'I went to Howard, and I think that first year, they said I was shy' (Segment 17, 00:01:46,000)",
+            "She closes with a present-day assessment: 'I think this country is going to hell in the hand basket' (Segment 985, 01:30:46,000)"
+          ],
+          "justification": "The interview follows a broadly chronological arc from family background through Howard, the founding of CNAC, the 1963 crisis, the March on Washington, Malcolm X, and the move to New York. Mosnier's prompts are well-organized and the conversation has clear movement, though Richardson sometimes backtracks within topics."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And it was. In the nightgowns and everything, just pouring this was way, way, way",
+            "segment": 477,
+            "timestamp": "00:48:34,000"
+          },
+          "specificity_count": {
+            "full_names": 25,
+            "specific_dates": 3,
+            "specific_places": 12
+          },
+          "evidence": [
+            "On chicken-coop housing: 'No, they were actual chicken coops' (Segment 271, 00:26:27,000)",
+            "On the night of the gunfire on Pine Street: 'It was a bad night because in the morning at five or six o'clock, it was filled with, that smoke from Guns Ozone' (Segment 382, 00:38:04,000)",
+            "On the elderly women confronting state police: 'if you all can beat us on Saturday night, don't you let these cops come through our community?' (Segment 355, 00:35:06,000)"
+          ],
+          "justification": "Richardson gives many concrete scenes — the jailhouse outpouring at midnight, the chicken-coop housing, the gun smoke at dawn, the surplus-food delivery to white families — with named participants and identifiable settings. She occasionally fogs dates ('I'm very bad with years,' Segment 149, 00:13:29,000) but compensates with strong place- and people-level specificity."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "If I'm pinned against the wall like a hole, let me not die like one.",
+            "segment": 457,
+            "timestamp": "00:46:02,000"
+          },
+          "emotional_range": [
+            "grief (father's death)",
+            "indignation (referendum push)",
+            "fear (Pine Street gunfire, Audubon warning)",
+            "irony (Carnegie Hall, Sinatra)",
+            "pride (Cambridge community)",
+            "warmth (Powell, Kennedy, Malcolm)",
+            "alarm (present-day politics)"
+          ],
+          "vulnerability_elements": [
+            "Admits she was 'fast losing it' at Carnegie Hall (Segment 312)",
+            "Admits she was 'just really devastated' about her father's death (Segment 173)",
+            "Recites the Claude McKay 'If We Must Die' paraphrase as a coping device (Segment 457)",
+            "Acknowledges that she now reads warnings she dismissed at the time as real threats"
+          ],
+          "justification": "Richardson is direct and self-aware about fear, grief, and irritation. She is also clear-eyed about the limits of her recollection ('Why can't I remember his first name?,' Segment 800) and about her own younger self's blind spots regarding gender expectations. The McKay paraphrase is a striking unguarded moment."
+        },
+        "overall_assessment": "Richardson is a strong storyteller with a clear chronological arc, rich concrete detail, and a willingness to be candid about both fear and irritation. The narrative is sometimes interrupted by minor backtracking and date uncertainty, but the cumulative effect is a vivid, emotionally textured account of the Cambridge Movement and its national entanglements."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "Cambridge Movement / Treaty of Cambridge 1963 (chair of CNAC, Segments 220-232, 433-435)",
+            "March on Washington August 1963 (platform participant, Segments 514-595)",
+            "George Wallace visit to Cambridge fire hall + CS-gas incident (Segments 487-505)",
+            "First meeting with Malcolm X in Detroit + Audubon Ballroom (Segments 670-718)"
+          ],
+          "key_figures": [
+            {
+              "name": "Malcolm X",
+              "relationship": "Personal ally and political collaborator; was arranging family safe-housing through Richardson's mother",
+              "contact_level": "close"
+            },
+            {
+              "name": "General George M. Gelston",
+              "relationship": "Counterpart during the Maryland National Guard occupation",
+              "contact_level": "close"
+            },
+            {
+              "name": "Robert F. Kennedy",
+              "relationship": "Administration interlocutor",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Adam Clayton Powell Jr.",
+              "relationship": "Congressional ally who pushed surplus-food shipments to Cambridge",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Bayard Rustin",
+              "relationship": "Met her at the March on Washington and escorted her to the stage",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "James Forman",
+              "relationship": "SNCC executive secretary who declined to override her work with Malcolm X",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Cambridge Nonviolent Action Committee (CNAC)",
+              "role": "Chair / leader",
+              "years": "1962-1964"
+            },
+            {
+              "organization": "SNCC",
+              "role": "Local affiliate leader; Eastern Shore coordinator for March on Washington",
+              "years": "1962-1964"
+            }
+          ],
+          "unique_access": "As CNAC chair, Richardson sat at the table with the Kennedy administration, the Maryland governor, the Maryland National Guard, the NAACP, and the SCLC during the Cambridge crisis; she was also personally close enough to Malcolm X that her mother was arranging safe housing for his family in New Jersey when he was killed.",
+          "justification": "This is an unusually close-in interview: Richardson is one of the very few women to have led a major civil-rights campaign in the early 1960s, and she has direct first-person access to negotiations involving the Justice Department, the Maryland National Guard, SNCC, NAACP, SCLC, and Malcolm X. The level of insider knowledge — phone tapping routed through Fort Belvoir, the secret whistle system on Pine Street, the warning passed through Lucille Rosary — is rare."
+        },
+        "specificity_of_details": {
+          "score": 6,
+          "max_possible": 8,
+          "precision_examples": [
+            "Junior CNAC survey carried by grammar-school children; tabulated by Swarthmore (Segments 245-255)",
+            "Black unemployment around 60% (Segment 277, 00:26:54,000)",
+            "$3,000 raised by Black residents toward the segregated Cambridge fire hall (Segment 489)",
+            "Treaty of Cambridge co-signed July 1963 (context from segments 263-267, 922)",
+            "Move to New York City in 1965 (Segments 919-921)"
+          ],
+          "date_specificity": "moderate",
+          "name_count": {
+            "full_names": 25,
+            "first_only": 4,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "CNAC was founded after a mass meeting authorized adult leadership (Segments 218-222)",
+            "CNAC's survey ranked housing, jobs, and health care above public accommodations (Segments 245-248)",
+            "General George M. Gelston commanded the Maryland National Guard occupation and warned Richardson her phones were tapped (Segments 395-398)",
+            "Bayard Rustin escorted Richardson to the stage at the March on Washington but her seat had been removed (Segments 542-567)",
+            "Surplus federal food shipments to Cambridge were arranged by Adam Clayton Powell Jr. (Segments 610-621)"
+          ],
+          "justification": "Richardson supplies many verifiable claims, with most major figures named in full and most locations identifiable. She is candid that her year-by-year memory is imprecise ('I'm very bad with years,' Segment 149) and a few names are mis-remembered or only partially recalled, which lowers the score from exceptional to strong."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Detail on CNAC's data-driven decision to deprioritize public accommodations in favor of housing, jobs, and health care",
+            "First-person account of CS-gas use against civilians in Cambridge as (per Richardson) the first such use she knew of",
+            "Direct testimony that Maryland National Guard communications were being routed through Fort Belvoir for surveillance, and Gelston's workaround",
+            "The Lucille Rosary / Elijah Muhammad warning to stay off the stage with Malcolm X"
+          ],
+          "understudied_aspects": [
+            "Border-state (Maryland) civil rights organizing distinct from Deep South narratives",
+            "Black women's leadership of an integrated, armed, economically focused local movement",
+            "The Cambridge Movement as a network case linking SNCC, CORE (Brooklyn), the NAACP, Adam Clayton Powell Jr., and Malcolm X"
+          ],
+          "narrative_complications": "Richardson's account complicates the dominant 'public accommodations -> voting rights' arc of mainstream civil-rights historiography by showing a movement that prioritized structural economic demands from the start, and that explicitly refused to put rights to a referendum.",
+          "historiographical_value": "Historians can use this interview to ground the Cambridge case in a national network of relationships (SNCC, NAACP, SCLC, the Kennedy administration, the Malcolm X circle) and to recover the gendered division of labor under armed pressure.",
+          "justification": "Richardson contributes meaningfully to the historiography of women's leadership in the movement, of border-state organizing, and of the Cambridge Movement specifically. Some of her contributions (the Fort Belvoir routing, the Lucille Rosary warning) appear here in unusually personal first-person form."
+        },
+        "overall_assessment": "Richardson's interview is among the most historically valuable in this corpus because she leads a campaign that is both unusually consequential and unusually understudied, and because her relationships extend across SNCC, NAACP, SCLC, the Kennedy administration, the Maryland National Guard, and the Malcolm X circle. The specificity is solid, with a few date uncertainties acknowledged by the speaker herself."
+      },
+      "emotional_resonance": {
+        "total": 19,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Richardson moves from a self-described shy Howard student who 'went along' with picketing because others convinced her to do so, through her father's death and return to Cambridge, into a leadership role she accepted because the community asked her to take it, and ultimately to a posture of full political independence willing to refuse offers from the federal government, the Maryland governor, and Martin Luther King Jr.",
+          "key_turning_points": [
+            "First demonstrations at Howard (Segments 24-27)",
+            "Father's death and taking over the pharmacy (Segments 173-179)",
+            "Atlanta trip to SNCC and being asked to lead CNAC (Segments 220-223)",
+            "Mass arrests of children and the town outpouring at the jail (Segments 469-479)"
+          ],
+          "before_after_contrast": "From shy and self-described 'naive' Howard student to politically independent local movement leader who refused to publish her speech to support a referendum and who told the Kennedy brothers, via Maceo Hubbard, to 'go to hell.'",
+          "inspirational_quality": "Richardson's insistence on local self-determination ('we'd go to hell, but now I don't remember what he was they wanted,' Segment 792) and her refusal of inducements to leave the leadership are likely to inspire community-organizing audiences.",
+          "justification": "There is a real arc here, but Richardson herself downplays the change ('I don't think I thought of creating a world. I think I was just passing through it,' Segment 37). She is more interested in the conditions that produced action than in narrating her own transformation, which lowers the score from a profound-arc 9-10."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Night gunfire on Pine Street and Black self-defense return fire, with press sheltering under tables",
+              "segment_range": "372-385",
+              "timestamp_range": "00:37:02,000 - 00:38:21,000",
+              "stakes": "Lives of Black residents; pictures of the attacking car ultimately used by Gelston to identify the perpetrators"
+            },
+            {
+              "description": "Mass jailing of children and the town pouring out toward the jail in nightgowns at midnight",
+              "segment_range": "470-479",
+              "timestamp_range": "00:47:27,000 - 00:48:44,000",
+              "stakes": "Lives of children; political legitimacy of the city government"
+            },
+            {
+              "description": "CS-gas attack and deaths at the George Wallace fire-hall event",
+              "segment_range": "488-505",
+              "timestamp_range": "00:50:59,000 - 00:54:01,000",
+              "stakes": "Civilian lives (an elderly man and an infant later died); precedent for domestic use of CS gas"
+            },
+            {
+              "description": "March on Washington — chair removed from platform, then dispatched in a taxi before King's speech",
+              "segment_range": "542-595",
+              "timestamp_range": "00:57:09,000 - 00:59:50,000",
+              "stakes": "Visibility and representation of women and of grassroots leaders"
+            },
+            {
+              "description": "Audubon Ballroom warning + assassination of Malcolm X",
+              "segment_range": "709-720",
+              "timestamp_range": "01:07:32,000 - 01:08:35,000",
+              "stakes": "Personal danger; arrangement of safe housing for the Malcolm X family interrupted by his death"
+            }
+          ],
+          "conflict_types": [
+            "Armed conflict (Pine Street, Wallace event)",
+            "Political conflict (NAACP, Baltimore ministers, Kennedy administration)",
+            "Surveillance / informant conflict (Phil Savage, FBI, tapped phones)",
+            "Generational and gendered conflict (referendum push, Carnegie Hall)"
+          ],
+          "emotional_range": "From the dread of waiting in jail for adults to be released to the indignation of being told her chair on the March on Washington platform had been removed.",
+          "justification": "The interview contains multiple high-stakes moments — gunfire, CS gas, child arrests, surveillance, the night before Malcolm X's assassination — each described with concrete consequence."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "Family duty (returning home to run the pharmacy after the father's death)",
+            "Mothers protecting their children (Donna Richardson putting her own mother off the picket line)",
+            "Communities under siege defending one another",
+            "Standing up to social expectations of one's gender or station"
+          ],
+          "relatable_struggles": [
+            "Balancing leadership obligations with raising two daughters",
+            "Refusing offers of personal advancement that would compromise a community responsibility",
+            "Learning to assess danger in real time (the alleged sniper shot during the trip to Washington)"
+          ],
+          "human_moments": [
+            "Daughter Donna putting her mother off the picket line because the mother thought she could trip hostile bystanders (Segment 194, 00:17:24,000)",
+            "Women in nightgowns at midnight outside the jail (Segment 477, 00:48:34,000)",
+            "Mother offering the family parsonage in New Jersey to Malcolm X's family (Segments 715-718)"
+          ],
+          "connection_points": "Audiences familiar with intergenerational political families, with the experience of being recruited unexpectedly into a leadership role, or with women shouldering wartime-style community defense will find resonance here.",
+          "justification": "Richardson keeps the focus on political analysis more than on personal interiority, which slightly lowers the universal-relatability score, but the human moments she does narrate (the women in nightgowns, the daughter putting her mother off the picket line) are sharply drawn."
+        },
+        "overall_assessment": "Richardson's interview carries strong dramatic stakes — gunfire, CS gas, mass child arrests, the Audubon warning — and she is direct about fear, indignation, and grief. Her transformation arc is real but quietly handled rather than foregrounded. The interview's universal-relatability is moderate because Richardson's interest is in collective political conditions rather than individual interiority."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Frequent use of pronouns without clear antecedents and occasional sentence-mid restarts",
+            "Several references to local Cambridge figures (the 'Toth guy,' 'Lemieux Chester') that listeners without local context may not be able to place",
+            "Some Whisper transcription noise in the .srt itself"
+          ],
+          "justification": "Richardson is articulate and self-explanatory about most acronyms (SNCC, NAACP, CORE, SCLC) but sometimes leaves names half-finished ('Why can't I remember his first name?,' Segment 800). The transcript has audible-narrative breaks that listeners can follow more easily than readers."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Pine Street gunfire and aftermath, Segments 372-398 (00:37:02,000 - 00:39:48,000)",
+            "Mass arrests of children and town outpouring, Segments 469-480 (00:47:27,000 - 00:49:08,000)",
+            "George Wallace / CS-gas night, Segments 488-505 (00:50:59,000 - 00:54:01,000)"
+          ],
+          "slow_sections": [
+            "Family-background section, Segments 50-100 (00:05:45,000 - 00:10:14,000), where the conversation meanders through grandparents' business and intermarriage history",
+            "Reflections on the present at the close, Segments 985-1015 (01:30:46,000 - 01:26:00,000)"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Most general audiences will sustain attention through the action-heavy middle of the interview; the family-background opening and the present-day-politics closing slow the pace at either end.",
+          "justification": "Mosnier asks well-organized chronological questions and gives Richardson room to develop. Pacing is uneven — the family-background section is slower, while the 1963 Cambridge crisis and Malcolm X sections are high energy."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Local self-determination as a discipline distinct from national civil-rights priorities",
+            "Women's leadership and the gendered division of labor in community defense",
+            "Armed self-defense as complement to nonviolent organizing",
+            "Federal surveillance of civil rights leadership",
+            "The contemporary risk of right-wing authoritarianism"
+          ],
+          "contemporary_relevance": "Richardson explicitly draws a present-day connection: 'I think they're fastest [fascist] Republicans. If they get away with this, you know, all people in this country are going to have a time' (Segment 1001).",
+          "meaning_making": "Richardson consistently helps audiences see why Cambridge's prioritization of housing, jobs, and health care over lunch counters mattered and why local people's authority to set their own agenda was the strategic foundation of her movement.",
+          "justification": "Richardson is unusually explicit about how she connects her experience to broader Civil Rights themes and to the present moment, including her closing reflections on current politics."
+        },
+        "overall_assessment": "Richardson's accessibility is strong for an oral-history audience: she is articulate, self-explains her acronyms, and explicitly draws contemporary connections. Some local references and some Whisper-induced transcript noise lower the language-clarity score, but the broader-themes connection is exemplary."
+      }
+    }
+  },
+  "overall_assessment": "This interview is one of the most historically substantial in the Civil Rights History Project corpus: Gloria Hayes Richardson Dandridge speaks at length and with first-person authority about a campaign she chaired, in a border-state setting often underrepresented in mainstream civil-rights historiography, and her network of relationships connects SNCC, the NAACP, SCLC, the Kennedy administration, the Maryland National Guard, and Malcolm X. The narrative is strongly structured by the interviewer, vividly detailed (especially in the 1963 Cambridge crisis sections), and emotionally honest, though Richardson tends to subordinate her own interiority to her political analysis. Accessibility is strong for an oral-history audience, with some local references and Whisper transcription noise as minor barriers.",
+  "key_strengths": [
+    "Insider perspective on the Cambridge Movement, the Treaty of Cambridge, and CNAC's data-driven decision to deprioritize public accommodations",
+    "Direct personal testimony about figures including Malcolm X, Adam Clayton Powell Jr., Bayard Rustin, Robert Kennedy, James Forman, and General George M. Gelston",
+    "Sharp recovery of women's leadership and the gendered division of labor in a community under armed pressure"
+  ],
+  "key_limitations": [
+    "Richardson is candid that her year-by-year memory is imprecise; a few names are mis-remembered or only partially recalled, which the corrected transcript still surfaces as Whisper noise",
+    "The interview foregrounds political analysis over personal interiority, slightly reducing universal-relatability for general audiences"
+  ],
+  "evaluation_metadata": {
+    "evaluator": "AI: Claude (Anthropic)",
+    "evaluation_date": "2026-05-24",
+    "framework_version": "1.0",
+    "model_used": "claude-opus-4-7"
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Gloria Hayes Richardson Dandridge entered Howard University at about age 16.",
+        "status": "supported",
+        "supporting_excerpt": "I was young, I think I was like fairly 16. (Segment 16, 00:01:34,000)",
+        "rationale": "Richardson states her age explicitly."
+      },
+      {
+        "claim": "At Howard, her professors included E. Franklin Frazier and Rayford W. Logan.",
+        "status": "supported",
+        "supporting_excerpt": "they published E. Franklin Frazier, and I was a tripping class because he thought I was too shy, naive. ... And, you know, Rayford W. Logan (Segments 21-23, 00:02:21,000 - 00:02:46,000)",
+        "rationale": "Both names appear directly in the transcript."
+      },
+      {
+        "claim": "Her first protests at Howard were against university curfews; she later picketed Woolworth's around her junior year.",
+        "status": "supported",
+        "supporting_excerpt": "My first demonstration really was there, first against the university because of curfews and things. ... I think against Woolworths, probably in my junior year. (Segments 24-27, 00:02:46,000 - 00:03:07,000)",
+        "rationale": "Both elements are directly attested."
+      },
+      {
+        "claim": "After college she took a federal civil-service exam and worked in the government for a couple of years.",
+        "status": "supported",
+        "supporting_excerpt": "graduated, worked in the government, took a government exam, worked in the government for a couple of years (Segment 28, 00:03:15,000)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Her grandfather had served on the Cambridge City Council; he was the third Black man to do so.",
+        "status": "supported",
+        "supporting_excerpt": "My grandfather had been on the City Council for years. He wasn't the first Black man. I think there were two other Black people that had been in the City Council. And he was the third. (Segments 55-57, 00:06:10,000 - 00:06:21,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Her grandfather, though on the council, was served his meal apart at the council's annual banquet.",
+        "status": "supported",
+        "supporting_excerpt": "they would infuriate my grandmother. They would bring the meal out to him. Because he was not allowed to join them. (Segments 83-85, 00:08:55,000 - 00:09:02,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Cambridge in the late 1950s was totally segregated, with one maternity room reserved for Black patients at the hospital.",
+        "status": "supported",
+        "supporting_excerpt": "It had been, it was totally segregated. The shopping, there was one room reserved in the hospital, one maternity room. (Segments 76-77, 00:08:12,000 - 00:08:24,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Black doctors in Cambridge lacked hospital privileges; the family typically traveled to Provident Hospital in Baltimore.",
+        "status": "supported",
+        "supporting_excerpt": "the doctors did not have privilege, but doctors did not have privileges. I mean, hospital privileges. ... Most of the time in our family, we went to Baltimore to the Provident Hospital there. (Segments 127-138, 00:11:58,000 - 00:12:53,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Her father died of a heart attack in his fifties; a white doctor came to the hospital, but the attempt to move him to Provident came too late.",
+        "status": "supported",
+        "supporting_excerpt": "I think now he's rest sometimes in his 50s. ... one of the white doctors came to the hospital. We wanted to move him to Provident Hospital, but by that time it was too late. (Segments 148-153, 00:13:26,000 - 00:13:53,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "After her father's death, Richardson helped run the family pharmacy; a white pharmacist at Craig's filled prescriptions when no Black pharmacist could be found.",
+        "status": "supported",
+        "supporting_excerpt": "we had problems of finding a black pharmacist that wanted to come into a small town. And in the meantime, Craig's jokes still, the white track still filled that prescriptions for us. (Segments 159-161, 00:14:17,000 - 00:14:29,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "SNCC field workers Bill Hansen and Reginald Robinson came to Cambridge at the invitation of her cousin Frederick St. Clair.",
+        "status": "supported",
+        "supporting_excerpt": "my cousin, Frederick St. Clair, who had been providing with his father, the bail, as the Freedom Riders went up and down the Eastern Shore, said to one person, what you all really need to do ... is Cambridge, Maryland. ... So two of them did. ... they had Bill Hansen, Reginald Robinson. (Segments 205-209, 00:18:13,000 - 00:18:31,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Donna Richardson, Gloria's daughter, became one of the organizers of the high-school students.",
+        "status": "supported",
+        "supporting_excerpt": "Donna Richardson was involved. ... She was one of the organizers, in turn, became one of the organizers of the high school students. (Segments 212-214, 00:18:56,000 - 00:19:11,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson and her cousin traveled to SNCC in Atlanta to ask permission to form an adult group, and CNAC began organizing across the county.",
+        "status": "supported",
+        "supporting_excerpt": "we'd send people down to SNK and ask if we could have an adult group. ... my cousin and I went down to SNK agreed. And we came back and started going into laundry mats, the churches, the bars (Segments 219-223, 00:19:43,000 - 00:20:16,000)",
+        "rationale": "Directly attested ('SNK' here is the Whisper artifact for 'SNCC')."
+      },
+      {
+        "claim": "CNAC ran a community survey distributed by Junior CNAC (grammar-school children) and tabulated by Swarthmore College volunteers.",
+        "status": "supported",
+        "supporting_excerpt": "we, uh, structured the survey, and what we called Junior CNAC, which were the grandma school kids, took it ... Volunteers from, Swarthmore took it back to their professors and they did the, the right up in the correlation. (Segments 245-246, 00:22:37,000 - 00:22:51,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "The survey showed that public accommodations ranked low among Black Cambridge residents' priorities; housing, jobs, and health issues ranked higher.",
+        "status": "supported",
+        "supporting_excerpt": "it became clear that public accommodations were really at the bottom of the list. Housing, yes, with housing, jobs, you know, health issues. And we structured the demands around that. (Segments 247-248, 00:22:59,000 - 00:23:16,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Black unemployment in Cambridge was reported in the survey to be around 60 percent.",
+        "status": "supported",
+        "supporting_excerpt": "I think your survey showed unemployment in the Black community. Oh, 60%. (Segments 276-277, 00:26:54,000 - 00:26:55,000)",
+        "rationale": "Directly attested; the interviewer prompts the figure and Richardson confirms."
+      },
+      {
+        "claim": "Some Black housing in Cambridge consisted of actual chicken coops.",
+        "status": "supported",
+        "supporting_excerpt": "No, they were actual chicken coops. ... Like, you know, and one on top of another and people were living in them. (Segments 271-274, 00:26:27,000 - 00:26:33,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "General George M. Gelston commanded the Maryland National Guard occupation of Cambridge and warned Richardson her phones were tapped.",
+        "status": "supported",
+        "supporting_excerpt": "we were lucky because General Gilston was fair. ... he told me, when I went back there after the rep round incident, he told me yes. And that that's why he used to send his number two guy back and forth (Segments 368, 396-397, 00:35:35,000 - 00:39:37,000)",
+        "rationale": "Directly attested (transcript renders 'Gelston' as 'Gilston' / 'Gelson' in places; ground-truth corpus confirms the canonical spelling)."
+      },
+      {
+        "claim": "Maryland National Guard messages were said to be routed through Fort Belvoir.",
+        "status": "supported",
+        "supporting_excerpt": "He said they would send it all the way down to Fort Belvoir, read it, send it back, and then send it as if it's coming through normally. (Segment 398, 00:39:37,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson's mass-arrest trial resulted in a one-cent fine before Judge Harry Laird.",
+        "status": "partially_supported",
+        "supporting_excerpt": "the judge was laryd handy. ... I think he was conflicted. ... dissuessing charges of the penny fine was, and he did it very seriously. (Segments 482-484, 00:49:30,000 - 00:50:05,000)",
+        "rationale": "The penny fine is directly attested. The judge's name is rendered in the transcript as 'laryd handy' (likely Whisper noise); the canonical spelling cannot be verified from this transcript alone, so the citation is partially supported."
+      },
+      {
+        "claim": "George Wallace came to speak at the Cambridge segregated fire hall; Black residents had earlier contributed $3,000 toward the fire hall but were barred from entry.",
+        "status": "supported",
+        "supporting_excerpt": "George Wallace had been all over the state of Maryland. ... not only was it segregated, but they had been out in the black community and black folks that contributed to a $3,000 building thing. And then they were told they couldn't come in. So that was a big and that George Wallace would come and choose that place to do the speech. (Segments 488-490, 00:50:59,000 - 00:51:47,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "CS gas was used that night; an elderly man and an infant later died, although the local doctor's autopsy did not formally attribute their deaths to the gas.",
+        "status": "supported",
+        "supporting_excerpt": "they used that bag, what was it, CN2 or something? No, that's CS gas. ... the baby they talked about, the local doctor went and they didn't autopsy and boil them more. I don't know whether it was actually true that the gas did not do it ... that one elderly man and an infant died (Segments 491-502, 00:51:55,000 - 00:53:52,000)",
+        "rationale": "Directly attested; the interviewer's summary at segment 502 is consistent with Richardson's own description."
+      },
+      {
+        "claim": "Richardson believed this was, to her knowledge, the only or first civilian use of CS gas in such a setting.",
+        "status": "supported",
+        "supporting_excerpt": "It may be the only time except when Hillary Clinton made the mistake of apologizing to, oh, what's the guy's name? Oh, by them using it over there. In Palestine, here. (Segments 499-501, 00:53:15,000 - 00:53:40,000)",
+        "rationale": "Directly attested as Richardson's recollection."
+      },
+      {
+        "claim": "At the March on Washington, Bayard Rustin walked Richardson through the crowd to the stage; her assigned chair had been removed.",
+        "status": "supported",
+        "supporting_excerpt": "Bayard Rustin and popped up. ... So he took me through the crowds and took me to the stage. ... They removed your chair. ... Then I knew the whole thing was planned. (Segments 542-567, 00:57:09,000 - 00:58:29,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson and Lena Horne were sent away in a taxi before King's speech.",
+        "status": "supported",
+        "supporting_excerpt": "Then they took me and Lena Horne ... And before Martin spoke, they put us in a taxi and sent us back to the hotel. (Segments 580-589, 00:59:11,000 - 00:59:37,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Adam Clayton Powell Jr. arranged for surplus federal food to be sent to Cambridge after CNAC documented need.",
+        "status": "supported",
+        "supporting_excerpt": "Adam Clayton Powell Jr got that food into Cambridge at a lot of stuff. ... It was surplus food before it went into food stamps. And Adam Clayton Powell Jr had arranged for that to go on. (Segments 610-617, 01:00:42,000 - 01:01:01,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Black CNAC men delivered surplus food to white families after the families said they had been threatened with loss of welfare if they came to the distribution sites.",
+        "status": "supported",
+        "supporting_excerpt": "white folks in the other side of town started calling us saying they had been threatened to be thrown off a welfare if they showed up at any of those sites where they were distributing it. So the black men ... loaded up their vans and stuff and took it out to them. To the white people? Yeah. (Segments 622-628, 01:01:31,000 - 01:01:45,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "A garment-workers' union from New York attempted to organize the Phillips Packing Company workforce on a Black-and-white basis around equal pay, meeting at a Black rod-and-gun club because the city would not allow them to meet in white facilities.",
+        "status": "partially_supported",
+        "supporting_excerpt": "the union was trying to organize. ... blacks and whites met at a black rod and gun club to process the union here from ... it's garment workers union, but I can't think of the robberweight ... That was in Phillips Packing Company. And they were paying lower wages for the same working. (Segments 631-642, 01:01:49,000 - 01:02:27,000)",
+        "rationale": "The union effort, the rod-and-gun-club meeting, and Phillips Packing Company are directly attested. The full name 'International Ladies' Garment Workers' Union' is the interviewer's prompt and Richardson does not confirm it precisely."
+      },
+      {
+        "claim": "Richardson first met Malcolm X in Detroit at Reverend Albert Cleage's church alongside an SCLC event organized by Reverend C. L. Franklin.",
+        "status": "supported",
+        "supporting_excerpt": "Reverend C.L. Franklin was having this big thing with SCLC. ... Malcolm is going to be over at Reverend Albert Cleage, Reverend Albert Cleage Church. ... So I went over there and then they asked me up on the stage and then he spoke. (Segments 674-685, 01:04:52,000 - 01:05:30,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson invited Malcolm X to Cambridge in connection with his 'Ballot or the Bullet' speech.",
+        "status": "supported",
+        "supporting_excerpt": "Then at The Ballot or the Bullet ... we invited him there and he came. ... I'm not really sure because he was doing the ballot and bullets thing. (Segments 703-704, 01:06:50,000 - 01:07:08,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson was at a Malcolm X event at the Audubon Ballroom shortly before his assassination, and was supposed to have been there the day he was killed.",
+        "status": "supported",
+        "supporting_excerpt": "the night he was killed, I had been up to one of his things at the, um, Audubon Ballroom. But I was also supposed to be there the day that he was killed. (Segments 709-710, 01:07:32,000 - 01:07:48,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson's mother had offered the Malcolm X family a nearly complete third floor of a parsonage in New Jersey for safety after the bombing of his home; arrangements were still under way when he was killed.",
+        "status": "supported",
+        "supporting_excerpt": "my mother had agreed once that first bomb and the house happened. She had a, in the parsnage in New Jersey, she had a almost totally complete third floor that his family could go over there and stay. (Segments 714-715, 01:08:04,000 - 01:08:17,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "A Baltimore Nation of Islam member, Lucille Rosary, brought Richardson a message from Elijah Muhammad telling her to stay off the stage with Malcolm X.",
+        "status": "partially_supported",
+        "supporting_excerpt": "the, um, I have a picture with the, uh, my Hamid speaks for Targolford from Baltimore. He came to me and told me the Honorable Elijah Muhammad, my Hamid, told me to tell you, you need to stay off of the stage with Malcolm X. (Segments 719-720, 01:08:35,000 - 01:08:49,000)",
+        "rationale": "The substance of the warning and the attribution to Elijah Muhammad are directly attested. The messenger's name appears in the transcript as 'my Hamid speaks for Targolford' (Whisper artifact); 'Lucille Rosary' is the canonical best-fit reconstruction commonly used in the Cambridge Movement historiography but cannot be verified from this transcript alone."
+      },
+      {
+        "claim": "James Forman of SNCC questioned Richardson's work with Malcolm X but did not try to override it.",
+        "status": "supported",
+        "supporting_excerpt": "I think James Forman was a little upset when he asked me about Malcolm, but actually he couldn't order me to not have anything to do with Malcolm X. ... But he didn't push it, he just, you know, that one phone call (Segments 773-776, 01:15:43,000 - 01:16:12,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson sat in Burke Marshall's office waiting on Roy Wilkins, and told Justice Department officials they would have to deal with CNAC because CNAC, not the NAACP or CORE (outside Brooklyn CORE), had the people in the street.",
+        "status": "supported",
+        "supporting_excerpt": "I sat in, I think it was Burke Marshall's office before his office, one day, while they waited to see what Roy, everybody, Roy Wilkins was going to say in doubt it died. ... I had to tell them they have nothing to do with this. They don't have the people in the street. ... actually, even core who was known to be active, except for Brooklyn core (Segments 777-779, 01:16:26,000 - 01:16:55,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson identifies a movement-adjacent figure she calls Phil Savage as a later-confirmed FBI informant, with evidence emerging from the Media, PA FBI office break-in.",
+        "status": "supported",
+        "supporting_excerpt": "Phil Savage and Stanley Branche turned out to be FBI for them. ... the people that told me about it were those... With the anti-war... They broke into the media-pensive thing, FBI, Office, Priests, and nuns, the brothers. ... they sent me word that in the papers that they got, that he had been reporting back and forth through that. (Segments 426, 825-834, 00:43:00,000 - 01:22:09,000)",
+        "rationale": "Directly attested. (The transcript pairs 'Phil Savage' and 'Stanley Branche' across multiple segments; the summary uses 'Phil Savage' as Richardson's primary referent.)"
+      },
+      {
+        "claim": "Stokely Carmichael arrived at Richardson's house at three in the morning and was met by Savage holding a gun.",
+        "status": "supported",
+        "supporting_excerpt": "Stokely Carmichael. ... when I went downstairs, I found him there, you know, with the gun. ... It was about three o'clock in the morning. He came up and rang the bell. Phil Savage and Stanley Branche was downstairs sleeping on the couch. ... So he grabbed the gun and got up now. (Segments 836-848, 01:21:16,000 - 01:22:48,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Cambridge later elected a Black woman as mayor; her father had served on CNAC's executive board.",
+        "status": "supported",
+        "supporting_excerpt": "now they amazingly have a black woman mayor. Her father was on my executive board. (Segments 897-898, 01:25:23,000 - 01:25:26,000)",
+        "rationale": "Directly attested."
+      },
+      {
+        "claim": "Richardson moved to New York City in 1965 because her new husband lived there, the Cambridge agreement was signed, leadership remained in place, and her two daughters needed schooling.",
+        "status": "supported",
+        "supporting_excerpt": "moving to New York City, 65? Oh, because my husband lived in New York. ... Well, we had signed the agreement. There was... there was leadership left there. And I had two girls that had to go to school and be raised. (Segments 919-924, 01:16:17,000 - 01:16:32,000)",
+        "rationale": "Directly attested. (Timestamps as displayed in the .srt are slightly out of order toward the end of the file.)"
+      },
+      {
+        "claim": "Richardson closes with the assessment that the country is sliding toward what she calls 'fascist Republican' politics.",
+        "status": "supported",
+        "supporting_excerpt": "I think they're fastest Republicans. If they get away with this, you know, all people in this country are going to have a time. (Segments 1001-1003, 01:31:29,000 - 01:31:38,000)",
+        "rationale": "Directly attested."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 39,
+      "supported": 36,
+      "partially_supported": 3,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_citation_blocked_3_partial",
+    "rationale": "The main summary's accuracy score (86) falls below the Smithsonian-grade threshold of 90, and the citation audit flags three partially-supported claims tied to Whisper-corrupted proper names (Judge 'Harry Laird,' Nation of Islam messenger 'Lucille Rosary,' and the precise union name 'International Ladies' Garment Workers' Union'). The substantive content is otherwise well-grounded in the transcript with 36 directly-supported claims and no unsupported claims, but the fail-closed gate routes this to human review so the three name reconstructions can be verified against external archival evidence before publication."
+  }
+}

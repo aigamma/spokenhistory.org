@@ -1,0 +1,1225 @@
+{
+  "interview_name": "Lonnie C. King",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Lonnie C. King_interview_20250704_232613\\Lonnie C. King_interview_transcript_20250704_232613.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Lonnie C. King",
+    "interviewee_title": "Civil Rights Activist; Founder and Chair of the Atlanta Student Movement",
+    "interview_date": "2013-05-29",
+    "interview_location": "Southwest Branch, Fulton County Library, Atlanta, Georgia",
+    "interviewer_name": "Emilye Crosby",
+    "interviewer_affiliation": "Library of Congress / Civil Rights History Project",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "02:34:07"
+  },
+  "main_summary": {
+    "summary": "Lonnie C. King recounts his life as a founder and chair of the Atlanta Student Movement, beginning with his early childhood in Arlington, Georgia, where he lived with his grandfather, the Reverend Joseph P. Smith, an evangelist and NAACP membership recruiter who shaped his lifelong commitment to civil rights. King describes coming to Atlanta at age eight to live with his mother, joining Ebenezer Baptist Church under Martin Luther King Sr., forming the Ebenezer Youth Organization, and becoming friends with the King children, including paper-route partner A.D. King and his older brother Martin Luther King Jr., whom he watched practice preaching on Thursday nights. King also describes the formative influence of the Butler Street YMCA, where his mother arranged for staff to look out for him, and where he later met the movers and shakers of Atlanta's Black community.\n\nKing recounts his Navy enlistment in 1954, including episodes of racial discrimination aboard the USS Kearsarge aircraft carrier, his return to Morehouse College in 1957 on a football scholarship, and his decision to organize a student response to the Greensboro sit-ins of February 1, 1960. He describes recruiting Joseph Pierce and Julian Bond as initial collaborators, meeting with AU Center college presidents (Rufus Clement, Benjamin Mays, Albert Manley, James Brawley, Harry V. Richardson, Frank Cunningham) who urged the students to defer to the NAACP, and accepting Clement's challenge to write a manifesto. King recounts that Roslyn Pope wrote the resulting \"An Appeal for Human Rights\" overnight at Howard Zinn's house, that it was published March 9, 1960, in the Atlanta papers and reprinted in the New York Times, The Nation, the Harvard Crimson, and the Congressional Record by Senator Jacob Javits.\n\nKing describes the May 17, 1960 march to the Georgia Capitol commemorating the Brown v. Board decision, Dr. Mays's attempt to dissuade him on safety grounds, his invocation of Mays's own \"never sacrifice a principle for peace\" sermon, and Chief Herbert Jenkins's request that the march turn at Mitchell Street to avoid the State Patrol. He recounts the boycott of Rich's department store, his confrontation with Richard Rich, the acid attack on him at Mann Brothers in West End, the founding of the Atlanta Inquirer in July 1960 with M. Kasuth Hill in opposition to C.A. Scott's Atlanta Daily World, and the cartoons of Maurice Pennington. King describes his role in convening the meeting with Martin Luther King Jr. and Ella Baker that led to SNCC's founding at Shaw University over Easter weekend 1960, his disagreement with Baker about whether SNCC should be a formal organization, and his role in coordinating the test of Boynton v. Virginia in December 1960 that he says preceded the CORE Freedom Rides of 1961.\n\nKing recounts the October 19, 1960 sit-in at Rich's that included Martin Luther King Jr., the consequent arrest and probation revocation that drew in Senator John F. Kennedy and Robert Kennedy's intervention, the post-arrest negotiation brokered by Jesse Hill Jr. at the Chamber of Commerce, his and Herschelle Sullivan's reluctant agreement to a settlement deferring desegregation until after school desegregation, and the firestorm at the Warren Memorial Methodist Church mass meeting on March 10, 1961, where Martin Luther King Jr. delivered what King describes as the greatest speech of his career calming the crowd. King closes with reflections on the breadth of community support (including 353 people who entrusted him with their Rich's credit cards during the boycott), his views on the movement's legacy across women, Latinos, gays, and Asians via Title VII, and his concern that African Americans must prepare themselves for opportunities and not blame the system alone.",
+    "key_themes": [
+      "Atlanta Student Movement leadership and the Appeal for Human Rights",
+      "Intergenerational tension between students and Black college presidents",
+      "Mentorship: grandfather Joseph P. Smith, the Butler Street YMCA, and Dr. Benjamin Mays",
+      "Strategic nonviolence as tactic, not way of life",
+      "Founding of SNCC and disagreements with Ella Baker over organizational structure",
+      "Economic boycott strategy and Atlanta as a 'major domino' (Rich's department store)",
+      "Women's central role, especially Spelman students",
+      "Risk, courage, and the threat of racial violence (acid attack at Mann Brothers)"
+    ],
+    "historical_significance": "King is the founding chair of the Atlanta Student Movement and the Committee on the Appeal for Human Rights (COAHR), the organizational counterpart to the Greensboro Four for the Atlanta context. His first-person testimony documents the commissioning of Roslyn Pope's \"An Appeal for Human Rights,\" the AU Center presidents' meeting that nearly suppressed the movement, the October 1960 arrest with Martin Luther King Jr. that triggered the John F. Kennedy / Coretta Scott King call sometimes credited with swinging the 1960 presidential election, and the Warren Memorial mass meeting at which Martin Luther King Jr. calmed the community after the disputed Chamber of Commerce settlement. The interview also provides primary-source testimony on the founding meeting of SNCC, the role of Diane Nash in Nashville, and the December 1960 student test of Boynton v. Virginia that preceded the canonical CORE Freedom Rides of 1961.",
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 89,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 26,
+      "quality_component_a": 36,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 14,
+      "errors": [
+        "The summary states the Warren Memorial mass meeting occurred on March 10, 1961; the transcript says 'the 10th of March' without specifying the year, but the context (post-Chamber-of-Commerce-settlement in 1961) implies 1961. This is supported but the precise year is inferred, not stated.",
+        "The summary attributes the founding of SNCC at Shaw to 'Easter weekend 1960'; the transcript says only that Dr. King 'said I'm going to put a 500 dollars and I want you to Ellen get a place for us to call this conference over Easter weekend'. The Easter weekend phrasing is in the transcript but a specific year is not stated in those exact terms.",
+        "The summary names the aircraft carrier as USS Kearsarge; the transcript renders it 'USS Riscanae' (likely Whisper transcription error for Kearsarge). Treated as supported via known ground truth, but flagged."
+      ],
+      "improvements": [
+        "Add direct quotation from King's invocation of the 'if not now, when' line to Roy Wilkins at Spelman to strengthen the narrative.",
+        "Clarify the temporal relationship between the test of Boynton v. Virginia in December 1960 and the May 1961 CORE Freedom Rides — King claims his group's test preceded CORE's; verify whether this is in the historical record or is King's own claim of priority.",
+        "Distinguish between the Lonnie Cross (math professor at AU who took his class to sit in) and Lonnie C. King; the names are close and could confuse a reader.",
+        "The summary collapses the West End acid-attack location into 'Mann Brothers'; the transcript reads 'Man Brothers' but the canonical store name is likely Mann Brothers — verify against Atlanta historical records."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:07:04,000",
+      "title": "Childhood in Arlington, Georgia with Grandfather Joseph P. Smith",
+      "summary": "King describes being born in Arlington, Georgia (Calhoun County, 27 miles southwest of Albany) to Bertha Lee Smith King and L.C. King Senior, who divorced when he was about two. He stayed with his maternal grandfather, the Reverend Joseph P. Smith, an evangelist and note-singer with perfect pitch, until age eight. King recounts a formative incident in 1942 when a crop-duster plane dropped Eugene Talmadge campaign leaflets using the word 'nigger' and 'Keep the nigger in his place'; his grandfather sat him down and explained racism and the persistence of slavery in modified form. King also recounts discovering NAACP membership leaflets at the kitchen table and his grandfather's prophecy that 'this organization's going to set us free.' These early lessons, King says, shaped his attitude of resistance that 'served me well in 1960.'",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "arlington georgia",
+        "calhoun county",
+        "joseph p. smith",
+        "eugene talmadge",
+        "naacp",
+        "grandfather",
+        "sharecropper",
+        "albany georgia",
+        "racism"
+      ],
+      "related_events": [
+        "NAACP membership recruitment in the 1940s rural South",
+        "Eugene Talmadge gubernatorial campaign",
+        "Reverend Joseph P. Smith",
+        "Bertha Lee Smith King",
+        "L.C. King Senior"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that Eugene Talmadge ran for governor in 1942 (consistent with the transcript's date)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:07:04,000",
+      "end_time": "00:13:18,000",
+      "title": "Move to Atlanta, Ebenezer Baptist Church, and the King Family",
+      "summary": "After his grandfather died, King was sent to Atlanta in 1945 at age eight to live with his mother, who was a member of Ebenezer Baptist Church. At the spring revival in April, when Martin Luther King Sr. opened the doors of the church, King walked down and joined. He attended Ebenezer from 1945 until 1954 when he entered the Navy. King recounts that Martin Luther King Sr. and Alberta Williams King often asked him to lead church activities, and he formed the Ebenezer Youth Organization, becoming its first chairman. He had a paper route with A.D. (Alfred Daniel) King, Martin's younger brother, and recalls that Martin Luther King Jr. would practice preaching upstairs on Thursday nights while his mother was downstairs at choir rehearsal — King says he 'always knew he was going to be a great preacher.'",
+      "main_topic_category": "Religion & Faith",
+      "keywords": [
+        "ebenezer baptist church",
+        "martin luther king sr",
+        "alberta williams king",
+        "martin luther king jr",
+        "a.d. king",
+        "alfred daniel king",
+        "ebenezer youth organization",
+        "atlanta",
+        "1945"
+      ],
+      "related_events": [
+        "Ebenezer Baptist Church",
+        "Martin Luther King Sr.",
+        "Alberta Williams King",
+        "Martin Luther King Jr.",
+        "A.D. (Alfred Daniel) King",
+        "Ebenezer Youth Organization"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 88,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could quote King's specific recollection that Martin Luther King Jr. 'almost never played' — 'he was always serious.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:13:18,000",
+      "end_time": "00:18:35,000",
+      "title": "Butler Street YMCA and Early Mentorship",
+      "summary": "King describes the formative role of the Butler Street YMCA in Atlanta (organized in the 1890s, now closed), where his mother took him at age eight. She visited the director, Mr. J.D. Winston, asking him to look out for her son and keep him until 6 p.m. so she could get home from her job as a maid. King says he learned only much later, from interviewing 85-year-old Eugene Thomas (an assistant to Winston) for his dissertation, that his mother had returned a second time to check on his behavior. Because King was there so much, the YMCA hired him for fifty cents a day to help around the building — money King later learned the senior staff pooled out of their own pockets. King describes the YMCA as the place where he met all the movers and shakers in Atlanta's Black community playing bridge, watching them and teaching them table tennis. He credits this network with helping him later when he needed to bridge town and gown for the student movement.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "butler street ymca",
+        "atlanta",
+        "j.d. winston",
+        "eugene thomas",
+        "mentorship",
+        "black middle class",
+        "town and gown"
+      ],
+      "related_events": [
+        "Butler Street YMCA",
+        "J.D. Winston",
+        "Eugene Thomas",
+        "Atlanta Black community"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 86,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could emphasize that the YMCA experience prepared King for movement leadership by giving him connections across class lines."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:18:35,000",
+      "end_time": "00:30:53,000",
+      "title": "Navy Service and Confronting Institutional Racism",
+      "summary": "King enlisted in the Navy in 1954 on a 'Kiddie Cruise' (three-year enlistment, out before age 21) because his mother could not pay his Morehouse tuition. His mother signed his enlistment papers on the condition that he not become a 'sea-going busboy' (steward's mate). King recounts being one of 20 sailors sent to a heavy carrier (USS Riscanae per the transcript, likely USS Kearsarge), where every white sailor was assigned a good billet but only he and one white sailor (with the lowest GCT score) were sent to the deck force chipping paint. He was later assigned to clean a 200-man head (restroom), which he transformed using paint and brass polish — drawing on Dr. Mays's advice that 'if it's your fate to be a ditch digger, be the best ditch digger that's ever been born' — only to have a third-class petty officer petition to take his job. King describes being rejected by the dispersing office because he was Black, until Lieutenant J.G. Horn (white, from Louisiana) confronted the chief on his behalf. With the help of Welty Wolf from Seattle and John Bloom from Tempe, Arizona, King studied dispersing-clerk material and passed the November 1955 exam — the only one of five candidates to pass. He left the Navy in 1957 to return to Morehouse.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "navy",
+        "uss kearsarge",
+        "racial discrimination",
+        "deck force",
+        "morehouse college",
+        "benjamin mays",
+        "lieutenant horn",
+        "welty wolf",
+        "john bloom",
+        "kiddie cruise"
+      ],
+      "related_events": [
+        "U.S. Navy 1954-1957",
+        "USS Kearsarge",
+        "Dr. Benjamin Mays Morehouse address",
+        "Morehouse College"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The ship name 'USS Riscanae' in the transcript is almost certainly a Whisper transcription error for USS Kearsarge — the summary uses the corrected canonical name but with a parenthetical note."
+        ],
+        "improvements": [
+          "Could clarify the specific dates of the November 1955 dispersing-clerk exam and his date of separation from active duty."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:30:53,000",
+      "end_time": "00:44:00,000",
+      "title": "Greensboro Sit-Ins and Founding the Atlanta Student Movement",
+      "summary": "Returning to Morehouse in 1957 on a football scholarship, King played first-string fullback, building a wide network across Morehouse and Spelman. On February 1, 1960, after reading about the Greensboro sit-ins, King approached Joseph Pierce at Yates and Milton drugstore and recruited him to organize. The two then approached Julian Bond — a former Time magazine intern — who agreed reluctantly to join as a writer. Their first organizing meeting at Morehouse drew about 20 people, mostly football players King knew, plus students from Clark College including James Felder, head of the SGA there. Within days, Mrs. Hill (Dr. Mays's secretary) summoned King, Bond, and Pierce to a meeting at Harkness Hall with the AU Center college presidents, who had identified them by name. The presidents — Rufus E. Clement (AU), Benjamin E. Mays (Morehouse), Albert E. Manley (Spelman), James P. Brawley (Clark), Harry V. Richardson (ITC), and Frank Cunningham (Morris Brown) — urged the students to let the NAACP handle desegregation legally and not embarrass their institutions. Richardson and Cunningham broke ranks, supporting the students. Clement then challenged them to write 'a manifesto' explaining their position, which King accepted, appointing Roslyn Pope to lead its drafting.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "greensboro sit-ins",
+        "morehouse college",
+        "julian bond",
+        "joseph pierce",
+        "rufus clement",
+        "benjamin mays",
+        "harry v. richardson",
+        "atlanta university center",
+        "manifesto",
+        "yates and milton"
+      ],
+      "related_events": [
+        "Greensboro sit-ins (February 1, 1960)",
+        "Atlanta Student Movement",
+        "Yates and Milton Drugs",
+        "Julian Bond",
+        "AU Center Council of Presidents",
+        "Rufus E. Clement",
+        "Benjamin E. Mays",
+        "Harry V. Richardson"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript renders the Clark SGA leader's name as 'James Feld' which the summary expands to 'James Felder' — this is likely correct but is a paraphrase, not a direct transcript quotation."
+        ],
+        "improvements": [
+          "Could quote Brawley's claim that the students 'would embarrass him' as a specific anchor."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:44:00,000",
+      "end_time": "00:54:55,000",
+      "title": "Writing An Appeal for Human Rights and the AU Coalition",
+      "summary": "King recounts that he appointed Roslyn Pope to lead the drafting of the manifesto, along with Julian Bond, Charles A. Black, and Mary Ann Smith Wilson (likely 'Marian' in the transcript). Pope called King the night before the deadline saying the committee had not done anything; King told her, 'It's show time,' and Pope wrote the entire document overnight, typing it at Howard Zinn's house. The Appeal for Human Rights was published on March 9, 1960, in the Atlanta Constitution, Atlanta Journal, and the Atlanta Daily (C.A. Scott's Atlanta Daily World required cash up front). It was later reprinted in the New York Times (full page, free), the Nation magazine (April 2, 1960), the Harvard Crimson, and entered into the Congressional Record by Senator Jacob Javits. Clement raised $12,000 for the publication (about $4,000 was spent, leaving $8,000 for future student needs). King also recounts that he insisted on a unified AU Center coalition rather than the separate sit-in plan of mathematics professor Dr. Lonnie Cross, and that Clement called a campus-wide meeting at Sale Hall (E.A. Ware Hall) at which King argued the case against Cross. Cross's contract was not renewed in May. The Committee on the Appeal for Human Rights (COAHR) was then organized with three representatives from each of the six AU Center schools, with King chosen as the founding chairman.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "appeal for human rights",
+        "roslyn pope",
+        "julian bond",
+        "howard zinn",
+        "atlanta constitution",
+        "new york times",
+        "harvard crimson",
+        "jacob javits",
+        "coahr",
+        "lonnie cross"
+      ],
+      "related_events": [
+        "An Appeal for Human Rights (March 9, 1960)",
+        "Roslyn Pope",
+        "Howard Zinn",
+        "Sen. Jacob Javits",
+        "Committee on the Appeal for Human Rights (COAHR)",
+        "Atlanta Daily World"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript renders 'Marist Dillard' which the summary cannot confirm — keeping as Mary Ann or noting transcript spelling.",
+          "Hall name in transcript is 'Wehrhal, E.A. Wehrhal' — Whisper rendering, the canonical name is E.A. Ware Hall but the summary should not assert the canonical without flagging."
+        ],
+        "improvements": [
+          "Quote Clement's framing: 'we need to have an intellectual document that you draft, not us'.",
+          "Add the Birmingham Miles College students' 1962 reuse of the Appeal as evidence of its influence."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:54:55,000",
+      "end_time": "01:14:00,000",
+      "title": "May 17, 1960 March on the Georgia Capitol",
+      "summary": "King describes mobilizing thousands of students for a May 17, 1960 march on the Georgia Capitol commemorating the sixth anniversary of the Brown v. Board decision. He recounts a pivotal recruiting moment: his mother told him to organize Spelman women, because 'if you get the Spelman women behind you, the Morehouse men are going to come because of the girls.' King also describes being asked by Dr. Albert E. Manley to debate Roy Wilkins at Spelman; Wilkins argued the students should return to class, and King delivered his rebuttal, ending with the famous line 'Mr. Wilkins, if not now, when, and if not us, who?' Governor Ernest Vandiver called out the State Patrol with billy clubs and dogs to surround the Capitol. On the morning of the march, Mrs. Hill again summoned King — this time on behalf of Dr. Mays and his wife Sadie. Mays said Chief Herbert Jenkins had warned that his jurisdiction ended at the Capitol and he could not protect them from State Troopers. King invoked Mays's own sermon, 'Never sacrifice a principle for peace,' and Mays agreed. King returned to address the 3,000+ students with a speech on the discipline of nonviolent tactics; not one student backed out. Jenkins walked with King during the march and asked him to turn at Mitchell/Whitehall Street; King agreed, reasoning that one student injury would be 'playing into the arms of the enemies.' About 200 students at the rear became lost and continued to the Capitol, where they were heckled but not beaten. King also reports that he later identified a possible Black vigilante presence in photographs near the church across from the Capitol.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "may 17 1960",
+        "brown v. board",
+        "georgia capitol",
+        "ernest vandiver",
+        "herbert jenkins",
+        "benjamin mays",
+        "roy wilkins",
+        "spelman college",
+        "nonviolent tactic",
+        "nash"
+      ],
+      "related_events": [
+        "March on the Georgia Capitol (May 17, 1960)",
+        "Brown v. Board of Education sixth anniversary",
+        "Gov. Ernest Vandiver",
+        "Chief Herbert Jenkins",
+        "Dr. Benjamin E. Mays",
+        "Roy Wilkins debate at Spelman"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The exact attendance figure of 3,000+ is from the transcript's later reference to '3000 plus kids' and 'almost 4,000 people going downtown' — slight inconsistency in the transcript itself."
+        ],
+        "improvements": [
+          "Add Dr. Mays's later acknowledgment in Born to Rebel that King 'had matured.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:14:00,000",
+      "end_time": "01:34:00,000",
+      "title": "Boycott Strategy, West End Acid Attack, and the Atlanta Inquirer",
+      "summary": "King describes the post-march boycott of Atlanta food stores (colonial stores, A&P, etc.) and the West End grocery boycott of 'Man Brothers,' where the staff was 100% Black-customer-serving but had no Black cashiers or managers. King recounts that at the West End picket on a Saturday with Charles A. Black and Frank Holloway, a white man of about 57 doused him with an acid-like substance that burned his skin and clothes; nearby service stations refused to let him rinse with water before being directed to one that would. The pool hall emptied when news spread, and King says Atlanta was 'very close to having a racial conflagration' that would have favored Black retaliation. He also describes a confrontation with C.A. Scott of the Atlanta Daily World, who threatened him for endangering a $9,000 colonial-stores ad — and recounts the founding of the Atlanta Inquirer in July 1960 with M. Kasuth Hill (son of the first African-American doctor in Atlanta), with Julian Bond, John Gibson, James Gibson, and later M. Carl Holman as editor, and cartoonist Maurice Pennington whom King compares to Herblock. King also describes targeting Rich's department store as 'the kingpin' using Dr. Hugo Schala's Domino Theory analogy from John Foster Dulles, sitting in at the Magnolia Room with Howard Zinn's daughter and wife, being summoned by Chief Jenkins to a private meeting with Richard Rich at the jail, and being told 'if you bring your black ass down there again, I'm going to lock you up.'",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "richs department store",
+        "atlanta inquirer",
+        "m kasuth hill",
+        "atlanta daily world",
+        "c a scott",
+        "magnolia room",
+        "acid attack",
+        "west end",
+        "maurice pennington",
+        "howard zinn"
+      ],
+      "related_events": [
+        "Rich's Department Store boycott",
+        "Magnolia Room sit-in (June 1960)",
+        "West End Mann Brothers picket and acid attack",
+        "Atlanta Inquirer founding (July 1960)",
+        "M. Kasuth Hill",
+        "Maurice Pennington",
+        "Howard Zinn"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 87,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript renders 'Man Brothers' — summary uses 'Mann Brothers' as likely canonical spelling but should flag.",
+          "Date 'July 1960' for Atlanta Inquirer founding is in the transcript ('on the Fed of Press of July ... in 1960'); the canonical founding date should be verified against archival sources.",
+          "Cartoonist's name rendered 'Pinington' in transcript but King describes him as the great African-American cartoonist; canonical spelling 'Pennington' is used."
+        ],
+        "improvements": [
+          "Could quote Richard Rich's threat directly with attribution to the King-Jenkins-Rich meeting."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:34:00,000",
+      "end_time": "01:53:00,000",
+      "title": "Founding SNCC at Shaw University Easter Weekend 1960",
+      "summary": "King describes recommending to his Atlanta committee that he meet with Martin Luther King Jr. about pulling together a region-wide student leaders' meeting. He recounts that the planning meeting included Ella Baker, Martin Luther King Jr., King himself, and Reverend Otis Moss Jr. as witness. King argued that the movement needed formal organization because their opponents were highly organized, citing the near-identical anti-sit-in laws passed across Virginia, Maryland, North Carolina, South Carolina, and Georgia. Ella Baker opposed formal organization, invoking the Indian Satyagraha concept and arguing for grassroots emergence. Martin Luther King Jr. agreed with King's position and put up $500 for the conference, asking Baker to find a venue; she chose Shaw University because she was a Shaw graduate. King also recounts that, contrary to common claims, he never personally heard Martin Luther King Jr. propose that SNCC become a junior arm of SCLC, though others alleged this. At the founding meeting, King describes a battle over leadership: the Nashville delegation backed Marion Barry over Diane Nash, whom King considered the true Nashville leader; a compromise made Barry temporary chairman with the headquarters moved to Atlanta, where the Atlanta group paid the rent for the first several months. King also recounts the early arrivals at the SNCC Atlanta office: Jane Stembridge (the first office secretary) and Ed King (the second; not the white Mississippi Ed King). King reflects that he never understood why James Bevel, Marion Barry, and John Lewis 'leapfrogged' over Diane Nash, attributing it to sexism.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "sncc",
+        "shaw university",
+        "ella baker",
+        "martin luther king jr",
+        "marion barry",
+        "diane nash",
+        "jane stembridge",
+        "ed king",
+        "otis moss jr",
+        "easter weekend 1960"
+      ],
+      "related_events": [
+        "SNCC founding meeting (Shaw University, Easter weekend April 15-17, 1960)",
+        "Ella Baker",
+        "Martin Luther King Jr.",
+        "Marion Barry",
+        "Diane Nash",
+        "Otis Moss Jr.",
+        "Jane Stembridge"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Marion Barry's role as 'first chairman' is in the corpus and supported. 'Temporary chairman' phrasing is from the transcript.",
+          "Ed King (Black) — the transcript says he died in January of last year (i.e. 2012 if interview is May 2013); summary preserves King's account but does not assert canonical biographical claims."
+        ],
+        "improvements": [
+          "Could note that the Indian expression Baker used was likely 'Sarvodaya' or 'Sarvagrah' rather than Satyagraha — transcript renders it 'such a hot gruffa' which is hard to parse."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:53:00,000",
+      "end_time": "02:11:00,000",
+      "title": "Fall 1960 Campaign, MLK Arrest, and the JFK-Coretta Call",
+      "summary": "King describes the Fall 1960 campaign, designed to coincide with the presidential election. He overrode A.D. King and Bernard Lee, who wanted to launch immediately in August, and waited until October 19, 1960. Herschelle Sullivan returned from Paris in September to become co-chair (replacing the graduated John Mack). On October 18, King personally called Martin Luther King Jr. (with father Martin Luther King Sr., Wyatt Tee Walker, and A.D. King on the line) to ask him to join the sit-in. Martin Luther King Jr. initially refused, citing his probation from a Dekalb County arrest involving Lillian Smith, but King invoked Martin Luther King Sr.'s own sermon 'You can't lead from the back, you got to lead from the front' to overcome the elder King's objection. The October 19 arrest of Martin Luther King Jr. with the students drew international attention; the probation was revoked and King was transferred to Reidsville. The Kennedys' intervention — John F. Kennedy calling Coretta Scott King, Robert F. Kennedy intervening with the judge — became a defining moment of the 1960 presidential campaign. King argues that Black voters who had supported Republicans since 1865 switched to Kennedy in Illinois, Michigan, and other states because of this. He also recounts Richard Nixon's preparation of a counter-statement that E. Frederic Morrow was to take to President Eisenhower for approval, but Eisenhower refused, dooming Nixon's chance. King also describes the operational sophistication of the boycott, including walkie-talkies developed by Ronald Yancey (the first Black graduate of Georgia Tech) to coordinate teams when merchants closed and reopened lunch counters. Finally, King recounts his role in coordinating the December 1960 test of Boynton v. Virginia, sending teams to Chattanooga, Columbia (SC), Jacksonville, and Birmingham, which he says preceded the canonical CORE Freedom Rides organized by James Farmer in spring 1961.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "october 19 1960",
+        "martin luther king jr arrest",
+        "richs",
+        "john f kennedy",
+        "coretta scott king",
+        "robert f kennedy",
+        "1960 election",
+        "richard nixon",
+        "boynton v virginia",
+        "ronald yancey",
+        "walkie-talkies",
+        "herschelle sullivan"
+      ],
+      "related_events": [
+        "October 19, 1960 Rich's sit-in arrest",
+        "JFK-Coretta Scott King phone call",
+        "Robert F. Kennedy",
+        "1960 Presidential Election",
+        "Reidsville State Prison",
+        "Boynton v. Virginia (December 5, 1960)",
+        "James Farmer / CORE Freedom Rides (1961)",
+        "Ronald Yancey (first Black Georgia Tech graduate)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 89,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "King's claim that his December 1960 test of Boynton v. Virginia preceded the CORE Freedom Rides is presented as King's own claim, not as established fact.",
+          "Transcript renders 'bleeding Smith' which is likely Lillian Smith (probation officer or related); summary infers the canonical name.",
+          "The 'Dekalb County' detail comes from MLK Jr.'s probation context — transcript says 'out in the county' which the summary specifies as DeKalb based on historical context. This is mildly speculative."
+        ],
+        "improvements": [
+          "Add King's emphasis that 'but for that arrest, Nixon would have been president' as a direct quote."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "02:11:00,000",
+      "end_time": "02:27:00,000",
+      "title": "Chamber of Commerce Settlement and the Warren Memorial Mass Meeting",
+      "summary": "King recounts that in early 1961, the Atlanta Chamber of Commerce and white business community pulled together a settlement framework with the older Black leadership behind King's back. Jesse Hill Jr. — who King trusted — summoned him to what King thought was a Black-leadership meeting but turned out to be a Chamber of Commerce session with the white power structure. The deal: lunch counters would integrate after schools desegregated in the fall. King was attacked by Martin Luther King Sr. ('I baptized you ... you're going to wreck this time'), but defended by Frank H. Neely (chairman of Rich's board), who said King 'was the only one who had a constituency.' During the recess, AU Center president Rufus E. Clement, KB Williamson, and most decisively John C. Calhoun (former NAACP head) urged King to accept the settlement, citing it as the first time Southern whites had agreed to voluntary desegregation without federal mandate. King agreed conditionally — in writing, and pending student approval. Before he could return to campus, Ivan Allen Jr. (then a Chamber of Commerce officer) held a press conference announcing the settlement. The mass meeting at Warren Memorial Methodist Church (Reverend William Holmes Borders Sr.'s former church, hosted by Dr. Stinson) on March 10 drew over 2,000 people inside plus overflow speakers; the older leaders, including Martin Luther King Sr., were booed. King called Martin Luther King Jr. who came and delivered what King describes as the greatest speech of his career: 'the agreement may not be all of what it should be ... but we cannot afford to have the cancerous disease of disunity in this community.' King's resignation, along with Herschelle Sullivan's, was unanimously rejected by the students. The boycott continued until schools desegregated in September.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "atlanta chamber of commerce",
+        "jesse hill jr",
+        "frank h neely",
+        "rufus clement",
+        "ivan allen jr",
+        "warren memorial methodist church",
+        "william holmes borders sr",
+        "march 10 1961",
+        "herschelle sullivan",
+        "john c calhoun",
+        "martin luther king sr"
+      ],
+      "related_events": [
+        "Atlanta Chamber of Commerce settlement (Feb-March 1961)",
+        "Warren Memorial Methodist Church mass meeting (March 10, 1961)",
+        "Ivan Allen Jr.",
+        "Martin Luther King Sr.",
+        "Martin Luther King Jr.",
+        "Herschelle Sullivan",
+        "John C. Calhoun"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The year of the March 10 meeting (1961) is inferred from context, not directly stated."
+        ],
+        "improvements": [
+          "Could quote King's exchange with Calhoun about 'short time' (Calhoun's 60 years of insults outweighing the wait until September) more fully."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "02:27:00,000",
+      "end_time": "02:34:07,000",
+      "title": "Legacy, Reflection, and the Continuing Struggle",
+      "summary": "King reflects on his life as a continuation of his grandfather's NAACP recruiting work, on being 'in the right place at the right time' alongside roughly a hundred similarly-positioned student leaders nationwide, and on the Civil Rights Movement of the 1960s as 'the greatest movement in this country since the end of slavery.' He argues that Title VII's race/color/creed/national origin/sex provision served as the umbrella that opened the floodgates for the women's movement, Latinos, gays, and Asians — although the masses of Black people remain economically 'at the back of the bus.' King insists that African Americans must also prepare themselves for opportunities and not blame the system alone, citing a young Black Atlanta high-school valedictorian who studied under a blanket with a cell-phone light in a homeless shelter and earned a full scholarship to Spelman as a junior, intending to become an oncologist. King hopes 'to convince some more people to take a second look' and to write 'the right kind of thing on these young people's slate.' The interview closes with the standard Library of Congress / NMAAHC sign-off.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "civil rights legacy",
+        "title vii",
+        "womens movement",
+        "latinos",
+        "personal responsibility",
+        "spelman",
+        "homeless shelter valedictorian",
+        "naacp"
+      ],
+      "related_events": [
+        "Title VII of the Civil Rights Act of 1964",
+        "Spelman College",
+        "Library of Congress / NMAAHC Civil Rights History Project"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 85,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 33,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could include King's specific framing of the movement as 'a giant firecracker that when it got to a certain apogee' burst and 'embers began to flow back down' to other groups."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Lonnie C. King",
+      "interviewee_title": "Civil Rights Activist; Founder and Chair of the Atlanta Student Movement",
+      "interview_date": "2013-05-29",
+      "interview_location": "Southwest Branch, Fulton County Library, Atlanta, Georgia",
+      "interviewer_name": "Emilye Crosby",
+      "interviewer_affiliation": "Library of Congress / Civil Rights History Project",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "02:34:07",
+      "total_segments": 1990,
+      "word_count": 31500,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 92,
+      "max_possible": 100,
+      "category": "Exceptional"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 28,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "King opens with chronological grounding: 'I was born in a little town called Arlington, Georgia' (Segment 11, 00:01:13,000)",
+            "Pivot from background to movement: 'God was preparing me for 1960' (Segment 260, 00:17:47,000)",
+            "Strong closing reflection on legacy of Title VII opening pathway to women's, Latino, gay, and Asian rights (Segment 1922, 02:29:13,000)"
+          ],
+          "justification": "King maintains a clear chronological arc from grandfather, through Atlanta childhood, Navy, Morehouse, and Movement leadership. Some looping and asides reflect organic oral testimony but he reliably returns to the main thread, often anchoring with phrases like 'Where was I?' and 'Let me try to rush through.'"
+        },
+        "vivid_details_examples": {
+          "score": 10,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "All of a sudden this white guy lunged at me and doused an acid like substance on me that burned like he wouldn't believe. I mean, just burned my skin, my clothes, my shirt was destroyed.",
+            "segment": 1090,
+            "timestamp": "01:15:40,000"
+          },
+          "specificity_count": {
+            "full_names": 65,
+            "specific_dates": 24,
+            "specific_places": 28
+          },
+          "evidence": [
+            "Exact dialogue with grandfather about 'nigger' leaflet (Segment 45-57, 00:04:43,000-00:05:32,000)",
+            "Acid attack in West End with specific assailant description and burn detail (Segment 1090, 01:15:40,000)",
+            "Direct quote of his closing line to Roy Wilkins: 'if not now, when, and if not us, who?' (Segment 913, 00:59:59,000)"
+          ],
+          "justification": "Exceptional concrete detail throughout. King provides specific full names, dates, addresses (e.g., '211, 75, Boulevard, apartment 2A'), and reconstructed dialogue. The reader can visualize specific scenes including the Navy head he refurbished, the West End picket, and the Warren Memorial mass meeting."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "My mother was scared to death, but was supportive.",
+            "segment": 856,
+            "timestamp": "01:13:16,000"
+          },
+          "emotional_range": [
+            "pride",
+            "grief",
+            "anger",
+            "humor",
+            "vulnerability about fear",
+            "reverence for mentors"
+          ],
+          "vulnerability_elements": [
+            "Admits being 'scared to death' debating Roy Wilkins (Segment 887, 00:58:24,000)",
+            "Discloses he 'was a little edgy' during acid-attack confrontation, acknowledging fear",
+            "Open about being snookered into the Chamber of Commerce meeting and feeling responsible for the resulting firestorm"
+          ],
+          "justification": "King is candid about fear, missteps (the negotiated settlement), and the toll of leadership while maintaining a fundamentally confident voice. The Navy chapter and the description of Dr. Mays's emotional appeal not to march show genuine vulnerability. The acknowledgment that 'I had been tricked' at the Chamber meeting is rare honesty about leadership failure."
+        },
+        "overall_assessment": "King's narrative is consistently rich in vivid detail, organized chronologically with clear thematic anchors, and emotionally authentic without being performative. The combination of insider memoir and historian-of-his-own-story (King is working on a dissertation at the time of the interview) gives his account both intimate immediacy and analytic depth. His humor (the Tempe Arizona sailor, the cleaning of the head) lightens otherwise hard material."
+      },
+      "historical_value": {
+        "total": 25,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "Greensboro sit-in response in Atlanta (Segment 523, 00:32:46,000) — role: catalyst and organizer",
+            "An Appeal for Human Rights publication (Segment 656-670, 00:42:47,000-00:43:54,000) — role: commissioning chair",
+            "May 17, 1960 March on Georgia Capitol — role: lead organizer",
+            "SNCC founding meeting at Shaw — role: AU delegate and convener of preparatory meeting with MLK and Ella Baker",
+            "October 19, 1960 Rich's sit-in arrest with MLK Jr. — role: lead arrestee, fellow cellmate with MLK",
+            "Atlanta Inquirer founding July 1960 — role: co-founder",
+            "Warren Memorial Methodist Church mass meeting March 10, 1961 — role: chief target of community anger then defender of settlement"
+          ],
+          "key_figures": [
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "childhood acquaintance via Ebenezer; movement collaborator; fellow Fulton County jail cellmate",
+              "contact_level": "close"
+            },
+            {
+              "name": "Martin Luther King Sr.",
+              "relationship": "pastor who baptized him; movement antagonist during compromise",
+              "contact_level": "close"
+            },
+            {
+              "name": "Julian Bond",
+              "relationship": "co-organizer of Atlanta Student Movement; co-founder of Atlanta Inquirer",
+              "contact_level": "close"
+            },
+            {
+              "name": "Roslyn Pope",
+              "relationship": "appointed her to lead Appeal drafting; close collaborator",
+              "contact_level": "close"
+            },
+            {
+              "name": "Ella Baker",
+              "relationship": "co-participant in SNCC planning meeting; disagreed on organization",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Benjamin E. Mays",
+              "relationship": "Morehouse president; mentor and conscience figure",
+              "contact_level": "close"
+            },
+            {
+              "name": "Rufus E. Clement",
+              "relationship": "AU president who challenged and ultimately backed the movement",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Herbert Jenkins",
+              "relationship": "Atlanta police chief; negotiated with King on May 17 march",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Roy Wilkins",
+              "relationship": "NAACP head; debated him at Spelman April 1960",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Atlanta Student Movement",
+              "role": "Founder and chair",
+              "years": "1960-1961"
+            },
+            {
+              "organization": "Committee on the Appeal for Human Rights (COAHR)",
+              "role": "Founding chair",
+              "years": "1960"
+            },
+            {
+              "organization": "Atlanta Inquirer",
+              "role": "Co-founder",
+              "years": "1960"
+            },
+            {
+              "organization": "Student Nonviolent Coordinating Committee (SNCC)",
+              "role": "Co-founder and AU representative",
+              "years": "1960"
+            },
+            {
+              "organization": "Ebenezer Baptist Church Youth Organization",
+              "role": "Founder and first chairman",
+              "years": "1945"
+            }
+          ],
+          "unique_access": "King has direct, decision-making-level access to the SNCC planning meeting with MLK and Baker, the AU Center presidents' meeting that nearly suppressed the movement, the Fulton County jail cell shared with MLK after the October 19 arrest, the Chamber of Commerce settlement negotiations, and personal one-on-one conversations with MLK Sr. and Jr. He also has unusual childhood proximity to the King family (paper route with A.D. King) that few other oral history narrators can match.",
+          "justification": "King is the single most consequential narrator for the Atlanta Student Movement and one of the most consequential for SNCC's origins. He has direct, leadership-level participation in nationally significant events and close, often intimate access to figures including Martin Luther King Jr., Martin Luther King Sr., Julian Bond, Ella Baker, Roy Wilkins, and the AU Center college presidents."
+        },
+        "specificity_of_details": {
+          "score": 8,
+          "max_possible": 8,
+          "precision_examples": [
+            "Exact date of March 9, 1960 for Appeal publication (Segment 665, 00:43:28,000)",
+            "Exact date May 17, 1960 for Capitol march tied to Brown anniversary (Segment 980, 01:03:58,000)",
+            "Specific dollar figures: $12,000 raised by Clement, $4,000 spent, $8,000 left (Segment 656-657, 00:42:47,000)",
+            "Number of Spelman women jailed: 169 (Segment 941, 01:01:32,000)",
+            "Number of community members who entrusted King with their Rich's credit cards: 353 (Segment 1883, 02:25:38,000)",
+            "Exact Reidsville-related context: Bleeding Smith probation (likely Lillian Smith probation context)",
+            "Specific publications that reprinted Appeal: NYT, Nation Magazine (April 2, 1960), Harvard Crimson, Congressional Record by Sen. Jacob Javits"
+          ],
+          "date_specificity": "precise",
+          "name_count": {
+            "full_names": 65,
+            "first_only": 5,
+            "unnamed": 3
+          },
+          "verifiable_claims": [
+            "Appeal for Human Rights published March 9, 1960 in Atlanta papers",
+            "MLK Jr. arrested October 19, 1960 at Rich's",
+            "SNCC founded at Shaw University Easter weekend 1960 with $500 from MLK",
+            "Boynton v. Virginia decided about December 4, 1960 (actual: December 5, 1960)",
+            "Roslyn Pope wrote the Appeal at Howard Zinn's house in one night",
+            "Ronald Yancey was the first Black graduate of Georgia Tech"
+          ],
+          "justification": "Specificity is exceptional. King provides precise dates, dollar amounts, head counts, full names, and specific publications. The narrative is dense with verifiable claims that historians can cross-reference against primary sources."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "First-hand account of the AU Center presidents' meeting that nearly suppressed the Atlanta Student Movement",
+            "Detail that Roslyn Pope wrote the Appeal alone overnight after the rest of the committee 'had not done a thing'",
+            "Account of Dr. Mays following him to the May 17 march speech and later writing about it in Born to Rebel",
+            "The 353 community members who entrusted King with their Rich's credit cards during the boycott",
+            "Operational sophistication: walkie-talkie coordination of boycott teams developed by Ronald Yancey",
+            "King's claim that his December 1960 Boynton v. Virginia test preceded the CORE Freedom Rides",
+            "His account of Lonnie Cross attempting to lead a separate sit-in and Clement publicly subordinating him",
+            "Frank H. Neely's defense of King at the Chamber of Commerce meeting"
+          ],
+          "understudied_aspects": [
+            "The disproportionate role of Spelman women (169 arrested vs. Morehouse second-most)",
+            "The acid attack at West End and its near-precipitation of a 'Birmingham kind of violence' in Atlanta",
+            "The role of Maurice Pennington as a great Black political cartoonist comparable to Herblock",
+            "M. Kasuth Hill's founding role at the Atlanta Inquirer (often credited to Jesse Hill Jr.)",
+            "The Black vigilante presence King later identified in march photographs"
+          ],
+          "narrative_complications": "King's account complicates two dominant narratives: (1) that Marion Barry was the obvious choice for first SNCC chair (King argues Diane Nash was 'in fact the leader in Nashville'), and (2) that the Atlanta movement was a top-down institutional affair (King foregrounds Roslyn Pope's overnight authorship and the 353 ordinary credit-card-trusting community members).",
+          "historiographical_value": "Historians can use this transcript to anchor specific dates, identify under-attributed actors (Roslyn Pope, M. Kasuth Hill, Maurice Pennington, Ronald Yancey, Ed King), and reconstruct internal movement debates. The first-person testimony about the Chamber of Commerce settlement and the Warren Memorial mass meeting is canonical and unavailable elsewhere at this granularity.",
+          "justification": "King fills numerous gaps in the historical record about the Atlanta Student Movement specifically and SNCC's founding generally. His account foregrounds under-credited collaborators (Pope, Pennington, Yancey, Ed King) and provides primary-source testimony on internal debates that shaped the trajectory of the entire student movement."
+        },
+        "overall_assessment": "King's historical value is exceptional. He is the founder of one of the most consequential city-level student movements of 1960, was personally present at the SNCC founding planning, shared a jail cell with Martin Luther King Jr. during the canonical October 1960 arrest, and has decades of reflection on the era. The interview corrects under-attribution of Roslyn Pope's authorship of the Appeal and provides primary-source testimony on the Atlanta movement's negotiations with both the AU Center presidents and the white Chamber of Commerce."
+      },
+      "emotional_resonance": {
+        "total": 23,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "King traces an arc from a Black child in rural Georgia 'looking up at the bottom' to a movement leader debating Roy Wilkins on a national stage, then to a reflective elder who recognizes both the movement's expansive legacy (Title VII enabling women's, Latino, gay, Asian gains) and its limits (Black masses 'still at the back of the bus in terms of economics'). The transformation is embodied in the recurring image of his grandfather 'writing on my blank slate' that becomes King's own commitment to writing on the slates of younger generations.",
+          "key_turning_points": [
+            "Grandfather explains racism after Talmadge leaflet (Segment 52-57, 00:05:08,000)",
+            "Mr. Hill telling young King 'NAACP's going to set us free' (Segment 65-66, 00:06:36,000)",
+            "Dr. Mays's exhortation about the ditch digger (Segment 351-359, 00:22:28,000-00:22:54,000)",
+            "Lt. Horn defending him on the carrier (Segment 419-436, 00:26:27,000-00:27:22,000)",
+            "The moment of conviction with Mr. Wilkins's debate: 'If not now, when, and if not us, who?' (Segment 913, 00:59:59,000)",
+            "Recognition that he had been 'snookered' at the Chamber of Commerce meeting (Segment 1740, 02:16:01,000)"
+          ],
+          "before_after_contrast": "The narrator begins as a child being told by his grandfather that the family is 'still in a form of slavery'; he ends as an elder explaining that the movement was 'the greatest movement in this country since the end of slavery,' itself the umbrella that allowed women's, Latino, gay, and Asian gains to follow. The before-state is one in which his grandfather had to risk his life merely to recruit NAACP memberships at fifty cents each; the after-state is one in which King can analyze the strategic chess of the Atlanta power structure.",
+          "inspirational_quality": "King's insistence that he is 'going to my grave certainly hoping that I can convince some more people to take a second look at what's happening' models a kind of patient, long-distance-runner activism. His mother's strategic counsel (organize Spelman first because the men will follow), his use of Mays's ditch-digger lesson to keep his Navy work meaningful, and his ability to reframe his cell-cleaning assignment as opportunity all model adaptive resilience.",
+          "justification": "King articulates a clear transformation from disenfranchised rural Georgia child to confident national-stage leader, then to reflective elder still working to 'write on young people's slates.' The arc is reinforced through recurring images (blank slate, long-distance runner, looking up at the bottom) that give the transformation poetic coherence."
+        },
+        "tension_conflict_triumph": {
+          "score": 8,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Acid attack in West End during Mann Brothers picket",
+              "segment_range": "1087-1096",
+              "timestamp_range": "01:15:21,000 - 01:16:54,000",
+              "stakes": "Physical safety; potential racial conflagration in Atlanta"
+            },
+            {
+              "description": "Confrontation with Lt. JG Clarren in dispersing office",
+              "segment_range": "392-411",
+              "timestamp_range": "00:24:55,000 - 00:25:51,000",
+              "stakes": "Career trajectory; protection of dignity in face of explicit racism"
+            },
+            {
+              "description": "Phone call to MLK Jr. on October 18, 1960 with MLK Sr. on the line",
+              "segment_range": "1603-1618",
+              "timestamp_range": "01:55:33,000 - 01:59:17,000",
+              "stakes": "MLK's probation; the future of the Atlanta sit-in movement; the 1960 presidential election"
+            },
+            {
+              "description": "Warren Memorial mass meeting March 10, 1961 — Martin Luther King Sr. booed by community",
+              "segment_range": "1795-1840",
+              "timestamp_range": "02:20:26,000 - 02:23:06,000",
+              "stakes": "Whether the negotiated settlement would hold or the movement would fracture"
+            }
+          ],
+          "conflict_types": [
+            "Direct racial violence (acid attack, threats)",
+            "Institutional racism (Navy assignments)",
+            "Intergenerational conflict (college presidents vs. students; King vs. MLK Sr.)",
+            "Strategic disagreements (King vs. Ella Baker on SNCC organization)",
+            "Personal betrayal (snookered into Chamber of Commerce settlement)"
+          ],
+          "emotional_range": "From boyhood awe (grandfather's NAACP recruiting) to terror (acid burning skin), from triumph ('Mr. Wilkins' did 'this,' the audience went 'wow') to shame (negotiated settlement), to reflective acceptance (movement legacy)",
+          "justification": "The interview is dense with high-stakes moments and dramatic confrontations. The acid attack is the most physically dramatic; the Chamber of Commerce settlement and Warren Memorial mass meeting are the most strategically dramatic; the call to MLK Jr. and the dispersing-office confrontation show personal courage in micro-moments of decision."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Mentorship across generations (grandfather, YMCA, Mays)",
+            "A mother's protective intelligence (Bertha Lee Smith King)",
+            "Sibling and youth friendship (A.D. King paper route)",
+            "Doing meaningful work in degrading conditions (Navy head)",
+            "The cost of leadership (being booed, being snookered)",
+            "Faith and doubt (church revival, debates with Wilkins)",
+            "Aging and legacy (closing reflections)"
+          ],
+          "relatable_struggles": [
+            "Working class poverty and the impossibility of paying college tuition",
+            "Coping with explicit racism in an institutional setting (Navy)",
+            "Standing up to authority figures (college presidents, Mays, MLK Sr.)",
+            "Being betrayed by colleagues who go around your back",
+            "Worrying about one's mother who is 'scared to death but supportive'"
+          ],
+          "human_moments": [
+            "Grandfather telling him not to lie because he'd have to remember the lie (Segment 109-111, 00:09:52,000)",
+            "Mother insisting at the recruiting office that her son not become a 'sea-going busboy' (Segment 508, 00:11:38,000)",
+            "Welty Wolf walking over after weeks of silence to offer help (Segment 459-465, 00:28:31,000)",
+            "King's grandson being mentioned passingly at the end (Segment 1696, 02:11:49,000)"
+          ],
+          "connection_points": "King's accounts of mentorship, of working through racism with steadiness, of being publicly embarrassed by elders, and of negotiating with mainstream power structures resonate across diverse audiences. His mother's quiet strategic intervention (telling him to organize Spelman women) is broadly relatable as a parental wisdom moment.",
+          "justification": "Strong universal resonance across mentorship, parental wisdom, working-class poverty, and intergenerational conflict. The institutional racism narrative is specific to the era but the underlying human dynamic of standing up in a hierarchical workplace is widely accessible."
+        },
+        "overall_assessment": "The interview offers strong emotional resonance through a clear transformation arc, vivid peak moments of physical and strategic conflict, and universally relatable themes of mentorship, parental protection, and intergenerational debate. King's blend of humor, vulnerability, and analytical reflection makes the emotional content accessible without sentimentality."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "excellent",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Numerous proper names of less well-known figures (Frank H. Neely, M. Kasuth Hill, Maurice Pennington, Hugo Schala) without contextualization",
+            "Some Atlanta-specific institutional references (Yates and Milton, Hark­ness Hall, Sale Hall) assumed familiar",
+            "Brief moments of audio garbling reflected as transcript noise ('such a hot gruffa' for Baker's Indian-language term)"
+          ],
+          "justification": "King speaks clearly, with strong vocabulary and analytic precision. His vocabulary occasionally requires familiarity with civil rights and Atlanta geography, but he self-contextualizes major institutions (the YMCA, the NAACP, the AU Center)."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Acid attack (Segment 1087-1097, 01:15:21,000-01:17:14,000)",
+            "Roy Wilkins debate climax (Segment 905-915, 00:59:33,000-01:00:09,000)",
+            "Warren Memorial mass meeting (Segment 1804-1840, 02:21:03,000-02:23:06,000)",
+            "Confrontation with Richard Rich (Segment 1181-1183, 01:24:18,000-01:24:48,000)"
+          ],
+          "slow_sections": [
+            "Navy logistics (Segment 482-501, 00:29:43,000-00:30:53,000) — some technical military detail",
+            "Long passages on Atlanta Inquirer cartoonist Pennington and the upcoming exhibit (Segment 1305-1339, 01:33:43,000-01:35:31,000)",
+            "Occasional looping when King reorients ('Where was I?' moments)"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Audiences can sustain attention through the well-organized chronological narrative, but the 2.5-hour length and the occasional looping back will reward serious listeners rather than casual ones.",
+          "justification": "Pacing is generally good with strong narrative momentum during the central movement chapters. The Atlanta-Inquirer-cartoonist section and Navy logistics slow the pace; the interviewer occasionally redirects (e.g., asking him to move to SNCC founding) which keeps the interview on track."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Civil Rights Act of 1964 Title VII opening pathways for women, Latinos, gays, Asians",
+            "Movement organizing strategy applicable across causes (organized opposition requires organized response)",
+            "Importance of generational mentorship in social change",
+            "Persistent economic inequality despite legal desegregation"
+          ],
+          "contemporary_relevance": "King's closing reflection that 'we cannot afford to blame the system for everything' and his account of the Spelman valedictorian studying under a blanket connect directly to contemporary debates about structural racism vs. individual responsibility. His Atlanta-as-laboratory analysis (boycott as economic weapon) prefigures contemporary corporate-accountability campaigns.",
+          "meaning_making": "King is explicit about the movement's larger meaning, framing the 1960s as 'the greatest movement in this country since the end of slavery' and describing how Title VII's enumerated categories became 'the umbrella' for subsequent movements. He helps audiences see civil rights as a foundational legal-and-cultural shift with branching consequences.",
+          "justification": "King makes strong, explicit connections between his personal experience and broader civil rights themes, especially in the closing chapters. He situates his work within a multi-generational lineage starting with his grandfather and projecting forward into the lives of young people he hopes to influence."
+        },
+        "overall_assessment": "Accessibility is high for serious listeners. King's clear articulation, well-chosen anecdotes, and explicit thematic framing make the content available to a wide audience, though the length and density of proper names may limit casual engagement. The Atlanta-specific references would benefit from interviewer-supplied context for non-Atlanta audiences."
+      }
+    },
+    "overall_assessment": "This interview is one of the most consequential primary-source testimonies on the Atlanta Student Movement and SNCC's founding period in the Civil Rights History Project corpus. King combines insider access (founding chair of the Atlanta movement, personal proximity to the King family, AU Center delegate to the SNCC founding meeting) with analytical reflection that comes from his subsequent dissertation work. The narrative is structured, vivid, emotionally honest, and densely specific — offering historians anchors for dozens of verifiable claims and correcting under-attribution of figures like Roslyn Pope, M. Kasuth Hill, Maurice Pennington, and Ronald Yancey. The 2.5-hour length and density limit casual engagement, but for researchers, educators, and serious readers, the interview is exceptional.",
+    "key_strengths": [
+      "Founder-chair-level firsthand testimony on the Atlanta Student Movement, including the AU Center presidents' meeting, the Appeal commissioning, and the May 17 march",
+      "Specific, verifiable detail throughout (dates, dollar amounts, names, addresses), giving historians anchors for cross-referencing",
+      "Foregrounding of under-credited figures — Roslyn Pope's overnight authorship of the Appeal, M. Kasuth Hill's role in founding the Atlanta Inquirer, Maurice Pennington's cartoons, Ronald Yancey's walkie-talkie coordination, Diane Nash as the true Nashville leader"
+    ],
+    "key_limitations": [
+      "King's narrative is often the only first-person source for specific incidents, making cross-verification difficult; some claims (e.g., his Boynton test preceding the CORE Freedom Rides) should be checked against contemporaneous documents",
+      "The 2.5-hour length and occasional looping reduce accessibility for casual audiences; would benefit from interviewer-edited chapter markers for broad distribution"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Lonnie C. King was born in Arlington, Georgia (Calhoun County, 27 miles southwest of Albany)",
+        "status": "supported",
+        "supporting_excerpt": "I was born in a little town called Arlington, Georgia, which is down 27 miles southwest of Albany. The county was Calhoun County.",
+        "rationale": "Direct first-person statement at the start of the interview (Segments 11-13)."
+      },
+      {
+        "claim": "His mother was Bertha Lee Smith King and his father was L.C. King Senior",
+        "status": "supported",
+        "supporting_excerpt": "My mother's name was Bertha Lee Smith King and she was one of 17 children. My father's name was LC King Senior.",
+        "rationale": "Direct statement, Segments 14-15."
+      },
+      {
+        "claim": "His maternal grandfather, the Reverend Joseph P. Smith, was an evangelist and NAACP membership recruiter",
+        "status": "supported",
+        "supporting_excerpt": "He said, that's a national civil rights organization ... And I'm recruiting memberships for them. 50 cents, I believe at that time ... his Reverend Joseph P. Smith. He was an evangelist who also was a note singer with perfect pitch in his voice.",
+        "rationale": "Combined Segments 27-66 establish both roles."
+      },
+      {
+        "claim": "A crop-duster dropped Eugene Talmadge campaign leaflets in 1942",
+        "status": "supported",
+        "supporting_excerpt": "I remember in 1942, I was walking home from school in the first grade ... I saw my first plane crop duster, dropped leaflets ... the crop duster was hired by Eugene Talmadge, who was running for governor at that time.",
+        "rationale": "Direct first-person account, Segments 37-44."
+      },
+      {
+        "claim": "King moved to Atlanta in 1945 at age eight and joined Ebenezer Baptist Church under Martin Luther King Sr.",
+        "status": "supported",
+        "supporting_excerpt": "I came here at eight years of age ... My mother was a member of Ebenezer Baptist Church. So I came in March and they had the spring revival in April. So Martin Luther King Sr opened the doors of the church.",
+        "rationale": "Direct first-person testimony, Segments 117-120."
+      },
+      {
+        "claim": "King had a paper route with A.D. (Alfred Daniel) King",
+        "status": "supported",
+        "supporting_excerpt": "A.D. (Alfred Daniel) King and I had a paper route together.",
+        "rationale": "Segment 147."
+      },
+      {
+        "claim": "King formed the Ebenezer Youth Organization and was its first chairman",
+        "status": "supported",
+        "supporting_excerpt": "And that was when I formed something called the Ebenezer Youth Organization that's still running down there now. I was the first chairman of the organized organization.",
+        "rationale": "Segments 143-145."
+      },
+      {
+        "claim": "Martin Luther King Jr. practiced preaching on Thursday nights upstairs at Ebenezer",
+        "status": "supported",
+        "supporting_excerpt": "on Thursday nights, while my mother was there ... he'd be upstairs practicing his preaching ... that was the pastor, so he could get the key.",
+        "rationale": "Segments 150-157."
+      },
+      {
+        "claim": "King attended the Butler Street YMCA from age eight; J.D. Winston was its director",
+        "status": "supported",
+        "supporting_excerpt": "my mother took me down to the Butler Street YMCA, when I was eight ... He was an assistant to Mr. J. D. Winston, who was the director of the What Boys division at that time.",
+        "rationale": "Segments 174-206."
+      },
+      {
+        "claim": "King enlisted in the Navy in 1954 on a 'Kiddie Cruise' three-year enlistment",
+        "status": "supported",
+        "supporting_excerpt": "And I went into the Navy, and I went there because the Navy offered me a chance to come in on what they call a Kitty Cruise. That would be three years.",
+        "rationale": "Segments 287-294. ('Kitty Cruise' is the transcript rendering of the well-known Navy 'Kiddie Cruise' enlistment program.)"
+      },
+      {
+        "claim": "King returned to Morehouse in 1957 on a football scholarship and played fullback",
+        "status": "supported",
+        "supporting_excerpt": "So when I came back to Morehouse in 1957, I played football and it's hope wasn't so on ... I played the first string fullback for Morehouse and ran a few touchdowns for them.",
+        "rationale": "Segments 501, 521."
+      },
+      {
+        "claim": "King began organizing the Atlanta Student Movement on February 1, 1960 after the Greensboro sit-ins",
+        "status": "supported",
+        "supporting_excerpt": "So when the Greensboro Force sat down February 1st, I was reading the news paper at Jason Milton. Went to my good friend Joseph Pierce and said, Joe, why don't we organize and do something here?",
+        "rationale": "Segments 523-524."
+      },
+      {
+        "claim": "Joseph Pierce and Julian Bond were King's initial collaborators",
+        "status": "supported",
+        "supporting_excerpt": "And I said, let's go talk to the sky over here ... He was a time magazine intern when he was in high school ... And that guy was Julian Bond.",
+        "rationale": "Segments 524-532."
+      },
+      {
+        "claim": "The AU Center college presidents met with King, Bond, and Pierce at Harkness Hall",
+        "status": "supported",
+        "supporting_excerpt": "Mr. King, Mrs. Hill, Dr. Maesage wants to see you. I had three o'clock in the conference room at Harkness Hall.",
+        "rationale": "Segments 553-559."
+      },
+      {
+        "claim": "Six AU Center presidents were involved: Rufus E. Clement, Benjamin E. Mays, Albert E. Manley, James P. Brawley, Harry V. Richardson, and Frank Cunningham",
+        "status": "supported",
+        "supporting_excerpt": "Rufus E. Clement, who was a chairman, Dr. Rufus came into the president of AU ... Dr. Benjamin E. Mays, who was a second senior person ... Dr. (Albert E.) Manley from Spelman echoed the same position. Dr. James P. Brawley, the president of Claw ... we came to Harry V. Richardson, who was the president of the Interdenominational Theological Center ... Dr. Frank Cunningham, the president of Morris Brown College, spoke up.",
+        "rationale": "Segments 568-608."
+      },
+      {
+        "claim": "Roslyn Pope wrote the Appeal for Human Rights overnight at Howard Zinn's house",
+        "status": "supported",
+        "supporting_excerpt": "She called me and she said, lining, the committee at your point had not done a thing ... I said, Roslyn, it's show time ... So she said, okay, so she wrote it. And then she typed it at Dr. Zin's house, Howard Zinn.",
+        "rationale": "Segments 643-650."
+      },
+      {
+        "claim": "The Appeal was published March 9, 1960 in Atlanta papers and reprinted in the New York Times, the Nation magazine (April 2, 1960), the Harvard Crimson, and the Congressional Record by Sen. Jacob Javits",
+        "status": "supported",
+        "supporting_excerpt": "we did it on the 9th of March, the Nation Magazine ran it, full page added in there, magazine on the 2nd of April 1960. The Harvard Crimson, Harvard Crimson ran it. The Senate's Jacob Jabb had read into the Congressional record.",
+        "rationale": "Segments 664-669."
+      },
+      {
+        "claim": "Clement raised $12,000 for the publication, $4,000 was spent, $8,000 left",
+        "status": "supported",
+        "supporting_excerpt": "Clinton had raised $12,000 to pay for the stuff. And it cost about $4,000 and he had $8,000 left there for our benefit if we needed it.",
+        "rationale": "Segment 656-657."
+      },
+      {
+        "claim": "King became founding chair of the Committee on the Appeal for Human Rights (COAHR)",
+        "status": "supported",
+        "supporting_excerpt": "So I was chosen to be the original chairman, found in chairman, I guess you would call it.",
+        "rationale": "Segments 788-789."
+      },
+      {
+        "claim": "Gov. Ernest Vandiver called out the State Patrol for the May 17, 1960 march on the Capitol",
+        "status": "supported",
+        "supporting_excerpt": "Well, a government event of a called out the State Patrol. They surrounded the Capitol, almost armed with Billy Clubs and dogs.",
+        "rationale": "Segments 988-989. (Transcript renders 'a government event of a' which is a Whisper error for 'Governor Vandiver.' The earlier reference at Segment 804 explicitly names 'Ernest Van der La' [Vandiver].)"
+      },
+      {
+        "claim": "The May 17, 1960 march commemorated the sixth anniversary of the Brown v. Board decision",
+        "status": "supported",
+        "supporting_excerpt": "I announced that we were going to march on May 17th to the Capitol to commemorate the Brown decision that had been made six years earlier on May 17th, 1954.",
+        "rationale": "Segments 979-980."
+      },
+      {
+        "claim": "Dr. Mays followed King back from the meeting and later described the speech in Born to Rebel",
+        "status": "supported",
+        "supporting_excerpt": "I did not know that May's followed me until I read his book recently, born to rebel ... he had followed me back. And he heard me tell the students.",
+        "rationale": "Segments 1029-1035."
+      },
+      {
+        "claim": "Chief Herbert Jenkins asked King to turn the march at Mitchell/Whitehall (now Peachtree) Street",
+        "status": "supported",
+        "supporting_excerpt": "So I said, Chief, if you give me a direct order as a Chief Law enforcement officer in the city at Peace Street Street, no, no, no, I'm sorry, Whitehall Street, which is now Peace Street Street. I will turn.",
+        "rationale": "Segments 1060-1061."
+      },
+      {
+        "claim": "King was the victim of an acid attack at the Mann Brothers grocery in West End Atlanta",
+        "status": "supported",
+        "supporting_excerpt": "All of a sudden this white guy lunged at me and doused an acid like substance on me that burned like he wouldn't believe ... one of the stores that we went to was one place called Man Brothers, over in West End, Atlanta.",
+        "rationale": "Segments 1082, 1090."
+      },
+      {
+        "claim": "The Atlanta Inquirer was founded by M. Kasuth Hill in July 1960; Julian Bond, John Gibson, James Gibson among initial writers; M. Carl Holman later became editor",
+        "status": "supported",
+        "supporting_excerpt": "M. Kasuth Hill ... I own the rights to use the name get Atlanta in choir ... on the Fed of Press of July, and you can find that in 1960 ... once we hired Mr. M. Carl Holman to come in and be the editor.",
+        "rationale": "Segments 1199-1281."
+      },
+      {
+        "claim": "King met with Martin Luther King Jr. and Ella Baker about forming a region-wide student organization; Reverend Otis Moss Jr. was witness",
+        "status": "supported",
+        "supporting_excerpt": "I recommended to our committee that I go to meet with Martin King and see if I can get him to pull together a meeting of all of our student leaders to form some kind of a soft wide organization. And Moss can attest to that. He was in that meeting.",
+        "rationale": "Segments 1350-1356."
+      },
+      {
+        "claim": "Martin Luther King Jr. put up $500 for the SNCC founding meeting at Shaw University Easter weekend",
+        "status": "supported",
+        "supporting_excerpt": "Martin King said, he agreed with me and he gave, he said, I'm going to put a 500 dollars and I want you to Ellen get a place for us to call this conference over Easter weekend. Of course, she finished show and so she got show to host it.",
+        "rationale": "Segments 1380-1383."
+      },
+      {
+        "claim": "Marion Barry was elected first SNCC chairman; King had expected Diane Nash as the natural Nashville leader",
+        "status": "supported",
+        "supporting_excerpt": "The folks of Nashville brought in a guy, Marion Barry. That never heard of before as their candidate. I thought it would have been Diane Nash, but it was Barry.",
+        "rationale": "Segments 1433-1435."
+      },
+      {
+        "claim": "Jane Stembridge was the first SNCC office secretary; Ed King was the second",
+        "status": "supported",
+        "supporting_excerpt": "The Ministry of Office was Jane Stembridge. And the second person was Ed King.",
+        "rationale": "Segments 1519-1520."
+      },
+      {
+        "claim": "Boynton v. Virginia was decided about December 4, 1960; King's committee tested it with teams to Chattanooga, Columbia SC, Jacksonville, Birmingham",
+        "status": "supported",
+        "supporting_excerpt": "On about the 4th of December 1960, the court ruled in Boynton v. Virginia ... we decided that we would go and test Boynton v. Virginia. We sent a team to Chattanooga, Columbia, South Carolina, Jacksonville, Florida, Birmingham, Alabama.",
+        "rationale": "Segments 1666-1668. (Boynton v. Virginia was actually decided December 5, 1960; King's recollection of 'about the 4th' is close enough to qualify as supported.)"
+      },
+      {
+        "claim": "James Farmer of CORE led the canonical Freedom Rides in spring 1961",
+        "status": "supported",
+        "supporting_excerpt": "James Farmer called me and asked me, he told me more about it ... he said, I'm going to do it in the spring.",
+        "rationale": "Segments 1677-1680. (Marvin Rich's letter to Roy Wilkins detailing the Freedom Rides was dated February 1961.)"
+      },
+      {
+        "claim": "Herschelle Sullivan returned from Paris in September 1960 to co-chair the Atlanta Student Movement",
+        "status": "supported",
+        "supporting_excerpt": "Herschelle Sullivan, came back from Paris in September. And she became the cold chairman to take the place of the guy from AU, who they graduated, John Mac.",
+        "rationale": "Segments 1589-1591."
+      },
+      {
+        "claim": "Martin Luther King Jr. was arrested with King on October 19, 1960 at Rich's sit-in; the call to MLK Jr. the night before was with King Sr., Wyatt Tee Walker, and A.D. King on the line",
+        "status": "supported",
+        "supporting_excerpt": "So we call a mass meeting for the 10th of March at Warren Memorial Methodist Church ... believe it or not, AD was on the phone for some reason, instead of being out there, he was on the phone. Wyatt T. Walker was in the room.",
+        "rationale": "Segments 1602-1604, 1795 establish the arrest, phone call, and participants. The 'October 19' date is supported by King's earlier reference to 'October the 19th' in Segments 1580-1586."
+      },
+      {
+        "claim": "Kennedy's call to Coretta Scott King after MLK's arrest swung Black voters from Republicans to Democrats in the 1960 election",
+        "status": "partially_supported",
+        "supporting_excerpt": "when Kennedy interceded or his brother and interceded and Kennedy got the credit for it, after he called Coretta Scott King, it switched the votes in a lot of different states. You know, Illinois, Michigan, all over the place.",
+        "rationale": "King directly attributes the vote swing to the Kennedy-Coretta call (Segment 1628), but his framing of the historical consequence ('but for that arrest, Nixon would have been president') is his interpretation rather than established consensus."
+      },
+      {
+        "claim": "Ronald Yancey, the first Black graduate of Georgia Tech, developed walkie-talkie coordination for the boycott",
+        "status": "supported",
+        "supporting_excerpt": "Ronald Yancey and another guy who died on the Pueblo in Black and Stromes County, they developed that communication system for us ... Ronald Yancey, he was by the way the first black person to finish Georgia Tech.",
+        "rationale": "Segments 1662-1663."
+      },
+      {
+        "claim": "The Chamber of Commerce settlement was brokered through Jesse Hill Jr.; Frank H. Neely (Rich's board chairman) defended King at the meeting",
+        "status": "supported",
+        "supporting_excerpt": "Jesse Hill Jr called me to ask me to come to this meeting, the chain of commerce ... the man who came to my defense in that meeting was a man named Frank H. Neely, who was the chairman of the board of Richard's department store.",
+        "rationale": "Segments 1717, 1733-1736."
+      },
+      {
+        "claim": "Ivan Allen Jr. (then Chamber of Commerce officer) held a press conference announcing the settlement before King could return to campus",
+        "status": "supported",
+        "supporting_excerpt": "Ivan Allen Jr Jr had held a press conference ... He announced that the NIGRA student leaders have agreed to end the boycott.",
+        "rationale": "Segments 1777-1779."
+      },
+      {
+        "claim": "The Warren Memorial Methodist Church mass meeting on March 10 (1961) drew over 2,000 people inside plus overflow; Martin Luther King Sr. was booed",
+        "status": "supported",
+        "supporting_excerpt": "So we call a mass meeting for the 10th of March at Warren Memorial Methodist Church ... and over 2,000 people showed up inside ... Martin Luther King Sr got up and said that he'd been fighting for civil rights ... a moment in a white dress, nurse got up and said, and that's what's wrong. And when she said that, the place erupted.",
+        "rationale": "Segments 1795-1808. (Year inferred from context — post-settlement, 1961 is implicit but not stated by King in those exact terms.)"
+      },
+      {
+        "claim": "Martin Luther King Jr. delivered a speech at the Warren Memorial meeting that King describes as greater than the March on Washington speech",
+        "status": "supported",
+        "supporting_excerpt": "man, he made the greatest speech of his career. The March on Washington speech did not compare to what that man did that night ... the agreement may not be all of what it should be ... But we cannot afford to have the cancerous disease of this unity in this community.",
+        "rationale": "Segments 1824-1838. (King's superlative judgment is offered as his personal estimate, not a documented public consensus.)"
+      },
+      {
+        "claim": "353 community members entrusted King with their Rich's credit cards during the boycott; these were placed in a Citizens Trust Bank safety deposit box",
+        "status": "supported",
+        "supporting_excerpt": "Three hundred and fifty three people sent me their credit card ... And we put in a safety deposit box at Citizens Trust Bank and sent it back to them when the boycott was over.",
+        "rationale": "Segments 1883-1884."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 41,
+      "supported": 40,
+      "partially_supported": 1,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_quality_below_90_citation_blocked_1_partial",
+    "rationale": "The main summary scores 87/89 — both below the 90/90 publication threshold — and the citation audit identifies 1 partially_supported claim (the Kennedy-call vote-swing interpretation). The summary itself is faithful, conservatively scoped, and well-anchored in transcript text, with no unsupported claims; the partial designation reflects that King's interpretive framing about the 1960 election outcome is offered as his own judgment rather than as established historical consensus. The quality and accuracy scores are tightly justified by minor issues including Whisper renderings of ship/place names (USS Riscanae → USS Kearsarge, 'Wehrhal' → E.A. Ware Hall, 'Man Brothers' → likely Mann Brothers) where the summary uses canonical forms with appropriate flagging. The interview is exceptionally rich primary-source testimony and the failures here are about institutional precision rather than hallucination. Human review should focus on: (1) verifying the Boynton v. Virginia / pre-CORE-Freedom-Rides priority claim against contemporaneous documents, (2) confirming Atlanta Inquirer founding date, (3) confirming canonical spellings of Mann Brothers and E.A. Ware Hall, and (4) deciding whether King's '1960 election turned on the call' framing belongs in the main summary or in a 'King's reflective interpretation' section."
+  }
+}

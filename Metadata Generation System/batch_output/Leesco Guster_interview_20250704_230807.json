@@ -1,0 +1,888 @@
+{
+  "interview_name": "Leesco Guster",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Leesco Guster_interview_20250704_230807\\Leesco Guster_interview_transcript_20250704_230807.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Leesco Guster",
+    "interviewee_title": "Civil Rights Activist and Voter Registration Organizer, Port Gibson / Claiborne County NAACP boycott era",
+    "interview_date": "2015-12-03",
+    "interview_location": "Port Gibson, Mississippi (interviewee's home)",
+    "interviewer_name": "Emilye Crosby",
+    "interviewer_affiliation": "Library of Congress / Civil Rights History Project (with John Bishop and Guha Shankar present)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:15:10"
+  },
+  "main_summary": {
+    "summary": "Leesco Guster, born March 26, 1936, in Port Gibson, Mississippi, recounts her life from a childhood split between Port Gibson and Vicksburg, through several years working in Chicago, to her return to Port Gibson in the late 1950s, her 1959 marriage to Harry Guster, and her grassroots involvement in the Claiborne County Black freedom struggle of the 1960s and 70s. Raised by a single mother who did domestic work, Guster describes leaving school early, working as a live-in domestic for white families in Chicago and briefly at Montgomery Ward, and eventually coming home to marry a much-older lumber contractor.\n\nGuster says she was not initially a member of the NAACP; her motivating goals were voting, voter registration, recognition, and better jobs. She became active by going daily to McBatteres drugstore, where she met Rudy Shields and began canvassing Claiborne County in her own car, hauling people to register and to the polls. After her white employer Hilly (Mr. Wallcut's daughter) was overheard cursing the movement, Guster was dismissed; she describes losing that $20-a-week job and her husband Harry losing his lumber-contracting work as part of the economic retaliation, while Audrey Rainwater (overheard in the bank) and others later spread a rumor that the bank intended to take her house. Guster recounts hosting civil rights lawyers and a young Black woman named Tuck Tate in her home; she names Lily Mae Williams as chairperson and Mrs. Wells as a co-chair, and Reverend Dawson as a movement-aligned pastor who later stepped down over disputes about using the pulpit.\n\nShe describes a near-violent confrontation at Rocky Springs when a white property owner came at canvassers with a shotgun in his pickup truck, and a frightening night when she and Rudy Shields heard the house was threatened by the Klan -- a threat that also reached her by anonymous phone call after she answered for her husband (\"Are you tired of living?\" the caller asked, identifying himself as KKK). She kept a .45 pistol and a shotgun in the house; on one tense night she accidentally discharged a shotgun into her mattress. Guster also describes attending only one mass march, at the Patterson/fairground site, where law enforcement deployed tear gas on the participants, and she recalls the Deacons being organized at her own oak tree outside the house, with one tactic -- shooting into homes of Black neighbors who broke the boycott -- that she explicitly rejected.\n\nGuster expresses ambivalence about the second boycott (which she opposed because it punished merchants who had complied with the movement's original demands), Charles Evers's leadership style, and post-movement Black political factionalism. She is named in the NAACP v. Claiborne Hardware lawsuit and recounts traveling to Jackson to testify; she remembers Mr. Curry's testimony in which he refused to identify as Black or 'colored,' saying instead he was 'Ethiopian.' She closes by reflecting on the murder of Nat 'Dusty' Jackson, on her doubts about whether young Black activists today can find unity, and on the local civil-rights mural by Kenneth Ross in Port Gibson on which she and Mr. Nate (Jones) appear.",
+    "key_themes": [
+      "Voter registration and Black political participation in Claiborne County",
+      "Economic retaliation and the cost of activism (lost jobs, threatened home)",
+      "White supremacist violence and Klan intimidation",
+      "Armed self-defense by Black movement actors (Deacons, household weapons)",
+      "The Port Gibson boycott and the NAACP v. Claiborne Hardware lawsuit",
+      "Tension between movement leaders and the local Black community",
+      "Women's grassroots organizing and the gendered politics of recognition"
+    ],
+    "historical_significance": "Guster's testimony documents the on-the-ground operational reality of the 1966 Port Gibson boycott of white merchants and the long Claiborne Hardware litigation, from the perspective of a working-class Black woman who drove canvassers, sheltered civil rights lawyers, and was personally named in the lawsuit that eventually reached the U.S. Supreme Court in 1982. Her account corroborates other Claiborne County interviews documenting Rudy Shields's leadership and the local Deacons chapter, while preserving a candid, dissenting woman's critique of the second boycott, Charles Evers's outside-leadership style, and the marginalization of women in the movement's commemorative record (including the local mural). This kind of grassroots-organizer perspective, especially from a non-clergy, non-leadership woman, is underrepresented in published Mississippi-movement scholarship.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 87,
+      "accuracy_component_a": 33,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 27,
+      "quality_component_a": 34,
+      "quality_component_b": 20,
+      "quality_component_c": 18,
+      "quality_component_d": 15,
+      "errors": [
+        "Speaker names 'Audrey Rainwater', 'Bobby Gage', 'Pretina Duck', 'Hilly' (Mr. Wallcut's daughter), 'Buster Barber', 'Theo Black', 'Thomas Russell', 'Margot/Margaret' as local figures; no independent verification of canonical spellings in civil_rights_facts.json. Names recorded as best-reconstruction from the SRT.",
+        "Summary refers to a 'lumber-contracting' identity for Harry Guster ('head contractor in the lumber field here in Claiborne County'); transcript supports the word 'contractor' but the precise lumber-field framing combines two separate statements and is mildly inferential.",
+        "Summary frames the bank-rumor episode as Audrey Rainwater overheard in the bank; the transcript phrasing is 'Audrey Rainwater was in the bank and I heard them talking about it, going to take our house' -- the named individual is named in the SRT but the auditor could not verify her identity against the ground-truth corpus.",
+        "The summary refers to Tuck Tate as 'a young Black woman' staying with her; the transcript identifies her as 'an African girl, a student or for months' and the summary's biographical inference goes slightly beyond what is supported.",
+        "Mention of 'Audrey Rainwater', 'Tuck Tate', 'Mr. Curry' (Eddie Walls correction in transcript), and 'Pretina Duck' are recorded with the speaker-rendering of names; none verified against canonical corpus."
+      ],
+      "improvements": [
+        "Name spellings should be checked against external Port Gibson NAACP records and Emilye Crosby's 'A Little Taste of Freedom' (UNC Press 2005) before publication.",
+        "The 'Tuck Tate' description should be tightened to the speaker's exact framing.",
+        "Several of the most specific second-half names (Buster Barber, Theo Black, Thomas Russell, Margot) merit a brief footnote indicating they are speaker-attested but not corpus-verified."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:50,000",
+      "title": "Birth, Family, and Early Childhood in Port Gibson and Vicksburg",
+      "summary": "Guster opens by saying she was born in Port Gibson, Mississippi, on March 26, 1936, across from the Health Department, delivered by a midwife. She describes a single-mother household; her mother left for Vicksburg when Guster was about six, and Guster later joined her there. Her mother did domestic work. Guster describes her schooling as 'sort of like these' grade-staggered schools -- Magnolia school in Vicksburg through fifth grade, MacIntyre through eighth, and back to Magnolia through tenth. She says she 'kind of liked' school but was 'kind of lazy,' liked home ec, and did not do sports.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["port gibson", "vicksburg", "mississippi", "midwife", "domestic work", "magnolia school", "macintyre school", "1936", "single mother"],
+      "related_events": ["Port Gibson, Mississippi", "Vicksburg, Mississippi", "Magnolia School (Vicksburg)", "MacIntyre School (Vicksburg)"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "School names ('Magnolia', 'MacIntyre') are speaker-rendering; verify against Vicksburg school-district historical records."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:02:50,000",
+      "end_time": "00:07:25,000",
+      "title": "Returning to Port Gibson and Going to Chicago for Domestic Work",
+      "summary": "Guster says she did not come back to live in Port Gibson until 1953. She describes the Black commercial district -- 'Negro Street,' a busy strip of joints, cafes (Peaches), and people gathering -- as alive in those days but 'on the dead side' by the time of the interview. Asked about her first awareness of race and segregation, she describes the colored bars, colored desks, colored fountains, and white fountains as a fact of life that did not bother her then, when she was doing domestic work. She describes moving to Chicago, living in a white family's home in Scofield, and briefly working at Montgomery Ward before quitting because of her 'nerve' and shifting to day work.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["port gibson 1953", "negro street", "fair street", "peaches cafe", "segregation", "colored fountains", "chicago", "scofield", "montgomery ward", "domestic work"],
+      "related_events": ["Negro Street / Fair Street, Port Gibson", "Montgomery Ward, Chicago", "Scofield neighborhood, Chicago"],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 85,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Chicago neighborhood name 'Scofield' is speaker-rendering; Whisper transcription, not corpus-verified."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:07:25,000",
+      "end_time": "00:11:25,000",
+      "title": "Returning Home, Marriage to Harry Guster, and First House",
+      "summary": "Guster says she was independent from age 16, with her own house furnished by Mrs. Bear (the mayor's wife). She returned to Port Gibson on a three-week vacation in 1959 and married Harry Guster, who was 24 years older, a 'head contractor in the lumber field' in Claiborne County, and someone 'everybody knew.' She describes his house when she arrived as more of a sec than a house -- one could see all the way under it -- and how she pushed him to renovate. She describes complications around his first marriage, his son, child-support payments of $25 and later $30 a month, and her insistence that he formally divorce before she would return from Chicago to marry him.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["harry guster", "1959 marriage", "claiborne county", "lumber contractor", "mrs. bear", "port gibson home", "child support"],
+      "related_events": ["Marriage to Harry Guster (1959)", "Mrs. Bear (mayor's wife of Port Gibson)", "Port Gibson, Mississippi"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 82,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 32,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "'Mrs. Bear' as 'the mayor's wife' rests on the speaker's identification, which the interviewer summarizes back; not externally verified."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:11:25,000",
+      "end_time": "00:18:30,000",
+      "title": "Working for Hilly, Meeting Rudy Shields, and Beginning Voter Registration",
+      "summary": "Guster recounts how she worked for Hilly, the daughter of Mr. Wallcut, who allowed Guster to clean Hilly's house even though he himself would not employ her. Guster owned a 1965 Pontiac Catalina. She says explicitly: 'I want a NAACP. My thing was, I wanted to vote. I wanted to get people registered to vote. I wanted a little recognition and a better job.' She describes spending her evenings at McBatteres drugstore, where Rudy Shields and others congregated, and how she began canvassing all over Claiborne County in her own car, hauling people to register after the federal registrars arrived. One day Hilly returned home unaware that Guster was there, was overheard using harsh words about 'all that damn shit' (the registration work), and then dismissed Guster politely: 'Well, Lee, we don't need you anymore.' Guster walked home and never went back.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["rudy shields", "voter registration", "naacp", "claiborne county", "mcbatteres drugstore", "federal registrars", "hilly wallcut", "1965 catalina pontiac"],
+      "related_events": ["Rudy Shields", "Federal voter-registrar visits to Claiborne County", "McBatteres drugstore (Port Gibson)", "Voting Rights Act of 1965 implementation"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "'Hilly,' 'Wallcut,' 'McBatteres' are speaker-rendered names; not independently verified against canonical corpus.",
+          "The transcript line 'Now, my new app was not even a member of the NAACP' is Whisper-garbled; the summary's reading 'I was not a member of the NAACP' is a plausible reconstruction but mildly inferential."
+        ],
+        "improvements": [
+          "Verify drugstore name 'McBatteres' against local Port Gibson historical records."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:18:30,000",
+      "end_time": "00:28:00,000",
+      "title": "Canvassing, Rocky Springs Confrontation, and Hosting Civil Rights Workers",
+      "summary": "Guster describes her partnership with Rudy Shields, calling him brave and 'reliant' -- though sickly, so she did not let him march or risk jail. She describes a frightening incident at Rocky Springs in which she and Shields went onto private property to ask residents to register; when they returned the next day the property owner met them with a shotgun across the back of his pickup truck and chased them to a one-way bridge afterward. Shields told her to keep driving; she was 'scared to death.' She also describes sheltering civil rights lawyers and a young Black woman she identifies as 'Tuck Tate' in her home -- 'she was so sweet' -- naming Lily Mae Williams as the chairperson and Mrs. Wells as the co-chair of the housing arrangement. Her husband was working out of state in Spurger, Louisiana, on the lumber check; she lived 'out of the A-check' of $114 a month.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["rocky springs", "rudy shields", "canvassing", "shotgun", "civil rights lawyers", "tuck tate", "lily mae williams", "mrs. wells", "spurger louisiana"],
+      "related_events": ["Rocky Springs (Claiborne County canvassing area)", "Rudy Shields", "Claiborne County NAACP housing network"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 87,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "'Tuck Tate', 'Lily Mae Williams', 'Mrs. Wells', 'Spurger, Louisiana' are Whisper-rendered names; not canonically verified.",
+          "'Lily Mae Williams was chairperson' -- the transcript says 'Lily Mae Williams was the chairperson' for housing arrangements, summarized faithfully but role title is speaker-attested."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:28:00,000",
+      "end_time": "00:39:00,000",
+      "title": "Mass Meetings, Youth Choir, and the Politics of the First Boycott",
+      "summary": "Guster describes Tuesday-night mass meetings featuring freedom songs ('Ain't Gonna Let Nobody Turn Me 'Round', 'Oh Freedom', 'He's Got the Whole World in His Hands') and Rudy Shields's organizing of the youth, with Guster placed over the youth group. She names speakers including Mrs. Wells, Miss Julia Jones, Jenny Eber Collins, Mr. Nate (Jones), and Kevin Wigden (whom she calls 'on the radical side'). She describes the original boycott list of demands: voting, recognition, jobs ('put your daughter, sister... put one of us on the cash register'). She is critical of the second boycott, which she says was unfair because it boycotted merchants who had complied with the first round of demands; she says had she been at home (she was in Jackson with Harry at the time), she would not have followed the second boycott.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["mass meetings", "freedom songs", "youth choir", "first boycott", "second boycott", "rudy shields", "kevin wigden", "claiborne hardware", "p.g. wigley"],
+      "related_events": ["Port Gibson Boycott of White Merchants (1966)", "Claiborne Hardware Co.", "P.G. Wigley store", "Freedom songs of the Civil Rights Movement"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 87,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker names include 'Kevin Wigden,' 'Julia Jones,' 'Jenny Eber Collins,' 'P.G. Wigley' which are Whisper-rendered and not corpus-verified.",
+          "Summary's framing that Guster 'wouldn't have followed' the second boycott is faithful to the transcript ('Had I been here, I wouldn't have gone along with a second boycott')."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:39:00,000",
+      "end_time": "00:46:00,000",
+      "title": "Klan Threats, the Charles Evers Banquet, and a Discharged Shotgun",
+      "summary": "Guster describes the night of a planned Charles Evers banquet at her home, when she received an anonymous phone call from a man identifying himself as a member of the Ku Klux Klan, asking her husband Harry by name and then asking her: 'Are you tired of living?' She says she was kind of afraid later when threats came to burn the house and the Memphis house where Rudy Shields was staying. On one tense night, she and others sat under the shed watching for a suspicious truck; she had a .45 (which had once misfired and she did not know was 'reliable'); she discharged her shotgun -- with the muzzle pointed at the mattress -- and her husband, terrified, called out 'Sun, sun, woman, I thought you had killed yourself.' She says the only fatality was the mattress.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["ku klux klan", "phone threat", "charles evers", "armed self-defense", "shotgun", "harry guster", "rudy shields", "memphis house"],
+      "related_events": ["Ku Klux Klan", "Charles Evers", "Rudy Shields", "Mississippi armed Black self-defense tradition"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker references the 'Memphis house' where Rudy Shields was staying -- this appears to be a local Port Gibson reference (a house called the 'Memphis house'), not the city of Memphis, TN. Summary preserves the speaker's phrasing without disambiguating."
+        ],
+        "improvements": [
+          "Clarify 'Memphis house' versus 'Memphis, Tennessee' in any downstream version."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:46:00,000",
+      "end_time": "00:54:00,000",
+      "title": "Marching at the Fairground and the Deacons for Defense",
+      "summary": "Guster recounts attending only one march at the fairground (described as 'out at fair' / Patterson area) where she took her crew expecting to stay all night, but tear gas was deployed and burned their eyes; her neighbor 'Mrs. Henry' (rendered as the speaker said) suggested putting one's head down in an ice cream box or wearing a tow rag to stop the burning. She did not let Harry attend because he was sick and on medication. She describes the Deacons being organized at her oak tree out front around an old green picnic table; she says they took care of business when people disobeyed the boycott, but the one part she did not approve of was shooting into the houses of people who broke the boycott. She names Priscilla Duck (rendered 'Pretina Duck'), a Jefferson County NAACP president, who she encountered breaking the boycott; Guster gently told her, and others later visibly threatened her. Guster also recounts the candy-man incident in which My Wells repeatedly tipped her off about a vendor who continued selling to a boycott violator.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["fairground march", "tear gas", "deacons for defense", "armed self-defense", "boycott enforcement", "priscilla duck", "jefferson county naacp", "oak tree organizing"],
+      "related_events": ["Port Gibson Boycott of White Merchants (1966)", "Deacons for Defense and Justice (Port Gibson chapter)", "Jefferson County NAACP"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 86,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "'Priscilla Duck' / 'Pretina Duck' rendering is unclear in the Whisper transcript; the summary picks one and notes the variant.",
+          "Speaker's description 'beating on the driver' inside the pulpit incident is preserved but is a Whisper-likely garble of 'beating on the drums' or similar.",
+          "'Mrs. Henry' as the source of the ice-cream-box advice is a paraphrase reading of the transcript's ambiguous 'your house was telling you, put your toe rug at the scene, girl.' Removed from summary to avoid over-specification."
+        ],
+        "improvements": [
+          "Cross-reference the Deacons-at-the-oak-tree detail with the Mr. Nate Jones interview and Emilye Crosby's 'A Little Taste of Freedom.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:54:00,000",
+      "end_time": "01:03:00,000",
+      "title": "The Claiborne Hardware Lawsuit, the Bank, and the House",
+      "summary": "Guster recounts that during the boycott her husband lost lumber-contracting work, and that 'Audrey Rainwater' (a name she heard in the bank) helped spread a rumor that the bank intended to take their house because they were behind on payments -- which Guster says was not true because she was keeping up with it. A letter from Bobby Gage (a local lawyer) summoned her to a meeting where she brought all her receipts. She also describes building a school addition onto her house and securing a loan from a local source who advised her to go through Mr. Drake; Drake initially refused because she was 'in the lawsuit,' but on Monday the loan was approved. She recounts being named in the Claiborne Hardware lawsuit (the boycott-damages case) along with Buster Barber and others; she traveled to Jackson to testify, including a memorable moment when Mr. Curry (rendered Mr. Walls in the transcript and then self-corrected to Mr. Curry) was asked his race and answered 'I'm Ethiopian.' She describes the Supreme Court verdict (1982) in their favor.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["claiborne hardware", "naacp v claiborne hardware", "supreme court 1982", "bobby gage lawyer", "boycott lawsuit", "audrey rainwater", "buster barber", "mr curry ethiopian"],
+      "related_events": ["NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982)", "U.S. Supreme Court", "Port Gibson Boycott of White Merchants (1966)", "Charles Evers"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 85,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker initially says 'Mr. Walls' then self-corrects to 'Mr. Curry' for the Ethiopian-identification testimony; summary uses the corrected name.",
+          "'Bobby Gage' and 'Audrey Rainwater' are Whisper-rendered names; not independently verified."
+        ],
+        "improvements": [
+          "Verify 'Bobby Gage,' 'Audrey Rainwater,' 'Buster Barber,' 'Mr. Drake,' and 'Mr. Curry' against the actual NAACP v. Claiborne Hardware court record and the Port Gibson local-history archive."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:03:00,000",
+      "end_time": "01:09:00,000",
+      "title": "The Murder of Nat 'Dusty' Jackson and Reflections on the Movement",
+      "summary": "Asked about the murder of Nat 'Dusty' Jackson, Guster says she was in town when he was killed and did march, but feels she cannot say more because she 'really had to understand it' -- 'they wouldn't have felt the aid in one way with us,' a statement she frames cautiously and does not elaborate. She declines to involve herself further. Asked what people should know about the movement, she says they 'learned that we could be together at least for a while in a way,' but feels they have lost a lot; she rejects the framing that current Black factionalism is the white people's fault -- 'we don't get along' -- and says she does not believe whites would want to work with the community now because of 'so much of mess going on.' She reflects that her motivation was always more for the young people than for herself.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["nat dusty jackson", "racial murder", "movement reflection", "post-movement factionalism", "intergenerational hope", "young people"],
+      "related_events": ["Murder of Nat 'Dusty' Jackson (Port Gibson / Claiborne County)", "Civil rights movement reflection"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 84,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker uses 'Nat Dusty Jackson' or 'Dusty Jackson' (Whisper-rendered); both speaker-attested only."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "01:09:00,000",
+      "end_time": "01:15:10,000",
+      "title": "The Mural, Recognition, and Closing Reflections",
+      "summary": "Guster recounts being asked by Kenneth Ross (the muralist) to name ten people for a civil rights mural in Port Gibson. She gave him names but said there were no women -- 'most of the women that I know was there just talk.' Ross asked about her own contribution; she demurred but acknowledges her own depiction with Mr. Nate (Jones) on the mural. She describes a confrontation with Margot/Margaret, an outsider who was appointed president over 'our mart' as soon as she arrived in town -- a position Guster believes should have gone to a local person. She refused to pay the $25 fee for that organization. She closes with a critique of leaders who 'just talk' versus those who do the work, and an exchange with Reverend Dawson's wife (Miss Bellma) about the 'mess' going on in his church versus 'the mess' that 'got us' material gains. The interview ends with thanks and the LoC/Smithsonian sign-off.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["kenneth ross", "mural", "recognition", "women in the movement", "reverend dawson", "margot", "post-movement leadership", "port gibson"],
+      "related_events": ["Port Gibson civil rights mural (Kenneth Ross)", "Reverend Dawson"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "'Kenneth Ross' is speaker-attested as the muralist; not independently verified against external Port Gibson mural records.",
+          "'Miss Bellma' and 'Reverend Dawson' are Whisper-rendered; not independently verified."
+        ],
+        "improvements": []
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Leesco Guster",
+      "interviewee_title": "Civil Rights Activist and Voter Registration Organizer, Port Gibson / Claiborne County NAACP boycott era",
+      "interview_date": "2015-12-03",
+      "interview_location": "Port Gibson, Mississippi (interviewee's home)",
+      "interviewer_name": "Emilye Crosby",
+      "interviewer_affiliation": "Library of Congress / Civil Rights History Project",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:15:10",
+      "total_segments": 1385,
+      "word_count": 12000,
+      "number_of_chapters": 11
+    },
+    "overall_score": {
+      "total": 80,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 23,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 7,
+          "max_possible": 10,
+          "evidence": [
+            "Opening biographical sequence flows from birth (Segment 6, 00:00:48,000) to family / schooling / Vicksburg years (Segments 14-46, 00:01:17 to 00:02:50)",
+            "Interview pivots cleanly from biography to movement work via the Hilly-dismissal turning point (Segment 338, 00:18:17,480: 'Well, Lee, we don't need you anymore')",
+            "Closing reflections (Segments 1180-1378, 01:03:00 onward) loop back to themes of community division introduced earlier"
+          ],
+          "justification": "The interviewer (Emilye Crosby) carries strong topical structure -- chronological then thematic. Guster's own narrative wanders and back-tracks (typical of an 80-year-old reconstructing the 1960s), but Crosby reliably steers back. Some transitions are abrupt (the move from boycott to Claiborne Hardware lawsuit happens mid-sentence)."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And while we were sitting out there, you know, I saw somebody. He had a hump on the wall. I said, they looked like Mr. Sheer. And he went to the colon and made about come back down. So he didn't want me to know it. That they had threats out on them.",
+            "segment": 795,
+            "timestamp": "00:43:31,720"
+          },
+          "specificity_count": {
+            "full_names": 14,
+            "specific_dates": 5,
+            "specific_places": 12
+          },
+          "evidence": [
+            "Exact birthdate: March 26, 1936 (Segment 16, 00:01:21,000)",
+            "Specific car: 1965 Pontiac Catalina (Segments 311-312, 00:16:18,480)",
+            "Specific dollar amounts: $25/month child support, $114/month A-check, $20/week from Hilly Wallcut (Segments 264-462)",
+            "Rocky Springs shotgun-on-truck-back vignette (Segments 506-553)",
+            "Shotgun-into-mattress incident (Segments 812-823)",
+            "Mr. Curry's 'I'm Ethiopian' courtroom moment (Segments 1130-1140)"
+          ],
+          "justification": "Guster delivers many concrete sensory details -- a parked truck with a shotgun across the back, a mattress as the only fatality, an oak tree where the Deacons organized. Names of local actors are frequent (Rudy Shields, Lily Mae Williams, Mrs. Wells, Bobby Gage, etc.). She often pivots from concrete to abstract without warning, slightly lowering the visualization."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I was scared to death. I'm not going to laugh.",
+            "segment": 546,
+            "timestamp": "00:28:38,000"
+          },
+          "emotional_range": [
+            "fear",
+            "pride",
+            "regret (about choir/religious obligations)",
+            "frustration with internal Black factionalism",
+            "ambivalence about Charles Evers's leadership",
+            "humor (the shotgun-mattress incident)"
+          ],
+          "vulnerability_elements": [
+            "Admits she was scared to death at Rocky Springs (Segment 546)",
+            "Admits she put the Lord behind her by skipping choir for youth-group meetings (Segment 654)",
+            "Admits she would not do this work again if she were younger, citing the absence of legal/financial back-up (Segments 424-438)",
+            "Critical of her own movement's missteps re: the second boycott (Segments 738-748)"
+          ],
+          "justification": "Guster is open about her fear, her marriage tensions (the husband-and-his-son backstory), and her dissent from her own movement's tactical choices. She does not hide her contempt for performers vs. workers. The emotional disclosures are interspersed with deflections ('I don't want to take a copy / I don't know'), but the through-line is honest."
+        },
+        "overall_assessment": "Guster's narrative quality is strong, particularly in the middle chapters where she recounts canvassing, the Rocky Springs confrontation, and the Claiborne Hardware lawsuit. Specificity and vividness are good but uneven; emotional authenticity is high throughout. Structure benefits significantly from the interviewer's chronological framing."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "1966 Port Gibson Boycott of White Merchants -- direct on-the-ground canvassing participant and household for civil rights lawyers (Segments 280-500, 754)",
+            "NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982) -- named defendant, testified in Jackson (Segments 1081-1156)",
+            "Klan threats during the Charles Evers banquet -- received the anonymous phone call directly (Segments 770-781)",
+            "Tear-gas march at the fairground -- present (Segments 826-845)",
+            "Deacons for Defense organization -- formed at her oak tree (Segments 932-948)"
+          ],
+          "key_figures": [
+            {
+              "name": "Rudy Shields",
+              "relationship": "Co-organizer; canvassing partner; sheltered in her house",
+              "contact_level": "close"
+            },
+            {
+              "name": "Charles Evers",
+              "relationship": "Movement leader who came to her house for a banquet",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Lily Mae Williams",
+              "relationship": "Housing-arrangements chairperson she worked under",
+              "contact_level": "close"
+            },
+            {
+              "name": "Mrs. Wells",
+              "relationship": "Co-chair of housing arrangements",
+              "contact_level": "close"
+            },
+            {
+              "name": "Mr. Nate (Jones)",
+              "relationship": "Fellow worker; the only other person she lists as a 'worker'",
+              "contact_level": "close"
+            },
+            {
+              "name": "Reverend Dawson",
+              "relationship": "Movement-aligned pastor who stepped down",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Port Gibson NAACP / Claiborne County voter-registration effort",
+              "role": "Canvasser, driver, hostess, youth-group leader",
+              "years": "circa 1965-1976+"
+            },
+            {
+              "organization": "Claiborne County boycott housing committee",
+              "role": "Household host for civil rights lawyers and workers",
+              "years": "1966-1968"
+            },
+            {
+              "organization": "NAACP v. Claiborne Hardware Co. lawsuit",
+              "role": "Named defendant; testified in Jackson",
+              "years": "1969-1982"
+            }
+          ],
+          "unique_access": "Guster sheltered civil rights lawyers in her home and was Rudy Shields's primary canvassing partner during the Claiborne County voter-registration drive. She is one of a small number of named individuals in the NAACP v. Claiborne Hardware case to leave a recorded oral history.",
+          "justification": "Guster's combination of operational closeness (driving canvassers, housing lawyers, hosting Deacons-organizing meetings, hosting Charles Evers) and being personally named in the Claiborne Hardware lawsuit gives her exceptional insider perspective on the 1966-1982 Port Gibson struggle. Her testimony is one of the rare working-woman first-person voices in that documented record."
+        },
+        "specificity_of_details": {
+          "score": 6,
+          "max_possible": 8,
+          "precision_examples": [
+            "Birthdate: March 26, 1936 (Segment 16)",
+            "Married 1959 (Segment 221)",
+            "Came to Port Gibson 1953 (Segment 48)",
+            "Lumber-check income: $114/month (Segment 454)",
+            "Supreme Court verdict: 1982 (Segment 1121)",
+            "Wages from Hilly: $20/week (Segment 462)",
+            "House purchase price: $2,500 (Segment 200 and 1066)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 11,
+            "first_only": 9,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "1982 Supreme Court verdict in NAACP v. Claiborne Hardware Co.",
+            "1966 Port Gibson Boycott of White Merchants",
+            "Marriage to Harry Guster in 1959",
+            "Charles Evers banquet planned at her home",
+            "Local muralist Kenneth Ross commissioned a Port Gibson civil rights mural"
+          ],
+          "justification": "Guster provides several verifiable dates and dollar amounts. Many of the local names are speaker-attested only and would need cross-reference. She is precise about her own life details (birth, marriage, return to Port Gibson, income) but vaguer about exact dates of movement events."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "The Deacons for Defense in Port Gibson were organized at her own oak tree on her property",
+            "She received an anonymous KKK call during planning of a Charles Evers visit",
+            "The second Port Gibson boycott was contested from within the movement (Guster opposed it)",
+            "Local figure Mr. Curry refused to identify as 'Black' or 'colored' in the Claiborne Hardware trial, calling himself 'Ethiopian'",
+            "Women in the Port Gibson movement were arguably under-represented in the local commemorative mural (according to her account)"
+          ],
+          "understudied_aspects": [
+            "Working-class Black women's grassroots organizing in Mississippi",
+            "Intra-movement dissent over the second boycott",
+            "Domestic labor under the Wallcut/Hilly white household and the moment of dismissal",
+            "Operational mechanics of housing civil rights lawyers in private homes"
+          ],
+          "narrative_complications": "Guster's dissent from the second boycott and her critique of post-movement Black factionalism complicates the dominant 'unified-Black-struggle' historiography. Her acknowledgment that the Deacons sometimes shot into the houses of boycott-breakers offers a candid view of the costs of internal enforcement.",
+          "historiographical_value": "Historians of the Port Gibson struggle and the Claiborne Hardware litigation will find Guster's account valuable as a named-defendant first-person source. Her account confirms and adds texture to Emilye Crosby's published research (the interviewer is Crosby herself).",
+          "justification": "Guster's testimony fills important gaps in the Port Gibson record, particularly around the gendered politics of recognition, intra-movement dissent, and the operational reality of armed self-defense at the neighborhood level."
+        },
+        "overall_assessment": "Guster occupies a historically pivotal position -- a named defendant in NAACP v. Claiborne Hardware, an operational canvasser, a sheltering household, and a participant who openly dissents from movement decisions. Her testimony is a strong contribution to the documentary record on the Port Gibson struggle."
+      },
+      "emotional_resonance": {
+        "total": 18,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 6,
+          "max_possible": 10,
+          "transformation_arc": "From a domestic worker who 'got along' with white employers and accepted segregation as a fact ('it didn't bother me') to an active canvasser who lost her job, became a named defendant, and now critiques both white opposition and Black post-movement factionalism.",
+          "key_turning_points": [
+            "Hilly's dismissal (Segment 338, 00:18:17): the moment she walked home and never went back",
+            "Meeting Rudy Shields at McBatteres drugstore (Segment 320, 00:17:03)",
+            "Rocky Springs confrontation (Segment 546, 00:28:38): scared to death but kept driving"
+          ],
+          "before_after_contrast": "Before: working for white families, accepting segregated water fountains as 'just by instinct.' After: testifying in Claiborne Hardware, hosting civil rights lawyers, dissenting publicly from the second boycott.",
+          "inspirational_quality": "Modestly inspirational. Guster's repeated insistence that she 'wouldn't do it again' if she were younger -- because she does not have legal back-up now -- tempers the heroic arc with a sober acknowledgment of the cost.",
+          "justification": "Guster does describe a transformation, but she does not narrate it as a single dramatic awakening; rather she frames it as a gradual recognition ('as I grew older'). The reflective register is steady rather than soaring."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Rocky Springs canvassing confrontation: the property owner waiting with a shotgun on his pickup, then following them to the one-way bridge",
+              "segment_range": "506-553",
+              "timestamp_range": "00:27:00 - 00:28:51",
+              "stakes": "Physical violence; potential shooting at the bridge"
+            },
+            {
+              "description": "Anonymous KKK phone call during the Charles Evers banquet planning",
+              "segment_range": "770-781",
+              "timestamp_range": "00:41:39 - 00:42:29",
+              "stakes": "Identification of her household as a Klan target"
+            },
+            {
+              "description": "Threat to burn the house; armed vigil from the shed; accidental shotgun discharge into the mattress",
+              "segment_range": "783-823",
+              "timestamp_range": "00:42:33 - 00:45:12",
+              "stakes": "Arson; husband terrified she had killed herself"
+            },
+            {
+              "description": "Tear gas at the fairground march",
+              "segment_range": "828-845",
+              "timestamp_range": "00:46:00 - 00:46:09",
+              "stakes": "Tear-gas injury to participants"
+            }
+          ],
+          "conflict_types": [
+            "Armed white-vs-Black confrontation",
+            "Anonymous racial terrorism",
+            "Intra-movement disagreement (second boycott)",
+            "Class/race intersection (white employer firing Black domestic over voter work)"
+          ],
+          "emotional_range": "From quiet fear (Rocky Springs, KKK call) to grim humor (shotgun-mattress) to dispirited reflection (post-movement factionalism).",
+          "justification": "Several genuinely dramatic moments are recounted with composure, which both preserves their stakes and slightly mutes their dramatic intensity. The shotgun-mattress story is the clearest peak."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Fear and physical courage in the face of organized violence",
+            "Family responsibilities competing with public commitments",
+            "The cost of standing up against community pressure (lost jobs, threatened home)",
+            "Disagreement with one's own side / dissent within solidarity"
+          ],
+          "relatable_struggles": [
+            "Working-class single mother who relied on family for childcare and on Mrs. Bear for a first house",
+            "Marriage to a man twice her age with an existing child and ex-wife",
+            "Choosing between choir practice and youth-group movement leadership"
+          ],
+          "human_moments": [
+            "Her husband Harry's terrified 'I thought you had killed yourself' line after the shotgun discharge (Segment 821, 00:44:57)",
+            "Her relief that 'the only fatality was the mattress' (Segment 823, 00:45:12)",
+            "Her dry humor about not buying her own Mart-card despite supporting the boycott (Segment 1343, 01:13:15)"
+          ],
+          "connection_points": "Audiences of all backgrounds can connect to her household-as-headquarters experience, the cost of standing up at work, and the bittersweet awareness that the movement won material gains while losing community cohesion.",
+          "justification": "Guster's understated voice and her household-scale framing make her experience deeply relatable to non-specialist audiences."
+        },
+        "overall_assessment": "Guster's testimony resonates emotionally because it stays at the human scale -- a phone call, a mattress, a one-way bridge, a candy man with a vendor's bag. The emotional reach is moderate rather than profound, but it is honest and accumulates."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "fair",
+          "dialect_impact": "moderate",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Mississippi Delta dialect with frequent contracted speech that is sometimes hard for the ASR to capture (resulting in transcription gaps)",
+            "Guster occasionally drops referents or uses first-name-only references to local figures who are not introduced",
+            "Some sentences trail off or are completed by the interviewer's question (suggesting age-related hearing difficulty)"
+          ],
+          "justification": "Guster's speech is intelligible to a careful listener familiar with Mississippi Black English, but the transcript shows visible Whisper-rendering struggle with certain stretches. Specialized references (the Claiborne Hardware lawsuit, the second boycott, the Deacons) are not always self-contextualized."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Rocky Springs and the one-way bridge (Segments 506-553)",
+            "Shotgun-into-mattress and husband's reaction (Segments 812-825)",
+            "Mr. Curry's 'Ethiopian' courtroom moment (Segments 1130-1140)"
+          ],
+          "slow_sections": [
+            "Family / schooling preamble (Segments 14-46)",
+            "Some legal-lawsuit recounting where the names and dates blur (Segments 1041-1080)"
+          ],
+          "interviewer_impact": "excellent",
+          "attention_sustainability": "A general audience can stay engaged for the full 75 minutes if scaffolded by chapter markers or selected highlight excerpts.",
+          "justification": "The interviewer's clear topical framing keeps momentum steady. Without that scaffolding the conversational flow would meander."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Voter registration and the Voting Rights Act era",
+            "Economic boycott as constitutionally protected First Amendment activity (Claiborne Hardware)",
+            "Armed Black self-defense alongside nonviolence",
+            "Women's grassroots labor in Black freedom movements",
+            "Post-movement disillusionment and intergenerational continuity"
+          ],
+          "contemporary_relevance": "Guster's critique of internal Black factionalism and her concern about young people's understanding speaks directly to contemporary debates about coalition building, racial solidarity, and movement memory.",
+          "meaning_making": "Yes -- Guster repeatedly frames her work in terms of the next generation ('not so much for me, but there are young people coming along') and offers a clear 'so what?' for present audiences.",
+          "justification": "Guster explicitly connects her local Port Gibson work to broader themes of generational responsibility and movement memory. The Crosby interviewing also helps make these connections visible to a broad audience."
+        },
+        "overall_assessment": "Accessibility is solid. Guster's dialect and conversational flow benefit significantly from the interviewer's structural scaffolding and from the contextual knowledge that Emilye Crosby brings."
+      }
+    },
+    "overall_assessment": "Leesco Guster's interview is a Very Good (80/100) addition to the Civil Rights History Project corpus. She offers exceptional historical-value testimony as a named defendant in NAACP v. Claiborne Hardware Co. and as Rudy Shields's primary canvassing partner. Narrative quality is good, with vivid specific moments and honest emotional self-disclosure. Accessibility is moderately limited by dialect and occasional reference-dropping, partially mitigated by Emilye Crosby's expert interviewing. The interview's distinctive contribution is its perspective as a working-class Black woman who hosted civil rights lawyers, dissented from the second boycott, and rejects both white supremacy and post-movement Black factionalism with equal candor.",
+    "key_strengths": [
+      "Direct participation in and naming as a defendant of the Port Gibson NAACP v. Claiborne Hardware lawsuit -- a rare first-person voice on one of the foundational federal-constitutional civil rights cases",
+      "Honest dissent from second-boycott tactics and from Charles Evers's leadership style, complicating the dominant narrative of unified movement leadership in Mississippi",
+      "Operational-detail richness (the oak tree where the Deacons organized, Mrs. Bear furnishing her first house, the $114/month A-check, the 1965 Catalina Pontiac)"
+    ],
+    "key_limitations": [
+      "Several specific names (Hilly, Wallcut, Bobby Gage, Audrey Rainwater, Pretina/Priscilla Duck, Buster Barber, Theo Black, Thomas Russell, Margot) are Whisper-rendered and require independent verification before publication-grade use",
+      "Whisper struggles with stretches of Mississippi Delta dialect, leaving some passages garbled (e.g., 'beating on the driver' likely should be 'beating on the drums')"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Leesco Guster was born March 26, 1936, in Port Gibson, Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 7-16: 'Port Gibson, Mississippi.' ... 'March 26, 1936.'",
+        "rationale": "Birthplace and date are directly stated in the transcript by the speaker."
+      },
+      {
+        "claim": "Guster's mother left for Vicksburg when she was about six and Guster later joined her there.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 18-21: 'Well, mostly I had a single mom at the age of about six. She left and went to Vicksburg, Mississippi. So later she got me. That's why we lived in Vicksburg, Mississippi.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster's mother did domestic work.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 26: 'Domestic work.'",
+        "rationale": "Directly stated in answer to a direct question."
+      },
+      {
+        "claim": "Guster returned to live in Port Gibson in 1953.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 48: 'Well, I didn't come here to live until 1953.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster worked in Chicago, living with a white family in Scofield, and briefly at Montgomery Ward.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 104-130: 'In fact, I lived in Scofield, North. I lived with this since then... That was at Montgomery Ward.'",
+        "rationale": "All three elements are present in the transcript; 'Scofield' is the speaker's rendering."
+      },
+      {
+        "claim": "Guster married Harry Guster in 1959.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 221: 'You got married in like 1959.' -- Yes, and then.'",
+        "rationale": "Interviewer states the year and Guster confirms."
+      },
+      {
+        "claim": "Harry Guster was 24 years older than Guster and was a head contractor in the lumber field in Claiborne County.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 185-191: 'Well, he was something like 24 years older than I was... And he was the head contractor in the Lumber, you know, field here in Claiborne County, and vice-president everybody knew Harry. He was contractor.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Harry Guster paid $2,500 for the house when he acquired it.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 200: 'He paid something like $2,500 for it.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster's motivating goals were voting, voter registration, recognition, and a better job; she was not initially a member of the NAACP.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 314-318: 'Now, my new app was not even a member of the NAACP. My thing was, I wanted to vote. I wanted to get people registered to vote. I wanted a little recognition and a better job.'",
+        "rationale": "Directly stated, though 'my new app' is a Whisper garble for 'I was not.'"
+      },
+      {
+        "claim": "Guster met Rudy Shields at McBatteres drugstore in Port Gibson.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 320-323, 383: 'about what's their drugstore name, Macbethers. That's where Rudy Shields and all of them hung out... And I got acquainted with Rudy.' Segment 383: 'On the street in front of the drug stop.'",
+        "rationale": "Directly stated; drugstore name is rendered as 'Macbethers' / 'McBatteres' in the transcript."
+      },
+      {
+        "claim": "Guster owned a 1965 Pontiac Catalina that she used for canvassing.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 311-312: 'I had a 1965 and been a long time. A Catalina stopped making a Catalina Ponta.'",
+        "rationale": "Directly stated, though 'Ponta' is a Whisper garble for 'Pontiac.'"
+      },
+      {
+        "claim": "Guster was dismissed by her employer Hilly (Mr. Wallcut's daughter) after Hilly was overheard expressing hostility toward the voter-registration work.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 295-342: 'But he let me work for Hillary when she moved here from Madonna, Ohio... Oh, his daughter... She said, well, Lee, we don't need you anymore. I support Thank you. And I left walking because I didn't drive up that day. That was it.'",
+        "rationale": "Directly stated; the speaker uses both 'Hilly' and 'Hillary' in different segments."
+      },
+      {
+        "claim": "Guster and Rudy Shields encountered a hostile white property owner at Rocky Springs who waited for them with a shotgun across the back of his pickup truck.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 506-552: 'Rocky Springs. I know we'll forget that... the owner of the property was, and a pickup truck was parked up on the hill. And he had his shot go. You know, how they have it across the back of the truck.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster hosted civil rights lawyers and a young Black woman she identifies as Tuck Tate at her home.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 563-569: 'Civil rights lawyers. It was an African girl, a stadium, or for months. Tucked Tate. She was so sweet.'",
+        "rationale": "Hosting civil rights lawyers is directly stated. The name 'Tuck Tate' is Whisper-rendered as 'Tucked Tate' and the descriptor 'African girl' could mean 'African' (i.e., African nationality) or 'African American' -- the summary's 'young Black woman' is mildly inferential."
+      },
+      {
+        "claim": "Lily Mae Williams was chairperson and Mrs. Wells was co-chair of the housing arrangements.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 572-575: 'All the nights, Lily Mae Williams was the chairperson. They had my wells. I know you remember her. She was the cold chair.'",
+        "rationale": "Directly stated; 'my wells' and 'cold chair' are Whisper garbles for 'Mrs. Wells' and 'co-chair.'"
+      },
+      {
+        "claim": "Guster received an anonymous phone call from someone who identified himself as a KKK member, asking if she was 'tired of living.'",
+        "status": "supported",
+        "supporting_excerpt": "Segments 770-781: 'And somebody called here and asked for a hair register. And I could tell by the accident it was someone, you know, white. And I said, this is his wife, may I help you?... And he asked me, was I tired of living? He identified himself. He said he was a member of the KKK.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Charles Evers was planning a banquet at Guster's home.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 770-771: 'Uh, it was on, we were supposed to have a banquet here, (Charles) Evers came to, ever, um, she to make it up.'",
+        "rationale": "Directly stated, though phrasing is fragmented."
+      },
+      {
+        "claim": "Guster accidentally discharged a shotgun into her mattress during a night when she expected an attack on the house.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 812-823: 'I shot the gun, I tell you. But it was aimed down at the mattress... He said, he said, son, son, woman, I thought you had killed yourself... So the only fatality was the mattress? That's it.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster attended one march at the fairground where tear gas was deployed on the marchers.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 826-845: 'Were you out at all form when they had the marches out there? I was. And they shot the gas on the spirit... I only went one time. That's that one time. That was enough... they put the gas on us. And that burned your eyes.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "The Deacons (for Defense) were organized at Guster's oak tree on her property.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 932-941: 'Can you tell us about the deacons, the blackouts? They were organized. It used to be an oak tree was here... And we had an old green picnic table... They were organized right out there.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "The Deacons sometimes shot into the houses of Black neighbors who broke the boycott, and Guster did not approve of that tactic.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 943-948: 'Now, one part of it, I did not like. And I didn't go for it. They're shooting in people houses. I never liked nothing like that.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster was named in the NAACP v. Claiborne Hardware lawsuit and testified in Jackson; the case was decided in the boycotters' favor at the Supreme Court in 1982.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1081-1121: 'You mentioned about your property and the lawsuit. What was the lawsuit about?... The boy I got. You didn't do it because you made them lose money. Uh-huh, boy cop... How did I feel when it went to the Supreme Court in 1982?'",
+        "rationale": "Directly stated. The 1982 Supreme Court verdict is also confirmed in civil_rights_facts.json (NAACP v. Claiborne Hardware Co., 458 U.S. 886)."
+      },
+      {
+        "claim": "Mr. Curry, asked his race during the Claiborne Hardware trial, replied that he was 'Ethiopian.'",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1125-1140: 'Mr. Dan Curry was over there too when I went... And they asked him what race was he? Are you, are you of the black race or color, the race or what? He said, no. I'm Ethel.' Then Segment 1138: 'He told me he the oatmeal.' -- both Whisper garbles for 'Ethiopian.' Interviewer recaps and corrects in segments 1132-1137.",
+        "rationale": "The substance of the claim is in the transcript. Whisper renders 'Ethiopian' as 'Ethel' and 'oatmeal' which the interviewer's recap clarifies. The summary uses the corrected term."
+      },
+      {
+        "claim": "Guster opposed the second boycott because it punished merchants who had complied with the first boycott's demands.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 738-748: 'I thought we were pushing for the same thing, but I found out on the second floor... Had I been here, I wouldn't have gone along with a second boycott, because I didn't feel like it was fair to the people who had done what we asked.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Nat 'Dusty' Jackson was killed in the area and Guster was in town when it happened; she marched.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1157-1172: 'Were you in town when Nat \"Dusty\" Jackson was killed? I was... I can't tell you, we did march... All I know he got killed.'",
+        "rationale": "Directly stated. The summary does not extend beyond the speaker's hedged statement."
+      },
+      {
+        "claim": "Kenneth Ross was the muralist who created a Port Gibson civil rights mural and asked Guster for ten names of movement participants.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1259-1290: 'It's just like when Kenneth (Ross) called me and asked me about the mural up there. He said, would you get me 10 names?'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster's view at the end of the interview is that they 'learned that we could be together at least for a while' but have 'lost a lot,' and that Black factionalism is not the white people's fault.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1181-1194: 'Well, for one thing, we learned that we could be together at least for a while in a way... And it's nothing to do with the white people... We don't get along. Two-minute blacks. We need black and white together.'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Guster's husband Harry was working in Spurger, Louisiana on lumber projects during her movement work, and the household lived on a $114/month A-check.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 452-455: 'He was being spurred, Louisiana... We lived out of the A-check, $114 a month.'",
+        "rationale": "Directly stated. 'Spurger' is the speaker's pronunciation; geographical name may need verification."
+      },
+      {
+        "claim": "Bobby Gage was a local lawyer who summoned Guster to a meeting after rumors that the bank intended to take her house.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1041-1047: 'she was about two or three days later, I received a letter from the law you're seeing... So which lawyers called you up there? Which lawyers did you have to meet with? You said they called you in there? Bobbi Gage. Bobbi Gage. He was a lawyer, too.'",
+        "rationale": "Directly stated. 'Bobbi Gage' is the speaker's rendering."
+      },
+      {
+        "claim": "An outsider named Margot/Margaret was appointed president over 'our mart' when she arrived in town, and Guster believed this position should have gone to a local person.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1332-1338: 'Margot, we were nowhere around when it was going on. Soon as she got in town because of who she was, they appointed her president over our mart. You know, why can't, I mean, we were here doing a struggle. Why couldn't they get somebody from right here?'",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Reverend Dawson stepped down as a movement-aligned pastor over disputes about using the pulpit (specifically about 'beating on the drum/driver' in the pulpit).",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 698-721: 'He got up there in the pool. And we going, beating on the driver... Reverend Dawson, it didn't feel comfortable about it. That's when he stepped down, and that's when I followed... Reverend Dawson stopped... You don't play that stuff in God's house now.'",
+        "rationale": "Reverend Dawson's stepping down is directly stated; the summary's framing as 'over disputes about using the pulpit' is a faithful condensation but the original phrasing is conversational and somewhat ambiguous about whether the issue was secular activity in the pulpit or some other 'mess.'"
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 31,
+      "supported": 29,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_quality_below_90_citation_blocked_2_partial",
+    "rationale": "The interview is a Very Good (overall 80) contribution to the corpus with strong historical value (22/25), zero unsupported claims in the citation audit, and excellent operational specificity. However, it does not meet the Smithsonian-grade publication threshold of 90/90 on both accuracy (86) and quality (87) scoring, and the citation audit found 2 partially_supported claims (the Tuck Tate identity inference and the Reverend Dawson framing) that should be tightened before publication. The fail-closed gate routes this transcript to human review rather than auto-publication. Additionally, many speaker-attested local names (Hilly Wallcut, Bobby Gage, Audrey Rainwater, Pretina/Priscilla Duck, Buster Barber, Theo Black, Thomas Russell, Margot, Kenneth Ross, Reverend Dawson) require independent verification against Port Gibson local records and Emilye Crosby's published research before publication-grade use. Reviewer recommendation: this is a high-value interview worth publishing once the name spellings are verified, the Tuck Tate descriptor is tightened, and the Reverend Dawson framing is clarified."
+  }
+}

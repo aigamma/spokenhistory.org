@@ -1,0 +1,966 @@
+{
+  "interview_name": "Clifford David Browner Jr.",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Clifford Browner_interview_20250704_190050\\Clifford Browner_interview_transcript_20250704_190050.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Clifford David Browner Jr.",
+    "interviewee_title": "Civil Rights Movement Participant and Albany Movement-Era Witness",
+    "interview_date": "2013-03-09",
+    "interview_location": "Albany State University, Albany, Georgia",
+    "interviewer_name": "Hasan Kwame Jeffries",
+    "interviewer_affiliation": "Ohio State University (interviewing for the Civil Rights History Project)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:00:08"
+  },
+  "main_summary": {
+    "summary": "Clifford David \"Cliff\" Browner Jr. recounts his upbringing in Sasser, Georgia, in Terrell County, and his coming of age during the early years of the civil rights movement in Southwest Georgia. Born to Clifford Browner Sr. of Webster County, Georgia, and Johnnie Lou Browner of Terrell County, Browner grew up in a household full of extended family members and was sheltered by his father from the harshest face of Jim Crow segregation. He describes attending the segregated Dunbar Elementary School in Sasser, a faded white-painted building with no indoor plumbing, where students themselves had to fetch coal and wood from beneath the building to feed the potbelly stove, and later being bused seven miles to George Washington Carver High School after a new Dunbar building was constructed around 1955.\n\nBrowner describes how he became aware of the civil rights movement through his father, mother, and older sister, who attended mass meetings, initially at Mount Zion Baptist Church outside Sasser, then later relocated to his family church, Mount Olive Baptist Church in Sasser, because that was where most attendees lived. At one mass meeting at Mount Olive, Sheriff Z.T. Matthews and other armed white men entered the church to intimidate the congregants, and Browner recalls SNCC organizer Charles Sherrod reading from Romans 8 that night. The church was burned to the ground shortly afterward; Browner and his father went to the site in the morning to find it still smoldering. As a high school student at Carver, Browner and a classmate, Clovis Jones, wrote a letter to the white superintendent asking for new textbooks rather than the worn-out hand-me-downs from the white school. The principal, E.E. Suss, told them they should be expelled, and Browner was pressured into resigning as senior class president. He also attended the August 1963 March on Washington in Washington, D.C., traveling by train and hearing speeches from Dr. Martin Luther King Jr., John Lewis, Mahalia Jackson, and Peter, Paul and Mary; he had earlier seen King in person when King came to a burned church site in the area.\n\nAfter graduating high school in 1964, Browner enlisted in the Army (entering July 1964), completed basic training at Fort Gordon, Georgia, advanced training at Fort Knox (likely), and was stationed in Kitzingen, West Germany, in armor communications for roughly twenty months. After discharge he returned home, enrolled at Albany State, and graduated with a sociology degree while working two part-time jobs. He briefly worked as an ex-offender program counselor at Reidsville State Prison before relocating to Flint, Michigan, where his childhood friend Doug Settle helped him land jobs at the Chevrolet Sheffield Truck Assembly Plant and then selling insurance for Equitable Life Insurance Company. He later transferred back to a General Motors plant in Doraville, north of Atlanta, and worked there approximately twenty years until being injured in the Hyatt Regency collision in 1995. He concludes with reflections on what changed and what didn't change after the movement, observing that visible segregation has receded while economic separation has deepened, and contrasting the South's open hostility with the more concealed racism he encountered in the North.",
+    "key_themes": [
+      "Parental sheltering and Black family strategies for surviving Jim Crow",
+      "Religious foundation of grassroots civil rights organizing",
+      "White violence and church burnings as movement repression",
+      "Student-led resistance through letter-writing and demands for educational equity",
+      "Military service as a path out of rural Southern poverty",
+      "The March on Washington as a transformative collective experience",
+      "Great Migration to Northern industrial cities (Flint, Michigan)",
+      "Persistence of economic inequality after legal desegregation"
+    ],
+    "historical_significance": "Browner's testimony documents the grassroots base of the SNCC Southwest Georgia Project in Terrell County, a small rural county whose mass meetings, voter-registration efforts, and church burnings were a critical adjunct theater to the better-known Albany Movement of 1961-62. His firsthand account of Sheriff Z.T. Matthews's armed intimidation of a Mount Olive Baptist Church mass meeting -- with Charles Sherrod reading from Romans 8 -- and the subsequent arson of the church preserves a Southwest Georgia episode in a region whose voter-suppression machinery was among the most violent in the United States. His student letter to the superintendent demanding new textbooks at George Washington Carver High School adds a granular, locally rooted instance of youth resistance to the broader pattern documented elsewhere in the corpus."
+,
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 86,
+      "accuracy_component_a": 36,
+      "accuracy_component_b": 25,
+      "accuracy_component_c": 26,
+      "quality_component_a": 34,
+      "quality_component_b": 18,
+      "quality_component_c": 17,
+      "quality_component_d": 17,
+      "errors": [
+        "The summary states Browner was born July 7, 1946, but the transcript at segment 13 contains the garbled rendering 'seven, seven, seven, seven, six' which is ambiguous between July 7, 1946 and July 7, 1947. Treated as approximate.",
+        "Fort Knox as the advanced-training location is inferred from the corrupted Whisper-rendered 'Fort Knox (likely)' annotation in the transcript; the original audio location may differ.",
+        "The 'Hyatt Regency collision in 1995' is the summary's interpretation of the transcript's garbled '1795' and 'Herald Collision' phrases; the specific event referenced is uncertain.",
+        "The interviewer is identified in the summary as Hasan Kwame Jeffries based on the transcript's self-introduction; the second interviewer (rendered 'Oliver Burr at Nileego') was not identified with confidence."
+      ],
+      "improvements": [
+        "If the audio recording is accessible, verify Browner's birth date and the year/identity of the Atlanta collision injury that ended his GM employment.",
+        "Confirm the second interviewer's name from external Civil Rights History Project documentation rather than relying on the corrupted ASR rendering.",
+        "Confirm Sheriff Z.T. Matthews's exact title and jurisdiction (Terrell County sheriff per the transcript) against existing Albany Movement historiography."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:06:13,000",
+      "title": "Family Background and Childhood in Sasser, Terrell County",
+      "summary": "Browner introduces his family and early life in Sasser, Georgia, in Terrell County. He describes his parents -- his father Clifford (born in Webster County, Georgia, who completed third grade) and his mother Johnnie Lou (born in Terrell County, who completed about eighth grade) -- and recounts the story of how his mother met his father at school shortly after her own mother had died. His father began as a sharecropper but later took a job at a fertilizer plant in Albany, Georgia, about twenty miles from home, working there until retirement. Browner explains that his father deliberately sheltered the family from the worst face of segregation, keeping the children close so they were always supervised, and that the family lived in an all-Black community with dirt streets and small, often three-room houses. Browner was the youngest of four children (two boys, two girls), but the household frequently included extended family members and cousins his parents took in.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "sasser",
+        "terrell county",
+        "webster county",
+        "sharecropping",
+        "albany georgia",
+        "jim crow",
+        "black family",
+        "extended household",
+        "fertilizer plant"
+      ],
+      "related_events": [
+        "Jim Crow segregation in rural Southwest Georgia",
+        "African American sharecropping economy",
+        "Albany, Georgia"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could include a brief note on the cousin and half-siblings the mother raised, which the transcript mentions but the summary compresses."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:06:13,000",
+      "end_time": "00:11:38,000",
+      "title": "Schooling at Dunbar Elementary and Carver High",
+      "summary": "Browner describes his elementary schooling at Dunbar Elementary School in Sasser, a faded white-painted building with no indoor plumbing where instruction took place in a single room heated by a potbelly stove. Students themselves were responsible for fetching wood from a nearby head road and shoveling coal from the crawl space under the building to keep the stove fed; the outhouses were two outdoor facilities, one for boys and one for girls. A new Dunbar school was built around 1955, after which Browner transferred for high school to George Washington Carver High School, seven miles away, riding the school bus that picked up rural students and ferried them through Dunbar. He reflects that the quality of formal education at the segregated Black schools was limited not because the teachers lacked dedication but because students simply 'weren't exposed to a lot of stuff.' His mother worked as a domestic, then later as a cook at the white school in Sasser, and eventually as a cook at the new Dunbar lunchroom.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "dunbar elementary",
+        "george washington carver high school",
+        "segregated schools",
+        "potbelly stove",
+        "school bus",
+        "domestic labor",
+        "lunchroom cook"
+      ],
+      "related_events": [
+        "Segregated rural Southern public schools",
+        "1955 construction of new Dunbar building"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note that Browner's mother's progression from domestic to white-school cook to Dunbar cook spans roughly the late 1950s through 1960s."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:11:38,000",
+      "end_time": "00:17:00,000",
+      "title": "The Civil Rights Movement Comes to Terrell County",
+      "summary": "Browner describes how he first became aware of the civil rights movement through his father, mother, and older sister, who were involved before he attended his first mass meeting. Mass meetings initially convened at Mount Zion Baptist Church outside Sasser in Terrell County, but attendance there was sparse, so organizers relocated them to Mount Olive Baptist Church in Sasser, where Browner's family belonged and which was closer to the bulk of the participating community. Browner recalls that the meetings were spirit-filled and that they were 'the first time I really saw blacks and whites intermingling in a close vicinity,' featuring scripture readings, conversations about events in Terrell, Lee, and Dougherty Counties, reports of arrests and beatings, voter-registration updates, and singing. His father served as a deacon at Mount Olive and was active in church finances, while his mother held membership at the nearby Sandy Hill Baptist Church but attended Mount Olive often enough that most assumed she was a member there.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "mount olive baptist church",
+        "mount zion baptist church",
+        "mass meetings",
+        "voter registration",
+        "terrell county",
+        "lee county",
+        "dougherty county",
+        "deacon"
+      ],
+      "related_events": [
+        "Albany Movement (SNCC Southwest Georgia Project, 1961-1962)",
+        "Charles Sherrod's Southwest Georgia organizing",
+        "Mount Olive Baptist Church (Sasser, GA)",
+        "Mount Zion Baptist Church (Terrell County, GA)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [
+          "The summary names the church Browner's mother belonged to as 'Sandy Hill Baptist Church'; the transcript renders it 'Santa's gift baptism church' (Whisper-garbled). 'Sandy Hill' is a plausible interpretation but uncertain."
+        ],
+        "improvements": [
+          "Could quote Browner's exact phrase about the meetings being the first time he saw 'blacks and whites intermingling.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:17:00,000",
+      "end_time": "00:22:00,000",
+      "title": "Student Letter to the Superintendent and the Cost of Speaking Up",
+      "summary": "While attending George Washington Carver High School, Browner and a classmate, Clovis Jones, wrote a letter to the white school superintendent demanding new textbooks, since the books they were given were hand-me-downs from the white school with missing pages and writing throughout. Five students had originally agreed to sign, but in the end only Browner and Jones did. Browner's parents found out about the letter at a mass meeting rather than from him directly, and they did not scold him for it. The school superintendent reprimanded the principal, E.E. Suss, who in turn called both students to his office and said they should be expelled. Browner was not expelled, but he describes being treated differently afterward -- watched at recess, characterized to other students as a troublemaker, and pressured into resigning his position as senior class president. He reflects that, with the benefit of age and family obligations of his own, he now understands why the principal did not advocate for the students more strongly.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "clovis jones",
+        "principal e.e. suss",
+        "school superintendent",
+        "george washington carver high school",
+        "textbook inequality",
+        "student activism",
+        "senior class president"
+      ],
+      "related_events": [
+        "Educational inequality in segregated Southern schools",
+        "Student-led civil rights organizing in Southwest Georgia"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [
+          "The principal's name 'E.E. Suss' is the transcript's literal rendering ('The E.E.S.S.'); the actual spelling could not be verified."
+        ],
+        "improvements": [
+          "Confirm the spelling of the principal's name through external records if available."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:22:00,000",
+      "end_time": "00:27:10,000",
+      "title": "Mount Olive Burns: White Intimidation and Church Arson",
+      "summary": "Browner recounts the night that Sheriff Z.T. Matthews and other armed white men, including deputies, came into Mount Olive Baptist Church during a mass meeting. They were not dressed in Klan robes but in regular clothes and carrying pistols and guns; nobody was struck or beaten that night, but the congregation was 'insulted and quiet ways.' Browner remembers SNCC organizer Charles Sherrod reading from Romans 8 that night. Shortly afterward, the church was set on fire and burned to the ground. His uncle, who lived within sight of the church, woke the family in the early morning, and Browner went with his father to the site, where they found the building reduced to smoldering ruins. Browner describes feeling, as a young teenager, a kind of disbelief that 'anybody would burn a church.' He also recalls rumors that his family's house had been targeted as well but was spared because of older neighbors nearby who were uninvolved, and a story his father told of a white woman who tried to run him off the road on his way to work in Albany. Browner notes that his family stayed vigilant but did not arm themselves.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "z.t. matthews",
+        "sheriff terrell county",
+        "charles sherrod",
+        "romans 8",
+        "church arson",
+        "mount olive baptist church",
+        "white intimidation",
+        "klan-adjacent violence"
+      ],
+      "related_events": [
+        "Sheriff Z.T. Matthews of Terrell County",
+        "Charles Sherrod (SNCC, Southwest Georgia Project)",
+        "Mount Olive Baptist Church burning",
+        "Civil rights-era church burnings in Southwest Georgia"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [
+          "Charles Sherrod's presence and reading of Romans 8 is reported in the transcript at segments 345-347 in fragmentary form ('I remember every year, I read from Rome at 8. That night. Charles Sambri.'); the summary attributes this to Charles Sherrod, which is supported by the ground-truth Albany Movement / SNCC Southwest Georgia Project context, but the literal transcript rendering is ambiguous."
+        ],
+        "improvements": [
+          "Cross-reference the Mount Olive burning date and circumstances with other Albany Movement-era documentation."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:27:10,000",
+      "end_time": "00:35:00,000",
+      "title": "The March on Washington and Joining the Army",
+      "summary": "After high school graduation, Browner decided to join the Army because his father could not afford to send him to college and the GI Bill offered a path. Before that, however, in August 1963, he traveled to the March on Washington -- only the first time in his life that he had ever spent a night away from his mother's home. SNCC organizer Charles Sherrod arranged a train ticket for him; Browner had earned spending money working on the reconstruction of the burned churches at $1.40 an hour, the first hourly wage he had ever earned. He traveled alone with the group, wore black slacks and a white shirt unsuited to Washington's cold weather, and walked the National Mall hearing Dr. Martin Luther King Jr.'s speech and performances by Peter, Paul and Mary, Mahalia Jackson, and SNCC chairman John Lewis. He reflects that he had no sense at the time of how historically significant the day would be -- 'Had I known how important that day was, I would have saved some of the buttons' -- and that nobody at home asked him about it afterward. He had also seen Dr. King in person once before, when King visited a burned church site in Browner's area.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "march on washington",
+        "august 1963",
+        "martin luther king jr",
+        "john lewis",
+        "mahalia jackson",
+        "peter paul and mary",
+        "charles sherrod",
+        "army enlistment",
+        "g.i. bill"
+      ],
+      "related_events": [
+        "March on Washington for Jobs and Freedom (August 28, 1963)",
+        "Martin Luther King Jr.'s 'I Have a Dream' speech",
+        "John Lewis (SNCC chairman, 1963)",
+        "Mahalia Jackson",
+        "Peter, Paul and Mary",
+        "Charles Sherrod (SNCC)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [
+          "John Lewis's name is supported (transcript at segment 508 reads 'John Lewis and John Lewis.'); however, the 1963 March on Washington's role for SNCC chairman is added context the summary draws on; Browner does not explicitly say Lewis was SNCC chairman."
+        ],
+        "improvements": [
+          "Could quote Browner's exact line: 'Had I known how important that day was, I would have saved some of the buttons.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:35:00,000",
+      "end_time": "00:43:00,000",
+      "title": "Army Service: Basic Training and Stationing in West Germany",
+      "summary": "Browner entered the Army in July 1964, completed basic training at Fort Gordon, Georgia, and advanced communications training (likely Fort Knox in the transcript's rendering). Assigned to an armor unit, he was deployed to Hobbit (Hobart? - Whisper-garbled) Barracks in Kitzingen, West Germany, where he spent roughly twenty months learning to repair radios for armored vehicles. He recalls being one of the youngest in his unit and being looked after by an older squad leader who had a 17-year-old brother back home and admired Browner's composure. He describes his unit as racially mixed -- Black, white, Spanish American, and Puerto Rican -- and reports that he did not personally experience racial difficulty there. He did not travel widely in Germany, going to Frankfurt and Hamburg once or twice. He received few news updates from home during his service. Reflecting on the experience, he believes the military was a positive turning point for him, helping him 'redefine my personality' and become less timid, and he says that all young men should have the opportunity to serve.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "u.s. army",
+        "fort gordon",
+        "fort knox",
+        "kitzingen",
+        "west germany",
+        "armor unit",
+        "communications",
+        "racial integration of u.s. military",
+        "july 1964"
+      ],
+      "related_events": [
+        "U.S. Army post-Korea pre-Vietnam stationing in West Germany",
+        "Racial integration of the U.S. armed forces"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 84,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 32,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [
+          "Fort Knox is the transcript's rendered location for advanced training ('Fort Knox (likely)'); the transcript explicitly carries the '(likely)' annotation suggesting uncertainty in the source rendering.",
+          "'Hobbit Barracks' is a Whisper-style phonetic rendering and almost certainly refers to a German installation whose actual name (likely 'Harvey Barracks' or 'Hindenburg Kaserne' in Kitzingen) was not verified."
+        ],
+        "improvements": [
+          "Verify the unit and barracks name in Kitzingen, West Germany against U.S. Army historical records."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:43:00,000",
+      "end_time": "00:48:00,000",
+      "title": "Return Home, Albany State, and Sociology Degree",
+      "summary": "After his Army discharge, Browner came home to Terrell County rather than joining his brother in Detroit or his uncle in Philadelphia. He found that visible segregation had eased somewhat -- there was talk of integrating the schools -- but that economic conditions had not changed much. He had changed, however: exposure to other people and other places (including being introduced to jazz by a friend in his Army unit) made him want more out of life and convinced him he needed an education to get it. He applied to Tennessee State University and Albany State College; Tennessee State accepted him for January, but Albany State would take him in September, so he chose Albany State to avoid waiting. He commuted from home for the first quarter, then moved to an apartment in Albany with a high-school friend. He majored in sociology -- partly because he was considering law school and partly because he did not yet know what he wanted to do -- and worked two part-time jobs throughout, missing nearly all campus social events. Each semester he told himself he would not return, only to continue once he got past finals.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "albany state college",
+        "tennessee state university",
+        "sociology",
+        "g.i. bill education",
+        "two part-time jobs",
+        "post-army return",
+        "jazz introduction"
+      ],
+      "related_events": [
+        "Albany State College (Georgia)",
+        "Post-1965 economic conditions in rural Southwest Georgia"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 87,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note the specific year of college entry (around 1967, after his ~2.5 years of Army service starting July 1964)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:48:00,000",
+      "end_time": "00:53:00,000",
+      "title": "Reidsville Prison, Flint Michigan, and Working at General Motors",
+      "summary": "After graduating with his sociology degree, Browner was recruited by the State of Georgia Labor Department to work as an ex-offender program counselor across the street from Reidsville State Prison, east of Albany toward Savannah. He was the first Black person to hold a non-inmate-related position there, and on his first day the warden told him bluntly, 'I'm going to get rid of you.' Browner says people were afraid -- he never learned exactly what the warden's problem with him was -- and he eventually lost the job. His high-school friend Doug Settle, who had been recruiting for General Motors in Flint, Michigan, encouraged Browner to come north. Browner drove a 1966 Chevrolet Malibu (signed for by his father) to Flint with about $80 in his pocket and stayed with Settle. He was hired at the Chevrolet Sheffield Truck Assembly Plant in Flint, worked roughly a year on the shop floor, then transferred to a computer room handling accounts payable. Fed up with the office gossip, he resigned with a two-line letter and almost immediately ran into a friend at the Mott Foundation building who connected him with a manager at Equitable Life Insurance Company; he was hired on the spot and sold life insurance for about three years, winning campaign trips along the way.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "reidsville state prison",
+        "ex-offender program",
+        "doug settle",
+        "flint michigan",
+        "general motors",
+        "chevrolet sheffield truck assembly plant",
+        "equitable life insurance company",
+        "1966 chevrolet malibu",
+        "great migration"
+      ],
+      "related_events": [
+        "General Motors Chevrolet Sheffield Truck Assembly Plant (Flint, MI)",
+        "Equitable Life Insurance Company",
+        "Great Migration / Black workers in Northern industrial cities"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 18,
+        "errors": [
+          "The 'Mott Foundation building' identification is the summary's interpretation of the transcript's garbled 'mine building'; this is uncertain.",
+          "The Chevrolet Sheffield Truck Assembly Plant in Flint is reported as the transcript renders it; the actual plant name in Flint may differ slightly (e.g., Chevrolet Truck and Bus plant)."
+        ],
+        "improvements": [
+          "Verify the Flint GM plant's exact name as it existed in the late 1960s-early 1970s.",
+          "Confirm the building in downtown Flint where Equitable Life Insurance Company was located."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:53:00,000",
+      "end_time": "00:55:00,000",
+      "title": "Atlanta, the GM Doraville Plant, and Injury",
+      "summary": "When Browner decided to move back to Atlanta, he transferred back to General Motors and took a position at the Doraville assembly plant north of Atlanta, where he worked for approximately twenty years. He lived in DeKalb County, Georgia. He describes Atlanta as a place to be -- he did not enjoy the traffic but liked being closer to home and was able to come back to Sasser frequently, including one year when he visited every weekend. His tenure at the Doraville plant ended when he was injured in what he calls the 'Hyatt Regency collision' in 1995 -- the transcript's reference is partially garbled -- and he retired.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "general motors doraville",
+        "atlanta",
+        "dekalb county",
+        "1995 injury",
+        "auto industry retirement"
+      ],
+      "related_events": [
+        "General Motors Doraville Assembly Plant (Georgia)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 82,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 32,
+        "quality_component_b": 17,
+        "quality_component_c": 16,
+        "quality_component_d": 17,
+        "errors": [
+          "The 'Hyatt Regency collision in 1995' is the summary's interpretation of segment 986's rendering '1795' and 'Herald Collision'; the actual event, year, and nature of the injury could not be verified.",
+          "The duration of '20 years' at Doraville is from the transcript's rendering 'worked for 20 years' and is paraphrased; the precise dates were not given."
+        ],
+        "improvements": [
+          "If audio is accessible, verify the 1995 collision claim and the exact span of Browner's Doraville GM employment."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:55:00,000",
+      "end_time": "01:00:08,000",
+      "title": "Return to Terrell County and Reflections on Race, Economy, and Region",
+      "summary": "Returning to Terrell County after his Atlanta career, Browner observes that not much has changed economically: people are still farming, but as business farmers with machinery rather than as sharecroppers, and the mule wagons of his childhood are gone. He notes that during the movement, landowners pushed out Black tenants who had asked to register to vote, which left local Black political gains modest even though some Black officeholders now exist. Most strikingly, he contrasts the South with the North through a story he told a white acquaintance in Flint: in the South, he says, he already knows he is not invited into a white person's home and so does not need to expose himself; in the North, he might be invited and then have the plate broken after he leaves. The acquaintance reportedly got angry and stopped speaking to him. Browner closes by observing that economic separation has now eclipsed legal segregation in importance, with the tax base flowing to suburbs and Black mayors inheriting cities with no resources to govern -- 'really doesn't matter who's driving the wagon. It's always going to be in the same place.'",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "post-movement reflections",
+        "economic inequality",
+        "north vs south racism",
+        "rural southern economy",
+        "black political officeholders",
+        "tax base flight",
+        "suburban segregation"
+      ],
+      "related_events": [
+        "Post-Voting Rights Act Black officeholding in the rural South",
+        "Suburbanization and Black urban tax-base decline (1970s-1990s)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Quote Browner's brother's saying about the wagon directly to preserve voice."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Clifford David Browner Jr.",
+      "interviewee_title": "Civil Rights Movement Participant and Albany Movement-Era Witness",
+      "interview_date": "2013-03-09",
+      "interview_location": "Albany State University, Albany, Georgia",
+      "interviewer_name": "Hasan Kwame Jeffries",
+      "interviewer_affiliation": "Ohio State University",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:00:08",
+      "total_segments": 1135,
+      "word_count": 9800,
+      "number_of_chapters": 11
+    },
+    "overall_score": {
+      "total": 73,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 22,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Interviewer Jeffries opens with a clear context-setting introduction and biographical questioning at segments 1-13 (00:00:00,000 - 00:01:09,000): 'I want to begin this conversation on discussion here with some background information. Mr. Browner, could you tell us when and where you were born?'",
+            "Browner moves through his life chronologically -- childhood, schooling, mass meetings, church burning, Army, college, Northern migration, return -- guided by Jeffries's questioning across segments 13-1130, with the interview ending at segment 1129 (00:59:51,040) on Browner's reflection that 'really doesn't matter who's driving the wagon. It's always going to be in the same place.'"
+          ],
+          "justification": "The interview follows a clear chronological arc shaped by Jeffries's biographical questioning, moving from childhood through movement involvement through later career to retrospective reflection. Browner generally answers in compact paragraphs that match the structure; occasional rambling or backtracking is brief. The closing reflection on Northern versus Southern racism provides a coherent thematic resolution."
+        },
+        "vivid_details_examples": {
+          "score": 7,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "I can remember sitting on the ground and you can see if anybody would burn a church there, do anything. And that was one of the statements I remember saying to myself, as I stood in the watch, the smoke.",
+            "segment": 359,
+            "timestamp": "00:24:10,000"
+          },
+          "specificity_count": {
+            "full_names": 14,
+            "specific_dates": 3,
+            "specific_places": 18
+          },
+          "evidence": [
+            "Specific recall of the mother's prayer-and-meeting story with grandmother at segments 22-29 (00:01:33,000 - 00:02:10,000)",
+            "Detail of the Dunbar Elementary potbelly stove and crawl-space coal-fetching at segments 110-118 (00:07:19,000 - 00:07:59,000)",
+            "Memory of the $1.40-an-hour wage earned rebuilding the burned church at segment 454 (00:30:31,000)"
+          ],
+          "justification": "Browner provides strong concrete details throughout -- specific wages ($1.40/hour, $2 per 100 pounds of cotton), the 1966 Chevrolet Malibu, the names of his parents, his classmates, the principal, the sheriff, and many landmarks. Sensory detail is moderate; he describes the smoldering church and the coldness of his Washington trip but does not reconstruct extended dialogue. Some moments (his march in DC) are recalled abstractly, knocking the score down from the excellent band."
+        },
+        "emotional_authenticity": {
+          "score": 7,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "He was hurt. I don't remember any conversation, per se, but I know he was hurt about it.",
+            "segment": 362,
+            "timestamp": "00:24:23,000"
+          },
+          "emotional_range": [
+            "grief at father's pain",
+            "pride in family",
+            "frustration at school treatment",
+            "wry reflection",
+            "longing for home",
+            "anger at racial injustice"
+          ],
+          "vulnerability_elements": [
+            "Admitting he was 'timid' before basic training and that the Army helped him redefine his personality",
+            "Admitting he 'wasn't afraid that night' at the church but not knowing why",
+            "Admitting feeling that 'at the time, I didn't feel it was fair' about the principal's reprimand"
+          ],
+          "justification": "Browner is emotionally present throughout but tends toward the muted-and-reflective end of the emotional range. He speaks plainly about his father's pain at the church burning, about being treated differently by faculty after the textbook letter, about not being invited into a white friend's home in Flint. He generally favors analytical reflection over raw emotional expression."
+        },
+        "overall_assessment": "Browner is a measured, reflective narrator who structures his interview around clear life-chronology and uses concrete personal anchors -- names, wages, places -- to ground his testimony. Emotional authenticity is genuine but tends toward the reserved Southern-elder register rather than the unguarded confessional. The interview's narrative quality is solid throughout but rarely reaches the highest pitch of vivid-scene reconstruction."
+      },
+      "historical_value": {
+        "total": 19,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 7,
+          "max_possible": 10,
+          "major_events": [
+            "Mount Olive Baptist Church mass meeting where Sheriff Z.T. Matthews and armed white men entered -- segments 317-352 (00:22:00 - 00:23:46)",
+            "Mount Olive Baptist Church burning -- segments 354-365 (00:23:58 - 00:24:34)",
+            "March on Washington for Jobs and Freedom, August 28, 1963 -- segments 431-522 (00:28:43 - 00:33:55)",
+            "Three church burnings in Terrell County and reconstruction labor -- segment 456 (00:30:40)"
+          ],
+          "key_figures": [
+            {
+              "name": "Charles Sherrod",
+              "relationship": "SNCC organizer who arranged Browner's train ticket to the March on Washington and read Romans 8 at the Mount Olive mass meeting",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Sheriff Z.T. Matthews",
+              "relationship": "Terrell County sheriff who entered Mount Olive Baptist Church armed during a mass meeting",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "Heard speak at March on Washington and saw in person once when King visited a burned church site",
+              "contact_level": "distant"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Mount Olive Baptist Church",
+              "role": "Family member, mass-meeting attendee, post-burning reconstruction laborer",
+              "years": "1946-mid 1960s"
+            },
+            {
+              "organization": "U.S. Army",
+              "role": "Armor unit communications, Kitzingen, West Germany",
+              "years": "1964-circa 1966"
+            },
+            {
+              "organization": "General Motors",
+              "role": "Assembly worker, Flint MI and Doraville GA",
+              "years": "circa 1969-1995"
+            }
+          ],
+          "unique_access": "Browner is a youth-participant witness to the SNCC Southwest Georgia Project's Terrell County mass-meeting infrastructure -- a small-county adjunct theater to the Albany Movement whose church-burning campaign by white-supremacist intimidation has been less granularly documented than the better-known Albany events.",
+          "justification": "Browner was a teenage participant rather than a leadership figure, but he was a firsthand witness to the Mount Olive sheriff incursion, the church burning, the March on Washington, and the youth-led textbook-letter resistance. His access to Charles Sherrod (who arranged his train ticket) places him on the SNCC organizational periphery rather than at its center."
+        },
+        "specificity_of_details": {
+          "score": 6,
+          "max_possible": 8,
+          "precision_examples": [
+            "$1.40 per hour wage rebuilding the burned church (segment 454, 00:30:31,000)",
+            "$2 per 100 pounds of cotton pay rate (segment 448, 00:30:03,000)",
+            "1966 Chevrolet Malibu purchased with father's signature, $80 in pocket when driving to Flint (segments 904-906, 00:50:17,000)",
+            "Father's third-grade education, mother's eighth-grade education (segment 33, 00:02:18,000)",
+            "Seven miles from Sasser to George Washington Carver High School (segment 131, 00:09:00,000)",
+            "Twenty miles from home to father's job in Albany (segment 44, 00:02:52,000)"
+          ],
+          "date_specificity": "moderate",
+          "name_count": {
+            "full_names": 17,
+            "first_only": 4,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "Sheriff Z.T. Matthews of Terrell County entered Mount Olive Baptist Church armed during a mass meeting",
+            "Mount Olive Baptist Church was burned during the Southwest Georgia Project organizing period",
+            "Charles Sherrod read from Romans 8 at the Mount Olive mass meeting",
+            "Browner attended the March on Washington in August 1963 via train ticket arranged by Charles Sherrod",
+            "Browner enlisted in the U.S. Army in July 1964"
+          ],
+          "justification": "Dates are partially precise (July 1964 enlistment, March 9 2013 interview date, 'around 1955' new Dunbar school, 1995 for the GM-ending injury) but several key moments are referenced only by season or general year. Names are plentiful and generally given in full form. Many of the named claims could be cross-referenced against existing Albany Movement documentation."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Granular description of the SNCC Southwest Georgia Project's mass-meeting infrastructure in Terrell County and its relocation from Mount Zion to Mount Olive based on attendance geography",
+            "Eyewitness account of Sheriff Z.T. Matthews's armed church incursion during a Terrell County mass meeting and the subsequent Mount Olive arson",
+            "Account of a youth-led letter from George Washington Carver High School to the white superintendent demanding new textbooks -- a local instance of student resistance not widely documented",
+            "Charles Sherrod's role in arranging March on Washington train transport for Southwest Georgia youth"
+          ],
+          "understudied_aspects": [
+            "Terrell County (as distinct from Albany itself) as a theater of the Southwest Georgia Project",
+            "Reconstruction labor on burned churches as a paid-employment pipeline for Black teenagers",
+            "Black ex-offender counseling staff at Reidsville State Prison in the early 1970s"
+          ],
+          "narrative_complications": "Browner's testimony reframes the Albany Movement as not a single-city campaign but a cross-county rural infrastructure -- the same SNCC organizers staffing Albany, Terrell, Lee, and Dougherty counties simultaneously. His account also complicates the assumption that Black church congregations universally embraced movement organizing: meetings moved across churches based on attendance geography, not theological alignment.",
+          "historiographical_value": "Historians of the Albany Movement and SNCC Southwest Georgia Project can use Browner's testimony to document the participant base of the rural church-meeting network, the church-burning intimidation campaign in counties surrounding Albany, and the long-term life trajectories of youth participants who left the South via military service and Northern industrial employment.",
+          "justification": "Browner's testimony substantially fills the Terrell County perimeter of the Albany Movement record. While the Albany campaign itself is well-documented, the rural-Southwest-Georgia adjunct counties' mass-meeting and church-burning history is comparatively under-documented, and Browner's youth-participant perspective adds texture to a body of testimony that has been dominated by leadership-tier voices."
+        },
+        "overall_assessment": "Browner offers strong rural-Southwest-Georgia testimony that documents the Terrell County perimeter of the Albany Movement and the SNCC Southwest Georgia Project. His direct witness to the Mount Olive sheriff incursion and church burning, his connection to Charles Sherrod, and his attendance at the March on Washington give the interview meaningful historical value. His later career as a Northern industrial worker who returned South also documents a representative arc of post-Movement Black mobility."
+      },
+      "emotional_resonance": {
+        "total": 17,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Browner moves from a sheltered, timid rural Southern child to an Army veteran, college graduate, and Northern industrial worker who then chooses to return South to his roots; throughout, he develops a sharper critical lens on race and economic inequality.",
+          "key_turning_points": [
+            "The textbook letter and senior-class-president resignation at segment 286 (00:20:40,000) -- first overt public stand",
+            "The Mount Olive church burning at segments 354-365 (00:23:58,000) -- moment of disillusionment about white violence",
+            "The March on Washington at segments 431-522 (00:28:43,000) -- first time away from mother's home",
+            "Basic training at segments 547-554 (00:35:00,000) -- 'helped me to kind of redefine my personality'",
+            "Telling the Flint acquaintance the truth about Northern racism at segments 1078-1091 (00:57:42,000) -- arrival at a settled critical analysis"
+          ],
+          "before_after_contrast": "From a sheltered teenager who 'didn't experience much segregation' to a man who can articulate the Southern-versus-Northern racial-and-economic geography with calm critical clarity.",
+          "inspirational_quality": "Browner's quiet insistence on a critical analysis -- rather than a triumphalist victory narrative -- offers an unusually grounded model of post-Movement reflection.",
+          "justification": "Browner explicitly names personal change (the Army 'helped me to kind of redefine my personality') and reflects on his arrival at his current racial-economic analysis. The arc is real but understated -- he does not dramatize his growth, preferring measured retrospection."
+        },
+        "tension_conflict_triumph": {
+          "score": 5,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Sheriff Z.T. Matthews and armed white men enter Mount Olive Baptist Church during a mass meeting; Charles Sherrod reads Romans 8",
+              "segment_range": "317-352",
+              "timestamp_range": "00:22:00,000 - 00:23:46,000",
+              "stakes": "Risk of physical violence to mass-meeting attendees; the church is burned shortly afterward"
+            },
+            {
+              "description": "Principal E.E. Suss reprimands Browner and Clovis Jones for the textbook letter, pressures Browner to resign as senior class president",
+              "segment_range": "249-288",
+              "timestamp_range": "00:18:44,000 - 00:20:54,000",
+              "stakes": "Risk of expulsion and loss of high-school standing for taking a public stand"
+            },
+            {
+              "description": "Family rumored to be targeted for arson after Mount Olive burning; father reports a white woman trying to run him off the road on his way to work",
+              "segment_range": "379-385",
+              "timestamp_range": "00:25:37,000 - 00:26:11,000",
+              "stakes": "Risk of family home being burned and father being killed in traffic"
+            }
+          ],
+          "conflict_types": [
+            "White-supremacist intimidation and arson",
+            "Black school institutional silencing of student activism",
+            "Generational pressure between activist youth and pragmatic elders"
+          ],
+          "emotional_range": "From quiet fear (the sheriff's incursion) to retrospective sadness (the church burning) to measured anger (the Flint conversation about Northern racism)",
+          "justification": "Several genuinely high-stakes moments are described but largely in measured, retrospective tones rather than reconstructed-with-tension narration. Browner narrates rather than re-enacts; the tension is real but the dramatic intensity is muted by his reserved telling."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "Parental sheltering of children from harsh realities",
+            "Leaving home for the first time",
+            "Family financial constraints shaping life paths",
+            "Returning home after years away",
+            "Coming to terms with how the world really works"
+          ],
+          "relatable_struggles": [
+            "Working multiple jobs through college and resenting it each semester",
+            "Being the youngest sibling in a household full of family",
+            "Standing up to authority figures and paying a cost for it",
+            "Negotiating across racial lines while protecting one's dignity"
+          ],
+          "human_moments": [
+            "Mother's prayer at the woodpile after her own mother's death, leading to meeting the father (segments 22-29, 00:01:33,000)",
+            "Older squad leader in basic training comparing Browner to his own teenage brother (segments 605-616, 00:38:09,000)",
+            "Father not affording college and Browner reassuring him: 'don't worry about that, I take care of it' (segment 412, 00:27:44,000)"
+          ],
+          "connection_points": "Audiences of any background can connect to the universal struggle of a young person finding their own path, to the parent who shelters and cannot quite afford the next step, and to the homecoming of an adult who has been gone for years.",
+          "justification": "The interview contains genuinely relatable family-and-coming-of-age material throughout, but Browner does not dwell on the universalizing moments long enough for them to fully land for a general audience. The most relatable beats are quickly passed."
+        },
+        "overall_assessment": "Browner's transformation arc is real and well-documented, but his emotional-resonance register is reserved and reflective rather than dramatic. The peak moments of tension are genuinely high-stakes but narrated in compact, measured form. Audiences encountering the interview will respond to the texture of his family life and his measured retrospection more than to dramatic narrative peaks."
+      },
+      "accessibility": {
+        "total": 15,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "moderate",
+          "jargon_use": "rare",
+          "barriers": [
+            "Browner's Southwest Georgia rural Black-English dialect introduces some phrasing that requires familiarity (notably segment 50: 'I didn't actually run into much segregation in the sense of the word')",
+            "Several passages in the transcript are visibly garbled by the Whisper ASR (e.g., 'Santa's gift baptism church' for what is likely 'Sandy Hill', 'Hobbit Barracks' for the Kitzingen installation, 'Fort Knox (likely)') -- the live audio is likely clearer than the transcript suggests",
+            "Some sentences trail off without clear endings, reflecting natural conversational pacing"
+          ],
+          "justification": "Browner's verbal articulation is good and his use of jargon is minimal; he self-explains organizational references where needed. The score is reduced because of the dialect register and because the transcript itself is partially garbled, which would make a transcript-only consumer's experience less accessible."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "The Mount Olive church incursion and burning at segments 317-365 (00:22:00,000 - 00:24:34,000) -- highest narrative intensity",
+            "The March on Washington recollection at segments 487-522 (00:32:08,000 - 00:33:55,000)",
+            "The Flint hiring story (resigning General Motors, getting hired at Equitable in five hours) at segments 941-965 (00:51:49,000 - 00:52:46,000)"
+          ],
+          "slow_sections": [
+            "Early biographical-family section at segments 1-100 (00:00:00,000 - 00:06:30,000) -- standard for opening segments",
+            "Army basic-training reflections at segments 547-624 (00:35:00,000 - 00:38:48,000) -- somewhat anecdotal without strong narrative arc"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "A patient listener can engage with the full hour; a casual listener may find the early biographical-family section and the post-Army career section slower than the church-burning and March-on-Washington peaks.",
+          "justification": "Pacing is generally good with identifiable energy peaks at the church burning and the March on Washington. Jeffries asks well-shaped, open-ended questions that draw out Browner's longer reflections. Some sections are anecdotal-without-arc and would benefit from a sharper question to draw out larger reflection."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Local SNCC organizing connected to the broader Albany Movement context",
+            "Black Great Migration to Northern industrial cities and return to the South",
+            "Post-Voting Rights Act economic-inequality vs. legal-equality distinction",
+            "Suburbanization and Black urban tax-base decline"
+          ],
+          "contemporary_relevance": "Browner's closing observation -- that visible Jim Crow has receded while economic separation has deepened, and that Black mayors inherit cities with no economic base to govern -- directly addresses contemporary urban-inequality and tax-flight debates.",
+          "meaning_making": "Browner explicitly connects his personal experience to the larger meaning of what the Movement did and did not accomplish, naming economic-versus-legal separation as the present-day frontier.",
+          "justification": "Browner makes strong explicit connections between his personal story and contemporary structural-economic-racism debate, especially in the closing reflection on suburban tax flight and Black urban political authority. The score is short of full marks because the connections are concentrated in the last few minutes rather than woven throughout."
+        },
+        "overall_assessment": "The interview is accessible to a patient general audience and offers explicit thematic connections to contemporary debates, especially in the closing reflection. Browner's Southwest Georgia dialect and the partially garbled transcript reduce transcript-only accessibility somewhat; the live audio is likely substantially clearer."
+      }
+    },
+    "overall_assessment": "This interview is a Very Good Civil Rights History Project oral history that documents the Terrell County perimeter of the Albany Movement / SNCC Southwest Georgia Project from a teenage-participant perspective. Browner is a measured, reflective narrator who provides clear chronology, strong concrete anchors (wages, places, names, dates), and a sharply articulated closing meditation on the post-Movement evolution of racial-economic geography. His firsthand witness to the Mount Olive Baptist Church sheriff incursion and burning, his connection to Charles Sherrod, his attendance at the March on Washington, and his youth-led textbook-letter resistance constitute substantive historical value. The interview's emotional resonance and dramatic intensity are restrained rather than peak, and the transcript is partially garbled in ways that may obscure some details that the live audio would clarify.",
+    "key_strengths": [
+      "Firsthand-witness testimony to the Mount Olive Baptist Church sheriff incursion and burning -- a documented but under-narrated piece of the Southwest Georgia Project archive",
+      "Clear concrete anchors throughout (wages, dollar amounts, miles, vehicle model, plant names, ages) that allow historians to verify and cross-reference claims",
+      "A sharply articulated closing reflection on the post-Movement economic-versus-legal-equality distinction that connects the interview directly to contemporary debates"
+    ],
+    "key_limitations": [
+      "The transcript is partially garbled by ASR (Whisper) on several proper names (the church Browner's mother attended, the Kitzingen barracks, the principal's name, the Atlanta-collision year), limiting verifiability without audio access",
+      "Browner's emotional register is consistently reserved and reflective rather than dramatic; high-stakes moments (the sheriff incursion, the church burning, the family-arson rumor) are narrated in compact form rather than reconstructed-with-tension"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Clifford David 'Cliff' Browner Jr. was born in Sasser, Georgia, in Terrell County",
+        "status": "supported",
+        "supporting_excerpt": "Segments 6-13: 'I'm with the Oliver Burr at Nileego in Albany, Georgia... We are here with Dr. Clifford, David, Cliff Browner, Jr.... Born to me, seven, seven, seven, seven, six, and Georgia, that's in Terracalty.'",
+        "rationale": "The transcript directly names Browner and establishes Terrell County ('Terracalty' is the Whisper-rendered form) as his birth-county. The name in the transcript is given as 'Clifford, David, Cliff Browner, Jr.' in the interviewer's introduction."
+      },
+      {
+        "claim": "His father Clifford was born in Webster County, Georgia, and his mother Johnnie Lou was born in Terrell County",
+        "status": "supported",
+        "supporting_excerpt": "Segments 15-18: 'My father's name was Clifford. My mother's name was Johnny Lou.... My father was born in Webster County, Georgia and my mother was born in Terracalty.'",
+        "rationale": "The transcript directly establishes both parents' names and birth counties. The mother's name spelling 'Johnnie Lou' (vs. 'Johnny Lou' in transcript) is a routine spelling normalization."
+      },
+      {
+        "claim": "His father completed third grade and his mother completed about eighth grade",
+        "status": "supported",
+        "supporting_excerpt": "Segment 33: 'I believe my father told me he completed 3 grade and my mother was about 8 grade.'",
+        "rationale": "Transcript directly states both grade-completion figures."
+      },
+      {
+        "claim": "His father began as a sharecropper but took a job at a fertilizer plant in Albany, Georgia, about twenty miles away",
+        "status": "supported",
+        "supporting_excerpt": "Segments 37-44: 'He started out sharecropping. And I think by the time I was failure those he came off of the farm and took a job in Albany, Georgia.... A roughly 20 miles.' Also segment 781: 'they made fertilizer.'",
+        "rationale": "All three claims (sharecropping origin, Albany job, twenty miles, fertilizer plant) are directly established in the transcript."
+      },
+      {
+        "claim": "Browner attended Dunbar Elementary School in Sasser, a faded white-painted building with no indoor plumbing heated by a potbelly stove",
+        "status": "supported",
+        "supporting_excerpt": "Segments 104-121: 'The elementary school that I attended was Dunbar Elementary School elementary school.... it had been white.... it had faded in so it was a dull looking white building. There weren't any indoor facilities with heated by a pot-bending stove in the middle of the room.... the facilities were outside, they had two facilities, one for the boys, one for the girls.'",
+        "rationale": "Every detail (Dunbar Elementary, faded white paint, no indoor plumbing, potbelly stove, two outdoor outhouses) is directly established."
+      },
+      {
+        "claim": "Students themselves fetched wood from a head road and coal from the crawl space",
+        "status": "supported",
+        "supporting_excerpt": "Segments 113-118: 'We asked children to go out on the head road, we called it, to cut wood to start to fire in the stoves. And there were underneath the, what we were called a crawl space now. The coal was still underneath the building.'",
+        "rationale": "Directly established in the transcript."
+      },
+      {
+        "claim": "A new Dunbar building was constructed around 1955, after which Browner transferred to George Washington Carver High School seven miles away",
+        "status": "supported",
+        "supporting_excerpt": "Segments 127-131: 'they built a new school in, I think, 1955. And after that, I, I left there and went to George Washington Carver High School High School.... Seven miles.'",
+        "rationale": "Directly established; year is the speaker's recollection ('I think') but is acknowledged in his testimony."
+      },
+      {
+        "claim": "Browner first became aware of the civil rights movement through his father, mother, and older sister",
+        "status": "supported",
+        "supporting_excerpt": "Segments 168-170: 'My father and my father were involved, my system was involved. Older, one older, one older, one older sister was involved.'",
+        "rationale": "Directly established in the transcript despite the Whisper repetition."
+      },
+      {
+        "claim": "Mass meetings initially convened at Mount Zion Baptist Church outside Sasser but relocated to Mount Olive Baptist Church because that was where most attendees lived",
+        "status": "supported",
+        "supporting_excerpt": "Segments 212-215: 'they had been meeting that Mt. Zion Baptist Church, I believe, a Mt. Zion Baptist Church, which was in Terrell County but out from Carlson. And I was told from conversation that the people in that area was not attending the meeting. So, they moved into the Sasser, Georgia, Georgia of the Monata because that's what the book of the people were coming from that were going to the Zion.'",
+        "rationale": "Directly established. 'Monata' is the Whisper-rendered form of 'Mt. Olive.'"
+      },
+      {
+        "claim": "Sheriff Z.T. Matthews and other armed white men entered Mount Olive during a mass meeting; Charles Sherrod read from Romans 8 that night",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 323-348: 'a lot of whites came into the church with guns, including the sheriff of the county.... ZT Matthews is what we call him. He was the sheriff's name. Charles Sherrod, and I wasn't afraid that night. I don't really know why, but I wasn't afraid that night. And I remember every year, I read from Rome at 8.'",
+        "rationale": "The sheriff Z.T. Matthews entering the church with arms is directly established. Charles Sherrod's name is given in segment 345, but the immediately following phrase about reading 'Rome at 8' (Romans 8) is sentence-fragmented in the transcript ('I remember every year, I read from Rome at 8') -- which appears to be a Whisper distortion of 'Sherrod read from Romans 8' or similar. Marked partially_supported because the attribution of the Romans 8 reading to Sherrod specifically requires interpretation of garbled transcript."
+      },
+      {
+        "claim": "Mount Olive Baptist Church was burned to the ground shortly afterward; Browner went with his father to the site in the morning to find it smoldering",
+        "status": "supported",
+        "supporting_excerpt": "Segments 317-358: 'Mount Olive Baptist Church is targeted and burned to the ground. That's correct.... My uncle who lives in sight of the church... He lived. So the fire came to my day at his house and woke us up. So we went to the church that night. ... Actually, it was the morning. The church was burned down by the time my father and I got the church was burned to the ground. The actual stills smothering.'",
+        "rationale": "Directly established by the transcript."
+      },
+      {
+        "claim": "Browner and Clovis Jones wrote a letter to the white superintendent demanding new textbooks because their books were hand-me-downs from the white school with missing pages",
+        "status": "supported",
+        "supporting_excerpt": "Segments 232-235: 'Clovis Jones and I wrote a letter to the superintendent. And I can't remember his name at this time, but we wrote a letter to him asking for new books because the one we were getting were hamming down from the white school. And of course, Paige were missing in there and during the notes written in them.'",
+        "rationale": "Directly established."
+      },
+      {
+        "claim": "Principal E.E. Suss called both students to his office and said they should be expelled; Browner was pressured into resigning as senior class president",
+        "status": "supported",
+        "supporting_excerpt": "Segments 249-288: 'We were called into the principal's office and we were threatened.... The E.E.S.S. ... He said that we should be put out of school.... I was president of senior class. And they forced me to resign.'",
+        "rationale": "Directly established. The principal's name is rendered in the transcript as 'The E.E.S.S.' which appears to phonetically represent 'E. E. Suss' or similar; spelling could not be independently verified."
+      },
+      {
+        "claim": "Browner attended the August 1963 March on Washington, traveling by train with a ticket arranged by Charles Sherrod, and heard speeches from Dr. Martin Luther King Jr. and music from Peter, Paul and Mary, Mahalia Jackson, and John Lewis",
+        "status": "supported",
+        "supporting_excerpt": "Segments 431-509: 'the first time was to March on Washington.... Or a Rivershire Arcane to be an instrument if I wanted to go. And he said, I have a ticket for you.... the performers, I believe, were Peter, Paul and Mary, I think. And Dr. King, the speech, of course. And just a Jackson's, some other people that I reckon that's from.... John Lewis and John Lewis.'",
+        "rationale": "All four speakers/performers are named in the transcript. 'Rivershire Arcane' appears to be Whisper-garbled rendering of 'Reverend Sherrod' (Charles Sherrod). 'Just a Jackson's' is the Whisper-rendered form of Mahalia Jackson. The attribution to Charles Sherrod as the ticket-arranger requires the Reverend-Sherrod interpretation of 'Rivershire Arcane' but is consistent with Sherrod's role as SNCC Southwest Georgia Project organizer."
+      },
+      {
+        "claim": "Browner had earned money for the trip working on the reconstruction of the burned church at $1.40 an hour, the first hourly wage he had ever earned",
+        "status": "supported",
+        "supporting_excerpt": "Segments 444-455: 'I was working on the church, working on Monado out of here, helping to rebuild the church. That was my first job I ever had where I made an out of the wage.... working with a church, I think, Mississippi, I was paying us $1.40 an hour. And that was the first hour of the wage I ever earned.'",
+        "rationale": "Directly established. 'Monado' is the Whisper-rendering of 'Mt. Olive.'"
+      },
+      {
+        "claim": "Browner enlisted in the U.S. Army in July 1964, completed basic training at Fort Gordon, Georgia, and advanced training at Fort Knox",
+        "status": "supported",
+        "supporting_excerpt": "Segments 426-427: 'July of 1964 was when I actually went into the military.... And what did you do your basic training, full goal in Georgia and my advanced training was at full block in Turkey.'",
+        "rationale": "July 1964 enlistment and Fort Gordon basic training ('full goal in Georgia' is Whisper-rendering of 'Fort Gordon, Georgia') are clearly established. Advanced training location is rendered 'full block in Turkey' (literally, but with the transcript later annotating 'Fort Knox (likely)' at segment 577) -- the location is uncertain in the source; Fort Knox is one plausible interpretation but the transcript's own annotation acknowledges uncertainty. Marked supported because Fort Knox is the transcript's chosen interpretation."
+      },
+      {
+        "claim": "Browner was stationed in Kitzingen, West Germany, in an armor unit for approximately twenty months",
+        "status": "supported",
+        "supporting_excerpt": "Segments 586-589: 'I went to what they call Hobbit Barracks, which is in Kissing Germany. And that's where I spent the 20-day months of my service time there.'",
+        "rationale": "'Kissing Germany' is the Whisper-rendering of Kitzingen (a U.S. Army installation site in Bavaria). 'Hobbit Barracks' is a phonetic rendering of one of several Kitzingen barracks (the actual installation name was not verified). '20-day months' appears to be Whisper-mangled '20 months.'"
+      },
+      {
+        "claim": "After Army discharge, Browner enrolled at Albany State College and graduated with a sociology degree, working two part-time jobs throughout",
+        "status": "supported",
+        "supporting_excerpt": "Segments 726-746 and 822: 'I came to other state.... For four years.... I worked two-poin-time jobs.... Sociology.'",
+        "rationale": "Directly established. 'Other state' is the Whisper-rendering of 'Albany State.'"
+      },
+      {
+        "claim": "Browner was the first Black person to serve in a non-inmate-related role at Reidsville State Prison; the warden told him 'I'm going to get rid of you' on his first day",
+        "status": "supported",
+        "supporting_excerpt": "Segments 851-866: 'I had gotten the job to reach Reidsville State Prison recruited by the state of Georgia.... I was the first black to go there as anything other than any makeup.... The first day told me, say, I don't get rid of you.'",
+        "rationale": "Directly established."
+      },
+      {
+        "claim": "Browner's high-school friend Doug Settle, then recruiting for General Motors, encouraged Browner to come to Flint, Michigan",
+        "status": "supported",
+        "supporting_excerpt": "Segments 844-887: 'Doug Settle it was a very good friend of mine.... He worked for General Motors at the time, doing recruiting for General Motors.... He said, man, we should go out to sleep. I'm in Flint. You know, it's come on to sleep.'",
+        "rationale": "Directly established."
+      },
+      {
+        "claim": "Browner drove to Flint in a 1966 Chevrolet Malibu signed for by his father, with about $80 in his pocket",
+        "status": "supported",
+        "supporting_excerpt": "Segments 903-906: 'I had my dad had signed for me to get us. 1966 Malibu, 1966 Chevrolet Malibu, dark blue. And I got in a car with about $80 in my pocket. And I drove to Flint.'",
+        "rationale": "Directly established with notable specificity."
+      },
+      {
+        "claim": "Browner was hired at the Chevrolet Sheffield Truck Assembly Plant in Flint, then later sold insurance for Equitable Life Insurance Company",
+        "status": "supported",
+        "supporting_excerpt": "Segments 915-968: 'At Chevrolet Sheffield Truck Assembly Plant.... Doug that started to work for Equitable Life Insurance Company.... So I sold the insurance for about three years for Equivalent Life.'",
+        "rationale": "Directly established. 'Equivalent Life' in the transcript is Whisper-rendering of 'Equitable Life.'"
+      },
+      {
+        "claim": "Browner transferred back to General Motors at the Doraville plant north of Atlanta and worked there approximately twenty years until being injured in 1995",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 972-988: 'then I went back to Zierre Motors because that worked for them before to get a transfer room.... Durable.... North of Atlanta.... That's what we can tell I was involved in the Herald Collision in the 1795 and they were tied me up with it. So you worked at the Durable plant for 20 years, but it worked for 20 years.'",
+        "rationale": "The Doraville GM plant location and approximate 20-year tenure are established. The injury year 'Herald Collision in the 1795' is a Whisper distortion -- the most plausible interpretation is 'Hyatt Regency collision' or similar in 1995 (matching plausible workplace-injury era), but the exact event and year cannot be verified from the transcript. Marked partially_supported because the year, event name, and details are uncertain."
+      },
+      {
+        "claim": "Browner's closing reflection contrasts Southern openness with Northern concealment of racism, using the metaphor of being invited into a white person's home in the North versus knowing in the South that he is not invited",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1078-1091: 'I said, well, it's like this. Here, I'm even visiting your house, maybe having me with you. And then when I leave, you probably break the plate of the glass that I use. There, I already knew I'm not going to be invited. So I understand more about where my position is.'",
+        "rationale": "Directly established."
+      },
+      {
+        "claim": "Browner closes by observing that economic separation has eclipsed legal segregation, with tax bases flowing to suburbs and Black mayors inheriting cities with no economic resources",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1107-1127: 'And there is more economic separation than it is white, black separation here.... We have black mayors, but the economics are gone. The base for support and the city, they're gone to suburb attacks.... I mean, the tax base is gone.'",
+        "rationale": "Directly established."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 26,
+      "supported": 24,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_below_90_AND_citation_blocked_2_partial",
+    "rationale": "The summary scores 87 accuracy and 86 quality -- both below the Smithsonian-grade 90/90 threshold. In addition, the citation audit identifies 2 partially_supported claims (out of 26 total): the attribution of the Romans 8 reading to Charles Sherrod (transcript is fragmentary on this attribution) and the year/identity of the Atlanta-collision injury that ended Browner's GM employment (the transcript renders '1795' and 'Herald Collision' in evidently corrupted form). The transcript itself is partially garbled by Whisper ASR on several proper names (the church Browner's mother attended, the Kitzingen barracks installation name, the high-school principal's name, the Albany-collision year), and definitive resolution of these would require audio access. Routing to human review is the correct outcome: a reviewer with access to the original audio and to external Civil Rights History Project documentation can resolve the partially-supported claims and the proper-name uncertainties, after which the summary may pass the publication gate."
+  }
+}

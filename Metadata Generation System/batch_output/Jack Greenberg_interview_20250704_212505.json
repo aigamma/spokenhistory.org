@@ -1,0 +1,900 @@
+{
+  "interview_name": "Jack Greenberg",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Jack Greenberg_interview_20250704_212505\\Jack Greenberg_interview_transcript_20250704_212505.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Jack Greenberg",
+    "interviewee_title": "Civil Rights Attorney; Former Director-Counsel, NAACP Legal Defense and Educational Fund",
+    "interview_date": "2011-07-18",
+    "interview_location": "Midtown Manhattan, New York, New York",
+    "interviewer_name": "Joseph Mosnier",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill (for the Library of Congress)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:32:47"
+  },
+  "main_summary": {
+    "summary": "Jack Greenberg recounts his career as a civil rights attorney with the NAACP Legal Defense and Educational Fund (LDF), where he served from 1949 and later became Director-Counsel in 1961. Greenberg describes how he came to civil rights work through a Columbia Law School seminar called \"Legal Survey\" taught by Professor Walter Gellhorn, who deliberately avoided naming it a civil rights or civil liberties course out of fear that the faculty would refuse to permit it during the McCarthy-era anti-Communist climate. After taking the seminar for four semesters, Greenberg was recommended for an opening at the LDF when staff attorney Marian Wynne Perry resigned to take a New York State position. He recalls that at the time, civil rights law in the United States was practiced by only a small handful of lawyers, including Thurgood Marshall, Robert L. Carter, and Franklin H. Williams at the LDF, alongside a single ACLU lawyer and a few attorneys at Jewish organizations.\n\nGreenberg describes trying the Kansas school segregation case (one of the cases that became Brown v. Board of Education) with Robert L. Carter, presenting two parallel arguments: that Black schools were tangibly unequal to white schools, and that segregation itself constituted inequality. He recalls that everyone was \"stunned\" by the 1954 Brown decision, which proved more sweeping than the school-focused case the lawyers had brought, ultimately invalidating all state-imposed segregation. Greenberg notes that earlier desegregation victories in higher education, voting, and public facilities had been met with grudging acceptance, but K-12 school integration provoked vehement Southern resistance because it involved large numbers of children and triggered the deepest taboo against any contact between the sexes.\n\nAs Director-Counsel beginning in 1961, Greenberg confronted the sit-in movement and represented approximately 3,500 protesters, securing acquittals for all of them. He describes publishing the 1959 treatise Race Relations and American Law, which he calls the first book on civil rights law since around 1919, and recounts that the Columbia Law Review published unusual paired pro and anti reviews because the subject was considered controversial. Greenberg discusses his travel for litigation, including cases to desegregate airports (a \"Koch\" case against the City of Atlanta and an airport case in New Orleans with co-counsel A.P. Tureaud, whose granddaughter joyfully bought an ice cream cone at the New Orleans airport after the victory). In 1963 Greenberg launched a foundation-funded program providing $10,000 grants to Black attorneys willing to set up practice in Southern cities lacking Black lawyers, which produced \"stars\" including Julius Chambers, Mel Watt, and Marian Wright. On the Civil Rights Act of 1964, Greenberg notes that Title II public accommodations cases were relatively easy because hotels and restaurants wanted the business, but Title VII employment cases were difficult because segregated local labor unions resisted integration. He describes the litigation strategy in Alexander v. Holmes County Board of Education, where Senator John C. Stennis pressured President Nixon into having his HEW Secretary (Robert H. Finch) request the Court of Appeals to delay desegregation; LDF responded by invoking the ancient common-law writ of certiorari to bring the case directly to the Supreme Court, which ruled for immediate desegregation. On Swann v. Charlotte-Mecklenburg Board of Education (1971), Greenberg recounts that Chief Justice Warren Burger initially voted against the lower court order but, finding himself outvoted in conference, switched to the majority so he could assign the opinion to himself, ultimately writing a sweeping opinion endorsing busing and integration of teachers. The interview ends mid-discussion of Milliken v. Bradley (1974) and its distinction between city and suburban school systems.",
+    "key_themes": [
+      "NAACP Legal Defense Fund litigation strategy",
+      "School Desegregation",
+      "McCarthy-Era Constraints on Civil Rights Work",
+      "Building the Civil Rights Bar in the South",
+      "Title VII Employment Discrimination and Labor Unions",
+      "Supreme Court Strategy and Procedure",
+      "Defense of Sit-In Protesters"
+    ],
+    "historical_significance": "Greenberg provides an insider's account of the NAACP Legal Defense and Educational Fund's litigation strategy from its earliest small-staff era through the post-Civil Rights Act of 1964 implementation battles. As Thurgood Marshall's successor as Director-Counsel beginning in 1961, his recollections of Brown v. Board of Education trial preparation, the Alexander v. Holmes County Board of Education common-law certiorari maneuver, and Chief Justice Warren Burger's vote-switch in Swann v. Charlotte-Mecklenburg Board of Education illuminate decision-making and procedural strategy not otherwise visible in the published case record. His account also documents the LDF's 1963 cooperating-attorney program that seeded Black legal practices in underserved Southern cities, an institutional contribution to the structural transformation of the Southern bar.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 87,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 35,
+      "quality_component_b": 17,
+      "quality_component_c": 18,
+      "quality_component_d": 17,
+      "errors": [
+        "Summary states Marian Wright was placed in 'Columbus' as part of the cooperating-attorney program, following Greenberg's transcript statement at segments 145-147. Historically Marian Wright Edelman opened her NAACP LDF practice in Jackson, Mississippi, not Columbus, Georgia. This appears to be the speaker's misremembering rather than a hallucination by the summarizer, but the claim should be treated cautiously.",
+        "Summary names Marshall as the LDF colleague who recommended Greenberg for the Marian Wynne Perry vacancy; the transcript at segment 26 is corrupted ('the third in March of last') but the contextual referent is clearly Thurgood Marshall. The attribution is an interpretive inference from ASR-corrupted text rather than a direct transcript statement."
+      ],
+      "improvements": [
+        "Add an explicit caveat note when relying on ASR-corrupted segments (segments 25-26, 35-36, 134-138) so a reader can distinguish summary inferences from direct transcript text.",
+        "Clarify the Marian Wright Edelman location discrepancy by quoting the exact transcript phrase rather than asserting a placement.",
+        "Add ground-truth corpus citation that Robert H. Finch served as Nixon's HEW Secretary, since the transcript hedges ('I think Robert H. Finch was his name')."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:00:54,000",
+      "title": "Opening and Library of Congress Introduction",
+      "summary": "Joseph Mosnier of the Southern Oral History Program at the University of North Carolina at Chapel Hill introduces the interview as part of the Civil Rights History Project, a joint undertaking of the Library of Congress and the Smithsonian National Museum of African-American History and Culture. The interview is conducted in Midtown Manhattan on Monday, July 18, 2011, with videographer John Bishop present.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["library of congress", "smithsonian", "civil rights history project", "manhattan", "joseph mosnier", "john bishop", "july 2011"],
+      "related_events": ["Library of Congress Civil Rights History Project", "Smithsonian National Museum of African American History and Culture", "Southern Oral History Program (UNC Chapel Hill)"],
+      "quality_metrics": {
+        "accuracy_score": 99,
+        "quality_score": 92,
+        "accuracy_component_a": 40,
+        "accuracy_component_b": 30,
+        "accuracy_component_c": 29,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 19,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": ["The opening chapter is brief and procedural; no substantive content to improve."]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:00:54,000",
+      "end_time": "00:04:51,000",
+      "title": "Path to the NAACP Legal Defense Fund (1949)",
+      "summary": "Greenberg explains that his decision to become a civil rights lawyer was implicit before his 1949 law school graduation. He had entered Columbia Law School with thoughts of practicing labor law, since the term 'civil rights lawyer' did not exist as a recognized career. The pivotal influence was Professor Walter Gellhorn, who taught a seminar called Legal Survey in which students worked on real cases for civil liberties and civil rights lawyers, an early form of clinical legal education. Greenberg recalls that Gellhorn deliberately avoided naming the course 'Civil Rights' or 'Civil Liberties' because, in the McCarthy era, such advocacy could lead to being called a Communist; Gellhorn himself was twice summoned to Congress to swear he had never been a member of the Communist Party. Greenberg took the seminar for four semesters and became chairman of the student body of the course. After law school he was recommended for an LDF opening that arose when staff attorney Marian Wynne Perry resigned to take a New York State position. He notes the entire U.S. civil rights bar at the time consisted of perhaps six lawyers: three or four at LDF, one at the ACLU, and one each at two of three Jewish organizations, plus a single sociologist on staff (the only one in any law office in the world).",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["walter gellhorn", "columbia law school", "legal survey", "marian wynne perry", "naacp legal defense fund", "mccarthy era", "ldf", "1949"],
+      "related_events": ["NAACP Legal Defense and Educational Fund", "Columbia Law School", "Walter Gellhorn", "Marian Wynne Perry", "American Civil Liberties Union (ACLU)", "McCarthy era anti-Communist hearings"],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 90,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": ["Could quote Greenberg's exact phrasing about Gellhorn's two Congressional appearances for specificity."]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:04:51,000",
+      "end_time": "00:07:10,000",
+      "title": "The Small Band of LDF Attorneys Under Thurgood Marshall",
+      "summary": "Greenberg describes the LDF staff he joined in 1949 under Thurgood Marshall's direction. Marshall was already a national figure, having won the restrictive covenant cases and major voting rights cases. The other attorneys were Robert L. Carter (Marshall's first assistant, later a federal judge in New York who had only recently retired at the time of the interview) and Franklin H. Williams (who later took another position in the NAACP, became U.S. Ambassador to Ghana, and headed the Phelps Stokes Foundation). The team also included a full-time sociologist, whom Greenberg calls the only sociologist on staff in any law office in the world. Greenberg notes that the LDF was initially part of the NAACP as a separate independent unit, though that independence created tension with NAACP head Roy Wilkins. In 1957, related to tax exemption considerations, LDF formally spun off as an entirely independent organization, which itself created new kinds of tension later.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["thurgood marshall", "robert l. carter", "franklin h. williams", "naacp", "roy wilkins", "ldf spinoff 1957", "tax exemption", "phelps stokes foundation"],
+      "related_events": ["NAACP Legal Defense and Educational Fund", "Thurgood Marshall", "Robert L. Carter", "Franklin H. Williams", "Roy Wilkins", "1957 LDF spinoff from NAACP", "Phelps Stokes Foundation", "Ambassador to Ghana"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": ["Could add detail about which restrictive covenant cases (Shelley v. Kraemer) and which voting rights cases (Smith v. Allwright) — but only if the transcript named them, which it does not."]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:07:10,000",
+      "end_time": "00:08:58,000",
+      "title": "Trying the Kansas Schools Case (Brown v. Board)",
+      "summary": "Greenberg recalls trying the Kansas school segregation case in Topeka with Robert L. Carter. He notes that Kansas had a peculiar statute under which high schools could opt to be segregated, and Topeka had taken that option. The LDF tried the case on two tracks, as it did in all the cases: first, to show that Black schools were not equal to white schools in any tangible, measurable respect (number of books, teachers' salaries, square feet, gymnasium, playing ground, curriculum, laboratories); and second, to urge the court, with the help of expert witnesses, to understand that segregation itself constituted inequality.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["brown v. board of education", "topeka", "kansas", "robert l. carter", "school segregation", "expert witnesses", "two-track strategy"],
+      "related_events": ["Brown v. Board of Education", "Topeka, Kansas", "Robert L. Carter", "Kansas school segregation statute"],
+      "quality_metrics": {
+        "accuracy_score": 94,
+        "quality_score": 88,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": ["Could note expert witnesses by name if transcript supplied them — it does not."]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:08:58,000",
+      "end_time": "00:11:20,000",
+      "title": "The Brown Decision and Southern Resistance to School Desegregation",
+      "summary": "Greenberg describes the reaction to the May 1954 Brown v. Board of Education decision, which came down years after the original 1950-51 argument and the 1952 Supreme Court appeal (followed by two more arguments). He says everyone was 'stunned' — there were no rocket celebrations; the response was silenced sentence. He calls it a 'cosmic decision' that proved even more cosmic later because, although LDF understood the case to challenge only school segregation, the decision swept away all state-imposed segregation. Greenberg explains that earlier civil rights victories in higher education (law schools, graduate schools), voting, golf courses, beaches, and theaters had been met with grudging acceptance, partly because they involved only one or two people. K-12 school integration triggered far more vehement resistance because it involved mass numbers of children, and because the biggest taboo for segregationists was 'any kind of contact between the sexes' — boys and girls going to school together.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["brown v. board of education", "may 1954", "state-imposed segregation", "school integration", "southern resistance", "supreme court", "earl warren court"],
+      "related_events": ["Brown v. Board of Education (1954)", "School desegregation", "Southern massive resistance"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 86,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": ["The 'two more arguments' phrasing could be tightened to indicate the reargument in 1953 (Brown II being a separate later proceeding) — but only if transcript supports the precision."]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:11:20,000",
+      "end_time": "00:12:43,000",
+      "title": "Director-Counsel in 1961 and Defending the Sit-In Movement",
+      "summary": "Greenberg describes becoming Director-Counsel in 1961, by which time the civil rights movement had begun in earnest. Students were sitting in throughout North Carolina and elsewhere in the South, and the movement was picking up like wildfire across the country. Sit-in protesters were being arrested, but there were no ready defenses prepared because no one had ever needed to defend anyone against such charges before. Greenberg says that LDF understood the Constitution and the law well enough to be ready with a set of defenses. By the time the civil rights movement reached a 'measurable stopping point,' LDF had represented approximately 3,500 sit-in protesters and secured acquittals for all of them.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["director-counsel", "1961", "sit-in movement", "north carolina sit-ins", "criminal defense", "3500 protesters", "acquittals"],
+      "related_events": ["Greensboro sit-ins", "North Carolina sit-in movement", "NAACP Legal Defense and Educational Fund"],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 86,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": ["The transcript phrasing is somewhat hedged ('I don't know what I've ever ended by the time it reached some measurable stopping point') — the summary should acknowledge this is Greenberg's own estimate, not a precise count."]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:12:43,000",
+      "end_time": "00:15:23,000",
+      "title": "Race Relations and American Law (1959)",
+      "summary": "Greenberg discusses publishing Race Relations and American Law in 1959, which he says was the first book on civil rights law since about 1919. The book was driven by the practical observation that there was no existing book on civil rights law and that he was handling cases in all the areas the book would cover. It received excellent reviews but was treated as a controversial subject: the Columbia Law Review took the unusual step of publishing paired pro and anti reviews, something Greenberg says he had not seen the Columbia Law Review or any other law review do before or since. He references two prominent academics critical of civil rights jurisprudence at the time: Herbert Wechsler, author of the famous article 'Toward Neutral Principles of Constitutional Law,' and Edmond Cahn, a legal philosopher at NYU, who wrote an article attacking Brown v. Board of Education for its use of social science data. Greenberg recounts approaching one of these scholars for a review and being told, in person at the scholar's office, that the book was excellent but that the scholar could not review it objectively because his son was white and had married a black woman.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["race relations and american law", "1959", "civil rights treatise", "herbert wechsler", "neutral principles", "edmond cahn", "nyu", "columbia law review", "brown v. board"],
+      "related_events": ["Race Relations and American Law (Greenberg, 1959)", "Herbert Wechsler", "'Toward Neutral Principles of Constitutional Law'", "Edmond Cahn", "Columbia Law Review"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 84,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 17,
+        "quality_component_c": 17,
+        "quality_component_d": 16,
+        "errors": [
+          "The transcript renders the personal anecdote about the scholar with the interracial-marriage son ambiguously: it is unclear whether the speaker is referring to Wechsler, Cahn, or a third scholar Greenberg approached after them. The summary uses 'one of these scholars' to avoid misattribution, but the original speaker reference is genuinely unclear."
+        ],
+        "improvements": ["Tag the anecdote as 'one of these scholars' explicitly rather than implying it was Wechsler or Cahn specifically."]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:15:23,000",
+      "end_time": "00:17:38,000",
+      "title": "Travel, Segregated Transit, and Airport Desegregation Cases",
+      "summary": "Greenberg reflects on the extensive travel his litigation required, by railroad and airplane. Railroads were segregated in the early years, and although airplanes themselves were not, many airport terminals — even those in the North and even at federal facilities — were segregated. He says LDF brought a fair number of cases to desegregate airports, including a case against the City of Atlanta in which the plaintiff was named 'Koch' (which Greenberg notes was 'Koch against City of Atlanta, which is the home of Koch of Koch') and an airport desegregation case in New Orleans where his co-counsel was A.P. Tureaud, for a period of time the only Black lawyer in New Orleans. After winning the New Orleans case, Tureaud brought his granddaughter (whom Greenberg first thought was his daughter, then corrected to granddaughter) to the airport, where she ran off gleefully because she was able to buy an ice cream cone for the first time.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["airport desegregation", "atlanta airport", "new orleans airport", "a.p. tureaud", "segregated railroads", "federal facilities", "ice cream cone"],
+      "related_events": ["A.P. Tureaud", "Atlanta airport desegregation", "New Orleans airport desegregation", "Segregated public transit"],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [
+          "The Atlanta airport plaintiff name 'Koch' is rendered as transcribed; the historical plaintiff in the Atlanta airport desegregation case was likely named differently (the well-known case is Coke v. City of Atlanta or similar). The summary preserves the transcript spelling but does not assert it is historically correct."
+        ],
+        "improvements": ["The Atlanta plaintiff's name should be flagged as ASR-uncertain in any downstream display."]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:17:38,000",
+      "end_time": "00:19:29,000",
+      "title": "Cooperating Attorneys and the 1963 Foundation-Funded Bar-Building Program",
+      "summary": "Prompted by mention of A.P. Tureaud, Greenberg discusses the network of cooperating attorneys LDF developed — pioneering Black attorneys in the South who courageously took cases in conjunction with the Legal Defense Fund. In 1963, on his own initiative as Director-Counsel, Greenberg launched a new training and seeding program. He observed that many Southern cities had no Black lawyer at all, or perhaps one. He obtained funding from a foundation to give a Black lawyer $10,000 — enough for a typewriter, a rug, and some law books — to set up practice in a place where there were no Black lawyers. Greenberg names some 'great stars' who came out of the program: Julius Chambers, Mel Watt, and Marian Wright (later Marian Wright Edelman), of whom he says 'she was terrific.' He also mentions a Congressman from Georgia whose name he cannot recall in the moment, and notes that Marian Wright was placed in Columbus.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["cooperating attorneys", "1963", "julius chambers", "mel watt", "marian wright edelman", "$10000 program", "southern bar", "black lawyers", "columbus"],
+      "related_events": ["Julius Chambers", "Mel Watt", "Marian Wright Edelman", "A.P. Tureaud", "NAACP Legal Defense Fund cooperating-attorney network"],
+      "quality_metrics": {
+        "accuracy_score": 82,
+        "quality_score": 84,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 17,
+        "quality_component_c": 17,
+        "quality_component_d": 16,
+        "errors": [
+          "The transcript places Marian Wright in Columbus. Historically Marian Wright Edelman set up her NAACP LDF practice in Jackson, Mississippi (1964-1968), not Columbus, Georgia. The transcript reflects what the speaker said, but the placement is historically incorrect."
+        ],
+        "improvements": ["Add an explicit footnote that the Columbus placement of Marian Wright differs from the historical record (Jackson, Mississippi)."]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:19:29,000",
+      "end_time": "00:22:37,000",
+      "title": "Civil Rights Act of 1964: Public Accommodations and Employment",
+      "summary": "Greenberg describes LDF's litigation program under the Civil Rights Act of 1964. He explains that Title II public accommodation cases (restaurants, bars, theaters) were relatively easy because ice cream parlors and restaurants were happy to get the business and the market did not take care of integration on its own — nobody wanted to stick his neck out first. The main resistance involved subterfuges, particularly hotels that set up private clubs within the hotel: Greenberg recalls being handed a membership card to such a club simply by virtue of being white and registering at the hotel, while a Black person registering with him was denied. Title VII employment cases were harder. Many employers themselves did not care and would be just as happy to employ Black workers, but LDF had to confront segregated local labor unions: nationally pro-civil-rights unions had local chapters separated into white and Black locals, and the Black locals often did not want to lose their members to the white local. Greenberg says some of LDF's most bitter cases were against the labor unions.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["civil rights act of 1964", "title ii", "title vii", "public accommodations", "employment discrimination", "labor unions", "segregated locals", "private club subterfuge"],
+      "related_events": ["Civil Rights Act of 1964", "Title II public accommodations", "Title VII employment discrimination", "Segregated labor unions"],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": ["The Kennedy-introduced legislation and post-Kennedy-assassination momentum are mentioned by the interviewer (segments 148-150) but Greenberg's own response stays on the litigation strategy; the summary could clarify what was paraphrase vs. interviewer framing."]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:22:37,000",
+      "end_time": "00:28:02,000",
+      "title": "Alexander v. Holmes County: Stennis, Nixon, and Common-Law Certiorari",
+      "summary": "Greenberg recounts the litigation strategy behind Alexander v. Holmes County Board of Education. He explains that LDF had won cases indicating the next round of school desegregation cases would require immediate desegregation. Senator John C. Stennis, anticipating this outcome, refused to bring the armed services appropriation bill to the floor of the Senate, telling the President that his constituents in Mississippi needed him at home. President Nixon then directed his Secretary of Health, Education, and Welfare — Greenberg recalls 'I think Robert H. Finch was his name' — to ask the Court of Appeals to send the cases back to the district court without deciding them, so the district court could reconsider whether or not to order immediate desegregation. This created a procedural problem for LDF because Supreme Court appeals normally require a final judgment, and what Nixon was seeking was the absence of a final judgment. Greenberg explains that LDF invoked an ancient common-law writ of certiorari (distinct from the statutory certiorari Supreme Court uses to review most cases) under a federal statute saying all common-law writs are available in the federal courts. He cites Marshal Foch's famous quotation from the Second Battle of the Marne — 'my left flank is in retreat, my right flank is under attack, my center collapses; I attack' — and says LDF attacked, the Supreme Court agreed to hear the case, and ruled with LDF, producing widespread desegregation.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["alexander v. holmes county", "john c. stennis", "richard nixon", "robert h. finch", "hew secretary", "common-law certiorari", "supreme court procedure", "marshal foch", "second battle of the marne"],
+      "related_events": ["Alexander v. Holmes County Board of Education", "John C. Stennis", "Richard Nixon", "Robert H. Finch (HEW Secretary)", "Common-law writ of certiorari", "Marshal Foch / Second Battle of the Marne"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [
+          "The transcript also references a 'Southern Strategy' attributed to a figure (likely Nixon) at segments 185-187 — the summary does not name this speaker because the transcript is ambiguous about whether Greenberg is paraphrasing Nixon's posture or characterizing a different actor."
+        ],
+        "improvements": ["The Marshal Foch quotation is famously associated with the Battle of the Marne; the summary preserves Greenberg's framing but could specifically flag the historical attribution as accurate."]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "00:28:02,000",
+      "end_time": "00:30:53,000",
+      "title": "Swann v. Charlotte-Mecklenburg and Chief Justice Burger's Vote Switch",
+      "summary": "Greenberg describes Swann v. Charlotte-Mecklenburg Board of Education (1971), the first substantive school desegregation case the Court heard after the Brown era and LDF's first major argument on busing. Chief Justice Warren Burger, in his first major opinion after his appointment by Nixon, ultimately wrote a long opinion endorsing quotas, busing, integration of teachers, and 'everything that any civil rights advocate ever asked for.' Greenberg explains the back-story: after the initial argument, the preliminary vote among the justices indicated the Court would uphold the lower court and not enter the order LDF sought. But as conferences continued, Burger — who had been leading the minority dissent — found himself outvoted by the other justices. According to a story Earl Warren told Greenberg (relayed to 'all the parties'), Warren said 'there he stood naked' — meaning Burger was alone in dissent and could not assign the opinion. To control the opinion, Burger switched his vote to join the majority so he could assign the opinion to himself. Burger inserted a passage in the last paragraph signaling that someday the order would have to end and the Court would reconsider, which proved prophetic about 10 to 15 years later when those provisions were rolled back.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["swann v. charlotte-mecklenburg", "1971", "warren burger", "earl warren", "busing", "school desegregation", "supreme court vote switch", "quotas", "teacher integration"],
+      "related_events": ["Swann v. Charlotte-Mecklenburg Board of Education (1971)", "Chief Justice Warren Burger", "Chief Justice Earl Warren", "Richard Nixon (judicial appointments)", "Court-ordered busing"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 16,
+        "errors": [
+          "Greenberg's recollection has Earl Warren telling him about Burger 'standing naked' — but Earl Warren had retired in 1969 before Swann was decided in 1971. Either Warren told Greenberg about Burger's pattern of vote-switching generally (not specifically Swann), or Greenberg's memory of which Chief Justice relayed the story is uncertain. The summary preserves the transcript attribution without correcting it."
+        ],
+        "improvements": ["Flag the Earl-Warren-vs-Swann timeline anomaly as a potential ambiguity in the speaker's recollection."]
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "00:30:53,000",
+      "end_time": "00:32:47,000",
+      "title": "Milliken v. Bradley and the City-Suburb Boundary (Interview Cut Off)",
+      "summary": "The interviewer pivots to questions about the trajectory of school desegregation after Swann v. Charlotte-Mecklenburg, noting that the LDF was only involved in one of two cases he mentions: Milliken v. Bradley (1974, the metropolitan-consolidation question) and San Antonio Independent School District v. Rodriguez (1973, which the interviewer dates 1975; the funding question). Greenberg begins discussing Milliken v. Bradley, observing that the case was significant because it made the political boundary between city and suburbs determinative. He illustrates this by describing two hypothetical families living 50 yards apart on opposite sides of the boundary — under two different political systems for different counties. He calls this a political decision by the Court rather than a worked-out educational one. The interview is interrupted by a break and the transcript ends mid-sentence shortly after the interviewer asks him to resume his discussion of Milliken v. Bradley.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["milliken v. bradley", "1974", "san antonio v. rodriguez", "metropolitan consolidation", "school funding", "city-suburb boundary", "political decision", "court retrenchment"],
+      "related_events": ["Milliken v. Bradley (1974)", "San Antonio Independent School District v. Rodriguez", "Metropolitan school consolidation", "Court-ordered busing rollback"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 76,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 30,
+        "quality_component_b": 16,
+        "quality_component_c": 15,
+        "quality_component_d": 15,
+        "errors": [
+          "The interview transcript ends mid-discussion (segment 242, 00:32:47), so this chapter is necessarily truncated and the summary cannot fully capture Greenberg's Milliken v. Bradley analysis."
+        ],
+        "improvements": ["The transcript truncation should be flagged at the file-level metadata so downstream consumers know the interview record is incomplete."]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Jack Greenberg",
+      "interviewee_title": "Civil Rights Attorney; Former Director-Counsel, NAACP Legal Defense and Educational Fund",
+      "interview_date": "2011-07-18",
+      "interview_location": "Midtown Manhattan, New York, New York",
+      "interviewer_name": "Joseph Mosnier",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill (for the Library of Congress)",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:32:47",
+      "total_segments": 242,
+      "word_count": 4250,
+      "number_of_chapters": 13
+    },
+    "overall_score": {
+      "total": 78,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 22,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Well, implicitly, I really made that choice before 49. I'd started a Columbia Law School with no thought of being a Civil Rights lawyer because there was no such thing. (Segment 8, 00:01:08,000)",
+            "Well by then a lot of things had happened. 61, the civil rights movement had begun. (Segments 70-71, 00:11:20,000)",
+            "Following the argument, the preliminary vote among the judges was that they would uphold the lower court (Segment 220, 00:29:12,000)"
+          ],
+          "justification": "The interview follows a clear chronological arc from Greenberg's law-school years in the late 1940s through Brown (1954), the sit-in era (1961), the Civil Rights Act of 1964 implementation, Alexander v. Holmes (1969), Swann (1971), and into Milliken (1974). Mosnier's questions create good transitions between topics. The arc is interrupted only by the interview being cut short during the Milliken discussion."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "He brought his granddaughter to the airport after he won the case. And she ran off just gleefully. She was able to buy an ice cream cone there. Something she'd never been able to do before.",
+            "segment": 120,
+            "timestamp": "00:17:14,000"
+          },
+          "specificity_count": {
+            "full_names": 18,
+            "specific_dates": 7,
+            "specific_places": 9
+          },
+          "evidence": [
+            "I immediately ran our Silicon Recall, running up two flights of stairs. It was Professor Gellhorn's office. (Segment 13, 00:02:03,000)",
+            "We give him $10,000 to buy a typewriter, a rug, and some law books. (Segment 132, 00:18:24,000)",
+            "I would recall going to a town and being white, checking in the hotel, and being a hand at a membership card in the club (Segment 160, 00:21:09,000)"
+          ],
+          "justification": "Greenberg supplies many concrete names (Gellhorn, Marian Wynne Perry, Tureaud, Stennis, Finch, Burger, Warren, Chambers, Watt, Marian Wright), specific cases, and vivid scene-setting moments like the ice cream cone anecdote and the $10,000 typewriter-rug-and-law-books detail. Some chapters lean analytical rather than scenic."
+        },
+        "emotional_authenticity": {
+          "score": 6,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "Everybody was kind of stunned by it. We won lots of cases before in the sense of big rocket celebrations, and we just sort of silenced the sentence that everybody would have. I think stunned is the only word, a cosmic decision.",
+            "segment": 56,
+            "timestamp": "00:09:15,000"
+          },
+          "emotional_range": [
+            "stunned reverence",
+            "wry amusement (Gellhorn anecdote)",
+            "warmth (toward Marian Wright)",
+            "analytical detachment"
+          ],
+          "vulnerability_elements": [
+            "Admits memory lapse on Georgia congressman's name",
+            "Acknowledges Brown was unexpectedly sweeping",
+            "Personal recall of Gellhorn's McCarthy-era hearings"
+          ],
+          "justification": "Greenberg is articulate and measured but generally analytical rather than emotionally vulnerable. The Brown 'stunned' moment and the Tureaud-granddaughter anecdote convey genuine feeling. He does not dwell on personal cost, fear, or moral struggle in the segments captured."
+        },
+        "overall_assessment": "The interview is well-structured chronologically with strong concrete specificity in legal procedure and Movement-bar history. Greenberg's emotional register is restrained — he is a lawyer telling a litigation story, not a participant describing personal trauma — which is appropriate to the genre but caps the narrative-quality ceiling. The ice-cream-cone moment and the 'stunned' reaction to Brown are the standout narrative beats."
+      },
+      "historical_value": {
+        "total": 23,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "Co-tried Brown v. Board (Kansas case) with Robert L. Carter (Segments 42-52, 00:07:10,000 - 00:08:58,000)",
+            "Became Director-Counsel of NAACP LDF in 1961 (Segment 69, 00:11:07,000)",
+            "Led LDF defense of 3,500 sit-in protesters (Segment 79, 00:12:23,000)",
+            "Argued Alexander v. Holmes County (1969) using common-law certiorari (Segments 188-213, 00:24:03,000 - 00:28:02,000)",
+            "Led LDF on Swann v. Charlotte-Mecklenburg (1971) (Segments 214-230, 00:28:02,000 - 00:30:53,000)"
+          ],
+          "key_figures": [
+            {
+              "name": "Thurgood Marshall",
+              "relationship": "LDF director, then predecessor as Director-Counsel; recommender for Greenberg's hire",
+              "contact_level": "close"
+            },
+            {
+              "name": "Robert L. Carter",
+              "relationship": "LDF co-counsel on Kansas Brown case",
+              "contact_level": "close"
+            },
+            {
+              "name": "Earl Warren",
+              "relationship": "Chief Justice; relayed story about Burger's vote-switch",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Walter Gellhorn",
+              "relationship": "Law school professor and mentor",
+              "contact_level": "close"
+            },
+            {
+              "name": "A.P. Tureaud",
+              "relationship": "LDF co-counsel in New Orleans airport case",
+              "contact_level": "close"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "NAACP Legal Defense and Educational Fund (LDF)",
+              "role": "Staff attorney (1949-1961), Director-Counsel (1961-1984)",
+              "years": "1949-1984"
+            },
+            {
+              "organization": "Columbia Law School",
+              "role": "Student, then later faculty",
+              "years": "1945-1949 (student)"
+            }
+          ],
+          "unique_access": "Greenberg has decisive insider knowledge of LDF's litigation strategy across three decades — case selection, two-track trial strategy in school cases, the common-law certiorari maneuver in Alexander v. Holmes, and procedural conference dynamics inside the Supreme Court via Earl Warren's relay about Burger.",
+          "justification": "Greenberg's vantage point is extraordinary: direct participant in Brown trial preparation, successor to Thurgood Marshall as LDF Director-Counsel, lead strategist on Alexander v. Holmes and Swann, and a source for inside-Supreme-Court process detail via Warren. Very few civil-rights litigators of the Brown-through-Swann era survived to give such interviews by 2011."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Today is Monday, July 18, 2011 (Segment 2, 00:00:10,000)",
+            "Kansas had a peculiar statute. It was an Kansas school segregation statute. The schools were required to be segregated by law in Kansas, high schools, or high school systems, could opt to be segregated (Segments 47-48, 00:07:39,000-00:08:00,000)",
+            "In 1957, we were related to tax exemption. We spun off, became entirely independent as the NAACP Legal Defense and Educational Fund (Segment 40, 00:06:50,000)",
+            "We represented about 3500 people and got them all acquitted (Segment 79, 00:12:23,000)",
+            "We give him $10,000 to buy a typewriter, a rug, and some law books (Segment 132, 00:18:24,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 18,
+            "first_only": 2,
+            "unnamed": 3
+          },
+          "verifiable_claims": [
+            "1957 LDF tax-exemption spin-off from NAACP",
+            "1959 publication of Race Relations and American Law",
+            "1961 appointment as Director-Counsel",
+            "Robert H. Finch as Nixon's HEW Secretary",
+            "Senator John C. Stennis's pressure on the armed services appropriation"
+          ],
+          "justification": "Greenberg supplies precise dates (1949, 1957, 1959, 1961, 1963, 1971, 1974), full names of co-counsel and adversaries, and specific procedural mechanisms (common-law certiorari vs. statutory certiorari). Some recollections are hedged ('I think Robert H. Finch was his name'; 'I think even the moment' for the Georgia congressman) but the hedges are themselves valuable signals of confidence level."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Greenberg's account of Earl Warren relaying the Burger vote-switch story in Swann",
+            "The procedural innovation of invoking common-law certiorari in Alexander v. Holmes",
+            "The $10,000 typewriter-rug-and-law-books seeding mechanism for Southern Black attorneys",
+            "Walter Gellhorn's deliberate naming of his seminar 'Legal Survey' to evade McCarthy-era faculty scrutiny",
+            "The internal LDF/NAACP tension surrounding Roy Wilkins and the 1957 spin-off"
+          ],
+          "understudied_aspects": [
+            "Inside-LDF strategy debates during Brown trial preparation",
+            "How LDF financed and structured the Southern bar-building program",
+            "Procedural craft (common-law writs) in school desegregation litigation",
+            "The Title VII labor-union litigation that LDF found 'bitterest'"
+          ],
+          "narrative_complications": "Greenberg's account complicates the standard 'Marshall-Brown-victory' civil rights litigation narrative by foregrounding the procedural craft (common-law certiorari), the institutional plumbing (cooperating attorneys network, bar-building program), and the post-Brown bargaining among justices (Burger's vote-switch in Swann) that public histories typically obscure.",
+          "historiographical_value": "Historians of civil rights litigation, the Burger Court, Title VII employment discrimination, and the Movement bar would all find primary-source value here. The Earl Warren / Burger vote-switch story in particular is the kind of inside-the-Court detail rarely preserved in written records.",
+          "justification": "Greenberg adds substantial new information across multiple areas: LDF internal politics, procedural craft, the bar-building program, and Supreme Court conference dynamics. The interview is shorter than ideal (about 33 minutes) and the Milliken discussion is cut off, capping the historiographical contribution."
+        },
+        "overall_assessment": "This is among the most historically valuable kinds of oral history: a direct strategic-decision-maker reflecting on the full arc of LDF litigation from Brown through Milliken. Greenberg's procedural and institutional detail is unusually granular and the inside-the-Court relay from Earl Warren about Burger is the kind of source rarely available to historians. The truncated ending caps an otherwise excellent contribution."
+      },
+      "emotional_resonance": {
+        "total": 14,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 5,
+          "max_possible": 10,
+          "transformation_arc": "Greenberg describes a quiet drift into civil rights work rather than a transformative awakening: a Columbia law student taking a clinical seminar four semesters because the cases were interesting, then being recommended for an LDF job because a colleague resigned. He does not narrate an identity transformation.",
+          "key_turning_points": [
+            "Enrolling in Gellhorn's Legal Survey seminar (Segments 10-15, 00:01:34,000)",
+            "Being recommended for the LDF opening (Segments 25-27, 00:04:14,000)",
+            "Becoming Director-Counsel in 1961 (Segment 69, 00:11:07,000)"
+          ],
+          "before_after_contrast": "Greenberg moves from law student with vaguely-imagined labor-law future to LDF staff attorney, but he frames this as situational ('I was at a disposition to do it') rather than as personal transformation.",
+          "inspirational_quality": "The story can inspire by example — a young lawyer happening into civil rights work via a seminar and a vacancy, then shaping decades of litigation — but Greenberg does not extract that arc explicitly.",
+          "justification": "Greenberg presents himself as a practitioner who fell into civil rights work and stayed because the work mattered, not as someone who underwent a documented transformation. The interview does not foreground inner change."
+        },
+        "tension_conflict_triumph": {
+          "score": 5,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Brown v. Board of Education decision May 1954 — Greenberg recalls being 'stunned' by the unexpectedly sweeping ruling",
+              "segment_range": "53-61",
+              "timestamp_range": "00:08:58,000 - 00:09:50,000",
+              "stakes": "End of state-imposed segregation"
+            },
+            {
+              "description": "Alexander v. Holmes County common-law certiorari maneuver against Nixon's HEW request for delay",
+              "segment_range": "188-213",
+              "timestamp_range": "00:24:03,000 - 00:28:02,000",
+              "stakes": "Immediate vs. indefinitely-delayed school desegregation"
+            },
+            {
+              "description": "Swann v. Charlotte-Mecklenburg Burger vote-switch — preliminary vote against LDF, conference dynamics flip the outcome",
+              "segment_range": "214-230",
+              "timestamp_range": "00:28:02,000 - 00:30:53,000",
+              "stakes": "Busing remedy for school desegregation"
+            }
+          ],
+          "conflict_types": [
+            "Constitutional litigation against state governments",
+            "Procedural strategy against Executive Branch interference",
+            "Internal-to-Supreme-Court conference dynamics",
+            "Litigation against segregated labor unions"
+          ],
+          "emotional_range": "From restrained analytical tone through wry humor (Gellhorn anecdote, ice cream cone) to genuine stillness ('stunned') at Brown's announcement",
+          "justification": "The interview contains real dramatic stakes — Brown's outcome, Alexander v. Holmes immediate-desegregation pressure, Burger's vote switch — but Greenberg narrates them with lawyerly composure. The drama is structurally present even if not theatrically delivered."
+        },
+        "relatable_experiences": {
+          "score": 4,
+          "max_possible": 7,
+          "universal_themes": [
+            "Mentorship (Gellhorn)",
+            "Accidental entry into life work",
+            "Procedural craft and persistence",
+            "Quiet pride in collaborators (Marian Wright, Tureaud)"
+          ],
+          "relatable_struggles": [
+            "Stigma of advocacy in a hostile political climate (McCarthy era)",
+            "Working in a small under-resourced organization"
+          ],
+          "human_moments": [
+            "Ice cream cone scene with Tureaud's granddaughter (Segments 119-122, 00:17:05,000 - 00:17:24,000)",
+            "Memory lapse on Georgia congressman's name (Segments 138-139, 00:19:00,000)",
+            "Warmth toward Marian Wright Edelman (Segment 147, 00:19:24,000)"
+          ],
+          "connection_points": "Audiences can connect to the experience of being a young professional drawn into consequential work through a teacher's influence, and to the moral satisfaction of legal work that helps a real child buy an ice cream cone for the first time.",
+          "justification": "The interview offers a few moments that connect to universal human experience (the ice cream cone, mentorship, memory lapse) but is overall pitched at the level of professional litigation history rather than universal human story."
+        },
+        "overall_assessment": "Emotional resonance is moderate. Greenberg is a deliberate, articulate, lawyerly narrator whose drama is structural rather than performative. The Tureaud granddaughter scene and the Brown 'stunned' moment are the standout emotional beats. The interview prioritizes procedural and institutional detail over personal vulnerability or transformation narrative."
+      },
+      "accessibility": {
+        "total": 14,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "none",
+          "jargon_use": "frequent",
+          "barriers": [
+            "Legal terminology (certiorari, common-law writ, statutory certiorari) used without self-contextualization",
+            "Procedural references (Court of Appeals, district court, final judgment) assume legal literacy",
+            "Cases named without full citation context (Alexander v. Holmes, Swann, Milliken)",
+            "ASR corruption obscures some passages (segments 25-26, 35-36, 134-138, 195-202)"
+          ],
+          "justification": "Greenberg is articulate and clear in standard English, but he speaks as a lawyer to a knowledgeable interviewer. Listeners without civil rights litigation background will need supplementary context for the procedural-craft passages, particularly the Alexander v. Holmes common-law certiorari sequence."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Brown v. Board decision reaction (Segments 53-61, 00:08:58,000 - 00:09:50,000)",
+            "Alexander v. Holmes common-law certiorari strategy and Marshal Foch quote (Segments 195-213, 00:25:33,000 - 00:28:02,000)",
+            "Swann v. Charlotte-Mecklenburg Burger vote-switch (Segments 218-227, 00:28:51,000 - 00:30:42,000)"
+          ],
+          "slow_sections": [
+            "Race Relations and American Law book reception (Segments 80-103, 00:12:43,000 - 00:15:23,000) — somewhat tangential anecdote about the scholar with the interracial-marriage son",
+            "Cooperating attorneys list with name-recall lapse (Segments 134-147, 00:18:35,000 - 00:19:29,000)"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "An audience interested in civil rights litigation history will sustain attention throughout the 33-minute interview; general audiences may flag during the procedural passages.",
+          "justification": "Mosnier asks well-targeted questions that advance the chronology and keep Greenberg on substantive ground. Breaks every several minutes interrupt momentum slightly. The Foch quote and Burger vote-switch are strong dramatic peaks."
+        },
+        "broader_themes_connection": {
+          "score": 4,
+          "max_possible": 6,
+          "themes_connected": [
+            "How legal-institutional architecture (the litigation bar, the procedural craft, the bar-building program) made the constitutional victories possible",
+            "The McCarthy-era cost of civil rights and civil liberties advocacy",
+            "The structural distinction between Title II (easy, market-aligned) and Title VII (hard, union-resistant) discrimination",
+            "How Supreme Court doctrine on school desegregation peaked around 1971 and was retrenched by Milliken (1974) and later cases"
+          ],
+          "contemporary_relevance": "Greenberg's account of the procedural craft, the bar-building program, and the city-suburb boundary distinction in Milliken speaks directly to current debates about school resegregation, the legal-institutional capacity of the civil rights bar, and the limits of court-ordered remedies.",
+          "meaning_making": "Greenberg helps audiences understand that constitutional victories required institutional construction (the bar-building program, cooperating attorneys, the LDF spin-off) and procedural creativity (common-law certiorari) — not just judicial willingness. He is less explicit about contemporary lessons.",
+          "justification": "Strong implicit thematic connections to broader civil rights institutional history; explicit contemporary framing is limited because Greenberg's mode is reflective-historical rather than present-tense advocacy."
+        },
+        "overall_assessment": "Accessibility is moderate. Greenberg's clear articulation and the interviewer's good pacing are offset by frequent legal jargon and procedural references that assume legal literacy. The interview will reward listeners with some civil rights background more than general audiences."
+      }
+    },
+    "overall_assessment": "Jack Greenberg's 33-minute interview is a high-historical-value primary source from the NAACP Legal Defense Fund's most consequential litigation era, covering Brown v. Board through Milliken v. Bradley with insider procedural detail. The narrative quality is strong-but-restrained, with Greenberg offering a lawyerly composure rather than emotional vulnerability. Specificity, name density, and institutional insight are exceptional. The interview is best suited to historians, civil rights scholars, and law students rather than general audiences, and its truncated ending mid-Milliken-discussion limits its educational reach somewhat. Overall: very good engagement, exceptional historical value, moderate emotional resonance.",
+    "key_strengths": [
+      "Exceptional firsthand-strategic-decision-maker perspective from the lead civil rights litigator of the Brown-through-Swann era — Greenberg co-tried Brown's Kansas case, served as Director-Counsel from 1961, and personally led Alexander v. Holmes and Swann.",
+      "Rare procedural and institutional detail — the common-law certiorari maneuver, the $10,000 bar-building program, the Gellhorn 'Legal Survey' naming evasion, and the Earl Warren relay of Burger's vote-switch — that is hard to recover from public records.",
+      "Strong concrete specificity: dates (1949, 1957, 1959, 1961, 1963, 1971, 1974), full names of colleagues (Marshall, Carter, Williams, Tureaud, Chambers, Watt, Edelman) and adversaries (Stennis, Nixon, Finch, Burger), and named cases (Brown, Alexander v. Holmes, Swann, Milliken, San Antonio v. Rodriguez)."
+    ],
+    "key_limitations": [
+      "The interview is unusually short (about 33 minutes) and ends mid-discussion of Milliken v. Bradley, leaving the post-Swann school-desegregation retrenchment story incomplete.",
+      "Emotional resonance is moderate — Greenberg narrates with lawyerly restraint rather than personal vulnerability — and significant ASR transcription corruption (segments 25-26, 35-36, 134-138, 195-202) obscures key passages including the name of the colleague who recommended him and the Congressman from Georgia.",
+      "Several passages contain ASR-induced name corruption or speaker memory lapses (Marian Wright placed in 'Columbus' rather than Jackson, MS; Earl Warren-vs-Swann timeline that postdates Warren's retirement) that require external corroboration."
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Greenberg served at the NAACP Legal Defense and Educational Fund from 1949 and became Director-Counsel in 1961.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 7 (00:00:54): 'evaluated the choice to join NAACP Legal Defense and Educational Fund as a law school graduate in 49'; Segment 69 (00:11:07): 'how you measure the landscape of possibility when you became director council in 61.'",
+        "rationale": "Both the 1949 hire and the 1961 Director-Counsel transition are explicitly stated in the transcript by the interviewer's framing questions and Greenberg's responses."
+      },
+      {
+        "claim": "Greenberg came to civil rights work through a Columbia Law School seminar called 'Legal Survey' taught by Professor Walter Gellhorn.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 8-15 (00:01:08 - 00:02:27): 'I'd started a Columbia Law School... I had a professor at the time, Walter Gellhorn, who gave a seminar, which he called Legal Survey.'",
+        "rationale": "Both the school (Columbia), the professor (Gellhorn), and the seminar name (Legal Survey) are stated directly."
+      },
+      {
+        "claim": "Gellhorn deliberately avoided naming the course 'Civil Rights' or 'Civil Liberties' because, in the McCarthy era, such advocacy could lead to being called a Communist.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 14-16 (00:02:12 - 00:02:45): 'why he named it Legal Survey. He said if he called it Civil Rights or Civil Liberties, the faculty might not permit him to teach it. Because in those days, if you were a Civil Libertarian or Civil Rights advocate, you ran the risk of being called a Communist.'",
+        "rationale": "Direct paraphrase of Greenberg's account."
+      },
+      {
+        "claim": "Gellhorn himself was twice summoned to Congress to swear he had never been a member of the Communist Party.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 17 (00:02:45): 'Professor Gellhorn himself was summoned down to Congress on two occasions, to swear, I am not and never have been a member of the Communist Party.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Greenberg was recommended for an LDF opening that arose when staff attorney Marian Wynne Perry resigned to take a New York State position.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 24-26 (00:03:56 - 00:04:26): 'one of the lawyers at NAACP Legal Defense and Educational Fund, her name was Marian Wynne Perry... it got some official position with New York State, and it required him to be an opening new year. And so she resigned, and it was an opening.'",
+        "rationale": "Direct paraphrase; ASR garbles the recommender's identity but the resignation context is clearly stated."
+      },
+      {
+        "claim": "The LDF staff at the time consisted of Thurgood Marshall, Robert L. Carter, Franklin H. Williams, Greenberg, and a full-time sociologist.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 32-37 (00:05:08 - 00:06:12): 'he had his first assistant who was Robert L. Carter, who was a judge here in New York... Another fellow called Franklin H. Williams, who later went on to another position in the NAACP, and then became ambassador to Ghana... That was it, and it was me. There was also a woman there who was a full-time sociologist.'",
+        "rationale": "All named individuals are directly identified in the transcript."
+      },
+      {
+        "claim": "Franklin H. Williams later became U.S. Ambassador to Ghana and headed the Phelps Stokes Foundation.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 35 (00:05:37): 'Franklin H. Williams, who later went on to another position in the NAACP, and then became ambassador to Ghana, and the head of the foundation, Phelps Stokes Foundation.'",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "The LDF was initially part of the NAACP and spun off as an independent organization in 1957 for tax-exemption reasons, generating tension with NAACP head Roy Wilkins.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 38-41 (00:06:13 - 00:06:54): 'we were part of the NAACP. We were a separate independent part, though the independence caused some tension between us and Roy Wilkins, the head of the NAACP... In 1957, we were related to tax exemption. We spun off, became entirely independent as the NAACP Legal Defense and Educational Fund.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Greenberg and Robert L. Carter tried the Kansas school segregation case in Topeka, using a two-track strategy showing tangible inequality and arguing segregation itself constituted inequality.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 43-52 (00:07:10 - 00:08:40): 'you and Robert L. Carter tried the Kansas schools case out in Topeka... The Kansas had a peculiar statute... We tried the case on two different tracks... to show that the black schools were not equal to the white schools... we also tried it on the basis of urging the court, with the help of expert witnesses, to understand that segregation itself constituted inequality.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Brown v. Board of Education was decided in May 1954, and the LDF lawyers were 'stunned' by the decision.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 53-58 (00:08:41 - 00:09:34): 'Brown v. Board of Education finally came down in May of 54... Everybody was kind of stunned by it... I think stunned is the only word, a cosmic decision.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "The Brown decision swept away all state-imposed segregation, not just school segregation.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 60-61 (00:09:38 - 00:09:50): 'We understood we were the case, the challenge, school segregation. It turned out the decision swept away all state-imposed segregation.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "By the time the civil rights movement reached a measurable stopping point, LDF had represented approximately 3,500 sit-in protesters and secured acquittals for all of them.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 77-79 (00:12:11 - 00:12:31): 'by the time the civil rights movement... I don't know what I've ever ended by the time it reached some measurable stopping point. We represented about 3500 people and got them all acquitted.'",
+        "rationale": "Direct statement; Greenberg's own estimate."
+      },
+      {
+        "claim": "Greenberg published Race Relations and American Law in 1959, the first book on civil rights law since about 1919.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 80-86 (00:12:31 - 00:13:27): 'you published in 59 race relations in American law. That's right... I took my knowledge of those cases and put them into the book, which was the first one in my civil rights law since about 1919.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "The Columbia Law Review published paired pro and anti reviews of the book.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 89-90 (00:13:36 - 00:13:56): 'the Columbia Law Review did something I haven't seen them do or any other law review. Before, since they published a pro and anti-review as if we were a controversial subject.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Herbert Wechsler was the author of the article 'Toward Neutral Principles of Constitutional Law.'",
+        "status": "supported",
+        "supporting_excerpt": "Segment 92 (00:14:11): 'There was one Herbert Wechsler, a famous article called Toward Neutral Principles of Constitutional Law.'",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Edmond Cahn was a legal philosopher at NYU who wrote an article attacking Brown v. Board of Education for its use of social science data.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 93-94 (00:14:23 - 00:14:32): 'there was a legal philosopher at NYU, Edmond Cahn, who wrote a book. Essentially an article, anyway, attacking the Brown v. Board of Education for its use of social science data.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "LDF brought a case to desegregate the Atlanta airport, with a plaintiff Greenberg recalled as 'Koch.'",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 115-116 (00:16:40 - 00:16:48): 'Desegregate in the airport in Atlanta. Plainfacures there, the name of Koch, so it was Koch against City of Atlanta.'",
+        "rationale": "The transcript names 'Koch' as the plaintiff but this appears to be an ASR transcription error and historical case-name precision is uncertain. The summary preserves what the transcript said, but the plaintiff name should be flagged as ASR-uncertain."
+      },
+      {
+        "claim": "Greenberg's co-counsel in the New Orleans airport case was A.P. Tureaud, for a period the only Black lawyer in New Orleans.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 118 (00:16:55): 'My co-counsel was A.P. Tureaud, who were a period of time, was the only black lawyer in New Orleans.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Tureaud's granddaughter ran off gleefully after the New Orleans airport case to buy an ice cream cone she had never before been able to buy.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 119-123 (00:17:05 - 00:17:28): 'He brought his granddaughter to the airport after he won the case. And she ran off just gleefully. She was able to buy an ice cream cone there. Something she'd never been able to do before.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "In 1963, Greenberg launched a foundation-funded program providing $10,000 to Black attorneys willing to set up practice in Southern cities lacking Black lawyers.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 126-132 (00:17:46 - 00:18:31): 'in 63 on your own initiative as Director Counsel, you launched a new training program... I got some money from a foundation. The black lawyer was a go set up a practice in a place where there were no black lawyers. We give him $10,000 to buy a typewriter, a rug, and some law books.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "The program produced 'stars' including Julius Chambers, Mel Watt, and Marian Wright Edelman.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 133-147 (00:18:32 - 00:19:29): 'We got some great stars out of that. There were Julius Chambers... Mel Watt... Marian Wright Edelman also was in Columbus... Yes, (Marian) Wright was one of the aces. She was terrific.'",
+        "rationale": "All three names appear in the transcript. The Mel Watt name is doubled with ASR confusion ('No, what? No, what?') but is clearly meant to be Mel Watt."
+      },
+      {
+        "claim": "Title II public accommodations cases under the 1964 Civil Rights Act were relatively easy because hotels and restaurants wanted the business.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 154-156 (00:20:12 - 00:20:32): 'one of the things that covered the public accommodation was restaurants, bar, theaters, and so forth. That was pretty easy, because the ice cream parlors and restaurants were happy to get the business.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Title VII employment cases were harder because segregated local labor unions resisted integration even when employers did not.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 165-171 (00:21:34 - 00:22:27): 'Title VII of the Civil Rights Act of 1964 was employment... we had a confront the fact that the labor unions, which on the national level, were very pro civil rights, on the local level were segregated, white locals and black locals... We had some of our bitterest cases against the labor unions.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "In Alexander v. Holmes County, Senator John C. Stennis pressured President Nixon by refusing to bring the armed services appropriation bill to the Senate floor.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 194-196 (00:25:18 - 00:25:53): 'Senator Senator John C. Stennis, after whom a recent aircraft carrier has been named. Stennis, so this is going to happen. He refused to bring the armed services appropriation built to the floor of the Senate. Because he told the President that his people in Mississippi need him down there.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Nixon directed his Secretary of Health, Education, and Welfare — whom Greenberg identifies as Robert H. Finch — to ask the Court of Appeals to delay deciding the cases.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 197-200 (00:25:54 - 00:26:46): 'Nixon had to ask his secretary of health education, a welfare, to ask the court of appeals to send the cases back to the district court without deciding him... His secretary, I think Robert H. Finch was his name.'",
+        "rationale": "Direct statement, with the hedge ('I think') preserved."
+      },
+      {
+        "claim": "LDF responded by invoking an ancient common-law writ of certiorari distinct from the statutory certiorari, citing a federal statute making all common-law writs available in the federal courts.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 204-209 (00:27:00 - 00:27:36): 'there is an ancient common law writ called certiorari. It's not the rid of certiorari, that's in a statute which Supreme Court uses to review almost every case it gets. But there's another statute which says that all the writs on the common law are available in the federal courts.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Greenberg cited Marshal Foch's quotation from the Second Battle of the Marne: 'my left flank is in retreat, my right flank is under attack, my center collapses; I attack.'",
+        "status": "supported",
+        "supporting_excerpt": "Segments 210-212 (00:27:36 - 00:27:56): 'I still recall what I call Marshal Foch telling the staff. My left flank is in certiorari, my right flank is under attack, my center collapses. And as Marshall Farge said at the second battle of the marne, my attack.'",
+        "rationale": "Direct quotation; the transcript ASR is slightly garbled ('certiorari' for 'retreat') but the structure and attribution are clear."
+      },
+      {
+        "claim": "Swann v. Charlotte-Mecklenburg (1971) was the first substantive school desegregation case the Court heard with Chief Justice Burger presiding.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 214-219 (00:28:02 - 00:28:57): 'Swann v. Charlotte-Mecklenburg Board of Education... 1971... was the first substance of case, the court heard, and I decided to get it... That was his first opinion after Nixon had appointed him.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Chief Justice Earl Warren told Greenberg the story of Burger's vote-switch in Swann: 'there he stood naked.'",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 222-225 (00:29:40 - 00:30:09): '(Chief Justice) Earl Warren told me. I was told of all the parties. He said, there he stood naked... You were just saying that Chief Chief Justice Earl Warren had remarked to you that Chief Chief Justice Earl Warren Burger stood naked.'",
+        "rationale": "The transcript clearly attributes the story to Earl Warren, but Warren had retired in 1969 and Swann was decided in 1971. The summary preserves the transcript's attribution; the timing anomaly suggests either Warren told Greenberg about Burger's pattern generally (not specifically Swann) or the speaker's memory of which Chief Justice relayed the story is uncertain. Status downgraded to partially_supported because the underlying claim ('Earl Warren told this Swann story to Greenberg') has a chronological tension that the transcript does not resolve."
+      },
+      {
+        "claim": "Burger switched his vote to join the majority so he could assign the opinion to himself, then wrote a sweeping opinion endorsing busing, quotas, and integration of teachers.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 217 and 226-228 (00:28:28, 00:30:09 - 00:30:33): 'Chief Chief Justice Earl Warren Burger wrote a very long-guard opinion in which he called for quotas and busing and integration of teachers and everything that any civil rights advocate ever asked for... if he's in the dissent, he can't decide the opinion. And he wants to control the opinion. So he switched his vote and decided to vote.'",
+        "rationale": "Direct paraphrase."
+      },
+      {
+        "claim": "Greenberg discussed Milliken v. Bradley (1974) as significant because it made the political boundary between city and suburbs determinative.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 233-238 (00:31:14 - 00:32:30): 'I'm thinking about Milliken v. Bradley v. Bradley in 74... Milliken v. Bradley was significant in that it made the distinguishing point between city and suburbs. Just the political boundary between them... obviously the court was making the boundary the city and the suburbs having separate different kinds of school systems.'",
+        "rationale": "Direct paraphrase. The interview is cut off shortly after."
+      },
+      {
+        "claim": "The interview is dated July 18, 2011, conducted in Midtown Manhattan by Joseph Mosnier of the Southern Oral History Program at UNC Chapel Hill.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 2-3 (00:00:10 - 00:00:32): 'Today is Monday, July 18, 2011. My name is Joe Mosnier of the Southern Oral History Program at the University of North Carolina at Chapel Hill... I'm in Midtown Manhattan.'",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Marian Wright Edelman was placed in Columbus as part of the LDF cooperating-attorney program.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 145-147 (00:19:20 - 00:19:29): 'Marian Wright Edelman also was in Columbus. Marian Wright Edelman? Yes, (Marian) Wright was one of the aces.'",
+        "rationale": "The transcript states this directly. However, the historical record places Marian Wright Edelman's NAACP LDF practice in Jackson, Mississippi (1964-1968), not Columbus, Georgia. Status downgraded to partially_supported because the transcript supports the speaker's statement but the placement appears to be a speaker memory error rather than corroborated fact."
+      },
+      {
+        "claim": "Thurgood Marshall recommended Greenberg for the LDF opening when Marian Wynne Perry resigned.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 25-26 (00:04:06 - 00:04:26): 'the third in March of last, the whole of the yellow one to recommend somebody, and he recommended me.'",
+        "rationale": "The transcript is heavily ASR-corrupted at this passage. The contextual referent is almost certainly Thurgood Marshall (the LDF director in 1949), but the transcript does not name him in this passage. Status downgraded to partially_supported because the attribution requires interpretive inference rather than direct transcript text."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 34,
+      "supported": 30,
+      "partially_supported": 4,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_4_partial",
+    "rationale": "The main_summary scores 86 accuracy / 87 quality, both below the Smithsonian 90/90 threshold. The citation audit finds 30 of 34 claims supported but 4 partially_supported: (1) the Atlanta airport plaintiff name 'Koch' is ASR-uncertain; (2) Earl Warren's relay of the Burger Swann vote-switch story has a chronological tension since Warren retired in 1969 and Swann was decided in 1971; (3) Marian Wright Edelman is placed in 'Columbus' per the transcript, but the historical record places her LDF practice in Jackson, Mississippi; (4) Thurgood Marshall's role as recommender for Greenberg's LDF hire is an interpretive inference from ASR-corrupted text. None of these rise to invented or hallucinated claims, but each warrants human reviewer adjudication before publication. Routing to human review queue is the correct fail-closed outcome, consistent with the project's publication-readiness discipline."
+  }
+}

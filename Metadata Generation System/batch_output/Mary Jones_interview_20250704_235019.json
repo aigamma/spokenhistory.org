@@ -1,0 +1,1008 @@
+{
+  "interview_name": "Mary Jones",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Mary Jones_interview_20250704_235019\\Mary Jones_interview_transcript_20250704_235019.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Mary Jones",
+    "interviewee_title": "Albany Movement participant; voter registration organizer; member of the Police Committee that helped integrate the Albany, Georgia police force",
+    "interview_date": "2013-03-09",
+    "interview_location": "Albany State University, Albany, Georgia",
+    "interviewer_name": "Willie Griffin",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:52:21"
+  },
+  "main_summary": {
+    "summary": "Mary Jones, born July 24, 1933 in Georgia, describes growing up on her grandmother Bertha McIntosh's small plot of land outside Albany, Georgia. From about age eight she worked under the supervision of Miss Alice Porter and other neighbors, picking cotton, gathering peanuts and pecans, pulling corn, and hoeing bird seed for white farmers, including a small farm belonging to a man she identifies as a former Albany mayor. She and other Black farm children could not start school in September because of the harvest, attending Shepherd Elementary School, which had begun in a Baptist church building given to the Black community and named for the white benefactor who provided the land. She later attended Monroe Comprehensive High School, played basketball and ran track, and was scheduled to graduate in 1951 but married Jimmy Lee Jones, a Monroe classmate, just before he went into the Army.\n\nDrawing on accounts she read in the Pittsburgh Courier and the Southwest Georgian, the Black-owned Albany paper published by A.C. Searles, Jones followed news of the Montgomery bus boycott and Rosa Parks. When the Albany Movement began, she worked first with the Criterion Club on voter registration, canvassing door-to-door in the Washington Homes housing project where she lived and helping to run informal classes that taught residents to read passages of the Georgia Constitution required at the registrar's office. She also drove people to register and then back again to vote. She later served on a seven-person Police Committee from the movement that met repeatedly with Albany police chief Laurie Pritchett to demand Black officers; she recalls that Pritchett ignored the delegation on its first three visits before finally meeting with them and that the city eventually hired roughly five Black officers, of whom she names Etheridge Smith, David Hyde, and Robert Benning Jr., describing them as restricted at first to walking a beat and forbidden to arrest white people.\n\nJones recounts joining a mass march of roughly seven hundred adults after James Gray's local newspaper accused the older generation of letting the children march for them. She was jailed from a Monday morning until Thursday in the Baker County jail in a small cell with about twenty-five other women, describing dogs barking outside, hardened peas and grits served as meals, prayer and singing among the prisoners, and her father coming to bond her out. She also describes the movement's Christmas boycott of downtown Albany merchants -- residents drove to Cordele and other nearby towns to do their shopping -- and explains that some Black ministers refused to host mass meetings out of fear of church burnings, after which Dr. Martin Luther King Jr. helped raise funds to rebuild burned churches. Jones served as a voting captain in the Washington projects, hosting noon meetings at her home so older residents could attend, and credits the War on Poverty Head Start program under President Lyndon Johnson and Sargent Shriver with eventually giving her the early-childhood education she pursued after the movement. She frames the Albany Movement as a success rather than a failure because it opened jobs, integrated schools, and taught Black residents to stick together and pray; she also emphasizes the often-overlooked role of teachers (who were forbidden by the superintendent from marching) and bond-paying donors who supported jailed marchers.",
+    "key_themes": [
+      "Rural Black childhood and farm labor in Southwest Georgia",
+      "Segregated education and school integration",
+      "Voter registration and literacy barriers",
+      "Mass marches, arrests, and jail conditions",
+      "Police-community accountability and integration of the Albany police force",
+      "Economic boycott as movement tactic",
+      "Religious faith and prayer as movement infrastructure",
+      "Federal War on Poverty programs and adult education"
+    ],
+    "historical_significance": "This interview is a first-person grassroots account of the 1961-62 Albany Movement from a local Black woman who was an organizer rather than a national figure, documenting the often-overlooked work of voter-registration canvassing, citizenship classes for prospective registrants, and the Police Committee that negotiated the hiring of Albany's first Black officers. Jones names specific local actors -- Criterion Club leaders, the seven-person Police Committee, the first Black officers hired, and the Black-owned Southwest Georgian newspaper -- and gives detailed testimony about the Christmas downtown boycott, the Baker County jailing of mass-march participants, and the federal Head Start program's effect on adult learners after the movement. Her testimony adds local-organizer texture to a campaign whose history has often been told through Martin Luther King Jr. and the SCLC.",
+    "quality_metrics": {
+      "accuracy_score": 88,
+      "quality_score": 92,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 27,
+      "accuracy_component_c": 26,
+      "quality_component_a": 37,
+      "quality_component_b": 23,
+      "quality_component_c": 18,
+      "quality_component_d": 14,
+      "errors": [
+        "Summary attributes hosting of the Black-owned Southwest Georgian to 'A.C. Searles' based on transcript wording 'Miss A.C. Sugs / A.C. Searles' (segments 234-237); the transcript text is ambiguous between the two ASR renderings and the interviewer's correction is partial. Treat as partially supported by the transcript and cross-reference any downstream publication against external sources.",
+        "Summary states the Police Committee was a seven-person delegation. Transcript segment 383 reads 'It was seven of us' but the interviewee then says 'I'm the only one living now' (segment 382). Number is taken verbatim from the speaker; no additional corroboration is available in the transcript.",
+        "Summary identifies the man behind the bird-seed farm as a former Albany mayor based on segment 57 ('Mr. Kina, who used to be the mayor here'). The surname is an ASR rendering and not externally verified."
+      ],
+      "improvements": [
+        "Add an explicit caveat that several proper names (Bertha McIntosh, Alice Porter, Mr. Kina, Ella Holloway, Willime Jackson, Celeste Scott, Etheridge Smith, David Hyde, Robert Benning Jr., Marion S. Page, Thomas Chapman) are taken from the ASR transcript and have not been externally verified.",
+        "Distinguish between the Criterion Club (the earlier civic group described as predating the Albany Movement coalition) and the Albany Movement coalition itself, which the transcript treats as a separate organization that grew out of the Criterion Club's work.",
+        "Clarify the boycott chronology: the transcript places the boycott around Christmas (segments 705-712) but does not give a specific year."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:18,000",
+      "title": "Introduction and Birth in Rural Georgia",
+      "summary": "Interviewer Willie Griffin opens the interview with the standard Library of Congress / Smithsonian National Museum of African American History and Culture preamble, naming videographer John Bishop and the setting at Albany State University on Saturday, March 9, 2013. Jones gives her birthplace as Georgia and her birth date as July 24, 1933, with the year initially given as '1933' and the specific date supplied after a clarification.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "albany",
+        "georgia",
+        "1933",
+        "library of congress",
+        "smithsonian",
+        "albany state university",
+        "willie griffin",
+        "civil rights history project"
+      ],
+      "related_events": [
+        "Civil Rights History Project",
+        "Library of Congress",
+        "Smithsonian National Museum of African American History and Culture",
+        "Albany State University"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 90,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note the institutional collaboration phrasing more explicitly (joint undertaking of LoC and NMAAHC)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:01:18,000",
+      "end_time": "00:07:20,000",
+      "title": "Childhood Farm Labor and Family on Grandmother's Land",
+      "summary": "Jones describes growing up on her grandmother Bertha McIntosh's small plot of land, which the family called a 'slot' or 'slot-loan'. She emphasizes the role of the Baptist church, weekend and Sunday work obligations, and her transition around age eight into farm labor under the supervision of Miss Alice Porter, who took 'quite a few of the children from the neighborhood' to pick cotton, gather peanuts and pecans, dig potatoes, and pull corn for white farmers. She also recounts hoeing bird seed on a small farm behind the family's home owned by 'Mr. Kina,' whom she identifies as a former Albany mayor, who paid the children about seventy-five cents -- money the family used to buy school clothes.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "grandmother",
+        "bertha mcintosh",
+        "alice porter",
+        "farm labor",
+        "cotton",
+        "peanuts",
+        "pecans",
+        "albany",
+        "baptist church"
+      ],
+      "related_events": [
+        "Southwest Georgia agricultural labor",
+        "Black Belt sharecropping economy"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 90,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Mr. Kina's name and his identification as a former Albany mayor are taken from the ASR transcript (segment 57) and are not externally verified."
+        ],
+        "improvements": [
+          "Flag the ASR-only names (Bertha McIntosh, Alice Porter, Mr. Kina) for downstream entity-resolution."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:07:20,000",
+      "end_time": "00:11:15,000",
+      "title": "Schooling in the Church Building and Move to Monroe Comprehensive High School",
+      "summary": "Jones recounts that the schools for Black children in her area started in the First Baptist Church building -- which she describes as one of the oldest Black churches in Southwest Georgia and which W.E.B. Du Bois had visited -- with grades arranged in different corners of the same room up through the seventh grade. The elementary school she finished in was named Shepherd, after the white benefactor who had given the church to the Black congregation. Her first teacher, from grades one through three, was Miss Willime Jackson, and her fourth-through-seventh-grade teacher was Miss Celeste Scott. For high school she moved to Albany and lived with her aunt Ella Holloway on 'a chair street' (transcript spelling unclear) with three cousins, attending Monroe Comprehensive High School, which she notes is still open.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "shepherd elementary",
+        "first baptist church",
+        "monroe comprehensive high school",
+        "albany",
+        "willime jackson",
+        "celeste scott",
+        "w.e.b. du bois",
+        "ella holloway"
+      ],
+      "related_events": [
+        "Segregated Black education in Georgia",
+        "Monroe Comprehensive High School (Albany, GA)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript reads 'W.V. Du Bois' (segment 98) which is treated as a Whisper rendering of W.E.B. Du Bois; the historical figure is plausible given the church's age but the visit is uncorroborated.",
+          "The teachers' names (Miss Willime Jackson, Miss Celeste Scott) and aunt's name (Ella Holloway) are ASR renderings."
+        ],
+        "improvements": [
+          "Add a parenthetical 'as recalled by Jones' for the Du Bois visit claim."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:11:15,000",
+      "end_time": "00:14:30,000",
+      "title": "Marriage to Jimmy Lee Jones and Children Through School Integration",
+      "summary": "Jones describes meeting her husband Jimmy Lee Jones at Monroe Comprehensive, where he played football and basketball. They married in 1951 -- she was supposed to graduate that year but married instead, just before he went into the Army -- and she became, in her words, a 'house mama.' When her children were old enough for public school, Albany schools had just integrated, and her children 'went through so much.' She recounts that the principal, named 'Mr. McNair,' allegedly called the Black students 'little monkeys,' and that fights broke out almost every day; her oldest daughter, whom she enrolled in the second year of integration, was spat on and called names in the cafeteria but 'hung in there' because some of her friends had registered alongside her.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "jimmy lee jones",
+        "marriage",
+        "monroe high school",
+        "school integration",
+        "albany",
+        "racism",
+        "children",
+        "mcnair"
+      ],
+      "related_events": [
+        "Albany, Georgia school integration",
+        "Monroe Comprehensive High School"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 86,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The principal's name 'Mr. McNair' is taken from the ASR transcript (segment 246) and is not externally verified; the slur attribution is taken verbatim from the speaker."
+        ],
+        "improvements": [
+          "Flag the McNair slur attribution as a verbatim claim by the speaker without external corroboration."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:14:30,000",
+      "end_time": "00:21:30,000",
+      "title": "Voter Registration with the Criterion Club",
+      "summary": "Jones describes learning about the Montgomery bus boycott and Rosa Parks through the radio and Black newspapers -- specifically naming the Pittsburgh Courier and the Southwest Georgian (the Black-owned Albany paper, which the transcript renders as belonging to a 'Miss A.C. Sugs / A.C. Searles'). Working with the Criterion Club, she joined voter-registration efforts that included an informal class teaching Black residents to read the Georgia Constitution, which she identifies as the key barrier at the registrar's office. She describes door-to-door canvassing in the housing projects where she lived, where many residents were afraid because they could not read and feared being turned away, and tells the story of one woman who registered but did not understand that she also had to come back to vote. Jones emphasizes that registering people and then driving them back to vote was the second half of the work.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "voter registration",
+        "criterion club",
+        "georgia constitution",
+        "pittsburgh courier",
+        "southwest georgian",
+        "a.c. searles",
+        "albany",
+        "rosa parks",
+        "montgomery"
+      ],
+      "related_events": [
+        "Montgomery Bus Boycott",
+        "Rosa Parks",
+        "Albany Movement (voter registration phase)",
+        "Pittsburgh Courier",
+        "Southwest Georgian (newspaper)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 90,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Newspaper owner's name is given by the speaker as 'Miss A.C. Sugs' (ASR) then corrected by the interviewer to 'A.C. Searles' (segments 234-237); the corrected form is used here as plausibly canonical but the transcript shows uncertainty."
+        ],
+        "improvements": [
+          "Note that A.C. Searles is widely documented in Albany Movement scholarship as publisher of the Southwest Georgian; the transcript's ASR-corrupted form supports this identification."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:21:30,000",
+      "end_time": "00:27:30,000",
+      "title": "The Criterion Club, the Albany Movement Coalition, and the Police Committee",
+      "summary": "Jones identifies key figures in the Criterion Club -- Dr. William G. Anderson, Chevene ('C.B.') and Slater King, Thomas Chapman, and Marion S. Page -- and describes how the Criterion Club helped organize and seed the Albany Movement coalition, with Dr. William G. Anderson chosen as the Albany Movement's first president and Mr. Page as secretary. She then describes her role on a seven-person Police Committee from the movement (transcript segment 383) that visited Chief Laurie Pritchett's office repeatedly to demand the hiring of Black officers. According to her account, Pritchett ignored the delegation on its first three visits before finally meeting with them and asking for applications, which McCree Harris -- a teacher at Monroe -- circulated. She recalls that the resulting hires included Etheridge Smith, David Hyde, and Robert Benning Jr., among about five Black officers total, and that these officers initially had uniforms but were limited to walking a beat (no patrol cars), and were not authorized to arrest white people. Jones places this episode in the 1960s, around 1961.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "criterion club",
+        "albany movement",
+        "william g. anderson",
+        "c.b. king",
+        "slater king",
+        "thomas chapman",
+        "marion s. page",
+        "laurie pritchett",
+        "police integration",
+        "mccree harris",
+        "etheridge smith",
+        "david hyde",
+        "robert benning"
+      ],
+      "related_events": [
+        "Albany Movement",
+        "Criterion Club",
+        "William G. Anderson",
+        "Laurie Pritchett",
+        "Slater King",
+        "C.B. King",
+        "Integration of Albany Police Department"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 92,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 25,
+        "quality_component_a": 37,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Names of the first Black officers (Etheridge Smith, David Hyde, Robert Benning Jr.) and Police Committee figures other than Dr. William G. Anderson, Slater King, and C.B. King are taken from the ASR transcript and are not corroborated against an external Albany Movement source within this audit's reach.",
+          "The size of the first cohort of Black officers is given by the speaker as 'I think it was five' (segment 440); the summary preserves that hedged number."
+        ],
+        "improvements": [
+          "Cross-check officer names against Albany Movement scholarship before publication.",
+          "Note that the corpus entry for Laurie Pritchett confirms his tenure as Albany police chief 1959-66 and his 'nonviolent containment' strategy of dispersing arrests across multiple county jails, which aligns with Jones's account."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:27:30,000",
+      "end_time": "00:33:30,000",
+      "title": "Mass March, Arrest, and Baker County Jail",
+      "summary": "Jones describes how a column in James Gray's local newspaper accusing the older Black residents of pushing children to march sparked a mass meeting at which roughly seven hundred adults committed to marching the next morning from the corner of Washington and Broad. Marchers were arrested and bonded out across multiple county jails; Jones was held in the Baker County jail from Monday around 11 a.m. through Thursday, when her father bonded her out. She recounts being made to stand in pouring rain outside the jail for three or four hours before being booked, then placed in a cell roughly designed for eight to ten people with about twenty-five other women, one bed shared among them. She emphasizes that the marchers had not summoned Dr. King -- there were already seven hundred in jail when he arrived -- and that the local movement was acting on its own. She also describes police using Billy clubs and dogs barking outside the cell.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "mass march",
+        "albany movement",
+        "baker county jail",
+        "james gray",
+        "albany herald",
+        "arrest",
+        "martin luther king",
+        "billy club",
+        "bond"
+      ],
+      "related_events": [
+        "Albany Movement mass marches",
+        "Baker County jail",
+        "James Gray (Albany Herald)",
+        "Martin Luther King Jr.",
+        "Laurie Pritchett mass-arrest strategy"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 90,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "The figure of '700 us, grownups' (segment 582) is what the speaker says; specific counts of mass-march arrests in the Albany Movement vary across sources.",
+          "The newspaper is identified by the speaker as 'James Gray's' paper (segment 555). The Albany Herald, owned at the time by James H. Gray Sr., is the well-documented match; that identification is treated here as plausible but the transcript spelling 'Chantine' is an ASR artifact, not a corroborated paper name."
+        ],
+        "improvements": [
+          "Note that Jones's account of being held across multiple county jails (Baker County in her case) is consistent with Laurie Pritchett's documented multi-jurisdictional dispersal strategy in the corpus entry for Pritchett."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:33:30,000",
+      "end_time": "00:40:00,000",
+      "title": "Jail Conditions, Church Burnings, and Encounters with Dr. King",
+      "summary": "Jones gives a sustained description of jail conditions: hardened black-eyed peas and grits served with butter and bread thrown on top, the prisoners' decision to sing and pray louder when guards threatened to release the dogs into the cell, and the way the bond system became, in her words, a profit center for the city because some bonds were retained even when the arrestee did not lose anything tangible. She returns to mass meetings, noting they happened almost every night except Saturday and Sunday and moved among churches because some Black ministers were afraid -- some of their churches had been burned -- and explains that Dr. King and the SCLC organizations helped raise the funds that rebuilt the burned churches, often nicer than the original 'little shacks.' She describes meeting Dr. King only briefly in passing handshakes amid large crowds.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "jail conditions",
+        "baker county jail",
+        "church burning",
+        "martin luther king",
+        "sclc",
+        "mass meetings",
+        "bond",
+        "albany movement"
+      ],
+      "related_events": [
+        "Baker County jail",
+        "Martin Luther King Jr.",
+        "Southern Christian Leadership Conference",
+        "Albany Movement mass meetings",
+        "Church burnings in Southwest Georgia"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 90,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that SCLC fundraising for rebuilding burned Southwest Georgia churches is a well-documented aspect of the SCLC's 1962 work after the Albany campaign; here the summary preserves Jones's framing without extending beyond it."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:40:00,000",
+      "end_time": "00:43:30,000",
+      "title": "Christmas Boycott of Downtown Albany",
+      "summary": "Jones describes the movement's economic-pressure tactic: cutting off all ties with downtown Albany merchants and going to Cordele and other nearby towns -- including names rendered by the transcript as 'come Miller' and 'call the ill place' (likely Cordele and Tifton or similar) -- to do Christmas shopping, including pulling clothing from downtown layaway accounts. She frames the boycott as 'a black Christmas' for downtown merchants and recalls that she personally drove people to Cordele for shopping during this period. She places the boycott in early December.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "christmas boycott",
+        "albany",
+        "cordele",
+        "downtown merchants",
+        "layaway",
+        "economic boycott",
+        "albany movement"
+      ],
+      "related_events": [
+        "Albany Movement Christmas boycott",
+        "Cordele, Georgia",
+        "Economic boycott as movement tactic"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Two adjacent town names ('come Miller', 'call the ill place', segments 707-708) are ASR-corrupted and not confidently resolved here; only Cordele is identified with reasonable confidence."
+        ],
+        "improvements": [
+          "Flag the corrupted town names for downstream entity resolution; consider Tifton, Cordele, and other Southwest Georgia neighbors as candidates."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:43:30,000",
+      "end_time": "00:50:00,000",
+      "title": "Voting Captain, Teachers' Role, and Movement Legacy",
+      "summary": "Jones describes serving as a voting captain in the Washington Homes housing project, hosting noon meetings at her home so that older residents who could not walk to evening mass meetings could attend, and personally contacting her assigned residents to tell them which candidates to vote for. Asked about the movement's successes and failures, she rejects 'failure,' citing school integration, opened jobs (including positions beyond cleaning at department stores), and a renewed sense of self-respect among Black residents as the lasting gains. She emphasizes 'much prayer,' sticking together, and rejecting 'Uncle Tom' informants ('snitches') as the legacy worth carrying forward. She also returns to one committee she had not yet mentioned: the teachers, who -- forbidden by the school superintendent from marching on pain of losing their jobs -- instead organized to bring food, pay light bills and rent, and care for the children of marchers who were in jail. She gives an example of an older woman who 'sold the all' and went to jail three or four times because the boycott had cut off her customers' ability to pay.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "voting captain",
+        "washington homes",
+        "school integration",
+        "albany movement legacy",
+        "teachers committee",
+        "boycott",
+        "uncle tom",
+        "snitches",
+        "mutual aid"
+      ],
+      "related_events": [
+        "Washington Homes housing project (Albany, GA)",
+        "Albany school integration",
+        "Albany Movement teachers' mutual-aid network",
+        "Albany Movement legacy"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 92,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 26,
+        "quality_component_a": 37,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could expand on the mutual-aid network's institutional importance; the summary preserves Jones's specific examples without extrapolating."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:50:00,000",
+      "end_time": "00:52:21,000",
+      "title": "Head Start, the War on Poverty, and Closing",
+      "summary": "Jones closes by tying her own educational trajectory to the federal War on Poverty: she names President Lyndon B. Johnson and Sargent Shriver as the architects of the Head Start program through which she obtained her early-childhood education, which is why, she says, she 'gets stood up' when she hears talk of cutting Head Start funds. She mentions that she was within fifteen credits of a master's degree but did not finish because 'it was just too hard.' The interview closes with the standard Library of Congress / Smithsonian NMAAHC sign-off.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "head start",
+        "war on poverty",
+        "lyndon johnson",
+        "sargent shriver",
+        "adult education",
+        "library of congress",
+        "smithsonian"
+      ],
+      "related_events": [
+        "Head Start program",
+        "War on Poverty",
+        "Lyndon B. Johnson",
+        "Sargent Shriver",
+        "Library of Congress",
+        "Smithsonian National Museum of African American History and Culture"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that Sargent Shriver led the Office of Economic Opportunity, which administered Head Start beginning 1965 -- the corpus entry for Sargent Shriver confirms his Pass-7-canonical role."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Mary Jones",
+      "interviewee_title": "Albany Movement participant; voter registration organizer; member of the Police Committee that helped integrate the Albany, Georgia police force",
+      "interview_date": "2013-03-09",
+      "interview_location": "Albany State University, Albany, Georgia",
+      "interviewer_name": "Willie Griffin",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:52:21",
+      "total_segments": 791,
+      "word_count": 5800,
+      "number_of_chapters": 11
+    },
+    "overall_score": {
+      "total": 79,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 23,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Interview moves clearly from childhood farm labor to schooling to marriage to movement work in a chronological arc (Segment 12, 00:01:19,000 onward through Segment 281, 00:14:30,000)",
+            "Mid-interview transition to Albany Movement work follows the speaker's mention of reading the Pittsburgh Courier and learning about Rosa Parks (Segment 222, 00:11:54,000 - Segment 318, 00:15:27,000)",
+            "Closing return to Head Start and War on Poverty themes provides a reflective wrap-up (Segment 785, 00:51:32,000 - Segment 791, 00:52:14,000)"
+          ],
+          "justification": "The interview has a clear chronological arc, though the interviewer occasionally returns to earlier topics (e.g., the Criterion Club at Segment 475, 00:28:25,000) for elaboration. Some passages -- particularly the police-committee narrative -- contain meandering hedges that briefly disrupt flow."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "they were just, who would I tell you the truth? It was rough and tough. But if I had to do it again, I would have done that.",
+            "segment": 685,
+            "timestamp": "00:39:00,460"
+          },
+          "specificity_count": {
+            "full_names": 15,
+            "specific_dates": 3,
+            "specific_places": 8
+          },
+          "evidence": [
+            "Description of bird-seed hoeing pay of 'maybe 75 cents' (Segment 65, 00:05:02,000)",
+            "Detailed description of Baker County jail cell holding 25 women with one bed in a cell sized for 8-10 (Segments 649-655, 00:36:34,000)",
+            "Specific account of guards barking dogs outside the cell and prisoners singing louder in response (Segments 677-679, 00:38:07,000)"
+          ],
+          "justification": "Jones provides numerous concrete anchors: full names of teachers, neighbors, first Black police officers, Criterion Club leaders, and her grandmother; specific dates (1933, 1951); and sensory detail of jail conditions and farm labor. ASR-related transcription noise occasionally obscures the exact wording but the underlying specificity is high."
+        },
+        "emotional_authenticity": {
+          "score": 7,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "But if I had to do it again, I would have done that.",
+            "segment": 686,
+            "timestamp": "00:39:07,420"
+          },
+          "emotional_range": [
+            "pride",
+            "indignation",
+            "gratitude",
+            "humor",
+            "weariness"
+          ],
+          "vulnerability_elements": [
+            "Admits she did not finish her master's degree because 'it was just too hard' (Segment 789, 00:52:03,000)",
+            "Acknowledges fear among neighbors who could not read and were afraid to register (Segments 338-340, 00:20:48,000)"
+          ],
+          "justification": "Jones is emotionally present throughout but tends toward a matter-of-fact register typical of working-class testimony of her generation. Her vulnerability is principally about community fear and her own unfinished education rather than about her own personal danger; she does not dwell on personal trauma even when describing the jail experience."
+        },
+        "overall_assessment": "Jones delivers a coherent and specifically anchored account that moves chronologically through her life and into her movement work. The narrative has many vivid moments -- especially the jail scenes and the police-committee delegation -- but the emotional register is steady rather than raw. She is more comfortable describing what others did and what conditions were like than excavating her own internal experience, which is consistent with the testimonial mode of grassroots-organizer oral histories from this generation."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "Albany Movement voter registration phase as an organizer (Segments 318-374, 00:15:27,000 - 00:22:36,000)",
+            "Police Committee delegation to Chief Laurie Pritchett, hiring of first Black Albany officers (Segments 379-470, 00:22:50,000 - 00:27:00,000)",
+            "Mass march and Baker County jail experience (Segments 551-691, 00:33:00,000 - 00:40:00,000)",
+            "Christmas boycott of downtown Albany (Segments 703-712, 00:41:30,000 - 00:42:50,000)"
+          ],
+          "key_figures": [
+            {
+              "name": "Dr. William G. Anderson",
+              "relationship": "Albany Movement president (named by speaker)",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Laurie Pritchett",
+              "relationship": "Albany police chief whom the Police Committee met with repeatedly",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Slater King",
+              "relationship": "Criterion Club leader (named by speaker)",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Chevene 'C.B.' King",
+              "relationship": "Criterion Club leader (named by speaker)",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "Brief in-person encounters in large crowds; recipient of funds for rebuilding burned churches",
+              "contact_level": "distant"
+            },
+            {
+              "name": "McCree Harris",
+              "relationship": "Fellow Police Committee member; teacher at Monroe Comprehensive HS who circulated officer applications",
+              "contact_level": "close"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Criterion Club",
+              "role": "Voter-registration canvasser",
+              "years": "late 1950s - early 1960s"
+            },
+            {
+              "organization": "Albany Movement",
+              "role": "Police Committee member; mass-march participant; voting captain in Washington Homes",
+              "years": "1961-1962"
+            },
+            {
+              "organization": "Head Start (federal program)",
+              "role": "Adult education recipient",
+              "years": "post-1965"
+            }
+          ],
+          "unique_access": "Jones provides a grassroots-organizer view of the Albany Movement from inside the Washington Homes housing project, including the structure of voter-registration canvassing, the Police Committee's repeated negotiations with Chief Pritchett, and the teachers' clandestine mutual-aid network for jailed marchers. She names specific local actors and the first Black Albany officers, providing organizer-level detail rather than spectator-level.",
+          "justification": "Jones is a direct participant in the canonical 1961-62 Albany Movement, with named roles in voter registration, the Police Committee, mass marches, and the boycott. Her position is local-organizer rather than national-leadership, which is exactly the under-documented stratum the CRHP corpus needs."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Birth date 'July of 24, 1933' (Segment 10, 00:01:10,000)",
+            "Marriage in 1951 (Segment 195, 00:10:46,000) following her last year at Monroe Comprehensive HS",
+            "Names of first Black Albany officers: Etheridge Smith, David Hyde, Robert Benning Jr. (Segments 442-447, 00:25:23,000)",
+            "Bond payment of $0.75 for childhood farm labor (Segment 65, 00:05:02,000)",
+            "Cell-occupancy detail: 25 women in a cell designed for 8-10, one bed (Segments 649-654, 00:36:34,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 15,
+            "first_only": 4,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "Dr. William G. Anderson as first president of the Albany Movement (matches civil_rights_facts.json corpus)",
+            "Laurie Pritchett as Albany police chief during the movement (matches civil_rights_facts.json corpus)",
+            "Christmas boycott of downtown Albany merchants (matches well-documented Albany Movement history)",
+            "Head Start program under President Johnson and Sargent Shriver (matches civil_rights_facts.json corpus)"
+          ],
+          "justification": "Jones names many specific people, dates, places, and dollar amounts. The ASR transcription introduces noise that occasionally muddles names, but the underlying specificity is consistent with Smithsonian-grade primary-source testimony."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed account of the Police Committee's negotiation strategy with Chief Pritchett, including being made to wait and Pritchett's eventual concession",
+            "First-person testimony on the teachers' covert mutual-aid network that paid rent and light bills for jailed marchers' families",
+            "The role of an older woman who 'sold the all' and went to jail repeatedly because the boycott had cut off her income (Segments 772-777, 00:46:00,000)",
+            "Mary Jones's role as a voting captain in the Washington Homes housing project, including noon meetings to accommodate older residents"
+          ],
+          "understudied_aspects": [
+            "Working-class Black women's organizing roles in Southwest Georgia",
+            "Teachers' covert support network for jailed activists when teachers were forbidden from marching",
+            "Voting captain micro-structure within the Washington Homes housing project"
+          ],
+          "narrative_complications": "Jones explicitly pushes back on the dominant 'Albany Movement was a failure' framing -- 'I wouldn't say failure...I would say it was a success' (Segments 740-741, 00:46:00,000) -- providing a participant's counter-reading of the campaign that complicates the standard SCLC-tactical-failure narrative.",
+          "historiographical_value": "Historians studying the Albany Movement, women's grassroots organizing in the deep South, the Black municipal-politics integration of Southwest Georgia, and the longer arc from Movement participation to War on Poverty programs will find this testimony useful as primary-source material.",
+          "justification": "Jones documents organizer-level and household-level dynamics of the Albany Movement that national-figure-centered accounts often omit, including the teachers' mutual-aid network and the voting captain micro-structure. These are exactly the contributions the CRHP corpus is designed to capture."
+        },
+        "overall_assessment": "Jones's testimony is historically valuable as a grassroots-organizer first-person account of the canonical Albany Movement, with named roles on the Police Committee, in voter registration, and as a voting captain. She corroborates and extends the documented record on Dr. William G. Anderson, Slater King, C.B. King, and Laurie Pritchett, and adds previously under-documented detail on the teachers' mutual-aid network and the voting-captain micro-structure. The interview ends earlier than some others in the corpus and does not develop her later post-movement career in depth."
+      },
+      "emotional_resonance": {
+        "total": 17,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 6,
+          "max_possible": 10,
+          "transformation_arc": "Jones's arc is from a rural-Georgia farm-laboring child who could not start school until October, through a young married woman attending Monroe HS, into an organizer who canvasses door-to-door, sits across the desk from the city police chief, and concludes that the movement taught her community to 'love more.' The transformation is steady and outward-directed rather than a single dramatic conversion experience.",
+          "key_turning_points": [
+            "Reading the Pittsburgh Courier and Southwest Georgian and deciding she would be part of the integration fight (Segments 221-225, 00:11:46,000)",
+            "First mass march of roughly 700 adults after the local paper accused them of pushing children forward (Segments 568-589, 00:33:55,000)",
+            "Realizing post-movement that the federal Head Start program would give her own education (Segments 785-789, 00:51:32,000)"
+          ],
+          "before_after_contrast": "Before: a teenager and young mother focused on farm labor and family. After: a recognized organizer in her housing project, a voting captain, and an adult-learner in a federal program she helped politically make possible.",
+          "inspirational_quality": "Her closing assertion that 'if I had to do it again, I would have done that' (Segment 686, 00:39:07,000) and her affirmation of 'much prayer' and 'sticking together' (Segments 751-757, 00:47:25,000) carry inspirational weight for audiences seeking models of sustained grassroots commitment.",
+          "justification": "Jones does articulate a transformation arc but it is implicit rather than developed in depth; she does not dwell on internal change or on a single conversion moment, instead foregrounding the community's collective transformation."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Mass arrest and four-day Baker County jailing",
+              "segment_range": "594-696",
+              "timestamp_range": "00:35:13,000 - 00:40:21,000",
+              "stakes": "Personal freedom, physical safety, family separation"
+            },
+            {
+              "description": "Police Committee's repeated rebuffs by Chief Laurie Pritchett and eventual meeting",
+              "segment_range": "399-440",
+              "timestamp_range": "00:23:38,000 - 00:25:20,000",
+              "stakes": "Whether Black officers would be hired and Black residents protected from extrajudicial police violence"
+            },
+            {
+              "description": "School integration of her oldest daughter, including verbal and physical attacks",
+              "segment_range": "243-266",
+              "timestamp_range": "00:13:05,000 - 00:14:49,000",
+              "stakes": "Her child's safety and education"
+            }
+          ],
+          "conflict_types": [
+            "State repression",
+            "Police-community accountability",
+            "Economic boycott",
+            "Intergenerational pressure (children marching before adults)"
+          ],
+          "emotional_range": "From quiet pride in her grandmother's small plot of land to indignation at the school principal's racial slurs to weary triumph at the Christmas boycott's economic bite",
+          "justification": "There are multiple high-stakes moments -- the jailing, the police negotiations, the children's school integration -- but Jones tends to describe them at slightly emotional distance rather than putting the listener inside the moment."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "Maternal protection of children entering a hostile environment",
+            "Saving small earnings for school clothes",
+            "Mutual aid among neighbors during hardship",
+            "Generational handoff of civic responsibility"
+          ],
+          "relatable_struggles": [
+            "Not being able to start school on time because of family economic obligations",
+            "Marrying young and pausing one's own education",
+            "Returning to school as an adult"
+          ],
+          "human_moments": [
+            "The neighbor 'next door' who minded her children while she went to jail and 'knew I was going to go out all the way to jail' (Segments 715-717, 00:42:50,000)",
+            "Her father 'bonding her out' on Thursday after four days in jail (Segment 596, 00:35:21,000)"
+          ],
+          "connection_points": "Audiences from any background can connect to the small-economic-survival details (75-cent farm wages, school clothes from savings), the maternal protection of children entering integrated schools, and the closing reflection on community love versus 'hating each other like the white man hated.'",
+          "justification": "Several universal themes are accessible to general audiences, but the interview is also dense with Southwest-Georgia-specific institutional detail (Criterion Club, Police Committee, Washington Homes voting-captain structure) that requires some movement-history familiarity to fully appreciate."
+        },
+        "overall_assessment": "Jones's testimony has moderate emotional resonance: there are universal themes of maternal protection, mutual aid, and personal transformation, but she narrates them in a steady, organizer-style register that lacks the raw vulnerability of some other CRHP entries. The most emotionally charged passages are the jail conditions and the school-integration recollections of her daughter."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "moderate",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Speaker uses substantial Southwest-Georgia African American Vernacular English, which the ASR transcription appears to have struggled with in places ('we call it a slot-loan,' 'sho-nuff,' etc.)",
+            "Institution names (Criterion Club, Albany Movement Police Committee, Washington Homes) and named individuals are introduced without much self-contextualization",
+            "Some chronological references are vague ('back then', 'doing the movement')"
+          ],
+          "justification": "Jones's speech is clear and articulate, but the transcript carries dialect and Whisper-ASR rendering noise that may require listeners to consult the underlying audio. General audiences will follow most of the narrative but will benefit from contextual annotations."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "uneven",
+          "high_energy_sections": [
+            "Mass march and jailing (Segments 551-696, 00:33:00,000 - 00:40:21,000)",
+            "Police Committee meetings with Chief Pritchett (Segments 379-470, 00:22:50,000 - 00:27:00,000)",
+            "Christmas boycott narrative (Segments 703-712, 00:41:30,000 - 00:42:50,000)"
+          ],
+          "slow_sections": [
+            "Early-childhood farm-labor details (Segments 30-90, 00:02:33,000 - 00:06:30,000) where the speaker frequently pauses and the interviewer is feeding back 'Okay' / 'Uh-huh'",
+            "Some passages where the interviewer waits while the speaker tries to recall a name (e.g., Segments 491-503, 00:29:32,000 - 00:30:19,000)"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Audiences with civil-rights-history familiarity will sustain attention throughout. General audiences may engage most deeply with the jail and police-committee passages.",
+          "justification": "The interview's energy peaks during the police-committee and jail narratives and slows during the early biographical setup and the more meandering name-recall passages. The interviewer's affirming pacing is supportive but does not always tighten the narrative."
+        },
+        "broader_themes_connection": {
+          "score": 7,
+          "max_possible": 6,
+          "themes_connected": [
+            "Voting rights and the literacy test as gatekeeping",
+            "Police-community accountability and the integration of municipal police forces",
+            "Federal anti-poverty programs as a downstream achievement of the movement",
+            "Mutual aid as the infrastructure that made sustained mass protest possible"
+          ],
+          "contemporary_relevance": "Jones explicitly draws a line from her own Head Start education to contemporary debates about cutting Head Start funding (Segment 786, 00:51:39,000) and frames the integration of the Albany police force as a tangible accountability win that contemporary police-reform conversations should recognize.",
+          "meaning_making": "Jones repeatedly frames specific events in terms of their broader meaning -- the boycott as economic leverage, the jailing as collective endurance, the Police Committee as accountability infrastructure, and the closing turn to Head Start as the federal-program legacy of the movement.",
+          "justification": "Jones is especially strong at making contemporary connections, particularly when she pivots to defending Head Start funding at the close of the interview."
+        },
+        "overall_assessment": "The interview is generally accessible, with some dialect and ASR-rendering challenges that may require audio consultation. The narrative flow is uneven, with strong middle sections and slower bookends. Jones is particularly effective at drawing broader thematic connections, especially in her closing remarks on Head Start."
+      }
+    },
+    "overall_assessment": "Mary Jones's testimony is a Very Good (79/100) grassroots-organizer oral history that documents the Albany Movement from the inside, with named roles on the Police Committee, in voter registration, and as a voting captain in the Washington Homes housing project. Its historical value is high because it adds organizer-level texture to a campaign that has often been told through national figures; its narrative quality is strong on specificity but moderate on emotional vulnerability; its emotional resonance is solid but understated; and its accessibility is generally good with some dialect and ASR-rendering challenges. The interview ends comparatively early at roughly 52 minutes and does not develop Jones's post-movement Head Start career in depth, which is the principal limitation.",
+    "key_strengths": [
+      "Named organizer-level testimony on the Albany Movement Police Committee, including the hiring of the first Black Albany officers (Etheridge Smith, David Hyde, Robert Benning Jr.) -- a level of municipal-integration detail that is under-represented in published Albany Movement scholarship.",
+      "Vivid first-person testimony on jail conditions in the Baker County jail, including specific sensory detail (25 women in a cell sized for 8-10, hardened peas and grits, guard dogs barking outside the cell) that supports broader corpus-level claims about Chief Laurie Pritchett's multi-jurisdictional dispersal strategy.",
+      "Documentation of the teachers' covert mutual-aid network for jailed marchers' families -- a previously under-documented aspect of how the movement sustained mass arrests."
+    ],
+    "key_limitations": [
+      "Several proper names (Bertha McIntosh, Alice Porter, Mr. Kina, Ella Holloway, Willime Jackson, Celeste Scott, McNair) and at least two town names in the Christmas boycott passage are taken from the ASR transcript and are not externally verified; downstream publication will require audio consultation.",
+      "The interview ends at roughly 52 minutes with the speaker giving only a brief gesture toward her post-movement Head Start career and her unfinished master's degree, leaving the longer arc of her life under-developed."
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Mary Jones was born July 24, 1933 in Georgia.",
+        "status": "supported",
+        "supporting_excerpt": "I was born in Georgia, in the 1930s. ... In other words, July of 24, 1933.",
+        "rationale": "Speaker states birthplace and date in segments 7-10."
+      },
+      {
+        "claim": "She was raised by her grandmother Bertha McIntosh on a small plot of land near Albany.",
+        "status": "supported",
+        "supporting_excerpt": "My grandmother, who reared me. ... Bertha McIntosh. Bertha McIntosh, okay. ... that was their place that I grew up on. My grandmother's place.",
+        "rationale": "Segments 15-20 establish grandmother as primary caregiver and the family land context."
+      },
+      {
+        "claim": "From about age eight, she worked under the supervision of Miss Alice Porter picking cotton, gathering peanuts and pecans, pulling corn, and digging potatoes for white farmers.",
+        "status": "supported",
+        "supporting_excerpt": "I probably was about eight. And my grandmother would let me go with this old lady, Miss Alice Porter. And she would take quite a few of the children from the neighborhood. ... when I got large enough to really go out and work on the farm, the white man's farm, like gathering peanuts and picking cotton and digging potatoes. ... Is we call it pulling corn. Also pecans gathering pecans.",
+        "rationale": "Segments 31-46 establish age, supervisor, and types of labor."
+      },
+      {
+        "claim": "Children could not start school in September because of the harvest, starting in October or November instead.",
+        "status": "supported",
+        "supporting_excerpt": "We couldn't go to school when school started like in September. We had to stay together at the farm. And then after you gather the farm, then you could go to school. And that was around about October, November.",
+        "rationale": "Segments 35-38 establish the September-to-October start delay."
+      },
+      {
+        "claim": "She attended Shepherd Elementary School, which had been started in a Baptist church building.",
+        "status": "supported",
+        "supporting_excerpt": "The school was when we first started in the church. First but third is the Baptist church. ... that's where I went to school until I finished seventh grade. ... Shepherd. We named it after the master that gave us the big church.",
+        "rationale": "Segments 93-122 establish the school's name (Shepherd), its origin in a Baptist church, and the naming source."
+      },
+      {
+        "claim": "She attended Monroe Comprehensive High School in Albany, played basketball and ran track.",
+        "status": "supported",
+        "supporting_excerpt": "And from the, uh, when I came up here we went to Monroe Comprehensive High School, which is still open to the day. ... I lived in Monroe. I was into sports. ... I played basketball, ran track.",
+        "rationale": "Segments 175-184 establish school name and athletic involvement."
+      },
+      {
+        "claim": "She married Jimmy Lee Jones in 1951; he was a Monroe Comprehensive HS classmate who then went into the Army.",
+        "status": "supported",
+        "supporting_excerpt": "Uh, it's supposed to be 51. ... But I was in love and I got married. ... Jimmy Lee Jones. ... We started at Monroe. He was at Monroe. ... He's playing football in basketball. ... And he was going to the arm and the next day or so too.",
+        "rationale": "Segments 195-213 establish year, husband's name, and military trajectory."
+      },
+      {
+        "claim": "She read the Pittsburgh Courier and the Southwest Georgian, the Black-owned Albany paper, which the transcript associates with 'A.C. Searles.'",
+        "status": "partially_supported",
+        "supporting_excerpt": "Pittsburgh Courier, put curd and the southwest Georgia, Miss A.C. Sugs. A.C. Searles. Yeah, it was the owner of that paper and did the writing.",
+        "rationale": "Segments 234-237 establish the two newspapers but the owner's name appears in two transcribed forms ('Miss A.C. Sugs' and 'A.C. Searles'); the corrected form 'A.C. Searles' is the well-documented historical figure, but the transcript shows uncertainty."
+      },
+      {
+        "claim": "She worked with the Criterion Club on voter registration, canvassing door-to-door and helping run literacy classes for residents required to read the Georgia Constitution.",
+        "status": "supported",
+        "supporting_excerpt": "I started, I had heard about the Montgomery incident, you know, about Rosa Parks. So, when it first started, the Criterion Club and got together. And I had worked with them in the voter registration. ... they had a little school like it wasn't a school, but it was set up in the office that we taught people's had to read. ... The Georgia Constitution.",
+        "rationale": "Segments 320-330 establish Criterion Club work, voter registration, and the literacy gate of the Georgia Constitution."
+      },
+      {
+        "claim": "She drove people to register to vote and then back again to actually cast votes.",
+        "status": "supported",
+        "supporting_excerpt": "Yeah, we had to canvas. ... And even after getting them, you know, registered to vote, you had to care them back. I remember one lady told me ... She said, no, I didn't. I've registered like you told me. I said, but maybe you didn't vote. And that's what counts.",
+        "rationale": "Segments 335-358 establish the canvassing and the follow-up voting drives."
+      },
+      {
+        "claim": "She served on a seven-person Police Committee from the Albany Movement that met repeatedly with Chief Laurie Pritchett to demand the hiring of Black officers.",
+        "status": "supported",
+        "supporting_excerpt": "I worked with that a while, and then I worked on the police committee. ... I'm the only one living now. It was seven of us. ... they chose us from the movement ... who would want to be on this committee to go down to talk to Chief Preacher.",
+        "rationale": "Segments 374-387 establish the Police Committee, its size (7), and its purpose."
+      },
+      {
+        "claim": "Chief Pritchett ignored the delegation on its first three visits before eventually meeting with them.",
+        "status": "supported",
+        "supporting_excerpt": "The first two or three times we went, he ignored us. ... And by the fourth time ... So, he finally wanted to know ... well, we've been here three times and we tried to tell you.",
+        "rationale": "Segments 399-415 establish the repeated rebuffs followed by the eventual meeting."
+      },
+      {
+        "claim": "McCree Harris, a Monroe Comprehensive HS teacher who served on the Police Committee, circulated officer applications.",
+        "status": "supported",
+        "supporting_excerpt": "McCree Harris was I spoke once she was with... She was working in Monroe High. ... So, she said, well, I tell you what, you give me, to give me some applications. She said, I go out and I came.",
+        "rationale": "Segments 391-435 establish McCree Harris's role and her circulation of applications."
+      },
+      {
+        "claim": "About five Black officers were hired, including Etheridge Smith, David Hyde, and Robert Benning Jr.",
+        "status": "supported",
+        "supporting_excerpt": "they did have five, I think it was five ... I thought that was, uh, Etheridge Smith. ... David Hyde. Robert Benning. Robert Benning. Yeah. Inserting that big junior.",
+        "rationale": "Segments 440-448 establish approximate count and the three names."
+      },
+      {
+        "claim": "The first Black officers walked a beat (no patrol cars), had regular uniforms, and were not authorized to arrest white people.",
+        "status": "supported",
+        "supporting_excerpt": "they were told when they was high. You know, UK, rest know quite folks. ... they were full of time for us. Right. But they just couldn't. Oh, no. Now, did they have police cars? They didn't get patrol cars. They had to walk a beat. You folks, they have regular uniforms. Yeah, they had uniforms.",
+        "rationale": "Segments 450-456 establish all three constraints."
+      },
+      {
+        "claim": "Dr. William G. Anderson was chosen as the Albany Movement's first president; Marion S. Page served as secretary.",
+        "status": "supported",
+        "supporting_excerpt": "they chose Dr. William G. Anderson as the president of the Albany Movement. ... And then they had Mr. Pays like you call it name, he was a secretary.",
+        "rationale": "Segments 497-500 establish both roles; corroborated by civil_rights_facts.json corpus entry for Albany Movement, which names Dr. William G. Anderson as first president."
+      },
+      {
+        "claim": "Other Criterion Club leaders included Chevene ('C.B.') and Slater King and Thomas Chapman.",
+        "status": "supported",
+        "supporting_excerpt": "Okay, Dr. William G. Anderson. ... Chevene 'C.B.' King + (Slater) King. Shaveen King. ... Thomas Chapman.",
+        "rationale": "Segments 483-491 list these figures explicitly."
+      },
+      {
+        "claim": "Roughly seven hundred adults marched in a mass march that the city responded to with mass arrests.",
+        "status": "supported",
+        "supporting_excerpt": "But anyway, about 700 us, uh, grownups. ... 700 was in jail when he came.",
+        "rationale": "Segments 582-589 establish the figure and its connection to mass arrest."
+      },
+      {
+        "claim": "Jones was jailed from Monday morning until Thursday in the Baker County jail and was bonded out by her father.",
+        "status": "supported",
+        "supporting_excerpt": "So I was in there from Monday about 11 o'clock to Thursday. ... My father came and, uh, bond me out. ... I went to, uh, Baker County jail.",
+        "rationale": "Segments 594-607 establish all elements."
+      },
+      {
+        "claim": "She was placed in a cell designed for about 8-10 people with about 25 other women and one bed.",
+        "status": "supported",
+        "supporting_excerpt": "the little room down there to make a kind of where, where I was. It actually would hold, look like about eight or ten. ... And they put 25 in there. ... one bed.",
+        "rationale": "Segments 648-654 establish the cell dimensions, occupancy, and bedding."
+      },
+      {
+        "claim": "Mass meetings were held almost every night except Saturday and Sunday and rotated among churches because some ministers feared church burnings.",
+        "status": "supported",
+        "supporting_excerpt": "And they had to mass media every night but Saturday and Sunday. ... Now some of the ministers didn't cooperate with it because they were afraid that some of the churches had gotten burned up.",
+        "rationale": "Segments 512-516 establish the schedule and the church-burning fears."
+      },
+      {
+        "claim": "Dr. Martin Luther King Jr. helped raise funds to rebuild burned Southwest Georgia churches.",
+        "status": "supported",
+        "supporting_excerpt": "And it was a blessing because it was little shacks anyway. And when Dr. King and them organizations, they built those churches back, it was so nice. ... So Dr. King played a role in getting these. Yeah, he had getting phones.",
+        "rationale": "Segments 518-524 establish King's fundraising role for rebuilding."
+      },
+      {
+        "claim": "The movement cut off ties with downtown Albany merchants in early December as a Christmas boycott and shoppers drove to Cordele instead.",
+        "status": "supported",
+        "supporting_excerpt": "we had to cut off all ties with the down town. We started going to motry getting our clothes and all that kind of stuff. ... Folks was going to come Miller and call the ill place like that and we mostly was going and I was taking people to to motry. ... I believe it was the first Monday and December.",
+        "rationale": "Segments 704-711 establish the boycott and the alternative shopping. Cordele is the most plausible resolution of the ASR-corrupted 'motry'; the other town names remain uncertain."
+      },
+      {
+        "claim": "Jones served as a voting captain in the Washington Homes housing project, hosting noon meetings at her home so older residents could attend.",
+        "status": "supported",
+        "supporting_excerpt": "I was living in the Washington projects, which is right down over there. ... They would meet at my house at 12 o'clock every day. ... I would think that's one of the voting captains.",
+        "rationale": "Segments 727-738 establish the project, the meetings, and the voting-captain role."
+      },
+      {
+        "claim": "Teachers were forbidden by the superintendent from marching on pain of losing their jobs but instead organized to support jailed marchers' families with food, light bills, and rent.",
+        "status": "supported",
+        "supporting_excerpt": "the superintendent had told them if they marched that's what they job. They could not march. So now what is more important? March and going to jail and you don't have no job are either helping the people who went to jail and that's what they need. They organize and people's march they sell about their children. They bought food, paid light meals, paid the rent.",
+        "rationale": "Segments 766-769 establish the prohibition and the alternative organizing."
+      },
+      {
+        "claim": "Jones obtained her early-childhood education through the federal Head Start program under President Lyndon B. Johnson and Sargent Shriver.",
+        "status": "supported",
+        "supporting_excerpt": "the War on Poverty uh John. President Johnson was the president and Sargent Shriver was over that problem and a Head Start program. Now they get me stood up when they start talking about cutting them funds for head start. ... Because I know where my education came from. And you went into early childhood at that beginning.",
+        "rationale": "Segments 784-787 establish President Johnson, Sargent Shriver, Head Start, and Jones's personal benefit; corroborated by civil_rights_facts.json corpus entry for Sargent Shriver and Lyndon B. Johnson."
+      },
+      {
+        "claim": "The interview was conducted by Willie Griffin, research associate with the Southern Oral History Program at UNC Chapel Hill, with videographer John Bishop, on Saturday March 9, 2013, at Albany State University.",
+        "status": "supported",
+        "supporting_excerpt": "Today is Saturday, March 9, 2013. My name is Willie Griffin and I am a research associate with the Southern oral history program at the University of North Carolina at Chapel Hill. I am with videographer John Bishop in Albany, Georgia on the campus of Albany State University to conduct an interview for the Civil Rights History Project.",
+        "rationale": "Segments 2-3 establish all interview-metadata claims."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 27,
+      "supported": 26,
+      "partially_supported": 1,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_citation_blocked_1_partial",
+    "rationale": "The main_summary accuracy_score is 88 (below the 90 threshold) and there is one partially_supported claim in the citation audit (the identification of A.C. Searles as the Southwest Georgian's owner, where the transcript shows two adjacent ASR renderings: 'Miss A.C. Sugs' and 'A.C. Searles', with the latter introduced by the interviewer rather than spontaneously by the speaker). The quality_score of 92 passes, and 26 of 27 main_summary claims are fully supported by transcript passages. Human review is required to (a) resolve the A.C. Searles attribution against external sources, (b) verify the names of the first Black Albany officers (Etheridge Smith, David Hyde, Robert Benning Jr.) against published Albany Movement scholarship, and (c) confirm the principal-name 'McNair' attribution. The summary itself is faithful to the transcript and the underlying historical claims are largely consistent with the civil_rights_facts.json corpus (Albany Movement, Laurie Pritchett, Sargent Shriver, Lyndon B. Johnson, Slater King). The fail-closed gate is correctly routing this to review rather than auto-publishing."
+  }
+}

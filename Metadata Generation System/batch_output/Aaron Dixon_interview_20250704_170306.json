@@ -1,0 +1,1084 @@
+{
+  "interview_name": "Aaron Dixon",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Aaron Dixon_interview_20250704_170306\\Aaron Dixon_interview_transcript_20250704_170306.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Aaron Dixon",
+    "interviewee_title": "Founding Captain, Seattle Chapter of the Black Panther Party",
+    "interview_date": "2013-05-11",
+    "interview_location": "Seattle, Washington",
+    "interviewer_name": "David Cline",
+    "interviewer_affiliation": "Virginia Tech / Southern Oral History Program at UNC Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "02:27:49"
+  },
+  "main_summary": {
+    "summary": "Aaron Dixon, founding captain of the Seattle chapter of the Black Panther Party, narrates a life history that begins with detailed family genealogies on his mother's and father's sides (both traced to Mississippi and Kentucky respectively, with intergenerational stories of slavery, the Great Migration, and his father Elmer Dixon Sr.'s World War II service in a segregated Army that included confrontations with white officers and a Mississippi sheriff). Dixon describes growing up in Seattle's Madrona neighborhood after the family moved from Champaign, Illinois around 1957-58 for his father's job at Boeing, in a multi-ethnic central-area community that included Black, Filipino, Japanese, and Chinese neighbors. He recounts his political awakening as a teenager: marching with Martin Luther King Jr. when King visited Seattle, attending a Stokely Carmichael speech that 'blew us into another direction,' and joining the Black Student Union at the University of Washington. After the April 4, 1968 assassination of Martin Luther King Jr., which Dixon learned about while jailed in King County on unlawful-assembly charges from a Franklin High School demonstration, he decided his 'picket sign was going to be replaced by a gun.'\n\nDixon describes attending a Black Student Union conference in San Francisco shortly after the April 6, 1968 Oakland police killing of seventeen-year-old Bobby Hutton, attending Hutton's funeral (where he saw Marlon Brando standing outside with Bobby Seale), and asking Bobby Seale to charter a Seattle chapter. Bobby Seale and George Murray (BPP Minister of Education and a San Francisco State College professor) flew to Seattle and met with about twenty people at Dixon's parents' house, where Dixon was designated captain at age nineteen — making Seattle the first BPP office outside California. Dixon recounts being summoned to Oakland for orientation, meeting captains Robert Bay, Landon Williams, Randy Williams, and Tommy Jones (Vietnam veterans); a tense armed standoff with Oakland police at Seventh and Wood (the same corner where Huey Newton had his earlier shootout); and a baptismal week of Saturday Panther meetings at St. Augustine's Church. He describes the Seattle chapter's first major action — confronting the principal of Rainier Beach High School with armed Panthers after repeated calls from a mother about white students attacking her son. Dixon narrates the war that followed between the Seattle chapter and the Seattle Police Department through the summer of 1968: a $25,000 contract on his head, the deaths of two young Seattle Panthers (Welton Armstead, age 17, and another killed during a robbery), the fortification of the Panther office with sandbags after a Justice Department source warned of a planned raid, and Seattle mayor Wes Uhlman's refusal to allow ATF to raid the office after the December 4, 1969 Chicago raid that killed Fred Hampton and the subsequent raid on the Los Angeles chapter.\n\nDixon recounts the Black Panther Party's pivot from armed self-defense to community survival programs — Seattle's first free breakfast program at Madrona Presbyterian Church in winter 1969, the first free medical clinic in Seattle, mass sickle cell anemia testing at Walla Walla State Penitentiary, the first food bank program — and the 1971 Newton-Cleaver split that ended in expulsions, the murder of comrades, and Eldridge Cleaver's exile in Algeria. After a 1971 shotgun-test incident in which his weapon exploded (later found to have had its gunpowder replaced with high explosives, an apparent assassination attempt), Dixon relocated to Oakland under the BPP's centralization order. He served as Elaine Brown's bodyguard during her chairpersonship after Huey Newton fled to Cuba, worked on the Bobby Seale for Mayor of Oakland and Elaine Brown for City Council campaigns, helped run the Bobby Brown for Governor of California campaign and the Lionel Wilson for Mayor of Oakland campaign that made Wilson Oakland's first Black mayor, and watched Newton's return from exile precipitate the BPP's final collapse. Dixon left the party after ten years, served roughly a year in federal prison for embezzlement, became a substance-abuse counselor, returned to Seattle, and founded a nonprofit transition-housing and youth-leadership organization. The interview closes with his published memoir (released September 2012) and reflections on how the crack-cocaine epidemic and Reagan-era policies eroded the Black community's unity that had sustained the Panther era.",
+    "key_themes": [
+      "Black Panther Party organizational history (Seattle chapter founding and operations)",
+      "Armed self-defense and the Party's pivot to community survival programs",
+      "FBI COINTELPRO and police repression of the Black Panther Party",
+      "Family, intergenerational memory, and the Great Migration",
+      "Black Power radicalization in the late 1960s",
+      "Internal Party politics (Newton-Cleaver split, Elaine Brown's leadership, Newton's return)",
+      "Electoral organizing as a continuation of revolutionary politics"
+    ],
+    "historical_significance": "This interview is a rare firsthand insider account of the founding and decade-long operations of the Seattle chapter of the Black Panther Party — the first BPP office chartered outside California — by its founding captain. Dixon was directly present at the Bobby Hutton funeral, the Oakland Seventh-and-Wood standoff, multiple Central Committee meetings, and the late-1970s Oakland electoral campaigns, and served as Elaine Brown's personal bodyguard during the post-1974 rebuild. His account documents understudied West Coast Panther history (Seattle as the third FBI target chapter alongside Chicago and Los Angeles, the Wes Uhlman intervention against ATF) and provides insider testimony to the internal political dynamics of the Party's late period that complicate the dominant histories focused on Oakland and the Newton-Cleaver-Seale leadership triangle.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 87,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 35,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 13,
+      "errors": [
+        "Summary identifies the interviewer as 'David Cline' (per ground-truth knowledge of the Civil Rights History Project staffing) but the Whisper transcript renders the name as 'David Klein' at segment 4 — flagging as a probable phonetic Whisper substitution rather than a summary fabrication, but the name reconciliation is unverified against external metadata in this single-context audit.",
+        "The summary states Welton Armstead was 17 years old when killed by Seattle Police; the transcript (segment 948) says 'he was 17 years old' but uses the rendering 'Well the Narpsets 17 years old' which appears to garble the name — the canonical name 'Welton Armstead' is supplied from background knowledge of Seattle BPP history, not from the transcript, so this is a transcription-reconciliation inference that should be flagged.",
+        "The summary states the second Seattle Panther death (December 1968) occurred when 'he was given an order by somebody to go rob a grocery store and the grocery store owner killed him' (segment 959-960); the transcript does not give the Panther's name, and the summary does not attempt to name him."
+      ],
+      "improvements": [
+        "Explicitly mark the interviewer-name reconciliation as inferred rather than transcript-established (Whisper renders 'David Klein' at segment 4)",
+        "Note that the name 'Welton Armstead' is supplied from Seattle BPP history reference, not directly named in the transcript audio",
+        "Consider whether to retain the Bobby Brown for Governor reference — the transcript at segment 1490 attributes this to 'Jerry Brown' for governor, which the summary correctly reflects; verify there is no internal contradiction"
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:10:38,000",
+      "title": "Family Genealogy: Mississippi, Kentucky, and the Great Migration",
+      "summary": "Dixon opens with detailed family genealogies on both sides. His mother's side traces to Mississippi, where his great-great-grandmother Emma was born in 1867 to a formerly enslaved mother and lived through Jim Crow working at a laundry. His grandmother was the product of a relationship between a Jewish man and her mother, who was ostracized by the family for the relationship; the mother died when Dixon's grandmother was three. The grandmother was raised partly in Mississippi by Emma and partly in Chicago by an aunt, and later met Roy Sledge, whose father was a blacksmith and whose mother was half-Native American. Dixon's mother Josephine Sledge (birth name Joe Willie) was a child piano prodigy who began playing concerts at age seven and graduated high school at sixteen. Dixon's father's family came from Kentucky; his great-great-grandmother had a relationship with a slave-owner who reportedly deeded the plantation to her family when slavery ended. Great-great-uncles on the father's side were among the first Black soldiers to volunteer for the Union in the Civil War, received land for their service, and founded a town called Brooksville. Dixon's paternal grandfather Elmer Dixon (Sr.) found work with a wealthy Jewish employer in Chicago that allowed his wife to remain at home. Dixon's father was born in Henderson, Kentucky and grew up in Chicago, taking scholarship classes at the Art Institute.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "great migration",
+        "mississippi",
+        "kentucky",
+        "chicago",
+        "elmer dixon",
+        "josephine sledge",
+        "roy sledge",
+        "jim crow",
+        "civil war",
+        "brooksville"
+      ],
+      "related_events": [
+        "Great Migration",
+        "Civil War (Black Union soldiers)",
+        "Jim Crow era",
+        "Chicago Art Institute"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Birth year of great-great-grandmother Emma (1867) is from the transcript at segment 15 but is one generation displaced in Dixon's own corrections (he says 'great-great-grandmother Emma' at segment 19); the summary preserves the speaker's framing as given."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:10:38,000",
+      "end_time": "00:17:35,000",
+      "title": "Father's WWII Military Service and Race Confrontations in Mississippi",
+      "summary": "Dixon's father Elmer was captain of his Chicago ROTC and tried to enlist immediately after Pearl Harbor but was told 'we don't take boys like you.' After being drafted, he was sent to Mississippi for training. Dixon narrates three episodes from his father's Mississippi service: (1) the unit was marching in the hot Mississippi sun and a white farmer with a shotgun told them no Black soldiers would cross his field — Dixon's father and friends returned that night and burned down the farmer's barn; (2) his father walked a light-skinned Black date home across town and was confronted by a white sergeant who threatened him, prompting him to stop at the post office to write his mother that his life was in danger; the threatening figure was a town sheriff, not military; (3) when his unit's furlough was canceled, the soldiers rioted, threw belongings into the courtyard, and were shipped out by train. His father served in the Pacific theater (Philippines and Okinawa), witnessed a Marine cut the breast off a dead Japanese woman, drew his gun on the Marine but was restrained by comrades, then went AWOL and stayed briefly with a Japanese family in Korea. The Marine incident permanently changed his father's view of the United States; on returning he became involved with Paul Robeson's youth brigade and flirted with the Communist Party.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "world war ii",
+        "elmer dixon sr",
+        "mississippi",
+        "segregated army",
+        "okinawa",
+        "philippines",
+        "paul robeson",
+        "communist party"
+      ],
+      "related_events": [
+        "World War II Pacific theater",
+        "Pearl Harbor attack",
+        "Segregated U.S. military",
+        "Paul Robeson youth brigade"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 87,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "The 'Dipwreck' reference at segment 78 appears to be a Whisper rendering of an unfamiliar training-march term; preserved without interpretation."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:17:35,000",
+      "end_time": "00:30:05,000",
+      "title": "Childhood in Seattle's Madrona Neighborhood",
+      "summary": "The Dixon family moved to Seattle around 1957-58 after his father took a job at Boeing as a technical illustrator. They settled in the Madrona neighborhood — a multi-ethnic area of Black, Filipino, Japanese, Chinese, and Native American families, where neighborhood kids attended school together and Chinese-owned grocery stores extended credit. Dixon describes his mother's difficulty finding work, including being turned away from Frederick & Nelson (later acquired by Macy's) when a hiring sign was displayed, and the racial tensions that emerged when their softball team traveled to Ballard or Queen Anne, neighborhoods considered unsafe for Black youth. His father was a poet and exposed Dixon to Shakespeare; the children were each required to play an instrument under the influence of their Chicago grandmother. The family listened to Paul Robeson recordings, opera, classical music, jazz, and Martin Luther King recordings. The home had a bust of Beethoven (Dixon notes 'we later found out was Black'). Dixon's father, an artist deeply connected to other cultures, participated in a multi-ethnic folk dancing group that met in the family's home. Dixon's brother Michael (called Elmer in some passages — Dixon has multiple siblings: Elmer, Michael, and a sister) played trumpet; another brother played the violin; a sister played piano. Dixon at thirteen wanted to be a policeman and at sixteen wanted to join the Marines for Vietnam, both ambitions his father strongly refused.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "seattle",
+        "madrona",
+        "boeing",
+        "frederick & nelson",
+        "central area",
+        "multi-ethnic neighborhood",
+        "ballard",
+        "vietnam war"
+      ],
+      "related_events": [
+        "Boeing employment migration to Seattle",
+        "Postwar Black migration to the West Coast",
+        "Vietnam War draft"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Sibling names are partially ambiguous — Dixon refers separately to his brother Michael (UCLA tennis scholarship) at segment 238 and to Elmer (trumpet, later co-organizing the Seattle BPP) at segment 214; the summary preserves both but the family structure is summarized only partially."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:30:05,000",
+      "end_time": "00:43:00,000",
+      "title": "Political Awakening: King's Visit, Stokely Carmichael, and the Black Student Union",
+      "summary": "Around age twelve or thirteen Dixon marched with Martin Luther King Jr. when King visited Seattle, and he attended demonstrations against George Wallace and other figures during his early teens. After barely graduating high school in 1967, he worked multiple jobs (including four-times-a-day and 14-hour summer shifts), tried unsuccessfully to enroll at Tennessee State, and was politically galvanized by a Stokely Carmichael speech in Seattle. Dixon describes the cumulative impact of the Watts riot (Los Angeles, 1965), continued summer riots, John F. Kennedy's assassination (which devastated his father), and reading James Baldwin and Richard Wright. After a workplace incident in which he quit his job for being told to remove his Ray-Ban sunglasses, his mother pushed him toward a poverty-program job doing racial-justice theatrical skits, then he worked with playwright Aaron Dumas on the play 'General's Coup' (a Black-army-takes-Washington allegory) and won a $500 scholarship from the Lynx Fine Arts program. Through a Jewish neighbor, Mrs. Richmond, working with the Urban League, he learned of a college-access program at the University of Washington; he took the SAT, scored well, and enrolled in September. At UW he co-founded the first Black Student Union, met Ron Dellums and San Francisco State organizers, and helped form a BSU at Garfield High School. The BSU led a demonstration at Franklin High School over the unequal punishment of a Black student in a fight with a white student and the absence of Black or Asian staff; the principal fled, the students held a rally in the auditorium, and a week later Dixon was arrested at his home and charged with unlawful assembly. On April 4, 1968, while jailed in King County, Walter Cronkite announced Martin Luther King Jr.'s assassination. Riots erupted across the country and in Seattle.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "martin luther king jr",
+        "stokely carmichael",
+        "black student union",
+        "university of washington",
+        "garfield high school",
+        "franklin high school",
+        "ron dellums",
+        "watts riots",
+        "james baldwin"
+      ],
+      "related_events": [
+        "Martin Luther King Jr. assassination (April 4, 1968)",
+        "Watts riots (1965)",
+        "Black Power movement",
+        "Black Student Union founding",
+        "Franklin High School demonstration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The interviewer at segment 320 prompts Dixon about Stokely Carmichael; in the transcript Dixon mentions 'H. Rap Brown' (Whisper rendering at segment 328: 'H. Rap Brown' is correctly rendered, contrary to the typical Whisper substitution flagged in ground-truth facts)."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:43:00,000",
+      "end_time": "00:55:00,000",
+      "title": "Bobby Hutton's Funeral and Founding the Seattle BPP Chapter",
+      "summary": "After being released from King County jail, Dixon and his brother attended a Black Student Union conference in San Francisco where Bobby Seale was the scheduled keynote. They learned that BPP treasurer Bobby Hutton had been killed by Oakland police in the April 6, 1968 incident in which Eldridge Cleaver was wounded and arrested. Dixon and his brother stopped to buy black berets so they would 'fit in' and attended Hutton's funeral, where they saw Marlon Brando standing outside in a black jacket and black beret speaking with Bobby Seale. Dixon describes the funeral scene — Hutton's mother wailing over the body, Panthers lining the walls — and his sense that the Eldridge Cleaver-led ambush of Oakland police following King's assassination had been undertaken without leadership approval (Newton and Seale were jailed at the time). After Seale's funeral-evening speech, Dixon, his brother, and another comrade approached Seale and asked for a Seattle chapter. Seale flew to Seattle with George Murray (BPP Minister of Education and a San Francisco State College professor central to the BSU strike there), and about twenty people met at Dixon's parents' house over a two-to-three-day period. Seale outlined the requirements: two weapons and two thousand rounds of ammunition per member, twenty-five required-reading books, two hours of daily study, and twice-weekly Mao political-education classes. Dixon was chosen as captain — he describes it as 'I was kind of voted into it. Everybody started pointing at me.' At nineteen and still a UW student, Dixon was made captain of the Seattle chapter — the first BPP office outside California.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "bobby hutton",
+        "bobby seale",
+        "eldridge cleaver",
+        "marlon brando",
+        "george murray",
+        "san francisco state college",
+        "black panther party",
+        "seattle chapter"
+      ],
+      "related_events": [
+        "Bobby Hutton's killing (April 6, 1968)",
+        "Bobby Hutton funeral",
+        "Founding of Seattle BPP chapter (1968)",
+        "San Francisco State College Black Studies strike"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Hutton's death date in ground-truth corpus is April 6, 1968; transcript does not give an exact date but situates it just after the April 4, 1968 King assassination, which is consistent."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:55:00,000",
+      "end_time": "01:06:00,000",
+      "title": "Oakland Orientation and the Seventh-and-Wood Standoff",
+      "summary": "A week after his appointment as captain, Dixon was summoned to Oakland by the Central Committee. He arrived in his black Panther uniform (black leather jacket, powder blue shirt, black tie, black pants, black beret, black shoes or combat boots) and was picked up at the airport by Vietnam veterans Robert Bay and Tommy Jones. He stayed at the home of Captains Landon Williams and Randy Williams (both Vietnam Special Forces veterans), who showed him their weaponry and ammunition-loading equipment. He visited Huey Newton in jail, sold Panther newspapers, traveled with Bobby Seale to a Central Committee meeting attended by Stokely Carmichael, Field Marshal Don Cox, and David Hilliard (Chief of Staff). On the night following the meeting, Dixon was at Landon Williams's house with the comrades drinking 'bitter dog' (dark port wine with lemon juice, later called 'Panther Piss') and smoking marijuana when Landon, watching cowboy-and-Indian TV, shot the television out with a .44 Magnum because 'the Indians always get killed.' Later that night Dixon and another young Panther (Orlando Harris, 15-16, prominent in the Sacramento Capitol armed delegation) were on Seventh and Wood in West Oakland when they cursed at a passing police car. Reinforcements arrived; Robert Bay, Landon, Randy, and Tommy Jones came out armed. Prostitutes stayed on the street to witness; the Panthers spread out, while the police bunched together. After a tense standoff, Landon tripped on a garbage-can lid; the resulting clatter broke the tension and the police left. The Panthers gave their guns to the prostitutes for safekeeping. The next morning Dixon attended a Saturday Panther meeting at St. Augustine's Church (about 125 people, men and women in uniform), where Bobby Seale introduced him as the first captain of the Seattle chapter.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "oakland",
+        "huey newton",
+        "robert bay",
+        "landon williams",
+        "tommy jones",
+        "don cox",
+        "david hilliard",
+        "panther uniform",
+        "st augustines church",
+        "central committee"
+      ],
+      "related_events": [
+        "Seventh and Wood (Oakland) standoff",
+        "Saturday Panther meetings at St. Augustine's Church",
+        "Sacramento Capitol armed delegation (1967)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 87,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript at segment 618 says 'They will heal you to the National Captain' which is a Whisper rendering of 'David Hilliard the National Captain' (Hilliard was Chief of Staff per ground-truth corpus); the summary uses the canonical 'Chief of Staff' role."
+        ],
+        "improvements": [
+          "Orlando Harris is named at segment 640; preserved with caveat that he was 'in Sacramento, holding an M1 carbine with the toothpick in his mouth' per Dixon — the Sacramento delegation date is not explicitly given but is documented as May 2, 1967."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "01:06:00,000",
+      "end_time": "01:22:00,000",
+      "title": "Building the Seattle Chapter and War with the Seattle Police",
+      "summary": "Back in Seattle, Dixon opened the chapter's first office, received over 300 applications in a month, and began responding to community calls — domestic violence interventions, landlord disputes (Panthers carried a door back to a single mother of seven whose landlord had removed it), and school protection requests. Dixon describes intervening at Rainier Beach High School with about thirteen armed Panthers after multiple calls from a mother whose son was being attacked by white students wielding bats; the Panthers confronted the principal (who fled and was retrieved), warned him to protect Black students, and left without incident because they had complied with the gun law (no bullet in the chamber = legally unloaded). He recounts the Seattle Police Department's continuous attempts to raid the office, including a typewriter-theft setup involving a Panther named Curtis Harris that led to Dixon's arrest. The community-led rally at Garfield High School that followed escalated into Seattle's first major riot, which lasted three days with fire-bombings and turned-over police cars. After Dixon's release at midnight, a group of Panthers attempted to walk to Garfield armed; a helicopter spotted them, a Panther shot out its searchlight, and they took shelter in a sympathetic neighbor's house as the area was surrounded by police. A months-long campaign of sniping and fire-bombing followed; Time magazine ranked Seattle first among U.S. cities in fire-bombings and second in sniping during the summer of 1968. The Seattle Police Department reportedly placed a $25,000 contract on Dixon's head. Two Seattle Panthers died: a seventeen-year-old shot in the back by police while defending his mother during a police encounter, and another killed in December 1968 during a directed grocery-store robbery (raising suspicions about who was directing the action). Dixon's trial in December 1968 ended with a not-guilty verdict because the prosecution's 'secret witness' never appeared. The Seattle chapter conducted a purge of suspected provocateurs.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "seattle police department",
+        "rainier beach high school",
+        "curtis harris",
+        "garfield high school",
+        "seattle riots 1968",
+        "fire bombing",
+        "sniping",
+        "panther purge",
+        "welton armstead"
+      ],
+      "related_events": [
+        "Seattle uprising (summer 1968)",
+        "Rainier Beach High School confrontation",
+        "Seattle BPP purges"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 88,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The first Seattle Panther killed (segment 948-958) is named only as a Whisper-garbled reference; the canonical Seattle BPP first martyr (Welton Armstead, October 1968) is supplied in summary keywords from background knowledge — the transcript itself does not name him clearly."
+        ],
+        "improvements": [
+          "Mark the $25,000 contract claim as Dixon's recollection rather than independently documented."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:22:00,000",
+      "end_time": "01:36:00,000",
+      "title": "Survival Programs and FBI Attacks: Hampton, Los Angeles, and Wes Uhlman",
+      "summary": "Dixon describes the Black Panther Party's pivot from armed confrontation to community survival programs. The Seattle chapter opened its first free breakfast program at Madrona Presbyterian Church in the winter of 1969, eventually expanding to five locations in Seattle. The party nationally opened eleven medical clinics; Seattle's clinic was the city's first free medical clinic. Seattle's chapter conducted the first mass sickle cell anemia testing at Walla Walla State Penitentiary, started the first food bank program (now a state-wide model), a free legal aid program, and a bussing-to-prisons program with a donated 35-passenger bus. Panthers were required to sell 100 newspapers a day, and program coordinators (breakfast, medical, Liberation School) had to hustle for resources. The party's office was fortified with sandbags after a Black man from the Justice Department warned that 'they're going to raid us and kill us.' Dixon and his brother Elmer spent their last UW financial aid checks ($1,700 each) on guns, munitions, gas masks, and flak jackets. On December 4, 1969, Chicago police and FBI killed Fred Hampton (and intended to kill Bobby Rush, who was not there); four or five days later they raided the Los Angeles chapter, which was militarily fortified with an internal bunker — the LA Panthers held out six to eight hours until they ran out of ammunition. When ATF approached Seattle Mayor Wes Uhlman to authorize a parallel raid, Uhlman refused — citing the Chicago and LA outcomes — and was reportedly barred from the subsequent U.S. Conference of Mayors in Washington as a result. Dixon notes he was on Nixon's enemy list. He also describes a 1968 plant by Curtis Harris and two suspected police informants (with whom Dixon had handled stolen dynamite that disappeared) who lured him out to walk him home one night; one of the informants fired at a police car, then they disappeared, leaving Dixon to flee through a backyard before being sheltered by a neighbor whose children he had grown up with.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "free breakfast program",
+        "madrona presbyterian church",
+        "medical clinic",
+        "sickle cell anemia",
+        "walla walla state penitentiary",
+        "food bank",
+        "fred hampton",
+        "bobby rush",
+        "wes uhlman",
+        "atf",
+        "j edgar hoover",
+        "cointelpro"
+      ],
+      "related_events": [
+        "Free Breakfast for Children Program",
+        "Murder of Fred Hampton (December 4, 1969)",
+        "LA BPP raid (December 1969)",
+        "FBI COINTELPRO against the Black Panther Party"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Dixon dates the FBI elimination memo target as 1969 (segment 1031): per ground-truth corpus, Hampton died December 4, 1969; LA raid was December 8, 1969 — consistent."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:36:00,000",
+      "end_time": "01:48:00,000",
+      "title": "The Newton-Cleaver Split and Seattle's UN Delegation",
+      "summary": "Dixon recounts the Black Panther Party's 1971 split between Huey Newton (in California) and Eldridge Cleaver (in exile in Algeria), engineered partly by FBI COINTELPRO letters falsely claiming each wanted the other killed. The New York Panthers sided with Cleaver and the Weather Underground orientation; Newton expelled them. Dixon describes traveling to the United Nations as part of a planned BPP delegation (with Bobby Seale, Eldridge Cleaver, and Emory Douglas, June 1968) to seek UN intervention in Huey Newton's trial and against U.S. 'genocidal practices' against the Black community. The plan was to have Panthers stand behind every UN flag with 'Free Huey' signs. A meeting at the SNCC office with James Forman and Stokely Carmichael ended in an argument and nearly a fistfight; the coalition between SNCC and the BPP was dead from that point. Forman was supposed to get them into the UN; instead they found Mae Mallory (a founder of the Black Power Movement) who got them a small audience with the Tanzanian delegation. Within a week of returning to Seattle, Dixon was arrested at his Black Panther office; the resulting community rally and three-day Seattle riot followed. Dixon describes a fall 1971 incident in which his shotgun, taken out for testing, exploded when fired — later examination revealed the gunpowder had been replaced with high explosives in his publicly-known bandoleer of shells. He survived with steel rod and plates in his arm but recognized it as another assassination attempt.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "huey newton",
+        "eldridge cleaver",
+        "newton-cleaver split",
+        "fbi cointelpro",
+        "weather underground",
+        "united nations",
+        "james forman",
+        "stokely carmichael",
+        "mae mallory",
+        "snicc-bpp coalition collapse",
+        "emory douglas"
+      ],
+      "related_events": [
+        "Newton-Cleaver split (1971)",
+        "BPP-SNCC coalition collapse (June 1968)",
+        "Failed BPP UN delegation (1968)",
+        "Assassination attempt on Aaron Dixon (1971)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Dixon dates the BPP-SNCC UN meeting as June 1968 (segment 892); the interviewer's question hints at this being concurrent with James Forman's 1969 'Black Manifesto' — Dixon notes 'it probably was' rather than confirming, so the date should be treated as Dixon's recollection, not established."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:48:00,000",
+      "end_time": "02:00:00,000",
+      "title": "Oakland Centralization, Elaine Brown's Leadership, and Electoral Politics",
+      "summary": "After his brother Elmer was arrested and imprisoned in Oregon for a leather-coat robbery, Dixon and his father met with the state governor and obtained Elmer's pardon — Dixon describes this as the first pardon of a Black Panther by a governor. Under the Party's centralization order, Dixon and ten to fifteen others moved to Oakland, leaving a skeleton crew in Seattle to keep the clinic and breakfast program running. In Oakland, the Party supported Shirley Chisholm's 1972 presidential campaign and ran Bobby Seale for Mayor of Oakland and Elaine Brown for City Council. The campaign opened five offices, gave away 10,000 bags of groceries with a chicken in each bag, registered hundreds of new voters (including many elderly residents voting for the first time), and put 350-500 organizers in the field on voting day. Seale lost but came close. The Party then supported Jerry Brown's gubernatorial campaign; once Brown was elected governor, Elaine Brown gained access to his office and Tony Kline (a head legal advisor) — when Brown asked Elaine for six Oakland judgeship nominations, she provided six Black attorneys, all confirmed. The Party next ran the Lionel Wilson for Mayor of Oakland campaign that elected Oakland's first Black mayor. After Wilson's election the BPP placed two Panther women on the Port of Oakland board. Elaine Brown also developed a relationship with Jerry Brown's office to release freeway-construction funds for Oakland redevelopment, which she negotiated to include 1,000 low-income housing units. Dixon describes Brown's leadership and the Party's institutional reach in this era as the period the BPP 'was running the city.'",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "elaine brown",
+        "bobby seale mayoral campaign",
+        "lionel wilson",
+        "jerry brown",
+        "tony kline",
+        "shirley chisholm",
+        "oakland electoral politics",
+        "port of oakland",
+        "centralization",
+        "elmer dixon pardon"
+      ],
+      "related_events": [
+        "Bobby Seale for Mayor of Oakland (1973)",
+        "Lionel Wilson elected first Black mayor of Oakland (1977)",
+        "Jerry Brown gubernatorial campaign",
+        "Shirley Chisholm presidential campaign (1972)",
+        "BPP Oakland centralization"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Jerry Brown was elected governor of California in 1974; Lionel Wilson became Oakland's first Black mayor in 1977. The summary does not anchor these years from the transcript but relies on widely-documented dates."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "02:00:00,000",
+      "end_time": "02:15:00,000",
+      "title": "Women in the Party, Huey's Return, and the Party's Collapse",
+      "summary": "Dixon describes the role of women in the Black Panther Party as 'considered to be equal' — women served in leadership positions (Ericka Huggins ran the Connecticut chapter, Audrea Jones ran the Boston chapter, Kathleen Cleaver and Elaine Brown sat on the Central Committee). He acknowledges, however, that the Party struggled with internal male dominance and machoism, particularly in the Southern California chapter where women were abused. Bertha Alexander (whom the interviewer recognizes as an old friend) worked with Big Man Howard, editor of the Black Panther newspaper, and traveled widely (Japan, South Korea) on Party business. Dixon describes Elaine Brown's deepening relationships with the Oakland establishment, Sacramento politicians (Leo McCarthy, Willie Brown), and corporate donors (the Shedderly/Clark Corporation gave her $400,000 for the Oakland Community School). The Party also ran a community center, a Martial arts program with 100+ students featured on the cover of Black Belt Magazine, the first gang intervention program in the Bay Area (funded by a CETA grant supporting 20 Panthers on payroll), a 'seniors against a fearful environment' program pairing former gang youth with senior escort duty, the Lamp Post bar and grille in downtown Oakland, a promotion business that brought Marvin Gaye, Chaka Khan, and Earth, Wind & Fire to Oakland, and a movie theater. Dixon discusses the Party's contentious relationship with the Nation of Islam — Newton had previously arranged with Louis Farrakhan that the BPP would handle Oakland and NOI San Francisco, and Newton had banned heroin from the streets while permitting cocaine-related activity. Newton's return from Cuba to stand trial (paved for by Elaine Brown) was, Dixon says, 'the fatal mistake': Newton wanted control of the money Elaine had accumulated, started using cocaine again, forced Elaine out of the Party (she pursued her Motown music contract), met with two drug gangs demanding tribute to operate, and ordered Dixon to participate in eliminating a witness (against him in his trial) — at the last minute Dixon was replaced, and the replacement accidentally killed another Panther in the operation. Dixon spent two days collecting and dumping the Party's illegal weaponry off the Marin County Bridge with the longest U-Haul truck available.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "elaine brown",
+        "huey newton return",
+        "ericka huggins",
+        "kathleen cleaver",
+        "audrea jones",
+        "bertha alexander",
+        "big man howard",
+        "lamp post",
+        "ceta grant",
+        "nation of islam",
+        "louis farrakhan",
+        "cocaine",
+        "oakland community school"
+      ],
+      "related_events": [
+        "Newton's return from Cuba (1977)",
+        "Elaine Brown's departure from the BPP",
+        "BPP gang-intervention CETA program",
+        "Oakland Community School",
+        "BPP collapse"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 83,
+        "quality_score": 87,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The 'Shedderly' / 'Clark Corporation' corporate donor name at segment 1569-1570 is Whisper-garbled and could not be reconciled to a canonical corporation in this single-context audit; preserved as Dixon stated.",
+          "'Audrea Jones' surname at segment 1427 is from Whisper as 'Audrey Jones'; ground-truth canonical is Audrea Jones (BPP Boston) — summary uses canonical form.",
+          "'Bobby Brown for Governor' is a Whisper rendering error; transcript context at segment 1490 makes clear this is Jerry Brown."
+        ],
+        "improvements": [
+          "Bertha Alexander is named at segments 1452-1465; the interviewer recognized her as 'an old friend.' Preserved as Dixon described."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "02:15:00,000",
+      "end_time": "02:27:49,000",
+      "title": "Leaving the Party, Substance-Abuse Work, and Contemporary Reflections",
+      "summary": "Dixon left the Black Panther Party after ten years, telling Newton's bodyguard Big Bob Heard he wanted a one-year leave of absence; Newton approved. Most departing Panthers left without notice in the middle of the night, but Dixon felt he had given too much to leave that way. He never expected to live long — over thirty Party members had been killed between 1967 and 1972. After leaving, he stayed in Oakland, got involved in cocaine sales and embezzlement, made $100,000 in a year, ran from the FBI for about a year, was caught, served about a year in federal prison, and emerged to become a substance-abuse counselor. He clashed with a controlling West Oakland Health Center director who told him 'Dixon, I hear you've been fucking up,' walked off that job, briefly worked on a Northern California marijuana farm, and returned to Seattle just as the crack cocaine epidemic hit. He brought a girlfriend (addicted to cocaine, unbeknownst to him) back from Seattle and they had two children. He became a gang counselor working with youth and ten years before this interview founded a nonprofit that opened a transition-housing program for 18-24 year olds, started youth leadership and the first media literacy program in a Seattle high school across five schools, and took kids to a sustainable farm in Brazil multiple times. Dixon's memoir was published on September 17, 2012. In August 2012, after burnout and federal tax issues with the nonprofit, he separated from his role at Central House (the transition house continues to operate without him). He brought Elaine Brown and Cha-Cha Jiménez (Young Lords) to a University of Washington event the week before the interview. Dixon reflects that contemporary Black community fragmentation, narcissism, and the cocaine-and-Reagan-deregulation-era policies destroyed the unity and family structures that had sustained the Panther era — and that 2.5 million people are now in U.S. prisons, sixty percent of them Latino and Black males.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "leaving the panthers",
+        "big bob heard",
+        "federal prison",
+        "substance abuse counseling",
+        "crack cocaine epidemic",
+        "central house",
+        "youth leadership",
+        "memoir",
+        "ronald reagan",
+        "elaine brown",
+        "cha-cha jimenez",
+        "young lords",
+        "mass incarceration"
+      ],
+      "related_events": [
+        "Crack cocaine epidemic (1980s)",
+        "Mass incarceration",
+        "Ronald Reagan neoliberal policy era",
+        "Aaron Dixon memoir publication (September 2012)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": []
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Aaron Dixon",
+      "interviewee_title": "Founding Captain, Seattle Chapter of the Black Panther Party",
+      "interview_date": "2013-05-11",
+      "interview_location": "Seattle, Washington",
+      "interviewer_name": "David Cline",
+      "interviewer_affiliation": "Virginia Tech / Southern Oral History Program at UNC Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "02:27:49",
+      "total_segments": 1944,
+      "word_count": 24500,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 88,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 27,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "Logical chronological progression from family history through political awakening, BPP founding, Seattle chapter operations, Oakland centralization, electoral politics, and post-Party career (Segment 13 forward, 00:00:13 onward).",
+            "Clear opening contextualizes family genealogy before politics (Segment 14, 00:00:17,000)",
+            "Resolution and reflection at end on contemporary issues and legacy (Segments 1894-1927, 02:24:27-02:26:00)"
+          ],
+          "justification": "Dixon and Cline together produce a strikingly coherent two-and-a-half-hour life history with rare backtracking. Dixon's storyteller's instinct — moving from family genealogy through political awakening and into specific BPP organizing — maintains a clear arc. Minor digressions (e.g., the Bertha Alexander interlude in segment 1453-1480) are short and recovered."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "Landon comes out and Robert Bay says, man, what'd you do? Man, why'd you shoot the TV out? He said, I was tired of watching the Cowboys and Indians. And the Indians always get killed. I shot the TV out.",
+            "segment": 634,
+            "timestamp": "00:56:25,000"
+          },
+          "specificity_count": {
+            "full_names": 60,
+            "specific_dates": 18,
+            "specific_places": 35
+          },
+          "evidence": [
+            "Specific Seattle street geography: Madrona, Madison Valley, Leschi, Mount Baker (Segments 142-145, 00:19:27-00:19:35)",
+            "Detailed Panther uniform composition: 'black leather jacket, powder blue shirt with the black tie, black pants, black beret, and black shoes' (Segment 581, 00:52:06)",
+            "Walter Cronkite announcing King's assassination while Dixon was in King County jail (Segment 437, 00:42:26)",
+            "Marlon Brando in black jacket and black beret outside Hutton's funeral (Segment 477-478, 00:45:40)"
+          ],
+          "justification": "Exceptional specificity throughout — Dixon names dozens of comrades, gives precise dates (April 4, 1968; summer 1968; December 1968; 1969; 1971; 1972), and reconstructs scenes in cinematic detail. Reconstructed dialogue appears frequently. Sensory details (the 'bitter dog' drink recipe, the garbage-can clatter at Seventh and Wood) anchor major moments."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "And I decided that my picket sign was going to be replaced by a gun.",
+            "segment": 446,
+            "timestamp": "00:43:07,000"
+          },
+          "emotional_range": [
+            "grief over King's assassination",
+            "fear during the Seventh and Wood standoff",
+            "pride in the Seattle chapter's accomplishments",
+            "regret over the Party's collapse",
+            "moral struggle over his role in the late-period Party"
+          ],
+          "vulnerability_elements": [
+            "Admits he was 'thinking, oh shit man, what have I got myself into?' during the Oakland standoff (Segment 672)",
+            "Acknowledges his own time in federal prison for embezzlement (Segments 1772-1781)",
+            "Acknowledges fear and self-doubt entering the BPP (Segment 579)",
+            "Concedes that 'we were paranoid, anyway, we're already paranoid' about phones and comrades (Segment 1399-1401)"
+          ],
+          "justification": "Dixon's narration is unusually candid for a movement-veteran oral history. He acknowledges his fear, his own criminal-justice involvement, his frustrations with Newton's late-period leadership, and the Party's failures — without sanitizing himself or his comrades. The vulnerability around the assassination-attempt incident (the shotgun explosion) and the killings of comrades reads as authentic."
+        },
+        "overall_assessment": "Dixon's narrative reads as a master oral history — vivid, structurally coherent, candid, and rich in concrete detail. The interviewer's light hand allows Dixon's own storyteller's voice to drive the arc. The 12-chapter structure that emerges from the transcript matches the speaker's natural pacing rather than being imposed externally."
+      },
+      "historical_value": {
+        "total": 24,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "Founding of Seattle BPP chapter as first captain (Segment 707, 01:01:43)",
+            "Bobby Hutton funeral attendance (Segment 477-487, 00:45:40-00:46:23)",
+            "Oakland Seventh and Wood standoff (Segments 644-694)",
+            "Elaine Brown's bodyguard during her chairpersonship (Segment 1415, 02:13:24)",
+            "Bobby Seale for Mayor of Oakland and Lionel Wilson for Mayor of Oakland campaigns (Segments 1312-1342, 1507)",
+            "BPP-SNCC coalition collapse meeting at SNCC office (Segments 887-888)"
+          ],
+          "key_figures": [
+            {
+              "name": "Bobby Seale",
+              "relationship": "Direct mentor and chartering authority for Seattle chapter",
+              "contact_level": "close"
+            },
+            {
+              "name": "Huey Newton",
+              "relationship": "Party chair under whom Dixon served as Seattle captain and later in Oakland",
+              "contact_level": "close"
+            },
+            {
+              "name": "Elaine Brown",
+              "relationship": "Dixon served as her personal bodyguard during her BPP chairpersonship",
+              "contact_level": "close"
+            },
+            {
+              "name": "David Hilliard",
+              "relationship": "Co-leadership across Central Committee meetings",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Robert Bay, Landon Williams, Randy Williams, Tommy Jones",
+              "relationship": "Oakland Panther captains who hosted Dixon during orientation",
+              "contact_level": "close"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Black Panther Party",
+              "role": "Founding Captain, Seattle Chapter (1968-1969); senior member in Oakland (1969-1977)",
+              "years": "1968-1977"
+            },
+            {
+              "organization": "UW Black Student Union",
+              "role": "Co-founder",
+              "years": "1967-1968"
+            },
+            {
+              "organization": "Central House (nonprofit, Seattle)",
+              "role": "Founder and executive director",
+              "years": "~2002-2012"
+            }
+          ],
+          "unique_access": "Insider knowledge of (1) the Seattle chapter as the first BPP office outside California and one of only three the FBI/COINTELPRO targeted for elimination in 1969 alongside Chicago and LA; (2) Wes Uhlman's intervention against ATF; (3) the internal political dynamics of the Newton-Cleaver split and the late-period Newton return that ended the Party.",
+          "justification": "Among the most direct insider perspectives possible. Dixon was not merely a participant but the founding leadership of the Seattle chapter, then a Central Committee-adjacent figure in Oakland during the post-1974 rebuild, then Elaine Brown's bodyguard. His access spans the BPP's full lifecycle."
+        },
+        "specificity_of_details": {
+          "score": 8,
+          "max_possible": 8,
+          "precision_examples": [
+            "Exact date April 4, 1968 for King assassination correlated with his own jail term (Segment 436-437, 00:42:22)",
+            "$25,000 contract on his head; Seattle ranked #1 in fire-bombings, #2 in sniping per Time magazine summer 1968 (Segments 1164-1171)",
+            "$1,700 each in last UW financial aid checks spent on weapons and fortifications (Segment 1058, 01:30:40)",
+            "10,000 grocery bags with chicken in each given out for the Bobby Seale mayoral campaign kickoff at Oakland Auditorium (Segment 1317, 01:47:56)",
+            "350 organizers daily on the street for voter registration; 400-500 on voting day (Segments 1339-1340, 01:49:48-01:50:01)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 60,
+            "first_only": 12,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "Founding of Seattle BPP chapter in 1968 as first chapter outside California",
+            "Wes Uhlman's refusal to allow ATF raid on Seattle BPP office (corroborated in Seattle municipal history)",
+            "Lionel Wilson's election as Oakland's first Black mayor in 1977",
+            "Aaron Dixon memoir released September 17, 2012"
+          ],
+          "justification": "Dixon provides numbers, dates, full names, and quotable claims that historians can cross-reference. The specificity is exceptional — many oral history narrators give only vague timeframes; Dixon often gives specific years and dollar amounts."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Seattle-specific BPP history is significantly underdocumented compared to Oakland, Chicago, and LA; Dixon's account is among the foundational primary sources",
+            "Wes Uhlman's refusal to permit the ATF raid and its consequences (being barred from the U.S. Conference of Mayors) is rarely surfaced in BPP histories focused on coastal centers",
+            "The internal dynamics of the Newton-Brown handoff and the gang-tribute demands that triggered Newton's exile",
+            "The contention that one of the Justice Department officials who tipped off Seattle BPP was a Black Seattlean himself"
+          ],
+          "understudied_aspects": [
+            "Pacific Northwest civil rights history",
+            "The Seattle Police Department's BPP-targeted operations",
+            "BPP-Asian American coalition dynamics in Seattle's central area",
+            "Internal Party debates over electoral vs armed strategy"
+          ],
+          "narrative_complications": "Complicates the dominant Bay Area-centric BPP narrative; shows the geographic and tactical diversity of chapters; complicates the standard 'BPP collapsed because of FBI repression' narrative by also foregrounding internal leadership dysfunction in the late period.",
+          "historiographical_value": "Foundational primary source for any Seattle BPP or West Coast Panther history. Useful corrective to Oakland-centric BPP scholarship. Detailed late-period testimony (Elaine Brown's leadership, the Wilson campaign, the Newton return) supplements Brown's own memoir.",
+          "justification": "Significantly fills historical gaps in the Pacific Northwest BPP record. Less unique on widely-documented topics like the Hampton killing, but Dixon's specific Seattle and late-period perspective is rare."
+        },
+        "overall_assessment": "An exceptional historical-value document. Dixon offers insider perspective on a chapter that is significantly underrepresented in BPP scholarship, with verifiable detail and named individuals throughout. The interview will be a primary source for any Pacific Northwest civil rights research, BPP organizational history, and late-period BPP leadership history."
+      },
+      "emotional_resonance": {
+        "total": 22,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "Dixon traces a complete arc from a teenager wanting to be a policeman, then a Marine in Vietnam (both rejected by his father), through political awakening with King and Stokely Carmichael, into Seattle chapter captaincy, then late-period disillusionment with Newton, federal prison, substance-abuse counseling, and finally founding a youth nonprofit and writing a memoir.",
+          "key_turning_points": [
+            "Stokely Carmichael's Seattle speech (Segment 320, 00:32:44)",
+            "April 4, 1968 King assassination heard while in jail (Segment 437, 00:42:26)",
+            "Decision to replace 'picket sign with gun' (Segment 446, 00:43:07)",
+            "Bobby Hutton funeral and asking Bobby Seale to charter a Seattle chapter (Segment 522, 00:49:05)",
+            "Shotgun explosion / assassination attempt (Segments 1248-1255, 01:42:39-01:43:12)",
+            "Confrontation with Bill Cosby over the late-period Newton (Segments 1708-1714, 02:15:16-02:15:33)",
+            "Leaving the BPP (Segment 1715, 02:15:36)"
+          ],
+          "before_after_contrast": "From a teenage policeman/Marine aspirant in segregated Seattle into a revolutionary Party captain at 19, then a federal prisoner, then a youth-services nonprofit founder and author. The arc demonstrates radical political transformation, the costs of that transformation, and a reconstructive post-movement life.",
+          "inspirational_quality": "Yes — Dixon's reflection on contemporary youth questions ('How did you do it? How were you able to sacrifice yourself so selflessly?') indicates this story resonates as a template for committed political life. The candor about his own moral failures (cocaine sales, embezzlement) makes the inspirational arc credible rather than hagiographic.",
+          "justification": "A clear, articulated transformation across multiple distinct phases. Dixon both lived the journey and reflects on it explicitly throughout the interview, naming specific turning points and the lessons he draws."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Seventh and Wood Oakland standoff with police",
+              "segment_range": "644-694",
+              "timestamp_range": "00:57:12 - 01:00:31",
+              "stakes": "Death — same corner where Newton had earlier shot a police officer; armed standoff with multiple police"
+            },
+            {
+              "description": "King assassination heard while jailed",
+              "segment_range": "436-446",
+              "timestamp_range": "00:42:22 - 00:43:07",
+              "stakes": "Personal grief and political-strategic turning point — Dixon's decision to replace picket sign with gun"
+            },
+            {
+              "description": "Shotgun explosion / assassination attempt",
+              "segment_range": "1246-1260",
+              "timestamp_range": "01:42:34 - 01:43:30",
+              "stakes": "Near-death — gunpowder replaced with high explosives"
+            },
+            {
+              "description": "Fled police through a backyard after the Curtis Harris setup",
+              "segment_range": "1200-1227",
+              "timestamp_range": "01:39:34 - 01:40:47",
+              "stakes": "Near-death — sheltered by a neighbor's father at the last moment"
+            },
+            {
+              "description": "Confrontation with Bill Cosby — Dixon has no defense for Newton",
+              "segment_range": "1708-1714",
+              "timestamp_range": "02:15:16 - 02:15:33",
+              "stakes": "Internal moral collapse precipitating his exit from the Party"
+            }
+          ],
+          "conflict_types": [
+            "Armed police standoffs",
+            "Internal Party leadership conflicts (Newton-Cleaver, Newton-Brown)",
+            "Assassination attempts (Curtis Harris setup, shotgun explosion)",
+            "Federal repression (FBI, COINTELPRO, Nixon's enemy list)",
+            "Personal moral crisis after late-period Newton",
+            "Family generational conflict (father's refusal of Marines/police)"
+          ],
+          "emotional_range": "From teenage idealism through revolutionary commitment, fear, grief at comrades' deaths, pride in survival programs, disillusionment with leadership, and reconstructive hope in the post-Panther life",
+          "justification": "Multiple peak moments with genuine life-or-death stakes, plus internal moral conflicts that drive Dixon's eventual departure. The Seventh-and-Wood standoff alone reads as cinematic-quality dramatic material."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Coming of age",
+            "Family generational dynamics",
+            "Idealism and disillusionment",
+            "Belonging to a cause",
+            "The costs of commitment",
+            "Reconstructive recovery from failure"
+          ],
+          "relatable_struggles": [
+            "Father-son conflict over career path (police/Marines)",
+            "Workplace racial bias (mother turned away from Frederick & Nelson)",
+            "Substance abuse impacting a relationship and family",
+            "Burnout from running a nonprofit"
+          ],
+          "human_moments": [
+            "Watching King recordings with his father in their home (Segment 349, 00:35:08)",
+            "His father crying when JFK was assassinated (Segment 338, 00:33:59)",
+            "The mother who repeatedly called the office seeking protection for her son (Segments 834-840)",
+            "Dixon's wife also in the Party, raising their son together (Segments 1082-1086)"
+          ],
+          "connection_points": "The family-and-belonging frame at the opening (the dancing in the home, the music, the multi-cultural childhood) draws in audiences who might be put off by armed revolutionary politics. The closing reflections on the destruction of community by the crack epidemic resonate with anyone who has watched a community decline.",
+          "justification": "Dixon's family-of-origin and family-during-the-Party material is highly relatable. The arc of his post-Party recovery (federal prison, substance abuse counseling, nonprofit founder) is recognizable to wide audiences. The specifically armed-revolutionary content is less universally relatable but is contextualized through the human stories around it."
+        },
+        "overall_assessment": "Strong emotional resonance, anchored by a clear transformation arc, multiple genuinely dramatic peak moments, and family-grounded universal themes. Dixon's late-life reflections on contemporary fragmentation give the interview moral weight beyond historical documentation."
+      },
+      "accessibility": {
+        "total": 15,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Significant use of unexplained BPP jargon ('lumpenproletariat,' 'survival programs,' 'pigs,' 'Central Committee,' '10-point program,' 'bandolier')",
+            "Many names of comrades introduced without full context",
+            "Some Whisper transcription artifacts (e.g., 'Megahevers,' 'Madame Mallory,' 'Bobby Brown for Governor') that produce moments of confusion in the raw transcript"
+          ],
+          "justification": "Dixon is a fluent and articulate storyteller — he reconstructs scenes and dialogue effortlessly. However, BPP-internal vocabulary appears throughout without explanation, and the high density of comrade names assumes some movement-history familiarity in the audience."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Seventh and Wood standoff (segments 644-694, 00:57-01:00) — fastest dramatic pacing",
+            "Bobby Hutton funeral / chapter founding (segments 470-565, 00:45-00:51)",
+            "Newton's return and the Party's collapse (segments 1610-1690, 02:08-02:13)"
+          ],
+          "slow_sections": [
+            "Family genealogy opening (segments 14-70, 00:00-00:10) — necessary context but slow start for audiences",
+            "Long political-program meeting reconstructions (segments 802-833, 01:06-01:09)",
+            "Some Oakland-era political maneuvering (segments 1488-1550) is name-dense"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "About 90 minutes of focused attention is sustainable; the full 2:28 may require breaks. The strongest pacing is roughly minutes 40-110 (BPP founding through Oakland centralization).",
+          "justification": "Dixon's narrative momentum is generally strong with clear peaks. Cline's interviewer questions are well-placed and don't interrupt. The opening genealogy is dense and may lose general audiences who are not pre-committed to civil rights history; once Dixon's political awakening begins, the pacing tightens significantly."
+        },
+        "broader_themes_connection": {
+          "score": 4,
+          "max_possible": 6,
+          "themes_connected": [
+            "Black Power and the broader civil rights movement",
+            "Anti-war / Vietnam movement",
+            "Global liberation movements (Algeria, Cuba, Vietnam, China)",
+            "Multi-ethnic coalition building (Brown Berets, Red Guard, Young Patriots, Young Lords, AIM)",
+            "Contemporary mass incarceration and the war on drugs",
+            "Post-Reagan economic inequality"
+          ],
+          "contemporary_relevance": "Dixon explicitly connects the historical BPP-era police violence to contemporary police brutality questions ('How do we stop police brutality?' he reports being asked) and traces a direct line from the Reagan-era deregulation and cocaine influx to contemporary Black community fragmentation and mass incarceration.",
+          "meaning_making": "Yes — Dixon's closing reflections (segments 1894-1927) explicitly articulate the contemporary significance of the BPP-era unity and family structure, framing his entire life history as instructive for present-day organizing.",
+          "justification": "Strong thematic bridging from historical specificity to contemporary issues, particularly around mass incarceration and police violence. The Reagan-era and crack-epidemic framing in the closing is articulate and analytically substantive."
+        },
+        "overall_assessment": "Generally accessible to interested audiences, less accessible to general or casual viewers because of unexplained BPP-internal vocabulary and dense name introduction. The strong contemporary-relevance framing in the closing brings home the 'why this matters' question effectively."
+      }
+    }
+  },
+  "overall_assessment": "An exceptional Civil Rights History Project interview — a long, detailed, candid, narratively coherent life history from a foundational figure in Pacific Northwest Black Panther Party organizing. Dixon offers insider perspective on chapter formation, federal repression, internal Party leadership dynamics, the Oakland electoral era, and the Party's collapse, supported by exceptional specificity in names, dates, places, and reconstructed dialogue. The narrative arc is clear and the emotional authenticity is unusually high. Weaknesses are primarily accessibility-related: BPP-internal vocabulary appears without explanation, the dense name-and-place texture assumes audience pre-knowledge, and the length requires sustained audience commitment. Verifiability is strong; many of Dixon's specific factual claims can be cross-referenced against the ground-truth Black Panther historical record.",
+  "key_strengths": [
+    "Founding insider's perspective on the first BPP chapter outside California — fills a major Pacific Northwest gap in BPP scholarship",
+    "Exceptional concrete specificity throughout: full names, precise dates, dollar amounts, reconstructed dialogue, and street-level geography",
+    "Candid moral self-examination, including acknowledgment of his own federal-prison time and the Party's late-period dysfunction — gives the account credibility against hagiography risk"
+  ],
+  "key_limitations": [
+    "Unexplained BPP-internal vocabulary (lumpenproletariat, Central Committee, pigs, survival programs, bandolier) reduces accessibility for general audiences without movement-history grounding",
+    "Several Whisper transcription artifacts in the underlying transcript (e.g., 'Bobby Brown for Governor' when the speaker said 'Jerry Brown'; garbled name renderings) may propagate into derived summaries without careful reconciliation"
+  ],
+  "evaluation_metadata": {
+    "evaluator": "AI: Claude (Anthropic)",
+    "evaluation_date": "2026-05-24",
+    "framework_version": "1.0",
+    "model_used": "claude-opus-4-7"
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Aaron Dixon was the founding captain of the Seattle chapter of the Black Panther Party",
+        "status": "supported",
+        "supporting_excerpt": "Segment 707, 'And I met you, Duce, as a first captain of the Seattle Chapter. First office outside of the state of California.'",
+        "rationale": "Dixon directly states this in the transcript; Bobby Seale introduces him as the Seattle captain."
+      },
+      {
+        "claim": "The interview took place on May 11, 2013, in Seattle, Washington",
+        "status": "supported",
+        "supporting_excerpt": "Segment 3, 'Alright, so today is, I believe, the 11th of May 2013. We're in Seattle, Washington.'",
+        "rationale": "The interviewer states the date and location at the opening."
+      },
+      {
+        "claim": "Dixon's father served in WWII and was sent to Mississippi for training before deployment to the Pacific theater (Philippines and Okinawa)",
+        "status": "supported",
+        "supporting_excerpt": "Segments 73-99, 'so when he graduates though, the Army is right there waiting for him... They sent to Mississippi... my father finally goes to the Pacific theater. Fights in the Philippines, fights in Okinawa.'",
+        "rationale": "Dixon directly narrates this military trajectory in the transcript."
+      },
+      {
+        "claim": "The Dixon family moved from Champaign, Illinois to Seattle around 1957-58 for the father's job at Boeing",
+        "status": "supported",
+        "supporting_excerpt": "Segments 113-122, 'my father gets a job at Chanute Air Force Base as a technical illustrator. So the family moves to Champaign Illinois and we lived there for maybe about four years or so... He gets a job offer... one of them is from Boeing and Seattle... So we moved to Seattle. I believe in 57, 58.'",
+        "rationale": "Dixon directly establishes both the move year and the employer."
+      },
+      {
+        "claim": "Dixon marched with Martin Luther King Jr. when King visited Seattle, around age 12-13",
+        "status": "supported",
+        "supporting_excerpt": "Segment 282, 'when I was, you know, around 12 or 13 years old, I marched with Martin with the King when he came to Seattle.'",
+        "rationale": "Dixon directly states this."
+      },
+      {
+        "claim": "Dixon learned of Martin Luther King Jr.'s assassination on April 4, 1968, via Walter Cronkite while jailed in King County",
+        "status": "supported",
+        "supporting_excerpt": "Segments 436-437, 'And we're in the King County jail. Charged with it. Unlawful assembly. The day is April 4th, 1968. And Walter Cronkite comes on announces Martin Luther King is assassinated.'",
+        "rationale": "Dixon directly establishes the date, location, and circumstances."
+      },
+      {
+        "claim": "Dixon attended Bobby Hutton's funeral and saw Marlon Brando outside in a black beret speaking with Bobby Seale",
+        "status": "supported",
+        "supporting_excerpt": "Segments 476-478, 'we went over to the funeral, and we had stopped and got some berays before we went over there. And we saw Marlon Brando standing out front with the Black... and the Jacket on the Black Burray talking with Bobby Seale.'",
+        "rationale": "Dixon directly states this. Ground-truth corpus confirms Brando attended Hutton's April 12, 1968 funeral."
+      },
+      {
+        "claim": "Bobby Seale and George Murray flew to Seattle and met with about twenty people at Dixon's parents' house to charter the Seattle chapter",
+        "status": "supported",
+        "supporting_excerpt": "Segments 525-549, 'Bobby Seale comes to Seattle with George Murray. And there's about 20 people who all meet at my mother's house, my parents' house.'",
+        "rationale": "Dixon directly establishes this."
+      },
+      {
+        "claim": "Dixon was 19 years old when he was made Seattle chapter captain and still a student at the University of Washington",
+        "status": "supported",
+        "supporting_excerpt": "Segments 571-574, 'And you're 19 years old? Yeah, 19. And still a student that you do.'",
+        "rationale": "Confirmed in interviewer exchange."
+      },
+      {
+        "claim": "The Seattle chapter was the first BPP office outside the state of California",
+        "status": "supported",
+        "supporting_excerpt": "Segment 708, 'First office outside of the state of California.'",
+        "rationale": "Bobby Seale's introduction of Dixon directly establishes this."
+      },
+      {
+        "claim": "Robert Bay, Tommy Jones, Landon Williams, and Randy Williams were Vietnam veterans (Landon and Randy were Special Forces)",
+        "status": "supported",
+        "supporting_excerpt": "Segments 587-597, 'Robert Bay, who is a Vietnam veteran, along with Tommy Jones, who is also a veteran from the Navy... Landon and Randy Williams, who are also captains. They are Vietnam's Special Forces veterans.'",
+        "rationale": "Dixon directly establishes these biographical details."
+      },
+      {
+        "claim": "The Seventh and Wood standoff in West Oakland involved Dixon and other Panthers against Oakland police; the same corner where Huey Newton had his earlier shootout",
+        "status": "supported",
+        "supporting_excerpt": "Segments 656-658, 'And this is the same corner that Huey Newton had his shootout, he was wounded and two police were one was killed, one was wounded. Same corner, seventh and wood.'",
+        "rationale": "Dixon directly identifies the location and the historical connection."
+      },
+      {
+        "claim": "The Seattle BPP confronted Rainier Beach High School with about 13 armed Panthers and warned the principal to protect Black students",
+        "status": "supported",
+        "supporting_excerpt": "Segments 841-862, '13 panthers in the office and everybody had their rifle and shotgun... we go right into the office, into the school... we tell them... if you don't start protecting these kids, we're going to protect them.'",
+        "rationale": "Dixon directly narrates this incident."
+      },
+      {
+        "claim": "Dixon's trial in December 1968 ended in a not-guilty verdict because the prosecution's 'secret witness' never appeared",
+        "status": "supported",
+        "supporting_excerpt": "Segments 961-980, 'my trial starts in December... there's a secret witness that they adjourn the hearing to wait for the secret witness... and he never shows up. So I'm found not guilty.'",
+        "rationale": "Dixon directly narrates this outcome."
+      },
+      {
+        "claim": "The Seattle chapter opened its first free breakfast program at Madrona Presbyterian Church in winter 1969",
+        "status": "supported",
+        "supporting_excerpt": "Segments 984-985, 'We opened up our first breakfast program at Madrona Presbyterian Church. That was in that was in the winter of 69.'",
+        "rationale": "Dixon directly states this."
+      },
+      {
+        "claim": "Fred Hampton was killed by Chicago police and FBI on December 4, 1969",
+        "status": "supported",
+        "supporting_excerpt": "Segment 1034, 'Eleven months later, Fred Hampton, and his Chicago chapter is assassinated.'",
+        "rationale": "Dixon establishes the killing and the chapter; ground-truth corpus independently confirms the exact date of December 4, 1969."
+      },
+      {
+        "claim": "Seattle Mayor Wes Uhlman refused to allow ATF to raid the Seattle BPP office, citing the Chicago and LA outcomes; he was later reportedly barred from the U.S. Conference of Mayors",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1122-1154, 'Then ATF comes to Seattle. They go to Wes Uhlman. The Wes Uhlman says, I'm not going to let you do that. Because he saw what happened in Chicago. He saw what happened in LA... Wes Uhlman goes back to DC for the US Conference of Mayors. These told he's not welcome. And they don't let him in.'",
+        "rationale": "Dixon directly narrates both events."
+      },
+      {
+        "claim": "A 1971 shotgun-testing incident in which Dixon's shotgun exploded was caused by gunpowder being replaced with high explosives — an apparent assassination attempt",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1248-1255, 'the firing pin hits the primer, the gun explodes... blows my arm halfway off... we had the bullets tested and found out that the gunpowder had been taken out. And high explosives had been put in its place. So it was definitely another assassination attempt.'",
+        "rationale": "Dixon directly establishes this finding and his interpretation."
+      },
+      {
+        "claim": "Dixon served as Elaine Brown's bodyguard during her chairpersonship of the BPP after Huey Newton fled to Cuba",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1414-1415, 'And Elaine Brown becomes the chairperson of the Black Panther Party. And so she starts rebuilding the party, and she chooses me as her bodyguard.'",
+        "rationale": "Dixon directly establishes this."
+      },
+      {
+        "claim": "The Bobby Seale for Mayor of Oakland campaign included giving away 10,000 bags of groceries with a chicken in each bag at the Oakland Auditorium kickoff",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1314-1320, 'we began our organizing our own campaign, the Bobby Seale for Mayor of Oakland, Elaine Brown, the City Council... We give away 10,000 bags of groceries with the chicken in every bag as to kick off the campaign at the Oakland Auditorium.'",
+        "rationale": "Dixon directly narrates this."
+      },
+      {
+        "claim": "The BPP-supported Lionel Wilson campaign elected Oakland's first Black mayor",
+        "status": "supported",
+        "supporting_excerpt": "Segment 1508, 'And Lauren Behold, we put the first black mayor into office in Oakland.'",
+        "rationale": "Dixon directly states this. (The 'Lauren Behold' is a Whisper rendering of 'Lo and behold.')"
+      },
+      {
+        "claim": "Jerry Brown's gubernatorial campaign was supported by the BPP; after his election, Elaine Brown gained access to his office",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1490-1495, 'Jerry Brown came to us and asked us to support his mayor for, uh, his bid for governor at the state of California... we'll work in your campaign. So, uh, Lauren, they already become the governor.'",
+        "rationale": "Dixon directly narrates this. The 'mayor for' in the transcript is a Whisper artifact; the context makes clear this is a gubernatorial campaign."
+      },
+      {
+        "claim": "Dixon spent approximately a year in federal prison for embezzlement after leaving the BPP",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1779-1781, 'And you served time over that? I did. I served about a year, about a year.'",
+        "rationale": "Dixon directly confirms this in interviewer exchange."
+      },
+      {
+        "claim": "Dixon's memoir was released September 17, 2012",
+        "status": "supported",
+        "supporting_excerpt": "Segment 1879, 'My book came out in September 17th.'",
+        "rationale": "Dixon directly states this. Year 2012 inferred from interview date 2013-05-11."
+      },
+      {
+        "claim": "Over 30 Black Panther Party members were killed between 1967 and 1972",
+        "status": "supported",
+        "supporting_excerpt": "Segments 1740-1741, 'there were over 30 party members that were killed from 67 to about 1972.'",
+        "rationale": "Dixon directly states this. Treat as Dixon's recollection of contemporaneous figures."
+      },
+      {
+        "claim": "Dixon brought Elaine Brown and Cha-Cha Jiménez of the Young Lords to a University of Washington event the week before the interview",
+        "status": "supported",
+        "supporting_excerpt": "Segment 1935, 'I bought Elaine Brown up here on Thursday along with Cha-Cha Jiménez from the Young Lords. And we had a nice big event at the University of Washington.'",
+        "rationale": "Dixon directly establishes this."
+      },
+      {
+        "claim": "The first Seattle BPP member killed was a 17-year-old, shot in the back by Seattle police while at home, after his mother was confronted by police",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 948-958, 'Well the Narpsets 17 years old... He was at home... He looks out the window he sees the police there confronting his mother and bothering his mother. He grabs his rifle. He runs downstairs and he gets involved and they shoot him but they shoot him in the back. And that was our first casualty.'",
+        "rationale": "Dixon establishes age, circumstances, manner of death directly. The summary names this individual as 'Welton Armstead' — that canonical Seattle BPP first-martyr name is supplied from external knowledge of Seattle BPP history rather than from the transcript audio (which presents it as a garbled Whisper rendering 'Well the Narpsets'). Status downgraded from supported to partially_supported to flag this reconciliation as inferred."
+      },
+      {
+        "claim": "The interviewer is identified as David Cline of Virginia Tech and the Southern Oral History Program at UNC Chapel Hill",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 4-5, 'You're listening to the voice of David Klein for Virginia Tech. Also on behalf of the Southern Oral History Program at UNC Chapel Hill.'",
+        "rationale": "The institutional attribution is directly established. The interviewer's name is rendered by Whisper as 'David Klein'; the summary reconciles this to 'David Cline' based on background knowledge of the CRHP interviewer roster, but no external verification has been performed within this single-context audit."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 29,
+      "supported": 27,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_2_partial",
+    "rationale": "The main summary scores below the publication threshold on both accuracy (86) and quality (87) and the citation audit has two partially supported claims. The accuracy gap is driven by name reconciliations where the summary uses canonical historical figures ('David Cline' for the interviewer, 'Welton Armstead' for the first slain Seattle Panther) that are correct per outside knowledge but where the underlying Whisper transcript presents them as garbled. These are exactly the kind of reconciliation calls that the Phase 7 PRR audit caught as publication blockers in earlier transcripts. The summary should route to human review for: (1) verification of the interviewer's identity against CRHP project records, (2) verification of the Seattle BPP first-martyr name against Seattle BPP historical scholarship, and (3) a careful review of the late-period Newton material where the summary necessarily relies on Dixon's recollection of internal Party dynamics that are not externally verifiable. The interview itself is exceptionally well-documented; the conservative routing to human review reflects the high stakes of name attribution in a Smithsonian-grade publication, not a deficiency in the interview content."
+  }
+}

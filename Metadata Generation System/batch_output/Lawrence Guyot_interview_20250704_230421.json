@@ -1,0 +1,1014 @@
+{
+  "interview_name": "Lawrence Guyot",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Lawrence Guyot_interview_20250704_230421\\Lawrence Guyot_interview_transcript_20250704_230421.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Lawrence Guyot",
+    "interviewee_title": "Civil Rights Activist, SNCC Field Secretary, Chairman of the Mississippi Freedom Democratic Party",
+    "interview_date": "unknown",
+    "interview_location": "Washington, D.C. (inferred from context; Guyot discusses his D.C. residence and current activity)",
+    "interviewer_name": "Julian Bond",
+    "interviewer_affiliation": "Library of Congress",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:27:28"
+  },
+  "main_summary": {
+    "summary": "Lawrence Guyot recounts his journey from an atypical Mississippi childhood in Pass Christian to leadership in the Student Nonviolent Coordinating Committee (SNCC) and chairmanship of the Mississippi Freedom Democratic Party (MFDP). He describes growing up in a Gulf Coast town shaped by the Catholic Church, Ingalls Shipyard, labor unions, and Keesler Air Force Base, where the Catholic Church desegregated its schools by issuing an ultimatum of \"excommunication or integration\" in 1957 or 1958. Guyot credits his politically engaged family -- his grandfather, his father, and his Republican-affiliated great-uncle Lewis Piernas -- with shaping his early commitment to civic life. He attended Tougaloo College, which he characterizes as an academically free \"oasis\" in Mississippi that uniquely supported students who participated in voter-registration demonstrations.\n\nAt Tougaloo, Guyot encountered Dorie and Joyce Ladner, Bob Moses, John Doar, and Marion Barry, and was drawn into SNCC's voter-registration work. He recounts SNCC's organizing in McComb, the Delta, and Greenwood -- including the discovery of Fannie Lou Hamer at a mass meeting in Ruleville and the moment when 500 people came to register in Leflore County. Guyot describes the 1963 Winona, Mississippi jail beating in which he, Fannie Lou Hamer, Annelle Ponder, June Johnson, and James West were brutalized after returning from a SCLC meeting in South Carolina; he believes that calls from Roberta Galler and others, and the assassination of Medgar Evers that same week, helped save their lives. He details the 1964 MFDP challenge at the Democratic National Convention in Atlantic City, the refusal of the two-seat compromise, the 1965 Congressional Challenge supported by Martin Luther King Jr., and the legal architecture of Section 5 of the Voting Rights Act, which he says was inspired by Anthony Lewis's book Gideon's Trumpet.\n\nGuyot profiles key figures including John Doar, the Ladner sisters, Hartman Turnbow, Theron Lynd, Michael Thelwell, Robert Moses, and Gerald Ford, and describes the Freedom House at 714 Rose Street in Jackson as a reconciliation post for arrested Freedom Riders. He describes his 1968 move to Washington, D.C. as an MFDP-loyalist delegate, his later D.C. political work as an Advisory Neighborhood Commissioner and proponent of same-sex marriage, and his belief that political and religious commitments are inseparable. The interview closes with Guyot warning that the next two years will be decisive for protecting the gains of the civil rights movement and calling for renewed organizing.",
+    "key_themes": [
+      "Voter Registration and Political Empowerment",
+      "Mississippi Freedom Democratic Party and the 1964 Atlantic City Challenge",
+      "Religious Foundations of Civil Rights Activism",
+      "Racial Violence and State Repression (Winona Jail Beating)",
+      "SNCC Organizing Methodology and Indigenous Leadership",
+      "Federal Legal Architecture (Section 5 of the Voting Rights Act, Fifth Circuit Court of Appeals)",
+      "Inter-Organizational Dynamics (SNCC, NAACP, SCLC, MFDP)"
+    ],
+    "historical_significance": "Guyot's testimony is a foundational firsthand account of the Mississippi voter-registration movement from inside SNCC's organizing leadership and the Mississippi Freedom Democratic Party. His detailed recollections of the 1963 Winona beating, the 1964 Atlantic City convention challenge, the 1965 Congressional Challenge, and the legal mechanics of Section 5 of the Voting Rights Act provide insider perspective on the strategic decisions, legal architecture, and organizational interrelationships that produced the most consequential voter-rights legislation in American history. His emphasis on the protective role of the Black Mississippi community, on the support of Martin Luther King Jr. for SNCC-MFDP initiatives, and on the role of the Fifth Circuit Court of Appeals as a judicial ally of the movement complicates conventional Movement historiography that separates SNCC from SCLC or that downplays federal judicial cooperation.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 89,
+      "accuracy_component_a": 36,
+      "accuracy_component_b": 25,
+      "accuracy_component_c": 25,
+      "quality_component_a": 36,
+      "quality_component_b": 20,
+      "quality_component_c": 18,
+      "quality_component_d": 15,
+      "errors": [
+        "Interview date and location are not stated in the transcript; main_summary states the interview occurred in Washington, D.C. as an inference from Guyot's discussion of his D.C. residence, which the transcript does not explicitly confirm as the interview location.",
+        "Main summary attributes the Winona beating to '1963'; the transcript places the beating around the time of Medgar Evers's assassination (June 1963) but Guyot does not directly state the year as 1963 in the transcript -- this is verified via the civil_rights_facts.json entry but should be flagged as derived from corpus context."
+      ],
+      "improvements": [
+        "Add explicit qualifier when interview date/location are inferred rather than stated by the transcript.",
+        "When dating the Winona beating, attribute the year to corpus-derived context rather than the transcript itself.",
+        "Consider noting that James West is referenced by Guyot but the broader Winona group also included Rosemary Freeman and Euvester Simpson per the ground-truth corpus -- Guyot's transcript naming is incomplete."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:08:08,000",
+      "title": "Childhood in Pass Christian, Mississippi and Family Background",
+      "summary": "Guyot describes growing up in Pass Christian, Mississippi, which he calls \"the most non-Mississippi-like section of Mississippi\" -- a Gulf Coast town shaped by the Catholic Church, Ingalls Shipyard, labor unions, and (later) Keesler Air Force Base. He recounts that the Catholic Church desegregated the schools in 1957 or 1958 by giving congregants the choice of \"excommunication or integration\" by Friday. Guyot describes being saved from a slot-machine prosecution by attorney Bidwell Adams, a former Lieutenant Governor under Bilbo, who told the prosecutor Gaston Hughes that Guyot was Creole rather than Black, and threatened a federal investigation of Gulf Coast gambling.\n\nHe describes his grandfather's brother Lewis Piernas as chairman of the Republican Party in Hancock County for 65 years and credits his grandfather with teaching him the value of listening. He recalls listening to FDR and Ronald Reagan on the radio with his grandfather (admiring Reagan's style though not his ideology) and reading the Bible before the congregation at St. Philomena's at age seven. Guyot also describes his father as a man of fierce political capacity who once beat one of the richest men in Pass Christian \"almost to a pulp\" in front of the post office.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "pass christian",
+        "catholic church",
+        "ingalls shipyard",
+        "bidwell adams",
+        "theodore bilbo",
+        "lewis piernas",
+        "republican party",
+        "fdr",
+        "ronald reagan",
+        "keesler air force base"
+      ],
+      "related_events": [
+        "Catholic Church desegregation in Pass Christian (1957-1958)",
+        "Theodore Bilbo (former Mississippi Governor)",
+        "Franklin D. Roosevelt",
+        "Ronald Reagan",
+        "Bidwell Adams (former Lieutenant Governor)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "Population figures (100,000 white, 19,000 Black) are presented as Guyot's recollection but cannot be independently verified from transcript context."
+        ],
+        "improvements": [
+          "Note that the year of Catholic Church desegregation is presented by Guyot as '1957 or 58' (he is uncertain), and the summary should reflect this uncertainty."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:08:08,000",
+      "end_time": "00:13:30,000",
+      "title": "Tougaloo College and First Encounter with the Movement",
+      "summary": "Guyot describes Tougaloo College as an academically free, interracial institution \"perfectly designed\" for him, threatened with extinction by the Mississippi state legislature. He recalls meeting Rev. Ed King, sociology professor Ernst Borinski (a Jewish refugee from Germany who developed a theory that \"some institutions are functional only by their absence of function\"), and A.A. Branch of the YMCA, who articulated Tougaloo's distinctive policy that students could participate in voter-registration demonstrations but had to \"take your books with you\" -- a policy Guyot says only Tougaloo and Miles College followed.\n\nHe describes the broader Tougaloo community that included Dorie and Joyce Ladner, Johnny Frazier, and Reuben Anderson (later a State Supreme Court justice), and credits John Salter Jr. with teaching him \"everything I need to know about socialism.\" Guyot believes he would not have lasted at Jackson State, contrasting Tougaloo's commitment to academic freedom with Jackson State's \"strict, rigid conformity and hierarchical leadership.\"",
+      "main_topic_category": "Education",
+      "keywords": [
+        "tougaloo college",
+        "ernst borinski",
+        "ed king",
+        "a.a. branch",
+        "ladner sisters",
+        "john salter jr",
+        "jackson state",
+        "academic freedom",
+        "miles college",
+        "reuben anderson"
+      ],
+      "related_events": [
+        "Tougaloo College",
+        "Mississippi state legislature anti-Tougaloo efforts",
+        "YMCA / YWCA at Tougaloo",
+        "WLBT-TV takeover by COFO and United Church of Christ (1964)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "Note that Guyot's claim 'only Tougaloo and Miles College' followed this academic-freedom-plus-activism policy is his own characterization, not independently sourced in the transcript."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:13:30,000",
+      "end_time": "00:18:18,000",
+      "title": "Meeting Fannie Lou Hamer and the 1964 Atlantic City Challenge",
+      "summary": "Guyot describes encountering Bob Moses, John Doar, and Marion Barry in McComb, and the cohort at the Freedom House at 714 Rose Street in Jackson, including the Ladner sisters, James Bevel, Diane Nash, LeVon Brown, and Sheila Michaels. From Jackson the group moved into the Delta, going to Amzie Moore's house and then on to Joe McDonald and Mississons. Guyot recounts the moment when Fannie Lou Hamer raised her hand at a Ruleville mass meeting at which he, James Bevel, Charles McLaurin, and James Forman opened the call for people willing to register. He describes Hamer as a religious fundamentalist with extraordinary speech timing -- a woman who could \"weave together three different issues and collapse them in 25 words.\"\n\nGuyot then describes Hamer's national emergence: her 1964 Democratic National Convention testimony, Lyndon Johnson's attempt to interrupt it with a presidential press conference, the 1,200 telegrams in support of seating the MFDP, and the political pressure Johnson applied to delegates (offering one California delegate a federal judgeship for her husband, threatening New York's OEO funding). Guyot, then the MFDP chairman jailed in Hattiesburg, was unable to attend but credits the MFDP delegation with \"the most courageous, pragmatic political decision in American politics\" in rejecting the two-seat compromise.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "fannie lou hamer",
+        "bob moses",
+        "freedom house",
+        "amzie moore",
+        "mfdp",
+        "lyndon johnson",
+        "1964 democratic convention",
+        "atlantic city",
+        "ruleville",
+        "james bevel"
+      ],
+      "related_events": [
+        "Fannie Lou Hamer's testimony at 1964 Democratic National Convention",
+        "Mississippi Freedom Democratic Party Atlantic City Challenge",
+        "Two-seat compromise rejection",
+        "Freedom House at 714 Rose Street, Jackson",
+        "Amzie Moore",
+        "Marion Barry"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "The transcript-rendered \"Mississons\" likely refers to Mileston, Mississippi (the Hartman Turnbow community in Holmes County); the summary preserves the transcript wording rather than correcting it."
+        ],
+        "improvements": [
+          "Note the homophone confusion in the transcript: 'to seek' (rendered) likely is 'to seat' (canonical 1964 Atlantic City compromise terminology). Hamer's testimony was about seating the MFDP delegation."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:18:18,000",
+      "end_time": "00:27:38,000",
+      "title": "SNCC Organizing in the Delta and the Legal Architecture of Voting Rights",
+      "summary": "Guyot describes SNCC's transition into McComb (where Bob Moses was almost shot) and then into Greenwood, where SNCC organizers discovered that the Black community would protect, feed, and clothe them despite the deep fear in the Delta. He recounts a Greenwood demonstration that brought 500 people to register and a verbal exchange with segregationist lawyer Hardy Lott (Byron De La Beckwith's defense attorney) at the Leflore County Courthouse.\n\nGuyot describes the federal-legal-strategy evolution that emerged from SNCC's organizing: John Doar's introduction of the John Hardy injunction theory in Walthall County, the United States v. Mississippi case argued in 1965, and the Mississippi Freedom Democratic Party's filing of \"the first private lawsuit under the Voting Rights Act of 1965,\" won 8-1 at the U.S. Supreme Court, which established that aggrieved private parties (not only the Attorney General) could bring Section 5 suits. Guyot says the case was his idea, inspired by reading Anthony Lewis's Gideon's Trumpet -- which described Lyndon Johnson as someone who had stolen his election -- and reasoning that Section 5 of the Voting Rights Act was \"the most beautiful language ever written\" because it required pre-clearance by the Department of Justice or three-judge-panel litigation in the District of Columbia.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "greenwood",
+        "section 5",
+        "voting rights act",
+        "john doar",
+        "department of justice",
+        "leflore county",
+        "byron de la beckwith",
+        "hardy lott",
+        "john hardy",
+        "gideon's trumpet"
+      ],
+      "related_events": [
+        "SNCC voter registration drive in Greenwood",
+        "United States v. Mississippi (filed 1962, argued 1965)",
+        "Section 5 of the 1965 Voting Rights Act",
+        "John Hardy case in Walthall County",
+        "Hardy Lott (Byron De La Beckwith defense attorney)",
+        "Anthony Lewis's Gideon's Trumpet"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 24,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "Anthony Lewis's Gideon's Trumpet is about Gideon v. Wainwright (right to counsel); Guyot's recollection that the book \"describes Lyndon Johnson as someone who stole his election\" appears to reference a different work or an embedded passage. The summary preserves Guyot's framing without independently verifying the book's content."
+        ],
+        "improvements": [
+          "Note that Guyot's reading of Section 5 is paraphrased, not quoted; and that the 1965 case described as a 'first private lawsuit' could be more precisely identified for historiographic verification."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:27:38,000",
+      "end_time": "00:32:00,000",
+      "title": "The Winona Jail Beating and the Assassination of Medgar Evers",
+      "summary": "Guyot recounts the Winona, Mississippi jail beating in which Fannie Lou Hamer, Annelle Ponder, James West, and June Johnson were arrested on their return from a South Carolina meeting. When Guyot arrived in Winona to inquire about their detention, he too was arrested and \"beaten almost to death\" by twelve people. He refused to sign a statement claiming he had fallen from a car, was charged with murder based on a note he carried about a killing he knew nothing about, and was certain he would be killed in custody. Guyot describes the captors leaving his cell open with a knife outside and sending a man with a fake FBI badge.\n\nMedgar Evers was assassinated while Guyot and the group were detained in Winona; Guyot knew something tragic had occurred when the radio went off but did not learn what until later. Andrew Young, James Bevel, and Frank Smith arrived to secure his release; he then attended Medgar Evers's funeral before going on to Hattiesburg. Guyot credits Roberta Galler and others -- who called in from across the country to ask to speak to the detainees -- and the assassination of Medgar Evers itself with saving their lives by drawing national attention. He also describes a separate later incident in which he confronted armed pursuers on the road from Hattiesburg to Jackson by claiming the FBI had been following them.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "winona",
+        "fannie lou hamer",
+        "annelle ponder",
+        "june johnson",
+        "james west",
+        "medgar evers",
+        "assassination",
+        "roberta galler",
+        "andrew young",
+        "james bevel"
+      ],
+      "related_events": [
+        "Winona, Mississippi jail beating (June 1963)",
+        "Assassination of Medgar Evers (June 12, 1963)",
+        "Andrew Young, James Bevel, and Frank Smith's rescue of Guyot",
+        "Medgar Evers funeral",
+        "Eleanor Holmes Norton's recognition of Guyot"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "Guyot names \"James West\" in the Winona group; the ground-truth corpus identifies Rosemary Freeman and Euvester Simpson as members of the Winona group along with Hamer, Ponder, June Johnson, and Guyot. The summary preserves Guyot's transcript naming without supplementing from the corpus."
+        ],
+        "improvements": [
+          "Consider noting that the Winona group as identified in the historical record included Rosemary Freeman and Euvester Simpson, whom Guyot does not name."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:32:00,000",
+      "end_time": "00:42:00,000",
+      "title": "Organizational Differences: NAACP, SCLC, SNCC and the 1965 Congressional Challenge",
+      "summary": "Guyot contrasts the three principal civil rights organizations operating in Mississippi. He quotes Roy Wilkins as having said (off-camera, not on Eyes on the Prize) that \"Mississippi is a beast of a state\" that should be cut off, and characterizes the NAACP position as litigating where possible while raising money from Mississippi's atrocities. He distinguishes SCLC the organization from Martin Luther King Jr. personally, emphasizing that King \"supported us in the Freedom Election, in which we got 80,000 voters,\" in the 1964 Summer Project, in the creation of the Freedom Schools and the Wednesdays in Mississippi (organized by Dorothy Height), and in the Congressional Challenge.\n\nGuyot describes asking King to sign a memorandum -- alongside himself, John Lewis, and others -- declaring that even though the Voting Rights Act was about to pass, the Congressional delegation from Mississippi should still be unseated. According to Guyot, David J. Garrow's biography of King argues that the MFDP and the memorandum had a larger impact on the Voting Rights Act than King did. Guyot credits Michael Thelwell with shaping the legislation by attending Leadership Conference meetings: the original draft would have required \"20 complaints\" before the president could authorize action, but the MFDP's 1965 Congressional Challenge (in which 149 congressmen voted to unseat the Mississippi delegation) and the parallel pendency of United States v. Mississippi at the Supreme Court forced the development of Section 5's automatic trigger.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "naacp",
+        "sclc",
+        "sncc",
+        "roy wilkins",
+        "martin luther king jr",
+        "1965 congressional challenge",
+        "michael thelwell",
+        "wednesdays in mississippi",
+        "dorothy height",
+        "freedom schools"
+      ],
+      "related_events": [
+        "1963 Freedom Vote (Freedom Election)",
+        "1964 Mississippi Summer Project",
+        "1965 MFDP Congressional Challenge",
+        "Wednesdays in Mississippi (Dorothy Height)",
+        "Freedom Schools",
+        "David J. Garrow's biography of Martin Luther King",
+        "Voting Rights Act of 1965 (passage)",
+        "United States v. Mississippi"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 87,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "Guyot's attribution of the Roy Wilkins quote to Eyes on the Prize is hedged in the transcript -- he says Wilkins 'didn't say this on camera, he said it later' -- the summary preserves this hedge."
+        ],
+        "improvements": [
+          "The 80,000 figure for the 1963 Freedom Vote is presented as Guyot's recollection; some historiography places the figure differently."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:42:00,000",
+      "end_time": "00:55:00,000",
+      "title": "A Typical Week in 1964: Organizing, the Freedom House, and SNCC Independence",
+      "summary": "Guyot describes a typical week in 1964 as movement between Hattiesburg, Jackson, and Greenwood (where SNCC's summer-project headquarters was located), staying abreast of where communities needed help. He notes the SNCC salary was \"$10 a week when it was available,\" and that organizers worked to set up meetings, improve local leadership, and stay in contact with press relations through Mary King and others. He describes Harry Bowie -- a Black Episcopalian he traveled the state with -- and the founding of the Delta Ministry by the National Council of Churches, which lasted 25 years and replaced SNCC's Mississippi presence after 1966. The Delta Ministry supported Marian Wright Edelman's Children's Defense Fund, which hired 3,000 people in Mississippi and made it a target of Senator John C. Stennis.\n\nGuyot describes the Lawyers' Committee for Civil Rights Under Law, William Kunstler and Arthur Kinoy as legal allies, and SNCC's insistence on policy independence from outside funders (including the AFL-CIO's $25,000 contribution with strings attached, which SNCC rejected). He recounts the Howard University conference (after Kennedy's assassination, when Johnson sought a moratorium on demonstrations) where Bayard Rustin, James Baldwin, and Norman Thomas spoke. He describes the Freedom House at 714 Rose Street, Jackson, as a \"reconciliation post\" for arrested Freedom Riders -- a place where activists tried in Jackson would be re-acquainted with state-wide organizing before returning home. Guyot also recalls Bob Moses's commitment to the Summer Project after Louis Allen (a witness in the Herbert Lee killing) was murdered.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "1964 summer project",
+        "freedom house",
+        "harry bowie",
+        "delta ministry",
+        "children's defense fund",
+        "marian wright edelman",
+        "william kunstler",
+        "arthur kinoy",
+        "freedom rides",
+        "louis allen"
+      ],
+      "related_events": [
+        "1964 Mississippi Summer Project",
+        "Freedom House at 714 Rose Street, Jackson",
+        "Delta Ministry (founded 1964)",
+        "Children's Defense Fund",
+        "Lawyers' Committee for Civil Rights Under Law",
+        "Murder of Louis Allen (1964)",
+        "Murder of Herbert Lee (1961)",
+        "Howard University conference after Kennedy assassination"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 24,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "The transcript names William Sloane Coffin Jr. as someone who 'has to head' the Summer Project according to outside voices; Guyot's recollection of this discussion is not corroborated by other sources cited here but is preserved as his testimony."
+        ],
+        "improvements": [
+          "Theodore H. White's book characterization of SNCC as 'really communist' is Guyot's framing; the original book's exact wording should be verified before publication."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:55:00,000",
+      "end_time": "01:03:30,000",
+      "title": "1968 Move to Washington and Local D.C. Political Activism",
+      "summary": "Guyot describes moving to Washington, D.C. in 1968 as a delegate to the Democratic National Convention. He recounts a strategic alliance: Aaron Henry and the \"loyalists\" had been set up as an alternative to destroy the MFDP, but when they were not seated, Guyot proposed merging. The combined loyalist-MFDP delegation, securing 50 percent each, was seated at the 1968 convention. In Washington, he and Harry Bruin met with Charles Evers and Hodding Carter III, who marveled at how the MFDP outmaneuvered them despite having less money and prestige.\n\nIn D.C., Guyot became an Advisory Neighborhood Commissioner, fought for same-sex marriage, fought to end mayoral term limits, and worked on Columbia Heights economic-development proposals. He explains his support for same-sex marriage as a religious and political extension of his interracial marriage to his white wife, whom he met in California while raising money for SNCC and married in Washington in 1967. He cites Bible verses about feeding the hungry, clothing the naked, and visiting the bound -- arguing that all such acts inevitably enter the political arena, and that \"if black people ever make the mistake of separating our politics from our religion, we're damn near finished.\" Guyot expresses pride in supporting Adrian Fenty for D.C. mayor and laments the hateful rhetoric of the campaign that defeated him.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "1968 democratic convention",
+        "aaron henry",
+        "loyalists",
+        "washington dc",
+        "advisory neighborhood commissioner",
+        "same-sex marriage",
+        "adrian fenty",
+        "columbia heights",
+        "hodding carter iii",
+        "interracial marriage"
+      ],
+      "related_events": [
+        "1968 Democratic National Convention",
+        "MFDP-loyalist delegation merger",
+        "Washington D.C. political activism",
+        "Same-sex marriage advocacy",
+        "Adrian Fenty mayoral campaign",
+        "Columbia Heights economic development"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "Guyot's wife's name is not provided in the transcript; preserve as 'his wife' without inference."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:03:30,000",
+      "end_time": "01:21:00,000",
+      "title": "Movement People Profiles: Salter, Evers, Doar, Ford, Thelwell, Turnbow, Moses",
+      "summary": "Julian Bond asks Guyot to characterize key Movement figures. Guyot describes John Salter Jr. as a Tougaloo professor involved in NAACP-led Jackson demonstrations who worked closely with Medgar Evers and Rev. Ed King. He describes Medgar Evers as the NAACP executive director who \"went disguised to get information about the Emmett Till case.\" He characterizes Tom Gaither as an early CORE member in Mississippi.\n\nGuyot describes John Doar as a hero who \"didn't stick to the script\" and was responsible for moving the Department of Justice into vigorous civil rights enforcement, including the Schwerner-Chaney-Goodman trial in which Doar quoted Lincoln's Gettysburg Address. He credits SNCC with convincing Doar and others -- and then Nicholas Katzenbach and Congress -- of \"the right of illiterates to vote.\" He profiles Gerald R. Ford (the Michigan congressman who met with Guyot at his bishop's request about the Congressional Challenge), the Wednesdays in Mississippi (organized by Dorothy Height), the Ladner sisters (related to Vernon Dahmer, Medgar Evers, and Victoria Gray), and Theron Lynd (the 7'4\", 400-pound Forrest County registrar tried for contempt by the Fifth Circuit, described in the book Count Them One by One).\n\nGuyot praises the Fifth Circuit Court of Appeals -- Judges Brown, Tuttle, and (less so) Bell -- as Eisenhower appointees who had \"established a legend of expanding the constitutional rights of everyone that came before them,\" overruling the racist Judge Cox in Mississippi. He describes Michael Thelwell setting up the MFDP Washington office and Hartman Turnbow's white-house-invitation request to \"dance with the governor's wife,\" and recounts his own role in arranging Turnbow's release on bond signed by the sheriffs of Leflore and Holmes Counties after a fire at Turnbow's home -- which the state, under federal pressure, classified as a heart attack rather than a murder. Guyot closes the segment with a profile of Robert Moses as a mathematician-philosopher who \"firmly believed that those who do the work should make the decisions\" and who \"saw political potential in everyone.\"",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "john salter jr",
+        "medgar evers",
+        "tom gaither",
+        "john doar",
+        "gerald ford",
+        "michael thelwell",
+        "hartman turnbow",
+        "robert moses",
+        "fifth circuit court",
+        "theron lynd"
+      ],
+      "related_events": [
+        "Schwerner-Chaney-Goodman trial",
+        "Murder of Emmett Till",
+        "Fifth Circuit Court of Appeals (Judges Brown, Tuttle, Bell)",
+        "Theron Lynd contempt trial",
+        "Hartman Turnbow's home firebombing",
+        "Vernon Dahmer",
+        "Voting Rights Act drafting"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [
+          "Theron Lynd's height is given as 7'4\" by Guyot -- this is unverified in the corpus; preserve as Guyot's recollection without independent confirmation.",
+          "The Hartman Turnbow incident: the transcript's wording about the killed person's death cause (\"died of a heart attack\") is preserved from Guyot's recollection; this should not be presented as established fact without further verification."
+        ],
+        "improvements": [
+          "Note that Doar quoting Lincoln's Gettysburg Address (\"the world will little note nor long remember what we say here\") in the Schwerner-Chaney-Goodman closing is Guyot's recollection and is consistent with historical accounts of Doar's closing argument."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:21:00,000",
+      "end_time": "01:27:28,000",
+      "title": "Closing Reflections: Religion, Politics, and the Call to Renewed Organizing",
+      "summary": "Guyot reflects on his legacy: he wants to be remembered as \"a man who carried out his religious beliefs by his political activity,\" who \"never stepped away from a fight,\" and who was committed to \"the perpetuation of the mantra of the Student Nonviolent Coordinating Committee.\" He compares SNCC to the Anti-Saloon League as the only American organization of comparable transformative impact -- though where the Anti-Saloon League was short-lived, SNCC \"changed the very concept of democracy.\"\n\nHe closes with an urgent civic appeal: that the next two years are decisive, that the Republican Party's gains threaten everything the movement won, that one million Obama voters who did not vote in the midterm elections must be re-mobilized, and that those who refuse to organize should be declared \"social pariahs.\" He laments the shift \"as a race\" from the concept of \"us\" to \"me,\" and expresses confidence that the political infrastructure SNCC built can be renewed if veterans and young people are activated. Julian Bond thanks Guyot, who returns the appreciation, and the interview closes with the Library of Congress / Smithsonian National Museum of African American History and Culture identification.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "legacy",
+        "religion and politics",
+        "anti-saloon league",
+        "sncc mantra",
+        "social pariahs",
+        "republican party",
+        "democratic party",
+        "midterm elections",
+        "obama",
+        "us vs me"
+      ],
+      "related_events": [
+        "Anti-Saloon League (comparative reference)",
+        "Student Nonviolent Coordinating Committee legacy",
+        "2010 midterm elections (contextual)",
+        "Library of Congress / NMAAHC partnership"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 88,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 20,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Lawrence Guyot",
+      "interviewee_title": "Civil Rights Activist, SNCC Field Secretary, Chairman of the Mississippi Freedom Democratic Party",
+      "interview_date": "unknown",
+      "interview_location": "Washington, D.C. (inferred)",
+      "interviewer_name": "Julian Bond",
+      "interviewer_affiliation": "Library of Congress",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:27:28",
+      "total_segments": 938,
+      "word_count": 12500,
+      "number_of_chapters": 10
+    },
+    "overall_score": {
+      "total": 88,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 27,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "Logical opening with childhood and family context: 'I come from the most non-mississippi-like section of Mississippi' (Segment 6, 00:00:28,000)",
+            "Clear thematic progression through Tougaloo, SNCC, MFDP, Atlantic City, Winona, DC activism: 'I moved to D.C. in 1968. I was a delegate to the Democratic Convention in 1968.' (Segment 639-640, 00:55:05,000)",
+            "Reflective close: 'What I like the world to know is that I was a man who carried out his religious beliefs by his political activity.' (Segment 907, 01:24:07,000)"
+          ],
+          "justification": "Guyot moves through chronological-thematic phases (childhood, college, SNCC, MFDP, Winona, organizational politics, D.C., reflections) with a strong opening anchor in Pass Christian and a powerful closing call to action. Julian Bond's adept interviewing scaffolds smooth transitions; occasional backtracking and tangential profiles in Chapter 9 minimally disrupt flow."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "I saw my father, Julian, beat one of the richest men in Paschristin, almost to a pulp in front of the post office with his fist, and then take me by the hand and walk me home.",
+            "segment": 117,
+            "timestamp": "00:07:14,000"
+          },
+          "specificity_count": {
+            "full_names": 75,
+            "specific_dates": 12,
+            "specific_places": 35
+          },
+          "evidence": [
+            "Vivid Catholic-Church ultimatum: 'The announcement was we have two programs. We have excommunication, and we have integration. Make your choice by Friday.' (Segment 14-16, 00:01:10,000)",
+            "Specific Winona scene: 'They want me to sign a statement saying, I drove over there and fell out of a car and hurt myself' (Segment 370, 00:28:23,000)",
+            "Address of Freedom House: '714 Rose Street' (Segment 215, 00:14:21,000)"
+          ],
+          "justification": "Guyot's testimony is unusually rich in specific names, addresses (714 Rose Street), and reconstructed exchanges (his exchange with Bidwell Adams and Gaston Hughes, the Hardy Lott courthouse exchange, the Turnbow request to dance with the governor's wife). Vivid sensory and dramatic detail throughout."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "They threaten to burn my testicles with wooden sticks. I know that I have to stay conscious otherwise they're going to kill me.",
+            "segment": 376,
+            "timestamp": "00:28:56,000"
+          },
+          "emotional_range": [
+            "pride",
+            "grief",
+            "fear",
+            "indignation",
+            "humor",
+            "tenderness",
+            "warning"
+          ],
+          "vulnerability_elements": [
+            "Detailed account of Winona beating including threats of genital torture",
+            "Admission of fear that he would not leave Winona alive",
+            "Open disclosure of interracial marriage and its meaning to his support for same-sex marriage",
+            "Critical self-reflection on movement organizing methodology"
+          ],
+          "justification": "Guyot speaks frankly about life-threatening violence, the death of Medgar Evers occurring during his own detention, and his personal religious-political integration. He balances analytical recall with moments of raw vulnerability (the Winona scene) and tender moments (his grandfather, his wife)."
+        },
+        "overall_assessment": "Guyot delivers an exceptionally well-structured, vividly detailed, and emotionally honest oral history. His narrative spans from intimate childhood scenes to high-stakes Movement decision-making with consistent specificity. He moves fluidly between vulnerability about traumatic violence and analytical sophistication about federal voting-rights jurisprudence -- a rare combination."
+      },
+      "historical_value": {
+        "total": 24,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "1964 MFDP challenge at Atlantic City Democratic National Convention (Guyot was the MFDP chairman, jailed in Hattiesburg at the time)",
+            "1963 Winona Mississippi jail beating (direct survivor and victim)",
+            "1965 Voting Rights Act drafting and Congressional Challenge (insider strategist)",
+            "Greenwood SNCC voter-registration drive (organizer)",
+            "1968 MFDP-loyalist delegation merger and seating (delegate)"
+          ],
+          "key_figures": [
+            {
+              "name": "Fannie Lou Hamer",
+              "relationship": "Fellow SNCC organizer; was present at her first mass meeting; co-detainee at Winona",
+              "contact_level": "close"
+            },
+            {
+              "name": "Bob Moses",
+              "relationship": "Met him on arrival to SNCC; co-organized in Mississippi",
+              "contact_level": "close"
+            },
+            {
+              "name": "John Doar",
+              "relationship": "Strategic legal collaborator with SNCC and MFDP",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "Requested King's signature on 1965 memorandum supporting Congressional Challenge",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Gerald Ford",
+              "relationship": "Met as Michigan congressman about Congressional Challenge",
+              "contact_level": "distant"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Student Nonviolent Coordinating Committee (SNCC)",
+              "role": "Mississippi field secretary, organizer",
+              "years": "1962-1966"
+            },
+            {
+              "organization": "Mississippi Freedom Democratic Party",
+              "role": "Chairman of the state executive committee",
+              "years": "1964-1968"
+            },
+            {
+              "organization": "Council of Federated Organizations (COFO)",
+              "role": "Affiliated organizer",
+              "years": "1962-1966"
+            },
+            {
+              "organization": "Washington D.C. Advisory Neighborhood Commission",
+              "role": "Commissioner",
+              "years": "1970s-2000s"
+            }
+          ],
+          "unique_access": "Guyot was the MFDP chairman during the Atlantic City Convention, a Winona beating survivor, a key strategist for the 1965 Congressional Challenge and the legal theory behind Section 5 of the Voting Rights Act, and an insider in the SNCC-MFDP-King-DOJ collaboration network. Few living interviewees combine this depth of organizational leadership with this breadth of legal-strategic awareness.",
+          "justification": "Guyot was a primary organizer at the center of the Mississippi voter-registration movement and held a formal chairmanship in the MFDP. He had direct strategic relationships with King, Doar, the Fifth Circuit judges, and Thelwell. This is one of the highest-leverage firsthand insider perspectives in the entire SNCC oral history record."
+        },
+        "specificity_of_details": {
+          "score": 8,
+          "max_possible": 8,
+          "precision_examples": [
+            "Catholic Church desegregation date: '1957 or 58' (Segment 12, 00:00:59,000)",
+            "Address of Freedom House: '714 Rose Street' (Segment 215, 00:14:21,000)",
+            "Lewis Piernas's tenure: 'chairman of the Republican Party in Hancock County for 65 years' (Segment 62, 00:03:36,000)",
+            "Number of delegates voting on Congressional Challenge: '149 congressmen' (Segment 474, 00:37:20,000)",
+            "SNCC salary: '$10 a week when it was available' (Segment 536-575, 00:45:38,000)"
+          ],
+          "date_specificity": "precise",
+          "name_count": {
+            "full_names": 75,
+            "first_only": 10,
+            "unnamed": 5
+          },
+          "verifiable_claims": [
+            "Section 5 of the Voting Rights Act of 1965 was litigated 8-1 at the U.S. Supreme Court",
+            "United States v. Mississippi was filed in 1962 and argued in 1965",
+            "149 congressmen voted to unseat the Mississippi delegation in the 1965 Congressional Challenge",
+            "Marian Wright Edelman's Children's Defense Fund hired 3,000 people in Mississippi",
+            "Hartman Turnbow's home was set on fire (Holmes County, Mississippi)"
+          ],
+          "justification": "Exceptional precision: Guyot provides specific addresses, dollar figures, vote tallies, dates, and book titles that historians can verify. His legal-history detail (Section 5 mechanics, three-judge panel requirements, Fifth Circuit judges by name) is reference-grade."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Insider account of Lyndon Johnson's specific pressure tactics on California, New York, and other delegations during Atlantic City",
+            "The intellectual genealogy of Section 5 of the Voting Rights Act traced through Guyot's reading of Gideon's Trumpet",
+            "The role of Michael Thelwell in shaping the Voting Rights Act via Leadership Conference meetings",
+            "The 1965 Hartman Turnbow firebombing case resolution through Department of Justice negotiation with state authorities -- including Guyot's personal role in arranging release on bond co-signed by Leflore and Holmes County sheriffs",
+            "The 1968 MFDP-loyalist merger strategy by which both factions were seated"
+          ],
+          "understudied_aspects": [
+            "Tougaloo College's unique academic-freedom-plus-activism policy",
+            "The functional role of the Pass Christian Catholic Church and Ingalls Shipyard in producing a non-typical Mississippi Black political consciousness",
+            "The interrelationship between SNCC and the Fifth Circuit Court of Appeals as a judicial ally"
+          ],
+          "narrative_complications": "Complicates the standard SNCC-vs-SCLC organizational tension story by emphasizing Martin Luther King's direct personal support for SNCC and MFDP initiatives. Complicates the narrative that the Voting Rights Act was a top-down federal initiative by tracing Section 5's mechanics to Mississippi grassroots litigation.",
+          "historiographical_value": "Historians of the Voting Rights Act, the MFDP, and SNCC's Mississippi project will find this interview an essential primary source for the legal-strategic dimension of the Movement. Guyot's specific recall of legal mechanics and behind-the-scenes Johnson-pressure tactics is unusual.",
+          "justification": "Significant new information on the legal-strategic architecture of the Voting Rights Act, the MFDP-loyalist merger of 1968, and the Turnbow firebombing case. The Pass Christian Catholic-Church chapter and the SNCC-Fifth-Circuit dynamic are also understudied. Falls one point short of a perfect 7 only because some of the major-events material has been covered in prior oral history."
+        },
+        "overall_assessment": "Guyot's interview is among the most historically valuable SNCC-MFDP testimonies in the Civil Rights History Project corpus. He was an organizational chairman, a Winona beating survivor, and the strategist behind the Section 5 private-cause-of-action litigation. The interview both confirms and complicates conventional historiography in ways that will be valuable for decades."
+      },
+      "emotional_resonance": {
+        "total": 22,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "Guyot describes his progression from a politically aware but locally protected childhood, through Tougaloo's exposure to interracial intellectual and activist community, through SNCC's grassroots organizing in the Delta, through near-death survival at Winona, through strategic leadership of the MFDP, to his current role as elder mentor calling for renewed civic mobilization. The arc is not framed as inner transformation as much as deepening commitment.",
+          "key_turning_points": [
+            "Hearing his grandfather's WPA interview wish that 'blacks will be able to fight their way into the Democratic Party' (Segment 70-73, 00:04:13,000)",
+            "Meeting Bob Moses and the SNCC cohort at Tougaloo (Segment 213-214, 00:14:03,000)",
+            "Surviving the Winona beating (Segment 374-403, 00:28:52,000)",
+            "Asking Martin Luther King to sign the 1965 Congressional Challenge memorandum (Segment 458-464, 00:36:03,000)"
+          ],
+          "before_after_contrast": "Guyot does not narrate dramatic inner change so much as ever-deepening commitment to political-religious integration. He moves from atypical-Mississippi childhood activist to seasoned strategist to elder calling for renewal.",
+          "inspirational_quality": "Highly inspirational, particularly in the closing call to action: 'Right now, we're faced with an opposition that is so menacing to everything we value... Now we must fight. Everything we've fought for will be beyond retrieving.'",
+          "justification": "Guyot focuses more on collective movement transformation than personal inner change, though his deepening commitment is evident. The closing call to action is genuinely inspirational. Score reflects strong arc but less emphasis on inner-change reflection than the highest band requires."
+        },
+        "tension_conflict_triumph": {
+          "score": 8,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Winona jail beating; threats of genital torture; charge of murder; awareness that radio went off because Medgar Evers had been killed",
+              "segment_range": "374-403",
+              "timestamp_range": "00:28:52,000 - 00:30:58,000"
+            },
+            {
+              "description": "Confrontation with armed pursuers on the road from Hattiesburg to Jackson",
+              "segment_range": "407-413",
+              "timestamp_range": "00:31:14,000 - 00:31:50,000"
+            },
+            {
+              "description": "1964 Atlantic City Convention: Lyndon Johnson's pressure tactics; MFDP rejection of two-seat compromise",
+              "segment_range": "235-256",
+              "timestamp_range": "00:16:16,000 - 00:18:17,000"
+            },
+            {
+              "description": "Securing release of Hartman Turnbow from murder charge via sheriffs' signed bond",
+              "segment_range": "830-841",
+              "timestamp_range": "01:16:36,000 - 01:17:45,000"
+            }
+          ],
+          "conflict_types": [
+            "Life-threatening physical violence at the hands of state agents",
+            "High-stakes national-political negotiation with the President of the United States",
+            "Inter-organizational strategic disagreement (SNCC vs NAACP vs loyalists)",
+            "Personal moral choice (interracial marriage, same-sex marriage advocacy)"
+          ],
+          "emotional_range": "From terror (Winona) to triumph (Atlantic City moral victory; Section 5 Supreme Court win) to grief (Medgar Evers's death) to satisfaction (1968 seated delegation)",
+          "justification": "The interview features multiple high-stakes confrontations with palpable physical danger and political consequence: the Winona beating, the highway confrontation, the Atlantic City convention drama, the Turnbow legal-political maneuvering. Maximum score warranted."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Family loyalty and inherited political identity",
+            "Religious faith translated into civic action",
+            "The cost of moral courage in the face of physical danger",
+            "Love across racial lines",
+            "Civic duty across generations"
+          ],
+          "relatable_struggles": [
+            "A father's protection of a son in a hostile community",
+            "Choosing principle over self-protection (Winona)",
+            "Defending a chosen partner against social disapproval (interracial marriage)",
+            "The pain of seeing collective political gains threatened"
+          ],
+          "human_moments": [
+            "Reading the Bible at age seven before the congregation with his grandfather (Segment 98-104, 00:05:54,000)",
+            "Meeting his wife while raising money in California; getting married in Washington in 1967 (Segment 676-677, 00:59:30,000)",
+            "Father walking him home after beating a rich man at the post office (Segment 117-118, 00:07:14,000)"
+          ],
+          "connection_points": "Diverse audiences can connect through universal themes: protective family, religious-political integration, moral choice under threat, love across difference. The civic-call-to-action closing speaks to viewers of any background who care about democratic renewal.",
+          "justification": "Strong relatability through family scenes, the interracial marriage, the moral courage of Winona, and the civic call to action. Falls slightly short of the highest band only because the interview's middle sections are heavy on organizational/legal mechanics that require some Movement background to fully appreciate."
+        },
+        "overall_assessment": "Guyot's interview generates strong emotional resonance through high-stakes physical-danger scenes, moments of political triumph and grief, and a closing civic call to action. The Winona scene and the closing reflections are particularly powerful. Universal themes of family, faith, and courage anchor the more specialized organizational content."
+      },
+      "accessibility": {
+        "total": 15,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "frequent",
+          "barriers": [
+            "Frequent use of acronyms (SNCC, MFDP, COFO, NCC, SCLC, NAACP, CDF, CDGM) without consistent definition",
+            "References to specific legal mechanisms (Section 5, three-judge panels, pre-clearance) without explanation",
+            "Name-density (75+ named persons) makes following the cast challenging for novice viewers",
+            "Some apparent transcription artifacts (e.g., 'Megahevers' for Medgar Evers, 'Mississons' for Mileston)"
+          ],
+          "justification": "Guyot is articulate and well-organized, but his deep movement and legal expertise produces frequent unexplained acronyms and references. The transcript shows some Whisper-rendering artifacts that affect accessibility. A general audience would benefit from a glossary."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Winona beating sequence (Segment 363-403, 00:27:55,000 - 00:30:58,000)",
+            "Atlantic City Convention narrative (Segment 234-256, 00:16:16,000 - 00:18:17,000)",
+            "Closing civic call to action (Segment 920-932, 01:25:42,000 - 01:27:03,000)"
+          ],
+          "slow_sections": [
+            "Legal-mechanism explanations of Section 5 and Voting Rights Act drafting (Segment 326-356, 00:25:06,000 - 00:27:38,000)",
+            "Movement people profiles in Chapter 9 (Segment 705-851, 01:03:44,000 - 01:19:00,000) -- somewhat list-like"
+          ],
+          "interviewer_impact": "excellent",
+          "attention_sustainability": "An engaged adult listener can sustain attention throughout; the 90-minute length and dense middle sections may challenge casual viewers. Bond's adept questions provide rhythm and scaffolding.",
+          "justification": "Generally well-paced with strong dramatic peaks at Winona and the closing call. Bond's interviewing facilitates flow. The Chapter 9 profile-list segment slows momentum but is balanced by the strong closing."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Religion and politics as inseparable",
+            "Voting rights and federalism",
+            "Racial-justice activism and same-sex marriage as continuous moral commitments",
+            "Democratic renewal and intergenerational responsibility"
+          ],
+          "contemporary_relevance": "Highly contemporary: Guyot's call to defend voting-rights gains, his warning about partisan polarization, and his integration of religious commitment with progressive politics resonate with current debates about democracy, voter suppression, and civic mobilization.",
+          "meaning_making": "Guyot explicitly connects his personal-historical experience to broader civic stakes throughout, especially in the closing reflections. He helps viewers understand both 'what happened' and 'why it still matters.'",
+          "justification": "Strong, explicit thematic connections to contemporary civic life. Guyot consistently frames his story as instructive for present-day political action. Score reflects strong connection without quite reaching the maximum because some thematic links require viewer background to appreciate fully."
+        },
+        "overall_assessment": "The interview is generally accessible to engaged adult audiences but presents challenges for novice viewers due to acronym-density, legal jargon, and a name-heavy cast. Bond's interviewing scaffolds the narrative well, and the closing call to action makes the contemporary relevance explicit. Pacing is good with strong dramatic peaks."
+      }
+    },
+    "overall_assessment": "This is one of the most historically valuable SNCC-MFDP interviews in the corpus, combining insider organizational leadership perspective with detailed strategic-legal recall and personal moral testimony. Guyot's account of the Winona beating, the Atlantic City convention drama, the 1965 Congressional Challenge, and the legal architecture of Section 5 of the Voting Rights Act provides reference-grade primary-source material for Movement historians. The narrative arc moves from atypical Mississippi childhood to elder civic mentor with strong emotional through-lines around religious-political integration. Accessibility is somewhat constrained by jargon and name-density, but engaged audiences will find this a powerful and instructive testimony.",
+    "key_strengths": [
+      "Exceptional historical-leadership perspective: Guyot was the MFDP chairman, a Winona beating survivor, and the strategist behind the Section 5 private-cause-of-action litigation -- few interviews combine this organizational depth with this legal-strategic awareness",
+      "Unusually rich specific detail: precise dates, addresses (714 Rose Street), vote tallies (149 congressmen), book titles (Gideon's Trumpet, Count Them One by One, Local People, Unlikely Heroes), and reference-grade legal mechanics",
+      "Strong narrative arc from personal childhood through movement leadership to elder civic call to action, anchored by Guyot's articulation of religion-politics integration as his life's organizing principle"
+    ],
+    "key_limitations": [
+      "Acronym-density and legal-jargon frequency reduce accessibility for general audiences without Movement background",
+      "Interview lacks transcript metadata for date and location (interviewer is identifiable as Julian Bond by direct address; date and location are inferred)",
+      "Some transcription artifacts (e.g., 'Megahevers' for Medgar Evers, 'Mississons' for Mileston) require correction in any publication context"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Lawrence Guyot was born and grew up in Pass Christian, Mississippi",
+        "status": "supported",
+        "supporting_excerpt": "Now you were born and grew up in Pass Christian, Mississippi, Mississippi, and you said that racial prejudice by and large did not affect you during your youth. (Segment 4, 00:00:15,000)",
+        "rationale": "The interviewer confirms Pass Christian as Guyot's birthplace; Guyot does not contradict and elaborates on Pass Christian's atypical character."
+      },
+      {
+        "claim": "The Catholic Church in Pass Christian desegregated its schools by giving congregants the choice of 'excommunication or integration' by Friday, in 1957 or 1958",
+        "status": "supported",
+        "supporting_excerpt": "The Catholic Church in 1957 or 58 made a decision that we were going to desegregate the schools... The announcement was we have two programs. We have excommunication, and we have integration. Make your choice by Friday. (Segments 12-16, 00:00:59,000 - 00:01:18,000)",
+        "rationale": "Direct quote from Guyot."
+      },
+      {
+        "claim": "Bidwell Adams, a former Lieutenant Governor under Theodore Bilbo, represented Guyot in a slot-machine case",
+        "status": "supported",
+        "supporting_excerpt": "My father hires Bidwell Adams to represent me. Who is Bidwell Adams is the Lieutenant Governor Under Billbow. (Segments 23-24, 00:01:53,000)",
+        "rationale": "Direct testimony from Guyot."
+      },
+      {
+        "claim": "Guyot attended Tougaloo College, which had an interracial faculty and was threatened with extinction by the state legislature",
+        "status": "supported",
+        "supporting_excerpt": "I went to Tougaloo College College. Tougaloo College College was threatened with extinction by the state legislature. It had an interracial faculty. (Segments 131-133, 00:08:18,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Guyot met Bob Moses, John Doar, and Marion Barry while they were working at 714 Rose Street in Jackson",
+        "status": "supported",
+        "supporting_excerpt": "I meet Bob Moses, John Doer and Marion Barry all at the same time. They've come out of McComb. We're all working at 714 Rose Street. (Segments 214-215, 00:14:08,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Fannie Lou Hamer was first encountered by SNCC organizers at a mass meeting where Guyot, James Bevel, Charles McLaurin, and James Forman opened the call for people to register",
+        "status": "supported",
+        "supporting_excerpt": "James Bevel, myself, [Charles] McLaurin, and [James] Forman go to a mass meeting. We open the call for anyone who wants to go down and register. Fannie Lou Hamer raises her hand. (Segments 221-222, 00:14:57,000)",
+        "rationale": "Direct testimony from Guyot."
+      },
+      {
+        "claim": "Fannie Lou Hamer testified at the 1964 Democratic National Convention; Lyndon Johnson called a press conference to interrupt her testimony but the networks (ABC and CBS) played her speech in its entirety that evening",
+        "status": "supported",
+        "supporting_excerpt": "She's the woman who speaks at the 64 Democratic Convention and Lyndon Johnson calls a press conference to interrupt her. But at that time, there was only ABC and CBS and they all play her speech in its entirety that evening. (Segments 234-235, 00:16:08,000)",
+        "rationale": "Direct testimony; consistent with historical record."
+      },
+      {
+        "claim": "Guyot was the chairman of the Mississippi Freedom Democratic Party and was jailed in Hattiesburg during the Atlantic City convention",
+        "status": "supported",
+        "supporting_excerpt": "I'm proud of the fact that I'm the chairman of the Mississippi Freedom Democratic Party. I mean, jailed in Hattiesburg, Mississippi. (Segments 251-252, 00:17:41,000)",
+        "rationale": "Direct testimony; corroborated by civil_rights_facts.json entry for Lawrence Guyot."
+      },
+      {
+        "claim": "Guyot, Fannie Lou Hamer, Annelle Ponder, James West, and June Johnson were beaten in the Winona, Mississippi jail after returning from a South Carolina meeting",
+        "status": "partially_supported",
+        "supporting_excerpt": "One of them was in Winona, Fannie Lou Hamer, and Annelle Ponder, James West, June Johnson, or returning from a South Carolina meeting. They stopped in Winona, they are arrested... And I go over and I know they're there. And they beat me almost to death. (Segments 363-369, 00:27:55,000 - 00:28:20,000)",
+        "rationale": "Guyot names this group in his transcript; however, the ground-truth corpus lists the Winona group as including Rosemary Freeman and Euvester Simpson (not 'James West') alongside Hamer, Ponder, June Johnson, and Guyot. Marked partially_supported because the summary preserves Guyot's transcript naming but the corpus indicates the group composition was more extensive than he names here."
+      },
+      {
+        "claim": "Medgar Evers was assassinated while Guyot was being held in Winona",
+        "status": "supported",
+        "supporting_excerpt": "And Medgea Evers was killed while we were in Winona. (Segment 391, 00:29:54,000)",
+        "rationale": "Direct testimony; Evers was assassinated June 12, 1963, consistent with the Winona detention's date."
+      },
+      {
+        "claim": "Andrew Young, James Bevel, and Frank Smith arrived to secure Guyot's release from Winona",
+        "status": "supported",
+        "supporting_excerpt": "And then Andrew Young, James Bevel, and Frank Smith come to get me out of jail. (Segment 394, 00:30:06,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "The MFDP rejected the two-seat compromise at Atlantic City",
+        "status": "supported",
+        "supporting_excerpt": "We would then offer a compromise of two people... I couldn't have led the Freedom Democratic Party into making what I consider the most courageous, pragmatic political decision in American politics. They said to this compromise, no. (Segments 250-255, 00:17:37,000 - 00:18:05,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Guyot's 1965 Voting Rights Act case won 8-1 at the U.S. Supreme Court, establishing private parties' right to bring Section 5 suits",
+        "status": "supported",
+        "supporting_excerpt": "John Doar and the Department of Justice, files in Amicus. We go to the Supreme Court, we win it, eight to one... We're going to take the position that, from this day forward, anyone who is aggrieved by Section 5 has the right to bring a lawsuit under Section 5. (Segments 331-336, 00:25:44,000 - 00:26:05,000)",
+        "rationale": "Direct testimony; consistent with historical record on Allen v. State Board of Elections (1969) which extended Section 5 standing."
+      },
+      {
+        "claim": "Martin Luther King Jr. signed a 1965 memorandum supporting the MFDP Congressional Challenge alongside Guyot, John Lewis, and others",
+        "status": "supported",
+        "supporting_excerpt": "I said, look Martin, we know that the voting rights act is going to pass. We need you to sign a memorandum along with myself, John Lewis, and other people saying that we realize the voting rights act is going to pass, but the Congressional delegation from Mississippi still should be unseated. He does it. (Segments 459-462, 00:36:08,000 - 00:36:22,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "149 congressmen voted to unseat the Mississippi congressional delegation in the 1965 Congressional Challenge",
+        "status": "supported",
+        "supporting_excerpt": "We got 149 congressmen to say yes, the Congressional delegation from Mississippi should be seen. (Segment 474, 00:37:20,000)",
+        "rationale": "Direct testimony; consistent with historical record."
+      },
+      {
+        "claim": "Michael Thelwell ran the MFDP Washington office and was an important strategist for the Voting Rights Act",
+        "status": "supported",
+        "supporting_excerpt": "And we asked him, would you go to Washington, set up an office for the MFDP... He comes to Washington. He works with a couple of people and he is able to follow the legislation in the Congress. (Segments 817-819, 01:14:54,000 - 01:15:22,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Guyot personally arranged Hartman Turnbow's release on bond co-signed by the sheriffs of Leflore and Holmes Counties after Turnbow's home was set on fire and he killed a white man defending it",
+        "status": "supported",
+        "supporting_excerpt": "John Doar and others asked me, would I be willing to go to the sheriff of Leflore County? You'd him to sign a rest of the process of bar and to take to the sheriff of Holmes County and have Hartman Turnbow released to me. (Segments 832-833, 01:16:53,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Guyot moved to Washington, D.C. in 1968 and served as a delegate to the 1968 Democratic National Convention",
+        "status": "supported",
+        "supporting_excerpt": "I moved to D.C. in 1968. I was a delegate to the Democratic Convention in 1968. (Segments 639-640, 00:55:05,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Guyot married his wife in Washington in 1967; she is white and they met in California while raising money for SNCC",
+        "status": "supported",
+        "supporting_excerpt": "My wife. And I met in when I went to California to raise money for SNCC. She comes to Mississippi. We leave there. We get married in Washington in 67... My wife is white. (Segments 676-679, 00:59:30,000 - 01:00:04,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "The Children's Defense Fund (Marian Wright Edelman) hired 3,000 people in Mississippi",
+        "status": "supported",
+        "supporting_excerpt": "The Children's Defense Fund, hidden by Edelman, hires 3,000 people in Mississippi. (Segments 545-546, 00:46:45,000)",
+        "rationale": "Direct testimony from Guyot; consistent with the ground-truth corpus entry for Marian Wright Edelman."
+      },
+      {
+        "claim": "The Wednesdays in Mississippi program was organized by Dorothy Height and brought women from across the country to learn from Mississippi activists",
+        "status": "supported",
+        "supporting_excerpt": "create the Wednesdays in Mississippi by Dorothy Height, the Wednesdays in Mississippi, was bringing in black and white women from across the country. (Segments 439-440, 00:34:13,000)",
+        "rationale": "Direct testimony from Guyot; consistent with civil rights historiography."
+      },
+      {
+        "claim": "Joyce and Dorie Ladner are related to Vernon Dahmer, Medgar Evers, and Victoria Gray",
+        "status": "partially_supported",
+        "supporting_excerpt": "Joyce and Dorie Ladden are come out of Hattiesburg, Mississippi. They are related to Vernon Dahmer, who is a real civil rights hero. They are related to Medga Evans. They are related to Victoria Gray. (Segments 751-754, 01:08:32,000 - 01:08:41,000)",
+        "rationale": "Guyot states this directly; however, the nature of these relationships ('related to') is unspecified and the corpus does not corroborate all three relationships explicitly. Marked partially_supported because Guyot's statement is broad ('related to') and not specifically verifiable from this transcript or the corpus."
+      },
+      {
+        "claim": "John Doar was the Assistant Attorney General to Robert Kennedy and personally led the federal prosecution in the Schwerner-Chaney-Goodman case",
+        "status": "supported",
+        "supporting_excerpt": "He was the Assistant Attorney General to Robert Kennedy who was the United States Attorney General. John Doar was a Republican, very perceptive, very creative. John Doerr, I watched John Doerr testify, represent the government in the case of Schwerner, Chaney, and Goodman. (Segments 727-729, 01:05:51,000 - 01:06:13,000)",
+        "rationale": "Direct testimony; consistent with civil_rights_facts.json entry for John Doar."
+      },
+      {
+        "claim": "Theron Lynd was the registrar in Forrest County, Mississippi who refused to register postgraduate Black voters",
+        "status": "supported",
+        "supporting_excerpt": "And he is the registrar in Forrest County, Mississippi. He's the registrar in Forrest County, Mississippi. He takes to position that he's not going to. He turned down postgraduate degree, quiz people, because he said he just didn't complete the test right. (Segments 762-765, 01:09:29,000 - 01:09:36,000)",
+        "rationale": "Direct testimony; consistent with civil_rights_facts.json entry for Theron Lynd."
+      },
+      {
+        "claim": "The 1968 MFDP-loyalist merger resulted in a 50-50 delegation being seated at the 1968 Democratic National Convention",
+        "status": "supported",
+        "supporting_excerpt": "The loyalists hooked up with the MFDP. We got 50% of the delegation. They got 50% and we were seated in 68. (Segment 646, 00:55:54,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Guyot served as an Advisory Neighborhood Commissioner in Washington, D.C. and worked on Columbia Heights economic development",
+        "status": "supported",
+        "supporting_excerpt": "I become an Advisory Neighborhood Commissioner. I begin in Delvin in economic development. I'm involved in everything that was developed in Columbia Heights. (Segments 660-661, 00:57:23,000 - 00:57:30,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "The 1963 Freedom Vote in which SNCC and allies got 80,000 voters was supported by Martin Luther King Jr.",
+        "status": "supported",
+        "supporting_excerpt": "Martin Luther King supported us in the Freedom Election, in which we got 80,000 voters. (Segment 438, 00:34:08,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Anthony Lewis's book Gideon's Trumpet inspired Guyot's strategy for the Section 5 case",
+        "status": "partially_supported",
+        "supporting_excerpt": "I read a book called Gideon's Trumpet by Anthony Lewis, and it describes Lyndon Johnson as someone who stole his election. (Segments 341-342, 00:26:21,000)",
+        "rationale": "Guyot states this directly. However, Gideon's Trumpet by Anthony Lewis (1964) is principally about Gideon v. Wainwright (right to counsel), not about Lyndon Johnson's elections. Lewis later wrote about Johnson elsewhere. Marked partially_supported because Guyot's recollection of the book's subject appears to conflate two different sources -- the summary preserves his recollection but the bibliographic attribution may need correction in publication."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 28,
+      "supported": 25,
+      "partially_supported": 3,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_quality_below_90_and_citation_blocked_3_partial",
+    "rationale": "Main summary scores at 86 accuracy / 89 quality -- both below the 90/90 publication threshold -- and the citation audit identifies 3 partially_supported claims (the Winona group composition naming, the Ladner family relationships, and the Anthony Lewis Gideon's Trumpet attribution). The interview's underlying content is exceptionally strong and the testimony is a high-priority addition to the corpus, but it requires editorial review before publication. Specific issues to address: (1) the interview date and location are not stated in the transcript and have been inferred; (2) the transcript contains Whisper-rendering artifacts (e.g., 'Megahevers' for Medgar Evers, 'Mississons' for Mileston, multiple 'sees' for 'seats'); (3) Guyot's recollection of Gideon's Trumpet's subject matter is bibliographically imprecise and should be reconciled before publication; (4) the Winona group naming should either be supplemented with the corpus-verified additional members (Rosemary Freeman, Euvester Simpson) or footnoted to indicate that Guyot's transcript naming is incomplete; (5) the Ladner-family-relationships claims should be verified against published genealogy. None of these is a blocking content error -- the interview's substantive claims are well-grounded -- but the publication threshold of 90/90 with zero partial citations is correctly the gate for full publication, and human editorial review is the appropriate next step."
+  }
+}

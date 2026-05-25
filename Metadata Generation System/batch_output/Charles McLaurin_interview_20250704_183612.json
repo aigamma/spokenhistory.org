@@ -1,0 +1,907 @@
+{
+  "interview_name": "Charles McLaurin",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Charles McLaurin_interview_20250704_183612\\Charles McLaurin_interview_transcript_20250704_183612.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Charles McLaurin",
+    "interviewee_title": "SNCC Field Secretary and Mississippi Delta Voter Registration Organizer",
+    "interview_date": "2015-12-05",
+    "interview_location": "daycare facility, Indianola, Mississippi",
+    "interviewer_name": "Emilye Crosby",
+    "interviewer_affiliation": "Library of Congress",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "04:36:55"
+  },
+  "main_summary": {
+    "summary": "Charles McLaurin recounts his journey from a child growing up in segregated Jackson, Mississippi, to becoming a SNCC field organizer in the Mississippi Delta and the campaign manager for Fannie Lou Hamer's 1964 congressional run. Born December 25, 1939 in Jackson, McLaurin describes formative childhood encounters with segregation, including being accosted at a Jackson train station as a small boy by a white man who accused him of 'peeping at white women,' and a later incident at a curb-service store where white patrons reacted violently to discovering he could read and write. He recounts a brief stint in the U.S. Army Reserve at Fort Jackson, South Carolina around 1955, after which he returned to Lanier High School in Jackson.\n\nMcLaurin describes how Rev. James Bevel recruited him and his friends from a Georgetown, Jackson pool hall into the Freedom Rides effort in 1961, and how he later met NAACP Mississippi field secretary Medgar Evers, who posted his bail after his arrest at the segregated state fair. After meeting SNCC organizer Lawrence Guyot at Jackson State and then Bob Moses at the Freedom House on 714 Rose Street, McLaurin traveled in August 1962 to Greenwood with Bob Moses, Charles Cobb, and Landy McNair, and then to Amzie Moore's home at 614 Chrisman Avenue in Cleveland, Mississippi, before being assigned by Moore and Moses to Ruleville, Mississippi to live in the home of Joe and Rebecca McDonald and to begin a voter-registration drive in Sunflower County. McLaurin describes leading the first three women from Ruleville to the Indianola courthouse to attempt to register, and then participating in the August 31, 1962 bus trip with eighteen people including Fannie Lou Hamer, an event that resulted in Hamer's eviction from the W.D. Marlow plantation and the subsequent shooting up of black homes in Ruleville by night riders, including Mary Tucker's house where Hamer was staying.\n\nMcLaurin describes being sent by Moses to locate Hamer in Tallahatchie County after she fled the plantation, and recounts how Hamer's calm courage transformed him. He describes his role in Freedom Summer 1964, which initially he opposed because he feared white volunteers would dominate the black communities SNCC had organized, but which he came to embrace as he watched white volunteers like Tracy Sugarman and Linda Davis form genuine reciprocal relationships with the families they lived with. McLaurin recounts being unexpectedly named Hamer's campaign manager when she filed to run for Congress in Mississippi's 2nd district, a designation he accepted only when Hamer told him 'you know enough about being a campaign manager as I know about running for Congress.' McLaurin describes the rejection of the Lyndon Johnson 'compromise' of two at-large seats offered to the Mississippi Freedom Democratic Party at the 1964 Atlantic City convention, his arrest in Greenville, Mississippi for sitting in the 'white' section of a segregated courtroom, and the eventual disposition of his case under the Nixon-era Supreme Court.\n\nMcLaurin closes with the story of Hamer's 1977 death and his promise to her, made days before she died, that she would not be buried on a plantation. He recounts the negotiations with Henry Espy's funeral home in Greenwood, the legal work by attorney Cleve McDowell to establish a burial plot on Freedom Farm land within Ruleville city limits, and the later raising of $100,000 to erect a statue of Hamer at the burial site. He describes the June 1966 Meredith March Against Fear, his role as one of the advance organizers who diverted the march to a black park in Greenwood when the white power structure blocked Stokely Carmichael's tent erection at Stone Street Elementary School, and Carmichael's coining of the 'Black Power' slogan at that Greenwood rally.",
+    "key_themes": [
+      "Voter Registration and the Mississippi Delta",
+      "Fear and Its Overcoming",
+      "Fannie Lou Hamer as Movement Catalyst",
+      "Mississippi Freedom Democratic Party and Atlantic City",
+      "SNCC Field Organizing Methodology",
+      "Freedom Summer 1964 and Interracial Coalition",
+      "Black Power Origins in Greenwood"
+    ],
+    "historical_significance": "McLaurin is one of the foundational firsthand witnesses to the SNCC Mississippi Delta voter-registration project of 1962-1965, and one of the very small number of surviving witnesses to the immediate organizing context that produced Fannie Lou Hamer as a movement figure and the Mississippi Freedom Democratic Party as a vehicle of national challenge. His detailed account of Hamer's burial decisions, the Greenwood diversion of the Meredith March Against Fear that produced the 'Black Power' speech, and the day-by-day texture of the early Sunflower County organizing provide primary-source documentation that supplements but is not duplicated in other Civil Rights History Project oral histories of the period.",
+    "quality_metrics": {
+      "accuracy_score": 84,
+      "quality_score": 87,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 25,
+      "accuracy_component_c": 24,
+      "quality_component_a": 36,
+      "quality_component_b": 19,
+      "quality_component_c": 18,
+      "quality_component_d": 14,
+      "errors": [
+        "Fannie Lou Hamer died March 14, 1977 per ground-truth corpus; McLaurin's transcript dates the lawsuit and her death loosely (he says the Greenville case ran 1963-1966-67 and that Hamer died around the same period, but the burial sequence is described in terms consistent with 1977, not 1967 as one transcript stamp suggests). The summary uses 1977 as the canonical year per Hamer's death date.",
+        "The transcript spelling 'Tallahatchie County' has been used; McLaurin's spoken phrase was 'Tallahasta' / 'Tallahasee' which is the ASR rendering of Tallahatchie County, Mississippi."
+      ],
+      "improvements": [
+        "Cross-check the Hamer v. Campbell citation; McLaurin in the transcript mentions both 1967 and 1965-66 as the case period, and the summary should make the year specific only where the transcript is consistent.",
+        "Some chapter summaries paraphrase McLaurin's recollections; the citation audit should flag any extension beyond his exact words."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:05:38,000",
+      "title": "Birth, Family, and Grandmother's Influence",
+      "summary": "McLaurin describes being born in Jackson, Mississippi on December 25, 1939 to John and Connie McLaurin. His father worked for the Coca-Cola Company after stints at Jackson sawmills, and his mother worked as a domestic in white homes and as a cook in local restaurants. He describes the importance of his grandmother, a school teacher educated at Tuskegee, who raised him while his parents were separated and who first introduced him to the figures of Booker T. Washington, W.E.B. Du Bois, and George Washington Carver through books she had bought for her son and passed on to McLaurin. McLaurin describes Smith-Robertson Elementary School as the first organized black public school in Mississippi and his early years there.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["jackson mississippi", "smith-robertson elementary", "tuskegee", "grandmother", "booker t. washington", "w.e.b. du bois", "george washington carver", "coca-cola company"],
+      "related_events": ["Booker T. Washington", "W.E.B. Du Bois", "George Washington Carver", "Tuskegee Institute", "Smith-Robertson School"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could include more detail about his brother A.C. and sister Ella."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:05:50,000",
+      "end_time": "00:26:56,000",
+      "title": "Early Lessons in Segregation: Train Station, Store, and Furniture Auction",
+      "summary": "McLaurin describes three formative childhood encounters with white violence in segregated Jackson. The first, at the Jackson trailways bus station / train station, occurred when his grandmother stepped into the white women's restroom (she was light-skinned with wavy black hair and blue eyes); a white man accused young McLaurin of 'peeping at white women' while he stood twenty feet away from the restroom waiting for her. The grandmother emerged, identified him as her boy, and walked him out. On the way home she gave him his first lesson in racial segregation. The second incident occurred at age 12 when he was working at a curb-service store; the white owner had instructed him never to answer the phone in the presence of the white men who gathered there to drink beer. When a white woman manager left him in charge briefly and he was forced by one of the white men to answer the phone and write down an order, the white men reacted violently to seeing the note he had written, telling him 'a black ass nigger shouldn't have never held a pencil in his hand.' The third incident occurred when McLaurin was around seventeen helping at a white-owned furniture auction in Rankin County; a white constable threatened him for wearing an Army shirt with a PLC stripe that suggested he had been over white men in the Army.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["segregation", "jackson mississippi", "trailways bus station", "racial violence", "ku klux klan", "grandmother", "army shirt", "rankin county"],
+      "related_events": ["Ku Klux Klan", "Mack Charles Parker lynching", "Emmett Till lynching"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 85,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The Trailways/train station passage in the transcript involves both the trailways bus station and the train station; clarify which segment of the journey the restroom incident occurred at."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:27:01,000",
+      "end_time": "00:38:21,000",
+      "title": "Joining the Army Reserve and Service at Fort Jackson, South Carolina",
+      "summary": "McLaurin describes how he scored well enough on a recruiter's test to qualify for the Army Reserve at around age 15-16 in 1955. His mother refused to sign the papers, but his father, who had been unable to enlist himself because of a foot deformity, signed. McLaurin was sent for six months of active-duty training to Fort Jackson, South Carolina around 1955, where the Army was in transition from segregation under a recent presidential order. He describes the disorientation of finding himself in close quarters with white soldiers after having been taught his whole life to stay away from them, the harsh treatment by sergeants, and his unsuccessful attempt to write his congressman John Bell Williams seeking a discharge. The letter came back denied with the message that 'as a little black boy from Mississippi, you ought to be proud to be able to wear the uniform of the United States Army.' He completed the training, returned to Lanier High School in Jackson, and continued his civilian Army Reserve attendance in still-segregated Mississippi.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": ["us army", "fort jackson south carolina", "army reserve", "desegregation", "1955", "john bell williams", "lanier high school"],
+      "related_events": ["U.S. Army desegregation", "John Bell Williams", "Lanier High School"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 83,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could verify the year of Truman's Executive Order 9981 (1948) versus McLaurin's recollection that the Army had 'just been desegregated' in 1955."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:38:48,000",
+      "end_time": "00:53:36,000",
+      "title": "Freedom Rides, Rev. James Bevel, and the Birth of a Jackson Movement",
+      "summary": "McLaurin describes how he first met Medgar Evers as a hitchhiker who picked him and his friends up driving from Georgetown to Farish Street in Jackson; he didn't realize who Evers was until reading about him in the newspaper days later. He recalls that during 1961 Rev. James Bevel came to the pool hall in Georgetown where McLaurin and his friends were preparing for a fight with Jim Hill High School kids over a basketball-game rivalry, and challenged them to instead buy tickets at the white side of the Jackson bus station. Several of McLaurin's friends, including James Jones, Ralph Floyd, Levin Brown, and Charles Cox, accepted the challenge, were arrested, and ended up at Parchman, where Bevel's friend Jesse Harris was beaten with a leather strap with two holes in it for refusing to count off as 'nigger four.' McLaurin describes hearing the story from Harris and how it galvanized them to begin organizing what became the Jackson movement, working alongside Medgar Evers, James Bevel, Diane Nash, Chuck McDew, and Paul Brooks.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["freedom rides", "james bevel", "medgar evers", "parchman penitentiary", "jesse harris", "jackson movement", "naacp", "1961"],
+      "related_events": ["Freedom Riders", "James Bevel", "Medgar Evers", "Parchman Farm", "Diane Nash", "Chuck McDew", "NAACP"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 86,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could clarify chronology of the various Jackson actions; some events McLaurin mentions out of strict order."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:53:56,000",
+      "end_time": "01:18:05,000",
+      "title": "State Fair Arrest, Meeting Medgar Evers, and Mount Beulah Workshop",
+      "summary": "McLaurin describes deciding with three friends to attend the previously-segregated Jackson State Fair in 1961, but when the others did not show up, he went alone and was turned away three times before being arrested. Medgar Evers came to the jail and posted his bail and told him about an upcoming workshop at Mount Beulah near Edwards, Mississippi, run by white lawyer William L. 'Bill' Higgs, a former state legislator. McLaurin describes attending the workshop, hearing Martin Luther King Jr. speak at the Masonic Temple in Jackson in late 1961 or early 1962 (King was traveling with Diane Nash and SNCC people), and being impressed equally by King's oratory and by his suit. McLaurin and his friends began helping Evers distribute the Mississippi Free Press, a paper Evers edited with white journalist Hazel Brannon Smith of Lexington, Mississippi. McLaurin describes asking Evers 'how are we going to stop white people from lynching us,' and Evers calling him and several friends to his office on Lynch Street and drawing a circle around the Mississippi Delta on a map of the state, saying voter registration of the black majority in the Delta would change the apportionment of the Mississippi legislature.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["medgar evers", "william l. higgs", "mount beulah", "edwards mississippi", "mississippi free press", "hazel brannon smith", "martin luther king jr.", "diane nash", "voter registration", "mississippi delta"],
+      "related_events": ["Medgar Evers", "Martin Luther King Jr.", "Diane Nash", "Hazel Brannon Smith", "Mississippi Free Press", "Mississippi State Fair segregation"],
+      "quality_metrics": {
+        "accuracy_score": 83,
+        "quality_score": 85,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 24,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "William L. Higgs is correctly identified; verify his Harvard Law degree and Mississippi legislator background — McLaurin's recollection here is hedged ('I believe').",
+          "Could confirm Mississippi Free Press editorial relationship between Evers and Smith."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "01:18:20,000",
+      "end_time": "01:30:09,000",
+      "title": "Meeting Lawrence Guyot and Bob Moses, Driving to the Delta",
+      "summary": "McLaurin describes meeting Lawrence Guyot, a SNCC organizer, while goofing off on the Jackson State College campus; Guyot told him about a SNCC freedom house at 714 Rose Street in Jackson and about an upcoming visit by Bob Moses to recruit volunteers for a Mississippi Delta voter-registration project. On a Saturday night in August 1962, McLaurin and friend James Jones went to the Freedom House where they met Charlie Cobb (visiting from Howard University), Landy McNair, and others. McLaurin describes expecting Bob Moses to be a large, imposing figure ('Paul Bunyan type') and instead being startled when a 'little fella' about 5'9'' or 5'10' stepped forward. After Moses spoke, McLaurin loaded into a car with Moses, Jones, McNair, and Cobb, and they drove through the night to Greenwood, Mississippi.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["lawrence guyot", "bob moses", "sncc", "freedom house", "rose street", "charles e. cobb jr.", "landy mcnair", "james jones", "mississippi delta", "august 1962"],
+      "related_events": ["Lawrence Guyot", "Bob Moses", "SNCC", "Charles Cobb", "Mississippi Delta voter registration project"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could include the August 1962 date for Moses' Freedom House visit more prominently."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "01:30:09,000",
+      "end_time": "01:46:30,000",
+      "title": "Arrival in Greenwood, Amzie Moore's Home, and Assignment to Ruleville",
+      "summary": "McLaurin describes arriving in Greenwood at 11pm to find that SNCC field organizer Sam Block had been run out of the Barnes Studio office by the White Citizens Council and was sleeping in a pool hall. After meeting with Block and Levin Brown in Greenwood, Moses drove McLaurin, Cobb, and McNair to Amzie Moore's home at 614 Chrisman Avenue in Cleveland, Mississippi. McLaurin describes being surprised that a black family in the Delta could live in a brick house. Moore and Moses talked all night about the political geography of the Delta, the violent suppression of black voter registration, and the resources Moore had built up (his cafe, gas station, and post-office job). The next morning Moses took McLaurin, Cobb, and McNair to Mt. Galilee Baptist Church in Ruleville, Mississippi to meet the local black leadership — Joe and Rebecca McDonald, George Jordan, Miles Foster, Jack Sisson and his wife, and Mary Tucker — who had asked SNCC to help them launch a voter-registration drive in Sunflower County. McLaurin was assigned to live in the home of Joe and Rebecca McDonald in Ruleville.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["amzie moore", "sam block", "greenwood mississippi", "cleveland mississippi", "ruleville mississippi", "joe mcdonald", "mary tucker", "mt. galilee baptist church", "sunflower county", "white citizens council"],
+      "related_events": ["Amzie Moore", "Sam Block", "Bob Moses", "Mary Tucker", "White Citizens Council", "Mt. Galilee Baptist Church"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:46:33,000",
+      "end_time": "02:11:21,000",
+      "title": "First Trip to the Indianola Courthouse and the August 31 Bus Trip",
+      "summary": "McLaurin describes how on the day after arriving in Ruleville he, Cobb, and McNair walked through the community and were arrested by the mayor of Ruleville and taken to city hall, where the mayor told them 'if I were you niggers I would go back to New York.' McLaurin insisted that the mayor return them to the neighborhood where he had picked them up. A young man named Lafayette Surney walked the three SNCC workers around the community introducing them. At a mass meeting at Williams Chapel M.B. Church, three older women agreed to go to the Indianola courthouse to attempt to register; Irene Johnson's son Tommy drove them, and McLaurin accompanied. McLaurin describes his terror as the women walked into the courthouse and his recognition that he 'had to grow up.' Days later, on August 31, 1962, a chartered bus carried eighteen people including Fannie Lou Hamer to the Indianola courthouse. The driver was arrested for driving a bus that was 'too yellow' (a $30 fine). On the return trip the bus was followed by white men in trucks with guns, and Hamer led the people in singing 'Paul and Silas in jail had no money to go their bail.' When Hamer returned to the W.D. Marlow plantation that night, plantation owner B.D. Marlow demanded she withdraw her registration application or leave; she chose to leave and moved into Mary Tucker's house in Ruleville.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["indianola courthouse", "fannie lou hamer", "ruleville mississippi", "lafayette surney", "irene johnson", "williams chapel", "august 31 1962", "w.d. marlow plantation", "voter registration"],
+      "related_events": ["Fannie Lou Hamer", "Voter registration in Sunflower County", "Williams Chapel M.B. Church", "Indianola courthouse"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "McLaurin says the plantation owner was 'W.D. Marlow' but addresses him in conversation as 'B.D. Marlow'; the transcript has both renderings. The canonical name is W.D. Marlow."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "02:11:21,000",
+      "end_time": "02:25:00,000",
+      "title": "Night Riders Shoot Up Ruleville, Joe McDonald's Stand",
+      "summary": "McLaurin describes how ten nights after the August 31 bus trip, night riders drove through Ruleville and shot into multiple black homes, including the McDonald home where the SNCC workers were staying, the Sisson home (where two Jackson State students visiting relatives were wounded), and Mary Tucker's home where Fannie Lou Hamer was staying. The mayor of Ruleville came the next morning to Joe McDonald's house and took his gun, ostensibly 'for his protection.' Charlie Cobb opened a U.S. history book to the Second Amendment to show Joe McDonald his constitutional right to bear arms, and McDonald folded the page down. The next morning, McDonald drove to city hall, confronted the mayor face-to-face for the first time, and demanded his gun back. The mayor returned the gun and demanded he 'get them boys out of your house,' but McDonald refused. McLaurin describes how Joe McDonald's act of standing up to the mayor transformed the Ruleville mass meetings: the next meeting overflowed Williams Chapel, with McDonald himself as a featured speaker.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["night riders", "ruleville shooting", "joe mcdonald", "mary tucker", "fannie lou hamer", "second amendment", "charlie cobb", "mass meetings", "williams chapel"],
+      "related_events": ["Night-rider attacks on civil rights workers", "Joe McDonald", "Williams Chapel", "Mary Tucker"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "02:25:00,000",
+      "end_time": "02:43:43,000",
+      "title": "Finding Fannie Lou Hamer in Tallahatchie County and the Nashville SNCC Conference",
+      "summary": "McLaurin describes being assigned by Bob Moses to locate Fannie Lou Hamer after she fled to relatives in Tallahatchie County, and driving Dave Dennis's 1957 Chevrolet convertible up to find her. After getting lost on gravel roads, being pulled out of a ditch by a sympathetic white farmer, and finally locating Hamer's house up a muddy hill outside Cascilla, McLaurin entered to find Hamer sitting in a high-back chair beside a red-hot wood-burning stove. Without questioning his identity or his mission, Hamer said 'have a seat, I'll be right with you,' packed a bag, and drove with him to Tougaloo College. Hamer talked the entire way about her life on the plantation. At Tougaloo, McLaurin learned that Hamer was joining a delegation of Mississippi SNCC organizers, including Hollis Watkins, Dorie and Joyce Ladner, Curtis Hayes, and Victoria Gray, traveling to a SNCC conference at Fisk University in Nashville. McLaurin describes how Hamer's testimony at the Nashville conference — weaving plantation experiences with biblical stories of Shadrach, Meshach, Daniel, and Paul and Silas — held the entire conference spellbound and resulted in her being taken on a Northeastern speaking tour immediately afterward.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": ["fannie lou hamer", "tallahatchie county", "cascilla mississippi", "dave dennis", "tougaloo college", "hollis watkins", "ladner sisters", "curtis hayes", "victoria gray adams", "fisk university", "sncc conference"],
+      "related_events": ["Fannie Lou Hamer", "Tougaloo College", "Fisk University", "Hollis Watkins", "Victoria Gray Adams", "Joyce Ladner", "SNCC field organizers"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "02:43:43,000",
+      "end_time": "03:11:38,000",
+      "title": "Freedom Summer 1964: Initial Skepticism and Transformation",
+      "summary": "McLaurin describes opposing the Freedom Summer plan at the SNCC Biloxi conference because he believed white volunteers would dominate and reverse the empowerment SNCC had built among Sunflower County and Bolivar County black families. He describes his first encounters with white volunteers in Oxford, Ohio training, including artist-illustrator Tracy Sugarman (whom he had previously stayed with in Connecticut during a SNCC R&R trip), Linda Davis, and Don Edwards's son Len Edwards. McLaurin describes his shock at seeing Tracy Sugarman's canary-yellow car parked at a Ruleville grocery store, with Tracy carrying bags out with Rennie Williams and her granddaughter, and at seeing Linda Davis driving a big yellow-and-black Buick full of black children. He describes how — contrary to his fears — the white volunteers built reciprocal relationships with the families they lived with, brought northern resources (books, clothing, donations), set up Freedom Schools (a Charlie Cobb idea developed after Cobb observed the impoverished Ruleville public school), and shifted McLaurin's own view of what was possible between black and white Americans. He describes the mock 'Freedom Vote' election that ran Aaron Henry for governor, Rev. Ed King for lieutenant governor, Fannie Lou Hamer for Congress in MS-2, Victoria Gray Adams for senate, and Annie Devine for Congress in another district.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["freedom summer", "tracy sugarman", "linda davis", "don edwards", "len edwards", "freedom schools", "charlie cobb", "rennie williams", "aaron henry", "ed king", "victoria gray adams", "annie devine", "freedom vote"],
+      "related_events": ["Freedom Summer", "Mississippi Freedom Democratic Party", "Aaron Henry", "Ed King", "Victoria Gray Adams", "Annie Devine", "Don Edwards", "Tracy Sugarman", "Freedom Schools"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 87,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": [
+          "Could clarify the chronological relationship between Annie Devine's congressional run, Victoria Gray Adams's senate run, and Hamer's run."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "03:11:38,000",
+      "end_time": "03:30:00,000",
+      "title": "Fannie Lou Hamer Files for Congress, McLaurin Becomes Campaign Manager",
+      "summary": "McLaurin describes how COFO Jackson called him one morning to drive Fannie Lou Hamer to the Mississippi Secretary of State's office to legally qualify her as a candidate for Congress in MS-2 — a requirement, he was told, for the planned MFDP challenge to the seating of Mississippi's congressional delegation. He describes his surprise that Hamer agreed immediately without question. At the Secretary of State's office, the white clerk made them complete the paperwork in stages: first a stack of forms, then a $500 check (delivered by COFO's Jesse Morris), then a campaign-manager designation. With minutes to spare before the 5 p.m. close on the last day to qualify, no one had arrived from Jackson to be named campaign manager. Hamer turned to McLaurin and said 'Mac, get up and go in there and put your name on them papers and let's go home,' overriding his protest that he was not qualified with 'man, you know enough about being a campaign manager as I know about running for Congress.' McLaurin signed and became her campaign manager by default. He describes how Hamer and he then campaigned across the Mississippi 2nd Congressional District.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["fannie lou hamer", "1964 congressional election", "mississippi 2nd district", "mfdp", "cofo", "jesse morris", "secretary of state", "campaign manager"],
+      "related_events": ["Mississippi Freedom Democratic Party", "Fannie Lou Hamer", "COFO", "Mississippi 2nd Congressional District"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "03:30:00,000",
+      "end_time": "03:45:00,000",
+      "title": "Greenville Courtroom Arrest, Supreme Court Case, and Habeas Corpus",
+      "summary": "McLaurin describes leading a youth-group challenge to segregation in Greenville, Mississippi in 1963. After being denied entry to the courtroom where the youth group's case was being heard (the 'black' side was full while the 'white' side had empty seats), McLaurin walked into the white section and sat down. A black detective told him someone outside wanted him, then locked the door behind him. McLaurin was arrested for 'making statements calculated to provoke a breach of the peace' after telling the crowd outside they were being denied seats to preserve segregation; Charlie Cobb was arrested taking up where McLaurin left off. The case went to court with a partially black jury that voted to convict; attorney R. Jess Brown appealed and the case reached the U.S. Supreme Court, which remanded it. Under the changed Nixon-era court the city of Greenville reactivated the case, and McLaurin (after Stokely Carmichael had told the Greenville police 'next time you put one of our people in jail, we're going to break him out') voluntarily presented himself at the Greenville city jail at noon on the agreed date. Police Chief Burnley released him after a few days on the agreement that McLaurin would not return to Greenville for a year so he could attend college; the $500 fine and 180-day sentence were quietly dropped.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["greenville mississippi", "segregated courtroom", "r. jess brown", "u.s. supreme court", "stokely carmichael", "richard nixon", "earl warren", "chief burnley", "1963", "habeas corpus"],
+      "related_events": ["Stokely Carmichael", "Earl Warren court", "Richard Nixon", "R. Jess Brown", "Greenville Mississippi"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 84,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The Supreme Court remand could be verified for the specific case citation."
+        ]
+      }
+    },
+    {
+      "chapter_number": 14,
+      "start_time": "03:45:00,000",
+      "end_time": "04:21:20,000",
+      "title": "Mississippi Freedom Democratic Party at Atlantic City and Fannie Lou Hamer's Burial",
+      "summary": "McLaurin recounts the 1964 Atlantic City Democratic National Convention, where Lyndon Johnson offered the Mississippi Freedom Democratic Party delegation a 'compromise' of two at-large seats with named delegates (Aaron Henry and Ed King) — which the MFDP rejected as nothing. McLaurin attributes the resulting Southern realignment to the Republican Party to that rejection. He then describes Hamer's final days. When McLaurin learned Hamer was hospitalized in Mound Bayou, he visited her; she was at first delirious but on a later visit asked him to promise she would not be buried on a plantation. Days later she died (in 1977; the transcript loosely dates these events). McLaurin describes negotiating between Maxwell Funeral Home in Greenwood (where Hamer's body was initially taken and which McLaurin found inadequate) and Henry Espy's funeral home, which provided the burial McLaurin felt suitable. Two young men introduced him to the dormant Freedom Farm land Hamer had owned, which became the burial site once attorney Cleve McDowell — the second black student to enter Ole Miss after Meredith — worked out the legal arrangement with Ruleville's Mayor Virginia Talbert to allow burial within city limits. MACE + Delta Foundation president Charles Bannerman paid the funeral bill. Years later Pat Thompson and others raised $100,000 for the statue of Hamer now at the burial site.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": ["mississippi freedom democratic party", "1964 atlantic city", "lyndon b. johnson", "fannie lou hamer death", "mound bayou", "cleve mcdowell", "henry espy", "freedom farm", "owen brooks", "charles bannerman", "mace delta foundation", "virginia talbert", "pat thompson"],
+      "related_events": ["Mississippi Freedom Democratic Party", "Fannie Lou Hamer", "Cleve McDowell", "James Meredith", "Atlantic City convention 1964", "Lyndon B. Johnson", "Mound Bayou"],
+      "quality_metrics": {
+        "accuracy_score": 83,
+        "quality_score": 86,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 24,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Per ground-truth corpus, Fannie Lou Hamer died March 14, 1977 — McLaurin's timeline is approximate."
+        ],
+        "improvements": [
+          "Could verify Cleve McDowell as the second black student to enter Ole Miss after Meredith.",
+          "Verify Charles Bannerman's role at MACE and Delta Foundation."
+        ]
+      }
+    },
+    {
+      "chapter_number": 15,
+      "start_time": "04:21:20,000",
+      "end_time": "04:36:55,000",
+      "title": "Meredith March Against Fear and Stokely Carmichael's Black Power Speech",
+      "summary": "McLaurin describes the June 1966 Meredith March Against Fear, which began when James Meredith was shot by a white ambush sniper days after stepping off alone from the Tennessee state line. While Meredith was hospitalized, Dr. King, Floyd McKissick of CORE, and the new SNCC chair Stokely Carmichael (who had recently succeeded John Lewis) won Meredith's approval to continue the march. McLaurin recounts being selected by Fannie Lou Hamer to ask King and Carmichael to divert the march from Highway 51 to Highway 7 to pass through Indianola and Greenwood. After Carmichael was arrested for trying to erect a tent at Stone Street Elementary School in Greenwood — having gotten approval from the local black leadership only to have the white power structure veto it — the advance organizers, including McLaurin and James Jones, sent runners to redirect the marchers to a black-community park near the former SNCC Greenwood office. The crowd that night filled the park, having been alerted house-by-house by local SNCC contacts. Carmichael stepped onto the platform and gave the speech in which he proclaimed 'we need some black power.' McLaurin notes that the slogan was originally Willie Ricks's coinage and that the national media defined 'black power' as threatening, but that Hamer described it as merely the right of black people to help determine their own destiny.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": ["james meredith", "march against fear", "june 1966", "stokely carmichael", "willie ricks", "floyd mckissick", "john lewis", "fannie lou hamer", "black power", "greenwood mississippi", "stone street elementary"],
+      "related_events": ["James Meredith", "Meredith March Against Fear", "Stokely Carmichael", "Floyd McKissick", "John Lewis", "Black Power", "Willie Ricks", "CORE"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 15,
+        "errors": [],
+        "improvements": []
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Charles McLaurin",
+      "interviewee_title": "SNCC Field Secretary and Mississippi Delta Voter Registration Organizer",
+      "interview_date": "2015-12-05",
+      "interview_location": "daycare facility, Indianola, Mississippi",
+      "interviewer_name": "Emilye Crosby",
+      "interviewer_affiliation": "Library of Congress",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "04:36:55",
+      "total_segments": 1701,
+      "word_count": 32000,
+      "number_of_chapters": 15
+    },
+    "overall_score": {
+      "total": 88,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 27,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with childhood in Jackson and his grandmother's lessons (Segment 7, 00:00:45,000)",
+            "Tracks chronologically from childhood through Army service, into SNCC organizing, Freedom Summer, the MFDP, and concluding with Hamer's burial and the Black Power speech (Segment 1666, 04:33:00,600)"
+          ],
+          "justification": "McLaurin maintains a coherent chronological arc from childhood to the late 1960s with strong transitions between life-stages. The interviewer's prompts help re-anchor him when he digresses, and the resulting narrative is one of the most linearly intelligible long-form CRHP interviews in the corpus."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And just as I walked into the door, they were coming back because the office was closed.",
+            "segment": 790,
+            "timestamp": "01:55:46,000"
+          },
+          "specificity_count": {
+            "full_names": 60,
+            "specific_dates": 25,
+            "specific_places": 35
+          },
+          "evidence": [
+            "Reconstructed dialogue with grandmother at the train station (Segment 78-95, ~00:08:43)",
+            "B.D. Marlow demanding Hamer withdraw her registration (Segment 843, 02:09:51,000)",
+            "Hamer telling McLaurin to sign as her campaign manager (Segment 1188, 03:27:00)"
+          ],
+          "justification": "The interview is unusually rich in reconstructed dialogue, named persons, addresses (614 Chrisman Avenue; 714 Rose Street), and dates. McLaurin reconstructs scenes with sensory detail — the wood-burning stove at Hamer's hideout, the red-dirt road, the canary-yellow car — that put listeners in the scene."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I tell you, it was really, this was a transformative moment for me. What am I going to do?",
+            "segment": 806,
+            "timestamp": "02:00:14,000"
+          },
+          "emotional_range": ["fear", "shame", "pride", "love", "humor", "grief"],
+          "vulnerability_elements": [
+            "Admits 'I don't know if I've already pissed on myself or not' during store-incident terror (Segment 172, 00:18:48,000)",
+            "Confesses 'I had to grow up' at the Indianola courthouse (Segment 796, 01:57:35,000)",
+            "Names being 'frightened' when asked to keep his promise to Hamer about burial (Segment 1482, 04:02:16,600)"
+          ],
+          "justification": "McLaurin is unusually willing to narrate his own fear and inadequacy — at the train station, at the curb store, at the Indianola courthouse, as Hamer's campaign manager, as her promise-keeper. The interview is emotionally honest without performance."
+        },
+        "overall_assessment": "McLaurin's narration is masterful: chronologically clear, anchored in named persons and specific scenes, and emotionally honest about his own developmental journey from a child afraid of white men to an organizer ready to be jailed. The few weak spots are in occasional date-confusion and in the way he overlaps multiple time-periods when describing later events."
+      },
+      "historical_value": {
+        "total": 23,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "August 1962 Mississippi Delta voter-registration project initiation (Segments 695-740, 01:29:23 onward)",
+            "August 31, 1962 Indianola bus trip with Fannie Lou Hamer (Segment 816, 02:03:57,000)",
+            "1964 Mississippi Freedom Democratic Party qualification of Hamer for Congress (Segment 1120, 03:16:20,000)",
+            "Atlantic City Convention compromise rejection (Segment 1435, 03:50:00,000)",
+            "June 1966 Meredith March Against Fear / Black Power speech (Segments 1595-1666, 04:23:30,600 onward)"
+          ],
+          "key_figures": [
+            {"name": "Fannie Lou Hamer", "relationship": "Hamer's campaign manager 1964; located her in Tallahatchie County hideout; promised her burial off-plantation", "contact_level": "close"},
+            {"name": "Bob Moses", "relationship": "Recruited McLaurin from Jackson Freedom House August 1962; assigned him to Hamer", "contact_level": "close"},
+            {"name": "Amzie Moore", "relationship": "Hosted McLaurin at 614 Chrisman Avenue Cleveland; mentor figure for the Delta project", "contact_level": "close"},
+            {"name": "Stokely Carmichael", "relationship": "Worked together on Greenwood-arrest case and on the June 1966 Meredith March logistics", "contact_level": "close"},
+            {"name": "Medgar Evers", "relationship": "Posted McLaurin's bail after state-fair arrest; drew the Delta map that started McLaurin's voter-registration focus", "contact_level": "moderate"}
+          ],
+          "organizational_involvement": [
+            {"organization": "SNCC", "role": "Field secretary, Mississippi 2nd Congressional District project leader", "years": "1962-1965"},
+            {"organization": "MFDP", "role": "Hamer's congressional campaign manager", "years": "1964"},
+            {"organization": "Head Start program", "role": "Social services director", "years": "1966-1972"},
+            {"organization": "Indianola CAP", "role": "Director of purchasing and personnel", "years": "1972-1977 (approx.)"}
+          ],
+          "unique_access": "McLaurin is among the very small number of surviving witnesses who can describe the day-by-day origins of the SNCC Mississippi Delta project, the immediate organizing context that produced Fannie Lou Hamer, and the negotiations around her 1977 burial. His role as the registered campaign-of-record manager of Hamer's 1964 congressional run is essentially unduplicated.",
+          "justification": "McLaurin has rare insider access to the constitutive events of SNCC's Delta project and the MFDP. As Hamer's only field-named campaign manager and her promise-keeper, his testimony fills institutional gaps in the documented record of how the Mississippi Freedom Democratic Party went from concept to legal ballot challenge."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Hamer's bus trip date: August 31, 1962 (Segment 816, 02:03:57,000)",
+            "Bob Moses' first Delta arrival August 1962 (Segment 695, 01:29:23,000)",
+            "614 Chrisman Avenue, Cleveland, Mississippi (Segment 731, 01:39:43,000)",
+            "$500 candidate filing fee (Segment 1145, 03:22:53,000)",
+            "Stokely Carmichael's 'Black Power' speech, June 1966, Greenwood (Segments 1666, 04:33:00,600)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 60,
+            "first_only": 20,
+            "unnamed": 10
+          },
+          "verifiable_claims": [
+            "Hamer's August 31, 1962 first registration attempt",
+            "McLaurin as campaign manager for Hamer's 1964 congressional run",
+            "Diversion of Meredith March to Greenwood and Carmichael's Black Power speech (June 16, 1966)"
+          ],
+          "justification": "McLaurin's precision is high for an oral-history narrator working from memory five decades later; specific street addresses, dollar amounts, and named persons appear consistently. A few dates (his Greenville Supreme Court case timeline; Hamer's death year) are loose."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Day-by-day texture of the early Ruleville organizing including Joe McDonald's confrontation with the mayor over the gun",
+            "Mechanics of Hamer's congressional filing (the staged paperwork delays by the Secretary of State clerk)",
+            "Logistics of the Greenwood diversion of the Meredith March (sending runners ahead to redirect marchers)",
+            "Negotiations around Hamer's 1977 burial site",
+            "Internal SNCC debate over Freedom Summer (McLaurin's initial opposition)"
+          ],
+          "understudied_aspects": [
+            "Reciprocal relationships between white Freedom Summer volunteers and Delta black families",
+            "The economic and legal context of the Freedom Farm cooperative",
+            "How Henry Kirksey's mapmaking work led to redistricting and black electoral gains"
+          ],
+          "narrative_complications": "McLaurin complicates the post-1965 'movement is over' narrative by detailing the continuing field work after the Voting Rights Act and the way local people (Joe McDonald, Hamer, Aaron Henry) sustained the organizing infrastructure into the 1970s.",
+          "historiographical_value": "Historians of SNCC's Mississippi project, the MFDP, and the Black Power transition can use McLaurin's testimony to cross-reference and triangulate other oral histories, particularly for the Sunflower County / Ruleville organizing and the 1966 Meredith March.",
+          "justification": "McLaurin's account substantially fills documented gaps in the institutional history of SNCC's Delta project. He is one of the few field-level voices who can speak to both the August 1962 origin moment and the post-Hamer-death continuity work."
+        },
+        "overall_assessment": "Exceptional historical-source value. McLaurin's combination of insider proximity to Hamer, Moses, Moore, and Carmichael with field-level day-by-day knowledge of Sunflower County organizing makes this one of the most historiographically dense interviews in the CRHP corpus. Minor gaps in date specificity for late-period events do not materially reduce the value."
+      },
+      "emotional_resonance": {
+        "total": 22,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "McLaurin describes his journey from a child trained to fear and avoid white people, through Army desegregation, to becoming a SNCC field organizer ready to stand alone at the Indianola courthouse, and ultimately as Hamer's promise-keeper organizing her funeral. The transformation is explicitly framed as Hamer-mediated.",
+          "key_turning_points": [
+            "Train station incident with grandmother (Segment 78, 00:08:43,000)",
+            "Indianola courthouse first registration trip 'I got to grow up' (Segment 796, 01:57:35,000)",
+            "Finding Hamer in Tallahatchie County (Segment 940, 02:31:12,000)",
+            "Accepting Hamer's command to become her campaign manager (Segment 1188, 03:27:00,000)"
+          ],
+          "before_after_contrast": "McLaurin moves from a boy who 'got cut off' every time he stepped outside the black community's perimeter, to a man who 'had no respect' for what white people thought and who could walk into a Greenville white-section courtroom and refuse to leave.",
+          "inspirational_quality": "Yes — the arc from terrified boy at the train station to Hamer's campaign manager is unusually clear, and the way McLaurin attributes his transformation to specific other people (Hamer, Moses, Moore, Bevel) gives the listener a usable model for movement-into-courage.",
+          "justification": "McLaurin's transformation arc is both authentic and pedagogically useful — he names the people and moments that produced his change in worldview, and refuses to mythologize himself as inherently brave."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {"description": "Train station: white man accuses young McLaurin of peeping at white women in restroom", "segment_range": "83-95", "timestamp_range": "00:09:12,000 - 00:10:20,000", "stakes": "potential lynching of a small boy by a Jackson mob"},
+            {"description": "Curb store: white men attack McLaurin for writing a phone order", "segment_range": "161-176", "timestamp_range": "00:17:21,000 - 00:19:33,000", "stakes": "physical violence; possible lynching"},
+            {"description": "Joe McDonald goes to Ruleville City Hall to retrieve his gun and stands up to the mayor", "segment_range": "861-881", "timestamp_range": "02:14:47,000 - 02:18:06,000", "stakes": "McDonald's life and the survival of the SNCC project in Ruleville"},
+            {"description": "Bus return from Indianola Aug 31 1962 followed by armed night riders", "segment_range": "832-840", "timestamp_range": "02:06:59,000 - 02:08:30,000", "stakes": "18 lives on the bus including Hamer's"}
+          ],
+          "conflict_types": ["racial violence", "fear and overcoming", "moral courage against state-sanctioned segregation"],
+          "emotional_range": "From terror (train station, store) to defiance (Joe McDonald, Hamer at Marlow plantation) to grief (Hamer's death and burial promise) to triumph (statue erection, Black Power speech)",
+          "justification": "Multiple high-stakes moments are vividly narrated with named participants and clear stakes. The dramatic arc is sustained throughout the four-hour-plus interview."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": ["fear of overstepping", "intergenerational duty", "the cost of moral courage", "the role of mentors", "promise-keeping after death"],
+          "relatable_struggles": ["family separation (parents)", "leaving home for the unknown", "feeling unqualified for assigned responsibility", "honoring a promise to a dying friend"],
+          "human_moments": [
+            "McLaurin's admission that he wanted to go to the burlesque show at the white fair (Segment 447, 01:03:55,000)",
+            "His grandmother taking him to school in the morning (Segment 23, 00:02:46,000)",
+            "Pap Hamer drinking grand-dad whiskey at the Hamer house (Segment 1126, 03:18:42,000)"
+          ],
+          "connection_points": "The everyday human texture (going to the fair, working a part-time job, family separations) keeps the larger civil-rights narrative grounded in recognizable life. McLaurin's repeated framing of 'I just wanted to be able to do what white people could do' is broadly relatable across many contexts.",
+          "justification": "Strong universal-human resonance throughout. McLaurin's framing of segregation in terms of being 'cut off' from doing what he wanted is accessible to listeners across many contexts."
+        },
+        "overall_assessment": "High emotional resonance. McLaurin combines a transformative personal arc with clearly-staged dramatic moments and broadly relatable human texture. The interview would work well in K-12, undergraduate, and adult-learning settings without requiring extensive contextual scaffolding."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Some Mississippi Delta names spelled phonetically in transcript (Tallahasta for Tallahatchie; Sunflower placenames)",
+            "Some acronyms (COFO, MFDP, MS-2, PLC) introduced without full definition"
+          ],
+          "justification": "McLaurin is articulate and clear throughout, with occasional Delta-region usage and several civil-rights-internal acronyms that are not always defined. A general audience can follow the interview with minimal scaffolding."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "00:09:12 - 00:10:20 (train station confrontation)",
+            "02:00:00 - 02:30:00 (post-bus trip night riders and Joe McDonald gun standoff)",
+            "03:00:00 - 03:30:00 (Hamer becoming campaign manager)",
+            "04:25:00 - 04:35:00 (Meredith March and Black Power speech)"
+          ],
+          "slow_sections": [
+            "00:38:00 - 00:55:00 (Army training section; pacing lags as McLaurin works through Fort Jackson recollection)",
+            "03:30:00 - 03:45:00 (legal-procedural Supreme Court timeline gets tangled)"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Strong throughout most of the four-hour run; the interview sustains attention across the long-form arc with occasional procedural lulls.",
+          "justification": "Pacing is generally good with strong dramatic peaks; a few procedural sections (Army training, Supreme Court appellate timeline) lose momentum. Crosby's questions are well-timed and supportive."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": ["voting rights", "voter suppression", "interracial coalition", "Black Power", "the role of women in movement leadership", "the cost of moral courage", "post-Voting-Rights-Act continuing inequality"],
+          "contemporary_relevance": "McLaurin explicitly connects the 1962-1965 organizing to the election of Barack Obama and to current voter-suppression debates ('it ought not to be a need for a voting rights act ... because all Americans ought to be able to vote'). His framing of the 1964 MFDP rejection as the moment that produced today's solid Republican South is one of the most analytically clear contemporary-relevance statements in the CRHP corpus.",
+          "meaning_making": "Yes — McLaurin repeatedly steps back to interpret what specific moments meant ('this was a transformative moment for me'), and his explicit framing of Black Power as merely 'we want to help determine some of our destiny' rebuts decades of media distortion of the term.",
+          "justification": "Strong thematic connections to contemporary issues, with explicit interpretive framing throughout."
+        },
+        "overall_assessment": "Good accessibility for general audiences. The interview is articulate and emotionally engaging; minor barriers are Mississippi-specific place names and undefined acronyms. The contemporary-relevance framing (especially of voting rights and Black Power) is among the most explicit in the CRHP corpus."
+      }
+    },
+    "overall_assessment": "This is one of the highest-value interviews in the Civil Rights History Project corpus. McLaurin combines exceptional insider proximity (campaign manager to Fannie Lou Hamer, advance organizer for the Meredith March, day-one SNCC Delta field organizer) with strong narrative craft, emotional honesty about his own development, and explicit contemporary-relevance framing. The interview merits priority placement in any curatorial selection of the corpus and provides primary-source documentation for several institutionally under-documented moments (the staged Secretary-of-State paperwork for Hamer's congressional filing; the Greenwood diversion of the Meredith March; the negotiations around Hamer's burial).",
+    "key_strengths": [
+      "Exceptional firsthand insider perspective: McLaurin is one of the very small number of surviving witnesses to the constitutive events of SNCC's Mississippi Delta project and the MFDP",
+      "Strong narrative craft: McLaurin moves coherently through five decades with vivid reconstructed scenes, named persons, and explicit interpretive framing",
+      "Authentic transformation arc: McLaurin's journey from terrified boy to Hamer's campaign manager is told with unusual honesty about his own fear and inadequacy"
+    ],
+    "key_limitations": [
+      "Some dates loose: McLaurin's Greenville Supreme Court timeline and his framing of when Hamer died are imprecise; the documentary record places her death March 14, 1977",
+      "Procedural sections slow: the Army training section and the Supreme Court appellate timeline lose narrative momentum and require closer listener attention"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Charles McLaurin was born December 25, 1939 in Jackson, Mississippi",
+        "status": "supported",
+        "supporting_excerpt": "Yes, I was born in Jackson, Mississippi in 1939. ... December 25th, 1939. (Segments 7-9)",
+        "rationale": "Directly stated by McLaurin in opening segments."
+      },
+      {
+        "claim": "His father John worked for the Coca-Cola Company; his mother Connie worked as a domestic",
+        "status": "supported",
+        "supporting_excerpt": "My father, John and my mother Connie ... And my father landed a job with the Coca-Cola Company. ... my mother worked domestic in homes of white people. (Segments 8, 12, 16)",
+        "rationale": "Both parents named with their occupations."
+      },
+      {
+        "claim": "McLaurin attended Smith-Robertson Elementary School, the first organized black public school in Mississippi",
+        "status": "supported",
+        "supporting_excerpt": "I went to Smith-Robertson Elementary School, the first organized black public school in the state. (Segment 25)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "His grandmother was educated at Tuskegee",
+        "status": "supported",
+        "supporting_excerpt": "She was a school teacher, a guy had education over at Tuskegee. (Segment 22)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "McLaurin was sent for six months of active-duty Army training at Fort Jackson, South Carolina around 1955",
+        "status": "supported",
+        "supporting_excerpt": "the first place I went to was Fort Jackson, South Carolina. And this was around 1955. (Segment 276)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "McLaurin wrote to Congressman John Bell Williams seeking discharge from the Army",
+        "status": "supported",
+        "supporting_excerpt": "I write a letter to my congressman. ... A guy by the name of John Bail Williams in Mississippi. (Segment 287)",
+        "rationale": "Directly stated, though transcript spells phonetically as 'John Bail Williams.' John Bell Williams was indeed a Mississippi congressman of that era."
+      },
+      {
+        "claim": "McLaurin first met Medgar Evers when Evers picked him and his friends up hitchhiking",
+        "status": "supported",
+        "supporting_excerpt": "we were picked up by this tall handsome man that I didn't know ... two, three days later after we in the newspaper, his dismay, Megar Elvis, who was the NAACP leader. (Segments 309-310)",
+        "rationale": "Directly recounted. 'Megar Elvis' is the Whisper rendering of Medgar Evers."
+      },
+      {
+        "claim": "Rev. James Bevel recruited McLaurin's group from a Georgetown pool hall to attempt the Jackson bus station Freedom Ride",
+        "status": "supported",
+        "supporting_excerpt": "Rev. James Bevel come in and he sat around. ... Is there any of you bad enough to buy a ticket at the bus station on the white side of the bus station. (Segments 325-327)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "Friends James Jones, Ralph Floyd, Levin Brown, and Charles Cox accepted Bevel's challenge",
+        "status": "supported",
+        "supporting_excerpt": "And one was James Jones, Ralph Floyd, Levin Brown and a guy by the name of Charles Cox and two or three other people. (Segment 329)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Jesse Harris was beaten at Parchman with a leather strap with two holes in it for refusing to sound off as 'nigger four'",
+        "status": "supported",
+        "supporting_excerpt": "they had a guy there, black guy with a strap. He said it was about four or five inches wide. And it was short. And it had two holes in it. ... wrapped him across his butt with that strap. (Segments 378-379)",
+        "rationale": "Directly recounted as Jesse Harris's report. The transcript context makes clear McLaurin is relaying Harris's own account."
+      },
+      {
+        "claim": "McLaurin was arrested for trying to attend the segregated Mississippi State Fair in 1961 and bailed out by Medgar Evers",
+        "status": "supported",
+        "supporting_excerpt": "Police came, put me in jail. ... There's this handsome, black, well-dressed man sitting there ... This is Mad Gellers. And so, he's posting my bum. (Segments 482, 496-499)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "Medgar Evers drew a circle around the Mississippi Delta on a map and explained his voter-registration strategy in his office on Lynch Street",
+        "status": "supported",
+        "supporting_excerpt": "Medgar in his office, the only street up in up stairs then. And he took this big map out of the state of Mississippi and drew a circle around the Mississippi Delta (Segments 583-585)",
+        "rationale": "Directly recounted. Transcript phonetic 'the only street' likely intends 'Lynch Street.'"
+      },
+      {
+        "claim": "Lawrence Guyot recruited McLaurin to SNCC and described Bob Moses' upcoming visit",
+        "status": "supported",
+        "supporting_excerpt": "this big red fellow walks up to us. It said, fellas, my name is Lawrence Guyot. ... He said, there's a guy coming named Bob Moses (Segments 597, 605)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "McLaurin met Bob Moses at the Freedom House in Jackson on a Saturday night in August 1962",
+        "status": "supported",
+        "supporting_excerpt": "Bob is coming on this particular night, which was going to be Saturday night. August 1962 (Segments 680-681)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "McLaurin drove with Bob Moses, James Jones, Charlie Cobb, and Landy McNair to Greenwood and then to Amzie Moore's home at 614 Chrisman Avenue in Cleveland, Mississippi",
+        "status": "supported",
+        "supporting_excerpt": "myself landed James Jones and Bob and we're heading for Greenwood, Mississippi. ... when we finally got to Cleveland to Amzie Moore house at 614 Chrisman Avenue (Segments 696, 731)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Joe and Rebecca McDonald hosted McLaurin and SNCC organizers in Ruleville",
+        "status": "supported",
+        "supporting_excerpt": "Bob and Amzie Moore assigned us to live in the home of Joe McDonald and his wife. (Segment 752)",
+        "rationale": "Directly stated; later transcript names her Rebecca."
+      },
+      {
+        "claim": "Mary Tucker had been trained at SCLC Citizenship Schools in Dorchester, Georgia by James Bevel",
+        "status": "supported",
+        "supporting_excerpt": "Rev. James Bevel had taken several of the young women from Ruleville, Mississippi to Southern Christian leadership. Citizenship training over in Dorchester, Georgia. He had taken several of them ... a lady by name of Mary Tucker was one of these people. (Segments 624-626)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Fannie Lou Hamer led the August 31, 1962 bus trip to register at Indianola courthouse",
+        "status": "supported",
+        "supporting_excerpt": "August 31st, 1960 to a bus of 18 people included in this bus was Fannie Lou Hamer. (Segment 816)",
+        "rationale": "Directly stated. Transcript phonetic '1960' is a Whisper rendering of '1962' — context makes the date clear."
+      },
+      {
+        "claim": "Plantation owner W.D. Marlow demanded Hamer withdraw her registration or leave; she chose to leave",
+        "status": "supported",
+        "supporting_excerpt": "W.D. Marlow Plantation. ... He said, we're not ready for that. And either you go back to Indianola with draw your application to register the vote, or you got to leave my plate (Segments 841-843)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "Night riders shot up Ruleville approximately ten nights after the August 31 bus trip, wounding two Jackson State students at the Sisson home",
+        "status": "supported",
+        "supporting_excerpt": "ten nights later, night riders rolled through the Ruleville, Mississippi community, shot up the community ... two students at Jackson State College who were visiting their relatives at the Sizzles were shot. (Segment 848)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Joe McDonald retrieved his gun from the Ruleville mayor and stood his ground despite threats",
+        "status": "supported",
+        "supporting_excerpt": "Joe steps out, holding his gun. ... 'I come to get my gun.' ... 'And the man, he stood there and the man stood there.' (Segments 861, 865, 873)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "McLaurin was sent to find Hamer in Tallahatchie County and drove her to Tougaloo College",
+        "status": "supported",
+        "supporting_excerpt": "Bob Moses assigns me to go and locate this woman, Fannie Lou Hamer ... So we get to Tougaloo College (Segments 913, 948)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "Hamer spoke at a SNCC conference at Fisk University in Nashville",
+        "status": "partially_supported",
+        "supporting_excerpt": "this is a rendezvous point for people from McCone and South to meet with those of us in the Delta and travel to from there, from Tougaloo College to Nashville, Tennessee to a SNF conference. So now when I learn about that, now I've got something else to think about because we're going to Fisk University. (Segments 948-949)",
+        "rationale": "Transcript identifies the Nashville conference and Fisk University, but McLaurin does not explicitly call it a SNCC conference in this single phrasing (he says 'SNF conference' which is Whisper's rendering of 'SNCC conference'). The location (Fisk) and Nashville are supported."
+      },
+      {
+        "claim": "Charles Cobb developed the Freedom Schools idea after observing the Ruleville public school",
+        "status": "supported",
+        "supporting_excerpt": "it was in Ruleville, Mississippi that Charlie Cahop developed this freedom school idea. Once he went to the public school in Ruleville, Mississippi and elsewhere and saw the kinds of things that they were being denied, then he wrote about the need for some supplemental education (Segment 1089)",
+        "rationale": "Directly stated. 'Charlie Cahop' is the Whisper rendering of Charlie Cobb."
+      },
+      {
+        "claim": "Aaron Henry ran for governor on the Freedom Vote ticket, Ed King for lieutenant governor, Hamer for Congress in MS-2, Victoria Gray Adams for senate, and Annie Devine for Congress in another district",
+        "status": "supported",
+        "supporting_excerpt": "we set up these mark elections and ran Dr. Aaron Henry, Clark's Dale, Black pharmacist up from Clark's Dale as governor and Rev. Ed King, a white Tugaloo chaplain as Lieutenant Governor and Fannie Lou Hamer Hamer for a Congress person in MS-2 ... And Victoria Gray Adams in South and Annie Devine in Kent, we got these people to run on our Freedom ballot (Segments 1109-1110)",
+        "rationale": "Directly stated. The phrasing 'in Kent' is a Whisper rendering; canonical text usually has Annie Devine running from a different district."
+      },
+      {
+        "claim": "McLaurin became Hamer's campaign manager by default after no one arrived from COFO in time",
+        "status": "supported",
+        "supporting_excerpt": "man, get up and go in there and put your name on them papers and let's go home. ... I said, I'm not qualified to be known campaign manager. She looked at me and she said, man, you know enough about being a campaign manager as I know about running for cons. (Segments 1190, 1194-1195)",
+        "rationale": "Directly quoted."
+      },
+      {
+        "claim": "Lyndon Johnson's 1964 Atlantic City compromise offered the MFDP two at-large seats with named delegates (Aaron Henry and Ed King)",
+        "status": "supported",
+        "supporting_excerpt": "Lyndon B. Johnson's group were going to even name the two people who were going to get the seats. (Segment 1444)",
+        "rationale": "Directly stated. Specific names of the two appointed delegates (Henry and King) are corroborated by the broader historical record and the surrounding chapter context."
+      },
+      {
+        "claim": "McLaurin was arrested in Greenville, Mississippi in 1963 for sitting in the white section of a segregated courtroom",
+        "status": "supported",
+        "supporting_excerpt": "the bus station in Greenville was segregated. This is 1963. ... I took a seat over there. ... arrested me. (Segments 1232-1233, 1271, 1279)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "R. Jess Brown represented McLaurin and the case reached the U.S. Supreme Court",
+        "status": "supported",
+        "supporting_excerpt": "R. Jess Brown, one of the three black lawyers in the state, came to represent me and appealed my case ... My case came before the US Supreme Court. (Segments 1290, 1292)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Stokely Carmichael told the Greenville police 'next time you put one of our people in jail, we ain't going to pay you nothing, we're going to break him out'",
+        "status": "supported",
+        "supporting_excerpt": "Stokely Carmichael came to visit me while I was in jail. ... 'Said the next time y'all put one of our people in jail, we ain't going to pay you nothing. We're going to break him out.' (Segments 1315, 1318-1319)",
+        "rationale": "Directly quoted."
+      },
+      {
+        "claim": "Fannie Lou Hamer died and McLaurin promised her she would not be buried on a plantation",
+        "status": "supported",
+        "supporting_excerpt": "she said, Mac, I live on a plantation all my life. And I do not want to be buried back on a plantation. ... okay, Miss Amy, I promise you will not be buried on a plantation. (Segments 1477-1478)",
+        "rationale": "Directly recounted, though McLaurin's timeline of when Hamer died is loose in the transcript. Per ground-truth corpus, Hamer died March 14, 1977."
+      },
+      {
+        "claim": "Henry Espy's funeral home in Greenwood provided Hamer's burial; Owen Brooks organized the funeral; Cleve McDowell handled the legal work to allow burial within Ruleville city limits",
+        "status": "supported",
+        "supporting_excerpt": "Henry Espy ... I would like to bury Fannie Lou Hamer. ... Owen Brooks was at Mrs. Hamer's house. And I told him that Henry Espy had to bury him. ... Attorney Cleve McDowell, the second black to go into Ole Miss after Meredith, ... 'We'll bury Mrs. Hamer on that property.' (Segments 1493, 1533, 1526, 1530)",
+        "rationale": "Directly stated for all three named individuals and roles."
+      },
+      {
+        "claim": "MACE/Delta Foundation under Charles Bannerman paid the funeral bill of nearly $10,000",
+        "status": "supported",
+        "supporting_excerpt": "Charles Bannerman was the president and CEO of MACE + Delta Foundation, a MACE + Delta Foundation. So, MACE + Delta Foundation paid the, paid the bill. (Segments 1558-1559)",
+        "rationale": "Directly stated. The transcript notes the burial cost was 'over $8,000, and almost $9,000 to $10,000.'"
+      },
+      {
+        "claim": "James Meredith was shot in June 1966 at the start of his March Against Fear",
+        "status": "supported",
+        "supporting_excerpt": "on a particular day in June 1966, James Meredith stepped off on his walk alone. And after he had gone a short distance, he was shot down from ambush by a white person. (Segments 1596-1597)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Stokely Carmichael was elected SNCC chairman succeeding John Lewis just before the Meredith March",
+        "status": "supported",
+        "supporting_excerpt": "Stokely Carmichael Michael, who had just become chairperson of the Student Nonviolent Coordinating Committee, succeeding John Lewis (Segment 1599)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Carmichael was arrested in Greenwood for erecting a tent at Stone Street Elementary School, then released and gave the speech in which he coined 'Black Power'",
+        "status": "supported",
+        "supporting_excerpt": "Stokely Carmichael is in jail, that he had been arrested for trying to erect a tent on the stone street elementary campus. ... soon as he stepped up there on the stage with the target and mentioned the black power (Segments 1628, 1664)",
+        "rationale": "Directly recounted."
+      },
+      {
+        "claim": "Willie Ricks originally coined 'Black Power' as a slogan before Carmichael used it at the Greenwood rally",
+        "status": "supported",
+        "supporting_excerpt": "you know black power originally came for Willie Ricks, one of Stokely Carmichael's comrades, who had been talking about black power all along. (Segment 1666)",
+        "rationale": "Directly stated."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 35,
+      "supported": 34,
+      "partially_supported": 1,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_1_partial",
+    "rationale": "The interview is exceptionally strong on historical content and McLaurin is a foundational firsthand witness, but the main_summary accuracy_score (84) and quality_score (87) both fall below the 90/90 publication threshold. The citation audit found 1 partially_supported claim (the characterization of the Nashville/Fisk conference as a 'SNCC conference,' which the transcript renders phonetically as 'SNF conference' and does not explicitly tag with the full acronym). The fail-closed gate is honoring the Smithsonian-grade publication threshold and routing this to human review for resolution of the date-confusion around Hamer's death year and confirmation of the Annie Devine and Cleve McDowell biographical claims. A reviewer with corpus-level memory and the ability to consult Fannie Lou Hamer's documented timeline could resolve the remaining issues and clear this for publication; until then, human review is the correct destination."
+  }
+}

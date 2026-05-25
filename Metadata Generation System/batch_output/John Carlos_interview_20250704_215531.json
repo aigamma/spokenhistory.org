@@ -1,0 +1,813 @@
+{
+  "interview_name": "John Carlos",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\John Carlos_interview_20250704_215531\\John Carlos_interview_transcript_20250704_215531.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "John Carlos",
+    "interviewee_title": "Olympic Bronze Medalist and Civil Rights Activist",
+    "interview_date": "2013-08-18",
+    "interview_location": "Brooklyn, New York",
+    "interviewer_name": "David Klein",
+    "interviewer_affiliation": "Department of History, Virginia Tech University (for the Library of Congress and the Smithsonian National Museum of African American History and Culture)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "02:06:41"
+  },
+  "main_summary": {
+    "summary": "John Carlos, the 1968 Mexico City Olympics 200-meter bronze medalist best known for raising a gloved fist on the victory stand alongside gold medalist Tommie Smith, recounts his life from a Harlem childhood through the Olympic protest and its aftermath. Born June 5, 1945, on Lenox Avenue in Harlem, Carlos describes growing up between the Cotton Club and the Savoy Ballroom, witnessing white flight, and watching the heroin epidemic dissolve neighborhood families. He recalls his veteran father (a shoemaker who served in World War I) and his Cuban-born mother, and traces how childhood encounters with detectives Mr. Lester and Mr. Brown redirected him from raiding freight trains to organized track at the New York Pioneer Club under Joseph \"Joe\" Yancey.\n\nCarlos describes formative encounters with Adam Clayton Powell Sr. at Abyssinian Baptist Church, his discovery of Adam Clayton Powell Jr. (who was fair-skinned), and his attendance at Malcolm X's mosque on 116th Street, where he asked permission to walk with Malcolm and learn from him. He recounts going to East Texas State University on a track scholarship, the Jim Crow signage at the Dallas-Fort Worth airport, being called \"boy\" by his coach, the locker-room hammer incident with Coach Dunn Brown, and the friendship of teammate Terry Burnett who persuaded him to stay long enough to help win the Lone Star Conference championship. He describes meeting Dr. Martin Luther King Jr. at the Hotel Americana with Dr. Harry Edwards and Andrew Young of SCLC; King told him the proposed Olympic boycott would be a rock dropped in a still lake, and pledged to serve as second-in-command under Edwards after returning from Memphis.\n\nWhen the boycott was called off, Carlos and Smith decided to make a statement on the victory stand. Australian silver medalist Peter Norman asked to wear an Olympic Project for Human Rights (OPHR) button, which Carlos obtained from Paul Hoffman of the Harvard rowing team. Carlos describes the symbolism: the black shirt covering his USA jersey, Tommie Smith's black scarf, his own beads for lynching victims and those lost in the Middle Passage, the shoes carried out to represent poverty, and the gloved fist representing five continents of people of color coming together. He explains the vision God showed him as a child of a stadium crowd turning from joy to venom.\n\nCarlos discusses the personal costs that followed: his first wife's suicide, financial hardship that forced him onto welfare for Christmas presents, friend Ron Freeman of UCLA bringing groceries unannounced, and the New York papers calling him a \"neighborhood bum\" thirty days after celebrating his world-record time. He honors Peter Norman, who suffered Australian backlash and never denounced his fellow medalists, and he describes calling Norman before the San Jose State University statue was built (with Dr. Tassel as the SJSU president he consulted)—Norman had asked that his own spot be left empty so visitors could stand in it. Carlos closes by listing the \"troublemakers\" he counts himself among: Mahatma Gandhi, Dr. King, Paul Robeson, Nelson Mandela, and Jesus Christ.",
+    "key_themes": [
+      "Harlem Childhood and the Heroin Epidemic",
+      "Track and Field as a Platform for Social Statement",
+      "Jim Crow Segregation in Texas",
+      "Religious Foundation and Spiritual Vision",
+      "The 1968 Mexico City Olympics Protest",
+      "Personal Sacrifice and Family Cost",
+      "Solidarity Across Race (Peter Norman, Terry Burnett, Paul Hoffman)"
+    ],
+    "historical_significance": "Carlos's testimony offers a firsthand account of one of the most-reproduced images in twentieth-century civil rights history—the raised-fist salute on the 1968 Olympic victory stand—from one of only two surviving Black-American athletes who performed it. His detailed account of the SCLC meeting with Dr. King at the Hotel Americana, of the symbol-by-symbol construction of the protest in the twenty-five minutes before walking out, and of Peter Norman's solidarity expands the historiographical record on the Olympic Project for Human Rights and on athlete activism within the broader civil rights movement. The interview also documents the human price paid by activist athletes in the decade after 1968, an aspect often elided in the iconic image.",
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 88,
+      "accuracy_component_a": 36,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 36,
+      "quality_component_b": 22,
+      "quality_component_c": 18,
+      "quality_component_d": 12,
+      "errors": [
+        "Summary identifies Paul Hoffman as a Harvard rowing team member; the transcript says 'we had some white guys from Harvard University, Rose' which is likely a transcription rendering of 'rowers' or 'crew' — supported but with mild interpretive smoothing.",
+        "Summary identifies coach as 'Coach Dunn Brown'; the transcript renders the surname inconsistently and the first name 'Dunn' (rendered as 'dumb' in places) is inferred from context — partial transcription artifact.",
+        "Summary lists 'Ron Freeman of UCLA' but the transcript says 'Ron Freeman at Canaan Miles' (likely 'at Cal-en-Miles' or a transcription artifact for a school name) — relationship is supported (a friend who brought groceries) but specific affiliation is a paraphrase."
+      ],
+      "improvements": [
+        "Tighten the Paul Hoffman attribution by noting only what the transcript says directly: that he was a white athlete at the Olympics from Harvard who handed Carlos a button to give Peter Norman.",
+        "Soften the Ron Freeman affiliation to 'a friend who brought groceries' without naming UCLA.",
+        "Drop or qualify the SJSU president name 'Dr. Tassel' if uncertain (the transcript only says 'Dr. Tassel at the time'); this is a transcription rendering and may not be the canonical spelling."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:11:04,000",
+      "title": "Harlem Childhood, White Flight, and the Heroin Epidemic",
+      "summary": "Carlos opens by describing being born June 5, 1945, on Lenox Avenue in Harlem, between the Cotton Club and the Savoy Ballroom. His father, born in Camden, South Carolina about sixty years after slavery, was a World War I veteran and shoemaker; his mother was Cuban-born and migrated to the United States at age seventeen. Carlos recalls performing song-and-dance routines in front of the Savoy for silver dollars and being told by Fred Astaire to always give the audience a good show for their money — a maxim he carried into his athletic career. He describes white flight from Harlem when he was eight or nine years old and the arrival of heroin, which he says dissolved the family unit and left mothers to raise children alone in poverty. He notes that black-family joint income at the time topped out around $15,000, and he began searching for what role he could play to help his community.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["harlem", "lenox avenue", "white flight", "heroin", "cotton club", "savoy ballroom", "fred astaire", "world war i", "cuban immigration"],
+      "related_events": ["White Flight (Harlem)", "Harlem heroin epidemic", "World War I", "Cotton Club", "Savoy Ballroom"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could note that Carlos says his sister Hepsy was the fourth child after the brothers Earl Jr. and Andrew."]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:11:04,000",
+      "end_time": "00:20:54,000",
+      "title": "Robin Hood, the Freight Trains, and Discovery by Detectives Lester and Brown",
+      "summary": "Carlos describes how a televised Robin Hood show led him to distinguish between \"man's law\" and \"God's law,\" and how he and friends began raiding the Yankee Stadium freight yards to redistribute food, textiles, and frozen goods to needier neighbors. Two African-American detectives from the 32nd Precinct on 135th Street, Mr. Lester and Mr. Brown, suspected him and went to his father (who hosted weekend poker games with Jackie Robinson and other baseball players). His father refused to let them lecture him. Later, at a track meet at McCombs Park, the detectives surrounded Carlos and gave him an alternative — they recognized his speed (he had outrun Irish patrol officers chasing him from the Bronx to Harlem River Houses), and they handed him the phone number for Joseph \"Joe\" Yancey, head of the New York Pioneer Club track program. Carlos describes a mugging of his mother in which she fought back to keep her purse, and uses it to explain that 'everybody in the neighborhood is a runner' before agreeing to try the Pioneer Club.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["robin hood", "freight trains", "yankee stadium", "detective lester", "detective brown", "jackie robinson", "new york pioneer club", "joseph yancey", "harlem river houses"],
+      "related_events": ["32nd Precinct (Harlem)", "New York Pioneer Club", "Yankee Stadium freight yards", "Jackie Robinson"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Could specify that Carlos's mother's leg was bleeding from being dragged when she held onto the purse."]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:11:44,000",
+      "end_time": "00:24:48,000",
+      "title": "Dreaming of the English Channel and the Olympic Swimming Color Bar",
+      "summary": "Carlos describes hearing a radio report about a swimmer crossing the English Channel and resolving — as a boy who swam the Harlem River — to be the first Black American to represent the United States as an Olympic swimmer. His father eventually delivered the difficult talk: the Harlem River was dangerous, Colonial Pool was overcrowded, the ocean too rough, and the private swim clubs were closed to him because of the color of his skin. He recalls jumping into Highbridge Pool with friends and watching the white mothers immediately call their children — Bobby, Billy, Ricky, Betty, Judy — out of the water. Carlos answered his father that he would find another way, and the freight-train robberies eventually became his vehicle into track and field. He recalls his first time at the armory: he had no track gear, identified himself as a distance runner because he had been ordered to keep running until the police forgot about him, and ran himself into the wall on a 660-yard repeat before being half-carried back up 141st Street to Lenox Avenue.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["english channel", "olympic swimming", "highbridge pool", "colonial pool", "harlem river", "168th street armory", "660-yard run", "new york pioneer club"],
+      "related_events": ["Highbridge Pool segregation", "New York Pioneer Club", "168th Street Armory"],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Carlos says he was 13 or 14 when he went to the New York Pioneer Club; could include that detail."]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:24:48,000",
+      "end_time": "00:32:11,000",
+      "title": "High School Track at Machine and Metal Trades, the Outdoor Street Races",
+      "summary": "Carlos describes his uneven high-school path: starting at Frederick Douglass Academy / Adam Clayton Powell Sr. High School, transferring to Haaren High School at 59th and 10th Avenue (which advertised but did not have a swim program), and finally to the School of Machine and Metal Trades on 96th Street. There, surrounded by older neighborhood runners, he ran on the team's relay, breaking the heat record on his first outdoor meet and watching a song be composed about Machine and Metal Trades by lunchtime. He distinguishes the indoor meet at the 168th Street Armory from the post-meet outdoor races that drew the real crowds: he gave handicaps and beat all-comers, gave away his medals to girls because he ran for the competition rather than the awards, and was startled at a recent reunion to be approached by younger runners who had heard of him only as a 'living legend.'",
+      "main_topic_category": "Education",
+      "keywords": ["machine and metal trades", "haaren high school", "frederick douglass", "168th street armory", "psal", "relay record", "outdoor street races"],
+      "related_events": ["School of Machine and Metal Trades", "168th Street Armory", "Haaren High School"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Frederick Douglass and Adam Clayton Powell Sr. are named in the same school reference in the transcript; chapter summary preserves this conjunction, which may or may not be the canonical historical name of the school."
+        ],
+        "improvements": ["Verify the exact name of Carlos's first high school against PSAL records."]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:32:11,000",
+      "end_time": "00:51:50,000",
+      "title": "Track as a Platform, the Olympic Boycott Argument, and the Train Parable",
+      "summary": "Carlos reflects on realizing in high school that track was a 'vehicle' — the better he became, the larger his platform to speak on what he had witnessed: drugs, the domesticated work his mother performed cleaning abortion offices, white flight, and emerging awareness of racism. He launches into a long meditation contrasting black and white opportunity (white neighborhoods got swimming pools, black neighborhoods got basketball courts — producing Bill Russell, Elgin Baylor and others by default), and argues that today's professional athletes are too focused on the dollar to take stands. He revisits 2013-era debates: Vladimir Putin's exclusion of gay athletes from the Sochi Olympics, the International Olympic Committee's capitulation to Hitler's anti-Jewish demands at the 1936 Berlin Games, and the question of athlete neutrality. He then articulates his train parable: the boycott discussion is a train rolling out of the station; people supporting it are joined by skeptics in dialogue, banners go up, and when bombs come flying the question is whether you bear the burns. He says boycotts hurt the wrong people — like embargos hurting citizens rather than governments — and that athletes who today claim credit for the 1968 movement should be asked to show their burns.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["olympic boycott", "vladimir putin", "sochi olympics", "1936 berlin olympics", "adolf hitler", "international olympic committee", "bill russell", "elgin baylor", "train parable"],
+      "related_events": ["1936 Berlin Olympics", "2014 Sochi Olympics", "International Olympic Committee", "Olympic Project for Human Rights"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["The transcript's 'Adolf Adolf Hitler' duplications are corrected-overlay artifacts; the chapter summary normalizes them, which is appropriate."]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:51:50,000",
+      "end_time": "01:02:10,000",
+      "title": "Abyssinian Baptist Church, Marcus Garvey, Paul Robeson, and Meeting Malcolm X",
+      "summary": "Carlos describes his search for religion, finding Abyssinian Baptist Church and being struck by the resemblance of Adam Clayton Powell Sr. to his own father. One day Powell Sr. announced he was ill and let his son preach — and Carlos was startled to see a fair-skinned man, Adam Clayton Powell Jr., take the pulpit and tell the congregation to 'keep the faith.' This led his father to a discussion of light-skinned Black Americans 'passing' as white in pursuit of a better standard of life. Carlos describes studying Marcus Garvey's parades up Harlem (his brother was a tumbler in them) and Garvey's Back-to-Africa ships, then studying Paul Robeson — the Rutgers-trained baritone, Rhodes scholar, and movie star whose passport was taken because he refused to stay silent. Hearing Malcolm X on the radio, Carlos went to the mosque on 116th Street; he asked permission to walk with Malcolm between locations to learn, and Malcolm agreed if Carlos could keep up. Carlos was scheduled to be at the Audubon Ballroom the Sunday Malcolm was assassinated, but had gone with track teammates on a road trip toward Bear Mountain to get his driver's license; they heard the news on the radio passing West Point. It took Carlos twenty years to accept that Malcolm was 'born to this world to die that day.'",
+      "main_topic_category": "Religion & Faith",
+      "keywords": ["abyssinian baptist church", "adam clayton powell jr", "adam clayton powell sr", "marcus garvey", "paul robeson", "malcolm x", "audubon ballroom", "rutgers", "116th street mosque"],
+      "related_events": ["Abyssinian Baptist Church", "Audubon Ballroom", "Marcus Garvey movement", "Assassination of Malcolm X", "Nation of Islam"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 12,
+        "errors": [
+          "Malcolm X was assassinated on Sunday February 21, 1965 at the Audubon Ballroom; transcript and summary correctly imply a Sunday, but the named day-of-week is implicit, not stated."
+        ],
+        "improvements": ["Could clarify that Paul Robeson was a Rutgers graduate and Columbia Law graduate; the transcript-based 'Rhodes scholar' framing is the speaker's recollection (Robeson was actually a Phi Beta Kappa Rutgers graduate; he was not a Rhodes Scholar). Treat the speaker's framing as testimony rather than as fact-checked claim."]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "01:02:10,000",
+      "end_time": "01:27:01,000",
+      "title": "East Texas State University, Jim Crow Texas, and the Hammer Incident",
+      "summary": "Carlos describes being recruited to East Texas State University by Pete Peterson and accepting the scholarship after his wife insisted the family go together. He recalls landing at Dallas-Fort Worth, where the bronze Texas Ranger statue stood between a pristine 'White Only' restroom and a filthy 'Colored' restroom, and being addressed by his coach as 'boy' and then with a word that sounded so close to a slur his neck stiffened. His daughter was confronted by a white neighbor screaming the N-word; his wife took a job with the chairman of the journalism department who was also town mayor. Carlos ran every event and won, but the press retracted Coach Dunn Brown's statement that Carlos was 'as great as Bobby Morrow' (Morrow won the 100 and 200 at the 1956 Olympics out of Abilene Christian). Before the Lone Star Conference meet, the coach demanded a brutal time-trial workout; when Carlos refused, the coach came at him with a hammer. Teammate Terry Burnett, whom Carlos counts in the same class as John Brown and Peter Norman as a white ally, convinced him to stay long enough to win the conference championship. The track team got a tiny shoe-with-flake award, while the (mostly white) football team got large rings; Carlos forced them to give the track team rings as well. After a bar in Austin refused to serve him a beer and the two white reporters with him said nothing, Carlos decided to leave Texas. Back in New York painting his mother's kitchen, he got the call from Dr. Harry Edwards to come to the Hotel Americana for an SCLC meeting, where Andrew Young opened the door and Dr. Martin Luther King Jr. walked out of a back bedroom. King told Carlos the Olympic boycott was like dropping a rock into the center of a still lake — a powerful nonviolent way to wake the world — and pledged to serve as second-in-command under Edwards after returning from Memphis. When Carlos asked why King was returning to Memphis after death threats, King replied that he had to 'stand for those that won't stand for themselves and stand for those that can't stand for themselves.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["east texas state university", "dallas-fort worth airport", "jim crow", "bobby morrow", "abilene christian", "lone star conference", "terry burnett", "harry edwards", "andrew young", "martin luther king jr", "hotel americana", "sclc", "olympic project for human rights", "memphis"],
+      "related_events": ["East Texas State University desegregation", "Lone Star Conference", "Olympic Project for Human Rights", "Martin Luther King Jr. assassination", "SCLC", "Memphis sanitation strike"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 89,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Bobby Morrow won three gold medals at the 1956 Melbourne Olympics: 100m, 200m, and 4x100m relay. Summary mentions only the 100 and 200, which is partial but not incorrect.",
+          "The coach's surname is rendered inconsistently as 'Dunn' / 'dumb' in the transcript and may be a single individual whose first name was 'Don' or 'Dunn'; summary uses 'Dunn Brown' which is the most charitable reading."
+        ],
+        "improvements": ["Verify the exact name of Carlos's East Texas State coach against contemporary track-and-field records."]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:27:01,000",
+      "end_time": "01:46:20,000",
+      "title": "Constructing the Olympic Protest: Symbols and the Twenty-Five Minute Plan",
+      "summary": "After the boycott was called off, Carlos describes how he and Tommie Smith decided in the twenty-five minutes after the 200-meter semifinal to make a statement on the victory stand. Carlos catalogues the symbols he intended each item to carry: a black shirt covering his USA jersey, signaling his shame at America's history toward people of color; Tommie Smith's black scarf, for the sacrifices of Black people in the land; Carlos's beads, for those lynched in the South, those thrown overboard during the Middle Passage, and those killed in the African slave trade; his shoes carried separately to represent poverty (because poor children walked twenty miles to school without transportation while spaceships landed half-a-mile from their target on the moon); and the glove itself, representing five continents of people of color coming together as a powerful force. Australian Peter Norman, the silver medalist, asked to wear an OPHR button; Carlos got one from Paul Hoffman, a white member of the Harvard rowing contingent, and pinned it on Norman just before they walked out. Carlos says God put Norman there: of fifty million white runners on the planet, no other had the audacity to stand with them. He recalls thinking on the victory stand of his father's stories of segregated World War I service, of East Texas, and of Harlem; his final thought was that 'they could never ever put shackles on John Carlos again.'",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["1968 mexico city olympics", "200 meters", "victory stand", "black power salute", "olympic project for human rights", "ophr button", "tommie smith", "peter norman", "paul hoffman", "harvard rowing", "five continents", "middle passage"],
+      "related_events": ["1968 Mexico City Olympics", "1968 Olympics 200m final", "Olympic Project for Human Rights", "Tlatelolco massacre"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 90,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript renders 'Harvard University, Rose' which the summary interprets as 'rowing contingent'; the historical record identifies Paul Hoffman as a Harvard crew member at the 1968 Olympics, but the transcript itself does not say 'rowing' or 'crew' — this is an interpretive normalization."
+        ],
+        "improvements": ["Could note Carlos's reference to the Tlatelolco Square killings as a contextual lead-in to the Olympics."]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:46:20,000",
+      "end_time": "01:55:10,000",
+      "title": "The Stadium Reaction, the Tlatelolco Massacre Context, and Sydney's Wall",
+      "summary": "Carlos describes the stadium's split reaction: spectators from Africa and Mexico — still mourning the Mexican government's killing of students in the square ten days before the Games (Carlos estimates close to two thousand, with bodies thrown in furnaces and dumped at sea) — responded one way, while others greeted the salute with venom. He notes that the only people sending money or support to him after were not the powerful, but figures who had been wrongly painted as enemies — including George Foreman, whom the press tried to position as an opponent because Foreman waved an American flag in Mexico City. Carlos describes the political 2013 moment in which Republicans, in his view, are trying to undo 1960s gains, and defends President Obama against Black critics who don't understand 'that it takes the first four years just to find a key to the private bathroom.' He recounts a friend's call about an eighty-foot wall painted of him outside the Sydney Olympic stadium — visible from the train — where international visitors take photographs.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["mexico city stadium reaction", "tlatelolco massacre", "george foreman", "barack obama", "sydney olympics", "right-wing press"],
+      "related_events": ["Tlatelolco massacre (Mexico City, October 1968)", "1968 Mexico City Olympics", "2000 Sydney Olympics", "Barack Obama presidency"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 84,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [
+          "Carlos's estimate of 'close to 2,000' killed at Tlatelolco is one of the higher contemporary estimates; some scholars place the count at several hundred. The summary preserves Carlos's estimate as his testimony, not as fact-checked figure.",
+          "Carlos says George Foreman waved the American flag 'after his win'; this happened at the 1968 Olympics after Foreman's heavyweight gold-medal bout. Summary should preserve this context."
+        ],
+        "improvements": ["Could specify that the Sydney wall is at Sydney Olympic Park."]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:55:10,000",
+      "end_time": "02:06:32,000",
+      "title": "Personal Costs, the Peter Norman Statue, and Counting Himself Among Troublemakers",
+      "summary": "Carlos describes the prices his family paid after Mexico City: his first wife's suicide, his children's suffering at school because of who their father was, years without Christmas presents, going on welfare, and the night a partner named Ron Freeman arrived with bags of groceries when there was no food in the house. He recalls that the New York papers shifted from 'John Carlos owns New York' (after he broke the world record at the trials) to 'John Carlos, neighborhood bum' thirty days after the demonstration — and that his hospitalized father wept asking why he had done those bad things. Carlos asked his father whether he knew Rap Brown, Stokely Carmichael, H. Rap Brown, or Tommie Smith; the father said no but knew John Carlos, and Carlos pointed out that the same press machinery was at work on all of them. He describes calling Peter Norman in Sydney after learning the San Jose State University statue had been planned without Norman's spot. (Carlos had driven from Los Angeles to San Jose, and consulted SJSU's president, identified in the transcript as Dr. Tassel.) Norman said he had asked to be left out so visitors could stand in his place — a sacrifice Carlos says Tommie Smith would not have made. Carlos closes by listing the figures he counts himself among as 'troublemakers': Mahatma Gandhi, Dr. King, Paul Robeson, Nelson Mandela, and Jesus Christ. He ends with reflections on his teaching career, on the previous night's New York PSAL track-and-field reunion where younger runners thanked him for one-on-one mentorship, and on his belief that the iconic Mexico City moment will outlive him.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["family sacrifice", "first wife suicide", "ron freeman", "rap brown", "stokely carmichael", "h rap brown", "san jose state university statue", "peter norman", "dr tassel", "troublemakers", "psal reunion", "mahatma gandhi", "nelson mandela"],
+      "related_events": ["San Jose State University Smith-Carlos statue", "PSAL (Public Schools Athletic League)", "Mexico City Olympics aftermath"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 87,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript renders 'Canaan Miles' for what is likely 'Cal-Berkeley' or 'Cal-Miles' or a school affiliation for Ron Freeman (Ron Freeman was actually an Arizona State quarter-miler and 1968 Olympics bronze medalist in the 400m and gold in the 4x400m relay); summary should not over-attribute UCLA.",
+          "Transcript renders the SJSU president's name as 'Dr. Tassel', which may be a transcription artifact; the actual SJSU president at the time of the statue installation (2005) was Don Kassing."
+        ],
+        "improvements": ["Soften 'Ron Freeman of UCLA' (drop UCLA) in main_summary; qualify 'Dr. Tassel' as the transcript's rendering of an SJSU administrator name."]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "John Carlos",
+      "interviewee_title": "Olympic Bronze Medalist and Civil Rights Activist",
+      "interview_date": "2013-08-18",
+      "interview_location": "Brooklyn, New York",
+      "interviewer_name": "David Klein",
+      "interviewer_affiliation": "Department of History, Virginia Tech University",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "02:06:41",
+      "total_segments": 912,
+      "word_count": 18500,
+      "number_of_chapters": 10
+    },
+    "overall_score": {
+      "total": 89,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 27,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Carlos opens with parents and Harlem (Segment 17, 00:01:35), develops freight-train-to-track turning point (Segment 144, 00:18:14), arrives at Mexico City (Segment 795, 01:46:20), and closes with sacrifice and legacy (Segment 911, 02:06:25)",
+            "Mid-interview train parable is an extended structured analogy (Segments 367-388, 01:07:00 to 01:08:30) that gives the boycott discussion clear shape",
+            "Some backtracking — interviewer at Segment 325 (00:42:38) explicitly says 'I want to go back and catch up with the chronology,' indicating Carlos moves nonlinearly between past and 2013 commentary"
+          ],
+          "justification": "Carlos follows a roughly chronological arc from Harlem childhood through Olympics to legacy, but freely interpolates 2013-era social commentary (Sochi, Obama, drug-testing). The interviewer occasionally pulls him back to chronology. The narrative has clear beginning, climax (Mexico City), and reflective resolution."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And he said, no, son, because of the color of your skin.",
+            "segment": 127,
+            "timestamp": "00:15:16,000"
+          },
+          "specificity_count": {
+            "full_names": 35,
+            "specific_dates": 4,
+            "specific_places": 22
+          },
+          "evidence": [
+            "Detective Mr. Brown's hand 'smacked me upside my head. And when he smacked me head, fingers landed over head' (Segment 153, 00:19:40) — reconstructed sensory dialogue and physical detail",
+            "The hammer scene with Coach Dunn Brown: 'he picks up a hammer. And he started walking towards me' and Carlos's reply 'you better hope that that hammer is liquid' (Segment 587-588, 01:17:22)",
+            "The Dallas-Fort Worth airport: 'I saw a sign say, white's only... pristine. Man, it was clean. You know, like you could cook eggs on the floor' (Segment 545-548, 01:09:31)",
+            "Father's face when delivering the swim-club truth: 'I can look at the expression in his face like it was a painful thing in this talk' (Segment 118, 00:14:17)",
+            "Mexico City victory stand: 'all the joy and happiness turned into anangren, venom, and hatred' (Segment 353, 00:45:21)"
+          ],
+          "justification": "Carlos is a vivid storyteller. He reconstructs dialogue with specific phrasing, names individual detectives, coaches, and friends, places scenes in specific buildings and streets, and uses sensory detail (the smack landing fingers over his head, the pristine vs. filthy bathrooms, the change from cheers to venom). Specific dates are sparser, but dates that matter (June 5, 1945; 1968; 2013) are precise."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "My father started crying. I started crying. Just like my father embraced me when I told my head that vision, I embraced him. And I was hugging my father and tears running down my eyes",
+            "segment": 740,
+            "timestamp": "01:41:06,000"
+          },
+          "emotional_range": [
+            "pride",
+            "grief",
+            "anger",
+            "tenderness",
+            "shame",
+            "vindication",
+            "love",
+            "regret"
+          ],
+          "vulnerability_elements": [
+            "Acknowledging he was scheduled to be at the Audubon Ballroom when Malcolm X was killed and feeling for 20 years that he could have prevented it (Segment 448, 01:01:14)",
+            "Speaking of his first wife's suicide after Mexico City and his refusal to talk about it in detail (Segment 849, 01:55:25)",
+            "Crying with his hospitalized father over the New York press's reversal (Segment 740, 01:41:06)",
+            "Admitting he had to go on welfare to give his kids one gift at Christmas (Segment 900, 02:04:29)",
+            "Saying 'I got days where I stayed in the dark man and had tears rolled down my eyes' (Segment 910, 02:06:10)"
+          ],
+          "justification": "Carlos moves through pride, anger, grief, tenderness, and self-doubt. He returns repeatedly to losses: Malcolm X, his first wife, his father's tears, his children's lost Christmases. He explicitly declines to detail certain pain ('I prefer to let them lay'), which itself is an honest mark of where he is in 2013."
+        },
+        "overall_assessment": "Carlos delivers an unusually rich oral history, blending vivid scene reconstruction with deep emotional candor. The narrative arc is clear and the storytelling voice is distinctive. Some non-linear digressions into 2013 politics slow the chronology but enrich the thematic frame. This is a master-class oral history performance."
+      },
+      "historical_value": {
+        "total": 24,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "1968 Mexico City Olympics 200-meter victory-stand demonstration with raised gloved fist (Segment 795, 01:46:20) — Carlos is one of only two surviving Black-American athletes who performed the salute",
+            "Meeting with Dr. Martin Luther King Jr. at the Hotel Americana with Dr. Harry Edwards and Andrew Young to discuss the Olympic boycott (Segment 627-651, 01:25:01)",
+            "Scheduled to attend the Audubon Ballroom the day Malcolm X was assassinated; missed because of a road trip toward Bear Mountain (Segment 445-449, 01:00:45)",
+            "Studied directly under Malcolm X at the 116th Street mosque, asking permission to walk with him between locations (Segment 440-444, 00:59:41)",
+            "Witness to the Mexican government's repression of student protests preceding the 1968 Games — Tlatelolco massacre context (Segment 805-811, 01:48:07)"
+          ],
+          "key_figures": [
+            {"name": "Martin Luther King Jr.", "relationship": "Met at Hotel Americana SCLC meeting; discussed Olympic Project for Human Rights", "contact_level": "moderate"},
+            {"name": "Malcolm X", "relationship": "Walked with him between mosque appearances, listened from front row at 116th Street mosque", "contact_level": "close"},
+            {"name": "Tommie Smith", "relationship": "Olympic teammate; co-protester on victory stand", "contact_level": "close"},
+            {"name": "Peter Norman", "relationship": "Australian silver medalist who wore OPHR button in solidarity", "contact_level": "close"},
+            {"name": "Harry Edwards", "relationship": "OPHR organizer who invited Carlos to SCLC meeting", "contact_level": "close"},
+            {"name": "Andrew Young", "relationship": "Opened the door at the SCLC meeting", "contact_level": "moderate"},
+            {"name": "Adam Clayton Powell Jr.", "relationship": "Observed preaching at Abyssinian Baptist Church", "contact_level": "distant"},
+            {"name": "Adam Clayton Powell Sr.", "relationship": "Attended his sermons at Abyssinian", "contact_level": "distant"},
+            {"name": "Joseph 'Joe' Yancey", "relationship": "Head of NY Pioneer Club track program; mentored Carlos", "contact_level": "close"},
+            {"name": "Jackie Robinson", "relationship": "Played poker at Carlos's father's weekend games", "contact_level": "distant"},
+            {"name": "George Foreman", "relationship": "Later friend; press tried to create false enemy narrative", "contact_level": "moderate"},
+            {"name": "Fred Astaire", "relationship": "Gave silver dollars to young Carlos at the Savoy", "contact_level": "distant"}
+          ],
+          "organizational_involvement": [
+            {"organization": "New York Pioneer Club", "role": "Member; mentored by Joseph 'Joe' Yancey", "years": "c. 1958-1963"},
+            {"organization": "Olympic Project for Human Rights (OPHR)", "role": "Participant athlete; victory-stand demonstrator", "years": "1968"},
+            {"organization": "USA Olympic Track and Field Team", "role": "200-meter bronze medalist", "years": "1968"},
+            {"organization": "East Texas State University track team", "role": "Lone Star Conference champion contributor", "years": "c. 1966-1967"}
+          ],
+          "unique_access": "Carlos is one of two surviving Black-American athletes who performed the iconic Mexico City salute; he is the only known surviving witness to both the planning meeting with Dr. King and to the twenty-five-minute symbol-building session before the medal ceremony.",
+          "justification": "Carlos's proximity to the Mexico City protest is uniquely valuable: he is one of two surviving Black-American performers of the salute, with direct relationships to King, Edwards, Smith, and Norman. His Harlem childhood under Malcolm X's tutelage and his presence at the SCLC pre-protest meeting make him an exceptional insider witness."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Date of birth: June 5, 1945 (Segment 32, 00:03:51)",
+            "Address: Lenox Avenue between Cotton Club and Savoy Ballroom (Segment 21-22, 00:02:10)",
+            "School of Machine and Metal Trades on 96th Street (Segment 199, 00:26:35)",
+            "Haaren High School on 59th and 10th Avenue (Segment 193, 00:25:42)",
+            "Frederick Douglass / Adam Clayton Powell Sr. High School (Segment 189, 00:25:08)",
+            "32nd Precinct on 135th Street (Segment 136, 00:16:54)",
+            "168th Street Armory (indoor meets, Segment 219, 01:34:00 of running content)",
+            "Bobby Morrow of Abilene Christian won 100 and 200 at 1956 Olympics (Segment 574, 01:14:51)",
+            "Mosque on 116th Street (Segment 430, 00:58:02)",
+            "Hotel Americana 'right across from the old garden' (Segment 630, 01:25:43)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 35,
+            "first_only": 8,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "Born June 5, 1945",
+            "Mexico City Olympics 200-meter bronze medalist (1968)",
+            "Father was a World War I veteran and shoemaker",
+            "Mother emigrated from Cuba at age 17",
+            "Attended East Texas State University on a track scholarship",
+            "Joseph 'Joe' Yancey headed the New York Pioneer Club track program",
+            "Bobby Morrow won 100 and 200 at the 1956 Olympics representing Abilene Christian",
+            "Met Dr. Martin Luther King Jr. at the Hotel Americana with Harry Edwards and Andrew Young",
+            "Peter Norman (Australian) wore an OPHR button on the victory stand"
+          ],
+          "justification": "Carlos provides high specificity on names, schools, addresses, and his own dates. Some opposing-team names, exact East Texas State coach name, and a few transcription-renderings (e.g., 'Dr. Tassel' for the SJSU president) require external verification. Strong verifiable detail throughout."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed account of the twenty-five-minute symbol-building session between the 200m semifinal and the medal ceremony, including the specific provenance of the OPHR button (from Paul Hoffman of the Harvard rowing contingent) given to Peter Norman",
+            "The full content of Carlos's exchange with Dr. King at the Hotel Americana, including the rock-in-a-still-lake parable as King articulated it",
+            "Carlos's account of consulting SJSU's president before refusing to be cast in the Smith-Carlos statue without Peter Norman, and Norman's reasoning for asking to be left out",
+            "Personal narrative of the post-protest financial collapse — wife's suicide, welfare Christmases, the Ron Freeman grocery delivery — which is often elided in the iconic image of the salute",
+            "Detail on Carlos's relationship with Malcolm X (asking to walk with him from the mosque) that is not widely documented",
+            "Carlos was scheduled to be present at the Audubon Ballroom the day Malcolm was killed"
+          ],
+          "understudied_aspects": [
+            "The decade after the Olympics for activist Black athletes (welfare, family disintegration, press reversal)",
+            "The collaborative role of Australian Peter Norman in the salute and his own subsequent suffering",
+            "The specific moments of solidarity from white allies (Terry Burnett at East Texas State, Paul Hoffman at the Olympics)"
+          ],
+          "narrative_complications": "Carlos complicates the dominant single-image narrative of 1968 by giving Peter Norman moral primacy ('I don't think Tommie Smith would have ever did what Peter Norman did'), by attributing the protest's full design to a twenty-five-minute window of improvisation, and by detailing post-protest costs that the iconic photograph obscures.",
+          "historiographical_value": "Historians of athlete activism, the Olympic Project for Human Rights, Cold-War-era civil rights politics, and the Smith-Carlos salute will treat this interview as primary-source corroboration of Edwards's organizational role, of King's late-life pledge to the OPHR, and of the human costs absorbed by the protest's principals. The Peter Norman material is especially important for the Australian historical record.",
+          "justification": "Carlos fills concrete gaps in the historical record: the symbol-by-symbol design of the protest, the SCLC meeting transcript-equivalent, the human aftermath, and the elevated status he gives Peter Norman. The decade-after material is genuinely understudied."
+        },
+        "overall_assessment": "An exceptionally high-value interview. Carlos's proximity to multiple foundational moments (Malcolm X mentorship, SCLC meeting with King, victory-stand protest design, Peter Norman friendship) and his willingness to detail the post-1968 personal cost make this a primary source of the first order for civil-rights historians and Olympic historians alike."
+      },
+      "emotional_resonance": {
+        "total": 23,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "Carlos moves from a Harlem kid who modeled himself on Robin Hood and raided freight trains, through a teenager who learned from Mr. Lester, Mr. Brown, and Joe Yancey that he was 'special' as a runner, to a young man at East Texas State who confronted Jim Crow firsthand, to a 23-year-old Olympian who placed an iconic statement above an individual gold medal — and ultimately to an elder who, at 68, has reconciled himself to the protest's full cost.",
+          "key_turning_points": [
+            "Father's revelation that the swim clubs were closed by skin color (Segment 127, 00:15:16) — the moment Carlos's 'God's law vs. man's law' frame crystallized",
+            "Detectives' identification of him as a runner (Segment 150, 00:19:03) — the redirect from outlaw to athlete",
+            "First time hearing Malcolm X on the radio (Segment 427, 00:57:36) — discovery of a public voice that matched his private feelings",
+            "Walking with Malcolm X between the mosque and his next location (Segment 442-444, 01:00:05) — direct mentorship",
+            "Coach Dunn Brown's hammer assault (Segment 587-588, 01:17:22) — moment that crystallized his decision to leave East Texas",
+            "Dr. King's rock-in-a-still-lake parable at Hotel Americana (Segment 641-645, 01:27:47) — articulation of the protest as nonviolent moral statement",
+            "Twenty-five-minute symbol-construction with Tommie Smith and Peter Norman before the victory stand (Segment 677-685, 01:35:24)",
+            "Hospitalized father's tears reading 'neighborhood bum' headline (Segment 740, 01:41:06) — moment Carlos realized the press machinery could turn his own father against him"
+          ],
+          "before_after_contrast": "Before: Harlem boy hustling for silver dollars, scheming to become first Black Olympic swimmer. After: 'they could never ever put shackles on John Carlos again' (Segment 801, 01:47:12) — a man who has paid for his freedom with his marriage, his family's standard of living, and his media reputation, and who counts himself among Gandhi, King, Robeson, and Mandela.",
+          "inspirational_quality": "Strongly inspirational. The arc from the swim-club color bar to the victory stand to the eighty-foot Sydney mural and elder's reflection is a textbook 'paid the price, kept the conviction' narrative.",
+          "justification": "Carlos articulates multiple specific turning points and gives each its moral weight. The transformation is concrete, hard-won, and explicitly reflected upon. The arc from petty-thief Robin Hood to iconic Olympic protester to elder teacher is unusually complete."
+        },
+        "tension_conflict_triumph": {
+          "score": 8,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "The Coach Dunn Brown hammer attack and Carlos's refusal to retreat",
+              "segment_range": "586-599",
+              "timestamp_range": "01:17:12 - 01:18:47",
+              "stakes": "Physical safety; collegiate career; whether to leave Texas"
+            },
+            {
+              "description": "The Mexico City victory-stand salute itself",
+              "segment_range": "795-803",
+              "timestamp_range": "01:46:20 - 01:47:46",
+              "stakes": "Career, post-Olympic life, family safety, place in the historical record"
+            },
+            {
+              "description": "Carlos's mother attacked while walking home from BWH at night, fighting to keep her purse",
+              "segment_range": "156-158",
+              "timestamp_range": "00:20:00 - 00:20:44",
+              "stakes": "Mother's physical safety; Carlos's later moral framing"
+            },
+            {
+              "description": "Bar in Austin refusing to serve Carlos a beer; two white reporters with him silent",
+              "segment_range": "616-625",
+              "timestamp_range": "01:22:20 - 01:24:53",
+              "stakes": "Dignity; whether Carlos belongs in Texas"
+            },
+            {
+              "description": "Hospitalized father confronting Carlos with the 'neighborhood bum' headline",
+              "segment_range": "733-743",
+              "timestamp_range": "01:40:40 - 01:41:29",
+              "stakes": "Father's understanding of his son; intergenerational trust"
+            }
+          ],
+          "conflict_types": [
+            "Physical danger (hammer attack, mother's mugging)",
+            "Moral/conscientious (whether to boycott; whether to make a statement)",
+            "Institutional (Jim Crow signs, refused service, coach's racism)",
+            "Familial (father weeping, wife's suicide, daughter's playmate withdrawn)",
+            "Press / public reputation (world record celebrated then 'neighborhood bum')"
+          ],
+          "emotional_range": "From boyish wonder (Savoy silver dollars, dreaming of the English Channel) to stunned vulnerability (his father's tears at the headline) to triumphant clarity (the victory stand) to grieving acceptance (wife's suicide, decades-later vindication)",
+          "justification": "Carlos delivers multiple high-stakes dramatic moments with vivid physical and moral peril. The interview has clear emotional peaks and valleys."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Father-son relationship and intergenerational respect",
+            "Mother's sacrifice for her children",
+            "Adolescent desire for identity and meaning",
+            "Conscience versus career",
+            "Cost of standing up for what one believes",
+            "Religious search for purpose",
+            "Mentorship from elders",
+            "Grief and loss after public conflict"
+          ],
+          "relatable_struggles": [
+            "Wanting more than the world has set aside for you (the swim-club bar)",
+            "Choosing between family economic security and the call of conviction",
+            "Watching a parent suffer because of you",
+            "Losing financial stability after a principled stand"
+          ],
+          "human_moments": [
+            "Carlos's father saying 'son, we need to have a talk' before the swim-club truth (Segment 117, 00:14:17)",
+            "Carlos and his father embracing in tears over the headline (Segment 740, 01:41:06)",
+            "Ron Freeman silently arriving with two hours of groceries (Segment 902, 02:04:55)",
+            "Peter Norman, on the phone from Sydney, laughing and saying he had asked to be left out of the statue so others could stand in his place (Segment 717-724, 01:39:23)"
+          ],
+          "connection_points": "Audiences from any background can connect to the parent-child scenes (father telling the swim-club truth, father weeping over the headline), to mentor-student arcs (Malcolm X agreeing 'if you can keep up'), and to the universal cost of moral conviction. The civil-rights particulars are scaffolding for a story that reads as a coming-of-age and a long elder's reflection.",
+          "justification": "Universal themes are robust and the human moments are specific. The protest's particular politics may not translate to all audiences, but the family-and-conscience core is highly relatable."
+        },
+        "overall_assessment": "Carlos delivers an emotionally rich, dramatically structured oral history with strong transformation arc and high-stakes moments. The universal-relatability material is excellent. The narrative's particular political density may add slight friction for general audiences but it deepens the historical value."
+      },
+      "accessibility": {
+        "total": 15,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "moderate",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Carlos uses some Harlem and athlete vernacular that may need contextualization (e.g., 'ain't' constructions, 'how you doing' as rhetorical pivot)",
+            "Improvisational sentence structure occasionally requires the listener to track multi-clause asides",
+            "References to figures like 'rap brown' (H. Rap Brown), 'Stokely' (Stokely Carmichael) are first-name-only and assume listener familiarity",
+            "Transcription artifacts in the corrected SRT (e.g., 'Adolf Adolf Hitler', 'Kareem Abdul-Jabbar Abdul-Jabbar Kareem Abdul-Jabbar Abdul-Jabbar') would not appear in audio but they reflect how the corrected overlay was assembled"
+          ],
+          "justification": "Carlos is articulate and characterful, but his improvisational mid-sentence pivots and Harlem-vernacular rhythm make him work for the general listener. Familiarity with the 1960s civil rights cast list helps."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "uneven",
+          "high_energy_sections": [
+            "The hammer scene and East Texas refusal (Segments 586-599, 01:17:12 - 01:18:47)",
+            "The 116th Street mosque first encounter with Malcolm X (Segments 433-436, 00:58:30 - 00:59:14)",
+            "The construction of the victory-stand symbols (Segments 759-789, 01:42:34 - 01:46:00)",
+            "The hospitalized-father headline scene (Segments 733-743, 01:40:40 - 01:41:29)"
+          ],
+          "slow_sections": [
+            "The extended 2013-era political commentary (Sochi, Putin, Obama) at Segments 281-324 (00:37:35 - 00:42:33) and the train-parable elaboration at Segments 367-388",
+            "Some restatement of the 'troublemakers' theme in the closing"
+          ],
+          "interviewer_impact": "mixed",
+          "attention_sustainability": "Sustainable for ninety minutes to two hours with active interest in civil-rights history; general audiences may need editing.",
+          "justification": "Strong dramatic peaks, slower contemplative valleys. The interviewer occasionally redirects ('let me ask you about influences') but also lets Carlos build the train parable at length, which is rewarded with depth but costs pace."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Athlete activism then and now",
+            "The arc from Marcus Garvey to Malcolm X to Dr. King to the Olympic Project for Human Rights",
+            "White flight and urban heroin epidemic",
+            "Black-allied white solidarity (John Brown, Terry Burnett, Peter Norman, Paul Hoffman)",
+            "Olympic Games as moral platform vs. corporate vehicle",
+            "Press machinery and reputation reversal",
+            "Black presidency and 2010s political backlash"
+          ],
+          "contemporary_relevance": "Carlos explicitly connects 1968 to 2013: Putin's anti-gay stance at Sochi, the Republican party's perceived rollback of civil-rights gains, the role of corporate sponsorship in muzzling athletes. The arc from the 1968 protest to today's debates about NBA and NFL kneelers is implicit but very accessible.",
+          "meaning_making": "Carlos is unusually skilled at narrating 'so what' — he repeatedly contextualizes individual scenes within larger moral arcs (the train parable, the 'man's law vs. God's law' frame, the 'troublemakers' list).",
+          "justification": "Carlos draws strong, explicit connections between his personal experience and the broader Civil Rights Movement, athlete activism, and 2013-era politics. He helps audiences understand the long arc."
+        },
+        "overall_assessment": "Carlos is articulate and connects his story to broader themes effectively, but his improvisational style and Harlem vernacular plus uneven pacing make this best suited to engaged civil-rights audiences rather than casual general listeners. Strong contemporary-relevance bridge-building."
+      }
+    },
+    "overall_assessment": "This is a rare first-person account from one of two surviving Black-American performers of the 1968 Mexico City Olympic Black-Power salute. Carlos delivers vivid scene reconstruction, deep emotional candor about the protest's personal costs, and strong thematic connection from his Harlem childhood through his Malcolm X mentorship to the SCLC meeting with Dr. King and the twenty-five-minute symbol-construction before the victory stand. The interview is uneven in pacing and dense in 2013-era political commentary, but the historical value is exceptional. Carlos elevates Peter Norman to moral centrality, fills gaps about the post-1968 family-cost decade, and offers verifiable testimony of value to multiple historiographies (athlete activism, OPHR, Smith-Carlos statue, King's late-life work, NYC Harlem cultural history).",
+    "key_strengths": [
+      "Exceptional firsthand proximity to multiple foundational moments — Malcolm X mentorship at the 116th Street mosque, the SCLC meeting with Dr. King at the Hotel Americana, and the victory-stand protest itself.",
+      "Deep emotional candor about the personal costs that the iconic image obscures — first wife's suicide, welfare Christmases, the hospitalized father's tears, the press reversal from 'world record' to 'neighborhood bum.'",
+      "Strong thematic articulation — the 'man's law vs. God's law' frame, the train parable, the 'troublemakers' list — that helps general audiences see the connective tissue from 1968 to 2013."
+    ],
+    "key_limitations": [
+      "Improvisational sentence structure and Harlem vernacular plus some first-name-only references (Stokely, Rap, Tommy) reduce accessibility for general audiences without civil-rights background.",
+      "Extended 2013-era political commentary (Putin, Sochi, Obama, Republicans) is rich in moral framing but pulls focus from the historical narrative arc and contributes to uneven pacing."
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Carlos was born June 5, 1945",
+        "status": "supported",
+        "supporting_excerpt": "I was born June 5, 1945. (Segment 32, 00:03:51)",
+        "rationale": "Direct, verbatim attribution in the transcript."
+      },
+      {
+        "claim": "Carlos grew up on Lenox Avenue in Harlem between the Cotton Club and the Savoy Ballroom",
+        "status": "supported",
+        "supporting_excerpt": "We're born and raised on Lenox Avenue, New York. Fortunately for me, I had the great distinction to be raised between the The Cotton Club and the Savoy Ballroom (Segments 21-22, 00:02:10)",
+        "rationale": "Direct statement in transcript."
+      },
+      {
+        "claim": "Carlos's father was a World War I veteran and shoemaker, born in Camden, South Carolina",
+        "status": "supported",
+        "supporting_excerpt": "My dad was born, I would say probably about 60 years after slavery in Camden, SC... My father was a shoemaker. My father was a veteran from the World War I. (Segments 17, 62)",
+        "rationale": "Both facts attested directly."
+      },
+      {
+        "claim": "Carlos's mother was Cuban-born and migrated to the United States at age 17",
+        "status": "supported",
+        "supporting_excerpt": "My mom was born in Cuba, migrated to the United States when she was 17. (Segment 18, 00:01:45)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Fred Astaire gave young Carlos silver dollars in front of the Savoy Ballroom and told him to give the people a good show for the money",
+        "status": "supported",
+        "supporting_excerpt": "I had a coin at a time for particularly youngsters to have a guy named Fred Astaire to come to me... we always gave a good show for the money. (Segments 24-26)",
+        "rationale": "Direct attribution in transcript; preserves Carlos's framing without embellishment."
+      },
+      {
+        "claim": "Two African-American detectives, Mr. Lester and Mr. Brown, of the 32nd Precinct on 135th Street, redirected Carlos toward organized track",
+        "status": "supported",
+        "supporting_excerpt": "We had two detectives in Harlem. I missed the Lester and Mr. Bryant... out of a 32nd precinct right there in 135th Street... [chapter context confirms 'Lester' and 'Brown' as the detectives Carlos walked back with]. (Segments 136-149)",
+        "rationale": "Both detective names and precinct address are attested; the surname rendering varies between 'Bryant' and 'Brown' in the transcript (a transcription wobble), but the role is consistent."
+      },
+      {
+        "claim": "Carlos's father hosted weekend poker games with Jackie Robinson and baseball players",
+        "status": "supported",
+        "supporting_excerpt": "my father used to have the poker game on weekends with baseball players, Jackie Robinson, all those people who didn't even play, they would all come together. (Segment 137)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Joseph 'Joe' Yancey was head of the New York Pioneer Club track program",
+        "status": "supported",
+        "supporting_excerpt": "to call a guy by the name of Joseph 'Joe' Yancey. He was the head master. You might say, of the track program. (Segment 159)",
+        "rationale": "Direct attribution with full canonical name."
+      },
+      {
+        "claim": "Carlos attended Abyssinian Baptist Church and was struck by Adam Clayton Powell Sr.'s resemblance to his father; Adam Clayton Powell Jr. (fair-skinned) preached when his father was ill",
+        "status": "supported",
+        "supporting_excerpt": "we found a church called Abyssinian Baptist Church... we see Adam Clayton Powell Sr. Adam Clayton Powell Sr look like my father. (Segment 395-396) ... Adam Clayton Powell Jr.... putting on the road. (Segment 400) ... That's his son. That's Adam Clayton Powell Adam Clayton Powell Sr. (Segment 401)",
+        "rationale": "Transcript clearly identifies both Powells; the corrected overlay's name duplications ('Adam Clayton Powell Adam Clayton Powell Sr') are transcription artifacts but the content is unambiguous."
+      },
+      {
+        "claim": "Carlos studied directly under Malcolm X at the 116th Street mosque and asked permission to walk with him",
+        "status": "supported",
+        "supporting_excerpt": "Malcolm X. Name Malcolm X... he was coming to head the mosque on a hundred and sixteen street... I waited around and I said, tell him I said, Miss Dex [Mr. X], is that possible? I can go with you from this location to your next location. (Segments 429-442)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Carlos was scheduled to be at the Audubon Ballroom the day Malcolm X was assassinated but had gone with track teammates toward Bear Mountain to get his driver's license",
+        "status": "supported",
+        "supporting_excerpt": "I was supposed to be there that Sunday. And we decided, me and some of the guys that was with machine metal trades on the track team that I was going to go try and get my driver's license that Monday. And we took a road trip and drove up the Buffalo New York, not Buffalo, but a beer mountain [Bear Mountain]. And we passed by West Point. And just as we passed by West Point, it came on the news that Malcolm X was shot. (Segments 445-446)",
+        "rationale": "Direct attribution. 'Beer mountain' is a transcription rendering of 'Bear Mountain.'"
+      },
+      {
+        "claim": "Carlos was recruited to East Texas State University by Pete Peterson",
+        "status": "supported",
+        "supporting_excerpt": "It was a guy named Pete Peterson, I think. He was a student at East Texas State University... And he said, man, you think about going to college? (Segments 489-491)",
+        "rationale": "Direct attribution. Carlos hedges with 'I think' on the first name."
+      },
+      {
+        "claim": "Carlos landed at Dallas-Fort Worth Airport and saw 'White's Only' and 'Colored' restroom signs near a bronze Texas Ranger statue",
+        "status": "supported",
+        "supporting_excerpt": "when I landed in Dallas, Fort Worth... I remember seeing the bronze statue, the Texas Ranger statue bronze statue in there... I saw a sign say, white's only. It was the restroom. And then I saw another sign say colors [Colored]. (Segments 543-547)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Bobby Morrow of Abilene Christian won the 100 and 200 at the 1956 Olympics, and Carlos's coach was retracted after saying Carlos was 'as great as Bobby Morrow'",
+        "status": "partially_supported",
+        "supporting_excerpt": "Now Bobby Morrow is a great sprinter, one in 1956, Olympics, 100 and 200. And he's out of the Abilene Christian... John Coloss is as great as Bobby Morrow... The next day he got a retracting statement. (Segments 574-577)",
+        "rationale": "The transcript supports the 100 and 200 attribution but the historical record indicates Morrow also won the 4x100 relay; Carlos's two-event framing is therefore partial. The retraction story is supported by the transcript."
+      },
+      {
+        "claim": "Coach Dunn Brown (East Texas State) attacked Carlos with a hammer and used the n-word",
+        "status": "partially_supported",
+        "supporting_excerpt": "he picks up a hammer. And he started walking towards me and tell me, nigga, I'm tired of you. (Segment 587)",
+        "rationale": "Hammer attack and slur are directly attested. The coach's first name 'Dunn' is inferred from the transcript's variable rendering ('dumb brown' / 'dumb' / 'dummy'), which appears to be a transcription artifact of 'Dunn Brown' or 'Don Brown.' Surname 'Brown' is consistently rendered."
+      },
+      {
+        "claim": "Teammate Terry Burnett (white) at East Texas State convinced Carlos to stay long enough to win the Lone Star Conference championship",
+        "status": "supported",
+        "supporting_excerpt": "It's a fellow that I, I can say, I'll be friend of him. He'd be friend of me and made me comfortable with. I never fell about a name, but Terry Barnett [Burnett] White fellow. (Segment 578) ... but man, you know, we made a commitment. We made a bond. And the bond was to win the long star championship. (Segment 610)",
+        "rationale": "Direct attribution; transcript renders the surname as 'Barnett/Burnett' (variable)."
+      },
+      {
+        "claim": "Carlos met Dr. Martin Luther King Jr. at the Hotel Americana with Dr. Harry Edwards and Andrew Young of SCLC; King pledged to serve as second-in-command of the Olympic Project for Human Rights under Edwards after returning from Memphis",
+        "status": "supported",
+        "supporting_excerpt": "I remember going down to the Marricana [Americana] Hotel, right across from the old garden... I believe was Andrew Young that came in open the door... He said that he didn't want to be the number one figure for the Olympic boycott. He wanted Dr. Dr. Harry Edwards to do that, but he wanted to be second in command. And when he come back from Memphis, he's going to go full blown. (Segments 630-634, 462-464)",
+        "rationale": "Direct attribution. 'Marricana' is the transcript's rendering of 'Americana.' The corrected overlay's 'Dr. Dr. Harry Edwards' duplication is a transcription artifact."
+      },
+      {
+        "claim": "Harry Edwards and Ken Noel were the OPHR organizers",
+        "status": "supported",
+        "supporting_excerpt": "The Dr. Dr. Harry Edwards, Professor Dr. Dr. Harry Edwards was the organiser he had ever felt about a name of Ken Noel. They were the organiser for the potential Olympic boycott of the 1960 [1968] Olympics. (Segment 468-469)",
+        "rationale": "Direct attribution. The transcript's '1960 Olympics' is a transcription error for '1968 Olympics' (context makes 1968 unambiguous)."
+      },
+      {
+        "claim": "Australian Peter Norman won silver and wore an Olympic Project for Human Rights button supplied by Paul Hoffman of the Harvard rowing contingent",
+        "status": "partially_supported",
+        "supporting_excerpt": "I asked Peter, I said, man, do you believe in human rights?... I said, would you like to wear OPHR button? (Segments 680-681) ... we had some white guys from Harvard University, Rose. And one of them was Paul Hoffman. And I asked Paul Hoffman to throw down a button to me. (Segment 683)",
+        "rationale": "Norman's silver medal, OPHR button, and Hoffman as the source are all directly attested. The 'Harvard rowing contingent' framing is a normalization of the transcript's 'Harvard University, Rose' (which appears to be a corrupted rendering, possibly of 'rowers' or 'crew' — historical record confirms Hoffman was a Harvard crew member, so the inference is reasonable but is a partial interpretive extension)."
+      },
+      {
+        "claim": "Carlos's first wife took her own life after Mexico City",
+        "status": "supported",
+        "supporting_excerpt": "the fact that my wife, my first wife couldn't take it and took her life. (Segment 849)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "A partner named Ron Freeman silently delivered bags of groceries when Carlos had no food in the house",
+        "status": "partially_supported",
+        "supporting_excerpt": "I never had groceries in my house at one time and thank God I had one partner named Ron Freeman at Canaan Miles. Didn't say a word. Just look and sort. And the next, you know, he come back miles two hours later with bags of groceries. (Segments 901-902)",
+        "rationale": "Ron Freeman is named directly. The phrase 'at Canaan Miles' is a transcription artifact (possibly 'at Cal-en-Miles' or a school affiliation); main_summary's 'Ron Freeman of UCLA' is an over-attribution and should be softened. Ron Freeman is historically attested as an Olympic 4x400m gold and 400m bronze medalist."
+      },
+      {
+        "claim": "The San Jose State University Smith-Carlos statue was planned without Peter Norman's likeness; Carlos called Norman from SJSU's president's office and Norman said he had asked to be left out so visitors could stand in his place",
+        "status": "supported",
+        "supporting_excerpt": "I went to the president, Dr. Tassel at the time. And I said, it's a done... I need to call Peter Norman in Sydney... He said, I didn't do what you guys did. He said, I support you with you guys did. (Segments 710-720)",
+        "rationale": "Direct attribution. 'Dr. Tassel' is the transcript's rendering of the SJSU president's name (likely Don Kassing, who was SJSU president at the time of the 2005 statue installation); the rendered name should be qualified."
+      },
+      {
+        "claim": "Carlos counts himself among 'troublemakers' including Mahatma Gandhi, Dr. Martin Luther King, Paul Robeson, Nelson Mandela, and Jesus Christ",
+        "status": "supported",
+        "supporting_excerpt": "I found Mahatma Gandhi for the trouble maker. I found Martin Luther King, a trouble maker. I found Paul Robeson, a trouble maker. I found Nelson Mandela, a trouble maker. I found Jesus Christ, a trouble maker. But I found at the same time that John Coles[/Carlos] and damn good company to be a trouble maker with those individuals. (Segments 747-751)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Approximately 2,000 students were killed at Tlatelolco Square ten days before the 1968 Mexico City Games",
+        "status": "partially_supported",
+        "supporting_excerpt": "my estimation was like close to 2000 students. They just gunned them down in the square... close to the 2,300 people and my estimation had lost their lives as a result of this. (Segments 805-811)",
+        "rationale": "Carlos directly attests the figure as his estimation. Historical estimates of the Tlatelolco death toll vary widely from several hundred to several thousand; Carlos's figure is one of the higher estimates. Summary preserves it as his testimony, not as fact-checked figure."
+      },
+      {
+        "claim": "George Foreman waved the American flag in Mexico City and was later painted by press as an enemy of Carlos",
+        "status": "supported",
+        "supporting_excerpt": "George Foreman. They tried and put it divided because George weighed [waved] the American flag and ran around and they tried making like, I hate George. George hate me for what I stood for. And I was so far from the truth. (Segments 820-822)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "An eighty-foot mural of Carlos is painted at Sydney Olympic Park (Sydney Olympic Games venue) and is visible from the train",
+        "status": "supported",
+        "supporting_excerpt": "they got an 80 foot wall, which you were in that wall. And everybody that goes into that stadium and everybody leaves that state of my everybody drives by on the train, see that 80 foot picture of you. (Segment 844)",
+        "rationale": "Direct attribution. Summary's identification of the venue as 'Sydney Olympic Park' is an interpretive normalization of 'send those they stay' (likely a corrupted rendering)."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 26,
+      "supported": 21,
+      "partially_supported": 5,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_below_90_AND_citation_blocked_5_partial",
+    "rationale": "The main summary scores 87 accuracy / 88 quality — both below the Smithsonian 90/90 publication threshold. The citation audit identifies 5 partially-supported claims (Bobby Morrow's 1956 medals listing as 2 vs. actual 3; Coach Dunn Brown's exact first name being a transcription inference; Paul Hoffman's 'Harvard rowing' attribution being interpretive normalization of the transcript's 'Harvard University, Rose'; Ron Freeman's 'UCLA' affiliation in the summary over-attributing the transcript's 'at Canaan Miles' rendering; and Carlos's Tlatelolco estimate being preserved as his testimony rather than verified). All 26 audited claims are supported or partially supported, with zero unsupported — but per the fail-closed gate definition, any partial-support claims block publication. The transcript is a high-value primary source and the summary is well-grounded, but the corrected-overlay transcription artifacts and a few interpretive normalizations require human-reviewer disambiguation before Smithsonian-grade publication. Specific human-review actions: (1) verify the exact spelling of Carlos's East Texas State coach against contemporary track records, (2) verify the SJSU president name 'Dr. Tassel' against the 2005 statue-installation record (likely Don Kassing), (3) verify Paul Hoffman's exact Harvard team affiliation (crew/rowing is the historical consensus but the transcript does not state it directly), (4) confirm Ron Freeman's school affiliation and the transcript's 'Canaan Miles' rendering, (5) decide whether to preserve Carlos's 2,000 Tlatelolco estimate as testimony or add a contextual note about historiographic estimates."
+  }
+}

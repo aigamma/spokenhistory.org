@@ -1,0 +1,1225 @@
+{
+  "interview_name": "Barbara Henry Adell Vickers",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Barbara Edna Vickers_interview_20250704_173548\\Barbara Edna Vickers_interview_transcript_20250704_173548.srt",
+  "processed_at": "2026-05-24T21:18:56Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Barbara Henry Adell Vickers",
+    "interviewee_title": "St. Augustine Civil Rights Foot Soldier; President, St. Augustine Foot Soldiers Monument committee",
+    "interview_date": "2011-09-13",
+    "interview_location": "Bayfront Inn, St. Augustine, Florida",
+    "interviewer_name": "Joseph Mosnier",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill (for the Civil Rights History Project)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:59:16"
+  },
+  "main_summary": {
+    "summary": "Barbara Henry Adell Vickers describes growing up in St. Augustine, Florida, attending the parochial St. Benedict's Catholic school and then Excelsior High School, the only Black high school in the city. She recounts that both of her parents did hotel work in town, her mother as a waitress at what was then the Monson Motor Lodge and her father as a head waiter (\"matrede,\" maitre d') at the Bennett Hotel. After graduating from Excelsior, she left St. Augustine for New York and then Seattle, working as a tack welder in shipyards during World War II, motivated by her exhaustion with the racial segregation she had grown up with -- being made to step off sidewalks for white pedestrians and to wait at the back of grocery-store lines whenever a white customer entered.\n\nVickers returned to St. Augustine in the late 1950s after marrying her husband, who she names as Adell Vickers, a St. Augustine man and a bellhop. Soon after she came back, the city's civil rights movement intensified under Dr. Robert B. Hayling, who lived across the street from her on Scott Street. After Dr. Martin Luther King Jr. visited St. Augustine and Hayling asked for volunteers in church, King personally called on Vickers from the pulpit to participate, which began her direct involvement in the kneel-ins, sit-ins, and swim-ins. She describes the network of \"the Scott Street eleven\" households that coordinated to warn each other when the Klan drove through, including diving behind refrigerators when shots were fired low; the night that Hayling's home was shot into and his dog Madonna (a boxer) was killed; the trip to Tallahassee to meet the governor about violence in St. Augustine; and being stopped by an officer who threatened to arrest her for carrying a tire-changing wrench in her trunk. She also recounts her own kneel-in at Grace Methodist Church, where an insurance man she knew planted his foot menacingly beside her, leading her to drop her Metropolitan Life policy the next day. She worked as a beautician out of her home throughout the period; her husband Adell Vickers was a gambler and later took a job as recreation director at the Recreation Center, a position arranged by her former high school basketball coach Solomon Calhoun.\n\nThe second half of the interview focuses on her decade-long campaign to build a Foot Soldiers monument in St. Augustine's central plaza, honoring the ordinary participants in the local movement. She recounts being told by Dr. Hayling and others that she should accept a plaque or marker, but insisting on a monument; persuading Council on Aging director Kathy Brown to back the effort; receiving an unsolicited $20,000 commitment from Janie Price (\"Slating Nina\") that allowed the sculptor to begin; a single fundraising evening at attorney Patrick Canan's office, brokered by Phil McDaniel, that raised $24,000 through invitations to local white residents; a grant from UPS arranged through her grandson; and Hank Thomas (the Freedom Rider) giving a sizable donation. She notes with regret that most of the major donations came from white residents and that only one Black church in St. Augustine contributed. The total project budget was approximately seventy thousand dollars. She also describes the relationship of city government to the monument: the city did not contribute funds to the sculpture itself but later paid for the surrounding walkway and footsteps installation. She closes by reflecting that the work to memorialize the foot soldiers has changed her view of white people and that, at 88, she is still ready to do more.",
+    "key_themes": [
+      "Everyday segregation in pre-1960s St. Augustine",
+      "Black women's labor in the hospitality economy of the Florida coast",
+      "Migration north (New York, Seattle) and wartime shipyard work",
+      "Local civil rights organizing under Dr. Robert B. Hayling",
+      "Klan violence, household self-defense networks, and the Scott Street eleven",
+      "Memorialization and the politics of public monuments to ordinary movement participants",
+      "Cross-racial coalitions in late-career civic work"
+    ],
+    "historical_significance": "Vickers' testimony documents the lived experience of an ordinary participant in the St. Augustine, Florida civil rights campaign of 1963-64, a campaign that is best known through its leadership figures (Hayling, King) and its set-piece events (Monson Motor Lodge, the acid-in-the-pool photograph) rather than through the foot soldiers who sustained it. Her account of the Scott Street eleven, the cooked meals for the men guarding Hayling's house, the kneel-in at Grace Methodist Church, and the long arc of building the Foot Soldiers monument fills gaps in the public-facing history of the campaign and in the post-movement work of constructing local civil-rights memory. It also documents the specific micro-economy of Black hotel labor in St. Augustine in the 1930s-40s and the experience of a Black woman wartime welder in Seattle and New York shipyards.",
+    "quality_metrics": {
+      "accuracy_score": 84,
+      "quality_score": 86,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 25,
+      "accuracy_component_c": 24,
+      "quality_component_a": 35,
+      "quality_component_b": 18,
+      "quality_component_c": 18,
+      "quality_component_d": 15,
+      "errors": [
+        "The summary attributes the name 'Janie Price' to the donor introduced in the transcript as 'Slating Nina Verilam' (segment 264). This is an inference -- the transcript audio appears to garble her actual name and the summary should not invent a canonical replacement. Demoting this attribution.",
+        "The summary names Dr. Hayling's killed dog as 'Madonna (a boxer)'; the transcript says he was 'crazy about that dog because at night, when he would come home, he would walk Madonna' and earlier mentions 'they shot Dr. Stolz, Madonna, and the boxer' (segment 127) -- the phrasing in the transcript is ambiguous as to whether Madonna and the boxer are the same dog or two animals. The summary collapses this, which is a partial interpretive overreach.",
+        "The summary identifies the husband as 'Adell Vickers' based on segments where she addresses him as 'Adell Vickers'; however, the transcript at segment 83 reads '80 Bickers' (ASR garble) for what is contextually her husband's name. The husband's full canonical name should be treated as uncertain; the summary should not assert it with confidence."
+      ],
+      "improvements": [
+        "Replace 'Janie Price' with 'a local donor (transcript renders her name as Slating Nina Verilam, likely ASR-garbled)' to avoid invented canonical attribution.",
+        "Disambiguate the Madonna/boxer reference -- either treat them as two separate animals or flag the ambiguity, rather than asserting Madonna was a boxer.",
+        "Treat the husband's name as 'her husband (referred to throughout as Adell Vickers)' without asserting it as canonical, since the ASR audit has not been independently verified for this transcript."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:32,000",
+      "title": "Interview Opening and Introductions",
+      "summary": "Joseph Mosnier of the Southern Oral History Program at UNC Chapel Hill opens the recording on Tuesday, September 13, 2011, at the Bayfront Inn in St. Augustine, Florida, with videographer John Bishop. He notes that Dr. Robert B. Hayling, also a series interviewee, is present in the room, and introduces the interviewee as Mrs. Barbara Henry Adell Vickers. He frames the interview as covering the movement history of St. Augustine through the present, including the planned monument.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "civil rights history project",
+        "joseph mosnier",
+        "library of congress",
+        "smithsonian nmaahc",
+        "st. augustine",
+        "robert b. hayling",
+        "monument"
+      ],
+      "related_events": [
+        "Civil Rights History Project",
+        "Library of Congress",
+        "Smithsonian National Museum of African American History and Culture",
+        "Robert B. Hayling",
+        "Southern Oral History Program (UNC Chapel Hill)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 92,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note explicitly that the Civil Rights History Project is a joint LOC/NMAAHC undertaking, as Mosnier states in segment 9."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:01:32,000",
+      "end_time": "00:04:36,000",
+      "title": "Childhood, Schooling, and Hotel-Working Family",
+      "summary": "Vickers describes her childhood in St. Augustine, attending the parochial St. Benedict's Catholic school through eighth grade and then Excelsior High School, the only Black high school in the city, from which she graduated. She recounts her parents' hotel work: her mother as a waitress at the Monson Motor Lodge and her father as a head waiter (a 'matrede,' or maitre d') at the Bennett Hotel, where he was the only one in the family with a car (which he called 'Rippy'); the other women in the family rode bikes to and from work even in the rain. Vickers describes the morning and evening uniforms her mother wore and recalls that her mother, her grandmother, and her aunt all worked at the same hotel. She also notes her two younger sisters, nine years and nineteen years her junior.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "st. augustine",
+        "st. benedict catholic school",
+        "excelsior high school",
+        "monson motor lodge",
+        "bennett hotel",
+        "hotel work",
+        "family"
+      ],
+      "related_events": [
+        "Excelsior High School (St. Augustine)",
+        "St. Benedict the Moor Catholic School",
+        "Monson Motor Lodge",
+        "Bennett Hotel"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 91,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [
+          "The transcript at segment 23 garbles graduation year ('nineteen forty two, thirty eight, thirty nine from the Royal School') -- the summary correctly avoids asserting a specific year."
+        ],
+        "improvements": [
+          "Could explicitly name the period detail about Excelsior being the only Black high school as a marker of the city's segregated school system."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:04:36,000",
+      "end_time": "00:07:35,000",
+      "title": "Leaving St. Augustine for the North and Wartime Shipyard Work",
+      "summary": "Vickers explains why she left St. Augustine after high school in 1942: it was a 'racist, racist town' where Black customers had to wait at the back of grocery-store lines when white customers came in and where she had to step off sidewalks because white people would spread out and refuse to move. She moved to New York for about four years, then trained as a tack welder during the war and worked on ships. She describes being one of the few Black workers among 'all white men on the ship,' greeting them with 'my little southern ball, good morning' each day until she had won them over. She did factory work in New York before the welding.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "great migration",
+        "new york",
+        "world war ii",
+        "shipyard work",
+        "tack welder",
+        "segregation",
+        "racism"
+      ],
+      "related_events": [
+        "World War II shipyard labor (women and Black workers)",
+        "Great Migration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 89,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note that she chose Northern work specifically to escape sidewalk segregation and back-of-the-line grocery practices, which she names directly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:07:35,000",
+      "end_time": "00:10:34,000",
+      "title": "Seattle, Boeing, and the Train to the West Coast",
+      "summary": "Vickers describes leaving New York for Seattle, where she expected to continue welding at Boeing Aircraft but was instead used as a mechanic's helper. She worked the graveyard shift because she did not like waking up early. She narrates a story about persuading her girlfriend Corine to come with her to Seattle; Corine missed the train, and Vickers wept on the train alone until a telegram in Chicago instructed her to wait there. She rode the Chicago L for the first time while waiting, then continued with Corine to Seattle.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "seattle",
+        "boeing",
+        "graveyard shift",
+        "chicago",
+        "the l",
+        "great migration"
+      ],
+      "related_events": [
+        "Boeing Aircraft (Seattle)",
+        "Wartime shipyard labor"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could note the personal-anecdote nature of this chapter as a counterpoint to the policy-driven civil rights chapters."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:10:34,000",
+      "end_time": "00:12:17,000",
+      "title": "Marriage and Return to St. Augustine",
+      "summary": "Vickers describes meeting and marrying her husband, whom she addresses throughout the interview as Adell Vickers, a St. Augustine bellhop she had been dating off and on while she lived in New Jersey. After they married, he insisted on returning to St. Augustine; she resisted but gave in after a week. She returned in the late 1950s, and shortly after, the St. Augustine civil rights movement under Dr. Robert B. Hayling was underway.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "marriage",
+        "st. augustine",
+        "bellhop",
+        "adell vickers",
+        "robert b. hayling",
+        "late 1950s"
+      ],
+      "related_events": [
+        "St. Augustine Movement",
+        "Robert B. Hayling"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [
+          "Husband's name is rendered in the transcript with ASR garble ('80 Bickers' at segment 83); the summary uses 'Adell Vickers' as a working canonical form based on how she addresses him later -- this is an inference, not a direct read."
+        ],
+        "improvements": [
+          "Flag the husband's name as inferred from address forms rather than asserted as canonical."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:12:17,000",
+      "end_time": "00:15:42,000",
+      "title": "Recruitment by Dr. King and Joining the Kneel-Ins",
+      "summary": "Vickers recounts that Dr. Robert B. Hayling was her neighbor, living across the street on Scott Street. She attended his rallies and meetings, and when Dr. Martin Luther King Jr. came to St. Augustine and Hayling asked from the pulpit for people to go to the churches, King looked directly at her and asked 'young lady, will you go?' She agreed, despite her surprise. After her first kneel-in failed, she went home to report, but Hayling sent her to another church. She also describes the 'Scott Street eleven' -- eleven households on Scott Street, each with a particular role in supporting the kneel-ins, sit-ins, and swim-ins -- and Julia Conway (Purcell Conway's mother) organizing the women to protect Hayling, while the 'West Side Boys' stationed themselves in trees around Hayling's house. The neighborhood network warned each other when the Klan drove through, and people would dive behind refrigerators when shots came in low.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "kneel-ins",
+        "sit-ins",
+        "swim-ins",
+        "robert b. hayling",
+        "martin luther king jr.",
+        "scott street eleven",
+        "julia conway",
+        "ku klux klan"
+      ],
+      "related_events": [
+        "Martin Luther King Jr.",
+        "Robert B. Hayling",
+        "Ku Klux Klan",
+        "St. Augustine kneel-ins",
+        "St. Augustine swim-ins"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 90,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 19,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could note that 'kneel-ins' specifically targeted segregated white churches and were a less-documented protest tactic than sit-ins."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:15:42,000",
+      "end_time": "00:19:08,000",
+      "title": "The Shooting at Hayling's Home and the Killing of Madonna",
+      "summary": "Vickers describes the night that gunshots were fired into Dr. Hayling's home: the men who had been guarding the house had reportedly gone to sleep, and the shots killed his dog, identified in the transcript as Madonna (and separately as 'the boxer' -- the transcript at segment 127 is ambiguous as to whether Madonna and the boxer are the same animal). She recounts coming home to find an officer in the middle of Scott Street blocking entry; her friend Julia Conway brought a chair out for the officer (whom she nicknamed 'Fatso') because he looked unwell. After the shooting, Hayling sent his daughters to Tallahassee, and the next-door neighbor offered to keep them. His pregnant wife had been on the sofa when the bullets came through. Vickers also recounts an episode in which Hayling, after picking her up at 3 a.m. from her sick aunt's home, insisted on stopping downtown to make his night deposit -- and she never rode with him again.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "shooting",
+        "robert b. hayling",
+        "scott street",
+        "madonna",
+        "boxer",
+        "klan violence",
+        "julia conway",
+        "police"
+      ],
+      "related_events": [
+        "Robert B. Hayling",
+        "Ku Klux Klan",
+        "St. Augustine Movement"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [
+          "The transcript phrasing at segment 127 ('they shot Dr. Stolz, Madonna, and the boxer') is ambiguous about whether Madonna and the boxer are the same dog; the summary acknowledges this ambiguity rather than asserting a single reading."
+        ],
+        "improvements": [
+          "Could verify against external Hayling sources (e.g., Colburn 1985) whether Madonna was the dog's name and a boxer was the breed; that disambiguation is not in this transcript."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:19:08,000",
+      "end_time": "00:21:20,000",
+      "title": "Trip to Tallahassee and Work as a Beautician",
+      "summary": "Vickers recounts a trip with Hayling and others to Tallahassee to meet the governor about violence in St. Augustine, including being run off the road on the way to Butler's Beach as a form of intimidation; the meeting did not produce much immediate change. She describes her own work as a beautician operating a salon out of her home (under a permit allowing this), and explains that her husband worked at a drive-in movie theater and was a gambler who consistently produced enough money to pay the bills.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "tallahassee",
+        "governor",
+        "butler's beach",
+        "intimidation",
+        "beautician",
+        "home salon"
+      ],
+      "related_events": [
+        "Robert B. Hayling",
+        "Butler's Beach"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 84,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 33,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 16,
+        "errors": [],
+        "improvements": [
+          "Could expand the Butler's Beach detail -- it was a Black beach during segregation and the intimidation incident sits in that context."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:21:20,000",
+      "end_time": "00:26:02,000",
+      "title": "Solomon Calhoun, the Recreation Center, and Surviving the Tension",
+      "summary": "Vickers describes how Solomon Calhoun, her former high school basketball coach, secured her husband a job as recreation director at the Recreation Center, where he became a father figure to local kids and would buy them shoes so they could play softball. She also describes how she managed through the stress of the movement period: she hung blankets over her shop windows so the light could not be seen from outside, and most customers were afraid to come. She recounts being stopped by an officer who searched her trunk, found her tire-changing wrench (the 'tire red,' i.e., tire iron), and threatened to arrest her for carrying a weapon. She says she kept going to meetings every night because she 'had a drive that I had to be there' -- particularly after King had come to St. Augustine the second time and Hayling had asked her to participate.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "solomon calhoun",
+        "recreation center",
+        "beautician",
+        "police harassment",
+        "tire iron",
+        "fear",
+        "movement participation"
+      ],
+      "related_events": [
+        "Solomon Calhoun",
+        "Robert B. Hayling",
+        "Martin Luther King Jr."
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could note that Solomon Calhoun has a building named after him in St. Augustine, which Vickers mentions explicitly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:26:02,000",
+      "end_time": "00:30:00,000",
+      "title": "Family Pressure, Daily Indignities, and Refusing Housework",
+      "summary": "Vickers recounts arguments with her grandmother and mother, who feared she would be killed and who said that white people would never let Black customers eat with them; she replied that the goal was not eating with whites but the freedom to pay and be served at the front door rather than the back. She describes the smaller indignities that drove her never to do domestic housework: having to go around to the back door to pick up a newspaper from the front porch. She notes she did factory work in New York rather than housework, and contrasts her own response with that of her two sisters, one of whom was at Bethune-Cookman College in Daytona during the movement years and did not participate.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "everyday segregation",
+        "family disagreement",
+        "back-door rules",
+        "domestic work",
+        "bethune-cookman college",
+        "daytona"
+      ],
+      "related_events": [
+        "Bethune-Cookman College"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could foreground the 'we don't want to eat with them, we want to be free' framing as a notable formulation of her movement consciousness."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:30:00,000",
+      "end_time": "00:34:50,000",
+      "title": "Mrs. Hayling, Meeting Dr. King, and Reverend Abernathy",
+      "summary": "Vickers describes Mrs. Hayling as 'a very quiet person' who stayed mostly inside with her two daughters, occasionally bringing them across the street to have their hair done; she recalls running into Mrs. Hayling in Fort Lauderdale at Christmas, where Mrs. Hayling crossed the street to avoid them until Vickers called out to her. She also recounts the time she missed meeting Dr. King during his first visit -- she had to attend a beauticians' convention in Daytona as president of the beautician association, and sent Queenie Mitchell McCall in her place ('he wasn't really famous then'). She finally met King at First Baptist Church (having arrived too late for St. Paul AME, where there was no room), after Reverend Abernathy had spoken. She describes King's hands as 'just like cotton, it's a soft thing,' and notes the reputation that King never forgot a name.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "mrs. hayling",
+        "martin luther king jr.",
+        "ralph abernathy",
+        "first baptist church",
+        "st. paul ame church",
+        "beauticians association",
+        "queenie mitchell mccall"
+      ],
+      "related_events": [
+        "Martin Luther King Jr.",
+        "Ralph Abernathy",
+        "Robert B. Hayling",
+        "First Baptist Church (St. Augustine)",
+        "St. Paul AME Church (St. Augustine)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "The transcript at segment 222 says 'St. Paul Church'; the summary identifies it as St. Paul AME -- that is the historically documented St. Augustine Black church but should be flagged as inferential."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "00:34:50,000",
+      "end_time": "00:39:04,000",
+      "title": "The Grace Methodist Kneel-In and the Conception of the Monument",
+      "summary": "Vickers describes a kneel-in at Grace Methodist Church where an insurance man she paid weekly through Metropolitan Life planted his large foot beside her menacingly while she knelt; the next day, when he came to her door, she told him not to come back, and she dropped the policy. She frames this kind of resistance as ordinary for the time. She then explains that the idea of a monument came to her about ten years before this interview (i.e., circa 2001), as other groups in St. Augustine were proposing a monument -- though theirs would have honored King, not the foot soldiers. She insisted on a foot soldiers monument: 'they couldn't have done it alone. They needed everybody who participated. And they put their lives on the line.'",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "grace methodist church",
+        "kneel-in",
+        "metropolitan life",
+        "insurance",
+        "monument",
+        "foot soldiers"
+      ],
+      "related_events": [
+        "Grace Methodist Church (St. Augustine)",
+        "Foot Soldiers Monument (St. Augustine)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could note the circa-2001 dating (10 years before this 2011 interview) more explicitly."
+        ]
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "00:39:04,000",
+      "end_time": "00:47:18,000",
+      "title": "Fundraising the Monument: Council on Aging, the $20,000 Pledge, and the McDaniel-Canan Dinner",
+      "summary": "Vickers describes the organizational path of the Foot Soldiers monument: she pitched the idea to Kathy Brown, director of the Council on Aging in St. Augustine, who told her she would get more participation if she did a King monument but agreed to support the foot soldiers concept. The committee formed under the Mayor's Senior Advisory Committee, then went on to obtain 501(c) status. A donor referred to in the transcript as 'Slating Nina Verilam' (which appears to be an ASR garble of the donor's actual name) called and pledged $20,000 to get the sculptor started. Vickers' grandson, who worked for UPS, obtained a grant of about $7,400 from UPS through volunteer-hours channels. Then Phil McDaniel told her she was 'almost there' and brokered a single fundraising evening at the law office of Patrick Canan, where Vickers told the civil rights story to invited guests at $100 a head; Del Kahn played music and Freddie Thompson (who had been under the hedges with Vickers the night Andy Young was beaten) spoke. The evening raised $24,000. The total project budget came to approximately $70,000. She expresses sadness that only one Black church in St. Augustine contributed ($100, from 'the poor church') and that the American Legion only contributed after Phil McDaniel invited them.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "council on aging",
+        "kathy brown",
+        "501(c)",
+        "phil mcdaniel",
+        "patrick canan",
+        "ups grant",
+        "del kahn",
+        "freddie thompson",
+        "andrew young",
+        "american legion"
+      ],
+      "related_events": [
+        "Foot Soldiers Monument (St. Augustine)",
+        "Council on Aging (St. Augustine)",
+        "Andrew Young",
+        "American Legion"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 82,
+        "quality_score": 87,
+        "accuracy_component_a": 31,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 16,
+        "errors": [
+          "The donor name 'Slating Nina Verilam' (segment 264) is almost certainly ASR garble; the summary correctly flags it as such rather than asserting a corrected canonical form."
+        ],
+        "improvements": [
+          "Note that Freddie Thompson's account places Andy Young's beating in the hedges near where Vickers also took cover -- this is a primary-source moment worth highlighting; the Andy Young beating in St. Augustine is well-documented (June 9, 1964) but Vickers' direct testimony of being in the hedges is rare."
+        ]
+      }
+    },
+    {
+      "chapter_number": 14,
+      "start_time": "00:47:18,000",
+      "end_time": "00:54:43,000",
+      "title": "The City Commission, Other Monument Groups, and the Unveiling",
+      "summary": "Vickers describes how the project navigated the City Commission: two other groups had previously proposed a monument and were feuding, and the Commission told them to work together. Vickers tried to merge with the second group but found her committee's donors uncomfortable with the arrangement, so she split off with Kathy Brown to pursue the foot soldiers monument independently. The city did not contribute money to the sculpture itself; City Commissioner Earl Jones (whom Mosnier confirms on tape as African American) had pledged $5,000 of allotted funds, which the city ultimately used for prep work rather than as a direct grant. The city later paid for the surrounding walkway and the footsteps installation. Most major donations came from white residents -- Phil McDaniel, Patrick Canan, the lawyers Canan gathered -- with Hank Thomas (the Freedom Rider) also giving a sizable donation. She describes herself as exhausted at the unveiling, simply waving her hand when called to speak; Dr. Hayling is observed on tape crediting her with strong organization and refusal to take no.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "city commission",
+        "earl jones",
+        "monument unveiling",
+        "phil mcdaniel",
+        "patrick canan",
+        "hank thomas",
+        "foot soldiers monument",
+        "robert b. hayling"
+      ],
+      "related_events": [
+        "Foot Soldiers Monument (St. Augustine)",
+        "St. Augustine City Commission",
+        "Hank Thomas (Freedom Rider)",
+        "Robert B. Hayling"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 18,
+        "quality_component_c": 17,
+        "quality_component_d": 17,
+        "errors": [],
+        "improvements": [
+          "Could specify that Hank Thomas is the documented Freedom Rider associated with the May 1961 Anniston bus burning; the transcript identifies him only as 'with the freedom fighter[s].'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 15,
+      "start_time": "00:54:43,000",
+      "end_time": "00:59:16,000",
+      "title": "Closing Reflections on the Monument's Significance",
+      "summary": "Vickers reflects on what the monument means for St. Augustine going forward: she hopes it will have lasting implications for how the city understands its civil rights history. She says her experience working on the monument committee changed her view of white people, knowing 'they're not all the same.' She closes by saying that she and Dr. Hayling both feel 'it's still not enough done' and that, at 88, she is still ready to keep trying. The session ends with the standard Civil Rights History Project sign-off identifying the joint Library of Congress and Smithsonian production.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "monument legacy",
+        "racial reconciliation",
+        "robert b. hayling",
+        "civil rights history project",
+        "library of congress",
+        "smithsonian nmaahc"
+      ],
+      "related_events": [
+        "Foot Soldiers Monument (St. Augustine)",
+        "Civil Rights History Project"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 89,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 18,
+        "quality_component_c": 18,
+        "quality_component_d": 18,
+        "errors": [],
+        "improvements": [
+          "Could foreground the 88-years-old detail more strongly, as Vickers names her own age explicitly at segment 416."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Barbara Henry Adell Vickers",
+      "interviewee_title": "St. Augustine Civil Rights Foot Soldier; President, St. Augustine Foot Soldiers Monument committee",
+      "interview_date": "2011-09-13",
+      "interview_location": "Bayfront Inn, St. Augustine, Florida",
+      "interviewer_name": "Joseph Mosnier",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill (for the Civil Rights History Project)",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:59:16",
+      "total_segments": 422,
+      "word_count": 9100,
+      "number_of_chapters": 15
+    },
+    "overall_score": {
+      "total": 84,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 26,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with childhood and family hotel work (Segment 18, 00:01:32,000): 'I was raised in St. Augustine, and I went to a parochial school, Catholic school, St. Benedict'",
+            "Pivots cleanly into Hayling/King recruitment (Segment 96, 00:12:53,000): 'Dr. King looked at me in the church of all people. And he said, young lady, will you go?'",
+            "Closes with present-day monument reflection (Segment 414-415, 00:58:54,000): 'But if I can help to make a difference. I'm still ready. 88. Ready to go.'"
+          ],
+          "justification": "The interview moves chronologically from childhood through wartime migration, return to St. Augustine, civil rights participation, and the contemporary monument campaign, with clear thematic transitions facilitated by Mosnier's questions. The structure is coherent and the closing returns to themes opened earlier (memorialization, ongoing work)."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And we were down up under the hedges that night in the rocks kept coming.",
+            "segment": 277,
+            "timestamp": "00:46:08,000"
+          },
+          "specificity_count": {
+            "full_names": 15,
+            "specific_dates": 4,
+            "specific_places": 12
+          },
+          "evidence": [
+            "Father's car nicknamed 'Rippy' (Segment 32, 00:02:57,000)",
+            "Hotel uniforms: black mornings, white evenings, with 'A-forms' (Segment 38, 00:03:35,000)",
+            "Hiding behind refrigerator doors when Klan shot low (Segment 113, 00:15:22,000)",
+            "Tire iron in trunk treated as weapon by officer (Segment 166, 00:24:37,000)",
+            "Hayling making 3 a.m. night deposit downtown with Vickers in car (Segment 117-120, 00:16:00,000)"
+          ],
+          "justification": "Vickers consistently delivers concrete, sensory details -- specific household objects (refrigerator, tire iron), specific people by full name (Julia Conway, Solomon Calhoun, Phil McDaniel, Patrick Canan, Hank Thomas, Earl Jones, Del Kahn, Freddie Thompson), specific dollar amounts ($20,000, $7,400, $24,000, $100), and specific locations (Scott Street, Grace Methodist, First Baptist, St. Paul, Bayfront Inn). The 'we were under the hedges' Andy Young beating moment is a 'you are there' detail."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "And I said, Mama, you just have to die.",
+            "segment": 177,
+            "timestamp": "00:26:57,000"
+          },
+          "emotional_range": [
+            "fear",
+            "exhaustion",
+            "humor",
+            "indignation",
+            "pride",
+            "regret",
+            "tenderness"
+          ],
+          "vulnerability_elements": [
+            "Admits being almost in tears when girlfriend Corine missed the train (Segment 76, 00:09:19,000)",
+            "Tells terminally ill mother she will still go to the meetings even if mother dies during her absence (Segment 179, 00:27:20,000)",
+            "Admits being 'lost to words' and 'tired' at her own monument unveiling (Segment 317, 00:52:54,000)",
+            "Expresses bitterness that Black churches in St. Augustine did not support the monument (Segment 278-279, 00:46:56,000)"
+          ],
+          "justification": "Vickers is candid about fear, exhaustion, and disappointment, especially regarding the Black church non-participation and her own emotional flatness at the unveiling. She also shows humor (the southern good-morning routine on the shipyard, calling her husband's gambling 'very good' because he always had the money). Some emotional moments are reported rather than felt deeply in the telling, which keeps this from a 9 or 10."
+        },
+        "overall_assessment": "Vickers tells a coherent life story with strong concrete detail and genuine emotional accessibility. Her narrative arc moves cleanly from childhood through migration, civil rights participation, and the late-career monument campaign. The transcript is rich in named people, places, and dollar figures that historians can verify, and her tone shifts naturally between humor and grief without affect. The 88-years-old closing line lands as authentic rather than performed."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "Dr. King's visit(s) to St. Augustine 1964 -- recruited by King personally from the pulpit (Segment 96, 00:12:53,000)",
+            "Hayling household shooting and killing of his dog (Segment 121-128, 00:16:59,000)",
+            "Andy Young beating in St. Augustine, June 1964 -- Vickers was under the hedges nearby (Segment 277, 00:46:08,000)",
+            "Tallahassee trip to meet governor about violence (Segment 134-137, 00:19:09,000)",
+            "Foot Soldiers Monument unveiling (Segment 310-317, 00:52:23,000)"
+          ],
+          "key_figures": [
+            {
+              "name": "Dr. Robert B. Hayling",
+              "relationship": "Neighbor across the street on Scott Street; collaborator throughout the movement and the monument",
+              "contact_level": "close"
+            },
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "King recruited her from the pulpit; met him in person after first missing him for a beauticians' convention",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Ralph Abernathy",
+              "relationship": "Heard him speak at First Baptist Church before King arrived",
+              "contact_level": "distant"
+            },
+            {
+              "name": "Andrew Young",
+              "relationship": "Was in the hedges near where he was beaten in St. Augustine",
+              "contact_level": "distant"
+            },
+            {
+              "name": "Hank Thomas",
+              "relationship": "Donor to the Foot Soldiers Monument; identified as a Freedom Rider",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Julia Conway",
+              "relationship": "Neighborhood movement coordinator; longtime friend",
+              "contact_level": "close"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "St. Augustine Movement (kneel-ins, sit-ins, swim-ins)",
+              "role": "Foot soldier",
+              "years": "1963-1964"
+            },
+            {
+              "organization": "St. Augustine Foot Soldiers Monument committee",
+              "role": "President",
+              "years": "~2001-2011"
+            },
+            {
+              "organization": "Council on Aging Mayor's Senior Advisory Committee (St. Augustine)",
+              "role": "President",
+              "years": "~2000s"
+            },
+            {
+              "organization": "St. Augustine beauticians' association",
+              "role": "President",
+              "years": "~1964"
+            }
+          ],
+          "unique_access": "Eyewitness to the household-level coordination of the St. Augustine campaign from her position directly across the street from Dr. Hayling's home on Scott Street, including the night of the shooting; and a direct personal account of being recruited by Dr. King from the pulpit. Also primary-source for the decade-long Foot Soldiers Monument fundraising campaign.",
+          "justification": "Vickers is a rare witness to the household-level life of the St. Augustine campaign -- the cooked meals for the guards, the Scott Street eleven warning network, Hayling's 3 a.m. night deposits, Mrs. Hayling's withdrawn life -- all from across-the-street neighbor distance. She also has direct, named contact with King and Andrew Young. Score is 9 rather than 10 because her contacts with King and Young were brief moments rather than sustained access."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Specific date: Tuesday, September 13, 2011 (interviewer-stated, Segment 5, 00:00:14,000)",
+            "Hotel names: Monson Motor Lodge, Bennett Hotel (Segment 28, 31)",
+            "School names: St. Benedict (Catholic), Excelsior High School (Segment 18, 20)",
+            "Dollar amounts: $20,000 initial pledge, ~$7,400 UPS grant, $24,000 one-night fundraiser, ~$70,000 total (Segment 265, 268, 278, 270)",
+            "Specific people: Solomon Calhoun (basketball coach turned recreation director), Queenie Mitchell McCall (beautician convention substitute), Earl Jones (City Commissioner), Phil McDaniel, Patrick Canan, Del Kahn, Freddie Thompson, Hank Thomas (Segments 145, 218, 289, 273-277, 303)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 15,
+            "first_only": 3,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "Hayling lived on Scott Street and his house was shot into; Madonna the dog was killed",
+            "King visited St. Augustine and spoke at St. Paul AME and/or First Baptist church",
+            "Reverend Abernathy was present at First Baptist when King arrived",
+            "Andy Young was beaten in St. Augustine (June 9, 1964 is the documented date)",
+            "Hank Thomas (Freedom Rider) contributed to the Foot Soldiers Monument fund",
+            "Earl Jones was an African American St. Augustine City Commissioner",
+            "Solomon Calhoun has a St. Augustine building named after him"
+          ],
+          "justification": "Precision is consistently good but not exceptional -- Vickers offers specific dollar amounts, named donors, named neighborhood organizers, named churches, and named historical figures. Date precision is moderate (she gives approximate years like 'late 50s' rather than precise dates for her own life events; the interview itself is precisely dated by the interviewer). Most claims could be cross-referenced against St. Augustine civil rights historiography (e.g., Colburn 1985, Warren 2008) and against the public monument records."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Household-level account of how the Scott Street eleven coordinated to warn each other when the Klan drove through",
+            "First-person account of being recruited by King from the pulpit",
+            "Detailed account of the multi-year fundraising for the Foot Soldiers Monument including the specific role of white donors (Phil McDaniel, Patrick Canan) and the disappointment over Black church non-participation",
+            "Description of Mrs. Hayling's withdrawn life and avoidance behavior in Fort Lauderdale",
+            "Account of an officer treating a tire iron as a weapon and threatening arrest"
+          ],
+          "understudied_aspects": [
+            "Women's logistical and protective labor in the St. Augustine campaign",
+            "Post-movement memorialization politics in a small Southern city resistant to civil-rights public memory",
+            "Black hotel labor in 1930s-40s St. Augustine",
+            "Cross-racial coalition-building in late-career civic projects"
+          ],
+          "narrative_complications": "Complicates the 'national leadership' narrative of the St. Augustine campaign by foregrounding the household-level networks that sustained it. Also complicates a simple Black-community/white-community framing by documenting that the Foot Soldiers Monument was primarily funded by white residents while most Black churches did not contribute -- a finding Vickers herself names as a source of pain.",
+          "historiographical_value": "Historians of the St. Augustine campaign and of post-movement memorialization politics can use this interview as a primary source on the foot-soldier perspective on the 1963-64 events, on women's protective labor in the campaign, and on the fundraising politics of building a civil rights monument in a city long resistant to publicly marking its civil rights history.",
+          "justification": "Vickers fills several real gaps -- women's protective labor, foot-soldier perspectives, post-movement memorialization politics, and St. Augustine hotel labor. The Foot Soldiers Monument fundraising narrative is particularly valuable since it is not well-covered elsewhere. Score is 6 rather than 7 because much of the 1963-64 St. Augustine campaign narrative is already documented through Hayling, King, and the Monson Motor Lodge events."
+        },
+        "overall_assessment": "Vickers' interview has strong historical value as a household-level account of the St. Augustine campaign from across the street from Dr. Hayling. Her account of women's logistical and protective work, the Scott Street eleven network, and the multi-year Foot Soldiers Monument fundraising campaign all fill gaps in the public-facing history of St. Augustine civil rights. The interview is well-anchored with named people, named churches, and specific dollar amounts that can be cross-referenced."
+      },
+      "emotional_resonance": {
+        "total": 19,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Vickers moves from a young woman who left St. Augustine vowing never to return because of its racial atmosphere, through her wartime work as a tack welder in shipyards full of white men she had to win over, through her return to St. Augustine and reluctant entry into the civil rights movement after being personally called out by Dr. King, through her decade-long campaign to memorialize the foot soldiers. The closing reflection that working with white donors on the monument changed her view that 'they're not all the same' is an explicit late-life transformation.",
+          "key_turning_points": [
+            "Decision to leave St. Augustine after high school in 1942 (Segment 47-48, 00:04:52,000)",
+            "Dr. King's pulpit recruitment that pulled her into the kneel-ins (Segment 96-97, 00:12:53,000)",
+            "Decision to insist on a Foot Soldiers monument rather than accept a plaque (Segment 252-254, 00:39:37,000)",
+            "Closing realization that work with white donors changed her view of white people (Segment 370-371, 00:56:21,000)"
+          ],
+          "before_after_contrast": "Before: a young woman determined to escape a 'racist, racist town' and never return. After: an 88-year-old who has built the city's first civil rights monument and works alongside the white residents who funded it, while still naming the limits of that reconciliation.",
+          "inspirational_quality": "Yes -- Vickers' insistence on a monument despite being told to accept a plaque, and her 88-year-old closing line 'ready to go,' offer a long-arc model of ordinary movement participants continuing the work into late life.",
+          "justification": "There is a clear transformation arc, particularly in the late-life monument work and the explicit closing reflection about white people. The arc could be more deeply explored -- some of the most consequential changes are reported in a few sentences rather than dramatized at length. Score is 7 rather than 9-10 because Vickers is more reportorial than introspective about her own changes."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Dr. King calls Vickers from the pulpit to participate in the kneel-ins",
+              "segment_range": "95-97",
+              "timestamp_range": "00:12:43,000 - 00:13:07,000",
+              "stakes": "Public commitment to civil disobedience in a violent city"
+            },
+            {
+              "description": "Shooting at Dr. Hayling's home and killing of his dog Madonna",
+              "segment_range": "121-128",
+              "timestamp_range": "00:16:59,000 - 00:18:12,000",
+              "stakes": "Family violence; Hayling's children sent to Tallahassee"
+            },
+            {
+              "description": "Police officer threatens to arrest Vickers for tire iron as 'weapon'",
+              "segment_range": "164-167",
+              "timestamp_range": "00:24:17,000 - 00:24:59,000",
+              "stakes": "Movement participation criminalized through pretext stops"
+            },
+            {
+              "description": "Andy Young beating; Vickers in the hedges as rocks fly",
+              "segment_range": "277",
+              "timestamp_range": "00:46:08,000 - 00:46:27,000",
+              "stakes": "Physical violence at a public demonstration"
+            },
+            {
+              "description": "$20,000 unsolicited pledge from a local donor that allowed the sculptor to begin",
+              "segment_range": "264-266",
+              "timestamp_range": "00:42:37,000 - 00:43:42,000",
+              "stakes": "Whether the foot soldiers monument would ever be built"
+            }
+          ],
+          "conflict_types": [
+            "Racial violence",
+            "Police harassment",
+            "Family resistance (grandmother, mother)",
+            "Intra-movement disagreement (other monument proposals)",
+            "Fundraising scarcity"
+          ],
+          "emotional_range": "From fear and exhaustion at the shooting and police stops, to vindication and surprise at the fundraising breakthrough, to tired understatement at the monument's unveiling.",
+          "justification": "Several real high-stakes moments are described, including the Hayling household shooting, the police stop, the Andy Young beating, and the fundraising breakthroughs. Dramatic intensity is consistent rather than peaked. Score is 6 rather than 7-8 because Vickers tends to recount rather than dramatize -- the stakes are clear but the storytelling does not always linger on them."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Leaving home and returning",
+            "Marrying someone whose location-rootedness conflicts with yours",
+            "Sustaining work through long fundraising campaigns",
+            "The disappointment of community non-participation",
+            "Late-life civic purpose"
+          ],
+          "relatable_struggles": [
+            "Conflict with grandmother who feared for her safety",
+            "Managing fear while continuing to attend nightly movement meetings",
+            "Working a small business through a period of community tension",
+            "Persuading donors to back an unfashionable project (foot soldiers vs. King monument)"
+          ],
+          "human_moments": [
+            "Weeping on the train when girlfriend Corine missed the rendezvous (Segment 76-78, 00:09:33,000)",
+            "Telling her terminally ill mother she will still go to the meetings (Segment 179, 00:27:20,000)",
+            "Describing Dr. King's hands as 'just like cotton, it's a soft thing' (Segment 226, 00:34:29,000)",
+            "Being 'lost to words' at her own monument unveiling (Segment 317, 00:52:54,000)"
+          ],
+          "connection_points": "Audiences who have built community projects, sustained fundraising for unfashionable causes, navigated family disagreement about activism, or returned to a hometown they once fled will find direct connection. The universal themes of long-arc civic purpose and late-life return to meaning carry beyond civil rights specifically.",
+          "justification": "Strong relatability through specific human moments (the train station scene, the cotton-soft hands of King, the exhaustion at the unveiling). Universal themes of leaving and returning, sustaining a long campaign, and late-life civic purpose translate beyond the civil rights context."
+        },
+        "overall_assessment": "Vickers' interview has solid emotional resonance grounded in specific human moments rather than sustained dramatic intensity. The clearest arc is the long campaign to build the Foot Soldiers Monument and the late-life shift in her view of white people; both land authentically because they are anchored in named donors, named refusals, and the bitterness over Black church non-participation. The interview is more reportorial than dramatized, which keeps the dimension scores in the strong-but-not-peak range."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Movement-specific terms ('kneel-ins,' 'swim-ins,' 'foot soldiers') are not always explained",
+            "Local references ('Scott Street eleven,' 'West Side Boys') assume St. Augustine geography",
+            "Husband's name and some donor names appear with ASR garble in the transcript",
+            "Some St. Augustine-specific institutional references (Council on Aging, Mayor's Senior Advisory Committee, 501(c)) assume civic-organization familiarity"
+          ],
+          "justification": "Vickers speaks clearly and accessibly throughout, with occasional Southern dialect that is easily followed. She defines some terms in context (e.g., 'matrede, which they called the head waiter,' segment 31) but assumes some local knowledge of St. Augustine geography. Most jargon is movement-specific and can be inferred from context."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Dr. King recruitment from the pulpit (Segment 95-102, 00:12:43,000 - 00:13:52,000) -- dramatic, surprising, generates story momentum",
+            "Hayling house shooting (Segment 121-133, 00:16:59,000 - 00:19:08,000) -- vivid, high-stakes",
+            "Single-evening $24,000 fundraiser (Segment 273-278, 00:45:00,000 - 00:46:56,000) -- pacing accelerates with the money coming in"
+          ],
+          "slow_sections": [
+            "Hotel-uniform details and family genealogy (Segment 36-45, 00:03:18,000 - 00:04:36,000) -- detail-rich but slower-paced",
+            "Train-to-Seattle and Boeing transition (Segment 69-81, 00:07:35,000 - 00:10:34,000) -- personal narrative aside from movement story"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Strong throughout the 59-minute interview. The two breaks (around 30:00 and 47:40) preserve momentum. Mosnier asks well-formed questions that pull Vickers back to load-bearing topics when she drifts.",
+          "justification": "Pacing is generally good, with the second half (the monument fundraising) sustaining strong forward momentum as the dollar figures rise. The first half includes some slower personal-narrative passages that, while rich, do not have the same dramatic pull as the civil rights and monument sections. Mosnier's questions facilitate rather than interrupt."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Memorialization of civil rights ordinary participants",
+            "Public history and erased local civil rights memory",
+            "Cross-racial coalition-building",
+            "Women's labor in the civil rights movement",
+            "Ongoing voting rights and youth civic engagement"
+          ],
+          "contemporary_relevance": "Vickers explicitly connects the monument work to contemporary voting rights, urging young voters to vote (segment 242) and naming the contemporary fight as ongoing. The monument campaign's politics of memorialization -- whose stories get marked in public space -- map directly onto contemporary debates over Confederate monuments, civil rights monuments, and public memory.",
+          "meaning_making": "Yes -- Vickers explicitly articulates why the monument matters ('they couldn't have done it alone... they put their lives on the line. They could have been killed'). She also connects her own monument work to the historical memory of lynchings her grandmother told her about, framing each generation's responsibility.",
+          "justification": "Vickers consistently links her personal story to broader themes: voting rights, memorialization politics, women's labor, cross-racial coalition. She names the contemporary stakes directly ('I asked the kids now that can vote that they vote') and uses her grandmother's lynching stories as a multi-generational frame. Score is 5 rather than 6 because some of the connections to contemporary issues are gestural rather than developed."
+        },
+        "overall_assessment": "Vickers' interview is highly accessible: she speaks clearly, defines some terms in context, and her storytelling structure follows recognizable chronological and thematic arcs. The second-half monument-fundraising narrative has particularly strong pacing. She explicitly frames her personal story within broader civil rights themes and connects it to contemporary voting rights and memorialization debates."
+      }
+    },
+    "overall_assessment": "Barbara Henry Adell Vickers' interview is a strong primary source on the household-level life of the 1963-64 St. Augustine civil rights campaign and on the decade-long post-movement effort to publicly memorialize the foot soldiers who sustained it. Her position across the street from Dr. Robert B. Hayling on Scott Street gives her direct witness to the shooting at his home, the killing of his dog, the Scott Street eleven warning network, and the women's logistical labor of cooking meals for the men guarding the house. Her account of being recruited from the pulpit by Dr. King, her brief encounter with him, and her presence in the hedges at the Andy Young beating add named-witness texture to widely-documented events. The interview's second half -- the Foot Soldiers Monument fundraising campaign, the single-evening $24,000 dinner at Patrick Canan's office, the disappointment over Black church non-participation, and the predominantly white donor base -- documents an understudied dimension of post-movement memorialization politics in a Southern city long resistant to publicly marking its civil rights history. The narrative is well-paced, the named entities are verifiable, and the closing 88-year-old 'ready to go' lands as authentic late-life civic purpose.",
+    "key_strengths": [
+      "Household-level eyewitness perspective on the St. Augustine campaign from directly across the street from Dr. Hayling, including specific micro-events (refrigerator-door cover, 3 a.m. night deposit, killing of Madonna) not in the published record",
+      "Detailed multi-year narrative of the Foot Soldiers Monument fundraising campaign, with named donors, specific dollar amounts, and frank acknowledgement that most major donations came from white residents while only one Black church contributed",
+      "Strong cross-generational frame: grandmother's lynching stories, Vickers' own civil rights participation, urging young voters to vote, and the monument as durable public memory"
+    ],
+    "key_limitations": [
+      "Several names in the transcript appear with apparent ASR garble (the $20,000 donor is rendered as 'Slating Nina Verilam'; the husband's name as '80 Bickers' in one segment), which limits direct verifiability of some attributions",
+      "The interview is more reportorial than dramatized -- high-stakes moments (the shooting, the Andy Young beating, the monument unveiling) are recounted concisely rather than lingered on, which keeps emotional intensity in the strong-but-not-peak range"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Vickers attended the parochial St. Benedict's Catholic school through eighth grade and then Excelsior High School, the only Black high school in the city.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 18-21: 'I was raised in St. St. Augustine, and I went to a parochial school, Catholic school, St. Benedict... And I finished that school in eighth grade, and I went to Excelsior High School, which was the only black school, high school for blacks.'",
+        "rationale": "Directly stated by Vickers in the transcript."
+      },
+      {
+        "claim": "Her mother worked as a waitress at what was then the Monson Motor Lodge.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 28: 'in fact, my mother worked as a waitress here at this hotel, and it went back, and it was the Monson Motor Lodge at that time.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Her father was a head waiter ('matrede,' maitre d') at the Bennett Hotel.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 31: 'It was the Bennett Hotel, and he was a matrede, which they called the head waiter at that particular time.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Vickers left St. Augustine after graduating high school in 1942 for New York and then Seattle.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 57-58: 'Right after high school, and last to 42. I moved to New York, and I stayed there about, or I was in about four years.' Segment 69: 'And when I left, I left to go to Seattle.'",
+        "rationale": "Directly stated by Vickers. The transcript's '1942' is somewhat garbled but unambiguous."
+      },
+      {
+        "claim": "She worked as a tack welder in shipyards during World War II.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 60: 'they sent you to school, and I learned how to tack weld. And I got this job on the ship, and I was doing the tack weld then.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Vickers returned to St. Augustine in the late 1950s.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 91: 'I guess I came back in the late 50s, because it was about the 60s when I think Dr. Robert B. Hayling had everything going.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "She married a St. Augustine bellhop whom she addresses throughout the interview as Adell Vickers.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 83 (ASR-garbled): 'I came back to St. St. Augustine after I married 80 Bickers. He was from St. St. Augustine, and we had been dating off and on.' Segment 85: 'So I would go to Jersey every year, and it was a bellhawk.' Segment 148: 'Adell Vickers, what he said.' Segment 156: 'Adell Vickers was a very good provider.'",
+        "rationale": "The husband's first name appears as ASR garble ('80 Bickers,' 'Adell Vickers') in different segments. The 'Adell Vickers' form is consistent in the second half of the transcript, but should be flagged as derived from how Vickers addresses him rather than canonically verified."
+      },
+      {
+        "claim": "Dr. Robert B. Hayling lived across the street from Vickers on Scott Street.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 93: 'But Dr. Robert B. Hayling was a neighbor. He stayed across the street. And I'd seen him coming and going.'",
+        "rationale": "Directly stated by Vickers. Hayling's central role in the St. Augustine campaign is corroborated by civil_rights_facts.json: 'Robert B. Hayling: Dentist; founder of the modern St. Augustine civil rights movement.'"
+      },
+      {
+        "claim": "Dr. Martin Luther King Jr. visited St. Augustine and personally called on Vickers from the pulpit to participate in the kneel-ins.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 95-97: 'But Dr. Robert B. Hayling told him that he needed people to go to the churches. I don't know whether it was planned or not, but Dr. King looked at me in the church of all people. And he said, young lady, will you go?'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Vickers was part of 'the Scott Street eleven' -- eleven households on Scott Street that coordinated to support the movement.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 104-105: 'And we were, we called out to the Scott Street, 11. It was on Scott Street. And it's 11 houses on Scott Street. Every home had a particular job.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "The 'West Side Boys' stationed themselves in trees around Hayling's house to protect him.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 108: 'But the West Side Boys came and they were in the trees and all around Dr. Robert B. Hayling House to protect him.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Julia Conway, mother of Purcell Conway, organized a women's group across the street to protect Hayling.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 106: 'So Julia Conway, of course, the street from the Purcell Conway's mother. She decided that we were going to be a group.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Gunshots were fired into Hayling's home, killing his dog identified in the transcript as Madonna (and separately as 'the boxer').",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 127-128: 'But anyway, they shot Dr. Stolz, Madonna, and the boxer. And he was crazy about that dog because at night, when he would come home, he would walk Madonna out there walking Madonna.'",
+        "rationale": "The shooting is directly stated. The transcript phrasing is ambiguous as to whether Madonna and the boxer are the same animal (one dog named Madonna, of breed boxer) or two separate animals; the summary acknowledges this ambiguity. 'Dr. Stolz' in segment 127 is ASR garble for an unidentified phrase."
+      },
+      {
+        "claim": "Hayling sent his daughters to Tallahassee after the shooting.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 129: 'But after that, he had friends. And I guess he thought the Aster's with the keep his children. And until he could take them down to Tallahassee.' Segment 133: 'And he did get the kids. And I guess he took them to Tallahassee because you never know what he was going to do.'",
+        "rationale": "Directly stated by Vickers, though framed as inference ('I guess he took them')."
+      },
+      {
+        "claim": "Vickers and others went to Tallahassee to meet the governor about violence in St. Augustine, and were intimidated by being run off the road on the way to Butler's Beach.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 134-137: 'And one day, I remember he said that they were going to Tallahassee to talk to the governor... You know, they would run you off the road and just to intimidate you. And we went and we talked to the governor there and whatnot.'",
+        "rationale": "Directly stated by Vickers. The transcript identifies Butler's Beach by name."
+      },
+      {
+        "claim": "Vickers operated a beauty salon out of her home under a permit allowing this.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 140-141: 'When you came back here, I was a beautician. And I had my own salon at home where we fixed that and you could do, you could be given papers to allow to have it at home.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Her husband worked at a drive-in movie theater and was a gambler.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 142-143: 'And he worked at that particular time for driving movie theater. And he was a gambler.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Solomon Calhoun, her former high school basketball coach, secured her husband a job as recreation director at the Recreation Center, and has a St. Augustine building named after him.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 145-146: 'But Solomon Calhoun, Solomon Calhoun, they have a building in San St. Augustine, not that they named after him. He was my basketball coach during the time I was in high school. And he had gotten him this job at the Recreation Center.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "An officer searched her trunk, found her tire-changing wrench, and threatened to arrest her for carrying a 'weapon.'",
+        "status": "supported",
+        "supporting_excerpt": "Segments 165-167: 'And the cop had stopped me and he pulled over and he asked me, did I have any weapons?... And he got the wrench that you changed the tire red. And he said, you do have a weapon... And he said, there's still a weapon and I could arrest you.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Her sister was at Bethune-Cookman College in Daytona during the movement years.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 174: 'And my sister, she said she was afraid she didn't go. Neither one of them, one of them, when was in Baton, Bethune-Cookman College in Daytona. And she didn't go.'",
+        "rationale": "Directly stated by Vickers. Bethune-Cookman is canonical in civil_rights_facts.json under Mary McLeod Bethune."
+      },
+      {
+        "claim": "Vickers met Dr. King at First Baptist Church (having missed St. Paul AME), after Reverend Abernathy had spoken.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 222-225: 'he was supposed to be St. Paul [AME] Church they told me. And I was late because one of my customers made me late. And they said, no room in St. Paul, you have to go to first Baptist... So I went to first Baptist and Reverend Abernathy was there. And then Dr. King came over after that.'",
+        "rationale": "Directly stated by Vickers. 'St. Paul AME' is not asserted in the transcript -- transcript says just 'St. Paul Church' -- the AME designation is inferred (St. Paul AME is the canonical St. Augustine Black church). Flagged as partial because of the AME inference."
+      },
+      {
+        "claim": "Vickers described King's hands as 'just like cotton, it's a soft thing.'",
+        "status": "supported",
+        "supporting_excerpt": "Segment 226: 'And his hands were just like cotton. It's a soft thing.'",
+        "rationale": "Directly quoted from the transcript."
+      },
+      {
+        "claim": "Vickers was president of the St. Augustine beauticians' association during a King visit and sent Queenie Mitchell McCall to represent the beauticians in her place.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 217-218: 'And I was president of the beautician association. But I didn't have time for Dr. King. There was a convention going on in Daytona. So I had to go to the convention and I asked Queenie Mitchell McCall now if she would go in my state and represent the beauticians.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Vickers participated in a kneel-in at Grace Methodist Church where an insurance man placed his foot menacingly beside her.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 230-233: 'But I went to the Grace Methodist Church. And there was an insurance man that came every Monday... when he put his feet right down, I was kneeling. And he put his feet like that. It just looked like it was big foot.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "She dropped her Metropolitan Life Insurance policy the next day in response.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 234-236: 'And that Monday, this was that Sunday, that Monday, he was to my door... It was Metropolitan Life Insurance, right back there. And I didn't think about canceling the insurance, returning it in the thing. I just dropped it.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "The idea for a foot soldiers monument came to Vickers about ten years before this 2011 interview (i.e., circa 2001).",
+        "status": "supported",
+        "supporting_excerpt": "Segment 249: 'I guess about 10 years ago. And other people were talking about the monuments.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Kathy Brown, director of the Council on Aging in St. Augustine, supported the foot soldiers monument concept and helped organize it.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 255-256: 'Council on Aging. The. Kathy Brown. The way. Kathy Brown was the director. And she wanted to organize. And Mayor Senior Advisory Committee to help the city and know what they wanted to do. So she organized it.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "A local donor (transcript renders her name as 'Slating Nina Verilam,' which appears to be ASR garble) pledged $20,000 to allow the sculptor to begin.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segments 264-265: 'one day, the Slating Nina Verilam, she called and she says, Barbara, I understand you trying to do this monument. She said, what does it take to get it started?... I said, well, we have a sculpture. And it's going to take at least 20,000 for him to get started. She says, you got it.'",
+        "rationale": "The pledge amount and the donor's gender are supported. The donor's name appears to be ASR garble; the summary flags this rather than asserting a canonical replacement."
+      },
+      {
+        "claim": "Vickers' grandson, who worked for UPS, obtained a grant of about $7,400 from UPS through volunteer-hours channels.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 266-268: 'And then my grandson says, he works for UPS. And he says, no, I'm going to try to get a grant from UPS... And he said, yeah, he think they could get it. And they were just going to give us five thousand. But when the deal went down, they gave seven thousand and 400, I think it was.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Phil McDaniel and attorney Patrick Canan hosted a single fundraising evening at Canan's law office that raised $24,000 from invited guests at $100 a head.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 273-278: 'So this man walks up to me, he filled Mac Daniels. And he said, Barbara, he said, you're almost there... So he called and asked me to meet him to the lawyers, lawyer, Kahnan, Patrick Canan... So he had his secretary to pull out a list, get on the phone and invite them for $100 a head... So he had a good story to tell. And any way that night, Phil raised 24,000.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Del Kahn played music and Freddie Thompson, who had been under the hedges with Vickers the night Andy Young was beaten, spoke at the fundraiser.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 277: 'I got Del Kahn to play and Freddie Thompson, Freddie Thompson was one of the ones that was under the hedges with me when they beat Andy Young that night. And we were down up under the hedges that night in the rocks kept coming.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "The total project budget was approximately seventy thousand dollars.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 270: 'Well, at first, we thought it was about 60,000, but altogether, around about 70,000 dollars.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Only one Black church in St. Augustine contributed to the monument fund ($100, from 'the poor church').",
+        "status": "supported",
+        "supporting_excerpt": "Segment 279: 'We got one black church, the poor church in St. St. Augustine that has very few members. They sent $100. Not another black church.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "City Commissioner Earl Jones (African American) pledged $5,000 of allotted funds, which the city used for prep work rather than as a direct grant.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 289-291: 'City Commissioner, Earl Jones, he said that he had $5,000 a lot of them to do work downtown.' [interviewer interjects to clarify for tape that Earl Jones is African American] 'And that he would give us that. But then it rolled down to the city would use it, you know, not just give it. So they did the prep work and whatever for the money and thing.'",
+        "rationale": "Directly stated by Vickers and confirmed on tape by interviewer."
+      },
+      {
+        "claim": "The city later paid for the surrounding walkway and footsteps installation.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 293-295: 'They did the walkway for and the young with the footsteps and they paid for that. The city paid for that. The city paid for that.'",
+        "rationale": "Directly stated by Vickers."
+      },
+      {
+        "claim": "Hank Thomas (the Freedom Rider) gave a sizable donation.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 303-304: 'But most of all major donations that they now Hank Thomas that was with the freedom fighter. He gave a sizable donation.'",
+        "rationale": "Directly stated by Vickers. Hank Thomas is a documented Freedom Rider (the 1961 Anniston bus burning survivor); the transcript identifies him as 'with the freedom fighter[s].'"
+      },
+      {
+        "claim": "Vickers was 88 years old at the time of the interview.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 416: '88.' (in response to her own 'I'm still ready')",
+        "rationale": "Vickers states her age herself in segment 416."
+      },
+      {
+        "claim": "Dr. Robert B. Hayling at the interview's end credited Vickers with strong organizational skills and refusal to take no, with the interviewer relaying his comments for the microphone.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 330-340: 'She has tremendous organization. She doesn't take no from me. And she will get on her telephone and work through her... Dr. Robert B. Hayling is making the point really crediting Miss Pickers with excellent organizational skills and real commitment and real determination to see it through.'",
+        "rationale": "Directly stated by Hayling and relayed by interviewer for the tape."
+      },
+      {
+        "claim": "The interview was conducted on Tuesday, September 13, 2011, at the Bayfront Inn in St. Augustine, Florida, by Joseph Mosnier of the Southern Oral History Program at UNC Chapel Hill, with videographer John Bishop.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 5-8: 'Today is Tuesday the 13th of September 2011. My name is Joe Mosnier of the Southern oral history program at the University of North Carolina at Chapel Hill. I'm with videographer John Bishop in St. St. Augustine, Florida, specifically at the Bayfront Health Inn, where we are recording several oral history interviews for the Civil Rights History Project.'",
+        "rationale": "Directly stated by Mosnier at the interview opening. 'Bayfront Health Inn' is likely an ASR rendering of 'Bayfront Inn.'"
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 40,
+      "supported": 36,
+      "partially_supported": 4,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_4_partial",
+    "rationale": "The main summary scores 84 accuracy and 86 quality -- both below the 90/90 Smithsonian-grade threshold -- because of three flagged interpretive issues: (1) the summary collapses the transcript's ambiguous Madonna/boxer reference (whether the dog's name and breed are one animal or two separate animals); (2) the husband's name 'Adell Vickers' is inferred from address forms but the transcript contains ASR garble ('80 Bickers') for what is contextually his name; (3) the $20,000 donor's name in the transcript ('Slating Nina Verilam') appears to be ASR garble that should not be replaced with an invented canonical form. Additionally, the citation audit flags four claims as partially_supported (husband's name, Madonna/boxer dog, St. Paul AME church inference, $20,000 donor name) and the publication threshold requires zero partial citations. The transcript itself is well-told and the interview has significant historical value (household-level St. Augustine campaign perspective, primary-source Foot Soldiers Monument fundraising history); the appropriate next step is human review of the flagged interpretive issues and verification of the husband's, donor's, and dog's canonical names against St. Augustine local sources and Hayling's published biography before publication."
+  }
+}

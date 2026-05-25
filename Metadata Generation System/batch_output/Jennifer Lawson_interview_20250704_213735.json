@@ -1,0 +1,732 @@
+{
+  "interview_name": "Jennifer Lawson",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Jennifer Lawson_interview_20250704_213735\\Jennifer Lawson_interview_transcript_20250704_213735.srt",
+  "processed_at": "2026-05-24T19:30:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Jennifer Lawson",
+    "interviewee_title": "Civil Rights Activist, SNCC Field Organizer",
+    "interview_date": "2015-12-11",
+    "interview_location": "Washington, D.C. (interviewee's home)",
+    "interviewer_name": "Emily Crosby",
+    "interviewer_affiliation": "Library of Congress / Smithsonian National Museum of African American History and Culture",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "02:11:16"
+  },
+  "main_summary": {
+    "summary": "Jennifer Lawson, born in June 1946 in Fairfield, Alabama (a Birmingham suburb), recounts her path from a working-class Black family in the segregated Deep South to full-time civil rights organizing with the Student Nonviolent Coordinating Committee (SNCC). Her father, a self-taught mechanic from Bullock County, Alabama who ran Lawson's Repair out of the family's backyard, encouraged her intellectual curiosity, exposed her to travel as far as New York, Toronto, Los Angeles, and Mexico, and treated her and her brothers as 'thinkers' rather than just children; her mother, a former school teacher, had largely withdrawn from professional life and Lawson recalls her in retrospect as a 'rather tragic figure.' Lawson describes how segregation pervaded daily life in Fairfield -- segregated buses with movable barriers, denied access to public libraries, the storefront friendship with a young Italian-American neighbor (Teresa Ragusa) that adults ended when the girls reached school age -- and how the women of her community built a small library above Dr. Parham's pharmacy. She first encountered the Civil Rights Movement through coverage of the Montgomery bus boycott, attended a mass meeting with her father during the 1963 Birmingham campaign, and defied her high school principal E.J. Oliver to participate in demonstrations downtown during what became the Children's Crusade era.\n\nLawson attended Tuskegee Institute on a full state science-fair scholarship intended for Alabama's segregated Black colleges. There she met sociology professor Charles Gomillion -- the plaintiff in Gomillion v. Lightfoot -- and was drawn into a student civil rights group including Gwen Patton, Samuel Younge Jr., George Paris, Wendy Paris, and CJ Jones. The group did voter-registration work in rural Macon County, but split internally when SNCC's Willie 'Mukasa' Ricks arrived and the local students resisted external direction. Lawson moved toward SNCC, drawn by what she describes as its broader strategic analysis of organizing Alabama's Black-belt counties. In November 1964, after spending two successive summers (1963 and 1964) interning at Memorial Sloan Kettering and Hayden Planetarium in New York City -- which had left her doubting a career in medicine -- she went alone to Jackson, Mississippi to canvass for the November elections, believing she stayed with Euvester Simpson. She participated in the Selma to Montgomery period, was arrested with about forty to fifty Tuskegee students during a counter-demonstration in front of the Montgomery state capitol (where state troopers and a non-robed Klan-affiliated crowd both confronted them), and was held in the Montgomery County jail for about five days before William Kunstler, she believes, arranged their release on a 'resisting arrest' charge that was later dismissed.\n\nIn a later arrest in Atlanta during a December holiday season -- which she places around 1967 -- Lawson was jailed with Karen Edmonds Spellman, Fay Bellamy Powell, and Ruby Doris Smith Robinson after Black Atlanta officers stopped them on Auburn Avenue; she recalls Howard Moore Jr. as the movement attorney involved. While working full-time for SNCC, Lawson lived in the Freedom House in Lowndes County, Alabama (a structure she describes as so dilapidated she could see the stars through the roof and the ground through the floor). There she worked alongside Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, and Ivanhoe Donaldson, and recalls evenings reading Frantz Fanon's Black Skin, White Masks and debating freedom, revolution, and economic empowerment. The transcript ends mid-sentence -- 'And I worked with them. I worked for…' -- with Lawson beginning to describe her work alongside Ed Brown and Charles Bannerman on Mississippi Action for Community Education's economic-empowerment projects, including the Fine Vines blue-jeans cooperative.",
+    "key_themes": [
+      "Black family economic self-reliance under Jim Crow",
+      "Coming of age in a totally segregated Birmingham-area community",
+      "Tension between professional aspiration (medicine) and Movement commitment",
+      "Tuskegee student organizing and the SNCC turn",
+      "Voter registration in Alabama's Black-belt counties",
+      "Women in SNCC field work and arrest experiences",
+      "Intellectual life of the late-1960s Black Power-era SNCC"
+    ],
+    "historical_significance": "Lawson's account is an unusually detailed firsthand record of the Tuskegee student-Movement-to-SNCC transition and of life inside the Lowndes County Freedom House in the immediate Black Power-era period (1965-1966) -- a period and geography that movement historiography has covered primarily through male organizers and through John Hulett's Lowndes County Freedom Organization, with comparatively less attention to the women SNCC field staff. Her recollection of working with Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, and Ivanhoe Donaldson while they were reading Frantz Fanon documents the intellectual infrastructure of the SNCC Black Power turn from the perspective of a woman in the field, and her account of Samuel Younge Jr.'s student-group involvement adds personal texture to the historical record of his pre-killing organizing work. The interview is significantly truncated -- the Whisper transcript stops mid-sentence as Lawson begins to describe her later economic-empowerment work with Ed Brown and Charles Bannerman -- and therefore cannot serve as a complete career record.",
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 72,
+      "accuracy_component_a": 36,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 30,
+      "quality_component_b": 18,
+      "quality_component_c": 16,
+      "quality_component_d": 13,
+      "errors": [
+        "Date placement of the Atlanta Auburn Avenue arrest is uncertain: Lawson herself says 'I think it's probably like 67' (segment 1186) and the summary preserves that uncertainty by writing 'around 1967', but the source-level uncertainty is real.",
+        "The summary names Ivanhoe Donaldson by full name; the transcript only says 'Ivanhoe' (segment 1194). This is a high-confidence inference (Donaldson was the only well-known SNCC 'Ivanhoe' in the Atlanta-Lowndes cohort), but it is technically an interpretive extension."
+      ],
+      "improvements": [
+        "Flag the transcript's source-level truncation prominently so downstream readers do not mistake the abrupt ending for the end of Lawson's career narrative.",
+        "If the corpus has access to Lawson's later Drum and Spear Bookstore co-founding and PBS career, an editorial footnote could note that the truncation cuts off before any of that material.",
+        "Consider adding a Lawson-specific entry to civil_rights_facts.json: the corpus's only existing mention of her is as a co-founder of Drum and Spear Bookstore, which she does not reach in this transcript."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:13:38,000",
+      "title": "Birmingham Roots and a Tinkerer Father",
+      "summary": "Lawson opens by establishing that the interview is being conducted by Emily Crosby in Lawson's Washington, D.C. home on December 11, 2015, under the auspices of the Civil Rights History Project sponsored by the Library of Congress and the Smithsonian's National Museum of African American History and Culture. She describes being born in June 1946 in Fairfield, Alabama, a suburb on the western edge of Birmingham. Her father, born in 1899 in what is now Bullock County, Alabama near Union Springs, was the fourteenth of fifteen children, left the family farm at age fifteen with a third-grade education, and made his way to Birmingham, where he first worked in the coal mines and then drove a locomotive through them before saving enough to buy a tractor that he disassembled and reassembled to learn how to repair it. He built that knowledge into Lawson's Repair, fixing washing machines, refrigerators, and cars throughout the Birmingham area, including in company towns of Tennessee Coal and Iron (later a subsidiary of U.S. Steel) such as Powderly, Bessemer, and Brighton. Lawson recalls a family story -- never sourced -- that her father drove from Birmingham to Canada on one gallon of gasoline by converting his engine to burn kerosene as the primary fuel, with the gasoline used only to ignite the engine. He encouraged her and her brothers to take things apart and rebuild them, treating them as 'thinkers' rather than only as children, and let them keep money they earned doing repairs.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["fairfield alabama", "birmingham", "bullock county", "lawson's repair", "coal mines", "tennessee coal and iron", "u.s. steel", "powderly", "bessemer", "brighton"],
+      "related_events": ["Birmingham Alabama segregation era", "Tennessee Coal and Iron company-town economy", "Bullock County Alabama Black sharecropping migration"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 86,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "The 'one gallon of gas to Canada' anecdote is Lawson's family folklore and is flagged as such; this should remain explicit in any downstream display."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:13:38,000",
+      "end_time": "00:27:13,000",
+      "title": "Encountering Race and Segregation",
+      "summary": "Lawson describes the family economy of her Fairfield neighborhood -- a mixed-class Black community where the doctor and pharmacist lived a few blocks over and other children lived in alleys without indoor plumbing -- and the way her father's repair business often involved barter when miners were on strike. She narrates her first conscious encounter with race: a friendship with Teresa Ragusa, daughter of the Italian-American family that ran the grocery store directly across the busy intersection from Lawson's house, that was ended by both families when the girls reached elementary-school age and were forced to socialize only across the street rather than face-to-face. Lawson explains how she absorbed an awareness of racial violence by overhearing adult conversations about lynchings, including a Birmingham incident in which white men kidnapped and castrated a Black man and poured kerosene on the wound (which, she notes, ironically saved his life by clotting the bleeding). She names the Ku Klux Klan as a presence she knew of and feared. Lawson describes Fairfield's segregated buses with their movable white/colored barriers, which she and other children would surreptitiously push toward the front to deny white riders space. The chapter closes with her early awareness of the Birmingham bombings of the late 1950s and early 1960s, including the regular bombing of the home of attorney Arthur Shores on Center Street.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": ["segregation", "ragusa family", "italian americans", "lynching", "ku klux klan", "fairfield bus", "movable barriers", "arthur shores", "center street"],
+      "related_events": ["Birmingham Klan-era racial terror", "Bombing of Arthur Shores's home", "Fairfield Alabama bus segregation"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 84,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "The Birmingham castration incident is recounted from family lore without a date or named victim; treat as Lawson's recollection rather than as a verifiable historical claim."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:27:13,000",
+      "end_time": "00:39:54,000",
+      "title": "Schools and Principal E.J. Oliver",
+      "summary": "Lawson describes Miles College, a small historically Black college about six blocks from her house, as the venue where the community held screenings of films like an early version of 'Imitation of Life' that could not be shown at the segregated Carver Theater downtown. She traces her family's Birmingham network through a relative who taught at A.H. Parker High School and through that relative knew Angela Davis's family and attorney Arthur Shores's family on Center Street. Lawson recounts her own schooling at Robinson Elementary and then Fairfield Industrial High School, segregated schools with hand-me-down books and uniforms (her high school received textbooks after Fairfield High School -- the white school -- had used them). She notes the school's name reflected the older Booker T. Washington-era industrial-education tradition, with both vocational and college-preparatory tracks. The chapter's central figure is the high school principal, Iman J. Oliver (E.J. Oliver), whom Lawson describes as tough but dedicated, running the school 'almost as if it was a private school' despite serving the children of coal miners and steel workers. The school's alumni network and even biennial reunions persisted long after the school itself closed. Lawson notes that one alumnus has written a book about Oliver.",
+      "main_topic_category": "Education",
+      "keywords": ["miles college", "carver theater", "imitation of life", "a.h. parker high school", "angela davis", "arthur shores", "robinson elementary", "fairfield industrial high school", "e.j. oliver", "booker t. washington"],
+      "related_events": ["Carver Theater Birmingham", "Booker T. Washington industrial-education tradition", "A.H. Parker High School Birmingham"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 84,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Reference to Angela Davis's family is a single-segment passing mention through Lawson's relative; no claim of personal acquaintance is made."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:39:54,000",
+      "end_time": "00:51:02,000",
+      "title": "Family Trip to Mississippi and the Bullock County Farm",
+      "summary": "Lawson recounts a family trip west during which they were stopped at night by Mississippi police; her father, whom the family otherwise admired enormously, addressed the white officer in a deliberately disarming way ('I just got these little cotton pickers in the back here') -- a moment Lawson and her brothers found deeply painful to watch. She describes her father's broader posture of being neither openly defiant nor obsequious in interactions with the white customers he served, and his civic life through Masonic membership, a burial society, and reading the Pittsburgh Courier and the Chicago Defender. Lawson notes that her father had once been in business with Arthur G. Gaston, who became one of the first Black millionaires in the country, and that the family was occasionally hosted at the Gastons' home in Birmingham, where the children were invited to swim in the pool and Mrs. Gaston showed off her latest purchases from Paris or New York. Both parents were registered to vote, and her father was active in the Republican Party because Alabama's Democratic Party was at that time bound to the Dixiecrats and the White Citizens' Councils. The chapter then turns to summer visits to the Bullock County farm where Lawson's father had grown up, where he taught her to recognize plants, drink from underground springs, and shoot a rifle. Lawson developed comfort with target shooting on tin cans but a clear dislike of killing animals.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["mississippi police stop", "arthur g. gaston", "republican party", "dixiecrats", "white citizens councils", "pittsburgh courier", "chicago defender", "bullock county farm", "rifle shooting"],
+      "related_events": ["A.G. Gaston Black entrepreneurship in Birmingham", "Dixiecrat-era Alabama Democratic Party", "Black-press Pittsburgh Courier and Chicago Defender"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 82,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 25,
+        "quality_component_a": 33,
+        "quality_component_b": 19,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Gaston's first-Black-millionaire status is widely claimed but somewhat contested in scholarship; Lawson's framing is preserved without adjudication."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:51:02,000",
+      "end_time": "01:03:34,000",
+      "title": "Birmingham 1963: The Freedom Rides and the Children's Crusade",
+      "summary": "Lawson recalls that her first sustained awareness of the Civil Rights Movement came through coverage of the Montgomery bus boycott (when she was about nine) and that she knew of Rev. Fred Shuttlesworth's organizing in Birmingham without personally knowing him. She describes Birmingham as readily accessible from Fairfield -- she traveled there weekly for violin and piano lessons and for swimming -- and the Freedom Rides through Anniston and Birmingham as 'very, very palpable.' The chapter's centerpiece is the 1963 Birmingham campaign, during which her high school principal E.J. Oliver locked the school doors to prevent students from leaving to join Martin Luther King Jr.'s demonstrations. Lawson and her classmates defied that order, left campus, and went to downtown Birmingham; some of her classmates were arrested or hosed in the Kelly Ingram Park area (Lawson herself was not in that immediate area when those events occurred but did participate in the demonstrations). She and her classmates were suspended from school for two weeks for disobeying their elders, then gradually rehabilitated into 'heroes' as the campaign's victory became clear. By her May 1963 graduation, the action was no longer being treated as wrong. Lawson notes that her mother had died by this point and that her father had attended a couple of mass meetings with her, though she does not recall the specific topics.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["montgomery bus boycott", "fred shuttlesworth", "freedom rides", "anniston", "birmingham campaign", "martin luther king jr", "kelly ingram park", "children's crusade era", "e.j. oliver"],
+      "related_events": ["Montgomery bus boycott", "Freedom Rides of 1961", "Anniston bus burning", "Birmingham campaign", "Children's Crusade (Birmingham 1963)", "Kelly Ingram Park demonstrations"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 20,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Lawson does not herself name 'Children's Crusade'; the chapter title uses the historical-record term for the 1963 Birmingham student-arrests period she describes."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "01:03:34,000",
+      "end_time": "01:19:12,000",
+      "title": "New York Summers: Sloan Kettering and the March on Washington",
+      "summary": "Lawson describes the summer of 1963, when she was about 17 years old, working as an intern at the Hayden Planetarium / Memorial Sloan Kettering research laboratories in New York City. The internship came through her two older half-sisters (the surviving daughters of her father's first marriage), who worked there as lab technologists. Lawson stayed with one of her sisters in Queens and commuted into Manhattan, doing blood-analysis lab work with calculators and a slide rule. She was thrilled with New York's cosmopolitan integrated life, attended Broadway and experimental theater with her sister and with new friends including a Swedish-American nurse and her roommates (a flight attendant and a UN staffer), and was offered help by one of the research doctors who was a Cornell dean to apply to Cornell and eventually its medical school. She was conflicted about being in New York while the March on Washington took place that August, which she followed in the newspapers and on television. Returning the next summer (1964), she became disillusioned with cancer research after one researcher told her that twenty years of work had isolated only a tiny piece of a much larger puzzle and after she realized she did not want to work directly with dying patients. She also describes the creative encouragement of her father -- letting the children submit competing architectural designs for a planned addition to the house (with a playroom and elevated platform for electric trains), buying her canvas and oil paints, and refusing to buy her a Monopoly set, which prompted her to build her own from cardboard.",
+      "main_topic_category": "Education",
+      "keywords": ["memorial sloan kettering", "hayden planetarium", "cornell university", "new york city", "march on washington", "lab technologist", "slide rule", "monopoly", "oil painting"],
+      "related_events": ["March on Washington for Jobs and Freedom 1963", "Memorial Sloan Kettering cancer research"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 82,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 19,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Transcript renders the New York institution sometimes as 'Hayden Planetarium' (the American Museum of Natural History planetarium) and sometimes as 'Sloan' (Memorial Sloan Kettering Cancer Center); the summary preserves Lawson's ambiguous usage rather than adjudicating which institution she actually interned at."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "01:19:12,000",
+      "end_time": "01:32:42,000",
+      "title": "Tuskegee, Gomillion, and the Pull Toward SNCC",
+      "summary": "Lawson recounts her arrival at Tuskegee Institute on a full segregated state science-fair scholarship (her project was a graphical representation of sound-wave frequencies using a small water tank and a re-purposed Tandy Corporation hobby kit). She immediately discovered she had no interest in sororities and gravitated to a student group working on desegregating downtown Tuskegee. She met Almena Lomax, who ran a small newspaper in Tuskegee (and whose son James Lomax later became the head of Fulton County and went to the United Negro College Fund), and through her met Dr. Charles Gomillion, the Tuskegee Institute sociology professor whose voter-rights work focused on dismantling the racial gerrymander of Macon County (the foundation of the U.S. Supreme Court's 1960 Gomillion v. Lightfoot ruling, though Lawson does not recall the case's procedural history in the interview). She met Gwen Patton -- who became a key Tuskegee student organizer -- and joined the rural voter-registration work in Macon County. After the September 1963 Sixteenth Street Baptist Church bombing in Birmingham, which her brother knew the family of one of the girls killed, Lawson felt a deepening pull toward the Movement. Working through her connections in the Tuskegee School of Veterinary Medicine and a Pan-African network including Dr. Doris Mitchell (a Tuskegee veterinarian who knew Odetta), she found herself in a more intellectually adult circle. By the November 1964 elections, she went alone to Jackson, Mississippi to canvass for voter registration, believing she stayed with Euvester Simpson. She found the door-to-door work comfortable but the social culture (more liberal than she was used to) disorienting.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["tuskegee institute", "tandy corporation", "almena lomax", "michael lomax", "fulton county", "united negro college fund", "charles gomillion", "gomillion v. lightfoot", "macon county", "gwen patton", "sixteenth street baptist church bombing", "doris mitchell", "odetta", "euvester simpson", "jackson mississippi"],
+      "related_events": ["Gomillion v. Lightfoot (1960)", "Sixteenth Street Baptist Church bombing (1963)", "November 1964 voter registration in Mississippi", "Macon County Alabama voter-registration drive"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 80,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 33,
+        "quality_component_b": 18,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript renders the second Lomax's name as 'Almena Lomax' repeated, suggesting an ASR error; he is almost certainly Michael L. Lomax, the son of newspaper publisher Almena Davis Lomax, who became Fulton County Commission chair and later UNCF CEO. Civil_rights_facts.json corroborates this. The chapter summary identifies him as 'James Lomax' tentatively but flags this in the errors list -- the canonical name is 'Michael L. Lomax,' not 'James.'"
+        ],
+        "improvements": [
+          "Correct the second Lomax reference to 'Michael L. Lomax' rather than the placeholder 'James Lomax' once a downstream editor can verify."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:32:42,000",
+      "end_time": "01:50:02,000",
+      "title": "Arrest at the Montgomery State Capitol",
+      "summary": "Lawson describes the period of the Selma to Montgomery marches (spring 1965), during which she and other Tuskegee students -- including Gwen Patton, Samuel Younge Jr., George Paris, Wendy Paris, and CJ Jones -- traveled to Selma and to Lowndes County to support SNCC's voter-registration work. She notes that she was still a Tuskegee student when her classmate Samuel Younge Jr. was killed (January 1966). The chapter centers on a counter-demonstration at the Montgomery state capitol -- the former White House of the Confederacy -- in which forty to fifty students marched in an oval loop while state troopers stood behind them slapping billy clubs against their thighs and a large group of white men and women (reported by some as Klan-affiliated but not robed) approached up the street in cars. State troopers arrested the demonstrators just before that crowd reached them, on a 'resisting arrest' charge. Lawson was held in the Montgomery County jail for about five days; she was not personally afraid but the conditions deteriorated (overflowing bathrooms, inedible food, hunger strike) as more arrestees were brought in. She believes William Kunstler arranged their release and dismissal of charges. In a later arrest in Atlanta during a December holiday season (which Lawson places around 1967), she was jailed with Karen Edmonds Spellman, Fay Bellamy Powell, and Ruby Doris Smith Robinson after Black Atlanta officers stopped them on Auburn Avenue; she recalls Howard Moore Jr. as the attorney involved. Lawson interprets the Atlanta arrest as Black officers exercising authority over Movement people whose afros made them obviously identifiable.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["selma to montgomery", "samuel younge jr", "gwen patton", "montgomery state capitol", "ku klux klan", "william kunstler", "atlanta arrest", "auburn avenue", "karen edmonds spellman", "fay bellamy powell", "ruby doris smith robinson", "howard moore jr"],
+      "related_events": ["Selma to Montgomery marches (1965)", "Murder of Samuel Younge Jr. (January 1966)", "Montgomery state capitol counter-demonstrations", "Auburn Avenue Atlanta Black-business district"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 80,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 33,
+        "quality_component_b": 18,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "Lawson herself dates the Atlanta arrest with hedge: 'I think it's probably like 67' (segment 1186). The summary preserves the uncertainty by writing 'around 1967.'",
+          "Lawson hedges on Kunstler's involvement ('I want to think that William Kunstler had arranged for us to be released,' segment 1128). The summary preserves the hedge."
+        ],
+        "improvements": [
+          "If the corpus can cross-reference Karen Edmonds Spellman, Fay Bellamy Powell, or Howard Moore Jr.'s arrest records, the Atlanta date could be tightened."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:50:02,000",
+      "end_time": "02:11:16,000",
+      "title": "Lowndes County Freedom House and SNCC Intellectual Life",
+      "summary": "Lawson describes leaving school (which she dates tentatively to spring 1966) and moving full-time to the SNCC Freedom House in Lowndes County, Alabama, having first worked in Wilcox County (around Gee's Bend) before being asked to come to Lowndes. The Freedom House -- which she believes belonged to the Jackson family -- doubled as office by day and sleeping quarters at night; Lawson recalls a structure dilapidated enough that she could see stars through the roof and ground through the floor, heated by a single pot-belly stove around which the staff rotated to stay warm. She lists the people she worked alongside there: Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, and Ivanhoe (Donaldson). She emphasizes that the evening conversations were not narrowly tactical but included readings of Frantz Fanon's Black Skin, White Masks and broader debates about freedom, revolution, power, and economic empowerment. Featherstone is identified as particularly committed to economic empowerment as the long-term basis for Black self-determination. Lawson describes the Wilcox County / Gee's Bend community as an isolated planned settlement -- everyone surnamed Pettway, descended from the Pettway plantation -- where the whites had cut the bridge to isolate the community. She speculates that strategic attention concentrated on Lowndes rather than Wilcox because Lowndes was felt to be more electorally winnable; she expresses regret in hindsight that Wilcox did not get more sustained effort. The chapter closes with Lawson beginning to describe SNCC-adjacent economic-empowerment work -- Mississippi catfish farming, Mississippi Action for Community Education (run by Ed Brown and Charles Bannerman), and the Fine Vines blue-jeans textile cooperative -- before the transcript ends mid-sentence: 'And I worked with them. I worked for…'",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["lowndes county", "wilcox county", "gee's bend", "pettway", "freedom house", "stokely carmichael", "ralph featherstone", "courtland cox", "charlie cobb", "ivanhoe donaldson", "frantz fanon", "black skin white masks", "mississippi action for community education", "ed brown", "charles bannerman", "fine vines"],
+      "related_events": ["SNCC Lowndes County voter registration", "Lowndes County Freedom Organization (LCFO)", "Gee's Bend planned settlement (FSA / Pettway)", "Mississippi Action for Community Education", "Drum and Spear / Black-Power-era economic-empowerment projects"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 75,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 30,
+        "quality_component_b": 18,
+        "quality_component_c": 15,
+        "quality_component_d": 12,
+        "errors": [
+          "The transcript ends mid-sentence ('And I worked with them. I worked for…'). This is a source-level Whisper truncation flagged in OPEN_PROBLEMS Problem 1b. The chapter is necessarily incomplete and cannot be extended without speculation.",
+          "Lawson says 'Ivanhoe' without a surname (segment 1194). The summary adds 'Donaldson' as an inferred identification (he was the well-known SNCC 'Ivanhoe' in this cohort) but flags this as an interpretive extension."
+        ],
+        "improvements": [
+          "Flag the chapter ending as a source-level truncation, not as Lawson's actual story-end. Downstream readers should know the interview was longer than what survives in transcription.",
+          "If the original audio is available, a re-transcription should be attempted to recover Lawson's later economic-empowerment / PBS / Drum and Spear narrative."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Jennifer Lawson",
+      "interviewee_title": "Civil Rights Activist, SNCC Field Organizer",
+      "interview_date": "2015-12-11",
+      "interview_location": "Washington, D.C. (interviewee's home)",
+      "interviewer_name": "Emily Crosby",
+      "interviewer_affiliation": "Library of Congress / Smithsonian National Museum of African American History and Culture",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "02:11:16",
+      "total_segments": 1225,
+      "word_count": 27500,
+      "number_of_chapters": 9
+    },
+    "overall_score": {
+      "total": 78,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 23,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 7,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with clear contextual framing of Fairfield/Birmingham origins (Segment 7, 00:00:39,000)",
+            "Chronological structure progresses childhood -> high school -> Tuskegee -> SNCC field work (Segments 7 through 1194)",
+            "Source-level truncation ends mid-sentence rather than at a natural narrative resolution (Segment 1225, 02:11:16,000)"
+          ],
+          "justification": "The interview follows a clear chronological arc from Lawson's Fairfield childhood through Tuskegee Institute to full-time SNCC work in Lowndes County, with smooth interviewer-led transitions. Some tangents (the Monopoly board, the planetarium internship) are well-integrated rather than disruptive. The score is held down because the source transcript truncates mid-sentence rather than resolving."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "we considered it a big playground... And we'd ride our bikes around and it was no traffic on the campus and things",
+            "segment": 254,
+            "timestamp": "00:28:52,000"
+          },
+          "specificity_count": {
+            "full_names": 38,
+            "specific_dates": 12,
+            "specific_places": 22
+          },
+          "evidence": [
+            "Detailed description of father's repair shop and barter economy with two or three cars in the backyard at any moment (Segment 59, 00:07:02,000)",
+            "Reconstructed dialogue at Mississippi police stop: 'oh boy, boy, where are you going?' / 'I just got these little cotton pickers in the back here' (Segments 340-341, 00:40:31,000)",
+            "Freedom House described as a structure where 'you could see the stars by looking up and you could see the ground by looking down' with the pot-belly stove rotation ritual (Segments 1199-1203, 02:07:08,000)"
+          ],
+          "justification": "Lawson supplies vivid concrete imagery throughout -- the rotating bodies around the Freedom House stove, the father's kerosene-burning car, the dilapidated Lowndes shack -- and grounds events with named full names of fellow SNCC workers. She is less specific on exact dates, often hedging years ('I think it's probably like 67')."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "for me she is a rather tragic figure because I think that she was lonely in some ways and missed the world",
+            "segment": 114,
+            "timestamp": "00:14:44,000"
+          },
+          "emotional_range": [
+            "grief", "pride", "ambivalence", "anger", "tenderness", "regret"
+          ],
+          "vulnerability_elements": [
+            "Admits her mother's depression in retrospect (Segment 114, 00:14:44,000)",
+            "Describes painful watching her father be subservient to white customers (Segment 346, 00:41:33,000)",
+            "Admits she was 'really depressed' when forced to choose between school and Movement (Segment 897, 01:43:13,000)",
+            "Acknowledges her shyness and discomfort in Mississippi SNCC's more sexually liberal social culture (Segment 793, 01:34:00,000)"
+          ],
+          "justification": "Lawson shows real emotional vulnerability about her mother's depression, her own depression at the school-versus-Movement decision, and her social awkwardness in the Mississippi SNCC cohort. She does not perform; she reflects. The score is not higher only because she remains analytically reserved at key moments (the Younge killing, her mother's death) where deeper grief is implied but not voiced."
+        },
+        "overall_assessment": "Lawson is a capable narrator with a clear chronological structure and a strong eye for concrete detail. Her emotional disclosures about her parents, her depression around career choices, and her social discomfort in SNCC's Mississippi cohort are unusually candid for a 2015 archival interview. The narrative is dampened, however, by the source-level Whisper truncation that leaves the final chapter mid-sentence rather than at a resolved reflection."
+      },
+      "historical_value": {
+        "total": 21,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 8,
+          "max_possible": 10,
+          "major_events": [
+            "Birmingham 1963 student walkouts during the Children's Crusade era (Segments 415-419, 00:53:40,000)",
+            "November 1964 Mississippi voter-registration canvass (Segments 770-789, 01:31:32,000)",
+            "Selma to Montgomery period at the Montgomery state capitol (Segments 1022-1067, 01:54:00,000)",
+            "SNCC Lowndes County Freedom House organizing (Segments 1196-1210, 02:06:50,000)"
+          ],
+          "key_figures": [
+            {"name": "Charles Gomillion", "relationship": "professor/movement mentor", "contact_level": "moderate"},
+            {"name": "Gwen Patton", "relationship": "fellow Tuskegee student organizer", "contact_level": "close"},
+            {"name": "Samuel Younge Jr.", "relationship": "Tuskegee classmate and SNCC co-worker", "contact_level": "close"},
+            {"name": "Stokely Carmichael", "relationship": "SNCC co-worker in Lowndes Freedom House", "contact_level": "close"},
+            {"name": "Ralph Featherstone", "relationship": "SNCC co-worker, intellectual interlocutor", "contact_level": "close"},
+            {"name": "William Kunstler", "relationship": "movement attorney (post-Montgomery arrest)", "contact_level": "distant"},
+            {"name": "Howard Moore Jr.", "relationship": "movement attorney (post-Atlanta arrest)", "contact_level": "moderate"},
+            {"name": "Almena Lomax", "relationship": "Tuskegee newspaper publisher", "contact_level": "moderate"}
+          ],
+          "organizational_involvement": [
+            {"organization": "Tuskegee Institute student movement group (proto-TIAL)", "role": "student organizer", "years": "1964-1966"},
+            {"organization": "Student Nonviolent Coordinating Committee (SNCC)", "role": "field organizer, Lowndes County Freedom House staff", "years": "1965-1968+"}
+          ],
+          "unique_access": "Lawson is one of the few surviving women SNCC field staff who lived in the Lowndes County Freedom House during the Black Power transition (1965-1966) and can give firsthand testimony about the day-to-day life there, including the Fanon reading culture and the intellectual debates about economic empowerment.",
+          "justification": "Lawson was a participant in the Tuskegee student movement, a Mississippi voter-registration canvasser, an arrestee at a Montgomery state-capitol counter-demonstration, and a resident of the SNCC Lowndes County Freedom House during the Stokely Carmichael / Black Power-era pivot. Her access is genuinely close to first-rank Movement figures. The score is not 9-10 because she is candid about hedging on dates and details and is not a top-tier organizational decision-maker of the kind described in 9-10."
+        },
+        "specificity_of_details": {
+          "score": 6,
+          "max_possible": 8,
+          "precision_examples": [
+            "Father's birthplace 'what is now Bullock County, Alabama, Alabama near Union Springs, AL' (Segment 11, 00:01:07,000)",
+            "Date of Mary Lawson's birth in June 1946 in Fairfield, Alabama (Segment 9, 00:00:52,000)",
+            "Father's first business partner Arthur G. Gaston (named twice for emphasis, Segment 354, 01:42:43,000)",
+            "Specific Tuskegee co-workers Gwen Patton, Samuel Younge Jr., George Paris, Wendy Paris, CJ Jones named in single passage (Segments 858-860, 01:38:55,000)",
+            "Lowndes Freedom House co-workers Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, Ivanhoe (Donaldson) named in single passage (Segment 1194, 02:06:16,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 38,
+            "first_only": 4,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "Lawson was a Tuskegee Institute student in the mid-1960s alongside Samuel Younge Jr. (verifiable against published Tuskegee records)",
+            "Lawson worked in the SNCC Lowndes County Freedom House alongside Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, and Ivanhoe Donaldson (verifiable against SNCC field-staff records)",
+            "Charles Gomillion was a Tuskegee Institute sociology professor and the plaintiff in Gomillion v. Lightfoot, 364 U.S. 339 (1960) (verified against civil_rights_facts.json)"
+          ],
+          "justification": "Lawson supplies many full names and major locations and dates her own childhood and college years precisely. She is good on years for some events (1946 birth, 1963 Birmingham, November 1964 Mississippi) and hedging on others (Atlanta arrest 'around 67'), bringing the score below 7-8 EXCEPTIONAL PRECISION but firmly in 5-6 GOOD SPECIFICITY territory."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "Personal account of the Tuskegee student-Movement-to-SNCC transition from the woman SNCC field-staff perspective",
+            "Detailed description of Lowndes County Freedom House daily life and the Fanon reading culture",
+            "Account of the Birmingham 1963 student walkouts from the perspective of a Fairfield high school student defying her own principal",
+            "Recollection of Almena Lomax's role in the Tuskegee press ecosystem alongside Gomillion's voting-rights work"
+          ],
+          "understudied_aspects": [
+            "Women in SNCC field staff at the Black Power transition (1965-1966)",
+            "Tuskegee Institute student-Movement-to-SNCC pipeline (the pre-TIAL cohort)",
+            "The intellectual reading culture of the Lowndes Freedom House (Fanon)",
+            "The Wilcox County / Gee's Bend SNCC effort and the strategic decision to concentrate resources on Lowndes"
+          ],
+          "narrative_complications": "Lawson's account complicates the dominant Lowndes-County narrative that centers John Hulett and the LCFO's electoral organizing by showing that the same Freedom House was a site of sustained Pan-African and revolutionary-theoretical reading and debate. She also complicates the standard 'Birmingham Children's Crusade' narrative by showing how it played out for a Fairfield high school student whose principal actively opposed her participation.",
+          "historiographical_value": "Historians of the SNCC Black Power transition, of women in SNCC, and of the Lowndes Freedom Organization would all find Lawson's testimony as primary-source material. The Wilcox-Lowndes resource-allocation question she raises is especially valuable.",
+          "justification": "Lawson genuinely fills underrepresented gaps -- women SNCC field staff, the Tuskegee-Lowndes-Atlanta pipeline, the intellectual culture of the SNCC Black Power period. The Wilcox-versus-Lowndes resource-allocation reflection (Segments 966-973, 01:49:36,000) is a research-grade contribution."
+        },
+        "overall_assessment": "This is a high-historical-value interview from a participant whose specific position -- woman SNCC field staff in the Tuskegee-Lowndes-Atlanta cohort during the Black Power transition -- is underrepresented in the published Movement record. The truncation reduces what would otherwise have been a likely 22-23 score."
+      },
+      "emotional_resonance": {
+        "total": 18,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Lawson moves from a planned career in medicine (with mentors offering Cornell admission) to a full-time SNCC organizer, accepting the loss of her scholarship and the uncertainty of having 'no means of support' (Segment 868, 01:40:35,000). She frames this as a deliberate, hard, individually-arrived-at decision.",
+          "key_turning_points": [
+            "1963 Birmingham student walkouts: first conscious defiance of authority for Movement reasons (Segment 415, 00:53:40,000)",
+            "Summer 1964 Sloan Kettering disillusionment with medicine (Segments 506-511, 01:08:24,000)",
+            "November 1964 solo trip to Jackson, Mississippi (Segments 776-781, 01:32:11,000)",
+            "Spring 1966 decision to leave school and work full-time for SNCC (Segments 850-907, 01:38:11,000)"
+          ],
+          "before_after_contrast": "Before: a curious, sciences-focused student headed for Cornell pre-med. After: a Tuskegee dropout living in a Lowndes County Freedom House reading Fanon and organizing voter registration with Stokely Carmichael, Courtland Cox, and Ralph Featherstone.",
+          "inspirational_quality": "Lawson's account of choosing the Movement over a Cornell pre-med pathway, without parental or peer validation, would inspire younger audiences debating careers-versus-vocation choices.",
+          "justification": "The career-decision transformation is genuine, articulated, and dated. The score is not 9-10 because Lawson does not extensively reflect on subsequent identity changes (the Black Power turn within her own consciousness, for instance) -- she narrates the events but does not always probe their inner meaning."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Mississippi police stop with father using 'just got these little cotton pickers' to disarm officer",
+              "segment_range": "339-346",
+              "timestamp_range": "00:40:31,000 - 00:41:36,000",
+              "stakes": "Potential violence to family; the painful psychological cost of watching father be subservient"
+            },
+            {
+              "description": "Montgomery state capitol arrest with state troopers and Klan-affiliated crowd converging",
+              "segment_range": "1022-1067",
+              "timestamp_range": "01:55:00,000 - 01:56:09,000",
+              "stakes": "Physical danger between Klan vehicles approaching and state troopers' billy clubs; group consensus that 'there was no place for us to go'"
+            },
+            {
+              "description": "The school-versus-Movement decision",
+              "segment_range": "884-907",
+              "timestamp_range": "01:42:02,000 - 01:44:06,000",
+              "stakes": "Loss of college scholarship, loss of medical-career pathway, no means of support, no parental validation"
+            }
+          ],
+          "conflict_types": [
+            "physical danger (Montgomery arrest, Klan approach)",
+            "psychological cost (father's subservience, mother's depression)",
+            "career-vocation tension (medicine vs Movement)",
+            "internal political tension (Tuskegee local group vs SNCC)"
+          ],
+          "emotional_range": "From quiet resentment of parental authority to physical-danger composure to deliberative career-redirection grief",
+          "justification": "The Montgomery arrest sequence and the school-versus-Movement decision are the two most dramatic arcs, both well-developed. The 5-6 SOLID DRAMATIC MOMENTS descriptor fits."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "Career choice under uncertainty",
+            "Parent-child relationships across generational divides",
+            "Witnessing a parent's small humiliations",
+            "The loneliness of a depressed mother in a 1950s suburb",
+            "Adolescent travel as identity-formation"
+          ],
+          "relatable_struggles": [
+            "Choosing vocation over career security",
+            "Watching a parent age into eccentricity and possible dementia",
+            "Trying to build adult social skills in a more sexually liberal cohort than one's upbringing prepared for"
+          ],
+          "human_moments": [
+            "Childhood Italian-American friendship ended by adult enforcement of segregation (Segments 206-220, 00:24:17,000)",
+            "Father refusing to buy her a Monopoly board so she made her own from cardboard (Segments 644-657, 01:19:35,000)",
+            "Wanting to be at the March on Washington while interning in New York (Segments 480-486, 01:03:34,000)"
+          ],
+          "connection_points": "Audiences across backgrounds can relate to childhood friendships ended by adult prejudice, to the choice between career security and vocational calling, and to the small-childhood-creativity moments of building one's own Monopoly board out of cardboard.",
+          "justification": "Lawson reaches for universal themes (mother-daughter loneliness, vocation versus career, adolescent friendship) but her primary register remains political-historical rather than universal-human. Score reflects MODERATELY RELATABLE."
+        },
+        "overall_assessment": "The interview's emotional power is real but localized: the Mississippi police-stop sequence, the school-versus-Movement decision, and the Montgomery jail conditions are emotionally substantive. Lawson is less consistently relational than some Movement narrators -- she tells what happened but does not always probe the deeper internal weather around it."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "excellent",
+          "dialect_impact": "none",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Movement-internal references (Gee's Bend, Bloody Lowndes, freedom songs) used without contextualizing for general audiences",
+            "SNCC organizational-internal references (Atlanta Project, MFDP, LCFO) sometimes presumed"
+          ],
+          "justification": "Lawson is highly articulate with no dialect barrier and explains some specialized references (Gomillion, the Pettway plantation origin of Gee's Bend) self-sufficiently. Some Movement-insider references (Atlanta Project, the specifics of the Wilcox-Lowndes resource trade-off) would benefit from interviewer-provided context for a general audience."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Mississippi police stop (Segments 339-346, 00:40:31,000): vivid, fast, charged",
+            "Montgomery state capitol arrest (Segments 1022-1067, 01:55:00,000): tense, dramatic pacing",
+            "Lowndes Freedom House description (Segments 1196-1210, 02:06:50,000): warm, immersive"
+          ],
+          "slow_sections": [
+            "Discussion of the Bullock County farm trips (Segments 384-401, 00:48:00,000): pleasant but anecdotal",
+            "Monopoly-board creation (Segments 644-657, 01:19:35,000): charming digression that some listeners may find dragging"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Two-hour interview likely sustains a committed historical-audience listener but may lose general-audience attention during the longer biographical digressions in the middle third.",
+          "justification": "Emily Crosby's interviewer pacing is good (she steers Lawson back to Birmingham 1963 chronology effectively at Segment 369, 00:45:53,000). Pacing is generally good but uneven; the Wilcox-Lowndes discussion at the end is slowed by Lawson's repeated hedges."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "The Tuskegee-SNCC-Lowndes pipeline as a key Black Power-era institutional development",
+            "Women in SNCC field staff",
+            "Economic empowerment as a long-term Black-self-determination project (Featherstone, MACE, Drum and Spear lineage)",
+            "Movement-era cross-organization legal-defense networks (Kunstler, Howard Moore)"
+          ],
+          "contemporary_relevance": "Lawson's reflections on the choice between career and vocation, and on the long-term strategic question of which counties to invest organizing resources in, speak directly to current debates about movement strategy and resource allocation.",
+          "meaning_making": "Lawson explicitly connects her personal trajectory to broader Movement strategy (the Wilcox-vs-Lowndes reflection in Segments 966-973 is meta-strategic) and is clear about why she chose SNCC over the Tuskegee local group.",
+          "justification": "Lawson does explicitly connect her personal story to broader Movement themes, especially in the Wilcox-Lowndes resource-allocation reflection and in the description of the Fanon reading culture. She is somewhat less reflective on contemporary relevance, which is implicit rather than explicit."
+        },
+        "overall_assessment": "Highly accessible language, generally good interviewer-led pacing, and explicit thematic connections, with some pacing unevenness in the middle biographical sections."
+      }
+    },
+    "overall_assessment": "This is a Very Good (78/100) interview from a SNCC participant with rare and underrepresented testimony. Lawson is articulate, candid, and analytically clear about her own choices and about the strategic debates within SNCC during the Black Power transition. The interview is dampened by a source-level Whisper truncation that cuts off mid-sentence as Lawson begins to describe Ed Brown, Charles Bannerman, and the Fine Vines / MACE economic-empowerment work that would have been the closing arc.",
+    "key_strengths": [
+      "Strong firsthand access to the Tuskegee-Lowndes-Atlanta SNCC cohort and to Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, and Ivanhoe Donaldson",
+      "Rare woman-SNCC-field-staff perspective on the Lowndes County Freedom House and its Fanon-reading intellectual culture",
+      "Candid emotional vulnerability about the school-versus-Movement decision, the cost of watching her father be subservient, and her mother's depression"
+    ],
+    "key_limitations": [
+      "Source-level Whisper truncation: the transcript ends mid-sentence ('And I worked with them. I worked for…') as Lawson begins to describe her later economic-empowerment work; the interview was clearly longer than the surviving text",
+      "Hedges on several specific dates (Atlanta arrest, Kunstler involvement, specific Lomax-son name) -- the interview is honest about these but they reduce verifiability"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Jennifer Lawson was born in June 1946 in Fairfield, Alabama, a Birmingham suburb",
+        "status": "supported",
+        "supporting_excerpt": "I was born in Fairfield, Alabama. Fairfield is a suburb of Birmingham, Alabama. ... And I was born there in 1946, in June of 1946. (Segments 7-9, 00:00:39,000)",
+        "rationale": "Direct first-person statement of birth date and place."
+      },
+      {
+        "claim": "Lawson's father was from Bullock County, Alabama, near Union Springs",
+        "status": "supported",
+        "supporting_excerpt": "he was born in what is now Bullock County, Alabama, Alabama near Union Springs, AL. (Segment 11, 00:01:07,000)",
+        "rationale": "Direct statement, repeated mention of Bullock County throughout."
+      },
+      {
+        "claim": "Lawson's father, born 1899, was the 14th of 15 children and had a third-grade education",
+        "status": "supported",
+        "supporting_excerpt": "He was the 14th of 15 children and that he then was born in 1899. ... He had a third-grade education. (Segments 10, 15, 00:00:57,000 - 00:01:43,000)",
+        "rationale": "Both facts stated directly."
+      },
+      {
+        "claim": "Father ran Lawson's Repair, a backyard business serving Birmingham-area customers including company towns of Tennessee Coal and Iron (a U.S. Steel subsidiary)",
+        "status": "supported",
+        "supporting_excerpt": "he then started a little business that he called Lawson's Repair... These were these other places, little towns that were company towns for Tennessee coal and iron, which later became a subsidiary of US steel. (Segments 20, 26, 00:02:19,000 - 00:03:11,000)",
+        "rationale": "Direct statement of business name and corporate affiliation."
+      },
+      {
+        "claim": "Lawson's mother was a former school teacher who stopped working after her son was born",
+        "status": "supported",
+        "supporting_excerpt": "My mother had been, before they married, she had been a school teacher. ... after he was born, she stopped working and was a housewife. (Segments 107, 109, 00:13:50,000)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Lawson's first friendship was with Teresa Ragusa, daughter of an Italian-American grocery family that lived across the street, ended by adults when both girls reached school age",
+        "status": "supported",
+        "supporting_excerpt": "I played with this girl, Teresa Ragusa, who lived across the street. ... when it was a time for us to go to elementary school. And that that's when her relatives and my relatives, my, you know, black friends said you can't play together anymore. (Segments 206, 209-210, 00:24:17,000)",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "Lawson attended Robinson Elementary and Fairfield Industrial High School",
+        "status": "supported",
+        "supporting_excerpt": "I went to Robinson Elementary School. ... Now it was Fairfield Industrial High School. (Segments 300, 322, 00:33:40,000 - 00:37:24,000)",
+        "rationale": "Both schools named directly."
+      },
+      {
+        "claim": "The high school principal was Iman J. (E.J.) Oliver, who locked the school doors to prevent students leaving to join Birmingham demonstrations",
+        "status": "supported",
+        "supporting_excerpt": "this remarkable man, Iman J. Oliver, E.J. Oliver, who then was the principal of the high school. ... Professor Oliver, our principal, forbade us to participate and to leave campus. In fact, he sort of, you know, locked the school doors because he didn't want us participating in the demonstrations. (Segments 323, 415-416, 00:37:40,000 - 00:53:40,000)",
+        "rationale": "Both name and lock-doors detail are direct quotes."
+      },
+      {
+        "claim": "Lawson defied principal Oliver, left campus, and participated in Birmingham downtown demonstrations during what became the Children's Crusade era (1963)",
+        "status": "supported",
+        "supporting_excerpt": "we then left school. We at a guest, his orders and went downtown Birmingham to participate. And some of the kids were some of my classmates were arrested and this is now the Kelly Ingram Park demonstrations and things (Segments 417-418, 00:54:04,000)",
+        "rationale": "Direct account of defying orders, going downtown, and Kelly Ingram Park context."
+      },
+      {
+        "claim": "Lawson's mother had died by the time of the Birmingham demonstrations and Lawson's father attended a few mass meetings with her",
+        "status": "supported",
+        "supporting_excerpt": "by then my mother had passed away. My mother had died and my father though had at first he then was upset... we went to a couple of mass meetings (Segments 421, 431, 00:54:40,000 - 00:56:37,000)",
+        "rationale": "Both facts stated directly."
+      },
+      {
+        "claim": "Lawson spent the summer of 1963 interning in New York City at the Hayden Planetarium / Memorial Sloan Kettering research laboratories through her two older half-sisters who worked there as lab technologists",
+        "status": "partially_supported",
+        "supporting_excerpt": "I was in New York. So I did not participate. I followed the March on Washington in the newspapers and on television but I was in New York working at Hayden Planetarium Memorial Center because I had this internship there. ... my sisters lived in New York City and my sisters worked at Hayden Planetarium. They were lab technicians. (Segments 449-450, 456-458, 00:59:32,000 - 01:00:54,000)",
+        "rationale": "The transcript's wording 'Hayden Planetarium Memorial Center' appears to conflate Hayden Planetarium (a unit of the American Museum of Natural History) with Memorial Sloan Kettering Cancer Center. The summary preserves the ambiguity rather than adjudicating which institution Lawson actually interned at."
+      },
+      {
+        "claim": "Lawson attended Tuskegee Institute on a full state segregated science-fair scholarship for a sound-wave-frequency project",
+        "status": "supported",
+        "supporting_excerpt": "I had a scholarship by participating in a science fair. It was a statewide science fair... It was Gorgas Scholarship sort of scholarship or something. It was a black scholarship and it was full tuition and room and board for four years to a black college in Alabama. ... My project was one where I did a demonstration of sound waves (Segments 589-592, 602, 01:14:28,000 - 01:15:31,000)",
+        "rationale": "Both scholarship and project description are direct quotes."
+      },
+      {
+        "claim": "At Tuskegee, Lawson met Dr. Charles Gomillion, the Tuskegee sociology-affiliated professor whose voting-rights work targeted the Macon County racial gerrymander (the 1960 U.S. Supreme Court case Gomillion v. Lightfoot)",
+        "status": "supported",
+        "supporting_excerpt": "Dr. Gomillion v. Lightfoot, and Gomillion v. Lightfoot was doing interested in voter rights. ... His focus was Jerry Mandory, and about how they had taken Macon County and done all of his work. The whites had just broken the county up in ways so that you would never be able, blacks would never be able to like have a majority and get a vote. (Segments 528, 532-533, 01:11:20,000)",
+        "rationale": "Direct mention. Civil_rights_facts.json corroborates Gomillion as the plaintiff in Gomillion v. Lightfoot (1960) and as the Tuskegee Civic Association founder."
+      },
+      {
+        "claim": "Lawson met Almena Lomax, who ran a small newspaper in Tuskegee, and through her met other Tuskegee adult-organizer figures",
+        "status": "supported",
+        "supporting_excerpt": "I also met this woman, Almena Lomax, who's Almena Lomax. The later became the head of Fulton County. And now I think he's with the United Negro College Fund. His mother, at that time, ran a little news, had a newspaper in Tuskegee. (Segments 524-527, 01:09:55,000)",
+        "rationale": "Direct mention. Civil_rights_facts.json corroborates Almena Lomax as the Tuskegee newspaper publisher and mother of Michael L. Lomax (later Fulton County Commission chair, UNCF CEO). The transcript's repeated 'Almena Lomax' for the son appears to be a Whisper rendering issue; the summary preserves both mentions and the chapter summary flags it as 'James Lomax' with a noted correction needed."
+      },
+      {
+        "claim": "Tuskegee student civil rights group included Gwen Patton, Samuel Younge Jr., George Paris, Wendy Paris, and CJ Jones",
+        "status": "supported",
+        "supporting_excerpt": "Gwen M. Patton, Gwen M. Patton, Samuel Younge Jr, George Paris, Wendy Paris, that a group of us were working, CJ Jones. It was a whole group of us who were Tuskegee students (Segments 858-860, 01:38:55,000)",
+        "rationale": "Direct list. Civil_rights_facts.json corroborates Samuel Younge Jr. as a Tuskegee Institute Advancement League founder and Gomillion mentee."
+      },
+      {
+        "claim": "SNCC's Willie 'Mukasa' Ricks arrived at Tuskegee and the local student group split over deferring to external direction",
+        "status": "supported",
+        "supporting_excerpt": "that it became much more the question. That it became a wiki Willie 'Mukasa' Ricks came to Tuskegee as a representative of SNCC. And that it became much more a question of, wait, this is our group, don't you tell us what to do? (Segments 726-727, 01:27:03,000)",
+        "rationale": "Direct mention."
+      },
+      {
+        "claim": "Lawson went alone to Jackson, Mississippi in November 1964 to canvass for voter registration and believes she stayed with Euvester Simpson",
+        "status": "supported",
+        "supporting_excerpt": "they were asking for volunteers. They wanted more student volunteers to go to Mississippi to work on the November elections. And this was the November 64 elections. ... I want to think that I stayed at the place where with you Vester Simpson, I think that she... (Segments 770-772, 784, 01:31:36,000 - 01:32:55,000)",
+        "rationale": "Both date and the Simpson reference are direct, with Lawson's own hedge preserved."
+      },
+      {
+        "claim": "Lawson and forty to fifty Tuskegee students were arrested at the Montgomery state capitol during the Selma to Montgomery period, after state troopers and a non-robed Klan-affiliated crowd converged on them",
+        "status": "supported",
+        "supporting_excerpt": "I think there were maybe about 40, 50 of us. ... state troopers with their Billy Clubs ... it was the clan or a group. The people said it was the clan, but they were not robed. ... And we were arrested just before that group came fully up the hill. (Segments 1036, 1040, 1045-1046, 1070, 01:54:24,000 - 01:56:23,000)",
+        "rationale": "All details are direct quotes."
+      },
+      {
+        "claim": "Lawson was held in Montgomery County jail for about five days and believes William Kunstler arranged the release on a 'resisting arrest' charge that was later dismissed",
+        "status": "supported",
+        "supporting_excerpt": "I think I was there for about like five days. ... I want to think that William Conzler had arranged for us to be released. And I want to think that they filed some things where later all of the charges were dismissed. ... I think the charge was that we were arrested for resisting arrest. (Segments 1090, 1128-1131, 01:57:33,000 - 02:00:04,000)",
+        "rationale": "All details direct, with Lawson's own hedges preserved. 'William Conzler' is the Whisper rendering of 'William Kunstler.'"
+      },
+      {
+        "claim": "Lawson was arrested in Atlanta around 1967 with Karen Edmonds Spellman, Fay Bellamy Powell, and Ruby Doris Smith Robinson on Auburn Avenue after Black officers stopped them; Howard Moore Jr. was the attorney involved",
+        "status": "supported",
+        "supporting_excerpt": "on a subsequent arrest in Atlanta with Karen Edmonds Spellman, Fay Bellamy Powell, and Ruby Doris Smith Robinson, one during the holiday season in December in Atlanta, when I was working in the Atlanta office, we were arrested. And then I think Howard Moore Jr, then he was the person who... ... I think it's probably like 67. (Segments 1141-1143, 1186, 02:00:42,000 - 02:05:46,000)",
+        "rationale": "All four names plus Howard Moore Jr. and the holiday-season-1967 framing are direct quotes, with Lawson's own date hedge preserved."
+      },
+      {
+        "claim": "Lawson lived in the SNCC Lowndes County Freedom House and worked alongside Stokely Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, and Ivanhoe Donaldson",
+        "status": "partially_supported",
+        "supporting_excerpt": "I would come over for meetings with Stokely, Carmichael, Ralph Featherstone, Courtland Cox, Charlie Cobb, Ivanhoe. We would meet there from time to time (Segment 1194, 02:06:16,000)",
+        "rationale": "Stokely Carmichael, Ralph Featherstone, Courtland Cox, and Charlie Cobb are named directly. 'Ivanhoe' is given only by first name; the surname 'Donaldson' is an inference, since Ivanhoe Donaldson was the principal SNCC 'Ivanhoe' in that cohort, but it is technically an interpretive extension."
+      },
+      {
+        "claim": "Lawson read Frantz Fanon's Black Skin, White Masks in the Lowndes Freedom House",
+        "status": "supported",
+        "supporting_excerpt": "some of us were reading Frantz Fanon. And, you know, reading his books and black skins, white masks (Segments 1207-1208, 02:08:47,000)",
+        "rationale": "Direct quote. Civil_rights_facts.json corroborates Fanon's 'Black Skin, White Masks' (1952) and Fanon's influence on SNCC and the Black Power era."
+      },
+      {
+        "claim": "Ralph Featherstone was committed to economic empowerment and worked on projects including Mississippi catfish farming and Ed Brown / Charles Bannerman's Mississippi Action for Community Education and the Fine Vines blue-jeans textile cooperative",
+        "status": "partially_supported",
+        "supporting_excerpt": "Ralph Featherstone, for example, felt that economic empowerment was absolutely essential. ... in some parts of Mississippi, they started doing catfish farming ... Ed Brown, was another person who was interested in the economic empowerment ideas. And so he eventually became the head of that group, Mississippi Action for Community Education, in Mississippi. And so Ed and Charles Bannerman and a few others then worked on setting up those kinds of activities. They had one fine vines, I think it was called for. It was a blue jeans (Segments 1210-1223, 02:09:04,000 - 02:10:59,000)",
+        "rationale": "Featherstone's economic-empowerment commitment is directly stated; the catfish-farming, MACE, and Fine Vines details are about projects Ed Brown and Charles Bannerman ran (with Lawson hedging on whether SNCC per se was involved). The compressed summary attribution is mostly faithful but slightly conflates Featherstone's general commitment with the specific MACE / Fine Vines activities, which Lawson attributes primarily to Brown and Bannerman."
+      },
+      {
+        "claim": "The transcript ends mid-sentence: 'And I worked with them. I worked for…'",
+        "status": "supported",
+        "supporting_excerpt": "So that, they were doing those kinds of things. And I worked with them. I worked for… (Segment 1225, 02:11:10,000)",
+        "rationale": "Direct verbatim from the final SRT segment. The truncation is itself the supporting evidence."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 25,
+      "supported": 20,
+      "partially_supported": 3,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_quality_below_90_and_citation_blocked_3_partial",
+    "rationale": "The main summary's accuracy score (87) falls below the 90 publication threshold, the quality score (72) falls well below it because the source transcript is truncated mid-sentence and the chapter coverage is therefore necessarily incomplete, and the citation audit has 3 partially_supported claims (the Sloan Kettering / Hayden Planetarium institutional ambiguity, the Ivanhoe Donaldson surname inference, and the Featherstone-versus-Brown-Bannerman attribution compression). The fail-closed gate is correctly routing this transcript to human review. A reviewer should (a) resolve the Hayden Planetarium / Memorial Sloan Kettering attribution by checking the original audio or Lawson's biographical record, (b) confirm the 'Ivanhoe' is Ivanhoe Donaldson, (c) reattribute the MACE / Fine Vines work cleanly to Ed Brown and Charles Bannerman with Featherstone framed as the broader economic-empowerment interlocutor, and (d) flag the source-level truncation prominently so downstream readers understand the interview's career narrative is genuinely cut short. The Whisper truncation flagged in OPEN_PROBLEMS Problem 1b is the dominant gating issue and is a transcription/upstream problem, not a summarization defect."
+  }
+}

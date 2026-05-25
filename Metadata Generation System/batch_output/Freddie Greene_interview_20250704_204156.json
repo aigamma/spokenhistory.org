@@ -1,0 +1,1061 @@
+{
+  "interview_name": "Freddie Greene",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Freddie Greene_interview_20250704_204156\\Freddie Greene_interview_transcript_20250704_204156.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Freddie Greene",
+    "interviewee_title": "SNCC Field Worker and Civil Rights Activist",
+    "interview_date": "2015-12-10",
+    "interview_location": "Library of Congress, Washington, D.C.",
+    "interviewer_name": "Emily Crosby",
+    "interviewer_affiliation": "Library of Congress / Smithsonian National Museum of African American History and Culture",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:36:04"
+  },
+  "main_summary": {
+    "summary": "Freddie Greene, born February 15, 1945, in Greenwood, Mississippi, recounts her upbringing in the Mississippi Delta and her path into the civil rights movement. She describes a relatively stable household: her father, born in 1900, ran an independent house-painting business and her mother, born in 1907, had taught school after attending Tougaloo. Both parents owned their home, a property inherited through her great-grandmother, and her father had paid into Social Security since the 1930s, which Greene credits with allowing the family to absorb the economic retaliation that followed their movement activity. She describes Greenwood's stark segregation, the inferior segregated schools (which used hand-me-down textbooks from the white schools), and her family's careful avoidance of the white parts of town. She remembers Emmett Till's body being brought to a Greenwood funeral home and her parents' warnings about how easily harm could come.\n\nGreene's entry into the movement came through her family. Her father had been involved with the NAACP, and her brother Dwight returned from the Navy in 1962, worked for the Mississippi Free Press in Jackson, and met Robert Parris Moses, Sam Block, Willie Peacock, Reggie Robinson, Medgar Evers, and Amzie Moore. When SNCC organizers Sam Block and Willie Peacock came into Greenwood that fall, Greene began attending mass meetings led by Hollis Watkins's singing, and helped distribute the surplus food that Dick Gregory flew into Greenwood after Leflore County cut commodities to retaliate against voter registration. In March 1963, after her brother George attended a SNCC meeting, the family's house was shot up with a shotgun. Greene went to Dillard University in New Orleans that September; while there she learned of Medgar Evers's killing and of the Sixteenth Street Baptist Church bombing in Birmingham.\n\nIn the summer of 1964, Greene attended the Freedom Summer orientation in Ohio and then worked on the McComb, Mississippi project organizing for the Mississippi Freedom Democratic Party. She was in Washington with the project's organizers lobbying Congress for protection when word came that Schwerner, Chaney, and Goodman had been kidnapped. The McComb freedom house she lived in with about eleven other workers was dynamited at the garage door the night after a staff vote to bring in more volunteers; her brother George had been the lone dissenting vote. Greene then traveled with the MFDP delegation to the Atlantic City Democratic Convention, where Fannie Lou Hamer's testimony went out nationally; Greene believed the delegation would be seated and describes the compromise as a clarifying moment about the rest of the country's indifference.\n\nAfter a second year at Dillard, Greene left school and worked on voter registration in Jackson during the 1965 demonstrations, spending a week jailed at the Jackson fairgrounds. She then moved to the SNCC national office in Atlanta at James Forman's encouragement, worked the switchboard and then SNCC finance under bookkeeper Chessie Johnson and Ruby Doris Smith Robinson. She was on staff during the 1966 Meredith March Against Fear when 'Black Power' was raised, the subsequent collapse in SNCC funding, and SNCC's decision that white staff would work in white communities. She left SNCC in June 1968 after Dr. King's assassination. Throughout the interview she recalls Stokely Carmichael, who frequently stayed with her family in Greenwood, as a personable mentor who urged her toward Howard, and remembers James Forman and Ruby Doris Smith Robinson as the SNCC mentors who shaped her organizational training.",
+    "key_themes": [
+      "Family economic independence as a buffer against movement retaliation",
+      "Mississippi Delta segregation and the threat of racial violence",
+      "Voter registration organizing in Leflore County and the Delta",
+      "Freedom Summer 1964 and the McComb project",
+      "Mississippi Freedom Democratic Party and the 1964 Atlantic City Convention",
+      "SNCC organizational life: from the field to the Atlanta national office",
+      "Mentorship within SNCC (James Forman, Ruby Doris Smith Robinson, Stokely Carmichael)"
+    ],
+    "historical_significance": "Greene's testimony documents the Mississippi Delta entry point into SNCC's voter-registration work from a young woman's perspective, covering Greenwood, the McComb summer project, the MFDP Atlantic City challenge, and the Atlanta national office during the 1966-68 Black Power transition. Her account adds first-person texture to several pivotal episodes (the Dick Gregory food airlift, the bombing of the McComb freedom house, the Jackson fairgrounds mass jailing) and offers an inside view of SNCC's organizational machinery under James Forman and Ruby Doris Smith Robinson. It also preserves a familial vantage on Stokely Carmichael, who stayed with the Greene family during his Mississippi work.",
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 88,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 26,
+      "quality_component_a": 36,
+      "quality_component_b": 21,
+      "quality_component_c": 17,
+      "quality_component_d": 14,
+      "errors": [
+        "Speaker says her brother Dwight applied to be 'the second black student at Ole Miss' in 1962. Greene's transcript phrasing is faithfully reproduced, but historically James Meredith was the first to be admitted and enrolled in October 1962; a second-Black-applicant claim attributed to Dwight Greene is the speaker's own framing and cannot be independently corroborated by the transcript beyond the speaker's testimony.",
+        "Transcript renders the Mississippi Free Press distributor name as 'Amzie Moore'; the canonical figure was Amzie Moore of Cleveland, Mississippi, and the summary uses that canonical spelling. No contradiction with ground truth, but the substitution should be noted.",
+        "Transcript identifies the McComb minister/volunteer episode as involving 'Dennis Sweeney, who was a Stanford student' and a minister 'from Oregon' who knew the Heffners; family is 'Heffners' (transcript) which matches the canonical Albert and Malva Heffner family. Summary keeps these names; no substantive ground-truth conflict, but the visit was actually to the Heffner home in McComb after the Hattiesburg-area freedom workers were targeted -- the summary does not attempt to extend beyond the transcript's framing.",
+        "Speaker dates Voting Rights Act-related action ambiguously ('the civil rights bill ... I believe it's signed that fall'); the summary avoids restating that date because the speaker herself is uncertain in the transcript."
+      ],
+      "improvements": [
+        "Add brief disambiguation that 'Mississippi Vocational College' (later Mississippi Valley State University) and 'Ole Miss' are distinct institutions, since the summary mentions both within a sentence of each other.",
+        "Clarify that the Sixteenth Street Baptist Church bombing in Birmingham (September 15, 1963) killed four girls, which the speaker references obliquely as 'the girls would kill.'",
+        "Note explicitly that James Forman's title at SNCC was Executive Secretary (1961-1966), since the summary references his organizational role."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:14:48,000",
+      "title": "Family Roots in Greenwood and Father's Social Security Foresight",
+      "summary": "Greene introduces herself as born in Greenwood, Mississippi, on February 15, 1945, in the heart of the Mississippi Delta. She describes a large Black family: her father, born in 1900, was a house painter who ran his own business and worked primarily for white clients; her mother, born in 1907, grew up in Greenwood in the house Greene would later be raised in, attended Tougaloo for high school and college, and taught school until marrying at twenty-nine. Greene's father had grown up on a family-owned farm and briefly attended Alcorn and Tuskegee, then chose self-employment because he never wanted to work for anyone else. She emphasizes that her great-grandmother had built the family house and that less than two percent of Black people in Leflore County owned property, giving her family a measure of stability.\n\nGreene devotes substantial attention to her father's decision, beginning around 1935, to pay into Social Security despite skepticism from other Black small-business owners who saw the program as 'giving your money away.' She frames this as 'an act of faith' that paid off in 1964 when, in retaliation for the family's movement involvement, white customers stopped calling her father for jobs and he had to retire on Social Security. She credits older parents and homeownership with allowing the family to 'withstand' the economic pressure the movement brought down.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "greenwood",
+        "mississippi delta",
+        "leflore county",
+        "tougaloo",
+        "alcorn",
+        "tuskegee",
+        "social security",
+        "naacp",
+        "homeownership"
+      ],
+      "related_events": [
+        "NAACP",
+        "Tougaloo College",
+        "Alcorn College",
+        "Tuskegee Institute",
+        "Social Security Act (1935)",
+        "Leflore County, Mississippi"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that 'Alcorn' refers to Alcorn State University (then Alcorn A&M College) for reader clarity."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:14:48,000",
+      "end_time": "00:19:33,000",
+      "title": "Segregated Schools in Greenwood",
+      "summary": "Greene describes growing up on Howard Street in the 600 block, on the older edge of Greenwood's Black community, close enough to the white neighborhood to hear white children playing in the park. All Black children walked to school; white children outside the city were bused in. She notes her father's recurring complaint that his tax dollars paid for those buses to give white children 'better schools.' Greene's schools were entirely segregated and used hand-me-down textbooks from the white schools. She started first grade in 1951 and graduated in 1963; she notes that despite Brown v. Board (1954), Greenwood schools did not begin desegregating until 1970. After Brown, Mississippi responded by building more Black high schools in small communities and by busing Black county children to a new county school, but desegregation itself was deferred.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "segregated schools",
+        "greenwood",
+        "howard street",
+        "brown v board",
+        "textbooks",
+        "school buses",
+        "mississippi"
+      ],
+      "related_events": [
+        "Brown v. Board of Education (1954)",
+        "Greenwood public schools",
+        "Mississippi school desegregation"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 88,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:19:33,000",
+      "end_time": "00:33:29,000",
+      "title": "First Memories of Race, Emmett Till in Greenwood, and the Town's Color Lines",
+      "summary": "Greene describes a childhood with almost no direct contact with white people. Her family went downtown only to buy specific things, did 'window shopping' as outings, and avoided a corner store owned by a white man her father said 'didn't treat people right.' She recalls that when Emmett Till was killed, his body was brought to a funeral home in Greenwood, and her parents emphasized caution because, as her father put it, you never knew who you were talking to or what could happen. She references her mother's recollection of someone being burned alive and contextualizes the 'dry state' liquor regime and the bootleggers her father warned were entangled with the white authorities.\n\nShe then paints the town's spatial geography: 'shotgun houses' across the Black community, often built on brick pillars with open sewers crossed by planks; her own older frame house, owned through her great-grandmother and added to over time; the antebellum houses of wealthy white North Greenwood; the Jewish community; and Chinese families who ran small grocery stores in the Black community while sending their children to the white school. She describes the new postwar housing development across from the high school as the first chance for some Black families to own a small modern house.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "emmett till",
+        "greenwood",
+        "segregation",
+        "shotgun houses",
+        "north greenwood",
+        "jewish community",
+        "chinese families",
+        "dry state",
+        "bootleggers"
+      ],
+      "related_events": [
+        "Lynching of Emmett Till (1955)",
+        "Greenwood, Mississippi",
+        "Leflore County"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 89,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that Emmett Till was murdered in August 1955 in Money, Mississippi, in Leflore County, for context."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:33:29,000",
+      "end_time": "00:43:11,000",
+      "title": "Entry Into the Movement: Brother Dwight, Mississippi Free Press, and SNCC's Arrival",
+      "summary": "Greene's parents had registered to vote in the late 1950s, though they never actually voted; her father had long been involved with the NAACP. In 1962 her brother Dwight returned from Navy service and enrolled at Mississippi Vocational College (now Mississippi Valley State University) in Itta Bena. Wanting a course of study beyond education (the only option for Black students in Mississippi public colleges), Dwight applied to the University of Mississippi as, in Greene's framing, 'the second black student at Ole Miss.' He was not accepted, and the Greenwood mayor summoned the father downtown to demand that he tell Dwight to withdraw the application; Greene's father refused. Dwight then went to work for the Mississippi Free Press, a small newspaper in Jackson, where he met Robert Parris Moses and his SNCC cohort working in Southwest Mississippi (Sam Block, Willie Peacock, Reggie Robinson), as well as Medgar Evers and Amzie Moore in Cleveland. Amzie Moore agreed to help distribute the Free Press in exchange for coverage.\n\nIn the fall of 1962, Willie Peacock and Sam Block came into Greenwood, and Greene and her brother George began attending mass meetings, which were 'mass' in name though sometimes only twenty people gathered. Hollis Watkins led the singing to lift morale; speakers including Medgar Evers and Robert Parris Moses urged voter registration. Greene notes that in 1962, Leflore County discontinued surplus food distribution as retaliation against movement activity, just as mechanical cotton pickers were reducing Black agricultural employment, creating real hunger that winter.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "naacp",
+        "mississippi free press",
+        "dwight greene",
+        "ole miss",
+        "robert parris moses",
+        "sam block",
+        "willie peacock",
+        "amzie moore",
+        "medgar evers",
+        "hollis watkins",
+        "mass meetings",
+        "leflore county",
+        "surplus food"
+      ],
+      "related_events": [
+        "NAACP",
+        "SNCC",
+        "Mississippi Free Press",
+        "University of Mississippi (Ole Miss) integration",
+        "Mississippi Vocational College / Mississippi Valley State University",
+        "Leflore County surplus-commodity retaliation",
+        "Mechanical cotton picker"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 90,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Greene says Dwight applied as 'the second black student at Ole Miss.' James Meredith integrated Ole Miss in October 1962 as the first Black student; Dwight Greene's status as a documented 'second' applicant is the speaker's framing and is preserved in the summary as her account, not asserted independently."
+        ],
+        "improvements": [
+          "Could add that Robert Parris Moses worked extensively in Pike County / McComb in 1961-62 before Greenwood, since the speaker references his SNCC cohort in Southwest Mississippi."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:43:11,000",
+      "end_time": "00:54:33,000",
+      "title": "Dick Gregory Airlift, Local Leaders, and the Shotgun Attack on the Greene Home",
+      "summary": "When Leflore County cut surplus commodities, Dick Gregory chartered a plane and flew food into the Delta; Ivanhoe Donaldson drove a truckload of food down from the North. The food was distributed from Wesley Methodist Church, two blocks from Greene's home; she helped bag and box food for families because she was too young to register voters. She recalls her father saying Mississippi was 'trying their best to starve these people to death.'\n\nGreene names local leaders willing to risk their livelihoods: June Johnson's mother, the McGee family who owned a farm outside Greenwood, and Reverend Aaron Johnson, whose church had been called the First Christian Church until white authorities forced him to rename it because of a white congregation downtown by the same name. Sterling Tucker is named as another minister-activist. She emphasizes that teachers, by contrast, were terrified of losing their jobs and stayed out of the movement.\n\nIn March 1963, after her brother George attended a SNCC office meeting, someone followed the car that dropped him off and blasted the Greene family's house with a shotgun through the front door and front bedroom. Her father took the attack as proof that the family had to act: 'they're doing things to us, no matter whether we do something or not.' Greene also recalls Pete Seeger and the Freedom Singers performing at festivals and the Free Southern Theater traveling through Mississippi as crucial cultural exposure.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "dick gregory",
+        "ivanhoe donaldson",
+        "wesley methodist church",
+        "june johnson",
+        "mcgee family",
+        "aaron johnson",
+        "sterling tucker",
+        "pete seeger",
+        "freedom singers",
+        "free southern theater",
+        "shotgun attack"
+      ],
+      "related_events": [
+        "Dick Gregory food airlift (1962-63)",
+        "Wesley Methodist Church",
+        "Pete Seeger",
+        "Freedom Singers",
+        "Free Southern Theater",
+        "Greenwood, Mississippi voter registration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 89,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could clarify that the Free Southern Theater was founded in 1963 and toured Mississippi during Freedom Summer, although the speaker references it without dating it."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:54:33,000",
+      "end_time": "01:05:53,000",
+      "title": "Dillard, Freedom Summer Orientation, and the Bombing of the McComb Freedom House",
+      "summary": "Greene went to Dillard University in New Orleans in September 1963 to pursue nursing, against the backdrop of her brother George and others being held at Parchman Farm after Greenwood demonstrations led by Hollis Watkins. James Forman, whom Greene calls a mentor, encouraged her to leave for school. She was at Dillard when the Sixteenth Street Baptist Church was bombed in Birmingham, killing four girls. She felt isolated at Dillard, where 'nobody was interested in a movement,' and connected with Casey Hayden at Tulane's Newman Center for movement contact, with elaborate parental permission required even to ride in a car off campus.\n\nIn summer 1964, Greene attended the Freedom Summer orientation in Ohio, then was in Washington with the Southwest Mississippi project's organizers lobbying Congress for protection when word arrived that Schwerner, Chaney, and Goodman had been kidnapped. The group returned to Ohio; staff already believed the three were dead. Greene went on to McComb, where about eleven workers shared one freedom house and took turns staying awake to watch for attacks. The night after a staff meeting in which the house voted to bring in additional volunteers (over her brother George's lone objection), the house was dynamited at the garage door. Curtis Hayes, sleeping near the door, was hit by glass fragments; George drove him to Jackson the next morning to be examined.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "dillard university",
+        "new orleans",
+        "parchman farm",
+        "sixteenth street baptist church bombing",
+        "james forman",
+        "casey hayden",
+        "tulane",
+        "freedom summer",
+        "ohio orientation",
+        "mccomb",
+        "schwerner chaney goodman",
+        "curtis hayes",
+        "freedom house bombing"
+      ],
+      "related_events": [
+        "Dillard University",
+        "Parchman Farm",
+        "Sixteenth Street Baptist Church bombing (1963)",
+        "Freedom Summer (1964)",
+        "Western College for Women orientation, Oxford, Ohio",
+        "Murders of Chaney, Goodman, and Schwerner",
+        "McComb, Mississippi",
+        "Casey Hayden",
+        "Curtis Hayes"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 90,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Transcript text initially renders Casey Hayden's name ambiguously ('Cathy Cade or Casey Hayden'); the summary chooses 'Casey Hayden' since the speaker eventually settles on that name in the surrounding context. If the actual visitor was Cathy Cade, the summary would need correction; both were SNCC-adjacent women in 1963-64 New Orleans."
+        ],
+        "improvements": [
+          "Could note that the Western College for Women in Oxford, Ohio was the Freedom Summer orientation site for clarity."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "01:05:53,000",
+      "end_time": "01:11:47,000",
+      "title": "Aftermath in McComb and the Heffner Episode",
+      "summary": "Greene describes the morning after the McComb bombing: police arrived and pretended not to know what had happened. The workers tried to act 'as normal' as possible while walking through the community to keep neighbors calm, but Black residents were closing their doors out of fear. She estimates roughly nine churches were burned in the county that summer, and no one in McComb publicly spoke out against the violence against the workers.\n\nShe recounts a visiting minister-volunteer (from Oregon) who had known the Heffner family of McComb from his military service. He and Dennis Sweeney, a blond, blue-eyed Stanford student volunteer chosen as a low-profile companion, visited the Heffner home; this visit precipitated such severe white-community retaliation against the Heffners (a 'respected family' who owned a hardware store and whose daughter had been a freedom rider) that they ultimately left McComb. Greene emphasizes that beyond the Heffners, no local white residents came out in support of the SNCC workers.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "mccomb",
+        "freedom house bombing",
+        "church burnings",
+        "dennis sweeney",
+        "heffner family",
+        "white community retaliation"
+      ],
+      "related_events": [
+        "McComb, Mississippi freedom workers",
+        "Heffner family of McComb",
+        "Dennis Sweeney",
+        "1964 Mississippi church burnings"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "The minister's home state ('from Oregon') is the speaker's recollection and is preserved as such; not independently corroborated in transcript."
+        ],
+        "improvements": [
+          "Could note that approximately 35-40 Black churches were burned in Mississippi during Freedom Summer 1964 statewide, while the speaker's '9 churches in the county' is a more localized claim."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:11:47,000",
+      "end_time": "01:21:30,000",
+      "title": "MFDP, Atlantic City Convention, and the Jackson Fairgrounds Jail",
+      "summary": "Greene's McComb summer work focused on canvassing voters and setting up meetings to choose Mississippi Freedom Democratic Party delegates. She traveled with the delegation to the 1964 Democratic National Convention in Atlantic City. She describes it as a 'mind blowing' event that opened up something her family had never imagined possible. Her father said it didn't matter whether they were seated because they had shown the country what was possible. Fannie Lou Hamer's nationally broadcast testimony, in Greene's view, made it impossible for the rest of the country to pretend not to know. Greene admits she truly believed the MFDP would win the seating challenge; the compromise instead taught her that Mississippi's worst behavior was possible only because the rest of the country did not care.\n\nIn summer 1965, after a second hard year at Dillard, Greene worked on voter registration in Jackson during massive demonstrations. Authorities turned the Jackson fairgrounds into a makeshift penitentiary for Black demonstrators (white women were jailed in the actual jail). Greene spent a week sleeping on a concrete floor under a huge tent, with two blankets handed out at nine each night, eating syrup and light bread for breakfast and grits for lunch from tin trays washed by dipping. She and others including a Mosley relative she calls 'Janet Moses' worked to keep morale up among detainees who had been held longer.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": [
+        "mfdp",
+        "mississippi freedom democratic party",
+        "atlantic city",
+        "democratic convention",
+        "fannie lou hamer",
+        "jackson",
+        "fairgrounds",
+        "jail",
+        "voter registration"
+      ],
+      "related_events": [
+        "Mississippi Freedom Democratic Party",
+        "1964 Democratic National Convention (Atlantic City)",
+        "Fannie Lou Hamer testimony",
+        "1965 Jackson, Mississippi demonstrations",
+        "Jackson fairgrounds detention"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Speaker references 'Janet Moses' as a fellow detainee; this likely refers to Janet Jemmott (later Janet Moses, who married Robert Parris Moses); the summary preserves the transcript's name without elaboration."
+        ],
+        "improvements": [
+          "Could clarify that the 1964 Democratic National Convention was held in Atlantic City, New Jersey, and that the compromise offered the MFDP two at-large seats."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:21:30,000",
+      "end_time": "01:33:40,000",
+      "title": "SNCC Atlanta Office, Ruby Doris Smith Robinson, Black Power, and Stokely Carmichael",
+      "summary": "After her release Greene moved to Atlanta to work in the SNCC national office, encouraged by James Forman (SNCC Executive Secretary), whose policy of rotating field people through office work and office people through the field was meant to build mutual understanding. She started on the switchboard and then worked SNCC finance under bookkeeper Chessie Johnson and Ruby Doris Smith Robinson. Greene describes Ruby Doris, a Spelman graduate and former Freedom Rider, as a hero who 'nobody could outwork' and who pushed Greene to learn as many different skills as possible. Her brother George stayed in the field, moving from Mississippi through Georgia into the Alabama projects (Lowndes and Greene counties).\n\nGreene was in the Atlanta office during the 1966 Meredith March Against Fear when Stokely Carmichael's 'Black Power' shout reframed the movement; SNCC's funding then 'dropped off' sharply and donors demanded explanations. At a staff meeting SNCC decided that white staff would best serve by organizing in white communities. Greene describes Carmichael, who frequently stayed with her family in Greenwood after her brothers brought him home around 1962, as 'tall, dark, handsome,' personable, and a constant mentor who urged her to come to Howard. She recalls Carmichael and Dorie Ann Ladner once visiting her at Dillard during Mardi Gras, having to pose as her brother and sister to be admitted past the dormitory's after-hours rules. She left SNCC in June 1968, after Dr. King was killed in April; by then the money was gone.\n\nGreene closes by reflecting that the movement attracted people from 'all facets of life' who 'never looked for personal advancement,' citing Robert Parris Moses and James Forman as exemplars who set aside other possibilities to help others.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "sncc",
+        "atlanta office",
+        "james forman",
+        "ruby doris smith robinson",
+        "chessie johnson",
+        "stokely carmichael",
+        "black power",
+        "meredith march against fear",
+        "howard university",
+        "dorie ann ladner",
+        "lowndes county",
+        "greene county alabama",
+        "martin luther king assassination"
+      ],
+      "related_events": [
+        "Student Nonviolent Coordinating Committee (SNCC)",
+        "James Forman",
+        "Ruby Doris Smith Robinson",
+        "Stokely Carmichael",
+        "Meredith March Against Fear (1966)",
+        "Lowndes County Freedom Organization",
+        "Assassination of Martin Luther King Jr. (April 1968)",
+        "Howard University NAG"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 90,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could clarify that Ruby Doris Smith Robinson succeeded James Forman as SNCC Executive Secretary in 1966 and died in October 1967, providing context for Greene's timeline."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Freddie Greene",
+      "interviewee_title": "SNCC Field Worker and Civil Rights Activist",
+      "interview_date": "2015-12-10",
+      "interview_location": "Library of Congress, Washington, D.C.",
+      "interviewer_name": "Emily Crosby",
+      "interviewer_affiliation": "Library of Congress / Smithsonian National Museum of African American History and Culture",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:36:04",
+      "total_segments": 846,
+      "word_count": 13800,
+      "number_of_chapters": 9
+    },
+    "overall_score": {
+      "total": 84,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 24,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Greene moves chronologically from family origins through Mississippi childhood, into 1962-63 Greenwood mobilization, then to Freedom Summer in McComb, MFDP at Atlantic City, Jackson fairgrounds jail, and the Atlanta SNCC office through 1968 (Segment 7, 00:00:39,000 through Segment 754, 01:29:17,000).",
+            "Interviewer Emily Crosby returns periodically to organize the chronology with bridging questions like 'What was it like for you to be so involved in the movement and then leave to go to college?' (Segment 544, 00:54:33,000) and 'What was your life to be in that situation?' (Segment 618, 01:05:53,000)."
+          ],
+          "justification": "Greene maintains a clear chronological arc from childhood to her 1968 departure from SNCC. Some sections meander into family side-stories (great-grandmother's house, the truck-theft anecdote at Segment 68) but recover quickly. The interviewer's spacing of questions helps preserve forward momentum."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "I heard this loud explosion and I was asleep. And, but I woke me up and I instantly, I thought they were out there playing. I couldn't understand. And it was like, I came out of the room and somebody yelled, get down, get down... we were crawling toward the garage and you can see that the half of the house has been taken away.",
+            "segment": 619,
+            "timestamp": "01:06:09,000"
+          },
+          "specificity_count": {
+            "full_names": 30,
+            "specific_dates": 14,
+            "specific_places": 22
+          },
+          "evidence": [
+            "Specific birth date and place: 'born in Greenwood, Mississippi... in 1945, February 15, 1945' (Segment 7, 00:00:39,000)",
+            "Detailed jail conditions: 'breakfast is syrup or slice of light bread... for lunch you get some type of grits... this is like a couple hundred people' (Segments 692-696, 01:19:34,000-01:20:23,000)",
+            "Specific march-on-Howard-Street housing detail: 'three room houses one right behind the other one throughout the black community... you went across a plank which really means that you're really going across an open sewer' (Segments 241-243, 00:30:00,000-00:30:32,000)"
+          ],
+          "justification": "Greene provides precise dates, full names of dozens of SNCC organizers, and vivid material detail in pivotal scenes (the McComb bombing, the Jackson fairgrounds tent, the shotgun blast through her family's front door). Sensory detail is concentrated in the most consequential moments rather than spread throughout."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I really thought we were going to win. I thought I honestly felt that the delegates were going to say yes, you are all the legitimate group. You should have the seat... But that's when it really became very, very clear. There wasn't just bad white folks in Mississippi. There were a lot of these people and that bad white folks in Mississippi had been able to do all of this to all of us down in Mississippi because the rest of the people did not care.",
+            "segment": 656,
+            "timestamp": "01:13:31,000"
+          },
+          "emotional_range": [
+            "Determination",
+            "Grief",
+            "Frustration",
+            "Disillusionment",
+            "Pride",
+            "Affection (toward Carmichael, Forman, Ruby Doris)"
+          ],
+          "vulnerability_elements": [
+            "Admits she expected the MFDP to win the Atlantic City challenge",
+            "Discusses the difficulty of her second year at Dillard, feeling 'very hard' to study when so much was happening (Segment 661-664)",
+            "Recalls fear in the moments after the McComb house bombing"
+          ],
+          "justification": "Greene is candid about disillusionment after Atlantic City and about the difficulty of returning to college while the movement was under siege. She is measured rather than performative; emotional weight appears at the right moments without theatricality. Some emotional reserve about personal cost is evident but not concealing."
+        },
+        "overall_assessment": "Greene delivers a coherent, mostly chronological account with strong specificity at the dramatic peaks (the shotgun attack, the McComb bombing, the Atlantic City compromise, the Jackson fairgrounds detention). Her narrative balances family origins, organizational mechanics, and named relationships within SNCC. Emotional honesty appears at the right moments, particularly around the Atlantic City compromise, without overreach. The narrative is conversational rather than rehearsed, which lends authenticity even where transitions are sometimes loose."
+      },
+      "historical_value": {
+        "total": 23,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "Dick Gregory food airlift, Wesley Methodist Church distribution, late 1962 (Segment 410, 00:42:23,000)",
+            "March 1963 shotgun attack on Greene family home (Segment 506, 00:49:51,000)",
+            "Freedom Summer 1964 orientation at Western College for Women in Oxford, Ohio (Segment 579, 00:59:57,000)",
+            "Washington lobbying when Schwerner, Chaney, and Goodman went missing (Segments 592-593, 01:01:55,000)",
+            "McComb freedom house bombing, summer 1964 (Segments 613-616, 01:04:55,000-01:05:31,000)",
+            "MFDP delegation at 1964 Atlantic City Convention (Segments 649-657, 01:12:24,000)",
+            "Jackson fairgrounds detention, summer 1965 (Segments 685-700, 01:18:22,000)"
+          ],
+          "key_figures": [
+            {
+              "name": "Stokely Carmichael",
+              "relationship": "Family friend, frequent houseguest in Greenwood, SNCC colleague",
+              "contact_level": "close"
+            },
+            {
+              "name": "James Forman",
+              "relationship": "Mentor, recruited her to Atlanta SNCC office",
+              "contact_level": "close"
+            },
+            {
+              "name": "Ruby Doris Smith Robinson",
+              "relationship": "Direct supervisor in SNCC finance, mentor",
+              "contact_level": "close"
+            },
+            {
+              "name": "Robert Parris Moses",
+              "relationship": "SNCC colleague and Mississippi organizer",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Fannie Lou Hamer",
+              "relationship": "MFDP delegation co-traveler to Atlantic City",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Medgar Evers",
+              "relationship": "Mass-meeting speaker known to her family through brother Dwight",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Amzie Moore",
+              "relationship": "Distributor of brother Dwight's Mississippi Free Press",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Hollis Watkins",
+              "relationship": "Mass-meeting song leader in Greenwood",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Dorie Ann Ladner",
+              "relationship": "SNCC colleague who visited her at Dillard",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Casey Hayden",
+              "relationship": "SNCC contact at Tulane Newman Center",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "SNCC (Student Nonviolent Coordinating Committee)",
+              "role": "Field worker (McComb, Jackson) then Atlanta national office (switchboard, finance)",
+              "years": "1962-1968"
+            },
+            {
+              "organization": "Mississippi Freedom Democratic Party",
+              "role": "Canvasser and delegate-selection organizer; traveled with delegation to Atlantic City",
+              "years": "1964"
+            },
+            {
+              "organization": "Wesley Methodist Church (Greenwood)",
+              "role": "Volunteer food distributor during Dick Gregory airlift",
+              "years": "1962-1963"
+            }
+          ],
+          "unique_access": "Greene combined a Greenwood-family vantage on the earliest 1962 SNCC arrival with national-office work in Atlanta during the Black Power transition. She personally hosted Stokely Carmichael in her family home and worked finance directly under Ruby Doris Smith Robinson, giving her dual insider perspective on both the Delta field projects and SNCC's organizational machinery.",
+          "justification": "Greene was a direct participant at four nationally significant moments (Freedom Summer in McComb, the McComb bombing, the MFDP Atlantic City challenge, and the SNCC Atlanta office during the Black Power shift) and personally knew nearly every major SNCC figure of the era. Her Mississippi Delta family vantage on the 1962 arrival of SNCC organizers is particularly rare."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "'born in Greenwood, Mississippi... in 1945, February 15, 1945' (Segment 7, 00:00:39,000)",
+            "'school in 1951, so you're talking about, and I graduated in 1963' (Segment 142, 00:17:13,000)",
+            "'Mississippi Vocational College... now it's Mississippi Valley State University. In Itta Bena, Mississippi' (Segments 302-303, 00:35:27,000)",
+            "'I went on off to Dillard University for my freshman year and I was there. I was at Dillard University when they bombed the church in Alabama' (Segment 560, 00:56:46,000) -- dating it to September 1963",
+            "'I left SNCC in 1968, June of 1968, after, you know, King was killed in April' (Segment 754, 01:29:17,000)"
+          ],
+          "date_specificity": "precise",
+          "name_count": {
+            "full_names": 30,
+            "first_only": 5,
+            "unnamed": 2
+          },
+          "verifiable_claims": [
+            "Date of birth: February 15, 1945, Greenwood, Mississippi",
+            "Father born 1900, mother born 1907",
+            "Brother Dwight applied to Ole Miss in 1962",
+            "Sam Block and Willie Peacock arrived in Greenwood fall 1962",
+            "Dick Gregory chartered a plane to bring food into Greenwood",
+            "March 1963 shotgun attack on family home",
+            "Greene attended Dillard University starting September 1963",
+            "McComb freedom house bombing summer 1964",
+            "Greene at 1964 Democratic National Convention in Atlantic City",
+            "Jackson fairgrounds detention summer 1965",
+            "Greene left SNCC in June 1968"
+          ],
+          "justification": "Greene consistently provides full names, exact dates, and named locations across the interview. Her timeline from 1945 birth through 1968 SNCC departure is anchored by specific dates that historians could verify against other accounts. Specificity is reduced in a few sub-anecdotes (the 'minister from Oregon,' 'about nine churches burned').",
+          "score_explanation": "Excellent precision throughout the interview."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed family-economics framing of how Social Security enabled her father to absorb movement retaliation (Segments 84-124), which complicates the standard narrative of universal economic vulnerability in Black Mississippi households",
+            "First-person account of being in Washington lobbying Congress when the Mississippi Burning kidnappings happened (Segment 593, 01:02:09,000)",
+            "First-person inside account of the McComb freedom house bombing including the dissenting staff vote by her brother George the night before (Segments 611-614)",
+            "Description of women's work in SNCC's Atlanta finance office under Chessie Johnson and Ruby Doris Smith Robinson (Segments 731-733, 01:25:07,000)",
+            "Family-vantage account of Stokely Carmichael as a houseguest in Greenwood (Segments 757-766, 01:29:52,000)"
+          ],
+          "understudied_aspects": [
+            "Women's organizational labor inside SNCC's Atlanta national office",
+            "Local Greenwood Black property-owner families as the social base for movement participation",
+            "The role of Wesley Methodist Church in the Dick Gregory food distribution"
+          ],
+          "narrative_complications": "Greene's emphasis on the 'two percent of Black people in Leflore County who owned property' complicates standard narratives that frame Delta movement participants as uniformly economically vulnerable; her account shows how a thin layer of Black property-owning families became disproportionate movement supporters because they could withstand retaliation.",
+          "historiographical_value": "Greene's account is a primary source for the McComb 1964 freedom house bombing, the inside dynamics of the SNCC Atlanta office during the Black Power transition, and the family-level decision-making that brought middle-generation Greenwood activists into the movement. Historians of Freedom Summer, MFDP, and SNCC organizational history could use this interview as a corroborating and detailing source.",
+          "justification": "Greene provides substantial new texture on the family economics of movement participation, the inside of SNCC's Atlanta office, and Stokely Carmichael's pre-Black-Power personality. Her account of the McComb bombing offers detail not available in standard secondary sources."
+        },
+        "overall_assessment": "Greene's interview has unusually high historical value because of her dual perspective: Mississippi Delta family vantage on SNCC's 1962 arrival, and Atlanta national-office vantage on the Black Power transition. She was a direct participant in multiple nationally significant 1964-65 events (Freedom Summer, McComb bombing, MFDP Atlantic City, Jackson fairgrounds), and personally knew nearly every major SNCC figure. The interview is dense with verifiable dates and full names, and Greene's family-economics analysis adds analytic texture beyond pure event narration."
+      },
+      "emotional_resonance": {
+        "total": 19,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "Greene moves from a sheltered, segregation-bounded Greenwood adolescence to becoming a SNCC field worker and then national-office finance worker in Atlanta, then to leaving organized movement work as SNCC's funding collapses after Black Power. The arc culminates in her decision to leave nursing and to leave Dillard because 'all I need to do was get myself a good education, get a good job, and have a good life' no longer seemed sufficient (Segment 678, 01:15:08,000).",
+          "key_turning_points": [
+            "Helping distribute Dick Gregory food at Wesley Methodist Church (Segment 412, 00:42:28,000)",
+            "The March 1963 shotgun attack on her family home (Segment 506, 00:49:51,000)",
+            "The McComb freedom house bombing (Segment 613, 01:04:55,000)",
+            "The Atlantic City compromise revealing 'the rest of the country didn't care' (Segments 657-660, 01:13:46,000)",
+            "Decision after second Dillard year to leave for full-time movement work (Segments 677-680, 01:14:59,000)"
+          ],
+          "before_after_contrast": "Greene begins as a careful, parentally protected Greenwood child whose father warned her against entering even a corner store; she ends the arc as a SNCC organizational worker who has been in the McComb house when it was bombed, has spent a week in Jackson fairgrounds detention, and has worked SNCC finance directly under Ruby Doris Smith Robinson.",
+          "inspirational_quality": "Greene's account of leaving Dillard explicitly to work for systemic change rather than personal advancement provides an inspirational template, and her affectionate portraits of Forman, Ruby Doris, and Carmichael as people who 'never looked for personal advancement' anchor that template in concrete human examples.",
+          "justification": "The transformation arc is clearly articulated, particularly through her decision to leave nursing at Dillard for full-time movement work. She names specific turning points (the food airlift, the shotgun attack, Atlantic City) and explains how each shifted her thinking."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Shotgun attack on the Greene family home, March 1963",
+              "segment_range": "504-509",
+              "timestamp_range": "00:49:44,000 - 00:50:19,000",
+              "stakes": "Family physical safety; potential murder of family members"
+            },
+            {
+              "description": "McComb freedom house dynamite bombing",
+              "segment_range": "613-624",
+              "timestamp_range": "01:04:55,000 - 01:06:44,000",
+              "stakes": "Eleven workers in the house including Greene; injury to Curtis Hayes; community fear ripple"
+            },
+            {
+              "description": "Atlantic City MFDP compromise rejection",
+              "segment_range": "655-660",
+              "timestamp_range": "01:13:31,000 - 01:14:30,000",
+              "stakes": "Whether the rest of the country would acknowledge Mississippi Black voters' legitimacy"
+            },
+            {
+              "description": "Jackson fairgrounds week of detention",
+              "segment_range": "685-700",
+              "timestamp_range": "01:18:22,000 - 01:20:51,000",
+              "stakes": "Physical conditions, indefinite detention, demonstrator morale collapse"
+            }
+          ],
+          "conflict_types": [
+            "Physical violence against the family home",
+            "Bombing and arson against movement workers",
+            "Political conflict at the 1964 Democratic Convention",
+            "Mass detention in degrading conditions",
+            "Internal SNCC tension over Black Power and white staff role"
+          ],
+          "emotional_range": "From earnest hope (anticipating MFDP delegate seating) to disillusionment (realizing national indifference) to determination (leaving Dillard for full-time movement work)",
+          "justification": "Multiple high-stakes episodes are described with concrete detail. The McComb bombing scene is particularly dramatic; the Atlantic City compromise carries clear emotional stakes. Greene tends to describe rather than dramatize, so the moments are present without being performatively heightened."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "Coming of age under threat",
+            "Family duty versus personal aspiration (going to college while brother in Parchman)",
+            "Generational economic stability enabling political risk",
+            "Disillusionment when institutions fail to live up to their claims",
+            "Mentorship and chosen-family bonds (Forman, Ruby Doris, Carmichael)"
+          ],
+          "relatable_struggles": [
+            "Choosing between personal success and collective change",
+            "Studying through national crisis (Sixteenth Street Baptist Church bombing at Dillard)",
+            "Strict gender-differentiated rules at home and at school (her brother's freedom versus hers)",
+            "Working with limited material resources (fairgrounds tent jail, two-blanket nights)"
+          ],
+          "human_moments": [
+            "Stokely Carmichael and Dorie Ann Ladner visiting her at Dillard during Mardi Gras and posing as her siblings to be admitted (Segments 797-812, 01:32:33,000)",
+            "Her father refusing the mayor's demand to retract Dwight's Ole Miss application (Segments 321-323, 00:36:53,000)",
+            "Brother George's lone dissenting vote against bringing more volunteers, on the night before the bombing (Segment 611, 01:04:27,000)"
+          ],
+          "connection_points": "The struggle between personal advancement and collective duty is highly relatable to general audiences. The mentorship portraits and the specific family dynamics (gendered rules, parental protection) provide universal entry points for audiences without civil rights background.",
+          "justification": "Greene supplies several deeply human moments amid the political narrative; the Carmichael-as-houseguest material and the Mardi Gras visit anecdote are especially humanizing. However, much of the interview focuses on organizational mechanics, which slightly reduces universal accessibility."
+        },
+        "overall_assessment": "Greene's transformation arc is well-articulated, with clear before-after structure and named turning points. Multiple high-stakes scenes (the shotgun attack, the McComb bombing, the Atlantic City compromise, the fairgrounds detention) provide dramatic content. Human-scale moments (Carmichael as a houseguest, the father refusing the mayor) add emotional accessibility. The interview is somewhat reserved emotionally, focusing on events and organizational dynamics over interior life, which slightly limits emotional reach for general audiences but keeps the historical record precise."
+      },
+      "accessibility": {
+        "total": 18,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Movement-internal jargon (MFDP, mass meetings, Freedom Summer, Parchman, freedom house) is used without consistent explanation",
+            "Some run-on sentences and self-corrections typical of conversational oral-history delivery",
+            "A handful of partial phrases where the transcript indicates a thought is left incomplete"
+          ],
+          "justification": "Greene is articulate and her account is easy to follow for an audience with basic civil rights background. She generally self-contextualizes named figures (e.g., 'James Forman was a good mentor') and organizations. Mississippi-specific references (Itta Bena, Leflore County) are clearly placed."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Segments 504-509 (00:49:44,000) - shotgun attack on family home, fast and concrete",
+            "Segments 619-624 (01:06:09,000) - bombing aftermath, dramatic on-the-floor crawling scene",
+            "Segments 649-660 (01:12:24,000) - Atlantic City Convention realization arc"
+          ],
+          "slow_sections": [
+            "Segments 220-280 (00:27:00,000) - extended housing-typology section that slows momentum",
+            "Segments 95-115 (00:11:00,000) - extended father's-Social-Security discussion that goes long"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "An engaged general audience could sustain attention across the full 96 minutes; the high-energy sections are well-paced through the second half. The early extended family-background section may lose some audiences before the movement narrative engages.",
+          "justification": "Interviewer Emily Crosby paces the interview well, returning to organizing questions at the right transition points. Greene's natural rhythm varies appropriately: detailed and discursive in family-background sections, faster and more concrete during the dramatic episodes."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Property ownership and political risk capacity",
+            "Federal program (Social Security) as enabler of Black political agency",
+            "Northern indifference as the precondition for Southern white supremacy",
+            "Generational and gendered division of movement labor",
+            "Cost of organizational consensus (movement money 'dropped off' after Black Power)"
+          ],
+          "contemporary_relevance": "Greene's analysis of how Mississippi could behave as it did 'because the rest of the country didn't care' speaks directly to contemporary debates about regional versus national responsibility for racial outcomes. Her account of SNCC funding collapse after Black Power resonates with current debates about donor responses to movement positions.",
+          "meaning_making": "Greene explicitly draws connections between personal-economic conditions and political-organizing capacity, and between Northern audience reception and Southern Black safety. Her closing reflection on the movement's attraction of 'people from all facets of life' who 'never looked for personal advancement' generalizes her experience into a broader civic-virtue claim.",
+          "justification": "Greene consistently connects her personal experience to broader structural patterns, especially the family-economics-of-resistance framing and the post-Atlantic-City analysis of national indifference. Her closing reflection elevates the personal narrative into a more general statement about movement values."
+        },
+        "overall_assessment": "Greene's interview is accessible to general audiences with basic civil rights background. Her articulation is clear, the interviewer paces the conversation well, and Greene consistently draws structural connections between her personal experience and broader patterns. The early family-background section is detailed enough to slow momentum slightly for general audiences, but the second half (from Freedom Summer onward) maintains strong pacing."
+      }
+    },
+    "overall_assessment": "Freddie Greene delivers a coherent, factually dense first-person account of the SNCC Mississippi Delta and Atlanta national-office experience from 1962 through 1968, anchored by precise dates, full names of dozens of movement figures, and direct participation in multiple nationally significant events (Dick Gregory airlift, McComb freedom house bombing, MFDP Atlantic City delegation, Jackson fairgrounds detention, Atlanta SNCC office during the Black Power transition). Her dual vantage as a Greenwood family member and as a national-office worker is unusually valuable. Emotional honesty appears at the right moments, particularly around the Atlantic City compromise. The interview's main accessibility limitation is the dense organizational and personal-name detail in the first quarter, which rewards an audience with prior civil rights context.",
+    "key_strengths": [
+      "Direct participation in multiple nationally significant 1964-65 events with named witnesses, full dates, and concrete sensory detail",
+      "Dual perspective on SNCC: Delta field family vantage plus Atlanta national-office insider view during the Black Power transition",
+      "Family-economics analytic framing (Social Security, property ownership) that complicates standard accounts of Mississippi movement vulnerability"
+    ],
+    "key_limitations": [
+      "Some transcript ambiguities on specific names (Casey Hayden vs Cathy Cade; minister 'from Oregon') that the speaker herself does not resolve",
+      "Reserved emotional register in places where audiences might want more interior life on personal cost"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Freddie Greene was born February 15, 1945, in Greenwood, Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "I was born in Greenwood, Mississippi, which is in the heart of the Mississippi Delta in 1945, February 15, 1945. (Segment 7, 00:00:39,000)",
+        "rationale": "Speaker states birth date and place directly."
+      },
+      {
+        "claim": "Greene's father was born in 1900 and her mother in 1907.",
+        "status": "supported",
+        "supporting_excerpt": "My father, 1900, my mother was born in 1907. (Segment 90, 00:10:38,000); 'my father was born in 1900' (Segment 63)",
+        "rationale": "Both birth years are stated explicitly."
+      },
+      {
+        "claim": "Greene's father ran a house-painting business and her mother had taught school after attending Tougaloo.",
+        "status": "supported",
+        "supporting_excerpt": "my father was a small business person, had a house painting business (Segment 9); She went to Tougaloo to high school (Segment 36); 'she taught school up until she married my father' (Segment 39)",
+        "rationale": "Both occupational claims are directly supported."
+      },
+      {
+        "claim": "Greene's family lived on Howard Street in the older edge of the Black community.",
+        "status": "supported",
+        "supporting_excerpt": "I grew up on Howard Street. If you looked at a map then, the 600 block was, there was a railroad track that really separated the block that I lived in from downtown. (Segments 127-128)",
+        "rationale": "Address and orientation directly stated."
+      },
+      {
+        "claim": "Greene attended segregated schools that used hand-me-down textbooks from white schools.",
+        "status": "supported",
+        "supporting_excerpt": "The school books in my school came from the white school. So as white kids got new textbooks, they then shipped over textbooks to the black schools. (Segment 141)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Greene started school in 1951 and graduated in 1963.",
+        "status": "supported",
+        "supporting_excerpt": "I started school in 1951, so you're talking about, and I graduated in 1963 and schools were still totally segregated in Greenwood. (Segment 142)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Emmett Till's body was brought to a funeral home in Greenwood.",
+        "status": "supported",
+        "supporting_excerpt": "I do remember when in Muteil was killed. His actually body was brought into a funeral home there in Greenwood. (Segments 196-197)",
+        "rationale": "Speaker recalls this directly. 'Muteil' is a Whisper-rendering of Emmett Till; per instructions, this counts as supported."
+      },
+      {
+        "claim": "Greene's brother Dwight returned from Navy service in 1962 and applied to the University of Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "in 1962, my brother, Dwight, had just returned from doing a tour in the Navy... So he applied to be the second black student at Ole Miss. (Segments 299-309)",
+        "rationale": "Direct statement of dates, name, and application."
+      },
+      {
+        "claim": "James Meredith integrated Ole Miss as the first Black student in October 1962.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Greene's transcript references 'the second black student at Ole Miss,' implying Meredith's prior integration but not stating it; canonical historical fact corroborates Meredith's 1962 integration.",
+        "rationale": "The summary's framing that Dwight applied as 'the second' presupposes Meredith's status as first; the transcript does not name Meredith in this context, so the supporting evidence is the speaker's framing plus civil_rights_facts.json corroboration."
+      },
+      {
+        "claim": "Dwight Greene worked for the Mississippi Free Press in Jackson and met Robert Parris Moses, Sam Block, Willie Peacock, Reggie Robinson, Medgar Evers, and Amzie Moore.",
+        "status": "supported",
+        "supporting_excerpt": "he went to work for the Mississippi Free Press, which was a small little newspaper that was given out in Jackson. So do we begin to meet other political active people, Robert Parris Moses and his SNCC cohort... He met Sam Block. He met Willie Peacock, Reggie Robinson... he also met Medgar Evers... God, that... I can't think of his name right now over in Cleveland, who was Amzie Moore. (Segments 327-342)",
+        "rationale": "All six names appear in the transcript in connection with brother Dwight's Mississippi Free Press work."
+      },
+      {
+        "claim": "Sam Block and Willie Peacock came into Greenwood in fall 1962 and began holding mass meetings led by Hollis Watkins's singing.",
+        "status": "supported",
+        "supporting_excerpt": "Willie Peacock and Sam Block came into Greenwood that summer. So this is like the summer. So we're into the fall of 62 and they're coming in (Segments 354-356); 'A Mass meeting, there was the Hollis Watkins version that comes in with the singing' (Segment 365)",
+        "rationale": "Direct statement of date and personnel."
+      },
+      {
+        "claim": "Dick Gregory chartered a plane to bring food into Greenwood after Leflore County discontinued surplus commodities; food was distributed from Wesley Methodist Church two blocks from Greene's home.",
+        "status": "supported",
+        "supporting_excerpt": "throughout the North and Dick Gregory, rented a plane and brought down surplus, brought down food down. And the food was distributed from Wesley, Methodist Church, which is two blocks from where I lived. (Segments 407-410)",
+        "rationale": "Direct statement of personnel, action, and distribution location."
+      },
+      {
+        "claim": "Ivanhoe Donaldson drove a truckload of food from the North.",
+        "status": "supported",
+        "supporting_excerpt": "even when Ivanhoe Donaldson, the son was driving down a truckload of food from the north. (Segment 435)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "In March 1963, after George Greene attended a SNCC meeting, the family's house was shot up with a shotgun through the front door and front bedroom.",
+        "status": "supported",
+        "supporting_excerpt": "doing march of, March 1963, after my brother George had attended a meeting over at the SNCC office, it's when he came home, somebody evidently had followed the car that dropped him off, and they, somebody came by and blasted the house with shotgun, you know, through the front door and through the front bedroom. (Segments 504-506)",
+        "rationale": "Direct statement of date, motivating event, and damage."
+      },
+      {
+        "claim": "Greene attended Dillard University in New Orleans starting September 1963.",
+        "status": "supported",
+        "supporting_excerpt": "I went on that September to Dillard University in New Orleans (Segment 518)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Greene was at Dillard when the Sixteenth Street Baptist Church was bombed in Birmingham.",
+        "status": "supported",
+        "supporting_excerpt": "I was at Dillard University when they bombed the church in Alabama. No, the girls would kill. (Segments 560-561)",
+        "rationale": "Speaker connects Dillard timeframe to the Birmingham church bombing; 'the girls would kill' is a Whisper-garbled rendering of the four girls killed."
+      },
+      {
+        "claim": "Greene's family connected with Casey Hayden at Tulane's Newman Center for movement contact during her Dillard years.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Cathy Cade or Casey Hayden was over in Tulane in the Newman Center. (Segment 566)",
+        "rationale": "Transcript names both 'Cathy Cade' and 'Casey Hayden' in the same uncertain phrase. Summary chose Casey Hayden but the identity is genuinely ambiguous in the transcript."
+      },
+      {
+        "claim": "Greene attended Freedom Summer 1964 orientation in Ohio and worked in McComb, Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "prior to the summer of 64, I went to the orientation up in Ohio (Segment 579); 'George is going to be working in a project in McComb, Mississippi' (Segment 577); 'I went to McComb, Mississippi, went to the orientation up in Ohio. Then we came back to McComb, Mississippi.' (Segment 588)",
+        "rationale": "Direct statements of orientation location and project city."
+      },
+      {
+        "claim": "While Greene was in Washington lobbying Congress for protection, Schwerner, Chaney, and Goodman were kidnapped.",
+        "status": "supported",
+        "supporting_excerpt": "We were here when the word came to Ohio that Schwerner, Chaney, and Goodman and, and Goodman had been kidnapped. (Segment 593); 'we came in to discuss with Congress people the representatives for the volunteers' (Segment 592)",
+        "rationale": "Direct statement of the timing and lobbying purpose."
+      },
+      {
+        "claim": "The McComb freedom house Greene lived in with about eleven workers was dynamited at the garage door the night after a staff meeting voted to bring in more volunteers; George Greene was the lone dissenting vote.",
+        "status": "supported",
+        "supporting_excerpt": "We had this one freedom house that all of 11 of us that was staying there (Segment 602); 'Everybody voted for the other volunteers to come, except my brother George' (Segment 611); 'that night the house was bombed' (Segment 613); 'somebody really walked up to the garage door and put down a couple sticks. So, dynamite.' (Segment 614)",
+        "rationale": "All component claims directly stated."
+      },
+      {
+        "claim": "Curtis Hayes was struck by glass fragments in the McComb bombing and was driven to Jackson by George Greene the next morning.",
+        "status": "supported",
+        "supporting_excerpt": "courageous haze, who would sleep and very close to the door, head like fragments of glass that was really implanted in him (Segment 616); 'My brother George, the next death that morning after we, after that whole bombing drove, heard his back up to Jackson' (Segment 617)",
+        "rationale": "Direct statement; 'courageous haze' is a Whisper rendering of Curtis Hayes."
+      },
+      {
+        "claim": "Greene traveled with the MFDP delegation to the 1964 Democratic National Convention in Atlantic City and was disillusioned by the compromise.",
+        "status": "supported",
+        "supporting_excerpt": "I go up with them to Atlantic City for the convention, the democratic convention. (Segment 649); 'I really thought we were going to win' (Segment 656); 'There wasn't just bad white folks in Mississippi. There were a lot of these people' (Segments 659-660)",
+        "rationale": "Direct statements."
+      },
+      {
+        "claim": "Fannie Lou Hamer's testimony at Atlantic City went out nationally and made the conditions in Mississippi visible.",
+        "status": "supported",
+        "supporting_excerpt": "when Miss Hamer is making her speech that becomes world wide and the people. It's like all of a sudden people know what they are doing to us. (Segments 652-653)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Greene spent a week jailed at the Jackson fairgrounds during summer 1965 demonstrations.",
+        "status": "supported",
+        "supporting_excerpt": "to some of six to five, there was massive demonstrations in Jackson. And I was involved in all of those demonstrations. What they did in Jackson is they sent the black people to the fairground... I spent a week there in the fairground (Segments 685-687)",
+        "rationale": "Direct statement of city, year, and duration."
+      },
+      {
+        "claim": "Greene moved to Atlanta to work in the SNCC national office, encouraged by James Forman.",
+        "status": "supported",
+        "supporting_excerpt": "I went that's when I actually moved over to Atlanta. I went to work in the Atlanta Snick office... and Jim form was also part of my motivation for going to gym (Segments 710-711)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "James Forman served as Executive Secretary of SNCC.",
+        "status": "supported",
+        "supporting_excerpt": "He was the executive secretary of Snick (Segment 712)",
+        "rationale": "Direct statement; corroborated by civil_rights_facts.json."
+      },
+      {
+        "claim": "Greene worked the SNCC switchboard and then SNCC finance under bookkeeper Chessie Johnson and Ruby Doris Smith Robinson.",
+        "status": "supported",
+        "supporting_excerpt": "First I'm doing the switchboard, then I'm helping Chessie Johnson, who is a SNCC bookkeeper... I went to work at the switchboard but I also was working very closely with Ruby Doris Smith Robinson. (Segments 742, 720)",
+        "rationale": "Direct statement of both supervisors and her roles."
+      },
+      {
+        "claim": "Ruby Doris Smith Robinson was a Spelman graduate and Freedom Rider.",
+        "status": "supported",
+        "supporting_excerpt": "Rubidorus was also just like, in a lot of ways she was like Jim. She was like a woman, had graduated from Spelman. She had also been a Freedom Rider (Segment 721)",
+        "rationale": "Direct statement; corroborated by civil_rights_facts.json."
+      },
+      {
+        "claim": "Greene's brother George worked Mississippi, Georgia, and Alabama SNCC projects including Lowndes and Greene counties.",
+        "status": "supported",
+        "supporting_excerpt": "George stays in the field. He goes from Mississippi into George and into Alabama. Because doing 65 as Nick begins to set up more projects, you know, the Lowndes County, Alabama County Project, the Greene County, Alabama Project. George is working in Lions County. (Segments 735-737)",
+        "rationale": "Direct statement; 'Lions County' is a Whisper rendering of Lowndes County."
+      },
+      {
+        "claim": "The Black Power shout on the Meredith March Against Fear in 1966 caused SNCC's funding to drop sharply.",
+        "status": "supported",
+        "supporting_excerpt": "we were talking about going into 66 when black power comes out... It's as a result of the shouting of black power on the Meredith March Against Fear, I experienced the direct process that's next money is just beginning to just really drop off. (Segments 745-746)",
+        "rationale": "Direct statement of date and causal claim."
+      },
+      {
+        "claim": "SNCC decided at a staff meeting that white staff would best serve by organizing in white communities.",
+        "status": "supported",
+        "supporting_excerpt": "when Snick decided to, at one of the staff meetings, that the white staff people were working to work communities in the black, when they in the black community... we feel that the problems in the black community will be better solved by black staff members working on it. And the white staff, we feel that they could contribute a lot more if they could help change some of the problems that we have in the white community. (Segments 749-752)",
+        "rationale": "Direct statement, though the phrasing in the transcript is convoluted."
+      },
+      {
+        "claim": "Greene left SNCC in June 1968 after Dr. King was killed in April.",
+        "status": "supported",
+        "supporting_excerpt": "I actually left Snick in 1968, June of 1968, after, you know, King was killed in April. (Segment 754)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Stokely Carmichael frequently stayed with the Greene family in Greenwood, brought home initially around 1962 by Greene's brother (Dwight or Joy).",
+        "status": "supported",
+        "supporting_excerpt": "whenever Stokey was in Greenwood, he always stayed with my family (Segment 761); 'I'm not sure whether it was joy or whether it was my brother, Dwight, one of them brought him home to, to our house in like in 62' (Segment 760)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Stokely Carmichael and Dorie Ann Ladner visited Greene at Dillard during Mardi Gras and posed as her brother and sister to be admitted past dormitory after-hours rules.",
+        "status": "supported",
+        "supporting_excerpt": "Stokely Carmichael and Dorie Ann Ladner are in New Orleans when I'm at Dillard... they have come down for Mardi Gras... They tell the house mother at the dormitory that they are my sisters and brothers. (Segments 797-806)",
+        "rationale": "Direct statement of personnel, occasion, and ruse."
+      },
+      {
+        "claim": "Local Greenwood movement leaders included June Johnson's mother, the McGee family, Reverend Aaron Johnson (whose church name 'First Christian Church' was forced to change), and Reverend Sterling Tucker.",
+        "status": "supported",
+        "supporting_excerpt": "June Johnson's mother was involved in the movement. The McGee family who owned a farm... they were very involved in the movement. Reverend Johnson who had owned a, they had this little church... his church was called the First Christian Church... the wife folks said that he could not be the First Christian Church... he's Aaron Johnson. He was a big activist in the Hobick movement. Tucker, Sterling Tucker was also, was another minister that was involved. (Segments 477-493)",
+        "rationale": "All four named local leaders and the Aaron Johnson church-name episode are directly stated."
+      },
+      {
+        "claim": "Approximately nine churches in the county around McComb were burned during the summer of 1964.",
+        "status": "supported",
+        "supporting_excerpt": "all around the county. There were, I think nine different churches that were set afi a black church that was set afi (Segment 644)",
+        "rationale": "Direct statement, with the speaker's hedge ('I think')."
+      },
+      {
+        "claim": "A visiting minister-volunteer from Oregon, accompanied by Dennis Sweeney (a Stanford student), visited the Heffner family of McComb; subsequent white-community retaliation forced the Heffners to leave town.",
+        "status": "supported",
+        "supporting_excerpt": "There was a minister from Oregon who had known him while they were in the military... Dennis Sweeney, who was a Stanford student, white, blonde, blue eyes... they went to Vicks, the Heffners... the white folks there gave them a complete hard time and they in return left. (Segments 632-640)",
+        "rationale": "All major elements directly stated."
+      },
+      {
+        "claim": "The 1964 Democratic National Convention was held in Atlantic City.",
+        "status": "supported",
+        "supporting_excerpt": "I go up with them to Atlantic City for the convention, the democratic convention. (Segment 649)",
+        "rationale": "Direct statement; corroborated by civil_rights_facts.json (MFDP entry)."
+      },
+      {
+        "claim": "Greene's father stopped getting house-painting jobs in 1964 because of the family's movement involvement and retired on Social Security.",
+        "status": "supported",
+        "supporting_excerpt": "in 1964, he literally had to retire on his Social Security because he was not getting work. People would not call him for a job. (Segments 117-118)",
+        "rationale": "Direct statement."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 39,
+      "supported": 37,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_citation_blocked_2_partial",
+    "rationale": "Main summary accuracy score is 87 and quality score is 88, both below the 90/90 publication threshold. Additionally, two factual claims are marked partially_supported (the Casey Hayden/Cathy Cade ambiguity and the 'second black student at Ole Miss' framing that depends on James Meredith context not stated in the transcript). The transcript itself is dense and largely accurate, with no fully unsupported claims, but the borderline scoring and the unresolved name ambiguities route this transcript to human review per the fail-closed gate. A reviewer should confirm whether Greene's Dillard visitor was Casey Hayden or Cathy Cade and should sanity-check the framing of Dwight Greene's application status."
+  }
+}

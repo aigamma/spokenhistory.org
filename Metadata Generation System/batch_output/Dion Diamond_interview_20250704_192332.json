@@ -1,0 +1,1017 @@
+{
+  "interview_name": "Dion Diamond",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Dion Diamond_interview_20250704_192332\\Dion Diamond_interview_transcript_20250704_192332.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Dion Diamond",
+    "interviewee_title": "Civil Rights Activist, SNCC Field Secretary, and Freedom Rider",
+    "interview_date": "2015-12-13",
+    "interview_location": "Washington, D.C. (interviewee's home)",
+    "interviewer_name": "David Klein",
+    "interviewer_affiliation": "Virginia Tech / Southern Oral History Program at UNC Chapel Hill (in collaboration with the Library of Congress and Smithsonian NMAAHC)",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:34:34"
+  },
+  "main_summary": {
+    "summary": "Dion Diamond, born and raised in Petersburg, Virginia, recounts the path that took him from solitary, unannounced sit-ins as a teenager in a totally segregated southern town to a sustained career in the organized civil rights movement. He recalls leaving Petersburg at age sixteen for summer work in Monticello, New York, where he had his first sustained contact with white people, then enrolling at Howard University in September 1959 as a physics major. After the February 1960 Greensboro sit-ins, he and fellow Howard students organized the Nonviolent Action Group (NAG) and within roughly two weeks desegregated the Drug Fair lunch counter in Cherrydale, Arlington, Virginia, where George Lincoln Rockwell and members of the American Nazi Party confronted them. NAG then picketed the segregated Glen Echo Park in Maryland through the summer of 1960. Diamond describes nonviolence as a tactic rather than a philosophy, citing the disparity in force between activists and armed police.\n\nDiamond joined the Freedom Rides after the May 1961 Anniston, Alabama bus burning, traveling with the Montgomery-to-Jackson contingent. Upon arrival in Jackson, Mississippi, riders were arrested on breach-of-peace charges, held in the Hinds County jail, then moved to the county prison farm and ultimately to the state penitentiary at Parchman. Diamond shared a cell on what he was told was death row with James Farmer, then national director of CORE, and later shared a house in McComb, Mississippi with Bob Moses (Robert Parris Moses). He worked on SNCC voter registration in Pike County, Mississippi, where a shotgun blast was fired through the window over his bed, then in Holly Springs, Mississippi, and later led a class boycott at Southern University in Baton Rouge for which he was charged with criminal anarchy and held in solitary confinement at the East Baton Rouge Parish jail.\n\nDiamond left Mississippi work in the summer of 1963 after a chance conversation at the National Student Association Congress in Columbus, Ohio led to admission to the University of Wisconsin. He later attended Harvard, completing a graduate degree in education with a focus on race and ethnic relations through the Harvard-MIT consortium. His career included positions at the U.S. Department of Labor (a GS-14 appointment), nonprofit economic-development training, and consulting work for HUD on segregated housing and for HEW on Medicaid and Medicare fraud-detection instruments. He moved to Washington, D.C. in 1966 to work for the United Planning Organization, the local anti-poverty agency funded by the federal Office of Economic Opportunity.\n\nReflecting on the movement, Diamond cites the Civil Rights Act of 1964 and the election of Barack Obama as the moments that most concretely measure the changes set in motion by the activism of his cohort. He estimates he was arrested approximately thirty times in connection with civil rights activities. He repeatedly invokes the Shakespearean line \"what is past is prologue\" to warn that gains can be reversed if younger generations do not know the history, and expresses concern about the Charleston church shooting and the political rhetoric of the 2015-2016 presidential campaign as evidence that the work is unfinished.",
+    "key_themes": [
+      "Spontaneous individual resistance preceding the organized sit-in movement",
+      "Student organizing at Howard University and the Nonviolent Action Group (NAG)",
+      "Nonviolence as tactic versus philosophy",
+      "Freedom Rides, mass arrest, and incarceration in Mississippi (Parchman)",
+      "SNCC voter registration work in Mississippi and Louisiana",
+      "Personal physical danger and the use of solitary confinement against organizers",
+      "Education, career mobility, and the long arc of movement participation",
+      "Generational transmission of civil rights history"
+    ],
+    "historical_significance": "Diamond's testimony documents the founding and early actions of Howard University's Nonviolent Action Group (NAG), an understudied SNCC affiliate that desegregated lunch counters in the Washington, D.C. metropolitan area and picketed Glen Echo Park in 1960. His firsthand account of sharing a Parchman cell with CORE national director James Farmer, and a McComb house with SNCC field secretary Bob Moses, contributes intimate detail to the documentary record of the 1961 Freedom Rides and the early Mississippi voter-registration project. His Baton Rouge criminal-anarchy arrest and solitary-confinement experience after attempting to organize a class boycott at Southern University also fills a gap in the documentary record of state repression directed at out-of-state civil rights workers.",
+    "quality_metrics": {
+      "accuracy_score": 87,
+      "quality_score": 88,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 26,
+      "quality_component_a": 36,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 13,
+      "errors": [
+        "The summary names 'Howard University' as Diamond's college; the underlying SRT text reads 'Nonviolent Action Group University' (an auto-correction artifact), but contextual cues ('the pit of me, the capstone in Black education', DC location, founding of NAG by Howard students) make the inference well-supported rather than invented. Score reflects that this is an inferred normalization, not a directly quoted attribution.",
+        "The summary uses the canonical date 'May 1961' for the Anniston bus burning; the transcript itself says only 'after the burning of the bus in Anniston, Alabama' without giving a month, so the May 1961 date is supplied from general knowledge and should be treated as partially supported."
+      ],
+      "improvements": [
+        "Where the transcript text is clearly a Whisper auto-correction artifact (e.g., 'Nonviolent Action Group University' standing in for 'Howard University'), an explicit footnote in the chapter prose would make the inference transparent rather than smuggled in.",
+        "Diamond does not state the year of his Harvard enrollment with full precision; the prose places it after the 1968 Bobby Kennedy campaign but the exact graduate-school start year should be hedged as 'after 1968' rather than implied as 1968."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:03:12,000",
+      "title": "Introduction and Petersburg, Virginia Childhood",
+      "summary": "Diamond is introduced by interviewer David Klein in Washington, D.C. on Sunday, December 13, 2015, as part of the joint Library of Congress / Smithsonian National Museum of African American History and Culture Civil Rights History Project, with John Bishop on camera and Guha Shankar also present. Diamond describes his first eighteen years in Petersburg, Virginia, which he characterizes as a totally segregated community with a segregated high school and an essentially all-Black state college. He reflects on the changing nomenclature of racial identification ('black, Negro or Colored') and notes that no integrated activity existed in Petersburg that could have shaped his early views.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "petersburg virginia",
+        "segregation",
+        "library of congress",
+        "smithsonian nmaahc",
+        "david klein",
+        "december 2015",
+        "childhood",
+        "segregated schools"
+      ],
+      "related_events": [
+        "Civil Rights History Project (LoC/NMAAHC)",
+        "Segregated Petersburg Virginia",
+        "Joseph Mosnier era oral history collection"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note that Diamond does not name the specific Petersburg high school or state college."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:03:12,000",
+      "end_time": "00:05:26,000",
+      "title": "Solitary Sit-Ins in Petersburg and Summer Work in Monticello, New York",
+      "summary": "Diamond describes engaging in what he calls 'sit-ins before sit-ins became a named item' at the local five-and-dime store in Petersburg, where he would sit at the segregated lunch counter, refuse to leave when told he could not be served, and depart only when the police were called. He also entered the white stacks of the local library after using the rear 'colored entrance.' At age sixteen he traveled to Monticello, New York, supposedly to work in a laundry serving the Catskills resort hotels (which he calls 'the Jewish apps,' referring to a Yiddish-derived term for the area's resort circuit). When no laundry work was available, he talked his way into a short-order cook job at the new Frontier Restaurant by fabricating prior experience and a reference from a Janet Morgan in New Brunswick, New Jersey. Monticello was his first sustained exposure to white people and to an integrated community.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "petersburg sit-ins",
+        "five-and-dime",
+        "segregated lunch counter",
+        "monticello new york",
+        "catskills",
+        "frontier restaurant",
+        "short-order cook",
+        "first exposure to white people"
+      ],
+      "related_events": [
+        "Pre-1960 spontaneous lunch-counter resistance",
+        "Catskills resort economy",
+        "Segregated public libraries in the South"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could clarify that 'the Jewish apps' is a phonetic auto-correction artifact; Diamond is referencing the Borscht Belt / Jewish Alps resort circuit."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:05:26,000",
+      "end_time": "00:11:08,000",
+      "title": "Howard University, Founding of NAG, and Desegregating Cherrydale Drug Fair",
+      "summary": "Diamond enrolled in college in Washington, D.C. in September 1959 as a physics major. The transcript text at this point reads 'Nonviolent Action Group University,' a clear auto-correction artifact; contextual cues ('the pit of me, the capstone in Black education,' the DC location, his account of founding NAG with fellow students) indicate Howard University. After the February 1960 Greensboro sit-ins, Diamond and other students organized the Nonviolent Action Group (NAG) and conducted their first sit-in at the segregated Drug Fair lunch counter in Cherrydale, Arlington, Virginia, desegregating the entire area within roughly two weeks. He recalls that George Lincoln Rockwell of the American Nazi Party and his followers surrounded the sit-in demonstrators, and reflects on his own surprising calm in the photographs of the confrontation. He attributes that calm to what he calls 'euphoric exuberance' of being young and reckless.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "howard university",
+        "nonviolent action group",
+        "nag",
+        "drug fair",
+        "cherrydale arlington",
+        "george lincoln rockwell",
+        "american nazi party",
+        "greensboro sit-ins",
+        "1960 sit-in movement"
+      ],
+      "related_events": [
+        "Greensboro sit-ins (February 1960)",
+        "Founding of SNCC (Shaw University, April 1960)",
+        "Cherrydale Drug Fair desegregation",
+        "Nonviolent Action Group (Howard NAG)",
+        "George Lincoln Rockwell / American Nazi Party counter-demonstrations"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Summary names 'Howard University' as the college; the SRT text contains the corrupted phrase 'Nonviolent Action Group University.' The Howard inference is supported by context but not directly quoted in those words."
+        ],
+        "improvements": [
+          "Could quote Diamond's exact phrase 'the pit of me, the capstone in Black education' (with [sic] notation for 'pit of me') as the contextual evidence for Howard."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:05:55,000",
+      "end_time": "00:11:08,000",
+      "title": "Nonviolence as Tactic versus Philosophy; Glen Echo Park Picketing",
+      "summary": "Diamond articulates his long-held view that nonviolence is a tactic rather than a philosophy or religious commitment, reasoning that the police and the army hold the guns and ammunition while activists have nothing, so violent confrontation would be self-defeating. He distinguishes himself from fellow Freedom Riders who hold nonviolence as a way of life or as a religious path. After desegregating Cherrydale, NAG organized a summer-long picket line in 1960 around Glen Echo Park, a segregated amusement park across the Maryland line from D.C. that bused white children in from the city. In one striking episode arranged with Hyman Bookbinder, then high up in the labor movement, Diamond donned a traditional African gown and headpiece, was driven to the park in a black limousine with a white uniformed chauffeur and white female interpreter, and approached the gate speaking pidgin to gain entry as a putative African visitor.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "nonviolence as tactic",
+        "glen echo park",
+        "summer 1960",
+        "picket line",
+        "hyman bookbinder",
+        "labor movement",
+        "african gown ploy",
+        "amusement park desegregation"
+      ],
+      "related_events": [
+        "Glen Echo Park desegregation campaign (1960)",
+        "Howard NAG picketing",
+        "Labor movement support for civil rights actions",
+        "Debates within the movement on nonviolence as tactic vs philosophy"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Hyman Bookbinder's exact role at the time is not specified by Diamond beyond 'high up in the labor movement'; the summary preserves that hedge."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:11:08,000",
+      "end_time": "00:17:23,000",
+      "title": "The 1961 Freedom Rides: Montgomery to Jackson, Mississippi",
+      "summary": "After the burning of the Freedom Ride bus in Anniston, Alabama, Diamond and others determined not to let the ride die and traveled to Montgomery, Alabama to continue the ride to Jackson, Mississippi. He describes the heavy escort across the Alabama-Mississippi state line: National Guardsmen lining 50 yards on either side of the highway, two state police cars in front, two behind, and a helicopter overhead, with a 'changing of the guard' at the state line. He reflects that the riders did not know at the time that a deal had been brokered between Robert F. Kennedy and the governor of Mississippi against the backdrop of Cold War tensions with Khrushchev: the riders would not be beaten on arrival but would be arrested immediately. As soon as the bus arrived in Jackson, riders were told to move on and were arrested on breach-of-peace charges as they entered the white waiting room. Diamond produces a book about the rides ('Breach of Peace') to illustrate the charge.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "freedom rides",
+        "1961",
+        "anniston bus burning",
+        "montgomery alabama",
+        "jackson mississippi",
+        "robert f kennedy",
+        "breach of peace",
+        "national guard",
+        "cold war"
+      ],
+      "related_events": [
+        "1961 Freedom Rides",
+        "Anniston, Alabama bus burning (May 1961)",
+        "Robert F. Kennedy negotiation with Mississippi governor",
+        "Breach-of-peace arrests in Jackson, Mississippi",
+        "Cold War context (Khrushchev, U.S.-Soviet relations)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Diamond doesn't name the Mississippi governor (Ross Barnett); summary preserves the omission rather than supplying the name from outside the transcript."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:17:23,000",
+      "end_time": "00:23:33,000",
+      "title": "Hinds County Jail, Parchman Penitentiary, and Cellmates James Farmer and Bob Moses",
+      "summary": "Diamond describes the sequence of incarceration after the Jackson arrest: the Hinds County jail (likened to a drunk tank with riders held collectively), the county prison farm a couple of days later, and finally the state penitentiary, where he was held in what he was told was death row, two to a cell, unable to see but able to talk to neighboring prisoners. He shared a cell at the penitentiary with James Farmer, then national director of the Congress of Racial Equality (CORE), and recalls being humbled by Farmer's quiet, monosyllabic responses to his attempts at conversation. The second figure who similarly humbled him was Robert 'Bob' Parris Moses, with whom he shared a house in McComb, Mississippi for some time. Diamond notes that Bob Moses had previously unknown family connections to Petersburg, Virginia, his own hometown.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "hinds county jail",
+        "parchman penitentiary",
+        "death row",
+        "james farmer",
+        "congress of racial equality",
+        "core",
+        "bob moses",
+        "robert parris moses",
+        "mccomb mississippi"
+      ],
+      "related_events": [
+        "Hinds County, Mississippi jail",
+        "Mississippi State Penitentiary at Parchman",
+        "James Farmer and CORE Freedom Rides leadership",
+        "Bob Moses' Mississippi voter registration project",
+        "Segregated incarceration of Freedom Riders"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Diamond does not explicitly say 'Parchman' but refers to 'the state penitentiary'; the canonical name Parchman is widely attested for this period of mass Freedom Rider incarceration but is supplied by the summary as historical normalization."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:26:38,000",
+      "end_time": "00:35:01,000",
+      "title": "SNCC Voter Registration in McComb, Mississippi: The Shotgun Blast",
+      "summary": "After release from Parchman and the loss of a college semester, Diamond flew to Atlanta and accepted his first SNCC field assignment to a project in Pike County, Mississippi, based around McComb, doing voter registration. He recalls the qualitative difference from his earlier work: in Mississippi he was fearful in a way he had never been in Petersburg, where the worst that could happen was that a white cop would drive him home. He stayed with a local Black woman called Mama Cotton in a house with what had been a two-car garage converted to lattice windows above bed level. One night, as a freight train passed up a nearby grade around 11 PM, a shotgun blast came through the window and passed over his body. He notes that his slight 24-inch waist at the time was likely what saved him from being hit. Diamond reflects that he and his colleagues never expected the long-range political transformation that would eventually produce African American congresspeople, an African American mayor of Jackson, and a Black president.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "sncc",
+        "voter registration",
+        "mccomb mississippi",
+        "pike county",
+        "mama cotton",
+        "shotgun attack",
+        "freight train",
+        "physical danger",
+        "1961"
+      ],
+      "related_events": [
+        "SNCC McComb voter registration project (1961)",
+        "Pike County, Mississippi organizing",
+        "Bob Moses-led Mississippi voter registration project",
+        "Nightriding violence against civil rights workers",
+        "Long arc of Black electoral representation in Mississippi"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 89,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Diamond's host is referred to only as 'Mama Cotton' in the transcript; he says 'the lady's name was, and that's name was cotton,' which is a Whisper transcription stutter rather than a missing surname."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:35:01,000",
+      "end_time": "00:42:21,000",
+      "title": "Holly Springs to Baton Rouge: Criminal Anarchy and Solitary Confinement",
+      "summary": "After McComb, Diamond was sent to Holly Springs, Mississippi to continue voter registration. When Felton G. Clark, president of Southern University, closed the campus and expelled student sit-in leaders in Baton Rouge, Louisiana, Diamond went to Baton Rouge over the Christmas holiday period to recruit displaced students to come to Holly Springs. Clark reopened the school and suspended several student leaders; in response Diamond organized a class boycott on Southern's campus for about four days, demanding reinstatement. State police and campus police arrested him, charging him with trespassing, vagrancy, disorderly conduct, and most seriously criminal anarchy, alleging he was attempting to overthrow the state of Louisiana. He was placed not in protective custody but in the general population at the East Baton Rouge Parish jail, alongside a population that included men convicted of murder awaiting transfer to Angola. After a local NAACP-affiliated lawyer reached the FBI, he was moved to solitary confinement in an approximately eight-by-six-foot cell with no clock and 24-hour lighting, where he learned he could deal with extended isolation by structuring time around meal deliveries and Saturday-morning public tours of the jail.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "holly springs mississippi",
+        "baton rouge louisiana",
+        "felton g clark",
+        "southern university",
+        "criminal anarchy",
+        "class boycott",
+        "east baton rouge parish jail",
+        "angola",
+        "solitary confinement",
+        "naacp",
+        "fbi"
+      ],
+      "related_events": [
+        "Southern University sit-in movement (Baton Rouge)",
+        "Felton G. Clark suspension of student leaders",
+        "Louisiana criminal anarchy statute prosecutions of civil rights workers",
+        "East Baton Rouge Parish jail conditions",
+        "NAACP legal defense of southern movement workers"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Diamond does not specify the exact year of the Baton Rouge arrest; the chapter places it after his McComb work in 1961 but does not assign a date."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:42:21,000",
+      "end_time": "00:55:01,000",
+      "title": "Wisconsin Transfer, Harvard Graduate School, and the Stokely Carmichael Cell Story",
+      "summary": "In August 1963 at the National Student Association annual Congress in Columbus, Ohio—where SNCC was recruiting northern campus volunteers for the following Freedom Summer—Diamond, then traveling on SNCC fundraising business, met the president of the student government at the University of Wisconsin, who introduced him on the spot to the Wisconsin dean of students. With his Harvard transcripts forwarded immediately, Diamond was enrolled at Wisconsin by the September 9 start of classes. He changed his major from physics to history and sociology, focused on Civil War Reconstruction, in pursuit of his lingering question about why organized protest took roughly a century after Emancipation to take its 1960s form. In 1966 he returned to D.C. to work for the United Planning Organization, the local anti-poverty agency funded by the federal Office of Economic Opportunity under Sargent Shriver. A colleague at OEO later encouraged him to apply to Harvard's graduate school, where he completed a degree concentrated in race and ethnic relations through the Harvard-MIT consortium. Diamond also discusses but cannot confirm Stokely Carmichael's published account of the two of them sharing a Mississippi penitentiary cell with a drunk, armed guard whom Diamond reportedly dared to shoot.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "national student association",
+        "columbus ohio",
+        "university of wisconsin",
+        "1963 college transfer",
+        "physics to history",
+        "civil war reconstruction",
+        "united planning organization",
+        "office of economic opportunity",
+        "sargent shriver",
+        "harvard graduate school",
+        "harvard-mit consortium",
+        "stokely carmichael"
+      ],
+      "related_events": [
+        "National Student Association recruitment for Freedom Summer",
+        "University of Wisconsin Madison transfer",
+        "War on Poverty and Office of Economic Opportunity",
+        "United Planning Organization (D.C.)",
+        "Harvard Graduate School of Education",
+        "Stokely Carmichael memoir account of Mississippi incarceration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The chapter says Diamond enrolled at Wisconsin by September 9, 1963; the transcript says only 'by the 9th of September when school started, I was enrolled' which is supported. Diamond's stated graduate Harvard enrollment year (post-1968 Bobby Kennedy campaign) is not assigned a specific year in this chapter, only sequenced after his D.C. work."
+        ],
+        "improvements": [
+          "Could quote Diamond's exact phrasing about the Stokely Carmichael cell episode ('I have read and reread Stokely Carmichael's account... I can be neither confirm nor deny that that occurred. I am capable of what he described') to highlight his epistemic caution."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:01:02,000",
+      "end_time": "01:34:34,000",
+      "title": "Career, Reflections on Progress, and Civil Rights Today",
+      "summary": "Diamond traces his post-graduate career: a GS-14 appointment at the U.S. Department of Labor obtained through a connection from a woman he had met at Glen Echo Park whose father was high up in the Labor Department; nonprofit work training African American economic-development organizers (including a summer at Berkeley); consulting work for HUD on segregated housing patterns and for HEW (later HHS) designing instruments to detect Medicaid and Medicare fraud; and grant-writing for the D.C. Department of Housing and Community Development. He notes he has been semi-retired for nearly fifteen years and is age 74 at the time of the interview. He attributes the concentration of former SNCC people in Washington, D.C. to Marion Barry's hiring of movement veterans into city-government professional positions during his mayoralty, and identifies the deaths of Julian Bond and Marion Barry as the recent occasions that have brought his cohort together. Diamond names the Civil Rights Act of 1964 and the election of Barack Obama as the high-water marks that measure the changes set in motion by his cohort, while warning, through repeated invocation of the Shakespearean line 'what is past is prologue,' that the Charleston church shooting and the 2015-2016 Trump rallies signal that the gains are reversible if younger generations do not know the history. He concludes by recalling his 1968 choice among three options—running an anti-poverty program in the Marshall Islands, working on Robert F. Kennedy's presidential campaign, and Harvard—and how Kennedy's assassination ultimately routed him to Harvard.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "us department of labor",
+        "gs-14",
+        "hud",
+        "hew",
+        "hhs",
+        "medicaid medicare fraud",
+        "marion barry",
+        "julian bond",
+        "civil rights act 1964",
+        "barack obama",
+        "what is past is prologue",
+        "charleston church shooting",
+        "robert f kennedy 1968",
+        "marshall islands"
+      ],
+      "related_events": [
+        "Marion Barry mayoralty of Washington D.C.",
+        "Julian Bond's death (2015)",
+        "Civil Rights Act of 1964",
+        "Election of Barack Obama (2008)",
+        "Charleston church shooting (June 2015)",
+        "Robert F. Kennedy 1968 presidential campaign and assassination",
+        "War on Poverty (Office of Economic Opportunity)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The chapter says Diamond is 74 at the time of the interview, matching the transcript ('I'm now 74 years old age'). The chapter says the Charleston shooting was June 2015; Diamond doesn't give a date but references it as recent."
+        ],
+        "improvements": [
+          "Could quote Diamond's exact line on Lyndon Johnson ('You never expected Lyndon Johnson, a Southerner to be the guy to implement it') as a specific marker of his historical assessment."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Dion Diamond",
+      "interviewee_title": "Civil Rights Activist, SNCC Field Secretary, and Freedom Rider",
+      "interview_date": "2015-12-13",
+      "interview_location": "Washington, D.C. (interviewee's home)",
+      "interviewer_name": "David Klein",
+      "interviewer_affiliation": "Virginia Tech / Southern Oral History Program at UNC Chapel Hill (in collaboration with the Library of Congress and Smithsonian NMAAHC)",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:34:34",
+      "total_segments": 801,
+      "word_count": 16800,
+      "number_of_chapters": 10
+    },
+    "overall_score": {
+      "total": 86,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 25,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Clear chronological arc from Petersburg childhood through Howard NAG, Freedom Rides, Mississippi voter registration, Baton Rouge solitary, Wisconsin and Harvard, to career and present-day reflection (Segments 1-800, 00:00:00,000 to 01:34:34,000)",
+            "Interviewer's targeted follow-ups maintain throughline (e.g., 'So back to the freedom ride. Let's pick up where you were telling that story' at Segment 168-169, 00:19:23,000)"
+          ],
+          "justification": "The interview follows a clear chronological arc with strong interviewer steering. Diamond does meander into reflective tangents (e.g., the stolen exam digression at Segments 530-546, 00:57:53,000 to 01:00:06,000) but returns to the throughline. A few topical jumps (the digression about athletic recruitment at HBCUs at Segments 585-590) interrupt the otherwise tight structure."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "But a shotgun blast came straight through the window, passed over my body. Literally, if I would have had this girth then, a part of my body would have been shot off.",
+            "segment": 331,
+            "timestamp": "00:34:45,000"
+          },
+          "specificity_count": {
+            "full_names": 18,
+            "specific_dates": 8,
+            "specific_places": 22
+          },
+          "evidence": [
+            "Petersburg sit-in scene with named library 'colored entrance' and stacks venture (Segments 17-18, 00:02:36,000)",
+            "African gown / pidgin entry to Glen Echo Park scene with Hyman Bookbinder, white chauffeur, white interpreter (Segments 77-93, 00:11:35,000-00:12:58,000)",
+            "Cross-state-line escort with National Guard, two state police cars front and back, helicopter overhead (Segments 103-109, 00:13:53,000-00:14:22,000)"
+          ],
+          "justification": "Diamond reconstructs specific scenes with sensory detail: the freight train passing up a grade at 11 PM as the shotgun fires through a converted-garage lattice window; the changing of the guard at the Alabama-Mississippi state line; the African gown ploy at Glen Echo. He names places (Cherrydale, Hinds County, Holly Springs, Pike County, McComb, East Baton Rouge Parish, Angola, Monticello NY) and people (Hyman Bookbinder, James Farmer, Bob Moses, George Lincoln Rockwell, Felton G. Clark, Mama Cotton, Janet Morgan) with full names."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I'm not certain that I could have defined then what I was contributing to. I just knew I wanted to break down the barriers of segregation.",
+            "segment": 297,
+            "timestamp": "00:31:38,000"
+          },
+          "emotional_range": [
+            "humility (cellmate with Farmer and Moses)",
+            "fear (Mississippi, distinct from Petersburg)",
+            "pride (movement legacy)",
+            "disappointment (in self for withdrawal from activism)",
+            "anger / dry wit (Trump rallies)",
+            "candor about ethical compromise (admitting the stolen geometry exam)"
+          ],
+          "vulnerability_elements": [
+            "Admits stealing a standardized geometry exam as a student and acknowledges 'I'm not suggesting I'm proud of what I just explained'",
+            "Says he has 'become somewhat of a recluse' and is 'disappointed in myself' for no longer doing civil rights or volunteer work",
+            "Confesses to 2008 financial-market losses and resulting fiscal conservatism"
+          ],
+          "justification": "Diamond mixes analytical detachment with moments of genuine self-criticism (the stolen exam, the self-described reclusiveness). He resists performative emotion but his admission that being humbled by James Farmer and Bob Moses left him at a loss for words is genuine. He does not break down or visibly cry, which caps the dimension below the highest band."
+        },
+        "overall_assessment": "Diamond is a vivid, structured narrator who anchors a long career in specific scenes, people, and places. His tone is reflective and dry-witted rather than emotionally raw, but he is willing to be self-critical and to flag uncertainty about his own memory (the Stokely Carmichael cell episode)."
+      },
+      "historical_value": {
+        "total": 23,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "Founding and early actions of Howard University's Nonviolent Action Group (NAG), 1960 (Segments 34-50, 00:05:26,000-00:08:03,000)",
+            "Glen Echo Park desegregation campaign, summer 1960 (Segments 67-94, 00:10:31,000-00:13:04,000)",
+            "1961 Freedom Rides Montgomery-to-Jackson leg (Segments 95-122, 00:13:04,000-00:15:29,000)",
+            "Hinds County jail and Mississippi state penitentiary incarceration of Freedom Riders (Segments 177-200, 00:20:32,000-00:23:04,000)",
+            "Early SNCC voter registration in Pike County / McComb, Mississippi (Segments 251-333, 00:27:05,000-00:35:01,000)",
+            "Southern University Baton Rouge student-leader expulsions and the criminal anarchy prosecution of civil rights workers (Segments 338-413, 00:35:38,000-00:42:21,000)"
+          ],
+          "key_figures": [
+            {
+              "name": "James Farmer",
+              "relationship": "Parchman cellmate during Freedom Rides",
+              "contact_level": "close"
+            },
+            {
+              "name": "Bob Moses (Robert Parris Moses)",
+              "relationship": "Housemate in McComb, Mississippi",
+              "contact_level": "close"
+            },
+            {
+              "name": "Stokely Carmichael",
+              "relationship": "Fellow SNCC organizer; Carmichael wrote about a shared cell episode",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "George Lincoln Rockwell",
+              "relationship": "American Nazi Party counter-protester at Cherrydale sit-in",
+              "contact_level": "moderate (adversarial proximity)"
+            },
+            {
+              "name": "Marion Barry",
+              "relationship": "Fellow former SNCC figure; later hired movement veterans into D.C. city government",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Julian Bond",
+              "relationship": "Movement compatriot",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "Nonviolent Action Group (NAG)",
+              "role": "Founding member / organizer",
+              "years": "1960-1961"
+            },
+            {
+              "organization": "Student Nonviolent Coordinating Committee (SNCC)",
+              "role": "Field organizer (Mississippi voter registration)",
+              "years": "1961-1963"
+            },
+            {
+              "organization": "Congress of Racial Equality (CORE)-organized Freedom Rides",
+              "role": "Freedom Rider (Montgomery-to-Jackson)",
+              "years": "1961"
+            },
+            {
+              "organization": "United Planning Organization (D.C. anti-poverty)",
+              "role": "Staff",
+              "years": "1966-1968"
+            }
+          ],
+          "unique_access": "Diamond was inside the founding cohort of Howard's NAG, was personally present for the first sit-in confronted by George Lincoln Rockwell and the American Nazi Party at Cherrydale, was on the early-arriving bus to Jackson during the 1961 Freedom Rides, and shared a Mississippi state penitentiary cell with CORE national director James Farmer.",
+          "justification": "Diamond's proximity to the founding moments of the Howard NAG, the Freedom Rides, and the early Mississippi voter-registration project, together with intimate cell-time with James Farmer and house-time with Bob Moses, places him squarely in the exceptional insider perspective band."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Date of NAG founding: September 1959 college enrollment, post-Greensboro sit-in organizing (Segments 34-39, 00:05:26,000-00:06:09,000)",
+            "Cherrydale Drug Fair location specified: Arlington, VA (Segments 49-50, 00:07:54,000)",
+            "August 1963 NSA Congress in Columbus, Ohio (Segments 429-440, 00:43:54,000-00:45:13,000)",
+            "Enrollment at University of Wisconsin by September 9, 1963 (Segment 447, 00:45:58,000)",
+            "1966 D.C. return for United Planning Organization (Segment 457, 00:46:55,000)",
+            "Approximately 30 civil rights arrests (Segment 423, 00:43:14,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 18,
+            "first_only": 4,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "Cherrydale Drug Fair sit-in and Rockwell counter-demonstration (well-documented in NAG histories)",
+            "Glen Echo Park desegregation campaign summer 1960 (well-documented)",
+            "Felton G. Clark closure of Southern University and expulsion of student leaders (verifiable)",
+            "Diamond's listed approximately 30 arrests (FBI records reference invited)",
+            "James Farmer as CORE national director during Freedom Rides (matches civil_rights_facts.json)",
+            "Bob Moses (Robert Parris Moses) as SNCC Mississippi voter registration leader (matches civil_rights_facts.json)"
+          ],
+          "justification": "Diamond gives precise dates for several pivotal moments (September 9 1963 Wisconsin enrollment, August 1963 NSA Congress, 1966 D.C. return) and names organizations and figures with full names. He hedges where appropriate (the Stokely Carmichael cell episode, the year of the Anniston bus burning). A historian could cross-reference most claims directly."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed inside account of Howard NAG's founding logic and tactical choices in 1960 D.C.",
+            "Specific narrative of being held in solitary at the East Baton Rouge Parish jail on criminal anarchy charges, a less-told strand of state repression against SNCC organizers",
+            "Diamond's account of the deal between Robert F. Kennedy and the Mississippi governor that the riders would not be beaten but would be arrested on arrival (insider attribution to the diplomatic Cold War context)",
+            "The Hyman Bookbinder labor-movement coordination of the African-gown ploy at Glen Echo Park"
+          ],
+          "understudied_aspects": [
+            "Howard University's role in SNCC's early organizational life (the NAG-to-SNCC pipeline)",
+            "Pre-1960 individual lunch-counter resistance in segregated southern towns (Diamond's Petersburg sit-ins)",
+            "Louisiana criminal anarchy prosecutions of out-of-state movement organizers",
+            "Solitary confinement as a tool against civil rights workers"
+          ],
+          "narrative_complications": "Diamond's insistence that nonviolence is a tactic rather than a philosophy complicates the dominant narrative that frames SNCC and CORE field workers as principled adherents to Gandhian or Christian nonviolence; he describes himself as willing 'off camera' to physically defend himself.",
+          "historiographical_value": "Historians of the early-1960s SNCC and of D.C.-area civil rights organizing can use Diamond's testimony to triangulate the founding period of NAG, the Cherrydale and Glen Echo campaigns, and the experience of incarceration at Parchman and Baton Rouge. His account of the RFK-Mississippi-governor deal is testimony rather than documentary evidence but is useful in the historiography of federal intervention.",
+          "justification": "Diamond contributes significant insider perspective on understudied chapters (NAG founding, Glen Echo, Baton Rouge solitary, the McComb shotgun attack) and complicates the standard nonviolence-as-philosophy narrative."
+        },
+        "overall_assessment": "Diamond's interview is high-value historical testimony. He sits inside the founding cohorts of NAG and SNCC's Mississippi project, with direct relationships to Farmer, Moses, Carmichael, Barry, and Bond. His complications of dominant narratives (nonviolence as tactic) and his documentation of Louisiana criminal anarchy prosecutions and solitary-confinement experience materially extend the historical record."
+      },
+      "emotional_resonance": {
+        "total": 19,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Diamond moves from a solitary, intuitive teenage objector to segregation in a totally segregated southern town, to a calm organizer in formal nonviolent direct action campaigns, to an incarcerated voter-registration worker confronting mortal danger, to a graduate-educated federal-government and consulting professional, and finally to a reflective elder self-critically aware that he has withdrawn from active organizing.",
+          "key_turning_points": [
+            "Departure from Petersburg at 16 for Monticello, NY: first exposure to white people (Segments 21-33, 00:03:12,000-00:05:15,000)",
+            "Founding of NAG after Greensboro (Segments 36-43, 00:05:31,000-00:06:58,000)",
+            "Shotgun blast through the McComb window (Segments 329-333, 00:34:33,000-00:35:01,000)",
+            "August 1963 chance NSA-Congress conversation that routed him from SNCC field work back to college at Wisconsin (Segments 432-447, 00:44:28,000-00:46:05,000)"
+          ],
+          "before_after_contrast": "From a 19-year-old physics major willing to sit alone at hostile lunch counters, to a 74-year-old semi-retired professional living in D.C. who is critical of his own withdrawal from continuing activism.",
+          "inspirational_quality": "The arc inspires through its specificity and through Diamond's repeated insistence that 'I represented more than me' and that nonviolent restraint was instrumental rather than spiritual, complicating the standard hagiography while preserving the underlying courage.",
+          "justification": "There is a clear arc of growth, but Diamond articulates it analytically rather than as a felt journey. His most self-critical moment (the present-day reclusiveness) is presented as failure rather than transformation, which is honest but caps the dimension below the highest band."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Cherrydale sit-in surrounded by George Lincoln Rockwell and the American Nazi Party",
+              "segment_range": "52-56",
+              "timestamp_range": "00:08:08,000 - 00:08:53,000",
+              "stakes": "Physical danger from armed counter-protesters; demonstration that NAG could not be intimidated off the lunch counter"
+            },
+            {
+              "description": "Cross-state-line escort and arrival in Jackson, Mississippi as a Freedom Rider",
+              "segment_range": "100-122",
+              "timestamp_range": "00:13:29,000 - 00:15:29,000",
+              "stakes": "Arrest and incarceration; risk of mob violence; international diplomatic consequence"
+            },
+            {
+              "description": "Shotgun blast through the McComb bedroom window over his body",
+              "segment_range": "329-333",
+              "timestamp_range": "00:34:33,000 - 00:35:01,000",
+              "stakes": "Direct attempted murder"
+            },
+            {
+              "description": "Criminal anarchy arrest in Baton Rouge and solitary confinement",
+              "segment_range": "367-413",
+              "timestamp_range": "00:38:01,000 - 00:42:21,000",
+              "stakes": "Felony conviction; potential state penitentiary time at Angola; physical danger from general-population fellow inmates including convicted murderers"
+            }
+          ],
+          "conflict_types": [
+            "Physical danger from white supremacists (Rockwell, McComb nightriders)",
+            "State repression (criminal anarchy prosecution, solitary confinement)",
+            "Internal organizational disagreement (nonviolence as tactic vs philosophy)",
+            "Personal ethical conflict (the stolen exam, present-day withdrawal from activism)"
+          ],
+          "emotional_range": "From the calm of the photographed sit-in confrontations to the felt fear of Mississippi nightriding to the dry self-criticism of the present-day reclusiveness",
+          "justification": "Multiple high-stakes moments with clear physical danger and felony exposure. The Baton Rouge solitary-confinement sequence functions as a sustained set piece with palpable risk."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "Youthful courage in the face of asymmetric power",
+            "The role of chance encounters in shaping a life (the NSA Congress meeting)",
+            "Generational drift and self-criticism of withdrawal",
+            "Parents' mixed pride and worry"
+          ],
+          "relatable_struggles": [
+            "Leaving home at 16 to work in a distant town",
+            "Being the only person of color in a graduate seminar called on to 'represent'",
+            "Financial losses in the 2008 market collapse",
+            "Difficulty staying engaged with younger generations and new technology"
+          ],
+          "human_moments": [
+            "Diamond admitting he lied about his short-order cook experience to get the Monticello restaurant job (Segments 27-31, 00:04:05,000-00:04:57,000)",
+            "Diamond admitting he doesn't know how to use his new phone (Segments 731-732, 01:23:36,000-01:23:58,000)",
+            "Parents' pride mixed with wishing 'it was someone else's child' (Segments 235-236, 01:?:?)"
+          ],
+          "connection_points": "The arc from local objection to national movement to private reflection, and the explicit refusal to claim sainthood, is broadly accessible. The interview's specificity to D.C. and Howard NAG is balanced by universal themes of youthful courage and elder reflection.",
+          "justification": "The interview is moderately relatable. Diamond's analytical voice and his focus on tactics and institutions limit the broad emotional access, but moments of self-deprecation and family detail (parents' worry, the stolen exam, the cell phone) provide universal touch points."
+        },
+        "overall_assessment": "Diamond's interview offers a clearly drawn arc of personal change with multiple high-stakes peak moments (Cherrydale, the cross-state-line escort, the McComb shotgun, Baton Rouge solitary). The emotional palette tilts analytical and dry-witted rather than raw, which caps the dimension below the very highest band but does not diminish the resonance of the specific dramatic moments."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Acronyms (NAG, SNCC, CORE, HUD, HEW, OEO, UPO, HBCU, NAACP, GS-14) used without consistent in-line definition",
+            "Some auto-correction transcription artifacts (e.g., 'Nonviolent Action Group University' for Howard University; 'Bobbi Kennedy' for Robert F. Kennedy; 'Jewish apps' for Jewish Alps/Borscht Belt) require listener inference"
+          ],
+          "justification": "Diamond is articulate and uses complete sentences. He occasionally self-explains acronyms (HBCU 'historically black colleges and universities') but more often does not. Transcription artifacts in the SRT are the primary accessibility friction, not Diamond's speech itself."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Cherrydale and Glen Echo set-piece narration (Segments 36-94, 00:05:31,000-00:13:04,000): high-energy because of vivid scene reconstruction and the African-gown anecdote",
+            "Mississippi arrival, arrest, and Parchman (Segments 95-200, 00:13:04,000-00:23:04,000): high-energy because of the cinematic escort scene",
+            "McComb shotgun blast (Segments 316-333, 00:33:27,000-00:35:01,000): high-energy because of mortal stakes"
+          ],
+          "slow_sections": [
+            "Career enumeration (Segments 645-688, 01:01:25,000-01:16:37,000): slower because it shifts from scene-based narration to institutional cataloging",
+            "Stolen exam digression (Segments 530-546, 00:57:53,000-01:00:06,000): tangential and slows the throughline before recovering"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "The interview sustains attention well for the first 45 minutes (childhood through Baton Rouge) and dips during the career and economic-development reflections before recovering for the present-day reflections. Total length is approximately 95 minutes, which is a sustainable but not light listen.",
+          "justification": "Strong narrative momentum through the activism years, slower in the institutional-career section. Klein's targeted follow-ups help redirect Diamond when he wanders into tangents."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Pre-organized resistance as a thread connecting individual moral objection to mass movement",
+            "Nonviolence as tactic versus philosophy as a long-running debate inside the movement",
+            "Federal intervention and the Cold War context of civil rights enforcement (the RFK-Mississippi-governor deal)",
+            "Generational transmission of civil rights history ('what is past is prologue')",
+            "The unfinished business of civil rights (Charleston, 2015-2016 political rhetoric, Black Lives Matter)"
+          ],
+          "contemporary_relevance": "Diamond explicitly connects the movement to the Charleston church shooting, the 2015-2016 Trump campaign rhetoric, and the Black Lives Matter movement, framing the present as continuous with the past via the 'past is prologue' line he attributes to Shakespeare and identifies on a D.C. building (likely the National Archives).",
+          "meaning_making": "Diamond actively works to make historical meaning, especially in his closing reflections. He explicitly worries about loss of historical memory among people under 35.",
+          "justification": "Strong thematic connection, with Diamond actively contextualizing his experiences in long civil rights history and in contemporary politics."
+        },
+        "overall_assessment": "Accessibility is good overall. Diamond is articulate, his pacing is generally strong, and he explicitly links personal experience to broader themes. The main friction is the transcription quality and the institutional-career section's slower pace."
+      }
+    },
+    "overall_assessment": "Dion Diamond's interview is a high-value oral history that documents the founding moments of Howard University's Nonviolent Action Group, the 1961 Freedom Rides, early SNCC voter registration in Mississippi, and Louisiana state repression against out-of-state organizers. Diamond is an articulate, structured, and self-critical narrator with intimate access to figures including James Farmer, Bob Moses, Stokely Carmichael, Marion Barry, and Julian Bond. His complications of the dominant nonviolence-as-philosophy narrative and his documentation of the McComb shotgun attack and Baton Rouge solitary confinement are material additions to the historical record. The dry, analytical tone caps emotional resonance below the very highest band but does not diminish the dramatic stakes of the peak moments.",
+    "key_strengths": [
+      "Insider access to the founding cohort of NAG and SNCC's Mississippi voter-registration project, with close-cell-time with James Farmer and shared-house-time with Bob Moses",
+      "Specific, scene-based narration with named places, organizations, and people throughout, allowing historians to cross-reference and verify claims",
+      "Willingness to complicate dominant narratives (nonviolence as tactic, not philosophy) and to flag uncertainty about his own memory (the Stokely Carmichael cell episode)"
+    ],
+    "key_limitations": [
+      "Auto-correction artifacts in the underlying SRT obscure several named entities (e.g., 'Nonviolent Action Group University' for Howard, 'Bobbi Kennedy' for Robert F. Kennedy), requiring inference",
+      "Analytical and dry-witted register limits emotional rawness; few moments of full vulnerability"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Dion Diamond was born and raised in Petersburg, Virginia, where he spent his first eighteen years.",
+        "status": "supported",
+        "supporting_excerpt": "I'm originally from Petersburg, Virginia. The first 18 years spent in Petersburg, a totally segregated community, segregated high school, and our interest school, and even the state college there was essentially all black. (Segment 9, 00:01:26,000)",
+        "rationale": "Diamond states this directly in the opening minutes."
+      },
+      {
+        "claim": "Diamond left Petersburg at age sixteen for summer work in Monticello, New York.",
+        "status": "supported",
+        "supporting_excerpt": "I went at 816, well, soon to turn 17, but supposedly to work at the laundry. (Segment 23, 00:03:44,000); 'when I was 16, I went to a town called Monticello, New York to work supposedly in a laundry' (Segment 21, 00:03:12,000)",
+        "rationale": "Diamond explicitly names age and location."
+      },
+      {
+        "claim": "Diamond enrolled in college in Washington, D.C. in September 1959 as a physics major.",
+        "status": "supported",
+        "supporting_excerpt": "I started Nonviolent Action Group University in September of 1959. I was a physics major. (Segments 34-35, 00:05:26,000)",
+        "rationale": "The 'Nonviolent Action Group University' phrasing is an auto-correction artifact; Diamond establishes elsewhere that he was a Howard student and that NAG was founded by Howard students. The September 1959 enrollment and physics major are explicitly stated."
+      },
+      {
+        "claim": "After the Greensboro sit-ins, Diamond and fellow students organized the Nonviolent Action Group (NAG) at Howard University.",
+        "status": "supported",
+        "supporting_excerpt": "Shortly after that, when Snick was founded in the city and started in Greensboro... we organized this group called the Nonviolent Action Group. (Segments 36-42, 00:05:31,000-00:06:49,000)",
+        "rationale": "Direct attribution. The Howard inference is supported by Diamond's reference to 'the pit of me [sic], the capstone in Black education' and to D.C. as the locus, both consistent with Howard."
+      },
+      {
+        "claim": "NAG's first sit-in was at the Drug Fair lunch counter in Cherrydale, Arlington, Virginia, where they desegregated the area within roughly two weeks.",
+        "status": "supported",
+        "supporting_excerpt": "off first city was at the, the cherry deal, I'm going to say the drug fair in cherry deal over in Arlington, VA. We desegregated that entire area within two weeks. (Segments 49-50, 00:07:54,000-00:08:03,000)",
+        "rationale": "Direct attribution; 'cherry deal' is the transcript's auto-correction of 'Cherrydale.'"
+      },
+      {
+        "claim": "George Lincoln Rockwell of the American Nazi Party confronted the Cherrydale sit-in demonstrators.",
+        "status": "supported",
+        "supporting_excerpt": "George Lincoln Rockwell of the American Nazi party came in and surrounded us as we had to sit in. (Segment 52, 00:08:08,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "NAG picketed Glen Echo Park, a segregated Maryland amusement park, through the summer of 1960.",
+        "status": "supported",
+        "supporting_excerpt": "There was this amusement park right across the Maryland line called Glen Echo Park Park... we put up a picket line around the outside of the park. And I think for that entire summer, for the balance of that summer, picket line. (Segments 67-72, 00:10:31,000-00:11:10,000); 'This is the summer of 1960?' 'Yes.' (Segments 72-74)",
+        "rationale": "Direct attribution with date confirmed in interviewer exchange."
+      },
+      {
+        "claim": "Hyman Bookbinder, then high up in the labor movement, arranged the African-gown limousine ploy at Glen Echo Park.",
+        "status": "supported",
+        "supporting_excerpt": "How about the name of Hyman Bookbinder, if I recall correctly, who was a high up in the labor movement, arranged for this big long black limousine and a white uniformed chauffeur and a white female interpreter? (Segment 80, 00:11:58,000)",
+        "rationale": "Direct attribution; Diamond hedges with 'if I recall correctly.'"
+      },
+      {
+        "claim": "Diamond holds nonviolence as a tactic rather than a philosophy.",
+        "status": "supported",
+        "supporting_excerpt": "I believe nonviolence as a tactic. I don't believe it in it as a philosophy. My reasoning is the police and the army have the guns and the ammunition that we had nothing. (Segments 59-61, 00:09:10,000-00:09:33,000)",
+        "rationale": "Direct attribution and explicit framing."
+      },
+      {
+        "claim": "Diamond joined the Freedom Rides after the Anniston, Alabama bus burning, traveling from Montgomery to Jackson, Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "When it almost ended after the burning of the bus in Anniston, Alabama, several of us said... It's time we don't let this die. So we venture to Montgomery, Alabama to continue the ride from Montgomery to Jackson, Mississippi. (Segments 97-100, 00:13:23,000-00:13:39,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "A deal had been brokered between Robert F. Kennedy and the governor of Mississippi that riders would not be beaten but would be arrested immediately on arrival.",
+        "status": "supported",
+        "supporting_excerpt": "a deal had been made between the governor of Mississippi and Robert F. Kennedy. This was when we were having a big problem with Khrushchev... So the deal was cut that they would not allow us to be beaten, but we would be arrested immediately. (Segments 110-116, 00:14:28,000-00:15:04,000)",
+        "rationale": "Direct attribution. Diamond names RFK and the Mississippi governor."
+      },
+      {
+        "claim": "Riders were arrested on breach-of-peace charges as they attempted to enter the white waiting room in Jackson.",
+        "status": "supported",
+        "supporting_excerpt": "if we started for the white waiting room, you were under arrest. That's why this book, if I may, reached a piece... We were Breach of peace. (Segments 119-122, 00:15:15,000-00:15:29,000)",
+        "rationale": "Direct attribution; the book Diamond shows is the well-known 'Breach of Peace' Freedom Rider book."
+      },
+      {
+        "claim": "Diamond was held first in the Hinds County jail, then moved to the county prison farm, and then to the state penitentiary.",
+        "status": "supported",
+        "supporting_excerpt": "When we arrived in Jackson and we were immediately arrested, we were thrown into the Hinds County jail... Then we were moved from the County jail a couple of days later to the County prison farm and from the prison farm to the state pinnit entry. (Segments 177-182, 00:20:32,000-00:21:05,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond shared a Parchman cell with James Farmer, then national director of CORE.",
+        "status": "supported",
+        "supporting_excerpt": "I shared a cell with James Farmer, who was then the director of CORE. (Segment 194, 00:22:15,000)",
+        "rationale": "Direct attribution. The summary's identification of the state penitentiary as Parchman is supported by Diamond's reference to 'the state pinnit entry' and by the historical record of Freedom Riders being sent to Parchman."
+      },
+      {
+        "claim": "Diamond shared a house in McComb, Mississippi with Robert 'Bob' Parris Moses.",
+        "status": "supported",
+        "supporting_excerpt": "The second person that I actually occurred with was Robert \"Bob\" Parris Moses. Bob and I shared a house in McComb, Mississippi for some time. (Segments 200-201, 00:22:59,000-00:23:04,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "A shotgun blast was fired through the window of Diamond's bedroom at Mama Cotton's house in McComb, passing over his body.",
+        "status": "supported",
+        "supporting_excerpt": "But a shotgun blast came straight through the window, passed over my body. Literally, if I would have had this girth then, a part of my body would have been shot off. (Segment 331-332, 00:34:45,000-00:34:51,000); and 'the lady's name was, and that's name was cotton. We used to call it Mama Cotton.' (Segments 317-318, 00:33:34,000-00:33:37,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Felton G. Clark, president of Southern University, closed the campus and expelled student leaders after Baton Rouge sit-ins.",
+        "status": "supported",
+        "supporting_excerpt": "there was a guy by the name of Felton G. Clark, who was the president of Southern University. Now, the kids in Baton Rouge had started having sit-ins. While I was at Holly Springs, the president closed the school and kicked out a bunch of, quote, leaders. (Segments 338-342, 00:35:38,000-00:35:57,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond organized a class boycott on Southern University's Baton Rouge campus and was arrested by state and campus police on charges of trespassing, vagrancy, disorderly conduct, and criminal anarchy.",
+        "status": "supported",
+        "supporting_excerpt": "I started organizing as a student on Baton Rouge's campus to boycott classes... they sent the state police, plus the campus police, to get me... I was charged with trespassing, vacancy, disorderly conduct... The main charge they got me on was criminal anarchy. They said I was attempting to overthrow the state of Louisiana. (Segments 357-371, 00:37:12,000-00:38:21,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond was held in solitary confinement at the East Baton Rouge Parish jail after the NAACP-affiliated lawyer reached the FBI.",
+        "status": "supported",
+        "supporting_excerpt": "the East Baton Rouge Parish jail... when I did get a chance to talk to the local lawyer who represented the NAACP, somehow he was able to contact the FBI and they moved me to solitary confinement. (Segments 381-399, 00:39:04,000-00:41:00,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond met the president of the University of Wisconsin student government at the August 1963 National Student Association Congress in Columbus, Ohio, leading to his enrollment at Wisconsin by September 9, 1963.",
+        "status": "supported",
+        "supporting_excerpt": "I was sent to Columbus, Ohio to go to the annual Congress of the National Student Association... I happened to be standing next to the guy who's a president of the student government at the University of Wisconsin... This is August of 63... had my transcript forward into Wisconsin by the 9th of September when school started, I was enrolled. (Segments 429-447, 00:43:54,000-00:46:05,000)",
+        "rationale": "Direct attribution with dates."
+      },
+      {
+        "claim": "Diamond returned to D.C. in 1966 to work for the United Planning Organization, the local anti-poverty agency funded by the federal Office of Economic Opportunity.",
+        "status": "supported",
+        "supporting_excerpt": "In 1966, I came to DC to work for the local anti-poverty organization, the United Planning Organization... she was working for OEO, which was the National Office of Economic Opportunity, which funded the local groups. (Segments 457-461, 00:46:55,000-00:47:41,000)",
+        "rationale": "Direct attribution. Diamond names Sargent Shriver in Segment 459 ('sod and shriver, and that group')."
+      },
+      {
+        "claim": "Diamond attended Harvard's graduate school after his D.C. anti-poverty work and after the 1968 Bobby Kennedy campaign, completing a degree in education focused on race and ethnic relations.",
+        "status": "supported",
+        "supporting_excerpt": "I did a great, I ended up at Harvard... My degree is in education. Harvard has an agreement with MIT. I guess you call it a consortium... only one course through our recall as being at the grad school of education. That was indeed race and ethnic relations. (Segments 465-499, 00:48:09,000-00:53:38,000); and 'I had been admitted to Harvard. And I got a job working on Bobbi Kennedy's campaign... I didn't go to Micronesia. Bobbi Kennedy got killed and I ended up at Harvard.' (Segments 780-787, 01:31:48,000-01:32:41,000)",
+        "rationale": "Direct attribution. 'Bobbi Kennedy' is the transcript's auto-correction of Robert F. Kennedy."
+      },
+      {
+        "claim": "Diamond identifies the Civil Rights Act of 1964 and the election of Barack Obama as the high-water marks of the movement's achievements.",
+        "status": "supported",
+        "supporting_excerpt": "Probably when the civil rights bill of 1964 was passed and to look at all of the elected officials who are now African-American... I think the Civil Rights Act and the election of Obama have to be the highlights. (Segments 775-792, 01:30:54,000-01:33:10,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond estimates he was arrested approximately thirty times in connection with civil rights activities.",
+        "status": "supported",
+        "supporting_excerpt": "And with Tony and Cheek, I've been arrested approximately 30 times, connection with civil rights activities. Please check with the FBI for dates and location. (Segments 423-424, 01:09:?:?)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond attributes the concentration of former SNCC people in Washington, D.C. to Marion Barry's hiring of movement veterans into city government during his mayoralty.",
+        "status": "supported",
+        "supporting_excerpt": "Marion Barry is the reason so many of us are here... when he was mayor, bought more college graduates and SNCC people who ended up in professional positions in city government. (Segments 636-638, 01:10:26,000-01:10:47,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond's career included a GS-14 appointment at the U.S. Department of Labor, consulting for HUD on segregated housing, and consulting for HEW on Medicaid and Medicare fraud-detection instruments.",
+        "status": "supported",
+        "supporting_excerpt": "Upon completing my education, I came back to DC and took a job as the US Department of Labor... straight out of school, I ended up with a job that was a GS-14... I've been a consultant to HUD, to HHS, what used to be HEW... at HUD it was again race and ethnic relations. Dealing with segregated housing... at HEW... designing an instrument for determining fraud and abuse in the Medicaid Medicare program. (Segments 647-672, 01:01:36,000-01:14:43,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond was 74 years old at the time of the interview.",
+        "status": "supported",
+        "supporting_excerpt": "I'm now 74 years old age. (Segment 679, 01:15:43,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "Diamond repeatedly invokes the Shakespearean phrase 'what is past is prologue.'",
+        "status": "supported",
+        "supporting_excerpt": "somewhere downtown on one of the buildings, there's this Shakespearean phrase, what is past is prologue. I think that's true. (Segments 283-284, 00:30:17,000-00:30:30,000); and 'What has passed is prolong. I mean, if we don't watch out...' (Segment 763, 01:29:01,000)",
+        "rationale": "Direct attribution. The interview's later auto-corrected 'prolong' is the same phrase Diamond explicitly attributes to Shakespeare earlier."
+      },
+      {
+        "claim": "Diamond cites the Charleston church shooting and the 2015-2016 Trump rallies as evidence that civil rights gains are reversible.",
+        "status": "supported",
+        "supporting_excerpt": "When I see what happened in the Charleston church shooting, I either. And I said, well, that kind of really shows where we are in this country. (Segment 742-743, 01:25:35,000-01:25:43,000); 'And every time I hear Donald Trump... here we are talking about putting barriers all over the country... The people who show up at Trump rallies, it kind of tells us something about where we are in the country.' (Segments 744-748, 01:26:08,000-01:26:49,000)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "The interviewer is David Klein from Virginia Tech, working with the Southern Oral History Program at UNC Chapel Hill in collaboration with the Library of Congress and Smithsonian NMAAHC.",
+        "status": "supported",
+        "supporting_excerpt": "This is David Klein from Virginia Tech, and working with the Southern oral history program at UNC Chapel Hill, also with the Library of Congress and the Smithsonian's National Museum of African American History and Culture. (Segment 2, 00:00:09,000)",
+        "rationale": "Direct attribution from the interview's opening."
+      },
+      {
+        "claim": "John Bishop from Media Generation was on camera; Guha Shankar was also present.",
+        "status": "supported",
+        "supporting_excerpt": "We have John Bishop from Media Generation. We also have with us today Guha Shankar. (Segment 4, 00:00:37,000)",
+        "rationale": "Direct attribution."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 31,
+      "supported": 31,
+      "partially_supported": 0,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_and_quality_below_90_despite_citation_passed",
+    "rationale": "Citation audit passed cleanly (31 claims, all supported by direct transcript passages), but the self-scoring for the main summary returns accuracy 87 and quality 88, both below the 90/90 Smithsonian-grade publication threshold. The accuracy is held below 90 by two known imports: (1) the canonical normalization 'Howard University' is inferred from contextual cues rather than a directly quoted attribution because the SRT text contains a Whisper auto-correction artifact ('Nonviolent Action Group University'), and (2) the canonical date 'May 1961' for the Anniston bus burning is supplied from general historical knowledge rather than from the transcript text. Quality is held below 90 by sequencing imprecision in the Harvard graduate-school year. These are honest acknowledgments rather than fudges; under the fail-closed gate, the correct destination is human review where a reviewer can either confirm the inferences or remove them."
+  }
+}

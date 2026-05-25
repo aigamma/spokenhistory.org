@@ -1,0 +1,799 @@
+{
+  "interview_name": "Kay Tillow",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Kay Tillow_interview_20250704_225452\\Kay Tillow_interview_transcript_20250704_225452.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Kay Tillow",
+    "interviewee_title": "Civil Rights Activist, Labor Organizer, and Single-Payer Health Care Advocate",
+    "interview_date": "2013-08-14",
+    "interview_location": "Louisville, Kentucky",
+    "interviewer_name": "David Cline",
+    "interviewer_affiliation": "History Department, Virginia Tech (Blacksburg); Southern Oral History Program at UNC Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:13:07"
+  },
+  "main_summary": {
+    "summary": "Kay Tillow, born in 1942 in Paducah, Kentucky and raised across the river in Metropolis, Illinois, describes a personal and political journey from a non-political German-American farming and small-business family into lifelong civil rights, labor, and health-care activism. She traces her earliest political awakening to a Presbyterian minister named Maynard Eltman, who gave her a copy of Anne Braden's book The Wall Between while she was still in high school; the book introduced her to inequality in Louisville, Kentucky and to the bombing prosecution surrounding the Bradens' purchase of a home for an African American family. At the University of Illinois she joined the NAACP, walked her first picket line against a store that would not hire African Americans, and in the summer of 1962 traveled with the local NAACP to observe SNCC demonstrations and court hearings in Cairo, Illinois, where she met Mary McCollum and was struck by the courage of activists facing brutal repression.\n\nAfter a 1962 junior year abroad in Ghana, where she encountered W.E.B. Du Bois and his wife Shirley Graham Du Bois at a ceremony awarding him an honorary degree, Tillow returned to the United States in August 1963 just after the March on Washington and Du Bois's death. She met John Lewis at the University of Illinois and, after an NAACP delegation visit to Atlanta where she encountered Prathia Hall and James Forman, she dropped out of school to work in the movement. She describes visits to Tuskegee Institute (Alabama), Chapel Hill, and Highlander Folk School, organizing in eastern Kentucky with the Appalachian Committee for Full Employment around coal miners jailed on conspiracy charges, and joining the March on Frankfort, Kentucky for Jobs and Freedom on March 5, 1964. She also describes mass meetings in Hattiesburg, Mississippi shortly before the murders of Michael Schwerner, Andrew Goodman, and James Chaney, and identifies Carl and Anne Braden of the Southern Conference Educational Fund and their newspaper The Southern Patriot as mentors who helped SNCC resist liberal anti-communism.\n\nFrom 1966 onward, Tillow and her husband Walter Tillow worked as union organizers, first with the United Electrical, Radio and Machine Workers of America and from 1969 with National Union of Hospital and Health Care Employees, Local 1199 in Pennsylvania. She describes a Christmas Eve 1969 sit-in at the Jewish Home and Hospital for the Aged in Pittsburgh led by Henry Nicholas, a 1970 strike at Presbyterian Hospital that helped persuade Pennsylvania Governor Milton Shapp to extend collective-bargaining rights to hospital workers, the 1975 amendment of the National Labor Relations Act to cover hospitals, and successful organizing in Lewistown, Wilkes-Barre (Mercy Hospital), Butler, Washington, and other Pennsylvania towns. She notes Coretta Scott King's support for the 1199 campaign at Johns Hopkins in Baltimore and the unsuccessful 1969 Charleston, South Carolina hospital workers' campaign.\n\nTillow situates her current single-payer health-care advocacy as a continuation of the civil rights movement: she has helped build the All Unions Committee for Single Payer Health Care HR 676, the bill introduced by Congressman John Conyers in 2003, securing endorsements from 605 unions, 43 state AFL-CIO federations, 146 Central Labor Councils, and roughly 22 international unions. She invokes Fannie Lou Hamer's 'we didn't come all this way for two seats' and Diane Nash's 'we have all made out our wills' as touchstones, cites a study by former Surgeon General David Satcher and Adewale Troutman finding 83,570 excess deaths annually in the African American community attributable to inequality, recalls that the 1965 Medicare law desegregated Southern hospitals by conditioning federal payments on integration, and warns that the Supreme Court's Shelby County v. Holder decision has put voting rights under renewed threat.",
+    "key_themes": [
+      "Awakening to racial inequality through reading and mentorship",
+      "Cross-regional solidarity between Northern students and Southern movement organizers",
+      "Economic justice as inseparable from civil rights",
+      "Labor organizing among hospital and health-care workers as civil-rights work",
+      "Women in the labor movement and the founding of the Coalition of Labor Union Women",
+      "Continuity from 1960s movement organizing to single-payer health-care advocacy",
+      "Surveillance and family cost of activism"
+    ],
+    "historical_significance": "Tillow's interview documents the often-underrepresented bridge between the 1960s Southern civil rights movement and the labor, women's, anti-war, and health-care movements that grew out of it. Her firsthand accounts of the Cairo, Illinois SNCC demonstrations of 1962, of the March on Frankfort, Kentucky for Jobs and Freedom in 1964, of National Union of Hospital and Health Care Employees, Local 1199 organizing in Pennsylvania from 1969 onward, and of the founding of the Coalition of Labor Union Women in 1974 fill gaps in the historical record about white Southern-and-border-state women's movement participation, the Appalachian labor wing of the movement, and the ongoing institutional work of figures such as Anne and Carl Braden. Her testimony also preserves the long-arc framing in which the 1963 March on Washington for Jobs and Freedom and HR 676 belong to a single, continuing struggle.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 89,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 36,
+      "quality_component_b": 22,
+      "quality_component_c": 18,
+      "quality_component_d": 13,
+      "errors": [
+        "The summary names the Presbyterian minister as 'Maynard Eltman.' The transcript renders the name as 'Maynard Elthman' and the speaker is uncertain about spelling; this name could not be independently verified against civil_rights_facts.json and the surname spelling is not high-confidence.",
+        "The summary states John Conyers introduced HR 676 in 2003; the transcript explicitly says 'It was first introduced in 2003' (segment 454). civil_rights_facts.json confirms 2003 as the first-introduction year, but the year cited rests on the speaker's recollection rather than on an independent source.",
+        "The summary attributes the David Satcher / Adewale Troutman 83,570 excess-deaths figure to a study; the transcript itself notes Tillow 'don't know what year the study is' (segment 470). The statistic is faithful to what Tillow said, but its provenance is not independently verifiable from this transcript alone."
+      ],
+      "improvements": [
+        "Hedge the Maynard Eltman name with 'spelled phonetically' or 'as recalled' since transcript spelling is uncertain.",
+        "Add a brief note that the Lewis at the University of Illinois meeting date is uncertain in the transcript (Tillow says 'I'm not sure which year that was. Whether that was 63 or whether that was earlier before 62').",
+        "Consider noting that the HR 676 union-endorsement tallies (605/43/146/22) are Tillow's stated figures as of the August 2013 interview, not necessarily current."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:04:16,000",
+      "title": "Introduction and Childhood in Metropolis, Illinois",
+      "summary": "David Cline introduces the August 14, 2013 interview in Louisville, Kentucky, with John Bishop of Media Generation and UCLA behind the camera. Kay Tillow describes being born in Paducah, Kentucky in 1942 to a family of German descent that owned an 80-acre farm and a furniture store in the small town of Metropolis, Illinois (population 6,000). Her mother was a teacher trained at Southern Illinois Teachers College. The family was active in the Presbyterian church but 'not at all political,' focused on morals and education rather than politics.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["paducah kentucky", "metropolis illinois", "1942", "german family", "farm", "presbyterian church", "southern illinois teachers college"],
+      "related_events": ["Library of Congress", "Smithsonian National Museum of African American History and Culture", "Southern Oral History Program at UNC Chapel Hill", "Virginia Tech"],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 92,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 22,
+        "quality_component_c": 19,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could note the production-credit framing that opens the interview (LoC + NMAAHC partnership)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:03:53,000",
+      "end_time": "00:07:01,000",
+      "title": "Awakening through Anne Braden's The Wall Between",
+      "summary": "Tillow describes the Presbyterian minister Maynard Eltman (as best the transcript renders the name) giving her a copy of Anne Braden's book The Wall Between while she was in high school before her 1960 graduation. The book introduced her to the story of inequality in Louisville, Kentucky and to the Bradens' purchase of a home for an African American family because sellers would not sell to them, the resulting bombing, and the Bradens' arrest and prosecution on sedition charges for allegedly trying to overthrow the state of Kentucky. She found the book moving and eye-opening, contrasting it with her observation of integration at her grade school and high school in Metropolis where African American teachers lost their jobs and where she was told 'we weren't ready' when she nominated a young African American girl to lead a high school girls' club.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["anne braden", "the wall between", "maynard eltman", "louisville kentucky", "sedition charge", "metropolis illinois", "school integration"],
+      "related_events": ["Anne Braden", "Carl Braden", "The Wall Between (1958)", "Wade-Braden Louisville home-purchase case"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "Minister name 'Maynard Eltman' rests on transcript phonetic rendering 'Maynard Elthman'; spelling cannot be independently verified."
+        ],
+        "improvements": ["Add 'as recalled' qualifier for the minister's name."]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:07:01,000",
+      "end_time": "00:11:23,000",
+      "title": "University of Illinois NAACP and Cairo Demonstrations",
+      "summary": "At the University of Illinois Tillow joined the NAACP, which she describes as easier to do 'away from a drop of less,' and walked her first picket line against a store in Champaign, Illinois that would not hire African Americans, carrying a sign that read 'in the land of Lincoln discrimination is stinkin'.' In the summer of 1962, before she left for Ghana, she traveled with the local NAACP to attend court hearings on SNCC demonstrations in Cairo, Illinois (about 40 miles from Metropolis). She remembers a segregated courtroom and meeting Mary McCollum, who bore a large gash on her thigh from a demonstration. Tillow describes being amazed by the courage of activists facing such brutality.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["university of illinois", "naacp", "champaign illinois", "picket line", "cairo illinois", "sncc", "mary mccollum", "1962"],
+      "related_events": ["SNCC", "NAACP", "Cairo Illinois movement", "Mary McCollum"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Could clarify that 'a drop of less' is a phonetic transcript rendering whose meaning is not entirely clear."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:10:18,000",
+      "end_time": "00:13:24,000",
+      "title": "Junior Year in Ghana and Meeting W.E.B. Du Bois",
+      "summary": "Tillow spent her 1962 junior year abroad in Ghana, where W.E.B. Du Bois received an honorary degree at the university. Working on his Encyclopedia Africana, Du Bois was present at the ceremony with his wife Shirley Graham Du Bois. Tillow says she had not previously heard of Du Bois and that Ghanaian students were astonished at the gap in her American education. She also studied with Conor Cruise O'Brien, then chancellor of the university and author of 'To Katanga and Back: A UN Case History,' through whom she became aware of the U.S. role in the world. She returned to the United States in late August 1963, just after Du Bois's August 1963 death and the March on Washington.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": ["ghana", "w.e.b. du bois", "shirley graham du bois", "encyclopedia africana", "conor cruise o'brien", "katanga", "1962", "1963"],
+      "related_events": ["W.E.B. Du Bois", "March on Washington", "Encyclopedia Africana"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 89,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Could explicitly link Du Bois's death (Aug 27, 1963) to the March on Washington (Aug 28, 1963) for context."]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:13:24,000",
+      "end_time": "00:19:00,000",
+      "title": "Atlanta SNCC Visit and Decision to Leave School",
+      "summary": "After returning to the University of Illinois in fall 1963, Tillow's NAACP chapter sent a delegation to Atlanta during semester break to picket what she recalls as 'Labs' (possibly a restaurant). There she met Prathia Hall (whom she identifies as from Philadelphia), James Forman, and other SNCC organizers. The encounter convinced her to leave school and join the movement full time. She also describes meeting John Lewis at the University of Illinois somewhere along the way (she is unsure whether 1963 or earlier), describing him as compelling and noting 'he had a lot of hair then too.'",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["atlanta", "naacp", "sncc", "prathia hall", "james forman", "john lewis", "university of illinois", "1963"],
+      "related_events": ["SNCC", "Prathia Hall", "James Forman", "John Lewis"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["The transcript renders the Atlanta target as 'labs' phonetically; could flag uncertainty."]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:14:38,000",
+      "end_time": "00:18:50,000",
+      "title": "Hattiesburg, Mississippi Voter-Registration Demonstrations",
+      "summary": "Tillow describes traveling to Hattiesburg, Mississippi during 1963-64, where there were demonstrations over voting registration. Bob Moses had been jailed there along with an unnamed white movement worker who was so badly beaten by white prisoners in the segregated jail that he could hardly be recognized. Tillow recalls staying with a local family, picketing the courthouse where activists tried to register voters, watching police march in military formation 'like they were meeting the enemy,' and attending a mass meeting of hundreds of people. She situates these events as occurring shortly before the murders of Michael Schwerner, Andrew Goodman, and James Chaney in the same area.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["hattiesburg mississippi", "voter registration", "bob moses", "segregated jail", "mass meeting", "schwerner goodman chaney", "1963", "1964"],
+      "related_events": ["Bob Moses", "Hattiesburg Mississippi voter registration", "Michael Schwerner", "Andrew Goodman", "James Chaney", "Murders of Chaney, Goodman, and Schwerner"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["The white movement worker in the jail goes unnamed; summary could explicitly state this."]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:18:50,000",
+      "end_time": "00:24:25,000",
+      "title": "Appalachian Coal Miners, Highlander, and the Bradens",
+      "summary": "Tillow describes the path that led her to the Appalachian Committee for Full Employment, organizing among coal miners in eastern Kentucky who had been jailed on conspiracy charges for trying to revive a miners' union after it was broken. She wrote and edited a newspaper she recalls as 'Kentucky Jobs with Justice' and helped lead a contingent from the Appalachian coalfields to join the March on Frankfort, Kentucky for Jobs and Freedom on March 5, 1964. She places her meeting with Walter Tillow at Highlander Folk School in 1964, alongside SNCC veterans, James Dombrowski, and especially Carl and Anne Braden, whom she describes as mentors who shared their newspaper The Southern Patriot and bridged the movement to the earlier era of the Southern Conference for Human Welfare.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["appalachian committee for full employment", "coal miners", "conspiracy charges", "kentucky jobs with justice", "march on frankfort", "highlander folk school", "carl braden", "anne braden", "james dombrowski", "the southern patriot", "1964"],
+      "related_events": ["Highlander Folk School", "Anne and Carl Braden", "Southern Conference for Human Welfare", "Southern Conference Educational Fund", "James Dombrowski", "March on Frankfort Kentucky"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Newspaper title 'Kentucky Jobs with Justice' is uncertain ('I don't know, I think it was called')."]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:24:25,000",
+      "end_time": "00:32:47,000",
+      "title": "From SNCC to United Electrical Workers and Hospital Workers Local 1199",
+      "summary": "Tillow describes how the SNCC era of her work, organized largely around the economic dimension of civil rights, gave way in 1966 to staff work with the United Electrical, Radio and Machine Workers of America (Walter Tillow in Detroit, she in Pittsburgh) and in 1969 to the National Union of Hospital and Health Care Employees, Local 1199. She emphasizes that 1199 was a civil-rights-related union, built originally among African American hospital service workers in New York. Despite suspicions that 1199 was 'a black union,' she helped organize the largely white nursing staff at Mercy Hospital in Wilkes-Barre, Pennsylvania and hospital workers in Lewistown, Butler, Spangler, Huntingdon, Washington, Canonsburg, and Uniontown. Coretta Scott King supported the 1199 campaign at Johns Hopkins in Baltimore in 1969 or 1970. She recalls the unsuccessful but consequential Charleston, South Carolina hospital workers' campaign of the same period.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": ["united electrical workers", "national union of hospital and health care employees", "local 1199", "pittsburgh", "wilkes-barre pennsylvania", "mercy hospital", "coretta scott king", "johns hopkins", "charleston south carolina", "1966", "1969"],
+      "related_events": ["United Electrical, Radio and Machine Workers of America", "National Union of Hospital and Health Care Employees Local 1199", "Coretta Scott King", "Mississippi Freedom Democratic Party"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 89,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Could note that Walter Tillow worked on the Mississippi Freedom Democratic Party in 1964 before the 1199 transition."]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:32:47,000",
+      "end_time": "00:42:28,000",
+      "title": "Jewish Home Sit-In and Pennsylvania Collective-Bargaining Law",
+      "summary": "Tillow recounts that at the time 1199 organized in Pittsburgh in 1969-70 the National Labor Relations Act did not cover hospital workers. She describes a Christmas Eve 1969 sit-in at the Jewish Home and Hospital for the Aged in Pittsburgh, led by Henry Nicholas (later head of the Philadelphia hospital workers union), which forced management to agree to an election overseen by a rabbi from Rodef Shalom Congregation. The Jewish Home became the first 1199 bargaining unit in Pennsylvania. A 1970 strike at Presbyterian Hospital pressed Pennsylvania Governor Milton Shapp's state-employee collective-bargaining initiative to include hospital workers. In 1975, Tillow says, the National Labor Relations Board amended its coverage to include hospital workers nationally. She names David Montgomery, then a University of Pittsburgh professor, and Tom Quinn of the United Electrical Workers as co-chairs of the local support committee.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": ["jewish home and hospital for the aged", "henry nicholas", "rodef shalom", "christmas eve 1969", "presbyterian hospital strike", "milton shapp", "national labor relations act", "1975", "david montgomery", "tom quinn"],
+      "related_events": ["Henry Nicholas", "Milton Shapp", "National Labor Relations Act amendments 1974", "David Montgomery", "United Electrical Workers"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The summary follows the transcript in citing 1975 for the National Labor Relations Act amendment covering hospital workers. The actual amendment is the Nonprofit Health Care Amendments of 1974 (Public Law 93-360), enacted in 1974. The transcript itself notes 'I think it was 75' as a recollection, so the summary preserves Tillow's uncertainty rather than asserts the year as fact."
+        ],
+        "improvements": [
+          "Hedge the 1975 date — Tillow herself says 'I think it was 75' (segment 295)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:42:28,000",
+      "end_time": "00:51:43,000",
+      "title": "Family Costs, Anti-War Movement, and the Coalition of Labor Union Women",
+      "summary": "Tillow describes her parents' unhappiness with her decision to leave college before graduation (she eventually finished in 1967) and their fear when the FBI visited their home to question them about Tillow's anti-war activism. She frames the civil rights, anti-war, women's, and labor movements as inseparable, with the civil rights movement supplying the moral momentum that made the other movements possible. She invokes Fannie Lou Hamer's convention statement 'we didn't come all this way for two seats' and Diane Nash's Freedom Rides response 'we have all made out our wills' to the Justice Department's warning of mortal danger. She describes her work on pay equity and, as president of the Pittsburgh chapter of the Coalition of Labor Union Women (founded in 1974), efforts to win recognition for labor union women at the Allegheny County Central Labor Council.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["fbi", "anti-war movement", "fannie lou hamer", "diane nash", "freedom rides", "coalition of labor union women", "cluw", "pay equity", "allegheny county central labor council", "1974"],
+      "related_events": ["Fannie Lou Hamer", "Diane Nash", "Freedom Rides", "Coalition of Labor Union Women"],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 89,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Could note that the Hamer 'two seats' quote refers to the 1964 Atlantic City Democratic National Convention MFDP credentials challenge."]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:51:43,000",
+      "end_time": "01:08:11,000",
+      "title": "Single-Payer Health Care: HR 676 and Coalition Building",
+      "summary": "Tillow describes her current work as a single-payer health-care advocate, focused on Representative John Conyers's bill HR 676 (Expanded and Improved Medicare for All), first introduced in 2003. She founded the All Unions Committee for Single Payer Health Care HR 676 with first endorsements from her CLUW chapter and the Chicago CLUW chapter, then the national Coalition of Labor Union Women, then the Coalition of Black Trade Unionists. As of the 2013 interview, she cites 605 union endorsements, 43 state AFL-CIO federations, 146 Central Labor Councils, and roughly 22 international unions. She frames Medicare's 1965 enactment as desegregating Southern hospitals by withholding federal payments from segregated institutions, and cites a study by former Surgeon General David Satcher (alongside Louisville's Adewale Troutman) finding 83,570 excess deaths annually in the African American community attributable to inequality. She links single-payer to a broader resolution she is pushing for the AFL-CIO convention to protect and expand Social Security and Medicare and calls for a March on Washington to promote the resolution.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": ["hr 676", "john conyers", "single payer", "medicare for all", "all unions committee", "coalition of black trade unionists", "afl-cio", "david satcher", "adewale troutman", "medicare 1965", "social security"],
+      "related_events": ["John Conyers", "HR 676 Expanded and Improved Medicare for All", "David Satcher", "Medicare (1965)", "Coalition of Black Trade Unionists", "All Unions Committee for Single Payer Health Care"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 21,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [
+          "The 83,570-excess-deaths figure rests on Tillow's recollection of a study she dates uncertainly; the summary follows the transcript faithfully but the number cannot be independently verified from this transcript.",
+          "The endorsement tallies (605/43/146/22) are as recalled by Tillow in August 2013 and should be treated as her stated figures rather than as verified current totals."
+        ],
+        "improvements": ["Add 'as of August 2013' qualifier to the endorsement counts."]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "01:08:11,000",
+      "end_time": "01:13:07,000",
+      "title": "Mass Incarceration, Voting Rights, and Closing Reflections",
+      "summary": "Tillow turns to the disproportionate incarceration of African Americans, citing as a hopeful sign the New York judge's ruling against stop-and-frisk policing, but acknowledges she does not have a fully worked-out response. She returns to the inseparability of joblessness, family disruption, and unequal education as drivers of incarceration, and warns that the Supreme Court's Shelby County v. Holder decision has placed voting rights once again under threat. She closes the interview by reflecting that a movement is 'made of all the people doing their pieces and how it's all they all connect,' and the interview ends with the Library of Congress and Smithsonian National Museum of African American History and Culture credit.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["mass incarceration", "stop and frisk", "shelby county v. holder", "voting rights", "joblessness", "movement", "closing reflection"],
+      "related_events": ["Shelby County v. Holder", "Library of Congress", "Smithsonian National Museum of African American History and Culture"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["Could expand on the closing reflection as a coda."]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Kay Tillow",
+      "interviewee_title": "Civil Rights Activist, Labor Organizer, and Single-Payer Health Care Advocate",
+      "interview_date": "2013-08-14",
+      "interview_location": "Louisville, Kentucky",
+      "interviewer_name": "David Cline",
+      "interviewer_affiliation": "Virginia Tech / Southern Oral History Program at UNC Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:13:07",
+      "total_segments": 503,
+      "word_count": 12500,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 79,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 23,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Clear chronological arc from Metropolis childhood (Segment 15, 00:01:18) through Ghana (Segment 90, 00:08:44) to Hattiesburg (Segment 137, 00:14:38) to Local 1199 (Segment 223, 00:28:11) to HR 676 (Segment 431, 01:04:04).",
+            "Smooth backward-and-forward references between the 1960s movement and her present single-payer work (Segments 376-381, 00:46:22-00:47:38)."
+          ],
+          "justification": "The interview follows a strong chronological-through-thematic arc, with David Cline's framing questions facilitating transitions. Some backtracking around the 1962-63 sequence is acknowledged by Tillow herself, but the listener can follow the throughline easily."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "the police marched in military ranks down the street like they were meeting the enemy",
+            "segment": 149,
+            "timestamp": "00:15:39,000"
+          },
+          "specificity_count": {
+            "full_names": 22,
+            "specific_dates": 12,
+            "specific_places": 25
+          },
+          "evidence": [
+            "Picket sign at University of Illinois: 'in the land of Lincoln discrimination is stinkin'' (Segment 81, 00:07:48).",
+            "Mary McCollum's thigh gash from Cairo demonstration (Segment 96, 00:09:29).",
+            "Christmas Eve 1969 sit-in detail with management negotiation and laundry-worker interruption (Segments 334-341, 00:40:19-00:53:00)."
+          ],
+          "justification": "Tillow consistently supplies named people, organizations, dates, and locations, and offers several genuinely vivid scenes (the picket sign, the militarized Hattiesburg courthouse police, the Christmas Eve sit-in). Density is strong, though sensory detail is sparser than the most vivid CRHP interviews."
+        },
+        "emotional_authenticity": {
+          "score": 7,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "my mother crying on the phone and I'm trying to explain. And the FBI has just left their house",
+            "segment": 371,
+            "timestamp": "00:45:39,000"
+          },
+          "emotional_range": ["fear", "admiration", "frustration", "pride", "hope", "grief"],
+          "vulnerability_elements": [
+            "Acknowledges she 'didn't know what to do' when she first joined the movement (Segment 175, 00:18:27).",
+            "Admits her parents were not happy and her mother was upset she left college (Segments 360-372, 00:43:47-00:45:53).",
+            "Says 'I gained more from the movement than I gave' (Segment 479, 01:05:29)."
+          ],
+          "justification": "Tillow is forthcoming about family cost, her own initial uncertainty, and her gratitude to the movement. She is more analytical than emotionally raw, but the FBI visit and family-phone-call moments carry genuine weight."
+        },
+        "overall_assessment": "The interview is structurally strong and detail-rich, with a clear cradle-to-present arc and consistent specificity in names, dates, and organizations. Emotional intensity is more contained than in interviews from frontline Mississippi or Selma narrators, but Tillow's family-cost and FBI-surveillance passages carry authentic weight."
+      },
+      "historical_value": {
+        "total": 20,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 8,
+          "max_possible": 10,
+          "major_events": [
+            "Cairo Illinois SNCC demonstrations summer 1962 — direct observer at court hearings (Segments 92-101, 00:08:58-00:10:07).",
+            "March on Frankfort Kentucky for Jobs and Freedom March 5, 1964 — Appalachian contingent leader (Segment 206, 00:23:45).",
+            "Christmas Eve 1969 sit-in at Jewish Home Pittsburgh — direct participant (Segments 333-345, 00:40:19-00:41:21).",
+            "Coalition of Labor Union Women founding convention 1974 (Segment 408, 00:51:46)."
+          ],
+          "key_figures": [
+            {"name": "Anne Braden", "relationship": "mentor / formative author", "contact_level": "moderate"},
+            {"name": "Carl Braden", "relationship": "mentor at Highlander", "contact_level": "moderate"},
+            {"name": "John Lewis", "relationship": "met at University of Illinois", "contact_level": "distant"},
+            {"name": "James Forman", "relationship": "met in Atlanta SNCC visit", "contact_level": "distant"},
+            {"name": "Prathia Hall", "relationship": "met in Atlanta SNCC visit", "contact_level": "distant"},
+            {"name": "W.E.B. Du Bois", "relationship": "saw at honorary-degree ceremony in Ghana", "contact_level": "distant"},
+            {"name": "Henry Nicholas", "relationship": "co-organizer at Jewish Home Pittsburgh", "contact_level": "close"},
+            {"name": "Fannie Lou Hamer", "relationship": "saw speak many times", "contact_level": "distant"}
+          ],
+          "organizational_involvement": [
+            {"organization": "NAACP", "role": "University of Illinois chapter member", "years": "ca. 1960-1963"},
+            {"organization": "Appalachian Committee for Full Employment", "role": "organizer", "years": "1964"},
+            {"organization": "United Electrical, Radio and Machine Workers of America", "role": "organizer", "years": "1966-1969"},
+            {"organization": "National Union of Hospital and Health Care Employees, Local 1199", "role": "organizer", "years": "1969-"},
+            {"organization": "Coalition of Labor Union Women, Pittsburgh chapter", "role": "president", "years": "1970s"},
+            {"organization": "All Unions Committee for Single Payer Health Care HR 676", "role": "founder", "years": "2003-"}
+          ],
+          "unique_access": "Tillow holds the unusual position of a white border-state Movement organizer who bridged SNCC-era civil rights work, Appalachian labor organizing, hospital-worker unionizing, the women-in-labor movement, and present-day single-payer advocacy — a five-decade institutional through-line.",
+          "justification": "Tillow was a participant in regionally significant events and held leadership roles in 1199 and CLUW. Her access to Anne and Carl Braden as mentors and her firsthand observation of Cairo, Hattiesburg, and Frankfort gives her a strong but not top-tier insider perspective."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "1942 birth in Paducah Kentucky, raised in Metropolis Illinois (Segments 15-18, 00:01:18-00:01:42).",
+            "August of 1963 return from Ghana, after Du Bois's death and the March on Washington (Segments 112-116, 00:11:29-00:11:57).",
+            "March on Frankfort Kentucky for Jobs and Freedom, March 5, 1964 (Segment 206, 00:23:45).",
+            "Christmas Eve 1969 sit-in at Jewish Home Pittsburgh (Segment 334, 00:40:19).",
+            "HR 676 first introduced 2003; 605 union endorsements, 43 state AFL-CIO federations, 146 Central Labor Councils, 22 internationals as of August 2013 (Segments 454-458, 00:58:29-00:59:30)."
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 22,
+            "first_only": 3,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "Anne Braden authored The Wall Between, published 1958.",
+            "John Conyers introduced HR 676 in 2003.",
+            "Coalition of Labor Union Women was founded in 1974.",
+            "W.E.B. Du Bois died in August 1963 while in Ghana working on Encyclopedia Africana.",
+            "Charleston South Carolina 1199 hospital workers' campaign occurred around 1969."
+          ],
+          "justification": "Tillow supplies a high density of dates, full names, and organizational specifics with only occasional hedging ('I think it was 75'). Most claims are verifiable against the historical record."
+        },
+        "fills_historical_gaps": {
+          "score": 5,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed firsthand account of Pittsburgh-area Local 1199 hospital-worker organizing 1969-1975 and the role of the 1970 Presbyterian Hospital strike in pushing Pennsylvania Governor Milton Shapp's collective-bargaining law for hospital workers.",
+            "Origin and growth metrics of the All Unions Committee for Single Payer Health Care HR 676 from a Pittsburgh CLUW endorsement to 605 union endorsements by 2013.",
+            "White border-state-woman path into the Movement via Anne Braden's The Wall Between, illustrating the SCEF reading-list mentorship model."
+          ],
+          "understudied_aspects": [
+            "Appalachian coal-miner organizing 1964 as an integrated wing of the civil rights movement.",
+            "Working-class women's organizing through the Coalition of Labor Union Women.",
+            "Continuity from 1960s civil-rights organizing to 2000s single-payer health-care coalitions."
+          ],
+          "narrative_complications": "Complicates a Southern-only frame on the Movement by tracing white border-state and Appalachian-labor participation, and complicates the common 'movement ended in 1968' periodization by showing direct organizational continuity into 1199, CLUW, and single-payer work.",
+          "historiographical_value": "Historians of the labor-civil-rights coalition, of Appalachian organizing, of 1199, and of post-civil-rights health-care advocacy would all find this interview substantively useful as evidence of institutional continuity.",
+          "justification": "The interview adds substantive nuance to several understudied junctures of the Movement-labor coalition, though most of its central claims (Hattiesburg, Du Bois, Lewis, MFDP) are well-documented in other sources."
+        },
+        "overall_assessment": "Strong historical value through Tillow's five-decade through-line bridging SNCC-era civil rights, Appalachian labor, hospital-worker organizing, the Coalition of Labor Union Women, and single-payer advocacy. Her firsthand 1199 organizing material and her mentorship-line connection to the Bradens are particularly valuable."
+      },
+      "emotional_resonance": {
+        "total": 19,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "Tillow's arc moves from a non-political German-American small-town childhood, through a high school awakening sparked by Anne Braden's The Wall Between, to first-picket-line fear at the University of Illinois, to direct participant in Cairo and Hattiesburg, to a 50-year institutional through-line in labor and health-care organizing.",
+          "key_turning_points": [
+            "Receiving The Wall Between from Maynard Eltman in high school (Segment 34, 00:03:38).",
+            "First picket line at University of Illinois carrying the 'in the land of Lincoln' sign (Segments 78-81, 00:07:34-00:07:48).",
+            "Atlanta SNCC visit and decision to drop out of school (Segments 127-135, 00:13:34-00:14:28).",
+            "Christmas Eve 1969 Pittsburgh sit-in as a first 1199 victory (Segments 334-345, 00:40:19-00:41:21)."
+          ],
+          "before_after_contrast": "From 'I didn't know what to do' to founder of the All Unions Committee for Single Payer Health Care; from 'my family didn't talk about politics' to FBI surveillance subject.",
+          "inspirational_quality": "Tillow's narrative would inspire others by modeling that one need not arrive at the movement with skills or background — only with willingness — and that a single book can crack a closed worldview open.",
+          "justification": "The growth arc is clearly articulated and reflective; Tillow explicitly says 'I gained more from the movement than I gave' and traces specific turning points."
+        },
+        "tension_conflict_triumph": {
+          "score": 5,
+          "max_possible": 8,
+          "peak_moments": [
+            {"description": "Hattiesburg courthouse picketing while police march in military formation, with a movement worker so badly beaten in the segregated jail he could hardly be recognized", "segment_range": "139-152", "timestamp_range": "00:14:50,000 - 00:16:09,000", "stakes": "physical safety in a violent Klan-active town"},
+            {"description": "FBI visit to Tillow's parents over her anti-war activism", "segment_range": "367-373", "timestamp_range": "00:45:01,000 - 00:45:53,000", "stakes": "family relationships, surveillance, professional risk"},
+            {"description": "Christmas Eve 1969 Pittsburgh sit-in negotiating with management for an election", "segment_range": "333-345", "timestamp_range": "00:40:19,000 - 00:41:21,000", "stakes": "first 1199 bargaining unit in Pennsylvania"}
+          ],
+          "conflict_types": ["physical danger by proxy", "labor-management confrontation", "family-political tension", "state surveillance"],
+          "emotional_range": "From early-life political innocence to mature, sober persistence; from picket-line fear to organizational confidence; from a mother's phone-call distress to inter-generational reconciliation.",
+          "justification": "Solid dramatic moments — particularly Hattiesburg and the Pittsburgh sit-in — but the interview is more contemplative-retrospective than dramatically intense throughout."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": ["awakening to injustice through reading", "leaving home to follow conviction", "family worry about a child in danger", "the difficulty of being a woman in male-dominated institutions", "the loneliness of long-haul activism"],
+          "relatable_struggles": ["being told 'we weren't ready' when she nominated an African American girl in high school", "her mother's tears when the FBI showed up", "being unable to get recognition to speak at the Central Labor Council"],
+          "human_moments": [
+            "Recalling her picket sign verbatim: 'in the land of Lincoln discrimination is stinkin'' (Segment 81, 00:07:48).",
+            "Acknowledging Walter Tillow's New York accent: 'he still sounds like he just walked out of the Bronx' (Segment 476, 01:04:32)."
+          ],
+          "connection_points": "Tillow's framing of 'masses of people in motion' as the precondition for major change is broadly accessible, and her FBI-visit story personalizes the cost of dissent in a way many audiences can grasp.",
+          "justification": "Strong relatability through the family-cost passages, the small-town awakening, and the candid acknowledgment of how slowly institutions change."
+        },
+        "overall_assessment": "Tillow's emotional resonance comes from her measured candor about family cost, her gratitude to the movement, and her steady articulation of the inseparability of personal and political life. The interview is more reflective than dramatic, but the cumulative emotional weight is real."
+      },
+      "accessibility": {
+        "total": 17,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Occasional union-and-labor-law jargon (NLRA coverage, bargaining units, AFL-CIO Central Labor Councils) that the interviewer does not always prompt her to define.",
+            "Several phonetic transcription artifacts (e.g., 'labs' for what may be a restaurant in Atlanta) that mildly obscure meaning."
+          ],
+          "justification": "Tillow is articulate, self-contextualizes most acronyms (NAACP, SNCC, MFDP, CLUW), and explains union-organizing terms when she introduces them. A few labor-law passages assume some prior familiarity."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Hattiesburg description Segments 137-158 (00:14:43-00:16:44).",
+            "Christmas Eve 1969 sit-in Segments 333-345 (00:40:19-00:41:21).",
+            "Diane Nash 'we have all made out our wills' passage Segments 388-391 (00:49:41-00:50:10)."
+          ],
+          "slow_sections": [
+            "Long single-payer policy explanation Segments 428-472 (00:53:33-01:03:40) where pace becomes more lecture-like.",
+            "Mid-interview pension-policy digression Segments 482-490 (01:06:22-01:09:34)."
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "An engaged listener can sustain attention across the 73-minute interview, though the single-payer policy section in the final third demands more focus.",
+          "justification": "Generally good pacing with strong dramatic peaks in the SNCC-era sections; the present-day policy material in the last third trades narrative momentum for substantive depth."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Economic justice as inseparable from civil rights",
+            "The 1963 March on Washington as a 'March for Jobs and Freedom' not just civil rights",
+            "Universal health care as a continuation of the civil rights struggle",
+            "Voting rights as an unfinished and once-again-threatened project (Shelby County v. Holder)"
+          ],
+          "contemporary_relevance": "Tillow explicitly threads single-payer health care, mass incarceration, and the Shelby County voting-rights rollback into the same civil-rights frame, making the through-line from the 1960s to 2013 fully explicit.",
+          "meaning_making": "Yes — Tillow's closing observation that a movement is 'made of all the people doing their pieces and how they all connect' is a deliberate meaning-making move that the interview as a whole sustains.",
+          "justification": "Tillow is explicit and articulate about why her 1960s work matters in 2013 and why her 2013 work belongs to the same struggle."
+        },
+        "overall_assessment": "Accessibility is strong: Tillow is articulate, self-contextualizing, and explicit about the broader thematic stakes. Pacing is uneven only in the late-interview policy passages."
+      }
+    },
+    "overall_assessment": "Kay Tillow's interview is a structurally strong, detail-rich, and historically valuable testimony from a five-decade Movement and labor organizer. Its greatest strengths are the explicit institutional through-line from SNCC-era civil rights work to Appalachian labor organizing, hospital-worker unionizing with Local 1199, the Coalition of Labor Union Women, and single-payer health-care advocacy; its emotional core lies in the family-cost passages and Tillow's measured gratitude to the movement that formed her. Limitations include occasional uncertainty around dates and names that Tillow herself hedges, a contemplative-retrospective register that trades dramatic intensity for institutional clarity, and a policy-heavy final third that demands more sustained listener focus.",
+    "key_strengths": [
+      "Rare bridge-figure perspective linking 1960s civil rights, Appalachian labor, hospital-worker organizing, women-in-labor, and single-payer health-care advocacy across five decades.",
+      "Strong specificity of names, dates, organizations, and statistics throughout, with very few unverifiable claims.",
+      "Explicit and articulate framing of why 1960s organizing matters for 2013 voting-rights and health-care fights."
+    ],
+    "key_limitations": [
+      "More reflective-analytical than dramatically vivid; some listeners will find the policy-heavy final third demands more focus than the SNCC-era sections.",
+      "Several name and date claims are hedged by Tillow herself ('I think it was 75,' 'I'm not sure which year that was'), which preserves honesty but limits citation strength."
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Kay Tillow was born in 1942 in Paducah, Kentucky.",
+        "status": "supported",
+        "supporting_excerpt": "My name is Kay Tillow and I was born in Paducah, Kentucky in 1942.",
+        "rationale": "Segment 15 establishes both birth year and Paducah birth location directly."
+      },
+      {
+        "claim": "Tillow was raised across the river in Metropolis, Illinois.",
+        "status": "supported",
+        "supporting_excerpt": "And my parents lived in Metropolis, Illinois, which was across the river from Paducah (Kentucky). ... And I grew up in Metropolis, Illinois.",
+        "rationale": "Segments 16-18 directly establish Metropolis Illinois as her place of upbringing."
+      },
+      {
+        "claim": "She came from a non-political German-American farming and small-business family.",
+        "status": "supported",
+        "supporting_excerpt": "Both of them were from farm families, of families that had come over from Germany... My family was not at all political in any way.",
+        "rationale": "Segments 22-36 directly establish both the German farm origins and the non-political family character."
+      },
+      {
+        "claim": "A Presbyterian minister named Maynard Eltman gave her Anne Braden's book The Wall Between in high school.",
+        "status": "partially_supported",
+        "supporting_excerpt": "we had a Presbyterian minister named Maynard Elthman, who at some point when I was in high school gave me a copy of the book The Wall Between by Anne Braden.",
+        "rationale": "Segments 33-34 directly support the substance; the surname spelling is a transcript phonetic rendering ('Elthman' in the transcript, 'Eltman' in the summary) so the name is partially supported as to spelling."
+      },
+      {
+        "claim": "The book introduced her to inequality in Louisville, Kentucky and to the Bradens' home purchase, bombing, and sedition prosecution.",
+        "status": "supported",
+        "supporting_excerpt": "she told the story of inequality in Louisville, Kentucky and how they had purchased a home for an African American family... the house was bombed... went to prison, charged with sedition, trying to overthrow the state of Kentucky.",
+        "rationale": "Segments 41-46 directly establish all four elements (Louisville, home purchase, bombing, sedition charge)."
+      },
+      {
+        "claim": "At the University of Illinois Tillow joined the NAACP and walked her first picket line against a store that would not hire African Americans.",
+        "status": "supported",
+        "supporting_excerpt": "I went to the University of Illinois then. ... I joined the NAACP... my first picket line was at the University of Illinois against some store that wouldn't hire African-Americans.",
+        "rationale": "Segments 73-77 directly establish all three elements."
+      },
+      {
+        "claim": "In the summer of 1962 Tillow traveled with the local NAACP to observe SNCC demonstrations and court hearings in Cairo, Illinois, where she met Mary McCollum.",
+        "status": "supported",
+        "supporting_excerpt": "In 62, in the summer of 62, I was back in Metropolis... I went with the local NAACP, because there were SNCC demonstrations in Cairo, Illinois... we went to the court hearings. It was a segregated courtroom... Mary McCollum was one of the people who was there, and she had a big hurt.",
+        "rationale": "Segments 90-96 directly establish year (1962), travel companions (local NAACP), destination (Cairo Illinois), organizational sponsor (SNCC), courtroom attendance, and Mary McCollum's presence and injury."
+      },
+      {
+        "claim": "Tillow spent her 1962 junior year abroad in Ghana, where she encountered W.E.B. Du Bois and his wife Shirley Graham Du Bois at a ceremony awarding him an honorary degree.",
+        "status": "supported",
+        "supporting_excerpt": "preparing to go to Ghana on a junior year abroad, which I went in 62. ... W.E.B. Du Bois was, at the time, he got an emeritus honorary degree there. ... I went to the ceremony where he was given that honorary degree, and he was there with his wife, Shirley Graham Du Bois.",
+        "rationale": "Segments 91-109 directly establish all elements."
+      },
+      {
+        "claim": "Tillow returned to the United States in late August 1963, just after Du Bois's death and the March on Washington.",
+        "status": "supported",
+        "supporting_excerpt": "By the time I came back, which was in 63, two things happened on my way back. One was that Du Bois died in August of 63, and the March on Washington. ... Right at the end of August, right afterwards, yes.",
+        "rationale": "Segments 112-116 directly establish year (1963), the temporal proximity to Du Bois's August death and the March on Washington, and the late-August return."
+      },
+      {
+        "claim": "She met John Lewis at the University of Illinois.",
+        "status": "partially_supported",
+        "supporting_excerpt": "somewhere along the way I met John Lewis, who came to the University of Illinois, I'm not sure which year that was. Whether that was 63 or whether that was earlier before 62, but it was very impressed.",
+        "rationale": "Segments 118-119 directly support the meeting at the University of Illinois; the year is uncertain per Tillow's own admission. Summary preserves the substance but the date is partially supported."
+      },
+      {
+        "claim": "An NAACP delegation visit to Atlanta led her to drop out of school to join the movement, after encountering Prathia Hall and James Forman.",
+        "status": "supported",
+        "supporting_excerpt": "my NAACP chapter decided to send a delegation to Atlanta during the semester break. ... a discussion with Prathia Hall, who was from Philly. She spoke in James Forman and, you know, lots of other people. And I made the decision that that's what I wanted to do. I couldn't stay in school.",
+        "rationale": "Segments 127-135 directly establish all four elements (NAACP delegation, Atlanta, encountering Prathia Hall and James Forman, decision to leave school)."
+      },
+      {
+        "claim": "She organized in eastern Kentucky with the Appalachian Committee for Full Employment around coal miners jailed on conspiracy charges.",
+        "status": "supported",
+        "supporting_excerpt": "By that time I was working with a group called the Appalachian Committee for full employment, which was working with miners in Coal miners. ... there was a group of coal miners... who had tried to revive the country [union]. ... they had been arrested and jailed on a charge of conspiracy.",
+        "rationale": "Segments 184, 203-204 directly establish the organization, the coal-miners focus, the jailed-for-conspiracy specifics."
+      },
+      {
+        "claim": "She joined the March on Frankfort, Kentucky for Jobs and Freedom on March 5, 1964.",
+        "status": "supported",
+        "supporting_excerpt": "we marched on Frankfurt with the people who organized from Louisville for, there was a jobs, March on Frankfort (Kentucky), March 5, 1964 for Jobs in Freedom. And that was March 5th of 1964.",
+        "rationale": "Segment 206 directly establishes date, location, and march name."
+      },
+      {
+        "claim": "She visited Tuskegee Institute (Alabama), Chapel Hill, and Highlander Folk School.",
+        "status": "supported",
+        "supporting_excerpt": "I remember we went to Chapel Hill and we went to Tuskegee Institute (Alabama)... I was at Highlander Folk School Folk School several times, which is where I met Walter.",
+        "rationale": "Segments 178-180 directly establish all three locations."
+      },
+      {
+        "claim": "She describes mass meetings in Hattiesburg, Mississippi shortly before the murders of Michael Schwerner, Andrew Goodman, and James Chaney.",
+        "status": "supported",
+        "supporting_excerpt": "I remember we went to Hattiesburg, MS. And at the time there were demonstrations over voting there. ... Of course, that was the area where Michael Schwerner, Andrew Goodman, James Chaney were killed not long after that.",
+        "rationale": "Segments 137-155 directly establish the Hattiesburg visit, voting demonstrations, and explicit reference to the Schwerner/Goodman/Chaney murders as occurring 'not long after.'"
+      },
+      {
+        "claim": "Bob Moses had been jailed in Hattiesburg along with an unnamed white movement worker badly beaten by white prisoners.",
+        "status": "supported",
+        "supporting_excerpt": "Bob Moses had been in jail. And there was a white man also in jail too, from the movement. I can't remember his name. But he had been very badly beaten because they had put him in with the white. It was a segregated jail.",
+        "rationale": "Segments 140-146 directly establish Bob Moses's jailing and the white movement worker's beating."
+      },
+      {
+        "claim": "Carl and Anne Braden led the Southern Conference Educational Fund and edited The Southern Patriot, mentoring SNCC and helping it resist liberal anti-communism.",
+        "status": "supported",
+        "supporting_excerpt": "I met Carl and Anne Braden. And you know, they kind of weaved throughout all of it. They were really mentors to all of the young people that were coming through the South. They shared the The Southern Patriot, which was their newspaper... I would say they were the big influence on SNCC that the organization would not refuse to be anti-communist. Refused to adopt that kind of liberal anti-communism of Hubert H. Humphrey.",
+        "rationale": "Segments 186-198 directly establish the Bradens as mentors, the Southern Patriot newspaper, and their influence on SNCC's anti-communist position. SCEF affiliation is not explicitly named in the transcript but is established in civil_rights_facts.json under 'Anne and Carl Braden' as the canonical organizational identity; treat as supported via corpus alignment."
+      },
+      {
+        "claim": "Tillow and her husband Walter Tillow worked from 1966 with the United Electrical, Radio and Machine Workers of America and from 1969 with National Union of Hospital and Health Care Employees, Local 1199.",
+        "status": "supported",
+        "supporting_excerpt": "in 66, I believe it was 66. I think we went to work for the electrical workers union. Both of us. Of course, they sent me one place in him and other, they sent him to Detroit and meet a Pittsburgh... I went to work in 69 for National Union of Hospital and Health Care Employees, Local National Union of Hospital and Health Care Employees, Local 1199",
+        "rationale": "Segments 215, 223 establish 1966 UE start, the Detroit/Pittsburgh split, and 1969 1199 start."
+      },
+      {
+        "claim": "A Christmas Eve 1969 sit-in at the Jewish Home and Hospital for the Aged in Pittsburgh was led by Henry Nicholas.",
+        "status": "supported",
+        "supporting_excerpt": "we had a sit-in. It was on Christmas Eve in 1969. ... We won the first union that was established was at the Jewish Home and Hospital for the age in Pittsburgh. ... that campaign was led by Henry Nicholas, who's now the head of the hospital workers, Union and Philadelphia.",
+        "rationale": "Segments 326-334 directly establish date, location, and Nicholas as campaign leader."
+      },
+      {
+        "claim": "A 1970 strike at Presbyterian Hospital helped persuade Pennsylvania Governor Milton Shapp to extend collective-bargaining rights to hospital workers.",
+        "status": "supported",
+        "supporting_excerpt": "in 70. There was a strike at Presbyterian Hospital. And we were not able to, you know, gain collective bargaining. But as a result of this strike, (PA Governor) Milton Shapp. And they were contemplating, collective bargaining for state employees at the time. And as a result of that strike, they added hospital workers.",
+        "rationale": "Segments 288-293 directly establish year, strike location, and Shapp's role."
+      },
+      {
+        "claim": "In 1975 the National Labor Relations Board amended its coverage to include hospital workers nationally.",
+        "status": "partially_supported",
+        "supporting_excerpt": "it was not until 1975, I think it was 75. I think that's right, that the National Labor Relations Board was amended its coverage and made it possible to organize in hospitals across the country.",
+        "rationale": "Segments 295-296 establish Tillow's recollection of 1975, but the actual federal amendment is the 1974 Nonprofit Health Care Amendments to the NLRA (P.L. 93-360). Tillow herself hedges with 'I think it was 75.' Mark partially supported because the transcript supports Tillow's recollection but not the year as historical fact."
+      },
+      {
+        "claim": "Coretta Scott King supported the 1199 campaign at Johns Hopkins in Baltimore.",
+        "status": "supported",
+        "supporting_excerpt": "Baltimore was one of the first, I think one of the first outside of New York City. I remember Coretta Scott King went there and helped the campaign. And Johns Hopkins was organized into National Union of Hospital and Health Care Employees, Local National Union of Hospital and Health Care Employees, Local 1199.",
+        "rationale": "Segments 236-237 directly establish Coretta Scott King's support and the Johns Hopkins organizing."
+      },
+      {
+        "claim": "There was an unsuccessful 1199 campaign in Charleston, South Carolina around 1969.",
+        "status": "supported",
+        "supporting_excerpt": "there was an National Union of Hospital and Health Care Employees, Local National Union of Hospital and Health Care Employees, Local 1199 campaign in Charleston, South Carolina. And around the same time, or a little bit earlier than that I think. And they were not able to win union recognition.",
+        "rationale": "Segments 238-239 directly establish the Charleston campaign and its failure to win recognition."
+      },
+      {
+        "claim": "She was president of the Pittsburgh chapter of the Coalition of Labor Union Women, founded in 1974.",
+        "status": "supported",
+        "supporting_excerpt": "I was the president in Pittsburgh of the Coalition of Labor Union Women. ... So the Coalition of Labor Union Women was formed in 1974. The Coalition of Labor Union Women was founded in 1974. I went to the founding. CLUW founding convention, Detroit, March 23-24, 1974.",
+        "rationale": "Segments 397, 406-408 directly establish CLUW founding year, Tillow's Pittsburgh chapter presidency, and her attendance at the founding convention."
+      },
+      {
+        "claim": "The FBI visited her parents to question them about her anti-war activism.",
+        "status": "supported",
+        "supporting_excerpt": "The FBI went to see my parents about this. So that doesn't help the situation where they were questioned... my mother crying on the phone and I'm trying to explain. And the FBI has just left their house and been questioning them.",
+        "rationale": "Segments 367-372 directly establish the FBI visit and its emotional impact on her mother."
+      },
+      {
+        "claim": "Representative John Conyers introduced HR 676 (Expanded and Improved Medicare for All) in 2003.",
+        "status": "supported",
+        "supporting_excerpt": "John Conyers. I am proud. He's introduced this bill. It was first introduced in 2003",
+        "rationale": "Segments 453-454 directly establish Conyers as the sponsor and 2003 as the introduction year. civil_rights_facts.json corroborates 2003 introduction date."
+      },
+      {
+        "claim": "The All Unions Committee for Single Payer Health Care HR 676 had as of 2013 secured 605 union endorsements, 43 state AFL-CIO federations, 146 Central Labor Councils, and roughly 22 international unions.",
+        "status": "supported",
+        "supporting_excerpt": "We have 605 unions that have endorsed that bill. 43 state AFLCIO federations. And 146 Central Labor Councils. And I think 22 of the international unions",
+        "rationale": "Segment 458 directly states each figure (with hedge 'I think' on the 22 internationals)."
+      },
+      {
+        "claim": "The 1965 Medicare law desegregated Southern hospitals by withholding federal payments from segregated institutions.",
+        "status": "supported",
+        "supporting_excerpt": "in 65 when Medicare was passed. And all of a sudden all these seniors had money to pay for hospitalizations. They wrote into the law that the hospital couldn't get money if they were a segregated hospital. So all of a sudden the hospitals of the South, they're integrated because they couldn't get the money.",
+        "rationale": "Segments 466-468 directly establish the 1965 date and the desegregation mechanism."
+      },
+      {
+        "claim": "A study by former Surgeon General David Satcher (with Adewale Troutman of Louisville) found 83,570 excess deaths in the African American community attributable to inequality.",
+        "status": "partially_supported",
+        "supporting_excerpt": "I looked at a study by David Satcher. You know, he was. Search in general and someone who was here in Louisville, Adewale Troutman. And I don't know what year the study is. But the study said, I think it was that there were 83,570 83,570 excess deaths. And access deaths in the African American community. Desk that would not have occurred had there been equality.",
+        "rationale": "Segments 469-471 directly establish the study attribution and figure, but Tillow herself hedges ('I think it was'). The figure cannot be independently verified from the transcript and so the claim is partially supported."
+      },
+      {
+        "claim": "She invokes Fannie Lou Hamer's 'we didn't come all this way for two seats' and Diane Nash's 'we have all made out our wills'.",
+        "status": "supported",
+        "supporting_excerpt": "seeing a Fannie Lou Hamer... she said, we didn't come all this way for two seats... Diane Nash story, you know, when she's called by the Justice Department, she says... we know that, we are aware, we have all made out our wills.",
+        "rationale": "Segments 382-390 directly quote both passages from Tillow's narration."
+      },
+      {
+        "claim": "Tillow warns that Shelby County v. Holder has put voting rights under renewed threat.",
+        "status": "supported",
+        "supporting_excerpt": "And to win back the voting rights that are now threatened. And you know, it seems to me you have to go forward or you'll go backward. ... and Shelby County v. Holder, 570 U.S. 529.",
+        "rationale": "Segment 473 directly references the Shelby County decision and voting rights being under threat."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 31,
+      "supported": 26,
+      "partially_supported": 5,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_quality_below_90_citation_blocked_5_partial",
+    "rationale": "The main-summary scores (Accuracy 86, Quality 89) fall below the 90/90 publication threshold, and the citation audit has 5 partially-supported claims (zero unsupported). The borderline-but-honest scores reflect the transcript's own uncertainties — Tillow herself hedges several dates ('I think it was 75'), the surname spelling of the minister 'Maynard Eltman/Elthman' is a phonetic transcript rendering, and the Satcher-Troutman study citation rests on Tillow's recollection. None of the partial-supports involves a fabricated or inverted fact; they reflect uncertainties the speaker explicitly named. The fail-closed gate correctly routes this transcript to human review so a human editor can decide whether to hedge the disputed claims, drop them, or independently verify them against secondary sources before publication."
+  }
+}

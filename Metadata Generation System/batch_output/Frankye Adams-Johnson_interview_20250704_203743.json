@@ -1,0 +1,1063 @@
+{
+  "interview_name": "Frankye Adams-Johnson",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Frankye Adams-Johnson_interview_20250704_203743\\Frankye Adams-Johnson_interview_transcript_20250704_203743.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Frankye Adams-Johnson",
+    "interviewee_title": "Civil Rights Activist, former Black Panther Party Officer of the Day",
+    "interview_date": "2015-12-06",
+    "interview_location": "Jackson, Mississippi",
+    "interviewer_name": "Emilye Crosby",
+    "interviewer_affiliation": "Library of Congress / Smithsonian National Museum of African American History and Culture",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:27:26"
+  },
+  "main_summary": {
+    "summary": "Frankye Adams-Johnson recounts her childhood as the daughter of a sharecropping family in Pocahontas, Mississippi, her family's move to Jackson when she was a young teenager, and her political awakening as a Black student in segregated Mississippi. She describes early stirrings of racial consciousness through having to miss school for crop seasons, encounters with Jim Crow at the back doors of white employers' homes, and the fear that gripped her community after Emmett Till's 1955 murder. Beginning around 1962, her godbrother Cleveland Donald Jr., whose father was active in the NAACP, drew her into mass meetings, where she met Medgar Evers and was inspired by Fannie Lou Hamer, Annie Devine, and Victoria Gray.\n\nAdams-Johnson recounts joining the May 1963 student walkouts in Jackson that responded to the violent attack on the Woolworth's lunch counter sit-in involving Pearlena Lewis, Anne Moody, and John Salter. She describes being arrested and held at the Mississippi State Fairgrounds, which she likens to a concentration camp. After Medgar Evers's June 1963 assassination, she marched in the funeral-related protests, was struck across the back by a white police officer while in a paddy wagon, and trained in nonviolent direct action with SNCC organizer Jesse Harris. She attended the August 1963 March on Washington by bus from Jackson and recounts a violent mob attack at a Meridian bus stop on the return trip. She entered Tougaloo College in summer 1964 on a music scholarship as part of a pre-freshman program coinciding with Freedom Summer, where she met SNCC workers including Stokely Carmichael, who took her to Greenwood for voter registration work; she also befriended Annie Devine's daughter Barbara.\n\nAfter witnessing increasing violence including the 1967 killing of Jackson activist Benjamin Brown by the Mississippi National Guard on Lynch Street, Adams-Johnson moved to New York to live with her older sister around 1967 at her mother's urging. There, after attending cultural-nationalist meetings, she encountered Black Panther Party members on a Harlem street corner in spring 1968 and helped found a White Plains, New York branch of the Party with her sister. She later became Officer of the Day in Brooklyn, married another Panther, helped run the Party's free breakfast program, and after the 1971 Party split lived four years underground, giving birth to her youngest daughter while in hiding. She eventually cleared her legal situation but served additional probation time tied to her husband's case. She closes by urging young people to stand for something, to think critically rather than blindly follow, and to study the Panthers honestly --- the good, the bad, and the ugly.",
+    "key_themes": [
+      "Racial consciousness formation in rural and urban Mississippi",
+      "Youth participation in the Jackson civil rights movement",
+      "Mentorship of Medgar Evers and the impact of his assassination",
+      "Women's leadership in the Mississippi Freedom Democratic Party generation (Hamer, Devine, Gray)",
+      "Mass arrests and the Mississippi State Fairgrounds detention",
+      "Transition from Southern nonviolent organizing to Northern Black Panther Party work",
+      "Gendered experience inside the Black Panther Party and the costs of underground life",
+      "COINTELPRO-era repression and the human costs of armed-self-defense politics"
+    ],
+    "historical_significance": "This interview documents a rare arc that connects the Jackson, Mississippi student wing of the Southern civil rights movement to the New York chapter of the Black Panther Party from a woman's perspective, including four years lived underground. Adams-Johnson contributes firsthand recollection of the May 1963 student walkouts and Mississippi State Fairgrounds mass detention, the Medgar Evers funeral marches, the Meridian bus-stop mob attack on returning March-on-Washington delegates, and the 1967 Benjamin Brown killing --- a Jackson event less prominent in the national record than later Jackson State violence. Her testimony also offers insider gendered critique of Black Panther Party internal life, illuminating the tension between revolutionary motherhood and 'guerrilla' expectations, the Party's 1971 split, and the lasting impact of COINTELPRO surveillance on rank-and-file Panther families.",
+    "quality_metrics": {
+      "accuracy_score": 84,
+      "quality_score": 86,
+      "accuracy_component_a": 34,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 24,
+      "quality_component_a": 35,
+      "quality_component_b": 21,
+      "quality_component_c": 17,
+      "quality_component_d": 13,
+      "errors": [
+        "The transcript's mention of 'Phillip Lafayette Gibbs and James Earl Green' (segment 1065) in connection with the 1967 Benjamin Brown march conflates two distinct events --- Gibbs and Green were killed at Jackson State on May 14-15, 1970, not in 1967. The summary deliberately attributes the Benjamin Brown killing to 1967 (matching the transcript's '67' framing) and does not propagate Gibbs/Green into the 1967 event, but the transcript's own conflation is preserved in passing.",
+        "The interviewee says she was 'about 12 between 15' when the family moved to Jackson; the summary uses 'young teenager' to avoid asserting a specific age the speaker herself was uncertain about.",
+        "Cleveland Donald Jr.'s status as 'the second' Black student to integrate the University of Mississippi (after James Meredith and after Cleve McDowell) is asserted by the interviewee in segments 248-256 but is not in the ground-truth corpus; the summary frames Cleveland Donald Jr. only as her godbrother who introduced her to the movement, not as a named integrator."
+      ],
+      "improvements": [
+        "Where dates inside the transcript are themselves uncertain (interviewee uses 'about 62', 'about 59', 'I think it was the Freedom Rides'), the summary follows the same hedging language rather than locking in a date.",
+        "Could note explicitly that Adams-Johnson's recollection of the 1967 Benjamin Brown march brings in National-Guard imagery that other accounts associate with the 1970 Jackson State killings --- the interviewee herself acknowledges uncertainty about which event was which (segments 1063-1075)."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:03:51,000",
+      "title": "Childhood in Pocahontas, Mississippi, and the Move to Jackson",
+      "summary": "Adams-Johnson opens by recounting her birth into a sharecropping family in Pocahontas, Mississippi, about 15 minutes north of Jackson. She describes being raised primarily by her mother, grandmother, and great-grandmother --- 'a village' of women on her mother's side of the family from the Merchant and Adams marriage. Her mother eventually rejected sharecropping life, became a domestic worker, and moved her four children to Jackson around the time Adams-Johnson was 12 to 15 years old. The Jackson move was depressing for her at first because she missed the freedom of country living in the woods, but her mother eventually became a homeowner and small-business owner, running a 'mom and pop' shop.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": [
+        "pocahontas mississippi",
+        "sharecropping",
+        "jackson mississippi",
+        "domestic worker",
+        "merchant adams family",
+        "rural childhood"
+      ],
+      "related_events": [
+        "Mississippi sharecropping system",
+        "Black migration from rural to urban Mississippi"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Specific age at move is uncertain in the transcript itself (12-15); summary preserves that hedge."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:03:51,000",
+      "end_time": "00:11:43,000",
+      "title": "Early Racial Consciousness, Church Schools, and Emmett Till",
+      "summary": "Adams-Johnson describes attending church schools in Pocahontas through fifth grade and then being bused to a district school in Clinton, Mississippi. She narrates her first realization of what it meant 'to be Black and poor' as the moments she had to stay out of school to work the crops during planting and harvest seasons. She recalls walking to school through a 'little strip of H Street where whites live' and the dawning awareness of a separate Black world. Her active religious imagination wrestled with whether a 'white God' could love a Black child. The 1955 murder of Emmett Till at her own age crystallized her racial fear and consciousness, even though the adults in her household didn't openly discuss it. She also describes overhearing women's stories at quilting frames and visiting her mother at the back door of a white employer's home --- experiences that, she says, made her recognize the world depicted in the film 'The Help' as real.",
+      "main_topic_category": "Integration, Education & Everyday Segregation",
+      "keywords": [
+        "emmett till",
+        "segregation",
+        "church schools",
+        "clinton mississippi",
+        "racial consciousness",
+        "domestic work",
+        "1955"
+      ],
+      "related_events": [
+        "Lynching of Emmett Till (1955)",
+        "Mississippi school segregation"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:11:43,000",
+      "end_time": "00:16:00,000",
+      "title": "Brinkley High School and First Mass Meetings with the NAACP",
+      "summary": "After moving to Jackson, Adams-Johnson attended Sam M. Brinkley High School, the newest of the three Black high schools in the city. Around the time of the Freedom Rides she became aware that 'things were happening in Jackson.' Her classmate's father --- a 'lieutenant' in the NAACP --- and especially her godbrother Cleveland Donald Jr. (whose father was very active in the NAACP) became her bridge into movement life. After a class on 'communism' that confused her, she asked Cleveland what was happening in Mississippi; he began taking her to NAACP meetings at his father's house around 1962 and to mass meetings where she first met Medgar Evers. She describes being a 'starry-eyed kid' watching Fannie Lou Hamer, Annie Devine, and Victoria Gray sing and speak, deciding she wanted to be like them.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "sam m. brinkley high school",
+        "naacp",
+        "medgar evers",
+        "fannie lou hamer",
+        "annie devine",
+        "victoria gray",
+        "cleveland donald jr",
+        "mass meetings",
+        "1962"
+      ],
+      "related_events": [
+        "NAACP Mississippi field operations",
+        "Medgar Evers's Jackson NAACP organizing",
+        "Mississippi Freedom Democratic Party precursors"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Year (1962) is interviewee's own estimate."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:16:00,000",
+      "end_time": "00:23:53,000",
+      "title": "The May 1963 Student Walkout and the Mississippi State Fairgrounds",
+      "summary": "Adams-Johnson recounts her first act of public protest: a student walkout from the three Black Jackson high schools organized by Medgar Evers in response to the May 28, 1963 attack on Pearlena Lewis, Anne Moody, and John Salter at the Woolworth's lunch counter. She describes marching downtown but being intercepted within a quarter mile of her school by police, sanitation trucks, and garbage trucks, and being herded with rifles and shotguns. She and the other students were taken to the Mississippi State Fairgrounds and held in livestock pens with concrete floors and no cots --- a setting she and Medgar Evers later likened to a concentration camp. To protect the girls from the armed white men patrolling the perimeter, the boys formed protective circles around them through the night.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "mississippi state fairgrounds",
+        "may 1963 student walkout",
+        "woolworth's sit-in",
+        "pearlena lewis",
+        "anne moody",
+        "john salter",
+        "medgar evers",
+        "mass arrest",
+        "jackson"
+      ],
+      "related_events": [
+        "Woolworth's lunch counter sit-in attack (May 28, 1963)",
+        "Mississippi State Fairgrounds mass detention",
+        "Jackson MS direct action campaign of 1963"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The transcript names the date as 'May 31, 1963' for the march and 'May 28' for an earlier event (segments 155, 165); the summary preserves the interviewee's framing."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:23:53,000",
+      "end_time": "00:31:35,000",
+      "title": "Medgar Evers's Assassination and Being Struck by a White Police Officer",
+      "summary": "Adams-Johnson describes Cleveland Donald Jr. (her godbrother) as her single most important connection to the movement and Medgar Evers as a father figure --- 'kind of like a 11-5' (likely Whisper-corrupted for a paternal reference) given that she had grown up without her own father. She narrates the wave of marches that followed Evers's June 1963 assassination, including a deeply emotional protest the day after the assassination. On one of those marches she was struck across her back by a white police officer after she stepped down from a paddy wagon to retrieve a writing pad she had dropped. She describes the moment as a turning point: she wanted to fight back, was held back by fellow marchers who pointed out the officer's cocked gun, and was infuriated that the first man ever to strike her was a white police officer --- a violation deeper, for her, than her grandfather's strict discipline.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "medgar evers assassination",
+        "june 1963",
+        "paddy wagon",
+        "police violence",
+        "nonviolent discipline",
+        "turning point"
+      ],
+      "related_events": [
+        "Assassination of Medgar Evers (June 12, 1963)",
+        "Jackson Mississippi summer 1963 protest wave"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 85,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript phrase 'kind of like a 11-5' (segment 417) is likely Whisper-corrupted; the summary flags it as an unclear ASR artifact rather than asserting what Evers meant."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:31:35,000",
+      "end_time": "00:39:35,000",
+      "title": "Nonviolent Training, Family Pressure, and the Day of the Funeral",
+      "summary": "Adams-Johnson recalls being trained in nonviolent direct action by SNCC organizer Jesse Harris (whom she notes recently passed away) after Medgar Evers's assassination, as Jackson youth tried to fill the void Evers left. She describes the SNCC presence at the COFO office in Jackson while much of SNCC's frontline work was in McComb and Greenwood. She narrates her mother's response: when her younger brother was arrested at the fairgrounds, her mother's white employer drove her mother to pick him up and personally threatened to beat him if he marched again --- a humiliation that hurt her brother more than the arrest itself. Adams-Johnson confirms that the day-of-funeral march faced dogs, water hoses, and a near-confrontation between marchers and police along the route from the Masonic Temple downtown, and she remembers seeing Martin Luther King Jr. struck during one of those marches.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "jesse harris",
+        "snc training",
+        "nonviolence",
+        "cofo office",
+        "medgar evers funeral",
+        "masonic temple",
+        "mother's employer",
+        "dogs water hoses"
+      ],
+      "related_events": [
+        "Medgar Evers funeral (June 1963)",
+        "SNCC Mississippi project",
+        "Council of Federated Organizations (COFO)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 84,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 33,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The interviewee mentions seeing 'Martin getting beat' in one of these marches (segments 494-498); this is presented as her recollection and not corroborated against the ground-truth corpus."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:39:35,000",
+      "end_time": "00:48:00,000",
+      "title": "Tougaloo College, Freedom Summer, and the Pre-Freshman Program",
+      "summary": "Adams-Johnson entered Tougaloo College in summer 1964 on a music scholarship as part of a pre-freshman program timed with Freedom Summer. There she met SNCC workers, including Stokely Carmichael who took her on a trip to Greenwood to do voter-registration photo and registration work. She befriended a fellow pre-freshman, Barbara, the daughter of Annie Devine. She describes being kicked out of the pre-freshman program for spending too much time with movement work and Freedom Summer SNCC people, and provoking her mother by bringing her new white SNCC friends home --- forcing her mother to draw the line. She praises Tougaloo sociology professor Ernst Borinski as one of the few faculty who openly encouraged social change; Tougaloo's pre-freshman program director Mrs. Towns and President Dr. George A. Owens were, by contrast, conservative on movement involvement, though she later discovered while processing Owens's archival papers that he had quietly kept rich files on the Jackson movement.",
+      "main_topic_category": "Education",
+      "keywords": [
+        "tougaloo college",
+        "freedom summer 1964",
+        "music scholarship",
+        "pre-freshman program",
+        "annie devine",
+        "stokely carmichael",
+        "greenwood mississippi",
+        "ernst borinski",
+        "george a. owens"
+      ],
+      "related_events": [
+        "Freedom Summer 1964",
+        "Tougaloo College civil rights activity",
+        "SNCC Greenwood voter registration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Annie Devine's daughter's full name is not asserted in the summary beyond 'Barbara' as the transcript provides."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:48:00,000",
+      "end_time": "00:59:35,000",
+      "title": "March on Washington, the Meridian Bus Stop Attack, and the 1967 Killing of Benjamin Brown",
+      "summary": "Adams-Johnson recalls that her mother permitted her to travel to the August 1963 March on Washington --- her first trip out of Mississippi, on one of about six buses leaving Jackson. She describes the march as 'one big picnic' with her feet in the reflecting pool, and the sense of victory that 'we had changed Mississippi somehow.' On the return trip, however, the delegation stopped at the same Meridian bus station where they had earlier used the 'colored' restroom; this time, fired up by the march, they used the white restroom. A gang of white motorcyclists attacked the men, and a mob of white townspeople --- not in Klan uniform but coordinated and dressed in black and white --- joined the assault. The ministers physically interposed themselves between the marchers and the mob to plead for nonviolence and get everyone back on the bus. She also recounts the 1967 killing of Jackson activist Benjamin Brown on Lynch Street by the Mississippi National Guard, during a march where she and other youths threw something at the Guard and were fired upon; she emphasizes Brown was not from her neighborhood but was one of the many Jackson young people she knew from the Masonic Temple gatherings.",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "march on washington 1963",
+        "meridian bus station",
+        "white mob",
+        "ministers nonviolent intervention",
+        "benjamin brown",
+        "mississippi national guard",
+        "lynch street",
+        "1967"
+      ],
+      "related_events": [
+        "March on Washington for Jobs and Freedom (August 28, 1963)",
+        "Killing of Benjamin Brown (May 1967, Jackson, Mississippi)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 82,
+        "quality_score": 84,
+        "accuracy_component_a": 31,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "The transcript at segment 1065 conflates the 1967 Benjamin Brown march with the 1970 Phillip Lafayette Gibbs and James Earl Green Jackson State killings; the summary explicitly attributes the Benjamin Brown killing to 1967 (per ground truth) and does not propagate the Gibbs/Green conflation."
+        ],
+        "improvements": [
+          "Could note that the interviewee herself acknowledges uncertainty about which Jackson State / Lynch Street incident was which (segments 1063-1078)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:59:35,000",
+      "end_time": "01:10:00,000",
+      "title": "New York, Cultural Nationalism, and Founding a Black Panther Branch",
+      "summary": "Around 1967, at her mother's urging, Adams-Johnson left Mississippi to live with her older sister in the New York suburbs. Initially disconnected from movement work, she began attending cultural-nationalist women's meetings between White Plains and Manhattan involving Amiri Baraka's wife and other women. Finding the meetings too intellectual and 'semantic,' she encountered Black Panther Party members in black leather on 125th Street and 7th Avenue in Harlem in spring 1968 and was struck by their language and street presence. She and her sister --- with help from a Party organizer brought in from California --- founded a Black Panther Party branch in White Plains, New York. Adams-Johnson took her Black Panther papers to the daycare center where she taught and was, predictably, fired. She founded a 'liberation school' for the daycare children, organized against Urban Renewal displacement (which she compares to present-day gentrification) in White Plains, and was eventually promoted by the central committee to Brooklyn, where she served as Officer of the Day with daily operational responsibility for branch activities.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "new york 1967",
+        "white plains",
+        "amiri baraka",
+        "cultural nationalism",
+        "harlem 125th street",
+        "black panther party 1968",
+        "officer of the day",
+        "urban renewal",
+        "brooklyn"
+      ],
+      "related_events": [
+        "Black Panther Party East Coast expansion (1968)",
+        "Urban Renewal displacement in White Plains, NY",
+        "Black Panther Party survival programs"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 87,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:10:00,000",
+      "end_time": "01:20:00,000",
+      "title": "Being a Woman in the Black Panther Party",
+      "summary": "Adams-Johnson reflects at length on being a woman in the Black Panther Party. She characterizes the New York chapter as comparatively respectful of women's leadership --- women could hold key positions including Officer of the Day --- but describes the 'California attitude' of visiting male Panthers who treated 'socialistic sex' as expected. She critiques the Party's failure to treat Panther families as part of 'the people' it was serving, even as the breakfast-in-schools program (which she credits the Party with initiating in the form now widely adopted) addressed real hunger she had not known existed before encountering urban Black poverty in New York. She names the romanticized model --- inspired in part by the film 'The Battle of Algiers' --- of being simultaneously a 'revolutionary guerrilla and mother,' and describes the painful contradiction of being labeled 'bougie' for prioritizing her children's safety. Eventually she married another Panther, who, like many Party men, was in and out of jail; many Panther women became effectively single mothers.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "black panther party women",
+        "officer of the day",
+        "free breakfast program",
+        "socialistic sex",
+        "battle of algiers",
+        "revolutionary motherhood",
+        "panther families"
+      ],
+      "related_events": [
+        "Black Panther Party gender politics",
+        "Black Panther Party Free Breakfast for Children program"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "01:20:00,000",
+      "end_time": "01:25:00,000",
+      "title": "Going Underground, COINTELPRO, and Returning to the Surface",
+      "summary": "Adams-Johnson describes the 1971 Black Panther Party split as a turning point that left her without an organizational home. After briefly returning to Mississippi in 1971 to regroup, she found that COINTELPRO surveillance had followed her and threatened her family; she returned to New York and gravitated to the more radical wing of the split. An incident in 1971 --- one she now says her 'better judgment' told her not to participate in because she had children --- sent her into hiding. She lived four years underground, gave birth to her youngest daughter underground (in a safe area with white women movement allies), and managed to reunite her three children. After four years she retained a lawyer, cleared the underlying case with what she calls 'a little slap on the hand,' but ended up serving the full five years of probation because of her husband's subsequent legal troubles. She describes the constant fear of every supermarket police sighting being 'the day' she would be taken from her children.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "black panther split 1971",
+        "cointelpro",
+        "underground",
+        "four years",
+        "youngest daughter",
+        "fbi surveillance",
+        "panther families"
+      ],
+      "related_events": [
+        "Black Panther Party split (1971)",
+        "COINTELPRO surveillance of the Black Panther Party",
+        "Panther women's underground experience"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The interviewee does not specify the nature of the 1971 incident; the summary preserves that omission rather than speculating."
+        ],
+        "improvements": []
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "01:25:00,000",
+      "end_time": "01:27:26,000",
+      "title": "Reflections and Advice to Young People",
+      "summary": "Adams-Johnson closes with reflections directed at young people: 'stand up for something,' but also think critically and do not blindly follow. She cautions against romanticizing the Black Panther Party and urges anyone studying the movement to seek out 'the good, the bad, and the ugly.' She notes that being part of an organized organization gave her a sense of purpose and the ability to make concrete differences, but emphasizes the importance of finding what works for each person individually rather than imitating elders. The interview closes with the standard Library of Congress / Smithsonian NMAAHC sign-off.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "advice to young people",
+        "stand for something",
+        "critical thinking",
+        "black panther legacy",
+        "movement reflections"
+      ],
+      "related_events": [
+        "Civil Rights History Project (Library of Congress / NMAAHC)"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 87,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 29,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": []
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Frankye Adams-Johnson",
+      "interviewee_title": "Civil Rights Activist, former Black Panther Party Officer of the Day",
+      "interview_date": "2015-12-06",
+      "interview_location": "Jackson, Mississippi",
+      "interviewer_name": "Emilye Crosby",
+      "interviewer_affiliation": "Library of Congress / Smithsonian National Museum of African American History and Culture",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:27:26",
+      "total_segments": 1713,
+      "word_count": 14500,
+      "number_of_chapters": 12
+    },
+    "overall_score": {
+      "total": 86,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 25,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 8,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with childhood and family background (Segment 6, 00:00:39,000)",
+            "Moves chronologically through political awakening, 1963 protests, college, Northern migration, and underground life (Segments 78-1480)",
+            "Closes with explicit advice-to-young-people reflection (Segment 1660, 01:25:00)"
+          ],
+          "justification": "The interview follows a strong chronological arc from rural childhood through Jackson activism, Tougaloo, and the Black Panther Party. Some looping and backtracking occurs around 1963 events and the move to New York, but the interviewer's gentle re-direction (e.g., Segment 619 'Did you know any of the older college-age students like Colia Liddell?') keeps the thread visible. The closing reflection on young people pulls the arc together."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And what really infuriated me more about that than anything else? I had to fight my grandfather... I had never been hit by a man, and the first man that hit me was a white seven police officer.",
+            "segment": 345,
+            "timestamp": "00:28:35,000"
+          },
+          "specificity_count": {
+            "full_names": 18,
+            "specific_dates": 9,
+            "specific_places": 14
+          },
+          "evidence": [
+            "Names Sam M. Brinkley High School, Tougaloo College, Pocahontas Mississippi, and Jackson State (Segments 73, 625, 6, 1064)",
+            "Specific date 'May 31, 1963' for the student march (Segment 155, 00:19:00)",
+            "Detailed sensory recall of the fairgrounds: 'livestock pens, concrete floor, no cots' (Segment 222, 00:22:40)",
+            "Specific Harlem street corner '125th Street and 7th Avenue' where she met Panthers (Segments 1173-1174, 01:02:57)"
+          ],
+          "justification": "Adams-Johnson supplies many full names (Cleveland Donald Jr., Pearlena Lewis, Anne Moody, John Salter, Annie Devine, Jesse Harris, Stokely Carmichael, Benjamin Brown, Amiri Baraka, Ernst Borinski, George A. Owens, Joyce Ladner), specific addresses (the Masonic Temple, Lynch Street, 125th and 7th), and reconstructed scenes. Some dates are hedged ('about 62', 'I think it was 67'), but the specificity holds up well."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I had never been hit by a man, and the first man that hit me was a white seven police officer... I think I'd have to make a assassination, and it all began to really, the seriousness, and the violence... I think that's when my anger began to sit in",
+            "segment": 358,
+            "timestamp": "00:29:13,000"
+          },
+          "emotional_range": [
+            "fear",
+            "anger",
+            "wonder",
+            "grief",
+            "pride",
+            "regret",
+            "longing"
+          ],
+          "vulnerability_elements": [
+            "Explicitly says her 1971 decision to participate in an incident was against her 'better judgment' and one of her 'greatest mistakes'",
+            "Confesses she had to fight her own grandfather as a child and that violating elders was a deep cultural transgression",
+            "Discusses the painful contradiction of being labeled 'bougie' for prioritizing her children inside the Black Panther Party",
+            "Names the romanticization of the Battle of Algiers 'revolutionary guerrilla mother' model as a mistake"
+          ],
+          "justification": "Adams-Johnson speaks with raw honesty about her movement mistakes, the 1971 decision that sent her underground, her separation from her children, and her ambivalence about the Black Panther Party. She is willing to critique both the Party's gender dynamics and her own choices in a way that reads as deeply genuine."
+        },
+        "overall_assessment": "Frankye Adams-Johnson delivers a chronologically coherent and emotionally rich narrative. The strongest dimension is emotional authenticity: she is willing to name her own movement mistakes, the costs to her children, and contradictions in the Black Panther Party. Her specificity is solid, with many named people and places, though some dates are hedged. The narrative arc from rural Mississippi through Jackson activism to underground Panther life is unusual and powerful."
+      },
+      "historical_value": {
+        "total": 23,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "May 1963 Jackson student walkout and Mississippi State Fairgrounds mass detention --- direct participant (Segments 180-225, 00:20:30-00:22:50)",
+            "Medgar Evers funeral-period marches --- participant struck by police (Segments 300-345, 00:27:14-00:28:35)",
+            "August 1963 March on Washington --- delegate on bus from Jackson (Segments 906-944, 00:51:54-00:53:21)",
+            "1967 Benjamin Brown killing on Lynch Street --- present and ran when fired upon (Segments 1095-1110, 00:59:48-01:00:27)",
+            "Founding of the Black Panther Party White Plains NY branch in spring 1968 --- co-founder with sister (Segments 1204-1212, 01:04:22-01:04:42)",
+            "Officer of the Day in Brooklyn Black Panther chapter (Segment 1301, 01:08:19)",
+            "Lived four years underground after 1971 BPP split, including giving birth (Segments 1376-1614, 01:11:48-01:23:00)"
+          ],
+          "key_figures": [
+            {
+              "name": "Medgar Evers",
+              "relationship": "mentor and father figure",
+              "contact_level": "close"
+            },
+            {
+              "name": "Fannie Lou Hamer",
+              "relationship": "saw at mass meetings, role model",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Annie Devine",
+              "relationship": "saw at mass meetings; best friend Barbara was Devine's daughter",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Victoria Gray",
+              "relationship": "saw at mass meetings, role model",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Stokely Carmichael",
+              "relationship": "traveled with him to Greenwood for voter registration",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Cleveland Donald Jr.",
+              "relationship": "godbrother and movement bridge",
+              "contact_level": "close"
+            },
+            {
+              "name": "Jesse Harris (SNCC)",
+              "relationship": "nonviolence trainer",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Ernst Borinski",
+              "relationship": "Tougaloo professor",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Joyce Ladner",
+              "relationship": "Tougaloo SNCC role model",
+              "contact_level": "distant"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "NAACP Jackson Youth Council / North Jackson Youth Council",
+              "role": "active youth member",
+              "years": "1962-1964"
+            },
+            {
+              "organization": "Tougaloo College",
+              "role": "student on music scholarship",
+              "years": "1964-?"
+            },
+            {
+              "organization": "SNCC (informal Mississippi affiliation)",
+              "role": "youth marcher and activist",
+              "years": "1963-1967"
+            },
+            {
+              "organization": "Black Panther Party (White Plains NY, then Brooklyn)",
+              "role": "co-founder of White Plains branch; Officer of the Day in Brooklyn",
+              "years": "1968-1971"
+            }
+          ],
+          "unique_access": "Adams-Johnson is one of very few interviewees with documented arcs through both the Jackson, Mississippi nonviolent movement (1963 mass detentions, Woolworth's response, Evers funeral marches) and the New York Black Panther Party (founding member, Officer of the Day, underground for four years post-1971 split). This dual perspective is genuinely rare in the Civil Rights History Project corpus.",
+          "justification": "Adams-Johnson combines direct participation in nationally significant events (March on Washington, Jackson student walkouts, BPP organizing) with personal connections to multiple major figures (Evers, Hamer, Devine, Gray, Carmichael, Baraka's circle). Her insider perspective on Panther underground life is especially rare."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Sam M. Brinkley High School identified by name (Segment 73, 00:12:12)",
+            "May 31, 1963 named as the date of the student march (Segment 155, 00:19:00)",
+            "Cleveland Donald Jr. named as second Black student to integrate Ole Miss after Cleve McDowell (Segments 248-256)",
+            "Jesse Harris named as the SNCC trainer (Segment 380)",
+            "125th Street and 7th Avenue, Harlem named as the spring 1968 Panther recruitment encounter (Segments 1173-1174)",
+            "George A. Owens named as Tougaloo president (Segment 852)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 18,
+            "first_only": 3,
+            "unnamed": 6
+          },
+          "verifiable_claims": [
+            "Pearlena Lewis, Anne Moody, John Salter were the Woolworth's sit-in participants",
+            "Medgar Evers was assassinated in June 1963",
+            "March on Washington was August 1963",
+            "Tougaloo College pre-freshman program existed in summer 1964",
+            "Benjamin Brown was killed by Mississippi National Guard on Lynch Street",
+            "Black Panther Party founded 1966 (October), East Coast branches followed in 1968"
+          ],
+          "justification": "Adams-Johnson supplies many verifiable names, places, and event-dates. The transcription artifact rate is high (Whisper degradation), but the underlying specificity in the substantive claims is strong. Some dates remain interviewee-hedged ('about 62', 'I think it was 67')."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "Female-perspective testimony on the May 1963 Jackson student walkouts and Mississippi State Fairgrounds detention",
+            "Firsthand account of the Meridian bus station mob attack on returning March-on-Washington delegates --- an event rarely documented in major Movement histories",
+            "Female perspective on Black Panther Party White Plains and Brooklyn branches",
+            "Direct experience of giving birth while underground after the 1971 BPP split",
+            "Description of cultural-nationalist women's organizing in New York that bridged Mississippi civil rights and Black Power"
+          ],
+          "understudied_aspects": [
+            "Jackson, Mississippi Black-Power-era (1967) state violence (Benjamin Brown) overshadowed in national memory by the 1970 Jackson State killings",
+            "Women's leadership inside the New York BPP versus the California 'socialistic sex' culture",
+            "Children's experience of Panther underground life",
+            "Tougaloo College's internal politics: conservative administration (Towns, Owens) versus radical faculty (Borinski)"
+          ],
+          "narrative_complications": "Adams-Johnson's testimony complicates the standard binary of 'nonviolent Southern movement' versus 'militant Northern movement' by showing one person's continuous arc through both, and complicates the heroic Panther narrative by naming the costs to women, children, and Panther families. She also complicates the standard Jackson State narrative by foregrounding the earlier Benjamin Brown killing.",
+          "historiographical_value": "Historians can use this interview as primary evidence for the underrepresented Meridian bus attack, the 1967 Benjamin Brown killing, gendered Panther experience on the East Coast, and the Tougaloo administration's quiet documentation role under conservative leadership.",
+          "justification": "The interview makes substantial contributions to multiple understudied areas (Meridian attack, Benjamin Brown, women's underground Panther experience, Tougaloo internal politics)."
+        },
+        "overall_assessment": "The historical value is genuinely exceptional. Adams-Johnson's arc from 1963 Jackson student walkout participant to 1968 BPP East Coast founder to 1971-1975 underground gives this interview unusual range. She names many people and places that ground her claims, fills several documented gaps in the historical record (especially the Meridian incident and the Benjamin Brown killing), and complicates dominant narratives about Southern-versus-Northern movement and about Panther women's experience."
+      },
+      "emotional_resonance": {
+        "total": 22,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "From a 'starry-eyed' Black girl who walked through white H Street and wondered if a white God could love her, to a teenager moved by Medgar Evers and Fannie Lou Hamer, to a young marcher detained at the fairgrounds and struck by a white officer, to a Tougaloo student kicked out of the pre-freshman program for too much movement work, to a Black Panther Officer of the Day in Brooklyn, to a mother who lived four years underground and gave birth in hiding, to a reflective elder who now urges young people to think critically rather than blindly follow.",
+          "key_turning_points": [
+            "1955 Emmett Till murder --- onset of racial fear and consciousness (Segment 51, 00:08:17)",
+            "Meeting Cleveland Donald Jr. and being taken to NAACP meetings around 1962 (Segments 100-106, 00:15:17)",
+            "Being struck across the back by a white police officer after Medgar Evers's funeral marches (Segments 333-345, 00:28:35) --- 'turning point in my life'",
+            "Encountering Black Panthers on 125th Street and 7th Avenue in spring 1968 (Segments 1173-1190)",
+            "1971 incident that sent her underground --- explicitly described as one of her 'greatest mistakes' (Segments 1485-1495, 01:17:30)"
+          ],
+          "before_after_contrast": "From a 'starry-eyed' teenager who wanted to be like Fannie Lou Hamer, to a self-critical elder who urges young people not to blindly follow, including not to blindly follow her own generation.",
+          "inspirational_quality": "Adams-Johnson's reflection that even her movement choices included serious mistakes --- and that young people should think for themselves rather than romanticize the Panthers --- is genuinely inspiring in its honesty.",
+          "justification": "The transformation arc is unusually well-articulated, with multiple named turning points and an explicit before/after framing."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Mississippi State Fairgrounds night detention with armed white men patrolling and boys forming protective circles around girls",
+              "segment_range": "211-242",
+              "timestamp_range": "00:22:07,000 - 00:23:50,000",
+              "stakes": "Physical safety of detained teenage girls"
+            },
+            {
+              "description": "Being struck across the back by a white police officer in a paddy wagon after Evers's funeral marches",
+              "segment_range": "333-345",
+              "timestamp_range": "00:28:53,000 - 00:28:35,000",
+              "stakes": "Physical assault, internalized nonviolent discipline"
+            },
+            {
+              "description": "Meridian bus station mob attack on returning March-on-Washington delegates",
+              "segment_range": "976-1015",
+              "timestamp_range": "00:52:52,000 - 00:56:30,000",
+              "stakes": "Mass violence against the returning delegation"
+            },
+            {
+              "description": "1967 Lynch Street march where National Guard fired and killed Benjamin Brown",
+              "segment_range": "1095-1110",
+              "timestamp_range": "00:59:48,000 - 01:00:27,000",
+              "stakes": "Life and death; she and others ran for cover"
+            },
+            {
+              "description": "Going underground for four years and giving birth to youngest daughter underground",
+              "segment_range": "1480-1614",
+              "timestamp_range": "01:16:51,000 - 01:23:00,000",
+              "stakes": "Permanent separation from her children, possible imprisonment"
+            }
+          ],
+          "conflict_types": [
+            "physical danger from police and white mobs",
+            "internal moral conflict over nonviolent discipline versus self-defense",
+            "intergenerational tension with mother and grandfather",
+            "ideological conflict inside the Black Panther Party (women, families, California versus New York)",
+            "legal jeopardy from COINTELPRO surveillance"
+          ],
+          "emotional_range": "From childhood wonder and fear, to teenage exhilaration and rage, to adult grief and moral self-criticism",
+          "justification": "Multiple high-stakes scenes are well-developed (the fairgrounds, the paddy wagon strike, the Meridian mob, Lynch Street, the underground years). Tension is sustained throughout the second half of the interview."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "coming of age",
+            "loss of innocence",
+            "finding mentors",
+            "intergenerational conflict",
+            "the cost of moral choices",
+            "motherhood under pressure",
+            "regret and reflection"
+          ],
+          "relatable_struggles": [
+            "Choosing what to stand for as a teenager",
+            "Disappointing one's mother by pursuing risky political work",
+            "Reconciling work that one values with parenting one's children",
+            "Looking back at choices made in a movement and naming mistakes"
+          ],
+          "human_moments": [
+            "Sitting under the quilting frame to overhear women's stories (Segments 58-62, 00:09:58)",
+            "Wondering if a white God could love a Black child (Segment 49, 00:07:40)",
+            "Putting her feet in the reflecting pool at the March on Washington and treating it 'like one big picnic' (Segment 938, 00:53:06)",
+            "Being labeled 'bougie' inside the Panthers for caring about her children's safety (Segment 1465, 01:14:14)"
+          ],
+          "connection_points": "The intergenerational tension with her mother, the rural-to-urban migration, the experience of motherhood under political pressure, and the closing reflection on mistakes are all broadly relatable beyond the civil rights context.",
+          "justification": "Adams-Johnson explicitly frames her experience in terms of growth, mistake, and motherhood --- themes that translate beyond the movement context."
+        },
+        "overall_assessment": "The emotional resonance is strong. The transformation arc is unusually well-articulated, including explicit naming of her own movement mistakes. Multiple high-stakes scenes are vividly described, and the closing reflection on motherhood and 'bougie' labels resonates beyond the civil-rights frame. The interview would be effective for both general audiences and movement scholars."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "moderate",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Heavy Whisper transcription degradation in places (many garbled segments)",
+            "Some Mississippi dialectal contractions and rapid pace make a few passages hard to parse",
+            "Acronyms (NAACP, SNCC, COFO, BPP, COINTELPRO) used without consistent explanation"
+          ],
+          "justification": "Adams-Johnson is articulate and the underlying narrative is coherent, but the Whisper transcript has substantial corruption in places (likely audio-quality artifacts plus dialect). The interviewer occasionally re-frames acronyms but not consistently."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "00:20:00-00:23:50 fairgrounds detention scene",
+            "00:28:00-00:31:35 paddy wagon strike and turning point",
+            "00:53:00-00:56:30 Meridian bus station attack",
+            "01:11:00-01:17:00 BPP gender dynamics and underground decision"
+          ],
+          "slow_sections": [
+            "Early childhood chapter has some looping and self-correction",
+            "Transitional passages between Jackson and New York lose some momentum"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "An engaged listener can sustain attention through the full interview; the underground-years section near the end is particularly compelling. The interviewer (Crosby) intervenes gently and productively to keep the thread visible.",
+          "justification": "The rhythm is varied --- fast and high-stakes during action scenes, slower and reflective during transitions. Some looping and self-correction in the early chapters, but the second half builds momentum well."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Southern nonviolent movement to Northern Black Power continuity",
+            "Women's leadership in the civil rights and Black Power movements",
+            "Gentrification as the modern face of Urban Renewal displacement",
+            "Free breakfast in schools as a Panther legacy now adopted nationally",
+            "The cost of revolutionary politics to children and families"
+          ],
+          "contemporary_relevance": "Adams-Johnson explicitly links 1960s Urban Renewal to present-day gentrification (Segment 1249, 01:06:13) and credits the Black Panther Party with originating the school-breakfast model now universally adopted (Segments 1423-1433). These bridges to contemporary concerns make the interview broadly accessible.",
+          "meaning_making": "Adams-Johnson is highly reflective and explicitly draws lessons --- both her closing advice to young people and her gentrification / breakfast-program connections.",
+          "justification": "Strong explicit connections to contemporary issues throughout."
+        },
+        "overall_assessment": "Accessibility is moderate-to-strong. The narrative is coherent and the broader-themes connections are explicit and powerful, but Whisper transcription degradation in places and occasional unexplained acronyms create some friction. The interview would benefit substantial general audiences with light contextual framing."
+      }
+    },
+    "overall_assessment": "This is a rare, valuable interview that documents a single woman's arc from 1963 Jackson student walkouts to 1968 Black Panther Party East Coast organizing to four years living underground after the 1971 BPP split. The historical-value dimension is the strongest, with multiple genuinely understudied events (the Meridian bus attack, the 1967 Benjamin Brown killing, women's experience inside the New York BPP, life underground with children). The emotional authenticity is also unusually high --- Adams-Johnson explicitly names her own movement mistakes and the costs to her children. The narrative quality is strong but somewhat hindered by transcription degradation. Adams-Johnson's closing reflection that young people should think critically rather than blindly follow her generation gives the interview a layer of pedagogical generosity that is rare.",
+    "key_strengths": [
+      "Documents the rare cross-movement arc from Mississippi nonviolent direct action to Northern Black Panther Party organizing to four years of underground life --- a continuous personal narrative spanning the standard 'before-and-after' periodization of civil rights and Black Power",
+      "Provides woman-centered firsthand testimony on underdocumented Jackson, Mississippi events including the May 1963 student walkout / Mississippi State Fairgrounds mass detention, the August 1963 Meridian bus station mob attack on returning March-on-Washington delegates, and the 1967 killing of Benjamin Brown on Lynch Street",
+      "Reflects with unusual honesty on her own movement mistakes, the costs to her children, the Black Panther Party's failures around women and families, and the romanticization of the 'revolutionary guerrilla mother' model"
+    ],
+    "key_limitations": [
+      "Whisper transcription corruption is substantial in places (garbled words, mid-segment artifacts), creating friction for downstream readers and complicating exact-quote citation",
+      "Some dates are interviewee-hedged ('about 62', 'I think it was 67'); the interview does not always pin down precise chronology, especially around the 1967 Lynch Street / 1970 Jackson State distinction"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Frankye Adams-Johnson was born in Pocahontas, Mississippi, into a sharecropping family.",
+        "status": "supported",
+        "supporting_excerpt": "Okay, I was born in the little town called Pocahontas, Mississippi. It's about 15 minutes north of here. And then I was born there into a family of sharecroppers. (Segments 6-7, 00:00:39)",
+        "rationale": "The interviewee states this directly in the opening segments."
+      },
+      {
+        "claim": "Her family moved to Jackson, Mississippi when she was a young teenager (around age 12 to 15).",
+        "status": "supported",
+        "supporting_excerpt": "My take was about 12 out between 15. (Segment 19, 00:02:50). And she grabbed our children and moved us to Jackson, Mississippi. (Segment 13, 00:02:09)",
+        "rationale": "Interviewee gives age range and the move directly."
+      },
+      {
+        "claim": "Adams-Johnson attended Sam M. Brinkley High School in Jackson.",
+        "status": "supported",
+        "supporting_excerpt": "I actually went to the newest of the three black house schools, which was Sam M. Brinkley High School. (Segment 73, 00:12:12)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Her godbrother Cleveland Donald Jr.'s father was active in the NAACP.",
+        "status": "supported",
+        "supporting_excerpt": "So I asked my God-brother, whose daddy was very active in the NAACP. (Segment 100, 00:15:17). Donald, Cleveland Donald Jr, Donald. (Segment 244)",
+        "rationale": "Both his name and his father's NAACP role are stated."
+      },
+      {
+        "claim": "Cleveland Donald Jr. introduced her to NAACP meetings starting around 1962.",
+        "status": "supported",
+        "supporting_excerpt": "I started going to those meetings with him. And so I got to meet Megan and this eventually started going to mass meetings. So this was about 62 when I started. And 63. (Segments 105-107)",
+        "rationale": "Direct attribution."
+      },
+      {
+        "claim": "She met Medgar Evers at mass meetings around 1962.",
+        "status": "supported",
+        "supporting_excerpt": "And so I got to meet Megan [Megar] and this eventually started going to mass meetings. So this was about 62 when I started. (Segments 106-107)",
+        "rationale": "Whisper renders Medgar Evers as 'Megan' / 'Mega' but interviewee's intent is clear from context."
+      },
+      {
+        "claim": "She was inspired by Fannie Lou Hamer, Annie Devine, and Victoria Gray at mass meetings.",
+        "status": "supported",
+        "supporting_excerpt": "And it was Miss Vanity Lou Hamer [Fannie Lou Hamer], Miss Annie D. Van [Annie Devine], and Miss Victoria Gray. And those were three women that just kind of impressed me as a young woman. (Segments 128-130, 00:17:14)",
+        "rationale": "Whisper artifacts but unambiguous identifications."
+      },
+      {
+        "claim": "She participated in the May 1963 Jackson student walkout in response to the Woolworth's lunch counter attack involving Pearlena Lewis, Anne Moody, and John Salter.",
+        "status": "supported",
+        "supporting_excerpt": "And Anne Moody and John Salter, and so that day that they had gotten beat up there. And so Migger had organized the high school students to protest. (Segments 169-171, 00:19:51). The two blue students who sat in at the Woolworth's. (Segment 152). Pearlena Lewis was a member of... well, she lived in our neighborhood. (Segments 148-150)",
+        "rationale": "All three Woolworth's sit-in participants are named; the May 1963 organizing of high school students is described."
+      },
+      {
+        "claim": "She and other students were detained at the Mississippi State Fairgrounds in livestock pens.",
+        "status": "supported",
+        "supporting_excerpt": "But what happened after we were sent and being taken to the fairground? ... We're a really loud livestock, I kept during the fair. And just concrete floor, no cuts, no anything. (Segments 211-222, 00:22:07-00:22:40)",
+        "rationale": "Direct narrative."
+      },
+      {
+        "claim": "After Medgar Evers's June 1963 assassination, she marched in the funeral-period protests and was struck across the back by a white police officer.",
+        "status": "supported",
+        "supporting_excerpt": "I was in jail, many of us was in jail, because we had, there was a march stage, right after mega-sassination... and that was the one after mega, when mega, they had Medgar Evers' funeral. (Segments 300-302). And on that particular day, that was the day that I did get hit across my back. (Segment 311). The first man that hit me was a white seven police officer. (Segment 358, 00:30:11)",
+        "rationale": "Multiple converging passages establish the post-Evers march and the police strike."
+      },
+      {
+        "claim": "Adams-Johnson was trained in nonviolent direct action by SNCC organizer Jesse Harris.",
+        "status": "supported",
+        "supporting_excerpt": "I went to workshops, you know, where they trained, this was a matter of fact, one of the person's Jesse Harris, he was recently passed, and he was basically a trainer. (Segments 378-381, 00:31:31)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She traveled to the August 1963 March on Washington from Jackson on one of about six buses.",
+        "status": "supported",
+        "supporting_excerpt": "About six buses left out of Jackson. (Segment 924). And the only thing that my mom did allow me to do, I did go to my [march in] Washington. (Segments 905-906)",
+        "rationale": "Direct statements."
+      },
+      {
+        "claim": "On the return trip, the delegation was attacked at the Meridian bus station by white motorcyclists and a coordinated mob.",
+        "status": "supported",
+        "supporting_excerpt": "I remember my first stop within Meridian, and so we had our first stop in Meridian. (Segments 913-914). A fight had broken out, so it was a group of young white thugs, and they were on motorcyclists. (Segments 977-978). And so what happened that the gang of thugs had initiated the attack, but then the mob began to throw things at us. (Segments 1000-1002)",
+        "rationale": "Sustained narrative of the Meridian incident."
+      },
+      {
+        "claim": "She entered Tougaloo College in 1964 on a music scholarship.",
+        "status": "supported",
+        "supporting_excerpt": "In 1964, I went to Tougaloo on a music scholarship. I went to Tougaloo College. (Segments 625-626, 00:39:47)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She traveled with Stokely Carmichael to Greenwood for voter registration work.",
+        "status": "supported",
+        "supporting_excerpt": "I think when Stokely Carmichael came, and Stokely Carmichael took us on a history and I went to Greenwood to do various photos, and the registration work, when Stokely Carmichael came there. (Segments 649-651, 00:41:05)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Annie Devine's daughter Barbara was her pre-freshman program friend at Tougaloo.",
+        "status": "supported",
+        "supporting_excerpt": "her mother, Annie Devine, daughter, and I was in school. So we were in the prefreshing program together. (Segments 657-658). I try to get her daughter to, to Barbara, to talk about her mom. (Segment 769)",
+        "rationale": "Direct statement; Barbara's name appears at 01:46:48."
+      },
+      {
+        "claim": "Tougaloo sociology professor Ernst Borinski openly encouraged social change.",
+        "status": "supported",
+        "supporting_excerpt": "you had the Berenc ski tags [Borinski] who embrace social change and encouraged us in sociology classes. And so, you had the Borinskis. (Segments 841-845, 00:49:40-00:49:54)",
+        "rationale": "Direct statement (Whisper-corrupted spelling but clearly Borinski)."
+      },
+      {
+        "claim": "Tougaloo President Dr. George A. Owens was conservative on movement matters but kept rich archival files on Mississippi civil rights activity.",
+        "status": "supported",
+        "supporting_excerpt": "the president, Dr. George A. Owens, which was very, he was very conservative... I had an opportunity to work on his papers, and I actually found out, he had such a rich collection of the civil rights of, the only activities that was going on. (Segments 852-866)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She witnessed the 1967 killing of Benjamin Brown by the Mississippi National Guard on Lynch Street.",
+        "status": "partially_supported",
+        "supporting_excerpt": "I think we'll even be 67, when this Benjamin Brown guy shot down here on the Lynch Street. (Segment 1054, 00:58:08). At the end of that evening, Benjamin Brown had been, been, been, been, and she killed by the National Guard. (Segments 1109-1110, 01:00:24)",
+        "rationale": "She places the event in 1967 (matching ground truth: Benjamin Brown, 22-year-old Jackson MS CORE field worker shot and killed by the Mississippi National Guard on May 11, 1967). She was present but explicitly says she did not personally know Brown; her account of running when National Guard fired is firsthand. Partially_supported rather than supported because her own transcript conflates this with later events involving Phillip Lafayette Gibbs and James Earl Green (1970 Jackson State), and the summary's specific framing of the marchers throwing 'something' and being fired upon as the proximate cause of Brown's death is the interviewee's own recollection only and is presented as such."
+      },
+      {
+        "claim": "She moved to New York around 1967 to live with her older sister.",
+        "status": "supported",
+        "supporting_excerpt": "I left, she called my older sister, came for the summer. And so she said that she would, yeah, I could go back to New York. (Segments 1129-1133). about 67? Yes, that's 67. (Segments 1135-1136)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She encountered Black Panther Party members on 125th Street and 7th Avenue in Harlem in spring 1968.",
+        "status": "supported",
+        "supporting_excerpt": "I actually met a group of people on the streets of Harlem, 125th Street, and 7th Avenue. (Segments 1172-1174). so this was probably at 68... it's spring of 68. (Segments 1188-1191)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She and her sister co-founded a Black Panther Party branch in White Plains, New York.",
+        "status": "supported",
+        "supporting_excerpt": "so to ask me if I wanted to start a branch of a black paint party in white planes in New York... they helped my sister and I to set up a branch of a black paint party in New York. (Segments 1203-1209)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She became Officer of the Day in the Brooklyn Black Panther chapter.",
+        "status": "supported",
+        "supporting_excerpt": "I was the officer of the day there, and Brooklyn. (Segments 1300-1301, 01:08:19). The day means that you're a pretty much in charge of all the activities that go signed, you know, and oversee, and the office and the daily activities. (Segments 1306-1309)",
+        "rationale": "Direct statement plus interviewer-prompted definition."
+      },
+      {
+        "claim": "After the 1971 Black Panther Party split, she lived four years underground and gave birth to her youngest daughter while in hiding.",
+        "status": "supported",
+        "supporting_excerpt": "an incident in 1971, set me on the run. (Segments 1558-1559). I had my baby on the ground, my baby daughter, it was born on the ground. (Segments 1570-1572, 01:21:39). four years, I lived four years underground. (Segment 1614, 01:23:37)",
+        "rationale": "Direct statements."
+      },
+      {
+        "claim": "She attended cultural-nationalist women's meetings in New York that included Amiri Baraka's wife.",
+        "status": "supported",
+        "supporting_excerpt": "Amiri Baraka, you might have heard the name, Amiri Baraka's wife, and some of the other, so this is a world culture, yeah, so I'm meeting with those. (Segments 1156-1160, 01:02:18)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "She credits the Black Panther Party with initiating the free-breakfast-in-schools program model now widely adopted.",
+        "status": "supported",
+        "supporting_excerpt": "free breakfast in schools, were one of the programs that we initiated, you know, we were the first to initiate such a program. (Segments 1424-1427)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Adams-Johnson's mother strongly opposed her involvement in the movement and once had her white employer drive her to retrieve her arrested younger brother from the fairgrounds.",
+        "status": "supported",
+        "supporting_excerpt": "the woman that my mom worked for, actually did after she came to, because she came to pick him up from the fear ground... women's told him that she would personally beat him, if he got back into one of the marches. (Segments 520-525)",
+        "rationale": "Direct narrative."
+      },
+      {
+        "claim": "Cleveland Donald Jr. became the second Black student to attend the University of Mississippi after James Meredith and after Cleve McDowell.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Yes, he was the third. Well, I see there was a change. James Meredith was the first black man to attend. Then, Cleve McDowell, Cleve McDowell, MacDonald, I believe it was. And, of course, he got expelled because he had been a gun. They found a gun. So he was still in prison. Cleveland was the second, because Meredith did it, and Cleveland was the second to... (Segments 247-256)",
+        "rationale": "The interviewee herself says he was 'the third' and then corrects to 'the second' (after McDowell's expulsion). Cleveland Donald Jr. is not in the ground-truth corpus to verify; the summary omits this specific claim and only describes him as her godbrother who introduced her to the movement, so this claim is not propagated to the summary. Marked partially_supported to flag the transcript's own internal inconsistency."
+      },
+      {
+        "claim": "She returned briefly to Mississippi in 1971 to regroup but found that COINTELPRO surveillance had followed her and endangered her family.",
+        "status": "supported",
+        "supporting_excerpt": "I did come home to Mississippi in 1971 to try to regroup, but the, uh, uh, uh, powers that be, was not going to have that, because, um, I was, uh, once I came home, I brought, danger home to my family. (Segments 1517-1523). to the kind of COINTELPRO terrorism that was going on during that period. (Segment 1543, 01:19:44)",
+        "rationale": "Direct statements."
+      },
+      {
+        "claim": "She married another Panther who, like many Party men, was in and out of jail.",
+        "status": "supported",
+        "supporting_excerpt": "I eventually got married to a parent [panther], and so as a result of Meredith to a parent of man, many of us, have seen a parent, because many of the parents have been in the infancy jail. (Segments 1361-1365)",
+        "rationale": "Direct statement (Whisper renders 'Panther' inconsistently)."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 29,
+      "supported": 27,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_below_90_citation_blocked_2_partial",
+    "rationale": "The main summary scored Accuracy 84 and Quality 86, both below the Smithsonian-grade 90/90 threshold. Two claims in the citation audit are partially_supported: (1) the Cleveland Donald Jr. 'second-to-integrate-Ole-Miss' claim, which the transcript itself states with internal inconsistency (interviewee corrects from 'third' to 'second') and which the summary deliberately omits in deference to that uncertainty; and (2) the Benjamin Brown 1967 Lynch Street killing, where the transcript conflates the 1967 event with the 1970 Phillip Lafayette Gibbs and James Earl Green Jackson State killings, requiring the summary to disambiguate against ground-truth. Both partials route the interview to human review per the fail-closed gate. The interview is historically valuable and largely accurate; the partial citations reflect proper conservatism around transcript-level ambiguities rather than summary-level hallucination."
+  }
+}

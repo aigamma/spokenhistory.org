@@ -131,9 +131,35 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 **Cost extrapolation for Phase 3c:** at $0.0348 OpenAI + ~comparable Anthropic for the dual-scorer + audit call (~$0.07 / transcript total), 131 transcripts come to ~$9–12 in API spend. Wall-clock at 89.5s / transcript serial = ~3.3 hours; could be parallelized with concurrency limits per CLAUDE.md's "no token throttling" pacing rule.
 
-##### Phase 3c — Full-corpus pipeline run on 131 transcripts
+##### Phase 3c — Full-corpus pipeline run on 127 audit-able transcripts (Claude subagent architecture; IN PROGRESS)
 
-*(populated when Phase 3c completes)*
+**Status:** IN PROGRESS 2026-05-24 evening. **87 of 127 complete and committed**; 40 remaining. Committed pre-emptively because Eric's Claude Max session usage hit 78% with 3h20m to weekly-rolling-window reset — locking in work so a limit-hit doesn't lose progress.
+
+**Architectural pivot from earlier Phase 3 design:**
+- Original plan was to run the existing Python `run_batch.py` (OpenAI pipeline gpt-4o-mini + gpt-4o for generation, Claude Opus 4.7 for adversarial scoring + citation audit) against all 127 corrected transcripts.
+- After a 3-transcript pilot ($0.55 OpenAI cost, all 3 routed to human review per the fail-closed gate, 1 had gpt-4o rate-limit error mid-chapter), Eric flagged that the OpenAI generation cost (~$0.18/transcript × 127 = ~$23 OpenAI + similar Anthropic = ~$30-45 total) was avoidable: his Claude Max 20x subscription effectively zero-prices Claude Code subagent capacity, while OpenAI overflow credits cost real dollars.
+- Pivot architecture: each of 127 corrected transcripts gets ONE dedicated Claude Code subagent (cross-contamination firewall hard-enforced — Pass 4/6/7 one-agent-per-transcript pattern), which reads the transcript and the reference rubric/engagement schema/ground-truth facts, then writes a single faithful-schema JSON to `Metadata Generation System/batch_output/<entry>.json`. The subagent instructions live at `transcripts/phase3c_subagent/INSTRUCTIONS.md` (~10KB, comprehensive 12-step pipeline spec covering interview metadata extraction, chapterization, main summary generation, self-scoring against StandardizedRubric_1.md, engagement scoring against `processor_prompts/engagement_schema.txt` full rubric, per-claim citation audit, publication decision under the 90/90 fail-closed gate).
+- Existing scaffolding from the OpenAI pipeline (`run_batch.py`, `processor/*.py` Claude scorer + citation_check.py from Phases 3a/3b) is **not used** by Phase 3c subagents — they self-contain the pipeline. The OpenAI scaffolding remains for future re-runs if needed; Phase 3a/3b code-wiring landed in earlier commits is still load-bearing as the in-process pipeline architecture.
+
+**Concurrency lesson (saved to memory `reference_subagent_concurrency_limits.md`):**
+- First attempt spawned all 124 subagents in one parallel message after the 3-transcript pilot validated schema. Hit Anthropic's org-level concurrent-agent rate limiter HARD; only 4 of 124 completed before the rest got `API Error: Server is temporarily limiting requests (not your usage limit) · Rate limited`. CLAUDE.md's "89 in 10 min" pattern applies to lightweight categorization agents, not heavyweight 5-15min pipeline-replacement agents.
+- Adapted to **sequential batches of 8 concurrent**. Batches 2-11 each succeeded at 8/8 (with one internal-server-error retry for Jennifer Lawson). 87 transcripts processed across 11 batches before Eric flagged the rolling-limit concern and asked for further slowdown.
+- **Final pacing**: switched to LINEAR (one subagent at a time) per Eric's 2026-05-24 evening instruction at ~78% session usage. Will resume linear processing in next session after limit reset.
+
+**Coverage so far (87/127):** alphabetical run from Aaron Dixon through Mildred Pitts Walter. JSON validation script confirms 87/87 are schema-complete (all have `main_summary`, `chapters`, `citation_audit`, `publication_decision`, `engagement_scores` top-level keys). No null/stub/error outputs in completed set.
+
+**Remaining 40 transcripts** (alphabetical, Nathaniel Hawthorne Jones through Wyatt Tee Walker):
+- Nathaniel Hawthorne Jones, Norma Mtume, Oliver W. Hill Jr., Peggy Jean Connor, Pete Seeger, Phil Hutchings, Purcell Maurice Conway, Raylawni G. Branch + Jeanette Smith, Reginald Robinson, Reverend Harry Blake, Richard Barry Sobol, Rick Tuttle, Robert Bagner Hayling, Robert Brown, Robert G. Clark Jr., Robert L. Carter, Robert McClary, Roberta Alexander, Rosie Head, Ruby Sales, Sam Mahone, Sam Young Jr., Samuel Berry McKinney, Scott Bates, Shirley Miller Sherrod, Steven McNichols, Thomas Walter Gaither, Timothy Jenkins, Vernon Dahmer Jr., Virginia Simms George, Walter Bruce, Walter Tillow, Wheeler Parker Jr., William G. Anderson, William Lamar Strickland, William Lucy, William S. Leventhal, William Saunders, Worth W. Long, Wyatt Tee Walker.
+
+**Distribution observation (preliminary, from completed 87):**
+- All routed to human review except Johnnie Ruth McCullar (acc 91, qual 90, 33/33 supported claims → `publishable=true`, `decision_path=scores_passed_citation_passed`) and Matthew J. Perry (acc 91, qual 90, 43/43 supported claims → `publishable=true`). 2 of 87 passing the strict 90/90 + zero-citation-issues gate is consistent with Smithsonian-grade rigor — most summaries hit 84-89 on at least one axis or have 1-5 partially_supported citation claims that route them to the review queue.
+- The fail-closed gate is **doing its job**: subagents are conservatively scoring, flagging Whisper ASR artifacts, catching speaker-memory errors (e.g., Mildred Bond Roxborough's "Willie Norris" for Clarence Norris, Elmer Dixon's MLK/Hutton date inversion, Carlos's "Paul Hoffman Robeson"/Pass 7 audit-artifact duplications, Amos C. Brown's Little Rock Nine Nobel Prize misattribution), and surfacing them in `quality_metrics.errors` lists for human reviewers.
+
+**Resume protocol for next session:**
+1. Re-tally `batch_output/*.json` to confirm 87 still present (idempotent via resume — completed JSONs are not regenerated).
+2. Continue linear (one subagent at a time) from Nathaniel Hawthorne Jones.
+3. On completion of all 127, build `batch_manifest.json` (aggregate scores + decisions), commit with this AUDIT_TRAIL Phase 3c update marked DONE.
+4. **Do not advance to Phase 4 (Firestore push) without Eric's explicit go-ahead per `feedback_no_auto_advance_phases`.**
 
 #### Phase 4 — Push pipeline outputs to Firestore
 
