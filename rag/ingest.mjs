@@ -82,34 +82,84 @@ let _entryMapCache = null;
 
 async function loadEntryMap() {
   if (_entryMapCache) return _entryMapCache;
+
+  // Pass 1: parse master MD's `### N. Subject` + `**Source**:` lines.
+  // This is the canonical record for the original 127 audit-able entries
+  // (which have full Pass 1-8 audit overlay data).
   const masterPath = `${REPO_ROOT}/transcripts/CLEANED_TRANSCRIPTS_REVIEW.md`;
   const content = await readFile(masterPath, 'utf8').catch(() => null);
-  if (!content) {
-    console.warn('[ingest] master overlay not found; entry-number resolution unavailable');
-    _entryMapCache = { byDir: new Map(), bySubject: new Map() };
-    return _entryMapCache;
-  }
   const byDir = new Map();
   const bySubject = new Map();
-  const entryRe = /^### (\d+)\.\s+([^\n]+)\n/gm;
-  const sourceRe = /\*\*Source\*\*:\s*`transcripts\/raw\/([^`]+)\/?`/;
-  let match;
-  while ((match = entryRe.exec(content)) !== null) {
-    const number = Number(match[1]);
-    const subject = match[2].replace(/\s*\(PARTIAL\)\s*$/, '').trim();
-    const sectionStart = match.index;
-    const nextMatch = entryRe.exec(content);
-    const sectionEnd = nextMatch ? nextMatch.index : content.length;
-    if (nextMatch) entryRe.lastIndex = nextMatch.index;
-    const sectionBody = content.slice(sectionStart, sectionEnd);
-    const srcMatch = sectionBody.match(sourceRe);
-    const sourceDir = srcMatch ? srcMatch[1].replace(/\/$/, '') : null;
-    const record = { number, subject, sourceDir };
-    if (sourceDir) byDir.set(sourceDir, record);
-    bySubject.set(subject, record);
+  if (content) {
+    const entryRe = /^### (\d+)\.\s+([^\n]+)\n/gm;
+    const sourceRe = /\*\*Source\*\*:\s*`transcripts\/raw\/([^`]+)\/?`/;
+    let match;
+    while ((match = entryRe.exec(content)) !== null) {
+      const number = Number(match[1]);
+      const subject = match[2].replace(/\s*\(PARTIAL\)\s*$/, '').trim();
+      const sectionStart = match.index;
+      const nextMatch = entryRe.exec(content);
+      const sectionEnd = nextMatch ? nextMatch.index : content.length;
+      if (nextMatch) entryRe.lastIndex = nextMatch.index;
+      const sectionBody = content.slice(sectionStart, sectionEnd);
+      const srcMatch = sectionBody.match(sourceRe);
+      const sourceDir = srcMatch ? srcMatch[1].replace(/\/$/, '') : null;
+      const record = { number, subject, sourceDir, provenance: 'audit-original' };
+      if (sourceDir && !byDir.has(sourceDir)) byDir.set(sourceDir, record);
+      if (!bySubject.has(subject)) bySubject.set(subject, record);
+    }
+  } else {
+    console.warn('[ingest] master overlay not found; entry-number resolution from master MD unavailable');
   }
+
+  // Pass 2: scan corrected/<dir>/manifest.json for entries that may not have
+  // master MD records. The 9 Pass-8-only ingestion entries added 2026-05-25
+  // (entries 28, 46, 64 reactivated + 133-138 brand new) have entry_number
+  // and entry_subject in their manifests but no master MD headings.
+  let manifestAdded = 0;
+  try {
+    const { readdir, stat: fsStat } = await import('node:fs/promises');
+    const { join: pathJoin } = await import('node:path');
+    const sub = await readdir(CORRECTED_TRANSCRIPTS_ROOT);
+    for (const dirName of sub) {
+      const manifestPath = pathJoin(CORRECTED_TRANSCRIPTS_ROOT, dirName, 'manifest.json');
+      try {
+        const stat = await fsStat(manifestPath);
+        if (!stat.isFile()) continue;
+      } catch {
+        continue;
+      }
+      let m;
+      try {
+        const text = await readFile(manifestPath, 'utf8');
+        m = JSON.parse(text);
+      } catch {
+        continue;
+      }
+      const number = m.entry_number;
+      const subject = m.entry_subject;
+      if (number == null || !subject) continue;
+      // Skip if master MD already provides this directory's record
+      if (byDir.has(dirName)) continue;
+      const record = {
+        number,
+        subject,
+        sourceDir: dirName,
+        provenance: m.entry_provenance || 'unknown',
+      };
+      byDir.set(dirName, record);
+      if (!bySubject.has(subject)) bySubject.set(subject, record);
+      manifestAdded++;
+    }
+  } catch (e) {
+    console.warn(`[ingest] manifest-fallback scan failed: ${e.message}`);
+  }
+
   _entryMapCache = { byDir, bySubject };
-  console.log(`[ingest] entry map loaded: ${byDir.size} entries by source dir`);
+  console.log(
+    `[ingest] entry map loaded: ${byDir.size} entries by source dir ` +
+    `(master MD: ${byDir.size - manifestAdded}; manifest-only: ${manifestAdded})`,
+  );
   return _entryMapCache;
 }
 

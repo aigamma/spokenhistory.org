@@ -88,8 +88,15 @@ export async function walkDir(dir) {
   return results.flat();
 }
 
-// Skipped entries: 4 multi-speaker (3+) joint interviews where Whisper
-// produced empty source directories due to upstream diarization failure
-// (#28, #46, #64, #95), plus 1 redirect (#31 covered via joint #75). The
-// ingest walker should skip these — they have no useable raw content.
-export const SKIPPED_ENTRIES = new Set([28, 31, 46, 64, 95]);
+// Skipped entries: legacy multi-speaker / redirect cases that have no
+// usable raw content.
+//
+// Note (2026-05-25): #28, #46, #64 were ORIGINALLY in this set as the
+// Whisper-empty multi-speaker joint interviews. They've since been
+// ingested with full content via the 2026-05-25 Dustin-student batch
+// (transcripts/ingestion/ingest_new_batch_2026-05-25.py), so they were
+// REMOVED from the skip set — the ingest walker now finds them and
+// embeds their content. #31 (Eddie Holloway redirect — covered via joint
+// #75) and #95 (Crosby + Long + Miller group) remain skipped: both have
+// no corrected/ data and remain coverage gaps.
+export const SKIPPED_ENTRIES = new Set([31, 95]);

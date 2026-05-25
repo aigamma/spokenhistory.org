@@ -209,9 +209,29 @@ the same.
 | Pinecone Builder (covers civil-rights + worldthought) | monthly | $20 flat |
 | **Total monthly RAG infrastructure** | | **~$22–25** |
 
-## Status as of 2026-05-22
+## Status as of 2026-05-25
 
 - ✅ Phase 4 scaffolding complete (this directory)
-- ⏳ Pinecone civil-rights project + index: not yet provisioned (one-time admin action)
-- ⏳ First ingest: pending Pinecone provisioning + `scripts/apply_corrections.py` running
-- ⏳ Chat function: not yet written (downstream of this scaffolding)
+- ✅ Pass 1-8 audit complete on the original 127-entry corpus (Pass 8 = LoC canonical-archive cross-reference; see `transcripts/AUDIT_TRAIL.md` Session 8)
+- ✅ +9 ingestion-only entries added 2026-05-25 from Dustin's student batch (6 genuinely new + 3 SKIPPED/DEFERRED revivals). See `transcripts/ingestion/README.md`. Corpus now 136 entries.
+- ✅ `corrected/` is downstream-ready: every entry has `.srt + .txt + .vtt + manifest.json` with the same schema (verified by `transcripts/ingestion/verify_corpus_unified.py`). All 136 manifests carry `entry_number`, `entry_subject`, and `entry_provenance` (`audit-original` or `ingestion-only`).
+- ✅ `rag/ingest.mjs` updated 2026-05-25 to discover entries via BOTH master MD `**Source**:` lines AND fallback to `manifest.json::entry_number` for the 9 ingestion-only entries (which don't have master MD entry headings yet). `SKIPPED_ENTRIES` reduced to `{31, 95}` since #28, #46, #64 now have content.
+- ⏳ Pinecone civil-rights index: not yet provisioned. **Status update**: the Pinecone account originally created for worldthought.com is being shared across both projects via Builder tier's multi-project feature — civil-rights and worldthought each have their own Pinecone project under one billing relationship + one organization. `civil-rights` index host URL needs to be generated in the Pinecone console (one-time admin action) and put in `rag/.env.local`.
+- ⏳ First ingest: blocked only on the Pinecone index existing. Voyage AI key already shared via the worldthought-side `.env.local` (or a copy thereof). Full ingest estimated at ~45-75 minutes wall-clock; subsequent re-ingests are content-hash-idempotent so only changed chunks re-embed.
+- ⏳ Chat function: not yet written (downstream of this scaffolding).
+
+## Multi-project Pinecone setup (cost-sharing notes)
+
+The civil-rights and worldthought.com projects share a single Pinecone Builder organization ($20/mo flat) but maintain SEPARATE Pinecone projects within that organization:
+
+```
+Pinecone organization (one account: eric@aigamma.com)
+  └── Project: worldthought-prod (existing)
+  │     └── index: worldthought (1024-dim, voyage-3, philosophy corpus)
+  └── Project: civil-rights-prod (to be created)
+        └── index: civil-rights (1024-dim, voyage-3, oral-history corpus)
+```
+
+This is intentional. Two separate projects keeps each corpus's metadata schema and namespacing independent, lets each project have its own API key for least-privilege access, and isolates blast radius if one project ever needs to be rotated or wiped. The shared billing-relationship + shared Voyage AI key keeps costs combined under the same per-month ceiling (~$22-25/mo for the pair).
+
+The application-layer code in this directory (`shared.mjs`, `ingest.mjs`, `retrieve.mjs`) is identical to the worldthought.com `scripts/rag/` modules in structure but reads its own `.env.local` so a misconfiguration on one project can't accidentally write to the other's index.
