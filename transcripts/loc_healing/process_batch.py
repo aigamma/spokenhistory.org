@@ -47,6 +47,15 @@ def has_loc_xml(entry_dir: str) -> bool:
     return (LOC_CACHE / f"{s}.xml").is_file()
 
 
+def has_loc_pdf_text(entry_dir: str) -> bool:
+    s = subject_safe(entry_dir)
+    return (LOC_CACHE / f"{s}.pdf.txt").is_file()
+
+
+def has_any_loc_source(entry_dir: str) -> bool:
+    return has_loc_xml(entry_dir) or has_loc_pdf_text(entry_dir)
+
+
 def has_resolution(entry_dir: str) -> bool:
     s = subject_safe(entry_dir)
     return (LOC_CACHE / f"{s}.resolution.json").is_file()
@@ -103,9 +112,9 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  [{i:3d}/{len(entries)}] {entry[:65]}  -> SKIP {status}")
             results["skipped_no_resolution"].append(entry)
             continue
-        if not has_loc_xml(entry):
+        if not has_any_loc_source(entry):
             status = resolution_status(entry)
-            print(f"  [{i:3d}/{len(entries)}] {entry[:65]}  -> SKIP (no XML, status={status})")
+            print(f"  [{i:3d}/{len(entries)}] {entry[:65]}  -> SKIP (no LoC source, status={status})")
             results["skipped_no_xml"].append(entry)
             continue
         if args.dry_run:

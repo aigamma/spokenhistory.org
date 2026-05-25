@@ -78,6 +78,7 @@ def parse_entry_dir(entry_dir_name: str) -> dict:
         "vtt": vtt,
         "manifest": manifest,
         "loc_xml": LOC_CACHE / f"{subj_safe}.xml",
+        "loc_pdf_txt": LOC_CACHE / f"{subj_safe}.pdf.txt",
         "loc_resolution": LOC_CACHE / f"{subj_safe}.resolution.json",
         "divergences_path": DIVERGENCES_DIR / f"{subj_safe}.divergences.json",
         "stage_path": None,  # filled in phase1 from entry_number
@@ -116,6 +117,80 @@ def normalize_unicode(text: str) -> str:
     for src, dst in _UNICODE_REPLACEMENTS.items():
         out = out.replace(src, dst)
     return out
+
+
+PDF_SPEAKER_RE = re.compile(
+    r"^(?:[A-Z][A-Z\s\.\-\'‘’]{1,40}|[A-Z]{1,4}|Female\s\d+|Male\s\d+|Interviewer|Interviewee|Videographer)\s*:\s*",
+)
+PDF_HEADER_RE = re.compile(
+    r"^(?:Interviewee[s]?|Interview Date|Location|Interviewer[s]?|Videographer|Length|START OF RECORDING|END OF RECORDING|AFC\s\d|Civil Rights History Project|Interview completed by|under contract to|Smithsonian Institution|and the Library of Congress)\b",
+    re.IGNORECASE,
+)
+
+
+def parse_loc_pdf_text(pdf_txt_path: Path, subject: str | None = None) -> list[dict]:
+    """Parse the pypdf-extracted text from a LoC transcript PDF into speaker turns.
+
+    Returns the same shape as parse_loc_xml: [{'speaker': X, 'text': Y, 'words': [...]}].
+
+    Heuristics:
+    - Normalize smart-quote artifacts via normalize_unicode (handles the `�` decode noise).
+    - Discard page-footer noise lines (the subject's name alone on a line, page numbers).
+    - Discard header metadata lines ("Interviewee:", "Interview Date:", ...).
+    - Detect speaker labels: ALL-CAPS strings or initials followed by ` : ` / `: `.
+    - Merge continuation lines into the current speaker's turn until the next label.
+    """
+    raw = pdf_txt_path.read_text(encoding="utf-8", errors="replace")
+    raw = normalize_unicode(raw)
+
+    # Build a footer-pattern from the subject name (e.g. "Betty Garman Robinson 1")
+    footer_re = None
+    if subject:
+        subj_pat = re.escape(subject)
+        # Match: "<subject>" possibly followed by digits, alone on its line
+        footer_re = re.compile(rf"^\s*{subj_pat}\s*\d*\s*$", re.IGNORECASE)
+
+    lines = raw.split("\n")
+    turns: list[dict] = []
+    cur_speaker: str | None = None
+    cur_text_parts: list[str] = []
+
+    def flush():
+        nonlocal cur_speaker, cur_text_parts
+        text = " ".join(cur_text_parts).strip()
+        text = re.sub(r"\s+", " ", text)
+        if text and cur_speaker:
+            words = tokenize(text)
+            if words:
+                turns.append({"speaker": cur_speaker, "text": text, "words": words})
+        cur_speaker = None
+        cur_text_parts = []
+
+    for raw_line in lines:
+        line = raw_line.rstrip()
+        if not line.strip():
+            continue
+        # Drop page footers (subject name alone + maybe a page number)
+        if footer_re and footer_re.match(line):
+            continue
+        # Drop standalone page numbers
+        if re.fullmatch(r"\s*\d+\s*", line):
+            continue
+        # Drop header metadata fields
+        if PDF_HEADER_RE.match(line.strip()):
+            continue
+        # Detect speaker label at line start
+        m = PDF_SPEAKER_RE.match(line)
+        if m:
+            flush()
+            cur_speaker = m.group(0).rstrip(": ").strip()
+            cur_text_parts = [line[m.end():].strip()]
+            continue
+        # Continuation of current turn
+        if cur_speaker is not None:
+            cur_text_parts.append(line.strip())
+    flush()
+    return turns
 
 
 def parse_loc_xml(xml_path: Path) -> list[dict]:
@@ -519,13 +594,20 @@ def locate_cues(cues: list[Cue], i1: int, i2: int) -> list[int]:
 def phase1(entry_dir_name: str) -> int:
     DIVERGENCES_DIR.mkdir(parents=True, exist_ok=True)
     info = parse_entry_dir(entry_dir_name)
-    if not info["loc_xml"].is_file():
-        print(f"  [skip] no LoC XML cached: {info['loc_xml']}")
-        return 1
     if not info["loc_resolution"].is_file():
         print(f"  [skip] no LoC resolution: {info['loc_resolution']}")
         return 1
     resolution = json.loads(info["loc_resolution"].read_text(encoding="utf-8"))
+
+    # Choose LoC source: prefer XML (TEI2), fall back to PDF-extracted text
+    loc_source_kind = None
+    if info["loc_xml"].is_file():
+        loc_source_kind = "xml"
+    elif info["loc_pdf_txt"].is_file():
+        loc_source_kind = "pdf_text"
+    else:
+        print(f"  [skip] neither LoC XML nor PDF text cached for this entry")
+        return 1
 
     cues = parse_srt(info["srt"])
     if not cues:
@@ -533,7 +615,10 @@ def phase1(entry_dir_name: str) -> int:
         return 1
     our_stream = cues_to_word_stream(cues)
 
-    loc_turns = parse_loc_xml(info["loc_xml"])
+    if loc_source_kind == "xml":
+        loc_turns = parse_loc_xml(info["loc_xml"])
+    else:
+        loc_turns = parse_loc_pdf_text(info["loc_pdf_txt"], subject=info["subject"])
     loc_stream = []
     for t in loc_turns:
         loc_stream.extend(t["words"])
@@ -582,12 +667,16 @@ def phase1(entry_dir_name: str) -> int:
             needs_model += 1
         enriched.append(rec)
 
+    item_url = resolution.get("loc_item_url") or (resolution.get("best_match") or {}).get("url")
+    match_score = resolution.get("match_score") or (resolution.get("best_match") or {}).get("score")
     out = {
         "subject": info["subject"],
         "entry_dir": entry_dir_name,
-        "loc_item_url": resolution.get("loc_item_url"),
+        "loc_item_url": item_url,
         "loc_xml_url": resolution.get("loc_xml_url"),
-        "loc_match_score": resolution.get("match_score"),
+        "loc_pdf_url": resolution.get("loc_pdf_url"),
+        "loc_source_kind": loc_source_kind,
+        "loc_match_score": match_score,
         "our_word_count": len(our_stream),
         "loc_word_count": len(loc_stream),
         "cue_count": len(cues),
