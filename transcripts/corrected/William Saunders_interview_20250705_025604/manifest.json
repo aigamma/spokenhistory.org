@@ -763,7 +763,7 @@
       "whisper": "Rob Nell",
       "candidate_correction": "Rob Nell",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Unverified local political figure // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Unverified local political figure // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "130.22",
@@ -803,14 +803,14 @@
     {
       "row_id": "130.44",
       "whisper": "Kaewon",
-      "candidate_correction": "(unknown name — possibly Cattle/Kaewon)",
+      "candidate_correction": "(unknown name \u2014 possibly Cattle/Kaewon)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Highlander 1959 raid arrestee"
     },
     {
       "row_id": "130.45",
       "whisper": "Alexander, who you know, these people, President Carter, Trump",
-      "candidate_correction": "Alexander (Strom Thurmond?) — likely Sen. Strom Thurmond + canonical 1980-era seat-resignation-for-judgeship plot",
+      "candidate_correction": "Alexander (Strom Thurmond?) \u2014 likely Sen. Strom Thurmond + canonical 1980-era seat-resignation-for-judgeship plot",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Unclear referent; speaker says \"Alexander\" but context is the 1980 SC senate maneuvering"
     },
@@ -889,7 +889,7 @@
       "whisper": "Rob Nell",
       "candidate_correction": "Robert F. \"Bobby\" Hill",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Reinforces Pass 1 #130.21 // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Reinforces Pass 1 #130.21 // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "130.P2.63",
@@ -924,7 +924,7 @@
       "whisper": "\"I AM SOMEBODY\" attribution-revision narrative",
       "candidate_correction": "I AM SOMEBODY\" originating with Otis Robinson",
       "confidence": "speaker-originating",
-      "notes": "Pass 1/2 caught. Worth flagging as a canonical-attribution-revision moment: Saunders's first-person testimony that \"I AM SOMEBODY\" originated with Otis Robinson at the April 4 1968 200-person hospital-workers-meeting — NOT with Jesse Jackson (whose 1971-onward PUSH-era \"I am somebody!\" call-and-response is canonically the popularization). Catalog observation; corpus add candidate (Otis Robinson) is more impactful than catalog change."
+      "notes": "Pass 1/2 caught. Worth flagging as a canonical-attribution-revision moment: Saunders's first-person testimony that \"I AM SOMEBODY\" originated with Otis Robinson at the April 4 1968 200-person hospital-workers-meeting \u2014 NOT with Jesse Jackson (whose 1971-onward PUSH-era \"I am somebody!\" call-and-response is canonically the popularization). Catalog observation; corpus add candidate (Otis Robinson) is more impactful than catalog change."
     },
     {
       "row_id": "130.P4.9",
@@ -1068,5 +1068,6 @@
     "preserved_verbatim_count": 439,
     "unresolved_count": 1363,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

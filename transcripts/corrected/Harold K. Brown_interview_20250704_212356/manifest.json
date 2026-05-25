@@ -464,7 +464,7 @@
     {
       "row_id": "55.P4.18",
       "whisper": "Charsey Affairs (US Embassy Lesotho)",
-      "correction": "Chargé d'Affaires",
+      "correction": "Charg\u00e9 d'Affaires",
       "confidence": "correct",
       "occurrences": 12,
       "file_paths": [
@@ -512,7 +512,7 @@
     {
       "row_id": "55.P2.39",
       "whisper": "Charles (\"Charles, I mean Lewis\")",
-      "candidate_correction": "(uncertain — possibly Charles Sherrod or Charles McDew)",
+      "candidate_correction": "(uncertain \u2014 possibly Charles Sherrod or Charles McDew)",
       "confidence": "low",
       "notes": "Brown stumbled over Lewis's first name; possible reference to Charles Sherrod (#18) or Charles McDew (#16)"
     },
@@ -528,35 +528,35 @@
       "whisper": "Mrs. Hill / Mrs. Shea / Cassandra Shea",
       "candidate_correction": "Cassandra Shay",
       "confidence": "speaker-originating",
-      "notes": "Speaker's York PA junior high homeroom teacher; spelling ambiguity between \"Shea\" / \"Shay\" / \"Shea\" — single-source unverifiable; downgrade to surface-spelling-ambiguous."
+      "notes": "Speaker's York PA junior high homeroom teacher; spelling ambiguity between \"Shea\" / \"Shay\" / \"Shea\" \u2014 single-source unverifiable; downgrade to surface-spelling-ambiguous."
     },
     {
       "row_id": "55.P4.14",
       "whisper": "imminary",
-      "candidate_correction": "(likely \"etcetera\" or \"and other\" — context unclear)",
+      "candidate_correction": "(likely \"etcetera\" or \"and other\" \u2014 context unclear)",
       "confidence": "low",
-      "notes": "\"they didn't hire blacks even as, with because of those, those, those, baggers... much less than other positions of cashier and imaginary.\" — Whisper renders an ambiguous filler word as \"imaginary\" / \"imminary\"; possibly speaker said \"and so on\" or \"etcetera\" or a specific grocery-store role. Low confidence; flag for adversarial."
+      "notes": "\"they didn't hire blacks even as, with because of those, those, those, baggers... much less than other positions of cashier and imaginary.\" \u2014 Whisper renders an ambiguous filler word as \"imaginary\" / \"imminary\"; possibly speaker said \"and so on\" or \"etcetera\" or a specific grocery-store role. Low confidence; flag for adversarial."
     },
     {
       "row_id": "55.P4.15",
       "whisper": "block blocking",
       "candidate_correction": "block-busting",
       "confidence": "medium",
-      "notes": "\"But we've got to find a way to show our kids that, you know, say, oh, how brown, Mr. Brown is a millionaire. He is, yeah. Who he played for? Exactly. Exactly. And they've got to see examples of that... At least they see it happening with one of the block blocking, you know, these the guy in the music industry.\" — Brown appears to be using \"block\" colloquially (i.e., \"guys from the block\") rather than referencing block-busting; rendering may be correct. Demote to medium and flag for adversarial."
+      "notes": "\"But we've got to find a way to show our kids that, you know, say, oh, how brown, Mr. Brown is a millionaire. He is, yeah. Who he played for? Exactly. Exactly. And they've got to see examples of that... At least they see it happening with one of the block blocking, you know, these the guy in the music industry.\" \u2014 Brown appears to be using \"block\" colloquially (i.e., \"guys from the block\") rather than referencing block-busting; rendering may be correct. Demote to medium and flag for adversarial."
     },
     {
       "row_id": "55.P4.19",
       "whisper": "med meetings",
       "candidate_correction": "(likely \"all meetings\" or \"many meetings\")",
       "confidence": "low",
-      "notes": "\"I was just dead set against that because I was very, very interested in surn with self-determination. And I used that term in med meetings in core.\" — Whisper renders ambiguous filler as \"med\"; possibly \"all\" or \"many.\" Low confidence."
+      "notes": "\"I was just dead set against that because I was very, very interested in surn with self-determination. And I used that term in med meetings in core.\" \u2014 Whisper renders ambiguous filler as \"med\"; possibly \"all\" or \"many.\" Low confidence."
     },
     {
       "row_id": "55.P4.20",
       "whisper": "ass of people / there's the ass of people",
       "candidate_correction": "a heck of a lot of people",
       "confidence": "low",
-      "notes": "\"But the reply to that, I heard someone say, well, delegate to whom. You know, who? There's the ass of people there.\" — Whisper renders ambiguous noun phrase as \"ass of\"; possibly \"lots of\" or \"a host of.\" Low confidence; flag for adversarial."
+      "notes": "\"But the reply to that, I heard someone say, well, delegate to whom. You know, who? There's the ass of people there.\" \u2014 Whisper renders ambiguous noun phrase as \"ass of\"; possibly \"lots of\" or \"a host of.\" Low confidence; flag for adversarial."
     }
   ],
   "skipped_rows": [
@@ -630,5 +630,6 @@
     "preserved_verbatim_count": 393,
     "unresolved_count": 851,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

@@ -524,7 +524,7 @@
     {
       "row_id": "90.P4.6",
       "whisper": "\"the issue about the armed services\" / desegregating federal installations via Roosevelt executive order",
-      "correction": "Executive Order 8802 (June 25, 1941) — Fair Employment Practices Committee",
+      "correction": "Executive Order 8802 (June 25, 1941) \u2014 Fair Employment Practices Committee",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -559,42 +559,42 @@
       "whisper": "Willie Nare / Willie Norris",
       "candidate_correction": "(Clarence) \"Willie\" Norris",
       "confidence": "speaker-originating",
-      "notes": "Same person — \"Willie\" may be a nickname // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Same person \u2014 \"Willie\" may be a nickname // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "90.P2.9",
       "whisper": "\"John severe\" / \"Doctor severe\" / \"John Severe\"",
-      "candidate_correction": "(Dr. John Severn / Sevier — uncertain)",
+      "candidate_correction": "(Dr. John Severn / Sevier \u2014 uncertain)",
       "confidence": "speaker-originating",
-      "notes": "Speaker's white grand-uncle, Haywood County TN doctor + coroner. Pass 1 #90.6 flagged as \"John severe / Doctor severe\" but the spelling Severn or Sevier is plausible from the local TN context. The speaker pronounces it three syllables (\"severe-uh\") — needs research"
+      "notes": "Speaker's white grand-uncle, Haywood County TN doctor + coroner. Pass 1 #90.6 flagged as \"John severe / Doctor severe\" but the spelling Severn or Sevier is plausible from the local TN context. The speaker pronounces it three syllables (\"severe-uh\") \u2014 needs research"
     },
     {
       "row_id": "90.P2.19",
       "whisper": "\"Bobby Branch\" / \"Bobby Branch\"",
       "candidate_correction": "Bobbie Branch",
       "confidence": "medium",
-      "notes": "Pass 1 #90.21 marked as speaker-originating but the actual canonical NAACP staffer was Bobbie (sometimes Bobbie Wells-Hooper) — likely correct as spelled by the speaker but Whisper has \"Bobby\" (with -y) consistently"
+      "notes": "Pass 1 #90.21 marked as speaker-originating but the actual canonical NAACP staffer was Bobbie (sometimes Bobbie Wells-Hooper) \u2014 likely correct as spelled by the speaker but Whisper has \"Bobby\" (with -y) consistently"
     },
     {
       "row_id": "90.P2.24",
       "whisper": "\"John Roxborough\" + \"Detroit branch\"",
       "candidate_correction": "John W. Roxborough",
       "confidence": "speaker-originating",
-      "notes": "Speaker's husband — canonical Detroit NAACP Legal Redress Committee chairman; Joe Louis manager. Pass 1 cross-references list this. Speaker introduces him obliquely; worth flagging that the audio confirms his Detroit-NAACP role"
+      "notes": "Speaker's husband \u2014 canonical Detroit NAACP Legal Redress Committee chairman; Joe Louis manager. Pass 1 cross-references list this. Speaker introduces him obliquely; worth flagging that the audio confirms his Detroit-NAACP role"
     },
     {
       "row_id": "90.P2.33",
       "whisper": "\"Willie Nare\"",
       "candidate_correction": "Willie Norris",
       "confidence": "medium",
-      "notes": "Pass 1 #90.20 caught \"Willie Nare / Willie Norris\"; the \"Nare\" is the Whisper-degraded form of \"Norris\" — speaker uses both forms because \"Willie\" was Clarence Norris's known nickname // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Pass 1 #90.20 caught \"Willie Nare / Willie Norris\"; the \"Nare\" is the Whisper-degraded form of \"Norris\" \u2014 speaker uses both forms because \"Willie\" was Clarence Norris's known nickname // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "90.P4.5",
       "whisper": "\"Form of General Counsel Robert Carter, it made some 36 appearances before the Supreme Court, and won about 30 of those cases\"",
-      "candidate_correction": "(Likely a garbled/inflated claim — see fact-check below)",
+      "candidate_correction": "(Likely a garbled/inflated claim \u2014 see fact-check below)",
       "confidence": "flagged",
-      "notes": "Speaker's claim that Bob Carter made 36 Supreme Court appearances and won ~30 is not supported by the canonical record. Robert L. Carter's documented Supreme Court arguments are in the low-to-mid teens; the canonical 32-cases-29-wins figure belongs to Thurgood Marshall (per civil_rights_facts.json line 279). Almost certainly a speaker memory-conflation rather than a Whisper error — the \"form of\" leading the sentence is \"Former\" garbled. Worth flagging for adversarial review."
+      "notes": "Speaker's claim that Bob Carter made 36 Supreme Court appearances and won ~30 is not supported by the canonical record. Robert L. Carter's documented Supreme Court arguments are in the low-to-mid teens; the canonical 32-cases-29-wins figure belongs to Thurgood Marshall (per civil_rights_facts.json line 279). Almost certainly a speaker memory-conflation rather than a Whisper error \u2014 the \"form of\" leading the sentence is \"Former\" garbled. Worth flagging for adversarial review."
     },
     {
       "row_id": "90.P4.8",
@@ -605,17 +605,17 @@
     },
     {
       "row_id": "90.P4.9",
-      "whisper": "\"Galaté\"",
-      "candidate_correction": "(likely \"ICC\" or \"Capitol\" — uncertain)",
+      "whisper": "\"Galat\u00e9\"",
+      "candidate_correction": "(likely \"ICC\" or \"Capitol\" \u2014 uncertain)",
       "confidence": "low",
-      "notes": "Speaker says of the 1957 Civil Rights Act lobbying: \"it was within the confines of the Galaté, but it wasn't illegal act.\" Cannot disambiguate without audio re-listen. Possibly \"Capitol\" or \"the lobby\" mangled. Speaker-originating low-confidence rendering."
+      "notes": "Speaker says of the 1957 Civil Rights Act lobbying: \"it was within the confines of the Galat\u00e9, but it wasn't illegal act.\" Cannot disambiguate without audio re-listen. Possibly \"Capitol\" or \"the lobby\" mangled. Speaker-originating low-confidence rendering."
     },
     {
       "row_id": "90.P4.12",
       "whisper": "\"Tia, a Thurgood Marshall\"",
-      "candidate_correction": "(i.e., \"T.E.A. Thurgood Marshall\"? — likely \"the earlier\" or speaker-hesitation)",
+      "candidate_correction": "(i.e., \"T.E.A. Thurgood Marshall\"? \u2014 likely \"the earlier\" or speaker-hesitation)",
       "confidence": "low",
-      "notes": "Speaker says \"And before that, Tia, a Thurgood Marshall, before he became a Justice when he was NAACP Counsel...\" The \"Tia, a\" is likely speaker hesitation rendered phonetically by Whisper — possibly \"the earlier\" or \"ahead of him\". Not a canonical figure. Speaker-originating disfluency."
+      "notes": "Speaker says \"And before that, Tia, a Thurgood Marshall, before he became a Justice when he was NAACP Counsel...\" The \"Tia, a\" is likely speaker hesitation rendered phonetically by Whisper \u2014 possibly \"the earlier\" or \"ahead of him\". Not a canonical figure. Speaker-originating disfluency."
     }
   ],
   "skipped_rows": [
@@ -745,5 +745,6 @@
     "preserved_verbatim_count": 398,
     "unresolved_count": 772,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

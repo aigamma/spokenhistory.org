@@ -605,35 +605,35 @@
       "whisper": "I support them in the second grade",
       "candidate_correction": "I'd been in the second grade",
       "confidence": "medium",
-      "notes": "\"I had a sister coming into the first grade, the same time, at that same time. I support them in the second grade\" — Whisper-degraded; speaker means \"I had been put in\" or \"I would have been in\"; preserved as medium"
+      "notes": "\"I had a sister coming into the first grade, the same time, at that same time. I support them in the second grade\" \u2014 Whisper-degraded; speaker means \"I had been put in\" or \"I would have been in\"; preserved as medium"
     },
     {
       "row_id": "114.P2.23",
       "whisper": "the local vendors, some",
       "candidate_correction": "the local Klan members",
       "confidence": "low",
-      "notes": "\"we found out there was one of the local vendors, some that did it\" — Whisper rendered \"the local vendor's son\" or similar; possibly the local Klan members' children"
+      "notes": "\"we found out there was one of the local vendors, some that did it\" \u2014 Whisper rendered \"the local vendor's son\" or similar; possibly the local Klan members' children"
     },
     {
       "row_id": "114.P2.28",
       "whisper": "a pressure in Albany",
       "candidate_correction": "a sheriff in Albany",
       "confidence": "flagged",
-      "notes": "\"Was this pressure? Was this still a pressure in Albany?\" — Whisper substituted \"pressure\" for \"sheriff\" (consonant-cluster substitution); canonical Lawrence E. \"Roy\" Wills Albany Dougherty County sheriff or Cull Campbell Dougherty sheriff"
+      "notes": "\"Was this pressure? Was this still a pressure in Albany?\" \u2014 Whisper substituted \"pressure\" for \"sheriff\" (consonant-cluster substitution); canonical Lawrence E. \"Roy\" Wills Albany Dougherty County sheriff or Cull Campbell Dougherty sheriff"
     },
     {
       "row_id": "114.P2.29",
       "whisper": "a pressure was about to one day",
       "candidate_correction": "a sheriff was about to take office",
       "confidence": "low",
-      "notes": "\"Well, it was about to one day. Okay. I'm not sure what they were related\" — Whisper rendering unclear; preserved as low-confidence"
+      "notes": "\"Well, it was about to one day. Okay. I'm not sure what they were related\" \u2014 Whisper rendering unclear; preserved as low-confidence"
     },
     {
       "row_id": "114.P2.35",
       "whisper": "black land on us",
       "candidate_correction": "black land on us",
       "confidence": "speaker-originating",
-      "notes": "\"directed, you know, the racial thing directed towards my father, because they were like, they were black land on us. Right. And loans were foreclosed\" — speaker means his father was a Black landowner whose loans were foreclosed; preserve as speaker-originating"
+      "notes": "\"directed, you know, the racial thing directed towards my father, because they were like, they were black land on us. Right. And loans were foreclosed\" \u2014 speaker means his father was a Black landowner whose loans were foreclosed; preserve as speaker-originating"
     },
     {
       "row_id": "114.P2.45",
@@ -654,14 +654,14 @@
       "whisper": "a picnic chair",
       "candidate_correction": "a pneumatic jackhammer",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"I'm going to be doing something. They gave me a picnic chair\" — speaker is describing the basic-jobs assignment at Firestone construction site; \"picnic chair\" is degraded Whisper rendering; possibly \"pneumatic chair\" or \"picky chair\" or speaker meant \"picnic table\" sized work area; preserved as low-confidence"
+      "notes": "\"I'm going to be doing something. They gave me a picnic chair\" \u2014 speaker is describing the basic-jobs assignment at Firestone construction site; \"picnic chair\" is degraded Whisper rendering; possibly \"pneumatic chair\" or \"picky chair\" or speaker meant \"picnic table\" sized work area; preserved as low-confidence"
     },
     {
       "row_id": "114.P2.54",
       "whisper": "the time machine",
       "candidate_correction": "the diecutting",
       "confidence": "low",
-      "notes": "\"the machine sitting there, you know, the time machine that\" — Whisper rendering unclear; speaker describes industrial-equipment installation; preserved as low-confidence"
+      "notes": "\"the machine sitting there, you know, the time machine that\" \u2014 Whisper rendering unclear; speaker describes industrial-equipment installation; preserved as low-confidence"
     },
     {
       "row_id": "114.P2.59",
@@ -696,19 +696,19 @@
       "whisper": "self-adjointed projects",
       "candidate_correction": "Self-Help projects",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"There were several other people, you know, also moved out. Some of them were self-adjointed projects, and some people from a local community\" — Whisper-degraded common-noun; possibly \"self-help\" or \"self-organized\" projects; preserved as low-confidence"
+      "notes": "\"There were several other people, you know, also moved out. Some of them were self-adjointed projects, and some people from a local community\" \u2014 Whisper-degraded common-noun; possibly \"self-help\" or \"self-organized\" projects; preserved as low-confidence"
     },
     {
       "row_id": "114.P2.93",
       "whisper": "a microcarging of the story",
       "candidate_correction": "a micro-narrative",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"I'm very happy to tell Maulil, microcarging of the story\" — Whisper-degraded common-noun; preserved as low-confidence"
+      "notes": "\"I'm very happy to tell Maulil, microcarging of the story\" \u2014 Whisper-degraded common-noun; preserved as low-confidence"
     },
     {
       "row_id": "114.P2.94",
       "whisper": "Maulil",
-      "candidate_correction": "(uncertain — possibly: Mhar / \"you-all\" / \"my Lord\")",
+      "candidate_correction": "(uncertain \u2014 possibly: Mhar / \"you-all\" / \"my Lord\")",
       "confidence": "low",
       "notes": "Same context as P2.93; unclear Whisper rendering"
     },
@@ -717,7 +717,7 @@
       "whisper": "\"they might be, you know, disincent of something\"",
       "candidate_correction": "they might be, you know, dispensed of (done away with) somehow",
       "confidence": "medium",
-      "notes": "Speaker describing fear that his cousins (taken from school bus by sheriff, held 3 days incommunicado) \"might be, you know, disincent of something. And they're not just the police\" — Whisper-degraded euphemism for being murdered or disappeared. Canonical 1960s Black-Southern fear-of-disappearance phrasing; preserve as MEDIUM common-noun."
+      "notes": "Speaker describing fear that his cousins (taken from school bus by sheriff, held 3 days incommunicado) \"might be, you know, disincent of something. And they're not just the police\" \u2014 Whisper-degraded euphemism for being murdered or disappeared. Canonical 1960s Black-Southern fear-of-disappearance phrasing; preserve as MEDIUM common-noun."
     },
     {
       "row_id": "114.P4.11",
@@ -805,5 +805,6 @@
     "preserved_verbatim_count": 275,
     "unresolved_count": 503,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

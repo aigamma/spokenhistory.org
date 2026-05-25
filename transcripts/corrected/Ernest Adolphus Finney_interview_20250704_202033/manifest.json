@@ -636,7 +636,7 @@
       "whisper": "Dr. O'Rouven",
       "candidate_correction": "(uncertain Morris College president)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"the President of Morris College, Dr. O'Rouven\"; canonical Morris College president of that era (likely Dr. Odell R. Reuben — 1974–2000); not all dates align, but possibly Reuben's predecessor; canonical name not yet verified"
+      "notes": "\"the President of Morris College, Dr. O'Rouven\"; canonical Morris College president of that era (likely Dr. Odell R. Reuben \u2014 1974\u20132000); not all dates align, but possibly Reuben's predecessor; canonical name not yet verified"
     },
     {
       "row_id": "39.P2.3",
@@ -650,7 +650,7 @@
       "whisper": "\"according to the stirs they told me\"",
       "candidate_correction": "according to the stories they told me",
       "confidence": "medium",
-      "notes": "\"according to the stirs they told me he got a call from Claflin College in Orangeburg\"; speaker most likely says \"the stories they told me\" — Whisper homophone \"stories\"→\"stirs\"."
+      "notes": "\"according to the stirs they told me he got a call from Claflin College in Orangeburg\"; speaker most likely says \"the stories they told me\" \u2014 Whisper homophone \"stories\"\u2192\"stirs\"."
     },
     {
       "row_id": "39.P4.6",
@@ -664,14 +664,14 @@
       "whisper": "\"Not only did I teach school, but in the evenings I worked with Dan in Conway\"",
       "candidate_correction": "Not only did I teach school, but in the evenings I worked down in Conway",
       "confidence": "medium",
-      "notes": "\"in the evenings I worked with Dan in Conway. And I picked up a job of two working at a hotel\"; \"with Dan\" most likely \"down in\" — no Dan figure introduced anywhere else; speaker is describing his Conway teaching + Ocean Forest Hotel waiter side-work."
+      "notes": "\"in the evenings I worked with Dan in Conway. And I picked up a job of two working at a hotel\"; \"with Dan\" most likely \"down in\" \u2014 no Dan figure introduced anywhere else; speaker is describing his Conway teaching + Ocean Forest Hotel waiter side-work."
     },
     {
       "row_id": "39.P4.21",
       "whisper": "\"I think it proved Ben\"",
       "candidate_correction": "I think it proved Ben",
       "confidence": "speaker-originating",
-      "notes": "\"Not only did I resign, but a man by the name of Ben Peyton resigned. I think it proved Ben\"; speaker's fragmentary recall — likely \"I think his name was Ben\" (Payton). Disfluency not Whisper-error. Maintained speaker-originating."
+      "notes": "\"Not only did I resign, but a man by the name of Ben Peyton resigned. I think it proved Ben\"; speaker's fragmentary recall \u2014 likely \"I think his name was Ben\" (Payton). Disfluency not Whisper-error. Maintained speaker-originating."
     },
     {
       "row_id": "39.P4.25",
@@ -767,5 +767,6 @@
     "preserved_verbatim_count": 150,
     "unresolved_count": 509,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

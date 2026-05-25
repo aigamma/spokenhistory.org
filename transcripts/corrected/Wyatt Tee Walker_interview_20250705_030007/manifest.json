@@ -272,7 +272,7 @@
     {
       "row_id": "132.28",
       "whisper": "Ruben Gomez",
-      "correction": "Rubén Díaz Sr",
+      "correction": "Rub\u00e9n D\u00edaz Sr",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -344,7 +344,7 @@
     {
       "row_id": "132.39",
       "whisper": "the recent undetrieve",
-      "correction": "the raison d'être",
+      "correction": "the raison d'\u00eatre",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -1275,7 +1275,7 @@
       "whisper": "Robin Wilkinson / Roy Wilkinson",
       "candidate_correction": "(likely) Rosa Guy or Ruby Dee",
       "confidence": "low",
-      "notes": "Walker says \"someone told me [she/he] was the first one to go on the show\" — likely a Harlem cultural figure"
+      "notes": "Walker says \"someone told me [she/he] was the first one to go on the show\" \u2014 likely a Harlem cultural figure"
     },
     {
       "row_id": "132.35",
@@ -1301,7 +1301,7 @@
     {
       "row_id": "132.P2.18",
       "whisper": "passages of former Rubo Task",
-      "candidate_correction": "(uncertain — possibly \"pastors of former [Birmingham] Boycott\" or \"pastors of formula tasks\" or \"passages of Holy Scripture\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"pastors of former [Birmingham] Boycott\" or \"pastors of formula tasks\" or \"passages of Holy Scripture\")",
       "confidence": "low",
       "notes": "Walker describing how he built SCLC by \"connecting churches and pastors\" of [something]; flag for human review"
     },
@@ -1315,9 +1315,9 @@
     {
       "row_id": "132.P2.44",
       "whisper": "thread, Wilkinson was the first one",
-      "candidate_correction": "(uncertain — possibly Ruby Dee or Rosa Guy or Adam Clayton Powell Jr.)",
+      "candidate_correction": "(uncertain \u2014 possibly Ruby Dee or Rosa Guy or Adam Clayton Powell Jr.)",
       "confidence": "low",
-      "notes": "Pass 1 #132.34 flagged this — Pass 2 confirms still unresolved; Maya Angelou referral story; the \"thread\" is severe Whisper distortion"
+      "notes": "Pass 1 #132.34 flagged this \u2014 Pass 2 confirms still unresolved; Maya Angelou referral story; the \"thread\" is severe Whisper distortion"
     },
     {
       "row_id": "132.P2.52",
@@ -1338,28 +1338,28 @@
       "whisper": "I, putting, I speak through the opponent's ears",
       "candidate_correction": "(putting), in essence, through the opponent's ears",
       "confidence": "low",
-      "notes": "Speaker-originating fantasy of plastic-bomb-through-segregationists'-ears — Whisper rendered the parenthetical aside as \"I speak\""
+      "notes": "Speaker-originating fantasy of plastic-bomb-through-segregationists'-ears \u2014 Whisper rendered the parenthetical aside as \"I speak\""
     },
     {
       "row_id": "132.P2.67",
       "whisper": "John Stone, Mark Adini",
       "candidate_correction": "(likely ANC contacts; possibly Joe Slovo + [unknown])",
       "confidence": "low",
-      "notes": "Pass 1 #132.29 + #132.49 flagged these — Pass 2 still unresolved; major South African ANC leader Joe Slovo's name severely distorted as \"John Stone\"; \"Mark Adini\" possibly \"Mac Maharaj\" or similar"
+      "notes": "Pass 1 #132.29 + #132.49 flagged these \u2014 Pass 2 still unresolved; major South African ANC leader Joe Slovo's name severely distorted as \"John Stone\"; \"Mark Adini\" possibly \"Mac Maharaj\" or similar"
     },
     {
       "row_id": "132.P4.20",
       "whisper": "\"Two of my children were sleeping in the hotel in the lobby, in the hotel\"",
       "candidate_correction": "(verbal stutter, kept as speaker-originating)",
       "confidence": "speaker-originating",
-      "notes": "Theresa Walker's verbal disfluency during Mother's Day 1963 recounting — keep as speaker-originating; do not edit."
+      "notes": "Theresa Walker's verbal disfluency during Mother's Day 1963 recounting \u2014 keep as speaker-originating; do not edit."
     },
     {
       "row_id": "132.P4.22",
       "whisper": "\"we just decided to go to a place and have some demonstration, by the way\"",
       "candidate_correction": "...have some demonstration, *that day*",
       "confidence": "medium",
-      "notes": "Walker on outside-observer misunderstanding of SCLC tactics. \"By the way\" → \"that day\" (= showing up on a single day and demonstrating without preparation, contrasted with Walker's year-of-advance Project C planning). Speaker contrast suggests temporal \"that day\" not the discourse marker \"by the way.\" Flag for review."
+      "notes": "Walker on outside-observer misunderstanding of SCLC tactics. \"By the way\" \u2192 \"that day\" (= showing up on a single day and demonstrating without preparation, contrasted with Walker's year-of-advance Project C planning). Speaker contrast suggests temporal \"that day\" not the discourse marker \"by the way.\" Flag for review."
     },
     {
       "row_id": "132.P4.25",
@@ -1371,7 +1371,7 @@
     {
       "row_id": "132.P4.28",
       "whisper": "\"he preached a sermon, not at midnight, I remember that\"",
-      "candidate_correction": "(uncertain — possibly \"an **eight** o'clock midnight\" or \"a midnight service\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"an **eight** o'clock midnight\" or \"a midnight service\")",
       "confidence": "low",
       "notes": "Walker on MLK's celebrant role at his 1967 Canaan Baptist installation. \"Not at midnight\" is non-canonical context; could be referring to a specific installation-service hour. Flag for adversarial review."
     },
@@ -1401,7 +1401,7 @@
       "whisper": "\"And it happened that it was the first time the library had been assaulted in the south\"",
       "candidate_correction": "the first time the library had been *assailed in the South\"",
       "confidence": "medium",
-      "notes": "(Already in Pass 2 #132.P2.13) — re-examination suggests \"assailed\" (verb form of \"assault\" meaning challenged/attacked, not physically) rather than the literal \"assaulted.\" Either reading preserves Walker's claim of canonical first Southern library integration. Maintain at medium."
+      "notes": "(Already in Pass 2 #132.P2.13) \u2014 re-examination suggests \"assailed\" (verb form of \"assault\" meaning challenged/attacked, not physically) rather than the literal \"assaulted.\" Either reading preserves Walker's claim of canonical first Southern library integration. Maintain at medium."
     }
   ],
   "skipped_rows": [
@@ -1487,5 +1487,6 @@
     "preserved_verbatim_count": 265,
     "unresolved_count": 500,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

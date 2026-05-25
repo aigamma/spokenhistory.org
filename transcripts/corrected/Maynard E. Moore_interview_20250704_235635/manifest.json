@@ -32,7 +32,7 @@
     {
       "row_id": "88.4",
       "whisper": "Camp Lee, but now Fort Lee",
-      "correction": "Camp Lee → Fort Lee",
+      "correction": "Camp Lee \u2192 Fort Lee",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -278,5 +278,6 @@
     "preserved_verbatim_count": 25,
     "unresolved_count": 35,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

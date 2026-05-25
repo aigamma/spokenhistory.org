@@ -235,7 +235,7 @@
     },
     {
       "row_id": "67.27",
-      "whisper": "Snić",
+      "whisper": "Sni\u0107",
       "correction": "SNCC",
       "confidence": "high",
       "occurrences": 3,
@@ -632,7 +632,7 @@
     {
       "row_id": "67.P4.26",
       "whisper": "\"at one time I remember there was a white woman who stopped to pick me up. But then, you know, as I was walking down the road and then she realized who I was and she wouldn't\"",
-      "correction": "[a white woman initially stopped to give her a ride, then refused once she realized who Embry was — i.e., a SNCC-affiliated white outsider]",
+      "correction": "[a white woman initially stopped to give her a ride, then refused once she realized who Embry was \u2014 i.e., a SNCC-affiliated white outsider]",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -685,12 +685,12 @@
       "whisper": "UNC State",
       "candidate_correction": "NC State",
       "confidence": "medium",
-      "notes": "\"Al was at UNC State teaching history\"; Lowenstein taught at NC State 1964–66 — likely intent"
+      "notes": "\"Al was at UNC State teaching history\"; Lowenstein taught at NC State 1964\u201366 \u2014 likely intent"
     },
     {
       "row_id": "67.26",
       "whisper": "Ed V. Brickialpister",
-      "candidate_correction": "(uncertain — possibly Ed Pister, Ed Whitfield, or Ed Spalding)",
+      "candidate_correction": "(uncertain \u2014 possibly Ed Pister, Ed Whitfield, or Ed Spalding)",
       "confidence": "low",
       "notes": "\"good friends like Ed V. Brickialpister. From Union, right?\"; Union seminary cohort name not in canonical corpus; multiple plausible attributions"
     },
@@ -713,19 +713,19 @@
       "whisper": "Larry Bill",
       "candidate_correction": "(likely \"Lavinia Bell\" or another local name; uncertain)",
       "confidence": "low",
-      "notes": "Local Nashville context — speaker recalled name in conversation"
+      "notes": "Local Nashville context \u2014 speaker recalled name in conversation"
     },
     {
       "row_id": "67.41",
       "whisper": "March on Charlotte (1964)",
       "candidate_correction": "March on Charlotte",
       "confidence": "speaker-originating",
-      "notes": "Speaker's own organizing project — May 1964 civil rights signatures-collection march in Charlotte, NC"
+      "notes": "Speaker's own organizing project \u2014 May 1964 civil rights signatures-collection march in Charlotte, NC"
     },
     {
       "row_id": "67.43",
       "whisper": "Mustang year",
-      "candidate_correction": "(uncertain — possibly \"must-yang year\" or local term)",
+      "candidate_correction": "(uncertain \u2014 possibly \"must-yang year\" or local term)",
       "confidence": "low",
       "notes": "\"We were in a Mustang year at Davidson\"; possibly a Davidson-specific term or Whisper mishearing"
     },
@@ -741,7 +741,7 @@
       "whisper": "Frederick",
       "candidate_correction": "Frederick",
       "confidence": "speaker-originating",
-      "notes": "Speaker's childhood Black playmate, nephew of his family's housekeeper — speaker's own recall, not a canonical name"
+      "notes": "Speaker's childhood Black playmate, nephew of his family's housekeeper \u2014 speaker's own recall, not a canonical name"
     },
     {
       "row_id": "67.48",
@@ -760,37 +760,37 @@
     {
       "row_id": "67.P2.8",
       "whisper": "wait till we get the bird clock",
-      "candidate_correction": "(uncertain — local Davidson reference, possibly Bell Tower / Chimes)",
+      "candidate_correction": "(uncertain \u2014 local Davidson reference, possibly Bell Tower / Chimes)",
       "confidence": "low",
-      "notes": "\"Way till we get the bird clock. I don't always go off at the same time\"; possibly Davidson's Chambers Building bell tower or a particular campus clock — speaker recall"
+      "notes": "\"Way till we get the bird clock. I don't always go off at the same time\"; possibly Davidson's Chambers Building bell tower or a particular campus clock \u2014 speaker recall"
     },
     {
       "row_id": "67.P2.24",
       "whisper": "Mustang year",
-      "candidate_correction": "(uncertain — possibly Davidson \"Wildcat\" reference or \"the senior year\")",
+      "candidate_correction": "(uncertain \u2014 possibly Davidson \"Wildcat\" reference or \"the senior year\")",
       "confidence": "low",
-      "notes": "\"We were in a Mustang year at Davidson\"; Pass 1 noted uncertainty — Davidson's mascot is the Wildcats, not Mustangs; possibly Whisper rendering of \"we were in a maelstrom year\" or \"we were in a master year\" (senior year)"
+      "notes": "\"We were in a Mustang year at Davidson\"; Pass 1 noted uncertainty \u2014 Davidson's mascot is the Wildcats, not Mustangs; possibly Whisper rendering of \"we were in a maelstrom year\" or \"we were in a master year\" (senior year)"
     },
     {
       "row_id": "67.P4.2",
       "whisper": "\"perhaps a cheering church\"",
       "candidate_correction": "Presbyterian church",
       "confidence": "medium",
-      "notes": "Embry describing Davidson family churchgoing: \"most people were quite religious in that era, went to church, and so it was perhaps a cheering church\". Davidson, NC is a historically Presbyterian-college town (Davidson College itself founded 1837 by Presbyterians); \"cheering\" is a phonetic collision with \"Presbyterian\" reduced in connected speech (\"Pres-b'-teer-yan\" → \"a-cheering\"). Pass 4 flags as likely but not certain — possibly also \"shearing\" or other denominational term."
+      "notes": "Embry describing Davidson family churchgoing: \"most people were quite religious in that era, went to church, and so it was perhaps a cheering church\". Davidson, NC is a historically Presbyterian-college town (Davidson College itself founded 1837 by Presbyterians); \"cheering\" is a phonetic collision with \"Presbyterian\" reduced in connected speech (\"Pres-b'-teer-yan\" \u2192 \"a-cheering\"). Pass 4 flags as likely but not certain \u2014 possibly also \"shearing\" or other denominational term."
     },
     {
       "row_id": "67.P4.18",
       "whisper": "\"in the US. And in Portland, it was all, I guess, an adventure\"",
       "candidate_correction": "in the US, and in [a sense?] it was all, I guess, an adventure",
       "confidence": "low",
-      "notes": "Embry describing the summer-1966 SW Georgia decision: \"Big adventure together. And in the US. And in Portland, it was all, I guess, an adventure\". \"Portland\" is anomalous here — neither Howell has a Portland, OR/ME connection at this point in the narrative. Likely Whisper substitution for \"in part\" or \"in a sense\" or \"in any event\". Flag for adversarial review."
+      "notes": "Embry describing the summer-1966 SW Georgia decision: \"Big adventure together. And in the US. And in Portland, it was all, I guess, an adventure\". \"Portland\" is anomalous here \u2014 neither Howell has a Portland, OR/ME connection at this point in the narrative. Likely Whisper substitution for \"in part\" or \"in a sense\" or \"in any event\". Flag for adversarial review."
     },
     {
       "row_id": "67.P4.27",
       "whisper": "\"It was sponsored by something called, gosh, I can't remember. But it was somewhat radical, Christian, ecumenical, something, an institute. That's it. That's it.\"",
       "candidate_correction": "[Joe describing the pre-Albany 1966 SNCC training conference at old Wake Forest campus]",
       "confidence": "low",
-      "notes": "The training conference described — radical Christian ecumenical institute, summer 1966, old Wake Forest campus — fits the profile of the \"Ecumenical Institute\" or \"Institute for Cultural Affairs\" or related early-IFC organization, but Joe explicitly says he cannot remember the name. Pass 4 flags as research opportunity: identifying the exact organization that hosted this 1966 SW Georgia volunteer training would be a corpus-level finding."
+      "notes": "The training conference described \u2014 radical Christian ecumenical institute, summer 1966, old Wake Forest campus \u2014 fits the profile of the \"Ecumenical Institute\" or \"Institute for Cultural Affairs\" or related early-IFC organization, but Joe explicitly says he cannot remember the name. Pass 4 flags as research opportunity: identifying the exact organization that hosted this 1966 SW Georgia volunteer training would be a corpus-level finding."
     }
   ],
   "skipped_rows": [
@@ -886,5 +886,6 @@
     "preserved_verbatim_count": 170,
     "unresolved_count": 358,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

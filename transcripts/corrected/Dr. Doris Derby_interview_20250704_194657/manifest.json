@@ -332,7 +332,7 @@
     {
       "row_id": "32.P2.2",
       "whisper": "The March on Washington by Rustin, his group",
-      "correction": "The March on Washington — Bayard Rustin's group",
+      "correction": "The March on Washington \u2014 Bayard Rustin's group",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -393,14 +393,14 @@
       "whisper": "Bill Burt",
       "candidate_correction": "Bill Burt",
       "confidence": "low",
-      "notes": "Edited the Mississippi Free Press, a real 1962–64 movement-era newspaper; name preserved pending verification"
+      "notes": "Edited the Mississippi Free Press, a real 1962\u201364 movement-era newspaper; name preserved pending verification"
     },
     {
       "row_id": "32.40",
       "whisper": "Bill Pellets",
       "candidate_correction": "Bill Pell (likely) or another Southern Media co-founder",
       "confidence": "low",
-      "notes": "\"Southern media was started in 1967 by two white guys from California, one maybe from California, one from Midwest\"; \"Bill Pellets and Gear Morton\" — uncertain canonical names without further research"
+      "notes": "\"Southern media was started in 1967 by two white guys from California, one maybe from California, one from Midwest\"; \"Bill Pellets and Gear Morton\" \u2014 uncertain canonical names without further research"
     },
     {
       "row_id": "32.41",
@@ -435,7 +435,7 @@
       "whisper": "Ray Brantstein",
       "candidate_correction": "Rae Brandstein",
       "confidence": "low",
-      "notes": "\"I connected with another group, Ray Brantstein. I can't think of her group right now\"; the white wheelchair-using activist who partnered with Derby on a 1962–63 school-bus food/clothing/book drive for Mississippi; canonical name uncertain"
+      "notes": "\"I connected with another group, Ray Brantstein. I can't think of her group right now\"; the white wheelchair-using activist who partnered with Derby on a 1962\u201363 school-bus food/clothing/book drive for Mississippi; canonical name uncertain"
     },
     {
       "row_id": "32.P2.13",
@@ -456,14 +456,14 @@
       "whisper": "the Catherine Dunham Dance class",
       "candidate_correction": "the Katherine Dunham Dance class",
       "confidence": "medium",
-      "notes": "\"having auditions for a scholarship to the Catherine Dunham Dance class\"; Katherine Dunham (1909–2006) is the canonical pioneering African-American dance choreographer; same as Pass-1 #32.6"
+      "notes": "\"having auditions for a scholarship to the Catherine Dunham Dance class\"; Katherine Dunham (1909\u20132006) is the canonical pioneering African-American dance choreographer; same as Pass-1 #32.6"
     },
     {
       "row_id": "32.P2.20",
       "whisper": "the Catherine / Katherine Dunham technique",
       "candidate_correction": "Katherine Dunham technique",
       "confidence": "medium",
-      "notes": "The diasporic Afro-Caribbean dance pedagogy Dunham systematized in the 1930s–40s; pair with this transcript's separate discussion of Derby's later teaching of African dance in Mississippi"
+      "notes": "The diasporic Afro-Caribbean dance pedagogy Dunham systematized in the 1930s\u201340s; pair with this transcript's separate discussion of Derby's later teaching of African dance in Mississippi"
     }
   ],
   "skipped_rows": [
@@ -613,5 +613,6 @@
     "preserved_verbatim_count": 412,
     "unresolved_count": 969,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

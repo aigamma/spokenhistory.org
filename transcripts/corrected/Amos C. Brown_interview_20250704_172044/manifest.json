@@ -842,7 +842,7 @@
       "whisper": "Visitora",
       "candidate_correction": "Western Addition",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"I stayed with a family… they lived up on Fulton Street, up near Fulton and the Visitora\"; the Western Addition / Fillmore neighborhood adjoins Fulton St in SF; \"Visitora\" is not a known SF street/landmark"
+      "notes": "\"I stayed with a family\u2026 they lived up on Fulton Street, up near Fulton and the Visitora\"; the Western Addition / Fillmore neighborhood adjoins Fulton St in SF; \"Visitora\" is not a known SF street/landmark"
     },
     {
       "row_id": "2.29",
@@ -898,7 +898,7 @@
       "whisper": "Bob Rapose",
       "candidate_correction": "Barbara Posey (possible)",
       "confidence": "medium",
-      "notes": "\"Clara Looper, who was the advisor of Oklahoma City Youth Council and Bob Rapose, who was the president\"; Clara Luper led OKC NAACP youth; her co-organizer was likely Barbara Posey (a teenager) — speaker may have conflated"
+      "notes": "\"Clara Looper, who was the advisor of Oklahoma City Youth Council and Bob Rapose, who was the president\"; Clara Luper led OKC NAACP youth; her co-organizer was likely Barbara Posey (a teenager) \u2014 speaker may have conflated"
     },
     {
       "row_id": "2.49",
@@ -919,7 +919,7 @@
       "whisper": "David Satcher",
       "candidate_correction": "David Satcher",
       "confidence": "speaker-originating",
-      "notes": "Real (US Surgeon General 1998–2002)"
+      "notes": "Real (US Surgeon General 1998\u20132002)"
     },
     {
       "row_id": "2.53",
@@ -952,9 +952,9 @@
     {
       "row_id": "2.61",
       "whisper": "Korean battle, Korean War context",
-      "candidate_correction": "(verbatim — speaker uses)",
+      "candidate_correction": "(verbatim \u2014 speaker uses)",
       "confidence": "speaker-originating",
-      "notes": "No correction; speaker uses \"Pork Chop Hill\" not a Whisper rendering — wait, this is from Aaron Dixon's transcript, not Brown's"
+      "notes": "No correction; speaker uses \"Pork Chop Hill\" not a Whisper rendering \u2014 wait, this is from Aaron Dixon's transcript, not Brown's"
     },
     {
       "row_id": "2.62",
@@ -972,10 +972,10 @@
     },
     {
       "row_id": "2.66",
-      "whisper": "Côte d'Arre, Ivory Coast",
-      "candidate_correction": "Côte d'Ivoire (modern spelling)",
+      "whisper": "C\u00f4te d'Arre, Ivory Coast",
+      "candidate_correction": "C\u00f4te d'Ivoire (modern spelling)",
       "confidence": "speaker-originating",
-      "notes": "\"the first summit was held in Côte d'Arre in Avignon, Ivory Coast\"; speaker uses the older spelling; \"Avignon\" is likely Whisper's mis-rendering of \"Abidjan\" (the city)"
+      "notes": "\"the first summit was held in C\u00f4te d'Arre in Avignon, Ivory Coast\"; speaker uses the older spelling; \"Avignon\" is likely Whisper's mis-rendering of \"Abidjan\" (the city)"
     },
     {
       "row_id": "2.68",
@@ -1207,5 +1207,6 @@
     "preserved_verbatim_count": 255,
     "unresolved_count": 759,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

@@ -666,49 +666,49 @@
       "whisper": "took me to take a gun",
       "candidate_correction": "took me to a phone",
       "confidence": "medium",
-      "notes": "\"I ducked out the back of the bus and luckily hail the black cab driver who took me to take a gun.\" Booker is describing being driven from the Birmingham bus station to a phone to call Rev. Shuttlesworth (canonical Freedom Rides eyewitness narrative — Booker has told this same story in multiple oral-history venues, and the cab took him to a Black-owned funeral home / pay phone). Whisper rendered \"phone\" (or \"take a phone\") as \"gun.\" Plausible Whisper-failure pattern; flag for spot-check against Booker's *Shocking the Conscience* memoir version of this story."
+      "notes": "\"I ducked out the back of the bus and luckily hail the black cab driver who took me to take a gun.\" Booker is describing being driven from the Birmingham bus station to a phone to call Rev. Shuttlesworth (canonical Freedom Rides eyewitness narrative \u2014 Booker has told this same story in multiple oral-history venues, and the cab took him to a Black-owned funeral home / pay phone). Whisper rendered \"phone\" (or \"take a phone\") as \"gun.\" Plausible Whisper-failure pattern; flag for spot-check against Booker's *Shocking the Conscience* memoir version of this story."
     },
     {
       "row_id": "9.P4.18",
       "whisper": "the King and Gawson",
       "candidate_correction": "(Dr. Martin Luther) King Jr. and",
       "confidence": "medium",
-      "notes": "\"Mr. Booker, do you have special recollections of Barnard the King and Gawson, to all the work you did covering the movement in River King?\" The interviewer's question is heavily garbled by Whisper. \"Barnard the King\" likely → \"Bernard Lee\" (King's longtime aide) or just \"Dr. King\" (with \"Barnard the\" being garble) or \"Brandon Lee\" — unclear. \"Gawson\" → unclear (possibly \"Abernathy\" / \"Lawson\" / \"Jackson\"). \"River King\" → \"Reverend King\" (likely). Multiple-name interviewer-question garble; speaker-originating."
+      "notes": "\"Mr. Booker, do you have special recollections of Barnard the King and Gawson, to all the work you did covering the movement in River King?\" The interviewer's question is heavily garbled by Whisper. \"Barnard the King\" likely \u2192 \"Bernard Lee\" (King's longtime aide) or just \"Dr. King\" (with \"Barnard the\" being garble) or \"Brandon Lee\" \u2014 unclear. \"Gawson\" \u2192 unclear (possibly \"Abernathy\" / \"Lawson\" / \"Jackson\"). \"River King\" \u2192 \"Reverend King\" (likely). Multiple-name interviewer-question garble; speaker-originating."
     },
     {
       "row_id": "9.P4.19",
       "whisper": "Old Florida (a family in Old Florida get done about it doing it on holiday season, Christmas holiday season)",
       "candidate_correction": "Mims, Florida",
       "confidence": "medium",
-      "notes": "Newson, listing pre-Movement martyrs: \"We had a family in Old Florida get done about it doing it on holiday season, Christmas holiday season.\" Canonical referent is the Christmas-Day 1951 bombing of Harry T. Moore (1905-1951) and Harriette Moore (1902-1952), NAACP organizers in Mims, Florida — among the earliest pre-Movement assassinations. Whisper rendered \"Mims\" as \"Old.\" HIGH historical importance — Moore is one of the foundational pre-Movement martyrs."
+      "notes": "Newson, listing pre-Movement martyrs: \"We had a family in Old Florida get done about it doing it on holiday season, Christmas holiday season.\" Canonical referent is the Christmas-Day 1951 bombing of Harry T. Moore (1905-1951) and Harriette Moore (1902-1952), NAACP organizers in Mims, Florida \u2014 among the earliest pre-Movement assassinations. Whisper rendered \"Mims\" as \"Old.\" HIGH historical importance \u2014 Moore is one of the foundational pre-Movement martyrs."
     },
     {
       "row_id": "9.P4.20",
       "whisper": "Dynett Flore (At that time, Dynett Flore, most everybody was taking a time union out of Jacksonville)",
       "candidate_correction": "(down in",
       "confidence": "medium",
-      "notes": "Newson, discussing his youth: \"At that time, Dynett Flore, most everybody was taking a time union out of Jacksonville.\" \"Dynett Flore\" likely → \"down in Florida\" or a specific FL town name (Newson grew up in Leesburg, FL). Pass 1 #9.34 caught \"Leesburg, Florida\" as correct elsewhere — this is a different instance."
+      "notes": "Newson, discussing his youth: \"At that time, Dynett Flore, most everybody was taking a time union out of Jacksonville.\" \"Dynett Flore\" likely \u2192 \"down in Florida\" or a specific FL town name (Newson grew up in Leesburg, FL). Pass 1 #9.34 caught \"Leesburg, Florida\" as correct elsewhere \u2014 this is a different instance."
     },
     {
       "row_id": "9.P4.21",
       "whisper": "Young Sound of High",
       "candidate_correction": "(Yo)ungstown, Ohio",
       "confidence": "medium",
-      "notes": "\"I was born in Baltimore, grew up in Young Sound of High, and never covered ourselves at all.\" Booker was born in Baltimore in 1918 and grew up in Youngstown, Ohio. \"Young Sound of High\" → \"Youngstown, Ohio.\" Compound-name Whisper failure."
+      "notes": "\"I was born in Baltimore, grew up in Young Sound of High, and never covered ourselves at all.\" Booker was born in Baltimore in 1918 and grew up in Youngstown, Ohio. \"Young Sound of High\" \u2192 \"Youngstown, Ohio.\" Compound-name Whisper failure."
     },
     {
       "row_id": "9.P4.22",
       "whisper": "Gawson (Bernard the King and Gawson)",
       "candidate_correction": "Lawson",
       "confidence": "medium",
-      "notes": "Possibly a second reading of #9.P4.18 — the interviewer may be referencing King + Rev. James Lawson together as the Nashville-movement nonviolent-discipline architects. Flag as plausible but uncertain."
+      "notes": "Possibly a second reading of #9.P4.18 \u2014 the interviewer may be referencing King + Rev. James Lawson together as the Nashville-movement nonviolent-discipline architects. Flag as plausible but uncertain."
     },
     {
       "row_id": "9.P4.23",
       "whisper": "a chef woman with this German guy (Mose Wright at the cotton field)",
       "candidate_correction": "a sharecropper with this Jensen guy",
       "confidence": "medium",
-      "notes": "Booker, discussing Emmett Till's great-uncle Moses Wright in the cotton field: \"He really wanted to stay down. He said that was going to be one of his most profitable years. He was a chef woman with this German guy.\" Canonical context: Mose Wright was a sharecropper on Grover C. Frederick's farm in Money, Mississippi. \"Chef woman\" → \"sharecropper\" (compound-noun Whisper failure); \"German guy\" → possibly \"Jensen\" or another specific surname (canonical: Frederick). Speaker-originating + cultural-historical context."
+      "notes": "Booker, discussing Emmett Till's great-uncle Moses Wright in the cotton field: \"He really wanted to stay down. He said that was going to be one of his most profitable years. He was a chef woman with this German guy.\" Canonical context: Mose Wright was a sharecropper on Grover C. Frederick's farm in Money, Mississippi. \"Chef woman\" \u2192 \"sharecropper\" (compound-noun Whisper failure); \"German guy\" \u2192 possibly \"Jensen\" or another specific surname (canonical: Frederick). Speaker-originating + cultural-historical context."
     },
     {
       "row_id": "9.P4.25",
@@ -793,5 +793,6 @@
     "preserved_verbatim_count": 292,
     "unresolved_count": 1344,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

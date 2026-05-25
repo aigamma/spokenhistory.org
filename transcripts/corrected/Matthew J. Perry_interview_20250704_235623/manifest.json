@@ -521,9 +521,9 @@
     {
       "row_id": "87.P2.4",
       "whisper": "Sucks (client Mr. Sutton Sucks)",
-      "candidate_correction": "(uncertain — possibly \"Sutton Sykes\" or \"Sutton Sacks\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"Sutton Sykes\" or \"Sutton Sacks\")",
       "confidence": "speaker-originating",
-      "notes": "Perry's first client name: \"I'm Matthew Perry, I'm an attorney here to represent Mr. Sutton Sucks\" — Whisper rendering of client surname; speaker-originating local figure"
+      "notes": "Perry's first client name: \"I'm Matthew Perry, I'm an attorney here to represent Mr. Sutton Sucks\" \u2014 Whisper rendering of client surname; speaker-originating local figure"
     },
     {
       "row_id": "87.P2.6",
@@ -572,7 +572,7 @@
       "whisper": "the police officers were trying their own prosecution",
       "candidate_correction": "(canonical mid-20th-century deep-South municipal-court practice)",
       "confidence": "speaker-originating",
-      "notes": "Canonical 1950s deep-South municipal court structure where arresting officer also served as prosecutor — this is testimony on a now-largely-obsolete US judicial practice"
+      "notes": "Canonical 1950s deep-South municipal court structure where arresting officer also served as prosecutor \u2014 this is testimony on a now-largely-obsolete US judicial practice"
     },
     {
       "row_id": "87.P2.44",
@@ -586,7 +586,7 @@
       "whisper": "\"studied my can off\"",
       "candidate_correction": "studied my ass off",
       "confidence": "low",
-      "notes": "\"I can tell you I studied my can off for the thing.\" Whisper renders the canonical American-English idiomatic intensifier \"studied my ass off\" as \"studied my can off\" — euphemism substitution (possibly an artifact of Whisper's PG-13 training-data filter). Minor catalog-worthy idiom degradation."
+      "notes": "\"I can tell you I studied my can off for the thing.\" Whisper renders the canonical American-English idiomatic intensifier \"studied my ass off\" as \"studied my can off\" \u2014 euphemism substitution (possibly an artifact of Whisper's PG-13 training-data filter). Minor catalog-worthy idiom degradation."
     }
   ],
   "skipped_rows": [
@@ -712,5 +712,6 @@
     "preserved_verbatim_count": 169,
     "unresolved_count": 479,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

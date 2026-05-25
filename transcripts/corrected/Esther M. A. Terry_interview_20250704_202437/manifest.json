@@ -431,10 +431,10 @@
     },
     {
       "row_id": "40.34",
-      "whisper": "the Massachusetts review… dedicated to the four young men at A&T (1959 issue)",
+      "whisper": "the Massachusetts review\u2026 dedicated to the four young men at A&T (1959 issue)",
       "candidate_correction": "The Massachusetts Review first-issue dedication to the A&T Four",
       "confidence": "speaker-originating",
-      "notes": "This is canonical *Massachusetts Review* publication history per Terry's recollection; the first issue Fall 1959 actually predated the A&T sit-in (February 1960) by ~3 months — Terry's account that the journal \"dedicated itself\" to the four young men may be a slight conflation; Pass 2 should verify"
+      "notes": "This is canonical *Massachusetts Review* publication history per Terry's recollection; the first issue Fall 1959 actually predated the A&T sit-in (February 1960) by ~3 months \u2014 Terry's account that the journal \"dedicated itself\" to the four young men may be a slight conflation; Pass 2 should verify"
     },
     {
       "row_id": "40.P2.2",
@@ -448,14 +448,14 @@
       "whisper": "Dr. Elizabeth Soel",
       "candidate_correction": "Dr. Elizabeth Sewell",
       "confidence": "medium",
-      "notes": "\"Dr. Crawford and Dr. Elizabeth Soel who came later. She thought I wrote well… She was an English woman. She was a late-to-been and I think she worked at UNCG\"; canonical late-period Bennett English faculty member with UNCG connection; \"Elizabeth Sewell\" was an English poet/critic who taught at various US institutions; spelling not yet fully verified"
+      "notes": "\"Dr. Crawford and Dr. Elizabeth Soel who came later. She thought I wrote well\u2026 She was an English woman. She was a late-to-been and I think she worked at UNCG\"; canonical late-period Bennett English faculty member with UNCG connection; \"Elizabeth Sewell\" was an English poet/critic who taught at various US institutions; spelling not yet fully verified"
     },
     {
       "row_id": "40.P2.5",
       "whisper": "author hunt",
       "candidate_correction": "Arthur Hunt",
       "confidence": "speaker-originating",
-      "notes": "\"My mom was married and to author hunt and they had three children\"; Esther's mother Mary married Arthur Hunt first; he died in the 1918 flu epidemic — canonical family-origin context"
+      "notes": "\"My mom was married and to author hunt and they had three children\"; Esther's mother Mary married Arthur Hunt first; he died in the 1918 flu epidemic \u2014 canonical family-origin context"
     },
     {
       "row_id": "40.P2.8",
@@ -476,7 +476,7 @@
       "whisper": "enforced savings (sister's practice)",
       "candidate_correction": "enforced savings\"",
       "confidence": "speaker-originating",
-      "notes": "\"she took all of my money every week\"; canonical Black-family financial-discipline practice — Terry's sister kept her summer-1961 waitressing wages and returned them when she headed to Chapel Hill graduate school"
+      "notes": "\"she took all of my money every week\"; canonical Black-family financial-discipline practice \u2014 Terry's sister kept her summer-1961 waitressing wages and returned them when she headed to Chapel Hill graduate school"
     },
     {
       "row_id": "40.P2.16",
@@ -490,21 +490,21 @@
       "whisper": "\"Linda Brown\" speaker-originating reference",
       "candidate_correction": "Linda Brown",
       "confidence": "speaker-originating",
-      "notes": "The speaker's \"Linda Brown\" is the Bennett sit-in participant — NOT the better-known Linda Brown of *Brown v. Board of Education* (the 1954 case plaintiff's daughter). Pass 1 row 40.17 correctly flags as speaker-originating; no conflation should be made with the canonical *Brown v. Board* Linda Brown (1943-2018). Verification note."
+      "notes": "The speaker's \"Linda Brown\" is the Bennett sit-in participant \u2014 NOT the better-known Linda Brown of *Brown v. Board of Education* (the 1954 case plaintiff's daughter). Pass 1 row 40.17 correctly flags as speaker-originating; no conflation should be made with the canonical *Brown v. Board* Linda Brown (1943-2018). Verification note."
     },
     {
       "row_id": "40.P4.8",
       "whisper": "\"early dissimuse\"",
       "candidate_correction": "(likely repeat reference to Shirley Dismuke)",
       "confidence": "medium",
-      "notes": "Mid-transcript fragment \"We had early dissimuse and she just couldn't figure out\" — context-ambiguous, but most likely a Whisper garble of a recurring reference to Shirley Dismuke's pre-Bennett activism background. MEDIUM (interpretation, not transcription)."
+      "notes": "Mid-transcript fragment \"We had early dissimuse and she just couldn't figure out\" \u2014 context-ambiguous, but most likely a Whisper garble of a recurring reference to Shirley Dismuke's pre-Bennett activism background. MEDIUM (interpretation, not transcription)."
     },
     {
       "row_id": "40.P4.15",
       "whisper": "\"the second wave [of arrests]\"",
       "candidate_correction": "second wave of Greensboro sit-in arrests",
       "confidence": "speaker-originating",
-      "notes": "Terry references \"when the girls were arrested during the second wave\" — canonical: after the initial February 1-6 sit-ins, a sustained second wave of Bennett-and-A&T arrests occurred through February-April 1960. Speaker-originating with canonical historical anchor."
+      "notes": "Terry references \"when the girls were arrested during the second wave\" \u2014 canonical: after the initial February 1-6 sit-ins, a sustained second wave of Bennett-and-A&T arrests occurred through February-April 1960. Speaker-originating with canonical historical anchor."
     },
     {
       "row_id": "40.P4.18",
@@ -605,5 +605,6 @@
     "preserved_verbatim_count": 312,
     "unresolved_count": 736,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

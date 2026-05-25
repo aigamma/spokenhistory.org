@@ -1141,7 +1141,7 @@
       "whisper": "\"Mary and Barry\" + \"Stokeley\" + \"gold water\" + \"theater of the cow\" cluster",
       "candidate_correction": "Whisper-degradation severity pattern",
       "confidence": "medium",
-      "notes": "Jenkins's transcript exhibits a high rate of severe Whisper-degradation patterns (multi-syllable-to-single-syllable or multi-word-to-single-word renderings). Possibly attributable to speaker's accent or recording quality. Worth flagging Jenkins transcript for upstream Whisper-rerun consideration. // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Mary and Barry\" → Marion Barry pattern'), ensemble-adjudication-pending]"
+      "notes": "Jenkins's transcript exhibits a high rate of severe Whisper-degradation patterns (multi-syllable-to-single-syllable or multi-word-to-single-word renderings). Possibly attributable to speaker's accent or recording quality. Worth flagging Jenkins transcript for upstream Whisper-rerun consideration. // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Mary and Barry\" \u2192 Marion Barry pattern'), ensemble-adjudication-pending]"
     }
   ],
   "skipped_rows": [
@@ -1243,5 +1243,6 @@
     "preserved_verbatim_count": 399,
     "unresolved_count": 640,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

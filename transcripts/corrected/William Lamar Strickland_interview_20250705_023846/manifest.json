@@ -920,7 +920,7 @@
     {
       "row_id": "127.P2.85",
       "whisper": "bevel one (we had high hopes, but...)",
-      "correction": "(James) Bevel — but the Pass-1-quoted \"bevel one said\" is likely SNCC member James Bevel",
+      "correction": "(James) Bevel \u2014 but the Pass-1-quoted \"bevel one said\" is likely SNCC member James Bevel",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -1327,7 +1327,7 @@
       "whisper": "Manny Schoenberg / Manny Sherman",
       "candidate_correction": "(likely) Manny Schoenberg",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "- // [PASS-6: rejected — speculation without corroboration"
+      "notes": "- // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "127.32",
@@ -1418,7 +1418,7 @@
       "whisper": "Manny Schoenberg / Manny Sherman",
       "candidate_correction": "Marvin Schoenberg (likely)",
       "confidence": "low",
-      "notes": "Reinforces Pass 1 #127.31 // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Reinforces Pass 1 #127.31 // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "127.P2.121",
@@ -1446,14 +1446,14 @@
       "whisper": "\"the Malif Lewis one I call it. He just turned 80\"",
       "candidate_correction": "the Magnificent One I call it. He just turned 80\"",
       "confidence": "medium",
-      "notes": "Raw .srt line 2747-2749: \"And as I also said, he has the gift of communication... The Malif Lewis one I call it. He just turned 80.\" Vincent Harding was born July 25, 1931, turned 80 in summer 2011 (this interview is September 23, 2011) — canonical timeline fit. \"Malif Lewis\" likely Strickland's affectionate nickname; possible mishearing of \"Magnificent\" or a personal sobriquet."
+      "notes": "Raw .srt line 2747-2749: \"And as I also said, he has the gift of communication... The Malif Lewis one I call it. He just turned 80.\" Vincent Harding was born July 25, 1931, turned 80 in summer 2011 (this interview is September 23, 2011) \u2014 canonical timeline fit. \"Malif Lewis\" likely Strickland's affectionate nickname; possible mishearing of \"Magnificent\" or a personal sobriquet."
     },
     {
       "row_id": "127.P4.5",
       "whisper": "\"the way would Jamaica\"",
       "candidate_correction": "the way back to Jamaica\"",
       "confidence": "medium",
-      "notes": "Raw .srt line 2479: \"the person who was organizing out of Washington was Mike Thelwell, who was here just retired from here. The way would Jamaica.\" Ekwueme Michael Thelwell IS canonically Jamaican-born (Ulster Spring, Jamaica, 1939) and Strickland is noting Thelwell's post-retirement return to Jamaica. Whisper drops \"back to\" → \"would\"."
+      "notes": "Raw .srt line 2479: \"the person who was organizing out of Washington was Mike Thelwell, who was here just retired from here. The way would Jamaica.\" Ekwueme Michael Thelwell IS canonically Jamaican-born (Ulster Spring, Jamaica, 1939) and Strickland is noting Thelwell's post-retirement return to Jamaica. Whisper drops \"back to\" \u2192 \"would\"."
     }
   ],
   "skipped_rows": [
@@ -1551,5 +1551,6 @@
     "preserved_verbatim_count": 659,
     "unresolved_count": 1395,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

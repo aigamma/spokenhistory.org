@@ -1083,28 +1083,28 @@
       "whisper": "I was a seventh of six children",
       "candidate_correction": "I was the seventh of six children (?)",
       "confidence": "speaker-originating",
-      "notes": "\"I was a seventh of six children. I was a sixth. I had a sister that younger than myself\" — Whisper rendering self-contradictory; speaker's actual birth order unclear from Whisper output; preserved as low-confidence"
+      "notes": "\"I was a seventh of six children. I was a sixth. I had a sister that younger than myself\" \u2014 Whisper rendering self-contradictory; speaker's actual birth order unclear from Whisper output; preserved as low-confidence"
     },
     {
       "row_id": "113.P2.15",
       "whisper": "the southern border area",
       "candidate_correction": "the southwestern Georgia area",
       "confidence": "medium",
-      "notes": "\"they were expanding their work in several counties around throughout the southern border area\" — Whisper rendering of \"Southwest Georgia\" or \"Southern border\" — possibly accurate; preserved as low-confidence"
+      "notes": "\"they were expanding their work in several counties around throughout the southern border area\" \u2014 Whisper rendering of \"Southwest Georgia\" or \"Southern border\" \u2014 possibly accurate; preserved as low-confidence"
     },
     {
       "row_id": "113.P2.20",
       "whisper": "the boy and all these people",
       "candidate_correction": "(Richard Wright's) Native Son and all these people",
       "confidence": "medium",
-      "notes": "\"Richard Wright, James Baldwin, you know, the boy and all these people that we hadn't heard of\" — Whisper rendered Richard Wright's 1940 canonical novel *Native Son* as \"the boy\"; cross-corpus reference (Wright's *Native Son* and *Black Boy* are both canonical); could also be *Black Boy* (1945)"
+      "notes": "\"Richard Wright, James Baldwin, you know, the boy and all these people that we hadn't heard of\" \u2014 Whisper rendered Richard Wright's 1940 canonical novel *Native Son* as \"the boy\"; cross-corpus reference (Wright's *Native Son* and *Black Boy* are both canonical); could also be *Black Boy* (1945)"
     },
     {
       "row_id": "113.P2.29",
       "whisper": "46 inches wide",
       "candidate_correction": "4-6 inches wide",
       "confidence": "medium",
-      "notes": "\"a little sit at the bottom about 46 inches wide\" — speaker probably meant \"4-6 inches wide\" (the canonical bread-and-water-slot opening); Whisper concatenated; preserved as medium"
+      "notes": "\"a little sit at the bottom about 46 inches wide\" \u2014 speaker probably meant \"4-6 inches wide\" (the canonical bread-and-water-slot opening); Whisper concatenated; preserved as medium"
     },
     {
       "row_id": "113.P2.45",
@@ -1153,14 +1153,14 @@
       "whisper": "a sharp opposite",
       "candidate_correction": "a sharecropper",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"Working with a sharp opposite what have you, things like that\" — speaker references his post-Tougaloo work in Greenville MS; \"sharp opposite\" is unclear Whisper rendering; preserved as low-confidence"
+      "notes": "\"Working with a sharp opposite what have you, things like that\" \u2014 speaker references his post-Tougaloo work in Greenville MS; \"sharp opposite\" is unclear Whisper rendering; preserved as low-confidence"
     },
     {
       "row_id": "113.P2.102",
       "whisper": "a material command",
       "candidate_correction": "a material command",
       "confidence": "medium",
-      "notes": "\"they sent me to Europe to what was called a material command, about a five hour drive from Paris, France\" — canonical US Army Materiel Command (which had units in France until US withdrawal from NATO Command 1966); possibly the Verdun-area or Châteauroux-area logistics command Mahone was assigned to"
+      "notes": "\"they sent me to Europe to what was called a material command, about a five hour drive from Paris, France\" \u2014 canonical US Army Materiel Command (which had units in France until US withdrawal from NATO Command 1966); possibly the Verdun-area or Ch\u00e2teauroux-area logistics command Mahone was assigned to"
     },
     {
       "row_id": "113.P2.103",
@@ -1209,7 +1209,7 @@
       "whisper": "\"There wasn't a time when President domestic workers were being threatened\"",
       "candidate_correction": "There was a time when [Presbyterian? present?] domestic workers were being threatened",
       "confidence": "low",
-      "notes": "Raw .srt line 1567: \"There wasn't a time when President domestic workers were being threatened.\" \"Wasn't a time\" → \"was a time\" (negation-inversion Whisper error); \"President\" → unclear (possibly \"Presbyterian\" or just spurious adjective); preserved as LOW."
+      "notes": "Raw .srt line 1567: \"There wasn't a time when President domestic workers were being threatened.\" \"Wasn't a time\" \u2192 \"was a time\" (negation-inversion Whisper error); \"President\" \u2192 unclear (possibly \"Presbyterian\" or just spurious adjective); preserved as LOW."
     }
   ],
   "skipped_rows": [
@@ -1287,5 +1287,6 @@
     "preserved_verbatim_count": 202,
     "unresolved_count": 589,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

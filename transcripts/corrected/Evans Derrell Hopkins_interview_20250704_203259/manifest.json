@@ -324,21 +324,21 @@
       "whisper": "the Daniel Hopkins landscaping business",
       "candidate_correction": "Daniel Hopkins landscape business",
       "confidence": "speaker-originating",
-      "notes": "\"one of the large-largest scrapers… one of the very few black businesses in the town\"; canonical Danville VA mid-20th-century Black-owned landscape contractor"
+      "notes": "\"one of the large-largest scrapers\u2026 one of the very few black businesses in the town\"; canonical Danville VA mid-20th-century Black-owned landscape contractor"
     },
     {
       "row_id": "42.P4.2",
       "whisper": "\"jailed after Klyma Thoregaev\" (SRT segment 145, ~00:23:16)",
       "candidate_correction": "jailed and tortured",
       "confidence": "low",
-      "notes": "\"And, you know, they were jailed after Klyma Thoregaev. / Excuse me. / The most terrible brutality. / And they were... it's no way to take that out of the tape.\" Speaker stumbles mid-sentence, interviewer cuts; \"Klyma Thoregaev\" is not a recoverable proper noun but a transcription of a stumbled/interrupted phrase. Flag for adversarial review — possible misheard reference to a specific BPP victim (e.g., Carl Hampton 1970, Bunchy Carter 1969, John Huggins 1969) or simply an unrecoverable false-start. Speaker self-corrects to \"The most terrible brutality.\""
+      "notes": "\"And, you know, they were jailed after Klyma Thoregaev. / Excuse me. / The most terrible brutality. / And they were... it's no way to take that out of the tape.\" Speaker stumbles mid-sentence, interviewer cuts; \"Klyma Thoregaev\" is not a recoverable proper noun but a transcription of a stumbled/interrupted phrase. Flag for adversarial review \u2014 possible misheard reference to a specific BPP victim (e.g., Carl Hampton 1970, Bunchy Carter 1969, John Huggins 1969) or simply an unrecoverable false-start. Speaker self-corrects to \"The most terrible brutality.\""
     },
     {
       "row_id": "42.P4.6",
       "whisper": "\"San Juan VI\" (SRT segment 330, ~00:51:49)",
-      "candidate_correction": "San Quentin (Six) — likely the San Quentin Six trial",
+      "candidate_correction": "San Quentin (Six) \u2014 likely the San Quentin Six trial",
       "confidence": "medium",
-      "notes": "\"You covered the trial with San Juan VI.\" The \"San Juan VI\" is a Whisper garble for \"San Quentin Six\" — the canonical 1971 prison-uprising / George Jackson death aftermath trial of six San Quentin inmates (Hugo Pinell, Fleeta Drumgo, et al.) tried 1975-76. The \"VI\" → \"6\" → \"Six\" is a stylistic numerical rendering; \"San Juan\" is the Whisper substitution for \"San Quentin\" (homophone via the soft-Q). Cross-reference: Hopkins worked as BPP newspaper writer 1972-74, would have covered the trial. Flag for adversarial verification — alternate possibility is San Quentin Five / a specific George Jackson trial, but the canonical referent is most likely San Quentin Six given the date alignment."
+      "notes": "\"You covered the trial with San Juan VI.\" The \"San Juan VI\" is a Whisper garble for \"San Quentin Six\" \u2014 the canonical 1971 prison-uprising / George Jackson death aftermath trial of six San Quentin inmates (Hugo Pinell, Fleeta Drumgo, et al.) tried 1975-76. The \"VI\" \u2192 \"6\" \u2192 \"Six\" is a stylistic numerical rendering; \"San Juan\" is the Whisper substitution for \"San Quentin\" (homophone via the soft-Q). Cross-reference: Hopkins worked as BPP newspaper writer 1972-74, would have covered the trial. Flag for adversarial verification \u2014 alternate possibility is San Quentin Five / a specific George Jackson trial, but the canonical referent is most likely San Quentin Six given the date alignment."
     },
     {
       "row_id": "42.P4.10",
@@ -414,5 +414,6 @@
     "preserved_verbatim_count": 262,
     "unresolved_count": 1166,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

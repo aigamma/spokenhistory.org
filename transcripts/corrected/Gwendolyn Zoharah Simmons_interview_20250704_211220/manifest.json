@@ -708,7 +708,7 @@
       "whisper": "the Yorkshire condom thing",
       "candidate_correction": "the Yorkshire-comb?",
       "confidence": "medium",
-      "notes": "\"I had on what I think was the uniform, you know, the blue jeans, the blue jean, the Yorkshire condom thing\" — Whisper-garbled phrase; canonical Freedom Summer \"uniform\" of blue jeans + chambray work shirt; \"Yorkshire condom\" appears to be Whisper's rendering of \"Yorkshire-style\" or \"[denim] shirt\" or possibly an entirely different term; preserved as low-confidence common-noun"
+      "notes": "\"I had on what I think was the uniform, you know, the blue jeans, the blue jean, the Yorkshire condom thing\" \u2014 Whisper-garbled phrase; canonical Freedom Summer \"uniform\" of blue jeans + chambray work shirt; \"Yorkshire condom\" appears to be Whisper's rendering of \"Yorkshire-style\" or \"[denim] shirt\" or possibly an entirely different term; preserved as low-confidence common-noun"
     },
     {
       "row_id": "53.P2.43",
@@ -778,21 +778,21 @@
       "whisper": "\"preachers standing out on the corner, 160th and 7th\"",
       "candidate_correction": "125th and 7th\"",
       "confidence": "low",
-      "notes": "Harlem-1965-Nation-of-Islam-and-Black-nationalist-street-preachers narrative (00:58:25) — \"160th and 7th\" is geographically implausible as Harlem street-preaching corner (160th is far above the Harlem nationalist-cluster); canonical NOI/Black-nationalist street-preaching corner in mid-1960s Harlem was 125th and 7th (Adam Clayton Powell Jr. Blvd) / 125th and Lenox; preserved as low-confidence geographic correction pending adversarial review"
+      "notes": "Harlem-1965-Nation-of-Islam-and-Black-nationalist-street-preachers narrative (00:58:25) \u2014 \"160th and 7th\" is geographically implausible as Harlem street-preaching corner (160th is far above the Harlem nationalist-cluster); canonical NOI/Black-nationalist street-preaching corner in mid-1960s Harlem was 125th and 7th (Adam Clayton Powell Jr. Blvd) / 125th and Lenox; preserved as low-confidence geographic correction pending adversarial review"
     },
     {
       "row_id": "53.P4.9",
       "whisper": "\"I had a strong arming woman\"",
       "candidate_correction": "I had [seen",
       "confidence": "medium",
-      "notes": "Pre-orientation sexual-assault narrative (00:44:54) — Simmons describing what she witnessed/experienced before going to the Freedom Summer orientation; the syntactically irregular \"I had a strong arming woman\" appears to be a Whisper miss-segmentation of either \"[seen] a [man] strong-arming a woman\" or \"[had been] strong-armed [by] a [man]\" — the broader context (00:44:45-00:45:30) is Simmons stating she had seen sexual-harassment and had herself been sexually assaulted by someone she trusted before going down to Mississippi"
+      "notes": "Pre-orientation sexual-assault narrative (00:44:54) \u2014 Simmons describing what she witnessed/experienced before going to the Freedom Summer orientation; the syntactically irregular \"I had a strong arming woman\" appears to be a Whisper miss-segmentation of either \"[seen] a [man] strong-arming a woman\" or \"[had been] strong-armed [by] a [man]\" \u2014 the broader context (00:44:45-00:45:30) is Simmons stating she had seen sexual-harassment and had herself been sexually assaulted by someone she trusted before going down to Mississippi"
     },
     {
       "row_id": "53.P4.11",
       "whisper": "\"we'd have to run inside with the memograph machine and all about papers\"",
       "candidate_correction": "all our papers\"",
       "confidence": "medium",
-      "notes": "Laurel-MS-office-rain-emergency narrative (00:32:10) — \"all about papers\" is a Whisper-miss-parsing of \"all our papers\" (or \"all of our papers\" / \"all the papers\"); minor common-noun correction"
+      "notes": "Laurel-MS-office-rain-emergency narrative (00:32:10) \u2014 \"all about papers\" is a Whisper-miss-parsing of \"all our papers\" (or \"all of our papers\" / \"all the papers\"); minor common-noun correction"
     }
   ],
   "skipped_rows": [
@@ -890,5 +890,6 @@
     "preserved_verbatim_count": 293,
     "unresolved_count": 696,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

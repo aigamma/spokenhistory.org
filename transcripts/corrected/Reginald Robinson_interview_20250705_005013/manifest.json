@@ -1051,7 +1051,7 @@
     },
     {
       "row_id": "101.P2.54",
-      "whisper": "Pärtic Hill / Park Sossage / Park Sausage",
+      "whisper": "P\u00e4rtic Hill / Park Sossage / Park Sausage",
       "correction": "Parks Sausage Co",
       "confidence": "high",
       "occurrences": 9,
@@ -1301,7 +1301,7 @@
       "whisper": "Reggie Edgel",
       "candidate_correction": "Reggie Edgel",
       "confidence": "speaker-originating",
-      "notes": "\"we ran into one of the biggest gangsters in Atlantic City by the name of Reggie Edgel\"; speaker's circle; \"all of a sudden, we started getting hotel rooms\" — canonical first-person texture on MFDP Atlantic City housing being underwritten by Black underworld figures"
+      "notes": "\"we ran into one of the biggest gangsters in Atlantic City by the name of Reggie Edgel\"; speaker's circle; \"all of a sudden, we started getting hotel rooms\" \u2014 canonical first-person texture on MFDP Atlantic City housing being underwritten by Black underworld figures"
     },
     {
       "row_id": "101.P2.10",
@@ -1315,7 +1315,7 @@
       "whisper": "Joe Baker / Dr. Joe Baker",
       "candidate_correction": "Dr. June Jackson Christmas",
       "confidence": "low",
-      "notes": "\"Ella suggested that I go talk to Joe Baker who was on the medical committee for civil rights and she was a psychiatrist\"; canonical Medical Committee for Human Rights (MCHR) psychiatrist; identification uncertain — could also be Dr. Frances Welsing or another MCHR-affiliated psychiatrist"
+      "notes": "\"Ella suggested that I go talk to Joe Baker who was on the medical committee for civil rights and she was a psychiatrist\"; canonical Medical Committee for Human Rights (MCHR) psychiatrist; identification uncertain \u2014 could also be Dr. Frances Welsing or another MCHR-affiliated psychiatrist"
     },
     {
       "row_id": "101.P2.16",
@@ -1329,7 +1329,7 @@
       "whisper": "Helen Roverson / Helen Robeson",
       "candidate_correction": "Helen Rosen",
       "confidence": "medium",
-      "notes": "Same context — Helen Rosen, Samuel Rosen's wife"
+      "notes": "Same context \u2014 Helen Rosen, Samuel Rosen's wife"
     },
     {
       "row_id": "101.P2.27",
@@ -1343,7 +1343,7 @@
       "whisper": "Bob Mancham (re Mississippi entrepreneur Mace denim) / Red Brown",
       "candidate_correction": "Red Brown",
       "confidence": "low",
-      "notes": "\"Red Brown had a manufacturing company going on called Mace... Where they made denim\"; identification uncertain — possibly cross-reference with Mississippi Action for Community Education (MACE), founded 1968 in Greenville MS by Bill Henderson + Owen Brooks; the denim-manufacturing arm referenced may be the Poor People's Corporation (cross-corpus catalog row \"Pour People's Corporation\" → \"Poor People's Corporation\")"
+      "notes": "\"Red Brown had a manufacturing company going on called Mace... Where they made denim\"; identification uncertain \u2014 possibly cross-reference with Mississippi Action for Community Education (MACE), founded 1968 in Greenville MS by Bill Henderson + Owen Brooks; the denim-manufacturing arm referenced may be the Poor People's Corporation (cross-corpus catalog row \"Pour People's Corporation\" \u2192 \"Poor People's Corporation\")"
     },
     {
       "row_id": "101.P2.36",
@@ -1357,19 +1357,19 @@
       "whisper": "the Trail / Bob's Trail organization",
       "candidate_correction": "the Trail",
       "confidence": "low",
-      "notes": "\"Bob had an organization called the Trail. And the Trail was made up of people that was up at the, at the center of things in Lounge County\"; uncertain — possibly Bob Mants's post-1968 Lowndes County organizing project; Bob Mants was canonical SNCC Lowndes County field secretary"
+      "notes": "\"Bob had an organization called the Trail. And the Trail was made up of people that was up at the, at the center of things in Lounge County\"; uncertain \u2014 possibly Bob Mants's post-1968 Lowndes County organizing project; Bob Mants was canonical SNCC Lowndes County field secretary"
     },
     {
       "row_id": "101.P2.47",
       "whisper": "Gwen Green",
       "candidate_correction": "Gwen (Robinson) Green",
       "confidence": "medium",
-      "notes": "\"That's how Gwen Green and Travis Britt, and Ruby Dyson, her boyfriend, Billy, came down\"; possibly Gwendolyn Zoharah Simmons (born Gwen Robinson, then married — see canonical-catalog \"Zohara Simmons\" row), but Robinson distinguishes \"Gwen Green\" from other Gwen-figures — identification approximate // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"That's how Gwen Green and Travis Britt, and Ruby Dyson, her boyfriend, Billy, came down\"; possibly Gwendolyn Zoharah Simmons (born Gwen Robinson, then married \u2014 see canonical-catalog \"Zohara Simmons\" row), but Robinson distinguishes \"Gwen Green\" from other Gwen-figures \u2014 identification approximate // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "101.P2.50",
       "whisper": "Billy (boyfriend of Ruby Dyson)",
-      "candidate_correction": "(uncertain — possibly Bill Hansen but no marriage record)",
+      "candidate_correction": "(uncertain \u2014 possibly Bill Hansen but no marriage record)",
       "confidence": "low",
       "notes": "\"Ruby Dyson, her boyfriend, Billy\"; Robinson's account is uncertain because Ruby Doris Smith Robinson was married to Clifford Robinson, not \"Billy\"; possibly Robinson is conflating with a 1961 dating relationship"
     },
@@ -1392,7 +1392,7 @@
       "whisper": "miss Quinn",
       "candidate_correction": "Miss Quinn",
       "confidence": "speaker-originating",
-      "notes": "Same context — McComb local"
+      "notes": "Same context \u2014 McComb local"
     },
     {
       "row_id": "101.P2.65",
@@ -1506,5 +1506,6 @@
     "preserved_verbatim_count": 506,
     "unresolved_count": 1636,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

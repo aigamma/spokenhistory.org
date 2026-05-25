@@ -427,7 +427,7 @@
       "whisper": "Out of Boston",
       "candidate_correction": "(publisher reference, possibly Beacon Press / out of Boston)",
       "confidence": "medium",
-      "notes": "\"the book, Count them one by one, which is in a count of the voting rights efforts in Hattiesburg… out of Boston\"; possibly refers to where the author Gordon Martin Jr. is based (he lived in Boston as a Justice Department lawyer)"
+      "notes": "\"the book, Count them one by one, which is in a count of the voting rights efforts in Hattiesburg\u2026 out of Boston\"; possibly refers to where the author Gordon Martin Jr. is based (he lived in Boston as a Justice Department lawyer)"
     },
     {
       "row_id": "33.55",
@@ -469,12 +469,12 @@
       "whisper": "the spirit (Hattiesburg boycott enforcement)",
       "candidate_correction": "the Spirit",
       "confidence": "speaker-originating",
-      "notes": "\"I never knew who the spirit was. I didn't know that during the times when schools were, or places where businesses were boycotted, that if you break those lines, that the spirit would visit you during the night\"; the canonical Hattiesburg-Black-community informal enforcement collective (analogous to but separate from the Deacons for Defense) that visited boycott-breakers at night — speaker is the canonical first-person source on this practice"
+      "notes": "\"I never knew who the spirit was. I didn't know that during the times when schools were, or places where businesses were boycotted, that if you break those lines, that the spirit would visit you during the night\"; the canonical Hattiesburg-Black-community informal enforcement collective (analogous to but separate from the Deacons for Defense) that visited boycott-breakers at night \u2014 speaker is the canonical first-person source on this practice"
     },
     {
       "row_id": "33.P3.3",
       "whisper": "\"Mississippi Civil Rights Commission\" (interview context, not transcribed entry)",
-      "candidate_correction": "Mississippi Civil Rights Commission (state-level body) — verify Holloway's actual role",
+      "candidate_correction": "Mississippi Civil Rights Commission (state-level body) \u2014 verify Holloway's actual role",
       "confidence": "medium",
       "notes": "Mentioned in **Subject** header; not assigned an entry-row; verify against MS state agency records that this body exists with that name (some states have \"Civil Rights Commission\" / \"Human Rights Commission\" naming distinctions)."
     },
@@ -490,7 +490,7 @@
       "whisper": "\"Civil Rights Museum Commission\" (interviewer's prompt) / \"Civil Rights Commission\" (Holloway correction)",
       "candidate_correction": "Mississippi Civil Rights Museum advisory commission",
       "confidence": "medium",
-      "notes": "SRT lines 4231-4239 show the interviewer first proposes \"Civil Rights Museum Commission\" and Holloway corrects to \"Civil Rights Commission\"; SRT line 4367 confirms the body's connection to the Civil Rights Museum. The Mississippi Civil Rights Museum opened December 2017 (post-interview), but the planning/advisory commission was active in 2015. The **Subject** paragraph's rendering as \"Mississippi Civil Rights Commission\" is potentially incorrect — should likely be \"Mississippi Civil Rights Museum Commission\" or \"Two Mississippi Museums advisory commission\""
+      "notes": "SRT lines 4231-4239 show the interviewer first proposes \"Civil Rights Museum Commission\" and Holloway corrects to \"Civil Rights Commission\"; SRT line 4367 confirms the body's connection to the Civil Rights Museum. The Mississippi Civil Rights Museum opened December 2017 (post-interview), but the planning/advisory commission was active in 2015. The **Subject** paragraph's rendering as \"Mississippi Civil Rights Commission\" is potentially incorrect \u2014 should likely be \"Mississippi Civil Rights Museum Commission\" or \"Two Mississippi Museums advisory commission\""
     },
     {
       "row_id": "33.P4.3",
@@ -509,46 +509,46 @@
     {
       "row_id": "33.P4.5",
       "whisper": "\"Brown University with Tugulu\" (in #33.40 / #33.42 context)",
-      "candidate_correction": "Brown University → Tougaloo partnership",
+      "candidate_correction": "Brown University \u2192 Tougaloo partnership",
       "confidence": "medium",
-      "notes": "SRT line 4759: \"And the connection of Brown University with Tugulu\"; Brown University does have a long-running formal exchange/partnership with Tougaloo College dating to 1964 (the Brown-Tougaloo Partnership) — this is canonical history. Confidence on partnership existence: high. Confidence that Holloway is conflating Mulholland (Duke→Tougaloo) with the Brown→Tougaloo program: medium"
+      "notes": "SRT line 4759: \"And the connection of Brown University with Tugulu\"; Brown University does have a long-running formal exchange/partnership with Tougaloo College dating to 1964 (the Brown-Tougaloo Partnership) \u2014 this is canonical history. Confidence on partnership existence: high. Confidence that Holloway is conflating Mulholland (Duke\u2192Tougaloo) with the Brown\u2192Tougaloo program: medium"
     },
     {
       "row_id": "33.P4.6",
       "whisper": "\"ancestry fertilizers\"",
       "candidate_correction": "(likely) \"various-industry fertilizers\" or \"agricultural-industry fertilizers",
       "confidence": "low",
-      "notes": "SRT line 63: \"They made various ancestry fertilizers and I think the home office was Yazoo City, Mississippi\"; \"ancestry\" makes no sense in the fertilizer-manufacturing context; possibly a Whisper rendering of \"agricultural\" or \"industry\" — speaker-natural phrase, no canonical mapping needed; preserve as low-confidence catch for the future re-transcription pass"
+      "notes": "SRT line 63: \"They made various ancestry fertilizers and I think the home office was Yazoo City, Mississippi\"; \"ancestry\" makes no sense in the fertilizer-manufacturing context; possibly a Whisper rendering of \"agricultural\" or \"industry\" \u2014 speaker-natural phrase, no canonical mapping needed; preserve as low-confidence catch for the future re-transcription pass"
     }
   ],
   "skipped_rows": [
     {
       "row_id": "33.16",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.32",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.50",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.51",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.53",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.P2.4",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.P2.7",
-      "reason": "unknown confidence 'flag — adversarial'"
+      "reason": "unknown confidence 'flag \u2014 adversarial'"
     },
     {
       "row_id": "33.P3.2",
@@ -624,5 +624,6 @@
     "preserved_verbatim_count": 312,
     "unresolved_count": 951,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

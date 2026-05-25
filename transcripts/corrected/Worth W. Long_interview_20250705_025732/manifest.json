@@ -692,7 +692,7 @@
     {
       "row_id": "131.P2.16",
       "whisper": "a palmato. That's what we call a palmato, but it was a palm, a gold palm attack clip",
-      "correction": "a palmetto. That's what we call a palmetto, but it was a palm — a gold palmetto tack clip",
+      "correction": "a palmetto. That's what we call a palmetto, but it was a palm \u2014 a gold palmetto tack clip",
       "confidence": "high",
       "occurrences": 1,
       "file_paths": [
@@ -768,7 +768,7 @@
       "whisper": "a small box up",
       "candidate_correction": "a small box [hand-made]",
       "confidence": "low",
-      "notes": "Likely \"small boxed up\" or \"small box-set\" — unclear Whisper fragment describing the palmetto gift packaging"
+      "notes": "Likely \"small boxed up\" or \"small box-set\" \u2014 unclear Whisper fragment describing the palmetto gift packaging"
     },
     {
       "row_id": "131.P2.28",
@@ -780,21 +780,21 @@
     {
       "row_id": "131.P2.31",
       "whisper": "Tim LaLine",
-      "candidate_correction": "(uncertain — possibly \"ten of mine\" or \"this all of mine\" or \"the lining\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"ten of mine\" or \"this all of mine\" or \"the lining\")",
       "confidence": "low",
-      "notes": "Pig-sharing idiom — speaker may be saying \"the lining\" of the hog or quoting a folk idiom; cannot resolve"
+      "notes": "Pig-sharing idiom \u2014 speaker may be saying \"the lining\" of the hog or quoting a folk idiom; cannot resolve"
     },
     {
       "row_id": "131.P2.33",
       "whisper": "Bill Moore Drug Store",
       "candidate_correction": "Bull City Drug Store",
       "confidence": "medium",
-      "notes": "Hayti Durham landmark drug store; Pass 1 #131.33 already flagged this — Pass 2 confirms; note Bill Moore was the assassinated 1963 CORE Freedom Walker (not relevant here) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Hayti Durham landmark drug store; Pass 1 #131.33 already flagged this \u2014 Pass 2 confirms; note Bill Moore was the assassinated 1963 CORE Freedom Walker (not relevant here) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "131.P2.40",
       "whisper": "Mr. what doesn't matter",
-      "candidate_correction": "Mr. [name] — doesn't matter",
+      "candidate_correction": "Mr. [name] \u2014 doesn't matter",
       "confidence": "medium",
       "notes": "Speaker is naming a Formosa Avenue neighbor but pauses (\"it doesn't matter\"); Whisper rendered the elided name as \"what doesn't\""
     },
@@ -877,5 +877,6 @@
     "preserved_verbatim_count": 155,
     "unresolved_count": 300,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

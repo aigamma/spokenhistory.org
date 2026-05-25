@@ -692,9 +692,9 @@
     {
       "row_id": "3.12",
       "whisper": "Candice Grindes",
-      "candidate_correction": "(unknown — speaker's friend's name)",
+      "candidate_correction": "(unknown \u2014 speaker's friend's name)",
       "confidence": "speaker-originating",
-      "notes": "\"Her name was Candace Grindes. Candace. Now Candace told me that her uncle was Reverend Abernethi\" — possibly real, unverifiable; flag as speaker-originating"
+      "notes": "\"Her name was Candace Grindes. Candace. Now Candace told me that her uncle was Reverend Abernethi\" \u2014 possibly real, unverifiable; flag as speaker-originating"
     },
     {
       "row_id": "3.14",
@@ -764,7 +764,7 @@
       "whisper": "Ola Mallory",
       "candidate_correction": "(unknown)",
       "confidence": "low",
-      "notes": "\"I met Ola Mallory\" — could be Arenia Mallory (same name appears in Amos Brown transcript) but context here is SNCC, not COGIC"
+      "notes": "\"I met Ola Mallory\" \u2014 could be Arenia Mallory (same name appears in Amos Brown transcript) but context here is SNCC, not COGIC"
     },
     {
       "row_id": "3.48",
@@ -776,7 +776,7 @@
     {
       "row_id": "3.49",
       "whisper": "Reverend Bale",
-      "candidate_correction": "(unknown — likely a real Jackson, MS minister)",
+      "candidate_correction": "(unknown \u2014 likely a real Jackson, MS minister)",
       "confidence": "speaker-originating",
       "notes": "\"Reverend Bale became pastor of [Mt. Zion Baptist Church]\"; unverifiable"
     },
@@ -792,7 +792,7 @@
       "whisper": "Janet Moses",
       "candidate_correction": "Janet (Jemmott) Moses",
       "confidence": "speaker-originating",
-      "notes": "Real — Bob Moses's first wife, SNCC organizer // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': \"Likely Dona Moses née Richards (Bob Moses's first wife, m. 1965-67)\"), ensemble-adjudication-pending]"
+      "notes": "Real \u2014 Bob Moses's first wife, SNCC organizer // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending] // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': \"Likely Dona Moses n\u00e9e Richards (Bob Moses's first wife, m. 1965-67)\"), ensemble-adjudication-pending]"
     },
     {
       "row_id": "3.59",
@@ -820,7 +820,7 @@
       "whisper": "James Peacock / Willie Peacock",
       "candidate_correction": "James Peacock",
       "confidence": "speaker-originating",
-      "notes": "The Peacock brothers — SNCC organizers in Mississippi // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "The Peacock brothers \u2014 SNCC organizers in Mississippi // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "3.63",
@@ -862,7 +862,7 @@
       "whisper": "Capgrave",
       "candidate_correction": "Capgrave",
       "confidence": "low",
-      "notes": "\"I had a tax cap service in Atlanta, and I represented Capgrave was there as a organizer\"; possibly TCAP (Tax Counseling for the Aging Project) or a related antipoverty program — context too thin"
+      "notes": "\"I had a tax cap service in Atlanta, and I represented Capgrave was there as a organizer\"; possibly TCAP (Tax Counseling for the Aging Project) or a related antipoverty program \u2014 context too thin"
     },
     {
       "row_id": "3.73",
@@ -895,7 +895,7 @@
     {
       "row_id": "3.78",
       "whisper": "Deva Irvin",
-      "candidate_correction": "(Diva Irvin or similar — unverifiable)",
+      "candidate_correction": "(Diva Irvin or similar \u2014 unverifiable)",
       "confidence": "speaker-originating",
       "notes": "\"Miss Deva, and Miss Deva Irvin, who was the advisor to the Grahamland College\"; Grambling College student advisor"
     },
@@ -904,14 +904,14 @@
       "whisper": "Mr. Norris",
       "candidate_correction": "Mr. Norris",
       "confidence": "speaker-originating",
-      "notes": "Speaker's reference to a \"champion\" father figure — unverifiable"
+      "notes": "Speaker's reference to a \"champion\" father figure \u2014 unverifiable"
     },
     {
       "row_id": "3.82",
       "whisper": "RLT Smith",
       "candidate_correction": "R.L.T. Smith",
       "confidence": "speaker-originating",
-      "notes": "Reverend Robert L.T. Smith — first Black to run for Congress in Mississippi (1962); also named in Brown's transcript"
+      "notes": "Reverend Robert L.T. Smith \u2014 first Black to run for Congress in Mississippi (1962); also named in Brown's transcript"
     },
     {
       "row_id": "3.83",
@@ -923,7 +923,7 @@
     {
       "row_id": "3.84",
       "whisper": "Hassan",
-      "candidate_correction": "(unknown — could be a real surname)",
+      "candidate_correction": "(unknown \u2014 could be a real surname)",
       "confidence": "speaker-originating",
       "notes": "Speaker's family/friend list"
     },
@@ -932,49 +932,49 @@
       "whisper": "Capgrave / \"I represented Capgrave\"",
       "candidate_correction": "(likely) Stokely Carmichael",
       "confidence": "low",
-      "notes": "Speaker says \"I represented Capgrave was there as a organizer\" — context unclear"
+      "notes": "Speaker says \"I represented Capgrave was there as a organizer\" \u2014 context unclear"
     },
     {
       "row_id": "3.P4.1",
       "whisper": "wheeled and headed townships",
       "candidate_correction": "(likely) Wiltonham",
       "confidence": "low",
-      "notes": "\"my mother and father were wheeled and headed townships\" — Whisper rendering for what is likely a description of the speaker's parents' rural Alabama backgrounds; the actual word is unrecoverable from this Whisper output. Speaker-originating familial reference. Flag as low-confidence unresolvable."
+      "notes": "\"my mother and father were wheeled and headed townships\" \u2014 Whisper rendering for what is likely a description of the speaker's parents' rural Alabama backgrounds; the actual word is unrecoverable from this Whisper output. Speaker-originating familial reference. Flag as low-confidence unresolvable."
     },
     {
       "row_id": "3.P4.13",
       "whisper": "shipper sentry / sergeant in the Army",
       "candidate_correction": "sergeant in the Army",
       "confidence": "speaker-originating",
-      "notes": "\"we met some guy, I don't know if a guy is in the, he was a sergeant in the Army\" — this is verbatim from speaker, not a Whisper error. Confirm as correct; no row needed but adding for completeness in the dense Hale-County paragraph. Mention only for context."
+      "notes": "\"we met some guy, I don't know if a guy is in the, he was a sergeant in the Army\" \u2014 this is verbatim from speaker, not a Whisper error. Confirm as correct; no row needed but adding for completeness in the dense Hale-County paragraph. Mention only for context."
     },
     {
       "row_id": "3.P4.17",
       "whisper": "period cousins",
       "candidate_correction": "parents' cousins",
       "confidence": "speaker-originating",
-      "notes": "\"I had some, the cousins there, but they were adults\" — context is the speaker describing being spoiled by her Pittsburgh great-aunt's adult cousins. \"Period cousins\" reads as a Whisper dropped article/pronoun. Speaker-originating context, no canonical correction. Flagged for documentation."
+      "notes": "\"I had some, the cousins there, but they were adults\" \u2014 context is the speaker describing being spoiled by her Pittsburgh great-aunt's adult cousins. \"Period cousins\" reads as a Whisper dropped article/pronoun. Speaker-originating context, no canonical correction. Flagged for documentation."
     },
     {
       "row_id": "3.P4.23",
       "whisper": "Mississippi Civil Rights Veterans",
       "candidate_correction": "Mississippi Civil Rights Veterans",
       "confidence": "medium",
-      "notes": "\"the Mississippi Civil Rights Veterans\" — likely referring to the Veterans of the Mississippi Civil Rights Movement, an organization founded by SNCC/COFO/CORE veterans of Freedom Summer. Documented organization."
+      "notes": "\"the Mississippi Civil Rights Veterans\" \u2014 likely referring to the Veterans of the Mississippi Civil Rights Movement, an organization founded by SNCC/COFO/CORE veterans of Freedom Summer. Documented organization."
     },
     {
       "row_id": "3.P4.24",
       "whisper": "the head of Smith",
       "candidate_correction": "(likely) Stokely Carmichael becoming SNCC chair",
       "confidence": "medium",
-      "notes": "Interviewer's framing line: \"1966, stuck to the comic box, it was the place that John built at the head of Smith.\" Reading: \"1966, Stokely Carmichael took the place that John [Lewis] built at the head of SNCC.\" Whisper renders \"Stokely Carmichael\" → \"stuck to the comic box\" and \"head of SNCC\" → \"head of Smith.\" Both canonical: Stokely Carmichael's May 1966 election as SNCC chair replacing John Lewis."
+      "notes": "Interviewer's framing line: \"1966, stuck to the comic box, it was the place that John built at the head of Smith.\" Reading: \"1966, Stokely Carmichael took the place that John [Lewis] built at the head of SNCC.\" Whisper renders \"Stokely Carmichael\" \u2192 \"stuck to the comic box\" and \"head of SNCC\" \u2192 \"head of Smith.\" Both canonical: Stokely Carmichael's May 1966 election as SNCC chair replacing John Lewis."
     },
     {
       "row_id": "3.P4.26",
       "whisper": "Mandela came here",
-      "candidate_correction": "(likely) Winnie Mandela (or Nelson Mandela) — actually NELSON Mandela visited Selma in 1990",
+      "candidate_correction": "(likely) Winnie Mandela (or Nelson Mandela) \u2014 actually NELSON Mandela visited Selma in 1990",
       "confidence": "medium",
-      "notes": "\"I finally got to see one here in Selma when he Mandela came here\" — context says \"he Mandela\" (i.e., Nelson Mandela, not Winnie). Nelson Mandela's post-prison 1990 US tour included a March 5, 1990 visit to the Edmund Pettus Bridge in Selma, where he was greeted by Rose Sanders and the Selma community. Correct biographical identification of the figure. Whisper's \"he Mandela\" → \"Nelson Mandela.\""
+      "notes": "\"I finally got to see one here in Selma when he Mandela came here\" \u2014 context says \"he Mandela\" (i.e., Nelson Mandela, not Winnie). Nelson Mandela's post-prison 1990 US tour included a March 5, 1990 visit to the Edmund Pettus Bridge in Selma, where he was greeted by Rose Sanders and the Selma community. Correct biographical identification of the figure. Whisper's \"he Mandela\" \u2192 \"Nelson Mandela.\""
     }
   ],
   "skipped_rows": [
@@ -1060,5 +1060,6 @@
     "preserved_verbatim_count": 445,
     "unresolved_count": 1204,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

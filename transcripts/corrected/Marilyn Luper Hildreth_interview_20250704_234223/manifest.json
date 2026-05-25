@@ -20,7 +20,7 @@
     {
       "row_id": "82.2",
       "whisper": "Maryland Culture / Vanderbred Calvin Blubert",
-      "correction": "Marilyn (née Calvin) Luper Hildreth",
+      "correction": "Marilyn (n\u00e9e Calvin) Luper Hildreth",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -164,7 +164,7 @@
     {
       "row_id": "82.P2.9",
       "whisper": "Northern route / Southern route back",
-      "correction": "Northern route + Southern route — the canonical 1957 NAACP tour journey",
+      "correction": "Northern route + Southern route \u2014 the canonical 1957 NAACP tour journey",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -188,7 +188,7 @@
     {
       "row_id": "82.P2.18",
       "whisper": "Barbara Post here / professor at the University of London, Georgia",
-      "correction": "Barbara Posey Jones — University of Georgia professor",
+      "correction": "Barbara Posey Jones \u2014 University of Georgia professor",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -272,7 +272,7 @@
     {
       "row_id": "82.P4.5",
       "whisper": "\"We could not use the same telephone booths when we were in the other colored\"",
-      "correction": "We could not use the same telephone booths — one was [white] one was 'colored",
+      "correction": "We could not use the same telephone booths \u2014 one was [white] one was 'colored",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -315,7 +315,7 @@
     {
       "row_id": "82.14",
       "whisper": "Barbara Post here / professor at the University of London, Georgia",
-      "candidate_correction": "Barbara Posey (Jones) — University of Georgia professor",
+      "candidate_correction": "Barbara Posey (Jones) \u2014 University of Georgia professor",
       "confidence": "medium",
       "notes": "Canonical OKC sit-in participant // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
@@ -331,14 +331,14 @@
       "whisper": "Tokyo and then I said",
       "candidate_correction": "Tokyo and Marilyn I said\"",
       "confidence": "low",
-      "notes": "Speaker mentioned to her brother (probable family nickname for Calvin) // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Speaker mentioned to her brother (probable family nickname for Calvin) // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "82.P2.15",
       "whisper": "a chimpanzee on me",
       "candidate_correction": "a chimpanzee on me",
       "confidence": "speaker-originating",
-      "notes": "Pass 1 caught (82.15); P2 confirms — speaker re-affirms this when prompted by interviewer; canonical first-person account of bizarre racist attack at OKC sit-in"
+      "notes": "Pass 1 caught (82.15); P2 confirms \u2014 speaker re-affirms this when prompted by interviewer; canonical first-person account of bizarre racist attack at OKC sit-in"
     },
     {
       "row_id": "82.P2.19",
@@ -350,16 +350,16 @@
     {
       "row_id": "82.P2.20",
       "whisper": "Tokyo and then I said",
-      "candidate_correction": "Tokyo (and Marilyn) I said — speaker's brother nickname uncertain",
+      "candidate_correction": "Tokyo (and Marilyn) I said \u2014 speaker's brother nickname uncertain",
       "confidence": "low",
-      "notes": "Pass 1 caught (82.19); the \"Tokyo\" is likely a family nickname for the speaker's brother Calvin (or for Calvin's friend) — unclear // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Pass 1 caught (82.19); the \"Tokyo\" is likely a family nickname for the speaker's brother Calvin (or for Calvin's friend) \u2014 unclear // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "82.P2.23",
       "whisper": "the 1970 Mother Andrews / 1972 primary",
       "candidate_correction": "1972 Oklahoma Democratic US Senate primary",
       "confidence": "low",
-      "notes": "Pass 1 caught (82.18); the \"Mother Andrews\" segment is genuinely unclear — possibly Whisper for \"[1972] mother and her [campaign]\" or the name of a campaign-staff person Andrews; speaker uses \"Mother Andrews\" in passing context that doesn't fully resolve"
+      "notes": "Pass 1 caught (82.18); the \"Mother Andrews\" segment is genuinely unclear \u2014 possibly Whisper for \"[1972] mother and her [campaign]\" or the name of a campaign-staff person Andrews; speaker uses \"Mother Andrews\" in passing context that doesn't fully resolve"
     },
     {
       "row_id": "82.P2.25",
@@ -378,9 +378,9 @@
     {
       "row_id": "82.P4.8",
       "whisper": "\"her father was a dreamer\" / \"his dad because he was not allowed to be treated in the hospital only because he was black\"",
-      "candidate_correction": "Clara Luper's father (Ezell Shepard) was denied hospital treatment because he was Black — canonical first-person family-history claim",
+      "candidate_correction": "Clara Luper's father (Ezell Shepard) was denied hospital treatment because he was Black \u2014 canonical first-person family-history claim",
       "confidence": "speaker-originating",
-      "notes": "Speaker's first-person account of Clara Luper's father's death/illness story — a canonical episode that recurs in Clara Luper's own memoir Behold the Walls. The \"his dad\" is a Whisper pronoun-ambiguity (speaker means \"her [grand]dad\" = Clara Luper's father, the speaker's maternal grandfather). Net-new catch on the pronoun-ambiguity issue."
+      "notes": "Speaker's first-person account of Clara Luper's father's death/illness story \u2014 a canonical episode that recurs in Clara Luper's own memoir Behold the Walls. The \"his dad\" is a Whisper pronoun-ambiguity (speaker means \"her [grand]dad\" = Clara Luper's father, the speaker's maternal grandfather). Net-new catch on the pronoun-ambiguity issue."
     },
     {
       "row_id": "82.P4.9",
@@ -394,14 +394,14 @@
       "whisper": "\"He had fun, loving, crazy\" (of Marilyn's father Calvin Luper Sr., the electrician)",
       "candidate_correction": "He had fun, [was] loving, crazy\"",
       "confidence": "speaker-originating",
-      "notes": "Speaker's first-person account of her father Calvin Luper Sr. — the electrician husband of Clara Luper, divorced mid-1960s. He died \"a few years ago\" relative to the 2011 interview date, narrowing his death to ~2005-2010. Canonical family-history detail under-documented in mainstream Clara Luper biographical sources. Net-new biographical catch."
+      "notes": "Speaker's first-person account of her father Calvin Luper Sr. \u2014 the electrician husband of Clara Luper, divorced mid-1960s. He died \"a few years ago\" relative to the 2011 interview date, narrowing his death to ~2005-2010. Canonical family-history detail under-documented in mainstream Clara Luper biographical sources. Net-new biographical catch."
     },
     {
       "row_id": "82.P4.11",
       "whisper": "\"the 1970 Mother Andrews, the 1970s\" / \"by 1972, you were about how old?\"",
       "candidate_correction": "Interviewer's \"1970 Mother Andrews\" is a Whisper rendering of the question's setup transitioning to Clara Luper's 1972 US Senate primary; \"Mother Andrews\" likely Whisper for \"and her\" or for an unclear referent",
       "confidence": "low",
-      "notes": "Confirms Pass 2+3 flag: the \"Mother Andrews\" segment is genuinely Whisper-garbled, but raw spot-check confirms the immediate-next-line is \"by 1972, you were about how old\" — confirming the interviewer is transitioning to the 1972 Senate primary topic. The \"Mother Andrews\" is almost certainly a Whisper hallucination, not a real campaign-staff person Andrews. Refine the flag: this is Whisper-artifact, not a real referent worth searching for."
+      "notes": "Confirms Pass 2+3 flag: the \"Mother Andrews\" segment is genuinely Whisper-garbled, but raw spot-check confirms the immediate-next-line is \"by 1972, you were about how old\" \u2014 confirming the interviewer is transitioning to the 1972 Senate primary topic. The \"Mother Andrews\" is almost certainly a Whisper hallucination, not a real campaign-staff person Andrews. Refine the flag: this is Whisper-artifact, not a real referent worth searching for."
     },
     {
       "row_id": "82.P4.12",
@@ -514,5 +514,6 @@
     "preserved_verbatim_count": 112,
     "unresolved_count": 267,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

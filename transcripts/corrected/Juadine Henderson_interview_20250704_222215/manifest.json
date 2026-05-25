@@ -646,7 +646,7 @@
     {
       "row_id": "68.5",
       "whisper": "Lyora Morris and Hugo Henderson",
-      "candidate_correction": "(parents' names — speaker-originating)",
+      "candidate_correction": "(parents' names \u2014 speaker-originating)",
       "confidence": "speaker-originating",
       "notes": "Speaker's family lineage"
     },
@@ -681,7 +681,7 @@
     {
       "row_id": "68.20",
       "whisper": "Mama Hackman",
-      "candidate_correction": "(host woman, speaker recall — possibly Mama Dolly McCain or local Greenwood host)",
+      "candidate_correction": "(host woman, speaker recall \u2014 possibly Mama Dolly McCain or local Greenwood host)",
       "confidence": "low",
       "notes": "\"We were taken across the street to stay with a woman named Mama Hackman\"; Greenwood host"
     },
@@ -690,19 +690,19 @@
       "whisper": "Larsky",
       "candidate_correction": "Lawrence Guyot",
       "confidence": "medium",
-      "notes": "Same person — speaker's affectionate form"
+      "notes": "Same person \u2014 speaker's affectionate form"
     },
     {
       "row_id": "68.40",
       "whisper": "Lou Grant / Lewis Grant",
-      "candidate_correction": "(uncertain — possibly Lou Grant or Lawrence Guyot)",
+      "candidate_correction": "(uncertain \u2014 possibly Lou Grant or Lawrence Guyot)",
       "confidence": "low",
       "notes": "\"Lou Grant, who was head of the project at that time. Yes, his name was Lewis Grant\"; speaker recall + Whisper potential merge"
     },
     {
       "row_id": "68.47",
       "whisper": "Mama Hackman",
-      "candidate_correction": "(speaker recall — host)",
+      "candidate_correction": "(speaker recall \u2014 host)",
       "confidence": "speaker-originating",
       "notes": "Already in #68.20"
     },
@@ -725,7 +725,7 @@
       "whisper": "Pop Herb",
       "candidate_correction": "Pop Herb",
       "confidence": "speaker-originating",
-      "notes": "Cambridge MD funeral parlor host (cross-ref Judy Richardson #69 — same iteration) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Cambridge MD funeral parlor host (cross-ref Judy Richardson #69 \u2014 same iteration) // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "68.51",
@@ -753,14 +753,14 @@
       "whisper": "Gwen Gillian",
       "candidate_correction": "Gwen Gillian",
       "confidence": "speaker-originating",
-      "notes": "Speaker recall — woman with natural hair before Henderson"
+      "notes": "Speaker recall \u2014 woman with natural hair before Henderson"
     },
     {
       "row_id": "68.59",
       "whisper": "Gracie Hartthorn",
       "candidate_correction": "Gracie Hawthorn",
       "confidence": "medium",
-      "notes": "Speaker recall — Hattiesburg Movement worker"
+      "notes": "Speaker recall \u2014 Hattiesburg Movement worker"
     },
     {
       "row_id": "68.61",
@@ -772,9 +772,9 @@
     {
       "row_id": "68.P2.16",
       "whisper": "Marvin Holloway",
-      "candidate_correction": "(uncertain — possibly Marvin Rich (CORE), Marvin Surkin (IPS), or Marvin Hill)",
+      "candidate_correction": "(uncertain \u2014 possibly Marvin Rich (CORE), Marvin Surkin (IPS), or Marvin Hill)",
       "confidence": "low",
-      "notes": "\"Frank Smith, Marvin Holloway, Ivan Hodonelsen, were fellows at the Institute\"; speaker recall — unclear which Marvin // [PASS-6: confirmed"
+      "notes": "\"Frank Smith, Marvin Holloway, Ivan Hodonelsen, were fellows at the Institute\"; speaker recall \u2014 unclear which Marvin // [PASS-6: confirmed"
     },
     {
       "row_id": "68.P2.19",
@@ -786,23 +786,23 @@
     {
       "row_id": "68.P2.24",
       "whisper": "Lou Grant... Lewis Grant",
-      "candidate_correction": "(uncertain — speaker recall)",
+      "candidate_correction": "(uncertain \u2014 speaker recall)",
       "confidence": "low",
-      "notes": "\"Lou Grant, who was head of the project at that time. Yes, his name was Lewis Grant\"; Pass 1 noted Lawrence Guyot possibility — but Henderson here is naming a Jackson MS Freedom Office project head — could be Lawrence Guyot, or could be a different Lewis Grant who is not in the canonical SNCC roster"
+      "notes": "\"Lou Grant, who was head of the project at that time. Yes, his name was Lewis Grant\"; Pass 1 noted Lawrence Guyot possibility \u2014 but Henderson here is naming a Jackson MS Freedom Office project head \u2014 could be Lawrence Guyot, or could be a different Lewis Grant who is not in the canonical SNCC roster"
     },
     {
       "row_id": "68.P2.29",
       "whisper": "A Claire, Claire, Claire, what's her name? Lawson",
       "candidate_correction": "Claire Lawson",
       "confidence": "speaker-originating",
-      "notes": "Speaker recall — Claire Lawson, daughter of Mrs. Pearl Robinson, Panola County local activist"
+      "notes": "Speaker recall \u2014 Claire Lawson, daughter of Mrs. Pearl Robinson, Panola County local activist"
     },
     {
       "row_id": "68.P4.5",
       "whisper": "\"junior Robinson\"",
       "candidate_correction": "Junior Robinson\"",
       "confidence": "speaker-originating",
-      "notes": "`.srt` line 2411. Henderson recalls \"John Hardy, junior Robinson, who was the youngest, I think he was 13-14\" — a Greenwood SNCC voter-registration workshop teen cohort member. \"junior Robinson\" should be capitalized as the proper name \"Junior Robinson\"; speaker recall, no canonical anchor outside potential cross-corpus identification."
+      "notes": "`.srt` line 2411. Henderson recalls \"John Hardy, junior Robinson, who was the youngest, I think he was 13-14\" \u2014 a Greenwood SNCC voter-registration workshop teen cohort member. \"junior Robinson\" should be capitalized as the proper name \"Junior Robinson\"; speaker recall, no canonical anchor outside potential cross-corpus identification."
     }
   ],
   "skipped_rows": [
@@ -880,5 +880,6 @@
     "preserved_verbatim_count": 505,
     "unresolved_count": 1159,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

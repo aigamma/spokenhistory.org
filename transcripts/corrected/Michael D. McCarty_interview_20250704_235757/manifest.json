@@ -600,7 +600,7 @@
     {
       "row_id": "89.4",
       "whisper": "Saint-Threnda Bar Elementary School",
-      "candidate_correction": "(Saint Catherine / Saint Theresa — uncertain Catholic elementary)",
+      "candidate_correction": "(Saint Catherine / Saint Theresa \u2014 uncertain Catholic elementary)",
       "confidence": "speaker-originating",
       "notes": "West Side Chicago Catholic elementary school"
     },
@@ -614,7 +614,7 @@
     {
       "row_id": "89.P2.9",
       "whisper": "Saint-Threnda Bar Elementary School",
-      "candidate_correction": "(uncertain — possibly St. Theresa or St. Catherine of Genoa, West Side Chicago)",
+      "candidate_correction": "(uncertain \u2014 possibly St. Theresa or St. Catherine of Genoa, West Side Chicago)",
       "confidence": "low",
       "notes": "Pass 1 caught as uncertain; Catholic elementary school name garbled by Whisper. West Side Chicago Catholic elementary education context"
     },
@@ -628,16 +628,16 @@
     {
       "row_id": "89.P2.18",
       "whisper": "adoration / atonement",
-      "candidate_correction": "(uncertain — possibly \"an aberration\" or \"ordeal would end\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"an aberration\" or \"ordeal would end\")",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"So I'm thinking this is an adoration. So I go into the police station\" — Whisper-garbled idiom; context is sarcastic"
+      "notes": "\"So I'm thinking this is an adoration. So I go into the police station\" \u2014 Whisper-garbled idiom; context is sarcastic"
     },
     {
       "row_id": "89.P2.19",
       "whisper": "white car",
-      "candidate_correction": "(uncertain — possibly \"so what\" or \"tough luck\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"so what\" or \"tough luck\")",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"And he looks at me and says, so, white car.\" — Whisper-garbled police-officer dismissal; clearly a racist response phrase, exact words unclear"
+      "notes": "\"And he looks at me and says, so, white car.\" \u2014 Whisper-garbled police-officer dismissal; clearly a racist response phrase, exact words unclear"
     },
     {
       "row_id": "89.P2.26",
@@ -649,7 +649,7 @@
     {
       "row_id": "89.P2.33",
       "whisper": "a priest who taught racism from the pulpit over in Mayor Daley's neighborhood",
-      "candidate_correction": "(Fr. Francis Lawlor, possibly — Chicago South Side white-supremacist Catholic priest 1960s)",
+      "candidate_correction": "(Fr. Francis Lawlor, possibly \u2014 Chicago South Side white-supremacist Catholic priest 1960s)",
       "confidence": "medium",
       "notes": "McCarty's reference to \"Mayor Daley's neighborhood\" priest who preached racism; canonical figure was Fr. Francis Lawlor, an anti-integration Augustinian priest who organized \"block clubs\" against Black home-buyers; Lawlor was later elected to Chicago City Council"
     },
@@ -665,21 +665,21 @@
       "whisper": "the blacks couldn't swim at the pool",
       "candidate_correction": "(canonical pre-Movement Maywood pool-segregation organizing by Hampton as teenager)",
       "confidence": "speaker-originating",
-      "notes": "Hampton's high-school-era organizing at Proviso East HS to integrate Maywood public pool — canonical pre-BPP organizing biography"
+      "notes": "Hampton's high-school-era organizing at Proviso East HS to integrate Maywood public pool \u2014 canonical pre-BPP organizing biography"
     },
     {
       "row_id": "89.P2.56",
       "whisper": "the LA FBI office was compensated for having successfully destroyed this woman's life",
       "candidate_correction": "(canonical FBI COINTELPRO field-office bonus structure)",
       "confidence": "medium",
-      "notes": "McCarty's allegation; the canonical COINTELPRO declassified record does show LA field office documentation of the Seberg rumor-plant operation, including memos asking permission to \"neutralize\" her — declassified post-Church-Committee 1976"
+      "notes": "McCarty's allegation; the canonical COINTELPRO declassified record does show LA field office documentation of the Seberg rumor-plant operation, including memos asking permission to \"neutralize\" her \u2014 declassified post-Church-Committee 1976"
     },
     {
       "row_id": "89.P2.62",
       "whisper": "head start",
       "candidate_correction": "Head Start",
       "confidence": "speaker-originating",
-      "notes": "McCarty's argument that federal Head Start was a government response to BPP Breakfast for Children — historically Head Start was created 1965 by OEO (Sargent Shriver), four years before the BPP Breakfast program 1969 (the chronology runs the other direction). McCarty may be conflating Head Start with later federal school-breakfast expansion 1975. Logged as speaker-originating"
+      "notes": "McCarty's argument that federal Head Start was a government response to BPP Breakfast for Children \u2014 historically Head Start was created 1965 by OEO (Sargent Shriver), four years before the BPP Breakfast program 1969 (the chronology runs the other direction). McCarty may be conflating Head Start with later federal school-breakfast expansion 1975. Logged as speaker-originating"
     },
     {
       "row_id": "89.P4.6",
@@ -834,5 +834,6 @@
     "preserved_verbatim_count": 80,
     "unresolved_count": 236,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

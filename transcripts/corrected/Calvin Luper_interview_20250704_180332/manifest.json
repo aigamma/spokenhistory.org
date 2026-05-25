@@ -355,7 +355,7 @@
       "whisper": "Johnny Browns",
       "candidate_correction": "Johnny's Brown Bottle (?)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Speaker mentions \"in front of Johnny Browns\" — a real OKC business; cannot verify exact name"
+      "notes": "Speaker mentions \"in front of Johnny Browns\" \u2014 a real OKC business; cannot verify exact name"
     },
     {
       "row_id": "10.11",
@@ -374,7 +374,7 @@
     {
       "row_id": "10.14",
       "whisper": "dear couch, poured with Williams",
-      "candidate_correction": "(likely a name garbled — possibly the original Youth Council couch + a person)",
+      "candidate_correction": "(likely a name garbled \u2014 possibly the original Youth Council couch + a person)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"this dear couch, poured with Williams\"; speaker is describing a recovered sofa from the family living room, the \"this dear couch [that] Ford Williams [re-covered]\"; very speculative"
     },
@@ -388,14 +388,14 @@
     {
       "row_id": "10.18",
       "whisper": "Reverend Morris Kerry / Reverend Kerry",
-      "candidate_correction": "(real OKC minister — possibly Reverend W.K. Jackson or another)",
+      "candidate_correction": "(real OKC minister \u2014 possibly Reverend W.K. Jackson or another)",
       "confidence": "speaker-originating",
       "notes": "Whisper rendering, cannot verify"
     },
     {
       "row_id": "10.19",
       "whisper": "Reverend Bratzinger",
-      "candidate_correction": "(real Fifth Street Baptist minister — verify)",
+      "candidate_correction": "(real Fifth Street Baptist minister \u2014 verify)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Whisper rendering"
     },
@@ -409,7 +409,7 @@
     {
       "row_id": "10.24",
       "whisper": "Bruce / Bruce's son",
-      "candidate_correction": "(a name — possibly Bruce Cornelius)",
+      "candidate_correction": "(a name \u2014 possibly Bruce Cornelius)",
       "confidence": "speaker-originating",
       "notes": "Sam Cornelius's son"
     },
@@ -430,7 +430,7 @@
     {
       "row_id": "10.28",
       "whisper": "Pifkins",
-      "candidate_correction": "(likely a OKC photo shop name — possibly Pipkin)",
+      "candidate_correction": "(likely a OKC photo shop name \u2014 possibly Pipkin)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"It's down at one of our local photo shops here at Piffkins\""
     },
@@ -467,7 +467,7 @@
       "whisper": "\"the path that's what there is\"",
       "candidate_correction": "the Panthers, that's what there is\"",
       "confidence": "medium",
-      "notes": "Black-power passage. Cal discusses considering joining \"the path\" after military service — most plausibly \"the Panthers\" (Black Panther Party) given the era (late 1960s post-service) and the rhetorical framing (\"we black power, we're going to take care of that\"). Whisper \"path\" → \"Panthers\" consonant-cluster failure."
+      "notes": "Black-power passage. Cal discusses considering joining \"the path\" after military service \u2014 most plausibly \"the Panthers\" (Black Panther Party) given the era (late 1960s post-service) and the rhetorical framing (\"we black power, we're going to take care of that\"). Whisper \"path\" \u2192 \"Panthers\" consonant-cluster failure."
     },
     {
       "row_id": "10.P4.15",
@@ -514,7 +514,7 @@
     {
       "row_id": "10.P4.30",
       "whisper": "\"Reverend Kerry / Reverend Morris Kerry\"",
-      "candidate_correction": "(likely Reverend W.K. Jackson — Calvary Baptist)",
+      "candidate_correction": "(likely Reverend W.K. Jackson \u2014 Calvary Baptist)",
       "confidence": "low",
       "notes": "Pass 1 #10.18 maintained at speaker-originating. The reverend Cal mentions as \"Reverend Kerry\" / \"Reverend Morris Kerry\" pastoring a church \"relatively close to downtown\" from which youth-council kids walked to Katz/Bishop's/Johnny Browns is plausibly Calvary Baptist Church (which is downtown-adjacent and was a documented OKC civil-rights meeting site). Cannot resolve from speaker phrasing alone."
     }
@@ -598,5 +598,6 @@
     "preserved_verbatim_count": 131,
     "unresolved_count": 383,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

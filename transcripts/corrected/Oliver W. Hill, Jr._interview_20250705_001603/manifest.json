@@ -432,28 +432,28 @@
       "whisper": "\"Grey's\"",
       "candidate_correction": "Graves Junior High School",
       "confidence": "medium",
-      "notes": "Speaker references \"Grey's, which was the black school\" — likely Maggie L. Walker High / Graves Junior High School in Richmond (the canonical Black junior high serving the Northside before integration). Worth research"
+      "notes": "Speaker references \"Grey's, which was the black school\" \u2014 likely Maggie L. Walker High / Graves Junior High School in Richmond (the canonical Black junior high serving the Northside before integration). Worth research"
     },
     {
       "row_id": "94.P2.48",
       "whisper": "\"Newman, you know, the imminent scholars on African history\"",
-      "candidate_correction": "(Howard African-history scholar — possibly Joseph E. Harris, Chancellor Williams, or similar)",
+      "candidate_correction": "(Howard African-history scholar \u2014 possibly Joseph E. Harris, Chancellor Williams, or similar)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Speaker says \"I was fortunate to have, for example, a history class with one of the imminent scholars on African history. Whose name just went out of my head\" — Howard's 1967-71 African-history-program faculty included canonical figures like Chancellor Williams, William Leo Hansberry, Sterling Stuckey. Worth research"
+      "notes": "Speaker says \"I was fortunate to have, for example, a history class with one of the imminent scholars on African history. Whose name just went out of my head\" \u2014 Howard's 1967-71 African-history-program faculty included canonical figures like Chancellor Williams, William Leo Hansberry, Sterling Stuckey. Worth research"
     },
     {
       "row_id": "94.P2.64",
       "whisper": "\"in 2009. That's now you know\"",
-      "candidate_correction": "(Possible date error — should be 1999)",
+      "candidate_correction": "(Possible date error \u2014 should be 1999)",
       "confidence": "speaker-originating",
-      "notes": "Speaker says \"That's the presidential medal of freedom that was awarded in 2009\" — but the canonical date is 1999 (Clinton, not Obama). Likely Whisper-degraded; might also be speaker's verbal slip. Worth research"
+      "notes": "Speaker says \"That's the presidential medal of freedom that was awarded in 2009\" \u2014 but the canonical date is 1999 (Clinton, not Obama). Likely Whisper-degraded; might also be speaker's verbal slip. Worth research"
     },
     {
       "row_id": "94.P4.3",
       "whisper": "\"Reverend, I can't remember his first name, Andy\" / \"her father was Reverend, I can't remember his first name, Andy. Vernon Johns.\"",
       "candidate_correction": "Robert Johns",
       "confidence": "medium",
-      "notes": "Speaker reaches for Barbara Johns's father's first name and self-corrects mid-sentence to her uncle Vernon Johns: \"her father was Reverend, I can't remember his first name, Andy. Vernon Johns. Was her uncle.\" Barbara Rose Johns's father was Robert Johns (Vernon Johns's brother). The \"Andy\" rendering is a speaker memory-reach, not a stable Whisper degradation. Worth canonical-context flag — adds the Robert Johns / Vernon Johns sibling relationship to the corpus's Vernon Johns biographical profile."
+      "notes": "Speaker reaches for Barbara Johns's father's first name and self-corrects mid-sentence to her uncle Vernon Johns: \"her father was Reverend, I can't remember his first name, Andy. Vernon Johns. Was her uncle.\" Barbara Rose Johns's father was Robert Johns (Vernon Johns's brother). The \"Andy\" rendering is a speaker memory-reach, not a stable Whisper degradation. Worth canonical-context flag \u2014 adds the Robert Johns / Vernon Johns sibling relationship to the corpus's Vernon Johns biographical profile."
     },
     {
       "row_id": "94.P4.6",
@@ -465,9 +465,9 @@
     {
       "row_id": "94.P4.12",
       "whisper": "\"Doug Wilder\" + \"George Allen\" + \"succession of democratic governors\"",
-      "candidate_correction": "(Speaker characterizes George Allen as one of the \"succession of democratic governors\" — factually incorrect)",
+      "candidate_correction": "(Speaker characterizes George Allen as one of the \"succession of democratic governors\" \u2014 factually incorrect)",
       "confidence": "low",
-      "notes": "Speaker says: \"this started with the election of Doug Wilder and you had George Allen in there, but there's been a succession of democratic governors who have attempted to do this. And they were able to acknowledge the black contribution.\" George Allen (VA Governor 1994-98) was a Republican, NOT a Democrat. This is a speaker mis-attribution. Per editorial-footnote convention, PRESERVE the speaker's statement and add editorial footnote `[Allen was Republican, not Democratic]`. Worth canonical-context flag — speaker-originating-error-to-preserve."
+      "notes": "Speaker says: \"this started with the election of Doug Wilder and you had George Allen in there, but there's been a succession of democratic governors who have attempted to do this. And they were able to acknowledge the black contribution.\" George Allen (VA Governor 1994-98) was a Republican, NOT a Democrat. This is a speaker mis-attribution. Per editorial-footnote convention, PRESERVE the speaker's statement and add editorial footnote `[Allen was Republican, not Democratic]`. Worth canonical-context flag \u2014 speaker-originating-error-to-preserve."
     }
   ],
   "skipped_rows": [
@@ -557,5 +557,6 @@
     "preserved_verbatim_count": 255,
     "unresolved_count": 559,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

@@ -212,7 +212,7 @@
     {
       "row_id": "122.P2.20",
       "whisper": "None of us could understand her parents looked white",
-      "correction": "None of us could understand — her parents looked white",
+      "correction": "None of us could understand \u2014 her parents looked white",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -508,7 +508,7 @@
     {
       "row_id": "122.P4.29",
       "whisper": "one of the people who was arrested. She's, you've seen her, may have seen her picture",
-      "correction": "Marie Sallasin — you may have seen her picture",
+      "correction": "Marie Sallasin \u2014 you may have seen her picture",
       "confidence": "correct",
       "occurrences": 1,
       "file_paths": [
@@ -536,7 +536,7 @@
       "whisper": "RIP Black",
       "candidate_correction": "(R)acially I(P)olated Black",
       "confidence": "low",
-      "notes": "\"We had our neighborhoods, RIP Black\" — Whisper-degradation; speaker's idiom unclear but context establishes all-Black residential segregation"
+      "notes": "\"We had our neighborhoods, RIP Black\" \u2014 Whisper-degradation; speaker's idiom unclear but context establishes all-Black residential segregation"
     },
     {
       "row_id": "122.P2.12",
@@ -550,63 +550,63 @@
       "whisper": "North Town",
       "candidate_correction": "(uncertain Philadelphia neighborhood)",
       "confidence": "medium",
-      "notes": "\"outside of Phyllis in a place called North Town\" — speaker referring to Patricia Washington's family home; possibly a Whisper rendering of \"Norristown PA\" or \"Yeadon\" or another suburb"
+      "notes": "\"outside of Phyllis in a place called North Town\" \u2014 speaker referring to Patricia Washington's family home; possibly a Whisper rendering of \"Norristown PA\" or \"Yeadon\" or another suburb"
     },
     {
       "row_id": "122.P2.33",
       "whisper": "Mr. Judson",
       "candidate_correction": "Mr. Judson",
       "confidence": "speaker-originating",
-      "notes": "Canonical Alfred University Leadership Center funder/sponsor; speaker references \"Mr. Judson's tragic death\" → renaming of the Women's Leadership Center to the \"Judson Leadership Center\""
+      "notes": "Canonical Alfred University Leadership Center funder/sponsor; speaker references \"Mr. Judson's tragic death\" \u2192 renaming of the Women's Leadership Center to the \"Judson Leadership Center\""
     },
     {
       "row_id": "122.P3.8",
-      "whisper": "\"Maurice → Marie (Sallasin)\" (Pass 2 122.P2.9-10)",
+      "whisper": "\"Maurice \u2192 Marie (Sallasin)\" (Pass 2 122.P2.9-10)",
       "candidate_correction": "Add catalog row for second-half-transcript name-degradation",
       "confidence": "medium",
-      "notes": "Whisper-drift-over-transcript-length pattern — speaker's same proper noun rendered differently in first vs. second halves of long transcripts. Worth noting as catalog row H special pattern"
+      "notes": "Whisper-drift-over-transcript-length pattern \u2014 speaker's same proper noun rendered differently in first vs. second halves of long transcripts. Worth noting as catalog row H special pattern"
     },
     {
       "row_id": "122.P4.5",
       "whisper": "the police call Looksville",
       "candidate_correction": "Pikesville",
       "confidence": "medium",
-      "notes": "\"I have this conversation with my sister, who lives outside of Washington and the police call Looksville\" — speaker's sister lives in DC-Baltimore corridor; Pikesville MD (Baltimore County suburb, ~20 mi N of DC outer ring) is the most plausible geographic referent. Whisper failure \"Pikesville → Looksville\" — DC-Baltimore-area Whisper miss"
+      "notes": "\"I have this conversation with my sister, who lives outside of Washington and the police call Looksville\" \u2014 speaker's sister lives in DC-Baltimore corridor; Pikesville MD (Baltimore County suburb, ~20 mi N of DC outer ring) is the most plausible geographic referent. Whisper failure \"Pikesville \u2192 Looksville\" \u2014 DC-Baltimore-area Whisper miss"
     },
     {
       "row_id": "122.P4.12",
       "whisper": "And I and our money goods",
       "candidate_correction": "Is our money good?",
       "confidence": "medium",
-      "notes": "\"you asked the question, well, how money is in our money good?\" — Whisper drop-out + parsing failure; speaker's rhetorical question to the Thalhimers staff about Black customers' money being treated as legitimate currency for purchases but not for the tea-room"
+      "notes": "\"you asked the question, well, how money is in our money good?\" \u2014 Whisper drop-out + parsing failure; speaker's rhetorical question to the Thalhimers staff about Black customers' money being treated as legitimate currency for purchases but not for the tea-room"
     },
     {
       "row_id": "122.P4.13",
       "whisper": "Newport News was very mistakenly",
       "candidate_correction": "Newport News was very [segregated",
       "confidence": "medium",
-      "notes": "\"I'll just share when I was coming up, Newport News was very mistakenly\" — Whisper drop-out; speaker's intended word likely \"segregated\" or \"segregationist\" given the racial-segregation theme of the surrounding paragraph"
+      "notes": "\"I'll just share when I was coming up, Newport News was very mistakenly\" \u2014 Whisper drop-out; speaker's intended word likely \"segregated\" or \"segregationist\" given the racial-segregation theme of the surrounding paragraph"
     },
     {
       "row_id": "122.P4.15",
       "whisper": "the police call Looksville, and they're menaces",
       "candidate_correction": "Pikesville, and there are menaces",
       "confidence": "medium",
-      "notes": "\"my sister, who lives outside of Washington and the police call Looksville, and they're menaces\" — paired with 122.P4.5; speaker describing safer Black-middle-class suburban context. \"Menaces\" likely \"no menaces\" or \"they aren't menaces\" (Whisper drop-out of negation)"
+      "notes": "\"my sister, who lives outside of Washington and the police call Looksville, and they're menaces\" \u2014 paired with 122.P4.5; speaker describing safer Black-middle-class suburban context. \"Menaces\" likely \"no menaces\" or \"they aren't menaces\" (Whisper drop-out of negation)"
     },
     {
       "row_id": "122.P4.22",
       "whisper": "did you know your realizement",
       "candidate_correction": "did you have your reassignment",
       "confidence": "medium",
-      "notes": "\"when did you know your realizement? Or when did you know you were out with your back surgery instead of, you know, you out back surgery, did you transition?\" — Whisper drop-out across an entire phrase; speaker is giving an example of an inappropriate workplace question to a transgender employee. \"Realizement\" is not a word; speaker likely said \"reassignment\" or \"realization\""
+      "notes": "\"when did you know your realizement? Or when did you know you were out with your back surgery instead of, you know, you out back surgery, did you transition?\" \u2014 Whisper drop-out across an entire phrase; speaker is giving an example of an inappropriate workplace question to a transgender employee. \"Realizement\" is not a word; speaker likely said \"reassignment\" or \"realization\""
     },
     {
       "row_id": "122.P4.24",
       "whisper": "menaces, and where they chose to live",
       "candidate_correction": "(no menaces / no menace, and where they chose to live)",
       "confidence": "medium",
-      "notes": "Reinforces 122.P4.15 — Whisper drop-out of negation; speaker's sister's Pikesville MD suburb is described as safe / no menaces"
+      "notes": "Reinforces 122.P4.15 \u2014 Whisper drop-out of negation; speaker's sister's Pikesville MD suburb is described as safe / no menaces"
     }
   ],
   "skipped_rows": [
@@ -628,7 +628,7 @@
     },
     {
       "row_id": "122.P4.4",
-      "reason": "correction notes indicate drop: (descriptive — speaker dropout, possibly \"a blue-state teach"
+      "reason": "correction notes indicate drop: (descriptive \u2014 speaker dropout, possibly \"a blue-state teach"
     }
   ],
   "files_processed": [
@@ -696,5 +696,6 @@
     "preserved_verbatim_count": 249,
     "unresolved_count": 660,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

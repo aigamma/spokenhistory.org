@@ -188,7 +188,7 @@
     {
       "row_id": "93.22",
       "whisper": "Susan Chavez",
-      "correction": "César Chávez",
+      "correction": "C\u00e9sar Ch\u00e1vez",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -425,7 +425,7 @@
     {
       "row_id": "93.27",
       "whisper": "Crab Whales",
-      "candidate_correction": "(Crabowell / Cravelles — uncertain two white brothers at Jefferson HS)",
+      "candidate_correction": "(Crabowell / Cravelles \u2014 uncertain two white brothers at Jefferson HS)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "-"
     },
@@ -434,7 +434,7 @@
       "whisper": "\"Albert Armore\"",
       "candidate_correction": "Albert Armour",
       "confidence": "medium",
-      "notes": "Pass 1 #93.4 had this. Speaker's first husband; canonical LA BPP member. Worth noting that the transcript later mentions \"Albert Armore the third\" and \"the third Albert Armore\" — suggesting a multi-generational name lineage in the family"
+      "notes": "Pass 1 #93.4 had this. Speaker's first husband; canonical LA BPP member. Worth noting that the transcript later mentions \"Albert Armore the third\" and \"the third Albert Armore\" \u2014 suggesting a multi-generational name lineage in the family"
     },
     {
       "row_id": "93.P2.6",
@@ -448,14 +448,14 @@
       "whisper": "\"Albert Armore the third in LH are more\"",
       "candidate_correction": "Albert Armour III and LH Armour",
       "confidence": "speaker-originating",
-      "notes": "Speaker references her son \"Albert Armour the Third\" and daughter \"LH Armour\" — second and third generation in the Armour family lineage. Cross-corpus useful for tracking BPP family genealogy"
+      "notes": "Speaker references her son \"Albert Armour the Third\" and daughter \"LH Armour\" \u2014 second and third generation in the Armour family lineage. Cross-corpus useful for tracking BPP family genealogy"
     },
     {
       "row_id": "93.P2.12",
       "whisper": "\"Terry Cooper's\"",
       "candidate_correction": "Dr. Terry Kupers",
       "confidence": "medium",
-      "notes": "Pass 1 #93.11 had this. Canonical psychiatrist; prison-mental-health expert; worked with BPP clinic. Whisper hears \"Kupers\" as \"Cooper's\" (possessive) — recurring artifact"
+      "notes": "Pass 1 #93.11 had this. Canonical psychiatrist; prison-mental-health expert; worked with BPP clinic. Whisper hears \"Kupers\" as \"Cooper's\" (possessive) \u2014 recurring artifact"
     },
     {
       "row_id": "93.P2.13",
@@ -474,9 +474,9 @@
     {
       "row_id": "93.P2.29",
       "whisper": "\"Crab Whales\" / \"Crab Whales, I remember\"",
-      "candidate_correction": "(Two white brothers at Jefferson HS — uncertain \"Crabowell\" or \"Cravelles\")",
+      "candidate_correction": "(Two white brothers at Jefferson HS \u2014 uncertain \"Crabowell\" or \"Cravelles\")",
       "confidence": "low",
-      "notes": "Pass 1 #93.27 had this. Speaker mentions only by surname her two white classmates at Jefferson — likely a Greek/Italian/Eastern European surname Whisper-mangled"
+      "notes": "Pass 1 #93.27 had this. Speaker mentions only by surname her two white classmates at Jefferson \u2014 likely a Greek/Italian/Eastern European surname Whisper-mangled"
     },
     {
       "row_id": "93.P2.48",
@@ -502,9 +502,9 @@
     {
       "row_id": "93.P2.65",
       "whisper": "\"the Holy Ghost Phil Christian\" / \"Phil Christian\"",
-      "candidate_correction": "(Holy Ghost Filipino Christians — uncertain LA-area religious group)",
+      "candidate_correction": "(Holy Ghost Filipino Christians \u2014 uncertain LA-area religious group)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Speaker references \"the Holy Ghost Phil Christian. Where were the Holy Ghost Christians? They were at the airport mostly.\" Likely a Filipino-American Christian street-evangelism group active at LAX in the 1970s — local pop-culture reference"
+      "notes": "Speaker references \"the Holy Ghost Phil Christian. Where were the Holy Ghost Christians? They were at the airport mostly.\" Likely a Filipino-American Christian street-evangelism group active at LAX in the 1970s \u2014 local pop-culture reference"
     }
   ],
   "skipped_rows": [
@@ -626,5 +626,6 @@
     "preserved_verbatim_count": 342,
     "unresolved_count": 740,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

@@ -44,7 +44,7 @@
     {
       "row_id": "116.4",
       "whisper": "San Lo",
-      "correction": "Saint-Lô",
+      "correction": "Saint-L\u00f4",
       "confidence": "high",
       "occurrences": 12,
       "file_paths": [
@@ -524,7 +524,7 @@
     {
       "row_id": "116.P3.3",
       "whisper": "\"drafted in 1942. And went straight to Camp Grant\"",
-      "correction": "Camp Grant, Rockford IL → reinforces WWII reception-center pattern",
+      "correction": "Camp Grant, Rockford IL \u2192 reinforces WWII reception-center pattern",
       "confidence": "correct",
       "occurrences": 1,
       "file_paths": [
@@ -603,7 +603,7 @@
       "whisper": "Womile / Womile Sissin / Wismes Sissin",
       "candidate_correction": "Wismes, France",
       "confidence": "medium",
-      "notes": "\"we were saved at Womile France, Womile Sissin\"; small Pas-de-Calais commune where Bates supervised the legal Allied military-government brothels — speaker may also have meant Wisques (Saint-Omer area)"
+      "notes": "\"we were saved at Womile France, Womile Sissin\"; small Pas-de-Calais commune where Bates supervised the legal Allied military-government brothels \u2014 speaker may also have meant Wisques (Saint-Omer area)"
     },
     {
       "row_id": "116.P2.14",
@@ -624,14 +624,14 @@
       "whisper": "Jonathan Edwards (Reinhold Niebuhr's predecessor at Union)",
       "candidate_correction": "(likely) Harry F. Ward",
       "confidence": "medium",
-      "notes": "\"Jonathan Edwards. No, that sounds right. Jonathan Edwards is Scottish, so it's not him. It's the English one, American one\"; speaker self-correcting; the \"radical Christian and educator\" + \"leading liberal theologians at that time, near union\" + \"very influenced by him\" — likely Harry F. Ward (canonical Union Theological Seminary social-ethics professor 1916-41, founder American League Against War and Fascism); Whisper rendered as \"Evans\" — but speaker also identified him as Myles Horton's mentor alongside Niebuhr"
+      "notes": "\"Jonathan Edwards. No, that sounds right. Jonathan Edwards is Scottish, so it's not him. It's the English one, American one\"; speaker self-correcting; the \"radical Christian and educator\" + \"leading liberal theologians at that time, near union\" + \"very influenced by him\" \u2014 likely Harry F. Ward (canonical Union Theological Seminary social-ethics professor 1916-41, founder American League Against War and Fascism); Whisper rendered as \"Evans\" \u2014 but speaker also identified him as Myles Horton's mentor alongside Niebuhr"
     },
     {
       "row_id": "116.P2.26",
       "whisper": "Eduard Lindeman / Evans",
       "candidate_correction": "Eduard C. Lindeman",
       "confidence": "medium",
-      "notes": "Cross-reference confirms — canonical NYU radical educator; Horton's mentor at NYU School of Social Work; Pass 1 cross-referenced but did not include in corrections table"
+      "notes": "Cross-reference confirms \u2014 canonical NYU radical educator; Horton's mentor at NYU School of Social Work; Pass 1 cross-referenced but did not include in corrections table"
     },
     {
       "row_id": "116.P2.27",
@@ -652,21 +652,21 @@
       "whisper": "top honest student from Alabama",
       "candidate_correction": "(likely Eric Beauregard \"Tony\" Griffey or similar)",
       "confidence": "low",
-      "notes": "\"It was a top honest student from Alabama who became a federal judge when he got out. It was first black graduate from the University of South\"; uncertain identification — possibly Andrew K. Hightower or Eric Griffey, but no canonical match in current corpus"
+      "notes": "\"It was a top honest student from Alabama who became a federal judge when he got out. It was first black graduate from the University of South\"; uncertain identification \u2014 possibly Andrew K. Hightower or Eric Griffey, but no canonical match in current corpus"
     },
     {
       "row_id": "116.P2.36",
       "whisper": "the Courter store",
       "candidate_correction": "(likely) the Confederate store",
       "confidence": "low",
-      "notes": "identification uncertain — possibly reference to a Klan-affiliated store along the March route // [PASS-6: unresolved-escalated-to-ensemble"
+      "notes": "identification uncertain \u2014 possibly reference to a Klan-affiliated store along the March route // [PASS-6: unresolved-escalated-to-ensemble"
     },
     {
       "row_id": "116.P3.4",
       "whisper": "\"the master is wearing swastikers\"",
       "candidate_correction": "Cross-corpus catalog: Whisper \"master is\" rendering for \"Master Race\"",
       "confidence": "medium",
-      "notes": "Master MD line 243 catalog notes \"the master is / master is wearing swastikers → the Master Race (Nazi rally chant)\" — confirmed in #34 (Thelwell). Not surfaced in Bates Pass 1/2 but the Bates transcript's Nazi-occupied-France context could plausibly contain the pattern. Worth audit-pipeline check. // [LAYER-5: D3-catalog-contradiction (catalog 'G-ext': '\"the master is wearing swastikers\"'), ensemble-adjudication-pending]"
+      "notes": "Master MD line 243 catalog notes \"the master is / master is wearing swastikers \u2192 the Master Race (Nazi rally chant)\" \u2014 confirmed in #34 (Thelwell). Not surfaced in Bates Pass 1/2 but the Bates transcript's Nazi-occupied-France context could plausibly contain the pattern. Worth audit-pipeline check. // [LAYER-5: D3-catalog-contradiction (catalog 'G-ext': '\"the master is wearing swastikers\"'), ensemble-adjudication-pending]"
     },
     {
       "row_id": "116.P4.4",
@@ -680,21 +680,21 @@
       "whisper": "\"main crop was, of course, Pohenstein and Likert\"",
       "candidate_correction": "main crop was, of course, [moonshine] and liquor",
       "confidence": "medium",
-      "notes": "Grundy County moonshine context throughout transcript; \"Pohenstein\" is a severe Whisper rendering — possibly \"poteen\" (Irish moonshine) or \"blockade-stilling\" / \"white lightning\" terminology. Whisper noun-garble in regional-dialect register."
+      "notes": "Grundy County moonshine context throughout transcript; \"Pohenstein\" is a severe Whisper rendering \u2014 possibly \"poteen\" (Irish moonshine) or \"blockade-stilling\" / \"white lightning\" terminology. Whisper noun-garble in regional-dialect register."
     },
     {
       "row_id": "116.P4.7",
       "whisper": "\"the University of North Carolina's up to McClark book on the role of Highlander\"",
       "candidate_correction": "UNC Press",
       "confidence": "low",
-      "notes": "\"best account of it in the straight literature is pretty much the University of North Carolina's up to McClark book on the role of Highlander\" — likely refers to Cynthia Stokes Brown's *Ready From Within: Septima Clark and the Civil Rights Movement* (1986, Africa World / Wild Trees) OR John Glen's *Highlander: No Ordinary School* (UNC Press / U Press of Kentucky 1988). \"McClark\" is severe enough that adversarial review is needed."
+      "notes": "\"best account of it in the straight literature is pretty much the University of North Carolina's up to McClark book on the role of Highlander\" \u2014 likely refers to Cynthia Stokes Brown's *Ready From Within: Septima Clark and the Civil Rights Movement* (1986, Africa World / Wild Trees) OR John Glen's *Highlander: No Ordinary School* (UNC Press / U Press of Kentucky 1988). \"McClark\" is severe enough that adversarial review is needed."
     },
     {
       "row_id": "116.P4.8",
-      "whisper": "\"Patton's Army in the Brittany. But Avansh was our goal. It was there that I became a French interpreter… until we got to terminate that\"",
-      "candidate_correction": "…until we got to [Germany",
+      "whisper": "\"Patton's Army in the Brittany. But Avansh was our goal. It was there that I became a French interpreter\u2026 until we got to terminate that\"",
+      "candidate_correction": "\u2026until we got to [Germany",
       "confidence": "low",
-      "notes": "\"until we got to terminate that\" — unclear whether Whisper rendered a location (\"Germany\") or an action verb (\"the war's termination\"). Bates's WWII French-interpreter chronology suggests Germany. Adversarial."
+      "notes": "\"until we got to terminate that\" \u2014 unclear whether Whisper rendered a location (\"Germany\") or an action verb (\"the war's termination\"). Bates's WWII French-interpreter chronology suggests Germany. Adversarial."
     },
     {
       "row_id": "116.P4.9",
@@ -715,7 +715,7 @@
       "whisper": "\"the Courter store\" (Meredith March context)",
       "candidate_correction": "(likely) Coleman's grocery",
       "confidence": "low",
-      "notes": "June 6 1966 ambush of Meredith on US-51 occurred near Hernando MS; the shooter Aubrey Norvell ran a hardware operation in Memphis area. \"Courter store\" likely conflates Norvell's store or the Coleman's grocery near the Meredith ambush site. Adversarial — retain Pass 3 flag."
+      "notes": "June 6 1966 ambush of Meredith on US-51 occurred near Hernando MS; the shooter Aubrey Norvell ran a hardware operation in Memphis area. \"Courter store\" likely conflates Norvell's store or the Coleman's grocery near the Meredith ambush site. Adversarial \u2014 retain Pass 3 flag."
     }
   ],
   "skipped_rows": [
@@ -797,5 +797,6 @@
     "preserved_verbatim_count": 447,
     "unresolved_count": 1210,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

@@ -56,7 +56,7 @@
     {
       "row_id": "86.5",
       "whisper": "Unipedocera",
-      "correction": "Junípero Serra",
+      "correction": "Jun\u00edpero Serra",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -140,7 +140,7 @@
     {
       "row_id": "86.12",
       "whisper": "Caesar Chavez",
-      "correction": "César Chávez",
+      "correction": "C\u00e9sar Ch\u00e1vez",
       "confidence": "correct",
       "occurrences": 9,
       "file_paths": [
@@ -211,8 +211,8 @@
     },
     {
       "row_id": "86.23",
-      "whisper": "Atlán",
-      "correction": "Aztlán",
+      "whisper": "Atl\u00e1n",
+      "correction": "Aztl\u00e1n",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -236,7 +236,7 @@
     {
       "row_id": "86.25",
       "whisper": "Jose Mascoceros",
-      "correction": "José Vasconcelos",
+      "correction": "Jos\u00e9 Vasconcelos",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -248,7 +248,7 @@
     {
       "row_id": "86.26",
       "whisper": "La Raza Cosmica",
-      "correction": "La Raza Cósmica",
+      "correction": "La Raza C\u00f3smica",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -452,7 +452,7 @@
     {
       "row_id": "86.P2.17",
       "whisper": "Susan Chavez",
-      "correction": "César Chávez",
+      "correction": "C\u00e9sar Ch\u00e1vez",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -463,7 +463,7 @@
     },
     {
       "row_id": "86.P2.21",
-      "whisper": "Tomasá Camarillo / Tomasá",
+      "whisper": "Tomas\u00e1 Camarillo / Tomas\u00e1",
       "correction": "Tomasa Camarillo",
       "confidence": "correct",
       "occurrences": 6,
@@ -620,7 +620,7 @@
     {
       "row_id": "86.P4.1",
       "whisper": "\"Kadeco\"",
-      "correction": "qué dijo\"",
+      "correction": "qu\u00e9 dijo\"",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -777,7 +777,7 @@
       "whisper": "trained Barack Obama",
       "candidate_correction": "trained Barack Obama",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"he trained Caesar Chavez, he trained Barack Obama, he trained the founders of the National Council of La Raza\" — Camarillo's claim that Alinsky trained Obama is a common but imprecise rendering (Obama was trained by Industrial Areas Foundation, which Alinsky founded; he was not personally trained by Alinsky, who died in 1972, before Obama's organizing career). Logged as speaker-originating"
+      "notes": "\"he trained Caesar Chavez, he trained Barack Obama, he trained the founders of the National Council of La Raza\" \u2014 Camarillo's claim that Alinsky trained Obama is a common but imprecise rendering (Obama was trained by Industrial Areas Foundation, which Alinsky founded; he was not personally trained by Alinsky, who died in 1972, before Obama's organizing career). Logged as speaker-originating"
     },
     {
       "row_id": "86.P2.26",
@@ -789,16 +789,16 @@
     {
       "row_id": "86.P2.29",
       "whisper": "the Demons",
-      "candidate_correction": "(uncertain — possibly \"the demonstration\" or \"the demons\" as in white-supremacist movement label)",
+      "candidate_correction": "(uncertain \u2014 possibly \"the demonstration\" or \"the demons\" as in white-supremacist movement label)",
       "confidence": "low",
-      "notes": "\"before the Demons, he was going to be a march\" — appears in McCarty context, not Camarillo"
+      "notes": "\"before the Demons, he was going to be a march\" \u2014 appears in McCarty context, not Camarillo"
     },
     {
       "row_id": "86.P2.34",
       "whisper": "Schrodinger for President",
       "candidate_correction": "(Trump for President)",
       "confidence": "medium",
-      "notes": "Pass 1 caught; \"the Schrodinger for President is talking about building walls\" — 2016 election context; Whisper renders \"Trump\" as \"Schrodinger\" (possibly the LLM was thrown by the speaker's mocking tone). Damaging rendering — phantom canonical figure"
+      "notes": "Pass 1 caught; \"the Schrodinger for President is talking about building walls\" \u2014 2016 election context; Whisper renders \"Trump\" as \"Schrodinger\" (possibly the LLM was thrown by the speaker's mocking tone). Damaging rendering \u2014 phantom canonical figure"
     },
     {
       "row_id": "86.P2.38",
@@ -812,14 +812,14 @@
       "whisper": "the silverman",
       "candidate_correction": "Jack Silverman",
       "confidence": "speaker-originating",
-      "notes": "\"I knew the founder, Jack in the box, friend of mine, the silverman\" — Whisper drops \"Jack\" before \"Silverman\"; canonical Jack in the Box founder is Robert O. Peterson, NOT Silverman — Camarillo may be confusing names, OR speaker-originating reference is correct (logged for review). Possibly a different SD restaurant figure"
+      "notes": "\"I knew the founder, Jack in the box, friend of mine, the silverman\" \u2014 Whisper drops \"Jack\" before \"Silverman\"; canonical Jack in the Box founder is Robert O. Peterson, NOT Silverman \u2014 Camarillo may be confusing names, OR speaker-originating reference is correct (logged for review). Possibly a different SD restaurant figure"
     },
     {
       "row_id": "86.P2.46",
       "whisper": "Aztec, Aztec, none both",
       "candidate_correction": "Aztec, Toltec, Olmec, Nahuatl",
       "confidence": "medium",
-      "notes": "\"I name companies Aztec, Aztec, none both\" — Whisper degraded; speaker is listing Mesoamerican civilizations he named companies after"
+      "notes": "\"I name companies Aztec, Aztec, none both\" \u2014 Whisper degraded; speaker is listing Mesoamerican civilizations he named companies after"
     },
     {
       "row_id": "86.P2.50",
@@ -950,5 +950,6 @@
     "preserved_verbatim_count": 608,
     "unresolved_count": 775,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

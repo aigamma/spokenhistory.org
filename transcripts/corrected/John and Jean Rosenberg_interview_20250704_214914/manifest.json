@@ -296,7 +296,7 @@
     {
       "row_id": "61.P2.27",
       "whisper": "Nick Flannery",
-      "correction": "Nicholas deB. Katzenbach? — actually probably Nick Katzenbach?",
+      "correction": "Nicholas deB. Katzenbach? \u2014 actually probably Nick Katzenbach?",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -746,56 +746,56 @@
       "whisper": "C Park",
       "candidate_correction": "C.E. Park",
       "confidence": "medium",
-      "notes": "(Pass 1 noted) — canonical Duke trustee; Gastonia native; spelling not fully verified"
+      "notes": "(Pass 1 noted) \u2014 canonical Duke trustee; Gastonia native; spelling not fully verified"
     },
     {
       "row_id": "61.P2.14",
       "whisper": "Abe Jenkins (Charleston SC)",
       "candidate_correction": "Abe Jenkins",
       "confidence": "speaker-originating",
-      "notes": "(Pass 1 noted) — Rosenberg's Air Force radar operator from Charleston SC; the foundational train-segregation-in-DC formative incident"
+      "notes": "(Pass 1 noted) \u2014 Rosenberg's Air Force radar operator from Charleston SC; the foundational train-segregation-in-DC formative incident"
     },
     {
       "row_id": "61.P2.25",
       "whisper": "Jerry Hyalbrun / Jerry Hyalburn",
       "candidate_correction": "Jerome A. \"Jerry\" Heilbron",
       "confidence": "medium",
-      "notes": "\"There had been a series of church burnings... I worked with a lawyer named Jerry Hyalbrun who had practiced in Fort Smith Arkansas\" — canonical Fort Smith AR-based civil rights attorney who joined the Civil Rights Division; later Community Relations Service; spelling not fully verified // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"There had been a series of church burnings... I worked with a lawyer named Jerry Hyalbrun who had practiced in Fort Smith Arkansas\" \u2014 canonical Fort Smith AR-based civil rights attorney who joined the Civil Rights Division; later Community Relations Service; spelling not fully verified // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "61.P2.32",
       "whisper": "Lou Couter",
       "candidate_correction": "Louis B. \"Lou\" Coutter",
       "confidence": "low",
-      "notes": "\"this picture of, this is James Farmer leading the March... One of them is Lou Couter and the other is John Rosenberg when we were at that March\" — canonical Civil Rights Division attorney; spelling unverified"
+      "notes": "\"this picture of, this is James Farmer leading the March... One of them is Lou Couter and the other is John Rosenberg when we were at that March\" \u2014 canonical Civil Rights Division attorney; spelling unverified"
     },
     {
       "row_id": "61.P2.34",
       "whisper": "Foot Campbell (Yazoo County)",
       "candidate_correction": "Foot\" Campbell",
       "confidence": "speaker-originating",
-      "notes": "(Pass 1 noted) — canonical Yazoo County MS Circuit Clerk in the 1960s; the foundational 38-pistol-shot-into-floor intimidation episode"
+      "notes": "(Pass 1 noted) \u2014 canonical Yazoo County MS Circuit Clerk in the 1960s; the foundational 38-pistol-shot-into-floor intimidation episode"
     },
     {
       "row_id": "61.P2.41",
       "whisper": "Judge Thomas",
       "candidate_correction": "Judge Daniel Thomas",
       "confidence": "medium",
-      "notes": "\"the case was then assigned to Judge Thomas who was the chief judge in the Southern District. He had kept the mobile school system pretty well segregated\" — canonical US District Judge for Southern District of Alabama; the 1966 Selma election-recount case in Dallas County (Jim Clark vs. Wilson Baker)"
+      "notes": "\"the case was then assigned to Judge Thomas who was the chief judge in the Southern District. He had kept the mobile school system pretty well segregated\" \u2014 canonical US District Judge for Southern District of Alabama; the 1966 Selma election-recount case in Dallas County (Jim Clark vs. Wilson Baker)"
     },
     {
       "row_id": "61.P2.55",
       "whisper": "Mr. Eskridge",
       "candidate_correction": "Mr. Eskridge",
       "confidence": "speaker-originating",
-      "notes": "\"if you knew Fannie Lou Hamer or Mr. Eskridge, and she's out there chopping cotton or thinking she might lose her job or Eskridge is set all out there by himself, he wants just all he wants is to get his kid into school\" — speaker-originating reference to a MS Civil Rights Movement parent figure"
+      "notes": "\"if you knew Fannie Lou Hamer or Mr. Eskridge, and she's out there chopping cotton or thinking she might lose her job or Eskridge is set all out there by himself, he wants just all he wants is to get his kid into school\" \u2014 speaker-originating reference to a MS Civil Rights Movement parent figure"
     },
     {
       "row_id": "61.P2.59",
       "whisper": "Balance Do",
       "candidate_correction": "Baptist Town",
       "confidence": "low",
-      "notes": "\"Black section is known as Balance Do\" — canonical Itta Bena MS Black neighborhood; possibly \"Balance Due\" / \"Baptist Town\" — flag for confirmation"
+      "notes": "\"Black section is known as Balance Do\" \u2014 canonical Itta Bena MS Black neighborhood; possibly \"Balance Due\" / \"Baptist Town\" \u2014 flag for confirmation"
     },
     {
       "row_id": "61.P2.73",
@@ -809,7 +809,7 @@
       "whisper": "Greater Germantown Business Association",
       "candidate_correction": "(cross-ref to #63 Churchville)",
       "confidence": "speaker-originating",
-      "notes": "(Mistaken — this is in #63 Churchville transcript, not Rosenberg; ignore)"
+      "notes": "(Mistaken \u2014 this is in #63 Churchville transcript, not Rosenberg; ignore)"
     },
     {
       "row_id": "61.P4.5",
@@ -821,14 +821,14 @@
     {
       "row_id": "61.P4.7",
       "whisper": "\"Coast Park Simulator\"",
-      "candidate_correction": "(uncertain — possibly \"post-Park situation\" or interviewer phrasing)",
+      "candidate_correction": "(uncertain \u2014 possibly \"post-Park situation\" or interviewer phrasing)",
       "confidence": "low",
       "notes": "\"And for you personally, I don't know whether if there are African Americans in your classes at Duke or was this really for you the first time to be in Coast Park Simulator?\" (line 611) -- the phrase is a Whisper garble in an interviewer question; the underlying intent appears to be \"a fully integrated setting\" or \"post-segregation situation\" but the source phrase cannot be recovered with confidence. Flag for adversarial review."
     },
     {
       "row_id": "61.P4.10",
       "whisper": "\"Mrs. Ippie Bernie\"",
-      "candidate_correction": "(unidentified — likely \"Mrs. ___ Bernie\" — possibly \"Mrs. Effie / Yip / Ippy Bernie\" connected to the Meridian FBI-informant context)",
+      "candidate_correction": "(unidentified \u2014 likely \"Mrs. ___ Bernie\" \u2014 possibly \"Mrs. Effie / Yip / Ippy Bernie\" connected to the Meridian FBI-informant context)",
       "confidence": "low",
       "notes": "\"it was not the way quite the way Mrs. Ippie Bernie put it\" (line 1511) -- reference in the context of an unnamed Mississippi Burning FBI-informant story; the speaker is contrasting \"Mrs. Ippie Bernie's\" version of events against the FBI agent's actual conduct. Identification cannot be made from internal context alone. Flag for adversarial review."
     }
@@ -904,5 +904,6 @@
     "preserved_verbatim_count": 897,
     "unresolved_count": 1426,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

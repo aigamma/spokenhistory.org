@@ -548,7 +548,7 @@
     {
       "row_id": "104.P2.19",
       "whisper": "Washington Research Project",
-      "correction": "Washington Research Project (1968) → Children's Defense Fund",
+      "correction": "Washington Research Project (1968) \u2192 Children's Defense Fund",
       "confidence": "correct",
       "occurrences": 6,
       "file_paths": [
@@ -806,14 +806,14 @@
       "whisper": "Frisk was came by by about 10-15 votes",
       "candidate_correction": "Frisk vs. Wyche by about 10-15 votes",
       "confidence": "low",
-      "notes": "\"He lost the election when Frisk was came by\"; the white incumbent police chief's name appears to be \"Frisk\" (or Frisk/Friske/Frick) — identification approximate; the Sept-Oct 1968 Madison Parish police chief race that triggered Sobol's voting-rights litigation under Judge Dawkins"
+      "notes": "\"He lost the election when Frisk was came by\"; the white incumbent police chief's name appears to be \"Frisk\" (or Frisk/Friske/Frick) \u2014 identification approximate; the Sept-Oct 1968 Madison Parish police chief race that triggered Sobol's voting-rights litigation under Judge Dawkins"
     },
     {
       "row_id": "104.P2.5",
       "whisper": "Harrison Brown (Madison Parish school board)",
       "candidate_correction": "Harrison Brown",
       "confidence": "speaker-originating",
-      "notes": "Black school-board candidate in Madison Parish whose name was disconnected from the Democratic \"rooster\" party-line lever — election was set aside and rerun by Judge Dawkins; Brown won the rerun election"
+      "notes": "Black school-board candidate in Madison Parish whose name was disconnected from the Democratic \"rooster\" party-line lever \u2014 election was set aside and rerun by Judge Dawkins; Brown won the rerun election"
     },
     {
       "row_id": "104.P2.10",
@@ -825,9 +825,9 @@
     {
       "row_id": "104.P2.15",
       "whisper": "Golf first of the United States",
-      "candidate_correction": "(not certain — possibly United States v. Goff or related E.D. La. ruling)",
+      "candidate_correction": "(not certain \u2014 possibly United States v. Goff or related E.D. La. ruling)",
       "confidence": "low",
-      "notes": "\"That's the decision then. Golf first of the United States, I cited that\"; identification uncertain — Sobol references a Goff- or Golf-named ruling related to economic-cross-section jury composition; possibly a 1969-71 era federal jury-composition ruling"
+      "notes": "\"That's the decision then. Golf first of the United States, I cited that\"; identification uncertain \u2014 Sobol references a Goff- or Golf-named ruling related to economic-cross-section jury composition; possibly a 1969-71 era federal jury-composition ruling"
     },
     {
       "row_id": "104.P2.28",
@@ -876,14 +876,14 @@
       "whisper": "\"the thermonautiled had been a prominent\" (re Abe Fortas + Macauliffe Committee context)",
       "candidate_correction": "the firm at the time had been prominent\"",
       "confidence": "medium",
-      "notes": "SRT line 119. Whisper renders Sobol's \"the firm\" (Arnold Fortas & Porter) descriptor as \"thermonautiled\" — a phonetic-degradation artifact. Pass 1 #104.8 caught the Macauliffe -> McCarthy correction but did not surface this surrounding word degradation. Meaning-preserving."
+      "notes": "SRT line 119. Whisper renders Sobol's \"the firm\" (Arnold Fortas & Porter) descriptor as \"thermonautiled\" \u2014 a phonetic-degradation artifact. Pass 1 #104.8 caught the Macauliffe -> McCarthy correction but did not surface this surrounding word degradation. Meaning-preserving."
     },
     {
       "row_id": "104.P4.7",
       "whisper": "\"Annie / Anne Sobol\" (recurring across transcript)",
       "candidate_correction": "Anne Sobol",
       "confidence": "medium",
-      "notes": "Pass 2 #104.P2.52 noted \"Anne Mary Buchanan\" as Sobol's wife's maiden name. Pass 4 raw spot-check: this name is not stated on the recording at any point grep-able; Pass 2 likely sourced this from external archives. Demote to \"speaker-states-Anne; surname not stated on recording\" — the maiden name \"Buchanan\" should be flagged for adversarial review since it does not appear in the Whisper transcript."
+      "notes": "Pass 2 #104.P2.52 noted \"Anne Mary Buchanan\" as Sobol's wife's maiden name. Pass 4 raw spot-check: this name is not stated on the recording at any point grep-able; Pass 2 likely sourced this from external archives. Demote to \"speaker-states-Anne; surname not stated on recording\" \u2014 the maiden name \"Buchanan\" should be flagged for adversarial review since it does not appear in the Whisper transcript."
     }
   ],
   "skipped_rows": [
@@ -985,5 +985,6 @@
     "preserved_verbatim_count": 451,
     "unresolved_count": 1335,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

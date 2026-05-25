@@ -224,7 +224,7 @@
     {
       "row_id": "81.29",
       "whisper": "Cesar Chavis / Cesar",
-      "correction": "César Chávez",
+      "correction": "C\u00e9sar Ch\u00e1vez",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -236,7 +236,7 @@
     {
       "row_id": "81.30",
       "whisper": "Reyes Lopez DeHarrina / Reyes",
-      "correction": "Reies López Tijerina",
+      "correction": "Reies L\u00f3pez Tijerina",
       "confidence": "high",
       "occurrences": 30,
       "file_paths": [
@@ -536,7 +536,7 @@
     {
       "row_id": "81.P2.39",
       "whisper": "Elizabeth, Betita",
-      "correction": "Elizabeth \"Betita\" Martínez",
+      "correction": "Elizabeth \"Betita\" Mart\u00ednez",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -668,7 +668,7 @@
     {
       "row_id": "81.P2.56",
       "whisper": "Portquay, La Verde, Vista Portquay",
-      "correction": "¿Por Qué? (newspaper); La Verdad (paper); Vista Por Qué",
+      "correction": "\u00bfPor Qu\u00e9? (newspaper); La Verdad (paper); Vista Por Qu\u00e9",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -716,7 +716,7 @@
     {
       "row_id": "81.P3.3",
       "whisper": "\"Reyes Lopez DeHarrina\" (81.30) + \"Quarky / Corky / Torque Corquic\" (81.32, P2.47-49)",
-      "correction": "Reies López Tijerina",
+      "correction": "Reies L\u00f3pez Tijerina",
       "confidence": "high",
       "occurrences": 15,
       "file_paths": [
@@ -758,28 +758,28 @@
     {
       "row_id": "81.P2.33",
       "whisper": "sort of railroad of that",
-      "candidate_correction": "(speaker-originating idiom — \"Underground Railroad\" reference)",
+      "candidate_correction": "(speaker-originating idiom \u2014 \"Underground Railroad\" reference)",
       "confidence": "speaker-originating",
-      "notes": "\"She was on that, she was on that sort of railroad of that\" — speaker's reference to Hamer's distribution network for Northern food aid to poor white MS families"
+      "notes": "\"She was on that, she was on that sort of railroad of that\" \u2014 speaker's reference to Hamer's distribution network for Northern food aid to poor white MS families"
     },
     {
       "row_id": "81.P2.51",
       "whisper": "Carlos",
-      "candidate_correction": "(uncertain — possibly Carlos Montes or Carlos Muñoz Jr.)",
+      "candidate_correction": "(uncertain \u2014 possibly Carlos Montes or Carlos Mu\u00f1oz Jr.)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Speaker partial-recall: \"Did Carlos go? He was there\""
     },
     {
       "row_id": "81.P2.55",
       "whisper": "the Harvard's not the Harvard school",
-      "candidate_correction": "(uncertain — speaker mid-correction reference to DC venue)",
+      "candidate_correction": "(uncertain \u2014 speaker mid-correction reference to DC venue)",
       "confidence": "low",
       "notes": "Speaker recalls the post-Poor-People's-Campaign multicultural delegation was housed at \"the Harvard's not the Harvard school\"; possibly Hawthorne School (DC private school used by SNCC)"
     },
     {
       "row_id": "81.P2.57",
       "whisper": "Sabina Zunigab",
-      "candidate_correction": "Sabina Zúñiga Varela",
+      "candidate_correction": "Sabina Z\u00fa\u00f1iga Varela",
       "confidence": "speaker-originating",
       "notes": "Daughter; canonical actress/playwright; speaker introduces her at the end of the interview"
     },
@@ -897,5 +897,6 @@
     "preserved_verbatim_count": 408,
     "unresolved_count": 592,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

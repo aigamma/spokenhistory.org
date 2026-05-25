@@ -731,56 +731,56 @@
       "whisper": "Hickory Springs",
       "candidate_correction": "Hickory Springs",
       "confidence": "speaker-originating",
-      "notes": "\"I was supposed to go to a school called Hickory Springs in Lexington\" — local Holmes County MS Black school; unverified but plausible local name"
+      "notes": "\"I was supposed to go to a school called Hickory Springs in Lexington\" \u2014 local Holmes County MS Black school; unverified but plausible local name"
     },
     {
       "row_id": "111.P2.9",
       "whisper": "with every Sunday morning",
       "candidate_correction": "every Sunday morning",
       "confidence": "low",
-      "notes": "\"have to get up and walk to the Sunday school with every Sunday morning\" — Whisper inserted spurious \"with\"; minor punctuation/word-insertion artifact"
+      "notes": "\"have to get up and walk to the Sunday school with every Sunday morning\" \u2014 Whisper inserted spurious \"with\"; minor punctuation/word-insertion artifact"
     },
     {
       "row_id": "111.P2.14",
       "whisper": "I'm going to take his head off",
       "candidate_correction": "I'm going to take his hat off",
       "confidence": "medium",
-      "notes": "\"every time he would go in would say... I'm going to take his head off. And he always called my mom, baby\" — context suggests speaker meant \"take his hat off\" (entering the home, removing hat); \"head\" is Whisper substitution for \"hat\" (homophone-ish); preserved as low-confidence common-noun"
+      "notes": "\"every time he would go in would say... I'm going to take his head off. And he always called my mom, baby\" \u2014 context suggests speaker meant \"take his hat off\" (entering the home, removing hat); \"head\" is Whisper substitution for \"hat\" (homophone-ish); preserved as low-confidence common-noun"
     },
     {
       "row_id": "111.P2.32",
       "whisper": "Miss Carnegie",
       "candidate_correction": "Mrs. (Bernice) Montgomery",
       "confidence": "speaker-originating",
-      "notes": "\"Miss Carnegie was real, after real early. She was real\" — likely a Whisper rendering of a local Holmes County movement member's name; speaker was just talking about people who were \"real early\" in the movement; \"Miss Carnegie\" may be a Whisper rendering of \"Mrs. Carnegia\" or a real local figure; preserved as low-confidence"
+      "notes": "\"Miss Carnegie was real, after real early. She was real\" \u2014 likely a Whisper rendering of a local Holmes County movement member's name; speaker was just talking about people who were \"real early\" in the movement; \"Miss Carnegie\" may be a Whisper rendering of \"Mrs. Carnegia\" or a real local figure; preserved as low-confidence"
     },
     {
       "row_id": "111.P2.38",
       "whisper": "Mr. Bruce",
       "candidate_correction": "Mr. Bruce",
       "confidence": "speaker-originating",
-      "notes": "\"We interviewed Mr. Bruce the other day. He was talking about the work that he was doing as a carpenter\" — local Holmes County figure; interviewer reference; not necessarily a Whisper error"
+      "notes": "\"We interviewed Mr. Bruce the other day. He was talking about the work that he was doing as a carpenter\" \u2014 local Holmes County figure; interviewer reference; not necessarily a Whisper error"
     },
     {
       "row_id": "111.P2.39",
       "whisper": "Mr. Horton (carpenter friend of father)",
       "candidate_correction": "Mr. Horton",
       "confidence": "speaker-originating",
-      "notes": "\"Later on in life, he started to work with another guy that was friend of his, Mr. Horton\" — local Holmes County figure (not canonical Myles Horton — the speaker is describing her father's actual local carpenter friend); preserve as speaker-originating"
+      "notes": "\"Later on in life, he started to work with another guy that was friend of his, Mr. Horton\" \u2014 local Holmes County figure (not canonical Myles Horton \u2014 the speaker is describing her father's actual local carpenter friend); preserve as speaker-originating"
     },
     {
       "row_id": "111.P2.42",
       "whisper": "Basin's flavor",
       "candidate_correction": "Basement Floor (?)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"It's like Basin's flavor. But there was now a woman going on to do something about the air in memory\" — context is sharecropping-era plantation-owner-rapes-wife pattern; \"Basin's flavor\" is unclear Whisper rendering; possibly \"Mason flavor\" or similar; preserved as low-confidence"
+      "notes": "\"It's like Basin's flavor. But there was now a woman going on to do something about the air in memory\" \u2014 context is sharecropping-era plantation-owner-rapes-wife pattern; \"Basin's flavor\" is unclear Whisper rendering; possibly \"Mason flavor\" or similar; preserved as low-confidence"
     },
     {
       "row_id": "111.P2.44",
       "whisper": "Thorn and in Mouson",
       "candidate_correction": "Thornton and in Mileston",
       "confidence": "medium",
-      "notes": "\"Where were the polling places for the mock election? In Thorn and in Mouson\" — canonical Holmes County polling places (the Freedom Vote 1963 used Mileston as a polling site); \"Thorn\" is likely a Whisper truncation; \"Mouson\" is canonical Mileston"
+      "notes": "\"Where were the polling places for the mock election? In Thorn and in Mouson\" \u2014 canonical Holmes County polling places (the Freedom Vote 1963 used Mileston as a polling site); \"Thorn\" is likely a Whisper truncation; \"Mouson\" is canonical Mileston"
     },
     {
       "row_id": "111.P2.45",
@@ -794,77 +794,77 @@
       "whisper": "the New York Center",
       "candidate_correction": "the New York Center",
       "confidence": "low",
-      "notes": "\"Abe Offcheroff came down to Bill and the New York Center\" — speaker's actual phrase is \"build the Center\" but Whisper rendered it weirdly; possibly Whisper conflated \"Mileston Community Center\" with \"New York Center\" because of an earlier mention of New York fundraising; preserved as low-confidence"
+      "notes": "\"Abe Offcheroff came down to Bill and the New York Center\" \u2014 speaker's actual phrase is \"build the Center\" but Whisper rendered it weirdly; possibly Whisper conflated \"Mileston Community Center\" with \"New York Center\" because of an earlier mention of New York fundraising; preserved as low-confidence"
     },
     {
       "row_id": "111.P2.48",
       "whisper": "able to good man / abled the good man",
-      "candidate_correction": "(Abe — Abe Osheroff) able-bodied",
+      "candidate_correction": "(Abe \u2014 Abe Osheroff) able-bodied",
       "confidence": "medium",
-      "notes": "\"my dad helped to build the center and he abled the good man and a real kind hearted\" — likely speaker said \"Abe was a good man\"; Whisper conflated \"Abe\" (proper noun) with \"able\" (modal verb); canonical Abe Osheroff"
+      "notes": "\"my dad helped to build the center and he abled the good man and a real kind hearted\" \u2014 likely speaker said \"Abe was a good man\"; Whisper conflated \"Abe\" (proper noun) with \"able\" (modal verb); canonical Abe Osheroff"
     },
     {
       "row_id": "111.P2.50",
       "whisper": "the air in memory",
       "candidate_correction": "(uncertain Movement-related phrase)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"there was now a woman going on to do something about the air in memory\" — Whisper rendering unclear; possibly \"the harm in his memory\" or \"the airing in memory\" or speaker-original phrasing; preserved as low-confidence"
+      "notes": "\"there was now a woman going on to do something about the air in memory\" \u2014 Whisper rendering unclear; possibly \"the harm in his memory\" or \"the airing in memory\" or speaker-original phrasing; preserved as low-confidence"
     },
     {
       "row_id": "111.P2.52",
       "whisper": "Wines Free Act",
       "candidate_correction": "Whites react",
       "confidence": "low",
-      "notes": "\"How did Wines Free Act, this invasion as they go?\" — speaker likely said \"how did the Whites react\"; Whisper rendered as \"Wines Free Act\" (homophone-ish); preserved as low-confidence"
+      "notes": "\"How did Wines Free Act, this invasion as they go?\" \u2014 speaker likely said \"how did the Whites react\"; Whisper rendered as \"Wines Free Act\" (homophone-ish); preserved as low-confidence"
     },
     {
       "row_id": "111.P2.53",
       "whisper": "Valley State",
       "candidate_correction": "Tougaloo",
       "confidence": "medium",
-      "notes": "\"we walked from Valley State from over here to being a two Jackson\" — canonical Mississippi Valley State University (Itta Bena MS, HBCU); preserve as geographic reference to MVSU"
+      "notes": "\"we walked from Valley State from over here to being a two Jackson\" \u2014 canonical Mississippi Valley State University (Itta Bena MS, HBCU); preserve as geographic reference to MVSU"
     },
     {
       "row_id": "111.P2.55",
       "whisper": "parks",
       "candidate_correction": "(Medgar Evers') Parks",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"Was this during a murder of the parks?\" — interviewer's question; possibly \"during the murder of the (Medgar Evers)\" or a Whisper-corrupt rendering of a different reference; unclear"
+      "notes": "\"Was this during a murder of the parks?\" \u2014 interviewer's question; possibly \"during the murder of the (Medgar Evers)\" or a Whisper-corrupt rendering of a different reference; unclear"
     },
     {
       "row_id": "111.P2.56",
       "whisper": "Sam House",
       "candidate_correction": "Sam House",
       "confidence": "speaker-originating",
-      "notes": "\"Yes, that was Sam House. He got arrested several times\" — local Holmes County activist; not a canonical figure; speaker-originating"
+      "notes": "\"Yes, that was Sam House. He got arrested several times\" \u2014 local Holmes County activist; not a canonical figure; speaker-originating"
     },
     {
       "row_id": "111.P2.57",
       "whisper": "Fett",
       "candidate_correction": "Fett",
       "confidence": "speaker-originating",
-      "notes": "\"They had this black guy in Lexington, we call him Fett\" — local Lexington MS Black movement activist; speaker-originating"
+      "notes": "\"They had this black guy in Lexington, we call him Fett\" \u2014 local Lexington MS Black movement activist; speaker-originating"
     },
     {
       "row_id": "111.P2.62",
       "whisper": "I think they were so much dope",
-      "candidate_correction": "(uncertain — possibly: \"they would do anything\")",
+      "candidate_correction": "(uncertain \u2014 possibly: \"they would do anything\")",
       "confidence": "low",
-      "notes": "\"they were so much dope. And they did some of everything to scare us out of there\" — Whisper rendering unclear; speaker is describing white intimidation tactics in Mileston"
+      "notes": "\"they were so much dope. And they did some of everything to scare us out of there\" \u2014 Whisper rendering unclear; speaker is describing white intimidation tactics in Mileston"
     },
     {
       "row_id": "111.P2.67",
       "whisper": "all of them out of the head",
       "candidate_correction": "all of it in his head",
       "confidence": "medium",
-      "notes": "\"Henry was the one that looked like he had all of them out of the head and asked us everything he came up with\" — speaker probably said \"had it all in his head\" (idiomatic phrase); Whisper substituted; idiomatic head-figurative"
+      "notes": "\"Henry was the one that looked like he had all of them out of the head and asked us everything he came up with\" \u2014 speaker probably said \"had it all in his head\" (idiomatic phrase); Whisper substituted; idiomatic head-figurative"
     },
     {
       "row_id": "111.P2.69",
       "whisper": "the Arnold off",
-      "candidate_correction": "(uncertain — possibly: the Anglo / the underdog / the older folks)",
+      "candidate_correction": "(uncertain \u2014 possibly: the Anglo / the underdog / the older folks)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"He felt needed to the mostly. He would let it be known that these other people you need to be looking to do things for and try to encourage them\" — preceding sentence said \"we always tried to help the Arnold off\"; unclear Whisper rendering; possibly \"underdog\" / \"Arnold's\" / \"older folks\"; preserved as low-confidence"
+      "notes": "\"He felt needed to the mostly. He would let it be known that these other people you need to be looking to do things for and try to encourage them\" \u2014 preceding sentence said \"we always tried to help the Arnold off\"; unclear Whisper rendering; possibly \"underdog\" / \"Arnold's\" / \"older folks\"; preserved as low-confidence"
     },
     {
       "row_id": "111.P2.71",
@@ -878,14 +878,14 @@
       "whisper": "Dr. McLean",
       "candidate_correction": "Dr. McLean",
       "confidence": "speaker-originating",
-      "notes": "\"I met Dr. McLean. And he told me, now he was in 78 when I got my two-year degree\" — local Mississippi Delta college instructor; speaker-originating; possibly affiliated with the Mississippi Valley State University 1978 cohort // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"I met Dr. McLean. And he told me, now he was in 78 when I got my two-year degree\" \u2014 local Mississippi Delta college instructor; speaker-originating; possibly affiliated with the Mississippi Valley State University 1978 cohort // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "111.P2.77",
       "whisper": "the heels, legs of the party",
       "candidate_correction": "the hills, lakes of the parts (?)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"we went all over Holmes County, all out in the heels, legs of the party, and do rent\" — Whisper rendering unclear; speaker is describing rural Holmes County canvassing; possibly \"the hills, lakes\" or \"Hills neighborhood, leg of the party\" — unclear; preserved as low-confidence"
+      "notes": "\"we went all over Holmes County, all out in the heels, legs of the party, and do rent\" \u2014 Whisper rendering unclear; speaker is describing rural Holmes County canvassing; possibly \"the hills, lakes\" or \"Hills neighborhood, leg of the party\" \u2014 unclear; preserved as low-confidence"
     },
     {
       "row_id": "111.P2.78",
@@ -899,7 +899,7 @@
       "whisper": "a water look",
       "candidate_correction": "a watershed",
       "confidence": "medium",
-      "notes": "\"That was a water look. Yes, it was. You turned those kids loose on a congressman\" — speaker meant \"a watershed moment\" (the canonical Greyhound-children-to-Washington-DC Head Start lobbying); Whisper substituted \"water look\" for \"watershed\""
+      "notes": "\"That was a water look. Yes, it was. You turned those kids loose on a congressman\" \u2014 speaker meant \"a watershed moment\" (the canonical Greyhound-children-to-Washington-DC Head Start lobbying); Whisper substituted \"water look\" for \"watershed\""
     },
     {
       "row_id": "111.P2.83",
@@ -913,56 +913,56 @@
       "whisper": "Hayes and Brandon Smith",
       "candidate_correction": "Hayes and Brendan",
       "confidence": "low",
-      "notes": "\"they had been in the meeting with us. They were just doing what they wanted us to do\" — local Lexington MS storeowner referenced as \"Hayes and Brandon Smith\"; unclear name; preserved as speaker-originating"
+      "notes": "\"they had been in the meeting with us. They were just doing what they wanted us to do\" \u2014 local Lexington MS storeowner referenced as \"Hayes and Brandon Smith\"; unclear name; preserved as speaker-originating"
     },
     {
       "row_id": "111.P2.93",
       "whisper": "the Cane / Tula bank",
       "candidate_correction": "the bank",
       "confidence": "medium",
-      "notes": "\"we had an account and a bank in Tula\" — speaker references the Tchula bank that initially refused to cash CDGM payroll checks; canonical CDGM-era racial banking discrimination"
+      "notes": "\"we had an account and a bank in Tula\" \u2014 speaker references the Tchula bank that initially refused to cash CDGM payroll checks; canonical CDGM-era racial banking discrimination"
     },
     {
       "row_id": "111.P2.94",
       "whisper": "a blue hotel",
       "candidate_correction": "a Blue Hotel (?)",
       "confidence": "low",
-      "notes": "\"they were talking about how was the fine going to come to us. And they wanted us to get committed. They'd then be over the fine and part of the program... There was a supermarket, a blue hotel. They were cashed out checks\" — unclear; possibly \"a blue hotel\" is a Whisper-rendered local Tchula MS supermarket-with-attached-hotel; speaker-originating local"
+      "notes": "\"they were talking about how was the fine going to come to us. And they wanted us to get committed. They'd then be over the fine and part of the program... There was a supermarket, a blue hotel. They were cashed out checks\" \u2014 unclear; possibly \"a blue hotel\" is a Whisper-rendered local Tchula MS supermarket-with-attached-hotel; speaker-originating local"
     },
     {
       "row_id": "111.P2.95",
       "whisper": "track list",
-      "candidate_correction": "(uncertain — local Lexington MS store)",
+      "candidate_correction": "(uncertain \u2014 local Lexington MS store)",
       "confidence": "low",
-      "notes": "\"there was a guy that has a store in Lexington, a track list\" — unclear; \"track list\" may be Whisper rendering of an actual local store name; possibly a local Lexington store"
+      "notes": "\"there was a guy that has a store in Lexington, a track list\" \u2014 unclear; \"track list\" may be Whisper rendering of an actual local store name; possibly a local Lexington store"
     },
     {
       "row_id": "111.P2.99",
       "whisper": "Nathan niggas alone say",
       "candidate_correction": "Nathan, n***as a loan, say",
       "confidence": "low",
-      "notes": "\"you know Hayes and Nathan niggas alone say, my motto is give them anything they ask you for\" — speaker quotes a Lexington white merchant's racist remark; \"Nathan niggas alone\" is unclear Whisper-corrupted speech; preserved as low-confidence"
+      "notes": "\"you know Hayes and Nathan niggas alone say, my motto is give them anything they ask you for\" \u2014 speaker quotes a Lexington white merchant's racist remark; \"Nathan niggas alone\" is unclear Whisper-corrupted speech; preserved as low-confidence"
     },
     {
       "row_id": "111.P4.2",
       "whisper": "playing arresting them",
       "candidate_correction": "constantly arresting them",
       "confidence": "medium",
-      "notes": "SRT line 1931: \"Do you remember people playing arresting them?\" — Whisper rendered \"constantly\" as \"playing\" (likely a phonetic substitution where the speaker's accent-elided \"constantly\" became un-parsable to Whisper). Context: Holmes County Sheriff arresting movement members repeatedly."
+      "notes": "SRT line 1931: \"Do you remember people playing arresting them?\" \u2014 Whisper rendered \"constantly\" as \"playing\" (likely a phonetic substitution where the speaker's accent-elided \"constantly\" became un-parsable to Whisper). Context: Holmes County Sheriff arresting movement members repeatedly."
     },
     {
       "row_id": "111.P4.6",
       "whisper": "a doctor, a renacy maler",
-      "candidate_correction": "a doctor (uncertain — likely Dr. Aaron Shirley",
+      "candidate_correction": "a doctor (uncertain \u2014 likely Dr. Aaron Shirley",
       "confidence": "low",
-      "notes": "SRT lines 2243-2247: \"There was a name for this doctor, a renacy maler. And they had those clinics in a lot of times.\" — same low-confidence clinic-physician name from P1.30/P2.71. \"Renacy maler\" phonetic anchor weak; canonical Mileston/Holmes-County MCHR physicians per published rosters were Geiger, Shirley, Britton, Barnes. Retain LOW; flag for adversarial."
+      "notes": "SRT lines 2243-2247: \"There was a name for this doctor, a renacy maler. And they had those clinics in a lot of times.\" \u2014 same low-confidence clinic-physician name from P1.30/P2.71. \"Renacy maler\" phonetic anchor weak; canonical Mileston/Holmes-County MCHR physicians per published rosters were Geiger, Shirley, Britton, Barnes. Retain LOW; flag for adversarial."
     },
     {
       "row_id": "111.P4.8",
       "whisper": "murder of the parks",
       "candidate_correction": "murder of Vernon Dahmer (likely)",
       "confidence": "medium",
-      "notes": "SRT line 1919: \"Was this during a murder of the parks?\" — context (SRT lines 1903-1915: rocks thrown from boxcars at marchers, police looking on, white spectators \"calling us some of everything\") fits the 1966 Meredith March against Fear timeframe (June 1966) better than the 1963 Medgar Evers assassination (which would predate the Mileston Community Center scenes). Alternative: Vernon Dahmer assassination (Jan 1966 Hattiesburg). Either way, \"parks\" is NOT the canonical noun. Demote from flagged to medium-canonical; needs adversarial pick between Dahmer/Meredith."
+      "notes": "SRT line 1919: \"Was this during a murder of the parks?\" \u2014 context (SRT lines 1903-1915: rocks thrown from boxcars at marchers, police looking on, white spectators \"calling us some of everything\") fits the 1966 Meredith March against Fear timeframe (June 1966) better than the 1963 Medgar Evers assassination (which would predate the Mileston Community Center scenes). Alternative: Vernon Dahmer assassination (Jan 1966 Hattiesburg). Either way, \"parks\" is NOT the canonical noun. Demote from flagged to medium-canonical; needs adversarial pick between Dahmer/Meredith."
     }
   ],
   "skipped_rows": [
@@ -1060,5 +1060,6 @@
     "preserved_verbatim_count": 385,
     "unresolved_count": 971,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

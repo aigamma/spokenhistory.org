@@ -708,7 +708,7 @@
       "whisper": "Rubin Lee",
       "candidate_correction": "(likely) Rev. George W. Lee or unidentified MS voter-registration activist",
       "confidence": "medium",
-      "notes": "\"we went into Belzona, Meal, and another black instructor to get a hair trim that night. And when I got up out of the chair, Rubin Lee took my seat... Rubin Lee had been killed. You know, had been shot\"; canonical 1955 Belzoni martyr is Rev. George W. Lee — speaker's \"Rubin Lee\" + 1956-57 date may reflect memory mismatch or a different person"
+      "notes": "\"we went into Belzona, Meal, and another black instructor to get a hair trim that night. And when I got up out of the chair, Rubin Lee took my seat... Rubin Lee had been killed. You know, had been shot\"; canonical 1955 Belzoni martyr is Rev. George W. Lee \u2014 speaker's \"Rubin Lee\" + 1956-57 date may reflect memory mismatch or a different person"
     },
     {
       "row_id": "107.40",
@@ -757,7 +757,7 @@
       "whisper": "gentleman from Greenville",
       "candidate_correction": "gentleman from Greenville",
       "confidence": "speaker-originating",
-      "notes": "MS legislator from Greenville district (Washington County) — likely Bill Bowman or Robert Crook era 1970s-80s"
+      "notes": "MS legislator from Greenville district (Washington County) \u2014 likely Bill Bowman or Robert Crook era 1970s-80s"
     },
     {
       "row_id": "107.P2.23",
@@ -778,7 +778,7 @@
       "whisper": "\"you got them a job\"",
       "candidate_correction": "you got them in the John",
       "confidence": "low",
-      "notes": "\"they looked around and said, well, you got them a job\"; speaker recounting trapping legislators in committee bathrooms — Whisper garble"
+      "notes": "\"they looked around and said, well, you got them a job\"; speaker recounting trapping legislators in committee bathrooms \u2014 Whisper garble"
     },
     {
       "row_id": "107.P4.6",
@@ -792,21 +792,21 @@
       "whisper": "\"you Peckaborch\"",
       "candidate_correction": "you peckerwood",
       "confidence": "medium",
-      "notes": "Raw line 2735: \"let's speak, you Peckaborch, you have to do a lot more of that from Black folks and the future\" — Whisper garble of the canonical Southern slang term \"peckerwood\" (derogatory term for poor whites). Pass 1+2+3 missed this."
+      "notes": "Raw line 2735: \"let's speak, you Peckaborch, you have to do a lot more of that from Black folks and the future\" \u2014 Whisper garble of the canonical Southern slang term \"peckerwood\" (derogatory term for poor whites). Pass 1+2+3 missed this."
     },
     {
       "row_id": "107.P4.12",
       "whisper": "\"potential Negro chair\"",
       "candidate_correction": "potential Negro chair[man]\" (headline truncation) OR \"Potential Negro Chairman",
       "confidence": "medium",
-      "notes": "Raw line 2787: \"the next day in the paper and bold headlight, potential Negro chair gives Black Power Speak\" — Whisper garble of canonical 1976-era newspaper headline characterizing Clark's Vicksburg-NAACP speech as a \"Black Power\" speech. \"Headlight\" = \"headline\"; \"chair\" is truncated \"chairman.\""
+      "notes": "Raw line 2787: \"the next day in the paper and bold headlight, potential Negro chair gives Black Power Speak\" \u2014 Whisper garble of canonical 1976-era newspaper headline characterizing Clark's Vicksburg-NAACP speech as a \"Black Power\" speech. \"Headlight\" = \"headline\"; \"chair\" is truncated \"chairman.\""
     },
     {
       "row_id": "107.P4.15",
       "whisper": "\"race the vote\"",
       "candidate_correction": "register and vote\" or \"raise (the issue of) the vote",
       "confidence": "medium",
-      "notes": "Raw line 1003: \"he'd get up in church and be telling folk about they should race the vote and do this and that\" — Whisper garbling \"register\" → \"race\" in voter-registration context."
+      "notes": "Raw line 1003: \"he'd get up in church and be telling folk about they should race the vote and do this and that\" \u2014 Whisper garbling \"register\" \u2192 \"race\" in voter-registration context."
     }
   ],
   "skipped_rows": [
@@ -920,5 +920,6 @@
     "preserved_verbatim_count": 301,
     "unresolved_count": 1141,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

@@ -179,7 +179,7 @@
     {
       "row_id": "109.P2.24",
       "whisper": "He's poor. I don't know what I heard. He's dead",
-      "candidate_correction": "He's poor. I don't know — I heard he's dead",
+      "candidate_correction": "He's poor. I don't know \u2014 I heard he's dead",
       "confidence": "speaker-originating",
       "notes": "Speaker recounting fate of his father / father-figure who refused to flee his hometown after a physical confrontation with a white man"
     },
@@ -335,5 +335,6 @@
     "preserved_verbatim_count": 73,
     "unresolved_count": 385,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

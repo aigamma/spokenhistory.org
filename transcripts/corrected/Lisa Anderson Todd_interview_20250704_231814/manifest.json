@@ -956,7 +956,7 @@
     {
       "row_id": "79.P4.3",
       "whisper": "\"King by by had russin was conducting the meeting\"",
-      "correction": "King — Bayard Rustin was conducting the meeting",
+      "correction": "King \u2014 Bayard Rustin was conducting the meeting",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -980,7 +980,7 @@
     {
       "row_id": "79.P4.6",
       "whisper": "\"Ruther and Ruther free there they were there but yes\"",
-      "correction": "(Bayard) Rustin and (Walter) Reuther — were they there? — they were there but yes",
+      "correction": "(Bayard) Rustin and (Walter) Reuther \u2014 were they there? \u2014 they were there but yes",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -1052,7 +1052,7 @@
       "whisper": "George Rale",
       "candidate_correction": "George Rawick",
       "confidence": "medium",
-      "notes": "\"George Rale was our project director. He was from the University of Chicago. He was a graduate student\"; possibly George Rawick, canonical SDS / U. Chicago grad student who later wrote *From Sundown to Sunup* (1972) — but spelling uncertain"
+      "notes": "\"George Rale was our project director. He was from the University of Chicago. He was a graduate student\"; possibly George Rawick, canonical SDS / U. Chicago grad student who later wrote *From Sundown to Sunup* (1972) \u2014 but spelling uncertain"
     },
     {
       "row_id": "79.32",
@@ -1064,7 +1064,7 @@
     {
       "row_id": "79.35",
       "whisper": "Galfre Morgan",
-      "candidate_correction": "(Carolyn Galfre Morgan — uncertain)",
+      "candidate_correction": "(Carolyn Galfre Morgan \u2014 uncertain)",
       "confidence": "low",
       "notes": "Speaker's 1963 Tougaloo project + Greensboro project travel companion"
     },
@@ -1157,14 +1157,14 @@
       "whisper": "Mr. Chappell",
       "candidate_correction": "Mr. Chappell",
       "confidence": "speaker-originating",
-      "notes": "Pass 1 #79.53 reinforced — Greenville Black Democratic Party operative"
+      "notes": "Pass 1 #79.53 reinforced \u2014 Greenville Black Democratic Party operative"
     },
     {
       "row_id": "79.P2.68",
       "whisper": "Mrs. Britten / Jerry and Lamar Britten",
       "candidate_correction": "Jerry and Lamar Britton",
       "confidence": "medium",
-      "notes": "Pass 1 #79.52 reinforced — Greenville Black drugstore owners; speaker's host family second half summer 1964 // [PASS-6: narrowed"
+      "notes": "Pass 1 #79.52 reinforced \u2014 Greenville Black drugstore owners; speaker's host family second half summer 1964 // [PASS-6: narrowed"
     },
     {
       "row_id": "79.P2.72",
@@ -1185,14 +1185,14 @@
       "whisper": "Karen Davis",
       "candidate_correction": "Karen Davis",
       "confidence": "speaker-originating",
-      "notes": "Speaker's Stanford housing co-resident — sister of Linda Davis, Freedom School teacher in Ruleville"
+      "notes": "Speaker's Stanford housing co-resident \u2014 sister of Linda Davis, Freedom School teacher in Ruleville"
     },
     {
       "row_id": "79.P2.75",
       "whisper": "Linda Davis",
       "candidate_correction": "Linda Davis",
       "confidence": "speaker-originating",
-      "notes": "Canonical Ruleville Freedom School teacher (Oberlin College) — stayed in Mississippi one year after summer 1964"
+      "notes": "Canonical Ruleville Freedom School teacher (Oberlin College) \u2014 stayed in Mississippi one year after summer 1964"
     },
     {
       "row_id": "79.P2.79",
@@ -1211,16 +1211,16 @@
     {
       "row_id": "79.P2.87",
       "whisper": "Trovon Bauer",
-      "candidate_correction": "(uncertain — DC law firm name)",
+      "candidate_correction": "(uncertain \u2014 DC law firm name)",
       "confidence": "low",
       "notes": "Speaker's mid-career law firm employer"
     },
     {
       "row_id": "79.P2.94",
       "whisper": "the woman from New York was a secretary to mayor Wagner. And John English, the other delegate",
-      "candidate_correction": "the New York Credentials Committee delegate Edith S. Sampson (or Sylvia Carrigan; uncertain) — Mayor Robert F. Wagner Jr.'s secretary; John English the other NY delegate",
+      "candidate_correction": "the New York Credentials Committee delegate Edith S. Sampson (or Sylvia Carrigan; uncertain) \u2014 Mayor Robert F. Wagner Jr.'s secretary; John English the other NY delegate",
       "confidence": "medium",
-      "notes": "Aug 24-25 1964 Atlantic City credentials-committee delegate-pressure operation — uncertain canonical name"
+      "notes": "Aug 24-25 1964 Atlantic City credentials-committee delegate-pressure operation \u2014 uncertain canonical name"
     },
     {
       "row_id": "79.P2.96",
@@ -1232,7 +1232,7 @@
     {
       "row_id": "79.P2.97",
       "whisper": "The black woman from Maryland risk",
-      "candidate_correction": "The Black woman from Maryland (Verda F. Welcome?) — uncertain",
+      "candidate_correction": "The Black woman from Maryland (Verda F. Welcome?) \u2014 uncertain",
       "confidence": "low",
       "notes": "Speaker references the canonical Maryland Black Credentials Committee delegate who flipped; possibly Verda F. Welcome (state senator) but uncertain"
     },
@@ -1253,7 +1253,7 @@
     {
       "row_id": "79.P2.130",
       "whisper": "Karen Davis is the president of the state",
-      "candidate_correction": "(Karen Davis was the (Stanford) president of the (student?) state — unclear)",
+      "candidate_correction": "(Karen Davis was the (Stanford) president of the (student?) state \u2014 unclear)",
       "confidence": "low",
       "notes": "speaker fragment"
     },
@@ -1269,7 +1269,7 @@
       "whisper": "\"reporter, Hoit, I think his name is from Colorado\"",
       "candidate_correction": "reporter Carl Hoyt",
       "confidence": "low",
-      "notes": "Raw byte 75847 confirms Whisper rendering \"Hoit\" — speaker's own uncertainty markers (\"I think his name is\"). The Colorado-delegation-pressure narrative is verifiable against LBJ tapes archive but the reporter's name remains uncertain. Held at low."
+      "notes": "Raw byte 75847 confirms Whisper rendering \"Hoit\" \u2014 speaker's own uncertainty markers (\"I think his name is\"). The Colorado-delegation-pressure narrative is verifiable against LBJ tapes archive but the reporter's name remains uncertain. Held at low."
     },
     {
       "row_id": "79.P4.11",
@@ -1283,7 +1283,7 @@
       "whisper": "\"in a brand new apartment building for graduate housing with Karen Davis who is the president of the state\"",
       "candidate_correction": "...Karen Davis who is the president of the (Stanford student) Senate\"",
       "confidence": "medium",
-      "notes": "Raw byte 86116: Pass 2 #79.P2.130 flagged this as unclear (\"Karen Davis is the president of the state\"). Surrounding context — Stanford graduate housing, classmate, \"she's now I think a judge in San Francisco\" — suggests \"president of the (Stanford Law student senate)\" or \"(student body president).\" Speaker fragment. Held at medium."
+      "notes": "Raw byte 86116: Pass 2 #79.P2.130 flagged this as unclear (\"Karen Davis is the president of the state\"). Surrounding context \u2014 Stanford graduate housing, classmate, \"she's now I think a judge in San Francisco\" \u2014 suggests \"president of the (Stanford Law student senate)\" or \"(student body president).\" Speaker fragment. Held at medium."
     },
     {
       "row_id": "79.P4.15",
@@ -1368,5 +1368,6 @@
     "preserved_verbatim_count": 526,
     "unresolved_count": 810,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

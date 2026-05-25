@@ -608,7 +608,7 @@
     {
       "row_id": "83.P2.55",
       "whisper": "a new and siloist",
-      "correction": "I met Silas (Norman) — speaker mid-sentence",
+      "correction": "I met Silas (Norman) \u2014 speaker mid-sentence",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -752,7 +752,7 @@
     {
       "row_id": "83.P4.18",
       "whisper": "\"She finally got to Burke Marshall. It's a very general. Attorney General at the time.\"",
-      "correction": "She finally got to Burke Marshall — Assistant Attorney General at the time",
+      "correction": "She finally got to Burke Marshall \u2014 Assistant Attorney General at the time",
       "confidence": "high",
       "occurrences": 1,
       "file_paths": [
@@ -787,7 +787,7 @@
       "whisper": "Mayor Smith of America",
       "candidate_correction": "Mayor (Joseph T.) Smitherman",
       "confidence": "medium",
-      "notes": "\"Mayor Smith of America\" → likely \"Mayor Smitherman of Selma\"; canonical Selma mayor 1965-2000 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"Mayor Smith of America\" \u2192 likely \"Mayor Smitherman of Selma\"; canonical Selma mayor 1965-2000 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "83.P2.11",
@@ -801,14 +801,14 @@
       "whisper": "Curtis, Hayes, out of jail in Liberia",
       "candidate_correction": "Curtis Muhammad's legal trouble in Liberia",
       "confidence": "speaker-originating",
-      "notes": "Speaker mentions one of her post-SNCC projects was helping to get Curtis Hayes out of jail in Liberia — uncertain context"
+      "notes": "Speaker mentions one of her post-SNCC projects was helping to get Curtis Hayes out of jail in Liberia \u2014 uncertain context"
     },
     {
       "row_id": "83.P2.21",
       "whisper": "Mrs. Cippy / Mrs. Sippy",
       "candidate_correction": "Mrs. Cippy",
       "confidence": "low",
-      "notes": "\"Sharad's project... There were a couple of white volunteers in Mississippi\" — speaker mid-sentence reference unclear // [PASS-6: rejected — speculation without corroboration"
+      "notes": "\"Sharad's project... There were a couple of white volunteers in Mississippi\" \u2014 speaker mid-sentence reference unclear // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "83.P2.29",
@@ -834,7 +834,7 @@
     {
       "row_id": "83.P2.68",
       "whisper": "the Foreman / Stokely / dentist's house",
-      "candidate_correction": "(Selma dentist's house — meeting between Forman + Stokely + MLK pre-Bloody-Sunday)",
+      "candidate_correction": "(Selma dentist's house \u2014 meeting between Forman + Stokely + MLK pre-Bloody-Sunday)",
       "confidence": "speaker-originating",
       "notes": "Speaker recounts a Fay Bellamy passage in *Hands on the Freedom Plow* where Forman + Stokely went to a Selma dentist's house in middle of night before March 9, 1965 to plead with MLK to defy federal injunction; canonical first-person retelling of a key Movement-history vignette"
     },
@@ -843,7 +843,7 @@
       "whisper": "Speaker's father's deportation threat (1948 Progressive Party context)",
       "candidate_correction": "(canonical Cold War civil rights frame)",
       "confidence": "speaker-originating",
-      "notes": "Speaker's first-person witness to the canonical 1948 Henry Wallace Progressive Party state-chair → deportation threat against her West Indian-born father (St. Vincent). Under-documented intersection of immigration enforcement + leftist political activity in late 1940s. Flag for summarization-pipeline awareness; this is canonical first-person Cold War civil rights testimony."
+      "notes": "Speaker's first-person witness to the canonical 1948 Henry Wallace Progressive Party state-chair \u2192 deportation threat against her West Indian-born father (St. Vincent). Under-documented intersection of immigration enforcement + leftist political activity in late 1940s. Flag for summarization-pipeline awareness; this is canonical first-person Cold War civil rights testimony."
     },
     {
       "row_id": "83.P4.5",
@@ -857,42 +857,42 @@
       "whisper": "\"I'm a fan of you. We're attending the University of Michigan\"",
       "candidate_correction": "I'm a freshman. You're attending the University of Michigan",
       "confidence": "medium",
-      "notes": "Severe Whisper-garble of interviewer's transition prompt — \"I'm a fan of you\" appears mid-transcript and is clearly a speech-recognition failure on the interviewer-side prompt \"you were a freshman\" or similar. Pass 1-3 miss. Worth cataloging as mid-sentence interviewer-side hallucination pattern."
+      "notes": "Severe Whisper-garble of interviewer's transition prompt \u2014 \"I'm a fan of you\" appears mid-transcript and is clearly a speech-recognition failure on the interviewer-side prompt \"you were a freshman\" or similar. Pass 1-3 miss. Worth cataloging as mid-sentence interviewer-side hallucination pattern."
     },
     {
       "row_id": "83.P4.10",
       "whisper": "\"Methodist Students Association\"",
       "candidate_correction": "Methodist Student Movement",
       "confidence": "medium",
-      "notes": "Speaker says she joined \"the Methodist Students Association\" at U Michigan freshman year — the canonical Methodist campus ministry organization at the time was the Methodist Student Movement (post-1959 successor) or Wesley Foundation. \"Methodist Students Association\" is not the canonical organizational name. Pass 1-3 miss."
+      "notes": "Speaker says she joined \"the Methodist Students Association\" at U Michigan freshman year \u2014 the canonical Methodist campus ministry organization at the time was the Methodist Student Movement (post-1959 successor) or Wesley Foundation. \"Methodist Students Association\" is not the canonical organizational name. Pass 1-3 miss."
     },
     {
       "row_id": "83.P4.12",
       "whisper": "\"her wish, of course, well, and I think this was pretty general at the time\" (in re her mother flunking out of UMich law school 1930s with \"five other African-American students\")",
       "candidate_correction": "Black students excluded from University of Michigan Law School ~1930s",
       "confidence": "speaker-originating",
-      "notes": "Speaker's first-person account that her mother + ~5 other Black students were admitted to UMich Law School by \"mistake\" (Whisper transcribes as \"they were admitted by a mistake. That because all of them had attended predominantly white schools, the law school didn't realize they were accepting black students. And within a year and a half, they figured a way to flunk them out\") — canonical pre-Brown academic-segregation testimony. Pass 1-3 miss of substantive content; worth flagging for the summary-pipeline as canonical first-person 1930s-Black-women-in-higher-education testimony."
+      "notes": "Speaker's first-person account that her mother + ~5 other Black students were admitted to UMich Law School by \"mistake\" (Whisper transcribes as \"they were admitted by a mistake. That because all of them had attended predominantly white schools, the law school didn't realize they were accepting black students. And within a year and a half, they figured a way to flunk them out\") \u2014 canonical pre-Brown academic-segregation testimony. Pass 1-3 miss of substantive content; worth flagging for the summary-pipeline as canonical first-person 1930s-Black-women-in-higher-education testimony."
     },
     {
       "row_id": "83.P4.14",
       "whisper": "\"St. Robert in Jamaica\"",
       "candidate_correction": "St. Ann's Bay, Jamaica",
       "confidence": "medium",
-      "notes": "Speaker mid-sentence reference in Marcus Garvey passage: \"I just worked with St. Robert in Jamaica, across the Far East, and of course, Marcus Garvey. My father always referred to him as the honorable Marcus Garvey.\" Likely Whisper mishearing of \"St. Ann's\" (Garvey's documented birthplace, St. Ann's Bay, Jamaica) — speaker probably said she \"worked on Marcus Garvey [in/from] St. Ann's in Jamaica\" or similar; \"St. Robert\" is a Whisper hallucination. Adversarial flag — phonetic distance is substantial and content is mid-sentence."
+      "notes": "Speaker mid-sentence reference in Marcus Garvey passage: \"I just worked with St. Robert in Jamaica, across the Far East, and of course, Marcus Garvey. My father always referred to him as the honorable Marcus Garvey.\" Likely Whisper mishearing of \"St. Ann's\" (Garvey's documented birthplace, St. Ann's Bay, Jamaica) \u2014 speaker probably said she \"worked on Marcus Garvey [in/from] St. Ann's in Jamaica\" or similar; \"St. Robert\" is a Whisper hallucination. Adversarial flag \u2014 phonetic distance is substantial and content is mid-sentence."
     },
     {
       "row_id": "83.P4.15",
       "whisper": "\"Boy Scout camp\" (LCFO founding meeting location)",
-      "candidate_correction": "(LCFO founding meetings 1965-66 — location uncertain)",
+      "candidate_correction": "(LCFO founding meetings 1965-66 \u2014 location uncertain)",
       "confidence": "low",
       "notes": "Speaker says the LCFO formation discussion meeting \"We were at a Boy Scout camp, I think.\" Canonical LCFO founding has documented meeting locations (Mount Carmel Baptist, county courthouses); a Boy Scout camp is not a known canonical location but the speaker hedges with \"I think.\" Flag for archival lookup."
     },
     {
       "row_id": "83.P4.21",
-      "whisper": "\"the Foreman / Stokely / dentist's house\" (P2.68) — Sullivan Jackson dentist",
+      "whisper": "\"the Foreman / Stokely / dentist's house\" (P2.68) \u2014 Sullivan Jackson dentist",
       "candidate_correction": "Dr. Sullivan Jackson's house, Selma AL",
       "confidence": "medium",
-      "notes": "Pass 2 caught the dentist's-house episode; Pass 4 adds the canonical anchor: Dr. Sullivan Jackson was the canonical Selma dentist whose home served as SCLC + SNCC meeting venue during the Selma campaign 1965 — documented in canonical Selma historiography (Branch, *At Canaan's Edge*; Garrow, *Bearing the Cross*). Flag for adversarial confirmation that Fay Bellamy's *Hands on the Freedom Plow* essay specifically names Sullivan Jackson."
+      "notes": "Pass 2 caught the dentist's-house episode; Pass 4 adds the canonical anchor: Dr. Sullivan Jackson was the canonical Selma dentist whose home served as SCLC + SNCC meeting venue during the Selma campaign 1965 \u2014 documented in canonical Selma historiography (Branch, *At Canaan's Edge*; Garrow, *Bearing the Cross*). Flag for adversarial confirmation that Fay Bellamy's *Hands on the Freedom Plow* essay specifically names Sullivan Jackson."
     }
   ],
   "skipped_rows": [
@@ -1010,5 +1010,6 @@
     "preserved_verbatim_count": 269,
     "unresolved_count": 580,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

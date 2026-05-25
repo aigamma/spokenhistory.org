@@ -444,7 +444,7 @@
       "whisper": "Bertrand",
       "candidate_correction": "(probably) Bertrand",
       "confidence": "low",
-      "notes": "\"When Bertrand took his doctorate at Union Theological in 1967. It's a master's\"; possible reference is to Charles Sherrod's master's degree at Union 1967 — Whisper rendering \"Bertrand\" possibly for \"Charles\""
+      "notes": "\"When Bertrand took his doctorate at Union Theological in 1967. It's a master's\"; possible reference is to Charles Sherrod's master's degree at Union 1967 \u2014 Whisper rendering \"Bertrand\" possibly for \"Charles\""
     },
     {
       "row_id": "117.18",
@@ -465,7 +465,7 @@
       "whisper": "Spooners (white farmers)",
       "candidate_correction": "the Spooners",
       "confidence": "speaker-originating",
-      "notes": "The canonical white-family that Shirley first helped save the farm in the 1980s — the source of the controversial 2010 video clip"
+      "notes": "The canonical white-family that Shirley first helped save the farm in the 1980s \u2014 the source of the controversial 2010 video clip"
     },
     {
       "row_id": "117.26",
@@ -479,7 +479,7 @@
       "whisper": "Jose (a SNCC organizer)",
       "candidate_correction": "(probably) Joyce",
       "confidence": "low",
-      "notes": "\"On Josie, she was probably five feet if that tall\"; possible Joyce Lord or similar SNCC organizer name // [PASS-6: rejected — speculation without corroboration"
+      "notes": "\"On Josie, she was probably five feet if that tall\"; possible Joyce Lord or similar SNCC organizer name // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "117.32",
@@ -542,7 +542,7 @@
       "whisper": "Reven Wells",
       "candidate_correction": "Reverend Wells",
       "confidence": "low",
-      "notes": "\"Reven Wells\"; identification uncertain — possibly Rev. Marion Wells or similar local SNCC organizer"
+      "notes": "\"Reven Wells\"; identification uncertain \u2014 possibly Rev. Marion Wells or similar local SNCC organizer"
     },
     {
       "row_id": "117.P2.22",
@@ -584,14 +584,14 @@
       "whisper": "\"Mr. Rath Page\" (closing salutation)",
       "candidate_correction": "Ms. Sherrod",
       "confidence": "medium",
-      "notes": "VTT line 1600-1602: \"thank you Mr. Rath Page. ... I really appreciate you sharing all this with us. Thank you.\" This closes the entire interview. The interviewer (Joe Mosnier) is thanking Shirley Sherrod for the interview; \"Mr. Rath Page\" is anomalous as a closing thanks — Rapunzel Page was the Ben & Jerry's-pecan-development partner repeatedly named in the immediately-preceding minutes (lines 1582, 1591), so Whisper appears to have over-pulled that name. The correct closing should address Shirley Sherrod (\"Ms. Sherrod\" or \"Mrs. Sherrod\")."
+      "notes": "VTT line 1600-1602: \"thank you Mr. Rath Page. ... I really appreciate you sharing all this with us. Thank you.\" This closes the entire interview. The interviewer (Joe Mosnier) is thanking Shirley Sherrod for the interview; \"Mr. Rath Page\" is anomalous as a closing thanks \u2014 Rapunzel Page was the Ben & Jerry's-pecan-development partner repeatedly named in the immediately-preceding minutes (lines 1582, 1591), so Whisper appears to have over-pulled that name. The correct closing should address Shirley Sherrod (\"Ms. Sherrod\" or \"Mrs. Sherrod\")."
     },
     {
       "row_id": "117.P4.7",
       "whisper": "\"tell you what we would do. We are about to pick on some black farmers\"",
       "candidate_correction": "tell you what we would do. We will go pick out some black farmers",
       "confidence": "medium",
-      "notes": "VTT line 1585: \"tell you what we would do. We are about to pick on some black farmers and we will sell them Ben and Jerry's.\" Speaker's narrative context is white pecan-processors offering to do tokenistic transactions with Black farmers; \"pick on\" reads idiomatically wrong for the action (\"buy from / source from\") — likely \"pick out\" or \"pick some up from.\" Flag for adversarial review."
+      "notes": "VTT line 1585: \"tell you what we would do. We are about to pick on some black farmers and we will sell them Ben and Jerry's.\" Speaker's narrative context is white pecan-processors offering to do tokenistic transactions with Black farmers; \"pick on\" reads idiomatically wrong for the action (\"buy from / source from\") \u2014 likely \"pick out\" or \"pick some up from.\" Flag for adversarial review."
     }
   ],
   "skipped_rows": [
@@ -665,5 +665,6 @@
     "preserved_verbatim_count": 429,
     "unresolved_count": 994,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

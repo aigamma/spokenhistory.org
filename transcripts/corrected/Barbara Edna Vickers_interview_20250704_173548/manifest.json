@@ -380,14 +380,14 @@
     {
       "row_id": "5.21",
       "whisper": "Slating Nina Verilam",
-      "candidate_correction": "(unknown — likely a donor's name garbled)",
+      "candidate_correction": "(unknown \u2014 likely a donor's name garbled)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"the Slating Nina Verilam, she called and she says, Barbara\"; Whisper failed"
     },
     {
       "row_id": "5.24",
       "whisper": "Del Khan",
-      "candidate_correction": "(musician's name — possibly Del Kennedy)",
+      "candidate_correction": "(musician's name \u2014 possibly Del Kennedy)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"I got Del Kahn to play\"; Whisper failure"
     },
@@ -408,7 +408,7 @@
     {
       "row_id": "5.28",
       "whisper": "Ivory Doctor Helen",
-      "candidate_correction": "I voted Dr. Hayling [out of his role]\" — verbatim transcribed cadence is speaker's natural diction, but garbled",
+      "candidate_correction": "I voted Dr. Hayling [out of his role]\" \u2014 verbatim transcribed cadence is speaker's natural diction, but garbled",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"It had to get rid of Ivory Doctor Helen\"; either speaker said \"I voted out Dr. Hayling\" (referring to a community decision) or Whisper merged tokens incorrectly"
     },
@@ -450,7 +450,7 @@
     {
       "row_id": "5.P2.10",
       "whisper": "Nina Verilam",
-      "candidate_correction": "(unverified — likely Nina Voorhees or similar local donor)",
+      "candidate_correction": "(unverified \u2014 likely Nina Voorhees or similar local donor)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "-"
     },
@@ -487,61 +487,61 @@
       "whisper": "\"Royal School\" (in dates segment)",
       "candidate_correction": "Royal Memorial School",
       "confidence": "medium",
-      "notes": "\"thirty eight, thirty nine from the Royal School\" — Pass 1+2+3 didn't flag this. Royal Memorial School (a/k/a Royal School) was an established Black grade school in St. Augustine pre-integration, distinct from Excelsior High (the high school named in Pass 1 row 5.2). Vickers is naming her grade-school years (1938-39) vs. her high-school graduation (1942). Flag for adversarial review on the canonical name."
+      "notes": "\"thirty eight, thirty nine from the Royal School\" \u2014 Pass 1+2+3 didn't flag this. Royal Memorial School (a/k/a Royal School) was an established Black grade school in St. Augustine pre-integration, distinct from Excelsior High (the high school named in Pass 1 row 5.2). Vickers is naming her grade-school years (1938-39) vs. her high-school graduation (1942). Flag for adversarial review on the canonical name."
     },
     {
       "row_id": "5.P4.5",
       "whisper": "\"the wooden letters in the church\"",
       "candidate_correction": "the wooden ushers",
       "confidence": "low",
-      "notes": "\"I went to the wooden letters in the church. So the two young men, young white fellows...\" — context suggests the speaker is describing the white people at the church who refused her entry (the kneel-in protocol). \"Wooden letters\" is unrecoverable but plausibly \"white ushers\" or \"the white folks.\" Flag for adversarial review."
+      "notes": "\"I went to the wooden letters in the church. So the two young men, young white fellows...\" \u2014 context suggests the speaker is describing the white people at the church who refused her entry (the kneel-in protocol). \"Wooden letters\" is unrecoverable but plausibly \"white ushers\" or \"the white folks.\" Flag for adversarial review."
     },
     {
       "row_id": "5.P4.6",
       "whisper": "\"Dr. Stolz, Madonna\" (in shooting account)",
       "candidate_correction": "Doctor's [dogs], Madonna",
       "confidence": "medium",
-      "notes": "\"they shot Dr. Stolz, Madonna, and the boxer\" — \"Dr. Stolz\" is Whisper's rendering of the possessive \"Doctor's\" (i.e., Dr. Hayling's dogs). Pass 1 row 5.11 caught \"Madonna\" as the dog name but did not catch \"Dr. Stolz\" as a token-merge of \"Doctor's.\" Cross-reference with the historical record: the September 1963 Klan attack on Hayling's home killed his dog(s)."
+      "notes": "\"they shot Dr. Stolz, Madonna, and the boxer\" \u2014 \"Dr. Stolz\" is Whisper's rendering of the possessive \"Doctor's\" (i.e., Dr. Hayling's dogs). Pass 1 row 5.11 caught \"Madonna\" as the dog name but did not catch \"Dr. Stolz\" as a token-merge of \"Doctor's.\" Cross-reference with the historical record: the September 1963 Klan attack on Hayling's home killed his dog(s)."
     },
     {
       "row_id": "5.P4.7",
       "whisper": "\"red boat you had him at the top\"",
       "candidate_correction": "red [coat]",
       "confidence": "low",
-      "notes": "\"He came to pick me up. And do you know? He did not go home. He went downtown in a red boat you had him at the top going back.\" — Whisper failure on whatever Vickers said about Hayling's late-night downtown deposit-drop. The \"red boat\" is recoverable as \"red [garment]\" given the comedic incongruity Vickers is establishing (Hayling driving downtown in his bathrobe). Flag for adversarial review."
+      "notes": "\"He came to pick me up. And do you know? He did not go home. He went downtown in a red boat you had him at the top going back.\" \u2014 Whisper failure on whatever Vickers said about Hayling's late-night downtown deposit-drop. The \"red boat\" is recoverable as \"red [garment]\" given the comedic incongruity Vickers is establishing (Hayling driving downtown in his bathrobe). Flag for adversarial review."
     },
     {
       "row_id": "5.P4.11",
       "whisper": "\"Garden clothes\"",
       "candidate_correction": "guarding clothes",
       "confidence": "low",
-      "notes": "\"They have their peers and their garden clothes and listen to it.\" — Whisper failure. Likely \"garments\" or \"households\" given context of white people who couldn't be openly supportive of Black neighbors. Flag for adversarial review."
+      "notes": "\"They have their peers and their garden clothes and listen to it.\" \u2014 Whisper failure. Likely \"garments\" or \"households\" given context of white people who couldn't be openly supportive of Black neighbors. Flag for adversarial review."
     },
     {
       "row_id": "5.P4.12",
       "whisper": "\"Grin\" (proper name)",
       "candidate_correction": "[unidentified family member, likely \"Glenn\" or \"Granddaughter\"]",
       "confidence": "low",
-      "notes": "\"I went to Fort Lauderdale one time it was during the Christmas. And Grin said, that's Miss Haling.\" Recurring proper-noun \"Grin\" — could be a person's name (e.g., \"Glenn\") or a family relationship (\"granddaughter\"). Pass 1+2+3 missed. Flag for adversarial review."
+      "notes": "\"I went to Fort Lauderdale one time it was during the Christmas. And Grin said, that's Miss Haling.\" Recurring proper-noun \"Grin\" \u2014 could be a person's name (e.g., \"Glenn\") or a family relationship (\"granddaughter\"). Pass 1+2+3 missed. Flag for adversarial review."
     },
     {
       "row_id": "5.P4.13",
       "whisper": "\"Bennett Hotel\"",
       "candidate_correction": "Bennett Hotel",
       "confidence": "speaker-originating",
-      "notes": "Vickers's father worked as maître d' at \"the Bennett Hotel\" a few doors down from the Monson. Real St. Augustine hotel (Bennett House / Bennett Hotel was a documented early-20th-century property). Pass 1+2+3 didn't itemize; speaker-originating but worth noting for catalog."
+      "notes": "Vickers's father worked as ma\u00eetre d' at \"the Bennett Hotel\" a few doors down from the Monson. Real St. Augustine hotel (Bennett House / Bennett Hotel was a documented early-20th-century property). Pass 1+2+3 didn't itemize; speaker-originating but worth noting for catalog."
     },
     {
       "row_id": "5.P4.16",
       "whisper": "\"she could not fit a part\" / \"could fit a part\"",
       "candidate_correction": "could [not] fit a piece [together]",
       "confidence": "medium",
-      "notes": "\"if they could not fit apart, you know, with the blueprints\" — token-merge \"a part\" instead of \"a piece\" (referring to shipyard blueprint-fitting work). Pass 1+2+3 missed."
+      "notes": "\"if they could not fit apart, you know, with the blueprints\" \u2014 token-merge \"a part\" instead of \"a piece\" (referring to shipyard blueprint-fitting work). Pass 1+2+3 missed."
     },
     {
       "row_id": "5.P4.20",
       "whisper": "\"I have a son that I inherited from one of them\"",
-      "candidate_correction": "(correct as-is — speaker's actual words)",
+      "candidate_correction": "(correct as-is \u2014 speaker's actual words)",
       "confidence": "speaker-originating",
       "notes": "Speaker is describing how she \"inherited\" a son from another family member's child. Verbatim. No correction."
     },
@@ -550,7 +550,7 @@
       "whisper": "\"boxer dogs\" (in Mrs. Hayling encounter)",
       "candidate_correction": "boxer dogs",
       "confidence": "speaker-originating",
-      "notes": "Cross-reference: at Fort Lauderdale, \"her brother had just been robbed at the fillings station... and she was trying to get the dogs back home\" — Mrs. Hayling was trying to retrieve her dogs (boxer breed) after her brother's robbery. Coherent with Pass 1 row 5.11 (Madonna = boxer dog). No correction."
+      "notes": "Cross-reference: at Fort Lauderdale, \"her brother had just been robbed at the fillings station... and she was trying to get the dogs back home\" \u2014 Mrs. Hayling was trying to retrieve her dogs (boxer breed) after her brother's robbery. Coherent with Pass 1 row 5.11 (Madonna = boxer dog). No correction."
     },
     {
       "row_id": "5.P4.25",
@@ -571,7 +571,7 @@
       "whisper": "\"Aster's\" (in keeping his children context)",
       "candidate_correction": "Astor's",
       "confidence": "low",
-      "notes": "\"He had friends. And I guess he thought the Aster's with the keep his children. And until he could take them down to Tallahassee.\" — possibly a friend or family name \"Astor\" or similar; unrecoverable. Flag for adversarial review."
+      "notes": "\"He had friends. And I guess he thought the Aster's with the keep his children. And until he could take them down to Tallahassee.\" \u2014 possibly a friend or family name \"Astor\" or similar; unrecoverable. Flag for adversarial review."
     }
   ],
   "skipped_rows": [
@@ -661,5 +661,6 @@
     "preserved_verbatim_count": 167,
     "unresolved_count": 751,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

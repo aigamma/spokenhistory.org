@@ -540,7 +540,7 @@
       "whisper": "Mr. Jorobinson",
       "candidate_correction": "Mrs. Jourdinson",
       "confidence": "low",
-      "notes": "\"I was raised after the age of five by my great-great-grandmother, Mr. Jorobinson\"; speaker means his great-great-grandmother — gender pronoun + Whisper-mangled surname"
+      "notes": "\"I was raised after the age of five by my great-great-grandmother, Mr. Jorobinson\"; speaker means his great-great-grandmother \u2014 gender pronoun + Whisper-mangled surname"
     },
     {
       "row_id": "99.6",
@@ -561,14 +561,14 @@
       "whisper": "Al Lengo (tall white man)",
       "candidate_correction": "Al Lingo",
       "confidence": "low",
-      "notes": "\"He told me so tall white man. I think his name was Al Lengo. He told me so through the beach\"; identification uncertain — speaker's \"Al Lengo\" might be a foot-soldier organizer Andrew \"Al\" Lingo, though canonical Al Lingo was an Alabama state-police colonel (Selma-era), an unlikely match"
+      "notes": "\"He told me so tall white man. I think his name was Al Lengo. He told me so through the beach\"; identification uncertain \u2014 speaker's \"Al Lengo\" might be a foot-soldier organizer Andrew \"Al\" Lingo, though canonical Al Lingo was an Alabama state-police colonel (Selma-era), an unlikely match"
     },
     {
       "row_id": "99.24",
       "whisper": "DCT (program)",
       "candidate_correction": "DCE",
       "confidence": "medium",
-      "notes": "\"They started a program in my high school called the DCT where you would get credits for working outside of school\"; canonical Florida high-school work-study program may have been Diversified Cooperative Education (DCE), though \"DCT\" is also a real acronym (Diversified Career Technology / Distributive Cooperative Training) — speaker's pronunciation is likely correct, not a Whisper error // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"They started a program in my high school called the DCT where you would get credits for working outside of school\"; canonical Florida high-school work-study program may have been Diversified Cooperative Education (DCE), though \"DCT\" is also a real acronym (Diversified Career Technology / Distributive Cooperative Training) \u2014 speaker's pronunciation is likely correct, not a Whisper error // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "99.28",
@@ -603,133 +603,133 @@
       "whisper": "the author John Bishop",
       "candidate_correction": "the videographer John Bishop",
       "confidence": "medium",
-      "notes": "\"I'm with the author John Bishop\" — Whisper renders \"videographer\" as \"author\"; cross-corpus catalog row A \"Video of the Fert / Project Biographer\" pattern"
+      "notes": "\"I'm with the author John Bishop\" \u2014 Whisper renders \"videographer\" as \"author\"; cross-corpus catalog row A \"Video of the Fert / Project Biographer\" pattern"
     },
     {
       "row_id": "99.P2.5",
       "whisper": "not recording to Ex-D / Ex-D cars",
       "candidate_correction": "(recording to",
       "confidence": "medium",
-      "notes": "\"We are not recording to Ex-D and I think with to the Ex-D cars\" — pre-interview technical chat about SD memory cards; Whisper homophone error"
+      "notes": "\"We are not recording to Ex-D and I think with to the Ex-D cars\" \u2014 pre-interview technical chat about SD memory cards; Whisper homophone error"
     },
     {
       "row_id": "99.P2.8",
       "whisper": "Mr. Jorobinson / Mr. Joro Robinson",
       "candidate_correction": "Mrs. Jourdinson",
       "confidence": "low",
-      "notes": "Cross-references Pass 1 #99.4 — Conway's great-great-grandmother whose surname is uncertain; gender pronoun + Whisper-mangled surname; possibly \"Mrs. Jourdinson\" given Conway describes Seminole/Spanish heritage"
+      "notes": "Cross-references Pass 1 #99.4 \u2014 Conway's great-great-grandmother whose surname is uncertain; gender pronoun + Whisper-mangled surname; possibly \"Mrs. Jourdinson\" given Conway describes Seminole/Spanish heritage"
     },
     {
       "row_id": "99.P2.11",
       "whisper": "Mr. Eddie Lee Vickers",
       "candidate_correction": "Mr. Eddie Lee Vickers",
       "confidence": "speaker-originating",
-      "notes": "Cross-references Pass 1 #99.9 — Lincolnville Little Links Park instructor of Conway's youth; speaker's recall"
+      "notes": "Cross-references Pass 1 #99.9 \u2014 Lincolnville Little Links Park instructor of Conway's youth; speaker's recall"
     },
     {
       "row_id": "99.P2.16",
       "whisper": "Edward Norton / my uncle",
       "candidate_correction": "Edward Norton",
       "confidence": "speaker-originating",
-      "notes": "\"my uncle, Edward Norton, who moved in New York with his family, left for a small library of books\" — Conway's uncle who left him medical books that gave him advanced reading material; speaker's recall"
+      "notes": "\"my uncle, Edward Norton, who moved in New York with his family, left for a small library of books\" \u2014 Conway's uncle who left him medical books that gave him advanced reading material; speaker's recall"
     },
     {
       "row_id": "99.P2.17",
       "whisper": "DCT",
       "candidate_correction": "DCT",
       "confidence": "speaker-originating",
-      "notes": "\"a program in my high school called the DCT where you would get credits for working outside of school\" — canonical FL high-school work-study program Diversified Cooperative Training (DCT); cross-references Pass 1 #99.24 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"a program in my high school called the DCT where you would get credits for working outside of school\" \u2014 canonical FL high-school work-study program Diversified Cooperative Training (DCT); cross-references Pass 1 #99.24 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "99.P2.23",
       "whisper": "Al Lengo / Mr. Lengo / lingo / \"tall white man\"",
-      "candidate_correction": "(uncertain — possibly Hosea Williams aide; not the canonical AL state-trooper Al Lingo)",
+      "candidate_correction": "(uncertain \u2014 possibly Hosea Williams aide; not the canonical AL state-trooper Al Lingo)",
       "confidence": "low",
-      "notes": "Cross-references Pass 1 #99.23 — speaker's identification of \"tall white man\" who led the first wade-in is uncertain; canonical AL Col. Al Lingo was Selma-era state police, an unlikely match for a SCLC-aligned wade-in leader; this is likely a different person or a speaker mis-identification"
+      "notes": "Cross-references Pass 1 #99.23 \u2014 speaker's identification of \"tall white man\" who led the first wade-in is uncertain; canonical AL Col. Al Lingo was Selma-era state police, an unlikely match for a SCLC-aligned wade-in leader; this is likely a different person or a speaker mis-identification"
     },
     {
       "row_id": "99.P2.28",
       "whisper": "Gail Blattenberg",
       "candidate_correction": "Gail Blattenberg",
       "confidence": "speaker-originating",
-      "notes": "Cross-references Pass 1 #99.28 — Princeton NJ college tutor; Conway's recent email contact; treat as speaker's actual recollection"
+      "notes": "Cross-references Pass 1 #99.28 \u2014 Princeton NJ college tutor; Conway's recent email contact; treat as speaker's actual recollection"
     },
     {
       "row_id": "99.P2.30",
       "whisper": "Mrs. Gwendolyn Duncan",
       "candidate_correction": "Mrs. Gwendolyn Duncan",
       "confidence": "speaker-originating",
-      "notes": "Cross-references Pass 1 #99.32 — ACCORD organizer"
+      "notes": "Cross-references Pass 1 #99.32 \u2014 ACCORD organizer"
     },
     {
       "row_id": "99.P2.48",
       "whisper": "Anne Williams / Mrs. Anne Williams",
       "candidate_correction": "Anne Williams",
       "confidence": "speaker-originating",
-      "notes": "Cross-references in cross-references section — Williams family interview cluster; speaker's recall"
+      "notes": "Cross-references in cross-references section \u2014 Williams family interview cluster; speaker's recall"
     },
     {
       "row_id": "99.P2.49",
       "whisper": "James White / Samuel White",
       "candidate_correction": "James White",
       "confidence": "speaker-originating",
-      "notes": "Cross-references Pass 1 #99.34 — speaker's high-school classmates; treat as actual recollection // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Cross-references Pass 1 #99.34 \u2014 speaker's high-school classmates; treat as actual recollection // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "99.P2.69",
       "whisper": "Mother Anne and her daughter",
-      "candidate_correction": "Mother (Mary) Anne (Williams) — referenced via Dr. Hayling's introduction",
+      "candidate_correction": "Mother (Mary) Anne (Williams) \u2014 referenced via Dr. Hayling's introduction",
       "confidence": "low",
-      "notes": "Closing tribute frame; possibly Mother Anne Williams (St. Augustine matriarch) — uncertain"
+      "notes": "Closing tribute frame; possibly Mother Anne Williams (St. Augustine matriarch) \u2014 uncertain"
     },
     {
       "row_id": "99.P2.78",
       "whisper": "bond / book house",
       "candidate_correction": "(the boys' house / school book house)",
       "confidence": "low",
-      "notes": "\"for going in the book house and we didn't go in the book house. And I kept telling him, we weren't the ones that went in the book house\" — appears in Branch/Smith #100 NOT Conway; flagged as cross-corpus marker"
+      "notes": "\"for going in the book house and we didn't go in the book house. And I kept telling him, we weren't the ones that went in the book house\" \u2014 appears in Branch/Smith #100 NOT Conway; flagged as cross-corpus marker"
     },
     {
       "row_id": "99.P4.6",
       "whisper": "milley (a milley like it occurred that day)",
       "candidate_correction": "melee",
       "confidence": "medium",
-      "notes": "\"I have never, to this day, seen a milley like it occurred that day\" — Whisper renders \"melee\" as \"milley\" — common-noun Whisper homophone error; speaker describes the chaos of the state troopers vs. Klan brawl at the second wade-in."
+      "notes": "\"I have never, to this day, seen a milley like it occurred that day\" \u2014 Whisper renders \"melee\" as \"milley\" \u2014 common-noun Whisper homophone error; speaker describes the chaos of the state troopers vs. Klan brawl at the second wade-in."
     },
     {
       "row_id": "99.P4.11",
       "whisper": "with a corps and with the adult activity",
       "candidate_correction": "with ACCORD and with the adult activity",
       "confidence": "low",
-      "notes": "\"he has joined with a corps and with the adult activity to Calahastic\" — Whisper homophone error; in the closing-tribute context this is most likely referring to ACCORD (the org cataloged at 99.P2.29), but the \"corps\" rendering is uncertain — possibly \"encore\" or \"more\". Flag for adversarial."
+      "notes": "\"he has joined with a corps and with the adult activity to Calahastic\" \u2014 Whisper homophone error; in the closing-tribute context this is most likely referring to ACCORD (the org cataloged at 99.P2.29), but the \"corps\" rendering is uncertain \u2014 possibly \"encore\" or \"more\". Flag for adversarial."
     },
     {
       "row_id": "99.P4.12",
       "whisper": "I spoke as the capital in Louis, London",
       "candidate_correction": "I spoke as the capital and Louis/Luis [unclear]",
       "confidence": "low",
-      "notes": "\"And then he feels back to Calahastic and I spoke as the capital in Louis, London, on the activity test of this life\" — closing Hayling-tribute frame is heavily Whisper-degraded; \"Louis, London\" is uncertain and may refer to a person (\"Louis\" / \"Louis Watkins\" / a St. Augustine local) or be a Whisper artifact. Flag for adversarial."
+      "notes": "\"And then he feels back to Calahastic and I spoke as the capital in Louis, London, on the activity test of this life\" \u2014 closing Hayling-tribute frame is heavily Whisper-degraded; \"Louis, London\" is uncertain and may refer to a person (\"Louis\" / \"Louis Watkins\" / a St. Augustine local) or be a Whisper artifact. Flag for adversarial."
     },
     {
       "row_id": "99.P4.13",
       "whisper": "tribal one, three, nine, cross the border",
-      "candidate_correction": "tribute (501c3) — \"501c3 across the border",
+      "candidate_correction": "tribute (501c3) \u2014 \"501c3 across the border",
       "confidence": "medium",
-      "notes": "\"And all over the tribal one, three, nine, cross the border\" — Whisper renders \"tribute / 501(c)(3) / [number cluster]\" as garbled \"tribal one, three, nine\"; closing tribute to the ACCORD organization; the \"501 C3\" appears explicitly two lines later (\"All been essentially a volunteer basis 501 C3\")."
+      "notes": "\"And all over the tribal one, three, nine, cross the border\" \u2014 Whisper renders \"tribute / 501(c)(3) / [number cluster]\" as garbled \"tribal one, three, nine\"; closing tribute to the ACCORD organization; the \"501 C3\" appears explicitly two lines later (\"All been essentially a volunteer basis 501 C3\")."
     },
     {
       "row_id": "99.P4.14",
       "whisper": "All over the Laplace area",
-      "candidate_correction": "(uncertain — likely \"all over the local area\" or a specific St. Augustine-area place name)",
+      "candidate_correction": "(uncertain \u2014 likely \"all over the local area\" or a specific St. Augustine-area place name)",
       "confidence": "low",
-      "notes": "\"All over the Laplace area\" — Whisper artifact in closing tribute; \"Laplace\" is not canonical St. Augustine geography. Flag for adversarial."
+      "notes": "\"All over the Laplace area\" \u2014 Whisper artifact in closing tribute; \"Laplace\" is not canonical St. Augustine geography. Flag for adversarial."
     },
     {
       "row_id": "99.P4.15",
       "whisper": "the all-three (in the old three)",
       "candidate_correction": "the early 2000s",
       "confidence": "low",
-      "notes": "\"Mrs. Gwendolyn Duncan and her family took this task on by themselves some years ago in the old three\" — Whisper renders the year reference \"2003\" (or \"the early 2000s\") as \"the old three\"; ACCORD was founded in the early 2000s."
+      "notes": "\"Mrs. Gwendolyn Duncan and her family took this task on by themselves some years ago in the old three\" \u2014 Whisper renders the year reference \"2003\" (or \"the early 2000s\") as \"the old three\"; ACCORD was founded in the early 2000s."
     }
   ],
   "skipped_rows": [
@@ -867,5 +867,6 @@
     "preserved_verbatim_count": 254,
     "unresolved_count": 1244,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

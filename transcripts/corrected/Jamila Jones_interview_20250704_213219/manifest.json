@@ -633,7 +633,7 @@
       "whisper": "Doodle Bird (Reverend Seay's analogy)",
       "candidate_correction": "Doodle Bird\"",
       "confidence": "speaker-originating",
-      "notes": "Canonical Reverend Seay-coined Montgomery Bus Boycott idiom — \"back, back, doodle, back, back; your house is on fire\" — as analogy for stand-your-ground defense // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Canonical Reverend Seay-coined Montgomery Bus Boycott idiom \u2014 \"back, back, doodle, back, back; your house is on fire\" \u2014 as analogy for stand-your-ground defense // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "58.P2.6",
@@ -668,7 +668,7 @@
       "whisper": "Reverend Sheldon",
       "candidate_correction": "Reverend Ralph Abernathy (likely) or Rev. Sheldon",
       "confidence": "low",
-      "notes": "\"we come to New York to do freedom songs… how we got to kind of get home with Reverend Sheldon's work and others\"; possibly Rev. Charles Sheldon or another fundraiser-supporter; spelling not verified"
+      "notes": "\"we come to New York to do freedom songs\u2026 how we got to kind of get home with Reverend Sheldon's work and others\"; possibly Rev. Charles Sheldon or another fundraiser-supporter; spelling not verified"
     },
     {
       "row_id": "58.P2.25",
@@ -687,7 +687,7 @@
     {
       "row_id": "58.P2.28",
       "whisper": "Pinnett Festival (Atlanta arts-community festival)",
-      "candidate_correction": "(uncertain — possibly Punnett Festival, Pannet Festival, or canonical Atlanta arts festival)",
+      "candidate_correction": "(uncertain \u2014 possibly Punnett Festival, Pannet Festival, or canonical Atlanta arts festival)",
       "confidence": "low",
       "notes": "Same as 58.P1.25; canonical Atlanta arts-community festival where Jones joined Bernice Reagon's Harambee Singers; spelling not yet verified"
     },
@@ -766,21 +766,21 @@
       "whisper": "a large debuts in Atlanta Life Insurance Company",
       "candidate_correction": "a large position at Atlanta Life Insurance Company",
       "confidence": "medium",
-      "notes": "\"Flora Grant, who had one of the large debuts in Atlanta Life Insurance Company\" — \"debuts\" appears to be Whisper rendering of \"positions\" / \"jobs\" / \"desks\"; speaker semantics unclear without audio"
+      "notes": "\"Flora Grant, who had one of the large debuts in Atlanta Life Insurance Company\" \u2014 \"debuts\" appears to be Whisper rendering of \"positions\" / \"jobs\" / \"desks\"; speaker semantics unclear without audio"
     },
     {
       "row_id": "58.P4.16",
       "whisper": "the kind of life, that your fear is bundled",
       "candidate_correction": "the kind of life, that your fear is bundled",
       "confidence": "speaker-originating",
-      "notes": "Jones's speaker-originating phrasing; \"bundled\" appears intended (\"bundled and it's there\") — not a Whisper error, just speaker idiolect"
+      "notes": "Jones's speaker-originating phrasing; \"bundled\" appears intended (\"bundled and it's there\") \u2014 not a Whisper error, just speaker idiolect"
     },
     {
       "row_id": "58.P4.17",
       "whisper": "\"I would walk 300 no hell\"",
       "candidate_correction": "I would walk 300 [days], hell\"",
       "confidence": "low",
-      "notes": "\"And I knew that I would walk 300 no hell. However many days actually that it would take.\" — appears to be speaker emphasis with mid-sentence reset; unverifiable without audio"
+      "notes": "\"And I knew that I would walk 300 no hell. However many days actually that it would take.\" \u2014 appears to be speaker emphasis with mid-sentence reset; unverifiable without audio"
     },
     {
       "row_id": "58.P4.21",
@@ -794,7 +794,7 @@
       "whisper": "because we got carried away. I headed up that...",
       "candidate_correction": "because of [name unclear]",
       "confidence": "medium",
-      "notes": "\"got carried away\" appears immediately before \"I headed up that... The workshops\"; Jones may be saying \"Guy Carawan headed up the workshops\" (since Guy Carawan was Highlander music director) and Whisper rendered \"Guy Carawan\" as \"got carried away\" — phonemically plausible; flag for adversarial review"
+      "notes": "\"got carried away\" appears immediately before \"I headed up that... The workshops\"; Jones may be saying \"Guy Carawan headed up the workshops\" (since Guy Carawan was Highlander music director) and Whisper rendered \"Guy Carawan\" as \"got carried away\" \u2014 phonemically plausible; flag for adversarial review"
     },
     {
       "row_id": "58.P4.25",
@@ -879,5 +879,6 @@
     "preserved_verbatim_count": 149,
     "unresolved_count": 566,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

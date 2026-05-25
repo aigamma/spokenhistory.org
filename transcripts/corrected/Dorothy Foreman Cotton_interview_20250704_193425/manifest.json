@@ -871,7 +871,7 @@
     {
       "row_id": "29.32",
       "whisper": "Albert Menis / Eunice Menis",
-      "candidate_correction": "(Cotton's friends — speakers in own right)",
+      "candidate_correction": "(Cotton's friends \u2014 speakers in own right)",
       "confidence": "low",
       "notes": "Real (Eunice was Cotton's teacher pre-college; Albert was her husband, the \"junk man\" who advised Cotton on workshop recruitment)"
     },
@@ -908,7 +908,7 @@
       "whisper": "Cornell University",
       "candidate_correction": "Cornell University",
       "confidence": "speaker-originating",
-      "notes": "\"I used to try to tell the students at Cornell University when we pay all this money for a speaker to come\"; Cotton's post-SCLC academic appointment 1982–91 at Cornell as Director of Student Activities"
+      "notes": "\"I used to try to tell the students at Cornell University when we pay all this money for a speaker to come\"; Cotton's post-SCLC academic appointment 1982\u201391 at Cornell as Director of Student Activities"
     },
     {
       "row_id": "29.P2T.9",
@@ -922,7 +922,7 @@
       "whisper": "here um and uh saying he's going to run for for for mayor",
       "candidate_correction": "(Andrew Young, running for mayor of Atlanta 1981)",
       "confidence": "medium",
-      "notes": "\"I could look out among among the team the SCLC staff and I could eventually for example here um and uh saying he's going to run for for for mayor\"; \"here um\" is Whisper noise for \"hear Andy\" (Andrew Young announced his Atlanta mayoral run in 1981, after serving as UN Ambassador 1977–79); same Andrew Young figure as Pass-1 #29.23"
+      "notes": "\"I could look out among among the team the SCLC staff and I could eventually for example here um and uh saying he's going to run for for for mayor\"; \"here um\" is Whisper noise for \"hear Andy\" (Andrew Young announced his Atlanta mayoral run in 1981, after serving as UN Ambassador 1977\u201379); same Andrew Young figure as Pass-1 #29.23"
     },
     {
       "row_id": "29.P2T.31",
@@ -936,21 +936,21 @@
       "whisper": "he got this cacossa",
       "candidate_correction": "(he got his skull cracked / he got that gash)",
       "confidence": "low",
-      "notes": "\"John Lewis... because he got this cacossa\"; \"cacossa\" is unidentifiable as a word — likely Whisper noise for \"gash\" or \"skull cracked\" (John Lewis's skull was fractured by an Alabama state trooper's billy club on Bloody Sunday); flag for review"
+      "notes": "\"John Lewis... because he got this cacossa\"; \"cacossa\" is unidentifiable as a word \u2014 likely Whisper noise for \"gash\" or \"skull cracked\" (John Lewis's skull was fractured by an Alabama state trooper's billy club on Bloody Sunday); flag for review"
     },
     {
       "row_id": "29.P2T.39",
       "whisper": "Mrs uh uh [unnamed] knocked down by one of those horses on the bridge",
       "candidate_correction": "Amelia Boynton",
       "confidence": "flagged",
-      "notes": "\"Mrs uh uh oh her name went eluded me you probably in the in Alabama oh gosh shame on me I'll tell your name in a minute she was knocked down by one of those horses on the on the uh the the bridge\"; canonical Selma voting-rights organizer (1911–2015); was beaten unconscious by state troopers on Bloody Sunday (March 7, 1965); the iconic photo of her lying unconscious on the bridge appeared on front pages worldwide; Cotton can't recall her name on tape — flag as a likely intended canonical figure"
+      "notes": "\"Mrs uh uh oh her name went eluded me you probably in the in Alabama oh gosh shame on me I'll tell your name in a minute she was knocked down by one of those horses on the on the uh the the bridge\"; canonical Selma voting-rights organizer (1911\u20132015); was beaten unconscious by state troopers on Bloody Sunday (March 7, 1965); the iconic photo of her lying unconscious on the bridge appeared on front pages worldwide; Cotton can't recall her name on tape \u2014 flag as a likely intended canonical figure"
     },
     {
       "row_id": "29.P2T.47",
       "whisper": "England (university position offer)",
       "candidate_correction": "England",
       "confidence": "low",
-      "notes": "\"somebody had offered him a position at a university in I think somewhere in England\"; speaker recalls MLK considered a sabbatical at an English university; flag as speaker-originating — no documented offer matches this exactly"
+      "notes": "\"somebody had offered him a position at a university in I think somewhere in England\"; speaker recalls MLK considered a sabbatical at an English university; flag as speaker-originating \u2014 no documented offer matches this exactly"
     },
     {
       "row_id": "29.P2T.48",
@@ -968,7 +968,7 @@
     },
     {
       "row_id": "29.P4.8",
-      "whisper": "\"Mrs. Mae\" (raw SRT line 983 — referring to Cotton's sister's mother-in-law or similar)",
+      "whisper": "\"Mrs. Mae\" (raw SRT line 983 \u2014 referring to Cotton's sister's mother-in-law or similar)",
       "candidate_correction": "Mrs. Mae\"",
       "confidence": "speaker-originating",
       "notes": "Speaker-originating short-form name. Line 983 references the sister/friend who married a Bishop and moved to Florida. Insufficient context for canonical resolution; flag only."
@@ -1082,5 +1082,6 @@
     "preserved_verbatim_count": 519,
     "unresolved_count": 1668,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

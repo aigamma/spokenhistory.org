@@ -530,7 +530,7 @@
     {
       "row_id": "11.25",
       "whisper": "Bernice Mayfax / Betty Mayfax",
-      "candidate_correction": "(likely a singer's name — possibly Bertha Mae Fax or Bertha Gober)",
+      "candidate_correction": "(likely a singer's name \u2014 possibly Bertha Mae Fax or Bertha Gober)",
       "confidence": "medium",
       "notes": "\"Jamila, Betty Mayfax\"; Albany Movement teen singers; Bertha Gober is a canonical name from the Albany era"
     },
@@ -544,7 +544,7 @@
     {
       "row_id": "11.29",
       "whisper": "Mary Jane Piguet / Mrs. Piguet",
-      "candidate_correction": "Mary Jane Pigee (likely; Vera Mae Pigee's daughter) — but speaker pronunciation in original audio should be verified before publishing",
+      "candidate_correction": "Mary Jane Pigee (likely; Vera Mae Pigee's daughter) \u2014 but speaker pronunciation in original audio should be verified before publishing",
       "confidence": "medium",
       "notes": "Real Clarksdale civil rights family (Vera Mae Pigee was the Clarksdale NAACP youth advisor; daughter Mary Jane sang opera) // [PASS-6: narrowed"
     },
@@ -567,7 +567,7 @@
       "whisper": "Picksfield",
       "candidate_correction": "Pittsfield (likely Massachusetts) or Plattsburgh, NY",
       "confidence": "low",
-      "notes": "Candie says she and Guy lived in \"Picksfield, New York\" for two years between Johns Island and Pitzer; the only \"Pittsfield, NY\" is small — possibly Whisper failure"
+      "notes": "Candie says she and Guy lived in \"Picksfield, New York\" for two years between Johns Island and Pitzer; the only \"Pittsfield, NY\" is small \u2014 possibly Whisper failure"
     },
     {
       "row_id": "11.38",
@@ -593,7 +593,7 @@
     {
       "row_id": "11.P2.9",
       "whisper": "Mary Jane Piguet",
-      "candidate_correction": "Mary Jane Pigee (canonical spelling) — speaker may pronounce as 'Piguet",
+      "candidate_correction": "Mary Jane Pigee (canonical spelling) \u2014 speaker may pronounce as 'Piguet",
       "confidence": "speaker-originating",
       "notes": "Clarksdale MS opera singer Guy did joint concert with // [PASS-6: narrowed"
     },
@@ -607,30 +607,30 @@
     {
       "row_id": "11.P4.14",
       "whisper": "\"Dorothy Katten\"",
-      "candidate_correction": "(filler / hesitation — likely \"you know what they'd say\")",
+      "candidate_correction": "(filler / hesitation \u2014 likely \"you know what they'd say\")",
       "confidence": "low",
-      "notes": "\"Here's this Dorothy Katten, who'd say, tall skinny white boy with a guitar\" — there is no canonical \"Dorothy Katten\" in Highlander/SCLC orbit; Whisper hallucination on a filler phrase. Hold low pending adversarial review"
+      "notes": "\"Here's this Dorothy Katten, who'd say, tall skinny white boy with a guitar\" \u2014 there is no canonical \"Dorothy Katten\" in Highlander/SCLC orbit; Whisper hallucination on a filler phrase. Hold low pending adversarial review"
     },
     {
       "row_id": "11.P4.23",
       "whisper": "\"the cells and stuff\"",
       "candidate_correction": "the levels and stuff",
       "confidence": "medium",
-      "notes": "\"We'll certainly be seeing that, unfortunately, the cells and stuff\" — context is the videographer break between sung verses; \"cells\" → \"levels\" (audio levels) is the strongest phonetic match in a film-crew technical context"
+      "notes": "\"We'll certainly be seeing that, unfortunately, the cells and stuff\" \u2014 context is the videographer break between sung verses; \"cells\" \u2192 \"levels\" (audio levels) is the strongest phonetic match in a film-crew technical context"
     },
     {
       "row_id": "11.P4.24",
       "whisper": "\"Mary had a doctor\"",
-      "candidate_correction": "Mary Hatadowra →",
+      "candidate_correction": "Mary Hatadowra \u2192",
       "confidence": "low",
-      "notes": "Same as Pass 1 #11.13 — Candie's Pomona-Fisk Exchange roommate; speaker-originating personal name; remains unverifiable. Flag retained"
+      "notes": "Same as Pass 1 #11.13 \u2014 Candie's Pomona-Fisk Exchange roommate; speaker-originating personal name; remains unverifiable. Flag retained"
     },
     {
       "row_id": "11.P4.28",
       "whisper": "\"Oliver family in Los Angeles\"",
       "candidate_correction": "the Oliver family",
       "confidence": "speaker-originating",
-      "notes": "\"He'd met a family, the Oliver family in Los Angeles. They had introduced him to a range of people using music politically\" — speaker-originating reference to an LA folk-revival family that mentored young Guy; no canonical record locatable. Retain as speaker-originating, no correction"
+      "notes": "\"He'd met a family, the Oliver family in Los Angeles. They had introduced him to a range of people using music politically\" \u2014 speaker-originating reference to an LA folk-revival family that mentored young Guy; no canonical record locatable. Retain as speaker-originating, no correction"
     }
   ],
   "skipped_rows": [],
@@ -699,5 +699,6 @@
     "preserved_verbatim_count": 224,
     "unresolved_count": 644,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

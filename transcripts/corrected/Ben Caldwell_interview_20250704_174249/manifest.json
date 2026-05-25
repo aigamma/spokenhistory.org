@@ -19,7 +19,7 @@
     },
     {
       "row_id": "6.3",
-      "whisper": "Pancho vía / Pancho Villa",
+      "whisper": "Pancho v\u00eda / Pancho Villa",
       "correction": "Pancho Villa",
       "confidence": "high",
       "occurrences": 3,
@@ -488,7 +488,7 @@
     {
       "row_id": "6.P2.32",
       "whisper": "Electronic Cafe",
-      "correction": "Electronic Café International",
+      "correction": "Electronic Caf\u00e9 International",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -608,7 +608,7 @@
     {
       "row_id": "6.P2T.10",
       "whisper": "Los Monuquitos",
-      "correction": "Los Muñequitos de Matanzas",
+      "correction": "Los Mu\u00f1equitos de Matanzas",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -620,7 +620,7 @@
     {
       "row_id": "6.P2T.14",
       "whisper": "senior Rita",
-      "correction": "señorita",
+      "correction": "se\u00f1orita",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -976,14 +976,14 @@
     {
       "row_id": "6.P2T.7",
       "whisper": "herdenum",
-      "candidate_correction": "(uncertain — possibly \"iron pigment\" or \"gunpowder\"; speaker references natural-pigment immunization markings)",
+      "candidate_correction": "(uncertain \u2014 possibly \"iron pigment\" or \"gunpowder\"; speaker references natural-pigment immunization markings)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"acupuncture immunizations with herdenum\"; speaker discusses Cuban tribal markings as immunization sites; \"herdenum\" appears to be a garbled medical/herbal term; flag for SME review"
     },
     {
       "row_id": "6.P2T.9",
       "whisper": "southern African Republic",
-      "candidate_correction": "(uncertain — likely Angola or South African Republic)",
+      "candidate_correction": "(uncertain \u2014 likely Angola or South African Republic)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"they had that many boots on the ground in South Africa in the southern African Republic\"; Cuban deployments were primarily in Angola, with secondary support to SWAPO in Namibia and ANC in South Africa; speaker may be conflating"
     },
@@ -999,7 +999,7 @@
       "whisper": "cute Chcommands",
       "candidate_correction": "Cuban hip-hop heads",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"we ended up being the first group from the US that really worked with the cute Chcommands\"; refers to the Cuban hip-hop community (Comisión Cubana del Hip Hop, founded 1999); Whisper garbled Caldwell's term"
+      "notes": "\"we ended up being the first group from the US that really worked with the cute Chcommands\"; refers to the Cuban hip-hop community (Comisi\u00f3n Cubana del Hip Hop, founded 1999); Whisper garbled Caldwell's term"
     },
     {
       "row_id": "6.P2T.19",
@@ -1013,14 +1013,14 @@
       "whisper": "CIA agents... came here to that theater",
       "candidate_correction": "(CIA \"crack cocaine\" allegation; Gary Webb / Dark Alliance)",
       "confidence": "medium",
-      "notes": "\"the CIA agents came here to that theater and said that they caused all of that havoc in our neighborhood\"; refers to Gary Webb's 1996 *Dark Alliance* San Jose Mercury News exposé on CIA/Contra/crack-cocaine pipeline into South LA; the \"theater\" event is the November 1996 town hall at Locke High School (or Caldwell's KAOS Network); flag for SME confirmation of venue"
+      "notes": "\"the CIA agents came here to that theater and said that they caused all of that havoc in our neighborhood\"; refers to Gary Webb's 1996 *Dark Alliance* San Jose Mercury News expos\u00e9 on CIA/Contra/crack-cocaine pipeline into South LA; the \"theater\" event is the November 1996 town hall at Locke High School (or Caldwell's KAOS Network); flag for SME confirmation of venue"
     },
     {
       "row_id": "6.P2T.28",
       "whisper": "the guy who did Lion King",
-      "candidate_correction": "(uncertain — most likely Floyd Norman, Bruce W. Smith, or a young Black animator who came up through KAOS Network)",
+      "candidate_correction": "(uncertain \u2014 most likely Floyd Norman, Bruce W. Smith, or a young Black animator who came up through KAOS Network)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"the new schoolers we have... is the guy who did Lion King he was one of the young kids that we worked with\"; flag for KAOS Network alumni list confirmation; possibly Bruce W. Smith (Disney animator from Crenshaw who worked on *The Lion King 1½*) or a layout/effects artist on the 1994 original"
+      "notes": "\"the new schoolers we have... is the guy who did Lion King he was one of the young kids that we worked with\"; flag for KAOS Network alumni list confirmation; possibly Bruce W. Smith (Disney animator from Crenshaw who worked on *The Lion King 1\u00bd*) or a layout/effects artist on the 1994 original"
     },
     {
       "row_id": "6.P2T.42",
@@ -1124,5 +1124,6 @@
     "preserved_verbatim_count": 741,
     "unresolved_count": 1196,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

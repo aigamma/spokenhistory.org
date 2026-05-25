@@ -316,7 +316,7 @@
     {
       "row_id": "123.P4.11",
       "whisper": "\"We pointed him. He was a 24-year-old school up there\"",
-      "correction": "We appointed [Bruce] — he was [for] the white school up there",
+      "correction": "We appointed [Bruce] \u2014 he was [for] the white school up there",
       "confidence": "high",
       "occurrences": 1,
       "file_paths": [
@@ -393,21 +393,21 @@
       "whisper": "Iowa, Hoppe",
       "candidate_correction": "Iowa Hoppe",
       "confidence": "low",
-      "notes": "\"I know remember the creek right in between Iowa, Hoppe and the church\" — Whisper-degradation; possibly speaker's hometown name"
+      "notes": "\"I know remember the creek right in between Iowa, Hoppe and the church\" \u2014 Whisper-degradation; possibly speaker's hometown name"
     },
     {
       "row_id": "123.P2.7",
       "whisper": "Rolling Wall / Roe Wall",
       "candidate_correction": "Rolling Fork",
       "confidence": "low",
-      "notes": "Reinforces Pass 1 123.1 — Holmes County rural community name; alternate possibility is \"Rolling Wall\" is a real place + Whisper is correct // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Reinforces Pass 1 123.1 \u2014 Holmes County rural community name; alternate possibility is \"Rolling Wall\" is a real place + Whisper is correct // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "123.P2.8",
       "whisper": "Marvell Walker",
       "candidate_correction": "Maynard Walker",
       "confidence": "low",
-      "notes": "\"Tallahowne, Lee Floreau, Counting, Waterloo Chicago. Me and Walker\" — gospel-tour place names + companion name"
+      "notes": "\"Tallahowne, Lee Floreau, Counting, Waterloo Chicago. Me and Walker\" \u2014 gospel-tour place names + companion name"
     },
     {
       "row_id": "123.P2.9",
@@ -421,21 +421,21 @@
       "whisper": "W-H-T-N-L-E",
       "candidate_correction": "(Holmes County or Carroll County local radio station)",
       "confidence": "low",
-      "notes": "Speaker's gospel-group radio station — uncertain"
+      "notes": "Speaker's gospel-group radio station \u2014 uncertain"
     },
     {
       "row_id": "123.P2.13",
       "whisper": "Reedmean",
-      "candidate_correction": "(Read Medgar — Medgar Evers reading?)",
+      "candidate_correction": "(Read Medgar \u2014 Medgar Evers reading?)",
       "confidence": "low",
-      "notes": "Speaker's recollection of where he met Medgar Evers — Whisper-degradation, context-clarifying word lost"
+      "notes": "Speaker's recollection of where he met Medgar Evers \u2014 Whisper-degradation, context-clarifying word lost"
     },
     {
       "row_id": "123.P2.22",
       "whisper": "Russian Whitaker",
       "candidate_correction": "Russell Whitaker",
       "confidence": "low",
-      "notes": "Reinforces Pass 1 123.8 — canonical Mileston Fourteen applicant; Whisper of \"Russell\" as \"Russian\" // [PASS-6: unresolved-escalated-to-ensemble"
+      "notes": "Reinforces Pass 1 123.8 \u2014 canonical Mileston Fourteen applicant; Whisper of \"Russell\" as \"Russian\" // [PASS-6: unresolved-escalated-to-ensemble"
     },
     {
       "row_id": "123.P2.23",
@@ -447,16 +447,16 @@
     {
       "row_id": "123.P2.26",
       "whisper": "nine out / I'm old / nine in the edge",
-      "candidate_correction": "(uncertain — possibly \"9 out (of 14), they were 9 in the edge of...\")",
+      "candidate_correction": "(uncertain \u2014 possibly \"9 out (of 14), they were 9 in the edge of...\")",
       "confidence": "low",
-      "notes": "Speaker's count of Mileston Fourteen group composition — Whisper-degradation"
+      "notes": "Speaker's count of Mileston Fourteen group composition \u2014 Whisper-degradation"
     },
     {
       "row_id": "123.P2.27",
       "whisper": "Jay Young / J.J. Young",
       "candidate_correction": "J.J. Young",
       "confidence": "speaker-originating",
-      "notes": "Canonical Durant-area Holmes County movement martyr — beaten to death in Durant jail c. early 1960s after refusal to give him medical attention; speaker's first-person testimony names J.J. Young as canonical movement-organizing impetus. ADD TO GROUND-TRUTH CORPUS — likely the same person as a canonical 1960s MS jailhouse-death victim; cross-corpus #107 + #111"
+      "notes": "Canonical Durant-area Holmes County movement martyr \u2014 beaten to death in Durant jail c. early 1960s after refusal to give him medical attention; speaker's first-person testimony names J.J. Young as canonical movement-organizing impetus. ADD TO GROUND-TRUTH CORPUS \u2014 likely the same person as a canonical 1960s MS jailhouse-death victim; cross-corpus #107 + #111"
     },
     {
       "row_id": "123.P2.30",
@@ -470,21 +470,21 @@
       "whisper": "Reverend Eddie Carthan",
       "candidate_correction": "Reverend Eddie Carthan",
       "confidence": "speaker-originating",
-      "notes": "Reinforces Pass 1 cross-references — canonical Tchula MS Black mayor (elected 1977); his canonical 1981 conviction-and-imprisonment on disputed charges became a canonical 1980s Mississippi-civil-rights cause célèbre; cross-corpus #107 + #111"
+      "notes": "Reinforces Pass 1 cross-references \u2014 canonical Tchula MS Black mayor (elected 1977); his canonical 1981 conviction-and-imprisonment on disputed charges became a canonical 1980s Mississippi-civil-rights cause c\u00e9l\u00e8bre; cross-corpus #107 + #111"
     },
     {
       "row_id": "123.P2.33",
       "whisper": "Reverend Eddie Clark",
       "candidate_correction": "Rev. Eddie Clark",
       "confidence": "speaker-originating",
-      "notes": "Reinforces Pass 1 123.15 — canonical first Black US Congress candidate from Holmes County (1968 special election)"
+      "notes": "Reinforces Pass 1 123.15 \u2014 canonical first Black US Congress candidate from Holmes County (1968 special election)"
     },
     {
       "row_id": "123.P2.34",
       "whisper": "Saigon Pagoda",
       "candidate_correction": "Salem Pagoda",
       "confidence": "low",
-      "notes": "Reinforces Pass 1 123.16 — likely a Whisper rendering of an actual Holmes County Black-church name; canonical white-night-rider gasoline-and-rope arson attempt site // [PASS-6: unresolved-escalated-to-ensemble"
+      "notes": "Reinforces Pass 1 123.16 \u2014 likely a Whisper rendering of an actual Holmes County Black-church name; canonical white-night-rider gasoline-and-rope arson attempt site // [PASS-6: unresolved-escalated-to-ensemble"
     },
     {
       "row_id": "123.P2.36",
@@ -519,7 +519,7 @@
       "whisper": "Tony Zivolich",
       "candidate_correction": "(likely) Tony Zivkovich",
       "confidence": "low",
-      "notes": "Confirms Pass 1 cross-corpus — context here is N/A; not in this transcript actually // [PASS-6: rejected — speculation without corroboration"
+      "notes": "Confirms Pass 1 cross-corpus \u2014 context here is N/A; not in this transcript actually // [PASS-6: rejected \u2014 speculation without corroboration"
     },
     {
       "row_id": "123.P2.43",
@@ -544,14 +544,14 @@
     },
     {
       "row_id": "123.P3.8",
-      "whisper": "\"Reedmean → uncertain Medgar-Evers-meeting context\" (Pass 2 123.P2.13)",
+      "whisper": "\"Reedmean \u2192 uncertain Medgar-Evers-meeting context\" (Pass 2 123.P2.13)",
       "candidate_correction": "Speaker's recollection unresolved",
       "confidence": "low",
       "notes": "Pass 2 left unresolved; multi-model could disambiguate from speaker's Medgar Evers reference context"
     },
     {
       "row_id": "123.P3.10",
-      "whisper": "\"Bow-Belling Smith / Bobby-Bell-In Smith → Sheriff Smith\" speaker-originating",
+      "whisper": "\"Bow-Belling Smith / Bobby-Bell-In Smith \u2192 Sheriff Smith\" speaker-originating",
       "candidate_correction": "Holmes County 1960s Sheriff",
       "confidence": "low",
       "notes": "Pass 2 captured the multi-rendering; canonical sheriff name needs SME confirmation"
@@ -561,35 +561,35 @@
       "whisper": "\"the nation\" / \"the nation drug store\"",
       "candidate_correction": "(likely) a national-chain drug store (Rexall, Walgreens, or similar), name unverified",
       "confidence": "low",
-      "notes": "\"And then later on, the nation, and then he had... Well, the day the barbed, they had... You know, when you... You could buy ice train there, but they had two signs\" — refers to Durant ice-cream/drugstore desegregation venue; Subject paragraph's \"Renaissance pharmacy\" identification is unsupported"
+      "notes": "\"And then later on, the nation, and then he had... Well, the day the barbed, they had... You know, when you... You could buy ice train there, but they had two signs\" \u2014 refers to Durant ice-cream/drugstore desegregation venue; Subject paragraph's \"Renaissance pharmacy\" identification is unsupported"
     },
     {
       "row_id": "123.P4.7",
       "whisper": "\"Ralph Hase / Ralph Hayse ran for Congress\"",
       "candidate_correction": "Ralph Hayse",
       "confidence": "medium",
-      "notes": "\"I believe Ralph Hays ran for Congress in that district\" — Dittmer-corroborated detail not previously noted; expands the canonical Mileston 14 / Hayse profile beyond voter-registration to electoral candidate. Worth ground-truth confirmation."
+      "notes": "\"I believe Ralph Hays ran for Congress in that district\" \u2014 Dittmer-corroborated detail not previously noted; expands the canonical Mileston 14 / Hayse profile beyond voter-registration to electoral candidate. Worth ground-truth confirmation."
     },
     {
       "row_id": "123.P4.9",
       "whisper": "\"Mayor Levin... He was still right, lawyer. Yeah, I knew me, yeah. Yeah, home was county\"",
-      "candidate_correction": "Mayor Levin (Durant, MS) — civil-rights-supporting white attorney",
+      "candidate_correction": "Mayor Levin (Durant, MS) \u2014 civil-rights-supporting white attorney",
       "confidence": "low",
-      "notes": "New Pass 4 context: Levin was identified by Bruce as a still-living white lawyer + Durant mayor who supported school-board integration; possibly Sue Lorenzi Sojourner's husband Henry's relation — speaker says Levin \"got involved with us up here at the school\" re: Durant High School board appointment of two Black members. Resolves Pass 1 123.3 partially: Levin was the white lawyer/mayor, not a Lorenzi-relation."
+      "notes": "New Pass 4 context: Levin was identified by Bruce as a still-living white lawyer + Durant mayor who supported school-board integration; possibly Sue Lorenzi Sojourner's husband Henry's relation \u2014 speaker says Levin \"got involved with us up here at the school\" re: Durant High School board appointment of two Black members. Resolves Pass 1 123.3 partially: Levin was the white lawyer/mayor, not a Lorenzi-relation."
     },
     {
       "row_id": "123.P4.10",
       "whisper": "\"Mr. D. F. One\"",
-      "candidate_correction": "(likely) Mr. D.F. Owen (or similar) — Bruce's fellow Black appointee to Durant City School board",
+      "candidate_correction": "(likely) Mr. D.F. Owen (or similar) \u2014 Bruce's fellow Black appointee to Durant City School board",
       "confidence": "low",
-      "notes": "\"They pointed me and Mr. D. F. One, so we just... The school was a 42-black that served up there on that board\" — speaker's recall of fellow Black board appointee; full name not in any prior Pass; needs SME confirmation"
+      "notes": "\"They pointed me and Mr. D. F. One, so we just... The school was a 42-black that served up there on that board\" \u2014 speaker's recall of fellow Black board appointee; full name not in any prior Pass; needs SME confirmation"
     },
     {
       "row_id": "123.P4.13",
       "whisper": "\"Saigon Pagoda at church\" (Pass 1 123.16, Pass 2 123.P2.34)",
       "candidate_correction": "Mt. Pisgah",
       "confidence": "low",
-      "notes": "Pass 4 listening: \"we met up at the church over there called Saigon Pagoda at church\" — possibly \"Mount Pisgah\" (a recurring Holmes County Black-church name) rendered as \"Saigon Pagoda\"; OR \"St. Pagoda\" (no such canonical church); needs Holmes County church-registry lookup"
+      "notes": "Pass 4 listening: \"we met up at the church over there called Saigon Pagoda at church\" \u2014 possibly \"Mount Pisgah\" (a recurring Holmes County Black-church name) rendered as \"Saigon Pagoda\"; OR \"St. Pagoda\" (no such canonical church); needs Holmes County church-registry lookup"
     },
     {
       "row_id": "123.P4.14",
@@ -672,5 +672,6 @@
     "preserved_verbatim_count": 446,
     "unresolved_count": 1523,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

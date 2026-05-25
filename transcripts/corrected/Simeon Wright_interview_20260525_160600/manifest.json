@@ -58,5 +58,6 @@
     },
     "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework",
     "notes": "These entries were ingested 2026-05-25 via the streamlined Pass 8 LoC-healing-as-primary pipeline; they did not pass through the original Pass 1-7 audit journey. Pass 8 LoC alignment provides the primary correction substrate; additional audit signals (adversarial review, cross-contamination check, ground-truth-corpus validation) would need to be run separately to fill in this score."
-  }
+  },
+  "entry_provenance": "ingestion-only"
 }

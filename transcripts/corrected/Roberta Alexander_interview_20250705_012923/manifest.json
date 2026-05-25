@@ -163,8 +163,8 @@
     },
     {
       "row_id": "110.26",
-      "whisper": "facultad de letras, de filosofía",
-      "correction": "Facultad de Filosofía y Letras",
+      "whisper": "facultad de letras, de filosof\u00eda",
+      "correction": "Facultad de Filosof\u00eda y Letras",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -224,7 +224,7 @@
     {
       "row_id": "110.32",
       "whisper": "Hotel Jacques Sank",
-      "correction": "Hôtel George V",
+      "correction": "H\u00f4tel George V",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -476,7 +476,7 @@
     {
       "row_id": "110.P2.36",
       "whisper": "Third College",
-      "correction": "Third College (UCSD) → Thurgood Marshall College",
+      "correction": "Third College (UCSD) \u2192 Thurgood Marshall College",
       "confidence": "correct",
       "occurrences": 33,
       "file_paths": [
@@ -738,7 +738,7 @@
       "whisper": "a cross street from the City Hall",
       "candidate_correction": "(likely) across the street from LA City Hall",
       "confidence": "speaker-originating",
-      "notes": "Speaker's father's final shoe shop, across from LA City Hall — canonical site of the 1957-ish shooting-incident when Franklin's name appeared in LA Times after HUAC subpoena // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Speaker's father's final shoe shop, across from LA City Hall \u2014 canonical site of the 1957-ish shooting-incident when Franklin's name appeared in LA Times after HUAC subpoena // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "110.P2.12",
@@ -752,7 +752,7 @@
       "whisper": "1842 / 1942 (grandfather lifespan)",
       "candidate_correction": "1842",
       "confidence": "speaker-originating",
-      "notes": "Canonical multi-generational family origin: speaker's grandfather born 1842 (in slavery) died 1942 — the 100-year-lifespan-includes-Pony-Express + speak-Winnebago/Omaha/Sioux narrative"
+      "notes": "Canonical multi-generational family origin: speaker's grandfather born 1842 (in slavery) died 1942 \u2014 the 100-year-lifespan-includes-Pony-Express + speak-Winnebago/Omaha/Sioux narrative"
     },
     {
       "row_id": "110.P2.17",
@@ -766,7 +766,7 @@
       "whisper": "the laborers' fraternal order / brown arm, a white arm, and a black arm",
       "candidate_correction": "Laborers' Fraternal Order",
       "confidence": "speaker-originating",
-      "notes": "Speaker's father Franklin Alexander founded \"Laborers' Fraternal Order\" in LA — three-arm logo symbolizing Brown/White/Black solidarity, with baseball team; canonical-new addition to corpus for Civil-Rights-Congress / Communist-organizing-in-Black-community history"
+      "notes": "Speaker's father Franklin Alexander founded \"Laborers' Fraternal Order\" in LA \u2014 three-arm logo symbolizing Brown/White/Black solidarity, with baseball team; canonical-new addition to corpus for Civil-Rights-Congress / Communist-organizing-in-Black-community history"
     },
     {
       "row_id": "110.P2.44",
@@ -895,5 +895,6 @@
     "preserved_verbatim_count": 487,
     "unresolved_count": 767,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

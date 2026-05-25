@@ -1102,7 +1102,7 @@
       "whisper": "Squirt",
       "candidate_correction": "Squirt\"",
       "confidence": "speaker-originating",
-      "notes": "\"Squirt, named Martin Luther King, Jr. was in the same freshman class. He was 15\" — canonical MLK nickname at age-15-freshman Morehouse; speaker-originating canonical MLK biography material // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"Squirt, named Martin Luther King, Jr. was in the same freshman class. He was 15\" \u2014 canonical MLK nickname at age-15-freshman Morehouse; speaker-originating canonical MLK biography material // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "115.P2.44",
@@ -1123,7 +1123,7 @@
       "whisper": "land a bicycle",
       "candidate_correction": "a bicycle",
       "confidence": "low",
-      "notes": "\"Somebody said, land a bicycle, what?\" — Whisper-degraded common-noun; preserved as low-confidence"
+      "notes": "\"Somebody said, land a bicycle, what?\" \u2014 Whisper-degraded common-noun; preserved as low-confidence"
     },
     {
       "row_id": "115.P2.65",
@@ -1158,14 +1158,14 @@
       "whisper": "Ac Deer to know",
       "candidate_correction": "Acoustic Deer (?)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"we walked right down the hill to the... Oh, what's that building? It's Ac Deer to know\" — speaker is searching for the name of the alternative downtown Seattle venue where King eventually spoke; Whisper rendered \"Eagles Auditorium\" or similar as \"Ac Deer to know\"; preserved as low-confidence"
+      "notes": "\"we walked right down the hill to the... Oh, what's that building? It's Ac Deer to know\" \u2014 speaker is searching for the name of the alternative downtown Seattle venue where King eventually spoke; Whisper rendered \"Eagles Auditorium\" or similar as \"Ac Deer to know\"; preserved as low-confidence"
     },
     {
       "row_id": "115.P2.108",
       "whisper": "the Madison Bus Coliseum",
       "candidate_correction": "(uncertain Seattle alternative venue)",
       "confidence": "low",
-      "notes": "\"we walked right down the hill to the... Oh, what's that building?\" — speaker is trying to recall venue name; possibly the canonical Eagles Auditorium 7th + Union (a 1960s Seattle music venue) or the Civic Auditorium"
+      "notes": "\"we walked right down the hill to the... Oh, what's that building?\" \u2014 speaker is trying to recall venue name; possibly the canonical Eagles Auditorium 7th + Union (a 1960s Seattle music venue) or the Civic Auditorium"
     },
     {
       "row_id": "115.P2.119",
@@ -1193,7 +1193,7 @@
       "whisper": "Confederate Highway",
       "candidate_correction": "Confederate Highway",
       "confidence": "low",
-      "notes": "\"the portion of it going north of Seattle up to the Canadian border was called Confederate Highway\" — speaker references the canonical informal nickname of US-99 north of Seattle (also called \"Confederate Highway\" in some quarters; or alternatively \"Pacific Highway\"); preserved as medium-confidence"
+      "notes": "\"the portion of it going north of Seattle up to the Canadian border was called Confederate Highway\" \u2014 speaker references the canonical informal nickname of US-99 north of Seattle (also called \"Confederate Highway\" in some quarters; or alternatively \"Pacific Highway\"); preserved as medium-confidence"
     },
     {
       "row_id": "115.P2.136",
@@ -1205,7 +1205,7 @@
     {
       "row_id": "115.P2.156",
       "whisper": "Setahoe",
-      "candidate_correction": "(uncertain — possibly: Set Free / Solid Ground / Sechelt)",
+      "candidate_correction": "(uncertain \u2014 possibly: Set Free / Solid Ground / Sechelt)",
       "confidence": "low",
       "notes": "Pass 1 caught (115.47); preserve as low-confidence"
     },
@@ -1214,14 +1214,14 @@
       "whisper": "Maritra Sunday",
       "candidate_correction": "Martyrs' Sunday",
       "confidence": "low",
-      "notes": "\"I speak annually. They called it Passing Maritra Sunday, but there was a couple of years ago\" — Whisper-degraded; speaker references the canonical Seattle Mount Zion Baptist Church annual Martyrs' Sunday service (or possibly Memorial Sunday); preserved as low-confidence"
+      "notes": "\"I speak annually. They called it Passing Maritra Sunday, but there was a couple of years ago\" \u2014 Whisper-degraded; speaker references the canonical Seattle Mount Zion Baptist Church annual Martyrs' Sunday service (or possibly Memorial Sunday); preserved as low-confidence"
     },
     {
       "row_id": "115.P2.180",
       "whisper": "the great cardinal assimilation has been",
       "candidate_correction": "the great Cardinal Assumption has been",
       "confidence": "medium",
-      "notes": "\"every part of the country has been infected with the poison of racism and the great cardinal assimilation has been. And still is the matter of race\" — Whisper substituted \"assimilation\" or \"assumption\" — unclear; preserved as medium-confidence"
+      "notes": "\"every part of the country has been infected with the poison of racism and the great cardinal assimilation has been. And still is the matter of race\" \u2014 Whisper substituted \"assimilation\" or \"assumption\" \u2014 unclear; preserved as medium-confidence"
     },
     {
       "row_id": "115.P2.184",
@@ -1233,9 +1233,9 @@
     {
       "row_id": "115.P2.186",
       "whisper": "Spanner Hill, Korea",
-      "candidate_correction": "(uncertain — possibly: Spanish Hill / Snohomish / Capitol Hill)",
+      "candidate_correction": "(uncertain \u2014 possibly: Spanish Hill / Snohomish / Capitol Hill)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"I'm a wife of Spanner Hill, Korea, here in Seattle in the school district\" — Whisper-degraded; possibly speaker's wife served on the Seattle school board for a Capitol Hill / Madrona-area district; preserved as low-confidence"
+      "notes": "\"I'm a wife of Spanner Hill, Korea, here in Seattle in the school district\" \u2014 Whisper-degraded; possibly speaker's wife served on the Seattle school board for a Capitol Hill / Madrona-area district; preserved as low-confidence"
     },
     {
       "row_id": "115.P2.188",
@@ -1249,12 +1249,12 @@
       "whisper": "a back the land",
       "candidate_correction": "a back the land",
       "confidence": "low",
-      "notes": "\"We can go forward. We need to buy up some land that we did\" — Whisper-degraded; minor common-noun"
+      "notes": "\"We can go forward. We need to buy up some land that we did\" \u2014 Whisper-degraded; minor common-noun"
     },
     {
       "row_id": "115.P3.1",
       "whisper": "\"Squirt\" (MLK Morehouse nickname, P2.41)",
-      "candidate_correction": "Squirt\" — Martin Luther King Jr.'s freshman-year Morehouse nickname",
+      "candidate_correction": "Squirt\" \u2014 Martin Luther King Jr.'s freshman-year Morehouse nickname",
       "confidence": "speaker-originating",
       "notes": "Foundational MLK biography material; not in standard published King biographies as canonical detail but McKinney's first-person classmate testimony establishes this. Worth corpus entry as a King-biography canonical detail. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
@@ -1368,5 +1368,6 @@
     "preserved_verbatim_count": 332,
     "unresolved_count": 816,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

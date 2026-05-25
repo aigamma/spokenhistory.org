@@ -298,7 +298,7 @@
     {
       "row_id": "18.17",
       "whisper": "Smith Grouches",
-      "candidate_correction": "(Sears? Smith's? — a real Albany store)",
+      "candidate_correction": "(Sears? Smith's? \u2014 a real Albany store)",
       "confidence": "low",
       "notes": "Real Albany downtown store that closed under SNCC's picket; canonical name uncertain"
     },
@@ -307,7 +307,7 @@
       "whisper": "the Gillian (his pre-Albany experience)",
       "candidate_correction": "(the Sit-In Movement, possibly Petersburg or Virginia Union)",
       "confidence": "medium",
-      "notes": "Sherrod says \"just the experience behind me were the Gillian and Rock Hill SC\"; \"Gillian\" is unclear — possibly Petersburg, VA (his hometown)"
+      "notes": "Sherrod says \"just the experience behind me were the Gillian and Rock Hill SC\"; \"Gillian\" is unclear \u2014 possibly Petersburg, VA (his hometown)"
     },
     {
       "row_id": "18.P2.7",
@@ -349,7 +349,7 @@
       "whisper": "knowing in a Pharaoh",
       "candidate_correction": "known a Pharaoh",
       "confidence": "medium",
-      "notes": "\"They had not known in a Pharaoh\" — Sherrod's biblical-Exodus allusion. Likely Whisper artifact for \"known a Pharaoh\" (i.e., not yet experienced bondage under a tyrant). Preserve the Pharaoh reference."
+      "notes": "\"They had not known in a Pharaoh\" \u2014 Sherrod's biblical-Exodus allusion. Likely Whisper artifact for \"known a Pharaoh\" (i.e., not yet experienced bondage under a tyrant). Preserve the Pharaoh reference."
     }
   ],
   "skipped_rows": [
@@ -423,5 +423,6 @@
     "preserved_verbatim_count": 49,
     "unresolved_count": 186,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

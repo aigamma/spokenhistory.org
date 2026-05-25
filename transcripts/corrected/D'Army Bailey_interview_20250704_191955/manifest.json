@@ -1127,7 +1127,7 @@
       "whisper": "Boulsettner",
       "candidate_correction": "Bill Saltzman",
       "confidence": "low",
-      "notes": "\"We had a damn good campaign manager that we had... Boulsettner, who had campaigned with Birch Bay out in Indiana\"; flag for review — could be Bill Soltzman, Paul Soglin, or other Indiana-tied campaign operative"
+      "notes": "\"We had a damn good campaign manager that we had... Boulsettner, who had campaigned with Birch Bay out in Indiana\"; flag for review \u2014 could be Bill Soltzman, Paul Soglin, or other Indiana-tied campaign operative"
     },
     {
       "row_id": "26.P2T.27",
@@ -1160,7 +1160,7 @@
     {
       "row_id": "26.P4.4",
       "whisper": "\"Oven, Bogalusa\" (SRT line 119)",
-      "candidate_correction": "(likely a Whisper artifact — most plausibly \"down in Bogalusa\" with \"Oven\" being acoustic noise from \"down in\" or \"and in\")",
+      "candidate_correction": "(likely a Whisper artifact \u2014 most plausibly \"down in Bogalusa\" with \"Oven\" being acoustic noise from \"down in\" or \"and in\")",
       "confidence": "low",
       "notes": "Bailey: \"great marches and dramatic scenes in Oven, Bogalusa, where the Deacon's for Defense and Justice.\" \"Oven\" does not cleanly match a Movement-significant Louisiana place name. Could be Whisper rendering of \"and in\" / \"down in\" (preposition cluster). Flag for adversarial review."
     },
@@ -1169,21 +1169,21 @@
       "whisper": "\"Bill Robinson, who was the director before me\" (SRT line 2455)",
       "candidate_correction": "Bill Robinson",
       "confidence": "medium",
-      "notes": "Bailey: \"Bill Robinson, who was the director before me, had gotten a deferment.\" Refers to William L. Robinson (later distinguished civil rights attorney + Howard Law professor 1972+), LSCRRC executive director before Bailey assumed the role. Speaker-originating but corroborable from LSCRRC organizational history. Net-new figure not captured in Pass 1–3."
+      "notes": "Bailey: \"Bill Robinson, who was the director before me, had gotten a deferment.\" Refers to William L. Robinson (later distinguished civil rights attorney + Howard Law professor 1972+), LSCRRC executive director before Bailey assumed the role. Speaker-originating but corroborable from LSCRRC organizational history. Net-new figure not captured in Pass 1\u20133."
     },
     {
       "row_id": "26.P4.15",
       "whisper": "\"DC Seagerson\" (SRT line 391)",
       "candidate_correction": "Dr. C. Seagerson",
       "confidence": "low",
-      "notes": "Bailey: \"And she was a DC Seagerson who was the physician.\" Pass 2 P2T.27 captured \"Dr. Seagerson\" but missed this second-segment rendering where Whisper hears \"Dr. C.\" → \"DC.\" Possible candidates: Dr. Clayton Seagrist, Dr. Charles Seagerson — no clean Memphis 1950s physician match. Reinforces Pass 3 adversarial flag."
+      "notes": "Bailey: \"And she was a DC Seagerson who was the physician.\" Pass 2 P2T.27 captured \"Dr. Seagerson\" but missed this second-segment rendering where Whisper hears \"Dr. C.\" \u2192 \"DC.\" Possible candidates: Dr. Clayton Seagrist, Dr. Charles Seagerson \u2014 no clean Memphis 1950s physician match. Reinforces Pass 3 adversarial flag."
     },
     {
       "row_id": "26.P4.16",
       "whisper": "\"Jackie Robinson and the R.I.P. now\" (SRT line 479)",
       "candidate_correction": "Jackie Robinson and (likely) Roy Campanella",
       "confidence": "medium",
-      "notes": "Bailey: \"He'd take us over to St. Louis and I saw some of the early black stars, Jackie Robinson and the R.I.P. now.\" \"R.I.P. now\" is Whisper noise; the parallel-figure context (\"early black [baseball] stars\") strongly suggests Roy Campanella or Larry Doby or Don Newcombe — Brooklyn Dodgers teammates of Robinson who toured St. Louis. Most plausibly Campanella. Flag for adversarial review."
+      "notes": "Bailey: \"He'd take us over to St. Louis and I saw some of the early black stars, Jackie Robinson and the R.I.P. now.\" \"R.I.P. now\" is Whisper noise; the parallel-figure context (\"early black [baseball] stars\") strongly suggests Roy Campanella or Larry Doby or Don Newcombe \u2014 Brooklyn Dodgers teammates of Robinson who toured St. Louis. Most plausibly Campanella. Flag for adversarial review."
     }
   ],
   "skipped_rows": [],
@@ -1253,5 +1253,6 @@
     "preserved_verbatim_count": 681,
     "unresolved_count": 1506,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }

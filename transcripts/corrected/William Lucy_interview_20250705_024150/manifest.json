@@ -793,7 +793,7 @@
       "whisper": "\"Loeb became a protester himself... agricultural issue in 69 or 70... tractors all came to town\" (SRT lines 2031-2035)",
       "candidate_correction": "Henry Loeb III + 1979 tractorcade",
       "confidence": "medium",
-      "notes": "Pass 4 catches: Lucy says \"69 or 70\" for Loeb-becomes-tractor-protester but the canonical 1979 American Agriculture Movement \"Tractorcade\" to Washington DC is the date-canonical event. Lucy's 2013 recollection is off by ~9 years. This is a speaker-originating date-conflation, not a Whisper failure. Flag for downstream cleanup. (Note: Loeb actually was a Memphis cotton-broker / agricultural-industry figure post-mayoralty so the \"tractor protest\" claim itself is plausible — just the date is wrong.)"
+      "notes": "Pass 4 catches: Lucy says \"69 or 70\" for Loeb-becomes-tractor-protester but the canonical 1979 American Agriculture Movement \"Tractorcade\" to Washington DC is the date-canonical event. Lucy's 2013 recollection is off by ~9 years. This is a speaker-originating date-conflation, not a Whisper failure. Flag for downstream cleanup. (Note: Loeb actually was a Memphis cotton-broker / agricultural-industry figure post-mayoralty so the \"tractor protest\" claim itself is plausible \u2014 just the date is wrong.)"
     }
   ],
   "skipped_rows": [],
@@ -862,5 +862,6 @@
     "preserved_verbatim_count": 245,
     "unresolved_count": 573,
     "apply_failure_count": 0
-  }
+  },
+  "entry_provenance": "audit-original"
 }
