@@ -1,0 +1,670 @@
+{
+  "subject": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins",
+  "entry_dir": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800",
+  "loc_item_url": "https://www.loc.gov/item/2015669117/",
+  "loc_xml_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0018_jenkins_transcript/afc2010039_crhp0018_jenkins_transcript.xml",
+  "loc_pdf_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0018_jenkins_transcript/afc2010039_crhp0018_jenkins_transcript.pdf",
+  "loc_source_kind": "xml",
+  "loc_match_score": 1.0,
+  "our_word_count": 16905,
+  "loc_word_count": 17080,
+  "cue_count": 471,
+  "loc_turn_count": 498,
+  "divergence_count": 21,
+  "deterministic_pre_classified_count": 16,
+  "needs_model_classification": 5,
+  "deterministic_breakdown": {
+    "EDITORIAL_SMOOTHING": 0,
+    "SPEAKER_DISFLUENCY": 16,
+    "ASR_ERROR_HEAL": 0,
+    "UNCLEAR": 0
+  },
+  "divergences": [
+    {
+      "id": 1,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "1:22:05",
+        "Also",
+        "present",
+        "as",
+        "observers",
+        "during",
+        "the",
+        "interview:",
+        "Ms.",
+        "Elaine",
+        "Nichols",
+        "of",
+        "the",
+        "Smithsonian",
+        "National",
+        "Museum",
+        "of",
+        "African",
+        "American",
+        "History",
+        "and",
+        "Culture;",
+        "longtime",
+        "Jenkins",
+        "family",
+        "friend",
+        "Dr.",
+        "Rickey",
+        "Hill,",
+        "a",
+        "Bogalusa",
+        "native",
+        "who",
+        "is",
+        "now",
+        "a",
+        "dean",
+        "at",
+        "Mississippi",
+        "Valley",
+        "State",
+        "University.",
+        "[Note",
+        "to",
+        "editors",
+        "from",
+        "transcriber:",
+        "Frequently",
+        "throughout",
+        "the",
+        "interview,",
+        "the",
+        "sound",
+        "of",
+        "a",
+        "squeaky",
+        "door",
+        "opening",
+        "can",
+        "be",
+        "heard",
+        "in",
+        "the",
+        "background.",
+        "The",
+        "sound",
+        "is",
+        "relatively",
+        "unobtrusive.]",
+        "[General",
+        "conversation",
+        "before",
+        "interview",
+        "begins]",
+        "And",
+        "I",
+        "need",
+        "to,",
+        "uh",
+        "-",
+        "would",
+        "like",
+        "to",
+        "get",
+        "photographs",
+        "of",
+        "you",
+        "before",
+        "we",
+        "start.",
+        "Hi,",
+        "this",
+        "is",
+        "John",
+        "Bishop",
+        "for",
+        "the",
+        "person",
+        "dealing",
+        "with",
+        "sound.",
+        "On",
+        "this",
+        "occasion,",
+        "we're",
+        "using",
+        "a",
+        "coincident",
+        "XY",
+        "stereo",
+        "pair",
+        "of,",
+        "um,",
+        "lavalier",
+        "on",
+        "the",
+        "directional",
+        "mikes.",
+        "And",
+        "we're",
+        "going",
+        "to",
+        "now",
+        "have",
+        "about",
+        "twenty",
+        "seconds",
+        "of",
+        "room",
+        "tone",
+        "to",
+        "use",
+        "for",
+        "noise",
+        "reduction",
+        "on",
+        "end",
+        "postproduction.",
+        "[Pause]",
+        "Okay,",
+        "that's",
+        "the",
+        "end",
+        "of",
+        "the",
+        "room",
+        "tone.",
+        "John,",
+        "do",
+        "you",
+        "want",
+        "to",
+        "cut",
+        "it",
+        "or",
+        "-?"
+      ],
+      "ours_context": "No, you go ahead. This way it won't",
+      "theirs_context": "1:22:05 Also present as observers during the interview: Ms. Elaine Nichols of the Smithsonian National Museum of African American History and Culture; longtime Jenkins family friend Dr. Rickey Hill, a Bogalusa native who is now a dean at Mississippi Valley State University. [Note to editors from transcriber: Frequently throughout the interview, the sound of a squeaky door opening can be heard in the background. The sound is relatively unobtrusive.] [General conversation before interview begins] And I need to, uh - would like to get photographs of you before we start. Hi, this is John Bishop for the person dealing with sound. On this occasion, we're using a coincident XY stereo pair of, um, lavalier on the directional mikes. And we're going to now have about twenty seconds of room tone to use for noise reduction on end postproduction. [Pause] Okay, that's the end of the room tone. John, do you want to cut it or -? No, you go ahead. This way it won't",
+      "cue_indices": [],
+      "ours_span": [
+        0,
+        0
+      ],
+      "theirs_span": [
+        0,
+        156
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 2,
+      "op": "delete",
+      "ours_tokens": [
+        "Rickey",
+        "Hill:"
+      ],
+      "theirs_tokens": [],
+      "ours_context": "pleasure to be with you. Thank you, Rickey. Rickey Hill: Thank you. Um, we're in the home today",
+      "theirs_context": "pleasure to be with you. Thank you, Rickey. Thank you. Um, we're in the home today",
+      "cue_indices": [
+        10
+      ],
+      "ours_span": [
+        198,
+        200
+      ],
+      "theirs_span": [
+        354,
+        354
+      ]
+    },
+    {
+      "id": 3,
+      "op": "delete",
+      "ours_tokens": [
+        "Jenkins:",
+        "Chuck."
+      ],
+      "theirs_tokens": [],
+      "ours_context": "Chuck. Chuck, good to be with you. Chuck Jenkins: Chuck. Or Chucky, I guess, some folks in the",
+      "theirs_context": "Chuck. Chuck, good to be with you. Chuck. Or Chucky, I guess, some folks in the",
+      "cue_indices": [
+        13
+      ],
+      "ours_span": [
+        325,
+        327
+      ],
+      "theirs_span": [
+        479,
+        479
+      ]
+    },
+    {
+      "id": 4,
+      "op": "delete",
+      "ours_tokens": [
+        "Geraldine",
+        "Bennett:"
+      ],
+      "theirs_tokens": [],
+      "ours_context": "are related to Gayle Jenkins as her - Geraldine Bennett: That's my sister. Exactly. And we have, also,",
+      "theirs_context": "are related to Gayle Jenkins as her - That's my sister. Exactly. And we have, also,",
+      "cue_indices": [
+        14
+      ],
+      "ours_span": [
+        370,
+        372
+      ],
+      "theirs_span": [
+        522,
+        522
+      ]
+    },
+    {
+      "id": 5,
+      "op": "delete",
+      "ours_tokens": [
+        "Toni",
+        "Breaux:"
+      ],
+      "theirs_tokens": [],
+      "ours_context": "Willie Exposé Breaux, who is known as Toni. Toni Breaux: Exactly. Toni, nice to be with you. And",
+      "theirs_context": "Willie Exposé Breaux, who is known as Toni. Exactly. Toni, nice to be with you. And",
+      "cue_indices": [
+        15
+      ],
+      "ours_span": [
+        388,
+        390
+      ],
+      "theirs_span": [
+        538,
+        538
+      ]
+    },
+    {
+      "id": 6,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:05:00]"
+      ],
+      "ours_context": "Yeah, my mom was a very strict mama. She always said that when you graduate from",
+      "theirs_context": "Yeah, my mom was a very strict mama. [0:05:00] She always said that when you graduate from",
+      "cue_indices": [
+        25
+      ],
+      "ours_span": [
+        694,
+        694
+      ],
+      "theirs_span": [
+        842,
+        843
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 7,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:10:00]"
+      ],
+      "ours_context": "then, the adults came over there, you know, and joined us. And then, we organized a",
+      "theirs_context": "then, the adults came over there, you know, [0:10:00] and joined us. And then, we organized a",
+      "cue_indices": [
+        35
+      ],
+      "ours_span": [
+        1693,
+        1693
+      ],
+      "theirs_span": [
+        1842,
+        1843
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 8,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:15:00]"
+      ],
+      "ours_context": "bar counting. [Laughter] I didn't even know what bar counting was, but she said, \"You're going",
+      "theirs_context": "bar counting. [Laughter] I didn't even know what [0:15:00] bar counting was, but she said, \"You're going",
+      "cue_indices": [
+        51
+      ],
+      "ours_span": [
+        2724,
+        2724
+      ],
+      "theirs_span": [
+        2874,
+        2875
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 9,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:20:00]"
+      ],
+      "ours_context": "was just a calm, a really good person. And we were all sitting in the house",
+      "theirs_context": "was just a calm, a really good person. [0:20:00] And we were all sitting in the house",
+      "cue_indices": [
+        74
+      ],
+      "ours_span": [
+        3686,
+        3686
+      ],
+      "theirs_span": [
+        3837,
+        3838
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 10,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[unintelligible",
+        "word",
+        "here,",
+        "at",
+        "20:54]"
+      ],
+      "ours_context": "get him a little nip in him, like he got real brave. [Laughter] Yes, he would.",
+      "theirs_context": "get him a little nip in him, like [unintelligible word here, at 20:54] he got real brave. [Laughter] Yes, he would.",
+      "cue_indices": [
+        76
+      ],
+      "ours_span": [
+        3869,
+        3869
+      ],
+      "theirs_span": [
+        4021,
+        4026
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 11,
+      "op": "replace",
+      "ours_tokens": [
+        "."
+      ],
+      "theirs_tokens": [
+        "[unintelligible",
+        "few",
+        "words",
+        "here,",
+        "at",
+        "21:57]."
+      ],
+      "ours_context": "know, he was the only one that would . But after that, well, the next day, Gayle",
+      "theirs_context": "know, he was the only one that would [unintelligible few words here, at 21:57]. But after that, well, the next day, Gayle",
+      "cue_indices": [
+        92
+      ],
+      "ours_span": [
+        4129,
+        4130
+      ],
+      "theirs_span": [
+        4286,
+        4292
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 12,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:25:00]"
+      ],
+      "ours_context": "talk. And, uh, my mom's house was in Poplas Quarters, which was about five miles. A.Z.",
+      "theirs_context": "talk. And, uh, my mom's house was in [0:25:00] Poplas Quarters, which was about five miles. A.Z.",
+      "cue_indices": [
+        112
+      ],
+      "ours_span": [
+        4661,
+        4661
+      ],
+      "theirs_span": [
+        4823,
+        4824
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 13,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:30:00]"
+      ],
+      "ours_context": "think the Deacons for Defense is what saved Bogalusa, because they were afraid. I mean, when",
+      "theirs_context": "think the Deacons for Defense is what saved [0:30:00] Bogalusa, because they were afraid. I mean, when",
+      "cue_indices": [
+        144
+      ],
+      "ours_span": [
+        5663,
+        5663
+      ],
+      "theirs_span": [
+        5826,
+        5827
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 14,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:35:00]"
+      ],
+      "ours_context": "year, she lived with me our senior year. And that was her - I mean, she",
+      "theirs_context": "year, she lived with me our senior year. [0:35:00] And that was her - I mean, she",
+      "cue_indices": [
+        163
+      ],
+      "ours_span": [
+        6668,
+        6668
+      ],
+      "theirs_span": [
+        6832,
+        6833
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 15,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:40:00]"
+      ],
+      "ours_context": "violent. But he was more like my mom, but he was like a more violent person",
+      "theirs_context": "violent. But he was more like my mom, [0:40:00] but he was like a more violent person",
+      "cue_indices": [
+        191
+      ],
+      "ours_span": [
+        7735,
+        7735
+      ],
+      "theirs_span": [
+        7900,
+        7901
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 16,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:45:00]"
+      ],
+      "ours_context": "be going to protect me. How can -?\" You know. So, when I get there, you",
+      "theirs_context": "be going to protect me. How can -?\" [0:45:00] You know. So, when I get there, you",
+      "cue_indices": [
+        245
+      ],
+      "ours_span": [
+        8885,
+        8885
+      ],
+      "theirs_span": [
+        9051,
+        9052
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 17,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:50:00]"
+      ],
+      "ours_context": "\"No, Mama, just let it alone, you know. I handled it,\" you know. But I always",
+      "theirs_context": "\"No, Mama, just let it alone, you know. [0:50:00] I handled it,\" you know. But I always",
+      "cue_indices": [
+        264
+      ],
+      "ours_span": [
+        10032,
+        10032
+      ],
+      "theirs_span": [
+        10199,
+        10200
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 18,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:55:00]"
+      ],
+      "ours_context": "go to any restaurant we want to now. We couldn't do that. Um, and I do",
+      "theirs_context": "go to any restaurant we want to now. [0:55:00] We couldn't do that. Um, and I do",
+      "cue_indices": [
+        282
+      ],
+      "ours_span": [
+        11108,
+        11108
+      ],
+      "theirs_span": [
+        11276,
+        11277
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 19,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:00:00]"
+      ],
+      "ours_context": "back then, you know, and they still - you're still dealing with the same thing with",
+      "theirs_context": "back then, you know, and they still - [1:00:00] you're still dealing with the same thing with",
+      "cue_indices": [
+        295
+      ],
+      "ours_span": [
+        12089,
+        12089
+      ],
+      "theirs_span": [
+        12258,
+        12259
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 20,
+      "op": "delete",
+      "ours_tokens": [
+        "Elaine",
+        "Nichols:"
+      ],
+      "theirs_tokens": [],
+      "ours_context": "my aunt, and through my brother. Thank - Elaine Nichols: I want to ask a question. When you",
+      "theirs_context": "my aunt, and through my brother. Thank - I want to ask a question. When you",
+      "cue_indices": [
+        424
+      ],
+      "ours_span": [
+        15644,
+        15646
+      ],
+      "theirs_span": [
+        15814,
+        15814
+      ]
+    },
+    {
+      "id": 21,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[Recording",
+        "ends",
+        "at",
+        "1:22:05]",
+        "END",
+        "OF",
+        "INTERVIEW"
+      ],
+      "ours_context": "you. Thank you. Thank you so very much.",
+      "theirs_context": "you. Thank you. Thank you so very much. [Recording ends at 1:22:05] END OF INTERVIEW",
+      "cue_indices": [],
+      "ours_span": [
+        16905,
+        16905
+      ],
+      "theirs_span": [
+        17073,
+        17080
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    }
+  ]
+}

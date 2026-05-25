@@ -1,0 +1,5194 @@
+{
+  "subject": "Myrtle Gonza Glascoe",
+  "entry_dir": "Myrtle Gonza Glascoe_interview_20260525_160500",
+  "loc_item_url": "https://www.loc.gov/item/2015669102/",
+  "loc_xml_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0003_Glascoe_transcript/afc2010039_crhp0003_Glascoe_transcript.xml",
+  "loc_pdf_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0003_Glascoe_transcript/afc2010039_crhp0003_Glascoe_transcript.pdf",
+  "loc_source_kind": "xml",
+  "loc_match_score": 1.0,
+  "our_word_count": 13222,
+  "loc_word_count": 13520,
+  "cue_count": 197,
+  "loc_turn_count": 366,
+  "divergence_count": 246,
+  "deterministic_pre_classified_count": 2,
+  "needs_model_classification": 244,
+  "deterministic_breakdown": {
+    "EDITORIAL_SMOOTHING": 0,
+    "SPEAKER_DISFLUENCY": 2,
+    "ASR_ERROR_HEAL": 0,
+    "UNCLEAR": 0
+  },
+  "divergences": [
+    {
+      "id": 1,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:00:09"
+      ],
+      "ours_context": "Today is Wednesday, November 17th, 2010. And I am sitting with",
+      "theirs_context": "Today is Wednesday, 01:00:09 November 17th, 2010. And I am sitting with",
+      "cue_indices": [
+        1
+      ],
+      "ours_span": [
+        3,
+        3
+      ],
+      "theirs_span": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:00:44",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "that contributed to your involvement in the movement? Right off the top of my head it's",
+      "theirs_context": "that contributed to your involvement in the movement? 01:00:44 DR. GLASCOE: Right off the top of my head it's",
+      "cue_indices": [],
+      "ours_span": [
+        60,
+        60
+      ],
+      "theirs_span": [
+        61,
+        64
+      ]
+    },
+    {
+      "id": 3,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:17"
+      ],
+      "ours_context": "to learn how to not do that, you know, because if I saw things and they",
+      "theirs_context": "to learn how to not do that, you 01:01:17 know, because if I saw things and they",
+      "cue_indices": [
+        2
+      ],
+      "ours_span": [
+        126,
+        126
+      ],
+      "theirs_span": [
+        130,
+        131
+      ]
+    },
+    {
+      "id": 4,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:33"
+      ],
+      "ours_context": "anything from my childhood that led to me coming into the movement. So even as a",
+      "theirs_context": "anything from my childhood that led to me 01:01:33 coming into the movement. So even as a",
+      "cue_indices": [
+        2
+      ],
+      "ours_span": [
+        163,
+        163
+      ],
+      "theirs_span": [
+        168,
+        169
+      ]
+    },
+    {
+      "id": 5,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:56"
+      ],
+      "ours_context": "we had to bargain with my dad to get money and so-he didn't give us an",
+      "theirs_context": "we had to bargain with my dad to 01:01:56 get money and so-he didn't give us an",
+      "cue_indices": [
+        4
+      ],
+      "ours_span": [
+        223,
+        223
+      ],
+      "theirs_span": [
+        229,
+        230
+      ]
+    },
+    {
+      "id": 6,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:02:21"
+      ],
+      "ours_context": "the reason they said I always had money because I would make a little money. Then",
+      "theirs_context": "the reason they said I always had money 01:02:21 because I would make a little money. Then",
+      "cue_indices": [
+        4
+      ],
+      "ours_span": [
+        296,
+        296
+      ],
+      "theirs_span": [
+        303,
+        304
+      ]
+    },
+    {
+      "id": 7,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:02:30"
+      ],
+      "ours_context": "carnival came to D.C. I think once a year and I would tell my dad I",
+      "theirs_context": "carnival came to D.C. I think once a 01:02:30 year and I would tell my dad I",
+      "cue_indices": [
+        5
+      ],
+      "ours_span": [
+        334,
+        334
+      ],
+      "theirs_span": [
+        342,
+        343
+      ]
+    },
+    {
+      "id": 8,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:02:50"
+      ],
+      "ours_context": "what you wanted and you were able to negotiate- Exactly. --what you got. So you take",
+      "theirs_context": "what you wanted and you were able to 01:02:50 negotiate- Exactly. --what you got. So you take",
+      "cue_indices": [
+        6
+      ],
+      "ours_span": [
+        406,
+        406
+      ],
+      "theirs_span": [
+        415,
+        416
+      ]
+    },
+    {
+      "id": 9,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:03:05"
+      ],
+      "ours_context": "and Howard University. Yes. Were there instances at Dunbar or Howard that inspired you to become",
+      "theirs_context": "and Howard University. Yes. Were there instances at 01:03:05 Dunbar or Howard that inspired you to become",
+      "cue_indices": [
+        10
+      ],
+      "ours_span": [
+        445,
+        445
+      ],
+      "theirs_span": [
+        455,
+        456
+      ]
+    },
+    {
+      "id": 10,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:03:19"
+      ],
+      "ours_context": "in particular. Let me see at Dunbar, no I don't think of any. But you know",
+      "theirs_context": "in particular. Let me see at Dunbar, no 01:03:19 I don't think of any. But you know",
+      "cue_indices": [
+        11
+      ],
+      "ours_span": [
+        473,
+        473
+      ],
+      "theirs_span": [
+        484,
+        485
+      ]
+    },
+    {
+      "id": 11,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:03:43",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "that was kind of not quite acceptable. Mm-hmm. But anyway I don't remember anything at Dunbar.",
+      "theirs_context": "that was kind of not quite acceptable. Mm-hmm. 01:03:43 DR. GLASCOE: But anyway I don't remember anything at Dunbar.",
+      "cue_indices": [],
+      "ours_span": [
+        533,
+        533
+      ],
+      "theirs_span": [
+        545,
+        548
+      ]
+    },
+    {
+      "id": 12,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:04:06",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "that stuff, I was just going to school. Mm-hmm. And I was going to school and",
+      "theirs_context": "that stuff, I was just going to school. 01:04:06 INTERVIEWER: Mm-hmm. And I was going to school and",
+      "cue_indices": [],
+      "ours_span": [
+        579,
+        579
+      ],
+      "theirs_span": [
+        594,
+        596
+      ]
+    },
+    {
+      "id": 13,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:04:15"
+      ],
+      "ours_context": "getting by. But I mean I remember my English class I enjoyed that. And I remember",
+      "theirs_context": "getting by. But I mean I remember my 01:04:15 English class I enjoyed that. And I remember",
+      "cue_indices": [
+        17
+      ],
+      "ours_span": [
+        609,
+        609
+      ],
+      "theirs_span": [
+        626,
+        627
+      ]
+    },
+    {
+      "id": 14,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:04:42"
+      ],
+      "ours_context": "and so he read his essay and I recognized it as an essay I had read",
+      "theirs_context": "and so he read his essay and I 01:04:42 recognized it as an essay I had read",
+      "cue_indices": [
+        17
+      ],
+      "ours_span": [
+        680,
+        680
+      ],
+      "theirs_span": [
+        698,
+        699
+      ]
+    },
+    {
+      "id": 15,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:05:07"
+      ],
+      "ours_context": "to kind of expand their horizons and whether it's through activities or courses, can you pick",
+      "theirs_context": "to kind of expand their horizons and whether 01:05:07 it's through activities or courses, can you pick",
+      "cue_indices": [
+        18
+      ],
+      "ours_span": [
+        739,
+        739
+      ],
+      "theirs_span": [
+        758,
+        759
+      ]
+    },
+    {
+      "id": 16,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:05:18",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "kind of sparked your imagination in the moment? In relationship to the movement? In relationship to",
+      "theirs_context": "kind of sparked your imagination in the moment? 01:05:18 DR. GLASCOE: In relationship to the movement? In relationship to",
+      "cue_indices": [],
+      "ours_span": [
+        766,
+        766
+      ],
+      "theirs_span": [
+        786,
+        789
+      ]
+    },
+    {
+      "id": 17,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:05:32",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "particular? I went to school and I partied. Okay. So you were living the young college",
+      "theirs_context": "particular? I went to school and I partied. 01:05:32 INTERVIEWER: Okay. So you were living the young college",
+      "cue_indices": [],
+      "ours_span": [
+        803,
+        803
+      ],
+      "theirs_span": [
+        826,
+        828
+      ]
+    },
+    {
+      "id": 18,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:05:55",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "an exam and getting an excellent grade. Mm-hmm. And so in these years people have said",
+      "theirs_context": "an exam and getting an excellent grade. Mm-hmm. 01:05:55 DR. GLASCOE: And so in these years people have said",
+      "cue_indices": [],
+      "ours_span": [
+        853,
+        853
+      ],
+      "theirs_span": [
+        878,
+        881
+      ]
+    },
+    {
+      "id": 19,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:06:08"
+      ],
+      "ours_context": "me say things. But anyway there was nothing political going on in my life and I",
+      "theirs_context": "me say things. But anyway there was nothing 01:06:08 political going on in my life and I",
+      "cue_indices": [
+        27
+      ],
+      "ours_span": [
+        888,
+        888
+      ],
+      "theirs_span": [
+        916,
+        917
+      ]
+    },
+    {
+      "id": 20,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:06:39"
+      ],
+      "ours_context": "high school in-right after college I took a-see I was a health and physical education major.",
+      "theirs_context": "high school in-right after college I took a-see 01:06:39 I was a health and physical education major.",
+      "cue_indices": [
+        29
+      ],
+      "ours_span": [
+        949,
+        949
+      ],
+      "theirs_span": [
+        978,
+        979
+      ]
+    },
+    {
+      "id": 21,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:07:04"
+      ],
+      "ours_context": "to our young girls. And they had these strict rules and regulations, they wouldn't let the",
+      "theirs_context": "to our young girls. And they had these 01:07:04 strict rules and regulations, they wouldn't let the",
+      "cue_indices": [
+        31
+      ],
+      "ours_span": [
+        999,
+        999
+      ],
+      "theirs_span": [
+        1029,
+        1030
+      ]
+    },
+    {
+      "id": 22,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:07:15"
+      ],
+      "ours_context": "records that the girls really wanted to dance to they couldn't dance to those. And so",
+      "theirs_context": "records that the girls really wanted to dance 01:07:15 to they couldn't dance to those. And so",
+      "cue_indices": [
+        31
+      ],
+      "ours_span": [
+        1031,
+        1031
+      ],
+      "theirs_span": [
+        1062,
+        1063
+      ]
+    },
+    {
+      "id": 23,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:07:44"
+      ],
+      "ours_context": "things that happened and they asked me to leave before the end of the year. I",
+      "theirs_context": "things that happened and they asked me to 01:07:44 leave before the end of the year. I",
+      "cue_indices": [
+        32
+      ],
+      "ours_span": [
+        1102,
+        1102
+      ],
+      "theirs_span": [
+        1134,
+        1135
+      ]
+    },
+    {
+      "id": 24,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:08:07"
+      ],
+      "ours_context": "so anyway they didn't get rid of me right away but I also was expected to",
+      "theirs_context": "so anyway they didn't get rid of me 01:08:07 right away but I also was expected to",
+      "cue_indices": [
+        34
+      ],
+      "ours_span": [
+        1159,
+        1159
+      ],
+      "theirs_span": [
+        1192,
+        1193
+      ]
+    },
+    {
+      "id": 25,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:08:24"
+      ],
+      "ours_context": "was sitting in my room and I was knitting, I took up knitting while I was",
+      "theirs_context": "was sitting in my room and I was 01:08:24 knitting, I took up knitting while I was",
+      "cue_indices": [
+        34
+      ],
+      "ours_span": [
+        1201,
+        1201
+      ],
+      "theirs_span": [
+        1235,
+        1236
+      ]
+    },
+    {
+      "id": 26,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:08:50"
+      ],
+      "ours_context": "and prayed for me. And they had come to this unfortunate conclusion that I had to",
+      "theirs_context": "and prayed for me. And they had come 01:08:50 to this unfortunate conclusion that I had to",
+      "cue_indices": [
+        34
+      ],
+      "ours_span": [
+        1275,
+        1275
+      ],
+      "theirs_span": [
+        1310,
+        1311
+      ]
+    },
+    {
+      "id": 27,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:09:15",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "for the rest of the year, just leave. Still the negotiator. Anyway. And so I have",
+      "theirs_context": "for the rest of the year, just leave. 01:09:15 INTERVIEWER: Still the negotiator. Anyway. And so I have",
+      "cue_indices": [],
+      "ours_span": [
+        1351,
+        1351
+      ],
+      "theirs_span": [
+        1387,
+        1389
+      ]
+    },
+    {
+      "id": 28,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:09:31"
+      ],
+      "ours_context": "the fact that I was feeling oppressed and frustrated and angry and whatever. So after that",
+      "theirs_context": "the fact that I was feeling oppressed and 01:09:31 frustrated and angry and whatever. So after that",
+      "cue_indices": [
+        37
+      ],
+      "ours_span": [
+        1380,
+        1380
+      ],
+      "theirs_span": [
+        1418,
+        1419
+      ]
+    },
+    {
+      "id": 29,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:10:19"
+      ],
+      "ours_context": "School of Social Work in 1960. And I was working at the Rosewood State Hospital outside",
+      "theirs_context": "School of Social Work in 1960. And I 01:10:19 was working at the Rosewood State Hospital outside",
+      "cue_indices": [
+        39
+      ],
+      "ours_span": [
+        1443,
+        1443
+      ],
+      "theirs_span": [
+        1482,
+        1483
+      ]
+    },
+    {
+      "id": 30,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:10:48"
+      ],
+      "ours_context": "what meeting, he said-he was the chairman of Baltimore CORE. And so he invited me to",
+      "theirs_context": "what meeting, he said-he was the chairman of 01:10:48 Baltimore CORE. And so he invited me to",
+      "cue_indices": [
+        39
+      ],
+      "ours_span": [
+        1511,
+        1511
+      ],
+      "theirs_span": [
+        1551,
+        1552
+      ]
+    },
+    {
+      "id": 31,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:11:04"
+      ],
+      "ours_context": "in picketing and so I refused-because I didn't believe in non-violence so I refused to walk",
+      "theirs_context": "in picketing and so I refused-because I didn't 01:11:04 believe in non-violence so I refused to walk",
+      "cue_indices": [
+        39
+      ],
+      "ours_span": [
+        1546,
+        1546
+      ],
+      "theirs_span": [
+        1587,
+        1588
+      ]
+    },
+    {
+      "id": 32,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:11:27"
+      ],
+      "ours_context": "going to sit in and I said sit in where, they said they were going to",
+      "theirs_context": "going to sit in and I said sit 01:11:27 in where, they said they were going to",
+      "cue_indices": [
+        40
+      ],
+      "ours_span": [
+        1620,
+        1620
+      ],
+      "theirs_span": [
+        1662,
+        1663
+      ]
+    },
+    {
+      "id": 33,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:11:52"
+      ],
+      "ours_context": "to the bottom of his feet, dirty apron, greasy hair and he read this thing to",
+      "theirs_context": "to the bottom of his feet, dirty apron, 01:11:52 greasy hair and he read this thing to",
+      "cue_indices": [
+        41
+      ],
+      "ours_span": [
+        1699,
+        1699
+      ],
+      "theirs_span": [
+        1742,
+        1743
+      ]
+    },
+    {
+      "id": 34,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:12:08"
+      ],
+      "ours_context": "we left. And I was so mad, I could feel that anger all the way home,",
+      "theirs_context": "we left. And I was so mad, I 01:12:08 could feel that anger all the way home,",
+      "cue_indices": [
+        41
+      ],
+      "ours_span": [
+        1743,
+        1743
+      ],
+      "theirs_span": [
+        1787,
+        1788
+      ]
+    },
+    {
+      "id": 35,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:12:46"
+      ],
+      "ours_context": "40 things at that time. And the Route 40 demonstrations and people-you know what I was",
+      "theirs_context": "40 things at that time. And the Route 01:12:46 40 demonstrations and people-you know what I was",
+      "cue_indices": [
+        42
+      ],
+      "ours_span": [
+        1818,
+        1818
+      ],
+      "theirs_span": [
+        1863,
+        1864
+      ]
+    },
+    {
+      "id": 36,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:13:18"
+      ],
+      "ours_context": "not gotten up and left the restaurant and then the police would have come and arrested",
+      "theirs_context": "not gotten up and left the restaurant and 01:13:18 then the police would have come and arrested",
+      "cue_indices": [
+        42
+      ],
+      "ours_span": [
+        1890,
+        1890
+      ],
+      "theirs_span": [
+        1936,
+        1937
+      ]
+    },
+    {
+      "id": 37,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:13:53",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "to arrest us. So anyway-what was I saying? We were talking about how it was deliberate-",
+      "theirs_context": "to arrest us. So anyway-what was I saying? 01:13:53 INTERVIEWER: We were talking about how it was deliberate-",
+      "cue_indices": [],
+      "ours_span": [
+        1918,
+        1918
+      ],
+      "theirs_span": [
+        1965,
+        1967
+      ]
+    },
+    {
+      "id": 38,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:14:20"
+      ],
+      "ours_context": "thought they needed to spend the night in jail. And so I never would agree to",
+      "theirs_context": "thought they needed to spend the night in 01:14:20 jail. And so I never would agree to",
+      "cue_indices": [
+        44
+      ],
+      "ours_span": [
+        1978,
+        1978
+      ],
+      "theirs_span": [
+        2027,
+        2028
+      ]
+    },
+    {
+      "id": 39,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:14:46"
+      ],
+      "ours_context": "movement. And in that process I remember going over to Howard and picking up folks like",
+      "theirs_context": "movement. And in that process I remember going 01:14:46 over to Howard and picking up folks like",
+      "cue_indices": [
+        45
+      ],
+      "ours_span": [
+        2050,
+        2050
+      ],
+      "theirs_span": [
+        2100,
+        2101
+      ]
+    },
+    {
+      "id": 40,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:14:59"
+      ],
+      "ours_context": "probably not familiar with those names. But I remember going up there and picking them up.",
+      "theirs_context": "probably not familiar with those names. But I 01:14:59 remember going up there and picking them up.",
+      "cue_indices": [
+        45
+      ],
+      "ours_span": [
+        2083,
+        2083
+      ],
+      "theirs_span": [
+        2134,
+        2135
+      ]
+    },
+    {
+      "id": 41,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:15:22",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "of civil rights workers. Okay. And so anyway. I mean it seems like there was an",
+      "theirs_context": "of civil rights workers. Okay. And so anyway. 01:15:22 INTERVIEWER: I mean it seems like there was an",
+      "cue_indices": [],
+      "ours_span": [
+        2141,
+        2141
+      ],
+      "theirs_span": [
+        2193,
+        2195
+      ]
+    },
+    {
+      "id": 42,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:15:44"
+      ],
+      "ours_context": "you do want to picket and then there's certain levels, was it part of your attitude",
+      "theirs_context": "you do want to picket and then there's 01:15:44 certain levels, was it part of your attitude",
+      "cue_indices": [
+        48
+      ],
+      "ours_span": [
+        2208,
+        2208
+      ],
+      "theirs_span": [
+        2262,
+        2263
+      ]
+    },
+    {
+      "id": 43,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:15:58"
+      ],
+      "ours_context": "beating on you and you didn't-and you couldn't respond to that in a like manner. And",
+      "theirs_context": "beating on you and you didn't-and you couldn't 01:15:58 respond to that in a like manner. And",
+      "cue_indices": [
+        49
+      ],
+      "ours_span": [
+        2236,
+        2236
+      ],
+      "theirs_span": [
+        2291,
+        2292
+      ]
+    },
+    {
+      "id": 44,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:16:30"
+      ],
+      "ours_context": "me. But as I said once I-I mean I got so angry that this greasy uneducated",
+      "theirs_context": "me. But as I said once I-I mean 01:16:30 I got so angry that this greasy uneducated",
+      "cue_indices": [
+        49
+      ],
+      "ours_span": [
+        2300,
+        2300
+      ],
+      "theirs_span": [
+        2356,
+        2357
+      ]
+    },
+    {
+      "id": 45,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:16:59"
+      ],
+      "ours_context": "a mass of people coming together, that it was deliberate, it was planned, there was strategies-",
+      "theirs_context": "a mass of people coming together, that it 01:16:59 was deliberate, it was planned, there was strategies-",
+      "cue_indices": [
+        50
+      ],
+      "ours_span": [
+        2364,
+        2364
+      ],
+      "theirs_span": [
+        2421,
+        2422
+      ]
+    },
+    {
+      "id": 46,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:06",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "Exactly. And as you got more involved, you- [interposing] And I came to understand- Okay. --I",
+      "theirs_context": "Exactly. And as you got more involved, you- 01:17:06 DR. GLASCOE: [interposing] And I came to understand- Okay. --I",
+      "cue_indices": [],
+      "ours_span": [
+        2380,
+        2380
+      ],
+      "theirs_span": [
+        2438,
+        2441
+      ]
+    },
+    {
+      "id": 47,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:21"
+      ],
+      "ours_context": "understand it, you're still going to have to accept it, it's there for you. It's for",
+      "theirs_context": "understand it, you're still going to have to 01:17:21 accept it, it's there for you. It's for",
+      "cue_indices": [
+        55
+      ],
+      "ours_span": [
+        2432,
+        2432
+      ],
+      "theirs_span": [
+        2493,
+        2494
+      ]
+    },
+    {
+      "id": 48,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:46"
+      ],
+      "ours_context": "make ourselves available to those things, to open ourselves to receive on that level, yes. How",
+      "theirs_context": "make ourselves available to those things, to open 01:17:46 ourselves to receive on that level, yes. How",
+      "cue_indices": [
+        55
+      ],
+      "ours_span": [
+        2495,
+        2495
+      ],
+      "theirs_span": [
+        2557,
+        2558
+      ]
+    },
+    {
+      "id": 49,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:57",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "way South to participate in the Freedom Movement? Well I left Baltimore in the summer of",
+      "theirs_context": "way South to participate in the Freedom Movement? 01:17:57 DR. GLASCOE: Well I left Baltimore in the summer of",
+      "cue_indices": [],
+      "ours_span": [
+        2517,
+        2517
+      ],
+      "theirs_span": [
+        2580,
+        2583
+      ]
+    },
+    {
+      "id": 50,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:18:41"
+      ],
+      "ours_context": "you asked me? How you ended up making your way South. Okay. So you went from",
+      "theirs_context": "you asked me? How you ended up making 01:18:41 your way South. Okay. So you went from",
+      "cue_indices": [
+        58
+      ],
+      "ours_span": [
+        2574,
+        2574
+      ],
+      "theirs_span": [
+        2640,
+        2641
+      ]
+    },
+    {
+      "id": 51,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:19:01"
+      ],
+      "ours_context": "Frederica Teer [phonetic] who was a national officer for CORE. And she would come down to",
+      "theirs_context": "Frederica Teer [phonetic] who was a national officer 01:19:01 for CORE. And she would come down to",
+      "cue_indices": [
+        61
+      ],
+      "ours_span": [
+        2621,
+        2621
+      ],
+      "theirs_span": [
+        2688,
+        2689
+      ]
+    },
+    {
+      "id": 52,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:19:14"
+      ],
+      "ours_context": "Francisco and so I went up to visit her one time and she introduced me to",
+      "theirs_context": "Francisco and so I went up to visit 01:19:14 her one time and she introduced me to",
+      "cue_indices": [
+        61
+      ],
+      "ours_span": [
+        2658,
+        2658
+      ],
+      "theirs_span": [
+        2726,
+        2727
+      ]
+    },
+    {
+      "id": 53,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:19:49"
+      ],
+      "ours_context": "I began working with the Student Nonviolent Coordinating Committee support network there. And so right now",
+      "theirs_context": "I began working with the Student Nonviolent Coordinating 01:19:49 Committee support network there. And so right now",
+      "cue_indices": [
+        61
+      ],
+      "ours_span": [
+        2724,
+        2724
+      ],
+      "theirs_span": [
+        2793,
+        2794
+      ]
+    },
+    {
+      "id": 54,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:20:22"
+      ],
+      "ours_context": "don't know that he did, but all the stuff that he brought back, he brought back",
+      "theirs_context": "don't know that he did, but all the 01:20:22 stuff that he brought back, he brought back",
+      "cue_indices": [
+        62
+      ],
+      "ours_span": [
+        2800,
+        2800
+      ],
+      "theirs_span": [
+        2870,
+        2871
+      ]
+    },
+    {
+      "id": 55,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:20:34"
+      ],
+      "ours_context": "reading so much, I enjoyed it. And I got to understand what people were trying to",
+      "theirs_context": "reading so much, I enjoyed it. And I 01:20:34 got to understand what people were trying to",
+      "cue_indices": [
+        62
+      ],
+      "ours_span": [
+        2837,
+        2837
+      ],
+      "theirs_span": [
+        2908,
+        2909
+      ]
+    },
+    {
+      "id": 56,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:21:01"
+      ],
+      "ours_context": "was so excited, I was just thrilled. And she was just as down to earth as",
+      "theirs_context": "was so excited, I was just thrilled. And 01:21:01 she was just as down to earth as",
+      "cue_indices": [
+        63
+      ],
+      "ours_span": [
+        2910,
+        2910
+      ],
+      "theirs_span": [
+        2982,
+        2983
+      ]
+    },
+    {
+      "id": 57,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:21:29"
+      ],
+      "ours_context": "where I have released my professional social work stuff, I'm still working as a social worker.",
+      "theirs_context": "where I have released my professional social work 01:21:29 stuff, I'm still working as a social worker.",
+      "cue_indices": [
+        63
+      ],
+      "ours_span": [
+        2986,
+        2986
+      ],
+      "theirs_span": [
+        3059,
+        3060
+      ]
+    },
+    {
+      "id": 58,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:21:43"
+      ],
+      "ours_context": "summer of 1964 so many young white people went down and many of them did not",
+      "theirs_context": "summer of 1964 so many young white people 01:21:43 went down and many of them did not",
+      "cue_indices": [
+        64
+      ],
+      "ours_span": [
+        3018,
+        3018
+      ],
+      "theirs_span": [
+        3092,
+        3093
+      ]
+    },
+    {
+      "id": 59,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:22:14"
+      ],
+      "ours_context": "that I decided I was going to go. And actually my decision was facilitated by this",
+      "theirs_context": "that I decided I was going to go. 01:22:14 And actually my decision was facilitated by this",
+      "cue_indices": [
+        64
+      ],
+      "ours_span": [
+        3096,
+        3096
+      ],
+      "theirs_span": [
+        3171,
+        3172
+      ]
+    },
+    {
+      "id": 60,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:22:42"
+      ],
+      "ours_context": "keep going. And so she and I got into this conversation, I was telling her how",
+      "theirs_context": "keep going. And so she and I got 01:22:42 into this conversation, I was telling her how",
+      "cue_indices": [
+        65
+      ],
+      "ours_span": [
+        3167,
+        3167
+      ],
+      "theirs_span": [
+        3243,
+        3244
+      ]
+    },
+    {
+      "id": 61,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:22:55"
+      ],
+      "ours_context": "well why can't you go? I started thinking about all the reasons I couldn't go and",
+      "theirs_context": "well why can't you go? I started thinking 01:22:55 about all the reasons I couldn't go and",
+      "cue_indices": [
+        65
+      ],
+      "ours_span": [
+        3204,
+        3204
+      ],
+      "theirs_span": [
+        3281,
+        3282
+      ]
+    },
+    {
+      "id": 62,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:23:21",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "it. And I signed myself up to go. After signing everyone else up. Yeah, so anyway.",
+      "theirs_context": "it. And I signed myself up to go. 01:23:21 INTERVIEWER: After signing everyone else up. Yeah, so anyway.",
+      "cue_indices": [],
+      "ours_span": [
+        3277,
+        3277
+      ],
+      "theirs_span": [
+        3355,
+        3357
+      ]
+    },
+    {
+      "id": 63,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:23:39"
+      ],
+      "ours_context": "up staying for a long time. Did you have a plan for how long you were",
+      "theirs_context": "up staying for a long time. Did you 01:23:39 have a plan for how long you were",
+      "cue_indices": [
+        68
+      ],
+      "ours_span": [
+        3332,
+        3332
+      ],
+      "theirs_span": [
+        3412,
+        3413
+      ]
+    },
+    {
+      "id": 64,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:23:50"
+      ],
+      "ours_context": "back inside myself I knew that I was going to want to be there more than",
+      "theirs_context": "back inside myself I knew that I was 01:23:50 going to want to be there more than",
+      "cue_indices": [
+        69
+      ],
+      "ours_span": [
+        3362,
+        3362
+      ],
+      "theirs_span": [
+        3443,
+        3444
+      ]
+    },
+    {
+      "id": 65,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:24:18"
+      ],
+      "ours_context": "would go there and I would have a great time when I was with my cousins",
+      "theirs_context": "would go there and I would have a 01:24:18 great time when I was with my cousins",
+      "cue_indices": [
+        69
+      ],
+      "ours_span": [
+        3434,
+        3434
+      ],
+      "theirs_span": [
+        3516,
+        3517
+      ]
+    },
+    {
+      "id": 66,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:24:46"
+      ],
+      "ours_context": "you know where my cousins lived. But we would go to this I think VFW hall",
+      "theirs_context": "you know where my cousins lived. But we 01:24:46 would go to this I think VFW hall",
+      "cue_indices": [
+        70
+      ],
+      "ours_span": [
+        3509,
+        3509
+      ],
+      "theirs_span": [
+        3592,
+        3593
+      ]
+    },
+    {
+      "id": 67,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:25:02"
+      ],
+      "ours_context": "involved, I loved it, I really did, I loved the work. Can we talk a little",
+      "theirs_context": "involved, I loved it, I really did, I 01:25:02 loved the work. Can we talk a little",
+      "cue_indices": [
+        70
+      ],
+      "ours_span": [
+        3548,
+        3548
+      ],
+      "theirs_span": [
+        3632,
+        3633
+      ]
+    },
+    {
+      "id": 68,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:25:22"
+      ],
+      "ours_context": "get involved in? I was the Director of the Freedom School in West Helena, Arkansas. And",
+      "theirs_context": "get involved in? I was the Director of 01:25:22 the Freedom School in West Helena, Arkansas. And",
+      "cue_indices": [
+        72
+      ],
+      "ours_span": [
+        3600,
+        3600
+      ],
+      "theirs_span": [
+        3685,
+        3686
+      ]
+    },
+    {
+      "id": 69,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:25:52"
+      ],
+      "ours_context": "different kinds of activities. And of course an important part of that was discussing with them",
+      "theirs_context": "different kinds of activities. And of course an 01:25:52 important part of that was discussing with them",
+      "cue_indices": [
+        72
+      ],
+      "ours_span": [
+        3670,
+        3670
+      ],
+      "theirs_span": [
+        3756,
+        3757
+      ]
+    },
+    {
+      "id": 70,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:26:05"
+      ],
+      "ours_context": "and to write poetry if that was what they desired and stuff like that. And so",
+      "theirs_context": "and to write poetry if that was what 01:26:05 they desired and stuff like that. And so",
+      "cue_indices": [
+        72
+      ],
+      "ours_span": [
+        3701,
+        3701
+      ],
+      "theirs_span": [
+        3788,
+        3789
+      ]
+    },
+    {
+      "id": 71,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:26:29"
+      ],
+      "ours_context": "the South, that I needed to pay attention to what was going on around me, that",
+      "theirs_context": "the South, that I needed to pay attention 01:26:29 to what was going on around me, that",
+      "cue_indices": [
+        73
+      ],
+      "ours_span": [
+        3773,
+        3773
+      ],
+      "theirs_span": [
+        3861,
+        3862
+      ]
+    },
+    {
+      "id": 72,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:26:56"
+      ],
+      "ours_context": "get up and tell people what you think, stay in your seat. If you have to",
+      "theirs_context": "get up and tell people what you think, 01:26:56 stay in your seat. If you have to",
+      "cue_indices": [
+        73
+      ],
+      "ours_span": [
+        3847,
+        3847
+      ],
+      "theirs_span": [
+        3936,
+        3937
+      ]
+    },
+    {
+      "id": 73,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:27:09"
+      ],
+      "ours_context": "me that summer. Of course I did voter registration, there were nine of us volunteers that",
+      "theirs_context": "me that summer. Of course I did voter 01:27:09 registration, there were nine of us volunteers that",
+      "cue_indices": [
+        74
+      ],
+      "ours_span": [
+        3884,
+        3884
+      ],
+      "theirs_span": [
+        3974,
+        3975
+      ]
+    },
+    {
+      "id": 74,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:27:46"
+      ],
+      "ours_context": "knew who I was and I would go places and just kind of hang out. And",
+      "theirs_context": "knew who I was and I would go 01:27:46 places and just kind of hang out. And",
+      "cue_indices": [
+        74
+      ],
+      "ours_span": [
+        3949,
+        3949
+      ],
+      "theirs_span": [
+        4040,
+        4041
+      ]
+    },
+    {
+      "id": 75,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:28:12"
+      ],
+      "ours_context": "a week and once they were at the meeting would they do other things related to",
+      "theirs_context": "a week and once they were at the 01:28:12 meeting would they do other things related to",
+      "cue_indices": [
+        75
+      ],
+      "ours_span": [
+        4018,
+        4018
+      ],
+      "theirs_span": [
+        4110,
+        4111
+      ]
+    },
+    {
+      "id": 76,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:28:25",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "they do, you know that kind of stuff. You also did some work in Mississippi? Mm-hmm.",
+      "theirs_context": "they do, you know that kind of stuff. 01:28:25 INTERVIEWER: You also did some work in Mississippi? Mm-hmm.",
+      "cue_indices": [],
+      "ours_span": [
+        4046,
+        4046
+      ],
+      "theirs_span": [
+        4139,
+        4141
+      ]
+    },
+    {
+      "id": 77,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:28:51"
+      ],
+      "ours_context": "had to come out because I was sick. And I was in Atlanta where I saw",
+      "theirs_context": "had to come out because I was sick. 01:28:51 And I was in Atlanta where I saw",
+      "cue_indices": [
+        79
+      ],
+      "ours_span": [
+        4091,
+        4091
+      ],
+      "theirs_span": [
+        4186,
+        4187
+      ]
+    },
+    {
+      "id": 78,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:29:16"
+      ],
+      "ours_context": "project in West Point? It was a regular project, you know the same kinds of things.",
+      "theirs_context": "project in West Point? It was a regular 01:29:16 project, you know the same kinds of things.",
+      "cue_indices": [
+        81
+      ],
+      "ours_span": [
+        4148,
+        4148
+      ],
+      "theirs_span": [
+        4244,
+        4245
+      ]
+    },
+    {
+      "id": 79,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:29:30"
+      ],
+      "ours_context": "if there were challenges that they were facing, problems they were having you'd help them to",
+      "theirs_context": "if there were challenges that they were facing, 01:29:30 problems they were having you'd help them to",
+      "cue_indices": [
+        81
+      ],
+      "ours_span": [
+        4178,
+        4178
+      ],
+      "theirs_span": [
+        4275,
+        4276
+      ]
+    },
+    {
+      "id": 80,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:29:53"
+      ],
+      "ours_context": "help people to think of what are some things that the community could do to make",
+      "theirs_context": "help people to think of what are some 01:29:53 things that the community could do to make",
+      "cue_indices": [
+        81
+      ],
+      "ours_span": [
+        4243,
+        4243
+      ],
+      "theirs_span": [
+        4341,
+        4342
+      ]
+    },
+    {
+      "id": 81,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:30:31"
+      ],
+      "ours_context": "Jones Ridge, Arkansas the Turner Elementary School, the families there were disturbed because every time it",
+      "theirs_context": "Jones Ridge, Arkansas the Turner Elementary School, the 01:30:31 families there were disturbed because every time it",
+      "cue_indices": [
+        82
+      ],
+      "ours_span": [
+        4308,
+        4308
+      ],
+      "theirs_span": [
+        4407,
+        4408
+      ]
+    },
+    {
+      "id": 82,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:30:45"
+      ],
+      "ours_context": "elementary school. And so that had been going on for a long, long time. And they",
+      "theirs_context": "elementary school. And so that had been going 01:30:45 on for a long, long time. And they",
+      "cue_indices": [
+        82
+      ],
+      "ours_span": [
+        4339,
+        4339
+      ],
+      "theirs_span": [
+        4439,
+        4440
+      ]
+    },
+    {
+      "id": 83,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:31:10"
+      ],
+      "ours_context": "co-worker Howard Himmelbaum who was doing the work. And he said to people what do you",
+      "theirs_context": "co-worker Howard Himmelbaum who was doing the work. 01:31:10 And he said to people what do you",
+      "cue_indices": [],
+      "ours_span": [
+        4410,
+        4410
+      ],
+      "theirs_span": [
+        4511,
+        4512
+      ]
+    },
+    {
+      "id": 84,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:31:30"
+      ],
+      "ours_context": "go to the Health Department in Little Rock, which is what they did. And then people",
+      "theirs_context": "go to the Health Department in Little Rock, 01:31:30 which is what they did. And then people",
+      "cue_indices": [
+        83
+      ],
+      "ours_span": [
+        4478,
+        4478
+      ],
+      "theirs_span": [
+        4580,
+        4581
+      ]
+    },
+    {
+      "id": 85,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:31:45"
+      ],
+      "ours_context": "it rained there was a problem. So once that was corrected then the people in that",
+      "theirs_context": "it rained there was a problem. So once 01:31:45 that was corrected then the people in that",
+      "cue_indices": [
+        83
+      ],
+      "ours_span": [
+        4513,
+        4513
+      ],
+      "theirs_span": [
+        4616,
+        4617
+      ]
+    },
+    {
+      "id": 86,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:32:11"
+      ],
+      "ours_context": "and to force desegregation. Because at that time they thought that the way that their kids",
+      "theirs_context": "and to force desegregation. Because at that time 01:32:11 they thought that the way that their kids",
+      "cue_indices": [
+        84
+      ],
+      "ours_span": [
+        4582,
+        4582
+      ],
+      "theirs_span": [
+        4686,
+        4687
+      ]
+    },
+    {
+      "id": 87,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:32:42"
+      ],
+      "ours_context": "so that when school started that fall we held 1500 of 1800 black kids out of",
+      "theirs_context": "so that when school started that fall we 01:32:42 held 1500 of 1800 black kids out of",
+      "cue_indices": [
+        84
+      ],
+      "ours_span": [
+        4648,
+        4648
+      ],
+      "theirs_span": [
+        4753,
+        4754
+      ]
+    },
+    {
+      "id": 88,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:33:01"
+      ],
+      "ours_context": "desegregated the schools. But you know I think-I don't think I said that in any of",
+      "theirs_context": "desegregated the schools. But you know I think-I 01:33:01 don't think I said that in any of",
+      "cue_indices": [
+        84
+      ],
+      "ours_span": [
+        4679,
+        4679
+      ],
+      "theirs_span": [
+        4785,
+        4786
+      ]
+    },
+    {
+      "id": 89,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:33:29"
+      ],
+      "ours_context": "we should not be getting in these white schools, we should be trying to do our",
+      "theirs_context": "we should not be getting in these white 01:33:29 schools, we should be trying to do our",
+      "cue_indices": [
+        85
+      ],
+      "ours_span": [
+        4745,
+        4745
+      ],
+      "theirs_span": [
+        4852,
+        4853
+      ]
+    },
+    {
+      "id": 90,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:33:57"
+      ],
+      "ours_context": "was so caught up with we're going to finally get our children together and what she",
+      "theirs_context": "was so caught up with we're going to 01:33:57 finally get our children together and what she",
+      "cue_indices": [
+        85
+      ],
+      "ours_span": [
+        4813,
+        4813
+      ],
+      "theirs_span": [
+        4921,
+        4922
+      ]
+    },
+    {
+      "id": 91,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:34:10"
+      ],
+      "ours_context": "full of hate, the children will love each other. And so but what I was aware",
+      "theirs_context": "full of hate, the children will love each 01:34:10 other. And so but what I was aware",
+      "cue_indices": [
+        86
+      ],
+      "ours_span": [
+        4846,
+        4846
+      ],
+      "theirs_span": [
+        4955,
+        4956
+      ]
+    },
+    {
+      "id": 92,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:34:40"
+      ],
+      "ours_context": "my kids hate white folks. And so I mean I knew that already. And so she",
+      "theirs_context": "my kids hate white folks. And so I 01:34:40 mean I knew that already. And so she",
+      "cue_indices": [
+        86
+      ],
+      "ours_span": [
+        4921,
+        4921
+      ],
+      "theirs_span": [
+        5031,
+        5032
+      ]
+    },
+    {
+      "id": 93,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:35:05"
+      ],
+      "ours_context": "allowed to do and people were condescending to them. And Mrs. Jackson was so unhappy and",
+      "theirs_context": "allowed to do and people were condescending to 01:35:05 them. And Mrs. Jackson was so unhappy and",
+      "cue_indices": [
+        87
+      ],
+      "ours_span": [
+        4993,
+        4993
+      ],
+      "theirs_span": [
+        5104,
+        5105
+      ]
+    },
+    {
+      "id": 94,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:35:19"
+      ],
+      "ours_context": "how your thinking evolved, once you did come down South and see the realities of certain",
+      "theirs_context": "how your thinking evolved, once you did come 01:35:19 down South and see the realities of certain",
+      "cue_indices": [
+        88
+      ],
+      "ours_span": [
+        5017,
+        5017
+      ],
+      "theirs_span": [
+        5129,
+        5130
+      ]
+    },
+    {
+      "id": 95,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:35:36",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "Jackson, is this Gertrude Jackson? Gertrude Jackson, yes. Right. So this was in the community of",
+      "theirs_context": "Jackson, is this Gertrude Jackson? Gertrude Jackson, yes. 01:35:36 INTERVIEWER: Right. So this was in the community of",
+      "cue_indices": [],
+      "ours_span": [
+        5053,
+        5053
+      ],
+      "theirs_span": [
+        5166,
+        5168
+      ]
+    },
+    {
+      "id": 96,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:35:54",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "voter registration and the schools and public safety. Well the Jackson family was the-you know like",
+      "theirs_context": "voter registration and the schools and public safety. 01:35:54 DR. GLASCOE: Well the Jackson family was the-you know like",
+      "cue_indices": [],
+      "ours_span": [
+        5099,
+        5099
+      ],
+      "theirs_span": [
+        5214,
+        5217
+      ]
+    },
+    {
+      "id": 97,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:36:12"
+      ],
+      "ours_context": "around which the project revolves. And so the Jackson family, Mrs. Jackson and her husband Gertrude",
+      "theirs_context": "around which the project revolves. And so the 01:36:12 Jackson family, Mrs. Jackson and her husband Gertrude",
+      "cue_indices": [
+        97
+      ],
+      "ours_span": [
+        5129,
+        5129
+      ],
+      "theirs_span": [
+        5247,
+        5248
+      ]
+    },
+    {
+      "id": 98,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:36:43"
+      ],
+      "ours_context": "together, they planted cotton and I think they planted soy beans. And there was one instance",
+      "theirs_context": "together, they planted cotton and I think they 01:36:43 planted soy beans. And there was one instance",
+      "cue_indices": [
+        97
+      ],
+      "ours_span": [
+        5188,
+        5188
+      ],
+      "theirs_span": [
+        5307,
+        5308
+      ]
+    },
+    {
+      "id": 99,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:37:13"
+      ],
+      "ours_context": "and Mr. James Jackson didn't get upset, they just stopped and took the thing apart, cleaned",
+      "theirs_context": "and Mr. James Jackson didn't get upset, they 01:37:13 just stopped and took the thing apart, cleaned",
+      "cue_indices": [
+        98
+      ],
+      "ours_span": [
+        5253,
+        5253
+      ],
+      "theirs_span": [
+        5373,
+        5374
+      ]
+    },
+    {
+      "id": 100,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:37:23"
+      ],
+      "ours_context": "I mean they were an inspiration to all of us, they were so strong. And Mr.",
+      "theirs_context": "I mean they were an inspiration to all 01:37:23 of us, they were so strong. And Mr.",
+      "cue_indices": [
+        98
+      ],
+      "ours_span": [
+        5286,
+        5286
+      ],
+      "theirs_span": [
+        5407,
+        5408
+      ]
+    },
+    {
+      "id": 101,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:37:57"
+      ],
+      "ours_context": "so what would happen was that one of the things that I would do every week",
+      "theirs_context": "so what would happen was that one of 01:37:57 the things that I would do every week",
+      "cue_indices": [
+        99
+      ],
+      "ours_span": [
+        5356,
+        5356
+      ],
+      "theirs_span": [
+        5478,
+        5479
+      ]
+    },
+    {
+      "id": 102,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:38:18"
+      ],
+      "ours_context": "would go and I would sit with each- maybe four or five different people I would",
+      "theirs_context": "would go and I would sit with each- 01:38:18 maybe four or five different people I would",
+      "cue_indices": [
+        99
+      ],
+      "ours_span": [
+        5428,
+        5428
+      ],
+      "theirs_span": [
+        5551,
+        5552
+      ]
+    },
+    {
+      "id": 103,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:38:27"
+      ],
+      "ours_context": "to hear. And so I would go to Mrs. Jackson and we would do that. And",
+      "theirs_context": "to hear. And so I would go to 01:38:27 Mrs. Jackson and we would do that. And",
+      "cue_indices": [
+        99
+      ],
+      "ours_span": [
+        5467,
+        5467
+      ],
+      "theirs_span": [
+        5591,
+        5592
+      ]
+    },
+    {
+      "id": 104,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:38:50"
+      ],
+      "ours_context": "would just go to the meeting and when the meeting was going on I would present",
+      "theirs_context": "would just go to the meeting and when 01:38:50 the meeting was going on I would present",
+      "cue_indices": [
+        100
+      ],
+      "ours_span": [
+        5543,
+        5543
+      ],
+      "theirs_span": [
+        5668,
+        5669
+      ]
+    },
+    {
+      "id": 105,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:39:13"
+      ],
+      "ours_context": "little process of putting these ideas on me. I said Mrs. Jackson this is your idea,",
+      "theirs_context": "little process of putting these ideas on me. 01:39:13 I said Mrs. Jackson this is your idea,",
+      "cue_indices": [
+        100
+      ],
+      "ours_span": [
+        5615,
+        5615
+      ],
+      "theirs_span": [
+        5741,
+        5742
+      ]
+    },
+    {
+      "id": 106,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:39:26"
+      ],
+      "ours_context": "that idea, I'm not going to present it. And so she-you know she said no, I",
+      "theirs_context": "that idea, I'm not going to present it. 01:39:26 And so she-you know she said no, I",
+      "cue_indices": [
+        101
+      ],
+      "ours_span": [
+        5651,
+        5651
+      ],
+      "theirs_span": [
+        5778,
+        5779
+      ]
+    },
+    {
+      "id": 107,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:39:51"
+      ],
+      "ours_context": "ideas and help people to know how to do them. And so that first time I",
+      "theirs_context": "ideas and help people to know how to 01:39:51 do them. And so that first time I",
+      "cue_indices": [
+        101
+      ],
+      "ours_span": [
+        5729,
+        5729
+      ],
+      "theirs_span": [
+        5857,
+        5858
+      ]
+    },
+    {
+      "id": 108,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:40:20"
+      ],
+      "ours_context": "a community center and it still is in existence. It's limping, but it's still there. So",
+      "theirs_context": "a community center and it still is in 01:40:20 existence. It's limping, but it's still there. So",
+      "cue_indices": [
+        102
+      ],
+      "ours_span": [
+        5802,
+        5802
+      ],
+      "theirs_span": [
+        5931,
+        5932
+      ]
+    },
+    {
+      "id": 109,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:40:32"
+      ],
+      "ours_context": "understand how this was all pulled together, that volunteers who came from the North, there was",
+      "theirs_context": "understand how this was all pulled together, that 01:40:32 volunteers who came from the North, there was",
+      "cue_indices": [
+        103
+      ],
+      "ours_span": [
+        5826,
+        5826
+      ],
+      "theirs_span": [
+        5956,
+        5957
+      ]
+    },
+    {
+      "id": 110,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:40:57"
+      ],
+      "ours_context": "think you should do this and that and that. That you were very careful in working",
+      "theirs_context": "think you should do this and that and 01:40:57 that. That you were very careful in working",
+      "cue_indices": [
+        103
+      ],
+      "ours_span": [
+        5894,
+        5894
+      ],
+      "theirs_span": [
+        6025,
+        6026
+      ]
+    },
+    {
+      "id": 111,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:41:26"
+      ],
+      "ours_context": "building blocks to them being in charge of their own communities and doing things for themselves.",
+      "theirs_context": "building blocks to them being in charge of 01:41:26 their own communities and doing things for themselves.",
+      "cue_indices": [
+        104
+      ],
+      "ours_span": [
+        5959,
+        5959
+      ],
+      "theirs_span": [
+        6091,
+        6092
+      ]
+    },
+    {
+      "id": 112,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:41:44"
+      ],
+      "ours_context": "of the few people who were willing to pick up and assert herself. There were people",
+      "theirs_context": "of the few people who were willing to 01:41:44 pick up and assert herself. There were people",
+      "cue_indices": [
+        104
+      ],
+      "ours_span": [
+        5993,
+        5993
+      ],
+      "theirs_span": [
+        6126,
+        6127
+      ]
+    },
+    {
+      "id": 113,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:42:18",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "community leaders it didn't work the same way. Well I mean-for example, now Mr. Jackson when",
+      "theirs_context": "community leaders it didn't work the same way. 01:42:18 DR. GLASCOE: Well I mean-for example, now Mr. Jackson when",
+      "cue_indices": [],
+      "ours_span": [
+        6051,
+        6051
+      ],
+      "theirs_span": [
+        6185,
+        6188
+      ]
+    },
+    {
+      "id": 114,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:42:46"
+      ],
+      "ours_context": "like this goes with the territory, now let's just fix it and keep moving. But he-when",
+      "theirs_context": "like this goes with the territory, now let's 01:42:46 just fix it and keep moving. But he-when",
+      "cue_indices": [
+        106
+      ],
+      "ours_span": [
+        6117,
+        6117
+      ],
+      "theirs_span": [
+        6254,
+        6255
+      ]
+    },
+    {
+      "id": 115,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:43:01"
+      ],
+      "ours_context": "me Ms. Myrtle but Myrtle we still having these problems and it was to sort of",
+      "theirs_context": "me Ms. Myrtle but Myrtle we still having 01:43:01 these problems and it was to sort of",
+      "cue_indices": [
+        106
+      ],
+      "ours_span": [
+        6153,
+        6153
+      ],
+      "theirs_span": [
+        6291,
+        6292
+      ]
+    },
+    {
+      "id": 116,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:43:31"
+      ],
+      "ours_context": "with a woman in Connecticut who was willing to send her money so that those kids",
+      "theirs_context": "with a woman in Connecticut who was willing 01:43:31 to send her money so that those kids",
+      "cue_indices": [
+        107
+      ],
+      "ours_span": [
+        6225,
+        6225
+      ],
+      "theirs_span": [
+        6364,
+        6365
+      ]
+    },
+    {
+      "id": 117,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:44:00"
+      ],
+      "ours_context": "to Mrs. Jackson. She was creative, she is creative, you know she was always looking for",
+      "theirs_context": "to Mrs. Jackson. She was creative, she is 01:44:00 creative, you know she was always looking for",
+      "cue_indices": [
+        107
+      ],
+      "ours_span": [
+        6297,
+        6297
+      ],
+      "theirs_span": [
+        6437,
+        6438
+      ]
+    },
+    {
+      "id": 118,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:44:14"
+      ],
+      "ours_context": "time with SNCC the dynamics of group leadership and participation really changed in relationship to the",
+      "theirs_context": "time with SNCC the dynamics of group leadership 01:44:14 and participation really changed in relationship to the",
+      "cue_indices": [
+        108
+      ],
+      "ours_span": [
+        6325,
+        6325
+      ],
+      "theirs_span": [
+        6466,
+        6467
+      ]
+    },
+    {
+      "id": 119,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:44:40"
+      ],
+      "ours_context": "conflicts of any sort. But when we were planning for things to do the two of",
+      "theirs_context": "conflicts of any sort. But when we were 01:44:40 planning for things to do the two of",
+      "cue_indices": [
+        109
+      ],
+      "ours_span": [
+        6383,
+        6383
+      ],
+      "theirs_span": [
+        6525,
+        6526
+      ]
+    },
+    {
+      "id": 120,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:45:13"
+      ],
+      "ours_context": "and couldn't came and a lawyer would talk to them. Anyway I was saying that I",
+      "theirs_context": "and couldn't came and a lawyer would talk 01:45:13 to them. Anyway I was saying that I",
+      "cue_indices": [
+        109
+      ],
+      "ours_span": [
+        6453,
+        6453
+      ],
+      "theirs_span": [
+        6596,
+        6597
+      ]
+    },
+    {
+      "id": 121,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:45:27"
+      ],
+      "ours_context": "that the white workers should leave the black communities and go and work in white communities.",
+      "theirs_context": "that the white workers should leave the black 01:45:27 communities and go and work in white communities.",
+      "cue_indices": [
+        109
+      ],
+      "ours_span": [
+        6484,
+        6484
+      ],
+      "theirs_span": [
+        6628,
+        6629
+      ]
+    },
+    {
+      "id": 122,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:45:58"
+      ],
+      "ours_context": "that there was stuff inside me I didn't even know I had. And so when it",
+      "theirs_context": "that there was stuff inside me I didn't 01:45:58 even know I had. And so when it",
+      "cue_indices": [
+        110
+      ],
+      "ours_span": [
+        6559,
+        6559
+      ],
+      "theirs_span": [
+        6704,
+        6705
+      ]
+    },
+    {
+      "id": 123,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:46:22"
+      ],
+      "ours_context": "speaks to me. My sense of what it was was that I was deferring to him,",
+      "theirs_context": "speaks to me. My sense of what it 01:46:22 was was that I was deferring to him,",
+      "cue_indices": [
+        111
+      ],
+      "ours_span": [
+        6631,
+        6631
+      ],
+      "theirs_span": [
+        6777,
+        6778
+      ]
+    },
+    {
+      "id": 124,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:46:37"
+      ],
+      "ours_context": "realize I was doing that. And so I discovered some things about myself once he left.",
+      "theirs_context": "realize I was doing that. And so I 01:46:37 discovered some things about myself once he left.",
+      "cue_indices": [
+        111
+      ],
+      "ours_span": [
+        6667,
+        6667
+      ],
+      "theirs_span": [
+        6814,
+        6815
+      ]
+    },
+    {
+      "id": 125,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:47:00"
+      ],
+      "ours_context": "you were kind of working on your own where other people were spread out all over",
+      "theirs_context": "you were kind of working on your own 01:47:00 where other people were spread out all over",
+      "cue_indices": [
+        112
+      ],
+      "ours_span": [
+        6726,
+        6726
+      ],
+      "theirs_span": [
+        6874,
+        6875
+      ]
+    },
+    {
+      "id": 126,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:47:23"
+      ],
+      "ours_context": "for black people to get to where they could feel comfortable doing things for themselves with",
+      "theirs_context": "for black people to get to where they 01:47:23 could feel comfortable doing things for themselves with",
+      "cue_indices": [
+        113
+      ],
+      "ours_span": [
+        6786,
+        6786
+      ],
+      "theirs_span": [
+        6935,
+        6936
+      ]
+    },
+    {
+      "id": 127,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:47:36"
+      ],
+      "ours_context": "my best to say to people and to behave to people, you are in charge of",
+      "theirs_context": "my best to say to people and to 01:47:36 behave to people, you are in charge of",
+      "cue_indices": [
+        113
+      ],
+      "ours_span": [
+        6820,
+        6820
+      ],
+      "theirs_span": [
+        6970,
+        6971
+      ]
+    },
+    {
+      "id": 128,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:48:01"
+      ],
+      "ours_context": "figure. Because I came from somewhere, I was a college graduate, I was actually a Master's",
+      "theirs_context": "figure. Because I came from somewhere, I was 01:48:01 a college graduate, I was actually a Master's",
+      "cue_indices": [
+        114
+      ],
+      "ours_span": [
+        6895,
+        6895
+      ],
+      "theirs_span": [
+        7046,
+        7047
+      ]
+    },
+    {
+      "id": 129,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:48:33"
+      ],
+      "ours_context": "had been white that's even more of challenge. And I understood that, I saw that. I",
+      "theirs_context": "had been white that's even more of challenge. 01:48:33 And I understood that, I saw that. I",
+      "cue_indices": [
+        114
+      ],
+      "ours_span": [
+        6968,
+        6968
+      ],
+      "theirs_span": [
+        7120,
+        7121
+      ]
+    },
+    {
+      "id": 130,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:48:46"
+      ],
+      "ours_context": "saw how people had backed off and how they weren't as comfortable to be themselves around",
+      "theirs_context": "saw how people had backed off and how 01:48:46 they weren't as comfortable to be themselves around",
+      "cue_indices": [
+        114
+      ],
+      "ours_span": [
+        7006,
+        7006
+      ],
+      "theirs_span": [
+        7159,
+        7160
+      ]
+    },
+    {
+      "id": 131,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:49:12"
+      ],
+      "ours_context": "ways, you know, we lived in the same house, he was like a brother to me",
+      "theirs_context": "ways, you know, we lived in the same 01:49:12 house, he was like a brother to me",
+      "cue_indices": [
+        115
+      ],
+      "ours_span": [
+        7076,
+        7076
+      ],
+      "theirs_span": [
+        7230,
+        7231
+      ]
+    },
+    {
+      "id": 132,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:49:44"
+      ],
+      "ours_context": "other black people. And for Howard, Howard was willing to pull himself back and do some",
+      "theirs_context": "other black people. And for Howard, Howard was 01:49:44 willing to pull himself back and do some",
+      "cue_indices": [
+        117
+      ],
+      "ours_span": [
+        7135,
+        7135
+      ],
+      "theirs_span": [
+        7290,
+        7291
+      ]
+    },
+    {
+      "id": 133,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:49:58"
+      ],
+      "ours_context": "closer to what you want me to talk about? It does, it does. Okay. So it",
+      "theirs_context": "closer to what you want me to talk 01:49:58 about? It does, it does. Okay. So it",
+      "cue_indices": [
+        117
+      ],
+      "ours_span": [
+        7172,
+        7172
+      ],
+      "theirs_span": [
+        7328,
+        7329
+      ]
+    },
+    {
+      "id": 134,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:50:11"
+      ],
+      "ours_context": "mm-hmm, yes, yes. So how long did you spend in the South or when did you",
+      "theirs_context": "mm-hmm, yes, yes. So how long did you 01:50:11 spend in the South or when did you",
+      "cue_indices": [
+        122
+      ],
+      "ours_span": [
+        7212,
+        7212
+      ],
+      "theirs_span": [
+        7369,
+        7370
+      ]
+    },
+    {
+      "id": 135,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:50:49",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "Program and so I took that job, yeah. Following your formal work with the movement, you",
+      "theirs_context": "Program and so I took that job, yeah. 01:50:49 INTERVIEWER: Following your formal work with the movement, you",
+      "cue_indices": [],
+      "ours_span": [
+        7280,
+        7280
+      ],
+      "theirs_span": [
+        7438,
+        7440
+      ]
+    },
+    {
+      "id": 136,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:51:00"
+      ],
+      "ours_context": "American leaders, W.E.B. Du Bois and Booker T. Washington. And between 1985 and 1993 you were",
+      "theirs_context": "American leaders, W.E.B. Du Bois and Booker T. 01:51:00 Washington. And between 1985 and 1993 you were",
+      "cue_indices": [
+        124
+      ],
+      "ours_span": [
+        7309,
+        7309
+      ],
+      "theirs_span": [
+        7469,
+        7470
+      ]
+    },
+    {
+      "id": 137,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:51:35"
+      ],
+      "ours_context": "being an activist, it gets inside you. And so you know I approached things-I guess I",
+      "theirs_context": "being an activist, it gets inside you. And 01:51:35 so you know I approached things-I guess I",
+      "cue_indices": [
+        125
+      ],
+      "ours_span": [
+        7367,
+        7367
+      ],
+      "theirs_span": [
+        7528,
+        7529
+      ]
+    },
+    {
+      "id": 138,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:52:09"
+      ],
+      "ours_context": "I do first-after I left-after I worked-the first thing I did that was not-well, I taught",
+      "theirs_context": "I do first-after I left-after I worked-the first 01:52:09 thing I did that was not-well, I taught",
+      "cue_indices": [
+        125
+      ],
+      "ours_span": [
+        7440,
+        7440
+      ],
+      "theirs_span": [
+        7602,
+        7603
+      ]
+    },
+    {
+      "id": 139,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:52:27"
+      ],
+      "ours_context": "of-I worked in the Head Start Program and I don't know if anyone has said this",
+      "theirs_context": "of-I worked in the Head Start Program and 01:52:27 I don't know if anyone has said this",
+      "cue_indices": [
+        126
+      ],
+      "ours_span": [
+        7474,
+        7474
+      ],
+      "theirs_span": [
+        7637,
+        7638
+      ]
+    },
+    {
+      "id": 140,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:52:55"
+      ],
+      "ours_context": "came back home all caught up with their feelings about how people were so poor and",
+      "theirs_context": "came back home all caught up with their 01:52:55 feelings about how people were so poor and",
+      "cue_indices": [
+        126
+      ],
+      "ours_span": [
+        7540,
+        7540
+      ],
+      "theirs_span": [
+        7704,
+        7705
+      ]
+    },
+    {
+      "id": 141,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:53:23"
+      ],
+      "ours_context": "it-in one sense it was an excellent situation because for the first time people who had",
+      "theirs_context": "it-in one sense it was an excellent situation 01:53:23 because for the first time people who had",
+      "cue_indices": [
+        127
+      ],
+      "ours_span": [
+        7608,
+        7608
+      ],
+      "theirs_span": [
+        7773,
+        7774
+      ]
+    },
+    {
+      "id": 142,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:53:39"
+      ],
+      "ours_context": "say $10 or $12 a day, $5 a day. You know you pick a certain number",
+      "theirs_context": "say $10 or $12 a day, $5 a 01:53:39 day. You know you pick a certain number",
+      "cue_indices": [
+        127
+      ],
+      "ours_span": [
+        7645,
+        7645
+      ],
+      "theirs_span": [
+        7811,
+        7812
+      ]
+    },
+    {
+      "id": 143,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:54:10"
+      ],
+      "ours_context": "program on the wheels and the infrastructure of the movement, it gradually destructed that infrastructure. What",
+      "theirs_context": "program on the wheels and the infrastructure of 01:54:10 the movement, it gradually destructed that infrastructure. What",
+      "cue_indices": [
+        127
+      ],
+      "ours_span": [
+        7716,
+        7716
+      ],
+      "theirs_span": [
+        7883,
+        7884
+      ]
+    },
+    {
+      "id": 144,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:54:49"
+      ],
+      "ours_context": "be concerns about well who makes the decision about who gets the jobs and how do",
+      "theirs_context": "be concerns about well who makes the decision 01:54:49 about who gets the jobs and how do",
+      "cue_indices": [
+        128
+      ],
+      "ours_span": [
+        7777,
+        7777
+      ],
+      "theirs_span": [
+        7945,
+        7946
+      ]
+    },
+    {
+      "id": 145,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:55:14"
+      ],
+      "ours_context": "all through the movement being separated because so and so was on the Board and he",
+      "theirs_context": "all through the movement being separated because so 01:55:14 and so was on the Board and he",
+      "cue_indices": [
+        128
+      ],
+      "ours_span": [
+        7810,
+        7810
+      ],
+      "theirs_span": [
+        7979,
+        7980
+      ]
+    },
+    {
+      "id": 146,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:55:37"
+      ],
+      "ours_context": "just dropped all kinds of poison down into the infrastructure of the movement. And so after",
+      "theirs_context": "just dropped all kinds of poison down into 01:55:37 the infrastructure of the movement. And so after",
+      "cue_indices": [
+        129
+      ],
+      "ours_span": [
+        7881,
+        7881
+      ],
+      "theirs_span": [
+        8051,
+        8052
+      ]
+    },
+    {
+      "id": 147,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:56:10"
+      ],
+      "ours_context": "program organizers. You probably don't know but Senator Stennis fought the Head Start Program. You know",
+      "theirs_context": "program organizers. You probably don't know but Senator 01:56:10 Stennis fought the Head Start Program. You know",
+      "cue_indices": [
+        129
+      ],
+      "ours_span": [
+        7938,
+        7938
+      ],
+      "theirs_span": [
+        8109,
+        8110
+      ]
+    },
+    {
+      "id": 148,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:56:25"
+      ],
+      "ours_context": "funding for and the program was going along and people who-everybody who worked in the program",
+      "theirs_context": "funding for and the program was going along 01:56:25 and people who-everybody who worked in the program",
+      "cue_indices": [
+        129
+      ],
+      "ours_span": [
+        7968,
+        7968
+      ],
+      "theirs_span": [
+        8140,
+        8141
+      ]
+    },
+    {
+      "id": 149,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:56:46"
+      ],
+      "ours_context": "that. And so of course Stennis fought it, this is a federal program supposed to be",
+      "theirs_context": "that. And so of course Stennis fought it, 01:56:46 this is a federal program supposed to be",
+      "cue_indices": [
+        130
+      ],
+      "ours_span": [
+        8031,
+        8031
+      ],
+      "theirs_span": [
+        8204,
+        8205
+      ]
+    },
+    {
+      "id": 150,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:57:12"
+      ],
+      "ours_context": "would come back. And then there'd have to be a decision about well who's going to",
+      "theirs_context": "would come back. And then there'd have to 01:57:12 be a decision about well who's going to",
+      "cue_indices": [
+        131
+      ],
+      "ours_span": [
+        8096,
+        8096
+      ],
+      "theirs_span": [
+        8270,
+        8271
+      ]
+    },
+    {
+      "id": 151,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:57:21"
+      ],
+      "ours_context": "and regulations that people had to go by in relationship to that and so anyway. It",
+      "theirs_context": "and regulations that people had to go by 01:57:21 in relationship to that and so anyway. It",
+      "cue_indices": [
+        131
+      ],
+      "ours_span": [
+        8130,
+        8130
+      ],
+      "theirs_span": [
+        8305,
+        8306
+      ]
+    },
+    {
+      "id": 152,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:57:38"
+      ],
+      "ours_context": "center of it. You know folks like me always had the job. And so people who",
+      "theirs_context": "center of it. You know folks like me 01:57:38 always had the job. And so people who",
+      "cue_indices": [
+        135
+      ],
+      "ours_span": [
+        8171,
+        8171
+      ],
+      "theirs_span": [
+        8347,
+        8348
+      ]
+    },
+    {
+      "id": 153,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:58:04"
+      ],
+      "ours_context": "stopped there were certain people who kept on working, I'm one of those. I got to",
+      "theirs_context": "stopped there were certain people who kept on 01:58:04 working, I'm one of those. I got to",
+      "cue_indices": [
+        135
+      ],
+      "ours_span": [
+        8243,
+        8243
+      ],
+      "theirs_span": [
+        8420,
+        8421
+      ]
+    },
+    {
+      "id": 154,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:58:15"
+      ],
+      "ours_context": "just waited, I just stopped working until the program came back and then I went back",
+      "theirs_context": "just waited, I just stopped working until the 01:58:15 program came back and then I went back",
+      "cue_indices": [
+        135
+      ],
+      "ours_span": [
+        8276,
+        8276
+      ],
+      "theirs_span": [
+        8454,
+        8455
+      ]
+    },
+    {
+      "id": 155,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:58:36",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "did your work with Head Start and I- [interposing] Did my work with Head Start and",
+      "theirs_context": "did your work with Head Start and I- 01:58:36 DR. GLASCOE: [interposing] Did my work with Head Start and",
+      "cue_indices": [],
+      "ours_span": [
+        8339,
+        8339
+      ],
+      "theirs_span": [
+        8518,
+        8521
+      ]
+    },
+    {
+      "id": 156,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:59:11"
+      ],
+      "ours_context": "been doing. Bringing information to people, helping the kids to understand certain kinds of things, you",
+      "theirs_context": "been doing. Bringing information to people, helping the 01:59:11 kids to understand certain kinds of things, you",
+      "cue_indices": [
+        138
+      ],
+      "ours_span": [
+        8400,
+        8400
+      ],
+      "theirs_span": [
+        8582,
+        8583
+      ]
+    },
+    {
+      "id": 157,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:59:24"
+      ],
+      "ours_context": "onto people, how to eat to live, and so the kids would be walking around campus",
+      "theirs_context": "onto people, how to eat to live, and 01:59:24 so the kids would be walking around campus",
+      "cue_indices": [
+        138
+      ],
+      "ours_span": [
+        8435,
+        8435
+      ],
+      "theirs_span": [
+        8618,
+        8619
+      ]
+    },
+    {
+      "id": 158,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:59:50"
+      ],
+      "ours_context": "to know ourselves as individuals and also as people who are part of communities. And I've",
+      "theirs_context": "to know ourselves as individuals and also as 01:59:50 people who are part of communities. And I've",
+      "cue_indices": [
+        139
+      ],
+      "ours_span": [
+        8498,
+        8498
+      ],
+      "theirs_span": [
+        8682,
+        8683
+      ]
+    },
+    {
+      "id": 159,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:00:20",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "you know that is like in my teaching. Is it a course that kind of mimics",
+      "theirs_context": "you know that is like in my teaching. 02:00:20 INTERVIEWER: Is it a course that kind of mimics",
+      "cue_indices": [],
+      "ours_span": [
+        8564,
+        8564
+      ],
+      "theirs_span": [
+        8749,
+        8751
+      ]
+    },
+    {
+      "id": 160,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:00:30"
+      ],
+      "ours_context": "involved? Did your own experiences kind of feed into developing that course? I'm sure. I'm sure",
+      "theirs_context": "involved? Did your own experiences kind of feed 02:00:30 into developing that course? I'm sure. I'm sure",
+      "cue_indices": [
+        140
+      ],
+      "ours_span": [
+        8596,
+        8596
+      ],
+      "theirs_span": [
+        8783,
+        8784
+      ]
+    },
+    {
+      "id": 161,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:01:04"
+      ],
+      "ours_context": "them all the time. And that was the gift that I attempted to give to my",
+      "theirs_context": "them all the time. And that was the 02:01:04 gift that I attempted to give to my",
+      "cue_indices": [
+        141
+      ],
+      "ours_span": [
+        8664,
+        8664
+      ],
+      "theirs_span": [
+        8852,
+        8853
+      ]
+    },
+    {
+      "id": 162,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:01:28"
+      ],
+      "ours_context": "of those cases how would that affect other people who are just meeting you. So if",
+      "theirs_context": "of those cases how would that affect other 02:01:28 people who are just meeting you. So if",
+      "cue_indices": [
+        141
+      ],
+      "ours_span": [
+        8730,
+        8730
+      ],
+      "theirs_span": [
+        8919,
+        8920
+      ]
+    },
+    {
+      "id": 163,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:01:43"
+      ],
+      "ours_context": "of issues was well each one of you has a story and each one of you",
+      "theirs_context": "of issues was well each one of you 02:01:43 has a story and each one of you",
+      "cue_indices": [
+        142
+      ],
+      "ours_span": [
+        8765,
+        8765
+      ],
+      "theirs_span": [
+        8955,
+        8956
+      ]
+    },
+    {
+      "id": 164,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:02:14"
+      ],
+      "ours_context": "your suitcase with you of your beliefs and your attitudes into classrooms where children are. Do",
+      "theirs_context": "your suitcase with you of your beliefs and 02:02:14 your attitudes into classrooms where children are. Do",
+      "cue_indices": [
+        142
+      ],
+      "ours_span": [
+        8843,
+        8843
+      ],
+      "theirs_span": [
+        9034,
+        9035
+      ]
+    },
+    {
+      "id": 165,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:02:36"
+      ],
+      "ours_context": "you don't bring that in its form that it's in now to the classroom. Can you",
+      "theirs_context": "you don't bring that in its form that 02:02:36 it's in now to the classroom. Can you",
+      "cue_indices": [
+        143
+      ],
+      "ours_span": [
+        8912,
+        8912
+      ],
+      "theirs_span": [
+        9104,
+        9105
+      ]
+    },
+    {
+      "id": 166,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "02:02:46",
+        "INTERVIEWER:"
+      ],
+      "ours_context": "of things, that's how I do it now. Well you made the comment earlier about- --but",
+      "theirs_context": "of things, that's how I do it now. 02:02:46 INTERVIEWER: Well you made the comment earlier about- [END",
+      "cue_indices": [],
+      "ours_span": [
+        8943,
+        8943
+      ],
+      "theirs_span": [
+        9136,
+        9138
+      ]
+    },
+    {
+      "id": 167,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[END",
+        "afc2010039_crhp0003_mv1]",
+        "[START",
+        "afc2010039_crhp0003_mv2]"
+      ],
+      "ours_context": "now. Well you made the comment earlier about- --but I wasn't there on my own, I",
+      "theirs_context": "INTERVIEWER: Well you made the comment earlier about- [END afc2010039_crhp0003_mv1] [START afc2010039_crhp0003_mv2] --but I wasn't there on my own, I",
+      "cue_indices": [],
+      "ours_span": [
+        8950,
+        8950
+      ],
+      "theirs_span": [
+        9145,
+        9149
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 168,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:00:27"
+      ],
+      "ours_context": "And John had started a restaurant in West Point and I did things to help out",
+      "theirs_context": "And John had started a restaurant in West 01:00:27 Point and I did things to help out",
+      "cue_indices": [
+        145
+      ],
+      "ours_span": [
+        8987,
+        8987
+      ],
+      "theirs_span": [
+        9186,
+        9187
+      ]
+    },
+    {
+      "id": 169,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:03"
+      ],
+      "ours_context": "attending meetings and being in support of the work that was already going on there when",
+      "theirs_context": "attending meetings and being in support of the 01:01:03 work that was already going on there when",
+      "cue_indices": [
+        145
+      ],
+      "ours_span": [
+        9060,
+        9060
+      ],
+      "theirs_span": [
+        9260,
+        9261
+      ]
+    },
+    {
+      "id": 170,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:17",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "some voter registration in Arkansas. In Arkansas, okay. Right. But I didn't do voter registration in",
+      "theirs_context": "some voter registration in Arkansas. In Arkansas, okay. 01:01:17 DR. GLASCOE: Right. But I didn't do voter registration in",
+      "cue_indices": [],
+      "ours_span": [
+        9088,
+        9088
+      ],
+      "theirs_span": [
+        9289,
+        9292
+      ]
+    },
+    {
+      "id": 171,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:35"
+      ],
+      "ours_context": "the Freedom Movement how you moved that forward in some of your other work, for instance",
+      "theirs_context": "the Freedom Movement how you moved that forward 01:01:35 in some of your other work, for instance",
+      "cue_indices": [
+        150
+      ],
+      "ours_span": [
+        9135,
+        9135
+      ],
+      "theirs_span": [
+        9339,
+        9340
+      ]
+    },
+    {
+      "id": 172,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:01:58"
+      ],
+      "ours_context": "of your- Well I mean it's not a- first of all I need to say it's",
+      "theirs_context": "of your- Well I mean it's not a- 01:01:58 first of all I need to say it's",
+      "cue_indices": [
+        151
+      ],
+      "ours_span": [
+        9203,
+        9203
+      ],
+      "theirs_span": [
+        9408,
+        9409
+      ]
+    },
+    {
+      "id": 173,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:02:12"
+      ],
+      "ours_context": "be up front and to be straight ahead. And I had to learn at the Avery",
+      "theirs_context": "be up front and to be straight ahead. 01:02:12 And I had to learn at the Avery",
+      "cue_indices": [
+        151
+      ],
+      "ours_span": [
+        9242,
+        9242
+      ],
+      "theirs_span": [
+        9448,
+        9449
+      ]
+    },
+    {
+      "id": 174,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:02:36"
+      ],
+      "ours_context": "us a little bit about the Avery Project, just for the record. Okay. I was invited",
+      "theirs_context": "us a little bit about the Avery Project, 01:02:36 just for the record. Okay. I was invited",
+      "cue_indices": [
+        152
+      ],
+      "ours_span": [
+        9305,
+        9305
+      ],
+      "theirs_span": [
+        9512,
+        9513
+      ]
+    },
+    {
+      "id": 175,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:03:10"
+      ],
+      "ours_context": "the first academic high school for black people in Charleston, South Carolina. And it remained open",
+      "theirs_context": "the first academic high school for black people 01:03:10 in Charleston, South Carolina. And it remained open",
+      "cue_indices": [
+        153
+      ],
+      "ours_span": [
+        9366,
+        9366
+      ],
+      "theirs_span": [
+        9574,
+        9575
+      ]
+    },
+    {
+      "id": 176,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:03:31"
+      ],
+      "ours_context": "city of Charleston had a school that had combined academic and vocational pursuits. And right now",
+      "theirs_context": "city of Charleston had a school that had 01:03:31 combined academic and vocational pursuits. And right now",
+      "cue_indices": [
+        153
+      ],
+      "ours_span": [
+        9399,
+        9399
+      ],
+      "theirs_span": [
+        9608,
+        9609
+      ]
+    },
+    {
+      "id": 177,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:04:10"
+      ],
+      "ours_context": "Missionary Association and there's a connection between the American Missionary Association and the Amistad and I",
+      "theirs_context": "Missionary Association and there's a connection between the 01:04:10 American Missionary Association and the Amistad and I",
+      "cue_indices": [
+        154
+      ],
+      "ours_span": [
+        9463,
+        9463
+      ],
+      "theirs_span": [
+        9673,
+        9674
+      ]
+    },
+    {
+      "id": 178,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:04:43"
+      ],
+      "ours_context": "to the Avery. If you got there and you were black skinned you were there but",
+      "theirs_context": "to the Avery. If you got there and 01:04:43 you were black skinned you were there but",
+      "cue_indices": [
+        154
+      ],
+      "ours_span": [
+        9527,
+        9527
+      ],
+      "theirs_span": [
+        9738,
+        9739
+      ]
+    },
+    {
+      "id": 179,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:04:54"
+      ],
+      "ours_context": "Avery. And so that was one of the reputations of the Avery. But the story, the",
+      "theirs_context": "Avery. And so that was one of the 01:04:54 reputations of the Avery. But the story, the",
+      "cue_indices": [
+        154
+      ],
+      "ours_span": [
+        9559,
+        9559
+      ],
+      "theirs_span": [
+        9771,
+        9772
+      ]
+    },
+    {
+      "id": 180,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:05:20"
+      ],
+      "ours_context": "building back and put back into it an institution that would support the education of black",
+      "theirs_context": "building back and put back into it an 01:05:20 institution that would support the education of black",
+      "cue_indices": [
+        155
+      ],
+      "ours_span": [
+        9617,
+        9617
+      ],
+      "theirs_span": [
+        9830,
+        9831
+      ]
+    },
+    {
+      "id": 181,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:05:48"
+      ],
+      "ours_context": "of African American History and Culture. They had written a grant to the National Endowment for",
+      "theirs_context": "of African American History and Culture. They had 01:05:48 written a grant to the National Endowment for",
+      "cue_indices": [
+        155
+      ],
+      "ours_span": [
+        9672,
+        9672
+      ],
+      "theirs_span": [
+        9886,
+        9887
+      ]
+    },
+    {
+      "id": 182,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:06:07"
+      ],
+      "ours_context": "job was to bring that plan into fruition. And I went to work on that. When",
+      "theirs_context": "job was to bring that plan into fruition. 01:06:07 And I went to work on that. When",
+      "cue_indices": [
+        155
+      ],
+      "ours_span": [
+        9705,
+        9705
+      ],
+      "theirs_span": [
+        9920,
+        9921
+      ]
+    },
+    {
+      "id": 183,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:06:38"
+      ],
+      "ours_context": "me when I first came was that because the building-because literally I was given an office",
+      "theirs_context": "me when I first came was that because 01:06:38 the building-because literally I was given an office",
+      "cue_indices": [
+        158
+      ],
+      "ours_span": [
+        9763,
+        9763
+      ],
+      "theirs_span": [
+        9979,
+        9980
+      ]
+    },
+    {
+      "id": 184,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:07:03"
+      ],
+      "ours_context": "was how was I going to spend that money, how was I going to make it",
+      "theirs_context": "was how was I going to spend that 01:07:03 money, how was I going to make it",
+      "cue_indices": [
+        158
+      ],
+      "ours_span": [
+        9835,
+        9835
+      ],
+      "theirs_span": [
+        10052,
+        10053
+      ]
+    },
+    {
+      "id": 185,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:07:19"
+      ],
+      "ours_context": "the music of John's Island. I purchased that collection and also the art, the photographs. I",
+      "theirs_context": "the music of John's Island. I purchased that 01:07:19 collection and also the art, the photographs. I",
+      "cue_indices": [
+        158
+      ],
+      "ours_span": [
+        9870,
+        9870
+      ],
+      "theirs_span": [
+        10088,
+        10089
+      ]
+    },
+    {
+      "id": 186,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:07:42"
+      ],
+      "ours_context": "telling me about how the people on John's Island really did want those materials to be",
+      "theirs_context": "telling me about how the people on John's 01:07:42 Island really did want those materials to be",
+      "cue_indices": [
+        160
+      ],
+      "ours_span": [
+        9922,
+        9922
+      ],
+      "theirs_span": [
+        10141,
+        10142
+      ]
+    },
+    {
+      "id": 187,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:08:10"
+      ],
+      "ours_context": "then we got this process going where we purchased the collection, I don't remember what we",
+      "theirs_context": "then we got this process going where we 01:08:10 purchased the collection, I don't remember what we",
+      "cue_indices": [
+        160
+      ],
+      "ours_span": [
+        9994,
+        9994
+      ],
+      "theirs_span": [
+        10214,
+        10215
+      ]
+    },
+    {
+      "id": 188,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:08:18"
+      ],
+      "ours_context": "was the guys name Yellin [phonetic], I don't remember what his name is. We purchased the",
+      "theirs_context": "was the guys name Yellin [phonetic], I don't 01:08:18 remember what his name is. We purchased the",
+      "cue_indices": [
+        160
+      ],
+      "ours_span": [
+        10021,
+        10021
+      ],
+      "theirs_span": [
+        10242,
+        10243
+      ]
+    },
+    {
+      "id": 189,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:08:46"
+      ],
+      "ours_context": "to let people know that we were there and that we were alive. And so the",
+      "theirs_context": "to let people know that we were there 01:08:46 and that we were alive. And so the",
+      "cue_indices": [
+        161
+      ],
+      "ours_span": [
+        10092,
+        10092
+      ],
+      "theirs_span": [
+        10314,
+        10315
+      ]
+    },
+    {
+      "id": 190,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:09:10"
+      ],
+      "ours_context": "and who's not going to get money had made a decision, and since we didn't have",
+      "theirs_context": "and who's not going to get money had 01:09:10 made a decision, and since we didn't have",
+      "cue_indices": [
+        162
+      ],
+      "ours_span": [
+        10166,
+        10166
+      ],
+      "theirs_span": [
+        10389,
+        10390
+      ]
+    },
+    {
+      "id": 191,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:09:23"
+      ],
+      "ours_context": "so I started telling them all the things that we had done and all the things",
+      "theirs_context": "so I started telling them all the things 01:09:23 that we had done and all the things",
+      "cue_indices": [
+        162
+      ],
+      "ours_span": [
+        10202,
+        10202
+      ],
+      "theirs_span": [
+        10426,
+        10427
+      ]
+    },
+    {
+      "id": 192,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:09:51"
+      ],
+      "ours_context": "project and Elaine worked with us in that project. And we did all kinds of stuff",
+      "theirs_context": "project and Elaine worked with us in that 01:09:51 project. And we did all kinds of stuff",
+      "cue_indices": [
+        162
+      ],
+      "ours_span": [
+        10270,
+        10270
+      ],
+      "theirs_span": [
+        10495,
+        10496
+      ]
+    },
+    {
+      "id": 193,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:10:21"
+      ],
+      "ours_context": "legislature, a black Charlestonian who was in the legislature and he was instrumental in helping us",
+      "theirs_context": "legislature, a black Charlestonian who was in the 01:10:21 legislature and he was instrumental in helping us",
+      "cue_indices": [
+        163
+      ],
+      "ours_span": [
+        10345,
+        10345
+      ],
+      "theirs_span": [
+        10571,
+        10572
+      ]
+    },
+    {
+      "id": 194,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:10:37"
+      ],
+      "ours_context": "mention was prior to my coming the organization of graduates had lobbied the state legislature and",
+      "theirs_context": "mention was prior to my coming the organization 01:10:37 of graduates had lobbied the state legislature and",
+      "cue_indices": [
+        163
+      ],
+      "ours_span": [
+        10380,
+        10380
+      ],
+      "theirs_span": [
+        10607,
+        10608
+      ]
+    },
+    {
+      "id": 195,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:11:06"
+      ],
+      "ours_context": "had to be fully renovated. And of course the college was doing that. What else do",
+      "theirs_context": "had to be fully renovated. And of course 01:11:06 the college was doing that. What else do",
+      "cue_indices": [
+        164
+      ],
+      "ours_span": [
+        10448,
+        10448
+      ],
+      "theirs_span": [
+        10676,
+        10677
+      ]
+    },
+    {
+      "id": 196,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:11:28"
+      ],
+      "ours_context": "of my activism? Yes. And in what way? Or when looking back on it now. I",
+      "theirs_context": "of my activism? Yes. And in what way? 01:11:28 Or when looking back on it now. I",
+      "cue_indices": [
+        167
+      ],
+      "ours_span": [
+        10503,
+        10503
+      ],
+      "theirs_span": [
+        10732,
+        10733
+      ]
+    },
+    {
+      "id": 197,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:11:40"
+      ],
+      "ours_context": "would come somewhere to work would expect people to tell her what to do and to",
+      "theirs_context": "would come somewhere to work would expect people 01:11:40 to tell her what to do and to",
+      "cue_indices": [
+        168
+      ],
+      "ours_span": [
+        10534,
+        10534
+      ],
+      "theirs_span": [
+        10764,
+        10765
+      ]
+    },
+    {
+      "id": 198,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:12:08"
+      ],
+      "ours_context": "began to realize that my boss who was the Director of Libraries at the college had",
+      "theirs_context": "began to realize that my boss who was 01:12:08 the Director of Libraries at the college had",
+      "cue_indices": [
+        168
+      ],
+      "ours_span": [
+        10610,
+        10610
+      ],
+      "theirs_span": [
+        10841,
+        10842
+      ]
+    },
+    {
+      "id": 199,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:12:36"
+      ],
+      "ours_context": "and instead of him saying I don't think you should do that he would say well",
+      "theirs_context": "and instead of him saying I don't think 01:12:36 you should do that he would say well",
+      "cue_indices": [
+        169
+      ],
+      "ours_span": [
+        10681,
+        10681
+      ],
+      "theirs_span": [
+        10913,
+        10914
+      ]
+    },
+    {
+      "id": 200,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:12:52"
+      ],
+      "ours_context": "no, I mean I just went ahead and did it. Which means that every budget I",
+      "theirs_context": "no, I mean I just went ahead and 01:12:52 did it. Which means that every budget I",
+      "cue_indices": [
+        169
+      ],
+      "ours_span": [
+        10723,
+        10723
+      ],
+      "theirs_span": [
+        10956,
+        10957
+      ]
+    },
+    {
+      "id": 201,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:13:15"
+      ],
+      "ours_context": "it work, we're going to bring it to life, it's going to have a life-I mean",
+      "theirs_context": "it work, we're going to bring it to 01:13:15 life, it's going to have a life-I mean",
+      "cue_indices": [
+        170
+      ],
+      "ours_span": [
+        10796,
+        10796
+      ],
+      "theirs_span": [
+        11030,
+        11031
+      ]
+    },
+    {
+      "id": 202,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:13:41"
+      ],
+      "ours_context": "didn't want that, the college wanted to put the Avery together, they wanted it to sit",
+      "theirs_context": "didn't want that, the college wanted to put 01:13:41 the Avery together, they wanted it to sit",
+      "cue_indices": [
+        170
+      ],
+      "ours_span": [
+        10869,
+        10869
+      ],
+      "theirs_span": [
+        11104,
+        11105
+      ]
+    },
+    {
+      "id": 203,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:13:53"
+      ],
+      "ours_context": "isn't it wonderful. It is wonderful but it has a life of its own, if you're",
+      "theirs_context": "isn't it wonderful. It is wonderful but it 01:13:53 has a life of its own, if you're",
+      "cue_indices": [
+        171
+      ],
+      "ours_span": [
+        10903,
+        10903
+      ],
+      "theirs_span": [
+        11139,
+        11140
+      ]
+    },
+    {
+      "id": 204,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:14:20"
+      ],
+      "ours_context": "in having the freedom to see what needed to be done and getting out there and",
+      "theirs_context": "in having the freedom to see what needed 01:14:20 to be done and getting out there and",
+      "cue_indices": [
+        171
+      ],
+      "ours_span": [
+        10978,
+        10978
+      ],
+      "theirs_span": [
+        11215,
+        11216
+      ]
+    },
+    {
+      "id": 205,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:14:40"
+      ],
+      "ours_context": "head that's going to keep me from seeing stuff. Nope you don't do that to me,",
+      "theirs_context": "head that's going to keep me from seeing 01:14:40 stuff. Nope you don't do that to me,",
+      "cue_indices": [
+        172
+      ],
+      "ours_span": [
+        11055,
+        11055
+      ],
+      "theirs_span": [
+        11293,
+        11294
+      ]
+    },
+    {
+      "id": 206,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:14:54"
+      ],
+      "ours_context": "they gave me a syllabus to teach the introductory course in education to people who were",
+      "theirs_context": "they gave me a syllabus to teach the 01:14:54 introductory course in education to people who were",
+      "cue_indices": [
+        172
+      ],
+      "ours_span": [
+        11091,
+        11091
+      ],
+      "theirs_span": [
+        11330,
+        11331
+      ]
+    },
+    {
+      "id": 207,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:15:27"
+      ],
+      "ours_context": "is to introduce native people, African people, Asian people, all of the different permutations of that.",
+      "theirs_context": "is to introduce native people, African people, Asian 01:15:27 people, all of the different permutations of that.",
+      "cue_indices": [
+        172
+      ],
+      "ours_span": [
+        11151,
+        11151
+      ],
+      "theirs_span": [
+        11391,
+        11392
+      ]
+    },
+    {
+      "id": 208,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:15:53"
+      ],
+      "ours_context": "work with W.E.B. Du Bois and Booker T. Washington in your research. And I was wondering",
+      "theirs_context": "work with W.E.B. Du Bois and Booker T. 01:15:53 Washington in your research. And I was wondering",
+      "cue_indices": [
+        174
+      ],
+      "ours_span": [
+        11218,
+        11218
+      ],
+      "theirs_span": [
+        11459,
+        11460
+      ]
+    },
+    {
+      "id": 209,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:16:03"
+      ],
+      "ours_context": "Movement when you started to work on these topics or teach and write about them. Were",
+      "theirs_context": "Movement when you started to work on these 01:16:03 topics or teach and write about them. Were",
+      "cue_indices": [
+        174
+      ],
+      "ours_span": [
+        11247,
+        11247
+      ],
+      "theirs_span": [
+        11489,
+        11490
+      ]
+    },
+    {
+      "id": 210,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:16:29"
+      ],
+      "ours_context": "did my work on Du Bois educational thought and how it evolved and how it changed",
+      "theirs_context": "did my work on Du Bois educational thought 01:16:29 and how it evolved and how it changed",
+      "cue_indices": [
+        175
+      ],
+      "ours_span": [
+        11309,
+        11309
+      ],
+      "theirs_span": [
+        11552,
+        11553
+      ]
+    },
+    {
+      "id": 211,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:05"
+      ],
+      "ours_context": "role in founding the NAACP and in that context I wove the ideas on education onto",
+      "theirs_context": "role in founding the NAACP and in that 01:17:05 context I wove the ideas on education onto",
+      "cue_indices": [
+        175
+      ],
+      "ours_span": [
+        11381,
+        11381
+      ],
+      "theirs_span": [
+        11625,
+        11626
+      ]
+    },
+    {
+      "id": 212,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:18"
+      ],
+      "ours_context": "work from the perspective of what I can bring as a result of all my different",
+      "theirs_context": "work from the perspective of what I can 01:17:18 bring as a result of all my different",
+      "cue_indices": [
+        175
+      ],
+      "ours_span": [
+        11414,
+        11414
+      ],
+      "theirs_span": [
+        11659,
+        11660
+      ]
+    },
+    {
+      "id": 213,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:17:47"
+      ],
+      "ours_context": "is that the two-ness idea reflects on the one hand-what I believe Du Bois was saying",
+      "theirs_context": "is that the two-ness idea reflects on the 01:17:47 one hand-what I believe Du Bois was saying",
+      "cue_indices": [
+        176
+      ],
+      "ours_span": [
+        11481,
+        11481
+      ],
+      "theirs_span": [
+        11727,
+        11728
+      ]
+    },
+    {
+      "id": 214,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:18:19"
+      ],
+      "ours_context": "at the same time they must prepare to live in this society, even though their lives",
+      "theirs_context": "at the same time they must prepare to 01:18:19 live in this society, even though their lives",
+      "cue_indices": [
+        177
+      ],
+      "ours_span": [
+        11550,
+        11550
+      ],
+      "theirs_span": [
+        11797,
+        11798
+      ]
+    },
+    {
+      "id": 215,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:18:31"
+      ],
+      "ours_context": "culture. And that for me is a level of the complexity and the intricacy of those",
+      "theirs_context": "culture. And that for me is a level 01:18:31 of the complexity and the intricacy of those",
+      "cue_indices": [
+        177
+      ],
+      "ours_span": [
+        11582,
+        11582
+      ],
+      "theirs_span": [
+        11830,
+        11831
+      ]
+    },
+    {
+      "id": 216,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:19:08"
+      ],
+      "ours_context": "Tenth. You know that in the beginning he envisioned the Talented Tenth in terms of what",
+      "theirs_context": "Tenth. You know that in the beginning he 01:19:08 envisioned the Talented Tenth in terms of what",
+      "cue_indices": [
+        178
+      ],
+      "ours_span": [
+        11653,
+        11653
+      ],
+      "theirs_span": [
+        11902,
+        11903
+      ]
+    },
+    {
+      "id": 217,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:19:37"
+      ],
+      "ours_context": "the most gifted of our young people to come forward and be ready to serve. And",
+      "theirs_context": "the most gifted of our young people to 01:19:37 come forward and be ready to serve. And",
+      "cue_indices": [
+        178
+      ],
+      "ours_span": [
+        11725,
+        11725
+      ],
+      "theirs_span": [
+        11975,
+        11976
+      ]
+    },
+    {
+      "id": 218,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:19:50"
+      ],
+      "ours_context": "is there's so many things that are going on that are about those of us who",
+      "theirs_context": "is there's so many things that are going 01:19:50 on that are about those of us who",
+      "cue_indices": [
+        178
+      ],
+      "ours_span": [
+        11765,
+        11765
+      ],
+      "theirs_span": [
+        12016,
+        12017
+      ]
+    },
+    {
+      "id": 219,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:20:14"
+      ],
+      "ours_context": "your involvement in the Freedom Movement to young people to today? Are there some things that",
+      "theirs_context": "your involvement in the Freedom Movement to young 01:20:14 people to today? Are there some things that",
+      "cue_indices": [
+        180
+      ],
+      "ours_span": [
+        11825,
+        11825
+      ],
+      "theirs_span": [
+        12077,
+        12078
+      ]
+    },
+    {
+      "id": 220,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:20:44"
+      ],
+      "ours_context": "our young people to know on the one hand who they are as individuals and as",
+      "theirs_context": "our young people to know on the one 01:20:44 hand who they are as individuals and as",
+      "cue_indices": [
+        181
+      ],
+      "ours_span": [
+        11888,
+        11888
+      ],
+      "theirs_span": [
+        12141,
+        12142
+      ]
+    },
+    {
+      "id": 221,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:21:01"
+      ],
+      "ours_context": "the society is about. To see the contradictions between who they are as members of a",
+      "theirs_context": "the society is about. To see the contradictions 01:21:01 between who they are as members of a",
+      "cue_indices": [
+        181
+      ],
+      "ours_span": [
+        11920,
+        11920
+      ],
+      "theirs_span": [
+        12174,
+        12175
+      ]
+    },
+    {
+      "id": 222,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:22:24",
+        "DR.",
+        "GLASCOE:"
+      ],
+      "ours_context": "what I would say. Thank you very much. Anyway, we're in such a dilemma in so",
+      "theirs_context": "what I would say. Thank you very much. 01:22:24 DR. GLASCOE: Anyway, we're in such a dilemma in so",
+      "cue_indices": [],
+      "ours_span": [
+        11977,
+        11977
+      ],
+      "theirs_span": [
+        12232,
+        12235
+      ]
+    },
+    {
+      "id": 223,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:23:02"
+      ],
+      "ours_context": "ourselves, where our children can know and understand what's going on in this society. How the",
+      "theirs_context": "ourselves, where our children can know and understand 01:23:02 what's going on in this society. How the",
+      "cue_indices": [
+        183
+      ],
+      "ours_span": [
+        12035,
+        12035
+      ],
+      "theirs_span": [
+        12293,
+        12294
+      ]
+    },
+    {
+      "id": 224,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:23:17"
+      ],
+      "ours_context": "challenge and the challenge I think that faces all of our people is number one to",
+      "theirs_context": "challenge and the challenge I think that faces 01:23:17 all of our people is number one to",
+      "cue_indices": [
+        184
+      ],
+      "ours_span": [
+        12070,
+        12070
+      ],
+      "theirs_span": [
+        12329,
+        12330
+      ]
+    },
+    {
+      "id": 225,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:23:43"
+      ],
+      "ours_context": "on the one hand we're going to know who we are, we're going to know what",
+      "theirs_context": "on the one hand we're going to know 01:23:43 who we are, we're going to know what",
+      "cue_indices": [
+        184
+      ],
+      "ours_span": [
+        12146,
+        12146
+      ],
+      "theirs_span": [
+        12406,
+        12407
+      ]
+    },
+    {
+      "id": 226,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:24:10"
+      ],
+      "ours_context": "go. You know one of the most exciting things I've heard lately is how the Universal",
+      "theirs_context": "go. You know one of the most exciting 01:24:10 things I've heard lately is how the Universal",
+      "cue_indices": [
+        185
+      ],
+      "ours_span": [
+        12223,
+        12223
+      ],
+      "theirs_span": [
+        12484,
+        12485
+      ]
+    },
+    {
+      "id": 227,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:24:23"
+      ],
+      "ours_context": "we need dual citizenship. We need citizenship in African country and we need citizenship here. So",
+      "theirs_context": "we need dual citizenship. We need citizenship in 01:24:23 African country and we need citizenship here. So",
+      "cue_indices": [
+        185
+      ],
+      "ours_span": [
+        12247,
+        12247
+      ],
+      "theirs_span": [
+        12509,
+        12510
+      ]
+    },
+    {
+      "id": 228,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:24:45"
+      ],
+      "ours_context": "started talking about the education system and how you feel like it has failed provide the",
+      "theirs_context": "started talking about the education system and how 01:24:45 you feel like it has failed provide the",
+      "cue_indices": [
+        186
+      ],
+      "ours_span": [
+        12301,
+        12301
+      ],
+      "theirs_span": [
+        12564,
+        12565
+      ]
+    },
+    {
+      "id": 229,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:25:15"
+      ],
+      "ours_context": "case for black American teachers who have been educated in this system, who have been taught",
+      "theirs_context": "case for black American teachers who have been 01:25:15 educated in this system, who have been taught",
+      "cue_indices": [
+        187
+      ],
+      "ours_span": [
+        12360,
+        12360
+      ],
+      "theirs_span": [
+        12624,
+        12625
+      ]
+    },
+    {
+      "id": 230,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:25:33"
+      ],
+      "ours_context": "So when we have teachers who are with our children having those attitudes, there is no",
+      "theirs_context": "So when we have teachers who are with 01:25:33 our children having those attitudes, there is no",
+      "cue_indices": [
+        187
+      ],
+      "ours_span": [
+        12393,
+        12393
+      ],
+      "theirs_span": [
+        12658,
+        12659
+      ]
+    },
+    {
+      "id": 231,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:25:56"
+      ],
+      "ours_context": "why when I'm working with people who are going to be teachers I ask them what",
+      "theirs_context": "why when I'm working with people who are 01:25:56 going to be teachers I ask them what",
+      "cue_indices": [
+        188
+      ],
+      "ours_span": [
+        12452,
+        12452
+      ],
+      "theirs_span": [
+        12718,
+        12719
+      ]
+    },
+    {
+      "id": 232,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:26:19"
+      ],
+      "ours_context": "that are taught, and especially at Gettysburg College, believe that their job was to keep the",
+      "theirs_context": "that are taught, and especially at Gettysburg College, 01:26:19 believe that their job was to keep the",
+      "cue_indices": [
+        188
+      ],
+      "ours_span": [
+        12517,
+        12517
+      ],
+      "theirs_span": [
+        12784,
+        12785
+      ]
+    },
+    {
+      "id": 233,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:26:29"
+      ],
+      "ours_context": "they're supposed to know. They had no sense of the fact that the children are human",
+      "theirs_context": "they're supposed to know. They had no sense 01:26:29 of the fact that the children are human",
+      "cue_indices": [
+        188
+      ],
+      "ours_span": [
+        12548,
+        12548
+      ],
+      "theirs_span": [
+        12816,
+        12817
+      ]
+    },
+    {
+      "id": 234,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:26:56"
+      ],
+      "ours_context": "X and X and X and come back prepared to discuss. So the students would come",
+      "theirs_context": "X and X and X and come back 01:26:56 prepared to discuss. So the students would come",
+      "cue_indices": [
+        189
+      ],
+      "ours_span": [
+        12618,
+        12618
+      ],
+      "theirs_span": [
+        12887,
+        12888
+      ]
+    },
+    {
+      "id": 235,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:27:19"
+      ],
+      "ours_context": "So how do you take those ideas that you learned when you read and apply them",
+      "theirs_context": "So how do you take those ideas that 01:27:19 you learned when you read and apply them",
+      "cue_indices": [
+        189
+      ],
+      "ours_span": [
+        12694,
+        12694
+      ],
+      "theirs_span": [
+        12964,
+        12965
+      ]
+    },
+    {
+      "id": 236,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:27:29"
+      ],
+      "ours_context": "are going on in the schools. Of course the students don't want to do that because",
+      "theirs_context": "are going on in the schools. Of course 01:27:29 the students don't want to do that because",
+      "cue_indices": [
+        190
+      ],
+      "ours_span": [
+        12728,
+        12728
+      ],
+      "theirs_span": [
+        12999,
+        13000
+      ]
+    },
+    {
+      "id": 237,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:27:52"
+      ],
+      "ours_context": "you to teach my child you have to be thinking because my child has to learn",
+      "theirs_context": "you to teach my child you have to 01:27:52 be thinking because my child has to learn",
+      "cue_indices": [
+        190
+      ],
+      "ours_span": [
+        12798,
+        12798
+      ],
+      "theirs_span": [
+        13070,
+        13071
+      ]
+    },
+    {
+      "id": 238,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:28:15"
+      ],
+      "ours_context": "in as much trouble as black children are and other children of color. Anyway, those are",
+      "theirs_context": "in as much trouble as black children are 01:28:15 and other children of color. Anyway, those are",
+      "cue_indices": [
+        191
+      ],
+      "ours_span": [
+        12865,
+        12865
+      ],
+      "theirs_span": [
+        13138,
+        13139
+      ]
+    },
+    {
+      "id": 239,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:28:36"
+      ],
+      "ours_context": "your question? INTERVIEWER 2: Yes, thank you. Okay. INTERVIEWER 3: Can I ask you one question?",
+      "theirs_context": "your question? INTERVIEWER 2: Yes, thank you. Okay. 01:28:36 INTERVIEWER 3: Can I ask you one question?",
+      "cue_indices": [
+        192
+      ],
+      "ours_span": [
+        12886,
+        12886
+      ],
+      "theirs_span": [
+        13160,
+        13161
+      ]
+    },
+    {
+      "id": 240,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:28:50"
+      ],
+      "ours_context": "you out of it? I didn't tell anybody, I just went ahead and did it. But",
+      "theirs_context": "you out of it? I didn't tell anybody, 01:28:50 I just went ahead and did it. But",
+      "cue_indices": [
+        195
+      ],
+      "ours_span": [
+        12927,
+        12927
+      ],
+      "theirs_span": [
+        13202,
+        13203
+      ]
+    },
+    {
+      "id": 241,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:29:13"
+      ],
+      "ours_context": "decided that they were going to find clothes and package them and send them down to",
+      "theirs_context": "decided that they were going to find clothes 01:29:13 and package them and send them down to",
+      "cue_indices": [
+        195
+      ],
+      "ours_span": [
+        12997,
+        12997
+      ],
+      "theirs_span": [
+        13273,
+        13274
+      ]
+    },
+    {
+      "id": 242,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:29:25"
+      ],
+      "ours_context": "oh the daughter's just like the mother. And then when I got home my mother looked",
+      "theirs_context": "oh the daughter's just like the mother. And 01:29:25 then when I got home my mother looked",
+      "cue_indices": [
+        195
+      ],
+      "ours_span": [
+        13029,
+        13029
+      ],
+      "theirs_span": [
+        13306,
+        13307
+      ]
+    },
+    {
+      "id": 243,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:29:49"
+      ],
+      "ours_context": "matter of fact as I remember some people thought I was courageous. Are you going to",
+      "theirs_context": "matter of fact as I remember some people 01:29:49 thought I was courageous. Are you going to",
+      "cue_indices": [
+        196
+      ],
+      "ours_span": [
+        13103,
+        13103
+      ],
+      "theirs_span": [
+        13381,
+        13382
+      ]
+    },
+    {
+      "id": 244,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:30:19"
+      ],
+      "ours_context": "was-as I know now, my mother was terrified. She was afraid for me and she was",
+      "theirs_context": "was-as I know now, my mother was terrified. 01:30:19 She was afraid for me and she was",
+      "cue_indices": [],
+      "ours_span": [
+        13170,
+        13170
+      ],
+      "theirs_span": [
+        13449,
+        13450
+      ]
+    },
+    {
+      "id": 245,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "01:30:30"
+      ],
+      "ours_context": "to get a husband and getting married and having some kids. Does that answer your question?",
+      "theirs_context": "to get a husband and getting married and 01:30:30 having some kids. Does that answer your question?",
+      "cue_indices": [
+        197
+      ],
+      "ours_span": [
+        13209,
+        13209
+      ],
+      "theirs_span": [
+        13489,
+        13490
+      ]
+    },
+    {
+      "id": 246,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[END",
+        "afc2010039_crhp0003_mv2]",
+        "Irvine,",
+        "CA",
+        "Ubiqus",
+        "Reporting,",
+        "Inc.",
+        "New",
+        "York,",
+        "NY",
+        "(949)",
+        "477",
+        "4972",
+        "(212)",
+        "227",
+        "7440",
+        "www.ubiqus.com"
+      ],
+      "ours_context": "answer your question? INTERVIEWER 3: Yeah, thank you.",
+      "theirs_context": "answer your question? INTERVIEWER 3: Yeah, thank you. [END afc2010039_crhp0003_mv2] Irvine, CA Ubiqus Reporting, Inc. New York, NY (949) 477 4972 (212) 227 7440 www.ubiqus.com",
+      "cue_indices": [],
+      "ours_span": [
+        13222,
+        13222
+      ],
+      "theirs_span": [
+        13503,
+        13520
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    }
+  ]
+}

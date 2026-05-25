@@ -1,0 +1,761 @@
+{
+  "subject": "Alfred Moldovan",
+  "entry_dir": "Alfred Moldovan_interview_20260525_160100",
+  "loc_item_url": "https://www.loc.gov/item/2015669135/",
+  "loc_xml_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0036_moldovan_transcript/afc2010039_crhp0036_moldovan_transcript.xml",
+  "loc_pdf_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0036_moldovan_transcript/afc2010039_crhp0036_moldovan_transcript.pdf",
+  "loc_source_kind": "xml",
+  "loc_match_score": 1.0,
+  "our_word_count": 8352,
+  "loc_word_count": 8532,
+  "cue_count": 305,
+  "loc_turn_count": 311,
+  "divergence_count": 25,
+  "deterministic_pre_classified_count": 12,
+  "needs_model_classification": 13,
+  "deterministic_breakdown": {
+    "EDITORIAL_SMOOTHING": 1,
+    "SPEAKER_DISFLUENCY": 11,
+    "ASR_ERROR_HEAL": 0,
+    "UNCLEAR": 0
+  },
+  "divergences": [
+    {
+      "id": 1,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "We're",
+        "on.",
+        "Today",
+        "is",
+        "Tuesday,",
+        "July",
+        "19,",
+        "2011.",
+        "My",
+        "name",
+        "is",
+        "Joe",
+        "Mosnier",
+        "of",
+        "the",
+        "Southern",
+        "Oral",
+        "History",
+        "Program",
+        "at",
+        "the",
+        "University",
+        "of",
+        "North",
+        "Carolina",
+        "at",
+        "Chapel",
+        "Hill.",
+        "I",
+        "am",
+        "in",
+        "New",
+        "York",
+        "City",
+        "with",
+        "our",
+        "project",
+        "videographer",
+        "John",
+        "Bishop",
+        "to",
+        "do",
+        "an",
+        "interview",
+        "for",
+        "the",
+        "Civil",
+        "Rights",
+        "History",
+        "Project,",
+        "which",
+        "is",
+        "a",
+        "joint",
+        "undertaking",
+        "of",
+        "the",
+        "Library",
+        "of",
+        "Congress",
+        "and",
+        "the",
+        "Smithsonian",
+        "National",
+        "Museum",
+        "of",
+        "African",
+        "American",
+        "History",
+        "and",
+        "Culture.",
+        "And",
+        "we're",
+        "delighted",
+        "and,",
+        "uh,",
+        "appreciative",
+        "to",
+        "have",
+        "a",
+        "chance",
+        "today",
+        "to",
+        "be",
+        "with",
+        "you,",
+        "Dr.",
+        "A.",
+        "Alfred",
+        "Moldovan,",
+        "uh,",
+        "to",
+        "talk",
+        "about",
+        "your",
+        "work",
+        "with",
+        "the",
+        "Medical",
+        "Committee",
+        "for",
+        "Human",
+        "Rights",
+        "and",
+        "otherwise.",
+        "So,",
+        "thanks",
+        "very",
+        "much",
+        "for",
+        "coming",
+        "over",
+        "to",
+        "sit",
+        "down",
+        "with",
+        "us.",
+        "Let",
+        "me",
+        "have",
+        "you",
+        "start,",
+        "if",
+        "you",
+        "would,",
+        "by",
+        "just",
+        "talking",
+        "a",
+        "little",
+        "bit",
+        "about,",
+        "um,",
+        "your",
+        "family",
+        "and,",
+        "um,",
+        "you",
+        "were",
+        "born",
+        "in",
+        "the",
+        "Bronx,",
+        "and",
+        "your",
+        "parents.",
+        "No,",
+        "I",
+        "was",
+        "born",
+        "in",
+        "-"
+      ],
+      "ours_context": "Oh? I was born in Manhattan. I was",
+      "theirs_context": "We're on. Today is Tuesday, July 19, 2011. My name is Joe Mosnier of the Southern Oral History Program at the University of North Carolina at Chapel Hill. I am in New York City with our project videographer John Bishop to do an interview for the Civil Rights History Project, which is a joint undertaking of the Library of Congress and the Smithsonian National Museum of African American History and Culture. And we're delighted and, uh, appreciative to have a chance today to be with you, Dr. A. Alfred Moldovan, uh, to talk about your work with the Medical Committee for Human Rights and otherwise. So, thanks very much for coming over to sit down with us. Let me have you start, if you would, by just talking a little bit about, um, your family and, um, you were born in the Bronx, and your parents. No, I was born in - Oh? I was born in Manhattan. I was",
+      "cue_indices": [],
+      "ours_span": [
+        0,
+        0
+      ],
+      "theirs_span": [
+        0,
+        152
+      ]
+    },
+    {
+      "id": 2,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:05:00]"
+      ],
+      "ours_context": "high school. I went to the Herman Ridder Junior High School, P.S. 98 [Public School 98]",
+      "theirs_context": "high school. I went to the Herman Ridder [0:05:00] Junior High School, P.S. 98 [Public School 98]",
+      "cue_indices": [
+        15
+      ],
+      "ours_span": [
+        626,
+        626
+      ],
+      "theirs_span": [
+        778,
+        779
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 3,
+      "op": "replace",
+      "ours_tokens": [
+        "there.Uh,"
+      ],
+      "theirs_tokens": [
+        "there.",
+        "Uh,"
+      ],
+      "ours_context": "establishment and quite a lot of important people there.Uh, I didn't take part because I couldn't afford",
+      "theirs_context": "establishment and quite a lot of important people there. Uh, I didn't take part because I couldn't afford",
+      "cue_indices": [
+        25
+      ],
+      "ours_span": [
+        1029,
+        1030
+      ],
+      "theirs_span": [
+        1182,
+        1184
+      ]
+    },
+    {
+      "id": 4,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:10:00]"
+      ],
+      "ours_context": "a motto that I picked up somewhere. Justify your existence. Justify your existence. You can't just",
+      "theirs_context": "a motto that I picked up somewhere. Justify [0:10:00] your existence. Justify your existence. You can't just",
+      "cue_indices": [
+        38
+      ],
+      "ours_span": [
+        1376,
+        1376
+      ],
+      "theirs_span": [
+        1530,
+        1531
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 5,
+      "op": "replace",
+      "ours_tokens": [
+        "duty.And"
+      ],
+      "theirs_tokens": [
+        "duty.",
+        "And"
+      ],
+      "ours_context": "and from there I was called to active duty.And I took the train down to Boca Raton,",
+      "theirs_context": "and from there I was called to active duty. And I took the train down to Boca Raton,",
+      "cue_indices": [
+        43
+      ],
+      "ours_span": [
+        1562,
+        1563
+      ],
+      "theirs_span": [
+        1717,
+        1719
+      ]
+    },
+    {
+      "id": 6,
+      "op": "replace",
+      "ours_tokens": [
+        "&amp;"
+      ],
+      "theirs_tokens": [
+        "&"
+      ],
+      "ours_context": "I'd stay behind with UNRRA [United Nations Rescue &amp; Rehabilitation Association] as a translator, because I was",
+      "theirs_context": "I'd stay behind with UNRRA [United Nations Rescue & Rehabilitation Association] as a translator, because I was",
+      "cue_indices": [
+        45
+      ],
+      "ours_span": [
+        1701,
+        1702
+      ],
+      "theirs_span": [
+        1857,
+        1858
+      ]
+    },
+    {
+      "id": 7,
+      "op": "replace",
+      "ours_tokens": [
+        "School.And"
+      ],
+      "theirs_tokens": [
+        "School.",
+        "And"
+      ],
+      "ours_context": "schools, one of mine, which was Chicago Medical School.And through the efforts of the dean at that",
+      "theirs_context": "schools, one of mine, which was Chicago Medical School. And through the efforts of the dean at that",
+      "cue_indices": [
+        51
+      ],
+      "ours_span": [
+        1896,
+        1897
+      ],
+      "theirs_span": [
+        2052,
+        2054
+      ]
+    },
+    {
+      "id": 8,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:15:00]"
+      ],
+      "ours_context": "and that we were winning the war and I was not - I was not a",
+      "theirs_context": "and that we were winning the war and [0:15:00] I was not - I was not a",
+      "cue_indices": [
+        64
+      ],
+      "ours_span": [
+        2158,
+        2158
+      ],
+      "theirs_span": [
+        2315,
+        2316
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 9,
+      "op": "replace",
+      "ours_tokens": [
+        "second?[Recording"
+      ],
+      "theirs_tokens": [
+        "second?",
+        "[Recording"
+      ],
+      "ours_context": "don't we just turn this off for a second?[Recording stops and then resumes] We're back after a",
+      "theirs_context": "don't we just turn this off for a second? [Recording stops and then resumes] We're back after a",
+      "cue_indices": [
+        73
+      ],
+      "ours_span": [
+        2429,
+        2430
+      ],
+      "theirs_span": [
+        2587,
+        2589
+      ]
+    },
+    {
+      "id": 10,
+      "op": "replace",
+      "ours_tokens": [
+        "money.Of"
+      ],
+      "theirs_tokens": [
+        "money.",
+        "Of"
+      ],
+      "ours_context": "be worried about taking, making a lot of money.Of course, it was a disappointment to my father,",
+      "theirs_context": "be worried about taking, making a lot of money. Of course, it was a disappointment to my father,",
+      "cue_indices": [
+        81
+      ],
+      "ours_span": [
+        2836,
+        2837
+      ],
+      "theirs_span": [
+        2995,
+        2997
+      ]
+    },
+    {
+      "id": 11,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:20:00]"
+      ],
+      "ours_context": "always envisioned, you know, I would be a Park Avenue doctor and buy a big house",
+      "theirs_context": "always envisioned, you know, I would be a [0:20:00] Park Avenue doctor and buy a big house",
+      "cue_indices": [
+        81
+      ],
+      "ours_span": [
+        2854,
+        2854
+      ],
+      "theirs_span": [
+        3014,
+        3015
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 12,
+      "op": "replace",
+      "ours_tokens": [
+        "things.But,"
+      ],
+      "theirs_tokens": [
+        "things.",
+        "But,"
+      ],
+      "ours_context": "East Harlem, you know, fixed things and did things.But, uh, yeah, my family is very strange. I",
+      "theirs_context": "East Harlem, you know, fixed things and did things. But, uh, yeah, my family is very strange. I",
+      "cue_indices": [
+        86
+      ],
+      "ours_span": [
+        3040,
+        3041
+      ],
+      "theirs_span": [
+        3201,
+        3203
+      ]
+    },
+    {
+      "id": 13,
+      "op": "replace",
+      "ours_tokens": [
+        "Society.And"
+      ],
+      "theirs_tokens": [
+        "Society.",
+        "And"
+      ],
+      "ours_context": "in the Medical Society and with the Medical Society.And then, a group of us got a call",
+      "theirs_context": "in the Medical Society and with the Medical Society. And then, a group of us got a call",
+      "cue_indices": [
+        95
+      ],
+      "ours_span": [
+        3401,
+        3402
+      ],
+      "theirs_span": [
+        3563,
+        3565
+      ]
+    },
+    {
+      "id": 14,
+      "op": "replace",
+      "ours_tokens": [
+        ","
+      ],
+      "theirs_tokens": [
+        "[0:25:00],"
+      ],
+      "ours_context": "them, I gave them money, I attended meetings , but it wasn't until the Medical Committee for",
+      "theirs_context": "them, I gave them money, I attended meetings [0:25:00], but it wasn't until the Medical Committee for",
+      "cue_indices": [
+        109
+      ],
+      "ours_span": [
+        3602,
+        3603
+      ],
+      "theirs_span": [
+        3765,
+        3766
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 15,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:30:00]"
+      ],
+      "ours_context": "high school, a couple here and there in, uh, public school. But, uh, I remember a",
+      "theirs_context": "high school, a couple here and there in, [0:30:00] uh, public school. But, uh, I remember a",
+      "cue_indices": [
+        137
+      ],
+      "ours_span": [
+        4363,
+        4363
+      ],
+      "theirs_span": [
+        4526,
+        4527
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 16,
+      "op": "replace",
+      "ours_tokens": [
+        "Okay.[Recording"
+      ],
+      "theirs_tokens": [
+        "Okay.",
+        "[Recording"
+      ],
+      "ours_context": "sec. I want to change drives on this. Okay.[Recording stops and then resumes] And we're on. We're",
+      "theirs_context": "sec. I want to change drives on this. Okay. [Recording stops and then resumes] And we're on. We're",
+      "cue_indices": [
+        145
+      ],
+      "ours_span": [
+        4430,
+        4431
+      ],
+      "theirs_span": [
+        4594,
+        4596
+      ]
+    },
+    {
+      "id": 17,
+      "op": "replace",
+      "ours_tokens": [
+        "Selma.And"
+      ],
+      "theirs_tokens": [
+        "Selma.",
+        "And"
+      ],
+      "ours_context": "went down with Virginia to, uh, to, uh, Selma.And I was there, uh, when the young people",
+      "theirs_context": "went down with Virginia to, uh, to, uh, Selma. And I was there, uh, when the young people",
+      "cue_indices": [
+        170
+      ],
+      "ours_span": [
+        4989,
+        4990
+      ],
+      "theirs_span": [
+        5154,
+        5156
+      ]
+    },
+    {
+      "id": 18,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:35:00]"
+      ],
+      "ours_context": "nice to have it from a direct observer - participant. The, the Committee had obtained the",
+      "theirs_context": "nice to have it from a direct observer [0:35:00] - participant. The, the Committee had obtained the",
+      "cue_indices": [
+        173
+      ],
+      "ours_span": [
+        5073,
+        5073
+      ],
+      "theirs_span": [
+        5239,
+        5240
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 19,
+      "op": "replace",
+      "ours_tokens": [
+        "scene.Anyway,"
+      ],
+      "theirs_tokens": [
+        "scene.",
+        "Anyway,"
+      ],
+      "ours_context": "Guard - it was a horrible scene, horrible scene.Anyway, got back from there, and they sent for",
+      "theirs_context": "Guard - it was a horrible scene, horrible scene. Anyway, got back from there, and they sent for",
+      "cue_indices": [
+        175
+      ],
+      "ours_span": [
+        5311,
+        5312
+      ],
+      "theirs_span": [
+        5478,
+        5480
+      ]
+    },
+    {
+      "id": 20,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:40:00]"
+      ],
+      "ours_context": "couple of missions, but, you know, they were milk runs, uh, no big deal. I would",
+      "theirs_context": "couple of missions, but, you know, they were [0:40:00] milk runs, uh, no big deal. I would",
+      "cue_indices": [
+        190
+      ],
+      "ours_span": [
+        5807,
+        5807
+      ],
+      "theirs_span": [
+        5975,
+        5976
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 21,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:45:00]"
+      ],
+      "ours_context": "that role? Do you know? I took it. Yeah, yeah. I guess I was the senior",
+      "theirs_context": "that role? Do you know? I took it. [0:45:00] Yeah, yeah. I guess I was the senior",
+      "cue_indices": [],
+      "ours_span": [
+        6565,
+        6565
+      ],
+      "theirs_span": [
+        6734,
+        6735
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 22,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[0:50:00]"
+      ],
+      "ours_context": "socialized medicine. You know? A hundred and fifty years ago, and [laughing] we can't get anything",
+      "theirs_context": "socialized medicine. You know? A hundred and fifty [0:50:00] years ago, and [laughing] we can't get anything",
+      "cue_indices": [
+        264
+      ],
+      "ours_span": [
+        7282,
+        7282
+      ],
+      "theirs_span": [
+        7452,
+        7453
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 23,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "-"
+      ],
+      "ours_context": "we pause for -? Sure, let's pause for -[Recording stops and then resumes] We're back after",
+      "theirs_context": "we pause for -? Sure, let's pause for - [Recording stops and then resumes] We're back after",
+      "cue_indices": [
+        271
+      ],
+      "ours_span": [
+        7552,
+        7552
+      ],
+      "theirs_span": [
+        7723,
+        7724
+      ],
+      "deterministic_verdict": "EDITORIAL_SMOOTHING",
+      "deterministic_reasoning": "LoC editor added function word(s) (); preserve our verbatim"
+    },
+    {
+      "id": 24,
+      "op": "replace",
+      "ours_tokens": [
+        "Doctors].I"
+      ],
+      "theirs_tokens": [
+        "Doctors].",
+        "I"
+      ],
+      "ours_context": "are described in [John] Dittmer's book [The Good Doctors].I was not part of that. I knew very",
+      "theirs_context": "are described in [John] Dittmer's book [The Good Doctors]. I was not part of that. I knew very",
+      "cue_indices": [
+        273
+      ],
+      "ours_span": [
+        7748,
+        7749
+      ],
+      "theirs_span": [
+        7920,
+        7922
+      ]
+    },
+    {
+      "id": 25,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[Recording",
+        "ends",
+        "at",
+        "58:31]",
+        "END",
+        "OF",
+        "INTERVIEW"
+      ],
+      "ours_context": "with us. I really appreciate it. My pleasure.",
+      "theirs_context": "with us. I really appreciate it. My pleasure. [Recording ends at 58:31] END OF INTERVIEW",
+      "cue_indices": [],
+      "ours_span": [
+        8352,
+        8352
+      ],
+      "theirs_span": [
+        8525,
+        8532
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    }
+  ]
+}

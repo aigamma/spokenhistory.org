@@ -1,0 +1,2222 @@
+{
+  "subject": "Simeon Wright",
+  "entry_dir": "Simeon Wright_interview_20260525_160600",
+  "loc_item_url": "https://www.loc.gov/item/2015669109/",
+  "loc_xml_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0010_wright_transcript/afc2010039_crhp0010_wright_transcript.xml",
+  "loc_pdf_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0010_wright_transcript/afc2010039_crhp0010_wright_transcript.pdf",
+  "loc_source_kind": "xml",
+  "loc_match_score": 1.0,
+  "our_word_count": 14539,
+  "loc_word_count": 14646,
+  "cue_count": 343,
+  "loc_turn_count": 383,
+  "divergence_count": 92,
+  "deterministic_pre_classified_count": 22,
+  "needs_model_classification": 70,
+  "deterministic_breakdown": {
+    "EDITORIAL_SMOOTHING": 1,
+    "SPEAKER_DISFLUENCY": 21,
+    "ASR_ERROR_HEAL": 0,
+    "UNCLEAR": 0
+  },
+  "divergences": [
+    {
+      "id": 1,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "I",
+        "think",
+        "I'm",
+        "the",
+        "grandson.",
+        "[Laughs]",
+        "I",
+        "say,",
+        "\"Come",
+        "on",
+        "-\"",
+        "Yeah."
+      ],
+      "ours_context": "Just twelve of us. Yeah. There aren't that",
+      "theirs_context": "I think I'm the grandson. [Laughs] I say, \"Come on -\" Yeah. Just twelve of us. Yeah. There aren't that",
+      "cue_indices": [],
+      "ours_span": [
+        0,
+        0
+      ],
+      "theirs_span": [
+        0,
+        12
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 2,
+      "op": "replace",
+      "ours_tokens": [
+        "many.John",
+        "Bishop:"
+      ],
+      "theirs_tokens": [
+        "many."
+      ],
+      "ours_context": "Just twelve of us. Yeah. There aren't that many.John Bishop: Okay, Joe. We're rolling. Okay, John? Um-hmm. Alright.",
+      "theirs_context": "Just twelve of us. Yeah. There aren't that many. Okay, Joe. We're rolling. Okay, John? Um-hmm. Alright.",
+      "cue_indices": [
+        3
+      ],
+      "ours_span": [
+        8,
+        10
+      ],
+      "theirs_span": [
+        20,
+        21
+      ]
+    },
+    {
+      "id": 3,
+      "op": "replace",
+      "ours_tokens": [
+        "1925.She"
+      ],
+      "theirs_tokens": [
+        "1925.",
+        "She"
+      ],
+      "ours_context": "where they got married, in Sumner, Mississippi, in 1925.She was an easy woman. She would sing; looked",
+      "theirs_context": "where they got married, in Sumner, Mississippi, in 1925. She was an easy woman. She would sing; looked",
+      "cue_indices": [
+        11
+      ],
+      "ours_span": [
+        487,
+        488
+      ],
+      "theirs_span": [
+        498,
+        500
+      ]
+    },
+    {
+      "id": 4,
+      "op": "replace",
+      "ours_tokens": [
+        "was.And"
+      ],
+      "theirs_tokens": [
+        "was.",
+        "And"
+      ],
+      "ours_context": "going to whip us?\" That's how easy she was.And we just - when Mama would leave the",
+      "theirs_context": "going to whip us?\" That's how easy she was. And we just - when Mama would leave the",
+      "cue_indices": [
+        11
+      ],
+      "ours_span": [
+        558,
+        559
+      ],
+      "theirs_span": [
+        570,
+        572
+      ]
+    },
+    {
+      "id": 5,
+      "op": "replace",
+      "ours_tokens": [
+        "there.And"
+      ],
+      "theirs_tokens": [
+        "there.",
+        "And"
+      ],
+      "ours_context": "there. There are so many, so many out there.And one of them that really cut to the",
+      "theirs_context": "there. There are so many, so many out there. And one of them that really cut to the",
+      "cue_indices": [
+        13
+      ],
+      "ours_span": [
+        801,
+        802
+      ],
+      "theirs_span": [
+        814,
+        816
+      ]
+    },
+    {
+      "id": 6,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[5:00]"
+      ],
+      "ours_context": "So, I wrote the book to correct that - correct the inaccuracies. Certain reporters - one",
+      "theirs_context": "So, I wrote the book to correct that [5:00] - correct the inaccuracies. Certain reporters - one",
+      "cue_indices": [
+        14
+      ],
+      "ours_span": [
+        848,
+        848
+      ],
+      "theirs_span": [
+        862,
+        863
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 7,
+      "op": "replace",
+      "ours_tokens": [
+        "job.But"
+      ],
+      "theirs_tokens": [
+        "job.",
+        "But"
+      ],
+      "ours_context": "and it was hot. It was a hot job.But we told him, you know, we showed him",
+      "theirs_context": "and it was hot. It was a hot job. But we told him, you know, we showed him",
+      "cue_indices": [
+        42
+      ],
+      "ours_span": [
+        1647,
+        1648
+      ],
+      "theirs_span": [
+        1662,
+        1664
+      ]
+    },
+    {
+      "id": 8,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[10:00]"
+      ],
+      "ours_context": "taught him how to \"borrow\" some watermelons. And we each had one, and he thought that",
+      "theirs_context": "taught him how to \"borrow\" some watermelons. And [10:00] we each had one, and he thought that",
+      "cue_indices": [
+        43
+      ],
+      "ours_span": [
+        1779,
+        1779
+      ],
+      "theirs_span": [
+        1795,
+        1796
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 9,
+      "op": "replace",
+      "ours_tokens": [
+        "know.And"
+      ],
+      "theirs_tokens": [
+        "know.",
+        "And"
+      ],
+      "ours_context": "he thought that was a wonderful thing, you know.And then, after that, [clears throat] that Wednesday -",
+      "theirs_context": "he thought that was a wonderful thing, you know. And then, after that, [clears throat] that Wednesday -",
+      "cue_indices": [
+        43
+      ],
+      "ours_span": [
+        1792,
+        1793
+      ],
+      "theirs_span": [
+        1809,
+        1811
+      ]
+    },
+    {
+      "id": 10,
+      "op": "replace",
+      "ours_tokens": [
+        "dad.So,"
+      ],
+      "theirs_tokens": [
+        "dad.",
+        "So,"
+      ],
+      "ours_context": "got back to Mississippi, traveled back with my dad.So, we went to this little store, and a",
+      "theirs_context": "got back to Mississippi, traveled back with my dad. So, we went to this little store, and a",
+      "cue_indices": [
+        48
+      ],
+      "ours_span": [
+        1975,
+        1976
+      ],
+      "theirs_span": [
+        1993,
+        1995
+      ]
+    },
+    {
+      "id": 11,
+      "op": "replace",
+      "ours_tokens": [
+        "pause.[Recording"
+      ],
+      "theirs_tokens": [
+        "pause.",
+        "[Recording"
+      ],
+      "ours_context": "Excuse me. Joe? Joe, let's take a little pause.[Recording stops and then resumes] We're rolling again. I",
+      "theirs_context": "Excuse me. Joe? Joe, let's take a little pause. [Recording stops and then resumes] We're rolling again. I",
+      "cue_indices": [
+        52
+      ],
+      "ours_span": [
+        2030,
+        2031
+      ],
+      "theirs_span": [
+        2049,
+        2051
+      ]
+    },
+    {
+      "id": 12,
+      "op": "replace",
+      "ours_tokens": [
+        "day.We"
+      ],
+      "theirs_tokens": [
+        "day.",
+        "We"
+      ],
+      "ours_context": "the heat.\" So, he was at home all day.We picked cotton all day. I mean, when I",
+      "theirs_context": "the heat.\" So, he was at home all day. We picked cotton all day. I mean, when I",
+      "cue_indices": [
+        61
+      ],
+      "ours_span": [
+        2174,
+        2175
+      ],
+      "theirs_span": [
+        2194,
+        2196
+      ]
+    },
+    {
+      "id": 13,
+      "op": "replace",
+      "ours_tokens": [
+        "South.And"
+      ],
+      "theirs_tokens": [
+        "South.",
+        "And"
+      ],
+      "ours_context": "he just didn't know the ways of the South.And the reason he did that - that Sunday",
+      "theirs_context": "he just didn't know the ways of the South. And the reason he did that - that Sunday",
+      "cue_indices": [
+        62
+      ],
+      "ours_span": [
+        2345,
+        2346
+      ],
+      "theirs_span": [
+        2366,
+        2368
+      ]
+    },
+    {
+      "id": 14,
+      "op": "replace",
+      "ours_tokens": [
+        "there.Carolyn"
+      ],
+      "theirs_tokens": [
+        "there.",
+        "Carolyn"
+      ],
+      "ours_context": "would be the south side of the door there.Carolyn [Bryant] came out, walking north towards her car.",
+      "theirs_context": "would be the south side of the door there. Carolyn [Bryant] came out, walking north towards her car.",
+      "cue_indices": [
+        63
+      ],
+      "ours_span": [
+        2453,
+        2454
+      ],
+      "theirs_span": [
+        2475,
+        2477
+      ]
+    },
+    {
+      "id": 15,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[15:00]"
+      ],
+      "ours_context": "um, James Parnell, but I'm not too sure. Um-hmm, another neighbor. I'm not sure - A",
+      "theirs_context": "um, James Parnell, but I'm not too sure. [15:00] Um-hmm, another neighbor. I'm not sure - A",
+      "cue_indices": [],
+      "ours_span": [
+        2622,
+        2622
+      ],
+      "theirs_span": [
+        2645,
+        2646
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 16,
+      "op": "replace",
+      "ours_tokens": [
+        "course.There"
+      ],
+      "theirs_tokens": [
+        "course.",
+        "There"
+      ],
+      "ours_context": "the store - the floors were wooden, of course.There was a counter. You just couldn't come in",
+      "theirs_context": "the store - the floors were wooden, of course. There was a counter. You just couldn't come in",
+      "cue_indices": [
+        81
+      ],
+      "ours_span": [
+        2757,
+        2758
+      ],
+      "theirs_span": [
+        2781,
+        2783
+      ]
+    },
+    {
+      "id": 17,
+      "op": "replace",
+      "ours_tokens": [
+        "counter.\"And"
+      ],
+      "theirs_tokens": [
+        "counter.\"",
+        "And"
+      ],
+      "ours_context": "to happen, you have to jump over the counter.\"And other stores, mostly, was closed that time of",
+      "theirs_context": "to happen, you have to jump over the counter.\" And other stores, mostly, was closed that time of",
+      "cue_indices": [
+        82
+      ],
+      "ours_span": [
+        2876,
+        2877
+      ],
+      "theirs_span": [
+        2901,
+        2903
+      ]
+    },
+    {
+      "id": 18,
+      "op": "replace",
+      "ours_tokens": [
+        "thing.And"
+      ],
+      "theirs_tokens": [
+        "thing.",
+        "And"
+      ],
+      "ours_context": "receive a whipping from - that's the only thing.And Maurice, my brother, we're driving down this Dark",
+      "theirs_context": "receive a whipping from - that's the only thing. And Maurice, my brother, we're driving down this Dark",
+      "cue_indices": [
+        95
+      ],
+      "ours_span": [
+        3305,
+        3306
+      ],
+      "theirs_span": [
+        3331,
+        3333
+      ]
+    },
+    {
+      "id": 19,
+      "op": "replace",
+      "ours_tokens": [
+        "home.But"
+      ],
+      "theirs_tokens": [
+        "home.",
+        "But"
+      ],
+      "ours_context": "the backseat. But it was our neighbors going home.But when they got back to the car, this",
+      "theirs_context": "the backseat. But it was our neighbors going home. But when they got back to the car, this",
+      "cue_indices": [
+        96
+      ],
+      "ours_span": [
+        3461,
+        3462
+      ],
+      "theirs_span": [
+        3488,
+        3490
+      ]
+    },
+    {
+      "id": 20,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[20:00]"
+      ],
+      "ours_context": "to see if there was any reaction from Mrs. Bryant at that moment? A long look.",
+      "theirs_context": "to see if there was any reaction from [20:00] Mrs. Bryant at that moment? A long look.",
+      "cue_indices": [
+        97
+      ],
+      "ours_span": [
+        3541,
+        3541
+      ],
+      "theirs_span": [
+        3569,
+        3570
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 21,
+      "op": "replace",
+      "ours_tokens": [
+        "again.The"
+      ],
+      "theirs_tokens": [
+        "again.",
+        "The"
+      ],
+      "ours_context": "turned upside down. It was never the same again.The men, Carolyn's husband, Roy Bryant, J. W. Milam,",
+      "theirs_context": "turned upside down. It was never the same again. The men, Carolyn's husband, Roy Bryant, J. W. Milam,",
+      "cue_indices": [
+        130
+      ],
+      "ours_span": [
+        4200,
+        4201
+      ],
+      "theirs_span": [
+        4229,
+        4231
+      ]
+    },
+    {
+      "id": 22,
+      "op": "replace",
+      "ours_tokens": [
+        "bedroom.And"
+      ],
+      "theirs_tokens": [
+        "bedroom.",
+        "And"
+      ],
+      "ours_context": "from Chicago,\" and they marched around to my bedroom.And I heard the noise, you know, the loud",
+      "theirs_context": "from Chicago,\" and they marched around to my bedroom. And I heard the noise, you know, the loud",
+      "cue_indices": [
+        131
+      ],
+      "ours_span": [
+        4283,
+        4284
+      ],
+      "theirs_span": [
+        4313,
+        4315
+      ]
+    },
+    {
+      "id": 23,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[25:00]"
+      ],
+      "ours_context": "Milam. He ordered me to lay back down and go back to sleep. And he made",
+      "theirs_context": "Milam. He ordered me to lay back down [25:00] and go back to sleep. And he made",
+      "cue_indices": [
+        131
+      ],
+      "ours_span": [
+        4331,
+        4331
+      ],
+      "theirs_span": [
+        4362,
+        4363
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 24,
+      "op": "replace",
+      "ours_tokens": [
+        "truck.A"
+      ],
+      "theirs_tokens": [
+        "truck.",
+        "A"
+      ],
+      "ours_context": "and dress and marched him out to the truck.A lot of things happened before they marched him",
+      "theirs_context": "and dress and marched him out to the truck. A lot of things happened before they marched him",
+      "cue_indices": [
+        131
+      ],
+      "ours_span": [
+        4350,
+        4351
+      ],
+      "theirs_span": [
+        4382,
+        4384
+      ]
+    },
+    {
+      "id": 25,
+      "op": "replace",
+      "ours_tokens": [
+        "sleep.My"
+      ],
+      "theirs_tokens": [
+        "sleep.",
+        "My"
+      ],
+      "ours_context": "house that night, I never went back to sleep.My mother, she ran to neighbors, tried to get",
+      "theirs_context": "house that night, I never went back to sleep. My mother, she ran to neighbors, tried to get",
+      "cue_indices": [
+        135
+      ],
+      "ours_span": [
+        4621,
+        4622
+      ],
+      "theirs_span": [
+        4654,
+        4656
+      ]
+    },
+    {
+      "id": 26,
+      "op": "replace",
+      "ours_tokens": [
+        "day.My"
+      ],
+      "theirs_tokens": [
+        "day.",
+        "My"
+      ],
+      "ours_context": "wasn't going to do anything till the next day.My mother was half-crying, half-talking, and she finally told",
+      "theirs_context": "wasn't going to do anything till the next day. My mother was half-crying, half-talking, and she finally told",
+      "cue_indices": [
+        135
+      ],
+      "ours_span": [
+        4714,
+        4715
+      ],
+      "theirs_span": [
+        4748,
+        4750
+      ]
+    },
+    {
+      "id": 27,
+      "op": "replace",
+      "ours_tokens": [
+        "again.And"
+      ],
+      "theirs_tokens": [
+        "again.",
+        "And"
+      ],
+      "ours_context": "Chicago. She never set foot in that house again.And so, we was there in Mississippi with no",
+      "theirs_context": "Chicago. She never set foot in that house again. And so, we was there in Mississippi with no",
+      "cue_indices": [
+        136
+      ],
+      "ours_span": [
+        4779,
+        4780
+      ],
+      "theirs_span": [
+        4814,
+        4816
+      ]
+    },
+    {
+      "id": 28,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[30:00]"
+      ],
+      "ours_context": "very quickly - Yes, she did. That would come to shape the events in significant ways.",
+      "theirs_context": "very quickly - Yes, she did. That would [30:00] come to shape the events in significant ways.",
+      "cue_indices": [
+        143
+      ],
+      "ours_span": [
+        5118,
+        5118
+      ],
+      "theirs_span": [
+        5154,
+        5155
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 29,
+      "op": "replace",
+      "ours_tokens": [
+        "home.But"
+      ],
+      "theirs_tokens": [
+        "home.",
+        "But"
+      ],
+      "ours_context": "we're not afraid, either, so we went back home.But that Monday we was right back out in",
+      "theirs_context": "we're not afraid, either, so we went back home. But that Monday we was right back out in",
+      "cue_indices": [
+        146
+      ],
+      "ours_span": [
+        5329,
+        5330
+      ],
+      "theirs_span": [
+        5366,
+        5368
+      ]
+    },
+    {
+      "id": 30,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "-"
+      ],
+      "ours_context": "he was determined to, to get justice, but -Probably the sheriff of Tallahatchie was determined until",
+      "theirs_context": "he was determined to, to get justice, but - Probably the sheriff of Tallahatchie was determined until",
+      "cue_indices": [
+        149
+      ],
+      "ours_span": [
+        5661,
+        5661
+      ],
+      "theirs_span": [
+        5699,
+        5700
+      ],
+      "deterministic_verdict": "EDITORIAL_SMOOTHING",
+      "deterministic_reasoning": "LoC editor added function word(s) (); preserve our verbatim"
+    },
+    {
+      "id": 31,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[35:00]"
+      ],
+      "ours_context": "and whatnot, but the grand jury said - I guess they said it was not enough",
+      "theirs_context": "and whatnot, but the grand jury said - [35:00] I guess they said it was not enough",
+      "cue_indices": [
+        165
+      ],
+      "ours_span": [
+        5910,
+        5910
+      ],
+      "theirs_span": [
+        5949,
+        5950
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 32,
+      "op": "replace",
+      "ours_tokens": [
+        "him.And,"
+      ],
+      "theirs_tokens": [
+        "him.",
+        "And,"
+      ],
+      "ours_context": "said, \"That's Bobo's ring.\" That's what we called him.And, of course, I had to go to Sumner,",
+      "theirs_context": "said, \"That's Bobo's ring.\" That's what we called him. And, of course, I had to go to Sumner,",
+      "cue_indices": [
+        183
+      ],
+      "ours_span": [
+        6133,
+        6134
+      ],
+      "theirs_span": [
+        6173,
+        6175
+      ]
+    },
+    {
+      "id": 33,
+      "op": "replace",
+      "ours_tokens": [
+        "atmosphere.But"
+      ],
+      "theirs_tokens": [
+        "atmosphere.",
+        "But"
+      ],
+      "ours_context": "room, standing there - it was a circus atmosphere.But I'm thinking, \"Oh, this is a done deal.",
+      "theirs_context": "room, standing there - it was a circus atmosphere. But I'm thinking, \"Oh, this is a done deal.",
+      "cue_indices": [
+        188
+      ],
+      "ours_span": [
+        6351,
+        6352
+      ],
+      "theirs_span": [
+        6392,
+        6394
+      ]
+    },
+    {
+      "id": 34,
+      "op": "replace",
+      "ours_tokens": [
+        "that.The"
+      ],
+      "theirs_tokens": [
+        "that.",
+        "The"
+      ],
+      "ours_context": "born with that. Someone has to teach them that.The young men that we played with, they wasn't",
+      "theirs_context": "born with that. Someone has to teach them that. The young men that we played with, they wasn't",
+      "cue_indices": [
+        190
+      ],
+      "ours_span": [
+        6584,
+        6585
+      ],
+      "theirs_span": [
+        6626,
+        6628
+      ]
+    },
+    {
+      "id": 35,
+      "op": "replace",
+      "ours_tokens": [
+        "separate.Even"
+      ],
+      "theirs_tokens": [
+        "separate.",
+        "Even"
+      ],
+      "ours_context": "you get a certain age, we had to separate.Even my mother told me that the boss -",
+      "theirs_context": "you get a certain age, we had to separate. Even my mother told me that the boss -",
+      "cue_indices": [
+        191
+      ],
+      "ours_span": [
+        6653,
+        6654
+      ],
+      "theirs_span": [
+        6696,
+        6698
+      ]
+    },
+    {
+      "id": 36,
+      "op": "replace",
+      "ours_tokens": [
+        "Mister.Unless,"
+      ],
+      "theirs_tokens": [
+        "Mister.",
+        "Unless,"
+      ],
+      "ours_context": "and thinking. I'm not going to call Tommy Mister.Unless, of course - now I call a young",
+      "theirs_context": "and thinking. I'm not going to call Tommy Mister. Unless, of course - now I call a young",
+      "cue_indices": [
+        191
+      ],
+      "ours_span": [
+        6734,
+        6735
+      ],
+      "theirs_span": [
+        6778,
+        6780
+      ]
+    },
+    {
+      "id": 37,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[40:00]"
+      ],
+      "ours_context": "call him Mister Whoever-he-is because of his position. But just to call him Mister because he's",
+      "theirs_context": "call him Mister Whoever-he-is because of his position. [40:00] But just to call him Mister because he's",
+      "cue_indices": [
+        192
+      ],
+      "ours_span": [
+        6787,
+        6787
+      ],
+      "theirs_span": [
+        6832,
+        6833
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 38,
+      "op": "replace",
+      "ours_tokens": [
+        "Okay.[Recording"
+      ],
+      "theirs_tokens": [
+        "Okay.",
+        "[Recording"
+      ],
+      "ours_context": "Joe. Yeah. Joe, let's take a little pause. Okay.[Recording stops and then resumes] Okay, we're running again.",
+      "theirs_context": "Joe. Yeah. Joe, let's take a little pause. Okay. [Recording stops and then resumes] Okay, we're running again.",
+      "cue_indices": [
+        197
+      ],
+      "ours_span": [
+        6814,
+        6815
+      ],
+      "theirs_span": [
+        6860,
+        6862
+      ]
+    },
+    {
+      "id": 39,
+      "op": "replace",
+      "ours_tokens": [
+        "whatnot.So,"
+      ],
+      "theirs_tokens": [
+        "whatnot.",
+        "So,"
+      ],
+      "ours_context": "do all they could to protect him and whatnot.So, finally, one day my dad said, \"I know",
+      "theirs_context": "do all they could to protect him and whatnot. So, finally, one day my dad said, \"I know",
+      "cue_indices": [
+        204
+      ],
+      "ours_span": [
+        7091,
+        7092
+      ],
+      "theirs_span": [
+        7138,
+        7140
+      ]
+    },
+    {
+      "id": 40,
+      "op": "replace",
+      "ours_tokens": [
+        "it.But"
+      ],
+      "theirs_tokens": [
+        "it.",
+        "But"
+      ],
+      "ours_context": "had no idea,\" because I never talked about it.But Daddy, he put his life on the line.",
+      "theirs_context": "had no idea,\" because I never talked about it. But Daddy, he put his life on the line.",
+      "cue_indices": [
+        206
+      ],
+      "ours_span": [
+        7262,
+        7263
+      ],
+      "theirs_span": [
+        7310,
+        7312
+      ]
+    },
+    {
+      "id": 41,
+      "op": "replace",
+      "ours_tokens": [
+        "different.And"
+      ],
+      "theirs_tokens": [
+        "different.",
+        "And"
+      ],
+      "ours_context": "you can go fishing. So, the work was different.And you've got - at that time my dad",
+      "theirs_context": "you can go fishing. So, the work was different. And you've got - at that time my dad",
+      "cue_indices": [
+        208
+      ],
+      "ours_span": [
+        7442,
+        7443
+      ],
+      "theirs_span": [
+        7491,
+        7493
+      ]
+    },
+    {
+      "id": 42,
+      "op": "replace",
+      "ours_tokens": [
+        "Mississippi.He"
+      ],
+      "theirs_tokens": [
+        "Mississippi.",
+        "He"
+      ],
+      "ours_context": "make the money that he was making in Mississippi.He made good money in Mississippi, because we had,",
+      "theirs_context": "make the money that he was making in Mississippi. He made good money in Mississippi, because we had,",
+      "cue_indices": [
+        209
+      ],
+      "ours_span": [
+        7524,
+        7525
+      ],
+      "theirs_span": [
+        7574,
+        7576
+      ]
+    },
+    {
+      "id": 43,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[45:00]"
+      ],
+      "ours_context": "He was fair to us. And Daddy always cleared money at the end of the year",
+      "theirs_context": "He was fair to us. And Daddy always [45:00] cleared money at the end of the year",
+      "cue_indices": [
+        209
+      ],
+      "ours_span": [
+        7563,
+        7563
+      ],
+      "theirs_span": [
+        7614,
+        7615
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 44,
+      "op": "replace",
+      "ours_tokens": [
+        "money.And"
+      ],
+      "theirs_tokens": [
+        "money.",
+        "And"
+      ],
+      "ours_context": "doing that now, today, that's a lot of money.And when he got here, all he could find",
+      "theirs_context": "doing that now, today, that's a lot of money. And when he got here, all he could find",
+      "cue_indices": [
+        209
+      ],
+      "ours_span": [
+        7607,
+        7608
+      ],
+      "theirs_span": [
+        7659,
+        7661
+      ]
+    },
+    {
+      "id": 45,
+      "op": "replace",
+      "ours_tokens": [
+        "it.I"
+      ],
+      "theirs_tokens": [
+        "it.",
+        "I"
+      ],
+      "ours_context": "worried about it and she just thought about it.I think what really helped her one day -",
+      "theirs_context": "worried about it and she just thought about it. I think what really helped her one day -",
+      "cue_indices": [
+        212
+      ],
+      "ours_span": [
+        7784,
+        7785
+      ],
+      "theirs_span": [
+        7837,
+        7839
+      ]
+    },
+    {
+      "id": 46,
+      "op": "replace",
+      "ours_tokens": [
+        "it.My"
+      ],
+      "theirs_tokens": [
+        "it.",
+        "My"
+      ],
+      "ours_context": "a little bit, but she never could shake it.My mother couldn't shake it, and Maurice couldn't shake",
+      "theirs_context": "a little bit, but she never could shake it. My mother couldn't shake it, and Maurice couldn't shake",
+      "cue_indices": [
+        212
+      ],
+      "ours_span": [
+        7841,
+        7842
+      ],
+      "theirs_span": [
+        7895,
+        7897
+      ]
+    },
+    {
+      "id": 47,
+      "op": "replace",
+      "ours_tokens": [
+        "all.And"
+      ],
+      "theirs_tokens": [
+        "all.",
+        "And"
+      ],
+      "ours_context": "Resistance probably would have been death to us all.And - but she - she held onto her",
+      "theirs_context": "Resistance probably would have been death to us all. And - but she - she held onto her",
+      "cue_indices": [
+        213
+      ],
+      "ours_span": [
+        7884,
+        7885
+      ],
+      "theirs_span": [
+        7939,
+        7941
+      ]
+    },
+    {
+      "id": 48,
+      "op": "replace",
+      "ours_tokens": [
+        "you!What"
+      ],
+      "theirs_tokens": [
+        "you!",
+        "What"
+      ],
+      "ours_context": "away. But she was - oh, I tell you!What did the writer say? He said he took",
+      "theirs_context": "away. But she was - oh, I tell you! What did the writer say? He said he took",
+      "cue_indices": [
+        213
+      ],
+      "ours_span": [
+        7928,
+        7929
+      ],
+      "theirs_span": [
+        7984,
+        7986
+      ]
+    },
+    {
+      "id": 49,
+      "op": "replace",
+      "ours_tokens": [
+        "educated.She"
+      ],
+      "theirs_tokens": [
+        "educated.",
+        "She"
+      ],
+      "ours_context": "American, uh, culture back then, they were well educated.She did all the reading, told us about all",
+      "theirs_context": "American, uh, culture back then, they were well educated. She did all the reading, told us about all",
+      "cue_indices": [
+        214
+      ],
+      "ours_span": [
+        7997,
+        7998
+      ],
+      "theirs_span": [
+        8054,
+        8056
+      ]
+    },
+    {
+      "id": 50,
+      "op": "replace",
+      "ours_tokens": [
+        "retaliate.We"
+      ],
+      "theirs_tokens": [
+        "retaliate.",
+        "We"
+      ],
+      "ours_context": "we got slapped or spit on, we couldn't retaliate.We said, \"No way.\" Said, \"If they slap us,",
+      "theirs_context": "we got slapped or spit on, we couldn't retaliate. We said, \"No way.\" Said, \"If they slap us,",
+      "cue_indices": [
+        226
+      ],
+      "ours_span": [
+        8295,
+        8296
+      ],
+      "theirs_span": [
+        8353,
+        8355
+      ]
+    },
+    {
+      "id": 51,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[50:00]"
+      ],
+      "ours_context": "out of it. It's not going to happen.\" Now, a lot of people might get ran",
+      "theirs_context": "out of it. It's not going to happen.\" [50:00] Now, a lot of people might get ran",
+      "cue_indices": [
+        226
+      ],
+      "ours_span": [
+        8327,
+        8327
+      ],
+      "theirs_span": [
+        8386,
+        8387
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 52,
+      "op": "replace",
+      "ours_tokens": [
+        "chance.But"
+      ],
+      "theirs_tokens": [
+        "chance.",
+        "But"
+      ],
+      "ours_context": "I couldn't win, I might [laughs] wait my chance.But I came to, after years - I would",
+      "theirs_context": "I couldn't win, I might [laughs] wait my chance. But I came to, after years - I would",
+      "cue_indices": [
+        227
+      ],
+      "ours_span": [
+        8407,
+        8408
+      ],
+      "theirs_span": [
+        8467,
+        8469
+      ]
+    },
+    {
+      "id": 53,
+      "op": "replace",
+      "ours_tokens": [
+        "on.And"
+      ],
+      "theirs_tokens": [
+        "on.",
+        "And"
+      ],
+      "ours_context": "- me and my friend, Jesse, who's passed on.And one night, about age twenty-four, I'm sitting in",
+      "theirs_context": "- me and my friend, Jesse, who's passed on. And one night, about age twenty-four, I'm sitting in",
+      "cue_indices": [
+        227
+      ],
+      "ours_span": [
+        8490,
+        8491
+      ],
+      "theirs_span": [
+        8551,
+        8553
+      ]
+    },
+    {
+      "id": 54,
+      "op": "replace",
+      "ours_tokens": [
+        "go.But"
+      ],
+      "theirs_tokens": [
+        "go.",
+        "But"
+      ],
+      "ours_context": "So, the nonviolent way is the way to go.But my early years in Summit, I did a",
+      "theirs_context": "So, the nonviolent way is the way to go. But my early years in Summit, I did a",
+      "cue_indices": [
+        229
+      ],
+      "ours_span": [
+        8689,
+        8690
+      ],
+      "theirs_span": [
+        8751,
+        8753
+      ]
+    },
+    {
+      "id": 55,
+      "op": "replace",
+      "ours_tokens": [
+        "that.But"
+      ],
+      "theirs_tokens": [
+        "that.",
+        "But"
+      ],
+      "ours_context": "two pins in one hand, but I did that.But I had a friend of mine - this",
+      "theirs_context": "two pins in one hand, but I did that. But I had a friend of mine - this",
+      "cue_indices": [
+        231
+      ],
+      "ours_span": [
+        8821,
+        8822
+      ],
+      "theirs_span": [
+        8884,
+        8886
+      ]
+    },
+    {
+      "id": 56,
+      "op": "replace",
+      "ours_tokens": [
+        "school.And"
+      ],
+      "theirs_tokens": [
+        "school.",
+        "And"
+      ],
+      "ours_context": "Jr.'s] barbershop until I got out of high school.And I finished that and, of course, I got",
+      "theirs_context": "Jr.'s] barbershop until I got out of high school. And I finished that and, of course, I got",
+      "cue_indices": [
+        231
+      ],
+      "ours_span": [
+        8892,
+        8893
+      ],
+      "theirs_span": [
+        8956,
+        8958
+      ]
+    },
+    {
+      "id": 57,
+      "op": "replace",
+      "ours_tokens": [
+        "sense.\"And"
+      ],
+      "theirs_tokens": [
+        "sense.\"",
+        "And"
+      ],
+      "ours_context": "back to school.\" I said, \"This don't make sense.\"And I was planning on going to college and",
+      "theirs_context": "back to school.\" I said, \"This don't make sense.\" And I was planning on going to college and",
+      "cue_indices": [
+        232
+      ],
+      "ours_span": [
+        8953,
+        8954
+      ],
+      "theirs_span": [
+        9018,
+        9020
+      ]
+    },
+    {
+      "id": 58,
+      "op": "replace",
+      "ours_tokens": [
+        "electrical.\"I"
+      ],
+      "theirs_tokens": [
+        "electrical.\"",
+        "I"
+      ],
+      "ours_context": "we've got an opening in pipe shop or electrical.\"I thought about electricity and I said [laughing], \"My",
+      "theirs_context": "we've got an opening in pipe shop or electrical.\" I thought about electricity and I said [laughing], \"My",
+      "cue_indices": [
+        232
+      ],
+      "ours_span": [
+        9023,
+        9024
+      ],
+      "theirs_span": [
+        9089,
+        9091
+      ]
+    },
+    {
+      "id": 59,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[55:00]"
+      ],
+      "ours_context": "course, I retired from Reynolds after twenty-eight years, at age fifty-one, or I'd say fifty-one and",
+      "theirs_context": "course, I retired from Reynolds after twenty-eight years, [55:00] at age fifty-one, or I'd say fifty-one and",
+      "cue_indices": [
+        233
+      ],
+      "ours_span": [
+        9084,
+        9084
+      ],
+      "theirs_span": [
+        9151,
+        9152
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 60,
+      "op": "replace",
+      "ours_tokens": [
+        "good.But"
+      ],
+      "theirs_tokens": [
+        "good.",
+        "But"
+      ],
+      "ours_context": "whip him one time. I didn't do too good.But during, down through the years - you know,",
+      "theirs_context": "whip him one time. I didn't do too good. But during, down through the years - you know,",
+      "cue_indices": [
+        241
+      ],
+      "ours_span": [
+        9422,
+        9423
+      ],
+      "theirs_span": [
+        9490,
+        9492
+      ]
+    },
+    {
+      "id": 61,
+      "op": "replace",
+      "ours_tokens": [
+        "[Laughs]But,"
+      ],
+      "theirs_tokens": [
+        "[Laughs]",
+        "But,"
+      ],
+      "ours_context": "them away; we were trained to keep them. [Laughs]But, of course, now he's my pastor. He's my",
+      "theirs_context": "them away; we were trained to keep them. [Laughs] But, of course, now he's my pastor. He's my",
+      "cue_indices": [
+        242
+      ],
+      "ours_span": [
+        9648,
+        9649
+      ],
+      "theirs_span": [
+        9717,
+        9719
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 62,
+      "op": "replace",
+      "ours_tokens": [
+        "true.\"And"
+      ],
+      "theirs_tokens": [
+        "true.\"",
+        "And"
+      ],
+      "ours_context": "information on the Internet, but it's not all true.\"And after I see these stories and the inaccuracies",
+      "theirs_context": "information on the Internet, but it's not all true.\" And after I see these stories and the inaccuracies",
+      "cue_indices": [
+        244
+      ],
+      "ours_span": [
+        9811,
+        9812
+      ],
+      "theirs_span": [
+        9881,
+        9883
+      ]
+    },
+    {
+      "id": 63,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:00:00]"
+      ],
+      "ours_context": "get upset because you're calling me a liar! He whistled! I mean, it's always been that.And",
+      "theirs_context": "get upset because you're calling me a liar! [1:00:00] He whistled! I mean, it's always been that.",
+      "cue_indices": [
+        245
+      ],
+      "ours_span": [
+        9874,
+        9874
+      ],
+      "theirs_span": [
+        9945,
+        9946
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 64,
+      "op": "replace",
+      "ours_tokens": [
+        "that.And"
+      ],
+      "theirs_tokens": [
+        "that.",
+        "And"
+      ],
+      "ours_context": "liar! He whistled! I mean, it's always been that.And what James Hicks said about my father, that",
+      "theirs_context": "[1:00:00] He whistled! I mean, it's always been that. And what James Hicks said about my father, that",
+      "cue_indices": [
+        245
+      ],
+      "ours_span": [
+        9881,
+        9882
+      ],
+      "theirs_span": [
+        9953,
+        9955
+      ]
+    },
+    {
+      "id": 65,
+      "op": "replace",
+      "ours_tokens": [
+        "South.And"
+      ],
+      "theirs_tokens": [
+        "South.",
+        "And"
+      ],
+      "ours_context": "play called Thar He that's shown in the South.And all of these things, you know, that bring",
+      "theirs_context": "play called Thar He that's shown in the South. And all of these things, you know, that bring",
+      "cue_indices": [
+        245
+      ],
+      "ours_span": [
+        9945,
+        9946
+      ],
+      "theirs_span": [
+        10018,
+        10020
+      ]
+    },
+    {
+      "id": 66,
+      "op": "replace",
+      "ours_tokens": [
+        "story.\"So,"
+      ],
+      "theirs_tokens": [
+        "story.\"",
+        "So,"
+      ],
+      "ours_context": "and he wouldn't leave until he got the story.\"So, I began to tell him about what happened",
+      "theirs_context": "and he wouldn't leave until he got the story.\" So, I began to tell him about what happened",
+      "cue_indices": [
+        250
+      ],
+      "ours_span": [
+        10133,
+        10134
+      ],
+      "theirs_span": [
+        10207,
+        10209
+      ]
+    },
+    {
+      "id": 67,
+      "op": "replace",
+      "ours_tokens": [
+        "happened.Actually,"
+      ],
+      "theirs_tokens": [
+        "happened.",
+        "Actually,"
+      ],
+      "ours_context": "getting into the case. And this is what happened.Actually, we traveled to Mississippi to talk to Mr.",
+      "theirs_context": "getting into the case. And this is what happened. Actually, we traveled to Mississippi to talk to Mr.",
+      "cue_indices": [
+        251
+      ],
+      "ours_span": [
+        10227,
+        10228
+      ],
+      "theirs_span": [
+        10302,
+        10304
+      ]
+    },
+    {
+      "id": 68,
+      "op": "replace",
+      "ours_tokens": [
+        "did.He"
+      ],
+      "theirs_tokens": [
+        "did.",
+        "He"
+      ],
+      "ours_context": "he was going to do that. And he did.He told me about the prosecutor, Mr. Chatham, I",
+      "theirs_context": "he was going to do that. And he did. He told me about the prosecutor, Mr. Chatham, I",
+      "cue_indices": [
+        251
+      ],
+      "ours_span": [
+        10307,
+        10308
+      ],
+      "theirs_span": [
+        10383,
+        10385
+      ]
+    },
+    {
+      "id": 69,
+      "op": "replace",
+      "ours_tokens": [
+        "body.Of"
+      ],
+      "theirs_tokens": [
+        "body.",
+        "Of"
+      ],
+      "ours_context": "it was put in motion to exhume his body.Of course, there was, uh, opposition from so-called -",
+      "theirs_context": "it was put in motion to exhume his body. Of course, there was, uh, opposition from so-called -",
+      "cue_indices": [
+        264
+      ],
+      "ours_span": [
+        10599,
+        10600
+      ],
+      "theirs_span": [
+        10676,
+        10678
+      ]
+    },
+    {
+      "id": 70,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:05:00]"
+      ],
+      "ours_context": "was, uh, opposition from so-called - one cousin. We found out later that some of the",
+      "theirs_context": "was, uh, opposition from so-called - one cousin. [1:05:00] We found out later that some of the",
+      "cue_indices": [
+        264
+      ],
+      "ours_span": [
+        10610,
+        10610
+      ],
+      "theirs_span": [
+        10688,
+        10689
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 71,
+      "op": "replace",
+      "ours_tokens": [
+        "controversy.So,"
+      ],
+      "theirs_tokens": [
+        "controversy.",
+        "So,"
+      ],
+      "ours_context": "three right there. So, there was never a controversy.So, that's why we had to exhume the body.",
+      "theirs_context": "three right there. So, there was never a controversy. So, that's why we had to exhume the body.",
+      "cue_indices": [
+        265
+      ],
+      "ours_span": [
+        10722,
+        10723
+      ],
+      "theirs_span": [
+        10801,
+        10803
+      ]
+    },
+    {
+      "id": 72,
+      "op": "replace",
+      "ours_tokens": [
+        "out.But"
+      ],
+      "theirs_tokens": [
+        "out.",
+        "But"
+      ],
+      "ours_context": "I found out that his teeth wasn't knocked out.But it had to be done to prove to",
+      "theirs_context": "I found out that his teeth wasn't knocked out. But it had to be done to prove to",
+      "cue_indices": [
+        266
+      ],
+      "ours_span": [
+        10854,
+        10855
+      ],
+      "theirs_span": [
+        10934,
+        10936
+      ]
+    },
+    {
+      "id": 73,
+      "op": "replace",
+      "ours_tokens": [
+        "it.I"
+      ],
+      "theirs_tokens": [
+        "it.",
+        "I"
+      ],
+      "ours_context": "pursue that and they began to talk about it.I [clears throat] - I probably felt the same",
+      "theirs_context": "pursue that and they began to talk about it. I [clears throat] - I probably felt the same",
+      "cue_indices": [
+        291
+      ],
+      "ours_span": [
+        11295,
+        11296
+      ],
+      "theirs_span": [
+        11376,
+        11378
+      ]
+    },
+    {
+      "id": 74,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:10:00]"
+      ],
+      "ours_context": "to have a vote on the Till Bill. Can you come to Washington?\"So, my wife and",
+      "theirs_context": "to have a vote on the Till Bill. [1:10:00] Can you come to Washington?\" So, my wife",
+      "cue_indices": [
+        291
+      ],
+      "ours_span": [
+        11351,
+        11351
+      ],
+      "theirs_span": [
+        11433,
+        11434
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 75,
+      "op": "replace",
+      "ours_tokens": [
+        "Washington?\"So,"
+      ],
+      "theirs_tokens": [
+        "Washington?\"",
+        "So,"
+      ],
+      "ours_context": "on the Till Bill. Can you come to Washington?\"So, my wife and I, we jumped in our",
+      "theirs_context": "the Till Bill. [1:10:00] Can you come to Washington?\" So, my wife and I, we jumped in our",
+      "cue_indices": [
+        291
+      ],
+      "ours_span": [
+        11355,
+        11356
+      ],
+      "theirs_span": [
+        11438,
+        11440
+      ]
+    },
+    {
+      "id": 76,
+      "op": "replace",
+      "ours_tokens": [
+        "world.And"
+      ],
+      "theirs_tokens": [
+        "world.",
+        "And"
+      ],
+      "ours_context": "one way to remember him, to show the world.And the only thing else that I probably would",
+      "theirs_context": "one way to remember him, to show the world. And the only thing else that I probably would",
+      "cue_indices": [
+        292
+      ],
+      "ours_span": [
+        11459,
+        11460
+      ],
+      "theirs_span": [
+        11543,
+        11545
+      ]
+    },
+    {
+      "id": 77,
+      "op": "replace",
+      "ours_tokens": [
+        "coffins?\"So,"
+      ],
+      "theirs_tokens": [
+        "coffins?\"",
+        "So,"
+      ],
+      "ours_context": "did they get out? Did they have four coffins?\"So, it's inaccuracies like this that I'm trying to",
+      "theirs_context": "did they get out? Did they have four coffins?\" So, it's inaccuracies like this that I'm trying to",
+      "cue_indices": [
+        301
+      ],
+      "ours_span": [
+        11978,
+        11979
+      ],
+      "theirs_span": [
+        12063,
+        12065
+      ]
+    },
+    {
+      "id": 78,
+      "op": "replace",
+      "ours_tokens": [
+        "there.So,"
+      ],
+      "theirs_tokens": [
+        "there.",
+        "So,"
+      ],
+      "ours_context": "off it, but these things he put out there.So, I don't believe practically anything he said, even",
+      "theirs_context": "off it, but these things he put out there. So, I don't believe [1:15:00] practically anything he said,",
+      "cue_indices": [
+        303
+      ],
+      "ours_span": [
+        12137,
+        12138
+      ],
+      "theirs_span": [
+        12223,
+        12225
+      ]
+    },
+    {
+      "id": 79,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:15:00]"
+      ],
+      "ours_context": "things he put out there.So, I don't believe practically anything he said, even the interview with",
+      "theirs_context": "he put out there. So, I don't believe [1:15:00] practically anything he said, even the interview with",
+      "cue_indices": [
+        303
+      ],
+      "ours_span": [
+        12141,
+        12141
+      ],
+      "theirs_span": [
+        12228,
+        12229
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 80,
+      "op": "replace",
+      "ours_tokens": [
+        "straight.I"
+      ],
+      "theirs_tokens": [
+        "straight.",
+        "I"
+      ],
+      "ours_context": "I'm trying to correct it, set the record straight.I just got a call from a lady, wanting",
+      "theirs_context": "I'm trying to correct it, set the record straight. I just got a call from a lady, wanting",
+      "cue_indices": [
+        303
+      ],
+      "ours_span": [
+        12234,
+        12235
+      ],
+      "theirs_span": [
+        12322,
+        12324
+      ]
+    },
+    {
+      "id": 81,
+      "op": "replace",
+      "ours_tokens": [
+        "back.But"
+      ],
+      "theirs_tokens": [
+        "back.",
+        "But"
+      ],
+      "ours_context": "have a right to protect yourself, to fight back.But then, at age twenty-four, I was - after",
+      "theirs_context": "have a right to protect yourself, to fight back. But then, at age twenty-four, I was - after",
+      "cue_indices": [
+        308
+      ],
+      "ours_span": [
+        12659,
+        12660
+      ],
+      "theirs_span": [
+        12748,
+        12750
+      ]
+    },
+    {
+      "id": 82,
+      "op": "replace",
+      "ours_tokens": [
+        "forever.Within"
+      ],
+      "theirs_tokens": [
+        "forever.",
+        "Within"
+      ],
+      "ours_context": "going to hell.\" And that changed my life forever.Within two weeks - I haven't had a drink",
+      "theirs_context": "going to hell.\" And that changed my life forever. Within two weeks - I haven't had a drink",
+      "cue_indices": [
+        309
+      ],
+      "ours_span": [
+        12774,
+        12775
+      ],
+      "theirs_span": [
+        12864,
+        12866
+      ]
+    },
+    {
+      "id": 83,
+      "op": "replace",
+      "ours_tokens": [
+        "back.And"
+      ],
+      "theirs_tokens": [
+        "back.",
+        "And"
+      ],
+      "ours_context": "had gone back, I would never make it back.And ever since then I've never had really a",
+      "theirs_context": "had gone back, I would never make it back. And ever since then I've never had really a",
+      "cue_indices": [
+        310
+      ],
+      "ours_span": [
+        12884,
+        12885
+      ],
+      "theirs_span": [
+        12975,
+        12977
+      ]
+    },
+    {
+      "id": 84,
+      "op": "replace",
+      "ours_tokens": [
+        "all.And"
+      ],
+      "theirs_tokens": [
+        "all.",
+        "And"
+      ],
+      "ours_context": "get away, and it embarrassed them. That's about all.And I've been walking with Jesus Christ since 1967,",
+      "theirs_context": "get away, and it embarrassed them. That's about all. And I've been walking with [1:20:00] Jesus Christ since",
+      "cue_indices": [
+        310
+      ],
+      "ours_span": [
+        12949,
+        12950
+      ],
+      "theirs_span": [
+        13041,
+        13043
+      ]
+    },
+    {
+      "id": 85,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:20:00]"
+      ],
+      "ours_context": "them. That's about all.And I've been walking with Jesus Christ since 1967, and that's what changed",
+      "theirs_context": "That's about all. And I've been walking with [1:20:00] Jesus Christ since 1967, and that's what changed",
+      "cue_indices": [
+        310
+      ],
+      "ours_span": [
+        12954,
+        12954
+      ],
+      "theirs_span": [
+        13047,
+        13048
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 86,
+      "op": "replace",
+      "ours_tokens": [
+        "you.\"I've"
+      ],
+      "theirs_tokens": [
+        "you.\"",
+        "I've"
+      ],
+      "ours_context": "\"If you don't forgive them, I won't forgive you.\"I've heard it explained different ways and whatnot, but",
+      "theirs_context": "\"If you don't forgive them, I won't forgive you.\" I've heard it explained different ways and whatnot, but",
+      "cue_indices": [
+        314
+      ],
+      "ours_span": [
+        13246,
+        13247
+      ],
+      "theirs_span": [
+        13340,
+        13342
+      ]
+    },
+    {
+      "id": 87,
+      "op": "replace",
+      "ours_tokens": [
+        "back.And"
+      ],
+      "theirs_tokens": [
+        "back.",
+        "And"
+      ],
+      "ours_context": "J. W. Milam and Roy Bryant bringing Emmett back.And it brings back emotions. When things bad happen",
+      "theirs_context": "J. W. Milam and Roy Bryant bringing Emmett back. And it brings back emotions. When things bad happen",
+      "cue_indices": [
+        316
+      ],
+      "ours_span": [
+        13456,
+        13457
+      ],
+      "theirs_span": [
+        13551,
+        13553
+      ]
+    },
+    {
+      "id": 88,
+      "op": "replace",
+      "ours_tokens": [
+        "tissue.\"And"
+      ],
+      "theirs_tokens": [
+        "tissue.\"",
+        "And"
+      ],
+      "ours_context": "heart, the heart heals, but it leaves scar tissue.\"And a certain bump will bring back that night.",
+      "theirs_context": "heart, the heart heals, but it leaves scar tissue.\" And a certain bump will bring back that night.",
+      "cue_indices": [
+        317
+      ],
+      "ours_span": [
+        13520,
+        13521
+      ],
+      "theirs_span": [
+        13616,
+        13618
+      ]
+    },
+    {
+      "id": 89,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:25:00]"
+      ],
+      "ours_context": "relations and our habits and mores and opinions? I've seen a lot of changes. The Emmett",
+      "theirs_context": "relations and our habits and mores and opinions? [1:25:00] I've seen a lot of changes. The Emmett",
+      "cue_indices": [],
+      "ours_span": [
+        13705,
+        13705
+      ],
+      "theirs_span": [
+        13802,
+        13803
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 90,
+      "op": "replace",
+      "ours_tokens": [
+        "money.But"
+      ],
+      "theirs_tokens": [
+        "money.",
+        "But"
+      ],
+      "ours_context": "life in America, you have to have the money.But it's getting better. As each generation comes on",
+      "theirs_context": "life in America, you have to have the money. But it's getting better. As each generation comes on",
+      "cue_indices": [
+        321
+      ],
+      "ours_span": [
+        13873,
+        13874
+      ],
+      "theirs_span": [
+        13971,
+        13973
+      ]
+    },
+    {
+      "id": 91,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[1:30:00]"
+      ],
+      "ours_context": "up and say, \"Hey, we're in this together.\" We saw some things that took place in",
+      "theirs_context": "up and say, \"Hey, we're in this together.\" [1:30:00] We saw some things that took place in",
+      "cue_indices": [
+        340
+      ],
+      "ours_span": [
+        14418,
+        14418
+      ],
+      "theirs_span": [
+        14517,
+        14518
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    },
+    {
+      "id": 92,
+      "op": "insert",
+      "ours_tokens": [],
+      "theirs_tokens": [
+        "[Recording",
+        "ends",
+        "at",
+        "1:30:56]",
+        "END",
+        "OF",
+        "INTERVIEW"
+      ],
+      "ours_context": "with you. Thank you. Thank you. Thank you.",
+      "theirs_context": "with you. Thank you. Thank you. Thank you. [Recording ends at 1:30:56] END OF INTERVIEW",
+      "cue_indices": [],
+      "ours_span": [
+        14539,
+        14539
+      ],
+      "theirs_span": [
+        14639,
+        14646
+      ],
+      "deterministic_verdict": "SPEAKER_DISFLUENCY",
+      "deterministic_reasoning": "LoC inserted a bracketed stage direction (crosstalk / inaudible / laughs); preserve our verbatim"
+    }
+  ]
+}

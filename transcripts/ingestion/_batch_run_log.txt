@@ -1,0 +1,419 @@
+
+==== [1/9] 'Alfred Moldovan' (A — genuinely new (was not in our corpus)) ====
+Ingesting Alfred Moldovan oral history interview conducted by Joseph Mosnier in New York, New York, 2011 July 19.txt
+  -> C:\civil\transcripts\raw\Alfred Moldovan_interview_20260525_160100
+  parsed 292 speaker-turn cues
+  split long cues -> 305 total
+  wrote 305 cues; total_words=8352; estimated_duration=56m 16s
+  entry_dir_name: Alfred Moldovan_interview_20260525_160100
+== Ingesting Alfred Moldovan_interview_20260525_160100 ==
+  [validate] ok
+  [subject] Alfred Moldovan
+  [bootstrap] copying raw -> corrected/Alfred Moldovan_interview_20260525_160100/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'Alfred Moldovan'
+Resolving 1 interview(s) against LoC...
+[1/1] Alfred Moldovan
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 25 divergences -> C:\civil\transcripts\loc_healing\divergences\Alfred_Moldovan.divergences.json
+    our_words=8352  loc_words=8532  cues=305  loc_turns=311
+    stage file -> C:\civil\transcripts\pass8_stage\entry_000_alfred_moldovan.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  12
+    unresolved (review): 13
+    apply failures:      0
+  [OK] cue counts match: srt=305 vtt=305
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: Alfred Moldovan_interview_20260525_160100 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [2/9] 'C. T. Vivian' (A — genuinely new) ====
+Ingesting C. T. Vivian oral history interview conducted by Taylor Branch in Atlanta, Georgia, 2011 March 29.txt
+  -> C:\civil\transcripts\raw\C. T. Vivian_interview_20260525_160200
+  parsed 839 speaker-turn cues
+  split long cues -> 951 total
+  wrote 951 cues; total_words=32819; estimated_duration=220m 24s
+  entry_dir_name: C. T. Vivian_interview_20260525_160200
+== Ingesting C. T. Vivian_interview_20260525_160200 ==
+  [validate] ok
+  [subject] C. T. Vivian
+  [bootstrap] copying raw -> corrected/C. T. Vivian_interview_20260525_160200/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'C. T. Vivian'
+Resolving 1 interview(s) against LoC...
+[1/1] C. T. Vivian
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 712 divergences -> C:\civil\transcripts\loc_healing\divergences\C_T_Vivian.divergences.json
+    our_words=32819  loc_words=33792  cues=951  loc_turns=1477
+    stage file -> C:\civil\transcripts\pass8_stage\entry_000_c_t_vivian.md
+  Apply complete:
+    applied (healed):    4
+    preserved verbatim:  8
+    unresolved (review): 700
+    apply failures:      0
+  [OK] cue counts match: srt=951 vtt=951
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: C. T. Vivian_interview_20260525_160200 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [3/9] 'David Mercer Ackerman and Satoko Ito Ackerman' (A — genuinely new (joint interview)) ====
+Ingesting David Mercer Ackerman and Satoko Ito Ackerman oral history interview conducted by Joseph Mosnier in Washington, D.C., 2011 September 20.txt
+  -> C:\civil\transcripts\raw\David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300
+  parsed 221 speaker-turn cues
+  split long cues -> 241 total
+  wrote 241 cues; total_words=8192; estimated_duration=54m 56s
+  entry_dir_name: David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300
+== Ingesting David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300 ==
+  [validate] ok
+  [subject] David Mercer Ackerman and Satoko Ito Ackerman
+  [bootstrap] copying raw -> corrected/David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'David Mercer Ackerman and Satoko Ito Ackerman'
+Resolving 1 interview(s) against LoC...
+[1/1] David Mercer Ackerman and Satoko Ito Ackerman
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 42 divergences -> C:\civil\transcripts\loc_healing\divergences\David_Mercer_Ackerman_and_Satoko_Ito_Ackerman.divergences.json
+    our_words=8192  loc_words=8446  cues=241  loc_turns=261
+    stage file -> C:\civil\transcripts\pass8_stage\entry_000_david_mercer_ackerman_and_satoko_ito_ackerman.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  16
+    unresolved (review): 26
+    apply failures:      0
+  [OK] cue counts match: srt=241 vtt=241
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [4/9] 'Gertrude Newsome Jackson' (A — genuinely new) ====
+Ingesting Gertrude Newsome Jackson oral history interview conducted by LaFleur Paysour in Marvell, Arkansas, 2010 November 22.txt
+  -> C:\civil\transcripts\raw\Gertrude Newsome Jackson_interview_20260525_160400
+  parsed 348 speaker-turn cues
+  split long cues -> 390 total
+  wrote 390 cues; total_words=14818; estimated_duration=99m 3s
+  entry_dir_name: Gertrude Newsome Jackson_interview_20260525_160400
+== Ingesting Gertrude Newsome Jackson_interview_20260525_160400 ==
+  [validate] ok
+  [subject] Gertrude Newsome Jackson
+  [bootstrap] copying raw -> corrected/Gertrude Newsome Jackson_interview_20260525_160400/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'Gertrude Newsome Jackson'
+Resolving 1 interview(s) against LoC...
+[1/1] Gertrude Newsome Jackson
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 324 divergences -> C:\civil\transcripts\loc_healing\divergences\Gertrude_Newsome_Jackson.divergences.json
+    our_words=14818  loc_words=15248  cues=390  loc_turns=684
+    stage file -> C:\civil\transcripts\pass8_stage\entry_000_gertrude_newsome_jackson.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  7
+    unresolved (review): 317
+    apply failures:      0
+  [OK] cue counts match: srt=390 vtt=390
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: Gertrude Newsome Jackson_interview_20260525_160400 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [5/9] 'Myrtle Gonza Glascoe' (A — genuinely new) ====
+Ingesting Myrtle Gonza Glascoe oral history interview conducted by Dwandalyn Reece in Capitol Heights, Maryland, 2010 November 17.txt
+  -> C:\civil\transcripts\raw\Myrtle Gonza Glascoe_interview_20260525_160500
+  parsed 132 speaker-turn cues
+  split long cues -> 197 total
+  wrote 197 cues; total_words=13222; estimated_duration=88m 20s
+  entry_dir_name: Myrtle Gonza Glascoe_interview_20260525_160500
+== Ingesting Myrtle Gonza Glascoe_interview_20260525_160500 ==
+  [validate] ok
+  [subject] Myrtle Gonza Glascoe
+  [bootstrap] copying raw -> corrected/Myrtle Gonza Glascoe_interview_20260525_160500/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'Myrtle Gonza Glascoe'
+Resolving 1 interview(s) against LoC...
+[1/1] Myrtle Gonza Glascoe
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 246 divergences -> C:\civil\transcripts\loc_healing\divergences\Myrtle_Gonza_Glascoe.divergences.json
+    our_words=13222  loc_words=13520  cues=197  loc_turns=366
+    stage file -> C:\civil\transcripts\pass8_stage\entry_000_myrtle_gonza_glascoe.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  2
+    unresolved (review): 244
+    apply failures:      0
+  [OK] cue counts match: srt=197 vtt=197
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: Myrtle Gonza Glascoe_interview_20260525_160500 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [6/9] 'Simeon Wright' (A — genuinely new (Emmett Till's cousin)) ====
+Ingesting Simeon Wright oral history interview conducted by Joseph Mosnier in Chicago, Illinois, 2011 May 23.txt
+  -> C:\civil\transcripts\raw\Simeon Wright_interview_20260525_160600
+  parsed 292 speaker-turn cues
+  split long cues -> 343 total
+  wrote 343 cues; total_words=14539; estimated_duration=97m 33s
+  entry_dir_name: Simeon Wright_interview_20260525_160600
+== Ingesting Simeon Wright_interview_20260525_160600 ==
+  [validate] ok
+  [subject] Simeon Wright
+  [bootstrap] copying raw -> corrected/Simeon Wright_interview_20260525_160600/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'Simeon Wright'
+Resolving 1 interview(s) against LoC...
+[1/1] Simeon Wright
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 92 divergences -> C:\civil\transcripts\loc_healing\divergences\Simeon_Wright.divergences.json
+    our_words=14539  loc_words=14646  cues=343  loc_turns=383
+    stage file -> C:\civil\transcripts\pass8_stage\entry_000_simeon_wright.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  22
+    unresolved (review): 70
+    apply failures:      0
+  [OK] cue counts match: srt=343 vtt=343
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: Simeon Wright_interview_20260525_160600 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [7/9] 'Abernathy family' (B — matches existing DEFERRED entry #28) ====
+Ingesting Abernathy family oral history interview conducted by Hasan Kwame Jeffries in Atlanta, Georgia, and Stuttgart, Germany, 2013 October 10.txt
+  -> C:\civil\transcripts\raw\Abernathy family_interview_20260525_160700
+  parsed 377 speaker-turn cues
+  split long cues -> 435 total
+  wrote 435 cues; total_words=17049; estimated_duration=114m 18s
+  entry_dir_name: Abernathy family_interview_20260525_160700
+== Ingesting Abernathy family_interview_20260525_160700 ==
+  [validate] ok
+  [subject] Abernathy family
+  [bootstrap] copying raw -> corrected/Abernathy family_interview_20260525_160700/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'Abernathy family'
+Resolving 1 interview(s) against LoC...
+[1/1] Abernathy family
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 96 divergences -> C:\civil\transcripts\loc_healing\divergences\Abernathy_family.divergences.json
+    our_words=17049  loc_words=17944  cues=435  loc_turns=508
+    stage file -> C:\civil\transcripts\pass8_stage\entry_028_abernathy_family.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  29
+    unresolved (review): 67
+    apply failures:      0
+  [OK] cue counts match: srt=435 vtt=435
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: Abernathy family_interview_20260525_160700 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [8/9] 'Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins' (B — matches existing SKIPPED entry #46) ====
+Ingesting Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins oral history interview conducted by Joseph Mosnier in Bogalusa, Louisiana, 2011 May 28.txt
+  -> C:\civil\transcripts\raw\Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800
+  parsed 421 speaker-turn cues
+  split long cues -> 471 total
+  wrote 471 cues; total_words=16905; estimated_duration=113m 21s
+  entry_dir_name: Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800
+== Ingesting Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800 ==
+  [validate] ok
+  [subject] Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins
+  [bootstrap] copying raw -> corrected/Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins'
+Resolving 1 interview(s) against LoC...
+[1/1] Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 21 divergences -> C:\civil\transcripts\loc_healing\divergences\Geraldine_Crawford_Bennett_Toni_Breaux_and_Willie_Elliot_Jenkins.divergences.json
+    our_words=16905  loc_words=17080  cues=471  loc_turns=498
+    stage file -> C:\civil\transcripts\pass8_stage\entry_046_geraldine_crawford_bennett_toni_breaux_and_willie_elliot_jenkins.md
+  Apply complete:
+    applied (healed):    0
+    preserved verbatim:  16
+    unresolved (review): 5
+    apply failures:      0
+  [OK] cue counts match: srt=471 vtt=471
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== [9/9] 'John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove' (B — matches existing SKIPPED entry #64) ====
+Ingesting John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove oral history interview conducted by Emilye Crosby in Hyattsville, Maryland, 2013 June 28.txt
+  -> C:\civil\transcripts\raw\John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900
+  parsed 409 speaker-turn cues
+  split long cues -> 469 total
+  wrote 469 cues; total_words=20246; estimated_duration=135m 11s
+  entry_dir_name: John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900
+== Ingesting John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900 ==
+  [validate] ok
+  [subject] John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove
+  [bootstrap] copying raw -> corrected/John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900/
+  [resolver] resolving LoC item...
+  [resolver] search by subject name: 'John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove'
+Resolving 1 interview(s) against LoC...
+[1/1] John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove
+   -> ok  (match 1.0)
+
+=== Resolution summary ===
+  ok: 1
+  no_transcript: 0
+  no_candidates: 0
+  search_failed: 0
+  xml_fetch_failed: 0
+  ambiguous_ok: 0
+Index written to C:\civil\transcripts\loc_healing\loc_cache\_index.json
+  [resolver] status=ok
+  [heal] running heal_one_entry.py heal_one ...
+  Phase 1 wrote 68 divergences -> C:\civil\transcripts\loc_healing\divergences\John_Dudley_Eleanor_Stewart_Charles_Jarmon_Frances_Suggs_Harold_Suggs_and_Samuel_Dove.divergences.json
+    our_words=20246  loc_words=20615  cues=469  loc_turns=459
+    stage file -> C:\civil\transcripts\pass8_stage\entry_064_john_dudley_eleanor_stewart_charles_jarmon_frances_suggs_harold_suggs_and_samuel_dove.md
+  Apply complete:
+    applied (healed):    1
+    preserved verbatim:  34
+    unresolved (review): 33
+    apply failures:      0
+  [OK] cue counts match: srt=469 vtt=469
+  [heal] exit code: 0
+  [audit] appended ingestion note near top of Session log
+
+== Ingestion complete: John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900 ==
+  corrected/<entry>/ written
+  LoC resolution: ok
+  heal_one applied (see transcripts/pass8_stage/ for the per-entry artifact)
+
+Next: review the per-entry stage file, commit with the entry's raw/ + corrected/ + stage file together.
+
+==== Batch summary ====
+  ingested:  9
+  skipped:   0
+  failed:    0

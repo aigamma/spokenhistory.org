@@ -34,6 +34,87 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+#### Ingestion of `John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900` (2026-05-25)
+
+**Subject:** John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669195/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800` (2026-05-25)
+
+**Subject:** Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669117/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins_interview_20260525_160800/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `Abernathy family_interview_20260525_160700` (2026-05-25)
+
+**Subject:** Abernathy family  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669207/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/Abernathy family_interview_20260525_160700/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `Simeon Wright_interview_20260525_160600` (2026-05-25)
+
+**Subject:** Simeon Wright  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669109/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/Simeon Wright_interview_20260525_160600/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `Myrtle Gonza Glascoe_interview_20260525_160500` (2026-05-25)
+
+**Subject:** Myrtle Gonza Glascoe  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669102/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/Myrtle Gonza Glascoe_interview_20260525_160500/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `Gertrude Newsome Jackson_interview_20260525_160400` (2026-05-25)
+
+**Subject:** Gertrude Newsome Jackson  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669103/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/Gertrude Newsome Jackson_interview_20260525_160400/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300` (2026-05-25)
+
+**Subject:** David Mercer Ackerman and Satoko Ito Ackerman  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669152/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/David Mercer Ackerman and Satoko Ito Ackerman_interview_20260525_160300/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `C. T. Vivian_interview_20260525_160200` (2026-05-25)
+
+**Subject:** C. T. Vivian  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669105/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/C. T. Vivian_interview_20260525_160200/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
+#### Ingestion of `Alfred Moldovan_interview_20260525_160100` (2026-05-25)
+
+**Subject:** Alfred Moldovan  
+**LoC status:** ok  
+**LoC item URL:** https://www.loc.gov/item/2015669135/  
+**Heal exit code:** 0 (ok)
+
+Ingested via `transcripts/ingestion/ingest_new_transcript.py`. Bootstrapped from `raw/Alfred Moldovan_interview_20260525_160100/`, healed against LoC using the Pass 8 conservative-first-pass discipline. Per-entry artifact at `transcripts/pass8_stage/entry_*_*.md` (slug matches the subject).
+
 ### Session 8 — 2026-05-25: Pass 8 LoC canonical-archive cross-reference
 
 **End-of-session summary:** Pass 8 healed all 127 audit-able transcripts against the Library of Congress's transcripts for the Civil Rights History Project collection — 100% coverage. The path to 100% took three resolver passes: (1) initial XML-driven resolver resolved 86 entries; (2) PDF-fallback pass (pypdf extraction from LoC's transcript PDFs) recovered all 35 entries that had no machine-readable XML; (3) direct-resolve pass (using known LoC item URLs) recovered the final 6 entries — Mary Jones (transient XML download retry) plus 5 catalog-spelling discrepancies (Booker+**Newson** vs our Newsom, Wheeler Parker without our Jr., Doris Adelaide Derby vs our Dr. Doris Derby, Linda Fuller Degelmann under a non-standard title form, and Dorie Ann Ladner + Joyce Ladner for the joint "Ladners" interview). The 41 entries initially classified as unhealable were ALL recoverable — zero genuinely-audio-only members in the corpus, contradicting the original Phase 1 read.
