@@ -5,18 +5,26 @@
 #   2. flyctl auth login
 #   3. (Edit this file) set `app = "<your-app-name>"` -- the placeholder
 #      below is a suggestion; pick something unique on Fly.io.
-#   4. flyctl launch --copy-config --no-deploy
-#   5. flyctl secrets set OPENAI_API_KEY=sk-...
-#      flyctl secrets set ANTHROPIC_API_KEY=sk-ant-...     (optional)
-#      flyctl secrets set FIREBASE_SERVICE_ACCOUNT_PATH=/secrets/sa.json
-#   6. Upload the service-account JSON via flyctl machines exec or a
-#      mounted volume; the simpler path is to inline the JSON as a single
-#      env var (FIREBASE_SERVICE_ACCOUNT_JSON) and read+parse it inside
-#      server.mjs's initialization (small follow-up patch to server.mjs).
+#   4. From the mcp-server/ directory: npm run build:leaders   (generates
+#      data/leaders.json from transcripts/corrected/ manifests). Commit
+#      the result so future Docker builds pick it up.
+#   5. flyctl launch --copy-config --no-deploy
+#   6. flyctl secrets set PINECONE_API_KEY=...
+#      flyctl secrets set PINECONE_HOST=https://civil-rights-<hash>.svc.<region>.pinecone.io
+#      flyctl secrets set VOYAGE_API_KEY=...
+#      (optional) flyctl secrets set PINECONE_INDEX=civil-rights
+#      (optional) flyctl secrets set VOYAGE_MODEL=voyage-3
+#      (optional) flyctl secrets set VOYAGE_RERANK_MODEL=rerank-2
+#      (optional) flyctl secrets set MCP_RERANK_ENABLED=true
 #   7. flyctl deploy
 #   8. Configure the custom domain in Fly: flyctl certs add mcp.robotlogic.org
 #      then add the CNAME record at robotlogic.org's registrar pointing
 #      mcp -> <appname>.fly.dev (or the AAAA records Fly returns).
+#
+# The post-2026-05-25 rewire removed the Firebase Admin + OpenAI
+# dependencies. Pinecone (civil-rights project) + Voyage AI (voyage-3
+# embedding + rerank-2) are the sole runtime dependencies; data/leaders.json
+# is baked into the image at build time.
 
 app = "civil-rights-history-mcp"
 primary_region = "sea"   # Seattle. Close to Eric in the Pacific Northwest;
@@ -58,10 +66,9 @@ primary_region = "sea"   # Seattle. Close to Eric in the Pacific Northwest;
 
 [[vm]]
   size = "shared-cpu-1x"
-  memory_mb = 512
-  # 512 MB is plenty for a thin MCP shim. The vector-search path holds
-  # the full embeddings collection in memory transiently per request
-  # (see server.mjs's cosineSimilarity loop) -- for the current corpus
-  # (~131 interviews + segments) the working set fits comfortably; for
-  # larger corpora the right move is migrating to Firestore's native
-  # vector index rather than scaling this VM up.
+  memory_mb = 256
+  # 256 MB is plenty for the post-rewire shim. Embedding + retrieval
+  # happen on Voyage / Pinecone (HTTP calls, no in-process vectors), so
+  # the server's working set is just Express + the MCP SDK + a small
+  # leaders.json roster. The prior 512 MB was sized for the in-process
+  # Firestore cosine-similarity scan that the rewire removed.
