@@ -26,6 +26,7 @@
 import { createHash } from 'node:crypto';
 import { readFile, stat } from 'node:fs/promises';
 import { basename, extname, relative, dirname } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 import {
   REPO_ROOT,
@@ -80,7 +81,7 @@ function deterministicId(chunkType, entryNumber, sourceRel, chunkIndex, hash) {
 
 let _entryMapCache = null;
 
-async function loadEntryMap() {
+export async function loadEntryMap() {
   if (_entryMapCache) return _entryMapCache;
 
   // Pass 1: parse master MD's `### N. Subject` + `**Source**:` lines.
@@ -93,14 +94,18 @@ async function loadEntryMap() {
   if (content) {
     const entryRe = /^### (\d+)\.\s+([^\n]+)\n/gm;
     const sourceRe = /\*\*Source\*\*:\s*`transcripts\/raw\/([^`]+)\/?`/;
-    let match;
-    while ((match = entryRe.exec(content)) !== null) {
-      const number = Number(match[1]);
-      const subject = match[2].replace(/\s*\(PARTIAL\)\s*$/, '').trim();
-      const sectionStart = match.index;
-      const nextMatch = entryRe.exec(content);
-      const sectionEnd = nextMatch ? nextMatch.index : content.length;
-      if (nextMatch) entryRe.lastIndex = nextMatch.index;
+    // Materialize all heading matches up front. The earlier double-exec
+    // pattern hit a global-regex pitfall: when the final entry's
+    // "next match" lookup returned null, entryRe.lastIndex auto-reset
+    // to 0 and the outer while-loop re-found match #1, looping forever.
+    // matchAll is single-pass and resets cleanly at exhaustion.
+    const allMatches = [...content.matchAll(entryRe)];
+    for (let i = 0; i < allMatches.length; i++) {
+      const m = allMatches[i];
+      const number = Number(m[1]);
+      const subject = m[2].replace(/\s*\(PARTIAL\)\s*$/, '').trim();
+      const sectionStart = m.index;
+      const sectionEnd = i + 1 < allMatches.length ? allMatches[i + 1].index : content.length;
       const sectionBody = content.slice(sectionStart, sectionEnd);
       const srcMatch = sectionBody.match(sourceRe);
       const sourceDir = srcMatch ? srcMatch[1].replace(/\/$/, '') : null;
@@ -112,11 +117,17 @@ async function loadEntryMap() {
     console.warn('[ingest] master overlay not found; entry-number resolution from master MD unavailable');
   }
 
-  // Pass 2: scan corrected/<dir>/manifest.json for entries that may not have
-  // master MD records. The 9 Pass-8-only ingestion entries added 2026-05-25
-  // (entries 28, 46, 64 reactivated + 133-138 brand new) have entry_number
-  // and entry_subject in their manifests but no master MD headings.
+  // Pass 2: scan corrected/<dir>/manifest.json for two purposes:
+  // (a) Add records for entries with NO master MD heading (the 9 Pass-8-only
+  //     ingestion entries added 2026-05-25: 28/46/64 reactivated + 133-138).
+  // (b) Enrich EXISTING records (audit-original entries already in byDir
+  //     from Pass 1) with per-entry metadata that downstream retrieval
+  //     needs: entry_provenance, inferential_uncertainty.score/tier, and
+  //     loc_healing.loc_item_url. These flow into the Pinecone metadata so
+  //     a query can filter by audit-vs-ingestion provenance and surface
+  //     LoC citation URLs in the answer.
   let manifestAdded = 0;
+  let manifestEnriched = 0;
   try {
     const { readdir, stat: fsStat } = await import('node:fs/promises');
     const { join: pathJoin } = await import('node:path');
@@ -139,14 +150,30 @@ async function loadEntryMap() {
       const number = m.entry_number;
       const subject = m.entry_subject;
       if (number == null || !subject) continue;
-      // Skip if master MD already provides this directory's record
-      if (byDir.has(dirName)) continue;
+      const provenance = m.entry_provenance || null;
+      const iuScore = m.inferential_uncertainty?.score;
+      const iuTier = m.inferential_uncertainty?.confidence_tier;
+      const locUrl = m.loc_healing?.loc_item_url;
+      if (byDir.has(dirName)) {
+        // (b) Enrich an existing audit-original record.
+        const rec = byDir.get(dirName);
+        if (provenance) rec.provenance = provenance;
+        if (Number.isFinite(iuScore)) rec.inferential_uncertainty_score = iuScore;
+        if (typeof iuTier === 'string' && iuTier) rec.inferential_uncertainty_tier = iuTier;
+        if (typeof locUrl === 'string' && locUrl) rec.loc_item_url = locUrl;
+        manifestEnriched++;
+        continue;
+      }
+      // (a) Add a brand-new manifest-only record.
       const record = {
         number,
         subject,
         sourceDir: dirName,
-        provenance: m.entry_provenance || 'unknown',
+        provenance: provenance || 'unknown',
       };
+      if (Number.isFinite(iuScore)) record.inferential_uncertainty_score = iuScore;
+      if (typeof iuTier === 'string' && iuTier) record.inferential_uncertainty_tier = iuTier;
+      if (typeof locUrl === 'string' && locUrl) record.loc_item_url = locUrl;
       byDir.set(dirName, record);
       if (!bySubject.has(subject)) bySubject.set(subject, record);
       manifestAdded++;
@@ -155,10 +182,36 @@ async function loadEntryMap() {
     console.warn(`[ingest] manifest-fallback scan failed: ${e.message}`);
   }
 
+  // Drop phantom records: master-MD entries whose `**Source**:` pointer
+  // references a corrected/ directory that doesn't exist on disk (typically
+  // because the directory was renamed for curly-quote / Windows-MAX_PATH
+  // reasons, or because the entry was originally Whisper-empty / SKIPPED).
+  // Phantoms cause no harm to ingest (no walker hits them) but they inflate
+  // the byDir count and the audit-original histogram. The real on-disk
+  // directory still has its own Pass-2 record with correct metadata.
+  let phantomDropped = 0;
+  try {
+    const { readdir } = await import('node:fs/promises');
+    const onDiskDirs = new Set(
+      (await readdir(CORRECTED_TRANSCRIPTS_ROOT, { withFileTypes: true }))
+        .filter((e) => e.isDirectory())
+        .map((e) => e.name),
+    );
+    for (const dir of [...byDir.keys()]) {
+      if (!onDiskDirs.has(dir)) {
+        byDir.delete(dir);
+        phantomDropped++;
+      }
+    }
+  } catch (e) {
+    console.warn(`[ingest] phantom-cleanup skipped: ${e.message}`);
+  }
+
   _entryMapCache = { byDir, bySubject };
   console.log(
     `[ingest] entry map loaded: ${byDir.size} entries by source dir ` +
-    `(master MD: ${byDir.size - manifestAdded}; manifest-only: ${manifestAdded})`,
+    `(master MD: ${byDir.size - manifestAdded}; manifest-only: ${manifestAdded}; ` +
+    `enriched: ${manifestEnriched}; phantoms dropped: ${phantomDropped})`,
   );
   return _entryMapCache;
 }
@@ -222,7 +275,7 @@ async function deleteVectorIds(ids, namespace = '') {
 // Transcript ingest
 // ---------------------------------------------------------------------------
 
-async function buildTranscriptVectors(sourcePath, entryMap) {
+export async function buildTranscriptVectors(sourcePath, entryMap) {
   const sourceRel = relative(REPO_ROOT, sourcePath).replace(/\\/g, '/');
   const dirRel = relative(CORRECTED_TRANSCRIPTS_ROOT, dirname(sourcePath)).replace(/\\/g, '/');
   const entry = entryMap.byDir.get(dirRel);
@@ -252,6 +305,14 @@ async function buildTranscriptVectors(sourcePath, entryMap) {
       content_hash: hash,
       text,
     };
+    if (entry.provenance) metadata.entry_provenance = entry.provenance;
+    if (entry.inferential_uncertainty_score != null) {
+      metadata.inferential_uncertainty_score = entry.inferential_uncertainty_score;
+    }
+    if (entry.inferential_uncertainty_tier) {
+      metadata.inferential_uncertainty_tier = entry.inferential_uncertainty_tier;
+    }
+    if (entry.loc_item_url) metadata.loc_item_url = entry.loc_item_url;
     if (ch.timestamp_start_seconds != null) {
       metadata.timestamp_start_seconds = ch.timestamp_start_seconds;
       metadata.timestamp_end_seconds = ch.timestamp_end_seconds;
@@ -462,7 +523,13 @@ async function main() {
   console.log(`[ingest] done — ${upserted} upserted, ${expectedById.size - upserted} unchanged${args.prune ? `, ${orphaned.length} pruned` : ''}`);
 }
 
-main().catch((e) => {
-  console.error('[ingest] fatal:', e?.stack || e?.message || e);
-  process.exit(1);
-});
+// Only run main() when this module is the entry point, not when imported.
+// Lets test scripts import loadEntryMap / buildTranscriptVectors without
+// triggering the PINECONE_API_KEY check.
+const __isEntry = import.meta.url === pathToFileURL(process.argv[1] || '').href;
+if (__isEntry) {
+  main().catch((e) => {
+    console.error('[ingest] fatal:', e?.stack || e?.message || e);
+    process.exit(1);
+  });
+}

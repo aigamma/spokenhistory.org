@@ -91,6 +91,10 @@ Every vector carries these fields (some optional):
 | `chunk_type` | enum: `transcript_segment` \| `summary_chapter` \| `ground_truth_fact` | yes |
 | `entry_number` | int | yes for transcript_segment + summary_chapter |
 | `entry_subject` | string | yes for transcript_segment + summary_chapter |
+| `entry_provenance` | enum: `audit-original` \| `ingestion-only` | yes for transcript_segment (added 2026-05-25) |
+| `inferential_uncertainty_score` | float (0.0 = no evidence of error, higher = more residual uncertainty) | when manifest carries it (all 136 entries as of 2026-05-25) |
+| `inferential_uncertainty_tier` | enum: `high` \| `medium` \| `low` \| `ingestion-only` | same as score |
+| `loc_item_url` | string (Library of Congress canonical archive URL) | when LoC healing was applied (all 136 entries) |
 | `source_path` | string (repo-relative) | yes |
 | `source_ext` | string (`.txt`, `.srt`, `.vtt`, `.json`) | yes for transcript_segment |
 | `chunk_index` | int | yes |
@@ -101,6 +105,14 @@ Every vector carries these fields (some optional):
 | `cue_count` | int | only for time-aware chunks |
 | `canonical_name` | string | only for ground_truth_fact |
 | `aliases` | string[] | only for ground_truth_fact |
+
+### Why the provenance / uncertainty / LoC fields are in the metadata
+
+`entry_provenance` lets retrieval differentiate the 127 entries that went through the full Pass 1–8 audit cascade (`audit-original`) from the 9 entries that came in via the 2026-05-25 streamlined ingestion (`ingestion-only`). For Smithsonian-grade publication, an LLM answer that draws from an audit-original chunk can cite the audit overlay; an answer drawn from an ingestion-only chunk should be hedged. Putting the flag in the chunk metadata avoids a second Firestore round-trip at answer time.
+
+`inferential_uncertainty_score` + `inferential_uncertainty_tier` carry the per-entry residual-error estimate defined in `transcripts/AUDIT_TRAIL.md::Inferential scoring framework`. Retrieval can use the tier as a coarse filter (e.g., `tier IN ('high', 'low')` to bias toward well-audited entries) or weight rerank by score.
+
+`loc_item_url` carries the Library of Congress canonical archive URL for the entry. When an LLM answer cites a chunk, the UI can deep-link to the LoC item so a downstream reader can verify the source.
 
 ### Hybrid retrieval
 
@@ -216,6 +228,7 @@ the same.
 - ✅ +9 ingestion-only entries added 2026-05-25 from Dustin's student batch (6 genuinely new + 3 SKIPPED/DEFERRED revivals). See `transcripts/ingestion/README.md`. Corpus now 136 entries.
 - ✅ `corrected/` is downstream-ready: every entry has `.srt + .txt + .vtt + manifest.json` with the same schema (verified by `transcripts/ingestion/verify_corpus_unified.py`). All 136 manifests carry `entry_number`, `entry_subject`, and `entry_provenance` (`audit-original` or `ingestion-only`).
 - ✅ `rag/ingest.mjs` updated 2026-05-25 to discover entries via BOTH master MD `**Source**:` lines AND fallback to `manifest.json::entry_number` for the 9 ingestion-only entries (which don't have master MD entry headings yet). `SKIPPED_ENTRIES` reduced to `{31, 95}` since #28, #46, #64 now have content.
+- ✅ `rag/ingest.mjs` second 2026-05-25 update: (a) fixed a pre-existing infinite-loop bug in the master-MD heading-walker (double-`exec` pattern interacted with the global-regex auto-reset of `lastIndex` on null match — replaced with `matchAll` materialization); (b) propagates `entry_provenance`, `inferential_uncertainty_score`, `inferential_uncertainty_tier`, and `loc_item_url` from each manifest into the Pinecone metadata for downstream filtering and LoC-citation linking; (c) drops phantom byDir records whose source directories don't exist on disk so the entry count is honest. Final entry map: 127 audit-original + 9 ingestion-only = 136, matching corrected/ exactly.
 - ⏳ Pinecone civil-rights index: not yet provisioned. **Status update**: the Pinecone account originally created for worldthought.com is being shared across both projects via Builder tier's multi-project feature — civil-rights and worldthought each have their own Pinecone project under one billing relationship + one organization. `civil-rights` index host URL needs to be generated in the Pinecone console (one-time admin action) and put in `rag/.env.local`.
 - ⏳ First ingest: blocked only on the Pinecone index existing. Voyage AI key already shared via the worldthought-side `.env.local` (or a copy thereof). Full ingest estimated at ~45-75 minutes wall-clock; subsequent re-ingests are content-hash-idempotent so only changed chunks re-embed.
 - ⏳ Chat function: not yet written (downstream of this scaffolding).

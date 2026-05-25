@@ -211,6 +211,7 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 | File | Purpose |
 |---|---|
 | `rag/README.md` | Architecture + setup + metadata-schema reference for the Pinecone + Voyage RAG layer. Read before touching `rag/ingest.mjs`, `rag/retrieve.mjs`, or related code. |
+| `rag/CONFERENCE_PREP.md` | London-conference brief (2026-06): what's in the corpus, how the embeddings represent it, what queries the presentation will exercise, what's still left to wire up. The "philosophy of embedding" framing for stakeholder communication. |
 | `functions/README.md` | Cloud Functions (Firebase) layer documentation |
 
 ### `Metadata Generation System/` — the Python pipeline
@@ -249,7 +250,7 @@ These directories contain one file per audit-able entry per pass. They are inter
 
 - **New agent doing audit-related work:** start with this CLAUDE.md (you're here), then `transcripts/AUDIT_TRAIL.md` (history) and `transcripts/OPEN_PROBLEMS.md` (open items). Don't try to read the per-pass staging directories.
 - **New agent doing LoC-healing or new-transcript work:** this CLAUDE.md, then `transcripts/ingestion/README.md` and `transcripts/loc_healing/COVERAGE_REPORT.md`. Read `transcripts/AUDIT_VS_LOC_DISAGREEMENTS.md` if the heal pipeline surfaces issues. **Do not re-run Passes 1-7 on new transcripts** — that pipeline is retired for new work.
-- **New agent doing RAG-related work:** this CLAUDE.md, then `rag/README.md` and `docs/RAG_SUBSTRATE_DECISION.md`.
+- **New agent doing RAG-related work:** this CLAUDE.md, then `rag/README.md`, `rag/CONFERENCE_PREP.md`, and `docs/RAG_SUBSTRATE_DECISION.md`.
 - **New agent doing accessibility / frontend work:** this CLAUDE.md, then `docs/ACCESSIBILITY.md`.
 - **New agent doing deployment / DevOps work:** this CLAUDE.md, then `docs/DEPLOYMENT.md`.
 - **New agent doing pipeline / Python work:** this CLAUDE.md, then `Metadata Generation System/Metadata Generation Documentation.md` and `StandardizedRubric_1.md`.
