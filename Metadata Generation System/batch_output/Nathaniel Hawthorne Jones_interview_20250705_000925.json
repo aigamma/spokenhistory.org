@@ -1,0 +1,909 @@
+{
+  "interview_name": "Nathaniel Hawthorne Jones",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Nathaniel Hawthorne Jones_interview_20250705_000925\\Nathaniel Hawthorne Jones_interview_transcript_20250705_000925.srt",
+  "processed_at": "2026-05-25T00:45:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Nathaniel \"Nate\" Hawthorne Jones",
+    "interviewee_title": "Claiborne County NAACP Activist and Voter-Registration Pioneer",
+    "interview_date": "2015-12-03",
+    "interview_location": "Claiborne County, Mississippi (Jones's home, on his land)",
+    "interviewer_name": "Emilye Crosby",
+    "interviewer_affiliation": "Library of Congress / Civil Rights History Project",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:53:28"
+  },
+  "main_summary": {
+    "summary": "Nathaniel \"Nate\" Hawthorne Jones, age 101 at the time of the interview, was born in 1914 in Claiborne County, Mississippi, on the land where he was later interviewed. He recounts a childhood of sharecropping with a family of fifteen children (his mother died when he was five and his father remarried a woman with five children), an interrupted six-month school year that ended around age nine when farm labor took over, and a self-directed reading habit sustained by newspapers like the Pittsburgh Courier and Grit. Jones describes joining the NAACP under what he calls an \"underground\" of secret afternoon meetings at a Methodist church around 1952, when openly carrying an NAACP card invited Klan retaliation. He was drafted into the Navy in 1944, trained as a cook and steward, served in the Pacific (Hawaii, Majuro, Saipan area), and participated in a three-day hunger strike with twenty-eight other Black stewards over being barred from the officers' mess.\n\nAfter the war, Jones and his wife saved his Navy pay (he sent home about $100 a month) and purchased 126 acres around Port Gibson for roughly $1,400. He recounts the voter-registration ordeal under the Mississippi Constitution literacy test, registering on his third attempt alongside Mr. Griffin and Mr. Ellis Collins, and remembers attending a voter-education class taught by Bob Moses, brought through during R.L.T. Smith's congressional campaign — three of the original attendees, including Jones, came back after police intimidation scared away the rest. Jones describes the local movement's emergence under Charles Evers and his field organizer Rudy Shields (\"a brilliant, brilliant, brilliant fellow\"), associate Leesco Guster-Walker, and the white-organized biracial committee of preachers and teachers that tried to head off the protests. He recounts being arrested in a 1966 Alcorn College march, leading students back from a confrontation with state patrolmen who tear-gassed the demonstration, and witnessing the beating of his friend \"Mr. Warnersfall\" (June Warner's uncle) and a preacher from Hattisburg, while Charles Evers himself was spared (\"don't hit him\").\n\nJones served as an NAACP officer, helped organize the Port Gibson boycott that demanded better wages and an end to mistreatment of Black workers, and co-founded the Armart cooperative grocery store (Mr. Alexander Collins as another principal shareholder, Rev. R.L.T. Smith of Jackson as the leading shareholder who advised on operations; the store turned over about a quarter million dollars annually). He recruited candidates for office, recounting that Mad Raw, Mr. Ellis Collins, and his own wife ran in 1967, with three elected; his wife was later elected circuit clerk in 1971. Jones recounts the Claiborne Hardware lawsuit brought against the boycott organizers (won in 1982 by the NAACP), and credits white friends — including Mr. Eli Ellis, the St. John brothers, and his white neighbors at the bank — for ensuring his farm and family were not destroyed during the years his property was tied up. He closes by reflecting on the price the movement extracted and the courage it took to register and to act publicly when the Klan was active.",
+    "key_themes": [
+      "Sharecropping economics and the cost of denied education in 1920s-1930s Mississippi",
+      "NAACP underground organizing in Mississippi before public movement activity",
+      "Black WWII Navy service and on-base civil rights protest",
+      "Voter-registration literacy-test ordeal under the Mississippi Constitution",
+      "Charles Evers, Rudy Shields, and the Claiborne County / Port Gibson movement",
+      "Black cooperative economics (the Armart grocery store)",
+      "NAACP v. Claiborne Hardware litigation and the cost of the Port Gibson boycott"
+    ],
+    "historical_significance": "Nathaniel Hawthorne Jones provides one of the corpus's longest-arc first-person accounts of the Mississippi Black freedom struggle, from sharecropping in the 1920s through the post-WWII NAACP underground, the 1960s movement under Charles Evers and Rudy Shields in Claiborne County, and the 1982 Supreme Court victory in NAACP v. Claiborne Hardware Co. Jones was interviewed at age 101 by historian Emilye Crosby, the scholarly authority on Claiborne County (author of A Little Taste of Freedom, UNC Press, 2005), making this transcript an exceptionally rare paired primary source. His firsthand recollection of Bob Moses teaching voter-registration classes, his account of the 1966 Alcorn protests and his role leading students away from state-patrol tear gas, and his role founding the Armart cooperative grocery all fill specific gaps in the documented Claiborne County / Port Gibson story.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 87,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 35,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 13,
+      "errors": [
+        "Summary attributes 'about $100 a month' to Jones's Navy remittances; transcript actually says he was 'getting $109 a month' and 'sent that $100 back' — phrasing is paraphrase-accurate but slightly compresses the two figures.",
+        "Summary names 'Mr. Warnersfall' as a beating victim; the transcript ASR rendering 'Warnersfall' is unstable (could be 'Warner's father' or 'Warner Sr.') — preserved as transcribed but flagged as uncertain.",
+        "Summary names 'Leesco Guster-Walker' as Rudy Shields's associate; transcript renders the name inconsistently ('Leesco Guster' early, 'Leesco Guster Walker' later) and may conflate two surnames.",
+        "Summary calls the cooperative 'Armart'; transcript ASR consistently renders 'our mark' / 'Armart' — name is preserved as transcribed but spelling is uncertain.",
+        "Summary places the Bob Moses voter-education class during 'R.L.T. Smith's congressional campaign'; transcript confirms 'when Rev. Smith / R.L.T. Smith was running for Congress' but the class instructor is identified only after the interviewer prompts the name 'Bob Moses' — Jones confirms 'Yeah, it was Moses' but does not name him independently."
+      ],
+      "improvements": [
+        "Add explicit hedge language for the 1952 NAACP joining date — the transcript says 'I think it might have been 1952' (not a confirmed date).",
+        "Clarify that Charles Evers is identified by the interviewer first ('Charles Evers'), with Jones agreeing — not a name Jones produces independently in the recall.",
+        "Disambiguate 'Warnersfall' in a future correction pass against the per-entry pass3/pass4 audit overlay (not read here per firewall rules).",
+        "The 1971 circuit-clerk date for his wife is confirmed by the interviewer ('1971') and agreed to by Jones — preserve interviewer-attribution chain in the summary."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:15,000",
+      "title": "Introduction and Birth in 1914 in Claiborne County",
+      "summary": "The interview opens with Emilye Crosby identifying the date (December 3, 2015), location (Jones's home in Claiborne County), and the Civil Rights History Project's sponsorship by the Library of Congress and the Smithsonian National Museum of African American History and Culture, with John Bishop and Guha Shankar also present. Jones states he was born in 1914 right in the community where the interview takes place, a quarter mile east of the porch. He clarifies his age as 101, with his 102nd birthday coming the next year.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["1914", "claiborne county", "mississippi", "library of congress", "smithsonian", "emilye crosby", "civil rights history project"],
+      "related_events": ["Civil Rights History Project", "Library of Congress", "Smithsonian National Museum of African American History and Culture", "Emilye Crosby"],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 90,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 29,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could capture the exact framing line about land 'where he was born' to anchor the geographic stake."]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:02:15,000",
+      "end_time": "00:13:42,000",
+      "title": "Family, Sharecropping, and Interrupted Schooling",
+      "summary": "Jones describes his family origin in Lorman, Mississippi, before moving to the Claiborne County land; he was the first of his mother's ten children born in this house. His mother died when he was five, and his father married a woman who already had five children, bringing the household to fifteen. The family were sharecroppers; the landlord took one-fourth (because the Jones family owned their own horses and gear, otherwise it would have been half). Jones describes the six-month school year he was able to attend only until about age nine — after that, field labor took over. His baby sister Emma carried his assignments back from school so he could keep up. He recounts walking around five miles when the creek flooded the shorter route, and his arithmetic and spelling drills at the front of the class on rainy days.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["sharecropping", "lorman mississippi", "claiborne county", "family of fifteen", "stepmother", "baby sister emma", "six-month school", "literacy"],
+      "related_events": ["Mississippi sharecropping economy", "Jim Crow Mississippi public schools", "Black agricultural labor in the early twentieth century"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Transcript says 'my mother passed on, when five years I started to born' — the phrasing is ASR-corrupted; the canonical interpretation is 'when I was five years old, my mother passed on,' which the chapter summary uses."
+        ],
+        "improvements": ["Note that the household size of fifteen is derived from 'my mother left 10' + stepmother's 'five' = 15, which Jones implies but does not state directly."]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:13:42,000",
+      "end_time": "00:18:24,000",
+      "title": "Sharecropping Economics, Alcorn Visits, and the Pittsburgh Courier",
+      "summary": "Jones describes the sharecropping output system — cotton, corn, and peas, with the landlord taking one-fourth from sharecroppers who supplied their own teams and equipment. He recounts going as a young man to Alcorn College only for commencements and baseball games, watching the college team play; one of the Alcorn players (a left-handed pitcher whose surname Jones cannot fully recall) was recruited from Alcorn to Chicago. Jones started reading the Pittsburgh Courier after meeting a seller at an Alcorn commencement, and continued the subscription, with the paper following him into Navy service.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["alcorn college", "baseball", "pittsburgh courier", "sharecropping", "cotton", "corn", "peas", "literacy", "self-education"],
+      "related_events": ["Alcorn A&M College", "Pittsburgh Courier (Black newspaper)", "Negro Leagues baseball pipeline"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 84,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "The Alcorn-to-Chicago baseball pitcher is unnamed in transcript; summary preserves this absence rather than inferring a name."
+        ],
+        "improvements": ["A future pass could match the named pitcher against an Alcorn-to-Chicago Negro Leagues roster if the audit overlay permits."]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:18:24,000",
+      "end_time": "00:25:41,000",
+      "title": "Joining the NAACP Underground in 1952",
+      "summary": "Jones recounts how he came to join the NAACP through Rev. Martin (the local minister whose wife was Jones's teacher) and Mr. Charlie Cook, a relative of Rev. Martin. Jones believes he became a charter member around 1952. Meetings were held secretly at the AME Methodist church on Saturday afternoons when townspeople would normally be in town with wagons, so the gathering would not be noticed. NAACP cards had to be hidden — Jones explains that getting caught with a card during the Klan-active era could have severe consequences. Despite the danger, Jones says he was never afraid: he had been reading Grit and other papers about freedom and the Mason-Dixon Line, and he wanted to join.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["naacp", "underground organizing", "1952", "rev. martin", "charlie cook", "ku klux klan", "ame methodist church", "charter member"],
+      "related_events": ["NAACP", "Ku Klux Klan", "Mississippi NAACP underground organizing in the 1950s"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Jones says 'I think it might have been 1952' — the summary preserves this as 'around 1952' rather than as a confirmed date."
+        ],
+        "improvements": ["A future pass could cross-check the local NAACP chapter charter date against the Mississippi NAACP records."]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:25:41,000",
+      "end_time": "00:32:01,000",
+      "title": "Drafted into the Navy in 1944 and the Pacific War",
+      "summary": "Jones was drafted into the Navy in 1944 (from Camp Shelby through Jackson, Mississippi). After bootcamp at Bainbridge, he shipped from San Diego on an aircraft carrier through Hawaii (about three weeks), then to Majuro Atoll in the Marshall Islands, where the U.S. air base supported flights against Saipan about 500 miles away. He served as a steward and cook, earning a Navy cooking certificate from Washington, D.C. He recounts the repeated air and ship raids that drove him out into the lagoon — once up to his neck in water — and a three-day hunger strike by Jones and twenty-eight other Black stewards/stewards' mates who were refused permission to eat in the officers' mess. The hunger strike worked.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": ["us navy", "wwii", "1944", "camp shelby", "bainbridge", "san diego", "hawaii", "majuro", "saipan", "steward", "hunger strike"],
+      "related_events": ["World War II Pacific theater", "U.S. Navy steward branch (segregated)", "Battle of Saipan", "Black sailors' wartime protests"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 84,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "Transcript renders 'Majuro' and 'Saipan' inconsistently; the geographic distance ('500 miles') is preserved as Jones states it.",
+          "The exact size of the hunger-strike group is 'twenty-eight' (transcript: 'group was 29 of...' then 'We knew it was Joe and Majuro' — likely '29 of us went down to a' — preserved as twenty-eight with Jones included makes 29)."
+        ],
+        "improvements": ["Cross-reference the Majuro Black-steward hunger strike against Navy records of 1944 Pacific-theater protests."]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:32:01,000",
+      "end_time": "00:40:57,000",
+      "title": "The Voter Registration Ordeal: Three Attempts Under the Mississippi Constitution Test",
+      "summary": "Jones describes the literacy-test gauntlet for voter registration in Mississippi. He had paid the poll tax before going into service. After returning from the Navy, he tried to register with two companions, Mr. Griffin and Mr. Ellis Collins. The registrar gave each applicant a section of the Mississippi Constitution to copy and interpret. Collins, who had more schooling (sixth grade — Jones had an eighth-grade learning), had been the last in line; the registrar marked Collins as failing and turned to Jones, who also failed. Jones returned a second time (failed) and finally passed on the third attempt after she gave him 'a little test.' He attributes his persistence to encouragement from his Navy officers (some of whom were Northerners who urged Black sailors to vote — Jones had cast a Navy absentee ballot that 'they probably threw in the trash').",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["voter registration", "mississippi constitution", "literacy test", "poll tax", "mr. griffin", "mr. ellis collins", "third attempt", "navy absentee ballot"],
+      "related_events": ["Mississippi Constitution of 1890 (literacy and understanding clauses)", "Mississippi voter-suppression infrastructure", "Black WWII veterans' voter-registration efforts"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "The summary identifies Jones's schooling as 'eighth-grade' and Collins's as 'sixth grade' — transcript rendering is ASR-noisy ('I'd say, age, grade, learning' for Jones and 'the sixth grade, I believe, was' for Griffin, not Collins). The text 'Griffin, the sixth grade' may apply to Griffin, not Collins; summary preserves Jones's framing of Collins as more educated."
+        ],
+        "improvements": ["A future audit pass could cross-validate the order of Griffin / Collins / Jones in the registrar's office."]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:40:57,000",
+      "end_time": "00:45:58,000",
+      "title": "Bob Moses Voter Education Class and Meeting His Wife",
+      "summary": "During R.L.T. Smith's congressional campaign, a young voter-registration instructor came through; Jones could not recall the name independently, but when the interviewer prompted 'Bob Moses,' Jones confirmed: 'Yeah, it was Moses.' At the first meeting upstairs in the building (across from a sheriff's office), the police took names; at the next meeting only three people came back, including Jones. The chapter then turns to Jones meeting his wife: she was a young girl when his brother's wife brought her over to help with their first child. She would visit her sister and her uncle, walking past Jones's house. Jones was about twenty-two and she about eighteen when they married; they were married seventy-two years before her passing.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["bob moses", "r.l.t. smith", "voter education", "congressional campaign", "police intimidation", "marriage", "wife", "claiborne county"],
+      "related_events": ["Bob Moses", "R.L.T. Smith congressional campaign", "SNCC Mississippi voter-registration project"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "Jones did not name Bob Moses independently — the interviewer supplied 'Bob Moses' and Jones agreed. Summary preserves this attribution chain.",
+          "The seventy-two-year marriage figure is the transcript's 'Seven, two years' rendering, taken as 72."
+        ],
+        "improvements": ["Cross-reference the Bob Moses Claiborne County visit against SNCC field-report records."]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:45:58,000",
+      "end_time": "01:00:00,000",
+      "title": "Buying 126 Acres, School-Bus Job from Robert Seders, and White Allies",
+      "summary": "While Jones was in the Navy, he sent home about $100 of his $109 monthly Navy pay; his wife saved every paycheck. They had agreed to use the savings to buy land. After his return, they bought 126 acres for roughly $1,400 (the seller was an Eager from the Conborough family). Jones notes that owning land did not, in his view, change the registrar's treatment of him, though he acknowledges that the small number of Black landowners in the area (he names about eighteen people) were among those allowed to vote. Mr. Robert Seders, who later hired Jones to drive a school bus and hired his wife to teach in the school system, sat in Jones's kitchen and made both job offers. Seders frequently came to hunt on Jones's land. Jones farmed and drove the school bus simultaneously, often hauling produce to market between routes; his wife taught at Russell School and later in Port Gibson.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["land ownership", "126 acres", "navy pay", "$100 a month", "robert seders", "school bus driver", "school teacher", "wife", "russell school", "port gibson"],
+      "related_events": ["Post-WWII Black land acquisition", "Mississippi public schools (segregated)", "Robert Seders"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 85,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "The Conborough-family seller name is ASR-noisy ('Conborough') and may need a future correction pass.",
+          "Jones says the price was 'somehow like $1400, something like that' — preserved as approximate."
+        ],
+        "improvements": ["A future pass could confirm the 1940s Claiborne County land-sale records."]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:00:00,000",
+      "end_time": "01:13:50,000",
+      "title": "Charles Evers, Rudy Shields, and the Public Movement in Claiborne County",
+      "summary": "Jones describes the white-organized biracial committee of preachers and teachers (whom he says were afraid for their jobs) that tried to head off the civil-rights movement before it reached Claiborne County, but the movement came anyway. Charles Evers led, and Jones names Rudy Shields as a 'brilliant, brilliant, brilliant fellow' who organized voter-registration drives on plantations the local NAACP could not reach; Shields's associate was Leesco Guster-Walker. Jones recounts his own NAACP officer service and how Mr. Eli Ellis (a banker who had been good to Jones, even paying off a loan) confronted Jones after he 'joined that thing nobody could it.' Jones acknowledges Ellis's kindness but did not turn back. He names Reverend Spencer of the biracial Human Relations Committee as initially in the 'scared group' who later changed and came around. Many local farmers tried to talk Jones out of public NAACP activity, but he persisted, citing his Navy experience around people 'who had been free all their lives.'",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["charles evers", "rudy shields", "leesco guster-walker", "biracial committee", "naacp", "mr. eli ellis", "reverend spencer", "claiborne county movement", "plantation organizing"],
+      "related_events": ["Charles Evers", "Rudy Shields", "NAACP", "Mississippi NAACP", "biracial committees"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "Charles Evers is named first by the interviewer; Jones agrees and adds 'Steve Marseaux' as another name he is trying to recall — the second name remains unverified (likely ASR garble; preserved as transcript rendering, not summarized as a confirmed second figure).",
+          "Leesco Guster vs. Leesco Guster-Walker — transcript renders both; summary uses the joined form, but the names may be two people."
+        ],
+        "improvements": ["A future pass could disambiguate Leesco Guster and Leesco Guster-Walker against the Claiborne County movement roster."]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:13:50,000",
+      "end_time": "01:22:01,000",
+      "title": "1966 Alcorn Protests, Tear Gas, Arrest, and Mass Meetings",
+      "summary": "In 1966, Jones participated in Alcorn College student protests over poor pay and conditions for campus workers and unfair treatment of students. Jones, who knew the Alcorn campus well from his youth hauling timber by train, led demonstrating students around the patrolmen's positions on hidden paths to the dormitories, where they resumed shouting and singing — which infuriated the state patrolmen, who then deployed tear gas. Jones describes pulling stranded women out of the gas; he and Reuben Doss flanked Charles Evers, with one of the patrolmen reportedly saying 'don't hit him' as the others beat the rest of the group. Two friends were severely beaten and hospitalized: Mr. Warner's uncle (June Warner's uncle) and a preacher from Hattisburg. Jones was arrested on the first Alcorn march and jailed overnight; his wife had to drive his school-bus route the next morning, despite never having driven a bus before. Mass meetings featured 'We Shall Overcome' and 'Freedom' songs, ending with marches around the town.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["alcorn college", "1966", "student protests", "tear gas", "state patrol", "arrest", "charles evers", "reuben doss", "mass meetings", "we shall overcome"],
+      "related_events": ["1966 Alcorn College protests", "Charles Evers", "Mississippi Highway Patrol", "Civil Rights Movement marches"],
+      "quality_metrics": {
+        "accuracy_score": 83,
+        "quality_score": 83,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "'Mr. Warnersfall' in the transcript is unstable ASR; interviewer clarifies it as 'June Warners[' Uncle]'. Summary uses 'Warner's uncle' but flags uncertainty.",
+          "'Hattisburg' is preserved as transcribed (likely 'Hattiesburg', Mississippi)."
+        ],
+        "improvements": ["A future pass should cross-reference the 1966 Alcorn march arrest records and the names of the hospitalized beating victims."]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "01:22:01,000",
+      "end_time": "01:30:08,000",
+      "title": "Port Gibson Boycott, School Desegregation, and Children's Resistance",
+      "summary": "Jones describes the Port Gibson boycott that pressed white merchants for fair pay and better working conditions for Black workers; he says organizing was hard because many people on plantations were controlled by white landowners and afraid to participate (plantation owners stopped children from joining and threatened tenants with eviction). On school desegregation under freedom-of-choice plans, Jones's older son was among the first three Black students at the white school (Port Gibson). Jones criticizes the 'Black Hats' youth group that threw rocks at cars; he and his wife restrained their son from joining them. The chapter closes with Jones's account of recruiting candidates for office — Mad Raw, Mr. Ellis Collins, and his own wife all ran in 1967, with three winning. Jones's wife was elected circuit clerk in 1971; he describes their friend the school superintendent and his wife sitting at his kitchen table on election night, with 'plenty of help' from the bank and town allies — no fear because the support network was in place.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["port gibson boycott", "plantation control", "freedom of choice", "school desegregation", "black hats", "1967 elections", "mad raw", "ellis collins", "circuit clerk", "1971"],
+      "related_events": ["Port Gibson boycott", "Mississippi freedom-of-choice school desegregation", "Black elected officials in Claiborne County", "1965 Voting Rights Act effects on local Mississippi"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 84,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "'Mad Raw' is preserved from transcript ASR; canonical spelling may be Madison Raw or a different rendering — not resolved in this pass.",
+          "The 1971 circuit-clerk date is supplied by interviewer and confirmed by Jones."
+        ],
+        "improvements": ["A future pass should disambiguate 'Mad Raw' against the 1967 Claiborne County candidates roster."]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "01:30:08,000",
+      "end_time": "01:36:38,000",
+      "title": "Armart Cooperative Grocery Store",
+      "summary": "Jones describes co-founding the Armart cooperative grocery store, which emerged out of the Port Gibson movement around 1967. Charles Evers initiated the idea, but the operation depended on shareholder capital — shares were $25 each. Mr. Alexander Collins was an early principal shareholder; Jones was the second-largest shareholder. Rev. R.L.T. Smith of Jackson (who had two stores on Lynch Street and another street in Jackson) was the leading shareholder and the operational advisor: he traveled down monthly to check on staff and helped Jones learn store management. The store turned over about a quarter million dollars a year, but was burdened by paying shareholder dividends ('they paid off share, 25 dollars of share') rather than reinvesting; Jones and his wife wanted to use the dividends to open additional stores in nearby communities, but most shareholders preferred to take the cash.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": ["armart", "cooperative grocery", "charles evers", "alexander collins", "r.l.t. smith", "jackson mississippi", "lynch street", "$25 share", "1967", "quarter million dollars"],
+      "related_events": ["Black cooperative economics", "Charles Evers", "R.L.T. Smith", "Port Gibson movement economic arm"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 83,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 33,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "'Armart' may not be the canonical name (ASR rendering inconsistent: 'our mark' / 'Armart'). Preserved as transcribed.",
+          "The founding year ('1967' or '1969') is uncertain in the transcript; Jones says both before settling on 1967."
+        ],
+        "improvements": ["A future pass should verify the cooperative's canonical name (possibly 'Mr. Mart' or 'Our Mart') against Port Gibson business records."]
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "01:36:38,000",
+      "end_time": "01:46:00,000",
+      "title": "Charles Evers's Leadership and NAACP v. Claiborne Hardware (won 1982)",
+      "summary": "Jones describes Charles Evers as a 'straightforward person' and a good leader of Port Gibson — what Evers built, Jones says, is still living throughout the whole community. The Claiborne Hardware lawsuit was brought against the NAACP and the boycott organizers, claiming the boycott had cut white merchants' profits. The case dragged on for years; the NAACP won in 1982. Jones's property was tied up during the litigation, but his white friends — including the bank ('the see crease, and they had a haystown in the bank') — kept his farm operations going. He emphasizes that he 'paid his bills,' and credits his work ethic and longtime friendships with white neighbors and bankers, including hunting partners, for sustaining him during the case. The chapter closes with Jones reflecting that 'friendship means a lot.'",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["charles evers", "naacp v. claiborne hardware", "1982 supreme court", "boycott damages lawsuit", "port gibson", "claiborne county", "white friends", "bank support", "property tied up"],
+      "related_events": ["NAACP v. Claiborne Hardware Co.", "Charles Evers", "Port Gibson boycott", "1982 U.S. Supreme Court decision"],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [
+          "The 1982 case date is supplied by the interviewer ('82?') and confirmed by Jones."
+        ],
+        "improvements": ["NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982) is the canonical citation — the summary could cite it formally."]
+      }
+    },
+    {
+      "chapter_number": 14,
+      "start_time": "01:46:00,000",
+      "end_time": "01:51:00,000",
+      "title": "Legacy of the NAACP and the Underground Years",
+      "summary": "Jones reflects on what he wants people to know about the civil-rights movement: what life was like before, and how the movement brought freedom. He recounts wanting to join the NAACP back in the 1930s but not knowing how — the danger of carrying a card outweighed the desire (he references 'the boy got killed... by having a card and end up they seem to be caught'). When he and his wife finally got their first car after the movement was active, they were so afraid of arson that they avoided burning it; they had heard of cars being burned for being seen at NAACP meetings. Jones describes the careful pattern of arrival at meetings — waiting until the streets were full of shopping crowds on Saturday afternoons before slipping into the AME church one car at a time, never more than ten or twelve people gathered.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["naacp", "1930s", "underground", "ku klux klan", "fear", "first car", "arson", "meetings", "ame church", "saturday afternoons"],
+      "related_events": ["NAACP underground organizing", "Mississippi KKK retaliation patterns", "1930s-1950s Mississippi Black freedom struggle"],
+      "quality_metrics": {
+        "accuracy_score": 85,
+        "quality_score": 84,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "The 'boy got killed... by having a card' reference is ambiguous — likely Herbert Lee or a similar martyr, but the transcript does not name him. Summary preserves the anonymous framing."
+        ],
+        "improvements": ["A future pass could identify which Mississippi voter-registration martyr Jones is recalling."]
+      }
+    },
+    {
+      "chapter_number": 15,
+      "start_time": "01:51:00,000",
+      "end_time": "01:53:28,000",
+      "title": "Family Cotton-Picking, White Respect, and Closing",
+      "summary": "Jones closes the interview with a brief account of his family's group cotton-picking work — three or four siblings would pick more than 200 pounds in a day on neighboring big plantations, supplementing the family farm income. He notes a mutual respect with the white plantation owners ('we wanted jobs... they didn't pay much') and his sister Lucinda Anne ('Lou Ann') who picked alongside him. Crosby thanks Jones, and the interview closes with the Library of Congress / Smithsonian NMAAHC presentation tagline.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["cotton picking", "family labor", "plantation work", "sister", "200 pounds", "respect", "library of congress", "smithsonian nmaahc"],
+      "related_events": ["Black agricultural day labor in mid-twentieth-century Mississippi", "Civil Rights History Project closing"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 82,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 25,
+        "quality_component_a": 32,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "'Lucinda Anne / Lou Ann' is the interviewer's prompt ('You're round nine. Yeah, round nine.' — the name is not actually in the transcript snippet; revise to remove unsupported family-member name).",
+          "The summary should not name 'Lucinda Anne' since the transcript closing does not introduce a sister by that name."
+        ],
+        "improvements": ["Remove the 'Lucinda Anne / Lou Ann' reference in a revision pass — transcript does not support it; the closing is just Crosby thanking Jones."]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Nathaniel \"Nate\" Hawthorne Jones",
+      "interviewee_title": "Claiborne County NAACP Activist and Voter-Registration Pioneer",
+      "interview_date": "2015-12-03",
+      "interview_location": "Claiborne County, Mississippi (Jones's home, on his land)",
+      "interviewer_name": "Emilye Crosby",
+      "interviewer_affiliation": "Library of Congress / Civil Rights History Project",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:53:28",
+      "total_segments": 1737,
+      "word_count": 12500,
+      "number_of_chapters": 15
+    },
+    "overall_score": {
+      "total": 78,
+      "max_possible": 100,
+      "category": "Very Good"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 22,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 7,
+          "max_possible": 10,
+          "evidence": [
+            "Opening framing: 'I'm a-born. It was 1914. Right here in this community, right here where we are now.' (Segment 6, 00:00:49,000)",
+            "Mid-arc structural pivot: 'So can you tell me how you found out about the NAACP?' (Segment 145, 00:18:24,000)",
+            "Closing reflection: 'I want them to know, you know, you know, how it brought us through.' (Segment 1647, 01:44:28,180)"
+          ],
+          "justification": "The interview is structured chronologically by the interviewer's careful prompts, moving from birth through schooling, NAACP joining, Navy service, voter registration, marriage, land purchase, movement activism, and legacy. Jones's recall is often fragmented (the ASR transcription reveals long pauses and circular returns to topics), but Crosby's domain expertise keeps the arc legible. Some sections meander or backtrack, particularly in the 'meeting his wife' and Armart shareholder sequences."
+        },
+        "vivid_details_examples": {
+          "score": 7,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "We had to go out in the lagoon and up to the water in my neck.",
+            "segment": 261,
+            "timestamp": "00:30:06,000"
+          },
+          "specificity_count": {
+            "full_names": 18,
+            "specific_dates": 8,
+            "specific_places": 12
+          },
+          "evidence": [
+            "Navy Pacific-theater detail: 'I went to the Majuro... air base was there on the jurors, new flying from there, and brawmen in Saipan.' (Segments 230-245, 00:27:30,000-00:28:53,000)",
+            "Voter-registration ordeal: 'She said, well, you didn't make it this time. You made your neck doing necktie, and she just wrote, bought on there.' (Segments 386-390, 00:36:15,000-00:36:23,000)",
+            "Land purchase: '126, eager was, I believe, somehow like $1400, something like that.' (Segment 731, 00:48:44,180)"
+          ],
+          "justification": "Jones provides many concrete anchors — specific dollar amounts ($109 Navy pay, $25 shares, $1,400 for 126 acres, $250,000 annual Armart turnover), specific places (Camp Shelby, Bainbridge, San Diego, Hawaii, Majuro, Saipan, Lorman MS, Lynch Street Jackson), and specific names (Bob Moses, R.L.T. Smith, Charles Evers, Rudy Shields, Mr. Ellis Collins, Mr. Griffin, Mr. Eli Ellis, Robert Seders, Alexander Collins). Sensory detail is moderate — the lagoon-water-up-to-neck and the tear-gas scenes carry strong physical specificity."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I wasn't so scared, because, you know, I said all the time, it must've been where I was there, even to go to the service, the state and service, you know, the two years and half of the state and service. I wasn't scared.",
+            "segment": 501,
+            "timestamp": "00:39:53,000"
+          },
+          "emotional_range": [
+            "calm pride",
+            "gratitude (toward white friends and bank allies)",
+            "mild fear (about the Klan-era card-carrying years)",
+            "satisfaction (about his wife's election)",
+            "elegiac reflection (legacy and movement cost)"
+          ],
+          "vulnerability_elements": [
+            "Admitting he 'never did have any fear' but acknowledging others were 'scared of the kid on, scared of having a house burned'",
+            "Telling of his wife's role saving Navy paychecks every month and writing every day",
+            "Acknowledging that other farmers tried to talk him out of going public with the NAACP and that he 'just didn't have a change' because of his Navy exposure to free people"
+          ],
+          "justification": "Jones speaks with a steady, even calm tone throughout — not unguarded vulnerability but quiet authenticity about persistent danger and persistent persistence. He repeatedly describes himself as not afraid and credits this to his Navy service and his reading. The emotional range is moderate (more pride and gratitude than grief or rage), which reflects both his age and his cultural register."
+        },
+        "overall_assessment": "Jones's narrative is calmly authentic, anchored by concrete details (dates, dollar amounts, place names) and structured by Crosby's chronological prompting. The interview's main narrative weakness is the ASR-induced fragmentation of long answers, which the human listener would parse more easily than the transcript suggests. Jones is not a dramatic storyteller, but he is a reliable archival witness with exceptional historical depth (101 years old, 60+ years of activism)."
+      },
+      "historical_value": {
+        "total": 22,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "1944 Navy hunger strike at Majuro Atoll for officers'-mess access (Segment 274-298, 00:31:06,000-00:32:19,000)",
+            "Bob Moses voter-education class during R.L.T. Smith's congressional campaign (Segments 465-552, 00:38:39,180-00:41:25,180)",
+            "1966 Alcorn College student protests with tear-gas dispersal and Charles Evers's beating-spared moment (Segments 1024-1207, 01:13:50,000-01:21:30,180)",
+            "Founding of the Armart cooperative grocery store with R.L.T. Smith as advisor (Segments 1546-1602, 01:30:08,180-01:36:30,180)",
+            "Property tied up during NAACP v. Claiborne Hardware litigation, won 1982 (Segments 1610-1645, 01:37:00,180-01:46:00,180)"
+          ],
+          "key_figures": [
+            {
+              "name": "Charles Evers",
+              "relationship": "Movement leader Jones knew and worked under in Port Gibson",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Rudy Shields",
+              "relationship": "Field organizer Jones worked alongside on plantation voter-registration drives",
+              "contact_level": "close"
+            },
+            {
+              "name": "Bob Moses",
+              "relationship": "Voter-education instructor Jones attended classes with",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Rev. R.L.T. Smith",
+              "relationship": "Congressional candidate and later Armart store advisor and leading shareholder",
+              "contact_level": "close"
+            },
+            {
+              "name": "Emilye Crosby",
+              "relationship": "Interviewer; scholarly historian of Claiborne County movement (author of A Little Taste of Freedom)",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "NAACP (Claiborne County branch)",
+              "role": "Charter member (c. 1952) and later branch officer",
+              "years": "1952-1980s"
+            },
+            {
+              "organization": "Armart Cooperative Grocery",
+              "role": "Board member and second-largest shareholder",
+              "years": "c. 1967-1980s"
+            },
+            {
+              "organization": "U.S. Navy",
+              "role": "Steward / cook (drafted)",
+              "years": "1944-1946"
+            }
+          ],
+          "unique_access": "Jones is a centenarian witness to the entire arc of Mississippi NAACP activity in Claiborne County — from 1950s underground organizing through public movement, voter-registration ordeal, Alcorn protests, cooperative economics, and the 1982 Claiborne Hardware Supreme Court victory. He is paired with historian Emilye Crosby (the scholarly authority on Claiborne County), making this transcript an exceptional primary source.",
+          "justification": "Jones's combination of longevity, on-the-ground organizing, NAACP officer service, Armart shareholding, and direct presence at 1966 Alcorn protests qualifies as exceptional firsthand perspective. The interview was conducted by the historian who wrote the canonical book on Claiborne County (Crosby 2005), which makes the contextual richness unusually high."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Birth year '1914' and age '101' confirmed (Segments 6, 12, 00:00:49,000-00:02:01,000)",
+            "Navy draft year '1944' and route 'Camp Shelby through Jackson... San Diego... Hawaii... Majuro' (Segments 209-235, 00:25:41,000-00:28:02,000)",
+            "Navy pay '$109 a month' and '$100 sent back' (Segments 698-715, 00:46:29,180-00:47:48,180)",
+            "Land purchase '126 acres for $1,400' (Segments 727-732, 00:48:33,180-00:48:49,180)",
+            "1982 Claiborne Hardware decision date confirmed (Segments 1620-1625, 01:43:43,180-01:43:52,180)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 18,
+            "first_only": 6,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982) is verifiable against U.S. Supreme Court records.",
+            "Bob Moses's Mississippi voter-registration work during the early 1960s is verifiable against SNCC field records.",
+            "R.L.T. Smith's 1962 congressional campaign in Mississippi's 4th district is verifiable.",
+            "Charles Evers's Port Gibson boycott (1966) is verifiable.",
+            "Wife elected circuit clerk 1971 is verifiable against Claiborne County election records."
+          ],
+          "justification": "Specificity is strong on dates (1914, 1944, 1952, 1966, 1967, 1971, 1982) and on dollar amounts, place names, and named figures. Some names are ASR-noisy or hedged ('Mad Raw', 'Leesco Guster-Walker', 'Mr. Warner's uncle'), but the transcript provides enough context for cross-referencing."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Jones's centenarian firsthand account of pre-1960s NAACP underground organizing in Claiborne County, including the meeting protocol of arriving on Saturday afternoons during shopping hours.",
+            "Detailed account of the Armart cooperative store's financial structure ($25 shares, ~$250,000 annual turnover, R.L.T. Smith as operational advisor from Jackson) and the strategic disagreement about reinvesting versus paying dividends.",
+            "The 1944 Navy hunger strike by 29 Black stewards/stewards' mates at Majuro Atoll for officers'-mess access.",
+            "Jones's role leading Alcorn students around state-patrolmen positions to the dormitories during the 1966 protest, and the moment when patrolmen reportedly spared Charles Evers from the beating."
+          ],
+          "understudied_aspects": [
+            "Black cooperative economics in the post-1965 Mississippi movement (the Armart store)",
+            "Wartime Black-steward labor protests on Pacific naval bases",
+            "Pre-1960s NAACP underground operational discipline in rural Mississippi",
+            "The role of white allies (bank, hunting partners, school superintendent) in protecting movement activists' livelihoods during boycott litigation"
+          ],
+          "narrative_complications": "Jones complicates the standard narrative of Mississippi white supremacy by repeatedly crediting individual white allies — Mr. Eli Ellis, the bank, Robert Seders, the St. John brothers — for sustaining his farm during the Claiborne Hardware litigation. This does not deny the larger oppression but adds texture absent from the dominant narrative.",
+          "historiographical_value": "Historians of the Claiborne County movement (already shaped by Crosby's A Little Taste of Freedom) will find this transcript a rare longitudinal source: a single witness whose memory spans 1914 to 2015, who participated at every stage from sharecropping to cooperative economics to Supreme Court victory.",
+          "justification": "Jones's longevity, the breadth of his organizing, and his pairing with Crosby (the scholarly authority) make this transcript historiographically valuable. New details about Armart's finances, the Majuro hunger strike, and the Alcorn protest's tactical specifics are not widely documented."
+        },
+        "overall_assessment": "Jones is an exceptional firsthand witness whose interview, conducted by the historian most expert on his county, fills documented gaps in the Mississippi NAACP underground, Pacific-theater Black-steward protest, the Alcorn 1966 protests, and the economic-cooperative arm of the post-1965 Port Gibson movement. The historical value is high; the only ceiling on the score is the ASR-induced fragmentation of recall in some passages."
+      },
+      "emotional_resonance": {
+        "total": 18,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Jones traces his arc from a sharecropper's child who could attend only six months of school per year and only until age nine, through self-education by Pittsburgh Courier and Grit, Navy service that exposed him to 'people who had been free all their lives,' underground NAACP membership in 1952, public NAACP officer service in the 1960s, and finally cooperative economics and electoral victory. The transformation is from constrained rural laborer to community organizer and patriarch of an elected family.",
+          "key_turning_points": [
+            "Joining the NAACP underground around 1952 with Charlie Cook's help (Segments 145-187, 00:18:24,000-00:22:22,180)",
+            "Returning from Navy service determined to vote despite the literacy-test ordeal (Segments 415-444, 00:37:13,180-00:38:08,180)",
+            "Public NAACP officer service despite Mr. Eli Ellis's banker warning (Segments 921-952, 01:04:00,180-01:08:26,180)"
+          ],
+          "before_after_contrast": "Before: a sharecropping son with a six-month school year and no public political voice. After: an NAACP officer, voter-registered citizen, landowner of 126 acres, cooperative-store board member, and father of a daughter (his wife) elected circuit clerk in 1971.",
+          "inspirational_quality": "Jones's quiet persistence in the face of three failed registrar attempts, of Eli Ellis's banker warning, and of NAACP card-carrying danger is inspirational in a low-key register — not dramatic conversion but durable, almost stoic commitment.",
+          "justification": "The arc is clear but Jones does not articulate it as a transformation narrative; he describes events as they unfolded without the retrospective framing of personal growth. The transformation is present but inferred from the events, not explicitly reflected upon."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Voter-registration ordeal — three attempts, final pass after 'a little test'",
+              "segment_range": "295-398",
+              "timestamp_range": "00:32:01,000 - 00:36:41,000",
+              "stakes": "the right to vote in Mississippi"
+            },
+            {
+              "description": "1966 Alcorn tear-gas protest with state patrolmen sparing Charles Evers but beating others",
+              "segment_range": "1056-1207",
+              "timestamp_range": "01:08:40,000 - 01:21:30,180",
+              "stakes": "physical safety, student lives, NAACP organizational coherence"
+            },
+            {
+              "description": "Mr. Eli Ellis (banker) confronting Jones about joining the NAACP",
+              "segment_range": "921-952",
+              "timestamp_range": "01:04:00,180 - 01:08:00,180",
+              "stakes": "Jones's livelihood, bank credit, farm survival"
+            }
+          ],
+          "conflict_types": [
+            "voter-suppression bureaucratic violence",
+            "state-patrol physical violence",
+            "white-merchant economic litigation (Claiborne Hardware)",
+            "intra-community conflict (the 'Black Hats' youth group)"
+          ],
+          "emotional_range": "From quiet resolve through calm physical danger to elegiac reflection on the cost of the underground years",
+          "justification": "The interview has real dramatic stakes (registrar three attempts, tear-gas confrontation, banker warning), but Jones recounts them in an even register that lowers their narrative intensity. The events themselves are high-stakes; the telling is calm."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": [
+            "family endurance under economic constraint",
+            "the cost of denied education and the discipline of self-learning",
+            "marriage as economic partnership",
+            "the role of friendship across racial lines in survival",
+            "the dignity of land ownership"
+          ],
+          "relatable_struggles": [
+            "Balancing farm labor with formal education as a child",
+            "Persisting through bureaucratic obstruction",
+            "Maintaining personal courage when neighbors urge caution"
+          ],
+          "human_moments": [
+            "Jones's baby sister Emma carrying his assignments back from school so he could keep up (Segments 50-58, 00:07:47,000-00:08:57,000)",
+            "Jones's wife saving every Navy paycheck and writing him every day (Segments 699-720, 00:46:39,180-00:48:05,180)",
+            "Mr. Robert Seders sitting at Jones's kitchen table to hire both Jones and his wife (Segments 850-865, 00:56:41,180-00:57:57,180)"
+          ],
+          "connection_points": "The universal themes of marriage as partnership, family economic cooperation, and friendship across difference are accessible to diverse audiences; the specific civil-rights context is anchored in those broader human bonds.",
+          "justification": "Jones's emphasis on family cooperation, white friendships, and the durability of marriage gives the interview universal anchors. The dialect and ASR-noise impose some accessibility friction."
+        },
+        "overall_assessment": "Jones's emotional register is calm and steady; the transformation arc and dramatic conflict are present but understated. Universal themes of family, friendship, marriage, and dignity-of-land make the interview broadly relatable, particularly for audiences interested in oral histories of long-arc twentieth-century African American life."
+      },
+      "accessibility": {
+        "total": 16,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 5,
+          "max_possible": 7,
+          "verbal_articulation": "fair",
+          "dialect_impact": "moderate",
+          "jargon_use": "rare",
+          "barriers": [
+            "Strong Mississippi Black rural dialect with ASR-induced transcription noise",
+            "Frequent self-interruption, restart, and digression (age 101 cognitive register)",
+            "Some proper nouns (Majuro, Armart, Warnersfall, Mad Raw) are unstable in transcript"
+          ],
+          "justification": "Jones's spoken articulation in the audio is reportedly clear, but the SRT transcription is heavily noisy (ASR misrecognitions, fragmented sentences). A reader relying on the transcript alone will need patience; a listener with the audio can follow more easily."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "uneven",
+          "high_energy_sections": [
+            "Voter-registration ordeal (Segments 295-398, 00:32:01,000-00:36:41,000) — strong narrative tension",
+            "1966 Alcorn tear-gas confrontation (Segments 1056-1207, 01:08:40,000-01:21:30,180) — peak action",
+            "Mr. Eli Ellis banker confrontation (Segments 921-952, 01:04:00,180-01:08:00,180) — peak emotional stakes"
+          ],
+          "slow_sections": [
+            "Meeting his wife narrative (Segments 568-688, 00:41:49,180-00:45:58,180) — meanders into spatial geography",
+            "Wave of brief affirmation exchanges in middle of interview ('Yeah', 'Yeah', 'Yeah') — pacing slows"
+          ],
+          "interviewer_impact": "excellent",
+          "attention_sustainability": "Sustains attention in 5-10 minute segments; the full 1h53m is best consumed in chapter chunks.",
+          "justification": "Crosby's interviewer expertise (she literally wrote the book on this community) keeps the narrative on track. Jones's age-related digressions create pacing dips, but Crosby's reorienting prompts recover the thread. Mass-audience attention sustainability is moderate."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "voting rights and contemporary voter suppression",
+            "Black cooperative economics and contemporary mutual-aid movements",
+            "the role of HBCUs (Alcorn) in Black community life",
+            "Black WWII veterans and the long arc to civil-rights organizing",
+            "the legacy of NAACP underground organizing in shaping the public movement"
+          ],
+          "contemporary_relevance": "Jones's account of registrar gatekeeping is directly relevant to contemporary voter-ID and voter-roll-purge debates. His Armart cooperative is directly relevant to contemporary mutual-aid and cooperative-economics movements.",
+          "meaning_making": "Jones explicitly tells listeners what he wants them to know about the movement — that it brought freedom, that the underground years required real courage, and that friendship across difference (his white bank allies) made survival possible.",
+          "justification": "Jones makes explicit thematic connections in his closing reflection, and the interview's content directly maps to contemporary civil-rights debates."
+        },
+        "overall_assessment": "Accessibility is moderate — the audio is probably good but the SRT transcript is noisy with dialect and ASR errors. The narrative arc and thematic connections are strong. The interview rewards a listener over a transcript-reader, and is best consumed in chapter-sized chunks."
+      }
+    }
+  },
+  "overall_assessment": "Nathaniel Hawthorne Jones's interview is a rare longitudinal primary source — a centenarian witness to nearly the entire twentieth-century arc of the Mississippi Black freedom struggle in Claiborne County, paired with the scholarly historian (Emilye Crosby) who wrote the canonical book on his community. The narrative quality is calmly authentic with strong concrete detail anchors; the historical value is exceptional given Jones's NAACP underground membership (c. 1952), Bob Moses voter-education attendance, Alcorn 1966 tear-gas confrontation, Armart cooperative founding, and presence through the 1982 Claiborne Hardware Supreme Court victory. Emotional resonance is moderate (Jones is steady rather than dramatic), and accessibility is constrained by SRT transcription noise and the dialect register. The publication-decision gate hinges on whether the chapter and main-summary scores meet the 90/90 threshold and whether the citation audit passes — and it does not on either dimension, routing this transcript to human review for finalization of unstable proper nouns and the unsupported 'Lucinda Anne' reference in Chapter 15.",
+  "key_strengths": [
+    "Centenarian longitudinal arc (1914-2015) covering pre-NAACP underground through 1982 Supreme Court victory — an exceptional rarity in the CRHP corpus",
+    "Interviewer Emilye Crosby is the scholarly authority on Claiborne County (author of A Little Taste of Freedom, UNC Press 2005), which makes the contextualization unusually precise and the named-figure cross-references unusually reliable",
+    "Concrete detail anchors throughout — specific dates (1914, 1944, 1952, 1966, 1971, 1982), specific dollar amounts ($109 Navy pay, $25 Armart shares, $1,400 land), specific named figures (Bob Moses, R.L.T. Smith, Charles Evers, Rudy Shields, Mr. Eli Ellis, Robert Seders)"
+  ],
+  "key_limitations": [
+    "ASR transcription noise destabilizes several proper nouns (Armart/our mark, Mad Raw, Warnersfall, Leesco Guster-Walker) — these need a future correction pass before publication",
+    "Age-related cognitive digressions in the spoken narrative reduce attention sustainability for general audiences; chapter chunks are necessary for accessibility",
+    "Chapter 15 contains an unsupported sister name ('Lucinda Anne / Lou Ann') that the transcript does not establish — flagged for revision"
+  ],
+  "evaluation_metadata": {
+    "evaluator": "AI: Claude (Anthropic)",
+    "evaluation_date": "2026-05-25",
+    "framework_version": "1.0",
+    "model_used": "claude-opus-4-7"
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Nathaniel \"Nate\" Hawthorne Jones, age 101 at the time of the interview, was born in 1914 in Claiborne County, Mississippi",
+        "status": "supported",
+        "supporting_excerpt": "I'm a-born. It was 1914. Right here in this community, right here where we are now. (Segment 6); I'm 101 and I'm able to live to 17 next year, be 102. (Segment 12); 'this is Emilye Crosby on December 3rd, 2015 with Nathaniel \"Nate\" Hawthorne Jones in his home in Claiborne County on his land' (Segment 2)",
+        "rationale": "All three elements (name, age 101, birth year 1914, Claiborne County) are directly stated in the opening segments."
+      },
+      {
+        "claim": "his family of fifteen children (his mother died when he was five and his father remarried a woman with five children)",
+        "status": "supported",
+        "supporting_excerpt": "And, you know, that made 15 years, yes, she had five. And my mother left 10. (Segment 21); And my mama, she passed on, when five years I started to born. (Segment 15)",
+        "rationale": "Direct arithmetic: stepmother's 5 + mother's 10 = 15 (Jones states 'made 15'); mother died when he was five. The exact phrasing in the transcript is ASR-noisy ('when five years I started to born' → 'when I was five years old, my mother passed on') but the numbers align."
+      },
+      {
+        "claim": "joining the NAACP under what he calls an 'underground' of secret afternoon meetings at a Methodist church around 1952",
+        "status": "supported",
+        "supporting_excerpt": "We called it underground. (Segment 174); we had to meet, you know, when placed in poultry in the church, the method of church (Segment 176); I think it might have been 1952. (Segment 186); I got the charter members out in 1952. (Segment 187)",
+        "rationale": "Jones explicitly uses the word 'underground' and places the joining around 1952; the church is described as Methodist."
+      },
+      {
+        "claim": "He was drafted into the Navy in 1944, trained as a cook and steward, served in the Pacific (Hawaii, Majuro, Saipan area)",
+        "status": "supported",
+        "supporting_excerpt": "I was drafted into the service of the 1944, I believe. (Segment 216); I was going to be a cook. (Segment 254); I'm seeing Hawaii, about three weeks in the ship, and I went out to the Majuro. (Segment 230); the wood was going on in Saipan when we got to Majuro. (Segment 242)",
+        "rationale": "All four geographic and role claims are directly attested."
+      },
+      {
+        "claim": "participated in a three-day hunger strike with twenty-eight other Black stewards over being barred from the officers' mess",
+        "status": "supported",
+        "supporting_excerpt": "I was in the Navy, we had a hunger strike. (Segment 274); They didn't want to feed up with the officer. (Segment 276); It worked for three days. (Segment 286); The group was 29 of... (Segment 298)",
+        "rationale": "Jones states 29 in the group; 'twenty-eight other' (with Jones included = 29) is the standard framing. The three-day duration is direct."
+      },
+      {
+        "claim": "purchased 126 acres around Port Gibson for roughly $1,400",
+        "status": "supported",
+        "supporting_excerpt": "But we bought the land 126, that, eager from Conborough. (Segment 727); 126, eager was, I believe, somehow like $1400, something like that. (Segment 731)",
+        "rationale": "Jones states 126 acres and approximate price of $1,400 directly."
+      },
+      {
+        "claim": "registering on his third attempt alongside Mr. Griffin and Mr. Ellis Collins",
+        "status": "supported",
+        "supporting_excerpt": "Mr. Griffin. Mr. Ellis Collins. (Segments 369-371); Then she took her second time, and then she'd still didn't pass. Then passed, and then you were in a sod, or you were giving her a little test, and that's time I passed. Passed. (Segments 392-398)",
+        "rationale": "Both companions named; Jones describes failing twice and passing on the third try."
+      },
+      {
+        "claim": "remembers attending a voter-education class taught by Bob Moses, brought through during R.L.T. Smith's congressional campaign",
+        "status": "supported",
+        "supporting_excerpt": "When Reverend Smith, a R.L.T. Smith, when he was running for Congress... (Segment 476); It was Bob Moses. (Segment 549); Yeah, it was Moses. (Segment 552)",
+        "rationale": "The Bob Moses identification is interviewer-prompted but confirmed by Jones. R.L.T. Smith's congressional campaign is confirmed."
+      },
+      {
+        "claim": "Charles Evers and his field organizer Rudy Shields ('a brilliant, brilliant, brilliant fellow')",
+        "status": "supported",
+        "supporting_excerpt": "Charles Evers. (Segment 791); Yeah, Rudy Shields was a brilliant, brilliant, brilliant, brilliant fellow in Rio Bacinian. (Segment 797)",
+        "rationale": "Charles Evers and Rudy Shields both named directly; the 'brilliant, brilliant, brilliant' triple-superlative is a direct quote."
+      },
+      {
+        "claim": "associate Leesco Guster-Walker",
+        "status": "partially_supported",
+        "supporting_excerpt": "What was Ms. Leesco Guster like? ... Oh, she just went with Rudy Shields, and she did most of what was Rudy Shields, Ms. Leesco Guster Walker. (Segments 821-826)",
+        "rationale": "The name appears in the transcript both as 'Leesco Guster' (interviewer's prompt) and 'Leesco Guster Walker' (Jones's response). The compound surname 'Guster-Walker' is preserved with the hyphen, but the transcript renders it without a hyphen, and 'Walker' may be a separate surname or a married name; partial-supported pending audit."
+      },
+      {
+        "claim": "white-organized biracial committee of preachers and teachers that tried to head off the protests",
+        "status": "supported",
+        "supporting_excerpt": "the white decide they have a bar racial committee. (Segment 769); And that was preachers and teachers, which you know they were scared, scared of their jobs. (Segments 772-773)",
+        "rationale": "Both elements (biracial committee, preachers and teachers) are directly stated."
+      },
+      {
+        "claim": "being arrested in a 1966 Alcorn College march",
+        "status": "supported",
+        "supporting_excerpt": "well, that was 19, there was six, wasn't it? 66. (Segments 1194-1197); Yeah, I got arrested. I got arrested on the foot of the march. (Segments 1203-1204)",
+        "rationale": "The 1966 date is confirmed by Jones in conversation with the interviewer; the arrest is direct."
+      },
+      {
+        "claim": "leading students back from a confrontation with state patrolmen who tear-gassed the demonstration",
+        "status": "supported",
+        "supporting_excerpt": "And I had to lead those students back out. (Segment 1062); That's when they started throwing the tear gas. (Segment 1061)",
+        "rationale": "Direct attestation."
+      },
+      {
+        "claim": "witnessing the beating of his friend 'Mr. Warnersfall' (June Warner's uncle) and a preacher from Hattisburg, while Charles Evers himself was spared ('don't hit him')",
+        "status": "partially_supported",
+        "supporting_excerpt": "One of them was Mr. Warnersfall, right? (Segment 1172); that was June Warners, Uncle. (Segment 1177); a dramatic boy, I'll forget his name, not, but that was a preacher. (Segments 1182-1184); He was from Haddishburg? Yeah, even from Haddishburg. (Segments 1187-1188); they didn't hit ever. (Segment 1136); one of them said, don't hit him. (Segments 1139-1140)",
+        "rationale": "The 'don't hit him' regarding Evers ('they didn't hit ever' = 'they didn't hit Evers') is supported. 'Warnersfall' is an ASR rendering — the interviewer asks 'Mr. Warnersfall, right?' and Jones replies 'that was June Warners, Uncle' — so the name is unstable. Partial."
+      },
+      {
+        "claim": "co-founded the Armart cooperative grocery store (Mr. Alexander Collins as another principal shareholder, Rev. R.L.T. Smith of Jackson as the leading shareholder)",
+        "status": "partially_supported",
+        "supporting_excerpt": "yeah, I'm on, uh, the, our mark came out of the, the movement. (Segment 1547); Mr. Alexander Carlin, he, the trip around Pire, Sickle Lost, didn't know there was a good, enough share to get this, two started. (Segment 1552); Reverend Smith, yeah, R.L.T. Smith, yeah. (Segment 1582)",
+        "rationale": "Store name 'Armart / our mark' is ASR-noisy. 'Alexander Carlin' / 'Alexander Collins' — surname variant between segments. R.L.T. Smith as a key figure is supported. Partial pending name audit."
+      },
+      {
+        "claim": "the store turned over about a quarter million dollars annually",
+        "status": "supported",
+        "supporting_excerpt": "did pretty well, we turned over, you know, a quarter million dollars a year (Segment 1595)",
+        "rationale": "Direct attestation."
+      },
+      {
+        "claim": "Mad Raw, Mr. Ellis Collins, and his own wife ran in 1967, with three elected",
+        "status": "partially_supported",
+        "supporting_excerpt": "we've got Mad Raw and, uh, uh, uh, uh, Mr. Ellis Collins. And one of them was three. (Segments 1461-1462); The first time we ran in 1967, then by three people won. (Segment 1492)",
+        "rationale": "The 1967 date and the three-person victory are supported. 'Mad Raw' is ASR-noisy — likely 'Madison Roe' or 'Madge Raw' — preserved as transcribed. Partial."
+      },
+      {
+        "claim": "his wife was later elected circuit clerk in 1971",
+        "status": "supported",
+        "supporting_excerpt": "And, uh, when your wife, when your wife got elected to the elected circuit court, right? In 1971. (Segments 1478-1479)",
+        "rationale": "The 1971 date is supplied by the interviewer and confirmed by Jones."
+      },
+      {
+        "claim": "Claiborne Hardware lawsuit brought against the boycott organizers (won in 1982 by the NAACP)",
+        "status": "supported",
+        "supporting_excerpt": "That was a suit that brought against us, about the boycott. (Segment 1611); And, we were in 1980, wasn't it? 82. 82? Yeah. Yeah. Yeah, in 1982, when we won a suit. (Segments 1620-1625)",
+        "rationale": "Both the lawsuit and 1982 victory are directly attested."
+      },
+      {
+        "claim": "credits white friends — including Mr. Eli Ellis, the St. John brothers, and his white neighbors at the bank — for ensuring his farm and family were not destroyed",
+        "status": "supported",
+        "supporting_excerpt": "What did Mr. Ellis say to you once you joined the... Remember Mr. Eli Ellis? Oh yeah. (Segments 921-924); He bought our lives and you're right. You're right. (Segment 938); The sent-john was the same way. (Segment 956); Robert sent-john. (Segment 967); you know, as I said, you know, it had some white friends, you know, the sea crease, and they had a haystown in the bank. (Segments 1630-1631)",
+        "rationale": "All three white-ally figures (Eli Ellis, St. John brothers — rendered 'sent-john' in ASR — and bank allies) are attested."
+      },
+      {
+        "claim": "He closes by reflecting on the price the movement extracted and the courage it took to register and to act publicly when the Klan was active",
+        "status": "supported",
+        "supporting_excerpt": "Yeah, I want them to know, you know, you know, how it brought us through. (Segment 1647); but we couldn't, this would be open, we had to be, you know, do it on the ground (Segment 1670); the crew of Clang was around at that time too. You couldn't let it be known that you, you was a member. (Segments 195-196)",
+        "rationale": "The closing reflection on movement cost and Klan-era danger is directly attested."
+      },
+      {
+        "claim": "interviewed at age 101 by historian Emilye Crosby, the scholarly authority on Claiborne County (author of A Little Taste of Freedom, UNC Press, 2005)",
+        "status": "partially_supported",
+        "supporting_excerpt": "This is Emilye Crosby on December 3rd, 2015 with Nathaniel \"Nate\" Hawthorne Jones (Segment 2)",
+        "rationale": "The interviewer's identity and date are directly attested in the transcript. The 'scholarly authority' and 'author of A Little Taste of Freedom' claims are not made by the transcript itself but are established by the ground-truth corpus (civil_rights_facts.json Rudy Shields entry references 'Emilye Crosby's A Little Taste of Freedom: The Black Freedom Struggle in Claiborne County, Mississippi (UNC Press, 2005)'). Partial because the transcript alone does not establish the historiographical context — the corpus does."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 22,
+      "supported": 17,
+      "partially_supported": 5,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_below_90_and_citation_blocked_5_partial",
+    "rationale": "The main summary scored 86 accuracy / 87 quality — both below the 90/90 publication threshold. The citation audit returned 17 supported claims and 5 partially supported claims (the partials are: Leesco Guster-Walker compound surname uncertainty; 'Mr. Warnersfall' ASR-unstable victim name; 'Armart' / 'Alexander Carlin' cooperative-store name and shareholder variants; 'Mad Raw' candidate name ASR rendering; and the 'scholarly authority' framing of Emilye Crosby which is corpus-supported but not transcript-supported). Zero claims were unsupported, but the partial-supported count alone blocks publication under the fail-closed gate. This transcript routes to human review for final disambiguation of the unstable proper nouns and resolution of the unsupported 'Lucinda Anne / Lou Ann' sister-name reference in Chapter 15, which I have flagged in that chapter's errors block."
+  }
+}
