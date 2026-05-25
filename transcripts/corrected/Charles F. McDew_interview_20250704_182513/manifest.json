@@ -562,5 +562,16 @@
   "adversarial_review_flag_count": 3,
   "cross_contamination_items_resolved": 0,
   "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
-  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json"
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json",
+  "loc_healing": {
+    "applied_date": "2026-05-25",
+    "loc_item_url": "https://www.loc.gov/item/2015669120/",
+    "loc_xml_url": null,
+    "loc_match_score": 1.0,
+    "divergence_count": 1006,
+    "healed_count": 23,
+    "preserved_verbatim_count": 224,
+    "unresolved_count": 759,
+    "apply_failure_count": 0
+  }
 }

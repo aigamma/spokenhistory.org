@@ -1,0 +1,83 @@
+  HTTP attempt 1/3 failed: IncompleteRead(7214 bytes read, 508733 more expected); sleeping 1s
+  HTTP attempt 2/3 failed: IncompleteRead(7923 bytes read, 508024 more expected); sleeping 2s
+  HTTP attempt 1/3 failed: HTTP Error 525: ; sleeping 1s
+  HTTP attempt 1/3 failed: IncompleteRead(7214 bytes read, 612638 more expected); sleeping 1s
+Processing 35 no_transcript entries via PDF fallback...
+[1/35] [Betty Garman Robinson]
+  -> ok_pdf, 89 pages, 26616 words
+[2/35] [Carolyn Miller and James Miller]
+  -> ok_pdf, 86 pages, 22762 words
+[3/35] [Charles F. McDew]
+  -> ok_pdf, 27 pages, 9157 words
+[4/35] [Charles McLaurin]
+  -> ok_pdf, 106 pages, 36336 words
+[5/35] [Clarence Magee]
+  -> ok_pdf, 53 pages, 15576 words
+[6/35] [Dion Diamond]
+  -> ok_pdf, 37 pages, 12306 words
+[7/35] [Dorothy Zellner]
+  -> ok_pdf, 84 pages, 26089 words
+[8/35] [Eddie Holloway]
+  -> ok_pdf, 55 pages, 15764 words
+[9/35] [Elbert “Big Man” Howard]
+  -> ok_pdf, 43 pages, 14349 words
+[10/35] [Ellie Dahmer]
+  -> ok_pdf, 59 pages, 15617 words
+[11/35] [Frankye Adams-Johnson]
+  -> ok_pdf, 37 pages, 11906 words
+[12/35] [Freddie Greene]
+  -> ok_pdf, 42 pages, 13067 words
+[13/35] [Gloria Arellanes]
+  -> ok_pdf, 48 pages, 15263 words
+[14/35] [Harold K. Brown]
+  -> ok_pdf, 50 pages, 16765 words
+[15/35] [Jennifer Lawson]
+  -> ok_pdf, 119 pages, 35441 words
+[16/35] [Joseph Howell and Embry Howell]
+  -> ok_pdf, 51 pages, 15900 words
+[17/35] [Juadine Henderson]
+  -> ok_pdf, 80 pages, 23238 words
+[18/35] [Judy Richardson]
+  -> ok_pdf, 116 pages, 36625 words
+[19/35] [Julia Matilda Burns]
+  -> ok_pdf, 40 pages, 10260 words
+[20/35] [Julius W. Becton]
+  -> ok_pdf, 75 pages, 25826 words
+[21/35] [Leesco Guster]
+  -> ok_pdf, 39 pages, 10724 words
+[22/35] [Maria Varela]
+  -> ok_pdf, 49 pages, 16167 words
+[23/35] [Mateo Camarillo]
+  -> ok_pdf, 50 pages, 14419 words
+[24/35] [Maynard E. Moore]
+  -> ok_pdf, 55 pages, 17271 words
+[25/35] [Michael D. McCarty]
+  -> ok_pdf, 43 pages, 14387 words
+[26/35] [Nathaniel Hawthorne Jones]
+  -> ok_pdf, 45 pages, 13176 words
+[27/35] [Norma Mtume]
+  -> ok_pdf, 44 pages, 14228 words
+[28/35] [Peggy Jean Connor]
+  -> ok_pdf, 69 pages, 16989 words
+[29/35] [Raylawni G. Branch and Jeanette Smith]
+  -> ok_pdf, 84 pages, 23070 words
+[30/35] [Reginald Robinson]
+  -> ok_pdf, 78 pages, 25537 words
+[31/35] [Roberta Alexander]
+  -> ok_pdf, 58 pages, 21081 words
+[32/35] [Timothy Jenkins]
+  -> ok_pdf, 55 pages, 17100 words
+[33/35] [Vernon Dahmer, Jr.]
+  -> ok_pdf, 60 pages, 18462 words
+[34/35] [Worth W. Long]
+  -> ok_pdf, 60 pages, 17544 words
+[35/35] [Wyatt Tee Walker]
+  -> ok_pdf, 30 pages, 8827 words
+
+=== PDF fallback summary ===
+  ok_pdf: 35
+  audio_only: 0
+  pdf_fetch_failed: 0
+  pdf_extract_failed: 0
+  item_fetch_failed: 0
+  no_item_url: 0
