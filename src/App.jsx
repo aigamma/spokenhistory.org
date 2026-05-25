@@ -15,6 +15,7 @@ import TopicGlossary from './pages/TopicGlossary'
 import InterviewIndex from './pages/InterviewIndex'
 import About from './pages/About'
 import ReviewQueue from './pages/ReviewQueue'
+import RagExplore from './pages/RagExplore'
 import NotFound from './pages/NotFound'
 
 
@@ -94,6 +95,14 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <About />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      <Route path="/rag-explore" element={
+        <ProtectedRoute>
+          <Layout>
+            <RagExplore />
           </Layout>
         </ProtectedRoute>
       } />
