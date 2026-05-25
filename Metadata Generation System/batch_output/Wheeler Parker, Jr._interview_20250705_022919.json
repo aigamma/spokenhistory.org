@@ -1,0 +1,811 @@
+{
+  "interview_name": "Wheeler Parker, Jr.",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Wheeler Parker, Jr._interview_20250705_022919\\Wheeler Parker, Jr._interview_transcript_20250705_022919.srt",
+  "processed_at": "2026-05-25T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Wheeler Parker Jr.",
+    "interviewee_title": "Minister; Emmett Till's first cousin and surviving eyewitness to the August 1955 Bryant's Grocery incident and abduction",
+    "interview_date": "2011-05-23",
+    "interview_location": "Summit (Argo), Illinois",
+    "interviewer_name": "Joe Mosnier",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "01:07:29"
+  },
+  "main_summary": {
+    "summary": "Rev. Wheeler Parker Jr. recounts his eyewitness experience of the events surrounding the August 1955 abduction and lynching of his cousin Emmett Till. Parker, then sixteen years old, had traveled from Summit (Argo), Illinois, to his grandfather's home outside money, Mississippi, with Till for a summer visit. He describes the rural Delta landscape, his grandparents (whom he called 'Papa' and 'Grandma'), the cotton fields surrounding the family's screened-in porch house, and the playful but apprehensive atmosphere of being a Black teenager 'behind the Iron Curtain,' as relatives equated traveling to Mississippi at the time.\n\nParker provides a firsthand account of the Wednesday evening encounter at Bryant's Grocery and Meat Market: he entered the store first to purchase items, Emmett came in behind him, and then both boys (along with Simeon Wright) exited the store. As Carolyn Bryant Donham came around the front of the store, Emmett whistled at her. Parker recalls the group rushing to the car in panic, fleeing down a gravel road, and seeing dust behind them as another vehicle approached, though that car passed without incident. Three nights later, around 2:30 AM on Sunday, two armed men entered the house looking for 'a fat boy from Chicago.' Parker, terrified, prayed in his bed; the men passed by him and his sleeping cousin Maurice, walked past his cousin Curtis, and took Emmett from the room where he slept with Simeon Wright.\n\nParker describes the aftermath: a 24-hour vigil before being put on a train to Memphis and then Chicago; arriving at Mamie Till-Mobley's home at 64th and St. Lawrence where the family was in a 'grieving state' before Till's body had been found; attending the funeral but feeling emotionally numb because he believed he would 'see him again' in the afterlife; and a promise made to God during the terror of that night which he says took him six years to keep, leading to his religious conversion at age 22. He describes the case's long dormancy and its 1985 revival through NBC reporter Rich Samuels' documentary (sparked by Mamie Till-Mobley's appearance supporting another grieving Chicago family after the killing of basketball player Ben Wilson Jr.), Keith Beauchamp's later filmmaking, the 2005 federal reopening of the case, his work with activist Alvin Sykes lobbying for the Till Bill (signed by President George W. Bush, allocating $11 million per year for ten years to investigate civil rights cold cases dating back to 1970), and meetings with US Attorney General Eric Holder.\n\nParker reflects on the 2011 inaugural Mississippi Freedom Trail marker ceremony at Bryant's Grocery, the highway designation in Mississippi (which he notes has been torn down 'a lot of times'), and the related Tallahatchie County markers at the courthouse in Sumner, the riverway, the funeral home, and the barn. He shares his pedagogical philosophy when speaking to schoolchildren and college students, arguing that 'you can't legislate the heart,' that white allies' participation was essential to Movement progress, and that closure for him would be knowing what Carolyn Bryant Donham knows about what happened to Emmett.",
+    "key_themes": [
+      "Eyewitness testimony to the Emmett Till abduction",
+      "Religious faith and survival under terror",
+      "Family memory and Mississippi Delta landscape",
+      "Mid-twentieth-century Black geographical apprehension ('behind the Iron Curtain')",
+      "Post-2000 federal civil rights cold-case reopening",
+      "Memorialization through markers, highways, and the Mississippi Freedom Trail",
+      "Intergenerational transmission of civil rights history to youth"
+    ],
+    "historical_significance": "This interview is one of the most important first-person primary sources for the August 1955 Emmett Till abduction, given by the closest surviving eyewitness. Parker corrects the popular telescoping of the store incident (he establishes that he and Emmett were outside the store on the porch, not inside, when the whistle occurred) and provides a detailed account of the 2:30 AM abduction from the inside of the house. His testimony also documents the 1985 reopening of public attention to the case, the lobbying coalition (including the under-credited Alvin Sykes) that produced the 2007 Till Bill, and the 2005 federal reinvestigation, making this interview essential evidence for both the original lynching and the contemporary memorial and legal-redress era.",
+    "quality_metrics": {
+      "accuracy_score": 84,
+      "quality_score": 87,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 25,
+      "accuracy_component_c": 24,
+      "quality_component_a": 35,
+      "quality_component_b": 19,
+      "quality_component_c": 19,
+      "quality_component_d": 14,
+      "errors": [
+        "Summary states the abduction occurred 'around 2:30 AM on Sunday'; the transcript at segment 485 places it 'about two, two-thirty' but Parker's earlier framing (segments 350-372) describes Saturday evening activities, returning home around midnight ('about 12 o'clock'), and then later, around 2:30, the men arriving. The day-of-week labeling 'Sunday' is a downstream inference from the early morning timing after Saturday night, and the transcript does not directly state 'Sunday' for the abduction hour. Rated partially supported.",
+        "Summary describes Till as a 'fat boy from Chicago' being the men's stated target (correct - segments 492, 504) but does not flag that the Wednesday encounter was the day Parker explicitly identified as Wednesday (segment 244) while the abduction occurred several days later. The summary collapses 'three nights later' which is supported by transcript narrative arc (Wednesday store -> Thursday/Friday calm -> Saturday late night/early Sunday abduction) but the precise day labeling depends on inference.",
+        "Summary describes Ben Wilson Jr. as a 'basketball player' killed in Chicago (segment 721). The transcript uses the corrected bracketed name; the death context is briefly described as 'a young basketball player, had been killed.' Specific date of Wilson's death (Nov 1984) is not in the transcript and is not asserted in the summary.",
+        "Summary frames the Till Bill as 'signed by President George W. Bush, allocating $11 million per year for ten years.' Transcript segment 758 says '(George W.) Bush signed a TL bill that allowed $11 million a year for 10 years to be put toward pursuing cases dating back from 1970.' Faithful but the bracketed name is a corrected attribution; year of signing (2008) is not asserted."
+      ],
+      "improvements": [
+        "Add explicit calendar dates (Aug 24, 1955 for store incident; Aug 28, 1955 for abduction) only with a hedge noting the transcript itself names only the year and the day-of-week pattern.",
+        "Quote Parker's 'I went into the store first... Emmett came in... Then the both of them came out' more directly to make the correction of the popular store-incident misconception explicit in the summary text.",
+        "Acknowledge in the summary that Parker explicitly declines to speculate on what motivated Till to whistle, and that Parker emphasizes the family never discussed it again after the abduction.",
+        "Clarify that Parker explicitly says he did not personally meet Joyce (referring to a courageous Mississippi participant whose surname is not specified in the transcript)."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:02:30,000",
+      "title": "Introduction and the 2011 Mississippi Freedom Trail Marker",
+      "summary": "Joe Mosnier opens the interview on Monday, May 23, 2011, in Summit (Argo), Illinois, with Rev. Wheeler Parker Jr., for the Civil Rights History Project (a joint Library of Congress and Smithsonian National Museum of African American History and Culture initiative). Mosnier identifies himself as from the Southern Oral History Program at UNC Chapel Hill and introduces videographer John Bishop. Parker describes recently attending the inaugural unveiling of a Mississippi Freedom Trail historical marker at Bryant's Grocery and Meat Market - the first of a planned series of about 25 Emmett Till markers. He calls the ceremony 'very moving' and 'well put together,' and notes that the marker is located near his childhood home and school. He returns to Mississippi roughly twice a year, saying he 'loves to go to Mississippi' because it is 'home.'",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["mississippi freedom trail", "bryant's grocery", "emmett till marker", "summit argo illinois", "library of congress", "smithsonian nmaahc", "2011 ceremony"],
+      "related_events": ["Mississippi Freedom Trail inaugural marker unveiling (2011)", "Civil Rights History Project (LoC/NMAAHC)", "Bryant's Grocery and Meat Market memorialization"],
+      "quality_metrics": {
+        "accuracy_score": 95,
+        "quality_score": 92,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could quote Parker's '25 markers' phrasing directly to indicate it is the speaker's recollection of the project scale rather than an asserted historical fact."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:02:30,000",
+      "end_time": "00:08:30,000",
+      "title": "Childhood Memories of the Mississippi Delta",
+      "summary": "Parker, who moved with his family to Summit (Argo), Illinois, outside Chicago in 1947, describes his memories of the rural Mississippi Delta around money. He estimates the town of money had about 50 people. He describes the 'good rich Delta soil' ideal for growing crops, picking cotton with his cotton sack and earning around $8 a week as a teenager, and swimming with friends. He paints a portrait of his grandfather ('Papa') as a 'no-nonsense' man of dignity, gentle and helpful, who said what he meant; his grandmother as 'easy-going' (whose sons reportedly asked when she would whip them); and his mother, a schoolteacher, as a 'lovable lady.' He recounts the family's shotgun house next door to his grandmother's, with cotton fields running right up to the windows, the nearby sawmill, a fruit orchard, the one-room schoolhouse with one teacher, and the cemetery beside the church. He notes that school did not start until November after the cotton was in, meaning a graduate of the eighth grade might be eighteen.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["money mississippi", "delta", "cotton picking", "grandfather", "grandmother", "shotgun house", "one-room schoolhouse", "summit argo illinois", "1947"],
+      "related_events": ["Mississippi Delta sharecropper and rural Black family life (mid-twentieth century)", "Great Migration (Parker family relocation to Argo, IL, 1947)"],
+      "quality_metrics": {
+        "accuracy_score": 93,
+        "quality_score": 90,
+        "accuracy_component_a": 38,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Population estimate of 50 people is explicitly hedged by Parker ('I think in money it may have been 50 people, 50 people they're about'); could carry that hedge.",
+          "The phrase 'Papa' is Parker's nickname for his grandfather; the transcript shows him correcting himself between 'grandfather' and 'Papa.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:08:30,000",
+      "end_time": "00:12:30,000",
+      "title": "The Train South: Apprehension 'Behind the Iron Curtain'",
+      "summary": "Parker recalls boarding the train to head back to Mississippi in August 1955. He says he was 'born' aware of the stories of what could happen to Black travelers in the South: 'You're going down behind Iron Curtain. They equated it with going to, at that time, Russia was called Iron Curtain.' He notes that elders told stories of 'things that had happened to people' and that 'you had no protection under the law.' Despite this apprehension, the trip was full of fun with friends and family. Parker recalls the first few days were filled with cotton picking, swimming (joking that they were told 'snakes wouldn't bite in the water'), watermelon, jokes, and riding around with his uncle Joe who was Parker's age. The visit was supposed to last 'a few weeks' - 'definitely longer than we had' stayed. By Wednesday, three days after their Sunday arrival, the store incident occurred.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["1955 train trip", "mississippi apprehension", "iron curtain metaphor", "cotton picking", "uncle joe", "summer visit", "no legal protection"],
+      "related_events": ["Mid-1950s Black travel through the Jim Crow South", "Family stories of racial violence as oral protective tradition"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Parker references his uncle Joe with the phrase 'my uncle Jai, he's my age'; the SRT spells 'Jai' which corresponds to the relative's name. Use the SRT spelling rather than 'Joe.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:12:30,000",
+      "end_time": "00:23:00,000",
+      "title": "The Wednesday Evening at Bryant's Grocery",
+      "summary": "Parker provides the central eyewitness account of the Wednesday evening of August 1955 at Bryant's Grocery and Meat Market. He explicitly establishes the sequence: 'I decided to go into the store and purchase some things... while I was in the store, Emmett came in.' Parker says he 'felt this apprehension' because he knew how Emmett behaved and 'knew where we were.' Parker left Emmett in the store and Simeon Wright came in behind Emmett. 'Then the both of them came out of the store. And after they came out and facing the store, Carolyn Bryant Donham came out. She's walking to facing the store to the right of the store. And Emmett whistled.' Parker says the group 'could not believe' what had happened: 'this is like something out of the sky blue... what possessed him.' When someone said Carolyn Bryant Donham was going to get a gun, the group rushed to the car. Parker's uncle drove away down the gravel road; they saw dust behind them, jumped out into a cotton field, and the pursuing car passed by without stopping. Parker recalls a girl saying, 'I know those people. And this is not over. You're going to hear more about this.' Parker contextualizes Emmett as a playful prankster - recounting how Emmett once stopped strangers in Chicago to say 'I got my two big cousins here from Argo, Illinois, and dare anybody to beat him up.' Parker stresses he never saw Emmett 'angry, bit, or anybody.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["bryant's grocery", "carolyn bryant donham", "emmett till whistle", "simeon wright", "wheeler parker", "wednesday august 1955", "money mississippi", "cotton field hide"],
+      "related_events": ["The Lynching of Emmett Till", "Bryant's Grocery store incident", "Carolyn Bryant Donham testimony controversy"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 92,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 28,
+        "quality_component_a": 37,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The chapter could quote Parker's exact words ('Then the both of them came out of the store') to anchor the corrective sequence even more visibly in the summary.",
+          "The Chicago anecdote ('two big cousins from Argo') is well-captured but could note Parker's emphasis that 'what he thought was funny, wasn't funny all the time.'"
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:23:00,000",
+      "end_time": "00:32:00,000",
+      "title": "The Abduction: 2:30 AM in the Grandfather's House",
+      "summary": "Parker recounts Saturday in detail: a trip to Greenwood for shopping (Saturday was 'when everybody goes to the big town'), a stop at a 'jook joint' called 'Four Fifths,' and the drive home around midnight, during which his uncle Maurice accidentally hit a dog, causing Emmett (who was 'very fond of animals') to cry. The family went to bed in their large house ('a former landlord house'). Around 2:30 AM Parker heard men talking. He listened, alarmed, as they said: 'we're looking for a fat boy from Chicago.' Parker, who had grown up afraid of guns, prayed: 'God, if you just let me get out of this, I'm going to do it.' The men came into his bedroom with a pistol and a flashlight - he describes 'pure terror, just like if you could just disappear.' They walked past him; past his cousin Maurice (asleep in the same bed); past his cousin Curtis (asleep in the next room); and went to the third room where they roused Emmett, who was sleeping with Simeon Wright. The men told Simeon to go back to sleep. Parker overheard the men angrily wanting Emmett to stop putting on his socks and shoes. Parker speculates 'in hindsight, I think they had been drinking. You have to almost get drunk to do something like what they did.' After the men left with Emmett, Parker's grandmother and grandfather left to seek help. Parker, terrified the men might return for him, put his shoes on and went out to hide in the woods until daylight. He did not sleep for over 24 hours. Eventually his uncle put him on a Memphis-bound train to Chicago. Parker notes that his cousin Curtis later told them: 'If Curtis had woke up, it probably, a lot of us probably got killed because he was going to try to do something or say something.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["abduction", "2:30 am", "maurice wright", "simeon wright", "curtis", "saturday greenwood trip", "four fifths jook joint", "praying in bed", "fat boy from chicago"],
+      "related_events": ["The Lynching of Emmett Till", "August 1955 abduction from Mose Wright home", "Religious response to mortal terror"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 92,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 37,
+        "quality_component_b": 23,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "Day-of-week labeling: transcript clearly says 'I guess about two, two-thirty in the morning' (segment 485) after describing Saturday evening through midnight return. The summary characterizes this as the early morning following Saturday night, which is faithful to transcript narrative arc, but historians date the abduction to early Sunday Aug 28, 1955; the transcript itself does not specify the day Sunday."
+        ],
+        "improvements": [
+          "Note Parker's explicit phrase 'pure terror' as the framing for the bedroom sequence.",
+          "The detail of Parker's uncle bringing him to the train station 'a couple of times' before he was able to board is a vivid detail worth preserving."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:32:00,000",
+      "end_time": "00:37:30,000",
+      "title": "Return to Chicago and the Funeral",
+      "summary": "Parker recounts his train trip back to Chicago. In the Memphis station, frightened all over again by the segregated washroom signs, he 'thought I was never going to get where I could just relax.' He arrived in Chicago and was driven directly to Mamie Till-Mobley's house at 64th and St. Lawrence, where the family was sitting around 'in a grieving state' because they did not yet know what had happened to Emmett. Ms. Till told Parker to go hold his mother. Parker says people were already searching 'bridges and normal places that people have found,' suggesting the family suspected the worst. Back in Argo, Parker describes seeing a man in town - a jeweler named JP - who looked 'just like' one of the jurors at the eventual Mississippi trial: 'My heart was just buzzing like a stop beat.' Parker recounts attending Emmett's funeral but feeling emotionally numb because he believed he would 'see him again' in the afterlife. He recalls the 'solemn atmosphere' of the funeral and 'the air was filled with just unbelief and how could it happen to a kid.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["chicago return", "memphis train station", "segregated washroom", "mamie till-mobley", "64th and st lawrence", "emmett till funeral", "jp jeweler juror", "afterlife belief"],
+      "related_events": ["Mamie Till-Mobley's open-casket funeral", "Mississippi trial of J.W. Milam and Roy Bryant (referenced via jurors)", "Mid-1950s Memphis segregation"],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The summary references 'one of the jurors' from the Mississippi trial; Parker says 'I realized later that it was the jurors,' which is preserved.",
+          "Parker explicitly does not name the trial; the summary should not invent a date."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:37:30,000",
+      "end_time": "00:43:30,000",
+      "title": "Religious Conversion and Family Aftermath",
+      "summary": "Parker reflects on how the experience changed his life. He says he was 16 at the time of the abduction and that it took him six years - until age 22 - to fulfill his promise to God made during the night of terror. He describes his religious conversion: 'after I changed, I said, this is the best life I got... so I got peace and I got happiness... this is my 50 year change and I have still have no regrets.' He notes that very few people in their twenties convert in any denomination because young people 'trying to get some gusto.' Parker also discusses his family's life after the event: his grandfather, who 'had never planned to leave the south,' adjusted to Argo and started farming nearby; his grandmother was happy because all her sisters and brothers were already in Chicago. Parker describes his uncle who lived to 105, married 50 years to a woman fifteen years younger, who himself had known his slave grandfather (born 1903, knew a relative who lived to 1924) - a chain of living memory back to slavery.",
+      "main_topic_category": "Religion & Faith",
+      "keywords": ["religious conversion", "promise to god", "age 22 conversion", "fifty years change", "grandfather adjustment", "argo illinois farming", "100-year-old uncle", "slavery memory chain"],
+      "related_events": ["Parker family adjustment to Great Migration from Mississippi to Illinois"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 87,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "The 'born 1903' figure refers to Parker's uncle, who knew his own slave-born grandfather; the chronology is faithful to the transcript but could be made clearer.",
+          "The 50-year mark in 'this is my 50 year change' is significant given the 2011 interview date; this dates Parker's conversion to roughly 1961, consistent with 'age 22' at conversion (born ~1939)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:43:30,000",
+      "end_time": "00:48:30,000",
+      "title": "The 1985 Revival of Public Attention and Dr. King in Chicago",
+      "summary": "Parker recounts how the Till case largely lay dormant until 1985, when NBC reporter Rich Samuels came out and made a documentary. The trigger was Mamie Till-Mobley appearing publicly to support the family of Ben Wilson Jr., a young Chicago basketball player who had been killed; Samuels met Mamie there and decided to do a story on the Till case. Parker says 'up until that time, to me, it was like there was no interest in that kind of story. It's like he got what he deserved.' Parker recalls a school speaking engagement where he was challenged about why the Till case was being talked about; he responded that even though Emmett did something he shouldn't have, 'he didn't deserve to be killed.' Parker also reflects on Dr. Martin Luther King Jr.'s 1966 visit to Chicago. Parker had just started a business after serving in the Army (1962-1965); he remembers 'the hate' and 'the animosity,' people saying King 'needed to go back south.' He observes: 'the law make you behave with the law can't legislate the heart.'",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": ["1985 rich samuels nbc", "mamie till-mobley", "ben wilson jr basketball", "till case revival", "martin luther king jr 1966 chicago", "army 1962-1965", "cant legislate the heart"],
+      "related_events": ["Martin Luther King Jr.'s 1966 Chicago Freedom Movement", "1985 NBC Rich Samuels Till documentary", "Ben Wilson Jr. killing (1984, Chicago)"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": [
+          "Parker's military service dates are stated explicitly as '1962, got out in 65'; the summary preserves these.",
+          "The summary could quote 'can't legislate the heart' as one of Parker's distinctive recurring formulations."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:48:30,000",
+      "end_time": "00:57:30,000",
+      "title": "The 2005 Federal Reopening, Alvin Sykes, and the Till Bill",
+      "summary": "Parker discusses the 2005 federal reopening of the Till case, prompted in part by filmmaker Keith Beauchamp's work. Parker emphasizes the central but under-credited role of activist Alvin Sykes, who came to advocate specifically for reopening the case after handling a similar case in Kansas. Parker says he accompanied Sykes to a meeting with US Attorney General Eric Holder, who described Sykes as 'a legend in his own time.' Parker describes Sykes as 'unpretentious' and credits him with lobbying through both passage of the Till Bill (signed by President George W. Bush, allocating $11 million per year for ten years to investigate civil rights cold cases dating back to 1970) and the appropriations to fund it. Parker shares his measured emotional response to the case being reopened: when he learned the new prosecutor would be 'a black woman with a child,' he allowed himself some hope, while remaining a realist about 'the attitude, atmosphere of the country.' The grand jury did not return an indictment of Carolyn Bryant Donham. Parker emphasizes: 'I'm not interested in anyone getting the death penalty. I'm not interested in anyone going to jail. I'm interested in knowing the facts what happened... Carolyn Bryant Donham knows what happened. That would do me a whole lot of good.'",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["2005 case reopening", "keith beauchamp filmmaker", "alvin sykes", "eric holder", "us justice department", "till bill", "george w bush 2008", "carolyn bryant donham", "grand jury no indictment"],
+      "related_events": ["2005 federal reopening of Emmett Till case", "Emmett Till Unsolved Civil Rights Crime Act (Till Bill, 2008)", "Body exhumation (2005)", "Eric Holder DOJ meeting"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 90,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The Till Bill's full name (Emmett Till Unsolved Civil Rights Crime Act) and date of signing (Oct 2008) are widely documented; the transcript names neither directly. Summary should not assert the year if Parker did not.",
+          "Parker's quote 'Carolyn Bryant Donham knows what happened' is critical; the summary captures it.",
+          "The summary describes the prosecutor as 'a black woman with a child'; Parker actually says 'they gave it to a black woman, I'll leave you with this child' - the phrasing 'with a child' is Parker's idiosyncratic phrasing meaning the prosecutor was a Black woman, likely conflated; the transcript wording is ambiguous and should be preserved as-is rather than smoothed."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:57:30,000",
+      "end_time": "01:03:30,000",
+      "title": "Mississippi Freedom Trail and the Politics of Memorialization",
+      "summary": "Parker reflects on the 2011 Mississippi Freedom Trail marker ceremony and broader memorialization efforts. He notes that a stretch of Mississippi highway was designated in Till's memory (with Senator Jordan involved in presenting the legislation), but observes that the sign 'used to be tall' and 'has been torn down a lot of times.' He says 'I'm not surprised. Like I say, can't legislate the heart. Some people die heart. They're die hearts.' Parker describes the cluster of Tallahatchie County markers: at the spot where Till's body was recovered from the river, by the funeral home that received the body, at the courthouse in Sumner, Mississippi (currently being restored to original condition), and at the barn where the killings took place. He pays his own travel expenses to attend memorial events because he wants 'the history to get out there.' At a recent ceremony, students from Dominican High School attended, including his friend Mike Smolow, who served as a white pallbearer at Mamie Till-Mobley's funeral. Parker emphasizes: 'I don't let nobody try to make me a hero or something great because all I did was survive. Scared as I could be. No hero. I'm just survived to tell the story.'",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["mississippi freedom trail", "highway designation", "senator jordan", "tallahatchie county markers", "sumner mississippi courthouse", "river marker", "funeral home marker", "barn marker", "dominican high school", "mike smolow pallbearer", "no hero survivor"],
+      "related_events": ["Mississippi Freedom Trail markers", "Tallahatchie County Emmett Till memorial complex", "Sumner courthouse restoration", "Mamie Till-Mobley funeral pallbearers"],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 89,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "The transcript says 'I think Senator Jordan had something to do with presenting that to the body.' This is a hedged attribution Parker offers; summary preserves the hedge implicitly but should explicitly carry Parker's 'I think.'",
+          "Mike Smolow is named in the transcript; preserve exactly that spelling rather than smoothing."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "01:03:30,000",
+      "end_time": "01:07:29,000",
+      "title": "Speaking to Young People and Reflections on Change",
+      "summary": "Parker concludes by discussing his work speaking to schoolchildren and college students about the Till case. He observes that 'the older you get the less receptive you are to it' - that eighth graders are more open to the message than college students. He recalls a recent talk at the University of Missouri in Columbia. He uses these talks to emphasize that 'the progress and the success that black people made, there was always somebody right there to fight, start the cause' - including Abraham Lincoln (whom Parker defends as having done what 'for the time was very noble and courageous'), President Kennedy, and President Johnson who 'signed the Civil Rights Bill.' Parker emphasizes that the Freedom Rides became successful only when whites joined: 'the white guy said, I knew I was going to be more targeted than the blacks because they're going to hate me for coming in with them.' Parker advises young students - both Black and white - to 'do what's right' and to recognize they will not be liked for it. He cites King's principle of nonviolence: 'King was so bitter against violence because you're going to be slaughtered.' Parker observes that the Till case 'just laid dormant' for decades before 'changes are just coming about' through younger generations: 'the old people they ain't trying to change. They ain't trying to change. For the most part.' Mosnier and Parker exchange thanks and the interview closes.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["speaking to youth", "university of missouri", "abraham lincoln", "president kennedy", "lyndon johnson civil rights bill", "freedom riders white allies", "mlk nonviolence", "intergenerational change"],
+      "related_events": ["Freedom Rides (1961)", "Civil Rights Act of 1964", "Speaking to younger generations about Till"],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 13,
+        "errors": [
+          "Parker says President Johnson 'signed the Civil Rights Bill,' which is accurate (Civil Rights Act of 1964); summary preserves the speaker's general phrasing without inventing the year.",
+          "Parker briefly references 'Abraham Lincoln got a lot of criticism when he tried to handle the rest of the situation. Once he sent 500 African Americans to Haiti.' This is a debated/disputed historical claim about Lincoln's colonization plans. Parker is presenting his own historical framing, which the summary attributes to him rather than asserting as fact."
+        ],
+        "improvements": [
+          "The Lincoln colonization claim could be flagged as Parker's framing rather than uncritically transmitted in the summary."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Wheeler Parker Jr.",
+      "interviewee_title": "Minister; Emmett Till's first cousin and surviving eyewitness to the August 1955 Bryant's Grocery incident and abduction",
+      "interview_date": "2011-05-23",
+      "interview_location": "Summit (Argo), Illinois",
+      "interviewer_name": "Joe Mosnier",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "01:07:29",
+      "total_segments": 850,
+      "word_count": 9500,
+      "number_of_chapters": 11
+    },
+    "overall_score": {
+      "total": 89,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 26,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 9,
+          "max_possible": 10,
+          "evidence": [
+            "Parker opens with the 2011 marker ceremony and works back chronologically to 1955 and forward through 1985 revival, 2005 reopening, and 2011 memorialization. (Segment 15, 00:00:55,000)",
+            "The interview's central narrative arc - store incident, abduction, funeral, lifelong impact - moves with clear chronology. (Segment 244, 00:12:58,000 through Segment 670, 00:37:40,000)",
+            "Coherent return to memorial-era themes at the end with explicit framing about telling young people the story. (Segment 830, 01:03:48,000)"
+          ],
+          "justification": "The interview follows a clear arc: present-day memorialization, childhood context, the central trauma, religious conversion and aftermath, decades of dormancy and revival, contemporary legal redress, and forward-looking reflection on intergenerational change. Mosnier's questions facilitate smooth transitions, and Parker rarely backtracks or loses thread."
+        },
+        "vivid_details_examples": {
+          "score": 9,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "It was pure terror. It's just like if you could just disappear and just go away. It's like a nightmare. And things are not ending fast enough. You know, when I'm waiting, I'm going to be shot. And I come in and close my eyes. And they walk past me.",
+            "segment": 546,
+            "timestamp": "00:27:36,000"
+          },
+          "specificity_count": {
+            "full_names": 18,
+            "specific_dates": 8,
+            "specific_places": 14
+          },
+          "evidence": [
+            "Detailed description of the cotton field hide: 'cotton bowls that were not fresh... they were beating our legs and car went right by.' (Segment 305, 00:15:45,000)",
+            "Sensory description of the early-morning intruders: 'this guy had his pistol and one hand and a flashlight.' (Segment 545, 00:27:33,000)",
+            "Memphis washroom segregation moment: 'I'm going to a washroom and everybody said, you can't go inside.' (Segment 642, 00:33:11,000)"
+          ],
+          "justification": "Parker provides exceptional sensory detail - the dust of the gravel road, the flashlight in the bedroom, the cotton bolls beating their legs, the scream of the sawmill, the silence of the Mississippi night so dark 'you cannot see your hand.' Reconstructed dialogue ('we're looking for a fat boy from Chicago') and concrete locations (Bryant's Grocery, 64th and St. Lawrence, Sumner courthouse) anchor the entire interview."
+        },
+        "emotional_authenticity": {
+          "score": 8,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "So the first thing I come back to me is my religious upbringing. I start praying. I literally start praying. You know, just say, God, if you just let me get out of this, I'm going to do it.",
+            "segment": 509,
+            "timestamp": "00:25:15,000"
+          },
+          "emotional_range": ["pure terror", "boyish joy", "grief", "religious conviction", "frustration with legal limits", "humility", "exhaustion with public attention"],
+          "vulnerability_elements": [
+            "Admits he was 'shaking like a leaf on the tree' (Segment 536, 00:27:04,000)",
+            "Discusses fear of guns from childhood (Segment 538, 00:27:14,000)",
+            "Insists 'I don't let nobody try to make me a hero... I'm just survived to tell the story.' (Segment 802, 00:58:20,000)",
+            "Says he went to the funeral and 'showed no remorse, no sadness whatsoever' because he believed in afterlife reunion - a willingness to share emotionally complex truth (Segment 664, 00:36:50,000)"
+          ],
+          "justification": "Parker's emotional honesty is striking - he refuses heroic framing, admits to pure terror, and shares the unusual emotional detachment he felt at the funeral. His vulnerability about prayer in the moment of death-fear is profound. He maintains some narrative distance ('I got to always be crying now') but generally accesses the emotional core of the events."
+        },
+        "overall_assessment": "Parker delivers a remarkably coherent and emotionally vivid first-person account. His narrative is structured chronologically and thematically, with vivid sensory detail rooted in specific places and reconstructed dialogue. Emotional authenticity is high - he willingly shares fear, prayer, and detachment - though he occasionally retreats to formulaic phrases ('can't legislate the heart') that recur across his public speaking. The interview sustains narrative momentum throughout."
+      },
+      "historical_value": {
+        "total": 24,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 10,
+          "max_possible": 10,
+          "major_events": [
+            "August 1955 Bryant's Grocery incident - eyewitness, was inside the store and outside when whistle occurred (Segment 257-267, 00:13:37,000)",
+            "August 1955 abduction from his grandfather's house - earwitness from adjacent bedroom (Segment 485-578, 00:23:00,000)",
+            "1985 Rich Samuels NBC documentary revival (Segment 720-722, 00:45:19,000)",
+            "2005 federal reopening of case (Segment 749-779, 00:48:49,000)",
+            "Meeting with US Attorney General Eric Holder on Till Bill (Segment 756, 00:50:00,000)",
+            "2011 inaugural Mississippi Freedom Trail marker ceremony (Segment 19-22, 00:01:14,000)"
+          ],
+          "key_figures": [
+            {"name": "Emmett Till", "relationship": "first cousin, with him at store and abduction", "contact_level": "close"},
+            {"name": "Mamie Till-Mobley", "relationship": "Till's mother, family member", "contact_level": "moderate"},
+            {"name": "Simeon Wright", "relationship": "cousin, fellow eyewitness", "contact_level": "close"},
+            {"name": "Curtis Parker", "relationship": "cousin", "contact_level": "close"},
+            {"name": "Maurice Wright", "relationship": "cousin", "contact_level": "close"},
+            {"name": "Alvin Sykes", "relationship": "collaborator on Till Bill advocacy", "contact_level": "moderate"},
+            {"name": "Eric Holder", "relationship": "met with as Till family advocate", "contact_level": "distant"},
+            {"name": "Keith Beauchamp", "relationship": "filmmaker who reopened public attention", "contact_level": "moderate"},
+            {"name": "Carolyn Bryant Donham", "relationship": "the woman in the store; sought immunity from FBI", "contact_level": "moderate"}
+          ],
+          "organizational_involvement": [
+            {"organization": "US Army", "role": "service member", "years": "1962-1965"},
+            {"organization": "Till family advocacy coalition (with Alvin Sykes)", "role": "advocate for Till Bill", "years": "circa 2005-2008"}
+          ],
+          "unique_access": "Parker is the closest surviving eyewitness to the Emmett Till abduction - he was inside the grandfather's house when the killers arrived, walked past his bed, and removed Till from the adjoining bedroom. His account corrects the popular telescoping of the store incident: he and Till exited the store before the whistle, on the porch outside. His later involvement in the 2005-2008 federal reopening and Till Bill lobbying gives him direct access to the entire historical arc of the case.",
+          "justification": "Parker offers exceptional insider perspective: he is the primary surviving eyewitness to one of the most consequential events in twentieth-century American civil rights history. His proximity to events, his role in 2005-2008 federal advocacy, and his canonical position as Till's first cousin make this interview essential historical evidence. The Wheeler Parker Jr. entry in the project's ground-truth corpus explicitly names this interview as the most important given his 2024 death."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Specific time of abduction: 'about two, two-thirty in the morning' (Segment 485, 00:23:02,000)",
+            "Specific Chicago address: '64th and St. Lawrence' for Mamie Till-Mobley's home (Segment 651, 00:34:33,000)",
+            "Specific Till Bill financial detail: '$11 million a year for 10 years' (Segment 758, 00:50:12,000)",
+            "Specific year of NBC documentary: 1985 with Rich Samuels (Segment 720, 00:45:19,000)",
+            "Specific military service dates: 'I went into the Army in like 62, got out in 65' (Segment 739, 00:47:50,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 18,
+            "first_only": 6,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "Wheeler Parker was 16 in August 1955",
+            "Parker moved from Mississippi to Summit (Argo), Illinois in 1947",
+            "Parker served in the US Army 1962-1965",
+            "Rich Samuels of NBC produced a 1985 Till documentary",
+            "Eric Holder served as US Attorney General when Parker met with him",
+            "George W. Bush signed the Till Bill ($11M/yr for 10 yrs investigating cold cases back to 1970)"
+          ],
+          "justification": "Parker provides verifiable dates, full names of cousins and historical figures, specific dollar amounts for federal appropriations, and a specific Chicago address. Some figures are referenced by first name only (Curtis, Maurice, Alvin) but their full names are recoverable from corpus and context. The interviewer's bracketed corrections (visible in the corrected SRT) confirm canonical identifications throughout."
+        },
+        "fills_historical_gaps": {
+          "score": 7,
+          "max_possible": 7,
+          "new_information": [
+            "Explicit correction of the popular store-incident sequence: Parker establishes he was in the store first, then Emmett, then both exited, and the whistle occurred outside as Carolyn Bryant Donham came around the front of the store (Segment 256-267)",
+            "Critical role of Alvin Sykes in lobbying for the Till Bill, often under-credited in the public narrative (Segment 752-760)",
+            "Parker's specific religious response to the night of terror, including the six-year journey to fulfill his promise to God (Segment 686-692)",
+            "Description of the Tallahatchie County marker complex (river, funeral home, courthouse, barn) and the highway designation issue (Segment 815-822)",
+            "Parker's emotional state at the funeral (numb because of afterlife belief) (Segment 664-666)"
+          ],
+          "understudied_aspects": [
+            "Day-to-day experience of being a Black teenager from Chicago visiting the Jim Crow Delta",
+            "Internal family dynamics in the immediate aftermath of the abduction",
+            "Parker's adult role in the 2005-2008 federal reinvestigation and Till Bill advocacy"
+          ],
+          "narrative_complications": "Parker's account complicates popular narratives in three ways: (1) it corrects the in-store sequence often misreported in Till histories; (2) it credits Alvin Sykes prominently as a Till Bill advocate often overshadowed by family members in public-facing accounts; (3) it preserves Parker's psychological complexity at the funeral, which resists the standard arc of overwhelming grief.",
+          "historiographical_value": "Historians of the Till case would treat this as a primary source comparable to Mamie Till-Mobley's own memoir, Simeon Wright's account, and the trial transcripts. Parker's specificity about the store sequence, the bedroom encounter, and the Sykes-Holder lobbying coalition gives historians multiple new anchoring claims to cite. His 2024 death makes this 2011 interview a definitive late-life record.",
+          "justification": "This interview fills several historical gaps: corrections to the store incident narrative, the under-credited Sykes story, and the survivor's interior religious response. It is among the most consequential single-witness primary sources for any twentieth-century American civil rights event."
+        },
+        "overall_assessment": "Historical value is exceptional. Parker is the canonical primary eyewitness to one of the most consequential events of the twentieth century. The interview provides both granular specificity (addresses, dates, dollar amounts, full names) and structural corrections to popular narratives (the store-incident sequence, the Sykes lobbying role). The 2024 death of the narrator elevates this 2011 interview to the status of definitive late-life testimony."
+      },
+      "emotional_resonance": {
+        "total": 21,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 9,
+          "max_possible": 10,
+          "transformation_arc": "Parker describes a clear transformation arc: from a 16-year-old who took a promise to God during the terror of the abduction, to a 22-year-old who fulfilled that promise through religious conversion, to a 50-year minister who has come to view his survival not as heroism but as duty to 'tell the story.'",
+          "key_turning_points": [
+            "Praying during the night of terror, age 16, August 1955 (Segment 509-513, 00:25:15,000)",
+            "Religious conversion at age 22, circa 1961 (Segment 688-692, 00:41:14,000)",
+            "1985 Rich Samuels documentary and reentry into public discussion (Segment 720-722, 00:45:19,000)",
+            "2005-2008 Till Bill advocacy alongside Alvin Sykes (Segment 752-760, 00:49:24,000)"
+          ],
+          "before_after_contrast": "Before the abduction: a 16-year-old having 'fun with nothing,' picking cotton, telling jokes, terrified of guns. After: a survivor with a 50-year religious commitment, public speaker on civil rights history, federal advocate for cold-case legislation. From the boy who 'showed no remorse, no sadness' at the funeral to the man who says 'I see the video and then I'm crying.'",
+          "inspirational_quality": "Highly inspirational. Parker's refusal of hero status, his message that 'all I did was survive,' and his pedagogical emphasis on coalition (Black and white together) and intergenerational change offer young people a model of accountable witnessing without self-aggrandizement.",
+          "justification": "The transformation arc is clear, hard-won, and reflectively articulated. Parker explicitly tracks the journey from the teenage promise to its decades-later fulfillment and to his current role as historical witness. The 'I got peace and I got happiness' framing in his religious conversion is moving."
+        },
+        "tension_conflict_triumph": {
+          "score": 7,
+          "max_possible": 8,
+          "peak_moments": [
+            {"description": "The abduction night - men with pistol and flashlight enter Parker's bedroom and walk past him", "segment_range": "528-553", "timestamp_range": "00:26:32,000 - 00:27:58,000", "stakes": "Parker's life and the lives of all the cousins"},
+            {"description": "The cotton-field hide as the pursuing car passes by", "segment_range": "302-308", "timestamp_range": "00:15:37,000 - 00:15:50,000", "stakes": "immediate physical safety"},
+            {"description": "The 24-hour vigil and train journey through segregated Memphis", "segment_range": "638-644", "timestamp_range": "00:32:48,000 - 00:33:34,000", "stakes": "escape from the geography of the killing"},
+            {"description": "Arrival at Mamie Till-Mobley's house where family does not yet know Emmett's fate", "segment_range": "650-654", "timestamp_range": "00:34:22,000 - 00:35:17,000", "stakes": "the moment of family confrontation with unknown loss"}
+          ],
+          "conflict_types": ["mortal physical danger", "racialized state-tolerated violence", "intergenerational silence", "moral conflict over legal redress", "tension between public memorialization and the limits of legal change"],
+          "emotional_range": "From childlike summer joy to pure terror to religious conviction to elder reflective acceptance",
+          "justification": "Multiple peak moments with palpable stakes - the cotton-field hide, the bedroom encounter, the train journey home, the funeral. The dramatic arc sustains tension throughout the central portion of the interview. The post-1955 sections (federal reopening, lobbying, memorialization) have less acute drama but maintain narrative tension through Parker's measured engagement with the limits of justice."
+        },
+        "relatable_experiences": {
+          "score": 5,
+          "max_possible": 7,
+          "universal_themes": ["family loyalty", "religious faith in the face of death", "grief", "the failure of institutions", "intergenerational transmission of trauma and memory", "the slow work of memorialization"],
+          "relatable_struggles": ["being a teenager in an unfamiliar place", "fear during a violent intrusion", "the survivor's responsibility to bear witness", "frustration with limits of legal redress", "exhaustion of public speaking about personal trauma"],
+          "human_moments": [
+            "The dog being accidentally hit by his uncle's car, causing Emmett to cry (Segment 367-371, 00:18:31,000)",
+            "Emmett's playful Chicago anecdote about 'my two big cousins from Argo' (Segment 397-403, 00:19:57,000)",
+            "Parker mistaking a Mississippi jeweler for one of the trial jurors and his 'heart buzzing like a stop beat' (Segment 656-658, 00:35:29,000)"
+          ],
+          "connection_points": "Diverse audiences can relate to the family-summer-visit setting, the religious response to mortal terror, and the survivor's struggle to articulate a story decades later. The very specific historical context limits some universalizability, but the human core (childhood, family, prayer, fear, grief, witness) is broadly accessible.",
+          "justification": "The interview balances historically specific content with broadly human moments - prayer in fear, a teenager's playful pranks, a survivor's complicated grief. The Till case is so well-known that many audiences will recognize the contours, but Parker's specific texture (the dog, the jeweler, the porch whistle sequence) creates new relational entry points."
+        },
+        "overall_assessment": "Emotional resonance is high. The transformation arc is clear, the peak moments dramatically rendered, and the human details (family relationships, religious conversion, public-speaking exhaustion) widely accessible. Parker's refusal of hero status and his measured emotional honesty give the interview unusual moral weight."
+      },
+      "accessibility": {
+        "total": 18,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "slight",
+          "jargon_use": "rare",
+          "barriers": ["occasional colloquial constructions that may require contextual inference", "some references to figures (Alvin Sykes, Rich Samuels) that assume some background"],
+          "justification": "Parker speaks accessibly with a Mid-South-to-Midwest cadence. He uses Black Southern vernacular constructions sparingly and tends to self-explain references (e.g., 'Iron Curtain' = 'Russia was called Iron Curtain'). The transcript has some ASR artifacts but the corrected version supplies bracketed clarifications for canonical names."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "The abduction sequence (Segment 485-578, 00:23:00,000 - 00:29:02,000) - sustained dramatic momentum",
+            "The store incident (Segment 256-310, 00:13:34,000 - 00:15:54,000) - tight narrative arc"
+          ],
+          "slow_sections": [
+            "Some digressions into the broader Mississippi tourist-traffic observation (Segment 672-673, 00:38:04,000 - 00:38:29,000) - tangential",
+            "The Lincoln-and-Haiti reference in the closing teaching section is a bit of a tangent (Segment 835, 00:55:00,000)"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "The interview sustains attention for its full 67-minute duration. The chronological-then-thematic structure helps; Mosnier's questions effectively scaffold transitions; Parker's vivid sensory detail in the central section pulls listeners forward.",
+          "justification": "Pacing is generally strong. The central abduction-and-funeral arc has high momentum; the bracketing sections (childhood and memorialization) are slower but well-anchored. Mosnier facilitates with minimal interruption and uses occasional silence productively."
+        },
+        "broader_themes_connection": {
+          "score": 6,
+          "max_possible": 6,
+          "themes_connected": [
+            "Cold-case justice and federal civil rights legislation",
+            "The limits of law in changing 'the heart'",
+            "Memorialization and historical memory",
+            "Intergenerational coalition-building (Black-white, old-young)",
+            "Religious faith as response to state-tolerated violence",
+            "The Great Migration's family-network reach"
+          ],
+          "contemporary_relevance": "Parker explicitly connects 1955 to 2011: 'There's a revival in this country on racism. I mean we regress fast.' He also draws clear lines from the Till case to ongoing memorialization debates and to youth education work. The federal cold-case reopening framework (Till Bill) directly bridges 1955 and the twenty-first century.",
+          "meaning_making": "Parker is highly effective at meaning-making for audiences. He repeatedly frames specific events within broader civil rights history, explicitly teaches lessons to students, and articulates why he keeps telling the story - 'so the history gets out there.' The 'can't legislate the heart' refrain functions as a thematic touchstone.",
+          "justification": "The interview makes exceptionally strong thematic connections - between personal trauma and federal legislation, between 1955 and 2011, between adult survivors and contemporary students. Parker's pedagogical instincts (he is, after all, a minister) make him a natural at framing historical meaning."
+        },
+        "overall_assessment": "Accessibility is high. Parker's language is clear, his pacing varies appropriately, and his thematic-connection work is exceptionally effective. Some minor barriers (vernacular constructions, slight ASR artifacts) are easily overcome with context."
+      }
+    },
+    "overall_assessment": "This is an exceptional civil rights oral history interview - among the most historically consequential single-witness primary sources in the corpus. Parker provides authoritative first-person testimony on the Emmett Till abduction, the most well-documented racial-violence event of the mid-twentieth century, while also offering granular detail on the 2005-2008 federal reopening and Till Bill advocacy. The narrative arc is coherent, the sensory detail vivid, the emotional access deep, and the thematic framing pedagogically sophisticated. The interview's accessibility is high for diverse audiences, including educators, students, civil rights historians, legal scholars, and general readers. The narrator's 2024 death gives this 2011 record the status of definitive late-life testimony.",
+    "key_strengths": [
+      "Authoritative primary-source eyewitness account of the August 1955 Emmett Till abduction, with explicit correction of the popular store-incident sequence (Segment 256-267)",
+      "Detailed firsthand account of the 2005-2008 federal reopening and Till Bill advocacy, including the under-credited role of Alvin Sykes (Segment 752-760)",
+      "Exceptional emotional authenticity - Parker refuses heroic framing while sharing deep vulnerability about prayer during mortal terror (Segment 509, 802)"
+    ],
+    "key_limitations": [
+      "Parker occasionally uses formulaic refrains ('can't legislate the heart,' 'evil men and seducers will wax worse and worse') that feel imported from public-speaking practice and create some distance from raw memory",
+      "Some peripheral figures (Joyce in segment 788, the 'man on the truck' in segment 777) are not named with full clarity, limiting their citability"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic) — phase3c subagent",
+      "evaluation_date": "2026-05-25",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Interview took place on Monday, May 23, 2011, in Summit (Argo), Illinois.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 2 and 6-7: 'Monday, May 23.' 'Now this is Monday, May 23, 2011. We're in Summit (Argo), Illinois, with Rev. Wheeler Parker Jr.'",
+        "rationale": "Date and location stated explicitly in opening segments."
+      },
+      {
+        "claim": "Interview conducted by Joe Mosnier of the Southern Oral History Program at UNC Chapel Hill, for the Library of Congress and Smithsonian NMAAHC.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 8-9: '...for the National Museum of African American History and Culture and Library of Congress and their joint project entitled The Civil Rights History Project. My name is Joe Mosnier of the Southern of the World History Program at University of North Carolina at Chapel Hill.'",
+        "rationale": "Speaker self-identifies with affiliation. Note: SRT contains 'Southern of the World History Program' (likely ASR artifact for 'Southern Oral History Program'); summary uses canonical program name. Treated as supported via standard transcription error tolerance."
+      },
+      {
+        "claim": "Wheeler Parker Jr. moved from Mississippi to Summit (Argo), Illinois in 1947.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 33-34: 'You moved to Chicago, I think in 47.' 'Move to Summit (Argo) right outside Chicago, in 1947.'",
+        "rationale": "Parker confirms the 1947 date directly."
+      },
+      {
+        "claim": "Parker was sixteen years old at the time of the August 1955 Till events.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 526, 49: 'I was 16, I was not ready to die.' '16 years, teenagers did.'",
+        "rationale": "Parker repeatedly states his age."
+      },
+      {
+        "claim": "Parker entered Bryant's Grocery first; Emmett came in behind him; both boys (with Simeon Wright) exited the store before the whistle.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 256-265: 'I decided to go into the store and purchase some things... while I was in the store, Emmett came in... So I left Emmett in the store, and Simeon Wright came in right behind him. Then the both of them came out of the store. And after they came out and facing the store, Carolyn Bryant Donham came out.'",
+        "rationale": "Parker explicitly establishes the sequence and the porch location of the whistle."
+      },
+      {
+        "claim": "Emmett Till whistled at Carolyn Bryant Donham as she came around the front of the store.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 264-266: 'Carolyn Bryant Donham came out. She's walking to facing the store to the right of the store. And Emmett whistled.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "The abduction occurred approximately 2:30 AM in Parker's grandfather's house.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 485, 530: 'I guess about two, two-thirty in the morning my grandfather's house.' Reference to grandfather's house in multiple segments.",
+        "rationale": "Time and location stated directly."
+      },
+      {
+        "claim": "The armed men stated they were 'looking for a fat boy from Chicago.'",
+        "status": "supported",
+        "supporting_excerpt": "Segments 492-493, 504: 'He said, we're looking for a fat boy from Chicago.' 'I said, man, I'm getting rid of you.'",
+        "rationale": "Direct quote from Parker."
+      },
+      {
+        "claim": "Parker prayed during the abduction night, promising God he would change his life if spared.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 509-512: 'So the first thing I come back to me is my religious upbringing. I start praying. I literally start praying. You know, just say, God, if you just let me get out of this, I'm going to do it.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "Parker took six years (until age 22) to fulfill his promise to God through religious conversion.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 688: 'So these 22, those 16, so six years it took me that long to keep my promise.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "Parker traveled by train through Memphis on his return to Chicago, encountering segregated washroom signs.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 641-643: 'Got the Memphis on the way to Chicago. And I'm going to a washroom and everybody said, you can't go inside. You can't go in there. I'm scared all over again... They got the (washroom) signs, called it.'",
+        "rationale": "Direct first-person account; SRT bracketed correction confirms 'washroom' was the canonical sign label."
+      },
+      {
+        "claim": "Mamie Till-Mobley lived at 64th and St. Lawrence in Chicago.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 650-651: 'I arrived at the train station... I know that they rushed me off to Mamie Till-Mobley's house. We were on 64th and St. Lawrence.'",
+        "rationale": "Direct address statement."
+      },
+      {
+        "claim": "Parker attended Emmett Till's funeral.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 662: 'I went to the funeral. I said, this is not in me. I said, it's like it never happened.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "1985 NBC reporter Rich Samuels produced a documentary on the Till case.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 720-722: 'In 1985, Rich Samuels from NBC came out and they did a documentary.'",
+        "rationale": "Direct statement of year and producer."
+      },
+      {
+        "claim": "The Samuels documentary was sparked by Mamie Till-Mobley appearing in support of the family of a young Chicago basketball player named Ben Wilson Jr. who had been killed.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 721-722: 'As he met Miss Teel [Mamie Till-Mobley], as a young basketball player, had been killed, Benjamin \"Ben\" Wilson Jr. He was a Chicago and she was there for support and he talked with her and as a result, he came and did the story on in material.'",
+        "rationale": "Direct statement. SRT brackets show 'Ben Wilson Jr.' as the corrected canonical form."
+      },
+      {
+        "claim": "Parker served in the US Army from approximately 1962 to 1965.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 739: 'I went into the Army in like 62, got out in 65.'",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Parker recalls Dr. Martin Luther King Jr.'s 1966 Chicago visit and the public hostility around it.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 738-742: 'Could you have any special feelings or perspectives on Reverend [Martin Luther] King's visit to Chicago in [19]66?' Parker responds with memories of 'the hate' and 'the animosity' and people saying King 'needed to go back south.'",
+        "rationale": "Direct first-person account in response to interviewer question. SRT brackets confirm canonical name and year."
+      },
+      {
+        "claim": "Filmmaker Keith Beauchamp's work contributed to renewed attention on the case.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 747-748: 'You worked with Keith Beauchamp, when he made the film. And as momentum grew out of that effort and the federal, the (US) Justice Department and the Mississippi authorities joined me reopen the case.'",
+        "rationale": "Interviewer references Beauchamp's film and Parker engages with the follow-up, implicitly confirming."
+      },
+      {
+        "claim": "Alvin Sykes played a central but under-credited role in lobbying for what became the Till Bill.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 752-755: 'You got, which is not mentioned much, Alvin Sykes. You don't hear much about Alvin. Alvin played a pivotal role... Alvin Sykes was a one that really, (Alvin Sykes) came here with specific one reason to get it open because he had done a case out there in Kansas.'",
+        "rationale": "Direct attribution by Parker."
+      },
+      {
+        "claim": "Parker accompanied Sykes to a meeting with US Attorney General Eric Holder, who called Sykes a 'legend in his own time.'",
+        "status": "supported",
+        "supporting_excerpt": "Segment 756: 'And I went with Alvin and we met with Eric Holder. And Eric Holder felt it referred to him as a legend in his own time.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "The Till Bill was signed by President George W. Bush, allocating $11 million per year for ten years to investigate civil rights cold cases dating back to 1970.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 758: '(George W.) Bush signed a TL bill that allowed $11 million a year for 10 years to be put toward pursuing cases dating back from 1970.'",
+        "rationale": "Direct statement. SRT bracketed correction confirms canonical form for 'George W.' (Bush)."
+      },
+      {
+        "claim": "The 2005 federal reopening of the case did not result in indictment of Carolyn Bryant Donham.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 779: 'And she said they cannot find enough information to indict Carolyn Bryant Donham.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "Parker says his preferred form of closure is knowing what Carolyn Bryant Donham knows about what happened to Emmett.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 780-781: 'Still not bringing the closure that I want. I want to know what happened. Carolyn Bryant Donham knows what happened. That's what I would love.'",
+        "rationale": "Direct first-person statement."
+      },
+      {
+        "claim": "Parker attended the inaugural Mississippi Freedom Trail marker ceremony at Bryant's Grocery in 2011.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 19-22: 'We were at the Freedom Trail. They're going to do like 25 markers and the Emmett Till markers at the Bryant's Grocery and Meat Market number one.'",
+        "rationale": "Direct first-person account in interview occurring in 2011."
+      },
+      {
+        "claim": "A stretch of Mississippi highway was designated in Till's memory, with Senator Jordan involved.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Segment 813: 'I think Senator Jordan had something to do with presenting that to the body.'",
+        "rationale": "Parker explicitly hedges with 'I think.' The summary preserves Parker's attribution but should carry the hedge more visibly. Marked partially_supported because the specific role and full Senator name are not confirmed by the transcript itself."
+      },
+      {
+        "claim": "Tallahatchie County has markers at the river recovery spot, the funeral home, the Sumner courthouse, and the barn where the killings occurred.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 817-820: 'They have a marker at the spot at the riverways. The bodies will go out. They have a marker by the funeral home that had its body. They have a marker at the courthouse in Sumner, Mississippi and they're trying to restore that to its original order. They have a marker by the barn. It's a place where they actually tore it in it.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "Parker's friend Mike Smolow, associated with Dominican High School, served as a white pallbearer at Mamie Till-Mobley's funeral.",
+        "status": "supported",
+        "supporting_excerpt": "Segment 800: 'There was some kids from Dominican High School. Good friend of mine, Mike Smolow. They used a par bearer at Miss Teel's Film. He was on the white par bear.'",
+        "rationale": "Direct first-person account. 'Film' is an ASR rendering of 'funeral'; preserved as supported via standard transcription tolerance."
+      },
+      {
+        "claim": "Parker explicitly refuses heroic framing: 'all I did was survive.'",
+        "status": "supported",
+        "supporting_excerpt": "Segments 802-803: 'I don't let nobody try to make me a hero or something great because all I did was survive. Scared as I could be. No hero. I'm just survived to tell the story.'",
+        "rationale": "Direct first-person quote."
+      },
+      {
+        "claim": "Parker observes that 'the older you get the less receptive you are' to the Till story when speaking to schools.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 832-833: 'They're much more receptive to it than the older. The older you get the less receptive you are to it from my experience of talking to people. I was just at the University of Missouri in Columbia, Missouri, about three weeks ago. And in the college level, you found less receptiveness than you were at eighth grade.'",
+        "rationale": "Direct first-person observation."
+      },
+      {
+        "claim": "Parker recalls his uncle (whom he visited regularly after the abduction) lived to 105.",
+        "status": "supported",
+        "supporting_excerpt": "Segments 696-697: 'I planted uncles like uncle. The one they took me to his house. Just that about two years ago, he's 105.'",
+        "rationale": "Direct first-person account."
+      },
+      {
+        "claim": "Parker emphasizes 'you can't legislate the heart' as a recurring theme.",
+        "status": "supported",
+        "supporting_excerpt": "Multiple segments including 743-745, 768, 815, 825: 'The law make you behave with the law can't legislate the heart.' 'Like I say, can't legislate the heart.'",
+        "rationale": "Direct first-person refrain throughout."
+      },
+      {
+        "claim": "Parker says President Johnson 'signed the Civil Rights Bill.'",
+        "status": "supported",
+        "supporting_excerpt": "Segment 836: 'President Kennedy, President Johnson, signed the Civil Rights Bill.'",
+        "rationale": "Direct quote. The summary preserves Parker's phrasing without inventing a year."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 32,
+      "supported": 31,
+      "partially_supported": 1,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_below_90_citation_blocked_1_partial",
+    "rationale": "The main_summary scores Accuracy 84 / Quality 87 (both below the 90/90 publication threshold), and the citation audit identified 1 partially_supported claim (the Senator Jordan attribution for the highway designation, which Parker himself explicitly hedges with 'I think'). Per the fail-closed gate, this routes to human review. The summary is substantively accurate and historically valuable - one of the most consequential primary-source eyewitness accounts in the corpus - but contains modest day-of-week inferences (the abduction described as occurring early on Sunday Aug 28 is a narrative-arc inference, not directly stated as 'Sunday' in the transcript) and a few hedged attributions that warrant human-editorial review before institutional publication. A reviewer's likely path is light editing to (a) more explicitly preserve Parker's 'I think' hedges, (b) replace inferred day-of-week labels with phrases like 'in the early morning hours' or 'three nights later,' and (c) tighten the day-by-day chronology around the Wednesday store / Saturday Greenwood / pre-dawn abduction sequence. After such revision, this interview would likely clear the 90/90 threshold."
+  }
+}
