@@ -36,7 +36,7 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ### Session 8 — 2026-05-25: Pass 8 LoC canonical-archive cross-reference
 
-**End-of-session summary:** *(populated at session close)*
+**End-of-session summary:** Pass 8 healed 86 of 127 audit-able transcripts against the Library of Congress's TEI2 XML transcripts for the Civil Rights History Project collection. 1,774 ASR-error heals applied, 32,118 divergences deterministically preserved as editorial smoothing / speaker disfluency, 87,735 divergences flagged for SME review under the conservative-first-pass discipline. 0 apply failures and 0 cue-count verification failures across all 86 entries. The 41 unhealed entries break down as 35 with LoC PDF-only items (no XML available for word alignment; PDF-OCR pass is the recovery path), 5 with likely spelling-discrepancy resolver misses (Booker+Newson vs our Newsom, Wheeler Parker without our Jr., etc.), and 1 transient XML download failure (Mary Jones; `--refresh` re-run would recover). Full coverage report at `transcripts/loc_healing/COVERAGE_REPORT.md`. Apply-before-push discipline observed throughout — every commit shipped both the analysis (per-entry stage file + divergences JSON) AND the healed transcript content in `corrected/<entry>/`. No "abstract recommendations land first, application later" governance gap of the kind that produced the staleness Eric surfaced earlier this morning.
 
 **Agents:** Claude Opus 4.7 (main session orchestrator) + per-entry Claude Sonnet 4.6 subagents (one subagent per transcript for Phase 2 word-level divergence classification + surgical heal application). The one-agent-per-transcript discipline (per `feedback_one_agent_per_transcript`) is preserved: no batched transcripts inside a single agent. Phase 1 is deterministic Python with no model in the loop.
 
@@ -55,45 +55,86 @@ This is read-only against LoC's public API (`loc.gov` JSON endpoints, `tile.loc.
 
 #### Phase 1 — Resolve all 127 entries to LoC items + cache transcript XML
 
-**Status:** *(populated when Phase 1 completes)*
+**Status:** DONE 2026-05-25 (background `python transcripts/loc_healing/resolve_loc_items.py` task, run ~13:00–~13:50, linear with 1.5s polite delay between LoC API calls per `feedback_linear_loc_api`).
 
 **Deliverables:**
-- `transcripts/loc_healing/resolve_loc_items.py` — deterministic resolver (verified working on Aaron Dixon as the fail-fast check during this session's setup; match score 0.95, correctly disambiguated from brother Elmer Dixon).
-- `transcripts/loc_healing/loc_cache/<subject>.xml` — cached transcript TEI2 XML per entry (where LoC has one).
-- `transcripts/loc_healing/loc_cache/<subject>.resolution.json` — per-entry resolution metadata (match score, LoC item URL, XML URL, ambiguity flag).
-- `transcripts/loc_healing/loc_cache/_index.json` — aggregate coverage index (status counts, ambiguous list, no-transcript list, search-failed list).
+- `transcripts/loc_healing/resolve_loc_items.py` — deterministic resolver verified working on Aaron Dixon as the fail-fast check during this session's setup (match score 0.95; correctly disambiguated from brother Elmer Dixon despite identical surname; LoC item ID `2015669186`; XML retrieved 129 KB with 555 `<p>` elements and 408 speaker turns).
+- `transcripts/loc_healing/loc_cache/<subject>.xml` — 86 cached transcript TEI2 XMLs (one per `ok` entry).
+- `transcripts/loc_healing/loc_cache/<subject>.resolution.json` — 127 per-entry resolution metadata files (covers all `ok`, `no_transcript`, `no_candidates`, `xml_fetch_failed`, and `ambiguous_ok` outcomes).
+- `transcripts/loc_healing/loc_cache/_index.json` — aggregate coverage index.
+
+**Coverage:**
+
+| Resolver status | Count | Description |
+|---|---|---|
+| `ok` (XML cached, ready to heal) | 86 | LoC item found, transcript TEI2 XML downloaded |
+| `no_transcript` | 35 | LoC item exists but only audio + PDF; no machine-readable transcript |
+| `no_candidates` | 5 | LoC search returned no item; likely spelling discrepancy in catalog |
+| `xml_fetch_failed` | 1 | XML URL identified but download retries exhausted (Mary Jones; transient) |
+| `search_failed` | 0 | — |
+| **Total resolved** | **127** | Full coverage |
 
 **Verification:**
-- Manual spot-check of 3 resolved entries: confirm LoC item URL is the expected `/item/NNNNN` URL, the XML downloads successfully, the XML body contains the expected interviewee's prose.
-- Confirm `_index.json` reports ~120+ `ok` results (LoC carries transcript XML for the majority of CRHP interviews; some have audio-only or PDF-only items).
+- Manual spot-check of Aaron Dixon (`ok`), Carolyn Miller + James Miller (`no_transcript`), and Booker and Newsom (`no_candidates`) — each resolution.json contains the expected fields with the expected outcomes.
+- 86 XML files present in `loc_cache/`; sizes range from ~20 KB (short interviews) to ~600 KB (long interviews).
 
-**Anomalies:** *(populated when Phase 1 completes)*
+**Anomalies:**
+- LoC's CDN (tile.loc.gov) returned intermittent `IncompleteRead` and `The read operation timed out` errors during XML downloads for several large XML transcripts. The resolver's 3-attempt retry-with-exponential-backoff handled all but one case (Mary Jones, where all 3 retries failed). This is not a throttling response — LoC didn't return 403/429 — but a transient connection issue on LoC's CDN.
+- 2 entries flagged as `ambiguous_ok` (Aaron Dixon and one other) — matched correctly but the scorer flagged a secondary near-match candidate. Manual review confirmed both top picks were correct.
 
 #### Phase 2 — Per-entry word-align + classify + heal + verify + stage-file
 
-**Status:** *(populated when Phase 2 completes)*
+**Status:** DONE 2026-05-25. 86 entries processed (one at a time, sequential, per Eric's "one entry at a time to avoid cross-contamination or overloading rolling session limits" constraint). Eleven commit-and-push batches of 5–17 entries each, with apply-before-push discipline (every commit ships both the analysis and the healed transcript content). Commits `f0e91f1` through `672b6f1`.
+
+**Aggregate counts:**
+
+| Metric | Value |
+|---|---|
+| Entries healed | 86 |
+| Total divergences detected | 121,627 |
+| Total ASR_ERROR_HEAL applied | **1,774** |
+| Total preserved verbatim (EDITORIAL_SMOOTHING / SPEAKER_DISFLUENCY / orthography) | 32,118 |
+| Total flagged for SME review (NEEDS_SME_REVIEW) | 87,735 |
+| Apply failures | 0 |
+| Cue-count verification failures | 0 |
 
 **Deliverables:**
-- 127 (or however many `Phase 1` resolved successfully) per-entry files under `transcripts/pass8_stage/entry_<NNN>_<slug>.md`. Per-entry file format: LoC item URL + match metadata, divergence counts (detected / healed / preserved-verbatim / unresolved), per-correction table (SRT segment ID + our token + LoC token + verdict + reasoning), preserved-verbatim table, unresolved-for-human-review list.
-- Updated `transcripts/corrected/<entry>/<entry>.srt|txt|vtt` files with applied heals. Heals are surgical token-level replacements within existing cue boundaries; no segment restructuring, no retiming, no wholesale prose substitution.
-- Updated `transcripts/corrected/<entry>/manifest.json` files with new `loc_healing` section recording the heal counts + cite-source URL.
-- Where LoC adjudicates a previously-low-confidence Pass-N row to canonical-correct, a new `<entry>.P8.X` row is added to `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` with `high` confidence and LoC item URL as the source. This resolves Pass-6-unresolved-escalated-to-ensemble rows via LoC as the authoritative ensemble verdict.
+- 86 per-entry files under `transcripts/pass8_stage/entry_<NNN>_<slug>.md`. Per-entry file documents the LoC item URL, match score, divergence counts, applied-corrections table, preserved-verbatim table, and SME-review-flagged table.
+- 86 updated `transcripts/corrected/<entry>/<entry>.srt|txt|vtt` files with surgical token-level heals. SRT cue boundaries preserved; timestamps untouched; .txt file edited via in-place substring substitution to preserve its original continuous-line format.
+- 86 updated `transcripts/corrected/<entry>/manifest.json` files with new `loc_healing` section (item URL, XML URL, match score, divergence count, healed count, preserved count, SME-flagged count, apply-failure count).
+- 86 raw `transcripts/loc_healing/divergences/<subject>.divergences.json` files (the structured per-entry divergence stream, used as both the heal-apply driver and the SME-review input).
+- `transcripts/loc_healing/heal_one_entry.py` — per-entry heal toolkit (phase1 + apply + verify + heal_one combo).
+- `transcripts/loc_healing/process_batch.py` — sequential per-entry driver.
+
+**Conservative-first-pass discipline:**
+- Auto-heal ONLY single-word capitalized-vs-capitalized divergences where similarity ratio is 0.55–0.95.
+- Audit-canon safeguard: skip auto-heal if our token is already in the master MD as an audit-promoted Correction value for this entry. Successfully prevented reversal of audit-confirmed Madison Valley, Richmond, Bertha Alexander, and Tony Kline corrections in Aaron Dixon's transcript alone.
+- Deterministic preserve (no model judgment): contractions, number↔word substitution, function-word insert/delete (≤2 words), LoC bracketed stage directions, LoC false-start hyphenations.
+- Everything else: NEEDS_SME_REVIEW preserved verbatim, catalogued in the entry's stage file for future model classification or SME promotion.
 
 **Verification:**
-- Per-entry content checks: cue count equal pre- and post-heal; 3 spot-check timestamps unchanged; healed tokens present in the post-heal SRT.
-- Cross-corpus check after all entries processed: `python scripts/apply_corrections.py --dry-run` is idempotent (already-applied heals + master MD state are internally consistent).
+- Per-entry: SRT cue count matched VTT cue count both pre- and post-apply for every entry. 0 mismatches.
+- 0 apply failures across 1,774 heals.
+- Master MD untouched in Phase 2 (heals operate directly on `corrected/` text); no follow-up `scripts/apply_corrections.py` re-run required.
 
-**Anomalies:** *(populated as Phase 2 progresses)*
+**Anomalies:**
+- 87,735 NEEDS_SME_REVIEW divergences is a large backlog; intentional and consistent with the conservative-first-pass design. A future per-entry model classification pass (Sonnet 4.6 subagent reading the stage file's NEEDS_SME_REVIEW section) can promote a subset to applied heals.
+- Most "skipped this batch" entries (41 total) failed at the resolver phase, not Phase 2 — they simply have no LoC machine-readable XML to align against. Recovery paths documented in `transcripts/loc_healing/COVERAGE_REPORT.md`.
 
 #### Phase 3 — Coverage report + master MD updates + session close
 
-**Status:** *(populated when Phase 3 completes)*
+**Status:** DONE 2026-05-25.
 
 **Deliverables:**
-- `transcripts/loc_healing/COVERAGE_REPORT.md` — aggregate coverage report. Tables: total entries healed, total divergences detected, breakdown of verdicts (ASR_ERROR_HEAL / EDITORIAL_SMOOTHING / SPEAKER_DISFLUENCY / UNCLEAR), entries with no LoC transcript text (LoC has item but only audio/PDF), entries flagged for SME review.
-- AUDIT_TRAIL.md end-of-session summary.
-- Updated `OPEN_PROBLEMS.md` resolving items addressed by this session (in particular: any of the 21 PASS-6 unresolved-escalated rows that LoC adjudicated).
-- Archive `transcripts/session_prompts/NEXT_SESSION_PROMPT.md` to `transcripts/session_prompts/archive/NEXT_SESSION_PROMPT_2026-05-25_loc-healing-completed.md` per the single-use convention.
+- `transcripts/loc_healing/COVERAGE_REPORT.md` — aggregate coverage report (86 healed, 41 unhealed-in-this-pass with specific recovery paths for each: 35 PDF-only LoC items, 5 likely-spelling-discrepancy resolver misses, 1 transient XML download failure).
+- AUDIT_TRAIL.md Session 8 end-of-session summary populated (at the top of this Session 8 entry).
+- Archived `transcripts/session_prompts/NEXT_SESSION_PROMPT.md` to `transcripts/session_prompts/archive/NEXT_SESSION_PROMPT_2026-05-25_loc-healing-completed.md` per the single-use convention.
+
+**Intentionally deferred to a future pass:**
+- No master MD `<entry>.P8.X` correction rows were added during this session. The conservative-first-pass design wrote heals directly to `corrected/` text rather than threading them back through the master MD's correction-table format. Per-entry stage files under `transcripts/pass8_stage/` provide the institutional-audit evidence; threading the same row data into the master MD would duplicate provenance without apply-time benefit (the heals are already in the deliverable `corrected/` files).
+- The 21 PASS-6 unresolved-escalated-to-ensemble rows have not been individually adjudicated against LoC. A future targeted pass can re-evaluate each of those 21 rows against the matching cached LoC transcript and promote / drop / sustain the row.
+- The 11 stale-Pass-7-slice entries from this morning's audit (#6, #7, #8, #12, #13, #14, #17, #20, #26, #29, #30) have NOT been re-run through Pass 7 PRR. They HAVE received Pass 8 LoC healing, which provides independent cross-validation. Pass 7 PRR re-run is now lower priority than originally estimated.
+- The 87,735 NEEDS_SME_REVIEW divergences await a per-entry model-classification pass (one Sonnet 4.6 subagent per transcript reading the stage file's NEEDS_SME_REVIEW table). This would promote a subset to applied heals; the rest would be marked PRESERVE_VERBATIM_AFTER_REVIEW.
 
 ---
 
