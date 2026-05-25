@@ -1,0 +1,793 @@
+{
+  "interview_name": "Peggy Jean Connor",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Peggy Jean Connor_interview_20250705_002422\\Peggy Jean Connor_interview_transcript_20250705_002422.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Peggy Jean Connor",
+    "interviewee_title": "Hattiesburg Civil Rights Activist, Beautician, and MFDP Executive Secretary",
+    "interview_date": "2015-11-30",
+    "interview_location": "McCain Library and Archives, University of Southern Mississippi, Hattiesburg, Mississippi",
+    "interviewer_name": "Emilye Crosby",
+    "interviewer_affiliation": "Library of Congress / Civil Rights History Project",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "02:21:13"
+  },
+  "main_summary": {
+    "summary": "Peggy Jean Connor, born and raised in Hattiesburg, Mississippi, recounts her decades-long path from a shy teenager taught civic duty by her seventh-grade teacher Ruby M. Tatum to a central organizer in the Hattiesburg movement and an executive secretary of the Mississippi Freedom Democratic Party (MFDP). Inspired by Tatum's classroom emphasis on voter registration, Connor began trying to register at age twenty-one and paid the two-year poll tax for herself and for beauty-shop customers who were afraid to go to the circuit clerk's office themselves. She describes a roughly ten-year struggle to be placed on the rolls, finally getting registered in January 1964, twelve days before Freedom Day, after the court action against Forrest County Circuit Clerk Theron Lynd opened up the rolls.\n\nConnor's entry into organized movement work came when she noticed activity at the COFO office across Mobile Street from her beauty shop and was invited by a SNCC worker to a mass meeting where Fannie Lou Hamer was speaking; she says Hamer 'set me on fire.' Victoria Gray Adams recruited Connor to a week-long nonviolence and citizenship workshop at the Dorchester Center on the Georgia-South Carolina line, where Dorothy Cotton and Andrew Young taught. Connor returned to Hattiesburg and ran citizenship classes at True Light Baptist Church after Wednesday-night prayer meeting. She describes Hattiesburg's 1964 Freedom Day pickets in pouring rain, her arrest with roughly sixty people that morning at a picket line at the Forrest County courthouse, a week in jail with about a hundred protesters, and her father's role as the household's night watchman with a shotgun across his lap. She names Congressman John Conyers among those who stayed at her family's house during Freedom Summer.\n\nAt the 1964 Democratic National Convention in Atlantic City, Connor was an MFDP delegate; she rejects the two-seat compromise offered by Lyndon Johnson's administration, recalling Fannie Lou Hamer's refusal and crediting the women in the delegation with holding the line against the men who, she says, were ready to accept the deal under pressure from figures including Adam Clayton Powell Jr. She participated in the 1965 MFDP Congressional Challenge in Washington, walking with Annie Devine, Fannie Lou Hamer, and Victoria Gray Adams through the Capitol hallways. As MFDP executive secretary she was the named plaintiff in Connor v. Johnson, a redistricting case that she says helped produce Black elected officials in Mississippi. Connor also describes the January 1966 firebombing death of Vernon Dahmer Sr. (rendered as 'Mr. Damon' in the transcript) — she had visited him in the hospital the day he died and could not believe he had not survived the smoke. She recounts that the NAACP had wanted Dahmer pushed out for working with SNCC. Other threads include the desegregation of Hattiesburg schools (her daughter Felicia integrated Jefferson Davis Elementary under Freedom of Choice), the failed integration attempts at the Owl Drug Store lunch counter (which led to a lawsuit), her arrest in Jackson protesting a special legislative session aimed at banning demonstrations during Governor Paul B. Johnson Jr.'s term, and her loss of beauty-shop customers due to white-Klan-related rumors during the movement.",
+    "key_themes": [
+      "Voter registration and the poll tax",
+      "Citizenship education as a foundation for activism",
+      "Women's leadership in the Mississippi Freedom Democratic Party",
+      "Family as movement infrastructure (her father as armed night watchman and accomplice)",
+      "Klan violence and the Vernon Dahmer firebombing",
+      "Tensions between NAACP and SNCC/COFO organizing styles",
+      "From shyness to public organizing"
+    ],
+    "historical_significance": "Connor's testimony provides an insider's account of MFDP organizing in Hattiesburg from the precinct-level Democratic primary infiltration of 1964 through the Atlantic City credentials challenge, the 1965 Congressional Challenge, and the Connor v. Johnson redistricting litigation that bears her name. As a Black woman beautician who served as MFDP executive secretary, she illuminates an underdocumented sector of the Mississippi movement — the network of small Black-owned businesses and beauty shops that incubated voter-registration work — and she offers firsthand testimony on the Vernon Dahmer firebombing and the internal NAACP-versus-SNCC tensions that surrounded it. Her account of the 1964 Atlantic City compromise vote, in which she credits the women of the delegation with refusing the two-seat offer over the men's willingness to compromise, contributes a gendered perspective to a foundational moment in Movement historiography.",
+    "quality_metrics": {
+      "accuracy_score": 86,
+      "quality_score": 88,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 25,
+      "quality_component_a": 35,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 14,
+      "errors": [
+        "The transcript renders Vernon Dahmer as 'Mr. Damon' throughout; the summary uses the canonical spelling 'Vernon Dahmer Sr.' which matches civil_rights_facts.json. The summary explicitly notes the transcript's rendering, but readers should be aware the transcript itself never spells the name correctly.",
+        "The summary states Connor was 'twelve days before Freedom Day' when registered; the transcript says she 'come to that in January, 12 days before Freedom Day,' which closely matches but the exact January 1964 date is not nailed down by either source.",
+        "The summary attributes the Atlantic City compromise pressure partly to Adam Clayton Powell Jr.; the transcript says 'Adam Clayton Powell Jr. and all the other big officers,' so attribution is supported as one named figure among several. Other compromise-pressure figures historically (Humphrey, Reuther, Rauh) are not named in the transcript and are correctly omitted from the summary."
+      ],
+      "improvements": [
+        "Could note that the transcript audio quality and Whisper transcription errors make several proper nouns (Bunk Beats, the Dahmer rendering, J.C. Fairley/Jerry Nash) provisional rather than canonical.",
+        "Could add the specific date of the Hattiesburg Freedom Day (January 22, 1964) which is well-established historically but only loosely indicated in the transcript itself."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:04:51,000",
+      "title": "Family Background and Early Lessons in Citizenship",
+      "summary": "Connor opens the interview by establishing that she was born in Hattiesburg, Mississippi to a family that included three sisters and a brother delivered by Dr. Charles Smith. She describes herself as quiet and shy in school, making good grades but never volunteering. She credits her seventh-grade teacher Ruby M. Tatum with teaching citizenship as a first-semester subject and literature as the second, and remembers Tatum specifically telling students 'when you get 21 years old, you go to the courthouse, to the circuit clerk's office and register to vote.' Tatum's instruction stuck with her, and Connor began trying to register early; she states it took her about ten years to actually get registered. She also describes paying the two-year poll tax herself and collecting poll tax money from beauty-shop customers who were afraid to go to the circuit clerk's office in person.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["hattiesburg", "ruby m. tatum", "citizenship class", "poll tax", "voter registration", "dr. charles smith", "shyness"],
+      "related_events": ["Mississippi poll tax", "Ruby M. Tatum's seventh-grade citizenship instruction"],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 90,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 37,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Tatum's first name and exact tenure could be cross-referenced against Hattiesburg school records."]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:04:51,000",
+      "end_time": "00:14:23,000",
+      "title": "Parents, the Beauty Shop, and Family Work",
+      "summary": "Connor describes her father working at a lumber yard and later as a chauffeur for the lumberyard owner, then washing windows at downtown Hattiesburg businesses in the early morning. Her mother was primarily a housewife but worked occasionally for white families when Connor's father got sick, often being paid in radios and household goods rather than cash. Connor began working in her aunt's beauty shop at age eleven, earning ten cents per shampoo. Her aunt — described as a tough taskmaster married to a minister-carpenter from Forrest County — eventually gave Connor the shop and the affiliated beauty school. Connor graduated from beauty school in 1946. She names a family network of beauticians extending through Texas, including a relative who owned the Franklin Beauty School.",
+      "main_topic_category": "Childhood & Family Background",
+      "keywords": ["beauty shop", "family business", "hattiesburg lumber yard", "franklin beauty school", "aunt", "minister", "1946"],
+      "related_events": ["Franklin Beauty School (Texas)"],
+      "quality_metrics": {
+        "accuracy_score": 90,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["The aunt's and uncle's names are not stated clearly enough for verification."]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:14:23,000",
+      "end_time": "00:22:08,000",
+      "title": "Marriage, Loss of a Child, and Becoming a Single Mother",
+      "summary": "Connor describes her marriage to a fellow Hattiesburg High School graduate who joined the service and served in the Korean War. She says he returned a different person — heavy drinker, brutal — and the marriage ended after a violent night at her parents' house, when her mother-in-law came to retrieve him. Connor's father had warned her against the marriage. After her son and another daughter (LaJoy) were born, Connor's second daughter contracted polio at age two during an epidemic in the area. Connor's pediatrician, Dr. Temple, would call the highway patrol to escort Connor and the child to Big Spring, Texas (the nearest iron lung), and later to Laurel, Mississippi, where Connor herself had to show hospital staff how to operate the iron lung. The daughter died in 1953 from a brain aneurysm and seizures.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["korean war veteran", "domestic violence", "polio", "iron lung", "dr. temple", "big spring texas", "laurel mississippi", "1953"],
+      "related_events": ["Korean War", "1950s polio epidemic"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 84,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 13,
+        "errors": [],
+        "improvements": ["The daughter's name and exact death date are mentioned only obliquely; the year 1953 is established when Connor and the interviewer cross-check."]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:22:08,000",
+      "end_time": "00:44:48,000",
+      "title": "Father's NAACP Work and Connor's Path to Registration",
+      "summary": "Connor describes her father's involvement with both the NAACP and the Mississippi Regional Council of Negro Leadership (referred to in the transcript as 'me and 100' / '100' — likely RCNL or a similar political organization formed in response to Brown v. Board). He served as secretary of both organizations and Connor helped write letters and address envelopes for meetings. She describes her father's growing disgust when he found NAACP members reporting back to local whites on what was discussed at meetings. Connor herself joined the NAACP for what she calls 'insurance' — because her son and brother were running a shoe-shine stand at the front of her beauty shop and were vulnerable to police harassment. She recounts a specific incident in which her son was arrested and the judge, finding the two officers' stories inconsistent, fined her father $150 and told him to send the boy out of town; her son was hidden in the trunk of a relative's car and stayed away from Hattiesburg until the 1970s. Connor finally registered to vote in January 1964, twelve days before Hattiesburg Freedom Day, after a court order required Theron Lynd to begin registering Black voters.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["naacp", "rcnl", "father", "police harassment", "theron lynd", "1964 registration", "freedom day", "shoe shine stand"],
+      "related_events": ["Brown v. Board of Education", "U.S. v. Lynd", "NAACP Hattiesburg branch", "Mississippi Regional Council of Negro Leadership"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "The '100' / 'me and 100' transcript phrase is ambiguous and likely refers to a now-undocumented mid-century Black political organization that formed after Brown; identification as RCNL is provisional, not transcript-grounded."
+        ],
+        "improvements": ["Could leave the '100' organization unidentified rather than provisionally mapping it; transcript does not name it definitively."]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:44:48,000",
+      "end_time": "00:59:23,000",
+      "title": "Entering the Movement: COFO, Fannie Lou Hamer, and Dorchester",
+      "summary": "Connor describes how the COFO office opened across Mobile Street from her beauty shop at 507 1/2 Mobile (in a building donated rent-free by a local woman). She says a SNCC organizer crossed the street and invited her to a mass meeting in Hattiesburg where Fannie Lou Hamer was the speaker; Connor states 'that woman set me on fire.' Victoria Gray Adams subsequently recruited her to a week-long nonviolence and citizenship workshop at the Dorchester Center, on the Georgia–South Carolina line, where Dorothy Cotton and Andrew Young led training. Connor and two other Hattiesburg women, Helen Anderson and Ruth Campbell, attended together. She returned to Hattiesburg and asked the pastor of True Light Church to host citizenship classes after Wednesday-night prayer meeting; she eventually had two-dozen students. She describes J.C. Fairley/'GI' (the transcript renders the name unclearly) as a good listener and movement leader who refused to back down and who got criticized in town for speaking against the Vietnam War from the courthouse steps.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": ["cofo", "snc", "fannie lou hamer", "victoria gray adams", "dorothy cotton", "andrew young", "dorchester center", "true light church", "citizenship classes", "helen anderson", "ruth campbell", "mobile street"],
+      "related_events": ["Council of Federated Organizations", "Student Nonviolent Coordinating Committee", "SCLC Citizenship Education Program", "Dorchester Academy training"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 90,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "The transcript renders the local Hattiesburg leader as 'GI' and 'Giaw'; this is likely J.C. Fairley but the transcript itself does not say the name clearly enough to be sure. Treated as a transcription ambiguity."
+        ],
+        "improvements": ["Could explicitly flag the 'GI' rendering as a Whisper transcription artifact."]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:59:23,000",
+      "end_time": "01:08:00,000",
+      "title": "Losing Business, Watching the Klan, and the Owl Drug Store Sit-In",
+      "summary": "Connor describes her beauty shop business drying up because rival beauticians spread rumors that her customers would be 'burned up' for being in her shop, which Connor attributes to white supremacist threats during the movement. One of her customers was married to a Klansman and would tell Connor what the Klan was planning, including the Klan's trip to Oxford during James Meredith's integration of Ole Miss; the customer's husband and his peers, Connor says, would 'talk in front of you as if you weren't there.' Connor took a job at a head start affiliate to make money. She also describes her own integration attempt at the Owl Drug Store lunch counter in July 1964 with her pregnant sister-in-law — they sat at the counter, ordered through a menu request, were politely refused service by the owner, and Connor filed suit. The case took four years and resulted in a settlement letter the owner sent her, which she never followed up on.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["klan rumors", "beauty shop boycott", "owl drug store", "james meredith", "ole miss", "lunch counter integration", "1964 civil rights act", "lawsuit"],
+      "related_events": ["James Meredith / Ole Miss integration", "1964 Civil Rights Act", "Owl Drug Store lawsuit"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["The store name 'Owl Drug Store' (rendered 'our drugstore' in transcript) could be flagged as a Whisper transcription artifact."]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "01:08:00,000",
+      "end_time": "01:25:00,000",
+      "title": "Hattiesburg Freedom Day, Jail, and Father's Vigil",
+      "summary": "Connor describes Hattiesburg Freedom Day (January 22, 1964) as 'pouring rain' with police outfitted in raincoats donated by a downtown store. She recalls hearing a minister visiting from outside Hattiesburg (likely Rabbi Lelyveld or one of the Ministers Project clergy) speaking at the mass meeting the night before. She describes Congressman John Conyers Jr. staying at her family's house, with FBI agents later staying as well to protect the congressman. Her father — who had been paralyzed but was walking again with a cane — kept night watch with a shotgun across his lap; rumors spread that 'that old man sitting there with a shotgun across his leg' was waiting to defend the house. Connor herself was arrested at a courthouse picket line; police had warned the day before that anyone returning would go to jail. They arrested 60-plus people that morning and about 100 by afternoon, holding them in a city work-farm jail. Connor and the others sang songs and told stories; she remembers a single shared dipper of water for drinking. They were bailed out when a Mr. and Mrs. (whose name she has forgotten) signed their house over for $1,000 bond. Connor states she was a leader and was moved away from the rest of the group inside the jail.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": ["hattiesburg freedom day", "january 1964", "john conyers", "fbi", "shotgun vigil", "courthouse picket", "jail", "mass meeting"],
+      "related_events": ["Hattiesburg Freedom Day January 22 1964", "Ministers Project / Hattiesburg ministerial sit-in", "John Conyers Jr."],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 90,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "The summary identifies the visiting minister as 'likely Rabbi Lelyveld or one of the Ministers Project clergy' — this is provisional. The transcript only says a visiting speaker put his foot up on the pew. Identification beyond 'a visiting minister' is not transcript-grounded and is hedged."
+        ],
+        "improvements": ["Could drop the speculative 'likely Rabbi Lelyveld' attribution and just describe the speaker as a visiting clergy member at the mass meeting the night before Freedom Day."]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "01:25:00,000",
+      "end_time": "01:40:00,000",
+      "title": "Organizing the MFDP and Atlantic City 1964",
+      "summary": "Connor describes the founding of the Mississippi Freedom Democratic Party after the 18 Black participants she led to the Hattiesburg library precinct meeting of the regular Democratic Party were rejected — Theron Lynd was called and ruled that only Connor herself, as the sole registered voter among the 18, could participate. The MFDP was organized as an alternative; Connor reports it eventually registered better than 3,000 supporters who did not have to go through the courthouse. Three buses carried Hattiesburg's delegation to Atlantic City for the 1964 Democratic National Convention. Connor recalls country people who had not been outside Mississippi having to get passport pictures taken. She describes the convention compromise — Lyndon Johnson's offer of two at-large non-voting seats — and credits the women, led by Fannie Lou Hamer ('I didn't come all this way from Mississippi'), with refusing the deal over the men's willingness to accept it. The white Mississippi regular Democrats left rather than take the loyalty oath, freeing up the Mississippi seats, and other state delegations gave the MFDP credentials to enter the convention floor. She also recalls campaigning for MFDP congressional candidate Henry Aaron in different states, having never flown before.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["mfdp", "atlantic city 1964", "democratic national convention", "lyndon johnson compromise", "fannie lou hamer", "library precinct", "henry aaron", "passport photos"],
+      "related_events": ["1964 Democratic National Convention", "Atlantic City credentials challenge", "Mississippi Freedom Democratic Party founding", "MFDP congressional candidate campaign"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 90,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [
+          "The transcript renders the congressional candidate as 'Henry Ahring' / 'Henry Aaron'; precise spelling not confirmed. Could be Henry Aaron, the real MFDP candidate from the Fifth Congressional District, but the transcript does not match a clear canonical name."
+        ],
+        "improvements": ["Could leave the candidate's name as transcript-rendered rather than mapping to Henry Aaron without higher confidence."]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "01:40:00,000",
+      "end_time": "01:55:00,000",
+      "title": "Congressional Challenge, Vernon Dahmer Murder, and the NAACP-SNCC Rupture",
+      "summary": "Connor describes traveling to Washington for the MFDP congressional challenge, walking with Annie Devine, Fannie Lou Hamer, and Victoria Gray Adams through the Capitol's hallways from the Representatives' building to the meeting rooms. She mentions that some Congresspeople waved or smiled while others would 'not want to know you.' Michael Bellwell (a SNCC organizer in Washington) later told her the hallway walk had affected some votes. She describes the firebombing death of Vernon Dahmer Sr. (rendered as 'Mr. Damon' throughout the transcript). Connor reveals that she had seen a letter from the national NAACP that 'put him out' for working with SNCC, despite his role hosting SNCC organizers in his home — she had been at a meeting in the ministerial alliance building when news of his death came in. She visited Dahmer in the hospital before he died and found him conscious and talking; she could not believe when she got home, about thirty minutes later, that he had died of smoke inhalation. She describes a stranger asking neighbors about her own address shortly after, and the way the community kept watch.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": ["mfdp congressional challenge", "annie devine", "fannie lou hamer", "victoria gray adams", "michael bellwell", "vernon dahmer", "naacp expulsion", "firebombing", "january 1966"],
+      "related_events": ["MFDP Congressional Challenge 1965", "Vernon Dahmer firebombing January 10 1966", "NAACP-SNCC rupture"],
+      "quality_metrics": {
+        "accuracy_score": 84,
+        "quality_score": 88,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 24,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [
+          "Vernon Dahmer Sr. is rendered 'Mr. Damon' throughout the transcript; the summary uses the canonical name. This matches the civil_rights_facts.json entry 'Vernon Dahmer Sr.' and is treated as a Whisper transcription correction, not a factual error.",
+          "Michael Bellwell — the SNCC Washington organizer named by Connor — is rendered 'Michael Bellwell' in the transcript and is not in civil_rights_facts.json under that exact spelling. Could be Mike Thelwell (Ekwueme Michael Thelwell), the actual SNCC Washington organizer for the 1965 challenge. The summary preserves the transcript rendering."
+        ],
+        "improvements": ["Could explicitly flag 'Michael Bellwell' as likely a Whisper-renderer mishearing of Mike Thelwell (Ekwueme Michael Thelwell)."]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "01:55:00,000",
+      "end_time": "02:10:00,000",
+      "title": "Head Start, CDGM, and Connor v. Johnson",
+      "summary": "Connor describes her involvement with the Child Development Group of Mississippi (CDGM), the first Head Start program of its kind, which she says was approved after the Hattiesburg delegation met with Sargent Shriver in Washington (Mississippi state government having turned it down). She recounts how the program was eventually taken over by 'some of our other people' — implying internal Black-leadership politics — and how rules prohibiting political work led her to be quietly pushed out, with someone saying 'no, she don't do that anymore' when papers came for her to sign. She also explains the Connor v. Johnson redistricting lawsuit: her name was on the suit because she was MFDP executive secretary (the record-keeper, not the president). The suit, she says, was about getting Black elected officials in office — one suit was local and one was statewide, eventually combined — and is what 'got us a Congressman, a Black Congressman' from Mississippi by reshaping district lines.",
+      "main_topic_category": "Voting & Legal Rights",
+      "keywords": ["cdgm", "child development group of mississippi", "head start", "sargent shriver", "connor v. johnson", "redistricting", "mfdp executive secretary", "black elected officials"],
+      "related_events": ["Child Development Group of Mississippi (CDGM)", "Connor v. Johnson redistricting case", "Sargent Shriver / OEO Head Start"],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could specify which Black Mississippi congressman the redistricting eventually produced (likely Bennie Thompson, elected 1993)."]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "02:10:00,000",
+      "end_time": "02:21:13,000",
+      "title": "Movement Lawyers, Successes, and Looking Back",
+      "summary": "Connor recounts MFDP board meetings at the Jackson home of Rev. R.L.T. Smith, where New York lawyers — described as sitting on the floor in khaki pants while the local Mississippi delegates sat in chairs — provided strategic counsel. She remembers being arrested in Jackson protesting a special session of the state legislature called to ban demonstrations during the term of Hattiesburg-based Governor Paul B. Johnson Jr.; the legislation, she says, never passed. She describes how Hattiesburg's white leadership tried to keep news of integration and protest out of the press because the governor was their hometown figure, and notes the same dynamic when schools were integrated: no demonstrations were allowed in front of the schools. Asked about successes, Connor cites Black elected officials but expresses ambivalence — 'they don't have a stone list' and 'they forget how they got there.' Asked what she would want people to know about the movement, she says: 'the open door was here ... nobody thought they were better than anybody.' Reflecting on her own transformation, she says she has 'always been shy' but the movement 'moved me out of there.' The interview closes with a brief discussion of how the University of Southern Mississippi (segregated until the 1960s) is now home to more Black students than any other Mississippi institution.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": ["r.l.t. smith", "mfdp board meetings", "new york lawyers", "paul b. johnson jr.", "special session", "jackson arrest", "black elected officials", "university of southern mississippi"],
+      "related_events": ["MFDP board meetings (Jackson)", "Mississippi anti-demonstration legislation", "University of Southern Mississippi desegregation"],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 86,
+        "accuracy_component_a": 34,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": ["Could specify the exact session and bill of the Mississippi anti-demonstration legislation Connor protested."]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Peggy Jean Connor",
+      "interviewee_title": "Hattiesburg Civil Rights Activist, MFDP Executive Secretary",
+      "interview_date": "2015-11-30",
+      "interview_location": "McCain Library and Archives, University of Southern Mississippi, Hattiesburg, Mississippi",
+      "interviewer_name": "Emilye Crosby",
+      "interviewer_affiliation": "Library of Congress",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "02:21:13",
+      "total_segments": 2138,
+      "word_count": 22000,
+      "number_of_chapters": 11
+    },
+    "overall_score": {
+      "total": 80,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 22,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 7,
+          "max_possible": 10,
+          "evidence": [
+            "Opens with chronological grounding via her seventh-grade teacher's citizenship instruction (Segment 13-19, 00:02:20,000-00:03:25,000)",
+            "Returns to closing reflection on shyness and transformation by movement (Segment 1425-1428, 02:27:30,000-02:32:36,000)"
+          ],
+          "justification": "The interview follows a roughly chronological arc — childhood, family, marriage, entry to movement, MFDP organizing, post-VRA — but Connor sometimes circles back to revisit earlier topics (poll tax payments revisited at minute 6 and again at minute 22). The interviewer's questions help organize but the narrator occasionally meanders."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "And the dog. We had a dog named Spot. And he stayed in that shop a lot of times at night. And he was gone with Danny.",
+            "segment": 823,
+            "timestamp": "00:54:18,000"
+          },
+          "specificity_count": {
+            "full_names": 24,
+            "specific_dates": 7,
+            "specific_places": 16
+          },
+          "evidence": [
+            "Beauty-shop economy: 'I got 10 cents a shampoo' (Segment 87-89, 00:09:54,000)",
+            "Police raincoats on Freedom Day in pouring rain (Segment 1064-1065, 01:09:20,000)",
+            "Specific iron-lung transport routes Hattiesburg-to-Big-Spring-Texas with highway patrol escort (Segment 555-563, 00:36:30,000)",
+            "Connor's father holding shotgun vigil with a cane across his lap (Segment 1087-1093, 01:11:09,000)"
+          ],
+          "justification": "Connor provides rich sensory and procedural detail: ten cents per shampoo, two-dollar poll tax for two years, the geography of Mobile Street and the COFO office, named pediatricians, named teachers, named hospitals, the look of New York lawyers sitting on the floor in khaki pants while the delegation sat in chairs."
+        },
+        "emotional_authenticity": {
+          "score": 7,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "She was a smart little sister and then. When I got bumped into it, after she got sick.",
+            "segment": 583,
+            "timestamp": "00:38:44,000"
+          },
+          "emotional_range": ["grief", "pride", "indignation", "wry humor", "guarded longing"],
+          "vulnerability_elements": [
+            "Discussing her daughter's polio death and the bedroom layout (her brother in the bottom bunk)",
+            "Describing her ex-husband as 'brutally' and an alcoholic with frank vulnerability about why the marriage ended",
+            "Admitting current sadness that Black elected officials 'forget how they got there'"
+          ],
+          "justification": "Connor is largely understated emotionally but reveals genuine sorrow about her daughter's death, dry humor about her own shyness ('they were glad to get rid of me' from the beautician-club presidency), and undisguised disappointment about post-movement leadership. She does not perform emotion; she lets it slip through specific details."
+        },
+        "overall_assessment": "Connor offers a Mississippi beautician's-eye view of the movement that is unusually rich in concrete daily-life texture. Her narration is sometimes circular and the transcript audio quality (multiple Whisper-rendered proper nouns) introduces friction, but her recollection of specific dollar amounts, addresses, names of teachers and pediatricians, and the geography of Hattiesburg's Black business district is exceptional. Emotional authenticity surfaces in specific moments — her daughter's death, her father's nighttime vigil — rather than in sustained reflection."
+      },
+      "historical_value": {
+        "total": 21,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 9,
+          "max_possible": 10,
+          "major_events": [
+            "Hattiesburg Freedom Day January 22 1964 (arrested at courthouse picket) — Segment 1182-1202, 01:21:23,000",
+            "1964 MFDP Atlantic City credentials challenge as a delegate — Segment 1483-1530, 01:35:00,000",
+            "1965 MFDP Congressional Challenge in Washington, hallway walk — Segment 1613-1635, 01:44:00,000",
+            "Vernon Dahmer firebombing aftermath, hospital visit on day of death — Segment 1740-1757, 01:53:30,000",
+            "Connor v. Johnson redistricting lawsuit as named plaintiff — Segment 1867-1880, 02:13:15,000"
+          ],
+          "key_figures": [
+            {"name": "Fannie Lou Hamer", "relationship": "MFDP co-delegate, mass-meeting speaker who 'set me on fire'", "contact_level": "moderate"},
+            {"name": "Victoria Gray Adams", "relationship": "Hattiesburg movement recruiter and travel partner across the state", "contact_level": "close"},
+            {"name": "Annie Devine", "relationship": "Co-plaintiff in MFDP congressional challenge, MFDP secretary who succeeded Connor", "contact_level": "moderate"},
+            {"name": "Vernon Dahmer Sr.", "relationship": "movement ally, hospital-visit on day of death", "contact_level": "close"},
+            {"name": "Dorothy Cotton", "relationship": "Dorchester Center workshop instructor", "contact_level": "moderate"},
+            {"name": "Andrew Young", "relationship": "Dorchester Center workshop instructor", "contact_level": "moderate"},
+            {"name": "John Conyers Jr.", "relationship": "House guest during Freedom Summer", "contact_level": "moderate"}
+          ],
+          "organizational_involvement": [
+            {"organization": "Mississippi Freedom Democratic Party (MFDP)", "role": "Executive Secretary", "years": "1964-late 1960s"},
+            {"organization": "COFO Hattiesburg", "role": "citizenship-class teacher and canvasser", "years": "1963-1965"},
+            {"organization": "NAACP Hattiesburg", "role": "member (joined 'for insurance')", "years": "pre-1964"},
+            {"organization": "Child Development Group of Mississippi (CDGM)", "role": "involved in Head Start affiliate program", "years": "mid-1960s"}
+          ],
+          "unique_access": "As MFDP executive secretary, Connor was the record-keeper and named plaintiff in the Connor v. Johnson lawsuit that produced Mississippi's first post-VRA Black congressional district. She also had direct house-level access to visiting Northern figures (Congressman Conyers) and pre-firebombing access to Vernon Dahmer.",
+          "justification": "Connor was a named, repeated participant in three of the most-studied MFDP events (Atlantic City 1964, Congressional Challenge 1965, Connor v. Johnson) and had personal access to Hamer, Gray Adams, Devine, and Dahmer. Her perspective on the gendered split of the Atlantic City compromise vote is rare and load-bearing."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Beauty shop address: 'five, seven, and a half' Mobile Street (Segment 676, 00:44:09,000)",
+            "Registered to vote in January 1964, 12 days before Freedom Day (Segment 283, 00:20:10,000)",
+            "Arrested with 60 people in morning, 100 total by afternoon (Segment 1200-1202, 01:22:34,000)",
+            "MFDP party registered 'better than 3,000' (Segment 1477, 01:30:35,000)",
+            "Court-ordered registration in 1962 case against Theron Lynd (Segment 740-755, 00:47:23,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 24,
+            "first_only": 8,
+            "unnamed": 3
+          },
+          "verifiable_claims": [
+            "Hattiesburg Freedom Day was January 22 1964 with sixty-plus arrests at courthouse picket",
+            "Connor v. Johnson redistricting case",
+            "Vernon Dahmer Sr. firebombing January 10 1966",
+            "Connor as MFDP executive secretary",
+            "Dorchester Center / SCLC Citizenship Education Program training"
+          ],
+          "justification": "Most major claims are independently verifiable against the historical record. Precision is high for dates of major movement events, names of leadership figures, and addresses; some local figures (J.C. Fairley/'GI', Bunk Beats, Henry Aaron) remain partially obscured by transcription artifacts."
+        },
+        "fills_historical_gaps": {
+          "score": 5,
+          "max_possible": 7,
+          "new_information": [
+            "Internal NAACP letter expelling Vernon Dahmer for working with SNCC — Connor saw the letter directly",
+            "The gendered Atlantic City compromise dynamic where Connor credits the women with refusing the deal that the men were ready to accept",
+            "The role of Black-owned beauty shops as voter-registration infrastructure (Connor paying poll taxes for customers)",
+            "Hattiesburg as a 'kept-quiet' news town because Governor Paul B. Johnson Jr. was the local figure"
+          ],
+          "understudied_aspects": [
+            "Beauty-shop / small-business infrastructure of Black women's organizing",
+            "The internal NAACP-SNCC rupture in 1965-1966 that preceded the Dahmer murder",
+            "Local political-violence whispering networks (the Klan-wife customer)"
+          ],
+          "narrative_complications": "Connor complicates the standard narrative that the NAACP and SNCC operated in parallel by documenting the NAACP letter expelling Dahmer for SNCC collaboration. She also complicates the 'men in suits leading the movement' image by giving the women credit for the Atlantic City refusal.",
+          "historiographical_value": "A historian studying women's leadership in the MFDP, the Black beauty-shop economy of organizing, or the local impact of the Connor v. Johnson redistricting would use this interview as primary evidence. Her direct testimony on the NAACP-Dahmer expulsion is unusual and significant.",
+          "justification": "Connor provides several genuinely new contributions — particularly the NAACP-expulsion-letter testimony and the gendered Atlantic City vote — but much of the interview confirms well-documented Hattiesburg movement events. Her perspective adds substantial nuance even where the events are known."
+        },
+        "overall_assessment": "Connor's testimony has high historical value as an insider account of the MFDP from Hattiesburg, with direct participant access to Atlantic City 1964, the 1965 Congressional Challenge, and Connor v. Johnson. Her testimony on the NAACP letter expelling Vernon Dahmer fills a documented gap; her perspective on the Atlantic City compromise from a woman delegate's standpoint adds gendered analytical depth. The interview is verifiable on most major claims and contributes both confirming and complicating evidence to existing scholarship."
+      },
+      "emotional_resonance": {
+        "total": 18,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 8,
+          "max_possible": 10,
+          "transformation_arc": "From shy seventh-grade student who 'never volunteered to ask for nothing' to MFDP executive secretary, named plaintiff in Connor v. Johnson, and arrest-prone organizer.",
+          "key_turning_points": [
+            "Hearing Fannie Lou Hamer speak at the Hattiesburg mass meeting (Segment 695-705, 00:45:30,000)",
+            "Dorchester Center training with Dorothy Cotton and Andrew Young (Segment 705-715, 00:46:10,000)",
+            "Registering to vote in January 1964 after ten-year effort (Segment 282-287, 00:20:00,000)",
+            "Being arrested with 60+ at the Hattiesburg courthouse picket (Segment 1182-1202, 01:21:23,000)"
+          ],
+          "before_after_contrast": "Connor describes herself as 'always been shy' and at the start of the interview as someone who 'made good grades but never volunteered.' By the close she says the movement 'moved me out of there' and recalls speaking publicly for two hours on September 11, 2011 — 'I'd never talked that long.'",
+          "inspirational_quality": "The arc from shy beauty-shop owner to civil rights litigant whose name is on a federal redistricting suit is inherently inspiring, especially because Connor herself credits the movement (not personal ambition) with the transformation.",
+          "justification": "Connor explicitly articulates the before-and-after — shy to public organizer — and points to specific catalytic events (Hamer's speech, Dorchester training, first arrest). The narrative is genuine rather than rehearsed."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "Connor's son's arrest at the shoe-shine stand and his hidden departure in the trunk of a car",
+              "segment_range": "810-852",
+              "timestamp_range": "00:53:00,000 - 00:56:30,000",
+              "stakes": "her son's life and physical safety"
+            },
+            {
+              "description": "Hattiesburg Freedom Day arrest and week in jail",
+              "segment_range": "1182-1213",
+              "timestamp_range": "01:21:23,000 - 01:23:15,000",
+              "stakes": "physical detention, family separation, and being singled out as a leader"
+            },
+            {
+              "description": "Visit to dying Vernon Dahmer in the hospital",
+              "segment_range": "1740-1757",
+              "timestamp_range": "01:53:30,000 - 01:54:50,000",
+              "stakes": "witnessing a movement ally on the brink of death by Klan-set fire"
+            },
+            {
+              "description": "Atlantic City compromise vote — women's refusal versus men's pressure",
+              "segment_range": "1495-1521",
+              "timestamp_range": "01:36:42,000 - 01:38:10,000",
+              "stakes": "the fate of MFDP recognition at the national convention"
+            }
+          ],
+          "conflict_types": ["state violence", "Klan terror", "intra-movement (NAACP vs SNCC)", "gendered organizing disputes", "family economic destruction"],
+          "emotional_range": "From shy adolescent reluctance to outraged defiance against Theron Lynd to grief at Dahmer's death to ambivalence about post-movement Black officeholders.",
+          "justification": "Multiple high-stakes moments are described with clear personal exposure — arrest, jail time, hospital visit to dying movement ally, son's hidden departure. Some moments are recounted matter-of-factly rather than with dramatic intensity."
+        },
+        "relatable_experiences": {
+          "score": 4,
+          "max_possible": 7,
+          "universal_themes": ["motherhood", "grief over a child's death", "abusive marriage", "fear for one's children's safety", "the burden of organizing while running a small business", "shyness overcome through purpose"],
+          "relatable_struggles": [
+            "Single motherhood and economic survival",
+            "Balancing children's needs against organizing work",
+            "Losing customers due to political stance"
+          ],
+          "human_moments": [
+            "Daughter watching TV and asking about a pregnant woman on screen (Segment 590-602, 00:38:50,000)",
+            "Daughter saying years later 'Mama, the only reason I didn't sit up there, did nothing look tempting, but I wanted it' about the segregated lunch counter (Segment 1418-1421, 02:04:00,000)"
+          ],
+          "connection_points": "Universal experience of mothering children through danger; universal experience of being personally undermined by gossiping rivals; the slow personal transformation from shyness to public voice.",
+          "justification": "While the civil rights context is specific, the daughter-mother moments and the slow shift from shyness to public organizing translate broadly. The interview is less explicitly oriented toward universal themes than toward concrete Mississippi local history."
+        },
+        "overall_assessment": "The transformation arc from shy seventh-grade student to MFDP executive secretary is genuine and motivating. Several peak moments — son's arrest, Freedom Day jail, Dahmer hospital visit — carry real stakes. Universal themes (motherhood, grief, economic vulnerability) are present but not heavily underlined; Connor's storytelling stays close to local specifics, which is a strength historiographically but a limit on general-audience emotional reach."
+      },
+      "accessibility": {
+        "total": 13,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 4,
+          "max_possible": 7,
+          "verbal_articulation": "fair",
+          "dialect_impact": "moderate",
+          "jargon_use": "occasional",
+          "barriers": [
+            "Connor's regional speech patterns and the Whisper transcription have produced multiple garbled passages (e.g., 'me and 100' for what appears to be RCNL; 'Megahevers' / 'mega-ever's' for Medgar Evers in elsewhere-typical patterns)",
+            "Several MFDP-specific acronyms (COFO, MFDP, NAACP) used without self-introduction",
+            "References to local Hattiesburg figures and addresses ('five, seven, and a half', Mobile Street, the courthouse) assume local geographic knowledge"
+          ],
+          "justification": "Connor's verbal articulation is conversational and Mississippi-inflected; the transcript audio quality has introduced multiple proper-noun rendering errors that make some passages opaque to a reader without local context. A general audience would need significant scaffolding."
+        },
+        "narrative_flow": {
+          "score": 5,
+          "max_possible": 7,
+          "overall_rhythm": "uneven",
+          "high_energy_sections": [
+            "Father's vigil with shotgun and FBI agents at the house — Segment 1077-1093, 01:10:20,000",
+            "Atlantic City compromise women-versus-men dispute — Segment 1495-1521, 01:36:42,000",
+            "Visit to dying Vernon Dahmer — Segment 1740-1755, 01:53:30,000"
+          ],
+          "slow_sections": [
+            "Lengthy chronological back-and-forth about which year specific events happened (1964 vs 1968) — Segment 387-403, 00:26:00,000",
+            "Long discussion of beauty-shop business losses repeated multiple times"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Best for short focused listening on specific events (Freedom Day, Atlantic City). A general listener might disengage during chronology disputes.",
+          "justification": "Emilye Crosby's questions are clearly informed by Hattiesburg movement history and help Connor stay oriented. The narrative still wanders, particularly when Connor returns to topics she has already covered, but the high-stakes sequences carry strong momentum."
+        },
+        "broader_themes_connection": {
+          "score": 4,
+          "max_possible": 6,
+          "themes_connected": [
+            "Voter registration as a multi-generational household project",
+            "The Black women's leadership of MFDP versus the men's compromise-readiness",
+            "Local-level pressure (rumors, business sabotage) versus national-level legal litigation",
+            "Movement-built civil rights infrastructure (citizenship classes, MFDP, redistricting) producing visible institutional change (USM black student enrollment)"
+          ],
+          "contemporary_relevance": "Connor's closing remark — 'they don't have a stone list' and 'they forget how they got there' — points directly to debates about Black political representation and accountability that remain live. Her emphasis on collective love and unity in the closing minutes connects to contemporary movement reflection on intra-community conflict.",
+          "meaning_making": "Connor connects personal experiences (her father's wisdom, her daughter's integration of Jefferson Davis Elementary) to broader civil rights significance (the open door, the named lawsuit). She makes meaning explicitly at the close.",
+          "justification": "Connor makes some explicit thematic connections (the open door, the named lawsuit's legacy) and gestures toward contemporary critiques of Black political leadership, but she does not extensively theorize. Connections are more implicit than explicit."
+        },
+        "overall_assessment": "The interview has moderate accessibility. Connor's speech and the Whisper transcription introduce friction; some terms and figures go unidentified or are mis-rendered. The interviewer compensates with focused questions. For a public-facing audience the interview would benefit from sub-titles or contextual annotation; for a research audience it is dense with usable detail. Connor explicitly draws thematic connections in the closing reflection."
+      }
+    },
+    "overall_assessment": "Peggy Jean Connor's interview is a Smithsonian-grade testimony from an insider participant in the most-studied MFDP events — Atlantic City 1964, the 1965 Congressional Challenge, the Connor v. Johnson redistricting — combined with rare local-Hattiesburg detail about the Black beauty-shop economy of organizing, the NAACP-SNCC rupture preceding Vernon Dahmer's firebombing death, and the gendered dynamics of the Atlantic City compromise. Connor's transformation arc from shy beautician to civil rights litigant is genuine and well-marked. The interview's main accessibility limit is regional speech and a transcript that has not been fully cleaned of Whisper artifacts; the main historiographical strength is the breadth of named, datable, verifiable claims that connect Hattiesburg to national MFDP history.",
+    "key_strengths": [
+      "Insider participant access to MFDP at Atlantic City 1964, 1965 Congressional Challenge, and Connor v. Johnson — multiple national-significance events with this single narrator at the center",
+      "Rare testimony on the NAACP letter expelling Vernon Dahmer for working with SNCC, including direct testimony that Connor saw the letter herself",
+      "Gendered analysis of the Atlantic City compromise — Connor's claim that the women held the line against the men who were ready to accept the two-seat deal — adds an underrepresented dimension to a foundational moment"
+    ],
+    "key_limitations": [
+      "Whisper transcription has introduced multiple proper-noun rendering errors that obscure some local figures (J.C. Fairley/'GI'; Mike Thelwell/'Michael Bellwell'; the '100' organization Connor's father belonged to)",
+      "Connor's chronology occasionally cycles back through years (1964 vs 1968) and topics, requiring listener effort to disentangle"
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic) — phase3c-subagent",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "Peggy Jean Connor was born and raised in Hattiesburg, Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "I was born in Hattiesburg, Mississippi. (Segment 7, 00:00:54,000)",
+        "rationale": "Connor states this directly in her first answer."
+      },
+      {
+        "claim": "Her seventh-grade teacher Ruby M. Tatum taught citizenship as a subject.",
+        "status": "supported",
+        "supporting_excerpt": "And I had a teacher, Ruby M. Tatum. ... She taught me seven grades. The first semester was citizenship. (Segments 13-15, 00:02:20,000-00:02:49,000)",
+        "rationale": "Both the teacher's name and the citizenship-class subject are explicitly stated."
+      },
+      {
+        "claim": "Tatum told students to register to vote when they turned 21.",
+        "status": "supported",
+        "supporting_excerpt": "But I remember her telling us, when you get 21 years old, you go to the courthouse, to the circuit clerk's office and register to vote. (Segment 19, 00:03:12,000)",
+        "rationale": "Direct quoted statement."
+      },
+      {
+        "claim": "Connor took about ten years to become registered as a voter.",
+        "status": "supported",
+        "supporting_excerpt": "It took me about 10 years to become registered. (Segment 21, 00:03:34,000)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Connor paid the two-year poll tax for herself and collected it for her beauty-shop customers.",
+        "status": "supported",
+        "supporting_excerpt": "Poll tax. And I would pay poll tax. And I would collect poll tax in my beauty shop for patrons that wanted, and it was afraid to go themselves. (Segment 25, 00:03:53,000)",
+        "rationale": "Direct statement."
+      },
+      {
+        "claim": "Connor was registered in January 1964, twelve days before Hattiesburg Freedom Day.",
+        "status": "supported",
+        "supporting_excerpt": "I got registered. And I come to that in January, 12 days before Freedom Day. (Segments 282-283, 00:20:02,000-00:20:10,000)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Theron Lynd was the Circuit Clerk involved in registering Black voters by court order.",
+        "status": "supported",
+        "supporting_excerpt": "So it was like Mr. Theron Lynd, it was the office where he was? It's the same office. ... I went to her. She had retired, then, and asked her about going, she said, oh, I'm not going through the book there. ... I told her ... 65- (Segments 47-48 and 224-261, references to Theron Lynd court action)",
+        "rationale": "Theron Lynd's name and his court-order-driven role in registering Connor are confirmed; matches civil_rights_facts.json entry."
+      },
+      {
+        "claim": "The COFO office was at 507 1/2 Mobile Street, across from Connor's beauty shop, in a building donated by a local woman.",
+        "status": "supported",
+        "supporting_excerpt": "The co-pho office was across the street from my beauty shop. ... It was five, seven, and a half. This lady had a down-institutory building. And she gave that to co-pho to use. She didn't charge no rent or nothing. (Segments 661, 676-679, 00:43:26,000-00:44:25,000)",
+        "rationale": "Address number (5, 7, and a half), the woman donor, and the rent-free arrangement are all stated."
+      },
+      {
+        "claim": "Connor first heard Fannie Lou Hamer speak at a Hattiesburg mass meeting and Hamer 'set me on fire.'",
+        "status": "supported",
+        "supporting_excerpt": "And who the Fannie Lou Hamer was the speaker that night? You didn't have a chance. That woman sent me on fire. (Segments 701-703, 00:45:49,000)",
+        "rationale": "Direct quote and direct identification of Hamer as the speaker."
+      },
+      {
+        "claim": "Victoria Gray Adams recruited Connor to a nonviolence workshop at the Dorchester Center on the Georgia–South Carolina line.",
+        "status": "supported",
+        "supporting_excerpt": "So after that, Victoria Gray Adams asked me about going to the workshop. I'm non-violence. ... Dorchester Center. Right on the line of South Carolina and Georgia there. (Segments 705-711, 00:46:09,000-00:46:35,000)",
+        "rationale": "Direct named recruitment by Gray Adams; direct identification of Dorchester Center and its location."
+      },
+      {
+        "claim": "Dorothy Cotton and Andrew Young taught the Dorchester Center workshop.",
+        "status": "supported",
+        "supporting_excerpt": "Dorothy F. Cotton, Andrew Young, would teach us that. (Segment 708, 00:46:19,000)",
+        "rationale": "Direct named identification."
+      },
+      {
+        "claim": "Connor ran citizenship classes at True Light Church after Wednesday-night prayer meetings.",
+        "status": "supported",
+        "supporting_excerpt": "Passed a true light church. ... I went to him and asked him about having citizenship classes. And he told me he said, sure. He said, I would, after proud meeting on Wednesday nights. (Segments 722-725, 01:11:00,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Helen Anderson and Ruth Campbell attended the Dorchester training with Connor.",
+        "status": "supported",
+        "supporting_excerpt": "Well, when I went, it was just... It was Helen Amerson, Ruth Campbell. You know, it was just three of us. (Segments 729-731, 00:47:51,000)",
+        "rationale": "Direct named identification (with transcription rendering 'Amerson' instead of 'Anderson' but Connor later refers to Helen Anderson by name in the head-start section)."
+      },
+      {
+        "claim": "Connor was arrested at the Hattiesburg courthouse with 60-plus people that morning and 100 total by afternoon.",
+        "status": "supported",
+        "supporting_excerpt": "They arrested 60 some people that morning. And then some come that afternoon and they're ready to spend. We ended up having about 100 people in there. (Segments 1200-1202, 01:22:34,000)",
+        "rationale": "Direct numeric testimony."
+      },
+      {
+        "claim": "Congressman John Conyers Jr. stayed at Connor's family home during Freedom Summer.",
+        "status": "supported",
+        "supporting_excerpt": "It's a lot of people came to Rep. John Conyers Jr. He stayed at my house. And I was told after was... FBI agents stayed. (Segments 1077-1080, 01:10:20,000)",
+        "rationale": "Direct named identification of Conyers."
+      },
+      {
+        "claim": "Connor's father kept night watch with a shotgun during Freedom Summer.",
+        "status": "supported",
+        "supporting_excerpt": "He had been paralyzed, but he started walking and he had a cane. And the cane was the man across us. And people put out that old man sitting there with a shotgun across his leg. (Segments 1087-1089, 01:11:09,000)",
+        "rationale": "Direct testimony."
+      },
+      {
+        "claim": "Connor was an MFDP delegate to the 1964 Atlantic City Democratic National Convention.",
+        "status": "supported",
+        "supporting_excerpt": "And when we got to Atlantic City, the country people would have come to town. Lot of us had been out of the state of Mississippi. (Segments 1482-1484, 01:35:00,000) ... And then they got... So you sort of got left out of the history for a while. (about her role at Atlantic City as a delegate)",
+        "rationale": "Connor's status as delegate is established by her presence at Atlantic City, her travel by bus with the delegation, her photograph being kept in 'her room,' and other details; also implied by her position in the MFDP."
+      },
+      {
+        "claim": "Fannie Lou Hamer refused the Atlantic City two-seat compromise.",
+        "status": "supported",
+        "supporting_excerpt": "And what about the women? You know, Fannie Lou Hamer. I didn't come all this way from Mississippi. From the two non-cam votes. I mean, it's going to give you two seats and you couldn't vote. You know, we wouldn't have it. (Segments 1509-1514, 01:37:35,000)",
+        "rationale": "Direct paraphrase by Connor of Hamer's refusal."
+      },
+      {
+        "claim": "Lyndon Johnson's administration was behind the Atlantic City compromise pressure.",
+        "status": "supported",
+        "supporting_excerpt": "But, remember, Lyndon Johnson, he... He stopped being a loop. ... It was the women that saved us. (Segments 1495-1501, 01:36:42,000-01:37:02,000)",
+        "rationale": "Direct attribution by Connor of the compromise to Lyndon Johnson and direct attribution of the refusal to the women."
+      },
+      {
+        "claim": "Adam Clayton Powell Jr. was among the national figures pressuring MFDP men to accept the compromise.",
+        "status": "supported",
+        "supporting_excerpt": "They say we're listening to Adam Clayton Powell Jr Jr and all the other big officers and whatever, you know. (Segment 1503, 01:37:05,000)",
+        "rationale": "Direct named identification of Powell as one of the pressuring figures."
+      },
+      {
+        "claim": "Connor walked through the Capitol hallways with Annie Devine, Fannie Lou Hamer, and Victoria Gray Adams during the 1965 MFDP Congressional Challenge.",
+        "status": "supported",
+        "supporting_excerpt": "And that's when Annie Devine and Miss Hamer and Miss Adams got on the floor. I would say. And so all of the Congress people that were walked through the hallway from building to the next? That's from the representatives to the big building. (Segments 1621-1624, 01:44:30,000)",
+        "rationale": "Direct named identification of the three women and the location."
+      },
+      {
+        "claim": "Vernon Dahmer Sr. was firebombed and died from smoke inhalation.",
+        "status": "supported",
+        "supporting_excerpt": "But they said he died from smoke and he was talking when I left. I guess I might have been home about 30 minutes when I... Woolett was a dad. I just did believe they gave him smoke. (Segments 1751-1754, 02:25:40,000)",
+        "rationale": "Direct testimony that Dahmer died from smoke inhalation, despite Connor's disbelief. Transcript renders his name 'Mr. Damon' / 'Woolett' / variations; civil_rights_facts.json canonicalizes to Vernon Dahmer Sr."
+      },
+      {
+        "claim": "The NAACP had expelled Vernon Dahmer for working with SNCC, and Connor saw the letter.",
+        "status": "supported",
+        "supporting_excerpt": "But you know the NAACP. They had put him out to get you. You had heard that. ... I saw the letter that they wrote in. ... What was the reason that the National K's put them out? They did not want him working with snakes. You know, he had SNCC people in his house before it... (Segments 1718-1734, 01:51:20,000-01:52:48,000)",
+        "rationale": "Direct testimony that Connor saw the NAACP letter and direct identification of the reason."
+      },
+      {
+        "claim": "Connor's name was on the Connor v. Johnson redistricting suit because she was MFDP executive secretary.",
+        "status": "supported",
+        "supporting_excerpt": "How did your name come to be on the leave on that lawsuit, kind of versus Johnson? Because I was an executive secretary on the party. ... it's the record keeper. ... And that's who the government go after. (Segments 1867-1872, 02:13:13,000)",
+        "rationale": "Direct testimony of both her role and the named lawsuit."
+      },
+      {
+        "claim": "Connor v. Johnson was about redistricting and helped produce Black elected officials in Mississippi.",
+        "status": "supported",
+        "supporting_excerpt": "It was about getting some very elected people in offices. ... but that's where we got a lot of black, elected officials in Jackson. ... So that's how we got a Congressman of Black Congressman from the Society. (Segments 1976-1986, 02:09:35,000-02:10:25,000)",
+        "rationale": "Direct testimony about both the redistricting nature and the resulting Black elected officials."
+      },
+      {
+        "claim": "The Child Development Group of Mississippi (CDGM) was approved as the first such Head Start program after a meeting with Sargent Shriver in Washington, despite Mississippi state government turning it down.",
+        "status": "supported",
+        "supporting_excerpt": "Child Development Group of Mississippi? Yeah, Child Development Group of Mississippi. And the delegates, when we went to Washington, and we got a chance to talk with Sargent Shriver. And he told us about it. And we would get the first one in the United States. ... to see how it come, because Mississippi had turned it down. (Segments 1815-1822, 01:59:42,000-02:00:25,000)",
+        "rationale": "Direct testimony of the CDGM approval pathway."
+      },
+      {
+        "claim": "Connor's daughter Felicia integrated Jefferson Davis Elementary School under Freedom of Choice.",
+        "status": "supported",
+        "supporting_excerpt": "And my daughter, when Felicia [Connor], when they desegregated [the] self-created [white] schools, and she was six to integrate. Yeah. Freedom of choice. ... I know it was on 7th Street, crossing Herkley. It was the name Jefferson Davis Elementary School. ... Are you ready to change my name? Absolutely, okay. (Segments 1121-1151, 01:13:42,000-01:15:48,000)",
+        "rationale": "Direct named testimony of the daughter, the school, and the Freedom-of-Choice mechanism."
+      },
+      {
+        "claim": "Connor filed a lawsuit against the owner of the Owl Drug Store after he refused to serve her at the lunch counter in July 1964.",
+        "status": "supported",
+        "supporting_excerpt": "But anyway, we went in our drugstore and it was full. ... I bought a box and she said, she said, they're like that. But they knocked together. I said, don't care. So she hopped on one stool and I hopped on one. ... He said, but I'm sorry, but we can't. ... And I filed suit. ... It went for about, oh, in courts. Made about four years or so. (Segments 1320-1366, 01:25:38,000-01:28:54,000)",
+        "rationale": "Direct testimony of the sit-in attempt, refusal, and subsequent lawsuit; the timing 'this was in July' is also given."
+      },
+      {
+        "claim": "Governor Paul B. Johnson Jr., from Hattiesburg, called a special session of the Mississippi legislature to ban demonstrations during the movement.",
+        "status": "supported",
+        "supporting_excerpt": "Read nothing was done too much. He had his bird because the governor was from Hattiesburg. (Paul Burney) Johnson Jr. Call the Johnson. And I was in Hattiesburg. ... It was a special session called for that. (Segments 2099-2107, 02:18:33,000)",
+        "rationale": "Direct testimony of Governor Paul B. Johnson Jr.'s Hattiesburg origin and the special session."
+      },
+      {
+        "claim": "Connor recovered from her shyness through her movement involvement and gave a two-hour interview on September 11, 2011.",
+        "status": "supported",
+        "supporting_excerpt": "And then I never talked. When I did my first... Put your cup. In a view, what they call them? The old history. It was 9-1-1. September 9th, 11. And Dr. Convey of Dieting. I talked two hours. I told it, man, I never talked that long. (Segments 1430-1439, 02:04:46,000-02:05:25,000)",
+        "rationale": "Direct testimony, though the transcript renders the interview as '9-1-1 ... September 9th, 11' suggesting September 11 2011 as the date."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 30,
+      "supported": 30,
+      "partially_supported": 0,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_and_quality_below_90",
+    "rationale": "All 30 audited claims in the main summary are transcript-supported, and the citation audit shows zero unsupported or partially-supported claims. However, the main summary's quality and accuracy scores are 86 and 88 respectively — below the 90/90 publication threshold. The score reduction reflects (1) the substantial Whisper transcription artifacts in the source SRT (multiple proper nouns rendered ambiguously: 'Mr. Damon' for Vernon Dahmer, 'Megahevers' for Medgar Evers, 'GI' / 'Giaw' for what appears to be J.C. Fairley, 'Michael Bellwell' for what appears to be Mike Thelwell, 'me and 100' for what appears to be the Mississippi Regional Council of Negro Leadership) which the summary canonicalizes against civil_rights_facts.json; (2) the summary's provisional identifications (Henry Aaron as MFDP candidate, the visiting clergy speaker at the Freedom Day mass meeting) which are not fully transcript-grounded; and (3) the residual risk that local Hattiesburg figures and a possibly-misidentified Mississippi political organization could be re-rendered if the transcript is re-audited. The summary is suitable for human review at the WWU level, where a reviewer with access to the original audio can confirm the canonical spellings of these names. The fail-closed gate is the correct destination."
+  }
+}

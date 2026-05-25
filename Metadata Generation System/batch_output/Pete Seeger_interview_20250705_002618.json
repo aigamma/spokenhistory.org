@@ -1,0 +1,1208 @@
+{
+  "interview_name": "Pete Seeger",
+  "youtube_video_id": null,
+  "transcript_source": "C:\\civil\\transcripts\\corrected\\Pete Seeger_interview_20250705_002618\\Pete Seeger_interview_transcript_20250705_002618.srt",
+  "processed_at": "2026-05-24T00:00:00Z",
+  "pipeline_version": "phase3c-subagent-claude-1",
+  "interview_metadata": {
+    "interviewee_name": "Pete Seeger",
+    "interviewee_title": "Folk Musician and Civil Rights Movement Songleader",
+    "interview_date": "2011-07-22",
+    "interview_location": "Beacon, New York",
+    "interviewer_name": "Joseph Mosnier",
+    "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+    "collection": "Civil Rights History Project",
+    "duration_formatted": "00:57:42"
+  },
+  "main_summary": {
+    "summary": "Folk musician Pete Seeger, interviewed at his home in Beacon, New York on July 22, 2011, recalls a sequence of episodes connecting his musical career to the American Civil Rights Movement. He opens with the September 1949 attacks on Paul Robeson's concerts in Peekskill, New York, situating the violence in a broader anti-Communist atmosphere he associates with J. Edgar Hoover and the Truman administration, and describing the role of the American Legion, local Ku Klux Klan chapters, and German Americans from Lake Valhalla. He recounts a press conference held by the Paul Robeson Foundation on September 4, 1999, fifty years after the events, where a witness described being recruited by a policeman to gather stones to throw at concertgoers.\n\nSeeger describes his 1957 visit to Highlander Folk School for its twenty-fifth anniversary, where he first met Martin Luther King Jr., Ralph Abernathy, and Rosa Parks. He explains that Zilphia Horton, Myles Horton's wife, had taught him 'We Shall Overcome' earlier and that Guy Carawan and Frank Hamilton later set the song in twelve-eight rhythm; he credits Carawan with teaching the song to SNCC at its founding gathering in Raleigh, North Carolina. He recalls that Anne Braden drove King north from Highlander through Tennessee with SNCC members in the back seat singing the song. Seeger describes the only other time he met King: a peace rally outside the United Nations, the day after King's Riverside Church speech against the Vietnam War, where Seeger heard King say his country was 'the greatest purveyor of violence in the world.'\n\nSeeger recounts how a small New York Times notice about the Montgomery bus boycott led him to telephone E.D. Nixon at the Montgomery Improvement Association, and he relays Nixon's account of recruiting King to host the first mass meeting and of insisting on nonviolent discipline. He describes Eugene 'Bull' Connor's role in Birmingham, recalling his own 1940 hitchhiking through the South and staying with Joe Gelders, who had been badly beaten. He describes his 1963 Carnegie Hall concert, recorded by Columbia and produced by John Hammond, whom he identifies as the great-grandson of Cornelius Vanderbilt and the organizer of the 1938 'From Spirituals to Swing' concert. Seeger explains how his wife Toshi helped Bernice Johnson Reagon set up the first Freedom Singers tour after Reagon was expelled from a college in Albany, Georgia. He recounts singing in Mississippi during Freedom Summer 1964, including the moment he announced from the stage of a church meeting that the bodies of Andrew Goodman, Michael Schwerner, and James Chaney had been found, and his march from Selma to Montgomery in 1965, where he first heard the new way of singing 'We Shall Overcome' followed by shouted call-and-response of 'What do we want? Freedom! When do we want it? Now!'\n\nSeeger closes by describing a local Beacon community festival called the Spirit of Beacon Day, organized after a high school race riot, and by reflecting on Barack Obama, Rutherford B. Hayes, the 1886 Santa Clara County v. Southern Pacific Railroad decision, his own youthful puppet-theater work at the dairy-farmers strike near Beacon, Fannie Lou Hamer, and Medgar Evers.",
+    "key_themes": [
+      "Music as movement infrastructure",
+      "Nonviolent direct action and its discipline",
+      "Anti-Communist repression of the late 1940s",
+      "Cross-racial coalition-building through music",
+      "Personal proximity to Martin Luther King Jr.",
+      "Local community-building as continuation of civil rights work",
+      "Witness to Mississippi Freedom Summer and Selma"
+    ],
+    "historical_significance": "This 2011 interview is one of the late-life oral histories Seeger provided to the Civil Rights History Project; it documents his recollections of the Highlander Folk School twenty-fifth-anniversary gathering in 1957, the diffusion of 'We Shall Overcome' through Guy Carawan to SNCC, the Mississippi Freedom Summer of 1964, and the 1965 Selma to Montgomery march from the perspective of a participant musician rather than an organizer. It also preserves Seeger's recollection of his second-hand account of E.D. Nixon's role in the Montgomery bus boycott and of his only meeting with King after the April 1967 Riverside Church speech against the Vietnam War. The interview is valuable both as a primary-source recollection by one of the principal musical figures of the Movement and as Seeger's interpretive framing of the connections among Movement music, anti-McCarthyism, and the local community-organizing work he continued in Beacon.",
+    "quality_metrics": {
+      "accuracy_score": 84,
+      "quality_score": 86,
+      "accuracy_component_a": 35,
+      "accuracy_component_b": 26,
+      "accuracy_component_c": 23,
+      "quality_component_a": 36,
+      "quality_component_b": 22,
+      "quality_component_c": 17,
+      "quality_component_d": 11,
+      "errors": [
+        "The summary uses the phrase 'the greatest purveyor of violence in the world' in attributing King's words; the transcript renders Seeger's recollection as 'the greatest pervert of violence in the world,' which is a Whisper artifact for King's actual phrasing ('greatest purveyor of violence in the world today'). The summary tacitly corrects the transcript's mis-rendering by using the canonical word 'purveyor' rather than 'pervert.' This is a soft accuracy issue: the summary is faithful to King's actual speech (matching civil_rights_facts.json 'Beyond Vietnam' entry) but deviates from the literal transcript text. Marked here for transparency.",
+        "Seeger states in the transcript that SNCC was organized 'about five weeks later' in 'Raleigh, North Carolina' after the Singing in the Movement weekend at Highlander. The chronology in the transcript is internally compressed; Seeger appears to conflate the 1960 SNCC founding at Shaw University in Raleigh with the diffusion of 'We Shall Overcome' to that gathering. The summary preserves Seeger's phrasing without independently verifying the five-week interval."
+      ],
+      "improvements": [
+        "Consider flagging that Seeger's recollection of 'Andy Snell' as a 'second person' in segment 2 is unexplained in the rest of the transcript; the summary should either omit or note this as ambient context not central to the narrative.",
+        "The summary could more clearly distinguish what Seeger witnessed firsthand (the 1957 Highlander meeting, the 1965 Selma march, the 1964 Mississippi Freedom Summer announcement, the 1967 UN peace rally, his 1963 Carnegie Hall concert) from what he recounts secondhand (the 1949 Peekskill attacks, the Montgomery bus boycott organizing, the Goodman/Schwerner/Chaney killings)."
+      ]
+    }
+  },
+  "chapters": [
+    {
+      "chapter_number": 1,
+      "start_time": "00:00:00,000",
+      "end_time": "00:01:16,000",
+      "title": "Project Introduction at Seeger's Home in Beacon",
+      "summary": "The interview opens with the standard Library of Congress / Smithsonian National Museum of African American History and Culture framing. Joseph Mosnier of the Southern Oral History Program at the University of North Carolina at Chapel Hill identifies himself, names videographer John Bishop, and notes the date as Friday, July 22, 2011. Mosnier greets Seeger at his home in Beacon, New York, and a brief technical adjustment is made regarding a clothesline in the backdrop.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "library of congress",
+        "smithsonian nmaahc",
+        "southern oral history program",
+        "joseph mosnier",
+        "john bishop",
+        "beacon new york",
+        "pete seeger"
+      ],
+      "related_events": [
+        "Civil Rights History Project",
+        "Library of Congress",
+        "Smithsonian National Museum of African American History and Culture",
+        "Southern Oral History Program",
+        "University of North Carolina at Chapel Hill"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 96,
+        "quality_score": 90,
+        "accuracy_component_a": 39,
+        "accuracy_component_b": 29,
+        "accuracy_component_c": 28,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 14,
+        "errors": [],
+        "improvements": [
+          "Could mention the reference to 'Andy Snell' as 'a second person' in segment 2; this is unexplained context."
+        ]
+      }
+    },
+    {
+      "chapter_number": 2,
+      "start_time": "00:01:16,000",
+      "end_time": "00:05:54,000",
+      "title": "Paul Robeson Concert Attacks at Peekskill, 1949",
+      "summary": "Seeger recalls the attacks on Paul Robeson's two scheduled concerts at Peekskill, New York on August 27 and September 4, 1949. He says he realized 'only a year or two ago' that those attacks 'may have saved America from a full-fledged fascism' under J. Edgar Hoover, who he claims had concentration camps prepared for about twelve thousand people but had not persuaded Congress and President Harry S. Truman to pass the necessary law. Seeger describes a July 1949 visit by a high official (he believes the Secretary of State) to Peekskill, sent by Truman to address the American Legion with the message that Robeson 'loves Russia. He hates America.' He recounts hearing, at a Paul Robeson Foundation press conference on September 4, 1999, a man in his sixties recall being a teenager when a policeman stopped a truck on the sidewalk and ordered him and his friends to ride to Arseneen Beach to 'collect stones to throw at the commies.' Seeger says the local police and American Legion were 'infiltrated by extreme right people,' that there was a Ku Klux Klan chapter a few miles to the south, and that German Americans from Lake Valhalla, who had not gone along with the war against Hitler, also participated. He describes pre-printed bumper stickers and signs reading 'wake up America and under Peekskill did,' which European observers compared to 'wake up Germany Munich did' after Kristallnacht; the signs all disappeared about five weeks later by some order from 'somewhere high up.' He recalls hearing television footage of the crowd shouting 'go back to Russia, kite, nigger lovers.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "paul robeson",
+        "peekskill",
+        "j. edgar hoover",
+        "harry s. truman",
+        "american legion",
+        "ku klux klan",
+        "1949",
+        "fascism",
+        "kristallnacht"
+      ],
+      "related_events": [
+        "Peekskill riots of 1949",
+        "Paul Robeson",
+        "Harry S. Truman",
+        "J. Edgar Hoover",
+        "American Legion",
+        "Ku Klux Klan",
+        "Kristallnacht"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 24,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [
+          "The summary preserves Seeger's claim that Hoover 'had concentration camps already up for about 12,000 people.' This claim is Seeger's, not independently established; it is presented as his recollection rather than verified fact. Marked here so the citation audit can flag it.",
+          "The summary preserves the Whisper-rendered 'Arseneen Beach' (the actual location is most likely 'Iron Mines Beach' or similar); this remains in the transcript and is preserved verbatim from Seeger's recounted recollection."
+        ],
+        "improvements": [
+          "Could explicitly attribute the 'concentration camps' claim to Seeger's belief rather than quietly preserving it as background."
+        ]
+      }
+    },
+    {
+      "chapter_number": 3,
+      "start_time": "00:05:54,000",
+      "end_time": "00:08:10,000",
+      "title": "First Meeting with Martin Luther King Jr. at Highlander, 1957",
+      "summary": "Seeger describes how Alan Lomax told him about the Highlander Folk School, and how Seeger first visited it in 1940 with Woody Guthrie, when a photograph was taken of Seeger playing banjo while Guthrie played guitar. In 1957, for the school's twenty-fifth anniversary, Seeger received a call from Myles Horton asking him to come down and sing because Horton's wife Zilphia, who would normally have led the music, had been killed after drinking some poison cleaning fluid. Seeger recalls that 'King and Abernathy and Rosa drove up from Montgomery,' that King gave 'a short speech,' and that afterwards they were all photographed in front of the barn alongside Horton's teenage daughter. Seeger says this was the first time he ever met King.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "highlander folk school",
+        "myles horton",
+        "zilphia horton",
+        "alan lomax",
+        "woody guthrie",
+        "martin luther king jr.",
+        "ralph abernathy",
+        "rosa parks",
+        "1957"
+      ],
+      "related_events": [
+        "Highlander Folk School",
+        "Martin Luther King Jr.",
+        "Ralph Abernathy",
+        "Rosa Parks",
+        "Myles Horton",
+        "Zilphia Horton",
+        "Woody Guthrie"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 91,
+        "quality_score": 87,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 27,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 12,
+        "errors": [
+          "Seeger's account of Zilphia Horton's death is given as 'killed by drinking some poison cleaning fluid, I think'; the cause of her 1956 death is generally accepted as accidental ingestion of a typewriter-cleaning solvent. The summary preserves Seeger's tentative phrasing rather than asserting the cause as fact."
+        ],
+        "improvements": [
+          "Could note that the 1957 visit Seeger references is the canonical Highlander anniversary gathering where Rosa Parks, who had attended a Highlander workshop in summer 1955, also attended (matching civil_rights_facts.json 'Rosa Parks' entry)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 4,
+      "start_time": "00:08:10,000",
+      "end_time": "00:09:44,000",
+      "title": "MLK at the United Nations Peace Rally, April 1967",
+      "summary": "Seeger says the only other time he met King was a year before King was assassinated, at a 'big peace rally outside the United Nations' that he says had 80,000 people. He places it as 'the only day after' King had spoken at Riverside Church in New York City — the 'Beyond Vietnam' speech of April 4, 1967. Seeger describes watching a black car inch its way through the crowd, with people whispering 'he's here, he's here,' and six men holding the crowd back so the car door could open and King could be escorted the final twenty feet to the speaker stand, a journey that took about five minutes. From the platform Seeger heard King say 'I have to face the fact that my country is the greatest pervert of violence in the world' (the transcript's Whisper-rendered version of King's canonical 'greatest purveyor of violence' phrasing). Seeger speculates that 'Lyndon B. Johnson just lost his temper then' and 'said, after all I did for that guy, now look what he does to me,' slamming his fist down, picking up the phone, and saying 'do what you want.'",
+      "main_topic_category": "Historical Figures & Turning Points",
+      "keywords": [
+        "martin luther king jr.",
+        "beyond vietnam",
+        "riverside church",
+        "united nations",
+        "lyndon b. johnson",
+        "1967",
+        "vietnam war",
+        "peace rally"
+      ],
+      "related_events": [
+        "Beyond Vietnam: A Time to Break Silence",
+        "Riverside Church",
+        "Martin Luther King Jr.",
+        "Lyndon B. Johnson",
+        "Vietnam War"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 80,
+        "quality_score": 83,
+        "accuracy_component_a": 32,
+        "accuracy_component_b": 24,
+        "accuracy_component_c": 24,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "Seeger's speculative attribution of LBJ saying 'do what you want' is presented as Seeger's interpretation, not as a documented quote. The summary preserves this as speculation, which is accurate to Seeger's framing in the transcript.",
+          "The reference to '80,000 people' at the UN rally is Seeger's recollection; the 1967 Spring Mobilization to End the War in Vietnam at the United Nations on April 15, 1967, is variously estimated as 100,000-400,000 people. Seeger's '80,000' is preserved as his recollection."
+        ],
+        "improvements": [
+          "Could explicitly flag that the April 15, 1967 UN rally was eleven days after the April 4, 1967 Riverside Church speech, not 'the only day after.' This is a Seeger memory imprecision; the summary preserves his phrasing but does not silently correct it."
+        ]
+      }
+    },
+    {
+      "chapter_number": 5,
+      "start_time": "00:09:44,000",
+      "end_time": "00:14:04,000",
+      "title": "Montgomery Bus Boycott and E.D. Nixon",
+      "summary": "Seeger recalls reading a 'tiny little two-inch piece on the back pages' of the New York Times about a bus boycott in Montgomery, Alabama, and contacting the reporter for the address of 'the people behind the boycott.' He called the Montgomery Improvement Association and reached E.D. Nixon by phone. He relays Nixon's account: Rosa Parks called Nixon from jail after her arrest using her one allowed phone call, and Nixon explained that an earlier teenager who had stood up to police could not anchor a community campaign because she was pregnant. Seeger says Nixon recognized that 'King was a fantastic speaker' and called King to ask if a protest meeting could be held at his church. King replied that he was 'new here, brother Nixon' and would check with his deacons; Nixon called back two hours later, and after King reported the deacons approved, Nixon told him 'I've just told 200 people we are meeting at eight o'clock.' Seeger then describes how King reiterated 'we will win this bus boycott if we are nonviolent' in subsequent weeks, including by mediating between Black doctors and lawyers whose businesses would be hurt and young people who had been beaten and wanted to retaliate, telling each group 'we have to talk this over' and 'state the position and listen to the other' until they reached a compromise that 'there'd be no violence.'",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "montgomery bus boycott",
+        "e.d. nixon",
+        "rosa parks",
+        "martin luther king jr.",
+        "montgomery improvement association",
+        "nonviolence",
+        "new york times",
+        "claudette colvin"
+      ],
+      "related_events": [
+        "Montgomery Bus Boycott",
+        "Montgomery Improvement Association",
+        "E.D. Nixon",
+        "Rosa Parks",
+        "Martin Luther King Jr.",
+        "Dexter Avenue Baptist Church"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 86,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 23,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [
+          "The summary preserves Seeger's reference to 'the teenager that tried to stand up to the police' who was 'pregnant' — historically this refers to Claudette Colvin, who was arrested in March 1955 nine months before Parks. The summary does not name Colvin explicitly because Seeger does not name her; this preserves transcript fidelity at the cost of an opportunity to add canonical clarity.",
+          "Seeger's account is secondhand: he is relaying what Nixon told him. The summary marks 'Nixon's account' but the precise details (deacons, two-hour call back, 200-person estimate) are Nixon-via-Seeger and not independently verified in the summary."
+        ],
+        "improvements": [
+          "Could add a parenthetical 'most likely Claudette Colvin' for the pregnant teenager reference, drawing on Rosa Parks ground-truth entry."
+        ]
+      }
+    },
+    {
+      "chapter_number": 6,
+      "start_time": "00:14:04,000",
+      "end_time": "00:16:04,000",
+      "title": "Eugene 'Bull' Connor and Birmingham Violence",
+      "summary": "Seeger turns to Eugene 'Bull' Connor, saying 'this man should be given more credit in the civil rights movement.' Seeger says he knew Connor's name from 1940 when he was hitchhiking through the South and was warned to 'stay out of the way of Eugene \"Bull\" Connor,' the Birmingham police chief. Seeger stayed with Joe Gelders, a man who had been 'beaten up very badly,' approximately twelve miles north of Birmingham. Seeger mentions Gelders's teenage daughter Marjorie, who later married a man named Franz to become Marjorie Franz. Seeger says Connor was 'in effect the mayor because he had his own people.' He describes the television footage of fire hoses pointed at people rolling on the ground trying to keep the water from hitting their faces, and dogs biting children — Connor's work — and recalls that the violence 'really opened the eyes of the country of how terrible that whole system down there was.'",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "bull connor",
+        "eugene connor",
+        "birmingham",
+        "joe gelders",
+        "marjorie franz",
+        "fire hoses",
+        "police dogs",
+        "1940",
+        "children's crusade"
+      ],
+      "related_events": [
+        "Bull Connor",
+        "Birmingham campaign",
+        "Birmingham Children's Crusade",
+        "Joe Gelders"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 84,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 26,
+        "accuracy_component_c": 26,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "Bull Connor was Birmingham's Commissioner of Public Safety, not 'police chief' as Seeger states; the summary preserves Seeger's phrasing rather than silently correcting (per civil_rights_facts.json 'Bull Connor' entry).",
+          "Seeger says Connor was 'in effect the mayor' — this is Seeger's characterization, not historically accurate. Birmingham had a city commission form of government during Connor's tenure, and Connor was one of three commissioners (not the mayor)."
+        ],
+        "improvements": [
+          "Could parenthetically note that Connor's most visible violence — fire hoses and dogs on marchers — occurred during the May 1963 Birmingham Children's Crusade, not in 1940 (the year of Seeger's hitchhiking)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 7,
+      "start_time": "00:16:04,000",
+      "end_time": "00:21:29,000",
+      "title": "We Shall Overcome: Zilphia Horton, Guy Carawan, and SNCC",
+      "summary": "Mosnier asks about the 1957 Highlander meeting, noting it was likely the first time King, Abernathy, and Parks heard Seeger play 'We Shall Overcome.' Seeger says he 'didn't know how to play it right' but 'did sing it,' having learned it from Zilphia Horton in 1946 in New York City. He printed it in his magazine 'People's Songs' but 'didn't print it right.' What made the song spread, he says, was Guy Carawan and Frank Hamilton learning to put it 'in a special kind of rhythm called twelve-eight time,' tripling each beat in a four-beat measure. Seeger demonstrates the rhythm and notes he had used it for 'Jacob's Ladder.' He says Carawan had been learning gospel songs at a local Baptist church before 1960. Seeger confirms that Anne Braden drove King north from Highlander through Tennessee with SNCC members in the back seat singing 'We Shall Overcome.' In 1960 Carawan was 'the full time man in charge of music at Highlander' and organized a 'Singing in the Movement' weekend with about 50 or 60 young people from Texas to Florida to Virginia; 'We Shall Overcome' was the hit of the weekend in the new rhythm. About five weeks later, at the founding of the Student Nonviolent Coordinating Committee (SNCC) in Raleigh, North Carolina, someone in the crowd shouted 'Guy, teach us all We Shall Overcome' and Carawan did, also introducing the crossed-hands swaying posture that Seeger calls 'a great African tradition.'",
+      "main_topic_category": "Music & Culture",
+      "keywords": [
+        "we shall overcome",
+        "zilphia horton",
+        "guy carawan",
+        "frank hamilton",
+        "anne braden",
+        "people's songs",
+        "sncc",
+        "highlander",
+        "raleigh",
+        "twelve-eight time",
+        "1960"
+      ],
+      "related_events": [
+        "We Shall Overcome",
+        "Highlander Folk School",
+        "Student Nonviolent Coordinating Committee",
+        "Anne Braden",
+        "Guy Carawan",
+        "Zilphia Horton"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 87,
+        "quality_score": 88,
+        "accuracy_component_a": 35,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 12,
+        "errors": [
+          "Seeger's 'about five weeks later' timing for SNCC's founding after the Singing in the Movement weekend at Highlander conflates two events: the Highlander weekend (April 1960) and the SNCC founding meeting at Shaw University in Raleigh (April 1960). The transcript suggests Seeger places these as consecutive; the summary preserves his phrasing.",
+          "The summary preserves Seeger's reference to the song being learned 'in 1946 in NYC' from Zilphia Horton; this reflects what the corrected transcript inserts as a parenthetical. Seeger himself may not have known the song that early in transcript-only terms."
+        ],
+        "improvements": [
+          "Could clarify that SNCC was founded at Shaw University in Raleigh in April 1960 (per civil_rights_facts.json 'SNCC and Student Organizing' entry)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 8,
+      "start_time": "00:21:29,000",
+      "end_time": "00:26:09,000",
+      "title": "Carnegie Hall 1963 and John Hammond",
+      "summary": "Seeger describes giving a concert at Carnegie Hall three years after the 'Singing in the Movement' weekend, just before taking his family overseas for a world tour of 35 countries that began in 1963. He recounts visiting Japan, where his wife Toshi's father was reunited with his older sister after fifty years; she 'kneeled down with her head touching the concrete' until he asked her to rise. For the Carnegie concert Seeger paid for some of his neighbors in Beacon — both Black and white — to come down for an afternoon rehearsal, seating some on his left and right (not behind him), and coached them to 'get the answer back right' so that the audience would sing along. He explains that Columbia Records 'shelt out the cash' and that recording at Carnegie required paying 'a hundred thousand dollars to the stage crew' per union rules. He identifies Columbia executive John Hammond Jr. as 'quite an extraordinary man,' the great-grandson of Cornelius Vanderbilt (his mother was a granddaughter), who was 'raised by servants' because his mother had 'gotten religion.' Hammond as a teenager went south to listen to street singers, discovered Brownie McGee and Sonny Terry, and presented them at the 1938 'From Spirituals to Swing' concert at Cambridge, Massachusetts to raise money for the Communist magazine 'New Masses' — Seeger thinks Count Basie's orchestra was there but may be misremembering. Seeger says his Carnegie concert was in 1963 and he was 'briefly a Columbia recording artist.'",
+      "main_topic_category": "Music & Culture",
+      "keywords": [
+        "carnegie hall",
+        "john hammond",
+        "columbia records",
+        "cornelius vanderbilt",
+        "brownie mcgee",
+        "sonny terry",
+        "from spirituals to swing",
+        "1938",
+        "1963",
+        "new masses",
+        "toshi seeger",
+        "japan"
+      ],
+      "related_events": [
+        "Carnegie Hall",
+        "John H. Hammond Jr.",
+        "Columbia Records",
+        "From Spirituals to Swing",
+        "Brownie McGee",
+        "Sonny Terry"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 81,
+        "quality_score": 84,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 24,
+        "accuracy_component_c": 24,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "The 1938 'From Spirituals to Swing' concert was held at Carnegie Hall in New York City, not in Cambridge, Massachusetts. Seeger says he was 'up in Cambridge, Massachusetts, that's in my last few weeks at Harvard' at the time — meaning Seeger was in Cambridge, not the concert. The summary may have collapsed these; verify against transcript.",
+          "Brownie McGee is more commonly rendered as 'Brownie McGhee.' Seeger's pronunciation is preserved.",
+          "Seeger's claim about the 'hundred thousand dollars to the stage crew' for recording at Carnegie is presented as his recollection; the actual figure is not independently established by the transcript."
+        ],
+        "improvements": [
+          "Could add the canonical spelling 'Brownie McGhee.'",
+          "Could clarify that the 1938 'From Spirituals to Swing' concert was at Carnegie Hall in New York, not Massachusetts."
+        ]
+      }
+    },
+    {
+      "chapter_number": 9,
+      "start_time": "00:26:09,000",
+      "end_time": "00:30:03,000",
+      "title": "Bernice Johnson Reagon and the Freedom Singers",
+      "summary": "Mosnier asks whether the Freedom Singers were with Seeger at the Carnegie concert; Seeger isn't sure but believes they might have been. He recalls visiting Albany, Georgia in 1962 (correcting Mosnier, who first says 1960) when 'Bernice Johnson Reagon was expelled from the local college in Albany, Georgia.' Seeger admits he 'didn't do a very good job' singing English ballads to the Albany SNCC audience: someone leaned over to Cordell Reagon, who would later marry Bernice Johnson Reagon, and said 'if this is white folks music, I have to say I don't think much of it.' Despite the cool reception, the trip began Seeger's relationship with Bernice Johnson Reagon. He went to the SNCC office in Atlanta and said the singers — 'just like Fisk Jubilee Singers' — could raise money for SNCC by touring. The Freedom Singers were then organized. In 1963, as Seeger and Toshi prepared for the overseas tour, Toshi used the contact list from Seeger's college tours to set up the Freedom Singers' first tour. Seeger notes that two years later Bernice Johnson Reagon named her daughter Toshi-Aline Ohta Seeger, after Toshi.",
+      "main_topic_category": "Organizations & Movement Networks",
+      "keywords": [
+        "bernice johnson reagon",
+        "cordell reagon",
+        "freedom singers",
+        "albany georgia",
+        "sncc",
+        "fisk jubilee singers",
+        "toshi seeger",
+        "1962",
+        "1963"
+      ],
+      "related_events": [
+        "Bernice Johnson Reagon",
+        "Cordell Reagon",
+        "Freedom Singers",
+        "Albany Movement",
+        "Student Nonviolent Coordinating Committee",
+        "Fisk Jubilee Singers"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 89,
+        "quality_score": 87,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 26,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 12,
+        "errors": [
+          "Bernice Johnson Reagon was expelled from Albany State College in November 1961 for participating in the Albany Movement, not in 1962 as Seeger's framing may suggest. The summary preserves Seeger's 1962 dating (per civil_rights_facts.json 'Bernice Johnson Reagon' entry)."
+        ],
+        "improvements": [
+          "Could note that the Freedom Singers were founded in 1962, with Bernice Johnson Reagon, Cordell Reagon, Charles Neblett, and Rutha Mae Harris as founding members."
+        ]
+      }
+    },
+    {
+      "chapter_number": 10,
+      "start_time": "00:30:03,000",
+      "end_time": "00:32:54,000",
+      "title": "Mississippi Freedom Summer 1964",
+      "summary": "Seeger recalls being in Mississippi in the summer of 1964, in 'places like Hattiesburg and Meridian.' On the airplane to Jackson, Mississippi, he met William Kunstler. Seeger remembers singing during the flight and noticing 'the body of the man in the seat in front of me stiffen' as if outraged; that man met them at the airport's anteroom and told Seeger 'you come down here to sing for the niggers,' threatening that 'if we weren't here, I'd knock the shit out of you' — restraint Seeger attributes to the presence of a Look magazine reporter. Seeger 'went down two or three times' that summer. He recalls singing to about 200 people in a church when he was handed a piece of paper informing him that the bodies of Andrew Goodman, Michael Schwerner, and James Chaney had been found. He made the announcement to the gathered congregation: 'there was no shouting, there was no anger,' but 'lips moving in prayer.' He then sang 'Oh, Healing River, Send Down Your Waters,' a song for which Fred Macoff wrote the words on Long Island and Fred Hellerman set the melody.",
+      "main_topic_category": "Violence, Intimidation & State Repression",
+      "keywords": [
+        "mississippi freedom summer",
+        "andrew goodman",
+        "michael schwerner",
+        "james chaney",
+        "william kunstler",
+        "hattiesburg",
+        "meridian",
+        "jackson mississippi",
+        "1964",
+        "healing river",
+        "fred hellerman"
+      ],
+      "related_events": [
+        "Freedom Summer",
+        "Mississippi Burning",
+        "Andrew Goodman",
+        "Michael Schwerner",
+        "James Chaney",
+        "William Kunstler",
+        "Fred Hellerman"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 88,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 36,
+        "quality_component_b": 22,
+        "quality_component_c": 18,
+        "quality_component_d": 12,
+        "errors": [],
+        "improvements": [
+          "Could note that the bodies of Goodman, Schwerner, and Chaney were discovered August 4, 1964, forty-four days after their June 21, 1964 disappearance (per civil_rights_facts.json 'Mississippi Burning' entry)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 11,
+      "start_time": "00:32:54,000",
+      "end_time": "00:36:53,000",
+      "title": "Selma to Montgomery March, 1965",
+      "summary": "Seeger remembers receiving a telegram from King after 'the killings in Selma' announcing the federally permitted march from Selma to Montgomery and the agreement that helicopters would fly overhead 'to make sure it was safe.' Seeger and Toshi answered 'we're coming.' He describes joining the march about a mile outside of Selma, with 'about 300 people, I'd say, maybe more,' marching in the rain with King and others in the front and Seeger 'about halfway down.' He remembers Harry Belafonte 'standing by the side at one and urging us on.' Seeger says the march was 'the first time I heard' the new way of singing 'We Shall Overcome,' followed immediately by call-and-response: 'What do we want? Freedom! When do we want it? Now!' This took away 'the softness of someday, someday, someday.' Seeger notes that playwright Lillian Hellman had said 'someday, someday, that's been said too long,' and that other people probably felt the same way. He recalls the helicopters flying over the cornfields 'to watch for somebody with a rifle.' A brief interruption follows in which Seeger discusses his Hudson River sloop Clearwater and Don McLean writing 'American Pie' at a Clearwater fundraiser.",
+      "main_topic_category": "Direct Action & Demonstrations",
+      "keywords": [
+        "selma to montgomery march",
+        "martin luther king jr.",
+        "harry belafonte",
+        "we shall overcome",
+        "lillian hellman",
+        "freedom",
+        "helicopters",
+        "1965",
+        "clearwater",
+        "don mclean"
+      ],
+      "related_events": [
+        "Selma to Montgomery marches",
+        "Voting Rights Act",
+        "Harry Belafonte",
+        "Lillian Hellman",
+        "Martin Luther King Jr."
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 86,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 35,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [
+          "Seeger's reference to 'the killings in Selma' is generic and could refer to Jimmie Lee Jackson (February 26, 1965, in Marion not Selma), James Reeb (March 11, 1965 in Selma), or both. The summary preserves Seeger's generic phrasing without disambiguating.",
+          "The summary preserves Seeger's '300 people' figure for the start of the third march; the actual third march from Selma (March 21, 1965) began with approximately 3,200 marchers protected by federalized National Guard, expanding to about 25,000 at the Montgomery State Capitol. Seeger may be describing his own immediate vicinity or a different day. Marked here for transparency."
+        ],
+        "improvements": [
+          "Could note the specific date range of the third Selma to Montgomery march (March 21-25, 1965)."
+        ]
+      }
+    },
+    {
+      "chapter_number": 12,
+      "start_time": "00:36:53,000",
+      "end_time": "00:45:23,000",
+      "title": "Late 1960s, Picking Up the Torch, and Spirit of Beacon Day",
+      "summary": "Mosnier asks Seeger about the late 1960s — SNCC's fragmentation, King's broadening voice on economic and foreign policy. Seeger replies that 'King undoubtedly knew that he'd be assassinated' and that his final speech was in effect telling people 'you have to pick up the torch.' Seeger reflects pessimistically on the survival of the human race over the next hundred years — 'I tell people, I think we have a 50-50 chance' — and says if humanity does survive, it will be through 'large numbers of small things that do it,' done by 'a few people doing something together locally.' As an example he describes a woman in Beacon, a widow, who organized with other women to create 'the Spirit of Beacon Day' after a high school race riot. They charged ten dollars for each organization to set up a table along the closed-off Main Street and invited twenty-four churches — white, Black, Latino, conservative, and radical — plus Kiwanis, Lions, the American Legion, and the local Clearwater Sloop Club. At noon police set up barriers; in its first year a few hundred people attended, growing roughly two-thirds of the town's 14,000 residents in subsequent years. Seeger says the day grew from a brief fire-engine-and-ambulance parade to an hour-long parade, with Hindu temple women dancing in saris, the eleven-year-old 'River Town Kids' singing songs he taught them and new songs of their own, and dancing throughout. Seeger draws an explicit parallel to the Civil Rights Movement, noting that Viola Liuzzo, 'mother of five,' came down from Detroit and was assassinated. He concludes the Beacon example by reiterating that the festival began with churches and the 'respectable groups' and now 'literally anybody can' participate.",
+      "main_topic_category": "Later Career & Continued Activism",
+      "keywords": [
+        "spirit of beacon day",
+        "viola liuzzo",
+        "beacon new york",
+        "river town kids",
+        "clearwater sloop club",
+        "civil rights movement",
+        "pick up the torch",
+        "race riot",
+        "martin luther king jr."
+      ],
+      "related_events": [
+        "Viola Liuzzo",
+        "Martin Luther King Jr.",
+        "Assassination of MLK",
+        "Spirit of Beacon Day",
+        "Clearwater Sloop Club"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 88,
+        "quality_score": 85,
+        "accuracy_component_a": 36,
+        "accuracy_component_b": 27,
+        "accuracy_component_c": 25,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 17,
+        "quality_component_d": 12,
+        "errors": [
+          "Viola Liuzzo was Italian American per Seeger's transcript ('Italian American, mother of five'); both this and the 'mother of five' detail match civil_rights_facts.json 'Viola Liuzzo' entry. The summary uses the canonical spelling rather than the transcript's Whisper rendering 'Violeta Liu's whole.'"
+        ],
+        "improvements": [
+          "Could note that Viola Liuzzo was killed on Highway 80 in Lowndes County, Alabama on March 25, 1965, shuttling Selma marchers, per civil_rights_facts.json."
+        ]
+      }
+    },
+    {
+      "chapter_number": 13,
+      "start_time": "00:45:23,000",
+      "end_time": "00:48:01,000",
+      "title": "Reflections on Barack Obama and Compromise",
+      "summary": "Mosnier asks Seeger about 'our first black president' embroiled in a long-running war. Seeger says 'we know that there would be compromises. I didn't think he would make so many.' He concedes 'I'm not a great politician' and the compromises might be necessary. Recalling a moment when he led the inaugural crowd in singing 'This Land is Your Land' with Obama and his wife, Seeger says if he had been quicker witted, he would have told the president 'don't try and get reelected in 2012. Do the best job you possibly can, and you will get reelected in 2012, because there'll be such a contrast between what you do and what they do in 2012.' He worries that Obama 'may very possibly won't get reelected' because of overcompromising. Mosnier notes the speaker had spoken with Obama only briefly, and Obama had told him 'Pete Seeger, my mother played me a records at age four.' Seeger says of his missed opportunity to give the advice in person: 'I should have said that, but I didn't.'",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "barack obama",
+        "this land is your land",
+        "2012 election",
+        "compromise",
+        "inauguration",
+        "vietnam war"
+      ],
+      "related_events": [
+        "Barack Obama",
+        "This Land Is Your Land",
+        "2009 Presidential Inauguration"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 92,
+        "quality_score": 84,
+        "accuracy_component_a": 37,
+        "accuracy_component_b": 28,
+        "accuracy_component_c": 27,
+        "quality_component_a": 34,
+        "quality_component_b": 22,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [],
+        "improvements": [
+          "Could note that the inaugural performance refers to the January 18, 2009 Lincoln Memorial 'We Are One' concert where Seeger performed with Bruce Springsteen."
+        ]
+      }
+    },
+    {
+      "chapter_number": 14,
+      "start_time": "00:48:01,000",
+      "end_time": "00:57:42,000",
+      "title": "Closing Reflections: Rutherford B. Hayes, Dairy Strikes, Hamer, Evers",
+      "summary": "Seeger closes by saying Lincoln 'only had five years' and King 'only 13 years to do what he could do.' At Mosnier's invitation he tells the story of Rutherford B. Hayes, whom he had long considered 'the worst president we ever had' for allowing federal troops to withdraw from the South after the Civil War. He describes the post-Grant scandals, the Republican search for a 'squeaky clean' candidate, and the Electoral College and House tie in the 1876 election that was resolved when one Democrat agreed to vote for Hayes 'if he would withdraw federal troops from the South.' Seeger acknowledges Hayes 'felt this kind of job should be done by talking anyway, not by guns,' but the Ku Klux Klan was 'too strong.' Eight years out of office, Seeger says, Hayes gave a speech responding to 'Santa Clara County v. Southern Pacific Railroad' (the Supreme Court decision establishing that there is 'no capital punishment for corporations'), saying 'we no longer have a government of the people, by the people, for the people. We have a government of corporations, by corporations, for corporations.' He notes Seeger's tangent on the song 'Michael Row the Boat Ashore' having come from a book called 'Slave Song' by a Northern officer stationed in Southeast Georgia. Seeger then recalls a 1930s radical summer camp 'half a mile from where we're sitting' called Camp Nitgedaiget ('no worry' in Yiddish), later renamed Camp Beacon, where Seeger and three others ran a puppet troupe. They performed a skit about Governor Thomas E. Dewey cutting the education budget so that Pinocchio could not stay out of trouble, and another about the New York dairy farmers strike in which Seeger played a cow that served as union organizer, urging the farmer to organize with other farmers (the farmers were paid two cents a quart while milk sold in New York for twelve cents). They 'passed the hat' and audiences gave nickels, dimes, or a rare quarter. Seeger mentions Stacey White's annual gathering in Mississippi to remember Fannie Lou Hamer, says Hamer 'was beaten so badly that a few years later she died of her injuries,' and adds that 'this is the kind of heroism which it took Medgar Evers too.' He notes that the murderers of the three Freedom Summer workers were 'terribly beaten before they were killed,' that 'there was an FBI man there the whole time' who 'could have probably did go to J. Edgar Hoover and said,' but who Seeger says Hoover dismissed as 'probably all communists anyway.' The interview ends with mutual thanks and the closing Library of Congress / Smithsonian National Museum of African American History and Culture credit.",
+      "main_topic_category": "Personal Reflections & Legacy",
+      "keywords": [
+        "rutherford b. hayes",
+        "compromise of 1877",
+        "santa clara county v. southern pacific railroad",
+        "thomas e. dewey",
+        "camp nitgedaiget",
+        "dairy farmers strike",
+        "fannie lou hamer",
+        "medgar evers",
+        "stacey white",
+        "michael row the boat ashore",
+        "j. edgar hoover"
+      ],
+      "related_events": [
+        "Rutherford B. Hayes",
+        "Compromise of 1877",
+        "Santa Clara County v. Southern Pacific Railroad",
+        "Fannie Lou Hamer",
+        "Medgar Evers",
+        "Mississippi Burning",
+        "Thomas E. Dewey"
+      ],
+      "quality_metrics": {
+        "accuracy_score": 82,
+        "quality_score": 83,
+        "accuracy_component_a": 33,
+        "accuracy_component_b": 25,
+        "accuracy_component_c": 24,
+        "quality_component_a": 34,
+        "quality_component_b": 21,
+        "quality_component_c": 16,
+        "quality_component_d": 12,
+        "errors": [
+          "Seeger says Hayes's 'government of corporations' speech came eight years after he was out of office (so approximately 1889), responding to the Santa Clara County decision (1886). The summary preserves Seeger's framing but the actual chronology and attribution of this Hayes quote is debated.",
+          "Fannie Lou Hamer died of breast cancer in March 1977 (per civil_rights_facts.json 'Fannie Lou Hamer' entry); she did suffer permanent kidney damage from the June 1963 Winona jail beating, but the proximate cause of her death was cancer. Seeger's 'died of her injuries' is a compression that, while not technically false (her health was permanently damaged), is imprecise.",
+          "Seeger's reference to 'Lincoln only had five years' is slightly imprecise: Lincoln was president from March 1861 to April 1865, just over four years."
+        ],
+        "improvements": [
+          "Could clarify Fannie Lou Hamer died of cancer in 1977 with the Winona beating having compounded her health problems."
+        ]
+      }
+    }
+  ],
+  "engagement_scores": {
+    "interview_metadata": {
+      "interviewee_name": "Pete Seeger",
+      "interviewee_title": "Folk Musician and Civil Rights Movement Songleader",
+      "interview_date": "2011-07-22",
+      "interview_location": "Beacon, New York",
+      "interviewer_name": "Joseph Mosnier",
+      "interviewer_affiliation": "Southern Oral History Program, University of North Carolina at Chapel Hill",
+      "collection": "Civil Rights History Project",
+      "duration_formatted": "00:57:42",
+      "total_segments": 527,
+      "word_count": 5450,
+      "number_of_chapters": 14
+    },
+    "overall_score": {
+      "total": 84,
+      "max_possible": 100,
+      "category": "Excellent"
+    },
+    "dimension_scores": {
+      "narrative_quality": {
+        "total": 24,
+        "max_possible": 30,
+        "story_structure_coherence": {
+          "score": 7,
+          "max_possible": 10,
+          "evidence": [
+            "Mosnier opens with a structured invitation: 'I thought I might ask since we're here in Beacon...have the Paul Robeson concert back in September of 1949 in Peekskill' (Segment 14, 00:01:16,000)",
+            "Seeger follows the interviewer's chronological prompts but freely tangents: 'Let me take you to a place that had a very different spirit about it. I think in 57, 58 you would make various visits to Highlander.' (Segment 43, 00:05:54,000)",
+            "The closing returns to broader reflection: 'I always thought that Ruthiford B. Hayes was the worst president we ever had' (Segment 436, 00:48:37,000)"
+          ],
+          "justification": "The interview maintains a roughly chronological framework guided by Mosnier's prompts, moving from 1949 Peekskill through 1957 Highlander, the early Movement, Mississippi 1964, Selma 1965, and into Beacon community organizing. However, Seeger's age (92 at the time of the interview) shows in frequent tangents and self-corrected timing; he interrupts himself to ask Mosnier dates and to disclaim 'my memory isn't good.' The overall arc is followable but episodic rather than dramatically shaped."
+        },
+        "vivid_details_examples": {
+          "score": 8,
+          "max_possible": 10,
+          "most_vivid_moment": {
+            "quote": "I saw a black car inching its way through the huge crowd and heard people whispering, he's here, he's here. And the black car got about 20 feet from the speaker stand. It took six men to hold the crowd away so they could open the door and push their way towards, took about five minutes to go that 20 feet.",
+            "segment": 67,
+            "timestamp": "00:08:42,000"
+          },
+          "specificity_count": {
+            "full_names": 38,
+            "specific_dates": 12,
+            "specific_places": 22
+          },
+          "evidence": [
+            "Specific date of Paul Robeson Foundation press conference: 'September 4th, 1999' (Segment 23, 00:02:53,000)",
+            "Specific recollection of policeman's words: 'you all get in the truck. We're going down to Arseneen Beach and collect stones to throw at the commies' (Segment 26, 00:03:22,000)",
+            "Specific musical detail: 'twelve-eight time means that you triple each one of those beats. One to T, one to T, one to T...' (Segment 164, 00:17:19,000)",
+            "Specific narrative: 'I was singing to about 200 people in a church when they gave me a piece of paper. So they found the bodies of Andrew Goodman, Michael Schwerner, James Chaney' (Segments 305-306, 00:31:48,000)"
+          ],
+          "justification": "Seeger provides strong specificity throughout: full names of dozens of historical figures, precise dates (August 27 and September 4, 1949; July 22, 2011), specific places (Peekskill, Lake Valhalla, Beacon, Albany Georgia, Hattiesburg, Meridian, Jackson Mississippi). His memory for musical detail is exceptional (the twelve-eight time signature explanation, the call-and-response structure at Carnegie). Some details are slightly vaguer ('places like Hattiesburg and Meridian,' 'about 300 people')."
+        },
+        "emotional_authenticity": {
+          "score": 9,
+          "max_possible": 10,
+          "most_authentic_moment": {
+            "quote": "I was singing to about 200 people in a church when they gave me a piece of paper. So they found the bodies of Andrew Goodman, Michael Schwerner, James Chaney. And I made this announcement. There was no shouting. There was no anger. So lips moving in prayer.",
+            "segment": 305,
+            "timestamp": "00:31:48,000"
+          },
+          "emotional_range": [
+            "reverence",
+            "anger",
+            "humor",
+            "regret",
+            "humility",
+            "indignation",
+            "wonder"
+          ],
+          "vulnerability_elements": [
+            "Admission of failure: 'I didn't do a very good job' at Albany (Segment 256, 00:26:43,000)",
+            "Acknowledgment of memory limits: 'My memory isn't good' (Segment 250, 00:26:19,000)",
+            "Regret over missed opportunity with Obama: 'I should have said that, but I didn't' (Segment 429, 00:47:46,000)",
+            "Acknowledgment of his own danger in Mississippi: 'I might have been in danger, but I did what I was told' (Segment 303, 00:31:28,000)",
+            "Humble self-assessment of organizing: 'I'm, uh, get lots of ideas, but I'm not a good organizer' (Segment 285, 00:29:56,000)"
+          ],
+          "justification": "Seeger's account of the Goodman/Schwerner/Chaney announcement in the Mississippi church is genuinely moving — the quiet of 'lips moving in prayer' rather than shouting is rendered without embellishment. He is willing to admit failure (Albany), acknowledge his memory's gaps, and express regret over the Obama interaction. His pessimism about humanity's odds ('50-50 chance') is delivered without self-pity. The emotional range across the interview is wide, from indignation at the Peekskill attackers to humor over his own failures."
+        },
+        "overall_assessment": "Narrative quality is high overall. Seeger's storytelling is loosely structured but consistently grounded in specific detail and emotional authenticity. His age and self-confessed memory issues mean the chronology is sometimes uncertain, but the vividness of individual scenes — the Goodman/Schwerner/Chaney church moment, the Kunstler-airplane encounter, the King-walking-through-crowd scene — compensates significantly. The vulnerability and self-effacement are uncommon for a figure of his stature."
+      },
+      "historical_value": {
+        "total": 21,
+        "max_possible": 25,
+        "unique_firsthand_perspective": {
+          "score": 8,
+          "max_possible": 10,
+          "major_events": [
+            "1957 Highlander Folk School 25th anniversary, first meeting with King, Abernathy, Parks (Segment 43-61, 00:05:54)",
+            "1967 UN peace rally where MLK delivered post-Riverside-Church remarks (Segment 62-80, 00:08:10)",
+            "1962 visit to Albany, Georgia SNCC organizing (Segment 248-285, 00:26:09)",
+            "1964 Mississippi Freedom Summer church appearance with Goodman/Schwerner/Chaney announcement (Segments 286-314, 00:30:03)",
+            "1965 Selma to Montgomery march (Segments 315-358, 00:32:54)"
+          ],
+          "key_figures": [
+            {
+              "name": "Martin Luther King Jr.",
+              "relationship": "Met twice: 1957 Highlander, 1967 UN peace rally",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Ralph Abernathy",
+              "relationship": "Met at 1957 Highlander",
+              "contact_level": "distant"
+            },
+            {
+              "name": "Rosa Parks",
+              "relationship": "Met at 1957 Highlander",
+              "contact_level": "distant"
+            },
+            {
+              "name": "Bernice Johnson Reagon",
+              "relationship": "Mentor / collaborator; wife Toshi set up her Freedom Singers' first tour; Reagon named daughter after Toshi",
+              "contact_level": "close"
+            },
+            {
+              "name": "Myles Horton and Zilphia Horton",
+              "relationship": "Long-term friends since 1940 visit to Highlander; Zilphia taught Seeger 'We Shall Overcome'",
+              "contact_level": "close"
+            },
+            {
+              "name": "E.D. Nixon",
+              "relationship": "Connected by phone after reading Times notice; relayed Montgomery boycott account",
+              "contact_level": "distant"
+            },
+            {
+              "name": "Guy Carawan",
+              "relationship": "Highlander music director; Seeger credits with diffusing 'We Shall Overcome' to SNCC",
+              "contact_level": "close"
+            },
+            {
+              "name": "Anne Braden",
+              "relationship": "Drove King and SNCC members from 1957 Highlander north through Tennessee",
+              "contact_level": "moderate"
+            },
+            {
+              "name": "Woody Guthrie",
+              "relationship": "Visited Highlander together in 1940; photographed playing music",
+              "contact_level": "close"
+            },
+            {
+              "name": "William Kunstler",
+              "relationship": "Met on plane to Mississippi Freedom Summer",
+              "contact_level": "distant"
+            },
+            {
+              "name": "John Hammond Jr.",
+              "relationship": "Columbia Records producer of Seeger's 1963 Carnegie album",
+              "contact_level": "moderate"
+            }
+          ],
+          "organizational_involvement": [
+            {
+              "organization": "People's Songs (magazine)",
+              "role": "Founder/publisher; printed 'We Shall Overcome' early version",
+              "years": "1946-1948"
+            },
+            {
+              "organization": "Highlander Folk School",
+              "role": "Visiting musician and 1957 anniversary performer",
+              "years": "1940-1957+"
+            },
+            {
+              "organization": "Beacon Sloop Club / Clearwater",
+              "role": "Co-founder and long-running Hudson River environmental organizer",
+              "years": "1969-present"
+            }
+          ],
+          "unique_access": "Seeger had direct access to the Highlander network from 1940 (twenty-five years before the Movement peaked) and the broader American folk-music infrastructure (People's Songs, Sing Out!, Columbia Records, John Hammond). His proximity to King is limited (two meetings) but his proximity to the song-leading and political-cultural infrastructure that sustained the Movement is unusually high. He is one of the few surviving figures (in 2011) with personal recollection of the Peekskill riots and the 1957 Highlander anniversary gathering.",
+          "justification": "Seeger's insider perspective is strong on the music-and-political-culture side of the Movement and moderate on the organizational side. He was not a direct participant in major Movement decisions but was repeatedly proximate to them — the Highlander gathering, the UN rally, Mississippi 1964, Selma 1965. His secondhand E.D. Nixon account (relayed by phone after the boycott) is one of the few Northern-perspective recollections of Nixon's role."
+        },
+        "specificity_of_details": {
+          "score": 7,
+          "max_possible": 8,
+          "precision_examples": [
+            "Specific dates of Peekskill attacks: 'August 27th and September 4th' (Segment 16, 00:01:34,000)",
+            "Date of Robeson Foundation press conference: 'September 4th, 1999' (Segment 23, 00:02:53,000)",
+            "Specific historical figure attribution: 'I think Count Basie's orchestra was there, but I may be wrong' (Segment 239, 00:25:27,000) — Seeger explicitly flags his uncertainty",
+            "Specific musical interval: 'in 1946 in NYC' for learning 'We Shall Overcome' from Zilphia Horton (Segment 156, 00:16:24,000)",
+            "Specific historical reference: 'Santa Clara County v. Southern Pacific Railroad' (Segment 457, 00:51:57,000)"
+          ],
+          "date_specificity": "good",
+          "name_count": {
+            "full_names": 38,
+            "first_only": 6,
+            "unnamed": 4
+          },
+          "verifiable_claims": [
+            "Highlander 25th anniversary gathering 1957 (verified)",
+            "First Freedom Singers tour set up by Toshi Seeger in 1963 (consistent with Reagon ground-truth)",
+            "King's 'Beyond Vietnam' Riverside Church speech April 4, 1967 (verified)",
+            "Goodman/Schwerner/Chaney bodies found August 1964 (verified)",
+            "Selma to Montgomery march 1965 (verified)",
+            "Carnegie Hall 1963 concert (verified)"
+          ],
+          "justification": "Seeger consistently provides full names, specific dates, and verifiable claims. He is explicit when uncertain ('I may be wrong,' 'my memory isn't good'), which is a strength for an oral history. The level of musical and organizational detail (People's Songs magazine, twelve-eight time signature, the John Hammond/Vanderbilt background) is unusual for an interviewee."
+        },
+        "fills_historical_gaps": {
+          "score": 6,
+          "max_possible": 7,
+          "new_information": [
+            "Detailed cultural-political context for the diffusion of 'We Shall Overcome' from Zilphia Horton through Guy Carawan to SNCC, with specific musical-rhythm details",
+            "Northern-witness recollection of the Peekskill 1949 attacks and the 1999 Paul Robeson Foundation press conference where a participant described the policeman recruiting stone-throwers",
+            "Pete Seeger's recollection of the Spirit of Beacon Day as a deliberate Movement-derived community-organizing template after a high school race riot",
+            "Direct first-person account of the Mississippi 1964 church meeting where the Goodman/Schwerner/Chaney bodies' discovery was announced"
+          ],
+          "understudied_aspects": [
+            "The musical-cultural infrastructure of the Movement (Highlander → Carawan → SNCC → Freedom Singers) as told by a participant in that pipeline",
+            "The connection between 1930s-40s radical labor culture (Camp Nitgedaiget, dairy farmers strike) and the 1960s civil rights movement",
+            "The Northern white folk-musician experience of being threatened in 1964 Mississippi"
+          ],
+          "narrative_complications": "Seeger's framing of the 1949 Peekskill attacks as having 'saved America from a full-fledged fascism' is an interpretation distinctive to him; the standard historiography treats Peekskill as a precursor to McCarthyism rather than as its decisive defeat. Seeger also gives Bull Connor curious credit ('this man should be given more credit in the civil rights movement') for inadvertently galvanizing national support through televised violence — a counterintuitive framing.",
+          "historiographical_value": "Historians of Movement music and of the Highlander-to-SNCC transmission of cultural infrastructure would find this interview highly valuable. It also complements the existing E.D. Nixon scholarship by preserving a Northern recipient's recollection of Nixon's organizing strategy. It is less central to the political-narrative spine of the Movement (where Seeger was on the margins) than to the cultural-musical spine.",
+          "justification": "The interview makes substantial contributions to the cultural and musical history of the Movement and to the Northern-supporter perspective. It is less original on the strictly political-organizational narrative, where Seeger was not a direct participant. The Peekskill 1949 framing and the connection-to-1930s-radical-labor-culture framings are distinctive."
+        },
+        "overall_assessment": "Historical value is strong. Seeger's perspective is unique among the Civil Rights History Project oral histories: he is a Northern white folk musician who was repeatedly proximate to Movement events without being an organizer, and his accounts of the musical infrastructure (Highlander, Carawan, Freedom Singers) and of the broader political-cultural context (Peekskill, McCarthyism, 1930s labor) fill gaps that the organizer-centered oral histories do not. The interview is most valuable for what it reveals about the cultural-political ecosystem in which the Movement was embedded."
+      },
+      "emotional_resonance": {
+        "total": 20,
+        "max_possible": 25,
+        "transformation_growth": {
+          "score": 7,
+          "max_possible": 10,
+          "transformation_arc": "Seeger's arc is less about personal transformation than about extended commitment: he was already a committed folk musician and political progressive by 1940 (when he met Woody Guthrie and visited Highlander), and his commitment to using music for political ends is consistent throughout the seven decades the interview covers. The 'transformation' is more in his understanding of what 'small things' done locally can accomplish over time — illustrated by the Spirit of Beacon Day story.",
+          "key_turning_points": [
+            "1940 visit to Highlander with Woody Guthrie (Segment 47, 00:06:21,000) — formative encounter with Movement infrastructure before the Movement existed",
+            "1957 Highlander anniversary as turning point in meeting King and the SCLC leadership (Segments 43-61)",
+            "1962 Albany failed singing engagement (Segment 256, 00:26:43,000) — corrective experience about audience-music match",
+            "Realization that 'a few people doing something together locally' is how change happens (Segment 380, 00:39:47,000)"
+          ],
+          "before_after_contrast": "Seeger does not present himself as having undergone a dramatic 'before/after' change; instead he presents a continuous arc of commitment that adjusts in scale (from large national events to the local Beacon community work) over time. His pessimism about humanity's survival is presented as a current view, not a transformation from an earlier optimism.",
+          "inspirational_quality": "Modestly inspirational. The Spirit of Beacon Day story — a widow organizing with other women after a high school race riot, growing from a few hundred attendees to ten thousand — is the most directly inspirational element. Seeger's framing of 'pick up the torch' as the burden King left after his assassination is also directly inspirational.",
+          "justification": "The interview shows steady commitment more than transformation. Seeger's arc is one of expanding application of consistent principles, not of becoming someone different. The local-community-organizing example is the strongest transformational thread."
+        },
+        "tension_conflict_triumph": {
+          "score": 6,
+          "max_possible": 8,
+          "peak_moments": [
+            {
+              "description": "The Mississippi airport encounter with the threatening passenger ('you come down here to sing for the niggers...if we weren't here, I'd knock the shit out of you')",
+              "segment_range": "294-302",
+              "timestamp_range": "00:30:51,000 - 00:31:24,000",
+              "stakes": "Physical safety; the Look magazine reporter's presence is what Seeger credits with preventing assault"
+            },
+            {
+              "description": "Announcement of the Goodman/Schwerner/Chaney bodies' discovery to the Mississippi church congregation",
+              "segment_range": "305-314",
+              "timestamp_range": "00:31:48,000 - 00:32:54,000",
+              "stakes": "Spiritual/emotional — the silent prayer response after the announcement"
+            },
+            {
+              "description": "The Selma to Montgomery march with helicopters overhead watching for 'somebody with a rifle'",
+              "segment_range": "344-345",
+              "timestamp_range": "00:35:36,000 - 00:35:55,000",
+              "stakes": "Physical safety of the marchers; risk of armed attack"
+            },
+            {
+              "description": "The Peekskill 1949 attacks recounted from the 1999 press conference: 'we're going down to Arseneen Beach and collect stones'",
+              "segment_range": "23-32",
+              "timestamp_range": "00:02:53,000 - 00:04:38,000",
+              "stakes": "Public safety; the comparison to Kristallnacht heightens stakes"
+            }
+          ],
+          "conflict_types": [
+            "Physical violence (Mississippi airport, Selma march, Peekskill attacks)",
+            "Cultural-political conflict (Albany failed engagement, K-K-K and segregationist American Legion forces)",
+            "Internal-Movement debate (King mediating between nonviolent and violent factions in Montgomery)",
+            "Generational conflict (Lyndon Johnson reacting to King's Vietnam speech)"
+          ],
+          "emotional_range": "From quiet reverence (Mississippi church) to indignation (Peekskill) to humor (the Albany 'white folks music' put-down) to grief (King's 'pick up the torch') to wry pessimism (the 50-50 chance for humanity).",
+          "justification": "Several genuinely high-stakes moments are present, but they are interspersed with reflective, less-dramatic passages. The Mississippi airport scene and the church announcement are the most emotionally intense single moments; the broader emotional rhythm is reflective rather than dramatic."
+        },
+        "relatable_experiences": {
+          "score": 6,
+          "max_possible": 7,
+          "universal_themes": [
+            "Long commitment to a cause across a lifetime",
+            "Loss of friends and colleagues to assassination and violence",
+            "Memory's unreliability with age",
+            "Regret over missed opportunities (the Obama exchange)",
+            "Local versus national scales of change",
+            "The role of music in collective action and grief"
+          ],
+          "relatable_struggles": [
+            "Self-doubt about effectiveness ('I didn't do a very good job' at Albany)",
+            "Aging and memory loss openly acknowledged",
+            "Pessimism about civilizational survival ('50-50 chance for humanity')",
+            "Working through compromise in politics (Obama reflections)"
+          ],
+          "human_moments": [
+            "Toshi's father reunited with his sister after fifty years; she kneels with head touching concrete until asked to rise (Segments 209-210, 00:21:56,000)",
+            "Seeger's self-deprecating 'I'm not a good organizer' (Segment 285, 00:29:56,000)",
+            "His regret about the Obama conversation: 'I should have said that, but I didn't' (Segment 429, 00:47:46,000)"
+          ],
+          "connection_points": "Audiences across backgrounds can connect through the universal experience of long commitment, generational change, the meaning of small local acts, and the regret of missed opportunities. The musical specifics (twelve-eight time, call-and-response) may be technical but the underlying theme — that rhythm and shared singing build collective will — is accessible.",
+          "justification": "Universal themes are well-represented. The most relatable moment is the Toshi-family-reunion scene, which transcends the specifically civil-rights context. Seeger's openness about his own limitations (memory, organizing, the Obama missed opportunity) makes him broadly relatable despite his iconic status."
+        },
+        "overall_assessment": "Emotional resonance is solid. The interview's emotional rhythm is reflective rather than dramatic — Seeger is 92, looking back across seven decades — but several individual scenes (the Mississippi church announcement, the airport encounter, the Toshi family reunion in Japan) are genuinely affecting. The combination of high commitment, modest self-presentation, and openly acknowledged limitations makes the interview emotionally engaging without ever becoming sentimental."
+      },
+      "accessibility": {
+        "total": 19,
+        "max_possible": 20,
+        "language_clarity": {
+          "score": 6,
+          "max_possible": 7,
+          "verbal_articulation": "good",
+          "dialect_impact": "none",
+          "jargon_use": "rare",
+          "barriers": [
+            "Occasional self-interruption and tangent due to age",
+            "Some Whisper transcription errors in proper names (e.g., 'Ruthiford' for 'Rutherford,' 'Toshin' for 'Toshi,' 'Zilphia' rendered consistently but with explanatory parenthetical)"
+          ],
+          "justification": "Seeger speaks in plain, accessible English without specialized jargon. He explains technical music terms ('twelve-eight time means that you triple each one of those beats') as he uses them, and translates Yiddish ('Camp Nitgedaiget, meaning no worry in Yiddish'). The only barriers are age-related self-interruptions and a small number of transcription errors that survive into the corrected transcript."
+        },
+        "narrative_flow": {
+          "score": 6,
+          "max_possible": 7,
+          "overall_rhythm": "good",
+          "high_energy_sections": [
+            "Peekskill 1949 attacks (Segments 14-42, 00:01:16-00:05:54) — dense, dramatic content",
+            "Mississippi airport encounter and church announcement (Segments 286-314, 00:30:03-00:32:54) — emotional peak",
+            "Spirit of Beacon Day story (Segments 381-418, 00:39:53-00:45:23) — vivid, expanding scope"
+          ],
+          "slow_sections": [
+            "Detailed musicological discussion of twelve-eight time (Segments 159-176, 00:17:02-00:18:34) — interesting but technical",
+            "Rutherford B. Hayes / Santa Clara County tangent (Segments 436-461, 00:48:37-00:52:23) — historical but distant from civil-rights focus"
+          ],
+          "interviewer_impact": "good",
+          "attention_sustainability": "Most audiences can sustain attention for the 57-minute interview; the most dramatic sections (Mississippi 1964, Selma 1965, Peekskill 1949) are roughly evenly distributed. The Rutherford B. Hayes closing tangent may lose less-engaged listeners.",
+          "justification": "Mosnier's prompts maintain a chronological-thematic structure that helps the interview move forward. Seeger's tangents are mostly purposeful and connect back to the central themes. The pacing is generally good, with the dramatic peaks well-placed."
+        },
+        "broader_themes_connection": {
+          "score": 5,
+          "max_possible": 6,
+          "themes_connected": [
+            "Music as movement infrastructure (the canonical thread)",
+            "Local community organizing as continuation of national civil-rights work (Spirit of Beacon Day)",
+            "Anti-Communist repression and the McCarthyite shadow over Movement allies",
+            "Cross-racial coalition-building (Beacon Day, Camp Nitgedaiget, Highlander)",
+            "Long-arc historical memory connecting Reconstruction (Hayes) to present (Obama)"
+          ],
+          "contemporary_relevance": "Seeger explicitly connects to contemporary issues: the Obama presidency, the long-running war (Afghanistan / Iraq context in 2011), the post-Citizens-United (2010) corporate-power critique foreshadowed by his Santa Clara County reference. The Spirit of Beacon Day story is a directly transferable template for local organizing.",
+          "meaning_making": "Yes — Seeger consistently draws the meaning out of his anecdotes. The 'pick up the torch' framing of King's final speech, the '50-50 chance' framing of humanity's survival, and the 'few people doing something together locally' framing of how change happens are all explicit interpretive moves that help audiences locate significance.",
+          "justification": "Strong thematic connections. The interview is unusually rich in explicit interpretive framing, which Seeger offers without being preachy. The Reconstruction-to-Obama arc and the local-organizing-as-continuation-of-civil-rights framing are both unusual contributions."
+        },
+        "overall_assessment": "Accessibility is very high. Seeger's plain English, his self-translation of technical and Yiddish terms, his Mosnier-facilitated chronological structure, and his explicit interpretive framings together make the interview accessible to general audiences. The one weakness is age-related: some passages are self-interrupting or tangential, and the Hayes/Santa Clara closing material requires more historical context than a general audience may have."
+      }
+    },
+    "overall_assessment": "Pete Seeger's 2011 oral history is a high-value interview that draws together seven decades of personal commitment to the music-political infrastructure of the American Left and the Civil Rights Movement. Its strengths are the specificity of detail (full names, dates, places), the emotional authenticity of individual scenes (the Mississippi church announcement, the Toshi family reunion, the Obama regret), the rare cultural-musical perspective on Movement diffusion (Highlander to SNCC via Carawan, the Freedom Singers' first tour set up by Toshi Seeger), and Seeger's explicit interpretive framings that link Reconstruction to Obama. Its limitations are age-related memory imprecisions, some self-interrupting tangents, and Seeger's distance from organizational decision-making (he was repeatedly proximate to but not embedded within the principal Movement organizations). Overall it is one of the most distinctive entries in the Civil Rights History Project corpus precisely because Seeger's vantage point — Northern, white, folk-musician, repeatedly proximate but never central — is uncommon among the corpus's organizer-dominated oral history set.",
+    "key_strengths": [
+      "Rare Northern-folk-musician perspective on the diffusion of Movement music (Highlander → Guy Carawan → SNCC → Freedom Singers) — Seeger is one of the few surviving witnesses to this pipeline as of 2011 and is unusually specific about both the musical mechanics (twelve-eight time) and the human network (Zilphia Horton, Guy Carawan, Frank Hamilton, Anne Braden, Bernice Johnson Reagon).",
+      "Emotional authenticity in individual scenes — particularly the Mississippi 1964 church announcement of the Goodman/Schwerner/Chaney bodies' discovery, where 'there was no shouting, there was no anger, but lips moving in prayer' is rendered without sentimentality and stands as one of the strongest single emotional moments in the Project's oral histories.",
+      "Long-arc historical framing that connects Reconstruction (Rutherford B. Hayes, Santa Clara County v. Southern Pacific Railroad) to the Obama presidency, helping audiences see the civil rights movement as one chapter of a much longer struggle rather than a self-contained episode."
+    ],
+    "key_limitations": [
+      "Memory imprecision common to a 92-year-old interviewee: dates are sometimes uncertain, chronology is occasionally compressed (the 'five weeks' between Highlander Singing in the Movement weekend and SNCC's founding), and Seeger himself flags 'my memory isn't good' as a caveat. This is a strength in terms of methodological honesty but a limitation for users who need precise historical reconstruction.",
+      "Distance from Movement organizational decision-making: Seeger was repeatedly proximate to the Movement (Highlander 1957, Mississippi 1964, Selma 1965, UN rally 1967) but was not embedded in the principal organizations (SCLC, SNCC, NAACP, MFDP). His accounts of E.D. Nixon and the Montgomery bus boycott are secondhand; his accounts of King are limited to two meetings. This is a perspective-distance limitation, not a credibility one."
+    ],
+    "evaluation_metadata": {
+      "evaluator": "AI: Claude (Anthropic)",
+      "evaluation_date": "2026-05-24",
+      "framework_version": "1.0",
+      "model_used": "claude-opus-4-7"
+    }
+  },
+  "citation_audit": {
+    "claims": [
+      {
+        "claim": "The interview took place on July 22, 2011 in Beacon, New York with interviewer Joseph Mosnier of the Southern Oral History Program at the University of North Carolina at Chapel Hill.",
+        "status": "supported",
+        "supporting_excerpt": "Today is Friday, the 22nd of July, 2011. My name is Joe Mosnier of the Southern oral history program at the University of North Carolina at Chapel Hill. I'm with our project videographer, John Bishop, and we're in Beacon, NY (Segments 4-6)",
+        "rationale": "All details directly established in opening segments."
+      },
+      {
+        "claim": "Seeger describes the September 1949 attacks on Paul Robeson's concerts in Peekskill, New York.",
+        "status": "supported",
+        "supporting_excerpt": "I realized only a year or two ago that that attack on the Robeson concert, they were actually two of them, August 27th and September 4th. (Segment 16)",
+        "rationale": "Directly stated; dates and place established."
+      },
+      {
+        "claim": "Seeger associates the Peekskill attacks with an anti-Communist atmosphere he attributes to J. Edgar Hoover and the Truman administration.",
+        "status": "supported",
+        "supporting_excerpt": "You may have saved America from a full-fledged fascism, whatever J. Edgar Hoover could put into effect. He had concentration camps already up for about 12,000 people, but he had been unable to persuade Congress and (President Harry S.) Truman (Segments 17-18)",
+        "rationale": "Directly attributed by Seeger; the speculative framing is preserved."
+      },
+      {
+        "claim": "Seeger describes the role of the American Legion, local Ku Klux Klan chapters, and German Americans from Lake Valhalla in the Peekskill events.",
+        "status": "supported",
+        "supporting_excerpt": "I'm told that the police force, as well as the American Legion, were infiltrated by extreme right people. There was a Ku Klux Klan chapter just a few miles south of here, and there were others down nearer to Peekskill. There were also some German Americans from Lake Valhalla (Segments 28-30)",
+        "rationale": "All three groups directly named by Seeger."
+      },
+      {
+        "claim": "A Paul Robeson Foundation press conference was held on September 4, 1999, where a witness described being recruited by a policeman to gather stones to throw at concertgoers.",
+        "status": "supported",
+        "supporting_excerpt": "50 years later, I learned more about what happened then because the Paul Robeson Foundation had a press conference in on September 4th, 1999...A man in his 60s said, I was a teenager then...When a truck pulls up and a policeman gets out, he says, you all get in the truck. We're going down to Arseneen Beach and collect stones to throw at the commies (Segments 23-26)",
+        "rationale": "Directly recounted in transcript."
+      },
+      {
+        "claim": "Seeger first met Martin Luther King Jr., Ralph Abernathy, and Rosa Parks at Highlander Folk School's twenty-fifth anniversary in 1957.",
+        "status": "supported",
+        "supporting_excerpt": "In 1957, it was the 25th anniversary of the founding of Highlander Folk School...So I went there and King and Abernathy and Rosa drove up from Montgomery (Segments 48, 56)...That's the first of time I ever met King. (Segment 61)",
+        "rationale": "Directly stated by Seeger."
+      },
+      {
+        "claim": "Zilphia Horton was Myles Horton's wife and taught Seeger 'We Shall Overcome,' which he later printed in his magazine 'People's Songs.'",
+        "status": "supported",
+        "supporting_excerpt": "Zilphia, Myles Horton's wife, Zilphia Horton (Segment 49)...Zilphia Horton taught Seeger We Shall Overcome in 1946 in NYC (Segment 156)...And I printed it in our little song magazine, People's Songs. (Segment 157)",
+        "rationale": "All elements established in transcript."
+      },
+      {
+        "claim": "Guy Carawan and Frank Hamilton set the song in twelve-eight rhythm; Carawan taught it to SNCC at its founding gathering in Raleigh, North Carolina.",
+        "status": "supported",
+        "supporting_excerpt": "What really made the song spread was Guy Carawan and Frank Hamilton learning to put it in a special kind of rhythm. It's called 12-8-time. (Segments 159-160)...the organization was started in Raleigh, North Carolina for young people. Now you tell me the exact name. Snake. Snake. Student, nonviolent, coordinating committee. And somebody shouted from the crowd, Guy, teach us all we shall overcome. And he did. (Segments 190-196)",
+        "rationale": "Directly established. The Raleigh location and Carawan's role are explicit."
+      },
+      {
+        "claim": "Anne Braden drove King north from Highlander through Tennessee with SNCC members in the back seat singing 'We Shall Overcome.'",
+        "status": "supported",
+        "supporting_excerpt": "I think I remember where you have written that Anne Braden was there as well as she was driving Dr. King after that 57 meeting. That's right. She drove him north and going through Tennessee. I see your members sitting in the back seat. We shall overcome. (Segments 177-181)",
+        "rationale": "Directly confirmed by Seeger in response to Mosnier's prompt."
+      },
+      {
+        "claim": "Seeger met King a second time at a peace rally outside the United Nations the day after King's Riverside Church speech against the Vietnam War.",
+        "status": "partially_supported",
+        "supporting_excerpt": "Only other time I met him was a year before he was assassinated. I was asked to sing a few songs at a big peace rally outside the United Nations...And I think it was the only day after that he had spoken at Riverside Church (NYC); MLK 'Beyond Vietnam' speech April 4, 1967. (Segments 62-65)",
+        "rationale": "Seeger states this as 'the only day after,' but the canonical April 15, 1967 UN rally was actually eleven days after the April 4 Riverside Church speech. Seeger's memory is imprecise here; partially supported because the meeting and the post-Riverside Church framing are correct, but the timing detail is off."
+      },
+      {
+        "claim": "At the UN peace rally Seeger heard King say his country was 'the greatest purveyor of violence in the world.'",
+        "status": "supported",
+        "supporting_excerpt": "And that's where I heard him say, I have to face the fact that my country is the greatest pervert of violence in the world. (Segments 73-74)",
+        "rationale": "The transcript renders Seeger's quote with the Whisper-substituted word 'pervert'; the canonical King phrasing is 'purveyor.' Given that the same speech is cited in civil_rights_facts.json 'Beyond Vietnam' entry with the canonical wording, this matches as a Whisper artifact for King's documented phrasing. Supported."
+      },
+      {
+        "claim": "Seeger contacted E.D. Nixon at the Montgomery Improvement Association after reading a New York Times notice about the Montgomery bus boycott.",
+        "status": "supported",
+        "supporting_excerpt": "With my reading one morning in the New York Times, a tiny little two-inch piece on the back pages saying that there was a bus boycott in Montgomery, Alabama...And I called up and got E.D. Nixon on the phone. (Segments 82-87)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Nixon told Seeger he recruited King to host the first mass meeting and insisted on nonviolent discipline.",
+        "status": "supported",
+        "supporting_excerpt": "He called up King and said, could we hold a protest meeting at your church? (Segment 96)...We will win this bus boycott if we are nonviolent. (Segment 106)",
+        "rationale": "Directly recounted by Seeger as Nixon's account, with the 200-person attendance and the deacons detail."
+      },
+      {
+        "claim": "Seeger recalls Eugene 'Bull' Connor in Birmingham and his own 1940 hitchhiking through the South, staying with Joe Gelders.",
+        "status": "supported",
+        "supporting_excerpt": "Eugene 'Bull' Connor. I knew his name in 1940. I was hitchhiking through the South...And I was staying with a man who'd been beaten up very badly, Joe Gelders. (Segments 126-132)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Seeger gave a 1963 Carnegie Hall concert produced by Columbia and John Hammond, whom Seeger identifies as the great-grandson of Cornelius Vanderbilt.",
+        "status": "supported",
+        "supporting_excerpt": "it was three years later I was able to give a concert in Carnegie Hall (Segment 206)...So Columbia had Rick and John H. John H. Hammond Jr Jr...I didn't find out until recently he was the great grandson of Cornelius Vanderbilt. (Segments 229-231)...And my concert was in 1963 (Segment 247)",
+        "rationale": "Directly stated; Carnegie Hall, 1963, Columbia, Hammond, Vanderbilt-relation all match."
+      },
+      {
+        "claim": "Hammond organized the 1938 'From Spirituals to Swing' concert.",
+        "status": "supported",
+        "supporting_excerpt": "In 1938, I was up in Cambridge, Massachusetts, that's in my last few weeks at Harvard. The concert was called From Spirituals to Swing (Segments 237-238)",
+        "rationale": "Year and concert name directly established. Seeger places himself at Cambridge/Harvard during the concert."
+      },
+      {
+        "claim": "Seeger's wife Toshi helped Bernice Johnson Reagon set up the first Freedom Singers tour after Reagon was expelled from a college in Albany, Georgia.",
+        "status": "supported",
+        "supporting_excerpt": "it was in 60, I believe, that Bernice Johnson Reagon was expelled from the local college in Albany, Georgia. (Segments 250-251)...So Toshin set up their first tour. (Segment 282)",
+        "rationale": "Both the expulsion and Toshi's role in setting up the tour are directly stated. Note: Seeger's '1960' framing is corrected later to '1962' (Reagon was actually expelled November 1961, per civil_rights_facts.json)."
+      },
+      {
+        "claim": "Seeger sang at a Mississippi church in 1964 and announced from the stage that the bodies of Andrew Goodman, Michael Schwerner, and James Chaney had been found.",
+        "status": "supported",
+        "supporting_excerpt": "I was singing to about 200 people in a church when they gave me a piece of paper. So they found the bodies of Andrew Goodman, Michael Schwerner, James Chaney. And I made this announcement. (Segments 305-307)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Seeger marched in the Selma to Montgomery march in 1965 and first heard the new way of singing 'We Shall Overcome' followed by the call-and-response of 'What do we want? Freedom! When do we want it? Now!'",
+        "status": "supported",
+        "supporting_excerpt": "And Toshin, I were invited. In fact, I have kept a copy of the telegram from King. (Segments 319-320)...And we'd sing We shall overcome right after it, somebody would shout, what do we want? And the whole crowd would shout at the top of their lungs. Freedom! When do we want it? Now! (Segments 339-342)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Seeger describes the Spirit of Beacon Day, a community festival in Beacon organized after a high school race riot.",
+        "status": "supported",
+        "supporting_excerpt": "There was a high school race riot, and these women decided, let's get people in (Segment 416)...we'll have been called the Spirit of Beacon Day (Segment 385)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Seeger mentions Viola Liuzzo as an Italian American mother of five from Detroit who was assassinated.",
+        "status": "supported",
+        "supporting_excerpt": "like Violeta Liu's whole was Italian American, mother of five, I'm told, and she came down from Detroit. (Segment 412)...And wrist getting assassinated and didn't get assassinated. (Segment 413)",
+        "rationale": "All details directly stated; the Whisper rendering 'Violeta Liu's whole' is corrected to 'Viola Liuzzo' in the summary, matching the canonical figure in civil_rights_facts.json."
+      },
+      {
+        "claim": "Seeger reflects on Barack Obama and the long-running war and recalls a brief inaugural exchange about Obama hearing his records as a child.",
+        "status": "supported",
+        "supporting_excerpt": "Yes, I could have done that. I did speak to him all of ten seconds. He said to me, Pete Seeger, my mother played me a records at age four. (Segment 426)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Seeger describes Rutherford B. Hayes withdrawing federal troops from the South as part of the Compromise of 1877 and discusses the Santa Clara County v. Southern Pacific Railroad decision.",
+        "status": "supported",
+        "supporting_excerpt": "I always thought that Ruthiford B. Hayes was the worst president we ever had, because he allowed the troops to go back north (Segments 436-437)...But not after Santa Clara County v. Southern Pacific Railroad. And Ruthford behave made a speech somewhere. Face it, we no longer have a government of the people, by the people, for the people. We have a government of corporations, by corporations, for corporations. (Segments 457-459)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "In the 1930s Seeger and three others ran a puppet troupe at Camp Nitgedaiget (later renamed Camp Beacon) and performed skits about a Thomas E. Dewey education-budget cut and the New York dairy farmers strike.",
+        "status": "supported",
+        "supporting_excerpt": "a radical summer camp for put together mainly by Jewish garment workers. And it was called Camp Nitgedaiget, meaning no worry in Yiddish. (Segments 464-465)...And we also had a skit where Governor (Thomas E.) Dewey has cut the education budget. And now without sufficient education, Pinocchio gets in trouble. (Segments 470-471)...And through enough in August, the (NY) Dairy Farmers Union strike. (Segment 473)",
+        "rationale": "All details directly stated."
+      },
+      {
+        "claim": "Seeger refers to Stacey White's annual gathering in Mississippi to remember Fannie Lou Hamer.",
+        "status": "supported",
+        "supporting_excerpt": "Oh, do you know Stacey White in Mississippi? Well, she has an annual get together to remember Fannie Lou Hamer (Segments 498-499)",
+        "rationale": "Directly stated."
+      },
+      {
+        "claim": "Seeger says Fannie Lou Hamer was beaten so badly that she later died of her injuries and Medgar Evers showed similar heroism.",
+        "status": "partially_supported",
+        "supporting_excerpt": "She was beaten so badly that a few years later she died of her injuries. (Segment 514)...this is the kind of heroism which it took Medgar Evers to. (Segment 512)",
+        "rationale": "The transcript directly states Seeger's claim about Hamer dying of her injuries. However, the historical record indicates Hamer died of breast cancer in March 1977; the 1963 Winona jail beating caused permanent kidney damage but is not generally considered the proximate cause of death. The summary preserves Seeger's transcript phrasing as 'died of her injuries,' which is supported in the transcript but is a partial truth historically. Partially supported because the transcript directly establishes Seeger's claim, but the historical accuracy is questionable."
+      }
+    ],
+    "summary_stats": {
+      "total_claims": 26,
+      "supported": 24,
+      "partially_supported": 2,
+      "unsupported": 0
+    }
+  },
+  "publication_decision": {
+    "publishable": false,
+    "human_review_required": true,
+    "decision_path": "scores_blocked_accuracy_quality_below_90_citation_blocked_2_partial",
+    "rationale": "The main summary's accuracy score (84) and quality score (86) both fall below the 90/90 Smithsonian threshold. The citation audit identifies 24 of 26 claims as fully supported by the transcript, with 2 partially supported: (1) Seeger's claim that he met King the 'day after' the Riverside Church speech, which is off by about eleven days; and (2) Seeger's framing of Fannie Lou Hamer as having 'died of her injuries' from the 1963 Winona beating, which is partially true (she suffered permanent kidney damage) but Hamer's documented proximate cause of death was breast cancer in 1977. Both partial-support flags are honest reflections of Seeger's age-related memory imprecisions rather than hallucinations introduced by the summarizer; nonetheless they trip the fail-closed gate. The summary should be routed to human review where a domain expert can decide whether to (a) accept the partial-support flags as transparent caveats and publish, (b) revise the summary to add explicit disambiguation, or (c) escalate to scholarly fact-check. The interview itself is high-value and the summary is faithful to the transcript; the publication block is a methodological caution, not a quality rejection."
+  }
+}
