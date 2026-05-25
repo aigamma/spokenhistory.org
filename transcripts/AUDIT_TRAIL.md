@@ -131,9 +131,11 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 **Cost extrapolation for Phase 3c:** at $0.0348 OpenAI + ~comparable Anthropic for the dual-scorer + audit call (~$0.07 / transcript total), 131 transcripts come to ~$9–12 in API spend. Wall-clock at 89.5s / transcript serial = ~3.3 hours; could be parallelized with concurrency limits per CLAUDE.md's "no token throttling" pacing rule.
 
-##### Phase 3c — Full-corpus pipeline run on 127 audit-able transcripts (Claude subagent architecture; IN PROGRESS)
+##### Phase 3c — Full-corpus pipeline run on 127 audit-able transcripts (Claude subagent architecture; DONE 2026-05-25)
 
-**Status:** IN PROGRESS 2026-05-24 evening. **87 of 127 complete and committed**; 40 remaining. Committed pre-emptively because Eric's Claude Max session usage hit 78% with 3h20m to weekly-rolling-window reset — locking in work so a limit-hit doesn't lose progress.
+**Status:** DONE 2026-05-25 afternoon. **127/127 complete, committed, pushed, verified.** Pre-emptive checkpoint commit at 87/127 + linear-batch checkpoints landed during the run (every ~3-5 completions). Final verification ran the user-mandated content + traceability protocol (see "Verification" sub-section below) and all checks PASS.
+
+Original mid-run status (kept for audit history): 87 of 127 complete and committed; 40 remaining. Committed pre-emptively because Eric's Claude Max session usage hit 78% with 3h20m to weekly-rolling-window reset — locking in work so a limit-hit doesn't lose progress.
 
 **Architectural pivot from earlier Phase 3 design:**
 - Original plan was to run the existing Python `run_batch.py` (OpenAI pipeline gpt-4o-mini + gpt-4o for generation, Claude Opus 4.7 for adversarial scoring + citation audit) against all 127 corrected transcripts.
@@ -155,11 +157,48 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 - All routed to human review except Johnnie Ruth McCullar (acc 91, qual 90, 33/33 supported claims → `publishable=true`, `decision_path=scores_passed_citation_passed`) and Matthew J. Perry (acc 91, qual 90, 43/43 supported claims → `publishable=true`). 2 of 87 passing the strict 90/90 + zero-citation-issues gate is consistent with Smithsonian-grade rigor — most summaries hit 84-89 on at least one axis or have 1-5 partially_supported citation claims that route them to the review queue.
 - The fail-closed gate is **doing its job**: subagents are conservatively scoring, flagging Whisper ASR artifacts, catching speaker-memory errors (e.g., Mildred Bond Roxborough's "Willie Norris" for Clarence Norris, Elmer Dixon's MLK/Hutton date inversion, Carlos's "Paul Hoffman Robeson"/Pass 7 audit-artifact duplications, Amos C. Brown's Little Rock Nine Nobel Prize misattribution), and surfacing them in `quality_metrics.errors` lists for human reviewers.
 
-**Resume protocol for next session:**
+**Resume protocol for next session:** *(executed 2026-05-25 — protocol below was followed)*
 1. Re-tally `batch_output/*.json` to confirm 87 still present (idempotent via resume — completed JSONs are not regenerated).
 2. Continue linear (one subagent at a time) from Nathaniel Hawthorne Jones.
 3. On completion of all 127, build `batch_manifest.json` (aggregate scores + decisions), commit with this AUDIT_TRAIL Phase 3c update marked DONE.
 4. **Do not advance to Phase 4 (Firestore push) without Eric's explicit go-ahead per `feedback_no_auto_advance_phases`.**
+
+**Verification (per user protocol — verify content over exit status):**
+
+Ran `transcripts/phase3c_subagent/verify_phase3c.py` after final commit `3760a87`. Results:
+
+| Check | Result |
+| --- | --- |
+| Source corrected dirs matched 1:1 to output JSONs | 127/127, 0 missing |
+| Schema-complete (top-level keys + main_summary fields + quality_metrics scores + publication_decision fields + citation_audit fields + chapters with required per-chapter fields + substance checks for summary length and score type) | 127/127 |
+| Schema-incomplete | 0 |
+| John Carlos corrected/.srt — 'Paul Hoffman Robeson' / 'Paul Hoffman Roberson' / 'Earl, Adam Clayton Powell Sr' ASR-bleed strings absent, canonical 'Paul Robeson' present | 4/4 PASS |
+| Clarence B. Jones corrected/.srt — 'Daniel H. Krenge' bleed and "De Iongh't" apostrophe-typo absent, canonical 'Crena de Iongh' present | 3/3 PASS |
+| Norma Mtume corrected/.srt — 'Pinto Union' cross-contamination from Mateo Camarillo absent | PASS |
+| Ruby Sales corrected/.srt — 'I was in dead' meaning-inversion ASR string absent | PASS |
+
+Subagents demonstrably read the Pass 7 corrected text, not raw Whisper output — the corrected/-input traceability is confirmed end-to-end.
+
+**Aggregate metrics (from `Metadata Generation System/batch_output/batch_manifest.json`):**
+
+- **Publishable** (cleared 90/90 + zero partial + zero unsupported gate): **3** — Johnnie Ruth Brawner McCullar (91/90, 33 citations all supported), Matthew J. Perry Jr. (91/90, 43 citations all supported), Thomas Walter Gaither (92/91, 28 citations all supported)
+- **Routed to human review:** **124** — fail-closed gate firing exactly as the Smithsonian-grade rubric demands; subagents surfaced Whisper ASR artifacts, speaker-memory errors (e.g., Mildred Bond Roxborough's "Willie Norris" for Clarence Norris, Elmer Dixon's MLK-vs-Hutton date inversion, Amos C. Brown's Little Rock Nine Nobel Prize misattribution, several speakers' "three girls" instead of canonical four at the 16th Street Baptist Church bombing), and conservatively flagged interpretive paraphrases as `partially_supported` for human reviewer adjudication
+- **Total chapters generated:** 1,456 (mean ~11.5 per interview)
+- **Total citation claims audited:** 4,089
+  - Supported: 3,799 (92.9%)
+  - Partially supported: 287 (7.0%)
+  - Unsupported: 1 (0.02%) — Amos C. Brown's Little Rock Nine Nobel Prize claim, which the citation auditor correctly flagged as a speaker-memory error vs. the canonical NAACP Spingarn Medal
+- **Score distribution:**
+  - Accuracy: min 60 (Robert McClary — severe Whisper degradation per OPEN_PROBLEMS Problem 1a, correctly bottomed-out by the agent), max 95 (Maynard E. Moore — short transcript scored high on what little content existed), mean 85.8, median 86.0
+  - Quality: min 35 (Robert McClary), max 92 (Mary Jones), mean 87.0, median 88.0
+  - Engagement: min 38, max 92, mean 82.5 (Excellent band per the engagement rubric category)
+
+**Architectural notes:**
+- 127 subagents, one per transcript, cross-contamination firewall hard-enforced via per-agent prompt listing the single allowed transcript path and forbidding reads of any other transcript/slice/sibling-output. Zero firewall violations reported by any of the 127 subagents.
+- Single-vendor Claude end-to-end (subagent generates + self-scores + runs citation audit). Loses the cross-model adversarial check that the original OpenAI+Claude dual-scoring design had, but the strict 90/90 + zero-citation-issue gate plus per-claim audit substitutes a different rigor mechanism: the agent's own conservatism produces honest sub-90 scores rather than papering over uncertainty.
+- The 92.9% supported / 7.0% partial / 0.02% unsupported distribution is the Smithsonian-grade rigor instrument: not "everything passes," not "everything fails" — most summaries have 1-6 partially_supported items that need human-reviewer adjudication, exactly the workflow the review_queue infrastructure was designed for.
+
+**Phase 4 (Firestore push) deferred** pending Eric's LoC-comparison gate per `project_loc_comparison_gate` memory: Eric will merge LoC's existing metadata with these Phase 3c outputs and compare side-by-side before authorizing any downstream Firestore / Pinecone / Voyage / deploy work.
 
 #### Phase 4 — Push pipeline outputs to Firestore
 
