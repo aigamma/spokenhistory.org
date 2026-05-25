@@ -1,6 +1,6 @@
 {
   "generated": "2026-05-25",
-  "script_version": "ingestion-1.0",
+  "script_version": "ingestion-1.0+normalized-2026-05-25",
   "raw_dir": "John Dudley et al_interview_20260525_160900",
   "entry_subject": "John Dudley et al",
   "ingestion": {
@@ -39,5 +39,25 @@
     "unresolved_count": 33,
     "apply_failure_count": 0
   },
-  "entry_subject_full": "John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove"
+  "entry_subject_full": "John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove",
+  "entry_number": 64,
+  "adversarial_review_flag_count": 0,
+  "cross_contamination_items_resolved": 0,
+  "ground_truth_corpus_path": "Metadata Generation System/civil_rights_facts.json",
+  "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
+  "inferential_uncertainty": {
+    "score": 0.0,
+    "confidence_tier": "ingestion-only",
+    "components": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.0,
+      "adversarial_flag_density": 0.0,
+      "cross_contamination_penalty": 0.0,
+      "audit_passes_complete": 0
+    },
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework",
+    "notes": "These entries were ingested 2026-05-25 via the streamlined Pass 8 LoC-healing-as-primary pipeline; they did not pass through the original Pass 1-7 audit journey. Pass 8 LoC alignment provides the primary correction substrate; additional audit signals (adversarial review, cross-contamination check, ground-truth-corpus validation) would need to be run separately to fill in this score."
+  }
 }
