@@ -74,8 +74,8 @@ if [ "$want" = "all" ] || [ "$want" = "selma" ]; then
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "till" ]; then
-  query_one "Wheeler Parker Jr. on Emmett Till — scoped to one interviewee" \
-    '{"query":"my cousin Emmett Till","entry_number":125,"topN":3}'
+  query_one "Wheeler Parker Jr. on Emmett Till — scoped via metadata filter" \
+    '{"query":"my cousin Emmett Till","filter":{"entry_number":{"$eq":125}},"topN":3}'
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "quote" ]; then
