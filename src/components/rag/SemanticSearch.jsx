@@ -11,7 +11,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
-import { Search as SearchIcon, Loader2 } from 'lucide-react';
+import { Search as SearchIcon, Loader2, X } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
 
@@ -152,10 +152,26 @@ export default function SemanticSearch({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-12 pr-32 py-4 text-base border border-stone-300 rounded-lg focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none transition-colors bg-white"
+          className="w-full pl-12 pr-40 py-4 text-base border border-stone-300 rounded-lg focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none transition-colors bg-white"
           aria-label="Search query"
           maxLength={4000}
         />
+        {query && !isLoading && (
+          <button
+            type="button"
+            onClick={() => {
+              setQuery('');
+              setResults([]);
+              setMeta(null);
+              setError(null);
+              writeQueryToUrl('');
+            }}
+            className="absolute right-28 top-1/2 -translate-y-1/2 p-1.5 text-stone-400 hover:text-stone-700 rounded transition-colors"
+            aria-label="Clear search"
+          >
+            <X className="w-4 h-4" aria-hidden="true" />
+          </button>
+        )}
         <button
           type="submit"
           disabled={isLoading || !query.trim()}
