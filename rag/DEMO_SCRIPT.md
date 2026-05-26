@@ -61,6 +61,23 @@ each other on a topic appear as nearby dots. The audit-tier coloring
 overlays the corpus's institutional credibility on top of the
 thematic similarity layout.
 
+### 4. Related interviewees
+
+Same page, **Related interviewees** tab.
+
+- Pick an interview from the dropdown (six pre-seeded examples spanning
+  SCLC, SNCC, BPP, Freedom Rider, and Till-family voices).
+- The panel shows the top-8 interviewees whose words are most
+  thematically related — aggregated across all chunks of the selected
+  interview. The counts reflect how many cross-chunk embedding matches
+  each related interviewee accumulated.
+
+The talking point: this is the cross-corpus kinship layer made
+concrete. Showing "Aaron Dixon's voice is most related to Elmer
+Dixon's, Kathleen Cleaver's, and Cleveland Sellers'" is what makes
+the embedding space useful for narrative scholarship — the
+relationships were computed by the model, not curated by hand.
+
 ## Numbers worth quoting
 
 | | |
