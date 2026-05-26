@@ -59,10 +59,36 @@ function useCorpusStats() {
  * It is intentionally simple — the goal is to show the substrate
  * works, not to be the final UX.
  */
+// Tab IDs are reflected in window.location.hash so URLs like
+// /rag-explore#map are shareable and deep-linkable.
+const TABS = ['search', 'quote', 'map'];
+const TAB_FROM_HASH = (hash) => {
+  const t = (hash || '').replace(/^#/, '');
+  return TABS.includes(t) ? t : 'search';
+};
+
 export default function RagExplore() {
   useDocumentTitle('Explore the embeddings');
-  const [tab, setTab] = useState('search');
   const stats = useCorpusStats();
+  const [tab, setTab] = useState(() =>
+    typeof window === 'undefined' ? 'search' : TAB_FROM_HASH(window.location.hash),
+  );
+
+  // Keep tab state and the hash in sync so the URL is bookmarkable.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.location.hash !== `#${tab}`) {
+      window.history.replaceState(null, '', `#${tab}`);
+    }
+  }, [tab]);
+
+  // Respond to hash changes (back/forward, manual edit).
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const onHash = () => setTab(TAB_FROM_HASH(window.location.hash));
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
