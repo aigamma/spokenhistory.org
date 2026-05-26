@@ -102,6 +102,26 @@ well:
    letting the UI distinguish "Pass 1–8 audited" passages from
    "ingestion-only" passages.
 
+## Verified philosophy-pattern queries (2026-05-26 live)
+
+The five queries below are good Plan-B demos for the London talk —
+they exercise the philosophical-framing angle (vs. the event-grounded
+queries above) and all return strong matches against the live `/retrieve`:
+
+| Query | Top match | Similarity |
+|---|---|---|
+| `the role of women in SNCC` | Dr. Doris Derby | 0.84 |
+| `Christian ethics in civil rights` | Linda Fuller Degelmann | 0.76 |
+| `philosophy of nonviolence` | Thomas Walter Gaither | 0.75 |
+| `what made the movement possible` | Ruby Sales | 0.70 |
+| `religious foundations of the movement` | C. T. Vivian | 0.68 |
+
+The Derby + Vivian results are particularly nice for the conference —
+both are speakers the London audience may not know about (Derby a
+SNCC photographer; Vivian an ordained minister + SCLC executive). The
+embeddings surface them on the right philosophical-framing queries
+without anyone needing to know their names in advance.
+
 ## What's still left to wire up
 
 1. **Pinecone civil-rights project provisioning** (one-time admin
