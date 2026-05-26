@@ -4,6 +4,7 @@ import {
   SemanticSearch,
   QuoteFinder,
   Constellation,
+  RelatedPassages,
 } from '../components/rag';
 
 /**
@@ -61,7 +62,20 @@ function useCorpusStats() {
  */
 // Tab IDs are reflected in window.location.hash so URLs like
 // /rag-explore#map are shareable and deep-linkable.
-const TABS = ['search', 'quote', 'map'];
+const TABS = ['search', 'quote', 'map', 'related'];
+
+// Entries to surface in the "related" demo tab. Each one is a
+// well-audited interviewee with a strong thematic profile, so the
+// related-passages list shows distinct content. Eric / a stakeholder
+// can navigate the dropdown to see different examples.
+const RELATED_DEMO_ENTRIES = [
+  { number: 1, name: 'Aaron Dixon (Black Panther Party, Seattle)' },
+  { number: 73, name: 'Kathleen Cleaver (Black Panther Party)' },
+  { number: 76, name: 'Lawrence Guyot (MFDP, SNCC)' },
+  { number: 22, name: 'Cleveland Sellers (SNCC)' },
+  { number: 125, name: 'Wheeler Parker, Jr. (Emmett Till\'s cousin)' },
+  { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
+];
 const TAB_FROM_HASH = (hash) => {
   const t = (hash || '').replace(/^#/, '');
   return TABS.includes(t) ? t : 'search';
@@ -73,6 +87,7 @@ export default function RagExplore() {
   const [tab, setTab] = useState(() =>
     typeof window === 'undefined' ? 'search' : TAB_FROM_HASH(window.location.hash),
   );
+  const [relatedEntry, setRelatedEntry] = useState(RELATED_DEMO_ENTRIES[0].number);
 
   // Keep tab state and the hash in sync so the URL is bookmarkable.
   useEffect(() => {
@@ -144,6 +159,7 @@ export default function RagExplore() {
               { id: 'search', label: 'Semantic search' },
               { id: 'quote', label: 'Quote-finder' },
               { id: 'map', label: 'Embedding-space map' },
+              { id: 'related', label: 'Related interviewees' },
             ].map((t) => (
               <li key={t.id}>
                 <button
@@ -208,6 +224,40 @@ export default function RagExplore() {
                 dot to see whose voice lives there.
               </p>
               <Constellation width={720} height={720} />
+            </div>
+          )}
+
+          {tab === 'related' && (
+            <div>
+              <h2
+                className="text-stone-900 text-xl font-medium mb-2"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                Related interviewees
+              </h2>
+              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
+                For each interview, we precompute which other interviewees in the corpus discuss
+                semantically-related material. Pick an interview from the list to see the
+                top-related voices — interviewees who never met but whose words cluster in the
+                embedding space.
+              </p>
+              <label className="block text-sm text-stone-700 mb-2">
+                Interview:
+                <select
+                  value={relatedEntry}
+                  onChange={(e) => setRelatedEntry(Number(e.target.value))}
+                  className="ml-2 px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+                >
+                  {RELATED_DEMO_ENTRIES.map((e) => (
+                    <option key={e.number} value={e.number}>
+                      {e.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <div className="mt-6">
+                <RelatedPassages entryNumber={relatedEntry} mode="entries" limit={8} />
+              </div>
             </div>
           )}
         </section>
