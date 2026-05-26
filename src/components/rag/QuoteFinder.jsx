@@ -23,8 +23,8 @@ import CitationCard from './CitationCard';
 // represented so the demo shows breadth.
 const SAMPLE_QUOTES = [
   'the dreamer can be killed but not the dream',
-  'nonviolence is the weapon of the strong',
-  'we who believe in freedom cannot rest',
+  "ain't gonna let nobody turn me around",
+  'I have been to the mountaintop',
 ];
 
 /**
