@@ -102,3 +102,18 @@ if [ "$want" = "all" ] || [ "$want" = "freedom-summer" ]; then
   query_one "Freedom Summer in Mississippi" \
     '{"query":"freedom summer mississippi 1964 voter registration","topN":3}'
 fi
+
+if [ "$want" = "all" ] || [ "$want" = "greensboro" ]; then
+  query_one "Greensboro sit-ins 1960 (year-qualified event)" \
+    '{"query":"greensboro sit-ins 1960","topN":3,"dedupeByEntry":true}'
+fi
+
+if [ "$want" = "all" ] || [ "$want" = "voting-rights" ]; then
+  query_one "Voting Rights Act 1965" \
+    '{"query":"voting rights act 1965","topN":3,"dedupeByEntry":true}'
+fi
+
+if [ "$want" = "all" ] || [ "$want" = "mlk-assassination" ]; then
+  query_one "Dr. King assassination 1968 — what witnesses recall" \
+    '{"query":"Dr. King assassination 1968","topN":3,"dedupeByEntry":true}'
+fi
