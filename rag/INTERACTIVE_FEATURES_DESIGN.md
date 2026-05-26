@@ -80,7 +80,7 @@ type CitationPayload = {
 
   // transparency
   entryProvenance: "audit-original" | "ingestion-only" | null;
-  uncertaintyTier: "low" | "medium" | "high" | "ingestion-only" | null;
+  uncertaintyTier: "low" | "medium" | "publication-block" | "not-auditable" | "ingestion-only" | null;
   uncertaintyScore: number | null;     // 0.0–~0.5
   fidelityNote: string;                // one-line plain English
 

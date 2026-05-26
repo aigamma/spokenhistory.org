@@ -94,7 +94,7 @@ Every vector carries these fields (some optional):
 | `entry_subject` | string | yes for transcript_segment + summary_chapter |
 | `entry_provenance` | enum: `audit-original` \| `ingestion-only` | yes for transcript_segment (added 2026-05-25) |
 | `inferential_uncertainty_score` | float (0.0 = no evidence of error, higher = more residual uncertainty) | when manifest carries it (all 136 entries as of 2026-05-25) |
-| `inferential_uncertainty_tier` | enum: `high` \| `medium` \| `low` \| `ingestion-only` | same as score |
+| `inferential_uncertainty_tier` | enum: `low` \| `medium` \| `publication-block` \| `not-auditable` \| `ingestion-only` | same as score |
 | `loc_item_url` | string (Library of Congress canonical archive URL) | when LoC healing was applied (all 136 entries) |
 | `source_path` | string (repo-relative) | yes |
 | `source_ext` | string (`.txt`, `.srt`, `.vtt`, `.json`) | yes for transcript_segment |
@@ -111,7 +111,7 @@ Every vector carries these fields (some optional):
 
 `entry_provenance` lets retrieval differentiate the 127 entries that went through the full Pass 1–8 audit cascade (`audit-original`) from the 9 entries that came in via the 2026-05-25 streamlined ingestion (`ingestion-only`). For Smithsonian-grade publication, an LLM answer that draws from an audit-original chunk can cite the audit overlay; an answer drawn from an ingestion-only chunk should be hedged. Putting the flag in the chunk metadata avoids a second Firestore round-trip at answer time.
 
-`inferential_uncertainty_score` + `inferential_uncertainty_tier` carry the per-entry residual-error estimate defined in `transcripts/AUDIT_TRAIL.md::Inferential scoring framework`. Retrieval can use the tier as a coarse filter (e.g., `tier IN ('high', 'low')` to bias toward well-audited entries) or weight rerank by score.
+`inferential_uncertainty_score` + `inferential_uncertainty_tier` carry the per-entry residual-error estimate defined in `transcripts/AUDIT_TRAIL.md::Inferential scoring framework`. The five tier values that appear in the corpus are `low` (72 entries), `medium` (18), `publication-block` (23), `not-auditable` (14), and `ingestion-only` (9). Retrieval can use the tier as a coarse filter (e.g., `tier: {$eq: "low"}` to bias toward publication-grade entries) or weight rerank by score.
 
 `loc_item_url` carries the Library of Congress canonical archive URL for the entry. When an LLM answer cites a chunk, the UI can deep-link to the LoC item so a downstream reader can verify the source.
 
