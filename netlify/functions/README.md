@@ -23,7 +23,9 @@ query goes through this function. Keeps `PINECONE_API_KEY` /
   "topN": "number (1-50, default 8)",
   "topK": "number (auto, default max(3*topN, 30))",
   "filter": "Pinecone metadata filter object (optional)",
-  "namespace": "Pinecone namespace string (optional, default '')"
+  "entry_number": "number — shortcut for {filter: {entry_number: {$eq: N}}}",
+  "namespace": "Pinecone namespace string (optional, default '')",
+  "dedupeByEntry": "boolean — one passage per interviewee (default false)"
 }
 ```
 
