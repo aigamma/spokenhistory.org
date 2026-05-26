@@ -282,12 +282,13 @@ Not all 136 entries in the corpus carry the same fidelity guarantees. Every resu
 
 ### `uncertaintyTier`
 
-Per-entry score derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty). See `transcripts/AUDIT_TRAIL.md` in the project repo for the full formula.
+Per-entry classification derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty). See `transcripts/AUDIT_TRAIL.md::Inferential scoring framework` in the project repo for the full formula. Five values appear in the corpus as of 2026-05-25 (counts in parentheses):
 
-- **`low`** — well-audited, low residual error rate. Most audit-original entries land here.
-- **`medium`** — audited, but with some residual uncertainty.
-- **`high`** — audited, but with substantial residual uncertainty. Verify against audio.
-- **`ingestion-only`** — single-pass ingestion; not yet audited.
+- **`low`** (72) — well-audited, low residual error rate. Cite freely.
+- **`medium`** (18) — audited, residual uncertainty. Verify against audio for high-stakes citations.
+- **`publication-block`** (23) — audited, but documented issues (Subject-paragraph fact-check errors, severe Whisper degradation, or mid-sentence source truncations) block direct publication. Usable as a research lead; verify the specific passage against audio before citing.
+- **`not-auditable`** (14) — audited but the entry cannot be fully verified against an external canonical source (multi-speaker, no LoC reference, etc.). Treat as a research lead.
+- **`ingestion-only`** (9) — single-pass ingestion via the streamlined 2026-05-25 pipeline; not yet through the full audit cascade. Verify against audio for any citation.
 
 The `fidelityNote` field renders this as a human-readable sentence so the LLM can pass the transparency directly through to the user.
 
