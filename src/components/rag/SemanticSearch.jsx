@@ -48,6 +48,28 @@ const SUGGESTED_QUERIES = [
 // needs in-app routing to an interview detail page, add a dedicated
 // secondary action inside the CitationCard rather than wrapping the
 // whole card in a button.
+// Initial query from URL ?q= so stakeholders can deep-link to a search.
+// e.g. /rag-explore?q=nonviolence#search lands with the query pre-loaded
+// and auto-executed on first render.
+function readQueryFromUrl() {
+  if (typeof window === 'undefined') return '';
+  try {
+    return new URL(window.location.href).searchParams.get('q') || '';
+  } catch {
+    return '';
+  }
+}
+
+function writeQueryToUrl(q) {
+  if (typeof window === 'undefined') return;
+  try {
+    const url = new URL(window.location.href);
+    if (q) url.searchParams.set('q', q);
+    else url.searchParams.delete('q');
+    window.history.replaceState(null, '', url.toString());
+  } catch { /* noop */ }
+}
+
 export default function SemanticSearch({
   placeholder = 'Search the oral history archive…',
   topN = 8,
@@ -55,7 +77,7 @@ export default function SemanticSearch({
   showFullText = false,
   className = '',
 }) {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState(() => readQueryFromUrl());
   const [results, setResults] = useState([]);
   const [meta, setMeta] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -65,13 +87,27 @@ export default function SemanticSearch({
   // same-speaker-different-moment results aren't hidden by default.
   const [dedupeByEntry, setDedupeByEntry] = useState(false);
   const abortRef = useRef(null);
+  const hasAutoRunRef = useRef(false);
 
   // Cancel any in-flight request on unmount.
   useEffect(() => () => abortRef.current?.abort(), []);
 
+  // Auto-run the query from ?q= on first mount so a deep-link
+  // (/rag-explore?q=foo#search) renders results without a manual submit.
+  // Only fires once per mount; subsequent state changes don't re-trigger.
+  useEffect(() => {
+    if (hasAutoRunRef.current) return;
+    if (query && query.trim()) {
+      hasAutoRunRef.current = true;
+      runQuery(query);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const runQuery = async (rawQuery) => {
     const trimmed = (rawQuery || '').trim();
     if (!trimmed) return;
+    writeQueryToUrl(trimmed);
 
     abortRef.current?.abort();
     const ctrl = new AbortController();
