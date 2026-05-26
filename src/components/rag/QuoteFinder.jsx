@@ -17,6 +17,15 @@ import { Quote, Loader2 } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
 
+// Sample paraphrases for the QuoteFinder demo. Each one is a real
+// civil-rights-era quote (or its canonical paraphrase) that the
+// archive can attribute via semantic match.
+const SAMPLE_QUOTES = [
+  'the dreamer can be killed but not the dream',
+  'nonviolence is the weapon of the strong',
+  'you may be able to kill the dreamer but you cannot kill the dream',
+];
+
 /**
  * QuoteFinder — find primary-source attribution for a half-remembered quote.
  *
@@ -41,9 +50,8 @@ export default function QuoteFinder({
 
   useEffect(() => () => abortRef.current?.abort(), []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const trimmed = quote.trim();
+  const runSearch = async (rawQuote) => {
+    const trimmed = (rawQuote || '').trim();
     if (!trimmed) return;
 
     abortRef.current?.abort();
@@ -63,6 +71,16 @@ export default function QuoteFinder({
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    runSearch(quote);
+  };
+
+  const handleSampleClick = (sample) => {
+    setQuote(sample);
+    runSearch(sample);
   };
 
   return (
@@ -104,6 +122,20 @@ export default function QuoteFinder({
               'Find source'
             )}
           </button>
+        </div>
+        <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-stone-600">
+          <span className="text-stone-500">Sample quotes:</span>
+          {SAMPLE_QUOTES.map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => handleSampleClick(s)}
+              disabled={isLoading}
+              className="px-2.5 py-1 rounded-full border border-stone-300 bg-white hover:bg-stone-50 hover:border-stone-400 transition-colors disabled:opacity-40 text-left italic"
+            >
+              &ldquo;{s}&rdquo;
+            </button>
+          ))}
         </div>
       </form>
 
