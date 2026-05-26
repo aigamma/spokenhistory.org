@@ -36,6 +36,7 @@
 //   node --env-file=rag/.env.local rag/precompute.mjs --entries 1,5,73 --feature related
 //   node --env-file=rag/.env.local rag/precompute.mjs --centroid-sample 30
 //   node --env-file=rag/.env.local rag/precompute.mjs --dry-run
+//   node --env-file=rag/.env.local rag/precompute.mjs --resume      # skip entries with existing JSON
 //
 // Portability: the same script runs against the worldthought.com index
 // by pointing PINECONE_HOST / PINECONE_INDEX at that project's index.
@@ -78,6 +79,7 @@ function parseArgs(argv) {
     centroidSample: 30,
     relatedTopK: 30, // Pinecone topK when finding related; we keep top-5 per chunk after filter
     dryRun: false,
+    resume: false,
     namespace: '',
   };
   for (let i = 0; i < argv.length; i++) {
@@ -90,6 +92,7 @@ function parseArgs(argv) {
     else if (a === '--related-topk' && argv[i + 1]) { args.relatedTopK = Number(argv[i + 1]); i++; }
     else if (a === '--namespace' && argv[i + 1]) { args.namespace = argv[i + 1]; i++; }
     else if (a === '--dry-run') { args.dryRun = true; }
+    else if (a === '--resume') { args.resume = true; }
   }
   return args;
 }
@@ -254,15 +257,34 @@ async function listEntriesIndex(namespace = '') {
 // For each chunk in each entry, query Pinecone with the chunk's vector
 // (by id, no re-embed), filter out the same entry, and keep the top-5.
 // Aggregate per-chunk results into a single JSON per entry.
-async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespace, dryRun }) {
+async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespace, dryRun, resume }) {
   await mkdir(OUT_RELATED_DIR, { recursive: true });
+  const { access } = await import('node:fs/promises');
   const totalEntries = entriesFilter
     ? [...byEntry.keys()].filter((n) => entriesFilter.has(n)).length
     : byEntry.size;
   let processed = 0;
+  let skipped = 0;
   for (const [n, rec] of byEntry) {
     if (entriesFilter && !entriesFilter.has(n)) continue;
     processed++;
+    // Resume support: skip entries whose output JSON already exists.
+    // Pairs naturally with the per-entry write-on-completion pattern:
+    // each entry's file lands atomically when its loop iteration ends,
+    // so 'file exists' implies 'this entry was fully processed by some
+    // earlier (possibly killed) run.' Use --resume to skip them; omit
+    // to regenerate from scratch.
+    if (resume) {
+      const outPath = join(OUT_RELATED_DIR, `entry-${n}.json`);
+      try {
+        await access(outPath);
+        skipped++;
+        if (skipped <= 3 || skipped % 20 === 0) {
+          console.log(`[related] ${processed}/${totalEntries} entry #${n} ${rec.entry_subject}: existing file — skipping (resume)`);
+        }
+        continue;
+      } catch { /* file missing; process normally */ }
+    }
     const out = {
       entry_number: n,
       entry_subject: rec.entry_subject,
@@ -572,6 +594,7 @@ async function main() {
       relatedTopK: args.relatedTopK,
       namespace: args.namespace,
       dryRun: args.dryRun,
+      resume: args.resume,
     });
   }
   if (run('centroids') || run('constellation')) {
