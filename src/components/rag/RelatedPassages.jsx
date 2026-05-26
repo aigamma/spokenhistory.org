@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import { Sparkles, AlertCircle } from 'lucide-react';
 import { loadRelated, loadConstellation } from '../../services/ragClient';
 import CitationCard from './CitationCard';
+import { fidelityNoteFor } from './tiers';
 
 // Module-scoped cache of entry_number → audit-fidelity fields, populated
 // once per session from constellation.json. The per-chunk JSON files
@@ -39,20 +40,6 @@ function loadTierLookup() {
     })
     .catch(() => new Map());
   return _tierCachePromise;
-}
-
-function fidelityNoteFor(provenance, tier) {
-  if (tier === 'ingestion-only' || provenance === 'ingestion-only') {
-    return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.';
-  }
-  if (provenance === 'audit-original') {
-    if (tier === 'low') return 'Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.';
-    if (tier === 'medium') return 'Audited transcript with residual uncertainty; verify against audio for high-stakes citations.';
-    if (tier === 'publication-block') return 'Audited transcript with documented publication-blocker issues; verify the specific passage against audio before citing.';
-    if (tier === 'not-auditable') return 'Audit pass completed but the entry cannot be fully verified against an external canonical source.';
-    return 'Audited transcript.';
-  }
-  return 'Provenance unknown.';
 }
 
 /**

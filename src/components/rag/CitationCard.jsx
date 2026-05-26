@@ -12,19 +12,8 @@
  */
 
 import { useState } from 'react';
-import { ExternalLink, Clock, ShieldCheck, AlertTriangle, Copy, Check } from 'lucide-react';
-
-// Per-tier badge styling. Mirrors the Constellation's color scale so the
-// audit substrate looks consistent across components. Tone is "info" not
-// "alarm" — even publication-block entries are usable as research leads;
-// the badge tells the reader to verify before citing, not to discard.
-const TIER_BADGE = {
-  'low': { label: 'Audited · Low uncertainty', bg: 'bg-emerald-50', text: 'text-emerald-800', border: 'border-emerald-200', icon: ShieldCheck },
-  'medium': { label: 'Audited · Medium uncertainty', bg: 'bg-amber-50', text: 'text-amber-800', border: 'border-amber-200', icon: AlertTriangle },
-  'publication-block': { label: 'Audited · Publication-blocker issues', bg: 'bg-red-50', text: 'text-red-800', border: 'border-red-200', icon: AlertTriangle },
-  'not-auditable': { label: 'Audited · Not externally verifiable', bg: 'bg-violet-50', text: 'text-violet-800', border: 'border-violet-200', icon: AlertTriangle },
-  'ingestion-only': { label: 'Ingested · Not yet audited', bg: 'bg-slate-50', text: 'text-slate-800', border: 'border-slate-200', icon: AlertTriangle },
-};
+import { ExternalLink, Clock, AlertTriangle, Copy, Check } from 'lucide-react';
+import { TIER_BADGE } from './tiers';
 
 /**
  * CitationCard — primary-source result card.

@@ -15,17 +15,7 @@
 
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { loadConstellation } from '../../services/ragClient';
-
-// Color scale by uncertainty tier — the audit-fidelity signal.
-// Mapping intentionally goes from green (most-trusted) to orange/red
-// (most-flagged) so the visualization rewards a quick read.
-const TIER_COLORS = {
-  'low': '#15803d',                  // green-700: well-audited
-  'medium': '#b45309',               // amber-700: residual uncertainty
-  'publication-block': '#b91c1c',    // red-700: blocker-flagged
-  'not-auditable': '#7c3aed',        // violet-600: can't verify externally
-  'ingestion-only': '#475569',       // slate-600: not yet audited
-};
+import { TIER_COLORS } from './tiers';
 
 /**
  * Constellation — SVG scatter of corpus entries in 2D embedding space.
