@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   Search,
   X
 } from 'lucide-react';
-import VectorSearchOverlay from '../VectorSearchOverlay';
 
 /**
  * Header - Shared header component with navigation
@@ -21,8 +20,8 @@ import VectorSearchOverlay from '../VectorSearchOverlay';
 export default function Header() {
   const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const hamburgerRef = useRef(null);
   const menuCloseRef = useRef(null);
   const searchTriggerRef = useRef(null);
@@ -100,11 +99,14 @@ export default function Header() {
                 <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
               </button>
 
-              {/* Search button -- p-3 on mobile expands the 18px icon to a ~42px tap target (further enlarged by the surrounding header padding); lg restores the original p-1 + 24px icon */}
+              {/* Search button — navigates to the RAG-backed semantic search.
+                  The previous in-page Firestore-backed overlay was disabled
+                  because Firestore content is not yet loaded; the new
+                  /rag-explore#search surface is live and bounded-cost. */}
               <button
                 ref={searchTriggerRef}
-                onClick={() => setIsSearchOpen(true)}
-                aria-label="Open search"
+                onClick={() => navigate('/rag-explore#search')}
+                aria-label="Search the archive"
                 className="p-3 lg:p-1 text-black hover:opacity-70 transition-opacity"
               >
                 <Search size={18} className="lg:w-6 lg:h-6" />
@@ -151,48 +153,64 @@ export default function Header() {
           </div>
 
           {/* Timeline */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-6">
+          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
             <Link
               to="/"
               className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div className="text-black text-xl lg:text-3xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
                 01.
               </div>
-              <div className="text-right text-black text-2xl sm:text-3xl md:text-4xl lg:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Timeline
               </div>
             </Link>
           </div>
 
+          {/* Embeddings (new — the RAG showcase) */}
+          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
+            <Link
+              to="/rag-explore"
+              className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                02.
+              </div>
+              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Embeddings
+              </div>
+            </Link>
+          </div>
+
           {/* Interviews */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-6">
+          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
             <Link
               to="/interview-index"
               className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div className="text-black text-xl lg:text-3xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                02.
+              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                03.
               </div>
-              <div className="text-right text-black text-2xl sm:text-3xl md:text-4xl lg:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Interviews
               </div>
             </Link>
           </div>
 
           {/* Glossary */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-6">
+          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
             <Link
               to="/topic-glossary"
               className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div className="text-black text-xl lg:text-3xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                03.
+              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                04.
               </div>
-              <div className="text-right text-black text-2xl sm:text-3xl md:text-4xl lg:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Glossary
               </div>
             </Link>
@@ -205,10 +223,10 @@ export default function Header() {
               className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
               onClick={() => setIsMenuOpen(false)}
             >
-              <div className="text-black text-xl lg:text-3xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                04.
+              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                05.
               </div>
-              <div className="text-right text-black text-2xl sm:text-3xl md:text-4xl lg:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
                 About
               </div>
             </Link>
@@ -216,25 +234,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Search Overlay. The onClose callback also restores focus to
-          the search trigger button so the keyboard user picks up
-          where they invoked the dialog rather than at the top of
-          the page. The Header is the only opener of this overlay,
-          so centralizing the focus-restore here keeps the
-          VectorSearchOverlay component itself trigger-agnostic. */}
-      {isSearchOpen && (
-        <VectorSearchOverlay
-          isOpen={isSearchOpen}
-          onClose={() => {
-            setIsSearchOpen(false);
-            // requestAnimationFrame defers the focus call until the
-            // overlay's slide-out transition has finished so the
-            // focus ring doesn't briefly appear inside the overlay
-            // mid-collapse.
-            requestAnimationFrame(() => searchTriggerRef.current?.focus());
-          }}
-        />
-      )}
     </>
   );
-} 
+}
