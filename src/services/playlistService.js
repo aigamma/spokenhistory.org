@@ -62,10 +62,22 @@ const buildKeywordIndex = async () => {
         // Map interview data using collection mapper
         const interviewData = mapInterviewData(rawInterviewData, activeCollection);
 
-        // Get thumbnail URL once per interview
+        // Get thumbnail URL once per interview.
+        //
+        // Preference order:
+        //   1. interviewData.poster_url (LoC-served poster, set by our
+        //      pipeline-to-firestore push when LoC video data is merged)
+        //   2. YouTube thumbnail derived from videoEmbedLink (legacy
+        //      data path; only works for YouTube embed URLs)
+        //   3. null (no thumbnail available; UI falls back to placeholder)
         const parentVideoEmbedLink = interviewData.videoEmbedLink;
-        const thumbnailUrl = parentVideoEmbedLink ?
-          `https://img.youtube.com/vi/${extractVideoId(parentVideoEmbedLink)}/mqdefault.jpg` : null;
+        let thumbnailUrl = interviewData.poster_url || null;
+        if (!thumbnailUrl && parentVideoEmbedLink) {
+          const ytId = extractVideoId(parentVideoEmbedLink);
+          if (ytId) {
+            thumbnailUrl = `https://img.youtube.com/vi/${ytId}/mqdefault.jpg`;
+          }
+        }
 
         const subSummariesRef = collection(db, activeCollection, interviewId, "subSummaries");
         const querySnapshot = await getDocs(subSummariesRef);

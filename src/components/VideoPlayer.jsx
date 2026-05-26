@@ -8,6 +8,20 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { extractVideoId, convertTimestampToSeconds, extractStartTimestamp, parseTimestampRange } from "../utils/timeUtils";
+import Html5VideoPlayer from "./Html5VideoPlayer";
+
+// URL-type detector: returns true when the source URL is a direct
+// video stream (mp4, m3u8, etc.) rather than a YouTube embed. The
+// civil-rights pipeline sources videos from LoC catalog
+// (tile.loc.gov/...) which serves MP4 + HLS; the legacy team data
+// used YouTube embeds. Both code paths coexist behind this dispatcher.
+function isDirectStreamUrl(url) {
+  if (!url || typeof url !== 'string') return false;
+  if (/youtu\.?be/i.test(url)) return false;
+  if (/\.(mp4|webm|m3u8|mov|m4v)(\?|$)/i.test(url)) return true;
+  if (/tile\.loc\.gov/i.test(url)) return true;
+  return false;
+}
 
 /**
  * VideoPlayer - Renders a custom YouTube player with clip timing support
@@ -41,12 +55,27 @@ import { extractVideoId, convertTimestampToSeconds, extractStartTimestamp, parse
  * @param {number|null} props.seekToTime - Time in seconds (relative to clip start) to seek to
  * @returns {React.ReactElement} Video player component
  */
-const VideoPlayer = ({ 
-  video, 
-  onVideoEnd, 
-  onPlay, 
-  onPause, 
-  onTimeUpdate, 
+// Top-level VideoPlayer dispatcher. No React hooks in this function
+// — they live inside the two variant sub-components below. This keeps
+// the rules-of-hooks contract intact when the source URL type changes
+// between renders (MP4 ↔ YouTube): each variant has its own hook order
+// because each is a distinct component instance.
+const VideoPlayer = (props) => {
+  if (isDirectStreamUrl(props.video?.videoEmbedLink || props.video?.video_url)) {
+    return <Html5VideoPlayer {...props} />;
+  }
+  return <YouTubeVideoPlayer {...props} />;
+};
+
+// YouTube-variant implementation. Same body as the original
+// VideoPlayer; only the function name changed so the dispatcher above
+// can route to it.
+const YouTubeVideoPlayer = ({
+  video,
+  onVideoEnd,
+  onPlay,
+  onPause,
+  onTimeUpdate,
   isPlaying,
   seekToTime
 }) => {

@@ -155,6 +155,10 @@ function buildDocs(data, slugOverride) {
   const trimmedCost = costData ? { ...costData } : null
   if (trimmedCost && 'call_log' in trimmedCost) delete trimmedCost.call_log
 
+  // LoC-served video fields. If extracted by scripts/fetch-loc-videos.py
+  // these flow through; otherwise they're null and the UI falls back.
+  const locVideo = data.loc_video || {};
+
   const interviewDoc = {
     name: interviewName,
     summary: ms.summary || '',
@@ -169,6 +173,17 @@ function buildDocs(data, slugOverride) {
     inferential_uncertainty_score: typeof data.inferential_uncertainty_score === 'number' ? data.inferential_uncertainty_score : null,
     entry_provenance: data.entry_provenance || null,
     youtube_video_id: data.youtube_video_id || null,
+    // Direct LoC video stream URL. The frontend's VideoPlayer dispatches
+    // on the URL pattern: tile.loc.gov MP4 → HTML5 video; YouTube embed
+    // → YT.Player API. videoEmbedLink is the field playlistService.js
+    // already reads, so populating it with the LoC mp4 makes the legacy
+    // PlaylistBuilder UI work end-to-end against our new pipeline data.
+    videoEmbedLink: locVideo.video_url || null,
+    video_url: locVideo.video_url || null,
+    video_stream_url: locVideo.video_stream_url || null,
+    poster_url: locVideo.poster_url || null,
+    video_duration_seconds: locVideo.duration_seconds || null,
+    video_caption: locVideo.caption || null,
     processed_at: new Date().toISOString(),
     pipeline_version: data.pipeline_version || 'claude-subagent-1',
   }
