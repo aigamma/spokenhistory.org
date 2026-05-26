@@ -315,3 +315,19 @@ The interactive RAG layer is live in staging. The following are operational fact
 
 - **MCP server (Fly.io)** — `flyctl` is not installed on Eric's machine; `flyctl auth login` is interactive. Blocked on Eric installing the CLI + authenticating. The server code is rewired (commit `2c05cd8`) and ready to deploy.
 - **Pinecone civil-rights as a SEPARATE project from worldthought** — would require Eric to provision via the Pinecone console + generate a new project-scoped API key. Current setup is functional but cohabitating in the worldthought project space.
+
+### Post-23:00 quality-pass follow-on
+
+Quality improvements landed after the initial operational state was captured. Summary (commits):
+
+- **Pruned to `.srt`-only** (`3bfcc07`). Cross-format duplicate hits in top-N retrievals were the most visible issue in the first demo run. Dropping `.txt` and `.vtt` from `SOURCE_EXTENSIONS` + `ingest --prune` removed 25,246 duplicate vectors (40,710 → 15,464). Every retrieval result now carries timestamps.
+- **Tier-aware visualization + cards** (`0274e5c`, `5be487a`, `4e3d66f`). The Constellation color-codes dots by `uncertaintyTier` (5-color scale: emerald → amber → red → violet → slate). `CitationCard` shows a colored per-tier badge with full label text. The audit substrate is now visible at a glance instead of being a "trust us" claim.
+- **Tier-vocabulary doc cleanup** (`3f4249f`, `ed18acc`, `07438c2`). The vocabulary value `high` was a placeholder in early docs but never appears in the corpus. Updated mcp-server/USAGE_GUIDE.md, the `source_for_claim` MCP prompt, rag/INTERACTIVE_FEATURES_DESIGN.md, and rag/README.md to list the 5 real tier values (low / medium / publication-block / not-auditable / ingestion-only) with per-tier counts.
+- **Corpus-stats header on /rag-explore** (`ed72e02`). The demo page now shows `136 interviews · ~15K time-anchored passages · 5-tier audit substrate` with the tier distribution inline, so visitors see the substrate is real and quantified.
+- **Stakeholder one-pager** (`42291c0`). `rag/DEMO_SCRIPT.md` for Wednesday-meeting prep: what to demo, three concrete queries to run, the infra-cost numbers, and the outstanding admin actions.
+- **`/retrieve` ergonomics** (`84677cf`). The Netlify Function now accepts top-level `entry_number` as a shortcut, matching the MCP server's tool signature.
+
+Memory items saved this session:
+
+- `feedback_no_idle_waiting.md` — don't idle during background tasks; do parallel work.
+- `reference_netlify_mcp_envvar_secret.md` — the `is_secret=true + context="all"` silent-fail pitfall.
