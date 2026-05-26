@@ -140,13 +140,21 @@ export default function Constellation({
               r={p.r}
               fill={p.fill}
               fillOpacity={hover && hover.entry_number !== p.entry_number ? 0.35 : 0.75}
-              className="cursor-pointer transition-opacity"
+              className="cursor-pointer transition-opacity focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-900"
               onMouseEnter={() => setHover(p)}
               onMouseLeave={() => setHover(null)}
+              onFocus={() => setHover(p)}
+              onBlur={() => setHover(null)}
               onClick={() => onSelect?.(p)}
-              tabIndex={0}
-              role="button"
-              aria-label={`${p.entry_subject}, entry ${p.entry_number}, audit tier ${p.uncertainty_tier || 'unknown'}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  onSelect?.(p);
+                }
+              }}
+              tabIndex={onSelect ? 0 : -1}
+              role={onSelect ? 'button' : 'img'}
+              aria-label={`${p.entry_subject}, entry ${p.entry_number}, audit tier ${p.uncertainty_tier || 'unknown'}, ${p.chunk_count} chunks`}
             />
           ))}
         </g>
