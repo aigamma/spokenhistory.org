@@ -76,6 +76,21 @@ jobs:
       - name: Node syntax check on MCP server
         run: node --check mcp-server/server.mjs
 
+      - name: Node syntax check on Netlify Function
+        run: node --check netlify/functions/retrieve.mjs
+
+      - name: Node syntax check on rag/ scripts
+        run: |
+          node --check rag/shared.mjs
+          node --check rag/chunker.mjs
+          node --check rag/embed.mjs
+          node --check rag/ingest.mjs
+          node --check rag/retrieve.mjs
+          node --check rag/precompute.mjs
+
+      - name: Unit tests (node:test on rag/ shared modules)
+        run: node --test src/components/rag/tiers.test.mjs
+
   python:
     name: Metadata Generation System (Python parse)
     runs-on: ubuntu-latest
