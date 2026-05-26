@@ -28,6 +28,7 @@ const TIME_CHUNK_MAX_CHARS = 1400; // hard cap on time-aware chunk length
 // Text normalization (shared)
 // ---------------------------------------------------------------------------
 
+/* eslint-disable no-irregular-whitespace -- intentional: line below contains a literal NBSP for collapse-into-space */
 export function normalizeWhitespace(text) {
   return text
     .replace(/\r\n/g, '\n')
@@ -36,12 +37,13 @@ export function normalizeWhitespace(text) {
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
+/* eslint-enable no-irregular-whitespace */
 
 // ---------------------------------------------------------------------------
 // .srt / .vtt parsing
 // ---------------------------------------------------------------------------
 
-const SRT_TIMESTAMP_RE = /^(\d{2}):(\d{2}):(\d{2})[,\.](\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2})[,\.](\d{3})/;
+const SRT_TIMESTAMP_RE = /^(\d{2}):(\d{2}):(\d{2})[,.](\d{3})\s*-->\s*(\d{2}):(\d{2}):(\d{2})[,.](\d{3})/;
 
 function srtTimestampToSeconds(h, m, s, ms) {
   return Number(h) * 3600 + Number(m) * 60 + Number(s) + Number(ms) / 1000;
