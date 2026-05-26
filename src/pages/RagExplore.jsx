@@ -1,10 +1,43 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import {
   SemanticSearch,
   QuoteFinder,
   Constellation,
 } from '../components/rag';
+
+/**
+ * Pull a small set of corpus stats from /rag/constellation.json
+ * (which carries entry_provenance + uncertainty_tier per point).
+ * Lets the header render "136 interviews, 5-tier audit substrate"
+ * without requiring a separate stats endpoint.
+ */
+function useCorpusStats() {
+  const [stats, setStats] = useState(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/rag/constellation.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((json) => {
+        if (cancelled || !json?.points) return;
+        const tiers = {};
+        let totalChunks = 0;
+        for (const p of json.points) {
+          const t = p.uncertainty_tier || 'unknown';
+          tiers[t] = (tiers[t] || 0) + 1;
+          totalChunks += p.chunk_count || 0;
+        }
+        setStats({
+          interviews: json.points.length,
+          chunks: totalChunks,
+          tiers,
+        });
+      })
+      .catch(() => { /* swallow — header just falls back to baseline copy */ });
+    return () => { cancelled = true; };
+  }, []);
+  return stats;
+}
 
 /**
  * RagExplore — landing page for the interactive RAG features layer.
@@ -29,6 +62,7 @@ import {
 export default function RagExplore() {
   useDocumentTitle('Explore the embeddings');
   const [tab, setTab] = useState('search');
+  const stats = useCorpusStats();
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
@@ -52,6 +86,30 @@ export default function RagExplore() {
             on a topic are nearby in that space. This page surfaces three ways to query and
             visualize those connections.
           </p>
+          {stats && (
+            <dl className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-700">
+              <div>
+                <dt className="font-medium text-stone-900 inline">{stats.interviews}</dt>{' '}
+                <span>interviews indexed</span>
+              </div>
+              <div>
+                <dt className="font-medium text-stone-900 inline">~{Math.round(stats.chunks / 1000)}K</dt>{' '}
+                <span>time-anchored passages</span>
+              </div>
+              <div>
+                <dt className="font-medium text-stone-900 inline">{Object.keys(stats.tiers).length}-tier</dt>{' '}
+                <span>audit substrate</span>
+              </div>
+              <div>
+                <span className="text-stone-600">
+                  {stats.tiers.low || 0} low · {stats.tiers.medium || 0} medium ·{' '}
+                  {stats.tiers['publication-block'] || 0} pub-block ·{' '}
+                  {stats.tiers['not-auditable'] || 0} not-auditable ·{' '}
+                  {stats.tiers['ingestion-only'] || 0} ingestion-only
+                </span>
+              </div>
+            </dl>
+          )}
         </header>
 
         <nav aria-label="Demo tabs" className="border-b border-stone-300 mb-8">
