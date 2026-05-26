@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
@@ -21,10 +21,12 @@ import { TIER_BADGE } from '../components/rag/tiers';
 
 export default function InterviewIndex() {
   useDocumentTitle('Interview Index');
+  const [searchParams] = useSearchParams();
+  const initialSearch = searchParams.get('search') || '';
   const [data, setData] = useState(null);
   const [capsules, setCapsules] = useState({});
   const [error, setError] = useState(null);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(initialSearch);
   const [tierFilter, setTierFilter] = useState('all');
   const [sortBy, setSortBy] = useState('A-Z');
 

@@ -152,85 +152,31 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Timeline */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
-            <Link
-              to="/"
-              className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                01.
-              </div>
-              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Timeline
-              </div>
-            </Link>
-          </div>
-
-          {/* Embeddings (new — the RAG showcase) */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
-            <Link
-              to="/rag-explore"
-              className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                02.
-              </div>
-              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Embeddings
-              </div>
-            </Link>
-          </div>
-
-          {/* Interviews */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
-            <Link
-              to="/interview-index"
-              className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                03.
-              </div>
-              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Interviews
-              </div>
-            </Link>
-          </div>
-
-          {/* Glossary */}
-          <div className="w-full border-b border-black pb-2 sm:pb-3 lg:pb-4">
-            <Link
-              to="/topic-glossary"
-              className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                04.
-              </div>
-              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Glossary
-              </div>
-            </Link>
-          </div>
-
-          {/* About */}
-          <div className="w-full">
-            <Link
-              to="/about"
-              className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <div className="text-black text-base lg:text-xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                05.
-              </div>
-              <div className="text-right text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
-                About
-              </div>
-            </Link>
-          </div>
+          {[
+            { num: '01.', label: 'Timeline', to: '/' },
+            { num: '02.', label: 'Embeddings ★', to: '/rag-explore' },
+            { num: '03.', label: 'Events', to: '/rag-explore#events' },
+            { num: '04.', label: 'Concept axes', to: '/rag-explore#spectrum' },
+            { num: '05.', label: 'Search', to: '/rag-explore#search' },
+            { num: '06.', label: 'Interviews', to: '/interview-index' },
+            { num: '07.', label: 'Glossary', to: '/topic-glossary' },
+            { num: '08.', label: 'About', to: '/about' },
+          ].map((item, idx, arr) => (
+            <div key={item.num} className={`w-full pb-2 ${idx < arr.length - 1 ? 'border-b border-black' : ''}`}>
+              <Link
+                to={item.to}
+                className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <div className="text-black text-sm lg:text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                  {item.num}
+                </div>
+                <div className="text-right text-black text-base sm:text-lg lg:text-xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  {item.label}
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
 
