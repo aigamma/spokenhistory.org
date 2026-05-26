@@ -16,6 +16,17 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { loadConstellation } from '../../services/ragClient';
 
+// Color scale by uncertainty tier — the audit-fidelity signal.
+// Mapping intentionally goes from green (most-trusted) to orange/red
+// (most-flagged) so the visualization rewards a quick read.
+const TIER_COLORS = {
+  'low': '#15803d',                  // green-700: well-audited
+  'medium': '#b45309',               // amber-700: residual uncertainty
+  'publication-block': '#b91c1c',    // red-700: blocker-flagged
+  'not-auditable': '#7c3aed',        // violet-600: can't verify externally
+  'ingestion-only': '#475569',       // slate-600: not yet audited
+};
+
 /**
  * Constellation — SVG scatter of corpus entries in 2D embedding space.
  *
@@ -57,6 +68,7 @@ export default function Constellation({
       cx: PAD + ((p.x + 1) / 2) * innerW,
       cy: PAD + ((1 - p.y) / 2) * innerH, // flip y so positive is up
       r: 3 + Math.log10((p.chunk_count || 1) + 1),
+      fill: TIER_COLORS[p.uncertainty_tier] || '#b91c1c',
     }));
   }, [data, innerW, innerH]);
 
@@ -126,13 +138,15 @@ export default function Constellation({
               cx={p.cx}
               cy={p.cy}
               r={p.r}
-              className="fill-red-700/70 hover:fill-red-700 cursor-pointer transition-colors"
+              fill={p.fill}
+              fillOpacity={hover && hover.entry_number !== p.entry_number ? 0.35 : 0.75}
+              className="cursor-pointer transition-opacity"
               onMouseEnter={() => setHover(p)}
               onMouseLeave={() => setHover(null)}
               onClick={() => onSelect?.(p)}
               tabIndex={0}
               role="button"
-              aria-label={`${p.entry_subject}, entry ${p.entry_number}`}
+              aria-label={`${p.entry_subject}, entry ${p.entry_number}, audit tier ${p.uncertainty_tier || 'unknown'}`}
             />
           ))}
         </g>
@@ -176,6 +190,19 @@ export default function Constellation({
         thematic territory even when the speakers never met. Hover for the interviewee&apos;s
         name; click to open the interview page.
       </figcaption>
+      <div className="flex flex-wrap gap-3 mt-3 text-xs text-stone-700" aria-label="Audit fidelity legend">
+        <span className="font-medium text-stone-900">Audit tier:</span>
+        {Object.entries(TIER_COLORS).map(([tier, color]) => (
+          <span key={tier} className="inline-flex items-center gap-1">
+            <span
+              className="inline-block w-3 h-3 rounded-full"
+              style={{ backgroundColor: color, opacity: 0.75 }}
+              aria-hidden="true"
+            />
+            {tier}
+          </span>
+        ))}
+      </div>
     </figure>
   );
 }

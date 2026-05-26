@@ -363,6 +363,10 @@ async function precomputeCentroids({ byEntry, centroidSample, namespace, dryRun 
       console.warn(`[centroids] entry #${n}: no vectors with values returned; skipping`);
       continue;
     }
+    // Pull the audit-fidelity fields from any of the fetched chunks
+    // (they're per-entry, so any chunk works). The Constellation component
+    // and other downstream UIs color-code points by these fields.
+    const firstMeta = Object.values(vectors).find((v) => v?.metadata)?.metadata || {};
     const dim = vecList[0].length;
     const sum = new Array(dim).fill(0);
     for (const v of vecList) {
@@ -380,6 +384,13 @@ async function precomputeCentroids({ byEntry, centroidSample, namespace, dryRun 
       chunk_count: rec.ids.length,
       sampled_chunks: vecList.length,
       vector: centroid,
+      // Surface audit-fidelity fields so downstream UIs can color-code:
+      entry_provenance: firstMeta.entry_provenance || null,
+      uncertainty_tier: firstMeta.inferential_uncertainty_tier || null,
+      uncertainty_score: Number.isFinite(firstMeta.inferential_uncertainty_score)
+        ? firstMeta.inferential_uncertainty_score
+        : null,
+      loc_item_url: firstMeta.loc_item_url || null,
     });
     console.log(`[centroids] ${processed}/${byEntry.size} entry #${n} ${rec.entry_subject} (sampled ${vecList.length}/${rec.ids.length})`);
   }
@@ -492,6 +503,10 @@ async function precomputeConstellation({ centroids, dryRun }) {
     entry_number: c.entry_number,
     entry_subject: c.entry_subject,
     chunk_count: c.chunk_count,
+    entry_provenance: c.entry_provenance || null,
+    uncertainty_tier: c.uncertainty_tier || null,
+    uncertainty_score: c.uncertainty_score ?? null,
+    loc_item_url: c.loc_item_url || null,
     x: dot(centered[i], u1),
     y: dot(centered[i], u2),
   }));
