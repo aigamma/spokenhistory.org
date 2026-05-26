@@ -50,6 +50,20 @@ Five subsystems, each in its own directory:
 - **`mcp-server/`** -- Node MCP server exposing the archive via three tools (`search_transcripts`, `get_transcript`, `list_leaders`) for Claude Desktop and Claude.ai Custom Connectors. Deployable to Fly.io.
 - **`scripts/`** -- Admin scripts (Firestore migration, Firebase data tools, vectorization). Do not delete without explicit confirmation; some are reference material.
 
+### Civil Rights MCP usage in Codex Desktop
+
+Codex Desktop may surface only a relevance-filtered subset of the Civil Rights MCP server in the visible tool list, even when the server advertises all tools and prompts. Do not conclude that a tool or prompt is unavailable just because only `search_transcripts` is initially visible. Use tool discovery or intent-based prompting to reach the full server surface.
+
+The server exposes these callable tools:
+- `search_transcripts` - citation-grade semantic search across the archive. Use `dedupe_by_entry: true` for compare-perspectives requests so the response represents multiple voices.
+- `get_transcript` - full ordered transcript for one `entry_number`.
+- `list_leaders` - archive roster with entry numbers, LoC URLs, provenance, and audit tiers.
+
+The server also advertises MCP prompts. Some Codex sessions may not expose those prompts as direct callable endpoints, but agents should still recognize prompt-shaped user requests and execute the equivalent workflow:
+- `compare_perspectives(topic)` -> call `search_transcripts` with a topic query and `dedupe_by_entry: true`; synthesize contrasting viewpoints with citations, timestamps, audit tier, and fidelity notes.
+- `trace_evolution(interviewee)` -> identify the entry with `list_leaders` if needed, call `get_transcript`, then analyze how the interviewee's framing changes across the interview chronology.
+- `source_for_claim(claim)` -> call `search_transcripts` for supporting and complicating passages; return structured citation blocks with LoC link, timestamp range, audit tier, transcript-fidelity note, and a brief relevance explanation.
+
 ## The Smithsonian-grade publication gate (new in May 2026 overhaul)
 
 The original pipeline scored summaries at 80/80 accuracy/quality and kept the best-of-3 even if no attempt passed -- letting hallucinations through. The new gate:
