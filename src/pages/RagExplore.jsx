@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import {
   SemanticSearch,
@@ -97,12 +98,26 @@ const TAB_FROM_HASH = (hash) => {
 export default function RagExplore() {
   useDocumentTitle('Explore the embeddings');
   const stats = useCorpusStats();
-  const [tab, setTab] = useState(() =>
-    typeof window === 'undefined' ? 'search' : TAB_FROM_HASH(window.location.hash),
-  );
+  // Use React Router's useLocation so navigation FROM another page
+  // (e.g., the slide-out menu Link to "/rag-explore#related") sets the
+  // tab correctly on first render. window.location.hash alone misses
+  // some React Router transition edge cases.
+  const location = useLocation();
+  const [tab, setTab] = useState(() => TAB_FROM_HASH(
+    typeof window === 'undefined' ? location.hash : (window.location.hash || location.hash),
+  ));
   const [relatedEntry, setRelatedEntry] = useState(RELATED_DEMO_ENTRIES[0].number);
 
-  // Keep tab state and the hash in sync so the URL is bookmarkable.
+  // React to React Router navigations that change the hash (e.g., the
+  // user clicks a Link to "/rag-explore#events" from another page).
+  useEffect(() => {
+    const nextTab = TAB_FROM_HASH(location.hash);
+    if (nextTab !== tab) setTab(nextTab);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.hash]);
+
+  // Keep tab state and the hash in sync so in-page tab switches are
+  // bookmarkable.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (window.location.hash !== `#${tab}`) {
@@ -110,7 +125,7 @@ export default function RagExplore() {
     }
   }, [tab]);
 
-  // Respond to hash changes (back/forward, manual edit).
+  // Respond to native hash changes (back/forward, manual edit).
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
     const onHash = () => setTab(TAB_FROM_HASH(window.location.hash));

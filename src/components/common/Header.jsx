@@ -157,10 +157,11 @@ export default function Header() {
             { num: '02.', label: 'Embeddings ★', to: '/rag-explore' },
             { num: '03.', label: 'Events', to: '/rag-explore#events' },
             { num: '04.', label: 'Concept axes', to: '/rag-explore#spectrum' },
-            { num: '05.', label: 'Search', to: '/rag-explore#search' },
-            { num: '06.', label: 'Interviews', to: '/interview-index' },
-            { num: '07.', label: 'Glossary', to: '/topic-glossary' },
-            { num: '08.', label: 'About', to: '/about' },
+            { num: '05.', label: 'Voices in conversation', to: '/rag-explore#related' },
+            { num: '06.', label: 'Search', to: '/rag-explore#search' },
+            { num: '07.', label: 'Interviews', to: '/interview-index' },
+            { num: '08.', label: 'Glossary', to: '/topic-glossary' },
+            { num: '09.', label: 'About', to: '/about' },
           ].map((item, idx, arr) => (
             <div key={item.num} className={`w-full pb-2 ${idx < arr.length - 1 ? 'border-b border-black' : ''}`}>
               <Link
