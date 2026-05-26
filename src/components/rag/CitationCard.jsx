@@ -12,8 +12,9 @@
  */
 
 import { useState } from 'react';
-import { ExternalLink, Clock, AlertTriangle, Copy, Check } from 'lucide-react';
+import { ExternalLink, Clock, AlertTriangle, Copy, Check, Info } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
+import { useCapsule } from './useCapsules';
 
 /**
  * CitationCard — primary-source result card.
@@ -59,22 +60,32 @@ export default function CitationCard({
     ? TIER_BADGE[tierKey]
     : { label: 'Provenance unknown', bg: 'bg-stone-50', text: 'text-stone-700', border: 'border-stone-200', icon: AlertTriangle };
   const BadgeIcon = badge.icon;
+  const capsule = useCapsule(entryNumber);
 
   return (
     <article
       className={`rag-citation-card border border-stone-200 rounded-lg bg-white p-5 ${className}`}
     >
       <header className="flex items-start justify-between gap-4 mb-3">
-        <div>
+        <div className="flex-1">
           <h3 className="text-lg font-medium text-stone-900">
             {entrySubject || 'Unknown interviewee'}
           </h3>
           {entryNumber != null && (
             <p className="text-xs text-stone-500 mt-0.5">Entry #{entryNumber}</p>
           )}
+          {capsule && (
+            <p
+              className="text-sm text-stone-600 mt-2 italic"
+              style={{ fontFamily: 'Source Serif 4, serif' }}
+            >
+              <Info className="w-3.5 h-3.5 inline-block mr-1 text-stone-400" aria-hidden="true" />
+              {capsule}
+            </p>
+          )}
         </div>
         {similarity != null && (
-          <div className="text-xs text-stone-500 tabular-nums">
+          <div className="text-xs text-stone-500 tabular-nums shrink-0">
             relevance {(similarity * 100).toFixed(0)}%
           </div>
         )}

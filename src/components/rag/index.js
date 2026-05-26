@@ -15,6 +15,14 @@ export { default as SemanticSearch } from './SemanticSearch';
 export { default as QuoteFinder } from './QuoteFinder';
 export { default as RelatedPassages } from './RelatedPassages';
 export { default as Constellation } from './Constellation';
+export { default as PolyphonicEvents } from './PolyphonicEvents';
+export { default as ConceptSpectrum } from './ConceptSpectrum';
+export { default as FamousNames } from './FamousNames';
+export { default as ThemesBrowser } from './ThemesBrowser';
+export { default as GeographicAtlas } from './GeographicAtlas';
+export { default as InfluenceList } from './InfluenceList';
+export { default as QuoteOfTheDay } from './QuoteOfTheDay';
+export { default as TourPages } from './TourPages';
 
 // Audit-tier vocabulary, palette, and fidelity-note helpers. Importers
 // that build their own tier-aware UIs (custom badges, filters, legends)

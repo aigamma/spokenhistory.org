@@ -1,0 +1,2682 @@
+{
+  "generated": "2026-05-26",
+  "node_count": 151,
+  "edge_count": 214,
+  "in_corpus_count": 136,
+  "external_count": 15,
+  "nodes": [
+    {
+      "id": "in:1",
+      "name": "Aaron Dixon",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 1,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669186/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:2",
+      "name": "Amos C. Brown",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 2,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669159/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:3",
+      "name": "Annie Pearl Avery",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 3,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669118/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:4",
+      "name": "Audrey Nell Hamilton and JoeAnn Anderson Ulmer",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 4,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669143/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:5",
+      "name": "Barbara Edna Vickers",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 5,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669145/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:6",
+      "name": "Ben Caldwell (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 6,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669176/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:7",
+      "name": "Betty Garman Robinson (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 7,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655415/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:8",
+      "name": "Bill Russell (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 8,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669187/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:9",
+      "name": "Simeon Booker and Moses Newson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 9,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669130/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:10",
+      "name": "Calvin \"Cal\" Luper",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 10,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669112/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:11",
+      "name": "Candie Carawan and Guy Hughes Carawan",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 11,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669151/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:12",
+      "name": "Carolyn Miller and James Miller (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 12,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655410/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:13",
+      "name": "Carrie Lamar Young (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 13,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669155/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:14",
+      "name": "Cecil J. Williams (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 14,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669125/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:15",
+      "name": "Cecilia Suyat Marshall",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 15,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669196/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:16",
+      "name": "Charles F. (\"Chuck\") McDew",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 16,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669120/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:17",
+      "name": "Charles McLaurin (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 17,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655412/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:18",
+      "name": "Rev. Charles Melvin Sherrod",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 18,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669121/",
+      "discussed_by_count": 24
+    },
+    {
+      "id": "in:19",
+      "name": "Charles \"Chuck\" Siler",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 19,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669185/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:20",
+      "name": "Clarence B. Jones (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 20,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669183/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:21",
+      "name": "Clarence Magee",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 21,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655404/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:22",
+      "name": "Dr. Cleveland Sellers",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 22,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669180/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:23",
+      "name": "Clifford D. Browner Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 23,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669160/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:24",
+      "name": "Courtland Cox",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 24,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669129/",
+      "discussed_by_count": 9
+    },
+    {
+      "id": "in:25",
+      "name": "Cynthia and Fletcher Anderson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 25,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669115/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:26",
+      "name": "Judge D'Army Bailey (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 26,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669197/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:27",
+      "name": "Dion Diamond",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 27,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655423/",
+      "discussed_by_count": 3
+    },
+    {
+      "id": "in:28",
+      "name": "Abernathy family",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 28,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669207/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:29",
+      "name": "Dorothy Foreman Cotton (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 29,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669139/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:30",
+      "name": "Dorothy \"Dottie\" Foreman Zellner (PARTIAL)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 30,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655416/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:32",
+      "name": "Dr. Doris Derby",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 32,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669107/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:33",
+      "name": "Eddie Holloway",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 33,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655406/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:34",
+      "name": "Ekwueme Michael Thelwell",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 34,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669203/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:35",
+      "name": "Elbert \"Big Man\" Howard",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 35,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655436/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:36",
+      "name": "Ellie Dahmer",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 36,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655401/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:37",
+      "name": "Elmer Dixon",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 37,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669156/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:38",
+      "name": "Emmett W. Bassett and Priscilla Tietjen Bassett",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 38,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669137/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:39",
+      "name": "Ernest Adolphus Finney Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 39,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669124/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:40",
+      "name": "Esther M. A. Terry",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 40,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669127/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:41",
+      "name": "Euvester Simpson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 41,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669171/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:42",
+      "name": "Evans Derrell Hopkins",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 42,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669128/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:43",
+      "name": "Frankye Adams-Johnson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 43,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655414/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:44",
+      "name": "Freddie Greene (Biddle)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 44,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655420/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:45",
+      "name": "Freeman A. Hrabowski III",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 45,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669131/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:46",
+      "name": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 46,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669117/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:47",
+      "name": "Gloria Arellanes",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 47,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655427/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:48",
+      "name": "Gloria Claudette Grinnell",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 48,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669182/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:49",
+      "name": "Gloria Hayes Richardson (Dandridge)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 49,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669134/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:50",
+      "name": "Grace Hall Miller",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 50,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669166/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:51",
+      "name": "Gwendolyn Annette Perkins Duncan",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 51,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669146/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:52",
+      "name": "Gwendolyn M. Patton",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 52,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669119/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:53",
+      "name": "Gwendolyn Zoharah Simmons (born Gwen Robinson)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 53,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669148/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:54",
+      "name": "H. Jack Geiger (partial read)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 54,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669175/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:55",
+      "name": "Harold K. Brown",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 55,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655432/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:56",
+      "name": "Jack Greenberg",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 56,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669133/",
+      "discussed_by_count": 5
+    },
+    {
+      "id": "in:57",
+      "name": "James Oscar Jones",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 57,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669113/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:58",
+      "name": "Jamila Jones",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 58,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669108/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:59",
+      "name": "Jennifer Lawson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 59,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655422/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:60",
+      "name": "Joan Trumpauer Mulholland",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 60,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669178/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:61",
+      "name": "John and Jean Rosenberg",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 61,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669199/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:62",
+      "name": "John Carlos",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 62,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669202/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:63",
+      "name": "John Churchville",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 63,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669132/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:64",
+      "name": "John Dudley et al",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 64,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669195/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:65",
+      "name": "Johnnie Ruth McCullar",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 65,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669164/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:66",
+      "name": "Joseph Echols Lowery",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 66,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669122/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:67",
+      "name": "Joseph Howell and Embry Howell",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 67,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655424/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:68",
+      "name": "Juadine Henderson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 68,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655419/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:69",
+      "name": "Judy Richardson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 69,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655418/",
+      "discussed_by_count": 5
+    },
+    {
+      "id": "in:70",
+      "name": "Julia Matilda Burns",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 70,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669172/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:71",
+      "name": "Julius W. Becton Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 71,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655426/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:72",
+      "name": "Junius Williams",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 72,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669136/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:73",
+      "name": "Kathleen Cleaver",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 73,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669150/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:74",
+      "name": "Kay Tillow",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 74,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669198/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:75",
+      "name": "Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner)",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 75,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669153/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:76",
+      "name": "Lawrence Guyot",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 76,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669104/",
+      "discussed_by_count": 11
+    },
+    {
+      "id": "in:77",
+      "name": "Leesco Guster",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 77,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655409/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:78",
+      "name": "Linda Fuller Degelmann",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 78,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669188/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:79",
+      "name": "Lisa Anderson Todd",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 79,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669192/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:80",
+      "name": "Lonnie C. King",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 80,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669189/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:81",
+      "name": "Maria Varela",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 81,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655434/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:82",
+      "name": "Marilyn Luper Hildreth",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 82,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669111/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:83",
+      "name": "Martha Prescod Norman Noonan",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 83,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669179/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:84",
+      "name": "Mary Jenkins",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 84,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669168/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:85",
+      "name": "Mary Jones",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 85,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669169/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:86",
+      "name": "Mateo Camarillo",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 86,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655431/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:87",
+      "name": "Matthew J. Perry Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 87,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669123/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:88",
+      "name": "Maynard E. Moore",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 88,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655425/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:89",
+      "name": "Michael D. McCarty",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 89,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655428/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:90",
+      "name": "Mildred Bond Roxborough",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 90,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669101/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:91",
+      "name": "Mildred Pitts Walter",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 91,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669158/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:92",
+      "name": "Nathaniel Hawthorne Jones",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 92,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655408/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:93",
+      "name": "Norma Mtume",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 93,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655429/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:94",
+      "name": "Oliver W. Hill Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 94,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669201/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:96",
+      "name": "Peggy Jean Connor",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 96,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655402/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:97",
+      "name": "Pete Seeger",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 97,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669138/",
+      "discussed_by_count": 6
+    },
+    {
+      "id": "in:98",
+      "name": "Phil Hutchings",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 98,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669141/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:99",
+      "name": "Purcell Maurice Conway",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 99,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669144/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:100",
+      "name": "Raylawni G. Branch and Jeanette Smith",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 100,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655403/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:101",
+      "name": "Reginald Robinson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 101,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655421/",
+      "discussed_by_count": 3
+    },
+    {
+      "id": "in:102",
+      "name": "Reverend Harry Blake",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 102,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669206/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:103",
+      "name": "Robert Bagner Hayling",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 103,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669147/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:104",
+      "name": "Richard Barry Sobol",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 104,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669114/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:105",
+      "name": "Rick Tuttle",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 105,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669177/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:106",
+      "name": "Robert Brown",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 106,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669205/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:107",
+      "name": "Robert G. Clark Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 107,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669174/",
+      "discussed_by_count": 3
+    },
+    {
+      "id": "in:108",
+      "name": "Robert L. Carter",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 108,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669100/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:109",
+      "name": "Robert McClary",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 109,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669163/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:110",
+      "name": "Roberta Alexander",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 110,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655433/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:111",
+      "name": "Rosie Head",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 111,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669173/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:112",
+      "name": "Ruby Sales",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 112,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669106/",
+      "discussed_by_count": 2
+    },
+    {
+      "id": "in:113",
+      "name": "Sam Mahone",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 113,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669162/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:114",
+      "name": "Sam Young, Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 114,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669165/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:115",
+      "name": "Samuel Berry McKinney",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 115,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669184/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:116",
+      "name": "Scott Bates",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 116,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669190/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:117",
+      "name": "Shirley Miller Sherrod",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 117,
+      "tier": "publication-block",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669149/",
+      "discussed_by_count": 3
+    },
+    {
+      "id": "in:118",
+      "name": "Steven McNichols",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 118,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669157/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:119",
+      "name": "Thomas Walter Gaither",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 119,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669142/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:120",
+      "name": "Timothy Jenkins",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 120,
+      "tier": "high",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655417/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:121",
+      "name": "Vernon Dahmer, Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 121,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655405/",
+      "discussed_by_count": 6
+    },
+    {
+      "id": "in:122",
+      "name": "Virginia Simms George",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 122,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669204/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:123",
+      "name": "Walter Bruce",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 123,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669170/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:124",
+      "name": "Walter Tillow",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 124,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669191/",
+      "discussed_by_count": 3
+    },
+    {
+      "id": "in:125",
+      "name": "Wheeler Parker, Jr.",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 125,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669110/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:126",
+      "name": "William G. Anderson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 126,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669140/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:127",
+      "name": "William Lamar Strickland",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 127,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669154/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:128",
+      "name": "William Lucy",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 128,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669193/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:129",
+      "name": "William S. Leventhal",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 129,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669181/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:130",
+      "name": "William Saunders",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 130,
+      "tier": "not-auditable",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2015669126/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:131",
+      "name": "Worth W. Long",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 131,
+      "tier": "low",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655413/",
+      "discussed_by_count": 5
+    },
+    {
+      "id": "in:132",
+      "name": "Wyatt Tee Walker",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 132,
+      "tier": "medium",
+      "provenance": "audit-original",
+      "loc_item_url": "https://www.loc.gov/item/2016655400/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:133",
+      "name": "Alfred Moldovan",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 133,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669135/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:134",
+      "name": "C. T. Vivian",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 134,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669105/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:135",
+      "name": "David Mercer Ackerman and Satoko Ito Ackerman",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 135,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669152/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:136",
+      "name": "Gertrude Newsome Jackson",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 136,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669103/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:137",
+      "name": "Myrtle Gonza Glascoe",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 137,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669102/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:138",
+      "name": "Simeon Wright",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 138,
+      "tier": "ingestion-only",
+      "provenance": "ingestion-only",
+      "loc_item_url": "https://www.loc.gov/item/2015669109/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "ext:ella-baker",
+      "name": "Ella Baker",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 8
+    },
+    {
+      "id": "ext:bayard-rustin",
+      "name": "Bayard Rustin",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 7
+    },
+    {
+      "id": "ext:diane-nash",
+      "name": "Diane Nash",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 5
+    },
+    {
+      "id": "ext:bob-moses",
+      "name": "Bob Moses",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 5
+    },
+    {
+      "id": "ext:james-forman",
+      "name": "James Forman",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 6
+    },
+    {
+      "id": "ext:fannie-lou-hamer",
+      "name": "Fannie Lou Hamer",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 8
+    },
+    {
+      "id": "ext:martin-luther-king",
+      "name": "Dr. Martin Luther King, Jr.",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 7
+    },
+    {
+      "id": "ext:malcolm-x",
+      "name": "Malcolm X",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 5
+    },
+    {
+      "id": "ext:stokely-carmichael",
+      "name": "Stokely Carmichael (Kwame Ture)",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 7
+    },
+    {
+      "id": "ext:septima-clark",
+      "name": "Septima Clark",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 4
+    },
+    {
+      "id": "ext:medgar-evers",
+      "name": "Medgar Evers",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 8
+    },
+    {
+      "id": "ext:thurgood-marshall",
+      "name": "Thurgood Marshall",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 6
+    },
+    {
+      "id": "ext:huey-newton",
+      "name": "Huey P. Newton",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 3
+    },
+    {
+      "id": "ext:james-baldwin",
+      "name": "James Baldwin",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 5
+    },
+    {
+      "id": "ext:a-philip-randolph",
+      "name": "A. Philip Randolph",
+      "kind": "external",
+      "in_corpus": false,
+      "discussed_by_count": 7
+    }
+  ],
+  "edges": [
+    {
+      "from": "in:1",
+      "to": "in:37",
+      "count": 1
+    },
+    {
+      "from": "in:1",
+      "to": "in:73",
+      "count": 2
+    },
+    {
+      "from": "in:2",
+      "to": "in:80",
+      "count": 2
+    },
+    {
+      "from": "in:2",
+      "to": "in:94",
+      "count": 1
+    },
+    {
+      "from": "in:2",
+      "to": "in:108",
+      "count": 1
+    },
+    {
+      "from": "in:3",
+      "to": "in:18",
+      "count": 3
+    },
+    {
+      "from": "in:3",
+      "to": "in:69",
+      "count": 1
+    },
+    {
+      "from": "in:3",
+      "to": "in:112",
+      "count": 1
+    },
+    {
+      "from": "in:4",
+      "to": "in:5",
+      "count": 1
+    },
+    {
+      "from": "in:4",
+      "to": "in:99",
+      "count": 1
+    },
+    {
+      "from": "in:5",
+      "to": "in:99",
+      "count": 1
+    },
+    {
+      "from": "in:7",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:7",
+      "to": "in:69",
+      "count": 9
+    },
+    {
+      "from": "in:7",
+      "to": "in:124",
+      "count": 1
+    },
+    {
+      "from": "in:11",
+      "to": "in:97",
+      "count": 3
+    },
+    {
+      "from": "in:13",
+      "to": "in:131",
+      "count": 2
+    },
+    {
+      "from": "in:14",
+      "to": "in:22",
+      "count": 1
+    },
+    {
+      "from": "in:17",
+      "to": "in:57",
+      "count": 10
+    },
+    {
+      "from": "in:17",
+      "to": "in:76",
+      "count": 11
+    },
+    {
+      "from": "in:17",
+      "to": "in:107",
+      "count": 1
+    },
+    {
+      "from": "in:21",
+      "to": "in:33",
+      "count": 1
+    },
+    {
+      "from": "in:21",
+      "to": "in:121",
+      "count": 9
+    },
+    {
+      "from": "in:22",
+      "to": "in:101",
+      "count": 1
+    },
+    {
+      "from": "in:23",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:24",
+      "to": "in:59",
+      "count": 1
+    },
+    {
+      "from": "in:24",
+      "to": "in:69",
+      "count": 1
+    },
+    {
+      "from": "in:24",
+      "to": "in:112",
+      "count": 2
+    },
+    {
+      "from": "in:26",
+      "to": "in:27",
+      "count": 1
+    },
+    {
+      "from": "in:26",
+      "to": "in:97",
+      "count": 2
+    },
+    {
+      "from": "in:28",
+      "to": "in:66",
+      "count": 1
+    },
+    {
+      "from": "in:30",
+      "to": "in:18",
+      "count": 3
+    },
+    {
+      "from": "in:30",
+      "to": "in:97",
+      "count": 3
+    },
+    {
+      "from": "in:32",
+      "to": "in:18",
+      "count": 2
+    },
+    {
+      "from": "in:33",
+      "to": "in:121",
+      "count": 4
+    },
+    {
+      "from": "in:34",
+      "to": "in:24",
+      "count": 2
+    },
+    {
+      "from": "in:34",
+      "to": "in:76",
+      "count": 8
+    },
+    {
+      "from": "in:35",
+      "to": "in:110",
+      "count": 1
+    },
+    {
+      "from": "in:36",
+      "to": "in:121",
+      "count": 5
+    },
+    {
+      "from": "in:41",
+      "to": "in:11",
+      "count": 1
+    },
+    {
+      "from": "in:41",
+      "to": "in:76",
+      "count": 7
+    },
+    {
+      "from": "in:41",
+      "to": "in:131",
+      "count": 8
+    },
+    {
+      "from": "in:44",
+      "to": "in:97",
+      "count": 4
+    },
+    {
+      "from": "in:46",
+      "to": "in:104",
+      "count": 1
+    },
+    {
+      "from": "in:48",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:49",
+      "to": "in:101",
+      "count": 1
+    },
+    {
+      "from": "in:50",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:50",
+      "to": "in:117",
+      "count": 1
+    },
+    {
+      "from": "in:51",
+      "to": "in:103",
+      "count": 3
+    },
+    {
+      "from": "in:53",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:57",
+      "to": "in:131",
+      "count": 10
+    },
+    {
+      "from": "in:59",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:61",
+      "to": "in:76",
+      "count": 1
+    },
+    {
+      "from": "in:63",
+      "to": "in:18",
+      "count": 2
+    },
+    {
+      "from": "in:65",
+      "to": "in:18",
+      "count": 2
+    },
+    {
+      "from": "in:67",
+      "to": "in:18",
+      "count": 2
+    },
+    {
+      "from": "in:68",
+      "to": "in:41",
+      "count": 1
+    },
+    {
+      "from": "in:68",
+      "to": "in:69",
+      "count": 1
+    },
+    {
+      "from": "in:68",
+      "to": "in:76",
+      "count": 1
+    },
+    {
+      "from": "in:72",
+      "to": "in:18",
+      "count": 3
+    },
+    {
+      "from": "in:72",
+      "to": "in:56",
+      "count": 1
+    },
+    {
+      "from": "in:72",
+      "to": "in:94",
+      "count": 2
+    },
+    {
+      "from": "in:72",
+      "to": "in:98",
+      "count": 1
+    },
+    {
+      "from": "in:72",
+      "to": "in:131",
+      "count": 3
+    },
+    {
+      "from": "in:74",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:74",
+      "to": "in:124",
+      "count": 1
+    },
+    {
+      "from": "in:75",
+      "to": "in:16",
+      "count": 1
+    },
+    {
+      "from": "in:75",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:75",
+      "to": "in:27",
+      "count": 1
+    },
+    {
+      "from": "in:75",
+      "to": "in:76",
+      "count": 2
+    },
+    {
+      "from": "in:75",
+      "to": "in:121",
+      "count": 3
+    },
+    {
+      "from": "in:76",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:76",
+      "to": "in:121",
+      "count": 1
+    },
+    {
+      "from": "in:79",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:79",
+      "to": "in:120",
+      "count": 1
+    },
+    {
+      "from": "in:79",
+      "to": "in:124",
+      "count": 1
+    },
+    {
+      "from": "in:80",
+      "to": "in:101",
+      "count": 1
+    },
+    {
+      "from": "in:81",
+      "to": "in:16",
+      "count": 1
+    },
+    {
+      "from": "in:81",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:81",
+      "to": "in:131",
+      "count": 1
+    },
+    {
+      "from": "in:83",
+      "to": "in:18",
+      "count": 7
+    },
+    {
+      "from": "in:84",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:87",
+      "to": "in:56",
+      "count": 2
+    },
+    {
+      "from": "in:90",
+      "to": "in:56",
+      "count": 2
+    },
+    {
+      "from": "in:90",
+      "to": "in:108",
+      "count": 1
+    },
+    {
+      "from": "in:92",
+      "to": "in:77",
+      "count": 3
+    },
+    {
+      "from": "in:98",
+      "to": "in:22",
+      "count": 1
+    },
+    {
+      "from": "in:98",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:99",
+      "to": "in:5",
+      "count": 1
+    },
+    {
+      "from": "in:99",
+      "to": "in:51",
+      "count": 1
+    },
+    {
+      "from": "in:100",
+      "to": "in:121",
+      "count": 2
+    },
+    {
+      "from": "in:101",
+      "to": "in:18",
+      "count": 2
+    },
+    {
+      "from": "in:105",
+      "to": "in:57",
+      "count": 1
+    },
+    {
+      "from": "in:105",
+      "to": "in:76",
+      "count": 3
+    },
+    {
+      "from": "in:108",
+      "to": "in:56",
+      "count": 3
+    },
+    {
+      "from": "in:111",
+      "to": "in:76",
+      "count": 1
+    },
+    {
+      "from": "in:111",
+      "to": "in:107",
+      "count": 4
+    },
+    {
+      "from": "in:112",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:113",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:114",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:114",
+      "to": "in:117",
+      "count": 1
+    },
+    {
+      "from": "in:117",
+      "to": "in:18",
+      "count": 4
+    },
+    {
+      "from": "in:120",
+      "to": "in:18",
+      "count": 4
+    },
+    {
+      "from": "in:120",
+      "to": "in:24",
+      "count": 2
+    },
+    {
+      "from": "in:120",
+      "to": "in:27",
+      "count": 1
+    },
+    {
+      "from": "in:120",
+      "to": "in:69",
+      "count": 1
+    },
+    {
+      "from": "in:120",
+      "to": "in:76",
+      "count": 1
+    },
+    {
+      "from": "in:120",
+      "to": "in:97",
+      "count": 2
+    },
+    {
+      "from": "in:122",
+      "to": "in:18",
+      "count": 3
+    },
+    {
+      "from": "in:123",
+      "to": "in:107",
+      "count": 2
+    },
+    {
+      "from": "in:124",
+      "to": "in:18",
+      "count": 2
+    },
+    {
+      "from": "in:124",
+      "to": "in:76",
+      "count": 1
+    },
+    {
+      "from": "in:124",
+      "to": "in:97",
+      "count": 3
+    },
+    {
+      "from": "in:125",
+      "to": "in:138",
+      "count": 4
+    },
+    {
+      "from": "in:126",
+      "to": "in:117",
+      "count": 1
+    },
+    {
+      "from": "in:127",
+      "to": "in:72",
+      "count": 1
+    },
+    {
+      "from": "in:129",
+      "to": "in:18",
+      "count": 1
+    },
+    {
+      "from": "in:129",
+      "to": "in:56",
+      "count": 1
+    },
+    {
+      "from": "in:134",
+      "to": "in:132",
+      "count": 3
+    },
+    {
+      "from": "in:136",
+      "to": "in:137",
+      "count": 3
+    },
+    {
+      "from": "in:137",
+      "to": "in:24",
+      "count": 1
+    },
+    {
+      "from": "in:137",
+      "to": "in:76",
+      "count": 1
+    },
+    {
+      "from": "in:137",
+      "to": "in:136",
+      "count": 4
+    },
+    {
+      "from": "in:138",
+      "to": "in:125",
+      "count": 2
+    },
+    {
+      "from": "in:90",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:120",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:22",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:101",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:66",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:76",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:69",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:17",
+      "to": "ext:ella-baker",
+      "count": 1
+    },
+    {
+      "from": "in:98",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:75",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:22",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:54",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:32",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:80",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:129",
+      "to": "ext:bayard-rustin",
+      "count": 1
+    },
+    {
+      "from": "in:60",
+      "to": "ext:diane-nash",
+      "count": 1
+    },
+    {
+      "from": "in:80",
+      "to": "ext:diane-nash",
+      "count": 1
+    },
+    {
+      "from": "in:27",
+      "to": "ext:diane-nash",
+      "count": 1
+    },
+    {
+      "from": "in:134",
+      "to": "ext:diane-nash",
+      "count": 1
+    },
+    {
+      "from": "in:57",
+      "to": "ext:diane-nash",
+      "count": 1
+    },
+    {
+      "from": "in:120",
+      "to": "ext:bob-moses",
+      "count": 1
+    },
+    {
+      "from": "in:101",
+      "to": "ext:bob-moses",
+      "count": 1
+    },
+    {
+      "from": "in:17",
+      "to": "ext:bob-moses",
+      "count": 1
+    },
+    {
+      "from": "in:61",
+      "to": "ext:bob-moses",
+      "count": 1
+    },
+    {
+      "from": "in:76",
+      "to": "ext:bob-moses",
+      "count": 1
+    },
+    {
+      "from": "in:69",
+      "to": "ext:james-forman",
+      "count": 1
+    },
+    {
+      "from": "in:44",
+      "to": "ext:james-forman",
+      "count": 1
+    },
+    {
+      "from": "in:124",
+      "to": "ext:james-forman",
+      "count": 1
+    },
+    {
+      "from": "in:52",
+      "to": "ext:james-forman",
+      "count": 1
+    },
+    {
+      "from": "in:34",
+      "to": "ext:james-forman",
+      "count": 1
+    },
+    {
+      "from": "in:53",
+      "to": "ext:james-forman",
+      "count": 1
+    },
+    {
+      "from": "in:79",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:52",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:75",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:41",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:22",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:123",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:127",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:24",
+      "to": "ext:fannie-lou-hamer",
+      "count": 1
+    },
+    {
+      "from": "in:69",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:66",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:129",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:132",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:83",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:134",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:7",
+      "to": "ext:martin-luther-king",
+      "count": 1
+    },
+    {
+      "from": "in:127",
+      "to": "ext:malcolm-x",
+      "count": 1
+    },
+    {
+      "from": "in:34",
+      "to": "ext:malcolm-x",
+      "count": 1
+    },
+    {
+      "from": "in:62",
+      "to": "ext:malcolm-x",
+      "count": 1
+    },
+    {
+      "from": "in:63",
+      "to": "ext:malcolm-x",
+      "count": 1
+    },
+    {
+      "from": "in:129",
+      "to": "ext:malcolm-x",
+      "count": 1
+    },
+    {
+      "from": "in:69",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:17",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:53",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:83",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:44",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:68",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:72",
+      "to": "ext:stokely-carmichael",
+      "count": 1
+    },
+    {
+      "from": "in:29",
+      "to": "ext:septima-clark",
+      "count": 1
+    },
+    {
+      "from": "in:7",
+      "to": "ext:septima-clark",
+      "count": 1
+    },
+    {
+      "from": "in:11",
+      "to": "ext:septima-clark",
+      "count": 1
+    },
+    {
+      "from": "in:96",
+      "to": "ext:septima-clark",
+      "count": 1
+    },
+    {
+      "from": "in:68",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:41",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:61",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:2",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:90",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:111",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:105",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:76",
+      "to": "ext:medgar-evers",
+      "count": 1
+    },
+    {
+      "from": "in:14",
+      "to": "ext:thurgood-marshall",
+      "count": 1
+    },
+    {
+      "from": "in:94",
+      "to": "ext:thurgood-marshall",
+      "count": 1
+    },
+    {
+      "from": "in:15",
+      "to": "ext:thurgood-marshall",
+      "count": 1
+    },
+    {
+      "from": "in:57",
+      "to": "ext:thurgood-marshall",
+      "count": 1
+    },
+    {
+      "from": "in:108",
+      "to": "ext:thurgood-marshall",
+      "count": 1
+    },
+    {
+      "from": "in:56",
+      "to": "ext:thurgood-marshall",
+      "count": 1
+    },
+    {
+      "from": "in:37",
+      "to": "ext:huey-newton",
+      "count": 1
+    },
+    {
+      "from": "in:1",
+      "to": "ext:huey-newton",
+      "count": 1
+    },
+    {
+      "from": "in:73",
+      "to": "ext:huey-newton",
+      "count": 1
+    },
+    {
+      "from": "in:127",
+      "to": "ext:james-baldwin",
+      "count": 1
+    },
+    {
+      "from": "in:91",
+      "to": "ext:james-baldwin",
+      "count": 1
+    },
+    {
+      "from": "in:112",
+      "to": "ext:james-baldwin",
+      "count": 1
+    },
+    {
+      "from": "in:134",
+      "to": "ext:james-baldwin",
+      "count": 1
+    },
+    {
+      "from": "in:34",
+      "to": "ext:james-baldwin",
+      "count": 1
+    },
+    {
+      "from": "in:120",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    },
+    {
+      "from": "in:23",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    },
+    {
+      "from": "in:72",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    },
+    {
+      "from": "in:24",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    },
+    {
+      "from": "in:54",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    },
+    {
+      "from": "in:22",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    },
+    {
+      "from": "in:105",
+      "to": "ext:a-philip-randolph",
+      "count": 1
+    }
+  ]
+}

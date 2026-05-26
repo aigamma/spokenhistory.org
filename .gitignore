@@ -62,3 +62,10 @@ run_sample_output.json
 # real credentials. Never commit (Pinecone + Voyage API keys).
 rag/.env.local
 rag/.env
+
+# Intermediate subagent assignment files + per-batch capsule outputs.
+# The aggregated capsules.json (committed) is what the React app
+# consumes; the per-batch JSONs are dev-only intermediates.
+public/rag/summaries/_batches/
+public/rag/summaries/_entry_list.json
+public/rag/summaries/capsules_batch_*.json

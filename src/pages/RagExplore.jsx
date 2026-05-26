@@ -5,6 +5,14 @@ import {
   QuoteFinder,
   Constellation,
   RelatedPassages,
+  PolyphonicEvents,
+  ConceptSpectrum,
+  FamousNames,
+  ThemesBrowser,
+  GeographicAtlas,
+  InfluenceList,
+  QuoteOfTheDay,
+  TourPages,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
@@ -63,7 +71,11 @@ function useCorpusStats() {
  */
 // Tab IDs are reflected in window.location.hash so URLs like
 // /rag-explore#map are shareable and deep-linkable.
-const TABS = ['search', 'quote', 'map', 'related'];
+const TABS = [
+  'search', 'quote', 'map', 'related',
+  'events', 'spectrum', 'names', 'themes',
+  'atlas', 'network', 'tours', 'quote-of-day',
+];
 
 // Entries to surface in the "related" demo tab. Each one is a
 // well-audited interviewee with a strong thematic profile, so the
@@ -167,8 +179,16 @@ export default function RagExplore() {
             {[
               { id: 'search', label: 'Semantic search' },
               { id: 'quote', label: 'Quote-finder' },
-              { id: 'map', label: 'Embedding-space map' },
-              { id: 'related', label: 'Related interviewees' },
+              { id: 'events', label: 'Polyphonic events ★' },
+              { id: 'spectrum', label: 'Concept axes ★' },
+              { id: 'map', label: 'Constellation' },
+              { id: 'related', label: 'Voices in conversation' },
+              { id: 'themes', label: 'Themes' },
+              { id: 'names', label: 'Famous names' },
+              { id: 'atlas', label: 'Atlas' },
+              { id: 'network', label: 'Network' },
+              { id: 'tours', label: 'Tours' },
+              { id: 'quote-of-day', label: 'Quote of the day' },
             ].map((t) => (
               <li key={t.id}>
                 <button
@@ -252,7 +272,7 @@ export default function RagExplore() {
                 className="text-stone-900 text-xl font-medium mb-2"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Related interviewees
+                Voices in conversation
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 For each interview, we precompute which other interviewees in the corpus discuss
@@ -283,6 +303,81 @@ export default function RagExplore() {
               <div className="mt-6">
                 <RelatedPassages entryNumber={relatedEntry} mode="entries" limit={8} />
               </div>
+            </div>
+          )}
+
+          {tab === 'events' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Polyphonic event pages
+              </h2>
+              <PolyphonicEvents />
+            </div>
+          )}
+
+          {tab === 'spectrum' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Concept-axis spectrum
+              </h2>
+              <ConceptSpectrum />
+            </div>
+          )}
+
+          {tab === 'themes' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Thematic clusters
+              </h2>
+              <ThemesBrowser />
+            </div>
+          )}
+
+          {tab === 'names' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Famous figures (not in corpus)
+              </h2>
+              <FamousNames />
+            </div>
+          )}
+
+          {tab === 'atlas' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Geographic atlas
+              </h2>
+              <GeographicAtlas />
+            </div>
+          )}
+
+          {tab === 'network' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Influence network
+              </h2>
+              <InfluenceList />
+            </div>
+          )}
+
+          {tab === 'tours' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Curated tours
+              </h2>
+              <TourPages />
+            </div>
+          )}
+
+          {tab === 'quote-of-day' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Quote of the day
+              </h2>
+              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
+                One quote rotates per day from 30 curated passages drawn from low/medium-tier audited interviews. Pre-curated; no LLM call per request. Click &quot;Next →&quot; to cycle.
+              </p>
+              <QuoteOfTheDay />
             </div>
           )}
         </section>
