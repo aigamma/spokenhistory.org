@@ -11,7 +11,8 @@
  * RelatedPassages. Keep the visual styling consistent across surfaces.
  */
 
-import { ExternalLink, Clock, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { ExternalLink, Clock, ShieldCheck, AlertTriangle, Copy, Check } from 'lucide-react';
 
 // Per-tier badge styling. Mirrors the Constellation's color scale so the
 // audit substrate looks consistent across components. Tone is "info" not
@@ -128,9 +129,40 @@ export default function CitationCard({
           <summary className="cursor-pointer font-medium text-stone-700 hover:text-stone-900">
             Citation (Chicago)
           </summary>
-          <p className="mt-2 font-mono text-xs leading-relaxed">{suggestedCitation}</p>
+          <div className="mt-2 flex items-start gap-3">
+            <p className="font-mono text-xs leading-relaxed flex-1">{suggestedCitation}</p>
+            <CopyButton text={suggestedCitation} />
+          </div>
         </details>
       )}
     </article>
+  );
+}
+
+// Small inline button — copies suggestedCitation to clipboard and
+// flashes a checkmark for ~1.5s. Researchers paste this into their
+// drafts; saves them from manually copying out of the <p>.
+function CopyButton({ text }) {
+  const [copied, setCopied] = useState(false);
+  const handleClick = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (e) {
+      console.error('[CitationCard] clipboard write failed:', e);
+    }
+  };
+  const Icon = copied ? Check : Copy;
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      className="inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-600 hover:text-stone-900 hover:bg-stone-50 rounded transition-colors shrink-0"
+      aria-label={copied ? 'Copied' : 'Copy citation to clipboard'}
+    >
+      <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+      {copied ? 'Copied' : 'Copy'}
+    </button>
   );
 }
