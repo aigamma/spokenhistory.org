@@ -84,8 +84,13 @@ if [ "$want" = "all" ] || [ "$want" = "quote" ]; then
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "black-power" ]; then
-  query_one "Black Power vs. nonviolence (contested topic, expect polyphony)" \
-    '{"query":"young SNCC organizers turning away from nonviolence toward Black Power","topN":4}'
+  query_one "Black Power vs. nonviolence — polyphonic view (dedupeByEntry)" \
+    '{"query":"young SNCC organizers turning away from nonviolence toward Black Power","topN":4,"dedupeByEntry":true}'
+fi
+
+if [ "$want" = "all" ] || [ "$want" = "selma-poly" ]; then
+  query_one "Bloody Sunday — polyphonic view (dedupeByEntry; one voice per interviewee)" \
+    '{"query":"bloody sunday edmund pettus bridge first-person account","topN":3,"dedupeByEntry":true}'
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "selma-church" ]; then
