@@ -59,7 +59,9 @@ The talking point: this is the "philosophy of embedding" demo. Two
 interviewees who never met but whose words land within 0.12 cosine of
 each other on a topic appear as nearby dots. The audit-tier coloring
 overlays the corpus's institutional credibility on top of the
-thematic similarity layout.
+thematic similarity layout. **Click any dot** to jump to the Related
+Interviewees tab pre-filtered to that interview — the map becomes a
+discovery tool, not just a visualization.
 
 ### 4. Related interviewees
 
