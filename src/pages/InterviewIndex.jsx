@@ -201,10 +201,10 @@ function InterviewCard({ interview }) {
       )}
       <div className="flex flex-wrap gap-3 text-xs">
         <Link
-          to={`/rag-explore#related`}
-          className="text-civil-red-body hover:underline"
+          to={`/interview/${interview.entry_number}`}
+          className="text-civil-red-body hover:underline font-medium"
         >
-          Voices in conversation →
+          Open interview →
         </Link>
         {interview.loc_item_url && (
           <a

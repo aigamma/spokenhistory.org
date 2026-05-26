@@ -9,6 +9,7 @@ import PlaylistBuilder from './pages/PlaylistBuilder'
 import PlaylistEditor from './pages/PlaylistEditor'
 import SearchPage from './pages/SearchPage'
 import InterviewPlayer from './pages/InterviewPlayer'
+import InterviewDetail from './pages/InterviewDetail'
 import ClipPlayer from './pages/ClipPlayer'
 import ContentDirectory from './pages/ContentDirectory'
 import TopicGlossary from './pages/TopicGlossary'
@@ -118,6 +119,12 @@ export default function App() {
       <Route path="/interview-player" element={
         <ProtectedRoute>
           <InterviewPlayer />
+        </ProtectedRoute>
+      } />
+
+      <Route path="/interview/:entryNumber" element={
+        <ProtectedRoute>
+          <InterviewDetail />
         </ProtectedRoute>
       } />
 

@@ -126,19 +126,33 @@ export default function TopicGlossary() {
                         </Link>
                       </p>
                     )}
-                    <p className="text-xs text-stone-500 mb-2 uppercase tracking-wide">Members ({(c.member_entry_subjects || []).length})</p>
+                    <p className="text-xs text-stone-500 mb-2 uppercase tracking-wide">
+                      Members ({(c.members || c.member_entry_subjects || []).length})
+                    </p>
                     <ul className="text-sm text-stone-700 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1 list-none">
-                      {(c.member_entry_subjects || []).map((name, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <span className="text-stone-400">·</span>
-                          <Link
-                            to={`/interview-index?search=${encodeURIComponent(name)}`}
-                            className="text-civil-red-body hover:underline transition-colors"
-                          >
-                            {name}
-                          </Link>
-                        </li>
-                      ))}
+                      {(c.members || []).length > 0
+                        ? c.members.map((m, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="text-stone-400">·</span>
+                              <Link
+                                to={`/interview/${m.entry_number}`}
+                                className="text-civil-red-body hover:underline transition-colors"
+                              >
+                                {m.entry_subject}
+                              </Link>
+                            </li>
+                          ))
+                        : (c.member_entry_subjects || []).map((name, idx) => (
+                            <li key={idx} className="flex items-start gap-2">
+                              <span className="text-stone-400">·</span>
+                              <Link
+                                to={`/interview-index?search=${encodeURIComponent(name)}`}
+                                className="text-civil-red-body hover:underline transition-colors"
+                              >
+                                {name}
+                              </Link>
+                            </li>
+                          ))}
                     </ul>
                   </div>
                 )}
