@@ -115,6 +115,9 @@ The primary exploration tool. Given a keyword, it assembles a sequential playlis
 ### Topic Glossary (`/topic-glossary`)
 A card-based directory of AI-curated civil rights topics drawn from the `events_and_topics` Firestore collection. Topics are categorized as concepts, places, people, events, organizations, or legal terms, and can be filtered by category, sorted by importance or usage count, and searched by keyword or semantic vector search. Clicking a topic launches its clips directly in the Playlist Builder. Also includes a force-directed topic relationship graph.
 
+### Explore the embeddings (`/rag-explore`)
+Four-tab demo of the citation-grade retrieval layer (added 2026-05-26). Semantic search returns ranked passages with full primary-source attribution (interviewee, exact audio timestamp, Library of Congress catalog URL, audit-tier transparency badge, pre-formatted Chicago citation). Quote-finder lets researchers paste a half-remembered quote and get the canonical source attribution. Embedding-space map renders all 136 interview centroids as a 2D PCA scatter color-coded by audit tier — interviewees who never met but whose words cluster thematically appear as nearby dots. Related-interviewees panel surfaces cross-corpus thematic kinship per entry. Backed by [Pinecone Builder](https://www.pinecone.io/) (civil-rights index) + [Voyage AI](https://www.voyageai.com/) (voyage-3 embeddings + rerank-2). See `rag/DEMO_SCRIPT.md` for the stakeholder one-pager and `mcp-server/USAGE_GUIDE.md` for the matching MCP-connector documentation.
+
 ---
 
 ## Contributors
