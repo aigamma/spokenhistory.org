@@ -128,28 +128,36 @@ export default function RagExplore() {
             visualize those connections.
           </p>
           {stats && (
-            <dl className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-700">
-              <div>
-                <dt className="font-medium text-stone-900 inline">{stats.interviews}</dt>{' '}
-                <span>interviews indexed</span>
+            <div className="mt-6 space-y-3">
+              <dl className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-700">
+                <div>
+                  <dt className="font-medium text-stone-900 inline">{stats.interviews}</dt>{' '}
+                  <span>interviews indexed</span>
+                </div>
+                <div>
+                  <dt className="font-medium text-stone-900 inline">~{Math.round(stats.chunks / 1000)}K</dt>{' '}
+                  <span>time-anchored passages</span>
+                </div>
+                <div>
+                  <dt className="font-medium text-stone-900 inline">{Object.keys(stats.tiers).length}-tier</dt>{' '}
+                  <span>audit substrate</span>
+                </div>
+              </dl>
+              <div className="flex flex-wrap gap-2 text-xs">
+                {[
+                  ['low', 'bg-emerald-50 border-emerald-200 text-emerald-800'],
+                  ['medium', 'bg-amber-50 border-amber-200 text-amber-800'],
+                  ['publication-block', 'bg-red-50 border-red-200 text-red-800'],
+                  ['not-auditable', 'bg-violet-50 border-violet-200 text-violet-800'],
+                  ['ingestion-only', 'bg-slate-50 border-slate-200 text-slate-800'],
+                ].map(([key, cls]) => (
+                  <span key={key} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${cls}`}>
+                    <span className="font-medium tabular-nums">{stats.tiers[key] || 0}</span>
+                    <span>{key}</span>
+                  </span>
+                ))}
               </div>
-              <div>
-                <dt className="font-medium text-stone-900 inline">~{Math.round(stats.chunks / 1000)}K</dt>{' '}
-                <span>time-anchored passages</span>
-              </div>
-              <div>
-                <dt className="font-medium text-stone-900 inline">{Object.keys(stats.tiers).length}-tier</dt>{' '}
-                <span>audit substrate</span>
-              </div>
-              <div>
-                <span className="text-stone-600">
-                  {stats.tiers.low || 0} low · {stats.tiers.medium || 0} medium ·{' '}
-                  {stats.tiers['publication-block'] || 0} pub-block ·{' '}
-                  {stats.tiers['not-auditable'] || 0} not-auditable ·{' '}
-                  {stats.tiers['ingestion-only'] || 0} ingestion-only
-                </span>
-              </div>
-            </dl>
+            </div>
           )}
         </header>
 
