@@ -122,6 +122,29 @@ SNCC photographer; Vivian an ordained minister + SCLC executive). The
 embeddings surface them on the right philosophical-framing queries
 without anyone needing to know their names in advance.
 
+### Bonus pattern: queries by famous-name-not-in-corpus
+
+Several iconic civil rights figures don't have their own interview in
+this 136-entry corpus (Bayard Rustin, Ella Baker, Diane Nash, James
+Forman, Bob Moses), but they're discussed extensively by interviewees
+who knew them. Querying their names directly surfaces the
+interviewees who spoke about them — a powerful demo of secondhand
+oral history as primary source:
+
+| Query (name) | Top match (interviewee who discussed them) | Similarity |
+|---|---|---|
+| `Ella Baker` | Joseph Echols Lowery (SCLC) | 0.82 |
+| `Diane Nash` | James Oscar Jones | 0.82 |
+| `Bob Moses` | Thomas Walter Gaither (CORE/SNCC) | 0.81 |
+| `James Forman` | Reginald Robinson (SNCC) | 0.80 |
+| `Bayard Rustin` | Phil Hutchings | 0.77 |
+
+This is the conference's "philosophy of embedding" thesis at its
+clearest: the audience can ask about ANY civil-rights figure (in or
+out of corpus) and the embeddings surface someone who knew them,
+with citation-grade attribution. The corpus's coverage extends
+beyond its 136 named interviewees through the network of who-knew-whom.
+
 ## What's still left to wire up
 
 1. **Pinecone civil-rights project provisioning** (one-time admin
