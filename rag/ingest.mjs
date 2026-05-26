@@ -392,6 +392,7 @@ function parseArgs(argv) {
     entries: null,
     includeGroundTruth: false,
     prune: false,
+    forcePrune: false,
     dryRun: false,
     namespace: '',
   };
@@ -404,6 +405,9 @@ function parseArgs(argv) {
       args.includeGroundTruth = true;
     } else if (a === '--prune') {
       args.prune = true;
+    } else if (a === '--force-prune') {
+      args.prune = true;
+      args.forcePrune = true;
     } else if (a === '--dry-run') {
       args.dryRun = true;
     } else if (a === '--namespace' && argv[i + 1]) {
@@ -520,6 +524,22 @@ async function main() {
   }
 
   if (args.prune && orphaned.length > 0) {
+    // Safety threshold: refuse to prune if orphans are >50% of the
+    // total index. A typo in PINECONE_INDEX or pointing at the wrong
+    // corpus is the most likely cause of accidentally orphaning the
+    // entire dataset. Caller can override with --force-prune.
+    const totalSoFar = expectedById.size + orphaned.length;
+    const orphanRatio = orphaned.length / Math.max(totalSoFar, 1);
+    if (orphanRatio > 0.5 && !args.forcePrune) {
+      console.error(
+        `[ingest] REFUSING to prune ${orphaned.length} orphaned vectors — that's ` +
+        `${(orphanRatio * 100).toFixed(1)}% of the index (${totalSoFar} total). ` +
+        `If this is intentional, re-run with --force-prune. ` +
+        `Otherwise check PINECONE_INDEX, the corrected/ directory, and the ` +
+        `expected vs orphaned counts above before retrying.`,
+      );
+      process.exit(2);
+    }
     await deleteVectorIds(orphaned, args.namespace);
     console.log(`[ingest] pruned ${orphaned.length} orphaned vectors`);
   }
