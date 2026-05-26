@@ -171,13 +171,25 @@ function formatTimestamp(seconds) {
 }
 
 function fidelityNote(provenance, tier) {
-  if (provenance === 'ingestion-only') {
+  if (tier === 'ingestion-only' || provenance === 'ingestion-only') {
     return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.';
   }
   if (provenance === 'audit-original') {
+    // The five tier values that actually appear in the corpus manifests:
+    //   low (72 entries)               — well-audited, low residual error
+    //   medium (18 entries)            — residual uncertainty; flag for high-stakes citations
+    //   publication-block (23 entries) — known issues that block direct publication
+    //                                    (Subject-paragraph errors, severe Whisper degradation,
+    //                                    mid-sentence source truncations). The audit work is done;
+    //                                    the issues are documented; the transcript can still be
+    //                                    cited but consumers should know.
+    //   not-auditable (14 entries)    — cannot be fully verified against an external canonical
+    //                                    source (multi-speaker complications, no LoC reference, etc.)
     if (tier === 'low') return 'Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.';
     if (tier === 'medium') return 'Audited transcript with residual uncertainty; verify against audio for high-stakes citations.';
     if (tier === 'high') return 'Audited transcript with substantial residual uncertainty; treat as a research lead, verify against audio.';
+    if (tier === 'publication-block') return 'Audited transcript with documented publication-blocker issues (Subject-paragraph fact-check or severe Whisper degradation); usable as a research lead, verify the specific passage against audio before citing.';
+    if (tier === 'not-auditable') return 'Audit pass completed but the entry cannot be fully verified against an external canonical source (multi-speaker or missing LoC reference); treat as a research lead.';
     return 'Audited transcript.';
   }
   return 'Provenance unknown.';
