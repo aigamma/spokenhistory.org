@@ -18,10 +18,10 @@ import {
   fidelityNoteFor,
 } from './tiers.js';
 
-test('TIER_VOCABULARY has the 5 expected tier values', () => {
+test('TIER_VOCABULARY has the 6 expected tier values (Pass 9: includes "high")', () => {
   assert.deepStrictEqual(
     [...TIER_VOCABULARY].sort(),
-    ['ingestion-only', 'low', 'medium', 'not-auditable', 'publication-block'],
+    ['high', 'ingestion-only', 'low', 'medium', 'not-auditable', 'publication-block'],
   );
 });
 
