@@ -157,7 +157,8 @@ export default function QuoteFinder({
       {!isLoading && !error && hasSearched && results.length === 0 && (
         <p className="text-stone-500 text-sm">
           No close matches in the corpus. If the quote is from a civil rights figure not in this
-          archive (or is paraphrased rather than directly transcribed), it may not be findable here.
+          archive (or is paraphrased rather than directly transcribed), it may not be findable
+          here. Click one of the sample-quote chips above to see what a successful match looks like.
         </p>
       )}
     </section>
