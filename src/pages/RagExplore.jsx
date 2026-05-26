@@ -6,6 +6,7 @@ import {
   Constellation,
   RelatedPassages,
 } from '../components/rag';
+import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
 /**
  * Pull a small set of corpus stats from /rag/constellation.json
@@ -144,18 +145,18 @@ export default function RagExplore() {
                 </div>
               </dl>
               <div className="flex flex-wrap gap-2 text-xs">
-                {[
-                  ['low', 'bg-emerald-50 border-emerald-200 text-emerald-800'],
-                  ['medium', 'bg-amber-50 border-amber-200 text-amber-800'],
-                  ['publication-block', 'bg-red-50 border-red-200 text-red-800'],
-                  ['not-auditable', 'bg-violet-50 border-violet-200 text-violet-800'],
-                  ['ingestion-only', 'bg-slate-50 border-slate-200 text-slate-800'],
-                ].map(([key, cls]) => (
-                  <span key={key} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${cls}`}>
-                    <span className="font-medium tabular-nums">{stats.tiers[key] || 0}</span>
-                    <span>{key}</span>
-                  </span>
-                ))}
+                {TIER_VOCABULARY.map((key) => {
+                  const badge = TIER_BADGE[key];
+                  return (
+                    <span
+                      key={key}
+                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
+                    >
+                      <span className="font-medium tabular-nums">{stats.tiers[key] || 0}</span>
+                      <span>{key}</span>
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}
