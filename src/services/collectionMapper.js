@@ -63,11 +63,30 @@ export const mapInterviewData = (data, sourceCollection) => {
       progressMessage: data.progressMessage || '',
       error: data.error || '',
       errorAt: data.errorAt || null,
-      
+
+      // LoC video fields written by pipeline-to-firestore.mjs. Without
+      // these the playlist row thumbnails render as blank placeholders
+      // and the HTML5 <video> element has no poster, so it shows a
+      // black frame until the user presses play.
+      poster_url: data.poster_url || null,
+      video_url: data.video_url || null,
+      video_stream_url: data.video_stream_url || null,
+      video_duration_seconds: data.video_duration_seconds || null,
+      video_caption: data.video_caption || null,
+      loc_item_url: data.loc_item_url || null,
+
+      // Pipeline-output fields populated by our subagent generator.
+      // pipeline-to-firestore.mjs writes `summary`, `key_themes`,
+      // `historical_significance` — surface them too.
+      summary: data.summary || '',
+      keyThemes: data.key_themes || data.keyThemes || [],
+      historicalSignificance: data.historical_significance || data.historicalSignificance || '',
+      entry_number: typeof data.entry_number === 'number' ? data.entry_number : null,
+      uncertaintyTier: data.inferential_uncertainty_tier || null,
+      uncertaintyScore: typeof data.inferential_uncertainty_score === 'number' ? data.inferential_uncertainty_score : null,
+
       // Default values for metadataV2 fields
       processingInfo: {},
-      keyThemes: [],
-      historicalSignificance: '',
       metadata: {},
       sourceFile: '',
       sourceDirectory: '',

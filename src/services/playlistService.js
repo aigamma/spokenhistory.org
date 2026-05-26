@@ -248,28 +248,80 @@ export const getSampleSegmentsForKeyword = async (keyword, sampleSize = 3) => {
 };
 
 /**
- * Progressive loading: Get first video immediately, then rest in background
+ * Audit-tier rank used to sort playlist results best-quality-first.
+ * Lower number = higher confidence in the underlying transcript. Tiers
+ * come from the Pass 9 LoC-verification rescore (see transcripts/
+ * AUDIT_TRAIL.md). Unranked entries sort to the end.
+ */
+const TIER_RANK = {
+  high: 0,
+  medium: 1,
+  low: 2,
+  'publication-block': 3,
+  'not-auditable': 4,
+  'ingestion-only': 5,
+};
+
+/**
+ * Deterministic, quality-ordered sort comparator for playlist segments.
+ *   1. Audit tier (high → medium → low → others)
+ *   2. Inferential uncertainty score (lower = better) within tier
+ *   3. Interviewee name (alphabetical) as a tie-break — stable order
+ *      across reloads is the property the legacy grad-student-curated
+ *      playlist had that the random shuffle threw away.
+ *   4. Chapter number within an interview (chronological).
+ */
+const compareSegments = (a, b) => {
+  const tierA = TIER_RANK[a.uncertaintyTier ?? a.inferential_uncertainty_tier] ?? 99;
+  const tierB = TIER_RANK[b.uncertaintyTier ?? b.inferential_uncertainty_tier] ?? 99;
+  if (tierA !== tierB) return tierA - tierB;
+
+  const scoreA = typeof a.uncertaintyScore === 'number' ? a.uncertaintyScore
+               : typeof a.inferential_uncertainty_score === 'number' ? a.inferential_uncertainty_score
+               : 1;
+  const scoreB = typeof b.uncertaintyScore === 'number' ? b.uncertaintyScore
+               : typeof b.inferential_uncertainty_score === 'number' ? b.inferential_uncertainty_score
+               : 1;
+  if (scoreA !== scoreB) return scoreA - scoreB;
+
+  const nameA = (a.name || a.documentName || '').toLowerCase();
+  const nameB = (b.name || b.documentName || '').toLowerCase();
+  if (nameA !== nameB) return nameA < nameB ? -1 : 1;
+
+  const chA = a.chapterNumber || a.chapter_number || 0;
+  const chB = b.chapterNumber || b.chapter_number || 0;
+  return chA - chB;
+};
+
+/**
+ * Progressive loading: Get first video immediately, then rest in background.
+ *
+ * 2026-05-26: replaced random shuffle with deterministic quality-tier sort.
+ * The legacy playlist surface was a curated grad-student artifact; we don't
+ * have that curation data in the new Firebase, so the next-best signal is
+ * the Pass 9 audit tier, which orders segments by transcript confidence.
+ * Same query → same order across reloads, which is what the original UI
+ * implicitly promised.
  */
 export const getPlaylistProgressive = async (keywords, onFirstVideo, onComplete) => {
   try {
     const segments = await getSegmentsForKeywords(keywords);
-    
+
     if (segments.length === 0) {
       onComplete([]);
       return;
     }
 
-    // Shuffle segments
-    const shuffledSegments = segments.sort(() => 0.5 - Math.random());
-    
+    const orderedSegments = [...segments].sort(compareSegments);
+
     // Return first video immediately
-    onFirstVideo(shuffledSegments[0], shuffledSegments.length);
-    
+    onFirstVideo(orderedSegments[0], orderedSegments.length);
+
     // Return complete playlist
     setTimeout(() => {
-      onComplete(shuffledSegments);
+      onComplete(orderedSegments);
     }, 0);
-    
+
   } catch (error) {
     console.error('Error in progressive loading:', error);
     onComplete([]);
