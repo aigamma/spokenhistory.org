@@ -29,6 +29,17 @@ import CitationCard from './CitationCard';
  * @param {string} [props.className]
  * @returns {React.ReactElement}
  */
+// Curated query suggestions shown under the search box so first-time
+// visitors discover what the system can do. Mix of open questions,
+// specific events, and a paraphrased-quote case.
+const SUGGESTED_QUERIES = [
+  'nonviolence as theology vs. tactic',
+  '16th Street Baptist Church bombing',
+  'the dreamer can be killed but not the dream',
+  'Freedom Summer in Mississippi',
+  'Black Power and SNCC',
+];
+
 export default function SemanticSearch({
   placeholder = 'Search the oral history archive…',
   topN = 8,
@@ -51,9 +62,8 @@ export default function SemanticSearch({
   // Cancel any in-flight request on unmount.
   useEffect(() => () => abortRef.current?.abort(), []);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const trimmed = query.trim();
+  const runQuery = async (rawQuery) => {
+    const trimmed = (rawQuery || '').trim();
     if (!trimmed) return;
 
     abortRef.current?.abort();
@@ -75,6 +85,16 @@ export default function SemanticSearch({
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    runQuery(query);
+  };
+
+  const handleSuggestionClick = (suggestion) => {
+    setQuery(suggestion);
+    runQuery(suggestion);
   };
 
   return (
@@ -109,7 +129,21 @@ export default function SemanticSearch({
         </button>
       </form>
 
-      <div className="mb-4 flex items-center justify-end">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-600">
+          <span className="text-stone-500">Try:</span>
+          {SUGGESTED_QUERIES.map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => handleSuggestionClick(s)}
+              disabled={isLoading}
+              className="px-2.5 py-1 rounded-full border border-stone-300 bg-white hover:bg-stone-50 hover:border-stone-400 transition-colors disabled:opacity-40"
+            >
+              {s}
+            </button>
+          ))}
+        </div>
         <label className="inline-flex items-center gap-2 text-sm text-stone-600 cursor-pointer select-none">
           <input
             type="checkbox"
@@ -117,7 +151,7 @@ export default function SemanticSearch({
             onChange={(e) => setDedupeByEntry(e.target.checked)}
             className="rounded border-stone-400 text-red-700 focus:ring-red-700/30"
           />
-          <span>One passage per interviewee (polyphonic view)</span>
+          <span>One passage per interviewee</span>
         </label>
       </div>
 
