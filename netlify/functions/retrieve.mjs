@@ -288,6 +288,11 @@ export default async function handler(req) {
   const topN = clamp(body?.topN, 1, MAX_TOP_N, DEFAULT_TOP_N);
   const topK = clamp(body?.topK, topN, MAX_TOP_N * 4, Math.max(topN * 3, DEFAULT_TOP_K));
   const namespace = typeof body?.namespace === 'string' ? body.namespace : '';
+  // When dedupeByEntry=true, the post-rerank step keeps only the top
+  // result per interviewee. Useful for "show me the diverse polyphonic
+  // record" queries; defaults to false because the same speaker's
+  // different moments can both be valuable for some use cases.
+  const dedupeByEntry = body?.dedupeByEntry === true;
 
   // Filter resolution: prefer a fully-specified Pinecone filter object
   // when the caller knows that shape; otherwise accept the ergonomic
@@ -307,8 +312,12 @@ export default async function handler(req) {
     const queryVec = await embedQuery(query, env);
     const matches = await pineconeQuery(queryVec, env, { topK, filter, namespace });
     let resultObjs;
+    // Over-fetch when dedupeByEntry is true so we still have topN
+    // distinct interviewees after filtering. 4× is generous and bounded
+    // by the topK we already used.
+    const fetchN = dedupeByEntry ? Math.min(topN * 4, topK) : topN;
     if (!env.RERANK_ENABLED || matches.length === 0) {
-      resultObjs = matches.slice(0, topN).map((m) => ({
+      resultObjs = matches.slice(0, fetchN).map((m) => ({
         id: m.id,
         pineconeScore: m.score,
         rerankScore: null,
@@ -317,7 +326,7 @@ export default async function handler(req) {
       }));
     } else {
       const documents = matches.map((m) => m.metadata?.text ?? '');
-      const reranked = await voyageRerank(query, documents, env, { topN });
+      const reranked = await voyageRerank(query, documents, env, { topN: fetchN });
       resultObjs = reranked.map((r) => {
         const original = matches[r.index];
         return {
@@ -330,6 +339,19 @@ export default async function handler(req) {
       });
     }
 
+    if (dedupeByEntry) {
+      const seen = new Set();
+      const filtered = [];
+      for (const r of resultObjs) {
+        const en = r.metadata?.entry_number;
+        if (en == null || seen.has(en)) continue;
+        seen.add(en);
+        filtered.push(r);
+        if (filtered.length >= topN) break;
+      }
+      resultObjs = filtered;
+    }
+
     return jsonResponse(
       {
         results: resultObjs.map(toCitationPayload),
@@ -340,6 +362,7 @@ export default async function handler(req) {
           index: env.PINECONE_INDEX,
           topK,
           topN,
+          dedupeByEntry,
         },
       },
       { headers },
