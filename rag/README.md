@@ -222,7 +222,7 @@ the same.
 | Pinecone Builder (covers civil-rights + worldthought) | monthly | $20 flat |
 | **Total monthly RAG infrastructure** | | **~$22–25** |
 
-## Status as of 2026-05-25
+## Status as of 2026-05-26
 
 - ✅ Phase 4 scaffolding complete (this directory)
 - ✅ Pass 1-8 audit complete on the original 127-entry corpus (Pass 8 = LoC canonical-archive cross-reference; see `transcripts/AUDIT_TRAIL.md` Session 8)
@@ -230,9 +230,13 @@ the same.
 - ✅ `corrected/` is downstream-ready: every entry has `.srt + .txt + .vtt + manifest.json` with the same schema (verified by `transcripts/ingestion/verify_corpus_unified.py`). All 136 manifests carry `entry_number`, `entry_subject`, and `entry_provenance` (`audit-original` or `ingestion-only`).
 - ✅ `rag/ingest.mjs` updated 2026-05-25 to discover entries via BOTH master MD `**Source**:` lines AND fallback to `manifest.json::entry_number` for the 9 ingestion-only entries (which don't have master MD entry headings yet). `SKIPPED_ENTRIES` reduced to `{31, 95}` since #28, #46, #64 now have content.
 - ✅ `rag/ingest.mjs` second 2026-05-25 update: (a) fixed a pre-existing infinite-loop bug in the master-MD heading-walker (double-`exec` pattern interacted with the global-regex auto-reset of `lastIndex` on null match — replaced with `matchAll` materialization); (b) propagates `entry_provenance`, `inferential_uncertainty_score`, `inferential_uncertainty_tier`, and `loc_item_url` from each manifest into the Pinecone metadata for downstream filtering and LoC-citation linking; (c) drops phantom byDir records whose source directories don't exist on disk so the entry count is honest. Final entry map: 127 audit-original + 9 ingestion-only = 136, matching corrected/ exactly.
-- ⏳ Pinecone civil-rights index: not yet provisioned. **Status update**: the Pinecone account originally created for worldthought.com is being shared across both projects via Builder tier's multi-project feature — civil-rights and worldthought each have their own Pinecone project under one billing relationship + one organization. `civil-rights` index host URL needs to be generated in the Pinecone console (one-time admin action) and put in `rag/.env.local`.
-- ⏳ First ingest: blocked only on the Pinecone index existing. Voyage AI key already shared via the worldthought-side `.env.local` (or a copy thereof). Full ingest estimated at ~45-75 minutes wall-clock; subsequent re-ingests are content-hash-idempotent so only changed chunks re-embed.
-- ⏳ Chat function: not yet written (downstream of this scaffolding).
+- ✅ **Pinecone civil-rights index provisioned 2026-05-25 23:00 UTC.** Index name `civil-rights`, dim 1024, cosine, aws-us-east-1, Builder serverless. Co-mingled with `worldthought` in the same project (shared host hash `odc9z70`) — provisional, see `rag/.env.local` for migration path to separate `civil-rights-prod` project.
+- ✅ **First ingest complete 2026-05-25.** Initial run: 40,710 vectors across `.srt`/`.txt`/`.vtt`. **Subsequent 2026-05-26 prune:** dropped `.txt` + `.vtt` (near-duplicate re-encodings of the same Whisper output) → 15,464 `.srt`-only vectors. Every retrieval result now time-anchored.
+- ✅ **Precompute artifacts published** under `public/rag/`: 136 `related/entry-N.json` files (per-chunk top-5 cross-entry passages + per-entry related-entry summary), `centroids.json` (per-entry mean embeddings with tier/provenance/loc URL), `constellation.json` (2D PCA scatter for visualization).
+- ✅ **`/retrieve` Netlify Function deployed.** Citation-grade payloads with `entry_number` shortcut + `dedupeByEntry` polyphonic option. Live at `https://civil-rights-staging.netlify.app/retrieve`.
+- ✅ **`/rag-explore` page deployed** (auth-gated). Four tabs: Semantic search, Quote-finder, Embedding-space map (constellation), Related interviewees. Audit-tier color signal consistent across header pills, citation card badges, and SVG dots.
+- ✅ **MCP server rewired** to Pinecone+Voyage (commit `2c05cd8`). Smoke-tested locally 2026-05-26 (search_transcripts call with `dedupe_by_entry:true` returned Lowery on nonviolence-as-theology with full Chicago citation). Fly.io deploy blocked on Eric installing `flyctl`.
+- ⏳ Anthropic Connector Directory submission: requires OAuth 2.1 on the MCP `/mcp` endpoint. Skeleton notes the plug-in point. Post-conference.
 
 ## Multi-project Pinecone setup (cost-sharing notes)
 
