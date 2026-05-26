@@ -156,19 +156,54 @@ const buildKeywordIndex = async () => {
 };
 
 /**
- * Get segments for specific keywords (fast lookup using index)
+ * Get segments for specific keywords (fast lookup using index).
+ *
+ * Matching strategy, in priority order:
+ *   1. Exact match against the keyword index (fast hash lookup)
+ *   2. Substring match across all indexed keyword phrases
+ *      — needed because our subagent-generated chapter keywords
+ *        are phrases like "Montgomery Bus Boycott" or "Selma to
+ *        Montgomery March", which don't exact-match the home-page
+ *        timeline's simple "montgomery" anchor. Substring catches them.
+ *   3. Substring match against chapter title + topic
+ *      — catches chapters where the keyword wasn't tagged as such but
+ *        the chapter is clearly about it (e.g. a chapter titled
+ *        "Marching on Montgomery").
  */
 export const getSegmentsForKeywords = async (keywords) => {
-  const { keywordIndex } = await buildKeywordIndex();
-  
+  const { keywordIndex, allSegments } = await buildKeywordIndex();
+
   const keywordsArray = Array.isArray(keywords) ? keywords : parseKeywords(keywords);
   const matchingSegments = new Set();
 
   keywordsArray.forEach(keyword => {
-    const keywordLower = keyword.toLowerCase();
-    const segments = keywordIndex[keywordLower] || [];
-    segments.forEach(segment => matchingSegments.add(segment));
+    const keywordLower = keyword.toLowerCase().trim();
+    if (!keywordLower) return;
+
+    // 1. Exact match
+    const exact = keywordIndex[keywordLower] || [];
+    exact.forEach(segment => matchingSegments.add(segment));
+
+    // 2. Substring match across indexed keyword phrases
+    if (exact.length === 0) {
+      Object.keys(keywordIndex).forEach(indexedKey => {
+        if (indexedKey.includes(keywordLower)) {
+          keywordIndex[indexedKey].forEach(segment => matchingSegments.add(segment));
+        }
+      });
+    }
   });
+
+  // 3. Substring fallback across chapter title + topic if still empty
+  if (matchingSegments.size === 0) {
+    const haystackKeywords = keywordsArray.map(k => k.toLowerCase().trim()).filter(Boolean);
+    (allSegments || []).forEach(segment => {
+      const blob = `${segment.title || ''} ${segment.topic || ''}`.toLowerCase();
+      if (haystackKeywords.some(k => blob.includes(k))) {
+        matchingSegments.add(segment);
+      }
+    });
+  }
 
   return Array.from(matchingSegments);
 };
