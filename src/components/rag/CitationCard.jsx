@@ -119,7 +119,7 @@ export default function CitationCard({
             Citation (Chicago)
           </summary>
           <div className="mt-2 flex items-start gap-3">
-            <p className="font-mono text-xs leading-relaxed flex-1">{suggestedCitation}</p>
+            <p className="font-mono text-xs leading-relaxed flex-1 break-words">{suggestedCitation}</p>
             <CopyButton text={suggestedCitation} />
           </div>
         </details>
