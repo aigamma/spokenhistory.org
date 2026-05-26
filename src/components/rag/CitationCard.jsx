@@ -13,6 +13,18 @@
 
 import { ExternalLink, Clock, ShieldCheck, AlertTriangle } from 'lucide-react';
 
+// Per-tier badge styling. Mirrors the Constellation's color scale so the
+// audit substrate looks consistent across components. Tone is "info" not
+// "alarm" — even publication-block entries are usable as research leads;
+// the badge tells the reader to verify before citing, not to discard.
+const TIER_BADGE = {
+  'low': { label: 'Audited · Low uncertainty', bg: 'bg-emerald-50', text: 'text-emerald-800', border: 'border-emerald-200', icon: ShieldCheck },
+  'medium': { label: 'Audited · Medium uncertainty', bg: 'bg-amber-50', text: 'text-amber-800', border: 'border-amber-200', icon: AlertTriangle },
+  'publication-block': { label: 'Audited · Publication-blocker issues', bg: 'bg-red-50', text: 'text-red-800', border: 'border-red-200', icon: AlertTriangle },
+  'not-auditable': { label: 'Audited · Not externally verifiable', bg: 'bg-violet-50', text: 'text-violet-800', border: 'border-violet-200', icon: AlertTriangle },
+  'ingestion-only': { label: 'Ingested · Not yet audited', bg: 'bg-slate-50', text: 'text-slate-800', border: 'border-slate-200', icon: AlertTriangle },
+};
+
 /**
  * CitationCard — primary-source result card.
  *
@@ -51,12 +63,13 @@ export default function CitationCard({
 
   const displayText = showFullText ? text : textPreview;
 
-  // Provenance badge styling: high-confidence is the default; flag
-  // ingestion-only or medium+ uncertainty so researchers see it.
-  const isHighConfidence =
-    entryProvenance === 'audit-original' && (uncertaintyTier === 'low' || uncertaintyTier == null);
-  const ProvenanceIcon = isHighConfidence ? ShieldCheck : AlertTriangle;
-  const provenanceColor = isHighConfidence ? 'text-emerald-700' : 'text-amber-700';
+  // Pick the per-tier badge styling. Falls back to a generic look if
+  // the manifest tier is missing or unfamiliar.
+  const tierKey = uncertaintyTier in TIER_BADGE ? uncertaintyTier : null;
+  const badge = tierKey
+    ? TIER_BADGE[tierKey]
+    : { label: 'Provenance unknown', bg: 'bg-stone-50', text: 'text-stone-700', border: 'border-stone-200', icon: AlertTriangle };
+  const BadgeIcon = badge.icon;
 
   return (
     <article
@@ -103,9 +116,12 @@ export default function CitationCard({
         )}
       </div>
 
-      <div className={`flex items-start gap-2 text-sm ${provenanceColor} mb-3`}>
-        <ProvenanceIcon className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
-        <span>{fidelityNote || 'Provenance unknown.'}</span>
+      <div className={`flex items-start gap-2 text-sm ${badge.bg} ${badge.text} border ${badge.border} rounded-md px-3 py-2 mb-3`}>
+        <BadgeIcon className="w-4 h-4 mt-0.5 flex-shrink-0" aria-hidden="true" />
+        <div className="flex-1">
+          <div className="font-medium text-xs uppercase tracking-wide mb-0.5">{badge.label}</div>
+          <div className="text-xs leading-snug">{fidelityNote || 'Provenance unknown.'}</div>
+        </div>
       </div>
 
       {showCitation && suggestedCitation && (
