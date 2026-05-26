@@ -74,10 +74,13 @@ export default function Constellation({
   if (!data) {
     return (
       <div
-        className={`rag-constellation-loading ${className} bg-stone-50 rounded`}
+        className={`rag-constellation-loading ${className} bg-stone-50 rounded-lg border border-stone-200 flex items-center justify-center`}
         style={{ width, height }}
-        aria-hidden="true"
-      />
+        role="status"
+        aria-live="polite"
+      >
+        <span className="text-sm text-stone-500">Loading the embedding space…</span>
+      </div>
     );
   }
 
