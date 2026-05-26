@@ -8,7 +8,9 @@
   "scripts": {
     "start": "node server.mjs",
     "dev": "node --watch server.mjs",
-    "build:leaders": "node build-leaders.mjs"
+    "start:stdio": "node server.mjs --stdio",
+    "build:leaders": "node build-leaders.mjs",
+    "smoke": "node scripts/smoke_stdio.mjs"
   },
   "engines": {
     "node": ">=20.0.0"

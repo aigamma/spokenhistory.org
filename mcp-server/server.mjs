@@ -14,9 +14,10 @@
  *     (mirrors rag/embed.mjs + rag/retrieve.mjs) so the Docker image
  *     stays self-contained — track those files as the canonical source.
  *
- * Three tools:
+ * Six tools (three primitives + three research patterns):
  *
- *   - search_transcripts(query, limit?, entry_number?)
+ *   PRIMITIVES
+ *   - search_transcripts(query, limit?, entry_number?, dedupe_by_entry?)
  *       Citation-grade semantic search across the 136-entry corpus.
  *       Returns ranked passages with FULL primary-source citation
  *       metadata: interviewee, Library of Congress catalog URL, audio
@@ -35,18 +36,27 @@
  *       catalog URL, audit provenance. Backed by a pre-generated
  *       leaders.json baked into the Docker image (data/leaders.json).
  *
- * Plus three canned research prompts (registered as MCP prompts) that
- * help researchers structure their queries:
+ *   RESEARCH PATTERNS (also exposed as MCP prompts; see below)
+ *   - compare_perspectives(topic)
+ *       Wraps search_transcripts with dedupe_by_entry=true and limit=8.
+ *       Returns 8 voices on a topic plus a `framing` field for the model.
  *
- *   - compare_perspectives — given a topic, surface how multiple
- *     interviewees discussed it differently
- *   - trace_evolution — given an interviewee, surface how their framing
- *     of a topic changed across the chapters of their interview
- *   - source_for_claim — given a claim, quote, or paraphrase, find the
- *     transcript passages that back or complicate it. Tuned for
- *     academic-citation use: emits Chicago-style citation blocks with
- *     LoC archive URLs, exact timestamps, and transcript-fidelity
- *     transparency flags.
+ *   - trace_evolution(interviewee, topic)
+ *       Resolves interviewee → entry_number from leaders, calls
+ *       search_transcripts with that filter, sorts results by timestamp.
+ *
+ *   - source_for_claim(claim)
+ *       Wraps search_transcripts with limit=8 (no dedupe — polyphonic
+ *       record preserved). Returns passages plus a `framing` instructing
+ *       SUPPORTS / COMPLICATES / CONTRADICTS labeling per result.
+ *
+ * The same three research patterns are ALSO advertised as MCP prompts
+ * with the same names. This is intentional dual exposure: some MCP
+ * clients (Claude Desktop) surface prompts as slash-commands and route
+ * them through the model; others (Codex Desktop, ChatGPT Apps SDK) do
+ * NOT route prompts to the model — only tools are model-callable on
+ * those surfaces. Exposing the patterns as both means they reach the
+ * model on every client regardless of capability surface.
  *
  * Deployment target: Fly.io (per fly.toml). The server uses the
  * StreamableHTTP transport from the MCP TypeScript SDK and Express, so
@@ -520,6 +530,116 @@ async function listLeaders({ limit = 200 }) {
   return all.slice(0, safeLimit)
 }
 
+// ── Research-pattern tools (compare_perspectives / trace_evolution /
+//    source_for_claim) ─────────────────────────────────────────────────
+//
+// These three patterns are ALSO advertised as MCP prompts (see
+// PROMPT_DEFINITIONS below) for clients that surface prompts as
+// slash-commands or template menus (Claude Desktop). They're ALSO
+// exposed as tools because some MCP clients (Codex Desktop, ChatGPT
+// Apps SDK) do not route MCP prompts to the model — only tools are
+// model-callable on those surfaces. Dual exposure means the patterns
+// reach the model on every client regardless of capability surface.
+//
+// Each tool wraps the existing retrieval primitives (searchTranscripts,
+// loadLeaders) with the preset arguments the pattern needs and returns
+// a structured envelope { pattern, args..., framing, results } where
+// `framing` carries the analytic instruction the prompt template would
+// have provided. The model uses `framing` to structure its presentation
+// of `results`.
+
+async function comparePerspectives({ topic }) {
+  if (!topic || typeof topic !== 'string') {
+    throw new Error('topic (string) is required')
+  }
+  const results = await searchTranscripts({
+    query: topic,
+    limit: 8,
+    dedupe_by_entry: true,
+  })
+  return {
+    pattern: 'compare_perspectives',
+    topic,
+    framing:
+      'These passages are from different interviewees in the archive, each discussing the requested topic. ' +
+      'Present each as a citation block (interviewee · quoted passage · timestamp · locItemUrl · audit-tier badge) ' +
+      'and surface the agreements, tensions, and complementary perspectives across voices. Do not synthesize a ' +
+      'single conclusion — the polyphonic record IS the point of an oral history archive. If uncertaintyTier ' +
+      'is anything other than "low", pass the fidelityNote through to the user verbatim.',
+    results,
+  }
+}
+
+async function traceEvolution({ interviewee, topic }) {
+  if (!interviewee || typeof interviewee !== 'string') {
+    throw new Error('interviewee (string) is required')
+  }
+  if (!topic || typeof topic !== 'string') {
+    throw new Error('topic (string) is required')
+  }
+  const leaders = await loadLeaders()
+  const target = interviewee.toLowerCase().trim()
+  let resolved = leaders.find((l) => (l.entry_subject || '').toLowerCase() === target)
+  if (!resolved) {
+    const partials = leaders.filter((l) =>
+      (l.entry_subject || '').toLowerCase().includes(target),
+    )
+    if (partials.length === 1) {
+      resolved = partials[0]
+    } else if (partials.length > 1) {
+      throw new Error(
+        `Multiple interviewees matched "${interviewee}": ` +
+          partials.map((p) => p.entry_subject).join(', ') +
+          '. Use a more specific name (e.g., include first + last) or call list_leaders to find the exact entry.',
+      )
+    } else {
+      throw new Error(
+        `No interviewee matched "${interviewee}". Call list_leaders to see the available roster.`,
+      )
+    }
+  }
+  const results = await searchTranscripts({
+    query: topic,
+    entry_number: resolved.entry_number,
+    limit: 20,
+  })
+  results.sort((a, b) => (a.timestampStart ?? 0) - (b.timestampStart ?? 0))
+  return {
+    pattern: 'trace_evolution',
+    interviewee: resolved.entry_subject,
+    entry_number: resolved.entry_number,
+    topic,
+    framing:
+      'These passages are from ' + resolved.entry_subject + "'s interview, arranged chronologically by timestamp. " +
+      "Examine how their framing or thinking about this topic evolves across the chapters of the interview. " +
+      'Quote each passage with its timestamp; the audit-tier badge applies to the interview as a whole and ' +
+      'should be cited once at the top of the response.',
+    results,
+  }
+}
+
+async function sourceForClaim({ claim }) {
+  if (!claim || typeof claim !== 'string') {
+    throw new Error('claim (string) is required')
+  }
+  const results = await searchTranscripts({
+    query: claim,
+    limit: 8,
+  })
+  return {
+    pattern: 'source_for_claim',
+    claim,
+    framing:
+      'These passages bear on the stated claim. For each, present a COMPLETE academic citation block ' +
+      '(interviewee · quoted passage · timestamp · locItemUrl · suggestedCitation · fidelityNote) and then a ' +
+      "one-sentence justification noting whether the passage SUPPORTS, COMPLICATES, or CONTRADICTS the claim, " +
+      "grounded in the passage's actual words. If multiple passages bear on the claim, present ALL of them — " +
+      "do not synthesize a single answer. If uncertaintyTier is anything other than \"low\", flag that the " +
+      "transcript fidelity is not fully audited and recommend verification against the LoC audio.",
+    results,
+  }
+}
+
 // ── MCP server wiring ───────────────────────────────────────────────
 
 const mcpServer = new Server(
@@ -605,6 +725,66 @@ const TOOL_DEFINITIONS = [
       },
     },
   },
+  {
+    name: 'compare_perspectives',
+    description:
+      'Research pattern: given a topic, surface how multiple interviewees in the archive discussed it differently. ' +
+      'Returns up to 8 deduped-by-interviewee passages plus a `framing` field with the analytic instruction the model ' +
+      'should use to present them (citation block per voice, surface tensions and agreements, do not synthesize). ' +
+      'Use this when the user wants the polyphonic record on a topic rather than a single best match. ' +
+      'Same pattern as the compare_perspectives MCP prompt, callable as a tool for clients that do not route prompts to the model.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        topic: {
+          type: 'string',
+          description: 'The civil rights topic or event to compare across interviews (e.g., "Bloody Sunday", "nonviolence as theology vs. tactic", "Black Power as ideology").',
+        },
+      },
+      required: ['topic'],
+    },
+  },
+  {
+    name: 'trace_evolution',
+    description:
+      'Research pattern: given an interviewee and a topic, return passages from that interviewee\'s interview arranged ' +
+      'chronologically by timestamp so the researcher can see how their framing of the topic evolves across the chapters of the interview. ' +
+      'Resolves the interviewee name against the corpus roster (exact match preferred, partial substring fallback; errors if ambiguous). ' +
+      'Same pattern as the trace_evolution MCP prompt, callable as a tool for clients that do not route prompts to the model.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        interviewee: {
+          type: 'string',
+          description: 'The interviewee whose evolution to trace. Name as it appears in the corpus (e.g., "Wheeler Parker Jr.", "Joseph Echols Lowery"). Use list_leaders if unsure.',
+        },
+        topic: {
+          type: 'string',
+          description: 'The topic whose evolution to trace across the chapters of the interview.',
+        },
+      },
+      required: ['interviewee', 'topic'],
+    },
+  },
+  {
+    name: 'source_for_claim',
+    description:
+      'Research pattern: given a factual claim, quote, or paraphrase, find up to 8 transcript passages that bear on it. ' +
+      'Returns passages plus a `framing` field that instructs the model to present each as a Chicago-style citation block ' +
+      'AND label whether it SUPPORTS, COMPLICATES, or CONTRADICTS the claim. The polyphonic record is preserved (no dedupe). ' +
+      'Use this for grant writers, journalists, and researchers grounding their work in primary sources. ' +
+      'Same pattern as the source_for_claim MCP prompt, callable as a tool for clients that do not route prompts to the model.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        claim: {
+          type: 'string',
+          description: 'The claim, quote, or paraphrase to find sources for (e.g., "the dreamer can be killed but not the dream", "King\'s nonviolent approach was theological, not just tactical").',
+        },
+      },
+      required: ['claim'],
+    },
+  },
 ]
 
 const PROMPT_DEFINITIONS = [
@@ -649,6 +829,12 @@ mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
       result = await getTranscript(args || {})
     } else if (name === 'list_leaders') {
       result = await listLeaders(args || {})
+    } else if (name === 'compare_perspectives') {
+      result = await comparePerspectives(args || {})
+    } else if (name === 'trace_evolution') {
+      result = await traceEvolution(args || {})
+    } else if (name === 'source_for_claim') {
+      result = await sourceForClaim(args || {})
     } else {
       return {
         content: [{ type: 'text', text: `Unknown tool: ${name}` }],
