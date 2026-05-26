@@ -154,3 +154,23 @@ in CLAUDE.md under "Operational state." The big quality wins:
   visible at a glance, not just described in copy.
 - Cap the citation card with a per-tier audit badge so researchers
   know exactly which tier they're citing from.
+
+## What changed for the `/playlist-builder` surface (2026-05-26)
+
+The legacy grad-student playlist row didn't survive the new-Firebase
+rebuild — the underlying curation data was discarded with the prior
+project's experimental residue. The replacement surface inherits the
+same UI but its ordering is now driven by the RAG substrate:
+
+- **Hero clip** chosen by audit tier (Pass 9 LoC-verification rank) so
+  the playlist opens on the most-confident transcript for the keyword.
+- **"Up next" recommendations** ranked by **cosine similarity** between
+  the hero interview's Voyage AI embedding and the embedding of every
+  other candidate interview, pulled from the precomputed neighbors map
+  (`/rag/summaries/neighbors.json`). The previous implementation
+  randomly shuffled segments on every page load; the new ordering is
+  deterministic and semantically meaningful.
+- **Same speaker continuation**: other chapters of the hero's own
+  interview come second in chronological order before the cross-speaker
+  cosine-similarity tail, so a viewer who wants more from the same
+  speaker stays with their narrative rather than jumping immediately.

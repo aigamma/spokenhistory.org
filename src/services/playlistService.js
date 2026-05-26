@@ -294,14 +294,102 @@ const compareSegments = (a, b) => {
 };
 
 /**
+ * Cached cosine-similarity neighbor map keyed by entry_number. Populated
+ * from /rag/summaries/neighbors.json on first playlist load. Each value is
+ * { entry_number, entry_subject, tier, neighbors: [{entry_number,
+ * similarity, ...}, ...] } — the top thematic neighbors precomputed from
+ * Voyage AI voyage-3 embeddings (1024-dim, cosine).
+ */
+let cachedNeighbors = null;
+
+async function loadNeighborsMap() {
+  if (cachedNeighbors) return cachedNeighbors;
+  try {
+    const res = await fetch('/rag/summaries/neighbors.json');
+    if (!res.ok) {
+      cachedNeighbors = {};
+      return cachedNeighbors;
+    }
+    cachedNeighbors = await res.json();
+  } catch (err) {
+    console.warn('neighbors.json fetch failed, falling back to tier sort:', err);
+    cachedNeighbors = {};
+  }
+  return cachedNeighbors;
+}
+
+/**
+ * Rerank the playlist tail (everything after the hero) by cosine
+ * similarity to the hero's interview, using the precomputed Voyage
+ * embeddings in neighbors.json.
+ *
+ * Order produced:
+ *   1. Hero (stays first — selected by compareSegments tier rank)
+ *   2. Other chapters of the hero's OWN interview, chronological
+ *      (natural continuation within the same speaker's narrative)
+ *   3. Chapters from interviews with higher cosine similarity to the
+ *      hero's interview, similarity DESC
+ *   4. Chapters from interviews not in the hero's top-N neighbors,
+ *      ordered by compareSegments (audit tier tie-break)
+ *
+ * If neighbors.json fails to load, the function returns segments in
+ * pure tier-sort order — the recommendation feature degrades to
+ * audit-quality ranking but the playlist still renders.
+ */
+function reorderByCosineSimilarity(hero, segments, neighborsMap) {
+  if (!hero || !neighborsMap) return segments;
+  const heroEntry = hero.entry_number;
+  if (heroEntry == null) return segments;
+
+  const heroRecord = neighborsMap[String(heroEntry)] || neighborsMap[heroEntry];
+  const neighborSim = new Map();
+  if (heroRecord && Array.isArray(heroRecord.neighbors)) {
+    for (const n of heroRecord.neighbors) {
+      if (n && typeof n.entry_number === 'number') {
+        neighborSim.set(n.entry_number, n.similarity ?? 0);
+      }
+    }
+  }
+
+  return segments.slice().sort((a, b) => {
+    if (a === hero) return -1;
+    if (b === hero) return 1;
+
+    const aSameSpeaker = a.entry_number === heroEntry;
+    const bSameSpeaker = b.entry_number === heroEntry;
+    if (aSameSpeaker !== bSameSpeaker) return aSameSpeaker ? -1 : 1;
+    if (aSameSpeaker && bSameSpeaker) {
+      const chA = a.chapterNumber || a.chapter_number || 0;
+      const chB = b.chapterNumber || b.chapter_number || 0;
+      return chA - chB;
+    }
+
+    const simA = neighborSim.get(a.entry_number);
+    const simB = neighborSim.get(b.entry_number);
+    const aRanked = simA !== undefined;
+    const bRanked = simB !== undefined;
+    if (aRanked !== bRanked) return aRanked ? -1 : 1;
+    if (aRanked && bRanked && simA !== simB) return simB - simA;
+
+    return compareSegments(a, b);
+  });
+}
+
+/**
  * Progressive loading: Get first video immediately, then rest in background.
  *
- * 2026-05-26: replaced random shuffle with deterministic quality-tier sort.
- * The legacy playlist surface was a curated grad-student artifact; we don't
- * have that curation data in the new Firebase, so the next-best signal is
- * the Pass 9 audit tier, which orders segments by transcript confidence.
- * Same query → same order across reloads, which is what the original UI
- * implicitly promised.
+ * 2026-05-26: replaced random shuffle with two-stage ordering.
+ *   Stage 1 — pick the hero by audit-tier rank (compareSegments). Best-
+ *     confidence transcript wins so the demo opens with vetted content.
+ *   Stage 2 — rerank the tail by cosine similarity to the hero's
+ *     interview, using precomputed Voyage AI embeddings in neighbors.json
+ *     (see reorderByCosineSimilarity above).
+ *
+ * The legacy playlist surface was a curated grad-student artifact; we
+ * don't have that curation data in the new Firebase. Cosine similarity
+ * to the hero gives the "you might also like" semantics the curators
+ * implicitly encoded — speakers who discussed thematically adjacent
+ * material surface first. Same query → same order across reloads.
  */
 export const getPlaylistProgressive = async (keywords, onFirstVideo, onComplete) => {
   try {
@@ -312,12 +400,15 @@ export const getPlaylistProgressive = async (keywords, onFirstVideo, onComplete)
       return;
     }
 
-    const orderedSegments = [...segments].sort(compareSegments);
+    const tierSorted = [...segments].sort(compareSegments);
+    const hero = tierSorted[0];
 
-    // Return first video immediately
-    onFirstVideo(orderedSegments[0], orderedSegments.length);
+    // Return first video immediately while neighbors.json is fetching
+    onFirstVideo(hero, tierSorted.length);
 
-    // Return complete playlist
+    const neighborsMap = await loadNeighborsMap();
+    const orderedSegments = reorderByCosineSimilarity(hero, tierSorted, neighborsMap);
+
     setTimeout(() => {
       onComplete(orderedSegments);
     }, 0);
