@@ -42,6 +42,10 @@ export default function SemanticSearch({
   const [meta, setMeta] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  // When true, results are deduplicated by interviewee so users see
+  // the polyphonic record (one passage per voice). Default off so the
+  // same-speaker-different-moment results aren't hidden by default.
+  const [dedupeByEntry, setDedupeByEntry] = useState(false);
   const abortRef = useRef(null);
 
   // Cancel any in-flight request on unmount.
@@ -59,7 +63,7 @@ export default function SemanticSearch({
     setIsLoading(true);
     setError(null);
     try {
-      const opts = { topN, signal: ctrl.signal };
+      const opts = { topN, signal: ctrl.signal, dedupeByEntry };
       if (entryNumber != null) opts.filter = { entry_number: { $eq: entryNumber } };
       const { results: payloads, meta: respMeta } = await retrieve(trimmed, opts);
       setResults(payloads || []);
@@ -104,6 +108,18 @@ export default function SemanticSearch({
           )}
         </button>
       </form>
+
+      <div className="mb-4 flex items-center justify-end">
+        <label className="inline-flex items-center gap-2 text-sm text-stone-600 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={dedupeByEntry}
+            onChange={(e) => setDedupeByEntry(e.target.checked)}
+            className="rounded border-stone-400 text-red-700 focus:ring-red-700/30"
+          />
+          <span>One passage per interviewee (polyphonic view)</span>
+        </label>
+      </div>
 
       {error && (
         <div className="mb-4 p-4 rounded-md bg-amber-50 border border-amber-200 text-amber-900 text-sm">

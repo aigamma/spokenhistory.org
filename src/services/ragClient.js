@@ -38,6 +38,7 @@ export async function retrieve(query, opts = {}) {
   if (opts.topK != null) body.topK = opts.topK;
   if (opts.filter != null) body.filter = opts.filter;
   if (opts.namespace != null) body.namespace = opts.namespace;
+  if (opts.dedupeByEntry === true) body.dedupeByEntry = true;
 
   const res = await fetch(RETRIEVE_ENDPOINT, {
     method: 'POST',
