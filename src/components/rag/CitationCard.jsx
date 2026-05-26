@@ -54,7 +54,6 @@ export default function CitationCard({
     locItemUrl,
     timestampStartStr,
     timestampEndStr,
-    entryProvenance,
     uncertaintyTier,
     fidelityNote,
     suggestedCitation,
