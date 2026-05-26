@@ -69,6 +69,11 @@ export async function embedTexts(texts, inputType, { model = null, batch = DEFAU
   for (let i = 0; i < texts.length; i += batch) {
     const slice = texts.slice(i, i + batch);
     let attempt = 0;
+    // Retry loop on transient Voyage errors (5xx, 429); breaks on
+    // success or non-transient error or attempt-limit. eslint-disable
+    // because the guarded-break shape is the canonical retry-loop
+    // idiom and clearer than a sentinel boolean.
+    // eslint-disable-next-line no-constant-condition
     while (true) {
       try {
         const embeddings = await embedBatch(slice, inputType, model);
