@@ -20,6 +20,11 @@ import { fidelityNoteFor } from './tiers';
 // once per session from constellation.json. The per-chunk JSON files
 // don't carry tier info per result (they would balloon by ~30%), so we
 // look it up by entry_number when rendering each related-passage card.
+//
+// The cache stores a successful result indefinitely. On error, it
+// resolves to an empty Map AND clears _tierCachePromise so a future
+// caller can retry — useful if the constellation.json fetch fails on
+// page load but later becomes available (e.g., temporary CDN miss).
 let _tierCachePromise = null;
 function loadTierLookup() {
   if (_tierCachePromise) return _tierCachePromise;
@@ -38,7 +43,14 @@ function loadTierLookup() {
       }
       return map;
     })
-    .catch(() => new Map());
+    .catch((e) => {
+      // Allow retry on the next call by clearing the cached promise.
+      // The current caller still gets a successful (empty) Map so the
+      // UI degrades gracefully rather than throwing.
+      _tierCachePromise = null;
+      console.warn('[RelatedPassages] tier lookup failed; using empty fallback:', e?.message);
+      return new Map();
+    });
   return _tierCachePromise;
 }
 
