@@ -40,12 +40,19 @@ const SUGGESTED_QUERIES = [
   'Black Power and SNCC',
 ];
 
+// onSelect was a click-handler hook on each result; it wrapped the
+// CitationCard in a <button>, which made the LoC <a> inside the card
+// a nested-interactive (invalid HTML, broken for keyboard nav). Removed
+// because the card's LoC link is the meaningful action and no caller
+// of this component actually used onSelect. If a future use case
+// needs in-app routing to an interview detail page, add a dedicated
+// secondary action inside the CitationCard rather than wrapping the
+// whole card in a button.
 export default function SemanticSearch({
   placeholder = 'Search the oral history archive…',
   topN = 8,
   entryNumber = null,
   showFullText = false,
-  onSelect = null,
   className = '',
 }) {
   const [query, setQuery] = useState('');
@@ -170,17 +177,7 @@ export default function SemanticSearch({
       <ol className="space-y-4">
         {results.map((payload) => (
           <li key={payload.id}>
-            {onSelect ? (
-              <button
-                type="button"
-                onClick={() => onSelect(payload)}
-                className="block w-full text-left hover:opacity-90 transition-opacity"
-              >
-                <CitationCard payload={payload} showFullText={showFullText} />
-              </button>
-            ) : (
-              <CitationCard payload={payload} showFullText={showFullText} />
-            )}
+            <CitationCard payload={payload} showFullText={showFullText} />
           </li>
         ))}
       </ol>
