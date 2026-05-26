@@ -62,11 +62,20 @@ export function voyageHeaders() {
   };
 }
 
-// Source file extensions we ingest. Civil-rights raw transcripts come as
-// .txt (Whisper text output), .srt and .vtt (timed segments), and .json
-// (Whisper raw output with segment metadata). The corrected/ directory
-// produced by scripts/apply_corrections.py preserves the same shape.
-const SOURCE_EXTENSIONS = new Set(['.txt', '.srt', '.vtt']);
+// Source file extensions we ingest. Civil-rights raw transcripts come
+// as .txt, .srt, and .vtt (all derived from the same Whisper output).
+// We ingest ONLY .srt because:
+//   1. SRT is time-anchored — every chunk carries timestampStart/End,
+//      so every retrieval result can produce a citation with the exact
+//      audio offset. .txt loses that.
+//   2. .vtt is a near-identical re-encoding of .srt and produces
+//      duplicate chunks in Pinecone (verified in the first ingest:
+//      same passages appeared 2-3× in top-N retrievals across formats).
+// If a future need surfaces for paragraph-aware chunking (e.g. theme
+// queries that span subtitle boundaries), reintroduce .txt with a
+// separate `chunk_type` so retrieval can prefer time-anchored chunks
+// and fall back to paragraph chunks when no SRT match is found.
+const SOURCE_EXTENSIONS = new Set(['.srt']);
 
 export async function walkDir(dir) {
   let entries;
