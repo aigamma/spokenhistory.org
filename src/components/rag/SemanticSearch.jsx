@@ -188,8 +188,8 @@ export default function SemanticSearch({
         </button>
       </form>
 
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-600">
+      <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-3">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-600 flex-1 min-w-0">
           <span className="text-stone-500">Try:</span>
           {SUGGESTED_QUERIES.map((s) => (
             <button
@@ -203,7 +203,7 @@ export default function SemanticSearch({
             </button>
           ))}
         </div>
-        <label className="inline-flex items-center gap-2 text-sm text-stone-600 cursor-pointer select-none">
+        <label className="inline-flex items-center gap-2 text-sm text-stone-600 cursor-pointer select-none whitespace-nowrap">
           <input
             type="checkbox"
             checked={dedupeByEntry}
