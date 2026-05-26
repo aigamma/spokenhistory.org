@@ -313,7 +313,7 @@ The interactive RAG layer is live in staging. The following are operational fact
 
 ### What's NOT deployed
 
-- **MCP server (Fly.io)** — `flyctl` is not installed on Eric's machine; `flyctl auth login` is interactive. Blocked on Eric installing the CLI + authenticating. The server code is rewired (commit `2c05cd8`) and ready to deploy.
+- **MCP server (Fly.io)** — `flyctl` is not installed on Eric's machine; `flyctl auth login` is interactive. Blocked on Eric installing the CLI + authenticating. The server code is rewired (commit `2c05cd8`) and ready to deploy. **Verified working locally** on 2026-05-26: started `node server.mjs` on port 3099 against the live Pinecone index, hit `/healthz` (200 `{ok:true}`), called `tools/call` with `search_transcripts({query:"nonviolence as theology", dedupe_by_entry:true})` via the proper `Accept: application/json, text/event-stream` header, got a clean citation-grade response (Joseph Echols Lowery on nonviolence-as-theology, timestamp 00:26:57, full Chicago citation block).
 - **Pinecone civil-rights as a SEPARATE project from worldthought** — would require Eric to provision via the Pinecone console + generate a new project-scoped API key. Current setup is functional but cohabitating in the worldthought project space.
 
 ### Post-23:00 quality-pass follow-on
