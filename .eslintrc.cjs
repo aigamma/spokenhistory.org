@@ -11,6 +11,22 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
+  // Node.js-only script directories (rag/, netlify/functions/,
+  // mcp-server/, scripts/) need 'node' env so the linter knows about
+  // process, Buffer, __dirname, etc. Without this override they hit
+  // ~24 false-positive 'process is not defined' errors. The src/
+  // (React/Vite) tree stays in the default browser-only env.
+  overrides: [
+    {
+      files: [
+        'rag/**/*.{js,mjs,cjs}',
+        'netlify/**/*.{js,mjs,cjs}',
+        'mcp-server/**/*.{js,mjs,cjs}',
+        'scripts/**/*.{js,mjs,cjs}',
+      ],
+      env: { node: true, browser: false },
+    },
+  ],
   rules: {
     'react/jsx-no-target-blank': 'off',
     // PropTypes is the React 15-era runtime-validation pattern; the
