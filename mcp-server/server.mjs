@@ -393,7 +393,7 @@ function toCitationPayload(result) {
   }
 }
 
-async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null }) {
+async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null, dedupe_by_entry = false }) {
   if (typeof query !== 'string') {
     throw new Error('query must be a string')
   }
@@ -421,10 +421,26 @@ async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = 
   }
 
   // Stage-1 net: ask Pinecone for 3× the desired limit so the
-  // stage-2 reranker has enough candidates to discriminate.
-  const topK = Math.max(clampedLimit * 3, 20)
-  const results = await retrieve(trimmed, { topK, topN: clampedLimit, filter })
-  return results.map(toCitationPayload)
+  // stage-2 reranker has enough candidates to discriminate. When
+  // dedupe_by_entry is true, over-fetch by 4× so we still have
+  // limit-many distinct interviewees after deduplication.
+  const baseFetch = dedupe_by_entry ? clampedLimit * 4 : clampedLimit
+  const topK = Math.max(baseFetch * 3, 20)
+  const results = await retrieve(trimmed, { topK, topN: baseFetch, filter })
+
+  if (dedupe_by_entry) {
+    const seen = new Set()
+    const filtered = []
+    for (const r of results) {
+      const en = r.metadata?.entry_number
+      if (en == null || seen.has(en)) continue
+      seen.add(en)
+      filtered.push(r)
+      if (filtered.length >= clampedLimit) break
+    }
+    return filtered.map(toCitationPayload)
+  }
+  return results.slice(0, clampedLimit).map(toCitationPayload)
 }
 
 // Accepts either an integer entry_number or a "entry-N" string. Pulls
@@ -542,6 +558,10 @@ const TOOL_DEFINITIONS = [
         entry_number: {
           type: 'number',
           description: 'Optional: restrict the search to a specific interviewee by their corpus entry number (1-138). Use list_leaders to discover entry_numbers.',
+        },
+        dedupe_by_entry: {
+          type: 'boolean',
+          description: 'Optional: when true, results are deduplicated by interviewee so the response shows the polyphonic record (one passage per voice). Default false. Useful for compare-perspectives-style queries; turn off if the same speaker\'s different moments are both wanted.',
         },
       },
       required: ['query'],
@@ -664,8 +684,8 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `in the Library of Congress / Smithsonian NMAAHC civil rights oral history collection discussed ` +
               `${promptArgs.topic || '<TOPIC>'}.\n\n` +
               `Workflow:\n` +
-              `1. Call search_transcripts({query: "${promptArgs.topic || '<TOPIC>'}", limit: 12}) to find candidate passages.\n` +
-              `2. Group the results by entrySubject (interviewee). Aim for 3-5 distinct voices.\n` +
+              `1. Call search_transcripts({query: "${promptArgs.topic || '<TOPIC>'}", limit: 6, dedupe_by_entry: true}) to find one passage per distinct interviewee — the dedupe parameter guarantees you see the polyphonic record rather than the same speaker twice.\n` +
+              `2. The 6 results should already be 6 distinct voices. Aim to present 3-5 of them in the comparison.\n` +
               `3. For each interviewee, quote the relevant passage verbatim, then summarize their framing in one sentence.\n` +
               `4. After presenting all voices, surface the tensions, agreements, and complementary perspectives.\n\n` +
               `Citation requirements for each quoted passage:\n` +
