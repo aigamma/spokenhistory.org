@@ -60,6 +60,7 @@ const args = parseArgs(process.argv.slice(2))
 function parseArgs(argv) {
   const out = {
     input: null,
+    inputDir: null,
     serviceAccount: null,
     dryRun: false,
     slug: null,
@@ -78,26 +79,38 @@ function parseArgs(argv) {
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     if (a === '--input') out.input = argv[++i]
+    else if (a === '--input-dir') out.inputDir = argv[++i]
     else if (a === '--service-account') out.serviceAccount = argv[++i]
     else if (a === '--dry-run') out.dryRun = true
     else if (a === '--slug') out.slug = argv[++i]
     else if (a === '--collection') out.collection = argv[++i]
     else if (a === '--both-collections') out.bothCollections = true
     else if (a === '--help' || a === '-h') {
-      console.log('Usage: node scripts/pipeline-to-firestore.mjs --input <json> --service-account <json> [options]')
+      console.log('Usage: node scripts/pipeline-to-firestore.mjs (--input <json> | --input-dir <path>) [options]')
       console.log('Options:')
+      console.log('  --input <json>          Single pipeline-output JSON file')
+      console.log('  --input-dir <path>      Directory containing entry_*.json files (batch mode)')
+      console.log('  --service-account <p>   Path to Firebase admin SDK JSON (optional)')
       console.log('  --dry-run               Validate shape without writing')
-      console.log('  --slug <override>       Override the auto-generated slug')
+      console.log('  --slug <override>       Override the auto-generated slug (single-input mode only)')
       console.log('  --collection <name>     Target collection (default: interviewIndex)')
       console.log('  --both-collections      Write to BOTH interviewIndex and interviewSummaries')
+      console.log('')
+      console.log('Authentication (in priority order):')
+      console.log('  1. --service-account <path> if provided (Google Workspace may block SA key creation)')
+      console.log('  2. Application Default Credentials (run `gcloud auth application-default login` first)')
       process.exit(0)
     } else {
       console.error(`unknown arg: ${a}`)
       process.exit(2)
     }
   }
-  if (!out.input) {
-    console.error('--input is required')
+  if (!out.input && !out.inputDir) {
+    console.error('--input or --input-dir is required')
+    process.exit(2)
+  }
+  if (out.input && out.inputDir) {
+    console.error('only one of --input or --input-dir')
     process.exit(2)
   }
   return out
@@ -128,34 +141,19 @@ function fmtTimestamp(start, end) {
   return `[${s}] - [${e}]`
 }
 
-async function main() {
-  // Read + parse the pipeline JSON.
-  const raw = await fs.readFile(args.input, 'utf-8')
-  const data = JSON.parse(raw)
-
-  if (data.error) {
-    console.error(`pipeline JSON reports error: ${data.error}`)
-    process.exit(1)
-  }
-
+function buildDocs(data, slugOverride) {
+  if (data.error) throw new Error(`pipeline JSON reports error: ${data.error}`)
   const interviewName = data.interview_name
-  if (!interviewName) {
-    console.error('pipeline JSON missing interview_name')
-    process.exit(1)
-  }
+  if (!interviewName) throw new Error('pipeline JSON missing interview_name')
 
-  const slug = args.slug || slugify(interviewName)
+  const slug = slugOverride || slugify(interviewName)
   const ms = data.main_summary || {}
   const chapters = data.chapters || []
   const engagementScores = data.engagement_scores || null
   const costData = data.cost_data || null
 
-  // Strip the per-call log out of cost_data because it can be large and
-  // is only useful for debugging on the local machine.
   const trimmedCost = costData ? { ...costData } : null
-  if (trimmedCost && 'call_log' in trimmedCost) {
-    delete trimmedCost.call_log
-  }
+  if (trimmedCost && 'call_log' in trimmedCost) delete trimmedCost.call_log
 
   const interviewDoc = {
     name: interviewName,
@@ -165,9 +163,14 @@ async function main() {
     quality_metrics: ms.quality_metrics || null,
     engagement_scores: engagementScores,
     cost_data: trimmedCost,
+    loc_item_url: data.loc_item_url || null,
+    entry_number: typeof data.entry_number === 'number' ? data.entry_number : null,
+    inferential_uncertainty_tier: data.inferential_uncertainty_tier || null,
+    inferential_uncertainty_score: typeof data.inferential_uncertainty_score === 'number' ? data.inferential_uncertainty_score : null,
+    entry_provenance: data.entry_provenance || null,
     youtube_video_id: data.youtube_video_id || null,
     processed_at: new Date().toISOString(),
-    pipeline_version: 'dual-scorer-1',
+    pipeline_version: data.pipeline_version || 'claude-subagent-1',
   }
 
   const subSummaryDocs = chapters.map((ch, i) => ({
@@ -184,65 +187,102 @@ async function main() {
     quality_metrics: ch.quality_metrics || null,
   }))
 
-  console.log(`Interview: ${interviewName}`)
-  console.log(`Slug:      ${slug}`)
-  console.log(`Chapters:  ${subSummaryDocs.length}`)
-  console.log(`Summary:   ${interviewDoc.summary.slice(0, 80)}${interviewDoc.summary.length > 80 ? '…' : ''}`)
-  console.log(`Cost:      $${(trimmedCost?.total_cost_usd || 0).toFixed(4)}`)
+  return { slug, interviewName, interviewDoc, subSummaryDocs }
+}
+
+async function initFirestore() {
+  const { initializeApp, applicationDefault, cert } = await import('firebase-admin/app')
+  const { getFirestore } = await import('firebase-admin/firestore')
+
+  if (args.serviceAccount) {
+    const saPath = path.resolve(args.serviceAccount)
+    const saRaw = await fs.readFile(saPath, 'utf-8')
+    const sa = JSON.parse(saRaw)
+    initializeApp({ credential: cert(sa) })
+    console.log(`[auth] using service-account JSON at ${args.serviceAccount}`)
+  } else {
+    // Application Default Credentials path. Works after the user runs:
+    //   gcloud auth application-default login
+    // or (for Firebase-specific scopes):
+    //   npx firebase login --reauth
+    // ADC is the right path on Google Workspace orgs that block SA key
+    // creation — see reference_google_workspace_sa_policy memory.
+    initializeApp({
+      credential: applicationDefault(),
+      projectId: process.env.FIREBASE_PROJECT_ID || 'civil-rights-history-project',
+    })
+    console.log('[auth] using Application Default Credentials (ADC); project=civil-rights-history-project')
+  }
+  return getFirestore()
+}
+
+async function pushOne(db, fileName, raw) {
+  const data = JSON.parse(raw)
+  const { slug, interviewName, interviewDoc, subSummaryDocs } = buildDocs(data, args.slug)
 
   const targets = args.bothCollections
     ? ['interviewIndex', 'interviewSummaries']
     : [args.collection]
 
   if (args.dryRun) {
-    console.log('\n--dry-run set: not authenticating to Firebase, not writing.')
-    console.log('Would write:')
+    console.log(`[dry-run] ${fileName} -> ${interviewName} (slug=${slug}, chapters=${subSummaryDocs.length})`)
     for (const t of targets) {
-      console.log(`  ${t}/${slug}`)
-      for (const sub of subSummaryDocs) {
-        console.log(`  ${t}/${slug}/subSummaries/${sub.id}`)
-      }
+      for (const sub of subSummaryDocs) console.log(`  ${t}/${slug}/subSummaries/${sub.id}`)
     }
-    return
+    return { slug, chapters: subSummaryDocs.length }
   }
 
-  if (!args.serviceAccount) {
-    console.error('\n--service-account <path> is required when not running --dry-run')
-    console.error('Get one from: Firebase Console -> Project settings -> Service accounts -> Generate new private key')
-    process.exit(2)
-  }
-
-  // Lazy-import firebase-admin so --dry-run doesn't need it installed.
-  const { initializeApp, cert } = await import('firebase-admin/app')
-  const { getFirestore } = await import('firebase-admin/firestore')
-
-  const saPath = path.resolve(args.serviceAccount)
-  const saRaw = await fs.readFile(saPath, 'utf-8')
-  const sa = JSON.parse(saRaw)
-  initializeApp({ credential: cert(sa) })
-  const db = getFirestore()
-
-  // Write to each target collection. The loop is sequential because
-  // we want each collection's writes to surface as a coherent block
-  // in the log, not interleaved; the per-target parallel subSummary
-  // writes inside handle the throughput.
-  let totalDocs = 0
   for (const targetCollection of targets) {
     await db.collection(targetCollection).doc(slug).set(interviewDoc, { merge: true })
-    console.log(`\nWrote ${targetCollection}/${slug}`)
-    totalDocs += 1
-
     await Promise.all(
       subSummaryDocs.map(async (sub) => {
         const { id, ...rest } = sub
         await db.collection(targetCollection).doc(slug).collection('subSummaries').doc(id).set(rest, { merge: true })
-        console.log(`Wrote ${targetCollection}/${slug}/subSummaries/${id}`)
       }),
     )
-    totalDocs += subSummaryDocs.length
+  }
+  console.log(`[write] ${interviewName} -> ${targets.join(' + ')} / ${slug} (${subSummaryDocs.length} chapters)`)
+  return { slug, chapters: subSummaryDocs.length }
+}
+
+async function main() {
+  // Build list of pipeline JSON files to process
+  const files = []
+  if (args.input) {
+    files.push(args.input)
+  } else if (args.inputDir) {
+    const dirEntries = await fs.readdir(args.inputDir)
+    for (const f of dirEntries) {
+      if (f.startsWith('entry_') && f.endsWith('.json')) {
+        files.push(path.join(args.inputDir, f))
+      }
+    }
+    files.sort()
+  }
+  console.log(`[plan] ${files.length} pipeline JSON file(s) to process`)
+  if (args.bothCollections) console.log('[plan] writing to BOTH interviewIndex + interviewSummaries')
+  else console.log(`[plan] writing to ${args.collection}`)
+
+  let db = null
+  if (!args.dryRun) {
+    db = await initFirestore()
   }
 
-  console.log(`\nDone. ${totalDocs} Firestore document(s) written across ${targets.length} collection(s).`)
+  let okCount = 0
+  let errCount = 0
+  for (const file of files) {
+    try {
+      const raw = await fs.readFile(file, 'utf-8')
+      await pushOne(db, path.basename(file), raw)
+      okCount += 1
+    } catch (e) {
+      console.error(`[error] ${file}: ${e.message}`)
+      errCount += 1
+    }
+  }
+
+  console.log(`\nDone. ${okCount} ok, ${errCount} error(s).`)
+  if (args.dryRun) console.log('(dry-run — no Firestore writes performed)')
 }
 
 main().catch((err) => {
