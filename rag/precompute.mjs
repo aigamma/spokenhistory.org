@@ -44,9 +44,8 @@
 // entry_subject, text, source_path, timestamps where applicable), so
 // downstream UI components consuming the JSON treat them identically.
 
-import { mkdir, writeFile, readFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 import {
   REPO_ROOT,
@@ -56,8 +55,6 @@ import {
   VOYAGE_API_KEY,
   pineconeHeaders,
 } from './shared.mjs';
-
-const __filename = fileURLToPath(import.meta.url);
 
 // ---------------------------------------------------------------------------
 // Output paths
@@ -173,6 +170,11 @@ async function pMap(items, fn, concurrency = 20) {
   const results = new Array(items.length);
   let cursor = 0;
   const worker = async () => {
+    // Each worker pulls items off the shared cursor until the list
+    // is exhausted. The for-loop pattern can't model "next available"
+    // across workers; a plain loop with a guarded break is the
+    // idiomatic shape for a worker pool.
+    // eslint-disable-next-line no-constant-condition
     while (true) {
       const idx = cursor++;
       if (idx >= items.length) return;
@@ -459,7 +461,12 @@ function center(vectors) {
 
 function dot(a, b) { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; }
 function norm(v) { return Math.sqrt(dot(v, v)); }
+// scale() and sub() were drafted for a vector-arithmetic toolkit but
+// the actual PCA implementation inlines its arithmetic for performance.
+// Kept exported in case a future deflate/projection helper needs them.
+// eslint-disable-next-line no-unused-vars
 function scale(v, k) { return v.map((x) => x * k); }
+// eslint-disable-next-line no-unused-vars
 function sub(a, b) { return a.map((x, i) => x - b[i]); }
 
 // Multiply X^T (X v) where X is the data matrix (rows = samples). This
@@ -516,7 +523,11 @@ async function precomputeConstellation({ centroids, dryRun }) {
     return;
   }
   const vectors = centroids.map((c) => c.vector);
-  const { centered, mean } = center(vectors);
+  // center() returns { centered, mean }; we only use the centered data
+  // for PCA. The mean is computed internally and could be exposed via a
+  // separate accessor later if needed (e.g., to project a query vector
+  // into the same PCA space).
+  const { centered } = center(vectors);
   const u1 = powerIteration(centered);
   const deflated = deflate(centered, u1);
   const u2 = powerIteration(deflated);
