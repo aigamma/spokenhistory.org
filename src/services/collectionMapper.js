@@ -192,12 +192,16 @@ export const getActiveCollection = () => {
   // new implementation uses import.meta.env.VITE_USE_METADATA_V2 which
   // Vite replaces at build time, and the default-when-unset remains
   // true so existing builds (no env var configured) behave identically.
+  // 2026-05-26: default switched from 'metadataV2' to 'interviewSummaries'.
+  // The new civil-rights-history-project Firebase is being built fresh
+  // (the team asked Eric to purge experimental residue). Our pipeline-
+  // to-firestore push populates 'interviewIndex' + 'interviewSummaries'.
+  // metadataV2 is empty in the new project, so the old default caused
+  // PlaylistBuilder to return "No videos found" on every keyword.
+  // VITE_USE_METADATA_V2=true is the env-var opt-IN if someone
+  // re-populates metadataV2 later (e.g., to A/B against the legacy schema).
   const envValue = import.meta.env.VITE_USE_METADATA_V2;
-  // Only the explicit string 'false' opts out; any other value or
-  // omission keeps the metadataV2 default. This is conservative on
-  // purpose -- a misconfigured env var should not silently switch
-  // collections.
-  const useV2 = envValue !== 'false';
+  const useV2 = envValue === 'true';
   return useV2 ? 'metadataV2' : 'interviewSummaries';
 };
 
