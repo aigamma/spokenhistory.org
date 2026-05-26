@@ -726,11 +726,17 @@ const PlaylistBuilder = () => {
 
 
                 {/* Description.
-                    Was text-2xl with overflow-y-auto inside a flex-1
-                    that previously had a hardcoded h-[540px] parent;
-                    now the parent flexes naturally so this just sits
-                    beneath the heading on mobile. Text scales lg/2xl. */}
-                <div className="text-black text-lg sm:text-xl md:text-2xl font-normal leading-relaxed flex-1 pr-2 sm:pr-4" style={{fontFamily: 'FreightText Pro, serif'}}>
+                    A previous edit removed the hardcoded h-[540px] cap
+                    because that left a void below short chapter summaries.
+                    But removing the cap entirely lets an unusually long
+                    chapter summary push the playlist row 3+ pages down
+                    the page. The lg+ breakpoint pairs the sidebar with
+                    the 16:9 video, so cap the sidebar at a similar
+                    height there and let it scroll internally if the
+                    chapter summary is long. On mobile/tablet the
+                    description just sits beneath the heading and uses
+                    its natural height (no cap, no scroll). */}
+                <div className="text-black text-lg sm:text-xl md:text-2xl font-normal leading-relaxed flex-1 pr-2 sm:pr-4 lg:max-h-[480px] lg:overflow-y-auto" style={{fontFamily: 'FreightText Pro, serif'}}>
                   {currentVideo.summary}
                 </div>
               </>

@@ -76,9 +76,16 @@ export const mapInterviewData = (data, sourceCollection) => {
       loc_item_url: data.loc_item_url || null,
 
       // Pipeline-output fields populated by our subagent generator.
-      // pipeline-to-firestore.mjs writes `summary`, `key_themes`,
-      // `historical_significance` — surface them too.
-      summary: data.summary || '',
+      // pipeline-to-firestore.mjs writes `summary` (interview-level
+      // main summary), `key_themes`, `historical_significance`.
+      // IMPORTANT: surface the interview-level summary as `mainSummary`,
+      // NOT `summary`. playlistService.js builds each playlist segment
+      // with {...subSummary, ...interviewData}, so if we put `summary`
+      // here it would overwrite the chapter-level summary the UI
+      // actually wants to display in the sidebar. Use `mainSummary`
+      // (matching the metadataV2 branch) for any caller that needs
+      // the interview-level main summary.
+      mainSummary: data.summary || data.mainSummary || '',
       keyThemes: data.key_themes || data.keyThemes || [],
       historicalSignificance: data.historical_significance || data.historicalSignificance || '',
       entry_number: typeof data.entry_number === 'number' ? data.entry_number : null,
