@@ -15,7 +15,7 @@
 
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { loadConstellation } from '../../services/ragClient';
-import { TIER_COLORS } from './tiers';
+import { TIER_COLORS, TIER_BADGE } from './tiers';
 
 /**
  * Constellation — SVG scatter of corpus entries in 2D embedding space.
@@ -194,7 +194,11 @@ export default function Constellation({
       <div className="flex flex-wrap gap-3 mt-3 text-xs text-stone-700" aria-label="Audit fidelity legend">
         <span className="font-medium text-stone-900">Audit tier:</span>
         {Object.entries(TIER_COLORS).map(([tier, color]) => (
-          <span key={tier} className="inline-flex items-center gap-1">
+          <span
+            key={tier}
+            className="inline-flex items-center gap-1"
+            title={TIER_BADGE[tier]?.label || tier}
+          >
             <span
               className="inline-block w-3 h-3 rounded-full"
               style={{ backgroundColor: color, opacity: 0.75 }}
