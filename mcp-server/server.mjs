@@ -530,6 +530,18 @@ async function listLeaders({ limit = 200 }) {
   return all.slice(0, safeLimit)
 }
 
+function leaderDisplayName(leader) {
+  return leader.name || leader.entry_subject || leader.entrySubject || ''
+}
+
+function normalizeLeaderName(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ')
+}
+
 // ── Research-pattern tools (compare_perspectives / trace_evolution /
 //    source_for_claim) ─────────────────────────────────────────────────
 //
@@ -578,18 +590,18 @@ async function traceEvolution({ interviewee, topic }) {
     throw new Error('topic (string) is required')
   }
   const leaders = await loadLeaders()
-  const target = interviewee.toLowerCase().trim()
-  let resolved = leaders.find((l) => (l.entry_subject || '').toLowerCase() === target)
+  const target = normalizeLeaderName(interviewee)
+  let resolved = leaders.find((l) => normalizeLeaderName(leaderDisplayName(l)) === target)
   if (!resolved) {
     const partials = leaders.filter((l) =>
-      (l.entry_subject || '').toLowerCase().includes(target),
+      normalizeLeaderName(leaderDisplayName(l)).includes(target),
     )
     if (partials.length === 1) {
       resolved = partials[0]
     } else if (partials.length > 1) {
       throw new Error(
         `Multiple interviewees matched "${interviewee}": ` +
-          partials.map((p) => p.entry_subject).join(', ') +
+          partials.map((p) => leaderDisplayName(p)).join(', ') +
           '. Use a more specific name (e.g., include first + last) or call list_leaders to find the exact entry.',
       )
     } else {
@@ -604,13 +616,14 @@ async function traceEvolution({ interviewee, topic }) {
     limit: 20,
   })
   results.sort((a, b) => (a.timestampStart ?? 0) - (b.timestampStart ?? 0))
+  const resolvedName = leaderDisplayName(resolved)
   return {
     pattern: 'trace_evolution',
-    interviewee: resolved.entry_subject,
+    interviewee: resolvedName,
     entry_number: resolved.entry_number,
     topic,
     framing:
-      'These passages are from ' + resolved.entry_subject + "'s interview, arranged chronologically by timestamp. " +
+      'These passages are from ' + resolvedName + "'s interview, arranged chronologically by timestamp. " +
       "Examine how their framing or thinking about this topic evolves across the chapters of the interview. " +
       'Quote each passage with its timestamp; the audit-tier badge applies to the interview as a whole and ' +
       'should be cited once at the top of the response.',

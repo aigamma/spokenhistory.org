@@ -47,22 +47,24 @@ Five subsystems, each in its own directory:
 - **`src/`** -- React 18 + Vite frontend. Pages: Home (scroll-driven timeline), Interview Index (card grid with semantic search), Playlist Builder (cross-interview clip assembly), Topic Glossary (force-directed graph of AI-curated topics), Review Queue (admin UI for the human-review gate).
 - **`functions/`** -- Firebase Cloud Functions (Node.js). `generateEmbedding`, `vectorSearch`, `submitCannyFeedback`. The OpenAI key lives here, not in the client bundle.
 - **`Metadata Generation System/`** -- Standalone Python/Flask 7-step pipeline (blocking → labeling → TOC → chapterization → summarization → tuning → engagement). This is the hallucination hot zone.
-- **`mcp-server/`** -- Node MCP server exposing the archive via three tools (`search_transcripts`, `get_transcript`, `list_leaders`) for Claude Desktop and Claude.ai Custom Connectors. Deployable to Fly.io.
+- **`mcp-server/`** -- Node MCP server exposing the archive via six tools: three primitives (`search_transcripts`, `get_transcript`, `list_leaders`) plus three research-pattern tools (`compare_perspectives`, `trace_evolution`, `source_for_claim`). The research patterns are also registered as MCP prompts for prompt-routing clients. Deployable to Fly.io.
 - **`scripts/`** -- Admin scripts (Firestore migration, Firebase data tools, vectorization). Do not delete without explicit confirmation; some are reference material.
 
 ### Civil Rights MCP usage in Codex Desktop
 
-Codex Desktop may surface only a relevance-filtered subset of the Civil Rights MCP server in the visible tool list, even when the server advertises all tools and prompts. Do not conclude that a tool or prompt is unavailable just because only `search_transcripts` is initially visible. Use tool discovery or intent-based prompting to reach the full server surface.
+The canonical MCP surface is six tools and three prompts. Run `npm run smoke` from `mcp-server/` to verify the stdio server advertises all of them before debugging a client.
 
-The server exposes these callable tools:
-- `search_transcripts` - citation-grade semantic search across the archive. Use `dedupe_by_entry: true` for compare-perspectives requests so the response represents multiple voices.
+Primitive tools:
+- `search_transcripts` - citation-grade semantic search across the archive. Use `dedupe_by_entry: true` when manually handling compare-perspectives-style requests.
 - `get_transcript` - full ordered transcript for one `entry_number`.
 - `list_leaders` - archive roster with entry numbers, LoC URLs, provenance, and audit tiers.
 
-The server also advertises MCP prompts. Some Codex sessions may not expose those prompts as direct callable endpoints, but agents should still recognize prompt-shaped user requests and execute the equivalent workflow:
-- `compare_perspectives(topic)` -> call `search_transcripts` with a topic query and `dedupe_by_entry: true`; synthesize contrasting viewpoints with citations, timestamps, audit tier, and fidelity notes.
-- `trace_evolution(interviewee)` -> identify the entry with `list_leaders` if needed, call `get_transcript`, then analyze how the interviewee's framing changes across the interview chronology.
-- `source_for_claim(claim)` -> call `search_transcripts` for supporting and complicating passages; return structured citation blocks with LoC link, timestamp range, audit tier, transcript-fidelity note, and a brief relevance explanation.
+Research-pattern tools:
+- `compare_perspectives({ topic })` - multiple interviewee voices on one topic, deduped by entry, with citation framing.
+- `trace_evolution({ interviewee, topic })` - resolves the interviewee name, searches within that interview, and returns chronologically ordered passages.
+- `source_for_claim({ claim })` - finds passages that support, complicate, or contradict a claim, preserving citation metadata.
+
+The same three research patterns are also registered as MCP prompts for clients that route prompts. Codex Desktop and similar tool-only clients should call the research-pattern tools directly after restarting/reloading the MCP server. If an already-running client session still exposes only the primitive tools, fall back to the equivalent primitive workflow above rather than telling the user the pattern is unavailable.
 
 ## The Smithsonian-grade publication gate (new in May 2026 overhaul)
 
