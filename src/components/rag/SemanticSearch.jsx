@@ -186,7 +186,13 @@ export default function SemanticSearch({
       </ol>
 
       {!isLoading && !error && results.length === 0 && query.trim() && (
-        <p className="text-stone-500 text-sm">No matches. Try a different query.</p>
+        <p className="text-stone-500 text-sm">
+          No matches in the archive for that query.{' '}
+          {entryNumber != null
+            ? 'Try removing the entry filter, or '
+            : 'Try '}
+          rephrasing, or click one of the suggested-query chips above.
+        </p>
       )}
     </section>
   );
