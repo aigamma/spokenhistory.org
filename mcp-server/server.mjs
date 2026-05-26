@@ -731,8 +731,9 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `Critical reporting requirements:\n` +
               `- If multiple passages bear on the claim, present ALL of them — the polyphonic record is the point of an oral history archive.\n` +
               `- Do NOT synthesize a single answer. Let the primary sources speak.\n` +
-              `- If entryProvenance is "ingestion-only" or uncertaintyTier is "medium"/"high", explicitly flag that the ` +
-              `transcript fidelity is not fully audited and recommend the researcher verify against the LoC audio.\n` +
+              `- If uncertaintyTier is anything other than "low" (i.e., "medium", "publication-block", "not-auditable", or "ingestion-only"), ` +
+              `explicitly flag that the transcript fidelity is not fully audited and recommend the researcher verify against the LoC audio. ` +
+              `The fidelityNote field carries the specific per-tier transparency text — pass it through to the user verbatim.\n` +
               `- If the search returns no results, say so directly. Do not paraphrase from your training data — this corpus is the source of truth.\n\n` +
               `A Chicago-Manual-of-Style citation template (the suggestedCitation field follows this pattern):\n` +
               `   [Interviewee], interview, Civil Rights History Project, American Folklife Center, Library of Congress ` +
