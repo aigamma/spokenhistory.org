@@ -116,6 +116,29 @@ If a new field is added to the metadata schema at ingest time, propagate
 it through all three. The MCP server's USAGE_GUIDE.md also documents
 this shape — keep it accurate.
 
+### Tier-color palette is also duplicated
+
+The same 5-tier vocabulary (`low` / `medium` / `publication-block` /
+`not-auditable` / `ingestion-only`) maps to colors in four UI surfaces.
+**Add a new tier value? Update all four:**
+
+1. `src/components/rag/CitationCard.jsx::TIER_BADGE` — Tailwind classes
+   for the citation badge (bg-50, text-800, border-200, icon).
+2. `src/components/rag/Constellation.jsx::TIER_COLORS` — raw hex colors
+   for the SVG circle fills (darker 600/700-level for cream-background
+   visibility).
+3. `src/pages/RagExplore.jsx` corpus-stats header pills — Tailwind
+   classes, same palette as `TIER_BADGE`.
+4. `fidelityNoteFor()` — duplicated in `mcp-server/server.mjs`,
+   `netlify/functions/retrieve.mjs`, AND `src/components/rag/RelatedPassages.jsx`.
+   Same 5 tier values get human-readable note text.
+
+A future refactor could extract a single `src/components/rag/tiers.js`
+exporting `{ vocabulary, palette, fidelityNote }` and import it across
+the React side; the MCP server and Netlify function would still need
+their inline copies (Docker / Function isolation), but at least the
+React side would be DRY. For now: 4 files, ~15 lines each, documented.
+
 ## Per-feature interfaces
 
 ### 1. SemanticSearch + QuoteFinder (live; Function-backed)
