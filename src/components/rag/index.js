@@ -15,3 +15,13 @@ export { default as SemanticSearch } from './SemanticSearch';
 export { default as QuoteFinder } from './QuoteFinder';
 export { default as RelatedPassages } from './RelatedPassages';
 export { default as Constellation } from './Constellation';
+
+// Audit-tier vocabulary, palette, and fidelity-note helpers. Importers
+// that build their own tier-aware UIs (custom badges, filters, legends)
+// should pull from here rather than reimplementing the maps.
+export {
+  TIER_VOCABULARY,
+  TIER_BADGE,
+  TIER_COLORS,
+  fidelityNoteFor,
+} from './tiers';
