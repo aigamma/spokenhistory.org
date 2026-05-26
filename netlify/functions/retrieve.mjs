@@ -288,7 +288,20 @@ export default async function handler(req) {
   const topN = clamp(body?.topN, 1, MAX_TOP_N, DEFAULT_TOP_N);
   const topK = clamp(body?.topK, topN, MAX_TOP_N * 4, Math.max(topN * 3, DEFAULT_TOP_K));
   const namespace = typeof body?.namespace === 'string' ? body.namespace : '';
-  const filter = isPlainObject(body?.filter) ? body.filter : null;
+
+  // Filter resolution: prefer a fully-specified Pinecone filter object
+  // when the caller knows that shape; otherwise accept the ergonomic
+  // `entry_number: N` top-level shortcut (mirrors the MCP server's
+  // search_transcripts tool signature) and synthesize the filter.
+  let filter = null;
+  if (isPlainObject(body?.filter)) {
+    filter = body.filter;
+  } else if (body?.entry_number != null) {
+    const n = Number(body.entry_number);
+    if (Number.isFinite(n) && n >= 1) {
+      filter = { entry_number: { $eq: Math.floor(n) } };
+    }
+  }
 
   try {
     const queryVec = await embedQuery(query, env);
