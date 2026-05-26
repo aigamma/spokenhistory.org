@@ -1126,7 +1126,7 @@
       "whisper": "Trash Brownlee",
       "candidate_correction": "Trish Brownlee",
       "confidence": "low",
-      "notes": "\"pictures from that summer, from those marches, but Benjamin Van Clark, and Trash Brownlee, and Joseo Williams\"; canonical Savannah civil-rights movement member; identification uncertain \u2014 possibly Trish/Patricia Brownlee"
+      "notes": "\"pictures from that summer, from those marches, but Benjamin Van Clark, and Trash Brownlee, and Joseo Williams\"; canonical Savannah civil-rights movement member; identification uncertain — possibly Trish/Patricia Brownlee"
     },
     {
       "row_id": "105.P2.23",
@@ -1140,7 +1140,7 @@
       "whisper": "Fred Tuttle",
       "candidate_correction": "Fred Tuttle",
       "confidence": "speaker-originating",
-      "notes": "National Aeronautics and Space Administration (NASA) Education Program Director \u2014 speaker's father; significant for Tuttle's federal-government-affiliated \"good white kid in jail\" protection during 1963 Savannah custody"
+      "notes": "National Aeronautics and Space Administration (NASA) Education Program Director — speaker's father; significant for Tuttle's federal-government-affiliated \"good white kid in jail\" protection during 1963 Savannah custody"
     },
     {
       "row_id": "105.P2.29",
@@ -1161,7 +1161,7 @@
       "whisper": "Anna's a port town long shore union, green shops and steward",
       "candidate_correction": "International Longshoremen's Association + \"greenshops\" (longshoremen jargon) + steward",
       "confidence": "medium",
-      "notes": "\"members of Anna's a port town. So long shore union, green shops and steward\"; canonical Savannah port-city longshoremen-union infrastructure; \"Anna's a port town\" \u2014 Whisper-mangled \"an a port town\" or \"Annas's-and-port-town\" or possibly \"Henry's a port town\" \u2014 Savannah is the canonical Black port-longshoremen city"
+      "notes": "\"members of Anna's a port town. So long shore union, green shops and steward\"; canonical Savannah port-city longshoremen-union infrastructure; \"Anna's a port town\" — Whisper-mangled \"an a port town\" or \"Annas's-and-port-town\" or possibly \"Henry's a port town\" — Savannah is the canonical Black port-longshoremen city"
     },
     {
       "row_id": "105.P2.40",
@@ -1187,7 +1187,7 @@
     {
       "row_id": "105.P2.47",
       "whisper": "Rebecca, I, passed away (first wife)",
-      "candidate_correction": "(uncertain \u2014 Tuttle's first wife, met during 1968 RFK campaign)",
+      "candidate_correction": "(uncertain — Tuttle's first wife, met during 1968 RFK campaign)",
       "confidence": "speaker-originating",
       "notes": "\"She lost a cancer some years ago\"; the first wife Tuttle met during the RFK 1968 campaign"
     },
@@ -1203,7 +1203,7 @@
       "whisper": "NAWA (LAUSD context)",
       "candidate_correction": "(likely) LAUSD or \"Northwest Angeles\"",
       "confidence": "low",
-      "notes": "\"to a NAWA campaign\"; identification uncertain \u2014 possibly Whisper rendering of an LAUSD subdistrict name"
+      "notes": "\"to a NAWA campaign\"; identification uncertain — possibly Whisper rendering of an LAUSD subdistrict name"
     },
     {
       "row_id": "105.P2.53",
@@ -1229,7 +1229,7 @@
     {
       "row_id": "105.P2.70",
       "whisper": "Joe Iyer / Joel Iyer (revised from Pass 1 #105.49)",
-      "candidate_correction": "(uncertain \u2014 possibly Joe Iverson)",
+      "candidate_correction": "(uncertain — possibly Joe Iverson)",
       "confidence": "low",
       "notes": "Pass 1 #105.49 covered; identification still uncertain; \"Joe Iyer who was 19 or so a student at Haberford College\""
     },
@@ -1252,7 +1252,7 @@
       "whisper": "bridge boys",
       "candidate_correction": "bridge boys",
       "confidence": "speaker-originating",
-      "notes": "\"They wore a rather distinctive outfit. They're in jail\"; Savannah-jail-specific term for jail trustees with distinctive uniforms \u2014 the canonical Filipino-American \"Popeye\" + others who protected Tuttle"
+      "notes": "\"They wore a rather distinctive outfit. They're in jail\"; Savannah-jail-specific term for jail trustees with distinctive uniforms — the canonical Filipino-American \"Popeye\" + others who protected Tuttle"
     },
     {
       "row_id": "105.P2.90",
@@ -1266,7 +1266,7 @@
       "whisper": "Caillers (re John Poppy article)",
       "candidate_correction": "(likely) Collier's magazine",
       "confidence": "medium",
-      "notes": "Raw line 1383: \"an article by John Poppy, who had written for either Caillers or Look about the Student Nonviolent Coordinating Committee\". Pass 1 #105.26 confirmed John Poppy as canonical *Look* journalist but did not flag the \"Caillers\" Whisper rendering. Likely Whisper rendering of \"Collier's\" (the canonical pre-1957 photo-magazine that competed with Look + Life). However, *Collier's* ceased publication in January 1957, predating SNCC by several years \u2014 so Tuttle's actual phrase might refer to a different magazine (possibly *Liberation*, *Ramparts*, or *The Saturday Review*). Flag for adversarial review."
+      "notes": "Raw line 1383: \"an article by John Poppy, who had written for either Caillers or Look about the Student Nonviolent Coordinating Committee\". Pass 1 #105.26 confirmed John Poppy as canonical *Look* journalist but did not flag the \"Caillers\" Whisper rendering. Likely Whisper rendering of \"Collier's\" (the canonical pre-1957 photo-magazine that competed with Look + Life). However, *Collier's* ceased publication in January 1957, predating SNCC by several years — so Tuttle's actual phrase might refer to a different magazine (possibly *Liberation*, *Ramparts*, or *The Saturday Review*). Flag for adversarial review."
     },
     {
       "row_id": "105.P4.6",
@@ -1381,7 +1381,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.367,
+    "score": 0.3,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1389,9 +1389,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2689,
       "adversarial_flag_density": 0.0756,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.067
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.367,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 47,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.067,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 9,
   "cross_contamination_items_resolved": 0,

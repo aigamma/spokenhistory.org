@@ -373,7 +373,7 @@
       "whisper": "Curtis Jones",
       "candidate_correction": "Pertus Jones",
       "confidence": "speaker-originating",
-      "notes": "\"mom, Curtis Jones\"; James's mother's birth name, known as \"Vic\"; Whisper rendered \"Pertus\" as \"Curtis\" \u2014 same person as 57.P1.4 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"mom, Curtis Jones\"; James's mother's birth name, known as \"Vic\"; Whisper rendered \"Pertus\" as \"Curtis\" — same person as 57.P1.4 // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "57.P2.4",
@@ -436,14 +436,14 @@
       "whisper": "Joanne (the Pine Bluff girl arrestee)",
       "candidate_correction": "Joanne",
       "confidence": "speaker-originating",
-      "notes": "Same as 57.P1.12; \"Joanne State, the girl Joanne\u2026 Joanne is a professor at Pinebluff at college\" \u2014 possibly Joanna Edwards or similar; spelling not yet verified"
+      "notes": "Same as 57.P1.12; \"Joanne State, the girl Joanne… Joanne is a professor at Pinebluff at college\" — possibly Joanna Edwards or similar; spelling not yet verified"
     },
     {
       "row_id": "57.P2.17",
       "whisper": "Nash (Pine Bluff arrestee, not Diane Nash)",
       "candidate_correction": "Nash",
       "confidence": "speaker-originating",
-      "notes": "A different Nash than Diane Nash \u2014 Pine Bluff AM&N student arrested in Feb 1963 sit-ins; spelling not verified"
+      "notes": "A different Nash than Diane Nash — Pine Bluff AM&N student arrested in Feb 1963 sit-ins; spelling not verified"
     },
     {
       "row_id": "57.P2.22",
@@ -518,14 +518,14 @@
     {
       "row_id": "57.P2.41",
       "whisper": "a guy who became a federal judge appointed by Bill Clinton (the small Black Pine Bluff attorney)",
-      "candidate_correction": "(uncertain \u2014 possibly Lavenski \"Vince\" Smith or George Howard Jr.)",
+      "candidate_correction": "(uncertain — possibly Lavenski \"Vince\" Smith or George Howard Jr.)",
       "confidence": "low",
       "notes": "\"I think maybe Bill Clinton, somebody appointed him to be a, a Jeff Federal judge\"; canonical Black Arkansas federal judge appointed by Clinton; George Howard Jr. (1978-2007 ED Ark; first Black federal judge in Arkansas; but appointed by Carter not Clinton) or Lavenski Smith (8th Circuit; Bush-appointed); attorney name not yet verified"
     },
     {
       "row_id": "57.P2.42",
       "whisper": "dearer and goo, this dearer / Mrs. Dearer",
-      "candidate_correction": "(East Arkansas movement woman; \"young man, when you go into a neighborhood\u2026\")",
+      "candidate_correction": "(East Arkansas movement woman; \"young man, when you go into a neighborhood…\")",
       "confidence": "low",
       "notes": "Speaker-originating figure who taught Jones the \"find the barbershop, find the local matriarch\" canonical organizing technique; spelling not verified"
     },
@@ -539,13 +539,13 @@
     {
       "row_id": "57.P2.45",
       "whisper": "Blackheap United / Black United (post-SNCC Arkansas formation)",
-      "candidate_correction": "Black United Youth (BUY) \u2014 Little Rock 1968+",
+      "candidate_correction": "Black United Youth (BUY) — Little Rock 1968+",
       "confidence": "low",
       "notes": "Canonical Little Rock AR post-SNCC Black Power youth formation; spelling not yet verified"
     },
     {
       "row_id": "57.P2.47",
-      "whisper": "the issue of (was your wife) \u2014 May 16, 1964 wedding",
+      "whisper": "the issue of (was your wife) — May 16, 1964 wedding",
       "candidate_correction": "(Jones's wife was a fellow SNCC organizer; married May 16, 1964)",
       "confidence": "speaker-originating",
       "notes": "Speaker's marriage to a fellow SNCC organizer; her name not given in transcript"
@@ -569,21 +569,21 @@
       "whisper": "Purdus Jones",
       "candidate_correction": "Verdis \"Vic\" Jones",
       "confidence": "medium",
-      "notes": "Lines 275, 279: \"everybody called my mother Vic, matter of fact when she passed away, and they had the name Purdus Jones.\" Raw consistently uses \"Purdus\" not \"Pertus\"; \"Verdis\" is a documented southern Black female given name and the consistent \"Vic\" nickname fits. Pass 1/2 mistakenly transcribed as \"Pertus\" \u2014 the actual Whisper output is \"Purdus.\" Flag for adversarial."
+      "notes": "Lines 275, 279: \"everybody called my mother Vic, matter of fact when she passed away, and they had the name Purdus Jones.\" Raw consistently uses \"Purdus\" not \"Pertus\"; \"Verdis\" is a documented southern Black female given name and the consistent \"Vic\" nickname fits. Pass 1/2 mistakenly transcribed as \"Pertus\" — the actual Whisper output is \"Purdus.\" Flag for adversarial."
     },
     {
       "row_id": "57.P4.4",
       "whisper": "satisfying to Brown",
       "candidate_correction": "Bobby Brown",
       "confidence": "medium",
-      "notes": "Lines 6499, 6523: Jones discusses Bobby Brown and Stokely as a PAIR who were \"way back in the early days of Snick\" and both \"wanted to be the top gun.\" This SNCC-leadership-aspirant pairing strongly suggests **H. Rap Brown** (Jamil Al-Amin) \u2014 who succeeded Carmichael as SNCC chairman in 1967 \u2014 not a local Arkansas Black-Power figure. Promotes the previously-flagged \"Bobby Brown\" from \"Little Rock local figure\" interpretation to \"H. Rap Brown\" interpretation. Demote the speaker-originating \"Robert Brown\" interpretation; promote H. Rap Brown candidate. Resolution still has residual uncertainty (Jones could be conflating two figures), so retain adversarial flag at medium."
+      "notes": "Lines 6499, 6523: Jones discusses Bobby Brown and Stokely as a PAIR who were \"way back in the early days of Snick\" and both \"wanted to be the top gun.\" This SNCC-leadership-aspirant pairing strongly suggests **H. Rap Brown** (Jamil Al-Amin) — who succeeded Carmichael as SNCC chairman in 1967 — not a local Arkansas Black-Power figure. Promotes the previously-flagged \"Bobby Brown\" from \"Little Rock local figure\" interpretation to \"H. Rap Brown\" interpretation. Demote the speaker-originating \"Robert Brown\" interpretation; promote H. Rap Brown candidate. Resolution still has residual uncertainty (Jones could be conflating two figures), so retain adversarial flag at medium."
     },
     {
       "row_id": "57.P4.5",
       "whisper": "He's an attorney in Leroy / health clinic in Mariana / Bill Clinton appointed him on a stand as a federal judge",
       "candidate_correction": "Olly Neal Jr",
       "confidence": "medium",
-      "notes": "Lines 5067, 5083, 5087: SEPARATE Clinton-appointment reference from the earlier (line 2955) Pine Bluff attorney. This second figure ran a Marianna AR health clinic and was an attorney in \"Leroy\" (likely Lee County / Leland AR). Strong candidate: **Olly Neal Jr.** (1941\u2013 ), Marianna AR civil-rights attorney, founder of the Lee County Cooperative Clinic (the canonical \"Mariana health clinic\"), later Arkansas Court of Appeals judge. However: Neal was a *state* Court of Appeals judge (Clinton-appointed, 1996), not a *federal* judge. Jones's \"federal\" claim is either a speaker-memory error or refers to a different Marianna figure. Flag for adversarial."
+      "notes": "Lines 5067, 5083, 5087: SEPARATE Clinton-appointment reference from the earlier (line 2955) Pine Bluff attorney. This second figure ran a Marianna AR health clinic and was an attorney in \"Leroy\" (likely Lee County / Leland AR). Strong candidate: **Olly Neal Jr.** (1941– ), Marianna AR civil-rights attorney, founder of the Lee County Cooperative Clinic (the canonical \"Mariana health clinic\"), later Arkansas Court of Appeals judge. However: Neal was a *state* Court of Appeals judge (Clinton-appointed, 1996), not a *federal* judge. Jones's \"federal\" claim is either a speaker-memory error or refers to a different Marianna figure. Flag for adversarial."
     },
     {
       "row_id": "57.P4.6",
@@ -604,14 +604,14 @@
       "whisper": "dearer and goo, this dearer",
       "candidate_correction": "Mrs. Dear",
       "confidence": "low",
-      "notes": "Line 4783: \"later they was dearer and goo, this dearer\" \u2014 the doubled \"dearer\u2026this dearer\" rendering suggests the figure's surname is \"Dear\" or \"Deere\" or \"Deere-Coe\" (paired with another figure named \"Goo\" / \"Coe\" / \"Gould\"). Pass 3 flagged this for adversarial; Pass 4 raw spot-check confirms the doubled-name pattern. Retain adversarial flag."
+      "notes": "Line 4783: \"later they was dearer and goo, this dearer\" — the doubled \"dearer…this dearer\" rendering suggests the figure's surname is \"Dear\" or \"Deere\" or \"Deere-Coe\" (paired with another figure named \"Goo\" / \"Coe\" / \"Gould\"). Pass 3 flagged this for adversarial; Pass 4 raw spot-check confirms the doubled-name pattern. Retain adversarial flag."
     },
     {
       "row_id": "57.P4.9",
       "whisper": "Johnson Man came out of it",
       "candidate_correction": "(the canonical figure Johnson out of Arkansas City AR Black school district)",
       "confidence": "low",
-      "notes": "Line 1059: \"Johnson Man came out of it\" referring to the second of Arkansas's two all-Black school districts. Speaker is naming a notable Arkansas City alum. Possible candidates: James Weldon Johnson (no \u2014 wrong era), or a state-level figure. Flag for adversarial \u2014 Arkansas City AR all-Black school district alumni roster cross-reference needed."
+      "notes": "Line 1059: \"Johnson Man came out of it\" referring to the second of Arkansas's two all-Black school districts. Speaker is naming a notable Arkansas City alum. Possible candidates: James Weldon Johnson (no — wrong era), or a state-level figure. Flag for adversarial — Arkansas City AR all-Black school district alumni roster cross-reference needed."
     }
   ],
   "skipped_rows": [
@@ -664,7 +664,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.7646,
+    "score": 0.7356,
     "confidence_tier": "not-auditable",
     "components": {
       "base": 0.0,
@@ -672,9 +672,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.6377,
       "adversarial_flag_density": 0.1159,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.029
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.7646,
+    "previous_tier_v8": "not-auditable",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 9,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.029,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 0,

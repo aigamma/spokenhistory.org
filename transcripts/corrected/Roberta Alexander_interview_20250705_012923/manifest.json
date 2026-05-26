@@ -163,8 +163,8 @@
     },
     {
       "row_id": "110.26",
-      "whisper": "facultad de letras, de filosof\u00eda",
-      "correction": "Facultad de Filosof\u00eda y Letras",
+      "whisper": "facultad de letras, de filosofía",
+      "correction": "Facultad de Filosofía y Letras",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -224,7 +224,7 @@
     {
       "row_id": "110.32",
       "whisper": "Hotel Jacques Sank",
-      "correction": "H\u00f4tel George V",
+      "correction": "Hôtel George V",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -476,7 +476,7 @@
     {
       "row_id": "110.P2.36",
       "whisper": "Third College",
-      "correction": "Third College (UCSD) \u2192 Thurgood Marshall College",
+      "correction": "Third College (UCSD) → Thurgood Marshall College",
       "confidence": "correct",
       "occurrences": 33,
       "file_paths": [
@@ -738,7 +738,7 @@
       "whisper": "a cross street from the City Hall",
       "candidate_correction": "(likely) across the street from LA City Hall",
       "confidence": "speaker-originating",
-      "notes": "Speaker's father's final shoe shop, across from LA City Hall \u2014 canonical site of the 1957-ish shooting-incident when Franklin's name appeared in LA Times after HUAC subpoena // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Speaker's father's final shoe shop, across from LA City Hall — canonical site of the 1957-ish shooting-incident when Franklin's name appeared in LA Times after HUAC subpoena // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "110.P2.12",
@@ -752,7 +752,7 @@
       "whisper": "1842 / 1942 (grandfather lifespan)",
       "candidate_correction": "1842",
       "confidence": "speaker-originating",
-      "notes": "Canonical multi-generational family origin: speaker's grandfather born 1842 (in slavery) died 1942 \u2014 the 100-year-lifespan-includes-Pony-Express + speak-Winnebago/Omaha/Sioux narrative"
+      "notes": "Canonical multi-generational family origin: speaker's grandfather born 1842 (in slavery) died 1942 — the 100-year-lifespan-includes-Pony-Express + speak-Winnebago/Omaha/Sioux narrative"
     },
     {
       "row_id": "110.P2.17",
@@ -766,7 +766,7 @@
       "whisper": "the laborers' fraternal order / brown arm, a white arm, and a black arm",
       "candidate_correction": "Laborers' Fraternal Order",
       "confidence": "speaker-originating",
-      "notes": "Speaker's father Franklin Alexander founded \"Laborers' Fraternal Order\" in LA \u2014 three-arm logo symbolizing Brown/White/Black solidarity, with baseball team; canonical-new addition to corpus for Civil-Rights-Congress / Communist-organizing-in-Black-community history"
+      "notes": "Speaker's father Franklin Alexander founded \"Laborers' Fraternal Order\" in LA — three-arm logo symbolizing Brown/White/Black solidarity, with baseball team; canonical-new addition to corpus for Civil-Rights-Congress / Communist-organizing-in-Black-community history"
     },
     {
       "row_id": "110.P2.44",
@@ -869,7 +869,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3014,
+    "score": 0.2674,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -877,9 +877,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2192,
       "adversarial_flag_density": 0.0822,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.034
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3014,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 14,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.034,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 0,

@@ -368,7 +368,7 @@
     {
       "row_id": "66.43",
       "whisper": "the easy guest in the North",
-      "correction": "(likely) L.H. (Luther) Foster \u2014 Tuskegee president",
+      "correction": "(likely) L.H. (Luther) Foster — Tuskegee president",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -452,7 +452,7 @@
     {
       "row_id": "66.P2.1",
       "whisper": "the four of us. Abernathy, the other words say and myself",
-      "correction": "the four of us \u2014 Abernathy, Shuttlesworth, Seay, and myself",
+      "correction": "the four of us — Abernathy, Shuttlesworth, Seay, and myself",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -547,7 +547,7 @@
     },
     {
       "row_id": "66.P3.3",
-      "whisper": "\"Polar Commodation Act\" \u2192 1964 Civil Rights Act / Public Accommodations Act",
+      "whisper": "\"Polar Commodation Act\" → 1964 Civil Rights Act / Public Accommodations Act",
       "correction": "Civil Rights Act of 1964",
       "confidence": "high",
       "occurrences": 3,
@@ -706,7 +706,7 @@
       "whisper": "S. M. McCree",
       "candidate_correction": "Rev. S.S. Seay (likely) or S.M. McCree",
       "confidence": "low",
-      "notes": "\"Reverend S. M. McCree, who was passed by my side in Baptist Church in Mobile\"; possibly Rev. S.S. (Solomon Snowden) Seay Sr., though Seay was Methodist not Baptist \u2014 uncertainty remains"
+      "notes": "\"Reverend S. M. McCree, who was passed by my side in Baptist Church in Mobile\"; possibly Rev. S.S. (Solomon Snowden) Seay Sr., though Seay was Methodist not Baptist — uncertainty remains"
     },
     {
       "row_id": "66.30",
@@ -741,33 +741,33 @@
       "whisper": "so he named me, the easy guest in the North",
       "candidate_correction": "so he named me, [along with] the highest-[ranking] dignitary, the President of Tuskegee",
       "confidence": "medium",
-      "notes": "Same passage as #66.P2.4 \u2014 \"easy guest\" is Whisper artifact; speaker likely said \"eldest\" or \"highest\" or \"ablest\""
+      "notes": "Same passage as #66.P2.4 — \"easy guest\" is Whisper artifact; speaker likely said \"eldest\" or \"highest\" or \"ablest\""
     },
     {
       "row_id": "66.P2.15",
       "whisper": "Mickle / S. M. McCree",
-      "candidate_correction": "(uncertain \u2014 possibly Rev. R.W. Gilliard or Rev. C.S. Cumby)",
+      "candidate_correction": "(uncertain — possibly Rev. R.W. Gilliard or Rev. C.S. Cumby)",
       "confidence": "low",
-      "notes": "\"Reverend S. M. McCree, who was passed by my side in Baptist Church in Mobile\"; Pass 1 noted uncertainty. The Mobile Baptist clergy cohort 1952\u201360 includes Rev. R.W. Gilliard, Rev. C.S. Cumby, Rev. J.C. Stocking, and Rev. Albert Foley SJ \u2014 none of these phonetically match \"McCree\" cleanly. Speaker recall is the most likely explanation; Pass 2 confirms the uncertainty rather than resolving"
+      "notes": "\"Reverend S. M. McCree, who was passed by my side in Baptist Church in Mobile\"; Pass 1 noted uncertainty. The Mobile Baptist clergy cohort 1952–60 includes Rev. R.W. Gilliard, Rev. C.S. Cumby, Rev. J.C. Stocking, and Rev. Albert Foley SJ — none of these phonetically match \"McCree\" cleanly. Speaker recall is the most likely explanation; Pass 2 confirms the uncertainty rather than resolving"
     },
     {
       "row_id": "66.P2.22",
       "whisper": "first phase, three embers the man",
       "candidate_correction": "First Federal Reserve",
       "confidence": "low",
-      "notes": "\"We gave it back to the organization which had furnished the money. And the first phase, three embers the man who was paid it\"; Whisper artifact unclear, likely about who originally fronted the $8900 to repurchase Lowery's confiscated car at the *Sullivan* auction \u2014 possibly \"the first phase, three numbers, the man who was paid it\" or \"the first base \u2014 the man who was paid it\" \u2014 speaker disfluency // [PASS-6: unresolved-escalated-to-ensemble"
+      "notes": "\"We gave it back to the organization which had furnished the money. And the first phase, three embers the man who was paid it\"; Whisper artifact unclear, likely about who originally fronted the $8900 to repurchase Lowery's confiscated car at the *Sullivan* auction — possibly \"the first phase, three numbers, the man who was paid it\" or \"the first base — the man who was paid it\" — speaker disfluency // [PASS-6: unresolved-escalated-to-ensemble"
     },
     {
       "row_id": "66.P4.11",
       "whisper": "for a blank",
       "candidate_correction": "point blank",
       "confidence": "medium",
-      "notes": ".txt: \"some of the ministers that worked with me used to tell me **for a blank**. I'm not going on this much with you because I'm not sure I can be nonviolence.\" Likely \"point blank\" (Lowery's idiom for being told flatly) \u2014 Whisper-compression of two words."
+      "notes": ".txt: \"some of the ministers that worked with me used to tell me **for a blank**. I'm not going on this much with you because I'm not sure I can be nonviolence.\" Likely \"point blank\" (Lowery's idiom for being told flatly) — Whisper-compression of two words."
     },
     {
       "row_id": "66.P4.14",
       "whisper": "first phase, three embers the man",
-      "candidate_correction": "first base \u2014 the man",
+      "candidate_correction": "first base — the man",
       "confidence": "low",
       "notes": "Pass 2 P2.22 / Pass 3 noted; Pass 4 raw spot-check confirms speaker disfluency. Lowery's account of returning the *Sullivan*-auction money to the organization (likely Gandhi Society for Human Rights or the Committee to Defend Martin Luther King). Cannot resolve from text alone; adversarial flag retained."
     },
@@ -776,7 +776,7 @@
       "whisper": "DCs (written DCs)",
       "candidate_correction": "docs",
       "confidence": "medium",
-      "notes": ".txt: \"Byron came down to Montgomery several times and met with us in pulling together the **written DCs** that formed the bases for SCLC.\" Lowery describing Rustin drafting SCLC founding documents. \"DCs\" is likely Whisper-rendering of \"docs\" \u2014 speaker may have said \"documents.\" Low-stakes but worth recording."
+      "notes": ".txt: \"Byron came down to Montgomery several times and met with us in pulling together the **written DCs** that formed the bases for SCLC.\" Lowery describing Rustin drafting SCLC founding documents. \"DCs\" is likely Whisper-rendering of \"docs\" — speaker may have said \"documents.\" Low-stakes but worth recording."
     }
   ],
   "skipped_rows": [],
@@ -819,7 +819,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.6319,
+    "score": 0.6029,
     "confidence_tier": "publication-block",
     "components": {
       "base": 0.0,
@@ -827,9 +827,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1594,
       "adversarial_flag_density": 0.0725,
-      "cross_contamination_penalty": 0.4
+      "cross_contamination_penalty": 0.4,
+      "loc_verification_credit": -0.029
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.6319,
+    "previous_tier_v8": "publication-block",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 9,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.029,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 4,

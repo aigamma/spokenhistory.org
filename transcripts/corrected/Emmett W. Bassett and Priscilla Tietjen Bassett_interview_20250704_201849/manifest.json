@@ -308,7 +308,7 @@
     {
       "row_id": "38.34",
       "whisper": "Ocean Hill Brownsville",
-      "correction": "Ocean Hill\u2013Brownsville",
+      "correction": "Ocean Hill–Brownsville",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -668,42 +668,42 @@
       "whisper": "Uncle Willie Travis at the Alamo",
       "candidate_correction": "William Barret Travis",
       "confidence": "speaker-originating",
-      "notes": "\"He went out there and he was killed there. But Uncle Willie, I'm talking about somebody who looked like me\u2026 Travis. He was killed at the Alamo\"; speaker's family legend that Travis (the canonical Alamo commander) was actually Black; preserved as speaker-originating"
+      "notes": "\"He went out there and he was killed there. But Uncle Willie, I'm talking about somebody who looked like me… Travis. He was killed at the Alamo\"; speaker's family legend that Travis (the canonical Alamo commander) was actually Black; preserved as speaker-originating"
     },
     {
       "row_id": "38.36",
       "whisper": "Schaffield Falls / Schaffield farm",
       "candidate_correction": "Sheffield Farms",
       "confidence": "medium",
-      "notes": "\"I worked with Schaffield Falls. That was a big dick. No. This was after Columbus\"; possibly Sheffield Farms Milk Company (the major NYC-area dairy producer, c. 1880\u20131960s)"
+      "notes": "\"I worked with Schaffield Falls. That was a big dick. No. This was after Columbus\"; possibly Sheffield Farms Milk Company (the major NYC-area dairy producer, c. 1880–1960s)"
     },
     {
       "row_id": "38.37",
       "whisper": "Deatrous food",
-      "candidate_correction": "(uncertain \u2014 possibly \"Dairy Cooperatives\" or specific company)",
+      "candidate_correction": "(uncertain — possibly \"Dairy Cooperatives\" or specific company)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"Deatrous food. Yeah\u2026 he would give anything to Jaime\"; speaker's recollection of the NYC dairy-industry company that \"couldn't hire a Black PhD because the whole top would go off of that building\" \u2014 canonical company name not yet verified"
+      "notes": "\"Deatrous food. Yeah… he would give anything to Jaime\"; speaker's recollection of the NYC dairy-industry company that \"couldn't hire a Black PhD because the whole top would go off of that building\" — canonical company name not yet verified"
     },
     {
       "row_id": "38.38",
       "whisper": "Iowa House",
       "candidate_correction": "Iowa House",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"they were concerned about some of your friends, that it come to Iowa House\"; speaker's reference to an FBI inquiry locus \u2014 canonical identification not yet verified"
+      "notes": "\"they were concerned about some of your friends, that it come to Iowa House\"; speaker's reference to an FBI inquiry locus — canonical identification not yet verified"
     },
     {
       "row_id": "38.P2.5",
       "whisper": "Norman Thomas",
       "candidate_correction": "Norman Thomas",
       "confidence": "speaker-originating",
-      "notes": "\"Bayard Rustin and Stanley Levison\" co-founders of *In Friendship*; Norman Thomas (1884\u20131968) was the American Socialist Party leader; one of the foundational In Friendship 1955 founders along with Rustin / Levison / Baker; cross-reference for `civil_rights_facts.json` candidate entry"
+      "notes": "\"Bayard Rustin and Stanley Levison\" co-founders of *In Friendship*; Norman Thomas (1884–1968) was the American Socialist Party leader; one of the foundational In Friendship 1955 founders along with Rustin / Levison / Baker; cross-reference for `civil_rights_facts.json` candidate entry"
     },
     {
       "row_id": "38.P2.11",
       "whisper": "Bramsew in Brooklyn",
       "candidate_correction": "(uncertain Brooklyn neighborhood; possibly Brownsville)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"Well, we were, we were living in Bramsew in Brooklyn\"; uncertain Whisper rendering of a Brooklyn neighborhood name, likely Brownsville (where the Bassetts later did Ocean Hill\u2013Brownsville organizing)"
+      "notes": "\"Well, we were, we were living in Bramsew in Brooklyn\"; uncertain Whisper rendering of a Brooklyn neighborhood name, likely Brownsville (where the Bassetts later did Ocean Hill–Brownsville organizing)"
     },
     {
       "row_id": "38.P2.14",
@@ -724,49 +724,49 @@
       "whisper": "the Harlem, uh, Army building / In the Army? Yes",
       "candidate_correction": "the Audubon Ballroom",
       "confidence": "medium",
-      "notes": "\"There are speeches in Harlem\u2026 But it looked like someone went in the Harlem, uh, Army building. Yeah. In the Army? Yes. In the Army? Yes. Yeah, Army.\" Canonical Audubon Ballroom at 165th Street and Broadway, Washington Heights \u2014 Malcolm X's Organization of Afro-American Unity headquarters and site of his February 21, 1965 assassination; the canonical venue for the \"speeches in Harlem\" Bassett describes attending three or four times. Whisper compressed \"Au-du-bon\" \u2192 \"Ar-my.\""
+      "notes": "\"There are speeches in Harlem… But it looked like someone went in the Harlem, uh, Army building. Yeah. In the Army? Yes. In the Army? Yes. Yeah, Army.\" Canonical Audubon Ballroom at 165th Street and Broadway, Washington Heights — Malcolm X's Organization of Afro-American Unity headquarters and site of his February 21, 1965 assassination; the canonical venue for the \"speeches in Harlem\" Bassett describes attending three or four times. Whisper compressed \"Au-du-bon\" → \"Ar-my.\""
     },
     {
       "row_id": "38.P2T.10",
       "whisper": "doctor-cabinet / a doctor-cabinet",
-      "candidate_correction": "(uncertain \u2014 possibly Erwin Chargaff or another Columbia biochem professor)",
+      "candidate_correction": "(uncertain — possibly Erwin Chargaff or another Columbia biochem professor)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"he had had other professors from Columbia, a doctor-cabinet. And they were great friends. So I guess I got all of those recommendations.\" Speaker's reference to a Columbia University biochemistry professor who was Tiselius's friend and wrote Emmett's Uppsala recommendation. Most likely candidate: Erwin Chargaff (1905\u20132002, Columbia biochemistry, \"Chargaff's rules\"); could also be David Nachmansohn or other contemporaries. Whisper rendering \"cabinet\" is implausible; canonical name not yet verified."
+      "notes": "\"he had had other professors from Columbia, a doctor-cabinet. And they were great friends. So I guess I got all of those recommendations.\" Speaker's reference to a Columbia University biochemistry professor who was Tiselius's friend and wrote Emmett's Uppsala recommendation. Most likely candidate: Erwin Chargaff (1905–2002, Columbia biochemistry, \"Chargaff's rules\"); could also be David Nachmansohn or other contemporaries. Whisper rendering \"cabinet\" is implausible; canonical name not yet verified."
     },
     {
       "row_id": "38.P2T.13",
       "whisper": "Dr. Dubois (in Loving v. Virginia context)",
-      "candidate_correction": "(likely Roy Wilkins, NAACP executive secretary 1955\u201377, or speaker-confused W.E.B. Du Bois)",
+      "candidate_correction": "(likely Roy Wilkins, NAACP executive secretary 1955–77, or speaker-confused W.E.B. Du Bois)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"Well, I did, I do remember what Dr. Dubois said. And it probably was after the loving, loving decision, loving versus Virginia\u2026 And he was a leader in the NAACP. And he made the statement that the NAACP did not support, it did not oppose interracial marriage and did not support interracial marriage.\" W.E.B. Du Bois (1868\u20131963) died four years before *Loving v. Virginia* (1967), so the statement attribution is chronologically impossible if Du Bois is meant. More likely: Roy Wilkins, NAACP executive secretary 1955\u201377, made the formal NAACP post-Loving statement. Preserved as speaker-originating; this is Priscilla's recollection of a remembered NAACP figure."
+      "notes": "\"Well, I did, I do remember what Dr. Dubois said. And it probably was after the loving, loving decision, loving versus Virginia… And he was a leader in the NAACP. And he made the statement that the NAACP did not support, it did not oppose interracial marriage and did not support interracial marriage.\" W.E.B. Du Bois (1868–1963) died four years before *Loving v. Virginia* (1967), so the statement attribution is chronologically impossible if Du Bois is meant. More likely: Roy Wilkins, NAACP executive secretary 1955–77, made the formal NAACP post-Loving statement. Preserved as speaker-originating; this is Priscilla's recollection of a remembered NAACP figure."
     },
     {
       "row_id": "38.P2T.16",
       "whisper": "Paul and Ned",
-      "candidate_correction": "(uncertain \u2014 possibly \"Paulina\" or other family ancestor; speaker-originating)",
+      "candidate_correction": "(uncertain — possibly \"Paulina\" or other family ancestor; speaker-originating)",
       "confidence": "speaker-originating",
       "notes": "\"Paul and Paul and Ned is son, but I don't know much about Paul and Ned, who was my great-great-grandmother.\" Speaker's reference to a great-great-grandmother by an unclear name; the syntax \"Paul and Ned\" for a female ancestor suggests Whisper has garbled a single name like \"Paulina\" or \"Polonia.\" Preserved as speaker-originating family genealogy."
     },
     {
       "row_id": "38.P2T.17",
       "whisper": "travers / travestists (around Richmond)",
-      "candidate_correction": "(uncertain \u2014 possibly Travers or Trevett family of Virginia)",
+      "candidate_correction": "(uncertain — possibly Travers or Trevett family of Virginia)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"I was told that she came from a very wealthy family of the travers around Richmond\"; second-pass rendering \"travestists\" is a Whisper variant of the same word. Canonical identification of a \"wealthy [surname] family of Richmond\" not yet verified; preserved at low confidence."
     },
     {
       "row_id": "38.P2T.18",
       "whisper": "Reena (housing group)",
-      "candidate_correction": "(uncertain \u2014 possibly RENA or a Bronx housing coalition)",
+      "candidate_correction": "(uncertain — possibly RENA or a Bronx housing coalition)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"we had several neighborhood groups in our community. Which were well-organized, like Reena. They had group, housing group\"; speaker's reference to a 1970s NYC Human Rights Commission-allied housing-organizing group; canonical identification not yet verified."
     },
     {
       "row_id": "38.P2T.24",
       "whisper": "death rich (biochemistry head at Ohio State)",
-      "candidate_correction": "(uncertain \u2014 possibly Dr. Dietrich or Detrick)",
+      "candidate_correction": "(uncertain — possibly Dr. Dietrich or Detrick)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"And death rich, that was biochemistry. It was also combined with health science.\" Speaker's reference to an Ohio State biochemistry-department head c. mid-1950s; canonical name not yet verified \u2014 possibly Dietrich, Detrick, or a similar Germanic surname. Whisper \"death rich\" is the same misrendering pattern as \"Dr. Goog\" / \"goo\" for Gould."
+      "notes": "\"And death rich, that was biochemistry. It was also combined with health science.\" Speaker's reference to an Ohio State biochemistry-department head c. mid-1950s; canonical name not yet verified — possibly Dietrich, Detrick, or a similar Germanic surname. Whisper \"death rich\" is the same misrendering pattern as \"Dr. Goog\" / \"goo\" for Gould."
     },
     {
       "row_id": "38.P2T.25",
@@ -787,28 +787,28 @@
       "whisper": "Tillesta / Tillester (Henry County VA furniture family)",
       "candidate_correction": "likely Stanley",
       "confidence": "medium",
-      "notes": "\"he worked for another family named Tillesta, who ran the Furniture Company\"; \"Pop was a cousin to Tillester's wife.\" Bassett describes a second white Henry County VA furniture-manufacturer family \u2014 adjacent to but distinct from the white Bassett family. Stanley Furniture (in Stanleytown VA, adjacent to Bassett VA in Henry County) was the second major regional manufacturer; Thomas B. Stanley was VA Governor 1954-58 and central to \"massive resistance\" against Brown. The \"Tillesta\" -> \"Stanley\" phonetic transformation (Til-le-sta -> Stan-ley reversed-syllable Whisper artifact) is plausible. Could also be Stuart (Stuart Furniture, adjacent VA). Flag for adversarial review."
+      "notes": "\"he worked for another family named Tillesta, who ran the Furniture Company\"; \"Pop was a cousin to Tillester's wife.\" Bassett describes a second white Henry County VA furniture-manufacturer family — adjacent to but distinct from the white Bassett family. Stanley Furniture (in Stanleytown VA, adjacent to Bassett VA in Henry County) was the second major regional manufacturer; Thomas B. Stanley was VA Governor 1954-58 and central to \"massive resistance\" against Brown. The \"Tillesta\" -> \"Stanley\" phonetic transformation (Til-le-sta -> Stan-ley reversed-syllable Whisper artifact) is plausible. Could also be Stuart (Stuart Furniture, adjacent VA). Flag for adversarial review."
     },
     {
       "row_id": "38.P4.3",
       "whisper": "\"in some position at the medical scho[ol]... Meer. Yeah. I can't. I don't know. We never did figure out how to use that name\"",
-      "candidate_correction": "(uncertain \u2014 speaker's named Iowa-House-affiliated friend of Priscilla's)",
+      "candidate_correction": "(uncertain — speaker's named Iowa-House-affiliated friend of Priscilla's)",
       "confidence": "speaker-originating",
-      "notes": "The \"Iowa House\" passage (Pass 1 row 38.38; current FLAGGED-FOR-ADVERSARIAL-REVIEW) actually contains a NEW unflagged uncertainty in the same passage: Priscilla and Emmett try to remember the surname of the woman who'd been to Iowa House and whose husband was a doctor at Ohio State University Hospital. Both speakers say \"Meer\" then fail to recall. Whisper-rendered name \"Meer\" is the speaker's own non-recall, not a Whisper error per se. Preserved as speaker-originating; this disambiguates the Iowa House FBI inquiry as being about a specific named female friend, NOT the venue itself. Reinforces that Iowa House is most likely a SPECIFIC RESIDENCE or BOARDING HOUSE the friend stayed at \u2014 possibly \"Iowa Hall\" (an Iowa State Department of Public Welfare facility?) or a YWCA/YMCA-type residence whose name Priscilla cannot recall. Suggests the leading P2T candidate \"International House\" is LESS likely than previously assessed: Priscilla doesn't recall the name, suggesting it's a less-canonical name."
+      "notes": "The \"Iowa House\" passage (Pass 1 row 38.38; current FLAGGED-FOR-ADVERSARIAL-REVIEW) actually contains a NEW unflagged uncertainty in the same passage: Priscilla and Emmett try to remember the surname of the woman who'd been to Iowa House and whose husband was a doctor at Ohio State University Hospital. Both speakers say \"Meer\" then fail to recall. Whisper-rendered name \"Meer\" is the speaker's own non-recall, not a Whisper error per se. Preserved as speaker-originating; this disambiguates the Iowa House FBI inquiry as being about a specific named female friend, NOT the venue itself. Reinforces that Iowa House is most likely a SPECIFIC RESIDENCE or BOARDING HOUSE the friend stayed at — possibly \"Iowa Hall\" (an Iowa State Department of Public Welfare facility?) or a YWCA/YMCA-type residence whose name Priscilla cannot recall. Suggests the leading P2T candidate \"International House\" is LESS likely than previously assessed: Priscilla doesn't recall the name, suggesting it's a less-canonical name."
     },
     {
       "row_id": "38.P4.7",
       "whisper": "\"Mr. Tester\" / \"Tester\" (Pass 4 raw at byte ~62484 and ~62574)",
       "candidate_correction": "Bayard Rustin's nickname or alias",
       "confidence": "speaker-originating",
-      "notes": "Speaker says \"Tester. Tester. And when I... He came back to the country\" \u2014 directly after referring to Rustin returning from Africa. \"Tester\" appears to be a speaker-originating nickname (possibly Bassett's mishearing of a Rustin nickname, or \"Bayard\" -> \"Tester\" Whisper rendering, or speaker-self-correcting search). Could also be a different person (a Rustin associate) entirely. Speaker-originating; flag for adversarial review."
+      "notes": "Speaker says \"Tester. Tester. And when I... He came back to the country\" — directly after referring to Rustin returning from Africa. \"Tester\" appears to be a speaker-originating nickname (possibly Bassett's mishearing of a Rustin nickname, or \"Bayard\" -> \"Tester\" Whisper rendering, or speaker-self-correcting search). Could also be a different person (a Rustin associate) entirely. Speaker-originating; flag for adversarial review."
     },
     {
       "row_id": "38.P4.9",
       "whisper": "\"John. Yeah. At Ohio State.\" (Pass 4 raw at byte ~49986)",
       "candidate_correction": "John\"",
       "confidence": "low",
-      "notes": "\"they would give me this assistant professor, John. Yeah. At Ohio State.\" The \"John\" here is anomalous \u2014 possibly a Whisper hallucination for a filler word, or possibly the actual name of the assistant professor position-holder. Low confidence; speaker context doesn't disambiguate. Flag for adversarial review."
+      "notes": "\"they would give me this assistant professor, John. Yeah. At Ohio State.\" The \"John\" here is anomalous — possibly a Whisper hallucination for a filler word, or possibly the actual name of the assistant professor position-holder. Low confidence; speaker context doesn't disambiguate. Flag for adversarial review."
     }
   ],
   "skipped_rows": [
@@ -869,7 +869,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.6335,
+    "score": 0.5955,
     "confidence_tier": "publication-block",
     "components": {
       "base": 0.0,
@@ -877,9 +877,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2763,
       "adversarial_flag_density": 0.1447,
-      "cross_contamination_penalty": 0.2
+      "cross_contamination_penalty": 0.2,
+      "loc_verification_credit": -0.038
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.6335,
+    "previous_tier_v8": "publication-block",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 18,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.038,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 11,
   "cross_contamination_items_resolved": 2,

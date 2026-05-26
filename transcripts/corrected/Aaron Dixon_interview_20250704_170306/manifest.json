@@ -644,7 +644,7 @@
     {
       "row_id": "1.P2T.47",
       "whisper": "Cha Cha Jimenez",
-      "correction": "Cha-Cha Jim\u00e9nez",
+      "correction": "Cha-Cha Jiménez",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -766,7 +766,7 @@
       "whisper": "Brutu Man",
       "candidate_correction": "Vudu Man",
       "confidence": "speaker-originating",
-      "notes": "\"we had met this guy named Brutu Man, who we're all going over there to his house\"; speaker later refers to the same individual as \"Voodoo Man\" \u2014 same person; one of the Whisper renderings is wrong"
+      "notes": "\"we had met this guy named Brutu Man, who we're all going over there to his house\"; speaker later refers to the same individual as \"Voodoo Man\" — same person; one of the Whisper renderings is wrong"
     },
     {
       "row_id": "1.16",
@@ -876,7 +876,7 @@
     {
       "row_id": "1.45",
       "whisper": "Miljert",
-      "candidate_correction": "Mildred (likely) \u2014 speaker's paternal grandmother",
+      "candidate_correction": "Mildred (likely) — speaker's paternal grandmother",
       "confidence": "speaker-originating",
       "notes": "\"Elmer and my grandmother, Miljert\"; the speaker is recalling family names from memory, \"Miljert\" looks like Whisper misrendering \"Mildred\" but flag as speaker-originating since we can't verify against external records"
     },
@@ -969,35 +969,35 @@
       "whisper": "Shedderly, William Shedderly had a Clark's corporation",
       "candidate_correction": "William Sherrill (likely)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"The Shedderly, William Shedderly had a Clark's corporation\"; \"Clark's\" likely Whisper rendering of \"Clorox\" (Oakland-headquartered); \"William Shedderly\" unverified \u2014 possibly a Clorox Corp exec of the era"
+      "notes": "\"The Shedderly, William Shedderly had a Clark's corporation\"; \"Clark's\" likely Whisper rendering of \"Clorox\" (Oakland-headquartered); \"William Shedderly\" unverified — possibly a Clorox Corp exec of the era"
     },
     {
       "row_id": "1.P2T.55",
       "whisper": "Marin Bridge",
-      "candidate_correction": "Richmond\u2013San Rafael Bridge",
+      "candidate_correction": "Richmond–San Rafael Bridge",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"I have to dump it off to a Marin County, the Marin Bridge\"; \"Marin Bridge\" is not canonical \u2014 likely Richmond-San Rafael Bridge (crosses to Marin) or Golden Gate; flag for review"
+      "notes": "\"I have to dump it off to a Marin County, the Marin Bridge\"; \"Marin Bridge\" is not canonical — likely Richmond-San Rafael Bridge (crosses to Marin) or Golden Gate; flag for review"
     },
     {
       "row_id": "1.P4.3",
       "whisper": "\"Elders Huey and Bobby were in jail at the time\"",
-      "candidate_correction": "Eldridge, Huey, and Bobby were in jail at the time\" (likely) \u2014 flag for adversarial review",
+      "candidate_correction": "Eldridge, Huey, and Bobby were in jail at the time\" (likely) — flag for adversarial review",
       "confidence": "medium",
-      "notes": "Context (lines 1959-1979): \"there were some Panthers that wanted to take revenge, and they went out on the street. And it wasn't something that was okay by the leadership... One of them was a leader in the party. It was Elders Cleveland, David, L.U. too, as well. **Elders Huey and Bobby were in jail at the time. Otherwise, they wouldn't allow this thing to happen.**\" The first \"Elders Cleveland\" maps to \"Eldridge Cleaver\" (Pass 1 row 1.19). The second \"Elders\" is harder \u2014 Huey Newton was incarcerated 1967-1970 and Bobby Seale was incarcerated 1969-1972, both correct historical facts, so the surrounding semantics are consistent. The \"Elders\" prefix could be the speaker's honorific (\"the elders Huey and Bobby\") or another Whisper rendering of \"Eldridge\" (sentence-merge with the prior list). Flag for adversarial review."
+      "notes": "Context (lines 1959-1979): \"there were some Panthers that wanted to take revenge, and they went out on the street. And it wasn't something that was okay by the leadership... One of them was a leader in the party. It was Elders Cleveland, David, L.U. too, as well. **Elders Huey and Bobby were in jail at the time. Otherwise, they wouldn't allow this thing to happen.**\" The first \"Elders Cleveland\" maps to \"Eldridge Cleaver\" (Pass 1 row 1.19). The second \"Elders\" is harder — Huey Newton was incarcerated 1967-1970 and Bobby Seale was incarcerated 1969-1972, both correct historical facts, so the surrounding semantics are consistent. The \"Elders\" prefix could be the speaker's honorific (\"the elders Huey and Bobby\") or another Whisper rendering of \"Eldridge\" (sentence-merge with the prior list). Flag for adversarial review."
     },
     {
       "row_id": "1.P4.4",
       "whisper": "\"Is your still touch with the way I live?\"",
       "candidate_correction": "Are you still in touch with the way I live?\"",
       "confidence": "medium",
-      "notes": "Interviewer's follow-up question right before the canonical LoC/NMAAHC outro. The phrase \"your still touch with the way I live\" is ungrammatical and meaningless \u2014 Whisper has garbled the interviewer's question. Speaker's response on line 7759 (\"Oh yeah, yeah. Elaine and her good friends.\") suggests the question was about Elaine Brown (\"Are you still in touch with Elaine?\"). Flag the line as garbled-interviewer-question; precise correction unrecoverable without audio review."
+      "notes": "Interviewer's follow-up question right before the canonical LoC/NMAAHC outro. The phrase \"your still touch with the way I live\" is ungrammatical and meaningless — Whisper has garbled the interviewer's question. Speaker's response on line 7759 (\"Oh yeah, yeah. Elaine and her good friends.\") suggests the question was about Elaine Brown (\"Are you still in touch with Elaine?\"). Flag the line as garbled-interviewer-question; precise correction unrecoverable without audio review."
     },
     {
       "row_id": "1.P4.8",
       "whisper": "\"in the behalf of a panther Leon Valentine Hobbes\"",
       "candidate_correction": "intervenes on behalf of a panther, Leon Valentine Hobbs",
       "confidence": "speaker-originating",
-      "notes": "The interviewer-side phrasing in the question is awkward (\"in the behalf of\") \u2014 but this is a transcription of a speaker pause/restart, not a Whisper error proper. \"Hobbes\" vs \"Hobbs\" spelling cannot be ground-truthed (Pass 2 tail row 1.P2T.4 already correctly flagged as speaker-originating). No new catch."
+      "notes": "The interviewer-side phrasing in the question is awkward (\"in the behalf of\") — but this is a transcription of a speaker pause/restart, not a Whisper error proper. \"Hobbes\" vs \"Hobbs\" spelling cannot be ground-truthed (Pass 2 tail row 1.P2T.4 already correctly flagged as speaker-originating). No new catch."
     }
   ],
   "skipped_rows": [
@@ -1054,7 +1054,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4329,
+    "score": 0.3854,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1062,9 +1062,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.3505,
       "adversarial_flag_density": 0.0619,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.0475
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4329,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 0.95,
+      "loc_healed_count": 30,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.0475,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 0,

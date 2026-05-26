@@ -708,7 +708,7 @@
       "whisper": "Rubin Lee",
       "candidate_correction": "(likely) Rev. George W. Lee or unidentified MS voter-registration activist",
       "confidence": "medium",
-      "notes": "\"we went into Belzona, Meal, and another black instructor to get a hair trim that night. And when I got up out of the chair, Rubin Lee took my seat... Rubin Lee had been killed. You know, had been shot\"; canonical 1955 Belzoni martyr is Rev. George W. Lee \u2014 speaker's \"Rubin Lee\" + 1956-57 date may reflect memory mismatch or a different person"
+      "notes": "\"we went into Belzona, Meal, and another black instructor to get a hair trim that night. And when I got up out of the chair, Rubin Lee took my seat... Rubin Lee had been killed. You know, had been shot\"; canonical 1955 Belzoni martyr is Rev. George W. Lee — speaker's \"Rubin Lee\" + 1956-57 date may reflect memory mismatch or a different person"
     },
     {
       "row_id": "107.40",
@@ -757,7 +757,7 @@
       "whisper": "gentleman from Greenville",
       "candidate_correction": "gentleman from Greenville",
       "confidence": "speaker-originating",
-      "notes": "MS legislator from Greenville district (Washington County) \u2014 likely Bill Bowman or Robert Crook era 1970s-80s"
+      "notes": "MS legislator from Greenville district (Washington County) — likely Bill Bowman or Robert Crook era 1970s-80s"
     },
     {
       "row_id": "107.P2.23",
@@ -778,7 +778,7 @@
       "whisper": "\"you got them a job\"",
       "candidate_correction": "you got them in the John",
       "confidence": "low",
-      "notes": "\"they looked around and said, well, you got them a job\"; speaker recounting trapping legislators in committee bathrooms \u2014 Whisper garble"
+      "notes": "\"they looked around and said, well, you got them a job\"; speaker recounting trapping legislators in committee bathrooms — Whisper garble"
     },
     {
       "row_id": "107.P4.6",
@@ -792,21 +792,21 @@
       "whisper": "\"you Peckaborch\"",
       "candidate_correction": "you peckerwood",
       "confidence": "medium",
-      "notes": "Raw line 2735: \"let's speak, you Peckaborch, you have to do a lot more of that from Black folks and the future\" \u2014 Whisper garble of the canonical Southern slang term \"peckerwood\" (derogatory term for poor whites). Pass 1+2+3 missed this."
+      "notes": "Raw line 2735: \"let's speak, you Peckaborch, you have to do a lot more of that from Black folks and the future\" — Whisper garble of the canonical Southern slang term \"peckerwood\" (derogatory term for poor whites). Pass 1+2+3 missed this."
     },
     {
       "row_id": "107.P4.12",
       "whisper": "\"potential Negro chair\"",
       "candidate_correction": "potential Negro chair[man]\" (headline truncation) OR \"Potential Negro Chairman",
       "confidence": "medium",
-      "notes": "Raw line 2787: \"the next day in the paper and bold headlight, potential Negro chair gives Black Power Speak\" \u2014 Whisper garble of canonical 1976-era newspaper headline characterizing Clark's Vicksburg-NAACP speech as a \"Black Power\" speech. \"Headlight\" = \"headline\"; \"chair\" is truncated \"chairman.\""
+      "notes": "Raw line 2787: \"the next day in the paper and bold headlight, potential Negro chair gives Black Power Speak\" — Whisper garble of canonical 1976-era newspaper headline characterizing Clark's Vicksburg-NAACP speech as a \"Black Power\" speech. \"Headlight\" = \"headline\"; \"chair\" is truncated \"chairman.\""
     },
     {
       "row_id": "107.P4.15",
       "whisper": "\"race the vote\"",
       "candidate_correction": "register and vote\" or \"raise (the issue of) the vote",
       "confidence": "medium",
-      "notes": "Raw line 1003: \"he'd get up in church and be telling folk about they should race the vote and do this and that\" \u2014 Whisper garbling \"register\" \u2192 \"race\" in voter-registration context."
+      "notes": "Raw line 1003: \"he'd get up in church and be telling folk about they should race the vote and do this and that\" — Whisper garbling \"register\" → \"race\" in voter-registration context."
     }
   ],
   "skipped_rows": [
@@ -894,7 +894,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.6425,
+    "score": 0.6025,
     "confidence_tier": "publication-block",
     "components": {
       "base": 0.0,
@@ -902,9 +902,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2055,
       "adversarial_flag_density": 0.137,
-      "cross_contamination_penalty": 0.3
+      "cross_contamination_penalty": 0.3,
+      "loc_verification_credit": -0.04
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.6425,
+    "previous_tier_v8": "publication-block",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 20,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.04,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 10,
   "cross_contamination_items_resolved": 3,

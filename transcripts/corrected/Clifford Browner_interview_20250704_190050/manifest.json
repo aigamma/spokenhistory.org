@@ -362,7 +362,7 @@
     {
       "row_id": "23.P4.17",
       "whisper": "\"20 more or so young white guys who were going to OCS Offices Training School\"",
-      "correction": "20 [or] more or so young white guys who were going to OCS \u2014 Officer Candidate School",
+      "correction": "20 [or] more or so young white guys who were going to OCS — Officer Candidate School",
       "confidence": "high",
       "occurrences": 1,
       "file_paths": [
@@ -517,7 +517,7 @@
     {
       "row_id": "23.P4.12",
       "whisper": "\"I think the jacks would be a freshman and would have the course. I think the switch was the route\"",
-      "candidate_correction": "Jacksonville (FL) was on the route; train route Albany\u2013Jacksonville\u2013DC",
+      "candidate_correction": "Jacksonville (FL) was on the route; train route Albany–Jacksonville–DC",
       "confidence": "medium",
       "notes": "Speaker's August 1963 train trip to the March on Washington routed via Jacksonville. Whisper garbles into \"jacks would be a freshman.\" Canonical Southern Railway / Atlantic Coast Line route from Albany GA to DC ran via Jacksonville FL."
     },
@@ -526,21 +526,21 @@
       "whisper": "\"tied me up with it\" (re: collision)",
       "candidate_correction": "tired me out with it\"",
       "confidence": "medium",
-      "notes": "Speaker uses \"tied me up\" to mean \"tied up in litigation / forced into retirement\" \u2014 likely Whisper substitution for \"tired me out\" or speaker's own colloquial usage. Retain as-is unless adversarial confirms."
+      "notes": "Speaker uses \"tied me up\" to mean \"tied up in litigation / forced into retirement\" — likely Whisper substitution for \"tired me out\" or speaker's own colloquial usage. Retain as-is unless adversarial confirms."
     },
     {
       "row_id": "23.P4.20",
       "whisper": "\"and call her\" / \"she took a tat and then lunchroom and call her\"",
       "candidate_correction": "she took the head of the lunchroom: cook role\"",
       "confidence": "medium",
-      "notes": "Browner's mother's transition from Sasser white school cafeteria \u2192 Dunbar cafeteria \u2192 head cook. The \"tat and then lunchroom and call her\" cluster is Whisper-garbled."
+      "notes": "Browner's mother's transition from Sasser white school cafeteria → Dunbar cafeteria → head cook. The \"tat and then lunchroom and call her\" cluster is Whisper-garbled."
     },
     {
       "row_id": "23.P4.23",
       "whisper": "\"right after her mother had passed and her grandmother sent her to the woodpile to get wood. And she prayed to the Lord to send her somebody that would love her\"",
       "candidate_correction": "(correct as-transcribed; flag as canonical Browner family-origin story)",
       "confidence": "speaker-originating",
-      "notes": "The \"courtship origin story\" \u2014 Browner's mother prayed at the woodpile after her own mother's death; the next day Clifford Sr. tapped her on the shoulder at school. Distinctive enough to be the canonical Browner-family genesis narrative; preserve verbatim."
+      "notes": "The \"courtship origin story\" — Browner's mother prayed at the woodpile after her own mother's death; the next day Clifford Sr. tapped her on the shoulder at school. Distinctive enough to be the canonical Browner-family genesis narrative; preserve verbatim."
     }
   ],
   "skipped_rows": [],
@@ -583,17 +583,29 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.5273,
-    "confidence_tier": "publication-block",
+    "score": 0.4903,
+    "confidence_tier": "low",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.4182,
       "adversarial_flag_density": 0.1091,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.037
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.5273,
+    "previous_tier_v8": "publication-block",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 17,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.037,
+      "tier_changed": true
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 0,

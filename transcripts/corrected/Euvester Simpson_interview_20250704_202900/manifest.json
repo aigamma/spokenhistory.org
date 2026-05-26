@@ -615,7 +615,7 @@
       "whisper": "\"the Lamar theater / West Side Story\"",
       "candidate_correction": "Lamar Theatre (Jackson MS)",
       "confidence": "speaker-originating",
-      "notes": "\"going to a movie as a Lamar theater\u2026 West Side Story was something\"; canonical Jackson MS theater desegregation episode; *West Side Story* is the 1961 Robert Wise film"
+      "notes": "\"going to a movie as a Lamar theater… West Side Story was something\"; canonical Jackson MS theater desegregation episode; *West Side Story* is the 1961 Robert Wise film"
     },
     {
       "row_id": "41.P2.14",
@@ -629,7 +629,7 @@
       "whisper": "Dr. Naomi Townsend",
       "candidate_correction": "Dr. Naomi Townsend",
       "confidence": "speaker-originating",
-      "notes": "\"Dr. Naomi Townsend, oh, look, great Dr. Naomi Townsend\"; canonical Tougaloo English faculty member; demanded no slacks-or-afro-wearing in her upper-level English class \u2014 Simpson's first afro-wearing student to encounter her"
+      "notes": "\"Dr. Naomi Townsend, oh, look, great Dr. Naomi Townsend\"; canonical Tougaloo English faculty member; demanded no slacks-or-afro-wearing in her upper-level English class — Simpson's first afro-wearing student to encounter her"
     },
     {
       "row_id": "41.P3.5",
@@ -643,14 +643,14 @@
       "whisper": "\"Fred Mangrameth Thomas\"",
       "candidate_correction": "Fred Mangram Thomas",
       "confidence": "medium",
-      "notes": "\"the director of that was an old slick person, Fred Mangrameth Thomas\" \u2014 Friends of Children of Mississippi director; \"Mangrameth\" appears to be a Whisper-extension of \"Mangrum\" or similar SNCC-era surname. Speaker's \"old slick person\" identifier (i.e., SNCC veteran) confirms the canonical-figure status. Flag for adversarial-review name confirmation."
+      "notes": "\"the director of that was an old slick person, Fred Mangrameth Thomas\" — Friends of Children of Mississippi director; \"Mangrameth\" appears to be a Whisper-extension of \"Mangrum\" or similar SNCC-era surname. Speaker's \"old slick person\" identifier (i.e., SNCC veteran) confirms the canonical-figure status. Flag for adversarial-review name confirmation."
     },
     {
       "row_id": "41.P4.7",
       "whisper": "\"she said Buddy went out to start the car\"",
       "candidate_correction": "(Simpson's maternal great-grandfather, family nickname \"Buddy\")",
       "confidence": "speaker-originating",
-      "notes": "\"And my great grandfather, she called in Buddy\" \u2014 family-nickname identification. Earlier passes catalogued Jeff Davis Pearson as the great-grandfather; \"Buddy\" is the family nickname for that same figure. Not an error but worth noting as speaker-originating context."
+      "notes": "\"And my great grandfather, she called in Buddy\" — family-nickname identification. Earlier passes catalogued Jeff Davis Pearson as the great-grandfather; \"Buddy\" is the family nickname for that same figure. Not an error but worth noting as speaker-originating context."
     },
     {
       "row_id": "41.P4.11",
@@ -719,7 +719,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.1834,
+    "score": 0.1494,
     "confidence_tier": "medium",
     "components": {
       "base": 0.0,
@@ -727,9 +727,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1667,
       "adversarial_flag_density": 0.0167,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.034
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.1834,
+    "previous_tier_v8": "medium",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 14,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.034,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 1,
   "cross_contamination_items_resolved": 0,

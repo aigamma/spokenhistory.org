@@ -19,7 +19,7 @@
     },
     {
       "row_id": "6.3",
-      "whisper": "Pancho v\u00eda / Pancho Villa",
+      "whisper": "Pancho vía / Pancho Villa",
       "correction": "Pancho Villa",
       "confidence": "high",
       "occurrences": 3,
@@ -488,7 +488,7 @@
     {
       "row_id": "6.P2.32",
       "whisper": "Electronic Cafe",
-      "correction": "Electronic Caf\u00e9 International",
+      "correction": "Electronic Café International",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -608,7 +608,7 @@
     {
       "row_id": "6.P2T.10",
       "whisper": "Los Monuquitos",
-      "correction": "Los Mu\u00f1equitos de Matanzas",
+      "correction": "Los Muñequitos de Matanzas",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -620,7 +620,7 @@
     {
       "row_id": "6.P2T.14",
       "whisper": "senior Rita",
-      "correction": "se\u00f1orita",
+      "correction": "señorita",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -976,14 +976,14 @@
     {
       "row_id": "6.P2T.7",
       "whisper": "herdenum",
-      "candidate_correction": "(uncertain \u2014 possibly \"iron pigment\" or \"gunpowder\"; speaker references natural-pigment immunization markings)",
+      "candidate_correction": "(uncertain — possibly \"iron pigment\" or \"gunpowder\"; speaker references natural-pigment immunization markings)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"acupuncture immunizations with herdenum\"; speaker discusses Cuban tribal markings as immunization sites; \"herdenum\" appears to be a garbled medical/herbal term; flag for SME review"
     },
     {
       "row_id": "6.P2T.9",
       "whisper": "southern African Republic",
-      "candidate_correction": "(uncertain \u2014 likely Angola or South African Republic)",
+      "candidate_correction": "(uncertain — likely Angola or South African Republic)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"they had that many boots on the ground in South Africa in the southern African Republic\"; Cuban deployments were primarily in Angola, with secondary support to SWAPO in Namibia and ANC in South Africa; speaker may be conflating"
     },
@@ -999,7 +999,7 @@
       "whisper": "cute Chcommands",
       "candidate_correction": "Cuban hip-hop heads",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"we ended up being the first group from the US that really worked with the cute Chcommands\"; refers to the Cuban hip-hop community (Comisi\u00f3n Cubana del Hip Hop, founded 1999); Whisper garbled Caldwell's term"
+      "notes": "\"we ended up being the first group from the US that really worked with the cute Chcommands\"; refers to the Cuban hip-hop community (Comisión Cubana del Hip Hop, founded 1999); Whisper garbled Caldwell's term"
     },
     {
       "row_id": "6.P2T.19",
@@ -1013,14 +1013,14 @@
       "whisper": "CIA agents... came here to that theater",
       "candidate_correction": "(CIA \"crack cocaine\" allegation; Gary Webb / Dark Alliance)",
       "confidence": "medium",
-      "notes": "\"the CIA agents came here to that theater and said that they caused all of that havoc in our neighborhood\"; refers to Gary Webb's 1996 *Dark Alliance* San Jose Mercury News expos\u00e9 on CIA/Contra/crack-cocaine pipeline into South LA; the \"theater\" event is the November 1996 town hall at Locke High School (or Caldwell's KAOS Network); flag for SME confirmation of venue"
+      "notes": "\"the CIA agents came here to that theater and said that they caused all of that havoc in our neighborhood\"; refers to Gary Webb's 1996 *Dark Alliance* San Jose Mercury News exposé on CIA/Contra/crack-cocaine pipeline into South LA; the \"theater\" event is the November 1996 town hall at Locke High School (or Caldwell's KAOS Network); flag for SME confirmation of venue"
     },
     {
       "row_id": "6.P2T.28",
       "whisper": "the guy who did Lion King",
-      "candidate_correction": "(uncertain \u2014 most likely Floyd Norman, Bruce W. Smith, or a young Black animator who came up through KAOS Network)",
+      "candidate_correction": "(uncertain — most likely Floyd Norman, Bruce W. Smith, or a young Black animator who came up through KAOS Network)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"the new schoolers we have... is the guy who did Lion King he was one of the young kids that we worked with\"; flag for KAOS Network alumni list confirmation; possibly Bruce W. Smith (Disney animator from Crenshaw who worked on *The Lion King 1\u00bd*) or a layout/effects artist on the 1994 original"
+      "notes": "\"the new schoolers we have... is the guy who did Lion King he was one of the young kids that we worked with\"; flag for KAOS Network alumni list confirmation; possibly Bruce W. Smith (Disney animator from Crenshaw who worked on *The Lion King 1½*) or a layout/effects artist on the 1994 original"
     },
     {
       "row_id": "6.P2T.42",
@@ -1098,7 +1098,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.2408,
+    "score": 0.2058,
     "confidence_tier": "medium",
     "components": {
       "base": 0.0,
@@ -1106,9 +1106,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1505,
       "adversarial_flag_density": 0.0753,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.035
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.2408,
+    "previous_tier_v8": "medium",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 15,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.035,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 7,
   "cross_contamination_items_resolved": 0,

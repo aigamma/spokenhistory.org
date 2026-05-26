@@ -450,7 +450,7 @@
     {
       "row_id": "91.11",
       "whisper": "Drew, AM Drew",
-      "candidate_correction": "(Charles Drew Medical Society or AME Drew University \u2014 uncertain)",
+      "candidate_correction": "(Charles Drew Medical Society or AME Drew University — uncertain)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "LA-area civil rights org"
     },
@@ -464,14 +464,14 @@
     {
       "row_id": "91.P2.3",
       "whisper": "\"a hot-finished board, God-pairish high school\"",
-      "candidate_correction": "(incomplete phrase \u2014 likely \"in the highest-finished Board of Beauregard Parish high school\" or similar)",
+      "candidate_correction": "(incomplete phrase — likely \"in the highest-finished Board of Beauregard Parish high school\" or similar)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Speaker's introduction of her high school where Pass 1 missed this passage entirely. \"God-pairish\" is Whisper-mangled \"Beauregard Parish\" \u2014 the Louisiana parish containing De Ridder. The \"hot-finished board\" portion is unclear, possibly a description of school construction or admin. Worth research"
+      "notes": "Speaker's introduction of her high school where Pass 1 missed this passage entirely. \"God-pairish\" is Whisper-mangled \"Beauregard Parish\" — the Louisiana parish containing De Ridder. The \"hot-finished board\" portion is unclear, possibly a description of school construction or admin. Worth research"
     },
     {
       "row_id": "91.P2.11",
       "whisper": "\"Drew, AM Drew\" / \"AM Drew\"",
-      "candidate_correction": "(uncertain \u2014 possibly AM&E Charles R. Drew organization OR AME Drew Wesley UMC)",
+      "candidate_correction": "(uncertain — possibly AM&E Charles R. Drew organization OR AME Drew Wesley UMC)",
       "confidence": "low",
       "notes": "Pass 1 #91.11 flagged this as uncertain. Speaker says \"another organization called Drew, AM Drew. They were working against segregation in hotels and hotels.\" Likely an early LA civil rights org named for Charles Richard Drew (the canonical blood-bank pioneer who died 1950); needs follow-up research. Worth canonical-new flag"
     },
@@ -480,26 +480,26 @@
       "whisper": "\"Barbara Licky\"",
       "candidate_correction": "Barbara Lalicki",
       "confidence": "medium",
-      "notes": "Pass 1 #91.15 had \"probable\". Confirmed via context \u2014 the editor who took the *Ty's One-Man Band* manuscript at Scholastic. Note the speaker says \"a young editor, Barbara Licky\""
+      "notes": "Pass 1 #91.15 had \"probable\". Confirmed via context — the editor who took the *Ty's One-Man Band* manuscript at Scholastic. Note the speaker says \"a young editor, Barbara Licky\""
     },
     {
       "row_id": "91.P2.17",
       "whisper": "\"Mandela\"",
       "candidate_correction": "Nelson Mandela",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Speaker references \"the guy who was in prison in South Africa. Mandela. Mandela's book.\" Note: the book she reviewed in LA Times is unclear \u2014 could be *Long Walk to Freedom* (1995), but interview is March 2013 and Mandela was still alive. May be referencing earlier book"
+      "notes": "Speaker references \"the guy who was in prison in South Africa. Mandela. Mandela's book.\" Note: the book she reviewed in LA Times is unclear — could be *Long Walk to Freedom* (1995), but interview is March 2013 and Mandela was still alive. May be referencing earlier book"
     },
     {
       "row_id": "91.P2.18",
       "whisper": "\"James Baldwin\" + \"Go tell it on the map\"",
       "candidate_correction": "James Baldwin + Go Tell It on the Mountain",
       "confidence": "speaker-originating",
-      "notes": "Pass 1 #91.31 caught Baldwin reference correctly. The \"map\" rendering is Whisper-degraded \"Mountain\" \u2014 speaker hesitates (\"No, not that one. It was the one that talked about Malcolm X\"). The Malcolm X book reference is likely *The Fire Next Time* (1963) or *One Day, When I Was Lost* (1972 screenplay Baldwin wrote on Malcolm X)"
+      "notes": "Pass 1 #91.31 caught Baldwin reference correctly. The \"map\" rendering is Whisper-degraded \"Mountain\" — speaker hesitates (\"No, not that one. It was the one that talked about Malcolm X\"). The Malcolm X book reference is likely *The Fire Next Time* (1963) or *One Day, When I Was Lost* (1972 screenplay Baldwin wrote on Malcolm X)"
     },
     {
       "row_id": "91.P2.31",
       "whisper": "\"Alex Premma\" / \"this Premma\"",
-      "candidate_correction": "(uncertain \u2014 possibly *The Primer* by Walter, or \"primer\" as common noun)",
+      "candidate_correction": "(uncertain — possibly *The Primer* by Walter, or \"primer\" as common noun)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Speaker references \"this book, Alex Premma\" near the end. Could be a Walter children's book titled *Alec's Primer* (the 2004 Walter children's book about the canonical slave-child-learns-to-read story). The 2004 timing suggests this might post-date the interview's 2013 date but Walter could have written/been writing it earlier. Worth verifying"
     },
@@ -508,12 +508,12 @@
       "whisper": "\"the African Festival of Culture\" in Nigeria",
       "candidate_correction": "FESTAC '77",
       "confidence": "medium",
-      "notes": "Speaker: \"I had been asked to go with a group of artists and writers and sculptors to Nigeria, to the African Festival of Culture, where all people from the diaspora were coming. And I was the only children's book writer.\" The canonical Nigerian Black-diaspora arts festival is FESTAC '77 (15 Jan - 12 Feb 1977 in Lagos and Kaduna), which drew ~17,000 participants from 56 countries \u2014 including a US delegation of writers, sculptors, and visual artists organized by Andrew Young / Jeff Donaldson. Walter's account (\"only children's book writer in the US delegation\") aligns canonically. Missed by Pass 1/2/3. Significant: dates Walter's Ghana / Elmina visit to 1977 (post-FESTAC)."
+      "notes": "Speaker: \"I had been asked to go with a group of artists and writers and sculptors to Nigeria, to the African Festival of Culture, where all people from the diaspora were coming. And I was the only children's book writer.\" The canonical Nigerian Black-diaspora arts festival is FESTAC '77 (15 Jan - 12 Feb 1977 in Lagos and Kaduna), which drew ~17,000 participants from 56 countries — including a US delegation of writers, sculptors, and visual artists organized by Andrew Young / Jeff Donaldson. Walter's account (\"only children's book writer in the US delegation\") aligns canonically. Missed by Pass 1/2/3. Significant: dates Walter's Ghana / Elmina visit to 1977 (post-FESTAC)."
     },
     {
       "row_id": "91.P4.6",
       "whisper": "\"She's a cacuey woman... She might be a chola\" (Ghanaian market identification of Walter)",
-      "candidate_correction": "(uncertain \u2014 likely Akan ethnic-group names: possibly \"Kwahu\" / \"Krobo\" or \"Fante\" / \"Ga\"; possibly \"Kweku\" Akan day-name)",
+      "candidate_correction": "(uncertain — likely Akan ethnic-group names: possibly \"Kwahu\" / \"Krobo\" or \"Fante\" / \"Ga\"; possibly \"Kweku\" Akan day-name)",
       "confidence": "low",
       "notes": "Speaker recounts being identified by Ghanaian market-women: \"She's a cacuey woman. They said no, I don't think she's cacuey. She might be a chola.\" These are Ghanaian Akan / Twi ethnic-identifier terms that Whisper has rendered phonetically. \"Cacuey\" may be \"Kwahu\" (an Akan subgroup of the Eastern Region) or \"Kweku\" (the Akan male day-name for Wednesday-born); \"chola\" may be \"Krobo\" (Ga-Adangme ethnic group) or \"Cholua\" (no canonical match). Flag for adversarial review by a West-African-linguistics specialist."
     },
@@ -522,14 +522,14 @@
       "whisper": "\"old back in the thirties\" (sister's husband moved to WA)",
       "candidate_correction": "way back in the thirties\" or \"all the way back in the thirties",
       "confidence": "medium",
-      "notes": "Speaker: \"My sister had gone there. Her husband had moved there, old back in the thirties.\" Whisper renders \"way back\" or \"all the way back\" as \"old back\" \u2014 a class of pre-WWII chronological-marker degradations. Pre-dates Walter's own 1944 WA arrival by ~5-10 years. Useful chronological grounding."
+      "notes": "Speaker: \"My sister had gone there. Her husband had moved there, old back in the thirties.\" Whisper renders \"way back\" or \"all the way back\" as \"old back\" — a class of pre-WWII chronological-marker degradations. Pre-dates Walter's own 1944 WA arrival by ~5-10 years. Useful chronological grounding."
     },
     {
       "row_id": "91.P4.10",
       "whisper": "\"I did names there in the camp\" (LA Times book reviews context)",
-      "candidate_correction": "(uncertain \u2014 likely \"I did names there in the can\" or \"I did them there in the camp\" or possibly \"I did names there in the canon\" \u2014 meaning Walter listed canonical Black writers she reviewed)",
+      "candidate_correction": "(uncertain — likely \"I did names there in the can\" or \"I did them there in the camp\" or possibly \"I did names there in the canon\" — meaning Walter listed canonical Black writers she reviewed)",
       "confidence": "low",
-      "notes": "Speaker: \"And I was able to do names there in the camp. The guy who was in prison in South Africa. Mandela. Mandela's book.\" The \"names there in the camp\" phrase is contextually anomalous \u2014 speaker is transitioning from listing Du Bois books to Mandela. Possible degradations: \"I did names there in the can[on]\" (canonical writers), \"I did them there in the camp\" (where \"camp\" is some indeterminate prior reference), or simple Whisper noise. Flag for adversarial review."
+      "notes": "Speaker: \"And I was able to do names there in the camp. The guy who was in prison in South Africa. Mandela. Mandela's book.\" The \"names there in the camp\" phrase is contextually anomalous — speaker is transitioning from listing Du Bois books to Mandela. Possible degradations: \"I did names there in the can[on]\" (canonical writers), \"I did them there in the camp\" (where \"camp\" is some indeterminate prior reference), or simple Whisper noise. Flag for adversarial review."
     },
     {
       "row_id": "91.P4.14",
@@ -608,7 +608,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.38,
+    "score": 0.352,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -616,9 +616,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.26,
       "adversarial_flag_density": 0.12,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.028
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.38,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 8,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.028,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 0,

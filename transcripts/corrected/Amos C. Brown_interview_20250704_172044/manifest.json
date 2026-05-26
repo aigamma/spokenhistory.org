@@ -842,7 +842,7 @@
       "whisper": "Visitora",
       "candidate_correction": "Western Addition",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"I stayed with a family\u2026 they lived up on Fulton Street, up near Fulton and the Visitora\"; the Western Addition / Fillmore neighborhood adjoins Fulton St in SF; \"Visitora\" is not a known SF street/landmark"
+      "notes": "\"I stayed with a family… they lived up on Fulton Street, up near Fulton and the Visitora\"; the Western Addition / Fillmore neighborhood adjoins Fulton St in SF; \"Visitora\" is not a known SF street/landmark"
     },
     {
       "row_id": "2.29",
@@ -898,7 +898,7 @@
       "whisper": "Bob Rapose",
       "candidate_correction": "Barbara Posey (possible)",
       "confidence": "medium",
-      "notes": "\"Clara Looper, who was the advisor of Oklahoma City Youth Council and Bob Rapose, who was the president\"; Clara Luper led OKC NAACP youth; her co-organizer was likely Barbara Posey (a teenager) \u2014 speaker may have conflated"
+      "notes": "\"Clara Looper, who was the advisor of Oklahoma City Youth Council and Bob Rapose, who was the president\"; Clara Luper led OKC NAACP youth; her co-organizer was likely Barbara Posey (a teenager) — speaker may have conflated"
     },
     {
       "row_id": "2.49",
@@ -919,7 +919,7 @@
       "whisper": "David Satcher",
       "candidate_correction": "David Satcher",
       "confidence": "speaker-originating",
-      "notes": "Real (US Surgeon General 1998\u20132002)"
+      "notes": "Real (US Surgeon General 1998–2002)"
     },
     {
       "row_id": "2.53",
@@ -952,9 +952,9 @@
     {
       "row_id": "2.61",
       "whisper": "Korean battle, Korean War context",
-      "candidate_correction": "(verbatim \u2014 speaker uses)",
+      "candidate_correction": "(verbatim — speaker uses)",
       "confidence": "speaker-originating",
-      "notes": "No correction; speaker uses \"Pork Chop Hill\" not a Whisper rendering \u2014 wait, this is from Aaron Dixon's transcript, not Brown's"
+      "notes": "No correction; speaker uses \"Pork Chop Hill\" not a Whisper rendering — wait, this is from Aaron Dixon's transcript, not Brown's"
     },
     {
       "row_id": "2.62",
@@ -972,10 +972,10 @@
     },
     {
       "row_id": "2.66",
-      "whisper": "C\u00f4te d'Arre, Ivory Coast",
-      "candidate_correction": "C\u00f4te d'Ivoire (modern spelling)",
+      "whisper": "Côte d'Arre, Ivory Coast",
+      "candidate_correction": "Côte d'Ivoire (modern spelling)",
       "confidence": "speaker-originating",
-      "notes": "\"the first summit was held in C\u00f4te d'Arre in Avignon, Ivory Coast\"; speaker uses the older spelling; \"Avignon\" is likely Whisper's mis-rendering of \"Abidjan\" (the city)"
+      "notes": "\"the first summit was held in Côte d'Arre in Avignon, Ivory Coast\"; speaker uses the older spelling; \"Avignon\" is likely Whisper's mis-rendering of \"Abidjan\" (the city)"
     },
     {
       "row_id": "2.68",
@@ -1181,7 +1181,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4643,
+    "score": 0.4023,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1189,9 +1189,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.3929,
       "adversarial_flag_density": 0.0714,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.062
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4643,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 42,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.062,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 0,

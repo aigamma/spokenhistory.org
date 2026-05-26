@@ -809,7 +809,7 @@
       "whisper": "Felton Clark",
       "candidate_correction": "Felton Clark",
       "confidence": "speaker-originating",
-      "notes": "Real (president of Southern University 1938\u201369; Russell's mother named him \"Felton\" after Clark \u2014 Russell's middle name is Felton)"
+      "notes": "Real (president of Southern University 1938–69; Russell's mother named him \"Felton\" after Clark — Russell's middle name is Felton)"
     },
     {
       "row_id": "8.11",
@@ -893,7 +893,7 @@
       "whisper": "old Wix's play / old Wix's",
       "candidate_correction": "Dr. J",
       "confidence": "medium",
-      "notes": "\"where did you get my old Wix's play? He in the dock?\"; canonical referent in 1980 Sixers context is Julius \"Dr. J\" Erving (b. 1950, Sixers 1976-87). \"Old Wix's\" is a Whisper garble; \"He in the dock\" likely \"He's the doc[tor].\" Flag for human review \u2014 could also be Bobby Jones."
+      "notes": "\"where did you get my old Wix's play? He in the dock?\"; canonical referent in 1980 Sixers context is Julius \"Dr. J\" Erving (b. 1950, Sixers 1976-87). \"Old Wix's\" is a Whisper garble; \"He in the dock\" likely \"He's the doc[tor].\" Flag for human review — could also be Bobby Jones."
     },
     {
       "row_id": "8.P2T.25",
@@ -907,19 +907,19 @@
       "whisper": "Brent Holley",
       "candidate_correction": "Brent Holland",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"a kid named Brent Holley came off the bench and got 10 points\"; no canonical 1979-80 Lakers bench player by that exact name. Mike McGee was 1981 draft, so wrong year. Possible referents include Brad Holland (Lakers 1979-81 reserve guard) or Russell's misrecollection. \"Brent Holley\" \u2192 \"Brad Holland\" is the highest-confidence reading; flag for review."
+      "notes": "\"a kid named Brent Holley came off the bench and got 10 points\"; no canonical 1979-80 Lakers bench player by that exact name. Mike McGee was 1981 draft, so wrong year. Possible referents include Brad Holland (Lakers 1979-81 reserve guard) or Russell's misrecollection. \"Brent Holley\" → \"Brad Holland\" is the highest-confidence reading; flag for review."
     },
     {
       "row_id": "8.P2T.41",
       "whisper": "named it a male or not, Russell scholarship / named it from Aaron",
       "candidate_correction": "named it Karen [Wentworth] Russell Scholarship",
       "confidence": "medium",
-      "notes": "\"they started scholarship for one of the city kids in Boston. And named it a male or not, Russell scholarship. And named it from Aaron\"; canonical referent is Karen Russell (b. 1962), Bill's daughter from first marriage (a Harvard Law grad and writer). However, the \"from Aaron\" tail more closely fits Russell's late wife Marilyn Nault Russell (d. 2009); \"Aaron\" \u2192 \"Karen\" is a Whisper homophone error. The scholarship is the Marilyn Nault Russell Scholarship. Flag for human review \u2014 could be either family member."
+      "notes": "\"they started scholarship for one of the city kids in Boston. And named it a male or not, Russell scholarship. And named it from Aaron\"; canonical referent is Karen Russell (b. 1962), Bill's daughter from first marriage (a Harvard Law grad and writer). However, the \"from Aaron\" tail more closely fits Russell's late wife Marilyn Nault Russell (d. 2009); \"Aaron\" → \"Karen\" is a Whisper homophone error. The scholarship is the Marilyn Nault Russell Scholarship. Flag for human review — could be either family member."
     },
     {
       "row_id": "8.P2T.46",
       "whisper": "Chuck Limbaugh",
-      "candidate_correction": "(uncertain \u2014 possibly Russell joking about Rush Limbaugh)",
+      "candidate_correction": "(uncertain — possibly Russell joking about Rush Limbaugh)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "\"I said, what about Chuck Limbaugh?\"; no canonical \"Chuck Limbaugh.\" Most likely Russell's joke conflating right-wing radio host Rush Limbaugh (b. 1951, d. 2021) with someone else (possibly comedian Chuck D or Chuck Mangione). Speaker-originating garble likely."
     },
@@ -949,7 +949,7 @@
       "whisper": "I never put a giving for that",
       "candidate_correction": "I never pushed",
       "confidence": "medium",
-      "notes": "SRT line 9391: \"And I told him I never put a giving for that.\" Context is Russell describing his reluctance about the Boston statue project. \"put a giving\" is a Whisper garble of an idiom \u2014 most plausibly \"never pushed for that\" or \"never lobbied for that\" or \"never put in for that.\" Idiom-level correction; speaker-originating ambiguity."
+      "notes": "SRT line 9391: \"And I told him I never put a giving for that.\" Context is Russell describing his reluctance about the Boston statue project. \"put a giving\" is a Whisper garble of an idiom — most plausibly \"never pushed for that\" or \"never lobbied for that\" or \"never put in for that.\" Idiom-level correction; speaker-originating ambiguity."
     },
     {
       "row_id": "8.P4.7",
@@ -1005,7 +1005,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3321,
+    "score": 0.2931,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1013,9 +1013,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2584,
       "adversarial_flag_density": 0.0562,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.039
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3321,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 19,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.039,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 0,

@@ -410,7 +410,7 @@
     {
       "row_id": "25.13",
       "whisper": "Willie Boyle Crawford / Lille Bell Crawford",
-      "candidate_correction": "(a real Bogalusa activist \u2014 likely Lillie Belle Crawford)",
+      "candidate_correction": "(a real Bogalusa activist — likely Lillie Belle Crawford)",
       "confidence": "medium",
       "notes": "Speaker's reference to first VOTEC-attempting Black women"
     },
@@ -452,14 +452,14 @@
     {
       "row_id": "25.31",
       "whisper": "Captain Seymour",
-      "candidate_correction": "(a real military veteran \u2014 verify)",
+      "candidate_correction": "(a real military veteran — verify)",
       "confidence": "speaker-originating",
       "notes": "Real Bogalusa figure who was shot in a phone booth"
     },
     {
       "row_id": "25.32",
       "whisper": "Sonia, Gamble, Patrick Anderson",
-      "candidate_correction": "(real children \u2014 speakers' family)",
+      "candidate_correction": "(real children — speakers' family)",
       "confidence": "speaker-originating",
       "notes": "Real"
     },
@@ -494,9 +494,9 @@
     {
       "row_id": "25.P4.8",
       "whisper": "\"Wall-Hand Louisiana\" (highway-21 traffic-stop episode where Cynthia was arrested for not saying \"yes sir\")",
-      "candidate_correction": "(LA town on Highway 21 between Covington and Bogalusa \u2014 likely Folsom or Sun, LA)",
+      "candidate_correction": "(LA town on Highway 21 between Covington and Bogalusa — likely Folsom or Sun, LA)",
       "confidence": "low",
-      "notes": "Cynthia describes her traffic stop: \"I stopped behind a school bus. It wouldn't used to have a railroad track when you just you got on 21. It was a state trooper behind me. ... He pulled me over ... They put me in jail. My bond was $4.00.\" Hwy 21 between Covington and Bogalusa passes through Sun and Folsom LA; \"Wall-Hand\" is an unidentified Whisper rendering. Adversarial flag \u2014 possibly Walnut LA, possibly an unincorporated locality."
+      "notes": "Cynthia describes her traffic stop: \"I stopped behind a school bus. It wouldn't used to have a railroad track when you just you got on 21. It was a state trooper behind me. ... He pulled me over ... They put me in jail. My bond was $4.00.\" Hwy 21 between Covington and Bogalusa passes through Sun and Folsom LA; \"Wall-Hand\" is an unidentified Whisper rendering. Adversarial flag — possibly Walnut LA, possibly an unincorporated locality."
     },
     {
       "row_id": "25.P4.9",
@@ -510,7 +510,7 @@
       "whisper": "\"Michael Richmond\" (one of two first-elected Black city councilmen, alongside William Bayley/Bailey)",
       "candidate_correction": "Michael Richmond",
       "confidence": "speaker-originating",
-      "notes": "\"And we got out for a city elected official, which was William Bayley and Michael Richmond.\" First-person attestation of two of the first Black Bogalusa city councilmen. Speaker-originating \u2014 adversarial cross-check against Bogalusa city council roster late 1960s/early 1970s would canonicalize."
+      "notes": "\"And we got out for a city elected official, which was William Bayley and Michael Richmond.\" First-person attestation of two of the first Black Bogalusa city councilmen. Speaker-originating — adversarial cross-check against Bogalusa city council roster late 1960s/early 1970s would canonicalize."
     },
     {
       "row_id": "25.P4.11",
@@ -531,21 +531,21 @@
       "whisper": "\"AFL from St. Louis\" (in re labor-management mediator who came in for police-hiring negotiation)",
       "candidate_correction": "AFL-CIO labor mediator",
       "confidence": "medium",
-      "notes": "\"I had the opportunity to sit down with the negotiating committee that put other, it's abusive from the AFL, from St. Louis, Anna that come in.\" Speaker is referencing an AFL-CIO regional staff representative (\"abusive\" \u2192 likely \"advisor\" or \"advocate\") who came down to Bogalusa for the first-Black-policemen hiring negotiation. Whisper rendering somewhat fragmented."
+      "notes": "\"I had the opportunity to sit down with the negotiating committee that put other, it's abusive from the AFL, from St. Louis, Anna that come in.\" Speaker is referencing an AFL-CIO regional staff representative (\"abusive\" → likely \"advisor\" or \"advocate\") who came down to Bogalusa for the first-Black-policemen hiring negotiation. Whisper rendering somewhat fragmented."
     },
     {
       "row_id": "25.P4.16",
       "whisper": "\"Brain Valley Chain\" (closing benediction)",
-      "candidate_correction": "Praise the Lord, the Disco, Brain Valley Chain\" \u2192 likely \"Praise the Lord, this is co-'",
+      "candidate_correction": "Praise the Lord, the Disco, Brain Valley Chain\" → likely \"Praise the Lord, this is co-'",
       "confidence": "low",
-      "notes": "Pre-closing benediction by Cynthia or Fletcher in a Black Baptist worship cadence; Whisper failure on a non-standard prayer-phrase. Unresolved \u2014 possibly Louisiana French-influenced. Adversarial flag."
+      "notes": "Pre-closing benediction by Cynthia or Fletcher in a Black Baptist worship cadence; Whisper failure on a non-standard prayer-phrase. Unresolved — possibly Louisiana French-influenced. Adversarial flag."
     },
     {
       "row_id": "25.P4.19",
       "whisper": "\"the Nau Yacht\" (in cross-burning location)",
-      "candidate_correction": "the Naval Yard\" or \"the new yard\" \u2014 likely a Bogalusa street/intersection",
+      "candidate_correction": "the Naval Yard\" or \"the new yard\" — likely a Bogalusa street/intersection",
       "confidence": "low",
-      "notes": "\"Cookega clan burned across the Nau Yacht\" (cross-burning location). Could be a Bogalusa landmark name (\"Navy Yard\"?), or another rendering of \"the yard\" referring to Robert Hicks's yard (where the canonical 1965 cross-burning happened). The latter is more likely contextually \u2014 speaker is describing the Hicks-yard cross-burning that galvanized the Deacons charter. Adversarial flag."
+      "notes": "\"Cookega clan burned across the Nau Yacht\" (cross-burning location). Could be a Bogalusa landmark name (\"Navy Yard\"?), or another rendering of \"the yard\" referring to Robert Hicks's yard (where the canonical 1965 cross-burning happened). The latter is more likely contextually — speaker is describing the Hicks-yard cross-burning that galvanized the Deacons charter. Adversarial flag."
     }
   ],
   "skipped_rows": [],
@@ -588,17 +588,29 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.5273,
-    "confidence_tier": "publication-block",
+    "score": 0.4613,
+    "confidence_tier": "low",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.4364,
       "adversarial_flag_density": 0.0909,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.066
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.5273,
+    "previous_tier_v8": "publication-block",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 46,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.066,
+      "tier_changed": true
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 0,

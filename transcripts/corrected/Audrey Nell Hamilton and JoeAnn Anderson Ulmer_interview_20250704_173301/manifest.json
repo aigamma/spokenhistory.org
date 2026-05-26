@@ -701,7 +701,7 @@
     {
       "row_id": "4.8",
       "whisper": "Armacurus",
-      "candidate_correction": "(McCrory's or similar \u2014 verbal context unclear)",
+      "candidate_correction": "(McCrory's or similar — verbal context unclear)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Same listing; Whisper rendered a fourth name that may or may not be a separate store"
     },
@@ -722,9 +722,9 @@
     {
       "row_id": "4.11",
       "whisper": "car Williams",
-      "candidate_correction": "(likely a name \u2014 possibly Carl Williams)",
+      "candidate_correction": "(likely a name — possibly Carl Williams)",
       "confidence": "speaker-originating",
-      "notes": "Speaker rapidly lists names; Whisper produced \"car Williams\" \u2014 likely the first name was cut off"
+      "notes": "Speaker rapidly lists names; Whisper produced \"car Williams\" — likely the first name was cut off"
     },
     {
       "row_id": "4.12",
@@ -778,7 +778,7 @@
     {
       "row_id": "4.26",
       "whisper": "DJ Johnson",
-      "candidate_correction": "(Black deputy \u2014 name as transcribed)",
+      "candidate_correction": "(Black deputy — name as transcribed)",
       "confidence": "speaker-originating",
       "notes": "Real; the Black St. Johns County sheriff's deputy who arrested the teens"
     },
@@ -794,7 +794,7 @@
       "whisper": "Reformatory School",
       "candidate_correction": "Florida Industrial School for Girls (Ocala)",
       "confidence": "speaker-originating",
-      "notes": "Two different reform schools \u2014 the girls went to Ocala, the boys to Marianna // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Two different reform schools — the girls went to Ocala, the boys to Marianna // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "4.32",
@@ -850,7 +850,7 @@
       "whisper": "\"Spiritsure we was already anointed\"",
       "candidate_correction": "*[But] sure*, we was already anointed",
       "confidence": "medium",
-      "notes": "SRT line 1599: \"We didn't have nobody but each other to talk to and we had a Bible they gave us but Spiritsure we was already anointed by the Lord.\" Speaker's natural intonation; Whisper merged \"but sure\" into \"Spiritsure.\" Alternative reading: \"**Spirit-sure**\" as a compound the speaker actually uses \u2014 flag for community informant."
+      "notes": "SRT line 1599: \"We didn't have nobody but each other to talk to and we had a Bible they gave us but Spiritsure we was already anointed by the Lord.\" Speaker's natural intonation; Whisper merged \"but sure\" into \"Spiritsure.\" Alternative reading: \"**Spirit-sure**\" as a compound the speaker actually uses — flag for community informant."
     },
     {
       "row_id": "4.P4.7",
@@ -871,7 +871,7 @@
       "whisper": "\"I want my love hero to come and go with me\"",
       "candidate_correction": "I want *my little hero to come and* go with me",
       "confidence": "medium",
-      "notes": "SRT line 2263: MLK selecting Audrey Nell. Whisper rendered \"little\" as \"love\" \u2014 speaker's recollection of King's affectionate term for her (\"little hero\" referring to her age and the 1963 sit-in fame)."
+      "notes": "SRT line 2263: MLK selecting Audrey Nell. Whisper rendered \"little\" as \"love\" — speaker's recollection of King's affectionate term for her (\"little hero\" referring to her age and the 1963 sit-in fame)."
     },
     {
       "row_id": "4.P4.12",
@@ -885,12 +885,12 @@
       "whisper": "\"they pushed down the ponds out there on US one\"",
       "candidate_correction": "they pushed down *the Ponce de Leon* out there on US 1",
       "confidence": "medium",
-      "notes": "SRT lines 3955-3959: Audrey Nell describing St. Augustine erasing civil-rights-era buildings. Whisper rendered \"Ponce de Leon\" as \"ponds\" \u2014 likely referring to the Ponce de Leon Motor Lodge or similar Ponce de Leon-named civil-rights-era site on US 1. Alternative reading: literal \"ponds\" \u2014 speaker's natural diction. Flag for adversarial review."
+      "notes": "SRT lines 3955-3959: Audrey Nell describing St. Augustine erasing civil-rights-era buildings. Whisper rendered \"Ponce de Leon\" as \"ponds\" — likely referring to the Ponce de Leon Motor Lodge or similar Ponce de Leon-named civil-rights-era site on US 1. Alternative reading: literal \"ponds\" — speaker's natural diction. Flag for adversarial review."
     },
     {
       "row_id": "4.P4.37",
       "whisper": "\"the political outcome\"",
-      "candidate_correction": "speaker dialect \u2014 likely \"the *physical* outcome",
+      "candidate_correction": "speaker dialect — likely \"the *physical* outcome",
       "confidence": "low",
       "notes": "SRT lines 3343-3347: \"They almost were champions. But they didn't get the political outcome.\" Audrey Nell describing her son's high-school football team; \"political outcome\" is semantically odd. Likely speaker's natural phrasing or Whisper artifact. Speaker-originating, low confidence. Flag."
     },
@@ -906,12 +906,12 @@
       "whisper": "\"Are I being hailed\"",
       "candidate_correction": "*[All y'all] being hauled\" or \"[are they] being hailed*",
       "confidence": "low",
-      "notes": "SRT line 3551: \"I was like, are I being hailed?\" Audrey Nell's reaction to seeing Hayling in her own FBI file \u2014 likely meaning \"are y'all being hauled [in to FBI surveillance]?\" Speaker dialect + Whisper error. Flag."
+      "notes": "SRT line 3551: \"I was like, are I being hailed?\" Audrey Nell's reaction to seeing Hayling in her own FBI file — likely meaning \"are y'all being hauled [in to FBI surveillance]?\" Speaker dialect + Whisper error. Flag."
     },
     {
       "row_id": "4.P4.41",
       "whisper": "\"He stays in Kingsville\"",
-      "candidate_correction": "He stays in *Kingsville*\" \u2014 likely the FL/GA town",
+      "candidate_correction": "He stays in *Kingsville*\" — likely the FL/GA town",
       "confidence": "speaker-originating",
       "notes": "SRT line 3323: Audrey Nell's son's location. Cannot canonical-verify which Kingsville (Florida, Texas, etc.) without further info; preserve as speaker-originating."
     },
@@ -920,7 +920,7 @@
       "whisper": "\"Miss Hadith, why\"",
       "candidate_correction": "unidentified name",
       "confidence": "speaker-originating",
-      "notes": "SRT line 3615: After describing the cemetery, Audrey Nell mentions \"Miss Hadith, why\" \u2014 speaker mid-utterance with possible interruption. Possibly \"Miss Edith\" with surname truncated. Unrecoverable; flag."
+      "notes": "SRT line 3615: After describing the cemetery, Audrey Nell mentions \"Miss Hadith, why\" — speaker mid-utterance with possible interruption. Possibly \"Miss Edith\" with surname truncated. Unrecoverable; flag."
     },
     {
       "row_id": "4.P4.43",
@@ -934,7 +934,7 @@
       "whisper": "\"the lady came and said, do you all want to look at a movie? Joanne, let me say, move\"",
       "candidate_correction": "Joanne, let me *see a movie*",
       "confidence": "medium",
-      "notes": "SRT lines 2575-2581: Audrey Nell describing first time on a plane. \"Joanne let me say, move\" \u2192 \"Joanne[!] let me see a movie.\""
+      "notes": "SRT lines 2575-2581: Audrey Nell describing first time on a plane. \"Joanne let me say, move\" → \"Joanne[!] let me see a movie.\""
     },
     {
       "row_id": "4.P4.45",
@@ -948,7 +948,7 @@
       "whisper": "\"Miss Pryce\"",
       "candidate_correction": "Miss *Price*\"",
       "confidence": "speaker-originating",
-      "notes": "SRT lines 1755-1763: Sam White's mother \u2014 \"Miss Price\" is the most plausible canonical spelling (Whisper \"Pryce\" is a known spelling variant). Speaker-originating."
+      "notes": "SRT lines 1755-1763: Sam White's mother — \"Miss Price\" is the most plausible canonical spelling (Whisper \"Pryce\" is a known spelling variant). Speaker-originating."
     }
   ],
   "skipped_rows": [
@@ -1000,7 +1000,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4316,
+    "score": 0.3956,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1008,9 +1008,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.3895,
       "adversarial_flag_density": 0.0421,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.036
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4316,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 16,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.036,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 4,
   "cross_contamination_items_resolved": 0,

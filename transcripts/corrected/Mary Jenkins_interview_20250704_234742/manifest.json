@@ -440,7 +440,7 @@
     {
       "row_id": "84.P4.22",
       "whisper": "\"open themselves\"",
-      "correction": "Open Themselves (Mary Frances Jenkins, self-published) \u2014 title verification flagged",
+      "correction": "Open Themselves (Mary Frances Jenkins, self-published) — title verification flagged",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -505,16 +505,16 @@
     {
       "row_id": "84.20",
       "whisper": "Molles Island Baptist Church",
-      "candidate_correction": "Mount Olive Baptist Church (Albany) \u2014 uncertain",
+      "candidate_correction": "Mount Olive Baptist Church (Albany) — uncertain",
       "confidence": "medium",
-      "notes": "Speaker recall // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "Speaker recall // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "84.P2.10",
       "whisper": "Tea-par / Teapar",
       "candidate_correction": "Tifton or Tipton (uncertain GA town)",
       "confidence": "low",
-      "notes": "\"I took her to Teapar\" \u2014 context is a place with rides for white children only; likely Albany-area amusement park; Whisper rendering ambiguous"
+      "notes": "\"I took her to Teapar\" — context is a place with rides for white children only; likely Albany-area amusement park; Whisper rendering ambiguous"
     },
     {
       "row_id": "84.P2.12",
@@ -533,9 +533,9 @@
     {
       "row_id": "84.P2.14",
       "whisper": "Miss Rimmel's",
-      "candidate_correction": "(uncertain \u2014 Madison HS home economics teacher)",
+      "candidate_correction": "(uncertain — Madison HS home economics teacher)",
       "confidence": "low",
-      "notes": "Speaker mentions her as home ec teacher; possibly \"Mrs. Rimmel\" or \"Miss Rumell\" \u2014 unclear"
+      "notes": "Speaker mentions her as home ec teacher; possibly \"Mrs. Rimmel\" or \"Miss Rumell\" — unclear"
     },
     {
       "row_id": "84.P2.15",
@@ -570,7 +570,7 @@
       "whisper": "the Jason building",
       "candidate_correction": "Jackson building (uncertain Albany school annex)",
       "confidence": "low",
-      "notes": "Speaker says she was moved from the army-barracks Carver Junior High annex into \"the Jason building\" \u2014 unclear if proper noun or Whisper hallucination"
+      "notes": "Speaker says she was moved from the army-barracks Carver Junior High annex into \"the Jason building\" — unclear if proper noun or Whisper hallucination"
     },
     {
       "row_id": "84.P2.42",
@@ -589,9 +589,9 @@
     {
       "row_id": "84.P2.51",
       "whisper": "God's deputy",
-      "candidate_correction": "(idiom \u2014 possibly \"God's deputy\" \u2192 \"God works in mysterious ways\" or Whisper artifact)",
+      "candidate_correction": "(idiom — possibly \"God's deputy\" → \"God works in mysterious ways\" or Whisper artifact)",
       "confidence": "low",
-      "notes": "\"I always say God's deputy. Because I sold out of the first edition\" \u2014 speaker's idiom uncertain"
+      "notes": "\"I always say God's deputy. Because I sold out of the first edition\" — speaker's idiom uncertain"
     },
     {
       "row_id": "84.P3.12",
@@ -610,35 +610,35 @@
     {
       "row_id": "84.P4.8",
       "whisper": "\"two Jenkins\" / \"Two Jenkins\"",
-      "candidate_correction": "(uncertain \u2014 Roscoe Jenkins; possibly \"to Jenkins\" or speaker phrasing artifact)",
+      "candidate_correction": "(uncertain — Roscoe Jenkins; possibly \"to Jenkins\" or speaker phrasing artifact)",
       "confidence": "low",
-      "notes": "Speaker is asked who she married and replies: \"You see, I married two Jenkins. Two Jenkins. Right. Roscoe Jenkins.\" The phrase \"two Jenkins\" is opaque \u2014 could be Whisper artifact for \"to a Jenkins\" (i.e., \"I married into the Jenkins family\"), OR speaker repeating \"yes\" with an indistinct prefix that Whisper rendered as \"two.\" Pass 1 (84.8) caught \"Roscoe Jenkins\" at speaker-originating; the \"two Jenkins\" prefix was not flagged. Low confidence; possible Whisper artifact."
+      "notes": "Speaker is asked who she married and replies: \"You see, I married two Jenkins. Two Jenkins. Right. Roscoe Jenkins.\" The phrase \"two Jenkins\" is opaque — could be Whisper artifact for \"to a Jenkins\" (i.e., \"I married into the Jenkins family\"), OR speaker repeating \"yes\" with an indistinct prefix that Whisper rendered as \"two.\" Pass 1 (84.8) caught \"Roscoe Jenkins\" at speaker-originating; the \"two Jenkins\" prefix was not flagged. Low confidence; possible Whisper artifact."
     },
     {
       "row_id": "84.P4.14",
       "whisper": "\"she's a sea-steed\"",
       "candidate_correction": "she's (deceased)",
       "confidence": "medium",
-      "notes": "Speaker on her daughter: \"Well, what happened was my daughter, she's a sea-steed. But she knew I had all this material. And she kept saying, why don't you put it together in a book? And of course, I hesitated, you know, for a cast-a-day, I guess I should say. And she passed.\" The narrative thread: \"she's [deceased / past tense]\" / \"she passed\" \u2014 the speaker repeats the daughter's passing, so \"sea-steed\" reads as Whisper artifact for \"deceased\" with clean phonetic substitution. Medium confidence; \"cast-a-day\" \u2192 \"a decade\" reading immediately follows (see P4.15)."
+      "notes": "Speaker on her daughter: \"Well, what happened was my daughter, she's a sea-steed. But she knew I had all this material. And she kept saying, why don't you put it together in a book? And of course, I hesitated, you know, for a cast-a-day, I guess I should say. And she passed.\" The narrative thread: \"she's [deceased / past tense]\" / \"she passed\" — the speaker repeats the daughter's passing, so \"sea-steed\" reads as Whisper artifact for \"deceased\" with clean phonetic substitution. Medium confidence; \"cast-a-day\" → \"a decade\" reading immediately follows (see P4.15)."
     },
     {
       "row_id": "84.P4.16",
       "whisper": "\"in some incident\" / \"involved in some incident over a weekend\"",
-      "candidate_correction": "(speaker recall \u2014 preserved)",
+      "candidate_correction": "(speaker recall — preserved)",
       "confidence": "speaker-originating",
       "notes": "Speaker on the Baker County young male teacher who was fired: \"One involved a young, a young man who somehow another got involved in some incident over a weekend. It wasn't anything that required police.\" Preserved as speaker-recall narrative. Not a Whisper error; flagged for completeness because Pass 3 left the supervisor's name unrecoverable. The Pass 4 spot-check confirms that the firing-on-the-spot detail is intact (canonical Black-teachers-as-vulnerable-workers pattern)."
     },
     {
       "row_id": "84.P4.17",
       "whisper": "\"I was through with Baker County\"",
-      "candidate_correction": "(speaker recall \u2014 preserved)",
+      "candidate_correction": "(speaker recall — preserved)",
       "confidence": "speaker-originating",
       "notes": "Speaker's verbatim conclusion on the Baker County supervisor's \"they may make us go to school with you, but I would never invite one of you to my home\" speech: \"I was through with Baker County.\" Canonical first-person resolution-of-conscience moment in pre-CRA Black-teacher narrative. Not a Whisper error; flagged because it is the canonical clinching line in this entry's most important narrative arc."
     },
     {
       "row_id": "84.P4.19",
       "whisper": "\"you don't want me to ride\" (4-year-old daughter)",
-      "candidate_correction": "(preserved \u2014 quoted speech)",
+      "candidate_correction": "(preserved — quoted speech)",
       "confidence": "speaker-originating",
       "notes": "Speaker recalls her 3-year-old daughter's verbatim reaction at the segregated park: \"she turned around and beat her little fist against me. And she said, you don't want me to ride. How was I to explain the system to her?\" Canonical first-person child-witness-of-segregation moment; preserved. NOTE: speaker says daughter was \"three years old\" here but later (P2.42) Pass 2 logs her son as \"4-year-old\" at the Mount Olive Baptist Church near-arrest. Two separate children, two separate ages. Confirmed via raw."
     }
@@ -740,9 +740,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.3651,
       "adversarial_flag_density": 0.127,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.0
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4921,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 0,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.0,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 0,

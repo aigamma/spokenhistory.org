@@ -451,7 +451,7 @@
     {
       "row_id": "36.P4.6",
       "whisper": "\"Brown have been all the black. All white people went there.\"",
-      "candidate_correction": "Brown vs. Board, all the Black [were unwelcome to register/all the white people went there to register]\" \u2014 or \"Bowers had been [organizing] all the [Klansmen]",
+      "candidate_correction": "Brown vs. Board, all the Black [were unwelcome to register/all the white people went there to register]\" — or \"Bowers had been [organizing] all the [Klansmen]",
       "confidence": "low",
       "notes": "\"Browns have been all the black. All white people went there. There was always some good white people\"; surrounding context is severely garbled but speaker is discussing pre-VRA Forrest County race relations. Possible canonical reference to Sam Bowers (KKK Imperial Wizard) or to Brown v. Board reaction. Adversarial-flag."
     },
@@ -465,7 +465,7 @@
     {
       "row_id": "36.P4.11",
       "whisper": "\"the people of cheaper police\" / \"Pound was in here\"",
-      "candidate_correction": "(Vernon Dahmer Sr.'s) sons by name \u2014 likely \"Vernon [Jr.] was in here\" or \"[the eldest] was in here",
+      "candidate_correction": "(Vernon Dahmer Sr.'s) sons by name — likely \"Vernon [Jr.] was in here\" or \"[the eldest] was in here",
       "confidence": "medium",
       "notes": "\"Pound was in here. How did you just come back from the service?\"; \"Pound\" is phonetically close to \"Pindy\" (Pass-2 noted as Vernon Jr.); context (Voting Rights Act passage 1965, returning serviceman) is consistent with Vernon Jr. just back from Vietnam-era military service"
     },
@@ -474,39 +474,39 @@
       "whisper": "\"his sister\" (in Ladner sisters context)",
       "candidate_correction": "they were in his sisters' [age cohort]\" or \"[Mrs. Beard's] sisters",
       "confidence": "medium",
-      "notes": "\"They said they remember working with the NAACP branch? Yes, with his sister. They all was in the same church together\"; ambiguous reference \u2014 \"his sister\" likely refers to Vernon Dahmer Sr.'s younger sister or a member of the Beard family extended cohort."
+      "notes": "\"They said they remember working with the NAACP branch? Yes, with his sister. They all was in the same church together\"; ambiguous reference — \"his sister\" likely refers to Vernon Dahmer Sr.'s younger sister or a member of the Beard family extended cohort."
     },
     {
       "row_id": "36.P4.19",
       "whisper": "\"What really broke it up on Mars? Burn on system.\"",
-      "candidate_correction": "What really broke it open was [the test failure of two white-passing Black registrants] \u2014 Vernon's system [or 'the system was broken open']",
+      "candidate_correction": "What really broke it open was [the test failure of two white-passing Black registrants] — Vernon's system [or 'the system was broken open']",
       "confidence": "low",
-      "notes": "Severely garbled passage; speaker is recounting the celebrated *U.S. v. Lynd* trial evidence: Theron Lynd registered two Black women who *appeared* white (Mrs. Beard's mother + aunt) without testing them, proving disparate-treatment intent. \"Burn on system\" \u2192 \"Vernon's system\" is one possible read; adversarial-flag."
+      "notes": "Severely garbled passage; speaker is recounting the celebrated *U.S. v. Lynd* trial evidence: Theron Lynd registered two Black women who *appeared* white (Mrs. Beard's mother + aunt) without testing them, proving disparate-treatment intent. \"Burn on system\" → \"Vernon's system\" is one possible read; adversarial-flag."
     },
     {
       "row_id": "36.P4.20",
       "whisper": "\"the United States of turnage almost going to be dying\"",
       "candidate_correction": "the United States Attorney [General was] almost [a defendant himself]\" or \"the United States [court term was] almost going to be ending",
       "confidence": "low",
-      "notes": "\"The United States of turnage almost going to be dying\"; severely garbled; possibly \"the United States Attorney [for the case] was almost dying\" \u2014 but Doar lived until 2014, so could refer to deputy/junior counsel; adversarial-flag."
+      "notes": "\"The United States of turnage almost going to be dying\"; severely garbled; possibly \"the United States Attorney [for the case] was almost dying\" — but Doar lived until 2014, so could refer to deputy/junior counsel; adversarial-flag."
     }
   ],
   "skipped_rows": [
     {
       "row_id": "36.8",
-      "reason": "unknown confidence 'flag \u2014 adversarial'"
+      "reason": "unknown confidence 'flag — adversarial'"
     },
     {
       "row_id": "36.9",
-      "reason": "unknown confidence 'flag \u2014 adversarial'"
+      "reason": "unknown confidence 'flag — adversarial'"
     },
     {
       "row_id": "36.21",
-      "reason": "unknown confidence 'flag \u2014 adversarial'"
+      "reason": "unknown confidence 'flag — adversarial'"
     },
     {
       "row_id": "36.23",
-      "reason": "unknown confidence 'flag \u2014 adversarial'"
+      "reason": "unknown confidence 'flag — adversarial'"
     },
     {
       "row_id": "36.P2.6",
@@ -552,7 +552,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3777,
+    "score": 0.3527,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -560,9 +560,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2444,
       "adversarial_flag_density": 0.1333,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.025
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3777,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 5,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.025,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 0,

@@ -408,7 +408,7 @@
       "whisper": "Imanu J. Oliver / E.J. Oliver",
       "candidate_correction": "Imanu",
       "confidence": "speaker-originating",
-      "notes": "Canonical Fairfield Industrial High School principal \u2014 same era as Hrabowski #45's Birmingham Ullman HS George C. Bell principal"
+      "notes": "Canonical Fairfield Industrial High School principal — same era as Hrabowski #45's Birmingham Ullman HS George C. Bell principal"
     },
     {
       "row_id": "59.17",
@@ -420,23 +420,23 @@
     {
       "row_id": "59.P2.22",
       "whisper": "Wistnik",
-      "candidate_correction": "(uncertain \u2014 possibly speaker's name for a Lowndes precinct or canvassing-target community)",
+      "candidate_correction": "(uncertain — possibly speaker's name for a Lowndes precinct or canvassing-target community)",
       "confidence": "low",
-      "notes": "\"we would go to work in Wistnik in Lowns County\" \u2014 phonetic-unclear; possibly White Hall / Whisnant or a specific township; flag for Lowndes-experts to clarify"
+      "notes": "\"we would go to work in Wistnik in Lowns County\" — phonetic-unclear; possibly White Hall / Whisnant or a specific township; flag for Lowndes-experts to clarify"
     },
     {
       "row_id": "59.P2.34",
       "whisper": "Iman J. Oliver / Imanu J. Oliver / E.J. Oliver",
       "candidate_correction": "Imanu",
       "confidence": "speaker-originating",
-      "notes": "(Pass 1 noted) \u2014 canonical Fairfield Industrial High School principal whose \"data struggle, dare to win\" homilies were the school's motto"
+      "notes": "(Pass 1 noted) — canonical Fairfield Industrial High School principal whose \"data struggle, dare to win\" homilies were the school's motto"
     },
     {
       "row_id": "59.P2.40",
       "whisper": "Birmingham Mira / Birmingham Mirror",
       "candidate_correction": "Birmingham Mirror",
       "confidence": "medium",
-      "notes": "\"We had a local Birmingham, Birmingham Mira, I think it was called\" \u2014 speaker's recollection of a local Birmingham Black newspaper; spelling unverified; possibly *Birmingham World* (canonical Birmingham Black weekly 1930-2008) being mis-remembered"
+      "notes": "\"We had a local Birmingham, Birmingham Mira, I think it was called\" — speaker's recollection of a local Birmingham Black newspaper; spelling unverified; possibly *Birmingham World* (canonical Birmingham Black weekly 1930-2008) being mis-remembered"
     },
     {
       "row_id": "59.P3.1",
@@ -450,7 +450,7 @@
       "whisper": "CJ Jones",
       "candidate_correction": "C.J. Jones",
       "confidence": "medium",
-      "notes": "\"It was a whole group of us who were Tuskegee students\" \u2014 same cohort sentence; CJ Jones is plausibly the Tuskegee SNCC organizer who worked in Lowndes County alongside Lawson; punctuation pending confirmation of full name. Missed by Pass 1-3."
+      "notes": "\"It was a whole group of us who were Tuskegee students\" — same cohort sentence; CJ Jones is plausibly the Tuskegee SNCC organizer who worked in Lowndes County alongside Lawson; punctuation pending confirmation of full name. Missed by Pass 1-3."
     }
   ],
   "skipped_rows": [
@@ -460,7 +460,7 @@
     },
     {
       "row_id": "59.P2.9",
-      "reason": "unknown confidence 'retracted \u2014 cross-contamination'"
+      "reason": "unknown confidence 'retracted — cross-contamination'"
     },
     {
       "row_id": "59.P2.45",
@@ -508,7 +508,7 @@
     "source-level-mid-sentence-truncation"
   ],
   "inferential_uncertainty": {
-    "score": 1.0,
+    "score": 0.956,
     "confidence_tier": "not-auditable",
     "components": {
       "base": 0.0,
@@ -516,9 +516,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.175,
       "adversarial_flag_density": 0.15,
-      "cross_contamination_penalty": 0.8
+      "cross_contamination_penalty": 0.8,
+      "loc_verification_credit": -0.044
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 1.0,
+    "previous_tier_v8": "not-auditable",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 24,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.044,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 8,

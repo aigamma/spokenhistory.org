@@ -715,12 +715,12 @@
       "whisper": "the Greenwood SNCC voter-registration festival on the McGee family farm",
       "candidate_correction": "Silas McGee family",
       "confidence": "speaker-originating",
-      "notes": "\"the McGee family who owned a farm. They didn't live directly in Greenwood but only outside of Greenwood. They were very involved in the movement\"; canonical Greenwood-area Black-landowning family that hosted the 1963/64 Pete Seeger / Peter Paul & Mary / SNCC Freedom Singers concerts; same as Pass 1 #44.36 \u2014 flagged here for catalog inclusion as a foundational SNCC-supporter family"
+      "notes": "\"the McGee family who owned a farm. They didn't live directly in Greenwood but only outside of Greenwood. They were very involved in the movement\"; canonical Greenwood-area Black-landowning family that hosted the 1963/64 Pete Seeger / Peter Paul & Mary / SNCC Freedom Singers concerts; same as Pass 1 #44.36 — flagged here for catalog inclusion as a foundational SNCC-supporter family"
     },
     {
       "row_id": "44.P2.27",
       "whisper": "post office context (Mr. Dickson, Mr. Thompson)",
-      "candidate_correction": "(Greenwood Black postal workers \u2014 speaker-originating)",
+      "candidate_correction": "(Greenwood Black postal workers — speaker-originating)",
       "confidence": "speaker-originating",
       "notes": "\"uncle and this other man, Mr. Dickson, was the postman... and Mr. Thompson, who cleaned up the post office\"; speaker-originating canonical-adjacent figures of the Greenwood Black professional class 1940s-50s; preserved for completeness"
     },
@@ -736,14 +736,14 @@
       "whisper": "Janet Moses",
       "candidate_correction": "(Janet Jemmott Moses; later Janet Moses Roby; possibly canonical Bob Moses's daughter or different Janet Moses)",
       "confidence": "low",
-      "notes": "\"most of the Janet Moses and I went in at the same time\"; context is Jackson MS fairground mass-arrest summer 1965; canonical Janet Jemmott (Bob Moses's eventual wife, m. 1968) \u2014 biographical timing doesn't quite fit if speaker means Mrs. Moses, but a second Janet Moses (Bob's first wife Dona Moses Robinson n\u00e9e Richards) may also be the referent; spelling/identity not yet verified"
+      "notes": "\"most of the Janet Moses and I went in at the same time\"; context is Jackson MS fairground mass-arrest summer 1965; canonical Janet Jemmott (Bob Moses's eventual wife, m. 1968) — biographical timing doesn't quite fit if speaker means Mrs. Moses, but a second Janet Moses (Bob's first wife Dona Moses Robinson née Richards) may also be the referent; spelling/identity not yet verified"
     },
     {
       "row_id": "44.P2.33",
       "whisper": "Chessie Johnson",
       "candidate_correction": "(uncertain SNCC bookkeeper, likely Jessie Johnson or Chetta Johnson)",
       "confidence": "low",
-      "notes": "Same as Pass 1 #44.29 \u2014 preserved as still-unverified after Pass 2"
+      "notes": "Same as Pass 1 #44.29 — preserved as still-unverified after Pass 2"
     },
     {
       "row_id": "44.P3.2",
@@ -755,7 +755,7 @@
     {
       "row_id": "44.P3.3",
       "whisper": "\"Janet Moses\" timeline check",
-      "candidate_correction": "Likely Dona Moses n\u00e9e Richards",
+      "candidate_correction": "Likely Dona Moses née Richards",
       "confidence": "low",
       "notes": "Pass 3 resolution attempt: Bob Moses married Dona Richards in 1965; she was active in MS Movement summer 1965 (Greene's referenced fairground arrest context fits); Janet Jemmott (eventual second wife m. 1968) less biographically aligned with summer 1965 fairground. Upgrade Dona Richards Moses as the likely referent, but still flag adversarial for confirmation. // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
@@ -783,9 +783,9 @@
     {
       "row_id": "44.P4.20",
       "whisper": "go-birds (street store reference)",
-      "candidate_correction": "(uncertain \u2014 possibly \"Goldberg's\" / a department store name)",
+      "candidate_correction": "(uncertain — possibly \"Goldberg's\" / a department store name)",
       "confidence": "low",
-      "notes": "\"in the 500 block of Howard Street, there would have been a go-birds, there was a shoe store\"; speaker is naming downtown Greenwood retail businesses 1950s-60s \u2014 \"go-birds\" appears to be a proper name (likely a Jewish-owned department store given speaker's later \"Greenwood has a large Jewish community\" framing). Unrecovered; reserve for adversarial verification or Greenwood MS historical-society records cross-check."
+      "notes": "\"in the 500 block of Howard Street, there would have been a go-birds, there was a shoe store\"; speaker is naming downtown Greenwood retail businesses 1950s-60s — \"go-birds\" appears to be a proper name (likely a Jewish-owned department store given speaker's later \"Greenwood has a large Jewish community\" framing). Unrecovered; reserve for adversarial verification or Greenwood MS historical-society records cross-check."
     }
   ],
   "skipped_rows": [
@@ -849,7 +849,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4143,
+    "score": 0.3793,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -857,9 +857,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1714,
       "adversarial_flag_density": 0.0429,
-      "cross_contamination_penalty": 0.2
+      "cross_contamination_penalty": 0.2,
+      "loc_verification_credit": -0.035
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4143,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 15,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.035,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 3,
   "cross_contamination_items_resolved": 2,

@@ -1184,7 +1184,7 @@
     {
       "row_id": "129.P2.104",
       "whisper": "the Black Panther Party (LCFO origin)",
-      "correction": "Lowndes County Freedom Organization (LCFO) \u2192 Black Panther Party",
+      "correction": "Lowndes County Freedom Organization (LCFO) → Black Panther Party",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -1610,9 +1610,9 @@
     {
       "row_id": "129.86",
       "whisper": "Ron McMacKinn",
-      "candidate_correction": "(likely) Ron McKee or similar \u2014 Mark McGuire's buddy",
+      "candidate_correction": "(likely) Ron McKee or similar — Mark McGuire's buddy",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "- // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "- // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "129.P2.39",
@@ -1668,7 +1668,7 @@
       "whisper": "Sherry LeBetus",
       "candidate_correction": "Cheryl LaBatts",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Reinforces Pass 1 #129.24 (variant) // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "Reinforces Pass 1 #129.24 (variant) // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "129.P2.100",
@@ -1752,7 +1752,7 @@
       "whisper": "Ron McMacKinn",
       "candidate_correction": "(likely) Ron McKee",
       "confidence": "low",
-      "notes": "Reinforces Pass 1 #129.86 // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "Reinforces Pass 1 #129.86 // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "129.P2.135",
@@ -1766,7 +1766,7 @@
       "whisper": "(the) meat packers union (Jewish man head of)",
       "candidate_correction": "Amalgamated Meat Cutters and Butcher Workmen",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "\"we had a Jewish man who was head of the meat packers union, whose picture is in there. Why am I forgetting his name?\"; canonical Patrick Gorman (head 1923-76) wasn't Jewish \u2014 possibly Ralph Helstein (United Packinghouse Workers president 1946-68, Jewish)"
+      "notes": "\"we had a Jewish man who was head of the meat packers union, whose picture is in there. Why am I forgetting his name?\"; canonical Patrick Gorman (head 1923-76) wasn't Jewish — possibly Ralph Helstein (United Packinghouse Workers president 1946-68, Jewish)"
     },
     {
       "row_id": "129.P2.152",
@@ -1913,14 +1913,14 @@
       "whisper": "\"Lustromatics\" -> Lester Maddox (129.P2.75)",
       "candidate_correction": "Lester Maddox",
       "confidence": "low",
-      "notes": "Pass 2 row 129.P2.75 hypothesizes Lester Maddox; the \"Lustromatics\" rendering is highly unusual and could also be a Whisper render of \"lust romantics\" or even a different surname entirely. Flag-adjacent \u2014 keep as LOW pending Maddox-1965-Americus-itinerary check."
+      "notes": "Pass 2 row 129.P2.75 hypothesizes Lester Maddox; the \"Lustromatics\" rendering is highly unusual and could also be a Whisper render of \"lust romantics\" or even a different surname entirely. Flag-adjacent — keep as LOW pending Maddox-1965-Americus-itinerary check."
     },
     {
       "row_id": "129.P3.11",
       "whisper": "\"Briggs Hunt UCLA wrestling coach\" cross-reference (129.P2.207)",
       "candidate_correction": "Briggs Hunt",
       "confidence": "medium",
-      "notes": "Worth noting Briggs Hunt was 1932 LA Olympics wrestler + UCLA wrestling coach 1934-58 \u2014 significant for any UCLA athletic-history cross-reference. (Catalog observation, not an add.)"
+      "notes": "Worth noting Briggs Hunt was 1932 LA Olympics wrestler + UCLA wrestling coach 1934-58 — significant for any UCLA athletic-history cross-reference. (Catalog observation, not an add.)"
     },
     {
       "row_id": "129.P4.2",
@@ -1934,7 +1934,7 @@
       "whisper": "\"Galsville Mark McGuire\"",
       "candidate_correction": "(likely) Claremont",
       "confidence": "low",
-      "notes": "Raw SRT line 1319: \"Ron McMacKinn is a buddy of Mark McGuire, Galsville Mark McGuire, and Tiger Woods.\" Speaker is identifying the geographic origin/college of Mark McGwire \u2014 McGwire grew up in Claremont CA (within LA County) and attended USC (Los Angeles). \"Galsville\" is unidentified geographic-Whisper-failure; could be \"Claremont's\" or \"Glendora's\" or simply Whisper hash. Flag-adjacent."
+      "notes": "Raw SRT line 1319: \"Ron McMacKinn is a buddy of Mark McGuire, Galsville Mark McGuire, and Tiger Woods.\" Speaker is identifying the geographic origin/college of Mark McGwire — McGwire grew up in Claremont CA (within LA County) and attended USC (Los Angeles). \"Galsville\" is unidentified geographic-Whisper-failure; could be \"Claremont's\" or \"Glendora's\" or simply Whisper hash. Flag-adjacent."
     },
     {
       "row_id": "129.P4.6",
@@ -2008,7 +2008,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4025,
+    "score": 0.3025,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -2016,9 +2016,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.288,
       "adversarial_flag_density": 0.0815,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.1
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4025,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 82,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.1,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 15,
   "cross_contamination_items_resolved": 0,

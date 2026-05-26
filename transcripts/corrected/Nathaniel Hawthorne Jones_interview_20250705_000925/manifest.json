@@ -348,7 +348,7 @@
     {
       "row_id": "92.21",
       "whisper": "Steve Marseaux",
-      "candidate_correction": "(Steve Marsh \u2014 uncertain Movement organizer)",
+      "candidate_correction": "(Steve Marsh — uncertain Movement organizer)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "-"
     },
@@ -369,7 +369,7 @@
     {
       "row_id": "92.28",
       "whisper": "Mad Raw",
-      "candidate_correction": "(uncertain \u2014 1967 Claiborne County candidate)",
+      "candidate_correction": "(uncertain — 1967 Claiborne County candidate)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "-"
     },
@@ -406,14 +406,14 @@
       "whisper": "\"Papakain, in from already left\"",
       "candidate_correction": "Papa came in [from somewhere] (he) already left",
       "confidence": "low",
-      "notes": "Pass 1 #92.5 flagged \"Papakain\" as low confidence. The speaker is saying \"Papa came in from already left from Lorman, came over here\" \u2014 Whisper mangles \"Papa came in\" into \"Papakain\" as if it were a single name. Not a proper noun"
+      "notes": "Pass 1 #92.5 flagged \"Papakain\" as low confidence. The speaker is saying \"Papa came in from already left from Lorman, came over here\" — Whisper mangles \"Papa came in\" into \"Papakain\" as if it were a single name. Not a proper noun"
     },
     {
       "row_id": "92.P2.6",
       "whisper": "\"Reverend Martin, Rob Martin\"",
       "candidate_correction": "Rev. Martin",
       "confidence": "speaker-originating",
-      "notes": "Pass 1 #92.7 caught Rev. Martin reference. Note: Whisper also calls him \"Rob Martin\" \u2014 likely a degraded transcription of \"Reverend Martin\" with the title contracted to \"Rob\""
+      "notes": "Pass 1 #92.7 caught Rev. Martin reference. Note: Whisper also calls him \"Rob Martin\" — likely a degraded transcription of \"Reverend Martin\" with the title contracted to \"Rob\""
     },
     {
       "row_id": "92.P2.7",
@@ -427,7 +427,7 @@
       "whisper": "\"Sarimu Grove\" / \"in Sarimu Grove\"",
       "candidate_correction": "Saipan Group",
       "confidence": "medium",
-      "notes": "Pass 1 #92.13 had this. The \"Sarimu Grove\" rendering is Whisper-mangled \"Saipan\" \u2014 the Northern Mariana Island. Cross-corpus WWII Pacific theater reference // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Pass 1 #92.13 had this. The \"Sarimu Grove\" rendering is Whisper-mangled \"Saipan\" — the Northern Mariana Island. Cross-corpus WWII Pacific theater reference // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "92.P2.12",
@@ -448,14 +448,14 @@
       "whisper": "\"Pad and Stove\"",
       "candidate_correction": "Patton dormitory\" or \"Pat-and-Stove\"",
       "confidence": "low",
-      "notes": "Pass 1 #92.19 flagged this as uncertain. Speaker references \"we don't know the other side of them, but it was out of there\" \u2014 likely \"Patton Hall\" or \"Pat-and-Stove\" dormitory at Alcorn ca. 1966 // [PASS-6: unresolved-escalated-to-ensemble"
+      "notes": "Pass 1 #92.19 flagged this as uncertain. Speaker references \"we don't know the other side of them, but it was out of there\" — likely \"Patton Hall\" or \"Pat-and-Stove\" dormitory at Alcorn ca. 1966 // [PASS-6: unresolved-escalated-to-ensemble"
     },
     {
       "row_id": "92.P2.21",
       "whisper": "\"Steve Marseaux\"",
-      "candidate_correction": "(Steve Marsh \u2014 uncertain Movement organizer)",
+      "candidate_correction": "(Steve Marsh — uncertain Movement organizer)",
       "confidence": "low",
-      "notes": "Pass 1 #92.21 flagged this. Speaker says \"Steve Marseaux. Oh, he is. Yeah, for me, from that, from the hundredth\" \u2014 likely \"Steve Marsh\" but identification uncertain"
+      "notes": "Pass 1 #92.21 flagged this. Speaker says \"Steve Marseaux. Oh, he is. Yeah, for me, from that, from the hundredth\" — likely \"Steve Marsh\" but identification uncertain"
     },
     {
       "row_id": "92.P2.25",
@@ -469,12 +469,12 @@
       "whisper": "\"Mr. Eli Ellis\" / \"Mr. Ellis\"",
       "candidate_correction": "Mr. (Eli) Ellis",
       "confidence": "speaker-originating",
-      "notes": "Pass 1 #92.27 had this. Local Port Gibson banker who tried to dissuade Jones from joining NAACP publicly. Speaker confirms the banker had \"been good to him\" \u2014 canonical first-person account of paternalistic Southern white-banker-Black-farmer relationships in 1950s-60s Claiborne County"
+      "notes": "Pass 1 #92.27 had this. Local Port Gibson banker who tried to dissuade Jones from joining NAACP publicly. Speaker confirms the banker had \"been good to him\" — canonical first-person account of paternalistic Southern white-banker-Black-farmer relationships in 1950s-60s Claiborne County"
     },
     {
       "row_id": "92.P2.28",
       "whisper": "\"Mad Raw\"",
-      "candidate_correction": "(uncertain \u2014 1967 Claiborne County candidate)",
+      "candidate_correction": "(uncertain — 1967 Claiborne County candidate)",
       "confidence": "low",
       "notes": "Pass 1 #92.28 flagged this. Speaker says Mad Raw was one of three Black candidates in the 1967 Claiborne County elections. Cross-research needed to identify"
     },
@@ -509,7 +509,7 @@
     {
       "row_id": "92.P2.36",
       "whisper": "\"the sent-john\" / \"the sent-john was the same way\"",
-      "candidate_correction": "(uncertain local figure \u2014 possibly Sgt. John, or \"the Sentjon family\")",
+      "candidate_correction": "(uncertain local figure — possibly Sgt. John, or \"the Sentjon family\")",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Speaker references \"the sent-john\" multiple times in context of a paternalistic Claiborne County white figure. Could be a family name like \"Sinjon\" or \"Saint-John\""
     },
@@ -525,7 +525,7 @@
       "whisper": "\"blackheads\" / \"the blackhead group\"",
       "candidate_correction": "(Port Gibson 1960s Black-youth militant group)",
       "confidence": "speaker-originating",
-      "notes": "Speaker references \"the blackhead group\" \u2014 a local Port Gibson Black-youth group that \"threw rocks at people, cars\" during the desegregation crisis. Speaker says \"they broke that group up\" \u2014 referencing organized adult Movement leadership stopping youth violence. Local term, canonical first-person testimony"
+      "notes": "Speaker references \"the blackhead group\" — a local Port Gibson Black-youth group that \"threw rocks at people, cars\" during the desegregation crisis. Speaker says \"they broke that group up\" — referencing organized adult Movement leadership stopping youth violence. Local term, canonical first-person testimony"
     },
     {
       "row_id": "92.P2.49",
@@ -539,14 +539,14 @@
       "whisper": "\"the Crowder\" / \"Miss Crowder\"",
       "candidate_correction": "Ms. Crowder",
       "confidence": "speaker-originating",
-      "notes": "Speaker says Ms. Crowder led songs at the youth choir during mass meetings \u2014 local Port Gibson Movement music leader. Canonical-from-context"
+      "notes": "Speaker says Ms. Crowder led songs at the youth choir during mass meetings — local Port Gibson Movement music leader. Canonical-from-context"
     },
     {
       "row_id": "92.P2.52",
       "whisper": "\"Dawg\" / \"we call it Dawg\"",
       "candidate_correction": "(Local Port Gibson youth choir leader nickname)",
       "confidence": "speaker-originating",
-      "notes": "Speaker references the youth choir leader by the local nickname \"Dawg\" \u2014 can't recall her real name. Worth flagging for the corpus"
+      "notes": "Speaker references the youth choir leader by the local nickname \"Dawg\" — can't recall her real name. Worth flagging for the corpus"
     },
     {
       "row_id": "92.P2.54",
@@ -560,14 +560,14 @@
       "whisper": "\"Lock Wagon\" / \"George and Wogan\"",
       "candidate_correction": "(uncertain local youth)",
       "confidence": "flagged-for-adversarial-review",
-      "notes": "Speaker references \"George and Wogan, I lit those students back around\" \u2014 possible local helper at the 1966 Alcorn demonstration. Worth research"
+      "notes": "Speaker references \"George and Wogan, I lit those students back around\" — possible local helper at the 1966 Alcorn demonstration. Worth research"
     },
     {
       "row_id": "92.P2.57",
       "whisper": "\"Mr. Mehaw's\" / \"He was the four out of $60\"",
       "candidate_correction": "Mr. Mehaw",
       "confidence": "speaker-originating",
-      "notes": "Speaker confirms the seller name. Whisper renders \"Mr. Mehaw\" \u2014 possibly \"Mr. McHaw\" or \"Mr. Meadows\""
+      "notes": "Speaker confirms the seller name. Whisper renders \"Mr. Mehaw\" — possibly \"Mr. McHaw\" or \"Mr. Meadows\""
     },
     {
       "row_id": "92.P4.1",
@@ -593,7 +593,7 @@
     {
       "row_id": "92.P4.5",
       "whisper": "\"The day was one more or the person.\"",
-      "candidate_correction": "There was one more \u2014 a third person.\"",
+      "candidate_correction": "There was one more — a third person.\"",
       "confidence": "low",
       "notes": "In the 1967 Claiborne County election candidates discussion. Speaker is enumerating the three Black candidates (Mad Raw, [Ellis] Collins, plus one more). The \"day was one more\" is Whisper-degraded \"there was one more.\" Worth flagging because the third candidate identification is one of the open adversarial-review items."
     },
@@ -614,28 +614,28 @@
     {
       "row_id": "92.P4.10",
       "whisper": "\"Reverend Maw\" / \"Rev. Maw\"",
-      "candidate_correction": "(uncertain \u2014 possibly Rev. Martin, or Rev. McGraw, or another local minister)",
+      "candidate_correction": "(uncertain — possibly Rev. Martin, or Rev. McGraw, or another local minister)",
       "confidence": "low",
       "notes": "Speaker references \"Rev. Maw\" in the land-ownership discussion as one of ~18 Black landowners allowed to vote pre-1962. Could be a real local figure or Whisper-mangled \"Rev. McRae\" / \"Rev. Mott\" / \"Rev. McGraw\". Flag for adversarial review."
     },
     {
       "row_id": "92.P4.13",
       "whisper": "\"Roman\" / \"Roman, he wasn't\"",
-      "candidate_correction": "(Possibly Rev. Dorsey/Dawson's first name, OR a separate person \u2014 uncertain)",
+      "candidate_correction": "(Possibly Rev. Dorsey/Dawson's first name, OR a separate person — uncertain)",
       "confidence": "low",
       "notes": "Pass 1-3 mapped \"Reverend Dorsey/Ruwin Dolls/Roman Dolls\" to Rev. Dawson. But the raw line \"Reverend Dorsey, he had to have some protection. ... I don't know why I run them all and then had to have a ticket, but, Roman, he wasn't, you know, he, he wasn't a dedicated\" reads as if \"Roman\" might be a SEPARATE NAMED PERSON (a Reverend or local figure who, unlike Dawson, was \"not dedicated\"). Worth flagging that the Rev. Dorsey -> Rev. Dawson mapping may be conflating two distinct people. Adversarial review."
     },
     {
       "row_id": "92.P4.15",
       "whisper": "\"Reverend Ramon\"",
-      "candidate_correction": "(uncertain \u2014 possibly Rev. Martin, OR a separate Egypt MS minister)",
+      "candidate_correction": "(uncertain — possibly Rev. Martin, OR a separate Egypt MS minister)",
       "confidence": "low",
       "notes": "Speaker references \"it was a preacher, Ramon, and he taught us\" in the NAACP-card-handling discussion. Could be Rev. Martin (Egypt) being re-named with a final-syllable mishearing, or a separate local preacher. Flag for adversarial review."
     },
     {
       "row_id": "92.P4.16",
       "whisper": "\"didn't number three\"",
-      "candidate_correction": "[Mrs. Jones] was number three\" or \"Mrs. Jones won \u2014 number three",
+      "candidate_correction": "[Mrs. Jones] was number three\" or \"Mrs. Jones won — number three",
       "confidence": "low",
       "notes": "Speaker is enumerating the 1971 Black women elected to Claiborne County Circuit Court (\"the first time we had, didn't by three black women\"). The \"didn't\" is likely Whisper-degraded \"elected\" or \"won\". Meaning-preserving."
     },
@@ -644,7 +644,7 @@
       "whisper": "\"by sheer, I had to have a seal\"",
       "candidate_correction": "by [SCLC",
       "confidence": "low",
-      "notes": "In the A-Mart founding discussion, speaker references needing organizational backing to incorporate. \"By sheer\" is unclear \u2014 could be \"by [Charles Evers]\" or \"by [Movement]\". Adversarial review."
+      "notes": "In the A-Mart founding discussion, speaker references needing organizational backing to incorporate. \"By sheer\" is unclear — could be \"by [Charles Evers]\" or \"by [Movement]\". Adversarial review."
     }
   ],
   "skipped_rows": [
@@ -728,7 +728,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.9361,
+    "score": 0.9081,
     "confidence_tier": "not-auditable",
     "components": {
       "base": 0.0,
@@ -736,9 +736,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.625,
       "adversarial_flag_density": 0.1111,
-      "cross_contamination_penalty": 0.2
+      "cross_contamination_penalty": 0.2,
+      "loc_verification_credit": -0.028
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.9361,
+    "previous_tier_v8": "not-auditable",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 8,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.028,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 2,

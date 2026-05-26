@@ -1,7 +1,7 @@
 {
   "generated": "2026-05-25",
   "script_version": "1.1",
-  "raw_dir": "Elbert \u201cBig Man\u201d Howard_interview_20250704_200707",
+  "raw_dir": "Elbert “Big Man” Howard_interview_20250704_200707",
   "entry_number": 35,
   "entry_subject": "Elbert \"Big Man\" Howard",
   "applied_corrections": [
@@ -512,7 +512,7 @@
     {
       "row_id": "35.P4.10",
       "whisper": "\"Robert Webb, who was actually from the West Coast for working the East Coast, was shining the head on the streets of New York\"",
-      "correction": "Robert Webb \u2026 was shot in the head on the streets of New York",
+      "correction": "Robert Webb … was shot in the head on the streets of New York",
       "confidence": "high",
       "occurrences": 1,
       "file_paths": [
@@ -533,7 +533,7 @@
       "whisper": "Dr. Young Park",
       "candidate_correction": "Dr. Norvel Smith (likely) or Dr. Norman Lear",
       "confidence": "medium",
-      "notes": "\"I had been selected by the president of Mary College as an almost-boothed buzzman\"; Norvel Smith was a Black president of Merritt College in the late 1960s \u2014 uncertain whether \"Young Park\" refers to a different Merritt president"
+      "notes": "\"I had been selected by the president of Mary College as an almost-boothed buzzman\"; Norvel Smith was a Black president of Merritt College in the late 1960s — uncertain whether \"Young Park\" refers to a different Merritt president"
     },
     {
       "row_id": "35.P2.6",
@@ -559,23 +559,23 @@
     {
       "row_id": "35.P4.1",
       "whisper": "\"City College in Oakland\" / \"enter into City College in Oakland and draw my GI bill\"",
-      "candidate_correction": "Oakland City College (pre-Merritt name) \u2014 likely the same institution as #35.3",
+      "candidate_correction": "Oakland City College (pre-Merritt name) — likely the same institution as #35.3",
       "confidence": "medium",
-      "notes": "\"I decided to enter into City College in Oakland and draw my GI bill.\" Howard later says he met Newton and Seale at \"Mary College\" (Merritt). Historical context: Oakland City College was the parent institution that in 1964 split into Merritt College and Laney College \u2014 the Grove Street campus where Newton/Seale/Howard met became Merritt. Howard's \"City College in Oakland\" reference (used for GI Bill matriculation) and his later \"Mary College\" reference may both point to the same Grove Street campus, captured at slightly different historical names. Pass 4 catalogs this as a Whisper-stable institutional-name ambiguity rather than a transcription error per se."
+      "notes": "\"I decided to enter into City College in Oakland and draw my GI bill.\" Howard later says he met Newton and Seale at \"Mary College\" (Merritt). Historical context: Oakland City College was the parent institution that in 1964 split into Merritt College and Laney College — the Grove Street campus where Newton/Seale/Howard met became Merritt. Howard's \"City College in Oakland\" reference (used for GI Bill matriculation) and his later \"Mary College\" reference may both point to the same Grove Street campus, captured at slightly different historical names. Pass 4 catalogs this as a Whisper-stable institutional-name ambiguity rather than a transcription error per se."
     },
     {
       "row_id": "35.P4.3",
       "whisper": "\"New Orleans, California\" / \"air base in New Orleans, California\"",
       "candidate_correction": "(likely) Travis Air Force Base or Hamilton Air Force Base, California",
       "confidence": "medium",
-      "notes": "\"I was still in the service on the air base in New Orleans, California.\" There is no Air Force base in New Orleans, California (no such locality exists). Howard's late-1950s Air Force discharge in the Bay Area is most likely a reference to Hamilton Air Force Base (Marin County, active 1932\u201388) or Travis AFB (Fairfield, active throughout the period); \"New Orleans\" is a Whisper hallucination on a hard-to-parse base name. Adversarial verification needed for which specific base."
+      "notes": "\"I was still in the service on the air base in New Orleans, California.\" There is no Air Force base in New Orleans, California (no such locality exists). Howard's late-1950s Air Force discharge in the Bay Area is most likely a reference to Hamilton Air Force Base (Marin County, active 1932–88) or Travis AFB (Fairfield, active throughout the period); \"New Orleans\" is a Whisper hallucination on a hard-to-parse base name. Adversarial verification needed for which specific base."
     },
     {
       "row_id": "35.P4.6",
       "whisper": "\"Sky's Olympic\" / \"stuff like that for Sky's Olympic\"",
       "candidate_correction": "skies gonna fall\"",
       "confidence": "medium",
-      "notes": "\"people of New Haven were frightened \u2026 we said stuff like that for Sky's Olympic, and they better not happen to Bobby or New Haven being ashes.\" Speaker is recounting BPP rhetoric to New Haven officials during the 1970-71 Seale-Huggins trial; the threat phrase is along the lines of \"the skies are going to fall\" / \"the skies will split\" / \"the heavens will break.\" Possibly also \"scorched-earth\" framing. Speaker-originating rhetorical construction."
+      "notes": "\"people of New Haven were frightened … we said stuff like that for Sky's Olympic, and they better not happen to Bobby or New Haven being ashes.\" Speaker is recounting BPP rhetoric to New Haven officials during the 1970-71 Seale-Huggins trial; the threat phrase is along the lines of \"the skies are going to fall\" / \"the skies will split\" / \"the heavens will break.\" Possibly also \"scorched-earth\" framing. Speaker-originating rhetorical construction."
     },
     {
       "row_id": "35.P4.7",
@@ -596,7 +596,7 @@
       "whisper": "\"in Skoglade\" / \"dynamite crew to help him in Skoglade\"",
       "candidate_correction": "(probably) \"in spreading it\"",
       "confidence": "low",
-      "notes": "\"Sam \u2026 had put together a dynamite crew to help him in Skoglade. And he said, stuff like, circle like to educate, get the papers out.\" The \"Skoglade\" token does not match any canonical NYC neighborhood; possibly a corrupted rendering of \"in shaking it loose\" or a specific subway/distribution-route reference. Adversarial verification needed."
+      "notes": "\"Sam … had put together a dynamite crew to help him in Skoglade. And he said, stuff like, circle like to educate, get the papers out.\" The \"Skoglade\" token does not match any canonical NYC neighborhood; possibly a corrupted rendering of \"in shaking it loose\" or a specific subway/distribution-route reference. Adversarial verification needed."
     },
     {
       "row_id": "35.P4.16",
@@ -617,7 +617,7 @@
       "whisper": "\"I had a brilliant thing to do\" / \"what did you do to move on to focus on at that point\"",
       "candidate_correction": "I had a brief lull",
       "confidence": "low",
-      "notes": "\"I had a brilliant thing to do. We had other people stepping in because Eldridge, he was right off from down in.\" Context establishes Howard is describing what he did AFTER Cleaver took over editing duties \u2014 \"brilliant thing\" doesn't fit the meaning, which is \"I had some free time\" or \"I had a window.\" Speaker-originating elision."
+      "notes": "\"I had a brilliant thing to do. We had other people stepping in because Eldridge, he was right off from down in.\" Context establishes Howard is describing what he did AFTER Cleaver took over editing duties — \"brilliant thing\" doesn't fit the meaning, which is \"I had some free time\" or \"I had a window.\" Speaker-originating elision."
     },
     {
       "row_id": "35.P4.23",
@@ -634,11 +634,11 @@
     },
     {
       "row_id": "35.11",
-      "reason": "unknown confidence 'flag \u2014 adversarial'"
+      "reason": "unknown confidence 'flag — adversarial'"
     },
     {
       "row_id": "35.41",
-      "reason": "unknown confidence 'flag \u2014 adversarial'"
+      "reason": "unknown confidence 'flag — adversarial'"
     },
     {
       "row_id": "35.P2.14",
@@ -646,9 +646,9 @@
     }
   ],
   "files_processed": [
-    "Elbert \u201cBig Man\u201d Howard_interview_transcript_20250704_200707.srt",
-    "Elbert \u201cBig Man\u201d Howard_interview_transcript_20250704_200707.txt",
-    "Elbert \u201cBig Man\u201d Howard_interview_transcript_20250704_200707.vtt"
+    "Elbert “Big Man” Howard_interview_transcript_20250704_200707.srt",
+    "Elbert “Big Man” Howard_interview_transcript_20250704_200707.txt",
+    "Elbert “Big Man” Howard_interview_transcript_20250704_200707.vtt"
   ],
   "stats": {
     "applied": 43,
@@ -684,7 +684,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3276,
+    "score": 0.2966,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -692,9 +692,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2586,
       "adversarial_flag_density": 0.069,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.031
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3276,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 11,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.031,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 4,
   "cross_contamination_items_resolved": 0,

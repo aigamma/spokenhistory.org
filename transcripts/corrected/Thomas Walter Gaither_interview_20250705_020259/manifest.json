@@ -440,7 +440,7 @@
     {
       "row_id": "119.P2.20",
       "whisper": "Madison (University of Wisconsin at Madison)",
-      "correction": "University of Wisconsin\u2013Madison",
+      "correction": "University of Wisconsin–Madison",
       "confidence": "correct",
       "occurrences": 3,
       "file_paths": [
@@ -679,28 +679,28 @@
       "whisper": "Sydney Thorpe (Jackson MS attorney)",
       "candidate_correction": "Sidney B. Thorpe",
       "confidence": "medium",
-      "notes": "\"There was Sydney Thorpe, was the only lawyer who had been trained, well, he'd been trained in a big 10 university\"; canonical Jackson MS Black attorney who would not take Freedom Rider cases \u2014 likely Sidney B. Thorpe (uncertain spelling); cross-reference would benefit"
+      "notes": "\"There was Sydney Thorpe, was the only lawyer who had been trained, well, he'd been trained in a big 10 university\"; canonical Jackson MS Black attorney who would not take Freedom Rider cases — likely Sidney B. Thorpe (uncertain spelling); cross-reference would benefit"
     },
     {
       "row_id": "119.P2.18",
       "whisper": "Dia, Al Dama",
       "candidate_correction": "(likely) Demopolis, Alabama",
       "confidence": "low",
-      "notes": "\"we drove through Alabama and we had an experience in a little city called Deal\"; uncertain \u2014 possibly Demopolis (Marengo County) or DeArmanville (Calhoun County); speaker says \"drove from there without a stop from Dio Al Dama to Mississippi\""
+      "notes": "\"we drove through Alabama and we had an experience in a little city called Deal\"; uncertain — possibly Demopolis (Marengo County) or DeArmanville (Calhoun County); speaker says \"drove from there without a stop from Dio Al Dama to Mississippi\""
     },
     {
       "row_id": "119.P2.32",
       "whisper": "Reverend Albert Apples Church",
       "candidate_correction": "Reverend Robert S. Graetz",
       "confidence": "medium",
-      "notes": "\"Reverend Albert Apples Church\"; this is most likely Whisper rendering of \"Reverend Abernathy's First Baptist Church\" \u2014 the canonical First Baptist Church on Ripley Street Montgomery where the May 1961 mob besieged the Freedom Riders; Pass 1 had this as low // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"Reverend Albert Apples Church\"; this is most likely Whisper rendering of \"Reverend Abernathy's First Baptist Church\" — the canonical First Baptist Church on Ripley Street Montgomery where the May 1961 mob besieged the Freedom Riders; Pass 1 had this as low // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "119.P3.4",
-      "whisper": "Whisper \"Peck \u2192 Pek\" pattern",
+      "whisper": "Whisper \"Peck → Pek\" pattern",
       "candidate_correction": "Cross-corpus catalog addition",
       "confidence": "medium",
-      "notes": "Pass 2 added as global rule; James Peck (CORE) is recurring Movement figure. Confirm catalog addition. // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': 'Whisper \"Peck \u2192 Pek\" pattern'), ensemble-adjudication-pending]"
+      "notes": "Pass 2 added as global rule; James Peck (CORE) is recurring Movement figure. Confirm catalog addition. // [LAYER-5: D3-catalog-contradiction (catalog 'B-ext': 'Whisper \"Peck → Pek\" pattern'), ensemble-adjudication-pending]"
     },
     {
       "row_id": "119.P3.9",
@@ -774,7 +774,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.1894,
+    "score": 0.1434,
     "confidence_tier": "medium",
     "components": {
       "base": 0.0,
@@ -782,9 +782,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1129,
       "adversarial_flag_density": 0.0645,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.046
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.1894,
+    "previous_tier_v8": "medium",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 26,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.046,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 4,
   "cross_contamination_items_resolved": 0,

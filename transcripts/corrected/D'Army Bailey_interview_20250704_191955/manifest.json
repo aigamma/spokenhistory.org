@@ -1127,7 +1127,7 @@
       "whisper": "Boulsettner",
       "candidate_correction": "Bill Saltzman",
       "confidence": "low",
-      "notes": "\"We had a damn good campaign manager that we had... Boulsettner, who had campaigned with Birch Bay out in Indiana\"; flag for review \u2014 could be Bill Soltzman, Paul Soglin, or other Indiana-tied campaign operative"
+      "notes": "\"We had a damn good campaign manager that we had... Boulsettner, who had campaigned with Birch Bay out in Indiana\"; flag for review — could be Bill Soltzman, Paul Soglin, or other Indiana-tied campaign operative"
     },
     {
       "row_id": "26.P2T.27",
@@ -1160,7 +1160,7 @@
     {
       "row_id": "26.P4.4",
       "whisper": "\"Oven, Bogalusa\" (SRT line 119)",
-      "candidate_correction": "(likely a Whisper artifact \u2014 most plausibly \"down in Bogalusa\" with \"Oven\" being acoustic noise from \"down in\" or \"and in\")",
+      "candidate_correction": "(likely a Whisper artifact — most plausibly \"down in Bogalusa\" with \"Oven\" being acoustic noise from \"down in\" or \"and in\")",
       "confidence": "low",
       "notes": "Bailey: \"great marches and dramatic scenes in Oven, Bogalusa, where the Deacon's for Defense and Justice.\" \"Oven\" does not cleanly match a Movement-significant Louisiana place name. Could be Whisper rendering of \"and in\" / \"down in\" (preposition cluster). Flag for adversarial review."
     },
@@ -1169,21 +1169,21 @@
       "whisper": "\"Bill Robinson, who was the director before me\" (SRT line 2455)",
       "candidate_correction": "Bill Robinson",
       "confidence": "medium",
-      "notes": "Bailey: \"Bill Robinson, who was the director before me, had gotten a deferment.\" Refers to William L. Robinson (later distinguished civil rights attorney + Howard Law professor 1972+), LSCRRC executive director before Bailey assumed the role. Speaker-originating but corroborable from LSCRRC organizational history. Net-new figure not captured in Pass 1\u20133."
+      "notes": "Bailey: \"Bill Robinson, who was the director before me, had gotten a deferment.\" Refers to William L. Robinson (later distinguished civil rights attorney + Howard Law professor 1972+), LSCRRC executive director before Bailey assumed the role. Speaker-originating but corroborable from LSCRRC organizational history. Net-new figure not captured in Pass 1–3."
     },
     {
       "row_id": "26.P4.15",
       "whisper": "\"DC Seagerson\" (SRT line 391)",
       "candidate_correction": "Dr. C. Seagerson",
       "confidence": "low",
-      "notes": "Bailey: \"And she was a DC Seagerson who was the physician.\" Pass 2 P2T.27 captured \"Dr. Seagerson\" but missed this second-segment rendering where Whisper hears \"Dr. C.\" \u2192 \"DC.\" Possible candidates: Dr. Clayton Seagrist, Dr. Charles Seagerson \u2014 no clean Memphis 1950s physician match. Reinforces Pass 3 adversarial flag."
+      "notes": "Bailey: \"And she was a DC Seagerson who was the physician.\" Pass 2 P2T.27 captured \"Dr. Seagerson\" but missed this second-segment rendering where Whisper hears \"Dr. C.\" → \"DC.\" Possible candidates: Dr. Clayton Seagrist, Dr. Charles Seagerson — no clean Memphis 1950s physician match. Reinforces Pass 3 adversarial flag."
     },
     {
       "row_id": "26.P4.16",
       "whisper": "\"Jackie Robinson and the R.I.P. now\" (SRT line 479)",
       "candidate_correction": "Jackie Robinson and (likely) Roy Campanella",
       "confidence": "medium",
-      "notes": "Bailey: \"He'd take us over to St. Louis and I saw some of the early black stars, Jackie Robinson and the R.I.P. now.\" \"R.I.P. now\" is Whisper noise; the parallel-figure context (\"early black [baseball] stars\") strongly suggests Roy Campanella or Larry Doby or Don Newcombe \u2014 Brooklyn Dodgers teammates of Robinson who toured St. Louis. Most plausibly Campanella. Flag for adversarial review."
+      "notes": "Bailey: \"He'd take us over to St. Louis and I saw some of the early black stars, Jackie Robinson and the R.I.P. now.\" \"R.I.P. now\" is Whisper noise; the parallel-figure context (\"early black [baseball] stars\") strongly suggests Roy Campanella or Larry Doby or Don Newcombe — Brooklyn Dodgers teammates of Robinson who toured St. Louis. Most plausibly Campanella. Flag for adversarial review."
     }
   ],
   "skipped_rows": [],
@@ -1227,17 +1227,29 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.2556,
-    "confidence_tier": "low",
+    "score": 0.1816,
+    "confidence_tier": "medium",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.027,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1524,
       "adversarial_flag_density": 0.0762,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.074
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.2556,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 54,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.074,
+      "tier_changed": true
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 0,

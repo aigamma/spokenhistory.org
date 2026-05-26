@@ -298,7 +298,7 @@
     {
       "row_id": "18.17",
       "whisper": "Smith Grouches",
-      "candidate_correction": "(Sears? Smith's? \u2014 a real Albany store)",
+      "candidate_correction": "(Sears? Smith's? — a real Albany store)",
       "confidence": "low",
       "notes": "Real Albany downtown store that closed under SNCC's picket; canonical name uncertain"
     },
@@ -307,7 +307,7 @@
       "whisper": "the Gillian (his pre-Albany experience)",
       "candidate_correction": "(the Sit-In Movement, possibly Petersburg or Virginia Union)",
       "confidence": "medium",
-      "notes": "Sherrod says \"just the experience behind me were the Gillian and Rock Hill SC\"; \"Gillian\" is unclear \u2014 possibly Petersburg, VA (his hometown)"
+      "notes": "Sherrod says \"just the experience behind me were the Gillian and Rock Hill SC\"; \"Gillian\" is unclear — possibly Petersburg, VA (his hometown)"
     },
     {
       "row_id": "18.P2.7",
@@ -349,7 +349,7 @@
       "whisper": "knowing in a Pharaoh",
       "candidate_correction": "known a Pharaoh",
       "confidence": "medium",
-      "notes": "\"They had not known in a Pharaoh\" \u2014 Sherrod's biblical-Exodus allusion. Likely Whisper artifact for \"known a Pharaoh\" (i.e., not yet experienced bondage under a tyrant). Preserve the Pharaoh reference."
+      "notes": "\"They had not known in a Pharaoh\" — Sherrod's biblical-Exodus allusion. Likely Whisper artifact for \"known a Pharaoh\" (i.e., not yet experienced bondage under a tyrant). Preserve the Pharaoh reference."
     }
   ],
   "skipped_rows": [
@@ -397,7 +397,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3438,
+    "score": 0.3228,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -405,9 +405,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.25,
       "adversarial_flag_density": 0.0938,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.021
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3438,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 1,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.021,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 3,
   "cross_contamination_items_resolved": 0,

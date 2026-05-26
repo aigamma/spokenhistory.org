@@ -1141,7 +1141,7 @@
       "whisper": "\"Mary and Barry\" + \"Stokeley\" + \"gold water\" + \"theater of the cow\" cluster",
       "candidate_correction": "Whisper-degradation severity pattern",
       "confidence": "medium",
-      "notes": "Jenkins's transcript exhibits a high rate of severe Whisper-degradation patterns (multi-syllable-to-single-syllable or multi-word-to-single-word renderings). Possibly attributable to speaker's accent or recording quality. Worth flagging Jenkins transcript for upstream Whisper-rerun consideration. // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Mary and Barry\" \u2192 Marion Barry pattern'), ensemble-adjudication-pending]"
+      "notes": "Jenkins's transcript exhibits a high rate of severe Whisper-degradation patterns (multi-syllable-to-single-syllable or multi-word-to-single-word renderings). Possibly attributable to speaker's accent or recording quality. Worth flagging Jenkins transcript for upstream Whisper-rerun consideration. // [LAYER-5: D3-catalog-contradiction (catalog 'C-ext': '\"Mary and Barry\" → Marion Barry pattern'), ensemble-adjudication-pending]"
     }
   ],
   "skipped_rows": [
@@ -1217,17 +1217,29 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.1726,
-    "confidence_tier": "medium",
+    "score": 0.0986,
+    "confidence_tier": "high",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.011,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.101,
       "adversarial_flag_density": 0.0606,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.074
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.1726,
+    "previous_tier_v8": "medium",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 54,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.074,
+      "tier_changed": true
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 0,

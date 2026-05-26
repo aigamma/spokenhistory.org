@@ -56,7 +56,7 @@
     {
       "row_id": "69.5",
       "whisper": "newly Tucker",
-      "correction": "n\u00e9e Tucker",
+      "correction": "née Tucker",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -809,7 +809,7 @@
     {
       "row_id": "69.9",
       "whisper": "Mrs. Kenny",
-      "candidate_correction": "(speaker recall \u2014 Tarrytown right-wing letter-writer)",
+      "candidate_correction": "(speaker recall — Tarrytown right-wing letter-writer)",
       "confidence": "speaker-originating",
       "notes": "\"Mrs. Kenny, who was as right wing as you could get her\""
     },
@@ -823,7 +823,7 @@
     {
       "row_id": "69.44",
       "whisper": "Ku Klits sent",
-      "candidate_correction": "(Forman sent? Bob Moses sent? \u2014 uncertain)",
+      "candidate_correction": "(Forman sent? Bob Moses sent? — uncertain)",
       "confidence": "low",
       "notes": "\"Ku Klits sent as a SNCC field secretary, is Reggie Robinson\"; phonetic Whisper-collision potentially of \"Forman sent\" or another name"
     },
@@ -839,7 +839,7 @@
       "whisper": "Mark Suckle",
       "candidate_correction": "Mark Suckle",
       "confidence": "medium",
-      "notes": "Speaker recall \u2014 student who went into SNCC National Office; possibly Mark Sucks / Mark Suckow // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Speaker recall — student who went into SNCC National Office; possibly Mark Sucks / Mark Suckow // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "69.49",
@@ -867,21 +867,21 @@
       "whisper": "so long ice / so long rice",
       "candidate_correction": "Soul on Rice",
       "confidence": "medium",
-      "notes": "\"And he's a book that he says similar to elders, cleaver, cleaver's, um, so long ice. He's called Tommy O is calling his book, so long rice\"; Tamio's planned book riffing on Eldridge Cleaver's *Soul on Ice* (1968) \u2014 likely the published *Signs of Life: Tamio Wakayama* or similar but the in-progress 2015 title may have been *Soul on Rice* // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "\"And he's a book that he says similar to elders, cleaver, cleaver's, um, so long ice. He's called Tommy O is calling his book, so long rice\"; Tamio's planned book riffing on Eldridge Cleaver's *Soul on Ice* (1968) — likely the published *Signs of Life: Tamio Wakayama* or similar but the in-progress 2015 title may have been *Soul on Rice* // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "69.P2.15",
       "whisper": "Mildred / Mildred Forman",
       "candidate_correction": "Mildred Forman",
       "confidence": "speaker-originating",
-      "notes": "Speaker recall \u2014 Mildred Forman, James Forman's first wife, one of the five women in the famous \"no minutes\" sit-in at the Atlanta SNCC office"
+      "notes": "Speaker recall — Mildred Forman, James Forman's first wife, one of the five women in the famous \"no minutes\" sit-in at the Atlanta SNCC office"
     },
     {
       "row_id": "69.P2.21",
       "whisper": "Mrs. Shaw",
       "candidate_correction": "Mrs. Shaw",
       "confidence": "speaker-originating",
-      "notes": "Speaker references \"Mimi Shaw's mother, Mrs. Shaw's head of friends of, is part of friends of SNCC in Chicago\" \u2014 canonical Chicago Friends of SNCC organizer"
+      "notes": "Speaker references \"Mimi Shaw's mother, Mrs. Shaw's head of friends of, is part of friends of SNCC in Chicago\" — canonical Chicago Friends of SNCC organizer"
     },
     {
       "row_id": "69.P2.22",
@@ -893,16 +893,16 @@
     {
       "row_id": "69.P2.30",
       "whisper": "in Rocharp / on Chaudh by Ivano",
-      "candidate_correction": "(uncertain \u2014 possibly Anne Romaine OR Stoney Cooks OR Ann Rosenberg)",
+      "candidate_correction": "(uncertain — possibly Anne Romaine OR Stoney Cooks OR Ann Rosenberg)",
       "confidence": "low",
-      "notes": "\"And so we ended up going through in Rocharp, who was head of the Chicago Snick Office then\"; Pass 1 missed this section. Possibilities include Anne Romaine (Highlander folk-singer/organizer) or Stoney Cooks (canonical Chicago organizer) \u2014 speaker recall, uncertain"
+      "notes": "\"And so we ended up going through in Rocharp, who was head of the Chicago Snick Office then\"; Pass 1 missed this section. Possibilities include Anne Romaine (Highlander folk-singer/organizer) or Stoney Cooks (canonical Chicago organizer) — speaker recall, uncertain"
     },
     {
       "row_id": "69.P2.34",
       "whisper": "Mark Suckle",
       "candidate_correction": "Mark Suckow",
       "confidence": "medium",
-      "notes": "Pass 1 #69.46 noted; speaker references twice \u2014 \"Mark Suckle, who later goes down into the National Office\" \u2014 canonical Mark Suckow, Swarthmore/Yale student who later joined SNCC Atlanta office. Pass 2 confirms speaker repeats the name // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
+      "notes": "Pass 1 #69.46 noted; speaker references twice — \"Mark Suckle, who later goes down into the National Office\" — canonical Mark Suckow, Swarthmore/Yale student who later joined SNCC Atlanta office. Pass 2 confirms speaker repeats the name // [LAYER-5: D2-ambiguous, ensemble-adjudication-pending]"
     },
     {
       "row_id": "69.P3.11",
@@ -923,21 +923,21 @@
       "whisper": "Mrs. Cippy",
       "candidate_correction": "Mississippi",
       "confidence": "medium",
-      "notes": "Line 3259: \"the white supremacists in Mississippi know somebody outside, Mrs. Cippy is actually looking at this.\" Reading the surrounding context, this appears to be a Whisper substitution of \"Mississippi\" itself \u2014 possibly Richardson said \"Mississippi\" referring to the segregated state apparatus, but the structure \"Mrs. Cippy is actually looking\" suggests Whisper imposed a \"Mrs.\" parsing. Net-new \u2014 adversarial review may resolve whether speaker personified \"Miss(issi)ppi\" or whether this is pure Whisper artifact."
+      "notes": "Line 3259: \"the white supremacists in Mississippi know somebody outside, Mrs. Cippy is actually looking at this.\" Reading the surrounding context, this appears to be a Whisper substitution of \"Mississippi\" itself — possibly Richardson said \"Mississippi\" referring to the segregated state apparatus, but the structure \"Mrs. Cippy is actually looking\" suggests Whisper imposed a \"Mrs.\" parsing. Net-new — adversarial review may resolve whether speaker personified \"Miss(issi)ppi\" or whether this is pure Whisper artifact."
     },
     {
       "row_id": "69.P4.16",
       "whisper": "Ogalli (Tarrytown Black couple's surname)",
-      "candidate_correction": "(speaker-originating \u2014 surname uncertain)",
+      "candidate_correction": "(speaker-originating — surname uncertain)",
       "confidence": "speaker-originating",
-      "notes": "Lines 159, 167: \"this wonderful black couple, Ogalli, who was a doctor.\" Tarrytown first Black couple to integrate the Broadway (Tarrytown) residential corridor \u2014 wife was a doctor, husband was an architect. Net-new speaker-originating figure not in Pass 1/2/3 corrections. Possibly \"Ogalla\" / \"Ogallah\" / \"O'Gallie\" \u2014 canonical spelling unknown. Worth flagging for Tarrytown local-historical adversarial check."
+      "notes": "Lines 159, 167: \"this wonderful black couple, Ogalli, who was a doctor.\" Tarrytown first Black couple to integrate the Broadway (Tarrytown) residential corridor — wife was a doctor, husband was an architect. Net-new speaker-originating figure not in Pass 1/2/3 corrections. Possibly \"Ogalla\" / \"Ogallah\" / \"O'Gallie\" — canonical spelling unknown. Worth flagging for Tarrytown local-historical adversarial check."
     },
     {
       "row_id": "69.P4.17",
       "whisper": "PITS school (Chester PA tutorial site)",
-      "candidate_correction": "(uncertain \u2014 speaker recall; possibly \"Pitts School\" or PITS as acronym)",
+      "candidate_correction": "(uncertain — speaker recall; possibly \"Pitts School\" or PITS as acronym)",
       "confidence": "speaker-originating",
-      "notes": "Line 1495: \"doing tutorials in Chester, Pennsylvania, which is still has the PITS school.\" Likely refers to a still-extant Chester PA tutorial program \u2014 possibly \"PITS School\" (Pennsylvania Institute for Tutorial Services), a \"Pitts\" school in Chester PA, or an acronym. Worth adversarial check against Chester PA pre-school / educational nonprofit history. Net-new \u2014 Pass 1/2/3 did not flag."
+      "notes": "Line 1495: \"doing tutorials in Chester, Pennsylvania, which is still has the PITS school.\" Likely refers to a still-extant Chester PA tutorial program — possibly \"PITS School\" (Pennsylvania Institute for Tutorial Services), a \"Pitts\" school in Chester PA, or an acronym. Worth adversarial check against Chester PA pre-school / educational nonprofit history. Net-new — Pass 1/2/3 did not flag."
     }
   ],
   "skipped_rows": [
@@ -947,7 +947,7 @@
     },
     {
       "row_id": "69.P2.38",
-      "reason": "correction notes indicate drop: (n/a \u2014 Richardson establishes Reggie's nickname is \"Captain\""
+      "reason": "correction notes indicate drop: (n/a — Richardson establishes Reggie's nickname is \"Captain\""
     },
     {
       "row_id": "69.P2.41",
@@ -999,17 +999,29 @@
     "source-level-mid-sentence-truncation"
   ],
   "inferential_uncertainty": {
-    "score": 0.5239,
-    "confidence_tier": "publication-block",
+    "score": 0.4629,
+    "confidence_tier": "low",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0215,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2326,
       "adversarial_flag_density": 0.0698,
-      "cross_contamination_penalty": 0.2
+      "cross_contamination_penalty": 0.2,
+      "loc_verification_credit": -0.061
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.5239,
+    "previous_tier_v8": "publication-block",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 41,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.061,
+      "tier_changed": true
+    }
   },
   "adversarial_review_flag_count": 6,
   "cross_contamination_items_resolved": 2,

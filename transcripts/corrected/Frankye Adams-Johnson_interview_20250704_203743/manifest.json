@@ -449,7 +449,7 @@
     {
       "row_id": "43.P2.11",
       "whisper": "Sarah Fena",
-      "candidate_correction": "(uncertain film title \u2014 possibly \"Selma\" 2014, or earlier civil rights documentary)",
+      "candidate_correction": "(uncertain film title — possibly \"Selma\" 2014, or earlier civil rights documentary)",
       "confidence": "low",
       "notes": "\"I think I saw something like that when I saw the movie, Sarah Fena. And, well, they walked around. And they guided us with guns\"; speaker reflecting on a film that depicted police-with-guns; the 2014 *Selma* released after this 2015 interview was a possible referent, or earlier civil-rights documentary; spelling not verified"
     },
@@ -486,7 +486,7 @@
       "whisper": "what's the Connie Webb canonical",
       "candidate_correction": "(uncertain Tougaloo student leader Connie Webb)",
       "confidence": "low",
-      "notes": "Same as Pass 1 #43.25 \u2014 flagging as still unverified after Pass 2 full read; Connie Webb may be a phonetic variant of Constance Webb (radical journalist married to C.L.R. James) but biographical fit is uncertain; reserved for further research"
+      "notes": "Same as Pass 1 #43.25 — flagging as still unverified after Pass 2 full read; Connie Webb may be a phonetic variant of Constance Webb (radical journalist married to C.L.R. James) but biographical fit is uncertain; reserved for further research"
     },
     {
       "row_id": "43.P3.1",
@@ -500,12 +500,12 @@
       "whisper": "various photos",
       "candidate_correction": "various phones",
       "confidence": "medium",
-      "notes": "Same passage as 43.P4.1; \"various photos\" is likely Whisper for \"various phones\" (canvass calls) or \"various places\" \u2014 SNCC Greenwood 1964 work was door-to-door voter canvass, not photography."
+      "notes": "Same passage as 43.P4.1; \"various photos\" is likely Whisper for \"various phones\" (canvass calls) or \"various places\" — SNCC Greenwood 1964 work was door-to-door voter canvass, not photography."
     },
     {
       "row_id": "43.P4.5",
       "whisper": "Harry (paired with Collie Ladelle)",
-      "candidate_correction": "(uncertain \u2014 possibly Harold Bell, Jackson SNCC organizer; or Harry Belafonte; or Harris)",
+      "candidate_correction": "(uncertain — possibly Harold Bell, Jackson SNCC organizer; or Harry Belafonte; or Harris)",
       "confidence": "low",
       "notes": "Same interviewer question as 43.P4.4; \"and Harry\" referent is unrecovered. Possibly \"Harris\" = Jesse Harris (canonical SNCC Jackson field secretary, already at 43.15), or Harold Bell, or could be partial first name only. Flag for adversarial review."
     },
@@ -514,26 +514,26 @@
       "whisper": "end-of-lacif human",
       "candidate_correction": "NAACP human",
       "confidence": "medium",
-      "notes": "\"one of my classmates, a father was an end-of-lacif human\" \u2014 Adams-Johnson is describing Cleveland Donald Sr. (her god-brother's father), who was an NAACP officer in Jackson MS. \"end-of-lacif\" is Whisper for \"NAACP\" (= en-double-A-C-P) and \"human\" likely for \"human-rights worker\" or \"head of.\""
+      "notes": "\"one of my classmates, a father was an end-of-lacif human\" — Adams-Johnson is describing Cleveland Donald Sr. (her god-brother's father), who was an NAACP officer in Jackson MS. \"end-of-lacif\" is Whisper for \"NAACP\" (= en-double-A-C-P) and \"human\" likely for \"human-rights worker\" or \"head of.\""
     },
     {
       "row_id": "43.P4.8",
       "whisper": "\"concentration camp\" framing",
       "candidate_correction": "Medgar Evers's documented vocabulary on the Mississippi State Fairgrounds detention",
       "confidence": "speaker-originating",
-      "notes": "Already at Pass 3 #43.P3.1; Pass 4 confirms two instances in raw: \"I did liken it to a concentration camp and then mega, also likened it to\" and \"this stuff in New York, it's a likened to a concentration camp.\" Direct first-person attribution of the \"concentration camp\" framing to Evers \u2014 a canonical contribution to Evers-vocabulary scholarship."
+      "notes": "Already at Pass 3 #43.P3.1; Pass 4 confirms two instances in raw: \"I did liken it to a concentration camp and then mega, also likened it to\" and \"this stuff in New York, it's a likened to a concentration camp.\" Direct first-person attribution of the \"concentration camp\" framing to Evers — a canonical contribution to Evers-vocabulary scholarship."
     },
     {
       "row_id": "43.P4.10",
       "whisper": "sister's home / sister's own boy / She was own boy",
       "candidate_correction": "sister's on board",
       "confidence": "medium",
-      "notes": "\"I'm sister's own boy. She was own boy! She was really on board, at this time I was working at a...\" The \"own boy\" cluster is Whisper for \"on board\" \u2014 Adams-Johnson's older sister in White Plains NY became \"really on board\" with Black Panther Party organizing in 1968."
+      "notes": "\"I'm sister's own boy. She was own boy! She was really on board, at this time I was working at a...\" The \"own boy\" cluster is Whisper for \"on board\" — Adams-Johnson's older sister in White Plains NY became \"really on board\" with Black Panther Party organizing in 1968."
     },
     {
       "row_id": "43.P4.11",
       "whisper": "a homeowner became a homeowner",
-      "candidate_correction": "(correct \u2014 speaker repetition)",
+      "candidate_correction": "(correct — speaker repetition)",
       "confidence": "speaker-originating",
       "notes": "\"She was a homeowner, became a homeowner here.\" Preserved as speaker repetition; not a Whisper error."
     },
@@ -602,9 +602,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.3269,
       "adversarial_flag_density": 0.0962,
-      "cross_contamination_penalty": 0.3
+      "cross_contamination_penalty": 0.3,
+      "loc_verification_credit": -0.0
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.7231,
+    "previous_tier_v8": "not-auditable",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 0,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.0,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 3,

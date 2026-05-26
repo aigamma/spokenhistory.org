@@ -965,7 +965,7 @@
       "whisper": "Hammers or Jamaica",
       "candidate_correction": "Bahamas or Jamaica",
       "confidence": "medium",
-      "notes": "\"he was slated to go on a vacation with his wife and children as he customary does to either the Hammers or Jamaica\"; \"Hammers\" is likely Whisper rendering of \"Bahamas\" \u2014 MLK is documented to have vacationed in the Bahamas"
+      "notes": "\"he was slated to go on a vacation with his wife and children as he customary does to either the Hammers or Jamaica\"; \"Hammers\" is likely Whisper rendering of \"Bahamas\" — MLK is documented to have vacationed in the Bahamas"
     },
     {
       "row_id": "20.P2T.47",
@@ -979,7 +979,7 @@
       "whisper": "Caribbean over youth",
       "candidate_correction": "African American youth",
       "confidence": "low",
-      "notes": "\"if you ever want to have a chance of saving the generation of Caribbean over youth\"; uncertain \u2014 likely Whisper noise for \"African American\" or \"carry-over\" (i.e., generation at-risk); Omega Boys Club context is SF African American male youth; flag for review"
+      "notes": "\"if you ever want to have a chance of saving the generation of Caribbean over youth\"; uncertain — likely Whisper noise for \"African American\" or \"carry-over\" (i.e., generation at-risk); Omega Boys Club context is SF African American male youth; flag for review"
     },
     {
       "row_id": "20.P2T.55",
@@ -991,7 +991,7 @@
     {
       "row_id": "20.P2T.56",
       "whisper": "sand cart in the cooking drawer",
-      "candidate_correction": "(garbled \u2014 unclear)",
+      "candidate_correction": "(garbled — unclear)",
       "confidence": "low",
       "notes": "\"you got a sand cart in the cooking drawer stealing us, not my problem\"; \"sand cart\" / \"cooking drawer\" likely Whisper noise; unable to reconstruct from context"
     },
@@ -1005,7 +1005,7 @@
     {
       "row_id": "20.P2T.71",
       "whisper": "Riverside, they moved from New York City to California",
-      "candidate_correction": "(garbled \u2014 unclear if Riverside CA reference)",
+      "candidate_correction": "(garbled — unclear if Riverside CA reference)",
       "confidence": "low",
       "notes": "\"They moved from Riverside, they moved from New York City to California\"; could be Riverside, NY (no such place) or Riverside, CA, or speaker self-correction; flag for review"
     },
@@ -1014,7 +1014,7 @@
       "whisper": "(Subject paragraph) \"court-martialed and given an undesirable discharge as a security risk\"",
       "candidate_correction": "discharge type was \"undesirable\" (canonical correct); but the court-martial framing requires clarification",
       "confidence": "medium",
-      "notes": "Jones's 1953-54 Army discharge was administrative (\"undesirable\" \u2014 the lowest non-punitive discharge category at that time), reached after a board hearing on his alleged communist sympathies; he was **not court-martialed** in the strict military-trial sense. ACLU attorney Stanley Faulkner won an upgrade to honorable on appeal in 1956. The Pass 1 Subject paragraph's \"court-martialed\" framing is a common popular conflation but is technically inaccurate. Recommend clarifying to \"administrative discharge board / undesirable discharge.\""
+      "notes": "Jones's 1953-54 Army discharge was administrative (\"undesirable\" — the lowest non-punitive discharge category at that time), reached after a board hearing on his alleged communist sympathies; he was **not court-martialed** in the strict military-trial sense. ACLU attorney Stanley Faulkner won an upgrade to honorable on appeal in 1956. The Pass 1 Subject paragraph's \"court-martialed\" framing is a common popular conflation but is technically inaccurate. Recommend clarifying to \"administrative discharge board / undesirable discharge.\""
     }
   ],
   "skipped_rows": [
@@ -1091,7 +1091,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3461,
+    "score": 0.2951,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1099,9 +1099,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2065,
       "adversarial_flag_density": 0.1196,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.051
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3461,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 31,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.051,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 11,
   "cross_contamination_items_resolved": 0,

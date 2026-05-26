@@ -273,7 +273,7 @@
       "whisper": "Ed Dudley",
       "candidate_correction": "Edward R. Dudley",
       "confidence": "speaker-originating",
-      "notes": "Real (first Black US Ambassador, to Liberia 1949\u201353)"
+      "notes": "Real (first Black US Ambassador, to Liberia 1949–53)"
     },
     {
       "row_id": "15.16",
@@ -306,7 +306,7 @@
     {
       "row_id": "15.28",
       "whisper": "Sotuver",
-      "candidate_correction": "(a person \u2014 possibly speaker's first son Thurgood Marshall Jr.)",
+      "candidate_correction": "(a person — possibly speaker's first son Thurgood Marshall Jr.)",
       "confidence": "low",
       "notes": "Cannot verify"
     },
@@ -315,32 +315,32 @@
       "whisper": "Hawaii multi-cultural framing",
       "candidate_correction": "Hawaii's pre-statehood (pre-1959) multi-ethnic culture vs Continental US racial hierarchy",
       "confidence": "speaker-originating",
-      "notes": "Cecilia Marshall's framing \u2014 that she didn't know about American racial hierarchy until she came to New York in 1948 at age 20 \u2014 is unique in the corpus. Hawaii's pre-1959-statehood demographics (Native Hawaiian + Japanese-American + Chinese-American + Filipino-American + Portuguese-American + small white settler population) gave her a frame of reference radically different from continental Black or white observers. Catalog-worthy as a distinctive testimony framing."
+      "notes": "Cecilia Marshall's framing — that she didn't know about American racial hierarchy until she came to New York in 1948 at age 20 — is unique in the corpus. Hawaii's pre-1959-statehood demographics (Native Hawaiian + Japanese-American + Chinese-American + Filipino-American + Portuguese-American + small white settler population) gave her a frame of reference radically different from continental Black or white observers. Catalog-worthy as a distinctive testimony framing."
     },
     {
       "row_id": "15.P4.1",
       "whisper": "\"He was too soon\" (SRT line 423, 11:41-11:48)",
-      "candidate_correction": "Likely \"He was too [obvious]\" or \"He said no, too [dangerous]\" \u2014 speaker context is Gloster Current (\"pitch black\") refusing Franklin Williams's invitation to come integrate the dining car",
+      "candidate_correction": "Likely \"He was too [obvious]\" or \"He said no, too [dangerous]\" — speaker context is Gloster Current (\"pitch black\") refusing Franklin Williams's invitation to come integrate the dining car",
       "confidence": "medium",
       "notes": "Pass 1-3 did not flag this Whisper passage. The speaker is describing the moment in 1954 (a week after Henderson v. United States ruling) when Franklin Williams invited her, Gloster Current, and another secretary to integrate the dining car on a train going to Chattanooga. Current's refusal hinges on his being too phenotypically Black to pass for ambiguous-race the way Williams (lighter-skinned) and Marshall (Filipino-Hawaiian, with \"long hair, flower in my hair\") could. Whisper \"too soon\" is gibberish in this context; the speaker's actual word is unrecoverable from the .srt alone but reads contextually as \"too dark\" or similar."
     },
     {
       "row_id": "15.P4.4",
       "whisper": "\"He said all.\" (SRT line 1451, 30:44-30:46)",
-      "candidate_correction": "He said hi\" or \"Say hello\" \u2014 interview-end interaction with the son John W. Marshall",
+      "candidate_correction": "He said hi\" or \"Say hello\" — interview-end interaction with the son John W. Marshall",
       "confidence": "low",
-      "notes": "Whisper fragment \"He said all.\" is gibberish \u2014 appears immediately before the interviewer turns to John W. Marshall (the younger son) at the closing of the interview. Likely \"He said hi\" or \"He said hello\" or speaker's introductory line for her son. Not load-bearing for any substantive claim, but downstream LLM summarizer should skip this fragment rather than treat it as a quotable utterance."
+      "notes": "Whisper fragment \"He said all.\" is gibberish — appears immediately before the interviewer turns to John W. Marshall (the younger son) at the closing of the interview. Likely \"He said hi\" or \"He said hello\" or speaker's introductory line for her son. Not load-bearing for any substantive claim, but downstream LLM summarizer should skip this fragment rather than treat it as a quotable utterance."
     },
     {
       "row_id": "15.P4.6",
-      "whisper": "\"He's now with the Transportation Department\" (SRT line 1459, 30:55-30:59) \u2014 claim about JOHN W. Marshall",
+      "whisper": "\"He's now with the Transportation Department\" (SRT line 1459, 30:55-30:59) — claim about JOHN W. Marshall",
       "candidate_correction": "Likely confused",
       "confidence": "speaker-originating",
-      "notes": "The speaker's final-sentence claim about \"He's now with the Transportation Department\" appears to conflate her two sons' post-Clinton-Administration roles. Downstream LLM summarizer should NOT publish \"John W. Marshall went to Department of Transportation after U.S. Marshals Service\" without independent verification \u2014 the Virginia Secretary of Public Safety role is the correctly-attested next post for John W. Marshall. Fact-check flag."
+      "notes": "The speaker's final-sentence claim about \"He's now with the Transportation Department\" appears to conflate her two sons' post-Clinton-Administration roles. Downstream LLM summarizer should NOT publish \"John W. Marshall went to Department of Transportation after U.S. Marshals Service\" without independent verification — the Virginia Secretary of Public Safety role is the correctly-attested next post for John W. Marshall. Fact-check flag."
     },
     {
       "row_id": "15.P4.7",
-      "whisper": "\"five buildings there\" (SRT line ~1020, ~24:32) \u2014 referring to Morningside Gardens",
+      "whisper": "\"five buildings there\" (SRT line ~1020, ~24:32) — referring to Morningside Gardens",
       "candidate_correction": "Morningside Gardens has SIX buildings, not five",
       "confidence": "speaker-originating",
       "notes": "Speaker says of Morningside Gardens: \"There were five buildings there.\" Canonical sources (NYC Landmarks Preservation Commission designation report; Columbia University urban renewal archives) cite six buildings in the Morningside Gardens cooperative. Could be a minor speaker-memory error or could reflect a building configuration the speaker remembered from the 1950s-60s era. Not load-bearing for downstream summaries but a minor fact-check note."
@@ -348,16 +348,16 @@
     {
       "row_id": "15.P4.8",
       "whisper": "\"George Dockery... He was a dentist\" (SRT line ~1006-1008) cross-referenced to Pass 1 #15.16 (which marks George Dockery as \"speaker-originating\")",
-      "candidate_correction": "George Dockery is a real Morningside Gardens-era figure (canonical Black dentist in 1950s-60s Manhattan) \u2014 should be retained as speaker-originating but flagged as not in standard reference works",
+      "candidate_correction": "George Dockery is a real Morningside Gardens-era figure (canonical Black dentist in 1950s-60s Manhattan) — should be retained as speaker-originating but flagged as not in standard reference works",
       "confidence": "speaker-originating",
       "notes": "Pass 1 #15.16 correctly marked George Dockery as speaker-originating. Pass 4 confirms he is not in standard Movement reference works (no NAACP archives match; no SCLC; no Howard or Columbia alumni indices on first pass). The speaker's contemporaneous knowledge of him as a Morningside Gardens neighbor is the only source. Catalog row F candidate as ground-level testimony about Morningside Gardens residential community."
     },
     {
       "row_id": "15.P4.9",
       "whisper": "\"Lou Jefferson\" (Pass 1 #15.17) cross-referenced",
-      "candidate_correction": "Should be \"Louis Mailou Jones\" (Lo\u00efs Mailou Jones, 1905-1998) \u2014 canonical Black artist, Howard University art professor, and prominent Movement-era visual artist? OR Louis Jefferson (a less-prominent Morningside Gardens-era artist not in standard references)",
+      "candidate_correction": "Should be \"Louis Mailou Jones\" (Loïs Mailou Jones, 1905-1998) — canonical Black artist, Howard University art professor, and prominent Movement-era visual artist? OR Louis Jefferson (a less-prominent Morningside Gardens-era artist not in standard references)",
       "confidence": "low",
-      "notes": "Speaker says \"And Lou Jefferson, who was a great artist, lived there\" (referring to Morningside Gardens). Pass 1 identified him as \"Louis Jefferson\" \u2014 a real artist per Pass 1 citation, but Pass 4 cannot verify \"Louis Jefferson\" in standard Black-artists-of-the-1950s reference works. Possible Whisper substitution for \"Lo\u00efs Jones\" (the canonical Black woman painter who taught at Howard University and lived for decades in Washington D.C., not NYC) \u2014 but the gender and NYC residence don't match. More likely a real but minor Black artist named Louis Jefferson who lived at Morningside Gardens in the 1958-67 era. Flag for adversarial review."
+      "notes": "Speaker says \"And Lou Jefferson, who was a great artist, lived there\" (referring to Morningside Gardens). Pass 1 identified him as \"Louis Jefferson\" — a real artist per Pass 1 citation, but Pass 4 cannot verify \"Louis Jefferson\" in standard Black-artists-of-the-1950s reference works. Possible Whisper substitution for \"Loïs Jones\" (the canonical Black woman painter who taught at Howard University and lived for decades in Washington D.C., not NYC) — but the gender and NYC residence don't match. More likely a real but minor Black artist named Louis Jefferson who lived at Morningside Gardens in the 1958-67 era. Flag for adversarial review."
     }
   ],
   "skipped_rows": [],
@@ -400,7 +400,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4722,
+    "score": 0.4482,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -408,9 +408,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.4444,
       "adversarial_flag_density": 0.0278,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.024
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4722,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 4,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.024,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 1,
   "cross_contamination_items_resolved": 0,

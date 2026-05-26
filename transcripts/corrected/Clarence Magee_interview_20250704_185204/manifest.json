@@ -426,7 +426,7 @@
     {
       "row_id": "21.30",
       "whisper": "Reveal World / Reveal World Mississippi",
-      "candidate_correction": "(a real MS town \u2014 possibly \"Brookhaven\" or \"Wesson\")",
+      "candidate_correction": "(a real MS town — possibly \"Brookhaven\" or \"Wesson\")",
       "confidence": "low",
       "notes": "Speaker refers to \"Reveal World\" as where a trial occurred; canonical name uncertain"
     },
@@ -484,7 +484,7 @@
       "whisper": "D.R. Patrick",
       "candidate_correction": "D.R. Patrick",
       "confidence": "speaker-originating",
-      "notes": "Pass 1 #21.23 left speaker-originating; reinforce \u2014 local Hattiesburg figure, not in cross-corpus catalog yet."
+      "notes": "Pass 1 #21.23 left speaker-originating; reinforce — local Hattiesburg figure, not in cross-corpus catalog yet."
     },
     {
       "row_id": "21.P4.4",
@@ -496,14 +496,14 @@
     {
       "row_id": "21.P4.5",
       "whisper": "Wanksburg",
-      "candidate_correction": "Vicksburg (Mississippi) \u2014 likely",
+      "candidate_correction": "Vicksburg (Mississippi) — likely",
       "confidence": "medium",
-      "notes": "\"And of course, at that time, I was working, I think, in Wanksburg. And having to get up early in the morning to drive there...\" Speaker's federal-job placement was in **Vicksburg** (commute distance from Hattiesburg fits) \u2014 Pass 1/2/3 covered \"Vicksburg\" as correct earlier in transcript at #21.7. Here Whisper has re-mangled the same word. Could also be Wiggins (already covered as 21.27) but commute distance for an early-morning drive favors Vicksburg."
+      "notes": "\"And of course, at that time, I was working, I think, in Wanksburg. And having to get up early in the morning to drive there...\" Speaker's federal-job placement was in **Vicksburg** (commute distance from Hattiesburg fits) — Pass 1/2/3 covered \"Vicksburg\" as correct earlier in transcript at #21.7. Here Whisper has re-mangled the same word. Could also be Wiggins (already covered as 21.27) but commute distance for an early-morning drive favors Vicksburg."
     },
     {
       "row_id": "21.P4.6",
       "whisper": "Senator Pittman / George Pittman",
-      "candidate_correction": "(Mississippi state senator \u2014 verify)",
+      "candidate_correction": "(Mississippi state senator — verify)",
       "confidence": "low",
       "notes": "\"George Pittman, who was Senator Pittman at that time, had put one together [the community-action-agency biracial committee application].\" No U.S. Senator from MS named Pittman in the 1960s; speaker likely refers to a Mississippi **state** senator. Could be **G.V. \"Sonny\" Montgomery** (U.S. Rep, not Senator) misheard, or a real state senator named Pittman. Flag for adversarial."
     },
@@ -512,19 +512,19 @@
       "whisper": "Fortinet / I went down Fortinet",
       "candidate_correction": "Fortieth Avenue",
       "confidence": "low",
-      "notes": "\"If I went down Fortinet and turned just as I've passed Walmux [Walmart]...\" Hattiesburg street; \"Fortinet\" likely Whisper rendering of \"40th Avenue\" or \"West Fourth Street\" \u2014 both real Hattiesburg arterials near Hardy Street. Flag for adversarial."
+      "notes": "\"If I went down Fortinet and turned just as I've passed Walmux [Walmart]...\" Hattiesburg street; \"Fortinet\" likely Whisper rendering of \"40th Avenue\" or \"West Fourth Street\" — both real Hattiesburg arterials near Hardy Street. Flag for adversarial."
     },
     {
       "row_id": "21.P4.11",
       "whisper": "Hopkins (during desegregation, wife transferred from Lillie Burney)",
-      "candidate_correction": "Hawkins Junior High (Hattiesburg) \u2014 verify Hopkins vs. Hawkins",
+      "candidate_correction": "Hawkins Junior High (Hattiesburg) — verify Hopkins vs. Hawkins",
       "confidence": "low",
       "notes": "\"during the early part of desegregation, she went to Hopkins.\" Pass 1 #21.19 identified \"Hawkins\" as a Hattiesburg school. Speaker may be naming a second school (Hopkins) or Whisper has alternated renderings of the same school across the transcript. Flag for adversarial."
     },
     {
       "row_id": "21.P4.12",
       "whisper": "the deep guns (re-affirmed from 21.P2.24)",
-      "candidate_correction": "(Hattiesburg armed-self-defense network \u2014 not the Deacons)",
+      "candidate_correction": "(Hattiesburg armed-self-defense network — not the Deacons)",
       "confidence": "medium",
       "notes": "\"There were groups, a group, they called them the deep guns, and not too many people knew who they were, who was white watchman, who killed watch...\" Pass 2/3 left this flagged. Raw confirms this was a clandestine, locally-named Hattiesburg-area armed-defense network active right after the Dahmer firebombing (Jan 1966), watching the burned house site at night. NOT the canonical Deacons for Defense (Jonesboro/Bogalusa). Possibly the same network Charles Phillip + McGee belonged to. Retain flag for adversarial."
     },
@@ -533,19 +533,19 @@
       "whisper": "Reveal World (re-affirmed from 21.30)",
       "candidate_correction": "(unresolved)",
       "confidence": "low",
-      "notes": "Raw confirms speaker says \"My wife had a call doing the trial at Reveal World\" \u2014 in context of the **Bowers / Dahmer co-conspirators trials**. The federal trial of Bowers was held in **Hattiesburg** (Southern District of Mississippi federal courthouse). The state trials were also Hattiesburg. \"Reveal World\" does not phonetically match Hattiesburg. May be a name-substitution for a specific courthouse name, judge name, or the speaker is describing the trial venue with a phrase Whisper has mangled beyond reconstruction. Retain low / flag for adversarial."
+      "notes": "Raw confirms speaker says \"My wife had a call doing the trial at Reveal World\" — in context of the **Bowers / Dahmer co-conspirators trials**. The federal trial of Bowers was held in **Hattiesburg** (Southern District of Mississippi federal courthouse). The state trials were also Hattiesburg. \"Reveal World\" does not phonetically match Hattiesburg. May be a name-substitution for a specific courthouse name, judge name, or the speaker is describing the trial venue with a phrase Whisper has mangled beyond reconstruction. Retain low / flag for adversarial."
     },
     {
       "row_id": "21.P4.17",
       "whisper": "when they prosecute us, I want to thank his name",
-      "candidate_correction": "(federal prosecutor \u2014 possibly John Doar)",
+      "candidate_correction": "(federal prosecutor — possibly John Doar)",
       "confidence": "low",
       "notes": "Speaker recalls the federal voter-registration trial: \"when they prosecute us, I want to thank his name. I know it, but I can't remember tonight.\" The federal prosecutor in *U.S. v. Lynd* (the Forrest County voter-registration case the McGees were subpoenaed for) was **John Doar** of the DOJ Civil Rights Division. Flag for adversarial cross-confirmation."
     },
     {
       "row_id": "21.P4.18",
       "whisper": "a royal spring (white truck driver compared to Mrs. McGee in the voter-test)",
-      "candidate_correction": "(locality \u2014 possibly \"Royal Spring\" community Hattiesburg)",
+      "candidate_correction": "(locality — possibly \"Royal Spring\" community Hattiesburg)",
       "confidence": "low",
       "notes": "\"A white gentleman of a royal spring, who was a truck driver, who could not read, could not write. He had taken the test and passed it.\" This is a comparison case in the voter-registration trial; \"a royal spring\" likely refers to a small Forrest/Lamar County locality. May or may not be a real place name. Flag for adversarial."
     }
@@ -599,7 +599,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.7536,
+    "score": 0.7076,
     "confidence_tier": "not-auditable",
     "components": {
       "base": 0.0,
@@ -607,9 +607,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.4643,
       "adversarial_flag_density": 0.0893,
-      "cross_contamination_penalty": 0.2
+      "cross_contamination_penalty": 0.2,
+      "loc_verification_credit": -0.046
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.7536,
+    "previous_tier_v8": "not-auditable",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 26,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.046,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 2,

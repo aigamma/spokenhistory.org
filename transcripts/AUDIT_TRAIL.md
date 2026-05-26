@@ -34,7 +34,86 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
-#### Ingestion of `John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove_interview_20260525_160900` (2026-05-25)
+### Session 9 — 2026-05-26: Pass 9 LoC-verification rescore + AUDIT_LIMITATIONS.md
+
+**End-of-session summary:** Pass 9 retired the pre-Pass-8 inferential-uncertainty scores. The original formula (Pass 1-7 audit signals) was authored before Pass 8 existed; it did not credit the Library of Congress's authoritative token-level confirmations. Pass 9 adds a single new component to the formula — `loc_verification_credit`, computed from Pass 8 outcomes — and re-tiers all 136 entries accordingly. 22 entries crossed tier boundaries. Pass 9 also produced two governance documents: `transcripts/AUDIT_LIMITATIONS.md` (categorical-limits report explaining the residual uncertainty as honest acknowledgment of audio-source constraints LoC also encountered) and `transcripts/pass9_rescore_summary.md` (the per-entry tier-transition table).
+
+This session is the architectural endpoint of the audit-scoring cascade for the existing 127+9 corpus. Future audit passes (a hypothetical Pass 10) would need a substantively new evidence source to justify another formula iteration — e.g., adversarial-multi-model ensemble runs (Kiro/Kimi/Codex/Gemini), held-out sample-based ground-truth audit, or speaker-diarization layer for the multi-speaker `ingestion-only` entries.
+
+**Agents:** Claude Opus 4.7 (main session, no subagents). Pure-compute task with no per-entry parallelism needed.
+
+**Wall-clock:** ~30 minutes (formula design + script + execution + documentation).
+
+**Scope:** All 136 entries — re-scored uncertainty and re-tiered using existing Pass 8 manifest data. No re-audit of underlying transcripts; the only new signal is mathematical integration of Pass 8's existing per-entry healed_count / loc_match_score / apply_failure_count fields.
+
+**Methodology:**
+- Read each entry's `inferential_uncertainty` block + `loc_healing` block.
+- Compute `loc_verification_credit = match_factor * min(0.10, max(0, 0.02 + 0.001*healed_count - 0.005*apply_failures))` with `credit = 0` if `healed_count == 0` or `match_factor < 0.3`.
+- Subtract credit from the existing v8 uncertainty score; recompute tier from the new score using the same thresholds as `transcripts/review_metadata._confidence_tier_from_score`.
+- Preserve the v8 score under `inferential_uncertainty.previous_score_v8` for traceability.
+- Add a `pass9_metadata` block recording when this ran and the formula parameters.
+- The script (`transcripts/pass9_rescore.py`) is idempotent — re-running with the same Pass 8 data produces no further change; re-running after a hypothetical Pass 8 follow-up would credit the new heals.
+- `ingestion-only` entries are NOT re-tiered (provenance-pinned), even when they have Pass 8 heals (e.g., C. T. Vivian #134 has 4 LoC heals but stays `ingestion-only` because the full audit cascade has not been applied).
+
+**Pass 9 formula (full reference):**
+
+```
+uncertainty_v9 = base
+               + truncation_penalty
+               + degradation_penalty
+               + low_confidence_residual_ratio
+               + adversarial_flag_density
+               + cross_contamination_penalty
+               - loc_verification_credit
+```
+
+Where the original five components are unchanged from `transcripts/review_metadata.compute_uncertainty`, and:
+
+```
+loc_verification_credit = match_factor * min(0.10, max(0, 0.02 + 0.001 * healed_count - 0.005 * apply_failures))
+   where match_factor = clamp(loc_match_score, 0.0, 1.0)
+   credit = 0 if healed_count == 0 or match_factor < 0.3
+```
+
+Design rationale: the 0.02 base credit reflects the institutional-cross-reference value of having a LoC publication aligned at all (regardless of heal volume); the 0.001-per-heal increment reflects token-level evidence; the 0.005-per-failure deduction penalizes unresolvable apply failures; the 0.10 cap prevents any single heal-rich entry from masking deeper audit-coverage issues (e.g., a partial Pass 1 read still costs ~0.05 truncation penalty regardless of Pass 8); the 0.3 match-score floor disqualifies low-quality LoC matches from earning credit (this affects only Rev. Harry Blake #102, match_score = 0.30, who lost most of his potential credit). The total Pass 8 corpus-wide signal: 2,550 heals applied; 0 apply failures; LoC match score 1.0 on 135 of 136 entries (0.9 on Junius Williams #72, 0.3 on Rev. Harry Blake #102).
+
+**Tier distribution (before → after Pass 9):**
+
+| Tier | Pre-Pass-9 | Post-Pass-9 | Delta |
+|---|---:|---:|---:|
+| `high` | 0 | 1 | +1 |
+| `medium` | 18 | 29 | +11 |
+| `low` | 72 | 67 | -5 |
+| `publication-block` | 23 | 18 | -5 |
+| `not-auditable` | 14 | 12 | -2 |
+| `ingestion-only` | 9 | 9 | — |
+| **TOTAL** | **136** | **136** | |
+
+22 entries crossed tier boundaries — 12 promoted `low` → `medium`; 7 promoted `publication-block` → `low`; 2 promoted `not-auditable` → `publication-block` (Grace Hall Miller #50, Joan Trumpauer Mulholland #60); 1 promoted `medium` → `high` (Timothy Jenkins #120).
+
+Full per-entry transition table: `transcripts/pass9_rescore_summary.md`.
+
+**Anomalies / decisions:**
+- Categorical un-fixable entries stay where they were: Robert McClary #109 stays `not-auditable` despite Pass 8's 1 heal (severe-degradation base = 0.7 dominates); Jennifer Lawson #59 stays `not-auditable` (mid-sentence truncation + cross-contamination penalty 0.8 dominate).
+- Several `not-auditable` entries were heal-rich but stay `not-auditable`: Walter Bruce #123 (15 heals), Steven McNichols #118 (22 heals), Nathaniel Hawthorne Jones #92 (8 heals). Their underlying low-confidence-residual-ratio + cross-contamination components combine to keep them above the 0.70 threshold even after credit. These would be candidates for a Pass 10 if the team chooses to discount the historical cross-contamination penalty given the resolution data in `cross_contamination_audit.json`.
+- Pass 9 did NOT touch the `loc_unresolved` count (130,297 corpus-wide). That number reflects deterministically-preserved stylistic divergences between Whisper-verbatim and LoC's-editorially-smoothed transcripts (function-word edits, contraction-expansion, speaker-disfluency removal). Treating it as a residual-error signal would be wrong — it is overwhelmingly editorial style, not transcription error.
+- The `cross_contamination_penalty` component is unchanged. A future Pass 10 could re-evaluate whether to discount this penalty for entries whose cross-contamination items were fully resolved (per `cross_contamination_audit.json`), but Pass 9 stays narrowly focused on Pass 8 evidence.
+
+**Deliverables:**
+- `transcripts/pass9_rescore.py` (idempotent rescore script)
+- 136 updated `transcripts/corrected/*/manifest.json` with new score, new tier, `previous_score_v8`, `previous_tier_v8`, `pass9_metadata` block, and `inferential_uncertainty.components.loc_verification_credit` component
+- `transcripts/pass9_rescore_summary.md` (per-entry transition table)
+- `transcripts/pass9_rescore_summary.json` (machine-readable)
+- `transcripts/AUDIT_LIMITATIONS.md` (categorical-limits stakeholder report, references this Pass 9 work)
+- `mcp-server/data/leaders.json` (rebuilt with Pass 9 tier values)
+
+**Coverage:** 100% (all 136 entries processed). Idempotent — re-running produces no diff.
+
+**Handoff:** No further audit passes are scheduled. The next forcing function for a Pass 10 would be one of: (a) an adversarial-multi-model ensemble run that surfaces new error classes; (b) a held-out sample-based ground-truth audit that disagrees with the formula's score estimates; (c) a project decision to discount the cross-contamination penalty after Pass 4 resolution. Pinecone vector metadata still carries pre-Pass-9 tier values; the next idempotent `rag/ingest.mjs` run will refresh them (content hashes haven't changed; only metadata).
+
+---
+
+
 
 **Subject:** John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove  
 **LoC status:** ok  
@@ -1384,7 +1463,9 @@ These bias any error-rate calculation done from this audit:
 
 ## Inferential scoring framework
 
-Suggested approach for computing per-entry residual error-rate estimates from this audit trail data:
+Suggested approach for computing per-entry residual error-rate estimates from this audit trail data.
+
+**2026-05-26 update (Pass 9):** the formula was extended with a sixth component — `loc_verification_credit` — that subtracts uncertainty proportional to Pass 8's LoC token-level heals. The five original components are unchanged; the credit is layered on top. See `transcripts/pass9_rescore.py` for the runnable reference implementation and `transcripts/pass9_rescore_summary.md` for the per-entry v8 → v9 transition table. The `transcripts/AUDIT_LIMITATIONS.md` document explains what residual uncertainty remains and why even LoC's professional transcribers encountered the same categorical limits.
 
 ### Per-entry uncertainty score (lower = more confident)
 
@@ -1395,6 +1476,7 @@ uncertainty(N) = base
                + low_confidence_residual_ratio
                + adversarial_flag_density
                + cross_contamination_penalty
+               - loc_verification_credit          # NEW in Pass 9 (2026-05-26)
 ```
 
 Where:
@@ -1404,6 +1486,7 @@ Where:
 - `low_confidence_residual_ratio = count(low/medium rows in Pass 3 / total corrections)`
 - `adversarial_flag_density = count(adversarial-review flags) / total corrections`
 - `cross_contamination_penalty = 0.1 * (cross-contamination rows referencing this entry)`
+- `loc_verification_credit = match_factor * min(0.10, max(0, 0.02 + 0.001*healed_count - 0.005*apply_failures))` where `match_factor = clamp(loc_match_score, 0.0, 1.0)` and credit is `0` if `healed_count == 0` or `match_factor < 0.3`. Added in Pass 9 (2026-05-26) to credit Pass 8's LoC token-level heal confirmations. Capped at 0.10 so a single heal-rich entry cannot mask deeper audit-coverage issues.
 
 ### Aggregate error-rate estimate
 

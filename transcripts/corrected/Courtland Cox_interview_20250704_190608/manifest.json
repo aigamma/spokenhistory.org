@@ -187,8 +187,8 @@
     },
     {
       "row_id": "24.28",
-      "whisper": "Secretary Ray / S\u00e9cou Tour\u00e9",
-      "correction": "Ahmed S\u00e9kou Tour\u00e9",
+      "whisper": "Secretary Ray / Sécou Touré",
+      "correction": "Ahmed Sékou Touré",
       "confidence": "high",
       "occurrences": 6,
       "file_paths": [
@@ -487,7 +487,7 @@
     },
     {
       "row_id": "24.P3.2",
-      "whisper": "\"Bayard / Biden\" \u2192 Bayard Rustin",
+      "whisper": "\"Bayard / Biden\" → Bayard Rustin",
       "correction": "Bayard Rustin",
       "confidence": "high",
       "occurrences": 12,
@@ -726,7 +726,7 @@
       "whisper": "Mary Barack",
       "candidate_correction": "Barack Obama Sr",
       "confidence": "medium",
-      "notes": "\"There were a lot of people, Barack Obama, I mean, Mary Barack was there\"; Barack Obama Sr. (Barack II's father) was at the Sixth Pan-African Congress 1974 // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "\"There were a lot of people, Barack Obama, I mean, Mary Barack was there\"; Barack Obama Sr. (Barack II's father) was at the Sixth Pan-African Congress 1974 // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "24.P2.3",
@@ -768,28 +768,28 @@
       "whisper": "Mary Barack (1974 Tanzania)",
       "candidate_correction": "(likely) Mary Frances Berry or Maya Angelou",
       "confidence": "low",
-      "notes": "Possibly a Whisper homophone error for a canonical Pan-African Congress attendee // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "Possibly a Whisper homophone error for a canonical Pan-African Congress attendee // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "24.P4.14",
       "whisper": "\"Mary I think Forman\" / \"Miljard Forman\"",
       "candidate_correction": "Milton (?) Forman",
       "confidence": "medium",
-      "notes": "Raw: \"we went in the back of the Lincoln Memorial, Jim Forman, John Lewis, Miljard Forman, myself.\" \"Miljard Forman\" reads like Whisper hallucination \u2014 possibly Cox said \"Mildred Forman\" (James Forman's then-wife Mildred Thompson Forman) or referred to \"Milton Galamison\" or another Forman associate. Flag for adversarial."
+      "notes": "Raw: \"we went in the back of the Lincoln Memorial, Jim Forman, John Lewis, Miljard Forman, myself.\" \"Miljard Forman\" reads like Whisper hallucination — possibly Cox said \"Mildred Forman\" (James Forman's then-wife Mildred Thompson Forman) or referred to \"Milton Galamison\" or another Forman associate. Flag for adversarial."
     },
     {
       "row_id": "24.P4.20",
       "whisper": "\"Emmett Dorsey\"",
       "candidate_correction": "Emmett Dorsey",
       "confidence": "speaker-originating",
-      "notes": "Raw: \"Emmett Dorsey, who was a professor at Howard, a wonderful, a big bear of a man, who would say in his class that racism is architect tonic to the Constitution of the United States.\" Real Howard government professor; moderated the 1961 Rustin\u2013Malcolm X debate. Add to catalog as canonical Howard NAG-era figure. Missed by Pass 1\u20133."
+      "notes": "Raw: \"Emmett Dorsey, who was a professor at Howard, a wonderful, a big bear of a man, who would say in his class that racism is architect tonic to the Constitution of the United States.\" Real Howard government professor; moderated the 1961 Rustin–Malcolm X debate. Add to catalog as canonical Howard NAG-era figure. Missed by Pass 1–3."
     },
     {
       "row_id": "24.P4.21",
       "whisper": "\"John Jackson, Mr. Jackson's younger son\"",
       "candidate_correction": "John Jackson",
       "confidence": "speaker-originating",
-      "notes": "Real \u2014 son of Mr. Jackson, the Lowndes County landowner who housed SNCC organizers in 1965. Not the same as John Jackson the bluesman. Local figure, no canonical entry needed but flag for completeness."
+      "notes": "Real — son of Mr. Jackson, the Lowndes County landowner who housed SNCC organizers in 1965. Not the same as John Jackson the bluesman. Local figure, no canonical entry needed but flag for completeness."
     }
   ],
   "skipped_rows": [
@@ -841,7 +841,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.3151,
+    "score": 0.2811,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -849,9 +849,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2466,
       "adversarial_flag_density": 0.0685,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.034
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.3151,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 14,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.034,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 0,

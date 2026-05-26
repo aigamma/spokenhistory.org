@@ -464,7 +464,7 @@
     {
       "row_id": "106.P2.4",
       "whisper": "Adam Grablet",
-      "correction": "(uncertain \u2014 Navy admiral) Samuel L. Gravely Jr",
+      "correction": "(uncertain — Navy admiral) Samuel L. Gravely Jr",
       "confidence": "high",
       "occurrences": 3,
       "file_paths": [
@@ -756,7 +756,7 @@
       "whisper": "Dr. Delay Bogeau",
       "candidate_correction": "Dr. Brailsford Brazeal",
       "confidence": "medium",
-      "notes": "\"Dr. Delay Bogeau, who was a professor at Mohaus College\"; identification uncertain \u2014 possible Morehouse Dean Brailsford Brazeal"
+      "notes": "\"Dr. Delay Bogeau, who was a professor at Mohaus College\"; identification uncertain — possible Morehouse Dean Brailsford Brazeal"
     },
     {
       "row_id": "106.15",
@@ -784,7 +784,7 @@
       "whisper": "Lonnie",
       "candidate_correction": "Lonnie",
       "confidence": "speaker-originating",
-      "notes": "\"Lonnie and the board and everybody involved\"; closing remarks \u2014 Lonnie G. Bunch III, founding Director NMAAHC (later 14th Secretary of the Smithsonian 2019+) \u2014 Brown thanking Smithsonian board on camera at the end of the interview"
+      "notes": "\"Lonnie and the board and everybody involved\"; closing remarks — Lonnie G. Bunch III, founding Director NMAAHC (later 14th Secretary of the Smithsonian 2019+) — Brown thanking Smithsonian board on camera at the end of the interview"
     },
     {
       "row_id": "106.P2.2",
@@ -880,7 +880,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.1972,
+    "score": 0.1558,
     "confidence_tier": "medium",
     "components": {
       "base": 0.0,
@@ -888,9 +888,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.1268,
       "adversarial_flag_density": 0.0704,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.0414
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.1972,
+    "previous_tier_v8": "medium",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 0.9,
+      "loc_healed_count": 26,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.0414,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 5,
   "cross_contamination_items_resolved": 0,

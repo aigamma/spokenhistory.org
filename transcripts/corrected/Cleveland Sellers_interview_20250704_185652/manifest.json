@@ -379,7 +379,7 @@
     },
     {
       "row_id": "22.P3.2",
-      "whisper": "\"snake\" / \"sneak\" \u2192 SNCC",
+      "whisper": "\"snake\" / \"sneak\" → SNCC",
       "correction": "SNCC",
       "confidence": "high",
       "occurrences": 12,
@@ -391,7 +391,7 @@
     },
     {
       "row_id": "22.P4.2",
-      "whisper": "\"Schorner\" / \"Mickey Schorner\" (multiple \u2014 lines 2263, 2323)",
+      "whisper": "\"Schorner\" / \"Mickey Schorner\" (multiple — lines 2263, 2323)",
       "correction": "Michael \"Mickey\" Schwerner",
       "confidence": "high",
       "occurrences": 9,
@@ -430,7 +430,7 @@
     {
       "row_id": "22.15",
       "whisper": "three students at the University of South Carolina",
-      "candidate_correction": "(Henry Frost, James Solomon, Robert Anderson \u2014 1963 desegregation of USC)",
+      "candidate_correction": "(Henry Frost, James Solomon, Robert Anderson — 1963 desegregation of USC)",
       "confidence": "speaker-originating",
       "notes": "Real"
     },
@@ -439,7 +439,7 @@
       "whisper": "John Patisse",
       "candidate_correction": "John Hatchett",
       "confidence": "low",
-      "notes": "Real Howard NAG member // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "Real Howard NAG member // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "22.22",
@@ -467,7 +467,7 @@
       "whisper": "Holly Fry",
       "candidate_correction": "Holly Fries",
       "confidence": "low",
-      "notes": "\"Freedom on My Mind\" documentary producer; canonical name uncertain // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "\"Freedom on My Mind\" documentary producer; canonical name uncertain // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "22.50",
@@ -481,14 +481,14 @@
       "whisper": "John Patisse",
       "candidate_correction": "John Patison",
       "confidence": "low",
-      "notes": "NAG/Howard SNCC worker, name uncertain // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "NAG/Howard SNCC worker, name uncertain // [PASS-6: rejected — speculation without corroboration"
     },
     {
       "row_id": "22.P2.23",
       "whisper": "Holly Fry",
       "candidate_correction": "Joanne Grant or Connie Field's collaborator",
       "confidence": "low",
-      "notes": "Co-producer of *Freedom on My Mind* (1994 documentary) // [PASS-6: rejected \u2014 speculation without corroboration"
+      "notes": "Co-producer of *Freedom on My Mind* (1994 documentary) // [PASS-6: rejected — speculation without corroboration"
     }
   ],
   "skipped_rows": [
@@ -540,17 +540,29 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.2727,
-    "confidence_tier": "low",
+    "score": 0.2157,
+    "confidence_tier": "medium",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.2045,
       "adversarial_flag_density": 0.0682,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.057
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.2727,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 37,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.057,
+      "tier_changed": true
+    }
   },
   "adversarial_review_flag_count": 3,
   "cross_contamination_items_resolved": 0,

@@ -179,7 +179,7 @@
     {
       "row_id": "109.P2.24",
       "whisper": "He's poor. I don't know what I heard. He's dead",
-      "candidate_correction": "He's poor. I don't know \u2014 I heard he's dead",
+      "candidate_correction": "He's poor. I don't know — I heard he's dead",
       "confidence": "speaker-originating",
       "notes": "Speaker recounting fate of his father / father-figure who refused to flee his hometown after a physical confrontation with a white man"
     },
@@ -309,7 +309,7 @@
     "severe-whisper-degradation"
   ],
   "inferential_uncertainty": {
-    "score": 1.0,
+    "score": 0.979,
     "confidence_tier": "not-auditable",
     "components": {
       "base": 0.7,
@@ -317,9 +317,21 @@
       "degradation_penalty": 0.325,
       "low_confidence_residual_ratio": 0.3684,
       "adversarial_flag_density": 0.4211,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.021
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 1.0,
+    "previous_tier_v8": "not-auditable",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 1,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.021,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 0,

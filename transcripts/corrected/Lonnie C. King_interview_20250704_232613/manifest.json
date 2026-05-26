@@ -775,7 +775,7 @@
     },
     {
       "row_id": "80.P4.7",
-      "whisper": "Mars (the wife \u2014 line 3991 \"Mr. May's and his wife, Miss Sadie May's\")",
+      "whisper": "Mars (the wife — line 3991 \"Mr. May's and his wife, Miss Sadie May's\")",
       "correction": "Mays",
       "confidence": "high",
       "occurrences": 9,
@@ -883,7 +883,7 @@
       "whisper": "Reverend Joseph P. Smith",
       "candidate_correction": "Rev. Joseph P. Smith",
       "confidence": "speaker-originating",
-      "notes": "Grandfather \u2014 Baptist evangelist with perfect pitch"
+      "notes": "Grandfather — Baptist evangelist with perfect pitch"
     },
     {
       "row_id": "80.13",
@@ -916,7 +916,7 @@
     {
       "row_id": "80.46",
       "whisper": "Hugo Schala",
-      "candidate_correction": "(Hugo Schala \u2014 Morehouse economist)",
+      "candidate_correction": "(Hugo Schala — Morehouse economist)",
       "confidence": "speaker-originating",
       "notes": "-"
     },
@@ -946,7 +946,7 @@
       "whisper": "Mary Ann Smith",
       "candidate_correction": "Marian Wright Edelman (then Marian Wright)",
       "confidence": "medium",
-      "notes": "Speaker lists Shaw conference attendees; \"Mary Ann Smith\" and \"Mary Wright Edelman\" both named separately \u2014 Mary Ann Smith Wilson likely the Spelman activist"
+      "notes": "Speaker lists Shaw conference attendees; \"Mary Ann Smith\" and \"Mary Wright Edelman\" both named separately — Mary Ann Smith Wilson likely the Spelman activist"
     },
     {
       "row_id": "80.P2.16",
@@ -967,7 +967,7 @@
       "whisper": "KB Williamson / John C. Calhoun",
       "candidate_correction": "John C. Calhoun (Atlanta NAACP) +",
       "confidence": "medium",
-      "notes": "\"John C. Calhoun, who had been the head of the NAACP\" \u2014 canonical Atlanta NAACP president who refused to surrender membership list to GA Attorney General"
+      "notes": "\"John C. Calhoun, who had been the head of the NAACP\" — canonical Atlanta NAACP president who refused to surrender membership list to GA Attorney General"
     },
     {
       "row_id": "80.P2.35",
@@ -993,7 +993,7 @@
     {
       "row_id": "80.P2.42",
       "whisper": "Pueblo in Black and Stromes County",
-      "candidate_correction": "(uncertain \u2014 possibly \"PBL/PE Co. in Bartow/Stephens County\" \u2014 Yancy partner)",
+      "candidate_correction": "(uncertain — possibly \"PBL/PE Co. in Bartow/Stephens County\" — Yancy partner)",
       "confidence": "flagged-for-adversarial-review",
       "notes": "Speaker's recall of a deceased fellow tech engineer; uncertain Whisper rendering"
     },
@@ -1023,7 +1023,7 @@
       "whisper": "bleeding Smith",
       "candidate_correction": "Blayton-Smith /",
       "confidence": "low",
-      "notes": "\"I was arrested... for bleeding Smith out in the county\" \u2014 speaker references MLK's May 1960 traffic case in DeKalb County for which he was on probation; canonical pretext used to send MLK to Reidsville prison"
+      "notes": "\"I was arrested... for bleeding Smith out in the county\" — speaker references MLK's May 1960 traffic case in DeKalb County for which he was on probation; canonical pretext used to send MLK to Reidsville prison"
     },
     {
       "row_id": "80.P2.60",
@@ -1037,21 +1037,21 @@
       "whisper": "Spied",
       "candidate_correction": "Spied",
       "confidence": "low",
-      "notes": "Speaker says \"Spied... sat in the back\" of the March 10, 1961 meeting \u2014 unclear if proper noun or rendering of \"spied\""
+      "notes": "Speaker says \"Spied... sat in the back\" of the March 10, 1961 meeting — unclear if proper noun or rendering of \"spied\""
     },
     {
       "row_id": "80.P2.62",
       "whisper": "the doctor up",
       "candidate_correction": "(the doctor [whose name escapes the speaker])",
       "confidence": "speaker-originating",
-      "notes": "Speaker mid-recall reference to author of Don Hollowell biography (\"School of Social Work at New York City, Georgia\" \u2192 likely Maurice C. Daniels of UGA, *Saving the Soul of Georgia: Donald L. Hollowell and the Struggle for Civil Rights*, 2013)"
+      "notes": "Speaker mid-recall reference to author of Don Hollowell biography (\"School of Social Work at New York City, Georgia\" → likely Maurice C. Daniels of UGA, *Saving the Soul of Georgia: Donald L. Hollowell and the Struggle for Civil Rights*, 2013)"
     },
     {
       "row_id": "80.P2.67",
       "whisper": "sunset",
       "candidate_correction": "Mt. Olive\" /",
       "confidence": "low",
-      "notes": "\"He was on sunset. No, he was not there\" \u2014 speaker mid-correction about MLK's whereabouts March 10, 1961"
+      "notes": "\"He was on sunset. No, he was not there\" — speaker mid-correction about MLK's whereabouts March 10, 1961"
     },
     {
       "row_id": "80.P4.5",
@@ -1065,14 +1065,14 @@
       "whisper": "grandfather kept me real",
       "candidate_correction": "grandfather kept me [until]",
       "confidence": "low",
-      "notes": "Line 75 (\"My grandfather kept me real until he died\"). The phrase \"kept me real\" is semantically anomalous in context \u2014 Whisper likely rendered \"reared\" or \"near\" as \"real.\" Speaker is describing being raised by grandfather Rev. Joseph P. Smith. Low confidence on the exact substitution; flag for adversarial review."
+      "notes": "Line 75 (\"My grandfather kept me real until he died\"). The phrase \"kept me real\" is semantically anomalous in context — Whisper likely rendered \"reared\" or \"near\" as \"real.\" Speaker is describing being raised by grandfather Rev. Joseph P. Smith. Low confidence on the exact substitution; flag for adversarial review."
     },
     {
       "row_id": "80.P4.12",
       "whisper": "high-wide act",
       "candidate_correction": "high-profile act",
       "confidence": "medium",
-      "notes": "Line 4339 (\"And it was a high-wide act\"). Speaker's intent is uncertain \u2014 likely \"high-profile\" or idiomatic \"high-water\" act. Low-to-medium confidence flag for adversarial review."
+      "notes": "Line 4339 (\"And it was a high-wide act\"). Speaker's intent is uncertain — likely \"high-profile\" or idiomatic \"high-water\" act. Low-to-medium confidence flag for adversarial review."
     },
     {
       "row_id": "80.P4.13",
@@ -1093,14 +1093,14 @@
       "whisper": "the iron never old",
       "candidate_correction": "the iron never gold",
       "confidence": "low",
-      "notes": "Line 6927 (\"I just ignored it. And the iron never old, Dr. Crosby\"). Speaker idiom \u2014 \"iron is hot\" or \"iron got old\" are plausible originals. Low confidence; flag for adversarial review."
+      "notes": "Line 6927 (\"I just ignored it. And the iron never old, Dr. Crosby\"). Speaker idiom — \"iron is hot\" or \"iron got old\" are plausible originals. Low confidence; flag for adversarial review."
     },
     {
       "row_id": "80.P4.18",
       "whisper": "our floor mentioned",
       "candidate_correction": "(uncertain; possibly \"our aforementioned\")",
       "confidence": "low",
-      "notes": "Line 4211 (\"So Chief Jenkins, our floor mentioned\"). Whisper rendering of \"aforementioned\" as \"floor mentioned\" \u2014 net-new lexical pattern. Low confidence on exact intent."
+      "notes": "Line 4211 (\"So Chief Jenkins, our floor mentioned\"). Whisper rendering of \"aforementioned\" as \"floor mentioned\" — net-new lexical pattern. Low confidence on exact intent."
     },
     {
       "row_id": "80.P4.22",
@@ -1196,7 +1196,7 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.4128,
+    "score": 0.3308,
     "confidence_tier": "low",
     "components": {
       "base": 0.0,
@@ -1204,9 +1204,21 @@
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.3394,
       "adversarial_flag_density": 0.0734,
-      "cross_contamination_penalty": 0.0
+      "cross_contamination_penalty": 0.0,
+      "loc_verification_credit": -0.082
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework"
+    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "previous_score_v8": 0.4128,
+    "previous_tier_v8": "low",
+    "pass9_metadata": {
+      "applied_date": "2026-05-26",
+      "credit_formula": "match_factor * min(0.10, max(0, 0.02 + 0.001*healed - 0.005*fails)); credit = 0 if healed=0 or match<0.3",
+      "loc_match_score": 1.0,
+      "loc_healed_count": 62,
+      "loc_apply_failure_count": 0,
+      "credit_applied": 0.082,
+      "tier_changed": false
+    }
   },
   "adversarial_review_flag_count": 8,
   "cross_contamination_items_resolved": 0,
