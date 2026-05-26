@@ -104,7 +104,11 @@ git commit -m "Reingest + precompute regen $(date +%Y-%m-%d)"
 git push
 ```
 
-If the precompute is killed midway, resume with `rag/precompute.mjs --resume` to skip already-completed entries.
+### Safety flags
+
+- **`--force-prune`** on `ingest.mjs` bypasses the 50% orphan-ratio safety threshold. Use ONLY when the large prune is intentional (e.g., the 2026-05-26 `.srt`-only switch that dropped 62% of the index). Without it, the script exits with status 2 + an explanatory error rather than silently nuking the index when a typo in `PINECONE_INDEX` or wrong `corrected/` config makes everything look orphaned.
+
+- **`--resume`** on `precompute.mjs` skips entries whose `public/rag/related/entry-N.json` already exists. Useful when a precompute run was killed midway (harness timeout, AV-blocked node process, network blip) — partial state on disk is correct, and resume picks up where it left off without redoing the completed entries. The atomicity invariant: each entry's JSON is written atomically when its loop iteration ends, so `file exists` implies `this entry was fully processed by some earlier run`.
 
 ## Cost ceiling
 
