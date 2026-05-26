@@ -21,6 +21,7 @@
 //   node --env-file=.env.local rag/ingest.mjs --entries 1,5,73-80
 //   node --env-file=.env.local rag/ingest.mjs --include-ground-truth
 //   node --env-file=.env.local rag/ingest.mjs --prune
+//   node --env-file=.env.local rag/ingest.mjs --force-prune    # bypass >50% safety threshold
 //   node --env-file=.env.local rag/ingest.mjs --dry-run
 
 import { createHash } from 'node:crypto';
