@@ -125,20 +125,20 @@ export default function QuoteFinder({
                 Clear
               </button>
             )}
-          <button
-            type="submit"
-            disabled={isLoading || !quote.trim()}
-            className="px-6 py-2 bg-civil-red-strong text-white rounded-md font-medium hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
-          >
-            {isLoading ? (
-              <span className="inline-flex items-center gap-2">
-                <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
-                Searching
-              </span>
-            ) : (
-              'Find source'
-            )}
-          </button>
+            <button
+              type="submit"
+              disabled={isLoading || !quote.trim()}
+              className="px-6 py-2 bg-civil-red-strong text-white rounded-md font-medium hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
+            >
+              {isLoading ? (
+                <span className="inline-flex items-center gap-2">
+                  <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
+                  Searching
+                </span>
+              ) : (
+                'Find source'
+              )}
+            </button>
           </div>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-stone-600">
