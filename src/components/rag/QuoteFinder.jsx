@@ -19,11 +19,12 @@ import CitationCard from './CitationCard';
 
 // Sample paraphrases for the QuoteFinder demo. Each one is a real
 // civil-rights-era quote (or its canonical paraphrase) that the
-// archive can attribute via semantic match.
+// archive can attribute via semantic match. Range of speakers
+// represented so the demo shows breadth.
 const SAMPLE_QUOTES = [
   'the dreamer can be killed but not the dream',
   'nonviolence is the weapon of the strong',
-  'you may be able to kill the dreamer but you cannot kill the dream',
+  'we who believe in freedom cannot rest',
 ];
 
 /**
