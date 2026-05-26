@@ -109,6 +109,20 @@ For the meeting, these three exercise distinct facets:
 
 (All seven canonical demo queries live in `scripts/demo-queries.sh`.)
 
+### Deep-linkable share URLs
+
+Any search query can be shared as a URL. Examples Eric can hand to a
+stakeholder before the meeting:
+
+- `https://civil-rights-staging.netlify.app/rag-explore?q=Bloody+Sunday+Edmund+Pettus+Bridge#search`
+- `https://civil-rights-staging.netlify.app/rag-explore?q=nonviolence+as+theology+vs.+tactic#search`
+- `https://civil-rights-staging.netlify.app/rag-explore?q=the+dreamer+can+be+killed+but+not+the+dream#search`
+
+The recipient lands on the Search tab, the query is pre-loaded into
+the box, and results render automatically. The URL itself is also a
+verbatim record of what was searched — useful for citation footnotes
+("queried 2026-05-26 at <URL>").
+
 ## The MCP connector (not yet deployed)
 
 `mcp-server/` contains a ready-to-deploy MCP server backed by the same

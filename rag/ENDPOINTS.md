@@ -10,6 +10,7 @@ For internal use; not a stakeholder doc.
 | `https://civil-rights-staging.netlify.app/` | The site root |
 | `https://civil-rights-staging.netlify.app/rag-explore` | The 4-tab RAG demo page (auth-gated) |
 | `https://civil-rights-staging.netlify.app/rag-explore#search` | Semantic search tab (default) |
+| `https://civil-rights-staging.netlify.app/rag-explore?q=nonviolence#search` | Search tab with query pre-loaded + auto-executed (deep-linkable share URL) |
 | `https://civil-rights-staging.netlify.app/rag-explore#quote` | Quote-finder tab |
 | `https://civil-rights-staging.netlify.app/rag-explore#map` | Embedding-space scatter |
 | `https://civil-rights-staging.netlify.app/rag-explore#related` | Related-interviewees tab |
