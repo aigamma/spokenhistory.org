@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import {
   SemanticSearch,
@@ -90,48 +90,39 @@ const RELATED_DEMO_ENTRIES = [
   { number: 125, name: 'Wheeler Parker, Jr. (Emmett Till\'s cousin)' },
   { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
 ];
-const TAB_FROM_HASH = (hash) => {
-  const t = (hash || '').replace(/^#/, '');
-  return TABS.includes(t) ? t : 'search';
-};
+const VALID_TAB = (t) => (TABS.includes(t) ? t : 'search');
 
 export default function RagExplore() {
   useDocumentTitle('Explore the embeddings');
   const stats = useCorpusStats();
-  // Use React Router's useLocation so navigation FROM another page
-  // (e.g., the slide-out menu Link to "/rag-explore#related") sets the
-  // tab correctly on first render. window.location.hash alone misses
-  // some React Router transition edge cases.
-  const location = useLocation();
-  const [tab, setTab] = useState(() => TAB_FROM_HASH(
-    typeof window === 'undefined' ? location.hash : (window.location.hash || location.hash),
-  ));
+  // The app uses HashRouter, so window.location.hash is consumed by
+  // the router itself (e.g. /#/rag-explore?tab=search&q=foo). Reading
+  // window.location.hash returns "#/rag-explore?tab=search&q=foo" — not
+  // useful as a tab anchor. Use React Router's useSearchParams() to
+  // read the tab from a ?tab= query param inside the router's path.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const tabParam = searchParams.get('tab');
+  const [tab, setTab] = useState(() => VALID_TAB(tabParam));
   const [relatedEntry, setRelatedEntry] = useState(RELATED_DEMO_ENTRIES[0].number);
 
-  // React to React Router navigations that change the hash (e.g., the
-  // user clicks a Link to "/rag-explore#events" from another page).
+  // React to navigation that changes the tab query param (Links from
+  // other pages or browser back/forward).
   useEffect(() => {
-    const nextTab = TAB_FROM_HASH(location.hash);
+    const nextTab = VALID_TAB(tabParam);
     if (nextTab !== tab) setTab(nextTab);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.hash]);
+  }, [tabParam]);
 
-  // Keep tab state and the hash in sync so in-page tab switches are
-  // bookmarkable.
+  // Keep ?tab= synced when the user clicks a tab on this page, so
+  // the URL stays bookmarkable. Don't touch other query params (e.g.
+  // ?q= used by SemanticSearch).
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (window.location.hash !== `#${tab}`) {
-      window.history.replaceState(null, '', `#${tab}`);
-    }
+    if (searchParams.get('tab') === tab) return;
+    const next = new URLSearchParams(searchParams);
+    next.set('tab', tab);
+    setSearchParams(next, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tab]);
-
-  // Respond to native hash changes (back/forward, manual edit).
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-    const onHash = () => setTab(TAB_FROM_HASH(window.location.hash));
-    window.addEventListener('hashchange', onHash);
-    return () => window.removeEventListener('hashchange', onHash);
-  }, []);
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>

@@ -163,7 +163,7 @@ export default function TopicGlossary() {
 
         <div className="mt-12">
           <Link
-            to="/rag-explore#themes"
+            to="/rag-explore?tab=themes"
             className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 text-white rounded-md hover:bg-stone-800 transition-colors"
           >
             Explore RAG demo surfaces →

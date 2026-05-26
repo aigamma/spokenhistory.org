@@ -11,6 +11,7 @@
  */
 
 import { useEffect, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Search as SearchIcon, Loader2, X } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -48,28 +49,6 @@ const SUGGESTED_QUERIES = [
 // needs in-app routing to an interview detail page, add a dedicated
 // secondary action inside the CitationCard rather than wrapping the
 // whole card in a button.
-// Initial query from URL ?q= so stakeholders can deep-link to a search.
-// e.g. /rag-explore?q=nonviolence#search lands with the query pre-loaded
-// and auto-executed on first render.
-function readQueryFromUrl() {
-  if (typeof window === 'undefined') return '';
-  try {
-    return new URL(window.location.href).searchParams.get('q') || '';
-  } catch {
-    return '';
-  }
-}
-
-function writeQueryToUrl(q) {
-  if (typeof window === 'undefined') return;
-  try {
-    const url = new URL(window.location.href);
-    if (q) url.searchParams.set('q', q);
-    else url.searchParams.delete('q');
-    window.history.replaceState(null, '', url.toString());
-  } catch { /* noop */ }
-}
-
 export default function SemanticSearch({
   placeholder = 'Search the oral history archive…',
   topN = 8,
@@ -77,7 +56,19 @@ export default function SemanticSearch({
   showFullText = false,
   className = '',
 }) {
-  const [query, setQuery] = useState(() => readQueryFromUrl());
+  // The app uses HashRouter, so query params live INSIDE the router
+  // path (URL like /#/rag-explore?q=foo). useSearchParams() reads
+  // those params correctly — window.location.search would be empty.
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState(() => searchParams.get('q') || '');
+
+  const writeQueryToUrl = (q) => {
+    const next = new URLSearchParams(searchParams);
+    if (q) next.set('q', q);
+    else next.delete('q');
+    setSearchParams(next, { replace: true });
+  };
+
   const [results, setResults] = useState([]);
   const [meta, setMeta] = useState(null);
   const [isLoading, setIsLoading] = useState(false);

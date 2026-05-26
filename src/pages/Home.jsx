@@ -903,7 +903,7 @@ export default function Home() {
 
             {/* Watch Related Interviews Link */}
             <div className="flex justify-center relative">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("brown v. board")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("brown v. board")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -951,7 +951,7 @@ export default function Home() {
             <div className="lg:order-2 space-y-4 lg:space-y-6 text-left">
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("emmett till")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("emmett till")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Lynching of Emmett Till</h3>
               </Link>
 
@@ -963,7 +963,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("emmett till")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("emmett till")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -971,7 +971,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="lg:order-1 space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("emmett till")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("emmett till")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   <EmmettTillImage />
                 </div>
@@ -1036,7 +1036,7 @@ export default function Home() {
             <div className="space-y-4 lg:space-y-6">
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("montgomery")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("montgomery")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Montgomery Bus Boycott</h3>
               </Link>
 
@@ -1048,7 +1048,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("montgomery")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("montgomery")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1056,7 +1056,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("montgomery")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("montgomery")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {montgomeryImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1102,7 +1102,7 @@ export default function Home() {
               </div>
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("little rock")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("little rock")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Integration of Little Rock</h3>
               </Link>
 
@@ -1114,7 +1114,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("little rock")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("little rock")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1122,7 +1122,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="lg:order-1 space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("little rock")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("little rock")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {littleRockImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1202,7 +1202,7 @@ export default function Home() {
             <div className="lg:order-2 space-y-4 lg:space-y-6">
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("sncc")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("sncc")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">SNCC & Student Organizing</h3>
               </Link>
 
@@ -1214,7 +1214,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("sncc")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("sncc")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1222,7 +1222,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="lg:order-1 space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("sncc")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("sncc")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {hRapBrownImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1268,7 +1268,7 @@ export default function Home() {
             <div className="space-y-4 lg:space-y-6">
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom rides")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("freedom rides")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Freedom Riders</h3>
               </Link>
 
@@ -1280,7 +1280,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom rides")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("freedom rides")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1288,7 +1288,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="lg:order-2 space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom rides")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("freedom rides")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {freedomRiderImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1362,7 +1362,7 @@ export default function Home() {
               </div>
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("medgar evers")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("medgar evers")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">The Murder of Medgar Evers</h3>
               </Link>
 
@@ -1374,7 +1374,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("medgar evers")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("medgar evers")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1382,7 +1382,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="lg:order-1 space-y-12">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("medgar evers")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("medgar evers")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {medgarEversImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1465,7 +1465,7 @@ export default function Home() {
             <div className="space-y-4 lg:space-y-6">
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("march on washington")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("march on washington")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">March on Washington</h3>
               </Link>
 
@@ -1477,7 +1477,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("march on washington")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("march on washington")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1485,7 +1485,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("march on washington")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("march on washington")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {marchOnWashingtonImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1613,7 +1613,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Image section - Left */}
             <div className="space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom summer")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("freedom summer")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {freedomSummerImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1640,7 +1640,7 @@ export default function Home() {
             {/* Text content - Right */}
             <div className="space-y-4 lg:space-y-6">
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom summer")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("freedom summer")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Freedom Summer</h3>
               </Link>
 
@@ -1652,7 +1652,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom summer")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("freedom summer")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1679,7 +1679,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             <div className="space-y-4 lg:space-y-6">
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("civil rights act")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("civil rights act")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Civil Rights Act of 1964</h3>
               </Link>
 
@@ -1691,7 +1691,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("civil rights act")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("civil rights act")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1737,7 +1737,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Image section - Left */}
             <div className="space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("malcolm x")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("malcolm x")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {malcolmXImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -1771,7 +1771,7 @@ export default function Home() {
               </div>
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("malcolm x")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("malcolm x")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Assassination of Malcolm X</h3>
               </Link>
 
@@ -1783,7 +1783,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("malcolm x")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("malcolm x")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -1997,7 +1997,7 @@ export default function Home() {
             {/* Text content - Right */}
             <div className="space-y-4 lg:space-y-6">
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("voting rights act")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("voting rights act")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Voting Rights Act</h3>
               </Link>
 
@@ -2009,7 +2009,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("voting rights act")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("voting rights act")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -2045,7 +2045,7 @@ export default function Home() {
             <div className="lg:order-2 space-y-4 lg:space-y-6">
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("black panther party")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("black panther party")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Black Panther Party</h3>
               </Link>
 
@@ -2057,7 +2057,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("black panther party")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("black panther party")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -2065,7 +2065,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="lg:order-1 space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("black panther party")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("black panther party")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {blackPantherImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
@@ -2290,7 +2290,7 @@ export default function Home() {
               </div>
 
               {/* Title */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("martin luther king")}`}>
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("martin luther king")}`}>
                 <h3 className="text-black text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Assassination of MLK</h3>
               </Link>
 
@@ -2302,7 +2302,7 @@ export default function Home() {
               </p>
 
               {/* Watch Related Interviews Link */}
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("martin luther king")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("martin luther king")}`} className="inline-flex items-center gap-2 text-civil-red-body text-base lg:text-xl font-light font-['Chivo_Mono'] hover:underline transition-colors">
                 <span>Watch Related Interviews</span>
                 <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
               </Link>
@@ -2310,7 +2310,7 @@ export default function Home() {
 
             {/* Image section */}
             <div className="space-y-2">
-              <Link to={`/playlist-builder?keywords=${encodeURIComponent("martin luther king")}`} className="block">
+              <Link to={`/rag-explore?tab=search&q=${encodeURIComponent("martin luther king")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {mlkImageLoading ? (
                     <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center">
