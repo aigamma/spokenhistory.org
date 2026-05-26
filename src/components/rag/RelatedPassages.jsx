@@ -12,8 +12,48 @@
 
 import { useEffect, useState } from 'react';
 import { Sparkles, AlertCircle } from 'lucide-react';
-import { loadRelated } from '../../services/ragClient';
+import { loadRelated, loadConstellation } from '../../services/ragClient';
 import CitationCard from './CitationCard';
+
+// Module-scoped cache of entry_number → audit-fidelity fields, populated
+// once per session from constellation.json. The per-chunk JSON files
+// don't carry tier info per result (they would balloon by ~30%), so we
+// look it up by entry_number when rendering each related-passage card.
+let _tierCachePromise = null;
+function loadTierLookup() {
+  if (_tierCachePromise) return _tierCachePromise;
+  _tierCachePromise = loadConstellation()
+    .then((json) => {
+      const map = new Map();
+      if (json?.points) {
+        for (const p of json.points) {
+          map.set(p.entry_number, {
+            uncertaintyTier: p.uncertainty_tier || null,
+            entryProvenance: p.entry_provenance || null,
+            uncertaintyScore: p.uncertainty_score ?? null,
+            locItemUrl: p.loc_item_url || null,
+          });
+        }
+      }
+      return map;
+    })
+    .catch(() => new Map());
+  return _tierCachePromise;
+}
+
+function fidelityNoteFor(provenance, tier) {
+  if (tier === 'ingestion-only' || provenance === 'ingestion-only') {
+    return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.';
+  }
+  if (provenance === 'audit-original') {
+    if (tier === 'low') return 'Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.';
+    if (tier === 'medium') return 'Audited transcript with residual uncertainty; verify against audio for high-stakes citations.';
+    if (tier === 'publication-block') return 'Audited transcript with documented publication-blocker issues; verify the specific passage against audio before citing.';
+    if (tier === 'not-auditable') return 'Audit pass completed but the entry cannot be fully verified against an external canonical source.';
+    return 'Audited transcript.';
+  }
+  return 'Provenance unknown.';
+}
 
 /**
  * RelatedPassages — sidebar/panel for related passages on a transcript page.
@@ -42,6 +82,7 @@ export default function RelatedPassages({
   className = '',
 }) {
   const [data, setData] = useState(null);
+  const [tierMap, setTierMap] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -49,10 +90,11 @@ export default function RelatedPassages({
     let cancelled = false;
     setIsLoading(true);
     setError(null);
-    loadRelated(entryNumber)
-      .then((json) => {
+    Promise.all([loadRelated(entryNumber), loadTierLookup()])
+      .then(([related, tiers]) => {
         if (cancelled) return;
-        setData(json);
+        setData(related);
+        setTierMap(tiers);
       })
       .catch((e) => {
         if (cancelled) return;
@@ -95,7 +137,7 @@ export default function RelatedPassages({
         <ol className="space-y-3">
           {passages.map((p) => (
             <li key={p.id}>
-              <CitationCard payload={passagePreviewToCard(p)} showFullText={false} showCitation={false} />
+              <CitationCard payload={passagePreviewToCard(p, tierMap)} showFullText={false} showCitation={false} />
             </li>
           ))}
         </ol>
@@ -164,22 +206,29 @@ function Skeleton() {
 
 // Adapter: the precomputed JSON uses snake_case keys; CitationCard
 // consumes the camelCase shape that /retrieve emits. Bridge them here
-// so the card's contract stays single-shape.
-function passagePreviewToCard(p) {
+// so the card's contract stays single-shape. The audit-fidelity
+// fields (uncertaintyTier, fidelityNote) aren't in the per-chunk
+// records (they live per-entry, not per-chunk) — we resolve them
+// from the tierMap that was built from constellation.json.
+function passagePreviewToCard(p, tierMap) {
+  const tierInfo = (tierMap && p.entry_number != null) ? tierMap.get(p.entry_number) : null;
+  const tier = tierInfo?.uncertaintyTier ?? null;
+  const provenance = tierInfo?.entryProvenance ?? p.entry_provenance ?? null;
   return {
     id: p.id,
     entryNumber: p.entry_number ?? null,
     entrySubject: p.entry_subject || null,
     text: p.text_preview || '',
     textPreview: p.text_preview || '',
-    locItemUrl: p.loc_item_url || null,
+    locItemUrl: p.loc_item_url || tierInfo?.locItemUrl || null,
     timestampStart: p.timestamp_start_seconds ?? null,
     timestampEnd: p.timestamp_end_seconds ?? null,
     timestampStartStr: formatTimestamp(p.timestamp_start_seconds),
     timestampEndStr: formatTimestamp(p.timestamp_end_seconds),
-    entryProvenance: p.entry_provenance || null,
-    uncertaintyTier: null,
-    fidelityNote: null,
+    entryProvenance: provenance,
+    uncertaintyTier: tier,
+    uncertaintyScore: tierInfo?.uncertaintyScore ?? null,
+    fidelityNote: fidelityNoteFor(provenance, tier),
     suggestedCitation: null,
     similarity: p.score ?? null,
   };
