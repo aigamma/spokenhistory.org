@@ -1,421 +1,221 @@
 /**
- * @fileoverview InterviewIndex page for browsing interviews in a card-based layout.
- * 
- * This page provides an index view of interviews with thumbnails and basic information,
- * displaying them in a clean card grid with search functionality.
- * It uses pre-aggregated data from Firestore for optimal performance.
+ * @fileoverview InterviewIndex — card-based directory of all 136 interviews.
+ *
+ * Originally fetched from Firestore (`interviewIndex` collection); rewired
+ * 2026-05-26 to read from the RAG substrate JSON files:
+ *   - /rag/summaries/neighbors.json (entry_number, subject, tier, LoC URL)
+ *   - /rag/summaries/capsules.json (3-sentence museum-label biographies)
+ *
+ * This works without Firestore being populated. When the team eventually
+ * pushes Metadata Generation System outputs into Firestore, that data
+ * can be merged in as a secondary layer (timestamps, chapter summaries,
+ * etc.) — but the directory itself stays RAG-backed.
  */
 
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../services/firebase';
-import { searchInterviewsSemantically, checkInterviewVectorizationStatus } from '../services/interviewVectorSearch';
+import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import arrowRight from '../assetts/vectors/arrow right.svg';
+import Footer from '../components/common/Footer';
+import { TIER_BADGE } from '../components/rag/tiers';
 
-/**
- * InterviewIndex Page - Card-based interview directory with search
- * 
- * This page provides:
- * 1. A card grid layout of interviews with thumbnails
- * 2. Search functionality by interviewee name
- * 3. Navigation to individual interview players
- * 4. Efficient data loading using pre-aggregated data
- * 5. Sorting functionality
- * 
- * @component
- * @returns {React.ReactElement} Interview index page
- */
 export default function InterviewIndex() {
   useDocumentTitle('Interview Index');
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
+  const [capsules, setCapsules] = useState({});
   const [error, setError] = useState(null);
-  const [interviews, setInterviews] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredInterviews, setFilteredInterviews] = useState([]);
+  const [search, setSearch] = useState('');
+  const [tierFilter, setTierFilter] = useState('all');
   const [sortBy, setSortBy] = useState('A-Z');
-  const [totalMinutes, setTotalMinutes] = useState(0);
-  const [useSemanticSearch, setUseSemanticSearch] = useState(false);
-  const [semanticSearchLoading, setSemanticSearchLoading] = useState(false);
-  const [isVectorized, setIsVectorized] = useState(false);
-  const [semanticResults, setSemanticResults] = useState([]);
-  const navigate = useNavigate();
 
-  /**
-   * Update filtered and sorted interviews when search term, sort, or search mode changes
-   */
   useEffect(() => {
-    const keywordSearchInterviews = () => {
-      let filtered = interviews;
-      
-      // Apply search filter (exact name matching only)
-      if (searchTerm) {
-        filtered = interviews.filter(interview =>
-          interview.name.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-      }
-      
-      // Apply sorting
-      const sorted = [...filtered].sort((a, b) => {
-        switch (sortBy) {
-          case 'A-Z':
-            return a.name.localeCompare(b.name);
-          case 'Z-A':
-            return b.name.localeCompare(a.name);
-          case 'Duration (High-Low)':
-            return (b.totalMinutes || 0) - (a.totalMinutes || 0);
-          case 'Duration (Low-High)':
-            return (a.totalMinutes || 0) - (b.totalMinutes || 0);
-          default:
-            return a.name.localeCompare(b.name);
-        }
-      });
-      
-      setFilteredInterviews(sorted);
-      setSemanticResults([]);
-    };
-
-    const performSemanticSearch = async () => {
-      try {
-        setSemanticSearchLoading(true);
-        const results = await searchInterviewsSemantically(searchTerm, {
-          limit: 50,
-          minSimilarity: 0.3
-        });
-        
-        setSemanticResults(results);
-        
-        // Map semantic results back to full interview objects
-        const semanticInterviews = results
-          .map(result => {
-            const interview = interviews.find(i => i.id === result.interviewId);
-            return interview ? { ...interview, similarity: result.similarity } : null;
-          })
-          .filter(Boolean);
-        
-        setFilteredInterviews(semanticInterviews);
-        setSemanticSearchLoading(false);
-      } catch (error) {
-        console.error('Error in semantic interview search:', error);
-        setSemanticSearchLoading(false);
-        // Fallback to keyword search
-        keywordSearchInterviews();
-      }
-    };
-    
-    // For keyword search, execute immediately
-    if (!useSemanticSearch || !searchTerm.trim()) {
-      keywordSearchInterviews();
-      return;
-    }
-    
-    // For semantic search, debounce to avoid rapid API calls
-    const debounceTimer = setTimeout(() => {
-      performSemanticSearch();
-    }, 500); // Wait 500ms after user stops typing
-    
-    // Cleanup function to cancel pending search if user keeps typing
-    return () => {
-      clearTimeout(debounceTimer);
-    };
-  }, [searchTerm, interviews, sortBy, useSemanticSearch]);
-
-  /**
-   * Fetch interviews on component mount
-   */
-  useEffect(() => {
-    const loadData = async () => {
-      await fetchInterviews();
-      
-      // Check if interviews are vectorized for semantic search
-      const vectorStatus = await checkInterviewVectorizationStatus();
-      setIsVectorized(vectorStatus.isVectorized);
-      console.log(`Interview vectorization status: ${vectorStatus.count} interviews vectorized`);
-    };
-    
-    loadData();
+    let cancelled = false;
+    Promise.all([
+      fetch('/rag/summaries/neighbors.json').then((r) => (r.ok ? r.json() : {})),
+      fetch('/rag/summaries/capsules.json').then((r) => (r.ok ? r.json() : { capsules: {} })),
+    ])
+      .then(([neighbors, caps]) => {
+        if (cancelled) return;
+        setData(neighbors);
+        setCapsules(caps.capsules || caps || {});
+      })
+      .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
+    return () => { cancelled = true; };
   }, []);
 
-  /**
-   * Fetches pre-aggregated interview data from the 'interviewIndex' collection in Firestore.
-   */
-  const fetchInterviews = async () => {
-    try {
-      setLoading(true);
-      
-      const indexCollection = collection(db, 'interviewIndex');
-      const indexSnapshot = await getDocs(indexCollection);
-      
-      const interviewsData = indexSnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+  const interviews = useMemo(() => {
+    if (!data) return [];
+    return Object.values(data).map((e) => ({
+      entry_number: e.entry_number,
+      name: e.entry_subject,
+      tier: e.tier,
+      loc_item_url: e.loc_item_url,
+      capsule: (capsules[e.entry_number] || capsules[String(e.entry_number)])?.capsule || null,
+    }));
+  }, [data, capsules]);
 
-      // Calculate total minutes
-      const total = interviewsData.reduce((sum, interview) => {
-        return sum + (interview.totalMinutes || 0);
-      }, 0);
-      
-      setInterviews(interviewsData);
-      setFilteredInterviews(interviewsData);
-      setTotalMinutes(total);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching interviews:", error);
-      setError("Failed to load interview data");
-      setLoading(false);
+  const filtered = useMemo(() => {
+    let list = interviews;
+    if (tierFilter !== 'all') list = list.filter((i) => i.tier === tierFilter);
+    if (search.trim()) {
+      const s = search.toLowerCase();
+      list = list.filter((i) => i.name.toLowerCase().includes(s) || (i.capsule || '').toLowerCase().includes(s));
     }
-  };
+    const sorted = [...list].sort((a, b) => {
+      switch (sortBy) {
+        case 'Z-A': return b.name.localeCompare(a.name);
+        case 'Entry #': return (a.entry_number || 0) - (b.entry_number || 0);
+        default: return a.name.localeCompare(b.name);
+      }
+    });
+    return sorted;
+  }, [interviews, search, tierFilter, sortBy]);
 
-  /**
-   * Handle interview card click to navigate to interview player
-   */
-  const handleInterviewClick = (interviewId) => {
-    navigate(`/interview-player?documentName=${encodeURIComponent(interviewId)}`);
-  };
+  const tiers = useMemo(() => {
+    const counts = {};
+    for (const i of interviews) counts[i.tier || 'unknown'] = (counts[i.tier || 'unknown'] || 0) + 1;
+    return counts;
+  }, [interviews]);
 
-  /**
-   * Formats minutes as "X Minutes"
-   */
-  const formatDuration = (minutes) => {
-    if (!minutes || minutes === 0) return '';
-    return `${Math.floor(minutes)} Minutes`;
-  };
-
-  // Loading state
-  if (loading) {
-    return (
-      <div className="min-h-screen flex justify-center items-center" style={{ backgroundColor: '#EBEAE9' }}>
-        <div className="w-12 h-12 border-4 border-black/20 rounded-full animate-spin" style={{
-          borderTopColor: '#F2483C'
-        }}></div>
-      </div>
-    );
-  }
-
-  // Error state
   if (error) {
     return (
-      <div className="min-h-screen flex justify-center items-center" style={{ backgroundColor: '#EBEAE9' }}>
-        <div className="bg-white border border-black text-black px-6 py-4" style={{
-          fontFamily: 'Freight Text Pro, serif'
-        }}>
-          {error}
-        </div>
+      <div className="min-h-screen p-8" style={{ backgroundColor: '#EBEAE9' }}>
+        <p className="text-stone-700">Failed to load the index. {error}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen overflow-hidden" style={{ backgroundColor: '#EBEAE9' }}>
-      {/* Header Section */}
-      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[48px] pt-3 pb-6">
-        {/* Main heading */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-[32px]">
-          <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+      <main id="main-content" tabIndex={-1} className="max-w-7xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
+        <header className="mb-8">
+          <p className="text-civil-red-body text-sm font-light font-mono mb-2">
+            Civil Rights History Project · Interview directory
+          </p>
+          <h1
+            className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-4"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
             Interview Index
           </h1>
-        </div>
-
-        {/* Interview count and total minutes */}
-        <div className="mb-[31px]">
-          <span className="text-civil-red-body text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-            {filteredInterviews.length} Interviews, {totalMinutes} minutes
-          </span>
-        </div>
-
-        {/* Divider */}
-        <div className="w-full h-px bg-black mb-8 sm:mb-10 md:mb-12 lg:mb-[48px]"></div>
-
-        {/* Controls Row */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 sm:mb-10 md:mb-12 lg:mb-[48px]">
-          {/* Search Section. Replaced the previous custom-drawn magnifier
-              (two absolute-positioned divs at hardcoded pixel positions
-              inside a w-12 container, which rendered as a fragile
-              line-art glyph that did not scale and had no semantic
-              meaning to a screen reader) with an inline SVG that has
-              proper viewBox-based scaling, aria-hidden so it is not
-              double-announced alongside the input's placeholder, and a
-              size that matches the surrounding text. The gap was also
-              reduced from gap-6 (24px) to gap-3 (12px) so the icon and
-              input read as one visual unit. */}
-          <div className="flex items-center gap-3 sm:gap-6 flex-wrap">
-            <div className="flex items-center gap-3">
-              <svg
-                className="w-6 h-6 sm:w-7 sm:h-7 text-stone-900 flex-shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
-                <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="2" />
-                <path d="M15.5 15.5L20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              <label htmlFor="interview-search" className="sr-only">Search interviews</label>
-              <input
-                id="interview-search"
-                type="text"
-                placeholder={useSemanticSearch ? "Search by themes..." : "Search in index"}
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="text-stone-900 text-base sm:text-lg md:text-xl font-light bg-transparent border-none outline-none w-40 sm:w-48 md:w-60 min-h-11"
-                style={{ fontFamily: 'Chivo Mono, monospace' }}
-              />
-              {semanticSearchLoading && (
-                <div
-                  className="w-5 h-5 border-2 border-stone-900/20 rounded-full animate-spin flex-shrink-0"
-                  style={{ borderTopColor: '#F2483C' }}
-                  role="status"
-                  aria-label="Searching"
-                />
-              )}
-            </div>
-            
-            {/* Search Mode Toggle. The two buttons inside the toggle
-                were px-3 py-1 (24px+24px=48px wide x 12px+12px+text=~32px
-                tall), short of the WCAG 2.2 AA 44x44 tap-target rule.
-                Bumped padding and added min-h-11 so each button is at
-                least 44px tall. role="group" + aria-pressed on each
-                button gives screen readers the toggle semantics that
-                the bare onClick handlers did not previously announce. */}
-            {isVectorized && (
-              <div
-                className="flex items-center gap-2 p-1 bg-gray-200 rounded border border-stone-900"
-                role="group"
-                aria-label="Search mode"
-              >
-                <button
-                  onClick={() => setUseSemanticSearch(false)}
-                  aria-pressed={!useSemanticSearch}
-                  className={`px-3 py-2 min-h-11 text-sm rounded transition-colors ${
-                    !useSemanticSearch
-                      ? 'text-white'
-                      : 'text-stone-900 hover:text-stone-600'
-                  }`}
-                  style={{
-                    fontFamily: 'Chivo Mono, monospace',
-                    backgroundColor: !useSemanticSearch ? '#F2483C' : 'transparent'
-                  }}
-                >
-                  Name
-                </button>
-                <button
-                  onClick={() => setUseSemanticSearch(true)}
-                  aria-pressed={useSemanticSearch}
-                  className={`px-3 py-2 min-h-11 text-sm rounded transition-colors ${
-                    useSemanticSearch
-                      ? 'text-white'
-                      : 'text-stone-900 hover:text-stone-600'
-                  }`}
-                  style={{
-                    fontFamily: 'Chivo Mono, monospace',
-                    backgroundColor: useSemanticSearch ? '#F2483C' : 'transparent'
-                  }}
-                >
-                  Semantic
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* Right side controls */}
-          <div className="flex items-center gap-4 sm:gap-8">
-            {/* Sort by dropdown. The container is now self-sizing
-                (no fixed w-32 / w-40) and the dropdown arrow is anchored
-                to the right edge with right-0 rather than the previous
-                absolute left-[168px], which floated the arrow off the
-                container by 40px on mobile (where w-32 = 128px but the
-                arrow lived at left:168px). The select element itself
-                has min-h-11 to clear the WCAG 2.2 AA 44x44 tap target
-                rule that an h-6 hit area never met. */}
-            <div className="relative min-h-11 flex items-center">
-              <label htmlFor="sort-by" className="sr-only">Sort interviews</label>
-              <select
-                id="sort-by"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="text-stone-900 text-base sm:text-lg md:text-xl font-light bg-transparent border-none outline-none cursor-pointer appearance-none pr-6 min-h-11"
-                style={{ fontFamily: 'Chivo Mono, monospace' }}
-              >
-                <option value="A-Z">Sort by: A-Z</option>
-                <option value="Z-A">Sort by: Z-A</option>
-                <option value="Duration (High-Low)">Duration (High-Low)</option>
-                <option value="Duration (Low-High)">Duration (Low-High)</option>
-              </select>
-              <svg
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 pointer-events-none text-stone-900"
-                viewBox="0 0 12 12"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Interviews Grid */}
-      <div className="px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[49px] pb-8 sm:pb-12 md:pb-16 lg:pb-[48px]">
-        {filteredInterviews.length === 0 ? (
-          <div className="text-center py-16">
-            <span className="text-stone-900 text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-              No interviews found matching your search.
-            </span>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-4 md:gap-x-5 lg:gap-x-6 xl:gap-x-8 gap-y-4 sm:gap-y-5 md:gap-y-6 lg:gap-y-8 xl:gap-y-10">
-            {filteredInterviews.map((interview) => (
-              <div 
-                key={interview.id}
-                className="w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg mx-auto cursor-pointer group"
-                onClick={() => handleInterviewClick(interview.id)}
-              >
-                <div className="w-full flex flex-col items-center gap-3">
-                  {/* Image with zoom effect */}
-                  <div className="w-full aspect-[1.83/1] overflow-hidden">
-                    {interview.thumbnailUrl ? (
-                      <img 
-                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" 
-                        src={interview.thumbnailUrl}
-                        alt={interview.name}
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-zinc-300 flex items-center justify-center transition-transform duration-300 ease-in-out group-hover:scale-110">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 sm:h-16 sm:w-16 text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    )}
-                  </div>
-                  
-                  {/* Text content */}
-                  <div className="self-stretch min-h-20 relative">
-                    <div className="w-full relative">
-                      {/* Arrow that appears on hover - positioned absolutely */}
-                      <img 
-                        src={arrowRight}
-                        alt=""
-                        className="h-8 w-8 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex-shrink-0 absolute left-0 top-1"
-                        style={{ filter: 'invert(35%) sepia(89%) saturate(2893%) hue-rotate(345deg) brightness(97%) contrast(93%)' }}
-                      />
-                      {/* Name that slides right on hover (desktop only; the slide and hover affordances do not apply to touch devices) */}
-                      <div className="text-stone-900 text-2xl sm:text-3xl lg:text-4xl font-bold font-['Source_Serif_4'] transition-all duration-300 group-hover:text-[#F2483C] group-hover:underline lg:group-hover:translate-x-11">
-                        {interview.name}
-                      </div>
-                      {/* Role and duration stay in place */}
-                      <div className="justify-start text-stone-900 text-base font-light font-['Chivo_Mono'] transition-colors duration-300 group-hover:text-[#F2483C]">
-                        {interview.roleSimplified} | {formatDuration(interview.totalMinutes)}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <p
+            className="text-stone-700 text-base sm:text-lg max-w-3xl"
+            style={{ fontFamily: 'Source Serif 4, serif' }}
+          >
+            All 136 interviews in the corpus, with audit-tier badges and 3-sentence biographical capsules. Click an entry to open the embedding-space &quot;voices in conversation&quot; view, or follow the Library of Congress link to the canonical archive.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2 text-xs">
+            {Object.entries(TIER_BADGE).map(([key, badge]) => (
+              <span key={key} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}>
+                <span className="font-medium tabular-nums">{tiers[key] || 0}</span>
+                <span>{key}</span>
+              </span>
             ))}
           </div>
+        </header>
+
+        <div className="mb-6 flex flex-wrap items-center gap-3">
+          <input
+            type="search"
+            placeholder="Search by name or capsule content…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="flex-1 min-w-[200px] px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+          />
+          <select
+            value={tierFilter}
+            onChange={(e) => setTierFilter(e.target.value)}
+            className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+          >
+            <option value="all">All tiers</option>
+            {Object.keys(TIER_BADGE).map((k) => (
+              <option key={k} value={k}>{k}</option>
+            ))}
+          </select>
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+          >
+            <option value="A-Z">Name A–Z</option>
+            <option value="Z-A">Name Z–A</option>
+            <option value="Entry #">Entry #</option>
+          </select>
+        </div>
+
+        <p className="text-sm text-stone-600 mb-4">
+          {filtered.length} {filtered.length === 1 ? 'interview' : 'interviews'} shown
+        </p>
+
+        {!data && (
+          <p className="text-sm text-stone-500" role="status" aria-live="polite">Loading…</p>
         )}
-      </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {filtered.map((it) => (
+            <InterviewCard key={it.entry_number} interview={it} />
+          ))}
+        </div>
+
+        <div className="mt-12">
+          <Link
+            to="/rag-explore"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 text-white rounded-md hover:bg-stone-800 transition-colors"
+          >
+            Explore embedding-space features →
+          </Link>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
-} 
+}
+
+function InterviewCard({ interview }) {
+  const tierKey = interview.tier in TIER_BADGE ? interview.tier : null;
+  const badge = tierKey ? TIER_BADGE[tierKey] : null;
+  return (
+    <article className="border border-stone-200 rounded-lg bg-white p-5">
+      <header className="flex items-start justify-between gap-3 mb-2">
+        <div>
+          <h3 className="text-lg font-medium text-stone-900">
+            {interview.name}
+          </h3>
+          <p className="text-xs text-stone-500 mt-0.5">Entry #{interview.entry_number}</p>
+        </div>
+        {badge && (
+          <span className={`shrink-0 inline-flex items-center px-2 py-0.5 rounded-full text-xs border ${badge.bg} ${badge.border} ${badge.text}`}>
+            {badge.label}
+          </span>
+        )}
+      </header>
+      {interview.capsule && (
+        <p
+          className="text-sm text-stone-700 mb-3 italic"
+          style={{ fontFamily: 'Source Serif 4, serif' }}
+        >
+          {interview.capsule}
+        </p>
+      )}
+      <div className="flex flex-wrap gap-3 text-xs">
+        <Link
+          to={`/rag-explore#related`}
+          className="text-civil-red-body hover:underline"
+        >
+          Voices in conversation →
+        </Link>
+        {interview.loc_item_url && (
+          <a
+            href={interview.loc_item_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-civil-red-body hover:underline"
+          >
+            <ExternalLink className="w-3 h-3" aria-hidden="true" />
+            LoC catalog
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}

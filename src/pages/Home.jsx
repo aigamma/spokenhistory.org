@@ -814,8 +814,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* View Timeline Link - normal flow at all viewports, content-sized hero */}
-        <div className="mt-8 lg:mt-12 z-50">
+        {/* View Timeline Link + Explore the Embeddings — normal flow at all viewports */}
+        <div className="mt-8 lg:mt-12 z-50 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center">
           <button
             ref={timelineRef}
             onClick={() => {
@@ -828,6 +828,12 @@ export default function Home() {
           >
             View the Timeline
           </button>
+          <Link
+            to="/rag-explore"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-red-500 bg-red-500 text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-600 hover:border-red-600 transition-colors"
+          >
+            Explore the embeddings →
+          </Link>
         </div>
       </section>
 
@@ -2513,14 +2519,28 @@ export default function Home() {
           <h2 className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4'] mb-6 lg:mb-8">
             Discover the rest of the archive
           </h2>
-          <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] mb-6 lg:mb-8">131 Interviews, 13340 Minutes</p>
-          
-          <Link
-            to="/topic-glossary"
-            className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-red-500 text-red-500 text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors inline-block"
-          >
-            View Full Topic Glossary
-          </Link>
+          <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] mb-6 lg:mb-8">136 Interviews · 6-tier audit substrate · ~15K time-anchored passages</p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link
+              to="/rag-explore"
+              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full bg-red-500 text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-600 transition-colors inline-block"
+            >
+              Explore the embeddings
+            </Link>
+            <Link
+              to="/interview-index"
+              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-red-500 text-red-500 text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors inline-block"
+            >
+              Interview Index
+            </Link>
+            <Link
+              to="/topic-glossary"
+              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-red-500 text-red-500 text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors inline-block"
+            >
+              Topic Glossary
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -1,1079 +1,154 @@
 /**
- * @fileoverview TopicGlossary page for browsing curated civil rights topics in a card-based layout.
- * 
- * This page provides a glossary view of topics from the events_and_topics collection,
- * which contains AI-curated topics with rich descriptions and categorization.
- * It displays them in a clean card grid with topic titles, descriptions, and metadata.
- * It implements caching for performance and supports filtering, sorting, and category-based browsing.
+ * @fileoverview TopicGlossary — browse 30 thematic clusters derived from
+ * the embedding space.
+ *
+ * Originally fetched from Firestore (`events_and_topics` collection);
+ * rewired 2026-05-26 to read from /rag/summaries/clusters.json. Each
+ * topic = one k-means cluster of interview centroids, named + described
+ * by Claude Opus 4.7 at precompute time.
  */
 
-import { useState, useEffect, createContext, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { collection, getDocs, collectionGroup } from 'firebase/firestore';
-import { db } from '../services/firebase';
+import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import { 
-  searchTopicsSemantically, 
-  checkTopicVectorizationStatus 
-} from '../services/topicVectorSearch';
-import { useAuth } from '../contexts/AuthContext';
-import { useInlineFeedback } from '../hooks/useInlineFeedback';
-import FeedbackModal from '../components/FeedbackModal';
-import SelectionFeedbackButton from '../components/SelectionFeedbackButton';
-import ForceDirectedTopicGraph from '../components/visualization/ForceDirectedTopicGraph';
+import Footer from '../components/common/Footer';
 
-// Create a context for caching (similar to ContentDirectory)
-const TopicGlossaryCacheContext = createContext();
-
-/**
- * TopicGlossary Page - Card-based directory of curated civil rights topics
- * 
- * This page provides:
- * 1. A card grid layout of AI-curated topics from the events_and_topics collection
- * 2. Rich descriptions and categorization (concepts, places, people, events, organizations, legal)
- * 3. Advanced filtering by category and search functionality
- * 4. Sorting by importance, alphabetical order, or usage statistics
- * 5. Click-to-playlist functionality that loads all relevant clips for a topic
- * 6. Efficient data loading with caching for improved performance
- * 
- * @component
- * @returns {React.ReactElement} Topic glossary page
- */
 export default function TopicGlossary() {
   useDocumentTitle('Topic Glossary');
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [topicData, setTopicData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredTopics, setFilteredTopics] = useState([]);
-  const [sortBy, setSortBy] = useState('importance'); // 'alphabetical', 'clipCount', 'interviewCount', 'importance'
-  const [categoryFilter, setCategoryFilter] = useState('all'); // 'all', 'concept', 'place', 'person', 'event', 'org', 'legal'
-  const [cache, setCache] = useState({});
-  const [semanticSearchLoading, setSemanticSearchLoading] = useState(false);
-  const [isVectorized, setIsVectorized] = useState(false);
-  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'graph'
-  const [semanticResults, setSemanticResults] = useState([]); // Store semantic search results for graph
-  const [exactMatches, setExactMatches] = useState([]);
-  const [relatedMatches, setRelatedMatches] = useState([]);
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const [highlightedTopicId, setHighlightedTopicId] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { user } = useAuth();
-  
-  // Inline feedback functionality
-  const {
-    contentRef,
-    selectionContext,
-    showFeedbackModal,
-    handleReportIssue,
-    handleFeedbackSubmit,
-    handleCloseFeedbackModal,
-  } = useInlineFeedback({ user, sectionLabel: 'Topic Glossary' });
-  
-  // Track mouse position for click vs. drag detection
-  const mouseDownPos = useRef({ x: 0, y: 0 });
+  const [search, setSearch] = useState('');
+  const [expandedId, setExpandedId] = useState(null);
 
-  // Cache functions
-  const updateCache = (key, data) => {
-    setCache(prev => ({ ...prev, [key]: data }));
-  };
-
-  const addSearchToCache = (type, searchTerm, results) => {
-    const searchKey = `${type}_search_${searchTerm.toLowerCase()}`;
-    setCache(prev => ({ ...prev, [searchKey]: results }));
-  };
-
-  const getSearchFromCache = (type, searchTerm) => {
-    const searchKey = `${type}_search_${searchTerm.toLowerCase()}`;
-    return cache[searchKey];
-  };
-
-  /**
-   * Initialize data from cache or fetch new data
-   * Also check if topics have been vectorized
-   */
   useEffect(() => {
     let cancelled = false;
-    
-    const loadData = async () => {
-      if (cache.keywords) {
-        console.log('Using cached topic data');
-        if (!cancelled) {
-          setTopicData(cache.keywords);
-          setLoading(false);
-        }
-      } else {
-        console.log('No cached data, fetching topics...');
-        await fetchAndProcessTopics();
-      }
-      
-      // Check vectorization status
-      try {
-        const status = await checkTopicVectorizationStatus();
-        if (!cancelled) {
-          setIsVectorized(status.isVectorized);
-          console.log(`Vector search ${status.isVectorized ? 'available' : 'not available'} (${status.count} topics vectorized)`);
-        }
-      } catch (error) {
-        console.error('Error checking vectorization status:', error);
-      }
-    };
-    
-    loadData();
-    
-    return () => {
-      cancelled = true;
-    };
+    fetch('/rag/summaries/clusters.json')
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found'))))
+      .then((j) => { if (!cancelled) setData(j); })
+      .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
+    return () => { cancelled = true; };
   }, []);
 
-  /**
-   * Scroll to topic when navigated with hash (from Wikipedia-style links)
-   */
-  useEffect(() => {
-    if (!loading && location.hash && topicData.length > 0) {
-      // Decode and normalize the topic ID from the hash
-      let topicId = decodeURIComponent(location.hash.substring(1)); // Remove '#' and decode %20, etc.
-      
-      // Normalize: convert spaces to hyphens, lowercase, remove special chars
-      const normalizedTopicId = topicId
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^a-z0-9-]/g, '-')
-        .replace(/-+/g, '-')
-        .replace(/^-|-$/g, '');
-      
-      console.log(`📍 Attempting to scroll to topic:`);
-      console.log(`  Raw hash: "${location.hash}"`);
-      console.log(`  Decoded: "${topicId}"`);
-      console.log(`  Normalized: "${normalizedTopicId}"`);
-      
-      topicId = normalizedTopicId;
-      
-      // Clear any filters to ensure the topic is visible
-      setSearchTerm('');
-      setCategoryFilter('all');
-      setViewMode('grid'); // Ensure we're in grid view, not graph view
-      
-      // Try multiple times with increasing delays to ensure DOM is ready
-      const attemptScroll = (attempt = 1, maxAttempts = 5) => {
-        let element = document.getElementById(`topic-${topicId}`);
-        let foundTopicId = topicId;
-        
-        // If not found by exact ID, try to find by keyword match or normalized ID
-        if (!element && topicData.length > 0) {
-          // Try to find topic by matching keyword
-          const normalizedSearch = topicId.toLowerCase().replace(/-/g, ' ');
-          
-          const matchingTopic = topicData.find(t => {
-            const normalizedKeyword = t.keyword.toLowerCase();
-            const normalizedTopicId = t.id.toLowerCase()
-              .replace(/\s+/g, '-')
-              .replace(/[^a-z0-9-]/g, '-')
-              .replace(/-+/g, '-')
-              .replace(/^-|-$/g, '');
-            
-            // Match by normalized ID or keyword
-            return normalizedTopicId === topicId ||
-                   normalizedKeyword === normalizedSearch || 
-                   normalizedKeyword.includes(normalizedSearch) ||
-                   normalizedSearch.includes(normalizedKeyword);
-          });
-          
-          if (matchingTopic) {
-            console.log(`🔍 Found topic by match: "${matchingTopic.keyword}"`);
-            console.log(`   Topic data ID: "${matchingTopic.id}"`);
-            element = document.getElementById(`topic-${matchingTopic.id}`);
-            foundTopicId = matchingTopic.id;
-          }
-        }
-        
-        if (element) {
-          console.log(`✅ Found topic "${foundTopicId}" on attempt ${attempt}`);
-          
-          // Smooth scroll to the element
-          element.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'center'
-          });
-          
-          // Highlight the topic temporarily
-          setHighlightedTopicId(foundTopicId);
-          
-          // Remove highlight after 3 seconds
-          setTimeout(() => {
-            setHighlightedTopicId(null);
-          }, 3000);
-        } else if (attempt < maxAttempts) {
-          console.log(`⏳ Topic "${topicId}" not found yet, retrying (attempt ${attempt}/${maxAttempts})...`);
-          setTimeout(() => attemptScroll(attempt + 1, maxAttempts), 300 * attempt);
-        } else {
-          // Final attempt failed - log detailed debug info
-          console.error(`❌ Topic with ID "${topicId}" not found after ${maxAttempts} attempts`);
-          console.log('Topic data loaded:', topicData.length, 'topics');
-          console.log('Sample topic IDs:', topicData.slice(0, 10).map(t => t.id));
-          
-          // Check if topic exists in data but not in DOM
-          const topicInData = topicData.find(t => t.id === topicId);
-          if (topicInData) {
-            console.log(`✅ Topic exists in data: "${topicInData.keyword}"`);
-            console.log('But element not found in DOM - possible rendering issue');
-          } else {
-            console.log('❌ Topic not found in topic data by ID');
-            // Try to find by keyword
-            const normalizedSearch = topicId.toLowerCase().replace(/-/g, ' ');
-            const byKeyword = topicData.filter(t => 
-              t.keyword.toLowerCase().includes(normalizedSearch) ||
-              normalizedSearch.includes(t.keyword.toLowerCase())
-            );
-            if (byKeyword.length > 0) {
-              console.log('🔍 Topics with matching keywords:', byKeyword.map(t => ({
-                id: t.id, 
-                keyword: t.keyword
-              })));
-            }
-            // Try to find similar IDs
-            const similar = topicData.filter(t => 
-              t.id.includes(topicId) || topicId.includes(t.id)
-            );
-            if (similar.length > 0) {
-              console.log('🔍 Topics with similar IDs:', similar.map(t => ({id: t.id, keyword: t.keyword})));
-            }
-          }
-        }
-      };
-      
-      // Start first attempt after short delay
-      setTimeout(() => attemptScroll(), 300);
-    }
-  }, [location.hash, loading, topicData]);
-
-  /**
-   * Progress bar animation for semantic search loading
-   */
-  useEffect(() => {
-    if (semanticSearchLoading) {
-      setLoadingProgress(0);
-      const interval = setInterval(() => {
-        setLoadingProgress(prev => {
-          // Progress to 90% while loading, slow down as it approaches
-          if (prev < 90) {
-            return prev + (90 - prev) * 0.1;
-          }
-          return prev;
-        });
-      }, 100);
-      
-      return () => clearInterval(interval);
-    } else {
-      // Complete to 100% when done
-      setLoadingProgress(100);
-      setTimeout(() => setLoadingProgress(0), 300);
-    }
-  }, [semanticSearchLoading]);
-
-  /**
-   * Unified search: combines keyword and semantic search for best results
-   * Keyword matches appear instantly, semantic enhances with related topics
-   */
-  useEffect(() => {
-    let cancelled = false;
-    
-    const performUnifiedSearch = async () => {
-      // No search term - just show all with filters
-      if (!searchTerm) {
-      let filtered = topicData;
-      
-        // Apply category filter
-        if (categoryFilter !== 'all') {
-          filtered = filtered.filter(item => item.category === categoryFilter);
-        }
-        
-        // Apply sorting
-        filtered = [...filtered].sort((a, b) => {
-          switch (sortBy) {
-            case 'alphabetical':
-              return a.keyword.localeCompare(b.keyword);
-            case 'clipCount':
-              return b.count - a.count;
-            case 'interviewCount':
-              return b.interviewCount - a.interviewCount;
-            case 'importance':
-              if (b.importanceScore !== a.importanceScore) {
-                return b.importanceScore - a.importanceScore;
-              }
-              return a.keyword.localeCompare(b.keyword);
-            default:
-              return a.keyword.localeCompare(b.keyword);
-          }
-        });
-        
-        if (!cancelled) {
-          setFilteredTopics(filtered);
-          setExactMatches([]);
-          setRelatedMatches([]);
-        }
-        return;
-      }
-      
-      // PHASE 1: Instant keyword search
-      const keywordResults = keywordSearchTopics(searchTerm, topicData, categoryFilter);
-      const keywordIds = new Set(keywordResults.map(r => r.id));
-      
-      // Mark keyword results and set them immediately
-      const enrichedKeywordResults = keywordResults.map(topic => ({
-        ...topic,
-        hasKeywordMatch: true,
-        hasSemanticMatch: false,
-        score: calculateKeywordScore(searchTerm, topic.keyword)
-      }));
-
-      if (!cancelled) {
-        setExactMatches(enrichedKeywordResults);
-        setFilteredTopics(enrichedKeywordResults);
-      }
-      
-      // PHASE 2: Enhance with semantic search (if available)
-      if (isVectorized && !cancelled) {
-        setSemanticSearchLoading(true);
-        
-        try {
-          const semanticResults = await searchTopicsSemantically(searchTerm, {
-            limit: 40,
-            category: categoryFilter === 'all' ? null : categoryFilter,
-            minSimilarity: 0.4
-          });
-          
-          if (!cancelled) {
-            // Enrich for graph visualization
-            const enrichedSemanticResults = semanticResults.map(result => {
-              const fullTopic = topicData.find(t => t.id === result.topicId);
-              return {
-                ...result,
-                description: fullTopic?.description || fullTopic?.shortDescription || '',
-                totalLengthSeconds: fullTopic?.totalLengthSeconds || 0
-              };
-            });
-            setSemanticResults(enrichedSemanticResults);
-            
-            // Merge keyword and semantic results
-            const mergedResults = mergeSearchResults(
-              enrichedKeywordResults,
-              semanticResults,
-              topicData
-            );
-            
-            // Separate into exact and related for UI
-            const exact = mergedResults.filter(t => t.hasKeywordMatch);
-            const related = mergedResults.filter(t => !t.hasKeywordMatch && t.hasSemanticMatch);
-            
-            setExactMatches(exact);
-            setRelatedMatches(related);
-            setFilteredTopics(mergedResults);
-            
-            console.log(`✅ Unified search: ${exact.length} exact, ${related.length} related`);
-          }
-        } catch (error) {
-          console.error('Semantic enhancement failed:', error);
-          // Keep keyword results on error
-        } finally {
-          if (!cancelled) {
-            setSemanticSearchLoading(false);
-          }
-        }
-      }
-    };
-    
-    performUnifiedSearch();
-    
-    return () => {
-      cancelled = true;
-    };
-  }, [searchTerm, topicData, sortBy, categoryFilter, isVectorized]);
-  
-  /**
-   * Calculates a score for keyword matches (0.9-1.0)
-   * Exact matches score highest, then starts-with, then contains
-   */
-  const calculateKeywordScore = (searchTerm, topicKeyword) => {
-    const searchLower = searchTerm.toLowerCase().trim();
-    const topicLower = topicKeyword.toLowerCase().trim();
-    
-    if (topicLower === searchLower) {
-      return 1.0; // Perfect match
-    } else if (topicLower.startsWith(searchLower)) {
-      return 0.97; // Starts with search term
-    } else {
-      return 0.93; // Contains search term
-    }
-  };
-
-  /**
-   * Merges keyword and semantic search results with intelligent scoring
-   * Topics with both matches get boosted, semantic-only appear below
-   */
-  const mergeSearchResults = (keywordResults, semanticResults, allTopics) => {
-    const resultsMap = new Map();
-    
-    // Add keyword matches with base scores
-    keywordResults.forEach(topic => {
-      resultsMap.set(topic.id, {
-        ...topic,
-        hasKeywordMatch: true,
-        hasSemanticMatch: false,
-        score: topic.score || 1.0
-      });
-    });
-    
-    // Enhance with semantic results
-    semanticResults.forEach(semanticResult => {
-      const existing = resultsMap.get(semanticResult.topicId);
-      
-      if (existing) {
-        // Has both keyword AND semantic match - boost it!
-        existing.hasSemanticMatch = true;
-        existing.similarity = semanticResult.similarity;
-        existing.score = existing.score + (semanticResult.similarity * 0.3); // Boost by up to 0.3
-      } else {
-        // Semantic-only match - add it
-        const fullTopic = allTopics.find(t => t.id === semanticResult.topicId);
-        if (fullTopic) {
-          resultsMap.set(semanticResult.topicId, {
-            ...fullTopic,
-            hasKeywordMatch: false,
-            hasSemanticMatch: true,
-            similarity: semanticResult.similarity,
-            score: semanticResult.similarity
-          });
-        }
-      }
-    });
-    
-    // Convert to array and sort by score (highest first)
-    return Array.from(resultsMap.values())
-      .sort((a, b) => b.score - a.score);
-  };
-  
-  /**
-   * Keyword search fallback function - searches only by topic name
-   */
-  const keywordSearchTopics = (searchTerm, topics, categoryFilter) => {
-    const cacheKey = `${searchTerm}_${categoryFilter}`;
-    const cachedResults = getSearchFromCache('keywords', cacheKey);
-    
-    if (cachedResults) {
-      console.log('Using cached keyword search results');
-      return cachedResults;
-    }
-    
-    // Only search by keyword/topic name, not description
-    let filtered = topics.filter(item => 
-      item.keyword.toLowerCase().includes(searchTerm.toLowerCase())
+  const filtered = useMemo(() => {
+    if (!data?.clusters) return [];
+    if (!search.trim()) return data.clusters;
+    const s = search.toLowerCase();
+    return data.clusters.filter((c) =>
+      (c.name || '').toLowerCase().includes(s) ||
+      (c.description || '').toLowerCase().includes(s) ||
+      (c.member_entry_subjects || []).some((m) => m.toLowerCase().includes(s))
     );
-    
-    if (categoryFilter !== 'all') {
-      filtered = filtered.filter(item => item.category === categoryFilter);
-    }
-    
-    addSearchToCache('keywords', cacheKey, filtered);
-    return filtered;
-  };
+  }, [data, search]);
 
-  /**
-   * Groups topics by their first letter
-   */
-  const groupTopicsByLetter = (topics) => {
-    const grouped = {};
-    topics.forEach(topic => {
-      const firstLetter = topic.keyword.charAt(0).toUpperCase();
-      if (!grouped[firstLetter]) {
-        grouped[firstLetter] = [];
-      }
-      grouped[firstLetter].push(topic);
-    });
-    return grouped;
-  };
-
-  /**
-   * Fetches topics from the 'events_and_topics' collection and calculates actual
-   * interview counts by searching through interview data.
-   */
-  const fetchAndProcessTopics = async () => {
-    try {
-      setLoading(true);
-      
-      // Get curated topics
-      const eventsAndTopicsCollection = collection(db, 'events_and_topics');
-      const eventsSnapshot = await getDocs(eventsAndTopicsCollection);
-      
-      // Get interview data to calculate actual usage stats
-      console.log('Calculating actual interview counts for topics...');
-      let usageStats = cache.topicUsageStats;
-      
-      if (!usageStats) {
-        console.log('No cached usage stats found, calculating...');
-        try {
-          usageStats = await calculateTopicUsageStats();
-          updateCache('topicUsageStats', usageStats);
-        } catch (error) {
-          console.error('Error calculating usage stats:', error);
-          // Continue with empty stats if calculation fails
-          usageStats = {};
-        }
-      } else {
-        console.log('Using cached topic usage stats');
-      }
-      
-      const processedData = eventsSnapshot.docs.map(doc => {
-        const data = doc.data();
-        const topicName = data.eventTopic || doc.id;
-        
-        // Look up actual usage stats for this topic
-        const stats = usageStats[topicName.toLowerCase()] || usageStats[doc.id.toLowerCase()] || {
-          clipCount: 0,
-          interviewCount: 0,
-          totalLengthSeconds: 0
-        };
-        
-        return {
-          id: doc.id,
-          keyword: topicName,
-          description: data.updatedLongDescription || data.description || `Learn about ${topicName} in the context of the civil rights movement.`,
-          shortDescription: data.description || '',
-          category: data.aiCuration?.category || 'other',
-          importanceScore: data.aiCuration?.importanceScore || 5,
-          originalFrequency: data.aiCuration?.originalFrequency || 0,
-          
-          // Use actual calculated stats
-          clipCount: stats.clipCount,
-          interviewCount: stats.interviewCount,
-          totalLengthSeconds: stats.totalLengthSeconds,
-          count: stats.clipCount,
-          
-          
-          // Add original data for reference
-          originalData: data
-        };
-      });
-
-      // Sort by importance score and name
-      processedData.sort((a, b) => {
-        // First sort by importance score (higher first)
-        if (b.importanceScore !== a.importanceScore) {
-          return b.importanceScore - a.importanceScore;
-        }
-        // Then alphabetically
-        return a.keyword.localeCompare(b.keyword);
-      });
-
-      setTopicData(processedData);
-      updateCache('keywords', processedData); // Cache the processed data
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching topics:", error);
-      setError("Failed to load topic data");
-      setLoading(false);
-    }
-  };
-
-  /**
-   * Calculates actual usage statistics for topics by searching through interview data
-   */
-  const calculateTopicUsageStats = async () => {
-    const usageStats = {};
-    
-    try {
-      // Use collection group query to get all subSummaries efficiently
-      const subSummariesSnapshot = await getDocs(collectionGroup(db, 'subSummaries'));
-      
-      console.log(`Analyzing ${subSummariesSnapshot.size} clips for topic usage...`);
-      
-      subSummariesSnapshot.forEach((doc) => {
-        const subSummary = doc.data();
-        const interviewId = doc.ref.parent.parent.id;
-        
-        // Process keywords (handle both string and array formats)
-        let keywords = [];
-        if (typeof subSummary.keywords === 'string') {
-          keywords = subSummary.keywords.split(",").map(kw => kw.trim().toLowerCase());
-        } else if (Array.isArray(subSummary.keywords)) {
-          keywords = subSummary.keywords.map(kw => kw.toLowerCase());
-        }
-        
-        keywords.forEach(keyword => {
-          if (!keyword) return;
-          
-          if (!usageStats[keyword]) {
-            usageStats[keyword] = {
-              clipCount: 0,
-              interviewIds: new Set(),
-              totalLengthSeconds: 0,
-            };
-          }
-          
-          const stats = usageStats[keyword];
-          stats.clipCount++;
-          stats.interviewIds.add(interviewId);
-          
-          // Calculate duration from timestamp
-          if (subSummary.timestamp && subSummary.timestamp.includes(" - ")) {
-            const start = extractStartTimestamp(subSummary.timestamp);
-            const end = extractStartTimestamp(subSummary.timestamp.split(" - ")[1]);
-            const duration = Math.max(0, convertTimestampToSeconds(end) - convertTimestampToSeconds(start));
-            stats.totalLengthSeconds += duration;
-          }
-        });
-      });
-      
-      // Convert Set to size for interviewCount
-      const finalStats = {};
-      Object.keys(usageStats).forEach(keyword => {
-        finalStats[keyword] = {
-          clipCount: usageStats[keyword].clipCount,
-          interviewCount: usageStats[keyword].interviewIds.size,
-          totalLengthSeconds: Math.round(usageStats[keyword].totalLengthSeconds)
-        };
-      });
-      
-      console.log(`Calculated usage stats for ${Object.keys(finalStats).length} keywords`);
-      return finalStats;
-      
-    } catch (error) {
-      console.error("Error calculating topic usage stats:", error);
-      return {};
-    }
-  };
-
-  /**
-   * Extracts YouTube video ID from various URL formats
-   */
-  const extractVideoId = (videoEmbedLink) => {
-    if (!videoEmbedLink) return null;
-    
-    const regExp = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#&?]*).*/;
-    const match = videoEmbedLink.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
-  };
-
-  /**
-   * Extracts timestamp from formatted string, handling brackets
-   */
-  const extractStartTimestamp = (rawTimestamp) => {
-    const match = rawTimestamp.match(/(?:\[)?(\d{1,2}:\d{2}(?::\d{2})?)/);
-    return match ? match[1] : "00:00";
-  };
-
-  /**
-   * Converts a timestamp string to seconds
-   */
-  const convertTimestampToSeconds = (timestamp) => {
-    const parts = timestamp.split(":").map(Number);
-    if (parts.length === 2) return parts[0] * 60 + parts[1];
-    if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
-    return 0;
-  };
-
-  /**
-   * Handles topic card click to load playlist builder with all relevant clips
-   * Only navigates if it's an actual click, not a text selection drag
-   */
-  const handleTopicClick = (keyword, event) => {
-    // Don't navigate if user was selecting text (dragging mouse)
-    const dragThreshold = 5; // pixels
-    const deltaX = Math.abs(event.clientX - mouseDownPos.current.x);
-    const deltaY = Math.abs(event.clientY - mouseDownPos.current.y);
-    
-    if (deltaX > dragThreshold || deltaY > dragThreshold) {
-      // This was a drag (text selection), don't navigate
-      return;
-    }
-    
-    // Navigate to playlist builder with the selected topic/keyword
-    navigate(`/playlist-builder?keywords=${encodeURIComponent(keyword)}`);
-  };
-  
-  /**
-   * Track mouse down position
-   */
-  const handleMouseDown = (event) => {
-    mouseDownPos.current = { x: event.clientX, y: event.clientY };
-  };
-
-  /**
-   * Formats seconds as hours and minutes
-   */
-  const formatDuration = (seconds) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    
-    if (hours > 0) {
-      return `${hours}h ${minutes}m`;
-    } else {
-      return `${minutes}m`;
-    }
-  };
-
-  // Loading state
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-200 flex justify-center items-center">
-        <div className="w-12 h-12 border-4 border-black/20 rounded-full animate-spin" style={{
-          borderTopColor: '#F2483C'
-        }}></div>
-      </div>
-    );
-  }
-
-  // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-200 flex justify-center items-center">
-        <div className="bg-white border border-black text-black px-6 py-4" style={{
-          fontFamily: 'Freight Text Pro, Crimson Text, serif'
-        }}>
-          {error}
-        </div>
+      <div className="min-h-screen p-8" style={{ backgroundColor: '#EBEAE9' }}>
+        <p className="text-stone-700">Topic glossary not yet available. {error}</p>
       </div>
     );
   }
 
-  const groupedTopics = groupTopicsByLetter(filteredTopics);
-  const sortedLetters = Object.keys(groupedTopics).sort();
-
   return (
-    <>
-      {/* Feedback UI */}
-      {!showFeedbackModal && (
-        <SelectionFeedbackButton
-          selection={selectionContext}
-          onReport={handleReportIssue}
-          disabled={false}
-        />
-      )}
-      {showFeedbackModal && selectionContext && (
-        <FeedbackModal
-          selectedText={selectionContext.text}
-          sectionLabel={selectionContext.sectionLabel}
-          onSubmit={handleFeedbackSubmit}
-          onClose={handleCloseFeedbackModal}
-        />
-      )}
-      
-      <div ref={contentRef} className="min-h-screen">
-        {/* Header Section */}
-        <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 pb-6">
-        {/* Main heading. text-8xl on mobile pushed "Topic Glossary"
-            across two lines and overlapped the topic count beneath it.
-            Now scales 4xl/5xl/6xl/7xl/8xl. */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-[32px]">
-          <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+      <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
+        <header className="mb-8">
+          <p className="text-civil-red-body text-sm font-light font-mono mb-2">
+            Civil Rights History Project · Thematic browse
+          </p>
+          <h1
+            className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-4"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
             Topic Glossary
           </h1>
+          <p
+            className="text-stone-700 text-base sm:text-lg max-w-3xl"
+            style={{ fontFamily: 'Source Serif 4, serif' }}
+          >
+            Thirty thematic groupings derived from the embedding space — k-means partition of all 136 interview centroids. Each topic gathers voices whose testimony rhymes in the 1024-dimensional space, even when they never met. Click a topic to see its members.
+          </p>
+        </header>
+
+        <div className="mb-6">
+          <input
+            type="search"
+            placeholder="Search by topic, description, or interviewee…"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+          />
         </div>
 
-        {/* Topic count */}
-        <div className="mb-[31px]">
-          <span className="text-civil-red-body text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-            {filteredTopics.length} Topics {categoryFilter !== 'all' ? `(${categoryFilter})` : ''}
-          </span>
-        </div>
+        <p className="text-sm text-stone-600 mb-4">
+          {filtered.length} of {data?.clusters?.length || 0} topics
+        </p>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-black mb-6"></div>
-      </div>
+        {!data && (
+          <p className="text-sm text-stone-500" role="status" aria-live="polite">Loading…</p>
+        )}
 
-      {/* Controls Section */}
-      <div className="w-full px-4 sm:px-8 lg:px-12 mb-8">
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap gap-4">
-          {/* Search Section. Replaced the custom-drawn magnifier (two
-              absolute-positioned divs with rotate + hardcoded pixel
-              positions inside a w-12 container, same fragile pattern
-              that was on InterviewIndex) with an inline SVG. The
-              container's gap was reduced from 6 to 3 so the icon reads
-              as part of the search affordance, and the input is now
-              min-h-11 so the hit area meets WCAG 2.2 AA 44x44 on tap. */}
-          <div className="flex items-center gap-3 flex-1 sm:flex-initial min-w-0">
-            <svg
-              className="w-6 h-6 sm:w-7 sm:h-7 text-stone-900 flex-shrink-0"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="2" />
-              <path d="M15.5 15.5L20 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <div className="min-w-0 flex-1 sm:min-w-64 sm:flex-initial flex items-center gap-4">
-              <label htmlFor="topic-search" className="sr-only">Search topics</label>
-              <input
-                id="topic-search"
-                type="text"
-                placeholder="Search"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="text-stone-900 text-lg sm:text-xl font-light bg-transparent border-none outline-none w-full min-h-11"
-                style={{ fontFamily: 'Chivo Mono, monospace' }}
-                autoCapitalize="none"
-                autoCorrect="off"
-              />
-            </div>
-          </div>
-
-          {/* Filter Section with View Mode Toggle.
-              On mobile this row wraps below the search; on desktop it
-              sits on the right of the row. */}
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
-            {/* View Mode Toggle (only show during search with results) */}
-            {searchTerm && filteredTopics.length > 0 && relatedMatches.length > 0 && (
-              <div
-                className="flex items-center gap-0 bg-gray-200 rounded-full border border-stone-900 overflow-hidden"
-                role="group"
-                aria-label="View mode"
-              >
+        <div className="space-y-2">
+          {filtered.map((c) => {
+            const isExpanded = expandedId === c.cluster_id;
+            return (
+              <article key={c.cluster_id} className="border border-stone-200 rounded-md bg-white overflow-hidden">
                 <button
-                  onClick={() => setViewMode('grid')}
-                  className={`px-4 py-2 min-h-11 text-sm transition-colors ${
-                    viewMode === 'grid'
-                      ? 'text-white'
-                      : 'text-stone-900 hover:text-stone-600'
-                  }`}
-                  style={{
-                    fontFamily: 'Chivo Mono, monospace',
-                    backgroundColor: viewMode === 'grid' ? '#F2483C' : 'transparent'
-                  }}
-                  aria-pressed={viewMode === 'grid'}
+                  type="button"
+                  onClick={() => setExpandedId(isExpanded ? null : c.cluster_id)}
+                  aria-expanded={isExpanded}
+                  className="w-full text-left p-4 hover:bg-stone-50 transition-colors"
                 >
-                  Grid
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1">
+                      <h3 className="text-lg font-medium text-stone-900">{c.name}</h3>
+                      {c.description && (
+                        <p className="text-sm text-stone-600 mt-1" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                          {c.description}
+                        </p>
+                      )}
+                    </div>
+                    <div className="text-xs text-stone-500 tabular-nums whitespace-nowrap">
+                      {c.size} {c.size === 1 ? 'voice' : 'voices'}
+                    </div>
+                  </div>
                 </button>
-                <button
-                  onClick={() => setViewMode('graph')}
-                  className={`px-4 py-2 min-h-11 text-sm transition-colors ${
-                    viewMode === 'graph'
-                      ? 'text-white'
-                      : 'text-stone-900 hover:text-stone-600'
-                  }`}
-                  style={{
-                    fontFamily: 'Chivo Mono, monospace',
-                    backgroundColor: viewMode === 'graph' ? '#F2483C' : 'transparent'
-                  }}
-                  aria-pressed={viewMode === 'graph'}
-                >
-                  Network
-                </button>
-              </div>
-            )}
 
-            <div className="flex items-center gap-4">
-              <label htmlFor="category-filter" className="sr-only">Filter by category</label>
-              <select
-                id="category-filter"
-                value={categoryFilter}
-                onChange={(e) => setCategoryFilter(e.target.value)}
-                className="text-stone-900 text-lg sm:text-xl font-light bg-transparent border-none outline-none min-h-11 pr-2 cursor-pointer"
-                style={{ fontFamily: 'Chivo Mono, monospace' }}
-              >
-                <option value="all">All Categories</option>
-                <option value="concept">Concepts</option>
-                <option value="place">Places</option>
-                <option value="person">People</option>
-                <option value="event">Events</option>
-                <option value="org">Organizations</option>
-                <option value="legal">Legal</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Loading indicator for related topics */}
-      {semanticSearchLoading && searchTerm && (
-        <div className="w-full px-4 sm:px-8 lg:px-12 mb-6">
-          <div className="flex flex-col gap-2">
-            <span className="text-stone-900 text-sm font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-              Loading related topics...
-            </span>
-            <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-red-500 rounded-full transition-all duration-100 ease-linear" 
-                style={{ width: `${loadingProgress}%` }}
-              ></div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Topics by Letter OR Force-Directed Graph OR Unified Search Results */}
-      <div className="w-full px-4 sm:px-8 lg:px-12 pb-12">
-        {filteredTopics.length === 0 ? (
-          <div className="text-center py-16">
-            <span className="text-stone-900 text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-              No topics found matching your search.
-            </span>
-          </div>
-        ) : viewMode === 'graph' && searchTerm && relatedMatches.length > 0 ? (
-          /* Force-Directed Network Graph View.
-              Height was hardcoded 800px which on a 360x740 phone in
-              portrait pushed the graph below the fold AND past the
-              page footer. Now clamps with min(80vh, 800px) so the
-              graph never consumes more than 80% of viewport height
-              and the surrounding header + filters stay visible. */
-          <div className="w-full" style={{ height: 'min(80vh, 800px)' }}>
-            <ForceDirectedTopicGraph
-              topics={semanticResults}
-              searchQuery={searchTerm}
-              onTopicClick={handleTopicClick}
-              width={1400}
-              height={800}
-              similarityThreshold={0.7}
-            />
-          </div>
-        ) : searchTerm && (exactMatches.length > 0 || relatedMatches.length > 0) ? (
-          /* Unified Search Results View - showing exact and related topics */
-          <div className="space-y-12">
-            {/* Exact Matches Section */}
-            {exactMatches.length > 0 && (
-              <div className="space-y-6">
-                {exactMatches.length > 0 && relatedMatches.length > 0 && (
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-stone-900 text-sm font-medium" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                      {exactMatches.length} Matching Topic{exactMatches.length !== 1 ? 's' : ''}
-                    </span>
+                {isExpanded && (
+                  <div className="border-t border-stone-100 p-4 bg-stone-50">
+                    {c.starter_query && (
+                      <p className="text-sm mb-3">
+                        <span className="text-stone-600">Try this query: </span>
+                        <Link
+                          to={`/rag-explore#search`}
+                          className="font-mono text-civil-red-body hover:underline"
+                        >
+                          &ldquo;{c.starter_query}&rdquo;
+                        </Link>
+                      </p>
+                    )}
+                    <p className="text-xs text-stone-500 mb-2 uppercase tracking-wide">Members</p>
+                    <ul className="text-sm text-stone-700 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-0.5 list-disc list-inside">
+                      {(c.member_entry_subjects || []).map((name, idx) => (
+                        <li key={idx}>{name}</li>
+                      ))}
+                    </ul>
                   </div>
                 )}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-                  {exactMatches.map((topic) => (
-                    <div 
-                      key={topic.id}
-                      id={`topic-${topic.id}`}
-                      className={`w-64 cursor-pointer transition-all duration-300 group ${
-                        highlightedTopicId === topic.id ? 'ring-4 ring-red-500 rounded-lg p-2 -m-2' : ''
-                      }`}
-                      onMouseDown={handleMouseDown}
-                      onClick={(e) => handleTopicClick(topic.keyword, e)}
-                      title={`Click to build a playlist with all ${topic.clipCount} clips about "${topic.keyword}"`}
-                      data-feedback-section={`Topic: ${topic.keyword}`}
-                    >
-                      <div className="w-60 flex flex-col justify-start items-start gap-4">
-                        <div className="self-stretch flex flex-col justify-start items-start gap-4">
-                          <div className="flex flex-col justify-start items-start gap-0.5">
-                            <div className="text-stone-900 text-4xl font-bold font-['Source_Serif_4'] capitalize transition-colors duration-300 group-hover:text-[#F2483C] group-hover:underline">
-                              {topic.keyword}
-                            </div>
-                            <div className="text-stone-900 text-base font-light transition-colors duration-300 group-hover:text-[#F2483C]" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                              {topic.interviewCount} Interview{topic.interviewCount !== 1 ? 's' : ''}, {formatDuration(topic.totalLengthSeconds)}
-                            </div>
-                          </div>
-                          <div className="self-stretch text-stone-900 text-base font-normal font-['Source_Serif_4'] transition-colors duration-300 group-hover:text-[#F2483C]">
-                            {topic.shortDescription || topic.description?.substring(0, 200) + (topic.description?.length > 200 ? '...' : '') || `${topic.keyword} is an important topic in the context of the civil rights movement.`}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+              </article>
+            );
+          })}
+        </div>
 
-            {/* Divider between exact and related */}
-            {exactMatches.length > 0 && relatedMatches.length > 0 && (
-              <div className="flex items-center gap-4 my-8">
-                <div className="flex-1 h-px bg-gray-300"></div>
-                <span className="text-sm text-gray-500 px-4" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                  {relatedMatches.length} Related Topic{relatedMatches.length !== 1 ? 's' : ''}
-                </span>
-                <div className="flex-1 h-px bg-gray-300"></div>
-              </div>
-            )}
-
-            {/* Related Topics Section */}
-            {relatedMatches.length > 0 && (
-              <div className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-                  {relatedMatches.map((topic) => (
-                    <div 
-                      key={topic.id}
-                      id={`topic-${topic.id}`}
-                      className={`w-64 cursor-pointer transition-all duration-300 group ${
-                        highlightedTopicId === topic.id ? 'ring-4 ring-red-500 rounded-lg p-2 -m-2' : ''
-                      }`}
-                      onMouseDown={handleMouseDown}
-                      onClick={(e) => handleTopicClick(topic.keyword, e)}
-                      title={`Click to build a playlist with all ${topic.clipCount} clips about "${topic.keyword}"`}
-                      data-feedback-section={`Topic: ${topic.keyword}`}
-                    >
-                      <div className="w-60 flex flex-col justify-start items-start gap-4">
-                        <div className="self-stretch flex flex-col justify-start items-start gap-4">
-                          <div className="flex flex-col justify-start items-start gap-0.5">
-                            <div className="text-stone-900 text-4xl font-bold font-['Source_Serif_4'] capitalize transition-colors duration-300 group-hover:text-[#F2483C] group-hover:underline">
-                              {topic.keyword}
-                            </div>
-                            <div className="text-stone-900 text-base font-light transition-colors duration-300 group-hover:text-[#F2483C]" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                              {topic.interviewCount} Interview{topic.interviewCount !== 1 ? 's' : ''}, {formatDuration(topic.totalLengthSeconds)}
-                            </div>
-                          </div>
-                          <div className="self-stretch text-stone-900 text-base font-normal font-['Source_Serif_4'] transition-colors duration-300 group-hover:text-[#F2483C]">
-                            {topic.shortDescription || topic.description?.substring(0, 200) + (topic.description?.length > 200 ? '...' : '') || `${topic.keyword} is an important topic in the context of the civil rights movement.`}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        ) : (
-          /* Default Grid View - Alphabetical by Letter */
-          <div className="space-y-16">
-            {sortedLetters.map((letter) => (
-              <div key={letter} className="space-y-6">
-                {/* Letter Header */}
-                <div className="w-full inline-flex flex-col justify-start items-start gap-[5px]">
-                  <div className="text-red-500 text-4xl font-semibold" style={{ fontFamily: 'Acumin Pro, Inter, sans-serif' }}>
-                    {letter}
-                  </div>
-                  <div className="w-full h-0 border border-black"></div>
-                </div>
-
-                {/* Topics Grid for this letter - using padding to create left margin */}
-                <div className="md:ml-[16.666%] lg:ml-[16.666%] xl:ml-[16.666%] 2xl:ml-[16.666%]">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
-                    {groupedTopics[letter].map((topic, index) => (
-                      <div 
-                        key={topic.keyword}
-                        id={`topic-${topic.id}`}
-                        className={`w-64 cursor-pointer transition-all duration-300 group ${
-                          highlightedTopicId === topic.id ? 'ring-4 ring-red-500 rounded-lg p-2 -m-2' : ''
-                        }`}
-                        onMouseDown={handleMouseDown}
-                        onClick={(e) => handleTopicClick(topic.keyword, e)}
-                        title={`Click to build a playlist with all ${topic.clipCount} clips about "${topic.keyword}"`}
-                        data-feedback-section={`Topic: ${topic.keyword}`}
-                      >
-                        <div className="w-60 flex flex-col justify-start items-start gap-4">
-                          <div className="self-stretch flex flex-col justify-start items-start gap-4">
-                            <div className="flex flex-col justify-start items-start gap-0.5">
-                              <div className="text-stone-900 text-4xl font-bold font-['Source_Serif_4'] capitalize transition-colors duration-300 group-hover:text-[#F2483C] group-hover:underline">
-                                {topic.keyword}
-                              </div>
-                              <div className="text-stone-900 text-base font-light transition-colors duration-300 group-hover:text-[#F2483C]" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                                {topic.interviewCount} Interview{topic.interviewCount !== 1 ? 's' : ''}, {formatDuration(topic.totalLengthSeconds)}
-                              </div>
-                            </div>
-                            <div className="self-stretch text-stone-900 text-base font-normal font-['Source_Serif_4'] transition-colors duration-300 group-hover:text-[#F2483C]">
-                              {topic.shortDescription || topic.description?.substring(0, 200) + (topic.description?.length > 200 ? '...' : '') || `${topic.keyword} is an important topic in the context of the civil rights movement.`}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-      </div>
-    </>
+        <div className="mt-12">
+          <Link
+            to="/rag-explore#themes"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 text-white rounded-md hover:bg-stone-800 transition-colors"
+          >
+            Explore RAG demo surfaces →
+          </Link>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
-} 
+}
