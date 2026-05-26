@@ -216,7 +216,7 @@ the same.
 
 | Item | Frequency | Cost |
 |---|---|---|
-| One-time ingest (~70K chunks × ~500 tokens) | once | ~$2.10 in Voyage embedding |
+| One-time ingest (15.5K chunks × ~500 tokens) | once | ~$0.80 in Voyage embedding |
 | Steady-state query embedding (~3–15K queries/mo × ~20 tokens) | monthly | <$0.02 |
 | Voyage rerank-2 on top-K retrievals | monthly | ~$1–3 |
 | Pinecone Builder (covers civil-rights + worldthought) | monthly | $20 flat |

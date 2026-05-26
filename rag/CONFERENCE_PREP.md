@@ -117,7 +117,9 @@ well:
 
 3. **First ingest run** — `node --env-file=rag/.env.local rag/ingest.mjs`.
    Estimated 45–75 minutes wall-clock for the full 136-entry corpus
-   (~70K chunks at `UPSERT_BATCH=32`). The pipeline is idempotent on
+   (15,464 chunks at `UPSERT_BATCH=128` — `.srt`-only after the
+   2026-05-26 prune that dropped `.txt`/`.vtt` duplicates). The
+   pipeline is idempotent on
    content hash so re-runs after corrections only re-embed the changed
    chunks.
 
