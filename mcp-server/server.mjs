@@ -76,6 +76,7 @@
 import express from 'express'
 import { Server } from '@modelcontextprotocol/sdk/server/index.js'
 import { StreamableHTTPServerTransport } from '@modelcontextprotocol/sdk/server/streamableHttp.js'
+import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js'
 import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
@@ -815,7 +816,35 @@ app.post('/mcp', async (req, res) => {
   }
 })
 
-const PORT = parseInt(process.env.PORT, 10) || 3001
-app.listen(PORT, () => {
-  console.log(`Civil Rights History MCP server listening on :${PORT}`)
-})
+// ── Transport dispatch ──────────────────────────────────────────────
+//
+// Two run modes:
+//   1. HTTP (default) — `node server.mjs`. Listens on PORT and serves
+//      /mcp via StreamableHTTPServerTransport. This is the Fly.io
+//      deployment target and the local-dev target for the website's
+//      /retrieve Netlify Function proxy.
+//   2. stdio — `node server.mjs --stdio` (or MCP_TRANSPORT=stdio).
+//      Used by desktop MCP clients (Codex Desktop, Claude Desktop)
+//      that spawn the server as a subprocess and communicate over
+//      stdin/stdout per the MCP stdio transport. No HTTP listener;
+//      the Express app is set up above but never told to listen.
+//
+// CRITICAL for stdio mode: nothing must write to stdout besides the
+// transport itself — stray prints would corrupt the JSON-RPC stream.
+// All existing console.log calls in this file either run only in HTTP
+// mode (the "listening on" line below) or use console.error/.warn
+// (which go to stderr, safe). Future additions to this file must
+// preserve that discipline.
+
+const useStdio = process.argv.includes('--stdio') || process.env.MCP_TRANSPORT === 'stdio'
+
+if (useStdio) {
+  const transport = new StdioServerTransport()
+  await mcpServer.connect(transport)
+  console.error('[mcp] stdio transport ready')
+} else {
+  const PORT = parseInt(process.env.PORT, 10) || 3001
+  app.listen(PORT, () => {
+    console.log(`Civil Rights History MCP server listening on :${PORT}`)
+  })
+}
