@@ -230,9 +230,19 @@ export default function RagExplore() {
                 A 2D projection of all 136 interview centroids via PCA on their average chunk
                 embeddings. The layout is dependency-free and approximate — UMAP would give a
                 richer view — but it&apos;s already enough to show thematic clustering: hover a
-                dot to see whose voice lives there.
+                dot to see whose voice lives there. <strong>Click a dot</strong> to see which
+                other interviews share its thematic territory.
               </p>
-              <Constellation width={720} height={720} />
+              <Constellation
+                width={720}
+                height={720}
+                onSelect={(point) => {
+                  if (point?.entry_number != null) {
+                    setRelatedEntry(point.entry_number);
+                    setTab('related');
+                  }
+                }}
+              />
             </div>
           )}
 
@@ -246,17 +256,23 @@ export default function RagExplore() {
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 For each interview, we precompute which other interviewees in the corpus discuss
-                semantically-related material. Pick an interview from the list to see the
-                top-related voices — interviewees who never met but whose words cluster in the
-                embedding space.
+                semantically-related material. Pick an interview from the list — or click a dot
+                on the Embedding-space map — to see the top-related voices.
               </p>
               <label className="block text-sm text-stone-700 mb-2">
                 Interview:
                 <select
-                  value={relatedEntry}
+                  value={
+                    RELATED_DEMO_ENTRIES.some((e) => e.number === relatedEntry)
+                      ? relatedEntry
+                      : ''
+                  }
                   onChange={(e) => setRelatedEntry(Number(e.target.value))}
                   className="ml-2 px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
                 >
+                  {!RELATED_DEMO_ENTRIES.some((e) => e.number === relatedEntry) && relatedEntry != null && (
+                    <option value="">From constellation: entry #{relatedEntry}</option>
+                  )}
                   {RELATED_DEMO_ENTRIES.map((e) => (
                     <option key={e.number} value={e.number}>
                       {e.name}
