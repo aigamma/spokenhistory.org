@@ -109,6 +109,22 @@ export default function QuoteFinder({
         />
         <div className="flex items-center justify-between mt-2">
           <span className="text-xs text-stone-500">{quote.length} / 4000</span>
+          <div className="flex items-center gap-2">
+            {quote && !isLoading && (
+              <button
+                type="button"
+                onClick={() => {
+                  setQuote('');
+                  setResults([]);
+                  setError(null);
+                  setHasSearched(false);
+                }}
+                className="px-3 py-2 text-sm text-stone-600 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
+                aria-label="Clear quote"
+              >
+                Clear
+              </button>
+            )}
           <button
             type="submit"
             disabled={isLoading || !quote.trim()}
@@ -123,6 +139,7 @@ export default function QuoteFinder({
               'Find source'
             )}
           </button>
+          </div>
         </div>
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs text-stone-600">
           <span className="text-stone-500">Sample quotes:</span>
