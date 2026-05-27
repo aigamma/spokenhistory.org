@@ -48,11 +48,15 @@ export default function ConceptSpectrum() {
 
   return (
     <div className="rag-concept-spectrum">
-      <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-        Each axis below is defined by two opposing concepts. We embed each pole with Voyage, take the unit difference vector, and project all 136 interview centroids onto it. The result: a 1D position per interviewee on each conceptual continuum. Watch the embedding space <em>take a position</em> on where each voice sits.
-      </p>
+      <Axis axis={axis} hover={hover} setHover={setHover} />
 
-      <div className="mb-8 flex flex-wrap gap-2">
+      <SpectrumTooltip hover={hover} />
+
+      {/* Axis selector pills sit immediately under the chart so the
+          user reads chart → "and here are the axes I can switch to"
+          → explanation. Eric's directive: chart at the top, pills
+          right under, explanation below. */}
+      <div className="mt-6 mb-6 flex flex-wrap gap-2">
         {data.axes.map((ax, idx) => (
           <button
             key={ax.slug}
@@ -72,9 +76,9 @@ export default function ConceptSpectrum() {
         ))}
       </div>
 
-      <Axis axis={axis} hover={hover} setHover={setHover} />
-
-      <SpectrumTooltip hover={hover} />
+      <p className="text-sm text-stone-600 mb-6 max-w-2xl">
+        Each axis above is defined by two opposing concepts. We embed each pole with Voyage, take the unit difference vector, and project all 136 interview centroids onto it. The result: a 1D position per interviewee on each conceptual continuum. Watch the embedding space <em>take a position</em> on where each voice sits.
+      </p>
 
       <footer className="text-xs text-stone-500 border-t border-stone-200 pt-4 mt-8">
         <p>
