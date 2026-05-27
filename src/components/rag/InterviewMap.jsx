@@ -51,6 +51,32 @@ export default function InterviewMap() {
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState('');
   const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));
+  // Top-5 most-related interviewees for the currently selected dot,
+  // fetched from the precomputed /rag/related/entry-N.json. Drawn as
+  // soft curves from the focal dot to each neighbor so the audience
+  // SEES the semantic neighborhood instead of reading it as a list.
+  const [neighbors, setNeighbors] = useState(null);
+
+  useEffect(() => {
+    if (selected == null) {
+      setNeighbors(null);
+      return undefined;
+    }
+    let cancelled = false;
+    fetch(`/rag/related/entry-${selected}.json`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('related not found'))))
+      .then((j) => {
+        if (cancelled) return;
+        const summary = j?.related_entry_summary || {};
+        const top = Object.entries(summary)
+          .map(([num, info]) => ({ entry_number: Number(num), count: info.count || 0 }))
+          .sort((a, b) => b.count - a.count)
+          .slice(0, 5);
+        setNeighbors(top);
+      })
+      .catch(() => { if (!cancelled) setNeighbors([]); });
+    return () => { cancelled = true; };
+  }, [selected]);
 
   useEffect(() => {
     let cancelled = false;
@@ -305,59 +331,116 @@ export default function InterviewMap() {
             </g>
           )}
 
-          {/* Dots + names */}
-          {visibleInterviews.map((i) => {
-            const cx = px(i.x);
-            const cy = py(i.y);
-            const isMatch = !matched || matched.has(i.entry_number);
-            const isFocus = (selected === i.entry_number) || (hover?.entry_number === i.entry_number);
-            const tierColor = TIER_COLORS[i.uncertainty_tier] || '#78716c';
-            const baseAlpha = matched && !isMatch ? 0.12 : 0.85;
+          {/* Neighbor links — when a dot is selected, draw soft red
+              curves from the focal dot to its top-5 semantically-
+              related interviewees. Stroke opacity scales with the
+              passage-overlap count, so the strongest connection (e.g.
+              Aaron Dixon ↔ Elmer Dixon) reads as the thickest line.
+              Drawn BEFORE the dots so dots sit on top of the curves. */}
+          {selected != null && neighbors && neighbors.length > 0 && (() => {
+            const focus = interviews.find((i) => i.entry_number === selected);
+            if (!focus) return null;
+            const fx = px(focus.x);
+            const fy = py(focus.y);
+            const maxCount = neighbors[0].count || 1;
             return (
-              <g
-                key={i.entry_number}
-                onMouseEnter={() => setHover(i)}
-                onMouseLeave={() => setHover(null)}
-                onClick={() => setSelected(selected === i.entry_number ? null : i.entry_number)}
-                onFocus={() => setHover(i)}
-                onBlur={() => setHover(null)}
-                tabIndex={0}
-                style={{ cursor: 'pointer', outline: 'none' }}
-                role="button"
-                aria-label={`${i.entry_subject}, ${i.n_chunks} passages`}
-              >
-                <circle
-                  cx={cx}
-                  cy={cy}
-                  r={isFocus ? 8 : (matched && isMatch ? 5.5 : 4)}
-                  fill={isFocus ? '#F2483C' : tierColor}
-                  fillOpacity={isFocus ? 1 : baseAlpha}
-                  stroke={isFocus ? '#1c1917' : 'transparent'}
-                  strokeWidth={isFocus ? 1.5 : 0}
-                />
-                {/* Name label — render alongside the dot, with stroke
-                    halo so it stays readable over any background. */}
-                {(isMatch || isFocus) && (
-                  <text
-                    x={cx + 8}
-                    y={cy + 4}
-                    fontSize={isFocus ? 13 : 10}
-                    fontWeight={isFocus ? 600 : 400}
-                    fill={isFocus ? '#1c1917' : '#44403c'}
-                    opacity={matched && !isMatch ? 0.2 : 1}
-                    paintOrder="stroke"
-                    stroke="rgba(250,250,249,0.95)"
-                    strokeWidth={3}
-                    strokeLinejoin="round"
-                    style={{ pointerEvents: 'none' }}
-                    fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-                  >
-                    {i.entry_subject}
-                  </text>
-                )}
+              <g aria-hidden="true">
+                {neighbors.map((n) => {
+                  const tgt = interviews.find((i) => i.entry_number === n.entry_number);
+                  if (!tgt) return null;
+                  const tx = px(tgt.x);
+                  const ty = py(tgt.y);
+                  // Quadratic Bezier with control point perpendicular
+                  // to the midpoint — gives a soft arc that visually
+                  // separates overlapping straight lines when several
+                  // neighbors sit in the same direction.
+                  const mx = (fx + tx) / 2;
+                  const my = (fy + ty) / 2;
+                  const dx = tx - fx;
+                  const dy = ty - fy;
+                  const len = Math.max(Math.hypot(dx, dy), 1);
+                  const curveAmount = Math.min(len * 0.18, 36);
+                  const cx = mx + (-dy / len) * curveAmount;
+                  const cy = my + (dx / len) * curveAmount;
+                  const strength = n.count / maxCount;
+                  return (
+                    <path
+                      key={`link-${n.entry_number}`}
+                      d={`M ${fx.toFixed(1)} ${fy.toFixed(1)} Q ${cx.toFixed(1)} ${cy.toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}`}
+                      fill="none"
+                      stroke="#F2483C"
+                      strokeWidth={1.2 + strength * 1.8}
+                      strokeOpacity={0.28 + strength * 0.42}
+                      strokeLinecap="round"
+                    />
+                  );
+                })}
               </g>
             );
-          })}
+          })()}
+
+          {/* Dots + names */}
+          {(() => {
+            const neighborIds = new Set((neighbors || []).map((n) => n.entry_number));
+            return visibleInterviews.map((i) => {
+              const cx = px(i.x);
+              const cy = py(i.y);
+              const isMatch = !matched || matched.has(i.entry_number);
+              const isFocus = (selected === i.entry_number) || (hover?.entry_number === i.entry_number);
+              const isNeighbor = neighborIds.has(i.entry_number);
+              const tierColor = TIER_COLORS[i.uncertainty_tier] || '#78716c';
+              const baseAlpha = matched && !isMatch ? 0.12 : 0.85;
+              return (
+                <g
+                  key={i.entry_number}
+                  onMouseEnter={() => setHover(i)}
+                  onMouseLeave={() => setHover(null)}
+                  onClick={() => setSelected(selected === i.entry_number ? null : i.entry_number)}
+                  onFocus={() => setHover(i)}
+                  onBlur={() => setHover(null)}
+                  tabIndex={0}
+                  style={{ cursor: 'pointer', outline: 'none' }}
+                  role="button"
+                  aria-label={`${i.entry_subject}, ${i.n_chunks} passages${isNeighbor ? ', semantic neighbor of selected interview' : ''}`}
+                >
+                  {/* Faint red ring on neighbors so the audience sees WHERE
+                      each curve lands, even when the dot is small. */}
+                  {isNeighbor && !isFocus && (
+                    <circle cx={cx} cy={cy} r={9} fill="none" stroke="#F2483C" strokeWidth={1.5} strokeOpacity={0.6} />
+                  )}
+                  <circle
+                    cx={cx}
+                    cy={cy}
+                    r={isFocus ? 8 : (isNeighbor ? 5.5 : (matched && isMatch ? 5.5 : 4))}
+                    fill={isFocus ? '#F2483C' : tierColor}
+                    fillOpacity={isFocus ? 1 : (isNeighbor ? 1 : baseAlpha)}
+                    stroke={isFocus ? '#1c1917' : 'transparent'}
+                    strokeWidth={isFocus ? 1.5 : 0}
+                  />
+                  {/* Name label — render alongside the dot, with stroke
+                      halo so it stays readable over any background. */}
+                  {(isMatch || isFocus || isNeighbor) && (
+                    <text
+                      x={cx + 8}
+                      y={cy + 4}
+                      fontSize={isFocus ? 13 : (isNeighbor ? 11 : 10)}
+                      fontWeight={isFocus ? 600 : (isNeighbor ? 600 : 400)}
+                      fill={isFocus ? '#1c1917' : (isNeighbor ? '#B23E2F' : '#44403c')}
+                      opacity={matched && !isMatch && !isNeighbor ? 0.2 : 1}
+                      paintOrder="stroke"
+                      stroke="rgba(250,250,249,0.95)"
+                      strokeWidth={3}
+                      strokeLinejoin="round"
+                      style={{ pointerEvents: 'none' }}
+                      fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                    >
+                      {i.entry_subject}
+                    </text>
+                  )}
+                </g>
+              );
+            });
+          })()}
         </svg>
       </div>
 
