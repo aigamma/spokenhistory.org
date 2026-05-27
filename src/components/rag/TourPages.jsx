@@ -6,6 +6,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import TourMap from './TourMap';
 
 export default function TourPages() {
   const [data, setData] = useState(null);
@@ -66,6 +67,12 @@ export default function TourPages() {
               <p className="text-base text-stone-600 italic mb-3">{tour.subtitle}</p>
             )}
           </header>
+
+          {/* Visual map of the tour stops as a numbered arc through
+              the Atlas UMAP projection. Renders silently as null if
+              atlas_projection.json isn't loaded yet — the body + path
+              list below remain functional regardless. */}
+          <TourMap tour={tour} />
 
           {tour.body && (
             <div className="prose prose-stone max-w-3xl mb-6 text-stone-800" style={{ fontFamily: 'Source Serif 4, serif' }}>
