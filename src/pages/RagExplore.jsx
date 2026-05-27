@@ -6,7 +6,6 @@ import {
   QuoteFinder,
   Constellation,
   RelatedPassages,
-  PolyphonicEvents,
   ConceptSpectrum,
   FamousNames,
   ThemesBrowser,
@@ -79,7 +78,7 @@ function useCorpusStats() {
 // /rag-explore#map are shareable and deep-linkable.
 const TABS = [
   'search', 'quote', 'map', 'related',
-  'events', 'spectrum', 'names', 'themes',
+  'spectrum', 'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
   'nomic', 'lenses',
 ];
@@ -121,7 +120,6 @@ const VALID_TAB = (t) => {
 const TAB_ORDER = [
   { id: 'lenses', label: 'Concept lenses', featured: true },
   { id: 'nomic', label: 'Passage map', featured: true },
-  { id: 'events', label: 'Polyphonic events', featured: true },
   { id: 'map', label: 'Interview map' },
   { id: 'related', label: 'Voices in conversation' },
   { id: 'search', label: 'Semantic search' },
@@ -143,7 +141,6 @@ const TAB_LABELS = {
   nomic: 'Passage map',
   search: 'Semantic search',
   quote: 'Quote-finder',
-  events: 'Polyphonic events',
   spectrum: 'Spectrum', // retained for back-compat; resolves to lenses now
   map: 'Interview map',
   related: 'Voices in conversation',
@@ -376,14 +373,6 @@ export default function RagExplore() {
             </div>
           )}
 
-          {tab === 'events' && (
-            <div>
-              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Polyphonic event pages
-              </h2>
-              <PolyphonicEvents />
-            </div>
-          )}
 
           {tab === 'lenses' && (
             <div>

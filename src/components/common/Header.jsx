@@ -35,14 +35,6 @@ const NAV_ROUTES = [
     defaultTab: true,
   },
   {
-    label: 'Polyphonic events',
-    featured: true,
-    to: '/rag-explore?tab=events',
-    bg: 'bg-amber-700 hover:bg-amber-800',
-    matchPath: '/rag-explore',
-    matchTab: 'events',
-  },
-  {
     label: 'Voices in conversation',
     to: '/rag-explore?tab=related',
     bg: 'bg-sky-700 hover:bg-sky-800',
@@ -77,12 +69,6 @@ const MENU_ROUTES = [
     matchPath: '/rag-explore',
     matchTab: 'spectrum',
     defaultTab: true,
-  },
-  {
-    label: 'Events ★',
-    to: '/rag-explore?tab=events',
-    matchPath: '/rag-explore',
-    matchTab: 'events',
   },
   {
     label: 'Voices in conversation',

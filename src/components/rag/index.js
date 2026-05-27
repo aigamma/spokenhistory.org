@@ -15,7 +15,11 @@ export { default as SemanticSearch } from './SemanticSearch';
 export { default as QuoteFinder } from './QuoteFinder';
 export { default as RelatedPassages } from './RelatedPassages';
 export { default as Constellation } from './Constellation';
-export { default as PolyphonicEvents } from './PolyphonicEvents';
+// PolyphonicEvents + EventsTimeline removed from active surface
+// 2026-05-27. The timeline I built was a "poor-contrast ruler" per
+// Eric's review; the homepage Timeline (Home.jsx) is the canonical
+// movement timeline. Component files retained in the directory for
+// possible future flip-back but not exported from this barrel.
 export { default as ConceptSpectrum } from './ConceptSpectrum';
 export { default as FamousNames } from './FamousNames';
 export { default as ThemesBrowser } from './ThemesBrowser';
