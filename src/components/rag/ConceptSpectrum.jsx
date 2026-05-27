@@ -35,13 +35,13 @@ export default function ConceptSpectrum() {
   if (error) {
     return (
       <div className="text-sm text-stone-500 p-4">
-        Concept axes not yet generated. Run <code className="font-mono">node --env-file=rag/.env.local rag/precompute_concept_axes.mjs</code> from the repo root.
+        Concept Spectrum not yet generated. Run <code className="font-mono">node --env-file=rag/.env.local rag/precompute_concept_axes.mjs</code> from the repo root.
       </div>
     );
   }
 
   if (!data) {
-    return <div className="text-sm text-stone-500 p-4" role="status">Loading concept axes…</div>;
+    return <div className="text-sm text-stone-500 p-4" role="status">Loading concept spectrum…</div>;
   }
 
   const axis = data.axes[activeAxis];

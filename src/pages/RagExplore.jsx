@@ -108,7 +108,7 @@ const VALID_TAB = (t) => (TABS.includes(t) ? t : DEFAULT_TAB);
 const TAB_ORDER = [
   { id: 'lenses', label: 'Concept lenses', featured: true },
   { id: 'nomic', label: 'Passage map', featured: true },
-  { id: 'spectrum', label: 'Concept axes', featured: true },
+  { id: 'spectrum', label: 'Concept Spectrum', featured: true },
   { id: 'events', label: 'Polyphonic events', featured: true },
   { id: 'map', label: 'Constellation' },
   { id: 'related', label: 'Voices in conversation' },
@@ -132,7 +132,7 @@ const TAB_LABELS = {
   search: 'Semantic search',
   quote: 'Quote-finder',
   events: 'Polyphonic events',
-  spectrum: 'Concept axes',
+  spectrum: 'Concept Spectrum',
   map: 'Constellation',
   related: 'Voices in conversation',
   themes: 'Themes',
@@ -397,7 +397,7 @@ export default function RagExplore() {
           {tab === 'spectrum' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Concept-axis spectrum
+                Concept Spectrum
               </h2>
               <ConceptSpectrum />
             </div>

@@ -26,7 +26,7 @@ import {
 // spectrum there).
 const NAV_ROUTES = [
   {
-    label: 'Concept axes',
+    label: 'Concept Spectrum',
     featured: true,
     to: '/rag-explore?tab=spectrum',
     bg: 'bg-red-600 hover:bg-red-700',
@@ -72,7 +72,7 @@ const NAV_ROUTES = [
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   {
-    label: 'Concept axes ★',
+    label: 'Concept Spectrum ★',
     to: '/rag-explore?tab=spectrum',
     matchPath: '/rag-explore',
     matchTab: 'spectrum',
