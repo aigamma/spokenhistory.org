@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { LayoutGrid, List } from 'lucide-react';
+import { LayoutGrid, List, Loader2 } from 'lucide-react';
 import ThemesMap from './ThemesMap';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -220,7 +220,10 @@ function ThemeDrillDown({ cluster }) {
         &ldquo;{cluster.starter_query}&rdquo;
       </p>
       {loading && (
-        <p className="text-sm text-stone-500" role="status">Retrieving theme-aligned passages…</p>
+        <p className="text-sm text-stone-500 inline-flex items-center gap-2" role="status">
+          <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+          Retrieving theme-aligned passages…
+        </p>
       )}
       {error && (
         <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">

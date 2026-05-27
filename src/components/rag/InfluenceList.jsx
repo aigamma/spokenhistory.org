@@ -11,7 +11,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink, GitBranch, List } from 'lucide-react';
+import { ExternalLink, GitBranch, List, Loader2 } from 'lucide-react';
 import InfluenceGraph from './InfluenceGraph';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -234,7 +234,12 @@ function InfluenceDrillDown({ node }) {
           : <>Top passages where {node.name} is discussed — they have no interview of their own here; the archive&apos;s coverage of them is entirely secondhand.</>
         }
       </p>
-      {loading && <p className="text-sm text-stone-500" role="status">Searching the corpus…</p>}
+      {loading && (
+        <p className="text-sm text-stone-500 inline-flex items-center gap-2" role="status">
+          <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+          Searching the corpus…
+        </p>
+      )}
       {error && (
         <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
           {error}

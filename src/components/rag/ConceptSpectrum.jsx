@@ -18,7 +18,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Search as SearchIcon, X } from 'lucide-react';
+import { Search as SearchIcon, X, Loader2 } from 'lucide-react';
 import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -334,7 +334,8 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
       </header>
 
       {loading && (
-        <p className="text-sm text-stone-500" role="status">
+        <p className="text-sm text-stone-500 inline-flex items-center gap-2" role="status">
+          <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
           Searching {selected.entry_subject}&apos;s passages…
         </p>
       )}

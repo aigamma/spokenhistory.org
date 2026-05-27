@@ -35,7 +35,7 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
-import { Search as SearchIcon, X, ExternalLink } from 'lucide-react';
+import { Search as SearchIcon, X, ExternalLink, Loader2 } from 'lucide-react';
 import { TIER_COLORS, TIER_BADGE, TIER_VOCABULARY } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -453,7 +453,12 @@ function InterviewMapDrillDown({ entry }) {
         <strong className="text-civil-red-body">{query.toLowerCase()}</strong> —
         the region that anchors them on this map.
       </p>
-      {loading && <p className="text-sm text-stone-500" role="status">Searching their passages…</p>}
+      {loading && (
+        <p className="text-sm text-stone-500 inline-flex items-center gap-2" role="status">
+          <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+          Searching their passages…
+        </p>
+      )}
       {error && (
         <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
           {error}

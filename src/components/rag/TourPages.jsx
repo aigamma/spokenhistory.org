@@ -6,6 +6,7 @@
  */
 
 import { useEffect, useState } from 'react';
+import { Loader2 } from 'lucide-react';
 import TourMap from './TourMap';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -180,7 +181,12 @@ function TourStopDrillDown({ entryNumber, tourTitle }) {
       <p className="text-xs text-stone-600 italic mb-3">
         Query: &ldquo;{tourTitle}&rdquo;
       </p>
-      {loading && <p className="text-sm text-stone-500" role="status">Searching…</p>}
+      {loading && (
+        <p className="text-sm text-stone-500 inline-flex items-center gap-2" role="status">
+          <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />
+          Searching…
+        </p>
+      )}
       {error && (
         <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
           {error}
