@@ -57,6 +57,7 @@ export default function ConceptSpectrum() {
   const [conceptInput, setConceptInput] = useState('');
   const [conceptQuery, setConceptQuery] = useState(null); // last submitted
   const [conceptEmbedding, setConceptEmbedding] = useState(null);
+  const [conceptResults, setConceptResults] = useState(null);
   const [conceptLoading, setConceptLoading] = useState(false);
   const [conceptError, setConceptError] = useState(null);
 
@@ -67,16 +68,24 @@ export default function ConceptSpectrum() {
     setConceptLoading(true);
     setConceptError(null);
     setConceptQuery(q);
+    setConceptResults(null);
     try {
-      const { meta } = await retrieve(q, {
-        topN: 1, // we only need the embedding, not results
+      // Bump topN to 5 so the user sees BOTH the geometric projection
+      // (where the query lands on each axis) AND the actual retrieval
+      // (which passages best match). Dedupe by entry so each result is
+      // a distinct voice; one query, many ways to know it found
+      // something real.
+      const { results, meta } = await retrieve(q, {
+        topN: 5,
         includeQueryEmbedding: true,
+        dedupeByEntry: true,
       });
       if (Array.isArray(meta?.queryEmbedding) && meta.queryEmbedding.length === 1024) {
         setConceptEmbedding(meta.queryEmbedding);
       } else {
         setConceptError('Backend did not return a query embedding.');
       }
+      setConceptResults(Array.isArray(results) ? results : []);
     } catch (err) {
       setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
     } finally {
@@ -88,6 +97,7 @@ export default function ConceptSpectrum() {
     setConceptInput('');
     setConceptQuery(null);
     setConceptEmbedding(null);
+    setConceptResults(null);
     setConceptError(null);
   }, []);
 
@@ -434,6 +444,28 @@ export default function ConceptSpectrum() {
             Same 1,024-dim embedding, projected onto five different axes. Click any row to make it the active axis above.
           </p>
         </div>
+      )}
+
+      {/* Top retrieved passages for the same query — the projection
+          above is the geometric demo; this list is the actual RAG
+          payoff. The audience sees: query → projected position →
+          here are the voices that match it. Closes the demo loop. */}
+      {conceptResults && conceptResults.length > 0 && conceptQuery && (
+        <aside className="mt-4 p-4 rounded-md border border-emerald-200 bg-white">
+          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
+            Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
+          </p>
+          <p className="text-sm text-stone-600 mb-3">
+            The same query went through full semantic retrieval — Voyage embedding → Pinecone vector search → Voyage rerank → dedupe by interviewee. These are the voices the embedding space says match.
+          </p>
+          <ol className="space-y-3">
+            {conceptResults.map((payload) => (
+              <li key={payload.id}>
+                <CitationCard payload={payload} showFullText={false} />
+              </li>
+            ))}
+          </ol>
+        </aside>
       )}
 
       <SpectrumTooltip hover={hover} selectedEntry={selected?.entry_number ?? null} />

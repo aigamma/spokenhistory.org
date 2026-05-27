@@ -61,6 +61,7 @@ export default function ConceptMatrix() {
   const [conceptLoading, setConceptLoading] = useState(false);
   const [conceptError, setConceptError] = useState(null);
   const [queryProjections, setQueryProjections] = useState(null);
+  const [conceptResults, setConceptResults] = useState(null);
 
   const handleConceptSubmit = useCallback(async (e) => {
     e?.preventDefault?.();
@@ -69,8 +70,13 @@ export default function ConceptMatrix() {
     setConceptLoading(true);
     setConceptError(null);
     setConceptQuery(q);
+    setConceptResults(null);
     try {
-      const { meta } = await retrieve(q, { topN: 1, includeQueryEmbedding: true });
+      const { results, meta } = await retrieve(q, {
+        topN: 5,
+        includeQueryEmbedding: true,
+        dedupeByEntry: true,
+      });
       const qVec = meta?.queryEmbedding;
       if (!Array.isArray(qVec) || qVec.length !== 1024) {
         throw new Error('Backend did not return a 1024-dim query embedding.');
@@ -86,6 +92,7 @@ export default function ConceptMatrix() {
         proj[ax.slug] = { raw: dot, normalized };
       }
       setQueryProjections(proj);
+      setConceptResults(Array.isArray(results) ? results : []);
     } catch (err) {
       setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
       setQueryProjections(null);
@@ -98,6 +105,7 @@ export default function ConceptMatrix() {
     setConceptInput('');
     setConceptQuery(null);
     setQueryProjections(null);
+    setConceptResults(null);
     setConceptError(null);
   }, []);
 
@@ -245,6 +253,27 @@ export default function ConceptMatrix() {
           locked={selectedEntry != null}
           onClear={() => setSelectedEntry(null)}
         />
+      )}
+
+      {/* Top retrieved passages for the same query — closes the loop:
+          query → geometric projection on 4 lenses → here are the voices
+          that match. */}
+      {conceptResults && conceptResults.length > 0 && conceptQuery && (
+        <aside className="mt-5 p-4 rounded-md border border-emerald-200 bg-white">
+          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
+            Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
+          </p>
+          <p className="text-sm text-stone-600 mb-3">
+            The green ✕ above shows where the query lands geometrically; this list shows the actual voices it matches. One query, one embedding — both visualizations come from the same vector.
+          </p>
+          <ol className="space-y-3">
+            {conceptResults.map((payload) => (
+              <li key={payload.id}>
+                <CitationCard payload={payload} showFullText={false} />
+              </li>
+            ))}
+          </ol>
+        </aside>
       )}
 
       {/* Dot color legend — explains the audit-tier palette across
