@@ -516,26 +516,28 @@ export default function InterviewMap() {
           <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke="#e7e5e4" strokeDasharray="3 5" />
           <line x1={W / 2} y1={PAD} x2={W / 2} y2={H - PAD} stroke="#e7e5e4" strokeDasharray="3 5" />
 
-          {/* Empirical axis labels, what topic dominates each pole */}
+          {/* Empirical axis labels: which topic dominates each pole.
+              Pinned INSIDE the chart frame at the four cardinal
+              gutters so long labels never bleed past the SVG edges. */}
           {axisLabels && (
             <g aria-hidden="true">
               {axisLabels.negX && (
-                <text x={PAD - 8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="end" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="start" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   ← {axisLabels.negX}
                 </text>
               )}
               {axisLabels.posX && (
-                <text x={W - PAD + 8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill="#57534e" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={W - 8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="end" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   {axisLabels.posX} →
                 </text>
               )}
               {axisLabels.posY && (
-                <text x={W / 2} y={PAD - 14} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={W / 2} y={16} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   ↑ {axisLabels.posY}
                 </text>
               )}
               {axisLabels.negY && (
-                <text x={W / 2} y={H - PAD + 22} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={W / 2} y={H - 8} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   ↓ {axisLabels.negY}
                 </text>
               )}
