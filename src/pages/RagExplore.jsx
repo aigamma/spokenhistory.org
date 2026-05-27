@@ -219,11 +219,18 @@ export default function RagExplore() {
             since duplicating it as a tab label would be redundant. */}
         <section className="mb-8">
           <h2
-            className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
+            className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             Spectrum
           </h2>
+          <p className="text-sm text-stone-600 mb-4 max-w-3xl">
+            136 oral-history interviewees placed along one conceptual axis at a time. The
+            position of each dot is the dot product of that interview&apos;s mean embedding
+            with the axis vector — geometric, deterministic, no LLM per query. Pick a
+            different axis below the chart to swap the lens; type a phrase in the green
+            box to project YOUR words onto the same axis.
+          </p>
           <ConceptSpectrum />
         </section>
 
