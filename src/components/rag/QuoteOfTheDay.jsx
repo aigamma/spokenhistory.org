@@ -40,13 +40,18 @@ export default function QuoteOfTheDay({ allowCycle = true }) {
 
   return (
     <aside className="rag-quote-of-day border border-stone-200 rounded-lg bg-white p-5">
-      <header className="flex items-center justify-between mb-3">
-        <p className="text-xs text-civil-red-body font-mono">QUOTE OF THE DAY</p>
+      <header className="flex items-start justify-between gap-3 mb-3">
+        <h3
+          className="text-stone-900 text-lg sm:text-xl font-medium leading-tight"
+          style={{ fontFamily: 'Inter, sans-serif' }}
+        >
+          {q.headline || q.entry_subject}
+        </h3>
         {allowCycle && (
           <button
             type="button"
             onClick={() => setOffset((o) => o + 1)}
-            className="text-xs text-stone-500 hover:text-stone-900"
+            className="flex-shrink-0 text-xs text-stone-500 hover:text-stone-900"
           >
             Next →
           </button>
