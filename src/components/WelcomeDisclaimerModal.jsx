@@ -81,7 +81,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
               ref={closeButtonRef}
               type="button"
               onClick={onClose}
-              className="inline-flex items-center justify-center min-w-11 min-h-11 text-black hover:text-red-500 transition ml-4 flex-shrink-0"
+              className="inline-flex items-center justify-center min-w-11 min-h-11 text-black hover:text-civil-red-strong transition ml-4 flex-shrink-0"
               aria-label="Close welcome dialog"
             >
               <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
@@ -95,7 +95,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
         <div className="px-8 py-8 space-y-8">
           {/* Research Notice */}
           <div className="border-l-4 border-red-500 pl-6 py-2">
-            <h3 className="text-red-500 text-xl lg:text-2xl font-medium font-['Inter'] mb-3">
+            <h3 className="text-civil-red-strong text-xl lg:text-2xl font-medium font-['Inter'] mb-3">
               This is a Research Project
             </h3>
             <p className="text-black text-base lg:text-lg font-normal font-['Source_Serif_4'] leading-relaxed">
@@ -109,13 +109,13 @@ export default function WelcomeDisclaimerModal({ onClose }) {
               AI-Powered Organization
             </h3>
             <p className="text-black text-base lg:text-lg font-normal font-['Source_Serif_4'] leading-relaxed">
-              Our project uses artificial intelligence to organize the interviews into <span className="text-red-500 font-medium">thematic chapters</span>, each with its own set of summaries, keywords, and descriptions. This allows you to navigate through hours of interviews by topic rather than having to watch everything linearly.
+              Our project uses artificial intelligence to organize the interviews into <span className="text-civil-red-strong font-medium">thematic chapters</span>, each with its own set of summaries, keywords, and descriptions. This allows you to navigate through hours of interviews by topic rather than having to watch everything linearly.
             </p>
           </div>
 
           {/* Error Notice */}
           <div className="border-2 border-red-500 p-6">
-            <h3 className="text-red-500 text-xl lg:text-2xl font-medium font-['Inter'] mb-3">
+            <h3 className="text-civil-red-strong text-xl lg:text-2xl font-medium font-['Inter'] mb-3">
               AI Content May Contain Errors
             </h3>
             <div className="text-black text-base lg:text-lg font-normal font-['Source_Serif_4'] leading-relaxed space-y-3">
@@ -124,19 +124,19 @@ export default function WelcomeDisclaimerModal({ onClose }) {
               </p>
               <ul className="space-y-2 ml-6">
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-3 mt-1.5">•</span>
+                  <span className="text-civil-red-strong mr-3 mt-1.5">•</span>
                   <span>Misinterpret spoken words or context</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-3 mt-1.5">•</span>
+                  <span className="text-civil-red-strong mr-3 mt-1.5">•</span>
                   <span>Create summaries that miss important nuances</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-3 mt-1.5">•</span>
+                  <span className="text-civil-red-strong mr-3 mt-1.5">•</span>
                   <span>Assign keywords or themes that aren't quite right</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 mr-3 mt-1.5">•</span>
+                  <span className="text-civil-red-strong mr-3 mt-1.5">•</span>
                   <span>Make other mistakes in organization or description</span>
                 </li>
               </ul>
@@ -150,23 +150,23 @@ export default function WelcomeDisclaimerModal({ onClose }) {
             </h3>
             <div className="text-black text-base lg:text-lg font-normal font-['Source_Serif_4'] leading-relaxed space-y-4">
               <p>
-                <span className="text-red-500 font-medium">We need your help!</span> When you spot an error or inaccuracy, you can report it:
+                <span className="text-civil-red-strong font-medium">We need your help!</span> When you spot an error or inaccuracy, you can report it:
               </p>
               <ol className="space-y-3 ml-6">
                 <li className="flex items-start">
-                  <span className="text-red-500 font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">1.</span>
+                  <span className="text-civil-red-strong font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">1.</span>
                   <span><span className="font-medium">Select any text</span> on the page that contains an error</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">2.</span>
+                  <span className="text-civil-red-strong font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">2.</span>
                   <span><span className="font-medium">Click the feedback button</span> that appears</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">3.</span>
+                  <span className="text-civil-red-strong font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">3.</span>
                   <span><span className="font-medium">Describe the issue</span>, tell us what's wrong or inaccurate</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-500 font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">4.</span>
+                  <span className="text-civil-red-strong font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">4.</span>
                   <span><span className="font-medium">Submit your feedback</span> to help us improve the accuracy</span>
                 </li>
               </ol>
@@ -188,7 +188,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
         <div className="sticky bottom-0 px-8 py-6 border-t-2 border-red-500" style={{ backgroundColor: '#EBEAE9' }}>
           <button
             onClick={onClose}
-            className="w-full px-8 py-4 border border-red-500 text-red-500 text-lg lg:text-xl font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors"
+            className="w-full px-8 py-4 border-2 border-civil-red-strong text-civil-red-strong text-lg lg:text-xl font-light font-['Chivo_Mono'] hover:bg-civil-red-strong hover:text-white transition-colors"
           >
             I Understand, Continue to Site
           </button>
