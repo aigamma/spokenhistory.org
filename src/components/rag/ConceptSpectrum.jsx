@@ -227,6 +227,23 @@ export default function ConceptSpectrum() {
         the embedding space takes a position, and the retrieval shows you why.
       </p>
 
+      {/* Dot color legend — explains the audit-tier palette so users
+          understand what color each dot encodes. Reuses the pattern
+          from Constellation.jsx. */}
+      <div className="flex flex-wrap gap-3 mb-6 text-xs text-stone-700" aria-label="Audit-tier color legend">
+        <span className="font-medium text-stone-900">Dot color (audit tier):</span>
+        {Object.entries(TIER_COLORS).map(([tier, color]) => (
+          <span key={tier} className="inline-flex items-center gap-1">
+            <span
+              className="inline-block w-3 h-3 rounded-full"
+              style={{ backgroundColor: color, opacity: 0.85 }}
+              aria-hidden="true"
+            />
+            {tier}
+          </span>
+        ))}
+      </div>
+
       <footer className="text-xs text-stone-500 border-t border-stone-200 pt-4 mt-8">
         <p>
           Pure-math projection of pre-computed Voyage embeddings. No LLM call per query. The axis vector is <code className="font-mono">normalize(embedding(pole_A) - embedding(pole_B))</code>; each interviewee&apos;s position is the dot product of their centroid with that vector, then linearly stretched to [-1, 1]. Source: <code className="font-mono">rag/precompute_concept_axes.mjs</code>.

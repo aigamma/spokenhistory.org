@@ -141,6 +141,22 @@ export default function ConceptMatrix() {
         />
       )}
 
+      {/* Dot color legend — explains the audit-tier palette across
+          all 4 mini-scatters. Same encoding the rest of the site uses. */}
+      <div className="flex flex-wrap gap-3 mt-5 mb-2 text-xs text-stone-700" aria-label="Audit-tier color legend">
+        <span className="font-medium text-stone-900">Dot color (audit tier):</span>
+        {Object.entries(TIER_COLORS).map(([tier, color]) => (
+          <span key={tier} className="inline-flex items-center gap-1">
+            <span
+              className="inline-block w-3 h-3 rounded-full"
+              style={{ backgroundColor: color, opacity: 0.85 }}
+              aria-hidden="true"
+            />
+            {tier}
+          </span>
+        ))}
+      </div>
+
       <footer className="text-xs text-stone-500 border-t border-stone-200 pt-3 mt-6 max-w-3xl">
         Source: <code className="font-mono">public/rag/summaries/concept_axes.json</code>.
         Each axis vector is{' '}
