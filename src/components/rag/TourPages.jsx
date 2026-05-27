@@ -7,6 +7,8 @@
 
 import { useEffect, useState } from 'react';
 import TourMap from './TourMap';
+import { retrieve } from '../../services/ragClient';
+import CitationCard from './CitationCard';
 
 export default function TourPages() {
   const [data, setData] = useState(null);
@@ -85,22 +87,7 @@ export default function TourPages() {
           {tour.path && tour.path.length > 0 && (
             <ol className="space-y-3 list-none p-0">
               {tour.path.map((stop, idx) => (
-                <li key={idx} className="border border-stone-200 rounded-md bg-white p-4">
-                  <header className="flex items-baseline justify-between gap-2 mb-1">
-                    <h4 className="text-base font-medium text-stone-900">
-                      <span className="text-civil-red-body font-mono mr-2">{String(idx + 1).padStart(2, '0')}</span>
-                      {stop.entry_subject}
-                    </h4>
-                    {stop.entry_number != null && (
-                      <span className="text-xs text-stone-500 tabular-nums">#{stop.entry_number}</span>
-                    )}
-                  </header>
-                  {stop.note && (
-                    <p className="text-sm text-stone-700 ml-8" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                      {stop.note}
-                    </p>
-                  )}
-                </li>
+                <TourStop key={idx} stop={stop} idx={idx} tourTitle={tour.title} />
               ))}
             </ol>
           )}
@@ -111,6 +98,107 @@ export default function TourPages() {
             </p>
           )}
         </article>
+      )}
+    </div>
+  );
+}
+
+/**
+ * TourStop — one stop in a curated tour's ordered path. The stop
+ * shows the interviewee's name + curator's note by default; clicking
+ * it opens an inline drill-down with 3 passages from THAT interview
+ * most aligned with the TOUR'S title.
+ *
+ * Query strategy: use tour.title (e.g., "The theological foundations
+ * of nonviolence") as the /retrieve query, filtered to the stop's
+ * entry_number. So McLaurin's stop on the voter-registration tour
+ * surfaces his voter-reg passages, not generic top-passages.
+ *
+ * Closed by default — clicking the row expands the drill-down.
+ */
+function TourStop({ stop, idx, tourTitle }) {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <li className={'border rounded-md bg-white overflow-hidden transition-colors ' + (expanded ? 'border-civil-red-strong' : 'border-stone-200')}>
+      <button
+        type="button"
+        onClick={() => setExpanded((e) => !e)}
+        aria-expanded={expanded}
+        className="w-full text-left p-4 hover:bg-stone-50 transition-colors"
+      >
+        <header className="flex items-baseline justify-between gap-2 mb-1">
+          <h4 className="text-base font-medium text-stone-900">
+            <span className="text-civil-red-body font-mono mr-2">{String(idx + 1).padStart(2, '0')}</span>
+            {stop.entry_subject}
+          </h4>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {stop.entry_number != null && (
+              <span className="text-xs text-stone-500 tabular-nums">#{stop.entry_number}</span>
+            )}
+            <span className="text-xs text-civil-red-body">{expanded ? '▾' : '▸'}</span>
+          </div>
+        </header>
+        {stop.note && (
+          <p className="text-sm text-stone-700 ml-8" style={{ fontFamily: 'Source Serif 4, serif' }}>
+            {stop.note}
+          </p>
+        )}
+      </button>
+      {expanded && stop.entry_number != null && (
+        <TourStopDrillDown entryNumber={stop.entry_number} tourTitle={tourTitle} />
+      )}
+    </li>
+  );
+}
+
+function TourStopDrillDown({ entryNumber, tourTitle }) {
+  const [results, setResults] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!tourTitle || entryNumber == null) return undefined;
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    setResults(null);
+    retrieve(tourTitle, {
+      topN: 3,
+      filter: { entry_number: { $eq: entryNumber } },
+    })
+      .then(({ results: r }) => { if (!cancelled) setResults(r || []); })
+      .catch((e) => { if (!cancelled) setError(e?.detail?.message || e?.message || 'Drill-down failed.'); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [entryNumber, tourTitle]);
+
+  return (
+    <div className="border-t border-stone-200 p-4 bg-stone-50">
+      <p className="text-xs text-civil-red-body font-mono uppercase tracking-wide mb-1">
+        From this interview, aligned with the tour
+      </p>
+      <p className="text-xs text-stone-600 italic mb-3">
+        Query: &ldquo;{tourTitle}&rdquo;
+      </p>
+      {loading && <p className="text-sm text-stone-500" role="status">Searching…</p>}
+      {error && (
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+          {error}
+        </p>
+      )}
+      {results && results.length === 0 && !loading && !error && (
+        <p className="text-sm text-stone-500">
+          No strongly-aligned passages found in this interview.
+        </p>
+      )}
+      {results && results.length > 0 && (
+        <ol className="space-y-3">
+          {results.map((payload) => (
+            <li key={payload.id}>
+              <CitationCard payload={payload} showFullText={false} />
+            </li>
+          ))}
+        </ol>
       )}
     </div>
   );
