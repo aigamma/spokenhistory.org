@@ -282,10 +282,19 @@ For Adobe Fonts, add to your HTML head:
 
 /* Restore a visible focus indicator for keyboard navigation.
    Excludes inputs/textareas which already have a focus-within ring
-   handled by the per-component styles. */
+   handled by the per-component styles.
+
+   The double-outline pattern (white inner + red outer) makes the
+   indicator visible on both light surfaces (cream / white pages) AND
+   dark surfaces (the red Menu drawer, brand-red pill fills). On dark
+   surfaces the white inner ring carries the visibility; on light
+   surfaces the red outer ring carries it. WCAG 2.4.7 + 2.4.11
+   require the focus indicator to be visible against the surface it
+   sits on regardless of theme. */
 *:focus-visible {
   outline: 2px solid #F2483C;
   outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.85);
 }
 
 button:focus-visible,
@@ -295,6 +304,7 @@ a:focus-visible,
   outline: 2px solid #F2483C;
   outline-offset: 3px;
   border-radius: 2px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9);
 }
 
 /* Respect the user's reduced-motion preference. The .animate-fadeIn
