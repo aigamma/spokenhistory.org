@@ -79,6 +79,7 @@ export default function RelatedPassages({
   chunkIndex = null,
   limit = 5,
   className = '',
+  onNavigateToEntry = null,
 }) {
   const [data, setData] = useState(null);
   const [tierMap, setTierMap] = useState(null);
@@ -169,20 +170,36 @@ export default function RelatedPassages({
         never reference each other. The radial graph shows the top {networkSlice.length} closest by
         passage-overlap count; the list below extends to all {entries.length}.
       </p>
-      <RadialNetwork focal={data.entry_subject} related={networkSlice} />
+      <RadialNetwork
+        focal={data.entry_subject}
+        related={networkSlice}
+        onNavigate={onNavigateToEntry}
+      />
       <ul className="space-y-2 mt-4">
         {entries.map((e) => (
-          <li
-            key={e.entry_number}
-            className="flex items-center justify-between gap-4 py-2 px-3 rounded-md bg-stone-50 border border-stone-200"
-          >
-            <div>
-              <div className="font-medium text-stone-900">{e.entry_subject}</div>
-              <div className="text-xs text-stone-500">Entry #{e.entry_number}</div>
-            </div>
-            <div className="text-xs text-stone-500 tabular-nums">
-              {e.count} matching passages
-            </div>
+          <li key={e.entry_number}>
+            <button
+              type="button"
+              onClick={() => onNavigateToEntry?.(e.entry_number)}
+              disabled={!onNavigateToEntry}
+              className={
+                'w-full flex items-center justify-between gap-4 py-2 px-3 rounded-md border text-left transition-colors ' +
+                (onNavigateToEntry
+                  ? 'bg-stone-50 border-stone-200 hover:bg-white hover:border-civil-red-strong cursor-pointer'
+                  : 'bg-stone-50 border-stone-200 cursor-default')
+              }
+            >
+              <div>
+                <div className="font-medium text-stone-900">{e.entry_subject}</div>
+                <div className="text-xs text-stone-500">
+                  Entry #{e.entry_number}
+                  {onNavigateToEntry && <> · click to make focal</>}
+                </div>
+              </div>
+              <div className="text-xs text-stone-500 tabular-nums">
+                {e.count} matching passages
+              </div>
+            </button>
           </li>
         ))}
       </ul>
@@ -199,7 +216,7 @@ export default function RelatedPassages({
  * is the privileged node — this isn't a peer graph, it's "voices in
  * conversation with X." Center-at-X makes that semantic explicit.
  */
-function RadialNetwork({ focal, related }) {
+function RadialNetwork({ focal, related, onNavigate = null }) {
   const W = 520;
   const H = 360;
   const cx = W / 2;
@@ -252,10 +269,17 @@ function RadialNetwork({ focal, related }) {
             onMouseLeave={() => setHoverIdx(-1)}
             onFocus={() => setHoverIdx(i)}
             onBlur={() => setHoverIdx(-1)}
+            onClick={() => onNavigate?.(n.entry_number)}
+            onKeyDown={(e) => {
+              if ((e.key === 'Enter' || e.key === ' ') && onNavigate) {
+                e.preventDefault();
+                onNavigate(n.entry_number);
+              }
+            }}
             tabIndex={0}
-            style={{ cursor: 'pointer', outline: 'none' }}
-            role="button"
-            aria-label={`${n.entry_subject}: ${n.count} overlapping passages`}
+            style={{ cursor: onNavigate ? 'pointer' : 'default', outline: 'none' }}
+            role={onNavigate ? 'button' : 'img'}
+            aria-label={`${n.entry_subject}: ${n.count} overlapping passages${onNavigate ? '. Click to make this the focal voice.' : ''}`}
           >
             <circle
               cx={n.x}
