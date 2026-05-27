@@ -830,7 +830,7 @@ export default function Home() {
           </button>
           <Link
             to="/rag-explore"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-red-500 bg-red-500 text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-600 hover:border-red-600 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-civil-red-strong bg-civil-red-strong text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-800 hover:border-red-800 transition-colors"
           >
             Explore the embeddings →
           </Link>
