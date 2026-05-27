@@ -18,7 +18,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Search as SearchIcon, X, Loader2 } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
+import { Search as SearchIcon, X, Loader2, Link2, Check } from 'lucide-react';
 import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -26,6 +27,13 @@ import CitationCard from './CitationCard';
 export default function ConceptSpectrum() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
+  // URL params: ?spectrumAxis=<slug> chooses the active axis;
+  // ?spectrumEntry=<N> auto-selects (and drills into) that
+  // interview's dot. So deep-links like
+  //    /rag-explore?spectrumAxis=nonviolence-self-defense&spectrumEntry=1
+  // reproduce a specific drill-down state — researchers can copy + share
+  // a permalink to their finding.
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeAxis, setActiveAxis] = useState(0);
   const [hover, setHover] = useState(null);
   // selected = locked dot the user clicked. Triggers an inline /retrieve
@@ -57,6 +65,63 @@ export default function ConceptSpectrum() {
     setDrillResults(null);
     setDrillError(null);
   }, [activeAxis]);
+
+  // URL → state: on data load (or URL change from browser nav), pick
+  // up spectrumAxis and spectrumEntry params and apply them.
+  useEffect(() => {
+    if (!data?.axes?.length) return;
+    const wantSlug = searchParams.get('spectrumAxis');
+    if (wantSlug) {
+      const idx = data.axes.findIndex((a) => a.slug === wantSlug);
+      if (idx >= 0 && idx !== activeAxis) setActiveAxis(idx);
+    }
+    const wantEntry = searchParams.get('spectrumEntry');
+    if (wantEntry) {
+      const entryNum = Number(wantEntry);
+      if (Number.isFinite(entryNum) && (!selected || selected.entry_number !== entryNum)) {
+        const axis = data.axes[
+          wantSlug ? Math.max(0, data.axes.findIndex((a) => a.slug === wantSlug)) : activeAxis
+        ];
+        const p = axis?.positions?.find((x) => x.entry_number === entryNum);
+        if (p) {
+          setSelected({
+            entry_number: p.entry_number,
+            entry_subject: p.entry_subject,
+            position: p.position,
+            position_normalized: p.position_normalized,
+            tier: p.tier,
+            loc_item_url: p.loc_item_url,
+          });
+        }
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, searchParams]);
+
+  // state → URL: when user changes axis or selection, mirror to URL
+  // so the back/forward and copy-link affordances work.
+  useEffect(() => {
+    if (!data?.axes?.length) return;
+    const currentSlug = data.axes[activeAxis]?.slug;
+    const currentEntry = selected?.entry_number;
+    const next = new URLSearchParams(searchParams);
+    let changed = false;
+    if (currentSlug && next.get('spectrumAxis') !== currentSlug) {
+      next.set('spectrumAxis', currentSlug);
+      changed = true;
+    }
+    if (currentEntry) {
+      if (next.get('spectrumEntry') !== String(currentEntry)) {
+        next.set('spectrumEntry', String(currentEntry));
+        changed = true;
+      }
+    } else if (next.has('spectrumEntry')) {
+      next.delete('spectrumEntry');
+      changed = true;
+    }
+    if (changed) setSearchParams(next, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeAxis, selected, data]);
 
   const handleSelect = useCallback((p) => {
     setSelected((prev) => {
@@ -324,13 +389,16 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
             (the {selected.position >= 0 ? 'right' : 'left'}-side pole of this axis).
           </p>
         </div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="flex-shrink-0 px-2 py-1 text-xs text-stone-500 hover:text-stone-900 border border-stone-300 rounded hover:border-stone-500"
-        >
-          close ✕
-        </button>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <CopyLinkButton />
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-2 py-1 text-xs text-stone-500 hover:text-stone-900 border border-stone-300 rounded hover:border-stone-500"
+          >
+            close ✕
+          </button>
+        </div>
       </header>
 
       {loading && (
@@ -583,5 +651,39 @@ function LeaderboardEntry({ p, onSelect, isSelected }) {
         <span className="text-xs text-stone-500 tabular-nums">({p.position.toFixed(3)})</span>
       </button>
     </li>
+  );
+}
+
+/**
+ * CopyLinkButton — copies the current page URL (which includes
+ * spectrumAxis + spectrumEntry query params) to the clipboard.
+ * Lets a researcher share a deep-link to their drill-down.
+ *
+ * Reads the URL fresh on click rather than caching at render time,
+ * so the most-current URL always lands in the clipboard.
+ */
+function CopyLinkButton() {
+  const [copied, setCopied] = useState(false);
+  const handleClick = async () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch (e) {
+      console.error('[ConceptSpectrum] clipboard write failed:', e);
+    }
+  };
+  const Icon = copied ? Check : Link2;
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      className="inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-500 hover:text-stone-900 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+      aria-label={copied ? 'Link copied to clipboard' : 'Copy permalink to this drill-down'}
+    >
+      <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+      {copied ? 'Copied' : 'Copy link'}
+    </button>
   );
 }
