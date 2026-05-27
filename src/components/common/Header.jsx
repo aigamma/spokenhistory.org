@@ -5,12 +5,12 @@ import { X } from 'lucide-react';
 /**
  * Header, global nav for the protected app.
  *
- * Two pill links sit on the left (Spectrum, Topics) and a single red
- * Menu pill sits in the far-right corner; clicking Menu opens the
- * slide-out drawer with the full route list. A pill (and its
- * corresponding entry in the slide-out menu) is hidden when the user
- * is already on the page that pill leads to, the rule is "don't
- * advertise the page you're on."
+ * Three pill links sit on the left (Timeline, Spectrum, Topics) and
+ * a single red Menu pill sits in the far-right corner; clicking Menu
+ * opens the slide-out drawer with the full route list. A pill (and
+ * its corresponding entry in the slide-out menu) is hidden when the
+ * user is already on the page that pill leads to, the rule is
+ * "don't advertise the page you're on."
  */
 
 // Top-of-page pills. Each entry carries its visual color and a matcher
