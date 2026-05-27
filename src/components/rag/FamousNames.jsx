@@ -180,6 +180,19 @@ export default function FamousNames() {
                     {hidden} {hidden === 1 ? 'passage' : 'passages'} hidden by tier filter
                   </div>
                 )}
+                {visible.length === 0 && fig.passages.length > 0 && (
+                  <p className="text-sm text-stone-500 mb-3">
+                    All {fig.passages.length} passages about {fig.name} are in tiers you&apos;ve hidden.{' '}
+                    <button
+                      type="button"
+                      className="underline hover:text-stone-900"
+                      onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+                    >
+                      Show all tiers
+                    </button>
+                    {' '}to see them.
+                  </p>
+                )}
                 <div className="space-y-3">
                   {visible.map((p, idx) => (
                     <PassageCard key={`${p.entry_number}-${idx}`} passage={p} />

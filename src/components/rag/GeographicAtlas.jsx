@@ -129,6 +129,20 @@ export default function GeographicAtlas() {
             </div>
           )}
 
+          {visiblePassages.length === 0 && anchor.passages.length > 0 && (
+            <p className="text-sm text-stone-500 mb-3">
+              All {anchor.passages.length} passages for this location are in tiers you&apos;ve hidden.{' '}
+              <button
+                type="button"
+                className="underline hover:text-stone-900"
+                onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+              >
+                Show all tiers
+              </button>
+              {' '}to see them.
+            </p>
+          )}
+
           <div className="space-y-3">
             {visiblePassages.map((p, idx) => {
               const tierKey = p.uncertainty_tier in TIER_BADGE ? p.uncertainty_tier : null;
