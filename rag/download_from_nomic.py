@@ -116,61 +116,84 @@ def parse_args() -> argparse.Namespace:
 
 
 def wait_for_map_ready(dataset, max_wait: int, poll_interval: int):
+    """Atlas's `AtlasProjection` object doesn't expose a discrete
+    ready-state attribute on the SDK we have (nomic 3.9.0). What it
+    DOES expose is `.embeddings.projected`, `.topics.df`, and
+    `.data.df` — accessing those raises until the projection is
+    ready, and succeeds once it is. We probe `.embeddings.df` (which
+    pulls projected coords) as the readiness signal."""
     deadline = time.time() + max_wait
-    last_state = None
     while time.time() < deadline:
         if not dataset.maps:
             sys.stderr.write("Dataset has no maps yet; waiting...\n")
             time.sleep(poll_interval)
             continue
         atlas_map = dataset.maps[0]
-        # The map's projection-ready state lives behind several
-        # possible attribute names depending on SDK version. Check the
-        # broadest set.
-        state = None
-        for attr in ("project_state", "state", "status", "_project_state"):
-            if hasattr(atlas_map, attr):
-                state = getattr(atlas_map, attr)
-                break
-        if state and str(state).lower() in ("complete", "completed", "ready", "indexed", "done"):
-            sys.stderr.write(f"Map ready (state={state}).\n")
+        try:
+            # Single-row probe — pulling the full df can take seconds.
+            df = atlas_map.embeddings.df
+            n = len(df)
+            sys.stderr.write(f"Map ready: {n} projected points.\n")
             return atlas_map
-        if state != last_state:
-            sys.stderr.write(f"  map state: {state}; waiting...\n")
-            last_state = state
-        time.sleep(poll_interval)
-    sys.stderr.write(f"Timed out after {max_wait}s; map state never became ready.\n")
+        except Exception as exc:
+            sys.stderr.write(f"  map not ready yet ({type(exc).__name__}: {str(exc)[:100]}); waiting...\n")
+            time.sleep(poll_interval)
+    sys.stderr.write(f"Timed out after {max_wait}s; map projection never became ready.\n")
     raise SystemExit(3)
 
 
 def extract_projection_points(atlas_map):
-    """Pull the projected 2D coordinates + metadata + topics for every
-    row in the map. The Nomic SDK has several access paths depending
-    on version; we try them in order of preference and bail with a
-    useful message if none work."""
-    # Preferred path: as_pandas() returns a dataframe with all the
-    # surfaced metadata + projection columns (typically `_embeddings_x`
-    # and `_embeddings_y`, or under `topic_data` for topics).
-    if hasattr(atlas_map, "data"):
-        try:
-            df = atlas_map.data.df  # AtlasMapData wraps an Arrow table
-            return df
-        except Exception:
-            pass
-    if hasattr(atlas_map, "embeddings"):
-        try:
-            return atlas_map.embeddings.df
-        except Exception:
-            pass
-    if hasattr(atlas_map, "to_pandas"):
-        try:
-            return atlas_map.to_pandas()
-        except Exception:
-            pass
-    raise RuntimeError(
-        "Could not locate projection coordinates on the map object. "
-        "Inspect dir(map) and update extract_projection_points()."
-    )
+    """Merge `data.df` (metadata), `embeddings.df` (2D coords), and
+    `topics.df` (auto-labeled topic per row) into a single dataframe
+    keyed on the Atlas row id. The SDK exposes these as three separate
+    dataframes; joining them gives the shape the React component needs.
+
+    Returns a pandas DataFrame with at minimum columns for x, y, and
+    each metadata field from the original upload (entry_subject,
+    pinecone_id, text, etc.). Adds a `_topic` column if topics
+    were computed; falls back to None otherwise.
+    """
+    print("  fetching data.df...")
+    data_df = atlas_map.data.df
+    print(f"    {len(data_df)} rows, columns: {list(data_df.columns)[:8]}...")
+
+    print("  fetching embeddings.df (projected coords)...")
+    emb_df = atlas_map.embeddings.df
+    print(f"    {len(emb_df)} rows, columns: {list(emb_df.columns)}")
+
+    print("  fetching topics.df...")
+    try:
+        topic_df = atlas_map.topics.df
+        print(f"    {len(topic_df)} rows, columns: {list(topic_df.columns)}")
+    except Exception as exc:
+        print(f"    (skipped — topics not available: {exc})")
+        topic_df = None
+
+    # Critical: `_position_index` is NOT a unique row id. Atlas stores
+    # data in shards/pages and re-uses `_position_index` per shard.
+    # The three dataframes (data, embeddings, topics) are in identical
+    # row order — concat by position is the correct join.
+    if len(data_df) != len(emb_df):
+        raise RuntimeError(
+            f"data.df and embeddings.df have different row counts "
+            f"({len(data_df)} vs {len(emb_df)}); concat-by-position invalid."
+        )
+    print(f"  concat by row position: {len(data_df)} rows")
+    # reset_index so positional concat works regardless of original index.
+    data_df = data_df.reset_index(drop=True)
+    emb_df = emb_df.reset_index(drop=True)
+    # Drop emb_df's redundant `_position_index` to avoid column collision.
+    emb_keep = [c for c in emb_df.columns if c != "_position_index"]
+    import pandas as pd
+    merged = pd.concat([data_df, emb_df[emb_keep]], axis=1)
+    if topic_df is not None and len(topic_df) == len(data_df):
+        topic_df = topic_df.reset_index(drop=True)
+        topic_keep = [c for c in topic_df.columns if c != "_position_index"]
+        merged = pd.concat([merged, topic_df[topic_keep]], axis=1)
+    elif topic_df is not None:
+        print(f"  WARN: topic_df row count ({len(topic_df)}) mismatch; skipping topic merge")
+    print(f"  final: {len(merged)} rows × {len(merged.columns)} columns")
+    return merged
 
 
 def find_xy_columns(df):
@@ -208,41 +231,68 @@ def main() -> int:
 
     x_col, y_col = find_xy_columns(df)
 
-    # Topic columns vary; surface the most likely candidates.
+    # Topic columns vary by SDK version. Hierarchical topic models
+    # expose `topic_depth_1` (broader category, ~10-15 topics) and
+    # `topic_depth_2` (narrower, ~25-40 topics). Prefer the narrower
+    # for richer color coding but the broader gives cleaner legend.
     topic_col = None
-    for c in ("topic_label", "topic", "_topic_label", "_topic", "topic_id"):
+    for c in ("topic_depth_2", "topic_depth_1", "topic_label", "topic", "_topic_label", "_topic", "topic_id"):
         if c in df.columns:
             topic_col = c
             break
+    print(f"  using topic column: {topic_col}")
 
+    # Per-row trimming to keep the client-side JSON small. The
+    # full Atlas data export carries fields the React component does
+    # not need (chunk_index, source_path, entry_provenance, etc.).
+    # We surface ONLY the fields the hover card and topic legend
+    # actually read.
+    import math
     points = []
     for _, row in df.iterrows():
-        rec = {
-            "x": float(row[x_col]) if row[x_col] is not None else 0.0,
-            "y": float(row[y_col]) if row[y_col] is not None else 0.0,
-        }
-        for field in (
-            "pinecone_id",
-            "entry_number",
-            "entry_subject",
-            "text",
-            "uncertainty_tier",
-            "loc_item_url",
-            "timestamp_start_seconds",
-        ):
-            if field in row and row[field] is not None:
-                value = row[field]
-                # text gets truncated to a preview for client size.
-                if field == "text":
-                    if not isinstance(value, str):
-                        value = str(value)
-                    rec["text_preview"] = value[:240]
-                else:
-                    try:
-                        rec[field] = float(value) if isinstance(value, (int, float)) and field == "timestamp_start_seconds" else (int(value) if isinstance(value, (int, float)) and field == "entry_number" else value)
-                    except Exception:
-                        rec[field] = value
-        if topic_col and row[topic_col] is not None:
+        x_val = row[x_col]
+        y_val = row[y_col]
+        if x_val is None or y_val is None:
+            continue
+        try:
+            x_f, y_f = float(x_val), float(y_val)
+            if not (math.isfinite(x_f) and math.isfinite(y_f)):
+                continue
+        except (ValueError, TypeError):
+            continue
+        rec = {"x": round(x_f, 4), "y": round(y_f, 4)}
+
+        # Numeric / short string fields.
+        if "entry_number" in row and row["entry_number"] is not None:
+            try:
+                rec["entry_number"] = int(row["entry_number"])
+            except (ValueError, TypeError):
+                pass
+        if "entry_subject" in row and isinstance(row["entry_subject"], str):
+            rec["entry_subject"] = row["entry_subject"]
+        if "uncertainty_tier" in row and isinstance(row["uncertainty_tier"], str):
+            rec["uncertainty_tier"] = row["uncertainty_tier"]
+        if "loc_item_url" in row and isinstance(row["loc_item_url"], str):
+            rec["loc_item_url"] = row["loc_item_url"]
+        if "timestamp_start_seconds" in row and row["timestamp_start_seconds"] is not None:
+            try:
+                rec["t_start"] = round(float(row["timestamp_start_seconds"]), 1)
+            except (ValueError, TypeError):
+                pass
+
+        # Text preview only — never the full passage. 120 chars keeps
+        # the static JSON manageable while still giving hover cards
+        # enough words to recognize the passage. Truncated text ends
+        # with an ellipsis to make it visually obvious it's a preview.
+        text = row.get("text") if hasattr(row, "get") else (row["text"] if "text" in row else None)
+        if isinstance(text, str) and text:
+            if len(text) > 120:
+                rec["text_preview"] = text[:117].rstrip() + "..."
+            else:
+                rec["text_preview"] = text
+
+        # Topic label.
+        if topic_col and row[topic_col] is not None and not (isinstance(row[topic_col], float) and math.isnan(row[topic_col])):
             rec["topic"] = row[topic_col]
         points.append(rec)
 
@@ -270,7 +320,10 @@ def main() -> int:
     }
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(payload, ensure_ascii=False))
+    # Force UTF-8 — Windows Python defaults to cp1252 and chokes on
+    # the Unicode characters in passage text (smart quotes, accents,
+    # etc.).
+    args.out.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
     size_mb = args.out.stat().st_size / (1024 * 1024)
     print(f"[OK] Wrote {len(points)} points + {len(topics_list)} topics to {args.out}")
     print(f"     ({size_mb:.2f} MB)")
