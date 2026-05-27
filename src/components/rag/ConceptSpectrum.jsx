@@ -434,8 +434,12 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
             {axis.pole_b.label}
           </text>
 
+          {/* Pre-compute extremes for permanent labeling. positions
+              is sorted ascending by position; first = leftmost
+              (most pole_a), last = rightmost (most pole_b). */}
+          {(() => null)()}
           {/* Dots */}
-          {axis.positions.map((p) => {
+          {axis.positions.map((p, idx) => {
             const cx = xFor(p.position_normalized);
             const jitterSeed = (p.entry_number * 2654435761) >>> 0;
             const jitter = ((jitterSeed % 100) / 100 - 0.5) * 100;
@@ -445,6 +449,12 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
             const isSelected = selectedEntry === p.entry_number;
             const isMatch = !matched || matched.has(p.entry_number);
             const dimByFilter = matched && !isMatch;
+            const isExtreme = idx === 0 || idx === axis.positions.length - 1;
+            // Permanently label the extremes when no search is active,
+            // so visitors immediately see who anchors each pole without
+            // having to hover-treasure-hunt. When search is active, the
+            // matched-label path below handles labeling.
+            const labelAsExtreme = isExtreme && !matched && !isSelected;
             return (
               <g key={p.entry_number}>
                 <circle
@@ -489,6 +499,30 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
                     fontWeight={600}
                     fill="#1c1917"
                     textAnchor="middle"
+                    paintOrder="stroke"
+                    stroke="rgba(255,255,255,0.95)"
+                    strokeWidth={3}
+                    strokeLinejoin="round"
+                    style={{ pointerEvents: 'none' }}
+                    fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                  >
+                    {p.entry_subject}
+                  </text>
+                )}
+
+                {/* Permanent label at each extreme pole when no search
+                    is active. Positions the label so the leftmost
+                    text-anchors at start (sits to the right of its
+                    dot) and the rightmost at end (sits to the left of
+                    its dot), keeping them inside the chart frame. */}
+                {labelAsExtreme && (
+                  <text
+                    x={idx === 0 ? cx + 10 : cx - 10}
+                    y={cy + 4}
+                    fontSize={11}
+                    fontWeight={600}
+                    fill="#1c1917"
+                    textAnchor={idx === 0 ? 'start' : 'end'}
                     paintOrder="stroke"
                     stroke="rgba(255,255,255,0.95)"
                     strokeWidth={3}
