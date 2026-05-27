@@ -14,6 +14,8 @@
 import { useEffect, useState } from 'react';
 import { LayoutGrid, List } from 'lucide-react';
 import ThemesMap from './ThemesMap';
+import { retrieve } from '../../services/ragClient';
+import CitationCard from './CitationCard';
 
 export default function ThemesBrowser() {
   const [data, setData] = useState(null);
@@ -164,17 +166,7 @@ function ClusterBody({ cluster }) {
   const subjects = cluster.member_entry_subjects || (cluster.members || []).map((m) => m.entry_subject);
   return (
     <>
-      {cluster.starter_query && (
-        <div className="mb-3 text-sm">
-          <span className="text-stone-600">Starter query: </span>
-          <a
-            href={`#/rag-explore?tab=search&q=${encodeURIComponent(cluster.starter_query)}`}
-            className="font-mono text-civil-red-body hover:underline"
-          >
-            &ldquo;{cluster.starter_query}&rdquo;
-          </a>
-        </div>
-      )}
+      {cluster.starter_query && <ThemeDrillDown cluster={cluster} />}
       <p className="text-sm text-stone-700 mb-2">
         <span className="font-medium">{subjects.length}</span>{' '}
         {subjects.length === 1 ? 'voice' : 'voices'} in this cluster:
@@ -190,5 +182,66 @@ function ClusterBody({ cluster }) {
         ))}
       </ul>
     </>
+  );
+}
+
+/**
+ * ThemeDrillDown — run the cluster's starter_query against /retrieve
+ * and surface the top passages that anchor the theme. Unlike Spectrum
+ * / InterviewMap drill-downs, this one is NOT filtered to a single
+ * entry — themes span multiple voices, and showing passages from
+ * across the cluster's members is exactly what makes the theme
+ * concrete.
+ */
+function ThemeDrillDown({ cluster }) {
+  const [results, setResults] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!cluster?.starter_query) return undefined;
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    setResults(null);
+    retrieve(cluster.starter_query, { topN: 5, dedupeByEntry: true })
+      .then(({ results: r }) => { if (!cancelled) setResults(r || []); })
+      .catch((e) => { if (!cancelled) setError(e?.detail?.message || e?.message || 'Drill-down failed.'); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [cluster?.starter_query]);
+
+  return (
+    <div className="mb-4">
+      <p className="text-xs text-civil-red-body font-mono uppercase tracking-wide mb-1">
+        Theme query
+      </p>
+      <p className="text-sm text-stone-700 italic mb-3">
+        &ldquo;{cluster.starter_query}&rdquo;
+      </p>
+      {loading && (
+        <p className="text-sm text-stone-500" role="status">Retrieving theme-aligned passages…</p>
+      )}
+      {error && (
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+          {error}
+        </p>
+      )}
+      {results && results.length > 0 && (
+        <>
+          <p className="text-xs text-stone-500 mb-2">
+            Top 5 passages across the corpus most aligned with this theme
+            (one per interviewee):
+          </p>
+          <ol className="space-y-3 mb-4">
+            {results.map((payload) => (
+              <li key={payload.id}>
+                <CitationCard payload={payload} showFullText={false} />
+              </li>
+            ))}
+          </ol>
+        </>
+      )}
+    </div>
   );
 }
