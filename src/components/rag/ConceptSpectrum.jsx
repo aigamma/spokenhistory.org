@@ -101,6 +101,35 @@ export default function ConceptSpectrum() {
     setConceptError(null);
   }, []);
 
+  // One-click example queries. Picked to produce distinct cross-axis
+  // patterns so the demo lands the "same embedding, different axes"
+  // payoff. Clicking one populates the input AND submits in a single
+  // action so visitors don't have to type or press a second button.
+  const runExample = useCallback(async (text) => {
+    setConceptInput(text);
+    setConceptLoading(true);
+    setConceptError(null);
+    setConceptQuery(text);
+    setConceptResults(null);
+    try {
+      const { results, meta } = await retrieve(text, {
+        topN: 5,
+        includeQueryEmbedding: true,
+        dedupeByEntry: true,
+      });
+      if (Array.isArray(meta?.queryEmbedding) && meta.queryEmbedding.length === 1024) {
+        setConceptEmbedding(meta.queryEmbedding);
+      } else {
+        setConceptError('Backend did not return a query embedding.');
+      }
+      setConceptResults(Array.isArray(results) ? results : []);
+    } catch (err) {
+      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
+    } finally {
+      setConceptLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
     let cancelled = false;
     fetch('/rag/summaries/concept_axes.json')
@@ -381,6 +410,26 @@ export default function ConceptSpectrum() {
               Query lands at <span className="font-mono tabular-nums">{activeProjection.position.toFixed(3)}</span>
               {' '}({activeProjection.position >= 0 ? activeProjection.pole_a_label : activeProjection.pole_b_label} side)
             </p>
+          )}
+          {!conceptQuery && !conceptLoading && (
+            <div className="text-xs text-stone-500 mt-1.5 flex flex-wrap items-baseline gap-1.5">
+              <span>Try:</span>
+              {[
+                'nonviolence as theology',
+                'Black Power as community defense',
+                'the role of women in SNCC',
+                'Mississippi Freedom Summer',
+              ].map((ex) => (
+                <button
+                  key={ex}
+                  type="button"
+                  onClick={() => runExample(ex)}
+                  className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 transition-colors"
+                >
+                  {ex}
+                </button>
+              ))}
+            </div>
           )}
         </form>
       </div>

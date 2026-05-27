@@ -109,6 +109,45 @@ export default function ConceptMatrix() {
     setConceptError(null);
   }, []);
 
+  // One-click example queries — same set as Spectrum so visitors get
+  // consistent prompts across surfaces.
+  const runExample = useCallback(async (text) => {
+    if (!data?.axes) return;
+    setConceptInput(text);
+    setConceptLoading(true);
+    setConceptError(null);
+    setConceptQuery(text);
+    setConceptResults(null);
+    try {
+      const { results, meta } = await retrieve(text, {
+        topN: 5,
+        includeQueryEmbedding: true,
+        dedupeByEntry: true,
+      });
+      const qVec = meta?.queryEmbedding;
+      if (!Array.isArray(qVec) || qVec.length !== 1024) {
+        throw new Error('Backend did not return a 1024-dim query embedding.');
+      }
+      const proj = {};
+      for (const ax of data.axes) {
+        if (!Array.isArray(ax.axis_vector) || ax.axis_vector.length !== qVec.length) continue;
+        let dot = 0;
+        for (let i = 0; i < qVec.length; i++) dot += qVec[i] * ax.axis_vector[i];
+        const [min, max] = ax.raw_range || [-1, 1];
+        const range = Math.max(max - min, 1e-9);
+        const normalized = ((dot - min) / range) * 2 - 1;
+        proj[ax.slug] = { raw: dot, normalized };
+      }
+      setQueryProjections(proj);
+      setConceptResults(Array.isArray(results) ? results : []);
+    } catch (err) {
+      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
+      setQueryProjections(null);
+    } finally {
+      setConceptLoading(false);
+    }
+  }, [data]);
+
   useEffect(() => {
     let cancelled = false;
     fetch('/rag/summaries/concept_axes.json')
@@ -219,6 +258,26 @@ export default function ConceptMatrix() {
             <span className="text-emerald-700 font-medium">✕</span>{' '}
             &ldquo;{conceptQuery}&rdquo; — green ✕ on each chart shows where the same query lands in that pair of axes.
           </p>
+        )}
+        {!conceptQuery && !conceptLoading && (
+          <div className="text-xs text-stone-500 mt-1.5 flex flex-wrap items-baseline gap-1.5">
+            <span>Try:</span>
+            {[
+              'nonviolence as theology',
+              'Black Power as community defense',
+              'the role of women in SNCC',
+              'Mississippi Freedom Summer',
+            ].map((ex) => (
+              <button
+                key={ex}
+                type="button"
+                onClick={() => runExample(ex)}
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 transition-colors"
+              >
+                {ex}
+              </button>
+            ))}
+          </div>
         )}
       </form>
 

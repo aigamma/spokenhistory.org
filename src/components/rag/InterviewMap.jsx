@@ -140,6 +140,64 @@ export default function InterviewMap() {
     setConceptError(null);
   }, []);
 
+  // One-click example queries — same set as Spectrum + Concept Lenses
+  // so visitors get consistent prompts across surfaces. Clicking one
+  // populates the input AND runs the full nearest-centroid lookup.
+  const runExample = useCallback(async (text) => {
+    setConceptInput(text);
+    setConceptLoading(true);
+    setConceptError(null);
+    setConceptQuery(text);
+    setConceptNearest(null);
+    setConceptResults(null);
+    try {
+      let cs = centroids;
+      if (!cs) {
+        const r = await fetch('/rag/centroids.json');
+        if (!r.ok) throw new Error('Failed to load centroids');
+        cs = await r.json();
+        setCentroids(cs);
+      }
+      const { results, meta } = await retrieve(text, {
+        topN: 5,
+        includeQueryEmbedding: true,
+        dedupeByEntry: true,
+      });
+      const qVec = meta?.queryEmbedding;
+      if (!Array.isArray(qVec) || qVec.length !== 1024) {
+        throw new Error('Backend did not return a 1024-dim query embedding.');
+      }
+      let qNorm = 0;
+      for (let i = 0; i < qVec.length; i++) qNorm += qVec[i] * qVec[i];
+      qNorm = Math.sqrt(qNorm) || 1;
+      let best = null;
+      let bestSim = -Infinity;
+      for (const c of cs) {
+        if (!Array.isArray(c.vector) || c.vector.length !== qVec.length) continue;
+        let dot = 0;
+        let cNorm = 0;
+        for (let i = 0; i < qVec.length; i++) {
+          dot += qVec[i] * c.vector[i];
+          cNorm += c.vector[i] * c.vector[i];
+        }
+        cNorm = Math.sqrt(cNorm) || 1;
+        const sim = dot / (qNorm * cNorm);
+        if (sim > bestSim) {
+          bestSim = sim;
+          best = c;
+        }
+      }
+      if (best) {
+        setConceptNearest({ entry_number: best.entry_number, entry_subject: best.entry_subject, similarity: bestSim });
+      }
+      setConceptResults(Array.isArray(results) ? results : []);
+    } catch (err) {
+      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
+    } finally {
+      setConceptLoading(false);
+    }
+  }, [centroids]);
+
   useEffect(() => {
     if (selected == null) {
       setNeighbors(null);
@@ -409,6 +467,26 @@ export default function InterviewMap() {
             <strong>{conceptNearest.entry_subject}</strong>{' '}
             (cosine similarity <span className="font-mono tabular-nums">{conceptNearest.similarity.toFixed(3)}</span>)
           </p>
+        )}
+        {!conceptQuery && !conceptLoading && (
+          <div className="text-xs text-stone-500 mt-1.5 flex flex-wrap items-baseline gap-1.5">
+            <span>Try:</span>
+            {[
+              'nonviolence as theology',
+              'Black Power as community defense',
+              'the role of women in SNCC',
+              'Mississippi Freedom Summer',
+            ].map((ex) => (
+              <button
+                key={ex}
+                type="button"
+                onClick={() => runExample(ex)}
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 transition-colors"
+              >
+                {ex}
+              </button>
+            ))}
+          </div>
         )}
       </form>
 
