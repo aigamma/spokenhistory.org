@@ -21,6 +21,12 @@ import { X } from 'lucide-react';
 // spectrum there).
 const NAV_ROUTES = [
   {
+    label: 'Timeline',
+    to: '/',
+    bg: 'bg-emerald-700 hover:bg-emerald-800',
+    matchPath: '/',
+  },
+  {
     label: 'Spectrum',
     to: '/rag-explore?tab=spectrum',
     bg: 'bg-violet-700 hover:bg-violet-800',
