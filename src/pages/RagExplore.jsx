@@ -218,14 +218,6 @@ export default function RagExplore() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
       <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 focus:outline-none">
-        {/* Minimal page label. The big "Explore the embeddings" hero
-            block (paragraph, stats, tier pills) moved to the bottom of
-            the page so the demo content is above the fold and the tab
-            change is impossible to miss when navigating from the menu. */}
-        <p className="text-civil-red-body text-xs font-light font-mono mb-4 tracking-wide uppercase">
-          (Embedded Data)
-        </p>
-
         {/* Spectrum is the page's headline surface. It renders above
             the tab nav so it's always the first thing visitors see;
             tabs below let them explore alternative views without
