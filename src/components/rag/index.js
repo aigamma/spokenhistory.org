@@ -24,6 +24,7 @@ export { default as InfluenceList } from './InfluenceList';
 export { default as QuoteOfTheDay } from './QuoteOfTheDay';
 export { default as TourPages } from './TourPages';
 export { default as NomicProjection } from './NomicProjection';
+export { default as PassageMap } from './PassageMap';
 
 // Audit-tier vocabulary, palette, and fidelity-note helpers. Importers
 // that build their own tier-aware UIs (custom badges, filters, legends)

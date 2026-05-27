@@ -19,14 +19,35 @@
   },
   "homepage": "https://jsovelove.github.io/civil-rights-history-project/",
   "contributors": [
-    { "name": "Dustin O'Hara, PhD", "url": "https://dustinohara.com/" },
-    { "name": "Jack Sovelove", "url": "https://github.com/jsovelove" },
-    { "name": "Sofia Choi" },
-    { "name": "Sophia Zhuk", "url": "https://github.com/sophiazhuk" },
-    { "name": "Maya Galley" },
-    { "name": "Alina Sokolova" },
-    { "name": "Ron Chesko", "url": "https://github.com/ron-chesko" },
-    { "name": "Eric Allione", "url": "https://github.com/aigamma" }
+    {
+      "name": "Dustin O'Hara, PhD",
+      "url": "https://dustinohara.com/"
+    },
+    {
+      "name": "Jack Sovelove",
+      "url": "https://github.com/jsovelove"
+    },
+    {
+      "name": "Sofia Choi"
+    },
+    {
+      "name": "Sophia Zhuk",
+      "url": "https://github.com/sophiazhuk"
+    },
+    {
+      "name": "Maya Galley"
+    },
+    {
+      "name": "Alina Sokolova"
+    },
+    {
+      "name": "Ron Chesko",
+      "url": "https://github.com/ron-chesko"
+    },
+    {
+      "name": "Eric Allione",
+      "url": "https://github.com/aigamma"
+    }
   ],
   "dependencies": {
     "@knight-lab/timelinejs": "^3.9.6",
@@ -39,6 +60,7 @@
     "leaflet": "^1.9.4",
     "lucide-react": "^0.475.0",
     "node-fetch": "^2.7.0",
+    "plotly.js-cartesian-dist-min": "^3.5.1",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
@@ -46,6 +68,7 @@
     "react-google-recaptcha": "^3.1.0",
     "react-icons": "^5.5.0",
     "react-leaflet": "^4.2.1",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^7.1.5",
     "react-youtube": "^10.1.0",
     "three": "^0.152.2",

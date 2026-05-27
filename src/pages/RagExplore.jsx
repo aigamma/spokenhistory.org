@@ -15,6 +15,7 @@ import {
   QuoteOfTheDay,
   TourPages,
   NomicProjection,
+  PassageMap,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
@@ -364,7 +365,7 @@ export default function RagExplore() {
                 from passage text. Atlas computes the projection; everything
                 you see here is rendered by custom React + canvas in this app.
               </p>
-              <NomicProjection />
+              <PassageMap />
             </div>
           )}
 
