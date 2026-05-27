@@ -15,6 +15,7 @@
 import { useEffect, useState } from 'react';
 import { ExternalLink, Clock } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
+import EventsTimeline from './EventsTimeline';
 
 function formatTimestamp(seconds) {
   if (seconds == null) return null;
@@ -77,28 +78,19 @@ export default function PolyphonicEvents() {
   return (
     <div className="rag-polyphonic-events">
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-        Each event below is reported in the newspapers. But what did the witnesses say? Click an event to see the embedding-retrieved passages from <strong>multiple interviewees</strong> — each grounded to the exact second in the original LoC audio.
+        Eight canonical events of the Movement, laid on a timeline from
+        1955 (Emmett Till) to 1968 (Dr. King&apos;s assassination). Click a
+        dot to see the embedding-retrieved passages from{' '}
+        <strong>multiple interviewees</strong> who witnessed that moment —
+        each grounded to the exact second in the original LoC audio.
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-8">
-        {index.events.map((ev) => (
-          <button
-            key={ev.slug}
-            type="button"
-            onClick={() => setSelectedSlug(ev.slug)}
-            aria-pressed={ev.slug === selectedSlug}
-            className={
-              'px-3 py-2 text-sm rounded-md border transition-colors ' +
-              (ev.slug === selectedSlug
-                ? 'border-red-700 bg-red-50 text-stone-900 font-medium'
-                : 'border-stone-300 bg-white text-stone-700 hover:border-stone-400')
-            }
-            style={{ fontFamily: 'Chivo Mono, monospace' }}
-          >
-            <span className="block">{ev.title}</span>
-            <span className="block text-xs text-stone-500 font-normal">{ev.date_range}</span>
-          </button>
-        ))}
+      <div className="mb-8">
+        <EventsTimeline
+          events={index.events}
+          selectedSlug={selectedSlug}
+          onSelect={setSelectedSlug}
+        />
       </div>
 
       {loadingEvent && (
