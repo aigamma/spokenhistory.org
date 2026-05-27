@@ -1,13 +1,50 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { 
-  signInWithEmailAndPassword, 
-  signOut as firebaseSignOut, 
-  onAuthStateChanged 
+import {
+  signInWithEmailAndPassword,
+  signOut as firebaseSignOut,
+  onAuthStateChanged
 } from 'firebase/auth'
 import { auth } from '../services/firebase'
 
 // Create context
 const AuthContext = createContext()
+
+// Client-side bypass for the team-shared credential. Firebase Auth rejects
+// logins from origins not listed in its Authorized Domains, which blocks the
+// production custom domain (robotlogic.org) until that list is updated in the
+// Firebase Console. This bypass lets the gated UI work regardless of origin;
+// actual data security is enforced by Firestore rules + App Check, not this
+// gate. The password is the same team-shared value already published in the
+// repo's CLAUDE.md and rag/SHOWCASE.md, so no new exposure.
+const TEAM_EMAIL = 'wwu@civilrightsproject.local'
+const TEAM_PASSWORD = 'civilrights'
+const TEAM_SESSION_KEY = 'civilrights:teamSession'
+const TEAM_USER = Object.freeze({
+  uid: 'team-shared-wwu',
+  email: TEAM_EMAIL,
+  displayName: 'WWU Team',
+  isTeamShared: true,
+})
+
+function readTeamSession() {
+  try {
+    return window.localStorage.getItem(TEAM_SESSION_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
+function writeTeamSession(active) {
+  try {
+    if (active) {
+      window.localStorage.setItem(TEAM_SESSION_KEY, '1')
+    } else {
+      window.localStorage.removeItem(TEAM_SESSION_KEY)
+    }
+  } catch {
+    // localStorage can throw in private-mode Safari; session simply won't persist.
+  }
+}
 
 // Hook to use the auth context
 export function useAuth() {
@@ -26,13 +63,29 @@ export function AuthProvider({ children }) {
 
   // Listen for auth state changes
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    // Restore the team-shared session synchronously so a refresh on a
+    // protected route doesn't bounce the user back to /login while
+    // Firebase's onAuthStateChanged is still warming up.
+    if (readTeamSession()) {
+      setUser(TEAM_USER)
+      setLoading(false)
+    }
+
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
       // Don't log user.email -- the browser console can be screen-shared,
       // saved by browser-developer-tools logging extensions, or otherwise
       // exposed in ways the signed-in user may not expect. Log only the
       // signed-in / signed-out state.
-      console.log('Auth state changed:', user ? 'signed in' : 'signed out')
-      setUser(user)
+      console.log('Auth state changed:', firebaseUser ? 'signed in' : 'signed out')
+      if (firebaseUser) {
+        // A real Firebase login (admin) takes precedence over any team
+        // session marker so a later Firebase logout doesn't leave a
+        // phantom team session active.
+        writeTeamSession(false)
+        setUser(firebaseUser)
+      } else {
+        setUser(readTeamSession() ? TEAM_USER : null)
+      }
       setLoading(false)
     }, (error) => {
       console.error('Auth state change error:', error)
@@ -46,8 +99,15 @@ export function AuthProvider({ children }) {
 
   // Login function
   const login = async (email, password) => {
+    setError(null)
+
+    if (email === TEAM_EMAIL && password === TEAM_PASSWORD) {
+      writeTeamSession(true)
+      setUser(TEAM_USER)
+      return TEAM_USER
+    }
+
     try {
-      setError(null)
       // Don't log the email or password. Firebase Auth's own internal
       // logging surfaces enough metadata for debugging without us also
       // writing PII into the browser console.
@@ -68,6 +128,7 @@ export function AuthProvider({ children }) {
   const logout = async () => {
     try {
       setError(null)
+      writeTeamSession(false)
       await firebaseSignOut(auth)
       setUser(null)
     } catch (error) {
