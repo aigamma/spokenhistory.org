@@ -31,8 +31,8 @@
  * interrelation teach.
  */
 
-import { useEffect, useMemo, useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Loader2, X } from 'lucide-react';
 import { TIER_COLORS, TIER_BADGE } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -52,6 +52,54 @@ export default function ConceptMatrix() {
   const [error, setError] = useState(null);
   const [hoveredEntry, setHoveredEntry] = useState(null);
   const [selectedEntry, setSelectedEntry] = useState(null);
+  // Concept-query projection — same idea as the Spectrum's projection
+  // input, but here the query renders on ALL 4 charts simultaneously
+  // at (xAxisProj, yAxisProj). User types a phrase, sees the embedding
+  // space take a position on it across every concept-pair lens.
+  const [conceptInput, setConceptInput] = useState('');
+  const [conceptQuery, setConceptQuery] = useState(null);
+  const [conceptLoading, setConceptLoading] = useState(false);
+  const [conceptError, setConceptError] = useState(null);
+  const [queryProjections, setQueryProjections] = useState(null);
+
+  const handleConceptSubmit = useCallback(async (e) => {
+    e?.preventDefault?.();
+    const q = conceptInput.trim();
+    if (!q || conceptLoading || !data?.axes) return;
+    setConceptLoading(true);
+    setConceptError(null);
+    setConceptQuery(q);
+    try {
+      const { meta } = await retrieve(q, { topN: 1, includeQueryEmbedding: true });
+      const qVec = meta?.queryEmbedding;
+      if (!Array.isArray(qVec) || qVec.length !== 1024) {
+        throw new Error('Backend did not return a 1024-dim query embedding.');
+      }
+      const proj = {};
+      for (const ax of data.axes) {
+        if (!Array.isArray(ax.axis_vector) || ax.axis_vector.length !== qVec.length) continue;
+        let dot = 0;
+        for (let i = 0; i < qVec.length; i++) dot += qVec[i] * ax.axis_vector[i];
+        const [min, max] = ax.raw_range || [-1, 1];
+        const range = Math.max(max - min, 1e-9);
+        const normalized = ((dot - min) / range) * 2 - 1;
+        proj[ax.slug] = { raw: dot, normalized };
+      }
+      setQueryProjections(proj);
+    } catch (err) {
+      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
+      setQueryProjections(null);
+    } finally {
+      setConceptLoading(false);
+    }
+  }, [conceptInput, conceptLoading, data]);
+
+  const clearConcept = useCallback(() => {
+    setConceptInput('');
+    setConceptQuery(null);
+    setQueryProjections(null);
+    setConceptError(null);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -119,18 +167,75 @@ export default function ConceptMatrix() {
         highlight and see the full five-axis profile below.
       </p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-        {AXIS_PAIRS.map(([xSlug, ySlug]) => (
-          <MiniScatter
-            key={`${xSlug}-${ySlug}`}
-            axisX={axesById.get(xSlug)}
-            axisY={axesById.get(ySlug)}
-            profilesById={profilesById}
-            highlightEntry={focusEntry}
-            onHover={setHoveredEntry}
-            onSelect={(n) => setSelectedEntry((cur) => (cur === n ? null : n))}
+      {/* Concept-query projection input — type a phrase and watch a
+          green ✕ land on ALL 4 charts at the projected (x, y). Same
+          1,024-dim embedding, four different 2D coordinate systems. */}
+      <form onSubmit={handleConceptSubmit} className="mb-4 max-w-2xl">
+        <div className="relative">
+          <input
+            type="text"
+            value={conceptInput}
+            onChange={(e) => setConceptInput(e.target.value)}
+            placeholder="Project a phrase onto all 4 lenses…"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
+            aria-label="Project a query phrase across all four lenses"
+            disabled={conceptLoading}
           />
-        ))}
+          <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
+            {conceptQuery && (
+              <button
+                type="button"
+                onClick={clearConcept}
+                className="p-1 text-stone-400 hover:text-stone-700"
+                aria-label="Clear projection"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+            <button
+              type="submit"
+              disabled={!conceptInput.trim() || conceptLoading}
+              className="px-2.5 py-1 text-xs font-medium bg-emerald-600 text-white rounded hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {conceptLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" /> : 'Project'}
+            </button>
+          </div>
+        </div>
+        {conceptError && (
+          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-1.5">
+            {conceptError}
+          </p>
+        )}
+        {queryProjections && conceptQuery && (
+          <p className="text-xs text-emerald-900 mt-1.5">
+            <span className="text-emerald-700 font-medium">✕</span>{' '}
+            &ldquo;{conceptQuery}&rdquo; — green ✕ on each chart shows where the same query lands in that pair of axes.
+          </p>
+        )}
+      </form>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        {AXIS_PAIRS.map(([xSlug, ySlug]) => {
+          const queryPoint = queryProjections && queryProjections[xSlug] && queryProjections[ySlug]
+            ? {
+                x: queryProjections[xSlug].normalized,
+                y: queryProjections[ySlug].normalized,
+                label: conceptQuery,
+              }
+            : null;
+          return (
+            <MiniScatter
+              key={`${xSlug}-${ySlug}`}
+              axisX={axesById.get(xSlug)}
+              axisY={axesById.get(ySlug)}
+              profilesById={profilesById}
+              highlightEntry={focusEntry}
+              onHover={setHoveredEntry}
+              onSelect={(n) => setSelectedEntry((cur) => (cur === n ? null : n))}
+              queryPoint={queryPoint}
+            />
+          );
+        })}
       </div>
 
       {focusProfile && (
@@ -170,7 +275,7 @@ export default function ConceptMatrix() {
   );
 }
 
-function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSelect }) {
+function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSelect, queryPoint }) {
   if (!axisX || !axisY) return null;
 
   const W = 460;
@@ -289,6 +394,42 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
             />
           );
         })}
+
+        {/* Concept-query projection marker — green ✕ at the projected
+            (x, y). The marker stays inside the chart even when the
+            projection is beyond the corpus's observed range; a small
+            arrow + caption signals when that's happened. */}
+        {queryPoint && (() => {
+          const rawX = queryPoint.x;
+          const rawY = queryPoint.y;
+          const clampedX = Math.max(-1, Math.min(1, rawX));
+          const clampedY = Math.max(-1, Math.min(1, rawY));
+          const cx = projectX(clampedX);
+          const cy = projectY(clampedY);
+          const outOfRange = rawX < -1 || rawX > 1 || rawY < -1 || rawY > 1;
+          return (
+            <g aria-label={`Query "${queryPoint.label || ''}" projects to (${rawX.toFixed(2)}, ${rawY.toFixed(2)})${outOfRange ? ' — beyond corpus range' : ''}`}>
+              <line x1={cx - 8} y1={cy - 8} x2={cx + 8} y2={cy + 8} stroke="#fff" strokeWidth={5} strokeLinecap="round" />
+              <line x1={cx - 8} y1={cy + 8} x2={cx + 8} y2={cy - 8} stroke="#fff" strokeWidth={5} strokeLinecap="round" />
+              <line x1={cx - 7} y1={cy - 7} x2={cx + 7} y2={cy + 7} stroke="#059669" strokeWidth={2.5} strokeLinecap="round" />
+              <line x1={cx - 7} y1={cy + 7} x2={cx + 7} y2={cy - 7} stroke="#059669" strokeWidth={2.5} strokeLinecap="round" />
+              {outOfRange && (
+                <text
+                  x={cx + 12}
+                  y={cy + 14}
+                  fontSize={9}
+                  fill="#065f46"
+                  fontStyle="italic"
+                  paintOrder="stroke"
+                  stroke="rgba(255,255,255,0.95)"
+                  strokeWidth={3}
+                >
+                  out of range
+                </text>
+              )}
+            </g>
+          );
+        })()}
       </svg>
     </figure>
   );
