@@ -10,11 +10,12 @@
  * optional entry_number filter for "search within one interviewee."
  */
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Search as SearchIcon, Loader2, X } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
+import { TIER_VOCABULARY, TIER_COLORS } from './tiers';
 
 /**
  * SemanticSearch — live semantic-search input + result list.
@@ -77,6 +78,11 @@ export default function SemanticSearch({
   // the polyphonic record (one passage per voice). Default off so the
   // same-speaker-different-moment results aren't hidden by default.
   const [dedupeByEntry, setDedupeByEntry] = useState(false);
+  // Audit-tier filter — research-grade users want to dial down to
+  // only the higher-confidence passages. Default: all tiers visible.
+  // Filter happens client-side over the returned topN; we don't
+  // re-issue the query when filters change.
+  const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));
   const abortRef = useRef(null);
   const hasAutoRunRef = useRef(false);
 
@@ -205,6 +211,50 @@ export default function SemanticSearch({
         </label>
       </div>
 
+      {/* Audit-tier filter row. Click to toggle which tiers are
+          visible; results from un-checked tiers fade out client-side
+          (the query still pulls the full topN; this is presentation).
+          For researchers who want only high-confidence passages,
+          unchecking publication-block / ingestion-only / not-auditable
+          leaves low + medium only. */}
+      <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
+        <span className="text-stone-500">Audit tier:</span>
+        {TIER_VOCABULARY.map((tier) => {
+          const active = allowedTiers.has(tier);
+          return (
+            <label
+              key={tier}
+              className={
+                'inline-flex items-center gap-1.5 px-2 py-1 rounded-full border cursor-pointer transition-opacity ' +
+                (active ? 'border-stone-700 bg-white' : 'border-stone-200 bg-stone-50 opacity-50')
+              }
+            >
+              <input
+                type="checkbox"
+                checked={active}
+                onChange={() => {
+                  const next = new Set(allowedTiers);
+                  if (active) next.delete(tier); else next.add(tier);
+                  setAllowedTiers(next);
+                }}
+                className="sr-only"
+              />
+              <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: TIER_COLORS[tier] }} aria-hidden="true" />
+              <span>{tier}</span>
+            </label>
+          );
+        })}
+        {allowedTiers.size < TIER_VOCABULARY.length && (
+          <button
+            type="button"
+            onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+            className="text-xs text-stone-500 hover:text-stone-900 underline ml-1"
+          >
+            show all
+          </button>
+        )}
+      </div>
+
       {error && (
         <div className="mb-4 p-4 rounded-md bg-amber-50 border border-amber-200 text-amber-900 text-sm">
           {error}
@@ -217,23 +267,52 @@ export default function SemanticSearch({
         </div>
       )}
 
-      <ol className="space-y-4">
-        {results.map((payload) => (
-          <li key={payload.id}>
-            <CitationCard payload={payload} showFullText={showFullText} />
-          </li>
-        ))}
-      </ol>
-
-      {!isLoading && !error && results.length === 0 && query.trim() && (
-        <p className="text-stone-500 text-sm">
-          No matches in the archive for that query.{' '}
-          {entryNumber != null
-            ? 'Try removing the entry filter, or '
-            : 'Try '}
-          rephrasing, or click one of the suggested-query chips above.
-        </p>
-      )}
+      {(() => {
+        // Filter results by allowed tiers. If all tiers are checked
+        // (the default), no filter applies — show all results.
+        const filtered = allowedTiers.size === TIER_VOCABULARY.length
+          ? results
+          : results.filter((p) => allowedTiers.has(p.uncertaintyTier));
+        const hiddenCount = results.length - filtered.length;
+        return (
+          <>
+            {hiddenCount > 0 && (
+              <div className="mb-3 text-xs text-stone-500">
+                {hiddenCount} {hiddenCount === 1 ? 'result' : 'results'} hidden by tier filter
+              </div>
+            )}
+            <ol className="space-y-4">
+              {filtered.map((payload) => (
+                <li key={payload.id}>
+                  <CitationCard payload={payload} showFullText={showFullText} />
+                </li>
+              ))}
+            </ol>
+            {!isLoading && !error && results.length === 0 && query.trim() && (
+              <p className="text-stone-500 text-sm">
+                No matches in the archive for that query.{' '}
+                {entryNumber != null
+                  ? 'Try removing the entry filter, or '
+                  : 'Try '}
+                rephrasing, or click one of the suggested-query chips above.
+              </p>
+            )}
+            {!isLoading && !error && results.length > 0 && filtered.length === 0 && (
+              <p className="text-stone-500 text-sm">
+                All {results.length} results are in tiers you&apos;ve hidden.{' '}
+                <button
+                  type="button"
+                  className="underline hover:text-stone-900"
+                  onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+                >
+                  Show all tiers
+                </button>
+                {' '}to see them.
+              </p>
+            )}
+          </>
+        );
+      })()}
     </section>
   );
 }
