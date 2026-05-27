@@ -61,13 +61,14 @@ export default function ConceptSpectrum() {
   const [conceptLoading, setConceptLoading] = useState(false);
   const [conceptError, setConceptError] = useState(null);
 
-  const handleConceptSubmit = useCallback(async (e) => {
-    e?.preventDefault?.();
-    const q = conceptInput.trim();
-    if (!q || conceptLoading) return;
+  // Shared submission path used by the form submit, the example chips,
+  // and the URL-driven auto-run on mount.
+  const submitQuery = useCallback(async (text) => {
+    if (!text || conceptLoading) return;
+    setConceptInput(text);
     setConceptLoading(true);
     setConceptError(null);
-    setConceptQuery(q);
+    setConceptQuery(text);
     setConceptResults(null);
     try {
       // Bump topN to 5 so the user sees BOTH the geometric projection
@@ -75,43 +76,6 @@ export default function ConceptSpectrum() {
       // (which passages best match). Dedupe by entry so each result is
       // a distinct voice; one query, many ways to know it found
       // something real.
-      const { results, meta } = await retrieve(q, {
-        topN: 5,
-        includeQueryEmbedding: true,
-        dedupeByEntry: true,
-      });
-      if (Array.isArray(meta?.queryEmbedding) && meta.queryEmbedding.length === 1024) {
-        setConceptEmbedding(meta.queryEmbedding);
-      } else {
-        setConceptError('Backend did not return a query embedding.');
-      }
-      setConceptResults(Array.isArray(results) ? results : []);
-    } catch (err) {
-      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
-    } finally {
-      setConceptLoading(false);
-    }
-  }, [conceptInput, conceptLoading]);
-
-  const clearConcept = useCallback(() => {
-    setConceptInput('');
-    setConceptQuery(null);
-    setConceptEmbedding(null);
-    setConceptResults(null);
-    setConceptError(null);
-  }, []);
-
-  // One-click example queries. Picked to produce distinct cross-axis
-  // patterns so the demo lands the "same embedding, different axes"
-  // payoff. Clicking one populates the input AND submits in a single
-  // action so visitors don't have to type or press a second button.
-  const runExample = useCallback(async (text) => {
-    setConceptInput(text);
-    setConceptLoading(true);
-    setConceptError(null);
-    setConceptQuery(text);
-    setConceptResults(null);
-    try {
       const { results, meta } = await retrieve(text, {
         topN: 5,
         includeQueryEmbedding: true,
@@ -128,7 +92,26 @@ export default function ConceptSpectrum() {
     } finally {
       setConceptLoading(false);
     }
+  }, [conceptLoading]);
+
+  const handleConceptSubmit = useCallback((e) => {
+    e?.preventDefault?.();
+    submitQuery(conceptInput.trim());
+  }, [conceptInput, submitQuery]);
+
+  const clearConcept = useCallback(() => {
+    setConceptInput('');
+    setConceptQuery(null);
+    setConceptEmbedding(null);
+    setConceptResults(null);
+    setConceptError(null);
   }, []);
+
+  // One-click example queries. Picked to produce distinct cross-axis
+  // patterns so the demo lands the "same embedding, different axes"
+  // payoff. Clicking one populates the input AND submits in a single
+  // action so visitors don't have to type or press a second button.
+  const runExample = useCallback((text) => submitQuery(text), [submitQuery]);
 
   useEffect(() => {
     let cancelled = false;
@@ -177,11 +160,19 @@ export default function ConceptSpectrum() {
         }
       }
     }
+    // Auto-run a query when the URL has ?spectrumQuery=…, but only
+    // once per text value (not every searchParams change), so the
+    // mirror-state-to-URL effect below doesn't trigger an infinite
+    // re-run loop.
+    const wantQuery = searchParams.get('spectrumQuery');
+    if (wantQuery && wantQuery !== conceptQuery && !conceptLoading) {
+      submitQuery(wantQuery);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, searchParams]);
 
-  // state → URL: when user changes axis or selection, mirror to URL
-  // so the back/forward and copy-link affordances work.
+  // state → URL: when user changes axis, selection, or query, mirror
+  // to URL so the back/forward and copy-link affordances work.
   useEffect(() => {
     if (!data?.axes?.length) return;
     const currentSlug = data.axes[activeAxis]?.slug;
@@ -201,9 +192,18 @@ export default function ConceptSpectrum() {
       next.delete('spectrumEntry');
       changed = true;
     }
+    if (conceptQuery) {
+      if (next.get('spectrumQuery') !== conceptQuery) {
+        next.set('spectrumQuery', conceptQuery);
+        changed = true;
+      }
+    } else if (next.has('spectrumQuery')) {
+      next.delete('spectrumQuery');
+      changed = true;
+    }
     if (changed) setSearchParams(next, { replace: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeAxis, selected, data]);
+  }, [activeAxis, selected, conceptQuery, data]);
 
   const handleSelect = useCallback((p) => {
     setSelected((prev) => {
