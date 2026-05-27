@@ -27,6 +27,7 @@ export { default as NomicProjection } from './NomicProjection';
 export { default as PassageMap } from './PassageMap';
 export { default as ConceptMatrix } from './ConceptMatrix';
 export { default as InterviewMap } from './InterviewMap';
+export { default as AuditProvenance } from './AuditProvenance';
 
 // Audit-tier vocabulary, palette, and fidelity-note helpers. Importers
 // that build their own tier-aware UIs (custom badges, filters, legends)

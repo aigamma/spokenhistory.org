@@ -18,6 +18,7 @@ import {
   PassageMap,
   ConceptMatrix,
   InterviewMap,
+  AuditProvenance,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
@@ -508,6 +509,8 @@ export default function RagExplore() {
             on a topic are nearby in that space. This page surfaces several ways to query and
             visualize those connections.
           </p>
+
+          <AuditProvenance />
           {stats && (
             <div className="mt-6 space-y-3">
               <dl className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-700">
