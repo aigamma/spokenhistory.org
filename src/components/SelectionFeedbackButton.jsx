@@ -11,7 +11,7 @@ export default function SelectionFeedbackButton({ selection, onReport, disabled 
   return (
     <button
       type="button"
-      className="fixed z-[75] px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-white bg-red-600 rounded-full shadow-lg hover:bg-red-500 transition disabled:opacity-70"
+      className="fixed z-[75] px-4 py-2 text-xs sm:text-sm font-semibold tracking-wide text-white bg-red-600 rounded-full shadow-lg hover:bg-red-700 transition disabled:opacity-70"
       style={{
         top: selection.position.top,
         left: selection.position.left,
