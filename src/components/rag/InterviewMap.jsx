@@ -241,8 +241,31 @@ export default function InterviewMap() {
               </label>
             );
           })}
+          {allowedTiers.size < TIER_VOCABULARY.length && (
+            <button
+              type="button"
+              onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+              className="text-xs text-stone-500 hover:text-stone-900 underline ml-1"
+            >
+              show all
+            </button>
+          )}
         </div>
       </div>
+
+      {visibleInterviews.length === 0 && interviews.length > 0 && (
+        <p className="mb-3 text-sm text-stone-500">
+          All {interviews.length} interviews are in tiers you&apos;ve hidden.{' '}
+          <button
+            type="button"
+            className="underline hover:text-stone-900"
+            onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+          >
+            Show all tiers
+          </button>
+          {' '}to see them.
+        </p>
+      )}
 
       <div className="rounded-lg border border-stone-200 bg-stone-50 overflow-hidden">
         <svg
