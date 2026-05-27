@@ -8,6 +8,7 @@
 import { useEffect, useState } from 'react';
 import { ExternalLink, Clock, MapPin } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
+import AtlasMap from './AtlasMap';
 
 export default function GeographicAtlas() {
   const [data, setData] = useState(null);
@@ -35,8 +36,18 @@ export default function GeographicAtlas() {
   return (
     <div className="rag-geography">
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-        Twelve movement geographies, from the Mississippi Delta to Oakland. Each anchor surfaces the embedding-retrieved passages from interviewees who discussed that location. The pre-computed retrieval makes geographic browsing instant and bounded-cost.
+        Twelve movement geographies, from the Mississippi Delta to Oakland. Click a marker
+        on the map or a label below to see the interviewees who discussed that location;
+        circle size reflects how many voices in the corpus speak about each place.
       </p>
+
+      <div className="mb-6">
+        <AtlasMap
+          anchors={data.anchors}
+          selectedSlug={selectedSlug}
+          onSelect={setSelectedSlug}
+        />
+      </div>
 
       <div className="flex flex-wrap gap-2 mb-6">
         {data.anchors.map((a) => (
