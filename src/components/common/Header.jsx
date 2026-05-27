@@ -159,7 +159,7 @@ export default function Header() {
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               aria-controls="site-navigation-menu"
-              className="inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium text-white shadow-sm transition-colors bg-civil-red-strong hover:opacity-90 flex-shrink-0"
+              className="inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium text-white shadow-sm transition-colors bg-red-600 hover:bg-red-700 flex-shrink-0"
               style={{ fontFamily: 'Chivo Mono, monospace' }}
             >
               Menu

@@ -281,6 +281,60 @@ export default function ConceptMatrix() {
         )}
       </form>
 
+      {/* Cross-axis summary: when a query is active, show where the
+          same 1024-dim embedding lands on all 5 concept axes as
+          horizontal bars. One embedding, five conceptual readings. */}
+      {queryProjections && conceptQuery && (
+        <div className="mb-5 p-4 rounded-md border border-emerald-200 bg-emerald-50/50">
+          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-3">
+            Query &ldquo;{conceptQuery}&rdquo; on all 5 spectrums
+          </p>
+          <ul className="space-y-2">
+            {data.axes.map((ax) => {
+              const proj = queryProjections[ax.slug];
+              if (!proj) return null;
+              const rawN = proj.normalized;
+              const clampedN = Math.max(-1, Math.min(1, rawN));
+              const outOfRange = rawN < -1 || rawN > 1;
+              const beyondLeft = rawN < -1;
+              const leftPct = ((1 - clampedN) / 2) * 100;
+              const leaning = proj.raw >= 0 ? ax.pole_a.label : ax.pole_b.label;
+              return (
+                <li key={ax.slug} className="flex items-center gap-3 px-2 py-1">
+                  <span className="text-xs text-stone-700 flex-shrink-0 w-44 truncate text-right">{ax.pole_a.label}</span>
+                  <span className="relative flex-1 h-2 rounded-full bg-stone-200 overflow-hidden">
+                    <span className="absolute top-0 bottom-0 w-px bg-stone-400" style={{ left: '50%' }} aria-hidden="true" />
+                    <span
+                      className="absolute top-0 bottom-0 w-2 rounded-full bg-emerald-600"
+                      style={{ left: `calc(${leftPct}% - 4px)` }}
+                      aria-hidden="true"
+                    />
+                    {outOfRange && (
+                      <span
+                        className="absolute top-1/2 -translate-y-1/2 text-emerald-700 text-[10px] leading-none"
+                        style={beyondLeft ? { left: '-10px' } : { right: '-10px' }}
+                        aria-hidden="true"
+                        title="Query projects beyond the observed corpus range on this axis"
+                      >
+                        {beyondLeft ? '◀' : '▶'}
+                      </span>
+                    )}
+                  </span>
+                  <span className="text-xs text-stone-700 flex-shrink-0 w-44 truncate">{ax.pole_b.label}</span>
+                  <span className="text-xs text-stone-500 flex-shrink-0 w-24 truncate text-right tabular-nums">
+                    {leaning.split(' ')[0]}
+                    {outOfRange && <span className="text-emerald-700 ml-1" title="More extreme than any voice in the corpus">★</span>}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="text-xs text-stone-500 mt-3">
+            Same 1,024-dim embedding, five conceptual axes. The green tick on each bar is where your query lands relative to each axis's poles.
+          </p>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {AXIS_PAIRS.map(([xSlug, ySlug]) => {
           const queryPoint = queryProjections && queryProjections[xSlug] && queryProjections[ySlug]

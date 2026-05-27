@@ -16,10 +16,10 @@
  * come from /retrieve (Netlify Function → Pinecone + Voyage rerank).
  */
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useSearchParams } from 'react-router-dom';
-import { Search as SearchIcon, X, Loader2, Link2, Check } from 'lucide-react';
+import { Loader2, Link2, Check } from 'lucide-react';
 import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -43,75 +43,6 @@ export default function ConceptSpectrum() {
   const [drillResults, setDrillResults] = useState(null);
   const [drillLoading, setDrillLoading] = useState(false);
   const [drillError, setDrillError] = useState(null);
-  // Name search, when set, matching dots stay bright and non-matching
-  // dots dim. Helps users find a specific voice among 136 without
-  // hover-treasure-hunting.
-  const [query, setQuery] = useState('');
-  // Concept-query projection, the audience-facing demo of "the
-  // embedding space takes a position on YOUR words". User types a
-  // natural-language query; /retrieve embeds it; we dot-product the
-  // resulting 1024-dim vector against each axis_vector and render a
-  // marker at the projected position on each axis. Only the active
-  // axis shows the marker on the main chart; a small cross-axis
-  // summary table renders below.
-  const [conceptInput, setConceptInput] = useState('');
-  const [conceptQuery, setConceptQuery] = useState(null); // last submitted
-  const [conceptEmbedding, setConceptEmbedding] = useState(null);
-  const [conceptResults, setConceptResults] = useState(null);
-  const [conceptLoading, setConceptLoading] = useState(false);
-  const [conceptError, setConceptError] = useState(null);
-
-  // Shared submission path used by the form submit, the example chips,
-  // and the URL-driven auto-run on mount.
-  const submitQuery = useCallback(async (text) => {
-    if (!text || conceptLoading) return;
-    setConceptInput(text);
-    setConceptLoading(true);
-    setConceptError(null);
-    setConceptQuery(text);
-    setConceptResults(null);
-    try {
-      // Bump topN to 5 so the user sees BOTH the geometric projection
-      // (where the query lands on each axis) AND the actual retrieval
-      // (which passages best match). Dedupe by entry so each result is
-      // a distinct voice; one query, many ways to know it found
-      // something real.
-      const { results, meta } = await retrieve(text, {
-        topN: 5,
-        includeQueryEmbedding: true,
-        dedupeByEntry: true,
-      });
-      if (Array.isArray(meta?.queryEmbedding) && meta.queryEmbedding.length === 1024) {
-        setConceptEmbedding(meta.queryEmbedding);
-      } else {
-        setConceptError('Backend did not return a query embedding.');
-      }
-      setConceptResults(Array.isArray(results) ? results : []);
-    } catch (err) {
-      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
-    } finally {
-      setConceptLoading(false);
-    }
-  }, [conceptLoading]);
-
-  const handleConceptSubmit = useCallback((e) => {
-    e?.preventDefault?.();
-    submitQuery(conceptInput.trim());
-  }, [conceptInput, submitQuery]);
-
-  const clearConcept = useCallback(() => {
-    setConceptInput('');
-    setConceptQuery(null);
-    setConceptEmbedding(null);
-    setConceptResults(null);
-    setConceptError(null);
-  }, []);
-
-  // One-click example queries. Picked to produce distinct cross-axis
-  // patterns so the demo lands the "same embedding, different axes"
-  // payoff. Clicking one populates the input AND submits in a single
-  // action so visitors don't have to type or press a second button.
-  const runExample = useCallback((text) => submitQuery(text), [submitQuery]);
 
   useEffect(() => {
     let cancelled = false;
@@ -160,19 +91,11 @@ export default function ConceptSpectrum() {
         }
       }
     }
-    // Auto-run a query when the URL has ?spectrumQuery=…, but only
-    // once per text value (not every searchParams change), so the
-    // mirror-state-to-URL effect below doesn't trigger an infinite
-    // re-run loop.
-    const wantQuery = searchParams.get('spectrumQuery');
-    if (wantQuery && wantQuery !== conceptQuery && !conceptLoading) {
-      submitQuery(wantQuery);
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, searchParams]);
 
-  // state → URL: when user changes axis, selection, or query, mirror
-  // to URL so the back/forward and copy-link affordances work.
+  // state → URL: mirror axis + selected entry into the URL so the
+  // back/forward and copy-link affordances work.
   useEffect(() => {
     if (!data?.axes?.length) return;
     const currentSlug = data.axes[activeAxis]?.slug;
@@ -192,18 +115,9 @@ export default function ConceptSpectrum() {
       next.delete('spectrumEntry');
       changed = true;
     }
-    if (conceptQuery) {
-      if (next.get('spectrumQuery') !== conceptQuery) {
-        next.set('spectrumQuery', conceptQuery);
-        changed = true;
-      }
-    } else if (next.has('spectrumQuery')) {
-      next.delete('spectrumQuery');
-      changed = true;
-    }
     if (changed) setSearchParams(next, { replace: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeAxis, selected, conceptQuery, data]);
+  }, [activeAxis, selected, data]);
 
   const handleSelect = useCallback((p) => {
     setSelected((prev) => {
@@ -269,53 +183,6 @@ export default function ConceptSpectrum() {
 
   const axis = data.axes[activeAxis];
 
-  // Project the user's query embedding onto EVERY axis. Same math as
-  // the precompute: dot(queryVec, axis_vector). Normalize to [-1, +1]
-  // using the axis's raw_range so the position lines up visually with
-  // the precomputed interview dots.
-  const conceptProjections = (() => {
-    if (!conceptEmbedding || !data?.axes) return null;
-    const out = [];
-    for (const ax of data.axes) {
-      if (!Array.isArray(ax.axis_vector) || ax.axis_vector.length !== conceptEmbedding.length) continue;
-      let dot = 0;
-      for (let i = 0; i < conceptEmbedding.length; i++) {
-        dot += conceptEmbedding[i] * ax.axis_vector[i];
-      }
-      const [min, max] = ax.raw_range || [-1, 1];
-      const range = Math.max(max - min, 1e-9);
-      const position_normalized = +(((dot - min) / range) * 2 - 1).toFixed(4);
-      out.push({
-        slug: ax.slug,
-        title: ax.title,
-        pole_a_label: ax.pole_a?.label,
-        pole_b_label: ax.pole_b?.label,
-        position: +dot.toFixed(4),
-        // Pass the raw normalized projection through unclamped, the
-        // marker render clamps for display + draws an arrow for "beyond
-        // corpus range" instead of silently squashing the value.
-        position_normalized,
-      });
-    }
-    return out;
-  })();
-
-  const activeProjection = conceptProjections?.find((p) => p.slug === axis.slug) || null;
-
-  // Match set for the search filter, entry_numbers whose subject
-  // includes the query (case-insensitive). null = "no filter active".
-  const matched = (() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return null;
-    const set = new Set();
-    for (const p of axis.positions) {
-      if ((p.entry_subject || '').toLowerCase().includes(q)) {
-        set.add(p.entry_number);
-      }
-    }
-    return set;
-  })();
-
   return (
     <div className="rag-concept-spectrum">
       <Axis
@@ -324,191 +191,7 @@ export default function ConceptSpectrum() {
         setHover={setHover}
         selectedEntry={selected?.entry_number ?? null}
         onSelect={handleSelect}
-        matched={matched}
       />
-
-      {/* Two search boxes side by side: name-search (left, dim non-
-          matches) and concept-projection (right, drop a marker on the
-          axis at the projected position for the query embedding). The
-          concept-projection is the audience-facing "embedding space
-          takes a position on your words" demo. */}
-      <div className="mt-3 mb-1 grid grid-cols-1 md:grid-cols-2 gap-3">
-        {/* Name search */}
-        <div className="relative">
-          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" aria-hidden="true" />
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Find a voice in the scatter…"
-            className="w-full pl-9 pr-9 py-2 text-sm border border-stone-300 rounded-md focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none bg-white"
-            aria-label="Find a voice in the Spectrum"
-          />
-          {query && (
-            <button
-              type="button"
-              onClick={() => setQuery('')}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-stone-400 hover:text-stone-700"
-              aria-label="Clear search"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          )}
-          {matched && (
-            <p className="text-xs text-stone-500 mt-1.5">
-              {matched.size} {matched.size === 1 ? 'match' : 'matches'}
-              {matched.size > 0 && ' · matching dots stay bright, names appear next to them'}
-            </p>
-          )}
-        </div>
-
-        {/* Concept-query projection */}
-        <form onSubmit={handleConceptSubmit} className="relative">
-          <input
-            type="text"
-            value={conceptInput}
-            onChange={(e) => setConceptInput(e.target.value)}
-            placeholder="Project a phrase onto this axis…"
-            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
-            aria-label="Project a query onto this axis"
-            disabled={conceptLoading}
-          />
-          <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
-            {conceptQuery && (
-              <button
-                type="button"
-                onClick={clearConcept}
-                className="p-1 text-stone-400 hover:text-stone-700"
-                aria-label="Clear projection"
-              >
-                <X className="w-3.5 h-3.5" />
-              </button>
-            )}
-            <button
-              type="submit"
-              disabled={!conceptInput.trim() || conceptLoading}
-              className="px-2.5 py-1 text-xs font-medium bg-emerald-600 text-white rounded hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {conceptLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" /> : 'Project'}
-            </button>
-          </div>
-          {conceptError && (
-            <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-1.5">
-              {conceptError}
-            </p>
-          )}
-          {!conceptError && activeProjection && conceptQuery && (
-            <p className="text-xs text-stone-600 mt-1.5">
-              <span className="text-emerald-700 font-medium">●</span>{' '}
-              Query lands at <span className="font-mono tabular-nums">{activeProjection.position.toFixed(3)}</span>
-              {' '}({activeProjection.position >= 0 ? activeProjection.pole_a_label : activeProjection.pole_b_label} side)
-            </p>
-          )}
-          {!conceptQuery && !conceptLoading && (
-            <div className="text-xs text-stone-500 mt-1.5 flex flex-wrap items-baseline gap-1.5">
-              <span>Try:</span>
-              {[
-                'nonviolence as theology',
-                'Black Power as community defense',
-                'the role of women in SNCC',
-                'Mississippi Freedom Summer',
-              ].map((ex) => (
-                <button
-                  key={ex}
-                  type="button"
-                  onClick={() => runExample(ex)}
-                  className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 transition-colors"
-                >
-                  {ex}
-                </button>
-              ))}
-            </div>
-          )}
-        </form>
-      </div>
-
-      {/* Cross-axis summary: show where the same query lands on all 5
-          axes. The audience sees one embedding produce 5 different
-          positions, demonstrating "the same words sit differently on
-          different conceptual dimensions". */}
-      {conceptProjections && conceptProjections.length > 0 && conceptQuery && (
-        <div className="mt-4 mb-1 p-3 rounded-md border border-emerald-200 bg-emerald-50/50">
-          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
-            Query &ldquo;{conceptQuery}&rdquo; projected onto all 5 axes
-          </p>
-          <ul className="space-y-1.5">
-            {conceptProjections.map((proj, idx) => {
-              const isActive = proj.slug === axis.slug;
-              const rawN = proj.position_normalized;
-              const clampedN = Math.max(-1, Math.min(1, rawN));
-              const outOfRange = rawN < -1 || rawN > 1;
-              const beyondLeft = rawN < -1;
-              const leftPct = ((1 - clampedN) / 2) * 100;
-              const leaning = proj.position >= 0 ? proj.pole_a_label : proj.pole_b_label;
-              return (
-                <li key={proj.slug}>
-                  <button
-                    type="button"
-                    onClick={() => setActiveAxis(idx)}
-                    className={'w-full text-left flex items-center gap-3 px-2 py-1 rounded ' + (isActive ? 'bg-white' : 'hover:bg-white')}
-                  >
-                    <span className="text-xs text-stone-700 flex-shrink-0 w-44 truncate">{proj.title}</span>
-                    <span className="relative flex-1 h-2 rounded-full bg-stone-200 overflow-hidden">
-                      <span className="absolute top-0 bottom-0 w-px bg-stone-400" style={{ left: '50%' }} aria-hidden="true" />
-                      <span
-                        className="absolute top-0 bottom-0 w-2 rounded-full bg-emerald-600"
-                        style={{ left: `calc(${leftPct}% - 4px)` }}
-                        aria-hidden="true"
-                      />
-                      {outOfRange && (
-                        <span
-                          className="absolute top-1/2 -translate-y-1/2 text-emerald-700 text-[10px] leading-none"
-                          style={beyondLeft ? { left: '-10px' } : { right: '-10px' }}
-                          aria-hidden="true"
-                          title="Query projects beyond the observed corpus range on this axis"
-                        >
-                          {beyondLeft ? '◀' : '▶'}
-                        </span>
-                      )}
-                    </span>
-                    <span className="text-xs text-stone-600 flex-shrink-0 w-44 truncate text-right">
-                      {leaning}
-                      {outOfRange && (
-                        <span className="text-emerald-700 ml-1" title="More extreme than any voice in the corpus">★</span>
-                      )}
-                    </span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-          <p className="text-xs text-stone-500 mt-2">
-            Same 1,024-dim embedding, projected onto five different axes. Click any row to make it the active axis above.
-          </p>
-        </div>
-      )}
-
-      {/* Top retrieved passages for the same query, the projection
-          above is the geometric demo; this list is the actual RAG
-          payoff. The audience sees: query → projected position →
-          here are the voices that match it. Closes the demo loop. */}
-      {conceptResults && conceptResults.length > 0 && conceptQuery && (
-        <aside className="mt-4 p-4 rounded-md border border-emerald-200 bg-white">
-          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
-            Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
-          </p>
-          <p className="text-sm text-stone-600 mb-3">
-            The same query went through full semantic retrieval, Voyage embedding → Pinecone vector search → Voyage rerank → dedupe by interviewee. These are the voices the embedding space says match.
-          </p>
-          <ol className="space-y-3">
-            {conceptResults.map((payload) => (
-              <li key={payload.id}>
-                <CitationCard payload={payload} showFullText={false} />
-              </li>
-            ))}
-          </ol>
-        </aside>
-      )}
 
       <SpectrumTooltip hover={hover} selectedEntry={selected?.entry_number ?? null} />
 
