@@ -182,7 +182,10 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
   const innerW = W - PAD_L - PAD_R;
   const innerH = H - PAD_T - PAD_B;
 
-  const projectX = (x) => PAD_L + ((x + 1) / 2) * innerW;
+  // High position_normalized (+1) = closer to pole_a per the projection math
+  // (axisVec = normalize(eA - eB)). The labels show pole_a on the LEFT and on
+  // the TOP, so projectX maps +1 → left and projectY maps +1 → top to match.
+  const projectX = (x) => PAD_L + ((1 - x) / 2) * innerW;
   const projectY = (y) => PAD_T + ((1 - y) / 2) * innerH;
 
   const points = useMemo(() => {
@@ -342,8 +345,10 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
         {axes.map((ax) => {
           const pos = profile.positions[ax.slug];
           if (typeof pos !== 'number') return null;
-          // Map [-1, +1] to [0%, 100%].
-          const leftPct = ((pos + 1) / 2) * 100;
+          // Map [-1, +1] to [0%, 100%]. pos >= 0 means closer to pole_a per
+          // the projection math; labels put pole_a on the LEFT, so high
+          // position renders at the LEFT end of the bar.
+          const leftPct = ((1 - pos) / 2) * 100;
           return (
             <div key={ax.slug}>
               <div className="flex items-baseline justify-between text-xs text-stone-700 mb-0.5">
@@ -403,8 +408,12 @@ function FiveAxisRadar({ profile, axes }) {
   const spokes = axes.map((ax, i) => {
     const angle = -Math.PI / 2 + (i / n) * Math.PI * 2;
     const pos = profile.positions[ax.slug];
-    // Map [-1, +1] → [0, 1] radial fraction.
-    const r = typeof pos === 'number' ? rMax * ((pos + 1) / 2) : 0;
+    // Map [-1, +1] → [0, 1] radial fraction. High position (+1) = closer to
+    // pole_a per the projection math; here we put pole_a at the CENTER (r=0)
+    // and pole_b at the RIM (r=rMax) so the rim labels (pole_b) match the
+    // long-spoke direction. A long spoke = strong pole_b; short spoke =
+    // strong pole_a; baseline midring = neutral.
+    const r = typeof pos === 'number' ? rMax * ((1 - pos) / 2) : 0;
     return {
       ax,
       angle,
@@ -524,7 +533,8 @@ function StrongestAxisDrillDown({ profile, axes }) {
   useEffect(() => {
     if (!strongest) return undefined;
     let cancelled = false;
-    const pole = strongest.position >= 0 ? strongest.axis.pole_b : strongest.axis.pole_a;
+    // position >= 0 means closer to pole_a per the projection math.
+  const pole = strongest.position >= 0 ? strongest.axis.pole_a : strongest.axis.pole_b;
     setLoading(true);
     setError(null);
     setResults(null);
@@ -539,7 +549,8 @@ function StrongestAxisDrillDown({ profile, axes }) {
   }, [strongest, profile.entry_number]);
 
   if (!strongest) return null;
-  const pole = strongest.position >= 0 ? strongest.axis.pole_b : strongest.axis.pole_a;
+  // position >= 0 means closer to pole_a per the projection math.
+  const pole = strongest.position >= 0 ? strongest.axis.pole_a : strongest.axis.pole_b;
 
   return (
     <div className="mt-5 pt-4 border-t border-stone-200">
