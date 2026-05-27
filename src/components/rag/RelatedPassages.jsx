@@ -281,9 +281,13 @@ function RadialNetwork({ focal, related }) {
           </g>
         ))}
 
-        {/* Focal node (last so it paints on top of any edges) */}
+        {/* Focal node — central hub. The interviewee's name sits BELOW
+            the circle on the white SVG background (not inside the red
+            disc), so contrast is 14:1 (stone-900 on white) regardless
+            of system color-scheme. The original "near-white text on
+            brand red" was ~2.6:1, well below WCAG AA. */}
         <g>
-          <circle cx={cx} cy={cy} r={22} fill="#F2483C" stroke="#1c1917" strokeWidth={2} />
+          <circle cx={cx} cy={cy} r={20} fill="#F2483C" stroke="#1c1917" strokeWidth={2} />
           <text
             x={cx}
             y={cy + 4}
@@ -291,10 +295,31 @@ function RadialNetwork({ focal, related }) {
             fontWeight={700}
             fill="#fafaf9"
             textAnchor="middle"
+            paintOrder="stroke"
+            stroke="#7f1d1d"
+            strokeWidth={2}
+            strokeLinejoin="round"
+            fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+            style={{ pointerEvents: 'none' }}
+            aria-hidden="true"
+          >
+            ★
+          </text>
+          <text
+            x={cx}
+            y={cy + 38}
+            fontSize={13}
+            fontWeight={600}
+            fill="#1c1917"
+            textAnchor="middle"
+            paintOrder="stroke"
+            stroke="rgba(255,255,255,0.95)"
+            strokeWidth={3}
+            strokeLinejoin="round"
             fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
             style={{ pointerEvents: 'none' }}
           >
-            {focal.split(' ').slice(-1)[0]}
+            {focal}
           </text>
         </g>
 

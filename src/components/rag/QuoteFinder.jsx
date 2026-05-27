@@ -16,6 +16,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Quote, Loader2 } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
+import { TIER_VOCABULARY, TIER_COLORS } from './tiers';
 
 // Sample paraphrases for the QuoteFinder demo. Each one is a real
 // civil-rights-era quote (or its canonical paraphrase) that the
@@ -47,6 +48,11 @@ export default function QuoteFinder({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
+  // Audit-tier filter — same pattern as SemanticSearch and
+  // InterviewMap so the affordance is consistent across the site.
+  // Default: all 5 tiers visible. Filter applies client-side to the
+  // returned topN; the search is NOT re-issued when filters change.
+  const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));
   const abortRef = useRef(null);
 
   useEffect(() => () => abortRef.current?.abort(), []);
@@ -163,13 +169,68 @@ export default function QuoteFinder({
         </div>
       )}
 
-      <ol className="space-y-4">
-        {results.map((payload) => (
-          <li key={payload.id}>
-            <CitationCard payload={payload} showFullText={true} />
-          </li>
-        ))}
-      </ol>
+      {results.length > 0 && (
+        <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
+          <span className="text-stone-500">Audit tier:</span>
+          {TIER_VOCABULARY.map((tier) => {
+            const active = allowedTiers.has(tier);
+            return (
+              <label
+                key={tier}
+                className={
+                  'inline-flex items-center gap-1.5 px-2 py-1 rounded-full border cursor-pointer transition-opacity ' +
+                  (active ? 'border-stone-700 bg-white' : 'border-stone-200 bg-stone-50 opacity-50')
+                }
+              >
+                <input
+                  type="checkbox"
+                  checked={active}
+                  onChange={() => {
+                    const next = new Set(allowedTiers);
+                    if (active) next.delete(tier); else next.add(tier);
+                    setAllowedTiers(next);
+                  }}
+                  className="sr-only"
+                />
+                <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: TIER_COLORS[tier] }} aria-hidden="true" />
+                <span>{tier}</span>
+              </label>
+            );
+          })}
+          {allowedTiers.size < TIER_VOCABULARY.length && (
+            <button
+              type="button"
+              onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+              className="text-xs text-stone-500 hover:text-stone-900 underline ml-1"
+            >
+              show all
+            </button>
+          )}
+        </div>
+      )}
+
+      {(() => {
+        const filtered = allowedTiers.size === TIER_VOCABULARY.length
+          ? results
+          : results.filter((p) => allowedTiers.has(p.uncertaintyTier));
+        const hiddenCount = results.length - filtered.length;
+        return (
+          <>
+            {hiddenCount > 0 && (
+              <div className="mb-3 text-xs text-stone-500">
+                {hiddenCount} {hiddenCount === 1 ? 'result' : 'results'} hidden by tier filter
+              </div>
+            )}
+            <ol className="space-y-4">
+              {filtered.map((payload) => (
+                <li key={payload.id}>
+                  <CitationCard payload={payload} showFullText={true} />
+                </li>
+              ))}
+            </ol>
+          </>
+        );
+      })()}
 
       {!isLoading && !error && hasSearched && results.length === 0 && (
         <p className="text-stone-500 text-sm">
