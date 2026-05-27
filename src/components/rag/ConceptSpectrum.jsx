@@ -252,7 +252,10 @@ export default function ConceptSpectrum() {
         pole_a_label: ax.pole_a?.label,
         pole_b_label: ax.pole_b?.label,
         position: +dot.toFixed(4),
-        position_normalized: Math.max(-1.2, Math.min(1.2, position_normalized)),
+        // Pass the raw normalized projection through unclamped — the
+        // marker render clamps for display + draws an arrow for "beyond
+        // corpus range" instead of silently squashing the value.
+        position_normalized,
       });
     }
     return out;
@@ -384,7 +387,11 @@ export default function ConceptSpectrum() {
           <ul className="space-y-1.5">
             {conceptProjections.map((proj, idx) => {
               const isActive = proj.slug === axis.slug;
-              const leftPct = ((1 - Math.max(-1, Math.min(1, proj.position_normalized))) / 2) * 100;
+              const rawN = proj.position_normalized;
+              const clampedN = Math.max(-1, Math.min(1, rawN));
+              const outOfRange = rawN < -1 || rawN > 1;
+              const beyondLeft = rawN < -1;
+              const leftPct = ((1 - clampedN) / 2) * 100;
               const leaning = proj.position >= 0 ? proj.pole_a_label : proj.pole_b_label;
               return (
                 <li key={proj.slug}>
@@ -401,8 +408,23 @@ export default function ConceptSpectrum() {
                         style={{ left: `calc(${leftPct}% - 4px)` }}
                         aria-hidden="true"
                       />
+                      {outOfRange && (
+                        <span
+                          className="absolute top-1/2 -translate-y-1/2 text-emerald-700 text-[10px] leading-none"
+                          style={beyondLeft ? { left: '-10px' } : { right: '-10px' }}
+                          aria-hidden="true"
+                          title="Query projects beyond the observed corpus range on this axis"
+                        >
+                          {beyondLeft ? '◀' : '▶'}
+                        </span>
+                      )}
                     </span>
-                    <span className="text-xs text-stone-600 flex-shrink-0 w-44 truncate text-right">{leaning}</span>
+                    <span className="text-xs text-stone-600 flex-shrink-0 w-44 truncate text-right">
+                      {leaning}
+                      {outOfRange && (
+                        <span className="text-emerald-700 ml-1" title="More extreme than any voice in the corpus">★</span>
+                      )}
+                    </span>
                   </button>
                 </li>
               );
@@ -690,12 +712,15 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, concept
               this position is the user's typed query, NOT one of the
               136 interviewees. */}
           {conceptProjection && conceptQuery && (() => {
-            const clampedPos = Math.max(-1, Math.min(1, conceptProjection.position_normalized));
+            const rawPos = conceptProjection.position_normalized;
+            const clampedPos = Math.max(-1, Math.min(1, rawPos));
+            const outOfRange = rawPos < -1 || rawPos > 1;
+            const beyondLeft = rawPos < -1;
             const qx = xFor(clampedPos);
             const queryLabel = conceptQuery.length > 38 ? conceptQuery.slice(0, 36) + '…' : conceptQuery;
             const wantTextOnLeft = qx > W - 200;
             return (
-              <g aria-label={`Query "${conceptQuery}" projects to position ${conceptProjection.position.toFixed(3)} on this axis`}>
+              <g aria-label={`Query "${conceptQuery}" projects to position ${conceptProjection.position.toFixed(3)} on this axis${outOfRange ? ' (beyond corpus range)' : ''}`}>
                 <line
                   x1={qx} y1={TOP - 10}
                   x2={qx} y2={BOTTOM + 10}
@@ -705,6 +730,31 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, concept
                 />
                 {/* Pin head + label */}
                 <circle cx={qx} cy={TOP - 14} r={6} fill="#059669" stroke="#fff" strokeWidth={2} />
+                {/* Arrow pointing further out when query is beyond
+                    the corpus's observed range on this axis. */}
+                {outOfRange && (
+                  <g aria-hidden="true">
+                    <path
+                      d={beyondLeft
+                        ? `M ${qx - 14} ${(TOP + BOTTOM) / 2} l 10 -6 l 0 12 z`
+                        : `M ${qx + 14} ${(TOP + BOTTOM) / 2} l -10 -6 l 0 12 z`}
+                      fill="#059669"
+                    />
+                    <text
+                      x={beyondLeft ? qx - 28 : qx + 28}
+                      y={(TOP + BOTTOM) / 2 + 4}
+                      fontSize={10}
+                      fill="#065f46"
+                      fontStyle="italic"
+                      textAnchor={beyondLeft ? 'end' : 'start'}
+                      paintOrder="stroke"
+                      stroke="rgba(255,255,255,0.95)"
+                      strokeWidth={3}
+                    >
+                      beyond corpus range
+                    </text>
+                  </g>
+                )}
                 <text
                   x={wantTextOnLeft ? qx - 10 : qx + 10}
                   y={TOP - 18}
