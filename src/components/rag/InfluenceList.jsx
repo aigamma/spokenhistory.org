@@ -13,6 +13,8 @@
 import { useEffect, useState } from 'react';
 import { ExternalLink, GitBranch, List } from 'lucide-react';
 import InfluenceGraph from './InfluenceGraph';
+import { retrieve } from '../../services/ragClient';
+import CitationCard from './CitationCard';
 
 export default function InfluenceList() {
   const [data, setData] = useState(null);
@@ -115,6 +117,7 @@ export default function InfluenceList() {
                   LoC catalog entry
                 </a>
               )}
+              <InfluenceDrillDown node={selectedNode} />
             </aside>
           )}
         </>
@@ -173,6 +176,83 @@ export default function InfluenceList() {
             ))}
           </div>
         </>
+      )}
+    </div>
+  );
+}
+
+/**
+ * InfluenceDrillDown — when a node is selected (whether an in-corpus
+ * interviewee or an external figure like Ella Baker), run /retrieve
+ * with the person's name as the query and dedupeByEntry: true so the
+ * returned passages span multiple voices discussing them. Filter
+ * applies to the WHOLE corpus (no entry filter) because we want
+ * "who in the archive talks about Ella Baker" — by definition that's
+ * across-interviewee.
+ *
+ * For external figures, this surfaces the secondhand-as-primary-source
+ * pattern: Ella Baker has no oral history of her own here, but her
+ * influence shows up as quoted memory from people she organized.
+ *
+ * For in-corpus interviewees, this surfaces what their PEERS said
+ * about them — a different read than their own testimony.
+ */
+function InfluenceDrillDown({ node }) {
+  const [results, setResults] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!node?.name) return undefined;
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    setResults(null);
+    retrieve(node.name, { topN: 5, dedupeByEntry: true })
+      .then(({ results: r }) => {
+        if (cancelled) return;
+        // For in-corpus people, filter out the person's own interview —
+        // we want what OTHERS say about them, not their own testimony.
+        const filtered = node.in_corpus && node.entry_number != null
+          ? (r || []).filter((p) => p.entryNumber !== node.entry_number)
+          : (r || []);
+        setResults(filtered);
+      })
+      .catch((e) => { if (!cancelled) setError(e?.detail?.message || e?.message || 'Drill-down failed.'); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [node?.name, node?.entry_number, node?.in_corpus]);
+
+  return (
+    <div className="mt-4 pt-3 border-t border-stone-200">
+      <p className="text-xs text-civil-red-body font-mono uppercase tracking-wide mb-1">
+        Passages that mention {node.name}
+      </p>
+      <p className="text-sm text-stone-700 mb-3">
+        {node.in_corpus
+          ? <>Top passages from <strong>other</strong> interviewees that mention {node.name} (their own testimony excluded).</>
+          : <>Top passages where {node.name} is discussed — they have no interview of their own here; the archive&apos;s coverage of them is entirely secondhand.</>
+        }
+      </p>
+      {loading && <p className="text-sm text-stone-500" role="status">Searching the corpus…</p>}
+      {error && (
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+          {error}
+        </p>
+      )}
+      {results && results.length === 0 && !loading && !error && (
+        <p className="text-sm text-stone-500">
+          No passages mention them by name with strong-enough alignment to surface.
+        </p>
+      )}
+      {results && results.length > 0 && (
+        <ol className="space-y-3">
+          {results.map((payload) => (
+            <li key={payload.id}>
+              <CitationCard payload={payload} showFullText={false} />
+            </li>
+          ))}
+        </ol>
       )}
     </div>
   );
