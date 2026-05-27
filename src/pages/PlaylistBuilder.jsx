@@ -688,7 +688,7 @@ const PlaylistBuilder = () => {
                      <button
                        type="button"
                        key={index}
-                       className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-red-500 hover:outline-red-500 transition-colors duration-200 group bg-transparent"
+                       className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-civil-red-strong hover:outline-civil-red-strong transition-colors duration-200 group bg-transparent"
                        onClick={() => navigate(`?keywords=${encodeURIComponent(tag)}`)}
                        aria-label={`Filter playlist to topic ${tag}`}
                      >
