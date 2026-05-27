@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Copy, Check } from 'lucide-react';
 
 function dayOfYear() {
   const now = new Date();
@@ -47,15 +47,18 @@ export default function QuoteOfTheDay({ allowCycle = true }) {
         >
           {q.headline || q.entry_subject}
         </h3>
-        {allowCycle && (
-          <button
-            type="button"
-            onClick={() => setOffset((o) => o + 1)}
-            className="flex-shrink-0 text-xs text-stone-500 hover:text-stone-900"
-          >
-            Next →
-          </button>
-        )}
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <CopyCitationButton quote={q} />
+          {allowCycle && (
+            <button
+              type="button"
+              onClick={() => setOffset((o) => o + 1)}
+              className="text-xs text-stone-500 hover:text-stone-900"
+            >
+              Next →
+            </button>
+          )}
+        </div>
       </header>
       <blockquote className="border-l-4 border-red-700 pl-4 py-1 mb-3 text-stone-800 italic" style={{ fontFamily: 'Source Serif 4, serif' }}>
         &ldquo;{q.quote}&rdquo;
@@ -73,5 +76,47 @@ export default function QuoteOfTheDay({ allowCycle = true }) {
         )}
       </footer>
     </aside>
+  );
+}
+
+/**
+ * CopyCitationButton — copies the quote + speaker + LoC URL to the
+ * clipboard as a single formatted block. Educators and researchers
+ * lifting the quote into their own work get attribution for free.
+ *
+ * Format:
+ *   "{quote}"
+ *   — {entry_subject}, Civil Rights History Project.
+ *   {loc_item_url}
+ */
+function CopyCitationButton({ quote }) {
+  const [copied, setCopied] = useState(false);
+  const handleClick = async () => {
+    const parts = [
+      `“${quote.quote}”`,
+      `— ${quote.entry_subject}, Civil Rights History Project.`,
+    ];
+    if (quote.context) parts.push(quote.context);
+    if (quote.loc_item_url) parts.push(quote.loc_item_url);
+    const text = parts.join('\n');
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch (e) {
+      console.error('[QuoteOfTheDay] clipboard write failed:', e);
+    }
+  };
+  const Icon = copied ? Check : Copy;
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      className="inline-flex items-center gap-1 text-xs text-stone-500 hover:text-stone-900 px-2 py-1 rounded border border-transparent hover:border-stone-300 transition-colors"
+      aria-label={copied ? 'Citation copied to clipboard' : 'Copy quote with citation'}
+    >
+      <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+      {copied ? 'Copied' : 'Copy citation'}
+    </button>
   );
 }
