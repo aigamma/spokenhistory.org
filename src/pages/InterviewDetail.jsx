@@ -247,7 +247,7 @@ export default function InterviewDetail() {
         {entry.neighbors && entry.neighbors.length > 0 && (
           <section className="mb-10">
             <h2 className="text-stone-900 text-xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Voices in conversation
+              Semantic Overlap
             </h2>
             <p className="text-sm text-stone-600 mb-4 max-w-2xl">
               These interviewees discuss thematically related material — surfaced by embedding-space proximity (cosine similarity over 1024-dim Voyage-3 vectors).

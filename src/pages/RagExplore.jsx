@@ -121,7 +121,7 @@ const TAB_ORDER = [
   { id: 'lenses', label: 'Concept lenses', featured: true },
   { id: 'nomic', label: 'Passage map', featured: true },
   { id: 'map', label: 'Interview map' },
-  { id: 'related', label: 'Voices in conversation' },
+  { id: 'related', label: 'Semantic Overlap' },
   { id: 'search', label: 'Semantic search' },
   { id: 'quote', label: 'Quote-finder' },
   { id: 'themes', label: 'Themes' },
@@ -143,7 +143,7 @@ const TAB_LABELS = {
   quote: 'Quote-finder',
   spectrum: 'Spectrum', // retained for back-compat; resolves to lenses now
   map: 'Interview map',
-  related: 'Voices in conversation',
+  related: 'Semantic Overlap',
   themes: 'Themes',
   names: 'Famous names',
   atlas: 'Atlas',
@@ -339,7 +339,7 @@ export default function RagExplore() {
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Voices in conversation
+                Semantic Overlap
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 For each interview, we precompute which other interviewees in the corpus discuss

@@ -35,7 +35,7 @@ const NAV_ROUTES = [
     defaultTab: true,
   },
   {
-    label: 'Voices in conversation',
+    label: 'Semantic Overlap',
     to: '/rag-explore?tab=related',
     bg: 'bg-sky-700 hover:bg-sky-800',
     matchPath: '/rag-explore',
@@ -71,7 +71,7 @@ const MENU_ROUTES = [
     defaultTab: true,
   },
   {
-    label: 'Voices in conversation',
+    label: 'Semantic Overlap',
     to: '/rag-explore?tab=related',
     matchPath: '/rag-explore',
     matchTab: 'related',
