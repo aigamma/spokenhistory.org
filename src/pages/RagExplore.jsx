@@ -14,6 +14,7 @@ import {
   InfluenceList,
   QuoteOfTheDay,
   TourPages,
+  NomicProjection,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
@@ -76,6 +77,7 @@ const TABS = [
   'search', 'quote', 'map', 'related',
   'events', 'spectrum', 'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
+  'nomic',
 ];
 
 // Entries to surface in the "related" demo tab. Each one is a
@@ -99,6 +101,7 @@ const VALID_TAB = (t) => (TABS.includes(t) ? t : DEFAULT_TAB);
 // Display order for the pill nav. Featured demos (★) come first,
 // then the visualizations, then text-input demos, then secondary tabs.
 const TAB_ORDER = [
+  { id: 'nomic', label: 'Passage map', featured: true },
   { id: 'spectrum', label: 'Concept axes', featured: true },
   { id: 'events', label: 'Polyphonic events', featured: true },
   { id: 'map', label: 'Constellation' },
@@ -118,6 +121,7 @@ const TAB_ORDER = [
 // demos) and for the in-page section heading. Keep in sync with the
 // tab buttons in <nav> below.
 const TAB_LABELS = {
+  nomic: 'Passage map',
   search: 'Semantic search',
   quote: 'Quote-finder',
   events: 'Polyphonic events',
@@ -345,6 +349,22 @@ export default function RagExplore() {
                 Polyphonic event pages
               </h2>
               <PolyphonicEvents />
+            </div>
+          )}
+
+          {tab === 'nomic' && (
+            <div>
+              <h2 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Passage map (UMAP via Nomic Atlas)
+              </h2>
+              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
+                Every 5-15 second passage in the archive plotted at its UMAP
+                position. Passages near each other share thematic content even
+                when their speakers never met. Topic labels are auto-generated
+                from passage text. Atlas computes the projection; everything
+                you see here is rendered by custom React + canvas in this app.
+              </p>
+              <NomicProjection />
             </div>
           )}
 

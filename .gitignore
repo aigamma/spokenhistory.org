@@ -69,3 +69,6 @@ rag/.env
 public/rag/summaries/_batches/
 public/rag/summaries/_entry_list.json
 public/rag/summaries/capsules_batch_*.json
+
+# Local-only scratch (Pinecone dumps, intermediate uploads, etc.)
+tmp/
