@@ -346,10 +346,15 @@ async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespac
         );
       }
     }
-    // Sort summary entries by count desc, take top 8
+    // Sort summary entries by count desc, take top 16.
+    // Bumped from 8 → 16 on 2026-05-27: the Semantic Overlap surface
+    // showed 6-8 voices and felt like a carousel; users want enough
+    // related entries to actually browse. The radial network in the
+    // UI still renders the top 8 (visually cleaner); the list view
+    // below it shows all 16.
     out.related_entry_summary = Object.entries(out.related_entry_summary)
       .sort((a, b) => b[1].count - a[1].count)
-      .slice(0, 8)
+      .slice(0, 16)
       .reduce((acc, [k, v]) => ({ ...acc, [k]: v }), {});
 
     const outPath = join(OUT_RELATED_DIR, `entry-${n}.json`);

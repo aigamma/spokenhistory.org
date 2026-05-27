@@ -155,16 +155,21 @@ export default function RelatedPassages({
     return null;
   }
 
+  // The radial network is most legible with ≤8 spokes (label collisions
+  // get bad past that). The list below shows the full set so users get
+  // both the structural overview AND the long tail.
+  const networkSlice = entries.slice(0, 8);
+
   return (
     <aside className={`rag-related-entries ${className}`}>
       <Header>Related interviewees</Header>
       <p className="text-sm text-stone-600 mb-4">
         These voices in the corpus discuss themes that overlap semantically with{' '}
         <strong>{data.entry_subject}</strong>&apos;s testimony, even when the interviews
-        never reference each other. Edge thickness in the graph below is how
-        many passages overlap; the list further down has exact counts.
+        never reference each other. The radial graph shows the top {networkSlice.length} closest by
+        passage-overlap count; the list below extends to all {entries.length}.
       </p>
-      <RadialNetwork focal={data.entry_subject} related={entries} />
+      <RadialNetwork focal={data.entry_subject} related={networkSlice} />
       <ul className="space-y-2 mt-4">
         {entries.map((e) => (
           <li

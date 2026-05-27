@@ -372,7 +372,7 @@ export default function RagExplore() {
                 </select>
               </label>
               <div className="mt-6">
-                <RelatedPassages entryNumber={relatedEntry} mode="entries" limit={8} />
+                <RelatedPassages entryNumber={relatedEntry} mode="entries" limit={16} />
               </div>
             </div>
           )}
