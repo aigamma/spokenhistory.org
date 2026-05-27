@@ -510,10 +510,7 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
           <p className="font-medium text-stone-900 mb-1">Most {axis.pole_a.label.toLowerCase()}:</p>
           <ol className="list-decimal list-inside text-stone-700 space-y-0.5">
             {axis.positions.slice(0, 5).map((p) => (
-              <li key={p.entry_number}>
-                <span className="font-medium">{p.entry_subject}</span>{' '}
-                <span className="text-xs text-stone-500 tabular-nums">({p.position.toFixed(3)})</span>
-              </li>
+              <LeaderboardEntry key={p.entry_number} p={p} onSelect={onSelect} isSelected={selectedEntry === p.entry_number} />
             ))}
           </ol>
         </div>
@@ -521,14 +518,35 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
           <p className="font-medium text-stone-900 mb-1">Most {axis.pole_b.label.toLowerCase()}:</p>
           <ol className="list-decimal list-inside text-stone-700 space-y-0.5">
             {axis.positions.slice(-5).reverse().map((p) => (
-              <li key={p.entry_number}>
-                <span className="font-medium">{p.entry_subject}</span>{' '}
-                <span className="text-xs text-stone-500 tabular-nums">({p.position.toFixed(3)})</span>
-              </li>
+              <LeaderboardEntry key={p.entry_number} p={p} onSelect={onSelect} isSelected={selectedEntry === p.entry_number} />
             ))}
           </ol>
         </div>
       </div>
     </article>
+  );
+}
+
+/**
+ * LeaderboardEntry — a clickable name in the "Most {pole}" lists
+ * under the Spectrum chart. Clicking triggers the same drill-down
+ * as clicking the dot itself, so users can drill from the easier-
+ * to-read leaderboard without hunting the scatter for the dot.
+ */
+function LeaderboardEntry({ p, onSelect, isSelected }) {
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={() => onSelect(p)}
+        className={
+          'inline text-left hover:text-civil-red-body transition-colors ' +
+          (isSelected ? 'text-civil-red-body font-semibold' : 'text-stone-700')
+        }
+      >
+        <span className="font-medium">{p.entry_subject}</span>{' '}
+        <span className="text-xs text-stone-500 tabular-nums">({p.position.toFixed(3)})</span>
+      </button>
+    </li>
   );
 }
