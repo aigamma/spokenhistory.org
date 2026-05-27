@@ -113,6 +113,7 @@ export default function PassageMap() {
         p.uncertainty_tier || '',
         p.loc_item_url || '',
         typeof p.entry_number === 'number' ? p.entry_number : null,
+        p.topic_narrow || '',
       ];
       if (p.x < xMin) xMin = p.x;
       if (p.x > xMax) xMax = p.x;
@@ -218,7 +219,8 @@ export default function PassageMap() {
     },
     hovertemplate:
       '<b>%{customdata[0]}</b><br>' +
-      '<span style="color:#a8a29e">topic:</span> %{customdata[1]}<br>' +
+      '<span style="color:#a8a29e">region:</span> %{customdata[1]}<br>' +
+      '<span style="color:#a8a29e">sub-theme:</span> %{customdata[6]}<br>' +
       '<span style="color:#a8a29e">audit tier:</span> %{customdata[3]}<br>' +
       '<extra></extra>',
     name: 'Passages',
@@ -228,6 +230,14 @@ export default function PassageMap() {
     autosize: true,
     height: 620,
     margin: { l: 56, r: 90, t: 16, b: 60 },
+    // Intentionally NO topic-centroid annotations over the 15K-dot
+    // cloud. Labels floating over a dense scatter (Nomic's default
+    // pattern) don't visually link to "their" dots — the user can't
+    // tell which color cluster a label belongs to without staring.
+    // The side legend handles topic→color mapping with a clean
+    // swatch+name list; the hover gives per-dot topic. Adding
+    // floating labels here would replicate exactly the failure mode
+    // we're trying to avoid.
     paper_bgcolor: '#EBEAE9',
     plot_bgcolor: '#1c1917',
     font: {

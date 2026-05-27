@@ -232,15 +232,22 @@ def main() -> int:
     x_col, y_col = find_xy_columns(df)
 
     # Topic columns vary by SDK version. Hierarchical topic models
-    # expose `topic_depth_1` (broader category, ~10-15 topics) and
-    # `topic_depth_2` (narrower, ~25-40 topics). Prefer the narrower
-    # for richer color coding but the broader gives cleaner legend.
+    # expose `topic_depth_1` (broader category — 8 broad clusters in
+    # the civil-rights dataset) and `topic_depth_2` (narrower — 256
+    # micro-topics). The broad version legends much more cleanly and
+    # is preferred for the headline color encoding. We also surface
+    # both depths in the output so the client can switch later.
     topic_col = None
-    for c in ("topic_depth_2", "topic_depth_1", "topic_label", "topic", "_topic_label", "_topic", "topic_id"):
+    for c in ("topic_depth_1", "topic_depth_2", "topic_label", "topic", "_topic_label", "_topic", "topic_id"):
         if c in df.columns:
             topic_col = c
             break
+    secondary_topic_col = None
+    if topic_col == "topic_depth_1" and "topic_depth_2" in df.columns:
+        secondary_topic_col = "topic_depth_2"
     print(f"  using topic column: {topic_col}")
+    if secondary_topic_col:
+        print(f"  (also surfacing {secondary_topic_col} as `topic_narrow`)")
 
     # Per-row trimming to keep the client-side JSON small. The
     # full Atlas data export carries fields the React component does
@@ -291,9 +298,13 @@ def main() -> int:
             else:
                 rec["text_preview"] = text
 
-        # Topic label.
+        # Topic label (broad / depth_1 — used for color legend).
         if topic_col and row[topic_col] is not None and not (isinstance(row[topic_col], float) and math.isnan(row[topic_col])):
             rec["topic"] = row[topic_col]
+        # Narrow topic (depth_2) — surfaced for hover detail since it
+        # adds specificity without crowding the color legend.
+        if secondary_topic_col and row[secondary_topic_col] is not None and not (isinstance(row[secondary_topic_col], float) and math.isnan(row[secondary_topic_col])):
+            rec["topic_narrow"] = row[secondary_topic_col]
         points.append(rec)
 
     # Roll up topics into a compact summary too.
