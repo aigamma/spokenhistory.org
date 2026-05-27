@@ -37,6 +37,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Search as SearchIcon, X, ExternalLink } from 'lucide-react';
 import { TIER_COLORS, TIER_BADGE, TIER_VOCABULARY } from './tiers';
+import { retrieve } from '../../services/ragClient';
+import CitationCard from './CitationCard';
 
 const W = 880;
 const H = 620;
@@ -361,16 +363,91 @@ export default function InterviewMap() {
                 Dominant region: <span className="font-medium">{focus.primary_topic}</span>
               </p>
             )}
+            {/* When the user clicks (not just hovers), drill into the
+                top passages this interview contributes to their
+                primary topic. Only on click — hovering through 136
+                dots shouldn't trigger 136 /retrieve calls. */}
+            {selected === focusEntry && <InterviewMapDrillDown entry={focus} />}
           </aside>
         );
       })()}
 
-      <footer className="text-xs text-stone-500 border-t border-stone-200 pt-3 mt-5 max-w-3xl">
-        Substrate: <code className="font-mono">public/rag/atlas_projection.json</code> (UMAP
-        from Nomic Atlas). The same projection that drives the Passage map; this view
+      <InterviewMapFooter />
+    </div>
+  );
+}
+
+// Footer extracted so the JSX is symmetrical with the drill-down
+// component below — easier to read than nesting them inline.
+function InterviewMapFooter() {
+  return (
+    <footer className="text-xs text-stone-500 border-t border-stone-200 pt-3 mt-5 max-w-3xl">
+      Substrate: <code className="font-mono">public/rag/atlas_projection.json</code> (UMAP
+        from Nomic Atlas). The same projection that drives the InterviewMap; this view
         aggregates to interview-scale. Axis labels are computed live from the data — the
         topic that dominates each pole&apos;s top-15 interviewees.
-      </footer>
+    </footer>
+  );
+}
+
+function InterviewMapDrillDown({ entry }) {
+  const [results, setResults] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const query = entry.primary_topic;
+
+  useEffect(() => {
+    if (!query) return undefined;
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
+    setResults(null);
+    retrieve(query, {
+      topN: 5,
+      filter: { entry_number: { $eq: entry.entry_number } },
+    })
+      .then(({ results: r }) => { if (!cancelled) setResults(r || []); })
+      .catch((e) => { if (!cancelled) setError(e?.detail?.message || e?.message || 'Drill-down failed.'); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [entry.entry_number, query]);
+
+  if (!query) {
+    return (
+      <p className="mt-3 text-xs text-stone-500">
+        No dominant topic for this entry — drill-down requires a topic anchor.
+      </p>
+    );
+  }
+
+  return (
+    <div className="mt-4 pt-3 border-t border-stone-200">
+      <p className="text-xs text-civil-red-body font-mono uppercase tracking-wide mb-1">
+        Retrieval drill-down
+      </p>
+      <p className="text-sm text-stone-700 mb-3">
+        Top passages from this interview most aligned with{' '}
+        <strong className="text-civil-red-body">{query.toLowerCase()}</strong> —
+        the region that anchors them on this map.
+      </p>
+      {loading && <p className="text-sm text-stone-500" role="status">Searching their passages…</p>}
+      {error && (
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+          {error}
+        </p>
+      )}
+      {results && results.length === 0 && !loading && !error && (
+        <p className="text-sm text-stone-500">No passages found for this entry.</p>
+      )}
+      {results && results.length > 0 && (
+        <ol className="space-y-3">
+          {results.map((payload) => (
+            <li key={payload.id}>
+              <CitationCard payload={payload} showFullText={false} />
+            </li>
+          ))}
+        </ol>
+      )}
     </div>
   );
 }
