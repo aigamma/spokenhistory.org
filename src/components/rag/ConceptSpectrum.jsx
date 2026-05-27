@@ -211,6 +211,11 @@ export default function ConceptSpectrum() {
         matched={matched}
       />
 
+      <p className="mt-2 mb-3 text-xs text-stone-500 italic">
+        Only the horizontal position on the axis line means anything —
+        vertical scatter is decorative, to keep overlapping dots distinguishable.
+      </p>
+
       {/* Search box for finding a specific voice in the 136-dot
           scatter. Sits right under the chart. Matches dim non-matches
           to ~20% opacity and label-tag any matches with their name
@@ -507,11 +512,15 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
               is sorted ascending by position; first = leftmost
               (most pole_a), last = rightmost (most pole_b). */}
           {(() => null)()}
-          {/* Dots */}
+          {/* Dots. Vertical jitter is decorative — it spreads
+              overlapping dots apart so the user can hover individual
+              ones in the dense middle of the axis. The y-position
+              carries NO meaning. Reduced from ±50 → ±36 to keep dots
+              visually anchored to the axis line. */}
           {axis.positions.map((p, idx) => {
             const cx = xFor(p.position_normalized);
             const jitterSeed = (p.entry_number * 2654435761) >>> 0;
-            const jitter = ((jitterSeed % 100) / 100 - 0.5) * 100;
+            const jitter = ((jitterSeed % 100) / 100 - 0.5) * 72;
             const cy = (TOP + BOTTOM) / 2 + jitter;
             const color = TIER_COLORS[p.tier] || '#b91c1c';
             const isHover = hover?.p?.entry_number === p.entry_number;
