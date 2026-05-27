@@ -186,10 +186,10 @@ export default function Constellation({
         )}
       </svg>
       <figcaption className="text-xs text-stone-500 mt-2 max-w-xl">
-        Each dot is one of {projected.length} oral history interviews, positioned by 2D PCA
-        projection of its embedding-space centroid. Dots that sit close to each other share
-        thematic territory even when the speakers never met. Hover for the interviewee&apos;s
-        name; click to open the interview page.
+        {projected.length} interviews shown. The axes don&apos;t represent any
+        specific quantity — only distance between dots is meaningful, and a
+        shorter distance means the AI judges the two interviews as covering
+        more similar content. Hover for a name; click to see similar interviews.
       </figcaption>
       <div className="flex flex-wrap gap-3 mt-3 text-xs text-stone-700" aria-label="Audit fidelity legend">
         <span className="font-medium text-stone-900">Audit tier:</span>

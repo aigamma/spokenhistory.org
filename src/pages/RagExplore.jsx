@@ -275,14 +275,16 @@ export default function RagExplore() {
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Embedding-space map
+                Constellation of 136 interviews
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                A 2D projection of all 136 interview centroids via PCA on their average chunk
-                embeddings. The layout is dependency-free and approximate — UMAP would give a
-                richer view — but it&apos;s already enough to show thematic clustering: hover a
-                dot to see whose voice lives there. <strong>Click a dot</strong> to see which
-                other interviews share its thematic territory.
+                Each dot is one interview. The AI places two dots close together when it judges
+                the two interviews cover similar things, and far apart when it judges them
+                different — even when the speakers never met. The x and y axes themselves
+                don&apos;t measure anything specific; think of it as a map where only distance
+                matters, not direction. Larger dots are longer interviews; color shows our
+                audit-confidence tier. <strong>Hover</strong> for a name, <strong>click</strong>
+                {' '}to see the other interviews most like it.
               </p>
               <Constellation
                 width={720}
