@@ -161,9 +161,11 @@ export default function RelatedPassages({
       <p className="text-sm text-stone-600 mb-4">
         These voices in the corpus discuss themes that overlap semantically with{' '}
         <strong>{data.entry_subject}</strong>&apos;s testimony, even when the interviews
-        never reference each other.
+        never reference each other. Edge thickness in the graph below is how
+        many passages overlap; the list further down has exact counts.
       </p>
-      <ul className="space-y-2">
+      <RadialNetwork focal={data.entry_subject} related={entries} />
+      <ul className="space-y-2 mt-4">
         {entries.map((e) => (
           <li
             key={e.entry_number}
@@ -180,6 +182,139 @@ export default function RelatedPassages({
         ))}
       </ul>
     </aside>
+  );
+}
+
+/**
+ * RadialNetwork — small SVG showing the focal interviewee at center
+ * with related voices arranged on a circle around it. Edges weighted
+ * by passage-overlap count. Pure SVG; no library.
+ *
+ * The radial layout is the right choice here because the focal voice
+ * is the privileged node — this isn't a peer graph, it's "voices in
+ * conversation with X." Center-at-X makes that semantic explicit.
+ */
+function RadialNetwork({ focal, related }) {
+  const W = 520;
+  const H = 360;
+  const cx = W / 2;
+  const cy = H / 2;
+  const R = Math.min(W, H) * 0.36;
+  const [hoverIdx, setHoverIdx] = useState(-1);
+
+  if (!related?.length) return null;
+  const maxCount = Math.max(...related.map((r) => r.count || 1));
+
+  // Distribute related nodes evenly around the circle.
+  const nodes = related.map((r, i) => {
+    const angle = (i / related.length) * Math.PI * 2 - Math.PI / 2; // start at top
+    const x = cx + R * Math.cos(angle);
+    const y = cy + R * Math.sin(angle);
+    // Edge weight: sqrt to compress the range so a 475-count edge
+    // isn't 5× the width of a 100-count edge.
+    const weight = Math.sqrt(r.count || 1) / Math.sqrt(maxCount);
+    return { ...r, x, y, angle, weight };
+  });
+
+  return (
+    <div className="rounded-lg border border-stone-200 bg-white overflow-hidden">
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        width="100%"
+        role="img"
+        aria-label={`Radial network: ${focal} at center, with ${related.length} related interviewees arrayed around them, edge thickness by passage overlap count.`}
+        style={{ display: 'block' }}
+      >
+        {/* Edges */}
+        {nodes.map((n, i) => (
+          <line
+            key={`edge-${i}`}
+            x1={cx}
+            y1={cy}
+            x2={n.x}
+            y2={n.y}
+            stroke={hoverIdx === i ? '#B23E2F' : '#a8a29e'}
+            strokeWidth={2 + n.weight * 6}
+            strokeOpacity={hoverIdx === -1 || hoverIdx === i ? 0.85 : 0.25}
+          />
+        ))}
+
+        {/* Outer nodes */}
+        {nodes.map((n, i) => (
+          <g
+            key={`node-${i}`}
+            onMouseEnter={() => setHoverIdx(i)}
+            onMouseLeave={() => setHoverIdx(-1)}
+            onFocus={() => setHoverIdx(i)}
+            onBlur={() => setHoverIdx(-1)}
+            tabIndex={0}
+            style={{ cursor: 'pointer', outline: 'none' }}
+            role="button"
+            aria-label={`${n.entry_subject}: ${n.count} overlapping passages`}
+          >
+            <circle
+              cx={n.x}
+              cy={n.y}
+              r={hoverIdx === i ? 11 : 8}
+              fill={hoverIdx === i ? '#F2483C' : '#78716c'}
+              stroke="#1c1917"
+              strokeWidth={1.2}
+              opacity={hoverIdx === -1 || hoverIdx === i ? 1 : 0.5}
+            />
+            <text
+              x={n.x + (n.angle > -Math.PI / 2 && n.angle < Math.PI / 2 ? 16 : -16)}
+              y={n.y + 4}
+              fontSize={11}
+              fontWeight={hoverIdx === i ? 600 : 500}
+              fill="#1c1917"
+              textAnchor={n.angle > -Math.PI / 2 && n.angle < Math.PI / 2 ? 'start' : 'end'}
+              paintOrder="stroke"
+              stroke="rgba(255,255,255,0.95)"
+              strokeWidth={3}
+              strokeLinejoin="round"
+              fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+              style={{ pointerEvents: 'none' }}
+              opacity={hoverIdx === -1 || hoverIdx === i ? 1 : 0.4}
+            >
+              {n.entry_subject}
+            </text>
+          </g>
+        ))}
+
+        {/* Focal node (last so it paints on top of any edges) */}
+        <g>
+          <circle cx={cx} cy={cy} r={22} fill="#F2483C" stroke="#1c1917" strokeWidth={2} />
+          <text
+            x={cx}
+            y={cy + 4}
+            fontSize={11}
+            fontWeight={700}
+            fill="#fafaf9"
+            textAnchor="middle"
+            fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+            style={{ pointerEvents: 'none' }}
+          >
+            {focal.split(' ').slice(-1)[0]}
+          </text>
+        </g>
+
+        {/* Hover detail strip in the bottom */}
+        {hoverIdx >= 0 && (
+          <g>
+            <rect x={12} y={H - 38} width={W - 24} height={28} rx={4} fill="#1c1917" opacity={0.92} />
+            <text
+              x={20}
+              y={H - 20}
+              fontSize={12}
+              fill="#fafaf9"
+              fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+            >
+              {nodes[hoverIdx].entry_subject} — {nodes[hoverIdx].count} overlapping passages · top similarity {(nodes[hoverIdx].top_score || 0).toFixed(3)}
+            </text>
+          </g>
+        )}
+      </svg>
+    </div>
   );
 }
 
