@@ -704,20 +704,19 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
 
 function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
   const W = 880;
-  const H = 820;
+  const H = 380;
   // Generous horizontal padding so the extreme dots on either end have
   // visual breathing room and never clip against the chart frame's
   // rounded corners or border.
   const PAD_X = 40;
-  // Pole labels sit at the very top corners of the chart so the axis
-  // extremes never compete with the dot scatter. AXIS_Y is dropped close
-  // to the middle of the frame and JITTER_HALF is large so the 136
-  // interview dots fan out across roughly 80% of the chart height,
-  // making every dot individually clickable instead of stacking on top
-  // of each other along the axis line.
-  const POLE_Y = 26;
-  const AXIS_Y = 420;
-  const JITTER_HALF = 320;
+  // Pole labels sit at the top corners of the chart so the axis
+  // extremes don't compete with the dot scatter. JITTER_HALF is sized
+  // so the 136 interview dots fan out across most of the chart's
+  // vertical space, making every dot individually clickable instead
+  // of clustering along the axis line.
+  const POLE_Y = 24;
+  const AXIS_Y = 210;
+  const JITTER_HALF = 130;
 
   // High position_normalized (+1) = closer to pole_a per the projection math
   // (axisVec = normalize(eA - eB)). Flip the visual axis so pole_a renders on
