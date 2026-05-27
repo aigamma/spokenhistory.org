@@ -33,6 +33,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { TIER_COLORS, TIER_BADGE } from './tiers';
+import { retrieve } from '../../services/ragClient';
+import CitationCard from './CitationCard';
 
 // Strategic pair selection — five axes give ten possible pairs; we
 // surface four that read as distinct conceptual quadrants of the
@@ -345,6 +347,99 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
           );
         })}
       </div>
+
+      {locked && <StrongestAxisDrillDown profile={profile} axes={axes} />}
     </aside>
+  );
+}
+
+/**
+ * StrongestAxisDrillDown — when a voice is locked, identify their
+ * highest-magnitude axis position (the "most defining" concept
+ * dimension for them in the matrix), then retrieve the top passages
+ * from THAT interview most aligned with the pole they lean toward.
+ *
+ * Mirrors the Spectrum drill-down pattern but auto-picks the axis
+ * instead of asking the user to choose — the ConceptMatrix view is
+ * already presenting all 5 axes simultaneously, so we use the
+ * stand-out one as the query anchor.
+ */
+function StrongestAxisDrillDown({ profile, axes }) {
+  const [results, setResults] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  // Pick the axis with the largest absolute position — the dimension
+  // where this voice is most distinctive within the corpus.
+  const strongest = useMemo(() => {
+    let bestAxis = null;
+    let bestMag = -Infinity;
+    for (const ax of axes) {
+      const pos = profile.positions[ax.slug];
+      if (typeof pos !== 'number') continue;
+      if (Math.abs(pos) > bestMag) {
+        bestMag = Math.abs(pos);
+        bestAxis = { axis: ax, position: pos };
+      }
+    }
+    return bestAxis;
+  }, [axes, profile]);
+
+  useEffect(() => {
+    if (!strongest) return undefined;
+    let cancelled = false;
+    const pole = strongest.position >= 0 ? strongest.axis.pole_b : strongest.axis.pole_a;
+    setLoading(true);
+    setError(null);
+    setResults(null);
+    retrieve(pole.anchor, {
+      topN: 5,
+      filter: { entry_number: { $eq: profile.entry_number } },
+    })
+      .then(({ results: r }) => { if (!cancelled) setResults(r || []); })
+      .catch((e) => { if (!cancelled) setError(e?.detail?.message || e?.message || 'Drill-down failed.'); })
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
+  }, [strongest, profile.entry_number]);
+
+  if (!strongest) return null;
+  const pole = strongest.position >= 0 ? strongest.axis.pole_b : strongest.axis.pole_a;
+
+  return (
+    <div className="mt-5 pt-4 border-t border-stone-200">
+      <p className="text-xs text-civil-red-body font-mono uppercase tracking-wide mb-1">
+        Retrieval drill-down
+      </p>
+      <p className="text-sm text-stone-700 mb-3">
+        The strongest dimension for {profile.entry_subject} is{' '}
+        <strong>{strongest.axis.title}</strong> (position{' '}
+        <span className="tabular-nums">{strongest.position.toFixed(2)}</span>).
+        Top passages from this interview most aligned with{' '}
+        <strong className="text-civil-red-body">{pole.label.toLowerCase()}</strong>:
+      </p>
+
+      {loading && (
+        <p className="text-sm text-stone-500" role="status">Searching their passages…</p>
+      )}
+      {error && (
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+          {error}
+        </p>
+      )}
+      {results && results.length === 0 && !loading && !error && (
+        <p className="text-sm text-stone-500">
+          No passages indexed for this interview yet.
+        </p>
+      )}
+      {results && results.length > 0 && (
+        <ol className="space-y-3">
+          {results.map((payload) => (
+            <li key={payload.id}>
+              <CitationCard payload={payload} showFullText={false} />
+            </li>
+          ))}
+        </ol>
+      )}
+    </div>
   );
 }
