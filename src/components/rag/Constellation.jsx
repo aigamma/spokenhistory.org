@@ -17,6 +17,17 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { loadConstellation } from '../../services/ragClient';
 import { TIER_COLORS, TIER_BADGE } from './tiers';
 
+// Fetch clusters.json once and cache per-session; the file is shared
+// with ThemesBrowser + ThemesMap and is small (~30 cluster objects).
+let _clustersPromise = null;
+function loadClusters() {
+  if (_clustersPromise) return _clustersPromise;
+  _clustersPromise = fetch('/rag/summaries/clusters.json')
+    .then((r) => (r.ok ? r.json() : fetch('/rag/summaries/clusters_raw.json').then((r2) => r2.json())))
+    .catch(() => null);
+  return _clustersPromise;
+}
+
 /**
  * Constellation — SVG scatter of corpus entries in 2D embedding space.
  *
@@ -35,8 +46,13 @@ export default function Constellation({
   className = '',
 }) {
   const [data, setData] = useState(null);
+  const [clusters, setClusters] = useState(null);
   const [error, setError] = useState(null);
   const [hover, setHover] = useState(null);
+  // Regions are shown by default — they're the educational layer that
+  // makes the abstract 2D space readable. User can toggle off if the
+  // label clutter gets in the way of point-level inspection.
+  const [showRegions, setShowRegions] = useState(true);
   const svgRef = useRef(null);
 
   useEffect(() => {
@@ -44,6 +60,7 @@ export default function Constellation({
     loadConstellation()
       .then((json) => { if (!cancelled) setData(json); })
       .catch((e) => { if (!cancelled) setError(e?.message || 'Failed to load.'); });
+    loadClusters().then((j) => { if (!cancelled && j?.clusters) setClusters(j.clusters); });
     return () => { cancelled = true; };
   }, []);
 
@@ -61,6 +78,49 @@ export default function Constellation({
       fill: TIER_COLORS[p.uncertainty_tier] || '#b91c1c',
     }));
   }, [data, innerW, innerH]);
+
+  // Compute labeled region centroids from clusters.json. Each cluster
+  // sits at the mean (x, y) of its member interviews; the label is
+  // the LLM-generated cluster name. We filter to clusters of size
+  // >= 3 so the visualization isn't drowned in small-cluster labels,
+  // and rank them by size so big clusters render last (= on top).
+  const regions = useMemo(() => {
+    if (!clusters?.length || !data?.points?.length) return [];
+    const pointById = new Map();
+    for (const p of data.points) {
+      pointById.set(p.entry_number, p);
+    }
+    const result = [];
+    for (const c of clusters) {
+      if ((c.size || 0) < 3) continue;
+      const members = c.members || (c.member_entry_subjects || []).map((s, i) => ({ entry_subject: s, entry_number: null }));
+      let sumX = 0, sumY = 0, n = 0;
+      for (const m of members) {
+        const pt = pointById.get(m.entry_number);
+        if (!pt) continue;
+        sumX += pt.x;
+        sumY += pt.y;
+        n += 1;
+      }
+      if (n === 0) continue;
+      const meanX = sumX / n;
+      const meanY = sumY / n;
+      const cx = PAD + ((meanX + 1) / 2) * innerW;
+      const cy = PAD + ((1 - meanY) / 2) * innerH;
+      result.push({
+        cluster_id: c.cluster_id,
+        name: c.name || `Cluster ${c.cluster_id}`,
+        size: c.size,
+        cx,
+        cy,
+        // Font size scales with cluster size: 11 for size 3, 16 for size 18.
+        fontSize: Math.min(16, 9 + Math.sqrt(c.size) * 1.4),
+      });
+    }
+    // Sort by size ascending so big-cluster labels render last and
+    // sit on top of small-cluster labels at overlap points.
+    return result.sort((a, b) => a.size - b.size);
+  }, [clusters, data, innerW, innerH]);
 
   if (error) {
     return (
@@ -122,6 +182,30 @@ export default function Constellation({
             />
           ))}
         </g>
+
+        {/* Labeled region centroids — the educational layer.
+            Renders BEFORE the points so dots paint on top (preventing
+            big-cluster labels from blocking individual-dot hover). */}
+        {showRegions && regions.map((r) => (
+          <text
+            key={`region-${r.cluster_id}`}
+            x={r.cx}
+            y={r.cy}
+            fontSize={r.fontSize}
+            fontFamily="ui-sans-serif, system-ui, sans-serif"
+            fontWeight={500}
+            textAnchor="middle"
+            paintOrder="stroke"
+            stroke="rgba(250,250,249,0.92)"
+            strokeWidth={4}
+            strokeLinejoin="round"
+            fill="#1c1917"
+            opacity={0.85}
+            style={{ pointerEvents: 'none' }}
+          >
+            {r.name}
+          </text>
+        ))}
 
         {/* Points */}
         <g>
