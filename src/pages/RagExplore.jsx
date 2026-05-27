@@ -102,14 +102,24 @@ const RELATED_DEMO_ENTRIES = [
 // "AI takes academic traditions to the next level" demo and earns
 // the default slot.
 const DEFAULT_TAB = 'lenses';
-const VALID_TAB = (t) => (TABS.includes(t) ? t : DEFAULT_TAB);
+// 'spectrum' deep links resolve to 'lenses' because Spectrum is now
+// rendered at the page top (always visible), not as a tab. So a
+// /rag-explore?tab=spectrum URL gives the user Spectrum (at top) +
+// Concept Lenses (the next-best surface) below the tab nav.
+const VALID_TAB = (t) => {
+  if (t === 'spectrum') return DEFAULT_TAB;
+  return TABS.includes(t) ? t : DEFAULT_TAB;
+};
 
 // Display order for the pill nav. Featured demos (★) come first,
 // then the visualizations, then text-input demos, then secondary tabs.
+// Spectrum is rendered above the tab nav as the page's permanent
+// headline surface, so it does NOT appear in this list. Default tab
+// is 'lenses' below — the user gets Spectrum at top + Concept lenses
+// matrix below the tab nav, the two strongest views adjacent.
 const TAB_ORDER = [
   { id: 'lenses', label: 'Concept lenses', featured: true },
   { id: 'nomic', label: 'Passage map', featured: true },
-  { id: 'spectrum', label: 'Concept Spectrum', featured: true },
   { id: 'events', label: 'Polyphonic events', featured: true },
   { id: 'map', label: 'Interview map' },
   { id: 'related', label: 'Voices in conversation' },
@@ -133,7 +143,7 @@ const TAB_LABELS = {
   search: 'Semantic search',
   quote: 'Quote-finder',
   events: 'Polyphonic events',
-  spectrum: 'Concept Spectrum',
+  spectrum: 'Spectrum', // retained for back-compat; resolves to lenses now
   map: 'Interview map',
   related: 'Voices in conversation',
   themes: 'Themes',
@@ -216,13 +226,31 @@ export default function RagExplore() {
           (Embedded Data)
         </p>
 
+        {/* Spectrum is the page's headline surface. It renders above
+            the tab nav so it's always the first thing visitors see;
+            tabs below let them explore alternative views without
+            displacing the headline. Filtered out of the tab nav below
+            since duplicating it as a tab label would be redundant. */}
+        <section className="mb-8">
+          <h2
+            className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            Spectrum
+          </h2>
+          <ConceptSpectrum />
+        </section>
+
         <nav
           aria-label="Demo tabs"
-          className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur"
+          className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50"
           style={{ backgroundColor: 'rgba(235, 234, 233, 0.94)' }}
         >
+          <p className="text-xs text-stone-500 mb-2 font-mono uppercase tracking-wide">
+            Other ways to look at the data
+          </p>
           <ul className="flex flex-wrap gap-2 sm:gap-2.5 list-none p-0">
-            {TAB_ORDER.map((t) => {
+            {TAB_ORDER.filter((t) => t.id !== 'spectrum').map((t) => {
               const isActive = tab === t.id;
               return (
                 <li key={t.id}>
@@ -399,14 +427,12 @@ export default function RagExplore() {
             </div>
           )}
 
-          {tab === 'spectrum' && (
-            <div>
-              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Concept Spectrum
-              </h2>
-              <ConceptSpectrum />
-            </div>
-          )}
+          {/* Spectrum is rendered at the page top now, not as a tab.
+              The 'spectrum' tab id is still in the TABS list so deep
+              links like /rag-explore?tab=spectrum don't 404 — they
+              just don't render a second copy here. The DEFAULT_TAB
+              is 'lenses' so the page opens with Spectrum (top) +
+              Concept Lenses (below tab nav) by default. */}
 
           {tab === 'themes' && (
             <div>
