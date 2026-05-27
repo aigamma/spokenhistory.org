@@ -131,7 +131,7 @@ export default function Header() {
         aria-modal="true"
         aria-label="Site navigation"
         aria-hidden={!isMenuOpen}
-        className={`fixed top-0 right-0 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl h-full px-4 sm:px-6 lg:px-9 py-4 sm:py-6 lg:py-9 shadow-xl z-50 flex justify-start items-start transition-transform duration-300 ease-in-out overflow-hidden ${
+        className={`fixed top-0 right-0 w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-3xl h-full px-4 sm:px-6 lg:px-9 py-4 sm:py-6 lg:py-9 shadow-xl z-50 flex justify-start items-start transition-transform duration-300 ease-in-out overflow-y-auto ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{ backgroundColor: '#F2483C' }}
@@ -139,7 +139,7 @@ export default function Header() {
         <div className="w-full h-full flex flex-col justify-start items-start gap-2 sm:gap-4 lg:gap-12">
           {/* Header */}
           <div className="w-full flex justify-between items-center pb-2 sm:pb-3 lg:pb-6 border-b border-black">
-            <div className="text-black text-2xl lg:text-3xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+            <div className="text-black text-3xl lg:text-4xl font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
               Menu
             </div>
             <button
@@ -154,14 +154,13 @@ export default function Header() {
 
           {[
             { num: '01.', label: 'Timeline', to: '/' },
-            { num: '02.', label: 'Embeddings ★', to: '/rag-explore' },
-            { num: '03.', label: 'Events', to: '/rag-explore?tab=events' },
-            { num: '04.', label: 'Concept axes', to: '/rag-explore?tab=spectrum' },
-            { num: '05.', label: 'Voices in conversation', to: '/rag-explore?tab=related' },
-            { num: '06.', label: 'Search', to: '/rag-explore?tab=search' },
-            { num: '07.', label: 'Interviews', to: '/interview-index' },
-            { num: '08.', label: 'Topic Glossary', to: '/topic-glossary' },
-            { num: '09.', label: 'About', to: '/about' },
+            { num: '02.', label: 'Concept axes ★', to: '/rag-explore?tab=spectrum' },
+            { num: '03.', label: 'Events ★', to: '/rag-explore?tab=events' },
+            { num: '04.', label: 'Voices in conversation', to: '/rag-explore?tab=related' },
+            { num: '05.', label: 'Search', to: '/rag-explore?tab=search' },
+            { num: '06.', label: 'Interviews', to: '/interview-index' },
+            { num: '07.', label: 'Topic Glossary', to: '/topic-glossary' },
+            { num: '08.', label: 'About', to: '/about' },
           ].map((item, idx, arr) => (
             <div key={item.num} className={`w-full pb-2 ${idx < arr.length - 1 ? 'border-b border-black' : ''}`}>
               <Link
@@ -169,10 +168,10 @@ export default function Header() {
                 className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <div className="text-black text-sm lg:text-base font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                <div className="text-black text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
                   {item.num}
                 </div>
-                <div className="text-right text-black text-base sm:text-lg lg:text-xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="text-right text-black text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                   {item.label}
                 </div>
               </Link>
