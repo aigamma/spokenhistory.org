@@ -182,7 +182,7 @@ function parseTextForTopics(text, topics) {
 export default function TopicLinkedText({ 
   children, 
   className = '',
-  linkClassName = 'text-red-500 hover:underline cursor-pointer',
+  linkClassName = 'text-civil-red-body hover:underline cursor-pointer',
   disabled = false
 }) {
   const navigate = useNavigate();
