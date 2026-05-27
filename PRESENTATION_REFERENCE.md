@@ -3,7 +3,7 @@
 **A conceptual map of what was done, why, and what we learned**
 **Audience:** WWU team, Smithsonian NMAAHC + Library of Congress collaborators, and anyone reviewing the project record
 **Last updated:** 2026-05-25
-**Companion file:** `lessons_learned.md` (deeper-dive error categorization)
+**Companion files:** `lessons_learned.md` (deeper-dive error categorization), `STEERING_DOCS.md` (one-page map of the project's central documents, including this one)
 
 ---
 
@@ -146,13 +146,43 @@ The path to 100% required three resolver passes: an initial XML-driven pass that
 
 ---
 
+## The live interactive layer (the RAG demo above the audit story)
+
+The audit cascade is the institutional credibility narrative; the live `civil-rights-staging.netlify.app` site is what makes the cleaned corpus *useful* to a researcher right now. The flagship surface is `/rag-explore`, an embedding-space exploration page with six interactive demos sitting on top of the same Pinecone + Voyage AI substrate:
+
+- **Spectrum** (top of the page, always visible). 136 interviewees plotted along one named conceptual axis at a time (e.g. Nonviolence as Theology ↔ Armed Self-Defense, Sacred Framing ↔ Secular Framing, Individual Conscience ↔ Collective Discipline). Each dot is the dot product of that interview's mean embedding with the axis vector, geometric, deterministic, no LLM per query. Click a dot to drill into the passages from that interview that anchor it where it is.
+- **Semantic Overlap** (default tab). For each interview, precomputed lists of which other interviewees in the corpus discuss semantically-related material. The "philosophy of embedding" payoff: two interviewees who never met but whose words land within 0.12 cosine of each other on a topic appear adjacent.
+- **Word Search** (was "Concept Lenses"). Four 2D scatters showing the same 136 voices across pairs of named axes, plus a 5-axis 1D summary that lights up when the user types a phrase and projects it onto every axis simultaneously. The educational reveal is the cross-chart sync: hover one voice and watch it land at different coordinates in every conceptual dimension.
+- **Interview Map**. 136 dots in UMAP-projected embedding space, with empirically-derived axis labels (Medical Law / Movement / Family / Crime) extracted from the corpus itself, not assigned.
+- **Quote Finder**. Paste a half-remembered quote, get the source with the exact timestamp + LoC catalog link.
+- **Themes / Famous Names / Atlas / Network / Tours / Quote of the Day**. Secondary surfaces drawn from precomputed JSON for fast, no-LLM-per-query rendering.
+
+Every retrieved passage carries a fidelity badge (5-tier audit substrate: low / medium / publication-block / not-auditable / ingestion-only) and a Library of Congress catalog deep-link so the audience can verify the source on the canonical archive. This is what closes the loop from "we audited everything" (the slide story) to "you can use it right now" (the live site).
+
+Infra under the surface: Pinecone Builder (civil-rights index, 1024-dim cosine, AWS us-east-1, 15,464 vectors, `.srt`-only after the 2026-05-26 prune); Voyage AI voyage-3 embeddings + rerank-2; `/retrieve` Netlify Function as the public proxy; precomputed JSON for the static surfaces. No per-query LLM call on any of these demos, the geometric projection IS the answer.
+
+---
+
+## What's deferred / next
+
+- **5 spelling-discrepancy entries**: alternative-spelling re-search against LoC catalog (Booker+Newson, Wheeler Parker, etc.), small targeted work; would push coverage from 96.1% to ~100%.
+- **~95,000 SME-flagged divergences**: a future targeted pass with model classification (Sonnet 4.6 subagent per transcript) would promote a subset to applied heals. Most are minor editorial paraphrases; a meaningful minority are real corrections we declined to auto-apply for conservatism.
+- **Forced-alignment timing improvement**: a separate work stream, independent of text quality, could re-align our Whisper-produced timestamps against LoC's audio using forced-alignment tools (WhisperX or Montreal Forced Aligner). This would tighten per-clip precision for the playlist generator below the current ~5-second cue grid. Not blocking; nice-to-have.
+- **Pass 7 PRR rerun for 11 stale-slice entries**: low priority now that Pass 8 has provided independent cross-validation for those same entries.
+- **MCP server deploy to Fly.io**: code complete and verified locally; awaiting `flyctl auth login` to push.
+
+---
+
 ## Documents of record
 
+- `STEERING_DOCS.md` (project root), one-page map of the project's central documents (this is the "teach the document hierarchy" reference)
 - `lessons_learned.md` (project root), error categories with audited examples; the deeper-dive companion to this briefing
 - `transcripts/AUDIT_TRAIL.md`, longitudinal session log; Session 8 is the LoC healing pass
 - `transcripts/loc_healing/COVERAGE_REPORT.md`, per-entry coverage breakdown for Pass 8
 - `transcripts/pass8_stage/entry_NNN_<slug>.md`, per-entry granular evidence (one file per healed entry; the institutional-audit artifact for each interview)
 - `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md`, the master correction overlay (~12 MB; the audit's primary work product)
-- `Metadata Generation System/civil_rights_facts.json`, ground-truth corpus (~378 canonical entries with aliases)
+- `Metadata Generation System/civil_rights_facts.json`, ground-truth corpus (~140 entries, 291 aliases)
+- `rag/DEMO_SCRIPT.md`, three-minute demo script for the live `/rag-explore` page
+- `rag/CONFERENCE_PREP.md`, the philosophy-of-embedding framing for stakeholder communication
 
-For PowerPoint construction, the headline slides should be: (1) the problem (one example like Klein/Cline or Carlos's siblings); (2) the audit cascade approach (eight passes, confidence tiers, row-ID provenance); (3) the LoC authority pass (96% coverage); (4) the process insight (apply-step discipline, substring-substitution dangers); (5) the deliverable state (timing intact, text fidelity improved, ready for Smithsonian publication review).
+For PowerPoint construction, the headline slides should be: (1) the problem (one example like Klein/Cline or Carlos's siblings); (2) the audit cascade approach (eight passes, confidence tiers, row-ID provenance); (3) the LoC authority pass (100% coverage on the 127 audit-able entries); (4) the process insight (apply-step discipline, substring-substitution dangers); (5) the deliverable state (timing intact, text fidelity improved, ready for Smithsonian publication review); (6) the live RAG demo (Spectrum + Semantic Overlap + Word Search on `/rag-explore`) as the "and here's what the cleaned corpus enables right now" payoff slide.

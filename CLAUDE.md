@@ -177,17 +177,20 @@ The Smithsonian (NMAAHC) and Library of Congress are gating publication on AI-ha
 
 ## Documentation map
 
+**For a one-page hierarchy view: see `STEERING_DOCS.md` at the project root.** It ranks every document by tier (Orientation / Active reference / Lessons learned / Demo prep / Provenance / Deprecated) with a "when to read what" cheat sheet. Read that first if you're new; the per-document breakdown below is the deep-dive supplement.
+
 The project has ~17 human-facing markdown documents plus ~440 per-entry staging files. The staging files are machine-generated (Pass 2/3/4 supervisor outputs + per-entry slices), new agents should NOT read them as documentation; they're audit artifacts consumed by merge scripts. The human-facing documents are:
 
 ### Root-level
 
 | File | Purpose |
 |---|---|
-| `README.md` | Public-facing project overview for GitHub viewers (corpus description, what the system does) |
-| `CLAUDE.md` (this file) | Project-wide conventions for AI-agent contributors. Auto-loaded into every agent's context. **The first thing any new agent should rely on for project orientation.** |
-| `CONTRIBUTORS.md` | Human contributor credits |
+| `STEERING_DOCS.md` | **One-page hierarchy view of every document on this project**, ranked by tier with a "when to read what" cheat sheet. The teaching aid for explaining the document set to a new contributor or stakeholder group. **Start here if you're new.** |
+| `README.md` | Public-facing project overview for GitHub viewers (corpus description, what the system does). |
+| `CLAUDE.md` (this file) | Project-wide conventions for AI-agent contributors. Auto-loaded into every agent's context. The deep-dive supplement to `STEERING_DOCS.md`. |
+| `CONTRIBUTORS.md` | Human contributor credits. |
 | `lessons_learned.md` | Conceptual + categorical analysis of the seven-pass audit cascade, the Whisper-error taxonomy we observed (phonetic confusion, ASR name-bleed, short-needle substitution corruption, audit-canon leakage), and the process-governance lessons (apply-step discipline, word-boundary safety, commit+push at every moderate milestone). Companion to PRESENTATION_REFERENCE.md. |
-| `PRESENTATION_REFERENCE.md` | The conceptual-map briefing for the WWU presentation (and any external stakeholder summary). Eight conceptual breakthroughs from the audit work; the coverage table; implications for the user-facing product. Slide-friendly summary; less detail than lessons_learned.md. |
+| `PRESENTATION_REFERENCE.md` | The conceptual-map briefing for the WWU presentation (and any external stakeholder summary). Eight conceptual breakthroughs from the audit work; the coverage table; the live RAG demo layer; implications for the user-facing product. Slide-friendly summary; less detail than lessons_learned.md. |
 
 ### `docs/`, architecture + decision records
 
