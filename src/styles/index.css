@@ -1,2 +1,268 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap');
 
+/* ---------------------------------------------------------------------
+   Tailwind v4 theme tokens.
+
+   The brand color #F2483C (civil-rights red) on the brand background
+   #EBEAE9 (cream) measures 3.05:1 contrast ratio. WCAG 2.2 AA:
+     - Normal text (under 18pt regular / 14pt bold): minimum 4.5:1 -> FAILS
+     - Large text (18pt+ or 14pt+ bold):              minimum 3.0:1 -> PASSES
+     - UI components / icons / borders:               minimum 3.0:1 -> PASSES
+
+   So civil-red is compliant for large headings + decorative borders only.
+   For small body text + filled buttons that need to clear AA, use
+   civil-red-body / civil-red-strong (#B23E2F, 4.86:1 on cream).
+
+   In Tailwind v4, theme tokens live here, NOT in tailwind.config.js.
+   --------------------------------------------------------------------- */
+@theme {
+  --color-civil-red: #F2483C;
+  --color-civil-red-body: #B23E2F;
+  --color-civil-red-strong: #B23E2F;
+  --color-civil-bg: #EBEAE9;
+  --color-civil-cream: #EBEAE9;
+}
+
+/* Backward-compatible CSS variables used by legacy components that
+   reference var(--civil-red) directly (e.g., the red-border-effect
+   class below). Mirrors the @theme tokens. */
+:root {
+  --civil-red: #F2483C;
+  --civil-red-strong: #B23E2F;
+  --civil-cream: #EBEAE9;
+  --civil-ink: #1c1917;
+}
+
+@layer base {
+  html {
+    font-family: 'Source Serif 4', 'Crimson Text', 'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Acumin Pro', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Chivo Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-weight: 300;
+  }
+}
+
+/* Animation for model selector dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* Custom editor styles */
+.editor-container {
+  position: relative;
+  font-family: 'Fira code', 'Fira Mono', monospace;
+  font-size: 14px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.editor-container:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Process button pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.animate-pulse-blue {
+  animation: pulse 2s infinite;
+}
+
+/* Background pattern for hero section */
+.bg-grid-pattern {
+  background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Prevent horizontal scrolling */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ensure proper scaling and prevent layout shifts */
+.constrained-layout {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+}
+
+/* Custom red border effect for images */
+.red-border-effect {
+  position: relative;
+}
+
+.red-border-effect::before {
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  border: 2px solid #F2483C;
+  border-radius: 0.75rem;
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+.red-border-effect::after {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  background: #F2483C;
+  opacity: 0.1;
+  border-radius: 1rem;
+  transform: rotate(1deg);
+  z-index: -2;
+}
+
+/* Ensure images scale properly */
+.red-border-effect img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .red-border-effect::before {
+    top: -0.25rem;
+    left: -0.25rem;
+    right: -0.25rem;
+    bottom: -0.25rem;
+    border-width: 1px;
+  }
+
+  .red-border-effect::after {
+    top: -0.5rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Mobile / orientation / accessibility globals.
+
+   Short-landscape (phone rotated to landscape) viewports get the
+   .mobile-collapsible-header treatment so the header doesn't eat 25%
+   of usable vertical space. focus-visible restores a keyboard-only
+   visible ring (Tailwind's preflight suppresses the default). The
+   prefers-reduced-motion block collapses animation/transition timing
+   for users who opted out.
+   --------------------------------------------------------------------- */
+@media (orientation: landscape) and (max-height: 480px) {
+  .mobile-collapsible-header {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .mobile-collapsible-header .site-logo-text {
+    font-size: 1.5rem !important;
+    line-height: 1.75rem !important;
+  }
+  .mobile-collapsible-header .site-logo-text br {
+    display: none;
+  }
+}
+
+/* Restore a visible focus indicator for keyboard navigation.
+   The double-outline pattern (red outline + translucent white halo)
+   makes the indicator visible on both light surfaces (cream / white
+   pages) AND dark surfaces (the red Menu drawer, brand-red pill
+   fills). WCAG 2.4.7 / 2.4.11 require focus indicators to be visible
+   against the surface regardless of theme. */
+*:focus-visible {
+  outline: 2px solid #F2483C;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.85);
+}
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible {
+  outline: 2px solid #F2483C;
+  outline-offset: 3px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+/* Respect the user's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Pinch-zoom + browser-level zoom safety guard against unwanted
+   horizontal scrolling on phone-sized viewports. Pages that need
+   horizontal scroll opt in with .allow-overflow-x on the root. */
+@media (max-width: 480px) {
+  body:not(.allow-overflow-x) {
+    overflow-x: hidden;
+  }
+}
+
+/* Body utility used by the text-civil-red-body class in legacy
+   markup. The Tailwind utility (text-civil-red-body) generated from
+   the @theme block above is equivalent; both render #B23E2F. */
+.text-civil-red-body {
+  color: var(--civil-red-strong);
+}
+
+.bg-civil-red-strong {
+  background-color: var(--civil-red-strong);
+}
