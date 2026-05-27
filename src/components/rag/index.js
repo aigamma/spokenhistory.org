@@ -27,8 +27,13 @@ export { default as GeographicAtlas } from './GeographicAtlas';
 export { default as InfluenceList } from './InfluenceList';
 export { default as QuoteOfTheDay } from './QuoteOfTheDay';
 export { default as TourPages } from './TourPages';
-export { default as NomicProjection } from './NomicProjection';
-export { default as PassageMap } from './PassageMap';
+// NomicProjection (custom canvas) and PassageMap (Plotly scattergl)
+// were both removed from the user-facing surface 2026-05-27. The
+// /retrieve-backed surfaces (Spectrum drill-down, SemanticSearch,
+// QuoteFinder) plus InterviewMap and TourMap (which still consume
+// public/rag/atlas_projection.json) are the canonical RAG surfaces.
+// Component files retained for possible flip-back; the static JSON
+// stays for InterviewMap + TourMap.
 export { default as ConceptMatrix } from './ConceptMatrix';
 export { default as InterviewMap } from './InterviewMap';
 export { default as AuditProvenance } from './AuditProvenance';

@@ -13,8 +13,6 @@ import {
   InfluenceList,
   QuoteOfTheDay,
   TourPages,
-  NomicProjection,
-  PassageMap,
   ConceptMatrix,
   InterviewMap,
   AuditProvenance,
@@ -80,7 +78,7 @@ const TABS = [
   'search', 'quote', 'map', 'related',
   'spectrum', 'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
-  'nomic', 'lenses',
+  'lenses',
 ];
 
 // Entries to surface in the "related" demo tab. Each one is a
@@ -119,7 +117,6 @@ const VALID_TAB = (t) => {
 // matrix below the tab nav, the two strongest views adjacent.
 const TAB_ORDER = [
   { id: 'lenses', label: 'Concept lenses', featured: true },
-  { id: 'nomic', label: 'Passage map', featured: true },
   { id: 'map', label: 'Interview map' },
   { id: 'related', label: 'Semantic Overlap' },
   { id: 'search', label: 'Semantic search' },
@@ -138,7 +135,6 @@ const TAB_ORDER = [
 // tab buttons in <nav> below.
 const TAB_LABELS = {
   lenses: 'Concept lenses',
-  nomic: 'Passage map',
   search: 'Semantic search',
   quote: 'Quote-finder',
   spectrum: 'Spectrum', // retained for back-compat; resolves to lenses now
@@ -390,22 +386,6 @@ export default function RagExplore() {
                 shift is what the embedding space is actually telling us.
               </p>
               <ConceptMatrix />
-            </div>
-          )}
-
-          {tab === 'nomic' && (
-            <div>
-              <h2 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Passage map (UMAP via Nomic Atlas)
-              </h2>
-              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                Every 5-15 second passage in the archive plotted at its UMAP
-                position. Passages near each other share thematic content even
-                when their speakers never met. Topic labels are auto-generated
-                from passage text. Atlas computes the projection; everything
-                you see here is rendered by custom React + canvas in this app.
-              </p>
-              <PassageMap />
             </div>
           )}
 

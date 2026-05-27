@@ -27,7 +27,7 @@ import {
 const NAV_ROUTES = [
   {
     label: 'Spectrum',
-    featured: true,
+    featured: false,
     to: '/rag-explore?tab=spectrum',
     bg: 'bg-red-600 hover:bg-red-700',
     matchPath: '/rag-explore',
@@ -64,7 +64,7 @@ const NAV_ROUTES = [
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   {
-    label: 'Spectrum ★',
+    label: 'Spectrum',
     to: '/rag-explore?tab=spectrum',
     matchPath: '/rag-explore',
     matchTab: 'spectrum',
