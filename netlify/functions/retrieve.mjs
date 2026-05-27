@@ -293,6 +293,11 @@ export default async function handler(req) {
   // record" queries; defaults to false because the same speaker's
   // different moments can both be valuable for some use cases.
   const dedupeByEntry = body?.dedupeByEntry === true;
+  // When includeQueryEmbedding=true, the meta block carries the raw
+  // 1024-dim Voyage-3 query vector so the client can do its own
+  // projection (e.g. project the query onto the saved axis_vector of
+  // each concept axis on the Spectrum). ~4KB on the wire; opt-in.
+  const includeQueryEmbedding = body?.includeQueryEmbedding === true;
 
   // Filter resolution: prefer a fully-specified Pinecone filter object
   // when the caller knows that shape; otherwise accept the ergonomic
@@ -363,6 +368,9 @@ export default async function handler(req) {
           topK,
           topN,
           dedupeByEntry,
+          ...(includeQueryEmbedding && Array.isArray(queryVec)
+            ? { queryEmbedding: queryVec }
+            : {}),
         },
       },
       { headers },

@@ -164,6 +164,12 @@ async function main() {
       pole_a: ax.pole_a,
       pole_b: ax.pole_b,
       raw_range: [min, max],
+      // Persisted so the client can project a NEW query embedding
+      // (e.g. user-typed search text) onto the same axis without re-
+      // running the Voyage embedding of the poles. Adds ~5 × 1024 ×
+      // 4 bytes ≈ 20KB to the JSON; acceptable for the gain of "type
+      // a query, see where it lands on each axis" live demo.
+      axis_vector: Array.from(axisVec).map((v) => +v.toFixed(6)),
       positions,
     });
 
