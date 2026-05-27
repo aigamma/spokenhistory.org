@@ -16,8 +16,9 @@
  * come from /retrieve (Netlify Function → Pinecone + Voyage rerank).
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { Search as SearchIcon, X } from 'lucide-react';
 import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
@@ -34,6 +35,10 @@ export default function ConceptSpectrum() {
   const [drillResults, setDrillResults] = useState(null);
   const [drillLoading, setDrillLoading] = useState(false);
   const [drillError, setDrillError] = useState(null);
+  // Name search — when set, matching dots stay bright and non-matching
+  // dots dim. Helps users find a specific voice among 136 without
+  // hover-treasure-hunting.
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     let cancelled = false;
@@ -116,6 +121,20 @@ export default function ConceptSpectrum() {
 
   const axis = data.axes[activeAxis];
 
+  // Match set for the search filter — entry_numbers whose subject
+  // includes the query (case-insensitive). null = "no filter active".
+  const matched = (() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return null;
+    const set = new Set();
+    for (const p of axis.positions) {
+      if ((p.entry_subject || '').toLowerCase().includes(q)) {
+        set.add(p.entry_number);
+      }
+    }
+    return set;
+  })();
+
   return (
     <div className="rag-concept-spectrum">
       <Axis
@@ -124,7 +143,40 @@ export default function ConceptSpectrum() {
         setHover={setHover}
         selectedEntry={selected?.entry_number ?? null}
         onSelect={handleSelect}
+        matched={matched}
       />
+
+      {/* Search box for finding a specific voice in the 136-dot
+          scatter. Sits right under the chart. Matches dim non-matches
+          to ~20% opacity and label-tag any matches with their name
+          drawn alongside the dot. */}
+      <div className="mt-3 mb-1 relative max-w-md">
+        <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" aria-hidden="true" />
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Find a voice in the scatter…"
+          className="w-full pl-9 pr-9 py-2 text-sm border border-stone-300 rounded-md focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none bg-white"
+          aria-label="Find a voice in the Spectrum"
+        />
+        {query && (
+          <button
+            type="button"
+            onClick={() => setQuery('')}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-stone-400 hover:text-stone-700"
+            aria-label="Clear search"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        )}
+        {matched && (
+          <p className="text-xs text-stone-500 mt-1.5">
+            {matched.size} {matched.size === 1 ? 'match' : 'matches'}
+            {matched.size > 0 && ' · matching dots stay bright, names appear next to them'}
+          </p>
+        )}
+      </div>
 
       <SpectrumTooltip hover={hover} selectedEntry={selected?.entry_number ?? null} />
 
@@ -295,7 +347,7 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
   );
 }
 
-function Axis({ axis, hover, setHover, selectedEntry, onSelect }) {
+function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
   const W = 880;
   const H = 380;
   const PAD_X = 24;
@@ -374,32 +426,63 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect }) {
             const color = TIER_COLORS[p.tier] || '#b91c1c';
             const isHover = hover?.p?.entry_number === p.entry_number;
             const isSelected = selectedEntry === p.entry_number;
+            const isMatch = !matched || matched.has(p.entry_number);
+            const dimByFilter = matched && !isMatch;
             return (
-              <circle
-                key={p.entry_number}
-                cx={cx}
-                cy={cy}
-                r={isSelected ? 9 : isHover ? 7 : 4}
-                fill={isSelected ? '#F2483C' : color}
-                fillOpacity={isSelected || isHover ? 1 : 0.75}
-                stroke={isSelected ? '#1c1917' : isHover ? '#1c1917' : 'transparent'}
-                strokeWidth={isSelected ? 2 : 1.5}
-                onMouseEnter={(e) => handleEnter(p, e)}
-                onMouseMove={(e) => handleMove(p, e)}
-                onMouseLeave={clearHover}
-                onFocus={(e) => handleFocus(p, e)}
-                onBlur={clearHover}
-                onClick={() => onSelect(p)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    onSelect(p);
+              <g key={p.entry_number}>
+                <circle
+                  cx={cx}
+                  cy={cy}
+                  r={isSelected ? 9 : isHover ? 7 : (matched && isMatch ? 6 : 4)}
+                  fill={isSelected ? '#F2483C' : color}
+                  fillOpacity={
+                    isSelected || isHover
+                      ? 1
+                      : dimByFilter
+                        ? 0.18
+                        : 0.78
                   }
-                }}
-                tabIndex={0}
-                style={{ cursor: 'pointer' }}
-                aria-label={`${p.entry_subject}, position ${p.position.toFixed(3)}. Click to drill into passages.`}
-              />
+                  stroke={isSelected ? '#1c1917' : isHover ? '#1c1917' : 'transparent'}
+                  strokeWidth={isSelected ? 2 : 1.5}
+                  onMouseEnter={(e) => handleEnter(p, e)}
+                  onMouseMove={(e) => handleMove(p, e)}
+                  onMouseLeave={clearHover}
+                  onFocus={(e) => handleFocus(p, e)}
+                  onBlur={clearHover}
+                  onClick={() => onSelect(p)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      onSelect(p);
+                    }
+                  }}
+                  tabIndex={0}
+                  style={{ cursor: 'pointer' }}
+                  aria-label={`${p.entry_subject}, position ${p.position.toFixed(3)}. Click to drill into passages.`}
+                />
+                {/* When a name search is active, label any matching
+                    dot with the entry_subject so the user can locate
+                    it without hovering. Stays under the dot to avoid
+                    blocking interaction. */}
+                {matched && isMatch && (
+                  <text
+                    x={cx}
+                    y={cy + 18}
+                    fontSize={11}
+                    fontWeight={600}
+                    fill="#1c1917"
+                    textAnchor="middle"
+                    paintOrder="stroke"
+                    stroke="rgba(255,255,255,0.95)"
+                    strokeWidth={3}
+                    strokeLinejoin="round"
+                    style={{ pointerEvents: 'none' }}
+                    fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                  >
+                    {p.entry_subject}
+                  </text>
+                )}
+              </g>
             );
           })}
         </svg>
