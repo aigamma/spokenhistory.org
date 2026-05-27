@@ -34,7 +34,7 @@
  *     thematic territory each part of the map represents.
  */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Search as SearchIcon, X, ExternalLink, Loader2 } from 'lucide-react';
 import { TIER_COLORS, TIER_BADGE, TIER_VOCABULARY } from './tiers';
 import { retrieve } from '../../services/ragClient';
@@ -56,6 +56,89 @@ export default function InterviewMap() {
   // soft curves from the focal dot to each neighbor so the audience
   // SEES the semantic neighborhood instead of reading it as a list.
   const [neighbors, setNeighbors] = useState(null);
+  // Concept-query projection — UMAP can't directly project new
+  // queries because it's a learned nonlinear embedding (no inverse
+  // transform). Instead we use the nearest-neighbor approximation:
+  // find the centroid whose 1024-dim vector is most cosine-similar
+  // to the query embedding, render a marker at THAT centroid's UMAP
+  // coord plus a "closest voice" annotation. Pedagogically honest;
+  // the marker visibly snaps onto an existing dot.
+  const [conceptInput, setConceptInput] = useState('');
+  const [conceptQuery, setConceptQuery] = useState(null);
+  const [conceptLoading, setConceptLoading] = useState(false);
+  const [conceptError, setConceptError] = useState(null);
+  const [conceptNearest, setConceptNearest] = useState(null); // { entry_number, similarity }
+  const [conceptResults, setConceptResults] = useState(null);
+  const [centroids, setCentroids] = useState(null); // lazy-loaded on first query
+
+  const handleConceptSubmit = useCallback(async (e) => {
+    e?.preventDefault?.();
+    const q = conceptInput.trim();
+    if (!q || conceptLoading) return;
+    setConceptLoading(true);
+    setConceptError(null);
+    setConceptQuery(q);
+    setConceptNearest(null);
+    setConceptResults(null);
+    try {
+      // Lazy-load centroids only when first needed. 4MB; one-shot per
+      // session. Fine for the demo path; default page load stays light.
+      let cs = centroids;
+      if (!cs) {
+        const r = await fetch('/rag/centroids.json');
+        if (!r.ok) throw new Error('Failed to load centroids');
+        cs = await r.json();
+        setCentroids(cs);
+      }
+      const { results, meta } = await retrieve(q, {
+        topN: 5,
+        includeQueryEmbedding: true,
+        dedupeByEntry: true,
+      });
+      const qVec = meta?.queryEmbedding;
+      if (!Array.isArray(qVec) || qVec.length !== 1024) {
+        throw new Error('Backend did not return a 1024-dim query embedding.');
+      }
+      // Find nearest centroid by cosine similarity. Both vectors
+      // expected to be L2-normalized already; if not, normalize.
+      let qNorm = 0;
+      for (let i = 0; i < qVec.length; i++) qNorm += qVec[i] * qVec[i];
+      qNorm = Math.sqrt(qNorm) || 1;
+      let best = null;
+      let bestSim = -Infinity;
+      for (const c of cs) {
+        if (!Array.isArray(c.vector) || c.vector.length !== qVec.length) continue;
+        let dot = 0;
+        let cNorm = 0;
+        for (let i = 0; i < qVec.length; i++) {
+          dot += qVec[i] * c.vector[i];
+          cNorm += c.vector[i] * c.vector[i];
+        }
+        cNorm = Math.sqrt(cNorm) || 1;
+        const sim = dot / (qNorm * cNorm);
+        if (sim > bestSim) {
+          bestSim = sim;
+          best = c;
+        }
+      }
+      if (best) {
+        setConceptNearest({ entry_number: best.entry_number, entry_subject: best.entry_subject, similarity: bestSim });
+      }
+      setConceptResults(Array.isArray(results) ? results : []);
+    } catch (err) {
+      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
+    } finally {
+      setConceptLoading(false);
+    }
+  }, [conceptInput, conceptLoading, centroids]);
+
+  const clearConcept = useCallback(() => {
+    setConceptInput('');
+    setConceptQuery(null);
+    setConceptNearest(null);
+    setConceptResults(null);
+    setConceptError(null);
+  }, []);
 
   useEffect(() => {
     if (selected == null) {
@@ -279,6 +362,56 @@ export default function InterviewMap() {
         </div>
       </div>
 
+      {/* Concept-query projection input — type a phrase, find the
+          single most semantically-similar interview by cosine on the
+          1024-dim centroids, render a green-ringed pin at that
+          centroid's UMAP coord. */}
+      <form onSubmit={handleConceptSubmit} className="mb-3 max-w-2xl">
+        <div className="relative">
+          <input
+            type="text"
+            value={conceptInput}
+            onChange={(e) => setConceptInput(e.target.value)}
+            placeholder="Project a phrase onto the map (finds closest voice)…"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
+            aria-label="Project a phrase onto the interview map"
+            disabled={conceptLoading}
+          />
+          <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
+            {conceptQuery && (
+              <button
+                type="button"
+                onClick={clearConcept}
+                className="p-1 text-stone-400 hover:text-stone-700"
+                aria-label="Clear projection"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+            <button
+              type="submit"
+              disabled={!conceptInput.trim() || conceptLoading}
+              className="px-2.5 py-1 text-xs font-medium bg-emerald-600 text-white rounded hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {conceptLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" /> : 'Project'}
+            </button>
+          </div>
+        </div>
+        {conceptError && (
+          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-1.5">
+            {conceptError}
+          </p>
+        )}
+        {conceptNearest && conceptQuery && !conceptError && (
+          <p className="text-xs text-emerald-900 mt-1.5">
+            <span className="text-emerald-700 font-medium">●</span>{' '}
+            Closest voice to &ldquo;{conceptQuery}&rdquo;:{' '}
+            <strong>{conceptNearest.entry_subject}</strong>{' '}
+            (cosine similarity <span className="font-mono tabular-nums">{conceptNearest.similarity.toFixed(3)}</span>)
+          </p>
+        )}
+      </form>
+
       {visibleInterviews.length === 0 && interviews.length > 0 && (
         <p className="mb-3 text-sm text-stone-500">
           All {interviews.length} interviews are in tiers you&apos;ve hidden.{' '}
@@ -441,8 +574,66 @@ export default function InterviewMap() {
               );
             });
           })()}
+
+          {/* Concept-query projection marker — rendered AFTER the dots
+              so it draws on top. Pin sits at the centroid of the
+              nearest-match interview; visually says "your query lives
+              right here in the embedding space". */}
+          {conceptNearest && conceptQuery && (() => {
+            const tgt = interviews.find((i) => i.entry_number === conceptNearest.entry_number);
+            if (!tgt) return null;
+            const cx = px(tgt.x);
+            const cy = py(tgt.y);
+            const wantTextOnLeft = cx > W - 200;
+            const queryLabel = conceptQuery.length > 38 ? conceptQuery.slice(0, 36) + '…' : conceptQuery;
+            return (
+              <g aria-label={`Query "${conceptQuery}" nearest voice: ${conceptNearest.entry_subject}`}>
+                {/* Larger green ring at the nearest centroid */}
+                <circle cx={cx} cy={cy} r={18} fill="none" stroke="#059669" strokeWidth={2.5} strokeOpacity={0.65} />
+                <circle cx={cx} cy={cy} r={12} fill="none" stroke="#059669" strokeWidth={2} strokeDasharray="4 3" />
+                {/* Callout line + label */}
+                <line x1={cx} y1={cy - 18} x2={cx} y2={cy - 38} stroke="#059669" strokeWidth={2} />
+                <circle cx={cx} cy={cy - 42} r={6} fill="#059669" stroke="#fff" strokeWidth={2} />
+                <text
+                  x={wantTextOnLeft ? cx - 10 : cx + 10}
+                  y={cy - 46}
+                  fontSize={12}
+                  fontWeight={600}
+                  fill="#065f46"
+                  textAnchor={wantTextOnLeft ? 'end' : 'start'}
+                  paintOrder="stroke"
+                  stroke="rgba(255,255,255,0.95)"
+                  strokeWidth={3}
+                  fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                >
+                  Query: &ldquo;{queryLabel}&rdquo;
+                </text>
+              </g>
+            );
+          })()}
         </svg>
       </div>
+
+      {/* Top retrieved passages for the same query — same demo loop
+          closure as Spectrum and Concept Lenses: query → projection on
+          the map (nearest centroid) → here are the voices that match. */}
+      {conceptResults && conceptResults.length > 0 && conceptQuery && (
+        <aside className="mt-4 p-4 rounded-md border border-emerald-200 bg-white">
+          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
+            Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
+          </p>
+          <p className="text-sm text-stone-600 mb-3">
+            The pin on the map shows the nearest voice geometrically; this list shows the actual passages full semantic retrieval surfaces. One embedding — two ways to read it.
+          </p>
+          <ol className="space-y-3">
+            {conceptResults.map((payload) => (
+              <li key={payload.id}>
+                <CitationCard payload={payload} showFullText={false} />
+              </li>
+            ))}
+          </ol>
+        </aside>
+      )}
 
       {(selected || hover) && (() => {
         const focusEntry = selected || hover?.entry_number;
