@@ -7,13 +7,17 @@
 
 import { useEffect, useState } from 'react';
 import { ExternalLink, Clock, MapPin } from 'lucide-react';
-import { TIER_BADGE } from './tiers';
+import { TIER_BADGE, TIER_VOCABULARY, TIER_COLORS } from './tiers';
 import AtlasMap from './AtlasMap';
 
 export default function GeographicAtlas() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [selectedSlug, setSelectedSlug] = useState(null);
+  // Audit-tier filter — same pattern as InterviewMap, SemanticSearch,
+  // QuoteFinder. Default: all 5 tiers visible. Client-side filter
+  // over the precomputed passages per anchor.
+  const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));
 
   useEffect(() => {
     let cancelled = false;
@@ -70,7 +74,10 @@ export default function GeographicAtlas() {
         ))}
       </div>
 
-      {anchor && (
+      {anchor && (() => {
+        const visiblePassages = anchor.passages.filter((p) => allowedTiers.has(p.uncertainty_tier));
+        const hidden = anchor.passages.length - visiblePassages.length;
+        return (
         <article>
           <header className="mb-4">
             <h3 className="text-2xl font-medium text-stone-900 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -79,8 +86,51 @@ export default function GeographicAtlas() {
             <p className="text-sm text-stone-600">{anchor.passages.length} voices</p>
           </header>
 
+          <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
+            <span className="text-stone-500">Audit tier:</span>
+            {TIER_VOCABULARY.map((tier) => {
+              const active = allowedTiers.has(tier);
+              return (
+                <label
+                  key={tier}
+                  className={
+                    'inline-flex items-center gap-1.5 px-2 py-1 rounded-full border cursor-pointer transition-opacity ' +
+                    (active ? 'border-stone-700 bg-white' : 'border-stone-200 bg-stone-50 opacity-50')
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    checked={active}
+                    onChange={() => {
+                      const next = new Set(allowedTiers);
+                      if (active) next.delete(tier); else next.add(tier);
+                      setAllowedTiers(next);
+                    }}
+                    className="sr-only"
+                  />
+                  <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: TIER_COLORS[tier] }} aria-hidden="true" />
+                  <span>{tier}</span>
+                </label>
+              );
+            })}
+            {allowedTiers.size < TIER_VOCABULARY.length && (
+              <button
+                type="button"
+                onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+                className="text-xs text-stone-500 hover:text-stone-900 underline ml-1"
+              >
+                show all
+              </button>
+            )}
+          </div>
+          {hidden > 0 && (
+            <div className="mb-3 text-xs text-stone-500">
+              {hidden} {hidden === 1 ? 'passage' : 'passages'} hidden by tier filter
+            </div>
+          )}
+
           <div className="space-y-3">
-            {anchor.passages.map((p, idx) => {
+            {visiblePassages.map((p, idx) => {
               const tierKey = p.uncertainty_tier in TIER_BADGE ? p.uncertainty_tier : null;
               const badge = tierKey ? TIER_BADGE[tierKey] : null;
               const ts = p.timestamp_start_seconds != null
@@ -115,7 +165,8 @@ export default function GeographicAtlas() {
             })}
           </div>
         </article>
-      )}
+        );
+      })()}
     </div>
   );
 }

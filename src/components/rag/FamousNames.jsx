@@ -14,7 +14,7 @@
 
 import { useEffect, useState } from 'react';
 import { ExternalLink, Clock } from 'lucide-react';
-import { TIER_BADGE } from './tiers';
+import { TIER_BADGE, TIER_VOCABULARY, TIER_COLORS } from './tiers';
 
 // Hand-curated role/era line per figure. The famous_external.json
 // data doesn't carry biographical metadata, so we add it here
@@ -42,6 +42,8 @@ export default function FamousNames() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [selectedSlug, setSelectedSlug] = useState(null);
+  // Audit-tier filter — same pattern as other retrieval surfaces.
+  const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));
 
   useEffect(() => {
     let cancelled = false;
@@ -130,11 +132,62 @@ export default function FamousNames() {
             </p>
           </header>
 
-          <div className="space-y-3">
-            {fig.passages.map((p, idx) => (
-              <PassageCard key={`${p.entry_number}-${idx}`} passage={p} />
-            ))}
+          <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
+            <span className="text-stone-500">Audit tier:</span>
+            {TIER_VOCABULARY.map((tier) => {
+              const active = allowedTiers.has(tier);
+              return (
+                <label
+                  key={tier}
+                  className={
+                    'inline-flex items-center gap-1.5 px-2 py-1 rounded-full border cursor-pointer transition-opacity ' +
+                    (active ? 'border-stone-700 bg-white' : 'border-stone-200 bg-stone-50 opacity-50')
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    checked={active}
+                    onChange={() => {
+                      const next = new Set(allowedTiers);
+                      if (active) next.delete(tier); else next.add(tier);
+                      setAllowedTiers(next);
+                    }}
+                    className="sr-only"
+                  />
+                  <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: TIER_COLORS[tier] }} aria-hidden="true" />
+                  <span>{tier}</span>
+                </label>
+              );
+            })}
+            {allowedTiers.size < TIER_VOCABULARY.length && (
+              <button
+                type="button"
+                onClick={() => setAllowedTiers(new Set(TIER_VOCABULARY))}
+                className="text-xs text-stone-500 hover:text-stone-900 underline ml-1"
+              >
+                show all
+              </button>
+            )}
           </div>
+
+          {(() => {
+            const visible = fig.passages.filter((p) => allowedTiers.has(p.uncertainty_tier));
+            const hidden = fig.passages.length - visible.length;
+            return (
+              <>
+                {hidden > 0 && (
+                  <div className="mb-3 text-xs text-stone-500">
+                    {hidden} {hidden === 1 ? 'passage' : 'passages'} hidden by tier filter
+                  </div>
+                )}
+                <div className="space-y-3">
+                  {visible.map((p, idx) => (
+                    <PassageCard key={`${p.entry_number}-${idx}`} passage={p} />
+                  ))}
+                </div>
+              </>
+            );
+          })()}
         </article>
       )}
     </div>
