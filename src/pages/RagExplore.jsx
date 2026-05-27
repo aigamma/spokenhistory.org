@@ -374,7 +374,7 @@ export default function RagExplore() {
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 UMAP and PCA put the corpus into 2D, but their axes mean
-                nothing, they&apos;re just "directions of max variance."
+                nothing, they&apos;re just &ldquo;directions of max variance.&rdquo;
                 This view does the opposite: four scatters, each with axes
                 that are <em>named human concepts</em> (nonviolence vs.
                 armed self-defense, sacred vs. secular framing, etc.).

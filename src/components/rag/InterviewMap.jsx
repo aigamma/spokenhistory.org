@@ -36,7 +36,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Search as SearchIcon, X, ExternalLink, Loader2 } from 'lucide-react';
-import { TIER_COLORS, TIER_BADGE, TIER_VOCABULARY } from './tiers';
+import { TIER_COLORS, TIER_VOCABULARY } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
 

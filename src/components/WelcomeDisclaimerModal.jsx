@@ -133,7 +133,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
                 </li>
                 <li className="flex items-start">
                   <span className="text-civil-red-strong mr-3 mt-1.5">•</span>
-                  <span>Assign keywords or themes that aren't quite right</span>
+                  <span>Assign keywords or themes that aren&apos;t quite right</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-civil-red-strong mr-3 mt-1.5">•</span>
@@ -163,7 +163,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
                 </li>
                 <li className="flex items-start">
                   <span className="text-civil-red-strong font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">3.</span>
-                  <span><span className="font-medium">Describe the issue</span>, tell us what's wrong or inaccurate</span>
+                  <span><span className="font-medium">Describe the issue</span>, tell us what&apos;s wrong or inaccurate</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-civil-red-strong font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">4.</span>
@@ -179,7 +179,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
           {/* Closing Note */}
           <div className="text-center py-4">
             <p className="text-black text-base lg:text-lg font-normal font-['Source_Serif_4'] leading-relaxed max-w-2xl mx-auto">
-              Thank you for your understanding and for helping us improve this resource. We're committed to creating a valuable tool for exploring Civil Rights history.
+              Thank you for your understanding and for helping us improve this resource. We&apos;re committed to creating a valuable tool for exploring Civil Rights history.
             </p>
           </div>
         </div>

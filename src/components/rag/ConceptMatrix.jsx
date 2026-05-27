@@ -33,7 +33,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Loader2, X } from 'lucide-react';
-import { TIER_COLORS, TIER_BADGE } from './tiers';
+import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
 
@@ -330,7 +330,7 @@ export default function ConceptMatrix() {
             })}
           </ul>
           <p className="text-xs text-stone-500 mt-3">
-            Same 1,024-dim embedding, five conceptual axes. The green tick on each bar is where your query lands relative to each axis's poles.
+            Same 1,024-dim embedding, five conceptual axes. The green tick on each bar is where your query lands relative to each axis&apos;s poles.
           </p>
         </div>
       )}
@@ -418,8 +418,6 @@ export default function ConceptMatrix() {
 }
 
 function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSelect, queryPoint }) {
-  if (!axisX || !axisY) return null;
-
   const W = 460;
   const H = 340;
   // Bump horizontal padding so the extreme-right and extreme-left dots
@@ -437,7 +435,10 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
   const projectX = (x) => PAD_L + ((1 - x) / 2) * innerW;
   const projectY = (y) => PAD_T + ((1 - y) / 2) * innerH;
 
+  // useMemo runs unconditionally (rules-of-hooks) and guards internally
+  // against missing axes so the early-return below stays safe.
   const points = useMemo(() => {
+    if (!axisX || !axisY || !profilesById) return [];
     const out = [];
     for (const profile of profilesById.values()) {
       const x = profile.positions[axisX.slug];
@@ -453,7 +454,13 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
       });
     }
     return out;
+    // projectX/projectY are derived from W/PAD_L/etc constants that
+    // never change between renders, so omitting them from the deps is
+    // safe and avoids triggering the exhaustive-deps lint.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [axisX, axisY, profilesById]);
+
+  if (!axisX || !axisY) return null;
 
   return (
     <figure className="rounded-md border border-stone-200 bg-white overflow-hidden">
