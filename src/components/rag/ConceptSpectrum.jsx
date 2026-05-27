@@ -150,7 +150,8 @@ export default function ConceptSpectrum() {
     if (!selected || !data) return undefined;
     let cancelled = false;
     const axis = data.axes[activeAxis];
-    const pole = selected.position >= 0 ? axis.pole_b : axis.pole_a;
+    // position >= 0 means closer to pole_a per the projection math.
+    const pole = selected.position >= 0 ? axis.pole_a : axis.pole_b;
     setDrillLoading(true);
     setDrillError(null);
     setDrillResults(null);
@@ -377,7 +378,8 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
   // Whichever pole the interviewee leans toward becomes the query
   // we ran. Show the user that framing so the drill-down's intent
   // is obvious.
-  const pole = selected.position >= 0 ? axis.pole_b : axis.pole_a;
+  // position >= 0 means closer to pole_a per the projection math.
+  const pole = selected.position >= 0 ? axis.pole_a : axis.pole_b;
   return (
     <aside className="mt-5 rounded-lg border-2 border-red-700 bg-white p-5 shadow-sm">
       <header className="flex flex-wrap items-baseline justify-between gap-3 mb-3">
@@ -391,7 +393,7 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
           <p className="text-sm text-stone-600 mt-1">
             Top passages from this interview most aligned with{' '}
             <strong className="text-civil-red-body">{pole.label.toLowerCase()}</strong>{' '}
-            (the {selected.position >= 0 ? 'right' : 'left'}-side pole of this axis).
+            (the {selected.position >= 0 ? 'left' : 'right'}-side pole of this axis).
           </p>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
@@ -445,7 +447,11 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
   const TOP = 130;
   const BOTTOM = 270;
 
-  const xFor = (pos) => PAD_X + ((pos + 1) / 2) * (W - 2 * PAD_X);
+  // High position_normalized (+1) = closer to pole_a per the projection math
+  // (axisVec = normalize(eA - eB)). Flip the visual axis so pole_a renders on
+  // the LEFT to match the chart's "← pole_a … pole_b →" header labels and the
+  // "Most pole_a / Most pole_b" leaderboards below.
+  const xFor = (pos) => PAD_X + ((1 - pos) / 2) * (W - 2 * PAD_X);
 
   const handleEnter = (p, e) => {
     setHover({ p, x: e.clientX, y: e.clientY });
