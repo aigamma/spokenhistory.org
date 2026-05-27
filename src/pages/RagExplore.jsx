@@ -16,6 +16,7 @@ import {
   TourPages,
   NomicProjection,
   PassageMap,
+  ConceptMatrix,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
@@ -78,7 +79,7 @@ const TABS = [
   'search', 'quote', 'map', 'related',
   'events', 'spectrum', 'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
-  'nomic',
+  'nomic', 'lenses',
 ];
 
 // Entries to surface in the "related" demo tab. Each one is a
@@ -93,15 +94,19 @@ const RELATED_DEMO_ENTRIES = [
   { number: 125, name: 'Wheeler Parker, Jr. (Emmett Till\'s cousin)' },
   { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
 ];
-// Default tab when no ?tab= param is provided. The Concept-axes demo
-// is the most visually striking "what the embedding space thinks" view,
-// so it becomes the page's headline destination.
-const DEFAULT_TAB = 'spectrum';
+// Default tab when no ?tab= param is provided. Concept lenses is the
+// most pedagogically distinctive view we ship — four named-axis pairs
+// with cross-chart hover sync, showing the same interviewee at
+// different coordinates in different concept spaces. That's the
+// "AI takes academic traditions to the next level" demo and earns
+// the default slot.
+const DEFAULT_TAB = 'lenses';
 const VALID_TAB = (t) => (TABS.includes(t) ? t : DEFAULT_TAB);
 
 // Display order for the pill nav. Featured demos (★) come first,
 // then the visualizations, then text-input demos, then secondary tabs.
 const TAB_ORDER = [
+  { id: 'lenses', label: 'Concept lenses', featured: true },
   { id: 'nomic', label: 'Passage map', featured: true },
   { id: 'spectrum', label: 'Concept axes', featured: true },
   { id: 'events', label: 'Polyphonic events', featured: true },
@@ -122,6 +127,7 @@ const TAB_ORDER = [
 // demos) and for the in-page section heading. Keep in sync with the
 // tab buttons in <nav> below.
 const TAB_LABELS = {
+  lenses: 'Concept lenses',
   nomic: 'Passage map',
   search: 'Semantic search',
   quote: 'Quote-finder',
@@ -350,6 +356,25 @@ export default function RagExplore() {
                 Polyphonic event pages
               </h2>
               <PolyphonicEvents />
+            </div>
+          )}
+
+          {tab === 'lenses' && (
+            <div>
+              <h2 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Concept lenses
+              </h2>
+              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
+                UMAP and PCA put the corpus into 2D, but their axes mean
+                nothing — they&apos;re just "directions of max variance."
+                This view does the opposite: four scatters, each with axes
+                that are <em>named human concepts</em> (nonviolence vs.
+                armed self-defense, sacred vs. secular framing, etc.).
+                Hover any voice in one chart and watch the same person
+                land at a different coordinate in the other three — that
+                shift is what the embedding space is actually telling us.
+              </p>
+              <ConceptMatrix />
             </div>
           )}
 
