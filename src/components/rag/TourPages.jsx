@@ -1,5 +1,5 @@
 /**
- * @fileoverview TourPages — 10 pre-written narrative tour pages, each a
+ * @fileoverview TourPages, 10 pre-written narrative tour pages, each a
  * curator's walk through 6-10 interviews around a theme.
  *
  * Loads /rag/summaries/tours.json.
@@ -37,7 +37,7 @@ export default function TourPages() {
   return (
     <div className="rag-tours">
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-        Ten curated tours — pre-written narrative paths through 6-10 interviews each, organized around a theme. Editorial; not generated per query.
+        Ten curated tours, pre-written narrative paths through 6-10 interviews each, organized around a theme. Editorial; not generated per query.
       </p>
 
       <div className="flex flex-wrap gap-2 mb-6">
@@ -73,7 +73,7 @@ export default function TourPages() {
 
           {/* Visual map of the tour stops as a numbered arc through
               the Atlas UMAP projection. Renders silently as null if
-              atlas_projection.json isn't loaded yet — the body + path
+              atlas_projection.json isn't loaded yet, the body + path
               list below remain functional regardless. */}
           <TourMap tour={tour} />
 
@@ -105,7 +105,7 @@ export default function TourPages() {
 }
 
 /**
- * TourStop — one stop in a curated tour's ordered path. The stop
+ * TourStop, one stop in a curated tour's ordered path. The stop
  * shows the interviewee's name + curator's note by default; clicking
  * it opens an inline drill-down with 3 passages from THAT interview
  * most aligned with the TOUR'S title.
@@ -115,7 +115,7 @@ export default function TourPages() {
  * entry_number. So McLaurin's stop on the voter-registration tour
  * surfaces his voter-reg passages, not generic top-passages.
  *
- * Closed by default — clicking the row expands the drill-down.
+ * Closed by default, clicking the row expands the drill-down.
  */
 function TourStop({ stop, idx, tourTitle }) {
   const [expanded, setExpanded] = useState(false);

@@ -1,4 +1,4 @@
-# rag/ — Civil Rights History Project RAG layer
+# rag/, Civil Rights History Project RAG layer
 
 Retrieval scaffolding for the Smithsonian-grade publication pipeline. The
 substrate is Pinecone (Builder tier, separate project from worldthought
@@ -14,7 +14,7 @@ version:
 - Managed substrate is the right team-handoff profile for the WWU
   academic stakeholders (zero ops burden on them)
 - Voyage-3 (1024-dim) + voyage-rerank-2 is the standard Smithsonian-grade
-  retrieval stack — significantly better than gte-small on semantically
+  retrieval stack, significantly better than gte-small on semantically
   dense corpora like oral history transcripts
 - Cost ceiling: ~$22–25/mo all-in (Pinecone $20 + Voyage ~$2–5)
 
@@ -30,7 +30,7 @@ version:
 [ top-N passages with metadata ]
       |
       v
-[ chat / LLM context builder (downstream — not in this module) ]
+[ chat / LLM context builder (downstream, not in this module) ]
 ```
 
 Ingest:
@@ -62,7 +62,7 @@ Ingest:
 | `embed.mjs` | Voyage embedding batch helper with retry+backoff |
 | `ingest.mjs` | Walker + ingest CLI (CLI flags: `--entries`, `--include-ground-truth`, `--prune`, `--dry-run`) |
 | `retrieve.mjs` | Two-stage retrieve: Pinecone hybrid query → Voyage rerank-2 |
-| `precompute.mjs` | After ingest, emits static JSON for the interactive-features layer (related passages per entry + per-chunk, per-entry centroids, 2D PCA constellation). Runs against any Pinecone index with the same metadata shape — civil-rights and worldthought.com share the script. CLI flags: `--feature {related,centroids,constellation}`, `--entries`, `--centroid-sample`, `--dry-run`. |
+| `precompute.mjs` | After ingest, emits static JSON for the interactive-features layer (related passages per entry + per-chunk, per-entry centroids, 2D PCA constellation). Runs against any Pinecone index with the same metadata shape, civil-rights and worldthought.com share the script. CLI flags: `--feature {related,centroids,constellation}`, `--entries`, `--centroid-sample`, `--dry-run`. |
 | `.env.example` | Env-var template (copy to `.env.local`, never commit) |
 
 ## Index design
@@ -198,7 +198,7 @@ and the upper-level functions in `ingest.mjs` + `retrieve.mjs`. To migrate
 to a different substrate (Weaviate, Supabase pgvector, Qdrant), the file
 surface to swap is:
 
-- `shared.mjs` — endpoint + header config
+- `shared.mjs`, endpoint + header config
 - `ingest.mjs::listAllVectorIds`, `::upsertVectors`, `::deleteVectorIds`
 - `retrieve.mjs::pineconeQuery` (rename + reshape per new substrate)
 
@@ -229,8 +229,8 @@ the same.
 - ✅ +9 ingestion-only entries added 2026-05-25 from Dustin's student batch (6 genuinely new + 3 SKIPPED/DEFERRED revivals). See `transcripts/ingestion/README.md`. Corpus now 136 entries.
 - ✅ `corrected/` is downstream-ready: every entry has `.srt + .txt + .vtt + manifest.json` with the same schema (verified by `transcripts/ingestion/verify_corpus_unified.py`). All 136 manifests carry `entry_number`, `entry_subject`, and `entry_provenance` (`audit-original` or `ingestion-only`).
 - ✅ `rag/ingest.mjs` updated 2026-05-25 to discover entries via BOTH master MD `**Source**:` lines AND fallback to `manifest.json::entry_number` for the 9 ingestion-only entries (which don't have master MD entry headings yet). `SKIPPED_ENTRIES` reduced to `{31, 95}` since #28, #46, #64 now have content.
-- ✅ `rag/ingest.mjs` second 2026-05-25 update: (a) fixed a pre-existing infinite-loop bug in the master-MD heading-walker (double-`exec` pattern interacted with the global-regex auto-reset of `lastIndex` on null match — replaced with `matchAll` materialization); (b) propagates `entry_provenance`, `inferential_uncertainty_score`, `inferential_uncertainty_tier`, and `loc_item_url` from each manifest into the Pinecone metadata for downstream filtering and LoC-citation linking; (c) drops phantom byDir records whose source directories don't exist on disk so the entry count is honest. Final entry map: 127 audit-original + 9 ingestion-only = 136, matching corrected/ exactly.
-- ✅ **Pinecone civil-rights index provisioned 2026-05-25 23:00 UTC.** Index name `civil-rights`, dim 1024, cosine, aws-us-east-1, Builder serverless. Co-mingled with `worldthought` in the same project (shared host hash `odc9z70`) — provisional, see `rag/.env.local` for migration path to separate `civil-rights-prod` project.
+- ✅ `rag/ingest.mjs` second 2026-05-25 update: (a) fixed a pre-existing infinite-loop bug in the master-MD heading-walker (double-`exec` pattern interacted with the global-regex auto-reset of `lastIndex` on null match, replaced with `matchAll` materialization); (b) propagates `entry_provenance`, `inferential_uncertainty_score`, `inferential_uncertainty_tier`, and `loc_item_url` from each manifest into the Pinecone metadata for downstream filtering and LoC-citation linking; (c) drops phantom byDir records whose source directories don't exist on disk so the entry count is honest. Final entry map: 127 audit-original + 9 ingestion-only = 136, matching corrected/ exactly.
+- ✅ **Pinecone civil-rights index provisioned 2026-05-25 23:00 UTC.** Index name `civil-rights`, dim 1024, cosine, aws-us-east-1, Builder serverless. Co-mingled with `worldthought` in the same project (shared host hash `odc9z70`), provisional, see `rag/.env.local` for migration path to separate `civil-rights-prod` project.
 - ✅ **First ingest complete 2026-05-25.** Initial run: 40,710 vectors across `.srt`/`.txt`/`.vtt`. **Subsequent 2026-05-26 prune:** dropped `.txt` + `.vtt` (near-duplicate re-encodings of the same Whisper output) → 15,464 `.srt`-only vectors. Every retrieval result now time-anchored.
 - ✅ **Precompute artifacts published** under `public/rag/`: 136 `related/entry-N.json` files (per-chunk top-5 cross-entry passages + per-entry related-entry summary), `centroids.json` (per-entry mean embeddings with tier/provenance/loc URL), `constellation.json` (2D PCA scatter for visualization).
 - ✅ **`/retrieve` Netlify Function deployed.** Citation-grade payloads with `entry_number` shortcut + `dedupeByEntry` polyphonic option. Live at `https://civil-rights-staging.netlify.app/retrieve`.
@@ -260,7 +260,7 @@ A Nomic Atlas Plus account was active from 2026-05-26 through approximately
 2026-05-27 to compute a UMAP projection + auto-labeled topic model on the
 15,464-passage corpus. The static output is preserved in
 `public/rag/atlas_projection.json` (5.10 MB, in git). After Atlas was
-canceled, no further Atlas calls happen on the public site — the JSON is
+canceled, no further Atlas calls happen on the public site, the JSON is
 the only piece that ever mattered for visualization, and it lives forever.
 
 See [`ATLAS_PROVENANCE.md`](./ATLAS_PROVENANCE.md) for full documentation
@@ -268,7 +268,7 @@ of:
 - What's in `atlas_projection.json` (schema, row counts, the 8 broad topic
   labels)
 - The four pipeline scripts (`dump_for_nomic.mjs`, `upload_to_nomic.py`,
-  `rebuild_atlas_topics.py`, `download_from_nomic.py`) — retained for
+  `rebuild_atlas_topics.py`, `download_from_nomic.py`), retained for
   reference; they will FAIL post-cancellation because they hit
   Atlas-account-scoped endpoints
 - The drop-in replacement (self-hosted UMAP via `umap-learn`) if the

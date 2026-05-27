@@ -1,12 +1,12 @@
-# RAG layer — London conference prep
+# RAG layer, London conference prep
 
-Status: **2026-05-25** — corpus unified at 136 entries, RAG application
+Status: **2026-05-25**, corpus unified at 136 entries, RAG application
 layer complete (chunker, embedder, ingest pipeline, retrieval), Pinecone
 provisioning is the only blocking dependency before first ingest.
 
 The WWU team is presenting at a London conference next month. The
 presentation hinges on **"relationships between philosophy and
-embedding"** — i.e., what an embedding model "thinks" two oral-history
+embedding"**, i.e., what an embedding model "thinks" two oral-history
 passages have in common, and how that surfaces meaningful philosophical
 threads across a 600-hour archive of civil-rights leaders' testimony.
 
@@ -18,12 +18,12 @@ and what's still left to wire up.
 
 | Number | Provenance | Audit coverage | Notes |
 |---|---|---|---|
-| 127 entries | `audit-original` | Pass 1–8 cleaned (Whisper → human → LoC canonical-archive cross-reference) | The original "127 audit-able transcripts" — these went through the full Smithsonian-grade audit cascade. Each carries an `inferential_uncertainty.score` in the manifest (range observed: 0.0–0.51, most cluster `low` 0.3–0.5). |
+| 127 entries | `audit-original` | Pass 1–8 cleaned (Whisper → human → LoC canonical-archive cross-reference) | The original "127 audit-able transcripts", these went through the full Smithsonian-grade audit cascade. Each carries an `inferential_uncertainty.score` in the manifest (range observed: 0.0–0.51, most cluster `low` 0.3–0.5). |
 | 9 entries | `ingestion-only` | Pass 8 LoC-healing only (streamlined 2026-05-25 ingestion of Dustin's student batch) | Three were originally `SKIPPED_ENTRIES` (multi-speaker joint interviews that Whisper-empty'd); six are entirely new (entries 133–138). All have `inferential_uncertainty.confidence_tier = 'ingestion-only'` so retrieval can hedge accordingly. |
 
 Every entry has the same on-disk shape:
 `transcripts/corrected/<dir>/{.srt, .txt, .vtt, manifest.json}`.
-The chunker handles all three transcript file formats identically — time-aware
+The chunker handles all three transcript file formats identically, time-aware
 60-second / 1400-char chunks for `.srt`/`.vtt`, paragraph-aware 1100-char
 chunks for `.txt`.
 
@@ -33,7 +33,7 @@ Voyage-3 (1024-dim) is the embedding model. The choice matters
 substantively for the "philosophy of embedding" angle:
 
 - **Voyage-3 was trained on retrieval-augmented-generation use cases.**
-  It's not a generic sentence-similarity model — it's tuned to find
+  It's not a generic sentence-similarity model, it's tuned to find
   passages that *answer* a question. When a presenter asks "what does
   the corpus say about the relationship between nonviolence and
   self-defense?", the model is looking for passages that *speak to* that
@@ -52,7 +52,7 @@ substantively for the "philosophy of embedding" angle:
   from an `ingestion-only` chunk; the retrieval layer can filter or
   weight accordingly.
 - **LoC canonical-archive citation is also first-class.** Every chunk
-  carries `loc_item_url` — the Library of Congress catalog URL for
+  carries `loc_item_url`, the Library of Congress catalog URL for
   the entry. An answer that quotes a passage can deep-link the LoC
   archive item so the audience can verify the source.
 
@@ -71,7 +71,7 @@ well:
    between Christian theology and the practice of nonviolence?"*
    Retrieval should return passages from King-circle SCLC leaders,
    from Highlander-trained organizers, and from independent Black
-   churches — different vocabularies, same philosophical territory.
+   churches, different vocabularies, same philosophical territory.
 
 2. **Generational continuity / discontinuity.**
    *"How do interviewees who came up after 1965 describe their
@@ -104,7 +104,7 @@ well:
 
 ## Verified philosophy-pattern queries (2026-05-26 live)
 
-The five queries below are good Plan-B demos for the London talk —
+The five queries below are good Plan-B demos for the London talk -
 they exercise the philosophical-framing angle (vs. the event-grounded
 queries above) and all return strong matches against the live `/retrieve`:
 
@@ -116,7 +116,7 @@ queries above) and all return strong matches against the live `/retrieve`:
 | `what made the movement possible` | Ruby Sales | 0.70 |
 | `religious foundations of the movement` | C. T. Vivian | 0.68 |
 
-The Derby + Vivian results are particularly nice for the conference —
+The Derby + Vivian results are particularly nice for the conference -
 both are speakers the London audience may not know about (Derby a
 SNCC photographer; Vivian an ordained minister + SCLC executive). The
 embeddings surface them on the right philosophical-framing queries
@@ -128,7 +128,7 @@ Several iconic civil rights figures don't have their own interview in
 this 136-entry corpus (Bayard Rustin, Ella Baker, Diane Nash, James
 Forman, Bob Moses), but they're discussed extensively by interviewees
 who knew them. Querying their names directly surfaces the
-interviewees who spoke about them — a powerful demo of secondhand
+interviewees who spoke about them, a powerful demo of secondhand
 oral history as primary source:
 
 | Query (name) | Top match (interviewee who discussed them) | Similarity |
@@ -148,7 +148,7 @@ beyond its 136 named interviewees through the network of who-knew-whom.
 ## What's still left to wire up
 
 1. **Pinecone civil-rights project provisioning** (one-time admin
-   action in the Pinecone console — see "Setup steps (one-time)" in the
+   action in the Pinecone console, see "Setup steps (one-time)" in the
    main README). Builder tier supports multiple projects under one
    organization; civil-rights and worldthought.com share the
    `eric@aigamma.com` org but are separate projects.
@@ -158,26 +158,26 @@ beyond its 136 named interviewees through the network of who-knew-whom.
    created), `VOYAGE_API_KEY` (shared with worldthought.com). A
    template is at `rag/.env.example`.
 
-3. **First ingest run** — `node --env-file=rag/.env.local rag/ingest.mjs`.
+3. **First ingest run**, `node --env-file=rag/.env.local rag/ingest.mjs`.
    Estimated 45–75 minutes wall-clock for the full 136-entry corpus
-   (15,464 chunks at `UPSERT_BATCH=128` — `.srt`-only after the
+   (15,464 chunks at `UPSERT_BATCH=128`, `.srt`-only after the
    2026-05-26 prune that dropped `.txt`/`.vtt` duplicates). The
    pipeline is idempotent on
    content hash so re-runs after corrections only re-embed the changed
    chunks.
 
-4. **Ground-truth corpus ingest** —
+4. **Ground-truth corpus ingest** -
    `node --env-file=rag/.env.local rag/ingest.mjs --include-ground-truth`.
    Adds 140 `chunk_type: ground_truth_fact` vectors so queries can
    draw from canonical biography as well as oral history. Cheap
    (one shot, ~140 chunks).
 
-5. **Retrieval evaluation** — once the index is populated, run a small
+5. **Retrieval evaluation**, once the index is populated, run a small
    set of representative queries (the ones above) and inspect the
    top-N retrievals. The presentation will be more credible with a
    few worked examples than with index statistics.
 
-6. **Chat function** — downstream of this scaffolding. Wraps the
+6. **Chat function**, downstream of this scaffolding. Wraps the
    `retrieve()` call in a Cloud Function that an LLM (Claude or GPT-4)
    can call as a tool. Not in scope for the RAG layer itself; will be
    added when the consumer UI/API surface is defined.
@@ -186,7 +186,7 @@ beyond its 136 named interviewees through the network of who-knew-whom.
 
 - **First ingest**: ~$2.10 in Voyage embedding (one-time)
 - **Subsequent re-ingests** after small corrections: ~$0 (content-hash idempotent)
-- **Pinecone Builder**: $20/mo flat (already paying — shared with worldthought.com)
+- **Pinecone Builder**: $20/mo flat (already paying, shared with worldthought.com)
 - **Steady-state query embedding + rerank during the conference**: ~$3–5 in
   Voyage (depends on session traffic)
 

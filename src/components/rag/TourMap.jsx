@@ -1,10 +1,10 @@
 /**
- * @fileoverview TourMap — overlay a curated tour's stops as a numbered
+ * @fileoverview TourMap, overlay a curated tour's stops as a numbered
  * arc through the Atlas UMAP projection.
  *
  * Ties the Tours feature (editorial narrative paths through ~7-10
  * interviews around a theme) to the embedding-space visualization
- * surfaces. Same coordinate system as InterviewMap and PassageMap —
+ * surfaces. Same coordinate system as InterviewMap and PassageMap -
  * everything in this app's RAG layer lives in one Atlas-derived
  * 2D space.
  *
@@ -18,11 +18,11 @@
  *   - Hover a numbered stop → highlights the interviewee + shows
  *     their curated note for that stop position.
  *   - Stops far from each other on the map make for visually-long
- *     line segments — that's actually informative ("this tour jumps
+ *     line segments, that's actually informative ("this tour jumps
  *     between thematic territories").
  *
  * If atlas_projection.json hasn't been downloaded yet, the component
- * silently returns null — TourPages still works with the body + path
+ * silently returns null, TourPages still works with the body + path
  * list below.
  */
 
@@ -41,7 +41,7 @@ export default function TourMap({ tour, onSelectStop = null }) {
     fetch('/rag/atlas_projection.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => { if (!cancelled) setProjection(j); })
-      .catch(() => { /* silent — TourMap is optional */ });
+      .catch(() => { /* silent, TourMap is optional */ });
     return () => { cancelled = true; };
   }, []);
 

@@ -1,6 +1,6 @@
 # Transcript Audit Design
 
-A recurring quality-assurance pass on the 135 raw Whisper transcripts in `transcripts/raw/`. Catches Whisper transcription errors that the existing dual-scorer + citation-auditor gate can't see, because that gate scores generated summaries against transcripts — and if the transcript itself is wrong, the gate has nothing to compare against.
+A recurring quality-assurance pass on the 135 raw Whisper transcripts in `transcripts/raw/`. Catches Whisper transcription errors that the existing dual-scorer + citation-auditor gate can't see, because that gate scores generated summaries against transcripts, and if the transcript itself is wrong, the gate has nothing to compare against.
 
 This document is the handoff design. The next agent reading this should be able to implement the system end-to-end without re-deriving any architectural decision.
 
@@ -22,7 +22,7 @@ When the summarizer reads "Megahevers" in the transcript, it has two failure mod
 
 Both modes degrade the project's quality. The fix is an upstream audit that flags phonetic errors before summarization, treats the corrections as a non-destructive overlay, and feeds the corrected context into both the summarizer and the scorer.
 
-A spot-check confirms the gap exists. Searching the Aaron Dixon transcript (`transcripts/raw/Aaron Dixon_interview_20250704_170306/`) for known leader surnames returns 6 matches for "Carmichael" and 31 for "Huey" (probably Huey Newton, no last-name confirmation in the regex) but exposes "the Laundras" (likely "laundry"), "Miljert" (a phantom proper noun where Whisper hallucinated structure into a vowel sequence), and "Joe Willie" (could be a real birth name or could be a corruption — context-dependent). The existing `shared.py::get_relevant_facts` regex-matcher catches the good cases and misses the broken ones.
+A spot-check confirms the gap exists. Searching the Aaron Dixon transcript (`transcripts/raw/Aaron Dixon_interview_20250704_170306/`) for known leader surnames returns 6 matches for "Carmichael" and 31 for "Huey" (probably Huey Newton, no last-name confirmation in the regex) but exposes "the Laundras" (likely "laundry"), "Miljert" (a phantom proper noun where Whisper hallucinated structure into a vowel sequence), and "Joe Willie" (could be a real birth name or could be a corruption, context-dependent). The existing `shared.py::get_relevant_facts` regex-matcher catches the good cases and misses the broken ones.
 
 ## Architecture
 
@@ -32,22 +32,22 @@ A new processor module (`processor/transcript_audit.py`) + an output JSON overla
 
 For each candidate proper-noun-or-suspicious-token in a transcript, run a three-stage cascade. Earlier stages are free; the LLM stage is ~$0.001 per transcript.
 
-#### Stage 1 — Exact / alias match
+#### Stage 1, Exact / alias match
 
 Already implemented as `shared.py::get_relevant_facts`. Lift the logic into the audit module so the audit can claim ownership of grounding decisions independent of any specific summarization step.
 
-For each `\bword\b`-anchored regex match against a canonical name or alias in `civil_rights_facts.json`, emit a `grounded_facts` entry: `{canonical_name, occurrences, match_source: "stage_1_exact"}`. No correction needed — the transcript already names the fact correctly.
+For each `\bword\b`-anchored regex match against a canonical name or alias in `civil_rights_facts.json`, emit a `grounded_facts` entry: `{canonical_name, occurrences, match_source: "stage_1_exact"}`. No correction needed, the transcript already names the fact correctly.
 
 Cost: free. ~5ms per transcript on a modern laptop.
 
-#### Stage 2 — Phonetic + edit-distance fuzzy match
+#### Stage 2, Phonetic + edit-distance fuzzy match
 
 For every transcript token (or n-gram up to length 4) that **misses** Stage 1 but looks like a proper noun (capitalized, not a common stopword, not a number), run two similarity checks in parallel:
 
 - **Double Metaphone** (`jellyfish.metaphone(candidate)` compared to the precomputed metaphone keys of every canonical name + alias). Catches phonetic collisions that edit distance misses: "Megahevers" / "Medgar Evers" share the metaphone key `MTKR` once the silent-cluster collapse is normalized.
-- **Jaro-Winkler** (`jellyfish.jaro_winkler_similarity(candidate, target)`). Higher prefix-weight than Levenshtein — well-suited to proper-noun matching where the first few characters typically survive transcription. Catches edit-distance errors that phonetic matching might miss ("Carmickle" → "Carmichael" — both metaphone-key `KRMKL`, but the Jaro-Winkler is the clearer signal).
+- **Jaro-Winkler** (`jellyfish.jaro_winkler_similarity(candidate, target)`). Higher prefix-weight than Levenshtein, well-suited to proper-noun matching where the first few characters typically survive transcription. Catches edit-distance errors that phonetic matching might miss ("Carmickle" → "Carmichael", both metaphone-key `KRMKL`, but the Jaro-Winkler is the clearer signal).
 
-Combine the two scores: `combined = 0.5 * metaphone_match + 0.5 * jaro_winkler`. (Metaphone match is binary — 1.0 if keys match, 0.0 if not.)
+Combine the two scores: `combined = 0.5 * metaphone_match + 0.5 * jaro_winkler`. (Metaphone match is binary, 1.0 if keys match, 0.0 if not.)
 
 Routing decision:
 - `combined >= 0.85` → emit correction with `source: "stage_2_fuzzy"` and `confidence: combined`
@@ -56,9 +56,9 @@ Routing decision:
 
 Cost: free. ~50ms per transcript for the full token sweep against 60 canonical names + 138 aliases.
 
-Library dependency: `jellyfish` — Apache 2.0, pure-Python, ~80KB. Add to `Metadata Generation System/requirements.txt`.
+Library dependency: `jellyfish`, Apache 2.0, pure-Python, ~80KB. Add to `Metadata Generation System/requirements.txt`.
 
-#### Stage 3 — LLM disambiguation for the middle band
+#### Stage 3, LLM disambiguation for the middle band
 
 For each candidate scoring in [0.65, 0.85], assemble a tightly-bounded prompt and ship to Claude Haiku 4.5 (`claude-haiku-4-5-20251001`):
 
@@ -85,11 +85,11 @@ Output JSON only:
 
 Why Claude Haiku 4.5:
 - Lowest-cost model in the Anthropic family ($1 / $5 per MTok input/output as of 2026-05)
-- The task is small and well-bounded — Haiku handles it cleanly
+- The task is small and well-bounded, Haiku handles it cleanly
 - Continues the project's pattern of using Anthropic as the adversarial / verification layer alongside OpenAI for generation
 - At ~$0.001 per transcript, cost is negligible. The full 135-transcript sweep is ~$0.15.
 
-**Always on.** No env-var gating. Stage 3 always runs. The marginal cost is below the threshold the project should worry about (the per-transcript summarization pass already costs $0.04). If cadence becomes the concern, drop the sweep frequency — that's a workflow-file edit, not a module-level decision.
+**Always on.** No env-var gating. Stage 3 always runs. The marginal cost is below the threshold the project should worry about (the per-transcript summarization pass already costs $0.04). If cadence becomes the concern, drop the sweep frequency, that's a workflow-file edit, not a module-level decision.
 
 #### Output schema
 
@@ -184,7 +184,7 @@ This is the **biggest single quality lift** the audit pipeline produces. The sum
 
 File: `processor/shared.py::get_relevant_facts`
 
-Extend the regex match to also catch correction spans. If the transcript contains "Megahevers" and an approved correction maps it to "Medgar Evers" (which canonicalizes to `The Murder of Medgar Evers`), the `Medgar Evers` ground-truth fact gets pulled into the summary prompt's context block — just as it would have been if Whisper had transcribed the name correctly.
+Extend the regex match to also catch correction spans. If the transcript contains "Megahevers" and an approved correction maps it to "Medgar Evers" (which canonicalizes to `The Murder of Medgar Evers`), the `Medgar Evers` ground-truth fact gets pulled into the summary prompt's context block, just as it would have been if Whisper had transcribed the name correctly.
 
 Implementation sketch:
 
@@ -213,7 +213,7 @@ Mirror the existing `src/pages/ReviewQueue.jsx` structure (which already provide
 
 Reviewer actions hit `src/services/transcriptCorrections.js` (new), which writes to the Firestore `transcript_corrections` collection (schema below).
 
-The page is admin-only — gate via the existing `isAdmin()` check used elsewhere in `firestore.rules`.
+The page is admin-only, gate via the existing `isAdmin()` check used elsewhere in `firestore.rules`.
 
 ### Firestore: `transcript_corrections` collection (new)
 
@@ -275,7 +275,7 @@ on:
       - 'Metadata Generation System/processor/transcript_audit.py'
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'   # 6am UTC = 11pm PT — adjust to WWU's preference
+    - cron: '0 6 * * *'   # 6am UTC = 11pm PT, adjust to WWU's preference
 ```
 
 Steps:
@@ -296,11 +296,11 @@ The most important trigger to get right is **on changes to `civil_rights_facts.j
 
 Once Weaviate + Voyage AI is operational (see `docs/WEAVIATE_INTEGRATION_DESIGN.md`), a fourth stage becomes possible:
 
-**Stage 2.5 — semantic similarity check.** For each Stage 2 candidate scoring in [0.65, 0.85] (the LLM-escalation band), embed the surrounding context with Voyage AI and search the `TranscriptSegment` Weaviate collection for the top-K semantically-similar passages. If those passages mention any canonical fact (via Stage 1 match), the candidate is probably an error referencing that fact. This catches collisions where phonetic + edit-distance fail but the context unambiguously identifies the speaker's referent.
+**Stage 2.5, semantic similarity check.** For each Stage 2 candidate scoring in [0.65, 0.85] (the LLM-escalation band), embed the surrounding context with Voyage AI and search the `TranscriptSegment` Weaviate collection for the top-K semantically-similar passages. If those passages mention any canonical fact (via Stage 1 match), the candidate is probably an error referencing that fact. This catches collisions where phonetic + edit-distance fail but the context unambiguously identifies the speaker's referent.
 
-This is additive, not a replacement for Stage 3 — semantic similarity tells you "the candidate is about Fact X"; LLM disambiguation tells you "the candidate IS Fact X-spelled-wrong." Both signals improve accuracy.
+This is additive, not a replacement for Stage 3, semantic similarity tells you "the candidate is about Fact X"; LLM disambiguation tells you "the candidate IS Fact X-spelled-wrong." Both signals improve accuracy.
 
-Voyage AI also offers a reranker (`rerank-2`) that can re-score Stage 2's top-3 phonetic candidates before they reach Stage 3. The reranker is a cross-encoder trained on relevance — for our use case ("which of these three names best matches the context?") that's exactly the right shape of task and runs faster than an LLM call.
+Voyage AI also offers a reranker (`rerank-2`) that can re-score Stage 2's top-3 phonetic candidates before they reach Stage 3. The reranker is a cross-encoder trained on relevance, for our use case ("which of these three names best matches the context?") that's exactly the right shape of task and runs faster than an LLM call.
 
 ### Tests
 
@@ -331,15 +331,15 @@ Cost is dominated by Stage 3. Stages 1 + 2 are CPU-only and free. Pick cadence b
 
 ### What this does NOT solve
 
-Honest scope limits — flag these in the reviewer UI so reviewers know not to expect coverage:
+Honest scope limits, flag these in the reviewer UI so reviewers know not to expect coverage:
 
-- **Common-noun Whisper errors with no ground-truth grounding.** "the Laundras" → "the laundry" is a Whisper error where neither word is in `civil_rights_facts.json`. Stage 1 + 2 will miss it. Stage 3 might catch it if the candidate happens to be in the middle-band score range — but the design isn't optimized for it. Mitigating that class of error requires either a dictionary-based spell-check pass or a confidence-flagged Whisper re-run with a larger model. **Out of scope here.**
+- **Common-noun Whisper errors with no ground-truth grounding.** "the Laundras" → "the laundry" is a Whisper error where neither word is in `civil_rights_facts.json`. Stage 1 + 2 will miss it. Stage 3 might catch it if the candidate happens to be in the middle-band score range, but the design isn't optimized for it. Mitigating that class of error requires either a dictionary-based spell-check pass or a confidence-flagged Whisper re-run with a larger model. **Out of scope here.**
 
 - **Speaker disagreement with ground truth.** If the speaker misremembers a date ("Brown v. Board was in 1955" when the ruling was 1954), the audit flags neither. **Intentional.** The speaker's recollection is the source material, and it's not the audit's job to correct it. The reviewer can annotate disagreement in the summary if needed.
 
 - **Cross-transcript phonetic disambiguation.** If "Stokey Carmickle" appears in 10 transcripts, each audit runs independently. A future v2 could pool candidates across the corpus and use the aggregate to boost confidence (10 transcripts independently flagging the same span at 0.83 is stronger evidence than any single one), but v1 is per-transcript for simplicity.
 
-- **Disambiguation of speakers with overlapping names.** Two interviewees both named "James Wilson" would each get audit files but no cross-reference linking them. Acceptable for the current corpus — none of the 135 interviewees share names.
+- **Disambiguation of speakers with overlapping names.** Two interviewees both named "James Wilson" would each get audit files but no cross-reference linking them. Acceptable for the current corpus, none of the 135 interviewees share names.
 
 ### Acceptance criteria for the next agent
 
@@ -357,11 +357,11 @@ That's the clean handoff.
 
 ## See also
 
-- `docs/WEAVIATE_INTEGRATION_DESIGN.md` — the RAG retrieval substrate this design integrates with (Stage 2.5 semantic similarity, plus the corpus-wide grounding the Weaviate-backed pipeline enables)
-- `docs/DEPLOYMENT.md` — operator-level setup; will be extended with the audit module's setup once implemented
-- `docs/ACCESSIBILITY.md` — the WCAG 2.2 AA audit report from the May 2026 overhaul, which established the documentation style this doc follows
-- `CLAUDE.md` — project-wide architectural notes for Claude Code agents
-- `Metadata Generation System/civil_rights_facts.json` — the ground-truth corpus the audit grounds against (60 entries, 51 with aliases, 138 aliases total)
-- `Metadata Generation System/processor/shared.py::get_relevant_facts` — the existing exact-match fact resolver this design extends
-- `Metadata Generation System/processor/citation_check.py`, `claude_scorer.py`, `dual_scoring_helper.py` — the downstream consumers whose system prompts get the corrections block
-- `src/pages/ReviewQueue.jsx` — the existing reviewer UI pattern that `TranscriptAuditReview.jsx` mirrors
+- `docs/WEAVIATE_INTEGRATION_DESIGN.md`, the RAG retrieval substrate this design integrates with (Stage 2.5 semantic similarity, plus the corpus-wide grounding the Weaviate-backed pipeline enables)
+- `docs/DEPLOYMENT.md`, operator-level setup; will be extended with the audit module's setup once implemented
+- `docs/ACCESSIBILITY.md`, the WCAG 2.2 AA audit report from the May 2026 overhaul, which established the documentation style this doc follows
+- `CLAUDE.md`, project-wide architectural notes for Claude Code agents
+- `Metadata Generation System/civil_rights_facts.json`, the ground-truth corpus the audit grounds against (60 entries, 51 with aliases, 138 aliases total)
+- `Metadata Generation System/processor/shared.py::get_relevant_facts`, the existing exact-match fact resolver this design extends
+- `Metadata Generation System/processor/citation_check.py`, `claude_scorer.py`, `dual_scoring_helper.py`, the downstream consumers whose system prompts get the corrections block
+- `src/pages/ReviewQueue.jsx`, the existing reviewer UI pattern that `TranscriptAuditReview.jsx` mirrors

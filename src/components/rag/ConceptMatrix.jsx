@@ -1,32 +1,32 @@
 /**
- * @fileoverview ConceptMatrix — show the SAME 136 interviewees through
+ * @fileoverview ConceptMatrix, show the SAME 136 interviewees through
  * four DIFFERENT pairs of named concept axes simultaneously, with
  * cross-chart hover sync so you watch a single voice move when you
  * change the lens.
  *
  * Why this exists: Nomic Atlas + UMAP + PCA all share the same
- * pedagogical failure — they give you a 2D scatter where the axes
+ * pedagogical failure, they give you a 2D scatter where the axes
  * have no human-readable meaning, only "directions of max variance."
  * The viewer hovers a dot and learns who's there, but nothing about
  * WHY they're there or what the structure represents. Atlas itself
- * doesn't try to explain because the axes can't BE explained — they're
+ * doesn't try to explain because the axes can't BE explained, they're
  * statistical leftovers.
  *
  * This component flips the framing. Instead of one un-labeled projection,
  * show many projections where every axis has a hand-curated name. We
  * already have rag/precompute_concept_axes.mjs computing 5 such axes
- * — each defined by two pole descriptions whose unit-difference vector
+ *, each defined by two pole descriptions whose unit-difference vector
  * is the axis. Project every interview onto each axis (a dot product
  * with that vector) and plot pairs as 2D scatters.
  *
  * The educational reveal is the cross-chart sync. Hover Aaron Dixon
- * in chart 1 — see him land toward "armed self-defense." Same hover
- * highlights him in chart 2 — now he's toward "tactical pragmatism."
- * Chart 3 — toward "collective discipline." His one voice exists at
+ * in chart 1, see him land toward "armed self-defense." Same hover
+ * highlights him in chart 2, now he's toward "tactical pragmatism."
+ * Chart 3, toward "collective discipline." His one voice exists at
  * different coordinates in every named-concept space, and the user
  * learns what the structure means by watching it shift.
  *
- * That's the trick Nomic doesn't do — they show one projection per
+ * That's the trick Nomic doesn't do, they show one projection per
  * dataset; we show four lenses on the same data and let the
  * interrelation teach.
  */
@@ -37,7 +37,7 @@ import { TIER_COLORS, TIER_BADGE } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
 
-// Strategic pair selection — five axes give ten possible pairs; we
+// Strategic pair selection, five axes give ten possible pairs; we
 // surface four that read as distinct conceptual quadrants of the
 // movement's intellectual space.
 const AXIS_PAIRS = [
@@ -52,7 +52,7 @@ export default function ConceptMatrix() {
   const [error, setError] = useState(null);
   const [hoveredEntry, setHoveredEntry] = useState(null);
   const [selectedEntry, setSelectedEntry] = useState(null);
-  // Concept-query projection — same idea as the Spectrum's projection
+  // Concept-query projection, same idea as the Spectrum's projection
   // input, but here the query renders on ALL 4 charts simultaneously
   // at (xAxisProj, yAxisProj). User types a phrase, sees the embedding
   // space take a position on it across every concept-pair lens.
@@ -109,7 +109,7 @@ export default function ConceptMatrix() {
     setConceptError(null);
   }, []);
 
-  // One-click example queries — same set as Spectrum so visitors get
+  // One-click example queries, same set as Spectrum so visitors get
   // consistent prompts across surfaces.
   const runExample = useCallback(async (text) => {
     if (!data?.axes) return;
@@ -207,14 +207,14 @@ export default function ConceptMatrix() {
     <div className="rag-concept-matrix">
       <p className="text-sm text-stone-600 mb-4 max-w-3xl">
         Four lenses on the same 136 interviewees. Every axis is a
-        hand-curated semantic dimension — not a statistical leftover like
-        UMAP — so the structure you see is interpretable.{' '}
+        hand-curated semantic dimension, not a statistical leftover like
+        UMAP, so the structure you see is interpretable.{' '}
         <strong>Hover any dot</strong> to watch the same voice move
         across the other three lenses. <strong>Click</strong> to lock the
         highlight and see the full five-axis profile below.
       </p>
 
-      {/* Concept-query projection input — type a phrase and watch a
+      {/* Concept-query projection input, type a phrase and watch a
           green ✕ land on ALL 4 charts at the projected (x, y). Same
           1,024-dim embedding, four different 2D coordinate systems. */}
       <form onSubmit={handleConceptSubmit} className="mb-4 max-w-2xl">
@@ -256,7 +256,7 @@ export default function ConceptMatrix() {
         {queryProjections && conceptQuery && (
           <p className="text-xs text-emerald-900 mt-1.5">
             <span className="text-emerald-700 font-medium">✕</span>{' '}
-            &ldquo;{conceptQuery}&rdquo; — green ✕ on each chart shows where the same query lands in that pair of axes.
+            &ldquo;{conceptQuery}&rdquo;, green ✕ on each chart shows where the same query lands in that pair of axes.
           </p>
         )}
         {!conceptQuery && !conceptLoading && (
@@ -314,7 +314,7 @@ export default function ConceptMatrix() {
         />
       )}
 
-      {/* Top retrieved passages for the same query — closes the loop:
+      {/* Top retrieved passages for the same query, closes the loop:
           query → geometric projection on 4 lenses → here are the voices
           that match. */}
       {conceptResults && conceptResults.length > 0 && conceptQuery && (
@@ -323,7 +323,7 @@ export default function ConceptMatrix() {
             Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
           </p>
           <p className="text-sm text-stone-600 mb-3">
-            The green ✕ above shows where the query lands geometrically; this list shows the actual voices it matches. One query, one embedding — both visualizations come from the same vector.
+            The green ✕ above shows where the query lands geometrically; this list shows the actual voices it matches. One query, one embedding, both visualizations come from the same vector.
           </p>
           <ol className="space-y-3">
             {conceptResults.map((payload) => (
@@ -335,7 +335,7 @@ export default function ConceptMatrix() {
         </aside>
       )}
 
-      {/* Dot color legend — explains the audit-tier palette across
+      {/* Dot color legend, explains the audit-tier palette across
           all 4 mini-scatters. Same encoding the rest of the site uses. */}
       <div className="flex flex-wrap gap-3 mt-5 mb-2 text-xs text-stone-700" aria-label="Audit-tier color legend">
         <span className="font-medium text-stone-900">Dot color (audit tier):</span>
@@ -356,7 +356,7 @@ export default function ConceptMatrix() {
         Each axis vector is{' '}
         <code className="font-mono">normalize(embedding(pole_A) - embedding(pole_B))</code>;
         each interview&apos;s position is the dot product of its centroid with that vector,
-        stretched to <code className="font-mono">[-1, +1]</code>. Pure projection — no LLM
+        stretched to <code className="font-mono">[-1, +1]</code>. Pure projection, no LLM
         per query.
       </footer>
     </div>
@@ -368,8 +368,10 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
 
   const W = 460;
   const H = 340;
-  const PAD_L = 24;
-  const PAD_R = 24;
+  // Bump horizontal padding so the extreme-right and extreme-left dots
+  // never clip against the chart frame's rounded corners.
+  const PAD_L = 36;
+  const PAD_R = 36;
   const PAD_T = 36;
   const PAD_B = 36;
   const innerW = W - PAD_L - PAD_R;
@@ -483,7 +485,7 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
           );
         })}
 
-        {/* Concept-query projection marker — green ✕ at the projected
+        {/* Concept-query projection marker, green ✕ at the projected
             (x, y). The marker stays inside the chart even when the
             projection is beyond the corpus's observed range; a small
             arrow + caption signals when that's happened. */}
@@ -496,7 +498,7 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
           const cy = projectY(clampedY);
           const outOfRange = rawX < -1 || rawX > 1 || rawY < -1 || rawY > 1;
           return (
-            <g aria-label={`Query "${queryPoint.label || ''}" projects to (${rawX.toFixed(2)}, ${rawY.toFixed(2)})${outOfRange ? ' — beyond corpus range' : ''}`}>
+            <g aria-label={`Query "${queryPoint.label || ''}" projects to (${rawX.toFixed(2)}, ${rawY.toFixed(2)})${outOfRange ? ', beyond corpus range' : ''}`}>
               <line x1={cx - 8} y1={cy - 8} x2={cx + 8} y2={cy + 8} stroke="#fff" strokeWidth={5} strokeLinecap="round" />
               <line x1={cx - 8} y1={cy + 8} x2={cx + 8} y2={cy - 8} stroke="#fff" strokeWidth={5} strokeLinecap="round" />
               <line x1={cx - 7} y1={cy - 7} x2={cx + 7} y2={cy + 7} stroke="#059669" strokeWidth={2.5} strokeLinecap="round" />
@@ -536,7 +538,7 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
             {profile.tier && (
               <> · audit tier {profile.tier}</>
             )}
-            {locked ? ' · click again to unlock' : ' · hovering — click a dot to lock'}
+            {locked ? ' · click again to unlock' : ' · hovering, click a dot to lock'}
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -562,12 +564,12 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
         </div>
       </header>
 
-      {/* Radar polygon — the voice's 5-dimensional "fingerprint" in
+      {/* Radar polygon, the voice's 5-dimensional "fingerprint" in
           one visually distinctive shape. Renders ABOVE the bar chart
           so readers see the shape first, then the exact values. */}
       <FiveAxisRadar profile={profile} axes={axes} />
 
-      {/* Five horizontal mini-axes — one bar per concept axis showing
+      {/* Five horizontal mini-axes, one bar per concept axis showing
           this interviewee's position along it. Kept below the radar
           for exact numeric readouts and accessibility. */}
       <div className="space-y-2.5 mt-5">
@@ -611,7 +613,7 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
 }
 
 /**
- * FiveAxisRadar — small SVG radar polygon showing the voice's
+ * FiveAxisRadar, small SVG radar polygon showing the voice's
  * 5-axis fingerprint. Each spoke runs from the center (pole_a end,
  * position -1) outward to the rim (pole_b end, position +1). The
  * voice's polygon vertex on each spoke is plotted at the position
@@ -728,13 +730,13 @@ function FiveAxisRadar({ profile, axes }) {
 }
 
 /**
- * StrongestAxisDrillDown — when a voice is locked, identify their
+ * StrongestAxisDrillDown, when a voice is locked, identify their
  * highest-magnitude axis position (the "most defining" concept
  * dimension for them in the matrix), then retrieve the top passages
  * from THAT interview most aligned with the pole they lean toward.
  *
  * Mirrors the Spectrum drill-down pattern but auto-picks the axis
- * instead of asking the user to choose — the ConceptMatrix view is
+ * instead of asking the user to choose, the ConceptMatrix view is
  * already presenting all 5 axes simultaneously, so we use the
  * stand-out one as the query anchor.
  */
@@ -743,7 +745,7 @@ function StrongestAxisDrillDown({ profile, axes }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Pick the axis with the largest absolute position — the dimension
+  // Pick the axis with the largest absolute position, the dimension
   // where this voice is most distinctive within the corpus.
   const strongest = useMemo(() => {
     let bestAxis = null;

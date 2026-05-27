@@ -46,7 +46,7 @@ For internal use; not a stakeholder doc.
   "entry_number": null,                    // optional shortcut for single-entry filter
   "filter": null,                          // optional Pinecone metadata filter object
   "namespace": "",                         // optional Pinecone namespace
-  "dedupeByEntry": false                   // optional — one passage per interviewee
+  "dedupeByEntry": false                   // optional, one passage per interviewee
 }
 ```
 
@@ -97,8 +97,8 @@ Citation-grade payload fields (per result):
 
 ## Required env vars (Netlify + Fly.io)
 
-- `PINECONE_API_KEY` (secret-equivalent; set without `is_secret: true` on Netlify — see [[reference_netlify_mcp_envvar_secret]])
-- `PINECONE_HOST` — full URL including https://
+- `PINECONE_API_KEY` (secret-equivalent; set without `is_secret: true` on Netlify, see [[reference_netlify_mcp_envvar_secret]])
+- `PINECONE_HOST`, full URL including https://
 - `VOYAGE_API_KEY`
 - Optional defaults: `PINECONE_INDEX=civil-rights`, `VOYAGE_MODEL=voyage-3`, `VOYAGE_RERANK_MODEL=rerank-2`, `MCP_RERANK_ENABLED=true`, `RETRIEVE_ALLOWED_ORIGINS=*`
 

@@ -1,16 +1,16 @@
 /**
- * @fileoverview ConceptSpectrum — visualize interviewees positioned along
+ * @fileoverview ConceptSpectrum, visualize interviewees positioned along
  * conceptual axes computed from Voyage embeddings.
  *
  * Each axis is defined by two pole descriptions; the axis_vector is the
  * normalized difference of their embeddings. Each interview centroid is
  * projected onto the axis. The result: a 1D position per interviewee per axis.
  *
- * This is the most "philosophy of embedding" demo — the audience literally
+ * This is the most "philosophy of embedding" demo, the audience literally
  * watches the embedding space *take a position* on where each interviewee
  * sits along a conceptual continuum. Clicking a dot drills into the
  * passages from THAT interview most aligned with whichever pole that
- * interviewee leans toward — the RAG demonstration the page promises.
+ * interviewee leans toward, the RAG demonstration the page promises.
  *
  * Loads /rag/summaries/concept_axes.json (static). Drill-down passages
  * come from /retrieve (Netlify Function → Pinecone + Voyage rerank).
@@ -31,23 +31,23 @@ export default function ConceptSpectrum() {
   // ?spectrumEntry=<N> auto-selects (and drills into) that
   // interview's dot. So deep-links like
   //    /rag-explore?spectrumAxis=nonviolence-self-defense&spectrumEntry=1
-  // reproduce a specific drill-down state — researchers can copy + share
+  // reproduce a specific drill-down state, researchers can copy + share
   // a permalink to their finding.
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeAxis, setActiveAxis] = useState(0);
   const [hover, setHover] = useState(null);
   // selected = locked dot the user clicked. Triggers an inline /retrieve
   // call against the corpus, scoped to that interviewee's passages and
-  // queried with whichever pole they lean toward — the RAG drill-down.
+  // queried with whichever pole they lean toward, the RAG drill-down.
   const [selected, setSelected] = useState(null);
   const [drillResults, setDrillResults] = useState(null);
   const [drillLoading, setDrillLoading] = useState(false);
   const [drillError, setDrillError] = useState(null);
-  // Name search — when set, matching dots stay bright and non-matching
+  // Name search, when set, matching dots stay bright and non-matching
   // dots dim. Helps users find a specific voice among 136 without
   // hover-treasure-hunting.
   const [query, setQuery] = useState('');
-  // Concept-query projection — the audience-facing demo of "the
+  // Concept-query projection, the audience-facing demo of "the
   // embedding space takes a position on YOUR words". User types a
   // natural-language query; /retrieve embeds it; we dot-product the
   // resulting 1024-dim vector against each axis_vector and render a
@@ -122,7 +122,7 @@ export default function ConceptSpectrum() {
     return () => { cancelled = true; };
   }, []);
 
-  // Clear the drill-down when the user switches axes — the selection
+  // Clear the drill-down when the user switches axes, the selection
   // is axis-specific (Aaron Dixon "on the nonviolence axis" is a
   // different question than "on the sacred-vs-secular axis").
   useEffect(() => {
@@ -291,7 +291,7 @@ export default function ConceptSpectrum() {
         pole_a_label: ax.pole_a?.label,
         pole_b_label: ax.pole_b?.label,
         position: +dot.toFixed(4),
-        // Pass the raw normalized projection through unclamped — the
+        // Pass the raw normalized projection through unclamped, the
         // marker render clamps for display + draws an arrow for "beyond
         // corpus range" instead of silently squashing the value.
         position_normalized,
@@ -302,7 +302,7 @@ export default function ConceptSpectrum() {
 
   const activeProjection = conceptProjections?.find((p) => p.slug === axis.slug) || null;
 
-  // Match set for the search filter — entry_numbers whose subject
+  // Match set for the search filter, entry_numbers whose subject
   // includes the query (case-insensitive). null = "no filter active".
   const matched = (() => {
     const q = query.trim().toLowerCase();
@@ -325,14 +325,7 @@ export default function ConceptSpectrum() {
         selectedEntry={selected?.entry_number ?? null}
         onSelect={handleSelect}
         matched={matched}
-        conceptProjection={activeProjection}
-        conceptQuery={conceptQuery}
       />
-
-      <p className="mt-2 mb-3 text-xs text-stone-500 italic">
-        Only the horizontal position on the axis line means anything —
-        vertical scatter is decorative, to keep overlapping dots distinguishable.
-      </p>
 
       {/* Two search boxes side by side: name-search (left, dim non-
           matches) and concept-projection (right, drop a marker on the
@@ -495,7 +488,7 @@ export default function ConceptSpectrum() {
         </div>
       )}
 
-      {/* Top retrieved passages for the same query — the projection
+      {/* Top retrieved passages for the same query, the projection
           above is the geometric demo; this list is the actual RAG
           payoff. The audience sees: query → projected position →
           here are the voices that match it. Closes the demo loop. */}
@@ -505,7 +498,7 @@ export default function ConceptSpectrum() {
             Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
           </p>
           <p className="text-sm text-stone-600 mb-3">
-            The same query went through full semantic retrieval — Voyage embedding → Pinecone vector search → Voyage rerank → dedupe by interviewee. These are the voices the embedding space says match.
+            The same query went through full semantic retrieval, Voyage embedding → Pinecone vector search → Voyage rerank → dedupe by interviewee. These are the voices the embedding space says match.
           </p>
           <ol className="space-y-3">
             {conceptResults.map((payload) => (
@@ -534,10 +527,11 @@ export default function ConceptSpectrum() {
         />
       )}
 
-      {/* Axis selector pills sit immediately under the chart so the
-          user reads chart → "and here are the axes I can switch to"
-          → explanation. Eric's directive: chart at the top, pills
-          right under, explanation below. */}
+      {/* Footer block: axis selector pills, the explanation of how
+          the projection is computed, and the audit-tier dot color
+          legend are grouped here as the chart's tail matter. The
+          per-axis content sits above; everything below is invariant
+          across axis selection. */}
       <div className="mt-6 mb-6 flex flex-wrap gap-2">
         {data.axes.map((ax, idx) => (
           <button
@@ -562,11 +556,11 @@ export default function ConceptSpectrum() {
         Each axis above is defined by two opposing concepts. We embed each pole with Voyage,
         take the unit difference vector, and project all 136 interview centroids onto it.
         The result: a 1D position per interviewee on each conceptual continuum.
-        Click a dot to drill into the passages from that interview that anchor it where it is —
+        Click a dot to drill into the passages from that interview that anchor it where it is -
         the embedding space takes a position, and the retrieval shows you why.
       </p>
 
-      {/* Dot color legend — explains the audit-tier palette so users
+      {/* Dot color legend, explains the audit-tier palette so users
           understand what color each dot encodes. Reuses the pattern
           from Constellation.jsx. */}
       <div className="flex flex-wrap gap-3 mb-6 text-xs text-stone-700" aria-label="Audit-tier color legend">
@@ -708,12 +702,22 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
   );
 }
 
-function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, conceptProjection, conceptQuery }) {
+function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
   const W = 880;
-  const H = 380;
-  const PAD_X = 24;
-  const TOP = 130;
-  const BOTTOM = 270;
+  const H = 820;
+  // Generous horizontal padding so the extreme dots on either end have
+  // visual breathing room and never clip against the chart frame's
+  // rounded corners or border.
+  const PAD_X = 40;
+  // Pole labels sit at the very top corners of the chart so the axis
+  // extremes never compete with the dot scatter. AXIS_Y is dropped close
+  // to the middle of the frame and JITTER_HALF is large so the 136
+  // interview dots fan out across roughly 80% of the chart height,
+  // making every dot individually clickable instead of stacking on top
+  // of each other along the axis line.
+  const POLE_Y = 26;
+  const AXIS_Y = 420;
+  const JITTER_HALF = 320;
 
   // High position_normalized (+1) = closer to pole_a per the projection math
   // (axisVec = normalize(eA - eB)). Flip the visual axis so pole_a renders on
@@ -744,14 +748,37 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, concept
         </h3>
       </header>
 
+      {/* Each column pairs a pole anchor card with the "Most {pole}"
+          leaderboard underneath it, so the two extremes of the axis
+          read as a single self-contained unit above the scatter. */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 text-sm">
-        <div className="rounded-md border border-stone-200 bg-white p-3">
-          <p className="font-medium text-stone-900 mb-1">← {axis.pole_a.label}</p>
-          <p className="text-xs text-stone-600 italic">{axis.pole_a.anchor}</p>
+        <div className="space-y-3">
+          <div className="rounded-md border border-stone-200 bg-white p-3">
+            <p className="font-medium text-stone-900 mb-1">← {axis.pole_a.label}</p>
+            <p className="text-xs text-stone-600 italic">{axis.pole_a.anchor}</p>
+          </div>
+          <div>
+            <p className="font-medium text-stone-900 mb-1">Most {axis.pole_a.label.toLowerCase()}:</p>
+            <ol className="list-decimal list-inside text-stone-700 space-y-0.5">
+              {axis.positions.slice(0, 5).map((p) => (
+                <LeaderboardEntry key={p.entry_number} p={p} onSelect={onSelect} isSelected={selectedEntry === p.entry_number} />
+              ))}
+            </ol>
+          </div>
         </div>
-        <div className="rounded-md border border-stone-200 bg-white p-3">
-          <p className="font-medium text-stone-900 mb-1">{axis.pole_b.label} →</p>
-          <p className="text-xs text-stone-600 italic">{axis.pole_b.anchor}</p>
+        <div className="space-y-3">
+          <div className="rounded-md border border-stone-200 bg-white p-3">
+            <p className="font-medium text-stone-900 mb-1">{axis.pole_b.label} →</p>
+            <p className="text-xs text-stone-600 italic">{axis.pole_b.anchor}</p>
+          </div>
+          <div>
+            <p className="font-medium text-stone-900 mb-1">Most {axis.pole_b.label.toLowerCase()}:</p>
+            <ol className="list-decimal list-inside text-stone-700 space-y-0.5">
+              {axis.positions.slice(-5).reverse().map((p) => (
+                <LeaderboardEntry key={p.entry_number} p={p} onSelect={onSelect} isSelected={selectedEntry === p.entry_number} />
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
 
@@ -767,113 +794,38 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, concept
           {/* Axis line */}
           <line
             x1={PAD_X}
-            y1={(TOP + BOTTOM) / 2}
+            y1={AXIS_Y}
             x2={W - PAD_X}
-            y2={(TOP + BOTTOM) / 2}
+            y2={AXIS_Y}
             stroke="#a8a29e"
             strokeWidth="2"
           />
 
-          {/* Pole labels at endpoints */}
-          <text x={PAD_X} y={TOP - 6} fontSize="14" fill="#1c1917" fontWeight="500" fontFamily="Inter, sans-serif">
+          {/* Pole labels at endpoints, lifted high above the scatter so
+              they read as the axis extremes and never share vertical
+              space with the dot row. */}
+          <text x={PAD_X} y={POLE_Y} fontSize="14" fill="#1c1917" fontWeight="500" fontFamily="Inter, sans-serif">
             {axis.pole_a.label}
           </text>
-          <text x={W - PAD_X} y={TOP - 6} fontSize="14" fill="#1c1917" fontWeight="500" fontFamily="Inter, sans-serif" textAnchor="end">
+          <text x={W - PAD_X} y={POLE_Y} fontSize="14" fill="#1c1917" fontWeight="500" fontFamily="Inter, sans-serif" textAnchor="end">
             {axis.pole_b.label}
           </text>
 
-          {/* Pre-compute extremes for permanent labeling. positions
-              is sorted ascending by position; first = leftmost
-              (most pole_a), last = rightmost (most pole_b). */}
-          {(() => null)()}
-
-          {/* Concept-query projection marker — rendered BEFORE the
-              dots so dots draw on top. A green vertical line through
-              the axis with a "Query: …" callout, signalling that
-              this position is the user's typed query, NOT one of the
-              136 interviewees. */}
-          {conceptProjection && conceptQuery && (() => {
-            const rawPos = conceptProjection.position_normalized;
-            const clampedPos = Math.max(-1, Math.min(1, rawPos));
-            const outOfRange = rawPos < -1 || rawPos > 1;
-            const beyondLeft = rawPos < -1;
-            const qx = xFor(clampedPos);
-            const queryLabel = conceptQuery.length > 38 ? conceptQuery.slice(0, 36) + '…' : conceptQuery;
-            const wantTextOnLeft = qx > W - 200;
-            return (
-              <g aria-label={`Query "${conceptQuery}" projects to position ${conceptProjection.position.toFixed(3)} on this axis${outOfRange ? ' (beyond corpus range)' : ''}`}>
-                <line
-                  x1={qx} y1={TOP - 10}
-                  x2={qx} y2={BOTTOM + 10}
-                  stroke="#059669"
-                  strokeWidth="2.5"
-                  strokeDasharray="6 3"
-                />
-                {/* Pin head + label */}
-                <circle cx={qx} cy={TOP - 14} r={6} fill="#059669" stroke="#fff" strokeWidth={2} />
-                {/* Arrow pointing further out when query is beyond
-                    the corpus's observed range on this axis. */}
-                {outOfRange && (
-                  <g aria-hidden="true">
-                    <path
-                      d={beyondLeft
-                        ? `M ${qx - 14} ${(TOP + BOTTOM) / 2} l 10 -6 l 0 12 z`
-                        : `M ${qx + 14} ${(TOP + BOTTOM) / 2} l -10 -6 l 0 12 z`}
-                      fill="#059669"
-                    />
-                    <text
-                      x={beyondLeft ? qx - 28 : qx + 28}
-                      y={(TOP + BOTTOM) / 2 + 4}
-                      fontSize={10}
-                      fill="#065f46"
-                      fontStyle="italic"
-                      textAnchor={beyondLeft ? 'end' : 'start'}
-                      paintOrder="stroke"
-                      stroke="rgba(255,255,255,0.95)"
-                      strokeWidth={3}
-                    >
-                      beyond corpus range
-                    </text>
-                  </g>
-                )}
-                <text
-                  x={wantTextOnLeft ? qx - 10 : qx + 10}
-                  y={TOP - 18}
-                  fontSize={12}
-                  fontWeight={600}
-                  fill="#065f46"
-                  textAnchor={wantTextOnLeft ? 'end' : 'start'}
-                  paintOrder="stroke"
-                  stroke="rgba(255,255,255,0.95)"
-                  strokeWidth={3}
-                  fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-                >
-                  Query: &ldquo;{queryLabel}&rdquo;
-                </text>
-              </g>
-            );
-          })()}
-          {/* Dots. Vertical jitter is decorative — it spreads
-              overlapping dots apart so the user can hover individual
-              ones in the dense middle of the axis. The y-position
-              carries NO meaning. Reduced from ±50 → ±36 to keep dots
-              visually anchored to the axis line. */}
-          {axis.positions.map((p, idx) => {
+          {/* Dots. Vertical jitter is decorative: it spreads overlapping
+              dots apart so the user can click individual ones in the
+              dense middle of the axis. The y-position carries no
+              meaning. The jitter band is intentionally wide so 136 dots
+              do not collapse into a single unhoverable smear. */}
+          {axis.positions.map((p) => {
             const cx = xFor(p.position_normalized);
             const jitterSeed = (p.entry_number * 2654435761) >>> 0;
-            const jitter = ((jitterSeed % 100) / 100 - 0.5) * 72;
-            const cy = (TOP + BOTTOM) / 2 + jitter;
+            const jitter = ((jitterSeed % 100) / 100 - 0.5) * (2 * JITTER_HALF);
+            const cy = AXIS_Y + jitter;
             const color = TIER_COLORS[p.tier] || '#b91c1c';
             const isHover = hover?.p?.entry_number === p.entry_number;
             const isSelected = selectedEntry === p.entry_number;
             const isMatch = !matched || matched.has(p.entry_number);
             const dimByFilter = matched && !isMatch;
-            const isExtreme = idx === 0 || idx === axis.positions.length - 1;
-            // Permanently label the extremes when no search is active,
-            // so visitors immediately see who anchors each pole without
-            // having to hover-treasure-hunt. When search is active, the
-            // matched-label path below handles labeling.
-            const labelAsExtreme = isExtreme && !matched && !isSelected;
             return (
               <g key={p.entry_number}>
                 <circle
@@ -929,59 +881,18 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, concept
                   </text>
                 )}
 
-                {/* Permanent label at each extreme pole when no search
-                    is active. Positions the label so the leftmost
-                    text-anchors at start (sits to the right of its
-                    dot) and the rightmost at end (sits to the left of
-                    its dot), keeping them inside the chart frame. */}
-                {labelAsExtreme && (
-                  <text
-                    x={idx === 0 ? cx + 10 : cx - 10}
-                    y={cy + 4}
-                    fontSize={11}
-                    fontWeight={600}
-                    fill="#1c1917"
-                    textAnchor={idx === 0 ? 'start' : 'end'}
-                    paintOrder="stroke"
-                    stroke="rgba(255,255,255,0.95)"
-                    strokeWidth={3}
-                    strokeLinejoin="round"
-                    style={{ pointerEvents: 'none' }}
-                    fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-                  >
-                    {p.entry_subject}
-                  </text>
-                )}
               </g>
             );
           })}
         </svg>
       </div>
 
-      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-        <div>
-          <p className="font-medium text-stone-900 mb-1">Most {axis.pole_a.label.toLowerCase()}:</p>
-          <ol className="list-decimal list-inside text-stone-700 space-y-0.5">
-            {axis.positions.slice(0, 5).map((p) => (
-              <LeaderboardEntry key={p.entry_number} p={p} onSelect={onSelect} isSelected={selectedEntry === p.entry_number} />
-            ))}
-          </ol>
-        </div>
-        <div>
-          <p className="font-medium text-stone-900 mb-1">Most {axis.pole_b.label.toLowerCase()}:</p>
-          <ol className="list-decimal list-inside text-stone-700 space-y-0.5">
-            {axis.positions.slice(-5).reverse().map((p) => (
-              <LeaderboardEntry key={p.entry_number} p={p} onSelect={onSelect} isSelected={selectedEntry === p.entry_number} />
-            ))}
-          </ol>
-        </div>
-      </div>
     </article>
   );
 }
 
 /**
- * LeaderboardEntry — a clickable name in the "Most {pole}" lists
+ * LeaderboardEntry, a clickable name in the "Most {pole}" lists
  * under the Spectrum chart. Clicking triggers the same drill-down
  * as clicking the dot itself, so users can drill from the easier-
  * to-read leaderboard without hunting the scatter for the dot.
@@ -1005,7 +916,7 @@ function LeaderboardEntry({ p, onSelect, isSelected }) {
 }
 
 /**
- * CopyLinkButton — copies the current page URL (which includes
+ * CopyLinkButton, copies the current page URL (which includes
  * spectrumAxis + spectrumEntry query params) to the clipboard.
  * Lets a researcher share a deep-link to their drill-down.
  *

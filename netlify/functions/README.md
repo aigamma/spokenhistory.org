@@ -1,11 +1,11 @@
-# netlify/functions/ — Netlify Function endpoints
+# netlify/functions/, Netlify Function endpoints
 
 Server-side helpers that proxy public requests to external services
 (Pinecone, Voyage) without exposing API keys in the client bundle.
 
 ## Functions
 
-### `retrieve.mjs` — public semantic-search proxy
+### `retrieve.mjs`, public semantic-search proxy
 
 **Endpoint:** `POST /retrieve` (also accessible at the default
 `POST /.netlify/functions/retrieve`)
@@ -23,9 +23,9 @@ query goes through this function. Keeps `PINECONE_API_KEY` /
   "topN": "number (1-50, default 8)",
   "topK": "number (auto, default max(3*topN, 30))",
   "filter": "Pinecone metadata filter object (optional)",
-  "entry_number": "number — shortcut for {filter: {entry_number: {$eq: N}}}",
+  "entry_number": "number, shortcut for {filter: {entry_number: {$eq: N}}}",
   "namespace": "Pinecone namespace string (optional, default '')",
-  "dedupeByEntry": "boolean — one passage per interviewee (default false)"
+  "dedupeByEntry": "boolean, one passage per interviewee (default false)"
 }
 ```
 
@@ -33,7 +33,7 @@ query goes through this function. Keeps `PINECONE_API_KEY` /
 
 ```jsonc
 {
-  "results": [/* citation-grade payloads — see mcp-server/USAGE_GUIDE.md */],
+  "results": [/* citation-grade payloads, see mcp-server/USAGE_GUIDE.md */],
   "meta": {
     "rerankEnabled": true,
     "model": "voyage-3",
@@ -47,7 +47,7 @@ query goes through this function. Keeps `PINECONE_API_KEY` /
 
 The response shape mirrors the MCP server's `search_transcripts` tool
 output (the `toCitationPayload` shape) so UI components are
-substrate-agnostic — they consume the same `{ entryNumber,
+substrate-agnostic, they consume the same `{ entryNumber,
 entrySubject, text, locItemUrl, timestampStart, suggestedCitation,
 fidelityNote, ... }` records whether the source is the MCP server or
 this Netlify function.
@@ -71,7 +71,7 @@ this Netlify function.
 The function is self-contained (no imports from the `rag/` workspace)
 so Netlify's function bundler doesn't have to chase dependencies
 across directory boundaries. The retrieval primitives mirror
-`rag/embed.mjs` + `rag/retrieve.mjs` — track those as upstream.
+`rag/embed.mjs` + `rag/retrieve.mjs`, track those as upstream.
 
 ## Local development
 

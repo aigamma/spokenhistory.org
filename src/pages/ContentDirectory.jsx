@@ -5,7 +5,7 @@
  * allowing users to browse and search through clips and people. It implements
  * a tabbed interface and manages a context-based caching system to improve performance.
  * 
- * Note: Keywords browsing is now available on the dedicated Topic Glossary page.
+ * Note: Keywords browsing is now available on the dedicated Topics page.
  */
 
 import { useState, createContext, useEffect } from 'react';
@@ -120,7 +120,7 @@ export default function ContentDirectory() {
    * 
    * Calculates and updates the stats displayed in the stats summary cards,
    * including total people. Note: Keywords and clips stats are now handled 
-   * by the dedicated Topic Glossary page.
+   * by the dedicated Topics page.
    */
   useEffect(() => {
     const newStats = {
@@ -253,7 +253,7 @@ export default function ContentDirectory() {
               fontWeight: 400
             }}>
               Browse and search through clips and people from the Civil Rights History Collection.
-              Visit the <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>Topic Glossary</a> to explore keywords and topics.
+              Visit the <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>Topics</a> page to explore keywords and topics.
             </p>
           </div>
 
@@ -274,7 +274,7 @@ export default function ContentDirectory() {
               <div className="text-sm text-black/60 text-center sm:text-right" style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}>
                 For topic and keyword statistics, visit the{' '}
                 <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>
-                  Topic Glossary
+                  Topics
                 </a>
               </div>
             </div>

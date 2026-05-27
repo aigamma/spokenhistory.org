@@ -81,7 +81,7 @@ export default function VectorSearchPage() {
           Semantic Search
         </h1>
         <p className="text-base leading-relaxed text-gray-600 mb-10 max-w-xxl mx-auto">
-        Use natural language to search by concepts, themes, and meaning — not just keywords
+        Use natural language to search by concepts, themes, and meaning, not just keywords
         </p>
         
         <form onSubmit={handleSearch} className="w-full">

@@ -1,5 +1,5 @@
 /**
- * @fileoverview FamousNames — figures who don't have their own oral
+ * @fileoverview FamousNames, figures who don't have their own oral
  * history in this corpus but are discussed extensively by people who
  * do. Demonstrates that the archive's coverage extends BEYOND its 136
  * named interviewees through the network of who-knew-whom.
@@ -42,7 +42,7 @@ export default function FamousNames() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [selectedSlug, setSelectedSlug] = useState(null);
-  // Audit-tier filter — same pattern as other retrieval surfaces.
+  // Audit-tier filter, same pattern as other retrieval surfaces.
   const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function FamousNames() {
     <div className="rag-famous-names">
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
         Fifteen iconic figures don&apos;t have their own oral history in this
-        136-entry corpus — but they&apos;re discussed extensively by interviewees
+        136-entry corpus, but they&apos;re discussed extensively by interviewees
         who knew them. The embedding space surfaces those secondhand accounts
         with citation-grade attribution. <strong>Click a card</strong> to load
         passages mentioning that figure.

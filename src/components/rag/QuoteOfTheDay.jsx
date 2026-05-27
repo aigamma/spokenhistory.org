@@ -1,5 +1,5 @@
 /**
- * @fileoverview QuoteOfTheDay — daily rotating quote widget.
+ * @fileoverview QuoteOfTheDay, daily rotating quote widget.
  *
  * Loads /rag/summaries/quotes.json and picks one quote based on the
  * day-of-year, so every user sees the same quote on the same day.
@@ -80,13 +80,13 @@ export default function QuoteOfTheDay({ allowCycle = true }) {
 }
 
 /**
- * CopyCitationButton — copies the quote + speaker + LoC URL to the
+ * CopyCitationButton, copies the quote + speaker + LoC URL to the
  * clipboard as a single formatted block. Educators and researchers
  * lifting the quote into their own work get attribution for free.
  *
  * Format:
  *   "{quote}"
- *   — {entry_subject}, Civil Rights History Project.
+ *  , {entry_subject}, Civil Rights History Project.
  *   {loc_item_url}
  */
 function CopyCitationButton({ quote }) {
@@ -94,7 +94,7 @@ function CopyCitationButton({ quote }) {
   const handleClick = async () => {
     const parts = [
       `“${quote.quote}”`,
-      `— ${quote.entry_subject}, Civil Rights History Project.`,
+      `- ${quote.entry_subject}, Civil Rights History Project.`,
     ];
     if (quote.context) parts.push(quote.context);
     if (quote.loc_item_url) parts.push(quote.loc_item_url);

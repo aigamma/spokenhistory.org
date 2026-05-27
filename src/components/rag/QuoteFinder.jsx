@@ -1,5 +1,5 @@
 /**
- * @fileoverview QuoteFinder — variant of SemanticSearch tuned for the
+ * @fileoverview QuoteFinder, variant of SemanticSearch tuned for the
  * "find the source of this half-remembered quote" use case.
  *
  * Differences from SemanticSearch:
@@ -8,7 +8,7 @@
  *     confirm the entire passage matches what they remember).
  *   - Visual framing emphasizes "verify your quote" rather than
  *     "search the archive."
- *   - Returns a smaller default topN (5) — finding THE quote is the
+ *   - Returns a smaller default topN (5), finding THE quote is the
  *     point, not browsing related passages.
  */
 
@@ -29,7 +29,7 @@ const SAMPLE_QUOTES = [
 ];
 
 /**
- * QuoteFinder — find primary-source attribution for a half-remembered quote.
+ * QuoteFinder, find primary-source attribution for a half-remembered quote.
  *
  * @component
  * @param {Object} props
@@ -48,7 +48,7 @@ export default function QuoteFinder({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [hasSearched, setHasSearched] = useState(false);
-  // Audit-tier filter — same pattern as SemanticSearch and
+  // Audit-tier filter, same pattern as SemanticSearch and
   // InterviewMap so the affordance is consistent across the site.
   // Default: all 5 tiers visible. Filter applies client-side to the
   // returned topN; the search is NOT re-issued when filters change.

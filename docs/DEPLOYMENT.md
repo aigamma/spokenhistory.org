@@ -71,7 +71,7 @@ firebase functions:secrets:set OPENAI_API_KEY
 firebase deploy --only functions
 ```
 
-Watch for "deploy complete" with no error lines. If there are errors, they're almost always about Blaze billing not being active yet — step 4 needs to be visible in the console before this works.
+Watch for "deploy complete" with no error lines. If there are errors, they're almost always about Blaze billing not being active yet, step 4 needs to be visible in the console before this works.
 
 ### 7. Authenticate with Fly.io and deploy the MCP server (~5 minutes)
 
@@ -112,7 +112,7 @@ Expected per-transcript cost: **~$0.04 in OpenAI + Anthropic API credits**, ~64 
 
 ## Running the full 135-transcript corpus (~3 hours, ~$5.40 in API credits)
 
-There's no batch script yet — the recommended approach is a shell loop over `transcripts/raw/`:
+There's no batch script yet, the recommended approach is a shell loop over `transcripts/raw/`:
 
 ```bash
 cd transcripts/raw
@@ -142,7 +142,7 @@ Currently 130+ commits ahead. Recommend opening as a draft PR first so the upstr
 
 ## Troubleshooting
 
-- **Vite build fails locally on Windows**: use PowerShell (not WSL bash) — `Set-Location C:\civil; & node node_modules\vite\bin\vite.js build`. WSL bash segfaults on Vite builds on the project lead's Windows machine; PowerShell completes in ~6 seconds.
+- **Vite build fails locally on Windows**: use PowerShell (not WSL bash), `Set-Location C:\civil; & node node_modules\vite\bin\vite.js build`. WSL bash segfaults on Vite builds on the project lead's Windows machine; PowerShell completes in ~6 seconds.
 - **Pipeline crashes with `UnicodeEncodeError: 'charmap' codec can't encode '✓'`**: the UTF-8 fix in `Metadata Generation System/app.py` should prevent this, but if it surfaces in a new path, set `PYTHONIOENCODING=utf-8` in your environment.
 - **`enqueue_for_review returned None`** during pipeline run: documented graceful-degradation when firebase-admin isn't configured. The summary's publication decision still stands; it just doesn't push to the Firestore review queue. Drop the service-account JSON in `scripts/firebase/` and re-run with `USE_DUAL_SCORING=1` to fix.
 - **Cloud Functions deploy says "billing is required"**: step 4 above wasn't fully applied. Wait 1-2 minutes after enabling Blaze for the change to propagate, then retry.
@@ -153,11 +153,11 @@ The Pinecone + Voyage retrieval layer landed on top of this deployment
 chain as a parallel surface (not a replacement for any existing piece).
 Its own deployment story is documented separately:
 
-- `rag/README.md` — substrate architecture, current status, key setup steps
-- `rag/OPERATIONS.md` — key rotation, monitoring, abuse response, DR, cost ceilings
-- `rag/ENDPOINTS.md` — one-page URL/identifier/env-var reference
-- `rag/NEXT_SESSION_PICKUP.md` — fresh-eyes orientation for an agent resuming work
-- `mcp-server/USAGE_GUIDE.md` — audience-facing MCP connector documentation
+- `rag/README.md`, substrate architecture, current status, key setup steps
+- `rag/OPERATIONS.md`, key rotation, monitoring, abuse response, DR, cost ceilings
+- `rag/ENDPOINTS.md`, one-page URL/identifier/env-var reference
+- `rag/NEXT_SESSION_PICKUP.md`, fresh-eyes orientation for an agent resuming work
+- `mcp-server/USAGE_GUIDE.md`, audience-facing MCP connector documentation
 
 The RAG layer is **already live** as of 2026-05-26: Pinecone index
 populated (15,464 vectors), `/retrieve` Netlify Function deployed,
@@ -167,7 +167,7 @@ Fly.io (blocked on `flyctl auth login`).
 
 ## See also
 
-- `CLAUDE.md` — Claude-Code-side architectural guide
-- `docs/ACCESSIBILITY.md` — WCAG 2.2 AA audit report
-- `README.md` — project overview + "What's new in May 2026"
-- `CONTRIBUTORS.md` — ledger of who built what
+- `CLAUDE.md`, Claude-Code-side architectural guide
+- `docs/ACCESSIBILITY.md`, WCAG 2.2 AA audit report
+- `README.md`, project overview + "What's new in May 2026"
+- `CONTRIBUTORS.md`, ledger of who built what

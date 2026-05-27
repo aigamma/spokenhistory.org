@@ -95,11 +95,11 @@ export default function About() {
                 className="text-red-500 font-black hover:underline"
               >
                 Civil Rights History Project
-              </a> is a joint effort between the Library of Congress and the Smithsonian National Museum of African American History and Culture. Together, these institutions collected and preserved more than 145 video interviews—nearly 600 hours of first hand stories from participants in the American civil rights movement. Each interview captures deeply personal experiences of struggle, resilience, and change, forming one of the most significant oral history archives of the twentieth century. 
+              </a> is a joint effort between the Library of Congress and the Smithsonian National Museum of African American History and Culture. Together, these institutions collected and preserved more than 145 video interviews-nearly 600 hours of first hand stories from participants in the American civil rights movement. Each interview captures deeply personal experiences of struggle, resilience, and change, forming one of the most significant oral history archives of the twentieth century. 
               </p>
 
               <p className="text-black text-2xl font-medium font-['Lora'] leading-relaxed">
-              Our project uses AI to organize the interviews into thematic chapters, each with its own set of summaries and keywords. These chapters allow visitors to explore the archive through curated playlists—for example, stories of segregation (link to playlist), education (link) and activism (link), or the March on Washington (link). By grouping related moments across hundreds of hours of interviews, the system reveals new connections and patterns within the collection. The goal is to make the archive more intuitive and engaging, encouraging reflection, dialogue, and deeper understanding.
+              Our project uses AI to organize the interviews into thematic chapters, each with its own set of summaries and keywords. These chapters allow visitors to explore the archive through curated playlists-for example, stories of segregation (link to playlist), education (link) and activism (link), or the March on Washington (link). By grouping related moments across hundreds of hours of interviews, the system reveals new connections and patterns within the collection. The goal is to make the archive more intuitive and engaging, encouraging reflection, dialogue, and deeper understanding.
               </p>
 
               <p className="text-black text-2xl font-medium font-['Lora'] leading-relaxed">

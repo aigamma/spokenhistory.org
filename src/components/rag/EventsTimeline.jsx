@@ -1,11 +1,11 @@
 /**
- * @fileoverview EventsTimeline — Plotly-backed chronological timeline
+ * @fileoverview EventsTimeline, Plotly-backed chronological timeline
  * of the eight polyphonic-events panels (Emmett Till 1955 → MLK
  * assassination 1968). Replaces the row of event-selector pills with
  * a date-axis scatter where clicking a dot selects the event for
  * the detail view below.
  *
- * Why a date-axis: the eight events form an arc — the early
+ * Why a date-axis: the eight events form an arc, the early
  * personal-narrative pivots (Emmett Till), the sit-in wave
  * (Greensboro), the federal march (Washington), the violence
  * (16th Street, Bloody Sunday), the legislative wins (Voting
@@ -18,7 +18,7 @@
  * has 5), so encoding voice_count on y would just add noise. The
  * voice count is shown in the hover instead.
  *
- * 8 events sparse enough that direct text labels read clean —
+ * 8 events sparse enough that direct text labels read clean -
  * no hover-treasure-hunt required.
  */
 
@@ -175,7 +175,7 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
       tickcolor: '#a8a29e',
       dtick: 'M12',
       tickformat: '%Y',
-      // Native x-axis rangeslider — drag to window into specific years.
+      // Native x-axis rangeslider, drag to window into specific years.
       rangeslider: {
         visible: true,
         thickness: 0.13,
@@ -196,7 +196,7 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
     displaylogo: false,
     responsive: true,
     scrollZoom: false, // per [[feedback_embeds_must_not_hijack_scroll]]
-    displayModeBar: false, // tight chrome — no toolbar
+    displayModeBar: false, // tight chrome, no toolbar
     staticPlot: false,
   };
 

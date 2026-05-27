@@ -814,7 +814,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* View Timeline Link + Explore the Embeddings — normal flow at all viewports */}
+        {/* View Timeline Link + Explore the Embeddings, normal flow at all viewports */}
         <div className="mt-8 lg:mt-12 z-50 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center">
           <button
             ref={timelineRef}
@@ -1004,7 +1004,7 @@ export default function Home() {
                 "I remember being with [Mamie Till] when we stayed up all night waiting on the body to come in from, uh, Mississippi. And when it did come in, she demanded that the body be open, 'so they – the world can see what they did to my boy.'"
               </p>
               <cite className="font-normal font-['Source_Serif_4'] not-italic text-left block text-xl sm:text-2xl md:text-3xl lg:text-[40px]" style={{ color: '#1E1E1E' }}>
-                — Simeon Booker
+               , Simeon Booker
               </cite>
             </div>
           </div>
@@ -1174,7 +1174,7 @@ export default function Home() {
           {/* Second Quote - Positioned below GIF and to the right */}
           <div className="mt-12 lg:mt-16 flex justify-end -mr-2 sm:-mr-4 lg:-mr-6">
             <div className="w-full max-w-[600px] justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl font-normal font-['Source_Serif_4']">
-              "I never thought people could be so cruel." — Moses J. Newson
+              "I never thought people could be so cruel.", Moses J. Newson
             </div>
           </div>
         </div>
@@ -2538,7 +2538,7 @@ export default function Home() {
               to="/topic-glossary"
               className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-red-500 text-red-500 text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors inline-block"
             >
-              Topic Glossary
+              Topics
             </Link>
           </div>
         </div>

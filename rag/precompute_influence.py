@@ -69,7 +69,7 @@ def build_name_patterns(entries: list[dict]) -> dict[int, list[re.Pattern]]:
             last_name_count[comp["last"]] += 1
 
     # Strategy: full-name (first + last) match only. No last-name-only and no
-    # honorific+last variants — those produce too many false positives across
+    # honorific+last variants, those produce too many false positives across
     # joint-interview entries ("Abernathy family", "Booker and Newsom") and
     # common-word surnames ("Young", "Long", "Head", "King", "Family").
     # This undercounts compared to a human-curated reading but is robust to
@@ -82,7 +82,7 @@ def build_name_patterns(entries: list[dict]) -> dict[int, list[re.Pattern]]:
         subj_patterns = []
         if comp["first"] and comp["last"]:
             both = f"{comp['first']} {comp['last']}"
-            # Skip "<first> family" patterns (joint interviews) — match literal
+            # Skip "<first> family" patterns (joint interviews), match literal
             # surname-family pattern instead via canonical "abernathy family"
             # but only if it actually appears as a phrase.
             if "family" in both:
@@ -122,7 +122,7 @@ def main() -> int:
                 continue
             # Skip if the speaker's own name appears in the subject's name (avoid
             # matching the interviewee's intro mentions of themselves to themselves)
-            # — already handled by speaker_n == subj_n check
+            #, already handled by speaker_n == subj_n check
             total = 0
             for pat in subj_pats:
                 total += len(pat.findall(text))

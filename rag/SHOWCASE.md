@@ -1,4 +1,4 @@
-# RAG Showcase — Conference Presentation Brief
+# RAG Showcase, Conference Presentation Brief
 
 **Date:** 2026-05-27 (for the 2026-05-27 WWU team meeting and the London conference). Substantially revised from the 2026-05-26 version.
 **Live demo URL:** https://civil-rights-staging.netlify.app/rag-explore (Email/Password gated: Eric admin + `wwu` / `civilrights` team-shared)
@@ -13,13 +13,13 @@ Eric's constraint to the project: showcase advanced RAG features **without a cha
 
 **New since the 2026-05-26 version of this doc:**
 
-1. **Six visualization surfaces now drill into actual passages on click.** Spectrum, Concept lenses, Interview map, Themes, Network, and Tours all fire a `/retrieve` call when the user clicks a dot/node/stop — surfacing the audit-graded passages that anchor the visualization. The chart isn't decorative; every interactive element is a live link into the evidence.
+1. **Six visualization surfaces now drill into actual passages on click.** Spectrum, Concept lenses, Interview map, Themes, Network, and Tours all fire a `/retrieve` call when the user clicks a dot/node/stop, surfacing the audit-graded passages that anchor the visualization. The chart isn't decorative; every interactive element is a live link into the evidence.
 2. **Polyphonic events tab retired.** The 8-event timeline didn't earn its place; the homepage Timeline (Home.jsx) carries the canonical movement chronology. Component code retained in the repo for possible flip-back; data files at `public/rag/summaries/events/*` still exist.
 3. **Concept axes → "Spectrum"** (renamed) and **floated to the top of the page** as the always-visible headline. The tab nav sits below it labeled "Other ways to look at the data."
 4. **Concept lenses (new) is the default tab** below the nav. Four named-axis pair scatters of the same 136 voices with cross-chart hover sync.
 5. **Constellation tab → "Interview map"**: same UMAP projection as the (now-retired) Passage map, aggregated to 136 interview centroids with names labeled, search, and empirically-derived axis labels.
 6. **Voices in conversation → "Semantic Overlap"** (renamed). Now 16 related entries per interview (was 8), with the top 8 in a radial graph + the full 16 in a list below.
-7. **Audit Provenance widget** at the bottom of the About block — 3 number callouts (9 passes / 127 LoC cross-references / 5 tiers) + the Pass 8 methodology paragraph.
+7. **Audit Provenance widget** at the bottom of the About block, 3 number callouts (9 passes / 127 LoC cross-references / 5 tiers) + the Pass 8 methodology paragraph.
 
 ## The 11 surfaces (current state)
 
@@ -28,37 +28,37 @@ Eric's constraint to the project: showcase advanced RAG features **without a cha
 | 1 | **Spectrum** (always at top, not a tab) | `spectrum` redirects to `lenses` | pre-computed + live drill-down | ✓ click any dot | 60 s |
 | 2 | **Concept lenses ★** (default tab) | `lenses` | pre-computed + live drill-down | ✓ click any dot | 90 s |
 | 3 | **Interview map** | `map` | pre-computed (UMAP) + live drill-down | ✓ click any dot | 45 s |
-| 4 | Semantic Overlap | `related` | pre-computed (16 entries) | — | 30 s |
-| 5 | Semantic search | `search` | live retrieval (~$0.001/query) | — | 30 s |
-| 6 | Quote-finder | `quote` | live retrieval | — | 30 s |
+| 4 | Semantic Overlap | `related` | pre-computed (16 entries) |, | 30 s |
+| 5 | Semantic search | `search` | live retrieval (~$0.001/query) |, | 30 s |
+| 6 | Quote-finder | `quote` | live retrieval |, | 30 s |
 | 7 | Themes (k-means) | `themes` | pre-computed + live drill-down | ✓ click cluster | 30 s |
-| 8 | Famous names | `names` | pre-computed | — | 45 s |
-| 9 | Geographic atlas | `atlas` | pre-computed + Leaflet map | — | 45 s |
+| 8 | Famous names | `names` | pre-computed |, | 45 s |
+| 9 | Geographic atlas | `atlas` | pre-computed + Leaflet map |, | 45 s |
 | 10 | Influence network | `network` | pre-computed + live drill-down | ✓ click node | 30 s |
 | 11 | Curated tours | `tours` | pre-computed + live drill-down | ✓ click stop | 60 s |
-| 12 | Quote of the day | `quote-of-day` | pre-computed (rotation + AI headline) | — | 15 s |
+| 12 | Quote of the day | `quote-of-day` | pre-computed (rotation + AI headline) |, | 15 s |
 
 ★ = the headline demo. Spectrum sits above the tab nav so it's seen alongside whatever tab is open.
 
 ## Three-minute conference demo flow (revised 2026-05-27)
 
-The presentation's thesis is **"relationships between philosophy and embedding"** — what the embedding space "thinks" two oral-history passages have in common, and how that surfaces meaningful philosophical threads across a 600-hour archive. The new flow puts the click-to-retrieve drill-down at the center: every visualization is a live link into the audit-graded passages.
+The presentation's thesis is **"relationships between philosophy and embedding"**, what the embedding space "thinks" two oral-history passages have in common, and how that surfaces meaningful philosophical threads across a 600-hour archive. The new flow puts the click-to-retrieve drill-down at the center: every visualization is a live link into the audit-graded passages.
 
-**Minute 1 — "The embedding space takes a position, then shows you why."**
-1. Open `/rag-explore` (already logged in). The page leads with the **Spectrum** chart — 136 voices positioned along "Nonviolence as theology ↔ Armed self-defense" (the default axis).
-2. Hover the leftmost cluster (theological — Lowery, Vivian, C.T. Vivian) and the rightmost (BPP cohort — Elmer Dixon, Cleaver, Howard). *"Watch the embedding space sort 136 voices along a continuum it didn't design."*
-3. **Click a leftmost dot** (e.g., Joseph Lowery). A drill-down panel appears beneath the chart: 5 passages from his interview most aligned with "nonviolence as theology." Each carries a timestamp deep-link to the LoC audio, the audit-tier badge, and the full LoC catalog URL. *"The visualization isn't decorative — every dot is a live link into the evidence."*
+**Minute 1, "The embedding space takes a position, then shows you why."**
+1. Open `/rag-explore` (already logged in). The page leads with the **Spectrum** chart, 136 voices positioned along "Nonviolence as theology ↔ Armed self-defense" (the default axis).
+2. Hover the leftmost cluster (theological, Lowery, Vivian, C.T. Vivian) and the rightmost (BPP cohort, Elmer Dixon, Cleaver, Howard). *"Watch the embedding space sort 136 voices along a continuum it didn't design."*
+3. **Click a leftmost dot** (e.g., Joseph Lowery). A drill-down panel appears beneath the chart: 5 passages from his interview most aligned with "nonviolence as theology." Each carries a timestamp deep-link to the LoC audio, the audit-tier badge, and the full LoC catalog URL. *"The visualization isn't decorative, every dot is a live link into the evidence."*
 4. Switch axes (the pills directly under the chart). Try *"Sacred ↔ Secular framing"*. Jack Greenberg and Robert L. Carter (legal infrastructure) shift dramatically; ordained ministers shift the other way.
 
-**Minute 2 — "Same voices, multiple conceptual lenses, single hover sync."**
+**Minute 2, "Same voices, multiple conceptual lenses, single hover sync."**
 1. Scroll down to the **Concept Lenses ★** tab (the default below the nav). Four small scatters share the same 136 dots through different paired axes.
-2. *"Hover Aaron Dixon in chart 1 — armed self-defense, secular. Same hover lights him up in chart 2 — tactical, collective discipline. Chart 3 — northern, armed."* One voice exists at different coordinates in every named-concept space.
+2. *"Hover Aaron Dixon in chart 1, armed self-defense, secular. Same hover lights him up in chart 2, tactical, collective discipline. Chart 3, northern, armed."* One voice exists at different coordinates in every named-concept space.
 3. **Click Dixon to lock**. Below the 4 charts, his 5-axis profile appears as horizontal bars, then a drill-down panel shows his passages most aligned with his STRONGEST axis (largest |position|).
 
-**Minute 3 — "The corpus extends beyond its named voices through the network of who-knew-whom."**
-1. Click the **Influence network** tab. A d3-force graph of 151 nodes + 214 edges: 136 in-corpus interviewees (brand-red dots) + 15 external figures (gray dots — Ella Baker, Bayard Rustin, Bob Moses, etc.).
-2. *"Ella Baker doesn't have an interview here. Bayard Rustin doesn't either. But..."* — **click Ella Baker**. The drill-down shows 5 passages from 5 different speakers describing her. *"Her influence permeates the archive through quoted memory."*
-3. Closing line: *"This is the audit-graded substrate the Smithsonian and LoC are gating publication on. Every retrieval is citation-grade — timestamp, LoC URL, audit-tier badge. The embedding does discovery; the audit substrate does trust. And every click on every chart shows you the evidence."*
+**Minute 3, "The corpus extends beyond its named voices through the network of who-knew-whom."**
+1. Click the **Influence network** tab. A d3-force graph of 151 nodes + 214 edges: 136 in-corpus interviewees (brand-red dots) + 15 external figures (gray dots, Ella Baker, Bayard Rustin, Bob Moses, etc.).
+2. *"Ella Baker doesn't have an interview here. Bayard Rustin doesn't either. But..."*, **click Ella Baker**. The drill-down shows 5 passages from 5 different speakers describing her. *"Her influence permeates the archive through quoted memory."*
+3. Closing line: *"This is the audit-graded substrate the Smithsonian and LoC are gating publication on. Every retrieval is citation-grade, timestamp, LoC URL, audit-tier badge. The embedding does discovery; the audit substrate does trust. And every click on every chart shows you the evidence."*
 
 ## The click-to-retrieve pattern (cross-cutting)
 
@@ -81,7 +81,7 @@ Every drill-down renders the same `CitationCard` component, so the citation gram
 
 What it does: live query → Voyage embedding → Pinecone hybrid search → Voyage rerank-2 → top-N passages with citation metadata.
 
-What it demonstrates: the base case. RAG retrieval as a tool. *Without a chatbot,* the user types a question and gets passages — not synthesized answers, not hallucinated paraphrases.
+What it demonstrates: the base case. RAG retrieval as a tool. *Without a chatbot,* the user types a question and gets passages, not synthesized answers, not hallucinated paraphrases.
 
 Demo queries (verified to return strong matches):
 - `nonviolence as theology` → Joseph Echols Lowery at 0.75 similarity
@@ -95,7 +95,7 @@ What it does: paste a half-remembered paraphrase, get the primary-source passage
 
 What it demonstrates: research utility. The embedding handles semantic kinship well enough that a paraphrase ("the dreamer can be killed but not the dream") retrieves the actual quoted moment with full citation.
 
-### 3. Polyphonic events — RETIRED 2026-05-27
+### 3. Polyphonic events, RETIRED 2026-05-27
 
 The 8-event timeline was removed from the live surface. Quote from
 Eric: "There already is a timeline; just removing it." The homepage
@@ -107,11 +107,11 @@ and the precomputed data files (`public/rag/summaries/events/`) are
 retained in the repo for possible flip-back; nothing in the user-
 facing nav references them.
 
-### 4. Spectrum (`#spectrum`, but redirects to `#lenses` — Spectrum renders above the tab nav)
+### 4. Spectrum (`#spectrum`, but redirects to `#lenses`, Spectrum renders above the tab nav)
 
 What it does: 5 conceptual axes defined by pole-pair descriptions. Each interview's centroid is projected onto each axis vector, giving a 1D position per interviewee per axis. Now floats at the top of `/rag-explore` (always visible, not a tab). Pills directly under the chart switch which axis is active; explanation paragraph below.
 
-**Click any dot to drill into the passages that anchor that voice at that position.** This is the page's most pedagogically distinctive interaction — the user sees the embedding space's verdict on a voice, then sees the actual quotes that justify that verdict.
+**Click any dot to drill into the passages that anchor that voice at that position.** This is the page's most pedagogically distinctive interaction, the user sees the embedding space's verdict on a voice, then sees the actual quotes that justify that verdict.
 
 What it demonstrates: **"the embedding space takes a position, and the retrieval shows you why."** A 1024-dimensional space has opinions, and we can ask it questions about its opinions, then drill into the evidence behind each answer.
 
@@ -124,7 +124,7 @@ Axes:
 
 Data: `public/rag/summaries/concept_axes.json`. Math: `axis_vector = normalize(embed(pole_A) - embed(pole_B))`; position = `dot(centroid, axis_vector)`. Drill-down: `/retrieve` with `query = pole.anchor`, `filter = { entry_number: $eq: clicked_dot }`.
 
-### 4b. Concept Lenses ★ (`#lenses`) — the default tab below the nav
+### 4b. Concept Lenses ★ (`#lenses`), the default tab below the nav
 
 What it does: 4 small scatters of the same 136 voices, each one a different pair of named concept axes (so each chart's x/y both have human-readable meaning, unlike UMAP). Hover any dot in any chart and the same interviewee lights up in the other three at different coordinates. Click to lock; below the grid, the interviewee's full 5-axis profile renders as horizontal bars + a drill-down panel.
 
@@ -134,9 +134,9 @@ This is the thing the conference is pitched on that nobody else builds.
 
 Data: `public/rag/summaries/concept_axes.json` (the same file as Spectrum). Drill-down: `/retrieve` with `query = strongest_axis.pole.anchor` (auto-picked from the interviewee's 5 positions; whichever has the largest |position|), `filter = { entry_number: $eq: clicked_dot }`.
 
-### 5. Interview map (`#map`) — replaces the old Constellation tab
+### 5. Interview map (`#map`), replaces the old Constellation tab
 
-What it does: 2D UMAP projection of all 136 interview centroids (aggregated from the 15,464 passage-level Atlas projection). Names are labeled directly on the chart (no hover-treasure-hunt). Search box filters to one or more interviewees. Empirically-derived axis labels at each pole — the dominant Atlas topic of the top-15 interviewees at each end of each axis ("← Black Panther Movement ... Religion →" reads off the actual data).
+What it does: 2D UMAP projection of all 136 interview centroids (aggregated from the 15,464 passage-level Atlas projection). Names are labeled directly on the chart (no hover-treasure-hunt). Search box filters to one or more interviewees. Empirically-derived axis labels at each pole, the dominant Atlas topic of the top-15 interviewees at each end of each axis ("← Black Panther Movement ... Religion →" reads off the actual data).
 
 What it demonstrates: the corpus's shape at interview-scale. Same UMAP coordinate space as the now-retired Passage map, just aggregated.
 
@@ -144,7 +144,7 @@ Click any dot to drill into the interviewee's passages most aligned with their p
 
 Data: `public/rag/atlas_projection.json` (the durable Atlas-derived JSON, see `rag/ATLAS_PROVENANCE.md`).
 
-### 6. Semantic Overlap (`#related`) — renamed from "Voices in conversation"
+### 6. Semantic Overlap (`#related`), renamed from "Voices in conversation"
 
 What it does: for any interview, pre-compute its top-16 thematic neighbors (was 8; bumped to 16 on 2026-05-27 because the section felt like a carousel). The radial graph at the top renders the top 8 as numbered spokes around the focal interviewee; the list below extends to all 16 with passage-overlap counts.
 
@@ -182,7 +182,7 @@ Data: `public/rag/summaries/geography.json`.
 
 What it does: directed graph of who-discussed-whom across the corpus + the 15 external figures. d3-force layout (drag nodes to reposition, scroll to zoom, double-click to unpin). Built by full-name string matching with conservative-precision filtering.
 
-Click any node — in-corpus interviewee or external figure — to surface the top passages mentioning them. For in-corpus nodes, the drill-down excludes the person's own testimony (we want what OTHERS said about them, not their own self-account). For external figures, the drill-down surfaces the secondhand-as-primary-source pattern in action.
+Click any node, in-corpus interviewee or external figure, to surface the top passages mentioning them. For in-corpus nodes, the drill-down excludes the person's own testimony (we want what OTHERS said about them, not their own self-account). For external figures, the drill-down surfaces the secondhand-as-primary-source pattern in action.
 
 What it demonstrates: the network of mutual reference. Sherrod is the most-discussed in-corpus voice (24 mentions); Ella Baker tops the external list (8 mentions); the embedding-surfaced retrieval is corroborated by literal lexical co-occurrence.
 
@@ -192,7 +192,7 @@ Data: `public/rag/summaries/influence.json` (123 in-corpus edges + 91 external e
 
 What it does: 10 pre-written narrative paths through the corpus, each 6–10 stops organized around a theme. Editorial; not auto-generated per query. Each tour also renders as a numbered arc on the Interview map (UMAP space), so visitors see "where this tour walks through the corpus."
 
-Each stop is expandable: clicking it opens an inline drill-down with 3 passages from THAT interview most aligned with the TOUR'S title. The Wyatt Tee Walker stop on the "theological foundations of nonviolence" tour shows Walker's most-theological passages — the specific quotes that justify his presence in the tour's narrative arc.
+Each stop is expandable: clicking it opens an inline drill-down with 3 passages from THAT interview most aligned with the TOUR'S title. The Wyatt Tee Walker stop on the "theological foundations of nonviolence" tour shows Walker's most-theological passages, the specific quotes that justify his presence in the tour's narrative arc.
 
 Tours:
 - The theological foundations of nonviolence
@@ -243,16 +243,16 @@ The single chatbot-adjacent surface that DOES NOT EXIST: there is no `/chat` end
 
 ## Substrate
 
-- **Pinecone Builder** (separate `civil-rights-history` project, NOT co-mingled with worldthought) — index `civil-rights`, 1024-dim, cosine, AWS us-east-1, 15,464 vectors.
-- **Voyage AI** — `voyage-3` (1024-dim) for embeddings, `rerank-2` for cross-encoder reranking.
+- **Pinecone Builder** (separate `civil-rights-history` project, NOT co-mingled with worldthought), index `civil-rights`, 1024-dim, cosine, AWS us-east-1, 15,464 vectors.
+- **Voyage AI**, `voyage-3` (1024-dim) for embeddings, `rerank-2` for cross-encoder reranking.
 - **Netlify Function** at `/retrieve` for the bounded-live retrieval surfaces.
-- **Anthropic API** (Opus-4.7) — used at PRECOMPUTE time only (capsules, cluster names, tours, quotes). Never invoked per user request. A fallback `rag/summarize.mjs` script exists for post-handoff regeneration; otherwise, regeneration happens via Claude Code subagents under subscription.
+- **Anthropic API** (Opus-4.7), used at PRECOMPUTE time only (capsules, cluster names, tours, quotes). Never invoked per user request. A fallback `rag/summarize.mjs` script exists for post-handoff regeneration; otherwise, regeneration happens via Claude Code subagents under subscription.
 
 ## Data files in `public/rag/summaries/`
 
 ```
 _entry_list.json              136 entries × {entry_number, entry_subject, dir, txt, loc_url, tier, provenance}
-_batches/                     subagent assignment files (internal, gitignored not gitignored — present for traceability)
+_batches/                     subagent assignment files (internal, gitignored not gitignored, present for traceability)
 capsules.json                 136 entries × 3-sentence biographical capsule
 capsules_batch_<1-7>.json     subagent intermediate outputs
 clusters.json                 30 k-means clusters × {name, description, starter_query, members}
@@ -288,7 +288,7 @@ All scripts are idempotent and safe to re-run.
 ## Known limitations
 
 - **Pinecone vector metadata still carries pre-Pass-9 tier values** (the audit-substrate update from earlier today). The next idempotent `rag/ingest.mjs` run will refresh them. Until then, tier badges in the live retrieval surfaces reflect Pass 8 tiers; static surfaces (capsules, neighbors, axes) consume the Pass 9 manifests directly.
-- **Influence network uses conservative full-name string matching** — it will undercount any reference using just a last name or honorific+last. Reading "Mr. Sherrod" doesn't add a Sherrod mention to the count. This is intentional: false positives (matching common-word surnames like "Young", "Long", "Head", "King") were far worse than under-counting.
+- **Influence network uses conservative full-name string matching**, it will undercount any reference using just a last name or honorific+last. Reading "Mr. Sherrod" doesn't add a Sherrod mention to the count. This is intentional: false positives (matching common-word surnames like "Young", "Long", "Head", "King") were far worse than under-counting.
 - **The `not-auditable` and `publication-block` entries are still in Pinecone**, meaning they can appear in retrieval results. Each tier badge transparently surfaces the substrate uncertainty, but a future filter setting could restrict the search surface to `low`+`medium`+`high` tiers if a stakeholder requests publication-only retrieval.
 - **No mobile-optimized layout for the concept-spectrum SVG.** The 880×380 SVG scrolls horizontally on small screens but doesn't restructure. Acceptable for the conference demo (desktop projector); a future mobile pass would compress.
 
@@ -306,4 +306,4 @@ These shaped what got built and what was deliberately not built:
 - **No chatbot.** No `/chat`, no `/ask`, no LLM-in-the-loop per user request. Every UI surface either pre-renders or makes a bounded retrieval call.
 - **Smithsonian-grade citation rigor.** Every retrieved passage carries entry number, LoC catalog URL, timestamp deep-link, audit-tier badge, and fidelity note. Researchers can copy a Chicago citation directly from the card.
 - **Audit substrate is first-class.** Tier badges are visible everywhere, not hidden behind a "details" toggle.
-- **Cross-corpus interlinking with worldthought.com is intentionally NOT done.** Civil-rights and worldthought are in separate Pinecone projects under the same Builder organization, and any editorial bridging will be a human-curated decision Eric makes with Dustin — not an automated cosine-similarity surface that would feel like Eric colonized another project.
+- **Cross-corpus interlinking with worldthought.com is intentionally NOT done.** Civil-rights and worldthought are in separate Pinecone projects under the same Builder organization, and any editorial bridging will be a human-curated decision Eric makes with Dustin, not an automated cosine-similarity surface that would feel like Eric colonized another project.

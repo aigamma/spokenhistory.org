@@ -578,9 +578,9 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                 type="button"
                 className="inline-flex justify-start items-center gap-2.5 sm:ml-8 min-h-11 cursor-pointer hover:opacity-70 transition-opacity bg-transparent border-0"
                 onClick={() => navigate('/topic-glossary')}
-                aria-label="Open the Topic Glossary page"
+                aria-label="Open the Topics page"
               >
-                <span className="text-center text-stone-900 text-sm sm:text-base font-light font-['Chivo_Mono']">See Topic Glossary</span>
+                <span className="text-center text-stone-900 text-sm sm:text-base font-light font-['Chivo_Mono']">See Topics</span>
                 <span className="w-3.5 h-2.5 outline outline-1 outline-offset-[-0.50px] outline-stone-900" aria-hidden="true"></span>
               </button>
             </div>

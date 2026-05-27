@@ -1,12 +1,12 @@
 /**
- * @fileoverview Html5VideoPlayer — HTML5 <video> element variant of
+ * @fileoverview Html5VideoPlayer, HTML5 <video> element variant of
  * VideoPlayer for LoC-served MP4 / HLS streams. Mirrors VideoPlayer's
  * public API so PlaylistBuilder and InterviewPlayer can dispatch
  * between this and the YouTube path without changes upstream.
  *
  * The original VideoPlayer.jsx is YouTube-iframe-only (uses YT.Player
  * API). The civil-rights pipeline now sources videos from the Library
- * of Congress catalog, which serves MP4 + HLS (.m3u8) directly — no
+ * of Congress catalog, which serves MP4 + HLS (.m3u8) directly, no
  * YouTube videoId to extract. This component takes a video.videoEmbedLink
  * pointing at a direct stream URL and plays it with native HTML5 video.
  *
@@ -62,7 +62,7 @@ const Html5VideoPlayer = ({
       try {
         if (startSeconds > 0) el.currentTime = startSeconds;
       } catch {
-        // ignore — some sources don't allow seek before play
+        // ignore, some sources don't allow seek before play
       }
       setIsReady(true);
       if (isPlaying) {
@@ -88,7 +88,7 @@ const Html5VideoPlayer = ({
     } catch { /* noop */ }
   }, [isPlaying, isReady]);
 
-  // External seekToTime — value is relative to clip start.
+  // External seekToTime, value is relative to clip start.
   useEffect(() => {
     const el = videoRef.current;
     if (!el || !isReady) return;

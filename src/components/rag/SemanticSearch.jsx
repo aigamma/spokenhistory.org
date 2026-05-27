@@ -1,8 +1,8 @@
 /**
- * @fileoverview SemanticSearch — live semantic-search UI over the
+ * @fileoverview SemanticSearch, live semantic-search UI over the
  * civil-rights corpus via the Netlify /retrieve function.
  *
- * No LLM call at runtime — just retrieval + display. The cheapest and
+ * No LLM call at runtime, just retrieval + display. The cheapest and
  * most-useful interactive RAG surface: every result is a quoted
  * primary source with citation metadata, not a paraphrased "AI answer."
  *
@@ -18,7 +18,7 @@ import CitationCard from './CitationCard';
 import { TIER_VOCABULARY, TIER_COLORS } from './tiers';
 
 /**
- * SemanticSearch — live semantic-search input + result list.
+ * SemanticSearch, live semantic-search input + result list.
  *
  * @component
  * @param {Object} props
@@ -59,7 +59,7 @@ export default function SemanticSearch({
 }) {
   // The app uses HashRouter, so query params live INSIDE the router
   // path (URL like /#/rag-explore?q=foo). useSearchParams() reads
-  // those params correctly — window.location.search would be empty.
+  // those params correctly, window.location.search would be empty.
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState(() => searchParams.get('q') || '');
 
@@ -78,7 +78,7 @@ export default function SemanticSearch({
   // the polyphonic record (one passage per voice). Default off so the
   // same-speaker-different-moment results aren't hidden by default.
   const [dedupeByEntry, setDedupeByEntry] = useState(false);
-  // Audit-tier filter — research-grade users want to dial down to
+  // Audit-tier filter, research-grade users want to dial down to
   // only the higher-confidence passages. Default: all tiers visible.
   // Filter happens client-side over the returned topN; we don't
   // re-issue the query when filters change.
@@ -263,13 +263,13 @@ export default function SemanticSearch({
 
       {meta?.rerankEnabled === false && results.length > 0 && (
         <div className="mb-4 text-xs text-stone-500">
-          Reranker disabled — showing first-stage Pinecone matches.
+          Reranker disabled, showing first-stage Pinecone matches.
         </div>
       )}
 
       {(() => {
         // Filter results by allowed tiers. If all tiers are checked
-        // (the default), no filter applies — show all results.
+        // (the default), no filter applies, show all results.
         const filtered = allowedTiers.size === TIER_VOCABULARY.length
           ? results
           : results.filter((p) => allowedTiers.has(p.uncertaintyTier));

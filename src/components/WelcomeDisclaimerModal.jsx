@@ -163,7 +163,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">3.</span>
-                  <span><span className="font-medium">Describe the issue</span> — tell us what's wrong or inaccurate</span>
+                  <span><span className="font-medium">Describe the issue</span>, tell us what's wrong or inaccurate</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 font-light font-['Chivo_Mono'] mr-3 flex-shrink-0">4.</span>
@@ -190,7 +190,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
             onClick={onClose}
             className="w-full px-8 py-4 border border-red-500 text-red-500 text-lg lg:text-xl font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors"
           >
-            I Understand — Continue to Site
+            I Understand, Continue to Site
           </button>
         </div>
       </div>

@@ -4,7 +4,7 @@
 // RAG ingestion walker for the Civil Rights History Project corpus.
 //
 // Walks transcripts/corrected/<dir>/<file> (the output of
-// scripts/apply_corrections.py — never raw/ directly), chunks each
+// scripts/apply_corrections.py, never raw/ directly), chunks each
 // transcript file via rag/chunker.mjs (time-aware for .srt/.vtt,
 // paragraph-aware for .txt), embeds via Voyage AI (voyage-3, 1024-dim
 // document mode), and upserts vectors to Pinecone with metadata tagging
@@ -47,7 +47,7 @@ import { embedTexts } from './embed.mjs';
 
 // Matched to the embed-batch ceiling (Voyage caps at 128 inputs per
 // call). Pinecone serverless accepts up to 1000 vectors per upsert,
-// so this isn't a Pinecone limit — it's keeping the round-trip pair
+// so this isn't a Pinecone limit, it's keeping the round-trip pair
 // (embed + upsert) at the same size so neither side dominates.
 const UPSERT_BATCH = 128;
 
@@ -533,7 +533,7 @@ async function main() {
     const orphanRatio = orphaned.length / Math.max(totalSoFar, 1);
     if (orphanRatio > 0.5 && !args.forcePrune) {
       console.error(
-        `[ingest] REFUSING to prune ${orphaned.length} orphaned vectors — that's ` +
+        `[ingest] REFUSING to prune ${orphaned.length} orphaned vectors, that's ` +
         `${(orphanRatio * 100).toFixed(1)}% of the index (${totalSoFar} total). ` +
         `If this is intentional, re-run with --force-prune. ` +
         `Otherwise check PINECONE_INDEX, the corrected/ directory, and the ` +
@@ -545,7 +545,7 @@ async function main() {
     console.log(`[ingest] pruned ${orphaned.length} orphaned vectors`);
   }
 
-  console.log(`[ingest] done — ${upserted} upserted, ${expectedById.size - upserted} unchanged${args.prune ? `, ${orphaned.length} pruned` : ''}`);
+  console.log(`[ingest] done, ${upserted} upserted, ${expectedById.size - upserted} unchanged${args.prune ? `, ${orphaned.length} pruned` : ''}`);
 }
 
 // Only run main() when this module is the entry point, not when imported.

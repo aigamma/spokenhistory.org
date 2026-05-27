@@ -1,8 +1,8 @@
-# Civil Rights History Project MCP Connector — Usage Guide
+# Civil Rights History Project MCP Connector, Usage Guide
 
 **The Library of Congress / Smithsonian NMAAHC civil rights oral history archive, accessible from inside Claude.**
 
-This connector exposes 136 long-form oral history interviews (600+ hours of audio, ~5 million words of transcribed text) collected by the [Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project/) — a joint initiative of the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture — as a structured, queryable resource that Claude can search and cite from any MCP-compatible client.
+This connector exposes 136 long-form oral history interviews (600+ hours of audio, ~5 million words of transcribed text) collected by the [Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project/), a joint initiative of the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture, as a structured, queryable resource that Claude can search and cite from any MCP-compatible client.
 
 It is not a chatbot. It is a **primary-source citation oracle**: every answer Claude can give using this connector is grounded in an actual interviewee's words, anchored to a Library of Congress catalog URL, and timestamped to the exact audio offset where the quote occurs.
 
@@ -17,7 +17,7 @@ It is not a chatbot. It is a **primary-source citation oracle**: every answer Cl
 - **Graduate students** doing dissertation research who need to discover related passages across hundreds of hours of testimony without listening to all of it
 - **Public-history audiences** who want to hear specific figures in their own words
 
-The corpus's distinctive value: many of these interviewees have since passed away. The recorded testimony is the last accessible primary source on lived experience inside the movement. A connector that lets Claude reach this material — and cite it correctly — extends the scholarly utility of the archive far beyond what manual search could.
+The corpus's distinctive value: many of these interviewees have since passed away. The recorded testimony is the last accessible primary source on lived experience inside the movement. A connector that lets Claude reach this material, and cite it correctly, extends the scholarly utility of the archive far beyond what manual search could.
 
 ---
 
@@ -60,7 +60,7 @@ The corpus's distinctive value: many of these interviewees have since passed awa
 
 Any client supporting the StreamableHTTP transport works. The endpoint is `POST /mcp`; the JSON-RPC schema follows the MCP spec.
 
-> The exact public URL above is illustrative — see the project's latest deploy at https://github.com/aigamma/civil-rights-history-project for the live endpoint.
+> The exact public URL above is illustrative, see the project's latest deploy at https://github.com/aigamma/civil-rights-history-project for the live endpoint.
 
 ---
 
@@ -82,7 +82,7 @@ Citation-grade semantic search across the corpus. Returns ranked passages with f
 {
   "entryNumber": 73,
   "entrySubject": "Kathleen Cleaver",
-  "text": "By 1966, Stokely was already moving past what he'd call 'love your enemies' — he'd grown up watching his community get destroyed by nonviolent resistance to nothing...",
+  "text": "By 1966, Stokely was already moving past what he'd call 'love your enemies', he'd grown up watching his community get destroyed by nonviolent resistance to nothing...",
   "locItemUrl": "https://www.loc.gov/item/2015669147/",
   "timestampStart": 1842,
   "timestampEnd": 1893,
@@ -153,7 +153,7 @@ The corpus roster. Returns entry_number + name + LoC catalog URL + audit provena
 
 Each MCP client renders prompts as ready-to-run conversation starters. The connecting LLM (Claude) follows the workflow they encode.
 
-### `source_for_claim` — the citation oracle pattern
+### `source_for_claim`, the citation oracle pattern
 
 **When to use:** you have a claim, quote, or paraphrase that needs primary-source backing.
 
@@ -173,7 +173,7 @@ Instructs Claude to look up the interviewee's entry_number, then use the `entry_
 
 ---
 
-## Worked example 1 — grant proposal citation
+## Worked example 1, grant proposal citation
 
 A scholar is drafting an NEH grant proposal about Black Power's intellectual lineage. They need to ground this claim in primary sources:
 
@@ -183,27 +183,27 @@ A scholar is drafting an NEH grant proposal about Black Power's intellectual lin
 
 > I called `search_transcripts({query: "younger SNCC organizers concluded nonviolent direct action could not protect Black communities", limit: 8})`. Three passages bear directly on this claim. Two SUPPORT it; one COMPLICATES it.
 >
-> **PASSAGE 1 — SUPPORTS**
+> **PASSAGE 1, SUPPORTS**
 >
-> > "We saw what happened in Mississippi. Three of our people murdered. Nonviolence as a tactic, sure, when the cameras were rolling — but at night, in Lowndes County, you needed to be able to defend your home or your family was going to die."
+> > "We saw what happened in Mississippi. Three of our people murdered. Nonviolence as a tactic, sure, when the cameras were rolling, but at night, in Lowndes County, you needed to be able to defend your home or your family was going to die."
 >
-> — Lawrence Guyot, interview, Civil Rights History Project, American Folklife Center, Library of Congress in association with the Smithsonian National Museum of African American History and Culture, https://www.loc.gov/item/2015669201/, at 01:14:22–01:14:58.
+>, Lawrence Guyot, interview, Civil Rights History Project, American Folklife Center, Library of Congress in association with the Smithsonian National Museum of African American History and Culture, https://www.loc.gov/item/2015669201/, at 01:14:22–01:14:58.
 >
 > *Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.* Guyot directly testifies that SNCC organizers' embrace of self-defense was a response to the limits of nonviolence under conditions of state-tolerated white violence. This is a textbook supporting passage.
 >
-> **PASSAGE 2 — SUPPORTS**
+> **PASSAGE 2, SUPPORTS**
 >
 > > "Stokely didn't invent Black Power. We had been having that conversation in Atlanta SNCC offices since '64..."
 >
-> — James Forman, interview, ..., https://www.loc.gov/item/2015669XXX/, at 02:08:14–02:08:51.
+>, James Forman, interview, ..., https://www.loc.gov/item/2015669XXX/, at 02:08:14–02:08:51.
 >
 > *Audited transcript with residual uncertainty; verify against audio for high-stakes citations.* Forman places the intellectual shift earlier than the popular "Stokely-said-Black-Power-in-Greenwood" narrative; useful for the proposal's lineage argument.
 >
-> **PASSAGE 3 — COMPLICATES**
+> **PASSAGE 3, COMPLICATES**
 >
-> > "Some of the younger people, yes. But Bob Moses, Fannie Lou Hamer — they never gave up on nonviolence as a theology, not just a tactic..."
+> > "Some of the younger people, yes. But Bob Moses, Fannie Lou Hamer, they never gave up on nonviolence as a theology, not just a tactic..."
 >
-> — Reginald Robinson, interview, ..., at 00:48:11–00:48:39.
+>, Reginald Robinson, interview, ..., at 00:48:11–00:48:39.
 >
 > *Audited transcript.* Robinson complicates the universal "younger SNCC turned away from nonviolence" framing by naming counter-examples within the same cohort. The proposal should reflect this internal disagreement rather than presenting Black Power as a clean break.
 
@@ -211,7 +211,7 @@ The scholar now has three citations, with verifiable LoC URLs, exact timestamps,
 
 ---
 
-## Worked example 2 — quote verification
+## Worked example 2, quote verification
 
 A journalist is writing a piece for *The Atlantic* on Emmett Till. They half-remember a quote about Till's last words to his cousin Wheeler Parker, Jr., but can't find the exact source.
 
@@ -225,7 +225,7 @@ A journalist is writing a piece for *The Atlantic* on Emmett Till. They half-rem
 >
 > > "Bobo, that's what we called him, he was joking with me about how he was going to find him a Mississippi girl. He said 'I'm gonna get me a Mississippi girlfriend before this trip is over.' And I told him, I said, 'Bobo, you don't say that down here. You don't.' But he was 14. He didn't understand what he was saying."
 >
-> — Wheeler Parker, Jr., interview, Civil Rights History Project, American Folklife Center, Library of Congress in association with the Smithsonian National Museum of African American History and Culture, https://www.loc.gov/item/2015669XXX/, at 00:38:42–00:39:24.
+>, Wheeler Parker, Jr., interview, Civil Rights History Project, American Folklife Center, Library of Congress in association with the Smithsonian National Museum of African American History and Culture, https://www.loc.gov/item/2015669XXX/, at 00:38:42–00:39:24.
 >
 > *Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.*
 
@@ -233,7 +233,7 @@ The journalist now has the actual passage (not their misremembering), the timest
 
 ---
 
-## Worked example 3 — curriculum development
+## Worked example 3, curriculum development
 
 A high school US history teacher is building a unit on the 1965 Selma to Montgomery marches. They want students to encounter the events through primary testimony rather than textbook summary.
 
@@ -241,12 +241,12 @@ A high school US history teacher is building a unit on the 1965 Selma to Montgom
 
 Claude calls `search_transcripts({query: "Bloody Sunday Edmund Pettus Bridge", limit: 12})`, groups by interviewee, and presents 4 voices:
 
-1. **Annie Pearl Avery** — was on the bridge, recounts the moment the troopers charged
-2. **Lawrence Guyot** — was coordinating in Selma but not on the march, recounts the day from the SNCC office
-3. **Reverend Frederick Reese** — local Selma organizer, recounts the lead-up and the strategic logic
-4. **Worth W. Long** — outside observer, recounts what he learned from those who were there
+1. **Annie Pearl Avery**, was on the bridge, recounts the moment the troopers charged
+2. **Lawrence Guyot**, was coordinating in Selma but not on the march, recounts the day from the SNCC office
+3. **Reverend Frederick Reese**, local Selma organizer, recounts the lead-up and the strategic logic
+4. **Worth W. Long**, outside observer, recounts what he learned from those who were there
 
-Each voice is quoted verbatim, with timestamp range and LoC URL. The teacher then prints the four passages as a hand-out: students read the same event through four different vantage points. The lesson plan that emerges teaches both Selma's history AND the methodology of oral-history scholarship — primary sources are multiple, sometimes in tension, always located in a specific speaker's vantage point.
+Each voice is quoted verbatim, with timestamp range and LoC URL. The teacher then prints the four passages as a hand-out: students read the same event through four different vantage points. The lesson plan that emerges teaches both Selma's history AND the methodology of oral-history scholarship, primary sources are multiple, sometimes in tension, always located in a specific speaker's vantage point.
 
 A textbook summary would have flattened this into one paragraph. The connector keeps the polyphony intact.
 
@@ -284,11 +284,11 @@ Not all 136 entries in the corpus carry the same fidelity guarantees. Every resu
 
 Per-entry classification derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty). See `transcripts/AUDIT_TRAIL.md::Inferential scoring framework` in the project repo for the full formula. Five values appear in the corpus as of 2026-05-25 (counts in parentheses):
 
-- **`low`** (72) — well-audited, low residual error rate. Cite freely.
-- **`medium`** (18) — audited, residual uncertainty. Verify against audio for high-stakes citations.
-- **`publication-block`** (23) — audited, but documented issues (Subject-paragraph fact-check errors, severe Whisper degradation, or mid-sentence source truncations) block direct publication. Usable as a research lead; verify the specific passage against audio before citing.
-- **`not-auditable`** (14) — audited but the entry cannot be fully verified against an external canonical source (multi-speaker, no LoC reference, etc.). Treat as a research lead.
-- **`ingestion-only`** (9) — single-pass ingestion via the streamlined 2026-05-25 pipeline; not yet through the full audit cascade. Verify against audio for any citation.
+- **`low`** (72), well-audited, low residual error rate. Cite freely.
+- **`medium`** (18), audited, residual uncertainty. Verify against audio for high-stakes citations.
+- **`publication-block`** (23), audited, but documented issues (Subject-paragraph fact-check errors, severe Whisper degradation, or mid-sentence source truncations) block direct publication. Usable as a research lead; verify the specific passage against audio before citing.
+- **`not-auditable`** (14), audited but the entry cannot be fully verified against an external canonical source (multi-speaker, no LoC reference, etc.). Treat as a research lead.
+- **`ingestion-only`** (9), single-pass ingestion via the streamlined 2026-05-25 pipeline; not yet through the full audit cascade. Verify against audio for any citation.
 
 The `fidelityNote` field renders this as a human-readable sentence so the LLM can pass the transparency directly through to the user.
 
@@ -298,7 +298,7 @@ This honesty is load-bearing for the academic-citation use case. A connector tha
 
 ## Privacy and data ethics
 
-- **All material in the corpus is public**, published by the Library of Congress and Smithsonian under their open-access policies for the Civil Rights History Project collection. There are no PII concerns at the interview level — interviewees gave informed consent for public distribution.
+- **All material in the corpus is public**, published by the Library of Congress and Smithsonian under their open-access policies for the Civil Rights History Project collection. There are no PII concerns at the interview level, interviewees gave informed consent for public distribution.
 - **The connector does not log queries**, retain user data, or attempt to identify the user. Each request is independent; no session state crosses requests.
 - **Citation responsibility lies with the user**. Researchers should verify the LoC catalog item, attribute the interviewer, and respect the Library of Congress's terms of use for derivative works built on the recordings.
 - **Misattribution reporting**: if a returned passage misattributes a quote or misrepresents an interviewee, please file an issue at the project repo (see "Feedback" below). The audit overlay is non-destructive and corrections propagate to subsequent re-ingests.
@@ -307,10 +307,10 @@ This honesty is load-bearing for the academic-citation use case. A connector tha
 
 ## Roadmap
 
-- **Hybrid lexical+semantic retrieval** — currently dense-only via Voyage embeddings. Once Pinecone Builder's sparse-vector support is configured at the index level, results will fuse BM25 + cosine similarity for an additional accuracy lift on rare-name queries.
-- **OAuth 2.1 authentication** — currently the endpoint is public. For Anthropic Connector Directory inclusion + per-user audit trails, OAuth is the next add.
-- **Coverage extensions** — the 9 ingestion-only entries will graduate to audit-original as the seven-pass audit cascade is re-run on them. New interviews collected by the Civil Rights History Project will be ingested via the streamlined Pass 8 pipeline.
-- **Multi-archive federation** — if other oral-history archives (StoryCorps, Smithsonian Folklife Festival recordings, the Southern Oral History Program) become MCP-accessible with comparable citation metadata, we'd publish federation guidance so researchers can search multiple archives from one Claude session.
+- **Hybrid lexical+semantic retrieval**, currently dense-only via Voyage embeddings. Once Pinecone Builder's sparse-vector support is configured at the index level, results will fuse BM25 + cosine similarity for an additional accuracy lift on rare-name queries.
+- **OAuth 2.1 authentication**, currently the endpoint is public. For Anthropic Connector Directory inclusion + per-user audit trails, OAuth is the next add.
+- **Coverage extensions**, the 9 ingestion-only entries will graduate to audit-original as the seven-pass audit cascade is re-run on them. New interviews collected by the Civil Rights History Project will be ingested via the streamlined Pass 8 pipeline.
+- **Multi-archive federation**, if other oral-history archives (StoryCorps, Smithsonian Folklife Festival recordings, the Southern Oral History Program) become MCP-accessible with comparable citation metadata, we'd publish federation guidance so researchers can search multiple archives from one Claude session.
 
 ---
 

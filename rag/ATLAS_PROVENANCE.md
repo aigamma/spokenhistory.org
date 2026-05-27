@@ -1,9 +1,9 @@
-# Nomic Atlas — data provenance and what survives cancellation
+# Nomic Atlas, data provenance and what survives cancellation
 
 Eric set up a Nomic Atlas Plus account at $10/month on 2026-05-26 to
 compute a UMAP projection + auto-labeled topic model on the
 civil-rights-passages corpus. After the projection was downloaded
-and verified, the account was canceled — Atlas had paid for the
+and verified, the account was canceled, Atlas had paid for the
 one-shot compute we needed; the static output is now ours forever.
 
 This document records WHAT came out of Atlas, WHERE it lives, and
@@ -19,19 +19,19 @@ A single static file:
   Carries the following data:
 
   - **15,464 passages**, one per `points[i]`, each with:
-    - `x`, `y` — UMAP 2D coordinates (Atlas's internal projection;
+    - `x`, `y`, UMAP 2D coordinates (Atlas's internal projection;
       arbitrary scale; only relative distance is meaningful)
-    - `entry_number` — interview ID matching the Pinecone metadata
-    - `entry_subject` — interviewee name
-    - `loc_item_url` — Library of Congress catalog URL for the
+    - `entry_number`, interview ID matching the Pinecone metadata
+    - `entry_subject`, interviewee name
+    - `loc_item_url`, Library of Congress catalog URL for the
       source interview
-    - `t_start` — start timestamp (seconds) of the chunk in the
+    - `t_start`, start timestamp (seconds) of the chunk in the
       original audio
-    - `text_preview` — first 120 chars of the passage text, with
+    - `text_preview`, first 120 chars of the passage text, with
       `...` suffix when truncated
-    - `topic` — broad topic label from Atlas's depth-1 topic model
+    - `topic`, broad topic label from Atlas's depth-1 topic model
       (8 unique values across the corpus)
-    - `topic_narrow` — narrower topic label from depth-2 (256
+    - `topic_narrow`, narrower topic label from depth-2 (256
       unique values)
 
   - **8 broad topics** in `topics[]`:
@@ -49,11 +49,11 @@ A single static file:
 The Atlas projection JSON powers two visualization tabs on
 `/rag-explore`:
 
-  1. **Passage map (Plotly)** — `src/components/rag/PassageMap.jsx`
+  1. **Passage map (Plotly)**, `src/components/rag/PassageMap.jsx`
      renders all 15,464 passages on a Plotly scattergl with native
      x/y range sliders and the 8-topic color legend.
 
-  2. **Interview map** — `src/components/rag/InterviewMap.jsx`
+  2. **Interview map**, `src/components/rag/InterviewMap.jsx`
      aggregates the same passages by `entry_number` to produce 136
      interview centroids with names labeled, then derives empirical
      axis labels from which topic dominates each pole.
@@ -79,22 +79,22 @@ After cancellation these URLs will return 404 or 403. The local
 
 Four scripts in `rag/`, in execution order:
 
-1. **`rag/dump_for_nomic.mjs`** — pulls all 15,464 vectors + metadata
+1. **`rag/dump_for_nomic.mjs`**, pulls all 15,464 vectors + metadata
    from the Pinecone `civil-rights` index, writes NDJSON to
    `tmp/nomic_export.ndjson` (~220 MB, gitignored, must NOT live
    under `public/`).
 
-2. **`rag/upload_to_nomic.py`** — reads the NDJSON, authenticates via
+2. **`rag/upload_to_nomic.py`**, reads the NDJSON, authenticates via
    `NOMIC_API_KEY` (from `rag/.env.local`), uploads to Atlas with
    `topic_model.topic_label_field='text'` so topic names are derived
    from passage content.
 
-3. **`rag/rebuild_atlas_topics.py`** — creates a new index on the
+3. **`rag/rebuild_atlas_topics.py`**, creates a new index on the
    existing dataset. Necessary because our initial upload omitted
    `topic_label_field` and the first map had emoji-placeholder topic
    labels; this triggers a re-projection with real labels.
 
-4. **`rag/download_from_nomic.py`** — pulls the projected coords +
+4. **`rag/download_from_nomic.py`**, pulls the projected coords +
    topic labels back from Atlas as `public/rag/atlas_projection.json`.
    Joins `data.df`, `embeddings.df`, and `topics.df` via positional
    concat (NOT `_position_index` which is non-unique across shards).
@@ -128,12 +128,12 @@ Claude Max subscription).
 
 - Time-to-market for the conference (~ 6 hours saved vs. doing UMAP
   + topic modeling locally from scratch)
-- Cross-stakeholder credibility — "we used Nomic Atlas" reads as
+- Cross-stakeholder credibility, "we used Nomic Atlas" reads as
   professional-grade infrastructure when communicating with Dustin /
   Smithsonian / LoC stakeholders
 - Eric ALSO used it personally as a prompt-engineering tool for
   chunk-sampling (verifying clean paragraph boundaries in the
-  chunker output) — that use case continued separately from the
+  chunker output), that use case continued separately from the
   visualization pipeline
 
 The $10 sunk cost paid for the UMAP + label compute that now lives

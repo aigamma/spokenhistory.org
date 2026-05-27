@@ -1,5 +1,5 @@
 /**
- * @fileoverview InfluenceList — who-discussed-whom across the corpus.
+ * @fileoverview InfluenceList, who-discussed-whom across the corpus.
  *
  * Two views, toggleable:
  *  - Graph: force-directed network via InfluenceGraph (default)
@@ -182,12 +182,12 @@ export default function InfluenceList() {
 }
 
 /**
- * InfluenceDrillDown — when a node is selected (whether an in-corpus
+ * InfluenceDrillDown, when a node is selected (whether an in-corpus
  * interviewee or an external figure like Ella Baker), run /retrieve
  * with the person's name as the query and dedupeByEntry: true so the
  * returned passages span multiple voices discussing them. Filter
  * applies to the WHOLE corpus (no entry filter) because we want
- * "who in the archive talks about Ella Baker" — by definition that's
+ * "who in the archive talks about Ella Baker", by definition that's
  * across-interviewee.
  *
  * For external figures, this surfaces the secondhand-as-primary-source
@@ -195,7 +195,7 @@ export default function InfluenceList() {
  * influence shows up as quoted memory from people she organized.
  *
  * For in-corpus interviewees, this surfaces what their PEERS said
- * about them — a different read than their own testimony.
+ * about them, a different read than their own testimony.
  */
 function InfluenceDrillDown({ node }) {
   const [results, setResults] = useState(null);
@@ -211,7 +211,7 @@ function InfluenceDrillDown({ node }) {
     retrieve(node.name, { topN: 5, dedupeByEntry: true })
       .then(({ results: r }) => {
         if (cancelled) return;
-        // For in-corpus people, filter out the person's own interview —
+        // For in-corpus people, filter out the person's own interview -
         // we want what OTHERS say about them, not their own testimony.
         const filtered = node.in_corpus && node.entry_number != null
           ? (r || []).filter((p) => p.entryNumber !== node.entry_number)
@@ -231,7 +231,7 @@ function InfluenceDrillDown({ node }) {
       <p className="text-sm text-stone-700 mb-3">
         {node.in_corpus
           ? <>Top passages from <strong>other</strong> interviewees that mention {node.name} (their own testimony excluded).</>
-          : <>Top passages where {node.name} is discussed — they have no interview of their own here; the archive&apos;s coverage of them is entirely secondhand.</>
+          : <>Top passages where {node.name} is discussed, they have no interview of their own here; the archive&apos;s coverage of them is entirely secondhand.</>
         }
       </p>
       {loading && (

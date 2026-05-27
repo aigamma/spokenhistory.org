@@ -1,11 +1,11 @@
 /**
- * @fileoverview RelatedPassages — show passages from OTHER interviewees
+ * @fileoverview RelatedPassages, show passages from OTHER interviewees
  * that are semantically related to the current entry.
  *
  * Consumes the precomputed JSON at /rag/related/entry-N.json (generated
  * by rag/precompute.mjs). Zero runtime retrieval cost; just a static
  * fetch + render. This is the panel that lives on every transcript page
- * and makes the "philosophy of embedding" claim visible — clicking
+ * and makes the "philosophy of embedding" claim visible, clicking
  * through reveals interviewees who never met but whose words land
  * close in the embedding space.
  */
@@ -23,7 +23,7 @@ import { fidelityNoteFor } from './tiers';
 //
 // The cache stores a successful result indefinitely. On error, it
 // resolves to an empty Map AND clears _tierCachePromise so a future
-// caller can retry — useful if the constellation.json fetch fails on
+// caller can retry, useful if the constellation.json fetch fails on
 // page load but later becomes available (e.g., temporary CDN miss).
 let _tierCachePromise = null;
 function loadTierLookup() {
@@ -55,7 +55,7 @@ function loadTierLookup() {
 }
 
 /**
- * RelatedPassages — sidebar/panel for related passages on a transcript page.
+ * RelatedPassages, sidebar/panel for related passages on a transcript page.
  *
  * Two display modes via the `mode` prop:
  *
@@ -208,12 +208,12 @@ export default function RelatedPassages({
 }
 
 /**
- * RadialNetwork — small SVG showing the focal interviewee at center
+ * RadialNetwork, small SVG showing the focal interviewee at center
  * with related voices arranged on a circle around it. Edges weighted
  * by passage-overlap count. Pure SVG; no library.
  *
  * The radial layout is the right choice here because the focal voice
- * is the privileged node — this isn't a peer graph, it's "voices in
+ * is the privileged node, this isn't a peer graph, it's "voices in
  * conversation with X." Center-at-X makes that semantic explicit.
  */
 function RadialNetwork({ focal, related, onNavigate = null }) {
@@ -310,7 +310,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
           </g>
         ))}
 
-        {/* Focal node — central hub. The interviewee's name sits BELOW
+        {/* Focal node, central hub. The interviewee's name sits BELOW
             the circle on the white SVG background (not inside the red
             disc), so contrast is 14:1 (stone-900 on white) regardless
             of system color-scheme. The original "near-white text on
@@ -363,7 +363,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
               fill="#fafaf9"
               fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
             >
-              {nodes[hoverIdx].entry_subject} — {nodes[hoverIdx].count} overlapping passages · top similarity {(nodes[hoverIdx].top_score || 0).toFixed(3)}
+              {nodes[hoverIdx].entry_subject}, {nodes[hoverIdx].count} overlapping passages · top similarity {(nodes[hoverIdx].top_score || 0).toFixed(3)}
             </text>
           </g>
         )}
@@ -396,7 +396,7 @@ function Skeleton() {
 // consumes the camelCase shape that /retrieve emits. Bridge them here
 // so the card's contract stays single-shape. The audit-fidelity
 // fields (uncertaintyTier, fidelityNote) aren't in the per-chunk
-// records (they live per-entry, not per-chunk) — we resolve them
+// records (they live per-entry, not per-chunk), we resolve them
 // from the tierMap that was built from constellation.json.
 function passagePreviewToCard(p, tierMap) {
   const tierInfo = (tierMap && p.entry_number != null) ? tierMap.get(p.entry_number) : null;

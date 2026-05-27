@@ -1,12 +1,12 @@
 /**
- * @fileoverview InterviewDetail — per-interview page.
+ * @fileoverview InterviewDetail, per-interview page.
  *
  * Route: /interview/:entryNumber
  *
  * Reads from the RAG substrate JSON files (no Firestore dependency):
- *   - /rag/summaries/capsules.json   — 3-sentence biographical summary
- *   - /rag/summaries/neighbors.json  — top-5 thematic neighbors
- *   - /rag/summaries/pipeline_output/entry_<N>.json  — full pipeline output
+ *   - /rag/summaries/capsules.json  , 3-sentence biographical summary
+ *   - /rag/summaries/neighbors.json , top-5 thematic neighbors
+ *   - /rag/summaries/pipeline_output/entry_<N>.json , full pipeline output
  *     (main_summary + chapters + key_themes + historical_significance);
  *     this file may or may not exist depending on whether the pipeline
  *     has run for this entry. The page renders gracefully without it.
@@ -61,7 +61,7 @@ export default function InterviewDetail() {
     return c?.capsule || null;
   }, [capsules, n]);
 
-  useDocumentTitle(entry ? `${entry.entry_subject} — Interview` : 'Interview');
+  useDocumentTitle(entry ? `${entry.entry_subject}, Interview` : 'Interview');
 
   if (error) {
     return (
@@ -94,7 +94,7 @@ export default function InterviewDetail() {
   const tierBadge = tierKey ? TIER_BADGE[tierKey] : null;
   const fidelity = fidelityNoteFor(pipeline?.entry_provenance || 'audit-original', entry.tier);
 
-  // Pull data from pipeline (if present) — main_summary + chapters + themes
+  // Pull data from pipeline (if present), main_summary + chapters + themes
   const main = pipeline?.main_summary;
   const chapters = pipeline?.chapters || [];
   const themes = main?.key_themes || [];
@@ -250,7 +250,7 @@ export default function InterviewDetail() {
               Semantic Overlap
             </h2>
             <p className="text-sm text-stone-600 mb-4 max-w-2xl">
-              These interviewees discuss thematically related material — surfaced by embedding-space proximity (cosine similarity over 1024-dim Voyage-3 vectors).
+              These interviewees discuss thematically related material, surfaced by embedding-space proximity (cosine similarity over 1024-dim Voyage-3 vectors).
             </p>
             <ul className="space-y-2 list-none p-0">
               {entry.neighbors.map((nb) => {

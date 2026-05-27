@@ -14,7 +14,7 @@ catalog tables because they don't carry an entry number.)
 ### 1. Test Entry One
 
 **Source**: `transcripts/raw/test_entry_one_interview/`
-**Interviewer / Date**: Tester — 2026-05-22, fixture-land
+**Interviewer / Date**: Tester, 2026-05-22, fixture-land
 **Subject**: A miniaturized Aaron-Dixon-style transcript used to exercise the
 high-confidence substitution path, the speaker-originating pending-context path,
 the SRT/VTT timestamp-preservation path, and the Pass-3 confidence-override path.

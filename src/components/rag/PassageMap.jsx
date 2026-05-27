@@ -1,5 +1,5 @@
 /**
- * @fileoverview PassageMap — Plotly-backed scattergl render of the
+ * @fileoverview PassageMap, Plotly-backed scattergl render of the
  * 15,464-passage UMAP projection from Atlas, with x AND y range
  * sliders so a viewer can window into any rectangular region of the
  * embedding space.
@@ -232,7 +232,7 @@ export default function PassageMap() {
     margin: { l: 56, r: 90, t: 16, b: 60 },
     // Intentionally NO topic-centroid annotations over the 15K-dot
     // cloud. Labels floating over a dense scatter (Nomic's default
-    // pattern) don't visually link to "their" dots — the user can't
+    // pattern) don't visually link to "their" dots, the user can't
     // tell which color cluster a label belongs to without staring.
     // The side legend handles topic→color mapping with a clean
     // swatch+name list; the hover gives per-dot topic. Adding
@@ -258,7 +258,7 @@ export default function PassageMap() {
       color: '#1c1917',
       ticks: 'outside',
       tickcolor: '#a8a29e',
-      // Native x-axis range slider — the marquee feature here.
+      // Native x-axis range slider, the marquee feature here.
       rangeslider: {
         visible: true,
         thickness: 0.07,
@@ -425,7 +425,7 @@ function TopicLegend({ topics, colorByTopic }) {
     <details className="mt-4 group">
       <summary className="cursor-pointer text-sm text-stone-700 font-medium select-none">
         Topics ({topics.length}){' '}
-        <span className="text-xs text-stone-500 font-normal group-open:hidden">— click to expand</span>
+        <span className="text-xs text-stone-500 font-normal group-open:hidden">- click to expand</span>
       </summary>
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs">
         {topics.map((t) => (

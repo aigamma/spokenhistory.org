@@ -19,7 +19,7 @@
 // official client (atlas.nomic.ai) is a Python package; their JS
 // client is less mature. The Node-side dump keeps a single source
 // of truth (the Pinecone index) while still letting Eric run the
-// Python upload one-time. The dump is idempotent — rerunning
+// Python upload one-time. The dump is idempotent, rerunning
 // produces a stable file based on the current index state.
 //
 // Usage:
@@ -54,7 +54,7 @@ import {
 
 function parseArgs(argv) {
   const args = {
-    // Default lives under tmp/ (gitignored, not deployed) — the dump
+    // Default lives under tmp/ (gitignored, not deployed), the dump
     // file is ~220MB for the full corpus and must NOT land in public/
     // (Netlify would serve it, leaking the embedding matrix) or in git
     // (build-size + privacy concerns).

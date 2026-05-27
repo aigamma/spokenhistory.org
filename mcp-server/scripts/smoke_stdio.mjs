@@ -18,7 +18,7 @@
  *
  * If a client (Codex Desktop, Claude Desktop) shows a smaller set of
  * tools than this script reports, the discrepancy is on the client's
- * display/relevance-filtering side — the server itself is advertising
+ * display/relevance-filtering side, the server itself is advertising
  * the full set.
  */
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
@@ -73,4 +73,4 @@ if (missingTools.length || missingPrompts.length) {
   if (missingPrompts.length) console.error('MISSING prompts:', missingPrompts)
   process.exit(1)
 }
-console.log('OK — server advertises the canonical surface.')
+console.log('OK, server advertises the canonical surface.')

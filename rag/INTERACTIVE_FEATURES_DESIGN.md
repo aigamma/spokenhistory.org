@@ -1,4 +1,4 @@
-# Interactive features — design doc
+# Interactive features, design doc
 
 **Audience:** engineers picking up this work (could be a fresh agent, a
 human contributor, or the worldthought.com team adapting the pattern to
@@ -55,8 +55,8 @@ same pattern ports to worldthought.com.
 
 ## The single payload contract
 
-Every interactive surface — the Netlify function, the MCP server tool
-response, the precomputed JSON arrays — emits the same per-result
+Every interactive surface, the Netlify function, the MCP server tool
+response, the precomputed JSON arrays, emits the same per-result
 payload shape. This is why UI components don't branch on substrate.
 
 ```ts
@@ -114,7 +114,7 @@ sync:
 
 If a new field is added to the metadata schema at ingest time, propagate
 it through all three. The MCP server's USAGE_GUIDE.md also documents
-this shape — keep it accurate.
+this shape, keep it accurate.
 
 ### Tier-color palette is also duplicated
 
@@ -122,14 +122,14 @@ The same 5-tier vocabulary (`low` / `medium` / `publication-block` /
 `not-auditable` / `ingestion-only`) maps to colors in four UI surfaces.
 **Add a new tier value? Update all four:**
 
-1. `src/components/rag/CitationCard.jsx::TIER_BADGE` — Tailwind classes
+1. `src/components/rag/CitationCard.jsx::TIER_BADGE`, Tailwind classes
    for the citation badge (bg-50, text-800, border-200, icon).
-2. `src/components/rag/Constellation.jsx::TIER_COLORS` — raw hex colors
+2. `src/components/rag/Constellation.jsx::TIER_COLORS`, raw hex colors
    for the SVG circle fills (darker 600/700-level for cream-background
    visibility).
-3. `src/pages/RagExplore.jsx` corpus-stats header pills — Tailwind
+3. `src/pages/RagExplore.jsx` corpus-stats header pills, Tailwind
    classes, same palette as `TIER_BADGE`.
-4. `fidelityNoteFor()` — duplicated in `mcp-server/server.mjs`,
+4. `fidelityNoteFor()`, duplicated in `mcp-server/server.mjs`,
    `netlify/functions/retrieve.mjs`, AND `src/components/rag/RelatedPassages.jsx`.
    Same 5 tier values get human-readable note text.
 
@@ -239,11 +239,11 @@ exactly four things:
    shape. Lives in `src/services/ragClient.js` (per-site fork) or as a
    pluggable function.
 3. **Branding tokens.** Tailwind theme colors per-site.
-4. **Editorial content.** Tour content, theme names — anything human-
+4. **Editorial content.** Tour content, theme names, anything human-
    curated rather than corpus-derived.
 
 The retrieval, the rerank, the chunking, the embed model, the precompute
-algorithms, the UI components — all of these are corpus-agnostic. The
+algorithms, the UI components, all of these are corpus-agnostic. The
 worldthought adaptation is a half-day port if the metadata schemas align,
 or a one-day port if a per-field adapter has to be written.
 
@@ -316,8 +316,8 @@ Read order for a fresh agent:
 4. `rag/CONFERENCE_PREP.md` (the London-conference framing).
 5. `mcp-server/USAGE_GUIDE.md` (the audience-facing connector pitch).
 
-If you're picking up the wiring task — putting these components into
-the actual React pages — start with `src/pages/InterviewIndex.jsx` and
+If you're picking up the wiring task, putting these components into
+the actual React pages, start with `src/pages/InterviewIndex.jsx` and
 `src/pages/Interview*.jsx` to find natural integration points for
 `<RelatedPassages>` and `<SemanticSearch>`. The `<Constellation>` is a
 landing-page / `/explore` candidate.

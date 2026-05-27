@@ -240,30 +240,30 @@ def test_multiple_substitutions_same_file(tmp_out_dir):
     manifests = _run(tmp_out_dir, entries=[1])
     m = manifests[1]
     applied = {a["row_id"]: a for a in m["applied_corrections"]}
-    # 1.1 high — Southern Oil History Program -> Southern Oral History Program
+    # 1.1 high, Southern Oil History Program -> Southern Oral History Program
     assert "1.1" in applied
     # 1.2 was medium but Pass 3 promoted it to high; should now apply.
     assert "1.2" in applied
-    # 1.3 high — H. Rat Brown -> H. Rap Brown
+    # 1.3 high, H. Rat Brown -> H. Rap Brown
     assert "1.3" in applied
-    # 1.4 high — Walter Concrite -> Walter Cronkite
+    # 1.4 high, Walter Concrite -> Walter Cronkite
     assert "1.4" in applied
-    # 1.5 high — Margaret the King -> Martin Luther King
+    # 1.5 high, Margaret the King -> Martin Luther King
     assert "1.5" in applied
-    # 1.6 high — Foreman / James Foreman -> James Forman
+    # 1.6 high, Foreman / James Foreman -> James Forman
     assert "1.6" in applied
     # Row 1.6's whisper rendering "Foreman / James Foreman" should match both
     # "Foreman" and "James Foreman" substrings in the text.
     assert applied["1.6"]["occurrences"] >= 2
 
-    # 1.7 correct — Bobby Seale -> Bobby Seale (self-mapping, skipped at substitution time).
+    # 1.7 correct, Bobby Seale -> Bobby Seale (self-mapping, skipped at substitution time).
     # The row is classified as "apply" but produces 0 occurrences, so it shouldn't
     # show up in applied_corrections.
     assert "1.7" not in applied
-    # 1.8 speaker-originating — pending.
+    # 1.8 speaker-originating, pending.
     pending_ids = {p["row_id"] for p in m["pending_context"]}
     assert "1.8" in pending_ids
-    # 1.9 medium — pending.
+    # 1.9 medium, pending.
     assert "1.9" in pending_ids
     # All three target file types processed.
     files = set(m["files_processed"])
@@ -337,7 +337,7 @@ def test_pending_context_separation(tmp_out_dir):
     pending_by_id = {p["row_id"]: p for p in m["pending_context"]}
     assert "1.9" in pending_by_id
     # Verify text unchanged for that span. (The entry 1 text doesn't even
-    # contain "Reverend Avenue" — it lives in entry 2 — but the medium row
+    # contain "Reverend Avenue", it lives in entry 2, but the medium row
     # should still appear in pending_context.)
     out_txt = (
         tmp_out_dir / "test_entry_one_interview" / "test_entry_one_transcript.txt"
@@ -348,7 +348,7 @@ def test_pending_context_separation(tmp_out_dir):
 
     # Speaker-originating row 1.8 (Aaron Dixon) should be pending too.
     assert "1.8" in pending_by_id
-    # And the speaker's name is still in the text — pending didn't touch it.
+    # And the speaker's name is still in the text, pending didn't touch it.
     assert "Aaron Dixon" in text
 
 

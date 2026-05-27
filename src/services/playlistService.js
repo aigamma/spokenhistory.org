@@ -161,12 +161,12 @@ const buildKeywordIndex = async () => {
  * Matching strategy, in priority order:
  *   1. Exact match against the keyword index (fast hash lookup)
  *   2. Substring match across all indexed keyword phrases
- *      — needed because our subagent-generated chapter keywords
+ *     , needed because our subagent-generated chapter keywords
  *        are phrases like "Montgomery Bus Boycott" or "Selma to
  *        Montgomery March", which don't exact-match the home-page
  *        timeline's simple "montgomery" anchor. Substring catches them.
  *   3. Substring match against chapter title + topic
- *      — catches chapters where the keyword wasn't tagged as such but
+ *     , catches chapters where the keyword wasn't tagged as such but
  *        the chapter is clearly about it (e.g. a chapter titled
  *        "Marching on Montgomery").
  */
@@ -266,7 +266,7 @@ const TIER_RANK = {
  * Deterministic, quality-ordered sort comparator for playlist segments.
  *   1. Audit tier (high → medium → low → others)
  *   2. Inferential uncertainty score (lower = better) within tier
- *   3. Interviewee name (alphabetical) as a tie-break — stable order
+ *   3. Interviewee name (alphabetical) as a tie-break, stable order
  *      across reloads is the property the legacy grad-student-curated
  *      playlist had that the random shuffle threw away.
  *   4. Chapter number within an interview (chronological).
@@ -297,7 +297,7 @@ const compareSegments = (a, b) => {
  * Cached cosine-similarity neighbor map keyed by entry_number. Populated
  * from /rag/summaries/neighbors.json on first playlist load. Each value is
  * { entry_number, entry_subject, tier, neighbors: [{entry_number,
- * similarity, ...}, ...] } — the top thematic neighbors precomputed from
+ * similarity, ...}, ...] }, the top thematic neighbors precomputed from
  * Voyage AI voyage-3 embeddings (1024-dim, cosine).
  */
 let cachedNeighbors = null;
@@ -324,7 +324,7 @@ async function loadNeighborsMap() {
  * embeddings in neighbors.json.
  *
  * Order produced:
- *   1. Hero (stays first — selected by compareSegments tier rank)
+ *   1. Hero (stays first, selected by compareSegments tier rank)
  *   2. Other chapters of the hero's OWN interview, chronological
  *      (natural continuation within the same speaker's narrative)
  *   3. Chapters from interviews with higher cosine similarity to the
@@ -333,7 +333,7 @@ async function loadNeighborsMap() {
  *      ordered by compareSegments (audit tier tie-break)
  *
  * If neighbors.json fails to load, the function returns segments in
- * pure tier-sort order — the recommendation feature degrades to
+ * pure tier-sort order, the recommendation feature degrades to
  * audit-quality ranking but the playlist still renders.
  */
 function reorderByCosineSimilarity(hero, segments, neighborsMap) {
@@ -379,16 +379,16 @@ function reorderByCosineSimilarity(hero, segments, neighborsMap) {
  * Progressive loading: Get first video immediately, then rest in background.
  *
  * 2026-05-26: replaced random shuffle with two-stage ordering.
- *   Stage 1 — pick the hero by audit-tier rank (compareSegments). Best-
+ *   Stage 1, pick the hero by audit-tier rank (compareSegments). Best-
  *     confidence transcript wins so the demo opens with vetted content.
- *   Stage 2 — rerank the tail by cosine similarity to the hero's
+ *   Stage 2, rerank the tail by cosine similarity to the hero's
  *     interview, using precomputed Voyage AI embeddings in neighbors.json
  *     (see reorderByCosineSimilarity above).
  *
  * The legacy playlist surface was a curated grad-student artifact; we
  * don't have that curation data in the new Firebase. Cosine similarity
  * to the hero gives the "you might also like" semantics the curators
- * implicitly encoded — speakers who discussed thematically adjacent
+ * implicitly encoded, speakers who discussed thematically adjacent
  * material surface first. Same query → same order across reloads.
  */
 export const getPlaylistProgressive = async (keywords, onFirstVideo, onComplete) => {

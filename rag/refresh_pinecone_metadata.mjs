@@ -1,7 +1,7 @@
 // rag/refresh_pinecone_metadata.mjs
 //
 // Push current Pass 9 inferential-uncertainty tier + score values into the
-// Pinecone vector metadata. No re-embedding — metadata-only via Pinecone's
+// Pinecone vector metadata. No re-embedding, metadata-only via Pinecone's
 // /update endpoint.
 //
 // Background: rag/ingest.mjs is content-hash idempotent. After Pass 9
@@ -158,7 +158,7 @@ async function main() {
   for (const [entryNum, entryIds] of [...byEntry.entries()].sort((a, b) => a[0] - b[0])) {
     const t = tiers.get(entryNum);
     if (!t) {
-      console.log(`  #${entryNum}: ${entryIds.length} vectors — NO MANIFEST FOUND, skipping`);
+      console.log(`  #${entryNum}: ${entryIds.length} vectors, NO MANIFEST FOUND, skipping`);
       continue;
     }
     totalToUpdate += entryIds.length;
@@ -166,7 +166,7 @@ async function main() {
   console.log(`[refresh] Will update ${totalToUpdate} vectors across ${byEntry.size} entries`);
 
   if (DRY_RUN) {
-    console.log('\n[refresh] DRY RUN — no Pinecone writes performed');
+    console.log('\n[refresh] DRY RUN, no Pinecone writes performed');
     return;
   }
 
@@ -202,7 +202,7 @@ async function main() {
   }
 
   const elapsed = (Date.now() - startedAt) / 1000;
-  console.log(`\n[refresh] Done — ${done} updates in ${elapsed.toFixed(1)}s, ${errs} errors`);
+  console.log(`\n[refresh] Done, ${done} updates in ${elapsed.toFixed(1)}s, ${errs} errors`);
 }
 
 main().catch((err) => {

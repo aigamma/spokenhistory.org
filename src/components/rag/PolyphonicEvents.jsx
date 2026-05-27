@@ -1,9 +1,9 @@
 /**
- * @fileoverview PolyphonicEvents — pre-computed event pages with multiple
+ * @fileoverview PolyphonicEvents, pre-computed event pages with multiple
  * first-person accounts of the same canonical event.
  *
  * Loads /rag/summaries/events/_index.json + per-event detail JSONs. No
- * live retrieval — every passage is pre-computed at build time by
+ * live retrieval, every passage is pre-computed at build time by
  * rag/precompute_panels.mjs. Zero per-request cost.
  *
  * This is the conference's headline demo: click an event, watch six
@@ -81,7 +81,7 @@ export default function PolyphonicEvents() {
         Eight canonical events of the Movement, laid on a timeline from
         1955 (Emmett Till) to 1968 (Dr. King&apos;s assassination). Click a
         dot to see the embedding-retrieved passages from{' '}
-        <strong>multiple interviewees</strong> who witnessed that moment —
+        <strong>multiple interviewees</strong> who witnessed that moment -
         each grounded to the exact second in the original LoC audio.
       </p>
 

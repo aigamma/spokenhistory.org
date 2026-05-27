@@ -56,7 +56,7 @@ function isDirectStreamUrl(url) {
  * @returns {React.ReactElement} Video player component
  */
 // Top-level VideoPlayer dispatcher. No React hooks in this function
-// — they live inside the two variant sub-components below. This keeps
+//, they live inside the two variant sub-components below. This keeps
 // the rules-of-hooks contract intact when the source URL type changes
 // between renders (MP4 ↔ YouTube): each variant has its own hook order
 // because each is a distinct component instance.

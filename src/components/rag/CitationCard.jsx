@@ -1,5 +1,5 @@
 /**
- * @fileoverview CitationCard — shared building block for RAG result UIs.
+ * @fileoverview CitationCard, shared building block for RAG result UIs.
  *
  * Renders one citation-grade payload (the shape emitted by both the
  * Netlify /retrieve function and the MCP server) as a self-contained
@@ -17,7 +17,7 @@ import { TIER_BADGE } from './tiers';
 import { useCapsule } from './useCapsules';
 
 /**
- * CitationCard — primary-source result card.
+ * CitationCard, primary-source result card.
  *
  * @component
  * @param {Object} props
@@ -139,7 +139,7 @@ export default function CitationCard({
   );
 }
 
-// Small inline button — copies suggestedCitation to clipboard and
+// Small inline button, copies suggestedCitation to clipboard and
 // flashes a checkmark for ~1.5s. Researchers paste this into their
 // drafts; saves them from manually copying out of the <p>.
 function CopyButton({ text }) {

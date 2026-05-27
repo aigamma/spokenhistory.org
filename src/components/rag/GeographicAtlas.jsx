@@ -1,5 +1,5 @@
 /**
- * @fileoverview GeographicAtlas — pre-computed panel of 12 movement geographies
+ * @fileoverview GeographicAtlas, pre-computed panel of 12 movement geographies
  * with the passages from interviewees who discuss each one.
  *
  * Loads /rag/summaries/geography.json. Same shape as FamousNames + Events.
@@ -14,7 +14,7 @@ export default function GeographicAtlas() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [selectedSlug, setSelectedSlug] = useState(null);
-  // Audit-tier filter — same pattern as InterviewMap, SemanticSearch,
+  // Audit-tier filter, same pattern as InterviewMap, SemanticSearch,
   // QuoteFinder. Default: all 5 tiers visible. Client-side filter
   // over the precomputed passages per anchor.
   const [allowedTiers, setAllowedTiers] = useState(new Set(TIER_VOCABULARY));

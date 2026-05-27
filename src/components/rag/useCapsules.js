@@ -1,5 +1,5 @@
 /**
- * @fileoverview useCapsules — module-level cached fetch of capsules.json
+ * @fileoverview useCapsules, module-level cached fetch of capsules.json
  * + a hook for components that want to display the capsule for a given
  * entry_number.
  *
@@ -21,7 +21,7 @@ function loadCapsules() {
 }
 
 /**
- * useCapsule — return the capsule text for a given entry_number.
+ * useCapsule, return the capsule text for a given entry_number.
  * Returns null while loading or if no capsule exists for that entry.
  */
 export function useCapsule(entryNumber) {

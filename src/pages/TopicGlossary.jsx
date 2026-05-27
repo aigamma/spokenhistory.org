@@ -1,5 +1,5 @@
 /**
- * @fileoverview TopicGlossary — browse 30 thematic clusters derived from
+ * @fileoverview TopicGlossary, browse 30 thematic clusters derived from
  * the embedding space.
  *
  * Originally fetched from Firestore (`events_and_topics` collection);
@@ -14,7 +14,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 
 export default function TopicGlossary() {
-  useDocumentTitle('Topic Glossary');
+  useDocumentTitle('Topics');
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
@@ -59,13 +59,13 @@ export default function TopicGlossary() {
             className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-4"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Topic Glossary
+            Topics
           </h1>
           <p
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            Thirty thematic groupings derived from the embedding space — k-means partition of all 136 interview centroids. Each topic gathers voices whose testimony rhymes in the 1024-dimensional space, even when they never met. Click a topic to see its members.
+            Thirty thematic groupings derived from the embedding space, k-means partition of all 136 interview centroids. Each topic gathers voices whose testimony rhymes in the 1024-dimensional space, even when they never met. Click a topic to see its members.
           </p>
         </header>
 

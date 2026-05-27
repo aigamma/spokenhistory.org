@@ -1,58 +1,45 @@
 import { useState, useEffect, useRef } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {
-  Search,
-  X
-} from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { X } from 'lucide-react';
 
 /**
- * Header — global nav for the protected app.
+ * Header, global nav for the protected app.
  *
- * The page wordmark was removed in favor of a row of colorful pill
- * buttons that link to the headline embedding demos. A pill (and its
- * corresponding entry in the slide-out menu) is hidden when the user
- * is already on the page that pill leads to — the rule is "don't
- * advertise the page you're on."
- *
- * The hamburger menu and search icon remain on the right.
+ * Three pill links sit on the left (Spectrum, Topics, Search) and a
+ * single red Menu pill sits in the far-right corner; clicking Menu
+ * opens the slide-out drawer with the full route list. A pill (and
+ * its corresponding entry in the slide-out menu) is hidden when the
+ * user is already on the page that pill leads to, the rule is
+ * "don't advertise the page you're on."
  */
 
 // Top-of-page pills. Each entry carries its visual color and a matcher
 // that decides whether the pill maps to the current location. The
 // matcher matches on pathname and (for /rag-explore) on the ?tab=
-// search param. `defaultTab` lets the Concept-axes pill self-hide when
+// search param. `defaultTab` lets the Spectrum pill self-hide when
 // the user is on /rag-explore with no ?tab= (the page defaults to
 // spectrum there).
 const NAV_ROUTES = [
   {
     label: 'Spectrum',
-    featured: false,
     to: '/rag-explore?tab=spectrum',
-    bg: 'bg-red-600 hover:bg-red-700',
+    bg: 'bg-violet-700 hover:bg-violet-800',
     matchPath: '/rag-explore',
     matchTab: 'spectrum',
     defaultTab: true,
   },
   {
-    label: 'Semantic Overlap',
-    to: '/rag-explore?tab=related',
+    label: 'Topics',
+    to: '/topic-glossary',
     bg: 'bg-sky-700 hover:bg-sky-800',
-    matchPath: '/rag-explore',
-    matchTab: 'related',
+    matchPath: '/topic-glossary',
   },
   {
     label: 'Search',
     to: '/rag-explore?tab=search',
-    bg: 'bg-stone-800 hover:bg-stone-900',
+    bg: 'bg-stone-900 hover:bg-black',
     matchPath: '/rag-explore',
     matchTab: 'search',
-  },
-  {
-    label: 'Topic Glossary',
-    to: '/topic-glossary',
-    bg: 'bg-emerald-700 hover:bg-emerald-800',
-    matchPath: '/topic-glossary',
   },
 ];
 
@@ -77,13 +64,19 @@ const MENU_ROUTES = [
     matchTab: 'related',
   },
   {
+    label: 'Word Search',
+    to: '/rag-explore?tab=lenses',
+    matchPath: '/rag-explore',
+    matchTab: 'lenses',
+  },
+  {
     label: 'Search',
     to: '/rag-explore?tab=search',
     matchPath: '/rag-explore',
     matchTab: 'search',
   },
   { label: 'Interviews', to: '/interview-index', matchPath: '/interview-index' },
-  { label: 'Topic Glossary', to: '/topic-glossary', matchPath: '/topic-glossary' },
+  { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
   { label: 'About', to: '/about', matchPath: '/about' },
 ];
 
@@ -98,13 +91,10 @@ function isCurrentRoute(route, location) {
 }
 
 export default function Header() {
-  const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-  const hamburgerRef = useRef(null);
+  const menuTriggerRef = useRef(null);
   const menuCloseRef = useRef(null);
-  const searchTriggerRef = useRef(null);
 
   // Esc-to-close + focus restoration for the slide-out menu. WCAG
   // 2.4.3 + ARIA Authoring Practices for dialogs: focus moves into
@@ -120,7 +110,7 @@ export default function Header() {
     document.addEventListener('keydown', handleKey);
 
     // Defer focus until the slide-in transition finishes positioning
-    // the close button — otherwise screen readers narrate the focus
+    // the close button, otherwise screen readers narrate the focus
     // moving before the button has visually arrived.
     const t = setTimeout(() => {
       menuCloseRef.current?.focus();
@@ -129,7 +119,7 @@ export default function Header() {
     return () => {
       document.removeEventListener('keydown', handleKey);
       clearTimeout(t);
-      hamburgerRef.current?.focus();
+      menuTriggerRef.current?.focus();
     };
   }, [isMenuOpen]);
 
@@ -138,7 +128,7 @@ export default function Header() {
 
   return (
     <>
-      {/* Header — a single row: pill nav strip on the left, search +
+      {/* Header, a single row: pill nav strip on the left, search +
           hamburger on the right. The original 4xl wordmark is gone;
           the pills carry the site's identity now. */}
       <header className="relative" style={{ backgroundColor: '#EBEAE9' }}>
@@ -158,40 +148,22 @@ export default function Header() {
                   }
                   style={{ fontFamily: 'Chivo Mono, monospace' }}
                 >
-                  {route.featured && (
-                    <span aria-hidden="true" className="mr-1.5 text-yellow-300">★</span>
-                  )}
                   {route.label}
                 </Link>
               ))}
             </nav>
 
-            <div className="flex flex-col items-end gap-3 flex-shrink-0">
-              {/* Hamburger menu icon — w-11 h-11 on mobile is a WCAG
-                  2.2 AA-compliant 44×44 tap target; lg restores the
-                  original w-12 + auto height. */}
-              <button
-                ref={hamburgerRef}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={isMenuOpen}
-                aria-controls="site-navigation-menu"
-                className="w-11 h-11 lg:w-12 lg:h-auto flex flex-col justify-center lg:justify-start items-end gap-1 hover:opacity-70 transition-opacity"
-              >
-                <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
-                <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
-                <div className="w-6 lg:w-9 h-0.5 bg-black"></div>
-              </button>
-
-              <button
-                ref={searchTriggerRef}
-                onClick={() => navigate('/rag-explore?tab=search')}
-                aria-label="Search the archive"
-                className="p-3 lg:p-1 text-black hover:opacity-70 transition-opacity"
-              >
-                <Search size={18} className="lg:w-6 lg:h-6" />
-              </button>
-            </div>
+            <button
+              ref={menuTriggerRef}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="site-navigation-menu"
+              className="inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium text-white shadow-sm transition-colors bg-civil-red-strong hover:opacity-90 flex-shrink-0"
+              style={{ fontFamily: 'Chivo Mono, monospace' }}
+            >
+              Menu
+            </button>
           </div>
         </div>
       </header>

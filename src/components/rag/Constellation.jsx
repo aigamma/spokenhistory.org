@@ -1,5 +1,5 @@
 /**
- * @fileoverview Constellation — 2D scatter of all 136 entry centroids in
+ * @fileoverview Constellation, 2D scatter of all 136 entry centroids in
  * the embedding space. Renders public/rag/constellation.json as an SVG
  * scatter with hover labels.
  *
@@ -9,11 +9,12 @@
  * cosine of each other on this topic appear as nearby dots on the
  * scatter.
  *
- * Static — no live retrieval. The data file is precomputed by
+ * Static, no live retrieval. The data file is precomputed by
  * rag/precompute.mjs against the populated Pinecone index.
  */
 
 import { useEffect, useState, useRef, useMemo } from 'react';
+import { Search as SearchIcon, X } from 'lucide-react';
 import { loadConstellation } from '../../services/ragClient';
 import { TIER_COLORS, TIER_BADGE } from './tiers';
 
@@ -29,7 +30,7 @@ function loadClusters() {
 }
 
 /**
- * Constellation — SVG scatter of corpus entries in 2D embedding space.
+ * Constellation, SVG scatter of corpus entries in 2D embedding space.
  *
  * @component
  * @param {Object} props
@@ -49,7 +50,7 @@ export default function Constellation({
   const [clusters, setClusters] = useState(null);
   const [error, setError] = useState(null);
   const [hover, setHover] = useState(null);
-  // Regions are shown by default — they're the educational layer that
+  // Regions are shown by default, they're the educational layer that
   // makes the abstract 2D space readable. User can toggle off if the
   // label clutter gets in the way of point-level inspection.
   const [showRegions, setShowRegions] = useState(true);
@@ -183,7 +184,7 @@ export default function Constellation({
           ))}
         </g>
 
-        {/* Labeled region centroids — the educational layer.
+        {/* Labeled region centroids, the educational layer.
             Renders BEFORE the points so dots paint on top (preventing
             big-cluster labels from blocking individual-dot hover). */}
         {showRegions && regions.map((r) => (
@@ -271,7 +272,7 @@ export default function Constellation({
       </svg>
       <figcaption className="text-xs text-stone-500 mt-2 max-w-xl">
         {projected.length} interviews shown. The axes don&apos;t represent any
-        specific quantity — only distance between dots is meaningful, and a
+        specific quantity, only distance between dots is meaningful, and a
         shorter distance means the AI judges the two interviews as covering
         more similar content. Hover for a name; click to see similar interviews.
       </figcaption>

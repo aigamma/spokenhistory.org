@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rag/rebuild_atlas_topics.py — trigger a new projection + topic model
+"""rag/rebuild_atlas_topics.py, trigger a new projection + topic model
 on the existing civil-rights-passages dataset, with topic_label_field
 set so Atlas generates human-readable topic names from passage text.
 

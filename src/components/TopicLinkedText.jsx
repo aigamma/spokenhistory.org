@@ -98,8 +98,8 @@ function parseTextForTopics(text, topics) {
         // Check word boundaries - ensure match is a complete word/phrase
         const beforeChar = startIndex > 0 ? text[startIndex - 1] : ' ';
         const afterChar = endIndex < text.length ? text[endIndex] : ' ';
-        const isWordBoundary = /[\s.,;:!?'"()\[\]{}\-–—]/.test(beforeChar) && 
-                               /[\s.,;:!?'"()\[\]{}\-–—]/.test(afterChar);
+        const isWordBoundary = /[\s.,;:!?'"()\[\]{}\-–-]/.test(beforeChar) && 
+                               /[\s.,;:!?'"()\[\]{}\-–-]/.test(afterChar);
         
         if (isWordBoundary) {
           const match = {

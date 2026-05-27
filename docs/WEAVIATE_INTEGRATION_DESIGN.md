@@ -1,6 +1,6 @@
 # Weaviate + Voyage AI Integration Design
 
-The RAG (Retrieval-Augmented Generation) substrate for the Civil Rights History Project. **Weaviate** as the open-source vector store, **Voyage AI** as the embedding provider, with the WWU team owning the operational surface. This is the rescue centerpiece — deploying production-grade RAG is what brought Eric onto the project, and this document is the design handoff so another agent can execute the implementation without re-deriving any decision.
+The RAG (Retrieval-Augmented Generation) substrate for the Civil Rights History Project. **Weaviate** as the open-source vector store, **Voyage AI** as the embedding provider, with the WWU team owning the operational surface. This is the rescue centerpiece, deploying production-grade RAG is what brought Eric onto the project, and this document is the design handoff so another agent can execute the implementation without re-deriving any decision.
 
 ## Why this exists, and why these vendors
 
@@ -13,16 +13,16 @@ The current vector substrate is the `embeddings` Firestore collection + the `per
 The team's constraints:
 
 - **No recurring SaaS budget.** Weaviate Cloud is off the table. Pinecone (serverless) is off the table. Any solution must run somewhere the team can host without monthly invoicing.
-- **Open source preferred.** Weaviate (Apache 2.0) is the chosen vendor — confirmed by Eric on 2026-05-21.
-- **Voyage AI for embeddings.** Voyage's models outperform OpenAI's text-embedding-3-small on retrieval benchmarks at lower cost, and the project has direct precedent (worldthought.com — see Parallels section). Confirmed as the chosen embedder by Eric on 2026-05-21.
+- **Open source preferred.** Weaviate (Apache 2.0) is the chosen vendor, confirmed by Eric on 2026-05-21.
+- **Voyage AI for embeddings.** Voyage's models outperform OpenAI's text-embedding-3-small on retrieval benchmarks at lower cost, and the project has direct precedent (worldthought.com, see Parallels section). Confirmed as the chosen embedder by Eric on 2026-05-21.
 
-The combination is structurally cost-bound: Weaviate has no API metering, Voyage AI charges per-token at ~$0.06/MTok for `voyage-3` — the entire 135-transcript ingest costs about $0.06, and steady-state query traffic is fractions of a cent per query. Total monthly cost in steady state: under $5 regardless of cadence.
+The combination is structurally cost-bound: Weaviate has no API metering, Voyage AI charges per-token at ~$0.06/MTok for `voyage-3`, the entire 135-transcript ingest costs about $0.06, and steady-state query traffic is fractions of a cent per query. Total monthly cost in steady state: under $5 regardless of cadence.
 
 ## Parallels with sibling projects
 
 This design is consciously informed by two of Eric's prior RAG implementations. The civil-rights project is following the **worldthought.com pattern with Weaviate swapped in for Pinecone**, augmented by efficiency patterns from **aigamma.com's Supabase pgvector** implementation. Both repos are on disk; future agents should read them as reference implementations.
 
-### worldthought.com (Pinecone + Voyage AI) — the closest analog
+### worldthought.com (Pinecone + Voyage AI), the closest analog
 
 `C:\worldthought.com` is a 7-day proof-of-concept (750+ commits) that uses Pinecone + `voyage-3` embeddings to power chat over public-domain philosophical texts (Hegel, Kant, Aristotle, etc.). Direct precedent for the Voyage AI integration.
 
@@ -35,7 +35,7 @@ This design is consciously informed by two of Eric's prior RAG implementations. 
    - **Retrieval**: `input_type: 'query'` (worldthought chat.mjs:338)
    - Failing to differentiate degrades retrieval quality by 5-15%. This is the single most easy-to-miss-and-most-painful Voyage pitfall.
 
-3. **Two-stage retrieval: over-retrieve + rerank.** Pull top-12 from the vector store, then rerank with `voyage-rerank-2` down to top-6 before sending to the LLM. The reranker is a cross-encoder (vs the bi-encoder used for embedding) — it sees the query and the document together, which catches relevance signals the embedding-only score misses. worldthought.com chat.mjs:242-246, fail-open on rerank error (returns vector-store order if rerank fails).
+3. **Two-stage retrieval: over-retrieve + rerank.** Pull top-12 from the vector store, then rerank with `voyage-rerank-2` down to top-6 before sending to the LLM. The reranker is a cross-encoder (vs the bi-encoder used for embedding), it sees the query and the document together, which catches relevance signals the embedding-only score misses. worldthought.com chat.mjs:242-246, fail-open on rerank error (returns vector-store order if rerank fails).
 
 4. **Idempotent ingest via SHA256 content hash.** Each chunk's vector ID embeds a content hash; re-running the ingest skips chunks whose hash matches the existing entry. worldthought ingest.mjs:142-150. Without this, an ingest sweep re-embeds the entire corpus on every minor edit, burning Voyage tokens for nothing.
 
@@ -47,13 +47,13 @@ This design is consciously informed by two of Eric's prior RAG implementations. 
 
 **Patterns to fix in this implementation** (worldthought's wrong turns):
 
-1. **No retry / exponential backoff for Voyage calls.** worldthought ingest.mjs:156-183 fires a single `fetch` with a hard timeout — a Voyage rate-limit response (429) crashes the ingest pass and requires manual restart. **Fix here**: implement exponential backoff with `tenacity` (Python) or a custom retry wrapper (Node) for both embed and rerank calls. The civil-rights ingest is one-shot (135 transcripts ≈ 1M tokens) so a 30-second pause is irrelevant to total throughput.
+1. **No retry / exponential backoff for Voyage calls.** worldthought ingest.mjs:156-183 fires a single `fetch` with a hard timeout, a Voyage rate-limit response (429) crashes the ingest pass and requires manual restart. **Fix here**: implement exponential backoff with `tenacity` (Python) or a custom retry wrapper (Node) for both embed and rerank calls. The civil-rights ingest is one-shot (135 transcripts ≈ 1M tokens) so a 30-second pause is irrelevant to total throughput.
 
 2. **No per-chunk relevance metadata.** worldthought computes rerank scores at retrieval time but doesn't store them. **Fix here**: store a `qualityScore` property on each Weaviate object (computed at ingest as a `len(text) + has_proper_nouns + cite_count` heuristic, or as a Voyage rerank score against a canonical "high-quality civil rights oral history" query). Lets Weaviate filter and sort on relevance during retrieval, not just cosine similarity.
 
-3. **Tight coupling to Netlify Blobs for rate-limit tracking + chat logs.** **Fix here**: use Firestore for both — the project already has it, no new dependency.
+3. **Tight coupling to Netlify Blobs for rate-limit tracking + chat logs.** **Fix here**: use Firestore for both, the project already has it, no new dependency.
 
-### aigamma.com (Supabase pgvector) — the efficiency patterns
+### aigamma.com (Supabase pgvector), the efficiency patterns
 
 `C:\aigamma.com` uses Postgres + pgvector with `gte-small` (384d) embeddings inside Supabase Edge Runtime. Different vector store, different embedder, but several patterns are vendor-neutral and directly applicable.
 
@@ -75,7 +75,7 @@ This design is consciously informed by two of Eric's prior RAG implementations. 
 
 1. **Tiny batch sizes (3 chunks per Edge Function call).** aigamma is constrained by Supabase Edge Runtime's 256MB memory ceiling. Weaviate is not. Batch at Voyage's natural limit (32 texts per call, well under the 120K token cap) for ingest throughput.
 
-2. **Storing only chunk summaries in chat logs.** aigamma chat_logs stores `(source_path, chunk_index, title, similarity)` and dereferences full text on demand. For civil-rights we want richer logging — store the full chunk text in the log to enable post-hoc quality analysis (which queries returned which chunks, was the answer correct, etc.).
+2. **Storing only chunk summaries in chat logs.** aigamma chat_logs stores `(source_path, chunk_index, title, similarity)` and dereferences full text on demand. For civil-rights we want richer logging, store the full chunk text in the log to enable post-hoc quality analysis (which queries returned which chunks, was the answer correct, etc.).
 
 ## Architecture
 
@@ -85,9 +85,9 @@ Four major surfaces. Each is independently shippable.
 
 The user has signalled "no recurring budget." Three viable options; **the WWU on-prem option is the recommendation**, with Eric's dev box + Cloudflare Tunnel as the bridge for the 2026-05-27 demo.
 
-#### Option A — WWU on-prem (RECOMMENDED for steady state)
+#### Option A, WWU on-prem (RECOMMENDED for steady state)
 
-A lab machine at WWU runs Docker; the team ssh-tunnels for admin tasks; production traffic hits via a Cloudflare Tunnel (free tier, supports up to 50 concurrent connections — way more than this archive's traffic).
+A lab machine at WWU runs Docker; the team ssh-tunnels for admin tasks; production traffic hits via a Cloudflare Tunnel (free tier, supports up to 50 concurrent connections, way more than this archive's traffic).
 
 - **Cost**: $0 hardware (existing lab machine), $0 networking, $0 storage. HNSW index for current corpus is ~40MB; full corpus would be ~250MB.
 - **RAM**: 2GB host is sufficient for the full eventual corpus.
@@ -95,15 +95,15 @@ A lab machine at WWU runs Docker; the team ssh-tunnels for admin tasks; producti
 - **Cons**: SPOF on lab machine uptime; lab power outage = search down. Acceptable for academic archive use case; not acceptable for high-traffic public service.
 - **Ops owner**: someone on the WWU side (Jack, Dustin, or a grad student) takes ownership. Bi-weekly OS updates, weekly Weaviate version check, monthly backup verification.
 
-#### Option B — Fly.io shared-cpu-1x
+#### Option B, Fly.io shared-cpu-1x
 
 The MCP server is already on Fly.io. Adding Weaviate keeps everything on one platform.
 
 - **Cost**: ~$1.94/mo on shared-cpu-1x (256MB), or $5.40/mo at 1GB. Often covered by Fly's free allowance for accounts already paying for other apps.
 - **Pros**: Same platform as MCP server. HTTPS routing + TLS certs managed.
-- **Cons**: 256MB is tight — fits current corpus but not full archive. The reranker module adds ~150MB of memory pressure, pushing us to the 1GB tier.
+- **Cons**: 256MB is tight, fits current corpus but not full archive. The reranker module adds ~150MB of memory pressure, pushing us to the 1GB tier.
 
-#### Option C — Eric's dev box + Cloudflare Tunnel (TEMPORARY)
+#### Option C, Eric's dev box + Cloudflare Tunnel (TEMPORARY)
 
 Eric runs Docker locally; Cloudflare Tunnel exposes Weaviate's REST + gRPC ports under a stable public URL.
 
@@ -114,11 +114,11 @@ Eric runs Docker locally; Cloudflare Tunnel exposes Weaviate's REST + gRPC ports
 #### Migration timeline
 
 - **Now → 2026-05-27**: Option C. Eric runs Weaviate locally; tunnel makes it reachable from Netlify staging.
-- **Post-2026-05-27**: WWU team provisions the lab machine; migration to Option A is a single config change (`WEAVIATE_URL` env var) — transparent to Cloud Functions, MCP server, and the React frontend.
+- **Post-2026-05-27**: WWU team provisions the lab machine; migration to Option A is a single config change (`WEAVIATE_URL` env var), transparent to Cloud Functions, MCP server, and the React frontend.
 
 ### 2. Schema
 
-Four classes mirroring the current Firestore `embeddings` collection's shape, expressed as Weaviate schema objects. Use `vectorizer: none` because Voyage AI generates vectors externally — Weaviate stores them, doesn't regenerate.
+Four classes mirroring the current Firestore `embeddings` collection's shape, expressed as Weaviate schema objects. Use `vectorizer: none` because Voyage AI generates vectors externally, Weaviate stores them, doesn't regenerate.
 
 Embedding model: **`voyage-3` at 1024 dimensions**. All four classes use the same model so cross-class similarity is meaningful.
 
@@ -362,9 +362,9 @@ class VoyageClient:
 **Why this shape:**
 
 1. **Two methods (`embed_documents`, `embed_query`)** make the asymmetry impossible to forget. A caller can't accidentally pass the wrong `input_type` because they don't pick it; the method does.
-2. **Batching at 32 texts per call** matches Voyage's natural batch size — well under the 120K token cap and avoids HTTP overhead.
+2. **Batching at 32 texts per call** matches Voyage's natural batch size, well under the 120K token cap and avoids HTTP overhead.
 3. **Exponential backoff with jitter** fixes the worldthought.com gap. 5 retries with base 1s doubling = up to 32s pause on a sustained rate-limit, after which the ingest should not still be failing.
-4. **`rerank` fails open.** On error, return input order with placeholder scores. The pipeline degrades to vector-only ranking rather than crashing — same posture as worldthought.com (line 246 of chat.mjs).
+4. **`rerank` fails open.** On error, return input order with placeholder scores. The pipeline degrades to vector-only ranking rather than crashing, same posture as worldthought.com (line 246 of chat.mjs).
 5. **No client-level caching.** Caching belongs at a higher layer (the query module's LRU); the embed client is stateless.
 
 ### 4. Ingestion
@@ -444,13 +444,13 @@ while (true) {
 
 `scripts/rag-ingest.mjs` runs after the metadata pipeline produces new transcripts. For each new transcript:
 
-1. **Chunk** the SRT into per-chapter segments using the chapter boundaries the existing pipeline already produces (no need for sliding-window chunking — the pipeline gives us semantically-meaningful chapters for free).
+1. **Chunk** the SRT into per-chapter segments using the chapter boundaries the existing pipeline already produces (no need for sliding-window chunking, the pipeline gives us semantically-meaningful chapters for free).
 2. **Compute content hash** SHA-256(text). Query Weaviate `TranscriptSegment` filtered by `interviewId == ... AND segmentId == ...`. If found and `contentHash` matches, skip.
 3. **Batch embed** with `voyage_client.embed_documents([texts])`. Voyage natural batch is 32 texts per call.
 4. **Compute `qualityScore`** per segment: `min(1.0, 0.3 + 0.4 * has_proper_noun_match + 0.3 * len_normalized)` where:
    - `has_proper_noun_match` = 1 if any token matches a `civil_rights_facts.json` canonical name or alias, else 0
    - `len_normalized` = `min(1.0, len(text) / 1000)` (segments under 1000 chars are penalized as too-short)
-   This is a heuristic — tune from quality data once we have it.
+   This is a heuristic, tune from quality data once we have it.
 5. **Insert** as a batch using Weaviate's gRPC batch API (`insertMany`). On collision (same UUID, same hash), skip silently. On error, log + skip.
 6. **Idempotency check**: re-running the script on the same corpus produces no Voyage calls and no Weaviate writes.
 
@@ -562,17 +562,17 @@ class RAGRetriever:
 
 1. **`hybrid_alpha=0.7`** is the Weaviate default skew toward vector. For oral history queries that contain specific names ("Selma march", "Bobby Seale"), the BM25 component (1-alpha = 0.3) catches the exact name even when the vector misses; for conceptual queries ("nonviolent resistance strategy"), the vector dominates. Tune per-class if needed.
 
-2. **`over_retrieve_k=12` then rerank to `top_k=6`** — the worldthought.com pattern, validated by 750+ commits of production traffic. Caught real query-disambiguation cases (e.g., "necessity" matching multiple philosophers).
+2. **`over_retrieve_k=12` then rerank to `top_k=6`**, the worldthought.com pattern, validated by 750+ commits of production traffic. Caught real query-disambiguation cases (e.g., "necessity" matching multiple philosophers).
 
-3. **`similarity_floor=0.35` on rerank scores** — matches worldthought.com. Below this threshold, retrieval is too weak to be useful; the calling LLM should fall back to its training rather than hallucinate from low-relevance context.
+3. **`similarity_floor=0.35` on rerank scores**, matches worldthought.com. Below this threshold, retrieval is too weak to be useful; the calling LLM should fall back to its training rather than hallucinate from low-relevance context.
 
-4. **45s TTL LRU cache** — same as worldthought. Avoids re-embedding repeat queries (huge for repeat-visitor queries on the frontend).
+4. **45s TTL LRU cache**, same as worldthought. Avoids re-embedding repeat queries (huge for repeat-visitor queries on the frontend).
 
-5. **Fails-open everywhere** — if Voyage embed fails, the exception propagates (caller decides); if Voyage rerank fails, candidates pass through in their hybrid-score order; if Weaviate fails, the exception propagates (the calling Cloud Function returns a 500). Same posture as both sibling projects.
+5. **Fails-open everywhere**, if Voyage embed fails, the exception propagates (caller decides); if Voyage rerank fails, candidates pass through in their hybrid-score order; if Weaviate fails, the exception propagates (the calling Cloud Function returns a 500). Same posture as both sibling projects.
 
 ### 6. Cloud Functions + MCP server adapters
 
-#### `functions/index.js` — `vectorSearch` rewrite
+#### `functions/index.js`, `vectorSearch` rewrite
 
 The current ~290 lines of pagination + cosine-similarity-in-JS + early-exit collapse to:
 
@@ -609,25 +609,25 @@ function toFrontendShape(r) {
 }
 ```
 
-The dim-filter logic at `functions/index.js:160-167` is structurally eliminated — Weaviate refuses mismatched-dimension inserts at the schema level. ~290 lines deleted; latency drops from "seconds for the current corpus" to "sub-100ms for the eventual full corpus."
+The dim-filter logic at `functions/index.js:160-167` is structurally eliminated, Weaviate refuses mismatched-dimension inserts at the schema level. ~290 lines deleted; latency drops from "seconds for the current corpus" to "sub-100ms for the eventual full corpus."
 
 A feature-flag env var (`USE_WEAVIATE`) controls Weaviate-vs-Firestore at first; flip to Weaviate-only once verified.
 
-#### `mcp-server/server.mjs` — `searchTranscripts` rewrite
+#### `mcp-server/server.mjs`, `searchTranscripts` rewrite
 
 Same pattern. Cloud Function and MCP server share an adapter module: `mcp-server/lib/retriever.mjs` exports `searchTranscriptSegments({query, limit, filters})` and both surfaces import it. Single source of truth for the Weaviate query shape; eliminates the drift risk between the two retrievers.
 
 ### 7. RAG-ified summarization (the actual rescue)
 
-This is the strategic payoff. Once Weaviate is populated, the summarization pipeline can do **real RAG** — retrieve from the corpus when generating, not just fit-into-context-window.
+This is the strategic payoff. Once Weaviate is populated, the summarization pipeline can do **real RAG**, retrieve from the corpus when generating, not just fit-into-context-window.
 
 **Current behavior** (`processor/summarization.py`, `processor/chapterization.py`): the LLM sees the chapter's transcript window (~12K chars) + the ground-truth facts that `get_relevant_facts` regex-matched. If the speaker references an event by an unusual alias not in the facts file, the LLM has no grounding. If a claim could be cross-checked against another interview, the pipeline has no way to find that interview.
 
 **RAG-ified behavior**: before generating a chapter summary, the pipeline:
 
 1. Embeds the chapter transcript via `voyage_client.embed_documents([transcript])`
-2. Runs `RAGRetriever.retrieve(query=transcript_excerpt, collection='Topic', top_k=5)` — what topics from the curated glossary are semantically closest to this chapter?
-3. Runs `RAGRetriever.retrieve(query=transcript_excerpt, collection='SummaryChapter', top_k=3, filters={'interviewId': {'!=': current_interview_id}})` — what *other* interviews' chapters cover similar ground?
+2. Runs `RAGRetriever.retrieve(query=transcript_excerpt, collection='Topic', top_k=5)`, what topics from the curated glossary are semantically closest to this chapter?
+3. Runs `RAGRetriever.retrieve(query=transcript_excerpt, collection='SummaryChapter', top_k=3, filters={'interviewId': {'!=': current_interview_id}})`, what *other* interviews' chapters cover similar ground?
 4. Adds both to the system prompt's context block:
 
 ```
@@ -650,11 +650,11 @@ This is the actual deliverable that justifies the Weaviate investment. The curre
 
 ### 8. Frontend integration
 
-The React frontend's `src/services/search.js` (semantic search) and `src/services/firebase.js::searchVectors` already wrap a Cloud Function call. No frontend change required — the function's response shape is preserved.
+The React frontend's `src/services/search.js` (semantic search) and `src/services/firebase.js::searchVectors` already wrap a Cloud Function call. No frontend change required, the function's response shape is preserved.
 
 Two opt-in enhancements:
 
-1. **Show rerank scores in the UI**: the new pipeline returns `rerank_score` instead of (or alongside) `similarity`. The search results page can render confidence indicators that are more meaningful than raw cosine — a "Strong match" / "Possible match" / "Weak match" badge.
+1. **Show rerank scores in the UI**: the new pipeline returns `rerank_score` instead of (or alongside) `similarity`. The search results page can render confidence indicators that are more meaningful than raw cosine, a "Strong match" / "Possible match" / "Weak match" badge.
 
 2. **Add a "related chapters" sidebar** on interview detail pages: query `SummaryChapter` filtered by `interviewId != current` + limit 5; show as a sidebar. Uses the same retriever; no new endpoint needed.
 
@@ -694,7 +694,7 @@ Monitoring: Weaviate exposes Prometheus metrics on port 2112. A free Grafana Clo
 
 | Component | Cost basis | Monthly cost (steady state) |
 |---|---|---|
-| Weaviate hosting (WWU on-prem) | $0 — existing lab hardware | $0 |
+| Weaviate hosting (WWU on-prem) | $0, existing lab hardware | $0 |
 | Weaviate hosting (Fly.io fallback) | $1.94-5.40 if separate from MCP allowance | $0-5.40 |
 | Voyage AI embeddings (ingest) | $0.06/MTok × ~1M tokens (one-shot, then deltas) | <$0.01 |
 | Voyage AI embeddings (queries) | $0.06/MTok × ~10K queries × ~10 tokens each = 100K tokens | <$0.01 |
@@ -733,18 +733,18 @@ Honest scope:
 
 3. **Pre-existing low-quality Whisper transcripts**. Voyage AI embeds whatever it's given. "Megahevers" embeds as a phonetically-distant token from "Medgar Evers", so a query for "Medgar Evers" won't find the segment that mentions "Megahevers". The transcript audit pipeline (see `docs/TRANSCRIPT_AUDIT_DESIGN.md`) is the upstream fix; this RAG substrate benefits from those corrections but doesn't apply them itself.
 
-4. **Multi-tenancy across users**. The current design is single-tenant — all queries hit the same corpus with the same filters. If the project ever needs per-user query scoping (e.g., grant-writer view vs. researcher view), Weaviate supports it via tenant API on the schema; this document does not address that.
+4. **Multi-tenancy across users**. The current design is single-tenant, all queries hit the same corpus with the same filters. If the project ever needs per-user query scoping (e.g., grant-writer view vs. researcher view), Weaviate supports it via tenant API on the schema; this document does not address that.
 
-5. **Real-time streaming retrieval**. The current design is synchronous request/response. For a future "chat with the archive" UI that streams answers token by token, the retriever can be called once at the start of each turn and the results threaded into Anthropic's streaming response — but the streaming layer itself is out of scope here.
+5. **Real-time streaming retrieval**. The current design is synchronous request/response. For a future "chat with the archive" UI that streams answers token by token, the retriever can be called once at the start of each turn and the results threaded into Anthropic's streaming response, but the streaming layer itself is out of scope here.
 
 ## See also
 
-- `docs/TRANSCRIPT_AUDIT_DESIGN.md` — the upstream transcript quality pipeline. Catches Whisper errors before they pollute the embeddings.
-- `docs/DEPLOYMENT.md` — operator-level setup. Will be extended with Weaviate + Voyage AI setup once implemented.
-- `CLAUDE.md` — project-wide architectural notes.
-- `C:\worldthought.com` — the closest sibling implementation (Pinecone + voyage-3). Key files: `scripts/rag/ingest.mjs`, `scripts/rag/shared.mjs`, `netlify/functions/chat.mjs`, `CLAUDE.md` (sections 41-122).
-- `C:\aigamma.com` — the efficiency-pattern reference (Supabase pgvector + gte-small). Key files: `docs/rag-architecture.md`, `scripts/rag/ingest.mjs`, `netlify/functions/chat.mjs`, `.github/workflows/refresh-rag.yml`.
-- `functions/index.js` — the current Cloud Function that this design replaces. Lines 122-317 (`performVectorSearch`) collapse to ~30 lines once Weaviate is the backend.
-- `mcp-server/server.mjs` — the MCP server's `searchTranscripts` tool; refactored to share the adapter with the Cloud Function.
-- [Weaviate docs](https://weaviate.io/developers/weaviate) — particularly the Hybrid Search and Backup module pages.
-- [Voyage AI docs](https://docs.voyageai.com/) — particularly the `input_type` parameter documentation and the rerank-2 model card.
+- `docs/TRANSCRIPT_AUDIT_DESIGN.md`, the upstream transcript quality pipeline. Catches Whisper errors before they pollute the embeddings.
+- `docs/DEPLOYMENT.md`, operator-level setup. Will be extended with Weaviate + Voyage AI setup once implemented.
+- `CLAUDE.md`, project-wide architectural notes.
+- `C:\worldthought.com`, the closest sibling implementation (Pinecone + voyage-3). Key files: `scripts/rag/ingest.mjs`, `scripts/rag/shared.mjs`, `netlify/functions/chat.mjs`, `CLAUDE.md` (sections 41-122).
+- `C:\aigamma.com`, the efficiency-pattern reference (Supabase pgvector + gte-small). Key files: `docs/rag-architecture.md`, `scripts/rag/ingest.mjs`, `netlify/functions/chat.mjs`, `.github/workflows/refresh-rag.yml`.
+- `functions/index.js`, the current Cloud Function that this design replaces. Lines 122-317 (`performVectorSearch`) collapse to ~30 lines once Weaviate is the backend.
+- `mcp-server/server.mjs`, the MCP server's `searchTranscripts` tool; refactored to share the adapter with the Cloud Function.
+- [Weaviate docs](https://weaviate.io/developers/weaviate), particularly the Hybrid Search and Backup module pages.
+- [Voyage AI docs](https://docs.voyageai.com/), particularly the `input_type` parameter documentation and the rerank-2 model card.

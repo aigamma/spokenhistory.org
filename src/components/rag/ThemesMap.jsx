@@ -1,5 +1,5 @@
 /**
- * @fileoverview ThemesMap — bubble-chart view of the 30 thematic
+ * @fileoverview ThemesMap, bubble-chart view of the 30 thematic
  * clusters, positioned by each cluster's centroid in the same 2D
  * embedding space used by Constellation.
  *
@@ -17,7 +17,7 @@
  *     block" cluster shows red and a "low" (high-confidence) cluster
  *     shows emerald).
  *
- * No external chart lib — pure SVG. Hover shows a tooltip; click
+ * No external chart lib, pure SVG. Hover shows a tooltip; click
  * fires the onSelect callback so the parent expands the cluster
  * details inline.
  */

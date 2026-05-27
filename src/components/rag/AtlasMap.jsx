@@ -1,5 +1,5 @@
 /**
- * @fileoverview AtlasMap — Leaflet-backed map showing the 12 movement
+ * @fileoverview AtlasMap, Leaflet-backed map showing the 12 movement
  * geographies from GeographicAtlas as clickable, scaled markers on an
  * OpenStreetMap tile layer.
  *
@@ -15,7 +15,7 @@
  * selected anchor, stone-700 outline for the rest.
  *
  * Dynamic import of react-leaflet matches the existing pattern in
- * components/visualization/MapComponent.jsx — keeps the leaflet bundle
+ * components/visualization/MapComponent.jsx, keeps the leaflet bundle
  * out of the main chunk so first-paint elsewhere isn't penalized.
  */
 
@@ -32,7 +32,7 @@ export default function AtlasMap({ anchors, selectedSlug, onSelect }) {
 
   // Lazy-load leaflet CSS at the document level. Including it via
   // ES import inside this file would force Vite to bundle it into the
-  // page's CSS chunk even when the user never opens the Atlas tab —
+  // page's CSS chunk even when the user never opens the Atlas tab -
   // appending a <link> on mount keeps it out of the critical path.
   useEffect(() => {
     const HREF = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';

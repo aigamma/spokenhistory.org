@@ -1,5 +1,5 @@
 /**
- * @fileoverview InfluenceGraph — d3-force visualization of the
+ * @fileoverview InfluenceGraph, d3-force visualization of the
  * who-discussed-whom graph from public/rag/summaries/influence.json.
  *
  * 151 nodes + 214 edges. Filtered to nodes that participate in at
@@ -55,7 +55,7 @@ export default function InfluenceGraph({
 
     // Drop true isolates (zero edges in or out). Keeping them in the
     // simulation just produces a halo of disconnected dust at the
-    // periphery — visually meaningless.
+    // periphery, visually meaningless.
     const edgeNodeIds = new Set();
     for (const e of edgesIn) {
       edgeNodeIds.add(e.from);
@@ -188,7 +188,7 @@ export default function InfluenceGraph({
       `${d.name}\n${d.in_corpus ? 'In corpus' : 'External figure'}\nDiscussed by ${d.discussed_by_count} other ${d.discussed_by_count === 1 ? 'interview' : 'interviews'}`,
     );
 
-    // Drag — restart the simulation while dragging so the dragged
+    // Drag, restart the simulation while dragging so the dragged
     // node's pull is felt by its neighbors.
     const dragBehavior = d3
       .drag()

@@ -221,7 +221,7 @@ async function initFirestore() {
     // or (for Firebase-specific scopes):
     //   npx firebase login --reauth
     // ADC is the right path on Google Workspace orgs that block SA key
-    // creation — see reference_google_workspace_sa_policy memory.
+    // creation, see reference_google_workspace_sa_policy memory.
     initializeApp({
       credential: applicationDefault(),
       projectId: process.env.FIREBASE_PROJECT_ID || 'civil-rights-history-project',
@@ -297,7 +297,7 @@ async function main() {
   }
 
   console.log(`\nDone. ${okCount} ok, ${errCount} error(s).`)
-  if (args.dryRun) console.log('(dry-run — no Firestore writes performed)')
+  if (args.dryRun) console.log('(dry-run, no Firestore writes performed)')
 }
 
 main().catch((err) => {

@@ -1,4 +1,4 @@
-# RAG demo — what to show stakeholders
+# RAG demo, what to show stakeholders
 
 A one-pager for the Wednesday WWU meeting (or any future demo). All
 the surfaces below are live on `https://civil-rights-staging.netlify.app`
@@ -21,7 +21,7 @@ Open `/rag-explore` (login required: `wwu` / `civilrights`).
 - Default tab: **Semantic search**.
 - Try: `nonviolence as theology vs. tactic`
   - Expect three SNCC voices in distinct framings (Annie Pearl Avery,
-    Dion Diamond, Courtland Cox) — each with a Library of Congress
+    Dion Diamond, Courtland Cox), each with a Library of Congress
     catalog link, an exact timestamp range, and an audit-tier badge
     showing "Audited · Low uncertainty."
 
@@ -48,11 +48,11 @@ Connector Directory.
 Same page, **Embedding-space map** tab.
 
 - 136 dots, color-coded by audit tier:
-  - **Green (72)** — low uncertainty, well-audited
-  - **Amber (18)** — medium uncertainty
-  - **Red (23)** — publication-block tier (known issues)
-  - **Violet (14)** — not externally verifiable
-  - **Slate (9)** — ingestion-only (added 2026-05-25)
+  - **Green (72)**, low uncertainty, well-audited
+  - **Amber (18)**, medium uncertainty
+  - **Red (23)**, publication-block tier (known issues)
+  - **Violet (14)**, not externally verifiable
+  - **Slate (9)**, ingestion-only (added 2026-05-25)
 - Hover any dot for the interviewee's name and chunk count.
 
 The talking point: this is the "philosophy of embedding" demo. Two
@@ -60,7 +60,7 @@ interviewees who never met but whose words land within 0.12 cosine of
 each other on a topic appear as nearby dots. The audit-tier coloring
 overlays the corpus's institutional credibility on top of the
 thematic similarity layout. **Click any dot** to jump to the Related
-Interviewees tab pre-filtered to that interview — the map becomes a
+Interviewees tab pre-filtered to that interview, the map becomes a
 discovery tool, not just a visualization.
 
 ### 4. Related interviewees
@@ -70,14 +70,14 @@ Same page, **Related interviewees** tab.
 - Pick an interview from the dropdown (six pre-seeded examples spanning
   SCLC, SNCC, BPP, Freedom Rider, and Till-family voices).
 - The panel shows the top-8 interviewees whose words are most
-  thematically related — aggregated across all chunks of the selected
+  thematically related, aggregated across all chunks of the selected
   interview. The counts reflect how many cross-chunk embedding matches
   each related interviewee accumulated.
 
 The talking point: this is the cross-corpus kinship layer made
 concrete. Showing "Aaron Dixon's voice is most related to Elmer
 Dixon's, Kathleen Cleaver's, and Cleveland Sellers'" is what makes
-the embedding space useful for narrative scholarship — the
+the embedding space useful for narrative scholarship, the
 relationships were computed by the model, not curated by hand.
 
 ## Numbers worth quoting
@@ -91,18 +91,18 @@ relationships were computed by the model, not curated by hand.
 | Vector store | Pinecone Builder serverless |
 | Monthly infra cost (all-in) | ~$25 |
 | Cost per query | <$0.0001 (Voyage + Pinecone combined) |
-| LLM cost on the project side | $0 — clients supply their own |
+| LLM cost on the project side | $0, clients supply their own |
 
 ## Three Wednesday-friendly demo queries
 
 For the meeting, these three exercise distinct facets:
 
-1. **`nonviolence as theology vs. tactic`** — 3 distinct SNCC voices,
+1. **`nonviolence as theology vs. tactic`**, 3 distinct SNCC voices,
    all tier=low. Shows the polyphonic record.
 2. **`my cousin Emmett Till`** with entry_number filter on Wheeler
-   Parker Jr. — three time-anchored Wheeler Parker passages from the
+   Parker Jr., three time-anchored Wheeler Parker passages from the
    moments before the abduction. Shows the metadata-filter precision.
-3. **`Bloody Sunday Edmund Pettus Bridge`** — Alfred Moldovan (an
+3. **`Bloody Sunday Edmund Pettus Bridge`**, Alfred Moldovan (an
    ingestion-only entry) describing the medical-team response.
    Shows the system handles new ingestion-only entries with a
    different audit-tier badge.
@@ -120,7 +120,7 @@ stakeholder before the meeting:
 
 The recipient lands on the Search tab, the query is pre-loaded into
 the box, and results render automatically. The URL itself is also a
-verbatim record of what was searched — useful for citation footnotes
+verbatim record of what was searched, useful for citation footnotes
 ("queried 2026-05-26 at <URL>").
 
 ## The MCP connector (not yet deployed)
@@ -133,7 +133,7 @@ which is the citation-oracle pattern from `mcp-server/USAGE_GUIDE.md`.
 Deployment is blocked on `flyctl auth login` (interactive). Once
 deployed, researchers using Claude Desktop / claude.ai Custom
 Connectors can attach the archive to their workflow without WWU paying
-LLM costs — the client supplies their own Claude subscription.
+LLM costs, the client supplies their own Claude subscription.
 
 ## Outstanding admin actions
 
@@ -149,7 +149,7 @@ Eight blocks, 17+ commits, 138 precompute artifacts. Full session log
 in CLAUDE.md under "Operational state." The big quality wins:
 
 - Pruned the index from 40,710 to 15,464 vectors by dropping `.txt` and
-  `.vtt` re-encodings — every result now carries timestamps.
+  `.vtt` re-encodings, every result now carries timestamps.
 - Color-coded the constellation by audit tier so the substrate is
   visible at a glance, not just described in copy.
 - Cap the citation card with a per-tier audit badge so researchers
@@ -158,7 +158,7 @@ in CLAUDE.md under "Operational state." The big quality wins:
 ## What changed for the `/playlist-builder` surface (2026-05-26)
 
 The legacy grad-student playlist row didn't survive the new-Firebase
-rebuild — the underlying curation data was discarded with the prior
+rebuild, the underlying curation data was discarded with the prior
 project's experimental residue. The replacement surface inherits the
 same UI but its ordering is now driven by the RAG substrate:
 

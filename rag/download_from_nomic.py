@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rag/download_from_nomic.py — pull the 2D projection + topic labels
+"""rag/download_from_nomic.py, pull the 2D projection + topic labels
 that Atlas computed for our civil-rights-passages dataset, and save
 them as a static JSON the React app can render entirely on its own.
 
@@ -126,7 +126,7 @@ def wait_for_map_ready(dataset, max_wait: int, poll_interval: int):
     """Atlas's `AtlasProjection` object doesn't expose a discrete
     ready-state attribute on the SDK we have (nomic 3.9.0). What it
     DOES expose is `.embeddings.projected`, `.topics.df`, and
-    `.data.df` — accessing those raises until the projection is
+    `.data.df`, accessing those raises until the projection is
     ready, and succeeds once it is. We probe `.embeddings.df` (which
     pulls projected coords) as the readiness signal."""
     deadline = time.time() + max_wait
@@ -137,7 +137,7 @@ def wait_for_map_ready(dataset, max_wait: int, poll_interval: int):
             continue
         atlas_map = dataset.maps[0]
         try:
-            # Single-row probe — pulling the full df can take seconds.
+            # Single-row probe, pulling the full df can take seconds.
             df = atlas_map.embeddings.df
             n = len(df)
             sys.stderr.write(f"Map ready: {n} projected points.\n")
@@ -173,13 +173,13 @@ def extract_projection_points(atlas_map):
         topic_df = atlas_map.topics.df
         print(f"    {len(topic_df)} rows, columns: {list(topic_df.columns)}")
     except Exception as exc:
-        print(f"    (skipped — topics not available: {exc})")
+        print(f"    (skipped, topics not available: {exc})")
         topic_df = None
 
     # Critical: `_position_index` is NOT a unique row id. Atlas stores
     # data in shards/pages and re-uses `_position_index` per shard.
     # The three dataframes (data, embeddings, topics) are in identical
-    # row order — concat by position is the correct join.
+    # row order, concat by position is the correct join.
     if len(data_df) != len(emb_df):
         raise RuntimeError(
             f"data.df and embeddings.df have different row counts "
@@ -239,8 +239,8 @@ def main() -> int:
     x_col, y_col = find_xy_columns(df)
 
     # Topic columns vary by SDK version. Hierarchical topic models
-    # expose `topic_depth_1` (broader category — 8 broad clusters in
-    # the civil-rights dataset) and `topic_depth_2` (narrower — 256
+    # expose `topic_depth_1` (broader category, 8 broad clusters in
+    # the civil-rights dataset) and `topic_depth_2` (narrower, 256
     # micro-topics). The broad version legends much more cleanly and
     # is preferred for the headline color encoding. We also surface
     # both depths in the output so the client can switch later.
@@ -294,7 +294,7 @@ def main() -> int:
             except (ValueError, TypeError):
                 pass
 
-        # Text preview only — never the full passage. 120 chars keeps
+        # Text preview only, never the full passage. 120 chars keeps
         # the static JSON manageable while still giving hover cards
         # enough words to recognize the passage. Truncated text ends
         # with an ellipsis to make it visually obvious it's a preview.
@@ -305,10 +305,10 @@ def main() -> int:
             else:
                 rec["text_preview"] = text
 
-        # Topic label (broad / depth_1 — used for color legend).
+        # Topic label (broad / depth_1, used for color legend).
         if topic_col and row[topic_col] is not None and not (isinstance(row[topic_col], float) and math.isnan(row[topic_col])):
             rec["topic"] = row[topic_col]
-        # Narrow topic (depth_2) — surfaced for hover detail since it
+        # Narrow topic (depth_2), surfaced for hover detail since it
         # adds specificity without crowding the color legend.
         if secondary_topic_col and row[secondary_topic_col] is not None and not (isinstance(row[secondary_topic_col], float) and math.isnan(row[secondary_topic_col])):
             rec["topic_narrow"] = row[secondary_topic_col]
@@ -338,7 +338,7 @@ def main() -> int:
     }
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    # Force UTF-8 — Windows Python defaults to cp1252 and chokes on
+    # Force UTF-8, Windows Python defaults to cp1252 and chokes on
     # the Unicode characters in passage text (smart quotes, accents,
     # etc.).
     args.out.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")

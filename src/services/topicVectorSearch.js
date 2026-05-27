@@ -1,6 +1,6 @@
 /**
  * @fileoverview Topic-specific vector search service
- * Handles vectorization and semantic search for topics in the Topic Glossary
+ * Handles vectorization and semantic search for topics on the Topics page
  */
 
 import { collection, doc, setDoc, getDoc, getDocs, query, where } from 'firebase/firestore';

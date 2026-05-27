@@ -1,5 +1,5 @@
 /**
- * @fileoverview InterviewMap — the abandoned-and-rebuilt Constellation.
+ * @fileoverview InterviewMap, the abandoned-and-rebuilt Constellation.
  *
  * Eric's critique of the original Constellation tab: "Just having a
  * dot randomly float over a dot and hoping to hit the one out of 136
@@ -56,7 +56,7 @@ export default function InterviewMap() {
   // soft curves from the focal dot to each neighbor so the audience
   // SEES the semantic neighborhood instead of reading it as a list.
   const [neighbors, setNeighbors] = useState(null);
-  // Concept-query projection — UMAP can't directly project new
+  // Concept-query projection, UMAP can't directly project new
   // queries because it's a learned nonlinear embedding (no inverse
   // transform). Instead we use the nearest-neighbor approximation:
   // find the centroid whose 1024-dim vector is most cosine-similar
@@ -140,7 +140,7 @@ export default function InterviewMap() {
     setConceptError(null);
   }, []);
 
-  // One-click example queries — same set as Spectrum + Concept Lenses
+  // One-click example queries, same set as Spectrum + Word Search
   // so visitors get consistent prompts across surfaces. Clicking one
   // populates the input AND runs the full nearest-centroid lookup.
   const runExample = useCallback(async (text) => {
@@ -360,7 +360,7 @@ export default function InterviewMap() {
     <div className="rag-interview-map">
       <p className="text-sm text-stone-600 mb-4 max-w-3xl">
         136 interviews, each one a dot, positioned by the Atlas UMAP
-        projection — same coordinate system as the Passage map, just
+        projection, same coordinate system as the Passage map, just
         aggregated to interview-scale (the mean of each interviewee&apos;s
         passages). The axes are abstract directions in embedding space,
         but the axis labels below show which topic dominates each pole,
@@ -420,7 +420,7 @@ export default function InterviewMap() {
         </div>
       </div>
 
-      {/* Concept-query projection input — type a phrase, find the
+      {/* Concept-query projection input, type a phrase, find the
           single most semantically-similar interview by cosine on the
           1024-dim centroids, render a green-ringed pin at that
           centroid's UMAP coord. */}
@@ -516,7 +516,7 @@ export default function InterviewMap() {
           <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke="#e7e5e4" strokeDasharray="3 5" />
           <line x1={W / 2} y1={PAD} x2={W / 2} y2={H - PAD} stroke="#e7e5e4" strokeDasharray="3 5" />
 
-          {/* Empirical axis labels — what topic dominates each pole */}
+          {/* Empirical axis labels, what topic dominates each pole */}
           {axisLabels && (
             <g aria-hidden="true">
               {axisLabels.negX && (
@@ -542,7 +542,7 @@ export default function InterviewMap() {
             </g>
           )}
 
-          {/* Neighbor links — when a dot is selected, draw soft red
+          {/* Neighbor links, when a dot is selected, draw soft red
               curves from the focal dot to its top-5 semantically-
               related interviewees. Stroke opacity scales with the
               passage-overlap count, so the strongest connection (e.g.
@@ -562,7 +562,7 @@ export default function InterviewMap() {
                   const tx = px(tgt.x);
                   const ty = py(tgt.y);
                   // Quadratic Bezier with control point perpendicular
-                  // to the midpoint — gives a soft arc that visually
+                  // to the midpoint, gives a soft arc that visually
                   // separates overlapping straight lines when several
                   // neighbors sit in the same direction.
                   const mx = (fx + tx) / 2;
@@ -628,7 +628,7 @@ export default function InterviewMap() {
                     stroke={isFocus ? '#1c1917' : 'transparent'}
                     strokeWidth={isFocus ? 1.5 : 0}
                   />
-                  {/* Name label — render alongside the dot, with stroke
+                  {/* Name label, render alongside the dot, with stroke
                       halo so it stays readable over any background. */}
                   {(isMatch || isFocus || isNeighbor) && (
                     <text
@@ -653,7 +653,7 @@ export default function InterviewMap() {
             });
           })()}
 
-          {/* Concept-query projection marker — rendered AFTER the dots
+          {/* Concept-query projection marker, rendered AFTER the dots
               so it draws on top. Pin sits at the centroid of the
               nearest-match interview; visually says "your query lives
               right here in the embedding space". */}
@@ -692,8 +692,8 @@ export default function InterviewMap() {
         </svg>
       </div>
 
-      {/* Top retrieved passages for the same query — same demo loop
-          closure as Spectrum and Concept Lenses: query → projection on
+      {/* Top retrieved passages for the same query, same demo loop
+          closure as Spectrum and Word Search: query → projection on
           the map (nearest centroid) → here are the voices that match. */}
       {conceptResults && conceptResults.length > 0 && conceptQuery && (
         <aside className="mt-4 p-4 rounded-md border border-emerald-200 bg-white">
@@ -701,7 +701,7 @@ export default function InterviewMap() {
             Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
           </p>
           <p className="text-sm text-stone-600 mb-3">
-            The pin on the map shows the nearest voice geometrically; this list shows the actual passages full semantic retrieval surfaces. One embedding — two ways to read it.
+            The pin on the map shows the nearest voice geometrically; this list shows the actual passages full semantic retrieval surfaces. One embedding, two ways to read it.
           </p>
           <ol className="space-y-3">
             {conceptResults.map((payload) => (
@@ -740,7 +740,7 @@ export default function InterviewMap() {
             )}
             {/* When the user clicks (not just hovers), drill into the
                 top passages this interview contributes to their
-                primary topic. Only on click — hovering through 136
+                primary topic. Only on click, hovering through 136
                 dots shouldn't trigger 136 /retrieve calls. */}
             {selected === focusEntry && <InterviewMapDrillDown entry={focus} />}
           </aside>
@@ -753,13 +753,13 @@ export default function InterviewMap() {
 }
 
 // Footer extracted so the JSX is symmetrical with the drill-down
-// component below — easier to read than nesting them inline.
+// component below, easier to read than nesting them inline.
 function InterviewMapFooter() {
   return (
     <footer className="text-xs text-stone-500 border-t border-stone-200 pt-3 mt-5 max-w-3xl">
       Substrate: <code className="font-mono">public/rag/atlas_projection.json</code> (UMAP
         from Nomic Atlas). The same projection that drives the InterviewMap; this view
-        aggregates to interview-scale. Axis labels are computed live from the data — the
+        aggregates to interview-scale. Axis labels are computed live from the data, the
         topic that dominates each pole&apos;s top-15 interviewees.
     </footer>
   );
@@ -790,7 +790,7 @@ function InterviewMapDrillDown({ entry }) {
   if (!query) {
     return (
       <p className="mt-3 text-xs text-stone-500">
-        No dominant topic for this entry — drill-down requires a topic anchor.
+        No dominant topic for this entry, drill-down requires a topic anchor.
       </p>
     );
   }
@@ -802,7 +802,7 @@ function InterviewMapDrillDown({ entry }) {
       </p>
       <p className="text-sm text-stone-700 mb-3">
         Top passages from this interview most aligned with{' '}
-        <strong className="text-civil-red-body">{query.toLowerCase()}</strong> —
+        <strong className="text-civil-red-body">{query.toLowerCase()}</strong> -
         the region that anchors them on this map.
       </p>
       {loading && (

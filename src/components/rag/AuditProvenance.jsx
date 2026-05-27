@@ -1,5 +1,5 @@
 /**
- * @fileoverview AuditProvenance — compact, scannable widget telling
+ * @fileoverview AuditProvenance, compact, scannable widget telling
  * the data-cleaning story that backs every passage on this site.
  *
  * Stakeholder context (Smithsonian / LoC / WWU): the corpus's
@@ -36,7 +36,7 @@ export default function AuditProvenance() {
             9<span className="text-base text-stone-500 ml-1">passes</span>
           </div>
           <p className="text-xs text-stone-600 mt-1 leading-snug">
-            Each transcript passed through nine rounds of audit — phonetic
+            Each transcript passed through nine rounds of audit, phonetic
             alias matching, cross-contamination cleanup, fidelity sweeps,
             adversarial review.
           </p>
@@ -46,7 +46,7 @@ export default function AuditProvenance() {
             127<span className="text-base text-stone-500 ml-1">/ 127</span>
           </div>
           <p className="text-xs text-stone-600 mt-1 leading-snug">
-            LoC API cross-referenced — 100% of audit-able entries.
+            LoC API cross-referenced, 100% of audit-able entries.
             92 via TEI2 XML transcripts, 35 via PDF text extraction.
           </p>
         </li>
@@ -70,7 +70,7 @@ export default function AuditProvenance() {
         it against our text, healing the differences a deterministic verdict
         layer can confidently resolve and flagging the rest for human review.
         710 cases where the audit-canon and LoC disagreed are catalogued in a
-        separate report for an SME pass — the ones where the AI shouldn&apos;t
+        separate report for an SME pass, the ones where the AI shouldn&apos;t
         be the deciding voice.
       </p>
     </section>

@@ -25,8 +25,8 @@
 //   RETRIEVE_RERANK_ENABLED (default 'true')
 //   RETRIEVE_ALLOWED_ORIGINS (comma-separated list, default '*')
 //
-// The function is intentionally self-contained — no imports from the
-// rag/ workspace — so Netlify's function bundler doesn't have to chase
+// The function is intentionally self-contained, no imports from the
+// rag/ workspace, so Netlify's function bundler doesn't have to chase
 // dependencies across directory boundaries. Track rag/embed.mjs +
 // rag/retrieve.mjs as upstream sources of truth if the retrieval
 // internals evolve.
@@ -176,14 +176,14 @@ function fidelityNote(provenance, tier) {
   }
   if (provenance === 'audit-original') {
     // The five tier values that actually appear in the corpus manifests:
-    //   low (72 entries)               — well-audited, low residual error
-    //   medium (18 entries)            — residual uncertainty; flag for high-stakes citations
-    //   publication-block (23 entries) — known issues that block direct publication
+    //   low (72 entries)              , well-audited, low residual error
+    //   medium (18 entries)           , residual uncertainty; flag for high-stakes citations
+    //   publication-block (23 entries), known issues that block direct publication
     //                                    (Subject-paragraph errors, severe Whisper degradation,
     //                                    mid-sentence source truncations). The audit work is done;
     //                                    the issues are documented; the transcript can still be
     //                                    cited but consumers should know.
-    //   not-auditable (14 entries)    — cannot be fully verified against an external canonical
+    //   not-auditable (14 entries)   , cannot be fully verified against an external canonical
     //                                    source (multi-speaker complications, no LoC reference, etc.)
     if (tier === 'low') return 'Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.';
     if (tier === 'medium') return 'Audited transcript with residual uncertainty; verify against audio for high-stakes citations.';

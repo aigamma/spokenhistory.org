@@ -77,7 +77,7 @@ export default function NotFound() {
                   className="inline-flex items-center min-h-11 text-civil-red-body hover:underline font-medium"
                   style={{ fontFamily: 'Chivo Mono, monospace' }}
                 >
-                  Topic Glossary
+                  Topics
                 </Link>
               </li>
               <li>

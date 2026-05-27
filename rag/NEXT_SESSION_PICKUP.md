@@ -1,4 +1,4 @@
-# Next-session pickup — civil rights RAG layer
+# Next-session pickup, civil rights RAG layer
 
 If you're a fresh agent or returning to this work after a break, read
 this doc first. It's the 5-minute orientation for "where things stand
@@ -21,16 +21,16 @@ on Eric's machine.
 
 ## Read these first (priority order)
 
-1. **`CLAUDE.md`** — project-wide conventions, operational state
+1. **`CLAUDE.md`**, project-wide conventions, operational state
    section near the bottom, full Pinecone+Voyage substrate details.
-2. **`rag/DEMO_SCRIPT.md`** — what to demo to stakeholders on
+2. **`rag/DEMO_SCRIPT.md`**, what to demo to stakeholders on
    Wednesday meeting (or any subsequent demo). Three concrete
    queries to run, talking points for each tab.
-3. **`rag/ENDPOINTS.md`** — one-page lookup for URLs, identifiers,
+3. **`rag/ENDPOINTS.md`**, one-page lookup for URLs, identifiers,
    env vars, response payload shape, regenerate commands.
-4. **`mcp-server/USAGE_GUIDE.md`** — the audience-facing connector
+4. **`mcp-server/USAGE_GUIDE.md`**, the audience-facing connector
    doc (Anthropic Connector Directory submission material).
-5. **`rag/INTERACTIVE_FEATURES_DESIGN.md`** — the architecture
+5. **`rag/INTERACTIVE_FEATURES_DESIGN.md`**, the architecture
    diagram + worldthought.com porting pattern.
 
 ## What's blocked (admin-only actions)
@@ -74,9 +74,9 @@ relevant credentials):
 2. **`fidelityNoteFor`** is duplicated in three places (server.mjs,
    retrieve.mjs, RelatedPassages.jsx) because the React boundary
    and the Docker isolation make a shared module awkward. Keep them
-   in sync — adding a new tier value means editing all three.
+   in sync, adding a new tier value means editing all three.
 
-3. **Pre-existing audit substrate** lives in `transcripts/` — 8
+3. **Pre-existing audit substrate** lives in `transcripts/`, 8
    passes of audit work culminating in word-level alignment against
    the Library of Congress's published transcripts. The current
    tier distribution (low 72 / medium 18 / publication-block 23 /
@@ -86,22 +86,22 @@ relevant credentials):
 
 ## Things NOT to do
 
-- Don't re-run Passes 1-7 on new transcripts — that pipeline is
+- Don't re-run Passes 1-7 on new transcripts, that pipeline is
   retired. The Pass 8 LoC-canonical-archive cross-reference is the
   primary correction layer for any new ingestion (documented in
   `transcripts/ingestion/README.md`).
 - Don't co-mingle worldthought + civil-rights as a permanent
-  arrangement — they share a Pinecone project today as a temporary
+  arrangement, they share a Pinecone project today as a temporary
   shortcut because we needed to deploy fast. Migration to a separate
   `civil-rights-prod` project is documented in `rag/.env.local`
   (a gitignored file Eric will have).
 - Don't set Netlify env vars with `envVarIsSecret: true` +
-  `context: "all"` via MCP — that combination silently rejects the
+  `context: "all"` via MCP, that combination silently rejects the
   upsert (verified pitfall, saved as
   `reference_netlify_mcp_envvar_secret.md` in memory).
 - Don't strip the audit-fidelity transparency from any citation
   surface. The 5-tier visibility is load-bearing for the academic-
-  citation use case — without it, the connector becomes a
+  citation use case, without it, the connector becomes a
   hallucination risk.
 
 ## Two things worth verifying on session resume

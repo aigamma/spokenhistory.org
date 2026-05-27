@@ -110,7 +110,7 @@ def main() -> int:
             loc_data = fetch_loc_json(loc)
         except RuntimeError as e:
             print(f"BLOCKED ({e})", file=sys.stderr)
-            print("\n*** ABORTING — LoC blocked further requests. Resume later.", file=sys.stderr)
+            print("\n*** ABORTING, LoC blocked further requests. Resume later.", file=sys.stderr)
             break
 
         if not loc_data:

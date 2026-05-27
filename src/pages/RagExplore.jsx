@@ -46,30 +46,30 @@ function useCorpusStats() {
           tiers,
         });
       })
-      .catch(() => { /* swallow — header just falls back to baseline copy */ });
+      .catch(() => { /* swallow, header just falls back to baseline copy */ });
     return () => { cancelled = true; };
   }, []);
   return stats;
 }
 
 /**
- * RagExplore — landing page for the interactive RAG features layer.
+ * RagExplore, landing page for the interactive RAG features layer.
  *
  * Three surfaces on one page, switchable via tabs:
  *
- *   1. Search — live semantic-search box (SemanticSearch component).
+ *   1. Search, live semantic-search box (SemanticSearch component).
  *      Calls /retrieve via Netlify Function. Renders ranked passages
  *      as CitationCards with full primary-source metadata.
  *
- *   2. Quote-finder — paste a half-remembered quote, get the source.
+ *   2. Quote-finder, paste a half-remembered quote, get the source.
  *      Same retrieval backend, larger textarea, always shows full text.
  *
- *   3. Constellation — 2D PCA scatter of all 136 interview centroids
+ *   3. Constellation, 2D PCA scatter of all 136 interview centroids
  *      in embedding space. Click a dot to (someday) jump to the
  *      interview. Loads public/rag/constellation.json.
  *
  * The page is the conference's "philosophy of embedding" demo surface.
- * It is intentionally simple — the goal is to show the substrate
+ * It is intentionally simple, the goal is to show the substrate
  * works, not to be the final UX.
  */
 // Tab IDs are reflected in window.location.hash so URLs like
@@ -93,17 +93,17 @@ const RELATED_DEMO_ENTRIES = [
   { number: 125, name: 'Wheeler Parker, Jr. (Emmett Till\'s cousin)' },
   { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
 ];
-// Default tab when no ?tab= param is provided. Concept lenses is the
-// most pedagogically distinctive view we ship — four named-axis pairs
-// with cross-chart hover sync, showing the same interviewee at
-// different coordinates in different concept spaces. That's the
-// "AI takes academic traditions to the next level" demo and earns
-// the default slot.
-const DEFAULT_TAB = 'lenses';
-// 'spectrum' deep links resolve to 'lenses' because Spectrum is now
-// rendered at the page top (always visible), not as a tab. So a
+// Default tab when no ?tab= param is provided. Semantic Overlap is
+// the simplest entry point: pick an interview, see which other voices
+// in the corpus discuss semantically-related material. The page opens
+// with Spectrum at the top (the headline surface) and Semantic Overlap
+// below the tab nav so visitors immediately see a worked example of
+// cross-interview retrieval without having to choose a query first.
+const DEFAULT_TAB = 'related';
+// 'spectrum' deep links resolve to the default tab because Spectrum
+// is rendered at the page top (always visible), not as a tab. So a
 // /rag-explore?tab=spectrum URL gives the user Spectrum (at top) +
-// Concept Lenses (the next-best surface) below the tab nav.
+// the default surface below the tab nav.
 const VALID_TAB = (t) => {
   if (t === 'spectrum') return DEFAULT_TAB;
   return TABS.includes(t) ? t : DEFAULT_TAB;
@@ -112,21 +112,19 @@ const VALID_TAB = (t) => {
 // Display order for the pill nav. Featured demos (★) come first,
 // then the visualizations, then text-input demos, then secondary tabs.
 // Spectrum is rendered above the tab nav as the page's permanent
-// headline surface, so it does NOT appear in this list. Default tab
-// is 'lenses' below — the user gets Spectrum at top + Concept lenses
-// matrix below the tab nav, the two strongest views adjacent.
+// headline surface, so it does NOT appear in this list.
 const TAB_ORDER = [
-  { id: 'lenses', label: 'Concept lenses', featured: true },
-  { id: 'map', label: 'Interview map' },
+  { id: 'lenses', label: 'Word Search', featured: true },
+  { id: 'map', label: 'Interview Map' },
   { id: 'related', label: 'Semantic Overlap' },
-  { id: 'search', label: 'Semantic search' },
-  { id: 'quote', label: 'Quote-finder' },
+  { id: 'search', label: 'Semantic Search' },
+  { id: 'quote', label: 'Quote Finder' },
   { id: 'themes', label: 'Themes' },
-  { id: 'names', label: 'Famous names' },
+  { id: 'names', label: 'Famous Names' },
   { id: 'atlas', label: 'Atlas' },
   { id: 'network', label: 'Network' },
   { id: 'tours', label: 'Tours' },
-  { id: 'quote-of-day', label: 'Quote of the day' },
+  { id: 'quote-of-day', label: 'Quote of the Day' },
 ];
 
 // Human-readable label per tab id. Used for the dynamic document title
@@ -134,25 +132,25 @@ const TAB_ORDER = [
 // demos) and for the in-page section heading. Keep in sync with the
 // tab buttons in <nav> below.
 const TAB_LABELS = {
-  lenses: 'Concept lenses',
-  search: 'Semantic search',
-  quote: 'Quote-finder',
+  lenses: 'Word Search',
+  search: 'Semantic Search',
+  quote: 'Quote Finder',
   spectrum: 'Spectrum', // retained for back-compat; resolves to lenses now
-  map: 'Interview map',
+  map: 'Interview Map',
   related: 'Semantic Overlap',
   themes: 'Themes',
-  names: 'Famous names',
+  names: 'Famous Names',
   atlas: 'Atlas',
   network: 'Network',
   tours: 'Tours',
-  'quote-of-day': 'Quote of the day',
+  'quote-of-day': 'Quote of the Day',
 };
 
 export default function RagExplore() {
   const stats = useCorpusStats();
   // The app uses HashRouter, so window.location.hash is consumed by
   // the router itself (e.g. /#/rag-explore?tab=search&q=foo). Reading
-  // window.location.hash returns "#/rag-explore?tab=search&q=foo" — not
+  // window.location.hash returns "#/rag-explore?tab=search&q=foo", not
   // useful as a tab anchor. Use React Router's useSearchParams() to
   // read the tab from a ?tab= query param inside the router's path.
   const [searchParams, setSearchParams] = useSearchParams();
@@ -192,7 +190,7 @@ export default function RagExplore() {
   // a tab body halfway down the page. Now we scroll the tab-content
   // section into view whenever the tab changes (menu nav, in-page tab
   // click, or browser back/forward). On the very first mount we only
-  // scroll if the URL explicitly chose a tab — direct visits to
+  // scroll if the URL explicitly chose a tab, direct visits to
   // /rag-explore (no ?tab=) still land on the page intro.
   const sectionRef = useRef(null);
   const isFirstRender = useRef(true);
@@ -227,7 +225,7 @@ export default function RagExplore() {
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
             136 oral-history interviewees placed along one conceptual axis at a time. The
             position of each dot is the dot product of that interview&apos;s mean embedding
-            with the axis vector — geometric, deterministic, no LLM per query. Pick a
+            with the axis vector, geometric, deterministic, no LLM per query. Pick a
             different axis below the chart to swap the lens; type a phrase in the green
             box to project YOUR words onto the same axis.
           </p>
@@ -289,7 +287,7 @@ export default function RagExplore() {
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Search the archive
+                Search the Archive
               </h2>
               <p className="text-sm text-stone-600 mb-6">
                 Type a natural-language query. Voyage AI&apos;s retrieval-tuned model embeds the
@@ -316,13 +314,13 @@ export default function RagExplore() {
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Interview map
+                Interview Map
               </h2>
               <InterviewMap />
             </div>
           )}
 
-          {/* Legacy Constellation block — kept gated on a never-true
+          {/* Legacy Constellation block, kept gated on a never-true
               tab id so the component import stays warm but the surface
               is not user-reachable. The old PCA-based Constellation
               gave Eric a "sphere of dots with no axis guidance" UX;
@@ -354,8 +352,8 @@ export default function RagExplore() {
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 For each interview, we precompute which other interviewees in the corpus discuss
-                semantically-related material. Pick an interview from the list — or click a dot
-                on the Embedding-space map — to see the top-related voices.
+                semantically-related material. Pick an interview from the list, or click a dot
+                on the Embedding-space map, to see the top-related voices.
               </p>
               <label className="block text-sm text-stone-700 mb-2">
                 Interview:
@@ -393,16 +391,16 @@ export default function RagExplore() {
           {tab === 'lenses' && (
             <div>
               <h2 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Concept lenses
+                Word Search
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 UMAP and PCA put the corpus into 2D, but their axes mean
-                nothing — they&apos;re just "directions of max variance."
+                nothing, they&apos;re just "directions of max variance."
                 This view does the opposite: four scatters, each with axes
                 that are <em>named human concepts</em> (nonviolence vs.
                 armed self-defense, sacred vs. secular framing, etc.).
                 Hover any voice in one chart and watch the same person
-                land at a different coordinate in the other three — that
+                land at a different coordinate in the other three, that
                 shift is what the embedding space is actually telling us.
               </p>
               <ConceptMatrix />
@@ -411,15 +409,15 @@ export default function RagExplore() {
 
           {/* Spectrum is rendered at the page top now, not as a tab.
               The 'spectrum' tab id is still in the TABS list so deep
-              links like /rag-explore?tab=spectrum don't 404 — they
+              links like /rag-explore?tab=spectrum don't 404, they
               just don't render a second copy here. The DEFAULT_TAB
-              is 'lenses' so the page opens with Spectrum (top) +
-              Concept Lenses (below tab nav) by default. */}
+              is 'related' so the page opens with Spectrum (top) +
+              Semantic Overlap (below tab nav) by default. */}
 
           {tab === 'themes' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Thematic clusters
+                Thematic Clusters
               </h2>
               <ThemesBrowser />
             </div>
@@ -428,7 +426,7 @@ export default function RagExplore() {
           {tab === 'names' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Famous figures (not in corpus)
+                Famous Figures (Not in Corpus)
               </h2>
               <FamousNames />
             </div>
@@ -437,7 +435,7 @@ export default function RagExplore() {
           {tab === 'atlas' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Geographic atlas
+                Geographic Atlas
               </h2>
               <GeographicAtlas />
             </div>
@@ -446,7 +444,7 @@ export default function RagExplore() {
           {tab === 'network' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Influence network
+                Influence Network
               </h2>
               <InfluenceList />
             </div>
@@ -455,7 +453,7 @@ export default function RagExplore() {
           {tab === 'tours' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Curated tours
+                Curated Tours
               </h2>
               <TourPages />
             </div>
@@ -464,7 +462,7 @@ export default function RagExplore() {
           {tab === 'quote-of-day' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Quote of the day
+                Quote of the Day
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 One quote rotates per day from 30 curated passages drawn from low/medium-tier audited interviews. Pre-curated; no LLM call per request. Click &quot;Next →&quot; to cycle.
@@ -474,7 +472,7 @@ export default function RagExplore() {
           )}
         </section>
 
-        {/* About this demo — content that previously sat above the
+        {/* About this demo, content that previously sat above the
             tab nav (intro paragraph, corpus stats, tier badges). Moved
             here so the demo content can be the first thing visitors
             see; the framing reads as a postscript rather than a wall
@@ -487,7 +485,7 @@ export default function RagExplore() {
             className="text-stone-900 text-2xl sm:text-3xl font-medium mb-4"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            About this page
+            About This Page
           </h2>
           <p
             className="text-stone-700 text-base sm:text-lg max-w-2xl"

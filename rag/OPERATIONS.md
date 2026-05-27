@@ -16,7 +16,7 @@ Voyage is the cheaper of the two services and the simplest to rotate.
    - **Netlify:** Project → Site settings → Environment variables → update `VOYAGE_API_KEY`. Then trigger a redeploy (empty commit + push, or "Trigger deploy" in the dashboard) so the function picks up the new value.
    - **Fly.io (MCP server):** `flyctl secrets set VOYAGE_API_KEY=... -a civil-rights-history-mcp` then `flyctl deploy`.
    - **Local development:** edit `rag/.env.local` and `mcp-server/.env.local`.
-3. Verify with `bash scripts/demo-queries.sh nonviolence` — should return results.
+3. Verify with `bash scripts/demo-queries.sh nonviolence`, should return results.
 4. Revoke the old key in the Voyage dashboard.
 
 ### Pinecone
@@ -57,7 +57,7 @@ Day-of-conference / day-of-demo, watch these signals (~5-min cadence):
      -H "X-Pinecone-API-Version: 2024-07" \
      https://civil-rights-odc9z70.svc.aped-4627-b74a.pinecone.io/describe_index_stats
    ```
-   Should return `totalVectorCount: 15464`. Drift means something destructive happened — investigate immediately before re-ingesting.
+   Should return `totalVectorCount: 15464`. Drift means something destructive happened, investigate immediately before re-ingesting.
 
 3. **Latest CI run on master**
    ```bash
@@ -89,10 +89,10 @@ If `transcripts/corrected/` changes (corrections applied, new entries added):
 # 1. Refresh the MCP server's leaders.json
 cd mcp-server && npm run build:leaders && cd ..
 
-# 2. Re-ingest (idempotent on content hash — only changed chunks re-embed)
+# 2. Re-ingest (idempotent on content hash, only changed chunks re-embed)
 node --env-file=rag/.env.local rag/ingest.mjs
 
-# 3. (Optional) Prune orphans from deleted entries — protected by 50% safety threshold
+# 3. (Optional) Prune orphans from deleted entries, protected by 50% safety threshold
 node --env-file=rag/.env.local rag/ingest.mjs --prune
 
 # 4. Regenerate precompute artifacts
@@ -108,7 +108,7 @@ git push
 
 - **`--force-prune`** on `ingest.mjs` bypasses the 50% orphan-ratio safety threshold. Use ONLY when the large prune is intentional (e.g., the 2026-05-26 `.srt`-only switch that dropped 62% of the index). Without it, the script exits with status 2 + an explanatory error rather than silently nuking the index when a typo in `PINECONE_INDEX` or wrong `corrected/` config makes everything look orphaned.
 
-- **`--resume`** on `precompute.mjs` skips entries whose `public/rag/related/entry-N.json` already exists. Useful when a precompute run was killed midway (harness timeout, AV-blocked node process, network blip) — partial state on disk is correct, and resume picks up where it left off without redoing the completed entries. The atomicity invariant: each entry's JSON is written atomically when its loop iteration ends, so `file exists` implies `this entry was fully processed by some earlier run`.
+- **`--resume`** on `precompute.mjs` skips entries whose `public/rag/related/entry-N.json` already exists. Useful when a precompute run was killed midway (harness timeout, AV-blocked node process, network blip), partial state on disk is correct, and resume picks up where it left off without redoing the completed entries. The atomicity invariant: each entry's JSON is written atomically when its loop iteration ends, so `file exists` implies `this entry was fully processed by some earlier run`.
 
 ## Cost ceiling
 
@@ -137,6 +137,6 @@ If the Pinecone index is wiped or corrupted:
 
 If `transcripts/corrected/` is the loss, recover from git history (`git log --all -- "transcripts/corrected/<dir>/"`) or re-apply corrections from `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` against `transcripts/raw/`.
 
-If the Netlify Function code is the loss, restore from git history — the function is in `netlify/functions/retrieve.mjs`.
+If the Netlify Function code is the loss, restore from git history, the function is in `netlify/functions/retrieve.mjs`.
 
 If everything is the loss, the corpus + audit work is reconstructable from the LoC source transcripts + the audit overlay in this repository. Treat the repository as the canonical reproduction artifact.

@@ -1,10 +1,10 @@
 /**
- * @fileoverview NomicProjection — fully custom React rendering of the
+ * @fileoverview NomicProjection, fully custom React rendering of the
  * 15,464-passage UMAP projection that Atlas computed on our behalf.
  *
  * Atlas is the data pipeline (UMAP + topic modeling); this is the
  * viewer. No Nomic iframes, no deepscatter widget, no third-party
- * JS — just our own canvas + topic overlay + search + brand styling.
+ * JS, just our own canvas + topic overlay + search + brand styling.
  *
  * The component fetches /rag/atlas_projection.json (produced by
  * rag/download_from_nomic.py) and renders:
@@ -39,7 +39,7 @@ import { ExternalLink, Search as SearchIcon, X } from 'lucide-react';
 const CSS_W = 880;
 const CSS_H = 540;
 
-// Color palette — varied warm tones for the topics, low-saturation so
+// Color palette, varied warm tones for the topics, low-saturation so
 // the chart stays atmospheric rather than rainbow-dashboard. The
 // 12-stop ring is reused if there are more topics than stops; modulo
 // gives ten clean visual buckets that re-enter without clashing.
@@ -446,10 +446,10 @@ export default function NomicProjection() {
 
       <p className="mt-3 text-xs text-stone-500 max-w-2xl">
         Each dot is one passage (about 5-15 seconds of speech). Position comes from a UMAP
-        projection of the Voyage embeddings — passages that share thematic content land
+        projection of the Voyage embeddings, passages that share thematic content land
         near each other even when the speakers never met. Topic labels are auto-generated;
         the underlying 2D layout is computed by Nomic Atlas, but every pixel rendered here
-        is drawn by this React component (canvas, brand palette, hover, search, filter —
+        is drawn by this React component (canvas, brand palette, hover, search, filter -
         no third-party viewer).
       </p>
     </div>

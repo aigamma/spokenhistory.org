@@ -2,12 +2,12 @@
 //
 // Two-stage retrieval for the civil rights corpus:
 //
-//   1. **Stage 1 — Pinecone hybrid query**: embed the user query via Voyage
+//   1. **Stage 1, Pinecone hybrid query**: embed the user query via Voyage
 //      (input_type='query'), then call Pinecone's /query endpoint with
 //      the dense vector + optional metadata filter. Pinecone returns the
 //      top-K most-similar chunks (K typically 20–50).
 //
-//   2. **Stage 2 — Voyage rerank-2**: take the top-K from stage 1 and
+//   2. **Stage 2, Voyage rerank-2**: take the top-K from stage 1 and
 //      hand them off to Voyage's rerank endpoint with the original
 //      query. Voyage returns scored indices; keep the top-N (typically
 //      5–10) and return them.
@@ -43,7 +43,7 @@ const DEFAULT_TOP_N = 8;
 
 // Issue a Pinecone /query call. Returns Pinecone matches:
 //   [{ id, score, values?, metadata: {...} }]
-// `filter` is a Pinecone metadata-filter object — e.g.,
+// `filter` is a Pinecone metadata-filter object, e.g.,
 //   { entry_number: { $eq: 73 } }   // restrict to entry #73
 //   { chunk_type: { $in: ['transcript_segment', 'summary_chapter'] } }
 //   { 'metadata.speaker': { $eq: 'Kathleen Cleaver' } }

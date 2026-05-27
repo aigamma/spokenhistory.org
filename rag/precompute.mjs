@@ -8,17 +8,17 @@
 //
 // Three features today:
 //
-//   1. RELATED  — for each chunk, the top-5 most similar passages from
+//   1. RELATED , for each chunk, the top-5 most similar passages from
 //                 OTHER entries. Powers the "related passages" panel on
 //                 every transcript page. Output:
 //                 public/rag/related/<entry-N>.json
 //
-//   2. CENTROIDS — per-entry mean embedding (averaged across a sampled
+//   2. CENTROIDS, per-entry mean embedding (averaged across a sampled
 //                  subset of the entry's chunks). The substrate for the
 //                  graph + constellation features below. Output:
 //                  public/rag/centroids.json
 //
-//   3. CONSTELLATION — 2D PCA projection of the entry centroids so the
+//   3. CONSTELLATION, 2D PCA projection of the entry centroids so the
 //                      corpus can be laid out spatially. Powers the
 //                      scatter / "embedding-space map" visualization
 //                      that makes the conference's "philosophy of
@@ -212,7 +212,7 @@ async function pineconeQueryById(id, { topK = 30, filter = null, namespace = '' 
 //
 // Cheap because /vectors/list only returns IDs; we then fetch the
 // metadata for one chunk per entry to get the entry_subject. (For
-// memory + bandwidth, we DON'T fetch values here — those come later
+// memory + bandwidth, we DON'T fetch values here, those come later
 // only for the chunks we actually need to centroid.)
 async function listEntriesIndex(namespace = '') {
   console.log('[precompute] listing all vector IDs...');
@@ -282,7 +282,7 @@ async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespac
         await access(outPath);
         skipped++;
         if (skipped <= 3 || skipped % 20 === 0) {
-          console.log(`[related] ${processed}/${totalEntries} entry #${n} ${rec.entry_subject}: existing file — skipping (resume)`);
+          console.log(`[related] ${processed}/${totalEntries} entry #${n} ${rec.entry_subject}: existing file, skipping (resume)`);
         }
         continue;
       } catch { /* file missing; process normally */ }
@@ -373,7 +373,7 @@ async function precomputeRelated({ byEntry, entriesFilter, relatedTopK, namespac
 
 // Per-entry mean embedding. Samples up to `centroidSample` chunks per
 // entry (default 30) and averages their vectors. This is a noisy
-// centroid but adequate for the 2D projection — sampling keeps the
+// centroid but adequate for the 2D projection, sampling keeps the
 // total bandwidth manageable (~136 × 30 × 4KB = ~16MB pulled total).
 async function precomputeCentroids({ byEntry, centroidSample, namespace, dryRun }) {
   const centroids = []; // { entry_number, entry_subject, vector, chunk_count_used }

@@ -15,23 +15,23 @@ The Civil Rights History Project needs a vector retrieval substrate for the Smit
 
 ## Alternatives considered
 
-### Option A — Self-hosted Weaviate on Fly.io
+### Option A, Self-hosted Weaviate on Fly.io
 - **Pros**: Adds Weaviate + Fly.io operational experience to Eric's portfolio. Native hybrid retrieval. No vendor lock-in (Apache 2.0). Lowest hosting cost at $20/mo.
 - **Cons**: Team handoff burden (Eric operates it; ~30–60 min/month ops). If Eric rolls off, the team inherits a Docker container they need to maintain.
 
-### Option B — Supabase pgvector
+### Option B, Supabase pgvector
 - **Pros**: Eric already uses this on aigamma.com (his lead Supabase showcase). Lowest ops burden. Direct MCP integration with Claude (`apply_migration`, `execute_sql`, `deploy_edge_function`, `get_logs`). $10/mo marginal as a new project under his existing Pro.
 - **Cons**: Doubles up on a substrate already in his portfolio. Hybrid retrieval requires hand-tuned `tsvector` + `cosine_distance` SQL rather than a pre-tuned hybrid operator.
 
-### Option C — Pinecone Builder
-- **Pros**: $20/mo flat covers multiple projects (worldthought + civil rights). Managed substrate — zero team-handoff burden. Polished dashboard for non-engineer stakeholders. Recent platform addition: dense + sparse + full-text indexes available on all tiers, closing the previous "hybrid retrieval is a Weaviate advantage" gap.
+### Option C, Pinecone Builder
+- **Pros**: $20/mo flat covers multiple projects (worldthought + civil rights). Managed substrate, zero team-handoff burden. Polished dashboard for non-engineer stakeholders. Recent platform addition: dense + sparse + full-text indexes available on all tiers, closing the previous "hybrid retrieval is a Weaviate advantage" gap.
 - **Cons**: Proprietary (data exportable but vendor lock-in real). Adds no new substrate to Eric's portfolio since worldthought already uses Pinecone. No MCP integration.
 
-### Option D — Weaviate Cloud (managed)
+### Option D, Weaviate Cloud (managed)
 - **Pros**: Managed Weaviate. Easy team handoff. Adds Weaviate to portfolio.
 - **Cons**: Recent pricing shift makes the Flex tier $45/mo minimum and Premium $400+. At this price point, Pinecone Builder ($20/mo) and self-hosted Weaviate (~$20/mo) both dominate.
 
-### Option E — Pinecone Cloud Standard
+### Option E, Pinecone Cloud Standard
 - **Pros**: Pay-as-you-go elasticity, dedicated read nodes, RBAC.
 - **Cons**: $50/mo minimum and most features (RBAC, HIPAA, DRN) are unnecessary for the civil rights workload.
 
@@ -48,13 +48,13 @@ The decision criteria, weighted:
 
 The team-handoff dimension carried the decision. The civil rights project has academic-team stakeholders with limited AI ops capacity; the substrate that ships with the lowest ongoing-maintenance footprint reduces the project's long-run risk. Pinecone Builder + Voyage AI is the highest-quality managed RAG stack at the lowest cost tier that still supports multiple projects under one billing relationship.
 
-The career-portfolio-variety dimension was deliberately deprioritized for this project. Eric's plan is to add Weaviate + Fly.io exposure on a separate personal project (selectsectors.com or similar) where the constraints are different — his own timeline, no academic team to inherit, no Smithsonian quality bar. That keeps the civil rights project's substrate decision driven by *project* needs rather than *career* needs.
+The career-portfolio-variety dimension was deliberately deprioritized for this project. Eric's plan is to add Weaviate + Fly.io exposure on a separate personal project (selectsectors.com or similar) where the constraints are different, his own timeline, no academic team to inherit, no Smithsonian quality bar. That keeps the civil rights project's substrate decision driven by *project* needs rather than *career* needs.
 
 ## What this commits us to
 
 ### Implementation (code)
 - All retrieval code lives in `rag/` (mirrors the directory convention used in worldthought.com)
-- Pinecone REST API access (no SDK) — same pattern as worldthought, lets us upgrade Pinecone API versions cleanly via the `X-Pinecone-API-Version` header in `shared.mjs`
+- Pinecone REST API access (no SDK), same pattern as worldthought, lets us upgrade Pinecone API versions cleanly via the `X-Pinecone-API-Version` header in `shared.mjs`
 - Voyage-3 (1024-dim) for document + query embeddings; rerank-2 for second-stage scoring
 - Idempotent ingest via content-hash-based deterministic IDs
 - Substrate-adapter pattern: the file surface to swap if we ever migrate (Pinecone-specific HTTP wrappers in `shared.mjs` + the upper-level CRUD in `ingest.mjs` / `retrieve.mjs`) is roughly 200 lines of code. Estimated migration to Supabase pgvector or Weaviate: 1–2 days.
@@ -71,16 +71,16 @@ The career-portfolio-variety dimension was deliberately deprioritized for this p
 - Total monthly RAG infrastructure: ~$22–25
 
 ### Team handoff artifacts (to be produced)
-- `rag/README.md` — architecture overview ✓
-- `rag/.env.example` — env-var template ✓
+- `rag/README.md`, architecture overview ✓
+- `rag/.env.example`, env-var template ✓
 - This decision record ✓
-- Runbook for common ops (re-ingest after audit overlay updates, prune orphaned vectors, query inspection via console, etc.) — pending
-- Panic-button migration script to Supabase pgvector — pending (insurance policy)
+- Runbook for common ops (re-ingest after audit overlay updates, prune orphaned vectors, query inspection via console, etc.), pending
+- Panic-button migration script to Supabase pgvector, pending (insurance policy)
 
 ## What we explicitly deferred
 
 - **Weaviate + Fly.io exposure**: deferred to a separate personal project (likely selectsectors.com or similar). Not part of the civil rights deliverable.
-- **Backup/restore on Pinecone**: Builder tier doesn't include automated backup/restore (that's Standard-tier and above). The civil rights corpus is regeneratable from `transcripts/raw/` + `CLEANED_TRANSCRIPTS_REVIEW.md` + `civil_rights_facts.json`, so the loss-of-index scenario is "re-run the ingest" — roughly $2 + 10 minutes. Backup is therefore not load-bearing.
+- **Backup/restore on Pinecone**: Builder tier doesn't include automated backup/restore (that's Standard-tier and above). The civil rights corpus is regeneratable from `transcripts/raw/` + `CLEANED_TRANSCRIPTS_REVIEW.md` + `civil_rights_facts.json`, so the loss-of-index scenario is "re-run the ingest", roughly $2 + 10 minutes. Backup is therefore not load-bearing.
 - **HA / multi-region**: Pinecone Builder is single-region. For an academic project with no live transaction SLA, single-region is acceptable.
 - **MCP integration**: Pinecone has no first-party MCP server as of 2026-05-22. Operations happen via REST API + console. The Supabase MCP advantage is acknowledged but not decisive given the other criteria.
 

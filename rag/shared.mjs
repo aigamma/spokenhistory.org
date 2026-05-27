@@ -65,7 +65,7 @@ export function voyageHeaders() {
 // Source file extensions we ingest. Civil-rights raw transcripts come
 // as .txt, .srt, and .vtt (all derived from the same Whisper output).
 // We ingest ONLY .srt because:
-//   1. SRT is time-anchored — every chunk carries timestampStart/End,
+//   1. SRT is time-anchored, every chunk carries timestampStart/End,
 //      so every retrieval result can produce a citation with the exact
 //      audio offset. .txt loses that.
 //   2. .vtt is a near-identical re-encoding of .srt and produces
@@ -104,8 +104,8 @@ export async function walkDir(dir) {
 // Whisper-empty multi-speaker joint interviews. They've since been
 // ingested with full content via the 2026-05-25 Dustin-student batch
 // (transcripts/ingestion/ingest_new_batch_2026-05-25.py), so they were
-// REMOVED from the skip set — the ingest walker now finds them and
-// embeds their content. #31 (Eddie Holloway redirect — covered via joint
+// REMOVED from the skip set, the ingest walker now finds them and
+// embeds their content. #31 (Eddie Holloway redirect, covered via joint
 // #75) and #95 (Crosby + Long + Miller group) remain skipped: both have
 // no corrected/ data and remain coverage gaps.
 export const SKIPPED_ENTRIES = new Set([31, 95]);

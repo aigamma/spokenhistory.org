@@ -10,8 +10,8 @@
  *
  * If a new tier value is added to the corpus manifests, update:
  *   1. This file (TIER_VOCABULARY + each map below)
- *   2. mcp-server/server.mjs::fidelityNote (inline copy — Docker isolation)
- *   3. netlify/functions/retrieve.mjs::fidelityNote (inline copy — Function isolation)
+ *   2. mcp-server/server.mjs::fidelityNote (inline copy, Docker isolation)
+ *   3. netlify/functions/retrieve.mjs::fidelityNote (inline copy, Function isolation)
  *   4. mcp-server/USAGE_GUIDE.md tier reference table
  *   5. rag/INTERACTIVE_FEATURES_DESIGN.md tier-color-palette section
  *   6. mcp-server/server.mjs source_for_claim prompt tier enumeration
@@ -54,7 +54,7 @@ export const TIER_BADGE = {
 
 // Raw hex colors for SVG fills on the Constellation scatter. Darker
 // 600/700-level variants chosen for visibility against the cream
-// background — different brightness from the badge palette above
+// background, different brightness from the badge palette above
 // because the contexts demand different luminance.
 //
 // Note: tier ordering is high (best) → ingestion-only (provenance-pinned).
@@ -86,7 +86,7 @@ export function fidelityNoteFor(provenance, tier) {
     return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.';
   }
   if (provenance === 'audit-original') {
-    if (tier === 'high') return 'Audited transcript (Pass 1–9); minimal residual error expected — publishable as-is.';
+    if (tier === 'high') return 'Audited transcript (Pass 1–9); minimal residual error expected, publishable as-is.';
     if (tier === 'medium') return 'Audited transcript (Pass 1–9); publication-eligible with caveat note.';
     if (tier === 'low') return 'Audited transcript (Pass 1–9); adversarial-ensemble review recommended before publication-grade attribution.';
     if (tier === 'publication-block') return 'Audited transcript with documented publication-blocker issues; verify the specific passage against audio before citing.';

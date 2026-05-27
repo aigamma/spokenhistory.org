@@ -1,5 +1,5 @@
 /**
- * @fileoverview InterviewIndex — card-based directory of all 136 interviews.
+ * @fileoverview InterviewIndex, card-based directory of all 136 interviews.
  *
  * Originally fetched from Firestore (`interviewIndex` collection); rewired
  * 2026-05-26 to read from the RAG substrate JSON files:
@@ -9,7 +9,7 @@
  * This works without Firestore being populated. When the team eventually
  * pushes Metadata Generation System outputs into Firestore, that data
  * can be merged in as a secondary layer (timestamps, chapter summaries,
- * etc.) — but the directory itself stays RAG-backed.
+ * etc.), but the directory itself stays RAG-backed.
  */
 
 import { useEffect, useMemo, useState } from 'react';

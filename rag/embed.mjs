@@ -7,7 +7,7 @@
 //
 // Used at ingest time by rag/ingest.mjs (input_type='document') and at
 // retrieval time by rag/retrieve.mjs (input_type='query'). The two
-// modes use different internal embedding heads on Voyage's side — query
+// modes use different internal embedding heads on Voyage's side, query
 // embeddings are tuned for retrieval ranking, document embeddings are
 // tuned for storage. Always pass the right input_type.
 

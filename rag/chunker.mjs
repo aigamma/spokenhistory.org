@@ -12,7 +12,7 @@
 //
 // 2. **Text-only chunking** (.txt fallback, or when timing data is
 //    unavailable): paragraph-aware splitting matching the worldthought.com
-//    convention — 1100-char target, 180-char overlap, sentence-aware
+//    convention, 1100-char target, 180-char overlap, sentence-aware
 //    fallback for long paragraphs.
 //
 // The chunker preserves the speaker label where Whisper output marks
@@ -62,7 +62,7 @@ export function parseSubtitleCues(content) {
       i++;
       continue;
     }
-    // Cue numeric ID (SRT) — skip if present
+    // Cue numeric ID (SRT), skip if present
     if (/^\d+$/.test(line)) {
       i++;
       if (i >= lines.length) break;

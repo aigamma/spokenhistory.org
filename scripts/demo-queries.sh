@@ -7,7 +7,7 @@
 #
 #   - Cross-interview thematic retrieval ("nonviolence as theology")
 #   - Topical retrieval anchored to specific events ("16th Street Baptist Church bombing")
-#   - Per-interviewee filtering (Wheeler Parker on Emmett Till — entry filter)
+#   - Per-interviewee filtering (Wheeler Parker on Emmett Till, entry filter)
 #   - Quote-finder pattern (paraphrase → primary source)
 #   - Multi-perspective surfacing on a contested topic ("Black Power vs nonviolence")
 #
@@ -74,7 +74,7 @@ if [ "$want" = "all" ] || [ "$want" = "selma" ]; then
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "till" ]; then
-  query_one "Wheeler Parker Jr. on Emmett Till — scoped via metadata filter" \
+  query_one "Wheeler Parker Jr. on Emmett Till, scoped via metadata filter" \
     '{"query":"my cousin Emmett Till","filter":{"entry_number":{"$eq":125}},"topN":3}'
 fi
 
@@ -84,12 +84,12 @@ if [ "$want" = "all" ] || [ "$want" = "quote" ]; then
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "black-power" ]; then
-  query_one "Black Power vs. nonviolence — polyphonic view (dedupeByEntry)" \
+  query_one "Black Power vs. nonviolence, polyphonic view (dedupeByEntry)" \
     '{"query":"young SNCC organizers turning away from nonviolence toward Black Power","topN":4,"dedupeByEntry":true}'
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "selma-poly" ]; then
-  query_one "Bloody Sunday — polyphonic view (dedupeByEntry; one voice per interviewee)" \
+  query_one "Bloody Sunday, polyphonic view (dedupeByEntry; one voice per interviewee)" \
     '{"query":"bloody sunday edmund pettus bridge first-person account","topN":3,"dedupeByEntry":true}'
 fi
 
@@ -114,6 +114,6 @@ if [ "$want" = "all" ] || [ "$want" = "voting-rights" ]; then
 fi
 
 if [ "$want" = "all" ] || [ "$want" = "mlk-assassination" ]; then
-  query_one "Dr. King assassination 1968 — what witnesses recall" \
+  query_one "Dr. King assassination 1968, what witnesses recall" \
     '{"query":"Dr. King assassination 1968","topN":3,"dedupeByEntry":true}'
 fi

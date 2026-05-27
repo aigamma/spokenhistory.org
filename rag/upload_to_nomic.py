@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""rag/upload_to_nomic.py — one-time upload of the civil-rights passage
+"""rag/upload_to_nomic.py, one-time upload of the civil-rights passage
 corpus to atlas.nomic.ai.
 
 STATUS (2026-05-27): Nomic Atlas account was canceled after the
@@ -54,7 +54,7 @@ Each line:
     }
 
 We pass `embedding` to Atlas as the precomputed vector (skipping
-Nomic's own embedding step — we already have Voyage embeddings that
+Nomic's own embedding step, we already have Voyage embeddings that
 match the Pinecone index, and using them keeps the Atlas projection
 consistent with retrieval rankings).
 """
@@ -189,7 +189,7 @@ def load_ndjson(path: Path, limit: int = 0):
             # (e.g. clicking a point and resolving to the chunk).
             if "id" in row:
                 row["pinecone_id"] = row.pop("id")
-            # Atlas also doesn't allow None values inside metadata —
+            # Atlas also doesn't allow None values inside metadata -
             # cast everything to a JSON-friendly primitive.
             for k, v in list(row.items()):
                 if v is None:

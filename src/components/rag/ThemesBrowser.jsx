@@ -1,5 +1,5 @@
 /**
- * @fileoverview ThemesBrowser — 30 k-means thematic clusters with
+ * @fileoverview ThemesBrowser, 30 k-means thematic clusters with
  * LLM-generated names + descriptions + starter queries.
  *
  * Two views, toggleable:
@@ -43,7 +43,7 @@ export default function ThemesBrowser() {
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
         K-means partition of all 136 interview centroids into 30 thematic clusters in the
         1024-dimensional embedding space. Each cluster is a region of the space where
-        interviewees&apos; testimony rhymes — even when they never met.
+        interviewees&apos; testimony rhymes, even when they never met.
         {' '}Below, each bubble is positioned at the centroid of its members&apos; coordinates
         in the same 2D projection used by the Constellation tab; bubble size is the
         cluster&apos;s member count; bubble color shows the dominant audit-confidence tier
@@ -186,10 +186,10 @@ function ClusterBody({ cluster }) {
 }
 
 /**
- * ThemeDrillDown — run the cluster's starter_query against /retrieve
+ * ThemeDrillDown, run the cluster's starter_query against /retrieve
  * and surface the top passages that anchor the theme. Unlike Spectrum
  * / InterviewMap drill-downs, this one is NOT filtered to a single
- * entry — themes span multiple voices, and showing passages from
+ * entry, themes span multiple voices, and showing passages from
  * across the cluster's members is exactly what makes the theme
  * concrete.
  */

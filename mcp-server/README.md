@@ -1,9 +1,9 @@
-# mcp-server/ — Civil Rights History Project MCP server
+# mcp-server/, Civil Rights History Project MCP server
 
 Remote MCP server exposing the Library of Congress / Smithsonian NMAAHC
 civil rights oral history archive via the Model Context Protocol.
 
-**End-user documentation:** see [`USAGE_GUIDE.md`](./USAGE_GUIDE.md) — the
+**End-user documentation:** see [`USAGE_GUIDE.md`](./USAGE_GUIDE.md), the
 audience-facing guide that explains the tools, the citation patterns,
 and the worked examples. Read that first if you are evaluating the
 connector for use in Claude Desktop / claude.ai / another MCP client.
@@ -67,7 +67,7 @@ Summary:
 4. Configure custom domain via `flyctl certs add <hostname>`
 
 The Docker image is self-contained (the retrieval logic is inlined into
-`server.mjs` — no parent-dir COPY needed). VM size is shared-cpu-1x with
+`server.mjs`, no parent-dir COPY needed). VM size is shared-cpu-1x with
 256 MB; the in-process working set is small since Voyage + Pinecone are
 HTTP services.
 

@@ -84,7 +84,7 @@ test('chunkSubtitles aggregates within 60s window', () => {
     });
   }
   const chunks = chunkSubtitles(cues);
-  // 10 cues × 5s each = 50s total — should fit in one chunk
+  // 10 cues × 5s each = 50s total, should fit in one chunk
   assert.equal(chunks.length, 1);
   assert.equal(chunks[0].timestamp_start_seconds, 0);
   assert.equal(chunks[0].timestamp_end_seconds, 50);
@@ -101,7 +101,7 @@ test('chunkSubtitles splits at 60s boundary', () => {
     });
   }
   const chunks = chunkSubtitles(cues);
-  // 20 cues × 5s = 100s — should produce 2 chunks
+  // 20 cues × 5s = 100s, should produce 2 chunks
   assert.ok(chunks.length >= 2);
   // All chunks should have timestamp metadata
   for (const ch of chunks) {

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-apply_corrections.py — Phase 3 of the Civil Rights History Project audit
+apply_corrections.py, Phase 3 of the Civil Rights History Project audit
 ========================================================================
 
 Parse the per-entry correction tables in ``transcripts/CLEANED_TRANSCRIPTS_REVIEW.md``
@@ -49,7 +49,7 @@ Run with ``--help`` for a full option listing.
 
 Notes on robustness
 -------------------
-- The script is **idempotent** — re-running on already-corrected output produces
+- The script is **idempotent**, re-running on already-corrected output produces
   identical bytes. Partial outputs from interrupted runs can simply be re-written
   without losing data.
 - We do case-insensitive substring substitution at the Python string level
@@ -544,7 +544,7 @@ def _row_should_drop(row: CorrectionRow) -> tuple[bool, str | None]:
         return True, "n/a confidence"
     if not whisper:
         return True, "empty whisper rendering"
-    if not correction or correction in {"-", "—", "n/a"}:
+    if not correction or correction in {"-", "-", "n/a"}:
         return True, "empty correction column"
     if any(p in correction_lc for p in DROP_NOTE_PATTERNS):
         return True, f"correction notes indicate drop: {correction[:60]}"
@@ -575,7 +575,7 @@ def _candidate_renderings(whisper: str) -> list[str]:
     raw = raw.strip("*").strip()
     # Drop surrounding curly / straight quotes.
     raw = raw.strip("\"'“”‘’")
-    # Split on " / " (with spaces on each side) — keeps URLs / names with slashes intact.
+    # Split on " / " (with spaces on each side), keeps URLs / names with slashes intact.
     parts = re.split(r"\s+/\s+", raw)
     # If no slash-split happened and the rendering is suspiciously long with no
     # obvious alternatives, keep just the single rendering.
@@ -622,7 +622,7 @@ def _clean_correction_text(correction: str) -> str:
 # (``_ci_substring_replace`` below). On Windows under heavy use, holding
 # compiled ``re.Pattern`` objects across many ``subn`` calls would, very rarely,
 # trigger a segfault or return a tuple containing a Pattern instead of the
-# expected ``(str, int)`` — a memory-corruption-class CPython issue. The
+# expected ``(str, int)``, a memory-corruption-class CPython issue. The
 # plain-string approach has the same word-boundary semantics and no such issues.
 
 
@@ -636,7 +636,7 @@ def apply_substitutions_to_text(
     Idempotent: re-running on already-corrected text leaves it unchanged because
     the candidate strings no longer match.
 
-    The replacement text is treated as a literal string — backslash sequences
+    The replacement text is treated as a literal string, backslash sequences
     inside it are not interpreted as regex backreferences (we use a no-op lambda
     around the replacement instead of passing it to ``Pattern.subn`` directly).
     """
@@ -651,7 +651,7 @@ def apply_substitutions_to_text(
         if not isinstance(cand, str):  # pragma: no cover - defensive
             continue
         if cand.lower() == replacement.lower():
-            # Self-mapping (only differs by case) — skip; not a substantive correction.
+            # Self-mapping (only differs by case), skip; not a substantive correction.
             continue
         new_text, n = _ci_substring_replace(new_text, cand, replacement)
         if not isinstance(new_text, str):  # pragma: no cover - defensive
@@ -684,7 +684,7 @@ def apply_substitutions_to_text(
 # legitimate possessive replacements and are allowed by the rule below.)
 _SHORT_NEEDLE_MAX_LEN = 3
 _APOSTROPHE_CHARS = "'‘’ʼʻ"
-_HYPHEN_CHARS = "-‑‒–—"  # ASCII hyphen + Unicode hyphens/dashes
+_HYPHEN_CHARS = "-‑‒–-"  # ASCII hyphen + Unicode hyphens/dashes
 _CONTRACTION_SUFFIXES = ("t", "ll", "d", "m", "ve", "re")
 
 
@@ -735,7 +735,7 @@ def _short_needle_blocked_before(text: str, pos: int) -> bool:
 def _ci_substring_replace(text: str, needle: str, replacement: str) -> tuple[str, int]:
     """Case-insensitive substring replace WITHOUT using the regex engine.
 
-    This avoids CPython's regex engine entirely — substituting at the string
+    This avoids CPython's regex engine entirely, substituting at the string
     level via `str.lower` index lookups. Word-boundary handling: if both the
     needle's first and last characters are alphanumeric, we require that the
     character before the match (if any) and the character after the match (if
@@ -819,7 +819,7 @@ def apply_substitutions_to_srt_vtt(
             out_lines.append(line)
             continue
         if line.strip().isdigit():
-            # Cue index in SRT — leave alone.
+            # Cue index in SRT, leave alone.
             out_lines.append(line)
             continue
         if line.strip().upper() == "WEBVTT" or line.strip().startswith("WEBVTT"):
@@ -866,7 +866,7 @@ def _files_in_entry(raw_dir: Path) -> list[Path]:
             continue
         if p.suffix.lower() not in TARGET_SUFFIXES:
             continue
-        # Skip the human-readable summary file — it doesn't contain transcript text.
+        # Skip the human-readable summary file, it doesn't contain transcript text.
         if "_interview_summary_" in p.name:
             continue
         out.append(p)

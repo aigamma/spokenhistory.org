@@ -1,5 +1,5 @@
 /**
- * Civil Rights History Project — Remote MCP Server
+ * Civil Rights History Project, Remote MCP Server
  *
  * Exposes the Library of Congress / Smithsonian NMAAHC oral history
  * archive to Claude Desktop, Claude.ai Custom Connectors, and any other
@@ -12,7 +12,7 @@
  *   - This replaces the prior OpenAI text-embedding-3-small + Firestore
  *     in-memory cosine-scan path. The retrieval logic is inlined here
  *     (mirrors rag/embed.mjs + rag/retrieve.mjs) so the Docker image
- *     stays self-contained — track those files as the canonical source.
+ *     stays self-contained, track those files as the canonical source.
  *
  * Six tools (three primitives + three research patterns):
  *
@@ -46,7 +46,7 @@
  *       search_transcripts with that filter, sorts results by timestamp.
  *
  *   - source_for_claim(claim)
- *       Wraps search_transcripts with limit=8 (no dedupe — polyphonic
+ *       Wraps search_transcripts with limit=8 (no dedupe, polyphonic
  *       record preserved). Returns passages plus a `framing` instructing
  *       SUPPORTS / COMPLICATES / CONTRADICTS labeling per result.
  *
@@ -54,7 +54,7 @@
  * with the same names. This is intentional dual exposure: some MCP
  * clients (Claude Desktop) surface prompts as slash-commands and route
  * them through the model; others (Codex Desktop, ChatGPT Apps SDK) do
- * NOT route prompts to the model — only tools are model-callable on
+ * NOT route prompts to the model, only tools are model-callable on
  * those surfaces. Exposing the patterns as both means they reach the
  * model on every client regardless of capability surface.
  *
@@ -273,11 +273,11 @@ function formatTimestamp(seconds) {
 
 function fidelityNote(provenance, tier) {
   // The five tier values that actually appear in the corpus manifests:
-  //   low (72)              — well-audited, low residual error
-  //   medium (18)           — residual uncertainty
-  //   publication-block (23)— known issues block direct publication
-  //   not-auditable (14)    — can't verify against external canonical source
-  //   ingestion-only (9)    — new entries, single-pass ingestion
+  //   low (72)             , well-audited, low residual error
+  //   medium (18)          , residual uncertainty
+  //   publication-block (23)- known issues block direct publication
+  //   not-auditable (14)   , can't verify against external canonical source
+  //   ingestion-only (9)   , new entries, single-pass ingestion
   if (tier === 'ingestion-only' || provenance === 'ingestion-only') {
     return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.'
   }
@@ -478,7 +478,7 @@ async function getTranscript({ entry_number, interview_id }) {
   // straight "list-by-metadata" call, so we use /query with a high
   // topK and a dummy vector (zeros). The metadata filter does the
   // actual selection; the score from cosine against zeros is
-  // irrelevant — we re-sort by chunk_index below.
+  // irrelevant, we re-sort by chunk_index below.
   //
   // 1024 zeros to match voyage-3 dim. topK=400 is well above any
   // entry's chunk count (max observed ~250 for the longest interview).
@@ -549,7 +549,7 @@ function normalizeLeaderName(name) {
 // PROMPT_DEFINITIONS below) for clients that surface prompts as
 // slash-commands or template menus (Claude Desktop). They're ALSO
 // exposed as tools because some MCP clients (Codex Desktop, ChatGPT
-// Apps SDK) do not route MCP prompts to the model — only tools are
+// Apps SDK) do not route MCP prompts to the model, only tools are
 // model-callable on those surfaces. Dual exposure means the patterns
 // reach the model on every client regardless of capability surface.
 //
@@ -576,7 +576,7 @@ async function comparePerspectives({ topic }) {
       'These passages are from different interviewees in the archive, each discussing the requested topic. ' +
       'Present each as a citation block (interviewee · quoted passage · timestamp · locItemUrl · audit-tier badge) ' +
       'and surface the agreements, tensions, and complementary perspectives across voices. Do not synthesize a ' +
-      'single conclusion — the polyphonic record IS the point of an oral history archive. If uncertaintyTier ' +
+      'single conclusion, the polyphonic record IS the point of an oral history archive. If uncertaintyTier ' +
       'is anything other than "low", pass the fidelityNote through to the user verbatim.',
     results,
   }
@@ -646,7 +646,7 @@ async function sourceForClaim({ claim }) {
       'These passages bear on the stated claim. For each, present a COMPLETE academic citation block ' +
       '(interviewee · quoted passage · timestamp · locItemUrl · suggestedCitation · fidelityNote) and then a ' +
       "one-sentence justification noting whether the passage SUPPORTS, COMPLICATES, or CONTRADICTS the claim, " +
-      "grounded in the passage's actual words. If multiple passages bear on the claim, present ALL of them — " +
+      "grounded in the passage's actual words. If multiple passages bear on the claim, present ALL of them, " +
       "do not synthesize a single answer. If uncertaintyTier is anything other than \"low\", flag that the " +
       "transcript fidelity is not fully audited and recommend verification against the LoC audio.",
     results,
@@ -884,7 +884,7 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `in the Library of Congress / Smithsonian NMAAHC civil rights oral history collection discussed ` +
               `${promptArgs.topic || '<TOPIC>'}.\n\n` +
               `Workflow:\n` +
-              `1. Call search_transcripts({query: "${promptArgs.topic || '<TOPIC>'}", limit: 6, dedupe_by_entry: true}) to find one passage per distinct interviewee — the dedupe parameter guarantees you see the polyphonic record rather than the same speaker twice.\n` +
+              `1. Call search_transcripts({query: "${promptArgs.topic || '<TOPIC>'}", limit: 6, dedupe_by_entry: true}) to find one passage per distinct interviewee, the dedupe parameter guarantees you see the polyphonic record rather than the same speaker twice.\n` +
               `2. The 6 results should already be 6 distinct voices. Aim to present 3-5 of them in the comparison.\n` +
               `3. For each interviewee, quote the relevant passage verbatim, then summarize their framing in one sentence.\n` +
               `4. After presenting all voices, surface the tensions, agreements, and complementary perspectives.\n\n` +
@@ -893,7 +893,7 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `- Timestamp range (timestampStartStr–timestampEndStr)\n` +
               `- Library of Congress catalog URL (locItemUrl)\n` +
               `- Transcript-fidelity disclosure (fidelityNote)\n\n` +
-              `Treat this as primary-source scholarship. The polyphonic record IS the answer — do not collapse the perspectives into a single synthetic view.`,
+              `Treat this as primary-source scholarship. The polyphonic record IS the answer, do not collapse the perspectives into a single synthetic view.`,
           },
         },
       ],
@@ -918,7 +918,7 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `4. Present them as a chronological progression, quoting each passage with its timestamp range.\n` +
               `5. After the quotes, summarize how the framing evolves across the interview.\n\n` +
               `Citation requirements for each quoted passage:\n` +
-              `- Timestamp range (timestampStartStr–timestampEndStr) — the audio offset is the chapter anchor\n` +
+              `- Timestamp range (timestampStartStr–timestampEndStr), the audio offset is the chapter anchor\n` +
               `- Library of Congress catalog URL (locItemUrl)\n` +
               `- Transcript-fidelity disclosure (fidelityNote)`,
           },
@@ -943,18 +943,18 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `   - Interviewee name (entrySubject)\n` +
               `   - The passage text itself, quoted faithfully\n` +
               `   - Timestamp range (timestampStartStr–timestampEndStr)\n` +
-              `   - Library of Congress catalog URL (locItemUrl) — the verifiable primary source\n` +
-              `   - Transcript-fidelity transparency flag (fidelityNote) — researchers MUST see this\n` +
+              `   - Library of Congress catalog URL (locItemUrl), the verifiable primary source\n` +
+              `   - Transcript-fidelity transparency flag (fidelityNote), researchers MUST see this\n` +
               `   - The pre-formatted Chicago citation (suggestedCitation field)\n` +
               `3. Below each citation, note whether the passage SUPPORTS, COMPLICATES, or CONTRADICTS the claim, ` +
               `with a one-sentence justification grounded in the passage's actual words.\n\n` +
               `Critical reporting requirements:\n` +
-              `- If multiple passages bear on the claim, present ALL of them — the polyphonic record is the point of an oral history archive.\n` +
+              `- If multiple passages bear on the claim, present ALL of them, the polyphonic record is the point of an oral history archive.\n` +
               `- Do NOT synthesize a single answer. Let the primary sources speak.\n` +
               `- If uncertaintyTier is anything other than "low" (i.e., "medium", "publication-block", "not-auditable", or "ingestion-only"), ` +
               `explicitly flag that the transcript fidelity is not fully audited and recommend the researcher verify against the LoC audio. ` +
-              `The fidelityNote field carries the specific per-tier transparency text — pass it through to the user verbatim.\n` +
-              `- If the search returns no results, say so directly. Do not paraphrase from your training data — this corpus is the source of truth.\n\n` +
+              `The fidelityNote field carries the specific per-tier transparency text, pass it through to the user verbatim.\n` +
+              `- If the search returns no results, say so directly. Do not paraphrase from your training data, this corpus is the source of truth.\n\n` +
               `A Chicago-Manual-of-Style citation template (the suggestedCitation field follows this pattern):\n` +
               `   [Interviewee], interview, Civil Rights History Project, American Folklife Center, Library of Congress ` +
               `in association with the Smithsonian National Museum of African American History and Culture, [locItemUrl], at [timestampStart]–[timestampEnd].`,
@@ -1018,18 +1018,18 @@ app.post('/mcp', async (req, res) => {
 // ── Transport dispatch ──────────────────────────────────────────────
 //
 // Two run modes:
-//   1. HTTP (default) — `node server.mjs`. Listens on PORT and serves
+//   1. HTTP (default), `node server.mjs`. Listens on PORT and serves
 //      /mcp via StreamableHTTPServerTransport. This is the Fly.io
 //      deployment target and the local-dev target for the website's
 //      /retrieve Netlify Function proxy.
-//   2. stdio — `node server.mjs --stdio` (or MCP_TRANSPORT=stdio).
+//   2. stdio, `node server.mjs --stdio` (or MCP_TRANSPORT=stdio).
 //      Used by desktop MCP clients (Codex Desktop, Claude Desktop)
 //      that spawn the server as a subprocess and communicate over
 //      stdin/stdout per the MCP stdio transport. No HTTP listener;
 //      the Express app is set up above but never told to listen.
 //
 // CRITICAL for stdio mode: nothing must write to stdout besides the
-// transport itself — stray prints would corrupt the JSON-RPC stream.
+// transport itself, stray prints would corrupt the JSON-RPC stream.
 // All existing console.log calls in this file either run only in HTTP
 // mode (the "listening on" line below) or use console.error/.warn
 // (which go to stderr, safe). Future additions to this file must
