@@ -246,16 +246,24 @@ export default function RagExplore() {
                     aria-pressed={isActive}
                     className={
                       'inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full border-2 text-sm sm:text-base font-medium transition-all ' +
+                      // Three distinct visual states so active and
+                      // hover never look the same (Eric's bug):
+                      //   Active    = brand-red solid fill, white text,
+                      //               soft brand-red ring shadow.
+                      //   Hover     = white background, dark text, brand-red
+                      //               border + subtle glow ring.
+                      //   Default   = white background, dark/stone text,
+                      //               stone border (heavier for featured).
                       (isActive
-                        ? 'bg-stone-900 text-white border-stone-900 shadow-sm'
+                        ? 'bg-civil-red-strong text-white border-civil-red-strong shadow-md ring-2 ring-red-200'
                         : t.featured
-                          ? 'bg-white text-stone-900 border-stone-900 hover:bg-stone-900 hover:text-white'
-                          : 'bg-white text-stone-700 border-stone-300 hover:border-stone-900 hover:text-stone-900')
+                          ? 'bg-white text-stone-900 border-stone-900 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-100'
+                          : 'bg-white text-stone-700 border-stone-300 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-100')
                     }
                     style={{ fontFamily: 'Chivo Mono, monospace' }}
                   >
                     {t.featured && (
-                      <span aria-hidden="true" className="mr-1.5 text-red-600">
+                      <span aria-hidden="true" className={'mr-1.5 ' + (isActive ? 'text-yellow-200' : 'text-red-600')}>
                         ★
                       </span>
                     )}
