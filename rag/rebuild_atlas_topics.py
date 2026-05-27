@@ -3,6 +3,10 @@
 on the existing civil-rights-passages dataset, with topic_label_field
 set so Atlas generates human-readable topic names from passage text.
 
+STATUS (2026-05-27): Nomic Atlas account was canceled. This script
+will FAIL without an active account. Kept for reference; see
+`rag/ATLAS_PROVENANCE.md` for the full story and replacement path.
+
 The initial map was created without the topic_label_field option;
 its topics show as emoji-encoded placeholder IDs. This script asks
 Atlas to add a new index with proper labels. The original map is

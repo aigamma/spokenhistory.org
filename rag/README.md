@@ -253,3 +253,23 @@ Pinecone organization (one account: eric@aigamma.com)
 This is intentional. Two separate projects keeps each corpus's metadata schema and namespacing independent, lets each project have its own API key for least-privilege access, and isolates blast radius if one project ever needs to be rotated or wiped. The shared billing-relationship + shared Voyage AI key keeps costs combined under the same per-month ceiling (~$22-25/mo for the pair).
 
 The application-layer code in this directory (`shared.mjs`, `ingest.mjs`, `retrieve.mjs`) is identical to the worldthought.com `scripts/rag/` modules in structure but reads its own `.env.local` so a misconfiguration on one project can't accidentally write to the other's index.
+
+## Nomic Atlas (used briefly, then canceled)
+
+A Nomic Atlas Plus account was active from 2026-05-26 through approximately
+2026-05-27 to compute a UMAP projection + auto-labeled topic model on the
+15,464-passage corpus. The static output is preserved in
+`public/rag/atlas_projection.json` (5.10 MB, in git). After Atlas was
+canceled, no further Atlas calls happen on the public site — the JSON is
+the only piece that ever mattered for visualization, and it lives forever.
+
+See [`ATLAS_PROVENANCE.md`](./ATLAS_PROVENANCE.md) for full documentation
+of:
+- What's in `atlas_projection.json` (schema, row counts, the 8 broad topic
+  labels)
+- The four pipeline scripts (`dump_for_nomic.mjs`, `upload_to_nomic.py`,
+  `rebuild_atlas_topics.py`, `download_from_nomic.py`) — retained for
+  reference; they will FAIL post-cancellation because they hit
+  Atlas-account-scoped endpoints
+- The drop-in replacement (self-hosted UMAP via `umap-learn`) if the
+  corpus ever needs re-projection without re-subscribing to Atlas

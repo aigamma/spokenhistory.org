@@ -2,6 +2,11 @@
 """rag/upload_to_nomic.py — one-time upload of the civil-rights passage
 corpus to atlas.nomic.ai.
 
+STATUS (2026-05-27): Nomic Atlas account was canceled after the
+projection JSON was extracted. This script will FAIL because it
+requires a valid NOMIC_API_KEY tied to an active account. Kept for
+reference only. See `rag/ATLAS_PROVENANCE.md` for the full story.
+
 Reads the NDJSON produced by `rag/dump_for_nomic.mjs` (each line carries
 an `embedding` array + the metadata fields Atlas surfaces) and pushes
 to Nomic via the official Python SDK. Atlas projects the embeddings

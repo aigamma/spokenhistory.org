@@ -1,6 +1,14 @@
 #!/usr/bin/env node
 // rag/dump_for_nomic.mjs
 //
+// STATUS (2026-05-27): The Nomic Atlas account was canceled after the
+// initial projection was downloaded. This script still works against
+// Pinecone (the Pinecone account is active), but the downstream
+// upload_to_nomic.py will fail without an Atlas account. The output
+// `public/rag/atlas_projection.json` is preserved permanently; see
+// `rag/ATLAS_PROVENANCE.md` for the full story and replacement path
+// (umap-learn) if re-projection is ever needed.
+//
 // One-shot dump of all 15K passage vectors + metadata from the
 // civil-rights Pinecone index into an NDJSON file at the path
 // passed as --out (defaults to public/rag/nomic_export.ndjson).

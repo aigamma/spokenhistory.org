@@ -3,6 +3,13 @@
 that Atlas computed for our civil-rights-passages dataset, and save
 them as a static JSON the React app can render entirely on its own.
 
+STATUS (2026-05-27): Nomic Atlas account was canceled after this
+script ran successfully and produced `public/rag/atlas_projection.json`.
+Re-running it will FAIL because the AtlasDataset constructor cannot
+authenticate without an active account. Kept for reference only; the
+output file is the durable artifact. See `rag/ATLAS_PROVENANCE.md`
+for the full story.
+
 This is the "Atlas as data-pipeline backend" pattern: Atlas does the
 heavy work (UMAP projection, topic modeling, label generation) but
 we never embed their viewer. The output JSON is small (~1-2 MB for
