@@ -346,7 +346,8 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="px-2 py-1 text-xs text-stone-500 hover:text-stone-900 border border-stone-300 rounded hover:border-stone-500"
+            className="inline-flex items-center min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+            aria-label="Close drill-down"
           >
             close ✕
           </button>
@@ -622,7 +623,7 @@ function CopyLinkButton() {
     <button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-500 hover:text-stone-900 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+      className="inline-flex items-center gap-1 min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 border border-stone-300 rounded hover:border-stone-500 transition-colors"
       aria-label={copied ? 'Link copied to clipboard' : 'Copy permalink to this drill-down'}
     >
       <Icon className="w-3.5 h-3.5" aria-hidden="true" />
