@@ -8,20 +8,32 @@
  *
  * This is the most "philosophy of embedding" demo — the audience literally
  * watches the embedding space *take a position* on where each interviewee
- * sits along a conceptual continuum.
+ * sits along a conceptual continuum. Clicking a dot drills into the
+ * passages from THAT interview most aligned with whichever pole that
+ * interviewee leans toward — the RAG demonstration the page promises.
  *
- * Loads /rag/summaries/concept_axes.json. Static; no live retrieval.
+ * Loads /rag/summaries/concept_axes.json (static). Drill-down passages
+ * come from /retrieve (Netlify Function → Pinecone + Voyage rerank).
  */
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { TIER_COLORS } from './tiers';
+import { retrieve } from '../../services/ragClient';
+import CitationCard from './CitationCard';
 
 export default function ConceptSpectrum() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [activeAxis, setActiveAxis] = useState(0);
   const [hover, setHover] = useState(null);
+  // selected = locked dot the user clicked. Triggers an inline /retrieve
+  // call against the corpus, scoped to that interviewee's passages and
+  // queried with whichever pole they lean toward — the RAG drill-down.
+  const [selected, setSelected] = useState(null);
+  const [drillResults, setDrillResults] = useState(null);
+  const [drillLoading, setDrillLoading] = useState(false);
+  const [drillError, setDrillError] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,6 +43,64 @@ export default function ConceptSpectrum() {
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
     return () => { cancelled = true; };
   }, []);
+
+  // Clear the drill-down when the user switches axes — the selection
+  // is axis-specific (Aaron Dixon "on the nonviolence axis" is a
+  // different question than "on the sacred-vs-secular axis").
+  useEffect(() => {
+    setSelected(null);
+    setDrillResults(null);
+    setDrillError(null);
+  }, [activeAxis]);
+
+  const handleSelect = useCallback((p) => {
+    setSelected((prev) => {
+      if (prev?.entry_number === p.entry_number) {
+        // Click same dot again → deselect.
+        setDrillResults(null);
+        setDrillError(null);
+        return null;
+      }
+      return {
+        entry_number: p.entry_number,
+        entry_subject: p.entry_subject,
+        position: p.position,
+        position_normalized: p.position_normalized,
+        tier: p.tier,
+        loc_item_url: p.loc_item_url,
+      };
+    });
+  }, []);
+
+  // Run the drill-down search whenever `selected` changes to a non-null
+  // value. The axis pole the interviewee leans toward becomes the
+  // semantic query; the entry filter constrains results to that
+  // interview's passages only.
+  useEffect(() => {
+    if (!selected || !data) return undefined;
+    let cancelled = false;
+    const axis = data.axes[activeAxis];
+    const pole = selected.position >= 0 ? axis.pole_b : axis.pole_a;
+    setDrillLoading(true);
+    setDrillError(null);
+    setDrillResults(null);
+    retrieve(pole.anchor, {
+      topN: 5,
+      filter: { entry_number: { $eq: selected.entry_number } },
+    })
+      .then(({ results }) => {
+        if (cancelled) return;
+        setDrillResults(results || []);
+      })
+      .catch((e) => {
+        if (cancelled) return;
+        setDrillError(e?.detail?.message || e?.message || 'Drill-down search failed.');
+      })
+      .finally(() => {
+        if (!cancelled) setDrillLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, [selected, activeAxis, data]);
 
   if (error) {
     return (
@@ -48,9 +118,30 @@ export default function ConceptSpectrum() {
 
   return (
     <div className="rag-concept-spectrum">
-      <Axis axis={axis} hover={hover} setHover={setHover} />
+      <Axis
+        axis={axis}
+        hover={hover}
+        setHover={setHover}
+        selectedEntry={selected?.entry_number ?? null}
+        onSelect={handleSelect}
+      />
 
-      <SpectrumTooltip hover={hover} />
+      <SpectrumTooltip hover={hover} selectedEntry={selected?.entry_number ?? null} />
+
+      {selected && (
+        <DrillDown
+          selected={selected}
+          axis={axis}
+          results={drillResults}
+          loading={drillLoading}
+          error={drillError}
+          onClose={() => {
+            setSelected(null);
+            setDrillResults(null);
+            setDrillError(null);
+          }}
+        />
+      )}
 
       {/* Axis selector pills sit immediately under the chart so the
           user reads chart → "and here are the axes I can switch to"
@@ -77,7 +168,11 @@ export default function ConceptSpectrum() {
       </div>
 
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-        Each axis above is defined by two opposing concepts. We embed each pole with Voyage, take the unit difference vector, and project all 136 interview centroids onto it. The result: a 1D position per interviewee on each conceptual continuum. Watch the embedding space <em>take a position</em> on where each voice sits.
+        Each axis above is defined by two opposing concepts. We embed each pole with Voyage,
+        take the unit difference vector, and project all 136 interview centroids onto it.
+        The result: a 1D position per interviewee on each conceptual continuum.
+        Click a dot to drill into the passages from that interview that anchor it where it is —
+        the embedding space takes a position, and the retrieval shows you why.
       </p>
 
       <footer className="text-xs text-stone-500 border-t border-stone-200 pt-4 mt-8">
@@ -89,8 +184,12 @@ export default function ConceptSpectrum() {
   );
 }
 
-function SpectrumTooltip({ hover }) {
+function SpectrumTooltip({ hover, selectedEntry }) {
   if (!hover || typeof document === 'undefined') return null;
+
+  // Don't render the hover tooltip on the dot the user has locked
+  // (it'd compete with the drill-down panel below the chart).
+  if (hover.p?.entry_number === selectedEntry) return null;
 
   const { p, x, y } = hover;
   const viewportW = typeof window !== 'undefined' ? window.innerWidth : 1024;
@@ -98,11 +197,6 @@ function SpectrumTooltip({ hover }) {
   const PAD = 12;
   const GAP = 18; // vertical offset below the cursor
 
-  // Edge-aware horizontal anchoring. When the cursor is near the right edge
-  // we anchor the tooltip's right side; near the left edge we anchor its
-  // left side; otherwise we center it on the cursor. Because we render via
-  // a portal into document.body with position: fixed, no parent container
-  // (SVG viewBox, overflow-x-auto wrapper, page card) can clip the tooltip.
   let style;
   if (x > viewportW - TOOLTIP_MAX / 2 - PAD) {
     style = { right: Math.max(PAD, viewportW - x - 8), top: y + GAP };
@@ -131,13 +225,77 @@ function SpectrumTooltip({ hover }) {
         >
           {p.tier || 'unknown'} · projection {p.position.toFixed(3)}
         </div>
+        <div className="text-xs text-amber-300 mt-1.5 font-medium" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+          click → see passages
+        </div>
       </div>
     </div>,
     document.body,
   );
 }
 
-function Axis({ axis, hover, setHover }) {
+function DrillDown({ selected, axis, results, loading, error, onClose }) {
+  // Whichever pole the interviewee leans toward becomes the query
+  // we ran. Show the user that framing so the drill-down's intent
+  // is obvious.
+  const pole = selected.position >= 0 ? axis.pole_b : axis.pole_a;
+  return (
+    <aside className="mt-5 rounded-lg border-2 border-red-700 bg-white p-5 shadow-sm">
+      <header className="flex flex-wrap items-baseline justify-between gap-3 mb-3">
+        <div className="flex-1 min-w-0">
+          <p className="text-xs text-civil-red-body font-mono uppercase tracking-wide mb-1">
+            Retrieval drill-down
+          </p>
+          <h4 className="text-lg sm:text-xl font-medium text-stone-900 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+            Why is {selected.entry_subject} at position {selected.position.toFixed(2)}?
+          </h4>
+          <p className="text-sm text-stone-600 mt-1">
+            Top passages from this interview most aligned with{' '}
+            <strong className="text-civil-red-body">{pole.label.toLowerCase()}</strong>{' '}
+            (the {selected.position >= 0 ? 'right' : 'left'}-side pole of this axis).
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onClose}
+          className="flex-shrink-0 px-2 py-1 text-xs text-stone-500 hover:text-stone-900 border border-stone-300 rounded hover:border-stone-500"
+        >
+          close ✕
+        </button>
+      </header>
+
+      {loading && (
+        <p className="text-sm text-stone-500" role="status">
+          Searching {selected.entry_subject}&apos;s passages…
+        </p>
+      )}
+
+      {error && (
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+          Drill-down search failed: {error}
+        </p>
+      )}
+
+      {results && results.length === 0 && !loading && !error && (
+        <p className="text-sm text-stone-500">
+          No passages found. This can happen for entries with very few audited chunks.
+        </p>
+      )}
+
+      {results && results.length > 0 && (
+        <ol className="space-y-3">
+          {results.map((payload) => (
+            <li key={payload.id}>
+              <CitationCard payload={payload} showFullText={false} />
+            </li>
+          ))}
+        </ol>
+      )}
+    </aside>
+  );
+}
+
+function Axis({ axis, hover, setHover, selectedEntry, onSelect }) {
   const W = 880;
   const H = 380;
   const PAD_X = 24;
@@ -186,7 +344,7 @@ function Axis({ axis, hover, setHover }) {
           height={H}
           viewBox={`0 0 ${W} ${H}`}
           role="img"
-          aria-label={`Concept axis: ${axis.title}. 136 interviewees plotted by position.`}
+          aria-label={`Concept axis: ${axis.title}. 136 interviewees plotted by position. Click a dot to drill into their passages.`}
           style={{ display: 'block', minWidth: '720px' }}
         >
           {/* Axis line */}
@@ -215,24 +373,32 @@ function Axis({ axis, hover, setHover }) {
             const cy = (TOP + BOTTOM) / 2 + jitter;
             const color = TIER_COLORS[p.tier] || '#b91c1c';
             const isHover = hover?.p?.entry_number === p.entry_number;
+            const isSelected = selectedEntry === p.entry_number;
             return (
               <circle
                 key={p.entry_number}
                 cx={cx}
                 cy={cy}
-                r={isHover ? 7 : 4}
-                fill={color}
-                fillOpacity={isHover ? 1 : 0.75}
-                stroke={isHover ? '#1c1917' : 'transparent'}
-                strokeWidth="1.5"
+                r={isSelected ? 9 : isHover ? 7 : 4}
+                fill={isSelected ? '#F2483C' : color}
+                fillOpacity={isSelected || isHover ? 1 : 0.75}
+                stroke={isSelected ? '#1c1917' : isHover ? '#1c1917' : 'transparent'}
+                strokeWidth={isSelected ? 2 : 1.5}
                 onMouseEnter={(e) => handleEnter(p, e)}
                 onMouseMove={(e) => handleMove(p, e)}
                 onMouseLeave={clearHover}
                 onFocus={(e) => handleFocus(p, e)}
                 onBlur={clearHover}
+                onClick={() => onSelect(p)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    onSelect(p);
+                  }
+                }}
                 tabIndex={0}
                 style={{ cursor: 'pointer' }}
-                aria-label={`${p.entry_subject}, position ${p.position.toFixed(3)}`}
+                aria-label={`${p.entry_subject}, position ${p.position.toFixed(3)}. Click to drill into passages.`}
               />
             );
           })}
