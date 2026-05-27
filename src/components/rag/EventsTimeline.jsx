@@ -120,17 +120,10 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
 
   const data = [{
     type: 'scatter',
-    mode: 'markers+text',
+    mode: 'markers',
     x: dates,
     y: ys,
     customdata,
-    text: timeline.map((ev) => ev.title),
-    textposition: timeline.map((_, i) => (i % 2 === 0 ? 'top center' : 'bottom center')),
-    textfont: {
-      family: 'Inter, ui-sans-serif, system-ui, sans-serif',
-      size: 11,
-      color: '#1c1917',
-    },
     marker: {
       color: colors,
       size: sizes,
@@ -144,6 +137,10 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
     name: 'Events',
   }];
 
+  // Year-anchored axis ticks so the user has temporal grounding even
+  // without per-event labels. Plotly auto-ticks dates but they can be
+  // sparse on a 13-year span; we set explicit dtick to every year.
+
   // Date range with a 6-month pad on each side so the first/last
   // event isn't crammed against the axis edge.
   const minDate = '1955-02-01';
@@ -151,8 +148,12 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
 
   const layout = {
     autosize: true,
-    height: 280,
-    margin: { l: 12, r: 12, t: 28, b: 70 },
+    // Shorter than the original 280px because the inline event labels
+    // were removed (they collided badly in the 1963-65 cluster). The
+    // detail panel below the chart shows the selected event's title;
+    // hover the dot for a tooltip.
+    height: 180,
+    margin: { l: 12, r: 12, t: 16, b: 50 },
     paper_bgcolor: '#fafaf9',
     plot_bgcolor: '#ffffff',
     font: {
@@ -172,6 +173,8 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
       tickfont: { color: '#57534e', size: 11 },
       ticks: 'outside',
       tickcolor: '#a8a29e',
+      dtick: 'M12',
+      tickformat: '%Y',
       // Native x-axis rangeslider — drag to window into specific years.
       rangeslider: {
         visible: true,
@@ -204,7 +207,7 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
         layout={layout}
         config={config}
         useResizeHandler
-        style={{ width: '100%', height: 280 }}
+        style={{ width: '100%', height: 180 }}
         onClick={(event) => {
           const pt = event?.points?.[0];
           if (pt?.customdata?.[4]) onSelect?.(pt.customdata[4]);

@@ -273,7 +273,7 @@ export default function RagExplore() {
           </ul>
         </nav>
 
-        <section ref={sectionRef} className="mb-16 scroll-mt-4">
+        <section ref={sectionRef} className="mb-16 scroll-mt-28">
           {tab === 'search' && (
             <div>
               <h2
