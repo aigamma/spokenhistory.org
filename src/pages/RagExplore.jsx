@@ -17,6 +17,7 @@ import {
   NomicProjection,
   PassageMap,
   ConceptMatrix,
+  InterviewMap,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
@@ -110,7 +111,7 @@ const TAB_ORDER = [
   { id: 'nomic', label: 'Passage map', featured: true },
   { id: 'spectrum', label: 'Concept Spectrum', featured: true },
   { id: 'events', label: 'Polyphonic events', featured: true },
-  { id: 'map', label: 'Constellation' },
+  { id: 'map', label: 'Interview map' },
   { id: 'related', label: 'Voices in conversation' },
   { id: 'search', label: 'Semantic search' },
   { id: 'quote', label: 'Quote-finder' },
@@ -133,7 +134,7 @@ const TAB_LABELS = {
   quote: 'Quote-finder',
   events: 'Polyphonic events',
   spectrum: 'Concept Spectrum',
-  map: 'Constellation',
+  map: 'Interview map',
   related: 'Voices in conversation',
   themes: 'Themes',
   names: 'Famous names',
@@ -286,17 +287,21 @@ export default function RagExplore() {
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Constellation of 136 interviews
+                Interview map
               </h2>
-              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                Each dot is one interview. The AI places two dots close together when it judges
-                the two interviews cover similar things, and far apart when it judges them
-                different — even when the speakers never met. The x and y axes themselves
-                don&apos;t measure anything specific; think of it as a map where only distance
-                matters, not direction. Larger dots are longer interviews; color shows our
-                audit-confidence tier. <strong>Hover</strong> for a name, <strong>click</strong>
-                {' '}to see the other interviews most like it.
-              </p>
+              <InterviewMap />
+            </div>
+          )}
+
+          {/* Legacy Constellation block — kept gated on a never-true
+              tab id so the component import stays warm but the surface
+              is not user-reachable. The old PCA-based Constellation
+              gave Eric a "sphere of dots with no axis guidance" UX;
+              InterviewMap above replaces it with the Atlas UMAP at
+              interview-scale + names labeled + search + empirical
+              axis labels. */}
+          {tab === '__legacy_constellation_disabled__' && (
+            <div>
               <Constellation
                 width={720}
                 height={720}
