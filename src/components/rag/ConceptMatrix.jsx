@@ -223,9 +223,9 @@ export default function ConceptMatrix() {
             type="text"
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
-            placeholder="Project a phrase onto all 4 lenses…"
+            placeholder="Project a phrase onto all 5 lenses…"
             className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
-            aria-label="Project a query phrase across all four lenses"
+            aria-label="Project a query phrase across all five lenses"
             disabled={conceptLoading}
           />
           <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
@@ -369,7 +369,7 @@ export default function ConceptMatrix() {
       )}
 
       {/* Top retrieved passages for the same query, closes the loop:
-          query → geometric projection on 4 lenses → here are the voices
+          query → geometric projection on 5 lenses → here are the voices
           that match. */}
       {conceptResults && conceptResults.length > 0 && conceptQuery && (
         <aside className="mt-5 p-4 rounded-md border border-emerald-200 bg-white">
