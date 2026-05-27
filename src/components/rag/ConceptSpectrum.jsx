@@ -47,6 +47,49 @@ export default function ConceptSpectrum() {
   // dots dim. Helps users find a specific voice among 136 without
   // hover-treasure-hunting.
   const [query, setQuery] = useState('');
+  // Concept-query projection — the audience-facing demo of "the
+  // embedding space takes a position on YOUR words". User types a
+  // natural-language query; /retrieve embeds it; we dot-product the
+  // resulting 1024-dim vector against each axis_vector and render a
+  // marker at the projected position on each axis. Only the active
+  // axis shows the marker on the main chart; a small cross-axis
+  // summary table renders below.
+  const [conceptInput, setConceptInput] = useState('');
+  const [conceptQuery, setConceptQuery] = useState(null); // last submitted
+  const [conceptEmbedding, setConceptEmbedding] = useState(null);
+  const [conceptLoading, setConceptLoading] = useState(false);
+  const [conceptError, setConceptError] = useState(null);
+
+  const handleConceptSubmit = useCallback(async (e) => {
+    e?.preventDefault?.();
+    const q = conceptInput.trim();
+    if (!q || conceptLoading) return;
+    setConceptLoading(true);
+    setConceptError(null);
+    setConceptQuery(q);
+    try {
+      const { meta } = await retrieve(q, {
+        topN: 1, // we only need the embedding, not results
+        includeQueryEmbedding: true,
+      });
+      if (Array.isArray(meta?.queryEmbedding) && meta.queryEmbedding.length === 1024) {
+        setConceptEmbedding(meta.queryEmbedding);
+      } else {
+        setConceptError('Backend did not return a query embedding.');
+      }
+    } catch (err) {
+      setConceptError(err?.detail?.message || err?.message || 'Query projection failed.');
+    } finally {
+      setConceptLoading(false);
+    }
+  }, [conceptInput, conceptLoading]);
+
+  const clearConcept = useCallback(() => {
+    setConceptInput('');
+    setConceptQuery(null);
+    setConceptEmbedding(null);
+    setConceptError(null);
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
@@ -187,6 +230,36 @@ export default function ConceptSpectrum() {
 
   const axis = data.axes[activeAxis];
 
+  // Project the user's query embedding onto EVERY axis. Same math as
+  // the precompute: dot(queryVec, axis_vector). Normalize to [-1, +1]
+  // using the axis's raw_range so the position lines up visually with
+  // the precomputed interview dots.
+  const conceptProjections = (() => {
+    if (!conceptEmbedding || !data?.axes) return null;
+    const out = [];
+    for (const ax of data.axes) {
+      if (!Array.isArray(ax.axis_vector) || ax.axis_vector.length !== conceptEmbedding.length) continue;
+      let dot = 0;
+      for (let i = 0; i < conceptEmbedding.length; i++) {
+        dot += conceptEmbedding[i] * ax.axis_vector[i];
+      }
+      const [min, max] = ax.raw_range || [-1, 1];
+      const range = Math.max(max - min, 1e-9);
+      const position_normalized = +(((dot - min) / range) * 2 - 1).toFixed(4);
+      out.push({
+        slug: ax.slug,
+        title: ax.title,
+        pole_a_label: ax.pole_a?.label,
+        pole_b_label: ax.pole_b?.label,
+        position: +dot.toFixed(4),
+        position_normalized: Math.max(-1.2, Math.min(1.2, position_normalized)),
+      });
+    }
+    return out;
+  })();
+
+  const activeProjection = conceptProjections?.find((p) => p.slug === axis.slug) || null;
+
   // Match set for the search filter — entry_numbers whose subject
   // includes the query (case-insensitive). null = "no filter active".
   const matched = (() => {
@@ -210,6 +283,8 @@ export default function ConceptSpectrum() {
         selectedEntry={selected?.entry_number ?? null}
         onSelect={handleSelect}
         matched={matched}
+        conceptProjection={activeProjection}
+        conceptQuery={conceptQuery}
       />
 
       <p className="mt-2 mb-3 text-xs text-stone-500 italic">
@@ -217,37 +292,127 @@ export default function ConceptSpectrum() {
         vertical scatter is decorative, to keep overlapping dots distinguishable.
       </p>
 
-      {/* Search box for finding a specific voice in the 136-dot
-          scatter. Sits right under the chart. Matches dim non-matches
-          to ~20% opacity and label-tag any matches with their name
-          drawn alongside the dot. */}
-      <div className="mt-3 mb-1 relative max-w-md">
-        <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" aria-hidden="true" />
-        <input
-          type="search"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Find a voice in the scatter…"
-          className="w-full pl-9 pr-9 py-2 text-sm border border-stone-300 rounded-md focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none bg-white"
-          aria-label="Find a voice in the Spectrum"
-        />
-        {query && (
-          <button
-            type="button"
-            onClick={() => setQuery('')}
-            className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-stone-400 hover:text-stone-700"
-            aria-label="Clear search"
-          >
-            <X className="w-3.5 h-3.5" />
-          </button>
-        )}
-        {matched && (
-          <p className="text-xs text-stone-500 mt-1.5">
-            {matched.size} {matched.size === 1 ? 'match' : 'matches'}
-            {matched.size > 0 && ' · matching dots stay bright, names appear next to them'}
-          </p>
-        )}
+      {/* Two search boxes side by side: name-search (left, dim non-
+          matches) and concept-projection (right, drop a marker on the
+          axis at the projected position for the query embedding). The
+          concept-projection is the audience-facing "embedding space
+          takes a position on your words" demo. */}
+      <div className="mt-3 mb-1 grid grid-cols-1 md:grid-cols-2 gap-3">
+        {/* Name search */}
+        <div className="relative">
+          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" aria-hidden="true" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Find a voice in the scatter…"
+            className="w-full pl-9 pr-9 py-2 text-sm border border-stone-300 rounded-md focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none bg-white"
+            aria-label="Find a voice in the Spectrum"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery('')}
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 text-stone-400 hover:text-stone-700"
+              aria-label="Clear search"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          )}
+          {matched && (
+            <p className="text-xs text-stone-500 mt-1.5">
+              {matched.size} {matched.size === 1 ? 'match' : 'matches'}
+              {matched.size > 0 && ' · matching dots stay bright, names appear next to them'}
+            </p>
+          )}
+        </div>
+
+        {/* Concept-query projection */}
+        <form onSubmit={handleConceptSubmit} className="relative">
+          <input
+            type="text"
+            value={conceptInput}
+            onChange={(e) => setConceptInput(e.target.value)}
+            placeholder="Project a phrase onto this axis…"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
+            aria-label="Project a query onto this axis"
+            disabled={conceptLoading}
+          />
+          <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
+            {conceptQuery && (
+              <button
+                type="button"
+                onClick={clearConcept}
+                className="p-1 text-stone-400 hover:text-stone-700"
+                aria-label="Clear projection"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            )}
+            <button
+              type="submit"
+              disabled={!conceptInput.trim() || conceptLoading}
+              className="px-2.5 py-1 text-xs font-medium bg-emerald-600 text-white rounded hover:bg-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {conceptLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" /> : 'Project'}
+            </button>
+          </div>
+          {conceptError && (
+            <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-1.5">
+              {conceptError}
+            </p>
+          )}
+          {!conceptError && activeProjection && conceptQuery && (
+            <p className="text-xs text-stone-600 mt-1.5">
+              <span className="text-emerald-700 font-medium">●</span>{' '}
+              Query lands at <span className="font-mono tabular-nums">{activeProjection.position.toFixed(3)}</span>
+              {' '}({activeProjection.position >= 0 ? activeProjection.pole_a_label : activeProjection.pole_b_label} side)
+            </p>
+          )}
+        </form>
       </div>
+
+      {/* Cross-axis summary: show where the same query lands on all 5
+          axes. The audience sees one embedding produce 5 different
+          positions, demonstrating "the same words sit differently on
+          different conceptual dimensions". */}
+      {conceptProjections && conceptProjections.length > 0 && conceptQuery && (
+        <div className="mt-4 mb-1 p-3 rounded-md border border-emerald-200 bg-emerald-50/50">
+          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
+            Query &ldquo;{conceptQuery}&rdquo; projected onto all 5 axes
+          </p>
+          <ul className="space-y-1.5">
+            {conceptProjections.map((proj, idx) => {
+              const isActive = proj.slug === axis.slug;
+              const leftPct = ((1 - Math.max(-1, Math.min(1, proj.position_normalized))) / 2) * 100;
+              const leaning = proj.position >= 0 ? proj.pole_a_label : proj.pole_b_label;
+              return (
+                <li key={proj.slug}>
+                  <button
+                    type="button"
+                    onClick={() => setActiveAxis(idx)}
+                    className={'w-full text-left flex items-center gap-3 px-2 py-1 rounded ' + (isActive ? 'bg-white' : 'hover:bg-white')}
+                  >
+                    <span className="text-xs text-stone-700 flex-shrink-0 w-44 truncate">{proj.title}</span>
+                    <span className="relative flex-1 h-2 rounded-full bg-stone-200 overflow-hidden">
+                      <span className="absolute top-0 bottom-0 w-px bg-stone-400" style={{ left: '50%' }} aria-hidden="true" />
+                      <span
+                        className="absolute top-0 bottom-0 w-2 rounded-full bg-emerald-600"
+                        style={{ left: `calc(${leftPct}% - 4px)` }}
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <span className="text-xs text-stone-600 flex-shrink-0 w-44 truncate text-right">{leaning}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="text-xs text-stone-500 mt-2">
+            Same 1,024-dim embedding, projected onto five different axes. Click any row to make it the active axis above.
+          </p>
+        </div>
+      )}
 
       <SpectrumTooltip hover={hover} selectedEntry={selected?.entry_number ?? null} />
 
@@ -440,7 +605,7 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
   );
 }
 
-function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
+function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched, conceptProjection, conceptQuery }) {
   const W = 880;
   const H = 380;
   const PAD_X = 24;
@@ -518,6 +683,45 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
               is sorted ascending by position; first = leftmost
               (most pole_a), last = rightmost (most pole_b). */}
           {(() => null)()}
+
+          {/* Concept-query projection marker — rendered BEFORE the
+              dots so dots draw on top. A green vertical line through
+              the axis with a "Query: …" callout, signalling that
+              this position is the user's typed query, NOT one of the
+              136 interviewees. */}
+          {conceptProjection && conceptQuery && (() => {
+            const clampedPos = Math.max(-1, Math.min(1, conceptProjection.position_normalized));
+            const qx = xFor(clampedPos);
+            const queryLabel = conceptQuery.length > 38 ? conceptQuery.slice(0, 36) + '…' : conceptQuery;
+            const wantTextOnLeft = qx > W - 200;
+            return (
+              <g aria-label={`Query "${conceptQuery}" projects to position ${conceptProjection.position.toFixed(3)} on this axis`}>
+                <line
+                  x1={qx} y1={TOP - 10}
+                  x2={qx} y2={BOTTOM + 10}
+                  stroke="#059669"
+                  strokeWidth="2.5"
+                  strokeDasharray="6 3"
+                />
+                {/* Pin head + label */}
+                <circle cx={qx} cy={TOP - 14} r={6} fill="#059669" stroke="#fff" strokeWidth={2} />
+                <text
+                  x={wantTextOnLeft ? qx - 10 : qx + 10}
+                  y={TOP - 18}
+                  fontSize={12}
+                  fontWeight={600}
+                  fill="#065f46"
+                  textAnchor={wantTextOnLeft ? 'end' : 'start'}
+                  paintOrder="stroke"
+                  stroke="rgba(255,255,255,0.95)"
+                  strokeWidth={3}
+                  fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
+                >
+                  Query: &ldquo;{queryLabel}&rdquo;
+                </text>
+              </g>
+            );
+          })()}
           {/* Dots. Vertical jitter is decorative — it spreads
               overlapping dots apart so the user can hover individual
               ones in the dense middle of the axis. The y-position
