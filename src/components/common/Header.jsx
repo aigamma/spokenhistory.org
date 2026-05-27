@@ -194,16 +194,19 @@ export default function Header() {
             const num = String(idx + 1).padStart(2, '0') + '.';
             const isLast = idx === visibleMenu.length - 1;
             return (
-              <div key={item.to} className={`w-full pb-2 ${!isLast ? 'border-b border-black' : ''}`}>
+              <div key={item.to} className={`w-full ${!isLast ? 'border-b border-black' : ''}`}>
+                {/* Hover state inverts the row from black-on-red (drawer
+                    default) to white-on-black so the affordance is
+                    unambiguous in both light and dark OS modes. */}
                 <Link
                   to={item.to}
-                  className="flex items-center justify-between w-full hover:opacity-80 transition-opacity"
+                  className="group flex items-center justify-between w-full px-2 py-2 -mx-2 text-black hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <div className="text-black text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                  <div className="text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
                     {num}
                   </div>
-                  <div className="text-right text-black text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <div className="text-right text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                     {item.label}
                   </div>
                 </Link>
