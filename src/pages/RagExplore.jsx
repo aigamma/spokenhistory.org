@@ -448,10 +448,6 @@ export default function RagExplore() {
                   <dt className="font-medium text-stone-900 inline">~{Math.round(stats.chunks / 1000)}K</dt>{' '}
                   <span>time-anchored passages</span>
                 </div>
-                <div>
-                  <dt className="font-medium text-stone-900 inline">{Object.keys(stats.tiers).length}-tier</dt>{' '}
-                  <span>audit substrate</span>
-                </div>
               </dl>
               <div className="flex flex-wrap gap-2 text-xs">
                 {TIER_VOCABULARY.map((key) => {
