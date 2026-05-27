@@ -122,12 +122,14 @@ export default function InterviewIndex() {
             placeholder="Search by name or capsule content…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 min-w-[200px] px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+            className="flex-1 min-w-[200px] px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
+            aria-label="Search interviews by name or capsule content"
           />
           <select
             value={tierFilter}
             onChange={(e) => setTierFilter(e.target.value)}
-            className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+            className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
+            aria-label="Filter interviews by audit tier"
           >
             <option value="all">All tiers</option>
             {Object.keys(TIER_BADGE).map((k) => (
@@ -137,7 +139,8 @@ export default function InterviewIndex() {
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+            className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
+            aria-label="Sort interviews"
           >
             <option value="A-Z">Name A–Z</option>
             <option value="Z-A">Name Z–A</option>
