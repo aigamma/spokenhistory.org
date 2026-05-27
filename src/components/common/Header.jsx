@@ -160,7 +160,7 @@ export default function Header() {
             { num: '05.', label: 'Voices in conversation', to: '/rag-explore?tab=related' },
             { num: '06.', label: 'Search', to: '/rag-explore?tab=search' },
             { num: '07.', label: 'Interviews', to: '/interview-index' },
-            { num: '08.', label: 'Glossary', to: '/topic-glossary' },
+            { num: '08.', label: 'Topic Glossary', to: '/topic-glossary' },
             { num: '09.', label: 'About', to: '/about' },
           ].map((item, idx, arr) => (
             <div key={item.num} className={`w-full pb-2 ${idx < arr.length - 1 ? 'border-b border-black' : ''}`}>
