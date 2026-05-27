@@ -2524,19 +2524,19 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/rag-explore"
-              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full bg-red-500 text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-600 transition-colors inline-block"
+              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full bg-civil-red-strong text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-800 transition-colors inline-block"
             >
               Explore the embeddings
             </Link>
             <Link
               to="/interview-index"
-              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-red-500 text-red-500 text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors inline-block"
+              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border-2 border-civil-red-strong text-civil-red-strong text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-civil-red-strong hover:text-white transition-colors inline-block"
             >
               Interview Index
             </Link>
             <Link
               to="/topic-glossary"
-              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border border-red-500 text-red-500 text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-red-500 hover:text-white transition-colors inline-block"
+              className="px-6 lg:px-8 py-3 lg:py-4 rounded-full border-2 border-civil-red-strong text-civil-red-strong text-base lg:text-lg font-light font-['Chivo_Mono'] hover:bg-civil-red-strong hover:text-white transition-colors inline-block"
             >
               Topics
             </Link>
