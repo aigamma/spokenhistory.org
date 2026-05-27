@@ -75,7 +75,8 @@ export default function TopicGlossary() {
             placeholder="Search by topic, description, or interviewee…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
+            className="w-full px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
+            aria-label="Search topics by name, description, or interviewee"
           />
         </div>
 
