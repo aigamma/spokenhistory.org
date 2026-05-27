@@ -5,12 +5,12 @@ import { X } from 'lucide-react';
 /**
  * Header, global nav for the protected app.
  *
- * Three pill links sit on the left (Spectrum, Topics, Search) and a
- * single red Menu pill sits in the far-right corner; clicking Menu
- * opens the slide-out drawer with the full route list. A pill (and
- * its corresponding entry in the slide-out menu) is hidden when the
- * user is already on the page that pill leads to, the rule is
- * "don't advertise the page you're on."
+ * Two pill links sit on the left (Spectrum, Topics) and a single red
+ * Menu pill sits in the far-right corner; clicking Menu opens the
+ * slide-out drawer with the full route list. A pill (and its
+ * corresponding entry in the slide-out menu) is hidden when the user
+ * is already on the page that pill leads to, the rule is "don't
+ * advertise the page you're on."
  */
 
 // Top-of-page pills. Each entry carries its visual color and a matcher
@@ -33,13 +33,6 @@ const NAV_ROUTES = [
     to: '/topic-glossary',
     bg: 'bg-sky-700 hover:bg-sky-800',
     matchPath: '/topic-glossary',
-  },
-  {
-    label: 'Search',
-    to: '/rag-explore?tab=search',
-    bg: 'bg-stone-900 hover:bg-black',
-    matchPath: '/rag-explore',
-    matchTab: 'search',
   },
 ];
 
@@ -68,12 +61,6 @@ const MENU_ROUTES = [
     to: '/rag-explore?tab=lenses',
     matchPath: '/rag-explore',
     matchTab: 'lenses',
-  },
-  {
-    label: 'Search',
-    to: '/rag-explore?tab=search',
-    matchPath: '/rag-explore',
-    matchTab: 'search',
   },
   { label: 'Interviews', to: '/interview-index', matchPath: '/interview-index' },
   { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },

@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import {
-  SemanticSearch,
   QuoteFinder,
   Constellation,
   RelatedPassages,
@@ -75,7 +74,7 @@ function useCorpusStats() {
 // Tab IDs are reflected in window.location.hash so URLs like
 // /rag-explore#map are shareable and deep-linkable.
 const TABS = [
-  'search', 'quote', 'map', 'related',
+  'quote', 'map', 'related',
   'spectrum', 'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
   'lenses',
@@ -117,7 +116,6 @@ const TAB_ORDER = [
   { id: 'lenses', label: 'Word Search', featured: true },
   { id: 'map', label: 'Interview Map' },
   { id: 'related', label: 'Semantic Overlap' },
-  { id: 'search', label: 'Semantic Search' },
   { id: 'quote', label: 'Quote Finder' },
   { id: 'themes', label: 'Themes' },
   { id: 'names', label: 'Famous Names' },
@@ -133,9 +131,8 @@ const TAB_ORDER = [
 // tab buttons in <nav> below.
 const TAB_LABELS = {
   lenses: 'Word Search',
-  search: 'Semantic Search',
   quote: 'Quote Finder',
-  spectrum: 'Spectrum', // retained for back-compat; resolves to lenses now
+  spectrum: 'Spectrum', // retained for back-compat; resolves to default tab
   map: 'Interview Map',
   related: 'Semantic Overlap',
   themes: 'Themes',
@@ -284,27 +281,6 @@ export default function RagExplore() {
         </nav>
 
         <section ref={sectionRef} className="mb-16 scroll-mt-28">
-          {tab === 'search' && (
-            <div>
-              <h2
-                className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                Search the Archive
-              </h2>
-              <p className="text-sm text-stone-600 mb-6">
-                Type a natural-language query. Voyage AI&apos;s retrieval-tuned model embeds the
-                query, Pinecone returns the top candidates, and Voyage rerank-2 reranks them.
-                Each result links to the Library of Congress catalog entry and lists the exact
-                timestamp range in the original audio.
-              </p>
-              <SemanticSearch
-                placeholder="e.g. nonviolence as theology vs. tactic"
-                topN={8}
-              />
-            </div>
-          )}
-
           {tab === 'quote' && (
             <div>
               <QuoteFinder />
