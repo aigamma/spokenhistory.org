@@ -34,7 +34,8 @@
  *     thematic territory each part of the map represents.
  */
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Search as SearchIcon, X, ExternalLink, Loader2 } from 'lucide-react';
 import { TIER_COLORS, TIER_VOCABULARY } from './tiers';
 import { retrieve } from '../../services/ragClient';
@@ -44,7 +45,15 @@ const W = 880;
 const H = 620;
 const PAD = 60;
 
-export default function InterviewMap() {
+/**
+ * @param {Object} [props]
+ * @param {(entryNumber: number) => void} [props.onNavigateToRelated]
+ *   Optional callback wired by the host page to pivot to a related
+ *   surface (e.g. RagExplore's Semantic Overlap tab) for the currently
+ *   selected interview. When provided, the detail panel below the
+ *   scatter renders a small "View on Semantic Overlap" button.
+ */
+export default function InterviewMap({ onNavigateToRelated } = {}) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [hover, setHover] = useState(null);
@@ -227,6 +236,28 @@ export default function InterviewMap() {
       .catch((e) => { if (!cancelled) setError(e.message); });
     return () => { cancelled = true; };
   }, []);
+
+  // URL-param pre-select: when the page is opened with /rag-explore?entry=N
+  // (typically via the "View on Interview Map" cross-tab affordance from
+  // Semantic Overlap), set the dot for entry N as selected on first
+  // render after data loads. Guarded by a ref so user clicks after the
+  // initial selection don't get overwritten on subsequent searchParams
+  // updates.
+  const [searchParams] = useSearchParams();
+  const urlEntryApplied = useRef(false);
+  useEffect(() => {
+    if (urlEntryApplied.current) return;
+    if (!data?.points?.length) return;
+    const wanted = searchParams.get('entry');
+    if (!wanted) return;
+    const n = Number(wanted);
+    if (!Number.isFinite(n)) return;
+    const exists = data.points.some((p) => p.entry_number === n);
+    if (exists) {
+      setSelected(n);
+      urlEntryApplied.current = true;
+    }
+  }, [data, searchParams]);
 
   // Aggregate passages → 136 interview centroids. We also tally the
   // most-common topic per interview so each dot has a "primary topic"
@@ -728,12 +759,28 @@ export default function InterviewMap() {
                   Entry #{focus.entry_number} · {focus.n_chunks} passages · audit tier {focus.uncertainty_tier}
                 </p>
               </div>
-              {focus.loc_item_url && (
-                <a href={focus.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline">
-                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                  LoC catalog
-                </a>
-              )}
+              <div className="flex flex-wrap items-center gap-3">
+                {/* Cross-tab navigate: if the host page provided an
+                    onNavigateToRelated handler (RagExplore does), let
+                    the visitor pivot from "interview on the map" to
+                    "interview's semantic neighbors in the Semantic
+                    Overlap tab" without re-typing the name. */}
+                {onNavigateToRelated && selected != null && (
+                  <button
+                    type="button"
+                    onClick={() => onNavigateToRelated(selected)}
+                    className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
+                  >
+                    View on Semantic Overlap &rarr;
+                  </button>
+                )}
+                {focus.loc_item_url && (
+                  <a href={focus.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline">
+                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                    LoC catalog
+                  </a>
+                )}
+              </div>
             </header>
             {focus.primary_topic && (
               <p className="text-stone-700">

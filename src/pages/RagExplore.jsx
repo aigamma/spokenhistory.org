@@ -444,7 +444,15 @@ export default function RagExplore() {
               >
                 Interview Map
               </h2>
-              <InterviewMap />
+              <InterviewMap
+                onNavigateToRelated={(entryNumber) => {
+                  // Pivot: from "this person on the map" to "this
+                  // person's semantic neighbors" in Semantic Overlap.
+                  setRelatedEntry(entryNumber);
+                  setSearchInput('');
+                  setTab('related');
+                }}
+              />
             </div>
           )}
 
@@ -557,10 +565,16 @@ export default function RagExplore() {
                 )}
               </div>
 
-              {/* Cross-tab affordance. The same person can be looked at
-                  through Concept Spectrum's lens (one axis at a time) by
-                  setting ?spectrumEntry=N; the Spectrum chart at the top
-                  of the page reads that param and selects the dot. */}
+              {/* Cross-tab affordance. The same person can be viewed
+                  through two other surfaces on this page:
+                    - Concept Spectrum (one-axis lens at the top of the
+                      page) via the ?spectrumEntry=N param that
+                      ConceptSpectrum reads.
+                    - Interview Map (UMAP scatter on the 'map' tab) via
+                      the ?entry=N param that InterviewMap reads on
+                      first render after data loads.
+                  Buttons set the URL params (so the receiving component
+                  picks up the entry) and switch tab / scroll as needed. */}
               {relatedEntry != null && (
                 <div className="mb-6 flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm">
                   <span className="text-stone-600">Currently exploring:</span>
@@ -582,7 +596,21 @@ export default function RagExplore() {
                     }}
                     className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
                   >
-                    Also place on the Concept Spectrum &uarr;
+                    Place on Concept Spectrum &uarr;
+                  </button>
+                  <span aria-hidden className="text-stone-400">·</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const next = new URLSearchParams(searchParams);
+                      next.set('tab', 'map');
+                      next.set('entry', String(relatedEntry));
+                      setSearchParams(next, { replace: false });
+                      setTab('map');
+                    }}
+                    className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
+                  >
+                    View on Interview Map &rarr;
                   </button>
                 </div>
               )}
