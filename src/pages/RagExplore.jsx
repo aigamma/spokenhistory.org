@@ -452,6 +452,18 @@ export default function RagExplore() {
                   setSearchInput('');
                   setTab('related');
                 }}
+                onPlaceOnSpectrum={(entryNumber) => {
+                  // Pivot: from "this person on the map" to "this
+                  // person's position on the Concept Spectrum" (always
+                  // visible at the page top). Mirrors the Semantic
+                  // Overlap → Spectrum cross-tab button.
+                  const next = new URLSearchParams(searchParams);
+                  next.set('spectrumEntry', String(entryNumber));
+                  setSearchParams(next, { replace: false });
+                  document
+                    .getElementById('spectrum-section')
+                    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }}
               />
             </div>
           )}

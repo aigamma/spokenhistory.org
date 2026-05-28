@@ -51,9 +51,14 @@ const PAD = 60;
  *   Optional callback wired by the host page to pivot to a related
  *   surface (e.g. RagExplore's Semantic Overlap tab) for the currently
  *   selected interview. When provided, the detail panel below the
- *   scatter renders a small "View on Semantic Overlap" button.
+ *   scatter renders a "View on Semantic Overlap" button.
+ * @param {(entryNumber: number) => void} [props.onPlaceOnSpectrum]
+ *   Optional callback wired by the host page to project the selected
+ *   interview onto the Concept Spectrum (the always-visible chart at
+ *   the page top). When provided, the detail panel renders a "Place
+ *   on Concept Spectrum" button next to onNavigateToRelated.
  */
-export default function InterviewMap({ onNavigateToRelated } = {}) {
+export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } = {}) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [hover, setHover] = useState(null);
@@ -760,11 +765,12 @@ export default function InterviewMap({ onNavigateToRelated } = {}) {
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-3">
-                {/* Cross-tab navigate: if the host page provided an
-                    onNavigateToRelated handler (RagExplore does), let
-                    the visitor pivot from "interview on the map" to
-                    "interview's semantic neighbors in the Semantic
-                    Overlap tab" without re-typing the name. */}
+                {/* Cross-tab navigate. Two host-supplied pivots when
+                    provided: Semantic Overlap (semantic-neighbors view)
+                    and Concept Spectrum (one-axis projection at the
+                    page top). Visitor can move from "this person on
+                    the map" to either of the other two surfaces
+                    without re-typing the name. */}
                 {onNavigateToRelated && selected != null && (
                   <button
                     type="button"
@@ -772,6 +778,15 @@ export default function InterviewMap({ onNavigateToRelated } = {}) {
                     className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
                   >
                     View on Semantic Overlap &rarr;
+                  </button>
+                )}
+                {onPlaceOnSpectrum && selected != null && (
+                  <button
+                    type="button"
+                    onClick={() => onPlaceOnSpectrum(selected)}
+                    className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
+                  >
+                    Place on Concept Spectrum &uarr;
                   </button>
                 )}
                 {focus.loc_item_url && (
