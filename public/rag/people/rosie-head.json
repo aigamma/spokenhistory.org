@@ -6,14 +6,81 @@
   "born": null,
   "died": null,
   "display_name": "Rosie Head",
-  "role_summary": "Mississippi rural civil rights movement participant; in this corpus's embedding her testimony clusters with Walter Bruce, Gertrude Newsome Jackson, Charles McLaurin, and Peggy Jean Connor.",
-  "ai_reading": "Head's top semantic neighbors are Walter Bruce (entry 123, count 148), Gertrude Newsome Jackson (entry 136), Charles McLaurin (entry 17), Peggy Jean Connor (entry 96), and Nathaniel Hawthorne Jones (entry 92). The cluster is Mississippi-rural-movement throughout, the embedding reading her testimony as anchored in that region's specific organizing vocabulary. Her Tactical Pragmatism vs Strategic Vision position is +0.80, far toward Strategic Vision, and her Southern Struggle vs Northern Struggle position is +0.66, both readings reinforcing the regional anchor. The catalog's recurring pattern of Mississippi-rural-movement-women landing on the strategic side of the tactical/strategic axis (McLaurin's own +0.49, Henderson +0.51, McCullar +0.89, Lisa Anderson Todd +0.72) holds with Head's +0.80 too.",
-  "biographical_paragraph": "Rosie Head's oral history is held at the Library of Congress as entry 111 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "Holmes County, Mississippi movement worker; managed the Mileston Community Center and worked as secretary and assistant teacher in the Child Development Group of Mississippi (CDGM) Head Start program.",
+  "ai_reading": "Cosine similarity in this corpus pulls Head's testimony into a tight Holmes County and Mississippi Delta cluster: her strongest neighbors by aggregate count are Walter Bruce (entry 123, count 148), Gertrude Newsome Jackson (entry 136, count 105), Charles McLaurin (entry 17, count 96), Peggy Jean Connor (entry 96, count 74), and Nathaniel Hawthorne Jones (entry 92, count 71). On the Tactical Pragmatism versus Strategic Vision axis the embedding reads her at +0.80, far toward Strategic Vision, even though almost every concrete thing she narrates is hands-on fieldwork (canvassing house to house, driving children to the center, sitting up nights against night riders). That placement extends a pattern the catalog keeps surfacing for Delta movement women, McLaurin himself reads +0.49, Juadine Henderson +0.51, Johnnie Ruth McCullar +0.89, Lisa Anderson Todd +0.72, the vectors hear the long-horizon framing of the work rather than its task texture. A second observation runs through the influence graph: Head's heaviest out-edge is to Robert G. Clark Jr. (entry 107, count 4), the Holmes County candidate she helped elect, ahead of her single edges to canonical SNCC names like Lawrence Guyot (entry 76); the embedding foregrounds the local electoral organizer over the better-known field secretaries who pass through her account.",
+  "biographical_paragraph": "Rosie Head grew up sharecropping and picking cotton in Holmes County and around Greenwood, Mississippi, then moved with her family to Tchula in Holmes County, where she joined the local movement around 1963 and 1964 [src: 1]. She canvassed for the 1963 Freedom Vote, the mock election in which Aaron Henry and Ed King ran to demonstrate that Black Mississippians would vote if allowed, and she worked voter registration and the 1964 Freedom Summer alongside the volunteers and SNCC organizers who came through Holmes County, among them figures named in other interviews in this corpus such as Lawrence Guyot (entry 76) and Charles McLaurin (entry 17) [src: 1]. After Sue and Henry Lorenzi asked her to take it over, Head managed the Mileston Community Center, keeping its records, sending its newsletters, and running a makeshift kindergarten before federal money arrived [src: 1]. When the Child Development Group of Mississippi began its statewide Head Start program in 1965 with a federal anti-poverty grant, Head served as a secretary and assistant teacher at the Mileston center; CDGM was repeatedly defunded after Senator John C. Stennis charged it with mismanagement, and she describes the community keeping the center open without pay between grants [src: 1, src: 3]. She also worked the 1966 and 1967 Holmes County elections under the Mississippi Freedom Democratic Party, organizing transportation and poll assistance for the campaign that sent Robert G. Clark Jr. (entry 107) to the Mississippi House of Representatives in 1967, the first African American elected to the state legislature since Reconstruction [src: 1, src: 2]. Her oral history, recorded in Tchula on March 13, 2013 by Dr. John Dittmer, is held by the Library of Congress as entry 111 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "00:08:59",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "Recalling the year-end settlement on the plantation, when her father came home from the planter's office, Head quotes what he told her mother:",
+      "quote": "And he just said, baby, we came out in the hole again."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "00:49:41",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "On the day she tried to register at the Holmes County courthouse, sheriff's deputies left a dog outside the small room where she filled out the form:",
+      "quote": "I tried to open the door and when I touched the door knob, I heard the dog growling."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "00:50:40",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "She recounts the chancery clerk, who said he had known her family for years, telling her to stop trying to register:",
+      "quote": "And he said, you go home and do like your mom and your grandmom did."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "00:52:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "On why getting people registered required driving out to gather them rather than waiting for them to come in:",
+      "quote": "Sometimes we would just get truckloads of people all in the back of the truck and take them out there."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "01:10:08",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "Replying to a white merchant who warned that Black residents would suffer for refusing the terms attached to the Head Start money, Head answered:",
+      "quote": "I said, one thing about it, we're used to suffer."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669173/",
       "title": "Rosie Head oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://mississippiencyclopedia.org/entries/robert-g-clark/",
+      "title": "Clark, Robert G.",
+      "publisher": "Mississippi Encyclopedia, University Press of Mississippi (in partnership with the Center for Study of Southern Culture); documents Clark's 1967 election as the first African American in the Mississippi legislature since Reconstruction"
+    },
+    {
+      "url": "https://mississippiencyclopedia.org/entries/child-development-group-of-mississippi/",
+      "title": "Child Development Group of Mississippi",
+      "publisher": "Mississippi Encyclopedia, University Press of Mississippi; documents the 1965 founding of CDGM, its War on Poverty Head Start grant, its 84 centers, and Senator John C. Stennis's role in its defunding"
     }
   ]
 }

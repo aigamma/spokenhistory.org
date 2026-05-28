@@ -16,8 +16,78 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:JudgeCarter2.jpg",
     "date_taken": "(undated; pre-2006)"
   },
-  "ai_reading": "Carter appears as the top semantic neighbor of more entries in this catalog than any other figure: Julius W. Becton Jr. (entry 71) at 753, Matthew J. Perry Jr. (entry 87) at 378, Clarence B. Jones (entry 20) at 246, plus appearances in the top five of nearly every lawyer or institutional-leader page (McDew, Greenberg, Marshall, Williams, Finney, Hrabowski, Cox, Brown, Bailey, Cleveland Sellers, etc). The embedding therefore identifies him as the catalog's central NAACP-legal-network node, the vector around which the civil rights litigation cohort organizes itself. His own top neighbors are Matthew J. Perry Jr. (entry 87, count 311), Charles McLaurin (entry 17, the Mississippi SNCC organizer whose voter-registration work the LDF litigation supported), Harold K. Brown (entry 55), Oliver W. Hill Jr. (entry 94), and Cecil J. Williams (entry 14). The novel observation is that the embedding pulls his testimony as strongly toward the grassroots Mississippi organizer (McLaurin) as toward the South Carolina civil-rights-legal cohort (Perry, Williams), suggesting that even from the NAACP's national legal headquarters, Carter's recorded vocabulary reads as field-network-aware rather than institutionally insulated.",
-  "biographical_paragraph": "Carter succeeded Thurgood Marshall as the National Association for the Advancement of Colored People's General Counsel in 1956 and held the post until 1968; during his NAACP tenure he argued twenty-two cases before the United States Supreme Court and won twenty-one [src: 2]. He represented Oliver Brown, lead plaintiff in the consolidated school-desegregation cases that the Court decided as Brown v. Board of Education in 1954, and advocated incorporating Kenneth and Mamie Clark's psychological research on segregation's developmental harm into the legal argument [src: 2]. President Richard Nixon nominated him to the United States District Court for the Southern District of New York on June 15, 1972; the Senate confirmed him on July 21, 1972 [src: 3]. He assumed senior status on December 31, 1986 and served on the federal bench until his death on January 3, 2012, at ninety-four [src: 3]. His memoir A Matter of Law: A Memoir of Struggle in the Cause of Equal Rights appeared in 2005 with a preface by John Hope Franklin [src: 2]. His Library of Congress oral history is entry 108 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "ai_reading": "By the count of how often he is the single nearest neighbor of another interviewee's passages, Carter ranks second in the whole catalog (top neighbor of 12 entries, present in the top five of 33), behind only the Mississippi field organizer Charles McLaurin (entry 17). That places the NAACP's national legal-staff lawyer one step from the most-connected node in a corpus dominated by grassroots organizers, and the embedding treats him as the hub of the litigation cohort: his five strongest neighbors by frequency are the South Carolina civil-rights lawyer Matthew J. Perry Jr. (entry 87, count 311), McLaurin (entry 17, count 215), Harold K. Brown (entry 55), Oliver W. Hill Jr. (entry 94), and the photographer-organizer Cecil J. Williams (entry 14). The unobvious pairing is the second of those. Cosine similarity in this corpus pulls Carter's recorded testimony toward McLaurin's voter-registration fieldwork almost as strongly as toward his fellow courtroom litigators, even though the two men worked at opposite ends of the movement's division of labor. A second surprise sits on the concept axes: on the Tactical Pragmatism versus Strategic Vision axis the embedding reads Carter toward the Tactical Pragmatism pole (normalized position -0.38), an odd placement for the lawyer who shaped the long-range litigation strategy behind Brown, and one that seems to track the close, case-by-case, fact-bound register in which he narrates his own work."
+,
+  "biographical_paragraph": "Born in Caryville, Florida, in 1917 and raised in Newark and East Orange, New Jersey, after his family came north in the Great Migration, Carter took a law degree from Howard University, a second degree from Columbia, and served in the Army Air Forces before joining the legal staff of the National Association for the Advancement of Colored People in 1944 [src: 1, 2]. He rose from legal assistant and assistant special counsel to succeed Thurgood Marshall as the organization's General Counsel in 1956, holding the post until 1968; over his NAACP years he argued twenty-two cases before the United States Supreme Court and won twenty-one [src: 2, 3]. His first Supreme Court argument was McLaurin v. Oklahoma State Regents (1950), in which the Court struck down the separate seating, library table, and dining arrangements imposed on the graduate student George W. McLaurin (no relation to the Mississippi organizer Charles McLaurin, entry 17) [src: 4]. He represented Oliver Brown, lead plaintiff in the consolidated school cases decided as Brown v. Board of Education in 1954, and pressed to ground the argument in Kenneth and Mamie Clark's psychological research on segregation's harm to children [src: 1, 5]. Jack Greenberg (entry 56), who tried the Topeka case alongside him, and Mildred Bond Roxborough (entry 90), who worked on the NAACP staff, both name Carter in their own oral histories. President Richard Nixon nominated him to the United States District Court for the Southern District of New York on June 15, 1972, and the Senate confirmed him on July 21, 1972 [src: 3]. He assumed senior status on December 31, 1986, and remained on the federal bench until his death on January 3, 2012 [src: 3]. His memoir, A Matter of Law: A Memoir of Struggle in the Cause of Equal Rights, appeared in 2005 [src: 6]. His Library of Congress oral history is entry 108 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]."
+,
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Robert L. Carter",
+      "speaker_slug": "robert-l-carter",
+      "source_entry": 108,
+      "timestamp": "00:25:30",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669100/",
+      "lead_in": "Recalling his high-school years, when the school closed its swimming pool rather than let him use it after he insisted on his right to swim with the white students:",
+      "quote": "That showed me the great cost to white of segregation. They paid a price for it."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert L. Carter",
+      "speaker_slug": "robert-l-carter",
+      "source_entry": 108,
+      "timestamp": "00:33:24",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669100/",
+      "lead_in": "On what debating against other colleges while a student at Lincoln University gave him:",
+      "quote": "And I think what that did for me was to enable me to not fear competing with white."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert L. Carter",
+      "speaker_slug": "robert-l-carter",
+      "source_entry": 108,
+      "timestamp": "00:35:18",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669100/",
+      "lead_in": "Carter believed a courtroom lawyer needed a big voice, which he felt he lacked; he describes the method he relied on instead:",
+      "quote": "What I had to do was to be able to know the fact and to be able to be conversant with all the facts and the law."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert L. Carter",
+      "speaker_slug": "robert-l-carter",
+      "source_entry": 108,
+      "timestamp": "00:39:00",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669100/",
+      "lead_in": "On the conditions imposed on the graduate student George W. McLaurin, the subject of Carter's first Supreme Court argument, McLaurin v. Oklahoma State Regents:",
+      "quote": "McLaurin was in the same class, in the same faculty. All his segregation was that he was required to sit in a special seat. He was required to sit in a separate table. And he had maybe a rope around him."
+    },
+    {
+      "relation": "about",
+      "speaker": "Jack Greenberg",
+      "speaker_slug": "jack-greenberg",
+      "source_entry": 56,
+      "timestamp": "00:05:18",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669133/",
+      "lead_in": "Jack Greenberg, who joined the NAACP Legal Defense and Educational Fund in 1949, describes the small staff working under Thurgood Marshall:",
+      "quote": "He'd won some of the big voting rights case, and also, he had his first assistant who was Robert L. Carter, who was a judge here in New York."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:45:24",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "Asked why the public pictures the NAACP first as a legal organization, longtime staff member Mildred Bond Roxborough points to Carter's record at the Supreme Court:",
+      "quote": "I suspect one of the reasons is, our law has appeared before the Supreme Court so many times. Form of General Counsel Robert Carter, it made some 36 appearances before the Supreme Court, and won about 30 of those cases."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669100/",
@@ -25,14 +95,29 @@
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://search.worldcat.org/title/57480706",
-      "title": "Robert L. Carter, A Matter of Law: A Memoir of Struggle in the Cause of Equal Rights",
-      "publisher": "The New Press, 2005; WorldCat OCLC 57480706"
+      "url": "https://www.loc.gov/item/2015669133/",
+      "title": "Jack Greenberg oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); names Carter as Thurgood Marshall's first assistant and his co-counsel on the Topeka, Kansas school case"
     },
     {
       "url": "https://www.fjc.gov/history/judges/carter-robert-lee",
       "title": "Robert L. Carter Federal Judicial Center judicial service record",
-      "publisher": "Federal Judicial Center"
+      "publisher": "Federal Judicial Center (records NAACP General Counsel 1956-1968, the 1972 Nixon nomination and Senate confirmation, senior status 1986, and the 2012 termination by death)"
+    },
+    {
+      "url": "https://www.oyez.org/cases/1940-1955/339us637",
+      "title": "McLaurin v. Oklahoma State Regents, 339 U.S. 637 (1950)",
+      "publisher": "Oyez, Chicago-Kent College of Law at Illinois Tech (the case record for Carter's first Supreme Court argument, on the segregated seating, library, and dining conditions imposed on George W. McLaurin)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669101/",
+      "title": "Mildred Bond Roxborough oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); the NAACP staff member's recollection of Carter's Supreme Court record as General Counsel"
+    },
+    {
+      "url": "https://search.worldcat.org/title/57480706",
+      "title": "Robert L. Carter, A Matter of Law: A Memoir of Struggle in the Cause of Equal Rights",
+      "publisher": "The New Press, 2005; WorldCat OCLC 57480706"
     }
   ]
 }

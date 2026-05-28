@@ -6,9 +6,77 @@
   "display_name": "Ruby Sales",
   "born": 1948,
   "died": null,
-  "role_summary": "SNCC voter-registration demonstrator in Lowndes County, Alabama, at 17; survivor of the August 14, 1965 Hayneville incident when Jonathan Daniels was killed protecting her; founder (2007) of the SpiritHouse Project documenting state-sanctioned deaths of Black Americans; MDiv from Episcopal Divinity School (1998).",
-  "ai_reading": "Sales sits at -1.00 on the Tactical Pragmatism vs Strategic Vision axis, the maximum reading toward Tactical Pragmatism in the entire 136-interview corpus. The cultural placement of Sales would predict the opposite: her post-movement career has been definitionally strategic, with the SpiritHouse Project's longitudinal documentation of state-sanctioned violence against Black Americans (over 2,000 cases catalogued since 2007) representing decades of long-arc strategic-vision work. The embedding reads her oral history as tactical-pragmatic instead, possibly catching the August 14, 1965 Hayneville scene that dominates her interview's most-cited passages, the single moment when Jonathan Daniels took the shot meant for her, as a tactical-immediate memory whose vector signature overwhelms the long-arc strategic framing of her later organizing. Her top semantic neighbors are Charles McLaurin (entry 17, count 92), Evans Derrell Hopkins (entry 42), Betty Garman Robinson (entry 7), Gwendolyn M. Patton (entry 52), and Harold K. Brown (entry 55), a broadly-SNCC cohort with some BPP-adjacent overlap (Hopkins), reading her as a movement voice whose cosine to the Mississippi voter-registration cohort is unexpectedly high given her Alabama anchor.",
-  "biographical_paragraph": "Ruby Nell Sales was seventeen and on a voter-registration demonstration in Lowndes County, Alabama on August 14, 1965, when she and her group were released from a six-day jail stay without notice; at a nearby store, the state highway employee Tom Coleman threatened them with a shotgun, and fellow marcher Jonathan Daniels, a white Episcopal seminarian from Cambridge, Massachusetts, pushed her out of the way and took the shot meant for her [src: 2]. Daniels died instantly; Coleman was acquitted by an all-white Hayneville jury [src: 2]. Sales was born July 8, 1948 in Jemison, Alabama and attended Tuskegee Institute as her undergraduate institution; she later took degrees from Manhattanville College, Princeton University, and a Master of Divinity from Episcopal Divinity School in Cambridge in 1998 [src: 2]. In 2007 she founded the SpiritHouse Project, the nonprofit she has dedicated to Daniels's memory and which has documented more than two thousand state-sanctioned deaths of Black Americans, of which roughly 98 percent involved unarmed people [src: 3]. Her Library of Congress oral history is entry 112 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "role_summary": "SNCC voter-registration worker in Lowndes County, Alabama, at 17; survivor of the August 14, 1965 Hayneville shooting in which Jonathan Daniels was killed shielding her; founder (2007) of the SpiritHouse Project; MDiv from Episcopal Divinity School (1998).",
+  "ai_reading": "On the Tactical Pragmatism vs Strategic Vision axis, the embedding places Sales at the maximum reading toward Tactical Pragmatism: position_normalized -1.00, the single most extreme position of any interviewee on this axis across the entire 136-interview corpus. The cultural placement would predict the opposite. Her post-movement work is definitionally long-arc and strategic, the SpiritHouse Project's decades-long documentation of state-sanctioned deaths of Black Americans, yet cosine similarity in this corpus reads her testimony as immediate and tactical. The likeliest cause is that her interview's densest, highest-similarity passages are the moment-by-moment Hayneville scene, the garbage-truck arrest, the corner store, the shot that killed Jonathan Daniels, whose granular tactical-memory vector signature overwhelms the analytical framing of her later chapters. The other surprise is geographic: her single strongest neighbor by cumulative passage count is Charles McLaurin (entry 17, count 92), a Mississippi Delta voter-registration organizer, ahead of Evans Derrell Hopkins (entry 42, count 81), Betty Garman Robinson (entry 7, count 71), Gwendolyn M. Patton (entry 52, count 63), and Harold K. Brown (entry 55, count 62). For a figure culturally anchored to Bloody Lowndes in Alabama, the embedding finds her closest kin in the Mississippi organizing cohort rather than among her fellow Alabama interviewees.",
+  "biographical_paragraph": "Ruby Nell Sales was seventeen and working a Lowndes County, Alabama voter-registration project when she and a group of demonstrators were released from the Hayneville jail on August 14, 1965, after six days inside; at a nearby store, Tom Coleman, a county engineer and special deputy, leveled a shotgun, and Jonathan Daniels, a white Episcopal seminarian from Keene, New Hampshire who was studying at the Episcopal Theological School in Cambridge, Massachusetts, pulled her back and took the shot meant for her [src: 2]. Daniels was killed; Coleman was acquitted by an all-white jury that fall [src: 2]. Sales had come to the movement through Tuskegee Institute, where she enrolled at sixteen in 1963 and where, as she tells it, Stokely Carmichael and organizers from Lowndes County drew her out of an early ambition to be a Greenwich Village beatnik and into SNCC fieldwork [src: 1]. Courtland Cox (entry 24), who moved into Lowndes County in the aftermath, names the Daniels killing and the near-killing of Sales as the reason SNCC organizers stayed rather than withdrew [src: 4]. After the shooting Sales testified at Coleman's trial despite a threat delivered to her mother; she later studied at Manhattanville College and Princeton University and earned a Master of Divinity from the Episcopal Divinity School in Cambridge in 1998 [src: 1][src: 3]. In 2007 she founded the SpiritHouse Project, which she frames as a documentation and education effort rooted in the question of how people live in relation to one another [src: 1][src: 5]. Her Library of Congress oral history is entry 112 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "00:27:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "Recalling her first day registering voters in Lowndes County, when Stokely Carmichael faced down a sheriff who had drawn a gun on him:",
+      "quote": "And Stokely said to him, well, hell will be an integrated hell tonight. And to see someone be able to stand up before a gun, not crying, not afraid, not backing down, touched me deeply."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "00:44:59",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "At the corner store in Hayneville, Tom Coleman aimed his shotgun at Sales, who was standing in front, and Jonathan Daniels pulled her backward:",
+      "quote": "And the next thing I knew, I was pulled backwards and I felt literally fell. And Jonathan, I heard a shot and it was Jonathan. He shot Jonathan."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "00:50:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "On the trauma that followed the killing and the years it took to speak again:",
+      "quote": "And of course, my story is known that after that, I just became, went from a big mouth person to someone who rarely spoke."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "01:04:35",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "On why she prefers the phrase Southern Freedom Movement to civil rights movement:",
+      "quote": "I think that I prefer to call it in retrospect the Southern Freedom Movement because it was not only a movement for civil rights, but it was also a movement for human dignity."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "01:29:49",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "Explaining the meaning behind the SpiritHouse Project she founded in 2007:",
+      "quote": "And so spirit house is really about how we live, what we take in and what we put out, how we live in relations to each other."
+    },
+    {
+      "relation": "about",
+      "speaker": "Courtland Cox",
+      "speaker_slug": "courtland-cox",
+      "source_entry": 24,
+      "timestamp": "00:51:46",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669129/",
+      "lead_in": "Fellow SNCC organizer Courtland Cox explains why he and others moved into Lowndes County after the shooting:",
+      "quote": "Well, I was not exactly, I mean, the reason we went into Lansk was to show after Jonathan was killed and Ruby Sales was almost killed, you know, that we were not going to be afraid."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669106/",
@@ -16,13 +84,23 @@
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://www.episcopalarchives.org/exhibits/jonathan-daniels/",
-      "title": "Jonathan Daniels archival exhibit (the August 14, 1965 Hayneville incident is documented in the Episcopal Church's archival collection of Daniels's seminary correspondence and martyrdom record)",
-      "publisher": "Archives of the Episcopal Church"
+      "url": "https://www.archives.gov/research/african-americans/individuals/jonathan-daniels",
+      "title": "Jonathan Myrick Daniels and the Hayneville, Alabama shooting of August 14, 1965 (the Tom Coleman trial and acquittal documented in the federal record)",
+      "publisher": "U.S. National Archives and Records Administration"
+    },
+    {
+      "url": "https://snccdigital.org/people/ruby-sales/",
+      "title": "Ruby Sales",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project, working from the SNCC papers at the Robert W. Woodruff Library, Atlanta University Center)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669129/",
+      "title": "Courtland Cox oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
       "url": "https://www.spirithouseproject.org/",
-      "title": "SpiritHouse Project institutional record (founded by Ruby Sales 2007)",
+      "title": "SpiritHouse Project institutional record (founded by Ruby Sales, 2007)",
       "publisher": "SpiritHouse Project, Inc."
     }
   ]

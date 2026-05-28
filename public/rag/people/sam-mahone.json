@@ -3,17 +3,110 @@
   "slug": "sam-mahone",
   "person_type": "interviewee",
   "entry_number": 113,
-  "born": null,
+  "born": 1945,
   "died": null,
   "display_name": "Sam Mahone",
-  "role_summary": "Civil rights movement organizer; in this corpus's embedding his testimony clusters with Jennifer Lawson, Charles McLaurin, Juadine Henderson, Steven McNichols, and Annie Pearl Avery.",
-  "ai_reading": "Mahone's top semantic neighbors are Jennifer Lawson (entry 59, count 71), Charles McLaurin (entry 17, count 62), Juadine Henderson (entry 68), Steven McNichols (entry 118), and Annie Pearl Avery (entry 3). The cluster crosses Mississippi voter-registration figures (McLaurin, Henderson) with broader SNCC organizers (Lawson, Avery, McNichols); the embedding reads him as an interior-of-the-SNCC-network voice without strong pull toward any single subgroup. His axis positions are all in moderate ranges (-0.14 to +0.40), placing him in the catalog's centrist-voice band alongside McDew, Terry, Richardson, and Hayling, the structural pattern of catalog entries the embedding finds difficult to pull strongly toward any single pole.",
-  "biographical_paragraph": "Sam Mahone's oral history is held at the Library of Congress as entry 113 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "SNCC field worker in the Southwest Georgia Project; organized voter registration and public-accommodation testing in Americus and Sumter County from 1962; later co-founded the Americus-Sumter County Movement Remembered Committee.",
+  "ai_reading": "Cosine similarity in this corpus puts Mahone's single highest-scoring passage neighbor at Sam Young, Jr. (entry 114, top score 0.860), the highest one-passage match to any interviewee in his neighbor set; the two were interviewed the same day in Albany, Georgia and both came out of the Southwest Georgia movement, so the embedding recovers a shared-place, shared-session signature that the count-ranked list (led by Jennifer Lawson at 71 and Charles McLaurin at 62) buries. The sharper surprise is on the Southern Struggle to Northern Struggle axis, where his testimony reads at +0.29 toward the Northern pole even though every campaign he describes is Deep South ground (Americus, Sumter County, Tougaloo, Greenville, Mississippi); the vector seems to track his repeated framing of the Americus cases as nationally-consequential federal-court fights and his fundraising appeals to Northern campuses, rather than the local geography of the work. The influence graph gives him exactly one out-edge, to Rev. Charles Melvin Sherrod (entry 18), the project director who dispatched the first SNCC workers to Americus, and no in-edges, an isolate-with-one-tie shape that mirrors how the embedding reads him: an interior network voice with no strong pull toward any single subgroup.",
+  "biographical_paragraph": "Sam Mahone was born in 1945 in Americus, Georgia, the seat of Sumter County in the southwestern corner of the state, and he traces his organizing to roughly the tenth grade, when a ministers' voter-registration effort called the Americus Voters League drew him in before any national civil rights organization had arrived [src: 1]. SNCC field workers reached Americus in late 1962, dispatched from Albany under the Southwest Georgia Project that Rev. Charles Melvin Sherrod (entry 18) directed; among the first to arrive were Don Harris, John Perdew, and Ralph Allen [src: 1][src: 2]. Mahone canvassed for voter registration, helped run Freedom Schools, and joined the testing of public-accommodation laws; he was jailed at the Sumter County prison farm and held in solitary confinement during a hunger strike [src: 1]. In August 1963, Harris, Perdew, Allen, and CORE worker Zev Aelony were charged under a Georgia insurrection statute that carried the death penalty, becoming known as the Americus Four; a three-judge federal panel struck the charge down after the men spent about three months in jail [src: 1][src: 3]. Mahone also recounts the 1963 detention of juvenile girls in the Leesburg Stockade, an episode the Smithsonian National Museum of African American History and Culture later documented as the Stolen Girls [src: 1][src: 4]. He left in 1966 for Tougaloo College in Mississippi on a SNCC scholarship and continued movement work there and in Greenville before a career in paper conservation at the Georgia Department of Archives and as a gallery photographer in Atlanta [src: 1]. In 2007 he and other veterans founded the biennial Americus-Sumter County Movement Remembered effort to recover the local record, a project his fellow interviewee William S. Leventhal (entry 129) names directly [src: 1][src: 5]. His oral history is held by the Library of Congress as entry 113 of the Civil Rights History Project (American Folklife Center, AFC 2010/039) [src: 6].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Sam Mahone",
+      "speaker_slug": "sam-mahone",
+      "source_entry": 113,
+      "timestamp": "00:12:46",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669162/",
+      "lead_in": "Mahone describes the SNCC house in Americus as the place his activism took hold, in part through books the field workers brought:",
+      "quote": "And the fact that they introduced us to black authors, you know, Richard Wright, James Baldwin, you know, the boy and all these people that we hadn't heard of gave us a whole sense of meaning, you know, and being, you know, and as a kid, it really, it really sparked an interest in us and made us want to come back to that house every day after school."
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Mahone",
+      "speaker_slug": "sam-mahone",
+      "source_entry": 113,
+      "timestamp": "00:14:32",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669162/",
+      "lead_in": "On what SNCC taught the Americus students about why they were registering voters:",
+      "quote": "the only way to form the power, the change in the dynamics of the system, was through getting people registered, choosing our own candidates"
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Mahone",
+      "speaker_slug": "sam-mahone",
+      "source_entry": 113,
+      "timestamp": "00:15:47",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669162/",
+      "lead_in": "On the dual training inside the Freedom Houses, where organizers rehearsed protecting themselves without striking back:",
+      "quote": "It was also a place where we would taught each other, self defense techniques, not fighting back because we had accepted the principle of nonviolence."
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Mahone",
+      "speaker_slug": "sam-mahone",
+      "source_entry": 113,
+      "timestamp": "00:21:21",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669162/",
+      "lead_in": "On the public-accommodation action at the segregated downtown theater that led to his arrests:",
+      "quote": "So one night, 11 of us decided we were going to go to the front, entrusted to try to purchase tickets."
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Mahone",
+      "speaker_slug": "sam-mahone",
+      "source_entry": 113,
+      "timestamp": "00:57:24",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669162/",
+      "lead_in": "On why he and other veterans convened in Americus in 2007 to gather the movement's local history:",
+      "quote": "Because one of the things we recognize as movement veterans is that a lot of us hadn't passed on these stories to our kids."
+    },
+    {
+      "relation": "about",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "02:38:05",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "William S. Leventhal, who worked the SCOPE project in Southwest Georgia, names Mahone as the organizing example he tried to follow:",
+      "quote": "I'm following Sammy's lead. He's embracing everybody and being inclusive."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669162/",
       "title": "Sam Mahone oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/americus-movement/",
+      "title": "Americus Movement",
+      "publisher": "New Georgia Encyclopedia (Georgia Humanities and the University of Georgia Press)"
+    },
+    {
+      "url": "https://crdl.usg.edu/events/sedition_trial_americus",
+      "title": "Sedition Trial, Americus, Ga. (the Americus Four insurrection case, 1963)",
+      "publisher": "Civil Rights Digital Library, Digital Library of Georgia (University System of Georgia)"
+    },
+    {
+      "url": "https://nmaahc.si.edu/explore/stories/hidden-herstory-leesburg-stockade-girls",
+      "title": "Hidden Herstory: The Leesburg Stockade Girls",
+      "publisher": "Smithsonian National Museum of African American History and Culture"
+    },
+    {
+      "url": "https://crdl.usg.edu/events/americus_movement",
+      "title": "Americus Movement (collection record)",
+      "publisher": "Civil Rights Digital Library, Digital Library of Georgia (University System of Georgia)"
+    },
+    {
+      "url": "https://www.loc.gov/collections/civil-rights-history-project/",
+      "title": "Civil Rights History Project collection (AFC 2010/039)",
+      "publisher": "American Folklife Center, Library of Congress (in collaboration with the Smithsonian NMAAHC)"
     }
   ]
 }

@@ -3,17 +3,116 @@
   "slug": "roberta-alexander",
   "person_type": "interviewee",
   "entry_number": 110,
-  "born": null,
-  "died": null,
   "display_name": "Roberta Alexander",
-  "role_summary": "Black Panther Party organizer (distinct from the opera singer of the same name); in this corpus's embedding her testimony clusters tightly with the BPP-and-West-Coast-civil-rights cohort.",
-  "ai_reading": "Alexander's top five semantic neighbors are Elbert \"Big Man\" Howard (entry 35, count 213), Harold K. Brown (entry 55, San Diego CORE, at 178), Aaron Dixon (entry 1) at 142, Evans Derrell Hopkins (entry 42) at 123, and Betty Garman Robinson (entry 7) at 110. The embedding therefore reads her as a Black Panther Party voice with cross-coalition cosines to West Coast civil rights organizing (Brown) and SNCC Northern support (Robinson). She continues the BPP-at-Nonviolence-pole pattern at -0.60 on the nonviolence vs self-defense axis, alongside the rest of the corpus's BPP-identified interviewees (Aaron Dixon -0.73, Elmer Dixon -1.00, Elbert Howard -0.85, Kathleen Cleaver -0.80, Evans Hopkins -0.56, Norma Mtume -0.65). Her -0.50 reading on Sacred Framing vs Secular Framing axis adds her to the BPP cohort's Sacred-side cluster, distinct from the SCLC-pastor-figures who in this corpus paradoxically land on the Secular side (e.g., Wyatt Tee Walker at +0.73). The AI-vs-culture inversions the catalog has documented hold here.",
-  "biographical_paragraph": "Roberta Alexander (the Black Panther Party organizer, distinct from the operatic soprano of the same name born March 3, 1949) was active in the BPP organizing of the late 1960s and beyond; her oral history is held at the Library of Congress as entry 110 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing on Alexander the BPP member is pending; the strongest signal for her movement role is the embedding's tight cosine with the catalog's BPP cohort (Howard, Aaron Dixon, Hopkins, plus Harold K. Brown's parallel West Coast civil rights leadership) visible in her neighbors above.",
+  "born": 1946,
+  "died": null,
+  "role_summary": "Black Panther Party organizer in 1969; typeset and edited the party's newspaper under Elbert \"Big Man\" Howard and toured Japan with him; earlier a W.E.B. Du Bois Clubs of America member arrested in Berkeley's 1964 Free Speech Movement; later resident dean of UC San Diego's Lumumba-Zapata (Third) College, now Thurgood Marshall College.",
+  "ai_reading": "Cosine similarity in this corpus pulls Alexander's testimony tightest to Elbert \"Big Man\" Howard (entry 35, count 213, top cosine 0.74) and Harold K. Brown (entry 55, count 178, top cosine 0.83), with Aaron Dixon (entry 1, count 142) and Evans Derrell Hopkins (entry 42) close behind. The Howard pairing is the rare case where the embedding's nearest neighbor and the influence graph agree on a concrete documented tie: Howard (entry 35) is also the single corpus voice the influence graph records as naming her, and her own transcript explains why, she typeset the Black Panther newspaper he edited and flew to Japan with him in 1969. The sharper surprise is on the concept axes. The Nonviolence-as-Theology versus Armed-Self-Defense axis places her at a normalized -0.60, toward the Nonviolence-as-Theology pole, and the Sacred versus Secular axis puts her at -0.50 on the Sacred side. For a Black Panther who passed through a shooting range with a .357 Magnum, the embedding reads her vector signature as closer to redemptive-suffering framing than to Ten-Point-Program militancy, the same AI-versus-culture inversion the catalog has logged across the corpus's BPP-identified interviewees (Aaron Dixon -0.73, Elmer Dixon -1.00, Kathleen Cleaver -0.80). Her transcript supplies the textual reason: she says outright she never imagined a revolution the movement could shoot its way into.",
+  "biographical_paragraph": "Roberta Alexander, called Birdie in her family, was born in December 1946 in Berkeley, California, and is the daughter of Franklin Alexander, a Communist Party organizer who directed the Civil Rights Congress in Oakland in the late 1940s and early 1950s and worked the cotton-compress and longshore locals up the Central Valley [src: 1]. She entered UC Berkeley in the fall of 1964, joined the W.E.B. Du Bois Clubs of America, and was arrested in the Sproul Hall sit-in of the Free Speech Movement that December [src: 1]. After a 1966 to 1967 study year in Francisco Franco's Spain that ended in her deportation following an antiwar speech, she joined the Black Panther Party in 1969, where she typeset and proofread the party newspaper under editor Elbert \"Big Man\" Howard (entry 35) and traveled with him to Japan at the invitation of the Zengakuren student federation [src: 1, 2]. She left the party late in 1969 and became the first resident dean of the college at UC San Diego briefly named Lumumba-Zapata, now Thurgood Marshall College, before completing a PhD in comparative literature there [src: 1]. Her oral history is held by the Library of Congress as entry 110 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. She is a different person from the operatic soprano Roberta Alexander, born 1949 in Lynchburg, Virginia [src: 3].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "00:01:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "Asked to open with her family background, Alexander reaches back to a grandfather whose century of life ran from slavery to the Pony Express:",
+      "quote": "Not my great grandfather, my grandfather was a slave. And that seems hard to imagine if you try to do the math, but he was born in 1842 and he died in 1942."
+    },
+    {
+      "relation": "self",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "00:35:06",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "She dates her political awakening to a specific conversation with her father over an issue of Jet magazine:",
+      "quote": "the first conversation that my father officially had with me about politics was when Emmett Till was murdered."
+    },
+    {
+      "relation": "self",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "00:45:49",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "On arriving at UC Berkeley in 1964 and throwing herself into the campus movement that became the Free Speech Movement:",
+      "quote": "I was always out there passing out leaflets as a member of the WWE Be W.E.B. Du Bois Clubs of America."
+    },
+    {
+      "relation": "self",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "01:06:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "After cooking at the party's Free Breakfast program, she was assigned to the newspaper, where she met its editor:",
+      "quote": "And so that's where I met Elbert \"Big Man\" Howard because he was the editor of the newspaper and that's where I spent a lot of time."
+    },
+    {
+      "relation": "self",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "01:27:53",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "Listing the reasons she walked away from the party in 1969, she names her doubts about armed revolution:",
+      "quote": "I never had in my mind a way to have a revolution that we could shoot our way into in this country that could be done through violence."
+    },
+    {
+      "relation": "about",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "01:13:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "Black Panther newspaper editor Elbert \"Big Man\" Howard (entry 35) recalls the leadership pairing him with Alexander for the 1969 trip to Japan:",
+      "quote": "So we took that long flight to Japan. And that's Roberta Alexander that you're going to."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:57:55",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Seattle Panther captain Aaron Dixon (entry 1), asked about an old friend the transcript renders as \"Bertha\" Alexander, describes the same tall newspaper organizer who traveled to Japan with Big Man Howard, confirming this is Roberta Alexander:",
+      "quote": "And she worked a lot with Big Man Howard, and Big Man Howard was the editor of the newspaper, and they traveled, they did a lot of traveling around the world, you know, talking about where they went to Japan."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655433/",
       "title": "Roberta Alexander oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2016655436/",
+      "title": "Elbert \"Big Man\" Howard oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); Howard's interview (entry 35) independently names Roberta Alexander as his companion on the party's 1969 Japan tour"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669186/",
+      "title": "Aaron Dixon oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); Dixon's interview (entry 1) describes Alexander's Black Panther newspaper and international-travel work"
+    },
+    {
+      "url": "https://search.worldcat.org/title/828493747",
+      "title": "Elbert \"Big Man\" Howard, Panther on the Prowl",
+      "publisher": "BCP Digital Printing, 2002; WorldCat OCLC 828493747 (memoir of the Black Panther Party's founding newspaper editor, who recounts the 1969 Japan delegation he made with Roberta Alexander)"
+    },
+    {
+      "url": "https://www.crmvet.org/",
+      "title": "Veterans of the Civil Rights Movement archive",
+      "publisher": "Bruce Hartford and Movement veterans (primary-document and roster archive covering the W.E.B. Du Bois Clubs and Bay Area civil rights organizing of the 1960s that Alexander entered through her father Franklin Alexander)"
     }
   ]
 }
