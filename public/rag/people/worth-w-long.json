@@ -3,17 +3,110 @@
   "slug": "worth-w-long",
   "person_type": "interviewee",
   "entry_number": 131,
-  "born": null,
-  "died": null,
   "display_name": "Worth W. Long",
-  "role_summary": "SNCC field secretary and director of voter registration; civil rights movement archivist; in this corpus's embedding his testimony clusters with James Oscar Jones, Esther M. A. Terry, Dorothy Foreman Cotton, and Charles McLaurin.",
-  "ai_reading": "Long's top semantic neighbors are James Oscar Jones (entry 57, count 57), Esther M. A. Terry (entry 40), Dorothy Foreman Cotton (entry 29, SCLC Educational Director), the John Dudley joint interview (entry 64), and Charles McLaurin (entry 17). The cluster bridges SNCC field organizing and SCLC educational work, consistent with Long's documented dual role across both organizations. His +0.72 Nonviolence as Theology vs Armed Self-Defense reading places him on the Self-Defense side, joining the catalog's recurring SCLC-and-direct-action inversion pattern (Walker +0.87, McKinney +0.84, Lowery +0.78, Jones +0.67). His +0.60 Sacred Framing position fits his SCLC educational ministry; the inversion on the nonviolence axis remains the catalog's most consistent unresolved AI-vs-culture observation.",
-  "biographical_paragraph": "Worth W. Long's oral history is held at the Library of Congress as entry 131 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "born": 1936,
+  "died": 2025,
+  "role_summary": "SNCC organizer who became the Selma, Alabama project director in 1963 and a leader of the Arkansas project; later a folklorist with the Smithsonian Institution and a co-founder of the Mississippi Delta Blues Festival.",
+  "ai_reading": "Ranked by shared-passage count, Long's nearest neighbors in this corpus are James Oscar Jones (entry 57, count 57), Esther M. A. Terry (entry 40, count 45), Dorothy Foreman Cotton (entry 29, count 42), the John Dudley joint interview (entry 64, count 42), and Charles McLaurin (entry 17, count 37). The embedding is reading a childhood signature, not a movement one: the only testimony in his file is a long account of growing up in Durham's Hayti district as the son of an AME Zion presiding elder, so the vector clusters him with other interviewees narrating rural-to-town Black churched upbringings rather than with fellow SNCC field staff. Two axis positions cut against that surface. On the Nonviolence as Theology versus Armed Self-Defense axis he reads +0.72 toward Armed Self-Defense, joining the catalog's recurring inversion in which church-formed voices land on the self-defense pole; and on the Sacred versus Secular axis he sits at +0.60, leaning secular, even though the transcript is saturated with his father's ministry and the business of the church. The influence graph supplies what his own words omit: five interviewees name him, led by James Oscar Jones (count 10) and Euvester Simpson (count 8), both placing him in SNCC's Arkansas and Mississippi work that his captured testimony never reaches.",
+  "biographical_paragraph": "Worth Westmoreland Long Jr. was born on January 15, 1936, at Duke Hospital in Durham, North Carolina, the son of Gertrude Watson Long and the Reverend William Worth Long Sr., a presiding elder of the Durham district of the African Methodist Episcopal Zion Church [src: 1]. He grew up on the edge of Hayti, Durham's self-sustaining Black business district, and was taught Pan-African consciousness and Black self-sufficiency in his father's house [src: 2, 3]. After two years in the United States Air Force stationed in Korea and Japan, he enrolled at Philander Smith College in Little Rock in 1962 and moved into Student Nonviolent Coordinating Committee organizing, helping lead sit-ins at Little Rock's Woolworth's and Walgreen's lunch counters and being arrested in June 1963 [src: 2, 4]. He became SNCC's Selma, Alabama project director in 1963, succeeding Bernard and Colia Lafayette [src: 2, 4]. From the early 1970s he worked as a folklorist with the Smithsonian Institution, co-directing the Mississippi Folklife Project with the photographer Roland Freeman, helping found the Mississippi Delta Blues Festival, and producing the radio history of the movement \"Will the Circle Be Unbroken?\" [src: 2, 5]. He died on May 8, 2025, in Atlanta at the age of eighty-nine [src: 5, 6]. His oral history is held by the Library of Congress as entry 131 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]; other interviewees in the corpus place him in that movement work, including James Oscar Jones (entry 57) and Euvester Simpson (entry 41).",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Worth W. Long",
+      "speaker_slug": "worth-w-long",
+      "source_entry": 131,
+      "timestamp": "00:03:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655413/",
+      "lead_in": "Long recalls how his father, an AME Zion preacher, told family stories during the farm labor the two shared:",
+      "quote": "My father would talk about it when he took me out to work me to death on the farm."
+    },
+    {
+      "relation": "self",
+      "speaker": "Worth W. Long",
+      "speaker_slug": "worth-w-long",
+      "source_entry": 131,
+      "timestamp": "00:16:26",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655413/",
+      "lead_in": "On the rural roots his parents carried into Durham, a saying he says he later reworked into a statement about Africa:",
+      "quote": "there's a saying that you can take black folk from the country. But you can't take the country from black folk."
+    },
+    {
+      "relation": "self",
+      "speaker": "Worth W. Long",
+      "speaker_slug": "worth-w-long",
+      "source_entry": 131,
+      "timestamp": "00:36:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655413/",
+      "lead_in": "Describing how he understood the state of North Carolina building a separate Black law school rather than admit Floyd McKissick, Long set his priorities apart from integration:",
+      "quote": "The question of integration at that time was not one of my major concerns. My concern was having access to something that could prepare you for life."
+    },
+    {
+      "relation": "self",
+      "speaker": "Worth W. Long",
+      "speaker_slug": "worth-w-long",
+      "source_entry": 131,
+      "timestamp": "00:42:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655413/",
+      "lead_in": "Reflecting on a white filling-station boy who had no language for how to address his father, Long drew a lesson about how change happens:",
+      "quote": "But change, I think, comes from engagement."
+    },
+    {
+      "relation": "about",
+      "speaker": "James Oscar Jones",
+      "speaker_slug": "james-oscar-jones",
+      "source_entry": 57,
+      "timestamp": "00:37:49",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669113/",
+      "lead_in": "James Oscar Jones recalls first meeting Long and the white SNCC organizer Bill Hansen when they came to organize students in Arkansas:",
+      "quote": "When, when we met, Worth Long talked about he had been involved in labor and union groups a lot."
+    },
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:59:56",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Asked whether she had come across Long in Mississippi, Euvester Simpson remembered the work that defined his later career:",
+      "quote": "And Worth Long was really involved in... he was an oral historian. He liked to go out in the countryside and just talk to regular people and find out what was going on."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655413/",
       "title": "Worth W. Long oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://snccdigital.org/people/worth-long/",
+      "title": "Worth Long",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project, drawing on the SNCC papers and movement oral histories)"
+    },
+    {
+      "url": "https://blogs.library.duke.edu/rubenstein/2025/07/02/remembering-the-legacy-of-sncc-veteran-and-folklorist-worth-long-jan-15th-1936-may-8-2025/",
+      "title": "Remembering the Legacy of SNCC Veteran and Folklorist Worth Long (Jan. 15th 1936 to May 8, 2025)",
+      "publisher": "David M. Rubenstein Rare Book & Manuscript Library, Duke University"
+    },
+    {
+      "url": "https://www.crmvet.org/mem/longw.htm",
+      "title": "Worth Long memorial (Selma project director, 1963; Arkansas SNCC leader)",
+      "publisher": "Veterans of the Civil Rights Movement archive (crmvet.org)"
+    },
+    {
+      "url": "https://americanfolkloresociety.org/worth-long-1936-2025/",
+      "title": "Worth Long (1936 to 2025)",
+      "publisher": "American Folklore Society (memorial documenting his Smithsonian Mississippi Folklife Project, Delta Blues Festival, and folklore career)"
+    },
+    {
+      "url": "https://www.ajc.com/news/2025/06/worth-long-made-history-then-recorded-it/",
+      "title": "Worth Long Made History, Then Recorded It",
+      "publisher": "The Atlanta Journal-Constitution (obituary, June 2025)"
     }
   ]
 }

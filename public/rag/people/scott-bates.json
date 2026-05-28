@@ -3,17 +3,89 @@
   "slug": "scott-bates",
   "person_type": "interviewee",
   "entry_number": 116,
-  "born": null,
-  "died": null,
+  "born": 1923,
+  "died": 2013,
   "display_name": "Scott Bates",
-  "role_summary": "Civil rights movement participant; in this corpus's embedding his testimony pairs with the Highlander Folk School music-tradition cohort and the SCLC Educational Director cluster.",
-  "ai_reading": "Bates's top semantic neighbor is the joint Candie and Guy Carawan interview (entry 11, count 119), the Highlander Folk School music teachers; his second is Dorothy Foreman Cotton (entry 29, count 111), SCLC's Educational Director. The combination is unusual, the embedding pulling his testimony as much toward the Highlander music tradition as toward SCLC's literacy-and-citizenship pedagogical work. His other neighbors include Julius W. Becton Jr. (entry 71, military-then-FEMA-then-Prairie-View), C. T. Vivian (entry 134, SCLC), and Charles McLaurin (entry 17). His axis positions are all extreme centrist, all within +/-0.07 of zero, the catalog's most-narrow centrist band documented so far (narrower than Hayling's +/-0.18 and McDew's +/-0.15).",
-  "biographical_paragraph": "Scott Bates's oral history is held at the Library of Congress as entry 116 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "Poet and French professor at the University of the South (Sewanee), Highlander Folk School board member from 1958, and organizer of the Franklin County, Tennessee NAACP chapter.",
+  "ai_reading": "Bates was a white anti-war poet whose movement work ran through Highlander and the Episcopal South, yet cosine similarity in this corpus pulls his testimony first toward Dorothy Foreman Cotton (entry 29), SCLC's Education Director, before it reaches the Highlander music figures one might expect. Cotton is his strongest neighbor by a wide margin (his passages match hers in 49 of his 94 indexed chunks, average similarity 0.61), with the joint Candie and Guy Carawan interview (entry 11) a distant second at 25 chunks; the embedding reads his account as citizenship-school pedagogy more than folk-song tradition, even though he spends much of the interview on Highlander's workshops and singing. The second observation is positional: across all five concept axes his coordinates fall within plus or minus 0.04 of center, which makes him the eighth most centrist of the 136 entries on the combined axes and the eleventh most centrist on the Sacred versus Secular Framing axis alone. For an interviewee whose narrative is explicitly Christian-left (Fellowship of Reconciliation, the social gospel, an Episcopal college), the vector signature reads as neither sacred nor secular but balanced between them.",
+  "biographical_paragraph": "Alfred Scott Bates was born in Evanston, Illinois on June 13, 1923, graduated from Carleton College, and was drafted into the Army in World War II, where a year of intensive French study at the University of Chicago sent him to Normandy and into Military Government in France as an interpreter [src: 1, 2]. He joined the French faculty of the University of the South at Sewanee, Tennessee in 1954, taught French and later film there until his retirement in 1993, and edited the anthology Poems of War Resistance from 2300 B.C. to the Present in 1969 [src: 1, 3]. Bates began attending workshops at the Highlander Folk School at its Grundy County location in 1956 and joined Highlander's board of directors in 1958, a seat he held until his death, becoming an emeritus member in the 1990s [src: 1]. Working with Septima Clark (the school's education director, then organizing citizenship work) and Highlander founder Myles Horton, he helped bring an NAACP chapter to Franklin County, Tennessee in an effort that produced a lawsuit desegregating the county's public schools [src: 1, 2]. In the interview he recounts meeting Esau Jenkins, Andrew Young, and folk musician Guy Carawan through Highlander, and he places himself at the Highlander gathering where SNCC figures convened before the 1960 founding meeting at Shaw University; Dorothy Foreman Cotton (entry 29) and the joint interview of Candie and Guy Hughes Carawan (entry 11) are his nearest neighbors in the corpus. He died in Sewanee on August 25, 2013 [src: 1, 2]. His Library of Congress oral history is entry 116 of the Civil Rights History Project, recorded June 20, 2013 by David P. Cline (American Folklife Center accession AFC 2010/039) [src: 4].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Scott Bates",
+      "speaker_slug": "scott-bates",
+      "source_entry": 116,
+      "timestamp": "00:36:16",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669190/",
+      "lead_in": "Asked how a French professor from Illinois came to civil rights work in the South, Bates describes the commitment he found after taking the Sewanee job:",
+      "quote": "And so I found my life's dedication, baked me to bring in blacks to the south and desegregate the south and to work with Highlander Folk School."
+    },
+    {
+      "relation": "self",
+      "speaker": "Scott Bates",
+      "speaker_slug": "scott-bates",
+      "source_entry": 116,
+      "timestamp": "00:57:20",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669190/",
+      "lead_in": "On how the local NAACP chapter he organized got started, and who guided it:",
+      "quote": "So I started the chapter under the supervision of Septimaclack."
+    },
+    {
+      "relation": "self",
+      "speaker": "Scott Bates",
+      "speaker_slug": "scott-bates",
+      "source_entry": 116,
+      "timestamp": "01:19:59",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669190/",
+      "lead_in": "Recounting a Highlander meeting that preceded SNCC's founding, Bates recalls what Myles Horton told the young organizers in the room:",
+      "quote": "Myles said, you know, you guys, you gotta do it yourself. You know, the white's a lot stick with you. And he was right too."
+    },
+    {
+      "relation": "self",
+      "speaker": "Scott Bates",
+      "speaker_slug": "scott-bates",
+      "source_entry": 116,
+      "timestamp": "01:20:26",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669190/",
+      "lead_in": "When Black Panther visitors arrived from Chicago carrying firearms, Bates explains the rule that kept the Klan-watched school from being burned:",
+      "quote": "And we had a sitting rule, no guns."
+    },
+    {
+      "relation": "self",
+      "speaker": "Scott Bates",
+      "speaker_slug": "scott-bates",
+      "source_entry": 116,
+      "timestamp": "01:09:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669190/",
+      "lead_in": "On why he still guides visitors to the remains of the original Highlander Folk School near Monteagle:",
+      "quote": "The place where really the one spot where the whole movement started, the active movement of it."
+    }
+  ],
   "sources": [
     {
+      "url": "https://highlandercenter.org/in-remembrance-of-highlander-board-member-scott-bates/",
+      "title": "In Remembrance of Highlander Board Member Scott Bates",
+      "publisher": "Highlander Research and Education Center (the institutional successor to the Highlander Folk School, on whose board Bates served from 1958 until his death; records his Highlander workshop attendance from 1956, board tenure, and the Franklin County NAACP and school-desegregation lawsuit with Septima Clark and Myles Horton)"
+    },
+    {
+      "url": "https://highlandercenter.org/celebrating-scott-bates-june-13-1923-august-25-2013/",
+      "title": "Celebrating Scott Bates (June 13, 1923 to August 25, 2013)",
+      "publisher": "Highlander Research and Education Center (memorial tribute giving his birth and death dates, Carleton College education, University of the South professorship, and Highlander board service)"
+    },
+    {
+      "url": "https://catalog.loc.gov/vwebv/search?searchArg=Poems+of+War+Resistance+Bates&searchCode=GKEY%5E*&searchType=0",
+      "title": "Scott Bates (ed.), Poems of War Resistance from 2300 B.C. to the Present",
+      "publisher": "Library of Congress online catalog (anthology of anti-war poetry edited by Bates, 1969, with introductions by Louis Untermeyer and Kenneth Patchen)"
+    },
+    {
       "url": "https://www.loc.gov/item/2015669190/",
-      "title": "Scott Bates oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "Scott Bates oral history interview conducted by David P. Cline in Sewanee, Tennessee, 2013 June 20",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039), item crhp0091"
     }
   ]
 }

@@ -3,17 +3,110 @@
   "slug": "samuel-berry-mckinney",
   "person_type": "interviewee",
   "entry_number": 115,
-  "born": null,
-  "died": null,
   "display_name": "Samuel Berry McKinney",
-  "role_summary": "Reverend; pastor of Mt. Zion Baptist Church in Seattle (1958-1998); civil rights movement leader; in this corpus's embedding his testimony clusters with Amos C. Brown, Robert L. Carter, Charles McLaurin, and the SCLC-and-NAACP cohort.",
-  "ai_reading": "McKinney's top semantic neighbor is Amos C. Brown (entry 2, count 122), the San Francisco NAACP and Third Baptist pastor whose own career parallels McKinney's Seattle Mt. Zion Baptist pastorate. The pairing of two long-serving West Coast Black Baptist civil rights pastors is the catalog's cleanest same-vocation-and-region cosine outside the BPP-brothers and lawyer cohort pairings. McKinney's other neighbors are Robert L. Carter (entry 108, NAACP LDF), Charles McLaurin (entry 17, Mississippi SNCC), C. T. Vivian (entry 134, SCLC), and Reverend Harry Blake (entry 102). His position on the Nonviolence as Theology vs Armed Self-Defense axis is +0.84, far toward Armed Self-Defense. This continues the catalog's recurring AI-vs-culture inversion on this axis (Walker +0.87, Jones +0.67, Lowery +0.78, Worth W. Long +0.72, Long-Eldorado-Self-Defense-and-Seeger-and-now-McKinney all on the side opposite their cultural placements as nonviolent SCLC-network pastors).",
-  "biographical_paragraph": "Samuel Berry McKinney's oral history is held at the Library of Congress as entry 115 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "born": 1926,
+  "died": 2018,
+  "role_summary": "Pastor of Mount Zion Baptist Church in Seattle (1958-1998); Morehouse College classmate of Martin Luther King Jr.; organizer of the Central Area Civil Rights Committee and co-founder of Liberty Bank and the Seattle Opportunities Industrialization Center.",
+  "ai_reading": "The embedding finds Samuel Berry McKinney's testimony closest to two figures from outside his own region and vocation. By the precomputed semantic-neighbor tally in this corpus, his strongest neighbor is Amos C. Brown (entry 2, 122 shared retrievals), the San Francisco NAACP figure and Third Baptist pastor, a pairing of two West Coast Black Baptist ministers that reads as expected; but the second strongest is Robert L. Carter (entry 108, 116 retrievals), the NAACP Legal Defense Fund attorney who argued school-desegregation cases, with Charles McLaurin (entry 17, 103) and C. T. Vivian (entry 134, 98) close behind. The cosine space groups McKinney's church-and-community-development account next to a constitutional-litigation career more readily than next to most of the pastors he names in his own interview. On the Nonviolence as Theology versus Armed Self-Defense axis his normalized position is +0.84, sixth of the 136 audited interviews toward the Armed Self-Defense pole, which sits opposite the cultural framing of a King classmate and lifelong Baptist preacher; the raw spread on this axis is narrow, so the reading is a relative ranking rather than a strong absolute lean, but it places him in the same tail as Wyatt Tee Walker (entry 132) and Joseph Echols Lowery (entry 66), the recurring pattern in this catalog where SCLC-network clergy register toward self-defense rather than toward the nonviolence pole their public record carries.",
+  "biographical_paragraph": "Samuel Berry McKinney was born on December 28, 1926, in Flint, Michigan, the son of a Baptist minister, and the family moved to Cleveland, Ohio, when he was an infant after his father was called to Antioch Baptist Church there [src: 2, 4]. He entered Morehouse College in 1944, was drafted into the segregated Army Air Forces during World War II, and returned to finish his degree on the G.I. Bill; a required Bible course under George Kelsey and the example of Morehouse president Benjamin Mays turned him from his intended path in law toward the ministry [src: 2, 3]. One of his freshman classmates was Martin Luther King Jr., then fifteen [src: 2, 4]. After seminary at Colgate Rochester Divinity School and a first pastorate at Olney Street Baptist Church in Providence, Rhode Island, McKinney moved to Seattle in February 1958 to lead Mount Zion Baptist Church, where he remained as pastor until 1998 and again from 2005 to 2008 [src: 2, 3]. In 1961 he invited King to preach in Seattle; the host venue, First Presbyterian Church, withdrew its agreement shortly before the event, and McKinney relocated the appearance rather than accept the church's offer to cover his advertising costs [src: 2, 3]. He helped organize the Central Area Civil Rights Committee in 1963 to coordinate local desegregation campaigns, co-founded Liberty Bank, the first Black-owned bank in the Pacific Northwest, and in 1966 co-founded and served as first president of the Seattle Opportunities Industrialization Center [src: 2, 3, 4]. McKinney died on April 7, 2018, at the age of 91; in 2014 the city of Seattle renamed the blocks of 19th Avenue beside Mount Zion as Rev. Dr. S. McKinney Avenue [src: 3, 5]. His oral history was recorded in Seattle on April 17, 2013, by David Cline and is held at the Library of Congress as entry 115 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Samuel Berry McKinney",
+      "speaker_slug": "samuel-berry-mckinney",
+      "source_entry": 115,
+      "timestamp": "00:20:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669184/",
+      "lead_in": "Recalling his Morehouse freshman class in 1944, when World War II had thinned the rolls and pulled enrollment ages down:",
+      "quote": "Squirt, named Martin Luther King Jr. was in the same freshman class. He was 15."
+    },
+    {
+      "relation": "self",
+      "speaker": "Samuel Berry McKinney",
+      "speaker_slug": "samuel-berry-mckinney",
+      "source_entry": 115,
+      "timestamp": "00:22:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669184/",
+      "lead_in": "On the young King as a Morehouse student, a detail from McKinney's first-person memory of their shared campus:",
+      "quote": "It's interesting to note that to my knowledge, he took part in every oratorical contest and never won."
+    },
+    {
+      "relation": "self",
+      "speaker": "Samuel Berry McKinney",
+      "speaker_slug": "samuel-berry-mckinney",
+      "source_entry": 115,
+      "timestamp": "00:29:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669184/",
+      "lead_in": "On a lunch stop during basic training in the segregated Army Air Forces, where his unit ate in a colored dining room and looked across at the white one:",
+      "quote": "There were tablecloths, then in the silverware and German prisoners of war. Sitting down to the table eating, we had on the United States Army uniform. And these were supposed to be enemies of our country, because they were white."
+    },
+    {
+      "relation": "self",
+      "speaker": "Samuel Berry McKinney",
+      "speaker_slug": "samuel-berry-mckinney",
+      "source_entry": 115,
+      "timestamp": "00:37:43",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669184/",
+      "lead_in": "On the argument from his Morehouse Bible teacher George Kelsey that turned him from law toward the ministry:",
+      "quote": "He said, the law functions on the back end, religion functions on the front end. And as one thinks so, one is, thought proceeds action."
+    },
+    {
+      "relation": "self",
+      "speaker": "Samuel Berry McKinney",
+      "speaker_slug": "samuel-berry-mckinney",
+      "source_entry": 115,
+      "timestamp": "01:23:14",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669184/",
+      "lead_in": "On the difference he found between southern and northern segregation after moving from Cleveland and the South to Seattle:",
+      "quote": "Someone said at that time the difference between the South and the North, the South didn't care how close blacks and whites got so wrong, we didn't get too high. The North didn't care how high we got provided we didn't get too close."
+    },
+    {
+      "relation": "self",
+      "speaker": "Samuel Berry McKinney",
+      "speaker_slug": "samuel-berry-mckinney",
+      "source_entry": 115,
+      "timestamp": "01:32:58",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669184/",
+      "lead_in": "Summing up the church-centered economic-development work alongside the protests, the credit union, the bank, the housing, and the training center:",
+      "quote": "So I have been involved in doing what I feel is a lot of good around the city and community. Not only protesting, but also building."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669184/",
       "title": "Samuel Berry McKinney oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://depts.washington.edu/civilr/mckinney.htm",
+      "title": "Reverend Samuel McKinney: Mt. Zion Baptist; Central Area Civil Rights Committee",
+      "publisher": "Seattle Civil Rights and Labor History Project, University of Washington"
+    },
+    {
+      "url": "https://historylink.org/file/152",
+      "title": "McKinney, Samuel Berry (1926-2018)",
+      "publisher": "HistoryLink.org, the Free Online Encyclopedia of Washington State History"
+    },
+    {
+      "url": "https://blackpast.org/african-american-history/mckinney-samuel-berry-1926-0/",
+      "title": "Samuel Berry McKinney (1926-2018)",
+      "publisher": "BlackPast.org"
+    },
+    {
+      "url": "https://www.spokesman.com/stories/2018/apr/07/seattle-civil-rights-leader-rev-dr-samuel-b-mckinn/",
+      "title": "Seattle civil-rights leader Rev. Dr. Samuel B. McKinney dies at 91",
+      "publisher": "The Spokesman-Review, April 7, 2018"
+    },
+    {
+      "url": "https://archiveswest.orbiscascade.org/ark:80444/xv665596",
+      "title": "Reverend Samuel B. McKinney collection",
+      "publisher": "Archives West, Orbis Cascade Alliance (finding aid to the McKinney papers)"
     }
   ]
 }

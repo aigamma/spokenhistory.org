@@ -6,14 +6,124 @@
   "born": null,
   "died": null,
   "display_name": "Walter Tillow",
-  "role_summary": "Civil rights movement organizer; in this corpus's embedding paired with Kay Tillow (entry 74, possible family or partnership), and his Tactical Pragmatism vs Strategic Vision position is +1.00, the MAXIMUM Strategic Vision reading in the entire 136-interview corpus.",
-  "ai_reading": "Tillow sits at +1.00 on the Tactical Pragmatism vs Strategic Vision axis, the absolute maximum reading toward Strategic Vision in the catalog. The cultural placement of Tillow would need to be exceptionally strategic-vision-oriented (a multi-decade policy analyst, a deeply theoretical organizer) for this reading not to be an AI-vs-culture surprise; without external biographical sourcing in this iteration the catalog notes the structural extremum without resolving the question. His top semantic neighbor is Lisa Anderson Todd (entry 79, count 176), with Charles McLaurin (entry 17), Courtland Cox (entry 24), Ekwueme Michael Thelwell (entry 34), and his paired-name Kay Tillow (entry 74, count 121) rounding out the cluster. The Kay Tillow pairing is the catalog's second-most-explicit family-or-partner cosine signature after the Aaron-Elmer Dixon brother pairing. The embedding reads Walter's testimony as deeply intertwined with Kay Tillow's, suggesting they organized in close partnership across the periods their interviews discuss.",
-  "biographical_paragraph": "Walter Tillow's oral history is held at the Library of Congress as entry 124 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "SNCC staff member (1963-1965); worked in the Atlanta communications office under Julian Bond, then opened the Washington office that lobbied northern state delegations ahead of the Mississippi Freedom Democratic Party's 1964 Atlantic City convention challenge.",
+  "ai_reading": "On the Tactical Pragmatism vs Strategic Vision axis, Tillow's testimony sits at the raw maximum of the audited corpus (position_normalized 1.00), the single deepest Strategic Vision reading among 136 interviews. That extremum is unusual for someone whose movement work was procedural fieldcraft: tracking which delegates landed on the credentials committee, drafting minority reports, counting the ten percent of signatures and the ten delegations needed for a roll-call vote. The embedding appears to be reading the long analytic register he narrates the 1964 Atlantic City challenge in (rules mechanics, the post-1964 turn toward disillusionment and Black Power, the structural reading of why the compromise was forced) rather than the day-to-day organizing itself. A second pattern is relational: cosine similarity places his passages closest to Kay Tillow's (entry 74), and the influence graph independently records Kay, Lisa Anderson Todd (entry 79), and Betty Garman Robinson (entry 7) as the three voices who name him, while he in turn names Pete Seeger (entry 97) more than any other figure, a trace of how much of his SNCC account is the Atlanta communications shop, the \"Freedom in the Air\" SNCC record, and the press-and-fundraising apparatus rather than frontline confrontation.",
+  "biographical_paragraph": "Walter Tillow was raised in the Bronx in a family whose politics ran to the Depression-era radical left, and he came into the movement through a college route rather than a southern one: as a graduate student he read of the Student Nonviolent Coordinating Committee's 1963 Easter conference, drove to Atlanta, and met Anne Braden, who steered him toward the voter-registration movement in Fayette County, Tennessee [src: 1, 3]. After the August 1963 March on Washington he joined SNCC's Atlanta staff, working in the communications office Julian Bond ran, where the operation issued press releases, mailed the Student Voice to northern supporters, and pressed performers to cancel segregated-audience bookings [src: 1, 2]. In the spring of 1964 Ella Baker and Bob Moses asked him to open a Washington office for the Mississippi Freedom Democratic Party challenge; from there he attended northern state Democratic conventions, assembled delegate lists, and lobbied delegations to support seating the MFDP's integrated delegation at the August 1964 Democratic National Convention in Atlantic City [src: 1, 4]. He left the movement in 1965, and together with Kay Tillow (entry 74), whom he had met at the Highlander Folk School, became an organizer for the United Electrical, Radio and Machine Workers of America and later Local 1199 of the hospital and health-care workers' union [src: 2, 5]. His oral history is held by the Library of Congress as entry 124 of the Civil Rights History Project, American Folklife Center accession AFC 2010/039 [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Walter Tillow",
+      "speaker_slug": "walter-tillow",
+      "source_entry": 124,
+      "timestamp": "00:01:54",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669191/",
+      "lead_in": "Asked at the start of the interview about his upbringing in the Bronx, Tillow placed his politics in his family's history:",
+      "quote": "My parents had been radicals members of the Young Communists League in the 1920s, although the depression and family kind of calmed them down."
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Tillow",
+      "speaker_slug": "walter-tillow",
+      "source_entry": 124,
+      "timestamp": "00:16:10",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669191/",
+      "lead_in": "On how a carload of students from upstate New York reached SNCC's 1963 Easter conference in Atlanta:",
+      "quote": "And I went, you know, a car loan of us went, and that's where I met Anne Braden. And that's how I got involved. You know, that's the story of how I got involved."
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Tillow",
+      "speaker_slug": "walter-tillow",
+      "source_entry": 124,
+      "timestamp": "00:32:29",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669191/",
+      "lead_in": "Describing the SNCC job he took in Atlanta after the March on Washington:",
+      "quote": "I ended up working with Julian Bond in what was the community called communications office"
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Tillow",
+      "speaker_slug": "walter-tillow",
+      "source_entry": 124,
+      "timestamp": "00:52:49",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669191/",
+      "lead_in": "Explaining the convention-floor mechanics the MFDP challenge had to satisfy to force a vote at Atlantic City:",
+      "quote": "Rules required that you had 10% of the of the delegates in a credentials committee sign a minority report"
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Tillow",
+      "speaker_slug": "walter-tillow",
+      "source_entry": 124,
+      "timestamp": "00:59:41",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669191/",
+      "lead_in": "On the slate Mississippi's regular Democrats sent to Atlantic City to avoid attention:",
+      "quote": "Mississippians they sent what we called a no-name delegation"
+    },
+    {
+      "relation": "about",
+      "speaker": "Kay Tillow",
+      "speaker_slug": "kay-tillow",
+      "source_entry": 74,
+      "timestamp": "00:26:17",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669198/",
+      "lead_in": "Kay Tillow, his wife and fellow organizer, sketches the move from the movement into union work that the two of them made together:",
+      "quote": "So, you know, Walter worked on that Mississippi Freedom Democratic Party in 64. And in, in, in 66, I believe it was 66. I think we went to work for the electrical workers union."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "00:40:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "Lisa Anderson Todd recalls applying to SNCC in the fall of 1963 and getting her reply from the Atlanta office where Tillow handled correspondence:",
+      "quote": "And I got a letter from Walter Tillow that said,"
+    },
+    {
+      "relation": "about",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:39:20",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "Naming the SNCC Atlanta staff who ran the print and communications work, Betty Garman Robinson places Tillow among them:",
+      "quote": "But there were some hard working folks who were doing the printing Walter Tillow, I don't"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669191/",
-      "title": "Walter Tillow oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "Walter Tillow oral history interview conducted by David P. Cline in Louisville, Kentucky, 2013 June 21",
+      "publisher": "Civil Rights History Project, American Folklife Center, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.92.1a-g",
+      "title": "Walter Tillow Oral History Interview",
+      "publisher": "Smithsonian National Museum of African American History and Culture (object 2011.174.92.1a-g; records that Tillow joined SNCC in 1963, worked voter registration and the Atlanta communications office, and left the movement in 1965 to organize for the United Electrical, Radio and Machine Workers of America)"
+    },
+    {
+      "url": "https://snccdigital.org/inside-sncc/alliances-relationships/mfdp/",
+      "title": "Mississippi Freedom Democratic Party (MFDP)",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project); the account of the MFDP's 1964 organizing and the Atlantic City convention challenge that Tillow's Washington office supported"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669198/",
+      "title": "Kay Tillow oral history interview conducted by David P. Cline in Louisville, Kentucky, 2013 August 14",
+      "publisher": "Civil Rights History Project, American Folklife Center, Library of Congress (AFC 2010/039); the companion interview with Tillow's wife and co-organizer, entry 74 of this corpus, on their shared SNCC and union work"
+    },
+    {
+      "url": "https://www.healthcare-now.org/blog/kay-tillow-civil-rights-union-organizing-mark-decades-of-activism/",
+      "title": "Kay Tillow: Civil Rights, Union Organizing Mark Decades of Activism",
+      "publisher": "Healthcare-NOW; profile documenting the Tillows' organizing for the United Electrical, Radio and Machine Workers (UE) and Local 1199 of the National Union of Hospital and Health Care Employees after they left the southern movement"
     }
   ]
 }

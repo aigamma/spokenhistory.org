@@ -3,17 +3,104 @@
   "slug": "sam-young-jr",
   "person_type": "interviewee",
   "entry_number": 114,
-  "born": null,
+  "born": 1950,
   "died": null,
   "display_name": "Sam Young, Jr.",
-  "role_summary": "Civil rights movement organizer; in this corpus's embedding his top semantic neighbor is Shirley Miller Sherrod, with broader cluster ties to James Oscar Jones, John Churchville, Nathaniel Hawthorne Jones, and Dr. Doris Derby.",
-  "ai_reading": "Young's top semantic neighbor is Shirley Miller Sherrod (entry 117, count 70), the USDA Black-farmer-advocacy figure and SNCC veteran. The pairing is novel: Young is not in Sherrod's own top-five neighbor list (his cosine is in her top-ten but not the very top), so the cosine direction matters here, the embedding finds Young's testimony as closer to Sherrod's than vice versa, a kind of one-way conceptual debt the cultural record has no obvious basis for. His other neighbors are James Oscar Jones (entry 57), John Churchville (entry 63), Nathaniel Hawthorne Jones (entry 92), and Dr. Doris Derby (entry 32). The Southern Struggle axis position at +0.54 places him moderately Southern; the +0.38 Collective Discipline reading is also unremarkable. The page's distinctive observation lives in the Shirley Sherrod cosine.",
-  "biographical_paragraph": "Sam Young, Jr.'s oral history is held at the Library of Congress as entry 114 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "Worth County, Georgia native who worked the farm and land projects of the Southwest Georgia Project for Community Education, including New Communities Inc., from the late 1960s until 1983.",
+  "ai_reading": "The embedding does to Sam Young, Jr. something the cultural record never bothered to: it reads him as a Sherrod satellite. His single strongest neighbor across the corpus is Shirley Miller Sherrod (entry 117), whose passages turn up in eighteen of his forty-four retrieval windows, and his influence-graph out-edges name only the two Sherrods, Shirley (entry 117) and Rev. Charles Melvin Sherrod (entry 18), the couple who built the Southwest Georgia land projects he worked. That is the obvious pairing. The non-obvious one is Sam Mahone (entry 113), whose interview was recorded the same March 2013 day in Albany and who lands as Young's second neighbor at a count of ten: the cosine space recovers the shared recording session and shared Southwest Georgia geography as a measurable signal, not just a scheduling coincidence. On the Southern Struggle vs Northern Struggle axis he sits at a normalized +0.54, which understates the picture, his raw position ranks fourteenth-most-Southern of the 136 audited interviews, a deep-Delta-and-Black-Belt reading consistent with a life spent entirely in Worth and Dougherty counties. The Individual Conscience vs Collective Discipline reading at +0.38 leans mildly toward Collective Discipline, which sits oddly against the parental maxim he quotes as his guiding rule, that a person is born an individual and dies an individual; the embedding hears the cooperative-farming and community-education content over the individualist creed.",
+  "biographical_paragraph": "Sam Young, Jr. was born in 1950 in Worth County, near Sylvester, Georgia, and came up on a family farm under a father he describes as politically attentive, one of seventeen siblings [src: 1]. He entered an integrating white school under Georgia's Freedom of Choice plan and graduated from Worth County High School in 1968 [src: 1]. After a brief job at a Firestone tire plant in Albany, he joined the Southwest Georgia Project for Community Education, the community-organizing body founded by SNCC field secretary Charles Sherrod (entry 18) after Sherrod's early-1960s voter-registration work in the region [src: 2, 3]. Young worked chiefly on the farming side of the project's land venture, New Communities Inc., a cooperative founded in 1969 on 5,735 acres in Lee County north of Albany that was at the time the largest tract of land owned by African Americans in the United States [src: 3, 4]. He names Robert Mants and Randolph Battle as mentors in that period and the Albany attorney C.B. King, the first African American to open a law practice in southwest Georgia, as a figure who intervened when two of his cousins were held incommunicado after an arrest [src: 1, 5]. New Communities lost its Lee County land to foreclosure in 1985 amid drought and credit denial; Young left the project in 1983 [src: 1, 4]. The federal discrimination he describes against Black farmers was later litigated through the Pigford class action, and in 2009 New Communities received a settlement of roughly twelve million dollars, after which Shirley Sherrod (entry 117) and Charles Sherrod re-established the venture on former plantation land near Albany [src: 1, 4, 6]. His oral history, recorded March 9, 2013 in Albany the same day as Sam Mahone's (entry 113), is held by the Library of Congress as entry 114 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 7].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Sam Young, Jr.",
+      "speaker_slug": "sam-young-jr",
+      "source_entry": 114,
+      "timestamp": "00:03:40",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669165/",
+      "lead_in": "Asked about growing up in Worth County, Young recalls choosing to integrate the white school under Georgia's Freedom of Choice plan while many of his friends stayed:",
+      "quote": "But I chose to go to the, with Freedom of Choice, things chose to go to the other schools, the white schools."
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Young, Jr.",
+      "speaker_slug": "sam-young-jr",
+      "source_entry": 114,
+      "timestamp": "00:04:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669165/",
+      "lead_in": "On the daily walk to and from his segregated grade school, when white children leaned out of the passing school bus to shout racial names:",
+      "quote": "And you know, little kids, you know, when somebody's messing with you, you know, we threw rocks at the bus, you know."
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Young, Jr.",
+      "speaker_slug": "sam-young-jr",
+      "source_entry": 114,
+      "timestamp": "00:07:43",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669165/",
+      "lead_in": "Young names the lesson from his parents that he says still governs how he decides where he stands:",
+      "quote": "you never follow the crowd. You were born and individual and you would die and individually."
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Young, Jr.",
+      "speaker_slug": "sam-young-jr",
+      "source_entry": 114,
+      "timestamp": "00:27:30",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669165/",
+      "lead_in": "Describing how Charles Sherrod located land for sale and the purpose of the New Communities Inc. land purchase:",
+      "quote": "to purchase this huge tract of land and become, you know, self sufficient, for black communities, you know, for new communities, okay?"
+    },
+    {
+      "relation": "self",
+      "speaker": "Sam Young, Jr.",
+      "speaker_slug": "sam-young-jr",
+      "source_entry": 114,
+      "timestamp": "00:30:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669165/",
+      "lead_in": "On the federal government's eventual admission of discrimination against Black farmers and the class-action suit that followed:",
+      "quote": "finally admitted that there was discrimination against, uh, black farmers, okay. And, uh, we came on a class action suit, right?"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669165/",
-      "title": "Sam Young, Jr. oral history",
+      "title": "Sam Young, Jr. oral history (recorded March 9, 2013, Albany, Georgia; interviewed by Willie Griffin, Southern Oral History Program, University of North Carolina at Chapel Hill)",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://snccdigital.org/people/charles-sherrod/",
+      "title": "Charles Sherrod",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project); documents Sherrod as SNCC's first full-time field secretary and his founding of the Southwest Georgia Project for community education"
+    },
+    {
+      "url": "https://snccdigital.org/events/new-communities-formed-in-southwest-georgia/",
+      "title": "New Communities Formed in Southwest Georgia",
+      "publisher": "SNCC Digital Gateway, Duke University; the 1969 founding, the 5,735-acre Lee County land closing of January 9, 1970, the National Sharecroppers Fund grant, and the Israel-kibbutz land-trust model"
+    },
+    {
+      "url": "https://www.newcommunitiesinc.com/new-communities.html",
+      "title": "New Communities (organizational history)",
+      "publisher": "New Communities Inc. (primary institutional record); founding on 5,735 acres in Lee County, the 1985 foreclosure, the 2011 re-establishment on the 1,664-acre Cypress Pond plantation near Albany"
+    },
+    {
+      "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/c-b-king-1923-1988/",
+      "title": "C. B. King (1923-1988)",
+      "publisher": "New Georgia Encyclopedia (Georgia Humanities and the University of Georgia Press); C.B. King as the first African American to open a law practice in southwest Georgia and his role in Albany Movement legal defense"
+    },
+    {
+      "url": "https://civileats.com/2019/08/16/how-a-black-farming-community-found-justice/",
+      "title": "How a Black Farming Community Found Justice",
+      "publisher": "Civil Eats; the Pigford v. Glickman litigation and the 2009 New Communities settlement of roughly twelve million dollars, and the purchase of the former plantation that re-established the project"
+    },
+    {
+      "url": "https://catalog.loc.gov/vwebv/search?searchArg=afc2010039&searchCode=GKEY%5E*&searchType=0",
+      "title": "Civil Rights History Project collection record (AFC 2010/039)",
+      "publisher": "American Folklife Center, Library of Congress; the collection-level designation under which the Sam Young, Jr. interview is held"
     }
   ]
 }

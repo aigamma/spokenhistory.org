@@ -6,9 +6,88 @@
   "display_name": "William G. Anderson",
   "born": 1927,
   "died": null,
-  "role_summary": "Osteopathic physician; founder and first president of the Albany Movement (1961-1962), the Georgia campaign that drew Martin Luther King Jr. and the SCLC; later first African American member and president of the American Osteopathic Association board of trustees.",
-  "ai_reading": "Anderson's top semantic neighbor is H. Jack Geiger (entry 54, count 226), the Mississippi community-health-center founder; both are physicians whose movement work was anchored in medical practice as much as in protest organizing. The pairing extends to Alfred Moldovan (entry 133), Geiger's own top neighbor, and forms the catalog's clearest medical-civil-rights cohort signature. Beyond the medical cluster Anderson's neighbors are Wyatt Tee Walker (entry 132, SCLC), Charles McLaurin (entry 17, Mississippi SNCC), and Robert L. Carter (entry 108, NAACP LDF). The embedding reads him as a four-way bridge: medical organizing (Geiger, Moldovan), SCLC direct action (Walker, with whom Anderson partnered to invite King to Albany in 1961), SNCC field organizing (McLaurin), and NAACP legal work (Carter). This is the broadest cross-faction cluster the catalog has surfaced so far, consistent with the Albany Movement's specifically-coalitional founding (Anderson built it as a fusion of SNCC, SCLC, NAACP, and local groups) and a more distinctive signature than the cultural reading's \"Albany Movement president\" label captures.",
-  "biographical_paragraph": "Anderson founded the Albany Movement in 1961 and served as its first president; the campaign drew SNCC field organizers, SCLC under Martin Luther King Jr., the NAACP, and the city's local Black organizations into one coalition that aimed at desegregating Albany, Georgia [src: 2]. In December 1961 he was imprisoned on charges related to an unlawful march attempting to hold prayers at city hall [src: 2]. He had been born December 12, 1927 in Americus, Georgia, took his Bachelor's at Alabama State University in 1949, and trained at Des Moines University College of Osteopathic Medicine [src: 2]. After the Albany Movement years he became the first African American to serve on the board of trustees of the American Osteopathic Association, where he later served as president; he was also associate dean at Kirksville College of Osteopathic Medicine and clinical professor at Michigan State University's College of Osteopathic Medicine, which hosts an annual civil rights lecture series in his name [src: 2]. His Library of Congress oral history is entry 126 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "role_summary": "Osteopathic physician; founder and first president of the Albany Movement (1961-1962) in Albany, Georgia; later the first African American president of the American Osteopathic Association.",
+  "ai_reading": "The embedding's strongest read on Anderson is medical, not political: his two closest neighbors by cumulative cosine proximity in this corpus are H. Jack Geiger (entry 54, count 226) and Alfred Moldovan (entry 133, count 119), the community-health-center physician and the doctor who organized medical support for Southern campaigns. The cultural record files Anderson under \"Albany Movement president\"; the vector space files him first with the doctors. Beyond that medical pairing his neighbors fan out across factions that rarely cluster together, Wyatt Tee Walker (entry 132, SCLC), Charles McLaurin (entry 17, Mississippi SNCC), and Robert L. Carter (entry 108, NAACP legal), which tracks the specifically coalitional way he describes founding the movement (pulling the Criterion Club, NAACP, Urban League, and SNCC field organizers into one body). A second tension shows up on the concept axes: Anderson sits almost exactly at the midpoint of the Nonviolence as Theology to Armed Self-Defense axis (position +0.006), not at the nonviolence pole his public framing would predict. His own testimony explains the split, he calls himself \"a nonviolent person\" yet describes keeping a pistol on the car seat driving through Newton in Baker County, where he knew of people who \"have been lynched.\"",
+  "biographical_paragraph": "William Gilchrist Anderson was born December 12, 1927 in Americus, Georgia, the same Southwest Georgia farming country he later returned to as a physician [src: 2]. He completed undergraduate study at Alabama State College in Montgomery, where he became close to Ralph David Abernathy, and entered Des Moines Still College of Osteopathy in the fall of 1952, finishing his degree in 1956 [src: 2]. He settled into practice in Albany, Georgia, and in November 1961 the city's Black organizations, SNCC field workers, the NAACP, the Ministerial Alliance, and local clubs, joined into the Albany Movement and elected Anderson its first president [src: 2][src: 3]. Through a marriage that had earlier put him in the same Atlanta circle as Martin Luther King Jr., Anderson invited King and the SCLC to Albany; King arrived in mid-December 1961, and on December 16 Anderson was jailed alongside King and Abernathy on charges of parading without a permit and obstructing the sidewalk [src: 3]. The Albany campaign is often read as a defeat because it won no signed agreement, but Anderson frames its result as a shift in attitudes rather than ordinances. He appears in the corpus alongside other Albany and Southwest Georgia figures, including Charles Melvin Sherrod (entry 121) and Shirley Miller Sherrod (entry 117), whom he later invited to the lecture series he founded. After the movement years he became, in 1994, the first African American elected national president of the American Osteopathic Association, having served eighteen years on its board, and held faculty posts as associate clinical professor at the Michigan State University College of Osteopathic Medicine and associate dean at the Kirksville College of Osteopathic Medicine in Missouri [src: 2][src: 4]. The annual civil rights lecture series he established at Michigan State, the \"Slavery to Freedom\" series begun in 2001, carries his name [src: 4]. His Library of Congress oral history is entry 126 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "William G. Anderson",
+      "speaker_slug": "william-g-anderson",
+      "source_entry": 126,
+      "timestamp": "00:59:51",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669140/",
+      "lead_in": "Watching SNCC organizers get arrested from his office window, Anderson describes the moment he decided to stop watching and join:",
+      "quote": "And I said to myself, they're doing that for me. They are trying to get people registered the boat for me, my family. So that's when I got out there and joined them."
+    },
+    {
+      "relation": "self",
+      "speaker": "William G. Anderson",
+      "speaker_slug": "william-g-anderson",
+      "source_entry": 126,
+      "timestamp": "01:01:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669140/",
+      "lead_in": "On being chosen to head the new coalition at the organizing meeting in dentist Ed Hamilton's home:",
+      "quote": "I was elected president, not because I had inexperienced whatsoever. I had none in several rights."
+    },
+    {
+      "relation": "self",
+      "speaker": "William G. Anderson",
+      "speaker_slug": "william-g-anderson",
+      "source_entry": 126,
+      "timestamp": "01:25:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669140/",
+      "lead_in": "During the march of more than a thousand people through Harlem, a National Guardsman raised his gun and ordered the line to stop:",
+      "quote": "I said to him, if you hit anybody in this line, hit me first, hit me first."
+    },
+    {
+      "relation": "self",
+      "speaker": "William G. Anderson",
+      "speaker_slug": "william-g-anderson",
+      "source_entry": 126,
+      "timestamp": "01:27:14",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669140/",
+      "lead_in": "Jailed in the same cell as King and Abernathy, the three decided one of them had to make King's scheduled Meet the Press appearance:",
+      "quote": "We drew straws. We've seen the jail sale and drew straws. I drew the short straw. And Martin says, you're going to meet the press."
+    },
+    {
+      "relation": "self",
+      "speaker": "William G. Anderson",
+      "speaker_slug": "william-g-anderson",
+      "source_entry": 126,
+      "timestamp": "01:34:05",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669140/",
+      "lead_in": "On the verbal city agreement the movement won and then watched the city renege on, closing public facilities rather than integrating them:",
+      "quote": "It's like I won a 757 airplane and don't know how to fly a kite."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mary Jones",
+      "speaker_slug": "mary-jones",
+      "source_entry": 85,
+      "timestamp": "00:29:58",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669169/",
+      "lead_in": "Mary Jones, recalling how the Albany organizations chose their leader, names Anderson directly:",
+      "quote": "So they chose Dr. William G. Anderson as the president of the Albany Movement."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mary Jenkins",
+      "speaker_slug": "mary-jenkins",
+      "source_entry": 84,
+      "timestamp": "00:24:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669168/",
+      "lead_in": "Mary Jenkins, explaining how she came to volunteer, places the movement's working office in Anderson's home:",
+      "quote": "we need some help in the office that was set up in Dr. William G. Anderson's house"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669140/",
@@ -16,14 +95,19 @@
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://search.worldcat.org/title/17522578",
-      "title": "Taylor Branch, Parting the Waters: America in the King Years, 1954-63 (the Albany Movement chapters cover Anderson's founding role)",
-      "publisher": "Simon & Schuster, 1988; WorldCat OCLC 17522578"
+      "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/william-g-anderson-b-1927/",
+      "title": "William G. Anderson (b. 1927)",
+      "publisher": "New Georgia Encyclopedia, Georgia Humanities and the University of Georgia Press (peer-reviewed state encyclopedia; birth date, education at Alabama State College and Des Moines Still College of Osteopathy, Albany Movement presidency, AOA presidency and board service, MSU and Kirksville faculty posts)"
     },
     {
-      "url": "https://com.msu.edu/community/csu/william-g-anderson-lecture",
-      "title": "William G. Anderson Civil Rights Lecture series (annual)",
-      "publisher": "Michigan State University College of Osteopathic Medicine"
+      "url": "https://www.blackpast.org/african-american-history/albany-movement-1961-1962/",
+      "title": "The Albany Movement (1961-1962)",
+      "publisher": "BlackPast.org (November 17, 1961 formation date, the coalition of SNCC, NAACP, Ministerial Alliance, Federation of Women's Clubs, and Negro Voters League, Anderson's election as first president, and the December 16, 1961 jailing of King, Anderson, and Abernathy on parading-without-a-permit and sidewalk-obstruction charges)"
+    },
+    {
+      "url": "https://osteopathicmedicine.msu.edu/current-students/student-life/diversity-inclusion-safety/william-g-anderson-lecture-series",
+      "title": "William G. Anderson Lecture Series (Slavery to Freedom: An American Odyssey)",
+      "publisher": "Michigan State University College of Osteopathic Medicine (the annual civil rights lecture series begun in 2001 and named for Anderson; describes him as a founder of the Albany Movement and the first African American elected national president of the American Osteopathic Association)"
     }
   ]
 }
