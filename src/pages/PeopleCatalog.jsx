@@ -17,19 +17,33 @@ import { Link } from 'react-router-dom';
 import { Search, FileText, Users, UserCircle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
+import { TIER_COLORS } from '../components/rag/tiers';
 
 export default function PeopleCatalog() {
   useDocumentTitle('People Catalog');
   const [index, setIndex] = useState(null);
+  const [tiersByEntry, setTiersByEntry] = useState(null);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('all');
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/rag/people/index.json')
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('index not found'))))
-      .then((j) => { if (!cancelled) setIndex(j); })
+    Promise.all([
+      fetch('/rag/people/index.json').then((r) => (r.ok ? r.json() : Promise.reject(new Error('index not found')))),
+      fetch('/rag/constellation.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ])
+      .then(([j, constellation]) => {
+        if (cancelled) return;
+        setIndex(j);
+        if (constellation?.points) {
+          const map = {};
+          for (const p of constellation.points) {
+            map[p.entry_number] = p.uncertainty_tier || null;
+          }
+          setTiersByEntry(map);
+        }
+      })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
     return () => { cancelled = true; };
   }, []);
@@ -170,6 +184,19 @@ export default function PeopleCatalog() {
                         </span>
                       )}
                       <h3 className="text-sm font-medium text-stone-900 truncate">{p.display_name}</h3>
+                      {/* Audit-tier dot for interviewees. Color encodes
+                          the corpus's uncertainty tier so visitors see
+                          at a glance which catalog pages are anchored
+                          to publication-grade transcripts vs which
+                          carry residual uncertainty. */}
+                      {p.person_type === 'interviewee' && p.entry_number != null && tiersByEntry?.[p.entry_number] && (
+                        <span
+                          className="w-2 h-2 rounded-full border border-stone-300 ml-auto shrink-0"
+                          style={{ backgroundColor: TIER_COLORS[tiersByEntry[p.entry_number]] || '#d6d3d1' }}
+                          title={`Audit tier: ${tiersByEntry[p.entry_number]}`}
+                          aria-label={`Audit tier: ${tiersByEntry[p.entry_number]}`}
+                        />
+                      )}
                     </div>
                     {(p.born || p.died) && (
                       <p className="text-xs text-stone-500 font-mono mb-1">
