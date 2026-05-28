@@ -86,12 +86,16 @@ See "Writing discipline" above. The seven rules apply to every bio without excep
 
 ### `sources[]`
 
-Each entry should have `url`, `title`, and `publisher`. Prefer:
+Each entry should have `url`, `title`, and `publisher`. **Wikipedia is LAST priority**; from the institutional-credibility perspective of the Smithsonian and LoC review chain, fewer Wikipedia citations is better and more `loc.gov` citations is better. The strict priority order:
 
-1. Library of Congress item pages (most authoritative for interview metadata).
-2. Wikipedia (for biographical anchors; acceptable when the claim is broadly accepted, citable encyclopedic fact).
-3. Published scholarship with stable URLs (university presses, Civil Rights Movement Veterans archive at crmvet.org, Smithsonian National Museum of African American History and Culture digital collections).
-4. Primary sources (FBI files, newspaper archives via Chronicling America, etc.) where the claim is contested or specific.
+1. **Library of Congress item pages** (most authoritative for interview metadata; the CRHP collection has the formal designation AFC 2010/039 at the LoC American Folklife Center, and every interviewee has a corresponding `loc.gov/item/...` page that should be cited).
+2. **Other Library of Congress collections** (Chronicling America newspaper archives, manuscript division finding aids, primary photograph collections).
+3. **Other primary-source institutional archives**: Smithsonian NMAAHC digital collections, FBI files, Veterans of the Civil Rights Movement archive at crmvet.org, ANC archives, NAACP archives.
+4. **Peer-reviewed scholarly archives and university projects**: SNCC Digital Gateway (Duke University), University of Washington Civil Rights & Labor History Project, university press books with stable URLs.
+5. **Established secondary references with editorial review**: BlackPast.org, the Encyclopedia of Civil Rights History (Oxford), and similar.
+6. **Wikipedia** (only as a fall-back when no source above carries the fact, and even then prefer to find the underlying citation from the Wikipedia article and cite that primary source instead).
+
+The `sources[]` array in each JSON should reflect this priority: place the LoC item page at index 1 (referenced as `[src: 1]` in the bio for any claim about the oral history itself), and Wikipedia at the LAST index if used at all. The `[src: N]` inline references in the biographical paragraph should map to whichever source actually supports each claim, NOT default to Wikipedia even when multiple sources cover the same fact.
 
 ## What the `PersonPage` component derives automatically
 

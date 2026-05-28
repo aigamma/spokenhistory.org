@@ -253,9 +253,11 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 
 One JSON file per named individual on the site, loaded by the `/person/:slug` route's `PersonPage` component (`src/pages/PersonPage.jsx`). Two `person_type` values: interviewees (their own oral history in the CRHP corpus) and external figures (discussed by interviewees but not themselves interviewed). The pages are **integration hubs**, the primary value is the cross-link manifest connecting each person to the rest of the site (LoC item URL, semantic neighbors precomputed in `/rag/related/`, position on each concept axis, influence-graph edges, tour appearances); the biographical paragraph is connective tissue, not the headline content.
 
+**Citation priority (critical for Smithsonian / LoC institutional review):** LoC item pages first, other LoC collections second, other primary-source institutional archives third, peer-reviewed scholarly archives fourth, established secondary references fifth, Wikipedia LAST. Fewer Wikipedia citations is better; more `loc.gov` citations is better. The Wikipedia article is fact-check material for the agent, almost never the source `[src: N]` reference in the rendered bio. The full discipline lives in `public/rag/people/README.md` § `sources[]`.
+
 | File | Purpose |
 |---|---|
-| `public/rag/people/README.md` | The schema (with field-by-field discipline), the catalog purpose (integration-hub framing), and the writing discipline (Wikipedia / SNCC Digital / BlackPast / LoC item pages are FACT-CHECK material only, never writing material; anti-idempotent prose with varied openings + sentence rhythms per page; cite every factual claim with `[src: N]`). **Read this before adding a person page or modifying `PersonPage.jsx`.** |
+| `public/rag/people/README.md` | The schema (with field-by-field discipline), the catalog purpose (integration-hub framing), and the writing discipline (Wikipedia / SNCC Digital / BlackPast / LoC item pages are FACT-CHECK material only, never writing material; anti-idempotent prose with varied openings + sentence rhythms per page; cite every factual claim with `[src: N]`; citation priority with Wikipedia LAST). **Read this before adding a person page or modifying `PersonPage.jsx`.** |
 | `public/rag/people/*.json` | One catalog entry per person, schema documented in the README. Bio paragraphs follow the seven writing rules in the README. |
 | `src/pages/PersonPage.jsx` | The React component that renders a catalog entry as a citation-bearing reference page with auto-derived cross-link sections. |
 
