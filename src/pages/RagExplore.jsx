@@ -235,7 +235,11 @@ export default function RagExplore() {
             top-of-hierarchy heading, and a first-time visitor landed
             on the Spectrum scatter chart with no page-level orientation
             for what /rag-explore IS. Heading hierarchy is now
-            h1 (page) > h2 (each section) > h3 (tab-group labels in nav). */}
+            h1 (page) > h2 (each section) > h3 (tab-group labels in nav).
+            Corpus stats (interview count, passage count, per-tier
+            counts) sit immediately below the framing so visitors see
+            the substrate's scale + audit-tier vocabulary upfront,
+            instead of having to scroll to the bottom aside. */}
         <header className="mb-10">
           <h1
             className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
@@ -252,6 +256,40 @@ export default function RagExplore() {
             a time; tabs further down offer structural maps, passage-finding,
             and curated readings of the same embedding substrate.
           </p>
+          {stats && (
+            <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-sm text-stone-700">
+              <span>
+                <span className="font-medium text-stone-900 tabular-nums">{stats.interviews}</span>{' '}
+                interviews indexed
+              </span>
+              <span aria-hidden className="text-stone-400">·</span>
+              <span>
+                <span className="font-medium text-stone-900 tabular-nums">
+                  ~{Math.round(stats.chunks / 1000)}K
+                </span>{' '}
+                time-anchored passages
+              </span>
+              <span aria-hidden className="text-stone-400 hidden sm:inline">·</span>
+              <ul
+                aria-label="Audit-confidence tiers, with the interview count in each"
+                className="flex flex-wrap gap-1.5 text-xs list-none p-0 m-0"
+              >
+                {TIER_VOCABULARY.map((key) => {
+                  const badge = TIER_BADGE[key];
+                  return (
+                    <li key={key}>
+                      <span
+                        className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
+                      >
+                        <span className="font-medium tabular-nums">{stats.tiers[key] || 0}</span>
+                        <span>{key}</span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
         </header>
 
         {/* Spectrum is the page's headline surface. It renders above
@@ -550,35 +588,12 @@ export default function RagExplore() {
             visualize those connections.
           </p>
 
+          {/* Corpus stats + tier badges that previously sat here are
+              now rendered in the page-top <header>, where a first-time
+              visitor sees them BEFORE scrolling past Spectrum + every
+              demo tab. AuditProvenance stays in this aside as the
+              deeper "why you can trust the substrate" credentialing. */}
           <AuditProvenance />
-          {stats && (
-            <div className="mt-6 space-y-3">
-              <dl className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-stone-700">
-                <div>
-                  <dt className="font-medium text-stone-900 inline">{stats.interviews}</dt>{' '}
-                  <span>interviews indexed</span>
-                </div>
-                <div>
-                  <dt className="font-medium text-stone-900 inline">~{Math.round(stats.chunks / 1000)}K</dt>{' '}
-                  <span>time-anchored passages</span>
-                </div>
-              </dl>
-              <div className="flex flex-wrap gap-2 text-xs">
-                {TIER_VOCABULARY.map((key) => {
-                  const badge = TIER_BADGE[key];
-                  return (
-                    <span
-                      key={key}
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
-                    >
-                      <span className="font-medium tabular-nums">{stats.tiers[key] || 0}</span>
-                      <span>{key}</span>
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-          )}
         </aside>
 
         <footer className="text-xs text-stone-500 border-t border-stone-200 pt-6">
