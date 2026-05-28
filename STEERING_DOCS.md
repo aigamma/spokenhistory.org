@@ -4,7 +4,7 @@
 
 **Audience:** WWU team, NMAAHC + LoC collaborators, any new contributor (human or AI agent).
 
-**Last updated:** 2026-05-27 (added the per-person pages catalog + the durable-docs principle).
+**Last updated:** 2026-05-28 (catalog at 191 pages, 100% bio coverage; content_type filter implemented at both client and MCP server; `rag/ingest.mjs --include-persons / --persons-only` operational).
 
 ---
 
@@ -139,6 +139,7 @@ Original RAG substrate design when the plan was Weaviate. The substrate decision
 | Touch the RAG ingest/retrieval code | `rag/README.md` |
 | Build a new interactive surface | `rag/INTERACTIVE_FEATURES_DESIGN.md` |
 | Add or modify a per-person page | `public/rag/people/README.md` (catalog purpose + schema + writing discipline) |
+| Ingest the per-person catalog to Pinecone | `rag/ingest.mjs` (run `node --env-file=.env.local rag/ingest.mjs --persons-only`); the content_type filter is already in place via `src/services/ragClient.js` + `mcp-server/server.mjs` |
 | Deploy to staging or production | `docs/DEPLOYMENT.md`, `rag/OPERATIONS.md` |
 | Touch the MCP server | `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md` |
 | Touch styling / colors / accessibility | `docs/ACCESSIBILITY.md`, `CLAUDE.md` § Writing rules |
