@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "pete-seeger",
+  "person_type": "interviewee",
+  "entry_number": 97,
+  "display_name": "Pete Seeger",
+  "born": 1919,
+  "died": 2014,
+  "role_summary": "Folk singer and civil rights movement songbook contributor; helped popularize \"We Shall Overcome\" as a movement anthem from Highlander Folk School onward; co-founder of the Almanac Singers (1941) and the Weavers (1950); songwriter of \"Where Have All the Flowers Gone?\", \"If I Had a Hammer\", and \"Turn! Turn! Turn!\".",
+  "photo": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/32/Pete_Seeger_NYWTS.jpg",
+    "alt": "Pete Seeger playing the banjo in 1955",
+    "photographer": "Fred Palumbo (New York World-Telegram and Sun staff photographer)",
+    "repository": "Wikimedia Commons; original from the Library of Congress New York World-Telegram and Sun collection",
+    "license": "Public domain (no known copyright restrictions; Library of Congress NYWTS collection)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pete_Seeger_NYWTS.jpg",
+    "date_taken": "1955"
+  },
+  "ai_reading": "Seeger's top semantic neighbor is the joint Candie and Guy Carawan interview (entry 11, count 73), the Highlander Folk School music teachers; this is the same anchor that Jamila Jones (entry 58, here at count 66, Seeger's second neighbor) clusters around. The embedding therefore reads Seeger as part of the Highlander-music-tradition vector cluster: he, the Carawans, and Jamila Jones form a triadic signature in the corpus, the freedom-song-pedagogy node that the catalog separately treats in those interviewees' pages. Seeger's other neighbors are Charles McLaurin (entry 17, Mississippi SNCC), Dorothy Foreman Cotton (entry 29, SCLC Educational Director), and C. T. Vivian (entry 134, SCLC). The novel observation is on the Nonviolence as Theology vs Armed Self-Defense axis where Seeger sits at +0.50, well toward Armed Self-Defense. For a folksinger whose civil-rights-era songbook is itself the nonviolent movement's musical canon, the cultural reading would predict a strong Nonviolence-as-Theology placement; the embedding pulls his testimony toward the opposite pole, consistent with the Wyatt Tee Walker pattern (entry 132) of the catalog's SCLC-and-folkmusic figures inverting on this axis.",
+  "biographical_paragraph": "Seeger helped popularize \"We Shall Overcome\" as a civil rights movement anthem from the Highlander Folk School onward; he organized a 1963 Carnegie Hall benefit concert for Highlander that featured the Freedom Singers, and he sang the anthem alongside roughly a thousand other participants on the 1965 Selma to Montgomery marches [src: 2]. Born May 3, 1919, he co-founded the Almanac Singers in 1941 and the reconstituted Weavers in 1950; the Weavers' recording of Lead Belly's \"Goodnight, Irene\" topped the charts for thirteen weeks that year [src: 2]. His own compositions \"Where Have All the Flowers Gone?\", \"If I Had a Hammer\", and \"Turn! Turn! Turn!\" entered the folk-revival canon of the period [src: 2]. He died January 27, 2014, at ninety-four [src: 2]. His memoir Where Have All the Flowers Gone was first published in 1993, reissued in 2009 [src: 2]. His Library of Congress oral history is entry 97 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669138/",
+      "title": "Pete Seeger oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/28547797",
+      "title": "Pete Seeger, Where Have All the Flowers Gone: A Singer's Stories, Songs, Seeds, Robberies",
+      "publisher": "Sing Out Publications, 1993 (reissued W. W. Norton, 2009); WorldCat OCLC 28547797"
+    }
+  ]
+}
