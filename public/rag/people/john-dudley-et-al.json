@@ -6,14 +6,19 @@
   "born": null,
   "died": null,
   "display_name": "John Dudley et al",
-  "role_summary": "Joint oral history at the Library of Congress; this catalog page treats the combined transcript as a single embedding signature.",
-  "ai_reading": "John Dudley et al's top semantic neighbor is Robert L. Carter (entry 108, count 136); the broader cluster includes James Oscar Jones (#57), Gertrude Newsome Jackson (#136), Clarence Magee (#21).",
-  "biographical_paragraph": "This joint oral history is held at the Library of Congress as entry 64 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries an ingestion-only audit tier: the catalog ingested the transcript but did not subject it to the audit cascade, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "Joint oral history of six surviving veterans of the 1951 Adkin High School walkout in Kinston, North Carolina, the student-organized mass walkout protesting unequal conditions at the segregated all-Black high school: John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove. The 1951 walkout was a student-led action planned and staged without adult guidance, three years before Brown v. Board of Education and nine years before the February 1960 Greensboro sit-ins.",
+  "ai_reading": "The John Dudley et al cohort's top semantic neighbor is Robert L. Carter (entry 108) at a cosine count of 136; the broader cluster includes James Oscar Jones (entry 57), Gertrude Newsome Jackson (entry 136), and Clarence Magee (entry 21). The Robert L. Carter cosine is the catalog's clearest student-walkout-and-NAACP-legal-strategy pairing: Carter argued for Oliver Brown in Brown v. Board of Education three years after the Adkin walkout; the embedding catches the pre-Brown student-direct-action register that the litigation strategy responded to. The novel observation this joint page surfaces is the pre-Brown / pre-sit-in student-walkout signature: the 1951 Adkin walkout predates the more-photographed 1960 Greensboro sit-ins by nine years and Brown v. Board by three; the historiography has often subordinated it to the post-Brown direct-action wave, but the catalog's embedding aligns the 1951 walkout register with the broader student-organized direct-action tradition rather than as a pre-movement anomaly.",
+  "biographical_paragraph": "While this joint oral history carries an ingestion-only audit tier (the catalog ingested the transcript but did not subject it to the audit cascade, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record is documented through the Civil Rights History Project finding aid for entry 64 [src: 1, src: 2]. The interviewees are six surviving veterans of the 1951 Adkin High School walkout in Kinston, North Carolina: John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove. Adkin High School was Kinston's all-Black, segregated high school; the students realized that their school was systematically unequal to the all-white Kinston school they were barred from, and they planned and staged a school-wide walkout and protest march without the assistance of any adults [src: 2]. The walkout was a student-organized direct action three years before Brown v. Board of Education and nine years before the February 1960 Greensboro sit-ins. John Dudley later worked as a youth home director for the Bureau of Rehabilitation in Washington, D.C. The joint interview was conducted by Emilye Crosby in Hyattsville, Maryland in June 2013 [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669195/",
       "title": "John Dudley et al oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "http://crdl.usg.edu/export/html/loc/crhp/crdl_loc_crhp_crhp0096.html",
+      "title": "John Dudley, Eleanor Stewart, Charles Jarmon, Frances Suggs, Harold Suggs, and Samuel Dove oral history",
+      "publisher": "Civil Rights Digital Library, University System of Georgia"
     }
   ]
 }
