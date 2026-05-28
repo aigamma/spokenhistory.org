@@ -2,7 +2,7 @@
 
 One JSON file per named individual on the site. Each file is loaded by the `/person/:slug` route's `PersonPage` component and rendered as a citation-bearing reference page. The catalog supports two `person_type` values: interviewees (have their own oral history in the Civil Rights History Project corpus) and external figures (discussed by interviewees but not themselves interviewed).
 
-**Current catalog: 184 pages (161 interviewees + 23 external figures, as of 2026-05-28).** Every named CRHP interviewee plus every named external figure referenced in FamousNames, the influence graph, OR repeatedly mentioned across multiple interviewee bios has a catalog entry.
+**Current catalog: 188 pages (161 interviewees + 27 external figures, as of 2026-05-28).** Every named CRHP interviewee plus every named external figure referenced in FamousNames, the influence graph, OR repeatedly mentioned across multiple interviewee bios has a catalog entry. Photo coverage: 44 of 188 pages (23%) carry an inline PD or open-licensed portrait.
 
 ## Catalog purpose (READ FIRST)
 
