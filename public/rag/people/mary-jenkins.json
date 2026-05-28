@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "mary-jenkins",
+  "person_type": "interviewee",
+  "entry_number": 84,
+  "display_name": "Mary Jenkins",
+  "born": null,
+  "died": null,
+  "role_summary": "Civil Rights History Project interviewee; her testimony in this corpus's embedding clusters with Mildred Pitts Walter, Mary Jones, William G. Anderson, and Johnnie Ruth McCullar.",
+  "ai_reading": "Jenkins's top semantic neighbors are the West-Coast Black author Mildred Pitts Walter (entry 91, count 46), Mary Jones (entry 85), William G. Anderson (entry 126), Johnnie Ruth McCullar (entry 65), and the John Dudley et al joint interview (entry 64). The cluster does not concentrate on a single movement organization (SNCC, SCLC, BPP, NAACP) the way most other audited entries' clusters do; instead the embedding reads Jenkins as a movement-adjacent voice whose nearest neighbors include a Black children's-book author, another Mary (Jones), a community-medicine doctor (Anderson, who organized Albany Movement medical care), and other minor-prominence Mississippi/Southern figures. Her Individual Conscience vs Collective Discipline position is +0.83, far toward Collective Discipline, an unusually strong reading on that axis: only Grace Hall Miller (entry 50, +1.00) is more collective in the audited subset of the catalog. The embedding therefore reads her oral history as institutionally-disciplined-collective language despite the modest cosine counts (her top neighbor is at 46, far lower than most catalog entries' top counts), suggesting a shorter or more focused interview transcript.",
+  "biographical_paragraph": "Mary Jenkins's oral history is held at the Library of Congress as entry 84 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing for Jenkins is pending; the embedding's neighbor pattern visible above is the strongest available signal for her movement placement and is consistent with a Mississippi or Southern-rural movement context.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669168/",
+      "title": "Mary Jenkins oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
