@@ -19,13 +19,18 @@ import {
 import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
 
 /**
- * Pull a small set of corpus stats from /rag/constellation.json
- * (which carries entry_provenance + uncertainty_tier per point).
- * Lets the header render "136 interviews, 5-tier audit substrate"
- * without requiring a separate stats endpoint.
+ * Single fetch of /rag/constellation.json (which carries one point per
+ * interview with entry_subject, entry_number, uncertainty_tier,
+ * entry_provenance, chunk_count). Used in two places:
+ *   - Header stats display (interview count, passage count, tier counts)
+ *   - Semantic Overlap picker (full alphabetized roster for search)
+ *
+ * Returning a combined { stats, interviewees } object keeps the fetch
+ * to a single request and lets either consumer skip the data while it
+ * loads.
  */
-function useCorpusStats() {
-  const [stats, setStats] = useState(null);
+function useCorpusData() {
+  const [data, setData] = useState(null);
   useEffect(() => {
     let cancelled = false;
     fetch('/rag/constellation.json')
@@ -34,21 +39,32 @@ function useCorpusStats() {
         if (cancelled || !json?.points) return;
         const tiers = {};
         let totalChunks = 0;
+        const interviewees = [];
         for (const p of json.points) {
           const t = p.uncertainty_tier || 'unknown';
           tiers[t] = (tiers[t] || 0) + 1;
           totalChunks += p.chunk_count || 0;
+          interviewees.push({
+            entry_number: p.entry_number,
+            entry_subject: p.entry_subject || `Entry #${p.entry_number}`,
+          });
         }
-        setStats({
-          interviews: json.points.length,
-          chunks: totalChunks,
-          tiers,
+        interviewees.sort((a, b) =>
+          a.entry_subject.localeCompare(b.entry_subject, 'en', { sensitivity: 'base' })
+        );
+        setData({
+          stats: {
+            interviews: json.points.length,
+            chunks: totalChunks,
+            tiers,
+          },
+          interviewees,
         });
       })
       .catch(() => { /* swallow, header just falls back to baseline copy */ });
     return () => { cancelled = true; };
   }, []);
-  return stats;
+  return data;
 }
 
 /**
@@ -168,7 +184,10 @@ const TAB_LABELS = {
 };
 
 export default function RagExplore() {
-  const stats = useCorpusStats();
+  const corpusData = useCorpusData();
+  const stats = corpusData?.stats;
+  const allInterviewees = corpusData?.interviewees;
+  const [searchInput, setSearchInput] = useState('');
   // The app uses HashRouter, so window.location.hash is consumed by
   // the router itself (e.g. /#/rag-explore?tab=search&q=foo). Reading
   // window.location.hash returns "#/rag-explore?tab=search&q=foo", not
@@ -442,37 +461,93 @@ export default function RagExplore() {
                 Semantic Overlap
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                For each interview, we precompute which other interviewees in the corpus discuss
-                semantically-related material. Pick an interview from the list, or click a dot
-                on the Embedding-space map, to see the top-related voices.
+                For each interview, we precompute which other interviewees in the corpus
+                discuss semantically-related material. Pick a suggested interview below, or
+                search by name to choose from any of the {allInterviewees?.length || 136}.
               </p>
-              <label className="block text-sm text-stone-700 mb-2">
-                Interview:
-                <select
-                  value={
-                    RELATED_DEMO_ENTRIES.some((e) => e.number === relatedEntry)
-                      ? relatedEntry
-                      : ''
-                  }
-                  onChange={(e) => setRelatedEntry(Number(e.target.value))}
-                  className="ml-2 px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900"
-                >
-                  {!RELATED_DEMO_ENTRIES.some((e) => e.number === relatedEntry) && relatedEntry != null && (
-                    <option value="">From constellation: entry #{relatedEntry}</option>
-                  )}
-                  {RELATED_DEMO_ENTRIES.map((e) => (
-                    <option key={e.number} value={e.number}>
-                      {e.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
+
+              {/* Picker: six hand-curated quick picks at top, then a
+                  full-corpus search input with a datalist of every
+                  interviewee. Clicking a quick pick or following a
+                  related-passage link clears the search input (since
+                  those are alternate selection sources), but typing /
+                  picking from the search itself preserves the typed
+                  value so the visitor can see what they queried. The
+                  active entry's name is also visible in the
+                  RelatedPassages heading below. */}
+              <div className="mb-6">
+                <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                  Suggested
+                </p>
+                <ul className="flex flex-wrap gap-2 mb-4 list-none p-0">
+                  {RELATED_DEMO_ENTRIES.map((e) => {
+                    const isActive = relatedEntry === e.number;
+                    return (
+                      <li key={e.number}>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setRelatedEntry(e.number);
+                            setSearchInput('');
+                          }}
+                          aria-pressed={isActive}
+                          className={
+                            'inline-flex items-center min-h-9 px-3 py-1.5 text-sm rounded-full border-2 transition-colors ' +
+                            (isActive
+                              ? 'border-civil-red-strong bg-red-50 text-stone-900 font-medium'
+                              : 'border-stone-300 bg-white text-stone-700 hover:border-stone-400 hover:bg-stone-50')
+                          }
+                        >
+                          {e.name}
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <label className="block text-sm text-stone-700">
+                  Or search by name:
+                  <input
+                    type="text"
+                    list="interviewee-names"
+                    placeholder={
+                      allInterviewees
+                        ? `e.g. ${allInterviewees[Math.floor(allInterviewees.length / 2)]?.entry_subject ?? 'Diane Nash'}`
+                        : 'Loading roster…'
+                    }
+                    value={searchInput}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setSearchInput(value);
+                      // The datalist options are formatted "Name (#N)". When the user
+                      // selects one (or types the full text), this regex extracts the
+                      // entry number and jumps to that interview.
+                      const numMatch = value.match(/\(#(\d+)\)$/);
+                      if (numMatch) {
+                        setRelatedEntry(Number(numMatch[1]));
+                      }
+                    }}
+                    className="mt-1 block w-full sm:w-96 px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:outline-none focus:ring-2 focus:ring-red-200"
+                  />
+                </label>
+                {allInterviewees && (
+                  <datalist id="interviewee-names">
+                    {allInterviewees.map((e) => (
+                      <option key={e.entry_number} value={`${e.entry_subject} (#${e.entry_number})`} />
+                    ))}
+                  </datalist>
+                )}
+              </div>
+
               <div className="mt-6">
                 <RelatedPassages
                   entryNumber={relatedEntry}
                   mode="entries"
                   limit={16}
-                  onNavigateToEntry={(n) => setRelatedEntry(n)}
+                  onNavigateToEntry={(n) => {
+                    setRelatedEntry(n);
+                    setSearchInput('');
+                  }}
                 />
               </div>
             </div>
