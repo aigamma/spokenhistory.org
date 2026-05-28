@@ -9,11 +9,39 @@
   "role_summary": "Playwright associated with the Black Arts Movement; in this corpus's embedding his testimony pairs with Dr. Doris Derby, Evans Derrell Hopkins, and the Black-Arts-and-BPP-adjacent cohort.",
   "ai_reading": "Caldwell's top semantic neighbor is Dr. Doris Derby (entry 32, count 255), the Black Arts Movement organizer and Free Southern Theater co-founder. The pairing is the catalog's clearest Black-Arts-Movement-cohort cosine signature. Subsequent neighbors are Evans Derrell Hopkins (entry 42, BPP-network prison writer), John Churchville (entry 63), Harold K. Brown (entry 55), and Mildred Pitts Walter (entry 91, Black-children's-literature author). The embedding reads Caldwell as a writer-organizer bridging the Black Arts Movement, the BPP-network literary tradition, and the Black-children's-literature cohort, a cross-discipline placement broader than the cultural reading of him as a Black Arts playwright only. His -0.43 Sacred Framing position reads his testimony as Secular-leaning, consistent with a Black Arts Movement whose aesthetic foundation explicitly rejected the church-anchored vocabulary of SCLC's earlier movement work.",
   "biographical_paragraph": "Ben Caldwell's oral history is held at the Library of Congress as entry 6 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "movement_context": "The Black Arts Movement (BAM) the embedding signature places Caldwell inside was a network of theatrical, poetic, musical, and visual-arts institutions Amiri Baraka (LeRoi Jones until 1968) named in his 1968 essay The Black Arts Movement and which Larry Neal further elaborated in his 1968 Drama Review essay of the same name [src: 2, 3]. Its institutional anchors in the mid-1960s were the Black Arts Repertory Theatre/School (BARTS) Baraka founded in Harlem in April 1965 immediately after Malcolm X's assassination, and the Free Southern Theater Doris Derby (catalog entry 32) co-founded in 1963 in Tougaloo, Mississippi as the cultural arm of the SNCC organizing then under way; Caldwell's playwriting career was anchored in the Harlem BARTS network rather than the Mississippi Free Southern Theater network, but the embedding catches the cross-pollination between the two institutions that ran through Black World (Hoyt Fuller editing), The Drama Review (T. Erdmann Smith editing), and the small-press publication network James Edward Smethurst's institutional history of the BAM documents [src: 4]. The Sacred-vs-Secular Framing position in the AI's-reading observation above sits inside Smethurst's central argument: BAM's aesthetic break from SCLC was not religion-vs-irreligion but a different theological substrate, what Smethurst calls 'sacred profanity' in the Baraka and Sonia Sanchez tradition that Caldwell's short-form satirical playwriting belongs structurally to [src: 4].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/1/16/Amiri_Baraka_2013.jpg",
+      "alt": "Amiri Baraka, 2013",
+      "caption": "Amiri Baraka (LeRoi Jones until 1968), the Black Arts Movement founder whose Harlem Black Arts Repertory Theatre/School (BARTS, founded April 1965) was the institutional anchor for the playwriting network Caldwell's mid-1960s short-form satirical plays belong to. Baraka's 1968 essay The Black Arts Movement was the manifesto that named the movement.",
+      "photographer": "Swing333",
+      "repository": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Amiri_Baraka_2013.jpg",
+      "date_taken": "2013"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669176/",
       "title": "Ben Caldwell oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.jstor.org/stable/40037047",
+      "title": "Amiri Baraka, The Black Arts Movement",
+      "publisher": "Reprinted in Larry Neal and LeRoi Jones (Amiri Baraka), eds., Black Fire: An Anthology of Afro-American Writing, Morrow, 1968 (the manifesto essay naming the movement)"
+    },
+    {
+      "url": "https://www.jstor.org/stable/1144377",
+      "title": "Larry Neal, The Black Arts Movement",
+      "publisher": "The Drama Review: TDR 12, no. 4 (Summer 1968): 28-39 (the second foundational essay defining BAM's aesthetic-political program)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/61362523",
+      "title": "James Edward Smethurst, The Black Arts Movement: Literary Nationalism in the 1960s and 1970s",
+      "publisher": "University of North Carolina Press, 2005; WorldCat OCLC 61362523 (the standard institutional history of the Black Arts Movement)"
     }
   ]
 }
