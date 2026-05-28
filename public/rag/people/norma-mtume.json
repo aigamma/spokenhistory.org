@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "norma-mtume",
+  "person_type": "interviewee",
+  "entry_number": 93,
+  "born": null,
+  "died": null,
+  "display_name": "Norma Mtume",
+  "role_summary": "Black Panther Party member; in this corpus's embedding her testimony pairs strongly with both BPP organizers and movement-medicine figures, bridging the party's clinic-and-social-services work to the broader civil rights medical-organizing cohort.",
+  "ai_reading": "Mtume's top semantic neighbor is H. Jack Geiger (entry 54, count 229), the Mississippi community-health-center founder. This is the catalog's clearest cross-faction pairing between the Black Panther Party and the SCLC/SNCC-adjacent movement-medicine cohort: Mtume's BPP placement is confirmed by her remaining neighbors (Aaron Dixon entry 1 at count 136, Elbert Howard entry 35 at 119, Evans Derrell Hopkins entry 42 at 116, Elmer Dixon entry 37 at 115), but her top cosine is with Geiger, not with another BPP figure. The embedding therefore reads her testimony as both BPP-network and medical-organizing-network simultaneously, an intersection consistent with the BPP's documented community-medical-clinic work (the Free Breakfast for Children program's nutritional intervention, the People's Free Medical Clinics across BPP chapters) but which the cultural reception's separate treatments of BPP politics and community-health-center policy rarely place in the same paragraph. Her -0.65 reading on the Nonviolence as Theology vs Armed Self-Defense axis continues the BPP-at-Nonviolence-pole pattern documented across Aaron Dixon, Elmer Dixon, Elbert Howard, Kathleen Cleaver, and Evans Hopkins.",
+  "biographical_paragraph": "Norma Mtume was a Black Panther Party member; her oral history is held at the Library of Congress as entry 93 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the strongest available signal for her movement role is the embedding's tight cosine with both the BPP cohort (Aaron and Elmer Dixon, Elbert Howard, Evans Hopkins) and with H. Jack Geiger (entry 54), the Mississippi community-health-center founder, suggesting her role spanned BPP organizing and movement medical-clinic work.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2016655429/",
+      "title": "Norma Mtume oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
