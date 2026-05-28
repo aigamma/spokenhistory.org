@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "roberta-alexander",
+  "person_type": "interviewee",
+  "entry_number": 110,
+  "born": null,
+  "died": null,
+  "display_name": "Roberta Alexander",
+  "role_summary": "Black Panther Party organizer (distinct from the opera singer of the same name); in this corpus's embedding her testimony clusters tightly with the BPP-and-West-Coast-civil-rights cohort.",
+  "ai_reading": "Alexander's top five semantic neighbors are Elbert \"Big Man\" Howard (entry 35, count 213), Harold K. Brown (entry 55, San Diego CORE, at 178), Aaron Dixon (entry 1) at 142, Evans Derrell Hopkins (entry 42) at 123, and Betty Garman Robinson (entry 7) at 110. The embedding therefore reads her as a Black Panther Party voice with cross-coalition cosines to West Coast civil rights organizing (Brown) and SNCC Northern support (Robinson). She continues the BPP-at-Nonviolence-pole pattern at -0.60 on the nonviolence vs self-defense axis, alongside the rest of the corpus's BPP-identified interviewees (Aaron Dixon -0.73, Elmer Dixon -1.00, Elbert Howard -0.85, Kathleen Cleaver -0.80, Evans Hopkins -0.56, Norma Mtume -0.65). Her -0.50 reading on Sacred Framing vs Secular Framing axis adds her to the BPP cohort's Sacred-side cluster, distinct from the SCLC-pastor-figures who in this corpus paradoxically land on the Secular side (e.g., Wyatt Tee Walker at +0.73). The AI-vs-culture inversions the catalog has documented hold here.",
+  "biographical_paragraph": "Roberta Alexander (the Black Panther Party organizer, distinct from the operatic soprano of the same name born March 3, 1949) was active in the BPP organizing of the late 1960s and beyond; her oral history is held at the Library of Congress as entry 110 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing on Alexander the BPP member is pending; the strongest signal for her movement role is the embedding's tight cosine with the catalog's BPP cohort (Howard, Aaron Dixon, Hopkins, plus Harold K. Brown's parallel West Coast civil rights leadership) visible in her neighbors above.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2016655433/",
+      "title": "Roberta Alexander oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
