@@ -231,6 +231,29 @@ export default function RagExplore() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
       <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 focus:outline-none">
+        {/* Page-level header. Without an h1 the document had no
+            top-of-hierarchy heading, and a first-time visitor landed
+            on the Spectrum scatter chart with no page-level orientation
+            for what /rag-explore IS. Heading hierarchy is now
+            h1 (page) > h2 (each section) > h3 (tab-group labels in nav). */}
+        <header className="mb-10">
+          <h1
+            className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            Explore the Embeddings
+          </h1>
+          <p
+            className="text-stone-700 text-base sm:text-lg max-w-3xl"
+            style={{ fontFamily: 'Source Serif 4, serif' }}
+          >
+            Multiple lenses on the 136-interview Civil Rights History Project
+            corpus. The chart below places voices along one conceptual axis at
+            a time; tabs further down offer structural maps, passage-finding,
+            and curated readings of the same embedding substrate.
+          </p>
+        </header>
+
         {/* Spectrum is the page's headline surface. It renders above
             the tab nav so it's always the first thing visitors see;
             tabs below let them explore alternative views without
