@@ -67,6 +67,21 @@ async function main() {
 
     const summary = { slug, display_name: displayName, person_type: personType };
     if (entryNumber != null) summary.entry_number = entryNumber;
+    // Compact role-summary clip for the /people catalog browse grid.
+    // 140 chars keeps cards uniform without distorting longer roles.
+    if (data.role_summary && typeof data.role_summary === 'string') {
+      const trimmed = data.role_summary.trim();
+      summary.role_preview = trimmed.length > 140 ? trimmed.slice(0, 137) + '...' : trimmed;
+    }
+    // Photo external URL (Wikimedia hot-link) for the browse-grid
+    // thumbnail. The full citation block stays on the catalog page
+    // itself; the index only needs the URL for the thumbnail render.
+    if (data.photo?.src_external) {
+      summary.photo_src = data.photo.src_external;
+    }
+    // born/died fields for the chip subtitle.
+    if (Number.isFinite(data.born)) summary.born = data.born;
+    if (Number.isFinite(data.died)) summary.died = data.died;
 
     bySlug[slug] = summary;
     const normName = normalize(displayName);
