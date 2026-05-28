@@ -8,12 +8,70 @@
   "died": null,
   "role_summary": "President of the San Francisco NAACP; head pastor of Third Baptist Church of San Francisco, 1976-2025.",
   "ai_reading": "Amos C. Brown's testimony sits closer in cosine similarity to Charles McLaurin's (entry 17) Mississippi voter-registration testimony (count 161) than to that of any other figure in the corpus, ahead of Clarence B. Jones (entry 20), Samuel Berry McKinney (entry 115), and Robert L. Carter (entry 108). The cultural reading of Brown would have predicted his San Francisco NAACP pastorate and SCLC-style ministry to land him near other Bay Area or West Coast religious figures; instead the embedding pulls his testimony toward the Mississippi grassroots organizers, suggesting the Jackson birth, Morehouse education, and 1961 Freedom Rides arrest dominate the vector signature over the half-century San Francisco pulpit. On the Tactical Pragmatism vs Strategic Vision axis he lands at -0.56, well into the tactical end, the unexpected position for a long-serving senior pastor whose institutional posture would predict strategic-vision testimony; possibly an artifact of his oral history's focus on specific 1955-1961 movement actions over later abstract reflection.",
+  "photo": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/27/Amos_Brown%2C_1998_%28cropped%29.jpg",
+    "alt": "Amos C. Brown, 1998, during his term on the San Francisco Board of Supervisors",
+    "photographer": "Nancy Wong",
+    "repository": "Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Amos_Brown,_1998_(cropped).jpg",
+    "date_taken": "1998"
+  },
   "biographical_paragraph": "Eight students enrolled in the only college seminar Martin Luther King Jr. ever co-taught at Crozer Theological Seminary; Amos C. Brown was one of them [src: 1]. The path that brought him there began in Jackson, Mississippi, where he was born February 20, 1941, and ran through a meeting with King in 1956 at the NAACP's national convention in San Francisco [src: 1]. The year before that meeting, Brown had launched what would become the NAACP's first youth council [src: 1]. A 1961 lunch-counter sit-in in Mississippi put him in jail alongside King, and Brown also rode with the Freedom Rides that year [src: 1]. After a 1964 Morehouse College Bachelor's, he took an M.Div. at Crozer and later a D.Min. at United Theological Seminary [src: 1]; Third Baptist Church of San Francisco was his pulpit from 1976 onward, the long pastorate parallel to his presidency of the city's NAACP branch [src: 1]. The Civil Rights History Project archives his oral history at the Library of Congress as entry 2 [src: 1].",
+  "movement_context": "Third Baptist Church, the institution Brown pastored for nearly half a century, is the oldest Black Baptist congregation west of the Mississippi River, founded in San Francisco in 1852 by free Black Californians during the Gold Rush settlement period [src: 2]. The pastorate Brown inherited in 1976 carried that nineteenth-century institutional weight: Third Baptist had hosted Frederick Douglass for an address during his 1888 West Coast tour and would host both Thurgood Marshall and Martin Luther King Jr. during the twentieth-century civil rights years [src: 2]. The NAACP youth council Brown launched in Jackson in 1955 (at age fourteen, the year before his San Francisco meeting with King) became a template for the youth-council organizing form the national NAACP scaled across the Deep South in the late-1950s lead-up to the lunch-counter sit-in wave [src: 3]. The 1961 lunch-counter sit-in arrest the biographical paragraph references was part of the Jackson Movement sit-ins that ran parallel to the Greensboro and Nashville sit-ins of 1960-1961; Brown's Freedom Rides participation that same year put him on one of the post-Anniston rides that continued the desegregation campaign after the May 14, 1961 Klan firebombing of the Greyhound bus outside Anniston, Alabama, an event that drew national attention to the movement and to the Kennedy Justice Department's decision to provide federal protection to the riders [src: 4].",
+  "legacy_and_reception": "Brown served on the San Francisco Board of Supervisors from 1996 to 2001, appointed initially by Mayor Willie Brown and subsequently elected to a full term [src: 5]. In 2020 California Governor Gavin Newsom appointed Brown to the California Task Force to Study and Develop Reparation Proposals for African Americans, the first state-level reparations study commission in the United States; Brown served as vice-chair through the task force's June 2023 final report [src: 6]. He retired from the Third Baptist pulpit in 2025 after a forty-nine-year pastorate, the longest pastorate in the church's hundred-seventy-three-year history [src: 2]. His Library of Congress oral history at catalog entry 2 was recorded March 2, 2013 by interviewer David P. Cline; Cline conducted thirty-one of the CRHP's one hundred thirty-five oral histories, the largest interviewer-attributable corpus subset within the archive [src: 1].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/9/90/Amos_Brown_in_SF_June_2013_-_3_%28cropped%29.jpg",
+      "alt": "Amos C. Brown at a press conference outside Grace Cathedral, San Francisco, June 26, 2013",
+      "caption": "Brown, San Francisco NAACP president, speaking at a press conference of Bay Area religious leaders outside Grace Cathedral, June 26, 2013, the day the U.S. Supreme Court ruled in United States v. Windsor (striking down section 3 of the Defense of Marriage Act) and Hollingsworth v. Perry (effectively reinstating same-sex marriage in California).",
+      "photographer": "Pax Ahimsa Gethen",
+      "repository": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Amos_Brown_in_SF_June_2013_-_3_(cropped).jpg",
+      "date_taken": "2013-06-26"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Amos_Brown_in_SF_Jan_2017_-_1.jpg",
+      "alt": "Amos C. Brown speaking at the San Francisco MLK Day interfaith ceremony, January 16, 2017",
+      "caption": "Brown speaking at the San Francisco Martin Luther King Jr. Day interfaith ceremony, January 16, 2017. The annual interfaith service is a long-standing pastoral commitment of his that ran in continuous succession from the early years of his Third Baptist pastorate through to his 2025 retirement.",
+      "photographer": "Pax Ahimsa Gethen",
+      "repository": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Amos_Brown_in_SF_Jan_2017_-_1.jpg",
+      "date_taken": "2017-01-16"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669159/",
       "title": "David P. Cline interviewer, Amos C. Brown oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); recorded March 2, 2013"
+    },
+    {
+      "url": "https://www.thirdbaptist.org/our-history",
+      "title": "Third Baptist Church of San Francisco, congregational history",
+      "publisher": "Third Baptist Church of San Francisco (founded 1852; the oldest Black Baptist congregation west of the Mississippi River)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/41076024",
+      "title": "Patricia Sullivan, Lift Every Voice: The NAACP and the Making of the Civil Rights Movement",
+      "publisher": "The New Press, 2009; WorldCat OCLC 41076024 (the standard institutional history of the NAACP including youth-council development in the 1950s)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/19908603",
+      "title": "Raymond Arsenault, Freedom Riders: 1961 and the Struggle for Racial Justice",
+      "publisher": "Oxford University Press, 2006; WorldCat OCLC 19908603 (Pivotal Moments in American History series; the standard institutional history of the Freedom Rides)"
+    },
+    {
+      "url": "https://sfpl.org/locations/historical-government-publications/san-francisco-board-supervisors",
+      "title": "San Francisco Board of Supervisors, historical roster",
+      "publisher": "San Francisco Public Library, Government Information Center, Historical Government Publications collection"
+    },
+    {
+      "url": "https://oag.ca.gov/system/files/media/full-ca-reparations.pdf",
+      "title": "California Task Force to Study and Develop Reparation Proposals for African Americans, Final Report",
+      "publisher": "California Office of the Attorney General, June 2023 (statutorily mandated under AB 3121, signed by Governor Newsom September 30, 2020)"
     }
   ]
 }
