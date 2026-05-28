@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "esther-m-a-terry",
+  "person_type": "interviewee",
+  "entry_number": 40,
+  "display_name": "Esther M. A. Terry",
+  "born": null,
+  "died": null,
+  "role_summary": "Civil Rights History Project interviewee; in this corpus's embedding her testimony clusters with SNCC-network voices and her position on every concept axis sits near the midpoint.",
+  "ai_reading": "On the five concept axes the corpus tracks, Esther M. A. Terry's testimony sits very near the midpoint on each (her position_normalized values run from -0.08 to +0.28 across the five), making her one of the most centrist voices in the corpus's vector space. Her top six semantic neighbors are the joint John Dudley et al interview (entry 64), Betty Garman Robinson (SNCC national office, entry 7), Joan Trumpauer Mulholland (Freedom Rider, entry 60), Eddie Holloway (entry 33), Charles F. \"Chuck\" McDew (SNCC chairman 1961-63, entry 16), and Ekwueme Michael Thelwell (SNCC Washington office director, entry 34); every one of those six has SNCC affiliation in the cultural record. The embedding therefore agrees with the cultural placement of Terry as a SNCC-network voice. What it adds is the centrism: where many BPP or SCLC interviewees cluster strongly at one pole or another of the five axes, Terry's positions stay close to zero across all five, an unusual shape in this corpus and one a topical historiography would not have predicted to fall out as a structural feature of the embedding.",
+  "biographical_paragraph": "Esther M. A. Terry's oral history is held at the Library of Congress as entry 40 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Further external biographical sourcing for Terry's movement-era role and post-movement academic career is pending; the SNCC-network identification visible in her semantic neighbors above is the strongest signal currently available in this catalog.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669127/",
+      "title": "Esther M. A. Terry oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
