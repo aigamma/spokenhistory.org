@@ -124,7 +124,7 @@ function hyperlinkNames(text, matcher) {
 // routes into the source interview for in-app discovery and to the LoC
 // catalog for authoritative verification. relation 'self' is the page
 // subject speaking; 'about' is another interviewee speaking about them.
-function SnippetCard({ snippet, subjectName }) {
+function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   if (!snippet || !snippet.quote) return null;
   const tierKey = snippet.audit_tier in TIER_BADGE ? snippet.audit_tier : null;
   const badge = tierKey
@@ -133,6 +133,14 @@ function SnippetCard({ snippet, subjectName }) {
   const accent = (tierKey && TIER_COLORS[tierKey]) || '#78716c';
   const BadgeIcon = badge.icon;
   const isAbout = snippet.relation === 'about';
+  // Link the speaker to their own catalog page when one exists and it
+  // is not this page. An about-card's speaker (another interviewee
+  // describing this subject) is itself an "appropriate part of the
+  // site" to route a reader into.
+  const speakerSlug = snippet.speaker_slug;
+  const speakerHasPage = Boolean(
+    speakerSlug && speakerSlug !== currentSlug && peopleIndex?.by_slug?.[speakerSlug]
+  );
   return (
     <figure
       className={`my-7 rounded-xl border ${badge.border} ${badge.bg}`}
@@ -152,8 +160,17 @@ function SnippetCard({ snippet, subjectName }) {
           </blockquote>
         </div>
         <figcaption className="mt-4 sm:pl-10 text-sm">
-          <div className="font-medium text-stone-900">
-            {snippet.speaker}
+          <div className="text-stone-900">
+            {speakerHasPage ? (
+              <Link
+                to={`/person/${speakerSlug}`}
+                className="font-bold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+              >
+                {snippet.speaker}
+              </Link>
+            ) : (
+              <span className="font-semibold">{snippet.speaker}</span>
+            )}
             {isAbout && subjectName && (
               <span className="font-normal text-stone-500"> on {subjectName}</span>
             )}
@@ -168,7 +185,7 @@ function SnippetCard({ snippet, subjectName }) {
             {snippet.source_entry != null && (
               <Link
                 to={`/interview/${snippet.source_entry}`}
-                className="inline-flex items-center gap-1 text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                className="inline-flex items-center gap-1 font-semibold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
               >
                 <Play className="w-3.5 h-3.5" aria-hidden="true" />
                 Hear this in context
@@ -179,7 +196,7 @@ function SnippetCard({ snippet, subjectName }) {
                 href={snippet.loc_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                className="inline-flex items-center gap-1 font-semibold text-sky-800 dark:text-sky-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 rounded"
               >
                 <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
                 Library of Congress
@@ -626,7 +643,13 @@ export default function PersonPage() {
                 Quoted verbatim from the Civil Rights History Project oral histories, audited against the Library of Congress canonical transcripts. Card color marks each passage&apos;s audit tier; follow any card into the interview it came from.
               </p>
               {person.interview_snippets.map((sn, i) => (
-                <SnippetCard key={i} snippet={sn} subjectName={person.display_name} />
+                <SnippetCard
+                  key={i}
+                  snippet={sn}
+                  subjectName={person.display_name}
+                  peopleIndex={peopleIndex}
+                  currentSlug={slug}
+                />
               ))}
             </section>
           )}
