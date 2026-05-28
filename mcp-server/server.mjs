@@ -404,7 +404,7 @@ function toCitationPayload(result) {
   }
 }
 
-async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null, dedupe_by_entry = false }) {
+async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null, dedupe_by_entry = false, include_persons = false }) {
   if (typeof query !== 'string') {
     throw new Error('query must be a string')
   }
@@ -429,6 +429,19 @@ async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = 
       throw new Error('entry_number must be a positive integer')
     }
     filter = { entry_number: { $eq: Math.floor(n) } }
+  }
+
+  // By default, exclude per-person catalog vectors (content_type='person').
+  // The civil-rights Pinecone index ingests two content types: archive
+  // transcript passages (no content_type field) and per-person catalog
+  // pages. Archive-focused search tools (this one) need to exclude
+  // person vectors so existing ranked-passage UX is unchanged. Pinecone's
+  // $ne matches records where the field is absent, so existing passage
+  // vectors pass unchanged. Override with include_persons=true for a
+  // cross-content search.
+  if (!include_persons) {
+    const excludePersons = { content_type: { $ne: 'person' } }
+    filter = filter == null ? excludePersons : { ...filter, ...excludePersons }
   }
 
   // Stage-1 net: ask Pinecone for 3× the desired limit so the
@@ -696,6 +709,10 @@ const TOOL_DEFINITIONS = [
         dedupe_by_entry: {
           type: 'boolean',
           description: 'Optional: when true, results are deduplicated by interviewee so the response shows the polyphonic record (one passage per voice). Default false. Useful for compare-perspectives-style queries; turn off if the same speaker\'s different moments are both wanted.',
+        },
+        include_persons: {
+          type: 'boolean',
+          description: 'Optional: when true, per-person catalog vectors (content_type="person") are included in the result set alongside archive passages. Default false so the tool returns ranked passages only, the citation-grade use case this tool was built for. Turn on for a cross-content search that surfaces both passage matches and the person page(s) most semantically relevant to the query.',
         },
       },
       required: ['query'],

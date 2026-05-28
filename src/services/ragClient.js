@@ -21,6 +21,39 @@
 const RETRIEVE_ENDPOINT = '/retrieve';
 
 /**
+ * Filter clause that excludes person-page vectors from a Pinecone retrieval.
+ *
+ * The civil-rights Pinecone index ingests two content types: archive transcript
+ * passages (the canonical search target, no content_type metadata) and per-person
+ * catalog pages (one vector per person, content_type='person'). Archive-focused
+ * UI surfaces (Quote Finder, Semantic Overlap, Concept Spectrum drill-down,
+ * Concept Matrix concept-query, Interview Map concept-query, Tours, Themes,
+ * Influence drill-down) need to exclude person vectors so their existing
+ * ranked-passage UX remains unchanged once person vectors are ingested.
+ *
+ * Pinecone's $ne operator matches records where the field does NOT equal the
+ * value, INCLUDING records where the field is absent; this means existing
+ * passage vectors (no content_type field) pass the filter unchanged.
+ *
+ * The filter is applied by default in retrieve(); call with
+ * { includePersons: true } to override for a cross-content search affordance
+ * (e.g., a future site-wide search bar that returns mixed Passage/Person
+ * results).
+ */
+const EXCLUDE_PERSONS_FILTER = { content_type: { $ne: 'person' } };
+
+function mergeWithExcludePersons(userFilter) {
+  if (!userFilter || Object.keys(userFilter).length === 0) {
+    return EXCLUDE_PERSONS_FILTER;
+  }
+  const userKeys = Object.keys(userFilter);
+  if (userKeys.includes('$and') || userKeys.includes('$or')) {
+    return { $and: [userFilter, EXCLUDE_PERSONS_FILTER] };
+  }
+  return { ...userFilter, ...EXCLUDE_PERSONS_FILTER };
+}
+
+/**
  * Issue a live semantic-search query.
  *
  * @param {string} query - The natural-language query.
@@ -29,6 +62,9 @@ const RETRIEVE_ENDPOINT = '/retrieve';
  * @param {number} [opts.topK] - Number of candidates pre-rerank.
  * @param {Object} [opts.filter] - Pinecone metadata filter (e.g.,
  *   { entry_number: { $eq: 73 } }).
+ * @param {boolean} [opts.includePersons=false] - When true, allow person-page
+ *   vectors (content_type='person') in the result set. Default false so all
+ *   archive-focused UI surfaces continue to return passage results only.
  * @param {AbortSignal} [opts.signal] - For cancellation.
  * @returns {Promise<{ results: CitationPayload[], meta: object }>}
  */
@@ -36,7 +72,11 @@ export async function retrieve(query, opts = {}) {
   const body = { query };
   if (opts.topN != null) body.topN = opts.topN;
   if (opts.topK != null) body.topK = opts.topK;
-  if (opts.filter != null) body.filter = opts.filter;
+  if (opts.includePersons === true) {
+    if (opts.filter != null) body.filter = opts.filter;
+  } else {
+    body.filter = mergeWithExcludePersons(opts.filter);
+  }
   if (opts.namespace != null) body.namespace = opts.namespace;
   if (opts.dedupeByEntry === true) body.dedupeByEntry = true;
   if (opts.includeQueryEmbedding === true) body.includeQueryEmbedding = true;
