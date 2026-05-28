@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "mateo-camarillo",
+  "person_type": "interviewee",
+  "entry_number": 86,
+  "display_name": "Mateo Camarillo",
+  "born": null,
+  "died": null,
+  "role_summary": "Chicano civil rights organizer associated with the San Diego, California civil rights network; in this corpus's embedding his testimony pairs most strongly with Harold K. Brown (San Diego CORE) and clusters with both Black and Chicano movement voices.",
+  "ai_reading": "Camarillo's top semantic neighbor is Harold K. Brown (entry 55, count 511), the San Diego CORE founder and Black civil rights leader; this 511 count is among the catalog's strongest cross-ethnic cosine pairings. The pairing confirms the cross-racial cohort the Brown page itself identifies and gives it a bidirectional signature (Brown's own top neighbors include Camarillo at 178). Camarillo's remaining neighbors include Gloria Arellanes (entry 47, Brown Berets), Maria Varela (entry 81, SNCC + Ganados del Valle), Roberta Alexander (entry 110, Berkeley BPP), and Robert L. Carter (entry 108, NAACP LDF). The embedding therefore reads him as a cross-racial movement bridge voice. The catalog's most-striking observation about him is his Sacred Framing vs Secular Framing position: -1.00, the MAXIMUM toward Sacred Framing in the entire 136-interview corpus. For a Chicano civil rights organizer the most-Sacred placement is unexpected within the catalog's broader pattern (most movement-religious voices are SCLC-adjacent or Black-Baptist), possibly catching Liberation Theology vocabulary or the Catholic-rooted strands of Chicano movement organizing the cultural reception filters out. His +0.71 Tactical Pragmatism vs Strategic Vision position is also worth noting: he reads as strongly strategic-vision-oriented, alongside a 511-cosine pairing with a Black civil rights organizer his cultural placement would not have predicted as a close intellectual kin.",
+  "biographical_paragraph": "Mateo Camarillo's oral history is held at the Library of Congress as entry 86 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the strongest signal currently available for his movement role is the embedding's tight bidirectional cosine with Harold K. Brown (entry 55), the San Diego CORE founder whose own page documents the city's Black civil rights leadership of the 1960s, and the cross-racial bridging cluster of Gloria Arellanes, Maria Varela, and Roberta Alexander visible in his neighbors.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2016655431/",
+      "title": "Mateo Camarillo oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
