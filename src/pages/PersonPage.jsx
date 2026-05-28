@@ -390,22 +390,44 @@ export default function PersonPage() {
           </Link>
         </div>
 
-        {/* Header: portrait (if PD photo available) + identity block. */}
+        {/* Header: portrait (if PD photo available) or initial-letter
+            avatar fallback + identity block. The portrait is sized
+            large (200px square on mobile, 224px on tablet+) so the
+            page reads as illustrated rather than dictionary-text;
+            the figcaption underneath carries the full PD/CC
+            attribution. */}
         <header className="flex flex-col sm:flex-row gap-6 mb-8">
-          {person.photo && (person.photo.src_local || person.photo.src_external) && (
+          {person.photo && (person.photo.src_local || person.photo.src_external) ? (
             <figure className="flex-shrink-0">
               <img
                 src={person.photo.src_local || person.photo.src_external}
                 alt={person.photo.alt || person.display_name}
-                className="w-32 h-32 sm:w-40 sm:h-40 object-cover rounded-md border border-stone-300 bg-white"
+                className="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-md border border-stone-300 bg-white"
                 loading="lazy"
               />
-              <figcaption className="text-[10px] text-stone-500 mt-1 max-w-[10rem] leading-tight">
+              <figcaption className="text-[10px] text-stone-500 mt-1.5 max-w-[14rem] leading-tight">
                 {person.photo.photographer && `Photo: ${person.photo.photographer}. `}
                 {person.photo.repository && `${person.photo.repository}. `}
                 {person.photo.license || ''}
               </figcaption>
             </figure>
+          ) : (
+            // Initial-letter avatar fallback: a colored circle with
+            // the figure's first initial, sized to mirror the portrait
+            // dimensions above. Gives photo-less pages a visual anchor
+            // and keeps the layout from collapsing to a wall of prose.
+            <div
+              aria-hidden="true"
+              className="flex-shrink-0 w-48 h-48 sm:w-56 sm:h-56 rounded-md border border-stone-300 flex items-center justify-center"
+              style={{ backgroundColor: '#F2483C' }}
+            >
+              <span
+                className="text-7xl sm:text-8xl font-medium"
+                style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
+              >
+                {(person.display_name || '?').trim().charAt(0).toUpperCase()}
+              </span>
+            </div>
           )}
           <div className="flex-1 min-w-0">
             <p className="text-civil-red-body text-xs font-light font-mono mb-1 uppercase tracking-wide">
@@ -591,17 +613,16 @@ export default function PersonPage() {
 
             {/* Semantic neighbors, the precomputed top-related
                 interviewees from /rag/related/entry-${N}.json.
-                Rendered as tier-colored chips so the visitor sees
-                each neighbor's audit-confidence tier at a glance.
-                Clicking a chip opens the Semantic Overlap tab with
-                that neighbor pre-selected. */}
+                Rendered as portrait+name+tier cards so every catalog
+                page pulls in 4-6 small portraits from its neighbors,
+                even when the page itself has no photo. */}
             {crossLinks.related && crossLinks.related.length > 0 && (
               <article>
                 <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
                   Semantic neighbors in the corpus
                 </h2>
-                <ul className="flex flex-wrap gap-2 list-none p-0 mb-3">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-none p-0 mb-3">
                   {crossLinks.related.map((r) => {
                     const neighbor = crossLinks.constellation?.points?.find(
                       (p) => p.entry_number === r.entry_number
@@ -612,26 +633,49 @@ export default function PersonPage() {
                       border: 'border-stone-300',
                       text: 'text-stone-700',
                     };
-                    // Prefer a direct /person/:slug link when the
-                    // neighbor has a catalog page (looked up via the
-                    // precomputed people index). Falls back to the
-                    // Semantic Overlap tab for neighbors not in the
-                    // catalog (rare edge case while the catalog is
-                    // still growing).
-                    const neighborSlug = crossLinks.peopleIndex?.by_entry?.[r.entry_number]?.slug || null;
+                    const neighborSlug = peopleIndex?.by_entry?.[r.entry_number]?.slug || null;
+                    const neighborSummary = neighborSlug ? peopleIndex?.by_slug?.[neighborSlug] : null;
                     const toUrl = neighborSlug
                       ? `/person/${neighborSlug}`
                       : `/rag-explore?tab=related&entry=${r.entry_number}`;
+                    const initial = (neighbor.entry_subject || '?').trim().charAt(0).toUpperCase();
                     return (
                       <li key={r.entry_number}>
                         <Link
                           to={toUrl}
-                          className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${badge.bg} ${badge.border} hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-shadow`}
+                          className="flex items-center gap-3 p-2 rounded-md border border-stone-200 bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-shadow"
                           title={`Audit tier: ${neighbor.uncertainty_tier || 'unknown'}; ${r.count} shared passages`}
                         >
-                          <span className={`w-2 h-2 rounded-full ${badge.bg.replace('bg-', 'bg-').replace('-100', '-400').replace('-50', '-300')} border ${badge.border}`} aria-hidden="true" />
-                          <span className={`text-sm ${badge.text}`}>{neighbor.entry_subject}</span>
-                          <span className="text-xs text-stone-500 tabular-nums">{r.count}</span>
+                          {neighborSummary?.photo_src ? (
+                            <img
+                              src={neighborSummary.photo_src}
+                              alt=""
+                              className="w-12 h-12 rounded-md object-cover border border-stone-300 bg-stone-100 shrink-0"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <div
+                              aria-hidden="true"
+                              className="w-12 h-12 rounded-md flex items-center justify-center shrink-0"
+                              style={{ backgroundColor: '#F2483C' }}
+                            >
+                              <span
+                                className="text-xl font-medium"
+                                style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
+                              >
+                                {initial}
+                              </span>
+                            </div>
+                          )}
+                          <div className="min-w-0 flex-1">
+                            <div className={`text-sm leading-tight truncate ${badge.text}`}>
+                              {neighbor.entry_subject}
+                            </div>
+                            <div className="flex items-center gap-1.5 mt-0.5">
+                              <span className={`w-2 h-2 rounded-full ${badge.bg.replace('bg-', 'bg-').replace('-100', '-400').replace('-50', '-300')} border ${badge.border}`} aria-hidden="true" />
+                              <span className="text-xs text-stone-500 tabular-nums">{r.count} shared</span>
+                            </div>
+                          </div>
                         </Link>
                       </li>
                     );
