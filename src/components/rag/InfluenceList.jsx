@@ -11,13 +11,43 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink, GitBranch, List, Loader2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ExternalLink, GitBranch, List, Loader2, FileText } from 'lucide-react';
 import InfluenceGraph from './InfluenceGraph';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
 
+// Normalize a display name to the same form used by
+// public/rag/people/index.json's by_normalized_name lookup. Keep in
+// sync with scripts/build_people_index.mjs::normalize.
+function normalizeName(s) {
+  if (!s) return '';
+  return s
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+// Resolve a node from /rag/summaries/influence.json to its catalog
+// slug if one exists. In-corpus nodes look up by entry_number;
+// external nodes look up by normalized name.
+function resolveCatalogSlug(node, peopleIndex) {
+  if (!peopleIndex) return null;
+  if (node.in_corpus && node.entry_number != null) {
+    return peopleIndex.by_entry?.[node.entry_number]?.slug || null;
+  }
+  if (node.name) {
+    return peopleIndex.by_normalized_name?.[normalizeName(node.name)] || null;
+  }
+  return null;
+}
+
 export default function InfluenceList() {
   const [data, setData] = useState(null);
+  const [peopleIndex, setPeopleIndex] = useState(null);
   const [error, setError] = useState(null);
   const [view, setView] = useState('top'); // list-view sub-mode: 'top' (external) or 'corpus' (in-corpus)
   const [mode, setMode] = useState('graph'); // 'graph' or 'list'
@@ -25,9 +55,15 @@ export default function InfluenceList() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/rag/summaries/influence.json')
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found'))))
-      .then((j) => { if (!cancelled) setData(j); })
+    Promise.all([
+      fetch('/rag/summaries/influence.json').then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found')))),
+      fetch('/rag/people/index.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ])
+      .then(([j, idx]) => {
+        if (cancelled) return;
+        setData(j);
+        setPeopleIndex(idx);
+      })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
     return () => { cancelled = true; };
   }, []);
@@ -106,17 +142,32 @@ export default function InfluenceList() {
                 )}
                 .
               </p>
-              {selectedNode.loc_item_url && (
-                <a
-                  href={selectedNode.loc_item_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-2 text-xs text-civil-red-body hover:underline"
-                >
-                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                  LoC catalog entry
-                </a>
-              )}
+              <div className="flex flex-wrap gap-3 mt-2">
+                {(() => {
+                  const slug = resolveCatalogSlug(selectedNode, peopleIndex);
+                  if (!slug) return null;
+                  return (
+                    <Link
+                      to={`/person/${slug}`}
+                      className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline"
+                    >
+                      <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                      Full catalog page
+                    </Link>
+                  );
+                })()}
+                {selectedNode.loc_item_url && (
+                  <a
+                    href={selectedNode.loc_item_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                    LoC catalog entry
+                  </a>
+                )}
+              </div>
               <InfluenceDrillDown node={selectedNode} />
             </aside>
           )}
@@ -155,25 +206,37 @@ export default function InfluenceList() {
           </div>
 
           <div className="space-y-1">
-            {topList.slice(0, 30).map((n) => (
-              <article key={n.id} className="flex items-center gap-3 p-3 border border-stone-200 rounded-md bg-white">
-                <span className="font-mono text-xs text-stone-500 tabular-nums w-8 text-right">
-                  {n.discussed_by_count}
-                </span>
-                <span className="flex-1 text-sm text-stone-900">
-                  {n.name}
-                  {!n.in_corpus && (
-                    <span className="ml-2 text-xs text-stone-500 italic">(not in corpus)</span>
+            {topList.slice(0, 30).map((n) => {
+              const slug = resolveCatalogSlug(n, peopleIndex);
+              return (
+                <article key={n.id} className="flex items-center gap-3 p-3 border border-stone-200 rounded-md bg-white">
+                  <span className="font-mono text-xs text-stone-500 tabular-nums w-8 text-right">
+                    {n.discussed_by_count}
+                  </span>
+                  <span className="flex-1 text-sm text-stone-900">
+                    {n.name}
+                    {!n.in_corpus && (
+                      <span className="ml-2 text-xs text-stone-500 italic">(not in corpus)</span>
+                    )}
+                  </span>
+                  {slug && (
+                    <Link
+                      to={`/person/${slug}`}
+                      className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline"
+                    >
+                      <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                      Catalog
+                    </Link>
                   )}
-                </span>
-                {n.loc_item_url && (
-                  <a href={n.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline">
-                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                    LoC
-                  </a>
-                )}
-              </article>
-            ))}
+                  {n.loc_item_url && (
+                    <a href={n.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline">
+                      <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                      LoC
+                    </a>
+                  )}
+                </article>
+              );
+            })}
           </div>
         </>
       )}
