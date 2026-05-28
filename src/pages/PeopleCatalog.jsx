@@ -26,6 +26,7 @@ export default function PeopleCatalog() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('all');
+  const [sortBy, setSortBy] = useState('surname');
 
   useEffect(() => {
     let cancelled = false;
@@ -50,14 +51,27 @@ export default function PeopleCatalog() {
 
   const allEntries = useMemo(() => {
     if (!index?.by_slug) return [];
-    return Object.values(index.by_slug).slice().sort((a, b) => {
-      // Sort by last word (rough surname order) then full name.
+    const list = Object.values(index.by_slug).slice();
+    if (sortBy === 'entry') {
+      // Sort by CRHP entry_number (interviewees first), externals last.
+      return list.sort((a, b) => {
+        const an = Number.isFinite(a.entry_number) ? a.entry_number : Infinity;
+        const bn = Number.isFinite(b.entry_number) ? b.entry_number : Infinity;
+        if (an !== bn) return an - bn;
+        return (a.display_name || '').localeCompare(b.display_name || '');
+      });
+    }
+    if (sortBy === 'name') {
+      return list.sort((a, b) => (a.display_name || '').localeCompare(b.display_name || ''));
+    }
+    // Default: surname (last word of display_name).
+    return list.sort((a, b) => {
       const la = (a.display_name || '').split(/\s+/).slice(-1)[0]?.toLowerCase() || '';
       const lb = (b.display_name || '').split(/\s+/).slice(-1)[0]?.toLowerCase() || '';
       if (la !== lb) return la.localeCompare(lb);
       return (a.display_name || '').localeCompare(b.display_name || '');
     });
-  }, [index]);
+  }, [index, sortBy]);
 
   const filtered = useMemo(() => {
     let list = allEntries;
@@ -146,6 +160,19 @@ export default function PeopleCatalog() {
               </button>
             ))}
           </div>
+          <label className="text-sm text-stone-700 flex items-center gap-1">
+            Sort:
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="ml-1 px-2 py-1 border border-stone-300 rounded-md bg-white text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+              aria-label="Sort catalog by"
+            >
+              <option value="surname">By surname</option>
+              <option value="name">By full name</option>
+              <option value="entry">By CRHP entry</option>
+            </select>
+          </label>
           <span className="text-sm text-stone-500">{filtered.length} shown</span>
         </div>
 
