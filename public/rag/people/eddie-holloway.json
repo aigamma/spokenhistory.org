@@ -6,14 +6,19 @@
   "born": null,
   "died": null,
   "display_name": "Eddie Holloway",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
-  "ai_reading": "Eddie Holloway's top semantic neighbor is Robert L. Carter (entry 108, count 102); the broader cluster includes Harold K. Brown (#55), Charles F. (\"Chuck\") McDew (#16), Clarence Magee (#21).",
-  "biographical_paragraph": "Eddie Holloway's oral history is held at the Library of Congress as entry 33 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries a publication-block audit tier: known issues exist that prevent full publication-grade certification, and any specific biographical or quoted claims drawn from the transcript itself should be confirmed against external sources before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "First African-American Dean of Students (1997) and first African-American Assistant Vice President for Student Affairs at the University of Southern Mississippi; first elected African-American Hattiesburg City Council member (1985-2000); doctor of educational administration; forty-year USM administrator (1979-2019).",
+  "ai_reading": "Holloway's top semantic neighbor is Robert L. Carter (entry 108) at a cosine count of 102; the broader cluster includes Harold K. Brown (entry 55), Charles F. (\"Chuck\") McDew (entry 16), and Clarence Magee (entry 21). The Carter pairing is the catalog's clearest legal-administration-and-college-administration cosine, two senior institutional administrators whose vocabularies the embedding finds rhyming despite the different fields (federal judiciary vs higher-education student affairs). The novel observation his page surfaces is the witnessed-event vs participated-event distinction: Holloway describes himself as a first-hand witness to the 1964 Freedom Summer in Hattiesburg rather than as a movement organizer, and the embedding catches that observational register, clustering him with administrators who frame the civil rights work institutionally rather than with the front-line SNCC organizers his geography would otherwise predict.",
+  "biographical_paragraph": "While Holloway's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), his external biographical record is well-documented through the University of Southern Mississippi institutional archives and Hattiesburg local press [src: 1]. Holloway grew up in segregated Hattiesburg, Mississippi during the Freedom Summer and Voting Rights era, and entered the University of Southern Mississippi as a freshman in fall 1970 as part of the early post-integration cohort [src: 2]. He earned four degrees from USM: a Bachelor's in sociology and personnel management, a Master's in community counseling, a second Master's in public health education, and a doctorate in educational administration [src: 2]. After early work at William Carey University and in alcohol and drug treatment facilities he returned to USM in 1979 and remained for forty years, becoming in 1997 the first African American Dean of Students and the first African American Assistant Vice President for Student Affairs at the university, before retiring in 2019 [src: 2]. He also served as the first elected African American member of the Hattiesburg City Council (1985-2000), holding terms as council president and vice president across that fifteen-year tenure [src: 2]. He has subsequently joined the Hattiesburg Public School District Board of Trustees.",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655406/",
       "title": "Eddie Holloway oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://sm2media.com/37334/features/breaking-barriers-at-southern-miss-the-legacy-of-dr-eddie-holloway/",
+      "title": "Breaking Barriers at Southern Miss: The Legacy of Dr. Eddie Holloway",
+      "publisher": "SM2 Media, University of Southern Mississippi student magazine"
     }
   ]
 }
