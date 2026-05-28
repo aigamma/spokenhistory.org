@@ -24,7 +24,7 @@
  * pages without touching the catalog.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -47,14 +47,85 @@ function fetchJsonOrNull(url) {
  * the bottom of the page. Refs that don't map to a real source render
  * as plain text (so a typo in the JSON doesn't break the page).
  */
-function renderBioWithCitationRefs(text, sources) {
+// Build a regex that matches any catalog display_name. Names are
+// escaped, sorted longest-first (so "Aaron Dixon" matches before
+// "Aaron"), bounded by word-boundaries on both sides so we don't
+// match substrings inside other words. The current person's own
+// display_name is excluded so a page does not self-link.
+function buildNameMatcher(peopleIndex, currentSlug) {
+  if (!peopleIndex?.by_slug) return null;
+  const entries = Object.values(peopleIndex.by_slug)
+    .filter((p) => p.slug && p.slug !== currentSlug && p.display_name);
+  // Drop very short names to avoid false positives (e.g., "King" or
+  // common-noun strings); require 6 or more chars for the visible
+  // form.
+  const usable = entries.filter((p) => p.display_name.length >= 6);
+  // Sort longest-first.
+  usable.sort((a, b) => b.display_name.length - a.display_name.length);
+  if (usable.length === 0) return null;
+  // Escape regex meta-chars in each name; allow optional period after
+  // an initial inside the name (handled by escaping; literal "F."
+  // matches "F.").
+  const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const alternation = usable.map((p) => escape(p.display_name)).join('|');
+  // Word boundaries: \b before, and (?=\b|\W|$) after so trailing
+  // punctuation (comma, period, parenthesis) still terminates the
+  // match.
+  const pattern = new RegExp(`\\b(${alternation})(?=\\b|[^\\w']|$)`, 'g');
+  // Build a lookup display_name -> slug for the replacement step.
+  const slugByName = {};
+  for (const p of usable) slugByName[p.display_name] = p.slug;
+  return { pattern, slugByName };
+}
+
+// Wrap occurrences of catalog display_names inside `text` with
+// /person/:slug Links. Returns an array of strings + JSX elements
+// suitable for inclusion in a JSX render. The first match per name
+// per render-pass becomes a link; subsequent occurrences are left
+// as plain text so the page does not become a sea of red.
+function hyperlinkNames(text, matcher) {
+  if (!text || !matcher) return [text];
+  const parts = [];
+  let last = 0;
+  let m;
+  const linked = new Set();
+  matcher.pattern.lastIndex = 0;
+  while ((m = matcher.pattern.exec(text)) !== null) {
+    const name = m[1];
+    const slug = matcher.slugByName[name];
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    if (slug && !linked.has(slug)) {
+      parts.push(
+        <Link
+          key={`link-${m.index}`}
+          to={`/person/${slug}`}
+          className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline"
+        >
+          {name}
+        </Link>
+      );
+      linked.add(slug);
+    } else {
+      // Already linked once in this render pass, or no slug found;
+      // emit as plain text.
+      parts.push(name);
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
+function renderBioWithCitationRefs(text, sources, matcher) {
   if (!text) return null;
   const parts = [];
   let last = 0;
   const re = /\[src:\s*(\d+)\]/g;
   let m;
   while ((m = re.exec(text)) !== null) {
-    if (m.index > last) parts.push(text.slice(last, m.index));
+    if (m.index > last) {
+      parts.push(...hyperlinkNames(text.slice(last, m.index), matcher));
+    }
     const n = Number(m[1]);
     const sourceExists = sources && sources[n - 1];
     if (sourceExists) {
@@ -74,7 +145,9 @@ function renderBioWithCitationRefs(text, sources) {
     }
     last = m.index + m[0].length;
   }
-  if (last < text.length) parts.push(text.slice(last));
+  if (last < text.length) {
+    parts.push(...hyperlinkNames(text.slice(last), matcher));
+  }
   return parts;
 }
 
@@ -84,6 +157,30 @@ export default function PersonPage() {
   const [person, setPerson] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const [crossLinks, setCrossLinks] = useState(null);
+  const [peopleIndex, setPeopleIndex] = useState(null);
+
+  // Always load the people index. PersonPage runs for both interviewees
+  // (which also fetch concept axes / neighbors / tours) and external
+  // figures (which don't), but both render bios that should have
+  // narrative-hyperlinked figure names. Loading the index unconditionally
+  // gives the narrative-hyperlink matcher the catalog it needs.
+  useEffect(() => {
+    let cancelled = false;
+    fetchJsonOrNull('/rag/people/index.json').then((idx) => {
+      if (!cancelled) setPeopleIndex(idx);
+    });
+    return () => { cancelled = true; };
+  }, []);
+
+  // Memoize the name matcher, recomputing only when the slug or the
+  // people index changes. The matcher builds a longest-first regex of
+  // all catalog display_names (excluding the current page's name),
+  // used by renderBioWithCitationRefs to hyperlink in-text figure
+  // names to /person/:slug.
+  const nameMatcher = useMemo(
+    () => buildNameMatcher(peopleIndex, slug),
+    [peopleIndex, slug]
+  );
 
   // Load the person's JSON file. On 404, flip notFound and render the
   // "not in the catalog" view; on real errors (network, JSON parse),
@@ -117,8 +214,7 @@ export default function PersonPage() {
       fetchJsonOrNull('/rag/summaries/concept_axes.json'),
       fetchJsonOrNull('/rag/summaries/influence.json'),
       fetchJsonOrNull('/rag/summaries/tours.json'),
-      fetchJsonOrNull('/rag/people/index.json'),
-    ]).then(([constellation, related, conceptAxes, influence, tours, peopleIndex]) => {
+    ]).then(([constellation, related, conceptAxes, influence, tours]) => {
       if (cancelled) return;
       const point = constellation?.points?.find(
         (p) => p.entry_number === person.entry_number
@@ -215,7 +311,7 @@ export default function PersonPage() {
       });
     });
     return () => { cancelled = true; };
-  }, [person]);
+  }, [person, peopleIndex]);
 
   useDocumentTitle(person ? `${person.display_name}` : 'Person');
 
@@ -361,7 +457,7 @@ export default function PersonPage() {
                 What the embedding finds
               </p>
               <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                {renderBioWithCitationRefs(person.ai_reading, person.sources)}
+                {renderBioWithCitationRefs(person.ai_reading, person.sources, nameMatcher)}
               </p>
             </div>
           </section>
@@ -379,7 +475,7 @@ export default function PersonPage() {
               </p>
             )}
             <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
-              {renderBioWithCitationRefs(person.biographical_paragraph, person.sources)}
+              {renderBioWithCitationRefs(person.biographical_paragraph, person.sources, nameMatcher)}
             </p>
           </section>
         )}
@@ -623,7 +719,12 @@ export default function PersonPage() {
 
         {/* Sources list. The [src: N] refs in the bio paragraph anchor
             to #source-N inside this list, so a reader can click any
-            citation and see exactly which source supports the claim. */}
+            citation and see exactly which source supports the claim.
+            Renders as bibliographic text only (no clickable outbound
+            link) so the page does not bleed SEO authority to external
+            domains and does not surface 404s when external URLs rot.
+            A researcher who wants to look up a source can copy the
+            title or OCLC and search themselves. */}
         {person.sources && person.sources.length > 0 && (
           <section className="mt-10 border-t border-stone-300 pt-6">
             <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3">
@@ -631,15 +732,8 @@ export default function PersonPage() {
             </h2>
             <ol className="text-sm space-y-2 list-decimal pl-5">
               {person.sources.map((s, i) => (
-                <li key={s.url || i} id={`source-${i + 1}`}>
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-civil-red-body hover:underline"
-                  >
-                    {s.title}
-                  </a>
+                <li key={i} id={`source-${i + 1}`} className="text-stone-800">
+                  <span className="text-stone-900">{s.title}</span>
                   {s.publisher && (
                     <span className="text-stone-500 ml-1">({s.publisher})</span>
                   )}
