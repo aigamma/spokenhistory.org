@@ -147,9 +147,58 @@ export default function PersonPage() {
           };
         })
         .filter(Boolean);
-      const influenceOut = (influence?.nodes || [])
-        .find((n) => n.entry_number === person.entry_number)
-        ?.discussed || [];
+      // Compute the influence-graph out-edges from this person's
+      // interview to other figures (in-corpus or external). The
+      // influence.json schema has flat nodes + edges arrays:
+      // edges come as { from: 'in:N', to: 'in:M' | 'ext:slug', count }.
+      // Resolve each `to` to its node (for name + in_corpus + kind)
+      // and emit a flat list the renderer can consume. Sorted by
+      // edge count descending.
+      const fromId = `in:${person.entry_number}`;
+      const nodesById = new Map((influence?.nodes || []).map((n) => [n.id, n]));
+      const influenceOut = ((influence?.edges || [])
+        .filter((e) => e.from === fromId)
+        .map((e) => {
+          const target = nodesById.get(e.to);
+          if (!target) return null;
+          // Slug resolution:
+          //   - in-corpus: take from people-index by entry_number
+          //     (which respects the joint-page preference)
+          //   - external: the id suffix after "ext:" IS the slug,
+          //     and we also confirm via peopleIndex.by_slug
+          //     when the external figure now has a catalog page
+          let slug = null;
+          if (target.in_corpus && target.entry_number != null) {
+            slug = peopleIndex?.by_entry?.[target.entry_number]?.slug || null;
+          } else if (target.id && target.id.startsWith('ext:')) {
+            const candidate = target.id.slice(4);
+            if (peopleIndex?.by_slug?.[candidate]) {
+              slug = candidate;
+            } else if (target.name) {
+              // Fallback: normalize the name and look up in
+              // by_normalized_name (catches catalog-page additions
+              // that used a different slug from the influence-graph
+              // ext:slug convention).
+              const normName = target.name
+                .toLowerCase()
+                .normalize('NFKD')
+                .replace(/[̀-ͯ]/g, '')
+                .replace(/[^a-z0-9]+/g, ' ')
+                .trim()
+                .replace(/\s+/g, ' ');
+              slug = peopleIndex?.by_normalized_name?.[normName] || null;
+            }
+          }
+          return {
+            id: target.id,
+            name: target.name,
+            in_corpus: !!target.in_corpus,
+            slug,
+            count: e.count || 0,
+          };
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.count - a.count));
       const tourAppearances = (tours?.tours || []).filter((t) =>
         (t.entries || []).some((e) => e.entry_number === person.entry_number)
       );
@@ -503,7 +552,14 @@ export default function PersonPage() {
                 <ul className="flex flex-wrap gap-2 list-none p-0">
                   {crossLinks.influenceOut.slice(0, 12).map((d) => {
                     const label = d.name || d.id;
-                    if (d.in_corpus && d.slug) {
+                    // Hyperlink when the figure has a catalog page,
+                    // regardless of in_corpus status. External
+                    // figures whose catalog pages were added after
+                    // the influence graph was precomputed are
+                    // resolved via the people-index by_slug +
+                    // by_normalized_name fallback in the loader
+                    // above.
+                    if (d.slug) {
                       return (
                         <li key={d.id || label}>
                           <Link

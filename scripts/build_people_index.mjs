@@ -35,6 +35,22 @@ async function main() {
   // covers every catalog page; useful for direct slug lookups.
   const bySlug = {};
 
+  // normalized-name -> slug
+  // Normalization: lowercase, strip diacritics, replace non-alphanumeric
+  // with spaces, collapse repeats. Used by the influence-graph rendering
+  // on PersonPage to turn "discussed in this interview" plain-text names
+  // into hyperlinks when the external figure has acquired a catalog
+  // page since the influence-graph was precomputed.
+  const byNormalizedName = {};
+  const normalize = (s) =>
+    s
+      .toLowerCase()
+      .normalize('NFKD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim()
+      .replace(/\s+/g, ' ');
+
   for (const f of files) {
     let data;
     try {
@@ -53,6 +69,10 @@ async function main() {
     if (entryNumber != null) summary.entry_number = entryNumber;
 
     bySlug[slug] = summary;
+    const normName = normalize(displayName);
+    if (normName && !byNormalizedName[normName]) {
+      byNormalizedName[normName] = slug;
+    }
     if (entryNumber != null && personType === 'interviewee') {
       const existing = byEntry[entryNumber];
       if (existing) {
@@ -89,6 +109,7 @@ async function main() {
     },
     by_entry: byEntry,
     by_slug: bySlug,
+    by_normalized_name: byNormalizedName,
   };
 
   await writeFile(INDEX_PATH, JSON.stringify(indexJson, null, 2) + '\n', 'utf8');
