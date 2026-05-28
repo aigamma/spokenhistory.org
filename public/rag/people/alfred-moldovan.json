@@ -3,17 +3,22 @@
   "slug": "alfred-moldovan",
   "person_type": "interviewee",
   "entry_number": 133,
-  "born": null,
+  "born": 1921,
   "died": null,
   "display_name": "Alfred Moldovan",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
-  "ai_reading": "Alfred Moldovan's top semantic neighbor is H. Jack Geiger (partial read) (entry 54) at a high cosine count of 296, a strong single-neighbor signature in this catalog.",
-  "biographical_paragraph": "Alfred Moldovan's oral history is held at the Library of Congress as entry 133 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries an ingestion-only audit tier: the catalog ingested the transcript but did not subject it to the audit cascade, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "Co-founder (1964) and Secretary-Treasurer of the Medical Committee for Human Rights (MCHR); civil rights physician with the MCHR's June 1964 Mississippi Freedom Summer medical response; physician at the scene of the March 7, 1965 Edmund Pettus Bridge crossing in Selma (\"Bloody Sunday\"); fifty-year internist practice in East Harlem, New York.",
+  "ai_reading": "Moldovan's top semantic neighbor is H. Jack Geiger (entry 54, the Tufts-Delta Health Center founder and fellow civil rights physician) at a high cosine count of 296, the catalog's clearest civil-rights-medicine pairing. The pairing rhymes a 1964 MCHR organizer with a 1965 Mound Bayou community-health-center founder; the embedding finds their shared movement-medicine vocabulary as the dominant signal, more than either's institutional affiliation. The novel observation his page surfaces is the documentation-as-physician signature: Moldovan was present at multiple foundational events of the movement (the discovery of the Mississippi Freedom Summer worker bodies near Meridian, the Edmund Pettus Bridge crossing in Selma) primarily as a medical-aid responder rather than as an organizer, and the embedding catches that observer-witness register over the more-photographed-as-organizer register the cultural reception applies to his MCHR colleagues.",
+  "biographical_paragraph": "While Moldovan's LoC oral history carries an ingestion-only audit tier (the catalog ingested the transcript but did not subject it to the audit cascade, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), his external biographical record is documented through the Medical Committee for Human Rights institutional history and the Veterans of the Civil Rights Movement archive [src: 1, src: 2]. Moldovan was born in 1921 in the Bronx, New York. He attended City College of New York and Chicago Medical School, served in the U.S. Army Air Forces as a radio repairman during World War II, and completed medical school after his discharge. With Robert Smith, Aaron Wells, and others he co-founded the Medical Committee for Human Rights in June 1964 in response to the Mississippi Freedom Summer organizing's need for medical and emergency-response coverage; the MCHR sent physicians and nurses to Mississippi to treat injured civil rights workers and to provide community medical care in counties without Black physicians [src: 2]. He served as the MCHR's Secretary-Treasurer for several years. Moldovan was in Meridian, Mississippi when the bodies of Andrew Goodman, Michael Schwerner, and James Chaney were discovered in August 1964; he was in Selma at the time of the first March 7, 1965 Edmund Pettus Bridge attempt (\"Bloody Sunday\") and the subsequent crossings [src: 2]. He continued the East Harlem internal-medicine practice he had maintained for fifty years until his retirement in the 2010s [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669135/",
       "title": "Alfred Moldovan oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.crmvet.org/vet/moldovan.htm",
+      "title": "Alfred Moldovan, MD biographical entry",
+      "publisher": "Veterans of the Civil Rights Movement archive (crmvet.org)"
     }
   ]
 }
