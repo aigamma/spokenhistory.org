@@ -116,6 +116,37 @@ function hyperlinkNames(text, matcher) {
   return parts;
 }
 
+// Centered inline figure for gallery images. Used for the additional
+// images beyond the hero portrait (e.g., a historical-event photo
+// related to the figure's testimony, an archival document, a place
+// or institution they were tied to). Each entry follows the same
+// schema as person.photo: { src_external, src_local, alt, caption,
+// photographer, repository, license, date_taken, source_url }.
+function GalleryFigure({ image }) {
+  if (!image) return null;
+  const src = image.src_local || image.src_external;
+  if (!src) return null;
+  return (
+    <figure className="my-8 mx-auto max-w-2xl">
+      <img
+        src={src}
+        alt={image.alt || ''}
+        className="w-full mx-auto block object-cover rounded-md border border-stone-300 bg-white"
+        loading="lazy"
+      />
+      <figcaption className="text-sm text-stone-600 italic mt-2 text-center leading-snug" style={{ fontFamily: 'Source Serif 4, serif' }}>
+        {image.caption && <>{image.caption} </>}
+        {image.photographer && <>Photographed by {image.photographer}</>}
+        {image.date_taken && <>, {image.date_taken}</>}
+        {(image.photographer || image.date_taken) && '. '}
+        {image.license && <span className="not-italic text-stone-500">{image.license}</span>}
+        {image.repository && <span className="not-italic text-stone-500"> via {image.repository}</span>}
+        {(image.license || image.repository) && '.'}
+      </figcaption>
+    </figure>
+  );
+}
+
 function renderBioWithCitationRefs(text, sources, matcher) {
   if (!text) return null;
   const parts = [];
@@ -390,12 +421,9 @@ export default function PersonPage() {
           </Link>
         </div>
 
-        {/* Identity block: name + role + dates + tier, full width
-            above the body prose. The portrait is floated INTO the
-            prose below (magazine-style), not sidebar'd to one side,
-            so the page reads as illustrated continuous text rather
-            than as two side-by-side columns. */}
-        <header className="mb-6 max-w-3xl">
+        {/* Identity block: name + dates + tier, full width above
+            the body prose. */}
+        <header className="mb-8 max-w-3xl">
           <p className="text-civil-red-body text-xs font-light font-mono mb-1 uppercase tracking-wide">
             {person.person_type === 'interviewee'
               ? 'Civil Rights History Project · Interviewee'
@@ -432,51 +460,63 @@ export default function PersonPage() {
           )}
         </header>
 
-        {/* Body prose, with the portrait floated INTO the text so
-            paragraphs wrap around it (the magazine / encyclopedia
-            article pattern, distinct from the dictionary-style
-            sidebar layout). The float clears at the end of the body
-            wrapper, so source-list rendering below stays on its own
-            line. */}
+        {/* Body prose with centered inline figures (worldthought.com
+            magazine pattern). Hero image renders as a centered figure
+            between the identity block and the AI's-reading section,
+            with a rich caption that includes attribution + license.
+            Additional gallery[] images (when populated) render as
+            centered figures interleaved between later sections. */}
         <div className="max-w-3xl mb-10">
+
+          {/* Hero figure: portrait OR initial-letter avatar. Centered,
+              full prose-column width, with rich caption beneath. */}
           {person.photo && (person.photo.src_local || person.photo.src_external) ? (
-            <figure className="float-right ml-6 mb-3 w-2/5 sm:w-1/3 max-w-[18rem]">
+            <figure className="my-6 mx-auto">
               <img
                 src={person.photo.src_local || person.photo.src_external}
                 alt={person.photo.alt || person.display_name}
-                className="w-full object-cover rounded-md border border-stone-300 bg-white"
+                className="w-full max-w-2xl mx-auto block object-cover rounded-md border border-stone-300 bg-white"
                 loading="lazy"
               />
-              <figcaption className="text-[10px] text-stone-500 mt-1.5 leading-tight">
-                {person.photo.photographer && `Photo: ${person.photo.photographer}. `}
-                {person.photo.repository && `${person.photo.repository}. `}
-                {person.photo.license || ''}
+              <figcaption className="text-sm text-stone-600 italic mt-2 text-center max-w-2xl mx-auto leading-snug" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                {person.photo.alt && <>{person.photo.alt}. </>}
+                {person.photo.photographer && <>Photographed by {person.photo.photographer}</>}
+                {person.photo.date_taken && <>, {person.photo.date_taken}</>}
+                {(person.photo.photographer || person.photo.date_taken) && '. '}
+                {person.photo.license && <span className="not-italic text-stone-500">{person.photo.license}</span>}
+                {person.photo.repository && <span className="not-italic text-stone-500"> via {person.photo.repository}</span>}
+                {(person.photo.license || person.photo.repository) && '.'}
               </figcaption>
             </figure>
           ) : (
-            // Initial-letter avatar fallback floats inside the prose
-            // the same way an actual portrait would; the body wraps
-            // around it so photo-less pages have the same magazine-
-            // article feel as photographed pages.
-            <div
-              aria-hidden="true"
-              className="float-right ml-6 mb-3 w-2/5 sm:w-1/3 max-w-[18rem] aspect-square rounded-md border border-stone-300 flex items-center justify-center"
-              style={{ backgroundColor: '#F2483C' }}
-            >
-              <span
-                className="text-7xl sm:text-8xl md:text-9xl font-medium"
-                style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
+            // Initial-letter avatar fallback as a centered hero
+            // figure when no photo exists. Same dimensions as the
+            // portrait so the layout reads consistently across the
+            // catalog.
+            <figure className="my-6 mx-auto max-w-2xl">
+              <div
+                aria-hidden="true"
+                className="w-full aspect-[4/3] rounded-md border border-stone-300 flex items-center justify-center mx-auto"
+                style={{ backgroundColor: '#F2483C' }}
               >
-                {(person.display_name || '?').trim().charAt(0).toUpperCase()}
-              </span>
-            </div>
+                <span
+                  className="text-9xl font-medium"
+                  style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
+                >
+                  {(person.display_name || '?').trim().charAt(0).toUpperCase()}
+                </span>
+              </div>
+              <figcaption className="text-sm text-stone-500 italic mt-2 text-center" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                No public-domain or open-licensed photograph identified for this figure. The institutional review chain accepts text-only catalog pages where no usable image exists; if a contributor locates a PD or CC-licensed photograph, it can be added via the catalog JSON's <code className="not-italic font-mono text-xs">photo</code> field.
+              </figcaption>
+            </figure>
           )}
 
           {/* AI's reading. Headline content per the catalog discipline:
               a specific embedding-derived observation that the cultural
               record hasn't foregrounded. */}
           {person.ai_reading && (
-            <section className="mb-6">
+            <section className="mb-8">
               <div className="border-l-4 border-civil-red-strong pl-5 py-1">
                 <p className="text-xs uppercase tracking-wide font-mono text-civil-red-body mb-2 font-semibold">
                   What the embedding finds
@@ -489,11 +529,10 @@ export default function PersonPage() {
           )}
 
           {/* Biographical paragraph. Historical orientation behind the
-              AI's-reading section above; cited from external sources
-              (LoC first, Wikipedia last). Reads as supporting context
-              rather than the headline. */}
+              AI's-reading section above; cited from external sources.
+              Reads as supporting context rather than the headline. */}
           {person.biographical_paragraph && (
-            <section>
+            <section className="mb-8">
               {person.ai_reading && (
                 <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
                   Historical orientation
@@ -504,10 +543,54 @@ export default function PersonPage() {
               </p>
             </section>
           )}
-          {/* Clear the float so cross-link sections below render
-              full-width and don't get pulled up alongside the
-              portrait. */}
-          <div className="clear-both" />
+
+          {/* First gallery image (if any). Interleaved between the
+              biographical paragraph and the movement-context paragraph
+              so the page has visual rhythm. */}
+          {Array.isArray(person.gallery) && person.gallery[0] && (
+            <GalleryFigure image={person.gallery[0]} />
+          )}
+
+          {/* Movement context. A second analytical paragraph that
+              draws on broader historical context, scholarly framing,
+              or movement-significance analysis. Populated by
+              enrichment passes; not required. */}
+          {person.movement_context && (
+            <section className="mb-8">
+              <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                Movement context
+              </p>
+              <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                {renderBioWithCitationRefs(person.movement_context, person.sources, nameMatcher)}
+              </p>
+            </section>
+          )}
+
+          {/* Second gallery image (if any). */}
+          {Array.isArray(person.gallery) && person.gallery[1] && (
+            <GalleryFigure image={person.gallery[1]} />
+          )}
+
+          {/* Legacy and reception. A third analytical paragraph
+              treating later reception, scholarly debate, institutional
+              memory, or post-movement career. Populated by enrichment
+              passes; not required. */}
+          {person.legacy_and_reception && (
+            <section className="mb-8">
+              <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                Legacy and reception
+              </p>
+              <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                {renderBioWithCitationRefs(person.legacy_and_reception, person.sources, nameMatcher)}
+              </p>
+            </section>
+          )}
+
+          {/* Remaining gallery images (3rd, 4th, etc.) render at the
+              end of the prose, before the cross-link manifest. */}
+          {Array.isArray(person.gallery) && person.gallery.slice(2).map((img, i) => (
+            <GalleryFigure key={`gallery-${i + 2}`} image={img} />
+          ))}
         </div>
 
         {/* Cross-link manifest. Only renders for interviewees (need
