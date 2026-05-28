@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "sam-young-jr",
+  "person_type": "interviewee",
+  "entry_number": 114,
+  "born": null,
+  "died": null,
+  "display_name": "Sam Young, Jr.",
+  "role_summary": "Civil rights movement organizer; in this corpus's embedding his top semantic neighbor is Shirley Miller Sherrod, with broader cluster ties to James Oscar Jones, John Churchville, Nathaniel Hawthorne Jones, and Dr. Doris Derby.",
+  "ai_reading": "Young's top semantic neighbor is Shirley Miller Sherrod (entry 117, count 70), the USDA Black-farmer-advocacy figure and SNCC veteran. The pairing is novel: Young is not in Sherrod's own top-five neighbor list (his cosine is in her top-ten but not the very top), so the cosine direction matters here, the embedding finds Young's testimony as closer to Sherrod's than vice versa, a kind of one-way conceptual debt the cultural record has no obvious basis for. His other neighbors are James Oscar Jones (entry 57), John Churchville (entry 63), Nathaniel Hawthorne Jones (entry 92), and Dr. Doris Derby (entry 32). The Southern Struggle axis position at +0.54 places him moderately Southern; the +0.38 Collective Discipline reading is also unremarkable. The page's distinctive observation lives in the Shirley Sherrod cosine.",
+  "biographical_paragraph": "Sam Young, Jr.'s oral history is held at the Library of Congress as entry 114 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669165/",
+      "title": "Sam Young, Jr. oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
