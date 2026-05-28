@@ -116,7 +116,6 @@ async function main() {
 
   const indexJson = {
     schema_version: 1,
-    built_at: new Date().toISOString(),
     counts: {
       total: Object.keys(bySlug).length,
       interviewees: Object.values(bySlug).filter((s) => s.person_type === 'interviewee').length,
