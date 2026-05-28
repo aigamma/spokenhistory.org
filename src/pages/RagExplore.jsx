@@ -108,10 +108,9 @@ const VALID_TAB = (t) => {
   return TABS.includes(t) ? t : DEFAULT_TAB;
 };
 
-// Display order for the pill nav. Featured demos (★) come first,
-// then the visualizations, then text-input demos, then secondary tabs.
-// Spectrum is rendered above the tab nav as the page's permanent
-// headline surface, so it does NOT appear in this list.
+// Pill nav metadata. `featured: true` adds the leading star and a
+// heavier border. Spectrum is rendered above the tab nav as the page's
+// permanent headline surface, so it does NOT appear in this list.
 const TAB_ORDER = [
   { id: 'lenses', label: 'Word Search', featured: true },
   { id: 'map', label: 'Interview Map' },
@@ -123,6 +122,31 @@ const TAB_ORDER = [
   { id: 'network', label: 'Network' },
   { id: 'tours', label: 'Tours' },
   { id: 'quote-of-day', label: 'Quote of the Day' },
+];
+
+// Group tabs by user intent so visitors see four taxonomies (each
+// with a label that teaches what the demos in it are FOR) instead
+// of a single flat ten-pill row. Order within each group is rough
+// "most useful first." The Spectrum chart at page-top is the
+// always-visible relative of the "Concept projection" group.
+const TAB_GROUPS = [
+  {
+    label: 'Concept projection',
+    tabs: ['lenses'],
+    footnote: 'Spectrum (one-axis lens) is the chart at the top of this page.',
+  },
+  {
+    label: 'Structural maps',
+    tabs: ['map', 'themes', 'network', 'atlas'],
+  },
+  {
+    label: 'Find a passage',
+    tabs: ['quote', 'related'],
+  },
+  {
+    label: 'Curated reading',
+    tabs: ['tours', 'names', 'quote-of-day'],
+  },
 ];
 
 // Human-readable label per tab id. Used for the dynamic document title
@@ -234,50 +258,77 @@ export default function RagExplore() {
           className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50"
           style={{ backgroundColor: 'rgba(235, 234, 233, 0.94)' }}
         >
-          <p className="text-xs text-stone-500 mb-2 font-mono uppercase tracking-wide">
-            Other ways to look at the data
+          <p className="text-xs text-stone-500 mb-3 font-mono uppercase tracking-wide">
+            Pick a demo. Grouped by what each one does.
           </p>
-          <ul className="flex flex-wrap gap-2 sm:gap-2.5 list-none p-0">
-            {TAB_ORDER.filter((t) => t.id !== 'spectrum').map((t) => {
-              const isActive = tab === t.id;
+          <div className="space-y-2.5">
+            {TAB_GROUPS.map((group) => {
+              const groupId = `tabgroup-${group.label.toLowerCase().replace(/\s+/g, '-')}`;
               return (
-                <li key={t.id}>
-                  <button
-                    type="button"
-                    onClick={() => setTab(t.id)}
-                    aria-pressed={isActive}
-                    className={
-                      'inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full border-2 text-sm sm:text-base font-medium transition-all ' +
-                      // Three visual states with WCAG AA contrast at the
-                      // pills' text size (text-sm / text-base, font-medium):
-                      //   Active  = civil-red-strong fill (#B23E2F) +
-                      //             white text -> 4.57:1, AA compliant.
-                      //   Hover   = light-red wash background + dark red
-                      //             text + dark red border. text-stone-900
-                      //             stays on background to keep contrast
-                      //             high; civil-red-strong border + ring
-                      //             signals the hover affordance.
-                      //   Default = white bg, stone text, stone border
-                      //             (heavier for featured).
-                      (isActive
-                        ? 'bg-civil-red-strong text-white border-civil-red-strong shadow-md ring-2 ring-red-300'
-                        : t.featured
-                          ? 'bg-white text-stone-900 border-stone-900 hover:bg-red-50 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-200'
-                          : 'bg-white text-stone-700 border-stone-300 hover:bg-red-50 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-200')
-                    }
-                    style={{ fontFamily: 'Chivo Mono, monospace' }}
+                <div
+                  key={group.label}
+                  role="group"
+                  aria-labelledby={groupId}
+                  className="flex flex-wrap items-center gap-x-3 gap-y-2"
+                >
+                  <h3
+                    id={groupId}
+                    className="text-[0.7rem] uppercase tracking-wider font-semibold text-stone-700 font-mono whitespace-nowrap min-w-[7.5rem] sm:basis-32 sm:flex-shrink-0"
                   >
-                    {t.featured && (
-                      <span aria-hidden="true" className={'mr-1.5 ' + (isActive ? 'text-yellow-200' : 'text-civil-red-strong')}>
-                        ★
-                      </span>
-                    )}
-                    {t.label}
-                  </button>
-                </li>
+                    {group.label}
+                  </h3>
+                  <ul className="flex flex-wrap gap-2 sm:gap-2.5 list-none p-0 m-0">
+                    {group.tabs.map((tabId) => {
+                      const t = TAB_ORDER.find((x) => x.id === tabId);
+                      if (!t) return null;
+                      const isActive = tab === t.id;
+                      return (
+                        <li key={t.id}>
+                          <button
+                            type="button"
+                            onClick={() => setTab(t.id)}
+                            aria-pressed={isActive}
+                            className={
+                              'inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full border-2 text-sm sm:text-base font-medium transition-all ' +
+                              // Three visual states with WCAG AA contrast at the
+                              // pills' text size (text-sm / text-base, font-medium):
+                              //   Active  = civil-red-strong fill (#B23E2F) +
+                              //             white text -> 4.57:1, AA compliant.
+                              //   Hover   = light-red wash background + dark red
+                              //             text + dark red border. text-stone-900
+                              //             stays on background to keep contrast
+                              //             high; civil-red-strong border + ring
+                              //             signals the hover affordance.
+                              //   Default = white bg, stone text, stone border
+                              //             (heavier for featured).
+                              (isActive
+                                ? 'bg-civil-red-strong text-white border-civil-red-strong shadow-md ring-2 ring-red-300'
+                                : t.featured
+                                  ? 'bg-white text-stone-900 border-stone-900 hover:bg-red-50 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-200'
+                                  : 'bg-white text-stone-700 border-stone-300 hover:bg-red-50 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-200')
+                            }
+                            style={{ fontFamily: 'Chivo Mono, monospace' }}
+                          >
+                            {t.featured && (
+                              <span aria-hidden="true" className={'mr-1.5 ' + (isActive ? 'text-yellow-200' : 'text-civil-red-strong')}>
+                                ★
+                              </span>
+                            )}
+                            {t.label}
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  {group.footnote && (
+                    <p className="text-xs italic text-stone-500 basis-full sm:basis-auto sm:ml-2 mt-0">
+                      {group.footnote}
+                    </p>
+                  )}
+                </div>
               );
             })}
-          </ul>
+          </div>
         </nav>
 
         <section ref={sectionRef} className="mb-16 scroll-mt-28">
