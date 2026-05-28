@@ -4,13 +4,38 @@ One JSON file per named individual on the site. Each file is loaded by the `/per
 
 ## Catalog purpose (READ FIRST)
 
-Person pages are **integration hubs** across the site, not freestanding biographies. The primary value of every page is the **cross-link manifest**, the connections to the rest of the site (Library of Congress item URL, semantic neighbors precomputed in `/rag/related/`, position on each concept axis from `/rag/summaries/concept_axes.json`, edges in the influence graph, tour appearances). The biographical paragraph is the connective tissue around those links, not the headline content.
+Person pages are **integration hubs that surface NOVEL AI observations** across the site, not freestanding biographies. The primary value of every page is what a blank-slate AI embedding model "thinks about" each civil rights thinker, **versus** what the established cultural / historiographical record has already carved out for them. The page is a case study in what the cosine-similarity space reveals that textbook history has not.
 
-A page is doing its job when a visitor can land on it (via search, via a click from the Interview Map or Semantic Overlap, via an inbound link from another person page) and immediately see how that person connects to the rest of the corpus. The visualizations carry the navigation value; the prose carries voice.
+Two equally-important surfaces on every page:
+
+1. **The AI's reading.** The top semantic neighbors of this person in the corpus that AREN'T the obvious cultural-historical pairings; the concept axes where their position is surprising given their public framing; the cosine-similarity connections to other interviewees that the embedding finds but that the cultural record has not foregrounded. Frame these explicitly as "what the embedding space finds" or "cosine similarity in this corpus puts X close to Y," NOT as "X was historically connected to Y." This is the section the paper being presented draws on.
+2. **The historical reading.** The established biographical material (Wikipedia, SNCC Digital Gateway, BlackPast, the LoC item page abstract). This follows the AI's reading and provides the orientation a reader needs to make sense of the surprising connections.
+
+The cross-link manifest (semantic neighbors, concept-axis positions, influence-graph edges, tour appearances) is the substrate that drives both surfaces; the AI's-reading paragraph distills it into prose. A page is doing its job when a reader of the paper-in-progress comes away with a specific, citable observation about a connection the embedding space surfaced that historiography hasn't.
 
 ## Writing discipline (READ BEFORE WRITING ANY BIO)
 
-The `biographical_paragraph` field is the only meaningful free-text on each page. Constraints are non-negotiable:
+Two free-text fields on each page, and a different discipline for each:
+
+### `ai_reading` (the headline content)
+
+Surface what the embedding space finds about this person that the cultural record hasn't. Concretely, look at the precomputed substrate:
+
+- `/rag/related/entry-${N}.json` — top semantic neighbors of this person's passages.
+- `/rag/summaries/concept_axes.json` — this person's position on each named concept axis (with the pole labels).
+- `/rag/summaries/influence.json` — who-discussed-whom edges.
+
+Then write a paragraph that names ONE or TWO specific connections the embedding finds AND for which there's a meaningful surprise:
+
+- A neighbor at high cosine similarity who is NOT an obvious cultural-historical pairing (e.g., the embedding placing a Black Panther organizer's testimony close to a Christian Methodist Episcopal pastor's, despite different movement framings).
+- A position on a concept axis that contradicts or complicates the public framing (e.g., an interviewee culturally tagged with "nonviolence" placing toward the armed-self-defense pole, or a "secular activist" placing close to the sacred pole).
+- An influence-graph edge that runs unexpectedly (e.g., a SNCC organizer discussing a Black Panther figure more frequently than their own SNCC contemporaries do).
+
+Frame the observation explicitly as **embedding-derived**: "Cosine similarity in this corpus puts X's passages closer to Y's than to any of his fellow SCLC interviewees," NOT "X was historically allied with Y." The point is the contrast between AI-revealed structure and cultural cataloging.
+
+### `biographical_paragraph` (the historical orientation)
+
+Constraints are non-negotiable:
 
 1. **Wikipedia, SNCC Digital Gateway, BlackPast, crmvet.org, LoC item pages, and similar sources are fact-check material ONLY, NEVER writing material.** Verify the date, the role, the affiliation against the source, then write the prose originally in your own voice. Echoing the source's phrasing is plagiarism and gets flagged.
 2. **Anti-idempotent prose.** Each bio gets a distinct opening, distinct sentence rhythm, distinct fact-selection that creates a per-person narrative arc. The catalog must not read as N permutations of one biographical template. Vary the verbal entry point (one bio leads with a vivid scene, another with the subject's role, another with a place, another with a year).
@@ -50,9 +75,17 @@ The `biographical_paragraph` field is the only meaningful free-text on each page
     "source_url": "https://www.loc.gov/item/..."
   },
 
-  // Bio paragraph. Interlinked-data-first; citation-bearing; no
-  // subjective/evaluative language. Reference other corpus voices by
-  // entry_number where relevant; cite each factual claim.
+  // AI's reading. Headline content; names a specific embedding-
+  // derived observation about this person that the cultural record
+  // hasn't foregrounded. Drawn from /rag/related/entry-${N}.json,
+  // /rag/summaries/concept_axes.json, and /rag/summaries/influence.json.
+  // Always framed as embedding-derived, not historical fact.
+  "ai_reading": "Despite Dixon's hard cultural association with the Black Panther Party, the embedding space in this corpus puts his testimony closest by cosine similarity to organizers whose framing is community-service rather than revolutionary politics; his passages cluster with Charles McLaurin's (entry 17) Mississippi voter-registration material more readily than with the BPP-internal rhetoric of Kathleen Cleaver (entry 73). The Free Breakfast for Children and clinic-organizing language seems to dominate his vector signature over the party-line content.",
+
+  // Bio paragraph. Historical orientation. Interlinked-data-first;
+  // citation-bearing; no subjective/evaluative language. Reference
+  // other corpus voices by entry_number where relevant; cite each
+  // factual claim.
   "biographical_paragraph": "Aaron Dixon co-founded the Seattle chapter of the Black Panther Party in 1968 and served as its captain through 1972 [src: 1]. His oral history is held by the Library of Congress as entry 1 of the Civil Rights History Project (AFC 2010/039) [src: 2]. He discusses chapter organizing, the Free Breakfast for Children program, and his relationship to the national party leadership in dialogue with other Black Panther interviewees in the corpus, including Kathleen Cleaver (entry 73).",
 
   // Sources cited in the bio paragraph (and any other claims). [src: N]

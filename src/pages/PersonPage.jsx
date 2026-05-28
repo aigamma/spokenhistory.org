@@ -284,10 +284,36 @@ export default function PersonPage() {
           </div>
         </header>
 
-        {/* Biographical paragraph with inline [src: N] citation refs. */}
+        {/* AI's reading. Headline content per the catalog discipline:
+            a specific embedding-derived observation that the cultural
+            record hasn't foregrounded. Rendered visually distinct from
+            the biographical paragraph below so a reader of the paper
+            being prepared can find the contribution at a glance. */}
+        {person.ai_reading && (
+          <section className="mb-8 max-w-3xl">
+            <div className="border-l-4 border-civil-red-strong pl-5 py-1">
+              <p className="text-xs uppercase tracking-wide font-mono text-civil-red-body mb-2 font-semibold">
+                What the embedding finds
+              </p>
+              <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                {renderBioWithCitationRefs(person.ai_reading, person.sources)}
+              </p>
+            </div>
+          </section>
+        )}
+
+        {/* Biographical paragraph. Historical orientation behind the
+            AI's-reading section above; cited from external sources
+            (LoC first, Wikipedia last). Reads as supporting context
+            rather than the headline. */}
         {person.biographical_paragraph && (
-          <section className="mb-10">
-            <p className="text-stone-800 text-base leading-relaxed max-w-3xl" style={{ fontFamily: 'Source Serif 4, serif' }}>
+          <section className="mb-10 max-w-3xl">
+            {person.ai_reading && (
+              <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                Historical orientation
+              </p>
+            )}
+            <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
               {renderBioWithCitationRefs(person.biographical_paragraph, person.sources)}
             </p>
           </section>
