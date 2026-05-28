@@ -4,6 +4,8 @@ One JSON file per named individual on the site. Each file is loaded by the `/per
 
 **Current catalog: 198 pages (161 interviewees + 37 external figures, as of 2026-05-28).** Every named CRHP interviewee plus every named external figure referenced in FamousNames, the influence graph, OR repeatedly mentioned across multiple interviewee bios has a catalog entry. Photo coverage: 55 of 198 pages (28%) carry an inline PD or open-licensed portrait. **Bio coverage: 198 of 198 pages (100%) have a citation-bearing biographical paragraph** grounded in external scholarly sources (university-press monographs, Mississippi/Oklahoma/Tennessee state encyclopedias, SNCC Digital Gateway, Veterans of the Civil Rights Movement archive, Civil Rights Digital Library, NMAAHC object records, NYT obituaries, etc.); no Wikipedia citations are used per the writing discipline below. The audit-tier protection language is retained on publication-block / not-auditable / ingestion-only tier transcripts to caution future researchers that any specific quoted claim drawn from the LoC transcript itself should be verified against external sources before publication.
 
+**Opus-4.8 rebuild in progress (2026-05-28):** every page is being rebuilt with `interview_snippets[]` (verbatim oral-history quotes) as the primary substance, rendered as tiered pull-quote cards colored by audit tier, and the look is standardized across all 198 pages (snippets are backfilled onto pages built before this date so no page lacks the centerpiece). `charles-mclaurin` is the locked reference implementation. Read the `interview_snippets[]` discipline below, and run `python scripts/verify_person_snippets.py <slug>` before committing any page; it fails closed if a quote is not verbatim in the cited transcript.
+
 **Site integration (2026-05-28):** the catalog is reachable from every major site surface that renders named figures:
 - **Header → Menu drawer → People** opens `/people`, the browse-grid index of all 196 pages with name/role search and interviewee-vs-external-figure filter.
 - **InterviewIndex cards** carry a `Catalog page →` link alongside `Open interview →` and `LoC catalog`.
@@ -57,6 +59,34 @@ Constraints are non-negotiable:
 6. **No em-dashes** (per the top-level `CLAUDE.md` writing rules). Use commas, semicolons, parentheses, or restructure the sentence.
 7. **Title Case for proper-noun phrases**, sentence case otherwise.
 
+### `interview_snippets[]` (the primary substance, Opus-4.8 rebuild 2026-05-28)
+
+Per the project owner's 2026-05-28 directive, **direct oral-history quotes are the primary substance of every page.** The look is standardized: every page carries a "Voices from the Archive" section of tiered pull-quote cards (`SnippetCard` in `src/pages/PersonPage.jsx`), placed right after the `ai_reading` block so the quotes lead. The cards route a reader into the source interview, which is the catalog's whole purpose as a discovery hub into the oral-history bank. Pages built before this date are backfilled so none lacks the centerpiece.
+
+Each snippet object:
+
+- `relation`: `"self"` (the subject speaking; interviewees only) or `"about"` (another interviewee speaking about the subject). Interviewee pages should carry BOTH where the material exists; external-figure pages carry only `"about"` quotes (they were never interviewed, so source the quotes from the corpus voices who name them).
+- `speaker`, `speaker_slug`: who is talking, and their catalog slug if they have a page.
+- `source_entry`: the CRHP entry whose transcript holds the quote. The card links to `/interview/${source_entry}`.
+- `timestamp`: start timestamp `HH:MM:SS`, copied exactly from the source cue.
+- `audit_tier`: the source transcript's tier, read from its `transcripts/corrected/<dir>/manifest.json` `inferential_uncertainty.confidence_tier`. Drives the card color; never guess it.
+- `loc_url`: the source transcript's LoC item URL, from the manifest `loc_healing.loc_item_url`.
+- `lead_in`: one framing sentence (no evaluative adjectives), e.g. the situation the quote arises in.
+- `quote`: the verbatim text.
+
+**Sourcing discipline (non-negotiable, this is Smithsonian-grade attribution):**
+
+1. **Verbatim only, from the LoC-healed transcript** (`transcripts/corrected/<dir>/*.srt`). Never paraphrase, never smooth ASR roughness, never invent. The quote must survive `scripts/verify_person_snippets.py`, which checks it is a contiguous word sequence in the cited transcript. **Run that script on every page before committing it; it fails closed.**
+2. **Exact `source_entry` + `timestamp` + `loc_url`** from the source cue and that entry's manifest. A wrong entry or timestamp is a citation failure.
+3. **Disambiguate cross-references. A name match is not a person match.** Example: "McLaurin" in Robert L. Carter's interview is George McLaurin (the 1950 *McLaurin v. Oklahoma* case), not Charles McLaurin the SNCC organizer. Confirm the surrounding context (place, era, affiliation) refers to THIS person before using an `"about"` quote.
+4. **Editorial brackets.** Render LoC's `(Name)` clarifying insertions as `[Name]`; otherwise verbatim.
+5. **Racial slurs and harmful language.** Prefer slur-free passages. Preserve a perpetrator's documented slur only when it is the substance of the testimony AND the `lead_in` frames it as the perpetrator's recorded speech. Never lead a card with a decontextualized slur.
+6. **Primary-vs-secondary discrepancies.** When the subject's own testimony contradicts a secondary source (e.g. a birth year), do NOT silently overwrite the page; keep the corroborated value and note the discrepancy in the commit message for the fact-check record.
+
+**Quantity:** liberal. Several strong snippets per page, a mix of `self` and `about` for interviewees. The quotes are the page, not a garnish.
+
+The older `movement_context` and `legacy_and_reception` essay fields (on pages built before 2026-05-28) remain valid optional orientation, but they are not the rebuild's focus and are not required; a concise `biographical_paragraph` plus rich `interview_snippets[]` is the standard shape.
+
 ## Schema
 
 ```jsonc
@@ -99,6 +129,24 @@ Constraints are non-negotiable:
   // other corpus voices by entry_number where relevant; cite each
   // factual claim.
   "biographical_paragraph": "Aaron Dixon co-founded the Seattle chapter of the Black Panther Party in 1968 and served as its captain through 1972 [src: 1]. His oral history is held by the Library of Congress as entry 1 of the Civil Rights History Project (AFC 2010/039) [src: 2]. He discusses chapter organizing, the Free Breakfast for Children program, and his relationship to the national party leadership in dialogue with other Black Panther interviewees in the corpus, including Kathleen Cleaver (entry 73).",
+
+  // Interview snippets: the PRIMARY substance (Opus-4.8 rebuild).
+  // Verbatim oral-history quotes from LoC-healed transcripts, rendered
+  // as tiered pull-quote cards. See the interview_snippets discipline
+  // above. Verify with scripts/verify_person_snippets.py before commit.
+  "interview_snippets": [
+    {
+      "relation": "self",                 // "self" | "about"
+      "speaker": "Charles McLaurin",
+      "speaker_slug": "charles-mclaurin", // catalog slug if one exists
+      "source_entry": 17,                 // entry whose transcript holds the quote
+      "timestamp": "01:51:16",            // start timestamp, copied from the cue
+      "audit_tier": "low",                // source manifest confidence_tier (card color)
+      "loc_url": "https://www.loc.gov/item/2016655412/",
+      "lead_in": "After a white official released the three organizers unharmed, McLaurin read it as strategy:",
+      "quote": "Why didn't we get killed? Why couldn't he run us out of town? Why are we allowed to come back?"
+    }
+  ],
 
   // Sources cited in the bio paragraph (and any other claims). [src: N]
   // refs in the bio map to indexes in this array.
