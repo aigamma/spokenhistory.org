@@ -2,6 +2,24 @@
 
 One JSON file per named individual on the site. Each file is loaded by the `/person/:slug` route's `PersonPage` component and rendered as a citation-bearing reference page. The catalog supports two `person_type` values: interviewees (have their own oral history in the Civil Rights History Project corpus) and external figures (discussed by interviewees but not themselves interviewed).
 
+## Catalog purpose (READ FIRST)
+
+Person pages are **integration hubs** across the site, not freestanding biographies. The primary value of every page is the **cross-link manifest**, the connections to the rest of the site (Library of Congress item URL, semantic neighbors precomputed in `/rag/related/`, position on each concept axis from `/rag/summaries/concept_axes.json`, edges in the influence graph, tour appearances). The biographical paragraph is the connective tissue around those links, not the headline content.
+
+A page is doing its job when a visitor can land on it (via search, via a click from the Interview Map or Semantic Overlap, via an inbound link from another person page) and immediately see how that person connects to the rest of the corpus. The visualizations carry the navigation value; the prose carries voice.
+
+## Writing discipline (READ BEFORE WRITING ANY BIO)
+
+The `biographical_paragraph` field is the only meaningful free-text on each page. Constraints are non-negotiable:
+
+1. **Wikipedia, SNCC Digital Gateway, BlackPast, crmvet.org, LoC item pages, and similar sources are fact-check material ONLY, NEVER writing material.** Verify the date, the role, the affiliation against the source, then write the prose originally in your own voice. Echoing the source's phrasing is plagiarism and gets flagged.
+2. **Anti-idempotent prose.** Each bio gets a distinct opening, distinct sentence rhythm, distinct fact-selection that creates a per-person narrative arc. The catalog must not read as N permutations of one biographical template. Vary the verbal entry point (one bio leads with a vivid scene, another with the subject's role, another with a place, another with a year).
+3. **Interlinked-data-first.** Wherever you can, name another individual in the corpus by their entry number (e.g., "Kathleen Cleaver (entry 73)"), reference the LoC item URL implicitly via the citation, and let the precomputed cross-link manifest do the rest. The prose is a router into existing material, not a new biographical claim.
+4. **Cite every factual claim** with a `[src: N]` reference that maps to an entry in `sources[]`. If a claim can't be cited, omit it.
+5. **No subjective or evaluative adjectives.** "Influential," "iconic," "tragic," "courageous," "groundbreaking" are out. Describe roles, dates, and what the person is on record as saying.
+6. **No em-dashes** (per the top-level `CLAUDE.md` writing rules). Use commas, semicolons, parentheses, or restructure the sentence.
+7. **Title Case for proper-noun phrases**, sentence case otherwise.
+
 ## Schema
 
 ```jsonc
@@ -58,13 +76,7 @@ One JSON file per named individual on the site. Each file is loaded by the `/per
 
 ### `biographical_paragraph`
 
-The hardest field to get right. Constraints, per `feedback_narration_smithsonian_safe`:
-
-- **Interlinked-data-first.** Reference other named individuals in the corpus by entry_number; reference their LoC item URLs; reference the audit tier and provenance fields that are already published in `/rag/constellation.json`. The narration is a router into existing material, not a new biographical claim.
-- **Cite every factual claim** with a `[src: N]` reference that maps to an entry in `sources[]`. Wikipedia, LoC item descriptions, published scholarship, primary sources. If a claim can't be cited, omit it.
-- **No subjective or evaluative adjectives.** "Influential," "iconic," "tragic," "courageous," "groundbreaking" are out. Describe roles, dates, and what the person is on record as saying (per their LoC interview).
-- **No em-dashes** (per the top-level `CLAUDE.md` writing rules).
-- **Title Case for proper-noun phrases**, sentence case otherwise.
+See "Writing discipline" above. The seven rules apply to every bio without exception.
 
 ### `photo`
 

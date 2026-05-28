@@ -4,7 +4,7 @@
 
 **Audience:** WWU team, NMAAHC + LoC collaborators, any new contributor (human or AI agent).
 
-**Last updated:** 2026-05-27.
+**Last updated:** 2026-05-27 (added the per-person pages catalog + the durable-docs principle).
 
 ---
 
@@ -71,6 +71,9 @@ The conceptual-map briefing for the WWU presentation. Eight conceptual breakthro
 - `Metadata Generation System/Metadata Generation Documentation.md` — Original 7-step pipeline doc.
 - `Metadata Generation System/StandardizedRubric_1.md` — Smithsonian-grade scoring rubric.
 
+### Per-person pages catalog
+- `public/rag/people/README.md` — Schema + catalog purpose (integration hub, not biography) + writing discipline (Wikipedia is fact-check only; anti-idempotent prose; cite every claim). Required reading before adding a person page or modifying `src/pages/PersonPage.jsx`.
+
 ---
 
 ## Tier 3: Lessons learned (why we made the choices we made)
@@ -135,11 +138,13 @@ Original RAG substrate design when the plan was Weaviate. The substrate decision
 | Ingest a new transcript | `transcripts/ingestion/README.md`, `CLAUDE.md` § Streamlined ingestion |
 | Touch the RAG ingest/retrieval code | `rag/README.md` |
 | Build a new interactive surface | `rag/INTERACTIVE_FEATURES_DESIGN.md` |
+| Add or modify a per-person page | `public/rag/people/README.md` (catalog purpose + schema + writing discipline) |
 | Deploy to staging or production | `docs/DEPLOYMENT.md`, `rag/OPERATIONS.md` |
 | Touch the MCP server | `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md` |
 | Touch styling / colors / accessibility | `docs/ACCESSIBILITY.md`, `CLAUDE.md` § Writing rules |
 | Investigate "why does it work like this?" | `lessons_learned.md`, `docs/RAG_SUBSTRATE_DECISION.md` |
 | Show a Smithsonian / LoC reviewer the rigor of the work | `transcripts/AUDIT_TRAIL.md`, `transcripts/loc_healing/COVERAGE_REPORT.md`, the per-entry stage files |
+| Discover a new rule mid-session | Put it in `CLAUDE.md` (the auto-loaded doc) or a tier-2 subsystem doc; **never** rely on session memory alone. See `CLAUDE.md` § Documentation as durable source of truth. |
 
 ---
 

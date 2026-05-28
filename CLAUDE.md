@@ -30,6 +30,14 @@ Title headlines (page titles, tab labels, chart titles, section headings, tour t
 
 External rate limits (OpenAI, Firebase, Fly.io, GitHub, Netlify) still apply. This rule is about Anthropic-side conservatism only.
 
+## Documentation as durable source of truth
+
+Insights, rules, decisions, and discipline that future contributors (human or AI) need to know MUST land in the repository's documentation hierarchy, not just in session-local notes, agent private memory, or chat history. The hierarchy is `CLAUDE.md` (auto-loaded into every agent's context) → `STEERING_DOCS.md` (the one-page map of where to look for what) → tier-2 subsystem docs (`docs/*.md`, `rag/README.md`, `mcp-server/README.md`, `Metadata Generation System/Metadata Generation Documentation.md`, `public/rag/people/README.md`) → the per-pass audit governance docs at `transcripts/`.
+
+If you discover a new constraint mid-session (a writing-style rule, a sourcing discipline, a feature-gate, a stakeholder preference about how copy reads, a "do this not that" pattern that surfaced through a correction), the work is not done until it's written somewhere a fresh agent would actually look. Private session memory and chat transcripts decay across sessions; the repository doesn't. The corollary: when a working rule conflicts with what's in the docs, fix the docs (or fix the rule, but make the alignment explicit in a commit). Working-tree state where the docs lie is a process failure, no different from code state that lies.
+
+The principle applies to itself: this section was added to `CLAUDE.md` rather than living only in agent memory because the rule about durable docs is itself a durable insight.
+
 ## Current sprint status (as of 2026-05-21)
 
 **Hard deadline: Wednesday 2026-05-27 team meeting at WWU.**
@@ -58,7 +66,7 @@ What's NOT load-bearing for Wednesday: any further mobile polish, any further ac
 
 Five subsystems, each in its own directory:
 
-- **`src/`** -- React 18 + Vite frontend. Pages: Home (scroll-driven timeline), Interview Index (card grid with semantic search), Playlist Builder (cross-interview clip assembly), Topic Glossary (force-directed graph of AI-curated topics), Review Queue (admin UI for the human-review gate).
+- **`src/`** -- React 18 + Vite frontend. Pages: Home (scroll-driven timeline), Interview Index (card grid with semantic search), Playlist Builder (cross-interview clip assembly), Topic Glossary (force-directed graph of AI-curated topics), RAG Explore (interactive embedding-substrate demos at `/rag-explore`), Person Pages (`/person/:slug`, citation-bearing reference page per named individual, see `public/rag/people/README.md`), Review Queue (admin UI for the human-review gate).
 - **`functions/`** -- Firebase Cloud Functions (Node.js). `generateEmbedding`, `vectorSearch`, `submitCannyFeedback`. The OpenAI key lives here, not in the client bundle.
 - **`Metadata Generation System/`** -- Standalone Python/Flask 7-step pipeline (blocking → labeling → TOC → chapterization → summarization → tuning → engagement). This is the hallucination hot zone.
 - **`mcp-server/`** -- Node MCP server exposing the archive via six tools: three primitives (`search_transcripts`, `get_transcript`, `list_leaders`) plus three research-pattern tools (`compare_perspectives`, `trace_evolution`, `source_for_claim`). The research patterns are also registered as MCP prompts for prompt-routing clients. Deployable to Fly.io.
@@ -239,6 +247,18 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 | `transcripts/ingestion/README.md` | The full new-transcript workflow documentation: TL;DR command, format adapters (WhisperX JSON / PDF-only / plain-text source), pre-ingest requirements, validation checklist, the "what if LoC doesn't have it" fallback. |
 | `transcripts/ingestion/ingest_new_transcript.py` | The single-command ingestion script. Validate raw entry structure → bootstrap `corrected/<entry>/` → resolve LoC → heal_one → write stage file → append AUDIT_TRAIL ingestion note. One transcript per invocation; linear by design. Supports `--loc-item-url` override for catalog-spelling cases. |
 
+### `public/rag/people/`, per-person reference pages catalog (2026-05-27 ongoing)
+
+One JSON file per named individual on the site, loaded by the `/person/:slug` route's `PersonPage` component (`src/pages/PersonPage.jsx`). Two `person_type` values: interviewees (their own oral history in the CRHP corpus) and external figures (discussed by interviewees but not themselves interviewed). The pages are **integration hubs**, the primary value is the cross-link manifest connecting each person to the rest of the site (LoC item URL, semantic neighbors precomputed in `/rag/related/`, position on each concept axis, influence-graph edges, tour appearances); the biographical paragraph is connective tissue, not the headline content.
+
+| File | Purpose |
+|---|---|
+| `public/rag/people/README.md` | The schema (with field-by-field discipline), the catalog purpose (integration-hub framing), and the writing discipline (Wikipedia / SNCC Digital / BlackPast / LoC item pages are FACT-CHECK material only, never writing material; anti-idempotent prose with varied openings + sentence rhythms per page; cite every factual claim with `[src: N]`). **Read this before adding a person page or modifying `PersonPage.jsx`.** |
+| `public/rag/people/*.json` | One catalog entry per person, schema documented in the README. Bio paragraphs follow the seven writing rules in the README. |
+| `src/pages/PersonPage.jsx` | The React component that renders a catalog entry as a citation-bearing reference page with auto-derived cross-link sections. |
+
+Searchability rollout: after the catalog has enough entries the JSON gets ingested into the main `civil-rights` Pinecone index as **one vector per person** (embedding `display_name + role_summary + biographical_paragraph` as a single document), with `content_type: 'person'` metadata. Existing archive-focused retrieval flows (Quote Finder, Semantic Overlap, ConceptSpectrum drill-down, ConceptMatrix concept-query, InterviewMap concept-query) MUST add a filter to exclude `content_type='person'` BEFORE the first person vector is ingested. A new site-wide search bar or "find a person" affordance can query without the filter and render mixed results with a "Person" or "Passage" badge per result.
+
 ### Component-level `README.md` files
 
 | File | Purpose |
@@ -292,6 +312,7 @@ These directories contain one file per audit-able entry per pass. They are inter
 - **New agent doing audit-related work:** start with this CLAUDE.md (you're here), then `transcripts/AUDIT_TRAIL.md` (history) and `transcripts/OPEN_PROBLEMS.md` (open items). Don't try to read the per-pass staging directories.
 - **New agent doing LoC-healing or new-transcript work:** this CLAUDE.md, then `transcripts/ingestion/README.md` and `transcripts/loc_healing/COVERAGE_REPORT.md`. Read `transcripts/AUDIT_VS_LOC_DISAGREEMENTS.md` if the heal pipeline surfaces issues. **Do not re-run Passes 1-7 on new transcripts**, that pipeline is retired for new work.
 - **New agent doing RAG-related work:** this CLAUDE.md, then `rag/README.md`, `rag/CONFERENCE_PREP.md`, and `docs/RAG_SUBSTRATE_DECISION.md`.
+- **New agent doing per-person-pages work:** this CLAUDE.md, then `public/rag/people/README.md` (catalog purpose + schema + writing discipline). The writing discipline is non-negotiable: Wikipedia and similar sources are fact-check material only, never writing material, and each bio gets novel, anti-idempotent prose. Work one person per iteration, no subagent parallelism (Claude Max 20x rolling-cap constraint).
 - **New agent doing accessibility / frontend work:** this CLAUDE.md, then `docs/ACCESSIBILITY.md`.
 - **New agent doing deployment / DevOps work:** this CLAUDE.md, then `docs/DEPLOYMENT.md`.
 - **New agent doing pipeline / Python work:** this CLAUDE.md, then `Metadata Generation System/Metadata Generation Documentation.md` and `StandardizedRubric_1.md`.
