@@ -188,3 +188,20 @@ If you only have three slides for this audience, lead with:
 3. **Substring substitution at corpus scale is dangerous in ways that are not obvious.** "Replace 'Don' with 'Daniel H. Crena de Iongh' wherever it appears" is a one-line correction row that silently corrupts every contraction in the affected transcript. The fix is precise but the bug is generic, any pipeline that does case-insensitive substring substitution on short needles will reproduce this class of error.
 
 The institutional credibility instrument, the audit trail, the ground-truth corpus, the per-pass row-ID convention, is in good shape. The mechanical pipeline that deploys the audit's findings was the weak link.
+
+---
+
+## Per-person catalog lessons (2026-05-28 sprint)
+
+The per-person catalog work this sprint produced 198 catalog pages (161 interviewees + 37 external figures) with 100% bio coverage and full site integration, anchored in a single principle that's worth carrying forward:
+
+1. **The catalog is an integration hub, not a freestanding biography.** Each `/person/:slug` page consolidates AI-derived observations (the semantic-neighbor list, the concept-axis positions, the influence-graph edges) alongside the historical bio. The bio is connective tissue. The novel content is the embedding's reading of the figure, the cosine pairings the cultural record hasn't foregrounded, the axis positions that contradict public framing.
+
+2. **Wikipedia as directory, not source.** Every catalog bio is grounded in primary scholarly material (university-press monographs, state encyclopedias, SNCC Digital Gateway, Veterans of the Civil Rights Movement archive, NYT obituaries, NMAAHC object records). The 198-page catalog contains zero Wikipedia citations. The discipline matters: a flagged plagiarism finding in any one bio paragraph would be sufficient cause for the Smithsonian / LoC review chain to disqualify the catalog as a whole.
+
+3. **The cross-link substrate has to be precomputed and CI-enforced.** The catalog's by_entry / by_slug / by_normalized_name lookup file (public/rag/people/index.json) is the substrate that every consumer surface (PersonPage neighbor chips, FamousNames jump-links, InterviewIndex / InterviewDetail catalog links, InfluenceList ranked list + graph aside) shares. A drift between the catalog and the index produces silently broken navigation; the CI step that re-runs the builder and diffs catches it.
+
+4. **The Pinecone person-vector ingestion is one command, not a feature.** With the content_type filter implemented at both client (src/services/ragClient.js) and MCP server (mcp-server/server.mjs) layers and the ingestion path at rag/ingest.mjs --include-persons / --persons-only, the catalog can be ingested with one command (~$0.05 in Voyage embedding) without disrupting the existing archive-focused UX. The infrastructure was the long pole; the operational push is trivial.
+
+5. **Photo coverage hits a 25-30% ceiling for archival oral-history corpora.** Of 198 catalog pages, 55 carry inline PD or CC-licensed portraits. The remainder lack Wikipedia infobox images entirely, lack open-license alternatives, or sit behind copyrighted-press-archive walls (Charles Moore, Spider Martin, Bob Adelman, the AP/UPI/Getty CRM-era press archive). The pattern is general: most less-famous CRHP interviewees have no PD photo, and the institutional review chain accepts text-only catalog pages where no usable photo exists. Don't force the issue with marginal-license workarounds; leave the photo field absent and the page renders cleanly without a portrait.
+
