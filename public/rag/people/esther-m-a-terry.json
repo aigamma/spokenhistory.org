@@ -9,11 +9,85 @@
   "role_summary": "Civil Rights History Project interviewee; in this corpus's embedding her testimony clusters with SNCC-network voices and her position on every concept axis sits near the midpoint.",
   "ai_reading": "On the five concept axes the corpus tracks, Esther M. A. Terry's testimony sits very near the midpoint on each (her position_normalized values run from -0.08 to +0.28 across the five), making her one of the most centrist voices in the corpus's vector space. Her top six semantic neighbors are the joint John Dudley et al interview (entry 64), Betty Garman Robinson (SNCC national office, entry 7), Joan Trumpauer Mulholland (Freedom Rider, entry 60), Eddie Holloway (entry 33), Charles F. \"Chuck\" McDew (SNCC chairman 1961-63, entry 16), and Ekwueme Michael Thelwell (SNCC Washington office director, entry 34); every one of those six has SNCC affiliation in the cultural record. The embedding therefore agrees with the cultural placement of Terry as a SNCC-network voice. What it adds is the centrism: where many BPP or SCLC interviewees cluster strongly at one pole or another of the five axes, Terry's positions stay close to zero across all five, an unusual shape in this corpus and one a topical historiography would not have predicted to fall out as a structural feature of the embedding.",
   "biographical_paragraph": "Esther M. A. Terry's oral history is held at the Library of Congress as entry 40 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Further external biographical sourcing for Terry's movement-era role and post-movement academic career is pending; the SNCC-network identification visible in her semantic neighbors above is the strongest signal currently available in this catalog.",
+  "movement_context": "The February 1, 1960 sit-in at the F. W. Woolworth lunch counter at 132 South Elm Street in downtown Greensboro, North Carolina was initiated by four North Carolina Agricultural and Technical College freshmen, Ezell Blair Jr. (later Jibreel Khazan), Franklin McCain, Joseph McNeil, and David Richmond, who ordered coffee at the whites-only counter, were refused service, and remained seated until the store closed [src: 2]. The next morning, February 2, more than twenty additional A&T students joined the protest, and on the third day Bennett College students entered the action in coordinated waves, a women's-college expansion of the protest line that the standard institutional history of the Greensboro Movement, William H. Chafe's Civilities and Civil Rights: Greensboro, North Carolina, and the Black Struggle for Freedom, documents as the inflection point at which the four-student opening action became a campus-multi-coordinated movement [src: 2, 3]. Bennett College, founded in 1873 and reorganized as a women's college in 1926 under the United Methodist Church, was at the time led by President Willa B. Player, who had taken office in 1956 as the first Black woman to lead a four-year liberal arts college in the United States; Player publicly backed the Bennett students' participation, providing institutional cover that the historiography credits as central to the women's-college contingent's sustained presence in the sit-in waves through February and March 1960 [src: 3, 4]. The Greensboro Movement coalition that formed across the spring of 1960 brought together A&T and Bennett students with the city's Black church network, including pastors at St. James Presbyterian, St. Matthews United Methodist, and Shiloh Baptist, and operated through the local NAACP Youth Council and the Congress of Racial Equality (CORE) field staff; the coalition was the operational template that the April 1960 founding meeting of SNCC at Shaw University in Raleigh would draw on when Ella Baker convened the student delegates of the post-Greensboro sit-in wave [src: 3, 5]. Terry's later faculty career at the W. E. B. Du Bois Department of Afro-American Studies at the University of Massachusetts at Amherst places her in the co-founding cohort with Ekwueme Michael Thelwell (catalog entry 34), the department's founding chairman from 1970; the department was one of the earliest standalone Black Studies units in the American university system and recruited its founding faculty from the SNCC and Howard Nonviolent Action Group networks Thelwell had been part of through the 1960s [src: 6, 7].",
+  "legacy_and_reception": "Terry served on the faculty of the W. E. B. Du Bois Department of Afro-American Studies at the University of Massachusetts at Amherst for over two decades, joining the department in its early years under Thelwell's founding chairmanship and rising through the ranks of associate and full professor before later assuming senior administrative roles; her scholarly work in the department focused on African American literature and the Black women's-college institutional tradition, drawing on her own Bennett College undergraduate formation [src: 6, 7]. She later returned to Bennett College as dean of the Faculty, an administrative role at the same women's college whose students had joined the Greensboro Movement sit-in waves she had been part of as an undergraduate; the appointment placed her in the institutional-leadership lineage that extended back through Willa B. Player's presidency and forward into Bennett's continuing role in the historiography of the Black women's-college tradition [src: 4, 8]. The International Civil Rights Center and Museum, which opened on February 1, 2010 (the fiftieth anniversary of the sit-in) at the preserved Woolworth's building at 134 South Elm Street in Greensboro, has become the institutional commemorative anchor for the movement Terry participated in; the museum maintains an oral-history program and curatorial partnerships with Bennett College and North Carolina A&T State University that draw on the surviving Greensboro Movement participants for documentary record [src: 9].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/4/46/Bennett_College.jpg",
+      "alt": "Bennett College, Greensboro, North Carolina, 1910 archival photograph",
+      "caption": "Bennett College in Greensboro, North Carolina, depicted in a 1910 archival photograph from the institutional record. Founded in 1873, Bennett was reorganized as a women's college in 1926 under the United Methodist Church, and by the time of the February 1, 1960 sit-in at the F. W. Woolworth lunch counter four blocks away in downtown Greensboro, the college was the institutional home of the women's-college contingent that joined the post-February-2 expansion of the Greensboro Movement. President Willa B. Player, the first Black woman to lead a four-year liberal arts college in the United States, provided the institutional cover that the standard historiography credits as central to the Bennett students' sustained presence in the sit-in waves through February and March 1960.",
+      "photographer": "Unknown (W. N. Hartshorn and George W. Penniman, eds., institutional source book)",
+      "repository": "Wikimedia Commons",
+      "license": "Public domain (published before January 1, 1931)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bennett_College.jpg",
+      "date_taken": "1910"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Greensboro_sit-in_counter.jpg",
+      "alt": "The preserved Greensboro F. W. Woolworth lunch counter at the Smithsonian National Museum of American History",
+      "caption": "The preserved lunch counter from the F. W. Woolworth store at 132 South Elm Street in Greensboro, North Carolina where the February 1, 1960 sit-in began, now held by the Smithsonian Institution's National Museum of American History in Washington, D.C. The original four A&T College freshmen, Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond, were joined the following morning by more than twenty additional A&T students; on the third day Bennett College women entered the action in coordinated waves, the women's-college expansion that William H. Chafe's Civilities and Civil Rights documents as the inflection point at which the four-student opening became a campus-multi-coordinated movement.",
+      "photographer": "Mark Pellegrini",
+      "repository": "Wikimedia Commons",
+      "license": "Creative Commons Attribution-Share Alike 2.5 Generic (CC BY-SA 2.5)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Greensboro_sit-in_counter.jpg",
+      "date_taken": "2008-12"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/08/International_Civil_Rights_Center_and_Museum.jpg",
+      "alt": "The International Civil Rights Center and Museum at the preserved F. W. Woolworth building in Greensboro, North Carolina",
+      "caption": "The International Civil Rights Center and Museum at 134 South Elm Street in Greensboro, North Carolina, photographed in 2018. The museum occupies the preserved F. W. Woolworth building where the February 1, 1960 sit-in began, and opened on February 1, 2010, the fiftieth anniversary of the action. Its oral-history program and curatorial partnerships with Bennett College and North Carolina A&T State University draw on the surviving Greensboro Movement participants for documentary record, and the building stands as the institutional commemorative anchor for the movement Esther M. A. Terry participated in as a Bennett College student.",
+      "photographer": "Mx. Granger",
+      "repository": "Wikimedia Commons",
+      "license": "Creative Commons CC0 1.0 Universal Public Domain Dedication",
+      "source_url": "https://commons.wikimedia.org/wiki/File:International_Civil_Rights_Center_and_Museum.jpg",
+      "date_taken": "2018-04-03"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669127/",
       "title": "Esther M. A. Terry oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/5101906",
+      "title": "William H. Chafe, Civilities and Civil Rights: Greensboro, North Carolina, and the Black Struggle for Freedom",
+      "publisher": "Oxford University Press, 1980; WorldCat OCLC 5101906 (the standard institutional history of the Greensboro Movement, including the February 1, 1960 Woolworth sit-in, the post-February-2 expansion with A&T and Bennett students, the church-network coalition, and the Willa B. Player presidency at Bennett College that provided institutional cover for the women's-college contingent)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/47813858",
+      "title": "Miles Wolff, Lunch at the 5 & 10: The Greensboro Sit-Ins, A Contemporary History",
+      "publisher": "Stein and Day, 1970 (revised edition Ivan R. Dee, 1990); WorldCat OCLC 47813858 (the first book-length institutional history of the Greensboro sit-in, written by a Greensboro Daily News reporter who covered the action from February 1, 1960 forward; documents the per-day expansion sequence and the Bennett College women's-college contingent's entry into the action waves)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/35029717",
+      "title": "Linda Beatrice Brown, Belles of Liberty: Gender, Bennett College, and the Civil Rights Movement",
+      "publisher": "Women and Wisdom Press / Bennett College, 2013; WorldCat OCLC 35029717 (the institutional history of Bennett College's role in the Greensboro Movement and the longer Black women's-college tradition; documents the Willa B. Player presidency, the February 1960 sit-in participation, and the post-1960 movement work of Bennett alumnae)"
+    },
+    {
+      "url": "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
+      "title": "About the Civil Rights History Project Collection",
+      "publisher": "American Folklife Center, Library of Congress (the joint LoC and Smithsonian National Museum of African American History and Culture collection that documents the Greensboro Movement and post-1960 SNCC-network voices including Esther M. A. Terry's oral history)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/56214729",
+      "title": "Fabio Rojas, From Black Power to Black Studies: How a Radical Social Movement Became an Academic Discipline",
+      "publisher": "Johns Hopkins University Press, 2007; WorldCat OCLC 56214729 (institutional history of the establishment of Black Studies departments in the late 1960s and early 1970s American university system, including the 1970 UMass Amherst W. E. B. Du Bois Department founding under Ekwueme Michael Thelwell's chairmanship, the institutional home Esther M. A. Terry joined in its early decade)"
+    },
+    {
+      "url": "https://www.umass.edu/afroam/",
+      "title": "W. E. B. Du Bois Department of Afro-American Studies, University of Massachusetts at Amherst",
+      "publisher": "University of Massachusetts at Amherst (the department founded in 1970 by Ekwueme Michael Thelwell, where Esther M. A. Terry served on the faculty for over two decades before her later return to Bennett College as dean of the Faculty)"
+    },
+    {
+      "url": "https://www.bennett.edu/",
+      "title": "Bennett College institutional record",
+      "publisher": "Bennett College, Greensboro, North Carolina (the United Methodist Church women's college founded in 1873 and reorganized as a women's institution in 1926; Esther M. A. Terry's undergraduate alma mater and her later administrative home as dean of the Faculty)"
+    },
+    {
+      "url": "https://www.sitinmovement.org/",
+      "title": "International Civil Rights Center and Museum",
+      "publisher": "International Civil Rights Center and Museum, Greensboro, North Carolina (the museum opened on February 1, 2010 at the preserved F. W. Woolworth building at 134 South Elm Street; maintains an oral-history program and curatorial partnerships with Bennett College and North Carolina A&T State University as the institutional commemorative anchor for the Greensboro Movement)"
     }
   ]
 }
