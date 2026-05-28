@@ -3,17 +3,22 @@
   "slug": "simeon-wright",
   "person_type": "interviewee",
   "entry_number": 138,
-  "born": null,
-  "died": null,
+  "born": 1942,
+  "died": 2017,
   "display_name": "Simeon Wright",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
-  "ai_reading": "Simeon Wright's top semantic neighbor is Wheeler Parker, Jr. (entry 125) at a high cosine count of 243, a strong single-neighbor signature in this catalog. The catalog flags a +0.75 reading toward Collective Discipline on the Individual Conscience vs Collective Discipline axis as the most-distinctive structural reading.",
-  "biographical_paragraph": "Simeon Wright's oral history is held at the Library of Congress as entry 138 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries an ingestion-only audit tier: the catalog ingested the transcript but did not subject it to the audit cascade, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "First cousin of Emmett Till (catalog external figure); son of Moses Wright, the great-uncle Till was visiting at the time of his murder; eyewitness to Till's August 28, 1955 abduction from the Wright home in Money, Mississippi; co-author of Simeon's Story: An Eyewitness Account of the Kidnapping of Emmett Till (2010); pastor of Northwestern Baptist Church in Cicero, Illinois.",
+  "ai_reading": "Wright's top semantic neighbor is Wheeler Parker, Jr. (entry 125) at a high cosine count of 243, a strong single-neighbor signature in this catalog and the catalog's clearest fellow-witness vector pairing: Parker is also Till's cousin, was also present at the August 1955 Money, Mississippi events, and his oral history rhymes with Wright's testimony as the catalog's most-mutually-corroborating pair. The catalog flags a +0.75 reading on the Individual Conscience vs Collective Discipline axis (far toward Collective Discipline) as the most-distinctive structural reading; for a single-event eyewitness whose primary biographical claim is the firsthand observation of his cousin's abduction, the embedding's pull toward Collective Discipline is consistent with a testimony register that preserves a family-and-community-mediated narrative over an individual-witness arc, a feature shared with the broader Mississippi-rural cohort the catalog tracks.",
+  "biographical_paragraph": "While Wright's LoC oral history carries an ingestion-only audit tier (the catalog ingested the transcript but did not subject it to the audit cascade, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), his external biographical record is well-documented in his 2010 memoir [src: 1]. Wright was born September 13, 1942 in Money, Mississippi, the youngest of Moses and Elizabeth Wright's twelve children; he was twelve years old in August 1955 when his cousin Emmett Till came down from Chicago to spend two weeks with the family. He was sleeping in the same bed as Till when Roy Bryant and J. W. Milam came to the Wright home in the early morning of August 28, 1955 and took Till at gunpoint. The Wright family fled Mississippi after the trial; Moses Wright had testified against Bryant and Milam (the photograph of his courtroom finger-pointing at the killers is one of the most-circulated images of the case), and the family settled in Argo, Illinois. Simeon Wright became a pipefitter and a pastor (Northwestern Baptist Church in Cicero, Illinois) and lived his adult life in the Chicago area. His 2010 memoir Simeon's Story: An Eyewitness Account of the Kidnapping of Emmett Till (with Herb Boyd, Lawrence Hill Books) is his canonical first-person account [src: 2]. He died September 4, 2017 at seventy-four [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669109/",
       "title": "Simeon Wright oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/463478787",
+      "title": "Simeon Wright with Herb Boyd, Simeon's Story: An Eyewitness Account of the Kidnapping of Emmett Till",
+      "publisher": "Lawrence Hill Books, 2010; WorldCat OCLC 463478787"
     }
   ]
 }
