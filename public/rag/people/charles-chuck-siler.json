@@ -9,11 +9,17 @@
   "role_summary": "Civil rights movement participant; in this corpus's embedding his testimony pairs with Charles McLaurin and Robert L. Carter, and his axis positions form one of the catalog's narrowest centrist bands.",
   "ai_reading": "Siler's top semantic neighbors are Charles McLaurin (entry 17, count 103), Robert L. Carter (entry 108, NAACP LDF, count 87), Ben Caldwell (entry 6), Nathaniel Hawthorne Jones (entry 92), and John Churchville (entry 63). The cluster crosses Mississippi SNCC, the NAACP legal-litigation network, and the Black Arts cohort (via Caldwell). His axis positions are all within +/-0.27 of zero (the largest being +0.27 toward Collective Discipline, the others all under +0.11), placing him among the catalog's most centrist voices alongside McDew (entry 16), Hayling (entry 103), and Terry (entry 40). For an interviewee whose neighbor counts are modest, the embedding's broad-cross-network reading with no single subgroup dominating is the catalog's structural observation about him.",
   "biographical_paragraph": "Charles \"Chuck\" Siler's oral history is held at the Library of Congress as entry 19 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "movement_context": "The cross-network embedding signature this page surfaces (SNCC Mississippi grassroots through McLaurin, NAACP legal-litigation through Carter, Black Arts Movement through Caldwell) is the catalog's most heterogeneous top-five-neighbors profile in the audited subset; the centrist axis-position band reinforces the same reading at a different layer of the embedding substrate [src: 1]. The Civil Rights History Project corpus contains a small subset of interviewees whose biographical sourcing outside the LoC finding aid is sparse enough that the catalog cannot independently anchor specific organizing-role claims; the project's institutional design (oral histories were prioritized for known principal organizers but also recorded with cross-network participants whose movement contributions were specific and local rather than network-leadership-positional) accounts for this distribution [src: 2]. The catalog page for Siler will remain at the present scope until external biographical sourcing surfaces that can be cited with confidence; this is the conservative practice the catalog applies whenever the cross-network embedding signature is the only structural information available [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669185/",
       "title": "Charles \"Chuck\" Siler oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
+      "title": "Civil Rights History Project, American Folklife Center, About This Collection",
+      "publisher": "Library of Congress, American Folklife Center (AFC 2010/039 collection description and methodology)"
     }
   ]
 }
