@@ -6,7 +6,7 @@
   "born": null,
   "died": null,
   "display_name": "Joan Trumpauer Mulholland",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
+  "role_summary": "Freedom Rider (1961); the white woman in the Anne Moody / John Salter / Memphis Norman Woolworth's sit-in photograph of May 28, 1963 in Jackson, Mississippi; one of the white students who transferred to historically Black Tougaloo College; founder of the Joan Trumpauer Mulholland Foundation.",
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Joan_Trumpauer_Mulholland_-_2013.jpg",
     "alt": "Joan Trumpauer Mulholland, photographed February 2013",
@@ -16,13 +16,18 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Joan_Trumpauer_Mulholland_-_2013.jpg",
     "date_taken": "2013-02-22"
   },
-  "ai_reading": "Joan Trumpauer Mulholland's top semantic neighbor is Juadine Henderson (entry 68, count 137); the broader cluster includes C. T. Vivian (#134), Charles McLaurin (#17), Frankye Adams-Johnson (#43).",
-  "biographical_paragraph": "Joan Trumpauer Mulholland's oral history is held at the Library of Congress as entry 60 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries a not-auditable audit tier: the catalog cannot independently certify the transcript against primary sources for this entry, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "ai_reading": "Mulholland's top semantic neighbor is Juadine Henderson (entry 68) at a cosine count of 137; the broader cluster includes C. T. Vivian (entry 134), Charles McLaurin (entry 17), and Frankye Adams-Johnson (entry 43). The cluster is the Mississippi-organizing cohort her 1961-1965 work overlapped with. The embedding finds her testimony pulling closest to Henderson, the Mississippi SNCC organizer who is a far less culturally prominent figure than the Woolworth's sit-in photograph would predict pairing her with; that the corpus's strongest cosine for Mulholland is to a less-famous fellow Mississippi organizer rather than to a more-famous photographed-event participant is the novel observation, the embedding catching the substantive shared field work over the photographed moment that defines her cultural reception.",
+  "biographical_paragraph": "While Mulholland's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), her external biographical record is documented in her son Loki Mulholland's 2013 documentary An Ordinary Hero: The True Story of Joan Trumpauer Mulholland and the accompanying biographical work [src: 1, src: 2]. Mulholland was born September 14, 1941 in Washington, D.C., the daughter of a Georgia family. She attended Duke University in 1960-1961 but withdrew after deciding to commit full-time to civil rights organizing; she was one of the youngest participants in the 1961 Freedom Rides, arrested at the Jackson, Mississippi bus station and sentenced to two months at Mississippi State Penitentiary's Parchman Farm where the Riders were held [src: 2]. She enrolled at Tougaloo College, the historically Black school outside Jackson, becoming one of a small number of white students at the institution. On May 28, 1963 she joined Anne Moody, John Salter, and Memphis Norman in the Jackson Woolworth's sit-in; the photographs of the sit-in (notably the moments when whites poured ketchup, mustard, and sugar on the seated protesters) became some of the most-circulated images of the Mississippi movement [src: 2]. She continued organizing through Freedom Summer 1964 and the Selma to Montgomery marches of 1965. After leaving the South she settled in Arlington, Virginia, where she worked decades in K-12 education and founded the Joan Trumpauer Mulholland Foundation to advance civil rights education in schools [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669178/",
       "title": "Joan Trumpauer Mulholland oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.joantrumpauermulhollandfoundation.org/",
+      "title": "Joan Trumpauer Mulholland Foundation, biographical record and primary-source documents",
+      "publisher": "Joan Trumpauer Mulholland Foundation (Arlington, Virginia)"
     }
   ]
 }

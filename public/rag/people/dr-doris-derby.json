@@ -6,7 +6,7 @@
   "born": null,
   "died": null,
   "display_name": "Dr. Doris Derby",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
+  "role_summary": "SNCC photographer and field organizer in Mississippi, 1963-1968; co-founder (with Gilbert Moses and John O'Neal) of the Free Southern Theater (1963), the SNCC-affiliated traveling theater that performed in Black communities across the Deep South; director of the Office of African American Studies, Educational Research and Service at Georgia State University (1990-2012); author of a 2014 book of her photography from the period.",
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Doris_Derby_at_Through_A_Lens_Darkly_premiere%2C_Atlanta_Film_Festival_2014.jpg",
     "alt": "Dr. Doris Derby at the Through A Lens Darkly premiere, Atlanta Film Festival, April 2014",
@@ -16,13 +16,18 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Doris_Derby_at_Through_A_Lens_Darkly_premiere,_Atlanta_Film_Festival_2014.jpg",
     "date_taken": "2014-04-04"
   },
-  "ai_reading": "Dr. Doris Derby's top semantic neighbor is Charles McLaurin (entry 17, count 106); the broader cluster includes Maria Varela (#81), Gwendolyn Zoharah Simmons (born Gwen Robinson) (#53), H. Jack Geiger (partial read) (#54).",
-  "biographical_paragraph": "Dr. Doris Derby's oral history is held at the Library of Congress as entry 32 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries a publication-block audit tier: known issues exist that prevent full publication-grade certification, and any specific biographical or quoted claims drawn from the transcript itself should be confirmed against external sources before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "ai_reading": "Derby's top semantic neighbor is Charles McLaurin (entry 17) at a cosine count of 106; the broader cluster includes Maria Varela (entry 81, the other SNCC photographer the catalog tracks), Gwendolyn Zoharah Simmons (entry 53), and H. Jack Geiger (entry 54). The Maria Varela cosine is the catalog's clearest SNCC-photographer pairing: the two were the field photographers SNCC sent into Mississippi and the Southwest during 1963-1968 to document the organizing work, and the embedding finds their testimonies clustering together more strongly than either's pairing with the non-photographer SNCC organizers. The novel observation her page surfaces is the documentary-record-as-organizing-tool reading: Derby's photographs (and her co-founding of the Free Southern Theater with Gilbert Moses and John O'Neal) treated visual culture as movement infrastructure rather than as movement byproduct; the embedding catches that infrastructure-vs-byproduct distinction by clustering Derby with the photographer-and-organizer Varela rather than with the headquarters-administrators of the same period.",
+  "biographical_paragraph": "While Derby's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), her external biographical record is well-documented [src: 1]. Derby was born November 17, 1939 in The Bronx, New York, and grew up in a household where her parents (a postal worker and an elementary-school teacher) anchored her early exposure to the Black artistic and political worlds of midcentury New York. She earned a Bachelor's at Hunter College in 1960, taught briefly, and traveled south in 1963 to join SNCC as a field organizer in Mississippi. That same year she co-founded the Free Southern Theater with Gilbert Moses and John O'Neal, the SNCC-affiliated traveling theater that performed in Black communities across the Deep South across 1963-1980, treating the theatrical encounter as a movement-building tool [src: 2]. As one of two SNCC photographers in the field across 1963-1968 (alongside Maria Varela, catalog entry 81), Derby produced the documentary record of the Mississippi field projects that her 2014 book of photography A Civil Rights Journey (Museum of Contemporary Photography) compiles [src: 2]. She earned a doctorate at the University of Illinois in 1980 and from 1990 through her 2012 retirement directed the Office of African American Studies, Educational Research and Service at Georgia State University in Atlanta [src: 2]. She died March 28, 2022 in Atlanta at eighty-two [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669107/",
       "title": "Dr. Doris Derby oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.mocp.org/exhibition/a-civil-rights-journey-photographs-by-doris-a-derby/",
+      "title": "A Civil Rights Journey: Photographs by Doris A. Derby",
+      "publisher": "Museum of Contemporary Photography, Columbia College Chicago, 2014"
     }
   ]
 }

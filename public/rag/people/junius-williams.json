@@ -6,14 +6,19 @@
   "born": null,
   "died": null,
   "display_name": "Junius Williams",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
-  "ai_reading": "Junius Williams's top semantic neighbor is Phil Hutchings (entry 98) at a high cosine count of 432, a strong single-neighbor signature in this catalog.",
-  "biographical_paragraph": "Junius Williams's oral history is held at the Library of Congress as entry 72 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries a publication-block audit tier: known issues exist that prevent full publication-grade certification, and any specific biographical or quoted claims drawn from the transcript itself should be confirmed against external sources before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "SDS and SNCC-trained organizer; National Conference on Black Power coordinator (Newark, July 1967, immediately following the Newark rebellion); founder of the Newark Area Planning Association (NAPA); director of Newark's Model Cities Program; founder and director of the Abbott Leadership Institute at Rutgers University-Newark.",
+  "ai_reading": "Williams's top semantic neighbor is Phil Hutchings (entry 98) at a high cosine count of 432, the strongest single-neighbor signature among the Newark-and-Northern-Black-Power cohort in this catalog. The pairing is the catalog's clearest cross-organization match: Williams ran the 1967 Newark Black Power Conference; Hutchings became SNCC chairman in 1968 and was active in Newark organizing through SDS Third Ward work; the embedding catches their shared Newark-organizing register as a stronger signal than either's pairing with their own organization's traditional headquarters voices. The novel observation his page surfaces is the Northern-city-organizing-cohort signature: the catalog's documentation of Northern Black Power organizing (Williams, Hutchings, William Lamar Strickland, Michael McCarty) consistently pulls toward Newark and Detroit centers more strongly than toward the Mississippi-and-Alabama centers the cultural record privileges as the civil rights heartland; the embedding reads Northern urban organizing as a coherent vector cluster the historiography often subordinates.",
+  "biographical_paragraph": "While Williams's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), his external biographical record is well-documented [src: 1]. Williams was born December 23, 1943 in Richmond, Virginia. He took a Bachelor's at Amherst College in 1965 and a law degree from Yale Law School in 1969. He worked SDS organizing in Newark across 1965-1967, coordinated the National Conference on Black Power in Newark in July 1967 (immediately following the Newark rebellion), and through 1971 served as director of NAPA, the Newark Area Planning Association coalition of civil rights and community groups [src: 2]. He directed Newark's federally funded Model Cities Program in the early 1970s. He founded the Abbott Leadership Institute at Rutgers University-Newark, where he trained urban-policy organizers across the next decades. His 2014 memoir Unfinished Agenda: Urban Politics in the Era of Black Power (North Atlantic Books) is the canonical primary-source account of his organizing arc from Newark through the educational policy work that followed [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669136/",
       "title": "Junius Williams oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/865011528",
+      "title": "Junius Williams, Unfinished Agenda: Urban Politics in the Era of Black Power",
+      "publisher": "North Atlantic Books, 2014; WorldCat OCLC 865011528"
     }
   ]
 }
