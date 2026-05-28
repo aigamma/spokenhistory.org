@@ -12,7 +12,7 @@ One JSON file per named individual on the site. Each file is loaded by the `/per
 - **PersonPage semantic-neighbor chips** link directly to `/person/${neighbor-slug}` (resolved via `peopleIndex.by_entry`, fallback to Semantic Overlap tab if no catalog page exists yet).
 - **PersonPage influence-graph "Discussed in this interview" chips** link to `/person/${slug}` for every figure with a catalog page, both in-corpus and external (resolved via `peopleIndex.by_slug` + `by_normalized_name` fallback).
 
-The `/people` browse page + the precomputed `public/rag/people/index.json` (carrying `by_entry`, `by_slug`, `by_normalized_name`, and the per-entry `photo_src`, `role_preview`, `born`, `died` summary fields) are the substrate. Re-run `node scripts/build_people_index.mjs` after adding, renaming, or modifying any catalog file.
+The `/people` browse page + the precomputed `public/rag/people/index.json` (carrying `by_entry`, `by_slug`, `by_normalized_name`, and the per-entry `photo_src`, `role_preview`, `born`, `died` summary fields) are the substrate. Re-run `npm run build-people-index` (or `node scripts/build_people_index.mjs` directly) after adding, renaming, or modifying any catalog file.
 
 ## Catalog purpose (READ FIRST)
 

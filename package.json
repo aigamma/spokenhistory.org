@@ -14,6 +14,7 @@
     "deploy:firebase": "npm run build && npx firebase-tools deploy --only hosting",
     "docs": "jsdoc -c jsdoc.json",
     "calculate-topics": "node scripts/firebase/calculate-top-topics.cjs",
+    "build-people-index": "node scripts/build_people_index.mjs",
     "a11y": "npx pa11y-ci",
     "a11y:json": "npx pa11y-ci --reporter json > .pa11yci-report.json"
   },
