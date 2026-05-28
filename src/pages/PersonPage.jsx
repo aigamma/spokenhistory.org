@@ -271,14 +271,28 @@ export default function PersonPage() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
       <main id="main-content" tabIndex={-1} className="max-w-4xl mx-auto px-4 sm:px-6 py-8 focus:outline-none">
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="inline-flex items-center gap-1 text-sm text-stone-700 hover:text-stone-900 mb-6 focus:outline-none focus-visible:underline"
-        >
-          <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-          Back
-        </button>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6">
+          <button
+            type="button"
+            onClick={() => navigate(-1)}
+            className="inline-flex items-center gap-1 text-sm text-stone-700 hover:text-stone-900 focus:outline-none focus-visible:underline"
+          >
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+            Back
+          </button>
+          {/* Anchor link to the catalog browse page. When the visitor
+              arrived via a direct URL (a shared link, a search result,
+              a bookmark) navigate(-1) goes back to the document.referrer
+              which may be outside the site; this link gives a reliable
+              in-site path to the catalog index. */}
+          <Link
+            to="/people"
+            className="inline-flex items-center gap-1 text-sm text-stone-700 hover:text-stone-900 focus:outline-none focus-visible:underline"
+          >
+            <Users className="w-4 h-4" aria-hidden="true" />
+            All people
+          </Link>
+        </div>
 
         {/* Header: portrait (if PD photo available) + identity block. */}
         <header className="flex flex-col sm:flex-row gap-6 mb-8">
