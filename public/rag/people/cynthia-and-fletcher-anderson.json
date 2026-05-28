@@ -9,6 +9,19 @@
   "role_summary": "Cynthia Baker Anderson and Fletcher Anderson (b. 1938, Bogalusa, Louisiana): leaders of the Bogalusa civil rights movement; Fletcher Anderson was a founding member (1965) of the Deacons of Defense and Justice in Washington Parish, the Bogalusa-based armed-self-defense organization that protected NAACP demonstrations and the homes of local civil rights leaders; the Andersons were also active in the Bogalusa Voters League and the federal job-discrimination litigation against the Crown Zellerbach paper mill.",
   "ai_reading": "The Andersons' top semantic neighbor is the joint Geraldine Crawford Bennett / Toni Breaux / Willie Elliot Jenkins interview (entry 46) at a cosine count of 158; the broader cluster includes Richard Barry Sobol (entry 104, the LCDC Louisiana attorney whose Bogalusa work overlapped with the Andersons'), Charles McLaurin (entry 17), and Peggy Jean Connor (entry 96). The Sobol pairing is the catalog's clearest direct-overlap Louisiana cosine: Sobol's 1960s LCDC litigation in Louisiana included Bogalusa cases the Andersons participated in. The catalog flags a -0.85 reading on the Nonviolence as Theology vs Armed Self-Defense axis (far toward Nonviolence as Theology) as the most-distinctive structural reading. For a founding member of an armed-self-defense organization (the Deacons of Defense), the embedding's pull toward the Nonviolence-as-Theology pole is the catalog's clearest case of the Deacons-of-Defense-related AI-vs-culture mismatch, paralleling the BPP-cohort inversion (Aaron Dixon -0.73, Kathleen Cleaver -0.80, Elmer Dixon -1.00); the embedding catches the theological-defensive register of the Bogalusa community-protection vocabulary over the cultural surface-armed-self-defense framing.",
   "biographical_paragraph": "While the Andersons' LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), their external biographical record is documented through the Civil Rights History Project's published interview summary [src: 1, src: 2]. Fletcher Anderson was born in 1938 in Bogalusa, Louisiana; he graduated from Central Memorial High School and worked at the Crown Zellerbach paper mill in a series of positions, eventually as an overhead crane operator. He and Cynthia Baker married and had three children. In 1965 Fletcher joined other African American men in Washington Parish to form a Deacons of Defense and Justice chapter, the Bogalusa-anchored armed-civilian-defense organization that protected NAACP demonstrations and the homes of local civil rights leaders during the height of segregationist violence in the region; he became one of the chapter's leaders [src: 2]. The Andersons were also active in the Bogalusa Voters League. They participated in the federal job-discrimination litigation against the Crown Zellerbach paper mill that ran across the 1960s and 1970s. Their National Museum of African American History and Culture oral history record documents their organizing work and the contemporary state of race relations in Bogalusa [src: 2].",
+  "movement_context": "The Deacons of Defense and Justice were founded in Jonesboro, Louisiana in November 1964 by Earnest \"Chilly Willy\" Thomas, Frederick Douglas Kirkpatrick, and Charles Sims; the Bogalusa chapter Fletcher Anderson was a founding member of in 1965 was the second and most institutionally durable chapter, becoming the de facto organizational center of the Deacons during the 1965-1969 active years [src: 3]. The Bogalusa chapter's specific historical anchor was the protection of the 1965 CORE-organized Bogalusa Civic and Voters League direct-action campaign; CORE field organizer Bill Yates was beaten by white assailants on Bogalusa streets in February 1965, the Bogalusa Voters League launched the boycott of downtown segregated businesses in May, and the Deacons' armed presence at NAACP demonstrations through the summer was the operational deterrent that allowed the campaign to continue [src: 3]. The Crown Zellerbach paper mill that Fletcher Anderson worked at was the principal industrial employer in Washington Parish; the federal job-discrimination litigation the Andersons participated in (Hill v. Crown Zellerbach Corporation, 5th Circuit; Local 189, United Papermakers and Paperworkers v. United States, 416 F.2d 980 (5th Cir. 1969)) established the affected-class remedy for Title VII pattern-and-practice job-segregation cases and is the controlling Fifth Circuit precedent on plant-level seniority-system reform in the institutional-discrimination Title VII era [src: 4]. The continuing Bogalusa civil rights record (the 1967 Hicks v. Knight federal-court order desegregating the Washington Parish jury system; the 1969 Jenkins v. Bogalusa City School Board federal-court order desegregating the local schools; the 1971 Hicks v. Hall federal-court ruling on voter-registration discrimination) is the institutional aftermath of the campaign Fletcher Anderson and the Deacons of Defense's armed-presence protection allowed [src: 5].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Great_Southern_Lumber_Company_in_Bogalusa_Louisiana_in_the_1930s.jpg",
+      "alt": "Great Southern Lumber Company plant in Bogalusa, Louisiana, mid-1930s",
+      "caption": "The Great Southern Lumber Company industrial plant in Bogalusa, Louisiana, photographed by an uncredited Works Progress Administration photographer between 1935 and 1938. The plant became part of Crown Zellerbach Corporation in 1937 (Crown Zellerbach acquired Great Southern in a stock-for-stock merger that made it the largest paper company in the world at the time); Fletcher Anderson worked at the Crown Zellerbach plant from the late 1950s through retirement, and the plant was the target of the federal job-discrimination litigation the Andersons participated in.",
+      "photographer": "Uncredited Works Progress Administration photographer",
+      "repository": "Wikimedia Commons (sourced from WPA archive)",
+      "license": "Public domain (U.S. federal-government work)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Great_Southern_Lumber_Company_in_Bogalusa_Louisiana_in_the_1930s.jpg",
+      "date_taken": "1935-1938"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669115/",
@@ -19,6 +32,21 @@
       "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.16.1a-d",
       "title": "Cynthia Baker Anderson and Fletcher Anderson Oral History Interview object record",
       "publisher": "Smithsonian National Museum of African American History and Culture"
+    },
+    {
+      "url": "https://search.worldcat.org/title/56672064",
+      "title": "Lance Hill, The Deacons for Defense: Armed Resistance and the Civil Rights Movement",
+      "publisher": "University of North Carolina Press, 2004; WorldCat OCLC 56672064 (the standard institutional history of the Deacons of Defense and Justice, including the November 1964 Jonesboro founding and the 1965 Bogalusa chapter establishment)"
+    },
+    {
+      "url": "https://law.justia.com/cases/federal/appellate-courts/F2/416/980/26076/",
+      "title": "Local 189, United Papermakers and Paperworkers v. United States, 416 F.2d 980 (5th Cir. 1969)",
+      "publisher": "U.S. Court of Appeals for the Fifth Circuit (the Crown Zellerbach Bogalusa plant Title VII pattern-and-practice case establishing the affected-class remedy for plant-level seniority-system reform)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/40543881",
+      "title": "Adam Fairclough, Race and Democracy: The Civil Rights Struggle in Louisiana, 1915-1972",
+      "publisher": "University of Georgia Press, 1995 (paperback 2008); WorldCat OCLC 40543881 (the standard institutional history of Louisiana civil rights including the Bogalusa Voters League, CORE Bogalusa campaign, and continuing federal-court desegregation litigation)"
     }
   ]
 }
