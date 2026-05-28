@@ -3,17 +3,116 @@
   "slug": "timothy-jenkins",
   "person_type": "interviewee",
   "entry_number": 120,
-  "born": null,
-  "died": null,
   "display_name": "Timothy Jenkins",
-  "role_summary": "SNCC organizer; in this corpus's embedding his testimony clusters with the SNCC-office-and-Northern-support cohort (Charles McLaurin, Betty Garman Robinson, Courtland Cox, Phil Hutchings, Martha Prescod Norman Noonan).",
-  "ai_reading": "Jenkins's top semantic neighbors are Charles McLaurin (entry 17, count 198), Betty Garman Robinson (entry 7, count 185), Courtland Cox (entry 24, count 122), Phil Hutchings (entry 98, count 121), and Martha Prescod Norman Noonan (entry 83, count 117). The cluster is the SNCC inner-organizational cohort: McLaurin (Mississippi field), Robinson (Atlanta office Northern support), Cox (Howard NAG / Washington logistics), Hutchings (1968 SNCC chairman), Noonan (SNCC organizer). His axis positions are all in moderate ranges (-0.19 to +0.24), the catalog's pattern for SNCC office/coordinating-level figures whose testimony reads as institutional rather than action-specific.",
-  "biographical_paragraph": "Timothy Jenkins's oral history is held at the Library of Congress as entry 120 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "born": 1938,
+  "died": null,
+  "role_summary": "Howard University student-body president; National Affairs Vice President of the United States National Student Association (1960-1961); SNCC executive-committee member who pressed the organization toward voter registration and helped draft the three-judge-panel provision of the 1965 Voting Rights Act.",
+  "ai_reading": "Cosine similarity in this corpus pulls Jenkins's passages toward the SNCC office-and-coordination cohort: his nearest neighbors are Betty Garman Robinson (entry 7, 43 shared top-neighbor hits, peak similarity 0.78), Charles McLaurin (entry 17, 35 hits), and Courtland Cox (entry 24, 29 hits), with Phil Hutchings (entry 98) and Martha Prescod Norman Noonan (entry 83) close behind. The influence graph, which counts who he names rather than who he reads like, points somewhere the embedding does not: his single heaviest out-edge runs to Rev. Charles Melvin Sherrod (entry 18), whom he discusses more than any other corpus figure, yet Sherrod sits outside that cosine top tier entirely. On the Southern Struggle versus Northern Struggle axis the embedding places him at +0.14 (normalized) toward the Northern pole, an uncommon reading among CRHP interviewees and one that tracks his own account of going to Yale to be 'a northern voice for SNCC'; and on the Sacred versus Secular axis it reads him as near-center (-0.05) rather than strongly secular, even though his testimony repeatedly locates him on 'the secular side' of SNCC's founding ideological split.",
+  "biographical_paragraph": "Timothy Lionel Jenkins was born in Philadelphia on December 30, 1938 [src: 2]. He was president of the student body at Howard University when the sit-in wave reached the campus, and in 1960 he was elected National Affairs Vice President of the United States National Student Association, a federation of several hundred campuses [src: 2]. From that position he sat on the SNCC executive committee and argued that the organization should make voter registration its central work; the case came to a head at the August 1961 debate at the Highlander Folk School, where Jenkins, Rev. Charles Melvin Sherrod (entry 18), Charles F. (\"Chuck\") McDew (entry 16), and Charles Jones held that taking control of elective office would change the South more durably than direct action alone [src: 2, 4]. That summer he organized a multi-week leadership-development seminar in Nashville, funded by the New World Foundation, which he later called the first Freedom School of the movement [src: 2, 3]. Searching the Mississippi code, he located a Reconstruction-era statute permitting protest votes and independent parties, the legal seed of the later Mississippi Freedom Democratic Party effort [src: 2]. He enrolled at Yale Law School and worked the Northern campuses as a fundraiser and speaker for SNCC and the Freedom Singers [src: 4]. In 1965 he helped prepare the SNCC testimony to the House Judiciary Committee under Chairman Emanuel Celler that proposed seating a three-judge panel, rather than a single local judge, in voting-rights cases under the Voting Rights Act [src: 2, 4]. His later work ran through the National Conference of Black Lawyers, the United States Postal Service governing board under President Jimmy Carter, and the presidency of the University of the District of Columbia [src: 5]. His oral history is held by the Library of Congress as entry 120 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "00:52:15",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Jenkins explains why he and the voter-registration faction in SNCC held that the ballot, not the lunch counter, was the lever of change:",
+      "quote": "That was only going to be altered when you took the control of the organs of state. Because the organs of state determined who the police chief was."
+    },
+    {
+      "relation": "self",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "00:55:46",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "On the claim, which he attributes to Howard Zinn among others, that the Kennedy administration co-opted SNCC into voter registration:",
+      "quote": "We were co-opted if anything we were co-opting them to become supporters and invest in what we wanted to do."
+    },
+    {
+      "relation": "self",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "01:21:05",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "On why SNCC chose McComb, Mississippi, when the NAACP wanted Atlanta and SCLC wanted Montgomery:",
+      "quote": "Nobody wanted Macomb. But SNCC thought it important to go into one of the most hostile and remote areas of the movement and make a beachhead there that could be a model for the rest of the South."
+    },
+    {
+      "relation": "self",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "01:48:53",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Jenkins recounts climbing to a rooftop after Medgar Evers's funeral, where armed Black veterans had assistant attorney general John Doar in their rifle sights, mistaking him for the local police:",
+      "quote": "And I remember coming out there saying, Stop in the name of Medgar. And they stopped."
+    },
+    {
+      "relation": "self",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "02:15:39",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Reflecting on a career that moved from organizing into law, government, and university administration, he frames the continuity:",
+      "quote": "So whereas one time you were on the street, now you're in the sweets, but you're carrying out the same mission."
+    },
+    {
+      "relation": "about",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "00:24:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "Arriving at Howard as a freshman, Ekwueme Michael Thelwell (entry 34) recalls the upperclassman who ran the student-orientation session:",
+      "quote": "Yeah, a very brilliant young man, Tim Jenkins, who was head of the student union when I got there, student government."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "00:17:41",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "Describing the evening speakers at her movement orientation, Lisa Anderson Todd (entry 79) places Jenkins as the briefer on pending federal legislation:",
+      "quote": "Timothy Jenkins spoke to us about the status of the civil-pending civil rights bill."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655417/",
       "title": "Timothy Jenkins oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://snccdigital.org/people/tim-jenkins/",
+      "title": "Tim Jenkins",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project), drawing on Clayborne Carson, In Struggle: SNCC and the Black Awakening of the 1960s (Harvard University Press, 1981) and Wesley Hogan, Many Minds, One Heart: SNCC's Dream for a New America (University of North Carolina Press, 2007)"
+    },
+    {
+      "url": "https://snccdigital.org/events/nashville-leadership-development/",
+      "title": "Tim Jenkins organizes leadership development seminar in Nashville",
+      "publisher": "SNCC Digital Gateway, Duke University (the July 1961 New World Foundation-funded Nashville seminar Jenkins called the first Freedom School)"
+    },
+    {
+      "url": "https://www.crmvet.org/vet/jenkinst.htm",
+      "title": "Timothy L. Jenkins",
+      "publisher": "Veterans of the Civil Rights Movement (crmvet.org), Jenkins's own movement-veteran profile covering the NSA vice presidency, the Highlander voter-registration debate, and the Fisk/Nashville leadership seminar"
+    },
+    {
+      "url": "https://search.worldcat.org/title/123026822",
+      "title": "Wesley C. Hogan, Many Minds, One Heart: SNCC's Dream for a New America",
+      "publisher": "University of North Carolina Press, 2007; WorldCat OCLC 123026822 (treats Jenkins's National Student Association role and his push to turn SNCC toward voter registration)"
     }
   ]
 }

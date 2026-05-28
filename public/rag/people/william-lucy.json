@@ -3,17 +3,94 @@
   "slug": "william-lucy",
   "person_type": "interviewee",
   "entry_number": 128,
-  "born": null,
-  "died": null,
+  "born": 1933,
+  "died": 2024,
   "display_name": "William Lucy",
-  "role_summary": "AFSCME (American Federation of State, County and Municipal Employees) International Secretary-Treasurer; civil rights and labor organizer; co-founder of the Coalition of Black Trade Unionists.",
-  "ai_reading": "Lucy's top semantic neighbors are Kay Tillow (entry 74, count 116, labor-and-health-organizing voice), William Saunders (entry 130), Judge D'Army Bailey (entry 26, Memphis civil rights attorney), Phil Hutchings (entry 98, SNCC chairman 1968), and Wyatt Tee Walker (entry 132, SCLC executive director). The cluster bridges labor organizing (Lucy himself, Tillow, Saunders), Memphis civil rights legal work (Bailey, who was on the bench in the city where the AFSCME-organized Memphis sanitation workers' strike of 1968 drew MLK to his death), and SNCC/SCLC leadership (Hutchings, Walker). The embedding therefore reads Lucy's testimony as the labor-civil-rights bridge his career was built on; his -0.62 Sacred Framing reading is consistent with the secular-labor-union vocabulary of his AFSCME role.",
-  "biographical_paragraph": "William Lucy's oral history is held at the Library of Congress as entry 128 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "AFSCME (American Federation of State, County and Municipal Employees) International Secretary-Treasurer, 1972 to 2010; co-founder and first president of the Coalition of Black Trade Unionists; co-founder of the Free South Africa Movement.",
+  "ai_reading": "The cosine-similarity neighborhood around Lucy's testimony in this corpus is led by Kay Tillow (entry 74) and Walter Tillow (entry 124), two later-career labor-and-health organizers, by a wide margin: the aggregated overlap count to Kay Tillow is the single highest of any neighbor and roughly the size of his next two neighbors combined. The labor vocabulary, collective-bargaining, the worker as a party to the decision, the floor under wages, seems to dominate his vector signature over the Memphis-1968 material that the cultural record foregrounds. What the embedding does not surface is also notable: where a textbook account would tie Lucy first to the sanitation strike's SCLC orbit, his nearest neighbor with a catalog page on that side, Wyatt Tee Walker (entry 132), sits below not only the two Tillows but also William Saunders (entry 130), a South Carolina labor and community organizer, and Judge D'Army Bailey (entry 26), the Memphis civil-rights attorney. The space reads Lucy as a labor organizer who passed through Memphis, not as a Memphis figure who happened to be in a union.",
+  "biographical_paragraph": "William Lucy was born in Memphis on November 26, 1933, and raised in Richmond, California, where his father had gone to weld in the Kaiser shipyards during the Second World War [src: 2, 3]. He worked for Contra Costa County, California as a materials and research engineer for thirteen years before joining the national staff of AFSCME in 1966 as associate director of legislation and community affairs [src: 2, 3]. In February 1968 the union sent him to his birth city to assess a walkout by roughly 1,300 Memphis sanitation workers, and he stayed to help direct it; with a local minister he reduced the strikers' grievance to the placard slogan I Am a Man, which he traces in his oral history to Rev. James M. Lawson Jr's definition of racism as treating a man as though he were not one [src: 2, 4]. He became AFSCME's International Secretary-Treasurer in 1972 and held the office until 2010 [src: 1, 2]. The same year he co-founded the Coalition of Black Trade Unionists, with Nelson Jack Edwards, Charles A. Hayes, Cleveland Robinson, and William H. Simons, and served as its first president [src: 2, 5]. In the 1980s he co-founded the Free South Africa Movement, and in 1994 he was elected president of Public Services International, the first African American to lead that global labor federation [src: 2, 4]. His Library of Congress oral history is entry 128 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "William Lucy",
+      "speaker_slug": "william-lucy",
+      "source_entry": 128,
+      "timestamp": "00:30:44",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669193/",
+      "lead_in": "Asked how the Memphis walkout began, Lucy distinguished the cause of a strike from the mood of the workers:",
+      "quote": "Strikes don't come because workers are mad. Strikes become because they're frustrated and have no ability to resolve the issues that contribute to the frustration."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lucy",
+      "speaker_slug": "william-lucy",
+      "source_entry": 128,
+      "timestamp": "00:32:44",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669193/",
+      "lead_in": "On the imbalance of power that defined the sanitation strike:",
+      "quote": "It was a classic confrontation between a city with total power and a group of workers with no power other than a good idea."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lucy",
+      "speaker_slug": "william-lucy",
+      "source_entry": 128,
+      "timestamp": "00:40:39",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669193/",
+      "lead_in": "On what the strikers were actually demanding, beyond wages and safety:",
+      "quote": "It was the lack of respect, the absence of dignity, that caused these workers to say, we just had enough."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lucy",
+      "speaker_slug": "william-lucy",
+      "source_entry": 128,
+      "timestamp": "00:42:34",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669193/",
+      "lead_in": "Lucy describes settling on the strike's slogan after working through wording at the Peabody Hotel:",
+      "quote": "And it simply said, I am a man."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lucy",
+      "speaker_slug": "william-lucy",
+      "source_entry": 128,
+      "timestamp": "01:09:43",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669193/",
+      "lead_in": "On naming the new labor organization founded after the 1972 election:",
+      "quote": "And we intentionally called it Coalition of Black Trade Unionists."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669193/",
       "title": "William Lucy oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://guides.loc.gov/this-month-in-business-history/february/memphis-sanitation-workers-strike",
+      "title": "Memphis Sanitation Workers Went on Strike (This Month in Business History)",
+      "publisher": "Library of Congress, Business Reference Research Guides (account of the February 1968 strike, AFSCME's role, and the wage and safety conditions Lucy describes)"
+    },
+    {
+      "url": "https://aaregistry.org/story/william-lucy-union-activist-born/",
+      "title": "William Lucy, Union Activist born",
+      "publisher": "African American Registry (birth date and place, Contra Costa County engineering career, 1966 AFSCME staff appointment, 1972 Secretary-Treasurer, CBTU first president, 1994 Public Services International presidency)"
+    },
+    {
+      "url": "https://smlr.rutgers.edu/news-events/smlr-news/i-am-man-conversation-william-lucy",
+      "title": "Steve Flamisch, I Am a Man: A Conversation With William Lucy (February 26, 2021)",
+      "publisher": "Rutgers School of Management and Labor Relations (Lucy's first-person account of being dispatched to Memphis, the origin of the I Am a Man slogan, and the Free South Africa Movement)"
+    },
+    {
+      "url": "https://biography.jrank.org/pages/2529/Lucy-William.html",
+      "title": "William Lucy Biography: Launched Labor Career amid Social Strife, Worked with King on Memphis Strike",
+      "publisher": "JRank / Contemporary Black Biography (co-founders of the Coalition of Black Trade Unionists, AFSCME membership growth, and the chronology of Lucy's labor and anti-apartheid work)"
     }
   ]
 }

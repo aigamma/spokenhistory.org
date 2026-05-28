@@ -6,14 +6,91 @@
   "born": 1939,
   "died": null,
   "display_name": "Wheeler Parker, Jr.",
-  "role_summary": "First cousin and lifelong friend of Emmett Till (catalog external figure); the last surviving eyewitness to Till's August 24, 1955 visit to Bryant's Grocery and Meat Market in Money, Mississippi, and to Till's August 28, 1955 abduction from Moses Wright's home four nights later; pastor of Argo Temple Church of God in Christ in Argo, Illinois (over six decades); co-founder of the Emmett Till and Mamie Till-Mobley Memorial Foundation.",
-  "ai_reading": "Parker's top semantic neighbor is Simeon Wright (entry 138) at a high cosine count of 247, a strong single-neighbor signature in this catalog and the catalog's clearest fellow-witness vector pairing: Wright is also Till's cousin, was also present at the August 28, 1955 Money, Mississippi events, and his oral history rhymes with Parker's testimony as the catalog's most-mutually-corroborating pair. The novel observation his page surfaces is the longitudinal-witness signature: Parker has been telling the Till story for seventy years (1955 to the present), and the embedding catches the stable narrative-form his testimony has taken across the multi-decade arc of being the primary surviving eyewitness; the Wright cosine reads as the same narrative-stability anchor in another voice rather than as fact-corroboration that historiography would predict.",
-  "biographical_paragraph": "While Parker's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), his external biographical record is well-documented in his 2023 memoir [src: 1]. Parker was born August 16, 1939 in Schlater, Mississippi, the son of Wheeler Parker Sr. and Hallie Spearman Parker; his maternal grandfather Moses Wright was the great-uncle who Emmett Till was visiting in Money, Mississippi in August 1955. Parker, then fifteen, traveled to Mississippi with his cousin Emmett Till on the train from Chicago in late August 1955. He was present at Bryant's Grocery and Meat Market on August 24, 1955, when the contested encounter between Till and Carolyn Bryant occurred, and at Moses Wright's home in the early morning of August 28, 1955, when Roy Bryant and J. W. Milam took Till from his bed. After the murder Parker returned to Argo, Illinois and lived there for the rest of his life. In 1973 he was ordained in the Church of God in Christ and served as pastor of Argo Temple Church of God in Christ in Argo, Illinois for over six decades. His 2023 memoir A Few Days Full of Trouble: Revelations on the Journey to Justice for My Cousin and Best Friend, Emmett Till (with Christopher Benson, One World/Random House) is the canonical scholarly source on his life and his seventy-year role as the primary surviving witness to the events that catalyzed the modern civil rights movement [src: 2].",
+  "role_summary": "Cousin and boyhood friend of Emmett Till; eyewitness to Till's August 24, 1955 encounter at Bryant's Grocery and Meat Market in Money, Mississippi, and present at Moses Wright's home during Till's abduction on August 28, 1955; ordained in the Church of God in Christ and pastor of Argo Temple Church of God in Christ in Summit (Argo), Illinois since 1993.",
+  "ai_reading": "By raw cosine count the embedding ties Parker overwhelmingly to one voice: Simeon Wright (entry 138) appears as a near neighbor of Parker's passages 247 times, an order of magnitude beyond his next-strongest tie, Charles McLaurin (entry 17) at 87. Wright is also Till's cousin and was in the bed beside Emmett the night of the abduction, so the cluster reads as the corpus catching two accounts of the same August 1955 days rather than a thematic affinity; the influence graph confirms the closed loop, the only edges Parker's node carries run to and from Wright and to no one else. The less expected reading is on the Sacred / Secular axis. Parker pastored a Church of God in Christ congregation and frames the abduction memory itself through prayer and a vow he made to God that night, yet the embedding places his testimony at the 105th of 136 positions toward the Secular and Political pole, well past the sacred end where a six-decade minister's public framing would predict, a sign that the vector signature is dominated by the procedural, eyewitness, and justice-seeking register of his Till narrative more than by its devotional content. The single sharpest cosine peak in his neighbor set is stranger still: it lands at 0.96 against the joint interview of Black-press correspondents Simeon Booker and Moses Newson (entry 9), the journalists who carried the Till story into print, so the model's tightest single match for the surviving witness is not another family member but the reporters who documented the case.",
+  "biographical_paragraph": "Wheeler Parker, Jr. was born in 1939 in the Mississippi Delta and moved with his family in January 1947 to the south-suburban Argo (Summit) community outside Chicago [src: 2]. In the summer of 1955, at sixteen, he rode the train south with his fourteen-year-old cousin Emmett Till to stay with relatives near Money, Mississippi; his maternal grandfather, Moses Wright, was the great-uncle Till was visiting [src: 2, 3]. Parker was inside Bryant's Grocery and Meat Market on August 24, 1955 when the encounter with Carolyn Bryant occurred, and he was in the house in the early morning of August 28, 1955 when Roy Bryant and J. W. Milam came for Till [src: 3]. His Library of Congress oral history was recorded by Joseph Mosnier in Chicago on May 23, 2011 and is entry 125 of the Civil Rights History Project (AFC 2010/039) [src: 1]; that transcript carries a low audit tier, and any specific quoted claim drawn from it should be confirmed against external sources before publication. Parker accepted his call to the ministry in 1977, was ordained in the Church of God in Christ in 1978, and was appointed pastor of Argo Temple Church of God in Christ on December 5, 1993, a congregation rooted in the same Argo community where Till's grandmother Alma Carthan had settled [src: 4]. He and his wife, Dr. Marvel Parker, lead that church and are associated with the Emmett Till and Mamie Till-Mobley Institute, where she serves as executive director [src: 5]. His 2023 memoir, written with Christopher Benson, recounts both Till's life and his own decades as a surviving witness to the case [src: 6]. A recurring discrepancy across published profiles is his exact birth date and birthplace (a 1939 birth in the Schlater / Slaughter area of Leflore County is reported, with the specific day uncorroborated in the sources consulted here), and accounts describe him as Till's cousin without fixing the precise degree of kinship [src: 2, 5].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Wheeler Parker, Jr.",
+      "speaker_slug": "wheeler-parker-jr",
+      "source_entry": 125,
+      "timestamp": "00:09:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669110/",
+      "lead_in": "Parker describes boarding the train from Chicago knowing what a Black teenager faced in 1955 Mississippi:",
+      "quote": "So you're going down behind Iron Curtain. They equated it with going to, at that time, Russia was called Iron Curtain. You knew exactly, at least I did, knew exactly where you were going and what could happen because they told you the stories of things that had happened to people. And you knew that you had no protection under the law"
+    },
+    {
+      "relation": "self",
+      "speaker": "Wheeler Parker, Jr.",
+      "speaker_slug": "wheeler-parker-jr",
+      "source_entry": 125,
+      "timestamp": "00:13:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669110/",
+      "lead_in": "Recounting the moment at Bryant's Grocery and Meat Market on August 24, 1955 that the case turns on:",
+      "quote": "So I left Emmett in the store, and Simeon Wright came in right behind him. Then the both of them came out of the store. And after they came out and facing the store, Carolyn Bryant Donham came out. She's walking to facing the store to the right of the store. And Emmett whistled."
+    },
+    {
+      "relation": "self",
+      "speaker": "Wheeler Parker, Jr.",
+      "speaker_slug": "wheeler-parker-jr",
+      "source_entry": 125,
+      "timestamp": "00:27:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669110/",
+      "lead_in": "On the early morning of August 28, 1955, when the armed men entered the room where he lay:",
+      "quote": "So they came in and this guy had his pistol and one hand and a flashlight. It was pure terror."
+    },
+    {
+      "relation": "self",
+      "speaker": "Wheeler Parker, Jr.",
+      "speaker_slug": "wheeler-parker-jr",
+      "source_entry": 125,
+      "timestamp": "00:58:20",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669110/",
+      "lead_in": "Reflecting near the end of the interview on why he keeps telling the story:",
+      "quote": "I don't let nobody try to make me a hero or something great because all I did was survive. Scared as I could be. No hero. I'm just survived to tell the story."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Wright",
+      "speaker_slug": "simeon-wright",
+      "source_entry": 138,
+      "timestamp": "00:15:07",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669109/",
+      "lead_in": "Simeon Wright, Till's cousin and a fellow witness, independently places Wheeler at the store door, matching Parker's own account:",
+      "quote": "But we walked over to Bryant's Store, and Wheeler went inside of the store first. And then Emmett went in after Wheeler. And Wheeler came out, and Maurice sent me in behind Emmett to make sure that he didn't say anything that he shouldn't, because he just didn't know the ways of the South."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669110/",
-      "title": "Wheeler Parker, Jr. oral history",
+      "title": "Wheeler Parker oral history interview conducted by Joseph Mosnier in Chicago, Illinois, 2011 May 23",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://chicago.suntimes.com/2023/8/27/23848041/8-things-to-know-about-wheeler-parker-jr-emmett-tills-cousin-eyewitness-to-his-lynching",
+      "title": "8 Things to Know About Wheeler Parker Jr., Emmett Till's Cousin, Eyewitness to His Lynching",
+      "publisher": "Chicago Sun-Times, August 27, 2023 (establishes the January 1947 family move to Argo and the cousin relationship)"
+    },
+    {
+      "url": "https://www.npr.org/2023/03/12/1162677900/emmett-till-wheeler-parker",
+      "title": "He Was With Emmett Till the Night He Was Murdered. The Horror Haunts Him Still",
+      "publisher": "NPR, March 12, 2023 (first-person account of the 1955 train trip, the Money encounter, and the August 28 abduction)"
+    },
+    {
+      "url": "https://www.oefsite.org/till-panelists/",
+      "title": "Reverend Wheeler Parker Jr. panelist biography (ministry and pastoral chronology)",
+      "publisher": "Okemos Education Foundation (records the 1977 call to ministry, 1978 ordination, 1992 assistant-pastor appointment, and December 5, 1993 appointment as pastor of Argo Temple Church of God in Christ)"
+    },
+    {
+      "url": "https://www.thetillinstitute.org/our-board",
+      "title": "Leadership and Board, The Emmett Till and Mamie Till-Mobley Institute",
+      "publisher": "The Emmett Till and Mamie Till-Mobley Institute (records Dr. Marvel Parker as executive director and the Parkers' joint leadership of Argo Temple Church of God in Christ)"
     },
     {
       "url": "https://search.worldcat.org/title/1346400443",

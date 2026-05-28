@@ -7,18 +7,128 @@
   "born": 1929,
   "died": 2018,
   "role_summary": "First full-time executive director of the Southern Christian Leadership Conference (1960-1964); chief of staff to Martin Luther King Jr.; architect of the 1963 Birmingham Project C campaign; senior pastor of Canaan Baptist Church in Harlem 1967-2004.",
-  "ai_reading": "Walker sits at +0.87 on the Nonviolence as Theology vs Armed Self-Defense axis and at +0.73 on the Sacred Framing vs Secular Framing axis, both far toward the poles opposite to his cultural placement. For Martin Luther King Jr.'s chief of staff (1960-1964), the SCLC's first full-time executive director, the architect of the 1963 Birmingham nonviolent direct-action campaign, and a Baptist pastor for thirty-seven years in Harlem, the cultural reading would predict strong placement toward Nonviolence-as-Theology and toward Sacred Framing. The embedding pulls his testimony in the OPPOSITE direction on both axes. His top semantic neighbors confirm the SCLC cultural placement (C. T. Vivian at entry 134 count 128, Dorothy Foreman Cotton entry 29, Reverend Harry Blake entry 102, the Abernathy family entry 28, Timothy Jenkins entry 120), so the cluster pattern is not what's anomalous; the anomaly is in the axis-projection values. This is the second-largest AI-vs-culture mismatch the catalog has surfaced, after the five BPP-identified interviewees clustering at Nonviolence-as-Theology. The two findings together open the question of whether the axis-vector definitions reverse the political mapping in some systematic way, or whether the embedding is catching pragmatic-strategic and institutional-secular language the cultural reception of these figures has filtered out.",
-  "biographical_paragraph": "Walker served as the first full-time executive director of the Southern Christian Leadership Conference from 1960 to 1964, and as chief of staff to Martin Luther King Jr. across the campaigns of those years [src: 2]. His most consequential strategic contribution was the planning of the SCLC's 1963 Birmingham campaign, known internally as Project C; Walker meticulously surveyed target lunch counters, calculated walking distances from the 16th Street Baptist Church headquarters to downtown sites, and identified federal buildings as secondary protest targets [src: 2]. From 1967 he served as senior pastor of Canaan Baptist Church in Harlem for thirty-seven years; he co-founded the Religious Action Network against apartheid, chaired the Central Harlem Local Development Corporation, and in 1999 founded the Sisulu-Walker Charter School [src: 2]. He died January 23, 2018. His Library of Congress oral history is entry 132 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "ai_reading": "On the two axes a reader would expect to anchor a King chief of staff and thirty-seven-year Baptist pastor, the embedding agrees with the cultural record rather than contradicting it: Walker's passages project to +0.87 (normalized) toward the Nonviolence-as-Theology pole and +0.73 toward the Sacred / Theological Framing pole, among the most pole-committed readings in the audited subset of the catalog. The genuine surprise sits on the Tactical Pragmatism vs Strategic Vision axis, where his testimony reads at -0.24, leaning toward Tactical Pragmatism. For the man cultural memory credits as the grand strategist who designed Project C, the embedding picks up the granular register of his own account, walking off distances from the 16th Street headquarters, counting seats in lunch counters, timing how long a march takes, rather than the long-horizon vision language. A second observation: his single strongest semantic neighbor by passage count is C. T. Vivian (entry 134, 28 shared-neighbor hits, cosine peaking at 0.728), and the who-discussed-whom influence graph independently carries an edge from Vivian to Walker with a weight of 3. Cosine clustering and the citation graph rarely converge on the same pair; here both surface the Birmingham co-architect relationship Vivian narrates from his own side. His next neighbor, Timothy Jenkins (entry 120, 22 hits, cosine 0.750), is an NSA-and-SNCC figure rather than an SCLC contemporary, a less obvious pairing than the embedding's third-ranked Lonnie C. King (entry 80) or Dorothy Foreman Cotton (entry 29).",
+  "biographical_paragraph": "Wyatt Tee Walker grew up a preacher's son in South Jersey, trained as a physics and chemistry major, and turned to the ministry after his experience of segregation in Richmond, Virginia, where he earned his MDiv at Virginia Union University [src: 1]. He pastored Gillfield Baptist Church in Petersburg for eight years, and on February 27, 1960 he led a sit-in at the segregated Petersburg public library, having requested the first volume of Douglas Southall Freeman's biography of Robert E. Lee, an action that broke the color line at that library [src: 1]. King named him the first full-time executive director of the Southern Christian Leadership Conference in 1960, after Ella Baker's interim tenure, and Walker served as chief of staff through 1964, building the organization's budget from roughly fifty-seven thousand dollars to a million and its staff to about a hundred [src: 1] [src: 2]. He designed the 1963 Birmingham campaign, which he named Project C for confrontation, scouting downtown targets a year in advance and measuring the distances and seating that the demonstrations would test [src: 1] [src: 3]; he also transcribed and titled King's Letter from Birmingham Jail [src: 1] [src: 4]. From 1967 he led Canaan Baptist Church of Christ in Harlem for thirty-seven years, organized against apartheid in coalition with the African National Congress, and helped win New York's charter-school legislation, founding the Sisulu-Walker Charter School in 1999 [src: 2]. He died on January 23, 2018 [src: 5]. His Library of Congress oral history is entry 132 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039); in it he is interviewed alongside his wife Theresa Ann Walker, who recounts her own arrest and beating in 1963 [src: 6]. He discusses Charles Sherrod (whom he says he raised in his Petersburg congregation), the Albany campaign, and his SCLC contemporaries C. T. Vivian (entry 134) and Dorothy Foreman Cotton (entry 29), both of whom came to King's staff from Petersburg.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Wyatt Tee Walker",
+      "speaker_slug": "wyatt-tee-walker",
+      "source_entry": 132,
+      "timestamp": "00:26:44",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655400/",
+      "lead_in": "Asked how Project C was planned, Walker describes the year of fieldwork he did before the first march:",
+      "quote": "I went to Birmingham a year ahead of time."
+    },
+    {
+      "relation": "self",
+      "speaker": "Wyatt Tee Walker",
+      "speaker_slug": "wyatt-tee-walker",
+      "source_entry": 132,
+      "timestamp": "00:26:44",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655400/",
+      "lead_in": "He details the granular survey work that became the campaign blueprint:",
+      "quote": "And I went to the stores and I measured how long it would take a young person, a middle-aged person,"
+    },
+    {
+      "relation": "self",
+      "speaker": "Wyatt Tee Walker",
+      "speaker_slug": "wyatt-tee-walker",
+      "source_entry": 132,
+      "timestamp": "00:28:05",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655400/",
+      "lead_in": "On the strategic premise of Project C, that confronting segregation depended on the response of Birmingham's police commissioner Bull Connor:",
+      "quote": "And the only way we could join it and we had in the back of our minds that Bull Connor would do something that would help us."
+    },
+    {
+      "relation": "self",
+      "speaker": "Wyatt Tee Walker",
+      "speaker_slug": "wyatt-tee-walker",
+      "source_entry": 132,
+      "timestamp": "00:18:13",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655400/",
+      "lead_in": "Asked how important money was to SCLC's campaigns, Walker, who ran the organization's fundraising, answers in three words:",
+      "quote": "It is the ammunition."
+    },
+    {
+      "relation": "self",
+      "speaker": "Wyatt Tee Walker",
+      "speaker_slug": "wyatt-tee-walker",
+      "source_entry": 132,
+      "timestamp": "00:43:11",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655400/",
+      "lead_in": "Walker recounts naming King's jailhouse essay after the Quakers, who first printed it, had given it a different title:",
+      "quote": "I told them, no, it should be called Letter from the Birmingham Jail."
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "02:37:47",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "C. T. Vivian, who opened the Birmingham campaign at Walker's side, identifies his role at the time:",
+      "quote": "Wyatt Walker was Dr. King's chief of staff."
+    },
+    {
+      "relation": "about",
+      "speaker": "Annie Pearl Avery",
+      "speaker_slug": "annie-pearl-avery",
+      "source_entry": 3,
+      "timestamp": "00:49:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669118/",
+      "lead_in": "Birmingham demonstrator Annie Pearl Avery describes being assigned by Walker to a decoy march meant to draw the police away from a larger one:",
+      "quote": "Wyatt Tee Walker had me to go on the decoy march,"
+    },
+    {
+      "relation": "about",
+      "speaker": "Robert Brown",
+      "speaker_slug": "robert-brown",
+      "source_entry": 106,
+      "timestamp": "01:12:17",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669205/",
+      "lead_in": "Public-relations executive Robert Brown recalls the lunch in Atlanta where he was recruited into King's circle:",
+      "quote": "Rev. Wyatt Tee Walker, who was Dr. [Martin Luther] King's right hand man."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655400/",
-      "title": "Wyatt Tee Walker oral history",
+      "title": "Wyatt Tee Walker oral history (David Cline interview, June 20, 2014)",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://kinginstitute.stanford.edu/encyclopedia/walker-wyatt-tee",
-      "title": "Wyatt Tee Walker biographical entry, Martin Luther King Jr. Encyclopedia",
+      "url": "https://kinginstitute.stanford.edu/walker-wyatt-tee",
+      "title": "Walker, Wyatt Tee, Martin Luther King Jr. Encyclopedia",
       "publisher": "The Martin Luther King Jr. Research and Education Institute, Stanford University"
+    },
+    {
+      "url": "https://www.crmvet.org/vet/walkerwt.htm",
+      "title": "Wyatt Tee Walker, Civil Rights Movement Veterans roll",
+      "publisher": "Veterans of the Civil Rights Movement (crmvet.org)"
+    },
+    {
+      "url": "https://www.archives.gov/research/african-americans/individuals/wyatt-tee-walker",
+      "title": "Letter from Birmingham Jail and the role of Wyatt Tee Walker in its transcription",
+      "publisher": "U.S. National Archives and Records Administration"
+    },
+    {
+      "url": "https://www.nytimes.com/2018/01/23/obituaries/wyatt-tee-walker-dies.html",
+      "title": "Wyatt Tee Walker, Aide to Dr. King and Pillar of Civil Rights Era, Dies at 88",
+      "publisher": "The New York Times (obituary, January 23, 2018)"
+    },
+    {
+      "url": "https://www.loc.gov/search/?q=Theresa+Walker+civil+rights+history+project",
+      "title": "Theresa Ann Walker testimony within the Wyatt Tee Walker oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     }
   ]
 }
