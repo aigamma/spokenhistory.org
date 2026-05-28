@@ -9,11 +9,71 @@
   "role_summary": "Civil Rights History Project interviewee; the smallest oral-history file in the audited subset of this catalog (152-line SRT transcript), the technical proof-of-concept entry that the Smithsonian-grade publication pipeline was first validated against.",
   "ai_reading": "Moore's top five semantic neighbor counts are 10, 9, 8, 8, 7, the lowest cosine signature of any audited single-person entry in this catalog. The next-most-quiet signal (Marilyn Luper Hildreth at peak 74) is seven times as strong. The reading is structural rather than thematic: Moore's transcript is short enough (152 SRT lines in his interview) that the embedding has very little material to align with the corpus's other passages. The catalog notes Moore as the dual-scoring pipeline's first end-to-end proof-of-concept run during the May 2026 quality-gate overhaul (the OpenAI scorer's first attempt produced Accuracy 85 / Quality 80, recorded in the CLAUDE.md operational state at the time). His axis positions in the broader corpus (nonviolence +0.63, sacred-secular +0.32, southern +0.54) place him as a moderately-Southern, moderately-Self-Defense-leaning, moderately-secular voice; the readings should be interpreted with the small-sample caveat in mind.",
   "biographical_paragraph": "Maynard E. Moore's oral history is held at the Library of Congress as entry 88 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the interview transcript is the shortest in the audited subset of the catalog (152 SRT lines), which limits the embedding's ability to localize him within the corpus's larger thematic clusters. Further biographical sourcing is pending.",
+  "movement_context": "The biographical material recovered through secondary archival routes (the Digital Library of Georgia's mirror of the LoC finding aid, and the LoC search-result excerpts surfaced through general web indexing) catalogues E. Maynard Moore (the LoC catalog form of his name; the slug retains the order our pipeline ingested) as a Methodist minister born in Petersburg, Virginia in 1938, with an undergraduate degree from Randolph-Macon College in Ashland and seminary enrollment at Southern Methodist University beginning in 1959 [src: 2]. He pursued doctoral work at the University of Chicago Divinity School starting in 1964, and across his summer breaks during seminary he worked in migrant labor camps, which the interview frames as his introduction to organized non-violent activism [src: 2]. Moore's civil rights participation routes through two student-affiliated channels rather than the better-documented SCLC or SNCC field lines. He participated as a teenager in the Methodist Student Movement, a denominational youth network that placed Methodist seminarians in contact with Black Methodist students and the broader ecumenical campus organizing of the late 1950s [src: 2]. He took part in sit-ins around Dallas during his SMU years and, in March 1965, traveled from Chicago to Alabama to join the final segment of the Selma to Montgomery march, which his interview frames in continuity with his denominational training rather than as a singular event [src: 2]. In 1966 he became the national coordinator of the Student Interracial Ministry (SIM), the ecumenical student-run civil rights organization founded at Union Theological Seminary in 1960 at the same Raleigh conference that produced the Student Nonviolent Coordinating Committee [src: 3]. SIM's initial tactic placed Black assistant pastors in white congregations and white assistants in Black congregations, an integration-by-pulpit-exchange strategy aimed at the segregated Sunday-morning hour [src: 3]. By the late 1960s, under coordinators including Moore, the organization shifted from pulpit exchanges toward inner-city ministry projects, voter registration work in southwest Georgia tied to the Albany Movement, and seminary teaching collaborations [src: 3, 4]. SIM dissolved in 1968. Moore's later professional life is recorded as urban-ministry program development and non-profit management consulting through his firm CommunityNexus Consulting [src: 5].",
+  "legacy_and_reception": "Moore's archival footprint outside the Library of Congress interview is concentrated in two scholarly works: David P. Cline's institutional history of the Student Interracial Ministry, published by the University of North Carolina Press as From Reconciliation to Revolution (2016), which draws on Moore's interview among the source base for the SIM chapters [src: 3, 4], and Cline's broader interviewer-of-record role across the Civil Rights History Project corpus, where Moore is one of 145 filmed interviews co-produced by the Smithsonian's National Museum of African American History and Culture and the American Folklife Center between 2010 and 2016 [src: 1]. Within the LoC's own curatorial framing, Moore is grouped under the subject heading civil rights workers, with the secondary locator Chicago tied to the years he was based at the University of Chicago Divinity School [src: 2]. The interview's contribution to the historiography is its first-person account of denominational youth ministry as an organizing vehicle parallel to the campus-based SNCC line, a story that has received less scholarly attention than the SCLC-clergy or SNCC-student narratives. The Smithsonian-grade publication pipeline this site documents used Moore's transcript as its first end-to-end validation run, a separate axis of reception worth noting: his oral history is now also a benchmark artifact in an AI-metadata project that the original 2015 interview did not anticipate.",
+  "gallery": [
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Selma_to_Montgomery_Marches.jpg",
+      "caption": "Participants in the 1965 Selma to Montgomery voting rights march, the final stretch of which Moore joined after traveling from Chicago.",
+      "credit": "Peter Pettus / Library of Congress, Prints and Photographs Division",
+      "license": "Public Domain (US, pre-1977, no notice)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Selma_to_Montgomery_Marches.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Abraham_Joshua_Heschel_in_Selma_to_Montgomery_march.jpg",
+      "caption": "Front rank of the Selma to Montgomery march, 21 March 1965, with John Lewis, Ralph Abernathy, Martin Luther King Jr., Ralph Bunche, Abraham Joshua Heschel, and Fred Shuttlesworth; the clergy presence Moore's interview situates his own participation within.",
+      "credit": "Associated Press wire photo, 1965",
+      "license": "Public Domain (US, pre-1977, no notice)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Abraham_Joshua_Heschel_in_Selma_to_Montgomery_march.jpg"
+    },
+    {
+      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bloody_Sunday-Alabama_police_attack.jpeg",
+      "caption": "Alabama state troopers attacking peaceful marchers on the Edmund Pettus Bridge, 7 March 1965, the Bloody Sunday confrontation that prompted Methodist clergy across the country, Moore among them, to travel to Selma for the second and third march attempts.",
+      "credit": "Federal Bureau of Investigation, 1965",
+      "license": "Public Domain (US federal government work)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bloody_Sunday-Alabama_police_attack.jpeg"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655425/",
-      "title": "Maynard E. Moore oral history",
+      "title": "E. Maynard Moore oral history interview conducted by David P. Cline in Washington, District of Columbia, 2015 December 14",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://dlg.usg.edu/record/loc_crhp_crhp0134",
+      "title": "E. Maynard Moore oral history interview conducted by David P. Cline (Digital Library of Georgia mirror record)",
+      "publisher": "Digital Library of Georgia, University System of Georgia"
+    },
+    {
+      "url": "https://uncpress.org/book/9781469630434/from-reconciliation-to-revolution/",
+      "title": "From Reconciliation to Revolution: The Student Interracial Ministry, Liberal Christianity, and the Civil Rights Movement",
+      "publisher": "University of North Carolina Press, 2016 (ISBN 9781469630434)"
+    },
+    {
+      "url": "https://www.jstor.org/stable/10.5149/9781469630441_cline",
+      "title": "From Reconciliation to Revolution: The Student Interracial Ministry, Liberal Christianity, and the Civil Rights Movement (scholarly edition record)",
+      "publisher": "JSTOR / University of North Carolina Press"
+    },
+    {
+      "url": "https://www.comm-nex.com/index.php?option=com_content&view=article&id=80&Itemid=121",
+      "title": "E. Maynard Moore, Ph.D. (professional biography)",
+      "publisher": "CommunityNexus Consulting, LLC"
+    },
+    {
+      "url": "https://www.loc.gov/collections/civil-rights-history-project/?c=150&fa=contributor:cline,+david+p.%7Csubject:civil+rights+workers%7Clocation:chicago%7Ccontributor:moore,+e.+maynard&st=list",
+      "title": "Civil Rights History Project catalog entry: Moore, E. Maynard (subject and contributor facets)",
+      "publisher": "Library of Congress"
+    },
+    {
+      "url": "https://www.loc.gov/item/2012655221/",
+      "title": "Civil Rights History Project collection, 2010-2016 (finding aid)",
+      "publisher": "American Folklife Center, Library of Congress / National Museum of African American History and Culture"
+    },
+    {
+      "url": "https://history.sdsu.edu/people/cline",
+      "title": "David P. Cline faculty profile (interviewer of record for the Moore oral history)",
+      "publisher": "San Diego State University Department of History"
     }
   ]
 }
