@@ -20,13 +20,15 @@
 //   node --env-file=.env.local rag/ingest.mjs
 //   node --env-file=.env.local rag/ingest.mjs --entries 1,5,73-80
 //   node --env-file=.env.local rag/ingest.mjs --include-ground-truth
+//   node --env-file=.env.local rag/ingest.mjs --include-persons    # also ingest the per-person catalog
+//   node --env-file=.env.local rag/ingest.mjs --persons-only       # skip transcript walk; persons only
 //   node --env-file=.env.local rag/ingest.mjs --prune
 //   node --env-file=.env.local rag/ingest.mjs --force-prune    # bypass >50% safety threshold
 //   node --env-file=.env.local rag/ingest.mjs --dry-run
 
 import { createHash } from 'node:crypto';
-import { readFile, stat } from 'node:fs/promises';
-import { basename, extname, relative, dirname } from 'node:path';
+import { readFile, readdir, stat } from 'node:fs/promises';
+import { basename, extname, relative, dirname, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 import {
@@ -337,6 +339,79 @@ export async function buildTranscriptVectors(sourcePath, entryMap) {
 // list is embedded as a single document; the canonical name is preserved
 // in metadata for filter-by-name queries.
 
+// ---------------------------------------------------------------------------
+// Person-page vectors (one vector per /person/:slug catalog entry)
+// ---------------------------------------------------------------------------
+//
+// The per-person page catalog at public/rag/people/*.json gets ingested as
+// ONE vector per person, embedding display_name + role_summary +
+// biographical_paragraph as a single document. The vector carries
+// content_type='person' metadata so archive-focused retrieval flows can
+// filter it out (the filter lives in src/services/ragClient.js::retrieve()
+// and mcp-server/server.mjs::searchTranscripts(), enabled by default;
+// see public/rag/people/README.md § Searchability via RAG for the full
+// design).
+//
+// Embedding strategy: one vector per person, not one per paragraph. The
+// person-page is a single coherent document; chunking it would dilute the
+// signal by sheer count when ranked against passage vectors. The README
+// schema documents this choice.
+async function buildPersonPageVectors() {
+  const peopleDir = join(REPO_ROOT, 'public', 'rag', 'people');
+  let files;
+  try {
+    files = await readdir(peopleDir);
+  } catch (e) {
+    console.warn(`[ingest] person-page catalog not found at ${peopleDir}; skipping`);
+    return [];
+  }
+  const vectors = [];
+  for (const f of files) {
+    if (!f.endsWith('.json') || f === 'famous_external.json') continue;
+    let data;
+    try {
+      const raw = await readFile(join(peopleDir, f), 'utf8');
+      data = JSON.parse(raw);
+    } catch (e) {
+      console.warn(`[ingest] person page ${f} malformed; skipping (${e.message})`);
+      continue;
+    }
+    const slug = data.slug || f.replace(/\.json$/, '');
+    const displayName = data.display_name || slug;
+    const roleSummary = data.role_summary || '';
+    const bio = data.biographical_paragraph || '';
+    const aiReading = data.ai_reading || '';
+    const personType = data.person_type || 'external_figure';
+    const entryNumber = data.entry_number ?? null;
+    const text = [
+      `Name: ${displayName}`,
+      roleSummary ? `Role: ${roleSummary}` : '',
+      bio,
+      aiReading ? `AI's reading of this person in the corpus: ${aiReading}` : '',
+    ].filter(Boolean).join('\n\n');
+    if (!text.trim()) continue;
+    const hash = hashContent(text);
+    const id = deterministicId('person_page', entryNumber, `people/${slug}`, 0, hash);
+    const metadata = {
+      content_type: 'person',
+      chunk_type: 'person_page',
+      slug,
+      display_name: displayName,
+      person_type: personType,
+      role_summary: roleSummary,
+      source_path: `public/rag/people/${f}`,
+      chunk_index: 0,
+      content_hash: hash,
+      text,
+    };
+    // Pinecone metadata values cannot be null; omit entry_number when
+    // the person is an external_figure with no CRHP entry.
+    if (entryNumber != null) metadata.entry_number = entryNumber;
+    vectors.push({ id, metadata, text });
+  }
+  return vectors;
+}
+
 async function buildGroundTruthVectors() {
   let raw;
   try {
@@ -392,6 +467,8 @@ function parseArgs(argv) {
   const args = {
     entries: null,
     includeGroundTruth: false,
+    includePersons: false,
+    personsOnly: false,
     prune: false,
     forcePrune: false,
     dryRun: false,
@@ -404,6 +481,14 @@ function parseArgs(argv) {
       i++;
     } else if (a === '--include-ground-truth') {
       args.includeGroundTruth = true;
+    } else if (a === '--include-persons') {
+      args.includePersons = true;
+    } else if (a === '--persons-only') {
+      // Skip transcript walk entirely; only ingest person-page vectors.
+      // Useful for incremental person-catalog updates without touching
+      // the much-larger archive index.
+      args.personsOnly = true;
+      args.includePersons = true;
     } else if (a === '--prune') {
       args.prune = true;
     } else if (a === '--force-prune') {
@@ -450,36 +535,41 @@ async function main() {
   console.log(`[ingest] model=${VOYAGE_MODEL}`);
   if (args.entries) console.log(`[ingest] --entries ${[...args.entries].sort((a, b) => a - b).join(',')}`);
   if (args.includeGroundTruth) console.log('[ingest] --include-ground-truth');
+  if (args.includePersons) console.log('[ingest] --include-persons');
+  if (args.personsOnly) console.log('[ingest] --persons-only (skipping transcript walk)');
   if (args.prune) console.log('[ingest] --prune');
   if (args.dryRun) console.log('[ingest] --dry-run (no Pinecone writes)');
 
-  // Verify corrected/ exists; without it, the ingest has nothing to do.
-  try {
-    await stat(CORRECTED_TRANSCRIPTS_ROOT);
-  } catch (e) {
-    console.error(
-      `[ingest] ${CORRECTED_TRANSCRIPTS_ROOT} not found. Run scripts/apply_corrections.py first to produce the corrected transcript tree.`,
-    );
-    process.exit(1);
-  }
-
-  const entryMap = await loadEntryMap();
-  const sourceFiles = await walkDir(CORRECTED_TRANSCRIPTS_ROOT);
-  console.log(`[ingest] discovered ${sourceFiles.length} corrected transcript files`);
-
   // Build the expected vector set across all sources for this run.
   const expectedById = new Map();
-  for (const sourcePath of sourceFiles) {
-    const { vectors, entryNumber, entrySubject, sourceRel } =
-      await buildTranscriptVectors(sourcePath, entryMap);
-    if (entryNumber == null) {
-      console.warn(`[ingest] no entry mapping for ${sourceRel}; skipping`);
-      continue;
+
+  if (!args.personsOnly) {
+    // Verify corrected/ exists; without it, the ingest has nothing to do.
+    try {
+      await stat(CORRECTED_TRANSCRIPTS_ROOT);
+    } catch (e) {
+      console.error(
+        `[ingest] ${CORRECTED_TRANSCRIPTS_ROOT} not found. Run scripts/apply_corrections.py first to produce the corrected transcript tree.`,
+      );
+      process.exit(1);
     }
-    if (args.entries && !args.entries.has(entryNumber)) continue;
-    if (vectors.length === 0) continue;
-    for (const v of vectors) expectedById.set(v.id, v);
-    console.log(`[ingest] entry #${entryNumber} ${entrySubject}: ${vectors.length} chunks from ${basename(sourceRel)}`);
+
+    const entryMap = await loadEntryMap();
+    const sourceFiles = await walkDir(CORRECTED_TRANSCRIPTS_ROOT);
+    console.log(`[ingest] discovered ${sourceFiles.length} corrected transcript files`);
+
+    for (const sourcePath of sourceFiles) {
+      const { vectors, entryNumber, entrySubject, sourceRel } =
+        await buildTranscriptVectors(sourcePath, entryMap);
+      if (entryNumber == null) {
+        console.warn(`[ingest] no entry mapping for ${sourceRel}; skipping`);
+        continue;
+      }
+      if (args.entries && !args.entries.has(entryNumber)) continue;
+      if (vectors.length === 0) continue;
+      for (const v of vectors) expectedById.set(v.id, v);
+      console.log(`[ingest] entry #${entryNumber} ${entrySubject}: ${vectors.length} chunks from ${basename(sourceRel)}`);
+    }
   }
 
   if (args.includeGroundTruth && (!args.entries || args.entries.size === 0)) {
@@ -488,13 +578,31 @@ async function main() {
     console.log(`[ingest] ground-truth: ${gtVectors.length} fact-vectors`);
   }
 
+  if (args.includePersons && (!args.entries || args.entries.size === 0)) {
+    const personVectors = await buildPersonPageVectors();
+    for (const v of personVectors) expectedById.set(v.id, v);
+    console.log(`[ingest] person-pages: ${personVectors.length} catalog-page vectors`);
+  }
+
   // Diff against Pinecone's current state for idempotency.
   const existingIds = await listAllVectorIds(args.namespace);
   const toEmbedIds = [];
   for (const id of expectedById.keys()) {
     if (!existingIds.has(id)) toEmbedIds.push(id);
   }
-  const orphaned = [...existingIds].filter((id) => !expectedById.has(id));
+  // Scope orphan detection to the ingest's actual scope:
+  //   --persons-only: only person_page::* vectors are candidates for orphan
+  //   normal: all existing vectors EXCEPT person_page::* are candidates
+  //           (don't accidentally prune the person catalog when running a
+  //           transcript-only ingest)
+  // ground-truth vectors are similarly scope-protected.
+  const orphanScope = (id) => {
+    if (args.personsOnly) return id.startsWith('person_page::');
+    if (!args.includePersons && id.startsWith('person_page::')) return false;
+    if (!args.includeGroundTruth && id.startsWith('ground_truth_fact::')) return false;
+    return true;
+  };
+  const orphaned = [...existingIds].filter((id) => orphanScope(id) && !expectedById.has(id));
   console.log(
     `[ingest] state: expected=${expectedById.size} new/changed=${toEmbedIds.length} ` +
     `unchanged=${expectedById.size - toEmbedIds.length} orphaned=${orphaned.length}`,
