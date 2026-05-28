@@ -80,9 +80,20 @@ See "Writing discipline" above. The seven rules apply to every bio without excep
 
 ### `photo`
 
-- Must be **public domain** or **clearly open-licensed** (CC0, CC-BY, CC-BY-SA, Library of Congress public record, federal-government work).
-- The citation block (`photographer`, `repository`, `license`, `source_url`) is required even for clearly-PD images. The institutional review chain (Smithsonian, LoC) expects every image on the site to be source-citable, not assumed-safe.
+- Must be **public domain** or **clearly open-licensed** (CC0, CC-BY, CC-BY-SA, Library of Congress public record, federal-government work, or any work first published in the U.S. between 1928 and 1977 without a copyright notice).
+- The citation block (`photographer`, `repository`, `license`, `source_url`, optional `date_taken`) is required even for clearly-PD images. The institutional review chain (Smithsonian, LoC) expects every image on the site to be source-citable, not assumed-safe.
 - Photographers whose work is **still copyrighted** and must NOT be hosted: Charles Moore, Spider Martin, Bob Adelman, Joseph Louw, Magnum agency photographers (Bruce Davidson, Danny Lyon's earlier press work), most AP/UPI/Getty CRM-era press archive material. When no usable PD photo exists, leave the `photo` field absent and the page renders without a portrait.
+
+#### Image-finding workflow (validated 2026-05-27)
+
+Per-person photo sourcing is a two-step web fetch:
+
+1. **WebFetch the person's Wikipedia article** with a prompt asking for the infobox portrait's filename, visible license tag, and Wikimedia Commons file page URL. Example prompt: *"For the main biographical portrait of [NAME] in this article: extract (1) the image filename on Wikipedia/Wikimedia Commons, (2) any visible license tag, (3) the Wikimedia Commons file page URL. If the image is fair-use only (not open-licensed), say so explicitly. If no image appears, say so."*
+2. **WebFetch the Commons file page** with a prompt asking for the canonical license, photographer/author, full `upload.wikimedia.org/wikipedia/commons/...` URL, and date. Example prompt: *"Extract: (1) license (CC-BY-SA, CC-BY, CC0, public domain, etc.), (2) full upload.wikimedia.org URL, (3) photographer/author credit, (4) date taken. If the license is fair-use only or non-commercial, say so explicitly."*
+
+If step 2 returns a CC0 / CC-BY / CC-BY-SA / U.S. public-domain verdict, the photo is usable; record it in the JSON with the full citation block. If it returns fair-use, non-commercial-only, "all rights reserved," or "license unclear," do not use it; leave the `photo` field absent and the page renders without a portrait. Wikipedia infoboxes for less-famous CRHP interviewees frequently have no portrait at all; that is a more-common outcome than a copyright collision. Other workable sources include the LoC Prints & Photographs Online Catalog (most federal-government works are PD), the Smithsonian National Museum of African American History and Culture digital collections, and some university archives.
+
+The PersonPage component renders the `photo` block as a small portrait beside the identity header with the full attribution (photographer, repository, license) in a figcaption below the image; CC-BY and CC-BY-SA images surface the photographer credit automatically, which satisfies the attribution requirement.
 
 ### `sources[]`
 
