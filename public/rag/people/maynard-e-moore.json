@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "maynard-e-moore",
+  "person_type": "interviewee",
+  "entry_number": 88,
+  "born": null,
+  "died": null,
+  "display_name": "Maynard E. Moore",
+  "role_summary": "Civil Rights History Project interviewee; the smallest oral-history file in the audited subset of this catalog (152-line SRT transcript), the technical proof-of-concept entry that the Smithsonian-grade publication pipeline was first validated against.",
+  "ai_reading": "Moore's top five semantic neighbor counts are 10, 9, 8, 8, 7, the lowest cosine signature of any audited single-person entry in this catalog. The next-most-quiet signal (Marilyn Luper Hildreth at peak 74) is seven times as strong. The reading is structural rather than thematic: Moore's transcript is short enough (152 SRT lines in his interview) that the embedding has very little material to align with the corpus's other passages. The catalog notes Moore as the dual-scoring pipeline's first end-to-end proof-of-concept run during the May 2026 quality-gate overhaul (the OpenAI scorer's first attempt produced Accuracy 85 / Quality 80, recorded in the CLAUDE.md operational state at the time). His axis positions in the broader corpus (nonviolence +0.63, sacred-secular +0.32, southern +0.54) place him as a moderately-Southern, moderately-Self-Defense-leaning, moderately-secular voice; the readings should be interpreted with the small-sample caveat in mind.",
+  "biographical_paragraph": "Maynard E. Moore's oral history is held at the Library of Congress as entry 88 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the interview transcript is the shortest in the audited subset of the catalog (152 SRT lines), which limits the embedding's ability to localize him within the corpus's larger thematic clusters. Further biographical sourcing is pending.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2016655425/",
+      "title": "Maynard E. Moore oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
