@@ -2,6 +2,8 @@
 
 One JSON file per named individual on the site. Each file is loaded by the `/person/:slug` route's `PersonPage` component and rendered as a citation-bearing reference page. The catalog supports two `person_type` values: interviewees (have their own oral history in the Civil Rights History Project corpus) and external figures (discussed by interviewees but not themselves interviewed).
 
+**Current catalog: 184 pages (161 interviewees + 23 external figures, as of 2026-05-28).** Every named CRHP interviewee plus every named external figure referenced in FamousNames, the influence graph, OR repeatedly mentioned across multiple interviewee bios has a catalog entry.
+
 ## Catalog purpose (READ FIRST)
 
 Person pages are **integration hubs that surface NOVEL AI observations** across the site, not freestanding biographies. The primary value of every page is what a blank-slate AI embedding model "thinks about" each civil rights thinker, **versus** what the established cultural / historiographical record has already carved out for them. The page is a case study in what the cosine-similarity space reveals that textbook history has not.
