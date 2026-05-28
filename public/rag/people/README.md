@@ -4,6 +4,16 @@ One JSON file per named individual on the site. Each file is loaded by the `/per
 
 **Current catalog: 196 pages (161 interviewees + 35 external figures, as of 2026-05-28).** Every named CRHP interviewee plus every named external figure referenced in FamousNames, the influence graph, OR repeatedly mentioned across multiple interviewee bios has a catalog entry. Photo coverage: 52 of 196 pages (27%) carry an inline PD or open-licensed portrait. **Bio coverage: 196 of 196 pages (100%) have a citation-bearing biographical paragraph** grounded in external scholarly sources (university-press monographs, Mississippi/Oklahoma/Tennessee state encyclopedias, SNCC Digital Gateway, Veterans of the Civil Rights Movement archive, Civil Rights Digital Library, NMAAHC object records, NYT obituaries, etc.); no Wikipedia citations are used per the writing discipline below. The audit-tier protection language is retained on publication-block / not-auditable / ingestion-only tier transcripts to caution future researchers that any specific quoted claim drawn from the LoC transcript itself should be verified against external sources before publication.
 
+**Site integration (2026-05-28):** the catalog is reachable from every major site surface that renders named figures:
+- **Header → Menu drawer → People** opens `/people`, the browse-grid index of all 196 pages with name/role search and interviewee-vs-external-figure filter.
+- **InterviewIndex cards** carry a `Catalog page →` link alongside `Open interview →` and `LoC catalog`.
+- **InterviewDetail** carries a `Full catalog page` link in the header (resolves via `peopleIndex.by_entry`, joint-page preference respected).
+- **FamousNames** cards carry a `Full catalog page` link in the expanded view.
+- **PersonPage semantic-neighbor chips** link directly to `/person/${neighbor-slug}` (resolved via `peopleIndex.by_entry`, fallback to Semantic Overlap tab if no catalog page exists yet).
+- **PersonPage influence-graph "Discussed in this interview" chips** link to `/person/${slug}` for every figure with a catalog page, both in-corpus and external (resolved via `peopleIndex.by_slug` + `by_normalized_name` fallback).
+
+The `/people` browse page + the precomputed `public/rag/people/index.json` (carrying `by_entry`, `by_slug`, `by_normalized_name`, and the per-entry `photo_src`, `role_preview`, `born`, `died` summary fields) are the substrate. Re-run `node scripts/build_people_index.mjs` after adding, renaming, or modifying any catalog file.
+
 ## Catalog purpose (READ FIRST)
 
 Person pages are **integration hubs that surface NOVEL AI observations** across the site, not freestanding biographies. The primary value of every page is what a blank-slate AI embedding model "thinks about" each civil rights thinker, **versus** what the established cultural / historiographical record has already carved out for them. The page is a case study in what the cosine-similarity space reveals that textbook history has not.
