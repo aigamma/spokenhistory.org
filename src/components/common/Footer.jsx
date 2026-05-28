@@ -74,6 +74,13 @@ export default function Footer() {
               Index
             </Link>
             <Link
+              to="/people"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline"
+              style={{ color: '#EBEAE9' }}
+            >
+              People
+            </Link>
+            <Link
               to="/topic-glossary"
               className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline"
               style={{ color: '#EBEAE9' }}
