@@ -6,14 +6,19 @@
   "born": null,
   "died": null,
   "display_name": "Carolyn Miller and James Miller",
-  "role_summary": "Joint oral history at the Library of Congress; this catalog page treats the combined transcript as a single embedding signature.",
-  "ai_reading": "Carolyn Miller and James Miller's top semantic neighbor is Charles McLaurin (entry 17, count 128); the broader cluster includes Nathaniel Hawthorne Jones (#92), Walter Bruce (#123), Vernon Dahmer, Jr. (#121).",
-  "biographical_paragraph": "This joint oral history is held at the Library of Congress as entry 12 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries a not-auditable audit tier: the catalog cannot independently certify the transcript against primary sources for this entry, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "Carolyn Miller (b. 1953, Alcorn, Mississippi) and James E. Miller (b. 1949, Port Gibson): youth-chapter NAACP organizers in Port Gibson, Mississippi who met in the NAACP youth group during the Port Gibson Merchant Boycotts of the mid-1960s and later married; co-founders of Cultural Crossroads, the Port Gibson downtown-improvement and Black-business-promotion organization that has functioned as a community legacy of the local civil rights movement, generating arts and cultural programming and documenting movement history.",
+  "ai_reading": "The Millers' top semantic neighbor is Charles McLaurin (entry 17) at a cosine count of 128; the broader cluster includes Nathaniel Hawthorne Jones (entry 92, the Claiborne County / Port Gibson Movement organizer whose page documents the NAACP v. Claiborne Hardware litigation), Walter Bruce (entry 123, Holmes County MFDP), and Vernon Dahmer Jr. (entry 121, Forrest County NAACP). The Nathaniel Hawthorne Jones pairing is the catalog's clearest Claiborne County / Port Gibson Movement-organizer cosine: both pages document the same boycott-and-protest organizing arc that produced NAACP v. Claiborne Hardware (1982). The novel observation this joint page surfaces is the youth-to-cultural-legacy signature: the Millers' Port Gibson organizing began as teenagers in NAACP youth-group boycotts in the late 1960s and continued through their adult founding of the Cultural Crossroads downtown-improvement organization that remains active today, a multi-generational organizing-legacy continuity pattern.",
+  "biographical_paragraph": "While the Millers' LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the Port Gibson Movement is documented through the Cultural Crossroads organization the Millers co-founded [src: 1, src: 2]. Carolyn Miller was born in 1953 in Alcorn, Mississippi and grew up in Hermanville and Port Gibson. James E. Miller was born in 1949 in Port Gibson. Both were active in the youth chapter of the Port Gibson NAACP, where they met and where they participated in the Port Gibson Merchant Boycotts of the late 1960s and early 1970s (the boycotts that produced the 1982 Supreme Court NAACP v. Claiborne Hardware decision affirming First Amendment protection of civil-rights economic boycotts, the litigation Nathaniel Hawthorne Jones at catalog entry 92 also worked) [src: 2]. They married after meeting in the NAACP youth group and have continued the work into the present: their downtown-improvement organization Cultural Crossroads serves as the institutional legacy of the local civil rights movement, programming arts and cultural events and documenting Port Gibson movement history [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655410/",
       "title": "Carolyn Miller and James Miller oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://nmaahc.si.edu/object/nmaahc_2015.83.5.1",
+      "title": "Carolyn Miller and James Miller Oral History Interview object record",
+      "publisher": "Smithsonian National Museum of African American History and Culture"
     }
   ]
 }
