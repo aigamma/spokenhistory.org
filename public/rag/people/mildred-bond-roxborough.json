@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "mildred-bond-roxborough",
+  "person_type": "interviewee",
+  "entry_number": 90,
+  "display_name": "Mildred Bond Roxborough",
+  "born": null,
+  "died": null,
+  "role_summary": "Longtime NAACP national-office staff member; her testimony in this corpus's embedding clusters with Robert L. Carter, Cecilia Suyat Marshall, and the NAACP-front-office cohort.",
+  "ai_reading": "Roxborough's top semantic neighbors are Robert L. Carter (entry 108, count 129, the NAACP General Counsel), Cecilia Suyat Marshall (entry 15, count 111, NAACP secretary to Gloster B. Current), Charles McLaurin (entry 17), Joseph Echols Lowery (entry 66, SCLC), and Amos C. Brown (entry 2). The embedding therefore confirms her cultural placement as a NAACP-national-office staffer. What it adds is her position on the Individual Conscience vs Collective Discipline axis at -0.50, distinctly toward Individual Conscience. For someone whose institutional role at the NAACP national headquarters was definitionally collective-disciplinary (institutional staff, organizational work), this Individual-Conscience pull is the AI-vs-culture observation on her page. Her other four axis positions are within +/-0.06 of zero, marking her as one of the most centrist voices in the corpus by every axis except the Individual-Collective one.",
+  "biographical_paragraph": "Mildred Bond Roxborough served on the NAACP's national-office staff over a long career spanning the civil rights movement and beyond; her oral history is held at the Library of Congress as entry 90 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the strongest available signal for her movement role is the embedding's tight cosine with Robert L. Carter (entry 108) and Cecilia Suyat Marshall (entry 15), both fellow NAACP national-office veterans whose own catalog pages document the institutional context.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669101/",
+      "title": "Mildred Bond Roxborough oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
