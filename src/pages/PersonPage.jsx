@@ -390,117 +390,125 @@ export default function PersonPage() {
           </Link>
         </div>
 
-        {/* Header: portrait (if PD photo available) or initial-letter
-            avatar fallback + identity block. The portrait is sized
-            large (200px square on mobile, 224px on tablet+) so the
-            page reads as illustrated rather than dictionary-text;
-            the figcaption underneath carries the full PD/CC
-            attribution. */}
-        <header className="flex flex-col sm:flex-row gap-6 mb-8">
+        {/* Identity block: name + role + dates + tier, full width
+            above the body prose. The portrait is floated INTO the
+            prose below (magazine-style), not sidebar'd to one side,
+            so the page reads as illustrated continuous text rather
+            than as two side-by-side columns. */}
+        <header className="mb-6 max-w-3xl">
+          <p className="text-civil-red-body text-xs font-light font-mono mb-1 uppercase tracking-wide">
+            {person.person_type === 'interviewee'
+              ? 'Civil Rights History Project · Interviewee'
+              : 'Discussed by corpus voices · Not interviewed'}
+          </p>
+          <h1
+            className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-2 leading-tight"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            {person.display_name}
+          </h1>
+          <div className="text-sm text-stone-700 mb-3 flex flex-wrap gap-x-3 gap-y-1 items-baseline">
+            {(person.born || person.died) && (
+              <span className="tabular-nums">
+                {person.born || '?'}{person.died ? ` - ${person.died}` : person.born ? ' - ' : ''}
+              </span>
+            )}
+            {person.entry_number && (
+              <span className="text-stone-500">CRHP entry #{person.entry_number}</span>
+            )}
+            {tierBadge && crossLinks?.uncertaintyTier && (
+              <span
+                className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-xs ${tierBadge.bg} ${tierBadge.border} ${tierBadge.text}`}
+                title={`Audit tier: ${crossLinks.uncertaintyTier}`}
+              >
+                {crossLinks.uncertaintyTier}
+              </span>
+            )}
+          </div>
+          {person.role_summary && (
+            <p className="text-stone-800 text-base sm:text-lg" style={{ fontFamily: 'Source Serif 4, serif' }}>
+              {person.role_summary}
+            </p>
+          )}
+        </header>
+
+        {/* Body prose, with the portrait floated INTO the text so
+            paragraphs wrap around it (the magazine / encyclopedia
+            article pattern, distinct from the dictionary-style
+            sidebar layout). The float clears at the end of the body
+            wrapper, so source-list rendering below stays on its own
+            line. */}
+        <div className="max-w-3xl mb-10">
           {person.photo && (person.photo.src_local || person.photo.src_external) ? (
-            <figure className="flex-shrink-0">
+            <figure className="float-right ml-6 mb-3 w-2/5 sm:w-1/3 max-w-[18rem]">
               <img
                 src={person.photo.src_local || person.photo.src_external}
                 alt={person.photo.alt || person.display_name}
-                className="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded-md border border-stone-300 bg-white"
+                className="w-full object-cover rounded-md border border-stone-300 bg-white"
                 loading="lazy"
               />
-              <figcaption className="text-[10px] text-stone-500 mt-1.5 max-w-[14rem] leading-tight">
+              <figcaption className="text-[10px] text-stone-500 mt-1.5 leading-tight">
                 {person.photo.photographer && `Photo: ${person.photo.photographer}. `}
                 {person.photo.repository && `${person.photo.repository}. `}
                 {person.photo.license || ''}
               </figcaption>
             </figure>
           ) : (
-            // Initial-letter avatar fallback: a colored circle with
-            // the figure's first initial, sized to mirror the portrait
-            // dimensions above. Gives photo-less pages a visual anchor
-            // and keeps the layout from collapsing to a wall of prose.
+            // Initial-letter avatar fallback floats inside the prose
+            // the same way an actual portrait would; the body wraps
+            // around it so photo-less pages have the same magazine-
+            // article feel as photographed pages.
             <div
               aria-hidden="true"
-              className="flex-shrink-0 w-48 h-48 sm:w-56 sm:h-56 rounded-md border border-stone-300 flex items-center justify-center"
+              className="float-right ml-6 mb-3 w-2/5 sm:w-1/3 max-w-[18rem] aspect-square rounded-md border border-stone-300 flex items-center justify-center"
               style={{ backgroundColor: '#F2483C' }}
             >
               <span
-                className="text-7xl sm:text-8xl font-medium"
+                className="text-7xl sm:text-8xl md:text-9xl font-medium"
                 style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
               >
                 {(person.display_name || '?').trim().charAt(0).toUpperCase()}
               </span>
             </div>
           )}
-          <div className="flex-1 min-w-0">
-            <p className="text-civil-red-body text-xs font-light font-mono mb-1 uppercase tracking-wide">
-              {person.person_type === 'interviewee'
-                ? 'Civil Rights History Project · Interviewee'
-                : 'Discussed by corpus voices · Not interviewed'}
-            </p>
-            <h1
-              className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
-              style={{ fontFamily: 'Inter, sans-serif' }}
-            >
-              {person.display_name}
-            </h1>
-            <div className="text-sm text-stone-700 mb-3 flex flex-wrap gap-x-3 gap-y-1 items-baseline">
-              {(person.born || person.died) && (
-                <span className="tabular-nums">
-                  {person.born || '?'}{person.died ? ` - ${person.died}` : person.born ? ' - ' : ''}
-                </span>
-              )}
-              {person.entry_number && (
-                <span className="text-stone-500">CRHP entry #{person.entry_number}</span>
-              )}
-              {tierBadge && crossLinks?.uncertaintyTier && (
-                <span
-                  className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full border text-xs ${tierBadge.bg} ${tierBadge.border} ${tierBadge.text}`}
-                  title={`Audit tier: ${crossLinks.uncertaintyTier}`}
-                >
-                  {crossLinks.uncertaintyTier}
-                </span>
-              )}
-            </div>
-            {person.role_summary && (
-              <p className="text-stone-800 text-base sm:text-lg" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                {person.role_summary}
-              </p>
-            )}
-          </div>
-        </header>
 
-        {/* AI's reading. Headline content per the catalog discipline:
-            a specific embedding-derived observation that the cultural
-            record hasn't foregrounded. Rendered visually distinct from
-            the biographical paragraph below so a reader of the paper
-            being prepared can find the contribution at a glance. */}
-        {person.ai_reading && (
-          <section className="mb-8 max-w-3xl">
-            <div className="border-l-4 border-civil-red-strong pl-5 py-1">
-              <p className="text-xs uppercase tracking-wide font-mono text-civil-red-body mb-2 font-semibold">
-                What the embedding finds
-              </p>
+          {/* AI's reading. Headline content per the catalog discipline:
+              a specific embedding-derived observation that the cultural
+              record hasn't foregrounded. */}
+          {person.ai_reading && (
+            <section className="mb-6">
+              <div className="border-l-4 border-civil-red-strong pl-5 py-1">
+                <p className="text-xs uppercase tracking-wide font-mono text-civil-red-body mb-2 font-semibold">
+                  What the embedding finds
+                </p>
+                <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                  {renderBioWithCitationRefs(person.ai_reading, person.sources, nameMatcher)}
+                </p>
+              </div>
+            </section>
+          )}
+
+          {/* Biographical paragraph. Historical orientation behind the
+              AI's-reading section above; cited from external sources
+              (LoC first, Wikipedia last). Reads as supporting context
+              rather than the headline. */}
+          {person.biographical_paragraph && (
+            <section>
+              {person.ai_reading && (
+                <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                  Historical orientation
+                </p>
+              )}
               <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                {renderBioWithCitationRefs(person.ai_reading, person.sources, nameMatcher)}
+                {renderBioWithCitationRefs(person.biographical_paragraph, person.sources, nameMatcher)}
               </p>
-            </div>
-          </section>
-        )}
-
-        {/* Biographical paragraph. Historical orientation behind the
-            AI's-reading section above; cited from external sources
-            (LoC first, Wikipedia last). Reads as supporting context
-            rather than the headline. */}
-        {person.biographical_paragraph && (
-          <section className="mb-10 max-w-3xl">
-            {person.ai_reading && (
-              <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
-                Historical orientation
-              </p>
-            )}
-            <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
-              {renderBioWithCitationRefs(person.biographical_paragraph, person.sources, nameMatcher)}
-            </p>
-          </section>
-        )}
+            </section>
+          )}
+          {/* Clear the float so cross-link sections below render
+              full-width and don't get pulled up alongside the
+              portrait. */}
+          <div className="clear-both" />
+        </div>
 
         {/* Cross-link manifest. Only renders for interviewees (need
             entry_number to look anything up). Each section appears
