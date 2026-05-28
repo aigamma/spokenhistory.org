@@ -327,11 +327,11 @@ export default function RagExplore() {
             Spectrum
           </h2>
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
-            136 oral-history interviewees placed along one conceptual axis at a time. The
-            position of each dot is the dot product of that interview&apos;s mean embedding
-            with the axis vector, geometric, deterministic, no LLM per query. Pick a
-            different axis below the chart to swap the lens; type a phrase in the green
-            box to project YOUR words onto the same axis.
+            Position of each dot reflects where that interviewee&apos;s voice falls along
+            one chosen concept axis (e.g. nonviolence vs. armed self-defense). The
+            placement is reproducible math: the same for every visitor, no model call per
+            dot. Switch axes below the chart to change the lens, or type a phrase in the
+            green box to project your own words onto the same scale.
           </p>
           <ConceptSpectrum />
         </section>
