@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "slug": "julius-w-becton-jr",
+  "person_type": "interviewee",
+  "entry_number": 71,
+  "display_name": "Julius W. Becton Jr.",
+  "born": 1926,
+  "died": 2025,
+  "role_summary": "U.S. Army lieutenant general (commanding general, VII Corps, 1978); director of FEMA under Reagan and George H. W. Bush (1985-1989); fifth president of Prairie View A&M University (1989-1994); superintendent of D.C. Public Schools (1996-1998).",
+  "photo": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Lt_Gen_Julius_W._Becton_Jr.jpeg",
+    "alt": "Lt. Gen. Julius W. Becton Jr., U.S. Army portrait (1980s)",
+    "photographer": "U.S. Army",
+    "repository": "Wikimedia Commons",
+    "license": "Public domain (work of a U.S. Army employee made as part of official duties)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lt_Gen_Julius_W._Becton_Jr.jpeg",
+    "date_taken": "circa 1980s"
+  },
+  "ai_reading": "Becton's top semantic neighbor is NAACP LDF lawyer Robert L. Carter (entry 108) at a cosine count of 753, the second-strongest single neighbor-count in the catalog (behind Russell-Carlos's 719 + 271 bidirectional pair). For a forty-year military officer who finished his Army career as a lieutenant general commanding VII Corps and then ran FEMA, the cultural reading would predict either no civil rights cosine cluster at all or pairing with other military-civil-rights figures (the Tuskegee Airmen, etc.); instead the embedding pulls his testimony into the orbit of the NAACP Legal Defense Fund's Director-Counsel, and from there outward into the Mississippi voter-registration network (Charles McLaurin at 339), Vernon Dahmer Jr. (232), the Bassett joint interview (228), and Harold K. Brown's San Diego CORE leadership (206). The cluster reads Becton as a Black-institutional-leadership voice whose military-and-disaster-management career rhymes with the legal and grassroots civil-rights career far more than its surface vocabulary would suggest. His Individual Conscience vs Collective Discipline position at -0.47 is also worth noting: the most-collective-discipline-coded role in the corpus (Army officer) lands the SPEAKER toward Individual Conscience.",
+  "biographical_paragraph": "Becton served forty years in the United States Army, from his July 1944 Air Corps enlistment through his 1983 retirement as a lieutenant general; in 1978 he was the first African American officer to command VII Corps, the heavy-armor formation that the Army had stationed in West Germany for the Cold War [src: 2]. He returned to public service as director of the U.S. Agency for International Development's Office of Foreign Disaster Assistance (1984-1985) and then as director of the Federal Emergency Management Agency under Presidents Reagan and George H. W. Bush, holding the FEMA post from November 1985 through June 1989 [src: 2]. From 1989 through 1994 he served as the fifth president of Prairie View A&M University, the historically Black university from which he had taken his 1960 Bachelor's in mathematics, the first Prairie View graduate to reach flag rank; he later served as superintendent of D.C. Public Schools beginning in 1996 [src: 2]. His 2008 autobiography Becton: Autobiography of a Soldier and Public Servant was published by Naval Institute Press [src: 2]. He died in 2025 at ninety-nine. His Library of Congress oral history is entry 71 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2016655426/",
+      "title": "Julius W. Becton Jr. oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/233936025",
+      "title": "Julius W. Becton Jr., Becton: Autobiography of a Soldier and Public Servant",
+      "publisher": "Naval Institute Press, 2008; WorldCat OCLC 233936025"
+    }
+  ]
+}
