@@ -70,22 +70,37 @@ function useCorpusData() {
 /**
  * RagExplore, landing page for the interactive RAG features layer.
  *
- * Three surfaces on one page, switchable via tabs:
- *
- *   1. Search, live semantic-search box (SemanticSearch component).
- *      Calls /retrieve via Netlify Function. Renders ranked passages
- *      as CitationCards with full primary-source metadata.
- *
- *   2. Quote-finder, paste a half-remembered quote, get the source.
- *      Same retrieval backend, larger textarea, always shows full text.
- *
- *   3. Constellation, 2D PCA scatter of all 136 interview centroids
- *      in embedding space. Click a dot to (someday) jump to the
- *      interview. Loads public/rag/constellation.json.
+ * Page structure:
+ *   - Page header: h1 + framing sentence + corpus-stats badges
+ *     (interview count, passage count, per-tier counts).
+ *   - Spectrum (always visible above the tab nav): 1D scatter of 136
+ *     interview centroids along one chosen concept axis. Click a dot
+ *     to drill into that interviewee's passages most aligned with the
+ *     chosen pole.
+ *   - Grouped sticky tab nav. Four intent-labeled categories:
+ *       Concept projection (Word Search / ConceptMatrix)
+ *       Structural maps    (InterviewMap, Themes, Network, Atlas)
+ *       Find a passage     (Quote Finder, Semantic Overlap)
+ *       Curated reading    (Tours, Famous Names, Quote of the Day)
+ *   - About This Page aside at the bottom carrying AuditProvenance
+ *     (9 audit passes / 127 LoC cross-references / 5 tier vocabulary).
  *
  * The page is the conference's "philosophy of embedding" demo surface.
- * It is intentionally simple, the goal is to show the substrate
- * works, not to be the final UX.
+ * Spectrum + ConceptMatrix demonstrate how a 1024-dim Voyage embedding
+ * takes a position on a named concept; the other tabs are alternative
+ * structural and editorial views of the same corpus.
+ *
+ * Live retrieval routes through /retrieve (Netlify Function ->
+ * Pinecone + Voyage rerank). Static precomputed artifacts live at
+ * /rag/constellation.json (interview roster + UMAP coords + audit
+ * tier), /rag/related/entry-N.json (semantic neighbors per entry),
+ * and /rag/summaries/*.json (themes, tours, famous-names, etc).
+ *
+ * The legacy Constellation tab (a PCA-based scatter) was replaced by
+ * InterviewMap (the UMAP-substrate scatter with names labeled and
+ * a search field). Constellation is still imported and gated on a
+ * never-true tab id so the component code path stays warm but the
+ * surface is not user-reachable.
  */
 // Tab IDs are reflected in window.location.hash so URLs like
 // /rag-explore#map are shareable and deep-linkable.
@@ -706,11 +721,12 @@ export default function RagExplore() {
 
         <footer className="text-xs text-stone-500 border-t border-stone-200 pt-6">
           <p className="mb-1">
-            Substrate: Pinecone Builder (civil-rights index) + Voyage AI voyage-3 embeddings +
-            rerank-2. The /retrieve Netlify Function proxies live queries; the
-            constellation reads a precomputed JSON at /rag/constellation.json. See{' '}
-            <code className="font-mono">rag/INTERACTIVE_FEATURES_DESIGN.md</code> in the repo
-            for the full architecture.
+            Substrate: Pinecone Builder (civil-rights index) + Voyage AI voyage-3 embeddings
+            + rerank-2. Live queries route through the /retrieve Netlify Function. The
+            static precomputed JSON at /rag/constellation.json supplies the interviewee
+            roster, UMAP coordinates, and audit-tier counts for the views above. See{' '}
+            <code className="font-mono">rag/INTERACTIVE_FEATURES_DESIGN.md</code> in the
+            repo for the full architecture.
           </p>
         </footer>
       </main>
