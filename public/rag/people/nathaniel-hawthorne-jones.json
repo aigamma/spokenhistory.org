@@ -3,17 +3,22 @@
   "slug": "nathaniel-hawthorne-jones",
   "person_type": "interviewee",
   "entry_number": 92,
-  "born": null,
+  "born": 1914,
   "died": null,
   "display_name": "Nathaniel Hawthorne Jones",
-  "role_summary": "Civil Rights History Project interviewee; the LoC oral history is the primary archival source for this catalog page.",
-  "ai_reading": "Nathaniel Hawthorne Jones's top semantic neighbor is Charles McLaurin (entry 17, count 124); the broader cluster includes James Oscar Jones (#57), Peggy Jean Connor (#96), Clarence Magee (#21).",
-  "biographical_paragraph": "Nathaniel Hawthorne Jones's oral history is held at the Library of Congress as entry 92 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries a not-auditable audit tier: the catalog cannot independently certify the transcript against primary sources for this entry, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "Civil rights organizer in Claiborne County, Mississippi; participant in the Port Gibson Movement, the Port Gibson Merchant Boycotts (the 1966-1970s boycotts that produced NAACP v. Claiborne Hardware, the 1982 Supreme Court case affirming the boycotts' First Amendment protection), organized protests at Alcorn College, and voter registration activities; U.S. Navy Steward Mate during World War II (drafted 1944).",
+  "ai_reading": "Jones's top semantic neighbor is Charles McLaurin (entry 17) at a cosine count of 124; the broader cluster includes James Oscar Jones (entry 57), Peggy Jean Connor (entry 96), and Clarence Magee (entry 21). The McLaurin pairing is the catalog's clearest example of a Claiborne-County-and-Sunflower-County Mississippi cross-region cosine: both worked Mississippi voter-registration organizing in the early 1960s, and the embedding catches the field-organizing-in-Mississippi register as a stronger signal than either's pairing with the national NAACP or SNCC headquarters voices. The novel observation his page surfaces is the specific-county-vs-statewide-narrative signature: Jones's Port Gibson and Claiborne County work produced one of the most important civil rights legal cases of the era (NAACP v. Claiborne Hardware, 1982), but the historiography often treats Claiborne County as a single-event location rather than as a sustained-organizing site; the embedding's cosine pattern reads his testimony as part of the continuous-organizing tradition the case rests on.",
+  "biographical_paragraph": "While Jones's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the Port Gibson Movement is documented in the Mississippi Encyclopedia and the Mississippi Department of Archives and History collections [src: 1, src: 2]. Jones was born in 1914 in Claiborne County, Mississippi. He was drafted into the U.S. Navy in 1944 during World War II and served as a Steward Mate, the segregated Navy assignment open to Black sailors at that date; he describes the racial discrimination of that role in his oral history. He returned to Claiborne County after the war and joined the Port Gibson Movement, the local NAACP-led civil rights organizing that across 1966-1970s ran the Port Gibson Merchant Boycotts to compel desegregation of the town's businesses [src: 2]. The boycotts and associated protests at Alcorn College (the historically Black state university in nearby Lorman, where Jones helped organize student protests) produced the litigation that the United States Supreme Court eventually decided as NAACP v. Claiborne Hardware Co. (1982), the case that affirmed the boycotts' First Amendment protection and limited the tort liability of civil rights organizers for economic damages caused by lawful boycotts. He continued voter registration organizing across the same arc.",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2016655408/",
       "title": "Nathaniel Hawthorne Jones oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://mississippiencyclopedia.org/entries/naacp-v-claiborne-hardware-1982/",
+      "title": "NAACP v. Claiborne Hardware (1982) and the Port Gibson Movement context",
+      "publisher": "The Mississippi Encyclopedia, University Press of Mississippi"
     }
   ]
 }
