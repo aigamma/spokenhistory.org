@@ -29,17 +29,20 @@ export default function InterviewIndex() {
   const [search, setSearch] = useState(initialSearch);
   const [tierFilter, setTierFilter] = useState('all');
   const [sortBy, setSortBy] = useState('A-Z');
+  const [peopleIndex, setPeopleIndex] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
     Promise.all([
       fetch('/rag/summaries/neighbors.json').then((r) => (r.ok ? r.json() : {})),
       fetch('/rag/summaries/capsules.json').then((r) => (r.ok ? r.json() : { capsules: {} })),
+      fetch('/rag/people/index.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
     ])
-      .then(([neighbors, caps]) => {
+      .then(([neighbors, caps, idx]) => {
         if (cancelled) return;
         setData(neighbors);
         setCapsules(caps.capsules || caps || {});
+        setPeopleIndex(idx);
       })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
     return () => { cancelled = true; };
@@ -53,8 +56,9 @@ export default function InterviewIndex() {
       tier: e.tier,
       loc_item_url: e.loc_item_url,
       capsule: (capsules[e.entry_number] || capsules[String(e.entry_number)])?.capsule || null,
+      catalog_slug: peopleIndex?.by_entry?.[e.entry_number]?.slug || null,
     }));
-  }, [data, capsules]);
+  }, [data, capsules, peopleIndex]);
 
   const filtered = useMemo(() => {
     let list = interviews;
@@ -209,6 +213,14 @@ function InterviewCard({ interview }) {
         >
           Open interview →
         </Link>
+        {interview.catalog_slug && (
+          <Link
+            to={`/person/${interview.catalog_slug}`}
+            className="text-civil-red-body hover:underline"
+          >
+            Catalog page →
+          </Link>
+        )}
         {interview.loc_item_url && (
           <a
             href={interview.loc_item_url}
