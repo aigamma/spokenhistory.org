@@ -6,14 +6,19 @@
   "born": null,
   "died": null,
   "display_name": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins",
-  "role_summary": "Joint oral history at the Library of Congress; this catalog page treats the combined transcript as a single embedding signature.",
-  "ai_reading": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins's top semantic neighbor is Abernathy family (entry 28, count 150); the broader cluster includes Peggy Jean Connor (#96), Frankye Adams-Johnson (#43), Cynthia and Fletcher Anderson (#25).",
-  "biographical_paragraph": "This joint oral history is held at the Library of Congress as entry 46 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The LoC transcript carries an ingestion-only audit tier: the catalog ingested the transcript but did not subject it to the audit cascade, and any specific biographical or quoted claims should be confirmed against external archives before citation. Independent biographical sourcing for an extended orientation paragraph is pending; the strongest signal currently available is the embedding pattern named in the AI's reading above.",
+  "role_summary": "Joint oral history of the surviving children of Gayle Jenkins (a leader of the Bogalusa, Louisiana civil rights movement). Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins are siblings; Willie Jenkins was a child plaintiff in the federal court case that integrated Bogalusa public schools; the family was protected during demonstrations by the Bogalusa Deacons of Defense and Justice (catalog entry 25 documents the Andersons, who were among the Deacons leaders).",
+  "ai_reading": "The Crawford-Breaux-Jenkins siblings' top semantic neighbor is the Abernathy family joint interview (entry 28) at a cosine count of 150; the broader cluster includes Peggy Jean Connor (entry 96), Frankye Adams-Johnson (entry 43), and the Cynthia + Fletcher Anderson joint interview (entry 25, also Bogalusa). The Anderson pairing is the catalog's clearest same-community Bogalusa cosine: the Andersons led the Deacons of Defense; the Crawford-Breaux-Jenkins testimony references the Deacons protecting their family; the two families' embeddings rhyme because they document the same Bogalusa organizing arc from different vantage points. The Abernathy-family pairing is the catalog's clearest case of a movement-leader's-children cohort signature: both the Crawford-Breaux-Jenkins (Gayle Jenkins's children) and the Abernathy family (Ralph and Juanita's children) testify to the same movement-leader-parental-shadow experience, the embedding catches that shared register as a stronger signal than either family's local-community-organizing cosines would predict.",
+  "biographical_paragraph": "While this joint LoC oral history carries an ingestion-only audit tier (the catalog ingested the transcript but did not subject it to the audit cascade, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the Jenkins family is documented through the NMAAHC object record [src: 1, src: 2]. Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins are siblings (and Geraldine and Toni are also Gayle Jenkins's daughters), the surviving children of Gayle Jenkins, who was a leader of the Bogalusa, Louisiana civil rights movement in the 1960s. Their late brother Don was also active in the movement [src: 2]. Willie Elliot Jenkins was a child plaintiff in the federal court case that compelled the integration of Bogalusa public schools in the late 1960s [src: 2]. The family describes growing up under the protection of the Deacons of Defense and Justice (the armed-self-defense organization catalog entry 25's Andersons led in Washington Parish), participating in local rallies, and the long arc of Bogalusa civil rights organizing through their late twentieth century [src: 2].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669117/",
       "title": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.18.1a-h",
+      "title": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins Oral History Interview object record",
+      "publisher": "Smithsonian National Museum of African American History and Culture"
     }
   ]
 }
