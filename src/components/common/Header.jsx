@@ -69,6 +69,7 @@ const MENU_ROUTES = [
     matchTab: 'lenses',
   },
   { label: 'Interviews', to: '/interview-index', matchPath: '/interview-index' },
+  { label: 'People', to: '/people', matchPath: '/people' },
   { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
   { label: 'About', to: '/about', matchPath: '/about' },
 ];
