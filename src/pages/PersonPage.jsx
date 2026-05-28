@@ -117,7 +117,8 @@ export default function PersonPage() {
       fetchJsonOrNull('/rag/summaries/concept_axes.json'),
       fetchJsonOrNull('/rag/summaries/influence.json'),
       fetchJsonOrNull('/rag/summaries/tours.json'),
-    ]).then(([constellation, related, conceptAxes, influence, tours]) => {
+      fetchJsonOrNull('/rag/people/index.json'),
+    ]).then(([constellation, related, conceptAxes, influence, tours, peopleIndex]) => {
       if (cancelled) return;
       const point = constellation?.points?.find(
         (p) => p.entry_number === person.entry_number
@@ -161,6 +162,7 @@ export default function PersonPage() {
         axisPositions,
         influenceOut,
         tours: tourAppearances,
+        peopleIndex,
       });
     });
     return () => { cancelled = true; };
@@ -451,10 +453,20 @@ export default function PersonPage() {
                       border: 'border-stone-300',
                       text: 'text-stone-700',
                     };
+                    // Prefer a direct /person/:slug link when the
+                    // neighbor has a catalog page (looked up via the
+                    // precomputed people index). Falls back to the
+                    // Semantic Overlap tab for neighbors not in the
+                    // catalog (rare edge case while the catalog is
+                    // still growing).
+                    const neighborSlug = crossLinks.peopleIndex?.by_entry?.[r.entry_number]?.slug || null;
+                    const toUrl = neighborSlug
+                      ? `/person/${neighborSlug}`
+                      : `/rag-explore?tab=related&entry=${r.entry_number}`;
                     return (
                       <li key={r.entry_number}>
                         <Link
-                          to={`/rag-explore?tab=related&entry=${r.entry_number}`}
+                          to={toUrl}
                           className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${badge.bg} ${badge.border} hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-shadow`}
                           title={`Audit tier: ${neighbor.uncertainty_tier || 'unknown'}; ${r.count} shared passages`}
                         >
