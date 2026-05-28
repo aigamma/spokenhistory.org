@@ -9,11 +9,49 @@
   "role_summary": "Joint oral history of two pioneering Black journalists: Simeon Booker (1918-2017, Jet and Ebony Washington bureau chief from 1955), who covered the Emmett Till trial and the Freedom Rides; and Moses Newson (1927-2024), Baltimore Afro-American reporter who also covered both the Till trial and the 1961 Freedom Rides.",
   "ai_reading": "The Booker/Newson interview's top semantic neighbor is Charles McLaurin (entry 17, count 124), with C. T. Vivian (entry 134, SCLC), Annie Pearl Avery (entry 3, SNCC), Robert L. Carter (entry 108, NAACP LDF), and H. Jack Geiger (entry 54, Mississippi community health) rounding out the top five. The cluster is broadly civil-rights-network, with the embedding pulling their journalist-witness testimony as close to the SNCC field organizers they covered as to the NAACP legal infrastructure that supported the cases they reported. The Southern Struggle axis position of +0.53 reflects their Mississippi-Till-trial and Alabama-Freedom-Ride coverage anchor. The journalist's eye in their testimony reads similar to the Mississippi voter-registration cohort's testimony, the embedding noting that the chronicler and the chronicled share enough vocabulary for high cosine similarity.",
   "biographical_paragraph": "This is a joint oral history at the Library of Congress as entry 9 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Joint interviews in the corpus combine the testimony of two or more interviewees in a single recording; the catalog page treats the embedding signature of the joint transcript as one unit (see the AI's reading above). Independent biographical sourcing for each individual interviewee is pending; future enrichment may split this entry into separate per-person pages if individual biographical material becomes accessible.",
+  "movement_context": "The Black-press infrastructure Booker and Newson worked through (Booker at Jet and Ebony, both Johnson Publishing Company titles owned by John H. Johnson out of Chicago; Newson at the Baltimore Afro-American, the John H. Murphy Sr. family weekly founded in 1892) was the publication channel through which the visual record of the 1955 Emmett Till murder and trial reached national Black readers in the weeks the white-press establishment was largely declining the story [src: 2]. Jet magazine's September 15, 1955 issue (number 87, dated September 15 with publication backdating to the previous Thursday under contemporary periodical convention) reproduced David Jackson's open-casket photograph of Till at the request of Till's mother Mamie Till-Mobley; the photograph's circulation through Jet to roughly four hundred thousand Black households was the visual-attention generation that brought the September 19-23 trial in Sumner, Mississippi to national consciousness [src: 2]. Booker, then Jet's new Washington bureau chief (he had taken the post in 1955 and would hold it for fifty-three years), covered the trial directly; Newson covered the Anniston firebombing of the Freedom Riders' Greyhound bus on May 14, 1961, the post-Anniston Trailways bus attack at Birmingham, and the post-Birmingham Montgomery beatings of the Riders that drew the Kennedy Justice Department's federal-marshal intervention [src: 2, 3]. The joint-interview format the CRHP recorded with them in 2011 placed two of the central first-person archival sources for the Till trial and the Freedom Rides in conversation, an editorial choice the catalog page treats as a deliberate design rather than a recording-convenience accident [src: 1].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Mose_Wright_pointing_to_defendants_in_the_murder_trial_of_Emmett_Till_enhanced.jpg",
+      "alt": "Moses Wright pointing to defendants Roy Bryant and J. W. Milam during the September 1955 Emmett Till murder trial in Sumner, Mississippi",
+      "caption": "Moses Wright (Emmett Till's great-uncle, sixty-four years old at the time of the trial) standing and identifying defendants Roy Bryant and J. W. Milam from the witness stand of the Tallahatchie County Courthouse in Sumner, Mississippi on September 21, 1955. Photographed by Ernest Withers, the Black photojournalist from Memphis whose archive documents the central moments of the southern civil rights movement; the photograph circulated through Jet and the Baltimore Afro-American (the publications Booker and Newson reported for) before reaching the national-press wire services.",
+      "photographer": "Ernest Withers",
+      "repository": "Wikimedia Commons (sourced from Storyboard Memphis archive)",
+      "license": "Public domain (U.S. publication 1931-1963 without copyright renewal)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mose_Wright_pointing_to_defendants_in_the_murder_trial_of_Emmett_Till_enhanced.jpg",
+      "date_taken": "1955-09-21"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Greyhound_Bus_Attack_Anniston_2.jpg",
+      "alt": "Freedom Riders watching the Greyhound bus burn after the Anniston firebombing, May 14, 1961",
+      "caption": "Freedom Riders watching the Greyhound bus burn outside Anniston, Alabama on May 14, 1961, after a Ku Klux Klan mob firebombed it at a roadside stop along U.S. Highway 78. Newson, then a Baltimore Afro-American reporter, covered the Anniston attack and the subsequent Trailways and Montgomery attacks across the May-June 1961 Freedom Rides campaign; the photograph is from the U.S. National Park Service Civil Rights Movement Sites documentation.",
+      "photographer": "U.S. National Park Service",
+      "repository": "Wikimedia Commons (U.S. National Park Service)",
+      "license": "Creative Commons CC0 1.0 Universal Public Domain Dedication",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Greyhound_Bus_Attack_Anniston_2.jpg",
+      "date_taken": "1961-05-14"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669130/",
       "title": "Simeon Booker and Moses Newson (joint interview) oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/828863611",
+      "title": "Simeon Booker with Carol McCabe Booker, Shocking the Conscience: A Reporter's Account of the Civil Rights Movement",
+      "publisher": "University Press of Mississippi, 2013; WorldCat OCLC 828863611 (Booker's autobiographical institutional history of his Jet/Ebony Washington bureau years including the Till trial and Freedom Rides coverage)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/19908603",
+      "title": "Raymond Arsenault, Freedom Riders: 1961 and the Struggle for Racial Justice",
+      "publisher": "Oxford University Press, 2006; WorldCat OCLC 19908603 (the standard institutional history of the Freedom Rides including the Anniston, Birmingham, and Montgomery attacks Newson covered)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/176922780",
+      "title": "Devery S. Anderson, Emmett Till: The Murder That Shocked the World and Propelled the Civil Rights Movement",
+      "publisher": "University Press of Mississippi, 2015; WorldCat OCLC 176922780 (the standard institutional history of the Till murder and trial including the Black-press coverage role)"
     }
   ]
 }
