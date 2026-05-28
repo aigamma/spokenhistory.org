@@ -28,6 +28,8 @@ Title headlines (page titles, tab labels, chart titles, section headings, tour t
 
 **Do not ask for confirmation between batches of independent work.** Run to completion.
 
+**Commit liberally, push sparingly.** Every iteration of work should produce a substantive, verbose commit message, that's how the rollback log stays useful and how a future reader (Eric, another agent, an institutional reviewer) reconstructs what changed and why. Pushes, however, trigger Netlify production builds that consume billing credits, so they should be batched. Default cadence: push every 1-2 hours of active work, or at a major user-visible milestone (a feature lands, a regression gets fixed, a new artifact is ready for stakeholder viewing), whichever comes first. During autonomous overnight loops or long person-page-building runs, push every 5-10 commits at most, not per-commit. Hold the push if the diff is purely internal (refactor, docstring, test fixture) and no one is waiting to see the result.
+
 External rate limits (OpenAI, Firebase, Fly.io, GitHub, Netlify) still apply. This rule is about Anthropic-side conservatism only.
 
 ## Documentation as durable source of truth
