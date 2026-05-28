@@ -315,8 +315,11 @@ export default function RagExplore() {
             the tab nav so it's always the first thing visitors see;
             tabs below let them explore alternative views without
             displacing the headline. Filtered out of the tab nav below
-            since duplicating it as a tab label would be redundant. */}
-        <section className="mb-8">
+            since duplicating it as a tab label would be redundant.
+            The id is the scroll target for cross-tab "place this
+            interviewee on the spectrum" links from elsewhere on the
+            page (currently the Semantic Overlap tab). */}
+        <section id="spectrum-section" className="mb-8 scroll-mt-28">
           <h2
             className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
             style={{ fontFamily: 'Inter, sans-serif' }}
@@ -538,6 +541,36 @@ export default function RagExplore() {
                   </datalist>
                 )}
               </div>
+
+              {/* Cross-tab affordance. The same person can be looked at
+                  through Concept Spectrum's lens (one axis at a time) by
+                  setting ?spectrumEntry=N; the Spectrum chart at the top
+                  of the page reads that param and selects the dot. */}
+              {relatedEntry != null && (
+                <div className="mb-6 flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm">
+                  <span className="text-stone-600">Currently exploring:</span>
+                  <span className="font-medium text-stone-900">
+                    {allInterviewees?.find((e) => e.entry_number === relatedEntry)?.entry_subject ||
+                      `Entry #${relatedEntry}`}
+                  </span>
+                  <span aria-hidden className="text-stone-400">·</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const next = new URLSearchParams(searchParams);
+                      next.set('tab', 'related');
+                      next.set('spectrumEntry', String(relatedEntry));
+                      setSearchParams(next, { replace: false });
+                      document
+                        .getElementById('spectrum-section')
+                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                    className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
+                  >
+                    Also place on the Concept Spectrum &uarr;
+                  </button>
+                </div>
+              )}
 
               <div className="mt-6">
                 <RelatedPassages
