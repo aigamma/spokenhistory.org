@@ -375,8 +375,15 @@ export default function PersonPage() {
                 </h2>
                 <ul className="space-y-3 list-none p-0 max-w-2xl">
                   {crossLinks.axisPositions.map((axis) => {
+                    // position_normalized ranges from -1 (pole_low) to
+                    // +1 (pole_high), centered on 0. Convert linearly
+                    // to a 0-100 percentage along the bar (0 = fully
+                    // toward pole_low, 100 = fully toward pole_high).
+                    // The earlier formula `position_normalized * 100`
+                    // wrongly clamped negative positions to 0%, hiding
+                    // every interviewee in the bottom half of any axis.
                     const pct = axis.position_normalized != null
-                      ? Math.max(0, Math.min(100, Math.round(axis.position_normalized * 100)))
+                      ? Math.max(0, Math.min(100, Math.round((axis.position_normalized + 1) * 50)))
                       : null;
                     return (
                       <li key={axis.slug}>
@@ -389,7 +396,9 @@ export default function PersonPage() {
                               {axis.label}
                             </span>
                             {pct != null && (
-                              <span className="text-xs text-stone-500 tabular-nums">{pct}%</span>
+                              <span className="text-xs text-stone-500 tabular-nums">
+                                {pct}% toward {axis.position_normalized >= 0 ? axis.pole_high : axis.pole_low}
+                              </span>
                             )}
                           </div>
                           <div
