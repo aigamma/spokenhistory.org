@@ -17,6 +17,7 @@ import InterviewIndex from './pages/InterviewIndex'
 import About from './pages/About'
 import ReviewQueue from './pages/ReviewQueue'
 import RagExplore from './pages/RagExplore'
+import PersonPage from './pages/PersonPage'
 import NotFound from './pages/NotFound'
 
 
@@ -104,6 +105,18 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <RagExplore />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      {/* Per-person reference pages. One catalog entry per named
+          individual (interviewees + external figures discussed by
+          interviewees). See public/rag/people/README.md for the
+          JSON schema and content discipline. */}
+      <Route path="/person/:slug" element={
+        <ProtectedRoute>
+          <Layout>
+            <PersonPage />
           </Layout>
         </ProtectedRoute>
       } />
