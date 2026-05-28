@@ -26,7 +26,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ExternalLink, ArrowLeft } from 'lucide-react';
+import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE } from '../components/rag/tiers';
 
@@ -296,60 +296,143 @@ export default function PersonPage() {
         {/* Cross-link manifest. Only renders for interviewees (need
             entry_number to look anything up). Each section appears
             only if its precomputed substrate file actually has data
-            for this entry. */}
+            for this entry. Visual treatment: section icons + colored
+            chips for tier-bearing entries, inline mini-bars for
+            concept-axis positions. The manifest IS the page's
+            primary value (per public/rag/people/README.md), so the
+            visual density and color are deliberate, not decorative. */}
         {crossLinks && (
-          <section className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <section className="mb-12 space-y-8">
+
+            {/* Primary-source link to the LoC catalog item.
+                Compact, prominent so visitors can ground the page in
+                the underlying interview. */}
             {crossLinks.locItemUrl && (
               <article>
-                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-2">
+                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-2 flex items-center gap-1.5">
+                  <FileText className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
                   Primary source
                 </h2>
-                <a
-                  href={crossLinks.locItemUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-civil-red-body hover:underline"
-                >
-                  Library of Congress item
-                  <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                </a>
-                {crossLinks.chunkCount > 0 && (
-                  <p className="text-xs text-stone-500 mt-1">
-                    {crossLinks.chunkCount} time-anchored passages in the corpus.
-                  </p>
-                )}
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <a
+                    href={crossLinks.locItemUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-civil-red-body hover:underline font-medium"
+                  >
+                    Library of Congress item
+                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                  </a>
+                  {crossLinks.chunkCount > 0 && (
+                    <span className="text-xs text-stone-600">
+                      <span className="font-medium text-stone-900 tabular-nums">{crossLinks.chunkCount}</span> time-anchored passages in the corpus
+                    </span>
+                  )}
+                </div>
               </article>
             )}
 
+            {/* Concept-axis positions, the embedding-substrate's
+                opinion of where this person sits along each named
+                conceptual continuum. Rendered as inline horizontal
+                mini-bars filled in red proportional to position
+                (0 = pole_low pole, 100 = pole_high pole), with the
+                pole labels below the bar so the visitor can read the
+                axis without leaving the page. Each row is a link
+                that opens the Concept Spectrum at the page top with
+                this entry pre-selected on that axis. */}
+            {crossLinks.axisPositions && crossLinks.axisPositions.length > 0 && (
+              <article>
+                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
+                  <Compass className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
+                  Position on concept axes
+                </h2>
+                <ul className="space-y-3 list-none p-0 max-w-2xl">
+                  {crossLinks.axisPositions.map((axis) => {
+                    const pct = axis.position_normalized != null
+                      ? Math.max(0, Math.min(100, Math.round(axis.position_normalized * 100)))
+                      : null;
+                    return (
+                      <li key={axis.slug}>
+                        <Link
+                          to={`/rag-explore?spectrumAxis=${axis.slug}&spectrumEntry=${person.entry_number}`}
+                          className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded-md p-1 -m-1"
+                        >
+                          <div className="flex items-baseline justify-between mb-1.5">
+                            <span className="text-sm font-medium text-stone-800 group-hover:text-civil-red-strong">
+                              {axis.label}
+                            </span>
+                            {pct != null && (
+                              <span className="text-xs text-stone-500 tabular-nums">{pct}%</span>
+                            )}
+                          </div>
+                          <div
+                            className="relative h-2 bg-stone-200 rounded-full overflow-hidden"
+                            role="progressbar"
+                            aria-label={`${axis.label}: ${pct ?? 'unknown'}% along axis`}
+                            aria-valuenow={pct ?? undefined}
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                          >
+                            {pct != null && (
+                              <div
+                                className="absolute top-0 left-0 h-full bg-gradient-to-r from-civil-red-strong/60 to-civil-red-strong rounded-full group-hover:from-civil-red-strong group-hover:to-civil-red-strong/80"
+                                style={{ width: `${pct}%` }}
+                              />
+                            )}
+                          </div>
+                          <div className="flex justify-between mt-1 text-[10px] text-stone-500">
+                            <span>{axis.pole_low}</span>
+                            <span className="text-right">{axis.pole_high}</span>
+                          </div>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </article>
+            )}
+
+            {/* Semantic neighbors, the precomputed top-related
+                interviewees from /rag/related/entry-${N}.json.
+                Rendered as tier-colored chips so the visitor sees
+                each neighbor's audit-confidence tier at a glance.
+                Clicking a chip opens the Semantic Overlap tab with
+                that neighbor pre-selected. */}
             {crossLinks.related && crossLinks.related.length > 0 && (
               <article>
-                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-2">
+                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
+                  <Users className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
                   Semantic neighbors in the corpus
                 </h2>
-                <ul className="text-sm space-y-1 list-none p-0">
+                <ul className="flex flex-wrap gap-2 list-none p-0 mb-3">
                   {crossLinks.related.map((r) => {
                     const neighbor = crossLinks.constellation?.points?.find(
                       (p) => p.entry_number === r.entry_number
                     );
                     if (!neighbor) return null;
+                    const badge = TIER_BADGE[neighbor.uncertainty_tier] || {
+                      bg: 'bg-stone-100',
+                      border: 'border-stone-300',
+                      text: 'text-stone-700',
+                    };
                     return (
                       <li key={r.entry_number}>
                         <Link
-                          to={`/rag-explore?tab=related`}
-                          state={{ entryNumber: r.entry_number }}
-                          className="text-civil-red-body hover:underline"
+                          to={`/rag-explore?tab=related&entry=${r.entry_number}`}
+                          className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${badge.bg} ${badge.border} hover:shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-shadow`}
+                          title={`Audit tier: ${neighbor.uncertainty_tier || 'unknown'}; ${r.count} shared passages`}
                         >
-                          {neighbor.entry_subject}
+                          <span className={`w-2 h-2 rounded-full ${badge.bg.replace('bg-', 'bg-').replace('-100', '-400').replace('-50', '-300')} border ${badge.border}`} aria-hidden="true" />
+                          <span className={`text-sm ${badge.text}`}>{neighbor.entry_subject}</span>
+                          <span className="text-xs text-stone-500 tabular-nums">{r.count}</span>
                         </Link>
-                        <span className="text-xs text-stone-500 ml-2">
-                          {r.count} shared passages
-                        </span>
                       </li>
                     );
                   })}
                 </ul>
-                <p className="text-xs text-stone-500 mt-2">
-                  Full list on the{' '}
+                <p className="text-xs text-stone-500">
+                  Number on each chip is the count of shared passages; the dot indicates the neighbor&apos;s audit tier. Full list on the{' '}
                   <Link
                     to={`/rag-explore?tab=related&entry=${person.entry_number}`}
                     className="text-civil-red-body hover:underline"
@@ -360,66 +443,56 @@ export default function PersonPage() {
               </article>
             )}
 
-            {crossLinks.axisPositions && crossLinks.axisPositions.length > 0 && (
-              <article>
-                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-2">
-                  Position on concept axes
-                </h2>
-                <ul className="text-sm space-y-2 list-none p-0">
-                  {crossLinks.axisPositions.map((axis) => (
-                    <li key={axis.slug}>
-                      <Link
-                        to={`/rag-explore?spectrumAxis=${axis.slug}&spectrumEntry=${person.entry_number}`}
-                        className="text-civil-red-body hover:underline"
-                      >
-                        {axis.label}
-                      </Link>
-                      {axis.position_normalized != null && (
-                        <span className="text-xs text-stone-500 ml-2">
-                          {(axis.position_normalized * 100).toFixed(0)}% toward {axis.position_normalized >= 0.5 ? axis.pole_high : axis.pole_low}
-                        </span>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            )}
-
+            {/* Influence out-edges: figures discussed in THIS
+                interview. In-corpus figures link to their own
+                /person/:slug page; out-of-corpus figures render as
+                plain text. */}
             {crossLinks.influenceOut && crossLinks.influenceOut.length > 0 && (
               <article>
-                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-2">
+                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
+                  <MessageSquareQuote className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
                   Discussed in this interview
                 </h2>
-                <ul className="text-sm space-y-1 list-none p-0">
-                  {crossLinks.influenceOut.slice(0, 8).map((d) => (
-                    <li key={d.id || d.name}>
-                      {d.in_corpus && d.slug ? (
-                        <Link
-                          to={`/person/${d.slug}`}
-                          className="text-civil-red-body hover:underline"
-                        >
-                          {d.name || d.id}
-                        </Link>
-                      ) : (
-                        <span className="text-stone-700">{d.name || d.id}</span>
-                      )}
-                    </li>
-                  ))}
+                <ul className="flex flex-wrap gap-2 list-none p-0">
+                  {crossLinks.influenceOut.slice(0, 12).map((d) => {
+                    const label = d.name || d.id;
+                    if (d.in_corpus && d.slug) {
+                      return (
+                        <li key={d.id || label}>
+                          <Link
+                            to={`/person/${d.slug}`}
+                            className="inline-flex items-center px-3 py-1 rounded-full border border-civil-red-strong/40 bg-red-50 text-civil-red-body text-sm hover:bg-red-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                          >
+                            {label}
+                          </Link>
+                        </li>
+                      );
+                    }
+                    return (
+                      <li key={d.id || label}>
+                        <span className="inline-flex items-center px-3 py-1 rounded-full border border-stone-300 bg-white text-stone-700 text-sm">
+                          {label}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </article>
             )}
 
+            {/* Curated tour appearances. */}
             {crossLinks.tours && crossLinks.tours.length > 0 && (
               <article>
-                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-2">
+                <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
+                  <BookOpen className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
                   In curated tours
                 </h2>
-                <ul className="text-sm space-y-1 list-none p-0">
+                <ul className="flex flex-wrap gap-2 list-none p-0">
                   {crossLinks.tours.map((t) => (
                     <li key={t.slug}>
                       <Link
                         to={`/rag-explore?tab=tours&tour=${t.slug}`}
-                        className="text-civil-red-body hover:underline"
+                        className="inline-flex items-center px-3 py-1 rounded-full border border-stone-900 bg-white text-stone-900 text-sm hover:bg-stone-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
                       >
                         {t.title}
                       </Link>
