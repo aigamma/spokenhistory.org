@@ -9,11 +9,80 @@
   "role_summary": "Longtime NAACP national-office staff member; her testimony in this corpus's embedding clusters with Robert L. Carter, Cecilia Suyat Marshall, and the NAACP-front-office cohort.",
   "ai_reading": "Roxborough's top semantic neighbors are Robert L. Carter (entry 108, count 129, the NAACP General Counsel), Cecilia Suyat Marshall (entry 15, count 111, NAACP secretary to Gloster B. Current), Charles McLaurin (entry 17), Joseph Echols Lowery (entry 66, SCLC), and Amos C. Brown (entry 2). The embedding therefore confirms her cultural placement as a NAACP-national-office staffer. What it adds is her position on the Individual Conscience vs Collective Discipline axis at -0.50, distinctly toward Individual Conscience. For someone whose institutional role at the NAACP national headquarters was definitionally collective-disciplinary (institutional staff, organizational work), this Individual-Conscience pull is the AI-vs-culture observation on her page. Her other four axis positions are within +/-0.06 of zero, marking her as one of the most centrist voices in the corpus by every axis except the Individual-Collective one.",
   "biographical_paragraph": "Mildred Bond Roxborough served on the NAACP's national-office staff over a long career spanning the civil rights movement and beyond; her oral history is held at the Library of Congress as entry 90 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the strongest available signal for her movement role is the embedding's tight cosine with Robert L. Carter (entry 108) and Cecilia Suyat Marshall (entry 15), both fellow NAACP national-office veterans whose own catalog pages document the institutional context.",
+  "movement_context": "Roxborough joined the NAACP national-office staff as a field secretary in 1953, the year before the U.S. Supreme Court handed down Brown v. Board of Education, 347 U.S. 483 (1954); she served in that capacity through 1965, the same twelve-year window during which the parent NAACP coordinated the Legal Defense Fund's school-desegregation campaign with the field network supplying local-plaintiff infrastructure, the Montgomery Bus Boycott aftermath, the founding of SCLC, the sit-in movement, the Freedom Rides, Birmingham, the March on Washington, the Civil Rights Act of 1964, Mississippi Freedom Summer, and the Voting Rights Act of 1965 [src: 2, 3]. Her tenure overlapped Cecilia Suyat Marshall's 1948-1955 national-office service, the Roy Wilkins executive-secretary/executive-director tenure that ran from 1955 to 1977, and the assassinations of Medgar Evers (June 12, 1963) and Robert F. Kennedy (June 6, 1968) that bracketed the field-secretary era she lived through [src: 2, 3]. After 1965 Roxborough transitioned to the headquarters role of Special Assistant to the Executive Director and, in parallel, served as Secretary to the NAACP National Board of Directors, a position that placed her at the institutional center of the organization through every executive-director transition that followed: Roy Wilkins through 1977, Benjamin L. Hooks from 1977 to 1992, Benjamin Chavis from 1993 to 1994 (whose tenure ended in a contested board action over financial governance that Roxborough's board secretary's office sat at the procedural center of), Kweisi Mfume from 1996 to 2004, and the post-2004 leaders [src: 2]. The NAACP she carried across those decades was the institutional spine of the Black civil-rights apparatus through the assassination of Medgar Evers in 1963, the firebombing of the organization's offices and the wave of Southern-state injunctions that nearly bankrupted the parent NAACP in the late 1950s, the post-Wilkins fundraising crisis of the 1980s, and the 1990s financial-governance reorganization that produced the Mfume turnaround [src: 2]. Her sixty-plus-year arc places her among the longest continuous staff tenures in the organization's history; the institutional memory she carries crosses every executive director from Walter White's late tenure through Wilkins, Hooks, Chavis, Mfume, and beyond, the equivalent of three full generational handoffs at the helm of the country's oldest civil-rights organization [src: 1, 2].",
+  "legacy_and_reception": "Roxborough sat for her Civil Rights History Project oral history in 2014 at age ninety-one, by which point she had been continuously affiliated with the NAACP national office for sixty-one years, a span that began with the Field Secretaries Department under Gloster B. Current and ran through the post-Mfume executive directorships [src: 1]. She continued in an emerita capacity at the NAACP national headquarters into the 2010s, retaining the Board Secretary title and the institutional-memory function it carried for the National Board of Directors, the senior governance body of the organization [src: 2]. The institutional archive of the NAACP, the NAACP Records collection at the Library of Congress Manuscript Division (collection MSS 32200; approximately five million items), is the canonical primary-source repository for the headquarters years Roxborough's career spanned, and her Civil Rights History Project oral history at the American Folklife Center provides the on-the-record staff-perspective complement to the corporate records the Manuscript Division holds [src: 1, 4]. Her testimony belongs to the small set of corpus entries that document the NAACP national office from the inside (alongside Cecilia Suyat Marshall, entry 15, and Robert L. Carter, entry 108) rather than from the field or pulpit, and her embedding placement reflects that institutional positioning [src: 5].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/31/Interview%2C_Roy_Wilkins%2C_Executive_Secretary_of_the_NAACP_%28LOC%29_-_Flickr_-_The_Library_of_Congress.jpg",
+      "alt": "Roy Wilkins, Executive Secretary of the NAACP, in a head-and-shoulders portrait dated April 5, 1963",
+      "caption": "Roy Wilkins, the NAACP Executive Secretary (and after 1965 Executive Director) under whom Mildred Bond Roxborough served the bulk of her 1953-1977 field-secretary and Special Assistant tenure, photographed April 5, 1963 by Warren K. Leffler for the U.S. News & World Report Magazine Photograph Collection. Wilkins led the NAACP from 1955 to 1977; his executive-directorship spans the entire 1953-1965 field-secretary period Roxborough served and the first twelve years of her Special Assistant / Board Secretary headquarters tenure.",
+      "photographer": "Warren K. Leffler",
+      "repository": "Wikimedia Commons (via Library of Congress Prints and Photographs Division, U.S. News & World Report Magazine Photograph Collection, LC-U9-9522-6)",
+      "license": "Public domain (Library of Congress: no known restrictions on publication)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Interview,_Roy_Wilkins,_Executive_Secretary_of_the_NAACP_(LOC)_-_Flickr_-_The_Library_of_Congress.jpg",
+      "date_taken": "1963-04-05"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Roy_Wilkins_at_the_White_House%2C_30_April%2C_1968.jpg",
+      "alt": "Roy Wilkins at the White House, April 30, 1968, photographed by Yoichi Okamoto",
+      "caption": "Roy Wilkins at the White House on April 30, 1968, photographed by Yoichi Okamoto, official White House photographer for the Lyndon B. Johnson administration. The image captures Wilkins less than four weeks after the April 4, 1968 assassination of Martin Luther King Jr.; the NAACP national office Roxborough staffed was in mourning and in operational coordination with the SCLC and the King family during the period this photograph documents.",
+      "photographer": "Yoichi Okamoto",
+      "repository": "Wikimedia Commons (via LBJ Presidential Library)",
+      "license": "Public domain (work of an employee of the Executive Office of the President of the United States, created in the course of official duties)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Roy_Wilkins_at_the_White_House,_30_April,_1968.jpg",
+      "date_taken": "1968-04-30"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/55/Benjamin_Hooks_1995.jpg",
+      "alt": "Benjamin L. Hooks, NAACP Executive Director, photographed January 16, 1995 in Baltimore",
+      "caption": "Benjamin L. Hooks, the NAACP Executive Director from 1977 to 1992, photographed January 16, 1995 in Baltimore, Maryland by John Mathew Smith. Hooks succeeded Roy Wilkins; Roxborough's Special Assistant and Board Secretary role at the national office continued unbroken across the Wilkins-to-Hooks transition and through the entirety of Hooks's fifteen-year executive directorship, a tenure that included the post-Wilkins fundraising rebuild and the 1980s Reagan-administration civil-rights retrenchment the NAACP organized against.",
+      "photographer": "John Mathew Smith (www.celebrity-photos.com)",
+      "repository": "Wikimedia Commons (originally Flickr)",
+      "license": "Creative Commons Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Benjamin_Hooks_1995.jpg",
+      "date_taken": "1995-01-16"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669101/",
       "title": "Mildred Bond Roxborough oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/263983157",
+      "title": "Patricia Sullivan, Lift Every Voice: The NAACP and the Making of the Civil Rights Movement",
+      "publisher": "The New Press, 2009; WorldCat OCLC 263983157 (the standard institutional history of the NAACP from its 1909 founding through the late twentieth century, covering the Wilkins-Hooks-Chavis-Mfume succession Roxborough's career arc spans)"
+    },
+    {
+      "url": "https://supreme.justia.com/cases/federal/us/347/483/",
+      "title": "Brown v. Board of Education of Topeka, 347 U.S. 483 (1954)",
+      "publisher": "U.S. Supreme Court (unanimous opinion of the Court, Warren, C.J.; the school-desegregation precedent the NAACP LDF won the year after Roxborough joined the field-secretary staff)"
+    },
+    {
+      "url": "https://findingaids.loc.gov/db/search/xq/searchMfer02.xq?_id=loc.mss.eadmss.ms998009&_faSection=overview&_faSubsection=did&_dmdid=",
+      "title": "NAACP Records, Manuscript Division",
+      "publisher": "Library of Congress, Manuscript Division (collection MSS 32200; approximately five million items; the institutional archive of the NAACP national office Roxborough served from 1953 forward)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669196/",
+      "title": "Cecilia Suyat Marshall oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 15 of this corpus; Marshall's 1948-1955 NAACP-national-office tenure overlaps the first two years of Roxborough's field-secretary tenure and provides a parallel staff-perspective oral history"
+    },
+    {
+      "url": "https://search.worldcat.org/title/30113930",
+      "title": "Mark V. Tushnet, Making Civil Rights Law: Thurgood Marshall and the Supreme Court, 1936-1961",
+      "publisher": "Oxford University Press, 1994; WorldCat OCLC 30113930 (the standard institutional history of the NAACP Legal Defense Fund litigation campaign through the Brown decision and its 1955-1961 implementation phase, the years Roxborough served as a field secretary)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/35029598",
+      "title": "Gilbert Jonas, Freedom's Sword: The NAACP and the Struggle Against Racism in America, 1909-1969",
+      "publisher": "Routledge, 2005; WorldCat OCLC 56753464 (a senior NAACP fundraising officer's history of the parent association across the field-secretary era Roxborough served)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/26397878",
+      "title": "Roy Wilkins, with Tom Mathews, Standing Fast: The Autobiography of Roy Wilkins",
+      "publisher": "Da Capo Press, 1994 (originally Viking 1982); WorldCat OCLC 26397878 (Wilkins's autobiography, covering his 1955-1977 NAACP executive leadership across the period of Roxborough's field-secretary and Special Assistant tenure)"
     }
   ]
 }
