@@ -3,17 +3,60 @@
   "slug": "robert-brown",
   "person_type": "interviewee",
   "entry_number": 106,
-  "born": null,
+  "born": "1935-02-26",
   "died": null,
   "display_name": "Robert Brown",
   "role_summary": "Civil rights movement organizer; in this corpus's embedding his testimony clusters with Harold K. Brown's San Diego CORE leadership, Robert L. Carter's NAACP LDF network, and the Booker/Newson Black-press cohort.",
   "ai_reading": "Brown's top semantic neighbors are Harold K. Brown (entry 55, count 161, the San Diego CORE founder), Robert L. Carter (entry 108, count 118, NAACP General Counsel), the joint Simeon Booker and Moses Newson interview (entry 9, count 117, the JET magazine and pioneering Black press team), Charles McLaurin (entry 17), and Lonnie C. King (entry 80, Atlanta Student Movement). The cluster crosses CORE, NAACP LDF, the Black press, Mississippi SNCC, and Atlanta sit-in organizing; the embedding reads his testimony as a movement-bridge voice. His -0.55 reading on the Nonviolence as Theology vs Armed Self-Defense axis joins the BPP-and-armed-self-defense-leaning cluster, an unexpected placement for a figure not culturally identified with the BPP cohort, possibly catching armed-self-defense language in his transcript that the cultural record does not foreground.",
   "biographical_paragraph": "Robert Brown's oral history is held at the Library of Congress as entry 106 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "movement_context": "Born February 26, 1935 in High Point, North Carolina and raised by his grandparents, Brown attended North Carolina A&T, served as one of the first Black police officers in High Point, and then worked as a federal narcotics agent on cases including the Vito Genovese prosecution before returning to North Carolina in 1960 to found B&C Associates, a public-relations firm advising corporations on race and segregation policy [src: 2]. In 1968 President-elect Richard Nixon recruited him to the White House staff, and from January 1969 he served as Special Assistant to the President, the senior Black appointee with portfolio responsibility for civil rights, community relations, minority business development, equal opportunity in the military and federal agencies, and outreach to historically Black colleges and universities [src: 3] [src: 4]. Brown worked alongside Arthur Fletcher, the Assistant Secretary of Labor for Wage and Labor Standards who built the Philadelphia Plan's federal-contracting goals for minority hiring, and Leonard Garment, the White House special consultant whose civil and human rights portfolio overlapped with Brown's [src: 4] [src: 5]. Together with Garment, Brown is credited by historians of the Nixon administration with the operational momentum behind the Office of Minority Business Enterprise (OMBE), established by Nixon's March 5, 1969 executive order in the Department of Commerce, and with the federal contract set-aside mechanism that historian Dean Kotlowski argues shaped federal minority-business policy for the next two decades [src: 6]. Brown arranged the meeting between Nixon and the presidents of historically Black colleges that produced Nixon's commitment of more than $100 million in federal funds for HBCUs, and he was present in the March 25, 1971 Cabinet Room meeting between Nixon and the Congressional Black Caucus [src: 5]. Earlier in the 1960s Brown had served as a fundraiser for Martin Luther King Jr. and accompanied Coretta Scott King to Memphis the day after the King assassination to help bring her husband's body home, placing him on both sides of the post-1968 reconfiguration of Black political leadership: inside the King family network and inside the Nixon White House [src: 2] [src: 7]. He left the White House at the start of Nixon's second term in 1973 and resumed leadership of B&C Associates in High Point [src: 3].",
+  "legacy_and_reception": "After leaving the White House in 1973 Brown rebuilt B&C Associates (later B&C International) into one of the longest-running Black-owned consulting firms in the United States, headquartered in High Point, North Carolina, and used the firm and his personal resources to organize corporate philanthropy and to underwrite the education of Nelson Mandela's children and grandchildren in American schools during the years when Mandela was imprisoned at Pollsmoor [src: 2] [src: 7]. Brown was reportedly the only American granted an extended prison visit with Mandela, a two-hour meeting against the standard fifteen-minute window for family contact, and he served afterward as a financial counselor to the Mandela family [src: 2] [src: 7]. His 2019 memoir You Can't Go Wrong Doing Right: How a Child of Poverty Rose to the White House and Helped Change the World, published by Convergent Books (an imprint of Penguin Random House), narrates his work alongside King, Nixon, Mandela, and the corporate-philanthropy networks he organized through B&C [src: 8]. High Point University, where he served as Chairman of the Board of Trustees, established the Dr. Robert J. Brown Endowed Scholarship Fund in 2021 with $3 million in contributions from HPU and Coca-Cola Consolidated to support minority students at the institution [src: 9]. He held eleven honorary doctorates and was profiled as one of Business North Carolina's Pillars of North Carolina for his combined civic, political, and business contributions [src: 2] [src: 9].",
+  "gallery": [],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669205/",
-      "title": "Robert Brown oral history",
+      "title": "Robert J. Brown oral history interview conducted by David P. Cline in High Point, North Carolina, 2013 October 01",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.wunc.org/post/meet-robert-brown",
+      "title": "Meet Robert Brown",
+      "publisher": "WUNC (North Carolina Public Radio), August 3, 2015"
+    },
+    {
+      "url": "https://www.nixonfoundation.org/2017/08/nixons-record-civil-rights-2/",
+      "title": "Nixon's Record on Civil Rights",
+      "publisher": "Richard Nixon Foundation / Richard Nixon Presidential Library and Museum"
+    },
+    {
+      "url": "https://www.fordlibrarymuseum.gov/digital-research-room/finding-aids/stanley-scott-papers-1969-1971-1977",
+      "title": "Stanley Scott Papers, (1969) 1971 to 1977, finding aid",
+      "publisher": "Gerald R. Ford Presidential Library"
+    },
+    {
+      "url": "https://www.nixonlibrary.gov/finding-aids/leonard-garment-white-house-central-files-staff-member-and-office-files",
+      "title": "Leonard Garment, White House Central Files: Staff Member and Office Files, finding aid",
+      "publisher": "Richard Nixon Museum and Library"
+    },
+    {
+      "url": "https://www.cambridge.org/core/journals/business-history-review/article/abs/black-powernixon-style-the-nixon-administration-and-minority-business-enterprise/203170A706722F71E7B4403208675745",
+      "title": "Dean Kotlowski, 'Black Power, Nixon Style: The Nixon Administration and Minority Business Enterprise,' Business History Review, vol. 72, no. 3 (Autumn 1998), pp. 409 to 445",
+      "publisher": "Cambridge University Press, Business History Review"
+    },
+    {
+      "url": "https://www.congress.gov/crs-product/R46816",
+      "title": "The Minority Business Development Agency: An Overview of Its History and Programs (CRS Report R46816)",
+      "publisher": "Congressional Research Service, Library of Congress"
+    },
+    {
+      "url": "https://search.worldcat.org/title/1082518575",
+      "title": "Robert J. Brown, You Can't Go Wrong Doing Right: How a Child of Poverty Rose to the White House and Helped Change the World, 2019, ISBN 9781524762780, OCLC 1082518575",
+      "publisher": "Convergent Books (Penguin Random House)"
+    },
+    {
+      "url": "https://www.highpoint.edu/blog/2021/09/hpu-honors-dr-robert-bob-brown-with-a-3-million-endowed-scholarship/",
+      "title": "HPU Honors Dr. Robert 'Bob' Brown With a $3 Million Endowed Scholarship",
+      "publisher": "High Point University, September 2021"
     }
   ]
 }
