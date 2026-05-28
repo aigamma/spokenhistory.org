@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "slug": "john-carlos",
+  "person_type": "interviewee",
+  "entry_number": 62,
+  "display_name": "John Carlos",
+  "born": 1945,
+  "died": null,
+  "role_summary": "1968 Mexico City Olympics bronze medalist (200m) and Black Power salute athlete; member of the Olympic Project for Human Rights; co-author of the 2011 memoir The John Carlos Story.",
+  "photo": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/21/John_Carlos_%28cropped%29.jpg",
+    "alt": "John Carlos, May 2012",
+    "photographer": "US Embassy London",
+    "repository": "Wikimedia Commons",
+    "license": "Public domain (United States federal-government work, 17 USC § 105)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:John_Carlos_(cropped).jpg",
+    "date_taken": "2012-05-24"
+  },
+  "ai_reading": "Carlos and Bill Russell (entry 8) share the catalog's strongest bidirectional cosine signature: Carlos appears as Russell's top neighbor at count 719, and Russell appears as Carlos's top neighbor at count 271. The two athletes' oral histories rhyme with each other more closely in the embedding than either does with any non-athlete voice in the corpus. The embedding therefore reads the athlete-activist category as a coherent vector cluster within the 136-interview archive, more so than the cultural record's separate treatments of the 1961 Celtics Lexington boycott and the 1968 Olympics Black Power salute would predict. Carlos's position on the Tactical Pragmatism vs Strategic Vision axis is -0.77, far toward Tactical Pragmatism, consistent with the single-action specificity (the medal stand, the fist, the anthem) that anchors his interview record over abstract strategic framings.",
+  "biographical_paragraph": "John Carlos took bronze in the 200 meters at the 1968 Mexico City Olympics; on the medal stand he and gold-medalist Tommie Smith raised black-gloved fists during the national anthem, the silent protest known since as the 1968 Olympics Black Power salute [src: 2]. The protest was the most-cited single scene in Carlos's public record and the centerpiece of his 2011 memoir The John Carlos Story, co-authored with Dave Zirin [src: 2]. The Olympic Project for Human Rights (OPHR), the athlete-civil-rights organization that prepared the Mexico City protest, is the institutional setting Douglas Hartmann's 2003 University of Chicago Press study tracks [src: 3]. His Library of Congress oral history is entry 62 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669202/",
+      "title": "John Carlos oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/695714493",
+      "title": "John Carlos with Dave Zirin, The John Carlos Story: The Sports Moment That Changed the World",
+      "publisher": "Haymarket Books, 2011; WorldCat OCLC 695714493"
+    },
+    {
+      "url": "https://search.worldcat.org/title/52162987",
+      "title": "Douglas Hartmann, Race, Culture, and the Revolt of the Black Athlete: The 1968 Olympic Protests and Their Aftermath",
+      "publisher": "University of Chicago Press, 2003; WorldCat OCLC 52162987"
+    }
+  ]
+}
