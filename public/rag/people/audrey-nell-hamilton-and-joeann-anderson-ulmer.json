@@ -9,11 +9,34 @@
   "role_summary": "Joint oral history of two Mississippi civil rights movement participants; the surnames are not Whisper artifacts (the prior audit canon resolved 'Joanne' to 'JoeAnn' via the AUDIT_VS_LOC_DISAGREEMENTS report on entry 4).",
   "ai_reading": "The Hamilton/Ulmer joint interview's top semantic neighbor is Charles McLaurin (entry 17, count 84), the Sunflower County Mississippi voter-registration director. Their next neighbors are Barbara Edna Vickers (entry 5, publication-block), Robert Bagner Hayling (entry 103, St. Augustine SCLC), Juadine Henderson (entry 68, Mississippi SNCC voter-registration), and Gwendolyn Annette Perkins Duncan (entry 51, publication-block). The cluster reads them as Mississippi-rural-movement voices. Their +0.54 reading on the Sacred Framing vs Secular Framing axis fits the Black Mississippi church-anchored movement context, and the +0.59 reading on the Nonviolence vs Self-Defense axis joins the catalog's recurring inversion pattern of Southern-rural-Black-women's testimony landing toward the Self-Defense pole despite the nonviolent-protest framing the cultural reception applies.",
   "biographical_paragraph": "This is a joint oral history at the Library of Congress as entry 4 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Joint interviews in the corpus combine the testimony of two or more interviewees in a single recording; the catalog page treats the embedding signature of the joint transcript as one unit (see the AI's reading above). Independent biographical sourcing for each individual interviewee is pending; future enrichment may split this entry into separate per-person pages if individual biographical material becomes accessible.",
+  "movement_context": "The joint-interview format the CRHP recorded with Hamilton and Ulmer is one of seventeen multi-person interviews in the one hundred thirty-five-recording corpus, the rest being one-on-one sessions; joint format was used selectively where two or more interviewees had shared a specific organizing relationship (siblings, spouses, co-founders, parallel field-organizing partners) the project judged better captured in conversation than in separated single recordings [src: 2]. The Mississippi voter-registration testimony cluster this joint interview reads structurally adjacent to (Charles McLaurin at entry 17, Juadine Henderson at entry 68, and the publication-block entries 5 and 51) is built around the SNCC project geography Charles Payne's I've Got the Light of Freedom anchors: the Sunflower County Council of Federated Organizations work centered around Ruleville, the parallel Hattiesburg and McComb projects, and the broader 1964 Freedom Summer recruitment that brought roughly one thousand summer volunteers into rural Mississippi to expand the registration drive ahead of the August 1964 Atlantic City Democratic National Convention challenge by the Mississippi Freedom Democratic Party [src: 3].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/54/1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_%2826276560142%29.jpg",
+      "alt": "SNCC Mississippi Freedom Summer Project recruitment broadside, April 1964",
+      "caption": "Student Nonviolent Coordinating Committee broadside recruiting students for the 1964 Mississippi Freedom Summer Project, the voter-registration drive that brought roughly one thousand mostly-northern volunteers into Mississippi for the summer of 1964 and trained alongside the in-state Black Mississippi organizing infrastructure of which Hamilton and Ulmer's testimony is documentary record. Held by the Mississippi Department of Archives and History civil rights collection.",
+      "photographer": "Student Nonviolent Coordinating Committee (broadside publisher)",
+      "repository": "Wikimedia Commons (sourced from Mississippi Department of Archives and History)",
+      "license": "No known copyright restrictions (public domain)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_(26276560142).jpg",
+      "date_taken": "1964-04"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669143/",
       "title": "Audrey Nell Hamilton and JoeAnn Anderson Ulmer (joint interview) oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
+      "title": "Civil Rights History Project, American Folklife Center, About This Collection",
+      "publisher": "Library of Congress, American Folklife Center (AFC 2010/039 collection description and methodology, including the joint-interview format)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/61664854",
+      "title": "Charles M. Payne, I've Got the Light of Freedom: The Organizing Tradition and the Mississippi Freedom Struggle",
+      "publisher": "University of California Press, 1995 (second edition 2007); WorldCat OCLC 61664854 (the standard institutional history of SNCC and COFO organizing in Mississippi, including the Sunflower County and Hattiesburg projects and the lead-up to the August 1964 MFDP Atlantic City convention challenge)"
     }
   ]
 }
