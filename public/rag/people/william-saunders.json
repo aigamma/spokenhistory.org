@@ -6,19 +6,118 @@
   "born": 1935,
   "died": null,
   "display_name": "William Saunders",
-  "role_summary": "Korean War veteran; Esau Jenkins mentee in the Johns Island Progressive Club (one of the first Citizenship Schools in the network Septima Clark and the Highlander Folk School built across the South); chief organizer and lead negotiator of the March-June 1969 Charleston Hospital Workers Strike (the 113-day strike at the Medical College of South Carolina that drew Ralph Abernathy, Coretta Scott King, and the SCLC to Charleston); founder of the Committee on Better Racial Assurance (COBRA, 1970); operator of WPAL-AM radio in Charleston (1972-1998).",
-  "ai_reading": "Saunders's neighbor counts are moderate (peak 80), with Charles McLaurin (entry 17) as the top match and the broader cluster including James Oscar Jones (entry 57), John Churchville (entry 63), and Walter Bruce (entry 123). The novel observation his page surfaces is the Lowcountry-and-Mississippi cross-region pairing: the catalog's strongest cosine for Saunders is McLaurin (Mississippi voter-registration), not the other South Carolina Lowcountry catalog voices the cultural-historical record would predict pairing him with; the embedding catches the Black-Power-era community-organizing register Saunders developed at Highlander Folk School as continuous with the SNCC Mississippi field tradition rather than as a separately-anchored Charleston tradition.",
-  "biographical_paragraph": "While Saunders's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), his external biographical record is well-documented in the College of Charleston Lowcountry Digital History Initiative archive [src: 1, src: 2]. Saunders was born in 1935 in New York City and raised on Johns Island, South Carolina. At sixteen he enlisted in the U.S. Army and served in the Korean War. Upon returning to Johns Island he became involved in the Progressive Club, led by his mentor Esau Jenkins; the Progressive Club was one of the first nodes in the Citizenship Schools network that Septima Poinsette Clark (FamousNames catalog page) and the Highlander Folk School built across the South to train rural African Americans in literacy and voter-registration preparation [src: 2]. Saunders himself attended the Highlander Folk School in Tennessee in the early 1960s. He worked at a Charleston mattress factory through the decade. In March-June 1969 he served as chief organizer and lead negotiator of the Charleston Hospital Workers Strike at the Medical College of South Carolina, the 113-day strike that drew Ralph Abernathy and Coretta Scott King to Charleston in support and that ended with a negotiated settlement between Saunders and MCH vice president William Huff [src: 2]. In 1970 he established the Committee on Better Racial Assurance (COBRA) to address race-related community problems in Charleston; from 1972 to 1998 he operated WPAL-AM radio in the city; he founded the Lowcountry Newsletter and ran unsuccessfully for the South Carolina state senate [src: 2].",
+  "role_summary": "Korean War veteran and Johns Island, South Carolina organizer; mentee of Esau Jenkins in the Progressive Club; lead local negotiator of the 1969 Charleston hospital workers strike at the Medical College Hospital; founder of the Committee on Better Racial Assurance (COBRA, 1970); operator of WPAL-AM radio in Charleston (1972-1998); South Carolina Public Service Commissioner (1994-2004).",
+  "ai_reading": "The cultural record files Saunders as a Charleston Lowcountry and Gullah civil-rights figure, but the embedding space in this corpus reads his testimony first as labor-and-community organizing that crosses region. His highest-count semantic neighbor by a clear margin is Charles McLaurin (entry 17, count 80), a Mississippi SNCC voter-registration organizer rather than any South Carolina Lowcountry voice, and his next tier of neighbors pairs a national public-sector union figure, William Lucy (entry 128, AFSCME International Secretary-Treasurer), with more SNCC field organizers, James Oscar Jones (entry 57) and John Churchville (entry 63). The vector signature seems to track the structural language of organizing wage-workers against a state institution more than it tracks the Sea Island setting. A second observation cuts against his own words: on the Nonviolence as Theology versus Armed Self-Defense axis the embedding places him at -0.0355 (26th of 136 entries, toward the Nonviolence-as-Theology pole), even though his transcript states repeatedly that he rejected nonviolence for himself and that his protective apparatus during the strike was, in his phrase, offensive rather than defensive. The model appears to read his cooperative, settlement-seeking negotiation register rather than his stated militancy.",
+  "biographical_paragraph": "William Saunders was born in New York City on February 14, 1935, and was sent as a small child to Johns Island, South Carolina, to be raised by his grandparents; he gives the date and the train journey in his own oral history [src: 3]. He enlisted in the U.S. Army and served from 1951 to 1954, including combat in the Korean War, and was discharged as a staff sergeant [src: 5]. Back on Johns Island he worked through Esau Jenkins and the Progressive Club, one node in the Citizenship Schools network that Septima Poinsette Clark and the Highlander Folk School built across the South to prepare rural Black residents for voter registration [src: 1, src: 2]; Saunders dates his own visit to Highlander in Monteagle, Tennessee, to 1959 and recounts witnessing the state raid that led to Clark's arrest and the seizure of the school's property [src: 3]. He worked two decades in a Charleston mattress factory, a job he chose because it gave activists no leverage to have him fired [src: 3]. In the spring of 1969 he became the chief local organizer and back-channel negotiator of the Charleston hospital workers strike, a roughly 113-day walkout that began in March at the Medical College Hospital of South Carolina and ended with a June settlement; Mary Moultrie led the workers as president of Local 1199B, and Ralph Abernathy and Coretta Scott King brought the Southern Christian Leadership Conference to Charleston in support [src: 1, src: 4]. Saunders is on record describing his method as setting the stage for others rather than taking the lead role, and he negotiated terms with a Medical College Hospital vice president during the city's nighttime curfew [src: 3]. In 1970 he founded the Committee on Better Racial Assurance (COBRA), which he led as executive director and which still administers the Sea Island Sickle Cell program he started that year [src: 5, src: 6]; from 1972 to 1998 he operated the AM radio station WPAL in Charleston [src: 6]. He ran for the South Carolina state senate in 1980 and later served on the South Carolina Public Service Commission from 1994 to 2004, chairing it from 2000 to 2002 [src: 3, src: 5]. His Library of Congress oral history is entry 130 of the Civil Rights History Project (AFC 2010/039), where it carries a not-auditable audit tier, so any specific claim quoted from the transcript itself should be confirmed against external archives before publication.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "William Saunders",
+      "speaker_slug": "william-saunders",
+      "source_entry": 130,
+      "timestamp": "00:01:05",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669126/",
+      "lead_in": "Asked at the start of the interview where and when he was born, Saunders describes being sent south as an infant:",
+      "quote": "I was born in New York City in 1935. I was sent to Johns Island, South Carolina when I was 18 months old on a train with a tag to be picked up on Johns Island where my grandfather picked me up."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Saunders",
+      "speaker_slug": "william-saunders",
+      "source_entry": 130,
+      "timestamp": "00:51:50",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669126/",
+      "lead_in": "Asked whether he was in tension with the nonviolent strategy the Southern Christian Leadership Conference brought to the strike, Saunders draws a distinction between method and belief:",
+      "quote": "I don't have a problem with nonviolent. I just can't do it myself."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Saunders",
+      "speaker_slug": "william-saunders",
+      "source_entry": 130,
+      "timestamp": "00:50:30",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669126/",
+      "lead_in": "Asked to describe his own role in the strike, Saunders frames himself as the organizer behind the visible leaders:",
+      "quote": "But I always saw myself as a guy that set the prop, build the stage, set it, not the player, not the star."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Saunders",
+      "speaker_slug": "william-saunders",
+      "source_entry": 130,
+      "timestamp": "00:52:22",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669126/",
+      "lead_in": "Saunders recounts what he told FBI agents who came to him worried about riots and guns in Charleston:",
+      "quote": "And I said, you know, we would never have a riot in Charleston. We'll have a war."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Saunders",
+      "speaker_slug": "william-saunders",
+      "source_entry": 130,
+      "timestamp": "00:49:06",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669126/",
+      "lead_in": "On the back-channel he kept open with a Medical College Hospital vice president, meeting during the citywide curfew to carry proposals between the hospital trustees and the strikers:",
+      "quote": "And we were able to do that until we got the trustees and the hospital worker leadership to meet in most corners."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Saunders",
+      "speaker_slug": "william-saunders",
+      "source_entry": 130,
+      "timestamp": "01:13:48",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669126/",
+      "lead_in": "Asked who taught him to organize, Saunders answers that no one did, and names what did:",
+      "quote": "And the biggest teacher I've had in anything is losing."
+    },
+    {
+      "relation": "about",
+      "speaker": "Guy Carawan",
+      "speaker_slug": "guy-hughes-carawan",
+      "source_entry": 11,
+      "timestamp": "00:48:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669151/",
+      "lead_in": "Guy Carawan, who lived and collected music on Johns Island for Highlander in the mid-1960s, names Saunders among the people he worked with there:",
+      "quote": "You all have already interviewed Bill Saunders. He was one of the key people we were working with"
+    }
+  ],
   "sources": [
+    {
+      "url": "https://ldhi.library.cofc.edu/exhibits/show/charleston_hospital_workers_mo/biographies/saunders",
+      "title": "William \"Bill\" Saunders biographical entry, The Charleston Hospital Workers Movement, 1968-1969",
+      "publisher": "Lowcountry Digital History Initiative, College of Charleston Libraries"
+    },
+    {
+      "url": "https://www.scencyclopedia.org/sce/entries/charleston-hospital-workers-strike/",
+      "title": "Charleston hospital workers' strike",
+      "publisher": "South Carolina Encyclopedia, University of South Carolina Institute for Southern Studies (the standard reference account of the 1969 strike; dates the walkout to spring 1969 at the Medical College Hospital and Charleston County Hospital, names Mary Moultrie of Local 1199B and Bill Saunders as the negotiator, and records the Abernathy and Coretta Scott King visits)"
+    },
     {
       "url": "https://www.loc.gov/item/2015669126/",
       "title": "William Saunders oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); interviewed by Kerry Taylor, Charleston, South Carolina, June 9, 2011 (tier: not-auditable)"
     },
     {
-      "url": "https://ldhi.library.cofc.edu/exhibits/show/charleston_hospital_workers_mo/biographies/saunders",
-      "title": "William \"Bill\" Saunders biographical entry",
-      "publisher": "Lowcountry Digital History Initiative, College of Charleston Libraries"
+      "url": "https://www.1199seiu.org/magazine/1969-charleston-strike-victory",
+      "title": "1969 Charleston Strike Victory",
+      "publisher": "1199SEIU United Healthcare Workers East (the union that chartered Local 1199B in Charleston; dates the 113-day strike from March 19 to the June 27, 1969 settlement)"
+    },
+    {
+      "url": "https://psc.sc.gov/about-us-0/past-commissioners/william-bill-saunders-1994-2004",
+      "title": "William \"Bill\" Saunders, 1994-2004",
+      "publisher": "Public Service Commission of South Carolina (state-agency biographical record; gives his February 14, 1935 birth date, U.S. Army service 1951-1954 with discharge as staff sergeant, COBRA founding and executive directorship, and his Commission service and 2000-2002 chairmanship)"
+    },
+    {
+      "url": "https://lcdl.library.cofc.edu/content/william-bill-saunders-papers-circa-1950-2004/",
+      "title": "William (\"Bill\") Saunders Papers, circa 1950-2004",
+      "publisher": "Lowcountry Digital Library and the Avery Research Center for African American History and Culture, College of Charleston (finding aid documenting COBRA, the WPAL radio station operated 1972-1998, and his civic organizations; describes Saunders as an organizer and lead negotiator of the 1969 strike)"
     }
   ]
 }

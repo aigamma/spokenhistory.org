@@ -6,14 +6,91 @@
   "born": null,
   "died": null,
   "display_name": "Virginia Simms George",
-  "role_summary": "Civil rights movement participant; in this corpus's embedding her testimony pairs with Gloria Claudette Grinnell, Junius Williams, Joan Trumpauer Mulholland, and Esther M. A. Terry.",
-  "ai_reading": "George's top semantic neighbors are Gloria Claudette Grinnell (entry 48, count 83), Junius Williams (entry 72, Newark Black Power Conference), Joan Trumpauer Mulholland (entry 60, Freedom Rider), Esther M. A. Terry (entry 40), and the John Dudley joint interview (entry 64). The cluster is heterogeneous, spanning Freedom Rides, SNCC, and Newark Black Power organizing. Her +0.66 reading on the Nonviolence as Theology vs Armed Self-Defense axis places her on the Self-Defense side, continuing the catalog's pattern of SCLC-and-direct-action figures landing opposite their cultural placement on that axis.",
-  "biographical_paragraph": "Virginia Simms George's oral history is held at the Library of Congress as entry 122 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "Virginia Union University student arrested in the February 22, 1960 Thalhimers Richmond Room sit-in; one of the Richmond 34.",
+  "ai_reading": "Cosine similarity in this corpus pulls George's testimony toward two clusters at once: the student sit-in and Freedom-Rider voices (Joan Trumpauer Mulholland, entry 60; Dion Diamond, entry 27) and a set of Northern-organizing and Black-Power-adjacent voices (Junius Williams of the Newark Black Power Conference, entry 72, her single most frequent neighbor at 19 shared passages; Gloria Claudette Grinnell, entry 48, at 17; the John Dudley joint interview, entry 64, at 14). The embedding does not read her as a tidy nonviolent-sit-in profile. On the Nonviolence as Theology versus Armed Self-Defense axis it places her at a normalized 0.66 toward the Self-Defense pole, well past center, even though her own account describes nonviolent-discipline training under the Virginia Union ministers who led the sit-in. The vector signature appears to track the moment she narrates directly: after a white man spit on her outside the jail, she says she was \"ready to do battle\" and \"I guess I've always been a little militant.\" The model foregrounds that self-described militancy over the nonviolent-protest framing the cultural record attaches to lunch-counter sit-ins.",
+  "biographical_paragraph": "Virginia Simms George grew up in Newport News, Virginia, raised largely by her father, a postman, and entered Virginia Union University in the fall of 1959 intending to study history and then law [src: 1]. On February 22, 1960, thirty-four Virginia Union students sat in at the whites-only Richmond Room tearoom inside the Thalhimers department store in downtown Richmond; all were arrested for trespassing and became known as the Richmond 34 [src: 2, src: 3]. George was among those arrested, alongside her dormmates Marie Sallasin and Patricia Washington [src: 1]. In her oral history she names the two seminary students who organized and prepared the group, Charles Sherrod (entry 18) and Frank Pinkston, and recalls that Martin Luther King Jr. had spoken on the campus beforehand [src: 1, src: 2]. The students were fined twenty dollars each, and the convictions were overturned by the United States Supreme Court in 1963 [src: 3, src: 4]. George's father refused to let her continue on to the Mississippi voter-registration work that some classmates pursued; she finished her degree, taught history at Maggie L. Walker High School in Richmond, earned a master's degree at the University of Maryland, and later worked in employment and counseling programs before settling in Northborough, Massachusetts, where this interview was recorded on August 24, 2013 [src: 1]. Her oral history is held by the Library of Congress as entry 122 of the Civil Rights History Project (American Folklife Center, AFC 2010/039) [src: 5].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Virginia Simms George",
+      "speaker_slug": "virginia-simms-george",
+      "source_entry": 122,
+      "timestamp": "00:14:26",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669204/",
+      "lead_in": "Recalling a childhood bus ride in Newport News, when a white passenger got up and moved away from her, the moment she traces as her first reckoning with segregation:",
+      "quote": "I hadn't done anything to her. I didn't even know who she was. Probably would never see her again, but it began to help me to understand that there was a difference in me because I was black and she was white."
+    },
+    {
+      "relation": "self",
+      "speaker": "Virginia Simms George",
+      "speaker_slug": "virginia-simms-george",
+      "source_entry": 122,
+      "timestamp": "00:25:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669204/",
+      "lead_in": "On why the students targeted the Thalhimers Richmond Room, the upstairs tearoom that barred Black customers even though the store took their money on the sales floor:",
+      "quote": "You know, our money spends, we purchase, we support the store. And yet we can't, you know, enjoy the Richmond room because of our color."
+    },
+    {
+      "relation": "self",
+      "speaker": "Virginia Simms George",
+      "speaker_slug": "virginia-simms-george",
+      "source_entry": 122,
+      "timestamp": "00:29:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669204/",
+      "lead_in": "On the nonviolent discipline the student leaders drilled into the group before the sit-in:",
+      "quote": "That was the thing that it was emphasized more than anything that we had to be peaceful. We had to be respectful."
+    },
+    {
+      "relation": "self",
+      "speaker": "Virginia Simms George",
+      "speaker_slug": "virginia-simms-george",
+      "source_entry": 122,
+      "timestamp": "00:29:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669204/",
+      "lead_in": "Describing her reaction after a white man stepped in front of her and spit on her as she left the jail with her lawyer:",
+      "quote": "And I was ready to do battle, you know, because I guess I've always been a little militant."
+    },
+    {
+      "relation": "self",
+      "speaker": "Virginia Simms George",
+      "speaker_slug": "virginia-simms-george",
+      "source_entry": 122,
+      "timestamp": "01:01:06",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669204/",
+      "lead_in": "At a Virginia Union reunion decades later, learning what the arrests had set in motion:",
+      "quote": "So, okay, this (group of) 34, 34, desegregated the city of Richmond."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669204/",
       "title": "Virginia Simms George oral history",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://news.vcu.edu/article/they_knew_what_was_right_the_story_of_the_richmond_34",
+      "title": "‘They Knew What Was Right’: A Restaurant Sit-In and the Story of the Richmond 34",
+      "publisher": "VCU News, Virginia Commonwealth University (account of the February 22, 1960 Thalhimers Richmond Room sit-in, the 34 arrests, and the trespassing convictions later overturned)"
+    },
+    {
+      "url": "https://nvdatabase.swarthmore.edu/content/virginia-union-university-students-campaign-desegregation-richmond-usa-1960",
+      "title": "Virginia Union University Students Campaign for Desegregation in Richmond, USA, 1960",
+      "publisher": "Global Nonviolent Action Database, Swarthmore College (documents the February 1960 marches and sit-ins, the leadership of Charles Sherrod and Frank Pinkston, and the 34 trespassing arrests; drawing on the Virginia Historical Society, the Library of Virginia, and Raymond Pierre Hylton's reporting)"
+    },
+    {
+      "url": "https://www.loc.gov/item/usrep374097/",
+      "title": "U.S. Reports: Randolph et al. v. Virginia, 374 U.S. 97 (1963)",
+      "publisher": "Library of Congress (the June 1963 Supreme Court decision vacating the trespassing convictions of the thirty-four students arrested at Thalhimer Brothers in Richmond, remanded in light of Peterson v. City of Greenville)"
+    },
+    {
+      "url": "https://www.loc.gov/collections/civil-rights-history-project/",
+      "title": "Civil Rights History Project (AFC 2010/039)",
+      "publisher": "American Folklife Center, Library of Congress, in collaboration with the Smithsonian National Museum of African American History and Culture"
     }
   ]
 }

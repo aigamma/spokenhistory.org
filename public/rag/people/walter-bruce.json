@@ -6,14 +6,81 @@
   "born": null,
   "died": null,
   "display_name": "Walter Bruce",
-  "role_summary": "Holmes County, Mississippi sharecropping-family native; carpenter and gospel singer; chair of the Holmes County Freedom Democratic Party (Mississippi Freedom Democratic Party affiliate); participant in the 1964 Mississippi Freedom Summer; community organizer through the Holmes County voter-registration and Black-candidate-electoral-organizing tradition.",
-  "ai_reading": "Bruce's top semantic neighbor is Rosie Head (entry 111) at a cosine count of 156; the broader cluster includes Charles McLaurin (entry 17), Nathaniel Hawthorne Jones (entry 92), and Peggy Jean Connor (entry 96). The Rosie Head pairing is the catalog's clearest rural-Mississippi-women-and-men-organizers cosine within the Holmes-and-Sunflower County voter-registration cohort. The novel observation his page surfaces is the Holmes-County-organizing-continuity signature: Bruce's leadership in the Holmes County Freedom Democratic Party is bracketed in the catalog by Robert G. Clark Jr. (entry 107, the 1968 Mississippi House first-African-American-since-Reconstruction representative who also came out of Holmes County); the embedding catches the same Holmes-County-electoral-and-grassroots-organizing tradition as a vector signature across both their testimonies.",
-  "biographical_paragraph": "While Bruce's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the Holmes County Freedom Democratic Party is documented in the Civil Rights History Project finding aid [src: 1]. Bruce is a Durant, Mississippi native who grew up in Holmes County in a sharecropping family. As a young man he worked as a carpenter and was active as a gospel singer in local religious-musical traditions. Across the 1960s he was involved in community and political organizing in Holmes County: he helped start health clinics, participated in the Mississippi Freedom Democratic Party (he chaired the Holmes County chapter), joined sit-ins and marches, and was active in Mississippi Freedom Summer in 1964 [src: 1]. He continued the post-Freedom Summer work of choosing and running Black candidates for elected office across the late 1960s and 1970s, the electoral-strategy work that produced the same Holmes County tradition Robert G. Clark Jr. (catalog entry 107) carried into the Mississippi House.",
+  "role_summary": "Holmes County, Mississippi movement organizer; carpenter and gospel singer; chair of the Holmes County branch of the Mississippi Freedom Democratic Party; Durant-area leader through the 1960s and 1970s voter-registration and Black-candidate electoral organizing.",
+  "ai_reading": "On the Nonviolence as Theology versus Armed Self-Defense axis, the embedding places Bruce at a normalized -0.59, well toward the Nonviolence-as-Theology pole, which runs against the substance of his own testimony: he recounts organizing armed groups to fire back at the night riders who shot up his Wednesday-night meeting hall, and telling the county sheriff over the phone that the next call would be for an ambulance (timestamps 01:06:50 and 01:09:16). The vector signature appears to be driven instead by his recurring God-and-freedom register and his repeated insistence that he never hated white people, so the cosine space reads the theological framing the words carry rather than the self-defense tactics the words describe. The corpus neighbor structure is the other notable reading: cosine similarity puts Bruce's passages closest to Rosie Head (entry 111, the catalog's single highest neighbor count for this entry at 156) and then to Charles McLaurin (entry 17, count 118), and his only outgoing influence-graph edges are to Robert G. Clark Jr. (entry 107) and Fannie Lou Hamer, so the embedding isolates the Holmes-County electoral-organizing tradition, the same one that carried Clark into the Mississippi House, as Bruce's defining signal over the carpentry, gospel, and Freedom Summer material that fills as much of the interview.",
+  "biographical_paragraph": "Walter Bruce grew up in a sharecropping family in rural Holmes County, Mississippi, the youngest of fourteen children, and moved into the town of Durant in the early 1960s [src: 1]. He worked as a self-taught carpenter, built houses across the county, and led a gospel singing group that he dates to roughly the late 1950s in his testimony [src: 1]. Across the 1960s he became the central movement organizer in the Durant area: he chaired the Holmes County branch of the Mississippi Freedom Democratic Party, served as a county-wide coordinator setting up community meetings, took part in the 1964 Freedom Summer, helped desegregate a Durant cafe, and was appointed to the Durant city school board [src: 1]. In her account of the Holmes County movement, Sue [Lorenzi] Sojourner, who organized in the county from 1964 to 1969 and whose interviewer John Dittmer wrote the book's foreword, describes Bruce as the Durant movement leader and documents his strict community-meeting discipline [src: 2]. His Library of Congress oral history, conducted by Dittmer in Durant on March 11, 2013, is entry 123 of the Civil Rights History Project (AFC 2010/039, item afc2010039_crhp0071) [src: 1]. He recalls the work of choosing and supporting Black candidates at county-wide meetings, including Robert Clark, whom he names; Robert G. Clark Jr. (entry 107) became the first African American seated in the Mississippi House of Representatives in the twentieth century, and is one of two figures Bruce most discusses in the corpus influence graph [src: 1]. Rosie Head (entry 111), interviewed the same week in nearby Tchula, is Bruce's nearest neighbor in the corpus embedding. (Fact-check note for reviewers: the interviewer reads the subtitle of Sojourner's book inconsistently in the transcript; the published subtitle is \"Black Leadership and the Transformation of 1960s Mississippi.\" Bruce's transcript carries the not-auditable audit tier, so any specific claim quoted from it should be corroborated against external sources before publication.)",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Walter Bruce",
+      "speaker_slug": "walter-bruce",
+      "source_entry": 123,
+      "timestamp": "00:16:05",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669170/",
+      "lead_in": "Bruce explains how he overcame his early worry that joining the movement would cost him carpentry jobs:",
+      "quote": "I don't know, then something just kind of means that, well, what good is a job? You ain't got no freedom."
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Bruce",
+      "speaker_slug": "walter-bruce",
+      "source_entry": 123,
+      "timestamp": "01:06:26",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669170/",
+      "lead_in": "On the white night riders who fired into the rural meeting hall where the Wednesday-night community meetings were held:",
+      "quote": "And every Wednesday night, after we get opened up by them, they would be a carload of white people would come through and shoot all the top of that bed."
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Bruce",
+      "speaker_slug": "walter-bruce",
+      "source_entry": 123,
+      "timestamp": "01:06:50",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669170/",
+      "lead_in": "Bruce describes how he answered the next week, positioning armed men on both sides of the building:",
+      "quote": "And so that next Wednesday night I had organized a group and I told them, I said, we're going to bring some guns out here."
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Bruce",
+      "speaker_slug": "walter-bruce",
+      "source_entry": 123,
+      "timestamp": "01:09:16",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669170/",
+      "lead_in": "After a church was nearly burned with a gasoline-soaked rope, Bruce recalls warning the county sheriff what a second attack would bring:",
+      "quote": "I said, but if I call you back, I said, we're going to be calling you for you to send the ambulance out here. I said, anybody, we can't find a morning straight now. We're going to kill him."
+    },
+    {
+      "relation": "self",
+      "speaker": "Walter Bruce",
+      "speaker_slug": "walter-bruce",
+      "source_entry": 123,
+      "timestamp": "01:21:58",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669170/",
+      "lead_in": "Closing the interview, Bruce returns to a distinction he says he drew throughout the movement:",
+      "quote": "But I said, I only think that I didn't like, you know, where they were, was treating the black folk. And I said, and that way you can get along and you can mix up with anybody."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669170/",
-      "title": "Walter Bruce oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "Walter Bruce oral history interview conducted by John Dittmer in Durant, Mississippi, 2013 March 11",
+      "publisher": "Civil Rights History Project, Library of Congress (American Folklife Center, AFC 2010/039, item afc2010039_crhp0071)"
+    },
+    {
+      "url": "https://www.kentuckypress.com/9780813140933/thunder-of-freedom/",
+      "title": "Sue [Lorenzi] Sojourner with Cheryl Reitan, Thunder of Freedom: Black Leadership and the Transformation of 1960s Mississippi (foreword by John Dittmer)",
+      "publisher": "University Press of Kentucky, 2013 (ISBN 9780813140933); the scholarly account of the Holmes County movement that documents Bruce's Durant-area leadership, written by an organizer present in the county 1964 to 1969"
+    },
+    {
+      "url": "https://specialcollections.usm.edu/repositories/3/resources/1224",
+      "title": "Henry and Sue [Lorenzi] Sojourner Civil Rights Movement Collection",
+      "publisher": "University of Southern Mississippi, McCain Library and Archives (the primary documentary record, oral histories, and photographs of the Holmes County movement collected by the Sojourners)"
     }
   ]
 }

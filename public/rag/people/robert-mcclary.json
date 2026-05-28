@@ -3,22 +3,73 @@
   "slug": "robert-mcclary",
   "person_type": "interviewee",
   "entry_number": 109,
-  "born": null,
+  "born": 1938,
   "died": null,
   "display_name": "Robert McClary",
-  "role_summary": "SNCC field worker in the Southwest Georgia Project (the SNCC organizing campaign led by Rev. Charles Melvin Sherrod, catalog entry 18, that anchored the Albany Movement); participant in Worth County, Georgia mass meetings; SNCC bookkeeper, voter registrar, and welfare-services-information community organizer.",
-  "ai_reading": "McClary's neighbor counts are moderate (peak 36), with Charles McLaurin (entry 17) as the top match and the broader cluster including Peggy Jean Connor (entry 96), Nathaniel Hawthorne Jones (entry 92), and Robert L. Carter (entry 108). The novel observation his page surfaces is the Southwest-Georgia-Project signature: McClary worked the same Sherrod-led SNCC field network that anchored the Albany Movement, and the embedding catches that organizing-tradition register through his testimony as continuous with the broader Mississippi-and-Alabama SNCC voter-registration cohort. His relatively low neighbor counts (peak 36 versus the catalog median of around 100-200) suggest a shorter or more topically-focused interview transcript, consistent with the LoC description of his interview as a \"short interview.\"",
-  "biographical_paragraph": "While McClary's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the SNCC Southwest Georgia Project is documented in Rev. Charles Sherrod's catalog entry 18 (the Sherrod-led project's founding director) [src: 1, src: 2]. McClary's oral history was conducted by Hasan Kwame Jeffries in Albany, Georgia in March 2013; in it he describes his involvement in the SNCC Southwest Georgia Project alongside Sherrod and other Albany Movement organizers across the early-to-mid 1960s. He attended mass meetings in Worth County (the rural Georgia county that was one of the project's organizing focuses), kept the books for the SNCC project budget, registered voters across the county, and worked to inform Black residents about the welfare services available to them [src: 1].",
+  "role_summary": "SNCC field worker in the Southwest Georgia Project led by Rev. Charles Melvin Sherrod (entry 18); recruited into the project after writing for its newspaper, The Other Side; kept the project checkbook and canvassed for voter registration and welfare-rights claims across Worth County, Georgia.",
+  "ai_reading": "By raw passage count, McClary's nearest neighbor in the corpus is Charles McLaurin (entry 17, 36 matching passages), the SNCC voter-registration organizer in Sunflower County, Mississippi; the embedding reads McClary's testimony as part of the same county-by-county organizing register even though he worked Georgia and McLaurin worked Mississippi. The sharper surprise is his single highest-similarity passage: cosine puts one stretch of his testimony closest of all (0.78) to Shirley Miller Sherrod (entry 117). The cultural record files McClary under Charles Sherrod, the man who recruited him; the vector space instead pulls him toward Charles Sherrod's wife, whose own oral history runs through the same Albany and southwest-Georgia ground. On the Nonviolence as Theology versus Armed Self-Defense axis the embedding places him just inside the nonviolence half (normalized 0.06, rank 59 of 136), near the midpoint, which sits in mild tension with his own recorded line that the work was self-defense and with his account of neighbors keeping guns in the backs of their trucks; the model appears to weight the project's voter-registration and welfare-claims vocabulary over the self-defense framing he states outright.",
+  "biographical_paragraph": "Robert McClary was born on October 19, 1938, at the segregated Phoebe Putney Hospital in Albany, Georgia, and grew up with cerebral palsy in one of the railroad section-hand houses along the Georgia Northern line near Warwick, in Worth County [src: 1]. His Library of Congress oral history carries a not-auditable audit tier, meaning the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript should be confirmed against external archives before publication; the personal details here are drawn from his own testimony as aligned against the Library of Congress reference transcript. He came into the movement through The Other Side, the newspaper of the Southwest Georgia Project that Rev. Charles Melvin Sherrod (entry 18) directed: McClary wrote an article, mailed it to Albany, and Sherrod invited him to join [src: 1]. Once on staff he kept the project checkbook out of its office at 615 South Jefferson Street in Albany, canvassed Worth County for voter registration, and helped Black residents appeal denied welfare claims [src: 1]. The Southwest Georgia Project Sherrod opened in 1961 was the SNCC organizing effort that anchored the Albany Movement, the campaign documented through Sherrod's own catalog entry 18 and through the wider southwest-Georgia cohort in this corpus, including Shirley Miller Sherrod (entry 117) [src: 3]. McClary's interview was conducted by Hasan Kwame Jeffries in Albany on March 9, 2013, for the Civil Rights History Project, the joint Library of Congress and Smithsonian National Museum of African American History and Culture undertaking [src: 1, src: 2]. He later worked for about ten years, from 1979 to 1989, at the local Job Corps center [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Robert McClary",
+      "speaker_slug": "robert-mcclary",
+      "source_entry": 109,
+      "timestamp": "00:26:41",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669163/",
+      "lead_in": "Asked at the close of the interview whether he had ever been afraid during the movement work, McClary answered:",
+      "quote": "I was hopeful and excited than I was afraid."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert McClary",
+      "speaker_slug": "robert-mcclary",
+      "source_entry": 109,
+      "timestamp": "00:23:55",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669163/",
+      "lead_in": "Adding a final thought on what he wanted recorded about his outlook, he framed the organizing stance as self-defense:",
+      "quote": "It's self-defense, like I said before. You don't move it. You can't retire."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert McClary",
+      "speaker_slug": "robert-mcclary",
+      "source_entry": 109,
+      "timestamp": "00:23:36",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669163/",
+      "lead_in": "Naming the campaign he had given his work to in southwest Georgia:",
+      "quote": "Oh, for Southwest Georgia. It's for the project."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert McClary",
+      "speaker_slug": "robert-mcclary",
+      "source_entry": 109,
+      "timestamp": "00:13:55",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669163/",
+      "lead_in": "Describing the day-to-day work he did in the project beyond the office books, including helping residents pursue denied benefits:",
+      "quote": "We get the welfare activities."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669163/",
-      "title": "Robert McClary oral history",
+      "title": "Robert McClary oral history interview conducted by Hasan Kwame Jeffries in Albany, Georgia, 2013 March 09",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
       "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.64.1ab",
       "title": "Robert McClary Oral History Interview object record",
       "publisher": "Smithsonian National Museum of African American History and Culture"
+    },
+    {
+      "url": "https://snccdigital.org/people/charles-sherrod/",
+      "title": "Charles Sherrod",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project), documenting Sherrod's founding of the SNCC Southwest Georgia Project in Albany in fall 1961"
     }
   ]
 }

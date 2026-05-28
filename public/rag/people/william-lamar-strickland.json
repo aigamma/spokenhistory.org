@@ -3,17 +3,99 @@
   "slug": "william-lamar-strickland",
   "person_type": "interviewee",
   "entry_number": 127,
-  "born": null,
-  "died": null,
+  "born": 1937,
+  "died": 2024,
   "display_name": "William Lamar Strickland",
-  "role_summary": "Civil rights organizer; in this corpus's embedding his testimony pairs with Phil Hutchings, Junius Williams, John Churchville, Evans Derrell Hopkins, and Gwendolyn Zoharah Simmons.",
-  "ai_reading": "Strickland's top semantic neighbors are Phil Hutchings (entry 98, count 134), Junius Williams (entry 72, count 128), John Churchville (entry 63, count 127), Evans Derrell Hopkins (entry 42, BPP-network prison writer, count 117), and Gwendolyn Zoharah Simmons (entry 53, count 114). The cluster is the post-1965 Northern Black Power organizing cohort. His Tactical Pragmatism vs Strategic Vision position is -0.76, far toward Tactical Pragmatism, and his Southern Struggle vs Northern Struggle position is -0.58, toward Northern. The cultural placement of Strickland as a Northern Black Power organizer is therefore confirmed by both the cluster and the axes, with no major AI-vs-culture inversion on his page; the embedding's reading aligns with the historiographical placement.",
-  "biographical_paragraph": "William Lamar Strickland's oral history is held at the Library of Congress as entry 127 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "role_summary": "Second executive director of the Northern Student Movement (1963-1965); northern coordinator of the Mississippi Freedom Democratic Party's 1965 congressional challenge; co-founder of the Institute of the Black World (1969); professor of political science in the W.E.B. Du Bois Department of Afro-American Studies at the University of Massachusetts Amherst (1973-2013).",
+  "ai_reading": "By the precomputed neighbor counts the page renders from /rag/related/entry-127.json, Strickland's closest passages in this corpus belong to Phil Hutchings (entry 98, count 134), Junius Williams (entry 72, count 128), John Churchville (entry 63, count 127), Evans Derrell Hopkins (entry 42, count 117), and Gwendolyn Zoharah Simmons (entry 53, count 114). The cluster is the post-1965 Black Power organizing cohort, and on the Tactical Pragmatism vs Strategic Vision axis his normalized position is -0.76 toward Tactical Pragmatism while his Southern Struggle vs Northern Struggle position is -0.58 toward Northern. Both signals track the cultural placement of him as a northern Black Power organizer, so the page carries no AI-vs-culture inversion on its axes. The one neighbor the historiography does not foreground is Evans Derrell Hopkins (entry 42), a Black Panther Party associate who wrote from prison: the embedding ranks Hopkins's testimony fourth among Strickland's neighbors, ahead of several SNCC contemporaries, even though Strickland on record says he had a problem with the Panthers. The cosine space appears to be reading the shared post-1965 vocabulary of state violence, policing, and political imprisonment rather than the organizational line that separated the two men.",
+  "biographical_paragraph": "William Lamar Strickland was born in Roxbury, Massachusetts, on January 4, 1937, and raised by his mother, Mittie Louise Strickland, a union worker whose family had moved north from Georgia [src: 5]. He graduated from Boston Latin School and Harvard, served in the United States Marine Corps from 1956 to 1959, and in September 1963 succeeded Peter Countryman as the second executive director of the Northern Student Movement, the northern campus organization that ran tutoring and community projects in Boston, New York, Hartford, Chicago, and Detroit [src: 3]. In 1964 and 1965 he coordinated the northern congressional support for the Mississippi Freedom Democratic Party challenge that sought to unseat the state's white representatives [src: 1]. After the assassination of Martin Luther King Jr., Strickland co-founded the Institute of the Black World in Atlanta with Vincent Harding in 1969, the independent Black research center he describes operating until 1983 [src: 2]. He joined the W.E.B. Du Bois Department of Afro-American Studies at the University of Massachusetts Amherst in 1973, taught political science there until his retirement in 2013, and directed the W.E.B. Du Bois Papers [src: 2]. He served as a consultant on the documentary series Eyes on the Prize and on the 1994 PBS film Malcolm X: Make It Plain, and wrote the companion volume to that film [src: 2]. In his oral history, held by the Library of Congress as entry 127 of the Civil Rights History Project, Strickland names other figures in this corpus, including Ekwueme Michael Thelwell (entry 34), whom he places as the Washington organizer for the MFDP challenge, and Junius Williams (entry 72), whose Newark organizing he discusses alongside his own [src: 1]. He died at his home in Amherst on April 10, 2024 [src: 4].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "00:25:13",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "Tracing how he entered organized movement work while a student in Cambridge:",
+      "quote": "I was at Harvard, and that's when I, um, joined Northern Student Movement"
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "00:35:15",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "On the lesson he took from Harlem rent-strike organizer Jesse Gray about how organizing actually works:",
+      "quote": "the secret of organizing is, is, is convincing people to organize themselves, although they may not realize that it's what's happening at the time."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "00:42:26",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "Placing Malcolm X, whom he knew personally, in a line of fundamental critics:",
+      "quote": "To my mind, Malcolm X is the fundamental critic of American racism."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "00:46:49",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "Arguing that the turn to Black Power followed from repeated federal failure to protect movement workers, not from a change of mood:",
+      "quote": "I mean black power doesn't drop from the sky."
+    },
+    {
+      "relation": "self",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "00:58:55",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "Recalling what the Mississippi Freedom Democratic Party work left him with, sitting with Fannie Lou Hamer:",
+      "quote": "there were people like Mrs. [Fannie Lou] Hamer's who could see the world with a clarity that was infinitely superior to mine."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669154/",
-      "title": "William Lamar Strickland oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "William Lamar Strickland oral history interview conducted by Joseph Mosnier in Amherst, Massachusetts, 2011 September 23",
+      "publisher": "Civil Rights History Project, Library of Congress (American Folklife Center, AFC 2010/039)"
+    },
+    {
+      "url": "https://www.umass.edu/afro-am/news/memorial-tribute-honor-prof-bill-strickland",
+      "title": "Memorial Tribute in Honor of Prof. Bill Strickland",
+      "publisher": "W.E.B. Du Bois Department of Afro-American Studies, University of Massachusetts Amherst (records his 1973-2013 faculty tenure, his W.E.B. Du Bois Papers directorship, the 1969 Institute of the Black World co-founding with Vincent Harding, and his Eyes on the Prize and Malcolm X: Make It Plain consultancies)"
+    },
+    {
+      "url": "https://snccdigital.org/inside-sncc/alliances-relationships/northern-student-movement/",
+      "title": "Northern Student Movement",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project; documents Strickland succeeding Peter Countryman as the second NSM executive director in September 1963 and the organization's geographic reach across northern cities)"
+    },
+    {
+      "url": "https://www.wbur.org/news/2024/04/23/william-strickland-malcolm-x-activist-death-massachusetts",
+      "title": "William Strickland, a civil rights activist, scholar and friend of Malcolm X, has died",
+      "publisher": "WBUR (Boston NPR news station), April 23, 2024"
+    },
+    {
+      "url": "https://www.theblackscholar.org/dr-william-strickland-esteemed-scholar-and-political-activist-1937-2024-by-herb-boyd/",
+      "title": "Dr. William Strickland, Esteemed Scholar and Political Activist (1937-2024)",
+      "publisher": "The Black Scholar (essay by Herb Boyd; records his Boston Latin and Harvard education, Marine Corps service, NSM directorship, northern coordination of the MFDP congressional challenge, and W.E.B. Du Bois Papers directorship)"
+    },
+    {
+      "url": "https://archives.nypl.org/scm/29951",
+      "title": "William Strickland research files",
+      "publisher": "Schomburg Center for Research in Black Culture, Manuscripts, Archives and Rare Books Division, New York Public Library (primary archival collection of his research papers)"
     }
   ]
 }
