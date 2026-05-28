@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "slug": "jamila-jones",
+  "person_type": "interviewee",
+  "entry_number": 58,
+  "display_name": "Jamila Jones",
+  "born": null,
+  "died": null,
+  "role_summary": "Civil rights movement-era singer in the Highlander Folk School / freedom song tradition; her testimony clusters with the Carawans' Highlander-music teachings in this corpus's embedding.",
+  "ai_reading": "Jones's top semantic neighbor is the joint Candie and Guy Carawan interview (entry 11, count 82), the Highlander Folk School music teachers whose work canonized \"We Shall Overcome\" as a movement song. The next four neighbors are the Abernathy family (entry 28), Juadine Henderson (entry 68), Walter Bruce (entry 123), and Charles McLaurin (entry 17). The Carawan cosine confirms Jones's cultural placement in the Highlander music tradition, but the corpus's strongest novel reading of her testimony comes on the Sacred Framing vs Secular Framing axis: she sits at +0.85, far toward Secular. Freedom songs in the civil rights movement were overwhelmingly adapted spirituals; a singer of that tradition might be expected to land near the Sacred pole. The embedding does the opposite, possibly catching the pedagogical / Highlander-workshop framing (curriculum, transmission, technique) of her oral history over the religious-roots framing of the songs themselves. Her +0.64 position on the Nonviolence as Theology vs Armed Self-Defense axis is also worth naming: it places her toward Self-Defense, a counterintuitive reading for a singer of the nonviolent movement's anthems.",
+  "biographical_paragraph": "Jamila Jones is a civil rights movement-era singer associated with the Highlander Folk School musical tradition; her oral history is held at the Library of Congress as entry 58 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing for Jones is pending: SNCC Digital Gateway and crmvet.org both returned 404 for the slug variants searched in this iteration. The strongest available signal for her movement placement is the embedding's tight cosine with the joint Candie and Guy Carawan interview (entry 11), the Highlander music teachers whose work shaped the corpus of movement freedom songs.",
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669108/",
+      "title": "Jamila Jones oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+    }
+  ]
+}
