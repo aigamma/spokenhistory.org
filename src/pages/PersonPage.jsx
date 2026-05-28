@@ -26,9 +26,9 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText } from 'lucide-react';
+import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, Play, AlertTriangle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import { TIER_BADGE } from '../components/rag/tiers';
+import { TIER_BADGE, TIER_COLORS } from '../components/rag/tiers';
 
 /**
  * Helper: fetch JSON with a single attempt; resolves to null on any
@@ -114,6 +114,86 @@ function hyperlinkNames(text, matcher) {
   }
   if (last < text.length) parts.push(text.slice(last));
   return parts;
+}
+
+// Tiered pull-quote card. Renders one oral-history snippet, quoted
+// verbatim from a Library-of-Congress-healed transcript, as a colorful
+// highlight embedded in the narrative. The card color encodes the
+// source transcript's audit tier (the same palette the RAG surfaces
+// use), so a reader sees provenance confidence at a glance. Each card
+// routes into the source interview for in-app discovery and to the LoC
+// catalog for authoritative verification. relation 'self' is the page
+// subject speaking; 'about' is another interviewee speaking about them.
+function SnippetCard({ snippet, subjectName }) {
+  if (!snippet || !snippet.quote) return null;
+  const tierKey = snippet.audit_tier in TIER_BADGE ? snippet.audit_tier : null;
+  const badge = tierKey
+    ? TIER_BADGE[tierKey]
+    : { label: 'Provenance unknown', bg: 'bg-stone-50', text: 'text-stone-700', border: 'border-stone-200', icon: AlertTriangle };
+  const accent = (tierKey && TIER_COLORS[tierKey]) || '#78716c';
+  const BadgeIcon = badge.icon;
+  const isAbout = snippet.relation === 'about';
+  return (
+    <figure
+      className={`my-7 rounded-xl border ${badge.border} ${badge.bg}`}
+      style={{ borderLeftWidth: '6px', borderLeftColor: accent }}
+    >
+      <div className="p-5 sm:p-6">
+        {snippet.lead_in && (
+          <p className="text-sm text-stone-600 mb-3 leading-snug">{snippet.lead_in}</p>
+        )}
+        <div className="flex items-start gap-3">
+          <Quote className="w-7 h-7 shrink-0 mt-1" style={{ color: accent }} aria-hidden="true" />
+          <blockquote
+            className="text-stone-900 text-lg sm:text-xl leading-relaxed"
+            style={{ fontFamily: 'Source Serif 4, serif' }}
+          >
+            &ldquo;{snippet.quote}&rdquo;
+          </blockquote>
+        </div>
+        <figcaption className="mt-4 sm:pl-10 text-sm">
+          <div className="font-medium text-stone-900">
+            {snippet.speaker}
+            {isAbout && subjectName && (
+              <span className="font-normal text-stone-500"> on {subjectName}</span>
+            )}
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1.5 text-stone-600">
+            {snippet.timestamp && (
+              <span className="inline-flex items-center gap-1 tabular-nums">
+                <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+                {snippet.timestamp}
+              </span>
+            )}
+            {snippet.source_entry != null && (
+              <Link
+                to={`/interview/${snippet.source_entry}`}
+                className="inline-flex items-center gap-1 text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+              >
+                <Play className="w-3.5 h-3.5" aria-hidden="true" />
+                Hear this in context
+              </Link>
+            )}
+            {snippet.loc_url && (
+              <a
+                href={snippet.loc_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+              >
+                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                Library of Congress
+              </a>
+            )}
+          </div>
+          <div className={`inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border ${badge.border} ${badge.text} text-xs font-medium`}>
+            <BadgeIcon className="w-3.5 h-3.5" aria-hidden="true" />
+            {badge.label}
+          </div>
+        </figcaption>
+      </div>
+    </figure>
+  );
 }
 
 // Centered inline figure for gallery images. Used for the additional
@@ -507,7 +587,7 @@ export default function PersonPage() {
                 </span>
               </div>
               <figcaption className="text-sm text-stone-500 italic mt-2 text-center" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                No public-domain or open-licensed photograph identified for this figure. The institutional review chain accepts text-only catalog pages where no usable image exists; if a contributor locates a PD or CC-licensed photograph, it can be added via the catalog JSON's <code className="not-italic font-mono text-xs">photo</code> field.
+                No public-domain or open-licensed photograph identified for this figure. The institutional review chain accepts text-only catalog pages where no usable image exists; if a contributor locates a PD or CC-licensed photograph, it can be added via the catalog JSON&apos;s <code className="not-italic font-mono text-xs">photo</code> field.
               </figcaption>
             </figure>
           )}
@@ -525,6 +605,29 @@ export default function PersonPage() {
                   {renderBioWithCitationRefs(person.ai_reading, person.sources, nameMatcher)}
                 </p>
               </div>
+            </section>
+          )}
+
+          {/* Voices from the Archive. The page's primary substance:
+              direct oral-history quotes pulled verbatim from the
+              LoC-healed transcripts and rendered as tiered pull-quote
+              cards. relation 'self' is the subject's own testimony;
+              'about' is another interviewee discussing the subject.
+              Each card routes into the source interview, so a reader
+              discovers the wider oral-history bank from any person
+              page. */}
+          {Array.isArray(person.interview_snippets) && person.interview_snippets.length > 0 && (
+            <section className="mb-10">
+              <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-1 flex items-center gap-1.5">
+                <MessageSquareQuote className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
+                Voices from the Archive
+              </h2>
+              <p className="text-sm text-stone-500 mb-4">
+                Quoted verbatim from the Civil Rights History Project oral histories, audited against the Library of Congress canonical transcripts. Card color marks each passage&apos;s audit tier; follow any card into the interview it came from.
+              </p>
+              {person.interview_snippets.map((sn, i) => (
+                <SnippetCard key={i} snippet={sn} subjectName={person.display_name} />
+              ))}
             </section>
           )}
 
