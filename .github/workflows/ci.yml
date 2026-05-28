@@ -88,6 +88,24 @@ jobs:
           node --check rag/retrieve.mjs
           node --check rag/precompute.mjs
 
+      - name: Node syntax check on people-index builder
+        run: node --check scripts/build_people_index.mjs
+
+      - name: People-index drift check (verify index.json matches catalog)
+        # Re-run the index builder and fail if the resulting file
+        # differs from the committed one. Catches the common mistake
+        # of editing a public/rag/people/*.json file without re-running
+        # the index regeneration (the React-side cross-link substrate
+        # at /people, the catalog-page neighbor chips, the FamousNames
+        # catalog jump-links, and the InterviewDetail / InterviewIndex
+        # catalog-page links all depend on the index being current).
+        run: |
+          node scripts/build_people_index.mjs
+          git diff --exit-code public/rag/people/index.json || {
+            echo "::error::public/rag/people/index.json is out of date. Run \`npm run build-people-index\` and commit the result.";
+            exit 1;
+          }
+
       - name: Unit tests (node:test on rag/ shared modules)
         run: node --test src/components/rag/tiers.test.mjs
 
