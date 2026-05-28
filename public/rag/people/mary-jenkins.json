@@ -4,16 +4,85 @@
   "person_type": "interviewee",
   "entry_number": 84,
   "display_name": "Mary Jenkins",
-  "born": null,
-  "died": null,
-  "role_summary": "Civil Rights History Project interviewee; her testimony in this corpus's embedding clusters with Mildred Pitts Walter, Mary Jones, William G. Anderson, and Johnnie Ruth McCullar.",
+  "born": 1928,
+  "died": 2014,
+  "role_summary": "Albany, Georgia public-school teacher and Albany Movement participant; author of the 2000 pictorial history Open Dem Cells (Brentwood Academic Press); a founding contributor to the Albany Civil Rights Institute at Old Mt. Zion Baptist Church.",
   "ai_reading": "Jenkins's top semantic neighbors are the West-Coast Black author Mildred Pitts Walter (entry 91, count 46), Mary Jones (entry 85), William G. Anderson (entry 126), Johnnie Ruth McCullar (entry 65), and the John Dudley et al joint interview (entry 64). The cluster does not concentrate on a single movement organization (SNCC, SCLC, BPP, NAACP) the way most other audited entries' clusters do; instead the embedding reads Jenkins as a movement-adjacent voice whose nearest neighbors include a Black children's-book author, another Mary (Jones), a community-medicine doctor (Anderson, who organized Albany Movement medical care), and other minor-prominence Mississippi/Southern figures. Her Individual Conscience vs Collective Discipline position is +0.83, far toward Collective Discipline, an unusually strong reading on that axis: only Grace Hall Miller (entry 50, +1.00) is more collective in the audited subset of the catalog. The embedding therefore reads her oral history as institutionally-disciplined-collective language despite the modest cosine counts (her top neighbor is at 46, far lower than most catalog entries' top counts), suggesting a shorter or more focused interview transcript.",
   "biographical_paragraph": "Mary Jenkins's oral history is held at the Library of Congress as entry 84 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing for Jenkins is pending; the embedding's neighbor pattern visible above is the strongest available signal for her movement placement and is consistent with a Mississippi or Southern-rural movement context.",
+  "movement_context": "The Albany Movement Jenkins joined was formed in mid-November 1961 by a coalition of the Ministerial Alliance, the NAACP, the Federation of Women's Clubs, the Negro Voters League, and SNCC; William G. Anderson, the young Black osteopathic physician who is catalog entry 126, was selected as its first president, and SNCC field secretaries Charles Sherrod and Cordell Reagon had been on the ground in Albany since October 1961 running nonviolence workshops and voter-registration drives, principally among the students at Albany State College where Bernice Johnson Reagon (later a founding Freedom Singer) was then enrolled [src: 3]. The Movement's stated aim was to end segregation across an entire city, in bus terminals, lunch counters, libraries, parks, and the registration rolls, and the first mass meeting in Albany's history convened at Old Mt. Zion Baptist Church on November 17, 1961, the date the New Georgia Encyclopedia treats as the Movement's founding [src: 3, src: 4]. Martin Luther King Jr. and the SCLC entered the campaign in December 1961 at the Movement's invitation; King was arrested December 16 alongside hundreds of others, and the campaign extended through the summer of 1962, producing roughly twelve hundred total arrests [src: 3]. Albany Police Chief Laurie Pritchett's tactical innovation, dispersing arrested protesters into the jails of surrounding counties so the city's own cells never overflowed and the national-press mass-arrest dynamic never built, is the operational detail civil rights historians point to as the conventional-national-policy failure of the campaign [src: 3]. The local outcome was different: the 1963 repeal of Albany's segregation ordinances and a deep cadre of Movement-trained Albany teachers, organizers, and church people (the Sherrods, the Reagons, William G. Anderson, the Freedom Singers, and Jenkins herself in her teaching and documentation roles) carried the work forward across the next half-century [src: 3, src: 5]. Jenkins's own narrative is anchored in the Black-public-school-teacher position the Movement put under direct political stress: her oral history recalls teaching at Carver Junior High in Albany and earlier in Baker County (the rural county Albany organizers called \"Bad Baker\" for its sheriff's open hostility to Black voter registration), and the moment a white school supervisor said \"they may make us go to school with you, but I would never invite one of you to my home\" was the moment Jenkins decided, in her phrasing, that she \"was through with Baker County\" [src: 1]. Her oral history also preserves the office-side of the Albany Movement that the SNCC and SCLC field literature less frequently captures: she was the office worker who placed the December 1961 call to Harry Belafonte for King, and she took notes on cardboard church fans at mass meetings when paper ran out [src: 1].",
+  "legacy_and_reception": "Jenkins published Open Dem Cells: A Pictorial History of the Albany Movement through Brentwood Academic Press in 2000, a photograph-and-document compilation drawing on her own movement-period notes, the Movement-period Black-press coverage in the Southwest Georgian, and the surviving cardboard-church-fan annotations she had carried out of the mass-meeting period [src: 6]. The book is one of the few first-person Albany Movement reference works produced by a participant who was not herself an organizational principal, and it predates the institutional consolidation of the Albany Movement story at the Albany Civil Rights Institute, which she helped establish [src: 5]. The Institute opened in November 1998 as the Albany Civil Rights Movement Museum at Old Mt. Zion Baptist Church, the same building where the first 1961 mass meeting had been held, and relocated in 2008 to the adjacent twelve-thousand-square-foot facility funded by a 1994 Albany sales-tax allocation of $750,000 [src: 5]. Jenkins remained active with the Albany Dream Awards, the annual recognitions given at the city's Martin Luther King Jr. observance, through the end of her life; she died Thursday, August 7, 2014, five days before what would have been her eighty-sixth birthday on August 12, and a memorial program at the Civil Rights Institute marked the date [src: 7]. Her oral history was recorded in Albany on March 9, 2013, by Will Griffin for the Library of Congress and the Smithsonian National Museum of African American History and Culture, less than eighteen months before her death, making the Civil Rights History Project transcript the longest and last documented first-person account she gave on the record [src: 1].",
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Albany_Civil_Rights_Institute.JPG",
+      "alt": "Albany Civil Rights Institute building exterior, Albany, Georgia",
+      "caption": "The Albany Civil Rights Institute, the institution Jenkins helped establish, photographed in 2014. The twelve-thousand-square-foot facility opened on its current Whitney Avenue site in 2008, adjacent to the Old Mt. Zion Baptist Church where the first Albany Movement mass meeting was held on November 17, 1961.",
+      "photographer": "Michael Rivera",
+      "repository": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Albany_Civil_Rights_Institute.JPG",
+      "date_taken": "2014-10-13"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/7/78/Georgia_Civil_Rights_Trail_The_Albany_Movement_historical_marker.JPG",
+      "alt": "Georgia Civil Rights Trail historical marker for the Albany Movement, Albany, Georgia",
+      "caption": "Georgia Civil Rights Trail marker commemorating the Albany Movement, in Dougherty County. The marker traces the coalition Jenkins joined: SNCC field workers Charles Sherrod and Cordell Reagon (arrived October 1961), the founding mass meeting at Old Mt. Zion on November 17, 1961, William G. Anderson as first president, and the SCLC entry in December 1961.",
+      "photographer": "Michael Rivera",
+      "repository": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Georgia_Civil_Rights_Trail_The_Albany_Movement_historical_marker.JPG",
+      "date_taken": "2014-10-13"
+    },
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/7/77/Charles_M._Sherrod_Civil_Rights_Park%2C_Albany.JPG",
+      "alt": "Charles M. Sherrod Civil Rights Park, Albany, Georgia",
+      "caption": "Charles M. Sherrod Civil Rights Park in Albany, named for the SNCC field secretary whose 1961 arrival in Albany triggered the local organizing that drew Jenkins and other Albany Black teachers, ministers, and students into the Albany Movement.",
+      "photographer": "Michael Rivera",
+      "repository": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Charles_M._Sherrod_Civil_Rights_Park,_Albany.JPG",
+      "date_taken": "2014-10-13"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669168/",
-      "title": "Mary Jenkins oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "Mary Jenkins oral history interview conducted by Will Griffin in Albany, Georgia, 2013 March 09",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039), American Folklife Center / Smithsonian National Museum of African American History and Culture"
+    },
+    {
+      "url": "https://www.loc.gov/resource/afc2010039text.afc2010039_crhp0069_Jenkins_transcript/",
+      "title": "Mary Jenkins oral history interview, full transcript (LoC TEI / digitized PDF)",
+      "publisher": "Library of Congress, American Folklife Center (afc2010039_crhp0069)"
+    },
+    {
+      "url": "https://snccdigital.org/events/albany-movement-formed/",
+      "title": "Albany Movement formed",
+      "publisher": "SNCC Digital Gateway, Duke University in collaboration with the SNCC Legacy Project (working from the SNCC papers at the Robert W. Woodruff Library, Atlanta University Center)"
+    },
+    {
+      "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/albany-movement/",
+      "title": "Albany Movement (entry by Lee W. Formwalt, Organization of American Historians; originally published December 2, 2003; last edited July 15, 2020)",
+      "publisher": "New Georgia Encyclopedia, Georgia Humanities and University of Georgia Press"
+    },
+    {
+      "url": "https://www.georgiaencyclopedia.org/articles/education/albany-civil-rights-institute/",
+      "title": "Albany Civil Rights Institute (entry by Irene Turner; originally published June 15, 2007; last edited June 6, 2017)",
+      "publisher": "New Georgia Encyclopedia, Georgia Humanities and University of Georgia Press"
+    },
+    {
+      "url": "https://search.worldcat.org/search?q=isbn%3A9781556309502",
+      "title": "Mary Royal Jenkins, Open Dem Cells: A Pictorial History of the Albany Movement (Brentwood Academic Press, 2000; ISBN 1556309503 / 9781556309502)",
+      "publisher": "Brentwood Academic Press; cataloged via WorldCat union catalog (OCLC)"
+    },
+    {
+      "url": "https://civilrightstrail.com/attraction/old-mt-zion-baptist-church-albany-civil-rights-institute/",
+      "title": "Albany Civil Rights Movement Museum at Old Mt. Zion (institutional listing)",
+      "publisher": "U.S. Civil Rights Trail (interstate consortium of fourteen state tourism and civil rights heritage organizations)"
+    },
+    {
+      "url": "https://www.walb.com/story/26265626/civil-rights-pioneer-remembered/",
+      "title": "Civil rights pioneer remembered (Mary Frances Jenkins memorial coverage, August 13, 2014)",
+      "publisher": "WALB News 10, Albany, Georgia (NBC affiliate; local Albany broadcast journalism)"
     }
   ]
 }
