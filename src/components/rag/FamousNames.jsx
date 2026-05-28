@@ -13,7 +13,8 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ExternalLink, Clock, FileText } from 'lucide-react';
 import { TIER_BADGE, TIER_VOCABULARY, TIER_COLORS } from './tiers';
 
 // Hand-curated role/era line per figure. The famous_external.json
@@ -123,9 +124,21 @@ export default function FamousNames() {
       {fig && (
         <article>
           <header className="mb-4 pt-4 border-t border-stone-200">
-            <h3 className="text-2xl font-medium text-stone-900 mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
-              {fig.name}
-            </h3>
+            <div className="flex flex-wrap items-baseline justify-between gap-x-3 mb-1">
+              <h3 className="text-2xl font-medium text-stone-900" style={{ fontFamily: 'Inter, sans-serif' }}>
+                {fig.name}
+              </h3>
+              {/* Catalog-page jump-link, the integrated reference page
+                  that consolidates the figure's bibliography, AI's
+                  reading, cross-links, and (where available) PD photo. */}
+              <Link
+                to={`/person/${fig.slug}`}
+                className="inline-flex items-center gap-1 text-sm text-civil-red-body hover:text-civil-red-strong focus:outline-none focus-visible:underline"
+              >
+                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                Full catalog page
+              </Link>
+            </div>
             <p className="text-sm text-stone-600">
               Not in corpus · discussed by {fig.passages.length} {fig.passages.length === 1 ? 'voice' : 'voices'}
               {FIGURE_ROLES[fig.slug] && <> · <span className="font-mono text-xs">{FIGURE_ROLES[fig.slug]}</span></>}

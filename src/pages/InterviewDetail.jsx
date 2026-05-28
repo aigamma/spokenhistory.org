@@ -14,7 +14,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ExternalLink, ChevronLeft, Clock } from 'lucide-react';
+import { ExternalLink, ChevronLeft, Clock, FileText } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import { TIER_BADGE, fidelityNoteFor } from '../components/rag/tiers';
@@ -28,6 +28,7 @@ export default function InterviewDetail() {
   const [pipeline, setPipeline] = useState(null);
   const [pipelineMissing, setPipelineMissing] = useState(false);
   const [error, setError] = useState(null);
+  const [peopleIndex, setPeopleIndex] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -38,13 +39,15 @@ export default function InterviewDetail() {
         if (r.ok) return r.json();
         return null;
       }).catch(() => null),
+      fetch('/rag/people/index.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
     ])
-      .then(([caps, nbrs, pipe]) => {
+      .then(([caps, nbrs, pipe, idx]) => {
         if (cancelled) return;
         setCapsules(caps.capsules || caps || {});
         setNeighbors(nbrs || {});
         if (pipe) setPipeline(pipe);
         else setPipelineMissing(true);
+        setPeopleIndex(idx);
       })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
     return () => { cancelled = true; };
@@ -110,9 +113,25 @@ export default function InterviewDetail() {
         </Link>
 
         <header className="mb-8">
-          <p className="text-civil-red-body text-sm font-light font-mono mb-2">
-            Entry #{entry.entry_number}
-          </p>
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3 mb-2">
+            <p className="text-civil-red-body text-sm font-light font-mono">
+              Entry #{entry.entry_number}
+            </p>
+            {/* Jump to the integrated catalog page (the /person/:slug
+                page that consolidates the interviewee's AI's-reading,
+                semantic neighbors, concept-axis positions, influence
+                edges, and tour appearances; the catalog index resolves
+                joint-interview entries to their canonical joint page). */}
+            {peopleIndex?.by_entry?.[entry.entry_number]?.slug && (
+              <Link
+                to={`/person/${peopleIndex.by_entry[entry.entry_number].slug}`}
+                className="inline-flex items-center gap-1 text-sm text-civil-red-body hover:text-civil-red-strong focus:outline-none focus-visible:underline"
+              >
+                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                Full catalog page
+              </Link>
+            )}
+          </div>
           <h1
             className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-3"
             style={{ fontFamily: 'Inter, sans-serif' }}
