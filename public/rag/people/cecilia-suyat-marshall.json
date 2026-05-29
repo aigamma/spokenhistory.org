@@ -16,9 +16,66 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Thurgood_Marshall_and_family,_1965.png",
     "date_taken": "1965-08-24"
   },
-  "ai_reading": "Marshall's top semantic neighbor is Mildred Bond Roxborough (entry 90, count 78), then NAACP LDF lawyer Robert L. Carter (entry 108). The NAACP-front-office cluster matches the cultural placement of Marshall as a 1948-1955 staff member of the national office and a participant in the legal work that became Brown v. Board of Education. What the embedding adds is a clear pull toward Sacred Framing on the Sacred vs Secular axis (position -0.23): for a legal-secretary career anchored in a constitutional-litigation institution, this Sacred-side reading is unexpected and may reflect her oral history's emphasis on family, the church spaces of her Hawaii childhood, and the religious framing of her marriage to Thurgood Marshall at St. Philip's Episcopal Church in Harlem.",
-  "biographical_paragraph": "Cecilia Suyat Marshall worked the NAACP's national office from 1948 to 1955 as private secretary to Dr. Gloster B. Current, the organization's national director, and on staff there she also took part in the legal work that became Brown v. Board of Education [src: 1]. She was born July 20, 1928 in Pu'unene, on Maui in what was then the Territory of Hawaii; her parents had emigrated from the Philippines in 1910 [src: 1]. In December 1955, the same year she stepped away from Current's office, she married Thurgood Marshall at St. Philip's Episcopal Church in Harlem; the marriage ran until Marshall's death in 1993 [src: 1]. She died on November 22, 2022 in Falls Church, Virginia, at ninety-four [src: 1]. Her oral history is held at the Library of Congress as entry 15 of the Civil Rights History Project [src: 1].",
-  "movement_context": "The NAACP national office Marshall worked at 20 West Fortieth Street in Manhattan from 1948 to 1955 was the institutional home of the desegregation litigation campaign Thurgood Marshall directed through the NAACP Legal Defense and Educational Fund (LDF), which the organization had formally spun off as a separate 501(c)(3) tax-exempt entity in 1940 to preserve the parent NAACP's lobbying capacity while protecting LDF's litigation budget [src: 2]. Gloster B. Current, the NAACP national director Cecilia Suyat served as private secretary to, ran the field-office network and branch coordination that supplied the local-plaintiff infrastructure the LDF case-strategy needed; the case selection that produced Brown v. Board of Education, 347 U.S. 483 (1954) was the result of two decades of LDF-Current-Marshall coordination through that office [src: 2, 3]. The Brown decision came down May 17, 1954, the year Suyat had been three years on staff; the family photograph used in the hero image of this page (Cecilia, Thurgood, and their sons Thurgood Jr. and John) was taken August 24, 1965 in Washington D.C., the day after Thurgood Marshall was sworn in as the thirty-third Solicitor General of the United States in the Lyndon Johnson administration [src: 4]. Marshall would serve as Solicitor General through August 1967, when Johnson elevated him to the Supreme Court of the United States; Cecilia became the wife of a Supreme Court justice on October 2, 1967 [src: 4].",
+  "ai_reading": "Marshall's strongest semantic neighbor in this corpus is Mildred Bond Roxborough (entry 90), whose passages recur across nineteen of Marshall's thirty-three transcript chunks; next is NAACP Legal Defense and Educational Fund lawyer Robert L. Carter (entry 108) at twelve, then Virginia Simms George (entry 122) at nine. The Roxborough pairing is the one the embedding gets right that a casual reading might miss: the two women worked the same NAACP national-office machinery under the same boss (Roxborough, hired as a field secretary by Gloster B. Current, names Marshall's department in her own testimony), and the cosine space recovers that shared-workplace texture more tightly than it links Marshall to the litigators her husband led. On the Sacred Framing versus Secular Framing axis, the rendered bar reads about 38% toward Sacred (normalized position -0.23, raw -0.027, only slightly off center): a mild lean rather than a strong one, but a notable direction for a career spent inside a constitutional-litigation institution, and one that tracks her oral history's return to deep faith, the family, and the church spaces that anchor her account.",
+  "biographical_paragraph": "Cecilia Suyat Marshall worked the NAACP's national office in New York from 1948 to 1955 as private secretary to Dr. Gloster B. Current, the NAACP's director of branches and field administration, and from that branch-department desk she also gave stenographic help to the legal staff during the case work that became Brown v. Board of Education [src: 1, 7]. She was born July 20, 1928 in Pu'unene, on Maui in what was then the Territory of Hawaii, to parents who had emigrated from the Philippines [src: 1, 8]. On December 17, 1955, the year she left Current's office, she married Thurgood Marshall at St. Philip's Episcopal Church in Harlem, with NAACP executive secretary Roy Wilkins presiding; the marriage ran until Marshall's death in 1993 [src: 8]. She settled in Falls Church, Virginia, in 1965, later served on the Legal Defense Fund board of directors and as a vice president of the Supreme Court Historical Society, and died on November 22, 2022 in Falls Church at ninety-four [src: 8]. Her oral history is held at the Library of Congress as entry 15 of the Civil Rights History Project [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Cecilia Suyat Marshall",
+      "speaker_slug": "cecilia-suyat-marshall",
+      "source_entry": 15,
+      "timestamp": "00:01:16",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669196/",
+      "lead_in": "Suyat had moved from Hawaii to New York and taken a stenography course at Columbia; she traces her path into the movement to a routine job referral:",
+      "quote": "I went to the employment office and they sent me to the NAACP office, the National Office in New York."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecilia Suyat Marshall",
+      "speaker_slug": "cecilia-suyat-marshall",
+      "source_entry": 15,
+      "timestamp": "00:01:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669196/",
+      "lead_in": "She describes the position she held at the national office, working for Gloster B. Current's branch department:",
+      "quote": "And I worked for the secretary, for the director of branches of the National Office."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecilia Suyat Marshall",
+      "speaker_slug": "cecilia-suyat-marshall",
+      "source_entry": 15,
+      "timestamp": "00:03:14",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669196/",
+      "lead_in": "She first refused Thurgood Marshall's proposal, fearing that an interracial marriage would damage the organization as Walter White's had; she recounts how he answered:",
+      "quote": "I said no way, no. But he insisted. He said, I'm marrying you. I'm not marrying the country and they're not marrying me."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecilia Suyat Marshall",
+      "speaker_slug": "cecilia-suyat-marshall",
+      "source_entry": 15,
+      "timestamp": "00:06:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669196/",
+      "lead_in": "Traveling with the NAACP lawyers in the South, Suyat recalls a local branch member in the car with Thurgood Marshall showing them how the local people protected the visitors:",
+      "quote": "Judge, open up that dog compartment. He opened up. He says, you see, there's a Bible there and there's a gun there. He says, we'll use the Bible first. If that doesn't work, we'll use the gun."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecilia Suyat Marshall",
+      "speaker_slug": "cecilia-suyat-marshall",
+      "source_entry": 15,
+      "timestamp": "00:08:00",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669196/",
+      "lead_in": "On the mood in the office after the Brown v. Board of Education decision, she recalls Thurgood Marshall checking the celebration:",
+      "quote": "Well, we celebrated for a while, but after a while Thurgood said, I don't know about you, fools, but our work has just begun."
+    }
+  ],
+  "movement_context": "The NAACP national office Marshall worked at 20 West Fortieth Street in Manhattan from 1948 to 1955 was the institutional home of the desegregation litigation campaign Thurgood Marshall directed through the NAACP Legal Defense and Educational Fund (LDF), which the organization had formally spun off as a separate 501(c)(3) tax-exempt entity in 1940 to preserve the parent NAACP's lobbying capacity while protecting LDF's litigation budget [src: 2]. Gloster B. Current, the NAACP director of branches and field administration Cecilia Suyat served as private secretary to, ran the field-office network and branch coordination that supplied the local-plaintiff infrastructure the LDF case-strategy needed; the case selection that produced Brown v. Board of Education, 347 U.S. 483 (1954) was the result of two decades of LDF-Current-Marshall coordination through that office [src: 2, 3, 7]. The Brown decision came down May 17, 1954, the year Suyat had been three years on staff; the family photograph used in the hero image of this page (Cecilia, Thurgood, and their sons Thurgood Jr. and John) was taken August 24, 1965 in Washington D.C., the day after Thurgood Marshall was sworn in as the thirty-third Solicitor General of the United States in the Lyndon Johnson administration [src: 4]. Marshall would serve as Solicitor General through August 1967, when Johnson elevated him to the Supreme Court of the United States; Cecilia became the wife of a Supreme Court justice on October 2, 1967 [src: 4].",
   "legacy_and_reception": "After Thurgood Marshall's death on January 24, 1993, Cecilia became the principal archival caretaker of his papers; the Thurgood Marshall Papers at the Library of Congress Manuscript Division (collection MSS 36486; finding aid published 1996) are the result of her decade-long curation and transfer work, and are the canonical primary-source archive on Marshall's NAACP, Second Circuit, Solicitor General, and Supreme Court years [src: 5]. She continued public-speaking and commemoration work into her nineties, including the May 17, 2014 sixtieth-anniversary Brown commemoration at the U.S. Supreme Court hosted by Chief Justice John Roberts; she was the senior surviving NAACP national-office staff member from the Brown years at the time of her November 22, 2022 death [src: 1]. The 2019 Larry S. Gibson monograph Young Thurgood: The Making of a Supreme Court Justice draws on her recollections in the Maryland Historical Society oral-history record she gave Gibson in the late 2010s [src: 6].",
   "gallery": [
     {
@@ -72,6 +129,16 @@
       "url": "https://search.worldcat.org/title/812250247",
       "title": "Larry S. Gibson, Young Thurgood: The Making of a Supreme Court Justice",
       "publisher": "Prometheus Books, 2012 (revised 2019); WorldCat OCLC 812250247 (the Maryland Historical Society-anchored biography of Marshall's pre-1954 years, drawing on Cecilia Suyat Marshall oral history)"
+    },
+    {
+      "url": "https://crdl.usg.edu/people/current_gloster_b_gloster_bryant_1913",
+      "title": "Gloster B. Current (Gloster Bryant), 1913-1997",
+      "publisher": "Civil Rights Digital Library, University System of Georgia (authority record identifying Current as NAACP Director of Branch and Field Services, the supervisor Cecilia Suyat served as private secretary to from 1948 to 1955)"
+    },
+    {
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?231+ful+HR426ER",
+      "title": "House Resolution No. 426, Celebrating the life of Cecilia Suyat Marshall",
+      "publisher": "Virginia General Assembly, 2023 Regular Session (legislative memorial resolution documenting her birth in Maui to Philippine immigrants, her NAACP branch-department and Legal Defense Fund work including typing Brown v. Board of Education briefs, her December 17, 1955 marriage to Thurgood Marshall at St. Philip's Episcopal Church, her 1965 move to Falls Church, her Supreme Court Historical Society and LDF board service, and her November 22, 2022 death)"
     }
   ]
 }

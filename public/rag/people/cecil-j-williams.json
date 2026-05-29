@@ -6,7 +6,7 @@
   "display_name": "Cecil J. Williams",
   "born": 1937,
   "died": null,
-  "role_summary": "South Carolina civil rights photographer; documented school desegregation, the 1968 Orangeburg Massacre, and the Charleston hospital workers' strike.",
+  "role_summary": "South Carolina civil rights photographer; documented Briggs v. Elliott, school desegregation, the 1968 Orangeburg Massacre, and the Charleston hospital workers' strike.",
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Cecil_WIlliams_Close-Up.png",
     "alt": "Cecil J. Williams, close-up portrait",
@@ -16,10 +16,67 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Cecil_WIlliams_Close-Up.png",
     "date_taken": "2026-02-12"
   },
-  "ai_reading": "Williams's top semantic neighbor is Charles F. (Chuck) McDew (entry 16, SNCC chairman 1961-63) at 169, followed by NAACP LDF lawyer Robert L. Carter (entry 108) and Friendship 9 organizer Thomas Walter Gaither (entry 119). The cluster is highly South Carolina-centric: McDew co-led the March 1960 Orangeburg protest at South Carolina State, Gaither led the Friendship 9 lunch-counter sit-in in Rock Hill, Williams photographed both. The novel observation is on the Individual Conscience vs Collective Discipline axis, where Williams sits at +0.51, distinctly toward Collective Discipline. For a working photographer whose craft is necessarily individual (one lens, one frame, one decision per shutter release), the embedding's reading of his testimony as collective-discipline-oriented is the AI-vs-culture surprise: his oral history may read more as a documentarian-of-movements voice than as the testimony of a solo artist.",
-  "biographical_paragraph": "By fourteen, Cecil J. Williams was already shooting for JET magazine, selected as one of twenty-five young freelance photographers the publication kept on call worldwide in the early 1950s [src: 2]. He was born November 26, 1937 in Orangeburg, South Carolina, where his lens would document a generation of the state's civil rights movement [src: 2]. His photograph of Harvey Gantt walking into Clemson University in 1963 sits in the visual record of school desegregation, and his images of the Orangeburg Massacre five years later sit in the record of state violence against student protest [src: 2]. In 1969 a frame he made of Coretta Scott King at the Charleston hospital workers' strike ran on the cover of JET [src: 2]. Williams was the official photographer for the South Carolina branch of the NAACP for more than two decades beginning in the 1960s, took an art degree at Claflin University in 1960, and in 2019 opened the Cecil Williams South Carolina Civil Rights Museum [src: 2]. South Carolina recognized him with the Order of the Palmetto in 2017; in 2015 he had patented a film-negative digitization device of his own design he calls the FilmToaster [src: 2].  The Library of Congress holds his oral history as entry 14 of the Civil Rights History Project [src: 1].",
-  "movement_context": "The February 8, 1968 Orangeburg Massacre Williams photographed was the killing of three South Carolina State College students (Samuel Hammond Jr., Henry Smith, Delano Middleton) and the wounding of twenty-eight others by South Carolina Highway Patrol officers who opened fire on an unarmed campus protest against the segregated All Star Bowling Lane on King Street in Orangeburg; the patrol officers were later acquitted in the only federal civil rights prosecution against state law enforcement officers brought during the long civil rights era in the South, and patrol-officer fatal-shooting accountability remained absent until the 1979 federal civil prosecution of Cleveland Sellers (SNCC field secretary, present at the protest, convicted of inciting to riot in the post-massacre Orangeburg County prosecution and incarcerated for seven months before a 1993 pardon by Governor Carroll A. Campbell Jr.) [src: 3]. Williams's photographic record of the massacre is the principal visual archive of the event; his frames of Cleveland Sellers and of the wounded students are the documents the post-1993 historiography of the Orangeburg Massacre rests on [src: 3]. The Charleston hospital workers' strike Williams's 1969 JET cover photograph documents was the March 19 to June 27, 1969 strike of approximately four hundred Medical College Hospital and Charleston County Hospital Black women workers, organized through Local 1199B of the Drug, Hospital, and Health Care Employees Union (Local 1199's southern affiliate); the strike was supported by SCLC's Ralph Abernathy (catalog page available) and Coretta Scott King, and is documented in the Steve Estes monograph Charleston in Black and White as the longest hospital workers' strike in U.S. history at the time of its settlement [src: 4].",
-  "legacy_and_reception": "The Cecil Williams South Carolina Civil Rights Museum opened May 18, 2019 in Orangeburg on Boulevard Street; the museum's permanent collection includes Williams's original 1950s through 1970s civil rights photographs and the FilmToaster device he patented in 2015 (U.S. Patent 8,964,237 for a film-negative-to-digital conversion apparatus) [src: 2, 5]. South Carolina Governor Henry McMaster conferred the Order of the Palmetto, the state's highest civilian honor, on Williams in a December 12, 2017 ceremony [src: 6]. Williams's monograph Freedom & Justice: Four Decades of the Civil Rights Struggle as Seen by a Black Photographer of the Deep South (Mercer University Press, 1995) is his principal published archive of the civil rights work; a successor volume Out-of-the-Box in Dixie: Cecil Williams' Photography of the South Carolina Events That Changed America (Cecil Williams Photography, LLC, 2007) further documents the Orangeburg Massacre, the Charleston strike, and the broader South Carolina civil rights record [src: 7].",
+  "ai_reading": "Ranked by how often its passages turn up among Williams's nearest neighbors, the embedding's strongest match is Charles F. (Chuck) McDew (entry 16), SNCC's second national chairman from the fall of 1960 to 1963, who came to the movement as a student at South Carolina State in Orangeburg; the count is 169, ahead of NAACP Legal Defense Fund lawyer Robert L. Carter (entry 108, count 151) and Friendship 9 organizer Thomas Walter Gaither (entry 119, count 118). The single highest cosine similarity, though, is to Gaither (0.822), not McDew (0.710), so the neighbor that appears most often and the neighbor that scores the closest single passage are not the same person. The grouping is tightly South Carolina-centric, McDew co-led the 1960 Orangeburg protest at South Carolina State, Gaither led the Rock Hill lunch-counter sit-in, and Williams photographed both campaigns. The novel observation is on the Individual Conscience vs Collective Discipline axis, where Williams sits at +0.51, distinctly toward Collective Discipline. For a working photographer whose craft is necessarily individual (one lens, one frame, one decision per shutter release), the embedding's reading of his testimony as collective-discipline-oriented is the AI-vs-culture surprise: his oral history reads in the vector space more as a documentarian-of-movements voice than as the testimony of a solo artist.",
+  "biographical_paragraph": "Cecil J. Williams was born in 1937 in Orangeburg, South Carolina, the son of a self-employed tailor and a schoolteacher, and he grew up two blocks from South Carolina State College [src: 1, 2]. He received a hand-me-down Kodak Baby Brownie from his older brother at about nine and began earning a dollar a frame photographing churchgoers at Edisto Gardens [src: 2]. At about eleven he was traveling with the Sumter photographer E. C. Jones to the Clarendon County churches where the Briggs v. Elliott petitioners and the Reverend Joseph A. DeLaine were organizing, and he photographed Thurgood Marshall arriving by train to argue the case in Charleston [src: 2, 3]. By fourteen Williams was a correspondent for JET magazine, one of a small set of freelance photographers the publication kept on call, hired to give continuous coverage of the Orangeburg movement (in a 2011 interview he placed the JET correspondent role at fifteen) [src: 2, 4]. He photographed Harvey Gantt's 1963 entry to Clemson University as one of three Black members of the press on campus that day, made the visual record of the 1968 Orangeburg Massacre, and shot the JET cover image of Coretta Scott King at the 1969 Charleston hospital workers' strike [src: 1, 2, 4]. He graduated from Claflin University with an art degree in 1960, studying under the painter Arthur Rose Sr., and served as photographer for the South Carolina NAACP [src: 2, 4]. In 2015 he built a film-negative digitization device he calls the FilmToaster, in 2017 Governor Henry McMaster awarded him the Order of the Palmetto, and in 2019 he opened the Cecil Williams South Carolina Civil Rights Museum in Orangeburg [src: 2, 5, 6]. The Library of Congress holds his oral history as entry 14 of the Civil Rights History Project [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Cecil J. Williams",
+      "speaker_slug": "cecil-j-williams",
+      "source_entry": 14,
+      "timestamp": "00:24:00",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669125/",
+      "lead_in": "Williams explains that the white Orangeburg newspaper would not report Black protest, so he began selling his frames to the national Black press:",
+      "quote": "So it was because of that void that I began taking pictures for the news agencies that reach beyond Orangeburg."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecil J. Williams",
+      "speaker_slug": "cecil-j-williams",
+      "source_entry": 14,
+      "timestamp": "00:48:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669125/",
+      "lead_in": "On photographing Thurgood Marshall's return to Orangeburg, Williams describes the access he had as the rare Black photographer inside the movement:",
+      "quote": "So here I am on have this very inside position as a photographer. But so when Thurgood Marshall comes back to Orangeburg of course I get in on the meetings and get to take a picture when they are talking."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecil J. Williams",
+      "speaker_slug": "cecil-j-williams",
+      "source_entry": 14,
+      "timestamp": "01:13:26",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669125/",
+      "lead_in": "His studio sat on Boulevard, across from the South Carolina State and Claflin campuses, so demonstrations passed his front door:",
+      "quote": "and all I had to do was just go outside and take a picture of them as they were getting ready to march and often that happened I didn't even know that was going to be a march and I'm going to see everyone march and I just go outside and I have a couple of pictures in my book of you know across the street from my studio where they are marching in front of my studio."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecil J. Williams",
+      "speaker_slug": "cecil-j-williams",
+      "source_entry": 14,
+      "timestamp": "01:43:01",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669125/",
+      "lead_in": "The morning after the Orangeburg Massacre, before maintenance crews cleared the ground where three students had been killed, Williams gathered evidence:",
+      "quote": "And so I looked down and I saw shotgun shells and other debris spread all over the air where the students had been killed and I started picking those shells up and putting them in my pockets."
+    },
+    {
+      "relation": "self",
+      "speaker": "Cecil J. Williams",
+      "speaker_slug": "cecil-j-williams",
+      "source_entry": 14,
+      "timestamp": "01:44:00",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669125/",
+      "lead_in": "After his photograph of the shells ran nationally, the FBI confiscated them; Williams recounts how they were tied to the patrolmen at trial:",
+      "quote": "And they laid the shells that I picked up to coming from 9 highway patrolmen who had actually fired or killed the students."
+    }
+  ],
+  "movement_context": "The February 8, 1968 Orangeburg Massacre Williams photographed was the killing of three young men (South Carolina State students Samuel Hammond and Henry Smith, and high-school student Delano Middleton) and the wounding of about twenty-seven others when South Carolina Highway Patrol officers opened fire on a campus protest against the segregated All Star Bowling Lane, the bowling alley on Russell Street in Orangeburg owned by Harry K. Floyd [src: 3, 7]. Nine patrolmen were federally charged with depriving the demonstrators of their rights and were tried in Florence, South Carolina, in what was billed as the first federal trial of officers for excessive force at a campus protest; all nine were acquitted [src: 3, 7]. The only person convicted and jailed in connection with the events was Cleveland Sellers (entry 22), the SNCC program director then advising students in Orangeburg; the state convicted him of a riot charge tied to a February 6 confrontation, not to the night of the shootings, and he served roughly seven months in 1973 [src: 7, 8]. Sellers received a full pardon in 1993, granted by the South Carolina Board of Probation, Paroles and Pardons in a unanimous vote, twenty-five years after the massacre [src: 7, 8]. Williams's photographs, including his posed image of a student holding shotgun shells he had picked up from the ground, are the principal visual archive of the event [src: 2, 3]. The Charleston hospital workers' strike his 1969 JET cover photograph documents was the March-to-June 1969 strike of roughly four hundred Black women workers at the Medical College Hospital and Charleston County Hospital, organized through Local 1199B; the strike was supported by SCLC's Ralph Abernathy and Coretta Scott King and is treated in Steve Estes's Charleston in Black and White [src: 9].",
+  "legacy_and_reception": "The Cecil Williams South Carolina Civil Rights Museum opened in May 2019 in Orangeburg; Williams designed and built it to house his collection of 1950s-through-1970s civil rights photographs, and as Claflin University's director of historic preservation he has overseen the digitization of the university's photographic archive [src: 5, 10]. He invented the FilmToaster, a camera-based film-negative duplication platform, in 2015, debuting it at the New York PhotoPlus Expo that October; Claflin's negative-digitization lab uses the device [src: 11, 10]. South Carolina Governor Henry McMaster conferred the Order of the Palmetto, the state's highest civilian honor, on Williams in a December 12, 2017 ceremony [src: 6]. Williams's monograph Freedom & Justice: Four Decades of the Civil Rights Struggle as Seen by a Black Photographer of the Deep South (Mercer University Press, 1995) is his principal published archive of the civil rights work; a successor volume, Out-of-the-Box in Dixie: Cecil Williams' Photography of the South Carolina Events That Changed America (Cecil Williams Photography, LLC, 2007), and his Orangeburg 1968 further document the Orangeburg Massacre, the Charleston strike, and the broader South Carolina record [src: 12].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Cecil_Williams_2008.jpg",
@@ -45,8 +102,8 @@
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669125/",
-      "title": "Cecil J. Williams oral history",
-      "publisher": "Civil Rights History Project, Library of Congress"
+      "title": "Cecil J. Williams oral history interview conducted by Joseph Mosnier in Orangeburg, South Carolina, 2011 June 09",
+      "publisher": "Civil Rights History Project (AFC 2010/039), American Folklife Center, Library of Congress"
     },
     {
       "url": "https://search.worldcat.org/title/32893029",
@@ -54,24 +111,49 @@
       "publisher": "Mercer University Press, 1995; WorldCat OCLC 32893029"
     },
     {
-      "url": "https://search.worldcat.org/title/22078234",
-      "title": "Jack Bass and Jack Nelson, The Orangeburg Massacre",
-      "publisher": "Mercer University Press, 1996 (paperback reprint of the 1970 World Publishing original); WorldCat OCLC 22078234 (the standard institutional history of the February 8, 1968 Orangeburg Massacre)"
+      "url": "https://digital.library.sc.edu/exhibits/champions/volume-5-2/part-4/cecil-j-williams/",
+      "title": "Cecil J. Williams, Champions of Civil and Human Rights in South Carolina (interview by Marvin Lare, 2005)",
+      "publisher": "University of South Carolina Libraries, Digital Collections"
     },
     {
-      "url": "https://search.worldcat.org/title/903643030",
-      "title": "Steve Estes, Charleston in Black and White: Race and Politics in the Holy City",
-      "publisher": "University of North Carolina Press, 2015; WorldCat OCLC 903643030 (the standard institutional history of Charleston civil rights including the March-June 1969 Charleston hospital workers' strike)"
+      "url": "https://www.justiceforallsc.org/profile/cecil-williams/",
+      "title": "Cecil Williams (profile)",
+      "publisher": "Justice for All: The South Carolina Civil Rights Movement project (drawing on the Marvin Lare Champions of Civil and Human Rights archive)"
     },
     {
       "url": "https://www.cecilwilliamscivilrightsmuseum.com/",
       "title": "Cecil Williams South Carolina Civil Rights Museum",
-      "publisher": "The museum's official website; Orangeburg, South Carolina, opened May 18, 2019"
+      "publisher": "The museum's official website; Orangeburg, South Carolina, opened May 2019"
     },
     {
       "url": "https://governor.sc.gov/news/2017-12/governor-henry-mcmaster-presents-order-palmetto-cecil-williams",
       "title": "Governor Henry McMaster Presents Order of the Palmetto to Cecil Williams",
-      "publisher": "Office of the Governor of South Carolina, December 12, 2017 (the press-office record of the Order of the Palmetto ceremony)"
+      "publisher": "Office of the Governor of South Carolina, December 12, 2017"
+    },
+    {
+      "url": "https://search.worldcat.org/title/22078234",
+      "title": "Jack Bass and Jack Nelson, The Orangeburg Massacre",
+      "publisher": "Mercer University Press, 1996 (reprint of the 1970 World Publishing original); WorldCat OCLC 22078234 (the standard history of the February 8, 1968 Orangeburg Massacre)"
+    },
+    {
+      "url": "https://www.scencyclopedia.org/sce/entries/sellers-cleveland-louis-jr/",
+      "title": "Sellers, Cleveland Louis, Jr.",
+      "publisher": "South Carolina Encyclopedia (University of South Carolina Institute for Southern Studies)"
+    },
+    {
+      "url": "https://search.worldcat.org/title/903643030",
+      "title": "Steve Estes, Charleston in Black and White: Race and Politics in the Holy City",
+      "publisher": "University of North Carolina Press, 2015; WorldCat OCLC 903643030 (includes the March-June 1969 Charleston hospital workers' strike)"
+    },
+    {
+      "url": "https://www.claflin.edu/news-events/the-panther/cecil-williams%E2%80%99-photos-key-part-of-claflin%E2%80%99s-history",
+      "title": "Cecil Williams' Photos Key Part of Claflin's History",
+      "publisher": "Claflin University, The Panther (reporting on the FilmToaster and the H. V. Manning Library negative-digitization lab)"
+    },
+    {
+      "url": "https://petapixel.com/2016/02/06/the-1699-filmtoaster-helps-you-digitize-most-film-formats-with-your-digital-camera/",
+      "title": "The $1,699 FilmToaster Helps You Digitize Most Film Formats with Your Digital Camera",
+      "publisher": "PetaPixel, February 6, 2016 (Michael Zhang, drawing on The Times and Democrat)"
     },
     {
       "url": "https://search.worldcat.org/title/156777474",

@@ -6,7 +6,7 @@
   "born": 1937,
   "died": 2022,
   "display_name": "Rev. Charles Melvin Sherrod",
-  "role_summary": "First SNCC field secretary and SNCC director for southwest Georgia (1961); co-founder of the Albany Movement; co-founder (with wife Shirley Sherrod) of New Communities Inc, the 1969 collective farm modeled on Israeli kibbutzim that pioneered the U.S. community-land-trust movement; Albany City Council member 1976-1990.",
+  "role_summary": "First SNCC field secretary and SNCC director for southwest Georgia (1961); co-founder of the Albany Movement; co-founder (with wife Shirley Sherrod) of New Communities Inc, the 1969 collective farm modeled on Israeli kibbutz and moshav cooperatives that pioneered the U.S. community-land-trust movement; Albany City Commission member 1976-1990.",
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Charles_Sherrod_in_2012-_USMC-120105-M-5479H-001_%28cropped%29.jpg",
     "alt": "Charles Sherrod, photographed January 2012",
@@ -16,10 +16,100 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Charles_Sherrod_in_2012-_USMC-120105-M-5479H-001_(cropped).jpg",
     "date_taken": "2012-01-30"
   },
-  "ai_reading": "Sherrod's neighbor counts are modest (peak 31), suggesting a comparatively shorter or more topically-focused interview transcript than most catalog entries. His top neighbors are C. T. Vivian (entry 134, SCLC direct-action teacher), Charles McLaurin (entry 17, Mississippi SNCC), William G. Anderson (entry 126, Albany Movement co-founder), Annie Pearl Avery (entry 3, SNCC voter-registration), and James Oscar Jones (entry 57). The Anderson cosine is the catalog's most direct same-movement co-founder pairing (both were founders of the Albany Movement; Anderson was its first president, Sherrod a SNCC field director within it). On the Tactical Pragmatism vs Strategic Vision axis Sherrod sits at +0.67, well toward Strategic Vision, and at +0.59 toward Armed Self-Defense on the nonviolence axis, both readings consistent with the Wyatt Tee Walker (entry 132) pattern of SCLC-and-Albany-Movement figures landing on the Strategic + Self-Defense side of the catalog's two AI-vs-culture-inverted axes despite their canonical nonviolent-leadership reception.",
-  "biographical_paragraph": "Sherrod joined SNCC in 1961, becoming the organization's first field secretary and its director for southwest Georgia; he was among the four students who chose jail-no-bail in Rock Hill, South Carolina that year, the tactical commitment that pulled SNCC's full-time staff cadre out of college [src: 2]. He relocated to Albany, Georgia in 1961 and, with fellow SNCC member Cordell Reagon, organized the direct-action campaigns that became the Albany Movement; in 1963 the City of Albany repealed all of its segregation ordinances [src: 2]. In 1969 Sherrod and his wife Shirley co-founded New Communities Inc, a collective farm in southwest Georgia modeled on Israeli kibbutzim that pioneered the U.S. community-land-trust movement [src: 2]. He served on the Albany City Council from 1976 through 1990, was later a prison chaplain, and taught at Albany State University; born January 2, 1937 in Surry, Virginia, he died October 11, 2022 in Albany, Georgia, at eighty-five [src: 2]. His Library of Congress oral history is entry 18 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The Albany Movement Sherrod co-founded with Cordell Reagon, William G. Anderson (catalog entry 126), Bernice Johnson Reagon, Slater King, and others in October 1961 was the SCLC and SNCC's first attempt to mount a coordinated city-wide campaign against segregation; the Movement coalition demanded the desegregation of Albany's bus terminals, lunch counters, libraries, parks, and city government [src: 3]. Martin Luther King Jr. came to Albany in December 1961 at the Movement's invitation; he was arrested December 16 along with hundreds of others, and the campaign extended through the summer of 1962 producing roughly twelve hundred total arrests [src: 3]. Albany Police Chief Laurie Pritchett's tactical innovation (dispersing arrested protesters to surrounding-county jails to defuse the mass-arrest-as-political-pressure dynamic) is the operational moment civil rights historians point to as the failure of the Albany campaign in the conventional national-policy-outcome sense, but Sherrod and the SNCC field staff held a different view: the 1963 repeal of all Albany segregation ordinances and the lasting Albany Movement-trained local-leadership network (including the Sherrods themselves, the Reagons, and the broader Southwest Georgia Project) were the longer-arc outcome the campaign produced [src: 3]. The 1969 founding of New Communities Inc on a 5,735-acre tract in Lee County, Georgia was the operational expression of that longer-arc theory: a Black-owned collective farm and community-land-trust modeled on the Israeli kibbutz movement that Sherrod had studied during a 1965 visit, and which became the prototype for the U.S. community-land-trust legal form the Institute for Community Economics later codified through the 1970s and 1980s [src: 4].",
-  "legacy_and_reception": "New Communities Inc lost the original Lee County land to drought-related Farmers Home Administration foreclosure in 1985; in 2009 the Sherrods received a $13 million settlement from the USDA Pigford II discrimination case, which they used in 2011 to purchase the 1,638-acre Cypress Pond Plantation in Albany, Georgia, reconstituting New Communities as Resora and the New Communities Land Trust [src: 5]. The 2009 Pigford II settlement was a successor to the 1999 Pigford v. Glickman class-action settlement that addressed decades of USDA loan discrimination against Black farmers; the Sherrods became principal public spokespeople for the settlement infrastructure during the 2010 controversy over Shirley Sherrod's USDA Georgia State Director of Rural Development position (the Andrew Breitbart out-of-context-video controversy that briefly produced her forced resignation before its retraction by USDA Secretary Tom Vilsack and President Barack Obama) [src: 5, 6]. Charles Sherrod was awarded the SNCC Legacy Project Sentinel Award in 2010, the LBJ Foundation In-Performance-of-Public-Trust award in 2012, and the National Civil Rights Museum Freedom Award in 2017; the New York Times October 13, 2022 obituary by Robert D. McFadden documents his role as one of the last surviving SNCC founding-cadre field secretaries [src: 7].",
+  "ai_reading": "The sharpest signal in Sherrod's vector neighborhood is asymmetry between how much the corpus talks about him and how little his own transcript talks about anyone else. The influence graph records twenty-four separate interviewees who name him (the in-bound tally that puts him among the most-discussed figures in the catalog), led by Martha Prescod Norman Noonan (entry 83), while his own twenty-minute interview produces zero out-bound edges: he narrates the Albany campaign and his beating in Baker County without naming a single other cataloged figure, so the embedding reads him almost entirely through others' recollection plus a tightly self-contained first-person account. By raw co-occurrence his strongest single passage match is to his wife Shirley Miller Sherrod (entry 117) at cosine 0.88, the expected spousal pull; setting that pairing aside, his most frequent neighbor is C. T. Vivian (entry 134, ten shared-neighbor hits), then Charles McLaurin (entry 17) and Doris Derby (entry 32). The surprise sits on the concept axes. Sherrod's interview is saturated with nonviolence language (he describes recruiting four street gangs to march nonviolently and collecting their switchblades at the church door), yet on the Nonviolence as Theology versus Armed Self-Defense axis the embedding places him at a normalized 0.59, fractionally past center toward the Armed Self-Defense pole rather than deep in the nonviolence camp his Albany reputation would predict. He reads further from culture on the Tactical Pragmatism versus Strategic Vision axis, landing at a normalized 0.67 toward Strategic Vision; for a field organizer remembered for door-to-door canvassing, the vector signature leans toward the movement-theory register, closer on that axis to C. T. Vivian (0.45) than to fellow Albany Movement founder William G. Anderson (entry 126, who sits at -0.44, the Tactical Pragmatism side).",
+  "biographical_paragraph": "Sherrod joined SNCC in 1961, becoming the organization's first field secretary and its director for southwest Georgia; he was among the four students who chose jail-no-bail in Rock Hill, South Carolina that year, the tactical commitment that pulled SNCC's full-time staff cadre out of college [src: 2]. He relocated to Albany, Georgia in 1961 and, with fellow SNCC member Cordell Reagon, organized the direct-action campaigns that became the Albany Movement; in 1963 the City of Albany repealed all of its segregation ordinances [src: 2]. In 1969 Sherrod and his wife Shirley co-founded New Communities Inc, a collective farm in southwest Georgia modeled on Israeli kibbutz and moshav cooperatives that pioneered the U.S. community-land-trust movement [src: 2]. He served on the Albany City Commission from 1976 through 1990, was later a prison chaplain, and taught at Albany State University; born January 2, 1937 in Surry, Virginia, and raised in Petersburg, he died October 11, 2022 in Albany, Georgia, at eighty-five [src: 2]. His Library of Congress oral history is entry 18 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Rev. Charles Melvin Sherrod",
+      "speaker_slug": "rev-charles-melvin-sherrod",
+      "source_entry": 18,
+      "timestamp": "00:02:11",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669121/",
+      "lead_in": "Sherrod describes the verse from the eighth chapter of Romans that he carried out of the Rock Hill, South Carolina jail and into the Albany work:",
+      "quote": "I persuaded that nothing can separate me from the love of God and Christ Jesus, our Lord, a simple verse, but very meaningful to me. What it meant was that nothing but death could stop me from the mission that I had of developing our people."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rev. Charles Melvin Sherrod",
+      "speaker_slug": "rev-charles-melvin-sherrod",
+      "source_entry": 18,
+      "timestamp": "00:03:46",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669121/",
+      "lead_in": "He frames the central organizing problem as breaking a community's fear of the county sheriff:",
+      "quote": "How to break them away from fearing the giant in the county, the sheriff?"
+    },
+    {
+      "relation": "self",
+      "speaker": "Rev. Charles Melvin Sherrod",
+      "speaker_slug": "rev-charles-melvin-sherrod",
+      "source_entry": 18,
+      "timestamp": "00:07:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669121/",
+      "lead_in": "On the nonviolence discipline he taught young recruits, including members of four Albany street gangs who marched with the movement:",
+      "quote": "And so, although I can't remember a time that we lined up in the church before marching, that we didn't find at least one switchblade knife. We had gangs that we recruited to march with us nonviolent."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rev. Charles Melvin Sherrod",
+      "speaker_slug": "rev-charles-melvin-sherrod",
+      "source_entry": 18,
+      "timestamp": "00:09:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669121/",
+      "lead_in": "He recounts the first mass march filling Shiloh Baptist Church and Mount Zion Baptist Church:",
+      "quote": "Because after that, our first march we had, when about 255 people marched with us, we came and we filled two churches."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rev. Charles Melvin Sherrod",
+      "speaker_slug": "rev-charles-melvin-sherrod",
+      "source_entry": 18,
+      "timestamp": "00:17:18",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669121/",
+      "lead_in": "He describes a voter-registration march in Baker County, Georgia where white men with ax handles attacked the line and beat him to the ground:",
+      "quote": "And as we walked toward the courthouse, I could see without looking my peripheral vision could see a number of white young men with ax handles coming toward our group."
+    },
+    {
+      "relation": "about",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "00:28:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "SNCC organizer John Churchville recalls joining the Southwest Georgia work under Sherrod's direction:",
+      "quote": "And so I hooked up with Reverend Charles Sherrod, who ran the Albany Project."
+    },
+    {
+      "relation": "about",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "00:32:44",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "Churchville recounts the arrangement Sherrod offered him when he asked to canvass with a Black partner instead of the white partner he had been assigned:",
+      "quote": "And so, Sherrod came up with this deal. If you can get more people, I'll let you do that. But if you can't register more people than you can with the partner that I gave you, you got to go back."
+    },
+    {
+      "relation": "about",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "01:34:19",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "SNCC and voter-education organizer Timothy Jenkins describes why Sherrod chose the Black Belt of Southwest Georgia for his sustained work:",
+      "quote": "And Southwest Georgia was neglected and Charles Sherrod chose that as the place that he was going to spend his primary time."
+    }
+  ],
+  "movement_context": "The Albany Movement Sherrod co-founded with Cordell Reagon, William G. Anderson (catalog entry 126), Bernice Johnson Reagon, Slater King, and others in October 1961 was the SCLC and SNCC's first attempt to mount a coordinated city-wide campaign against segregation; the Movement coalition demanded the desegregation of Albany's bus terminals, lunch counters, libraries, parks, and city government [src: 3]. Martin Luther King Jr. came to Albany in December 1961 at the Movement's invitation; he was arrested December 16 along with hundreds of others, and the campaign extended through the summer of 1962 producing more than a thousand arrests across Albany and the surrounding rural counties [src: 3]. Albany Police Chief Laurie Pritchett's tactical innovation (dispersing arrested protesters to surrounding-county jails to defuse the mass-arrest-as-political-pressure dynamic) is the operational moment civil rights historians point to as the failure of the Albany campaign in the conventional national-policy-outcome sense, but Sherrod and the SNCC field staff held a different view: the March 1963 repeal of all Albany segregation ordinances by a 6-1 city-commission vote and the lasting Albany Movement-trained local-leadership network (including the Sherrods themselves, the Reagons, and the broader Southwest Georgia Project) were the longer-arc outcome the campaign produced [src: 3]. The 1969 founding of New Communities Inc on a 5,735-acre tract in Lee County, Georgia was the operational expression of that longer-arc theory: a Black-owned collective farm and community-land-trust modeled on the Israeli kibbutz and moshav cooperatives that Sherrod and the other founders studied during a June 1968 visit to Israel, and which became the prototype for the U.S. community-land-trust legal form the Institute for Community Economics later codified through the 1970s and 1980s [src: 4].",
+  "legacy_and_reception": "New Communities Inc lost the original Lee County land to drought-related Farmers Home Administration foreclosure in 1985; in 2009 New Communities Inc was awarded approximately $12 million through the USDA Pigford discrimination settlement, and in 2011 the nonprofit purchased the 1,638-acre Cypress Pond Plantation in Albany, Georgia, reconstituting New Communities as Resora and the New Communities Land Trust [src: 5]. The 2009 Pigford II settlement was a successor to the 1999 Pigford v. Glickman class-action settlement that addressed decades of USDA loan discrimination against Black farmers; the Sherrods became principal public spokespeople for the settlement infrastructure during the 2010 controversy over Shirley Sherrod's USDA Georgia State Director of Rural Development position (the Andrew Breitbart out-of-context-video controversy that briefly produced her forced resignation before its retraction by USDA Secretary Tom Vilsack and President Barack Obama) [src: 5, 6]. Charles Sherrod was awarded the SNCC Legacy Project Sentinel Award in 2010, the LBJ Foundation In-Performance-of-Public-Trust award in 2012, and the National Civil Rights Museum Freedom Award in 2017; the New York Times October 13, 2022 obituary by Robert D. McFadden documents his role as one of the last surviving SNCC founding-cadre field secretaries [src: 7].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/f/fc/The_Albany_Movement_1961_sidewalk_marker.JPG",

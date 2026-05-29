@@ -6,11 +6,90 @@
   "display_name": "Ekwueme Michael Thelwell",
   "born": 1939,
   "died": null,
-  "role_summary": "Founding chairman of the Department of Afro-American Studies at UMass Amherst (1970); director of SNCC's Washington office (1963); novelist of The Harder They Come (1980); editor of Stokely Carmichael's memoir Ready for Revolution (2003).",
-  "ai_reading": "Thelwell's top semantic neighbor is Charles McLaurin (entry 17) at 336, an unexpectedly high count given Thelwell's academic and literary career and McLaurin's grassroots Mississippi voter-registration work. The pairing is the catalog's clearest case of cosine similarity finding a connection the cultural record does not foreground: McLaurin organized Sunflower County for SNCC, Thelwell directed SNCC's Washington office, both in the same year (1963), but the historiography rarely puts them in the same paragraph. On the Nonviolence as Theology vs Armed Self-Defense axis Thelwell lands at -0.62, well toward Nonviolence as Theology, which is also an AI-vs-culture mismatch: Thelwell's post-SNCC career included editing Stokely Carmichael's memoir Ready for Revolution and his novel The Harder They Come carries political-violence content, both pulling against a Nonviolence reading, but his oral history's vector lands him near the BPP-identified cluster on that pole.",
-  "biographical_paragraph": "In 1970, at thirty-one, Ekwueme Michael Thelwell became the founding chairman of the Department of Afro-American Studies at the University of Massachusetts at Amherst [src: 2]. He had come to the post through SNCC's Washington office, which he directed from 1963 [src: 2]. Born July 25, 1939 in Ulster Spring, Jamaica, Thelwell took a Bachelor's at Howard University in 1964 and an MFA from UMass Amherst in 1969 [src: 2]. He is the author of the 1980 novel The Harder They Come, built from the Perry Henzell film about the Jamaican folk hero Ivanhoe \"Rhyging\" Martin; the book drew attention from Chinua Achebe, and Harold Bloom placed it in the appendix to his The Western Canon [src: 2]. In 2003 Thelwell prepared and edited the political memoir of his SNCC colleague Stokely Carmichael, Ready for Revolution: The Life and Struggles of Stokely Carmichael [src: 2]. His Library of Congress oral history is entry 34 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The SNCC Washington office Thelwell directed from 1963 to 1965 functioned as the organization's lobbying and political-intelligence outpost in the federal capital; it tracked legislation, briefed congressional offices on field conditions in the Mississippi and Alabama Black Belt, coordinated logistics for SNCC staff testifying before House and Senate committees, and was the principal SNCC node engaged with the parallel campaign that produced the Voting Rights Act of August 6, 1965 [src: 3]. Thelwell's office also coordinated the Washington-end organizing for the August 1964 Mississippi Freedom Democratic Party challenge at the Atlantic City Democratic National Convention; the MFDP delegation led by Aaron Henry and including Fannie Lou Hamer arrived in Atlantic City through a logistics chain that ran through the Washington office's networks, and Thelwell's staff handled the credentials-committee briefing materials [src: 3, 4]. The pipeline that brought Thelwell into SNCC was the Howard University Nonviolent Action Group (NAG), the campus formation founded by Stokely Carmichael, Courtland Cox (catalog entry 24), Charles Cobb, Cleveland Sellers (catalog entry 22), Phil Hutchings (catalog entry 98), and Thelwell among others; NAG was the institutional channel that delivered the Howard cohort to SNCC's national staff cadre across 1961-1963, and Thelwell's Washington-office directorship was one of the first major staff appointments to emerge from that pipeline [src: 3, 5]. In 1970 Thelwell took the founding chairmanship of the W. E. B. Du Bois Department of Afro-American Studies at UMass Amherst, which became one of the first standalone Black Studies departments in the United States; the department was founded in the wake of the late-1960s student demands for institutional Black Studies that followed the November 1968 San Francisco State College Third World Liberation Front strike, and Thelwell's department joined a wave that included Harvard, Yale, and Cornell programs established between 1969 and 1971 [src: 6]. In 2003 Thelwell published Ready for Revolution: The Life and Struggles of Stokely Carmichael (Kwame Ture), the political memoir he assembled from extensive recorded conversations with Carmichael across the late 1990s and from Carmichael's own draft notes; Carmichael had died of prostate cancer in Conakry, Guinea, on November 15, 1998, and the manuscript was completed and edited by Thelwell across the four years following [src: 7].",
-  "legacy_and_reception": "Thelwell remained on the UMass Amherst faculty in the W. E. B. Du Bois Department of Afro-American Studies through his founding chairmanship and the subsequent decades; the department he founded in 1970 carries his institutional imprint into its current configuration, and his role in establishing one of the earliest standalone Black Studies units in the American university system is part of the institutional historiography of the discipline [src: 6]. His 1980 novel The Harder They Come, adapted from the 1972 Perry Henzell film about the Jamaican folk-outlaw figure Ivanhoe \"Rhyging\" Martin, attracted critical attention from Chinua Achebe (the Nigerian novelist of Things Fall Apart, who wrote a foreword to a later edition) and was placed by Harold Bloom in the appendix of canonical novels accompanying his 1994 The Western Canon [src: 2, 8]. The 2003 Ready for Revolution memoir, on which Thelwell is co-author with Stokely Carmichael (Kwame Ture), is the principal first-person memoir source for the Carmichael years of SNCC's leadership and the All-African People's Revolutionary Party period that followed; the book draws on Thelwell's role as institutional-memory keeper for the Howard NAG and SNCC cohorts, a role he has continued to occupy through the SNCC Legacy Project's continuing oral-history programming directed by Courtland Cox (catalog entry 24) [src: 7]. His earlier essay collection Duties, Pleasures and Conflicts: Essays in Struggle (UMass Press, 1987) gathers his political and literary writing from the 1960s through the 1980s and is the standard source for his shorter critical work [src: 9].",
+  "role_summary": "Founding chairman of the Department of Afro-American Studies at UMass Amherst (1970); co-director of SNCC's Washington office and director of the Mississippi Freedom Democratic Party's Washington office (1964); novelist of The Harder They Come (1980); editor of Stokely Carmichael's memoir Ready for Revolution (2003).",
+  "ai_reading": "Ranked by the number of high-similarity passage matches, Thelwell's top semantic neighbor in this corpus is Charles McLaurin (entry 17) at 336, ahead of Walter Tillow (entry 124) at 263 and his Howard Nonviolent Action Group contemporary Courtland Cox (entry 24) at 247. The McLaurin pairing is the surprise: McLaurin's testimony is grassroots Sunflower County voter-registration fieldwork, Thelwell's is the literary-academic and Washington-lobbying register, yet cosine similarity binds the two more tightly than it binds Thelwell to any other figure, a connection the historiography rarely foregrounds even though both passed through SNCC in the mid-1960s. The sharper AI-vs-culture mismatch is on the Nonviolence as Theology vs Armed Self-Defense axis, where Thelwell lands at -0.62, the ninth-deepest reading toward Nonviolence as Theology among the 136 audited entries. That pole placement runs against his cultural framing: he edited Stokely Carmichael's Black Power memoir Ready for Revolution and his novel The Harder They Come turns on outlaw violence, both of which a reader would expect to pull his vector toward the Armed Self-Defense pole. The influence graph adds a second asymmetry: in his own interview Thelwell names Lawrence Guyot (entry 76) eight times against only two mentions of Courtland Cox, inverting the expectation that his densest naming would track his closest Howard NAG peer rather than the Mississippi Freedom Democratic Party chairman who recruited him to run its Washington office.",
+  "biographical_paragraph": "Born July 25, 1939 and raised in Ulster Spring, Jamaica, Ekwueme Michael Thelwell came to the United States in 1959 to attend Howard University, where he joined the Nonviolent Action Group and edited the campus newspaper, the Howard Hilltop [src: 10]. He took a Bachelor's at Howard in 1964 and an MFA from the University of Massachusetts Amherst in 1969 [src: 2, 10]. In 1964 he became co-director of SNCC's Washington office with Bill Mahoney, and after the August 1964 Atlantic City convention challenge, Mississippi Freedom Democratic Party chairman Lawrence Guyot (entry 76) asked him to open and direct the MFDP's own Washington office, where he lobbied to unseat Mississippi's congressional delegation [src: 10]. In 1970 he became the founding chairman of the W. E. B. Du Bois Department of Afro-American Studies at UMass Amherst [src: 2, 6]. He is the author of the 1980 novel The Harder They Come (Grove Press), built from the Perry Henzell film about the Jamaican folk figure Ivanhoe \"Rhygin\" Martin; the book drew attention from Chinua Achebe, and Harold Bloom placed it in the appendix to his The Western Canon [src: 8]. In 2003 Thelwell prepared and edited the political memoir of his SNCC colleague Stokely Carmichael, Ready for Revolution: The Life and Struggles of Stokely Carmichael (Kwame Ture), completing the manuscript Carmichael had left unfinished at his 1998 death [src: 2]. His Library of Congress oral history is entry 34 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "00:11:11",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "Asked why so many SNCC organizers came out of Howard, Thelwell points to the school's position in the federally funded capital:",
+      "quote": "The first thing is Howard was very strategically placed."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "01:11:00",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "On how the Howard students related to the discipline of nonviolence:",
+      "quote": "Well, you know, at Howard, we really did see non-violence as a strategy, which was counter-intuitive."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "03:52:20",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "Recalling two FBI agents who came to his Mississippi Freedom Democratic Party office in Washington and questioned his foreign-student status:",
+      "quote": "And they said to me, Mr. Thelwell, you are the director of this office, I said, yes sir."
+    },
+    {
+      "relation": "self",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "03:51:51",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "Asked how he ended up teaching at the University of Massachusetts, he traces it to that same FBI visit, which pushed him to enroll on the graduate fellowship he had been offered:",
+      "quote": "Sheer accident and by the good offices of the FBI."
+    },
+    {
+      "relation": "about",
+      "speaker": "Courtland Cox",
+      "speaker_slug": "courtland-cox",
+      "source_entry": 24,
+      "timestamp": "00:13:38",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669129/",
+      "lead_in": "His Howard Nonviolent Action Group contemporary Courtland Cox places Thelwell at the campus newspaper:",
+      "quote": "And then the other thing that was Mike Thelwell, who was, you know, a member of NAG, ran the newspaper and got great awards for the quality of the newspaper."
+    },
+    {
+      "relation": "about",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "01:25:38",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "William Lamar Strickland, later a colleague in the UMass Afro-American Studies department, identifies who ran the Mississippi Freedom Democratic Party's Washington operation:",
+      "quote": "the person who was organizing out of Washington was Ekwueme Michael Thelwell"
+    },
+    {
+      "relation": "about",
+      "speaker": "Esther M. A. Terry",
+      "speaker_slug": "esther-m-a-terry",
+      "source_entry": 40,
+      "timestamp": "01:28:01",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669127/",
+      "lead_in": "Esther M. A. Terry, who joined the UMass Afro-American Studies faculty the same year Thelwell arrived, recalls what he brought from the movement:",
+      "quote": "Michael Thelwell had come from the movement. He had been involved in getting the Mississippi Freedom Democratic Party up in Atlantic City"
+    }
+  ],
+  "movement_context": "The SNCC Washington office Thelwell co-directed with Bill Mahoney from 1964 functioned as the organization's lobbying and political-intelligence outpost in the federal capital; it tracked legislation, briefed congressional offices on field conditions in the Mississippi and Alabama Black Belt, coordinated logistics for SNCC staff testifying before House and Senate committees, and was the principal SNCC node engaged with the parallel campaign that produced the Voting Rights Act of August 6, 1965 [src: 3, 10]. After the August 1964 Mississippi Freedom Democratic Party challenge at the Atlantic City Democratic National Convention, MFDP chairman Lawrence Guyot (catalog entry 76) asked Thelwell to open a separate MFDP office in Washington; as its director he worked to secure commitments from Democratic legislators to unseat Mississippi's congressional delegation, winning the support of eight members of Congress, and the office handled the Washington-end logistics and credentials-committee materials for the delegation Aaron Henry chaired and Fannie Lou Hamer addressed [src: 3, 4, 10]. The pipeline that brought Thelwell into SNCC was the Howard University Nonviolent Action Group (NAG), organized in June 1960 as the campus affiliate of SNCC; its prominent cohort included Stokely Carmichael, Courtland Cox (catalog entry 24), Charles Cobb, Cleveland Sellers (catalog entry 22), Phil Hutchings (catalog entry 98), and Thelwell, and NAG was the institutional channel that delivered the Howard cohort to SNCC's national staff cadre across 1961-1964 [src: 3, 5, 10]. In 1970 Thelwell took the founding chairmanship of the W. E. B. Du Bois Department of Afro-American Studies at UMass Amherst, which became one of the first standalone Black Studies departments in the United States; the department was founded in the wake of the late-1960s student demands for institutional Black Studies that followed the November 1968 San Francisco State College Third World Liberation Front strike, and Thelwell's department joined a wave that included Harvard, Yale, and Cornell programs established between 1969 and 1971 [src: 6]. In 2003 Thelwell published Ready for Revolution: The Life and Struggles of Stokely Carmichael (Kwame Ture), the political memoir he assembled from extensive recorded conversations with Carmichael across the late 1990s and from Carmichael's own draft notes; Carmichael had died of prostate cancer in Conakry, Guinea, on November 15, 1998, and the manuscript was completed and edited by Thelwell across the four years following [src: 7].",
+  "legacy_and_reception": "Thelwell remained on the UMass Amherst faculty in the W. E. B. Du Bois Department of Afro-American Studies through his founding chairmanship and the subsequent decades; the department he founded in 1970 carries his institutional imprint into its current configuration, and his role in establishing one of the earliest standalone Black Studies units in the American university system is part of the institutional historiography of the discipline [src: 6]. His 1980 novel The Harder They Come, adapted from the 1972 Perry Henzell film about the Jamaican folk-outlaw figure Ivanhoe \"Rhygin\" Martin, attracted critical attention from Chinua Achebe (the Nigerian novelist of Things Fall Apart, who wrote a foreword to a later edition) and was placed by Harold Bloom in the appendix of canonical novels accompanying his 1994 The Western Canon [src: 2, 8]. The 2003 Ready for Revolution memoir, on which Thelwell is co-author with Stokely Carmichael (Kwame Ture), is the principal first-person memoir source for the Carmichael years of SNCC's leadership and the All-African People's Revolutionary Party period that followed; the book draws on Thelwell's role as institutional-memory keeper for the Howard NAG and SNCC cohorts, a role he has continued to occupy through the SNCC Legacy Project's continuing oral-history programming directed by Courtland Cox (catalog entry 24) [src: 7]. His earlier essay collection Duties, Pleasures and Conflicts: Essays in Struggle (UMass Press, 1987) gathers his political and literary writing from the 1960s through the 1980s and is the standard source for his shorter critical work [src: 9].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/37/W.E.B._DuBois_Library.jpg",
@@ -88,6 +167,11 @@
       "url": "https://search.worldcat.org/title/16165543",
       "title": "Michael Thelwell, Duties, Pleasures and Conflicts: Essays in Struggle",
       "publisher": "University of Massachusetts Press, 1987; WorldCat OCLC 16165543 (the principal collection of Thelwell's political and literary essays from the 1960s through the 1980s)"
+    },
+    {
+      "url": "https://snccdigital.org/people/michael-thelwell/",
+      "title": "Michael Thelwell",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project; the source for Thelwell's July 25, 1939 Ulster Spring, Jamaica origin, his 1959 arrival at Howard and NAG membership, his editorship of the Howard Hilltop, his 1964 co-directorship of SNCC's Washington office with Bill Mahoney, and Lawrence Guyot's request that he open and direct the MFDP's Washington office)"
     }
   ]
 }
