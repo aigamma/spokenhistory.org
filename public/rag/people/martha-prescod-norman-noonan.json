@@ -7,9 +7,88 @@
   "born": null,
   "died": null,
   "role_summary": "SNCC field organizer in the early-to-mid 1960s; her testimony clusters with the SNCC-allied-women / Northern-recruitment subgroup in this corpus's embedding.",
-  "ai_reading": "Noonan's top semantic neighbors are Betty Garman Robinson (entry 7, count 98), Jennifer Lawson (entry 59), Gwendolyn Zoharah Simmons (entry 53), Dr. Cleveland Sellers (entry 22), and Junius Williams (entry 72). Robinson, Simmons, and Sellers all sit within the broader SNCC-organizer cohort the embedding has converged on across this catalog, but the closest pairing here is with Betty Garman Robinson, the SNCC Northern-support fundraiser whose own page documents the Skidmore-Berkeley-SDS path into Atlanta SNCC organizing. The cosine pattern suggests Noonan's testimony shares vocabulary with the SNCC women whose movement work was as much about Northern recruitment and student-network organizing as about Mississippi or Alabama fieldwork. Her axis positions are all small (within +/-0.34), placing her among the corpus's centrist voices alongside McDew (entry 16), Terry (entry 40), and Richardson (entry 49).",
-  "biographical_paragraph": "Martha Prescod Norman Noonan was a SNCC field organizer in the early-to-mid 1960s; her oral history is held at the Library of Congress as entry 83 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under multiple slug variants is pending in this iteration; SNCC Digital Gateway returned 404 for the spelling searched. The embedding pattern visible above is the strongest available signal for her movement placement.",
-  "movement_context": "Noonan's SNCC service began at the University of Michigan in 1962, where she joined the Northern-support fundraising network that channeled student-campus resources to field staff in the Deep South [src: 2]. She moved into field work in summer 1963 in Albany, Georgia and then in Greenwood, Mississippi, canvassing plantations alongside George Greene and Stokely Carmichael as part of the SNCC voter-registration project in the Mississippi Delta [src: 3]. After completing her undergraduate degree in December 1964, she relocated to Selma, Alabama and worked there for a little over a year, with occasional canvassing trips into adjoining Wilcox and Lowndes Counties [src: 2]. During the January-to-March 1965 Selma voting rights campaign, Silas Norman directed the SNCC project and field staff coordinated with SCLC organizers in daily 7 a.m. ward-by-ward meetings, even as SNCC's Selma cohort continued the slower work of voter education rather than concentrating on the larger demonstrations [src: 4]. Noonan was part of that field-secretary cohort during the period that bridged the Mississippi Freedom Summer of 1964 and the Voting Rights Act of 1965. Her chapter in the SNCC women's collective memoir, titled \"Captured by the Movement,\" appears on pages 483 to 503 of Hands on the Freedom Plow [src: 5]. The book was co-edited by Faith S. Holsaert, Noonan, Judy Richardson (entry 69), Betty Garman Robinson (entry 7), Jean Smith Young, and Dorothy M. Zellner (entry 30), and gathered fifty-two personal accounts by women who served as SNCC staff, volunteers, and supporters across the Northern fundraising network and the Southern field projects [src: 5, 6]. The editorial team was itself a SNCC women's network reactivated for the documentary purpose: Holsaert had worked the Albany and southwest Georgia projects, Richardson had run SNCC's Atlanta communications and joined the documentary Eyes on the Prize team, Robinson had directed Northern fundraising and Friends of SNCC chapters, Young had organized in Mississippi and Alabama, and Zellner had worked with SNCC in Atlanta and on the Mississippi project [src: 6]. The collection won the Letitia Woods Brown Book Award and the Benjamin L. Hooks Institute for Social Change's National Book Award in 2011 and was nominated for the 42nd NAACP Image Award for Outstanding Literary Work, Nonfiction [src: 6]. Noonan situates her own SNCC years from age sixteen to twenty-one, beginning with Northern movement-support work before relocating South, and ending with the return from Selma to Detroit [src: 3].",
+  "ai_reading": "Ranked by shared-neighbor count, Noonan's top semantic neighbors in this corpus are Betty Garman Robinson (entry 7, count 98), Jennifer Lawson (entry 59, count 92), Gwendolyn Zoharah Simmons (entry 53, count 83), Dr. Cleveland Sellers (entry 22, count 79), and Junius Williams (entry 72, count 75). The strongest pairing by that count is Betty Garman Robinson, the SNCC Northern-support fundraiser whose own page documents the Skidmore-to-Berkeley-to-SDS path into Atlanta SNCC organizing; the connection is not driven by single passages of high cosine similarity (Robinson's top per-passage score, 0.72, is among the lowest in the neighbor set) but by the sheer breadth of vocabulary the two interviews share across many passages. That pattern fits Noonan's own account, which spends as much time on Northern recruitment, Friends of SNCC fundraising, and the SDS student network as on Mississippi or Alabama fieldwork. The influence graph adds a second signal the cultural record does not foreground: the corpus voice Noonan names most often is not a national SNCC figure but Rev. Charles Melvin Sherrod (entry 18, weight 7), the Albany project director under whom she trained, well above her single mentions of Martin Luther King Jr. and Stokely Carmichael. On the five concept axes her positions are all close to center, within a band of roughly plus or minus 0.07 (the largest is +0.065 toward Collective Discipline on the Individual Conscience-Collective Discipline axis), placing her among the corpus's most centrist voices alongside McDew (entry 16), Terry (entry 40), and Richardson (entry 49).",
+  "biographical_paragraph": "Martha Prescod Norman Noonan grew up in Providence, Rhode Island, the daughter of a Saint Vincent-born optometrist and a University of Michigan-educated musician, both political activists who had been active in the Progressive Party [src: 1]. She entered the University of Michigan, joined Students for a Democratic Society, and at an April 1962 SDS-SNCC meeting in Chapel Hill committed to the movement, then did Friends of SNCC fundraising in Detroit before going South as a field organizer in 1963 [src: 1, 2]. She worked Charles Sherrod's Albany, Georgia project, the Greenwood, Mississippi voter-registration project, and from early 1965 the SNCC Alabama project centered in Selma [src: 1, 2]. She later earned a master's degree in history at Wayne State University and taught African American history; her account of the SNCC years, \"Captured by the Movement,\" appears in Hands on the Freedom Plow, the 2010 SNCC women's memoir she co-edited with Betty Garman Robinson (entry 7), Judy Richardson (entry 69), and Dorothy M. Zellner (entry 30) among others [src: 5, 6, 7]. Her oral history is entry 83 of the Civil Rights History Project, conducted by the historian John Dittmer in 2013 and held at the Library of Congress American Folklife Center (AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "00:42:24",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "Asked what drew her to SNCC after the April 1962 SDS-SNCC meeting in Chapel Hill, she located it in seeing young Black organizers lead:",
+      "quote": "What I saw in Chapel Hill were young black people in charge, taking charge of their destiny. That's what attracted me. We could do something about our own situation. We could actually change things."
+    },
+    {
+      "relation": "self",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "00:36:40",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "On the armed protection that local people provided the nonviolent field staff, a practice she elsewhere calls preventive nonviolence:",
+      "quote": "We didn't hesitate to ride in cars with community people who were armed, or to stay at the homes of community people who were armed. And I think, again, this protected us a great deal."
+    },
+    {
+      "relation": "self",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "00:43:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "Asked about the mistreatment of women that later accounts attribute to the movement, she described her own experience:",
+      "quote": "I certainly never felt mistreated. And I felt encouraged to be as much as I could be."
+    },
+    {
+      "relation": "self",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "00:54:26",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "Reflecting on the 1964 Mississippi Freedom Democratic Party challenge at the Atlantic City convention:",
+      "quote": "I thought it was absolutely amazing that within the space of what is at two years of activism, with basically no money, we had made the vote a national issue."
+    },
+    {
+      "relation": "self",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "01:23:06",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "On why the 1966 Black Power slogan did not surprise her, reading it as continuity rather than a break:",
+      "quote": "We were trying to build vehicles of black power from the beginning."
+    },
+    {
+      "relation": "about",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "00:00:00",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "Fellow SNCC organizer and co-editor Betty Garman Robinson names the six women who edited Hands on the Freedom Plow, Noonan among them:",
+      "quote": "So there were six of us who edited it. Judy Richardson Richardson, Dottie Zellner, Faith S. Holsaert, Martha Prescott Norman and Jean Smith Young and myself."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "02:08:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "Imagining a road not taken (organizing in Alabama's white community), Dorothy Zellner cites a story Noonan told about long-lived interracial-organizing memory there:",
+      "quote": "And there were even interracial organizers in Alabama. And according to a story that Martha Prescod Norman Noonan told us, she was able to detect traces of that interaction many decades later."
+    }
+  ],
+  "movement_context": "Noonan's SNCC service began at the University of Michigan in 1962, where she joined the Northern-support fundraising network that channeled student-campus resources to field staff in the Deep South [src: 2]. She moved into field work in summer 1963 in Albany, Georgia under the project Rev. Charles Melvin Sherrod (entry 18) directed, then left by bus for Greenwood, Mississippi, where Sam Block and Willie Peacock met the arriving organizers and she joined the SNCC voter-registration push toward a late-summer voting day in the Delta [src: 2, 3]. After completing most of her undergraduate credits at the end of the fall 1964 semester, she joined the SNCC Alabama project in early 1965 and worked principally in Selma, with a visit into Lowndes County for one of its early mass meetings [src: 2]. During the January-to-March 1965 Selma voting rights campaign, Silas Norman directed the SNCC Alabama project; in Selma a SNCC organizer and an SCLC organizer were each assigned to the same ward to coordinate, even as SNCC's cohort kept to the slower work of community organizing and voter education rather than concentrating on the larger demonstrations [src: 2, 4]. Noonan was part of that field-secretary cohort during the period that bridged the Mississippi Freedom Summer of 1964 and the Voting Rights Act of 1965. Her chapter in the SNCC women's collective memoir, titled \"Captured by the Movement,\" appears on pages 483 to 503 of Hands on the Freedom Plow [src: 5]. The book was co-edited by Faith S. Holsaert, Noonan, Judy Richardson (entry 69), Betty Garman Robinson (entry 7), Jean Smith Young, and Dorothy M. Zellner (entry 30), and gathered fifty-two personal accounts by women who served as SNCC staff, volunteers, and supporters across the Northern fundraising network and the Southern field projects [src: 5, 6]. The editorial team was itself a SNCC women's network reactivated for the documentary purpose: Holsaert had worked the Albany and southwest Georgia projects, Richardson had run SNCC's Atlanta communications and joined the documentary Eyes on the Prize team, Robinson had directed Northern fundraising and Friends of SNCC chapters, Young had organized in Mississippi and Alabama, and Zellner had worked with SNCC in Atlanta and on the Mississippi project [src: 6]. The collection won the Letitia Woods Brown Book Award and the Benjamin L. Hooks Institute for Social Change's National Book Award in 2011 and was nominated for the 42nd NAACP Image Award for Outstanding Literary Work, Nonfiction [src: 6]. Noonan situates her own SNCC years from age sixteen to twenty-one, beginning with Northern movement-support work before relocating South, and ending with the return from Selma to Detroit [src: 3].",
   "legacy_and_reception": "Noonan completed a master's degree in history at Wayne State University and taught African American history at the University of Michigan, the University of Toledo, and Wayne State University [src: 7]. She subsequently worked as a community organizer in the Baltimore area and continued to teach civil rights history through conferences, presentations, and writings, characterizing her movement years as a period that shaped her life politically and personally [src: 2, 3]. Her 1988 conference paper at the SNCC reunion \"We Shall Not Be Moved,\" later published in A Circle of Trust: Remembering SNCC edited by Cheryl Lynn Greenberg, is an early documentary contribution to the SNCC-alumni-network project of recording field organizers' accounts in their own voices [src: 3]. The 2010 Hands on the Freedom Plow extended that documentary project into book-length form. Its six-editor collective structure and fifty-two contributor roster were themselves designed as an archival instrument: rather than commissioning a single historian to interpret SNCC's women, the editorial team gathered first-person accounts from across the Northern fundraising apparatus, the Atlanta office, and the Mississippi, Georgia, and Alabama field projects, presenting the collection as a primary-source compilation [src: 5, 6]. Her 2013 oral history for the Civil Rights History Project, conducted by the historian John Dittmer in Cockeysville, Maryland, was deposited with the American Folklife Center at the Library of Congress and the Smithsonian National Museum of African American History and Culture, where it carries accession 2011.174.80.1a-g [src: 1, 8]. The interview consists of seven video files totaling ninety-three minutes alongside a fifty-page transcript covering her early life in Providence, Rhode Island, her University of Michigan years, and her SNCC work in Albany, Greenwood, and Selma [src: 8].",
   "gallery": [
     {
