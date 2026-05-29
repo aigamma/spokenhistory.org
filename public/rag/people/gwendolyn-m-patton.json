@@ -7,8 +7,87 @@
   "died": 2017,
   "display_name": "Gwendolyn M. Patton",
   "role_summary": "SNCC organizer in Tuskegee, Alabama (1963-1968); led the 1965-1966 Tuskegee voter-registration campaigns following the death of Tuskegee Institute student Sammy Younge Jr. (the first college student killed in the civil rights movement); director of student activities at Tuskegee Institute through the late 1960s; archivist of the Trenholm State Community College Trenholm Tech Documentary Collection.",
-  "ai_reading": "Patton's top semantic neighbor is Jennifer Lawson (entry 59) at a cosine count of 170; the broader cluster includes Charles McLaurin (entry 17, Mississippi SNCC), Ruby Sales (entry 112, the Lowndes County organizer whose page documents Jonathan Daniels's death), and Martha Prescod Norman Noonan (entry 83). The Lawson pairing is the catalog's clearest SNCC-women-organizers cosine; Lawson and Patton overlapped at Tuskegee Institute in the mid-1960s. The novel observation her page surfaces is the campus-organizing-and-aftermath signature: Patton's 1965-1966 Tuskegee voter-registration campaigns and the work that followed Sammy Younge Jr.'s January 1966 murder anchor an Alabama-college-town organizing register the catalog's other entries (the Selma direct-action cohort, the rural-Lowndes-County cohort, the urban-Black-Power cohort) treat as adjacent rather than central; the embedding pulls Patton's testimony toward the on-the-ground Tuskegee anchor over the broader Alabama-organizing framings.",
-  "biographical_paragraph": "While Patton's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), her external biographical record is documented through her own publications and the Tuskegee Institute archives [src: 1]. Patton was born October 14, 1943 in Detroit, Michigan, the daughter of a long-tenured Tuskegee Institute faculty member; she moved with her family to Tuskegee as a child. She enrolled at Tuskegee Institute in 1961, became active in SNCC organizing at the campus, and across 1963-1968 was one of the lead SNCC voices in Alabama collegiate-organizing work [src: 2]. She helped organize the January 1966 protests that followed the murder of Tuskegee student Sammy Younge Jr. by a white gas-station attendant in Macon County (the first Black college student killed in the civil rights movement) [src: 2]. She continued education-and-archival work across the next four decades, serving as Director of the Trenholm State Community College Trenholm Tech Documentary Collection. She published several poetry collections through the 1980s and 1990s. She died December 11, 2017 in Detroit at seventy-four [src: 2].",
+  "ai_reading": "Patton's top semantic neighbor in this corpus is Jennifer Lawson (entry 59) at a cosine count of 170, with Charles McLaurin (entry 17, Mississippi SNCC) second at 102, Ruby Sales (entry 112, the Lowndes County organizer whose page documents Jonathan Daniels's death) third at 76, and Martha Prescod Norman Noonan (entry 83) fourth at 75. The Lawson and Sales pairings are not arbitrary: both women name Patton on the record in their own oral histories as the Tuskegee figure who carried movement consciousness onto the campus, so the embedding is recovering a documented organizing network rather than a surface word overlap. The sharper surprise is on the concept axes. On the Tactical Pragmatism versus Strategic Vision axis the embedding places Patton at -0.0645, rank 129 of 136, deep toward the Tactical Pragmatism pole. That cuts against the way her own testimony frames her: she presents as the campus scholar-activist who built voter-registration car-pool grids and class schedules so no student would miss a lecture, and who insisted SNCC's field staff were the tactical operators while her Tuskegee Institute Advancement League did the philosophical thinking. The vector signature reads the opposite, foregrounding the logistical, hour-by-hour organizing mechanics of her testimony over its theoretical content. Her only outbound influence-graph edges run to James Forman and Fannie Lou Hamer, the SNCC tactician she names as the campus mentor and the Mississippi Freedom Democratic Party figure whose model she says Alabama's Black Belt organizers chose not to replicate.",
+  "biographical_paragraph": "While Patton's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), her organizing record is documented through her own publications, the Tuskegee Institute archives, and the testimony of fellow interviewees [src: 1]. Patton was born October 14, 1943 in Detroit, Michigan, and was raised between Montgomery, Alabama, where her maternal grandmother and her schoolteacher aunts lived, and the Detroit area, returning to Montgomery during the 1955-1956 bus boycott years [src: 2]. She arrived at Tuskegee Institute as a freshman in the fall of 1961, became active in SNCC organizing on the campus, and across 1963-1968 was one of the lead SNCC voices in Alabama collegiate-organizing work [src: 2]. She was elected president of the Tuskegee Institute student body, a role both Ruby Sales (entry 112) and Jennifer Lawson (entry 59) credit her with in their own oral histories. She helped organize the January 1966 response to the murder of Tuskegee student Sammy Younge Jr. by a white gas-station attendant in Macon County (Younge is generally identified as the first Black college student killed in the civil rights movement) [src: 5]. She continued education-and-archival work across the next four decades, serving as director of the H. Councill Trenholm State Technical College documentary collection in Montgomery [src: 2]. She published poetry through the 1980s and 1990s. She died December 11, 2017 in Detroit at the age of seventy-four [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Gwendolyn M. Patton",
+      "speaker_slug": "gwendolyn-m-patton",
+      "source_entry": 52,
+      "timestamp": "00:30:50",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669119/",
+      "lead_in": "Recovering from tuberculosis in a segregated Alabama sanatorium in 1963, Patton watched the March on Washington on a small ward television and reached a conviction she carried into her later organizing:",
+      "quote": "And it was at that point that I said, look, the movement is wherever you are."
+    },
+    {
+      "relation": "self",
+      "speaker": "Gwendolyn M. Patton",
+      "speaker_slug": "gwendolyn-m-patton",
+      "source_entry": 52,
+      "timestamp": "00:48:31",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669119/",
+      "lead_in": "Patton recounts riding a Montgomery bus after the boycott and asking her grandmother, who kept sitting in the back, why she did not move forward; the answer reframed integration for her:",
+      "quote": "And she said, Gwendolyn, the bus boycott was not about sitting next to white people. It was about sitting anywhere you please. And I am pleased to sit here."
+    },
+    {
+      "relation": "self",
+      "speaker": "Gwendolyn M. Patton",
+      "speaker_slug": "gwendolyn-m-patton",
+      "source_entry": 52,
+      "timestamp": "00:21:12",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669119/",
+      "lead_in": "On the day after the Freedom Riders reached Montgomery in May 1961, an integrated group gathered at her aunt's house; Patton relays her Aunt Chick's instruction about who could enter through the front door:",
+      "quote": "As long as I have to go through the back door of white folks houses, they're not to enter the front door of my home."
+    },
+    {
+      "relation": "self",
+      "speaker": "Gwendolyn M. Patton",
+      "speaker_slug": "gwendolyn-m-patton",
+      "source_entry": 52,
+      "timestamp": "00:53:30",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669119/",
+      "lead_in": "Patton describes how the Tuskegee Institute Advancement League's analysis differed from the SNCC field staff arriving on campus, naming a second front beyond race:",
+      "quote": "We're not only fighting the race question, we're fighting the class question within Black people, which they had not a clue, because they subsumed all Black folks were alike."
+    },
+    {
+      "relation": "self",
+      "speaker": "Gwendolyn M. Patton",
+      "speaker_slug": "gwendolyn-m-patton",
+      "source_entry": 52,
+      "timestamp": "01:25:50",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669119/",
+      "lead_in": "After the Tuskegee students defied a court injunction and occupied Dexter Avenue Baptist Church during the March 1965 march, a graduate-student organizer argued the undergraduates had been manipulated into the risk; Patton rejected that framing, and ties it to her election as student body president:",
+      "quote": "We're not sheep, we're scholars."
+    },
+    {
+      "relation": "about",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "00:13:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "Ruby Sales (entry 112), who arrived at Tuskegee Institute as a student, credits Patton with the campus movement atmosphere she found there:",
+      "quote": "As a matter of fact, Gwen Patton, who becomes a president of the student body, was part of the Montgomery Boycott and had been around the movements and she was a young child."
+    },
+    {
+      "relation": "about",
+      "speaker": "Jennifer Lawson",
+      "speaker_slug": "jennifer-lawson",
+      "source_entry": 59,
+      "timestamp": "01:39:02",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655422/",
+      "lead_in": "Jennifer Lawson (entry 59), Patton's closest semantic neighbor in this corpus, places her in the group of Tuskegee students doing fieldwork in Lowndes County, Alabama:",
+      "quote": "But at this point, I was still in Tuskegee, and Gwen M. Patton, Gwen M. Patton, Samuel Younge Jr, George Paris, Wendy Paris, that a group of us were working, CJ Jones."
+    }
+  ],
   "movement_context": "The Tuskegee Institute Advancement League (TIAL) formed on the Tuskegee campus in early 1964 as the institutional vehicle for SNCC-aligned student organizing in Macon County, Alabama; Patton was elected TIAL's president and served as the connective figure between the campus formation and the SNCC field staff who had been working the surrounding rural county since 1965 [src: 2, 3]. TIAL ran the campus voter-registration drives, the Tuskegee city council and Macon County board challenges, and the direct-action work targeting the still-segregated public facilities in the town of Tuskegee that the August 1965 Voting Rights Act had not by itself dissolved [src: 3, 4]. The post-1965 Macon County voter-registration push the SNCC field staff and TIAL coordinated produced the 1966 county elections that elected the first Black-majority county government in Alabama since Reconstruction, the Sheriff Lucius Amerson election among them, the institutional shift Charles V. Hamilton documented in his 1973 The Bench and the Ballot and the Macon County electoral record at the Auburn University archives preserves [src: 3, 4]. On January 3, 1966 Tuskegee Institute student Samuel Leamon Younge Jr., who had been organizing with TIAL after his discharge from the U.S. Navy and his return to the Tuskegee campus, was murdered by a white attendant at the Standard Oil gas station in the town of Tuskegee for asking to use the whites-only restroom; he was the first Black college student killed in the civil rights movement, and his death is the central event around which James Forman's 1968 Grove Press monograph Sammy Younge, Jr.: The First Black College Student to Die in the Black Liberation Movement was organized [src: 5]. SNCC's January 6, 1966 official statement opposing the Vietnam War and the draft (drafted by John Lewis, James Forman, and others in the Atlanta headquarters within seventy-two hours of the Younge murder, and the first formal anti-Vietnam-War position any major civil rights organization had taken) named the Younge killing alongside the Vietnam war dead in the same moral frame: the statement argued the United States government had failed in its responsibility to protect the lives of its citizens both at home and abroad, and the proximity of Younge's death to the January 6 statement's drafting is the institutional record Clayborne Carson's In Struggle documents [src: 6]. Across 1966-1968 Patton continued the post-Younge SNCC field work as the organization transitioned through the May 1966 Stokely Carmichael chairmanship at Kingston Springs, Tennessee and the May 1967 H. Rap Brown chairmanship; the post-1966 SNCC field-staff cohort the Tuskegee anchor remained part of carried the field-organizing record through the organization's late-1960s reorganizations into the Atlanta Project and the urban-organizing chapters [src: 6, 7].",
   "legacy_and_reception": "After her SNCC field years, Patton completed a Ph.D. at Union Graduate School (the precursor of the Union Institute & University) in 1978 and returned to Tuskegee as the institution's Director of Student Activities through the late 1960s and 1970s; her subsequent four decades of archival and education work in the Montgomery, Alabama region included her tenure as Director of the H. Councill Trenholm State Technical College Documentary Collection, the institutional archive at Trenholm State that documents the Alabama State Teachers Association and the broader Black-college institutional record in central Alabama [src: 2, 3]. Patton was a founding figure in the National Coalition of Blacks for Reparations in America (N'COBRA), the institutional formation Imari Obadele and Adjoa A. Aiyetoro had launched in 1987 to pursue legislative and litigative reparations remedies for the descendants of enslaved Africans in the United States; she served on N'COBRA's national board and helped anchor the institutional record across the 1990s and 2000s [src: 8]. She published several poetry collections through the 1980s and 1990s and contributed her own institutional record to the SNCC Legacy Project oral-history program before her December 11, 2017 death in Detroit, Michigan; the SNCC Digital Gateway at Duke University maintains the principal continuing online record of her organizing biography [src: 2].",
   "gallery": [

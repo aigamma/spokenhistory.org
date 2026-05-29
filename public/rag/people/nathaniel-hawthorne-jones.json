@@ -6,16 +6,73 @@
   "born": 1914,
   "died": null,
   "display_name": "Nathaniel Hawthorne Jones",
-  "role_summary": "Civil rights organizer in Claiborne County, Mississippi; participant in the Port Gibson Movement, the Port Gibson Merchant Boycotts (the 1966-1970s boycotts that produced NAACP v. Claiborne Hardware, the 1982 Supreme Court case affirming the boycotts' First Amendment protection), organized protests at Alcorn College, and voter registration activities; U.S. Navy Steward Mate during World War II (drafted 1944).",
-  "ai_reading": "Jones's top semantic neighbor is Charles McLaurin (entry 17) at a cosine count of 124; the broader cluster includes James Oscar Jones (entry 57), Peggy Jean Connor (entry 96), and Clarence Magee (entry 21). The McLaurin pairing is the catalog's clearest example of a Claiborne-County-and-Sunflower-County Mississippi cross-region cosine: both worked Mississippi voter-registration organizing in the early 1960s, and the embedding catches the field-organizing-in-Mississippi register as a stronger signal than either's pairing with the national NAACP or SNCC headquarters voices. The novel observation his page surfaces is the specific-county-vs-statewide-narrative signature: Jones's Port Gibson and Claiborne County work produced one of the most important civil rights legal cases of the era (NAACP v. Claiborne Hardware, 1982), but the historiography often treats Claiborne County as a single-event location rather than as a sustained-organizing site; the embedding's cosine pattern reads his testimony as part of the continuous-organizing tradition the case rests on.",
-  "biographical_paragraph": "While Jones's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the Port Gibson Movement is documented in the Mississippi Encyclopedia and the Mississippi Department of Archives and History collections [src: 1, src: 2]. Jones was born in 1914 in Claiborne County, Mississippi. He was drafted into the U.S. Navy in 1944 during World War II and served as a Steward Mate, the segregated Navy assignment open to Black sailors at that date; he describes the racial discrimination of that role in his oral history. He returned to Claiborne County after the war and joined the Port Gibson Movement, the local NAACP-led civil rights organizing that across 1966-1970s ran the Port Gibson Merchant Boycotts to compel desegregation of the town's businesses [src: 2]. The boycotts and associated protests at Alcorn College (the historically Black state university in nearby Lorman, where Jones helped organize student protests) produced the litigation that the United States Supreme Court eventually decided as NAACP v. Claiborne Hardware Co. (1982), the case that affirmed the boycotts' First Amendment protection and limited the tort liability of civil rights organizers for economic damages caused by lawful boycotts. He continued voter registration organizing across the same arc.",
-  "movement_context": "The Port Gibson Merchant Boycotts opened on April 1, 1966 in Claiborne County, a majority-Black rural county in southwestern Mississippi whose NAACP branch had been founded in the 1940s by Ernest Jones and rebuilt during the early 1950s through a word-of-mouth recruitment campaign sustained under constant threat of economic retaliation [src: 3]. The 1966 reorganization was led by Mississippi NAACP field secretary Charles Evers (brother of the assassinated Medgar Evers) and by Claiborne County NAACP president Henry Burrell, with First Baptist Church pastor James Dorsey also central to the early leadership; the local branch presented Port Gibson officials with a list of demands covering desegregation of public accommodations under the Civil Rights Act of 1964, the hiring of Black police officers and sheriff's deputies, the seating of Black residents on community boards and juries, and the extension of courtesy titles such as Mr. and Mrs. to African Americans [src: 3, src: 4]. When officials declined to negotiate, a mass meeting at First Baptist Church on April 1, 1966 voted unanimously to launch a boycott of white-owned merchants in Port Gibson and Claiborne County, and Evers led more than 450 protesters from the church to the county courthouse to announce the action; Jones was among the Claiborne County organizers who sustained the boycott through the years that followed, alongside Carolyn and James Miller of the NAACP youth chapter at catalog entry 12 and Leesco Guster, a voter-registration canvasser and boycott participant at entry 77 [src: 3, src: 4]. Claiborne Hardware Company and seventeen other Port Gibson merchants filed suit against the NAACP in 1969 in the Chancery Court of Hinds County, Mississippi, seeking damages and injunctive relief; the case moved through the Mississippi courts for a decade and in 1979 the Mississippi Supreme Court held 92 individual petitioners liable for the merchants' lost trade across the boycott years, awarding the merchants $1.25 million in damages [src: 4, src: 5]. The United States Supreme Court reversed in NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982), unanimously holding through Justice John Paul Stevens's majority opinion that the boycott activity (consumer non-patronage, public speech advocating non-patronage, peaceful picketing, and the maintenance of NAACP records identifying boycott-violating Black shoppers) was protected First Amendment expression and assembly, and that NAACP liability for the secondary violence committed by some individual boycott participants required proof of the NAACP's specific authorization or ratification of that violence [src: 5]. Claiborne Hardware remains the controlling First Amendment precedent on civil-rights economic boycotts in the United States; Jones's oral history sits within the multi-voice archival layer the litigation rests on [src: 5, src: 6].",
-  "legacy_and_reception": "Jones's organizing continued well past the boycott's legal endpoint. The Port Gibson Movement transitioned in the 1970s and 1980s from boycott enforcement to longer-arc community institutions, and the Claiborne County voter-registration work he pursued through the late 1960s contributed to the durable Black electoral majority that reshaped county-level office holding in Claiborne County across the following decades [src: 3, src: 6]. Cultural Crossroads, the Port Gibson downtown-improvement and Black-business-promotion organization co-founded by Carolyn and James Miller of catalog entry 12, became the principal local institution carrying the boycott-era organizing tradition into community arts programming and the documentation of movement history; Jones's interview is part of the archival record Cultural Crossroads and parallel institutions draw on when narrating the Port Gibson story to subsequent generations [src: 7]. Historian Emilye Crosby's book-length community study of the Claiborne County movement, A Little Taste of Freedom (University of North Carolina Press, 2005), positioned the Port Gibson organizing within the broader scholarship on rural Mississippi civil-rights work and on the role of women, churches, and armed self-defense in sustaining the boycott; the book received the McLemore Prize from the Mississippi Historical Society and remains the standard academic monograph on the Port Gibson Movement, drawing extensively on oral history with the local organizing cohort that includes Jones, the Millers, and Guster [src: 6]. Within the Civil Rights History Project collection at the Library of Congress, Jones's oral history is catalogued alongside the other Port Gibson and Claiborne County interviews from the same arc, providing a multi-voice archival record of how the boycott was built and sustained at the household and neighborhood level over more than a decade [src: 1, src: 2].",
+  "role_summary": "Claiborne County, Mississippi farmer and landowner who joined the county's underground NAACP in 1952; local NAACP officer and participant in the Port Gibson Movement, the merchant boycotts behind NAACP v. Claiborne Hardware Co. (1982), and the 1966 Alcorn College protests; U.S. Navy steward's mate during World War II (drafted 1944).",
+  "ai_reading": "The catalog's strongest disambiguation cue for this entry is also its sharpest embedding surprise. Cosine similarity places Jones's passages closest in raw count to Charles McLaurin (entry 17, count 124), then to a tight rural-Mississippi cluster: James Oscar Jones (entry 57, count 115, and his single highest-scoring neighbor at 0.774), Peggy Jean Connor (entry 96, count 114), and Clarence Magee (entry 21, count 94). Yet on the Southern Struggle versus Northern Struggle axis the embedding puts him at +0.112, rank 9 of 136 toward the NORTHERN pole, one of the most Northern-coded readings in the corpus for a man who was born, organized, and interviewed on the same quarter-mile of Claiborne County land. The vector signature does not track his geography; it tracks his vocabulary, the Pittsburgh Courier he read for decades, his recurring talk of \"what happened up there in the north,\" the Navy-Pacific service narrative, and the NAACP legal-apparatus framing (membership cards, charters, the Claiborne Hardware suit) rather than the field-canvassing register that dominates McLaurin's testimony. A second observation worth flagging for the same-surname problem: of the four Joneses in this corpus, the embedding's nearest by top score is James Oscar Jones (entry 57), not the NAACP General Counsel Robert L. Carter (entry 108) who also appears as a neighbor (0.757); the cosine space groups this Jones with fellow rural Mississippi voices, not with the national-legal Jones-adjacent figures a name search might surface.",
+  "biographical_paragraph": "Nathaniel \"Nate\" Hawthorne Jones was born in 1914 in the Claiborne County, Mississippi community where Emilye Crosby recorded his oral history in December 2015, on land where he was born and later bought [src: 1]. His Library of Congress interview carries a not-auditable audit tier, so any specific claim quoted from the transcript should be confirmed against external archives before publication; the surrounding history of the Port Gibson Movement is documented in the Mississippi Encyclopedia, the Library of Congress finding aid for the Civil Rights History Project, and Emilye Crosby's community study of Claiborne County [src: 1, src: 2, src: 3, src: 4]. Jones grew up sharecropping, was drafted into the U.S. Navy in 1944, and served as a steward's mate, the segregated rating open to Black sailors, in the Pacific theater [src: 1]. He joined Claiborne County's clandestine NAACP in 1952, recalling that the branch had to meet in secret and that members concealed their cards while the Klan was active [src: 1, src: 4]. After the Voting Rights Act of 1965 and the April 1966 reorganization of the county branch, Jones served as a local NAACP officer and took part in the Port Gibson merchant boycotts, the 1966 Alcorn College student protests, and the long voter-registration drive that built a Black electoral majority in the county; he names fellow Claiborne County organizer Leesco Guster (entry 77) in his account, and his interview sits in the corpus alongside the joint oral history of Carolyn and James Miller (entry 12) [src: 1, src: 4]. The boycotts produced NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982), the Supreme Court decision that placed peaceful civil-rights boycotts under First Amendment protection [src: 5].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Nathaniel Hawthorne Jones",
+      "speaker_slug": "nathaniel-hawthorne-jones",
+      "source_entry": 92,
+      "timestamp": "00:25:14",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655408/",
+      "lead_in": "Asked how he came to the NAACP after only a few months of schooling a year, Jones traces it to his own reading:",
+      "quote": "And I always liked to study a lot when I was young. I wasn't able to go to school, but I could read."
+    },
+    {
+      "relation": "self",
+      "speaker": "Nathaniel Hawthorne Jones",
+      "speaker_slug": "nathaniel-hawthorne-jones",
+      "source_entry": 92,
+      "timestamp": "00:31:37",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655408/",
+      "lead_in": "On a protest he joined as a Navy steward's mate in Hawaii, when the Black cooks and stewards refused to be barred from eating with the officers:",
+      "quote": "Yeah, it worked. It worked for three days. It was just hunger strike for three days. It worked."
+    },
+    {
+      "relation": "self",
+      "speaker": "Nathaniel Hawthorne Jones",
+      "speaker_slug": "nathaniel-hawthorne-jones",
+      "source_entry": 92,
+      "timestamp": "00:52:30",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655408/",
+      "lead_in": "On why the white biracial committee could not keep the movement out of Claiborne County:",
+      "quote": "We want to be able to march and protest about freedom."
+    },
+    {
+      "relation": "self",
+      "speaker": "Nathaniel Hawthorne Jones",
+      "speaker_slug": "nathaniel-hawthorne-jones",
+      "source_entry": 92,
+      "timestamp": "00:55:40",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655408/",
+      "lead_in": "On agreeing to serve as a local NAACP officer, and why his neighbors' backing made it possible:",
+      "quote": "Well, they kind of like went along with me, because if they hadn't went along with me, I couldn't have been successful at all."
+    },
+    {
+      "relation": "self",
+      "speaker": "Nathaniel Hawthorne Jones",
+      "speaker_slug": "nathaniel-hawthorne-jones",
+      "source_entry": 92,
+      "timestamp": "01:41:51",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655408/",
+      "lead_in": "On the merchants' lawsuit that became NAACP v. Claiborne Hardware Co., which the boycott organizers won at the Supreme Court in 1982:",
+      "quote": "That was a suit that brought against us, about the boycott."
+    }
+  ],
+  "movement_context": "The Port Gibson merchant boycott opened on April 1, 1966 in Claiborne County, a majority-Black rural county in southwestern Mississippi whose NAACP branch had been rebuilt in the 1950s under constant threat of economic retaliation; Jones's own account dates his entry into the county's underground NAACP to 1952 [src: 1, src: 4]. The 1966 reorganization was led by Mississippi NAACP field secretary Charles Evers, brother of the assassinated Medgar Evers, whom Jones names as the figure who got the movement started in the county [src: 1, src: 4]. The local branch presented Port Gibson officials with demands covering desegregation of public accommodations under the Civil Rights Act of 1964, the hiring of Black police officers, the seating of Black residents on juries and boards, and the extension of courtesy titles to African Americans; when officials declined, a mass meeting voted to boycott the white-owned merchants, and Evers led hundreds of participants from a church to the county courthouse to announce it [src: 4]. Jones describes sustaining the boycott and the parallel voter-registration push, working with organizer Leesco Guster (entry 77) and recalling the 1966 Alcorn College protests where state patrolmen used tear gas and he led students back to their dormitories [src: 1, src: 4]. Claiborne Hardware Company and other Port Gibson merchants sued the NAACP, and after the case moved through the Mississippi courts for a decade the Mississippi Supreme Court in 1979 held a large group of individual defendants liable for the merchants' lost trade, awarding roughly $1.25 million in damages [src: 4, src: 5]. The United States Supreme Court reversed in NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982), holding through Justice John Paul Stevens's opinion for the Court that the boycott's non-patronage, advocacy, peaceful picketing, and record-keeping were protected First Amendment expression and assembly, and that NAACP liability for violence committed by some participants required proof the NAACP authorized or ratified it [src: 5, src: 6]. Claiborne Hardware remains the controlling First Amendment precedent on civil-rights economic boycotts; Jones's oral history is part of the multi-voice archival layer the litigation rests on [src: 5, src: 6].",
+  "legacy_and_reception": "Jones's organizing continued past the boycott's legal endpoint; the Claiborne County voter-registration work he describes through the late 1960s contributed to the Black electoral majority that reshaped county office-holding in the decades that followed, and Jones recounts that his own wife was among the Black women elected to county positions [src: 1, src: 4]. The Port Gibson Movement carried its boycott-era organizing into longer-arc community institutions; Cultural Crossroads, the downtown-improvement and Black-business-promotion organization associated with Carolyn and James Miller of catalog entry 12, became a principal local steward of the movement's documented history [src: 7]. Historian Emilye Crosby, who conducted Jones's Library of Congress interview, wrote the standard academic monograph on the county, A Little Taste of Freedom: The Black Freedom Struggle in Claiborne County, Mississippi (University of North Carolina Press, 2005), which situates the Port Gibson organizing within the scholarship on rural Mississippi civil-rights work, on women and churches, and on armed self-defense, and which won the McLemore Prize from the Mississippi Historical Society [src: 4, src: 8]. Within the Civil Rights History Project at the Library of Congress, Jones's interview is catalogued alongside the other Port Gibson and Claiborne County oral histories from the same arc, documenting how the boycott was built and sustained at the household and neighborhood level over more than a decade [src: 1, src: 2].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/7/78/Claiborne_County_Courthouse_and_Confederate_monument%2C_Port_Gibson%2C_Mississippi_2008.jpg",
       "alt": "Claiborne County Courthouse and Confederate monument, Port Gibson, Mississippi",
-      "caption": "The Claiborne County Courthouse in Port Gibson, Mississippi, on the National Register of Historic Places (NRHP reference 79003410). On April 1, 1966, Charles Evers led more than 450 boycott participants from First Baptist Church to this courthouse to announce the action that became NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982).",
+      "caption": "The Claiborne County Courthouse in Port Gibson, Mississippi, on the National Register of Historic Places (NRHP reference 79003410). On April 1, 1966, Charles Evers led hundreds of boycott participants from a Port Gibson church to this courthouse to announce the action that became NAACP v. Claiborne Hardware Co., 458 U.S. 886 (1982).",
       "photographer": "Infrogmation of New Orleans",
       "repository": "Wikimedia Commons",
       "license": "CC BY-SA 3.0 (and GFDL v1.2+)",
@@ -25,7 +82,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/29/Port_Gibson_MS_Church_1940_cropped.jpg",
       "alt": "Church in Port Gibson, Mississippi, photographed in August 1940 by Marion Post Wolcott for the U.S. Farm Security Administration",
-      "caption": "Church in Port Gibson, Mississippi, photographed in August 1940 by Marion Post Wolcott for the U.S. Farm Security Administration. The earlier-generation Port Gibson Black churches became the institutional spine of the 1966 boycott organizing that Jones joined; First Baptist Church hosted the founding boycott meeting on April 1, 1966.",
+      "caption": "Church in Port Gibson, Mississippi, photographed in August 1940 by Marion Post Wolcott for the U.S. Farm Security Administration. The earlier-generation Port Gibson Black churches became the institutional spine of the 1966 boycott organizing; Jones recalled that the county's underground NAACP, which he joined in 1952, had to meet in a church on Saturday afternoons.",
       "photographer": "Marion Post Wolcott, Farm Security Administration",
       "repository": "Wikimedia Commons (sourced from Library of Congress)",
       "license": "Public Domain (U.S. federal government work)",
@@ -35,7 +92,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Port_Gibson_MS_1940_Street_Scene_cropped.jpg",
       "alt": "Street scene in Port Gibson, Mississippi, August 1940",
-      "caption": "Street scene in downtown Port Gibson, Mississippi, August 1940. The commercial corridor photographed here is the same merchant district that the 1966-1972 Port Gibson Merchant Boycotts later targeted, and that the 1969 Claiborne Hardware complaint sought damages over.",
+      "caption": "Street scene in downtown Port Gibson, Mississippi, August 1940. The commercial corridor photographed here is the same merchant district that the Port Gibson boycotts later targeted, and that the Claiborne Hardware complaint sought damages over.",
       "photographer": "Marion Post Wolcott, Farm Security Administration",
       "repository": "Wikimedia Commons (sourced from Library of Congress)",
       "license": "Public Domain (U.S. federal government work)",
@@ -50,14 +107,14 @@
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://mississippiencyclopedia.org/entries/naacp-v-claiborne-hardware-1982/",
-      "title": "NAACP v. Claiborne Hardware (1982) and the Port Gibson Movement context",
-      "publisher": "The Mississippi Encyclopedia, University Press of Mississippi"
-    },
-    {
       "url": "https://findingaids.loc.gov/db/search/xq/searchMfer02.xq?_id=loc.afc.eadafc.af013005&_faSection=overview&_faSubsection=did",
       "title": "Civil Rights History Project collection, 2010-2016 (AFC 2010/039) finding aid",
       "publisher": "American Folklife Center, Library of Congress"
+    },
+    {
+      "url": "https://mississippiencyclopedia.org/entries/naacp-v-claiborne-hardware-1982/",
+      "title": "NAACP v. Claiborne Hardware (1982) and the Port Gibson Movement context",
+      "publisher": "The Mississippi Encyclopedia, University Press of Mississippi"
     },
     {
       "url": "https://uncpress.org/book/9780807876817/a-little-taste-of-freedom/",
