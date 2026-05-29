@@ -16,8 +16,76 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:John_Lewis_116th_Congress.jpg",
     "date_taken": "2019-01-03"
   },
-  "ai_reading": "Lewis succeeded Charles F. McDew (entry 16) as the third SNCC chairman in June 1963, the transition McDew's catalog page directly references. He is named in McDew's bio and in several Mississippi-SNCC and Selma-related catalog passages (including the Bernard LaFayette interviews and the Wyatt Tee Walker testimony), but is not himself a Civil Rights History Project interviewee. His standalone catalog page is added for searchability and to anchor the cross-reference from McDew's chairmanship transition. The SNCC chairmanship lineage the catalog implicitly traces is Marion Barry (1960-1961) -> McDew (1961-1963) -> Lewis (1963-1966) -> Carmichael (1966-1967) -> Brown (1967-1968) -> Hutchings (entry 98, 1968-1969); each chair after Lewis appears as either an interviewee or external-figure catalog page.",
+  "ai_reading": "Lewis is the single most cross-referenced external figure in the spoken corpus: he is named in at least thirty-eight separate interviews, more than any other person who was never himself interviewed for the project. The embedding-relevant point is what those mentions cluster around. They do not gather at Selma, which the cultural record treats as his defining event; they gather at two organizational seams, the August 1963 March on Washington speech that the march's sponsors revised (Courtland Cox in entry 24, Cleveland Sellers in entry 22, the Ladner sisters in entry 75) and the May 1966 chairmanship vote that replaced him with Stokely Carmichael (Kathleen Cleaver in entry 73, Reginald Robinson in entry 101, Maria Varela). The corpus voices return to Lewis as a hinge between SNCC's phases rather than as the body on the Edmund Pettus Bridge. He himself is not a Civil Rights History Project interviewee; this page exists for searchability and to anchor the cross-reference from Charles F. McDew (entry 16), whom Lewis succeeded as the third SNCC chairman in June 1963 and whose catalog page documents that transition. The chairmanship lineage the catalog traces is Marion Barry (1960-1961) to McDew (1961-1963) to Lewis (1963-1966) to Carmichael (1966-1967) to Brown (1967-1968) to Hutchings (entry 98, 1968-1969); each chair after Lewis appears as either an interviewee or external-figure catalog page.",
   "biographical_paragraph": "Lewis was born February 21, 1940 outside Troy, Alabama to sharecropping parents. He trained in nonviolent direct-action under James Lawson in Nashville and participated in the 1960 lunch-counter sit-ins. In 1961 he was one of the original thirteen Freedom Riders, beaten in Rock Hill, South Carolina and again in Montgomery. As SNCC's third chairman (1963-1966) he delivered the youngest speech at the March on Washington (his original draft, criticized as too militant by other organizers, was revised in the Lincoln Memorial vestibule before delivery). On March 7, 1965 he led marchers across the Edmund Pettus Bridge in Selma when Alabama state troopers attacked; his fractured skull from that beating became the photographic anchor of the campaign that produced the Voting Rights Act of 1965. He represented Georgia's 5th district in the U.S. House from 1987 until his death from pancreatic cancer on July 17, 2020 at eighty.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Dr. Cleveland Sellers",
+      "speaker_slug": "cleveland-sellers",
+      "source_entry": 22,
+      "timestamp": "00:37:15",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669180/",
+      "lead_in": "SNCC program director Cleveland Sellers names the revision of Lewis's prepared remarks at the August 1963 March on Washington as a turning point in the organization's thinking:",
+      "quote": "John Lewis's speech, for an example. The changing of that speech. That was what was so controversial about it that it needed to be changed."
+    },
+    {
+      "relation": "about",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "00:56:16",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "D'Army Bailey, then a student traveling from Baton Rouge to SNCC staff meetings in Atlanta, recalls first meeting Lewis in the organization's early years:",
+      "quote": "And that's how I initially got to know John Lewis and Julian Bond, Julian was editing the SNCC newsletter, the student voice, and John was active in SNCC and Jim Forman was the national director."
+    },
+    {
+      "relation": "about",
+      "speaker": "Kathleen Cleaver",
+      "speaker_slug": "kathleen-cleaver",
+      "source_entry": 73,
+      "timestamp": "00:42:38",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669150/",
+      "lead_in": "Kathleen Cleaver describes the May 1966 SNCC staff vote that replaced Lewis as chairman with Stokely Carmichael:",
+      "quote": "John Lewis went to sleep thinking he was the chairman and he woke up and found out he was not the chairman. That Stokely was the chairman."
+    },
+    {
+      "relation": "about",
+      "speaker": "Reginald Robinson",
+      "speaker_slug": "reginald-robinson",
+      "source_entry": 101,
+      "timestamp": "03:18:03",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655421/",
+      "lead_in": "SNCC field secretary Reginald Robinson gives his own account of how Lewis came to leave the organization in 1966:",
+      "quote": "And we didn't put John Lewis out. It was John Lewis's choice to leave."
+    },
+    {
+      "relation": "about",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "01:03:34",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "SNCC field organizer Martha Prescod Norman Noonan places Lewis among the SNCC members in the Selma march even though SNCC had not officially endorsed it:",
+      "quote": "And so, although there were SNCC individuals like John Lewis, Bob Mants participating in the March, after bloody Sunday, you know, everybody came to Selma."
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "01:29:18",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "C. T. Vivian recalls a phrase Lewis used during the Nashville desegregation campaign about extending the wins past the lunch counters:",
+      "quote": "Because I think John Lewis's phrase was that once we won this victory through the mayor and got a lot of things opened up, we were going to march through the yellow pages and get other things opened up."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/39007064",
