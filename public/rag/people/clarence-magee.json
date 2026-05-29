@@ -6,16 +6,95 @@
   "born": 1932,
   "died": null,
   "display_name": "Clarence Magee",
-  "role_summary": "President of the Forrest County, Mississippi chapter of the NAACP (1970-1974, 2001-present); co-founder of the Hattiesburg Association for Civic Improvement; sensitivity-training coordinator for the 1964 Freedom Summer volunteers; Hattiesburg public-school educator and Mississippi-school-desegregation negotiator; 2025 honorary Doctor of Humane Letters from the University of Southern Mississippi.",
-  "ai_reading": "Magee's top semantic neighbor is Nathaniel Hawthorne Jones (entry 92) at a cosine count of 121; the broader cluster includes Vernon Dahmer Jr. (entry 121), James Oscar Jones (entry 57), and Eddie Holloway (entry 33). The Vernon Dahmer Jr. pairing is the catalog's clearest Forrest County, Mississippi NAACP-continuity cosine: both men served as president of the Forrest County NAACP chapter (the chapter Vernon Dahmer Sr. led at the time of his January 1966 murder); both names anchor the chapter's mid-century-to-present succession. The novel observation his page surfaces is the multi-decade-chapter-presidency signature: Magee's two stints as Forrest County NAACP president (1970-1974 and 2001-present) bracket a quarter-century gap, and the embedding catches the chapter-leadership-continuity register through his testimony as a stronger signal than his contemporaneous SNCC or COFO peers.",
-  "biographical_paragraph": "While Magee's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), his external biographical record is well-documented [src: 1, src: 2]. Magee was born in 1932 in Columbia, Mississippi, the oldest of ten children of a farming family. He studied biology at Alcorn A&M (the historically Black Alcorn State University) and graduated in 1954, served two years in the U.S. Army (stationed in Germany), and attended graduate school at Harvard. He joined the Hattiesburg NAACP after being denied registration to vote in 1956 and was a co-founder of the Hattiesburg Association for Civic Improvement [src: 2]. In summer 1964 he coordinated sensitivity training for the Freedom Summer volunteers arriving in Hattiesburg; he served his first term as president of the Forrest County NAACP from 1970 through 1974 [src: 2]. He returned to Forrest County NAACP leadership in 2001 and has held the presidency continuously through the present, a quarter-century-plus second tenure. He taught in several Hattiesburg public schools, helped formulate school desegregation plans across the 1960s and 1970s, and later worked for the Southern Mississippi Planning and Development Commission and the U.S. Department of Agriculture's Food and Consumer Service office in Mobile, Alabama. The University of Southern Mississippi conferred an honorary Doctor of Humane Letters on him at its spring 2025 commencement ceremony, recognizing his lifelong civil rights and education work [src: 2].",
-  "movement_context": "The Forrest County NAACP chapter Magee succeeded to in 1970 was the chapter Vernon Dahmer Sr. (the older Vernon Dahmer, father of catalog entry 121's interviewee Vernon Dahmer Jr.) had led at the time of his January 10, 1966 murder by White Knights of the Ku Klux Klan; the murder followed Dahmer Sr.'s January 9, 1966 WDAM-TV announcement that the Forrest County NAACP would accept poll-tax payments at his Kelly Settlement general store on behalf of Black would-be voters who feared retaliation at the Forrest County Courthouse poll-tax office [src: 3]. Dahmer Sr.'s home and store were firebombed by Klansmen led by Imperial Wizard Samuel Bowers in the predawn hours of January 10; Dahmer Sr. covered his family's escape with return fire and died the next day of smoke-inhalation injuries [src: 3]. The post-1966 chapter under Dahmer's brother Ellie Dahmer (his widow) and Magee's 1970 succession was the institutional carrier of the voter-registration and school-desegregation work the Dahmer murder had attempted to break [src: 3]. The 1964 Freedom Summer sensitivity-training Magee coordinated was the Hattiesburg-specific instance of the broader Council of Federated Organizations (COFO) volunteer-orientation infrastructure that ran sessions at Western College for Women in Oxford, Ohio (the same training site where Andrew Goodman, Michael Schwerner, and James Chaney had assembled before the June 1964 Neshoba County murders) and at smaller in-state sites including Hattiesburg [src: 4].",
-  "legacy_and_reception": "The 1998 federal-court conviction of Samuel Bowers for Vernon Dahmer Sr.'s January 1966 murder (Bowers's first conviction after thirty-two years of failed prosecutions, the result of the reopened-cold-case work led by the Mississippi Attorney General's Office and the FBI Jackson Field Office) was the institutional resolution of the Klan campaign Magee's chapter had carried the continuing-organizing burden of through the 1970s [src: 3, 5]. The Forrest County NAACP under Magee's continuing 2001-present second tenure has anchored the local-policy advocacy around the 2007 Mississippi school-funding equalization litigation, the 2017 Hattiesburg city council redistricting challenge, and the 2020 Mississippi state flag change campaign that produced the December 2020 retirement of the 1894 Confederate-emblem state flag [src: 6]. The University of Southern Mississippi's spring 2025 honorary Doctor of Humane Letters conferral on Magee was the formal academic recognition of his sixty-nine-year continuous record of Forrest County civil rights organizing; the May 2025 USM press release names him as the longest-serving currently-active NAACP chapter president in Mississippi [src: 2].",
+  "role_summary": "President of the Forrest County, Mississippi chapter of the NAACP (1970-1974, 2001-present); co-founder of the Hattiesburg Association for Civic Improvement; sensitivity-training worker for the 1964 Freedom Summer volunteers in Hattiesburg; witness in the Forrest County voter-registration suit United States v. Theron C. Lynn; Hattiesburg public-school science teacher; 2025 honorary Doctor of Humane Letters from the University of Southern Mississippi.",
+  "ai_reading": "The embedding's single strongest pull on Magee's testimony is not toward another NAACP officer but toward Nathaniel Hawthorne Jones (entry 92), a Claiborne County subsistence farmer, whose passages register the highest cosine count to Magee's (121) in this corpus. The two men sat for the same interviewer (Emilye Crosby) in the same December 2015 week, and the vector signature seems to lock onto the long rural-Mississippi childhood that opens both interviews: clearing new ground with an axe, hauling spring water uphill, raising hogs and corn, never going hungry because the family grew everything. A schoolteacher and chapter president lands closest by cosine to a farmer who never held office, on the strength of shared upbringing rather than shared movement role. The influence graph adds a second, sharper reading: of the two outbound who-discussed-whom edges Magee's interview generates, the heavier by far runs to Vernon Dahmer, Jr. (entry 121) at a weight of 9, against a weight of 1 to Eddie Holloway (entry 33) and no inbound edges at all. Magee names the Dahmer family more than any other corpus figure, yet his own account is careful that he knew the slain Forrest County NAACP leader Vernon Dahmer Sr. \"primarily through his sons,\" two of whom were his Alcorn classmates, rather than as a movement intimate. On the concept axes his positions sit near the rural-Southern and sacred ends (Southern Struggle vs Northern Struggle and Sacred vs Secular both read toward the first pole), consistent with a Black-church-rooted Hattiesburg organizer, while the Tactical Pragmatism vs Strategic Vision axis reads toward Strategic Vision, picking up the reflective, education-as-the-answer register that closes his interview rather than day-to-day fieldwork.",
+  "biographical_paragraph": "Magee's LoC oral history carries a not-auditable audit tier, so the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript should be confirmed against external archives before citation; his external biographical record, however, is documented across the University of Southern Mississippi and the Historic Eureka School local-history archive [src: 1, src: 2, src: 7]. He was born in 1932 in Columbia, the seat of Marion County, Mississippi, the oldest of ten children in a farming family [src: 2]. He earned a bachelor's degree in biology from Alcorn A&M College (now Alcorn State University) in 1954, served in the U.S. Army during the Korean War era, stationed in the United States and in Germany, and in 1964 earned a master's degree in education from West Virginia University [src: 2]. He has described pursuing that graduate degree out of state on the GI Bill because the University of Southern Mississippi did not then admit Black graduate students [src: 1]. He and his wife Carrie Magee were among the few Black registered voters in Hattiesburg in the 1960s, having paid the poll tax for ten consecutive years, which led to their being subpoenaed in the federal suit against the Forrest County circuit clerk for denying Black applicants registration, the case United States v. Theron C. Lynn [src: 2, src: 7]. He helped found the Hattiesburg Association for Civic Improvement and, during the summer of 1964, ran sensitivity-training sessions for Freedom Summer volunteers arriving in Hattiesburg, work he recounts in detail in his interview [src: 1]. He served as president of the Forrest County branch of the NAACP from 1970 through 1974 and was re-elected in 2001, holding the office since [src: 2, src: 6, src: 7]. He taught science in the Hattiesburg public schools, including at Lillie Burney and Rowan, alongside fellow corpus interviewee Eddie Holloway (entry 33), who names Magee as his tenth-grade science teacher; he later worked for the Southern Mississippi Planning and Development District and the U.S. Department of Agriculture's Food and Consumer Service, retiring in 1998 [src: 2, src: 7]. The University of Southern Mississippi conferred an honorary Doctor of Humane Letters on him at its spring 2025 commencement [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Clarence Magee",
+      "speaker_slug": "clarence-magee",
+      "source_entry": 21,
+      "timestamp": "00:44:39",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655404/",
+      "lead_in": "Magee describes one of his repeated attempts to register to vote at the Forrest County clerk's office in the late 1950s:",
+      "quote": "I told her, she called him from the back, he walked up, I'm standing there, he says, what do you want, boy?"
+    },
+    {
+      "relation": "self",
+      "speaker": "Clarence Magee",
+      "speaker_slug": "clarence-magee",
+      "source_entry": 21,
+      "timestamp": "00:56:15",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655404/",
+      "lead_in": "On the orientation work he and other local people did for Freedom Summer volunteers coming into Hattiesburg in 1964:",
+      "quote": "Since we knew the culture, we did a lot of sensitivity training"
+    },
+    {
+      "relation": "self",
+      "speaker": "Clarence Magee",
+      "speaker_slug": "clarence-magee",
+      "source_entry": 21,
+      "timestamp": "01:27:25",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655404/",
+      "lead_in": "Asked whether he knew Vernon Dahmer Sr., the Forrest County NAACP leader murdered by the Klan in January 1966:",
+      "quote": "I knew Vernon Dahmer, but I knew him primarily through his sons."
+    },
+    {
+      "relation": "self",
+      "speaker": "Clarence Magee",
+      "speaker_slug": "clarence-magee",
+      "source_entry": 21,
+      "timestamp": "01:28:30",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655404/",
+      "lead_in": "Recalling how several men took turns watching the Dahmer property in the nights after the firebombing:",
+      "quote": "shortly after they burned his house, and stood watch."
+    },
+    {
+      "relation": "self",
+      "speaker": "Clarence Magee",
+      "speaker_slug": "clarence-magee",
+      "source_entry": 21,
+      "timestamp": "01:13:33",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655404/",
+      "lead_in": "On what he sees as the obligation that comes with the rights the movement won:",
+      "quote": "Freedom you think you have can be lost if you do nothing. Because freedom incurs a huge responsibility."
+    },
+    {
+      "relation": "self",
+      "speaker": "Clarence Magee",
+      "speaker_slug": "clarence-magee",
+      "source_entry": 21,
+      "timestamp": "01:34:52",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655404/",
+      "lead_in": "Asked what he considers the most significant issue still facing his community, the retired science teacher answered by repetition:",
+      "quote": "The first word is education. The second word is education. And by now you know the third word is education."
+    },
+    {
+      "relation": "about",
+      "speaker": "Eddie Holloway",
+      "speaker_slug": "eddie-holloway",
+      "source_entry": 33,
+      "timestamp": "01:34:18",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2016655406/",
+      "lead_in": "Fellow Hattiesburg interviewee Eddie Holloway, asked to describe Magee, places him first as a classroom teacher:",
+      "quote": "I remember Mr. McGee. He was my 10th grade science teacher."
+    }
+  ],
+  "movement_context": "Magee became president of the Forrest County NAACP in 1970, four years after the chapter's earlier president, Vernon Dahmer Sr. (father of catalog entry 121's interviewee Vernon Dahmer Jr.), was murdered by the White Knights of the Ku Klux Klan on January 10, 1966; Dahmer Sr. had served two terms as Forrest County branch president [src: 3]. The murder followed Dahmer Sr.'s January 9, 1966 radio announcement that he would pay the poll tax on behalf of Black residents who feared registering at the Forrest County courthouse; his home and store were firebombed before dawn on January 10 by Klansmen, and he died the next day of injuries sustained covering his family's escape [src: 3]. Samuel Bowers, the Imperial Wizard of the White Knights of the Ku Klux Klan of Mississippi, was identified as having ordered the killing [src: 3, src: 5]. Magee, in his own interview, recounts that he knew Dahmer Sr. mainly through two of Dahmer's sons who were his classmates at Alcorn, and that he was among the men who kept watch near the Dahmer property in the nights after the firebombing [src: 1]. The 1964 Freedom Summer sensitivity-training Magee describes was the Hattiesburg-local instance of the broader Council of Federated Organizations (COFO) volunteer-orientation effort; the statewide program also ran residential sessions at Western College for Women in Oxford, Ohio, the site where Andrew Goodman, Michael Schwerner, and James Chaney had trained before the June 1964 Neshoba County murders [src: 1, src: 4].",
+  "legacy_and_reception": "Samuel Bowers was convicted in a Mississippi state court in 1998 for ordering the 1966 Dahmer murder, after earlier prosecutions in the late 1960s had failed to produce a conviction on that charge; the reopened case was carried by the state and federal authorities decades after the Klan campaign Magee's chapter continued organizing against [src: 3, src: 5]. Magee's advocacy for affordable housing through the Hattiesburg Association for Civic Improvement contributed to the establishment of the Francis Street Apartments in Hattiesburg, and he was a charter member and first secretary of the 1965 community-action committee that became the local anti-poverty agency [src: 2]. In his interview he describes his continuing work, into his eighties, on community-policing dialogue between Hattiesburg residents and law enforcement, framing it as an effort to keep the city from a confrontation like the one in Ferguson, Missouri [src: 1]. The University of Southern Mississippi conferred an honorary Doctor of Humane Letters on him at its spring 2025 commencement, citing his record in education and civil rights; he has continued to serve as Forrest County NAACP branch president since 2001 [src: 2, src: 7].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Dahmer%2C_funeral%2C_January_1966_%288473310779%29.jpg",
       "alt": "Vernon Dahmer Sr. funeral, Shady Grove Baptist Church, Kelly Settlement, Hattiesburg, Mississippi, January 15, 1966",
-      "caption": "The graveside funeral service for Vernon Dahmer Sr. at Shady Grove Baptist Church in Kelly Settlement near Hattiesburg, Mississippi on January 15, 1966, five days after his death from smoke-inhalation injuries sustained in the January 10 White Knights of the Ku Klux Klan firebombing of his home and general store. The Forrest County NAACP chapter Dahmer Sr. had led passed to his widow Ellie Dahmer and then to Magee's 1970-1974 first presidency. Photograph from the Mississippi Department of Archives and History civil rights collection.",
+      "caption": "The graveside funeral service for Vernon Dahmer Sr. at Shady Grove Baptist Church in Kelly Settlement near Hattiesburg, Mississippi on January 15, 1966, five days after his death from injuries sustained in the January 10 White Knights of the Ku Klux Klan firebombing of his home and general store. Dahmer Sr. had been president of the Forrest County NAACP branch; Magee became the branch's president in 1970, and in his interview recalls keeping watch near the Dahmer property in the nights after the firebombing. Photograph from the Mississippi Department of Archives and History civil rights collection.",
       "photographer": "Mississippi Department of Archives and History",
       "repository": "Wikimedia Commons (sourced from Mississippi Department of Archives and History)",
       "license": "No known copyright restrictions (public domain)",
@@ -57,12 +136,17 @@
     {
       "url": "https://archives.fbi.gov/archives/news/stories/2008/may/dahmer_051208",
       "title": "Justice Delivered: The Vernon Dahmer Case",
-      "publisher": "Federal Bureau of Investigation, May 12, 2008 (FBI institutional retrospective on the 1998 Samuel Bowers federal conviction for the Dahmer murder)"
+      "publisher": "Federal Bureau of Investigation, May 12, 2008 (institutional retrospective on the Vernon Dahmer Sr. murder; Samuel Bowers was convicted of ordering the killing in a Mississippi state court in 1998)"
     },
     {
       "url": "https://naacp.org/about/contact/state-conferences/mississippi",
       "title": "Mississippi State Conference of the NAACP",
-      "publisher": "National Association for the Advancement of Colored People (the institutional roster of Mississippi NAACP chapters including the continuing Forrest County chapter Magee leads)"
+      "publisher": "National Association for the Advancement of Colored People (the institutional roster of Mississippi NAACP branches including the continuing Forrest County branch Magee leads)"
+    },
+    {
+      "url": "https://hattiesburgeureka.com/panel/mattie-robertson-dr-frank-e-jones-and-carrie-clarence-magee/",
+      "title": "Mattie Robertson, Dr. Frank E. Jones and Carrie & Clarence Magee",
+      "publisher": "Historic Eureka School, Hattiesburg, Mississippi (local-history exhibit panel documenting the Magees' teaching careers, ten years of poll-tax payments, the Forrest County circuit-clerk voter-registration suit, and the 1970-1974 and 2001-present Forrest County NAACP presidency)"
     }
   ]
 }

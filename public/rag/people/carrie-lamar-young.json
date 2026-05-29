@@ -6,9 +6,66 @@
   "born": 1948,
   "died": null,
   "display_name": "Carrie Lamar Young",
-  "role_summary": "Arkansas civil rights worker; voter-registration organizer in West Helena and Phillips County, Arkansas during the 1960s; collaborator with SNCC field secretaries Myrtle Glascoe (catalog entry 137), Bill Hansen, and Howard Himmelbaum (her first husband); poll-tax-petition organizer and Arkansas state capitol protester; later member of Black United Youth in Little Rock; subject of an employment-discrimination lawsuit against her employer.",
-  "ai_reading": "Young's top semantic neighbor is James Oscar Jones (entry 57) at a cosine count of 138; the broader cluster includes Charles McLaurin (entry 17), Juadine Henderson (entry 68), and Nathaniel Hawthorne Jones (entry 92). The novel observation her page surfaces is the Arkansas-Phillips-County-SNCC-cohort signature: Young's organizing work in West Helena and Phillips County overlapped with Myrtle Glascoe's SNCC field assignment there in the mid-1960s (the same Phillips County the Glascoe catalog entry documents); the embedding catches that shared Arkansas-Phillips-County register but pairs Young more closely with Mississippi-rural-organizing voices, suggesting the Arkansas Delta and Mississippi Delta organizing tradition reads as a single coherent vector signature across state lines.",
-  "biographical_paragraph": "While Young's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), her external biographical record is documented through the Civil Rights History Project finding aid for entry 13 [src: 1]. Carrie Young (born Carrie Lamar) was born in 1948 in Barton, Arkansas; she grew up on a family farm and moved with her family to West Helena, Arkansas, in Phillips County, where she met SNCC organizers including Myrtle Glascoe (catalog entry 137), Bill Hansen, and Howard Himmelbaum [src: 1]. She worked alongside them on voter-registration drives, gathering signatures for the petition to overturn the Arkansas poll tax, and protested at the Arkansas State Capitol across the mid-to-late 1960s. She married Howard Himmelbaum in 1967 (their marriage anchored the catalog's clearest Arkansas inter-racial-organizer couple), and later Carl E. Young. She filed a successful employment-discrimination lawsuit against her employer. She attended the Opportunity Industrialization Center and the University of Arkansas-Little Rock, worked across a career in keypunch operating, accounting clerking, publication printing, and data entry / administrative work, and continued community organizing through the group Black United Youth in Little Rock [src: 1].",
+  "role_summary": "Arkansas civil rights worker; voter-registration organizer in West Helena and Phillips County, Arkansas during the 1960s; worked alongside SNCC field secretary Myrtle Glascoe (catalog entry 137), Arkansas project director Bill Hansen, and Howard Himmelbaum (her first husband); poll-tax-petition organizer and Arkansas State Capitol protester; later member of Black United Youth in Little Rock; plaintiff in employment-discrimination lawsuits in Pulaski County, Arkansas.",
+  "ai_reading": "The embedding finding that complicates Young's cultural placement is where her single closest neighbor sits geographically. By cosine count her nearest passage neighbor is James Oscar Jones (entry 57) at 138, the highest single count in her related set, and his role in the corpus is Arkansas, not Mississippi: a Pine Bluff SNCC worker who took over the Arkansas project from Bill Hansen in 1964, the same field network Young describes coming through West Helena. Only after that Arkansas anchor does the cluster broaden into the Mississippi Delta voices the cultural record would expect to dominate a Delta woman's signature: Charles McLaurin (entry 17, count 110), Juadine Henderson (entry 68, count 92), and Nathaniel Hawthorne Jones (entry 92, count 83). The reading suggests the Arkansas Delta and Mississippi Delta voter-registration register is one continuous vector signature across the state line, with an Arkansas passage, not a Mississippi one, as its center for Young. The influence graph reinforces the Arkansas pole: Young's only out-edge names Worth W. Long (entry 131), the SNCC Arkansas-project leader who, in her closing testimony, visited her parents whenever he passed through West Helena. On the concept axes her positions are all near the audited-corpus center: Southern Struggle over Northern (normalized +0.31), Individual Conscience over Collective Discipline (normalized +0.40, her strongest axis reading), and Secular over Sacred framing (normalized +0.22), the last of which runs against the heavily scriptural cast of her own testimony.",
+  "biographical_paragraph": "Young's Library of Congress oral history carries a low audit tier as of the 2026-05-26 Pass 9 LoC-verification credit, which raised it from publication-block after the transcript matched the Library's own published text; any specific quoted claim drawn from the transcript should still be confirmed against external sources before citation. Carrie Young (born Carrie Lamar) was born in 1948 [src: 1]; in the interview she recalls growing up at Lexa, in Phillips County, Arkansas, a few miles from Barton, before her family moved to West Helena around 1964 [src: 1]. In West Helena she met the SNCC field workers running the Arkansas project, among them Myrtle Glascoe (catalog entry 137), Arkansas project director Bill Hansen, and Howard Himmelbaum [src: 1, 5]. She sat for weeks at a storefront gathering signatures for the petition to abolish the Arkansas poll tax and helped run reading-and-writing classes in a church basement so residents could sign voter-registration applications, and after she left high school she joined sit-ins to open the segregated Arkansas State Capitol cafeteria [src: 1]. She married Howard Himmelbaum in New York in March 1967, and later Carl E. Young [src: 1]. Back in Little Rock she trained as a keypunch operator at the Opportunities Industrialization Center, won employment-discrimination suits in Pulaski County against AMF Incorporated and National Old Line Life Insurance Company, and continued organizing through Black United Youth, traveling to support school-desegregation actions in towns such as Earle, Arkansas [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Carrie Lamar Young",
+      "speaker_slug": "carrie-lamar-young",
+      "source_entry": 13,
+      "timestamp": "00:38:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669155/",
+      "lead_in": "On the daily work of the poll-tax petition drive in West Helena, which she ran largely alone from a storefront:",
+      "quote": "Every day, got everybody in West Helena, Arkansas to come by and sign my petition to abolish poll tax."
+    },
+    {
+      "relation": "self",
+      "speaker": "Carrie Lamar Young",
+      "speaker_slug": "carrie-lamar-young",
+      "source_entry": 13,
+      "timestamp": "00:38:55",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669155/",
+      "lead_in": "On the literacy classes she and Howard Himmelbaum set up in a church so residents could complete voter-registration applications:",
+      "quote": "We realized that people couldn't read or write. So we got one of the churches to allow us to teach people how to read and write and specifically to learn how to sign their name."
+    },
+    {
+      "relation": "self",
+      "speaker": "Carrie Lamar Young",
+      "speaker_slug": "carrie-lamar-young",
+      "source_entry": 13,
+      "timestamp": "00:55:32",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669155/",
+      "lead_in": "On leaving Arkansas for Washington while secretly engaged to Howard Himmelbaum, the white SNCC worker she later married:",
+      "quote": "If you want to marry me, you're going to come where I am."
+    },
+    {
+      "relation": "self",
+      "speaker": "Carrie Lamar Young",
+      "speaker_slug": "carrie-lamar-young",
+      "source_entry": 13,
+      "timestamp": "01:23:06",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669155/",
+      "lead_in": "On the employment-discrimination suits she brought in Pulaski County after training as a keypunch operator:",
+      "quote": "I was suing people left and right for not hiring me and I knew I was qualified and I was passing the test to get the jobs and stuff."
+    },
+    {
+      "relation": "self",
+      "speaker": "Carrie Lamar Young",
+      "speaker_slug": "carrie-lamar-young",
+      "source_entry": 13,
+      "timestamp": "01:46:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669155/",
+      "lead_in": "On why she understood the armed Black Power turn as a response to the danger around movement leaders rather than as aggression:",
+      "quote": "It was for the protection of a leader, nothing else. It wasn't to go out and kill white folks. It was for protection of a leader."
+    }
+  ],
   "movement_context": "The Phillips County voter-registration work Young's organizing arc anchors sits inside an Arkansas Delta historical geography the broader civil rights historiography has tended to under-represent relative to the Mississippi Delta organizing tradition; the SNCC Arkansas Project (founded 1962 under Bill Hansen's field-secretary direction, operating from a Pine Bluff office, expanding to West Helena, Forrest City, and Gould across the mid-1960s) was the institutional channel that brought Bill Hansen, Howard Himmelbaum, Myrtle Glascoe, and the other SNCC field secretaries Young worked alongside into the Phillips County town of West Helena where she met them [src: 2]. The Phillips County of the 1960s civil rights work was the same county of the October 1919 Elaine Massacre, in which a white mob organized at Hoop Spur and supported by deployed U.S. Army troops killed an estimated one hundred to two hundred and thirty-seven Black sharecroppers who had been organizing through the Progressive Farmers and Household Union of America; the post-Elaine prosecutions of twelve Black survivors produced Moore v. Dempsey, 261 U.S. 86 (1923), the Supreme Court ruling (Justice Oliver Wendell Holmes for the Court) that mob-dominated trials violated federal due process and that federal habeas corpus review of state-court convictions was available where the state proceedings were a sham [src: 3]. The Arkansas State Capitol protest and poll-tax petition Young participated in were directly in the lineage of that 1919 organizing tradition, drawing voter-registration energy from the same Black-sharecropper-descendant communities the 1919 massacre had attempted to break [src: 3].",
   "gallery": [
     {

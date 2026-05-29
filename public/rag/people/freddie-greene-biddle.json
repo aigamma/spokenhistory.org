@@ -4,18 +4,75 @@
   "person_type": "interviewee",
   "entry_number": 44,
   "display_name": "Freddie Greene (Biddle)",
-  "born": null,
+  "born": 1945,
   "died": null,
-  "role_summary": "Mississippi-side civil rights movement organizer; her oral history clusters tightly with the Mississippi SNCC voter-registration cohort in this corpus's embedding.",
-  "ai_reading": "Greene's top five semantic neighbors are all Mississippi SNCC voter-registration figures: Charles McLaurin (entry 17, count 154), Euvester Simpson (entry 41), Juadine Henderson (entry 68), Jennifer Lawson (entry 59), and Frankye Adams-Johnson (entry 43). The embedding therefore places her firmly inside the Mississippi voter-registration network, the same cluster that contains Simpson (whose testimony she most resembles) and McLaurin (whose Sunflower County project frames the cohort). Her position on the Southern Struggle vs Northern Struggle axis at +0.53 confirms the Mississippi geography. The catalog's strongest reading of her testimony is structural rather than biographical: she is one of the tightest single-cluster placements in the catalog so far, with no neighbors outside the Mississippi cohort in her top five and no axis position more than +0.53 in absolute value, which marks her in the embedding as a focused-network voice within the broader corpus.",
-  "biographical_paragraph": "Freddie Greene (later Freddie Greene Biddle) was a Mississippi-side civil rights organizer; her oral history is held at the Library of Congress as entry 44 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing for Greene is pending; SNCC Digital Gateway and the Veterans of the Civil Rights Movement archive (crmvet.org) both returned 404 to the slug variants searched in this iteration. The Mississippi-SNCC cluster placement visible in her semantic neighbors above is the strongest signal currently available for her movement role.",
-  "movement_context": "The Mississippi SNCC field-staff infrastructure that Greene's embedding cluster places her within was built between 1961 and 1965 as a project of the Council of Federated Organizations (COFO), the umbrella coalition Bob Moses, Aaron Henry, and David Dennis assembled in 1962 to coordinate SNCC, the Congress of Racial Equality (CORE), the NAACP, and the Southern Christian Leadership Conference work inside Mississippi under a single field-staff structure [src: 2]. COFO's voter-registration project ran from a network of county offices in McComb (Pike County), Greenwood (Leflore County), Hattiesburg (Forrest County), Indianola (Sunflower County), and Jackson (Hinds County), each staffed by SNCC and CORE field secretaries who lived in the communities they were organizing and worked through citizenship-school classes, mass meetings, and courthouse delegations rather than through episodic direct-action campaigns [src: 2]. The Charles M. Payne formulation of this approach as SNCC's \"organizing tradition\" (contrasted with the SCLC's \"mobilizing tradition\" of mass mobilization for set-piece campaigns) draws principally on the Sunflower County project Charles McLaurin (catalog entry 17) opened in August 1962 and on the Greenwood, McComb, and Hattiesburg circuits Euvester Simpson (catalog entry 41), Hollis Watkins, Curtis Hayes, Sam Block, and Willie Peacock worked through the same period [src: 3]. The 1964 Freedom Summer project COFO organized that summer drew approximately 700 to 1000 northern volunteers (largely white college students recruited through a campus broadside campaign coordinated from the New York and Atlanta SNCC offices) into the Mississippi field-staff network for a 10-week voter-registration and Freedom School effort; the volunteer recruitment was an explicit strategic decision Moses and the COFO staff made to force national press attention onto the violence Mississippi authorities directed at Black registration workers, on the analysis that the murders of white northerners would generate the federal response that the killings of Black Mississippians through 1961-1963 had not [src: 3, 4]. The June 21, 1964 disappearance and subsequent murder of CORE field secretary Michael Schwerner, Freedom Summer volunteer Andrew Goodman, and CORE Meridian organizer James Chaney near Philadelphia in Neshoba County (their bodies recovered August 4, 1964 from an earthen dam) made that analysis the documentary record [src: 4]. The post-1965 voter-registration continuation work the SNCC Mississippi field staff carried forward after the Voting Rights Act August 6, 1965 signing ran through the Mississippi Freedom Democratic Party (MFDP), the Delta Ministry, and the Freedom Farm Cooperative network Fannie Lou Hamer organized from her Ruleville base; the field-staff cohort Greene's embedding cluster identifies as her movement context continued the registration, citizenship-school, and economic-organizing work through the late 1960s and into the 1970s as the official voter-registration ledgers in the Black-majority Delta counties moved from single-digit-percentage Black registration in 1962 to majority registration by the end of the decade [src: 5].",
-  "legacy_and_reception": "Independent scholarly or institutional reception of Freddie Greene (Biddle) specifically is not established in the standard secondary literature on the Mississippi SNCC project as of this iteration of the catalog. Her Library of Congress oral history is the principal extant first-person record [src: 1]. The collective-memoir record of the SNCC Mississippi women's cohort in the Faith S. Holsaert, Martha Prescod Norman Noonan, Judy Richardson, Betty Garman Robinson, Jean Smith Young, and Dorothy M. Zellner edited 2010 University of Illinois Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC includes accounts from approximately fifty SNCC women organizers across the McComb, Greenwood, Hattiesburg, Jackson, and Selma circuits; Greene's name does not appear in the front-matter table of contents, though the volume's coverage of the Mississippi cohort she organized within is the closest available institutional framing of her movement context [src: 6]. The SNCC Digital Gateway profile registry (the Duke University / SNCC Legacy Project collaborative archive working from the SNCC papers held at the Robert W. Woodruff Library at the Atlanta University Center) does not contain a person-page for Greene as of this iteration; the SNCC Legacy Project archive itself remains the primary institutional venue where additional first-person material on Greene's organizing work, if it exists, would surface [src: 7]. The conservative reading of the available record is that her oral history is the documentary anchor; further biographical work would require archival research at the Atlanta SNCC papers or direct interview with the SNCC Mississippi alumni network.",
+  "role_summary": "Greenwood, Mississippi movement participant; SNCC family that distributed Leflore County relief food and worked the 1964 Freedom Summer McComb project and the MFDP; sister of SNCC organizer George Greene.",
+  "ai_reading": "By raw cosine count across her 104 transcript chunks, Greene's nearest neighbors in this corpus are Euvester Simpson (entry 41, 28 shared top-hits) and Charles McLaurin (entry 17, 28), then Juadine Henderson (entry 68, 23), Gwendolyn Zoharah Simmons (entry 53, 21), and Frankye Adams-Johnson (entry 43, 17). That is a Mississippi voter-registration cluster, which her biography would predict. The reading that the embedding adds, and that the Delta-geography label would not, is her concept-axis placement: on the Southern Struggle versus Northern Struggle axis she normalizes to +0.53, a lean toward the Northern pole, even though her testimony is rooted in Greenwood and McComb. Her own narrative names the mechanism the vector seems to register: at the 1964 Atlantic City convention she says she stopped reading the resistance as a Mississippi problem, \"There wasn't just bad white folks in Mississippi ... because the rest of the people did not care.\" The other axis where she sits well off the pragmatic-fieldwork pole is Tactical Pragmatism versus Strategic Vision, where she normalizes to +0.28 toward Strategic Vision; her two largest absolute axis readings are this Northern lean (+0.53) and a +0.52 on the nonviolence-versus-armed-self-defense axis. The influence graph also has her discussing James Forman and Stokely Carmichael by name, plus Pete Seeger (entry 97), while no interviewee in the corpus is recorded discussing her in turn.",
+  "biographical_paragraph": "Freddie Greene (later Freddie Greene Biddle) was born in Greenwood, Mississippi, in the Leflore County center of the Mississippi Delta, on February 15, 1945 [src: 1]. Her father ran a house-painting business and had been active with the NAACP, and the family moved into the movement together after SNCC field secretaries Sam Block and Willie Peacock came into Greenwood in the fall of 1962 [src: 1]. As a high-school student she helped distribute the federal surplus food that Dick Gregory and Ivanhoe Donaldson flew and trucked into Leflore County after county officials cut off the commodity rolls in reprisal for voter-registration activity [src: 1]. Her brother George Greene became a SNCC field organizer; in 1964 she joined the COFO Freedom Summer staff in McComb, Mississippi while a freshman at Dillard University in New Orleans, lived in the McComb Freedom House that was dynamited that summer, and traveled with the Mississippi Freedom Democratic Party delegation to the Atlantic City convention [src: 1]. Her Library of Congress oral history is entry 44 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039), recorded December 10, 2015 by Emilye Crosby [src: 1]. Her testimony places her inside the same Mississippi field-staff network as Euvester Simpson (entry 41) and Charles McLaurin (entry 17), and fellow interviewee Juadine Henderson (entry 68) names her on the record as a Greenwood movement participant.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Freddie Greene (Biddle)",
+      "speaker_slug": "freddie-greene-biddle",
+      "source_entry": 44,
+      "timestamp": "00:50:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655420/",
+      "lead_in": "In March 1963, a car that dropped her brother George home from a SNCC meeting was followed, and the family's house was blasted with a shotgun through the front door. Greene describes her father's response:",
+      "quote": "No. I mean, if anything, my father said that this is more, this is a clear indication that we have to do something. Because they're doing things to us, no matter whether we do something or not, and we have to change the way things are."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freddie Greene (Biddle)",
+      "speaker_slug": "freddie-greene-biddle",
+      "source_entry": 44,
+      "timestamp": "01:04:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655420/",
+      "lead_in": "On the staff vote in the McComb Freedom House over whether to bring more volunteers down, and the night that followed:",
+      "quote": "Everybody voted, everybody voted for the other volunteers to come, except my brother George, who felt they was not, he said. I don't want to be responsible for somebody getting hurt. So we bring down more people, it's going to be more responsible. But since we voted for it, he was outvoted, that night the house was bombed."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freddie Greene (Biddle)",
+      "speaker_slug": "freddie-greene-biddle",
+      "source_entry": 44,
+      "timestamp": "00:47:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655420/",
+      "lead_in": "Asked who the local leaders were in Greenwood, Greene draws a line between the schoolteachers and the movement:",
+      "quote": "And none of the teachers were involved in the Civil Rights Movement. They were not. And I think most of it was people were terrified of losing their jobs."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freddie Greene (Biddle)",
+      "speaker_slug": "freddie-greene-biddle",
+      "source_entry": 44,
+      "timestamp": "01:14:09",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655420/",
+      "lead_in": "On what the rejected MFDP compromise at the 1964 Atlantic City convention taught her about the country beyond Mississippi:",
+      "quote": "There wasn't just bad white folks in Mississippi. There were a lot of these people and that bad white folks in Mississippi had been able to do all of this to all of us down in Mississippi because the rest of the people did not care."
+    },
+    {
+      "relation": "about",
+      "speaker": "Juadine Henderson",
+      "speaker_slug": "juadine-henderson",
+      "source_entry": 68,
+      "timestamp": "01:53:43",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655419/",
+      "lead_in": "Fellow Mississippi interviewee Juadine Henderson, asked which movement people stood out to her, names Greene and places her family and her schooling:",
+      "quote": "Freddie was there. Freddie's family is from Greenwood. And she was a student at Dillard. I think she was a freshman."
+    }
+  ],
+  "movement_context": "The Mississippi SNCC field-staff infrastructure that Greene's testimony and embedding cluster place her within was built between 1961 and 1965 as a project of the Council of Federated Organizations (COFO), the umbrella coalition Bob Moses, Aaron Henry, and David Dennis assembled in 1962 to coordinate SNCC, the Congress of Racial Equality (CORE), the NAACP, and the Southern Christian Leadership Conference work inside Mississippi under a single field-staff structure [src: 2]. COFO's voter-registration project ran from a network of county offices in McComb (Pike County), Greenwood (Leflore County), Hattiesburg (Forrest County), Indianola (Sunflower County), and Jackson (Hinds County), each staffed by SNCC and CORE field secretaries who lived in the communities they were organizing and worked through citizenship-school classes, mass meetings, and courthouse delegations rather than through episodic direct-action campaigns [src: 2]. Greenwood, Greene's home town, became the location of SNCC's national office during the summer of 1964, as she notes in her own account of the McComb Freedom House bombing being relayed there [src: 1]. The Charles M. Payne formulation of this approach as SNCC's \"organizing tradition\" (contrasted with the SCLC's \"mobilizing tradition\" of mass mobilization for set-piece campaigns) draws principally on the Sunflower County project Charles McLaurin (catalog entry 17) opened in August 1962 and on the Greenwood, McComb, and Hattiesburg circuits Euvester Simpson (catalog entry 41), Hollis Watkins, Curtis Hayes, Sam Block, and Willie Peacock worked through the same period [src: 3]. The 1964 Freedom Summer project COFO organized that summer drew approximately 700 to 1000 northern volunteers (largely white college students recruited through a campus broadside campaign coordinated from the New York and Atlanta SNCC offices) into the Mississippi field-staff network for a 10-week voter-registration and Freedom School effort; the volunteer recruitment was an explicit strategic decision Moses and the COFO staff made to force national press attention onto the violence Mississippi authorities directed at Black registration workers, on the analysis that the murders of white northerners would generate the federal response that the killings of Black Mississippians through 1961-1963 had not [src: 3, 4]. The June 21, 1964 disappearance and subsequent murder of CORE field secretary Michael Schwerner, Freedom Summer volunteer Andrew Goodman, and CORE Meridian organizer James Chaney near Philadelphia in Neshoba County (their bodies recovered August 4, 1964 from an earthen dam) made that analysis the documentary record; Greene was at the volunteer orientation in Ohio when the disappearance was reported, before going on to McComb [src: 1, 4]. The MFDP delegation Greene traveled with to Atlantic City carried the August 1964 Democratic National Convention challenge to the credentials of Mississippi's all-white regular delegation; the post-1965 voter-registration continuation work the SNCC Mississippi field staff carried forward after the Voting Rights Act August 6, 1965 signing ran through the MFDP, the Delta Ministry, and the Freedom Farm Cooperative network Fannie Lou Hamer organized from her Ruleville base, as the official voter-registration ledgers in the Black-majority Delta counties moved from single-digit-percentage Black registration in 1962 to majority registration by the end of the decade [src: 5].",
+  "legacy_and_reception": "Greene's own Library of Congress oral history is the principal extant first-person record of her movement participation [src: 1]. A second corpus voice corroborates her presence in the Mississippi movement: Juadine Henderson (catalog entry 68) names \"Freddie Greene\" on the record, identifies her family as from Greenwood, and places her as a Dillard University freshman, matching Greene's own account of her family, home town, and college [src: 1, 8]. The collective-memoir record of the SNCC Mississippi women's cohort in the Faith S. Holsaert, Martha Prescod Norman Noonan, Judy Richardson, Betty Garman Robinson, Jean Smith Young, and Dorothy M. Zellner edited 2010 University of Illinois Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC includes accounts from approximately fifty SNCC women organizers across the McComb, Greenwood, Hattiesburg, Jackson, and Selma circuits; the volume's coverage of the Mississippi cohort she organized within is the closest available institutional framing of her movement context [src: 6]. The SNCC Digital Gateway profile registry (the Duke University and SNCC Legacy Project collaborative archive working from the SNCC papers held at the Robert W. Woodruff Library at the Atlanta University Center) is the primary institutional venue where additional first-person material on Greene's organizing work, and on that of her brother George Greene, would surface; further biographical work would draw on archival research at the Atlanta SNCC papers or the SNCC Mississippi alumni network [src: 7].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/54/1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_%2826276560142%29.jpg",
       "alt": "SNCC Mississippi Freedom Summer Project recruitment broadside, April 1964",
-      "caption": "The April 1964 SNCC recruitment broadside for the Mississippi Freedom Summer Project, calling for \"1000 students\" to join the COFO voter-registration and Freedom School effort that summer. The broadside was the principal campus-recruitment instrument for the approximately 700 to 1000 northern volunteers who arrived in Mississippi in June 1964 to work alongside the resident SNCC and CORE field-staff network that Greene's embedding cluster places her within; the Greenwood (Leflore County), McComb (Pike County), Hattiesburg (Forrest County), Indianola (Sunflower County), and Jackson (Hinds County) COFO offices were the principal field destinations the broadside directed volunteers toward.",
+      "caption": "The April 1964 SNCC recruitment broadside for the Mississippi Freedom Summer Project, calling for \"1000 students\" to join the COFO voter-registration and Freedom School effort that summer. The broadside was the principal campus-recruitment instrument for the approximately 700 to 1000 northern volunteers who arrived in Mississippi in June 1964 to work alongside the resident SNCC and CORE field-staff network; Greene joined that summer's staff at the McComb (Pike County) project, one of the principal field destinations the broadside directed volunteers toward, alongside the Greenwood (Leflore County), Hattiesburg (Forrest County), Indianola (Sunflower County), and Jackson (Hinds County) COFO offices.",
       "photographer": "Student Nonviolent Coordinating Committee (broadside design); scan held by Mississippi Department of Archives and History",
       "repository": "Wikimedia Commons (via Mississippi Department of Archives and History)",
       "license": "Public domain (no known copyright restrictions; Mississippi Department of Archives and History)",
@@ -25,7 +82,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/31/Sunflower_County_Courthouse.jpg",
       "alt": "Sunflower County Courthouse in Indianola, Mississippi",
-      "caption": "The Sunflower County Courthouse in Indianola, Mississippi. The COFO field-staff network Greene's embedding cluster identifies as her movement context ran courthouse-delegation voter-registration actions through this courthouse and the parallel county-seat courthouses in Greenwood, McComb, Hattiesburg, and Jackson; the August 31, 1962 SNCC action Charles McLaurin (catalog entry 17) led to this building opened the Sunflower County project and set the pattern of the registration confrontations that continued through Freedom Summer 1964 and into the post-Voting-Rights-Act registration continuation work.",
+      "caption": "The Sunflower County Courthouse in Indianola, Mississippi. The COFO field-staff network that Greene's Greenwood and McComb work placed her within ran courthouse-delegation voter-registration actions through county-seat courthouses across the Delta and southwest Mississippi; the August 31, 1962 SNCC action Charles McLaurin (catalog entry 17) led to this building opened the Sunflower County project and set the pattern of the registration confrontations that continued through Freedom Summer 1964.",
       "photographer": "Jimmy Emerson",
       "repository": "Wikimedia Commons (sourced from Flickr)",
       "license": "CC BY 2.0",
@@ -35,7 +92,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Tougaloo_College_Civil_Rights_Marker.jpg",
       "alt": "Tougaloo College Civil Rights Marker, Jackson, Mississippi",
-      "caption": "The Mississippi Freedom Trail marker at Woodworth Chapel on the Tougaloo College campus in Jackson, Mississippi. The Tougaloo campus was the institutional anchor for the Jackson COFO office during Freedom Summer 1964 and through the Freedom Vote campaign, and the academic home Euvester Simpson (catalog entry 41) and other SNCC Mississippi field-staff veterans enrolled in after the Voting Rights Act passed in August 1965; the campus is one of the principal institutional sites in the SNCC Mississippi field-staff infrastructure Greene's embedding cluster places her within.",
+      "caption": "The Mississippi Freedom Trail marker at Woodworth Chapel on the Tougaloo College campus in Jackson, Mississippi. The Tougaloo campus was the institutional anchor for the Jackson COFO office during Freedom Summer 1964; Greene's own mother attended Tougaloo for high school and college, as Greene recounts in her oral history, and the campus is one of the principal institutional sites in the SNCC Mississippi field-staff infrastructure her testimony situates her within.",
       "photographer": "2C2K Photography",
       "repository": "Wikimedia Commons (sourced from Flickr)",
       "license": "CC BY 2.0",
@@ -47,7 +104,7 @@
     {
       "url": "https://www.loc.gov/item/2016655420/",
       "title": "Freddie Greene (Biddle) oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); interview conducted by Emilye Crosby, December 10, 2015"
     },
     {
       "url": "https://search.worldcat.org/title/30816494",
@@ -57,22 +114,22 @@
     {
       "url": "https://search.worldcat.org/title/61664854",
       "title": "Charles M. Payne, I've Got the Light of Freedom: The Organizing Tradition and the Mississippi Freedom Struggle",
-      "publisher": "University of California Press, 1995 (second edition 2007); WorldCat OCLC 61664854 (the principal scholarly account of SNCC's Mississippi voter-registration project and the formulation of the \"organizing tradition\" framework that distinguishes the Mississippi field-staff method from the SCLC mobilizing-campaign approach)"
+      "publisher": "University of California Press, 1995 (second edition 2007); WorldCat OCLC 61664854 (the principal scholarly account of SNCC's Mississippi voter-registration project and the formulation of the \"organizing tradition\" framework that distinguishes the Mississippi field-staff method from the SCLC mobilizing-campaign approach; covers the Greenwood, McComb, and Hattiesburg circuits and the Sam Block and Willie Peacock Greenwood project)"
     },
     {
       "url": "https://search.worldcat.org/title/644565144",
       "title": "Bruce Watson, Freedom Summer: The Savage Season That Made Mississippi Burn and Made America a Democracy",
-      "publisher": "Viking, 2010 (paperback Penguin 2011); WorldCat OCLC 644565144 (the principal narrative history of the 1964 Freedom Summer project, including the campus volunteer recruitment, the COFO field-office network, and the Schwerner-Goodman-Chaney murders in Neshoba County)"
+      "publisher": "Viking, 2010 (paperback Penguin 2011); WorldCat OCLC 644565144 (the principal narrative history of the 1964 Freedom Summer project, including the campus volunteer recruitment, the Ohio volunteer orientation, the COFO field-office network, the McComb Freedom House bombings, and the Schwerner-Goodman-Chaney murders in Neshoba County)"
     },
     {
       "url": "https://search.worldcat.org/title/29521716",
       "title": "Kay Mills, This Little Light of Mine: The Life of Fannie Lou Hamer",
-      "publisher": "Plume / Penguin, 1994 (second edition University Press of Kentucky, 2007); WorldCat OCLC 29521716 (the standard biography of Hamer, documenting the post-1965 voter-registration continuation work through the Mississippi Freedom Democratic Party, the Delta Ministry, and the Freedom Farm Cooperative network that the SNCC Mississippi field-staff cohort carried forward through the late 1960s and 1970s)"
+      "publisher": "Plume / Penguin, 1994 (second edition University Press of Kentucky, 2007); WorldCat OCLC 29521716 (the standard biography of Hamer, documenting the Mississippi Freedom Democratic Party convention challenge at Atlantic City and the post-1965 voter-registration continuation work through the Delta Ministry and the Freedom Farm Cooperative network)"
     },
     {
       "url": "https://search.worldcat.org/title/635021942",
       "title": "Faith S. Holsaert, Martha Prescod Norman Noonan, Judy Richardson, Betty Garman Robinson, Jean Smith Young, and Dorothy M. Zellner, eds., Hands on the Freedom Plow: Personal Accounts by Women in SNCC",
-      "publisher": "University of Illinois Press, 2010 (paperback New Press 2014); WorldCat OCLC 635021942 (the principal collective-memoir archival document of the SNCC women's cohort, with accounts from approximately fifty SNCC women organizers covering the McComb, Greenwood, Hattiesburg, Jackson, and Selma circuits Greene's embedding cluster situates her within)"
+      "publisher": "University of Illinois Press, 2010 (paperback New Press 2014); WorldCat OCLC 635021942 (the principal collective-memoir archival document of the SNCC women's cohort, with accounts from approximately fifty SNCC women organizers covering the McComb, Greenwood, Hattiesburg, Jackson, and Selma circuits Greene's testimony situates her within)"
     },
     {
       "url": "https://snccdigital.org/",
@@ -80,9 +137,9 @@
       "publisher": "Duke University in collaboration with the SNCC Legacy Project (working from the SNCC papers held at the Robert W. Woodruff Library at the Atlanta University Center); the principal openly-accessible institutional archive of SNCC organizational history and personnel records"
     },
     {
-      "url": "https://search.worldcat.org/title/192129687",
-      "title": "Wesley C. Hogan, Many Minds, One Heart: SNCC's Dream for a New America",
-      "publisher": "University of North Carolina Press, 2007 (paperback 2009); WorldCat OCLC 192129687 (institutional history of SNCC documenting the Mississippi field-staff network, the 2014 SNCC 50th Anniversary Conference at Shaw University, and the SNCC Legacy Project archive at the Atlanta University Center)"
+      "url": "https://www.loc.gov/item/2016655419/",
+      "title": "Juadine Henderson oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); interview conducted by Emilye Crosby, December 10, 2015 (corroborates Greene's presence in the Greenwood movement and her enrollment at Dillard University)"
     }
   ]
 }
