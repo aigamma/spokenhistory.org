@@ -8,7 +8,75 @@
   "died": null,
   "role_summary": "Chicano civil rights organizer associated with the San Diego, California civil rights network; in this corpus's embedding his testimony pairs most strongly with Harold K. Brown (San Diego CORE) and clusters with both Black and Chicano movement voices.",
   "ai_reading": "Camarillo's top semantic neighbor is Harold K. Brown (entry 55, count 511), the San Diego CORE founder and Black civil rights leader; this 511 count is among the catalog's strongest cross-ethnic cosine pairings. The pairing confirms the cross-racial cohort the Brown page itself identifies and gives it a bidirectional signature (Brown's own top neighbors include Camarillo at 178). Camarillo's remaining neighbors include Gloria Arellanes (entry 47, Brown Berets), Maria Varela (entry 81, SNCC + Ganados del Valle), Roberta Alexander (entry 110, Berkeley BPP), and Robert L. Carter (entry 108, NAACP LDF). The embedding therefore reads him as a cross-racial movement bridge voice. The catalog's most-striking observation about him is his Sacred Framing vs Secular Framing position: -1.00, the MAXIMUM toward Sacred Framing in the entire 136-interview corpus. For a Chicano civil rights organizer the most-Sacred placement is unexpected within the catalog's broader pattern (most movement-religious voices are SCLC-adjacent or Black-Baptist), possibly catching Liberation Theology vocabulary or the Catholic-rooted strands of Chicano movement organizing the cultural reception filters out. His +0.71 Tactical Pragmatism vs Strategic Vision position is also worth noting: he reads as strongly strategic-vision-oriented, alongside a 511-cosine pairing with a Black civil rights organizer his cultural placement would not have predicted as a close intellectual kin.",
-  "biographical_paragraph": "Mateo Camarillo's oral history is held at the Library of Congress as entry 86 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the strongest signal currently available for his movement role is the embedding's tight bidirectional cosine with Harold K. Brown (entry 55), the San Diego CORE founder whose own page documents the city's Black civil rights leadership of the 1960s, and the cross-racial bridging cluster of Gloria Arellanes, Maria Varela, and Roberta Alexander visible in his neighbors.",
+  "biographical_paragraph": "Mateo Camarillo was born in Tijuana, Mexico in 1941 and immigrated with his mother and three siblings to San Diego in 1950 [src: 1]. He graduated from San Diego State University, became a naturalized U.S. citizen at twenty-one, and volunteered for the U.S. Army, serving with an armored battalion in Germany during the mid-1960s [src: 1]. Returning to San Diego, he worked as a bilingual social worker in the county welfare department, where he founded the workers' organization Trabajadores de la Raza and later directed its national network [src: 1]. He served as executive director of the Chicano Federation of San Diego County, an umbrella body for the area's Spanish-speaking organizations, with offices beneath the San Diego-Coronado Bridge [src: 1, src: 9]. From that position he organized a 1974 employment-discrimination suit against the County of San Diego that expanded to cover Mexican American, African American, Asian American, and Filipino plaintiffs, and he negotiated bilingual-pay ordinances with the county, the city, and San Diego Gas and Electric [src: 1]. He began his civic work through the Viva Kennedy clubs of 1962 and a voter-registration project tied to the Southwest Voter Registration Education Project [src: 1]. He later moved into the private sector as a McDonald's franchisee and founded Quetzal Bilingual Communications, holding Spanish-language radio licenses across California [src: 1]. His Library of Congress oral history is entry 86 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1, src: 9]. In this corpus his testimony pairs at high cosine similarity with the San Diego CORE founder Harold K. Brown (entry 55) and with the Chicano-movement voices Gloria Arellanes (entry 47) and Maria Varela (entry 81).",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Mateo Camarillo",
+      "speaker_slug": "mateo-camarillo",
+      "source_entry": 86,
+      "timestamp": "00:17:11",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655431/",
+      "lead_in": "Asked about the voter-registration drives he ran in San Diego after the Viva Kennedy clubs, Camarillo describes building a cross-racial coalition:",
+      "quote": "It was the first multicultural voter registration project in San Diego where we included African Americans, Native Americans, Asian Americans."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mateo Camarillo",
+      "speaker_slug": "mateo-camarillo",
+      "source_entry": 86,
+      "timestamp": "00:43:55",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655431/",
+      "lead_in": "On winning the employment-discrimination case against the county that grew to include Mexican American, African American, Asian American, and Filipino plaintiffs:",
+      "quote": "No one could do that by themselves or even just one single group. I mean, we're all part of the same family."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mateo Camarillo",
+      "speaker_slug": "mateo-camarillo",
+      "source_entry": 86,
+      "timestamp": "00:57:53",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655431/",
+      "lead_in": "Describing the community takeover of the land beneath the Coronado Bridge that became Chicano Park, where his offices as Chicano Federation director were located:",
+      "quote": "So, we physically, you know, led by my sister, Tomasa Camarillo, who's still the president of Chicano Park steering committee to this day."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mateo Camarillo",
+      "speaker_slug": "mateo-camarillo",
+      "source_entry": 86,
+      "timestamp": "01:05:18",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655431/",
+      "lead_in": "On the direct lines of communication he kept with Mayor Pete Wilson and Police Chief Bill Kolender to resolve police conduct in Barrio Logan:",
+      "quote": "The fact that we could communicate, saved a riot in San Diego."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mateo Camarillo",
+      "speaker_slug": "mateo-camarillo",
+      "source_entry": 86,
+      "timestamp": "01:07:22",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655431/",
+      "lead_in": "Asked why San Diego officials were willing to meet with him when officials elsewhere were not, Camarillo points to the size of the Mexican American electorate:",
+      "quote": "That's the power of the vote."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mateo Camarillo",
+      "speaker_slug": "mateo-camarillo",
+      "source_entry": 86,
+      "timestamp": "01:20:39",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655431/",
+      "lead_in": "On why he sought Spanish-language radio licenses when no Spanish-language stations served San Diego:",
+      "quote": "The reason I wanted to own radio stations is because information is freedom."
+    }
+  ],
   "movement_context": "The Mexican American Youth Association formations of the 1960s, MAYO in San Antonio led by Jose Angel Gutierrez, Mario Compean, and Willie Velasquez and parallel MAYO bodies in San Diego, Los Angeles, and the Bay Area, were the youth-organizing infrastructure that the broader Chicano Movement of 1965-1975 grew through; the San Diego cohort built its 1960s organizing on barrio-level civic-action work, anti-police-brutality response, and the bilingual-education and college-access advocacy that the South Texas MAYO had pioneered in 1967 [src: 2, src: 3]. The Chicano Federation of San Diego, the umbrella civic-services coordinating body that consolidated barrio-level service work in the late 1960s and remains in operation as a federally qualified provider today, was the institutional home for much of San Diego's Mexican American organizing of the period and the connecting node between MAYO youth activism, the Catholic-parish networks of Logan Heights and Barrio Logan, and the San Diego CORE cohort led by Harold K. Brown (catalog entry 55) [src: 2]. The broader Chicano Movement cohort the embedding places Camarillo within draws together Gloria Arellanes (catalog entry 47), Minister of Finance and Correspondence of the Los Angeles Brown Berets and the first female Prime Minister of the organization, who joined the National Chicano Moratorium Committee in 1969 and helped organize the August 29, 1970 march at Laguna Park; Rodolfo Corky Gonzales, founder of the Crusade for Justice in Denver in 1966 and author of the 1967 epic poem Yo Soy Joaquin that became a movement-defining literary text, whose Crusade hosted the March 1969 First National Chicano Youth Liberation Conference that produced El Plan Espiritual de Aztlan, the foundational ideological framework for the Chicano student movement [src: 3, src: 4]; Cesar Chavez and Dolores Huerta, co-founders of the National Farm Workers Association in 1962 (renamed the United Farm Workers in 1972), whose 1965-1970 Delano grape strike and nationwide consumer grape boycott was the movement's most sustained labor-organizing campaign and produced the first table-grape collective-bargaining agreements in California agricultural history [src: 2]; and Reies Lopez Tijerina, founder of the Alianza Federal de Mercedes in 1963 in New Mexico, whose June 5, 1967 Tierra Amarilla courthouse raid in pursuit of Spanish and Mexican land-grant restoration radicalized the movement's land-rights wing and made Tijerina one of its most-prosecuted figures [src: 2, src: 3]. The August 29, 1970 National Chicano Moratorium march against the Vietnam War, organized by the National Chicano Moratorium Committee that Arellanes joined in 1969 and that drew the movement's geographic-cohort organizers from Los Angeles, San Diego, Denver, San Antonio, and the Bay Area to a single rally at Laguna Park, drew 20,000 to 30,000 participants and was broken up in the afternoon by Los Angeles County Sheriff's deputies; Los Angeles Times columnist Ruben Salazar was killed at the Silver Dollar Cafe by a sheriff's-deputy tear-gas projectile fired through the bar's doorway, an event the movement understood as the deliberate elimination of its most prominent journalistic voice [src: 5, src: 4]. La Raza Unida Party, founded in 1970 by Jose Angel Gutierrez and Mario Compean in Crystal City, Texas as the Chicano third-party political vehicle and which by 1972 ran a Texas gubernatorial candidate and operated chapters across California, Colorado, and New Mexico, was the period's most-developed electoral expression of the same youth-organizing cohort that the regional MAYO bodies had produced [src: 3].",
   "legacy_and_reception": "The Chicano Federation of San Diego, the institutional vehicle the late-1960s San Diego MAYO and parish-network organizing built, has operated continuously since its 1969 founding and today runs early-childhood-education, family-resource, housing-assistance, and behavioral-health programs across San Diego County under federal qualified-community-services designations; the institutional continuity from the period of Camarillo's movement work to the contemporary social-services infrastructure of the city's Mexican American community is one of the more durable organizational records of the broader Chicano Movement, paralleling the descent of the East L.A. Free Clinic into AltaMed Health Services that Arellanes's catalog page documents [src: 2, src: 6]. San Diego's Chicano Park in Barrio Logan, established by community land-occupation on April 22, 1970 after the city moved to construct a California Highway Patrol substation on land that had been promised as a community park beneath the Coronado Bridge, became the period's most-visible architectural marker of San Diego Chicano organizing; the park's outdoor murals, painted across the bridge pylons from 1973 onward by Salvador Roberto Torres, Mario Torero, Victor Ochoa, Michael Schnorr, and a rotating community of muralists, were designated a National Historic Landmark by the National Park Service in January 2017 and remain the largest collection of outdoor Chicano-movement murals in the United States [src: 6, src: 7]. Camarillo's 2013 Library of Congress oral history at catalog entry 86 sits within the broader 136-interview Civil Rights History Project corpus produced by the American Folklife Center under accession AFC 2010/039 and represents the project's San Diego cohort of voices alongside Harold K. Brown (catalog entry 55), with whom his testimony pairs at the catalog's strongest cross-ethnic cosine (511); the bidirectional pairing is itself a piece of archival evidence for the cross-racial San Diego organizing the two careers documented in their lifetimes [src: 1].",
   "gallery": [

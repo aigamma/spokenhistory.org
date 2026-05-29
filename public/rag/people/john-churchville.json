@@ -6,16 +6,73 @@
   "born": 1941,
   "died": null,
   "display_name": "John Churchville",
-  "role_summary": "SNCC field organizer; in this corpus's embedding his testimony clusters with Gwendolyn Zoharah Simmons, Harold K. Brown, and Charles McLaurin.",
-  "ai_reading": "Churchville's top semantic neighbors are Gwendolyn Zoharah Simmons (entry 53, count 169), Harold K. Brown (entry 55, count 138, San Diego CORE), Myrtle Gonza Glascoe (entry 137), Charles McLaurin (entry 17, Mississippi SNCC), and James Oscar Jones (entry 57). The cluster bridges SNCC field organizing with West Coast civil rights leadership (Brown), reading him as a movement-network voice broader than a single-region or single-organization label captures. His position on the Southern Struggle vs Northern Struggle axis at -0.41 leans Northern, an unusual reading for a SNCC field organizer whose institutional placement is the Southern movement; the embedding may be catching post-1965 Northern Black Power organizing in his transcript over the Southern fieldwork.",
-  "biographical_paragraph": "John Churchville's oral history is held at the Library of Congress as entry 63 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
-  "movement_context": "Churchville was born in Philadelphia in 1941 and was recruited to the Student Nonviolent Coordinating Committee in April 1962 at the Inter-Collegiate Conference on Northern Civil Rights at Sarah Lawrence College, joining SNCC's field staff despite stated reservations about the organization's integrationist philosophy in that period [src: 2]. He travelled south to Americus, Georgia and to Greenwood, Mississippi to register voters and to staff Freedom Schools, the parallel-education institutions SNCC field workers built to help disenfranchised Black Mississippians prepare for the literacy and constitutional-interpretation tests state registrars deployed to block registration [src: 2, 3]. The Greenwood organizing context his oral history sits inside is the SNCC project Matthew Countryman's institutional history of Philadelphia Black Power identifies as the formative experience that turned Churchville's politics from integrationist toward Black-self-determination by late 1964 [src: 4]. Returning to Philadelphia in 1964, Churchville opened the Freedom Library in a Ridge Avenue storefront in North Philadelphia, amassing a collection of roughly 2,000 books by or about African Americans with night lectures and a youth tutoring program; in fall 1964 he affiliated the library with the Northern Student Movement, the SNCC-aligned northern campus organizing network Peter Countryman had built from Yale in 1961 and which by 1963 had 50 full-time staff and 2,500 student volunteers across northern campuses [src: 2, 4, 5]. The SNCC Digital Gateway identifies Churchville as the figure who created an NSM Freedom Library in Philadelphia and who, with other activists gathered at the library, founded the Black People's Unity Movement in 1965, Philadelphia's first Black Power political organization, aiming to unify poor, working-class, and middle-class Black Philadelphians in political and economic campaigns [src: 5, 4]. On August 13, 1966, FBI agents and Philadelphia police raided the NSM Freedom Library on a claim that militant civil rights groups were storing arms there; the search produced no weapons, but Churchville withdrew from activist politics after the raid [src: 2]. The -0.41 Northern-Struggle axis position the AI's-reading observation above flags is consistent with this trajectory: although his SNCC fieldwork was in Mississippi and Georgia, the post-1965 Philadelphia Freedom Library and BPUM organizing his transcript also documents reads in the embedding as Northern Black Power rather than Southern voter-registration movement.",
-  "legacy_and_reception": "Churchville's post-activist career path is recorded in summary form only: training at Antioch University, Rutgers School of Law, and Canterbury University, and subsequent work as a lawyer, businessperson, educator, and community organizer [src: 2]. The Freedom Library he founded in 1964 has since been recognized as one of the institutional starting points of Philadelphia's Black Power movement, a positioning Matthew Countryman's University of Pennsylvania Press history Up South: Civil Rights and Black Power in Philadelphia treats at length and which the SNCC Digital Gateway's institutional history of the Northern Student Movement also records [src: 4, 5]. A 2025 North Philadelphia Historical Festival organized around the Freedom Library's legacy, hosted at Scribe Video Center, illustrates that the institutional memory of his 1964-1966 organizing remains a frame of reference for community historians in the neighborhood where the Ridge Avenue storefront operated [src: 6]. Beyond the Civil Rights History Project oral history itself, scholarly engagement with Churchville's specific contribution is concentrated in Countryman's 2005/2006 Up South and in the BlackPast biographical entry that draws on it [src: 4, 2]; the catalog will be expanded if additional scholarly or memoir sourcing surfaces that warrants extension.",
+  "role_summary": "SNCC field organizer in Southwest Georgia and Mississippi; founder of the Northern Student Movement Freedom Library and the Freedom Library Day School in North Philadelphia.",
+  "ai_reading": "Ranked by raw passage-overlap count, Churchville's nearest neighbors in this corpus are Gwendolyn Zoharah Simmons (entry 53, count 169), Harold K. Brown (entry 55, San Diego CORE, count 138), Myrtle Gonza Glascoe (entry 137, count 109), Charles McLaurin (entry 17, Mississippi SNCC, count 95), and James Oscar Jones (entry 57, count 85). Ranked instead by peak cosine similarity, the order rearranges and a different reading surfaces: his single closest passage match is to William Lamar Strickland (entry 127, top score 0.832), then Courtland Cox (entry 24, 0.826) and James Oscar Jones (0.804). That top match is the embedding's quiet convergence with the documented record: the archival finding aids name Strickland as a co-founder of the Black People's Unity Movement at Churchville's Philadelphia Freedom Library, yet the cultural cataloging foregrounds Churchville's Mississippi and Georgia fieldwork, not the Northern Black-Power network that the cosine peaks actually trace. The same tension shows on the concept axes: his Southern Struggle vs Northern Struggle position reads -0.41, leaning Northern, which is an unusual placement for a figure whose institutional label is the Southern movement, and it is consistent with the post-1965 Philadelphia Freedom Library and BPUM organizing that fills the back half of his transcript. The influence graph adds a third angle. No interviewee in the corpus names Churchville (his discussed-by count is zero), and his only outbound name-edges run to Rev. Charles Sherrod (entry 18) and Malcolm X, even though the transcript devotes long passages to both the Nation of Islam and Malcolm; the name-mention extractor registers far fewer edges than the spoken content would suggest.",
+  "biographical_paragraph": "John Elliott Churchville was born in Philadelphia in 1941, attended Simon Gratz High School, and started a music-education course at Temple University before leaving to play jazz and move to New York, where he met Malcolm X at the Nation of Islam's Harlem headquarters [src: 2]. In April 1962 he attended the Inter-Collegiate Conference on Northern Civil Rights at Sarah Lawrence College and was recruited into the Student Nonviolent Coordinating Committee there, joining its field staff despite his stated disagreement with the organization's integrationist philosophy at that time [src: 2]. He worked under Rev. Charles Sherrod (entry 18) in the Albany and Southwest Georgia project, registering voters in and around Americus, then taught literacy in a COFO Freedom School in Greenwood, Mississippi, helping Black residents prepare for the state's constitutional-interpretation registration test [src: 1, 5]. Returning to Philadelphia in 1964, he opened the Freedom Library in a Ridge Avenue storefront in North Philadelphia, building a collection of roughly 2,000 books by or about African Americans and adding night history lectures and a youth tutoring program; the New York Public Library's Northern Student Movement finding aid dates the launch to August 1964 [src: 2, 6]. In the fall of 1964 he affiliated the library with the Northern Student Movement, the SNCC-aligned northern campus network; in the fall of 1965, activists gathered at the Freedom Library, among them William Lamar Strickland (entry 127), formed the Black People's Unity Movement to organize poor, working-class, and middle-class Black Philadelphians [src: 2, 5, 6]. On August 13, 1966, FBI agents and Philadelphia police raided the Freedom Library on a claim that militant groups were storing weapons there; the search produced none, and Churchville withdrew from activist politics afterward [src: 2]. He later earned a bachelor's degree from Antioch University and a law degree from Rutgers University School of Law in Camden, and went on to lead the Liberation Fellowship Church of Jesus and its community development corporation in Germantown [src: 2, 3].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "00:34:19",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "Describing the case he made to young Black residents in Americus, Georgia for why they should register to vote:",
+      "quote": "The rationale for voting is to build a power base so you can elect people who look like you to office, who will do for you, what people who don't look like you will do."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "00:31:59",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "On why he asked Rev. Charles Sherrod for a Black canvassing partner after Black residents kept directing their attention to his white partner:",
+      "quote": "it was bad enough to be in the north and ignored by white folk. And it was just intolerable to be ignored by my own folk."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "00:49:01",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "On the constitutional-interpretation test Mississippi registrars used to block Black registration, which his Greenwood Freedom School work was meant to counter:",
+      "quote": "I was appalled that black folks had to take a constitutional test. And my god, lawyers can't understand the constitution."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "00:37:18",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "Asked how he made himself get up each morning amid the violence of Southwest Georgia:",
+      "quote": "Well, it was easy to get up in the morning. Fear will get you up."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Churchville",
+      "speaker_slug": "john-churchville",
+      "source_entry": 63,
+      "timestamp": "01:03:32",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669132/",
+      "lead_in": "On finding a North Philadelphia storefront and proposing the project that became the Freedom Library:",
+      "quote": "we need to come up with a project in the Northern Student Movement that is a library, we call it Freedom Library, Northern Student Movement Freedom Library, which will have books buying about black people."
+    }
+  ],
+  "movement_context": "Churchville's Southwest Georgia fieldwork sat inside the Albany Movement, the 1961-1962 SNCC and local coalition campaign that Rev. Charles Sherrod (entry 18) helped open and that Churchville describes joining after riding a bus south from New York [src: 1, 5]. His Greenwood, Mississippi literacy teaching was part of COFO, the Council of Federated Organizations, the SNCC-led umbrella that ran the Freedom Schools and the 1964 voter-registration drive in the Mississippi Delta [src: 1]. The Northern Student Movement he affiliated the Freedom Library with in fall 1964 was a northern-campus organizing network with tutorial and community-action projects from Boston to Detroit; its Philadelphia Tutorial Project had grown to some 800 tutors and over 1,100 children by 1964, and the NSM shifted toward an all-Black, Black-nationalist orientation across 1965 [src: 6]. The Black People's Unity Movement that formed at the Freedom Library in fall 1965 grew out of that shift; a Black Unity rally in Philadelphia in February 1966 drew about 2,000 participants [src: 6]. The August 13, 1966 raid Churchville recounts is documented as a joint FBI and Philadelphia police action on the NSM Freedom Library premised on a weapons-storehouse claim that the search did not bear out [src: 2].",
+  "legacy_and_reception": "Churchville's Freedom Library and Day School are treated as institutional starting points of Philadelphia's Black Power period in Matthew J. Countryman's University of Pennsylvania Press history Up South: Civil Rights and Black Power in Philadelphia, the scholarly account that the BlackPast biographical entry draws on, and the SNCC Digital Gateway's institutional history of the Northern Student Movement records his founding role [src: 4, 2, 5]. The New York Public Library holds the Northern Student Movement records (1961-1966), whose finding aid documents the Philadelphia Freedom Library through correspondence between Churchville and NSM's central office under William Lamar Strickland (entry 127), a library prospectus, a 1965 report, and the library's newsletter [src: 6]. The Smithsonian National Museum of African American History and Culture holds his oral history jointly with the Library of Congress as object 2011.174.33.1a-g (LoC ID afc2010039_crhp0033), a roughly two-and-a-half-hour interview conducted by Joseph Mosnier [src: 7, 1]. His account of Father Paul M. Washington, the North Philadelphia priest who gave the movement meeting space, is corroborated by Washington's own memoir, Other Sheep I Have, one of the sources behind the BlackPast entry [src: 8, 2]. Beyond these, scholarly engagement with his specific contribution remains concentrated in Countryman's history; the catalog will be extended if further scholarly or memoir sourcing surfaces.",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/54/1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_%2826276560142%29.jpg",
       "alt": "1964 SNCC broadside recruiting student volunteers for the Mississippi Freedom Summer Project",
-      "caption": "SNCC broadside recruiting student volunteers for the 1964 Mississippi Freedom Summer Project, the voter-registration and Freedom Schools campaign whose Greenwood organizing Churchville participated in as a SNCC field-staff member helping local Black residents prepare for Mississippi's literacy tests.",
+      "caption": "SNCC broadside recruiting student volunteers for the 1964 Mississippi Freedom Summer Project, the voter-registration and Freedom Schools campaign whose Greenwood organizing Churchville participated in as a COFO Freedom School literacy teacher helping local Black residents prepare for Mississippi's registration test.",
       "photographer": "Mississippi Department of Archives and History",
       "repository": "Wikimedia Commons (Flickr Commons via Mississippi Department of Archives and History)",
       "license": "No known copyright restrictions (public domain)",
@@ -25,7 +82,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/01/African_American_and_white_Mississippi_Freedom_Democratic_Party_supporters_demonstrating_05237v.jpg",
       "alt": "Mississippi Freedom Democratic Party supporters demonstrating outside the 1964 Democratic National Convention, Atlantic City, New Jersey",
-      "caption": "Mississippi Freedom Democratic Party supporters demonstrating outside the 1964 Democratic National Convention in Atlantic City. Photographed by Warren K. Leffler for U.S. News & World Report on August 24, 1964. The protest framed the same Mississippi voter-disenfranchisement context Churchville's Greenwood SNCC fieldwork was responding to.",
+      "caption": "Mississippi Freedom Democratic Party supporters demonstrating outside the 1964 Democratic National Convention in Atlantic City. Photographed by Warren K. Leffler for U.S. News & World Report on August 24, 1964. The protest framed the same Mississippi voter-disenfranchisement context Churchville's Greenwood Freedom School work was responding to.",
       "photographer": "Warren K. Leffler",
       "repository": "Library of Congress, U.S. News & World Report Magazine Photograph Collection, via Wikimedia Commons",
       "license": "No known copyright restrictions (public domain; rights dedicated by U.S. News & World Report to LoC)",
@@ -35,7 +92,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Lowndes_County_Freedom_Organization_flyer.jpg",
       "alt": "Lowndes County Freedom Organization flyer, the 1966 SNCC organizing material whose Black Panther symbol predates the Oakland party",
-      "caption": "Lowndes County Freedom Organization flyer (1966), SNCC political education material by Courtland Cox and Jennifer Lawson. The LCFO's independent Black political party in Alabama is one of the institutional pivots from voter-registration-era SNCC to Black-Power-era organizing that Churchville's Philadelphia Black People's Unity Movement (founded 1965) parallels in Northern context.",
+      "caption": "Lowndes County Freedom Organization flyer (1966), SNCC political education material by Courtland Cox and Jennifer Lawson. The LCFO's independent Black political party in Alabama is one of the institutional pivots from voter-registration-era SNCC to Black-Power-era organizing that Churchville's Philadelphia Black People's Unity Movement (formed in 1965) parallels in Northern context.",
       "photographer": "Courtland Cox and Jennifer Lawson (SNCC Political Education Materials)",
       "repository": "Wikimedia Commons",
       "license": "CC0 1.0 (public domain dedication)",
@@ -51,8 +108,8 @@
     },
     {
       "url": "https://blackpast.org/african-american-history/churchville-john-1941/",
-      "title": "John Churchville (1941- )",
-      "publisher": "BlackPast.org (biographical reference entry, draws on Matthew J. Countryman's Up South for institutional detail of the Freedom Library and BPUM)"
+      "title": "John Churchville (1941- ), by Jonathan Bradley",
+      "publisher": "BlackPast.org (biographical reference entry; cites Matthew Countryman's Up South, Churchville's own profile, and Father Paul M. Washington's memoir Other Sheep I Have)"
     },
     {
       "url": "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
@@ -67,17 +124,22 @@
     {
       "url": "https://snccdigital.org/inside-sncc/alliances-relationships/northern-student-movement/",
       "title": "Northern Student Movement",
-      "publisher": "SNCC Digital Gateway, Duke University Libraries and the SNCC Legacy Project (the institutional history page that identifies Churchville as the founder of the NSM Philadelphia Freedom Library and the BPUM)"
+      "publisher": "SNCC Digital Gateway, Duke University Libraries and the SNCC Legacy Project (identifies Churchville as the former SNCC field organizer who created the NSM Philadelphia Freedom Library and dates the BPUM's formation to fall 1965)"
     },
     {
-      "url": "https://billypenn.com/2025/08/15/north-philadelphia-historical-festival-scribe-video-center-freedom-library/",
-      "title": "North Philadelphia Historical Festival carries deep lessons",
-      "publisher": "Billy Penn at WHYY, August 15, 2025 (community-history reporting on the 2025 North Philadelphia Historical Festival organized around the Freedom Library legacy at Scribe Video Center)"
+      "url": "https://archives.nypl.org/scm/20927",
+      "title": "Northern Student Movement records, 1961-1966",
+      "publisher": "Schomburg Center for Research in Black Culture, Manuscripts, Archives and Rare Books Division, New York Public Library (finding aid; documents the NSM Freedom Library launched by John Churchville in August 1964 and his correspondence with NSM director William Strickland)"
     },
     {
-      "url": "https://search.worldcat.org/title/57168107",
-      "title": "Matthew J. Countryman, Up South: Civil Rights and Black Power in Philadelphia (hardcover edition)",
-      "publisher": "University of Pennsylvania Press, 2005; WorldCat OCLC 57168107 (the original cloth edition; the 2006 paperback is a separate WorldCat record)"
+      "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.33.1a-g",
+      "title": "John Elliott Churchville, J.D. Oral History Interview (object 2011.174.33.1a-g; LoC ID afc2010039_crhp0033)",
+      "publisher": "Smithsonian National Museum of African American History and Culture, in partnership with the American Folklife Center, Library of Congress"
+    },
+    {
+      "url": "https://search.worldcat.org/title/28889150",
+      "title": "Paul M. Washington with David McI. Gracie, Other Sheep I Have: The Autobiography of Father Paul M. Washington",
+      "publisher": "Temple University Press, 1994 (ISBN 1-56639-178-4); WorldCat OCLC 28889150 (memoir of the rector of the Episcopal Church of the Advocate, who gave the Philadelphia Black-Power-era movement, including Churchville's organizing, meeting space)"
     }
   ]
 }

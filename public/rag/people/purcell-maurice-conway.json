@@ -3,13 +3,81 @@
   "slug": "purcell-maurice-conway",
   "person_type": "interviewee",
   "entry_number": 99,
-  "born": null,
+  "born": 1948,
   "died": null,
   "display_name": "Purcell Maurice Conway",
   "role_summary": "Civil Rights History Project interviewee; his testimony clusters with the Mississippi voter-registration cohort and lands at a near-maximum Collective Discipline reading on the corpus's individual-vs-collective axis.",
-  "ai_reading": "Conway's top semantic neighbors are Charles McLaurin (entry 17, count 76), Barbara Edna Vickers (entry 5), Gwendolyn Annette Perkins Duncan (entry 51), Frankye Adams-Johnson (entry 43), and Robert Bagner Hayling (entry 103, St. Augustine SCLC). The cluster bridges Mississippi voter-registration (McLaurin, Adams-Johnson) and Florida SCLC (Hayling). The catalog's strongest observation about him is on the Individual Conscience vs Collective Discipline axis: he sits at +0.82, very near the Collective Discipline pole and matching the Mary Jenkins (entry 84, +0.83) reading. His four other axis positions cluster near zero (range +0.07 to +0.17), so the collective-discipline pull is isolated, an unusual structural pattern that may catch institutional or organizational testimony content the cultural reading of him would not have predicted.",
-  "biographical_paragraph": "Purcell Maurice Conway's oral history is held at the Library of Congress as entry 99 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
-  "movement_context": "Conway's interview was conducted in Saint Augustine, Florida, on 2011 September 13, by Joseph Mosnier, as part of the Civil Rights History Project's Florida fieldwork that also captured oral histories from Robert B. Hayling, Audrey Nell Edwards, JoeAnn Anderson Ulmer, and Barbara Vickers [src: 2]. The St. Augustine movement, in which Conway participated as a teenager, ran from 1963 into the summer of 1964 and is documented as a direct catalytic factor in breaking the U.S. Senate filibuster against the Civil Rights Act of 1964 [src: 3]. Local leadership came from Robert B. Hayling, a dentist who served as adviser to the NAACP Youth Council in St. Augustine and organized the city's first sit-in campaigns; Hayling later became president of the Florida branch of the Southern Christian Leadership Conference and issued the invitation that brought King and SCLC staff into the city in spring 1964 [src: 4][src: 5]. The campaign included sit-ins, night marches, and a series of wade-ins at segregated beaches and pools on Anastasia Island and at the Monson Motor Lodge swimming pool, where manager James Brock poured muriatic acid into the water while Black and white demonstrators were swimming together on 1964 June 18 [src: 3][src: 6]. King was arrested on the steps of the Monson Motor Lodge restaurant on 1964 June 11, the only arrest of his career inside Florida; the next day the Senate cloture vote ended the seventy-five-day filibuster against the civil rights bill [src: 4][src: 6]. Conway, then sixteen years old, was among the youth foot soldiers in this campaign. His published recollection describes joining four friends and the activist Al Lingo for a wade-in at St. Augustine Beach in June 1964, where counter-demonstrators carrying Confederate flags surrounded the swimmers, a white youth struck Conway in the face with brass knuckles, and state troopers eventually intervened [src: 7]. He has also recounted that his mother, father, and three brothers were jailed at the same time during the demonstrations, a pattern of whole-family arrests that recurs across St. Augustine testimony [src: 7]. The movement's youth council base, which Hayling had built through the NAACP, is the structural reason a high-school-age participant like Conway ended up at the center of nationally televised confrontations rather than at their margins [src: 5].",
+  "ai_reading": "Conway's top semantic neighbors by aggregate passage count are Charles McLaurin (entry 17, count 76), Barbara Edna Vickers (entry 5, count 72), Gwendolyn Annette Perkins Duncan (entry 51, count 70), Frankye Adams-Johnson (entry 43, count 66), and Robert Bagner Hayling (entry 103, count 60). The interesting feature is that the embedding does not simply file him with his own St. Augustine taping cohort: Vickers, Duncan, and Hayling were all interviewed in the same Florida fieldwork, yet McLaurin and Adams-Johnson, Mississippi voter-registration voices with no St. Augustine connection, sit at the very top and inside the top four, so the cluster reads as a Deep-South youth-and-family organizing register rather than a place-bound one. The catalog's sharpest single reading of him is on the Individual Conscience versus Collective Discipline axis, where his normalized position of +0.82 puts him third of the 136 audited interviewees toward the Collective Discipline pole, just under Mary Jenkins (entry 84, +0.83) and behind only Grace Hall Miller (entry 50). His other four axis positions all sit low on the same normalized scale (+0.07 to +0.17), so the collective-discipline pull is isolated rather than part of a broadly organizational signature, a structural pattern that catches the whole-household, network-of-families character of his testimony more than the lone-conscience framing a cultural reading of a teenage foot soldier might expect.",
+  "biographical_paragraph": "Purcell Maurice Conway grew up in the Lincolnville and West Augustine neighborhoods of St. Augustine, Florida, raised after age five by his great-great-grandmother while his parents Julia and George Conway and his three brothers lived on Scott Street; he was born in 1948 and joined the city's youth-led civil rights demonstrations at fifteen [src: 1]. His oral history is held at the Library of Congress as entry 99 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) and was recorded in St. Augustine on 2011 September 13 by Joseph Mosnier alongside the same fieldwork that captured Barbara Edna Vickers (entry 5), Robert Bagner Hayling (entry 103), and the joint Audrey Nell Hamilton and JoeAnn Anderson Ulmer interview (entry 4) [src: 1][src: 2]. He went on to a career in the New York City Police Department, retiring at the rank of lieutenant, before returning to Florida [src: 1]. Detailed external biographical scholarship on Conway as an individual remains thin; the citations here rest on his own recorded testimony and on the documented record of the St. Augustine movement he participated in.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Purcell Maurice Conway",
+      "speaker_slug": "purcell-maurice-conway",
+      "source_entry": 99,
+      "timestamp": "00:05:25",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669144/",
+      "lead_in": "Conway describes earning his own money as a child in segregated St. Augustine, where the white business district sat a block from his Black neighborhood:",
+      "quote": "I worked up the courage one day. I was 10 years old to venture over there and ask for a job."
+    },
+    {
+      "relation": "self",
+      "speaker": "Purcell Maurice Conway",
+      "speaker_slug": "purcell-maurice-conway",
+      "source_entry": 99,
+      "timestamp": "00:20:53",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669144/",
+      "lead_in": "Hired by a white acquaintance of his mother to cut her lawn, Conway was offered food at the garage:",
+      "quote": "So when I walked up, she had sit it down next to her dog, dog's tray, dog food on this side, my sandwich and water on the other side."
+    },
+    {
+      "relation": "self",
+      "speaker": "Purcell Maurice Conway",
+      "speaker_slug": "purcell-maurice-conway",
+      "source_entry": 99,
+      "timestamp": "00:23:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669144/",
+      "lead_in": "On how arrest came to be regarded inside the Black community during the demonstrations:",
+      "quote": "I think at one point in St. Augustine amongst black households it was a badge of honor to be arrested for the movement. And that was that passion."
+    },
+    {
+      "relation": "self",
+      "speaker": "Purcell Maurice Conway",
+      "speaker_slug": "purcell-maurice-conway",
+      "source_entry": 99,
+      "timestamp": "00:25:14",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669144/",
+      "lead_in": "Conway explains what drove a high-school-age participant to keep marching despite the danger:",
+      "quote": "And now you're coming up through it. My thing was I, at 15, I'm going to do this for my future and my children's future."
+    },
+    {
+      "relation": "self",
+      "speaker": "Purcell Maurice Conway",
+      "speaker_slug": "purcell-maurice-conway",
+      "source_entry": 99,
+      "timestamp": "00:42:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669144/",
+      "lead_in": "On the Northern white college students who came to St. Augustine to run a tutorial program and took part in the demonstrations:",
+      "quote": "Those white college kids changed my perspective of whites."
+    },
+    {
+      "relation": "about",
+      "speaker": "Barbara Edna Vickers",
+      "speaker_slug": "barbara-edna-vickers",
+      "source_entry": 5,
+      "timestamp": "00:14:24",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669145/",
+      "lead_in": "Barbara Vickers, interviewed the same day in St. Augustine, recalls how the Scott Street families organized themselves, naming Conway's mother Julia Conway among them:",
+      "quote": "So Julia Conway, of course, the street from the Purcell Conway's mother. She decided that we were going to be a group."
+    }
+  ],
+  "movement_context": "Conway's interview was conducted in Saint Augustine, Florida, on 2011 September 13, by Joseph Mosnier, as part of the Civil Rights History Project's Florida fieldwork that also captured oral histories from Robert B. Hayling, Audrey Nell Edwards, JoeAnn Anderson Ulmer, and Barbara Vickers [src: 2]. The St. Augustine movement, in which Conway participated as a teenager, ran from 1963 into the summer of 1964 and is documented as a direct catalytic factor in breaking the U.S. Senate filibuster against the Civil Rights Act of 1964 [src: 3]. Local leadership came from Robert B. Hayling, a dentist who served as adviser to the NAACP Youth Council in St. Augustine and organized the city's first sit-in campaigns; Hayling later became president of the Florida branch of the Southern Christian Leadership Conference and issued the invitation that brought King and SCLC staff into the city in spring 1964 [src: 4][src: 5]. The campaign included sit-ins, night marches, and a series of wade-ins at segregated beaches and pools on Anastasia Island and at the Monson Motor Lodge swimming pool, where manager James Brock poured muriatic acid into the water while Black and white demonstrators were swimming together on 1964 June 18 [src: 3][src: 6]. King was arrested on the steps of the Monson Motor Lodge restaurant on 1964 June 11, the only arrest of his career inside Florida; the U.S. Senate had voted cloture the day before, on 1964 June 10, to end a filibuster that the Senate's own record measures at sixty working days, and final passage of the Civil Rights Act followed on 1964 July 2 [src: 4][src: 6][src: 10]. Conway, who was born in 1948 and describes himself as fifteen during the demonstrations, was among the youth foot soldiers in this campaign [src: 1]. His recorded oral history and published recollections describe a wade-in at St. Augustine Beach with a group of four other teenagers and a white man he names as Al Lingo, where a mob carrying clubs and chains converged on the swimmers, a white youth struck him in the face, and the man beside him was hit over the head with a pipe before a single police car arrived and the crowd scattered [src: 1][src: 7]. He has also recounted that his mother, father, and three brothers were jailed on the same night during the demonstrations while he, the only one not arrested, stayed home with his great-great-grandmother, a pattern of whole-family involvement that recurs across St. Augustine testimony [src: 1][src: 7]. The movement's youth council base, which Hayling had built through the NAACP, is the structural reason a high-school-age participant like Conway ended up at the center of nationally televised confrontations rather than at their margins [src: 5].",
   "legacy_and_reception": "Conway's oral history is part of the Civil Rights History Project corpus held jointly by the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture, where the recording is catalogued at accession 2011.174.45.1a-d [src: 1][src: 2]. The St. Augustine campaign in which he participated has been the subject of sustained scholarly attention since David R. Colburn's 1985 monograph Racial Change and Community Crisis: St. Augustine, Florida, 1877-1980, which received the Rembert Patrick Prize and devotes substantial chapters to the 1963 and 1964 demonstrations [src: 8]. David J. Garrow's 1989 documentary volume St. Augustine, Florida, 1963-1964: Mass Protest and Racial Violence, the tenth volume in Carlson Publishing's Martin Luther King, Jr. and the Civil Rights Movement series, compiles primary sources from the campaign [src: 9]. Local memorialization of the foot-soldier cohort in which Conway participated is concentrated at the St. Augustine Foot Soldiers Monument, dedicated 2011 May 14 in the city's Plaza de la Constitucion, and at the ACCORD Civil Rights Museum in the restored Hayling dental office on Bridge Street [src: 5]. Conway has discussed the demonstrations in published interviews tied to NBC's Voices of the Civil Rights Movement series, including a video segment titled Sand, Surf and Segregation that focuses on the beach wade-ins [src: 7].",
   "gallery": [
     {
@@ -79,6 +147,11 @@
       "url": "https://www.worldcat.org/title/st-augustine-florida-1963-1964-mass-protest-and-racial-violence/oclc/20263379",
       "title": "St. Augustine, Florida, 1963-1964: Mass Protest and Racial Violence, edited by David J. Garrow (Carlson Publishing, 1989), Martin Luther King, Jr. and the Civil Rights Movement series, volume 10",
       "publisher": "WorldCat (OCLC 20263379)"
+    },
+    {
+      "url": "https://www.senate.gov/about/powers-procedures/filibusters-cloture/civil-rights-filibuster-ended.htm",
+      "title": "Civil Rights Filibuster Ended (cloture invoked 1964 June 10, 71 to 29; the bill occupied the Senate for sixty working days)",
+      "publisher": "United States Senate, Art and History"
     }
   ]
 }
