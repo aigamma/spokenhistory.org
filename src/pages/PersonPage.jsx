@@ -492,6 +492,24 @@ export default function PersonPage() {
     ? TIER_BADGE[crossLinks.uncertaintyTier]
     : null;
 
+  // Hero image policy. A portrait is preferred. When no portrait is
+  // available we do NOT fabricate one (no initial-letter avatar, no
+  // apology caption): instead we promote the first gallery image
+  // (environment or association imagery, e.g. a place, an institution,
+  // an associated figure) into the hero slot, and drop it from the
+  // in-body gallery so it is not shown twice. When there is neither a
+  // portrait nor any gallery image, the hero is omitted and the
+  // identity header leads the page. Galleries are sourced during
+  // enrichment so a portrait-less page still opens on contextual imagery.
+  const hasPortrait = Boolean(
+    person.photo && (person.photo.src_local || person.photo.src_external)
+  );
+  const galleryImages = Array.isArray(person.gallery)
+    ? person.gallery.filter((g) => g && (g.src_local || g.src_external))
+    : [];
+  const heroFallbackImage = !hasPortrait && galleryImages.length > 0 ? galleryImages[0] : null;
+  const bodyGallery = heroFallbackImage ? galleryImages.slice(1) : galleryImages;
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
       <main id="main-content" tabIndex={-1} className="max-w-4xl mx-auto px-4 sm:px-6 py-8 focus:outline-none">
@@ -565,9 +583,12 @@ export default function PersonPage() {
             centered figures interleaved between later sections. */}
         <div className="max-w-3xl mb-10">
 
-          {/* Hero figure: portrait OR initial-letter avatar. Centered,
-              full prose-column width, with rich caption beneath. */}
-          {person.photo && (person.photo.src_local || person.photo.src_external) ? (
+          {/* Hero figure. Portrait when one exists; otherwise the first
+              gallery image (environment or association imagery) is
+              promoted into the hero slot. No portrait and no gallery
+              means no hero figure at all, and the identity header leads.
+              We never fabricate an initial-letter avatar or an apology. */}
+          {hasPortrait ? (
             <figure className="my-6 mx-auto">
               <img
                 src={person.photo.src_local || person.photo.src_external}
@@ -585,29 +606,9 @@ export default function PersonPage() {
                 {(person.photo.license || person.photo.repository) && '.'}
               </figcaption>
             </figure>
-          ) : (
-            // Initial-letter avatar fallback as a centered hero
-            // figure when no photo exists. Same dimensions as the
-            // portrait so the layout reads consistently across the
-            // catalog.
-            <figure className="my-6 mx-auto max-w-2xl">
-              <div
-                aria-hidden="true"
-                className="w-full aspect-[4/3] rounded-md border border-stone-300 flex items-center justify-center mx-auto"
-                style={{ backgroundColor: '#F2483C' }}
-              >
-                <span
-                  className="text-9xl font-medium"
-                  style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
-                >
-                  {(person.display_name || '?').trim().charAt(0).toUpperCase()}
-                </span>
-              </div>
-              <figcaption className="text-sm text-stone-500 italic mt-2 text-center" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                No public-domain or open-licensed photograph identified for this figure. The institutional review chain accepts text-only catalog pages where no usable image exists; if a contributor locates a PD or CC-licensed photograph, it can be added via the catalog JSON&apos;s <code className="not-italic font-mono text-xs">photo</code> field.
-              </figcaption>
-            </figure>
-          )}
+          ) : heroFallbackImage ? (
+            <GalleryFigure image={heroFallbackImage} />
+          ) : null}
 
           {/* AI's reading. Headline content per the catalog discipline:
               a specific embedding-derived observation that the cultural
@@ -670,11 +671,12 @@ export default function PersonPage() {
             </section>
           )}
 
-          {/* First gallery image (if any). Interleaved between the
-              biographical paragraph and the movement-context paragraph
-              so the page has visual rhythm. */}
-          {Array.isArray(person.gallery) && person.gallery[0] && (
-            <GalleryFigure image={person.gallery[0]} />
+          {/* First in-body gallery image (if any). Interleaved between
+              the biographical paragraph and the movement-context
+              paragraph for visual rhythm. bodyGallery has the
+              hero-promoted image removed so nothing renders twice. */}
+          {bodyGallery[0] && (
+            <GalleryFigure image={bodyGallery[0]} />
           )}
 
           {/* Movement context. A second analytical paragraph that
@@ -692,9 +694,9 @@ export default function PersonPage() {
             </section>
           )}
 
-          {/* Second gallery image (if any). */}
-          {Array.isArray(person.gallery) && person.gallery[1] && (
-            <GalleryFigure image={person.gallery[1]} />
+          {/* Second in-body gallery image (if any). */}
+          {bodyGallery[1] && (
+            <GalleryFigure image={bodyGallery[1]} />
           )}
 
           {/* Legacy and reception. A third analytical paragraph
@@ -712,9 +714,9 @@ export default function PersonPage() {
             </section>
           )}
 
-          {/* Remaining gallery images (3rd, 4th, etc.) render at the
-              end of the prose, before the cross-link manifest. */}
-          {Array.isArray(person.gallery) && person.gallery.slice(2).map((img, i) => (
+          {/* Remaining in-body gallery images (3rd, 4th, etc.) render at
+              the end of the prose, before the cross-link manifest. */}
+          {bodyGallery.slice(2).map((img, i) => (
             <GalleryFigure key={`gallery-${i + 2}`} image={img} />
           ))}
         </div>
