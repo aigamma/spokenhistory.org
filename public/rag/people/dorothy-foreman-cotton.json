@@ -7,8 +7,87 @@
   "born": 1930,
   "died": 2018,
   "role_summary": "Educational Director of the Southern Christian Leadership Conference and director of its Citizenship Education Program; accompanied Martin Luther King Jr. to Oslo for the 1964 Nobel Peace Prize.",
-  "ai_reading": "Cotton's top semantic neighbor is C. T. Vivian (entry 134) at 127, followed by the Abernathy family interview (entry 28), Charles McLaurin (entry 17), Clarence B. Jones (entry 20), and Scott Bates (entry 116). The cluster mixes SCLC inner circle (Vivian, the Abernathys) with figures from across the movement's network, broader than the cultural record's strict SCLC framing of her career as Educational Director and Citizenship Education Program director. The novel observation is on the Sacred Framing vs Secular Framing axis, where Cotton sits at +0.52, distinctly toward the Secular pole. For an SCLC officer whose institution's identity was explicitly Christian and whose pulpit-adjacent role accompanied King to Oslo for the Nobel Peace Prize, the Secular-side reading is the AI-vs-culture surprise: the embedding may be catching the literacy-instruction and civic-preparation language of her CEP curriculum (six thousand-plus participants) as more secular-pedagogical than sacred-homiletic in vector signature.",
-  "biographical_paragraph": "More than six thousand people moved through the workshops and classes of the Citizenship Education Program that Dorothy Foreman Cotton directed for the Southern Christian Leadership Conference, the curriculum a combination of literacy instruction and civic preparation pointed at the vote [src: 2]. Cotton's title at the SCLC was Educational Director, and by most accountings she was the highest-ranking woman in the organization [src: 2]. She had met Martin Luther King Jr. in Petersburg, where she was active at the church King had come to speak at; in 1964 she traveled with King to Oslo for the Nobel Peace Prize ceremony [src: 2]. She was born June 9, 1930 in Goldsboro, North Carolina, and her schooling ran through Shaw University (English), Virginia State University, and a Master's in speech therapy at Boston University in 1960 [src: 2]. In 1982 she relocated to Ithaca, New York to serve as Director of Student Activities at Cornell University, and in 2008 she founded the Dorothy Cotton Institute [src: 2]. She died June 10, 2018 in Ithaca at eighty-eight [src: 2]. Her Library of Congress oral history is entry 29 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "ai_reading": "Ranked by how often her passages pull a given interview into their neighborhood, Cotton's nearest figures are C. T. Vivian (entry 134, 127 shared retrievals), the Abernathy family interview (entry 28, 119), Charles McLaurin (entry 17, 108), Clarence B. Jones (entry 20, 99), and Scott Bates (entry 116, 92), an SCLC-heavy grouping that tracks the cultural record. Ranked instead by peak cosine similarity, the order rearranges in a way the record does not anticipate: her single closest passage-to-passage match is Gwendolyn Zoharah Simmons (entry 53) at 0.875, an SNCC and later Black Power organizer whose movement framing diverges from Cotton's SCLC base, ahead of James Oscar Jones (entry 57) at 0.855 and Annie Pearl Avery (entry 3) at 0.823, with Vivian's tightest match trailing at 0.711. Two axis positions sharpen the contrast. On Sacred Framing versus Secular Framing the embedding places her at +0.52 toward the Secular pole, even though her SCLC role was housed in an explicitly Christian institution and she traveled with King to Oslo for the Nobel Peace Prize; the literacy-and-civics vocabulary of the Citizenship Education Program reads as more pedagogical than homiletic in vector space. On Southern Struggle versus Northern Struggle she sits at +0.04, almost exactly at the neutral point, which is unexpected for an organizer whose CEP work ran through Georgia, South Carolina, Alabama, and the Mississippi Delta; the embedding does not register her as a regionally Southern voice the way it does McLaurin (+0.83).",
+  "biographical_paragraph": "Several thousand people moved through the workshops and classes of the Citizenship Education Program that Dorothy Foreman Cotton directed for the Southern Christian Leadership Conference, the curriculum a combination of literacy instruction and civic preparation pointed at the vote [src: 2, 9]. Cotton's title at the SCLC was Educational Director; scholarship at the King Institute describes her as the highest-ranking woman in the organization, and the Veterans of the Civil Rights Movement record places her as the only woman on the SCLC executive staff during her tenure [src: 9, 10]. Her path into the movement ran through Petersburg, Virginia, where Wyatt Tee Walker pastored the church she attended and headed the regional NAACP; Walker drew her into picketing and youth training, and when he invited Martin Luther King Jr. up from Montgomery to speak, Cotton was on the program and met King at the dinner afterward, then followed Walker to Atlanta in 1960 to help build the SCLC [src: 9, 10]. In December 1964 she traveled with King to Oslo for the Nobel Peace Prize ceremony [src: 9]. She was born June 9, 1930 in Goldsboro, North Carolina; she began at Shaw University and completed her undergraduate degree in English and library science at Virginia State College in Petersburg after the university's president, whose household she worked in, moved there, and she earned a master's in speech therapy from Boston University in 1960 [src: 9, 10]. In 1982 she relocated to Ithaca, New York to serve as Director of Student Activities at Cornell University, and in 2008 she founded the Dorothy Cotton Institute [src: 6]. She died June 10, 2018 in Ithaca [src: 9]. Her Library of Congress oral history is entry 29 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "00:36:43",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "Cotton describes how the Petersburg church work first reached Martin Luther King Jr., whom Wyatt Tee Walker invited up from Montgomery to speak:",
+      "quote": "And I had heard something of non-violence and we invited this young preacher from Montgomery, Alabama, Martin Luther King to come up to Petersburg, Virginia."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "00:57:58",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "Recounting how Esau Jenkins on Johns Island connected a lack of political power to a killing that drew no protest, Cotton traces the origin of the program she would run:",
+      "quote": "What I've just said really is the germ of the citizenship education program that ultimately came my job"
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "01:18:23",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "Asked about being a woman with institutional authority inside the SCLC, Cotton describes the executive staff meetings:",
+      "quote": "I could be and almost always was the only woman at the table in an executive staff meeting and if they needed coffee guess who they would ask to get the coffee"
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "01:28:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "On the December 1964 flight to Oslo for the Nobel Peace Prize, Cotton recalls how the traveling party split between two planes:",
+      "quote": "I'm looking at a photograph there while we're going heading to Oslo and and Dr. King's wife Coretta was on one plane and Dr. King was on another plane we in other words the group was divided they never flew on the same plane on a trip like that they had four children to raise"
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "01:37:34",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "Describing the kitchen-table debates with Stokely Carmichael and others over the limits of nonviolence, Cotton repeats King's position:",
+      "quote": "if I am the last lone voice speaking for nonviolence that I will do"
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "02:47:28",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "C. T. Vivian (entry 134), Cotton's nearest neighbor by shared retrievals, places her arrival at the SCLC:",
+      "quote": "Dorothy Cotton was on Dr. King's staff, actually came down from Petersburg with Wyatt Walker."
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "02:33:35",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "Vivian credits Cotton with bringing him to King's attention, which led to his SCLC post as national director of affiliates:",
+      "quote": "Dorothy Cotton had heard me give a speech somewhere and Dorothy Cotton had been telling him about me"
+    }
+  ],
   "movement_context": "The Citizenship Education Program (CEP) that Cotton directed at the SCLC was the institutional successor to the Citizenship Schools that Septima Clark, Bernice Robinson, and Esau Jenkins had founded on Johns Island, South Carolina in 1957 under the auspices of the Highlander Folk School at Monteagle, Tennessee (the school the Carawan joint interview catalog entry 11 documents the music-pedagogy side of) [src: 3]. Highlander transferred the Citizenship Schools program to the SCLC in 1961 (the year before Tennessee revoked Highlander's charter); Septima Clark continued as the program's director through the 1961 SCLC transition, with Cotton serving as the SCLC's institutional executive of the program from 1963 onward [src: 3]. The CEP curriculum was a combination of basic literacy (reading the state voter-registration form, the U.S. Constitution, and local-government documents), civic preparation (the structure of local government, the mechanics of voting, the constitutional rights of voters), and tactical training (how to behave at the registration office, what to do when refused, how to document refusal for federal-court litigation purposes); the workshops ran at the SCLC's Dorchester Cooperative Community Center in Liberty County, Georgia and at scattered local sites across the South [src: 3]. Cotton's December 1964 Oslo trip with King for the Nobel Peace Prize ceremony placed her in the small inner-circle traveling party that included Coretta Scott King, Ralph and Juanita Abernathy, Bayard Rustin, Andrew Young, and Bernard Lee; the photograph record of the December 10 award ceremony at the University of Oslo Auditorium documents her presence in the SCLC delegation [src: 4].",
   "legacy_and_reception": "Cotton's 2012 Atria Books memoir If Your Back's Not Bent: The Role of the Citizenship Education Program in the Civil Rights Movement is the principal published archival document of the CEP's institutional history, drawing on her thirty-year accumulated record of CEP workshop sessions, the Dorchester Cooperative Community Center programming, and the post-1965 voter-registration arc the CEP's literacy-and-civics infrastructure made operationally possible [src: 5]. Her 1982 move to Cornell University as Director of Student Activities was a continuing-education-and-mentorship transition; the 2008 founding of the Dorothy Cotton Institute in Ithaca (the nonprofit organization extending the CEP's pedagogical model to international human-rights-education work) is the institutional successor she designed to carry the CEP curriculum into a post-SCLC century [src: 6]. The 2018 documentary The Dorothy Cotton Story (directed by Penny Loeb for the Dorothy Cotton Institute and the Ithaca Public Education Initiative) is the principal screen-archival document of her career; the documentary draws on Cotton's first-person interviews recorded in the years immediately before her June 10, 2018 death [src: 7]. Cornell University maintains the Dorothy Cotton Papers in the Carl A. Kroch Library Division of Rare and Manuscript Collections (Collection 2802), a fifteen-cubic-foot deposit she made across the 2010s [src: 8].",
   "gallery": [
@@ -63,6 +142,16 @@
       "url": "https://rmc.library.cornell.edu/EAD/htmldocs/RMM02802.html",
       "title": "Dorothy Cotton Papers, Collection 2802",
       "publisher": "Cornell University, Carl A. Kroch Library, Division of Rare and Manuscript Collections (fifteen-cubic-foot archival deposit)"
+    },
+    {
+      "url": "https://kinginstitute.stanford.edu/cotton-dorothy-foreman",
+      "title": "Cotton, Dorothy Foreman",
+      "publisher": "The Martin Luther King, Jr. Research and Education Institute, Stanford University (encyclopedia entry: SCLC Educational Director, director of the Citizenship Education Program, born Goldsboro NC June 9 1930, undergraduate degree completed at Virginia State College, master's in speech therapy Boston University 1960, Oslo 1964)"
+    },
+    {
+      "url": "https://www.crmvet.org/mem/cottond.htm",
+      "title": "Dorothy Cotton",
+      "publisher": "Veterans of the Civil Rights Movement (crmvet.org) (movement-veteran memorial record: Director of SCLC's Citizenship Education Program in the 1960s and 1970s, the only woman on the SCLC Executive Staff during her tenure, born June 9 1930, died June 10 2018)"
     }
   ]
 }

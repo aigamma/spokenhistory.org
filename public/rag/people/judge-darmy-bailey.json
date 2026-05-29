@@ -6,16 +6,88 @@
   "display_name": "Judge D'Army Bailey",
   "born": 1941,
   "died": 2015,
-  "role_summary": "Memphis civil rights attorney and Tennessee Thirtieth Judicial District circuit judge (1990-2009, 2014-2015); board president of the National Civil Rights Museum at the Lorraine Motel from 1983 through its 1991 opening.",
-  "ai_reading": "Bailey's axis positions sit in a tight band near zero (all five within +/-0.26 of center), placing him among the corpus's more centrist voices. His top semantic neighbors are Junius Williams (entry 72, count 165), Robert Brown (entry 106), Robert L. Carter (entry 108, NAACP LDF), Timothy Jenkins (entry 120), and Charles McLaurin (entry 17). The cluster mixes Memphis-Tennessee-South attorneys with national NAACP and SNCC organizers; the embedding therefore reads Bailey not as a strictly local Memphis civil rights figure (which is how his National Civil Rights Museum role would frame him culturally) but as a connector to the national legal-and-organizing network of the broader movement. The Memphis-anchored cultural reading of Bailey (founding the museum at the Lorraine Motel, the King-assassination site) is not what the embedding foregrounds; instead, the lawyer-organizer network signature dominates the vector signature.",
-  "biographical_paragraph": "Bailey was born November 29, 1941 in Memphis, Tennessee and died July 12, 2015 in the same city, at seventy-three [src: 2]. He had been a student at Southern University in Baton Rouge when a class boycott against segregation produced his expulsion; the move to Clark University in Worcester, Massachusetts, was financed by scholarship support from sympathetic students [src: 2]. In 1982 he was part of the group of attorneys and activists who raised $144,000 to purchase the Lorraine Motel, the site of Martin Luther King Jr.'s 1968 assassination, and from 1983 through the 1991 opening he served as board president of the National Civil Rights Museum the group built there [src: 2]. Elected in 1990 as a Tennessee Thirtieth Judicial District circuit judge, he served nineteen years before resigning in 2009 and returning to the bench from September 2014 [src: 2]. He was twice nominated to the Tennessee Supreme Court [src: 2]. His Library of Congress oral history is entry 26 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The April 4, 1968 assassination of Martin Luther King Jr. on the second-floor balcony of the Lorraine Motel was the precipitating event of the building's 1980s historical-preservation arc Bailey led; the motel had been the SCLC's Memphis-headquarters property during the 1968 Memphis sanitation workers' strike (the strike that brought King to Memphis in March-April 1968 and was the stated movement focus of his April 3 'I've Been to the Mountaintop' speech delivered at Mason Temple the night before his death) [src: 3]. The post-assassination history of the Lorraine Motel ran through declining commercial operation, a 1982 bankruptcy auction at which Bailey and the Save the Lorraine Motel Group raised $144,000 to purchase the building, and the National Civil Rights Museum's 1991 opening as the principal U.S. institution preserving the King-assassination site and the broader Memphis sanitation-strike record [src: 2, 3]. Bailey's 1990 election to the Tennessee Thirtieth Judicial District (Shelby County) circuit court bench was part of the post-1965 Tennessee state-judiciary diversification arc; Shelby County had been one of the four Tennessee counties Section 5 preclearance under the Voting Rights Act covered until the 2013 Shelby County v. Holder decision struck down the formula [src: 4]. The Shelby County v. Holder Supreme Court ruling (570 U.S. 529, 2013) was decided two years before Bailey's July 2015 death; the institutional consequence of the ruling for Shelby County voting-rights enforcement was a continuing-litigation topic Bailey participated in publicly through his 2009-2014 retirement-and-return period [src: 4].",
-  "legacy_and_reception": "Bailey's 2009 memoir Mine Eyes Have Seen: Bearing Witness to the Struggle for Civil Rights, co-written with Roger R. Easson, documents both the Southern University expulsion arc and the National Civil Rights Museum founding; it remains the principal published archival document on the museum's 1980s establishment phase before the 1991 public opening [src: 5]. His acting work (small roles in The People vs. Larry Flynt (1996) and Mississippi Burning (1988)) is the second-tier line in his public biography; the Memphis Magazine April 2018 retrospective on the National Civil Rights Museum's twenty-fifth anniversary names Bailey as the museum's central founding figure [src: 6]. The 2015 Bailey funeral at the Mason Temple Church of God in Christ in Memphis was the formal Memphis civic recognition of his role; his archived papers at the University of Memphis Special Collections (Mississippi Valley Collection) include the Save the Lorraine Motel Group corporate records and his judicial-bench papers [src: 7]. The Thirtieth Judicial District seat Bailey held is currently filled by Judge Yolanda R. Kight (sworn in 2024 after the retirement of the 2015 successor judge); the seat's institutional continuity since Bailey's 1990 election is a continuing thread in the diversification arc the catalog page situates his career within [src: 4].",
+  "role_summary": "Memphis civil rights attorney and Tennessee Thirtieth Judicial District circuit judge (1990-2009); board president of the National Civil Rights Museum at the Lorraine Motel from 1983 through its 1991 opening.",
+  "ai_reading": "Bailey is culturally catalogued as a Memphis figure: the lawyer who bought the Lorraine Motel at a 1982 foreclosure auction and built the National Civil Rights Museum on the King-assassination site. The embedding space in this corpus reads him differently. His single highest-cosine neighbor is Reginald Robinson (entry 101, top score 0.89), a SNCC field secretary out of the Baltimore student movement, and the rest of his high-similarity band is Robert L. Carter (entry 108, 0.86, the NAACP General Counsel who argued Brown v. Board), Junius Williams (entry 72, 0.81, and by raw co-occurrence his densest neighbor at count 165), and Timothy Jenkins (entry 120, 0.80, the National Student Association vice president who helped push SNCC toward voter registration). That cluster is a student-movement and movement-lawyer signature, not a Memphis-museum one: the National Student Association conventions where Bailey met Tom Hayden and Barney Frank, the Law Students Civil Rights Research Council he directed, the NAACP Legal Defense Fund Title VII work he did out of New Orleans. On the Southern Struggle versus Northern Struggle axis the vector sits almost exactly at center (raw +0.01), which the museum-founder framing would not predict but which tracks the actual arc of his testimony, divided between Memphis and Southern University in the South and Clark, Yale, Boston, and Berkeley in the North. His other four axis positions also cluster near zero (all within about 0.26 of center on the normalized scale), reading him as one of the corpus's more centrist voices rather than as a figure pinned to any single pole."
+,
+  "biographical_paragraph": "Bailey was born November 29, 1941 in Memphis, Tennessee and died July 12, 2015 in the same city, at seventy-three [src: 2]. He had been a student at Southern University in Baton Rouge, and was elected freshman class president there, when his role in the 1961-1962 student protests produced his expulsion under a rule the administration titled lack of university adjustment; students at Clark University in Worcester, Massachusetts then raised funds, matched by the university, to bring him there on a scholarship [src: 3, 5]. He took his law degree from Yale in 1967, worked for the NAACP Legal Defense Fund and the Law Students Civil Rights Research Council, and served on the Berkeley, California city council from 1971 until a 1973 recall before returning to Memphis to practice law [src: 2]. In December 1982 he bid for a nonprofit group at the foreclosure auction of the Lorraine Motel, the site of Martin Luther King Jr.'s 1968 assassination, and from 1983 through the 1991 opening he served as board president of the National Civil Rights Museum the group built there [src: 2]. Elected in 1990 as a Tennessee Thirtieth Judicial District circuit judge, he served nineteen years before resigning in 2009, and he was twice nominated to the Tennessee Supreme Court [src: 2]. His Library of Congress oral history is entry 26 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]."
+,
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "00:01:24",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "The interviewer opened by asking Bailey to distinguish an activist from a radical, a label the subtitle of his memoir embraces:",
+      "quote": "A radical is a person who's also devoted in terms of their energies to make and change, but they are not bound by the same parameters that an activist is."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "00:15:39",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "Describing riding the segregated buses between Memphis and Baton Rouge as a college student, Bailey accounts for why he sat in the white section alone:",
+      "quote": "But I just felt that I was not born to lead my life letting fear overcome my dignity."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "01:18:32",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "Asked about his commitment to nonviolence, Bailey framed it as circumstance rather than creed:",
+      "quote": "But I was never an advocate of nonviolence as a belief, as I said earlier. We were forced into nonviolence by the reality of the circumstances."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "00:05:51",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "On why he saw the run-down Lorraine Motel as worth preserving after his nonprofit group bought it:",
+      "quote": "We had bought the Lorraine Motel at a foreclosure auction. I knew that it was a place that people would come from around the world because that's where Dr. King's blood still can be seen on the concrete walkway outside of the room where he last slept."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "02:51:05",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "Explaining what he wanted the exhibition at the Lorraine Motel to do, drawing on how the movement had recruited him as a student:",
+      "quote": "And so I felt that we don't have a movement but if we create one here we can perhaps continue to churn out new activists."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "03:09:46",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "Closing the interview, Bailey applied to the museum and to civil rights organizations the same judgment he had made about electoral politics:",
+      "quote": "institutions are only useful to the extent that you can use them to make change. At some point, they become obsolete in terms of your objective, and you have to create new forms to bring about change."
+    }
+  ],
+  "movement_context": "The April 4, 1968 assassination of Martin Luther King Jr. on the second-floor balcony of the Lorraine Motel was the precipitating event of the building's 1980s historical-preservation arc Bailey led; the motel had been a lodging and gathering place for King and the SCLC during the 1968 Memphis sanitation workers' strike, the strike that brought King to Memphis and was the movement focus of his April 3 'I've Been to the Mountaintop' speech delivered at Mason Temple the night before his death [src: 3]. After the assassination the surrounding downtown decayed and the motel declined to a run-down operation under owner Walter L. Bailey Sr (no relation), who kept a small shrine in King's last room; following a 1982 bankruptcy and foreclosure, Bailey's nonprofit group bid $144,000 at the December 13, 1982 courthouse auction to acquire the property [src: 1, 2]. The group incorporated first as the Lorraine Motel King Shrine Foundation, then the Martin Luther King Memphis Memorial Foundation, and after a letter from Coretta Scott King's attorney objecting to the use of King's name, renamed itself the Lorraine Civil Rights Museum Foundation; state, county, and city governments funded the $8.8 million exhibition, and the National Civil Rights Museum opened in 1991 [src: 1, 2]. Bailey's 1990 election to the Tennessee Thirtieth Judicial District (Shelby County) circuit court bench placed him in a county whose name later attached to the 2013 Shelby County v. Holder decision; that Supreme Court ruling (570 U.S. 529, 2013) struck down the Section 4 coverage formula that had subjected covered jurisdictions to Voting Rights Act preclearance, and it was decided two years before Bailey's July 2015 death [src: 4]."
+,
+  "legacy_and_reception": "Bailey's 2009 memoir, The Education of a Black Radical: A Southern Civil Rights Activist's Journey, 1959-1964 (Louisiana State University Press, with Roger Easson and a foreword by Nikki Giovanni), recounts the Southern University expulsion and his student-movement years, naming many figures who also appear in his oral history, among them Malcolm X, Abbie Hoffman, Will D. Campbell, Anne Braden, Tom Hayden, Barney Frank, John Lewis, and Allard Lowenstein [src: 5]. An earlier book, Mine Eyes Have Seen: Dr. Martin Luther King's Final Journey (1993, with David Lyons), addressed King's last days in Memphis [src: 5]. Bailey was also a member of the Screen Actors Guild who took small film roles, frequently as a judge, including Judge Thomas Alva Mantke in The People vs. Larry Flynt (1996); the Memphis Magazine April 2018 retrospective on the National Civil Rights Museum's twenty-fifth anniversary names Bailey as the museum's central founding figure [src: 6, 7]. After his death his body lay in state at the National Civil Rights Museum on July 17, 2015, and his funeral was held July 19 at Mississippi Boulevard Christian Church in Memphis, with former President Bill Clinton among those who spoke; he was buried at Memorial Park Cemetery [src: 2]."
+,
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/61/Lorraine_Motel%2C_Memphis%2C_Tennessee.jpg",
       "alt": "The Lorraine Motel sign in Memphis, Tennessee, now part of the National Civil Rights Museum",
-      "caption": "The Lorraine Motel sign in Memphis, Tennessee. The motel, the site of Martin Luther King Jr.'s April 4, 1968 assassination, was purchased at a 1982 bankruptcy auction by the Save the Lorraine Motel Group that Bailey co-led; the National Civil Rights Museum opened on the property in 1991 with Bailey serving as board president from 1983 through the opening.",
+      "caption": "The Lorraine Motel sign in Memphis, Tennessee. The motel, the site of Martin Luther King Jr.'s April 4, 1968 assassination, was acquired at a December 1982 foreclosure auction by the nonprofit group Bailey led; the National Civil Rights Museum opened on the property in 1991 with Bailey serving as board president from 1983 through the opening.",
       "photographer": "Matthew T Rader",
       "repository": "Wikimedia Commons",
       "license": "CC BY-SA 4.0",
@@ -25,7 +97,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/29/Spot_on_Balcony_of_Lorraine_Motel_Where_Martin_Luther_King_Was_Assassinated_-_With_Commemorative_Wreath_-_National_Civil_Rights_Museum_-_Downtown_Memphis_-_Tennessee_-_USA.jpg",
       "alt": "Memorial wreath at the spot on the Lorraine Motel balcony where Martin Luther King Jr. was assassinated, April 4, 1968",
-      "caption": "The memorial wreath at the spot on the second-floor balcony of the Lorraine Motel where Martin Luther King Jr. was assassinated on April 4, 1968. The room behind the balcony (Room 306) has been preserved as part of the National Civil Rights Museum exhibition. The preservation work Bailey led across 1983-1991 made this specific location the most-visited civil rights memorial site in the United States.",
+      "caption": "The memorial wreath at the spot on the second-floor balcony of the Lorraine Motel where Martin Luther King Jr. was assassinated on April 4, 1968. The room behind the balcony (Room 306) has been preserved as part of the National Civil Rights Museum exhibition that Bailey's foundation commissioned and that opened in 1991.",
       "photographer": "Adam Jones, Ph.D.",
       "repository": "Wikimedia Commons",
       "license": "CC BY-SA 3.0",
@@ -36,7 +108,7 @@
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669197/",
-      "title": "Judge D'Army Bailey oral history",
+      "title": "D'Army Bailey oral history interview conducted by David P. Cline in Memphis, Tennessee, 2013 August 13",
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
@@ -52,22 +124,22 @@
     {
       "url": "https://supreme.justia.com/cases/federal/us/570/529/",
       "title": "Shelby County v. Holder, 570 U.S. 529 (2013)",
-      "publisher": "U.S. Supreme Court (the ruling striking down the Section 4 preclearance formula of the Voting Rights Act; Shelby County, Tennessee, where Bailey served on the circuit court bench, was the named plaintiff)"
+      "publisher": "U.S. Supreme Court (the ruling striking down the Section 4 coverage formula of the Voting Rights Act; Shelby County, Tennessee, where Bailey served on the circuit court bench, was the named plaintiff)"
     },
     {
-      "url": "https://search.worldcat.org/title/297885906",
-      "title": "D'Army Bailey with Roger R. Easson, Mine Eyes Have Seen: Bearing Witness to the Struggle for Civil Rights",
-      "publisher": "John Wiley and Sons, 2009; WorldCat OCLC 297885906"
+      "url": "https://lsupress.org/9780807134764/the-education-of-a-black-radical/",
+      "title": "D'Army Bailey with Roger Easson, The Education of a Black Radical: A Southern Civil Rights Activist's Journey, 1959-1964 (foreword by Nikki Giovanni)",
+      "publisher": "Louisiana State University Press, 2009; ISBN 9780807134764, WorldCat OCLC 1002398706"
+    },
+    {
+      "url": "https://www.clarku.edu/news/2011/01/07/a-radical-life/",
+      "title": "D'Army Bailey '65: A Radical Life",
+      "publisher": "Clark University (the account of Bailey's Southern University expulsion, the student-funded scholarship that brought him to Clark in 1962, his Berkeley council service and recall, his nineteen years as a Tennessee trial judge, and the nine-year effort to build the National Civil Rights Museum)"
     },
     {
       "url": "https://memphismagazine.com/news-features/feature-articles/national-civil-rights-museum-25-years/",
       "title": "National Civil Rights Museum at 25",
       "publisher": "Memphis Magazine, April 2018 (the institutional retrospective on the museum's first quarter-century, naming Bailey as the central founding figure)"
-    },
-    {
-      "url": "https://www.memphis.edu/libraries/special-collections/",
-      "title": "University of Memphis Special Collections, Mississippi Valley Collection",
-      "publisher": "University of Memphis (the archived Bailey papers including the Save the Lorraine Motel Group corporate records and judicial-bench papers)"
     }
   ]
 }

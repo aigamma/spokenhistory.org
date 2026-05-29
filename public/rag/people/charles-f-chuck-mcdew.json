@@ -16,8 +16,98 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Chuck_McDew.jpg",
     "date_taken": "1962-06-09"
   },
-  "ai_reading": "McDew is the most-centrist voice in the corpus in the strict sense: his position on each of the five concept axes lies between -0.13 and +0.15, the narrowest band the catalog has surfaced so far. The cultural reading of McDew as SNCC's second chairman (between Marion Barry and John Lewis) is bracketing rather than positional; he succeeded an organizer-leader and preceded a strategist-leader, and the embedding catches that bracketing structure as a vector-space centrism. His top semantic neighbors are heterogeneous: Charles McLaurin (entry 17, SNCC Mississippi grassroots), Robert L. Carter (entry 108, NAACP LDF lawyer), Harold K. Brown (entry 55), C. T. Vivian (entry 134, SCLC), and Eddie Holloway (entry 33). No single faction dominates, consistent with the chairman-role centrism but a position the cultural-historical record's SNCC-only label would not have predicted.",
+  "ai_reading": "McDew sits unusually close to the center of every concept axis in this corpus: his normalized positions span only -0.13 (Tactical Pragmatism vs Strategic Vision) to +0.15 (Southern vs Northern Struggle), and his raw positions cluster within roughly -0.03 to +0.05 of dead center, among the tightest centrist readings in the audited subset of the catalog. The cultural reading of McDew as SNCC's second chairman, between Marion Barry and John Lewis, is bracketing rather than positional; he succeeded an organizer-leader and preceded a strategist-leader, and the embedding catches that bracketing structure as a vector-space centrism. His top semantic neighbors by passage-match count are heterogeneous rather than SNCC-clustered: Charles McLaurin (entry 17, SNCC Mississippi voter registration, count 116), Robert L. Carter (entry 108, NAACP Legal Defense Fund lawyer, count 75), Harold K. Brown (entry 55, count 74), C. T. Vivian (entry 134, SCLC, count 58), and Eddie Holloway (entry 33, count 56). His own Orangeburg co-organizer Thomas Walter Gaither (entry 119) trails just behind at count 54, so the embedding does not foreground the one neighbor the historical record would have predicted first. No single faction dominates the cluster, consistent with the chairman-role centrism but a structure the cultural-historical record's SNCC-only label would not have anticipated.",
   "biographical_paragraph": "In March 1960, on the campus of South Carolina State College in Orangeburg, Charles McDew and Thomas Gaither pulled roughly a thousand students into a coordinated protest against segregation [src: 1]. McDew was a Massillon, Ohio native, born June 23, 1938; he had taken his college years south, and the next year, 1961, he succeeded Marion Barry as the second chairman of the Student Nonviolent Coordinating Committee, holding the post until John Lewis took it in 1963 [src: 1]. He was arrested forty-three times in the course of that activism [src: 1]. Fellow organizer Bob Moses described him as \"black by birth, a Jew by choice and a revolutionary by necessity\"; McDew had converted to Judaism as a high school student, drawn there by the Talmud's writings on justice [src: 1]. Later he taught at Metropolitan State University in Minneapolis, with a focus on civil rights history and African American studies [src: 1]. He died April 3, 2018 in West Newton, Massachusetts, at seventy-nine [src: 1]; his Library of Congress oral history is entry 16 of the Civil Rights History Project [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Charles F. (\"Chuck\") McDew",
+      "speaker_slug": "charles-f-chuck-mcdew",
+      "source_entry": 16,
+      "timestamp": "00:34:22",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669120/",
+      "lead_in": "McDew recounts the night in Sumter, South Carolina that began his arrests, when a police officer struck him during his freshman year, before he had taken up nonviolence:",
+      "quote": "Now this was before the non-violent civil rights struggle. And I came from a tough steel pound in Massillon, And where somebody put their hand in your face, you return the favor and kind. So when the cop hit me, I hit him."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles F. (\"Chuck\") McDew",
+      "speaker_slug": "charles-f-chuck-mcdew",
+      "source_entry": 16,
+      "timestamp": "00:46:06",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669120/",
+      "lead_in": "On why he declined Martin Luther King's call at the April 1960 Shaw University meeting for the students to join SCLC and pledge nonviolence as a lifelong commitment:",
+      "quote": "Because Dr. King felt if you join, if you use to practice nonviolence, that you should accept nonviolence as a way of life in your life."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles F. (\"Chuck\") McDew",
+      "speaker_slug": "charles-f-chuck-mcdew",
+      "source_entry": 16,
+      "timestamp": "00:47:44",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669120/",
+      "lead_in": "McDew explains the reasoning behind his doubt that nonviolence could function as a way of life in the segregated South:",
+      "quote": "You cannot make a moral appeal in the midst of an amoral society. And I said, it was not immoral. We lived in a society that was amoral."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles F. (\"Chuck\") McDew",
+      "speaker_slug": "charles-f-chuck-mcdew",
+      "source_entry": 16,
+      "timestamp": "00:48:31",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669120/",
+      "lead_in": "On the side meeting at Shaw University in Raleigh in April 1960 where students who would not pledge lifelong nonviolence gathered separately:",
+      "quote": "And that meeting we had down the hall became the first meeting because it was the genesis of the student nonviolence coordinating committee."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles F. (\"Chuck\") McDew",
+      "speaker_slug": "charles-f-chuck-mcdew",
+      "source_entry": 16,
+      "timestamp": "01:01:26",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669120/",
+      "lead_in": "McDew describes SNCC's choice of voter registration as a strategy built for a deliberately short organizational lifespan:",
+      "quote": "And we had determined the voter registration because we wanted to do something that would have a long term effect in a very short period of time."
+    },
+    {
+      "relation": "about",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "00:44:21",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "SNCC contemporary Timothy Jenkins recalls the meeting at which McDew took over the chairmanship from Marion Barry:",
+      "quote": "I think with Chuck McDew became the next chairman of SNCC."
+    },
+    {
+      "relation": "about",
+      "speaker": "Thomas Walter Gaither",
+      "speaker_slug": "thomas-walter-gaither",
+      "source_entry": 119,
+      "timestamp": "00:35:39",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669142/",
+      "lead_in": "Thomas Walter Gaither, McDew's co-organizer of the Orangeburg student protest, places him at the movement's beginning in South Carolina:",
+      "quote": "Not absolutely certain, but the person from South Carolina state may have been Chuck McDew. Chuck McDew was there very early on."
+    },
+    {
+      "relation": "about",
+      "speaker": "Reginald Robinson",
+      "speaker_slug": "reginald-robinson",
+      "source_entry": 101,
+      "timestamp": "01:48:25",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655421/",
+      "lead_in": "SNCC organizer Reginald Robinson, who described himself as close to McDew, notes his northern industrial roots:",
+      "quote": "You take a fellow like [Chuck] McDew who comes from Massillon, Ohio."
+    }
+  ],
   "movement_context": "The March 15, 1960 Orangeburg protest McDew and Thomas Walter Gaither (catalog entry 119) co-led on the South Carolina State College campus was the first mass sit-in action of the post-Greensboro student protest movement to result in mass arrests; SC State and adjacent Claflin College students walked from campus to the Kress and S. H. Kress and Co. lunch counters on Russell Street in downtown Orangeburg, where the South Carolina Highway Patrol turned fire hoses on them and arrested roughly four hundred for breach of peace [src: 2]. McDew was the spokesman for the arrested students; the arrest record from that action initiated the forty-three-arrests count his oral history references [src: 2]. The SNCC chairmanship McDew succeeded to in November 1961 ran through the SNCC field-staff expansion across Mississippi, Alabama, and the Arkansas Delta; he held the chair through the spring 1963 transition that put John Lewis in the position for the August 28, 1963 March on Washington at which Lewis's prepared SNCC remarks were censored by the march organizers (the Big Six leadership and the Catholic and Jewish organizational sponsors) to remove SNCC's most direct condemnations of the Kennedy administration's slow-walking of the civil rights bill [src: 3]. McDew's tenure thus bracketed two critical SNCC transitions: from Marion Barry's individual-organizer model to a national-staff institutional model, and from a regional-southern field operation to the national-political-positioning posture the 1963 March on Washington required SNCC to navigate [src: 3].",
   "legacy_and_reception": "After his SNCC tenure McDew worked as a community organizer in Mississippi and later in Massachusetts and Minnesota; he completed a Bachelor's degree at Boston University and began a forty-year teaching career at Metropolitan State University in Minneapolis (formerly Metropolitan State College, founded 1971), where he was a senior faculty member in civil rights history and African American studies until shortly before his April 3, 2018 death in West Newton, Massachusetts [src: 1]. His extensive oral-history record beyond the LoC CRHP recording includes the Duke University SNCC Digital Gateway entry (drawing on archival material at the Robert W. Woodruff Library, Atlanta University Center) and the Civil Rights Movement Archive (founded by veteran SNCC and CORE organizers) [src: 4]. The 1981 Clayborne Carson institutional history In Struggle (Harvard University Press, Bancroft Prize 1982) and the 2010 Wesley C. Hogan Many Minds, One Heart: SNCC's Dream for a New America (UNC Press) draw extensively on the chairmanship-tenure record McDew left through his SNCC papers donated to the Atlanta University Center [src: 5].",
   "gallery": [
