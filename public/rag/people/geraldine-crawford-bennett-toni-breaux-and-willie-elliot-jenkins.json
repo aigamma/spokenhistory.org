@@ -9,6 +9,85 @@
   "role_summary": "Joint oral history of the surviving children of Gayle Jenkins (a leader of the Bogalusa, Louisiana civil rights movement). Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins are siblings; Willie Jenkins was a child plaintiff in the federal court case that integrated Bogalusa public schools; the family was protected during demonstrations by the Bogalusa Deacons of Defense and Justice (catalog entry 25 documents the Andersons, who were among the Deacons leaders).",
   "ai_reading": "The Crawford-Breaux-Jenkins siblings' top semantic neighbor is the Abernathy family joint interview (entry 28) at a cosine count of 150; the broader cluster includes Peggy Jean Connor (entry 96), Frankye Adams-Johnson (entry 43), and the Cynthia + Fletcher Anderson joint interview (entry 25, also Bogalusa). The Anderson pairing is the catalog's clearest same-community Bogalusa cosine: the Andersons led the Deacons of Defense; the Crawford-Breaux-Jenkins testimony references the Deacons protecting their family; the two families' embeddings rhyme because they document the same Bogalusa organizing arc from different vantage points. The Abernathy-family pairing is the catalog's clearest case of a movement-leader's-children cohort signature: both the Crawford-Breaux-Jenkins (Gayle Jenkins's children) and the Abernathy family (Ralph and Juanita's children) testify to the same movement-leader-parental-shadow experience, the embedding catches that shared register as a stronger signal than either family's local-community-organizing cosines would predict.",
   "biographical_paragraph": "While this joint LoC oral history carries an ingestion-only audit tier (the catalog ingested the transcript but did not subject it to the audit cascade, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record of the Jenkins family is documented through the NMAAHC object record [src: 1, src: 2]. Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins are siblings (and Geraldine and Toni are also Gayle Jenkins's daughters), the surviving children of Gayle Jenkins, who was a leader of the Bogalusa, Louisiana civil rights movement in the 1960s. Their late brother Don was also active in the movement [src: 2]. Willie Elliot Jenkins was a child plaintiff in the federal court case that compelled the integration of Bogalusa public schools in the late 1960s [src: 2]. The family describes growing up under the protection of the Deacons of Defense and Justice (the armed-self-defense organization catalog entry 25's Andersons led in Washington Parish), participating in local rallies, and the long arc of Bogalusa civil rights organizing through their late twentieth century [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Geraldine Crawford Bennett",
+      "speaker_slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+      "source_entry": 46,
+      "timestamp": "00:03:00",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669117/",
+      "lead_in": "Opening the interview, Geraldine Crawford Bennett (Gayle Jenkins's sister) sketches Black life in Bogalusa before the movement and the clinic work the two sisters did together:",
+      "quote": "It was very segregated before the movement. But my sister was born a go-getter. We worked in a white clinic where no blacks were allowed. She was the cook, and I was the maid."
+    },
+    {
+      "relation": "self",
+      "speaker": "Toni Breaux",
+      "speaker_slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+      "source_entry": 46,
+      "timestamp": "00:04:36",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669117/",
+      "lead_in": "Asked to recall her mother, Toni Breaux (Gayle Jenkins's daughter) describes the household rule that drove the family into the movement:",
+      "quote": "My mom was a very strict mama. She always said that when you graduate from high school and go to college, it wasn't an option with her."
+    },
+    {
+      "relation": "self",
+      "speaker": "Toni Breaux",
+      "speaker_slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+      "source_entry": 46,
+      "timestamp": "00:16:10",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669117/",
+      "lead_in": "Toni Breaux explains why she calls her mother a forgotten figure of the Bogalusa campaign and how Gayle Jenkins understood her own leadership role:",
+      "quote": "I consider her the forgotten hero, because, uh, they do a lot of things for people here, but my mama was the backbone of the civil rights movement. But she was not the one that wanted to be in the forefront; she thought that was for the men to do."
+    },
+    {
+      "relation": "self",
+      "speaker": "Willie Elliot Jenkins",
+      "speaker_slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+      "source_entry": 46,
+      "timestamp": "00:19:13",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669117/",
+      "lead_in": "Willie Elliot Jenkins (known as Chuck), the child plaintiff in the school-desegregation suit, recalls how his mother told him he would be the named plaintiff:",
+      "quote": "When they got ready to integrate the schools, she said, \"Chucky, you're going to file a suit to integrate the schools.\" It wasn't whether you want to file a suit."
+    },
+    {
+      "relation": "self",
+      "speaker": "Willie Elliot Jenkins",
+      "speaker_slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+      "source_entry": 46,
+      "timestamp": "00:48:56",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669117/",
+      "lead_in": "Asked what the demonstrations felt like as a thirteen- or fourteen-year-old marching down Columbia Road, Willie Elliot Jenkins describes the mindset that carried him through:",
+      "quote": "You develop, uh, like a tunnel vision. You're trying to, you know, ignore all the things that's going on around you. But, uh, you know, at this time, I'm like thirteen or fourteen years old, you know."
+    },
+    {
+      "relation": "self",
+      "speaker": "Geraldine Crawford Bennett",
+      "speaker_slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+      "source_entry": 46,
+      "timestamp": "01:14:54",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669117/",
+      "lead_in": "Geraldine Crawford Bennett recounts going back to school as an adult to become a registered nurse, and the employment wall she hit in Bogalusa:",
+      "quote": "I went to college. And it was just like going to the first grade. I came from the first grade to the college. I was the oldest - I was older than the president. But I graduated and I was a registered nurse. And I could never get a job. They barred me in Bogalusa."
+    },
+    {
+      "relation": "about",
+      "speaker": "Cynthia Baker Anderson",
+      "speaker_slug": "cynthia-anderson",
+      "source_entry": 25,
+      "timestamp": "01:11:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669115/",
+      "lead_in": "In the companion Bogalusa interview (catalog entry 25), Cynthia Baker Anderson, whose husband Fletcher was a Deacon, names Gayle Jenkins (the siblings' mother) among the women at the center of the local campaign:",
+      "quote": "And there are women like myself, Mrs. Hicks and Gayle Jenkins, that were the part of Mrs. Y, that were the part of this."
+    }
+  ],
   "movement_context": "Bogalusa, Louisiana sits in Washington Parish near the Mississippi border, a paper-mill town built around the Great Southern Lumber Company and (after the 1937 stock-for-stock merger) Crown Zellerbach Corporation; by 1965 it had become one of the most active sites of the Deep South civil rights movement, with a local organizing base distinct from the SCLC-led Alabama and SNCC-led Mississippi campaigns [src: 3]. The Bogalusa Civic and Voters League (BCVL), the Black community organization that anchored the local campaign, invited the Congress of Racial Equality (CORE) into Bogalusa in early 1965; CORE field organizer Bill Yates was beaten by white assailants on Bogalusa streets in February 1965, and the BCVL launched a boycott of downtown segregated businesses in May, with sustained direct-action demonstrations through the summer of 1965 [src: 3]. Gayle Jenkins (mother of Geraldine, Toni, and Willie Elliot, and a co-organizer alongside BCVL president Robert Hicks and vice president A. Z. Young) became a central organizer in the campaign; her home, like the Hicks residence and the Anderson home, was a target of segregationist retaliation and a meeting site for movement strategy [src: 3, src: 4]. The Bogalusa chapter of the Deacons of Defense and Justice, founded in early 1965 as the second and most institutionally durable chapter after Jonesboro, took on the operational role of protecting BCVL leaders' homes (including the Jenkins household), guarding demonstrations from white-mob violence, and escorting CORE organizers; Fletcher Anderson (catalog entry 25) was a founding member and Robert Hicks was a close associate [src: 5]. The federal litigation that emerged from the campaign was extensive: Hicks v. Knight (1967) desegregated the Washington Parish jury system; Jenkins v. Bogalusa City School Board (1969) was the federal court order that compelled integration of Bogalusa public schools, with Willie Elliot Jenkins among the named child plaintiffs; Hicks v. Hall (1971) addressed continuing voter-registration discrimination; and Local 189, United Papermakers and Paperworkers v. United States (5th Cir. 1969) reformed plant-level seniority at the Crown Zellerbach mill where most of the Black male workforce was employed [src: 4, src: 6]. The Bogalusa campaign therefore produced one of the most legally consequential federal-court records of the post-1965 Deep South civil rights era, and the Crawford-Breaux-Jenkins siblings' testimony documents the household and family dimension of the campaign that the institutional histories tend to record only at the level of named adult leaders [src: 3, src: 4].",
   "legacy_and_reception": "The Bogalusa movement Gayle Jenkins helped lead has received sustained scholarly attention through Lance Hill's institutional history of the Deacons of Defense (the standard reference on the Bogalusa chapter), Adam Fairclough's Race and Democracy survey of Louisiana civil rights, and Robert Hayden Lockhart's documentation of the BCVL-CORE alliance [src: 3, src: 5, src: 7]. The Robert Hicks House in Bogalusa was listed on the National Register of Historic Places in 2014 (NRHP Reference 14001174) as a documentary site of the 1965 campaign and the Deacons of Defense's operational role; the listing is one of the few NRHP entries in the Deep South to recognize a Black-civilian-defense-organization site specifically [src: 8]. The federal-court record the Jenkins family helped produce, and especially Jenkins v. Bogalusa City School Board, continues to be cited in school-desegregation case law and in legal-historical scholarship on the Fifth Circuit's role in dismantling segregated public education [src: 6]. The Civil Rights History Project's selection of the Crawford-Breaux-Jenkins siblings for a joint oral history in 2011 reflects the project's methodological commitment to capturing the family and household dimension of civil rights organizing, which earlier scholarly histories had treated as background to the named-adult-leader record [src: 1, src: 2].",
   "gallery": [

@@ -9,6 +9,85 @@
   "role_summary": "Joint oral history of two pioneering Black journalists: Simeon Booker (1918-2017, Jet and Ebony Washington bureau chief from 1955), who covered the Emmett Till trial and the Freedom Rides; and Moses Newson (1927-2024), Baltimore Afro-American reporter who also covered both the Till trial and the 1961 Freedom Rides.",
   "ai_reading": "The Booker/Newson interview's top semantic neighbor is Charles McLaurin (entry 17, count 124), with C. T. Vivian (entry 134, SCLC), Annie Pearl Avery (entry 3, SNCC), Robert L. Carter (entry 108, NAACP LDF), and H. Jack Geiger (entry 54, Mississippi community health) rounding out the top five. The cluster is broadly civil-rights-network, with the embedding pulling their journalist-witness testimony as close to the SNCC field organizers they covered as to the NAACP legal infrastructure that supported the cases they reported. The Southern Struggle axis position of +0.53 reflects their Mississippi-Till-trial and Alabama-Freedom-Ride coverage anchor. The journalist's eye in their testimony reads similar to the Mississippi voter-registration cohort's testimony, the embedding noting that the chronicler and the chronicled share enough vocabulary for high cosine similarity.",
   "biographical_paragraph": "This is a joint oral history at the Library of Congress as entry 9 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Joint interviews in the corpus combine the testimony of two or more interviewees in a single recording; the catalog page treats the embedding signature of the joint transcript as one unit (see the AI's reading above). Independent biographical sourcing for each individual interviewee is pending; future enrichment may split this entry into separate per-person pages if individual biographical material becomes accessible.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Simeon Booker",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:12:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Simeon Booker, who covered the Emmett Till case for Jet, recalls the Chicago funeral where Mamie Till insisted on an open casket so the public would see her son's body:",
+      "quote": "when it did come, she demanded that the body be open. So the world could see what they did to my boy."
+    },
+    {
+      "relation": "self",
+      "speaker": "Simeon Booker",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:14:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Booker describes what the Till photograph did to Jet's reach after the magazine published David Jackson's open-casket image:",
+      "quote": "The jet circle just took off when they ran the picture. They had the reprint. First time they ever reprinted jet magazines, and there were a lot of interest in that case."
+    },
+    {
+      "relation": "self",
+      "speaker": "Moses Newson",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:21:03",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Moses Newson, then reporting for the Tri-State Defender, recounts disguising himself with NAACP workers to find witnesses for the Till murder trial near Money, Mississippi:",
+      "quote": "We changed clothes and went out wearing something, something like plantation workers would use to be wearing. We did round up a couple of people who did testify on the case."
+    },
+    {
+      "relation": "self",
+      "speaker": "Moses Newson",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:26:30",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Newson describes how the segregated Tallahatchie County courthouse seated the press during the Till trial in Sumner, Mississippi:",
+      "quote": "The sheriff told us when we got there, there had been no integration in my courthouse. In addition to that, there was a press table there for white reporters and photographers and whatnot. But not for black reporters."
+    },
+    {
+      "relation": "self",
+      "speaker": "Moses Newson",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:38:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Covering the Little Rock school crisis in 1957, Newson recalls the morning Elizabeth Eckford arrived at Central High School alone:",
+      "quote": "One of them didn't get the word Elizabeth Eckford. And she got up there by herself and the guard wouldn't let her through."
+    },
+    {
+      "relation": "self",
+      "speaker": "Simeon Booker",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:50:26",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Booker explains how he and Newson rode separate buses on the 1961 Freedom Ride, with Newson aboard the Greyhound that was firebombed outside Anniston, Alabama:",
+      "quote": "We went from Washington after the Atlanta and Anniston, when one bus was burned and Moses [Newson] was on that bus. I was on the other bus."
+    },
+    {
+      "relation": "self",
+      "speaker": "Moses Newson",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "01:02:45",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Newson, aboard the Greyhound bus attacked outside Anniston, Alabama on May 14, 1961, describes the moment the firebomb came through a window:",
+      "quote": "They finally made a breakthrough, one of the windows and it threw this fire bomb thing in the seat just behind me, which is an empty seat. And I got a few burns on the back of the ear and that's all the thing. But nothing serious."
+    }
+  ],
   "movement_context": "The Black-press infrastructure Booker and Newson worked through (Booker at Jet and Ebony, both Johnson Publishing Company titles owned by John H. Johnson out of Chicago; Newson at the Baltimore Afro-American, the John H. Murphy Sr. family weekly founded in 1892) was the publication channel through which the visual record of the 1955 Emmett Till murder and trial reached national Black readers in the weeks the white-press establishment was largely declining the story [src: 2]. Jet magazine's September 15, 1955 issue (number 87, dated September 15 with publication backdating to the previous Thursday under contemporary periodical convention) reproduced David Jackson's open-casket photograph of Till at the request of Till's mother Mamie Till-Mobley; the photograph's circulation through Jet to roughly four hundred thousand Black households was the visual-attention generation that brought the September 19-23 trial in Sumner, Mississippi to national consciousness [src: 2]. Booker, then Jet's new Washington bureau chief (he had taken the post in 1955 and would hold it for fifty-three years), covered the trial directly; Newson covered the Anniston firebombing of the Freedom Riders' Greyhound bus on May 14, 1961, the post-Anniston Trailways bus attack at Birmingham, and the post-Birmingham Montgomery beatings of the Riders that drew the Kennedy Justice Department's federal-marshal intervention [src: 2, 3]. The joint-interview format the CRHP recorded with them in 2011 placed two of the central first-person archival sources for the Till trial and the Freedom Rides in conversation, an editorial choice the catalog page treats as a deliberate design rather than a recording-convenience accident [src: 1].",
   "gallery": [
     {

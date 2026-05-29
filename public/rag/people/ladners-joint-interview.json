@@ -9,6 +9,96 @@
   "role_summary": "Joint oral history with sisters Dorie Ann Ladner (1942-2024), SNCC field secretary in Mississippi and Natchez and an MFDP Atlantic City 1964 delegate, and Joyce Ann Ladner (born 1943), sociologist, Howard University faculty, and interim president of Howard University in 1994-1995.",
   "ai_reading": "The Ladners' top semantic neighbor is Charles McLaurin (entry 17, count 239), the Sunflower County SNCC project director; the rest of their cluster is the tight Mississippi voter-registration cohort (Juadine Henderson, Frankye Adams-Johnson, Martha Prescod Norman Noonan, Dr. Doris Derby). The embedding reads them cleanly inside that cohort, with no surprise on the neighbor pattern. Their Southern Struggle axis position of +0.35 confirms the Mississippi anchor. The catalog's broader pattern of joint sibling/family interviews (the Carawans, the Tillows, John and Jean Rosenberg, the Hamilton/Ulmer pair) is a documented secondary signal: the embedding tends to read paired-name interviews as belonging to whichever individual or movement context their combined transcript most resembles, rather than producing a distinct joint-interview vector signature. The Ladner sisters' transcript reads as Mississippi-voter-registration first.",
   "biographical_paragraph": "Dorie Ann Ladner and Joyce Ann Ladner (joint interview)'s oral history is held at the Library of Congress as entry 75 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "00:31:59",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "Joyce Ann Ladner, who had left Mississippi for graduate study in sociology, describes the guilt she carried while her sister Dorie stayed on as a SNCC field secretary in Natchez:",
+      "quote": "I lived with so much guilt, just tremendous guilt. And I was worried my sister was still back in the South, but not only in the South, but in the Natchez, she had the most notorious reputation for it being a dangerous place."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "00:35:22",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "Joyce Ann Ladner, recalling driving her white Tougaloo roommate Joan Trumpauer home along an unlit stretch of Hanging Moss Road, reflects on what courage came to mean to her:",
+      "quote": "But I came to understand, I guess, as I got older, that fear doesn't mean inaction. I mean, courage was the ability to act or to prevail in spite of one's fear. Because you could easily be paralyzed by your fear."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "00:50:18",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "Joyce Ann Ladner, the sociologist of the pair, names the term she coined for the cohort of young Mississippians whose activism was set in motion by the 1955 murder of Emmett Till:",
+      "quote": "I often say that, in fact, I coined the term the Emmett Till generation. I say that there was no more exciting time to have been born at the time and the place and to the parents that movement, young movement people were born to."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorie Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "00:24:40",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "Dorie Ann Ladner, asked about the summer she was so often ill in Natchez, describes the nightly toll of organizing under the threat of attack:",
+      "quote": "So we never knew whether or not we were going to wake up and I developed stomach problems from eating, it was pure stress, pure stress, but it made me more determined."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorie Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:15:34",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "Dorie Ann Ladner recalls the morning in 1962 when she left Palmer's Crossing to join Bob Moses in Jackson, having announced it to her mother only on her way out the door:",
+      "quote": "I said, Mother, I packed a few little pieces and had a little small orange suitcase. I said, Mother, I'm going to go to Jackson and work with Bob Moses to get my freedom, as I was going out the door to go downtown to catch the greyhound bus."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorie Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:53:17",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "Dorie Ann Ladner, assigned at the 1964 Atlantic City convention to lobby the Oregon delegation alongside MFDP delegates Hartman Turnbow and his wife, remembers Mrs. Turnbow sitting silently through the meeting:",
+      "quote": "She was carrying a brown paper bag, she had a pistol in it."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "01:37:46",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "Lisa Anderson Todd, a white volunteer in the 1964 Mississippi Summer Project, recalls meeting Dorie Ladner at a mid-1990s screening of the documentary Freedom on My Mind, where Dorie thanked her for her summer work:",
+      "quote": "The other person who did that for me is Dorie Ladner and I'll never forget that."
+    },
+    {
+      "relation": "about",
+      "speaker": "Charles McLaurin",
+      "speaker_slug": "charles-mclaurin",
+      "source_entry": 17,
+      "timestamp": "02:33:49",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655412/",
+      "lead_in": "Charles McLaurin, the Sunflower County SNCC project director whose interview is the Ladners' closest semantic neighbor in this corpus, recalls the carload of young organizers Bob Moses gathered to drive from Tougaloo to a SNCC conference in Nashville, naming both sisters among them:",
+      "quote": "And so that night we load up in the car. Hollis Watkins and I meet Hollis Watkins. I never met Hollis Watkins, Dorie Ladner and Joyce Ladner and Curtis Hayes and Victoria Gray Adams. And you know I meet all of these people that Bob have got coming up to get to Nashville."
+    }
+  ],
   "movement_context": "Dorie Ann Ladner (born June 28, 1942) and Joyce Ann Ladner (born October 12, 1943) grew up in Palmer's Crossing, an unincorporated Black settlement on the southern outskirts of Hattiesburg in Forrest County, Mississippi; the Palmer's Crossing community was a hub of Black self-organization in the 1940s and 1950s, and the sisters' early movement exposure came through Vernon Dahmer (the NAACP Forrest County branch leader who was killed by Klansmen on January 10, 1966 in the firebombing of his Kelly Settlement home) and Clyde Kennard (the Korean War veteran who was framed by Mississippi state authorities on a contrived larceny charge in 1960 after his attempt to integrate Mississippi Southern College in Hattiesburg) [src: 2]. Both sisters enrolled at Tougaloo College on the north edge of Jackson, Mississippi, where they came under the sociological mentorship of Ernst Borinski, the German-Jewish refugee scholar who had built the Tougaloo Social Science Forum into one of the very few integrated intellectual spaces in segregated Mississippi from 1947 forward [src: 3]. Borinski's seminars convened Black and white sociologists across the color line and supplied the sisters with the disciplinary scaffolding Joyce would carry into her later academic work [src: 3]. Dorie left Tougaloo in 1962 to take a SNCC field-secretary post, organizing voter-registration drives in Natchez, Hattiesburg, and Jackson, and she was part of the Mississippi Freedom Democratic Party delegation that traveled to the 1964 Democratic National Convention in Atlantic City to challenge the all-white regular Mississippi delegation [src: 4]. Joyce completed her bachelor's degree at Tougaloo in 1964 and went on to graduate study in sociology at Washington University in St. Louis under Lee Rainwater, the sociologist whose Pruitt-Igoe and family-structure work was central to the 1960s urban-sociology research the Moynihan Report drew from [src: 5]. Joyce's 1971 monograph Tomorrow's Tomorrow: The Black Woman, drawn from her dissertation field research with adolescent Black girls in St. Louis public housing, was one of the earliest book-length sociological studies of Black women authored by a Black woman sociologist, and it is recognized as a foundational text in the formation of Black feminist sociology as a sub-discipline [src: 5, 6].",
   "legacy_and_reception": "Joyce Ladner served as interim president of Howard University from 1994 to 1995, the first woman to hold the office in the university's history; she had joined the Howard faculty in 1973 and served as vice president for academic affairs before her interim presidency [src: 5]. Her later research and policy work continued at the Brookings Institution as a senior fellow on family structure and Black community institutions, and she remained an active public commentator on the legacy of Mississippi SNCC organizing through the 2010s and 2020s [src: 5]. Dorie Ladner remained based in Washington, D.C. through her later life and continued her public-speaking and SNCC alumni network role at the SNCC 50th Anniversary Conference at Shaw University in Raleigh in 2010 and at the SNCC Legacy Project's continuing institutional work; she died on March 11, 2024 in Washington, D.C. at the age of 81 [src: 4, 7]. The principal collective-memoir document of the SNCC women's cohort, Hands on the Freedom Plow: Personal Accounts by Women in SNCC (University of Illinois Press, 2010), carries Dorie's first-person account of her Natchez and Atlantic City organizing alongside the parallel testimony of fifty-one other SNCC women [src: 8].",
   "gallery": [
