@@ -16,8 +16,43 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Sammy_Younge.jpg",
     "date_taken": "1964"
   },
-  "ai_reading": "Younge is referenced three times in the catalog, most directly in the Gwendolyn M. Patton (entry 52) page where the January 1966 protests following his murder are documented as one of her central organizing events. He is not himself a Civil Rights History Project interviewee (his death predated the project by four decades). His standalone catalog page is added because the catalog's Tuskegee-and-Macon-County cohort cannot be fully resolved without the anchor event that radicalized that cohort and pulled SNCC's Black Power discussion forward; January 3, 1966 was the date the SNCC central committee began the conversation that led to Stokely Carmichael's June 1966 Black Power speech six months later. The novel observation his page surfaces is the navy-veteran-as-civil-rights-target signature: Younge was a Navy veteran with a medical discharge whose service did not protect him from the segregationist violence the movement was confronting; the catalog's Julius Becton (entry 71, military) and Aaron Dixon (entry 1, BPP) pages both reference veteran-organizers but in different registers, and Younge sits in the gap between those framings as a veteran whose death the BPP-cohort and SCLC-cohort both later cited.",
+  "ai_reading": "Younge has no oral history of his own (his death in January 1966 predated the Civil Rights History Project by more than four decades), so the only place his name enters this corpus is in the testimony of interviewees who knew him. Four of them name him: Gwendolyn M. Patton (entry 52), who organized alongside him in TIAL at Tuskegee; Jennifer Lawson (entry 59), who calls him her classmate; Cleveland Sellers (entry 22), who dates his killing to January 1966 and ties it directly to SNCC's anti-war statement; and Kathleen Cleaver (entry 73), who recounts his Navy service, his voter-registration work in Macon County, and the protests his murder set off. The signature that emerges across those four voices is the veteran-as-target reading: in the corpus he is consistently introduced through his Navy service first and his killing second, and the same passages that mark him as a veteran also mark him as the case that moved SNCC to oppose the Vietnam War. The catalog's Aaron Dixon (entry 1) and Cleveland Sellers (entry 22) pages both carry veteran-and-Black-Power material, but Younge enters this corpus only as a name others speak, never as a voice, which is itself the structural fact his page records.",
   "biographical_paragraph": "Younge was born November 17, 1944 in Tuskegee, Alabama, the son of Renee and Samuel Younge Sr. He attended Cornwall Academy in Massachusetts and the Tuskegee Institute (then a historically Black college) before enlisting in the U.S. Navy. He was medically discharged in 1964 after a lung was removed for unrelated medical reasons. Returning to Tuskegee Institute, he joined SNCC and the Tuskegee Institute Advancement League (TIAL) and worked on Macon County voter-registration drives. On the evening of January 3, 1966, after a long day of voter-registration work, Younge attempted to use the whites-only restroom at a Standard Oil gas station in downtown Tuskegee; an argument with the white attendant Marvin Segrest ensued, and Segrest shot him to death. Segrest was acquitted by an all-white jury in December 1966; the case was one of the precipitating events for SNCC's January 1966 decision to publicly oppose the Vietnam War. James Forman's 1968 biography Sammy Younge Jr.: The First Black College Student to Die in the Black Liberation Movement (Macmillan, OCLC 250693) is the canonical scholarly source on the killing and its movement reception.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Gwendolyn M. Patton",
+      "speaker_slug": "gwendolyn-m-patton",
+      "source_entry": 52,
+      "timestamp": "01:27:27",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669119/",
+      "lead_in": "Patton, a Tuskegee Institute Advancement League organizer, recalls the 1965 relay march from Macon County toward Montgomery that the students named the march that wouldn't turn around:",
+      "quote": "And Tuskegee students, led by Sammy Younge Jr, was one of the grade organizers, but it was a whole committee."
+    },
+    {
+      "relation": "about",
+      "speaker": "Jennifer Lawson",
+      "speaker_slug": "jennifer-lawson",
+      "source_entry": 59,
+      "timestamp": "01:38:25",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655422/",
+      "lead_in": "Lawson, a Tuskegee student working with SNCC in the same period, places his killing in early 1966 and identifies him as a fellow student:",
+      "quote": "I know I was still in school when my classmate, Samuel Younge Jr, was killed. And Sammy was a part of the student group there."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dr. Cleveland Sellers",
+      "speaker_slug": "dr-cleveland-sellers",
+      "source_entry": 22,
+      "timestamp": "01:34:27",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669180/",
+      "lead_in": "Sellers, then SNCC's program secretary, connects the killing to the organization's public break with the Vietnam War:",
+      "quote": "Samuel Younge Jr is killed in, in January 1966 and, um, uh, the SNCC responds by putting out a statement against the war in Vietnam."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/250693",

@@ -16,8 +16,65 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:James_Chaney_(3x4_cropped).jpg",
     "date_taken": "1964"
   },
-  "ai_reading": "Chaney is referenced once in the catalog (in the Alfred Moldovan entry 133 page, where the discovery of the Mississippi Burning bodies in August 1964 is the moment that anchors Moldovan's MCHR Mississippi work). He is not himself a Civil Rights History Project interviewee (his death predated the project by four decades). His standalone catalog page is added because the catalog's Freedom Summer cohort (Patton, Adams-Johnson, Connor, the Bassetts, the Ackermans, the Ladner sisters, Phil Hutchings, et al) cannot be fully resolved without the June 21, 1964 catalyzing event their organizing arc circles. The novel observation his page surfaces is the local-organizer-as-target signature: Chaney, the only African American of the three, was a Meridian native and the project's bridge to the local community; the Klan targeted him with a deliberate post-mortem cruelty the FBI files document, the local-vs-Northern target-differentiation pattern segregationist violence followed.",
+  "ai_reading": "Chaney is the rare external figure the corpus reaches for by name across many separate voices rather than one. He surfaces in at least a dozen interviews, and the embedding clusters those mentions not by Chaney himself but by the moment of his death: nearly every passage that names him also names Goodman and Schwerner in the same breath, so the three resolve in the substrate as a single fused event-token rather than three people. What the verbatim record adds beyond the textbook account is proximity. Several interviewees who place him are not narrating a national headline but a person they knew: the Ladner sisters recall him as Movement staff who were always at the Jackson meetings, Gwendolyn Zoharah Simmons had met him her first week at the Oxford, Ohio orientation, Euvester Simpson later met his mother, and Joan Trumpauer Mulholland says flatly that the three were on campus a lot and we knew them. He is not himself a Civil Rights History Project interviewee; his death predated the project by more than four decades. His standalone catalog page is added because the catalog's Freedom Summer cohort cannot be fully resolved without the June 21, 1964 catalyzing event their organizing arc circles. The observation his page surfaces is the local-organizer signature: Chaney, the only African American of the three, was a Meridian native and the project's bridge to the local Black community, and the interviewees who knew him register him as inside the Mississippi staff network the Northern volunteers were only entering.",
   "biographical_paragraph": "Chaney was born May 30, 1943 in Meridian, Mississippi to Fannie Lee and Benjamin Chaney Sr. He attended Harris Junior College and worked as a plasterer's apprentice. He joined the Congress of Racial Equality (CORE) in fall 1963 and became a CORE field worker in the Meridian office, where he served as a community-organizer bridge between the visiting Northern volunteers and the local Mississippi Black population. He was driving Andrew Goodman and Michael Schwerner on June 21, 1964 to investigate the Klan firebombing of the Mt. Zion Methodist Church in the Longdale community of Neshoba County. Neshoba County Deputy Sheriff Cecil Price arrested the three for an alleged speeding violation, held them in the Philadelphia, Mississippi jail until nightfall, then released them into a Klan ambush that killed all three. Their bodies were recovered from an earthen dam on August 4, 1964, the discovery that compelled President Johnson to push the Civil Rights Act of 1964 to passage in early July and the Voting Rights Act of 1965 the following year. Seth Cagin and Philip Dray's 1988 We Are Not Afraid is the canonical scholarly account of the case.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Joan Trumpauer Mulholland",
+      "speaker_slug": "joan-trumpauer-mulholland",
+      "source_entry": 60,
+      "timestamp": "01:55:33",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669178/",
+      "lead_in": "Freedom Rider Joan Trumpauer Mulholland, who had survived a Klan plan to kill the Tougaloo group the same night, places Chaney among workers she knew by sight at the Jackson-area campus:",
+      "quote": "The fact that we didn't die that night meant that three other guys did. Two of them were our friends. Goodman, Schwerner, Chaney were on campus a lot. We knew them."
+    },
+    {
+      "relation": "about",
+      "speaker": "Gwendolyn Zoharah Simmons",
+      "speaker_slug": "gwendolyn-zoharah-simmons",
+      "source_entry": 53,
+      "timestamp": "00:15:21",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669148/",
+      "lead_in": "SNCC project director Gwendolyn Zoharah Simmons, at the Oxford, Ohio Freedom Summer orientation, learns the three workers have disappeared days after she met Chaney:",
+      "quote": "And when we were called in to the, uh, a plenary where we were told this and Bob said they are probably dead. I just, I couldn't believe it. I was like dead. I mean, you know, because I had met, uh, James Chaney, uh, that first week."
+    },
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:55:19",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Mississippi organizer Euvester Simpson recalls getting word of the disappearance and her later contact with Chaney's family:",
+      "quote": "And before I left, though, we got word that James Chaney and Michael \"Mickey\" Schwerner and The three Freedom Summer victims, I had not met Andrew because he was one of the summer volunteers going down. And he left early from the orientation to go back to Meridian with Michael \"Mickey\" Schwerner and with James. So I've never met him. I later met his mother."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorie Ann Ladner and Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:32:25",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "In their joint interview, the Ladner sisters place Chaney inside the Mississippi Movement staff they worked alongside:",
+      "quote": "We knew Mickie Swarna and James Chaney from the Mississippi Movement. They were staff people, you know, who were always in Jackson at the staff meetings."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "01:06:04",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "MFDP chairman Lawrence Guyot recalls watching Justice Department lawyer John Doar argue the federal case over the three murders, and Doar's closing quotation of Lincoln:",
+      "quote": "John Doerr, I watched John Doerr testify, represent the government in the case of Schwerner, Chaney, and Goodman. And he said, you know, he quoted Lincoln."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/17924268",

@@ -16,8 +16,76 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Michael_Schwerner_(3x4_cropped).jpg",
     "date_taken": "1964"
   },
-  "ai_reading": "Schwerner is referenced once in the catalog (in the Alfred Moldovan entry 133 page, where the August 1964 discovery of the Mississippi Burning bodies anchors Moldovan's MCHR Mississippi medical-aid work). He is not himself a Civil Rights History Project interviewee. His standalone catalog page is added because the Mississippi Burning trio (Chaney, Goodman, Schwerner) catalyzed the Freedom Summer cohort the catalog's Patton, Adams-Johnson, Connor, Bassett, Ackerman, Ladner, Hutchings entries circle around. The novel observation his page surfaces is the senior-of-the-trio organizing-experience signature: Schwerner, the oldest of the three at twenty-four, had been director of the Meridian CORE office for six months and was the most-targeted of the three; Klan leader Imperial Wizard Samuel Bowers had specifically named Schwerner as a target of \"Code 4\" elimination in May 1964, the assassination order the June 21 ambush executed.",
+  "ai_reading": "Schwerner is not himself a Civil Rights History Project interviewee, so he carries no embedding vector of his own; what the corpus surfaces instead is a naming pattern. Across the interviews that mention him, his name almost never travels alone: the testimony binds him into the fixed three-part formula Chaney, Goodman, Schwerner (the order and the pairing vary speaker to speaker, but the trio holds), so that in the retrieval space he reads less as an individual than as one third of a single Freedom Summer reference unit. The pattern breaks in only a narrow band of passages where a speaker had a first-person relationship to the man rather than to the event: Joan Trumpauer Mulholland (entry 60) and Euvester Simpson (entry 41), who knew him on the ground, are among the few corpus voices who detach Schwerner from the trio and speak about him as a person. The historical reading that orients this: Schwerner, the oldest of the three at twenty-four, had directed the Meridian CORE office for six months and was the most-targeted of the three; Klan Imperial Wizard Samuel Bowers had specifically named Schwerner for \"Code 4\" elimination in the spring of 1964, the order the June 21 ambush executed [src: 1].",
   "biographical_paragraph": "Schwerner was born November 6, 1939 in New York City to Nathan and Anne Schwerner, a Jewish family politically active in the labor and civil rights movements. He attended Cornell University, where he studied veterinary medicine before transferring to rural sociology and graduating in 1961. He worked as a social worker on New York's Lower East Side and married Rita Levant in 1962. The couple joined the Congress of Racial Equality and in January 1964 relocated to Meridian, Mississippi, where Schwerner directed the local CORE office and established a community center and library. He met James Chaney (catalog external_figure page) at the Meridian office; together they organized voter-registration drives across Lauderdale and Neshoba Counties. On June 21, 1964 he, Chaney, and Andrew Goodman drove to the Longdale community of Neshoba County to investigate the Ku Klux Klan firebombing of the Mt. Zion Methodist Church. The three were arrested by Neshoba County Deputy Sheriff Cecil Price for an alleged speeding violation, held in the Philadelphia jail until nightfall, then released into a Klan ambush that killed all three. Their bodies were recovered from an earthen dam on August 4, 1964; Klan Imperial Wizard Samuel Bowers (also the man behind the 1966 Vernon Dahmer Sr. firebombing the catalog documents at the Dahmer external_figure page) was convicted on federal charges in 1967 and on state murder charges in 2005.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Joan Trumpauer Mulholland",
+      "speaker_slug": "joan-trumpauer-mulholland",
+      "source_entry": 60,
+      "timestamp": "01:55:33",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669178/",
+      "lead_in": "Joan Trumpauer Mulholland, who had been targeted in an earlier Klan threat, describes knowing Schwerner and the others before Freedom Summer:",
+      "quote": "The fact that we didn't die that night meant that three other guys did. Two of them were our friends. Goodman, Schwerner, Chaney were on campus a lot. We knew them."
+    },
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:55:33",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Euvester Simpson recalls the Oxford, Ohio orientation, where Andrew Goodman left early to return to Meridian with Schwerner; she never met Schwerner but later met his mother:",
+      "quote": "And he left early from the orientation to go back to Meridian with Michael \"Mickey\" Schwerner and with James. So I've never met him. I later met his mother."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorie Ann Ladner and Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:39:56",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "In the Ladner sisters' joint interview, the speaker recounts seeing the three men at the Oxford, Ohio orientation as they left to return to Mississippi after the Mt. Zion church burning:",
+      "quote": "And I had seen them at Miami University in Oxford, Ohio, as they were leaving to return to Mississippi because they had, we'd gotten this call that the church had burned and [Andrew Goodman, Mickey Schwerner] and James [Chaney] were, what, immediately returned."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dr. Cleveland Sellers",
+      "speaker_slug": "dr-cleveland-sellers",
+      "source_entry": 22,
+      "timestamp": "01:07:19",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669180/",
+      "lead_in": "Cleveland Sellers identifies the station wagon the three men were driving when Neshoba County deputies stopped them:",
+      "quote": "This was the station wagon that Goodman, Schwerner, and Chaney were in when they were arrested and later murdered in Philadelphia, Mississippi."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "01:06:04",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "Lawrence Guyot recalls watching federal prosecutor John Doar (rendered \"John Doerr\" in the transcript) argue the government's case at the 1967 federal trial that convicted the men who killed Schwerner, Chaney, and Goodman:",
+      "quote": "John Doerr, I watched John Doerr testify, represent the government in the case of Schwerner, Chaney, and Goodman. And he said, you know, he quoted Lincoln. He said, the world will little note nor long remember what we say here, but it can never forget what they did here\". And of course, those people were convicted."
+    },
+    {
+      "relation": "about",
+      "speaker": "Jennifer Lawson",
+      "speaker_slug": "jennifer-lawson",
+      "source_entry": 59,
+      "timestamp": "01:08:36",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655422/",
+      "lead_in": "Jennifer Lawson, then deciding whether to go south, recalls following the case in the national press:",
+      "quote": "And here I was reading about Goodman, you know, Chaney, and Schwerner. Yeah, I was reading about Freedom Summer, you know, in the pages of The New York Times."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/17924268",
