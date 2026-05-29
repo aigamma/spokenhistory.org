@@ -4,10 +4,10 @@
   "person_type": "interviewee",
   "entry_number": 37,
   "display_name": "Elmer Dixon",
-  "born": null,
+  "born": 1950,
   "died": null,
   "role_summary": "Co-founder of the Seattle chapter of the Black Panther Party with his brother Aaron Dixon (1968), the first chapter formed outside California.",
-  "ai_reading": "Elmer Dixon's position on the Nonviolence as Theology vs Armed Self-Defense axis is -1.00, the maximal reading in the entire 136-interview corpus toward the Nonviolence pole. He is the catalog's clearest case of an AI-vs-culture inversion: a co-founder of the Seattle Black Panther Party chapter (the first chapter outside California), whose cultural placement is unambiguously the armed-self-defense pole, lands at the absolute opposite end of the axis the corpus defines. His top semantic neighbor is his brother Aaron (entry 1) at 388, then Evans Derrell Hopkins (entry 42), Elbert Howard (entry 35), and Kathleen Cleaver (entry 73), all BPP figures who also cluster at the Nonviolence end. The five-BPP-at-Nonviolence-pole pattern repeats across every member of the cohort in the corpus. Either the BPP testimony tradition's redemptive, community-service-oriented vocabulary (the Free Breakfast for Children program, the Seattle clinic that became Carolyn Downs Family Medical Center) dominates the vector signature over the party's rhetorical surface, or the axis polarity itself is in tension with the political reading, an open question this catalog leaves for the paper-in-progress.",
+  "ai_reading": "On the Nonviolence as Theology vs Armed Self-Defense axis, Elmer Dixon sits at the normalized extreme of -1.00, the single most Nonviolence-as-Theology reading of all 136 interviews in the corpus (rank 0 of 136 by raw position). He is the catalog's clearest case of an AI-vs-culture inversion: a co-founder of the Seattle Black Panther Party chapter, whose cultural placement is unambiguously the armed-self-defense pole, lands at the absolute opposite end of the axis the embedding defines. The inversion is not his alone. By cosine similarity his nearest neighbors in the corpus are, in order of shared-passage count, his brother Aaron (entry 1, 388 shared passages), Evans Derrell Hopkins (entry 42, 271), Elbert Howard (entry 35, 201), and Kathleen Cleaver (entry 73, 157), all four Black Panther figures, and all four also rank near the Nonviolence pole on that same axis: Howard at rank 1, Cleaver at rank 3, Aaron at rank 4, Hopkins at rank 11. Five Black Panther voices thus occupy five of the twelve most Nonviolence-coded positions in the corpus. Either the BPP testimony tradition's community-service vocabulary (the Free Breakfast for Children program, the Seattle clinic that became the Carolyn Downs Family Medical Center) dominates the vector signature over the party's rhetorical surface, or the axis polarity itself is in tension with the political reading, an open question this catalog leaves for the paper-in-progress. The influence graph adds a quieter asymmetry: the only out-edge from Elmer's interview points to Huey P. Newton, while the only in-edge to it comes from Aaron's interview (entry 1), so within this corpus the brothers' two testimonies cite each other across the founding they shared.",
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/8/84/Elmer_Dixon_01.jpg",
     "alt": "Elmer Dixon at the Northwest African American Museum in Seattle, September 2012",
@@ -17,9 +17,77 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Elmer_Dixon_01.jpg",
     "date_taken": "2012-09-18"
   },
-  "biographical_paragraph": "Elmer Dixon helped establish the Seattle chapter of the Black Panther Party in 1968 alongside his brother Aaron Dixon, the chapter being the first formed outside California [src: 1]. In April 1968, the week of Martin Luther King Jr.'s assassination, the brothers attended the West Coast Black Student Union conference in San Francisco and were at Bobby Hutton's funeral; in the days surrounding those events they met with Black Panther leadership including Bobby Seale and Kathleen Cleaver, beginning the conversation that produced the Seattle chapter [src: 1].  His brother Aaron is interviewee entry 1 in this archive; their joint founding of the Seattle chapter is also the seed for Aaron's 2012 memoir My People Are Rising [src: 1]. His Library of Congress oral history is entry 37 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The Seattle chapter the Dixon brothers chartered in April 1968 was the first formally constituted Black Panther Party chapter organized outside California, and it was constituted in the weeks immediately following the April 4, 1968 assassination of Martin Luther King Jr. in Memphis and the April 6, 1968 Oakland police killing of seventeen-year-old Bobby Hutton, the BPP's first formally enrolled recruit [src: 3, src: 5]. Aaron Dixon was nineteen and took the title of captain; Elmer, the younger brother, was sixteen at the chapter's founding and took the role of field lieutenant alongside their close friend Curtis Harris, who served as the third member of the founding leadership trio [src: 3, src: 6]. The Seattle chapter ran its local instance of the BPP Free Breakfast for Children program through Madrona Presbyterian Church and through additional sites in Seattle's Central District; the national Free Breakfast Program had launched at St. Augustine's Episcopal Church in Oakland in January 1969 and within a year was operating across dozens of chapter cities feeding tens of thousands of children weekly [src: 3]. The community medical and legal services the Seattle chapter built (sickle-cell anemia screening, pediatric care, the legal-aid clinic) grew into the Carolyn Downs Family Medical Center, the federally qualified community health center named for the Seattle BPP activist who died of cancer in 1974 and now operated by Sea Mar Community Health Centers in Seattle's Central District as one of the few directly continuous institutional legacies of the BPP's community-service infrastructure [src: 7]. The FBI Director J. Edgar Hoover's COINTELPRO program identified the BPP Free Breakfast Program by name as a specific operational target; internal Bureau memoranda from May 1969, later declassified through the Church Committee's investigation, directed field offices to discredit and disrupt the program [src: 4]. The broader BPP cohort this catalog documents (Aaron Dixon at entry 1 as the Seattle chapter co-founder and captain, Elbert \"Big Man\" Howard at entry 35 as Deputy Minister of Information at the Oakland headquarters, Kathleen Cleaver at entry 73 as Communications Secretary, and Evans Derrell Hopkins at entry 42 as a Petersburg, Virginia chapter organizer and later New Yorker writer) places Elmer Dixon at the West Coast organizing geography's northern node [src: 1, src: 3]. The AI's-reading axis observation that all five BPP-identified interviewees in this corpus (including Elmer Dixon at the absolute -1.00 maximal reading toward Nonviolence as Theology) cluster at the pole their political-historical reception predicts they should oppose is, when read against the actual programmatic record the Seattle chapter assembled (breakfast, sickle-cell screening, pediatric and legal clinics), better understood as the embedding catching the truer historical face of the BPP's community-service infrastructure than the armed-confrontation imagery that dominated contemporaneous press coverage [src: 3].",
-  "legacy_and_reception": "After the Seattle chapter's dissolution in the mid-1970s, Elmer Dixon continued Seattle community organizing through a sequence of roles in the city's Black and labor institutional ecosystem. Since 2010 he has served as Executive Director of Executive Diversity Services, the Seattle-based corporate diversity, equity, and inclusion consulting firm originally founded by Diana Bermudez in 1984; his published interviews and conference appearances through the 2010s and 2020s consistently describe the firm's work in connection with the broader civil-rights-movement organizing tradition the BPP chapter belonged to [src: 8]. Elmer and Aaron Dixon appeared together at the Northwest African American Museum in Seattle in September 2012 during the publication tour for Aaron's Haymarket-published memoir My People Are Rising; the photograph by Joe Mabel from that appearance is the principal recent visual documentation of the brothers and is included in this page's gallery [src: 8]. His 2014 oral history with the Civil Rights History Project, recorded jointly with Aaron's at the same accession (AFC 2010/039), is the institutional Library of Congress record of his account of the chapter's founding [src: 1]. The Seattle Civil Rights and Labor History Project at the University of Washington has additionally documented the Seattle BPP chapter through interviews and archival materials curated by project director Trevor Griffey, providing the secondary scholarly anchor for the chapter's chronology and program record [src: 6].",
+  "biographical_paragraph": "Born in 1950 in Chicago, Elmer Dixon moved with his family to Seattle's Madrona neighborhood as a child and came into political activity at Garfield High School, where he co-chaired the Seattle chapter of SNCC and helped organize one of the first high-school Black Student Unions on the West Coast [src: 1]. In the spring of 1968, the week of Martin Luther King Jr.'s assassination, he and his older brother Aaron Dixon traveled to the West Coast Black Student Union conference at San Francisco State and crossed to West Oakland for the funeral of Bobby Hutton, the Black Panther Party member killed by Oakland police; at the conference Bobby Seale spoke, and afterward the Dixon brothers approached Seale to ask about forming a chapter, which produced the Seattle chapter that they describe as the first organized outside California [src: 1]. Aaron took the role of defense captain and Elmer became a field lieutenant of the chapter [src: 1]. His brother Aaron is interviewee entry 1 in this archive, and the joint founding is also the subject of Aaron's 2012 memoir My People Are Rising [src: 5]. Within this corpus the figure Elmer's testimony most often invokes is Huey P. Newton, the party co-founder whose teaching he recounts at length [src: 1]. His Library of Congress oral history is entry 37 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Elmer Dixon",
+      "speaker_slug": "elmer-dixon",
+      "source_entry": 37,
+      "timestamp": "00:57:53",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669156/",
+      "lead_in": "Walking past the open coffin of Bobby Hutton in Oakland, seventeen years old himself, Elmer Dixon describes the moment he committed to the party:",
+      "quote": "And I remember thinking that, you know, that could be me laying there. And I think that was the moment for me where I said, that's it. You know, this is who I am and there is no turning back."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elmer Dixon",
+      "speaker_slug": "elmer-dixon",
+      "source_entry": 37,
+      "timestamp": "01:01:39",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669156/",
+      "lead_in": "On the founding leadership of the Seattle chapter after Bobby Seale came north to help organize it:",
+      "quote": "Aaron, my brother was, you know, given the leadership, he was the defense captain. I was a field lieutenant and we had a few other positions in there and that began the journey."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elmer Dixon",
+      "speaker_slug": "elmer-dixon",
+      "source_entry": 37,
+      "timestamp": "01:05:21",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669156/",
+      "lead_in": "On how the party framed its purpose, in his account of what Bobby Seale told the new recruits:",
+      "quote": "And we didn't organize around civil rights, but we organized around what we believed were God-given rights. And the right to humanity and dignity was one of them."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elmer Dixon",
+      "speaker_slug": "elmer-dixon",
+      "source_entry": 37,
+      "timestamp": "01:38:40",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669156/",
+      "lead_in": "Recounting what he told a congressional investigator who asked why the chapter fed children breakfast:",
+      "quote": "how are you going to ask kids to go to school that are hungry and ask them to learn in a classroom"
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:27:05",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Aaron Dixon (entry 1), preparing to leave for training in Oakland, describes leaving the Seattle chapter in his younger brother's hands:",
+      "quote": "Elmer is running things and we had already started to purge before I went down there we had already purged Curtis Harris and a whole bunch of other people."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:47:12",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Aaron Dixon (entry 1) on his brother's return from imprisonment in Oregon and the chapter's community programs:",
+      "quote": "But Elmer was able to come out and recruit new people."
+    }
+  ],
+  "movement_context": "The Seattle chapter the Dixon brothers chartered in April 1968 was the first formally constituted Black Panther Party chapter organized outside California, and it was constituted in the weeks immediately following the April 4, 1968 assassination of Martin Luther King Jr. in Memphis and the April 6, 1968 Oakland police killing of seventeen-year-old Bobby Hutton, the BPP's first formally enrolled recruit [src: 3, src: 5]. Aaron Dixon took the title of defense captain and Elmer, the younger brother, who gives his age at the time as seventeen and graduated from Garfield High School in June 1968, took the role of field lieutenant [src: 1, src: 6]. The Seattle chapter ran its local instance of the BPP Free Breakfast for Children program through Madrona Presbyterian Church and through additional sites in Seattle's Central District; the national Free Breakfast Program had launched at St. Augustine's Episcopal Church in Oakland in January 1969 and within a year was operating across dozens of chapter cities feeding tens of thousands of children weekly [src: 3]. The community medical and legal services the Seattle chapter built (sickle-cell anemia screening, pediatric care, the legal-aid clinic) grew into the Carolyn Downs Family Medical Center, the federally qualified community health center named for the Seattle BPP activist who died of cancer in 1974 and now operated by Sea Mar Community Health Centers in Seattle's Central District as one of the few directly continuous institutional legacies of the BPP's community-service infrastructure [src: 7]. The FBI Director J. Edgar Hoover's COINTELPRO program identified the BPP Free Breakfast Program by name as a specific operational target; internal Bureau memoranda from May 1969, later declassified through the Church Committee's investigation, directed field offices to discredit and disrupt the program [src: 4]. The broader BPP cohort this catalog documents (Aaron Dixon at entry 1 as the Seattle chapter co-founder and captain, Elbert \"Big Man\" Howard at entry 35 as Deputy Minister of Information at the Oakland headquarters, Kathleen Cleaver at entry 73 as Communications Secretary, and Evans Derrell Hopkins at entry 42 as a Petersburg, Virginia chapter organizer and later New Yorker writer) places Elmer Dixon at the West Coast organizing geography's northern node [src: 1, src: 3]. The AI's-reading axis observation that all five BPP-identified interviewees in this corpus (including Elmer Dixon at the absolute -1.00 maximal reading toward Nonviolence as Theology) cluster at the pole their political-historical reception predicts they should oppose is, when read against the actual programmatic record the Seattle chapter assembled (breakfast, sickle-cell screening, pediatric and legal clinics), better understood as the embedding catching the truer historical face of the BPP's community-service infrastructure than the armed-confrontation imagery that dominated contemporaneous press coverage [src: 3].",
+  "legacy_and_reception": "After the Seattle chapter's dissolution in the mid-1970s, Elmer Dixon continued Seattle community organizing through a sequence of roles in the city's Black and labor institutional ecosystem. Since 2010 he has served as Executive Director of Executive Diversity Services, the Seattle-based corporate diversity, equity, and inclusion consulting firm originally founded by Diana Bermudez in 1984; his published interviews and conference appearances through the 2010s and 2020s consistently describe the firm's work in connection with the broader civil-rights-movement organizing tradition the BPP chapter belonged to [src: 8]. Elmer and Aaron Dixon appeared together at the Northwest African American Museum in Seattle in September 2012 during the publication tour for Aaron's Haymarket-published memoir My People Are Rising; the photograph by Joe Mabel from that appearance is the principal recent visual documentation of the brothers and is included in this page's gallery [src: 8]. His February 2013 oral history with the Civil Rights History Project, held at the same American Folklife Center accession as Aaron's (AFC 2010/039), is the institutional Library of Congress record of his account of the chapter's founding [src: 1]. The Seattle Civil Rights and Labor History Project at the University of Washington has additionally documented the Seattle BPP chapter through interviews and archival materials curated by project director Trevor Griffey, providing the secondary scholarly anchor for the chapter's chronology and program record [src: 6].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Aaron_and_Elmer_Dixon_01.jpg",

@@ -16,8 +16,76 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:H_Jack_Geiger_UCI.png",
     "date_taken": "2012-05-24"
   },
-  "ai_reading": "Geiger's top semantic neighbor is Alfred Moldovan (entry 133) at a cosine count of 443, a remarkably high pairing given Moldovan is one of the catalog's ingestion-only-tier entries and culturally less prominent. The pairing suggests the embedding finds the medical-civil-rights vocabulary across both interviews as the dominant vector signature, more than either's institutional affiliation or political framing. His next neighbors are William G. Anderson (entry 126), Charles McLaurin (Mississippi SNCC, entry 17), Robert L. Carter (NAACP LDF, entry 108), and Maria Varela (SNCC photographer, entry 81). The cluster crosses medical-and-organizational categories, reading Geiger as a movement physician whose 1965 line that \"the specific therapy for malnutrition is, in fact, food\" sits in the same conceptual space as the Mississippi voter-registration cohort's work on basic-needs organizing. His axis positions all fall within +/-0.21 of zero, placing him among the catalog's most centrist voices alongside McDew, Terry, Richardson, and Noonan.",
-  "biographical_paragraph": "Geiger took an MD at Case Western Reserve University School of Medicine in 1958 and a master's in epidemiology at the Harvard School of Public Health [src: 2]. In 1965 he founded the Tufts-Delta Health Center at Mound Bayou, Mississippi, one of the first federally funded community health centers; the model he developed for low-income community medical care became the basis for what is now a national network of community health centers [src: 2]. He later helped found Physicians for Human Rights and was the founding chair of CUNY Medical School's Community Health and Social Medicine department [src: 2]. His own often-quoted 1965 line, \"the specific therapy for malnutrition is, in fact, food,\" framed his prescription-pad practice at Mound Bayou of writing food orders that the federal health center paid for out of its pharmacy budget [src: 2]. He was born November 11, 1925 in Brooklyn, New York, and died December 28, 2020 in Brooklyn at ninety-five; the New York Times obituary by Denise Grady is the standard published record of his life [src: 2]. His Library of Congress oral history is entry 54 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039); the interview was conducted by historian John Dittmer in 2013 [src: 1].",
+  "ai_reading": "Geiger's strongest semantic neighbor in this corpus is Alfred Moldovan (entry 133), where the embedding counts 443 near-passages, far above his next neighbor and the highest single pairing in his row. The size of that link is striking because Moldovan sits at the catalog's ingestion-only tier and was a New York transfusion specialist rather than a community-health-center builder; the two never co-founded an institution, yet cosine similarity binds their testimony tightly. The shared signal is the Medical Committee for Human Rights vocabulary that runs through both interviews, and Moldovan's own interview names Geiger directly (entry 133, 00:51:20), which is the kind of mutual reference the embedding rewards. Below Moldovan the row falls off to William G. Anderson (entry 126, count 233), Charles McLaurin (entry 17, count 188), and Robert L. Carter (entry 108, count 178), with Maria Varela (entry 81) and Norma Mtume (entry 93) tied at 171; the cluster mixes movement physicians with Mississippi voter-registration organizers rather than grouping Geiger with other doctors alone. On the five concept axes his raw positions are all within about three hundredths of zero (nonviolence-self-defense -0.007, sacred-secular -0.020, tactical-strategic -0.030, southern-northern +0.033, individual-collective +0.018), which places his testimony among the most centrist readings in the audited subset; the embedding does not pull his account toward any single pole, consistent with an interview that moves across South Africa, Boston, the Mississippi Delta, and federal health policy in turn.",
+  "biographical_paragraph": "Geiger took an MD at Case Western Reserve University School of Medicine in 1958 and a master's in epidemiology at the Harvard School of Public Health [src: 2]. In 1965 he founded the Tufts-Delta Health Center at Mound Bayou, Mississippi, one of the first federally funded community health centers; the model he developed for low-income community medical care became the basis for what is now a national network of community health centers [src: 2]. He later helped found Physicians for Human Rights and was the founding chair of CUNY Medical School's Community Health and Social Medicine department [src: 2]. His often-quoted line that the specific therapy for malnutrition is food framed the Mound Bayou practice of writing food orders that the health center paid for out of its pharmacy budget, a practice he set down in his own 1969 Health/PAC account of the center's first years [src: 7]. That formulation does not appear in his Library of Congress oral history; in the 2013 interview he describes the same food-as-medicine logic through the center's farm cooperative and emergency food program rather than the prescription-pad anecdote [src: 1]. He was born November 11, 1925 in Brooklyn, New York, and died December 28, 2020 in Brooklyn at ninety-five; the New York Times obituary by Denise Grady is the standard published record of his life [src: 2]. His Library of Congress oral history is entry 54 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039); the interview was conducted by historian John Dittmer in 2013 [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "H. Jack Geiger",
+      "speaker_slug": "h-jack-geiger",
+      "source_entry": 54,
+      "timestamp": "01:22:56",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669175/",
+      "lead_in": "Describing the Pholela health centre in South Africa, where staff handed out skim milk to a community riddled with malnutrition, Geiger draws the line forward to his later work in the Mississippi Delta:",
+      "quote": "They were distributing skim milk for which the South African government accused them of communism and this will come up again in Mississippi."
+    },
+    {
+      "relation": "self",
+      "speaker": "H. Jack Geiger",
+      "speaker_slug": "h-jack-geiger",
+      "source_entry": 54,
+      "timestamp": "01:29:18",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669175/",
+      "lead_in": "On the recruitment of Northern white students for the 1964 Mississippi Freedom Summer, and the calculation he saw behind it:",
+      "quote": "this was going to be effective because white lives were valuable. And all of these white kids were coming down from the north and the country up until then hadn't cared very much if black kids were killed or black adults for that matter or black anything."
+    },
+    {
+      "relation": "self",
+      "speaker": "H. Jack Geiger",
+      "speaker_slug": "h-jack-geiger",
+      "source_entry": 54,
+      "timestamp": "02:03:22",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669175/",
+      "lead_in": "Explaining why he steered the Office of Economic Opportunity grant toward the Mississippi Delta rather than a less hostile site:",
+      "quote": "And what everybody perceived as the belly of the beast, the worst of the problems and the worst of the racism and the worst of the need."
+    },
+    {
+      "relation": "self",
+      "speaker": "H. Jack Geiger",
+      "speaker_slug": "h-jack-geiger",
+      "source_entry": 54,
+      "timestamp": "02:35:37",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669175/",
+      "lead_in": "On the legal opening that let a Massachusetts university fund a health center in Mississippi over the objections of the governor and Senator John C. Stennis:",
+      "quote": "We were accused with some correctness of having reinvented carpet bagging. But what happened was the governor Johnson, Senator Stennis and everybody else suddenly discovered that we were veto proof."
+    },
+    {
+      "relation": "self",
+      "speaker": "H. Jack Geiger",
+      "speaker_slug": "h-jack-geiger",
+      "source_entry": 54,
+      "timestamp": "03:13:38",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669175/",
+      "lead_in": "On the North Bolivar County farm cooperative the health center organized, treating food production as part of medical care:",
+      "quote": "started to sell surplus in the open local market and even had dreams for a while of getting a cannery and growing soul food it could be canned and sold in the northern ghettos"
+    },
+    {
+      "relation": "about",
+      "speaker": "Alfred Moldovan",
+      "speaker_slug": "alfred-moldovan",
+      "source_entry": 133,
+      "timestamp": "00:51:20",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669135/",
+      "lead_in": "Alfred Moldovan, a fellow Medical Committee for Human Rights physician whose testimony the embedding places closest to Geiger's in this corpus, recalls Geiger among the doctors who built lasting health institutions in the South:",
+      "quote": "I remember Jack Geiger, who was a very important writer and ideologue for medical care."
+    }
+  ],
   "movement_context": "Geiger's community-health-center practice traces to a 1957-1958 year he spent at the Pholela Community Health Centre in the Drakensberg foothills of Natal, South Africa, working with Sidney L. Kark and Emily Kark on the social-medicine model the Karks had been developing since the centre's 1940 founding under the South African Department of Health; the Pholela model combined household-level epidemiology, community-defined health priorities, and clinical care of the residents into a single integrated programme that became the template Geiger carried back to the United States [src: 3, 4]. Geiger was a Tufts University medical-school faculty member when he and Count D. Gibson Jr., then chair of Tufts Department of Preventive Medicine, secured the first two demonstration-project grants of the federal Office of Economic Opportunity's neighborhood-health-center program in 1965, one for a Columbia Point housing project in Boston, the other for Mound Bayou and the surrounding northern Bolivar County region of the Mississippi Delta [src: 5, 6]. Sargent Shriver, the OEO director, had funded the neighborhood-health-center demonstration line out of the War on Poverty appropriation under Title II of the Economic Opportunity Act of 1964; the program scaled from the two Tufts demonstration grants in 1965 to roughly one hundred federally funded centers by 1971 and is the institutional ancestor of the present-day federally qualified community health center (FQHC) network now serving approximately thirty million Americans annually [src: 5, 6]. The Mound Bayou centre opened in November 1967 in a converted former movie theatre; its prescription-pad-for-food practice, written into the pharmacy budget on the legal theory that food is the specific therapy for malnutrition, drew an OEO audit and a 1969 federal review that ultimately validated the practice [src: 6, 7]. The June 1964 founding of the Medical Committee for Human Rights (MCHR) in Dr. Tom Levin's New York apartment, which Geiger participated in alongside roughly one hundred Northern physicians, nurses, psychologists, and social workers, was the organizational precursor that connected the Northern medical-faculty cohort to the Mississippi Freedom Summer project and set the cohort relationships that would carry into the 1965 Mound Bayou founding [src: 8, 9]. Geiger went on to co-found Physicians for Social Responsibility (PSR) in 1961 with Bernard Lown, Victor Sidel, and others; PSR's parent body, the International Physicians for the Prevention of Nuclear War (IPPNW), received the 1985 Nobel Peace Prize, with Geiger present at the Oslo December 10, 1985 ceremony as part of the PSR delegation [src: 10]. In 1986 Geiger co-founded Physicians for Human Rights (PHR) with Jonathan Fine, Jane Schaller, Carola Eisenberg, Jennifer Leaning, and Robert Lawrence; PHR shared the 1997 Nobel Peace Prize with the International Campaign to Ban Landmines for its work documenting the medical-and-public-health consequences of antipersonnel mines [src: 11].",
   "legacy_and_reception": "Geiger left the Tufts faculty in 1971 for SUNY Stony Brook and in 1978 joined the new CUNY Medical School at the City College of New York (the Sophie Davis School of Biomedical Education), where he served as founding chair of the Department of Community Health and Social Medicine until his 2001 retirement and continued teaching as the Arthur C. Logan Professor Emeritus of Community Medicine [src: 2, 11]. The Delta Health Center, the operational continuation of the 1965 Tufts-Delta demonstration project, has remained continuously open at Mound Bayou and now operates fifteen clinical sites across northern Mississippi as a federally qualified community health center; the centre celebrated its fiftieth anniversary in 2017 with a documentary, Out in the Rural, and a fiftieth-anniversary scholarly volume [src: 6, 12]. The Geiger Gibson Program in Community Health Policy was founded at George Washington University's Milken Institute School of Public Health in 2003 (with planning starting in 2001) to honor Geiger and Gibson and to train health-policy researchers in the community-health-center model the two physicians had originated; the program produces the annual Geiger Gibson / RCHN Community Health Foundation Research Collaborative reports on federally qualified community health centers [src: 13]. Geiger died December 28, 2020 in Brooklyn at ninety-five; the 2009 John Dittmer monograph The Good Doctors: The Medical Committee for Human Rights and the Struggle for Social Justice in Health Care, published by Bloomsbury Press (paperback reprint University Press of Mississippi, 2017), remains the standard institutional history of MCHR and is the principal published source on Geiger's role in the 1964 Tom Levin-apartment founding, the 1965 Mound Bayou demonstration grant, and the larger MCHR-to-OEO arc that produced the federal community-health-center program [src: 9].",
   "gallery": [

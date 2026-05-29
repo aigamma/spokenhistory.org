@@ -16,10 +16,78 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Kathleen_Cleaver.jpg",
     "date_taken": "1971-11-23"
   },
-  "ai_reading": "Cleaver's BPP-cohort signature is unambiguous: her top five semantic neighbors are Elmer Dixon (entry 37, count 207), Evans Derrell Hopkins (entry 42), Elbert \"Big Man\" Howard (entry 35), Gwendolyn Zoharah Simmons (entry 53), and Aaron Dixon (entry 1). Four of the five are Black Panther Party founders or organizers; the embedding therefore confirms her cultural placement as the party's Communications Secretary and central-committee figure. She continues the BPP-at-Nonviolence pattern visible across the cohort: at -0.80 on the Nonviolence as Theology vs Armed Self-Defense axis she sits with Elbert Howard and Norma Mtume in the strongest Nonviolence cluster the corpus produces, despite her cultural reception as the woman who broadcast the party's armed-self-defense politics to the press. The mismatch is the same one Aaron Dixon's page documents at length, with Cleaver positioned slightly further toward Nonviolence than Aaron himself.",
-  "biographical_paragraph": "Cleaver became Communications Secretary of the Black Panther Party in 1967 and was the first woman to serve on the party's central committee; she held the role through her years in Algiers exile with her then-husband Eldridge Cleaver, until their 1971 split from Huey P. Newton's wing of the party [src: 2]. The Algiers years and the 1971 break are documented in C. Gerald Fraser's New York Times reporting and across her own academic writings, including \"Women, Power, and Revolution\" (New Political Science, 1999) [src: 2]. After returning to the United States she took a Yale Bachelor's, a Yale Law degree, and joined the Emory University School of Law faculty, where she has taught for decades [src: 3]. Her edited volume Target Zero brings together Eldridge Cleaver's writings; her 1995 essay Memories of Love and War is a primary-source account of the Algiers and post-Algiers years [src: 2]. Her Library of Congress oral history is entry 73 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "ai_reading": "Cleaver's BPP-cohort signature is unambiguous: her top five semantic neighbors by shared-passage count are Elmer Dixon (entry 37, count 207), Evans Derrell Hopkins (entry 42, count 181), Elbert \"Big Man\" Howard (entry 35, count 142), Gwendolyn Zoharah Simmons (entry 53, count 133), and Aaron Dixon (entry 1, count 129). Four of the five are Black Panther Party founders or organizers; the embedding therefore confirms her cultural placement as the party's Communications Secretary and central-committee figure. The surprise sits on the Nonviolence as Theology vs Armed Self-Defense axis: at a normalized -0.80 she lands in the top tier toward the Nonviolence pole, fourth of the 136 audited entries, with only Elmer Dixon (-1.00), Elbert Howard (-0.85), and the joint Cynthia and Fletcher Anderson interview (-0.85) reading further toward theological nonviolence. That places her testimony beside Howard's at the Nonviolence end of the axis, despite her cultural reception as the woman who broadcast the party's armed-self-defense politics to the press. The mismatch is the same one Aaron Dixon's page documents at length, and the embedding reads Cleaver slightly further toward Nonviolence than Aaron himself (-0.80 against his -0.73). The influence graph is sparse but consistent: the corpus voice who names her is Aaron Dixon (entry 1), and the only figure she names in turn is Huey P. Newton.",
+  "biographical_paragraph": "Cleaver became Communications Secretary of the Black Panther Party in 1967 and was the first woman to serve on the party's central committee; she held the role through her years in Algiers exile with her then-husband Eldridge Cleaver, until their 1971 split from Huey P. Newton's wing of the party [src: 2]. The Algiers years and the 1971 break are documented in C. Gerald Fraser's New York Times reporting and across her own academic writings, including \"Women, Power, and Revolution\" (New Political Science, 1999) [src: 2]. After returning to the United States she took a Yale Bachelor's, a Yale Law degree, and joined the Emory University School of Law faculty, where she has taught for decades [src: 3]. Her edited volume Target Zero: A Life in Writing gathers Eldridge Cleaver's posthumous writings, and her introduction to it is a first-person account of the Algiers years [src: 8]; her 1999 essay Women, Power, and Revolution is a further primary-source reflection on her Black Panther Party organizing and the return from exile [src: 9]. Memories of Love and War is the working title of a memoir she has had in progress about the years from her departure from college to Eldridge Cleaver's 1976 surrender to California authorities [src: 10]. Her Library of Congress oral history is entry 73 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Kathleen Cleaver",
+      "speaker_slug": "kathleen-cleaver",
+      "source_entry": 73,
+      "timestamp": "00:01:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669150/",
+      "lead_in": "Asked to begin her story around 1954, Cleaver frames the Brown decision and the French defeat in Vietnam as a single hinge year, and marks her own age against it:",
+      "quote": "And it was also a turning point in my life. I was nine years old."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kathleen Cleaver",
+      "speaker_slug": "kathleen-cleaver",
+      "source_entry": 73,
+      "timestamp": "01:12:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669150/",
+      "lead_in": "On how her SNCC organizing led into the Black Panther Party, she resists the idea that it was a deliberate choice:",
+      "quote": "So being in SNCC was a precursor to becoming a revolutionary and being able to come into the Black Panther Party, I didn't come into the Black Panther Party because I decided I wanted to be in the Black Panther Party."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kathleen Cleaver",
+      "speaker_slug": "kathleen-cleaver",
+      "source_entry": 73,
+      "timestamp": "01:36:59",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669150/",
+      "lead_in": "Describing why federal intelligence agencies treated the party as a national-security threat, she places herself at the international section the Cleavers built in Algeria:",
+      "quote": "So I happened to be married to Eldridge Cleaver, who went to Cuba and then to Algeria and we set up an international section of the black Panther Party in Algeria, the support of the government there."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kathleen Cleaver",
+      "speaker_slug": "kathleen-cleaver",
+      "source_entry": 73,
+      "timestamp": "01:47:41",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669150/",
+      "lead_in": "Reading the party's Ten-Point Program against earlier Black freedom demands, she places it in a long continuity:",
+      "quote": "the black panther party was a 20th century version of the hopes and demand and desires of an oppressed black community re articulated in a new set of words."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kathleen Cleaver",
+      "speaker_slug": "kathleen-cleaver",
+      "source_entry": 73,
+      "timestamp": "01:50:24",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669150/",
+      "lead_in": "On why the self-defense framing resonated with the young people who joined in Oakland:",
+      "quote": "when the Black Panther Party took the position as in the name, Black Panther Party for self-defense, this automatic response, that's right, we can defend ourselves. We should be able to defend ourselves."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:56:14",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Aaron Dixon, captain of the party's Seattle chapter, names Cleaver among the women who held formal party leadership:",
+      "quote": "And so you had Panthers, women who were a Elaine Brown, Kathleen Cleaver on the Central Committee of the Black Panther Party."
+    }
+  ],
   "movement_context": "Cleaver's organizing trajectory entered the southern student-movement infrastructure through the Howard University Nonviolent Action Group (NAG), the SNCC affiliate on Howard's campus that drew Stokely Carmichael, Courtland Cox, Cleveland Sellers, and other figures into the Atlanta SNCC office through the mid-1960s; she joined NAG as an undergraduate at Oberlin and then Barnard before leaving school to work full-time for SNCC's New York office in 1966 and the Atlanta office in 1967 [src: 2, src: 4]. By the time she crossed into the BPP late in 1967 her position inside SNCC was already atypical, the organization was moving through its Black Power transition under Carmichael's chairmanship and her work on the SNCC communications staff put her at the seam between the SNCC field-organizing tradition and the BPP's California-based armed-self-defense politics [src: 4, src: 5]. The seam became formal in February 1968 when SNCC and the BPP announced a short-lived merger agreement at a Free Huey rally in Oakland; the merger named Carmichael Prime Minister, James Forman Minister of Foreign Affairs, and H. Rap Brown Minister of Justice of the BPP, and collapsed within months over differences in organizational discipline and political program [src: 4, src: 5]. Cleaver's own movement into the BPP preceded the merger, in late 1967 she married Eldridge Cleaver, the party's Minister of Information, and took the title Communications Secretary, becoming the first woman seated on the BPP central committee [src: 4, src: 6]. In September 1968 Eldridge Cleaver ran for President of the United States on the Peace and Freedom Party ticket, the BPP's electoral-coalition operation with the predominantly white California-based PFP; Kathleen Cleaver worked the campaign press operation through the November election [src: 4]. After the April 6 Oakland police shootout that killed Bobby Hutton, Eldridge Cleaver's parole was revoked and he fled to Cuba and then Algeria in late 1968; Kathleen Cleaver followed him to Algiers in mid-1969, and the international section of the BPP they established there operated from 1969 through 1972 as the party's diplomatic presence among the Algerian government's hosted national-liberation delegations [src: 4, src: 6]. The 1971 schism between Newton's Oakland wing and the Eldridge Cleaver-led international section ended the Cleavers' formal BPP role; they returned to the United States in 1975 after Eldridge's negotiated surrender to federal authorities, and Kathleen Cleaver separated from Eldridge in 1976 [src: 6].",
-  "legacy_and_reception": "Cleaver returned to higher education in the late 1970s and completed a Bachelor of Arts at Yale College in 1984, followed by a Juris Doctor at Yale Law School in 1989; she joined the Emory University School of Law faculty in 1992 and has taught there as Senior Lecturer and Research Fellow since [src: 3]. Her 2001 edited volume Liberation, Imagination, and the Black Panther Party: A New Look at the Panthers and Their Legacy, co-edited with George Katsiaficas and published by Routledge, brought together the first major scholarly anthology on the BPP from within the party's own surviving membership and the academic Left, with contributions from Mumia Abu-Jamal, Angela Davis, Ericka Huggins, and other BPP veterans alongside historians and political theorists [src: 7]. Her 2006 edition of Target Zero: A Life in Writing, the posthumous collection of Eldridge Cleaver's writings with Palgrave Macmillan, is the primary published archive of his post-Algiers political output; her introduction to the volume is a first-person account of the Algiers years and the post-BPP transition [src: 8]. The 2024 documentary Kathleen Cleaver: Tomorrow's Children, directed by independent filmmaker Tunde Akinyeye and released through the festival circuit, is the first feature-length biographical treatment of her organizing life and centers on the SNCC-to-BPP-to-Emory arc [src: 9]. Her Library of Congress oral history at entry 73 of the Civil Rights History Project, recorded by Joseph Mosnier in 2011, is one of the primary recorded interviews in her archival record alongside her 1999 New Political Science essay and the Target Zero introduction [src: 1].",
+  "legacy_and_reception": "Cleaver returned to higher education in the late 1970s and completed a Bachelor of Arts at Yale College in 1984, followed by a Juris Doctor at Yale Law School in 1989; she joined the Emory University School of Law faculty in 1992 and has taught there as Senior Lecturer and Research Fellow since [src: 3]. Her 2001 edited volume Liberation, Imagination, and the Black Panther Party: A New Look at the Panthers and Their Legacy, co-edited with George Katsiaficas and published by Routledge, brought together the first major scholarly anthology on the BPP from within the party's own surviving membership and the academic Left, with contributions from Mumia Abu-Jamal, Angela Davis, Ericka Huggins, and other BPP veterans alongside historians and political theorists [src: 7]. Her 2006 edition of Target Zero: A Life in Writing, the posthumous collection of Eldridge Cleaver's writings with Palgrave Macmillan, is the primary published archive of his post-Algiers political output; her introduction to the volume is a first-person account of the Algiers years and the post-BPP transition [src: 8]. Cleaver appears as an interview subject in Stanley Nelson's documentary The Black Panthers: Vanguard of the Revolution (2015) and in The Black Power Mixtape 1967-1975 (2011); in her own Library of Congress interview she discusses the latter film by name, reflecting on why its archival footage of the period draws contemporary audiences [src: 1, 11]. Her Library of Congress oral history at entry 73 of the Civil Rights History Project, recorded by Joseph Mosnier in 2011, is one of the primary recorded interviews in her archival record alongside her 1999 New Political Science essay and the Target Zero introduction [src: 1].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/32/Kathleen_Cleaver%2C_from_Black_Panther_newspaper%2C_October_5_1968.png",
@@ -97,6 +165,16 @@
       "url": "https://www.intelligence.senate.gov/sites/default/files/94755_III.pdf",
       "title": "U.S. Senate Select Committee to Study Governmental Operations with Respect to Intelligence Activities (Church Committee), Final Report, Book III: Supplementary Detailed Staff Reports on Intelligence Activities and the Rights of Americans, section on the FBI's COINTELPRO program against the Black Panther Party",
       "publisher": "U.S. Government Printing Office, S. Rep. No. 94-755, 94th Cong., 2d Sess., 1976"
+    },
+    {
+      "url": "https://history.fas.harvard.edu/event/hutchins-centermemories-love-and-war-kathleen-cleaver",
+      "title": "Kathleen Cleaver, \"Memories of Love and War\" (Hutchins Center for African and African American Research talk drawn from her memoir-in-progress of the same title)",
+      "publisher": "Harvard University, Hutchins Center for African and African American Research; the working title also appears as a 1995 piece in the Radcliffe Quarterly (vol. 81, no. 1)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669150/",
+      "title": "Kathleen Cleaver on the documentary record of the period (her remarks on The Black Power Mixtape 1967-1975 within her oral history); see also Stanley Nelson, dir., The Black Panthers: Vanguard of the Revolution (2015)",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); Goran Hugo Olsson, dir., The Black Power Mixtape 1967-1975 (2011); Firelight Films / PBS Independent Lens (2015)"
     }
   ]
 }

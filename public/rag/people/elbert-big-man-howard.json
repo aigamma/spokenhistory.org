@@ -7,7 +7,7 @@
   "born": 1938,
   "died": 2018,
   "role_summary": "Founding member of the Black Panther Party (1966); Deputy Minister of Information and lead spokesperson while other founders were in prison; later founded the Police Accountability Clinic & Helpline of Sonoma County.",
-  "ai_reading": "Howard's top semantic neighbors are Evans Derrell Hopkins (entry 42, count 285), Elmer Dixon (entry 37), Aaron Dixon (entry 1), Roberta Alexander (entry 110), and John Churchville (entry 63). The BPP cluster is unambiguous in the embedding, consistent with his cultural placement as one of the six founding members of the party. On the Nonviolence as Theology vs Armed Self-Defense axis Howard sits at -0.85, far toward Nonviolence as Theology and second only to Elmer Dixon's maximal -1.00 in the BPP subgroup. This is the same AI-vs-culture mismatch the Aaron Dixon page names at length: the five BPP-identified interviewees in this corpus (Aaron and Elmer Dixon, Kathleen Cleaver, Elbert Howard, Norma Mtume) ALL cluster at the Nonviolence-as-Theology pole that their cultural reception predicts they should oppose. Howard's Deputy Minister of Information title at the BPP made him the party's public voice during the late 1960s incarcerations of the better-known founders, which makes the embedding's placement here especially worth interrogating.",
+  "ai_reading": "Howard's top semantic neighbors by shared-passage count are Evans Derrell Hopkins (entry 42, count 285), Elmer Dixon (entry 37, count 201), Aaron Dixon (entry 1, count 167), Roberta Alexander (entry 110, count 126), and John Churchville (entry 63, count 111). The Black Panther Party cluster is unambiguous in the embedding, consistent with his cultural placement as one of the six founding members of the party; Roberta Alexander's high ranking tracks a documented working relationship, since she typeset The Black Panther under his editorship and traveled to Japan with him in 1971. On the Nonviolence as Theology vs Armed Self-Defense axis Howard sits at -0.85 (normalized), far toward the Nonviolence-as-Theology pole and second only to Elmer Dixon's maximal -1.00 among the Black Panther Party interviewees in the corpus (Kathleen Cleaver -0.80, Aaron Dixon -0.73, Norma Mtume -0.65 round out the group, all negative). This is the same AI-versus-culture mismatch the Aaron Dixon page names at length: all five Black-Panther-identified interviewees in this corpus cluster at the theological-nonviolence pole that their cultural reception predicts they should oppose. Howard's Deputy Minister of Information title made him the party's public voice during the late-1960s incarcerations of the better-known founders, which makes the embedding's placement here especially worth interrogating against his own testimony that the party was built as a departure from \"the civil rights and the non-violence and all that sort of stuff.\"",
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Elbert_Howard_lecturing_in_Amsterdam.png",
     "alt": "Elbert Howard lecturing about the Black Panther Party at the Mozes en Aaronkerk in Amsterdam, January 1970",
@@ -18,6 +18,85 @@
     "date_taken": "1970-01-16"
   },
   "biographical_paragraph": "When the Black Panther Party formed in Oakland in 1966, Elbert Howard was twenty-eight and one of six founding members of the organization, alongside Bobby Seale, Huey P. Newton, Bobby Hutton, Reggie Forte, and Sherman Forte [src: 2]. He took the title Deputy Minister of Information and, with several of the better-known founders in prison through much of the late 1960s, often spoke for the party in public [src: 2]. Howard had been born January 5, 1938 in Chattanooga, Tennessee, and had served in the United States Air Force in Europe before settling in Oakland [src: 2]. He left the party in 1974 and eventually returned to California, settling in Forestville in Sonoma County, where he founded the Police Accountability Clinic & Helpline of Sonoma County [src: 2]. In 2001 he self-published Panther on the Prowl, his memoir of the founding years [src: 2]. Howard died July 23, 2018 at age eighty [src: 2]. His Library of Congress oral history is entry 35 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "00:14:01",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "Howard describes the after-class conversations at Merritt College with Bobby Seale and Huey Newton that turned into the Black Panther Party, framed as a deliberate break from the existing movement:",
+      "quote": "And we would kick around ways of dealing with that, you know, try to figure out a different way of approaching it as opposed to the civil rights and the non-violence and all that sort of stuff."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "00:26:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "On the early armed police-observation patrols and what they were meant to teach the community:",
+      "quote": "And we would advise people when they would stop by the cops, we'd get out and observe the cops' so-called performing and duty."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "00:38:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "After Eldridge Cleaver took over as editor and Howard became Deputy Minister of Information, he plays down the rank itself:",
+      "quote": "And, but, you know, I never gave too much importance to a title, because it's just wanted to do the work."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "00:39:25",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "On taking up public speaking as the party's better-known voices were jailed:",
+      "quote": "And all of that, other people had to step up. And I never considered myself a public speaker or anything."
+    },
+    {
+      "relation": "self",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "02:09:24",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "Decades later in Sonoma County, Howard describes founding the police-accountability help line that became PACH:",
+      "quote": "So out of the works out that I held, we came up with the idea of creating a help line for people who had no records"
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:58:01",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Seattle chapter captain Aaron Dixon names Howard's editorship and international travel when recalling the national party:",
+      "quote": "and Big Man Howard was the editor of the newspaper, and they traveled, they did a lot of traveling around the world,"
+    },
+    {
+      "relation": "about",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "01:07:24",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "Roberta Alexander, who typeset The Black Panther in the Oakland national office, describes the production routine she shared with Howard:",
+      "quote": "And so Elbert \"Big Man\" Howard would pick the articles and I would type them into the [IBM] Justowriter which was this old machine that would line it up and I would correct the spelling"
+    }
+  ],
   "movement_context": "The Black Panther Party for Self-Defense was constituted in Oakland in October 1966 by Huey P. Newton and Bobby Seale, both then students at the original North Oakland campus of Merritt College, where they had been involved in the Soul Students Advisory Council and a campus reading circle that worked through Frantz Fanon, Malcolm X's Autobiography, and Mao's Little Red Book in the spring and summer of 1966 [src: 3]. Howard was part of that Merritt College circle and was one of the six original members who signed on to the party in the weeks immediately following the October drafting of the Ten-Point Platform and Program; the other five were Newton, Seale, Sherman Forte, Reggie Forte, and the seventeen-year-old Bobby Hutton, who became the party's first formally enrolled recruit [src: 3, src: 6]. The panther symbol the party adopted was inherited from the Lowndes County Freedom Organization in Alabama, the independent Black political party Stokely Carmichael and the SNCC field staff (including Courtland Cox at catalog entry 24) organized in 1965 and 1966 around a black panther ballot icon; Newton and Seale's adoption of the symbol in 1966 was a deliberate iconographic continuity with the LCFO and is documented as such in both Bloom and Martin and in Howard's own memoir [src: 3, src: 4]. Howard's founding role at the party's newspaper, The Black Panther, Black Community News Service, was the institutional anchor for his Deputy Minister of Information title; the paper began publication April 25, 1967 with a single mimeographed issue on the Oakland police killing of Denzil Dowell, and Howard was its founding editor through the first months before the paper's editorship rotated through Eldridge Cleaver and Emory Douglas in 1967 and 1968 [src: 4, src: 6]. The 1968 Peace and Freedom Party presidential campaign of Eldridge Cleaver, on which Howard worked as part of the BPP central committee's electoral-coalition operation, ran from the spring through the November election and ended with Cleaver fleeing to Algeria in late November 1968 after a parole-revocation order tied to the April 6 Oakland police shootout that killed Bobby Hutton [src: 4]. The broader BPP cohort documented in this catalog (Aaron Dixon at entry 1 as the Seattle chapter co-founder, Elmer Dixon at entry 37, Kathleen Cleaver at entry 73 as Communications Secretary, Norma Mtume at her own catalog entry as the Los Angeles chapter's health-clinic and dental-program coordinator) places Howard at the Oakland headquarters end of an organizational geography the LoC oral histories collectively document across at least four chapter sites [src: 1, src: 4].",
   "legacy_and_reception": "Howard's 2002 memoir Panther on the Prowl is the founding-member-authored first-person account of the October 1966 weeks of party formation; the book is short (the original self-published edition runs roughly 130 pages) and is the principal primary source for the day-by-day sequence of the Ten-Point Platform drafting at Bobby Seale's North Oakland apartment, the panther-symbol decision, and the recruitment of the Forte brothers and Bobby Hutton [src: 6]. Through the 2000s and 2010s Howard remained active in the BPP alumni network that organized around the It's About Time Black Panther Party Alumni Committee, the Sacramento-based archival and reunion organization founded by former Sacramento BPP chapter member Bill Jennings in the late 1990s; the It's About Time online archive Howard contributed materials to and helped curate is the institutional repository for original BPP newspapers, photographs, and oral-history recordings outside the major university archival collections [src: 7]. After founding the Police Accountability Clinic and Helpline of Sonoma County (PACH) in the early 2000s, Howard's public-speaking and writing through the 2010s anchored on police-accountability organizing in Northern California; the PACH organization continued its work after his death and documents his founding role in its institutional record [src: 2]. Howard died July 23, 2018 in Sonoma County, California; some obituary records list Sanford, Florida as a secondary residence at his death, and the date and location of death are documented in the It's About Time archive's memorial record and in the Civil Rights History Project's interviewee biographical update [src: 1, src: 7].",
   "gallery": [
