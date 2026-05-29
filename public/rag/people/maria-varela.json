@@ -7,15 +7,83 @@
   "born": 1940,
   "died": null,
   "role_summary": "SNCC organizer and photographer in Alabama and Mississippi from 1963; staff photographer for Black Star photo agency; co-founder (1981) of Ganados del Valle, the New Mexico rural Hispanic cooperative; MacArthur Foundation fellow, 1990.",
-  "ai_reading": "Varela's top semantic neighbors are Betty Garman Robinson (entry 7, count 132), Dr. Doris Derby (entry 32), Charles McLaurin (entry 17), Martha Prescod Norman Noonan (entry 83), and John Churchville (entry 63). The cluster is the SNCC-allied-organizers-and-photographers cohort. The embedding therefore reads her as a SNCC voice rather than as a Chicana voice the cultural reading often foregrounds (Varela is one of the relatively few Latina figures in the civil rights movement record). Her Individual Conscience vs Collective Discipline position at -0.42 reads her testimony toward Individual Conscience, an unexpected pull for a photographer whose post-SNCC work organized rural Hispanic cooperatives (Ganados del Valle from 1981), which is by definition collective enterprise; the embedding may be catching the documentarian's eye in her transcript more than the organizer's hand.",
-  "biographical_paragraph": "Varela was born in January 1940 in Pennsylvania and joined SNCC in 1963, working in Alabama and Mississippi as both an organizer and a photographer; her Black Star photo-agency credentials placed her work in the periodicals of the period [src: 2]. Julian Bond's 2011 University Press of Mississippi book This Light of Ours: Activist Photographers of the Civil Rights Movement documents her photographic work alongside that of her SNCC colleagues [src: 2]. In 1981 she co-founded Ganados del Valle, a wool-and-sheep cooperative in northern New Mexico that has continued the rural Hispanic land-grant tradition through her organizing; in 1990 she received a MacArthur Foundation fellowship in recognition of that work [src: 3]. Her Library of Congress oral history is entry 81 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "Varela came into the civil rights movement through the Students for a Democratic Society Port Huron founding cohort in June 1962, where she was among the small group of student activists who drafted and ratified the Port Huron Statement at the United Auto Workers retreat in Port Huron, Michigan; the founding cohort was overwhelmingly white and male, and Varela's presence as a Latina participant inside the early SDS leadership was an early instance of a pattern that recurs across her movement biography, that of one of the few Latina organizers inside an institutional structure framed by Black-and-white movement demographics [src: 4, 5]. By 1963 she had transferred to SNCC as a field staff member, recruited by James Forman and Bob Moses to bring photographic-documentation capability to the Mississippi and Alabama field operations; the Black Star photo agency credential she carried gave her work the institutional credibility to run in mainstream periodicals of the period, expanding the readership reach of the SNCC documentary record beyond the movement press [src: 4]. Across 1963-1968 Varela worked the Mississippi Delta projects, the Selma voter registration drive, and the Alabama Black Belt field offices, producing the photographic record of SNCC's Southern field operations alongside Dr. Doris Derby (catalog entry 32), the other SNCC staff photographer working the same period; the two were the field-photography cohort SNCC sent into the Deep South to document the voter-registration projects, the Freedom Schools, the Freedom House daily life, and the law-enforcement and Klan surveillance the field workers faced [src: 4, 6]. In Selma during the spring of 1965, Varela's camera documented the voter-registration organizing that culminated in the March 7 Bloody Sunday attack on the Edmund Pettus Bridge and the subsequent March 21-25 Selma-to-Montgomery march under federal protection; her photographs sit alongside the FBI, AP, and Black Star coverage that established the visual record of the campaign [src: 7]. In 1968, as SNCC's institutional cohesion fractured and the Black Power turn made non-Black field staff increasingly out of position inside the organization, Varela moved to New Mexico and began the second long arc of her movement career, organizing alongside Reies Lopez Tijerina's Alianza Federal de Mercedes (the New Mexico Chicano land-grant movement that had taken over the Rio Arriba County courthouse at Tierra Amarilla in June 1967) and embedding inside the rural Hispanic land-grant communities of the upper Chama River valley [src: 8]. The 1981 co-founding of Ganados del Valle and the Tierra Wools weaving cooperative in Los Ojos, New Mexico, with Antonio Manzanares and other land-grant community members, built a cooperative institutional infrastructure for the Navajo-Churro sheep, traditional Rio Grande-style weaving, and the rural Hispanic economy of northern New Mexico; the cooperative's grazing-rights work brought it into long-running conflict with the U.S. Forest Service and the Sierra Club through the late 1980s and early 1990s [src: 8]. The 1990 MacArthur Fellowship cited the cooperative-building work, naming Varela as one of the rural community organizers whose post-1968 career extended the SNCC field-organizing methodology into a different demographic and ecological terrain than the Deep South of her first movement decade [src: 3].",
-  "legacy_and_reception": "Varela has continued her New Mexico organizing work through Rural Resources, the nonprofit she founded to extend the Ganados del Valle community-development model into other rural Hispanic communities of the upper Rio Grande basin and the southern Rocky Mountain region; the work has run from her Los Ojos base for more than four decades since the 1981 cooperative founding [src: 8]. Her 2008 book Time It Was: American Stories from the Sixties (Pearson Prentice Hall), edited by Karen Manners Smith and Tim Koster, includes her photographic contributions to the volume's documentary record of the period [src: 9]. Her contributing essay to the 2010 University of Illinois Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC (edited by Faith S. Holsaert, Martha Prescod Norman Noonan, Judy Richardson, Betty Garman Robinson, Jean Smith Young, and Dorothy M. Zellner) places her testimony alongside the fifty other women SNCC field staff whose collected memoir is the standard primary-source compilation of the women-of-SNCC record; the volume includes her account of the 1963-1968 field-photography work [src: 10]. Her photography monograph Encuentro: Maria Varela / SNCC (Albuquerque Museum, 2018) collected the SNCC-period photographs into a museum-catalogue treatment with Spanish-language apparatus, placing the Deep South field record inside a Chicana-photographic-history framework that the AI's-reading observation above flags as a less common reading of her work than the SNCC-photographer-cohort embedding makes [src: 11]. The Library of Congress oral history at catalog entry 81, recorded in 2013 for the Civil Rights History Project (AFC 2010/039), and her presence in the Smithsonian National Museum of African American History and Culture's collection of SNCC field photography round out the institutional archival record [src: 1].",
+  "ai_reading": "Varela's top semantic neighbors by aggregated chunk count are Dr. Doris Derby (entry 32, count 29), Betty Garman Robinson (entry 7, count 25), Gwendolyn Zoharah Simmons (entry 53, count 20), Mateo Camarillo (entry 86, count 17), and H. Jack Geiger (entry 54, count 17). The Derby and Garman Robinson pairings track the SNCC-photographer-and-organizer reading the cultural record already carries. The surprise is lower in the same list: Mateo Camarillo (entry 86) and Gloria Arellanes (entry 47, count 14) are Mexican-American and Chicano-movement voices, not SNCC, and the embedding pulls them up near the SNCC cohort, so the vector space does surface her Chicana and land-grant arc rather than flattening it into a Deep South SNCC signature. Her sharpest axis reading runs the other way from the public framing: on the Nonviolence as Theology versus Armed Self-Defense axis she sits at +0.43, toward the Armed Self-Defense pole, for a figure cataloged as a SNCC literacy-and-photography worker. Her own testimony corroborates the placement; she says she and others who came in by late 1962 and early 1963 were not philosophically committed to nonviolence, that it was a strategy, and that she brought a gun South to defend herself. On the Individual Conscience versus Collective Discipline axis she reads at -0.42, toward Individual Conscience, which sits in tension with the four-decade cooperative-building work that followed.",
+  "biographical_paragraph": "Varela was born on January 1, 1940, in Newell, Pennsylvania [src: 1]. She reached the southern movement through the Catholic student left, working on the national staff of the Young Christian Students and meeting SNCC organizers at National Student Association congresses, then joined SNCC around 1963 after Casey Hayden recruited her to the Atlanta office [src: 6]. Her first field assignment was adult-literacy work in Selma, Alabama, building reading materials for residents facing the Alabama voter-registration test, before she moved to Mississippi and learned documentary photography to produce the cooperative-organizing booklets and filmstrips she distributed across SNCC's Delta projects [src: 6]. Julian Bond's 2011 University Press of Mississippi book This Light of Ours: Activist Photographers of the Civil Rights Movement places her among the photographers of the movement [src: 2]. After SNCC, she moved to New Mexico and organized in the Hispanic land-grant communities of the upper Chama valley; in 1981 she helped found Ganados del Valle, a wool-and-sheep cooperative in Los Ojos, and in 1990 she received a MacArthur Foundation fellowship [src: 3]. Her Library of Congress oral history is entry 81 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "00:14:41",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "Varela traces her first contact with the movement to a National Student Association congress she attended as a Young Christian Students staffer, where SNCC sit-in participants pressed the body to take a stand:",
+      "quote": "So in that process is where I heard SNCC folks, student on violent coordinating committee sit in participants and leaders who came because they wanted the NSA to go on record."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "00:30:16",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "On her first SNCC assignment, adult-literacy work in Selma supporting a priest who wanted residents able to pass the registration test:",
+      "quote": "father really wanted to have some literacy training. He felt, because then people could take that 21 question voter registration test. It's a ridiculous test."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "01:06:50",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "On where the SNCC staff who arrived in late 1962 and 1963 stood on nonviolence:",
+      "quote": "Some of us who came in by late 62 early 63, we weren't philosophically committed to nonviolence. It was a strategy. You know, we, I know I brought my gun down because I was going to defend myself."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "00:51:10",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "On what set SNCC's photography department apart from the image-making of the other civil rights organizations:",
+      "quote": "our purpose as SNCC photographers was to show not the celebrities in the movement, but to show the local folks who were the leaders, without which the movement could not move."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "01:28:55",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "On what Black Power meant to her and how it carried into her New Mexico cooperative work:",
+      "quote": "People empowering themselves to create these institutions. And if they wouldn't let you in, you create your own."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "00:49:03",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "Fellow SNCC staffer Dorothy Zellner, recalling how central cars were to field work, points to a Varela story from the Hands on the Freedom Plow anthology Zellner co-edited (the transcript renders Klan as clan):",
+      "quote": "And María Varela has a story in there, in Hansen, where she's driving, trying to escape the clan at 110 miles an hour, cars and loom very heavily under the story."
+    }
+  ],
+  "movement_context": "Varela's route into the movement ran through the Catholic student left rather than the campus radicalism the period is usually narrated through. On the national staff of the Young Christian Students she worked the National Student Association congresses, where she first heard SNCC sit-in participants argue the southern student schools onto the record in support of the sit-ins; in her telling she was the office worker through whom resolutions moved [src: 1]. Tom Hayden invited the Young Christian Students to send a representative to the June 1962 Port Huron gathering as part of an effort to broaden the founding meeting beyond the existing student left; Varela attended, typed the meeting's minutes, and recalls being asked to help resolve points of language in the document, though she is tentative in her own account about how much she shaped the text [src: 1, 5]. She joined SNCC around 1963 after Casey Hayden wrote asking for help in the Atlanta office, and her first field assignment was not photography but adult literacy in Selma, Alabama, supporting a French-Canadian priest at an African-American Catholic mission and teaching residents to read against the Alabama voter-registration test [src: 1]. The photography came later and instrumentally: needing images of Black people running their own cooperatives for the literacy booklets and filmstrips she was producing, she spent a week in 1965 learning to shoot, develop, and print from the photographer Matt Herron in New Orleans, and she did not at the time identify herself as a photographer, describing the camera as in the service of whatever SNCC organizers in the communities needed [src: 1]. SNCC ran the only photography department of the major civil rights organizations, with roughly nine field photographers; Varela and Dr. Doris Derby (catalog entry 32) were among the women in that group, and Varela frames the department's purpose as documenting the local people who led the movement rather than its visible celebrities [src: 1, 6]. Her field photography ran into the second half of the 1960s, including the 1966 James Meredith March Against Fear and, after she had begun moving toward the Southwest, the 1968 Poor People's Campaign, where she photographed the Latino delegations [src: 1]. Through the 1966-1968 reorganization that put SNCC under an all-Black executive, Varela was not expelled; she describes a personalized letter from the leadership telling her to keep working with Fannie Lou Hamer's campaign, though her foundation funding dried up as she declined to repudiate Black Power [src: 1]. She moved to New Mexico to work for Reies Lopez Tijerina, the land-grant leader whose Alianza Federal de Mercedes had carried out the June 1967 Rio Arriba County courthouse raid at Tierra Amarilla, and then shifted from Tijerina's Albuquerque operation to community organizing in the upper Chama valley, beginning with a rural health clinic that first saw patients in 1969 [src: 1, 8]. From that base she helped build a cooperative economy around the Navajo-Churro heritage sheep and traditional Rio Grande weaving; the enterprises consolidated as Ganados del Valle, founded in 1981 in Los Ojos with land-grant community members, and the cooperative's grazing-rights advocacy brought it into conflict with the U.S. Forest Service and environmental organizations across the following years [src: 8]. The 1990 MacArthur Fellowship cited that rural cooperative-building work [src: 3].",
+  "legacy_and_reception": "Varela's New Mexico organizing extended past the founding of Ganados del Valle into a broader rural community-development practice; she has worked from her Los Ojos base in the Chama valley across the decades following the 1981 cooperative, and in the oral history she frames the whole arc as roughly thirty years of building alternative institutions around health care, land, and livestock [src: 1, 8]. Her contributing essay to the 2010 University of Illinois Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC, edited by Faith S. Holsaert, Martha Prescod Norman Noonan (catalog entry 83), Judy Richardson, Betty Garman Robinson (catalog entry 7), Jean Smith Young, and Dorothy M. Zellner (catalog entry 30), places her account among those of the women SNCC field staff in the standard primary-source compilation of that record [src: 10]. Dorothy Zellner, one of that volume's editors, recounts in her own oral history a Varela story from the book, a high-speed drive to outrun the Klan, which corroborates Varela's place in the SNCC field network [src: 11]. The David Cline oral history at catalog entry 81, recorded in 2016 in Pasadena, California for the Civil Rights History Project (AFC 2010/039), and her inclusion in the Julian Bond volume This Light of Ours anchor the institutional record of her movement photography [src: 1, 2].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/9/99/Selma_to_Montgomery_Marches.jpg",
       "alt": "Participants carrying American flags during the 1965 civil rights march from Selma to Montgomery, Alabama",
-      "caption": "Participants, some carrying American flags, marching from Selma to Montgomery, Alabama, in the federally protected March 21-25, 1965 voting rights march that followed the March 7 Bloody Sunday attack on the Edmund Pettus Bridge. Varela was in Selma during the spring 1965 voter-registration campaign as a SNCC field photographer, and her camera documented the organizing work that culminated in this march and the subsequent passage of the Voting Rights Act. Library of Congress, Prints and Photographs Division (Digital ID cph.3c33090).",
+      "caption": "Participants, some carrying American flags, marching from Selma to Montgomery, Alabama, in the federally protected March 21-25, 1965 voting rights march that followed the March 7 Bloody Sunday attack on the Edmund Pettus Bridge. Varela's first SNCC assignment was adult-literacy work in Selma in 1963 and 1964; she learned documentary photography in 1965 and her field camera work is documented later, including the 1966 James Meredith March Against Fear and the 1968 Poor People's Campaign. This image marks the Selma campaign she had worked in before the march. Library of Congress, Prints and Photographs Division (Digital ID cph.3c33090).",
       "photographer": "Peter Pettus",
       "repository": "Wikimedia Commons (sourced from Library of Congress)",
       "license": "Public domain (published in the United States between 1931 and 1977 without a copyright notice)",
@@ -25,7 +93,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bloody_Sunday-Alabama_police_attack.jpeg",
       "alt": "Alabama state troopers attacking civil rights demonstrators on the Edmund Pettus Bridge, March 7, 1965",
-      "caption": "Federal Bureau of Investigation photograph of Alabama state troopers attacking demonstrators on the Edmund Pettus Bridge in Selma, Alabama, on March 7, 1965, the event known as Bloody Sunday. The attack, captured by FBI, AP, and Black Star photographers, drew national television coverage and forced the federal intervention that produced the protected March 21-25 Selma-to-Montgomery march. Varela's field photography in Selma during the spring 1965 voter-registration campaign sits alongside the institutional photographic record this image represents.",
+      "caption": "Federal Bureau of Investigation photograph of Alabama state troopers attacking demonstrators on the Edmund Pettus Bridge in Selma, Alabama, on March 7, 1965, the event known as Bloody Sunday. The attack drew national television coverage and forced the federal intervention that produced the protected March 21-25 Selma-to-Montgomery march. Selma was where Varela had been assigned to adult-literacy organizing in 1963 and 1964, the town she describes in her oral history as the most repressive place SNCC sent her.",
       "photographer": "Federal Bureau of Investigation",
       "repository": "Wikimedia Commons (sourced from National Park Service Civil Rights travel website)",
       "license": "Public domain (work product of a federal government agency)",
@@ -62,12 +130,12 @@
     {
       "url": "https://search.worldcat.org/title/318263002",
       "title": "Clayborne Carson, In Struggle: SNCC and the Black Awakening of the 1960s",
-      "publisher": "Harvard University Press, 1981 (revised 1995); WorldCat OCLC 318263002 (the canonical organizational history of SNCC, including the Mississippi and Alabama field operations, the field-photography work Varela and Derby produced across 1963-1968, and the 1968 institutional fracture that prompted Varela's move to New Mexico)"
+      "publisher": "Harvard University Press, 1981 (revised 1995); WorldCat OCLC 318263002 (the organizational history of SNCC, including the Mississippi and Alabama field operations, the field-photography department, and the 1966-1968 reorganization)"
     },
     {
       "url": "https://search.worldcat.org/title/1903698",
       "title": "Tom Hayden, The Port Huron Statement: The Visionary Call of the 1960s Revolution",
-      "publisher": "Thunder's Mouth Press, 2005; WorldCat OCLC 1903698 (Tom Hayden's annotated edition of the 1962 Students for a Democratic Society founding document drafted at Port Huron, Michigan, where Varela was among the founding cohort of student activists)"
+      "publisher": "Thunder's Mouth Press, 2005; WorldCat OCLC 1903698 (Tom Hayden's annotated edition of the 1962 Students for a Democratic Society founding document drafted at the Port Huron, Michigan gathering Varela attended)"
     },
     {
       "url": "https://snccdigital.org/people/maria-varela/",
@@ -77,17 +145,17 @@
     {
       "url": "https://search.worldcat.org/title/57346030",
       "title": "David Garrow, Protest at Selma: Martin Luther King, Jr. and the Voting Rights Act of 1965",
-      "publisher": "Yale University Press, 1978; WorldCat OCLC 57346030 (the canonical historical treatment of the 1965 Selma voting-rights campaign, the March 7 Bloody Sunday attack on the Edmund Pettus Bridge, and the federally protected March 21-25 Selma-to-Montgomery march that Varela's field photography documented)"
+      "publisher": "Yale University Press, 1978; WorldCat OCLC 57346030 (the historical treatment of the 1965 Selma voting-rights campaign, the March 7 Bloody Sunday attack on the Edmund Pettus Bridge, and the federally protected March 21-25 Selma-to-Montgomery march, the campaign Varela had worked in as a literacy organizer before the march)"
     },
     {
-      "url": "https://search.worldcat.org/title/57010800",
+      "url": "https://search.worldcat.org/title/41090832",
       "title": "Ernesto Vigil, The Crusade for Justice: Chicano Militancy and the Government's War on Dissent",
       "publisher": "University of Wisconsin Press, 1999; WorldCat OCLC 41090832 (the institutional history of the late-1960s Chicano movement including the Reies Lopez Tijerina Alianza Federal de Mercedes work in northern New Mexico that Varela joined in 1968)"
     },
     {
       "url": "https://search.worldcat.org/title/180754373",
       "title": "Karen Manners Smith and Tim Koster, eds., Time It Was: American Stories from the Sixties",
-      "publisher": "Pearson Prentice Hall, 2008; WorldCat OCLC 180754373 (the 2008 documentary volume including Varela's photographic contributions to the period's visual record)"
+      "publisher": "Pearson Prentice Hall, 2008; WorldCat OCLC 180754373 (a documentary volume on the 1960s, general background on the period's movements)"
     },
     {
       "url": "https://search.worldcat.org/title/681497470",
@@ -95,9 +163,9 @@
       "publisher": "University of Illinois Press, 2010; WorldCat OCLC 681497470 (the standard primary-source compilation of the women-of-SNCC record, including Varela's contributing essay on the 1963-1968 field-photography work)"
     },
     {
-      "url": "https://search.worldcat.org/title/1080425073",
-      "title": "Maria Varela, Encuentro: Maria Varela / SNCC",
-      "publisher": "Albuquerque Museum, 2018; WorldCat OCLC 1080425073 (the museum-catalogue photographic monograph collecting Varela's SNCC-period photographs with Spanish-language apparatus)"
+      "url": "https://www.loc.gov/item/2016655416/",
+      "title": "Dorothy M. Zellner oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); catalog entry 30, the SNCC field staffer and Hands on the Freedom Plow co-editor who recounts a Varela story from that anthology"
     }
   ]
 }

@@ -3,19 +3,87 @@
   "slug": "judy-richardson",
   "person_type": "interviewee",
   "entry_number": 69,
-  "born": null,
+  "born": 1944,
   "died": null,
   "display_name": "Judy Richardson",
   "role_summary": "SNCC organizer 1963-1966; founding staff member of the SNCC Atlanta office and the Mississippi field projects; series associate producer of Eyes on the Prize (1987 and 1990, the Blackside Inc. documentary series that became the canonical filmed history of the civil rights movement); co-editor of Hands on the Freedom Plow: Personal Accounts by Women in SNCC (University of Illinois Press, 2010).",
-  "ai_reading": "Richardson's top semantic neighbor is Betty Garman Robinson (entry 7) at a cosine count of 172; the broader cluster includes Dorothy \"Dottie\" Foreman Zellner (entry 30), Reginald Robinson (entry 101), and Juadine Henderson (entry 68). The cluster is the SNCC-staff cohort (Atlanta office and Mississippi field) that Richardson worked alongside in 1963-1966. The catalog flags a +0.72 reading on the Tactical Pragmatism vs Strategic Vision axis (far toward Strategic Vision) as the most-distinctive structural reading. For a documentary-producer career across Eyes on the Prize and Blackside Inc, this is the catalog's clearest case of an embedding signature catching the long-form-narrative-construction register of her professional work over the tactical-on-the-ground register of her 1963-1966 SNCC organizing; the structure-vs-tactic distinction the axis names is itself one of the things Eyes on the Prize taught its viewers to see, and Richardson's testimony reads as the production-side voice rather than the field-side voice.",
-  "biographical_paragraph": "While Richardson's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), her external biographical record is well-documented [src: 1]. Richardson grew up in Tarrytown, New York and enrolled at Swarthmore College in 1962. After participating in the 1963 Cambridge, Maryland desegregation campaign she suspended her studies and joined SNCC's Atlanta office full-time, working there and on Mississippi field projects across 1963-1966. After SNCC's late-1960s organizational decline she moved into documentary production at Henry Hampton's Blackside Inc in Boston, eventually serving as associate producer on the landmark Eyes on the Prize series (1987's six-hour Eyes on the Prize: America's Civil Rights Years, 1954-1965 and 1990's eight-hour Eyes on the Prize II: America at the Racial Crossroads, 1965-1985) [src: 2]. She subsequently produced or consulted on several PBS American Experience documentaries; she co-edited Hands on the Freedom Plow: Personal Accounts by Women in SNCC (with Faith S. Holsaert, Martha Prescod Norman Noonan, who is herself catalog entry 83, Jean Smith Young, and others; University of Illinois Press, 2010), the canonical scholarly volume on women's organizing within SNCC [src: 2]. She has taught at Brown University as Distinguished Visiting Scholar in the Department of Africana Studies [src: 2].",
-  "movement_context": "Richardson joined the SNCC Atlanta national office in 1963 as secretary to Executive Director James Forman, the role that put her at the operational center of SNCC's institutional life across the 1963-1966 period [src: 2]. The job description as the SNCC Digital Gateway records it (communication with pro-bono legal counsel, managing Forman's calendar and correspondence, covering the Wide Area Telephone Service line that the Atlanta office used to maintain real-time contact with the field-staff and the jailed-organizer network across Mississippi, Alabama, and southwest Georgia) placed her alongside Betty Garman Robinson (catalog entry 7), who arrived in March 1964 to coordinate the Friends of SNCC chapter network that financed the field operations [src: 3]. The two were neighbors on the same Atlanta office staffing chart through the 1964 Freedom Summer and the 1965 Selma campaign; the embedding picks up the proximity as the +172 cosine count between their oral histories that the AI's-reading observation names. The spring 1964 sit-in Richardson participated in (organized to protest that only women on the Atlanta staff were assigned to take meeting minutes, leading the men eventually to share that responsibility) is the SNCC Atlanta office's documented internal organizing moment over the sexual division of labor, the same internal-organizing tradition the 2010 collective memoir Hands on the Freedom Plow would document twenty-five years later [src: 2]. Richardson left SNCC in 1966, the year of the November Kingston Springs Tennessee staff meeting that elected Stokely Carmichael (catalog gallery image) SNCC chair and adopted the Black Power program [src: 4]. Her subsequent move to Henry Hampton's Blackside Inc in Boston placed her on the production team for Eyes on the Prize, the 14-episode PBS documentary series broadcast in two parts (1987's six-hour Eyes on the Prize: America's Civil Rights Years, 1954-1965 and 1990's eight-hour Eyes on the Prize II: America at the Racial Crossroads, 1965-1985), executive-produced by Hampton (1940-1998) under Blackside's American Experience contract [src: 5]. The series won Emmy Awards, a Peabody, and an International Documentary Award, and the historiographical scholarship since the late 1980s has treated it as the foundational filmed framing of the movement for a generation of American secondary-school and college audiences [src: 5]. The accompanying Juan Williams companion volume (1987) and the Henry Hampton and Steve Fayer oral-history-companion Voices of Freedom (1990) extended the documentary's reach into print bibliography [src: 6].",
-  "legacy_and_reception": "After Eyes on the Prize wrapped, Richardson continued her documentary production career at Northern Light Productions, the Boston-based media studio that has operated for more than four decades producing museum installations, interactive exhibits, and documentary films for cultural institutions [src: 7]. Her 2010 co-editorship of Hands on the Freedom Plow: Personal Accounts by Women in SNCC (University of Illinois Press) anchors the catalog cross-link to Dorothy \"Dottie\" Foreman Zellner (catalog entry 30), Faith S. Holsaert, Martha Prescod Norman Noonan (catalog entry 83), Betty Garman Robinson (catalog entry 7), and Jean Smith Young as her five co-editors; the volume collects fifty-two first-person accounts and stands as the principal collective-memoir archival document of the SNCC women's cohort [src: 8]. The 2014 paperback New Press reissue extended the volume's classroom adoption through the 2014 SNCC 50th Anniversary Conference at Shaw University in Raleigh that the SNCC alumni network convened to mark the organization's founding [src: 8]. Richardson serves on the board of the SNCC Legacy Project, the alumni organization that worked with Duke University to produce the SNCC Digital Gateway, the online documentary platform whose own biographical entry on Richardson the AI's reading and biographical paragraph above draw from [src: 2]. Her continuing teaching role at Brown University as a Distinguished Visiting Scholar in the Department of Africana Studies places her in active classroom contact with the next generation of researchers working in the institutional-history tradition the Eyes on the Prize series and Hands on the Freedom Plow together opened [src: 2].",
+  "ai_reading": "By cosine similarity in this corpus Richardson's top neighbor is Betty Garman Robinson (entry 7) at a count of 172, followed by Dorothy \"Dottie\" Foreman Zellner (entry 30) at 160 and Reginald Robinson (entry 101) at 107, then Juadine Henderson (entry 68) at 95; the cluster is the SNCC-staff cohort of the Atlanta office and the Mississippi field that she worked alongside in 1963-1966. The Betty Garman Robinson pairing is doubly attested here: the influence graph records Garman Robinson naming Richardson nine times, the single heaviest in-edge into Richardson's node, so the embedding proximity and the who-discussed-whom record agree rather than diverge. One reading the cluster makes legible is a disambiguation the cultural record routinely fumbles: Gloria Hayes Richardson (entry 49), the Cambridge leader with whom Judy Richardson shares a surname and a 1963 Cambridge connection, sits only mid-cluster at a count of 79, well below four SNCC-staff neighbors who share no surname with her, so the vector space sorts the two Richardsons by working context rather than by name. On the Tactical Pragmatism vs Strategic Vision axis her normalized position is +0.72, far toward Strategic Vision and the largest-magnitude axis reading the catalog records for her; for a career that ran from on-the-ground SNCC fieldwork into long-form documentary construction across Eyes on the Prize, the embedding reads the structural-analysis register of the production work over the tactical register of the 1963-1966 organizing, and the structure-versus-tactic distinction the axis names is itself one of the things Eyes on the Prize taught its viewers to see.",
+  "biographical_paragraph": "Richardson's LoC oral history carries a low audit tier in this corpus, with a residual cautioning that any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation; her external biographical record is independently documented [src: 1]. She was born March 10, 1944 in Tarrytown, New York, the railroad-town suburb in Westchester County where her father had helped organize the United Auto Workers local at the Fisher Body plant, and she enrolled at Swarthmore College in 1962 [src: 1]. After joining the 1963 Cambridge, Maryland desegregation campaign through the campus chapter she suspended her studies and went to SNCC's Atlanta national office, arriving in November 1963 as secretary to Executive Secretary James Forman and staying on staff through 1966, with field stints reaching into the Mississippi projects [src: 2]. In 1968, after the assassination of Martin Luther King Jr., she and other former SNCC staff founded the Drum and Spear Bookstore in Washington, D.C. [src: 2]. From the late 1970s she worked at Henry Hampton's Blackside Inc in Boston as a researcher, series associate producer, and content advisor on the Eyes on the Prize series (1987's six-hour Eyes on the Prize: America's Civil Rights Years, 1954-1965 and 1990's eight-hour Eyes on the Prize II: America at the Racial Crossroads, 1965-1985) [src: 2, 10]. She went on to produce or co-produce other documentaries, including the PBS American Experience film Malcolm X: Make It Plain and Scarred Justice: The Orangeburg Massacre 1968 [src: 10]. She co-edited Hands on the Freedom Plow: Personal Accounts by Women in SNCC (with Faith S. Holsaert, Martha Prescod Norman Noonan, who is herself catalog entry 83, Jean Smith Young, and others; University of Illinois Press, 2010), a scholarly volume on women's organizing within SNCC [src: 8]. She has held a Distinguished Visiting appointment in Africana Studies at Brown University [src: 10].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "00:43:51",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "Richardson describes the first organizing she joined, the weekend bus rides Swarthmore students took to picket segregated facilities in Cambridge, Maryland in late 1962:",
+      "quote": "So you would get there and it wouldn't just be Swarthmore College College students."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "01:41:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "On her job in the SNCC Atlanta national office and how Executive Secretary James Forman delegated to her:",
+      "quote": "Forman had a way of giving you as much responsibility as he thought you could take and more than you thought you could take."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "01:52:53",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "She recalls the deference expected of the women on staff, who typed the minutes while listening to the field organizers:",
+      "quote": "All of this is combining to say, you shut up and take the minutes."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "02:03:27",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "On the spring 1964 sit-in five women staged in Forman's office to protest that only women were assigned to take meeting minutes:",
+      "quote": "It is Mildred, Mary King, Bobbi Yancy, and Ruby Doris Smith Robinson and I. And we made up little signs, little placards that said no freedom, no, no minutes till something comes."
+    },
+    {
+      "relation": "self",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "01:25:16",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "On the analysis she brought to a narration line while co-producing the PBS American Experience film Malcolm X: Make It Plain:",
+      "quote": "I said, the police are an occupying force in these communities."
+    },
+    {
+      "relation": "about",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:14:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "Betty Garman Robinson, the Greenwood office's lead Northern coordinator during Freedom Summer 1964, places Richardson in the Mississippi field that summer:",
+      "quote": "Judy Richardson are there, both also working. They work on the press stuff primarily."
+    }
+  ],
+  "movement_context": "Richardson joined the SNCC Atlanta national office in 1963 as secretary to Executive Secretary James Forman, the role that put her at the operational center of SNCC's institutional life across the 1963-1966 period [src: 2]. The job description as the SNCC Digital Gateway records it (communication with pro-bono legal counsel, managing Forman's calendar and correspondence, covering the Wide Area Telephone Service line that the Atlanta office used to maintain real-time contact with the field-staff and the jailed-organizer network across Mississippi, Alabama, and southwest Georgia) placed her alongside Betty Garman Robinson (catalog entry 7), who arrived in March 1964 to coordinate the Friends of SNCC chapter network that financed the field operations [src: 3, 9]. The two were neighbors on the same Atlanta office staffing chart through the 1964 Freedom Summer and the 1965 Selma campaign; the embedding picks up the proximity as the +172 cosine count between their oral histories that the AI's-reading observation names. The spring 1964 sit-in Richardson participated in (organized to protest that only women on the Atlanta staff were assigned to take meeting minutes, leading the men eventually to share that responsibility) is the SNCC Atlanta office's documented internal organizing moment over the sexual division of labor, the same internal-organizing tradition the 2010 collective memoir Hands on the Freedom Plow would document twenty-five years later [src: 2]. Richardson left SNCC in 1966, the year of the May 1966 Kingston Springs Tennessee staff meeting that elected Stokely Carmichael (catalog gallery image) SNCC chair and adopted the Black Power program [src: 4]. Her subsequent move to Henry Hampton's Blackside Inc in Boston placed her on the production team for Eyes on the Prize, the 14-episode PBS documentary series broadcast in two parts (1987's six-hour Eyes on the Prize: America's Civil Rights Years, 1954-1965 and 1990's eight-hour Eyes on the Prize II: America at the Racial Crossroads, 1965-1985), executive-produced by Hampton (1940-1998) under Blackside's American Experience contract [src: 5]. The series won Emmy Awards, a Peabody, and an International Documentary Award, and the historiographical scholarship since the late 1980s has treated it as the foundational filmed framing of the movement for a generation of American secondary-school and college audiences [src: 5]. The accompanying Juan Williams companion volume (1987) [src: 6] and the Henry Hampton and Steve Fayer oral-history-companion Voices of Freedom (1990) [src: 7] extended the documentary's reach into print bibliography.",
+  "legacy_and_reception": "After Eyes on the Prize, Richardson continued in documentary production on subjects spanning the movement, including the PBS American Experience biography Malcolm X: Make It Plain and the PBS film Scarred Justice: The Orangeburg Massacre 1968, along with museum and visitor-center installation films for cultural institutions [src: 10]. Her 2010 co-editorship of Hands on the Freedom Plow: Personal Accounts by Women in SNCC (University of Illinois Press) anchors the catalog cross-link to Dorothy \"Dottie\" Foreman Zellner (catalog entry 30), Faith S. Holsaert, Martha Prescod Norman Noonan (catalog entry 83), Betty Garman Robinson (catalog entry 7), and Jean Smith Young as her five co-editors; the volume collects fifty-two first-person accounts and stands as the principal collective-memoir archival document of the SNCC women's cohort [src: 8]. The 2014 paperback New Press reissue extended the volume's classroom adoption through the 2014 SNCC 50th Anniversary Conference at Shaw University in Raleigh that the SNCC alumni network convened to mark the organization's founding [src: 8]. Richardson serves on the board of the SNCC Legacy Project, the alumni organization that worked with Duke University to produce the SNCC Digital Gateway, the online documentary platform whose own biographical entry on Richardson several of the biographical claims above draw from [src: 2]. Her Distinguished Visiting appointment in Africana Studies at Brown University places her in classroom contact with researchers working in the institutional-history tradition that the Eyes on the Prize series and Hands on the Freedom Plow together opened [src: 10].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/27/Logo_SNCC.svg",
       "alt": "Student Nonviolent Coordinating Committee (SNCC) organizational logo, 1961",
-      "caption": "SNCC organizational logo, 1961. Richardson joined the SNCC Atlanta national office in 1963 as secretary to Executive Director James Forman, working under this insignia through her departure in 1966. The vector mark is an SVG redrawing of a SNCC organizational pin first produced in 1961.",
+      "caption": "SNCC organizational logo, 1961. Richardson joined the SNCC Atlanta national office in 1963 as secretary to Executive Secretary James Forman, working under this insignia through her departure in 1966. The vector mark is an SVG redrawing of a SNCC organizational pin first produced in 1961.",
       "photographer": "Student Nonviolent Coordinating Committee (organizational mark; vector redrawn by Wikimedia contributor Gunnar.offel from the original SNCC pin)",
       "repository": "Wikimedia Commons",
       "license": "Public domain (U.S. publication 1931-1977 without copyright notice)",
@@ -62,7 +130,7 @@
     {
       "url": "https://search.worldcat.org/title/3025953",
       "title": "Clayborne Carson, In Struggle: SNCC and the Black Awakening of the 1960s",
-      "publisher": "Harvard University Press, 1981 (Bancroft Prize 1982); WorldCat OCLC 3025953 (the standard institutional history of SNCC including the November 1966 Kingston Springs Tennessee staff meeting and the Carmichael chairship transition)"
+      "publisher": "Harvard University Press, 1981 (Bancroft Prize 1982); WorldCat OCLC 3025953 (the standard institutional history of SNCC including the May 1966 Kingston Springs Tennessee staff meeting and the Carmichael chairship transition)"
     },
     {
       "url": "https://www.pbs.org/wgbh/americanexperience/films/eyesontheprize/",
@@ -88,6 +156,11 @@
       "url": "https://search.worldcat.org/title/192129687",
       "title": "Wesley C. Hogan, Many Minds, One Heart: SNCC's Dream for a New America",
       "publisher": "University of North Carolina Press, 2007 (paperback 2009); WorldCat OCLC 192129687 (the scholarly history of SNCC's organizing tradition through the 1960s including the Atlanta office work Richardson and Garman Robinson did together)"
+    },
+    {
+      "url": "https://commonthread.antioch.edu/magazine/judy-richardson-on-civil-rights-then-and-now/",
+      "title": "Judy Richardson on Civil Rights Then and Now",
+      "publisher": "Common Thread, Antioch University magazine (editorial-review profile documenting Richardson's roles as researcher, series associate producer, and content advisor on Eyes on the Prize, her later films including Malcolm X: Make It Plain and Scarred Justice: The Orangeburg Massacre 1968, and her Distinguished Visiting appointment in Africana Studies at Brown University)"
     }
   ]
 }
