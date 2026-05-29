@@ -47,6 +47,20 @@ Then write a paragraph that names ONE or TWO specific connections the embedding 
 
 Frame the observation explicitly as **embedding-derived**: "Cosine similarity in this corpus puts X's passages closer to Y's than to any of his fellow SCLC interviewees," NOT "X was historically allied with Y." The point is the contrast between AI-revealed structure and cultural cataloging.
 
+### Concept-axis sign convention (CRITICAL, do not guess)
+
+When `ai_reading` cites a position on one of the five concept axes from `/rag/summaries/concept_axes.json`, the pole label MUST match this convention: **`position_normalized` POSITIVE = pole_a (the first-listed pole); NEGATIVE = pole_b**, uniformly on every axis. Pole_a (positive) by axis:
+
+| axis | POSITIVE (pole_a) | NEGATIVE (pole_b) |
+|---|---|---|
+| nonviolence-self-defense | Nonviolence as Theology | Armed Self-Defense |
+| sacred-secular | Sacred / Theological Framing | Secular / Political Framing |
+| tactical-strategic | Tactical Pragmatism | Strategic Vision |
+| southern-northern | Southern Struggle | Northern Struggle |
+| individual-collective | Individual Conscience | Collective Discipline |
+
+Anchors that fix the orientation (use them to sanity-check): the Black Panther cohort (Elmer Dixon -1.00, Elbert Howard -0.85, Kathleen Cleaver -0.80) sits at the negative end of nonviolence-self-defense = Armed Self-Defense; Ralph Abernathy is at +0.91 = Nonviolence as Theology; Michael McCarty (Chicago) is -1.00 = Northern Struggle. An early build pass reversed these labels on ~79 pages; `scripts/audit_axis_labels.py` is the gate that catches reversals (run it after writing any `ai_reading`).
+
 ### `biographical_paragraph` (the historical orientation)
 
 Constraints are non-negotiable:
