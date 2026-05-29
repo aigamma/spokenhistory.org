@@ -4,13 +4,81 @@
   "person_type": "interviewee",
   "entry_number": 42,
   "display_name": "Evans Derrell Hopkins",
-  "born": null,
+  "born": 1954,
   "died": null,
-  "role_summary": "Black Panther Party organizer in Virginia; prison memoirist (Life After Life, Free Press 2005); his embedding signature clusters with the catalog's other BPP-identified interviewees.",
-  "ai_reading": "Hopkins clusters tightly with the catalog's BPP-identified cohort: his top semantic neighbors are Elbert Howard (entry 35, count 256), Elmer Dixon (entry 37), Aaron Dixon (entry 1), Harold K. Brown (entry 55), Kathleen Cleaver (entry 73), and Ruby Sales (entry 112). The embedding therefore reads his oral history as fundamentally a BPP voice, consistent with his cultural placement. He continues the BPP-at-Nonviolence-pole pattern visible across this catalog: at -0.56 on the Nonviolence as Theology vs Armed Self-Defense axis, Hopkins sits well toward the Nonviolence end alongside the other BPP figures in the corpus, the opposite of where the party's political reception would predict. On the Southern Struggle vs Northern Struggle axis he lands at -0.56, toward Northern Struggle, despite his Virginia anchoring (Petersburg's federal-prison context, the Virginia BPP organizing of his teens), possibly catching the prison-writing identity and the New Yorker readership of his later prose more than the Virginia geography.",
-  "biographical_paragraph": "Evans Derrell Hopkins joined the Black Panther Party in his teens and spent much of his early adult life incarcerated in Virginia; from prison he became a writer, his pieces appearing in The New Yorker and elsewhere, and in 2005 he published Life After Life: A Story of Rage and Redemption with Free Press, the prison memoir of the years between his BPP entry and his eventual release [src: 2]. Further independent biographical sourcing for Hopkins is pending; his Library of Congress oral history is entry 42 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "Hopkins's testimony belongs to a small, archivally important cohort within the broader BPP record: the prison-writer cohort. Hopkins entered the party in Virginia in his teens during the early 1970s, the period after the founding Oakland leadership had already been splintered by Newton's October 1967 incarceration, Cleaver's late-1968 flight to Algeria after the parole-revocation order following the April 6 Oakland shootout that killed Bobby Hutton, and the New Haven Bobby Seale and Ericka Huggins trial of 1969 through 1971 [src: 3]. By the time Hopkins came up the party was operating through its chapter network across roughly forty cities, with The Black Panther newspaper as its principal institutional voice; the paper had been founded April 25, 1967 with a single mimeographed issue on the Oakland police killing of Denzil Dowell, and Elbert Howard (catalog entry 35) was its founding editor before the editorship rotated through Cleaver and Emory Douglas [src: 3, src: 4]. The Black Panther was the publication that staff writers like Hopkins joined in the early 1970s, and the paper's role as a community-news service shaped the prose register he carried into his subsequent prison writing. Hopkins's post-BPP arc through the Virginia state and federal correctional systems placed him in a particular sub-lineage of BPP-network letters that runs through Eldridge Cleaver's Soul on Ice, published by McGraw-Hill in 1968 and reissued by Random House later that year, the collection of prison essays Cleaver had written at Folsom State Prison and Soledad and that had circulated through Ramparts magazine before book publication [src: 5]. Soul on Ice became the template for a generation of BPP-network prison memoirs and essay collections; Cleaver was Minister of Information at the moment of its publication, and the book was the literary credential that anchored his subsequent run for President of the United States in the September 1968 Peace and Freedom Party nominating convention, an electoral-coalition operation the BPP central committee organized through the fall of 1968 with the National Black Anti-War Anti-Draft Union and other allied formations [src: 3, src: 4]. David Hilliard, the party's Chief of Staff through the late 1960s and early 1970s, produced the other principal first-person BPP literary record of the period, both in his journalistic work for The Black Panther during his tenure and later in his 1993 autobiography This Side of Glory, co-written with Lewis Cole and published by Little, Brown [src: 6]. Hopkins's 2005 Life After Life sits at the late end of this lineage, the prison-memoir form refracted through more than two decades of incarceration and through the New Yorker prose register Hopkins developed while still inside the Virginia system.",
-  "legacy_and_reception": "Life After Life: A Story of Rage and Redemption was published by Free Press, the Simon & Schuster nonfiction imprint, in February 2005; the book ran approximately 290 pages in hardcover and recounts Hopkins's BPP entry in Virginia in his teens, his subsequent armed robbery conviction, the roughly fifteen years he served in Virginia state and federal correctional facilities, and the prison-writing apprenticeship through which he became a contributor to The New Yorker, the Washington Post, Slate, and other publications while still incarcerated [src: 2]. The book is the principal long-form first-person archival document of Hopkins's life and the primary biographical source for him outside the Civil Rights History Project oral history; the Library of Congress catalog record at LCCN 2004058636 anchors its institutional placement [src: 2]. His earlier prison-period journalism, including pieces such as Lockdown reported from inside the Virginia Department of Corrections, circulated through The New Yorker in the 1990s and was anthologized into the Free Press collection. In the scholarly literature on the BPP, Hopkins is catalogued among the late-period chapter members whose archival presence runs through the prison-writer sub-lineage rather than through the founding-Oakland-leadership documentary corpus; Bloom and Martin's 2013 Black against Empire treats the Virginia chapter network within its broader chapter-geography analysis, and the Civil Rights History Project oral history at entry 42 is now the standard secondary archival point of reference for Hopkins's testimony [src: 1, src: 4].",
+  "role_summary": "Black Panther Party community worker (Winston-Salem and Oakland, 1971-1973) and Black Panther newspaper writer; later incarcerated in Virginia and the author of the prison memoir Life After Life (Free Press, 2005).",
+  "ai_reading": "Hopkins clusters tightly with the catalog's Black Panther Party cohort: ranked by shared-neighbor count, his top semantic neighbors are Elbert Howard (entry 35, count 256), Elmer Dixon (entry 37, count 209), Aaron Dixon (entry 1, count 135), Harold K. Brown (entry 55, count 116), Kathleen Cleaver (entry 73, count 115), and Ruby Sales (entry 112, count 91). The strongest single passage-to-passage match, though, is to Norma Mtume (entry 93), whose top cosine similarity to a Hopkins passage reaches 0.785, higher than any of the six count-leaders, even as her cumulative count (76) leaves her just outside that list; the embedding finds one very tight pairing with Mtume that the count-ranking alone hides. On the Nonviolence as Theology vs Armed Self-Defense axis Hopkins sits at -0.56, toward Armed Self-Defense, in the same cluster as Elmer Dixon, Howard, Cleaver, and Aaron Dixon and well away from the SCLC ministers (Lowery, Wyatt Tee Walker, Samuel McKinney) at the Nonviolence pole; here the embedding confirms rather than complicates the party's reception. The less expected reading is on the Southern Struggle vs Northern Struggle axis, where he lands at -0.56 toward Northern Struggle, grouped with Seattle-and-Oakland Panther voices (Elmer Dixon, Howard) rather than with the Deep South interviewees, despite a childhood and a life-sentence trial both anchored in Danville, Virginia; the vector signature seems to track his Winston-Salem and Oakland Panther organizing and his later prison writing more than his Virginia geography.",
+  "biographical_paragraph": "Evans Derrell Hopkins was born in 1954 in Danville, Virginia, and traces his turn toward the movement to the 1963 Danville demonstrations he witnessed at age nine and to a sister who, in his account, led him toward the Black Panther Party [src: 1]. At seventeen he left Danville to live and work with the party as a community worker in Winston-Salem, North Carolina, and in 1972 moved to Oakland, California, where he wrote for the party newspaper alongside editor-in-chief David Graham Du Bois [src: 1]. He describes leaving the party disillusioned, robbing a bank, and receiving a ten-year sentence, then returning to prison on a life sentence handed down by an all-white jury in Danville for a robbery in which, in his telling, no one was physically injured [src: 1]. From prison he became a writer; his essay Lockdown appeared in The New Yorker, and in 2005 he published the memoir Life After Life: A Story of Rage and Redemption with Free Press [src: 2, src: 9]. His Library of Congress oral history is entry 42 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "00:07:30",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "Reading from his memoir, Hopkins recalls the Danville city jail beside the A&P grocery where his family shopped, the same jail that held demonstrators during the 1963 marches:",
+      "quote": "But as imaginative a child as I was, I could never have foreseen that one day I would be looking out of that A&P parking lot from the inside of that old jail."
+    },
+    {
+      "relation": "self",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "00:37:59",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "On the year he spent as a Black Panther Party community worker in Winston-Salem, North Carolina, running the Free Breakfast program before moving to Oakland:",
+      "quote": "But I graduated from high school, worked in the community, worked in the free breakfast program, I can still feel how hot those grids were on those thin paper plates and serving the kids."
+    },
+    {
+      "relation": "self",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "00:41:41",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "Recalling Huey Newton's argument, in the period after Newton returned from prison, for limiting the gun to self-defense:",
+      "quote": "So he said that it was necessary to put away the gun and to only utilize or keep the gun for self-defense because the gun had also become a symbol of aggression against the power structure in a way that it was seen at that time."
+    },
+    {
+      "relation": "self",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "00:42:11",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "On his own attachment to armed struggle after joining the party in 1971:",
+      "quote": "Now, having joined at that time, I still romanticized about the ideal of armed struggle, which is not talked about a lot, but that ideal was still sort of in the background."
+    },
+    {
+      "relation": "self",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "00:46:52",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "On David Graham Du Bois, the editor-in-chief who became his writing mentor at the party newspaper in Oakland:",
+      "quote": "And David Dubois was the son of W.E.B. Du Bois and Shirley Graham Du Bois, the step son of W.E.B., and he had edited the English-speaking daily in Cairo, Egypt for the previous 12 years."
+    },
+    {
+      "relation": "self",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "01:22:29",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "On the second sentence that returned him to prison, handed down in his hometown:",
+      "quote": "And after two years, I found myself back in prison with a life sentence, ironically from an all-white jury in Danville, Virginia for robbery in which no one was physically injured."
+    }
+  ],
+  "movement_context": "Hopkins's testimony belongs to a small, archivally important cohort within the broader BPP record: the prison-writer cohort. Hopkins joined the party as a teenager in 1971, first as a community worker in Winston-Salem, North Carolina, the period after the founding Oakland leadership had already been splintered by Newton's October 1967 incarceration, Cleaver's late-1968 flight to Algeria after the parole-revocation order following the April 6 Oakland shootout that killed Bobby Hutton, and the New Haven Bobby Seale and Ericka Huggins trial of 1969 through 1971 [src: 1, src: 3]. By the time Hopkins came up the party was operating through its chapter network across roughly forty cities, with The Black Panther newspaper as its principal institutional voice; the paper had been founded April 25, 1967 with a single mimeographed issue on the Oakland police killing of Denzil Dowell, and Elbert Howard (catalog entry 35) was its founding editor before the editorship rotated through Cleaver and Emory Douglas [src: 3, src: 4]. The Black Panther was the publication Hopkins wrote for in Oakland from 1972, and the paper's role as a community-news service shaped the prose register he carried into his subsequent prison writing. Hopkins's post-BPP arc through the Virginia correctional system placed him in a particular sub-lineage of BPP-network letters that runs through Eldridge Cleaver's Soul on Ice, published by McGraw-Hill in 1968 and reissued by Random House later that year, the collection of prison essays Cleaver had written at Folsom State Prison and Soledad and that had circulated through Ramparts magazine before book publication [src: 5]. Soul on Ice became the template for a generation of BPP-network prison memoirs and essay collections; Cleaver was Minister of Information at the moment of its publication, and the book was the literary credential that anchored his subsequent run for President of the United States in the September 1968 Peace and Freedom Party nominating convention, an electoral-coalition operation the BPP central committee organized through the fall of 1968 with the National Black Anti-War Anti-Draft Union and other allied formations [src: 3, src: 4]. David Hilliard, the party's Chief of Staff through the late 1960s and early 1970s, produced the other principal first-person BPP literary record of the period, both in his journalistic work for The Black Panther during his tenure and later in his 1993 autobiography This Side of Glory, co-written with Lewis Cole and published by Little, Brown [src: 6]. Hopkins's 2005 Life After Life sits at the late end of this lineage, the prison-memoir form refracted through more than two decades of incarceration and through the New Yorker prose register Hopkins developed while still inside the Virginia system.",
+  "legacy_and_reception": "Life After Life: A Story of Rage and Redemption was published by Free Press, the Simon & Schuster nonfiction imprint, in 2005; it recounts Hopkins's path from the Black Panther Party into the Virginia correctional system and the prison-writing apprenticeship through which he became a published author while still incarcerated [src: 2, src: 9]. The book is the principal long-form first-person archival document of Hopkins's life and the primary biographical source for him outside the Civil Rights History Project oral history; the Library of Congress catalog record at LCCN 2004058636 anchors its institutional placement [src: 2]. His prison-period essay Lockdown appeared in The New Yorker and was carried into the Free Press collection [src: 9]. In the scholarly literature on the party, the founding-Oakland-leadership memoirs (Cleaver, Hilliard, Seale) dominate the first-person documentary corpus, and the institutional histories such as Bloom and Martin's 2013 Black against Empire are organized around chapter geography and national leadership rather than around the prison-writer figures who joined in the early 1970s; the Civil Rights History Project oral history at entry 42 is the standard archival point of reference for Hopkins's own testimony [src: 1, src: 4].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/54/Bobby_Hutton_Posthumous.jpg",

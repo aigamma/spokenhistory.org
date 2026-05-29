@@ -3,23 +3,128 @@
   "slug": "charles-chuck-siler",
   "person_type": "interviewee",
   "entry_number": 19,
-  "born": null,
-  "died": null,
+  "born": 1943,
+  "died": 2022,
   "display_name": "Charles \"Chuck\" Siler",
-  "role_summary": "Civil rights movement participant; in this corpus's embedding his testimony pairs with Charles McLaurin and Robert L. Carter, and his axis positions form one of the catalog's narrowest centrist bands.",
-  "ai_reading": "Siler's top semantic neighbors are Charles McLaurin (entry 17, count 103), Robert L. Carter (entry 108, NAACP LDF, count 87), Ben Caldwell (entry 6), Nathaniel Hawthorne Jones (entry 92), and John Churchville (entry 63). The cluster crosses Mississippi SNCC, the NAACP legal-litigation network, and the Black Arts cohort (via Caldwell). His axis positions are all within +/-0.27 of zero (the largest being +0.27 toward Collective Discipline, the others all under +0.11), placing him among the catalog's most centrist voices alongside McDew (entry 16), Hayling (entry 103), and Terry (entry 40). For an interviewee whose neighbor counts are modest, the embedding's broad-cross-network reading with no single subgroup dominating is the catalog's structural observation about him.",
-  "biographical_paragraph": "Charles \"Chuck\" Siler's oral history is held at the Library of Congress as entry 19 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
-  "movement_context": "The cross-network embedding signature this page surfaces (SNCC Mississippi grassroots through McLaurin, NAACP legal-litigation through Carter, Black Arts Movement through Caldwell) is the catalog's most heterogeneous top-five-neighbors profile in the audited subset; the centrist axis-position band reinforces the same reading at a different layer of the embedding substrate [src: 1]. The Civil Rights History Project corpus contains a small subset of interviewees whose biographical sourcing outside the LoC finding aid is sparse enough that the catalog cannot independently anchor specific organizing-role claims; the project's institutional design (oral histories were prioritized for known principal organizers but also recorded with cross-network participants whose movement contributions were specific and local rather than network-leadership-positional) accounts for this distribution [src: 2]. The catalog page for Siler will remain at the present scope until external biographical sourcing surfaces that can be cited with confidence; this is the conservative practice the catalog applies whenever the cross-network embedding signature is the only structural information available [src: 2].",
+  "role_summary": "Baton Rouge movement foot soldier (Southern University sit-ins and 1961 jailings, NAACP voter-registration canvasser); later artist, Louisiana Weekly political cartoonist, and Louisiana State Museum curator who taught civil rights history to students.",
+  "ai_reading": "By raw cosine count Siler's nearest passages in this corpus are Charles McLaurin's (entry 17, count 103), Robert L. Carter's (entry 108, the NAACP Legal Defense Fund litigator, count 87), Ben Caldwell's (entry 6, the Black Arts Movement playwright, count 79), Nathaniel Hawthorne Jones's (entry 92, count 77), and John Churchville's (entry 63, count 73). The reading worth flagging is that no single movement subgroup owns his vector signature: a Mississippi SNCC field organizer, an LDF appellate lawyer, and a Black Arts dramatist sit at the top of the same short list, which is an unusually heterogeneous top-five for a corpus where most interviewees cluster tightly with their own network. His position on every concept axis lands close to the origin: the raw values run from minus 0.015 (Nonviolence as Theology / Armed Self-Defense) to plus 0.083 (toward Collective Discipline on the Individual Conscience / Collective Discipline axis), with the other three under plus 0.036 in absolute terms. That places him toward the centrist end of the catalog (roughly the thirtieth most origin-proximate of 136 audited entries), though not in the very tightest centrist band. The embedding reads his testimony as a movement generalist whose own self-description, \"I was a foot soldier, I wasn't one of the leaders,\" matches the structural signal: broad cross-network proximity rather than deep alignment with any one cohort.",
+  "biographical_paragraph": "Charles \"Chuck\" Siler was born in Baton Rouge, Louisiana, in 1943 and grew up in the city's south side, raised in a family of independent Black business owners, readers, and World War II veterans [src: 2, 5]. He entered the movement as a McKinley High School student and then as an art major at Southern University, where, by his account, he began in 1961 painting protest signs before joining the nonviolent-direct-action training and the downtown picketing [src: 1]. He was among the Southern University students jailed during the December 1961 Baton Rouge demonstrations, the wave of Congress of Racial Equality protests that followed the December 11, 1961 Supreme Court reversal of the city's sit-in convictions in Garner v. Louisiana and the Capitol march organized by CORE Baton Rouge chairman Ronnie Moore [src: 3, 4]. After Southern's president expelled protesting students, Siler took a job running an NAACP voter-registration project in south Baton Rouge under Rev. T. J. Jemison, the Mount Zion First Baptist Church pastor who had led the 1953 Baton Rouge bus boycott [src: 5, 6]. He was drafted into the U.S. Army in 1967 and served in Vietnam as a command-information writer and correspondent attached to the First Logistical Command [src: 2]. Returning to Louisiana, he worked for the state Division of Black Culture and then joined the Louisiana State Museum as a curator, developing exhibits including a 1994 show on the Mardi Gras Indians, and he spent decades as a museum educator teaching civil rights history, art, and music to schoolchildren [src: 2, 5]. He was the longtime editorial cartoonist for The Louisiana Weekly, relocated to the Dallas, Texas, area after Hurricane Katrina, and died in 2022 [src: 2, 5]. His oral history, recorded by David P. Cline in Dallas on May 10, 2013, is entry 19 of the Civil Rights History Project at the Library of Congress (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "00:07:28",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "Asked when he first protested anything, Siler dates it to the segregated Boy Scout parade in 1950s Baton Rouge:",
+      "quote": "But in Baton Rouge, they put the black boy Scouts behind the horses. And I think I did it the first two years and I had to clean my shoes after that. I decided I wasn't going to do that."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "00:19:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "On the teachers who quietly backed the student protesters even when they could not say so publicly:",
+      "quote": "I had teachers who always taught us, saying when I was in school was that you had to be twice as good if you were black to get half as much. My teacher said, okay, you got to be three, four, five times as good."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "00:28:09",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "On how he entered the Baton Rouge movement as a Southern University art student:",
+      "quote": "In 1961, I started off, I was a foot soldier, I wasn't one of the leaders. I got involved because they needed somebody to make science. I was an art major."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "00:42:43",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "From the jail roof, the arrested students could see the crowd downtown begin to sing; Siler describes what happened next:",
+      "quote": "And the police actually rioted. It wasn't the protesters. They were peaceful. But just the song, we should overcome, set them off."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "00:21:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "Raised among uncles who had a reputation for shooting back, Siler describes the strain nonviolent discipline put on him:",
+      "quote": "But if you've ever been shot at him or if you've ever had someone threaten you that way, you don't forget that. And it was something that made me, it made it difficult for me to be nonviolent later."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "01:19:25",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "On the museum-curator work he took up after returning to Louisiana:",
+      "quote": "But when I went to the Louisiana State Museum, I was the second Black curator there. I was the first Black Louisianan and first male to have a curatorial job there."
+    },
+    {
+      "relation": "self",
+      "speaker": "Charles \"Chuck\" Siler",
+      "speaker_slug": "charles-chuck-siler",
+      "source_entry": 19,
+      "timestamp": "01:23:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669185/",
+      "lead_in": "On teaching civil rights history to schoolchildren as a museum educator, drawing on his own jailing:",
+      "quote": "I was able to go into schools and talk to kids and tell them about what it was like being in jail because I've been in jail. They listened to that and understood that I wasn't kidding them."
+    }
+  ],
+  "movement_context": "Siler's testimony places him inside two distinct phases of the Baton Rouge movement. The first is the student wave at Southern University: the March 1960 lunch-counter sit-ins led by student-body president Marvin Robinson and CORE organizer Major Johns (with Donald Moss among those arrested), after which an estimated 3,000 students marched to the Louisiana State Capitol and President Felton G. Clark expelled the sixteen arrested students [src: 3, 4]. Siler describes being locked on campus during that March 1960 demonstration as a McKinley High senior, then joining the second wave himself in December 1961, the CORE-led protests that came days after the U.S. Supreme Court's December 11, 1961 decision in Garner v. Louisiana threw out the earlier sit-in convictions as unconstitutional [src: 1, 3]. He recounts spending the Christmas holidays of 1961 in the East Baton Rouge Parish jail and being represented by the New Orleans CORE legal team of Lolis Elie, Robert F. Collins, and Nils R. Douglas, the firm Collins, Douglas and Elie that CORE had retained in 1960 [src: 1, 7]. The voter-registration project Siler then ran for the NAACP operated under Rev. T. J. Jemison, whose 1953 Baton Rouge bus boycott (organized through a free-ride car pool that Martin Luther King Jr. later studied before Montgomery) made Baton Rouge an early template for the mass movement [src: 5, 6]. Siler also recounts meeting Medgar Evers at a South Boulevard church meeting in Baton Rouge days before Evers was assassinated in June 1963, and shaking Martin Luther King Jr.'s hand at the 1962 NAACP national convention in Atlanta [src: 1].",
+  "legacy_and_reception": "Outside the oral history, the durable public record of Siler is as an artist, cartoonist, and museum interpreter rather than as a named movement leader, consistent with his self-description as a foot soldier. He studied fine arts at Southern University and drew for the Southern Digest student newspaper before his activism led to his expulsion; he served in Vietnam as an Army command-information correspondent; and after returning to Louisiana in the 1980s he helped build African American museum and cultural programming for the state Division of Black Culture before joining the Louisiana State Museum as a curator of public programs, where his exhibits included work on New Orleans Black music and the Mardi Gras Indians [src: 2, 5]. He was the longtime editorial cartoonist for The Louisiana Weekly, the New Orleans Black newspaper, and his cartoons also ran in outlets such as The Black Commentator; after Hurricane Katrina he relocated his family to the Dallas, Texas, area, where the May 2013 interview was recorded [src: 1, 2]. Secondary obituaries report his death in July 2022; one headline gives his age as 80 while the same report's text gives 79, a discrepancy left unresolved here against his own interview testimony, which is consistent with a 1943 birth year [src: 2, 5].",
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669185/",
-      "title": "Charles \"Chuck\" Siler oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "Charles Siler oral history interview conducted by David P. Cline in Dallas, Texas, 2013 May 10",
+      "publisher": "Civil Rights History Project, American Folklife Center, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
-      "title": "Civil Rights History Project, American Folklife Center, About This Collection",
-      "publisher": "Library of Congress, American Folklife Center (AFC 2010/039 collection description and methodology)"
+      "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.86.1a-d",
+      "title": "Charles Siler Oral History Interview",
+      "publisher": "Smithsonian National Museum of African American History and Culture (Civil Rights History Project object record; biographical note on Siler as artist, cartoonist, and museum curator)"
+    },
+    {
+      "url": "https://nvdatabase.swarthmore.edu/content/baton-rouge-students-sit-us-civil-rights-southern-university-16-1960",
+      "title": "Baton Rouge students sit-in for U.S. civil rights (Southern University 16), 1960",
+      "publisher": "Global Nonviolent Action Database, Swarthmore College (documents the March 1960 Southern University sit-ins, Marvin Robinson and Major Johns as leaders, and the expulsion of the sixteen arrested students)"
+    },
+    {
+      "url": "https://64parishes.org/taking-a-stand",
+      "title": "Taking a Stand",
+      "publisher": "64 Parishes, Louisiana Endowment for the Humanities (Southern University student protest history: the 1953 Jemison bus boycott, the late-March 1960 sit-ins, the 3,000-student Capitol march, and President Clark's expulsions)"
+    },
+    {
+      "url": "http://www.louisianaweekly.com/charles-e-chuck-siler-activist-artist-and-cartoonist-dies/",
+      "title": "Charles E. 'Chuck' Siler, activist, artist and cartoonist, dies",
+      "publisher": "The Louisiana Weekly (obituary documenting Siler's Baton Rouge origins, Southern University fine-arts study and expulsion, Vietnam correspondent service, Division of Black Culture and Louisiana State Museum curatorial work, Louisiana Weekly cartooning, and post-Katrina move to Texas)"
+    },
+    {
+      "url": "https://www.blackpast.org/african-american-history/baton-rouge-bus-boycott-1953/",
+      "title": "Baton Rouge Bus Boycott (1953)",
+      "publisher": "BlackPast.org (Rev. T. J. Jemison, Mount Zion First Baptist Church, the June 1953 free-ride car pool, and its influence on the Montgomery bus boycott)"
+    },
+    {
+      "url": "https://whospeaks.library.vanderbilt.edu/interview/robert-collins-nils-douglas-and-lolis-elie",
+      "title": "Robert Collins, Nils Douglas, and Lolis Elie",
+      "publisher": "Who Speaks for the Negro?, Vanderbilt University (Robert Penn Warren Center; documents the New Orleans CORE legal firm Collins, Douglas and Elie retained by CORE in 1960)"
     }
   ]
 }

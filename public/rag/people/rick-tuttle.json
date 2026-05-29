@@ -6,11 +6,90 @@
   "born": 1940,
   "died": null,
   "display_name": "Rick Tuttle",
-  "role_summary": "Civil rights movement organizer; in this corpus's embedding his testimony pairs strongly with Charles McLaurin and clusters across SNCC, SCLC, and West Coast civil rights cohorts.",
-  "ai_reading": "Tuttle's top semantic neighbor is Charles McLaurin (entry 17, count 222), with Annie Pearl Avery (entry 3), Steven McNichols (entry 118), Judge D'Army Bailey (entry 26), and C. T. Vivian (entry 134) rounding out the top five. The cluster spans the Mississippi SNCC voter-registration cohort (McLaurin, Avery), the Memphis civil-rights-legal node (Bailey), and the SCLC direct-action wing (Vivian); the embedding reads Tuttle as a cross-network movement voice broader than a single-region label. His axis positions are all in a moderate range (-0.34 to +0.39), placing him among the catalog's centrist voices without the extreme readings other entries surface; the embedding's strongest reading of him is his connectivity to McLaurin's Mississippi work, the catalog's most-cited single neighbor in the audited subset.",
-  "biographical_paragraph": "Rick Tuttle's oral history is held at the Library of Congress as entry 105 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
-  "movement_context": "Tuttle was active in 1963 across two of the geographically distinct organizing fronts the embedding's neighbor cluster maps onto: the SNCC Mississippi Delta voter-registration project running out of Greenwood, and the SCLC-affiliated direct-action and voter-registration work in Savannah, Georgia [src: 2, 3]. The Greenwood project had been initiated by SNCC field secretary Sam Block in June 1962, when he was sent into Leflore County by Bob Moses and Amzie Moore to establish SNCC's first Mississippi Delta voter-registration field office [src: 4]. By 1963 the Greenwood work was running under the umbrella of the Council of Federated Organizations (COFO), the coalition of SNCC, CORE, NAACP, and SCLC Mississippi branches that pooled the four organizations' field-staff resources [src: 5]. Willie Peacock, the project organizer under whose direction Tuttle worked, was a Tallahatchie County native recruited into SNCC after his Holly Springs organizing work with Frank Smith; on March 6, 1963 a SNCC vehicle carrying Peacock and three companions was riddled with 27 bullets in an attack later traced to a local police officer [src: 6]. The Council's Greenwood field staff conducted door-to-door canvassing under the surveillance of the White Citizens Council, county sheriff, and registrar Martha Lamb's literacy-test apparatus, and supported activists detained in the Winona jail after the June 9, 1963 Winona bus-station arrest of Fannie Lou Hamer, Annell Ponder, and others [src: 4]. Driven out of Mississippi by threats, Tuttle relocated to Savannah, where the Chatham County Crusade for Voters, founded by Hosea Williams and his organizing base of working-class Black Savannians, had broken with the NAACP in 1962 and built a mass-mobilization model that turned out approximately 8,000 Black Savannians for the summer 1963 direct-action campaign [src: 7]. Williams himself was held on cascading bonds escalating from $200 to roughly $70,000 across eighteen days that summer; mass arrests packed the city's jail cells of ten-person capacity with seventy-five demonstrators each [src: 7]. The 1961 Freedom Rides Tuttle had participated in two years earlier had been a CORE-initiated project taken up by SNCC's Nashville cohort after Anniston and Birmingham mob attacks halted the original ride; the Mississippi arrests of Riders at the Jackson bus terminal that May produced the legal pressure on the Interstate Commerce Commission that yielded the November 1, 1961 desegregation order [src: 8].",
-  "legacy_and_reception": "Tuttle's post-movement career sits in a documentary record separate from his civil rights work but parallel to the same Los Angeles civic infrastructure many of the catalog's West Coast voices interface with. He completed his master's degree at UCLA in 1964, finished his doctorate there in 1975, and served as associate dean of student activities at UCLA before entering elected office [src: 9]. He served eight years on the Los Angeles Community College Board of Trustees, including a term as board president in 1982-1983, then was elected to four four-year terms as Los Angeles City Controller, holding that office from 1985 to 2001 [src: 9, 10]. After the statutory term limit closed his City Controller tenure, he returned to UCLA as executive director of the Dashew International Center for Students and Scholars through 2006, then continued as a lecturer in the UCLA Luskin School of Public Affairs, where he was voted public policy professor of the year three times [src: 9]. His civic recognitions include the Equal Justice in Government Award from the NAACP Legal Defense and Educational Fund and the Distinguished Public Service Award from the Pacific Southwest Region of the Anti-Defamation League [src: 9]. The 2013 oral history David P. Cline conducted with him for the Civil Rights History Project, recorded in Culver City on April 11, 2013, is the primary first-person archival record of his Greenwood and Savannah years [src: 1]. The interview also figures in the parallel Smithsonian National Museum of African American History and Culture collection of Civil Rights History Project interviews (NMAAHC accession 2011.174.78), where it is catalogued alongside the other AFC 2010/039 interviews produced through the Library of Congress and Smithsonian collaboration [src: 11].",
+  "role_summary": "White COFO field volunteer in Greenwood, Mississippi and the SCLC-affiliated Chatham County Crusade for Voters in Savannah, Georgia in the summer of 1963; later a UCLA administrator and four-term Los Angeles City Controller (1985-2001).",
+  "ai_reading": "Recomputed from the current entry-105 neighbor file, cosine similarity in this corpus puts Tuttle's passages closest to Charles McLaurin (entry 17), who recurs as a top neighbor across 35 of Tuttle's transcript chunks, far ahead of the next tier: Judge D'Army Bailey (entry 26, 20), Ekwueme Michael Thelwell (entry 34, 19), Steven McNichols (entry 118, 19), and Lawrence Guyot (entry 76, 18). Two of those five, McNichols and Guyot, are figures Tuttle names in his own testimony (McNichols arranged his ride to Mississippi; Guyot is the organizer he shared a Greenwood safe house with the morning Guyot left to bail out Fannie Lou Hamer), so the embedding is recovering relationships the narrative itself establishes rather than surfacing strangers. The influence graph sharpens the same point: of the four figures Tuttle discusses, Guyot is the one he returns to most (edge weight 3, against single mentions of James Oscar Jones, Medgar Evers, and A. Philip Randolph), while no other interviewee in the corpus discusses Tuttle at all (in-degree zero). On the five concept axes his normalized positions sit in a narrow band toward the pole-a side of each, from +0.03 on Sacred Framing vs Secular Framing to +0.39 on Tactical Pragmatism vs Strategic Vision, with Southern Struggle vs Northern Struggle at +0.20; for a participant whose own account is a chronology of specific Mississippi and Georgia field episodes, the reading toward Tactical Pragmatism is the expected one rather than a surprise.",
+  "biographical_paragraph": "Rick Tuttle was a graduate student in history at UCLA, raised in New Haven, Connecticut and educated at Wesleyan University, when he traveled to Greenwood, Mississippi in the summer of 1963 to volunteer with the voter-registration project there [src: 1]. In his oral history he is careful to attach the work not to SNCC alone but to the Council of Federated Organizations (COFO), the SNCC-CORE-NAACP-SCLC coalition that ran the Delta field staff, and he names Sam Block, Charles McLaurin (entry 17), and Willie Wazir Peacock as the organizers he came to assist [src: 1]. He recounts sharing a Greenwood safe house with Lawrence Guyot (entry 76) the morning Guyot left to bail out Fannie Lou Hamer, Annell Ponder, and June Johnson after the Winona arrests; placing a phone call to Governor Ross Barnett to press for their release; and being moved out of Mississippi to Atlanta and then to Savannah after word reached the office that Byron De La Beckwith, who had just killed Medgar Evers in nearby Jackson, intended to kill the white volunteer [src: 1]. In Savannah he worked with the SCLC-affiliated Chatham County Crusade for Voters led by Hosea Williams and Benjamin Van Clark, was arrested on a John Doe warrant, and spent roughly six weeks in the Chatham County jail under stacked peace bonds before his release in September 1963 [src: 1]. Tuttle states plainly in the interview that he was not himself a Freedom Rider, that he and a Wesleyan roommate had wanted to join the 1961 rides but missed the bus, and that he reached the Mississippi work two years later by a separate route [src: 1]. A fellow Los Angeles organizer in the corpus, William S. Leventhal (entry 129), independently names Tuttle as a key UCLA organizer of the 1965 SCOPE project and credits him by name in his book as the holder of a doctorate in history [src: 2]. Tuttle completed his UCLA master's degree in 1964 and his doctorate in 1975, served as an associate dean of student activities, and was later elected to four terms as Los Angeles City Controller [src: 3]. His Library of Congress oral history is entry 105 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Rick Tuttle",
+      "speaker_slug": "rick-tuttle",
+      "source_entry": 105,
+      "timestamp": "00:20:43",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669177/",
+      "lead_in": "Discussing how interstate-commerce law gave the rides their legal force, Tuttle pauses to mark the limits of his own role:",
+      "quote": "And I don't speak as a participant in the Freedom Rides; I was not on the Freedom Rites of 1961."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rick Tuttle",
+      "speaker_slug": "rick-tuttle",
+      "source_entry": 105,
+      "timestamp": "00:41:15",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669177/",
+      "lead_in": "At a voter-registration rally in the countryside outside Canton, Mississippi, asked to say a few words to the gathered crowd:",
+      "quote": "I can remember being going to a voter registration rally in the outskirts of Canton, Mississippi. And we're there. And about different people there about to have me say a few words. I was the white guy. I was the white person around."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rick Tuttle",
+      "speaker_slug": "rick-tuttle",
+      "source_entry": 105,
+      "timestamp": "00:41:59",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669177/",
+      "lead_in": "As he prepared to speak a second time at a rally on a baseball field, with cars gathering on the far side:",
+      "quote": "And Willie Willie Wazir Peacock walked over to me and said before I spoke and other said time to go. Just walk."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rick Tuttle",
+      "speaker_slug": "rick-tuttle",
+      "source_entry": 105,
+      "timestamp": "00:56:01",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669177/",
+      "lead_in": "On the telephone with Governor Ross Barnett, relaying that demonstrations would follow if the Winona detainees were not released:",
+      "quote": "And so the governor said to me, well, son, are you threatening me? I said, sir, I'm not threatening you. I'm new here. I'm simply reporting to you. I'm reporting what I'm told and I'm asked to call you."
+    },
+    {
+      "relation": "self",
+      "speaker": "Rick Tuttle",
+      "speaker_slug": "rick-tuttle",
+      "source_entry": 105,
+      "timestamp": "01:15:34",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669177/",
+      "lead_in": "Arrested in the Chatham County Crusade for Voters office in Savannah, Tuttle asked to see the warrant:",
+      "quote": "I said, I don't see my name. I said, there it is, John Doe, white. I say, my name is Rick Tonnell. I said, that's good enough for us son."
+    },
+    {
+      "relation": "about",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "00:19:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Fellow Los Angeles organizer William S. Leventhal recalls how the UCLA recruitment for the 1965 SCOPE project was run:",
+      "quote": "And so Dr. King made a, made an appeal at UCLA made the national announcement. And they had a Joel Siegel was one of the Rick key organizers, Richard \"Rick\" Tuttle, another key organizer."
+    },
+    {
+      "relation": "about",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "02:12:34",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Leventhal credits Tuttle by name in his own book for an analysis of why the 1965 SCOPE project mattered to the Voting Rights Act timeline:",
+      "quote": "Here's what Richard \"Rick\" Tuttle said, how important Scope was, which is ironic because he's quoted in my book and I give him credit for it."
+    }
+  ],
+  "movement_context": "Tuttle's 1963 movement work ran across two of the geographically distinct organizing fronts the embedding's neighbor cluster maps onto: the Mississippi Delta voter-registration project running out of Greenwood, and the SCLC-affiliated direct-action and voter-registration work in Savannah, Georgia [src: 1, 4]. He is explicit in the interview that he was not a participant in the 1961 Freedom Rides; he and a Wesleyan roommate had been primed to join after the Anniston bus attack, but the bus left before they were ready, and he came to the Greenwood work two years later through the National Student Association network in Los Angeles [src: 1]. The Greenwood project had been initiated by SNCC field secretary Sam Block in June 1962, when he was sent into Leflore County by Bob Moses and Amzie Moore to establish SNCC's first Mississippi Delta voter-registration field office [src: 5]. By 1963 the Greenwood work was running under the umbrella of the Council of Federated Organizations (COFO), the coalition of SNCC, CORE, NAACP, and SCLC Mississippi branches that pooled the four organizations' field-staff resources, a point Tuttle corrects himself on mid-interview after first calling the office a SNCC office [src: 1, 6]. Willie Peacock, the project organizer under whose direction Tuttle worked after Lawrence Guyot was jailed, was a Tallahatchie County native recruited into SNCC after his Holly Springs organizing work with Frank Smith; on March 6, 1963 a SNCC vehicle carrying Peacock and three companions was riddled with bullets in an attack later traced to a local police officer [src: 7]. The COFO field staff in Greenwood supported activists detained in the Winona jail after the June 9, 1963 bus-station arrest of Fannie Lou Hamer, Annell Ponder, and others, and Tuttle's evacuation from Mississippi followed the June 12 assassination of Medgar Evers by Byron De La Beckwith of Greenwood [src: 1, 5]. Relocated to Savannah, Tuttle joined the work of the Chatham County Crusade for Voters, founded by Hosea Williams and his organizing base of working-class Black Savannians, which had broken with the NAACP in 1962 and built a mass-mobilization model for the summer 1963 direct-action campaign [src: 8]. Williams himself was held on cascading bonds that summer, and mass arrests packed the city's jail cells well beyond capacity [src: 8]. Tuttle's own arrest came on a John Doe warrant and resolved through stacked peace bonds before a local judge, with his release secured in September 1963 [src: 1].",
+  "legacy_and_reception": "Tuttle's post-movement career sits in a documentary record separate from his civil rights work but parallel to the same Los Angeles civic infrastructure many of the catalog's West Coast voices interface with. He completed his master's degree at UCLA in 1964, finished his doctorate there in 1975, and served as associate dean of student activities at UCLA before entering elected office [src: 3]. He served eight years on the Los Angeles Community College Board of Trustees, including a term as board president in 1982-1983, then was elected to four four-year terms as Los Angeles City Controller, holding that office from 1985 to 2001 [src: 3, 9]. After the statutory term limit closed his City Controller tenure, he returned to UCLA as executive director of the Dashew International Center for Students and Scholars through 2006, then continued as a lecturer in the UCLA Luskin School of Public Affairs [src: 3]. His civic recognitions include the Equal Justice in Government Award from the NAACP Legal Defense and Educational Fund and the Distinguished Public Service Award from the Pacific Southwest Region of the Anti-Defamation League [src: 3]. The 2013 oral history David P. Cline conducted with him for the Civil Rights History Project, recorded in Culver City on April 11, 2013, is the primary first-person archival record of his Greenwood and Savannah years [src: 1]. The interview also figures in the parallel Smithsonian National Museum of African American History and Culture collection of Civil Rights History Project interviews (NMAAHC accession 2011.174.78), where it is catalogued alongside the other AFC 2010/039 interviews produced through the Library of Congress and Smithsonian collaboration [src: 10].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Rick_Tuttle%2C_2014.jpg",
@@ -30,14 +109,19 @@
       "publisher": "Civil Rights History Project, Library of Congress (American Folklife Center accession AFC 2010/039)"
     },
     {
+      "url": "https://www.loc.gov/item/2015669181/",
+      "title": "William S. Leventhal oral history interview, Civil Rights History Project (entry 129; names Rick Tuttle as a UCLA SCOPE organizer and credits him on the 1965 Voting Rights Act timeline)",
+      "publisher": "Civil Rights History Project, Library of Congress (American Folklife Center accession AFC 2010/039)"
+    },
+    {
+      "url": "https://alumni.ucla.edu/awards/rick-tuttle-m-a-64-ph-d-75/",
+      "title": "Rick Tuttle M.A. 64, Ph.D. 75, UCLA Alumni Public Service Award citation",
+      "publisher": "UCLA Alumni Association; biographical citation accompanying the 1996 Public Service Award"
+    },
+    {
       "url": "https://www.crmvet.org/vet/tuttler.htm",
       "title": "Rick Tuttle, Veterans of the Civil Rights Movement biographical entry",
       "publisher": "Civil Rights Movement Archive (crmvet.org), the standing veterans' archive maintained by Tougaloo College and Bruce Hartford"
-    },
-    {
-      "url": "https://www.crmvet.org/info/savanah1.htm",
-      "title": "Benjamin Van Clark, Seige at Savannah",
-      "publisher": "Freedomways, 1st Quarter 1964; reprinted by the Civil Rights Movement Archive as a primary-source account of the 1963 Chatham County Crusade for Voters direct-action campaign"
     },
     {
       "url": "https://snccdigital.org/events/sam-block-goes-greenwood-mississippi/",
@@ -55,24 +139,14 @@
       "publisher": "SNCC Digital Gateway, Duke University"
     },
     {
-      "url": "https://search.worldcat.org/title/61664854",
-      "title": "Charles M. Payne, I've Got the Light of Freedom: The Organizing Tradition and the Mississippi Freedom Struggle",
-      "publisher": "University of California Press, 1995 (second edition 2007); WorldCat OCLC 61664854; the standard institutional history of SNCC organizing in the Mississippi Delta including Greenwood, Leflore County"
+      "url": "https://www.crmvet.org/info/savanah1.htm",
+      "title": "Benjamin Van Clark, Seige at Savannah",
+      "publisher": "Freedomways, 1st Quarter 1964; reprinted by the Civil Rights Movement Archive as a primary-source account of the 1963 Chatham County Crusade for Voters direct-action campaign"
     },
     {
       "url": "https://search.worldcat.org/title/1156437886",
       "title": "Rolundus R. Rice, Hosea Williams: A Lifetime of Defiance and Protest",
       "publisher": "University of South Carolina Press, 2021; WorldCat title-detail 1156437886; the first comprehensive scholarly biography of Williams, including the Chatham County Crusade for Voters and 1963 Savannah campaign"
-    },
-    {
-      "url": "https://search.worldcat.org/title/61703944",
-      "title": "Raymond Arsenault, Freedom Riders: 1961 and the Struggle for Racial Justice",
-      "publisher": "Oxford University Press, 2006; WorldCat title-detail 61703944; the standard scholarly account of the 1961 Freedom Rides and recipient of the Owsley Prize from the Southern Historical Association"
-    },
-    {
-      "url": "https://alumni.ucla.edu/awards/rick-tuttle-m-a-64-ph-d-75/",
-      "title": "Rick Tuttle M.A. 64, Ph.D. 75, UCLA Alumni Public Service Award citation",
-      "publisher": "UCLA Alumni Association; biographical citation accompanying the 1996 Public Service Award"
     },
     {
       "url": "https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/",
