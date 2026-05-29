@@ -7,8 +7,76 @@
   "died": null,
   "display_name": "David Mercer Ackerman and Satoko Ito Ackerman",
   "role_summary": "David Mercer Ackerman (b. 1942, Savanna, Illinois): attorney; Knox College, Chicago Theological Seminary, Georgetown Law Center. Satoko Ito Ackerman (b. December 16, 1939, Osaka, Japan): Yankton College BA, Chicago Theological MA; child-care and public-policy professional. Married 1967; both attended the Selma to Montgomery March in March 1965 at the urging of their Chicago Theological Seminary classmate Jesse Jackson.",
-  "ai_reading": "The Ackermans' neighbor counts are moderate (peak 82), with C. T. Vivian (entry 134) as the top match and the broader cluster including Elmer Dixon (entry 37), Jennifer Lawson (entry 59), and Charles McLaurin (entry 17). The Vivian pairing is the catalog's clearest seminary-trained-SCLC-aligned cosine: the Ackermans met at Chicago Theological Seminary where Jesse Jackson recruited them to Selma; Vivian himself was a Methodist seminarian whose direct-action-theology framing the Ackermans' testimony rhymes with. The catalog flags a +1.00 reading on the Nonviolence as Theology vs Armed Self-Defense axis (the MAX reading toward Armed Self-Defense). For a Japanese-American-and-white-Illinoisan couple whose civil rights entry point was a seminary-mediated single march, the embedding's MAX-Self-Defense placement is the catalog's clearest case of an axis-vector reading that the participants' surface biography would predict the opposite pole. The mismatch joins the catalog's documented SCLC-cohort AI-vs-culture inversion pattern (Walker, Lowery, Sherrod, Abernathy family) on the same axis.",
+  "ai_reading": "Cosine similarity in this corpus puts the Ackermans' joint testimony closest by neighbor overlap to C. T. Vivian (entry 134, count 82), with the surrounding cluster running through Elmer Dixon (entry 37), Jennifer Lawson (entry 59), and Charles McLaurin (entry 17, the single highest top-passage score at 0.745). The Vivian pairing is the cluster's most legible match: both transcripts route the Selma campaign through a Chicago seminary, and the Ackermans met at Chicago Theological Seminary, where their classmate Jesse Jackson carried Dr. King's call for clergy into a weekly convocation and recruited twelve students to drive to Alabama. The reading that does not follow from the surface biography is the concept-axis placement. On the Nonviolence as Theology vs Armed Self-Defense axis the embedding puts this entry at +1.00, the corpus maximum toward Nonviolence as Theology, above career Southern Christian Leadership Conference clergy whose entire vocations were built on the doctrine. The Ackermans' movement participation was a single seminary-mediated march, yet their account is saturated with the theological register the axis is keyed to: David's framing of the all-night vigil as a \"community of atonement,\" the repeated invocation of King's appeal to \"the better angels of our nature,\" the ministerial collars worn for protection, Ralph Abernathy's prayer holding the line together. The embedding reads the density of that sacred-nonviolent language rather than the brevity of the participation, which is why a two-person, one-march entry lands at the pole's extreme. The sacred-secular axis corroborates it, with the entry on the Sacred / Theological Framing side at +0.49.",
   "biographical_paragraph": "While the Ackermans' LoC oral history carries an ingestion-only audit tier (the catalog ingested the transcript but did not subject it to the audit cascade, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), the external biographical record is documented through the National Museum of African American History and Culture object record [src: 1, src: 2]. David Mercer Ackerman was born in 1942 in Savanna, Illinois. He attended Knox College, the Chicago Theological Seminary, and Georgetown Law Center, eventually practicing as an attorney. Satoko Ito was born December 16, 1939 in Osaka, Japan, the daughter of Masaru and Hiroko Ito and the sister of Seiji and Yoshiko; she attended Yankton College (Bachelor's) and the Chicago Theological Seminary (Master's), later working in child care and public policy [src: 2]. They met at Chicago Theological Seminary, where their classmate Jesse Jackson urged students to travel to Alabama for the March 1965 Selma to Montgomery campaign; both Ackermans participated. They married in 1967, settled in Silver Spring, Maryland, and raised one child [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Satoko Ito Ackerman",
+      "speaker_slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+      "source_entry": 135,
+      "timestamp": "00:04:40",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669152/",
+      "lead_in": "Asked when she first turned her mind to race relations in the United States, Satoko Ito Ackerman traces it to the televised footage of the March 1965 Selma campaign and Jesse Jackson's appeal at the seminary:",
+      "quote": "I think it has to be when the idea of going down to Selma was introduced. Up until then, I hadn't really been aware of any conflict or any differences between people in the United States. I'd kind of embraced the entire culture and I, I just did not know anything about it until I saw the film of Bloody Sunday on TV, and Jesse [Jackson] talked about our need to go down."
+    },
+    {
+      "relation": "self",
+      "speaker": "Satoko Ito Ackerman",
+      "speaker_slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+      "source_entry": 135,
+      "timestamp": "00:12:29",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669152/",
+      "lead_in": "Satoko Ito Ackerman recalls deciding to join the march herself, over David's reluctance about the risk to her:",
+      "quote": "Well, I felt it very personally: \"I must go. I really need to go and stand up for - against this violence that was happening.\" And I didn't think, you know, a woman, a girl, [laughs] foreign student, what - could I have done anything?"
+    },
+    {
+      "relation": "self",
+      "speaker": "David Mercer Ackerman",
+      "speaker_slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+      "source_entry": 135,
+      "timestamp": "00:15:11",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669152/",
+      "lead_in": "David Mercer Ackerman, asked how he remembered his seminary classmate Jesse Jackson, describes the convocation at which Jackson posed Selma as a moral question:",
+      "quote": "But that night in the convocation, Jesse became, became a leader. And, uh, he just spoke with such, uh, such passion and such integrity, um, that it was impossible not to respond to it in some fashion."
+    },
+    {
+      "relation": "self",
+      "speaker": "David Mercer Ackerman",
+      "speaker_slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+      "source_entry": 135,
+      "timestamp": "00:25:47",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669152/",
+      "lead_in": "David Mercer Ackerman on his first impression of Selma after the caravan from Chicago arrived:",
+      "quote": "I guess the first thing that, uh, struck me in Selma was just the stark difference between the white side of town and the black side of town."
+    },
+    {
+      "relation": "self",
+      "speaker": "David Mercer Ackerman",
+      "speaker_slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+      "source_entry": 135,
+      "timestamp": "00:40:17",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669152/",
+      "lead_in": "David Mercer Ackerman on the television-network lights that the journalists kept on through the all-night vigil at the trooper line:",
+      "quote": "I think that was, that was our guardian angel. I think it was those lights, those journalists, because otherwise I think it could have been a very bloody, brutal scene, once again."
+    },
+    {
+      "relation": "self",
+      "speaker": "Satoko Ito Ackerman",
+      "speaker_slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+      "source_entry": 135,
+      "timestamp": "00:52:37",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669152/",
+      "lead_in": "Years later in Silver Spring, Maryland, after a neighbor barred his children from playing with a Black girl Satoko Ito Ackerman had introduced to them, she draws a conclusion about the work still left undone:",
+      "quote": "that's when I realized that things were not all finished, and rights of people and equality and all the things that we have worked for, still continues , that we need to be vigilant, because it happens in little ways that affect little children in how we pass on prejudice."
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669152/",

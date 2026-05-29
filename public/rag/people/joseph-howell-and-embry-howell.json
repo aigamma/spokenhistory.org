@@ -7,8 +7,76 @@
   "died": null,
   "display_name": "Joseph Howell and Embry Howell (joint interview)",
   "role_summary": "Joint oral history of Joseph Howell (b. 1942, Nashville, Tennessee) and Embry Howell (b. 1945, Bethesda, Maryland); white college-aged volunteers recruited by Charles Sherrod for SNCC's Southwest Georgia Project during the summer of 1966, the final summer before SNCC's late-1966 internal debate over whites in decision-making roles transformed the organization's interracial composition.",
-  "ai_reading": "The Howells' top semantic neighbors are Junius Williams (entry 72, count 42, Newark Black Power Conference organizer), Joan Trumpauer Mulholland (entry 60, Freedom Rider), Martha Prescod Norman Noonan (entry 83, SNCC field organizer), C. T. Vivian (entry 134, SCLC), and Kathleen Cleaver (entry 73, BPP Communications Secretary). The cluster crosses Northern Black Power, Southern direct-action, SNCC fieldwork, and the BPP, an unusually broad spread for a low-count interview. Their position on the Nonviolence as Theology vs Armed Self-Defense axis is +0.84, far toward Armed Self-Defense, joining the catalog's recurring pattern of joint and family-member testimonies landing on the Self-Defense side. Without external biographical sourcing in this iteration, the catalog notes the cross-cluster pattern as the structural observation: the Howells' transcript reads as a movement-bridge voice spanning factions that did not historically partner.",
+  "ai_reading": "The Howells' top semantic neighbors are Junius Williams (entry 72, count 42, Newark Black Power Conference organizer), Joan Trumpauer Mulholland (entry 60, Freedom Rider), Martha Prescod Norman Noonan (entry 83, SNCC field organizer), C. T. Vivian (entry 134, SCLC), and Kathleen Cleaver (entry 73, BPP Communications Secretary). The cluster crosses Northern Black Power, Southern direct-action, SNCC fieldwork, and the Black Panther Party, an unusually broad spread for a low-count interview. Their position on the Nonviolence as Theology vs Armed Self-Defense axis is +0.84, well toward Nonviolence as Theology, the side the joint testimony's vocabulary fits: Joseph Howell's two years at Union Theological Seminary, the Christian-ecumenical training conference both Howells attended before going South, and the John-Lewis integrationist position they describe aligning with during the summer of 1966. The cosine-space surprise is the tension between that placement and the neighbor cluster: the embedding seats a faith-grounded, nonviolence-coded pair of voices closest to Kathleen Cleaver and Junius Williams, figures on the Black Power side of the same 1966 SNCC argument the Howells lived through from the integrationist end. The transcript reads as a movement-bridge voice, its theological-nonviolent register sitting in measurable proximity to the factions it did not historically partner with.",
   "biographical_paragraph": "This is a joint oral history at the Library of Congress as entry 67 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Joint interviews in the corpus combine the testimony of two or more interviewees in a single recording; the catalog page treats the embedding signature of the joint transcript as one unit (see the AI's reading above). Independent biographical sourcing for each individual interviewee is pending; future enrichment may split this entry into separate per-person pages if individual biographical material becomes accessible.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Embry Howell",
+      "speaker_slug": "joseph-howell-and-embry-howell",
+      "source_entry": 67,
+      "timestamp": "00:02:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655424/",
+      "lead_in": "Asked by interviewer David Cline about the values she was raised with, Embry Howell traces both Howells' family origins to Georgia:",
+      "quote": "Yeah. Well, I'm from Southern Stock. We both are. My parents were both born and raised in Georgia. My father in North Georgia near Atlanta, and my mother in South Georgia, really the deep South."
+    },
+    {
+      "relation": "self",
+      "speaker": "Embry Howell",
+      "speaker_slug": "joseph-howell-and-embry-howell",
+      "source_entry": 67,
+      "timestamp": "00:04:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655424/",
+      "lead_in": "Embry Howell on growing up in Davidson, North Carolina, crossing the railroad tracks to play with friends whose parents worked in the town mills:",
+      "quote": "So I'd say from very early years I learned that all people have value and should be treated with dignity."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Howell",
+      "speaker_slug": "joseph-howell-and-embry-howell",
+      "source_entry": 67,
+      "timestamp": "00:06:11",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655424/",
+      "lead_in": "Joseph Howell describes the Nashville household he grew up in, where a banking career was assumed for him:",
+      "quote": "So, yeah, I was born in 1942 in Nashville, Tennessee, and I grew up in a suburb of Nashville called Belle Meade, which was the quote, elite neighborhood. My father was ended up being a president of a bank, and his father was the president of a bank, and it was understood that I would probably be a banker."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Howell",
+      "speaker_slug": "joseph-howell-and-embry-howell",
+      "source_entry": 67,
+      "timestamp": "00:06:46",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655424/",
+      "lead_in": "Joseph Howell recalls the childhood illness he credits with shaping his later empathy for people who were suffering:",
+      "quote": "And what affected my life early on was having polio, 1952, polio, 1952, Warm Springs. I was moderately paralyzed."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Howell",
+      "speaker_slug": "joseph-howell-and-embry-howell",
+      "source_entry": 67,
+      "timestamp": "00:25:05",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655424/",
+      "lead_in": "Joseph Howell describes how Charles Sherrod recruited Union Theological Seminary students into the Southwest Georgia Project:",
+      "quote": "He would approach us on the look of us right in the eyes. And I'd need your help. I'd need you down with me in Southwest Georgia. How could you say no?"
+    },
+    {
+      "relation": "self",
+      "speaker": "Embry Howell",
+      "speaker_slug": "joseph-howell-and-embry-howell",
+      "source_entry": 67,
+      "timestamp": "00:30:24",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655424/",
+      "lead_in": "Embry Howell on how she was treated as a white Southern woman among the Black organizers in Southwest Georgia during the summer of 1966:",
+      "quote": "I was an unusual person. This white, southern female. Most of the people had never met anyone like me. And the guys were always extremely polite and respectful to me. I never was spoken to harshly the entire summer."
+    }
+  ],
   "movement_context": "Joseph Howell was born in 1942 in the Belle Meade neighborhood of Nashville, Tennessee, the segregated white suburb that produced a generation of Southern white religious-and-academic-trained civil rights workers; while a student at Davidson College in 1964 he organized a civil rights march in Charlotte, North Carolina, and went on to attend Union Theological Seminary and earn a city-planning degree from the University of North Carolina [src: 1, 7, 8]. Embry Howell was born in 1945 in Bethesda, Maryland, grew up in Davidson, North Carolina, and attended Davidson College before transferring to Barnard College; she later earned a Ph.D. in public policy from George Washington University and built a research career at the Urban Institute in Washington, D.C. focused on health policy for low-income populations [src: 1]. The shared period the joint oral history documents is the summer of 1966, when both Howells were recruited by Charles Sherrod into the Southwest Georgia Project of the Student Nonviolent Coordinating Committee, the field operation Sherrod had directed from Albany, Georgia since June 1961 as SNCC's first full-time field secretary [src: 3, 4]. The Albany Movement, the Thanksgiving 1961 mass arrests of Albany State College students at the Trailways bus terminal, and the multi-county voter-registration drive that fanned out from Albany into the surrounding rural counties of Dougherty, Lee, Terrell, Sumter, and Worth had by 1966 evolved into a Head Start, community-organizing, and continued registration project that welcomed white volunteers willing to live in the local Black community [src: 3, 4]. Sherrod's recruitment strategy was distinctive: white volunteers were housed with Black families in rural Southwest Georgia, the visible interracial cohabitation functioning as direct refutation of segregation's social geography [src: 3, 5]. The Howells' summer of 1966 occurred against the backdrop of SNCC's internal transformation, Stokely Carmichael's June 1966 'Black Power' speech during the Meredith March Against Fear, the December 1966 Peg Leg Bates retreat where SNCC voted on the role of whites in the organization, and Sherrod's subsequent departure from SNCC in early 1967 on the principle 'I didn't leave SNCC, SNCC left me' [src: 3, 5, 6]. Joseph Howell's memoir Civil Rights Journey: The Story of a White Southerner Coming of Age During the Civil Rights Revolution (2011), drawn from a contemporaneous diary kept during the Southwest Georgia summer, is the published documentary record paired with the joint oral history [src: 7]. After the movement years Joseph Howell built a career as a community-development consultant and housing planner in Washington, D.C., publishing the participant-observation ethnography Hard Living on Clay Street: Portraits of Blue Collar Families (Anchor Press / Doubleday, 1973), an early study of white working-class Southern migrants in a low-income Washington neighborhood that has remained in print across multiple editions [src: 8].",
   "legacy_and_reception": "The Howells' contribution is documentary, the rare contemporaneous diary-record of white Southern volunteers inside the Sherrod-led Southwest Georgia Project during its final pre-Black-Power summer, supplemented by their later oral history reflection on the same period. Joseph Howell's Civil Rights Journey is one of the comparatively small set of published memoirs by white SNCC veterans who entered the field operation in the 1966 summer and stayed through the organizational realignment that followed, joining a memoir literature that includes Mary King, Casey Hayden, Dorothy Burlage, Sue Thrasher, and Constance Curry [src: 7]. The historiographic treatment of white participation in SNCC's late period is contested, Clayborne Carson's In Struggle: SNCC and the Black Awakening of the 1960s frames the December 1966 vote and 1967 resolution as an organizational maturation toward Black self-determination rather than a rupture, while memoir accounts often record the personal experience of the same transition as a loss [src: 6]. Stephen Tuck's Beyond Atlanta: The Struggle for Racial Equality in Georgia, 1940-1980 documents the Southwest Georgia Project's continuation under Sherrod after his departure from SNCC, in particular the founding of the New Communities cooperative farm in Lee County which the Howells' summer organizing prefigured [src: 5]. The Howells' post-movement careers in housing policy (Joseph) and health policy (Embry) reflect the trajectory of a generation of white Southern civil rights workers who shifted from direct-action to social-policy careers in the federal-and-research-institute landscape that consolidated after the Great Society legislation [src: 1, 8].",
   "gallery": [

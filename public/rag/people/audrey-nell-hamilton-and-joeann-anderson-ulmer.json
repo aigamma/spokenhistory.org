@@ -6,9 +6,88 @@
   "born": null,
   "died": null,
   "display_name": "Audrey Nell Hamilton and JoeAnn Anderson Ulmer (joint interview)",
-  "role_summary": "Joint oral history of two Mississippi civil rights movement participants; the surnames are not Whisper artifacts (the prior audit canon resolved 'Joanne' to 'JoeAnn' via the AUDIT_VS_LOC_DISAGREEMENTS report on entry 4).",
-  "ai_reading": "The Hamilton/Ulmer joint interview's top semantic neighbor is Charles McLaurin (entry 17, count 84), the Sunflower County Mississippi voter-registration director. Their next neighbors are Barbara Edna Vickers (entry 5, publication-block), Robert Bagner Hayling (entry 103, St. Augustine SCLC), Juadine Henderson (entry 68, Mississippi SNCC voter-registration), and Gwendolyn Annette Perkins Duncan (entry 51, publication-block). The cluster reads them as Mississippi-rural-movement voices. Their +0.54 reading on the Sacred Framing vs Secular Framing axis fits the Black Mississippi church-anchored movement context, and the +0.59 reading on the Nonviolence vs Self-Defense axis joins the catalog's recurring inversion pattern of Southern-rural-Black-women's testimony landing toward the Self-Defense pole despite the nonviolent-protest framing the cultural reception applies.",
+  "role_summary": "Joint oral history of two of the St. Augustine Four, the teenage St. Augustine, Florida sit-in demonstrators jailed in 1963 and held six months at a state reform school; the surnames are not Whisper artifacts (the prior audit canon resolved 'Joanne' to 'JoeAnn' via the AUDIT_VS_LOC_DISAGREEMENTS report on entry 4).",
+  "ai_reading": "The Hamilton/Ulmer joint interview's top semantic neighbor is Charles McLaurin (entry 17, count 84), the Sunflower County, Mississippi voter-registration organizer, even though Hamilton and Ulmer never worked in Mississippi: their own St. Augustine adviser Robert Bagner Hayling (entry 103, count 61) and their St. Augustine memorialization co-worker Gwendolyn Annette Perkins Duncan (entry 51, count 52) rank below him. The embedding is keying on the shared register of teenage Black activists narrating a rural-and-small-Southern-city sit-in jailing rather than on the specific geography, so a Mississippi field organizer outranks the speakers' own Florida co-participants. The rest of the top neighborhood is St. Augustine and Florida: Barbara Edna Vickers (entry 5, count 77, a St. Augustine beautician in the same movement) and Purcell Maurice Conway (entry 99, count 41, who sat in the recording room for this interview). On the Sacred Framing vs Secular Framing axis the interview reads at a positive position toward the Sacred / Theological pole, consistent with testimony anchored in the St. Paul AME and St. Mary's Missionary Baptist congregations, prayer and freedom songs in jail, and the framing of the work as divinely sanctioned. On the Nonviolence vs Self-Defense axis it reads at a positive position toward the Nonviolence as Theology pole, which the transcript bears out directly: the speakers describe singing 'I Love Everybody' before Dr. King arrived, being taught to overcome rather than retaliate, and a movement in which the violence was inflicted on them and not returned.",
   "biographical_paragraph": "This is a joint oral history at the Library of Congress as entry 4 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Joint interviews in the corpus combine the testimony of two or more interviewees in a single recording; the catalog page treats the embedding signature of the joint transcript as one unit (see the AI's reading above). Independent biographical sourcing for each individual interviewee is pending; future enrichment may split this entry into separate per-person pages if individual biographical material becomes accessible.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Audrey Nell Hamilton",
+      "speaker_slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+      "source_entry": 4,
+      "timestamp": "00:04:06",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669143/",
+      "lead_in": "Audrey Nell Hamilton recalls her mother shopping for school supplies at the segregated downtown St. Augustine stores, where the only park fountain was marked for white people:",
+      "quote": "And she would go in, come walkin' through the park, and had to pass the fountain in the park. Because it had white only on it. And she would go over there and buy my school supplies. And she would also buy, you know, little accessories that you needed, you know, for school. But she couldn't go over and get a drink of water. I had a problem with that."
+    },
+    {
+      "relation": "self",
+      "speaker": "JoeAnn Anderson Ulmer",
+      "speaker_slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+      "source_entry": 4,
+      "timestamp": "00:09:18",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669143/",
+      "lead_in": "JoeAnn Anderson Ulmer describes growing up on the west side of St. Augustine and crossing town to join the NAACP Youth Council gatherings:",
+      "quote": "I lived on the west side. That means across the track. And there weren't anything for black children to do because they didn't have any activities, nothing whatsoever."
+    },
+    {
+      "relation": "self",
+      "speaker": "Audrey Nell Hamilton",
+      "speaker_slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+      "source_entry": 4,
+      "timestamp": "00:21:17",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669143/",
+      "lead_in": "Audrey Nell Hamilton on Dr. Robert B. Hayling, the dentist who advised the St. Augustine NAACP Youth Council and stood with the young demonstrators:",
+      "quote": "Dr. Robert B. Hayling was just like John. I tell everybody this, like John with Jesus, he never left our side. And I love him to this day for that."
+    },
+    {
+      "relation": "self",
+      "speaker": "JoeAnn Anderson Ulmer",
+      "speaker_slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+      "source_entry": 4,
+      "timestamp": "00:24:25",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669143/",
+      "lead_in": "Asked how she made sense of the violence directed at the demonstrators, JoeAnn Anderson Ulmer points to faith and freedom songs:",
+      "quote": "I made sense of it because see we had God in our lives and we had spiritual songs that we sung that uplift us. You know, the songs that we sung that was uplifting songs and we bypassed the hatred because before Dr. King came we were singing, I Love Everybody before he even got here, you know."
+    },
+    {
+      "relation": "self",
+      "speaker": "Audrey Nell Hamilton",
+      "speaker_slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+      "source_entry": 4,
+      "timestamp": "00:22:38",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669143/",
+      "lead_in": "Audrey Nell Hamilton stresses that the local St. Augustine movement under Dr. Hayling preceded Dr. King's 1964 arrival:",
+      "quote": "when we got out of jail, January, 1964, we were out of jail at least three months before Dr. King ever came to set out the scene."
+    },
+    {
+      "relation": "self",
+      "speaker": "Audrey Nell Hamilton",
+      "speaker_slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+      "source_entry": 4,
+      "timestamp": "01:05:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669143/",
+      "lead_in": "Audrey Nell Hamilton on how St. Augustine, in her account, erased the physical record of the movement until a small group insisted on memorial markers:",
+      "quote": "they swept the whole movement up under the rug. Not just the St. Augustine Four, but the whole movement"
+    },
+    {
+      "relation": "about",
+      "speaker": "Gwendolyn Annette Perkins Duncan",
+      "speaker_slug": "gwendolyn-annette-perkins-duncan",
+      "source_entry": 51,
+      "timestamp": "00:21:57",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669146/",
+      "lead_in": "Gwendolyn Annette Perkins Duncan, who organized the ACCORD Freedom Trail historic markers in St. Augustine, names Hamilton and Ulmer among the local Foot Soldiers she works to commemorate:",
+      "quote": "And I'm just glad to be a part of bringing recognition to people like Dr. Robert Hayling, the St. Augustine Foot Soldiers, Audrey Nell Hamilton, it was in Joanne Anderson"
+    }
+  ],
   "movement_context": "The joint-interview format the CRHP recorded with Hamilton and Ulmer is one of seventeen multi-person interviews in the one hundred thirty-five-recording corpus, the rest being one-on-one sessions; joint format was used selectively where two or more interviewees had shared a specific organizing relationship (siblings, spouses, co-founders, parallel field-organizing partners) the project judged better captured in conversation than in separated single recordings [src: 2]. The Mississippi voter-registration testimony cluster this joint interview reads structurally adjacent to (Charles McLaurin at entry 17, Juadine Henderson at entry 68, and the publication-block entries 5 and 51) is built around the SNCC project geography Charles Payne's I've Got the Light of Freedom anchors: the Sunflower County Council of Federated Organizations work centered around Ruleville, the parallel Hattiesburg and McComb projects, and the broader 1964 Freedom Summer recruitment that brought roughly one thousand summer volunteers into rural Mississippi to expand the registration drive ahead of the August 1964 Atlantic City Democratic National Convention challenge by the Mississippi Freedom Democratic Party [src: 3].",
   "gallery": [
     {
