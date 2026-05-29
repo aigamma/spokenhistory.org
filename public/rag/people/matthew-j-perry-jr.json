@@ -16,15 +16,94 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Matthew_J._Perry,_U.S._District_Court_Judge.png",
     "date_taken": "(undated)"
   },
-  "ai_reading": "Perry's top semantic neighbor is Robert L. Carter (entry 108) at a cosine count of 378, the second-strongest paired-lawyer signature in the catalog (Carter is also Becton's #1 neighbor at 753 and Jones's #1 at 246). Second-strongest is Ernest Adolphus Finney Jr. (entry 39) at 194, the SC Chief Justice whose page is built around the parallel South Carolina civil-rights-legal network. The embedding therefore reads Perry as a node in the SC legal cohort that also includes Cecil J. Williams (entry 14, the photographer who documented their cases) and Chuck McDew (entry 16, the SNCC chairman whose South Carolina State protests Perry's litigation overlapped with). The novel observation is the +0.70 reading on Individual Conscience vs Collective Discipline: for a federal judge whose institutional posture is collective-discipline (precedent, rules, courtroom procedure), the embedding pulls his testimony toward Collective Discipline, an alignment that's consistent with the role rather than mismatched, but in a corpus where most judicial and lawyer voices land near zero on that axis (Greenberg +0.12, Carter unknown, Jones +0.58), Perry's +0.70 makes him the most institutional voice the catalog has so far documented.",
-  "biographical_paragraph": "Perry was born August 3, 1921 and died July 29, 2011 at eighty-nine [src: 2]. His landmark cases include the 1963 Harvey Gantt litigation that produced the first African-American enrollment at Clemson University, the 1962 Gloria Blackwell case that integrated a South Carolina hospital after Blackwell's arrest for sitting in a whites-only waiting room, and the 1972 South Carolina reapportionment case that compelled fair legislative redistricting under the \"one man, one vote\" principle [src: 2]. President Gerald Ford appointed him to the U.S. Court of Military Appeals in 1976; President Jimmy Carter appointed him to the U.S. District Court for the District of South Carolina in 1979, the first African American to hold a federal judgeship in the state [src: 2]. He served on the District Court until 1995, then as Senior Judge until his death [src: 2]. The University of South Carolina Press published the scholarly volume Matthew J. Perry: The Man, His Times, and His Legacy in 2004, edited by W. Lewis Burke and Belinda F. Gergel [src: 2]. In 2005 the federal courthouse in Columbia was named in his honor [src: 2]. His Library of Congress oral history is entry 87 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "Perry took his law degree at the South Carolina State College School of Law in Orangeburg in 1951, the state-funded Black law school the South Carolina General Assembly chartered in 1947 as its separate-but-equal answer to the NAACP-coordinated litigation pressing for African-American admission to the all-white University of South Carolina law school [src: 3, 4]. The same Orangeburg law-school cohort produced Ernest Adolphus Finney Jr. (catalog entry 39, JD 1954), who later became the first African-American Chief Justice of the South Carolina Supreme Court since Reconstruction, and a generation of state-network civil rights lawyers who would carry the bulk of the post-Brown litigation across South Carolina through the 1960s and 1970s [src: 3, 4]. Perry's NAACP Legal Defense Fund work in South Carolina began in the late 1950s; by the early 1960s he had become the lead civil rights attorney for the state, working downstream from the 1952 Clarendon County school-desegregation case Briggs v. Elliott, which Thurgood Marshall and the LDF had consolidated into Brown v. Board of Education the following year [src: 5]. The Briggs lineage meant that South Carolina had been one of the four jurisdictions whose challenge to Plessy reached the Supreme Court in the 1954 Brown decision, and the post-Brown work of forcing actual implementation in South Carolina school districts, hospitals, public accommodations, and voting maps fell substantially to Perry's litigation docket through the 1960s [src: 5]. In the spring of 1961, as the lunch-counter sit-in movement spread across the upper South, Perry's litigation cohort and Finney's defense work in Rock Hill ran parallel: Finney represented the Friendship 9 students at the McCrory's variety-store sit-in case in York County, while Perry handled the LDF-coordinated litigation on the integration cases that followed across the state [src: 6]. President Gerald Ford nominated Perry to the U.S. Court of Military Appeals in 1976, making him the first African-American attorney from the Deep South appointed to a federal judgeship [src: 2]. In 1979 President Jimmy Carter nominated him to the U.S. District Court for the District of South Carolina, where the Senate's confirmation made him the first African-American U.S. district judge appointed in the Deep South [src: 2, 7].",
-  "legacy_and_reception": "In 2004 the federal courthouse under construction at 901 Richland Street in downtown Columbia, South Carolina was named the Matthew J. Perry Jr. United States Courthouse by act of Congress, with the building dedicated in 2005 to house the U.S. District Court for the District of South Carolina on which Perry sat [src: 2, 8]. The South Carolina Hall of Fame inducted him in 2007 [src: 2]. He died on July 28, 2011 in Columbia, South Carolina at the age of eighty-nine, his service on the federal bench having continued in Senior Judge status from his 1995 transition until his death [src: 2]. The Matthew J. Perry Jr. Library at Allen University, the historically Black African Methodist Episcopal college in Columbia where Perry took his undergraduate degree before entering the SC State College School of Law, bears his name as the institution's principal library facility [src: 9]. The University of South Carolina Press published the scholarly biography Matthew J. Perry: The Man, His Times, and His Legacy in 2004 (edited by W. Lewis Burke and Belinda F. Gergel), and Perry's papers are held at the Caroliniana Library of the University of South Carolina [src: 2].",
+  "ai_reading": "Perry's top semantic neighbor is Robert L. Carter (entry 108) at a cosine count of 378, the second-strongest paired-lawyer signature in the catalog (Carter is also Becton's #1 neighbor at 753 and Clarence B. Jones's #1 at 246). Second-strongest is Ernest Adolphus Finney Jr. (entry 39) at 194, the future South Carolina Chief Justice whose page is built around the parallel South Carolina civil-rights-legal network. The embedding therefore reads Perry as a node in the SC legal cohort that also includes Cecil J. Williams (entry 14, count 57, the photographer who documented their cases) and Chuck McDew (entry 16, count 35, the SNCC chairman whose South Carolina State protests Perry's litigation overlapped with). The novel observation is the position on the Individual Conscience vs Collective Discipline axis, where Perry sits at +0.70 (normalized): for a federal judge whose institutional posture is collective-discipline (precedent, rules, courtroom procedure), the embedding pulls his testimony toward Collective Discipline, an alignment consistent with the role rather than mismatched, but in a corpus where most judicial and lawyer voices land lower on that axis (Greenberg +0.12, Finney +0.13, Carter +0.32, Clarence B. Jones +0.58), Perry's +0.70 makes him the most institutional-reading voice in the audited subset of the catalog. He also reads deep Southern at +0.68 on the Southern Struggle vs Northern Struggle axis, consistent with a litigation career fought entirely in South Carolina courts.",
+  "biographical_paragraph": "Perry was born August 3, 1921 in Columbia, South Carolina, and died July 29, 2011 [src: 3, 4]. He took both his undergraduate B.S. (1948) and his law degree (1951) at South Carolina State College in Orangeburg, in the first graduating class of the new state-run Black law school [src: 3, 4]. As chief counsel for the South Carolina NAACP from 1957, his cases included the 1963 Gantt v. Clemson litigation, argued with Constance Baker Motley, that produced the first African-American enrollment at Clemson College; the Rackley v. Tri-County Hospital litigation arising from Gloria Blackwell Rackley's October 1961 arrest for sitting in a whites-only hospital waiting room in Orangeburg, after which the hospital was integrated; the 1963 Edwards v. South Carolina argument before the U.S. Supreme Court protecting civil rights marchers; and the 1972 South Carolina reapportionment case that pressed legislative redistricting toward the \"one man, one vote\" principle [src: 2, 3]. President Gerald Ford nominated him to the U.S. Court of Military Appeals in 1976; President Jimmy Carter nominated him to the U.S. District Court for the District of South Carolina, where the Senate confirmed him on September 19, 1979, the first African American to hold a federal district judgeship in the state [src: 3, 4]. He assumed senior status in 1995 and served until his death [src: 4]. Congress had already designated the federal courthouse to be built in Columbia as the Matthew J. Perry Jr. United States Courthouse by Public Law 103-360 in 1994; the building opened in 2004 [src: 8, 9]. His Library of Congress oral history is entry 87 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Matthew J. Perry Jr.",
+      "speaker_slug": "matthew-j-perry-jr",
+      "source_entry": 87,
+      "timestamp": "00:08:35",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669123/",
+      "lead_in": "On a wartime weekend pass, waiting more than two hours for a connecting train in Birmingham, Perry could not enter the terminal restaurant where Italian prisoners of war were being served:",
+      "quote": "But as I looked and as I contemplated here I was at that time an American soldier. I was wearing the uniform of my country. I had just gone through basic training. I had been trained to go into a matter involving our engagement with the enemy."
+    },
+    {
+      "relation": "self",
+      "speaker": "Matthew J. Perry Jr.",
+      "speaker_slug": "matthew-j-perry-jr",
+      "source_entry": 87,
+      "timestamp": "00:21:53",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669123/",
+      "lead_in": "Recalling how Thurgood Marshall regarded the separate-but-equal law school South Carolina opened at South Carolina State rather than admit Black students to the University of South Carolina, the school Perry then attended:",
+      "quote": "In fact, Thurgood Marshall referred to it as a Jim Crow dump."
+    },
+    {
+      "relation": "self",
+      "speaker": "Matthew J. Perry Jr.",
+      "speaker_slug": "matthew-j-perry-jr",
+      "source_entry": 87,
+      "timestamp": "00:26:36",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669123/",
+      "lead_in": "South Carolina ended its diploma-privilege exemption just as Perry's class graduated, requiring the bar examination for the first time; of his small class, he was the only one to pass:",
+      "quote": "And we had to take the examination. By the way, I was the only person who passed of the group. Now, whether the examination was fairly administered or anything like that, I cannot tell you, but I can tell you I studied my can off for the thing."
+    },
+    {
+      "relation": "self",
+      "speaker": "Matthew J. Perry Jr.",
+      "speaker_slug": "matthew-j-perry-jr",
+      "source_entry": 87,
+      "timestamp": "00:40:11",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669123/",
+      "lead_in": "A Spartanburg municipal judge had been convicting Perry's clients on sight; on a later appearance Perry came prepared with a pre-drafted notice of appeal and asked the judge to accept service of it:",
+      "quote": "So he was shocked, he looked up at me and he says, what is this? How did you know what my decision was going to be? I said, Your Honor, I said, this has been your decision every time I've come here."
+    },
+    {
+      "relation": "self",
+      "speaker": "Matthew J. Perry Jr.",
+      "speaker_slug": "matthew-j-perry-jr",
+      "source_entry": 87,
+      "timestamp": "00:54:48",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669123/",
+      "lead_in": "On the Columbia bus case of Sarah Mae Fleming Brown, which Perry took to trial and which he dates ahead of the Montgomery litigation that followed Rosa Parks:",
+      "quote": "But Sarah Mae Fleming Brown's case was the first one on the record."
+    },
+    {
+      "relation": "about",
+      "speaker": "Cecil J. Williams",
+      "speaker_slug": "cecil-j-williams",
+      "source_entry": 14,
+      "timestamp": "01:20:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669125/",
+      "lead_in": "Photographer Cecil J. Williams rode in the small motorcade that carried Harvey Gantt to register at Clemson, with Perry as lead counsel:",
+      "quote": "I had been a part of a convoy I think of about three cars and one involving Matthew J. Perry Jr again Matthew J. Perry Jr and Constance Baker Motley had assisted Gantt in gaining entrance to the Clemson University."
+    },
+    {
+      "relation": "about",
+      "speaker": "Ernest Adolphus Finney Jr.",
+      "speaker_slug": "ernest-adolphus-finney-jr",
+      "source_entry": 39,
+      "timestamp": "00:21:41",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669124/",
+      "lead_in": "Ernest Adolphus Finney Jr., the future South Carolina Chief Justice, places Perry at the center of the state's civil rights legal network as its chief counsel:",
+      "quote": "But as I recall, it I. DeQuincey Newman was actively involved in whatever Chief Counsel Perry was involved in,"
+    }
+  ],
+  "movement_context": "Perry took his law degree at the South Carolina State College School of Law in Orangeburg in 1951, the state-funded Black law school the South Carolina General Assembly chartered in 1947 as its separate-but-equal answer to the NAACP-coordinated litigation pressing for African-American admission to the all-white University of South Carolina law school [src: 5]. The same Orangeburg law-school cohort produced Ernest Adolphus Finney Jr. (catalog entry 39, JD 1954), who later became the first African-American Chief Justice of the South Carolina Supreme Court since Reconstruction, and a generation of state-network civil rights lawyers who would carry the bulk of the post-Brown litigation across South Carolina through the 1960s and 1970s [src: 5]. Perry became a cooperating attorney for the NAACP Legal Defense Fund in the 1950s and was named chief counsel to the South Carolina NAACP in 1957, the lead civil rights attorney for the state through the 1960s [src: 2, 3]. He worked downstream from the Clarendon County school-desegregation case Briggs v. Elliott, which Thurgood Marshall and the LDF first tried before a three-judge district court in 1951 and which was later consolidated with cases from three other states into Brown v. Board of Education, decided in 1954 [src: 6]. Perry, newly graduated from law school, was in the courtroom for the Briggs trial in Charleston; the Briggs lineage made South Carolina one of the jurisdictions whose challenge to Plessy reached the Supreme Court in Brown, and the post-Brown work of forcing implementation across South Carolina school districts, hospitals, public accommodations, and voting maps fell substantially to Perry's litigation docket [src: 6]. In the spring of 1961, as the lunch-counter sit-in movement spread across the upper South, Perry's litigation cohort and Finney's defense work in Rock Hill ran parallel: Finney represented the Friendship 9 students at the McCrory's variety-store sit-in case in York County, while Perry handled the LDF-coordinated litigation on the integration cases that followed across the state [src: 7]. President Gerald Ford nominated Perry to the U.S. Court of Military Appeals in 1976, making him the first African-American attorney from the Deep South appointed to a federal judgeship [src: 2, 4]. In 1979 President Jimmy Carter nominated him to the U.S. District Court for the District of South Carolina, where the Senate's confirmation made him the first African-American U.S. district judge appointed in the Deep South [src: 3, 4].",
+  "legacy_and_reception": "Congress designated the federal courthouse to be built at 901 Richland Street in downtown Columbia, South Carolina as the Matthew J. Perry Jr. United States Courthouse through Public Law 103-360, enacted October 14, 1994, while Perry was a sitting judge; the building opened in 2004 to house the U.S. District Court for the District of South Carolina on which Perry sat from 1979 to 1995 and then as Senior Judge until his death [src: 8, 9]. The Official South Carolina Hall of Fame inducted him in 2007 [src: 10]. He died on July 29, 2011 in Columbia, South Carolina at the age of eighty-nine, his service on the federal bench having continued in Senior Judge status from his 1995 transition until his death [src: 1, 4]. The University of South Carolina Press published the scholarly biography Matthew J. Perry: The Man, His Times, and His Legacy in 2004 (edited by W. Lewis Burke and Belinda F. Gergel), and Perry's papers are held at the South Caroliniana Library of the University of South Carolina [src: 2].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Matthew_J._Perry%2C_Jr._Courthouse.png",
       "alt": "Matthew J. Perry Jr. United States Courthouse, Columbia, South Carolina",
-      "caption": "The Matthew J. Perry Jr. United States Courthouse at 901 Richland Street in Columbia, South Carolina. The federal courthouse was named for Perry by act of Congress in 2004 and dedicated in 2005, two years before his 2011 death. The building houses the U.S. District Court for the District of South Carolina on which Perry sat from 1979 to 1995, then as Senior Judge until his death. The naming made Perry one of the few federal judges to have a courthouse named in his honor during his lifetime. Photograph released by the United States District Court, District of South Carolina.",
+      "caption": "The Matthew J. Perry Jr. United States Courthouse at 901 Richland Street in Columbia, South Carolina. Congress designated the courthouse for Perry through Public Law 103-360, enacted October 14, 1994, while he was a sitting judge; the building opened in 2004. It houses the U.S. District Court for the District of South Carolina on which Perry sat from 1979 to 1995, then as Senior Judge until his 2011 death. The naming made Perry one of the few federal judges to have a courthouse named in his honor during his lifetime. Photograph released by the United States District Court, District of South Carolina.",
       "photographer": "United States District Court, District of South Carolina",
       "repository": "Wikimedia Commons",
       "license": "Public domain (U.S. federal government work)",
@@ -34,22 +113,12 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/0c/SCSU_Lowman_Hall_from_N_1.JPG",
       "alt": "Lowman Hall, South Carolina State University, Orangeburg, viewed from the north",
-      "caption": "Lowman Hall on the campus of South Carolina State University in Orangeburg, photographed April 26, 2015 from the north. The SC State College School of Law operated from this campus from its 1947 chartering by the South Carolina General Assembly as the state's separate-but-equal answer to the NAACP-coordinated litigation pressing for African-American admission to the all-white University of South Carolina law school. Perry took his JD here in 1951; Ernest Adolphus Finney Jr. (catalog entry 39) took his JD here in 1954. The SC State law school was closed in 1966 after the 1963 federal-court order desegregating USC's law school made the separate-but-equal facility redundant.",
+      "caption": "Lowman Hall on the campus of South Carolina State University in Orangeburg, photographed April 26, 2015 from the north. The SC State College School of Law operated from this campus from its 1947 chartering by the South Carolina General Assembly as the state's separate-but-equal answer to the NAACP-coordinated litigation pressing for African-American admission to the all-white University of South Carolina law school. Perry took his undergraduate B.S. (1948) and his JD (1951) at South Carolina State, in the law school's first graduating class; Ernest Adolphus Finney Jr. (catalog entry 39) took his JD here in 1954. The SC State law school closed in 1966 once the desegregation of South Carolina's white law schools made the separate facility redundant.",
       "photographer": "Ammodramus (Wikimedia Commons user)",
       "repository": "Wikimedia Commons",
       "license": "Creative Commons CC0 1.0 Universal Public Domain Dedication",
       "source_url": "https://commons.wikimedia.org/wiki/File:SCSU_Lowman_Hall_from_N_1.JPG",
       "date_taken": "2015-04-26"
-    },
-    {
-      "src_external": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Chappelle_Administration_Building%2C_Allen_University_%28Columbia%29.jpg",
-      "alt": "Chappelle Administration Building, Allen University, Columbia, South Carolina",
-      "caption": "The Chappelle Administration Building at Allen University, 1530 Harden Street in Columbia, South Carolina, photographed in 1980 by Van Jones Martin for the Historic American Buildings Survey. Allen University is the historically Black African Methodist Episcopal college in Columbia where Perry took his undergraduate degree before entering the SC State College School of Law in Orangeburg. The Matthew J. Perry Jr. Library at Allen University, named for Perry, is the principal library facility of the campus. The Chappelle Building was designed by John Anderson Lankford (1874-1946), one of the first formally trained African-American architects, and is listed on the National Register of Historic Places.",
-      "photographer": "Van Jones Martin (Historic American Buildings Survey, National Park Service)",
-      "repository": "Wikimedia Commons (sourced from Library of Congress Prints and Photographs Division, HABS SC,40-COLUM,10A-1)",
-      "license": "Public domain (U.S. federal government work)",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Chappelle_Administration_Building,_Allen_University_(Columbia).jpg",
-      "date_taken": "1980"
     }
   ],
   "sources": [
@@ -61,22 +130,27 @@
     {
       "url": "https://search.worldcat.org/title/55097060",
       "title": "W. Lewis Burke and Belinda F. Gergel, eds., Matthew J. Perry: The Man, His Times, and His Legacy",
-      "publisher": "University of South Carolina Press, 2004; WorldCat OCLC 55097060 (the standard biographical volume on Perry, including his 1951 SC State law degree, the 1963 Harvey Gantt litigation, the 1972 SC reapportionment case, the 1976 Court of Military Appeals nomination, the 1979 U.S. District Court nomination, the 2004 courthouse naming, and the 2007 SC Hall of Fame induction)"
+      "publisher": "University of South Carolina Press, 2004; WorldCat OCLC 55097060 (the standard biographical volume on Perry, including his South Carolina State degrees, the 1963 Harvey Gantt litigation, the 1972 SC reapportionment case, the 1976 Court of Military Appeals nomination, the 1979 U.S. District Court nomination, and the 2007 SC Hall of Fame induction)"
+    },
+    {
+      "url": "https://www.scencyclopedia.org/sce/entries/perry-matthew-j-jr/",
+      "title": "W. Lewis Burke, \"Perry, Matthew J., Jr.,\" South Carolina Encyclopedia",
+      "publisher": "University of South Carolina, Institute for Southern Studies (the peer-reviewed encyclopedia entry documenting Perry's 1948 B.S. and 1951 LL.B. from South Carolina State College, his role as chief counsel to the SC NAACP, the 1963 Harvey Gantt admission to Clemson, Edwards v. South Carolina, Newman v. Piggie Park, the 1972/1974 single-member-district reapportionment litigation, and the 1976 and 1979 federal judicial appointments)"
+    },
+    {
+      "url": "https://www.fjc.gov/history/judges/perry-matthew-james-jr",
+      "title": "Perry, Matthew James, Jr., Federal Judicial Center biographical record",
+      "publisher": "Federal Judicial Center (the official biographical record of Perry's federal judicial service: born August 3, 1921, died July 29, 2011; B.S. 1948 and LL.B. 1951 from South Carolina State; 1976 service on the U.S. Court of Military Appeals; nominated by President Carter July 5, 1979 and confirmed September 19, 1979 to the U.S. District Court for the District of South Carolina; senior status October 1, 1995)"
     },
     {
       "url": "https://search.worldcat.org/title/49570401",
       "title": "William Hine, South Carolina State University: A Black Land-Grant College in Jim Crow America",
-      "publisher": "University of South Carolina Press, 2018; WorldCat OCLC 1031929418 (the standard institutional history of South Carolina State College / SCSU, including the 1947 founding of the SC State Law School where Perry took his 1951 JD and the law school's 1966 closure following the desegregation of the University of South Carolina law school)"
-    },
-    {
-      "url": "https://search.worldcat.org/title/22078234",
-      "title": "Jack Bass and Jack Nelson, The Orangeburg Massacre",
-      "publisher": "Mercer University Press, 1996 (reprint of the 1970 World Publishing original); WorldCat OCLC 22078234 (institutional history of SC State College in the civil rights era, including the SC State Law School where Perry and Finney took their JDs, with extensive context on the 1947-founded separate-but-equal SC law-school system)"
+      "publisher": "University of South Carolina Press, 2018; WorldCat OCLC 1031929418 (the standard institutional history of South Carolina State College / SCSU, including the 1947 founding of the SC State Law School where Perry took his 1951 JD and the law school's 1966 closure following the desegregation of South Carolina's white law schools)"
     },
     {
       "url": "https://search.worldcat.org/title/14906187",
       "title": "Mark V. Tushnet, The NAACP's Legal Strategy against Segregated Education, 1925-1950",
-      "publisher": "University of North Carolina Press, 1987; WorldCat OCLC 14906187 (the institutional history of the NAACP Legal Defense Fund litigation cycle that produced Briggs v. Elliott in Clarendon County, the 1952 SC companion case to Brown v. Board of Education, the doctrinal substrate from which Perry's 1960s and 1970s SC civil rights litigation descended)"
+      "publisher": "University of North Carolina Press, 1987; WorldCat OCLC 14906187 (the institutional history of the NAACP Legal Defense Fund litigation cycle that produced Briggs v. Elliott in Clarendon County, the South Carolina case first tried before a three-judge district court in 1951 and consolidated into Brown v. Board of Education in 1954, the doctrinal substrate from which Perry's SC civil rights litigation descended)"
     },
     {
       "url": "https://search.worldcat.org/title/1340858220",
@@ -84,19 +158,19 @@
       "publisher": "Belt Publishing, 2024; WorldCat OCLC 1395338570 (the institutional history of the Friendship 9 sit-in defended by Ernest Adolphus Finney Jr., catalog entry 39, in 1961 and again at the 2015 vacatur, with context on the parallel SC civil-rights legal network Perry and Finney both worked within)"
     },
     {
-      "url": "https://www.fjc.gov/history/judges/perry-matthew-james-jr",
-      "title": "Perry, Matthew James, Jr., Federal Judicial Center biographical record",
-      "publisher": "Federal Judicial Center (the official biographical record of Perry's federal judicial service, including the 1976 nomination by President Ford to the U.S. Court of Military Appeals, the 1979 nomination by President Carter to the U.S. District Court for the District of South Carolina, his 1995 Senior Judge transition, and his July 28, 2011 death)"
+      "url": "https://www.congress.gov/103/statute/STATUTE-108/STATUTE-108-Pg3462.pdf",
+      "title": "Public Law 103-360 (108 Stat. 3462), designation of the Matthew J. Perry, Jr. United States Courthouse",
+      "publisher": "U.S. Congress, enacted October 14, 1994 (the statute designating the United States courthouse to be constructed in Columbia, South Carolina as the \"Matthew J. Perry, Jr. United States Courthouse,\" enacted while Perry was a sitting senior judge)"
     },
     {
-      "url": "https://www.gsa.gov/about-us/regions/welcome-to-the-southeast-sunbelt-region-4/buildings-and-facilities/south-carolina/matthew-j-perry-jr-us-courthouse-columbia",
-      "title": "Matthew J. Perry Jr. United States Courthouse, U.S. General Services Administration record",
-      "publisher": "U.S. General Services Administration (the federal building-record entry documenting the courthouse construction, the 2004 congressional naming, the 2005 dedication, and the courthouse's continuing role as the seat of the U.S. District Court for the District of South Carolina on which Perry sat)"
+      "url": "https://www.historiccolumbia.org/tour-locations/901-richland-street",
+      "title": "901 Richland Street, Matthew J. Perry Jr. Federal Courthouse",
+      "publisher": "Historic Columbia (the building record for the courthouse at 901 Richland Street completed in the early 2000s and opened in 2004 to house the U.S. District Court for the District of South Carolina on which Perry sat)"
     },
     {
-      "url": "https://www.allenuniversity.edu/about/library",
-      "title": "Matthew J. Perry Jr. Library, Allen University institutional record",
-      "publisher": "Allen University (the institutional record of the principal library facility at Perry's undergraduate alma mater in Columbia, South Carolina, named in his honor)"
+      "url": "https://theofficialschalloffame.com/inductee/matthew-perry/",
+      "title": "Matthew Perry, inductee record",
+      "publisher": "The Official South Carolina Hall of Fame (the institutional record of Perry's 2007 induction, documenting his bachelor's and law degrees from South Carolina State College, his 1957 appointment as chief counsel to the South Carolina NAACP, the hospital-waiting-room and state-college desegregation cases, Edwards v. South Carolina, and the 1976 and 1979 federal judicial appointments)"
     }
   ]
 }

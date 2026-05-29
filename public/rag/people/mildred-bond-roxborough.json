@@ -4,18 +4,86 @@
   "person_type": "interviewee",
   "entry_number": 90,
   "display_name": "Mildred Bond Roxborough",
-  "born": null,
+  "born": 1926,
   "died": null,
-  "role_summary": "Longtime NAACP national-office staff member; her testimony in this corpus's embedding clusters with Robert L. Carter, Cecilia Suyat Marshall, and the NAACP-front-office cohort.",
-  "ai_reading": "Roxborough's top semantic neighbors are Robert L. Carter (entry 108, count 129, the NAACP General Counsel), Cecilia Suyat Marshall (entry 15, count 111, NAACP secretary to Gloster B. Current), Charles McLaurin (entry 17), Joseph Echols Lowery (entry 66, SCLC), and Amos C. Brown (entry 2). The embedding therefore confirms her cultural placement as a NAACP-national-office staffer. What it adds is her position on the Individual Conscience vs Collective Discipline axis at -0.50, distinctly toward Individual Conscience. For someone whose institutional role at the NAACP national headquarters was definitionally collective-disciplinary (institutional staff, organizational work), this Individual-Conscience pull is the AI-vs-culture observation on her page. Her other four axis positions are within +/-0.06 of zero, marking her as one of the most centrist voices in the corpus by every axis except the Individual-Collective one.",
-  "biographical_paragraph": "Mildred Bond Roxborough served on the NAACP's national-office staff over a long career spanning the civil rights movement and beyond; her oral history is held at the Library of Congress as entry 90 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the strongest available signal for her movement role is the embedding's tight cosine with Robert L. Carter (entry 108) and Cecilia Suyat Marshall (entry 15), both fellow NAACP national-office veterans whose own catalog pages document the institutional context.",
-  "movement_context": "Roxborough joined the NAACP national-office staff as a field secretary in 1953, the year before the U.S. Supreme Court handed down Brown v. Board of Education, 347 U.S. 483 (1954); she served in that capacity through 1965, the same twelve-year window during which the parent NAACP coordinated the Legal Defense Fund's school-desegregation campaign with the field network supplying local-plaintiff infrastructure, the Montgomery Bus Boycott aftermath, the founding of SCLC, the sit-in movement, the Freedom Rides, Birmingham, the March on Washington, the Civil Rights Act of 1964, Mississippi Freedom Summer, and the Voting Rights Act of 1965 [src: 2, 3]. Her tenure overlapped Cecilia Suyat Marshall's 1948-1955 national-office service, the Roy Wilkins executive-secretary/executive-director tenure that ran from 1955 to 1977, and the assassinations of Medgar Evers (June 12, 1963) and Robert F. Kennedy (June 6, 1968) that bracketed the field-secretary era she lived through [src: 2, 3]. After 1965 Roxborough transitioned to the headquarters role of Special Assistant to the Executive Director and, in parallel, served as Secretary to the NAACP National Board of Directors, a position that placed her at the institutional center of the organization through every executive-director transition that followed: Roy Wilkins through 1977, Benjamin L. Hooks from 1977 to 1992, Benjamin Chavis from 1993 to 1994 (whose tenure ended in a contested board action over financial governance that Roxborough's board secretary's office sat at the procedural center of), Kweisi Mfume from 1996 to 2004, and the post-2004 leaders [src: 2]. The NAACP she carried across those decades was the institutional spine of the Black civil-rights apparatus through the assassination of Medgar Evers in 1963, the firebombing of the organization's offices and the wave of Southern-state injunctions that nearly bankrupted the parent NAACP in the late 1950s, the post-Wilkins fundraising crisis of the 1980s, and the 1990s financial-governance reorganization that produced the Mfume turnaround [src: 2]. Her sixty-plus-year arc places her among the longest continuous staff tenures in the organization's history; the institutional memory she carries crosses every executive director from Walter White's late tenure through Wilkins, Hooks, Chavis, Mfume, and beyond, the equivalent of three full generational handoffs at the helm of the country's oldest civil-rights organization [src: 1, 2].",
-  "legacy_and_reception": "Roxborough sat for her Civil Rights History Project oral history in 2014 at age ninety-one, by which point she had been continuously affiliated with the NAACP national office for sixty-one years, a span that began with the Field Secretaries Department under Gloster B. Current and ran through the post-Mfume executive directorships [src: 1]. She continued in an emerita capacity at the NAACP national headquarters into the 2010s, retaining the Board Secretary title and the institutional-memory function it carried for the National Board of Directors, the senior governance body of the organization [src: 2]. The institutional archive of the NAACP, the NAACP Records collection at the Library of Congress Manuscript Division (collection MSS 32200; approximately five million items), is the canonical primary-source repository for the headquarters years Roxborough's career spanned, and her Civil Rights History Project oral history at the American Folklife Center provides the on-the-record staff-perspective complement to the corporate records the Manuscript Division holds [src: 1, 4]. Her testimony belongs to the small set of corpus entries that document the NAACP national office from the inside (alongside Cecilia Suyat Marshall, entry 15, and Robert L. Carter, entry 108) rather than from the field or pulpit, and her embedding placement reflects that institutional positioning [src: 5].",
+  "role_summary": "NAACP national-office staff member for more than six decades; field secretary from 1954, later director of operations, director of programs, and director of development through her 1997 retirement.",
+  "ai_reading": "Cosine similarity in this corpus pulls Roxborough's passages toward the NAACP front office: her highest-count semantic neighbors are Robert L. Carter (entry 108, count 129, the NAACP General Counsel), Cecilia Suyat Marshall (entry 15, count 111, secretary to Director of Branches Gloster B. Current), Charles McLaurin (entry 17, count 83), Joseph Echols Lowery (entry 66, count 69), and Amos C. Brown (entry 2, count 64). The embedding therefore reinforces her cultural placement as a national-headquarters staffer rather than a field or pulpit figure. Two things the vector space adds to that placement. First, although Lowery ranks only fourth by passage count, his interview carries her single highest cosine top-score in the corpus (0.754), higher than Carter's (0.732) or Marshall's (0.704); the SCLC pastor's testimony, not the NAACP lawyer's, is her closest single passage match, which cuts against the tidy NAACP-clusters-with-NAACP reading. Second, on the Individual Conscience versus Collective Discipline axis she sits at -0.50 (normalized), distinctly toward Individual Conscience. For someone whose institutional role at national headquarters was definitionally collective and organizational, that Individual-Conscience pull is the AI-versus-culture observation on her page; her four other axis positions all fall within roughly 0.06 of zero (nonviolence-self-defense +0.01, sacred-secular +0.04, tactical-strategic -0.06, southern-northern +0.04), marking her as one of the most centrist voices in the audited subset on every axis but that one.",
+  "biographical_paragraph": "Mildred Bond Roxborough was born on June 30, 1926 in Brownsville, the seat of Haywood County, Tennessee, one of three Tennessee counties where Black residents did not vote [src: 1, 6]. Her parents were teachers who organized the county's first NAACP branch, with her father as president and her mother as secretary, and she began selling The Crisis as a child after writing to its editor, Roy Wilkins, for permission to do so [src: 1]. She studied at Howard University during the Second World War and later at New York University, and joined the NAACP's national staff in 1954 as a field secretary under Director of Branches Gloster B. Current [src: 1, 6]. Over the following four decades she moved through the headquarters roughly every five years: executive and administrative assistant to the executive director in 1963, assistant director in 1975, director of operations from 1978 to 1984, director of programs from 1984 to 1986 (the first woman in that post), and director of development from 1986 until her 1997 retirement [src: 6]. Her field years put her in the rooms with the people other corpus voices describe from the outside: she ran a six-week Baltimore membership campaign for Lillie M. Jackson's branch, worked the 1954 Hoxie, Arkansas school-desegregation effort alongside Daisy Bates, and traveled the Mississippi Delta with field director Medgar Evers interviewing farmers cut off from credit for their NAACP activity [src: 1]. Her Library of Congress oral history is entry 90 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039), recorded in New York on October 29, 2010; the interviewer was Julian Bond, whose surname coincides with her maiden name but who is unrelated to her [src: 1]. Cecilia Suyat Marshall (entry 15) names her directly in her own interview as a field secretary in the branch department where Marshall's husband-to-be worked.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:00:50",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "Asked how her family worked to improve their circumstances in Haywood County, Tennessee, she begins with the franchise:",
+      "quote": "Well, we lived in one of the three counties in the state of Tennessee in which blacks did not vote."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:11:02",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "When Director of Branches Gloster B. Current assigned the newcomer a six-week membership campaign for the demanding Baltimore branch, Thurgood Marshall, seated nearby, reacted:",
+      "quote": "Gloster, why are you doing that to that girl? You should be ashamed of yourself."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:59:28",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "Driving the Mississippi Delta at night with field director Medgar Evers, she felt something cold on the car floor and asked what it was:",
+      "quote": "He said, well, that's my shotgun, you have your feet on. So of course my feet flew up."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:37:31",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "On why the NAACP's record is not as widely remembered as its length and reach would suggest:",
+      "quote": "But what happens, I believe, is we forget our history, we live in the period, and then we take for granted what there is, and do not retain it as an achievement which had been caused by the hard work of those who came on before us."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "01:20:43",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "On how she handled the danger of traveling for the NAACP through the rural South:",
+      "quote": "My reaction of fear has come after I've gotten through it because you don't have time to be afraid."
+    },
+    {
+      "relation": "about",
+      "speaker": "Cecilia Suyat Marshall",
+      "speaker_slug": "cecilia-suyat-marshall",
+      "source_entry": 15,
+      "timestamp": "00:13:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669196/",
+      "lead_in": "Cecilia Suyat Marshall, who worked the NAACP branch department under Gloster B. Current, names Roxborough among the staff she remembers (her boss, she explains in the next breath, hired the field secretaries, and Roxborough was one of them):",
+      "quote": "and Mildred Bond Roxborough Roxborough, she was a few-sector under my boss."
+    }
+  ],
+  "movement_context": "Roxborough joined the NAACP national-office staff as a field secretary in 1954, the year the U.S. Supreme Court handed down Brown v. Board of Education, 347 U.S. 483 (1954); her field-secretary years ran through the early 1960s, the period during which the parent NAACP coordinated the school-desegregation campaign with the field network that supplied local-plaintiff infrastructure, the Montgomery Bus Boycott aftermath, the founding of SCLC, the sit-in movement, the Freedom Rides, Birmingham, and the March on Washington [src: 1, 2, 3]. Her tenure overlapped Cecilia Suyat Marshall's 1948-1955 national-office service and the Roy Wilkins executive tenure that ran from 1955 to 1977 [src: 2, 3]. In her own account she advanced through headquarters jobs roughly every five years: executive and administrative assistant to the executive director from 1963, assistant director from 1975, director of operations from 1978 to 1984, director of programs from 1984 to 1986 (the first woman in that role), and director of development from 1986 until she retired from full-time work in 1997 [src: 1, 6]. The NAACP she carried across those decades was the institutional spine of the Black civil-rights apparatus through the assassination of Medgar Evers in 1963, the wave of Southern-state injunctions and the Alabama ban that drove the organization's Deep South work underground in the late 1950s (she describes the field organizer Ruby Hurley relocating from Birmingham to Atlanta and working communities under cover of night), the post-Wilkins fundraising rebuild Benjamin L. Hooks led from 1977 to 1992, and the institutional turbulence of the 1990s that preceded the Kweisi Mfume turnaround [src: 1, 2]. Her more than sixty-year affiliation places her among the longest continuous staff tenures in the organization's history, an institutional memory that crosses every executive director from Walter White's late tenure through Wilkins, Hooks, Benjamin Chavis, and Mfume [src: 1, 2, 6].",
+  "legacy_and_reception": "Roxborough sat for her Civil Rights History Project oral history on October 29, 2010 in New York, at age eighty-four, interviewed by Julian Bond; by that point she had been affiliated with the NAACP national office for more than half a century, an arc that began in the branch department under Gloster B. Current and ran through the Hooks and Mfume executive directorships [src: 1, 6]. The institutional archive of the organization, the NAACP Records at the Library of Congress Manuscript Division (collection MSS 32200, approximately five million items), is the canonical primary-source repository for the headquarters years her career spanned; her American Folklife Center oral history provides the on-the-record staff-perspective complement to the corporate records the Manuscript Division holds [src: 1, 4]. Her testimony belongs to the small set of corpus entries that document the NAACP national office from the inside (alongside Cecilia Suyat Marshall, entry 15, and Robert L. Carter, entry 108) rather than from the field or the pulpit, and her embedding placement reflects that institutional positioning [src: 5].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/31/Interview%2C_Roy_Wilkins%2C_Executive_Secretary_of_the_NAACP_%28LOC%29_-_Flickr_-_The_Library_of_Congress.jpg",
       "alt": "Roy Wilkins, Executive Secretary of the NAACP, in a head-and-shoulders portrait dated April 5, 1963",
-      "caption": "Roy Wilkins, the NAACP Executive Secretary (and after 1965 Executive Director) under whom Mildred Bond Roxborough served the bulk of her 1953-1977 field-secretary and Special Assistant tenure, photographed April 5, 1963 by Warren K. Leffler for the U.S. News & World Report Magazine Photograph Collection. Wilkins led the NAACP from 1955 to 1977; his executive-directorship spans the entire 1953-1965 field-secretary period Roxborough served and the first twelve years of her Special Assistant / Board Secretary headquarters tenure.",
+      "caption": "Roy Wilkins, the NAACP Executive Secretary (and after 1965 Executive Director) under whom Mildred Bond Roxborough served much of her career, photographed April 5, 1963 by Warren K. Leffler for the U.S. News & World Report Magazine Photograph Collection. Wilkins led the NAACP from 1955 to 1977; in her oral history Roxborough recalls writing to him as a child, when he edited The Crisis, for permission to sell the magazine.",
       "photographer": "Warren K. Leffler",
       "repository": "Wikimedia Commons (via Library of Congress Prints and Photographs Division, U.S. News & World Report Magazine Photograph Collection, LC-U9-9522-6)",
       "license": "Public domain (Library of Congress: no known restrictions on publication)",
@@ -25,7 +93,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Roy_Wilkins_at_the_White_House%2C_30_April%2C_1968.jpg",
       "alt": "Roy Wilkins at the White House, April 30, 1968, photographed by Yoichi Okamoto",
-      "caption": "Roy Wilkins at the White House on April 30, 1968, photographed by Yoichi Okamoto, official White House photographer for the Lyndon B. Johnson administration. The image captures Wilkins less than four weeks after the April 4, 1968 assassination of Martin Luther King Jr.; the NAACP national office Roxborough staffed was in mourning and in operational coordination with the SCLC and the King family during the period this photograph documents.",
+      "caption": "Roy Wilkins at the White House on April 30, 1968, photographed by Yoichi Okamoto, official White House photographer for the Lyndon B. Johnson administration. The image captures Wilkins less than four weeks after the April 4, 1968 assassination of Martin Luther King Jr.; Roxborough was on the national-office staff under Wilkins through this period.",
       "photographer": "Yoichi Okamoto",
       "repository": "Wikimedia Commons (via LBJ Presidential Library)",
       "license": "Public domain (work of an employee of the Executive Office of the President of the United States, created in the course of official duties)",
@@ -35,7 +103,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/55/Benjamin_Hooks_1995.jpg",
       "alt": "Benjamin L. Hooks, NAACP Executive Director, photographed January 16, 1995 in Baltimore",
-      "caption": "Benjamin L. Hooks, the NAACP Executive Director from 1977 to 1992, photographed January 16, 1995 in Baltimore, Maryland by John Mathew Smith. Hooks succeeded Roy Wilkins; Roxborough's Special Assistant and Board Secretary role at the national office continued unbroken across the Wilkins-to-Hooks transition and through the entirety of Hooks's fifteen-year executive directorship, a tenure that included the post-Wilkins fundraising rebuild and the 1980s Reagan-administration civil-rights retrenchment the NAACP organized against.",
+      "caption": "Benjamin L. Hooks, the NAACP Executive Director from 1977 to 1992, photographed January 16, 1995 in Baltimore, Maryland by John Mathew Smith. Hooks succeeded Roy Wilkins; Roxborough's headquarters tenure continued across the Wilkins-to-Hooks transition and through the entirety of Hooks's executive directorship. In her oral history she credits Hooks and the newspaper reporter Vernon Jarrett with founding the NAACP's ACT-SO youth academic-competition program.",
       "photographer": "John Mathew Smith (www.celebrity-photos.com)",
       "repository": "Wikimedia Commons (originally Flickr)",
       "license": "Creative Commons Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)",
@@ -46,8 +114,8 @@
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669101/",
-      "title": "Mildred Bond Roxborough oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
+      "title": "Mildred Bond Roxborough oral history interview conducted by Julian Bond in New York, New York, 2010 October 29",
+      "publisher": "Civil Rights History Project, Library of Congress, American Folklife Center (AFC 2010/039)"
     },
     {
       "url": "https://search.worldcat.org/title/263983157",
@@ -57,32 +125,27 @@
     {
       "url": "https://supreme.justia.com/cases/federal/us/347/483/",
       "title": "Brown v. Board of Education of Topeka, 347 U.S. 483 (1954)",
-      "publisher": "U.S. Supreme Court (unanimous opinion of the Court, Warren, C.J.; the school-desegregation precedent the NAACP LDF won the year after Roxborough joined the field-secretary staff)"
+      "publisher": "U.S. Supreme Court (unanimous opinion of the Court, Warren, C.J.; the school-desegregation precedent the NAACP Legal Defense Fund won the year Roxborough joined the field-secretary staff)"
     },
     {
       "url": "https://findingaids.loc.gov/db/search/xq/searchMfer02.xq?_id=loc.mss.eadmss.ms998009&_faSection=overview&_faSubsection=did&_dmdid=",
       "title": "NAACP Records, Manuscript Division",
-      "publisher": "Library of Congress, Manuscript Division (collection MSS 32200; approximately five million items; the institutional archive of the NAACP national office Roxborough served from 1953 forward)"
+      "publisher": "Library of Congress, Manuscript Division (collection MSS 32200; approximately five million items; the institutional archive of the NAACP national office Roxborough served from 1954 forward)"
     },
     {
       "url": "https://www.loc.gov/item/2015669196/",
       "title": "Cecilia Suyat Marshall oral history",
-      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 15 of this corpus; Marshall's 1948-1955 NAACP-national-office tenure overlaps the first two years of Roxborough's field-secretary tenure and provides a parallel staff-perspective oral history"
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 15 of this corpus; Marshall worked the NAACP branch department under Gloster B. Current and names Roxborough among the field secretaries on staff"
+    },
+    {
+      "url": "https://www.thehistorymakers.org/biography/mildred-bond-roxborough-40",
+      "title": "Mildred Bond Roxborough biography",
+      "publisher": "The HistoryMakers (editorially reviewed African American oral-history archive; source for her June 30, 1926 birth in Brownsville, Tennessee and the dated NAACP-headquarters career sequence: field secretary 1954, administrative assistant 1963, assistant director 1975, director of operations 1978-1984, director of programs 1984-1986, director of development 1986-1997)"
     },
     {
       "url": "https://search.worldcat.org/title/30113930",
       "title": "Mark V. Tushnet, Making Civil Rights Law: Thurgood Marshall and the Supreme Court, 1936-1961",
-      "publisher": "Oxford University Press, 1994; WorldCat OCLC 30113930 (the standard institutional history of the NAACP Legal Defense Fund litigation campaign through the Brown decision and its 1955-1961 implementation phase, the years Roxborough served as a field secretary)"
-    },
-    {
-      "url": "https://search.worldcat.org/title/35029598",
-      "title": "Gilbert Jonas, Freedom's Sword: The NAACP and the Struggle Against Racism in America, 1909-1969",
-      "publisher": "Routledge, 2005; WorldCat OCLC 56753464 (a senior NAACP fundraising officer's history of the parent association across the field-secretary era Roxborough served)"
-    },
-    {
-      "url": "https://search.worldcat.org/title/26397878",
-      "title": "Roy Wilkins, with Tom Mathews, Standing Fast: The Autobiography of Roy Wilkins",
-      "publisher": "Da Capo Press, 1994 (originally Viking 1982); WorldCat OCLC 26397878 (Wilkins's autobiography, covering his 1955-1977 NAACP executive leadership across the period of Roxborough's field-secretary and Special Assistant tenure)"
+      "publisher": "Oxford University Press, 1994; WorldCat OCLC 30113930 (the standard institutional history of the NAACP Legal Defense Fund litigation campaign through the Brown decision and its 1955-1961 implementation phase, the period of Roxborough's early field-secretary work)"
     }
   ]
 }

@@ -6,10 +6,78 @@
   "born": null,
   "died": null,
   "display_name": "Lisa Anderson Todd",
-  "role_summary": "SNCC field organizer; in this corpus's embedding her testimony clusters with Charles McLaurin, Walter Tillow, Martha Prescod Norman Noonan, and Ekwueme Thelwell.",
-  "ai_reading": "Todd's top semantic neighbors are Charles McLaurin (entry 17, count 308), Walter Tillow (entry 124, count 281), Martha Prescod Norman Noonan (entry 83, count 192), Ekwueme Michael Thelwell (entry 34, count 162), and Gwendolyn Zoharah Simmons (entry 53, count 150). The cluster crosses SNCC's Mississippi voter-registration network (McLaurin), its Washington office (Thelwell), its Northern support fundraisers (Noonan, Robinson via her own cluster), and the medical/labor-organizing Tillow node. The high counts (peak 308) suggest a long, topically dense oral history. Her Tactical Pragmatism vs Strategic Vision position is +0.72, far toward Strategic Vision, joining the cluster of SNCC women whose testimony the embedding reads as strategic-framed (Avery +0.69, Henderson +0.51, Robinson -0.21 the only exception in this band).",
-  "biographical_paragraph": "Lisa Anderson Todd's oral history is held at the Library of Congress as entry 79 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
-  "movement_context": "The 1964 Mississippi Summer Project (Freedom Summer) was the joint Council of Federated Organizations (COFO) campaign that brought roughly 700 to 1,000 northern volunteers, the majority of them white college students, into Mississippi for a coordinated voter-registration, Freedom School, and community-center effort organized by SNCC, CORE, the NAACP, and SCLC under Bob Moses's direction [src: 2, 3]. Volunteers were vetted, interviewed, and trained in two week-long orientation sessions at the Western College for Women in Oxford, Ohio, in June 1964; SNCC veterans Moses, James Forman, and others led the sessions on Mississippi conditions, non-violent discipline, and the legal apparatus the volunteers would face [src: 2, 3]. Lisa Anderson, then a Northern student volunteer, attended the Oxford orientation and traveled into Mississippi with the first wave [src: 4]. The same Oxford orientation sent off CORE worker Michael Schwerner (already in Mississippi), summer volunteer Andrew Goodman, and CORE worker James Chaney; the three left Oxford for Meridian on June 20, 1964 and were abducted and murdered by Klansmen and Neshoba County deputies on June 21, with their bodies found August 4 buried in an earthen dam outside Philadelphia, Mississippi [src: 2, 3]. The murders broke into national news as the rest of the volunteer cohort was just arriving in their assigned counties; the project continued under that shadow. The summer's political endpoint was the Mississippi Freedom Democratic Party (MFDP) challenge at the August 1964 Democratic National Convention in Atlantic City, where Fannie Lou Hamer, Aaron Henry, Ed King, and the MFDP delegation argued before the Credentials Committee that the all-white regular Mississippi delegation had been chosen through a registration process that systematically excluded Black voters and that the MFDP, open to all races, was the legitimate Mississippi Democratic Party [src: 3, 5]. The compromise offered (two at-large MFDP seats and a 1968 rule change requiring integrated delegations) was rejected; Hamer's televised Credentials Committee testimony, interrupted live by a hastily-arranged White House press conference President Johnson called to displace it, made the challenge a national event. Todd's role through that summer is documented in her own 2014 memoir For a Voice and the Vote: My Journey with the Mississippi Freedom Democratic Party, which traces the Oxford orientation, her Mississippi assignment, and her participation in the Atlantic City delegation [src: 4].",
+  "role_summary": "White northern volunteer in the 1964 Mississippi Summer Project; ran voter registration and Mississippi Freedom Democratic Party organizing in Greenville (Washington County); attended the MFDP challenge at the August 1964 Democratic National Convention in Atlantic City.",
+  "ai_reading": "Across her 184 transcript chunks, the two passages the embedding returns most often as nearest neighbors are Walter Tillow's (entry 124) and Charles McLaurin's (entry 17), tied at 53 appearances each in the per-chunk top-five, followed by Euvester Simpson (entry 41, 34), Martha Prescod Norman Noonan (entry 83, 32), and Gwendolyn Zoharah Simmons (entry 53, 32). That pairing is the structural signature of her account: McLaurin anchors the Mississippi Delta voter-registration field she worked, while Tillow is the SNCC Washington-office worker whose recruitment letter she quotes from memory as the moment she joined the project. On the Southern Struggle vs Northern Struggle axis the embedding places her near the center at +0.10, between McLaurin's deep-Southern +0.83 and the Northern readings of Tillow (-0.35), Noonan (-0.14), and Simmons (-0.13); the seam position fits a New Jersey and Cornell volunteer whose testimony is half Delta fieldwork and half national-convention and Northern-recruitment narrative. The sharper surprise is her Tactical Pragmatism vs Strategic Vision position at +0.72, well toward Strategic Vision and among the highest in the audited subset; for testimony that is largely granular recollection of canvassing, precinct meetings, and convention-floor logistics, the embedding reads the framing as strategic, near Annie Pearl Avery (+0.69) and Juadine Henderson (+0.51), most likely capturing the analytic, why-did-we-lose register of the decades of MFDP research she folds into the interview.",
+  "biographical_paragraph": "Lisa Anderson grew up in Summit, New Jersey, the daughter of a corporate lawyer, and came to the movement through two volunteer summers before she finished college: a 1963 Ecumenical Voluntary Service work camp at Tougaloo College in Mississippi, where she had dinner at Fannie Lou Hamer's home in Ruleville and met SNCC organizers, and an American Friends Service Committee voter-registration project in Greensboro, North Carolina [src: 1, 4]. She applied to SNCC in the fall of 1963 and was accepted into the 1964 Mississippi Summer Project; assigned to Greenville in Washington County, she canvassed for the Mississippi Freedom Democratic Party's freedom registration and ran one of the city's MFDP precincts [src: 1, 4]. She traveled to the August 1964 Democratic National Convention in Atlantic City for the MFDP credentials challenge, then entered Stanford Law School that fall [src: 1, 4]. Her oral history, recorded June 24, 2013 in Washington, D.C. by Emilye Crosby for the Southern Oral History Program, is held at the Library of Congress as entry 79 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039); in it she recalls Delta organizer Charles McLaurin (entry 17) and SNCC Washington-office worker Walter Tillow (entry 124), whose recruitment letter she quotes [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "00:25:04",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "During a 1963 work-camp summer at Tougaloo College, Anderson Todd's group was invited to dinner at Fannie Lou Hamer's home in Ruleville:",
+      "quote": "She stood in the doorway. She cooked us dinner. We're sitting outside at her home. And we invited her to sit down and eat with us. And she said that the first time she ate with an integrated group was at Tougaloo."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "01:05:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "On how canvassing in Greenville shifted from courthouse registration to the MFDP's parallel freedom registration:",
+      "quote": "We want you to go to the courthouse to register, but to, but freedom registration for the Mississippi Freedom Democratic Party, which was the alternative."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "01:23:39",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "Recalling Charles E. Cobb Jr.'s instruction to work around the established local leaders and let new people speak for themselves:",
+      "quote": "That is what we now call empowerment. We were empowering people and I don't think we ever used that word."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "01:45:09",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "On the Atlantic City offer of two at-large seats, which the press and many supporters called a compromise:",
+      "quote": "There was no compromise because there were not two sides, each with a position that came together and each side gave up something and they reached an agreement. There was no agreement."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "01:50:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "On why, after retiring, she spent years researching the MFDP convention challenge rather than writing a personal memoir:",
+      "quote": "But I wanted to write about the MFDP convention challenge to find out why we lost. What happened? What was going on? Because I didn't understand it, and I left disillusioned."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "02:41:23",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "Correcting the often-cited count of summer volunteers:",
+      "quote": "By the way, there were only 500 of us. There were not 1,000 college-age volunteers."
+    }
+  ],
+  "movement_context": "The 1964 Mississippi Summer Project (Freedom Summer) was the joint Council of Federated Organizations (COFO) campaign that brought roughly 700 to 1,000 northern volunteers, the majority of them white college students, into Mississippi for a coordinated voter-registration, Freedom School, and community-center effort organized by SNCC, CORE, the NAACP, and SCLC under Bob Moses's direction [src: 2, 3]; in her own testimony Todd puts the number of college-age summer volunteers nearer 500 and counts the short-term professionals who served briefly as the remainder of the larger figure [src: 1]. Volunteers were vetted, interviewed, and trained in two week-long orientation sessions at the Western College for Women in Oxford, Ohio, in June 1964; SNCC veterans Moses, James Forman, and others led the sessions on Mississippi conditions, non-violent discipline, and the legal apparatus the volunteers would face [src: 2, 3]. Lisa Anderson, then a Northern student volunteer, attended the Oxford orientation and traveled into Mississippi with the first wave [src: 4]. The same Oxford orientation sent off CORE worker Michael Schwerner (already in Mississippi), summer volunteer Andrew Goodman, and CORE worker James Chaney; the three left Oxford for Meridian on June 20, 1964 and were abducted and murdered by Klansmen and Neshoba County deputies on June 21, with their bodies found August 4 buried in an earthen dam outside Philadelphia, Mississippi [src: 2, 3]. The murders broke into national news as the rest of the volunteer cohort was just arriving in their assigned counties; the project continued under that shadow. The summer's political endpoint was the Mississippi Freedom Democratic Party (MFDP) challenge at the August 1964 Democratic National Convention in Atlantic City, where Fannie Lou Hamer, Aaron Henry, Ed King, and the MFDP delegation argued before the Credentials Committee that the all-white regular Mississippi delegation had been chosen through a registration process that systematically excluded Black voters and that the MFDP, open to all races, was the legitimate Mississippi Democratic Party [src: 3, 5]. The compromise offered (two at-large MFDP seats and a 1968 rule change requiring integrated delegations) was rejected; Hamer's televised Credentials Committee testimony, interrupted live by a hastily-arranged White House press conference President Johnson called to displace it, made the challenge a national event. Todd's role through that summer is documented in her own 2014 memoir For a Voice and the Vote: My Journey with the Mississippi Freedom Democratic Party, which traces the Oxford orientation, her Mississippi assignment, and her participation in the Atlantic City delegation [src: 4].",
   "legacy_and_reception": "Todd's 2014 memoir For a Voice and the Vote: My Journey with the Mississippi Freedom Democratic Party (University Press of Kentucky, hardcover ISBN 9780813146515, paperback 2016) is one of the comparatively small number of full-length first-person accounts written by a Freedom Summer volunteer that center on the MFDP convention challenge rather than on the field organizing alone [src: 4]. The book sits alongside Bruce Watson's Freedom Summer: The Savage Season That Made Mississippi Burn and Made America a Democracy (Viking, 2010), which draws on volunteer letters and interviews to reconstruct the Oxford orientation and the summer's events, and Doug McAdam's earlier sociological study Freedom Summer (Oxford University Press, 1988), which followed the volunteers' post-1964 trajectories into later movement work [src: 6, 7]. Todd has remained active in the SNCC alumni network, including the SNCC Legacy Project's documentation and public-education work in partnership with Duke University's SNCC Digital Gateway; her oral history for the Civil Rights History Project (Library of Congress, AFC 2010/039) was recorded as part of the same generational documentation effort [src: 1, 4].",
   "gallery": [
     {

@@ -7,8 +7,87 @@
   "died": 2025,
   "display_name": "Robert G. Clark Jr.",
   "role_summary": "Mississippi House of Representatives member 1968-2004 (47th district, Holmes County); the first African American elected to the Mississippi State Legislature since 1894 (the Reconstruction-era cutoff); the longest-continuously-serving member of the Mississippi House at his 2003 retirement; the first African American committee chairman in the chamber (Education Committee, 1977); Speaker Pro Tempore 1992-2004.",
-  "ai_reading": "Clark's top semantic neighbor is Charles McLaurin (entry 17) at a cosine count of 183; the broader cluster includes Ekwueme Michael Thelwell (entry 34, SNCC Washington and Carmichael memoir co-author), Walter Bruce (entry 123), and Ernest Adolphus Finney Jr. (entry 39, the parallel-trajectory South Carolina Supreme Court chief justice). The McLaurin cosine is the catalog's clearest example of a Mississippi-legislator-and-Mississippi-organizer cross-cohort pairing: Clark's 36 years as a state legislator and McLaurin's voter-registration field work in Sunflower County overlap in geography and constituency. The Finney pairing is the parallel: both men entered their states' previously all-white legislative or judicial institutions in the late 1960s as the first since Reconstruction. The novel observation his page surfaces is the electoral-vs-direct-action distinction: Clark's institutional integration of the Mississippi legislature was a sustained 1968-2004 electoral arc, fundamentally different from the direct-action register of the catalog's SNCC and SCLC voices, yet the embedding finds his testimony clustering with the direct-action organizers rather than with civic-institution administrators, suggesting the corpus reads the Black-first-in-historically-all-white-Mississippi-institution work as continuous with the SNCC field tradition that preceded it.",
-  "biographical_paragraph": "While Clark's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), his external biographical record is well-documented [src: 1]. Clark was born October 3, 1928 in Ebenezer, Holmes County, Mississippi, to a landowning family; his great-grandfather had first bought the land after the Civil War and his father Robert farmed it across the early twentieth century [src: 2]. He earned a Bachelor's at Jackson State University and a Master's in Administration and Educational Services from Michigan State University, completing nearly all of his doctoral work before entering politics. He worked as an educator and school administrator in Holmes County across the late 1950s and 1960s, the period when Holmes County emerged as one of the foundational Mississippi voter-registration counties (the Mississippi Freedom Democratic Party did substantial work there in 1964). In 1967 he was elected to the Mississippi House of Representatives by the Black majority of Holmes County; he took his seat on January 2, 1968 as the first African American in the chamber since 1894 and remained the only African American representative in the state house through 1976 [src: 2]. In 1977 he became the first African American committee chairman in the Mississippi House, taking the Education Committee chairmanship he would hold for ten years across pivotal education-reform negotiations. He was elected Speaker Pro Tempore at the start of the 1992 session and re-elected to that position in 1996 and 2000. He retired in December 2003 as the longest-continuously-serving member of the Mississippi House. In 2004 he became the first African American to have a Mississippi state building named after him [src: 2]. He died March 4, 2025 at ninety-six [src: 2].",
+  "ai_reading": "Counting how often each other interview surfaces among the nearest neighbors of Clark's passages, the top match in this corpus is not a fellow legislator but Ekwueme Michael Thelwell (entry 34, SNCC Washington office and co-author of Stokely Carmichael's memoir), at 38 shared-neighbor hits; Charles McLaurin (entry 17) follows at 31, then Ernest Adolphus Finney Jr. (entry 39) at 24, Walter Bruce (entry 123) at 23, Julia Matilda Burns (entry 70) at 21, and Rosie Head (entry 111) at 20. The cluster is striking because Clark's institutional arc, a 1968-2004 electoral career inside the Mississippi House, is a different register from the SNCC field organizing of Thelwell, McLaurin, and Head, yet cosine similarity pulls his testimony toward those direct-action voices rather than toward civic-administration figures. The influence graph reinforces the field-organizing tie from the other direction: the three corpus voices who name Clark are all Mississippi movement workers, Rosie Head (entry 111, four mentions), Walter Bruce (entry 123, two mentions), and McLaurin (entry 17, one mention), several of them tied to the Holmes County base that elected him. The Finney neighbor is the cleanest cross-state parallel the embedding finds: both men entered a previously all-white state institution, the Mississippi legislature for Clark and the South Carolina judiciary for Finney, as the first since Reconstruction. On the Southern Struggle versus Northern Struggle axis Clark reads as Southern (normalized position +0.44), consistent with a testimony rooted entirely in Holmes County, where, as he says, he was born in the same house his great-grandparents were enslaved beside and never held another address.",
+  "biographical_paragraph": "While Clark's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), his external biographical record is well-documented [src: 1]. Clark was born October 3, 1928 in Ebenezer, Holmes County, Mississippi, to a landowning family; his great-grandfather had first bought the land after the Civil War and his father Robert farmed it across the early twentieth century [src: 2]. He earned a bachelor's degree at Jackson State University and, because no Mississippi institution then admitted Black students to graduate study, traveled out of state for a master's degree at Michigan State University [src: 2]. He worked as a teacher, coach, and adult-education administrator in Holmes and Humphreys counties across the 1950s and 1960s, the period when Holmes County emerged as one of the foundational Mississippi voter-registration counties (the Mississippi Freedom Democratic Party did substantial organizing there in 1964) [src: 2]. In 1967 he was elected to the Mississippi House of Representatives by the Black majority of Holmes County; he took his seat on January 2, 1968 as the first African American in the chamber since 1894 and remained the only African American representative in the state house through 1976 [src: 2]. In 1977 he became the first African American committee chairman in the Mississippi House, taking the Education Committee chairmanship he would hold for ten years across pivotal education-reform negotiations. He was elected Speaker Pro Tempore at the start of the 1992 session and re-elected to that position in 1996 and 2000. He retired in December 2003 as the longest-continuously-serving member of the Mississippi House. In 2004 he became the first African American to have a Mississippi state building named after him [src: 2]. He died March 4, 2025 at ninety-six [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Robert G. Clark Jr.",
+      "speaker_slug": "robert-g-clark-jr",
+      "source_entry": 107,
+      "timestamp": "00:08:02",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669174/",
+      "lead_in": "Clark opens by describing growing up on land his family owned, the same land his great-grandparents had been enslaved beside:",
+      "quote": "I never worked in a white man's cotton field one day in the life."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert G. Clark Jr.",
+      "speaker_slug": "robert-g-clark-jr",
+      "source_entry": 107,
+      "timestamp": "00:20:04",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669174/",
+      "lead_in": "He recalls his grandfather, who was eleven years old at emancipation, charging him as a child:",
+      "quote": "But he told me as a child what slavery was like. And he says, young man, things is going to be better. But young men like you is going to have to grow up and make a difference."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert G. Clark Jr.",
+      "speaker_slug": "robert-g-clark-jr",
+      "source_entry": 107,
+      "timestamp": "00:35:02",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669174/",
+      "lead_in": "After he told a white superintendent that Black and white children could attend school together, the superintendent ended the conversation and, that spring, ended his job:",
+      "quote": "He got up, put his hat on, walked out of his office and left me sitting in his office. But at the end of the school time, I got a message that I was no longer needed in the school system."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert G. Clark Jr.",
+      "speaker_slug": "robert-g-clark-jr",
+      "source_entry": 107,
+      "timestamp": "01:10:16",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669174/",
+      "lead_in": "His opponent JP Love contested the 1967 result, and the seating fight ran to the opening day of the session:",
+      "quote": "I didn't know until 15 minutes before I was seated that I was going to be seated."
+    },
+    {
+      "relation": "self",
+      "speaker": "Robert G. Clark Jr.",
+      "speaker_slug": "robert-g-clark-jr",
+      "source_entry": 107,
+      "timestamp": "01:14:04",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669174/",
+      "lead_in": "On entering a chamber where he was the only Black member, and deciding where to make his stand:",
+      "quote": "the being one black among 121 white, that did not intimidate me at all. Because I knew what I knew. And one thing that I knew, what I was going to zero in on, was what I was an expert in, and that was education. And I knew no one there knew as much about education as I did."
+    },
+    {
+      "relation": "about",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "01:03:04",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "Rosie Head, a Holmes County organizer who worked the polls for the 1967 campaign, explains why Clark could win where other Black candidates could not:",
+      "quote": "He was well known all over the county."
+    },
+    {
+      "relation": "about",
+      "speaker": "Rosie Head",
+      "speaker_slug": "rosie-head",
+      "source_entry": 111,
+      "timestamp": "01:05:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669173/",
+      "lead_in": "Head describes the standing Clark held in the Holmes County movement after the election:",
+      "quote": "If Robert Clark approved it, we knew that's what we needed to do."
+    }
+  ],
   "movement_context": "Clark's 1967 election to the Mississippi House of Representatives, from the Holmes County-anchored District 16, was the first time an African American had won a seat in the chamber since John F. Harris, the last Black member of the Mississippi Reconstruction legislature, served in 1894 [src: 2, 3]. The seventy-three-year interregnum tracked the Mississippi disfranchisement constitution of 1890, which used a literacy test, a poll tax, and the understanding clause to remove the Black electorate that the Fifteenth Amendment and Reconstruction-era Republican organizing had built; the Voting Rights Act of August 1965, signed eighteen months before Clark's run, was the federal statute that unwound the disfranchisement apparatus in Mississippi and the rest of the former Confederacy [src: 3, 4]. Holmes County's voter-registration organizing was on a sustained Black-led base unusual for the Mississippi Delta because the County had an anchor of Black landowning farmers in the Mileston resettlement community (a New Deal Farm Security Administration land-purchase program of the late 1930s that placed Black tenant farmers on owner-occupied parcels), rather than the more typical Delta plantation-tenant base that was exposed to landlord retaliation [src: 4, 5]. The Holmes County Voters League formed in April 1963 when fourteen Black farmers from the Mileston, Sunny Mount, and Second Pilgrim's Rest communities went to the Lexington courthouse to attempt to register; SNCC field secretaries Hollis Watkins and John Ball worked through the County across 1963 and 1964 as part of the broader Council of Federated Organizations (COFO) voter-registration project, and by the 1964 Mississippi Freedom Summer Holmes County had one of the strongest local movement infrastructures in the state [src: 5, 6]. The post-VRA registration trajectory in Holmes County is the documentary base of fellow interviewee Julia Matilda Burns's testimony at entry 70: Burns, who later won election to the Tchula school board, documents the school-integration arc and the economic-retaliation pressure that operated on Black teachers across the same period [src: 7]. Clark's campaign was organized through the Mississippi Freedom Democratic Party apparatus that had grown out of the County's COFO and SNCC infrastructure; he ran in the November 1967 general election against an incumbent white Democrat and won the District 16 seat on the strength of Holmes County's newly-registered Black majority [src: 1, 2]. He took his seat in the Mississippi House on January 2, 1968, was the only African American in the 122-member chamber through 1975, and remained one of a small Black-caucus contingent through the 1970s as redistricting under VRA Section 2 litigation gradually opened additional Black-majority districts. He held the District 47 seat through subsequent redistrictings and served the Mississippi House continuously from January 1968 through his December 2003 retirement, a thirty-six-year tenure that made him the longest-continuously-serving member of the chamber at his retirement [src: 2]. His son Bryant W. Clark succeeded him in the same House district in the 2003 election.",
   "legacy_and_reception": "Clark's institutional legacy within the Mississippi House centers on the Speaker Pro Tempore role he held from the 1992 session through his 2003 retirement (re-elected to the position by his caucus in 1992, 1996, and 2000), which placed him as the second-ranking member of the chamber's presiding officers during the redistricting and education-policy fights of the 1990s, and on his prior Education Committee chairmanship from 1977 through 1987 during the period that produced the Mississippi Education Reform Act of 1982 (a state-level reform package centered on compulsory attendance, kindergarten funding, and teacher-pay raises) [src: 2]. His 2003 retirement was the closing point of the longest continuous Mississippi House tenure on record at the time. In 2004 the Mississippi Legislature named the Robert G. Clark Building in the State Capitol complex in Jackson after him, the first African American to have a Mississippi state building named in his honor [src: 2]. He published his memoir Robert G. Clark's Journey to the House: A Black Politician's Story through the University Press of Mississippi in 2003, co-authored with the historian James Ramsey; the memoir is the first-person account of the 1967 election and his subsequent service [src: 8]. Mississippi Valley State University, the historically Black public university in Itta Bena where Clark had been a member of the Board of Trustees of State Institutions of Higher Learning during his House tenure, named the Robert G. Clark Sr. Hall on its campus after him; the building houses the university's Department of Social Sciences and the Mississippi Civil Rights Education Initiative [src: 2]. Scholarly treatment of Clark's electoral arc is principally in John Dittmer's Local People (the standard institutional history of the Mississippi civil rights movement, which treats the Holmes County organizing base and the 1967 election in extended detail) and in the Mississippi Encyclopedia biographical entry on Clark [src: 2, 9].",
   "gallery": [
