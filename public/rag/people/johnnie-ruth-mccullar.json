@@ -7,8 +7,76 @@
   "died": null,
   "display_name": "Johnnie Ruth McCullar",
   "role_summary": "Civil Rights History Project interviewee; her testimony in this corpus's embedding clusters with the Mississippi rural movement cohort.",
-  "ai_reading": "McCullar's top semantic neighbors are Clifford D. Browner Jr. (entry 23, count 60), Juadine Henderson (entry 68), Rosie Head (entry 111), Peggy Jean Connor (entry 96), and the John Dudley joint interview (entry 64). The cluster is tightly Mississippi-rural-movement. Her position on the Tactical Pragmatism vs Strategic Vision axis is +0.89, very far toward Strategic Vision, the second-highest reading toward that pole in the audited subset of the catalog (after Rosie Head at +0.80 and Lisa Anderson Todd at +0.72). For an interviewee whose neighbor counts are modest (peak 60) and whose cultural placement appears to be local-rural, the strongly strategic-vision reading is unexpected; the embedding may be catching retrospective long-arc framing in her testimony over the immediate-action specificity her neighbor pattern would predict.",
+  "ai_reading": "Cosine similarity in this corpus puts McCullar's top semantic neighbor at Clifford D. Browner Jr. (entry 23, count 60), well ahead of Juadine Henderson (entry 68), Rosie Head (entry 111), Peggy Jean Connor (entry 96), and the John Dudley joint interview (entry 64). The embedding has no biographical labels, yet that strongest pairing is in fact her younger brother: McCullar and Browner both grew up in Sasser, attended Dunbar Elementary, named the same mother (Johnnie Lou Brawner), and located the Terrell County mass meetings at the same Mount Olive Baptist Church, so the model reconstructs a sibling bond purely from overlapping testimony substance that no metadata field in the corpus records. On the Tactical Pragmatism vs Strategic Vision axis she sits at +0.89, the second-highest reading toward Tactical Pragmatism across the full set of 136 entries (after entry 124 at +1.00, ahead of Rosie Head at +0.80). That placement tracks her testimony rather than surprising it: the interview is dense with on-the-ground specifics, door-to-door canvassing in Dawson, poll-watching at local and national elections, sit-ins at a Dawson restaurant with Reverend Samuel Wells, and taking turns sitting up at night to watch the house after the church burning, the day-to-day craft of movement-building rather than long-horizon ideological analysis.",
   "biographical_paragraph": "Johnnie Ruth McCullar's oral history is held at the Library of Congress as entry 65 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Johnnie Ruth McCullar",
+      "speaker_slug": "johnnie-ruth-mccullar",
+      "source_entry": 65,
+      "timestamp": "00:39:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669164/",
+      "lead_in": "Asked about the August 1962 arson that destroyed Mount Olive Baptist Church in Sasser, the family church where the Terrell County mass meetings were held, McCullar describes how the loss registered:",
+      "quote": "It was like a death that someone you love had died."
+    },
+    {
+      "relation": "self",
+      "speaker": "Johnnie Ruth McCullar",
+      "speaker_slug": "johnnie-ruth-mccullar",
+      "source_entry": 65,
+      "timestamp": "00:40:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669164/",
+      "lead_in": "On the reasoning she attributes to the church burning:",
+      "quote": "How could you burn a house of God? Because people will want to register to vote."
+    },
+    {
+      "relation": "self",
+      "speaker": "Johnnie Ruth McCullar",
+      "speaker_slug": "johnnie-ruth-mccullar",
+      "source_entry": 65,
+      "timestamp": "00:43:06",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669164/",
+      "lead_in": "After the church burning, with word out that homes of meeting participants could be targeted, McCullar describes the family's nighttime precaution:",
+      "quote": "So we would take turns sitting up at night and watch it."
+    },
+    {
+      "relation": "self",
+      "speaker": "Johnnie Ruth McCullar",
+      "speaker_slug": "johnnie-ruth-mccullar",
+      "source_entry": 65,
+      "timestamp": "00:46:03",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669164/",
+      "lead_in": "As secretary of the Terrell County Movement, McCullar kept notes of the mass meetings; she recounts what happened to that notebook when U.S. Department of Justice investigators came to Sasser:",
+      "quote": "The little book that I had that I kept no sense. They took it back. I never got it back."
+    },
+    {
+      "relation": "self",
+      "speaker": "Johnnie Ruth McCullar",
+      "speaker_slug": "johnnie-ruth-mccullar",
+      "source_entry": 65,
+      "timestamp": "00:50:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669164/",
+      "lead_in": "Reflecting on what her movement work led her to conclude:",
+      "quote": "It made me determined to try to make things better for everybody, not just black people, but for everybody."
+    },
+    {
+      "relation": "about",
+      "speaker": "Clifford D. Browner Jr.",
+      "speaker_slug": "clifford-d-browner-jr",
+      "source_entry": 23,
+      "timestamp": "00:12:10",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669160/",
+      "lead_in": "Clifford D. Browner Jr., McCullar's younger brother from the same Sasser family (shared mother Johnnie Lou Brawner, shared Mount Olive Baptist Church), recounts that his older sister's movement involvement is how he first learned of the Terrell County organizing:",
+      "quote": "Older, one older, one older, one older sister was involved. So that's how I knew about the movement. I didn't initially start out attending mass meetings but that came later as they moved the mass meetings to the church where we remember."
+    }
+  ],
   "movement_context": "The Library of Congress catalog record for McCullar's oral history situates her geography and role distinct from the rural-Mississippi embedding cluster the AI's reading reports: she grew up in Sasser, attended segregated schools there, and worked in the Civil Rights Movement of the 1960s as secretary of the Terrell County Movement, participating in sit-ins and helping to register voters [src: 1, 2]. Sasser is a rural hamlet in Terrell County in the southwest corner of Georgia, eight miles south of the county seat Dawson and on the road to Albany in Dougherty County; the county was nicknamed \"Terrible Terrell\" by SNCC field staff because of Sheriff Z. T. Mathews's enforcement record, and the 1960 census recorded 51 Black registered voters in a county of 12,742 residents that was 52.8 percent Black [src: 3, 4]. The Terrell County Movement that McCullar's catalog record identifies her as secretary of was the local citizens' organization that worked alongside the Student Nonviolent Coordinating Committee's Southwest Georgia Project: Charles Sherrod and Cordell Reagon arrived in Albany in October 1961, founded the Albany Movement in November 1961 with local NAACP leadership and the Baker, Lee, Sumter, Terrell, Worth, and Dougherty County networks they were beginning to organize, and extended SNCC field-staff presence into Terrell County in late 1961 and through 1962 [src: 3, 4, 5]. The Mt. Olive Baptist Church on Georgia Street in Sasser was one of the rural Black churches that hosted the voter-registration mass meetings the Southwest Georgia Project organized; at a July 25, 1962 meeting at Mt. Olive with Sherrod, Charles Jones, Ralph Allen, and Penelope Patch presiding, Sheriff Mathews and about thirteen deputies entered the church mid-prayer and lined up at the back wall, questioning attendees and warning Allen to leave the county [src: 3, 4]. Mt. Olive burned to the ground in arson retaliation on September 9, 1962; nearby Shady Grove Baptist in Lee County and Mt. Mary Baptist in Terrell County were also burned that summer in the Southwest Georgia church-burning wave [src: 3, 6]. The congregation rebuilt Mt. Olive in 1963 with funds raised by Jackie Robinson and Martin Luther King Jr., and the church continues to operate today. The voter-registration drive the Terrell County Movement was the local-organizing partner of, working through citizenship classes, mass meetings, and courthouse delegations to the Sheriff Mathews-overseen registration office in Dawson, ran from late 1961 through the August 6, 1965 signing of the Voting Rights Act and into the post-1965 federal-examiners period when registration of Black Terrell County residents finally moved off the single-digit floor the white supremacist registration regime had held it at for the preceding sixty years [src: 4, 5].",
   "legacy_and_reception": "Independent scholarly or institutional reception of Johnnie Ruth McCullar specifically is not established in the standard secondary literature on the Southwest Georgia Project as of this iteration of the catalog. Her Library of Congress oral history, conducted by Hasan Kwame Jeffries in Albany, Georgia on March 9, 2013, is the principal extant first-person record [src: 1, 2]. The collective record of the SNCC women's cohort, including the women organizers working in the Southwest Georgia Project's Lee, Terrell, Dougherty, and Sumter county circuits, is documented in the Faith S. Holsaert, Martha Prescod Norman Noonan, Judy Richardson, Betty Garman Robinson, Jean Smith Young, and Dorothy M. Zellner edited 2010 University of Illinois Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC, which includes accounts from approximately fifty SNCC women organizers covering the Southwest Georgia project area McCullar's Terrell County Movement worked within [src: 7]. The SNCC Digital Gateway profile registry (the Duke University and SNCC Legacy Project collaborative archive working from the SNCC papers held at the Robert W. Woodruff Library at the Atlanta University Center) and the Veterans of the Civil Rights Movement web archive (crmvet.org) both maintain documentary collections on the Albany and Southwest Georgia movements; a dedicated person-page for McCullar is not present in either as of this iteration [src: 8, 9]. The Albany Civil Rights Institute in Albany, Georgia is the principal institutional venue documenting the regional movement; Lee W. Formwalt's Looking Back, Moving Forward: The Southwest Georgia Freedom Struggle, 1814 to 2014 (Albany Civil Rights Institute / Georgia Humanities Council, 2014) is the principal local-history reference for the Albany and Southwest Georgia movements McCullar's Terrell County Movement was part of. The conservative reading of the available record is that her oral history is the documentary anchor; further biographical work would require archival research in the Albany Civil Rights Institute collections or the SNCC papers at the Atlanta University Center.",
   "gallery": [

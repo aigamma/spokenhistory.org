@@ -7,8 +7,76 @@
   "born": null,
   "died": null,
   "role_summary": "Civil rights movement-era singer in the Highlander Folk School / freedom song tradition; her testimony clusters with the Carawans' Highlander-music teachings in this corpus's embedding.",
-  "ai_reading": "Jones's top semantic neighbor is the joint Candie and Guy Carawan interview (entry 11, count 82), the Highlander Folk School music teachers whose work canonized \"We Shall Overcome\" as a movement song. The next four neighbors are the Abernathy family (entry 28), Juadine Henderson (entry 68), Walter Bruce (entry 123), and Charles McLaurin (entry 17). The Carawan cosine confirms Jones's cultural placement in the Highlander music tradition, but the corpus's strongest novel reading of her testimony comes on the Sacred Framing vs Secular Framing axis: she sits at +0.85, far toward Secular. Freedom songs in the civil rights movement were overwhelmingly adapted spirituals; a singer of that tradition might be expected to land near the Sacred pole. The embedding does the opposite, possibly catching the pedagogical / Highlander-workshop framing (curriculum, transmission, technique) of her oral history over the religious-roots framing of the songs themselves. Her +0.64 position on the Nonviolence as Theology vs Armed Self-Defense axis is also worth naming: it places her toward Self-Defense, a counterintuitive reading for a singer of the nonviolent movement's anthems.",
+  "ai_reading": "Jones's top semantic neighbor is the joint Candie and Guy Carawan interview (entry 11, count 82), the Highlander Folk School music teachers whose work canonized \"We Shall Overcome\" as a movement song. The next four neighbors are the Abernathy family (entry 28), Juadine Henderson (entry 68), Walter Bruce (entry 123), and Charles McLaurin (entry 17). On the Sacred / Theological Framing vs Secular / Political Framing axis the embedding places her at +0.85, deep toward Sacred, and on the Nonviolence as Theology vs Armed Self-Defense axis at +0.64, toward Nonviolence as Theology. Both readings track the freedom-song-as-Black-church-practice register that dominates the first half of her oral history (the Montgomery teas, the church mass meetings, the spirituals reworked into movement songs). The novel observation is what those positions leave out: the back third of the same transcript narrates her turn to Black Power and Pan-Africanism with the Harambee Singers, the \"very radical type songs\" she names, \"Hands Off Nkrumah\" and a song about the CIA. The cultural record of the Harambee Singers foregrounds that Pan-Africanist turn, but the embedding weights her foundational sacred and Highlander-nonviolence material over it, reading her vector signature closer to the church-rooted song tradition than to the later Black Power repertory she describes at length.",
   "biographical_paragraph": "Jamila Jones is a civil rights movement-era singer associated with the Highlander Folk School musical tradition; her oral history is held at the Library of Congress as entry 58 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing for Jones is pending: SNCC Digital Gateway and crmvet.org both returned 404 for the slug variants searched in this iteration. The strongest available signal for her movement placement is the embedding's tight cosine with the joint Candie and Guy Carawan interview (entry 11), the Highlander music teachers whose work shaped the corpus of movement freedom songs.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Jamila Jones",
+      "speaker_slug": "jamila-jones",
+      "source_entry": 58,
+      "timestamp": "00:10:17",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669108/",
+      "lead_in": "On forming the girls' singing group in Montgomery during the years of the bus boycott:",
+      "quote": "Somehow it was something in us that made us want to do freedom songs. And I can't answer today why we chose that because we're about the same age as Diana Ross. But when we went outside to practice, we practiced freedom songs. And that's what we would sing. So when the Montgomery Bus Boycott came, we formed this group at around the age of 19. We were kind of ready. And so because of the songs we were singing, it led itself to the movement."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jamila Jones",
+      "speaker_slug": "jamila-jones",
+      "source_entry": 58,
+      "timestamp": "00:18:38",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669108/",
+      "lead_in": "On how the Montgomery youth found a car to meet the Freedom Riders arriving in the city:",
+      "quote": "Now, a lot of adults will tell you that they did, but that day we stole a car. We said, well, we got to go find a way to get the Freedom Riders. And there was a girl, her name was Antoinette Carson, and she had her license at the time. And her grandfather would leave his car in the garage every day. So we skinned together and said, we were going to steal his car and go pick up the Freedom Riders. And we did, it was how and the real, we're going to get this car back in here. So what we did was we took some school chalk and mark where the tires of his car were. And took the car, picked up the Freedom Riders, went back and put that car right in the tracks of those marks that we had made."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jamila Jones",
+      "speaker_slug": "jamila-jones",
+      "source_entry": 58,
+      "timestamp": "00:20:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669108/",
+      "lead_in": "On the mass meeting the night the Freedom Riders reached Montgomery, when an armed crowd surrounded the church:",
+      "quote": "When we sat there while the church was completely surrounded, as far as you could see, white, mostly males on horses and carrying long guns and sitting outside waiting on us to come out. And that was the night that we in fact spent the night at the church. So it was a fear for night, but not enough fear to stop us from doing what we needed to do."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jamila Jones",
+      "speaker_slug": "jamila-jones",
+      "source_entry": 58,
+      "timestamp": "00:34:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669108/",
+      "lead_in": "On singing the \"We are not afraid\" verse of \"We Shall Overcome\" in the dark during a police raid at the Highlander Folk School:",
+      "quote": "And we got louder and louder with singing that verse until one of the policemen came and he said to me, if you have to sing and he was actually shaken, do you have to sing so loud? And I could not believe it. And all these people had all the guns, the billi-cups, the power we thought. And he was asking me with a shake if I would not sing so loud. And it was that time that I really understood the power of our music, how powerful it was that this it unnerved him so much that he had to come and ask that I not sing so loud."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jamila Jones",
+      "speaker_slug": "jamila-jones",
+      "source_entry": 58,
+      "timestamp": "00:37:09",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669108/",
+      "lead_in": "On reaching the top of the capitol steps in Montgomery, facing mounted men with rifles, and singing the same verse:",
+      "quote": "And when I got to the top of the steps, it made me sing that verse again. We Are Not Afraid verse of We Shall Overcome, and we started singing it. Now, I can tell you that my knees were actually shaking that day when I looked out to see all of them, and we were going to try to march to the capital. But singing that song and that verse helped to count us steady those knees at that time. And I can remember that particular verse at that time and that particular movement."
+    },
+    {
+      "relation": "about",
+      "speaker": "Candie Carawan",
+      "speaker_slug": "candie-carawan",
+      "source_entry": 11,
+      "timestamp": "00:24:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669151/",
+      "lead_in": "Candie Carawan, in the joint Highlander-music interview with Guy Carawan, recalls Jamila Jones introducing the \"We are not afraid\" verse during the raid:",
+      "quote": "she was like 13 years old, young teenagers there with an adult group from Montgomery, and she's the one that started humming that, and just hopped that verse right in there in a very intense situation."
+    }
+  ],
   "movement_context": "The September 1, 1957 police raid on the Highlander Folk School at Monteagle, Tennessee took place during the school's twenty-fifth anniversary workshop, a session whose attendees included Septima Clark (then serving as Highlander's Director of Workshops) and Pete Seeger (in residence to lead the music portion); raid pretexts varied between Tennessee state alcohol-violation claims and segregationist allegations of communist subversion, the latter the same line of attack the segregationist photograph of Martin Luther King Jr. at a Highlander workshop would carry into mass circulation across the following year [src: 2]. Jamila Jones was a Highlander summer workshop participant in the cohort that included the September 1960 police raid, the one she has narrated repeatedly in subsequent decades as the moment when she introduced the \"I'm not afraid\" verse to \"We Shall Overcome,\" singing it into the song through the workshop room's darkness while police searched the building [src: 3]. The verse, in Jones's account, expressed the singer's reflexive insistence on the very assertion the raid was designed to extinguish; the verse circulated through the Highlander music workshops and was added to the song's standard performing canon across the early 1960s by Guy Carawan's pedagogy [src: 3]. The freedom-song corpus that Carawan, who joined Highlander as music director in 1959, built across his Highlander tenure was the institutional curriculum the Carawan joint interview at catalog entry 11 documents: Carawan and Candie Anderson Carawan (a Pomona College student who had joined the February 1960 Nashville sit-ins) ran the music workshops that taught song-leading technique to SNCC and SCLC field organizers, who in turn carried the songs into the southern voter-registration and direct-action campaigns of the 1960s [src: 4]. The Birmingham 1963 youth-choir tradition (the Carlton Reese-directed Birmingham Movement Choir that sang at the May 1963 children's marches and the Sixteenth Street Baptist Church mass meetings) is the local-church-music continuation of the Highlander pedagogy; movement musicologists including Bernice Johnson Reagon have documented the Birmingham choir's repertory as continuous with the freedom-song corpus the Carawans assembled at Highlander [src: 5].",
   "legacy_and_reception": "Jones has continued through the 2010s and 2020s as a movement-music carrier, performing at Highlander Research and Education Center anniversary commemorations (including the 1957 raid commemorations and the broader institutional-anniversary programming the Center maintains at its New Market, Tennessee site) and at SNCC alumni gatherings where the freedom-song repertory remains the principal continuity-with-the-movement performance form [src: 6]. Her Birmingham church-choir career, which post-dates the Highlander workshop years and overlaps with the Birmingham 1963 youth-choir tradition documented in the Reagon scholarship, has placed her in the continuing sacred-music institutional life that the freedom-song corpus's origins in the Black church made operationally inevitable; the institutional record of her Birmingham choir affiliations is sourced principally through her own oral history at the Library of Congress and through the Smithsonian-affiliated movement-music scholarship that the Reagon volume canonizes [src: 5]. Jones's role as a witness to the September 1957 Highlander raid sequence (and as the carrier of the \"I'm not afraid\" verse into the standard performing canon of \"We Shall Overcome\") has placed her testimony at the center of the institutional record of the song's verse-expansion history; her account has been incorporated into multiple Highlander-anniversary publications and into the Smithsonian Folkways documentary record of the movement-music corpus [src: 7].",
   "gallery": [
