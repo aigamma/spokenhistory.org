@@ -15,8 +15,76 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:James_Baldwin_37_Allan_Warren_(cropped).jpg",
     "date_taken": "1969"
   },
-  "ai_reading": "Five corpus voices discuss Baldwin: William Lamar Strickland (entry 127, Northern Black Power), Mildred Pitts Walter (entry 91, Black children's-literature author), Ruby Sales (entry 112, SpiritHouse Project), C. T. Vivian (entry 134, SCLC), and Ekwueme Michael Thelwell (entry 34, SNCC Washington / Carmichael memoir editor). The cluster is heavy on writers (Walter, Thelwell) and the figures whose own oral histories carry strong literary-or-theological framings (Sales, Vivian). The embedding therefore reads Baldwin as discussed primarily in literary-theological registers rather than in field-organizing context, consistent with his cultural placement as the movement's most-cited essayist rather than its strategist.",
-  "biographical_paragraph": "James Baldwin is discussed in this corpus by 5 interviewees across the catalog (William Lamar Strickland (entry 127), Mildred Pitts Walter (entry 91), Ruby Sales (entry 112), C. T. Vivian (entry 134), Ekwueme Michael Thelwell (entry 34)), but was not interviewed for the Civil Rights History Project; this catalog page treats James Baldwin as an external figure whose presence in the archive is mediated through other voices. The canonical scholarly source the catalog cites for biographical orientation appears as [src: 1] below.",
+  "ai_reading": "Ten interviewees in this corpus name James Baldwin: Aaron Dixon (entry 1), Courtland Cox (entry 24), Ekwueme Michael Thelwell (entry 34), Lawrence Guyot (entry 76), Mildred Pitts Walter (entry 91), Ruby Sales (entry 112), Sam Mahone (entry 113), Kathleen Cleaver (entry 73), William Lamar Strickland (entry 127), and C. T. Vivian (entry 134). The embedding clusters those mentions into two recurring frames that the cultural record tends to keep separate. The first is a reading-list frame: Dixon and Mahone both recall Baldwin alongside Richard Wright as the authors a SNCC or movement house put in their hands, so the embedding sees Baldwin sitting next to Wright in the same passages rather than standing alone as a singular voice. The second is an event frame that three different interviewees reconstruct independently: the Howard University symposium NAG organized, where Cox, Guyot, and Thelwell each place Baldwin on the same platform with Ossie Davis, John Oliver Killens, Bayard Rustin, and Norman Thomas. The notable embedding observation is that Baldwin's strongest corpus co-occurrence is not with other essayists but with Malcolm X: Strickland pairs the two as a single analytic unit, Cleaver remembers a filmed Malcolm-Baldwin debate, and Thelwell reports Malcolm crossing a room to hear Baldwin speak. The archive reads Baldwin less as the movement's detached literary observer and more as a figure repeatedly set beside its most confrontational orator.",
+  "biographical_paragraph": "James Baldwin was not interviewed for the Civil Rights History Project; this catalog page treats him as an external figure whose presence in the archive is mediated through other voices. Ten interviewees name him: most place him as assigned reading that shaped a young organizer (Aaron Dixon (entry 1), Sam Mahone (entry 113)), as a speaker at the Howard University symposium that the Nonviolent Action Group convened (Courtland Cox (entry 24), Lawrence Guyot (entry 76), Ekwueme Michael Thelwell (entry 34)), or as a public intellectual set in counterpoint to Malcolm X (William Lamar Strickland (entry 127), Kathleen Cleaver (entry 73)). Ruby Sales (entry 112) describes living in Baldwin's New York apartment in the period after the 1965 killing of Jonathan Daniels; Mildred Pitts Walter (entry 91) recalls hosting Baldwin at a Congress of Racial Equality event and defending his work in print; C. T. Vivian (entry 134) recounts him at the 1963 March on Washington. The standard scholarly biography the catalog cites for orientation appears as [src: 1] below.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "02:39:51",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "Thelwell recalls Baldwin addressing a gathering of SNCC voter-registration workers in Washington, quoting the writer's own framing of his role:",
+      "quote": "I, James Baldwin, a black writer, must in some way represent you. No, you didn't elect me, and I didn't ask for it, but there we are."
+    },
+    {
+      "relation": "about",
+      "speaker": "Ekwueme Michael Thelwell",
+      "speaker_slug": "ekwueme-michael-thelwell",
+      "source_entry": 34,
+      "timestamp": "01:07:35",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669203/",
+      "lead_in": "Thelwell relates an exchange in which Malcolm X explained why he had come to hear Baldwin speak:",
+      "quote": "Whenever James Baldwin was talking, whenever that little brother talks, I always come and listen."
+    },
+    {
+      "relation": "about",
+      "speaker": "William Lamar Strickland",
+      "speaker_slug": "william-lamar-strickland",
+      "source_entry": 127,
+      "timestamp": "01:32:58",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669154/",
+      "lead_in": "Strickland, discussing how Black studies recast the intellectual history of the movement, pairs Baldwin with Malcolm X and points to The Fire Next Time:",
+      "quote": "In my judgment, you have to put Malcolm X with Jimmy Baldwin."
+    },
+    {
+      "relation": "about",
+      "speaker": "Ruby Sales",
+      "speaker_slug": "ruby-sales",
+      "source_entry": 112,
+      "timestamp": "01:02:49",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669106/",
+      "lead_in": "Sales describes where she went after the 1965 Hayneville killing of Jonathan Daniels, the seminarian shot beside her in Lowndes County, Alabama:",
+      "quote": "I resettled myself in Washington, D.C. with Gene Wiley and went to New York and lived in James Baldwin's apartment. He was away for the summer and became very involved with the feminist movement and trying to stay in a college long enough to get my degree, but really expanding my consciousness, not only in terms of the United States, but the global world."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mildred Pitts Walter",
+      "speaker_slug": "mildred-pitts-walter",
+      "source_entry": 91,
+      "timestamp": "00:55:17",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669158/",
+      "lead_in": "Walter, a Congress of Racial Equality member in Los Angeles who reviewed books for the Los Angeles Times, recalls hosting Baldwin and answering a reviewer who had called him a bigot:",
+      "quote": "Well, I didn't review James Baldwin's book. James Baldwin came to speak for us at core."
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "02:52:36",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "Asked for memories of the 1963 March on Washington, Vivian named Baldwin as the moment he most remembered:",
+      "quote": "Baldwin's being there was the most interesting thing for me that I consider a story, but it's just that he was there and we were involved in the back and we were talking and so forth"
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/30401796",

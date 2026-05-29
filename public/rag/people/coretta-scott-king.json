@@ -16,8 +16,65 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Coretta_Scott_King_1964.jpg",
     "date_taken": "1964"
   },
-  "ai_reading": "Coretta Scott King is referenced four times across the catalog: in the Joseph Echols Lowery (entry 66) bio as Lowery's SCLC contemporary, in the Wyatt Tee Walker (entry 132) and C. T. Vivian (entry 134) thin bios where her SCLC-leadership presence is structural backdrop, and in the broader Atlanta-organizing cohort. She is not herself a Civil Rights History Project interviewee. Her standalone catalog page is added to anchor the SCLC inner-circle voice the corpus most often references when it does not interview her directly. The novel observation her page surfaces is the longitudinal-leadership signature: her four-decade career running the King Center after her husband's death (1968-2006) is the catalog's longest single-institution leadership tenure of any figure her contemporaries discuss; in vector-space terms, the corpus's references to her almost always carry the King Center's institutional vocabulary (the federal-holiday campaign, the Coretta Scott King Award for African American children's literature, the 1996 Center transition to her son Dexter Scott King's directorship) rather than the 1955-1968 first-marriage chronology the cultural reception most often centers.",
+  "ai_reading": "Coretta Scott King is named across several catalog bios (Robert Brown entry 106, William S. Leventhal entry 129, Dorothy Foreman Cotton entry 29, and the Abernathy family entry 28) and is discussed by those corpus interviewees in their own oral histories, but she is not herself a Civil Rights History Project interviewee. Her standalone catalog page anchors the SCLC inner-circle voice the corpus references when it does not interview her directly. The pattern the corpus voices surface is unexpected against her cultural reception: where the public record most often fixes her in the 1955-1968 first-marriage chronology, the interviewees in this corpus who name her overwhelmingly recall her own actions and the institution she built after 1968. Leventhal places her as the spokesperson against the Vietnam War while her husband stayed quiet under board pressure; Brown recounts arranging her South Africa trip on behalf of the King Center; the cosine signature of the corpus's references to her tracks that post-1968 institutional and antiwar vocabulary rather than the widow-of framing.",
   "biographical_paragraph": "Coretta Scott was born April 27, 1927 in the rural community of Heiberger outside Marion, Alabama, the third of four children to Obadiah and Bernice McMurry Scott. She graduated valedictorian of Lincoln Normal High School in Marion in 1945, took a Bachelor's in music and education at Antioch College in 1951, and studied voice at the New England Conservatory of Music in Boston; she met Martin Luther King Jr. while both were graduate students in Boston in 1952, and they married at her family's home in Marion on June 18, 1953. Across the next fifteen years she balanced singing career commitments (her solo concerts often raised funds for SCLC and the wider civil rights movement) with her husband's pastoral and movement work in Montgomery, Atlanta, and the Birmingham, Selma, and Memphis campaigns. After King's April 4, 1968 assassination at the Lorraine Motel in Memphis she founded the Martin Luther King Jr. Center for Nonviolent Social Change (the King Center) in Atlanta and ran it as president and CEO until 1995, when she transferred the role to her son Dexter Scott King. She led the campaign to create the federal Martin Luther King Jr. Day holiday across the 1968-1983 fifteen-year arc; President Reagan signed the bill on November 2, 1983 establishing the third Monday in January as the federal observance. Her 1969 memoir My Life with Martin Luther King, Jr. (Holt, Rinehart, and Winston) is the primary scholarly source on her 1953-1968 partnership chronology. She died January 30, 2006 in Rosarito Beach, Mexico, at seventy-eight.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "02:23:55",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Discussing the period after Martin Luther King Jr. first spoke against the Vietnam War in 1965 and drew criticism from his own SCLC board, Leventhal describes the role Coretta Scott King took on:",
+      "quote": "And his own board was against it. He then kind of kept quiet and Coretta Scott King went around to anti-war marches and did anti-war concerts. And she was the spokesperson against the Vietnam War."
+    },
+    {
+      "relation": "about",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "02:26:15",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Leventhal, who wrote the report to President Reagan and Congress for the first King holiday while working for the King Center, recalls his impression of Coretta Scott King:",
+      "quote": "and Coretta Scott King was a extraordinarily nice person. I'm very fortunate to did get to know her and work with her."
+    },
+    {
+      "relation": "about",
+      "speaker": "Robert Brown",
+      "speaker_slug": "robert-brown",
+      "source_entry": 106,
+      "timestamp": "01:23:06",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669205/",
+      "lead_in": "Robert Brown recounts appealing to a South African government contact at lunch to secure a visa for Coretta Scott King's planned visit:",
+      "quote": "I said, you know, Coretta Scott King, my little King's widow, said she wants to go to South Africa. And she wants to take to my staff with her. But she can't get a visa to get into the country."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "01:28:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "Recalling the SCLC delegation's 1964 flight to Oslo for the Nobel Peace Prize, Cotton notes that the group split between two planes because the Kings had four children to raise:",
+      "quote": "Dr. King's wife Coretta was on one plane and Dr. King was on another plane"
+    },
+    {
+      "relation": "about",
+      "speaker": "Abernathy family",
+      "speaker_slug": "abernathy-family",
+      "source_entry": 28,
+      "timestamp": "00:08:58",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669207/",
+      "lead_in": "A daughter of Ralph and Juanita Abernathy recalls the King family's move from Montgomery to Atlanta and the close childhood friendship between the two families' children:",
+      "quote": "And I remember when Uncle Martin and Aunt Coretta moved to Atlanta, and Yoki was Juandalynn's best friend."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/52437",
