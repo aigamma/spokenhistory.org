@@ -7,10 +7,100 @@
   "born": 1939,
   "died": 2012,
   "role_summary": "SNCC field secretary; chairman of the Mississippi Freedom Democratic Party (MFDP); beaten in the June 1963 Winona, Mississippi jail alongside Fannie Lou Hamer; later DC community-organizing leader.",
-  "ai_reading": "Guyot's top semantic neighbor is Charles McLaurin (entry 17, count 162), the SNCC Sunflower County project director; the next four are John and Jean Rosenberg (entry 61), Ekwueme Michael Thelwell (entry 34), the Ladner sisters joint interview (entry 75), and Courtland Cox (entry 24). The cluster centers on the Mississippi voter-registration network and the SNCC Washington-and-MFDP coalition that Guyot's MFDP chairmanship organized. His Southern Struggle vs Northern Struggle position at +0.44 confirms the Mississippi anchor. The novel observation is the absence of Euvester Simpson (entry 41) from his top five: Simpson's own page documents that she joined SNCC in 1962 after Guyot vetted her with her father, and the two were beaten together in the Winona jail in June 1963; their oral histories are obviously connected biographically, but the embedding does not pull them into nearest-neighbor proximity, suggesting their interview transcripts emphasize different periods or vocabularies of the same movement work.",
+  "ai_reading": "Guyot's top semantic neighbor in this corpus is Charles McLaurin (entry 17, count 162), the SNCC Sunflower County project director; the next four by count are John and Jean Rosenberg (entry 61, count 103), Ekwueme Michael Thelwell (entry 34, count 89), the Ladner sisters joint interview (entry 75, count 80), and Courtland Cox (entry 24, count 72). The cluster centers on the Mississippi voter-registration network and the SNCC Washington-and-MFDP coalition that Guyot's MFDP chairmanship organized. His position on the Southern Struggle vs Northern Struggle axis sits at +0.44 (normalized), a modest lean toward the Southern pole rather than the deep Southern reading of McLaurin (+0.83), which fits a testimony that moves between the Mississippi field circuit and the Washington congressional-challenge work. The observation worth flagging is that Euvester Simpson (entry 41) falls only tenth by count (60), outside the top five, even though Simpson's own oral history documents that she joined SNCC in 1962 after Guyot vetted her with her father and that the two were beaten in the same Winona jail in June 1963. The biographical link is tight, yet the embedding does not rank her transcript among his nearest neighbors, suggesting the two interviews emphasize different periods or vocabularies of the same movement work; her single highest-similarity passage to him does score 0.775, so the proximity surfaces locally without lifting her aggregate rank.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:14:50",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "Guyot recounts the SNCC mass meeting in the Delta where Fannie Lou Hamer first volunteered to attempt to register to vote:",
+      "quote": "James Bevel, myself, [Charles] McLaurin, and [James] Forman go to a mass meeting. We open the call for anyone who wants to go down and register. Fannie Lou Hamer raises her hand."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:22:17",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "On the Greenwood organizing that drew local residents to support jailed civil rights workers, reversing a long-standing caution about being seen with people in jail:",
+      "quote": "We had 100 people come into the jail to bring us food and support."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:29:07",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "After he traveled to the Winona jail in June 1963 to locate the arrested Hamer, Ponder, Johnson, Simpson, and West delegation, the officers beat him and demanded a statement:",
+      "quote": "I'm beaten by 12 people and I'm asked to sign a statement which I refuse to sign."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:17:41",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "On his position at the head of the party that mounted the 1964 Atlantic City convention challenge:",
+      "quote": "I'm proud of the fact that I'm the chairman of the Mississippi Freedom Democratic Party."
+    },
+    {
+      "relation": "self",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:18:02",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "On the MFDP delegation's refusal of the two-at-large-delegate compromise offered at the Atlantic City convention:",
+      "quote": "And I couldn't have led the Freedom Democratic Party into making what I consider the most courageous, pragmatic political decision in American politics. They said to this compromise, no."
+    },
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:29:32",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Euvester Simpson (entry 41) describes how Guyot took responsibility for her in the SNCC office after her father telephoned him, the vetting that brought her into the field work:",
+      "quote": "And Lawrence Guyot came up to me and he said, I got a call from your daddy. I said, oh, don't tell me. He said, and he put me in charge of you."
+    },
+    {
+      "relation": "about",
+      "speaker": "Charles McLaurin",
+      "speaker_slug": "charles-mclaurin",
+      "source_entry": 17,
+      "timestamp": "01:16:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655412/",
+      "lead_in": "Charles McLaurin (entry 17) recalls the day Guyot recruited him into SNCC on the campus of Jackson State College:",
+      "quote": "this big red fellow walks up to us. It said, fellas, my name is Lawrence Guyot. I was SNCC and I'm full of papers as he always had."
+    },
+    {
+      "relation": "about",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "01:57:25",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Timothy Jenkins (entry 120), a Yale law student who worked on the legal foundation of the MFDP, names Guyot's role in the party:",
+      "quote": "Lawrence Guyot, who was the president of the Mississippi Freedom Democratic Party"
+    }
+  ],
   "biographical_paragraph": "Guyot served as a SNCC field secretary in Mississippi in the early 1960s and rose to chair the Mississippi Freedom Democratic Party, the parallel party that mounted the 1964 Atlantic City convention challenge against the regular all-white Mississippi Democratic delegation [src: 2]. In June 1963 he was arrested with Fannie Lou Hamer, June Johnson, Euvester Simpson, and Annell Ponder at the Winona, Mississippi bus station; the beatings he suffered in the jail were among the documented injuries of the Mississippi Summer Project [src: 2]. After the movement years he relocated to Washington, D.C., where he was active in community organizing through the 1980s and 1990s; his papers are held at the DC Public Library Washingtoniana Collection [src: 3]. He was born July 17, 1939 in Pass Christian, Mississippi, and died November 23, 2012 at seventy-three; the Washington Post obituary by Hamil R. Harris and Matt Schudel records the dates [src: 2]. His Library of Congress oral history is entry 76 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039); the interview was conducted by Julian Bond on December 30, 2010 [src: 1].",
   "movement_context": "Guyot entered SNCC field work in Mississippi in 1962 through the Tougaloo College student network that connected the Jackson campus to the McComb, Greenwood, and Sunflower County voter-registration projects Bob Moses, Charles McLaurin (catalog entry 17), Hollis Watkins, and Curtis Hayes had opened that year [src: 5]. The conversation that approved Euvester Simpson's (catalog entry 41) entry into SNCC in late 1962 took place between Simpson's father and Guyot, who at that point was vouching for the SNCC field operation to Mississippi families wary of the personal cost the voter-registration work was already extracting [src: 6]. By June 1963 Guyot was a recognized SNCC field secretary in the Hattiesburg and Greenwood circuit; the June 9, 1963 Winona Greyhound bus station arrest happened on the return leg of a Septima Clark and SCLC citizenship-school training session in Charleston, South Carolina, when the Hamer, Ponder, Johnson, Simpson, and West delegation attempted to integrate the white waiting room and the lunch counter at the Winona depot and were arrested by Montgomery County Sheriff Earle Wayne Patridge, Police Chief Thomas Herod Jr., and Mississippi Highway Patrolman John L. Basinger [src: 3]. Guyot, who had not been on the original bus, traveled to Winona to find out what had happened to the delegation and was himself arrested and beaten in the Montgomery County jail; the beatings Ponder, Johnson, and Hamer sustained inside the cells were administered by the arresting officers and by two Black prisoners coerced under threat to deliver the blows [src: 3]. Through 1963 and 1964 Guyot worked the same Mississippi project circuit as Hamer and McLaurin while the Council of Federated Organizations (COFO) coordinated the Freedom Vote campaign and the Freedom Summer field-staff buildup [src: 5]. At the founding convention of the Mississippi Freedom Democratic Party in Jackson on April 26, 1964, Guyot was elected MFDP chairman; the position made him the institutional head of the delegation that traveled to the August 1964 Democratic National Convention in Atlantic City, New Jersey to challenge the seating of the regular all-white Mississippi Democratic delegation [src: 4]. The August 22, 1964 Hamer testimony before the Credentials Committee broke into national prime-time programming when President Lyndon Johnson called a hastily-arranged White House press conference to displace it; the three television networks aired the testimony in full on their late-evening news programs [src: 4]. The Atlantic City compromise (two MFDP at-large delegates and a 1968 rule change requiring integrated delegations) was rejected by the MFDP delegation under Guyot's chairmanship; the rejection is the moment Hamer's biographer Kay Mills identified as the turn that began Hamer's later independent organizing through the Freedom Farm Cooperative [src: 4]. Guyot remained MFDP chairman through 1965, continuing the party's organizing through the Mississippi congressional challenge and the post-Voting Rights Act voter-registration drives across the Black Belt [src: 5].",
-  "legacy_and_reception": "After his Mississippi years Guyot relocated to Washington, D.C. and enrolled at the Howard University School of Law, earning his J.D. and continuing the community-organizing work he had begun in the Delta into the DC neighborhoods of Shaw, Mount Pleasant, and Anacostia [src: 2]. He served on the DC Statehood Commission, organized voter-engagement and tenant-rights work through the 1980s and 1990s, and was a fixture of DC ward-level civic associations through the 2000s; his obituary in the Washington Post by Hamil R. Harris and Matt Schudel notes the half-century arc from the Winona jail cell to the DC community-organizing networks [src: 2]. He died on November 23, 2012 in Mount Rainier, Maryland at the age of seventy-three; the cause was complications from heart disease and diabetes [src: 2]. The Lawrence Guyot, Jr. Archival Collection at the Washingtoniana Collection of the DC Public Library holds his personal papers, correspondence, and the records of his DC civic work [src: 3]. His Library of Congress oral history at the American Folklife Center (AFC 2010/039) was conducted by Julian Bond on December 30, 2010, two years before his death, and is the principal first-person archival document of his MFDP chairmanship and his Winona testimony [src: 1]. The Tougaloo College civil rights collection and the SNCC Legacy Project archive at the Robert W. Woodruff Library of the Atlanta University Center hold additional material on his Mississippi field-secretary years [src: 5].",
+  "legacy_and_reception": "After his Mississippi years Guyot earned a law degree from Rutgers University in 1971; in the oral history he describes working his way through Rutgers Law School with his wife's support [src: 1, 10]. He relocated to Washington, D.C. and carried the community-organizing work he had begun in the Delta into the DC neighborhoods of Shaw, Mount Pleasant, and Anacostia [src: 2]. He served on the DC Statehood Commission, organized voter-engagement and tenant-rights work through the 1980s and 1990s, and was a fixture of DC ward-level civic associations through the 2000s; his obituary in the Washington Post by Hamil R. Harris and Matt Schudel notes the half-century arc from the Winona jail cell to the DC community-organizing networks [src: 2]. He died on November 23, 2012 in Mount Rainier, Maryland at the age of seventy-three; the cause was complications from heart disease and diabetes [src: 2]. The Lawrence Guyot, Jr. Archival Collection at the Washingtoniana Collection of the DC Public Library holds his personal papers, correspondence, and the records of his DC civic work [src: 3]. His Library of Congress oral history at the American Folklife Center (AFC 2010/039) was conducted by Julian Bond on December 30, 2010, two years before his death, and is the principal first-person archival document of his MFDP chairmanship and his Winona testimony [src: 1]. The Tougaloo College civil rights collection and the SNCC Legacy Project archive at the Robert W. Woodruff Library of the Atlanta University Center hold additional material on his Mississippi field-secretary years [src: 5].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/3/36/Aaron_Henry%2C_chair_of_the_Mississippi_Freedom_Democratic_Party_delegation%2C_speaks_before_the_Credentials_Committee_at_the_Democratic_National_Convention%2C_Atlantic_City%2C_New_Jersey%2C_August_1964.jpg",
@@ -88,6 +178,11 @@
       "url": "https://search.worldcat.org/title/856849317",
       "title": "Maegan Parker Brooks, A Voice That Could Stir an Army: Fannie Lou Hamer and the Rhetoric of the Black Freedom Movement",
       "publisher": "University Press of Mississippi, 2014; WorldCat OCLC 856849317 (the principal rhetorical-scholarship account of the August 22, 1964 Hamer testimony before the Democratic National Convention Credentials Committee, the central event of Guyot's MFDP chairmanship)"
+    },
+    {
+      "url": "https://mississippiencyclopedia.org/entries/lawrence-guyot/",
+      "title": "Lawrence Guyot",
+      "publisher": "Mississippi Encyclopedia, University Press of Mississippi / Center for Study of Southern Culture (records his 1939 Pass Christian birth, Tougaloo College education, MFDP chairmanship, and the 1971 Rutgers University law degree)"
     }
   ]
 }

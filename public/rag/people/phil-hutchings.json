@@ -7,10 +7,78 @@
   "died": null,
   "display_name": "Phil Hutchings",
   "role_summary": "SNCC chairman 1968-1969 (succeeded H. Rap Brown); Howard University Nonviolent Action Group (NAG) member; Freedom Summer 1964 organizer in Mississippi; Newark organizer with SDS in the Third Ward after 1964.",
-  "ai_reading": "Hutchings's top semantic neighbor is Junius Williams (entry 72, count 317), the Newark Black Power Conference (1967) organizer, and the rest of his cluster is the SNCC-leadership cohort that overlapped with Newark and Black Power organizing: Courtland Cox (entry 24, NAG and MOW), William Lamar Strickland (entry 127), Betty Garman Robinson (entry 7, SNCC Northern support), and Martha Prescod Norman Noonan (entry 83). His position on the Southern Struggle vs Northern Struggle axis is -0.89, far toward Northern Struggle, the most Northern reading visible in the audited subset of the catalog so far. The cultural placement of Hutchings, a Mississippi Freedom Summer organizer and SNCC chairman whose movement frame is unambiguously Southern, would have predicted the opposite end of that axis; the embedding pulls his testimony toward Northern Struggle, consistent with his Newark relocation after Freedom Summer and his SDS Third Ward work taking up most of his post-1964 organizing, the corpus thus reading the LATER chapter as dominant over the Mississippi origin in his vector signature.",
-  "biographical_paragraph": "Hutchings was born in 1942 and raised in Cleveland, Ohio; in high school he joined the NAACP youth council and picketed in support of the Southern sit-ins, and at Howard University he joined the Nonviolent Action Group (NAG), the campus arm of SNCC [src: 2]. He participated in Freedom Summer in Mississippi in 1964 and afterward relocated to Newark, where he worked with Students for a Democratic Society on the urban action programs in the Third Ward, organizing on issues local residents prioritized (school control, poverty-agency control) and developing the Northern-Black-Power organizing model his oral testimony documents [src: 2]. He succeeded H. Rap Brown as chairman of the Student Nonviolent Coordinating Committee in 1968, attempting to steer the organization toward grassroots Northern-city organizing during its decline [src: 2]. His Library of Congress oral history is entry 98 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The Howard NAG that Hutchings joined as an undergraduate was the institutional pipeline through which Stokely Carmichael, Charles Cobb, Courtland Cox (catalog entry 24), Cleveland Sellers (catalog entry 22), Michael Thelwell (catalog entry 34), and Hutchings entered SNCC's national-staff cadre across the early 1960s; NAG functioned simultaneously as the Washington campus chapter of SNCC and as the supporting infrastructure for the city's Nonviolent Action Group sit-in campaigns at the Glen Echo Amusement Park, the Route 40 diners in Maryland, and the downtown Washington lunch counters [src: 3]. The 1964 Mississippi Freedom Summer that Hutchings worked on was a SNCC-Council of Federated Organizations (COFO) project that placed roughly a thousand mostly-white Northern student volunteers alongside SNCC and CORE field staff in Mississippi for voter registration, Freedom School teaching, and the Mississippi Freedom Democratic Party challenge to the all-white state delegation at that August's Democratic National Convention; the Schwerner-Chaney-Goodman murders in Neshoba County on June 21, 1964 framed the project's national news coverage and were the subject of Doug McAdam's 1988 longitudinal study of Freedom Summer volunteers [src: 4]. The Newark Third Ward to which Hutchings relocated after Freedom Summer was the same neighborhood where Tom Hayden's SDS-affiliated Newark Community Union Project (NCUP) operated from 1964; the Third Ward became the central organizing terrain for the 1967 Newark Black Power Conference that Junius Williams (catalog entry 72) helped coordinate and that drew roughly a thousand delegates to discuss Black political independence in the urban North [src: 5]. The 1968 SNCC chairmanship Hutchings assumed when he succeeded H. Rap Brown (the new program secretary title was adopted in part as a deliberate departure from the chairman framing, signaling the organization's late shift toward consensus-based decision-making) was the final pre-dissolution officer position in the organization's elected leadership; SNCC's organizational life effectively ended in 1969 in the wake of internal disputes over membership criteria, the Atlanta-based field staff's relationship to the West Coast-based Black Panther Party with which SNCC had briefly merged in 1968, and the federal counterintelligence (COINTELPRO) campaigns the FBI had targeted at the organization since 1967 [src: 6].",
-  "legacy_and_reception": "After SNCC's dissolution Hutchings continued organizing through the African Liberation Support Committee and the Pan-African solidarity work that Owusu Sadaukai (Howard Fuller) and other 1960s-organizing alumni led in the 1970s; he was one of the conveners of the African Liberation Day demonstration of May 27, 1972, in Washington that drew roughly thirty thousand demonstrators in support of the anti-colonial struggles in the Portuguese African colonies (Angola, Mozambique, Guinea-Bissau) and against the white-minority governments in Rhodesia and South Africa [src: 7]. He served on the board of the Riverside Church Disarmament Program in New York during the 1980s, and his organizing record across SNCC, SDS, the African Liberation Support Committee, and the Pan-African solidarity-organizing infrastructure has been documented in the SNCC Digital Gateway's biographical entry and in Wesley Hogan's institutional history of SNCC's organizing methodology [src: 2, 8]. His 2013 Civil Rights History Project oral history at the Library of Congress (entry 98 in the catalog) is the principal first-person record of his organizing arc; the interview runs 152 minutes and is one of the most-cited interviews in the corpus for cross-referencing the Howard NAG cohort's institutional trajectory [src: 1].",
+  "ai_reading": "Hutchings's top semantic neighbor in this corpus is Junius Williams (entry 72, count 72), the Newark organizer whose own interview names Hutchings directly, and the rest of his five-deep cluster is the SNCC cohort that ran through Howard NAG and Northern-city organizing: Courtland Cox (entry 24, count 42), William Lamar Strickland (entry 127, count 37), Ekwueme Michael Thelwell (entry 34, count 32), and Martha Prescod Norman Noonan (entry 83, count 30), with Betty Garman Robinson (entry 7) and Kathleen Cleaver (entry 73) close behind. On the Southern Struggle vs Northern Struggle axis his position_normalized is -0.89, the second-most Northern reading in the audit-original subset of the catalog, behind only Michael D. McCarty (entry 89) at -1.00. The cultural placement of Hutchings, a 1964 Mississippi Freedom Summer worker and the 1968 SNCC chairman, would predict a Southern reading; the embedding instead pulls his testimony toward Northern Struggle, tracking his December 1964 move to Newark and the SDS-NCUP community-organizing chapter that fills most of his post-1964 testimony. The corpus reads the Newark years as dominant over the Mississippi origin in his vector signature, and his own framing matches it: he describes wanting the anti-Jim-Crow victories to turn Birmingham into Chicago and Atlanta into New York, relocating the freedom struggle to the urban North.",
+  "biographical_paragraph": "Hutchings was born in 1942 and raised on the East Side of Cleveland, Ohio; in high school he joined the NAACP youth council and picketed Cleveland dime stores in support of the Southern sit-ins, and at Howard University he joined the Nonviolent Action Group (NAG), the campus arm of SNCC [src: 2]. He worked the 1964 Mississippi Freedom Summer in the state's Second Congressional District, including Ruleville, on the Mississippi Freedom Democratic Party records-and-challenge effort, then relocated to Newark in December 1964 to organize with Students for a Democratic Society through its Economic Research and Action Project [src: 2]. The SDS-affiliated Newark Community Union Project he joined put him first in the Clinton Hill section and then in the predominantly Black Central and South Wards, where residents set the agenda around housing, rent, and police conduct rather than the unemployment focus the project arrived with [src: 2]. He succeeded H. Rap Brown as chairman of the Student Nonviolent Coordinating Committee in 1968, in the period when SNCC declined toward dissolution [src: 2]. His Library of Congress oral history is entry 98 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Phil Hutchings",
+      "speaker_slug": "phil-hutchings",
+      "source_entry": 98,
+      "timestamp": "01:15:17",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669141/",
+      "lead_in": "Explaining why, after Atlantic City, he chose to organize in the urban North rather than stay in the South:",
+      "quote": "I had this little quote that the success of the anti-Jim Crow would be to turn Birmingham into Chicago. And places like Atlanta would become like New York."
+    },
+    {
+      "relation": "self",
+      "speaker": "Phil Hutchings",
+      "speaker_slug": "phil-hutchings",
+      "source_entry": 98,
+      "timestamp": "00:59:55",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669141/",
+      "lead_in": "On what he valued most from the 1964 Mississippi Freedom Summer organizing:",
+      "quote": "I probably the thing that I think about that I value the most was seeing people making attempts to do democracy at the very most grassroots level."
+    },
+    {
+      "relation": "self",
+      "speaker": "Phil Hutchings",
+      "speaker_slug": "phil-hutchings",
+      "source_entry": 98,
+      "timestamp": "01:04:47",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669141/",
+      "lead_in": "Describing the fear of organizing in Mississippi, which he compared to a combat zone:",
+      "quote": "this is a war zone. And you can get killed anytime. Sniper could get you just like in Vietnam"
+    },
+    {
+      "relation": "self",
+      "speaker": "Phil Hutchings",
+      "speaker_slug": "phil-hutchings",
+      "source_entry": 98,
+      "timestamp": "01:05:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669141/",
+      "lead_in": "On why he did most of his movement work alongside others rather than alone:",
+      "quote": "90% of the stuff I did there in the movement I probably would never have done on my own."
+    },
+    {
+      "relation": "self",
+      "speaker": "Phil Hutchings",
+      "speaker_slug": "phil-hutchings",
+      "source_entry": 98,
+      "timestamp": "01:58:18",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669141/",
+      "lead_in": "After Newark police beat him during the July 1967 rebellion, he credited his earlier Southern nonviolence training:",
+      "quote": "this is where the earlier civil rights training really paid off back of the non-violent days because I knew how to turn and lean"
+    },
+    {
+      "relation": "about",
+      "speaker": "Junius Williams",
+      "speaker_slug": "junius-williams",
+      "source_entry": 72,
+      "timestamp": "01:53:21",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669136/",
+      "lead_in": "Fellow Newark organizer Junius Williams recalls a 1968 House Un-American Activities Committee proceeding that tied the two of them together and blamed them for the Newark rebellion:",
+      "quote": "He accused me of living with his hell-raiser, Phil Hutchings, who everybody knows as a hell-raiser because he's affiliated with SNCC."
+    }
+  ],
+  "movement_context": "The Howard NAG that Hutchings joined as an undergraduate was the institutional pipeline through which Stokely Carmichael, Charles Cobb, Courtland Cox (catalog entry 24), Cleveland Sellers (catalog entry 22), Michael Thelwell (catalog entry 34), and Hutchings entered SNCC's national-staff cadre across the early 1960s; NAG functioned simultaneously as the Washington campus chapter of SNCC and as the supporting infrastructure for the city's Nonviolent Action Group sit-in campaigns at the Glen Echo Amusement Park, the Route 40 diners in Maryland, and the downtown Washington lunch counters [src: 3]. The 1964 Mississippi Freedom Summer that Hutchings worked on was a SNCC-Council of Federated Organizations (COFO) project that placed roughly a thousand mostly-white Northern student volunteers alongside SNCC and CORE field staff in Mississippi for voter registration, Freedom School teaching, and the Mississippi Freedom Democratic Party challenge to the all-white state delegation at that August's Democratic National Convention; the Schwerner-Chaney-Goodman murders in Neshoba County on June 21, 1964 framed the project's national news coverage and were the subject of Doug McAdam's 1988 longitudinal study of Freedom Summer volunteers [src: 4]. The Newark neighborhoods to which Hutchings relocated after Freedom Summer (Clinton Hill, then the Central and South Wards) overlapped the organizing terrain of Tom Hayden's SDS-affiliated Newark Community Union Project (NCUP), which operated from 1964; in his oral history Hutchings places NCUP's main base in the South Ward and his own work increasingly in the Central Ward [src: 5]. The First National Conference on Black Power convened in Newark in July 1967, the week after the Newark rebellion; in Hutchings's account its organizer was Nathan Wright Jr., the Episcopal canon through whom Hutchings had drawn church funding, and the conference drew delegates to debate Black political independence in the urban North [src: 5]. The 1968 SNCC chairmanship Hutchings assumed when he succeeded H. Rap Brown (the new program secretary title was adopted in part as a deliberate departure from the chairman framing, signaling the organization's late shift toward consensus-based decision-making) was the final pre-dissolution officer position in the organization's elected leadership; SNCC's organizational life effectively ended in 1969 in the wake of internal disputes over membership criteria, the Atlanta-based field staff's relationship to the West Coast-based Black Panther Party with which SNCC had briefly merged in 1968, and the federal counterintelligence (COINTELPRO) campaigns the FBI had targeted at the organization since 1967 [src: 6].",
+  "legacy_and_reception": "In his oral history Hutchings describes helping organize the first Venceremos Brigades to Cuba around 1969 and 1970, work crews of U.S. volunteers who cut sugar cane and met revolutionaries from Angola, Vietnam, and elsewhere; he stayed on in Cuba for additional months at the Habana Libre and treats the trips as the moment he learned to think about organizing at a national and international scale [src: 1]. He continued through the African Liberation Support Committee and the Pan-African solidarity organizing that Owusu Sadaukai (Howard Fuller) and other 1960s-movement alumni led in the 1970s, and he was among the conveners of the African Liberation Day demonstration of May 27, 1972 in Washington, in support of the anti-colonial struggles in the Portuguese African colonies (Angola, Mozambique, Guinea-Bissau) and against the white-minority governments in Rhodesia and South Africa [src: 7]. He served on the board of the Riverside Church Disarmament Program in New York during the 1980s, and his organizing record across SNCC, SDS, the Venceremos Brigade, the African Liberation Support Committee, and Pan-African solidarity work is documented in the SNCC Digital Gateway's biographical entry and in Wesley Hogan's institutional history of SNCC's organizing methodology [src: 2, 8]. His Civil Rights History Project oral history was recorded on September 1, 2011 in Oakland, California, where he was working with the Black Alliance for Just Immigration; it runs about two hours and forty-four minutes and is entry 98 in the catalog (Library of Congress) [src: 1].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/9/9c/1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_%2826276560142%29.jpg",
@@ -25,7 +93,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/06/H_Rap_Brown_-_USNWR_crop.jpg",
       "alt": "H. Rap Brown at a SNCC news conference, July 27, 1967",
-      "caption": "H. Rap Brown (later Jamil Al-Amin) at a Student Nonviolent Coordinating Committee news conference on July 27, 1967, while serving as SNCC chairman. Hutchings succeeded Brown as the chairman (the office was renamed program secretary in the 1968 reorganization) in the spring of 1968, becoming the final pre-dissolution officer of the organization. Photograph by Marion S. Trikosko for U.S. News & World Report; held by the Library of Congress Prints and Photographs Division (digital ID ppmsc.01263).",
+      "caption": "H. Rap Brown (later Jamil Al-Amin) at a Student Nonviolent Coordinating Committee news conference on July 27, 1967, while serving as SNCC chairman. Hutchings succeeded Brown as chairman (an office also styled program secretary) in 1968, becoming the final pre-dissolution officer of the organization. Photograph by Marion S. Trikosko for U.S. News & World Report; held by the Library of Congress Prints and Photographs Division (digital ID ppmsc.01263).",
       "photographer": "Marion S. Trikosko (U.S. News & World Report)",
       "repository": "Wikimedia Commons (via Library of Congress, Prints and Photographs Division)",
       "license": "No known copyright restrictions (public domain)",
@@ -35,7 +103,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Newark_Riots_1967_%28305517077%29.jpg",
       "alt": "Street scene in Newark the morning after the July 12, 1967 rebellion began",
-      "caption": "Street scene in Newark on the morning of July 14, 1967, two days into the Newark rebellion that followed the arrest and beating of cab driver John William Smith on July 12. Hutchings was working with Students for a Democratic Society in the Third Ward in 1964-1967, the period in which the Newark Black Power Conference (held one week after this photograph was taken, July 20-23, 1967) drew roughly a thousand delegates to the city. Photograph by Al Lowe from a 35mm slide, taken from a passenger seat in a friend's car.",
+      "caption": "Street scene in Newark on the morning of July 14, 1967, two days into the Newark rebellion that followed the arrest and beating of cab driver John William Smith on July 12. Hutchings was working with Students for a Democratic Society in Newark's Central and South Wards in 1964-1967, the period in which the First National Conference on Black Power (held the week after this photograph was taken, July 20-23, 1967) drew delegates to the city. Photograph by Al Lowe from a 35mm slide, taken from a passenger seat in a friend's car.",
       "photographer": "Al Lowe",
       "repository": "Wikimedia Commons (originally posted to Flickr)",
       "license": "Creative Commons Attribution-ShareAlike 2.0 Generic (CC BY-SA 2.0)",

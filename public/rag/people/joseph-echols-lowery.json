@@ -16,9 +16,77 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Joseph_Lowery_2000.jpg",
     "date_taken": "2000"
   },
-  "ai_reading": "Lowery's top semantic neighbor is C. T. Vivian (entry 134) at a cosine count of 131; the broader cluster includes Charles McLaurin (entry 17), Wyatt Tee Walker (entry 132), and Robert L. Carter (entry 108). The Vivian pairing is the catalog's clearest SCLC-leadership cosine: both were co-founders of SCLC in 1957, both served as direct-action voices through the 1960s, and both received the Presidential Medal of Freedom from President Obama. The catalog flags a +0.78 reading on the Nonviolence as Theology vs Armed Self-Defense axis (far toward Armed Self-Defense) as the most-distinctive structural reading. For a Methodist minister and SCLC president whose cultural placement is the King-lineage nonviolent tradition, the embedding's pull toward Self-Defense is the catalog's recurring SCLC-inverted pattern visible in Wyatt Tee Walker (+0.87 toward Self-Defense), Pete Seeger (+0.50), and Sherrod (+0.59); whether this is a polarity convention in the axis-vector definition that reverses the political mapping or a real reading of theological-self-defense register in SCLC oral testimony is the question this catalog leaves open for the paper-in-progress.",
-  "biographical_paragraph": "While Lowery's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), his external biographical record is well-documented [src: 1]. Lowery was born October 6, 1921 in Huntsville, Alabama, the son of Leroy Lowery, a businessman. He took a Bachelor's degree from Knoxville College, a divinity degree from Paine Theological Seminary, and was ordained as a Methodist minister in 1948. While serving as pastor of Warren Street Methodist Church in Mobile in the early 1950s, he organized the Alabama Civic Affairs Association to coordinate anti-segregation activism across the state's Methodist Episcopal churches. He was one of the co-founders of the Southern Christian Leadership Conference in 1957, working alongside Martin Luther King Jr., Ralph Abernathy, C. T. Vivian, Bayard Rustin, and Ella Baker [src: 2]. He served as the SCLC's vice president across the King and Abernathy presidencies, and from 1977 through 1997 he served as the organization's third president, the longest tenure in the role [src: 2]. His marriage to Evelyn Gibson Lowery ran from 1950 until her September 2013 death; she was the founder of SCLC/WOMEN, the women's auxiliary [src: 2]. President Barack Obama presented him the Presidential Medal of Freedom on August 12, 2009 [src: 2]. Lowery delivered the benediction at Obama's first inauguration on January 20, 2009 [src: 2]. He died March 27, 2020 in Atlanta at ninety-eight [src: 2].",
-  "movement_context": "Lowery's May 1955 federal civil suit on behalf of the Alabama Civic Affairs Association against the Mobile City Commission for segregated municipal buses pre-dated by six months the December 5, 1955 launch of the Montgomery bus boycott Rosa Parks's December 1 arrest precipitated; the Mobile suit was settled by federal-court order desegregating the Mobile buses, and Lowery's organizing record across the early 1950s Alabama Methodist Episcopal church network was the institutional substrate that brought him into the Atlanta SCLC founding cohort two years later [src: 3]. The January 10 through 11, 1957 meeting at Ebenezer Baptist Church in Atlanta that became the SCLC's founding convention was organized by Martin Luther King Jr., Ralph Abernathy (catalog entry 28), Bayard Rustin, and Ella Baker as a southern-regional successor to the December 1956 In Friendship coalition; Lowery joined King, Abernathy, C. K. Steele of Tallahassee, Fred Shuttlesworth of Birmingham, T. J. Jemison of Baton Rouge, and the broader founding cohort, taking the vice presidency a role he held under King through April 4, 1968 and under Abernathy from 1968 through 1977 [src: 4]. His 1979 succession to the SCLC presidency following Abernathy's resignation came as the organization was struggling financially and institutionally; Lowery's twenty-year tenure (1977-1997) restored the SCLC's national profile and was the longest of any president in its history [src: 5]. The 1980 SCLC march from Atlanta to Wrightsville, Georgia to protest the September 1980 shooting of unarmed Black resident James Hood at the Johnson County jail, drew national attention back to the SCLC's direct-action posture and was the institutional revival moment historians cite as the organization's late-twentieth-century recovery [src: 5]. Lowery's 1979 leadership of the SCLC delegation to meet with Palestine Liberation Organization representatives at the United Nations (the meeting that drew Andrew Young's resignation as United Nations Ambassador after Young's parallel meeting was reported) marked the SCLC's expansion into international-solidarity work [src: 5]. His January 27, 1995 testimony before the Senate Judiciary Committee against the Newt Gingrich Contract with America's proposed welfare and anti-poverty rollbacks restated the SCLC's economic-justice tradition (the institutional throughline running from the 1968 Poor People's Campaign through the 1977-1997 Lowery presidency); the testimony invoked Matthew 25's parable of the sheep and the goats as Christian-ethical grounding for federal anti-poverty commitment [src: 5]. President Obama's January 20, 2009 first-inauguration benediction by Lowery (the closing prayer that adapted James Weldon Johnson's Lift Every Voice and Sing and the gospel hymn Black and Brown Stick Around) was nationally televised and is the publicly recognized capstone of his sixty-year movement career [src: 6].",
+  "ai_reading": "Lowery's top semantic neighbor in this corpus is C. T. Vivian (entry 134), whose passages register against Lowery's at a cosine-match count of 131, roughly twice the count of the next-closest entry; the broader cluster, ranked by match count, is Charles McLaurin (entry 17, count 75), Wyatt Tee Walker (entry 132, count 56), and Robert L. Carter (entry 108, count 53). The Vivian pairing reads as the catalog's clearest SCLC-leadership cosine link, but it is worth separating the embedding signal from the historical record: Lowery was an SCLC vice president from the 1957 founding, while Vivian joined the SCLC executive staff in 1963, so the embedding is pulling together two voices whose tenures only partly overlap rather than two co-founders. On the Nonviolence as Theology vs Armed Self-Defense axis, the catalog's rank-normalized position for Lowery is +0.78 (raw projection +0.048 inside a corpus range of -0.0998 to +0.0666), which places him seventh of 136 entries toward the Armed Self-Defense pole. The polarity here is the structural surprise the paper-in-progress turns on: the most negative position (the Nonviolence-as-Theology pole) is held by Black Panther organizer Elmer Dixon (entry 37), while ordained SCLC ministers cluster at the opposite end (the Abernathy family at +0.91 normalized, Wyatt Tee Walker at +0.87, C. T. Vivian at +0.66, Charles Sherrod at +0.59, Pete Seeger at +0.50). Whether this is a polarity convention in the axis-vector definition that inverts the expected political mapping, or a real reading of a theological-self-defense register in SCLC oral testimony, is the question this catalog leaves open.",
+  "biographical_paragraph": "Lowery's LoC oral history carries a publication-block audit tier, which flags that known issues prevent full publication-grade certification and that any specific claim quoted from the transcript should be confirmed against external sources before citation; his external biographical record is separately documented [src: 1]. He was born October 6, 1921 in Huntsville, Alabama, the son of LeRoy Lowery, a teacher and small businessman [src: 9]. He attended Knoxville College and Wayne State University, took a bachelor's degree from Paine College in Augusta, Georgia, continued at Paine Theological Seminary, and after graduating from seminary in 1950 was ordained as a Methodist minister [src: 9]. From 1952 to 1961 he pastored Warren Street Methodist Church in Mobile, Alabama, where he served as president of the Alabama Civic Affairs Association; the association helped desegregate Mobile's public transportation and sent financial support to the Montgomery bus boycott [src: 10]. He was a co-founder of the Southern Christian Leadership Conference at its 1957 organizing and was designated the conference's first vice president [src: 10]; the transcript records the founding cohort as including Martin Luther King Jr., Ralph Abernathy (entry 28), Fred Shuttlesworth, C. K. Steele, Kelly Miller Smith, and T. J. Jemison, with Bayard Rustin drafting the founding documents and Ella Baker serving as the first full-time executive director [src: 4]. Lowery held the vice presidency until he was named SCLC board chairman in 1967, and in 1977 he succeeded Abernathy as the organization's third president, a post he held through 1997 [src: 10]. He married Evelyn Gibson Lowery, who founded SCLC/W.O.M.E.N. in 1979 and died September 26, 2013 [src: 9]. President Barack Obama presented him the Presidential Medal of Freedom on August 12, 2009, and Lowery delivered the benediction at Obama's first inauguration on January 20, 2009 [src: 2]. He died March 27, 2020 in Atlanta at ninety-eight [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Joseph Echols Lowery",
+      "speaker_slug": "joseph-echols-lowery",
+      "source_entry": 66,
+      "timestamp": "00:10:38",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669122/",
+      "lead_in": "On the Prichard bus route in Mobile, a man boarded with a bottle in a sack, recognized two Black ministers seated at the front, and stood over them; Lowery recounts how the nonviolent workshop training met that moment:",
+      "quote": "I know you don't want to get hurt. We don't want to see you get hurt. you mean us no harm and we mean you no harm, you know, please sit down."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Echols Lowery",
+      "speaker_slug": "joseph-echols-lowery",
+      "source_entry": 66,
+      "timestamp": "00:24:17",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669122/",
+      "lead_in": "Asked to separate the tactical from the theological case for nonviolence, Lowery starts with the practical arithmetic of force:",
+      "quote": "And we were outmaned. So for a very practical perspective, we could not have won a violent confrontation."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Echols Lowery",
+      "speaker_slug": "joseph-echols-lowery",
+      "source_entry": 66,
+      "timestamp": "00:25:30",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669122/",
+      "lead_in": "On why ministers led the movement, Lowery names the economic independence of the Black pastorate:",
+      "quote": "the preacher was the most independent leader in the community."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Echols Lowery",
+      "speaker_slug": "joseph-echols-lowery",
+      "source_entry": 66,
+      "timestamp": "00:42:16",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669122/",
+      "lead_in": "Looking back at the Montgomery boycott as the start of a new posture, Lowery gives it his own name:",
+      "quote": "And that was what I call the beginning of the era of self-determination. It didn't matter what the court said."
+    },
+    {
+      "relation": "self",
+      "speaker": "Joseph Echols Lowery",
+      "speaker_slug": "joseph-echols-lowery",
+      "source_entry": 66,
+      "timestamp": "01:01:30",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669122/",
+      "lead_in": "Delivering the benediction at Barack Obama's first inauguration, Lowery describes hearing the national anthem at the close of the ceremony:",
+      "quote": "And nothing had changed, but the Star-Spangled Banner was the same, but the country had changed."
+    },
+    {
+      "relation": "about",
+      "speaker": "William G. Anderson",
+      "speaker_slug": "william-g-anderson",
+      "source_entry": 126,
+      "timestamp": "01:46:41",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669140/",
+      "lead_in": "Albany Movement leader William G. Anderson lists the movement figures he brought to speak at Michigan State University, and places Lowery at the head of the line:",
+      "quote": "And I brought up people like Joseph E. Lowery, who was the, if you were the grandfather of the movement."
+    }
+  ],
+  "movement_context": "Lowery's May 1955 federal civil suit on behalf of the Alabama Civic Affairs Association against the Mobile City Commission for segregated municipal buses pre-dated by six months the December 5, 1955 launch of the Montgomery bus boycott Rosa Parks's December 1 arrest precipitated; the Mobile suit was settled by federal-court order desegregating the Mobile buses, and Lowery's organizing record across the early 1950s Alabama Methodist Episcopal church network was the institutional substrate that brought him into the Atlanta SCLC founding cohort two years later [src: 3]. The January 10 through 11, 1957 meeting at Ebenezer Baptist Church in Atlanta that became the SCLC's founding convention was organized by Martin Luther King Jr., Ralph Abernathy (catalog entry 28), Bayard Rustin, and Ella Baker as a southern-regional successor to the December 1956 In Friendship coalition; Lowery joined King, Abernathy, C. K. Steele of Tallahassee, Fred Shuttlesworth of Birmingham, T. J. Jemison of Baton Rouge, and the broader founding cohort, taking the vice presidency [src: 4]; he held that office until he was named SCLC board chairman in 1967 [src: 10]. His 1977 succession to the SCLC presidency following Abernathy's departure came as the organization was struggling financially and institutionally; Lowery's tenure, which ran through 1997, restored the SCLC's national profile and was the longest of any president in its history [src: 5, src: 10]. The 1980 SCLC march from Atlanta to Wrightsville, Georgia to protest the September 1980 shooting of unarmed Black resident James Hood at the Johnson County jail, drew national attention back to the SCLC's direct-action posture and was the institutional revival moment historians cite as the organization's late-twentieth-century recovery [src: 5]. Lowery's 1979 leadership of the SCLC delegation to meet with Palestine Liberation Organization representatives at the United Nations (the meeting that drew Andrew Young's resignation as United Nations Ambassador after Young's parallel meeting was reported) marked the SCLC's expansion into international-solidarity work [src: 5]. His January 27, 1995 testimony before the Senate Judiciary Committee against the Newt Gingrich Contract with America's proposed welfare and anti-poverty rollbacks restated the SCLC's economic-justice tradition (the institutional throughline running from the 1968 Poor People's Campaign through the 1977-1997 Lowery presidency); the testimony invoked Matthew 25's parable of the sheep and the goats as Christian-ethical grounding for federal anti-poverty commitment [src: 5]. President Obama's January 20, 2009 first-inauguration benediction by Lowery (the closing prayer that adapted James Weldon Johnson's Lift Every Voice and Sing and the gospel hymn Black and Brown Stick Around) was nationally televised and is the publicly recognized capstone of his sixty-year movement career [src: 6].",
   "legacy_and_reception": "President Barack Obama presented Lowery the Presidential Medal of Freedom on August 12, 2009 in the East Room of the White House; the citation framed Lowery's career as the institutional bridge between the SCLC's King-era founding and the post-Movement decades of anti-apartheid solidarity, economic-justice testimony, and electoral mobilization [src: 6, src: 7]. In 2010 the NAACP awarded Lowery the Spingarn Medal, the organization's highest honor; he was the eighty-eighth recipient of the medal in its sequence reaching back to its 1915 establishment [src: 8]. Clark Atlanta University established the Joseph E. Lowery Institute for Justice and Human Rights in 2001 with Lowery's name and ongoing institutional affiliation; the institute hosts annual lectures, runs continuing-education programming on the SCLC tradition, and houses Lowery's pre-2020 personal archive [src: 5]. The 2011 Library of Congress oral history interview that catalogs as entry 66 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) is the principal first-person archival document of his career [src: 1]. He died March 27, 2020 in Atlanta at ninety-eight following a long illness; tributes came from President Obama, President Joe Biden, and the Atlanta civil rights establishment [src: 7]. The Joseph E. Lowery Boulevard in Atlanta (formerly Ashby Street, renamed by the Atlanta City Council in 2001) and the United Methodist Church's Joseph E. Lowery Award (presented annually since 2009 to clergy or laity advancing the denomination's social-justice tradition) are the continuing institutional commemorations of his sixty-year ministry [src: 5].",
   "gallery": [
     {
@@ -82,6 +150,16 @@
       "url": "https://naacp.org/find-resources/history-explained/civil-rights-leaders/spingarn-medal-recipients",
       "title": "NAACP Spingarn Medal Recipients",
       "publisher": "National Association for the Advancement of Colored People (the institutional list of Spingarn Medal recipients documenting Lowery's 2010 award as the eighty-eighth recipient)"
+    },
+    {
+      "url": "https://www.georgiaencyclopedia.org/articles/history-archaeology/joseph-lowery-1921-2020/",
+      "title": "Joseph Lowery (1921-2020)",
+      "publisher": "New Georgia Encyclopedia, Georgia Humanities and University of Georgia Press (peer-edited state encyclopedia documenting the October 6, 1921 Huntsville birth, his father LeRoy Lowery, the Knoxville College / Wayne State / Paine College / Paine Theological Seminary education, the 1950 seminary graduation and Methodist ordination, the 1952-1961 Warren Street pastorate, the Mobile bus desegregation drive, the SCLC vice presidency, the 1977-1997 third presidency, and the 2001 Joseph E. Lowery Institute at Clark Atlanta University)"
+    },
+    {
+      "url": "https://www.aaihs.org/undaunted-resistance-joseph-lowery-and-the-spirit-of-sclc/",
+      "title": "Undaunted Resistance: Joseph Lowery and the Spirit of SCLC",
+      "publisher": "Black Perspectives, African American Intellectual History Society (documenting the 1957 SCLC founding with Lowery designated vice president, his vice presidency until the 1967 board chairmanship, the 1977 succession to Abernathy as third president through the 1997 retirement, and the Alabama Civic Affairs Association's Mobile transit-desegregation work and financial support for the Montgomery bus boycott)"
     }
   ]
 }

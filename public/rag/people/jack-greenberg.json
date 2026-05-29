@@ -6,9 +6,99 @@
   "display_name": "Jack Greenberg",
   "born": 1924,
   "died": 2016,
-  "role_summary": "NAACP Legal Defense Fund Director-Counsel 1961-1984, succeeding Thurgood Marshall; co-counsel on Brown v. Board of Education (1954) and arguing counsel in Meredith v. Fair (1962); Vice Dean of Columbia Law School.",
-  "ai_reading": "Greenberg's position on the Sacred vs Secular Framing axis is -0.82, far toward Sacred Framing. The cultural placement of Greenberg, a Columbia Law-trained constitutional litigator who argued nearly forty civil rights cases at the Supreme Court and ran the NAACP Legal Defense Fund for twenty-three years, would have predicted the opposite pole; secular-legal vocabulary is the institutional dialect of his career. The embedding reads his oral history as Sacred-side instead, possibly catching the moral-witness framing his memoir Crusaders in the Courts deploys, or the church-network testimony embedded in the civil-rights cases his litigation built on. His top semantic neighbor is Robert L. Carter (entry 108, count 258), the NAACP LDF lawyer who preceded him at the organization, a pairing the cultural record predicts and that the embedding confirms. The Sacred-Framing axis position is the surprise.",
-  "biographical_paragraph": "Greenberg succeeded Thurgood Marshall as Director-Counsel of the NAACP Legal Defense and Educational Fund in 1961 and held the post for twenty-three years, until 1984 [src: 2]. The position followed his 1954 work as co-counsel on Brown v. Board of Education; he argued Meredith v. Fair before the Supreme Court in 1962, the case that produced James Meredith's enrollment at the University of Mississippi [src: 2]. Across his LDF tenure he argued roughly forty civil rights cases before the Supreme Court [src: 2]. His memoir Crusaders in the Courts appeared in 1994 [src: 3]. From 1989 to 1993 he served as Dean of Columbia College and was later Vice Dean of Columbia Law School and the Alphonse Fletcher Jr. Professor of Law Emeritus [src: 2]. Born December 22, 1924 in Brooklyn, New York, Greenberg died October 12, 2016 at ninety-one [src: 2]. His Library of Congress oral history is entry 56 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "role_summary": "NAACP Legal Defense Fund Director-Counsel 1961-1984, succeeding Thurgood Marshall; co-counsel on Brown v. Board of Education (1954) and co-counsel in the Meredith v. Fair litigation that desegregated the University of Mississippi (1962); Vice Dean of Columbia Law School.",
+  "ai_reading": "Greenberg's position on the Sacred vs Secular Framing axis is -0.82 (normalized), far toward the Sacred / Theological pole. The cultural placement of Greenberg, a Columbia Law-trained constitutional litigator who argued roughly forty civil rights cases at the Supreme Court and ran the NAACP Legal Defense Fund for twenty-three years, would have predicted the opposite pole; secular-legal vocabulary is the institutional dialect of his career. The embedding reads his oral history as Sacred-side instead, possibly catching the moral-witness framing his memoir Crusaders in the Courts deploys, or the church-network testimony embedded in the civil-rights cases his litigation built on. By cumulative passage count his strongest neighbor is Robert L. Carter (entry 108, count 258), Marshall's first assistant at the LDF and Greenberg's colleague there before Carter moved to the parent NAACP as general counsel; that pairing the cultural record predicts, and the embedding confirms it overwhelmingly, Carter's count dwarfs every other neighbor. The less-obvious reading is by peak cosine: the single closest passage to any of Greenberg's is not Carter's but John and Jean Rosenberg's (entry 61, top score 0.79, above Carter's 0.68), the Department of Justice civil-rights-division and LDF-adjacent attorneys, so the embedding's tightest single match runs to a lawyer couple the historiography of the LDF rarely files next to Greenberg.",
+  "biographical_paragraph": "Greenberg succeeded Thurgood Marshall as Director-Counsel of the NAACP Legal Defense and Educational Fund in 1961 and held the post for twenty-three years, until 1984 [src: 2]. The position followed his 1954 work as co-counsel on Brown v. Board of Education; in 1962 he served as LDF co-counsel, with Constance Baker Motley, in the Meredith v. Fair litigation that produced James Meredith's enrollment at the University of Mississippi [src: 2, 3]. Across his LDF tenure he argued roughly forty civil rights cases before the Supreme Court [src: 2]. His memoir Crusaders in the Courts appeared in 1994 [src: 3]. From 1989 to 1993 he served as Dean of Columbia College and was later Vice Dean of Columbia Law School and the Alphonse Fletcher Jr. Professor of Law Emeritus [src: 2]. Born December 22, 1924 in Brooklyn, New York, Greenberg died October 12, 2016 at ninety-one [src: 2]. His Library of Congress oral history is entry 56 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Jack Greenberg",
+      "speaker_slug": "jack-greenberg",
+      "source_entry": 56,
+      "timestamp": "00:01:08",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669133/",
+      "lead_in": "Asked how he weighed joining the NAACP Legal Defense and Educational Fund as a 1949 law graduate, Greenberg places the choice before the category existed:",
+      "quote": "Well, implicitly, I really made that choice before 49. I'd started a Columbia Law School with no thought of being a Civil Rights lawyer because there was no such thing."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jack Greenberg",
+      "speaker_slug": "jack-greenberg",
+      "source_entry": 56,
+      "timestamp": "00:09:29",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669133/",
+      "lead_in": "Recalling the LDF reaction when Brown v. Board of Education came down in May 1954:",
+      "quote": "I think stunned is the only word, a cosmic decision."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jack Greenberg",
+      "speaker_slug": "jack-greenberg",
+      "source_entry": 56,
+      "timestamp": "00:09:38",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669133/",
+      "lead_in": "On how the scope of the Brown ruling exceeded what the litigators had set out to win:",
+      "quote": "We understood we were the case, the challenge, school segregation. It turned out the decision swept away all state-imposed segregation."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jack Greenberg",
+      "speaker_slug": "jack-greenberg",
+      "source_entry": 56,
+      "timestamp": "00:12:23",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669133/",
+      "lead_in": "On the LDF defense of sit-in demonstrators arrested as the movement spread after February 1960:",
+      "quote": "We represented about 3500 people and got them all acquitted."
+    },
+    {
+      "relation": "self",
+      "speaker": "Jack Greenberg",
+      "speaker_slug": "jack-greenberg",
+      "source_entry": 56,
+      "timestamp": "00:18:16",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669133/",
+      "lead_in": "Describing the 1963 program he started to seed Black attorneys into Southern towns that had none:",
+      "quote": "The black lawyer was a go set up a practice in a place where there were no black lawyers. We give him $10,000 to buy a typewriter, a rug, and some law books."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "01:06:08",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "NAACP staff member Mildred Bond Roxborough, asked what she remembered of Greenberg, recalls him among the young LDF lawyers when she joined:",
+      "quote": "Well, he was a young lawyer who came on, he was on board about a year before I came on, and I got to know him quite well."
+    },
+    {
+      "relation": "about",
+      "speaker": "Robert L. Carter",
+      "speaker_slug": "robert-l-carter",
+      "source_entry": 108,
+      "timestamp": "02:46:14",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669100/",
+      "lead_in": "Robert L. Carter, the LDF lawyer who became the parent NAACP's general counsel, names the institutional dispute that divided him from Greenberg:",
+      "quote": "And that's how Jack Greenberg and I had our problem with one another"
+    },
+    {
+      "relation": "about",
+      "speaker": "Junius Williams",
+      "speaker_slug": "junius-williams",
+      "source_entry": 72,
+      "timestamp": "02:13:00",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669136/",
+      "lead_in": "Newark organizer Junius Williams describes turning to the LDF for a housing case, and Greenberg, then director-counsel, assigning a lawyer:",
+      "quote": "So Jack Greenberg sent over a young man who was our lawyer."
+    }
+  ],
   "photo": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/8/8a/P051614PS-1084_%2814358467070%29.jpg",
     "alt": "President Barack Obama greets Jack Greenberg, former NAACP Legal Defense Fund director-counsel, and his wife Deborah Greenberg in the Blue Room of the White House, May 16, 2014",

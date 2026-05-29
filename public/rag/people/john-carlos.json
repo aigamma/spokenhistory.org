@@ -17,9 +17,66 @@
     "date_taken": "2012-05-24"
   },
   "ai_reading": "Carlos and Bill Russell (entry 8) share the catalog's strongest bidirectional cosine signature: Carlos appears as Russell's top neighbor at count 719, and Russell appears as Carlos's top neighbor at count 271. The two athletes' oral histories rhyme with each other more closely in the embedding than either does with any non-athlete voice in the corpus. The embedding therefore reads the athlete-activist category as a coherent vector cluster within the 136-interview archive, more so than the cultural record's separate treatments of the 1961 Celtics Lexington boycott and the 1968 Olympics Black Power salute would predict. Carlos's position on the Tactical Pragmatism vs Strategic Vision axis is -0.77, far toward Tactical Pragmatism, consistent with the single-action specificity (the medal stand, the fist, the anthem) that anchors his interview record over abstract strategic framings.",
-  "biographical_paragraph": "John Carlos took bronze in the 200 meters at the 1968 Mexico City Olympics; on the medal stand he and gold-medalist Tommie Smith raised black-gloved fists during the national anthem, the silent protest known since as the 1968 Olympics Black Power salute [src: 2]. The protest was the most-cited single scene in Carlos's public record and the centerpiece of his 2011 memoir The John Carlos Story, co-authored with Dave Zirin [src: 2]. The Olympic Project for Human Rights (OPHR), the athlete-civil-rights organization that prepared the Mexico City protest, is the institutional setting Douglas Hartmann's 2003 University of Chicago Press study tracks [src: 3]. His Library of Congress oral history is entry 62 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "biographical_paragraph": "John Carlos took bronze in the 200 meters at the 1968 Mexico City Olympics; on the medal stand he and gold-medalist Tommie Smith raised black-gloved fists during the national anthem, the silent protest known since as the 1968 Olympics Black Power salute [src: 2]. The protest is the most-cited single scene in Carlos's public record and the centerpiece of his 2011 memoir The John Carlos Story, co-authored with Dave Zirin [src: 2]. The Olympic Project for Human Rights (OPHR), the athlete organization that prepared the Mexico City protest, is the institutional setting Douglas Hartmann's 2003 University of Chicago Press study tracks [src: 3]. Carlos ran his early track for the New York Pioneer Club, attended East Texas State University, then transferred to San Jose State, the campus where the OPHR athletic core trained [src: 2, 3]. His Library of Congress oral history is entry 62 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "John Carlos",
+      "speaker_slug": "john-carlos",
+      "source_entry": 62,
+      "timestamp": "00:45:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669202/",
+      "lead_in": "Carlos describes a childhood vision, around age seven or eight on Lenox Avenue, of standing on a box in an arena and raising a hand, which he later read as a premonition of the medal stand:",
+      "quote": "Now, why did God show it to me? I'm humble that he reached out into the beaches of the world and picked up a grain of sand and threw it on the table with my name."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Carlos",
+      "speaker_slug": "john-carlos",
+      "source_entry": 62,
+      "timestamp": "01:43:21",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669202/",
+      "lead_in": "On the symbols he carried onto the victory stand, beginning with the black shirt over his U.S. team jersey:",
+      "quote": "I had a black shirt that cover up my USA jersey merely because I was ashamed of America."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Carlos",
+      "speaker_slug": "john-carlos",
+      "source_entry": 62,
+      "timestamp": "01:44:28",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669202/",
+      "lead_in": "On why he and Smith stood in black socks with no shoes:",
+      "quote": "black socks with no shoes to illustrate poverty"
+    },
+    {
+      "relation": "self",
+      "speaker": "John Carlos",
+      "speaker_slug": "john-carlos",
+      "source_entry": 62,
+      "timestamp": "01:45:03",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669202/",
+      "lead_in": "On what the raised gloved fist was meant to signify, beyond the single image that became famous:",
+      "quote": "Well before there was a fist, there was five people, five continents, people of color."
+    },
+    {
+      "relation": "self",
+      "speaker": "John Carlos",
+      "speaker_slug": "john-carlos",
+      "source_entry": 62,
+      "timestamp": "01:47:12",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669202/",
+      "lead_in": "On the last thought that went through him as he stood on the podium:",
+      "quote": "My last thing that went through me was they could never ever put shackles on John Carlos again. They will never ever incarcerate me in my mind"
+    }
+  ],
   "movement_context": "The Olympic Project for Human Rights (OPHR) Carlos joined was founded in late November and formally announced on December 14, 1967 by Harry Edwards, then a sociology instructor at San Jose State College, alongside Tommie Smith, Lee Evans, and a coalition of Black collegiate athletes whose institutional grievance was the absence of Black coaching staff, the cross-racial admissions tier, and the IOC's continued recognition of apartheid South Africa and white-led Rhodesia in international athletic competition [src: 3, 4]. Edwards's organizing platform was sociologically deliberate: he framed Black athletes as labor whose visibility on the international Olympic stage was extractable platform value that the host institutions and broadcasters had monetized without reciprocal political acknowledgment of the conditions Black Americans faced domestically [src: 4]. Carlos transferred to San Jose State to train under sprint coach Lloyd \"Bud\" Winter, the same coaching infrastructure Smith and Evans were inside, which placed the institutional core of the OPHR's athlete recruitment at one campus [src: 3]. On October 16, 1968 Carlos finished bronze in the 200m behind Smith and Australian silver medalist Peter Norman, who wore an OPHR button on the podium in solidarity; Smith and Carlos took the medal stand in black socks (no shoes) with black gloves raised during The Star-Spangled Banner, and the International Olympic Committee, under pressure from IOC President Avery Brundage, ordered Carlos and Smith suspended from the U.S. team and expelled from the Olympic Village within forty-eight hours [src: 3, 5]. The action sat downstream of the June 4, 1967 Cleveland Summit that Bill Russell (entry 8) attended in support of Muhammad Ali's draft refusal, the earlier institutional anchor of Black-athlete political organization that Edwards's OPHR was the cross-sport collegiate-amateur continuation of [src: 4, 6]. The Carlos and Russell oral histories in this catalog share the strongest bidirectional cosine signature in the corpus precisely because the embedding catches that institutional lineage: the Black-athlete-as-political-actor model Russell and the Cleveland Summit founded in 1967, and Carlos and the OPHR extended onto the Olympic stage in 1968, is the institutional through-line both testimonies converge on [src: 4].",
-  "legacy_and_reception": "Carlos's competitive career continued past the 1968 expulsion: he tied the 100-yard world record in 1969 and later played briefly in the Canadian Football League with the Montreal Alouettes and Philadelphia Eagles before turning to coaching, first at his sons' school and then for twenty-five years as the track and field coach and in-school suspension counselor at Palm Springs High School in California [src: 5]. In 2003 the United States Olympic Committee formally inducted Smith and Carlos into the USOC Hall of Fame, the institutional reconciliation thirty-five years after the IOC expulsion [src: 5, 7]. On October 17, 2008, San Jose State University unveiled the Victory Salute Statue (sculptor Rigo 23, twenty-three feet tall, the bronze figures of Smith and Carlos on the actual podium positions and the second-place tier deliberately empty so visitors can stand on it) on the campus where Edwards and Winter had built the OPHR athletic core [src: 5, 7]. Carlos's 2011 memoir The John Carlos Story, co-written with sports journalist Dave Zirin, became the canonical first-person account of the Mexico City protest and its decades of personal cost, including the 1977 death by suicide of Carlos's first wife Kim, the financial precarity of the post-Olympics years, and the long arc back to public reception [src: 2, 7]. In the years since the August 2020 NBA work stoppage in response to the police shooting of Jacob Blake and the 2024 Paris Olympics athlete-activist commemorations, Carlos has remained publicly active as a witness for the institutional lineage his action sits inside, with appearances at universities, museum exhibitions, and the February 2026 commemorative programming around the Paris 2024 Games' athlete-activist legacy [src: 5, 7].",
+  "legacy_and_reception": "Carlos's competitive career continued past the 1968 expulsion: he equaled the 100-yard world record of 9.1 seconds in 1969, was a fifteenth-round selection of the Philadelphia Eagles in the 1970 NFL draft (a knee injury cut short the tryout), and played one season in the Canadian Football League with the Montreal Alouettes before turning to coaching, first at his sons' school and then for years as the track and field coach and in-school suspension counselor at Palm Springs High School in California [src: 5]. In 2003 Carlos was elected to the National Track and Field Hall of Fame [src: 5]. On October 17, 2005, San Jose State University unveiled the Victory Salute Statue (sculptor Rigo 23, about twenty-two feet tall, the bronze figures of Smith and Carlos on the actual podium positions and the second-place tier deliberately empty so visitors can stand on it) on the campus where Edwards and Winter had built the OPHR athletic core [src: 5, 7]. Carlos's 2011 memoir The John Carlos Story, co-written with sports journalist Dave Zirin, became the canonical first-person account of the Mexico City protest and its decades of personal cost, including the 1977 death by suicide of Carlos's first wife Kim, the financial precarity of the post-Olympics years, and the long arc back to public reception [src: 2, 7]. Carlos has continued to appear publicly as a witness for the lineage of athlete protest his action sits inside, including at universities and museum exhibitions [src: 5, 7].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/c/cb/John_Carlos%2C_Tommie_Smith%2C_Peter_Norman_1968.jpg",
