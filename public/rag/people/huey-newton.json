@@ -15,13 +15,101 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Huey_Newton,_Black_Panther_Minister_of_Defense_-_Black_Panther_poster.jpg",
     "date_taken": "1968"
   },
-  "ai_reading": "Three corpus voices discuss Newton, the smallest external-figure footprint in the catalog: Elmer Dixon (entry 37, Seattle BPP co-founder), Aaron Dixon (entry 1, Seattle BPP captain), and Kathleen Cleaver (entry 73, BPP Communications Secretary). All three are BPP-cohort voices, and all three sit at the Nonviolence-as-Theology pole of the catalog's nonviolence axis (the catalog's documented AI-vs-culture inversion). The embedding therefore reads Newton as discussed only within the BPP's own internal-organizational vocabulary, never crossing into the SCLC/SNCC/NAACP transcripts the catalog separately tracks, consistent with his cultural placement as the BPP-internal theorist whose ideas did not circulate widely outside the party.",
-  "biographical_paragraph": "Huey P. Newton is discussed in this corpus by 3 interviewees across the catalog (Elmer Dixon (entry 37), Aaron Dixon (entry 1), Kathleen Cleaver (entry 73)), but was not interviewed for the Civil Rights History Project; this catalog page treats Huey P. Newton as an external figure whose presence in the archive is mediated through other voices. The canonical scholarly source the catalog cites for biographical orientation appears as [src: 1] below.",
+  "ai_reading": "Every corpus passage that names Huey P. Newton comes from a Black Panther Party voice: Elbert \"Big Man\" Howard (entry 35), who places Newton at the party's 1966 Oakland founding; Elmer Dixon (entry 37), who renders Newton as the party's in-house teacher of theory; Aaron Dixon (entry 1), who anchors him to the Seventh-and-Wood shootout and the international Free Huey campaign; and Roberta Alexander (entry 110), who positions him inside the party's central-committee leadership tier. The cross-reference structure is the observation here: the cosine neighborhood that surrounds Newton in this corpus is entirely BPP-internal, and the surviving testimony reaches him through the party's own organizational vocabulary (founding, theory, leadership, the trial) rather than through the SCLC, SNCC, or NAACP transcripts the catalog separately tracks. The precomputed influence graph counts three of these discussants and, on a name-detection pass, missed Howard's and Alexander's references while crediting a Kathleen Cleaver mention that the transcript records only as an ASR-garbled fragment; the snippet evidence below corrects the discussant set to the four voices whose passages name him in clean, attributable text.",
+  "biographical_paragraph": "Huey P. Newton was not interviewed for the Civil Rights History Project; this catalog page treats him as an external figure whose presence in the archive is mediated through other voices, the four Black Panther Party interviewees who name him in their oral histories: Elbert \"Big Man\" Howard (entry 35), Elmer Dixon (entry 37), Aaron Dixon (entry 1), and Roberta Alexander (entry 110). In their testimony he co-founds the Black Panther Party for Self-Defense with Bobby Seale in Oakland, teaches the party's theory of power, stands trial after the 1967 Seventh-and-Wood shooting, and sits among the small group that ran the party's central committee [src: 2, 3, 4, 5]. His own account of that arc, including the concept of \"revolutionary suicide,\" is set out in his memoir [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "00:13:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "Elbert \"Big Man\" Howard, a founding member of the Black Panther Party, recalls meeting Newton and Bobby Seale as a student at Merritt College in Oakland:",
+      "quote": "And that's where I met Bobby Seale and Huey Newton."
+    },
+    {
+      "relation": "about",
+      "speaker": "Elmer Dixon",
+      "speaker_slug": "elmer-dixon",
+      "source_entry": 37,
+      "timestamp": "01:05:33",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669156/",
+      "lead_in": "Elmer Dixon, who co-founded the party's Seattle chapter, traces the origin of the Black Panther name to Newton and Seale's borrowing from an Alabama organization:",
+      "quote": "And when Huey and Bobby decided that they were going to form the Black Panther Party, they took the name from another organization that had the Panther as a symbol. They were the Lowndes County Freedom Organization."
+    },
+    {
+      "relation": "about",
+      "speaker": "Elmer Dixon",
+      "speaker_slug": "elmer-dixon",
+      "source_entry": 37,
+      "timestamp": "01:06:46",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669156/",
+      "lead_in": "Elmer Dixon describes Newton as the party's teacher of political theory, quoting a definition of power Newton drilled into members:",
+      "quote": "But when, in order to get that point across, Huey used to teach us that power is the ability to define phenomena and make it act in a desired manner."
+    },
+    {
+      "relation": "about",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "01:10:32",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "Roberta Alexander, who edited the party's newspaper, places Newton in the small leadership group that ran the central committee alongside David Hilliard and Masai Hewitt:",
+      "quote": "David Hilliard, Masai Hewitt Hewitt, very important person, Huey P. Newton and it was the three of them above all and Elbert \"Big Man\" Howard was like the next tier but it was like this group and then there might be one or another coming in and they made the decision so they were smart they were very smart they had a lot of work to do."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "00:58:03",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Aaron Dixon, captain of the Seattle chapter, identifies the Oakland street corner where Newton's 1967 shooting and the death of a police officer occurred:",
+      "quote": "And this is the same corner that Huey Newton had his shootout, he was wounded and two police were one was killed, one was wounded. Same corner, seventh and wood."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:13:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Aaron Dixon recounts the party's delegation to the United Nations during the international Free Huey campaign built around Newton's trial:",
+      "quote": "we went to the U.N. for the purpose of getting the U.N. to intervene in the trial of Huey Newton and intervene on the genocidal practices of the U.S. against the Black community. And so, it was a whole plan that the party had developed by going into the U.N. and having Black Panther Party members standing with free Huey flags behind every flag of the United Nations."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/800129",
       "title": "Huey P. Newton, Revolutionary Suicide",
       "publisher": "Harcourt Brace Jovanovich, 1973 (reprinted Penguin Classics, 2009); WorldCat OCLC 800129"
+    },
+    {
+      "url": "https://www.loc.gov/item/2016655436/",
+      "title": "Elbert \"Big Man\" Howard oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 35, the source of the founding-encounter quote at 00:13:33"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669156/",
+      "title": "Elmer Dixon oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 37, the source of the party-naming and theory-of-power quotes"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669186/",
+      "title": "Aaron Dixon oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 1, the source of the Seventh-and-Wood and Free Huey United Nations quotes"
+    },
+    {
+      "url": "https://www.loc.gov/item/2016655433/",
+      "title": "Roberta Alexander oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039); entry 110, the source of the central-committee leadership-tier quote"
     }
   ]
 }

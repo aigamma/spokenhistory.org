@@ -16,8 +16,65 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Mamie_Till_1955.jpg",
     "date_taken": "1955-09-15"
   },
-  "ai_reading": "Till-Mobley is referenced eight times across the catalog, more than any other not-itself-interviewed figure tracked here. The references cluster around the Bassett joint interview (entry 38, where the Bassetts met at a 1955 protest raising funds for her), the Wheeler Parker Jr. (entry 125) and Simeon Wright (entry 138) eyewitness pages, and the Emmett Till external_figure page. She is not herself a Civil Rights History Project interviewee (her death in January 2003 predated the project by seven years). Her standalone catalog page is added because the catalog's Mississippi-and-NAACP cohort cannot be fully resolved without the woman whose September 1955 decision to release the funeral photographs is the deliberate-public-witness act that recruited many of the corpus's later organizers; her own catalog page is the institutional-credit corrective to the literature that often centers her son's death without the witnessing-strategy decision that gave the death its public force. The novel observation her page surfaces is the deliberate-publicity signature: the September 1955 funeral was a strategic communications decision, not an automatic public event; Mamie Till-Mobley insisted on the open casket against the white Mississippi funeral director's objection and against the Chicago Cook County funeral director's hesitation, then released the photographs to David Jackson at Jet on September 15, and the resulting national circulation was the deliberate consequence of her choices.",
+  "ai_reading": "Till-Mobley surfaces across the catalog along two distinct paths the embedding keeps adjacent. The cross-reference path runs through the Bassett joint interview (entry 38, where the Bassetts met at a 1955 protest raising funds for her), the Wheeler Parker Jr. (entry 125) and Simeon Wright (entry 138) eyewitness pages, the Andrew Goodman page (which pairs her post-death institution-building with the Goodman family's), and the Emmett Till external_figure page. The spoken-corpus path runs through five interviewees who name her directly, two of them family (Wheeler Parker Jr., Simeon Wright) and three of them not (Jet correspondent Simeon Booker, NAACP staffer Mildred Bond Roxborough, and the Ladner sisters). The pattern that path makes visible is that the corpus remembers her less as a grieving mother than as an organizer of her own publicity: Booker recalls her demanding the casket be opened, Roxborough recalls touring her across NAACP branches as she grew more militant, and Simeon Wright recalls that she would not let the case rest. She is not herself a Civil Rights History Project interviewee (her death in January 2003 predated the project by seven years). Her standalone catalog page is added because the catalog's Mississippi-and-NAACP cohort cannot be fully resolved without the woman whose September 1955 decision to release the funeral photographs is the deliberate-public-witness act that recruited many of the corpus's later organizers; her own catalog page is the institutional-credit corrective to the literature that often centers her son's death without the witnessing-strategy decision that gave the death its public force. The novel observation her page surfaces is the deliberate-publicity signature: the September 1955 funeral was a strategic communications decision, not an automatic public event; Mamie Till-Mobley insisted on the open casket against the white Mississippi funeral director's objection and against the Chicago Cook County funeral director's hesitation, then released the photographs to David Jackson at Jet on September 15, and the resulting national circulation was the deliberate consequence of her choices.",
   "biographical_paragraph": "Mamie Carthan was born November 23, 1921 in Webb, Mississippi to Wiley Nash and Alma Carthan; her family moved to Argo, Illinois (the same Argo community Wheeler Parker Jr. and Simeon Wright, the Till cousins documented in catalog entries 125 and 138, settled in) when she was two. She graduated valedictorian of Argo Community High School in 1940 and married Louis Till in 1940; their son Emmett was born July 25, 1941. Louis Till died in U.S. Army custody in Italy in 1945. After Emmett's murder in August 1955 she insisted on the open-casket funeral at Roberts Temple Church of God in Christ in Chicago, September 3-6, 1955 (an estimated 50,000 mourners passed by the casket), and released the funeral photographs to David Jackson at Jet magazine, the issue that ran September 15, 1955. She returned to teach in Chicago Public Schools across 1960-1983. She remarried Gene Mobley in 1957 (the man visible alongside her in the morgue photograph). Her 2003 memoir Death of Innocence: The Story of the Hate Crime That Changed America (with Christopher Benson, One World/Random House) is the canonical first-person account of her decisions in September 1955 and the four-decade civil rights speaking career that followed. She died January 6, 2003 in Chicago at eighty-one.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Simeon Booker",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:12:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Simeon Booker, the Jet correspondent who covered the Emmett Till murder with his photographer David Jackson, recalls staying up with Till-Mobley the night her son's body returned from Mississippi and the decision she made when it arrived:",
+      "quote": "when we were in the body, we came in from Mississippi, and when it did come, she demanded that the body be open. So the world could see what they did to my boy."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:23:23",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "Mildred Bond Roxborough, the NAACP national-office staff member who arranged a tour of NAACP branches for Mrs. Bradley, describes how the speaking circuit changed her:",
+      "quote": "She was a woman who was very articulate. And as she campaigned or visited the units across the country, I should say, she grew more militant and more informed and became more involved. And then, of course, she started speaking more forcefully and demanding, making demands, which should be met in terms of acquisition of civil rights and justice for her son. And she insisted on open for example for opening the casket when he was funeralized in Chicago, which was quite an experience from one to have."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Wright",
+      "speaker_slug": "simeon-wright",
+      "source_entry": 138,
+      "timestamp": "00:34:26",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669109/",
+      "lead_in": "Simeon Wright, the first cousin who shared a bed with Emmett Till on the night of the abduction, answers the interviewer's observation that Till's mother was not passive after the murder:",
+      "quote": "She did that, yes. She wouldn't lay down. She wouldn't - what happened to her son, she was not going to let it rest until she got justice. And she fought down through the years trying to get justice for her son."
+    },
+    {
+      "relation": "about",
+      "speaker": "Wheeler Parker, Jr.",
+      "speaker_slug": "wheeler-parker-jr",
+      "source_entry": 125,
+      "timestamp": "00:34:22",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669110/",
+      "lead_in": "Wheeler Parker, Jr., Till's cousin who had traveled with him to Mississippi, recalls arriving back at Till-Mobley's Chicago home before the body had been found:",
+      "quote": "I arrived at the train station. I can't even remember who picked me up, but I know that they risked me off to Mamie Till-Mobley's house. We were on 64th and St. Lawrence. And when I got upstairs, everybody was sitting around, saw them, because they don't know what happened to him. They had not found his body. And they were looking at me and Ms. Till told me to go hold my mother and I did that."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorie Ann Ladner and Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:04:45",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "In the Ladner sisters' joint interview, one of the sisters recounts a recent television documentary in which Till-Mobley described viewing her son's body:",
+      "quote": "And Mrs. [Mamie Till] Mobley was talking, Emmett Till's mother was talking. And she was describing how he looked when she went to the funeral. They wanted to bury him right then and there without opening the casket. And she went on, she said, no, I don't have time to faint."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/51985418",

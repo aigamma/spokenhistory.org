@@ -16,8 +16,65 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Eldridge_Cleaver,_from_Black_Panther_newspaper,_October_5_1968.png",
     "date_taken": "1968-10-05"
   },
-  "ai_reading": "Eldridge Cleaver is named twice in the catalog, both within his then-wife Kathleen Cleaver's (entry 73) bio: as the spouse who shared the Algiers exile years after the April 6, 1968 Oakland shootout (the same shootout that killed Bobby Hutton, catalog entry of its own) and as the central figure of the 1971 BPP split from Huey P. Newton's wing. He is not himself a Civil Rights History Project interviewee. His standalone catalog page is added so the Kathleen Cleaver bio's narrative arc has both halves of its central marriage findable, and so the broader BPP-leadership-trio (Newton + Seale + Cleaver) has its third member as a discrete page parallel to the Newton and Seale catalog entries already in place. The novel observation his page surfaces is the post-BPP-political-trajectory inversion: Cleaver's 1968 Soul on Ice was one of the canonical Black Power texts, and by 1986 he was a Republican delegate to the California Republican Party state convention and an evangelical Christian; the catalog's BPP-cohort transcripts (Aaron Dixon, Elmer Dixon, Howard, Cleaver herself, Mtume, Hopkins) speak about him as the central political-arc puzzle of the party.",
+  "ai_reading": "Cleaver was never himself a Civil Rights History Project interviewee, so everything the corpus holds about him is second-voice, and the set of voices is narrower and more specific than his national profile would predict. The interviewees who name him are not a cross-section of the movement; they are the Black Panther Party cohort almost exclusively: Aaron Dixon (entry 1), Elbert \"Big Man\" Howard (entry 35), Evans Derrell Hopkins (entry 42), and Roberta Alexander (entry 110), with his then-wife Kathleen Cleaver (entry 73) the only catalog bio that names him in prose. Among that cohort the recurring frame is not Soul on Ice or the 1968 presidential run but the 1971 split from Huey P. Newton: Dixon, Hopkins, and Alexander each route their account of him through the rupture rather than through his authorship or his iconography, so the corpus's center of gravity on Cleaver is the party's internal fracture, not his public celebrity. The biographical record runs the other way: his 1968 Soul on Ice was one of the canonical Black Power texts, and by 1986 he was a Republican delegate to the California Republican Party state convention and an evangelical Christian. The catalog's standalone page exists so the broader BPP-leadership trio (Newton, Seale, Cleaver) has its third member findable as a discrete page parallel to the Newton and Seale entries already in place.",
   "biographical_paragraph": "Cleaver was born August 31, 1935 in Wabbaseka, Arkansas to sharecropping parents who moved the family to Los Angeles when he was twelve. He served prison time for marijuana possession (1953-1957) and assault with intent to kill (1957-1966), reading and writing the essays at Folsom and San Quentin that became Soul on Ice (McGraw-Hill, 1968), the autobiographical-and-polemical book that brought him to national attention. He met Bobby Seale and Huey P. Newton in 1967 and became the Black Panther Party's Minister of Information; he married Kathleen Neal Cleaver in San Francisco that December. The April 6, 1968 Oakland shootout in which seventeen-year-old Bobby Hutton was killed left Cleaver wounded; he fled to Cuba in late 1968 and then to Algeria, where he and Kathleen Cleaver lived in exile across the next several years, running the BPP's International Section from Algiers. His 1971 split from Newton over party direction broke the central committee. He returned to the United States in 1975 under negotiated terms, served eight months for the April 1968 shootout, and across the next two decades drifted toward Mormonism, then evangelical Christianity, then Republican politics. He died May 1, 1998 in Pomona, California at sixty-two.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Elbert \"Big Man\" Howard",
+      "speaker_slug": "elbert-big-man-howard",
+      "source_entry": 35,
+      "timestamp": "00:37:22",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655436/",
+      "lead_in": "Elbert \"Big Man\" Howard, a founding member of the Black Panther Party and editor of its newspaper, recalls the moment Cleaver arrived in the party's orbit after his release from prison:",
+      "quote": "And, you know, eventually Eldridge Cleaver got out of prison and he was best-selling author with his book, Soul on Ice."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:25:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Aaron Dixon, captain of the Seattle chapter, describes Cleaver as the leading voice for the party's armed-confrontation faction and ties him to the April 1968 Oakland shootout:",
+      "quote": "And Eldridge Cleaver was a chief proponent of that. He is the one that caused that incident where little Bobby Hutton was killed."
+    },
+    {
+      "relation": "about",
+      "speaker": "Aaron Dixon",
+      "speaker_slug": "aaron-dixon",
+      "source_entry": 1,
+      "timestamp": "01:25:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669186/",
+      "lead_in": "Dixon then traces Cleaver's flight from the United States after the shootout:",
+      "quote": "So but anyway Eldridge Cleaver has to go in exile you know and I think by 1970 he goes in exile."
+    },
+    {
+      "relation": "about",
+      "speaker": "Evans Derrell Hopkins",
+      "speaker_slug": "evans-derrell-hopkins",
+      "source_entry": 42,
+      "timestamp": "00:40:00",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669128/",
+      "lead_in": "Evans Derrell Hopkins, who joined the party in 1971, places his own entry against the backdrop of the Cleaver-Newton rupture:",
+      "quote": "Well, luckily I joined the Panther Party in the year of 1971. This was after Huey Newton had returned from prison, and there was a break in which Eldridge Cleaver had what we called defected or tried to split the party."
+    },
+    {
+      "relation": "about",
+      "speaker": "Roberta Alexander",
+      "speaker_slug": "roberta-alexander",
+      "source_entry": 110,
+      "timestamp": "01:13:58",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655433/",
+      "lead_in": "Roberta Alexander, who organized with the party in 1969 and spoke on women at its United Front Against Fascism conference, recalls Cleaver's formulation on the role of women in the movement:",
+      "quote": "Eldridge Cleaver had come out with women are other half not are lesser half but are other half"
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/325095",

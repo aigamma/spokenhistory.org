@@ -16,7 +16,86 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Emmett_Till_1954.jpg",
     "date_taken": "1954-12-25"
   },
-  "ai_reading": "Till is referenced three times in the catalog (in Mississippi-organizing transcripts where his 1955 murder is the precipitating event for several interviewees' own movement entries). He is not himself a Civil Rights History Project interviewee (his murder predated the project by five decades). His standalone catalog page is added because the corpus's Mississippi cohort cannot be fully resolved without the August 1955 event their own organizing dates from; the open-casket funeral and the Jet magazine photographs are the catalog's clearest example of a non-organizer pre-movement event whose photographic legacy directly catalyzed the cohort the corpus is built around. The novel observation his page surfaces is the chronological-anchor function: Till's August 1955 murder predates the December 1955 Montgomery bus boycott by four months; for several Mississippi-born interviewees in the corpus, the Till funeral photographs reaching Chicago and traveling outward via Jet are the conscious-political-awakening moment, the catalog's primary instance of the visual-evidence-of-anti-Black-violence channel by which the next decade's organizing was recruited.",
+  "ai_reading": "Till is not himself a Civil Rights History Project interviewee (his murder predated the project by five decades), yet the corpus carries an unusual density of first-hand testimony about him. The precomputed event cluster for his case (the corpus's only standalone person-keyed event file) retrieves passages from five interviews: Wheeler Parker Jr. (entry 125), who is the last living witness to the August 24, 1955 encounter at Bryant's Grocery; his cousin Simeon Wright (entry 138), who was in the bed next to Till when Roy Bryant and J. W. Milam took him; the journalist Simeon Booker (entry 9), who was with Till's mother when she demanded the open casket; the Ladner sisters (entry 75), who saw the funeral photograph on the cover of Jet; and Emmett W. Bassett (entry 38). What the retrieval substrate surfaces, against the cultural memory of Till as a symbol, is that this corpus holds him as direct eyewitness record rather than as iconography: the strongest-scoring passages are not commemorative but procedural, the abduction, the body in the Tallahatchie, the trial, told by people who were in the rooms. The second observation is a chronological-anchor function: the August 1955 murder predates the December 1955 Montgomery bus boycott by four months, and for the Mississippi-born voices in the corpus the Jet photographs are repeatedly the awakening moment, the catalog's clearest instance of the visual-evidence-of-anti-Black-violence channel by which the next decade's organizing was recruited.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Wheeler Parker, Jr.",
+      "speaker_slug": "wheeler-parker-jr",
+      "source_entry": 125,
+      "timestamp": "00:13:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669110/",
+      "lead_in": "Wheeler Parker Jr., Till's cousin and the last living witness, recounts the August 24, 1955 moment at Bryant's Grocery and Meat Market in Money, Mississippi:",
+      "quote": "So I left Emmett in the store, and Simeon Wright came in right behind him. Then the both of them came out of the store. And after they came out and facing the store, Carolyn Bryant Donham came out. She's walking to facing the store to the right of the store. And Emmett whistled."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Wright",
+      "speaker_slug": "simeon-wright",
+      "source_entry": 138,
+      "timestamp": "00:28:38",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669109/",
+      "lead_in": "Simeon Wright, who shared a bed with Till at their great-uncle Moses Wright's home, describes the night of August 28, 1955 when Roy Bryant and J. W. Milam came for his cousin:",
+      "quote": "They awakened Wheeler and said, \"This is the wrong boy.\" Said, \"We're looking for the fat boy from Chicago,\" and they marched around to my bedroom.And I heard the noise, you know, the loud talking, and I woke up and saw these two white men standing at the foot of my bed. One had a gun, flashlight. Later on found out it was J. W. Milam. He ordered me to lay back down and go back to sleep. And he made Emmett get up and dress and marched him out to the truck."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Wright",
+      "speaker_slug": "simeon-wright",
+      "source_entry": 138,
+      "timestamp": "00:30:08",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669109/",
+      "lead_in": "Wright recalls the moment the abductors drove away from the house with Till:",
+      "quote": "And once they marched him out to the truck, a lady's voice - she responded when they asked her, \"Is this the right one?\" A lady responded, \"He is.\" Someone said, \"Who was it?\" I said, \"We believed at that time it was Carolyn Bryant.\" Nothing has happened in fifty-six years to cause me to change my mind. I still believe it was her. I will go to my grave believing that. Now, she has a chance to rebut that, but she chose not to. And they drove off, and we never saw Emmett alive again."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Wright",
+      "speaker_slug": "simeon-wright",
+      "source_entry": 138,
+      "timestamp": "00:36:11",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669109/",
+      "lead_in": "Wright describes the recovery of Till's body from the Tallahatchie River and the Leflore County sheriff, George Smith, halting an attempt to bury it the same day:",
+      "quote": "And that's when they had found his body in the Tallahatchie River about twenty miles north of where we lived. Actually, they wanted us to bury his body that same day. We had - the body - they shipped it. Tallahatchie County sent it out to Leflore County, where he was kidnapped from, and we had the grave dug, the body there, and the sheriff of Leflore County came, George Smith, and put a stop to it."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Booker",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:12:50",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Simeon Booker, the Jet and Ebony journalist who covered the case, recalls being with Mamie Till-Mobley when the body returned to Chicago and she decided on an open casket:",
+      "quote": "and when we were in the body, we came in from Mississippi, and when it did come, she demanded that the body be open. So the world could see what they did to my boy."
+    },
+    {
+      "relation": "about",
+      "speaker": "Simeon Booker",
+      "speaker_slug": "simeon-booker-and-moses-newson",
+      "source_entry": 9,
+      "timestamp": "00:13:11",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669130/",
+      "lead_in": "Booker describes his Jet photographer, David Jackson, making the funeral image that the magazine published on September 15, 1955:",
+      "quote": "When they opened the clasket in the funeral, I remember a piece of his skull fell off, and my photographer went over and picked it up and put it back on before he shot a picture."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorie Ann Ladner and Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:04:30",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "In their joint interview, the Mississippi-born SNCC organizers Dorie Ann and Joyce Ann Ladner recall the Jet magazine cover and a later documentary in which Mamie Till-Mobley described the funeral:",
+      "quote": "We saw it on the cover of Jet Magazine. And recently, I was watching, two weeks ago, I was watching TV one. And they had this documentary on, I can't call this name right now, but on Emmett Till. And Mrs. [Mamie Till] Mobley was talking, Emmett Till's mother was talking. And she was describing how he looked when she went to the funeral. They wanted to bury him right then and there without opening the casket."
+    }
+  ],
   "biographical_paragraph": "Till was born July 25, 1941 in Chicago to Mamie Carthan Till and Louis Till; his father had been executed by the U.S. Army for rape and murder in Italy in 1945, a fact Mamie did not initially share with her son. He was raised in the Bronzeville neighborhood of Chicago and attended McCosh Elementary School. On August 20, 1955 he traveled with his cousin Curtis Jones to visit his great-uncle Moses Wright in Money, a small Tallahatchie River settlement in Leflore County, Mississippi. On August 24, 1955 Till and a group of cousins stopped at Bryant's Grocery and Meat Market; what passed between Till and Carolyn Bryant inside the store was contested for sixty years (Bryant testified that he made advances and used vulgar language; Bryant publicly recanted this account in Timothy B. Tyson's 2017 The Blood of Emmett Till). On the night of August 28, 1955 Roy Bryant and his half-brother J. W. Milam abducted Till from Wright's home; they beat him, gouged out an eye, shot him, tied a 75-pound cotton-gin fan to his neck with barbed wire, and threw the body into the Tallahatchie River. His body was recovered three days later and shipped back to Chicago. Mamie Till-Mobley insisted on an open-casket funeral at Roberts Temple Church of God in Christ in Chicago, September 3-6, 1955; the photographs Jet magazine published in its September 15, 1955 issue, and the David Jackson coverage that followed, broke the national silence around antebellum racial violence in the postwar South. Bryant and Milam were acquitted by an all-white jury in September 1955; both confessed to the killing in a 1956 paid interview with William Bradford Huie in Look magazine, protected by double-jeopardy from re-prosecution. The Anti-Lynching Crusade extended through the 1990s; the federal Emmett Till Antilynching Act was signed into law in 2022. The canonical scholarly source on the case is Devery S. Anderson's 2015 University Press of Mississippi study cited below.",
   "sources": [
     {
