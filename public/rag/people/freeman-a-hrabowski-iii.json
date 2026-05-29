@@ -7,8 +7,76 @@
   "born": 1950,
   "died": null,
   "role_summary": "President of the University of Maryland, Baltimore County (1992-2022); founder of UMBC's Meyerhoff Scholars Program; arrested at twelve in the 1963 Birmingham Children's Crusade.",
-  "ai_reading": "Hrabowski sits at -0.81 on the Tactical Pragmatism vs Strategic Vision axis, far toward Tactical Pragmatism, the most-tactical reading in the catalog's audited subset so far. This is the AI-vs-culture mismatch on his page: a thirty-year university president whose institutional posture and published books (The Empowered University, 2019; The Resilient University, 2024) are explicitly long-arc strategic-vision work, lands on the opposite pole of the axis in his oral history. The embedding may be catching the specificity of the Birmingham 1963 narrative (the Children's Crusade arrest at age twelve dominates his interview's most-cited passages) and reading those concrete-action memories as tactical rather than as the strategic-pedagogical framing his administrative career carries. His top semantic neighbors are the Abernathy family (entry 28, count 99), Jennifer Lawson (entry 59), Eddie Holloway (entry 33), Harold K. Brown (entry 55), and Mildred Pitts Walter (entry 91), a Birmingham-and-education cluster that confirms the Birmingham anchor over the Baltimore presidency in the vector signature.",
+  "ai_reading": "Hrabowski sits at -0.81 on the Tactical Pragmatism vs Strategic Vision axis (normalized), well toward Tactical Pragmatism: among the most-tactical readings in the catalog, third after Ruby Sales (entry 112, normalized -1.00) and Gwendolyn Annette Perkins Duncan (entry 51, normalized -0.89). This is the AI-vs-culture mismatch on his page: a thirty-year university president whose institutional posture and published books (The Empowered University, 2019; The Resilient University, 2024) are explicitly long-arc strategic-vision work, lands toward the tactical pole of the axis in his oral history. The embedding may be catching the specificity of the Birmingham 1963 narrative (the Children's Crusade arrest at age twelve dominates his interview's most-cited passages) and reading those concrete-action memories as tactical rather than as the strategic-pedagogical framing his administrative career carries. His top semantic neighbors by shared-passage count are the Abernathy family (entry 28, count 99), Jennifer Lawson (entry 59, count 70), Eddie Holloway (entry 33, count 62), Harold K. Brown (entry 55, count 58), and Mildred Pitts Walter (entry 91, count 52), a cluster the embedding builds around the Birmingham childhood and the education-and-uplift material rather than around the Baltimore presidency.",
   "biographical_paragraph": "Hrabowski was twelve in May 1963 when he was arrested in Birmingham during what later was called the Children's Crusade, the mass-protest action that drew school-age Black children into the city's segregation campaign; his arrest is one of the most-cited single scenes in his interview record [src: 2]. He went on to a forty-year career in higher education that culminated in three decades (1992-2022) as president of the University of Maryland, Baltimore County, where he founded and chaired the Meyerhoff Scholars Program supporting Black students into STEM doctorates [src: 3]. He has published with Johns Hopkins University Press: The Empowered University (2019) and The Resilient University (2024) [src: 3]. His Library of Congress oral history is entry 45 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Freeman A. Hrabowski III",
+      "speaker_slug": "freeman-a-hrabowski-iii",
+      "source_entry": 45,
+      "timestamp": "00:30:14",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669131/",
+      "lead_in": "Hrabowski recounts the night at a Birmingham mass meeting when he first heard the proposal to bring children into the marches, and asked the speaker's name:",
+      "quote": "But amazingly, when I heard this man say that what he was proposing, and that is involving children in the march, could lead to children being able to go to any... to the best schools in our city. Now, that got my attention."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freeman A. Hrabowski III",
+      "speaker_slug": "freeman-a-hrabowski-iii",
+      "source_entry": 45,
+      "timestamp": "00:35:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669131/",
+      "lead_in": "On how he came to lead a group of children in the march:",
+      "quote": "And because I was asking a lot of questions in the little training session, it chose me to lead a group of kids."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freeman A. Hrabowski III",
+      "speaker_slug": "freeman-a-hrabowski-iii",
+      "source_entry": 45,
+      "timestamp": "00:39:09",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669131/",
+      "lead_in": "At the steps of Birmingham City Hall, an official confronted the child marchers; Hrabowski describes what happened next:",
+      "quote": "He spat on me. I would never forget it. He spat in my face. Picked me up and threw me in. And they came and got the kids and they threw us into the paddy wagon."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freeman A. Hrabowski III",
+      "speaker_slug": "freeman-a-hrabowski-iii",
+      "source_entry": 45,
+      "timestamp": "00:43:36",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669131/",
+      "lead_in": "While the children were held in the Birmingham jail, Martin Luther King Jr. came with their parents and spoke to them through the bars:",
+      "quote": "And we were looking through the bars. And they were singing the songs. And he spoke. And he said, what you do this day will have an impact on children getting going. I never forget that."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freeman A. Hrabowski III",
+      "speaker_slug": "freeman-a-hrabowski-iii",
+      "source_entry": 45,
+      "timestamp": "00:55:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669131/",
+      "lead_in": "Years later, when Eugene 'Bull' Connor died, Hrabowski's mother wept; he recalls what she told him:",
+      "quote": "She said, Freeman, but he was somebody's child. All of what he did came because of how he was raised."
+    },
+    {
+      "relation": "self",
+      "speaker": "Freeman A. Hrabowski III",
+      "speaker_slug": "freeman-a-hrabowski-iii",
+      "source_entry": 45,
+      "timestamp": "01:11:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669131/",
+      "lead_in": "On the origin of the Meyerhoff Scholars Program, which grew from his conversations with the philanthropist Robert E. Meyerhoff about Black men in science:",
+      "quote": "And fortunately, I had met Robert E. Meyerhoff, who is not black, he's Jewish, and a philanthropist. And we had conversations about black males and he wanted to make a difference in that group."
+    }
+  ],
   "movement_context": "The May 1963 Birmingham Children's Crusade Hrabowski was arrested in was the Southern Christian Leadership Conference's tactical pivot inside the broader Project C (for Confrontation) Birmingham desegregation campaign Martin Luther King Jr., Fred Shuttlesworth, and Ralph David Abernathy (catalog entry 28) had opened on April 3, 1963; the adult-volunteer rolls had been depleted by April's mass-arrest waves (King himself was jailed April 12, the eight days that produced the April 16 Letter from Birmingham Jail), and James Bevel proposed the children-as-marchers tactic from inside the SCLC strategy meetings at the Gaston Motel in late April [src: 5, 6]. On the morning of Thursday May 2, 1963 approximately one thousand Black schoolchildren, ages six through eighteen, walked out of training sessions at the Sixteenth Street Baptist Church on Sixth Avenue North and marched into downtown Birmingham in waves; by the afternoon of May 3 Bull Connor's Birmingham Police Department and Birmingham Fire Department had deployed high-pressure fire hoses calibrated to skin-stripping pressure (one hundred pounds per square inch, capable of removing bark from trees) and K-9 units against the children gathered in Kelly Ingram Park across the street from the church [src: 5, 7]. Charles Moore's photograph in Life magazine of three teenagers being driven against a brick wall by a fire hose and Bill Hudson's Associated Press photograph of a German shepherd lunging at fifteen-year-old Walter Gadsden ran in newspapers across the United States the week of May 4-7 and are credited in the historiographical record as the visual evidence that shifted national white opinion in advance of the June 11, 1963 Kennedy civil rights address [src: 5, 7]. Hrabowski's specific encounter with Bull Connor (the Public Safety Commissioner who had personally directed the dog-and-hose deployment) was recorded in his oral history and in subsequent interviews: as the child leader of a delegation arrested at Connor's office, Hrabowski was singled out by Connor, spat upon, and held in the Birmingham jail for five days under Connor's instruction [src: 2, 7]. Four months later, on Sunday September 15, 1963, a Klan bomb planted under the east-side staircase of the same Sixteenth Street Baptist Church killed Addie Mae Collins (age 14), Denise McNair (age 11), Carole Robertson (age 14), and Cynthia Wesley (age 14) as they were dressing for the morning service, the atrocity that anchors Diane McWhorter's Pulitzer Prize-winning history Carry Me Home and that the federal Robert Chambliss conviction in 1977 and subsequent Thomas Blanton (2001) and Bobby Frank Cherry (2002) convictions reopened across the decades that followed [src: 6, 7]. The SCLC institutional infrastructure that ran the Birmingham campaign Hrabowski was caught up in was the same Abernathy-King partnership documented in catalog entry 28: Abernathy was arrested with King on April 12, 1963 and co-signed (via Wyatt Tee Walker's transmission) the Letter from Birmingham Jail [src: 8].",
   "legacy_and_reception": "Hrabowski completed his bachelor's degree in mathematics at Hampton Institute in 1970, his master's in mathematics at the University of Illinois at Urbana-Champaign in 1971, and his Ph.D. in higher education administration and statistics at the University of Illinois in 1975 (dissertation on the academic achievement of Black students at majority-white universities) [src: 3, 9]. He joined Coppin State College's mathematics faculty in 1976, served as Coppin's vice president for academic affairs from 1981 to 1987, moved to UMBC as vice provost in 1987, was named UMBC's executive vice president in 1990, and became UMBC's third president on May 11, 1992 (a position he held for the next thirty years through his June 30, 2022 retirement) [src: 3, 9]. In 1988 he co-founded with the Baltimore philanthropists Robert and Jane Meyerhoff the Meyerhoff Scholars Program at UMBC, a full-tuition-plus-stipend cohort scholarship designed to recruit high-achieving Black students into the natural sciences and engineering and graduate them into Ph.D. programs; as of UMBC's 2022 institutional reporting the Meyerhoff Scholars Program had produced more Black M.D.-Ph.D. graduates and Black natural-sciences Ph.D. graduates than any other American undergraduate institution [src: 3, 9]. He was named one of Time magazine's 100 Most Influential People in the World in 2008, received the 2011 TIAA-CREF Theodore M. Hesburgh Award for Leadership Excellence in Higher Education, was awarded the 2012 Carnegie Medal of Philanthropy by the Carnegie Corporation of New York for his STEM-pipeline work, and on November 24, 2015 received the Presidential Medal of Freedom from President Barack Obama, with Obama's citation explicitly naming both the Birmingham Children's Crusade arrest and the Meyerhoff Scholars Program founding as joint grounds for the honor [src: 3, 9].",
   "photo": {

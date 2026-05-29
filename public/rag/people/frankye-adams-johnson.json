@@ -5,7 +5,64 @@
   "entry_number": 43,
   "display_name": "Frankye Adams-Johnson",
   "role_summary": "NAACP Jackson Youth Movement secretary; SNCC voter-registration organizer at Tougaloo College (1964-1967); co-organizer of the White Plains, New York Black Panther Party chapter (1967); English professor and poet at Jackson State University.",
-  "ai_reading": "Adams-Johnson's top semantic neighbor is Charles McLaurin (entry 17) at a cosine count of 128; the broader cluster includes Euvester Simpson (entry 41, who was beaten with Fannie Lou Hamer at the Winona jail in June 1963), the joint Geraldine Crawford Bennett / Toni Breaux / Willie Elliot Jenkins interview (entry 46), and the Ladner sisters joint interview (entry 75). The cluster is the Mississippi-Jackson-Tougaloo-and-NAACP-Youth cohort that her organizing arc anchors. The novel observation her page surfaces is the cross-movement-transition signature: Adams-Johnson moved from NAACP Youth Movement -> SNCC Tougaloo work -> Black Panther Party New York co-organizing across a 1962-1967 arc; the embedding catches that movement-transition trajectory as a coherent vector signature rather than as three distinct organizational phases the historiography often partitions, the same pattern visible in Junius Williams (entry 72) and Phil Hutchings (entry 98).",
+  "ai_reading": "Adams-Johnson's top semantic neighbor in this corpus is Charles McLaurin (entry 17), who recurs across 29 of her 91 passage chunks at a peak cosine of 0.75; the next tier is Euvester Simpson (entry 41, who was jailed and beaten with Fannie Lou Hamer at Winona, Mississippi in June 1963) at 18 chunks, the joint Geraldine Crawford Bennett / Toni Breaux / Willie Elliot Jenkins interview (entry 46) at 14, and the Ladner sisters joint interview (entry 75) at 12. That cluster is the Mississippi-Jackson-Tougaloo-and-NAACP-Youth cohort her organizing arc anchors. The less expected reading is what the embedding does with her cross-movement trajectory: she moved from the NAACP Jackson Youth Council to SNCC Tougaloo work to Black Panther Party organizing in White Plains, New York across a 1962-to-1967 span, and the corpus places Kathleen Cleaver (entry 73, the BPP voice most culturally tagged to that party) among her neighbors at 9 chunks and a high 0.73 cosine, alongside two other SNCC-to-Black-Power figures, Phil Hutchings (entry 98, SNCC's last program secretary) at a 0.74 peak and Junius Williams (entry 72) each appearing in 7 chunks. The vector signature reads the Mississippi-grass-roots material and the later Black Power material as one continuous voice rather than the three partitioned organizational phases the historiography tends to separate.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Frankye Adams-Johnson",
+      "speaker_slug": "frankye-adams-johnson",
+      "source_entry": 43,
+      "timestamp": "00:00:39",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655414/",
+      "lead_in": "Asked at the start of the interview where she was born and about her family, Adams-Johnson opens with her birthplace north of Jackson:",
+      "quote": "Okay, I was born in the little town called Pocahontas, Mississippi. It's about 15 minutes north of here."
+    },
+    {
+      "relation": "self",
+      "speaker": "Frankye Adams-Johnson",
+      "speaker_slug": "frankye-adams-johnson",
+      "source_entry": 43,
+      "timestamp": "00:05:19",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655414/",
+      "lead_in": "Recalling being kept out of school to work the crops as a child in Pocahontas, she marks it as her first awareness of her family's position:",
+      "quote": "I think that was my first realization of what it meant to be black and poor and what it meant to be a sharecropper."
+    },
+    {
+      "relation": "self",
+      "speaker": "Frankye Adams-Johnson",
+      "speaker_slug": "frankye-adams-johnson",
+      "source_entry": 43,
+      "timestamp": "00:26:09",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655414/",
+      "lead_in": "Describing how she and the other young Jackson marchers understood themselves after Medgar Evers was killed:",
+      "quote": "Would it be a marcher, you know, to be a freedom fighter, because freedom fighters was how we saw us. That's what it really meant to be a freedom fighter."
+    },
+    {
+      "relation": "self",
+      "speaker": "Frankye Adams-Johnson",
+      "speaker_slug": "frankye-adams-johnson",
+      "source_entry": 43,
+      "timestamp": "00:39:42",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655414/",
+      "lead_in": "On how she came to Tougaloo College, the private campus that anchored SNCC's Mississippi field operations:",
+      "quote": "In 1964, I went to Tougaloo on a music scholarship."
+    },
+    {
+      "relation": "self",
+      "speaker": "Frankye Adams-Johnson",
+      "speaker_slug": "frankye-adams-johnson",
+      "source_entry": 43,
+      "timestamp": "00:40:00",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2016655414/",
+      "lead_in": "She arrived on campus the same season the Council of Federated Organizations launched its statewide registration drive:",
+      "quote": "And I went there, and that was the summer of 1964, when I went there. It was Freedom Summer."
+    }
+  ],
   "biographical_paragraph": "While Adams-Johnson's LoC oral history carries a not-auditable audit tier (the catalog cannot independently certify the transcript against primary sources for this entry, and any specific quoted claim drawn from the transcript itself should be confirmed against external archives before citation), her external biographical record is documented in the Civil Rights Digital Library and the Veterans of the Civil Rights Movement archive [src: 1, src: 2]. Adams-Johnson was born in Pocahontas, Mississippi to a sharecropping family, the fourth of seven children. Her first civil rights organizing came as a Brinkley High School student in a walkout protesting the beatings of Tougaloo College students who attempted to integrate Jackson's Woolworth lunch counter in 1963; she joined the NAACP's Jackson Youth Movement and served as its youth secretary [src: 2]. She enrolled at Tougaloo College in 1964 and worked with SNCC organizers on Mississippi voter-registration drives across her three years there. In 1967, after she was beaten during a protest, her mother sent her to live with her sister in White Plains, New York; she co-organized a White Plains chapter of the Black Panther Party there [src: 2]. She returned to academic work in the 1980s, became a college professor, and from the late 1990s has taught English at Jackson State University while continuing as a poet, speaker, and fiction writer [src: 2].",
   "movement_context": "The organizing tradition Adams-Johnson entered in Jackson in the early 1960s was an indigenous Mississippi grass-roots infrastructure that pre-dated the arrival of national civil rights organizations and continued operating after they withdrew. Charles M. Payne's institutional history of the Mississippi freedom struggle traces this tradition through the local NAACP branches, the Regional Council of Negro Leadership, and the church-and-fraternal networks that sustained organizing through the white-supremacist closure of every public-political channel in the state, the same tradition the Jackson Youth Movement Adams-Johnson served as secretary for sat inside [src: 3]. John Dittmer's Local People expanded the institutional picture by documenting the parallel role of Tougaloo College, a private Black college outside the Mississippi public-university system, as the protected institutional space inside which SNCC's voter-registration work could be planned, staffed, and reviewed without immediate state-government interference [src: 4]. Adams-Johnson's enrollment at Tougaloo in 1964 placed her inside the SNCC field-staff cohort whose Mississippi work culminated in the 1964 Freedom Summer Project and the 1964 Mississippi Freedom Democratic Party challenge at the Atlantic City Democratic National Convention, the Tougaloo Nine sit-in veterans, the Council of Federated Organizations field coordinators, and the Freedom School teachers Clayborne Carson's organizational history of SNCC catalogs in detail [src: 5]. The Free Southern Theater that Doris Derby (catalog entry 32) co-founded at Tougaloo in autumn 1963 was the cultural-and-pedagogical arm of that same SNCC organizing apparatus, and Adams-Johnson's later work as a poet-and-educator at Jackson State sits inside the longer Black Arts Movement institutional tradition James Smethurst documents as the cultural infrastructure of the post-1965 Black freedom movement [src: 6]. Smethurst's central argument is that the Black Arts Movement was not a Northern-urban-only phenomenon but a coordinated North-and-South cultural project, with the Free Southern Theater representing its Southern field-organizing wing and the Black Arts Repertory Theatre and School (BARTS) that Amiri Baraka opened in Harlem in April 1965 representing its Northern intellectual-and-artistic wing [src: 6]. Adams-Johnson's poetic-pedagogical practice at Jackson State (a public HBCU in the Mississippi state-university system that, by the late twentieth century, had absorbed many SNCC-veteran and BAM-veteran faculty members into its English and African American Studies programs) carried that institutional tradition forward as classroom and community-engagement work, a pattern the catalog also tracks in Sonia Sanchez, Mildred Pitts Walter, and the BAM-affiliated educator cohort more broadly [src: 6].",
   "legacy_and_reception": "Adams-Johnson's institutional record after the 1960s field period sits primarily inside two archival apparatuses: the Civil Rights Digital Library at the University System of Georgia, where her biographical entry catalogs her Jackson Youth Movement, Tougaloo SNCC, and Black Panther Party White Plains work alongside her later academic appointment [src: 1], and the Library of Congress Civil Rights History Project, which recorded her oral history in 2013 for the AFC 2010/039 accession (catalog entry 43) as part of the collaborative oral-history initiative the Library of Congress conducted with the Smithsonian National Museum of African American History and Culture [src: 7]. Her late-1990s and 2000s teaching at Jackson State University in the Department of English placed her inside a Mississippi public-HBCU institutional tradition whose African American Studies and English programs across the 1990s and 2000s absorbed a substantial cohort of SNCC-veteran and Black Arts Movement-veteran faculty into long teaching careers; the broader institutional pattern of SNCC field-staff veterans converting field-organizing experience into long academic careers at Southern HBCUs is documented in the SNCC Legacy Project archive at the Robert W. Woodruff Library, Atlanta University Center, and in the secondary literature on the post-movement careers of the SNCC field staff [src: 5, 8]. The 2013 LoC interview was conducted at Jackson State University in Jackson, Mississippi, the institution that anchored her late-career poetic-and-pedagogical work, and the recording date places her testimony inside the broader Civil Rights History Project documentary cycle that interviewed roughly 130 movement veterans across 2010-2016 [src: 7]. The audit-tier annotation on her transcript (not-auditable) reflects the catalog's institutional discipline rather than a negative judgment of the testimony itself: the project does not have independent primary-source verification for the specific factual claims in her interview, and any quoted claim drawn from the transcript should be confirmed against external archives before citation in publication-grade work.",

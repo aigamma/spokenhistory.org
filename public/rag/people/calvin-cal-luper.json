@@ -7,14 +7,71 @@
   "died": null,
   "display_name": "Calvin \"Cal\" Luper",
   "role_summary": "Son of NAACP Youth Council leader Clara Luper; child participant in the August 19, 1958 Katz Drug Store sit-in in downtown Oklahoma City; brother of Marilyn Luper Hildreth (catalog entry 82).",
-  "ai_reading": "Luper's neighbor counts are moderate (peak 39), with his sister Marilyn Luper Hildreth (entry 82) as the top match and the broader cluster including the Geraldine Crawford Bennett / Toni Breaux / Willie Elliot Jenkins joint interview (entry 46), Juadine Henderson (entry 68), and the Abernathy family joint interview (entry 28). The sibling cosine (Calvin -> Marilyn) is the catalog's clearest example of an in-family vector pairing for two interviewees who participated in the same coordinated action as children; the embedding catches the shared family-mediated-organizing register more strongly than either's pairing with other Oklahoma City NAACP Youth Council members the same era should suggest. The cluster's appearance of the Geraldine Crawford Bennett joint interview (entry 46) is the catalog's quiet acknowledgement that pre-1960 Oklahoma City and Wichita-and-Oklahoma-City sit-in organizing forms a coherent regional cohort the historiography under-represents relative to the post-February-1960 Greensboro-and-after sit-in network.",
-  "biographical_paragraph": "While Luper's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), the broader historical context of the Luper family's civil rights organizing is well-documented [src: 1]. Calvin \"Cal\" Luper was a child participant in the August 19, 1958 Katz Drug Store sit-in in downtown Oklahoma City, the action his mother, NAACP Youth Council leader Clara Luper, organized with members of the Council [src: 2]. The sit-in was one of the earliest organized sit-ins of the U.S. civil rights movement, predating the more-famous February 1960 Greensboro Woolworth's sit-in by sixteen months [src: 2]. His sister Marilyn Luper Hildreth, also a child participant, is interviewed separately as catalog entry 82 [src: 1]. The Oklahoma Historical Society's Encyclopedia of Oklahoma History and Culture entry on Clara Luper is the canonical scholarly source for the family's organizing arc and the August 1958 Katz Drug Store action that anchored it [src: 2].",
-  "movement_context": "Clara Luper's NAACP Youth Council at the Oklahoma City branch had been running formal nonviolent-direct-action training sessions since the mid-1950s, drawing on Bayard Rustin's organizational design for the Fellowship of Reconciliation and the early 1947 Journey of Reconciliation interracial bus-tour model; the August 19, 1958 Katz Drug Store action was the operational culmination of that training program rather than a spontaneous protest [src: 3]. The Katz Drug Store at the corner of Main and Robinson in downtown Oklahoma City desegregated its lunch counter within two days of the August 19 sit-in, and the John A. Brown department store across the city followed in 1960 after a sustained Youth Council picketing campaign; the historiography of the sit-in movement records the Oklahoma City Katz action as one of three pre-Greensboro sit-ins (with the August 1958 Wichita, Kansas Dockum Drug Store sit-in led by Ron Walters and the December 1959 Nashville, Tennessee training-action sit-ins led by James Lawson) that established the tactical template the February 1960 Greensboro Woolworth's four would scale into a national movement [src: 3, 4]. The publication-block audit tier on Calvin Luper's specific oral history is unrelated to the well-documented historical record of the family's organizing arc; it constrains direct quotation of the transcript content itself, not the externally-documented family-organizing chronology [src: 5].",
+  "ai_reading": "By a wide margin Luper's top semantic neighbor is his sister Marilyn Luper Hildreth (entry 82), who leads both measures the precompute reports: 39 matching passage pairs and the only cosine above 0.72. That sibling pairing is the catalog's clearest case of two interviewees whose vectors lock onto each other, and the embedding gets there through shared content (the same Oklahoma City household, the same Youth Council, the same Katz Drug Store action narrated from childhood) rather than through anything the historiography flags as a Luper-specific theme. The more telling reading is what fills the next tier. After Marilyn the strongest neighbors by passage count are the Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins joint interview (entry 46, 32 pairs) and Juadine Henderson (entry 68, 27 pairs), with James Oscar Jones (entry 57) and the Abernathy family joint interview (entry 28) tied behind them at 20. Entry 46 is not an Oklahoma sit-in cohort at all; those three voices are recalling their mother's organizing in Bogalusa, Louisiana. What the cosine space appears to be catching across that whole tier is a register, the adult child describing a parent's movement role and the family discipline that came with it, rather than a regional or tactical grouping. On the concept axes the surprise is directional. Despite a transcript in which Luper works explicitly through the armed-self-defense and Black-Power alternative he weighed after military service, his Nonviolence as Theology vs Armed Self-Defense position lands at -0.014, essentially at the midpoint and only fractionally toward the nonviolence pole, so the embedding reads the testimony as genuinely weighing both rather than as settled doctrine. His largest-magnitude axis reading is Individual Conscience vs Collective Discipline at +0.082 toward Collective Discipline, consistent with the passages on the Youth Council's self-policing \"Commanders\" unit and the household rule that where one Luper went, all of them went.",
+  "biographical_paragraph": "Calvin \"Cal\" Luper was a child participant in the August 19, 1958 Katz Drug Store sit-in in downtown Oklahoma City, the lunch-counter action his mother, NAACP Youth Council adviser Clara Luper, planned with members of the Council [src: 2]. The Katz sit-in was one of the first sustained sit-ins of the modern civil rights era, predating the more widely cited February 1, 1960 Greensboro Woolworth's sit-in by nearly eighteen months [src: 2]. His Library of Congress oral history carries a publication-block audit tier, so any specific quoted claim drawn from the transcript should be confirmed against external sources before citation; the externally documented record of the family's organizing is independent of that constraint [src: 1, 5]. His sister, Marilyn Luper Hildreth, also a child participant, is interviewed separately as catalog entry 82, and the embedding precompute pairs the two siblings more closely than it pairs either with any other interviewee [src: 1]. The Oklahoma Historical Society's Encyclopedia of Oklahoma History and Culture entry on Clara Luper is the standing scholarly reference for the family's organizing arc and the August 1958 Katz Drug Store action that anchored it [src: 2].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Calvin \"Cal\" Luper",
+      "speaker_slug": "calvin-cal-luper",
+      "source_entry": 10,
+      "timestamp": "00:02:33",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669112/",
+      "lead_in": "Asked to describe the other members of the Youth Council alongside his sister, Luper frames the early days as a household undertaking:",
+      "quote": "And sort of was a family affair there at first because where one went, all of us went."
+    },
+    {
+      "relation": "self",
+      "speaker": "Calvin \"Cal\" Luper",
+      "speaker_slug": "calvin-cal-luper",
+      "source_entry": 10,
+      "timestamp": "00:03:55",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669112/",
+      "lead_in": "Recalling what desegregation of the downtown lunch counters finally made possible, he describes ordering for himself:",
+      "quote": "And to give me a sandwich or what I wanted and put my money in there and watch it go around and around and choose my own sandwich with nobody."
+    },
+    {
+      "relation": "self",
+      "speaker": "Calvin \"Cal\" Luper",
+      "speaker_slug": "calvin-cal-luper",
+      "source_entry": 10,
+      "timestamp": "00:08:21",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669112/",
+      "lead_in": "On the instruction from his mother to carry schoolbooks into the sit-ins and study while seated at the counter:",
+      "quote": "But once we got in there, we didn't just sit there looking at the glass of water and the silverware."
+    },
+    {
+      "relation": "self",
+      "speaker": "Calvin \"Cal\" Luper",
+      "speaker_slug": "calvin-cal-luper",
+      "source_entry": 10,
+      "timestamp": "00:13:02",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669112/",
+      "lead_in": "Asked whether he ever reconsidered nonviolence after military service left him proficient with weapons, he weighs the armed-self-defense alternative and returns to the case for nonviolence:",
+      "quote": "Whereas with non-violence, you can deal with a person's heart."
+    },
+    {
+      "relation": "self",
+      "speaker": "Calvin \"Cal\" Luper",
+      "speaker_slug": "calvin-cal-luper",
+      "source_entry": 10,
+      "timestamp": "00:21:45",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669112/",
+      "lead_in": "Explaining the household joke about the \"Board of Education\" for the recording:",
+      "quote": "The Board of Education was mom's way of discipline."
+    }
+  ],
+  "movement_context": "Clara Luper's NAACP Youth Council at the Oklahoma City branch had been running nonviolent-direct-action training and travel for its young members in the years before the action; the council planned the August 19, 1958 Katz Drug Store sit-in in part as a follow-on to the 1957 trip Luper took with the children to a New York City performance of her play Brother President, about Martin Luther King Jr. and the Montgomery Bus Boycott [src: 2]. The Katz Drug Store stood at Main and Robinson in downtown Oklahoma City, the corner Calvin Luper describes locating from the parked car in his own testimony, and the chain desegregated its lunch counters across multiple states within two days of the August 19 action [src: 2]. The historiography of the sit-in movement records the Oklahoma City Katz action as one of the organized pre-Greensboro sit-ins, alongside the Wichita, Kansas Dockum Drug Store sit-in of July 1958 led by the Wichita NAACP Youth Council under Ronald Walters, which ran in the weeks before the Katz action; together these established a tactical template that the February 1960 Greensboro Woolworth's four would carry into a national movement [src: 2, 3, 4]. The publication-block audit tier on Calvin Luper's specific oral history constrains direct quotation of the transcript content itself, not the externally documented family-organizing chronology [src: 5].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Greensboro_sit-in_counter.jpg",
       "alt": "The preserved Greensboro F.W. Woolworth lunch counter at the Smithsonian National Museum of American History",
-      "caption": "The preserved lunch counter from the F.W. Woolworth store in Greensboro, North Carolina where the February 1, 1960 sit-in began, now held by the Smithsonian Institution National Museum of American History. The Oklahoma City Katz Drug Store sit-in Calvin Luper participated in as a child on August 19, 1958 predated the Greensboro action by sixteen months and was one of three pre-Greensboro sit-ins (with the Wichita, Kansas Dockum Drug Store sit-in and the Nashville training-action sit-ins) that established the tactical template the Greensboro Four would scale into a national movement.",
+      "caption": "The preserved lunch counter from the F.W. Woolworth store in Greensboro, North Carolina where the February 1, 1960 sit-in began, now held by the Smithsonian Institution National Museum of American History. The Oklahoma City Katz Drug Store sit-in Calvin Luper participated in as a child on August 19, 1958 predated the Greensboro action by nearly eighteen months and was one of the organized pre-Greensboro sit-ins, alongside the Wichita, Kansas Dockum Drug Store sit-in of July 1958, that established the tactical template the Greensboro Four would carry into a national movement.",
       "photographer": "Mark Pellegrini",
       "repository": "Wikimedia Commons",
       "license": "CC BY-SA 2.5",
@@ -39,9 +96,9 @@
       "publisher": "Jim Wire Publishing, 1979 (Clara Luper's autobiographical institutional record of the Oklahoma City Youth Council organizing and the August 1958 Katz Drug Store sit-in)"
     },
     {
-      "url": "https://search.worldcat.org/title/45356456",
-      "title": "Ronald W. Walters, Dockum Drug Store Sit-In",
-      "publisher": "Wichita State University Library Special Collections / Kansas Historical Society documentation (institutional record of the August 1958 Wichita, Kansas Dockum Drug Store sit-in that ran two months before the August 1958 Oklahoma City Katz Drug Store sit-in)"
+      "url": "https://www.kshs.org/kansapedia/dockum-drug-store-sit-in/17048",
+      "title": "Dockum Drug Store Sit-In, Wichita, July 1958",
+      "publisher": "Kansas Historical Society, Kansapedia (institutional record of the July 1958 Wichita NAACP Youth Council sit-in under Ronald Walters that ran in the weeks before the August 19, 1958 Oklahoma City Katz Drug Store sit-in)"
     },
     {
       "url": "https://github.com/aigamma/civil-rights-history-project/blob/master/transcripts/AUDIT_TRAIL.md",
