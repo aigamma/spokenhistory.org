@@ -16,9 +16,88 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Pete_Seeger_NYWTS.jpg",
     "date_taken": "1955"
   },
-  "ai_reading": "Seeger's top semantic neighbor is the joint Candie and Guy Carawan interview (entry 11, count 73), the Highlander Folk School music teachers; this is the same anchor that Jamila Jones (entry 58, here at count 66, Seeger's second neighbor) clusters around. The embedding therefore reads Seeger as part of the Highlander-music-tradition vector cluster: he, the Carawans, and Jamila Jones form a triadic signature in the corpus, the freedom-song-pedagogy node that the catalog separately treats in those interviewees' pages. Seeger's other neighbors are Charles McLaurin (entry 17, Mississippi SNCC), Dorothy Foreman Cotton (entry 29, SCLC Educational Director), and C. T. Vivian (entry 134, SCLC). The novel observation is on the Nonviolence as Theology vs Armed Self-Defense axis where Seeger sits at +0.50, well toward Armed Self-Defense. For a folksinger whose civil-rights-era songbook is itself the nonviolent movement's musical canon, the cultural reading would predict a strong Nonviolence-as-Theology placement; the embedding pulls his testimony toward the opposite pole, consistent with the Wyatt Tee Walker pattern (entry 132) of the catalog's SCLC-and-folkmusic figures inverting on this axis.",
-  "biographical_paragraph": "Seeger helped popularize \"We Shall Overcome\" as a civil rights movement anthem from the Highlander Folk School onward; he organized a 1963 Carnegie Hall benefit concert for Highlander that featured the Freedom Singers, and he sang the anthem alongside roughly a thousand other participants on the 1965 Selma to Montgomery marches [src: 2]. Born May 3, 1919, he co-founded the Almanac Singers in 1941 and the reconstituted Weavers in 1950; the Weavers' recording of Lead Belly's \"Goodnight, Irene\" topped the charts for thirteen weeks that year [src: 2]. His own compositions \"Where Have All the Flowers Gone?\", \"If I Had a Hammer\", and \"Turn! Turn! Turn!\" entered the folk-revival canon of the period [src: 2]. He died January 27, 2014, at ninety-four [src: 2]. His memoir Where Have All the Flowers Gone was first published in 1993, reissued in 2009 [src: 2]. His Library of Congress oral history is entry 97 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "Seeger's 1948 arrangement of \"We Shall Overcome\" is the pivotal pedagogical link between the labor-movement hymn the song descended from and the freedom-song corpus the southern movement carried across the 1960s; the version he developed (a fingerstyle banjo accompaniment paired with the chord progression that became standard) was the version Zilphia Horton had collected at Highlander Folk School in 1947 from striking Charleston tobacco workers, the version Seeger taught to the Highlander music workshops in the late 1940s and 1950s, and the version Guy Carawan in turn would teach to the SNCC founding cohort at Raleigh in April 1960 (see the Candie and Guy Carawan joint interview at catalog entry 11 for the Highlander music-pedagogy line of transmission) [src: 2]. The August 19, 1955 Seeger appearance before the House Un-American Activities Committee was the procedural turning point in his Cold War political prosecution: Seeger refused to invoke the Fifth Amendment and instead asserted First Amendment grounds in declining to answer questions about his political associations and the political content of his songs, a position the committee treated as contempt of Congress [src: 3]. The Justice Department indicted Seeger on ten counts in 1957, and a federal jury convicted him in March 1961; Judge Thomas F. Murphy sentenced him to one year in prison the following month [src: 3]. The United States Court of Appeals for the Second Circuit overturned the conviction on May 18, 1962, on the technical ground that the indictment had failed to plead the contempt counts adequately, ending the prosecution without reaching the First Amendment question Seeger had raised [src: 3]. The Weavers, the quartet Seeger had co-founded with Lee Hays, Ronnie Gilbert, and Fred Hellerman in November 1948, ran a brief commercial peak from 1949 through 1952, anchored by the thirteen-week chart run of their 1950 Decca recording of Lead Belly's \"Goodnight, Irene\" [src: 4]. The June 1950 publication of the anti-communist pamphlet Red Channels named Seeger and Hays among 151 entertainment-industry figures alleged to have communist sympathies; the resulting broadcast and concert blacklist collapsed the Weavers' commercial bookings by 1952, and the group disbanded the same year [src: 4]. The 1969 founding of the Hudson River Sloop Clearwater was Seeger's late-career organizational commitment: he led the construction of the 106-foot sloop Clearwater at the Harvey Gamage shipyard in South Bristol, Maine, launched June 27, 1969, and organized the vessel's deployment as a Hudson River environmental-education program targeting industrial pollution of the river through public sailing programs and waterfront festivals [src: 5].",
+  "ai_reading": "Seeger's top semantic neighbor by passage count is the joint Candie and Guy Carawan interview (entry 11, count 73), the Highlander Folk School music teachers; this is the same anchor that Jamila Jones (entry 58, here at count 66, Seeger's second neighbor) clusters around. The embedding therefore reads Seeger as part of the Highlander-music-tradition vector cluster: he, the Carawans, and Jamila Jones form a triadic signature in the corpus, the freedom-song-pedagogy node that the catalog separately treats in those interviewees' pages. Seeger's next neighbors by count are Charles McLaurin (entry 17, Mississippi SNCC, count 56), Dorothy Foreman Cotton (entry 29, SCLC Educational Director, count 53), and C. T. Vivian (entry 134, SCLC, count 44). The influence graph runs the same way the cosine space does: Seeger records zero out-edges (his testimony names King, E.D. Nixon, and Eugene \"Bull\" Connor, none of them corpus interviewees) but six in-edges, and the two heaviest are Freddie Greene (entry 44, count 4) and the Carawan interview (entry 11, count 3), the same Highlander-music figures the neighbor counts surface. The novel observation is on the Nonviolence as Theology vs Armed Self-Defense axis, where Seeger's normalized position is +0.50, on the Armed Self-Defense side and at roughly the eighty-fourth percentile toward that pole (raw rank 115 of 136). For a folksinger whose civil-rights-era songbook is itself the nonviolent movement's musical canon, the cultural reading would predict a Nonviolence-as-Theology placement; the embedding pulls his testimony toward the opposite pole, the same direction the catalog's other SCLC-and-folkmusic figure Wyatt Tee Walker (entry 132, normalized +0.87) reads.",
+  "biographical_paragraph": "Seeger helped carry \"We Shall Overcome\" into the civil rights movement from the Highlander Folk School onward, learning the song from Highlander music director Zilphia Horton's version and crediting Guy Carawan and Frank Hamilton with the rhythm that spread it [src: 2, 10]. His June 8, 1963 Carnegie Hall concert was recorded and released by Columbia Records as the album \"We Shall Overcome\" and was added to the Library of Congress National Recording Registry in 2006 [src: 11]. In his oral history he describes joining the 1965 Selma to Montgomery march among a group he counted at roughly three hundred, and the new rhythmic setting of the anthem he first heard there [src: 1]. Born May 3, 1919, he co-founded the Almanac Singers in 1941 with Lee Hays and others, and the Weavers in 1948; the Weavers' 1950 recording of Lead Belly's \"Goodnight, Irene\" topped the charts for thirteen weeks [src: 2, 5]. His own compositions \"Where Have All the Flowers Gone?\", \"If I Had a Hammer\", and \"Turn! Turn! Turn!\" entered the folk-revival repertoire of the period [src: 2]. He died January 27, 2014, at ninety-four [src: 2]. His Library of Congress oral history is entry 97 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Pete Seeger",
+      "speaker_slug": "pete-seeger",
+      "source_entry": 97,
+      "timestamp": "00:16:18",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669138/",
+      "lead_in": "Asked about the 1957 Highlander gathering where Rosa Parks, Martin Luther King Jr., and Ralph Abernathy may first have heard him perform \"We Shall Overcome,\" Seeger is candid about the limits of his own version:",
+      "quote": "We shall overcome. I didn't know how to play it right. But I did sing it."
+    },
+    {
+      "relation": "self",
+      "speaker": "Pete Seeger",
+      "speaker_slug": "pete-seeger",
+      "source_entry": 97,
+      "timestamp": "00:16:52",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669138/",
+      "lead_in": "He hands the credit for the anthem's spread to two other musicians:",
+      "quote": "What really made the song spread was Guy Carawan and Frank Hamilton learning to put it in a special kind of rhythm."
+    },
+    {
+      "relation": "self",
+      "speaker": "Pete Seeger",
+      "speaker_slug": "pete-seeger",
+      "source_entry": 97,
+      "timestamp": "00:20:02",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669138/",
+      "lead_in": "On the 1960 Highlander \"Singing in the Movement\" weekend that preceded the founding of SNCC:",
+      "quote": "And we shall overcome was the hit of the weekend with that new rhythm. It was about five weeks later when the organization was started in Raleigh, North Carolina for young people."
+    },
+    {
+      "relation": "self",
+      "speaker": "Pete Seeger",
+      "speaker_slug": "pete-seeger",
+      "source_entry": 97,
+      "timestamp": "00:09:49",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669138/",
+      "lead_in": "He traces his own first contact with the Montgomery bus boycott to a newspaper item and a phone call:",
+      "quote": "With my reading one morning in the New York Times, a tiny little two-inch piece on the back pages saying that there was a bus boycott in Montgomery, Alabama. And I somehow got in touch with the reporter and said, can you give me the address of the people behind the boycott? And he gave me the address of the Montgomery Improvement Association. And I called up and got E.D. Nixon on the phone."
+    },
+    {
+      "relation": "self",
+      "speaker": "Pete Seeger",
+      "speaker_slug": "pete-seeger",
+      "source_entry": 97,
+      "timestamp": "00:34:31",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669138/",
+      "lead_in": "On the 1965 Selma to Montgomery march, where Harry Belafonte urged the marchers on, Seeger encountered a faster, more insistent setting of the anthem:",
+      "quote": "Oh, you'd find out that the new way of singing, we shall overcome. That was the first time I heard it that way."
+    },
+    {
+      "relation": "about",
+      "speaker": "Candie Carawan and Guy Hughes Carawan",
+      "speaker_slug": "candie-carawan-and-guy-hughes-carawan",
+      "source_entry": 11,
+      "timestamp": "00:18:42",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669151/",
+      "lead_in": "In the joint Carawan interview, Candie Carawan describes how Seeger first pointed Guy Carawan toward Highlander Folk School:",
+      "quote": "Pete is the one that told Guy about Highlander. Guy told Pete he wanted to travel around the South and see where his parents had grown up."
+    },
+    {
+      "relation": "about",
+      "speaker": "Candie Carawan and Guy Hughes Carawan",
+      "speaker_slug": "candie-carawan-and-guy-hughes-carawan",
+      "source_entry": 11,
+      "timestamp": "00:17:04",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669151/",
+      "lead_in": "She places Seeger in the network of people who drew Guy Carawan toward using music politically:",
+      "quote": "The whole history of the labor movement and the way music continues, and through them, he met people like Pete Seeger."
+    }
+  ],
+  "movement_context": "The transmission of \"We Shall Overcome\" into the movement ran through several hands, and Seeger's oral history names most of them. Zilphia Horton, the Highlander Folk School music director, learned the song from Black women on the picket line of the 1945-1946 Charleston, South Carolina cigar workers' strike and published it as \"We Will Overcome\" in the People's Songs bulletin in 1947 [src: 10]. Seeger, then director of People's Songs, took it from Horton's version and is on record as the person who changed \"will\" to \"shall\" [src: 10]. In the interview he is explicit that he himself \"didn't know how to play it right\" and that \"what really made the song spread was Guy Carawan and Frank Hamilton learning to put it in a special kind of rhythm\" (the 12/8 setting); Guy Carawan, by then Highlander's music director, taught it at the SNCC founding meeting in Raleigh, North Carolina in April 1960, where it became the gathering's anthem (see the Candie and Guy Carawan joint interview at catalog entry 11 for the Highlander music-pedagogy line of transmission) [src: 1, 10]. Seeger dates Horton's first teaching him the song to 1946 in New York; the published scholarly record places Horton's bulletin printing and Seeger's acquisition of the song in 1947, and the page follows the corroborated 1947 date while preserving Seeger's own recollection [src: 1, 10]. The August 19, 1955 Seeger appearance before the House Un-American Activities Committee was the procedural turning point in his Cold War political prosecution: Seeger refused to invoke the Fifth Amendment and instead asserted First Amendment grounds in declining to answer questions about his political associations and the political content of his songs, a position the committee treated as contempt of Congress [src: 3]. The Justice Department indicted Seeger on ten counts in 1957, and a federal jury convicted him in March 1961; Judge Thomas F. Murphy sentenced him to one year in prison the following month [src: 3]. The United States Court of Appeals for the Second Circuit overturned the conviction on May 18, 1962, on the technical ground that the indictment had failed to plead the contempt counts adequately, ending the prosecution without reaching the First Amendment question Seeger had raised [src: 3]. The Weavers, the quartet Seeger had co-founded with Lee Hays, Ronnie Gilbert, and Fred Hellerman in November 1948, ran a brief commercial peak from 1949 through 1952, anchored by the thirteen-week chart run of their 1950 Decca recording of Lead Belly's \"Goodnight, Irene\" [src: 4]. The June 1950 publication of the anti-communist pamphlet Red Channels named Seeger and Hays among 151 entertainment-industry figures alleged to have communist sympathies; the resulting broadcast and concert blacklist collapsed the Weavers' commercial bookings by 1952, and the group disbanded the same year [src: 4]. The 1969 founding of the Hudson River Sloop Clearwater was Seeger's late-career organizational commitment: he led the construction of the 106-foot sloop Clearwater at the Harvey Gamage shipyard in South Bristol, Maine, launched June 27, 1969, and organized the vessel's deployment as a Hudson River environmental-education program targeting industrial pollution of the river through public sailing programs and waterfront festivals [src: 5].",
   "legacy_and_reception": "Seeger received the 1993 Kennedy Center Honors alongside Marion Williams, Johnny Carson, Arthur Mitchell, and Georg Solti, the federal cultural honor presented annually at the John F. Kennedy Center for the Performing Arts in recognition of lifetime contribution to the performing arts [src: 6]. The January 18, 2009 We Are One inaugural concert at the Lincoln Memorial, two days before the swearing-in of President Barack Obama, featured Seeger and Bruce Springsteen leading the audience in a performance of Woody Guthrie's \"This Land Is Your Land\" that included the verses Guthrie had written but that subsequent recordings had often omitted (the verses naming private-property fences and relief-office lines as part of the song's depiction of the American landscape) [src: 7]. Seeger died at New York-Presbyterian Hospital in Manhattan on January 27, 2014, at age ninety-four; he had been admitted six days earlier following a fall [src: 2]. The Pete Seeger Papers are held by the American Folklife Center at the Library of Congress (collection AFC 2018/004), comprising correspondence, manuscripts, photographs, sound recordings, and ephemera that document Seeger's musical career and his political and environmental organizing across the twentieth and early twenty-first centuries [src: 8]. The 2007 memoir Pete Seeger in His Own Words, edited by Rob Rosenthal and Sam Rosenthal, and the longer collaborative work Pete Seeger: In His Own Words assembled with David Bernz across the same period, are the principal first-person published sources for the Seeger archive that the LoC holdings catalog [src: 9].",
   "gallery": [
     {
@@ -71,7 +150,7 @@
     {
       "url": "https://search.worldcat.org/title/1244367",
       "title": "Guy and Candie Carawan, Sing for Freedom: The Story of the Civil Rights Movement Through Its Songs and Lyrics",
-      "publisher": "University Press of Mississippi, 1990 (reissue of the 1968 Oak Publications volume); WorldCat OCLC 1244367 (documents the 1948 Seeger arrangement of \"We Shall Overcome\" and the Highlander music-pedagogy line through which Guy Carawan transmitted the song to the SNCC founding cohort in 1960)"
+      "publisher": "University Press of Mississippi, 1990 (reissue of the 1968 Oak Publications volume); WorldCat OCLC 1244367 (documents the Highlander music-pedagogy line through which Zilphia Horton's version of \"We Shall Overcome\" reached Pete Seeger and through which Guy Carawan transmitted the song to the SNCC founding cohort in 1960)"
     },
     {
       "url": "https://search.worldcat.org/title/45284194",
@@ -97,6 +176,16 @@
       "url": "https://search.worldcat.org/title/85767870",
       "title": "Pete Seeger with David Bernz, Pete Seeger in His Own Words",
       "publisher": "Paradigm Publishers, 2012 (the Bernz-edited collection of Seeger's writings, correspondence, and first-person reflections assembled across the 2000s and published in the late period of his life); WorldCat OCLC 85767870"
+    },
+    {
+      "url": "https://blogs.loc.gov/folklife/2014/02/tracing-the-long-journey-of-we-shall-overcome/",
+      "title": "Tracing the Long Journey of \"We Shall Overcome\"",
+      "publisher": "American Folklife Center, Library of Congress (Folklife Today; documents Zilphia Horton learning the song from the 1945-1946 Charleston cigar workers' strike, its 1947 People's Songs printing, Seeger's change of \"will\" to \"shall,\" and Guy Carawan's transmission of the rhythmic setting to the SNCC founding meeting in Raleigh in 1960)"
+    },
+    {
+      "url": "https://www.loc.gov/static/programs/national-recording-preservation-board/documents/WeShallOvercome.pdf",
+      "title": "\"We Shall Overcome\" (Pete Seeger, 1963), National Recording Registry essay",
+      "publisher": "National Recording Preservation Board, Library of Congress (documents the June 8, 1963 Carnegie Hall concert recording released by Columbia Records and its 2006 addition to the National Recording Registry)"
     }
   ]
 }

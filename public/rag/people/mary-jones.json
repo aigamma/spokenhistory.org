@@ -3,14 +3,71 @@
   "slug": "mary-jones",
   "person_type": "interviewee",
   "entry_number": 85,
-  "born": null,
+  "born": 1933,
   "died": null,
   "display_name": "Mary Jones",
-  "role_summary": "Albany, Georgia community organizer and mother; participant in the Albany Movement; parent of children who integrated previously all-white Albany public schools; SNCC meeting attendee in Atlanta.",
-  "ai_reading": "Jones's neighbor counts are moderate (peak 53), with Nathaniel Hawthorne Jones (entry 92, Claiborne County Mississippi) as the top match and the broader cluster including James Oscar Jones (entry 57), Juadine Henderson (entry 68), and Peggy Jean Connor (entry 96). The novel observation her page surfaces is the parent-as-civil-rights-figure signature: Mary Jones's organizing was conducted through her parental role (sending her children to integrate white schools, attending SNCC meetings in Atlanta to learn movement tactics, navigating racial threats while traveling); the catalog tracks this specifically-maternal mode of civil rights participation less explicitly than the front-line-organizer mode that dominates the historiography, and the embedding catches the maternal-organizing register through her testimony as continuous with the broader rural-Mississippi-and-Georgia women's organizing tradition.",
-  "biographical_paragraph": "While Mary Jones's LoC oral history carries a publication-block audit tier (known issues prevent full publication-grade certification, and any specific quoted claim drawn from the transcript itself should be confirmed against external sources before citation), the external biographical record is documented through the Civil Rights History Project finding aid for entry 85 [src: 1]. Jones was an Albany, Georgia native and community participant in the Albany Movement. She describes a childhood in Albany that included the work she did as a child and her early-school memories; she learned about the civil rights movement by reading the newspaper [src: 1]. She participated in the local Albany Movement organizing across the early 1960s and sent her children to integrate previously all-white Albany public schools, the experience that anchors much of her interview testimony. She attended a SNCC meeting in Atlanta, and on the trip home was stranded and threatened in Marietta, Georgia in a racially hostile encounter she describes in the oral history [src: 1].",
+  "role_summary": "Albany, Georgia movement participant; Criterion Club voter-registration canvasser; member of the Albany Movement police committee; marcher jailed during the 1961-1962 campaign; later a Head Start early-childhood educator.",
+  "ai_reading": "The strongest cosine-similarity neighbors of Jones's passages in this corpus are Peggy Jean Connor (entry 96) and Juadine Henderson (entry 68), both Mississippi women whose testimony centers on grassroots voter-registration labor, alongside fellow Albany interviewee Mary Jenkins (entry 84) and Nathaniel Hawthorne Jones (entry 92) of Claiborne County, Mississippi. The cross-state pull is the observation worth flagging: a Georgia interviewee whose top matches are mostly Mississippi Delta women, which suggests the embedding is keying on the shared register of household-anchored organizing (canvassing neighbors, getting people registered, then driving them back to the polls) rather than on the Albany campaign as a discrete event. The concept axes sharpen the contrast. On the Nonviolence as Theology versus Armed Self-Defense axis she sits at 0.16 (normalized), close to the nonviolence-as-theology pole, the deepest nonviolence reading in the audited Albany subset, even though her own account is dense with armed danger: a daughter facing daily fights in an integrated school, Black men shot weekly by police, mass arrests, and her own jailing. The embedding reads the framing she chooses (prayer, sticking together, teaching her children they were somebody regardless of color) over the violence the testimony documents.",
+  "biographical_paragraph": "Mary Jones was born in rural Georgia outside Albany in 1933 and raised on her grandmother Bertha McIntosh's small plot, where field labor (picking cotton, pulling corn, gathering peanuts and pecans) kept her out of school until the autumn harvest was in [src: 1]. Her oral history is held by the Library of Congress as entry 85 of the Civil Rights History Project, recorded at Albany State University in March 2013 [src: 1]. The transcript carries a publication-block audit tier, so any specific phrase quoted from it should be confirmed against an independent source before republication, but the arc of her participation is consistent across the interview: she read the Pittsburgh Courier and the Black-owned local paper run by A.C. Searles to follow the movement, canvassed for voter registration through the Criterion Club and taught would-be voters to read the Georgia Constitution clause that registrars demanded, served on the Albany Movement committee that pressed Police Chief Laurie Pritchett to hire Albany's first Black officers, marched with a group she numbered at roughly seven hundred adults, and was jailed for several days, bonded out by her father [src: 1]. She enrolled her oldest daughter among the first Black students at a previously all-white Albany high school and recounts the harassment her children absorbed there [src: 1]. After the campaign she entered early-childhood education through the federal Head Start program created under the War on Poverty, the credential she ties directly to her later livelihood [src: 1]. She names Dr. William G. Anderson (entry 126), the Albany Movement's president, and fellow committee member McCree Harris among the local leadership she worked alongside [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Mary Jones",
+      "speaker_slug": "mary-jones",
+      "source_entry": 85,
+      "timestamp": "00:18:01",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669169/",
+      "lead_in": "Asked what she tried to instill in her children as they entered newly integrated Albany schools, Jones led with self-worth:",
+      "quote": "First thing, let them know that they were somebody, regardless of the color of the skin. And that God loves all of us."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mary Jones",
+      "speaker_slug": "mary-jones",
+      "source_entry": 85,
+      "timestamp": "00:21:12",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669169/",
+      "lead_in": "On canvassing neighbors who were afraid to register because of the registrar's literacy test, Jones describes the trust she built running the reading classes:",
+      "quote": "I guess they were saying that if Miss Jones died there, I know it's gonna be alright. She gonna help me."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mary Jones",
+      "speaker_slug": "mary-jones",
+      "source_entry": 85,
+      "timestamp": "00:34:58",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669169/",
+      "lead_in": "Jones rejects the account that Albany residents summoned Martin Luther King Jr. to lead the campaign, dating his arrival to after the mass jailing:",
+      "quote": "We didn't send for him. To come march, because 700 was in jail when he came."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mary Jones",
+      "speaker_slug": "mary-jones",
+      "source_entry": 85,
+      "timestamp": "00:35:58",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669169/",
+      "lead_in": "Recalling the police warning to stop singing and go home or be locked up, Jones answers with a freedom-song line:",
+      "quote": "Ain't going to let nobody turn me around."
+    },
+    {
+      "relation": "self",
+      "speaker": "Mary Jones",
+      "speaker_slug": "mary-jones",
+      "source_entry": 85,
+      "timestamp": "00:47:25",
+      "audit_tier": "publication-block",
+      "loc_url": "https://www.loc.gov/item/2015669169/",
+      "lead_in": "Asked what legacy she most wanted remembered from the Albany Movement, Jones names two things:",
+      "quote": "One thing, much prayer. And then sticking together and not going back to the old Uncle Tom ways."
+    }
+  ],
   "movement_context": "The Albany Movement Jones participated in was formed in October and November 1961 when SNCC field secretaries Charles Sherrod and Cordell Reagon arrived in Albany, Georgia and began nonviolence workshops and voter-registration drives among local students at Albany State College; a coalition of local NAACP youth, ministers, and women's organizations formalized as the Albany Movement after the November 1, 1961 bus-station sit-in by nine students testing the Interstate Commerce Commission's ruling against transit-facility segregation [src: 2, 3]. The Movement was the first mass civil rights campaign of the modern era to take the desegregation of an entire community as its goal; by the time the campaign wound down in August 1962 roughly twelve hundred residents of Albany and surrounding southwest Georgia counties had been arrested, the largest single-campaign arrest count of the early Movement [src: 2, 4]. Martin Luther King Jr. and the Southern Christian Leadership Conference arrived in December 1961 at the Albany Movement's invitation; Albany Police Chief Laurie Pritchett's tactical innovation of dispersing arrested demonstrators to surrounding-county jails defused the national-political-pressure dynamic the campaign had counted on, and most national-press accounts at the time framed Albany as the Movement's first major defeat [src: 2, 4]. SNCC field organizers and Albany residents themselves held a different view, the 1963 repeal of Albany's segregation ordinances and the lasting local-leadership network the campaign produced (the Sherrods' Southwest Georgia Project, the Freedom Singers, the Albany State College student cadre) became the basis for the southwest Georgia voter-registration and rural-organizing work that continued through the mid-1960s [src: 2, 4]. School integration in Dougherty County followed in the later 1960s and 1970s; when court-ordered desegregation reached the public schools, many white families enrolled their children in newly established private academies, several of which still operate in the region [src: 2]. Jones's experience of sending her children into the previously all-white Albany schools situates her within the cohort of Black parents whose participation in the Movement was conducted through the school-integration front rather than the better-documented direct-action front, and whose organizing labor (preparing children for hostile classrooms, coordinating with other parents, navigating retaliation against the household) is recovered most fully through oral history rather than the contemporaneous press coverage [src: 5].",
-  "legacy_and_reception": "The Albany Movement's institutional memory is curated locally through the Albany Civil Rights Institute, founded in 1998 on the site of the Old Mount Zion Baptist Church where the November 1961 mass meetings were held; the Institute's Looking Back, Moving Forward exhibition and the companion volume edited by Lee W. Formwalt anchor the southwest Georgia historical record [src: 6]. The Georgia Civil Rights Trail historical marker program installed an Albany Movement marker at the Mount Zion site in 2014 [src: 7]. Scholarly recovery of the women and parents whose organizing labor sustained the Albany campaign (and whose accounts most often survive through oral history rather than period press) draws on the Civil Rights History Project's interviews of Albany participants including Jones, Bernice Johnson Reagon, McCree Harris, and Rutha Mae Harris, alongside the Stephen Tuck and Howard Zinn monographs that situated the Albany campaign within Georgia's longer post-1940 racial-equality struggle [src: 8, 9].",
+  "legacy_and_reception": "The Albany Movement's institutional memory is curated locally through the Albany Civil Rights Institute, founded in 1998 on the site of the Old Mount Zion Baptist Church where the November 1961 mass meetings were held; the Institute's Looking Back, Moving Forward exhibition and the companion volume edited by Lee W. Formwalt anchor the southwest Georgia historical record [src: 6]. The Georgia Civil Rights Trail historical marker program installed an Albany Movement marker at the Mount Zion site in 2014 [src: 7]. Scholarly recovery of the women and parents whose organizing labor sustained the Albany campaign (and whose accounts most often survive through oral history rather than period press) draws on the Civil Rights History Project's interviews of Albany and southwest Georgia participants, which in this corpus include Jones (entry 85), fellow Albany resident Mary Jenkins (entry 84), and Shirley Miller Sherrod (entry 117), alongside the Stephen Tuck and Howard Zinn monographs that situated the Albany campaign within Georgia's longer post-1940 racial-equality struggle [src: 8, 9].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/f/fc/The_Albany_Movement_1961_sidewalk_marker.JPG",

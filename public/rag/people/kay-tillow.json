@@ -4,20 +4,80 @@
   "person_type": "interviewee",
   "entry_number": 74,
   "display_name": "Kay Tillow",
-  "born": null,
+  "born": 1942,
   "died": null,
-  "role_summary": "Civil rights movement-era organizer with later work in labor and healthcare organizing; her testimony clusters with William Saunders, H. Jack Geiger, Walter Tillow (entry 124), and William Lucy in this corpus's embedding.",
-  "ai_reading": "Tillow's top semantic neighbors are William Saunders (entry 130, count 122), H. Jack Geiger (entry 54, the Mississippi community-health-center founder, at 91), Walter Tillow (entry 124, at 91), William Lucy (entry 128), and Jennifer Lawson (entry 59). The Walter Tillow paired-name placement is the catalog's clearest sibling-or-partner cosine signature outside the Aaron-Elmer Dixon brother pairing, suggesting a family or movement-partnership connection between the two interviewees. The H. Jack Geiger cosine is also notable: it places Kay Tillow's testimony in the medical-civil-rights organizing vocabulary Geiger anchored, alongside William Lucy's AFSCME-public-sector-union vocabulary, reading her as an intersection-of-health-and-labor-organizing voice. Her Sacred Framing vs Secular Framing position of -0.40 reads her testimony as toward Sacred, an unexpected pull for an organizer whose later work spans labor and health-policy organizing.",
-  "biographical_paragraph": "Kay Tillow is a civil rights movement-era organizer with later work in union and healthcare organizing; her oral history is held at the Library of Congress as entry 74 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under SNCC Digital Gateway returned 404 for the slug variant searched in this iteration. The strongest available signal for her movement placement is the embedding pattern visible above; in particular, the close cosine pairing with Walter Tillow (entry 124) suggests a family or partnership connection that should be considered when reading either oral history.",
-  "movement_context": "Tillow was born in Paducah, Kentucky and raised across the Ohio River in Metropolis, Illinois; she encountered the movement as a University of Illinois undergraduate through the campus NAACP chapter [src: 2]. The geography that pulled her in was the southernmost tip of Illinois, where Cairo (a river-confluence town segregated as thoroughly as anywhere in the Deep South) became a SNCC organizing site in summer 1962 after the locally-formed Cairo Nonviolent Freedom Committee invited John Lewis, Mary McCollum, James Peake, and Joy Reagon to assist with sit-ins at segregated swimming pools, skating rinks, and lunch counters [src: 6]. Tillow attended the trials of arrested SNCC workers in Cairo, the entry point into the broader organizing network that would shape the rest of her life [src: 2]. In 1962 she traveled to Ghana during the period when Accra hosted a Pan-African expatriate community that included W. E. B. Du Bois, Julian Mayfield, Maya Angelou, Pauli Murray, Alice Windom, and St. Clair Drake; the petition delegation from that community to the U.S. Embassy in support of the March on Washington took place in August 1963 [src: 7]. Returning to the United States in 1963 she signed up with SNCC, joined sit-ins in Atlanta, and worked in Hattiesburg, Mississippi during the period that included the January 22, 1964 Freedom Day at the Forrest County courthouse, the first such mass voter-registration day in the state, coordinated by Bob Moses, Dave Dennis, Lawrence Guyot, Sandy Leigh, John O'Neal, and Victoria Gray Adams [src: 5]. She married Walter Tillow, another SNCC organizer who had come to the movement via Harpur College and Cornell and worked on Fayette County voter registration and at the SNCC communications office in Atlanta [src: 8]. Both Tillows transitioned together from SNCC into labor organizing for the United Electrical, Radio and Machine Workers of America (UE) and then Local 1199 of the National Union of Hospital and Health Care Employees, the New York hospital-workers local that Martin Luther King Jr. publicly named his favorite union and that Coretta Scott King later chaired as it expanded outside New York [src: 3, 4]. Kay Tillow eventually settled in Louisville, where she became executive director of the Nurses Professional Organization (NPO), founded by Louisville nurses in 1989 to win staffing protections and bargaining rights, and led a multi-year organizing fight against Norton Healthcare, Kentucky's largest hospital system [src: 9]. NPO later affiliated with the California Nurses Association / National Nurses Organizing Committee [src: 9].",
-  "legacy_and_reception": "Tillow's later public role centers on coordinating the All Unions Committee for Single Payer Health Care, which builds organized-labor support for national single-payer policy, and on representing NPO in coalitions including Kentuckians for Single Payer Health Care [src: 2]. Her 21-year campaign against Norton Healthcare produced a documented sequence of National Labor Relations Board cases addressing alleged unlawful discipline, terminations, restrictions on workplace literature distribution, and other unfair labor practices; one settlement directed Norton Audubon to pay over $171,000 to three nurses found to have been unlawfully denied positions [src: 9]. Scholarly framing of the Local 1199 organizing tradition she joined, including Leon Fink and Brian Greenberg's institutional history of the union, situates the labor-civil-rights nexus as a continuous strand from the 1959 hospital strikes through King's public endorsement to the post-1969 Charleston hospital strike and beyond [src: 4]. Beyond the embedding-cluster note about her semantic proximity to H. Jack Geiger and William Lucy, public archival reception of her own oral history remains limited to the Library of Congress and National Museum of African American History and Culture catalog records [src: 1].",
+  "role_summary": "SNCC-era organizer who moved from Cairo and Hattiesburg civil rights work into hospital-worker union organizing with Local 1199 and later single-payer healthcare organizing in Louisville; wife and co-organizer of Walter Tillow (entry 124).",
+  "ai_reading": "Cosine similarity in this corpus puts Kay Tillow's passages closest to William Saunders (entry 130, count 122), then to a near-tie between H. Jack Geiger (entry 54, count 91) and Walter Tillow (entry 124, count 91), followed by William Lucy (entry 128, count 80) and Jennifer Lawson (entry 59, count 52). The Walter Tillow placement is the catalog's clearest partner-or-sibling cosine signature outside the Aaron-and-Elmer Dixon brother pairing, and it is corroborated by the influence graph, where Kay's only two out-edges run to Walter Tillow and to Charles Sherrod (entry 18) and she is named by no other interviewee. The Geiger and Lucy proximities are the analytically interesting pair: the embedding seats her testimony in the medical-civil-rights vocabulary Geiger anchored (the Mississippi community-health-center work) alongside William Lucy's AFSCME public-sector-union vocabulary, reading her as a health-and-labor-organizing intersection voice rather than as a voter-registration field worker, even though her own narrative opens with Cairo and Hattiesburg registration drives. On the Sacred Framing versus Secular Framing axis she sits at -0.40, toward the Sacred pole, an unexpected pull for an organizer whose recorded throughline is the economic and labor base of equality rather than church-rooted nonviolence; the reading likely picks up the Presbyterian-upbringing and Highlander Folk School framing that opens her interview rather than the union and health-policy content that fills its second half.",
+  "biographical_paragraph": "Kay Tillow was born in Paducah, Kentucky in 1942 and grew up across the Ohio River in Metropolis, Illinois [src: 1]. Her oral history, recorded in Louisville on August 14, 2013 by interviewer David Cline, is held at the Library of Congress as entry 74 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039), with a companion record at the Smithsonian National Museum of African American History and Culture [src: 1, 2]. She entered the movement as a University of Illinois undergraduate through the campus NAACP chapter, traveled to SNCC trial hearings in Cairo, Illinois in the summer of 1962, then spent a junior year in Ghana before joining SNCC field work in Hattiesburg, Mississippi after returning in 1963 [src: 1]. She met Walter Tillow (entry 124) at the Highlander Folk School and married him around 1964; both moved from movement organizing into the labor movement, first with the United Electrical, Radio and Machine Workers of America and then, from 1969, with Local 1199, the New York hospital-workers union that organized service and nursing staff [src: 1]. She settled in Louisville, where her later work centered on hospital-worker organizing and on building organized-labor support for single-payer healthcare legislation [src: 1, 3].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Kay Tillow",
+      "speaker_slug": "kay-tillow",
+      "source_entry": 74,
+      "timestamp": "00:09:19",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669198/",
+      "lead_in": "On traveling from Metropolis with the local NAACP to the trials of SNCC workers arrested in Cairo, Illinois, in the summer of 1962, the first organizing she witnessed up close:",
+      "quote": "It was a segregated courtroom, and I remember being just amazed at the courage of these people."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kay Tillow",
+      "speaker_slug": "kay-tillow",
+      "source_entry": 74,
+      "timestamp": "00:14:24",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669198/",
+      "lead_in": "Recalling the choice she made after an NAACP delegation trip to Atlanta, where she heard Prathia Hall and James Forman speak:",
+      "quote": "And I made the decision that that's what I wanted to do. I couldn't stay in school. I had to go and help."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kay Tillow",
+      "speaker_slug": "kay-tillow",
+      "source_entry": 74,
+      "timestamp": "00:22:47",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669198/",
+      "lead_in": "On why she was drawn from voter-registration work toward economic and labor organizing:",
+      "quote": "public accommodations was not winning equality and public accommodations would not end the inequality because there was an economic base to it."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kay Tillow",
+      "speaker_slug": "kay-tillow",
+      "source_entry": 74,
+      "timestamp": "00:33:33",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669198/",
+      "lead_in": "Describing the single-payer healthcare campaign that occupies her later organizing:",
+      "quote": "the effort to finally win in our nation, universal health care, to make health care a right for every person and to win a system where we would publicly fund it."
+    },
+    {
+      "relation": "self",
+      "speaker": "Kay Tillow",
+      "speaker_slug": "kay-tillow",
+      "source_entry": 74,
+      "timestamp": "00:48:30",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669198/",
+      "lead_in": "On Fannie Lou Hamer, whom she heard speak many times, and Hamer's rejection of the 1964 Atlantic City convention compromise:",
+      "quote": "she changed that, you know, that convention, you know, when she said, we didn't come all this way for two seats"
+    }
+  ],
+  "movement_context": "Tillow was born in Paducah, Kentucky and raised across the Ohio River in Metropolis, Illinois; she encountered the movement as a University of Illinois undergraduate through the campus NAACP chapter [src: 1]. The geography that pulled her in was the southernmost tip of Illinois, where Cairo (a river-confluence town segregated as thoroughly as anywhere in the Deep South) became a SNCC organizing site in 1962 after the locally-formed Cairo Nonviolent Freedom Committee invited SNCC workers to assist with sit-ins at segregated swimming pools, skating rinks, and lunch counters [src: 6]. Tillow attended the trials of arrested SNCC workers in Cairo, the entry point into the broader organizing network that would shape the rest of her life; in her interview she names Mary McCollum among those she watched in the segregated courtroom [src: 1]. In 1962 she traveled to Ghana on a junior year abroad during the period when Accra hosted a Pan-African expatriate community that included W. E. B. Du Bois, who received an honorary degree there shortly before his death in August 1963 [src: 1, 7]. Returning to the United States at the end of August 1963, just after the March on Washington, she committed to SNCC after an NAACP delegation trip to Atlanta where she heard Prathia Hall and James Forman, then worked in Hattiesburg, Mississippi during the voter-registration push that included the January 22, 1964 Freedom Day at the Forrest County courthouse, the first such mass voter-registration day in the state, coordinated by Bob Moses, Dave Dennis, Lawrence Guyot, Sandy Leigh, John O'Neal, and Victoria Gray Adams [src: 1, 5]. She married Walter Tillow (entry 124), whom she met at the Highlander Folk School, around 1964; while Walter worked on the Mississippi Freedom Democratic Party in 1964, Kay organized with the Appalachian Committee for Full Employment among Eastern Kentucky coal miners [src: 1, 8]. Both Tillows moved from SNCC into labor organizing for the United Electrical, Radio and Machine Workers of America (UE) around 1966 and then, in Kay's case from 1969, into Local 1199 of the National Union of Hospital and Health Care Employees, the New York hospital-workers union that Martin Luther King Jr. publicly named his favorite union and that Coretta Scott King supported as it expanded outside New York; Tillow recalls King helping the Baltimore campaign that organized Johns Hopkins around 1969 to 1970 [src: 1, 3, 4]. Kay Tillow eventually settled in Louisville, where she became executive director of the Nurses Professional Organization (NPO) and led a multi-year organizing fight against Norton Healthcare, Kentucky's largest hospital system [src: 9].",
+  "legacy_and_reception": "Tillow's later public role centers on coordinating the All Unions Committee for Single Payer Health Care, which builds organized-labor support for national single-payer policy; in her interview she counts 605 unions, 43 state AFL-CIO federations, 146 central labor councils, and 22 international unions as endorsers of HR 676, the single-payer bill introduced by Representative John Conyers in 2003 [src: 1, 3]. Her organizing fight against Norton Healthcare produced a documented sequence of National Labor Relations Board cases addressing alleged unlawful discipline, terminations, and restrictions on workplace literature distribution; one settlement directed Norton Audubon to pay more than $171,000 to three nurses found to have been unlawfully denied positions [src: 9]. Scholarly framing of the Local 1199 organizing tradition she joined, in Leon Fink and Brian Greenberg's institutional history of the union, situates the labor and civil-rights nexus as a continuous strand from the 1959 hospital strikes through King's public endorsement to the post-1969 Charleston hospital strike and beyond [src: 4]. Beyond the embedding-cluster note about her semantic proximity to H. Jack Geiger and William Lucy, public archival reception of her own oral history remains limited to the Library of Congress and National Museum of African American History and Culture catalog records [src: 1, 2].",
   "gallery": [
     {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/KY_Jennifer_Smithers_and_Kay_Tillow_%28CNANNOC%29_with_Bruce_Lunsford_%282991793383%29.jpg",
-      "caption": "Kay Tillow (right) with Jennifer Smithers of the Kentucky Nurses Association during a 2008 healthcare-reform event in Kentucky.",
-      "credit": "Photo by Mandy Dixon, AFL-CIO America's Unions",
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/d/d3/KY_Jennifer_Smithers_and_Kay_Tillow_%28CNANNOC%29_with_Bruce_Lunsford_%282991793383%29.jpg",
+      "alt": "Kay Tillow with Jennifer Smithers and Bruce Lunsford at a Kentucky healthcare event, 2008",
+      "caption": "Kay Tillow (right) with Jennifer Smithers of the Kentucky Nurses Association at a 2008 healthcare-reform event in Kentucky. By the time of this photograph, Tillow's Louisville-based organizing had shifted toward building union support for single-payer healthcare, the work she describes in the closing half of her 2013 oral history.",
+      "photographer": "Mandy Dixon (AFL-CIO America's Unions)",
+      "repository": "Wikimedia Commons (sourced from Flickr)",
       "license": "CC BY 2.0",
-      "source_url": "https://commons.wikimedia.org/wiki/File:KY_Jennifer_Smithers_and_Kay_Tillow_(CNANNOC)_with_Bruce_Lunsford_(2991793383).jpg"
+      "source_url": "https://commons.wikimedia.org/wiki/File:KY_Jennifer_Smithers_and_Kay_Tillow_(CNANNOC)_with_Bruce_Lunsford_(2991793383).jpg",
+      "date_taken": "2008"
     }
   ],
   "sources": [
@@ -27,14 +87,14 @@
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
-      "url": "https://www.healthcare-now.org/blog/kay-tillow-civil-rights-union-organizing-mark-decades-of-activism/",
-      "title": "Kay Tillow: Civil Rights, Union Organizing Mark Decades of Activism",
-      "publisher": "Healthcare-NOW"
-    },
-    {
       "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.99.1a-e",
       "title": "Kay Tillow Oral History Interview",
       "publisher": "National Museum of African American History and Culture, Smithsonian Institution"
+    },
+    {
+      "url": "https://www.healthcare-now.org/blog/kay-tillow-civil-rights-union-organizing-mark-decades-of-activism/",
+      "title": "Kay Tillow: Civil Rights, Union Organizing Mark Decades of Activism",
+      "publisher": "Healthcare-NOW"
     },
     {
       "url": "https://www.worldcat.org/title/upheaval-in-the-quiet-zone-a-history-of-hospital-workers-union-local-1199/oclc/18987538",
@@ -52,9 +112,9 @@
       "publisher": "SNCC Digital Gateway, Duke University"
     },
     {
-      "url": "https://digitalcollections.nypl.org/items/9038d659-2c0e-b08f-e040-e00a180651bd",
-      "title": "Petitioners Julian Mayfield, Alphaeus Hunton, Alice Windom, W.A. Jeanpierre and Maya Angelou Make, outside the US Embassy in Accra, Ghana",
-      "publisher": "New York Public Library Digital Collections"
+      "url": "https://snccdigital.org/people/w-e-b-du-bois/",
+      "title": "W. E. B. Du Bois",
+      "publisher": "SNCC Digital Gateway, Duke University"
     },
     {
       "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.92.1a-g",

@@ -3,12 +3,69 @@
   "slug": "maynard-e-moore",
   "person_type": "interviewee",
   "entry_number": 88,
-  "born": null,
+  "born": 1938,
   "died": null,
   "display_name": "Maynard E. Moore",
-  "role_summary": "Civil Rights History Project interviewee; the smallest oral-history file in the audited subset of this catalog (152-line SRT transcript), the technical proof-of-concept entry that the Smithsonian-grade publication pipeline was first validated against.",
-  "ai_reading": "Moore's top five semantic neighbor counts are 10, 9, 8, 8, 7, the lowest cosine signature of any audited single-person entry in this catalog. The next-most-quiet signal (Marilyn Luper Hildreth at peak 74) is seven times as strong. The reading is structural rather than thematic: Moore's transcript is short enough (152 SRT lines in his interview) that the embedding has very little material to align with the corpus's other passages. The catalog notes Moore as the dual-scoring pipeline's first end-to-end proof-of-concept run during the May 2026 quality-gate overhaul (the OpenAI scorer's first attempt produced Accuracy 85 / Quality 80, recorded in the CLAUDE.md operational state at the time). His axis positions in the broader corpus (nonviolence +0.63, sacred-secular +0.32, southern +0.54) place him as a moderately-Southern, moderately-Self-Defense-leaning, moderately-secular voice; the readings should be interpreted with the small-sample caveat in mind.",
-  "biographical_paragraph": "Maynard E. Moore's oral history is held at the Library of Congress as entry 88 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing under Wikipedia returned 404 for the slug variant searched in this iteration; the interview transcript is the shortest in the audited subset of the catalog (152 SRT lines), which limits the embedding's ability to localize him within the corpus's larger thematic clusters. Further biographical sourcing is pending.",
+  "role_summary": "Methodist minister; national coordinator of the Student Interracial Ministry from 1966; the smallest oral-history file in the audited subset of this catalog (a 38-cue proof-of-concept transcript), and the first end-to-end validation run for the Smithsonian-grade publication pipeline.",
+  "ai_reading": "The most legible thing the embedding does with Moore is also the catalog's tidiest Petersburg coincidence: his single closest neighbor by cosine similarity is Dion Diamond (entry 27, top score 0.79, eight shared-passage hits), and both men were born and raised in Petersburg, Virginia and were interviewed for this project by the same interviewer, David Cline, on consecutive December 2015 days. The cultural record files them apart, Moore as a white Methodist seminarian who came to the movement through denominational youth ministry, Diamond as a Black Howard student and Freedom Rider, yet the vector space pulls their childhood-Petersburg testimony together more tightly than it pairs either man with his own movement cohort. Beyond that pairing the signal is faint by construction: Moore's top five neighbor counts are 10, 9, 8, 8, 7 (Wyatt Tee Walker entry 132, Robert L. Carter entry 108, Dion Diamond entry 27, John Dudley et al entry 64, Virginia Simms George entry 122), the lowest cosine signature of any audited single-person entry in this catalog, because the surviving transcript is only thirty-eight cues long and gives the embedding little material to localize. On the named concept axes his readings sit moderate and, read against the catalog convention, point where a clergy biography would predict: Nonviolence as Theology rather than Armed Self-Defense (+0.63), the Sacred-Framing half rather than the Secular (+0.32, mild), and the Southern-Struggle pole (+0.54), with milder leans toward Strategic Vision (-0.26) and Collective Discipline (-0.22). All five should be read with the small-sample caveat that a thirty-eight-cue transcript imposes.",
+  "biographical_paragraph": "Maynard E. Moore was born in Petersburg, Virginia in 1938 and was raised in a Methodist family at Washington Street United Methodist Church, the same Petersburg he names in his oral history as a Southern railhead town of about thirty-five thousand people, fully segregated [src: 1, 2]. He took a degree at Randolph-Macon College in Ashland, Virginia, entered seminary at Southern Methodist University in 1959, and began doctoral study at the University of Chicago Divinity School in 1964 [src: 2]. He traces his entry into organizing to the Methodist Student Movement, the denominational youth network in which he held statewide office as a high-school senior and through which he met Black Methodist students, and to summers spent working in migrant labor camps during seminary [src: 1, 2]. In March 1965 he traveled from Chicago to Alabama to take part in the Selma to Montgomery march, and in 1966 he became national coordinator of the Student Interracial Ministry, the ecumenical student organization conceived in 1960 at the Raleigh, North Carolina conference that also produced the Student Nonviolent Coordinating Committee [src: 2, 3]. His oral history was recorded by David P. Cline at Wesley Theological Seminary in Washington, D.C. on December 14, 2015 and is held by the Library of Congress as entry 88 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. The corpus places him nearest, by embedding similarity, to Dion Diamond (entry 27), the Freedom Rider who grew up in the same Petersburg.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Maynard E. Moore",
+      "speaker_slug": "maynard-e-moore",
+      "source_entry": 88,
+      "timestamp": "00:03:03",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655425/",
+      "lead_in": "Asked about his upbringing in Petersburg, Moore situates his family in the dense Methodist life of the town:",
+      "quote": "My family was Methodist. We were members of Washington Street United Methodist Church. There were 10 Methodist churches in the town."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maynard E. Moore",
+      "speaker_slug": "maynard-e-moore",
+      "source_entry": 88,
+      "timestamp": "00:03:42",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655425/",
+      "lead_in": "He points to a placard on his home church marking it as the site where Southern Methodism split from the national denomination over slavery:",
+      "quote": "This was the site where the Methodist Episcopal Church, South was organized. And that was when the Methodist churches in the South broke over the issue of slavery from the Methodist church in the north."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maynard E. Moore",
+      "speaker_slug": "maynard-e-moore",
+      "source_entry": 88,
+      "timestamp": "00:04:22",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655425/",
+      "lead_in": "He dates his first organizing role to the Methodist Student Movement while still in high school:",
+      "quote": "subsequently participated in Methodist Student Movement and the district and then was elected to state-wide office in Methodist Student Movement when I was a senior in high school."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maynard E. Moore",
+      "speaker_slug": "maynard-e-moore",
+      "source_entry": 88,
+      "timestamp": "00:05:02",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655425/",
+      "lead_in": "Asked whether race was discussed at home or church, he describes the silence of his early years:",
+      "quote": "for the most part during those years I was asleep. It was not an issue on my radar screen nor with my family. It was the way of life."
+    },
+    {
+      "relation": "self",
+      "speaker": "Maynard E. Moore",
+      "speaker_slug": "maynard-e-moore",
+      "source_entry": 88,
+      "timestamp": "00:05:57",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655425/",
+      "lead_in": "He recalls the point at which childhood friendships across the color line were cut off:",
+      "quote": "But I grew up playing with black kids until it was time to go to junior high school. At that point my mother explained to me that they would no longer be welcome in our house."
+    }
+  ],
   "movement_context": "The biographical material recovered through secondary archival routes (the Digital Library of Georgia's mirror of the LoC finding aid, and the LoC search-result excerpts surfaced through general web indexing) catalogues E. Maynard Moore (the LoC catalog form of his name; the slug retains the order our pipeline ingested) as a Methodist minister born in Petersburg, Virginia in 1938, with an undergraduate degree from Randolph-Macon College in Ashland and seminary enrollment at Southern Methodist University beginning in 1959 [src: 2]. He pursued doctoral work at the University of Chicago Divinity School starting in 1964, and across his summer breaks during seminary he worked in migrant labor camps, which the interview frames as his introduction to organized non-violent activism [src: 2]. Moore's civil rights participation routes through two student-affiliated channels rather than the better-documented SCLC or SNCC field lines. He participated as a teenager in the Methodist Student Movement, a denominational youth network that placed Methodist seminarians in contact with Black Methodist students and the broader ecumenical campus organizing of the late 1950s [src: 2]. He took part in sit-ins around Dallas during his SMU years and, in March 1965, traveled from Chicago to Alabama to join the final segment of the Selma to Montgomery march, which his interview frames in continuity with his denominational training rather than as a singular event [src: 2]. In 1966 he became the national coordinator of the Student Interracial Ministry (SIM), the ecumenical student-run civil rights organization founded at Union Theological Seminary in 1960 at the same Raleigh conference that produced the Student Nonviolent Coordinating Committee [src: 3]. SIM's initial tactic placed Black assistant pastors in white congregations and white assistants in Black congregations, an integration-by-pulpit-exchange strategy aimed at the segregated Sunday-morning hour [src: 3]. By the late 1960s, under coordinators including Moore, the organization shifted from pulpit exchanges toward inner-city ministry projects, voter registration work in southwest Georgia tied to the Albany Movement, and seminary teaching collaborations [src: 3, 4]. SIM dissolved in 1968. Moore's later professional life is recorded as urban-ministry program development and non-profit management consulting through his firm CommunityNexus Consulting [src: 5].",
   "legacy_and_reception": "Moore's archival footprint outside the Library of Congress interview is concentrated in two scholarly works: David P. Cline's institutional history of the Student Interracial Ministry, published by the University of North Carolina Press as From Reconciliation to Revolution (2016), which draws on Moore's interview among the source base for the SIM chapters [src: 3, 4], and Cline's broader interviewer-of-record role across the Civil Rights History Project corpus, where Moore is one of 145 filmed interviews co-produced by the Smithsonian's National Museum of African American History and Culture and the American Folklife Center between 2010 and 2016 [src: 1]. Within the LoC's own curatorial framing, Moore is grouped under the subject heading civil rights workers, with the secondary locator Chicago tied to the years he was based at the University of Chicago Divinity School [src: 2]. The interview's contribution to the historiography is its first-person account of denominational youth ministry as an organizing vehicle parallel to the campus-based SNCC line, a story that has received less scholarly attention than the SCLC-clergy or SNCC-student narratives. The Smithsonian-grade publication pipeline this site documents used Moore's transcript as its first end-to-end validation run, a separate axis of reception worth noting: his oral history is now also a benchmark artifact in an AI-metadata project that the original 2015 interview did not anticipate.",
   "gallery": [
@@ -42,7 +99,7 @@
     },
     {
       "url": "https://dlg.usg.edu/record/loc_crhp_crhp0134",
-      "title": "E. Maynard Moore oral history interview conducted by David P. Cline (Digital Library of Georgia mirror record)",
+      "title": "E. Maynard Moore oral history interview conducted by David P. Cline (Digital Library of Georgia mirror record, with biographical abstract)",
       "publisher": "Digital Library of Georgia, University System of Georgia"
     },
     {
@@ -51,9 +108,9 @@
       "publisher": "University of North Carolina Press, 2016 (ISBN 9781469630434)"
     },
     {
-      "url": "https://www.jstor.org/stable/10.5149/9781469630441_cline",
-      "title": "From Reconciliation to Revolution: The Student Interracial Ministry, Liberal Christianity, and the Civil Rights Movement (scholarly edition record)",
-      "publisher": "JSTOR / University of North Carolina Press"
+      "url": "https://cdr.lib.unc.edu/concern/dissertations/zg64tm24j",
+      "title": "David P. Cline, The Student Interracial Ministry, Liberal Protestantism, and the Civil Rights Movement (doctoral dissertation, the scholarly basis for From Reconciliation to Revolution)",
+      "publisher": "Carolina Digital Repository, University of North Carolina at Chapel Hill"
     },
     {
       "url": "https://www.comm-nex.com/index.php?option=com_content&view=article&id=80&Itemid=121",
