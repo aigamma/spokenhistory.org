@@ -7,8 +7,66 @@
   "died": null,
   "display_name": "William S. Leventhal",
   "role_summary": "Civil rights movement participant; in this corpus's embedding his testimony has an unexpectedly strong cosine with Bill Russell (count 248) and clusters with Charles McLaurin, C. T. Vivian, Dottie Zellner, and John Carlos.",
-  "ai_reading": "Leventhal's top semantic neighbor is Bill Russell (entry 8, count 248); his fifth is John Carlos (entry 62, count 117). The pairing places him near the catalog's strongest athlete-activist cosine signature (Russell-Carlos's 719-bidirectional pair). Without external biographical sourcing in this iteration, the catalog notes the embedding reading: Leventhal's testimony shares vocabulary with both Russell and Carlos to a degree the cultural record may not foreground. His other neighbors are Charles McLaurin (Mississippi SNCC, count 157), C. T. Vivian (SCLC, count 152), and Dorothy Zellner (SNCC + BPP-logo, count 120). His Tactical Pragmatism vs Strategic Vision position of +0.65 leans Strategic, consistent with the SCLC/SNCC organizational cluster he reads with.",
+  "ai_reading": "Leventhal's top semantic neighbor is Bill Russell (entry 8, count 248); his fifth is John Carlos (entry 62, count 117). The pairing places him near the catalog's strongest athlete-activist cosine signature (Russell-Carlos's 719-bidirectional pair). Without external biographical sourcing in this iteration, the catalog notes the embedding reading: Leventhal's testimony shares vocabulary with both Russell and Carlos to a degree the cultural record may not foreground. His other neighbors are Charles McLaurin (Mississippi SNCC, count 157), C. T. Vivian (SCLC, count 152), and Dorothy Zellner (SNCC + BPP-logo, count 120). His Tactical Pragmatism vs Strategic Vision position of +0.65 sits toward Tactical Pragmatism, which reads as a match for the ground-level field practice his testimony describes: SCOPE canvassing, courthouse voter registration, and the church-by-church organizing of the 1965 Macon and Americus work, rather than a movement-level strategic analysis.",
   "biographical_paragraph": "William S. Leventhal's oral history is held at the Library of Congress as entry 129 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1]. Independent biographical sourcing is pending; the strongest signal currently available for movement role is the embedding pattern visible in the AI's reading above.",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "00:42:31",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Leventhal describes how he came to the 1965 SCOPE voter-registration project, after Dr. King spoke at UCLA and asked students to volunteer:",
+      "quote": "And Dr. King himself was the recruiter, UCLA. So I always got to tell people, Dr. King recruited me. Not Hosea Williams, not Andy."
+    },
+    {
+      "relation": "self",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "00:35:35",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Leventhal describes the shift in perception over the summer he spent living in the Black community while organizing:",
+      "quote": "in the beginning, the Black people look different. By the end of the summer, the White people look different. I didn't think I was Black, but Black people were my friends. Black people were my baseball teammates."
+    },
+    {
+      "relation": "self",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "01:35:24",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Asked what made an organizing site a hot movement, Leventhal frames nonviolence as a method for drawing the press to the injustice:",
+      "quote": "The whole thing of nonviolence is to dramatize in a creative way. That's what Dr. King said in the letter from [the] Birmingham jail."
+    },
+    {
+      "relation": "self",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "01:57:58",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "Reflecting on the discipline of nonviolence after being shot at and jailed, Leventhal distinguishes practicing it in demonstrations from living it:",
+      "quote": "I found out by the summer, I could not practice. I could not be spiritually a nonviolent person."
+    }
+  ],
+  "gallery": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/9/99/Selma_to_Montgomery_Marches.jpg",
+      "alt": "Marchers carrying American flags on the 1965 Selma to Montgomery march in Alabama",
+      "caption": "Participants carrying American flags on the March 1965 Selma to Montgomery voting-rights march in Alabama. Leventhal recounts that Dr. King's entry into Selma in January 1965 was the first time he personally followed what the movement was doing, and that the Selma-to-Montgomery marches led by Hosea Williams and John R. Lewis preceded Dr. King's recruiting visit to UCLA that brought Leventhal into the SCOPE project. Photographed by Peter Pettus.",
+      "photographer": "Peter Pettus",
+      "repository": "Library of Congress, Prints and Photographs Division (digital ID cph.3c33090)",
+      "license": "Public domain (published in the United States between 1931 and 1977 without a copyright notice)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Selma_to_Montgomery_Marches.jpg",
+      "date_taken": "1965-03"
+    }
+  ],
   "sources": [
     {
       "url": "https://www.loc.gov/item/2015669181/",
