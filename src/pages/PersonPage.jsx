@@ -28,7 +28,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, Play, ChevronUp, AlertTriangle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import { TIER_BADGE, TIER_COLORS } from '../components/rag/tiers';
+import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 
@@ -118,23 +118,25 @@ function hyperlinkNames(text, matcher) {
   return parts;
 }
 
-// Tiered pull-quote card. Renders one oral-history snippet, quoted
-// verbatim from a Library-of-Congress-healed transcript, as a colorful
-// highlight embedded in the narrative. The card color encodes the
-// source transcript's audit tier (the same palette the RAG surfaces
-// use), so a reader sees provenance confidence at a glance. Each card
-// routes into the source interview for in-app discovery and to the LoC
-// catalog for authoritative verification. relation 'self' is the page
-// subject speaking; 'about' is another interviewee speaking about them.
+// Pull-quote card. Renders one oral-history snippet, quoted verbatim
+// from a Library-of-Congress-healed transcript, as a highlight embedded
+// in the narrative. Every card carries one calm standard accent; a card
+// turns red only when its source transcript is flagged with documented
+// publication-blocker issues (the genuine "really bad context" case, see
+// SNIPPET_PROBLEM_TIERS in tiers.js). Each card routes into the source
+// interview for in-app discovery and to the LoC catalog for authoritative
+// verification. relation 'self' is the page subject speaking; 'about' is
+// another interviewee speaking about them.
 function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   const [showVideo, setShowVideo] = useState(false);
   if (!snippet || !snippet.quote) return null;
-  const tierKey = snippet.audit_tier in TIER_BADGE ? snippet.audit_tier : null;
-  const badge = tierKey
-    ? TIER_BADGE[tierKey]
-    : { label: 'Provenance unknown', bg: 'bg-stone-50', text: 'text-stone-700', border: 'border-stone-200', icon: AlertTriangle };
-  const accent = (tierKey && TIER_COLORS[tierKey]) || '#78716c';
-  const BadgeIcon = badge.icon;
+  // These pull-quotes are verbatim (gated by verify_person_snippets.py),
+  // so the card no longer color-codes by the source transcript's audit
+  // tier. Every quote gets the calm standard accent; the red flag is
+  // reserved for a source transcript with documented publication-blocker
+  // issues, the genuine "really bad context" case.
+  const isProblem = SNIPPET_PROBLEM_TIERS.has(snippet.audit_tier);
+  const accent = isProblem ? SNIPPET_PROBLEM_ACCENT : SNIPPET_ACCENT;
   const isAbout = snippet.relation === 'about';
   // Link the speaker to their own catalog page when one exists and it
   // is not this page. An about-card's speaker (another interviewee
@@ -146,7 +148,7 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   );
   return (
     <figure
-      className={`my-7 rounded-xl border ${badge.border} ${badge.bg}`}
+      className={`my-7 rounded-xl border ${isProblem ? 'border-red-200 bg-red-50' : 'border-stone-200 bg-white'}`}
       style={{ borderLeftWidth: '6px', borderLeftColor: accent }}
     >
       <div className="p-5 sm:p-6">
@@ -217,10 +219,12 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               </a>
             )}
           </div>
-          <div className={`inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border ${badge.border} ${badge.text} text-xs font-medium`}>
-            <BadgeIcon className="w-3.5 h-3.5" aria-hidden="true" />
-            {badge.label}
-          </div>
+          {isProblem && (
+            <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border border-red-300 bg-red-50 text-red-800 text-xs font-medium">
+              <AlertTriangle className="w-3.5 h-3.5" aria-hidden="true" />
+              Source transcript flagged: verify this passage against the audio before citing.
+            </div>
+          )}
           {/* Inline LoC video, revealed when the reader asks to hear the
               quote in context. Seeks to the snippet timestamp and plays;
               the button click above is the user gesture that lets the
@@ -676,7 +680,7 @@ export default function PersonPage() {
                 Voices from the Archive
               </h2>
               <p className="text-sm text-stone-500 mb-4">
-                Quoted verbatim from the Civil Rights History Project oral histories, audited against the Library of Congress canonical transcripts. Card color marks each passage&apos;s audit tier; follow any card into the interview it came from.
+                Quoted verbatim from the Civil Rights History Project oral histories, each gated against the corpus transcript it came from. Follow any card into its source interview. A card turns red only when that transcript carries documented publication-blocker issues.
               </p>
               {person.interview_snippets.map((sn, i) => (
                 <SnippetCard

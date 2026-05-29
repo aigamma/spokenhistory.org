@@ -71,6 +71,35 @@ export const TIER_COLORS = {
   'ingestion-only': '#475569',       // slate-600
 };
 
+// ---- Person-page oral-history snippet cards -------------------------
+//
+// The embedded pull-quotes on /person/:slug are verbatim, gated by
+// scripts/verify_person_snippets.py against the corpus. Their card color
+// does NOT encode the source transcript's audit tier the way the RAG
+// surfaces (Constellation, ConceptMatrix, neighbor chips) do. Tier-
+// coloring every quote produced an all-amber wash (502 of ~1005 snippets
+// are "low") where the whole page read as flagged, so nothing read as
+// flagged. Each card instead gets one calm standard accent, and the red
+// flag is reserved for the genuine problem case below. The accent is a
+// transcript-tier signal misapplied to a vetted quote; the quote being
+// present and verbatim is what the card actually attests to.
+
+// Standard accent for a snippet card that carries a verbatim quote.
+// Single source of truth: swap this one hex to recolor every person-page
+// snippet card at once.
+export const SNIPPET_ACCENT = '#4338ca'; // indigo-700
+
+// Accent for the problem case. A source transcript flagged with
+// documented publication-blocker issues, i.e. "really bad context."
+export const SNIPPET_PROBLEM_ACCENT = '#b91c1c'; // red-700
+
+// The only tier that turns a snippet card red. publication-block means
+// the source transcript carries documented publication-blocker issues
+// (verify the passage against audio before citing). Every other tier
+// (high / medium / low / not-auditable / ingestion-only) renders with
+// the calm standard accent.
+export const SNIPPET_PROBLEM_TIERS = new Set(['publication-block']);
+
 /**
  * Per-tier fidelity-note text. Same logic as the server-side function
  * in mcp-server/server.mjs and netlify/functions/retrieve.mjs (those
