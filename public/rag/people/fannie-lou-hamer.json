@@ -17,6 +17,63 @@
   },
   "ai_reading": "Eight corpus voices discuss Hamer, the largest in-corpus discussion footprint of any external figure tracked here: Lisa Anderson Todd (entry 79), Gwendolyn M. Patton (entry 52), the Ladner sisters (entry 75), Euvester Simpson (entry 41, who was beaten with Hamer at the Winona jail in June 1963), Cleveland Sellers (entry 22), Walter Bruce (entry 123), William Lamar Strickland (entry 127), and Courtland Cox (entry 24, the MFDP convention-challenge logistics organizer). The Euvester Simpson cosine is particularly significant: the embedding aligns the survivor-witness testimony with the figure she witnessed.",
   "biographical_paragraph": "Fannie Lou Hamer is discussed in this corpus by 8 interviewees across the catalog (Lisa Anderson Todd (entry 79), Gwendolyn M. Patton (entry 52), Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner) (entry 75), Euvester Simpson (entry 41), Dr. Cleveland Sellers (entry 22), Walter Bruce (entry 123), William Lamar Strickland (entry 127), Courtland Cox (entry 24)), but was not interviewed for the Civil Rights History Project; this catalog page treats Fannie Lou Hamer as an external figure whose presence in the archive is mediated through other voices. The canonical scholarly source the catalog cites for biographical orientation appears as [src: 1] below.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:36:54",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Euvester Simpson, who was arrested and beaten with Hamer at the Winona, Mississippi bus station in June 1963 while returning from a South Carolina citizenship school, recalls Hamer leaving the bus to confront the arresting officers:",
+      "quote": "And at that point, they just threw everybody in and then Miss Hamer came up, got off the bus and says, what is going on? What are y'all doing? Why are you arresting them? And they threw her in to the car too."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lisa Anderson Todd",
+      "speaker_slug": "lisa-anderson-todd",
+      "source_entry": 79,
+      "timestamp": "00:07:32",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669192/",
+      "lead_in": "Lisa Anderson Todd, a northern volunteer arriving in the Delta for the 1964 Mississippi Summer Project, describes her first evening in Ruleville at Hamer's house:",
+      "quote": "So I guess there were three or four of us that went to Ruleville and had dinner at Fannie Lou Hamer's home. And she told the story to us of the beating in Winona."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:17:48",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "Lawrence Guyot, chairman of the Mississippi Freedom Democratic Party, measures his own contribution against Hamer's, calling her Senator:",
+      "quote": "And I couldn't have given a speech as good as Senator Hamer did. And I couldn't have led the Freedom Democratic Party into making what I consider the most courageous, pragmatic political decision in American politics."
+    },
+    {
+      "relation": "about",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "00:55:18",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "Maria Varela, the SNCC literacy-project organizer who recorded Hamer's first autobiography, recounts how Hamer routed northern donation supplies to poor white families in the Delta:",
+      "quote": "And a lot of people don't know this about Mrs. Fannie Lou Hamer. When those food trucks, donation trucks, would come down from the north. And she was on that, she was on that sort of railroad of that. There were, I think about four or five white families that she knew were just dirt poor. And she would always get them supplied with any of the stuff that came down."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dr. Cleveland Sellers",
+      "speaker_slug": "dr-cleveland-sellers",
+      "source_entry": 22,
+      "timestamp": "01:12:17",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669180/",
+      "lead_in": "Dr. Cleveland Sellers, SNCC program director, attributes the MFDP delegation's refusal of the Atlantic City compromise to Hamer:",
+      "quote": "And after meeting, I think it was Fannie Lou Hamer who said that, you know, we've worked too hard and we've come too far to accept that compromise. And we came here to be seated and we're not going to be seated."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/41257260",

@@ -17,6 +17,74 @@
   },
   "ai_reading": "Eight corpus voices discuss Evers, tied with Hamer for the largest external-figure footprint in the catalog: Juadine Henderson (entry 68, Mississippi SNCC), Euvester Simpson (entry 41, Mississippi SNCC), the Rosenberg joint interview (entry 61, +1.00 Southern Struggle), Amos C. Brown (entry 2, Jackson-born NAACP), Mildred Bond Roxborough (entry 90, NAACP national staff), Rosie Head (entry 111, Mississippi rural), Rick Tuttle (entry 105), and Lawrence Guyot (entry 76, MFDP). The cluster is tightly Mississippi-and-NAACP, the embedding aligning his memory with both the state's organizing network and the national NAACP infrastructure he reported to.",
   "biographical_paragraph": "Medgar Evers is discussed in this corpus by 8 interviewees across the catalog (Juadine Henderson (entry 68), Euvester Simpson (entry 41), John and Jean Rosenberg (entry 61), Amos C. Brown (entry 2), Mildred Bond Roxborough (entry 90), Rosie Head (entry 111), Rick Tuttle (entry 105), Lawrence Guyot (entry 76)), but was not interviewed for the Civil Rights History Project; this catalog page treats Medgar Evers as an external figure whose presence in the archive is mediated through other voices. The canonical scholarly source the catalog cites for biographical orientation appears as [src: 1] below.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Amos C. Brown",
+      "speaker_slug": "amos-c-brown",
+      "source_entry": 2,
+      "timestamp": "00:33:31",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669159/",
+      "lead_in": "Amos C. Brown, who organized an NAACP Youth Council in Jackson as a teenager, describes Evers, then NAACP Mississippi field secretary, as the mentor who recruited him:",
+      "quote": "And Medgar Evers was a very humble, warm, engaging man."
+    },
+    {
+      "relation": "about",
+      "speaker": "Charles McLaurin",
+      "speaker_slug": "charles-mclaurin",
+      "source_entry": 17,
+      "timestamp": "01:24:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655412/",
+      "lead_in": "SNCC field secretary Charles McLaurin traces the Delta voter-registration strategy he carried out back to Evers's reasoning about Black population majorities:",
+      "quote": "And so Medgar Evers had said that, get up to the dealt to register these people, blacks outnumber whites."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "01:04:11",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "Mississippi organizer Lawrence Guyot summarizes Evers's role and recalls his undercover investigation of the 1955 Emmett Till murder:",
+      "quote": "Medgar Evers was the executive director of the NAACP. He was a person who went disguised to get information about the Emmett Till case."
+    },
+    {
+      "relation": "about",
+      "speaker": "Mildred Bond Roxborough",
+      "speaker_slug": "mildred-bond-roxborough",
+      "source_entry": 90,
+      "timestamp": "00:57:33",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669101/",
+      "lead_in": "NAACP national staff member Mildred Bond Roxborough recalls fieldwork she and Evers did together in the Delta, documenting economic reprisals against Black voters:",
+      "quote": "Yes, I worked with Medgar Evers. I was sent to Mississippi in the 60s to interview farmers who had been denied credit because of who was subjected to economic reprisals, because of their NAACP activities continuing to go to the polls to register and vote."
+    },
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:46:38",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Euvester Simpson recalls learning of Evers's June 1963 assassination the morning she was released from jail:",
+      "quote": "He told us that Medgar Evers had been killed, and assassinated the night before. And he said he had left a meeting in Jackson, and he was on his way home, and he'd been ambushed and killed."
+    },
+    {
+      "relation": "about",
+      "speaker": "John Rosenberg",
+      "speaker_slug": "john-and-jean-rosenberg",
+      "source_entry": 61,
+      "timestamp": "01:07:14",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669199/",
+      "lead_in": "Justice Department civil rights attorney John Rosenberg recounts the tense aftermath of Evers's funeral in Jackson, when colleague John Doar stepped between marchers and police:",
+      "quote": "So the Medgar Evers was killed and if you remember them after the Medgar Evers funeral these this group of blacks and the local police officers were about to have go against each other and it was John Doar who walked out into the street and Jackson Mississippi and you their photographs and I have clippings of him holding his hand out saying my name is John Doar D.O.A.R."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/56011727",
