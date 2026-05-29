@@ -6,16 +6,84 @@
   "display_name": "Betty Garman Robinson",
   "born": 1939,
   "died": 2020,
-  "role_summary": "SNCC national office staff (1964-1966), based in Atlanta and organizing Northern student support under Executive Director James Forman.",
-  "ai_reading": "The embedding places Robinson among a tight cluster of SNCC organizers whose racial composition was unusual for the Southern movement: Timothy Jenkins (entry 120, count 210), Martha Prescod Norman Noonan (entry 83), Maria Varela (entry 81), Dottie Zellner (entry 30), and Phil Hutchings (entry 98). Several of these were white SNCC staff or coalition-bridging figures; the embedding identifies her as part of that subgroup rather than placing her with all SNCC staff equally. On the Individual Conscience vs Collective Discipline axis she lands at -0.44, toward Individual Conscience, an unexpected pull for someone whose institutional role at the Atlanta SNCC office was organization-building (allocations, fundraising, the Friends of SNCC chapter network), all collective-discipline work; the embedding seems to read her testimony as reflective and conscience-narrative rather than as the operational language her job would have produced.",
-  "biographical_paragraph": "Betty Garman Robinson came to civil rights organizing from the Northern campus left, not from a Southern church basement [src: 2]. As a Skidmore College undergraduate in the late 1950s she ran National Student Association forums pushing back against the era's domestic anti-communist climate, and when the Greensboro sit-ins broke open the spring of 1960 she joined Woolworth's solidarity pickets in February [src: 2]. Graduate school at Berkeley put her inside Students for a Democratic Society [src: 2]. In March 1964 she moved cross-country to Atlanta to take a desk in the SNCC national office, working under James Forman's direction on money, on student outreach across the North, and on stitching together the Friends of SNCC chapter network; Casey Hayden was a colleague [src: 2]. Born January 8, 1939 in Pleasantville, New York, Garman Robinson died October 11, 2020 [src: 2]. Her oral history forms entry 7 of the Civil Rights History Project at the Library of Congress [src: 1].",
-  "movement_context": "The Friends of SNCC chapter network Garman Robinson coordinated from the Atlanta national office was the principal fundraising and political-support infrastructure that financed SNCC's southern field operations through the 1964 Freedom Summer and the 1965 Selma campaign [src: 3]. James Forman's institutional design (he served as SNCC Executive Director from October 1961 through May 1966) placed the Atlanta office at the center of a small-donor financial-engine model: roughly two hundred Friends of SNCC chapters at the network's mid-1960s peak operated in northern campus communities, Jewish liberal-left congregations, and Quaker peace-movement networks, raising the operating budget that kept the southern field staff on monthly stipends in the ten-to-twenty-dollar range [src: 4]. Garman Robinson's white-SNCC-staff position (her oral history is among the catalog's seven white-SNCC-staff testimonies the AI's-reading observation places her structurally adjacent to) was the racial configuration that the November 1966 Kingston Springs, Tennessee SNCC staff meeting (the meeting at which Stokely Carmichael was elected SNCC chair, the Black Power program was adopted, and the position of white SNCC staff was formally reconsidered) ended; her departure from the SNCC payroll in 1966 followed that institutional reorganization [src: 4].",
-  "legacy_and_reception": "After her SNCC tenure Garman Robinson moved to Baltimore in 1970 with her husband Reginald Robinson (a SNCC field secretary in Maryland's Eastern Shore campaign), where she organized for half a century in Black-and-white community-organizing coalition work, education-equity advocacy, and local Baltimore housing-justice campaigns [src: 2]. She maintained continuing public correspondence with the SNCC alumni network and was active in the SNCC Legacy Project that produced the SNCC Digital Gateway documentary platform at Duke University; the SNCC Digital Gateway records her as a continuing-organizer voice in the institutional memory work the SNCC Legacy Project anchors [src: 2]. She died October 11, 2020 in Baltimore at eighty-one, three weeks before the November 2020 general election that her continuing organizing work had pointed toward [src: 2].",
+  "role_summary": "SNCC Atlanta national-office staff (1964-1966); Northern Coordinator of the Friends of SNCC chapter network and SNCC's fundraising under Executive Secretary James Forman; later a Baltimore community organizer.",
+  "ai_reading": "Cosine similarity in this corpus puts Garman Robinson's passages in a tight cluster of SNCC organizers, with Timothy Jenkins (entry 120, count 210), Martha Prescod Norman Noonan (entry 83, count 169), Maria Varela (entry 81, count 167), Dottie Zellner (entry 30, count 165, and her single highest passage similarity at 0.84), and Phil Hutchings (entry 98, count 160) as her top five neighbors by shared-passage count. Several were white SNCC staff or coalition-bridging figures, so the embedding picks out that subgroup rather than placing her with all SNCC staff equally. Two readings cut against her public framing. First, although her documented role was coordinating Northern campus support, on the Southern Struggle vs Northern Struggle axis the embedding reads her at -0.32, toward the Southern pole, picking up her Greenwood-office summer and her daily reporting on McComb, Albany, and Selma rather than the Northern-fundraising desk her title names. Second, on the Individual Conscience vs Collective Discipline axis she lands at -0.44, toward Individual Conscience, an unexpected pull for someone whose Atlanta job was organization-building (allocations, fundraising, the chapter network), all collective-discipline work; the model seems to read her testimony as reflective conscience-narrative rather than as operational language. The influence graph adds a convergence the cultural record has not foregrounded: the figure her interview names most is Judy Richardson (entry 69, out-edge count 9), who is also a top neighbor by passage similarity (entry 69, top score 0.76), and the two co-edited the SNCC women's anthology together.",
+  "biographical_paragraph": "Betty Garman Robinson came to civil rights organizing from the Northern campus left, not from a Southern church basement [src: 2]. Born in New York City on January 8, 1939 and raised in the suburb of Pleasantville, she enrolled at Skidmore College, where after her first National Student Association congress in the summer of 1958 she switched her major from psychology to political science and ran campus forums against the period's anti-communist redbaiting [src: 2]. Graduate study at Berkeley put her inside Students for a Democratic Society, and she chaired the University of California Berkeley Friends of SNCC chapter; it was from that chapter that SNCC Executive Secretary James Forman recruited her [src: 2]. In March 1964 she moved to Atlanta to staff the SNCC national office, and by the fall of 1964 she had become Northern Coordinator, directing the Friends of SNCC department, the fundraising appeals, and the allocation of money to the field projects [src: 2, 3]. She co-edited the SNCC women's anthology Hands on the Freedom Plow: Personal Accounts by Women in SNCC (University of Illinois Press, 2010), contributing the chapter \"Working in the Eye of the Social Movement Storm\" [src: 4]. After leaving SNCC she settled in Washington and then moved to Baltimore in 1972 to work in a factory, where she married a Black factory worker and organized for the next half-century in community, labor, and racial-justice campaigns; she co-founded the Baltimore chapter of Showing Up for Racial Justice (SURJ) [src: 3]. She discusses fellow SNCC interviewees in the corpus including Judy Richardson (entry 69) and Courtland Cox (entry 24). She died in Baltimore on October 11, 2020 [src: 3]. Her oral history forms entry 7 of the Civil Rights History Project at the Library of Congress [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:11:11",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "Asked why she chose SNCC over SDS, where she felt sidelined as a woman, Garman Robinson points to the recognition she found in the SNCC office:",
+      "quote": "So in the SNCC space, because I could take initiative, because I could rise to the occasion, I could, I could do something concrete, and I got affirmed by James Forman and by Casey that I was doing a good thing and that I was needed and necessary and important."
+    },
+    {
+      "relation": "self",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:14:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "On her assignment during the 1964 Freedom Summer, before she became Northern Coordinator that fall:",
+      "quote": "So I'm the lead Northern Coordinator in the Greenwood office during summer 64."
+    },
+    {
+      "relation": "self",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:31:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "Describing the daily routine that connected the Atlanta office to the Northern support network:",
+      "quote": "we called all the Friends of SNCC offices every day. And we would give them a report on what had happened in McComb, Mississippi, what had happened in Greenwood, what had happened in Albany, what had happened in Selma."
+    },
+    {
+      "relation": "self",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:40:51",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "On the framing she used when writing SNCC's fundraising appeals:",
+      "quote": "one of the things that we stayed away from was the, oh, you have to help the poor Mississippi person who has no rights. We were more, this is a democratic country. We need to be committed and dedicated to our ideals."
+    },
+    {
+      "relation": "self",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:53:56",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "After the attack on marchers at the Edmund Pettus Bridge, she used the office's resources to move organizers to Selma fast:",
+      "quote": "I was able to charter a plane to send four people, Ivanhoe Donaldson, Courtland Cox, and Prathia Hall, and I don't know who the fourth person was, to Selma from Atlanta."
+    },
+    {
+      "relation": "about",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "01:33:57",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "Judy Richardson, who worked beside Garman Robinson in the SNCC office, places her in the chain of Northern coordinators after Dinky Romilly:",
+      "quote": "she was also doing campus friends of SNCC until Betty Garman comes in, and she does the campus friends of SNCC."
+    }
+  ],
+  "movement_context": "The Friends of SNCC chapter network Garman Robinson coordinated from the Atlanta national office was the principal fundraising and political-support infrastructure that financed SNCC's southern field operations through the 1964 Freedom Summer and the 1965 Selma campaign [src: 3]. James Forman's institutional design (he served as SNCC Executive Secretary from October 1961 through May 1966) placed the Atlanta office at the center of a small-donor financial-engine model: Friends of SNCC chapters operated in northern campus communities, liberal-left congregations, and peace-movement networks, raising the operating budget that kept the southern field staff on subsistence stipends [src: 5]. Garman Robinson's white-SNCC-staff position (her oral history is among the catalog's white-SNCC-staff testimonies the AI's-reading observation places her structurally adjacent to) was the racial configuration that the late-1966 Kingston Springs, Tennessee SNCC staff meeting (the meeting at which Stokely Carmichael was elected chair, the Black Power program was adopted, and the position of white SNCC staff was formally reconsidered) ended; her departure from the SNCC payroll in 1966 followed that institutional reorganization [src: 5].",
+  "legacy_and_reception": "Garman Robinson moved to Washington after leaving SNCC, then to Baltimore in 1972, where she took factory work and organized a rank-and-file movement inside her union; she married a Black factory worker during those years [src: 3]. Over the following decades she worked in occupational-medicine and public-health programs at Johns Hopkins and then returned to full-time organizing, serving as lead organizer for the Citizens Planning and Housing Association on Baltimore neighborhood, housing, and anti-crime campaigns, and later co-founding the Baltimore chapter of Showing Up for Racial Justice (SURJ) [src: 3]. She co-edited Hands on the Freedom Plow: Personal Accounts by Women in SNCC (University of Illinois Press, 2010), the anthology of more than fifty first-person accounts by women in SNCC, and is recorded by the SNCC Legacy Project among the movement veterans it memorializes [src: 3, 4]. She died in Baltimore on October 11, 2020, at the age of eighty-one [src: 3].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/a/ac/James_Forman%2C_c._1969.jpg",
       "alt": "James Forman, c. 1969",
-      "caption": "James Forman, SNCC Executive Director from October 1961 through May 1966 and Garman Robinson's direct supervisor during her March 1964 to 1966 tenure in the SNCC Atlanta national office. Photographed for the Portland Press Herald, May 9, 1969.",
+      "caption": "James Forman, SNCC Executive Secretary from October 1961 through May 1966 and Garman Robinson's direct supervisor during her March 1964 to 1966 tenure in the SNCC Atlanta national office. Photographed for the Portland Press Herald, May 9, 1969.",
       "photographer": "Unknown (Portland Press Herald staff)",
       "repository": "Wikimedia Commons (sourced from Portland Press Herald, May 9, 1969, Page 20)",
       "license": "Public domain (U.S. publication 1931-1977 without copyright notice)",
@@ -25,7 +93,7 @@
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/54/1000_students_wanted_for_the_SNCC_Mississippi_Freedom_Summer_Project_%2826276560142%29.jpg",
       "alt": "SNCC Mississippi Freedom Summer Project recruitment broadside, April 1964",
-      "caption": "SNCC Mississippi Freedom Summer Project recruitment broadside, April 1964. Garman Robinson had taken her desk at the SNCC Atlanta national office a month earlier, in March 1964; the Friends of SNCC chapter network she coordinated through the spring of 1964 was the principal Northern-campus channel through which Freedom Summer recruits learned about and applied to the project. Held by the Mississippi Department of Archives and History.",
+      "caption": "SNCC Mississippi Freedom Summer Project recruitment broadside, April 1964. Garman Robinson had taken her desk at the SNCC Atlanta national office a month earlier, in March 1964; the Friends of SNCC chapter network she coordinated was the principal Northern-campus channel through which Freedom Summer recruits learned about and applied to the project. Held by the Mississippi Department of Archives and History.",
       "photographer": "Student Nonviolent Coordinating Committee (broadside publisher)",
       "repository": "Wikimedia Commons (sourced from Mississippi Department of Archives and History)",
       "license": "No known copyright restrictions (public domain)",
@@ -41,18 +109,23 @@
     },
     {
       "url": "https://snccdigital.org/people/betty-garman-robinson/",
-      "title": "Betty Garman Robinson",
+      "title": "Betty Garman (Robinson)",
       "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project; documentary platform working from the SNCC papers at the Robert W. Woodruff Library, Atlanta University Center)"
     },
     {
-      "url": "https://search.worldcat.org/title/4884116",
-      "title": "James Forman, The Making of Black Revolutionaries: A Personal Account",
-      "publisher": "Macmillan, 1972 (paperback University of Washington Press, 1997); WorldCat OCLC 4884116 (Forman's autobiographical institutional history of SNCC including the Atlanta national office under his direction)"
+      "url": "https://www.crmvet.org/mem/bettyg.htm",
+      "title": "Betty Garman Robinson (memorial)",
+      "publisher": "Veterans of the Civil Rights Movement (crmvet.org); records her as Northern Friends of SNCC Coordinator, her 1972 move to Baltimore for factory and union organizing, her Baltimore community-organizing career, and her October 2020 death"
+    },
+    {
+      "url": "https://sncclegacyproject.org/hands-on-the-freedom-plow/",
+      "title": "Faith S. Holsaert, Martha Prescod Norman Noonan, Judy Richardson, Betty Garman Robinson, Jean Smith Young, and Dorothy M. Zellner, eds., Hands on the Freedom Plow: Personal Accounts by Women in SNCC",
+      "publisher": "University of Illinois Press, 2010 (SNCC Legacy Project book page); Garman Robinson is one of six co-editors and contributes the chapter \"Working in the Eye of the Social Movement Storm\""
     },
     {
       "url": "https://search.worldcat.org/title/3025953",
       "title": "Clayborne Carson, In Struggle: SNCC and the Black Awakening of the 1960s",
-      "publisher": "Harvard University Press, 1981 (Bancroft Prize 1982); WorldCat OCLC 3025953 (the standard institutional history of SNCC including the 1966 Kingston Springs Tennessee staff meeting on the position of white staff)"
+      "publisher": "Harvard University Press, 1981 (Bancroft Prize 1982); WorldCat OCLC 3025953 (the standard institutional history of SNCC, including James Forman's Atlanta national office and the 1966 Kingston Springs Tennessee staff meeting on the position of white staff)"
     }
   ]
 }

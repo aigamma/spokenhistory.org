@@ -6,11 +6,90 @@
   "display_name": "Dorothy \"Dottie\" Foreman Zellner",
   "born": 1938,
   "died": null,
-  "role_summary": "Designer of the Black Panther Party logo at Stokely Carmichael's request (1966-67); SNCC Freedom Summer recruiter; co-editor of the Student Voice newsletter; later staff at the Center for Constitutional Rights.",
-  "ai_reading": "Zellner clusters in the SNCC-allied-women cohort: top neighbors are Gwendolyn Zoharah Simmons (entry 53, count 181), Betty Garman Robinson (entry 7), Charles McLaurin (entry 17), John Churchville (entry 63), and Judy Richardson (entry 69). The embedding agrees with her cultural placement as a Freedom Summer recruiter and Student Voice co-editor. The novel observation is on the Tactical Pragmatism vs Strategic Vision axis, where Zellner sits at +0.50, well toward Strategic Vision. The cultural record would not have predicted strategic-vision testimony from someone whose single most cited contribution is the graphic design of the Black Panther Party logo (a concrete tactical artifact), but the embedding reads her broader testimony, including the recruiting and the Center for Constitutional Rights work, as strategic-positional rather than tactical-operational.",
-  "biographical_paragraph": "In 1966-67, when Stokely Carmichael asked for a graphic mark for the Black Panther Party, Dottie Zellner designed the logo that became the party's iconography [src: 1]. She had come to that work through SNCC, where she served as a recruiter for the 1964 Freedom Summer project and was co-editor of the organization's newsletter, the Student Voice [src: 1]. Born in 1938 in Manhattan, New York to Jewish immigrant parents from a secular, Yiddish-speaking, social-justice-oriented left, she graduated from Queens College, City University of New York [src: 1]. She married fellow SNCC activist Bob Zellner in 1962; the marriage later ended [src: 1]. Her later career took several turns: years working as a nurse, then in 1984 a move to the Center for Constitutional Rights, and in 1998 a directorship of publications and development at Queens College School of Law [src: 1]. Since 2002 she has been active in Israeli-Palestinian peace organizing and the Boycott, Divestment and Sanctions movement [src: 1]. Her Library of Congress oral history is entry 30 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The Student Voice that Zellner co-edited was SNCC's principal in-house publication, founded in June 1960 under the editorial direction of Marion Barry (SNCC's first chair) and serving as the organization's documentary record of field-staff actions, arrests, congressional testimony, and movement strategy through to its final October 1965 issue [src: 2]. Zellner's recruiting work for the 1964 Freedom Summer project (the project that brought approximately one thousand mostly-Northern white college volunteers into Mississippi for the summer of 1964 to expand the COFO voter-registration drive) ran through the Western College for Women orientation site in Oxford, Ohio (where Andrew Goodman, Michael Schwerner, and James Chaney trained before their June 21, 1964 disappearance and murder by Klan members in Neshoba County, Mississippi); the volunteer-applicant screening Zellner coordinated produced the cohort the Western College sessions trained [src: 3]. Her 1966-67 logo design work for the Black Panther Party sits inside the broader visual-identity production the SNCC graphic-design tradition produced across the mid-1960s; the Lowndes County Freedom Organization black panther logo (the LCFO logo Courtland Cox catalog entry 24 documents with Jennifer Lawson at the SNCC Political Education Materials level) was the source visual the Oakland Black Panther Party founded by Newton and Seale in October 1966 derived its name and graphic identity from, and Zellner's 1966-67 work refined that lineage into the iconography the Oakland party used through the 1970s [src: 4]. Her post-SNCC career at the Center for Constitutional Rights (CCR) from 1984 placed her in the institutional successor to the LCDC (Lawyers Constitutional Defense Committee) that Richard Barry Sobol (catalog entry 104) had worked with in 1960s Louisiana; CCR's 1990s and 2000s litigation against U.S. detention practices in Guantanamo Bay and in domestic immigration enforcement extended the legal-defense infrastructure tradition Zellner had been part of from the 1960s [src: 5].",
-  "legacy_and_reception": "Zellner's continuing public role since 2002 has centered on the Center for Constitutional Rights and the Jewish Voice for Peace organizing network; her co-edited 2014 New Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC (Faith S. Holsaert and Martha Prescod Norman Noonan among the co-editors) is the principal collective-memoir archival document of the SNCC women's cohort, including her own contribution on the Student Voice editorship and the Freedom Summer recruiting work [src: 6]. Her brother-in-law Bob Zellner (the SNCC field secretary whose 2008 NewSouth Books memoir The Wrong Side of Murder Creek documents his SNCC Albany and Birmingham years, and whose marriage to Dottie ran 1962 through their later divorce) is documented at the SNCC Digital Gateway as a separate institutional record [src: 7]. The 2014 SNCC 50th Anniversary Conference at Shaw University in Raleigh (the conference Courtland Cox catalog entry 24 anchored) is the institutional moment her SNCC alumni network last reconvened at scale; the post-conference memoir-and-archive work has anchored her continuing public-facing organizing role [src: 8].",
+  "role_summary": "SNCC communications worker in the Atlanta office alongside Julian Bond; recruiter and interviewer of Northern volunteers for the 1964 Freedom Summer project; one of three women (with Ruth Howard and Lisa Lyons) who drew and refined the SNCC black-panther image used by the Lowndes County Freedom Organization; later a nurse, then staff at the Center for Constitutional Rights.",
+  "ai_reading": "By raw co-occurrence count, Zellner's top neighbors in this corpus are Gwendolyn Zoharah Simmons (entry 53, count 181), Betty Garman Robinson (entry 7, count 175), Charles McLaurin (entry 17, count 167), John Churchville (entry 63, count 138), and Judy Richardson (entry 69, count 125), a tight SNCC cohort. The sharper embedding signal is on top cosine similarity rather than count: Betty Garman Robinson is Zellner's single closest passage match at 0.84, far above the next neighbor near 0.74. The cosine space pulls the two women together more strongly than any pairing the cultural record foregrounds, and the corpus itself supplies the corroboration: Zellner's interview was recorded in Betty Garman Robinson's Baltimore home, and Robinson's own testimony places the two of them, with Judy Richardson, on the Greenwood press desk in the summer of 1964. On the Tactical Pragmatism vs Strategic Vision axis the embedding reads Zellner at +0.50 (rank 23 of 136 entries), toward Strategic Vision, which sits oddly against a public profile built on concrete tasks (laying out the Student Voice, drawing a panther, working a WATS line); the vector seems to weight her later movement-analysis framing over the operational fieldwork.",
+  "biographical_paragraph": "Born January 14, 1938 in New York City to secular Jewish immigrant parents (her father from Lithuania by way of England, her mother from Kiev), Dottie Zellner joined the NAACP in high school and trained as a nonviolent organizer at a CORE workshop in Miami before working with CORE in New Orleans [src: 1]. She was hired by the Southern Regional Council and moved to Atlanta in June 1961, became involved with SNCC later that year, organized a Civil Liberties Workshop in the spring of 1963, and married fellow SNCC organizer Bob Zellner that August; the marriage later ended [src: 1]. In the Atlanta office she did communications work alongside Julian Bond, an assignment Judy Richardson (entry 69) names directly in her own oral history; she helped edit the SNCC newsletter the Student Voice and trained staff and volunteers in dealing with the press [src: 1, 2]. In 1964 she and Bob Zellner moved to Boston and built a Northeast Regional Office of SNCC, through which she recruited and interviewed Northern volunteers for the Freedom Summer project, then worked the Greenwood, Mississippi WATS line that summer with Betty Garman Robinson (entry 7) and Judy Richardson [src: 1]. When Stokely Carmichael asked SNCC staff for a panther drawing for the Lowndes County Freedom Organization, Zellner was one of three women, with Ruth Howard and Lisa Lyons, who produced and refined the black-panther image; by her own account she cleaned up a rough sketch derived from Ruth Howard's drawing of an Atlanta-area college mascot, added whiskers, and rendered it in solid black [src: 9]. Her later career moved through nursing, a 1984 staff role at the Center for Constitutional Rights, and a 1998 appointment as director of publications and development at the Queens College School of Law; as of the 2010s she lectures and writes about the movement and does advocacy work on behalf of Palestinians [src: 1, 5]. Her Library of Congress oral history is entry 30 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039: 0125) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "02:02:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "Asked why she committed so fully to SNCC, Zellner framed her decision to come South:",
+      "quote": "Now that you've heard part of my whole story, I mean, I went down to marry the movement."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "01:58:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "On returning to the Atlanta office in the winter of 1965-66, she dated the assignment that produced her contribution to the Lowndes County Freedom Organization panther image:",
+      "quote": "that's when Stokely [Carmichael] asked me to work on The (Black) Panther."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "02:29:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "Describing how she screened applicants for the 1964 Freedom Summer project:",
+      "quote": "This was written by people in Mississippi. And we interviewed every one of them personally. And usually they were two of us, a black person and a white person."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "02:31:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "At a later reunion, a woman she had interviewed reminded her how blunt the screening question had been:",
+      "quote": "She said, you scared the hell out of me. You said, are you ready to die?"
+    },
+    {
+      "relation": "self",
+      "speaker": "Dorothy \"Dottie\" Foreman Zellner",
+      "speaker_slug": "dorothy-dottie-foreman-zellner",
+      "source_entry": 30,
+      "timestamp": "01:51:07",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "On the press-relations discipline she and Julian Bond taught SNCC staff and volunteers:",
+      "quote": "If you have a demonstration don't say there were 500 people when there were 42 people."
+    },
+    {
+      "relation": "about",
+      "speaker": "Judy Richardson",
+      "speaker_slug": "judy-richardson",
+      "source_entry": 69,
+      "timestamp": "01:16:55",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655418/",
+      "lead_in": "Judy Richardson, describing the SNCC Atlanta communications office she joined, places Zellner there before her as Julian Bond's predecessor:",
+      "quote": "So when I get there, Doddy, Zellner had already left who had been the previous, um, person assisting Julian and communications."
+    },
+    {
+      "relation": "about",
+      "speaker": "Betty Garman Robinson",
+      "speaker_slug": "betty-garman-robinson",
+      "source_entry": 7,
+      "timestamp": "01:14:54",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655415/",
+      "lead_in": "Betty Garman Robinson, the lead Northern coordinator in the Greenwood office during the summer of 1964, lists who staffed the press desk with her (her recording renders the surname twice):",
+      "quote": "And Dottie Zellner Zellner and Judy Richardson are there, both also working."
+    }
+  ],
+  "movement_context": "The Student Voice that Zellner co-edited was SNCC's principal in-house publication, founded in June 1960 under the editorial direction of Marion Barry (SNCC's first chair) and serving as the organization's documentary record of field-staff actions, arrests, congressional testimony, and movement strategy through to its final October 1965 issue [src: 2]. Zellner's recruiting work for the 1964 Freedom Summer project (the project that brought approximately one thousand mostly-Northern white college volunteers into Mississippi for the summer of 1964 to expand the COFO voter-registration drive) ran through the Western College for Women orientation site in Oxford, Ohio (where Andrew Goodman, Michael Schwerner, and James Chaney trained before their June 21, 1964 disappearance and murder by Klan members in Neshoba County, Mississippi); the volunteer-applicant screening Zellner coordinated produced the cohort the Western College sessions trained [src: 3]. Her contribution to the Lowndes County Freedom Organization black-panther image is documented in Lincoln Cushing's 2016 interviews with the women who made it: Stokely Carmichael asked Zellner (who had attended New York's High School of Music and Art) to draw the panther, gave her a rough sketch that Ruth Howard had based on the mascot of an Atlanta-area historically Black college (Clark College), and Zellner cleaned it up, added whiskers, and rendered it in solid black so it would reproduce in newsprint; Lisa Lyons later made further modifications, and James Forman had Bob Zellner photograph a panther at the Atlanta Zoo for reference [src: 9]. The LCFO symbol (documented in Hasan Kwame Jeffries's history of the Lowndes County movement, and connected to the SNCC political-education materials Jennifer Lawson and Courtland Cox, catalog entry 24, worked on) is the source from which the Oakland Black Panther Party founded by Newton and Seale in October 1966 took its name and panther emblem [src: 4]. Her post-SNCC career at the Center for Constitutional Rights (CCR) from 1984 placed her in the institutional successor to the LCDC (Lawyers Constitutional Defense Committee) that Richard Barry Sobol (catalog entry 104) had worked with in 1960s Louisiana; CCR's 1990s and 2000s litigation against U.S. detention practices in Guantanamo Bay and in domestic immigration enforcement extended the legal-defense infrastructure tradition Zellner had been part of from the 1960s [src: 5].",
+  "legacy_and_reception": "Zellner's continuing public role since 2002 has centered on the Center for Constitutional Rights and the Jewish Voice for Peace organizing network; her co-edited 2014 New Press volume Hands on the Freedom Plow: Personal Accounts by Women in SNCC (Faith S. Holsaert and Martha Prescod Norman Noonan among the co-editors) is the principal collective-memoir archival document of the SNCC women's cohort, including her own contribution on the Student Voice editorship and the Freedom Summer recruiting work [src: 6]. Her former husband Bob Zellner (the SNCC field secretary whose 2008 NewSouth Books memoir The Wrong Side of Murder Creek documents his SNCC Albany and Birmingham years, and whose marriage to Dottie began in August 1963 and ended in a later divorce) is documented at the SNCC Digital Gateway as a separate institutional record [src: 7]. The 2014 SNCC 50th Anniversary Conference at Shaw University in Raleigh (the conference Courtland Cox catalog entry 24 anchored) is the institutional moment her SNCC alumni network last reconvened at scale; the post-conference memoir-and-archive work has anchored her continuing public-facing organizing role [src: 6].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/69/The_Student_Voice%2C_August_19%2C_1964_-_DPLA_-_917f4a56e0f4e7cb142a01b845fde42f_%28page_1%29.jpg",
@@ -57,12 +136,17 @@
     {
       "url": "https://search.worldcat.org/title/213810921",
       "title": "Bob Zellner with Constance Curry, The Wrong Side of Murder Creek: A White Southerner in the Freedom Movement",
-      "publisher": "NewSouth Books, 2008; WorldCat OCLC 213810921 (Bob Zellner's SNCC field-secretary memoir documenting the SNCC Albany and Birmingham years and the 1962-1970s marriage to Dottie)"
+      "publisher": "NewSouth Books, 2008; WorldCat OCLC 213810921 (Bob Zellner's SNCC field-secretary memoir documenting the SNCC Albany and Birmingham years and the 1963-onward marriage to Dottie)"
     },
     {
       "url": "https://search.worldcat.org/title/192129687",
       "title": "Wesley C. Hogan, Many Minds, One Heart: SNCC's Dream for a New America",
       "publisher": "University of North Carolina Press, 2007 (paperback 2009); WorldCat OCLC 192129687"
+    },
+    {
+      "url": "https://stansburyforum.com/2018/02/18/the-women-behind-the-black-panther-party-logo/",
+      "title": "Lincoln Cushing, The Women Behind the Black Panther Party Logo",
+      "publisher": "The Stansbury Forum, 2018 (drawing on Cushing's 2016 interviews with Dorothy Zellner and Lisa Lyons and Bob Zellner's 2006 listserv account; documents that Dorothy Zellner, Ruth Howard, and Lisa Lyons each contributed to the Lowndes County Freedom Organization black-panther image, with Zellner refining a sketch based on Ruth Howard's drawing of the Clark College mascot)"
     }
   ]
 }

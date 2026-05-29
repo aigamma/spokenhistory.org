@@ -6,10 +6,100 @@
   "display_name": "Dion Diamond",
   "born": 1941,
   "died": null,
-  "role_summary": "Co-organizer of the Howard University Nonviolent Action Group (NAG); Freedom Rider on the Anniston and Montgomery-to-Jackson legs in May 1961; voter-registration worker in Baton Rouge.",
-  "ai_reading": "Diamond's top semantic neighbors are Harold K. Brown (entry 55, count 111), C. T. Vivian (entry 134, SCLC), Robert L. Carter (entry 108, NAACP LDF lawyer), Joan Trumpauer Mulholland (entry 60, Freedom Rider), and Judge D'Army Bailey (entry 26). The cluster is unusually heterogeneous, mixing SCLC inner circle (Vivian), NAACP legal (Carter), Freedom Rides (Mulholland), and the BPP-adjacent Brown, rather than concentrating in his Howard NAG / SNCC affiliation. The embedding therefore reads his testimony as cross-faction, the closest cultural analog to the May 1961 Freedom Ride alliance that pulled together SNCC, CORE, the NAACP, and SCLC in one operation. His axis positions are all near-zero (the largest is +0.34 toward Collective Discipline), placing him among the most centrist voices in the corpus and consistent with the cross-faction neighbor pattern. The Howard NAG identification that defines his cultural placement is one cluster among several the embedding does NOT foreground, a reading the cultural-historical record would not have predicted.",
-  "biographical_paragraph": "Dion Diamond was president of Howard University's freshman class in 1959-60 when he and others organized the Nonviolent Action Group (NAG), the campus arm of SNCC that ran sit-ins in Virginia and North Carolina and that, in one stretch, desegregated an area of Alexandria, Virginia inside two weeks [src: 1]. He had been born February 7, 1941 in Petersburg, Virginia [src: 1]. In May 1961 he joined the Freedom Rides, traveling on the Anniston, Alabama leg on the 14th and on the Montgomery-to-Jackson leg on the 24th; over the course of that activism he was arrested some thirty times [src: 1]. After Howard he transferred to the University of Wisconsin-Madison in 1963 for history and sociology, then later took up race relations and sociology at Harvard [src: 1]. He also worked voter registration in Baton Rouge during the early 1960s [src: 1]. His Library of Congress oral history is entry 27 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
-  "movement_context": "The May 1961 Freedom Rides Diamond participated in were organized by the Congress of Racial Equality (CORE) under James Farmer's direction, with the first set of thirteen riders (six white, seven Black) leaving Washington, D.C. on May 4, 1961 in two integrated buses bound for New Orleans; the goal was testing the December 5, 1960 Boynton v. Virginia Supreme Court ruling that interstate-bus terminal segregation violated the Interstate Commerce Act's anti-discrimination provisions [src: 2]. Diamond joined the SNCC-organized continuation rides after the original CORE riders were stopped by the May 14, 1961 Anniston firebombing of the Greyhound bus and the parallel Trailways bus beatings; the May 17 Nashville student rider arrival in Birmingham (organized through Diane Nash's coordination from the Nashville SCLC office) sustained the campaign and brought Diamond and the Howard NAG cohort into the May 24 Montgomery-to-Jackson leg [src: 2]. By the end of the summer 1961 ride campaign, more than four hundred Freedom Riders had been arrested in Jackson, Mississippi alone; the Interstate Commerce Commission's November 1, 1961 ruling banning bus-terminal segregation was the federal-regulatory outcome the campaign produced [src: 2]. The Howard NAG Diamond co-organized was the institutional pipeline through which the Howard cohort (Stokely Carmichael, Cleveland Sellers, Courtland Cox, Phil Hutchings, Charles Cobb, Muriel Tillinghast, among others) entered SNCC's full-time staff cadre across 1961-1963; the cross-faction neighbor pattern the AI's-reading observation above traces emerges from Diamond's having been operationally adjacent to multiple sub-movements at the formative moment each was crystallizing [src: 3].",
+  "role_summary": "Founding member of the Howard University Nonviolent Action Group (NAG); Freedom Rider on the May 1961 Montgomery-to-Jackson continuation ride; SNCC field secretary doing voter registration in McComb, Mississippi and Baton Rouge, Louisiana.",
+  "ai_reading": "The embedding reading that the cultural record would not predict sits on the Nonviolence as Theology versus Armed Self-Defense axis: Diamond's testimony places at +0.24 toward the Armed Self-Defense pole, away from the theological-nonviolence framing that the Freedom Rider label culturally implies. That position is not an artifact; it tracks what he says on the record, that he believed nonviolence as a tactic rather than a philosophy because the police and the army held the guns. On the other four concept axes the vector is closer to center (his largest other reading is +0.34 toward Collective Discipline, with Southern Struggle at -0.19 and the sacred-secular and tactical-strategic axes both inside +/-0.17), so the self-defense lean is the one axis where the embedding takes a clear side. His top semantic neighbors by shared-passage count are Harold K. Brown (entry 55, count 111), C. T. Vivian (entry 134, count 83), Robert L. Carter (entry 108, count 82), Joan Trumpauer Mulholland (entry 60, count 75), and Judge D'Army Bailey (entry 26, count 64), with Charles McLaurin (entry 17, count 60) just behind. The cluster is heterogeneous, spanning SCLC (Vivian), the NAACP Legal Defense lawyer Carter, a fellow Freedom Rider (Mulholland), and Brown, rather than concentrating in Diamond's Howard NAG and SNCC affiliation. The influence graph adds a corroborating cross-reference: Diamond is named in this corpus by D'Army Bailey (entry 26), Timothy Jenkins (entry 120), and the Ladner sisters (entry 75), three voices spread across the Baton Rouge campus protest, the Howard student-government circle, and the Mississippi field, which is the same cross-setting spread the neighbor list shows.",
+  "biographical_paragraph": "Dion Diamond enrolled at Howard University in September 1959 as a physics major and, as a freshman class president, was among the founders of the Nonviolent Action Group (NAG), the campus affiliate of SNCC that organized sit-ins and pickets across Washington, D.C. and the adjacent counties of Virginia and Maryland [src: 1, 2]. NAG's first sit-in, in June 1960 at the Drug Fair and Peoples Drug counters in Arlington, Virginia, was followed within two weeks by desegregation commitments across Arlington and Fairfax counties and Alexandria, and by a summer-long picket of the segregated Glen Echo amusement park in Maryland [src: 2, 3]. He had been born February 7, 1941 in Petersburg, Virginia, where he spent his first eighteen years [src: 2, 4]. The Freedom Rides nearly collapsed after the May 14, 1961 firebombing of a Greyhound bus outside Anniston, Alabama; Diamond joined a second wave of buses that carried the campaign forward on the Montgomery-to-Jackson, Mississippi leg, and he was jailed at Parchman, the Mississippi State Penitentiary [src: 1, 3]. As a SNCC field secretary he did voter-registration work in McComb, Mississippi, sharing a house there with Robert Parris Moses, and in Baton Rouge, Louisiana, where he was charged with criminal anarchy for organizing a student boycott at Southern University; across his civil rights activity he was arrested about thirty times [src: 1, 3]. He transferred to the University of Wisconsin in August 1963 and switched his major from physics to history, and he later earned a graduate degree at Harvard in race and ethnic relations [src: 1, 3]. His Library of Congress oral history is entry 27 of the Civil Rights History Project (American Folklife Center accession AFC 2010/039) [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Dion Diamond",
+      "speaker_slug": "dion-diamond",
+      "source_entry": 27,
+      "timestamp": "00:09:20",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655423/",
+      "lead_in": "Asked whether nonviolence was a philosophy or a tactic, Diamond drew the line on practical grounds:",
+      "quote": "I don't believe it in it as a philosophy. My reasoning is the police and the army have the guns and the ammunition that we had nothing."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dion Diamond",
+      "speaker_slug": "dion-diamond",
+      "source_entry": 27,
+      "timestamp": "00:22:15",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655423/",
+      "lead_in": "Moved through Mississippi jails after the Freedom Ride arrest, he found himself sharing a death-row cell at the state penitentiary:",
+      "quote": "I shared a cell with James Farmer, who was then the director of CORE."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dion Diamond",
+      "speaker_slug": "dion-diamond",
+      "source_entry": 27,
+      "timestamp": "00:34:39",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655423/",
+      "lead_in": "On voter-registration assignment in McComb, sleeping in a room beside a low lattice window, he described the night the danger turned literal:",
+      "quote": "But a shotgun blast came straight through the window, passed over my body."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dion Diamond",
+      "speaker_slug": "dion-diamond",
+      "source_entry": 27,
+      "timestamp": "00:38:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655423/",
+      "lead_in": "Arrested in Baton Rouge for organizing a student boycott at Southern University, he recounted the charge and conceded its logic:",
+      "quote": "The main charge they got me on was criminal anarchy. They said I was attempting to overthrow the state of Louisiana. And in fact, that's true. I mean, I was."
+    },
+    {
+      "relation": "self",
+      "speaker": "Dion Diamond",
+      "speaker_slug": "dion-diamond",
+      "source_entry": 27,
+      "timestamp": "00:30:17",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655423/",
+      "lead_in": "Reflecting on why he tells the history to young audiences, he reached for an inscription he had read on a building downtown:",
+      "quote": "But somewhere downtown on one of the buildings, there's this Shakespearean phrase, what is past is prologue. I think that's true. If you don't know your history, you should. You can very easily revert to what existed previously."
+    },
+    {
+      "relation": "about",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "00:29:40",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Timothy Jenkins, then moving from undergraduate to graduate at Howard, places Diamond in the incoming class that became the core of NAG:",
+      "quote": "Stokely Carmichael, Courtland Cox, Dion Diamond, Jean Wheeler, and a number of other students had just been admitted as freshmen at Howard."
+    },
+    {
+      "relation": "about",
+      "speaker": "Judge D'Army Bailey",
+      "speaker_slug": "judge-darmy-bailey",
+      "source_entry": 26,
+      "timestamp": "00:54:38",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669197/",
+      "lead_in": "D'Army Bailey, a Southern University student in Baton Rouge during the 1961-62 protests, recalls who arrived to push the campaign forward:",
+      "quote": "one of the leaders that had gotten us stirred up in this second wave of protest was a young man by the name of Dion Diamond who had come to Baton Rouge, but Dion was a SNCC organizer that came to the Southern campus."
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorie Ann Ladner and Joyce Ann Ladner",
+      "speaker_slug": "ladners-joint-interview",
+      "source_entry": 75,
+      "timestamp": "01:23:51",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669153/",
+      "lead_in": "A Ladner sister remembers the meeting in a Masonic Temple above Medgar Evers's office where the SNCC organizers gathered with local Mississippi youth:",
+      "quote": "Dion Diamond, all these young people were there, and it's like, oh my God, I've been looking for you since I was 14 years old."
+    }
+  ],
+  "movement_context": "The May 1961 Freedom Rides were organized by the Congress of Racial Equality (CORE) under James Farmer's direction, with the first set of thirteen riders (six white, seven Black) leaving Washington, D.C. on May 4, 1961 in two integrated buses bound for New Orleans; the goal was testing the December 5, 1960 Boynton v. Virginia Supreme Court ruling that interstate-bus terminal segregation violated the Interstate Commerce Act's anti-discrimination provisions [src: 5, 7]. Diamond did not ride the original buses; he joined a second wave that carried the campaign forward after the original CORE riders were stopped by the May 14, 1961 Anniston firebombing of the Greyhound bus and the parallel Trailways bus beatings [src: 5, 3]. The continuation was sustained by Nashville student riders who reached Birmingham on May 17, and it brought Diamond onto the Montgomery-to-Jackson, Mississippi leg; in his own account, his bus was escorted into Jackson under National Guard and state-police convoy because a deal had been struck that the riders would not be beaten but would be arrested on arrival [src: 1, 5]. By the end of the summer 1961 ride campaign, more than four hundred Freedom Riders had been arrested in Jackson alone; the Interstate Commerce Commission's November 1, 1961 ruling banning bus-terminal segregation was the federal-regulatory outcome the campaign produced [src: 5]. The Howard NAG Diamond helped found was a pipeline through which the Howard cohort (Stokely Carmichael, Courtland Cox, Charles Cobb, Muriel Tillinghast, Jean Wheeler, among others) entered SNCC's organizing cadre across 1960-1963; Timothy Jenkins (entry 120) names Diamond among the freshmen 'stalwarts in the founding of SNCC' in that cohort [src: 2, 6].",
   "gallery": [
     {
       "src_external": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Freedom_Riders_Sunday%2C_May_14%2C_1961_of_the_Birmingham_News.jpg",
@@ -29,14 +119,29 @@
       "publisher": "Civil Rights History Project, Library of Congress (AFC 2010/039)"
     },
     {
+      "url": "https://snccdigital.org/inside-sncc/establishing-sncc/campus-affiliates/nonviolent-action-group-nag/",
+      "title": "Nonviolent Action Group (NAG)",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project): NAG as the Howard University campus affiliate of SNCC organizing in Washington, D.C. and the adjacent states of Maryland and Virginia, with its first sit-in on June 9, 1960 at the Peoples Drug Store in Arlington and the Drug Fair at the Lee Highway Shopping Center"
+    },
+    {
+      "url": "https://onwisconsin.uwalumni.com/a-freedom-riders-perilous-path/",
+      "title": "A Freedom Rider's Perilous Path",
+      "publisher": "On Wisconsin Magazine, Wisconsin Alumni Association, University of Wisconsin-Madison (Diamond as Howard freshman class president and NAG founder; the Arlington and Fairfax counties and Alexandria desegregation within two weeks; the Glen Echo picket; joining a second group of buses in May 1961; the Baton Rouge criminal-anarchy charge; imprisonment at Parchman; the August 1963 transfer to Wisconsin and the change of major from physics to history)"
+    },
+    {
+      "url": "https://crdl.usg.edu/people/diamond_dion_tyrone_1941",
+      "title": "Diamond, Dion T., 1941-",
+      "publisher": "Civil Rights Digital Library, Digital Library of Georgia, University System of Georgia (authority record, with supporting archival materials from the Alabama and Mississippi Departments of Archives and History; documents Diamond as a nineteen-year-old Petersburg, Virginia resident and Howard University student who rode from Montgomery to Jackson as part of a May 24, 1961 Freedom Ride)"
+    },
+    {
       "url": "https://search.worldcat.org/title/19908603",
       "title": "Raymond Arsenault, Freedom Riders: 1961 and the Struggle for Racial Justice",
-      "publisher": "Oxford University Press, 2006; WorldCat OCLC 19908603 (the standard institutional history of the Freedom Rides including the Anniston, Birmingham, and Montgomery attacks, and the November 1, 1961 Interstate Commerce Commission ruling)"
+      "publisher": "Oxford University Press, 2006; WorldCat OCLC 19908603 (the standard institutional history of the Freedom Rides including the May 14, 1961 Anniston firebombing, the continuation rides, and the November 1, 1961 Interstate Commerce Commission ruling)"
     },
     {
       "url": "https://search.worldcat.org/title/3025953",
       "title": "Clayborne Carson, In Struggle: SNCC and the Black Awakening of the 1960s",
-      "publisher": "Harvard University Press, 1981 (Bancroft Prize 1982); WorldCat OCLC 3025953 (the standard institutional history of SNCC including the Howard NAG pipeline that brought Diamond, Carmichael, Sellers, Cox, Hutchings, Cobb, and Tillinghast into the full-time staff cadre)"
+      "publisher": "Harvard University Press, 1981 (Bancroft Prize 1982); WorldCat OCLC 3025953 (the standard institutional history of SNCC including the Howard NAG pipeline that brought Diamond, Carmichael, Cox, Cobb, and Tillinghast into SNCC's organizing cadre)"
     },
     {
       "url": "https://supreme.justia.com/cases/federal/us/364/454/",
