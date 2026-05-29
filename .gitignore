@@ -72,3 +72,11 @@ public/rag/summaries/capsules_batch_*.json
 
 # Local-only scratch (Pinecone dumps, intermediate uploads, etc.)
 tmp/
+
+# Metadata Generation System per-entry subagent outputs: regenerable pipeline
+# artifacts (chapterized interview summaries + the work queue). Same dev-only
+# intermediate class as public/rag/summaries/_batches/ above; not committed.
+Metadata Generation System/output_subagent/
+
+# Microsoft Office lock files (the ~$ shadow file created while a doc is open).
+~$*
