@@ -13,15 +13,26 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { ExternalLink, ChevronLeft, Clock, FileText } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
+import LocVideoEmbed from '../components/LocVideoEmbed';
+import { convertTimestampToSeconds } from '../utils/timeUtils';
 import { TIER_BADGE, fidelityNoteFor } from '../components/rag/tiers';
 
 export default function InterviewDetail() {
   const { entryNumber } = useParams();
   const n = parseInt(entryNumber, 10);
+
+  // Optional deep-link to a moment: ?t=2078 (seconds) or ?t=00:34:38.
+  // PersonPage's "Open the full interview" link passes raw seconds; we
+  // also accept a colon-delimited timestamp so the URL stays shareable.
+  const [searchParams] = useSearchParams();
+  const tParam = searchParams.get('t');
+  const startSeconds = tParam
+    ? (tParam.includes(':') ? convertTimestampToSeconds(tParam) : parseInt(tParam, 10) || 0)
+    : 0;
 
   const [capsules, setCapsules] = useState(null);
   const [neighbors, setNeighbors] = useState(null);
@@ -155,6 +166,21 @@ export default function InterviewDetail() {
           )}
           <p className="text-xs text-stone-500 mt-3">{fidelity}</p>
         </header>
+
+        {/* Video hero. The Library of Congress serves the full interview
+            as a streamable MP4 (range-request seekable), so the page
+            leads with the recording itself. When the reader arrived via a
+            snippet's "Open the full interview" link, startSeconds jumps
+            the player to that moment. LocVideoEmbed fetches the loc_video
+            block by entry number (cached), so its source stays stable
+            regardless of when the rest of the pipeline output resolves. */}
+        <div className="mb-8">
+          <LocVideoEmbed
+            entryNumber={n}
+            startSeconds={startSeconds}
+            autoPlay={startSeconds > 0}
+          />
+        </div>
 
         {entry.loc_item_url && (
           <a

@@ -26,9 +26,11 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, Play, AlertTriangle } from 'lucide-react';
+import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, Play, ChevronUp, AlertTriangle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE, TIER_COLORS } from '../components/rag/tiers';
+import { convertTimestampToSeconds } from '../utils/timeUtils';
+import LocVideoEmbed from '../components/LocVideoEmbed';
 
 /**
  * Helper: fetch JSON with a single attempt; resolves to null on any
@@ -125,6 +127,7 @@ function hyperlinkNames(text, matcher) {
 // catalog for authoritative verification. relation 'self' is the page
 // subject speaking; 'about' is another interviewee speaking about them.
 function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
+  const [showVideo, setShowVideo] = useState(false);
   if (!snippet || !snippet.quote) return null;
   const tierKey = snippet.audit_tier in TIER_BADGE ? snippet.audit_tier : null;
   const badge = tierKey
@@ -183,13 +186,24 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               </span>
             )}
             {snippet.source_entry != null && (
-              <Link
-                to={`/interview/${snippet.source_entry}`}
+              <button
+                type="button"
+                onClick={() => setShowVideo((v) => !v)}
+                aria-expanded={showVideo}
                 className="inline-flex items-center gap-1 font-semibold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
               >
-                <Play className="w-3.5 h-3.5" aria-hidden="true" />
-                Hear this in context
-              </Link>
+                {showVideo ? (
+                  <>
+                    <ChevronUp className="w-3.5 h-3.5" aria-hidden="true" />
+                    Hide video
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-3.5 h-3.5" aria-hidden="true" />
+                    Hear this in context
+                  </>
+                )}
+              </button>
             )}
             {snippet.loc_url && (
               <a
@@ -207,6 +221,27 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
             <BadgeIcon className="w-3.5 h-3.5" aria-hidden="true" />
             {badge.label}
           </div>
+          {/* Inline LoC video, revealed when the reader asks to hear the
+              quote in context. Seeks to the snippet timestamp and plays;
+              the button click above is the user gesture that lets the
+              audio start. A link to the full chaptered interview page sits
+              beneath it for readers who want the broader arc. */}
+          {showVideo && snippet.source_entry != null && (
+            <div className="mt-4">
+              <LocVideoEmbed
+                entryNumber={snippet.source_entry}
+                startSeconds={convertTimestampToSeconds(snippet.timestamp)}
+                autoPlay
+              />
+              <Link
+                to={`/interview/${snippet.source_entry}?t=${convertTimestampToSeconds(snippet.timestamp)}`}
+                className="inline-flex items-center gap-1 mt-2 font-semibold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+              >
+                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                Open the full interview
+              </Link>
+            </div>
+          )}
         </figcaption>
       </div>
     </figure>
