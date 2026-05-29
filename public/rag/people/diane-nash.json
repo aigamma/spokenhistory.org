@@ -15,8 +15,54 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Diane_Nash_at_Germanna_Community_College_(cropped).jpeg",
     "date_taken": "2014-02-17"
   },
-  "ai_reading": "Five corpus voices discuss Nash: Joan Trumpauer Mulholland (entry 60, Freedom Rider), Lonnie C. King (entry 80, Atlanta sit-in organizer), Dion Diamond (entry 27, Howard NAG and Freedom Rider), C. T. Vivian (entry 134, SCLC), and James Oscar Jones (entry 57). The cluster is the 1960-61 sit-in-and-Freedom-Rides cohort; the embedding aligns the in-corpus discussion of Nash with exactly the network she organized.",
-  "biographical_paragraph": "Diane Nash is discussed in this corpus by 5 interviewees across the catalog (Joan Trumpauer Mulholland (entry 60), Lonnie C. King (entry 80), Dion Diamond (entry 27), C. T. Vivian (entry 134), James Oscar Jones (entry 57)), but was not interviewed for the Civil Rights History Project; this catalog page treats Diane Nash as an external figure whose presence in the archive is mediated through other voices. The canonical scholarly source the catalog cites for biographical orientation appears as [src: 1] below.",
+  "ai_reading": "The precomputed influence graph lists five corpus voices as discussing Nash, but a transcript-level reading corrects the precompute in two directions, and the correction is itself the observation. The graph counts Dion Diamond (entry 27), yet his interview names only Nashville the city, never Nash, a co-occurrence false positive the name-matching heuristic could not tell apart from a person reference. Running the other way, the graph misses two interviewees who name Nash at length: Reginald Robinson (entry 101), who narrates physically hiding her from a warrant in an Albany Masonic Temple, and Timothy Jenkins (entry 120), who recalls her recorded position on Kennedy-administration draft deferrals in the voter-registration debate. The voices that actually carry her in the archive (Lonnie C. King, entry 80; James Oscar Jones, entry 57; C. T. Vivian, entry 134; Robinson; Jenkins) cluster tightly on the 1960-61 Nashville-sit-ins-and-Freedom-Rides axis she organized, so the embedding aligns the in-corpus discussion of Nash with exactly the network she built, which is what makes the surname-place collision with Diamond's Nashville references the one edge worth flagging.",
+  "biographical_paragraph": "Diane Nash was not interviewed for the Civil Rights History Project, so her presence in this archive is mediated entirely through the corpus voices who name her; this catalog page treats her as an external figure on that basis. Across the transcripts she surfaces most substantively in the testimony of Lonnie C. King (entry 80), who places her at the center of the Nashville movement, James Oscar Jones (entry 57), who recounts her drilling sit-in participants in nonviolent technique, Reginald Robinson (entry 101), who describes shielding her from arrest during the Albany campaign, and Timothy Jenkins (entry 120), who cites her stance in the voter-registration strategy debates; C. T. Vivian (entry 134) names her in passing as part of the religious wing of the student movement. The biographical orientation the catalog cites appears as [src: 1] below.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Lonnie C. King",
+      "speaker_slug": "lonnie-c-king",
+      "source_entry": 80,
+      "timestamp": "01:44:13",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669189/",
+      "lead_in": "Atlanta sit-in organizer Lonnie C. King, asked about leadership in the Nashville student movement, names Nash as its driving figure:",
+      "quote": "Diane Nash, in my view, was the Nashville Movement. And by that I mean this. Others were there, but they weren't Diane Nash. Diane was articulate."
+    },
+    {
+      "relation": "about",
+      "speaker": "James Oscar Jones",
+      "speaker_slug": "james-oscar-jones",
+      "source_entry": 57,
+      "timestamp": "00:47:55",
+      "audit_tier": "not-auditable",
+      "loc_url": "https://www.loc.gov/item/2015669113/",
+      "lead_in": "James Oscar Jones recalls Nash coaching sit-in participants on how to absorb a beating before they entered a lunch counter:",
+      "quote": "And her theory, her strategy was that if there were a lot of people in there, it wouldn't hurt very well because it would be enough room. And then she said that they start hitting you, fall to the floor."
+    },
+    {
+      "relation": "about",
+      "speaker": "Reginald Robinson",
+      "speaker_slug": "reginald-robinson",
+      "source_entry": 101,
+      "timestamp": "00:45:48",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655421/",
+      "lead_in": "During the Albany campaign, with a warrant out for Nash, SNCC organizer Reginald Robinson moved her and businessman A. G. Gaston out a back door as a police sergeant climbed the stairs of the Masonic temple:",
+      "quote": "So I told Diane Nash and Gaston come with me we got through the black space and open the door and where we were on the roof."
+    },
+    {
+      "relation": "about",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "00:57:52",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Recalling the strategy meetings that launched the south-wide voter-education campaign, Timothy Jenkins cites Nash's concern that draft deferrals could be used to control organizers:",
+      "quote": "I know that one of the points of contention at least for a few people I think Diane Nash I read her comments on this that one of the things on the table was how the Kennedy administration would handle the drafting of the young men working on voter registration and she felt that that might be a way of manipulating people if they were going to defer draft."
+    }
+  ],
   "sources": [
     {
       "url": "https://snccdigital.org/people/diane-nash/",

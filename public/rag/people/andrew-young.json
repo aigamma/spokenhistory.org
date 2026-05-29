@@ -16,8 +16,76 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Andrew_Young_1984_(932-9363).jpg",
     "date_taken": "1984-04-17"
   },
-  "ai_reading": "Young is named in the Clarence B. Jones (entry 20) catalog page as a co-contributor to King's April 4, 1967 \"Beyond Vietnam\" speech; he is also referenced in the broader SCLC catalog pages (Cotton, Walker, Vivian, Lowery). He is not himself a Civil Rights History Project interviewee. His standalone catalog page is added to anchor the SCLC-second-tier-leadership cohort the catalog's existing SCLC pages discuss. Young's three subsequent careers (Congress, ambassadorship, Atlanta mayoralty) are the cultural-dominant placement; the corpus's SCLC-tier cosines read him as the executive-director-figure of the 1964-1968 inner circle.",
+  "ai_reading": "Young is named in the Clarence B. Jones (entry 20) catalog page as a co-contributor to King's April 4, 1967 \"Beyond Vietnam\" speech, and in the Joseph Echols Lowery (entry 66) and Dorothy Foreman Cotton (entry 29) pages. He is not himself a Civil Rights History Project interviewee, so what the corpus holds is the trace he left in other people's testimony, and that trace is the surprise: where the cultural record foregrounds the ambassadorship and the Atlanta mayoralty, the interviewees who name Young in this archive almost never reach for those offices. They place him instead inside two narrow, recurring scenes. The first is the Citizenship Education workshop at Dorchester Academy, where Cotton (entry 29) pairs him with her own teaching. The second, named independently by Lawrence Guyot (entry 76) and Euvester Simpson (entry 41) on opposite ends of the same 1963 Mississippi summer, is the SCLC aide who shows up at the county jail to get organizers out. The embedding's nearest contexts for Young are therefore the field-level mechanics of voter-education and jail-release, not the diplomatic career the public name carries.",
   "biographical_paragraph": "Young was born March 12, 1932 in New Orleans to a dentist father and a schoolteacher mother. He earned a divinity degree at Hartford Theological Seminary and served pastorates in Marion, Alabama and Thomasville, Georgia before joining the National Council of Churches in 1957. He moved to SCLC in 1961, becoming its executive director in 1964; in that role he was a chief strategist in the Birmingham, Selma, and St. Augustine campaigns and a key drafter of the Civil Rights Act of 1964 negotiations with the Johnson administration. He was with King in Memphis at the Lorraine Motel on April 4, 1968, returning from the federal court hearing on the second march injunction when King was shot. After King's death he ran successfully for the U.S. House from Atlanta in 1972 and served two terms before President Carter appointed him U.N. Ambassador; he resigned in 1979 over a meeting with a PLO delegate that the Carter administration had not authorized. He served two terms as mayor of Atlanta (1982-1990) and remains active in international development consulting.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Dorothy Foreman Cotton",
+      "speaker_slug": "dorothy-foreman-cotton",
+      "source_entry": 29,
+      "timestamp": "01:07:52",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669139/",
+      "lead_in": "Dorothy Foreman Cotton, who ran SCLC's Citizenship Education Program, describes how she and Young divided the five-day Dorchester Academy workshops between her sessions and his lessons on why a single vote matters:",
+      "quote": "And I would plan the five day sessions. And Andrew Young would get into the politics."
+    },
+    {
+      "relation": "about",
+      "speaker": "Abernathy family",
+      "speaker_slug": "abernathy-family",
+      "source_entry": 28,
+      "timestamp": "01:38:05",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669207/",
+      "lead_in": "Donzaleigh Abernathy recounts her father Ralph Abernathy's memory of the moments after King was shot on the Lorraine Motel balcony in Memphis, April 4, 1968:",
+      "quote": "And the first person to make it up from the ground was Andy Young. And he ran up and said, \"Oh, no! It's over! It's over! It's over!\" And Daddy said, \"Andy, shut up and go in the bathroom and get some towels.\""
+    },
+    {
+      "relation": "about",
+      "speaker": "Abernathy family",
+      "speaker_slug": "abernathy-family",
+      "source_entry": 28,
+      "timestamp": "01:50:25",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669207/",
+      "lead_in": "Recalling Young's move from SCLC into electoral politics, the Abernathy children describe how Ralph Abernathy backed Young's first run for the U.S. House from Atlanta:",
+      "quote": "when Andrew Young would then want to run for Congress, my dad took his entire SCLC staff and budget and paid for Andy to run for Congress until he was elected."
+    },
+    {
+      "relation": "about",
+      "speaker": "Lawrence Guyot",
+      "speaker_slug": "lawrence-guyot",
+      "source_entry": 76,
+      "timestamp": "00:30:06",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669104/",
+      "lead_in": "Mississippi Freedom Democratic Party chairman Lawrence Guyot recalls the SCLC staff who arrived to secure his release from a Mississippi jail in June 1963:",
+      "quote": "And then Andrew Young, James Bevel, and Frank Smith come to get me out of jail."
+    },
+    {
+      "relation": "about",
+      "speaker": "Euvester Simpson",
+      "speaker_slug": "euvester-simpson",
+      "source_entry": 41,
+      "timestamp": "00:46:14",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669171/",
+      "lead_in": "Euvester Simpson, jailed with Fannie Lou Hamer after the June 1963 Winona, Mississippi arrest, remembers Young arriving to bail them out and carrying the news of Medgar Evers's assassination:",
+      "quote": "And then, I think there was on Wednesday, Andrew Young, and there was someone else who came with him to get us out of jail."
+    },
+    {
+      "relation": "about",
+      "speaker": "William S. Leventhal",
+      "speaker_slug": "william-s-leventhal",
+      "source_entry": 129,
+      "timestamp": "00:47:22",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669181/",
+      "lead_in": "SCOPE volunteer William S. Leventhal relays Young's argument that a disciplined commitment to nonviolence kept the armed rural South from open warfare:",
+      "quote": "And what Andrew Young always said, he said, if it had not been for nonviolence, the South would have been like Northern Ireland."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/34277577",

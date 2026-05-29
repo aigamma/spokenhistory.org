@@ -16,8 +16,87 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Jameslawson.jpg",
     "date_taken": "2005-06-08"
   },
-  "ai_reading": "Lawson is named once in the catalog (in the SNCC-leadership backgrounding around the Nashville sit-in movement) but the figures who passed through his Nashville workshops dominate multiple catalog pages: Diane Nash (FamousNames catalog page), John Lewis (catalog page), and indirectly the broader SNCC chairman lineage (Barry through Lewis to Carmichael, all of whose Nashville-or-southern training Lawson catalyzed). He is not himself a Civil Rights History Project interviewee. His standalone catalog page is added because the catalog's SNCC-leadership cohort cannot be fully resolved without the trainer-figure who built their nonviolent-discipline pedagogy. The novel observation his page surfaces is the catalyst-vs-leader inversion: Lawson is the catalog's most-influential not-himself-named figure, the embedding's references to Nashville sit-in pedagogy implicitly trace back to him without ever crediting him by name in the surfaced bios, the structural-credit problem of nonviolent-organizing training carrying less weight in the historiography than the direct-action moments it produced.",
+  "ai_reading": "Lawson has no vector of his own in this corpus: he was never a Civil Rights History Project interviewee, and the influence graph carries no node for him (the only Lawson it indexes is Jennifer Lawson, entry 59, an unrelated interviewee). He surfaces entirely through other people's testimony, and the catalog's own voices name him directly more than a half dozen times: C. T. Vivian (entry 134), William Lucy (entry 128), Charles F. McDew (entry 16), Candie Carawan (entry 11), Courtland Cox (entry 24), Timothy Jenkins (entry 120), Reginald Robinson (entry 101), and Lonnie C. King (entry 80) each speak his name. The structure the corpus reveals is that these naming voices do not cluster by organization or region, they cluster by a shared training lineage: the Memphis labor organizer (Lucy), the Highlander-adjacent Fisk student (Carawan), the Howard tactic-not-philosophy organizers (Cox, Jenkins), and the Nashville workshop participants (Vivian) all reach for the same figure when they account for where nonviolent discipline entered the movement. The observation his page surfaces is a catalyst-vs-leader asymmetry: a person can be one of the most-named formative presences in an oral-history bank while leaving no first-person trace of his own in it, the teacher credited across many testimonies whose own voice the archive never recorded.",
   "biographical_paragraph": "Lawson was born September 22, 1928 in Uniontown, Pennsylvania to a Methodist minister father and a mother active in the AME church. He served fourteen months in federal prison (1951-1952) as a draft refuser during the Korean War, then sailed to India in 1953 to study Gandhian nonviolence directly, returning in 1956 with the conviction that he carried the most thorough Gandhian training of any U.S. organizer of his generation. The Fellowship of Reconciliation sent him to Nashville in 1958 as its southern field secretary; he enrolled at Vanderbilt Divinity School and began the Tuesday-night nonviolent direct-action workshops at Clark Memorial Methodist Church that across 1959-1960 trained the Nashville Student Movement (Diane Nash, John Lewis, James Bevel, Bernard LaFayette, Marion Barry, C. T. Vivian) in the sit-in tactics that would replicate across the South in February 1960. Vanderbilt expelled him in March 1960 over his sit-in involvement; the divinity school faculty resigned in protest and Vanderbilt eventually reversed the expulsion. He served as pastor of Centenary Methodist Church in Memphis from 1962 through 1974, the years when his Memphis nonviolent-direct-action coordination drew Martin Luther King Jr. to the city for the sanitation-workers strike of February-April 1968 where King was assassinated. Lawson moved to Los Angeles in 1974, serving as pastor of Holman United Methodist Church until 1999. His 2022 collaborative volume Revolutionary Nonviolence: Organizing for Freedom (with Michael K. Honey and Kent Wong, University of California Press) is the canonical scholarly source on his nonviolence-training methodology. He died June 9, 2024 in Los Angeles at ninety-five.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "00:44:17",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "C. T. Vivian, a Nashville minister who took part in the workshops, recounts how he first encountered Lawson and what Lawson came to Nashville to do:",
+      "quote": "Jim Lawson is in Nashville and begins to train ministers, begins to train students, and that training of students went on for several months. It was through that that I met Jim, because I had already been in movement in Peoria, so I knew Jim"
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "00:45:00",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "Vivian, who had practiced nonviolent methods himself in Peoria years earlier, contrasts his own grounding with Lawson's:",
+      "quote": "Jim really knew far more about nonviolence than I did, and so I welcomed him because this was what we needed, as much knowledge as we could get of the method. I had done it, but he had the background to be able to teach it in quite a different way."
+    },
+    {
+      "relation": "about",
+      "speaker": "Timothy Jenkins",
+      "speaker_slug": "timothy-jenkins",
+      "source_entry": 120,
+      "timestamp": "00:48:04",
+      "audit_tier": "high",
+      "loc_url": "https://www.loc.gov/item/2016655417/",
+      "lead_in": "Timothy Jenkins, who organized out of Howard University rather than Nashville, situates Lawson's teaching within SNCC's internal divide over nonviolence:",
+      "quote": "There had been from the beginning a religious contingent of SNCC people who largely were influenced by the teachings of Jim Lawson and they tended to be associated with the Nashville student community."
+    },
+    {
+      "relation": "about",
+      "speaker": "William Lucy",
+      "speaker_slug": "william-lucy",
+      "source_entry": 128,
+      "timestamp": "00:45:06",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669193/",
+      "lead_in": "William Lucy, the AFSCME official who helped lead the 1968 Memphis sanitation strike, describes Lawson's place in that campaign:",
+      "quote": "Rev. James M. Lawson Jr was one of the unique individuals who had been a long time aid in ally of Dr. Martin Luther King Jr. Rev. James M. Lawson Jr had studied, had studied Mohandas K. Gandhi tactics or studied under Mohandas K. Gandhi."
+    },
+    {
+      "relation": "about",
+      "speaker": "Charles F. McDew",
+      "speaker_slug": "charles-f-chuck-mcdew",
+      "source_entry": 16,
+      "timestamp": "00:49:23",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2015669120/",
+      "lead_in": "Charles F. McDew, recalling the 1960 founding of the Student Nonviolent Coordinating Committee, explains why the Nashville delegation belonged in the new organization:",
+      "quote": "And most of those students were from Nashville. And had been taught by James Lawson, and knew James Lawson. And it was an important person to me."
+    },
+    {
+      "relation": "about",
+      "speaker": "Candie Carawan",
+      "speaker_slug": "candie-carawan",
+      "source_entry": 11,
+      "timestamp": "00:13:32",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669151/",
+      "lead_in": "Candie Carawan, a Fisk University exchange student in Nashville in 1959 and 1960, remembers the preparation that preceded the sit-ins:",
+      "quote": "What I mostly remember is, you know, we were already having non-violent trainings at Fisk University that Reverend James Lawson was running."
+    },
+    {
+      "relation": "about",
+      "speaker": "Courtland Cox",
+      "speaker_slug": "courtland-cox",
+      "source_entry": 24,
+      "timestamp": "00:25:11",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669129/",
+      "lead_in": "Courtland Cox, organizing from Howard University, names Lawson among those who held nonviolence as a philosophy rather than the tactic Cox's own group favored:",
+      "quote": "The national group believed in nonviolences of philosophy in a way of life. I mean, and John, I mean, John is probably the, you know, the post-a-child for that, you know, Diane Nash + James Lawson, those guys."
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/1287135055",

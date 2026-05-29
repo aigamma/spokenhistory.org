@@ -16,8 +16,54 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:Dr._Bernard_Lafayette.jpg",
     "date_taken": "2020-02-29"
   },
-  "ai_reading": "LaFayette is referenced three times across the catalog, in the SNCC-Nashville-organizers cohort and in the broader Selma backgrounding. He is not himself a Civil Rights History Project interviewee. His standalone catalog page anchors the Nashville-workshop-trainee cohort the James Lawson catalog page identifies as the catalog's most-influential not-itself-named figure cluster: LaFayette, Diane Nash, John Lewis, James Bevel, Marion Barry, and C. T. Vivian all trained at Lawson's Tuesday-night Clark Memorial workshops. The novel observation his page surfaces is the field-organizer-vs-front-line-protester distinction: LaFayette's 1962-1965 Selma groundwork (voter registration, citizenship schools, the structural conditions that made the 1965 march possible) is the catalog's clearest example of pre-event organizing erased by the photographed-event historiography, the 1965 Bloody Sunday and Selma to Montgomery march absorbing most of the cultural attention while LaFayette's three-year on-the-ground preparation receives less.",
+  "ai_reading": "LaFayette is not himself a Civil Rights History Project interviewee, yet he is named across the testimony of at least four corpus voices spread over two distinct organizing geographies: C. T. Vivian (entry 134) and the Carawans (entry 11) place him in the Nashville workshop and Highlander freedom-song circles, while Maria Varela (entry 81), Martha Prescod Norman Noonan (entry 83), and Dorothy Zellner (entry 30) place him in the SNCC field network reaching from Selma to Detroit fundraising. What the corpus surfaces that the cultural record foregrounds less is the recruiter-and-router role rather than the front-line-protester one: in the voices who name him, LaFayette is the person who sends others toward the work (Varela recalls him pulling her toward Selma, Zellner recalls him pointing her toward SNCC), not the figure in the photographed confrontation. His standalone catalog page sits with the Nashville-workshop cohort the James Lawson catalog page treats as the most-influential not-itself-named cluster: LaFayette, Diane Nash, John Lewis, James Bevel, Marion Barry, and C. T. Vivian all trained at Lawson's Tuesday-night Clark Memorial workshops. The same pattern reads in his 1962-1965 Selma groundwork (voter registration, citizenship schools, the structural conditions that preceded the 1965 march), pre-event organizing that the photographed-event historiography of Bloody Sunday and the Selma to Montgomery march tends to absorb.",
   "biographical_paragraph": "LaFayette was born July 29, 1940 in Tampa, Florida. He enrolled at American Baptist Theological Seminary in Nashville in 1958 and attended James Lawson's Tuesday-night nonviolence workshops at Clark Memorial Methodist Church across 1959-1960, training alongside John Lewis, Diane Nash, James Bevel, Bernard Lee, Marion Barry, and others who would form SNCC at the April 1960 Shaw University conference. He was one of the original thirteen Freedom Riders who left Washington, D.C. on May 4, 1961; the Riders were attacked in Rock Hill, South Carolina, in Anniston and Birmingham, Alabama, and again in Montgomery. Between 1962 and 1965 he served as SNCC's project director for Selma, Alabama, building voter registration and citizenship schools across Dallas County in the years before the 1965 Selma to Montgomery campaign drew national attention; the field-organizing groundwork his project laid is the structural condition that made the photographed 1965 events possible. He took a Bachelor's in philosophy and political science from American Baptist (1961), a Master's in education (1972) and Doctorate in education (1974) from Harvard. He has served as president of the American Baptist Theological Seminary, dean of education at the Center for Nonviolence and Peace Studies at the University of Rhode Island, and Distinguished Senior Scholar in Residence at the Candler School of Theology at Emory University. His 2013 memoir In Peace and Freedom: My Journey in Selma (with Kathryn Lee Johnson, University Press of Kentucky) is the canonical scholarly source for his 1962-1965 Selma chapter.",
+  "interview_snippets": [
+    {
+      "relation": "about",
+      "speaker": "Maria Varela",
+      "speaker_slug": "maria-varela",
+      "source_entry": 81,
+      "timestamp": "00:28:51",
+      "audit_tier": "medium",
+      "loc_url": "https://www.loc.gov/item/2016655434/",
+      "lead_in": "SNCC photographer Maria Varela recalls the lunch at which LaFayette, recovering from a Selma beating, first asked her to join the Dallas County project:",
+      "quote": "So it was either that day or the next day Bernard Lafayette Jr had come in who also had worked. Selma, but broke his leg and had to get out of there because they beat him terribly. So Bernard and Frank had lunch with me and said, what would you think about going to Selma?"
+    },
+    {
+      "relation": "about",
+      "speaker": "Dorothy Zellner",
+      "speaker_slug": null,
+      "source_entry": 30,
+      "timestamp": "00:46:37",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2016655416/",
+      "lead_in": "Dorothy Zellner, deciding she wanted to return to movement work, recalls that LaFayette was the one who pointed her toward SNCC:",
+      "quote": "And Bernard Lafayette was in this group. And it was Bernard, who said to me, SNCC. Go to SNCC."
+    },
+    {
+      "relation": "about",
+      "speaker": "Martha Prescod Norman Noonan",
+      "speaker_slug": "martha-prescod-norman-noonan",
+      "source_entry": 83,
+      "timestamp": "00:28:17",
+      "audit_tier": "low",
+      "loc_url": "https://www.loc.gov/item/2015669179/",
+      "lead_in": "Martha Prescod Norman Noonan, who worked with LaFayette in the Detroit Friends of SNCC group, describes how he handled a fundraising program built around Diane Nash:",
+      "quote": "Bernard Lafayette Jr is no mean speaker himself, but he chose to put her forward rather than himself. And the way he worked was very democratic. So I learned more about the SNCC way and so forth that summer."
+    },
+    {
+      "relation": "about",
+      "speaker": "C. T. Vivian",
+      "speaker_slug": "c-t-vivian",
+      "source_entry": 134,
+      "timestamp": "00:51:46",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669105/",
+      "lead_in": "Asked to recall the students he met in James Lawson's Nashville nonviolence workshops, C. T. Vivian names LaFayette among the core participants:",
+      "quote": "I talked about John Lewis, talked about Jim Bevel, talked about Bernard Lafayette"
+    }
+  ],
   "sources": [
     {
       "url": "https://search.worldcat.org/title/828423064",
