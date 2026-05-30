@@ -471,6 +471,7 @@ function parseArgs(argv) {
     personsOnly: false,
     prune: false,
     forcePrune: false,
+    reembed: false,
     dryRun: false,
     namespace: '',
   };
@@ -494,6 +495,12 @@ function parseArgs(argv) {
     } else if (a === '--force-prune') {
       args.prune = true;
       args.forcePrune = true;
+    } else if (a === '--reembed') {
+      // Re-upsert every expected vector even if its id already exists in Pinecone,
+      // so a metadata-only change (e.g. an updated inferential_uncertainty_tier
+      // from a rescore) actually propagates. Embeddings are deterministic for
+      // unchanged text, so this refreshes metadata without changing retrieval.
+      args.reembed = true;
     } else if (a === '--dry-run') {
       args.dryRun = true;
     } else if (a === '--namespace' && argv[i + 1]) {
@@ -588,7 +595,7 @@ async function main() {
   const existingIds = await listAllVectorIds(args.namespace);
   const toEmbedIds = [];
   for (const id of expectedById.keys()) {
-    if (!existingIds.has(id)) toEmbedIds.push(id);
+    if (args.reembed || !existingIds.has(id)) toEmbedIds.push(id);
   }
   // Scope orphan detection to the ingest's actual scope:
   //   --persons-only: only person_page::* vectors are candidates for orphan
