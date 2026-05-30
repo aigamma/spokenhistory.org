@@ -21,12 +21,14 @@
 
 import { useEffect, useState } from 'react';
 import GEOGRAPHY_COORDINATES from './geographyCoordinates';
+import { useIsDark } from '../../hooks/useTheme';
 
 const MAP_HEIGHT = 420;
 const CENTER = [36.5, -89.0]; // continental US weighted toward the South
 const ZOOM = 4;
 
 export default function AtlasMap({ anchors, selectedSlug, onSelect }) {
+  const isDark = useIsDark();
   const [leafletMods, setLeafletMods] = useState(null);
   const [cssLoaded, setCssLoaded] = useState(false);
 
@@ -112,8 +114,14 @@ export default function AtlasMap({ anchors, selectedSlug, onSelect }) {
         scrollWheelZoom={false}
         style={{ height: '100%', width: '100%' }}
       >
+        {/* Light tiles keep the original OSM basemap byte-for-byte; the
+            dark branch swaps in CARTO's dark basemap. key forces a fresh
+            TileLayer mount on theme toggle so the two never stack. */}
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          key={isDark ? 'dark' : 'light'}
+          url={isDark
+            ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+            : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         />
         {markers.map((m) => {

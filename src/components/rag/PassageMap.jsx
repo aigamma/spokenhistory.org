@@ -35,6 +35,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
+import { useIsDark } from '../../hooks/useTheme';
 
 // Match NomicProjection's palette so users see consistent topic
 // colors across both views.
@@ -47,6 +48,7 @@ const TOPIC_PALETTE = [
 const HIGHLIGHT_COLOR = '#F2483C';
 
 export default function PassageMap() {
+  const isDark = useIsDark();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [Plot, setPlot] = useState(null);
@@ -238,57 +240,53 @@ export default function PassageMap() {
     // swatch+name list; the hover gives per-dot topic. Adding
     // floating labels here would replicate exactly the failure mode
     // we're trying to avoid.
-    // TODO(dark-mode): this Plotly layout hardcodes a light-theme palette and needs
-    // a dark variant branched off a theme flag (e.g.
-    // document.documentElement.classList.contains('dark'), recomputed on mount and
-    // whenever the .dark class toggles). Specifically: paper_bgcolor ('#EBEAE9' cream
-    // chrome -> stone-950 '#0c0a09'), font.color ('#1c1917' -> stone-100 '#e7e5e4'),
-    // xaxis/yaxis title font.color ('#57534e'), axis color ('#1c1917'), gridcolor
-    // ('rgba(168,162,158,0.18)'), tickcolor ('#a8a29e'), and the x rangeslider
-    // bgcolor/bordercolor ('rgba(28,25,23,0.85)' / '#a8a29e'). plot_bgcolor is already
-    // a dark '#1c1917' (intentional dark plot well) and can stay or be nudged to
-    // stone-900; marker colors come from TOPIC_PALETTE and the HIGHLIGHT_COLOR brand
-    // red, which read on both themes.
-    paper_bgcolor: '#EBEAE9',
+    // Dark-mode: the chrome colors below branch on isDark (from
+    // useIsDark, reactive to the .dark class toggle). The light branch
+    // is the original light-theme palette, kept byte-for-byte; only the
+    // dark branch is new. plot_bgcolor stays '#1c1917' on both themes
+    // (intentional dark plot well so dots read on either page chrome).
+    // Marker colors come from TOPIC_PALETTE and the HIGHLIGHT_COLOR
+    // brand red, which read on both themes, so they are not branched.
+    paper_bgcolor: isDark ? '#0c0a09' : '#EBEAE9',
     plot_bgcolor: '#1c1917',
     font: {
       family: 'Inter, ui-sans-serif, system-ui, sans-serif',
-      color: '#1c1917',
+      color: isDark ? '#f5f5f4' : '#1c1917',
       size: 12,
     },
     showlegend: false,
     hovermode: 'closest',
     dragmode: 'pan',
     xaxis: {
-      title: { text: 'UMAP-x  (no inherent unit; only relative distance matters)', font: { size: 11, color: '#57534e' } },
+      title: { text: 'UMAP-x  (no inherent unit; only relative distance matters)', font: { size: 11, color: isDark ? '#a8a29e' : '#57534e' } },
       range: xRange,
       autorange: false,
       showgrid: true,
-      gridcolor: 'rgba(168,162,158,0.18)',
+      gridcolor: isDark ? 'rgba(120,113,108,0.25)' : 'rgba(168,162,158,0.18)',
       zeroline: false,
-      color: '#1c1917',
+      color: isDark ? '#e7e5e4' : '#1c1917',
       ticks: 'outside',
-      tickcolor: '#a8a29e',
+      tickcolor: isDark ? '#57534e' : '#a8a29e',
       // Native x-axis range slider, the marquee feature here.
       rangeslider: {
         visible: true,
         thickness: 0.07,
         bgcolor: 'rgba(28,25,23,0.85)',
-        bordercolor: '#a8a29e',
+        bordercolor: isDark ? '#57534e' : '#a8a29e',
         borderwidth: 1,
         range: [traceData.bounds.xMin, traceData.bounds.xMax],
       },
     },
     yaxis: {
-      title: { text: 'UMAP-y', font: { size: 11, color: '#57534e' } },
+      title: { text: 'UMAP-y', font: { size: 11, color: isDark ? '#a8a29e' : '#57534e' } },
       range: yRange,
       autorange: false,
       showgrid: true,
-      gridcolor: 'rgba(168,162,158,0.18)',
+      gridcolor: isDark ? 'rgba(120,113,108,0.25)' : 'rgba(168,162,158,0.18)',
       zeroline: false,
-      color: '#1c1917',
+      color: isDark ? '#e7e5e4' : '#1c1917',
       ticks: 'outside',
-      tickcolor: '#a8a29e',
+      tickcolor: isDark ? '#57534e' : '#a8a29e',
     },
   };
 

@@ -46,3 +46,34 @@ export function useTheme() {
 
   return { isDark, toggle };
 }
+
+/**
+ * Reactive, read-only dark-mode flag for any component, especially data-
+ * visualizations that set colors in JavaScript (Plotly layouts, Leaflet
+ * tile layers, SVG/canvas fills) and must recolor when the theme flips.
+ *
+ * Subscribes to class changes on <html> via MutationObserver, so it
+ * updates live the moment the header toggle adds/removes the `dark`
+ * class. Components branch their JS colors on the returned boolean and
+ * re-render automatically.
+ */
+export function useIsDark() {
+  const [isDark, setIsDark] = useState(() => {
+    try {
+      return document.documentElement.classList.contains('dark');
+    } catch {
+      return false;
+    }
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const update = () => setIsDark(root.classList.contains('dark'));
+    update();
+    const observer = new MutationObserver(update);
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+
+  return isDark;
+}

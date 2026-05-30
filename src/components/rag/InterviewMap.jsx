@@ -39,6 +39,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Search as SearchIcon, X, ExternalLink, Loader2 } from 'lucide-react';
 import { TIER_COLORS, TIER_VOCABULARY } from './tiers';
 import { retrieve } from '../../services/ragClient';
+import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
 
 const W = 880;
@@ -59,6 +60,7 @@ const PAD = 60;
  *   on Concept Spectrum" button next to onNavigateToRelated.
  */
 export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } = {}) {
+  const isDark = useIsDark();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [hover, setHover] = useState(null);
@@ -541,24 +543,25 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
       )}
 
       <div className="rounded-lg border border-stone-200 bg-stone-50 overflow-hidden">
-        {/* TODO(dark-mode): SVG substrate fill is hardcoded '#fafaf9' inline and the
-            interior fills are tuned for light theme; all need dark variants read from
-            a theme flag (e.g. document.documentElement.classList.contains('dark')):
-            the inline background, the quadrant guidelines ('#e7e5e4'), the empirical
-            axis labels ('#57534e'), and the dot name labels (fills '#1c1917' /
-            '#44403c' with a near-white 'rgba(250,250,249,0.95)' stroke halo, which go
-            dark-on-dark). Dot fills come from TIER_COLORS and the neighbor curves /
-            concept-query pin use brand + emerald accents that read on dark. */}
+        {/* SVG substrate + interior fills branch on isDark (useIsDark): the inline
+            background ('#fafaf9' light / '#0c0a09' dark), the quadrant guidelines
+            ('#e7e5e4' light / '#292524' dark), the empirical axis labels ('#57534e'
+            light / '#a8a29e' dark), and the dot name labels (fills '#1c1917' /
+            '#44403c' light -> '#f5f5f4' / '#d6d3d1' dark, with the stroke halo
+            'rgba(250,250,249,0.95)' light / 'rgba(12,10,9,0.9)' dark). Dot fills come
+            from TIER_COLORS and the neighbor curves / concept-query pin use brand +
+            emerald accents that read on dark; the neighbor name label stays brand red
+            ('#B23E2F'). */}
         <svg
           width="100%"
           viewBox={`0 0 ${W} ${H}`}
           role="img"
           aria-label="136 interviewees positioned in UMAP-projected embedding space, with empirically-derived axis labels and names."
-          style={{ display: 'block', background: '#fafaf9' }}
+          style={{ display: 'block', background: isDark ? '#0c0a09' : '#fafaf9' }}
         >
           {/* Quadrant guidelines */}
-          <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke="#e7e5e4" strokeDasharray="3 5" />
-          <line x1={W / 2} y1={PAD} x2={W / 2} y2={H - PAD} stroke="#e7e5e4" strokeDasharray="3 5" />
+          <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke={isDark ? '#292524' : '#e7e5e4'} strokeDasharray="3 5" />
+          <line x1={W / 2} y1={PAD} x2={W / 2} y2={H - PAD} stroke={isDark ? '#292524' : '#e7e5e4'} strokeDasharray="3 5" />
 
           {/* Empirical axis labels: which topic dominates each pole.
               Pinned INSIDE the chart frame at the four cardinal
@@ -566,22 +569,22 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
           {axisLabels && (
             <g aria-hidden="true">
               {axisLabels.negX && (
-                <text x={8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="start" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill={isDark ? '#a8a29e' : '#57534e'} textAnchor="start" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   ← {axisLabels.negX}
                 </text>
               )}
               {axisLabels.posX && (
-                <text x={W - 8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="end" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={W - 8} y={H / 2 + 4} fontSize={12} fontWeight={500} fill={isDark ? '#a8a29e' : '#57534e'} textAnchor="end" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   {axisLabels.posX} →
                 </text>
               )}
               {axisLabels.posY && (
-                <text x={W / 2} y={16} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={W / 2} y={16} fontSize={12} fontWeight={500} fill={isDark ? '#a8a29e' : '#57534e'} textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   ↑ {axisLabels.posY}
                 </text>
               )}
               {axisLabels.negY && (
-                <text x={W / 2} y={H - 8} fontSize={12} fontWeight={500} fill="#57534e" textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
+                <text x={W / 2} y={H - 8} fontSize={12} fontWeight={500} fill={isDark ? '#a8a29e' : '#57534e'} textAnchor="middle" fontFamily="Inter, ui-sans-serif, system-ui, sans-serif">
                   ↓ {axisLabels.negY}
                 </text>
               )}
@@ -682,10 +685,10 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
                       y={cy + 4}
                       fontSize={isFocus ? 13 : (isNeighbor ? 11 : 10)}
                       fontWeight={isFocus ? 600 : (isNeighbor ? 600 : 400)}
-                      fill={isFocus ? '#1c1917' : (isNeighbor ? '#B23E2F' : '#44403c')}
+                      fill={isFocus ? (isDark ? '#f5f5f4' : '#1c1917') : (isNeighbor ? '#B23E2F' : (isDark ? '#d6d3d1' : '#44403c'))}
                       opacity={matched && !isMatch && !isNeighbor ? 0.2 : 1}
                       paintOrder="stroke"
-                      stroke="rgba(250,250,249,0.95)"
+                      stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(250,250,249,0.95)'}
                       strokeWidth={3}
                       strokeLinejoin="round"
                       style={{ pointerEvents: 'none' }}

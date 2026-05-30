@@ -24,12 +24,14 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { TIER_COLORS } from './tiers';
+import { useIsDark } from '../../hooks/useTheme';
 
 const W = 760;
 const H = 480;
 const PAD = 40;
 
 export default function ThemesMap({ clusters, selectedId, onSelect }) {
+  const isDark = useIsDark();
   const [constellation, setConstellation] = useState(null);
   const [hoverCluster, setHoverCluster] = useState(null);
   const [hoverPos, setHoverPos] = useState(null);
@@ -120,18 +122,19 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
   return (
     <>
       <div className="rounded-lg border border-stone-200 overflow-hidden bg-stone-50">
-        {/* TODO(dark-mode): SVG substrate fill is hardcoded '#fafaf9' inline; the
-            reference grid lines ('#e7e5e4') and the bubble labels (fill '#1c1917'
-            with '#fafaf9' stroke halo, below) need dark variants read from a theme
-            flag (e.g. document.documentElement.classList.contains('dark')) so the
-            chart interior inverts with the rest of the page. */}
+        {/* SVG substrate + interior fills branch on isDark (useIsDark): the inline
+            background ('#fafaf9' light / '#0c0a09' dark), the reference grid lines
+            ('#e7e5e4' light / '#292524' dark), and the bubble labels (fill '#1c1917'
+            light / '#f5f5f4' dark, with stroke halo '#fafaf9' light /
+            'rgba(12,10,9,0.9)' dark) so the chart interior inverts with the rest of
+            the page. */}
         <svg
           width="100%"
           height={H}
           viewBox={`0 0 ${W} ${H}`}
           role="img"
           aria-label="30 thematic clusters positioned at their centroids in the embedding space. Bubble size shows cluster member count; color shows dominant audit tier."
-          style={{ display: 'block', background: '#fafaf9' }}
+          style={{ display: 'block', background: isDark ? '#0c0a09' : '#fafaf9' }}
         >
           {/* Soft reference grid */}
           <g aria-hidden="true">
@@ -142,7 +145,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
                 y1={PAD + f * innerH}
                 x2={W - PAD}
                 y2={PAD + f * innerH}
-                stroke="#e7e5e4"
+                stroke={isDark ? '#292524' : '#e7e5e4'}
                 strokeDasharray="2 4"
               />
             ))}
@@ -153,7 +156,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
                 y1={PAD}
                 x2={PAD + f * innerW}
                 y2={H - PAD}
-                stroke="#e7e5e4"
+                stroke={isDark ? '#292524' : '#e7e5e4'}
                 strokeDasharray="2 4"
               />
             ))}
@@ -202,9 +205,9 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
                       y={cy + 4}
                       fontSize={Math.min(13, r * 0.55)}
                       textAnchor="middle"
-                      fill="#1c1917"
+                      fill={isDark ? '#f5f5f4' : '#1c1917'}
                       paintOrder="stroke"
-                      stroke="#fafaf9"
+                      stroke={isDark ? 'rgba(12,10,9,0.9)' : '#fafaf9'}
                       strokeWidth={2.5}
                       strokeLinejoin="round"
                       fontWeight={500}

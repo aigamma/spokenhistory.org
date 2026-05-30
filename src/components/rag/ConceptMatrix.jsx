@@ -35,6 +35,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Loader2, X } from 'lucide-react';
 import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
+import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
 
 // Strategic pair selection, five axes give ten possible pairs; we
@@ -418,6 +419,7 @@ export default function ConceptMatrix() {
 }
 
 function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSelect, queryPoint }) {
+  const isDark = useIsDark();
   const W = 460;
   const H = 340;
   // Bump horizontal padding so the extreme-right and extreme-left dots
@@ -464,12 +466,11 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
 
   return (
     <figure className="rounded-md border border-stone-200 bg-white overflow-hidden">
-      {/* TODO(dark-mode): MiniScatter SVG interior fills are hardcoded for light
-          theme and need dark variants read from a theme flag: the two axis lines
-          ('#d6d3d1'), the four pole labels ('#57534e'), the title strip ('#1c1917',
-          goes dark-on-dark), and the query-marker white stroke halo ('#fff' /
-          'rgba(255,255,255,0.95)'). The SVG background inverts via the bg-white
-          container; dot fills come from TIER_COLORS and are theme-safe. */}
+      {/* MiniScatter SVG interior fills branch on isDark (useIsDark): the two axis
+          lines ('#d6d3d1' light / '#44403c' dark), the four pole labels ('#57534e'
+          light / '#a8a29e' dark), and the title strip ('#1c1917' light / '#f5f5f4'
+          dark). The query-marker white stroke halo stays white (reads on dark);
+          dot fills come from TIER_COLORS and are theme-safe. */}
       <svg
         width="100%"
         viewBox={`0 0 ${W} ${H}`}
@@ -481,19 +482,19 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
         <line
           x1={PAD_L} y1={PAD_T + innerH / 2}
           x2={W - PAD_R} y2={PAD_T + innerH / 2}
-          stroke="#d6d3d1" strokeWidth={1}
+          stroke={isDark ? '#44403c' : '#d6d3d1'} strokeWidth={1}
         />
         <line
           x1={PAD_L + innerW / 2} y1={PAD_T}
           x2={PAD_L + innerW / 2} y2={H - PAD_B}
-          stroke="#d6d3d1" strokeWidth={1}
+          stroke={isDark ? '#44403c' : '#d6d3d1'} strokeWidth={1}
         />
 
         {/* X-axis pole labels */}
-        <text x={PAD_L} y={H - PAD_B + 18} fontSize="10" fill="#57534e" fontWeight={500} fontFamily="ui-sans-serif, system-ui, sans-serif">
+        <text x={PAD_L} y={H - PAD_B + 18} fontSize="10" fill={isDark ? '#a8a29e' : '#57534e'} fontWeight={500} fontFamily="ui-sans-serif, system-ui, sans-serif">
           ← {axisX.pole_a.label}
         </text>
-        <text x={W - PAD_R} y={H - PAD_B + 18} fontSize="10" fill="#57534e" fontWeight={500} fontFamily="ui-sans-serif, system-ui, sans-serif" textAnchor="end">
+        <text x={W - PAD_R} y={H - PAD_B + 18} fontSize="10" fill={isDark ? '#a8a29e' : '#57534e'} fontWeight={500} fontFamily="ui-sans-serif, system-ui, sans-serif" textAnchor="end">
           {axisX.pole_b.label} →
         </text>
 
@@ -501,14 +502,14 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
             because positive y is "up" but in SVG up = lower Y value */}
         <text
           x={PAD_L - 12} y={PAD_T + 2}
-          fontSize="10" fill="#57534e" fontWeight={500}
+          fontSize="10" fill={isDark ? '#a8a29e' : '#57534e'} fontWeight={500}
           fontFamily="ui-sans-serif, system-ui, sans-serif"
         >
           ↑ {axisY.pole_a.label}
         </text>
         <text
           x={PAD_L - 12} y={H - PAD_B - 4}
-          fontSize="10" fill="#57534e" fontWeight={500}
+          fontSize="10" fill={isDark ? '#a8a29e' : '#57534e'} fontWeight={500}
           fontFamily="ui-sans-serif, system-ui, sans-serif"
         >
           ↓ {axisY.pole_b.label}
@@ -518,7 +519,7 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
         <text
           x={W / 2} y={18}
           fontSize="11" textAnchor="middle"
-          fill="#1c1917" fontWeight={500}
+          fill={isDark ? '#f5f5f4' : '#1c1917'} fontWeight={500}
           fontFamily="Chivo Mono, ui-monospace, monospace"
         >
           {axisX.pole_a.label.split(' ')[0]} ↔ {axisX.pole_b.label.split(' ')[0]}
@@ -696,6 +697,7 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
  * text so 5 labels fit around a small chart without colliding.
  */
 function FiveAxisRadar({ profile, axes }) {
+  const isDark = useIsDark();
   const SIZE = 260;
   const cx = SIZE / 2;
   const cy = SIZE / 2;
@@ -744,21 +746,21 @@ function FiveAxisRadar({ profile, axes }) {
         role="img"
         aria-label={`Radar polygon of ${profile.entry_subject}'s position on five concept axes. Each spoke runs from the center (pole_a end) outward to the rim (pole_b end).`}
       >
-        {/* TODO(dark-mode): radar SVG gridlines/labels are hardcoded for light theme
-            and need dark variants read from a theme flag: rim + spoke gridlines
-            ('#e7e5e4'), the neutral-baseline polygon stroke ('#a8a29e'), and the
-            pole_b rim labels ('#44403c', go dark-on-dark). The voice polygon fill/
+        {/* Radar SVG gridlines/labels branch on isDark (useIsDark): rim + spoke
+            gridlines ('#e7e5e4' light / '#292524' dark), the neutral-baseline
+            polygon stroke ('#a8a29e' light / '#57534e' dark), and the pole_b rim
+            labels ('#44403c' light / '#a8a29e' dark). The voice polygon fill/
             stroke ('#F2483C' / '#B23E2F') and vertex dots are brand colors and read
             acceptably on dark. */}
         {/* Outer rim circle and spoke gridlines */}
-        <circle cx={cx} cy={cy} r={rMax} fill="none" stroke="#e7e5e4" strokeWidth={1} />
-        <circle cx={cx} cy={cy} r={rMax / 2} fill="none" stroke="#e7e5e4" strokeDasharray="2 3" strokeWidth={1} />
+        <circle cx={cx} cy={cy} r={rMax} fill="none" stroke={isDark ? '#292524' : '#e7e5e4'} strokeWidth={1} />
+        <circle cx={cx} cy={cy} r={rMax / 2} fill="none" stroke={isDark ? '#292524' : '#e7e5e4'} strokeDasharray="2 3" strokeWidth={1} />
         {spokes.map((s, i) => (
-          <line key={`spoke-${i}`} x1={cx} y1={cy} x2={s.rimX} y2={s.rimY} stroke="#e7e5e4" strokeWidth={1} />
+          <line key={`spoke-${i}`} x1={cx} y1={cy} x2={s.rimX} y2={s.rimY} stroke={isDark ? '#292524' : '#e7e5e4'} strokeWidth={1} />
         ))}
 
         {/* Faint baseline polygon at position=0 on all axes */}
-        <path d={baselinePath} fill="none" stroke="#a8a29e" strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
+        <path d={baselinePath} fill="none" stroke={isDark ? '#57534e' : '#a8a29e'} strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
 
         {/* The voice's polygon (fingerprint) */}
         <path d={polygonPath} fill="#F2483C" fillOpacity={0.22} stroke="#B23E2F" strokeWidth={1.8} strokeLinejoin="round" />
@@ -785,7 +787,7 @@ function FiveAxisRadar({ profile, axes }) {
               y={ly + dyAdjust - 4}
               fontSize={9}
               textAnchor={anchor}
-              fill="#44403c"
+              fill={isDark ? '#a8a29e' : '#44403c'}
               fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
             >
               {s.ax.pole_b.label}

@@ -13,6 +13,7 @@
 import { useEffect, useState } from 'react';
 import { Sparkles, AlertCircle } from 'lucide-react';
 import { loadRelated, loadConstellation } from '../../services/ragClient';
+import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
 import { fidelityNoteFor } from './tiers';
 
@@ -223,6 +224,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
   const cy = H / 2;
   const R = Math.min(W, H) * 0.36;
   const [hoverIdx, setHoverIdx] = useState(-1);
+  const isDark = useIsDark();
 
   if (!related?.length) return null;
   const maxCount = Math.max(...related.map((r) => r.count || 1));
@@ -263,7 +265,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
             y1={cy}
             x2={n.x}
             y2={n.y}
-            stroke={hoverIdx === i ? '#B23E2F' : '#a8a29e'}
+            stroke={hoverIdx === i ? '#B23E2F' : (isDark ? '#57534e' : '#a8a29e')}
             strokeWidth={2 + n.weight * 6}
             strokeOpacity={hoverIdx === -1 || hoverIdx === i ? 0.85 : 0.25}
           />
@@ -293,8 +295,8 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
               cx={n.x}
               cy={n.y}
               r={hoverIdx === i ? 11 : 8}
-              fill={hoverIdx === i ? '#F2483C' : '#78716c'}
-              stroke="#1c1917"
+              fill={hoverIdx === i ? '#F2483C' : (isDark ? '#a8a29e' : '#78716c')}
+              stroke={isDark ? '#f5f5f4' : '#1c1917'}
               strokeWidth={1.2}
               opacity={hoverIdx === -1 || hoverIdx === i ? 1 : 0.5}
             />
@@ -303,10 +305,10 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
               y={n.y + 4}
               fontSize={11}
               fontWeight={hoverIdx === i ? 600 : 500}
-              fill="#1c1917"
+              fill={isDark ? '#f5f5f4' : '#1c1917'}
               textAnchor={n.angle > -Math.PI / 2 && n.angle < Math.PI / 2 ? 'start' : 'end'}
               paintOrder="stroke"
-              stroke="rgba(255,255,255,0.95)"
+              stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(255,255,255,0.95)'}
               strokeWidth={3}
               strokeLinejoin="round"
               fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
@@ -324,7 +326,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
             of system color-scheme. The original "near-white text on
             brand red" was ~2.6:1, well below WCAG AA. */}
         <g>
-          <circle cx={cx} cy={cy} r={20} fill="#F2483C" stroke="#1c1917" strokeWidth={2} />
+          <circle cx={cx} cy={cy} r={20} fill="#F2483C" stroke={isDark ? '#f5f5f4' : '#1c1917'} strokeWidth={2} />
           <text
             x={cx}
             y={cy + 4}
@@ -347,10 +349,10 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
             y={cy + 38}
             fontSize={13}
             fontWeight={600}
-            fill="#1c1917"
+            fill={isDark ? '#f5f5f4' : '#1c1917'}
             textAnchor="middle"
             paintOrder="stroke"
-            stroke="rgba(255,255,255,0.95)"
+            stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(255,255,255,0.95)'}
             strokeWidth={3}
             strokeLinejoin="round"
             fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"

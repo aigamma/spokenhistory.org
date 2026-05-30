@@ -16,6 +16,7 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { Search as SearchIcon, X } from 'lucide-react';
 import { loadConstellation } from '../../services/ragClient';
+import { useIsDark } from '../../hooks/useTheme';
 import { TIER_COLORS, TIER_BADGE } from './tiers';
 
 // Fetch clusters.json once and cache per-session; the file is shared
@@ -55,6 +56,7 @@ export default function Constellation({
   // label clutter gets in the way of point-level inspection.
   const [showRegions, setShowRegions] = useState(true);
   const svgRef = useRef(null);
+  const isDark = useIsDark();
 
   useEffect(() => {
     let cancelled = false;
@@ -171,7 +173,7 @@ export default function Constellation({
               y1={PAD + f * innerH}
               x2={PAD + innerW}
               y2={PAD + f * innerH}
-              stroke="#e5e5e5"
+              stroke={isDark ? '#292524' : '#e5e5e5'}
               strokeWidth={1}
               strokeDasharray="2 4"
             />
@@ -183,7 +185,7 @@ export default function Constellation({
               y1={PAD}
               x2={PAD + f * innerW}
               y2={PAD + innerH}
-              stroke="#e5e5e5"
+              stroke={isDark ? '#292524' : '#e5e5e5'}
               strokeWidth={1}
               strokeDasharray="2 4"
             />
@@ -203,10 +205,10 @@ export default function Constellation({
             fontWeight={500}
             textAnchor="middle"
             paintOrder="stroke"
-            stroke="rgba(250,250,249,0.92)"
+            stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(250,250,249,0.92)'}
             strokeWidth={4}
             strokeLinejoin="round"
-            fill="#1c1917"
+            fill={isDark ? '#f5f5f4' : '#1c1917'}
             opacity={0.85}
             style={{ pointerEvents: 'none' }}
           >

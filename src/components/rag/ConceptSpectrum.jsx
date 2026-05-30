@@ -22,6 +22,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Loader2, Link2, Check } from 'lucide-react';
 import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
+import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
 
 export default function ConceptSpectrum() {
@@ -387,6 +388,7 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
 }
 
 function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
+  const isDark = useIsDark();
   const W = 880;
   const H = 380;
   // Generous horizontal padding so the extreme dots on either end have
@@ -487,17 +489,17 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
             y1={AXIS_Y}
             x2={W - PAD_X}
             y2={AXIS_Y}
-            stroke="#a8a29e"
+            stroke={isDark ? '#57534e' : '#a8a29e'}
             strokeWidth="2"
           />
 
           {/* Pole labels at endpoints, lifted high above the scatter so
               they read as the axis extremes and never share vertical
               space with the dot row. */}
-          <text x={PAD_X} y={POLE_Y} fontSize="14" fill="#1c1917" fontWeight="500" fontFamily="Inter, sans-serif">
+          <text x={PAD_X} y={POLE_Y} fontSize="14" fill={isDark ? '#f5f5f4' : '#1c1917'} fontWeight="500" fontFamily="Inter, sans-serif">
             {axis.pole_a.label}
           </text>
-          <text x={W - PAD_X} y={POLE_Y} fontSize="14" fill="#1c1917" fontWeight="500" fontFamily="Inter, sans-serif" textAnchor="end">
+          <text x={W - PAD_X} y={POLE_Y} fontSize="14" fill={isDark ? '#f5f5f4' : '#1c1917'} fontWeight="500" fontFamily="Inter, sans-serif" textAnchor="end">
             {axis.pole_b.label}
           </text>
 
@@ -558,10 +560,10 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
                     y={cy + 18}
                     fontSize={11}
                     fontWeight={600}
-                    fill="#1c1917"
+                    fill={isDark ? '#f5f5f4' : '#1c1917'}
                     textAnchor="middle"
                     paintOrder="stroke"
-                    stroke="rgba(255,255,255,0.95)"
+                    stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(255,255,255,0.95)'}
                     strokeWidth={3}
                     strokeLinejoin="round"
                     style={{ pointerEvents: 'none' }}
