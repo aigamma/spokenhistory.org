@@ -151,27 +151,27 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   return (
     <figure
       className="my-7 rounded-xl border"
-      style={{ borderLeftWidth: '6px', borderLeftColor: accent, backgroundColor: fill, borderColor: cardBorder }}
+      style={{ backgroundColor: fill, borderColor: cardBorder, borderLeftColor: accent, borderLeftWidth: '6px' }}
     >
       <div className="p-5 sm:p-6">
         {snippet.lead_in && (
-          <p className="text-sm text-stone-600 mb-3 leading-snug">{snippet.lead_in}</p>
+          <p className="text-sm text-stone-600 dark:text-stone-300 mb-3 leading-snug">{snippet.lead_in}</p>
         )}
         <div className="flex items-start gap-3">
           <Quote className="w-7 h-7 shrink-0 mt-1" style={{ color: accent }} aria-hidden="true" />
           <blockquote
-            className="text-stone-900 text-lg sm:text-xl leading-relaxed"
+            className="text-stone-900 dark:text-stone-100 text-lg sm:text-xl leading-relaxed"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
             &ldquo;{snippet.quote}&rdquo;
           </blockquote>
         </div>
         <figcaption className="mt-4 sm:pl-10 text-sm">
-          <div className="text-stone-900">
+          <div className="text-stone-900 dark:text-stone-100">
             {speakerHasPage ? (
               <Link
                 to={`/person/${speakerSlug}`}
-                className="font-bold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                className="font-bold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
               >
                 {snippet.speaker}
               </Link>
@@ -179,10 +179,10 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               <span className="font-semibold">{snippet.speaker}</span>
             )}
             {isAbout && subjectName && (
-              <span className="font-normal text-stone-500"> on {subjectName}</span>
+              <span className="font-normal text-stone-500 dark:text-stone-400"> on {subjectName}</span>
             )}
           </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1.5 text-stone-600">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1.5 text-stone-600 dark:text-stone-400">
             {snippet.timestamp && (
               <span className="inline-flex items-center gap-1 tabular-nums">
                 <Clock className="w-3.5 h-3.5" aria-hidden="true" />
@@ -194,7 +194,7 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
                 type="button"
                 onClick={() => setShowVideo((v) => !v)}
                 aria-expanded={showVideo}
-                className="inline-flex items-center gap-1 font-semibold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                className="inline-flex items-center gap-1 font-semibold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
               >
                 {showVideo ? (
                   <>
@@ -222,7 +222,7 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
             )}
           </div>
           {isProblem && (
-            <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border border-red-300 bg-red-50 text-red-800 text-xs font-medium">
+            <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border border-red-300 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-950 dark:text-red-300 text-xs font-medium">
               <AlertTriangle className="w-3.5 h-3.5" aria-hidden="true" />
               Source transcript flagged: verify this passage against the audio before citing.
             </div>
@@ -241,7 +241,7 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               />
               <Link
                 to={`/interview/${snippet.source_entry}?t=${convertTimestampToSeconds(snippet.timestamp)}`}
-                className="inline-flex items-center gap-1 mt-2 font-semibold text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                className="inline-flex items-center gap-1 mt-2 font-semibold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
               >
                 <FileText className="w-3.5 h-3.5" aria-hidden="true" />
                 Open the full interview

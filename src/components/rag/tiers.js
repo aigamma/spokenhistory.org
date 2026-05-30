@@ -86,18 +86,26 @@ export const TIER_COLORS = {
 
 // Standard accent for a snippet card that carries a verbatim quote. The
 // 6px left bar and the quotation mark take SNIPPET_ACCENT; the card fill
-// and border take the faint SNIPPET_FILL / SNIPPET_BORDER tint so the
-// WHOLE card reads as one calm color, not just the quote mark. Single
-// source of truth: swap these three to recolor every snippet card.
-export const SNIPPET_ACCENT = '#4338ca'; // indigo-700, bar + quote mark
-export const SNIPPET_FILL = '#eef2ff';   // indigo-50, card fill
-export const SNIPPET_BORDER = '#c7d2fe';  // indigo-200, card border
+// and border take SNIPPET_FILL / SNIPPET_BORDER, so the WHOLE card reads
+// as one calm color, not just the quote mark.
+//
+// These are CSS custom properties, not literal hexes: the colors live in
+// src/styles/index.css and switch on prefers-color-scheme, so the cards
+// adapt to the visitor's screen automatically:
+//   light screen: blue-700 #1d4ed8 on a pale blue-50 fill
+//   dark screen:  blue-400 #60a5fa on a dark navy fill
+// To recolor every snippet card at once, edit the two :root blocks in
+// src/styles/index.css.
+export const SNIPPET_ACCENT = 'var(--snippet-accent)';
+export const SNIPPET_FILL = 'var(--snippet-fill)';
+export const SNIPPET_BORDER = 'var(--snippet-border)';
 
-// The problem case (red). A source transcript flagged with documented
-// publication-blocker issues, i.e. "really bad context."
-export const SNIPPET_PROBLEM_ACCENT = '#b91c1c'; // red-700
-export const SNIPPET_PROBLEM_FILL = '#fef2f2';   // red-50
-export const SNIPPET_PROBLEM_BORDER = '#fecaca'; // red-200
+// The problem case (red), a source transcript flagged with documented
+// publication-blocker issues ("really bad context"). Adapts to the
+// screen via the same index.css prefers-color-scheme blocks.
+export const SNIPPET_PROBLEM_ACCENT = 'var(--snippet-problem-accent)';
+export const SNIPPET_PROBLEM_FILL = 'var(--snippet-problem-fill)';
+export const SNIPPET_PROBLEM_BORDER = 'var(--snippet-problem-border)';
 
 // The only tier that turns a snippet card red. publication-block means
 // the source transcript carries documented publication-blocker issues

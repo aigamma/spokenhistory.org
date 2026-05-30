@@ -61,7 +61,7 @@ function LabCard({ accent, surface, flag }) {
   return (
     <figure
       className="my-3 rounded-xl border"
-      style={{ borderLeftWidth: '6px', borderLeftColor: accent, backgroundColor: cardBg, borderColor }}
+      style={{ backgroundColor: cardBg, borderColor, borderLeftColor: accent, borderLeftWidth: '6px' }}
     >
       <div className="p-5 sm:p-6">
         <p className={`text-sm mb-3 leading-snug ${dark ? 'text-stone-400' : 'text-stone-600'}`}>{SNIP.leadIn}</p>
