@@ -26,7 +26,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, AlertTriangle } from 'lucide-react';
+import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_FILL, SNIPPET_BORDER, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_FILL, SNIPPET_PROBLEM_BORDER, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
 import HearInContext, { tsToSeconds } from '../components/HearInContext';
@@ -215,12 +215,6 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               </a>
             )}
           </div>
-          {isProblem && (
-            <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border border-red-300 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-950 dark:text-red-300 text-xs font-medium">
-              <AlertTriangle className="w-3.5 h-3.5" aria-hidden="true" />
-              Source transcript flagged: verify this passage against the audio before citing.
-            </div>
-          )}
         </figcaption>
       </div>
     </figure>

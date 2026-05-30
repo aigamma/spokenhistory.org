@@ -24,7 +24,7 @@ import { ShieldCheck, Info } from 'lucide-react';
 //   high               133   (LoC-verified; the bulk of the corpus)
 //   medium               0   (unused: a LoC-verified entry is high; an unverified one is flagged)
 //   low                  0   (unused)
-//   publication-block    1   (weak LoC match: Reverend Harry Blake)
+//   publication-block    1   (Reverend Harry Blake: audited 9 passes, LoC's edited edition diverges from the recording)
 //   not-auditable        2   (source-audio limits: McClary, Lawson)
 //   ingestion-only       0   (all 9 ingestion entries reached LoC parity)
 export const TIER_VOCABULARY = [

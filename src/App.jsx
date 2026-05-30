@@ -19,7 +19,6 @@ import ReviewQueue from './pages/ReviewQueue'
 import RagExplore from './pages/RagExplore'
 import PersonPage from './pages/PersonPage'
 import PeopleCatalog from './pages/PeopleCatalog'
-import SnippetColorLab from './pages/SnippetColorLab'
 import NotFound from './pages/NotFound'
 
 
@@ -128,16 +127,6 @@ export default function App() {
           <Layout>
             <PersonPage />
           </Layout>
-        </ProtectedRoute>
-      } />
-
-      {/* Temporary accent-color comparison harness for the person-page
-          oral-history snippet cards. Delete this route + src/pages/
-          SnippetColorLab.jsx once the accent (and dark-mode) decision is
-          settled. */}
-      <Route path="/snippet-colors" element={
-        <ProtectedRoute>
-          <SnippetColorLab />
         </ProtectedRoute>
       } />
 
