@@ -77,7 +77,7 @@ Constraints are non-negotiable:
 
 Per the project owner's 2026-05-28 directive, **direct oral-history quotes are the primary substance of every page.** Every page carries verbatim pull-quote cards (`SnippetCard` in `src/pages/PersonPage.jsx`) that route a reader into the source interview, which is the catalog's whole purpose as a discovery hub into the oral-history bank. Pages built before 2026-05-28 are backfilled so none lacks the centerpiece.
 
-**Layout (updated 2026-05-30):** the quotes are no longer dumped in one block ahead of the prose. When a page carries a `narrative` array (see below), prose discussion and snippet cards are **interleaved** so each quote is set up and reflected on by the surrounding text; the `ai_reading` headline still leads the page above the woven body. Pages without a `narrative` array fall back to the earlier stacked layout (a single "Voices from the Archive" block, then the bio / movement / legacy prose). Each `SnippetCard` carries a bounded "Hear this in context" clip (`HearInContext` + `LocVideoEmbed`) that seeks the Library of Congress recording to the snippet's start and stops at its `end_timestamp`; `scripts/add_snippet_clip_bounds.py` computes that end from the source `.srt` cues.
+**Layout:** every page carries a "Voices from the Archive" block of snippet pull-quote cards (`SnippetCard` in `src/pages/PersonPage.jsx`) below the `ai_reading` and bio summary, so the summary reads up top and the quotes sit together below it. Each `SnippetCard` carries a bounded "Hear this in context" clip (`HearInContext` + `LocVideoEmbed`) that seeks the Library of Congress recording to the snippet's start and stops at its `end_timestamp`; `scripts/add_snippet_clip_bounds.py` computes that end from the source `.srt` cues so the player fetches only the clip's bytes, not the multi-hour file. (An interleaved prose-and-quote layout was prototyped on 2026-05-30 and set aside as too contrived; the quotes stay together with the summary above them.)
 
 Each snippet object:
 
@@ -102,25 +102,6 @@ Each snippet object:
 **Quantity:** liberal. Several strong snippets per page, a mix of `self` and `about` for interviewees. The quotes are the page, not a garnish.
 
 The older `movement_context` and `legacy_and_reception` essay fields (on pages built before 2026-05-28) remain valid optional orientation, but they are not the rebuild's focus and are not required; a concise `biographical_paragraph` plus rich `interview_snippets[]` is the standard shape.
-
-### `narrative[]` (the interleaved body, 2026-05-30)
-
-Per the project owner's 2026-05-30 directive, **a page should read as a substantive discussion with the quotes woven through it, not a dump of a dozen transcripts.** The `narrative` array is an ordered body the page renders below the `ai_reading` headline, in place of the stacked Voices-block / bio / movement / legacy sections. Each element is one of:
-
-- `{ "type": "prose", "text": "...", "heading": "Optional Small Label" }` , one discussion paragraph. Runs through the same renderer as the bio, so `[src: N]` citation anchors and in-text figure-name hyperlinks work. `heading` is optional (a short Title Case mono label at a section turn).
-- `{ "type": "snippet", "ref": N }` , renders `interview_snippets[N]` as a `SnippetCard` (verbatim quote + bounded clip). The snippets array stays the single verbatim-gated source of truth; the narrative only references it by index, so `verify_person_snippets.py` is unaffected.
-- `{ "type": "image", "ref": N }` , renders `gallery[N]` (the in-body gallery, i.e. with any hero-promoted image removed) as a centered figure in the flow.
-
-Authoring discipline:
-
-1. **Reference every snippet exactly once.** Any snippet a narrative does not reference still renders in a tail after the woven body (so a mistake never silently drops a verbatim quote), but a finished page should place each one deliberately.
-2. **Interleave, do not front-load.** Alternate prose and quotes; set up each quote with the prose before it and reflect on it after. Aim for several prose paragraphs of genuine discussion, more substance than the old single-paragraph bio.
-3. **No new uncited facts.** Reuse the page's existing `sources[]`; every factual claim still needs a `[src: N]` that maps to a real source. The connective and analytical sentences (how a quote functions, what the embedding space reads) are interpretive and need no citation, but they must not assert new external facts. If the discussion needs a fact the current sources do not cover, add a properly-prioritized source (LoC first, Wikipedia last) rather than asserting it bare.
-4. **Use single-number `[src: N]` refs.** The renderer matches one number per ref; write `[src: 2][src: 5]` for two sources, never `[src: 2, 5]` (which renders as literal text).
-5. **Same writing rules as the bio:** no em-dashes, no evaluative adjectives, Title Case for proper-noun phrases, anti-idempotent prose. Frame embedding observations as embedding-derived, and keep the concept-axis sign convention (run `audit_axis_labels.py`).
-6. **The `ai_reading`, `biographical_paragraph`, `movement_context`, and `legacy_and_reception` fields stay in the JSON** even when a `narrative` is present (they remain canonical, and the person-vector embedding reads `biographical_paragraph` + `ai_reading`). The narrative is an additive presentation layer that weaves their substance together; it does not delete them.
-
-`charles-mclaurin.json` is the locked reference implementation for the interleaved layout (13 blocks: prose, snippet, prose, image, prose, snippet, prose, snippet, prose, snippet, prose, image, prose).
 
 ## Schema
 
@@ -182,18 +163,6 @@ Authoring discipline:
       "lead_in": "After a white official released the three organizers unharmed, McLaurin read it as strategy:",
       "quote": "Why didn't we get killed? Why couldn't he run us out of town? Why are we allowed to come back?"
     }
-  ],
-
-  // Interleaved body (2026-05-30). Ordered prose + snippet + image blocks the
-  // page renders below the ai_reading headline, replacing the stacked Voices /
-  // bio / movement / legacy layout. snippet.ref and image.ref index into
-  // interview_snippets[] and gallery[] (in-body, hero removed). See the
-  // narrative[] discipline above. Optional; pages without it use the fallback.
-  "narrative": [
-    { "type": "prose", "text": "Charles McLaurin was twenty-one and out of Jackson when he opened SNCC's voter-registration project in Sunflower County in early August 1962 [src: 2]. The county SNCC sent him into was not an arbitrary choice." },
-    { "type": "snippet", "ref": 2 },
-    { "type": "image", "ref": 1 },
-    { "type": "prose", "heading": "The 1964 Freedom Democratic Campaign", "text": "Two years later McLaurin managed Fannie Lou Hamer's 1964 campaign for Congress on the MFDP ticket [src: 4]." }
   ],
 
   // Sources cited in the bio paragraph (and any other claims). [src: N]
