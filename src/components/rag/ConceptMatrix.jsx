@@ -224,7 +224,7 @@ export default function ConceptMatrix() {
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
             placeholder="Project a phrase onto all 5 lenses…"
-            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-stone-900 dark:border-emerald-700 dark:text-stone-100"
             aria-label="Project a query phrase across all five lenses"
             disabled={conceptLoading}
           />
@@ -249,13 +249,13 @@ export default function ConceptMatrix() {
           </div>
         </div>
         {conceptError && (
-          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-1.5">
+          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 dark:text-amber-200 dark:bg-amber-950/40 dark:border-amber-800 rounded px-2 py-1 mt-1.5">
             {conceptError}
           </p>
         )}
         {queryProjections && conceptQuery && (
-          <p className="text-xs text-emerald-900 mt-1.5">
-            <span className="text-emerald-700 font-medium">✕</span>{' '}
+          <p className="text-xs text-emerald-900 dark:text-emerald-300 mt-1.5">
+            <span className="text-emerald-700 dark:text-emerald-400 font-medium">✕</span>{' '}
             &ldquo;{conceptQuery}&rdquo;, green ✕ on each chart shows where the same query lands in that pair of axes.
           </p>
         )}
@@ -272,7 +272,7 @@ export default function ConceptMatrix() {
                 key={ex}
                 type="button"
                 onClick={() => runExample(ex)}
-                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 transition-colors"
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-stone-900 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
               >
                 {ex}
               </button>
@@ -285,8 +285,8 @@ export default function ConceptMatrix() {
           same 1024-dim embedding lands on all 5 concept axes as
           horizontal bars. One embedding, five conceptual readings. */}
       {queryProjections && conceptQuery && (
-        <div className="mb-5 p-4 rounded-md border border-emerald-200 bg-emerald-50/50">
-          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-3">
+        <div className="mb-5 p-4 rounded-md border border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-950/40">
+          <p className="text-xs text-emerald-900 dark:text-emerald-200 font-mono uppercase tracking-wide mb-3">
             Query &ldquo;{conceptQuery}&rdquo; on all 5 spectrums
           </p>
           <ul className="space-y-2">
@@ -311,7 +311,7 @@ export default function ConceptMatrix() {
                     />
                     {outOfRange && (
                       <span
-                        className="absolute top-1/2 -translate-y-1/2 text-emerald-700 text-[10px] leading-none"
+                        className="absolute top-1/2 -translate-y-1/2 text-emerald-700 dark:text-emerald-400 text-[10px] leading-none"
                         style={beyondLeft ? { left: '-10px' } : { right: '-10px' }}
                         aria-hidden="true"
                         title="Query projects beyond the observed corpus range on this axis"
@@ -323,7 +323,7 @@ export default function ConceptMatrix() {
                   <span className="text-xs text-stone-700 flex-shrink-0 w-44 truncate">{ax.pole_b.label}</span>
                   <span className="text-xs text-stone-500 flex-shrink-0 w-24 truncate text-right tabular-nums">
                     {leaning.split(' ')[0]}
-                    {outOfRange && <span className="text-emerald-700 ml-1" title="More extreme than any voice in the corpus">★</span>}
+                    {outOfRange && <span className="text-emerald-700 dark:text-emerald-400 ml-1" title="More extreme than any voice in the corpus">★</span>}
                   </span>
                 </li>
               );
@@ -372,8 +372,8 @@ export default function ConceptMatrix() {
           query → geometric projection on 5 lenses → here are the voices
           that match. */}
       {conceptResults && conceptResults.length > 0 && conceptQuery && (
-        <aside className="mt-5 p-4 rounded-md border border-emerald-200 bg-white">
-          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
+        <aside className="mt-5 p-4 rounded-md border border-emerald-200 bg-white dark:border-emerald-800">
+          <p className="text-xs text-emerald-900 dark:text-emerald-200 font-mono uppercase tracking-wide mb-2">
             Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
           </p>
           <p className="text-sm text-stone-600 mb-3">
@@ -464,6 +464,12 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
 
   return (
     <figure className="rounded-md border border-stone-200 bg-white overflow-hidden">
+      {/* TODO(dark-mode): MiniScatter SVG interior fills are hardcoded for light
+          theme and need dark variants read from a theme flag: the two axis lines
+          ('#d6d3d1'), the four pole labels ('#57534e'), the title strip ('#1c1917',
+          goes dark-on-dark), and the query-marker white stroke halo ('#fff' /
+          'rgba(255,255,255,0.95)'). The SVG background inverts via the bg-white
+          container; dot fills come from TIER_COLORS and are theme-safe. */}
       <svg
         width="100%"
         viewBox={`0 0 ${W} ${H}`}
@@ -738,6 +744,12 @@ function FiveAxisRadar({ profile, axes }) {
         role="img"
         aria-label={`Radar polygon of ${profile.entry_subject}'s position on five concept axes. Each spoke runs from the center (pole_a end) outward to the rim (pole_b end).`}
       >
+        {/* TODO(dark-mode): radar SVG gridlines/labels are hardcoded for light theme
+            and need dark variants read from a theme flag: rim + spoke gridlines
+            ('#e7e5e4'), the neutral-baseline polygon stroke ('#a8a29e'), and the
+            pole_b rim labels ('#44403c', go dark-on-dark). The voice polygon fill/
+            stroke ('#F2483C' / '#B23E2F') and vertex dots are brand colors and read
+            acceptably on dark. */}
         {/* Outer rim circle and spoke gridlines */}
         <circle cx={cx} cy={cy} r={rMax} fill="none" stroke="#e7e5e4" strokeWidth={1} />
         <circle cx={cx} cy={cy} r={rMax / 2} fill="none" stroke="#e7e5e4" strokeDasharray="2 3" strokeWidth={1} />
@@ -861,7 +873,7 @@ function StrongestAxisDrillDown({ profile, axes }) {
         <p className="text-sm text-stone-500 inline-flex items-center gap-2" role="status"><Loader2 className="w-3.5 h-3.5 animate-spin" aria-hidden="true" />Searching their passages…</p>
       )}
       {error && (
-        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 dark:text-amber-200 dark:bg-amber-950/40 dark:border-amber-800 rounded p-3">
           {error}
         </p>
       )}

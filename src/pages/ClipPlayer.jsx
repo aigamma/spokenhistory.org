@@ -147,12 +147,12 @@ export default function ClipPlayer() {
   // Error state. role="alert" + aria-live so screen readers announce
   // the failure when it lands; previously the message just appeared
   // silently in the DOM without screen reader notification.
-  if (error) return <div className="p-6 text-red-600" role="alert" aria-live="assertive">{error}</div>
+  if (error) return <div className="p-6 text-red-600 dark:text-red-400" role="alert" aria-live="assertive">{error}</div>
 
   // Loading state. role="status" + aria-live so screen readers
   // announce that the page is loading rather than presenting an
   // empty page that looks like nothing happened.
-  if (!mainSummary || !clipData) return <div className="p-6" role="status" aria-live="polite">Loading...</div>
+  if (!mainSummary || !clipData) return <div className="p-6 text-stone-900" role="status" aria-live="polite">Loading...</div>
 
   // Process keywords into array format regardless of input format
   const keywords = Array.isArray(clipData.keywords)
@@ -176,7 +176,7 @@ export default function ClipPlayer() {
           className="text-left bg-transparent border-0 p-0 cursor-pointer hover:underline min-h-11"
           aria-label={`Open full interview with ${mainSummary.name}`}
         >
-          <h1 className="text-3xl font-bold text-blue-700">
+          <h1 className="text-3xl font-bold text-blue-700 dark:text-blue-400">
             {mainSummary.name}
           </h1>
         </button>
@@ -184,10 +184,10 @@ export default function ClipPlayer() {
 
       {/* Clip Info */}
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold text-blue-800">
+        <h2 className="text-2xl font-semibold text-blue-800 dark:text-blue-300">
           {clipData.topic}
         </h2>
-        <div className="flex items-center text-sm text-gray-500">
+        <div className="flex items-center text-sm text-gray-500 dark:text-stone-400">
           <Clock size={16} className="mr-2" />
           <span>{clipData.timestamp}</span>
         </div>
@@ -203,7 +203,7 @@ export default function ClipPlayer() {
               <button
                 type="button"
                 key={idx}
-                className="bg-blue-100 text-blue-800 px-3 py-2 min-h-11 rounded-full text-xs flex items-center gap-1 cursor-pointer hover:bg-blue-200 border-0"
+                className="bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200 px-3 py-2 min-h-11 rounded-full text-xs flex items-center gap-1 cursor-pointer hover:bg-blue-200 dark:hover:bg-blue-900/70 border-0"
                 onClick={() => navigate(`/playlist-builder?keywords=${encodeURIComponent(k)}`)}
                 aria-label={`Browse playlist for keyword ${k.trim()}`}
               >
@@ -220,13 +220,13 @@ export default function ClipPlayer() {
       </div>
 
       {/* Clip Summary */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
-        <p className="text-gray-800 leading-relaxed">{clipData.summary}</p>
+      <div className="bg-gray-50 border border-gray-200 dark:bg-stone-900 dark:border-stone-800 rounded-lg p-4 mt-4">
+        <p className="text-gray-800 dark:text-stone-200 leading-relaxed">{clipData.summary}</p>
       </div>
 
       {/* Interviewee Role */}
       {mainSummary.role && (
-        <div className="text-gray-600 text-lg mt-6 italic">
+        <div className="text-gray-600 dark:text-stone-400 text-lg mt-6 italic">
           {mainSummary.role}
         </div>
       )}

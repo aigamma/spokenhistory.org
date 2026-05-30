@@ -85,8 +85,8 @@ export default function FamousNames() {
                   className={
                     'w-full text-left p-4 rounded-lg border-2 transition-all ' +
                     (isSelected
-                      ? 'border-red-700 bg-white shadow-md'
-                      : 'border-stone-200 bg-white hover:border-stone-400 hover:shadow-sm')
+                      ? 'border-red-700 dark:border-red-400 bg-white shadow-md'
+                      : 'border-stone-200 bg-white hover:border-stone-400 dark:hover:border-stone-600 hover:shadow-sm')
                   }
                 >
                   <div className="flex items-start justify-between gap-2 mb-1">
@@ -103,7 +103,7 @@ export default function FamousNames() {
                       className={
                         'flex-shrink-0 text-xs tabular-nums px-2 py-0.5 rounded-full border ' +
                         (isSelected
-                          ? 'border-red-700 text-civil-red-body bg-red-50'
+                          ? 'border-red-700 dark:border-red-400 text-civil-red-body bg-red-50'
                           : 'border-stone-300 text-stone-600')
                       }
                     >
@@ -238,7 +238,7 @@ function PassageCard({ passage }) {
           {badge && <span className={`px-2 py-0.5 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}>{badge.label}</span>}
         </div>
       </header>
-      <blockquote className="border-l-4 border-red-700 pl-3 py-0.5 mb-2 text-sm text-stone-800 italic">
+      <blockquote className="border-l-4 border-red-700 dark:border-red-400 pl-3 py-0.5 mb-2 text-sm text-stone-800 italic">
         &ldquo;{passage.text_preview}&rdquo;
       </blockquote>
       <div className="flex flex-wrap items-center gap-x-4 text-xs text-stone-700">

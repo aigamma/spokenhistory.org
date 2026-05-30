@@ -77,27 +77,27 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-6 font-sans">
-      <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-stone-950 py-12 px-6 font-sans">
+      <div className="max-w-md w-full bg-white dark:bg-stone-900 p-8 rounded-xl shadow-md">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-center text-gray-900 mb-4">
+          <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-stone-100 mb-4">
             Sign in to your account
           </h2>
-          <p className="text-sm text-center text-gray-500 mt-2">
+          <p className="text-sm text-center text-gray-500 dark:text-stone-400 mt-2">
             Enter your credentials to access your account
           </p>
         </div>
         
         {errorMessage && (
-          <div className="bg-red-100 border-l-4 border-red-500 p-4 mb-6 rounded">
+          <div className="bg-red-100 dark:bg-red-950/40 border-l-4 border-red-500 dark:border-red-400 p-4 mb-6 rounded">
             <div className="flex">
               <div className="flex-shrink-0">
-                <svg className="h-5 w-5 text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <svg className="h-5 w-5 text-red-600 dark:text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                 </svg>
               </div>
               <div className="ml-3">
-                <p className="text-sm text-red-700">{errorMessage}</p>
+                <p className="text-sm text-red-700 dark:text-red-300">{errorMessage}</p>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Login() {
           <div className="mb-6">
             <label
               htmlFor="identifier"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-stone-300 mb-2"
             >
               Username or email
             </label>
@@ -119,7 +119,7 @@ export default function Login() {
               required
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-stone-700 rounded-lg text-sm text-gray-900 dark:text-stone-100 bg-white dark:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               placeholder="username"
               autoCapitalize="none"
               autoCorrect="off"
@@ -129,15 +129,15 @@ export default function Login() {
           
           <div className="mb-6">
             <div className="flex justify-between items-center mb-2">
-              <label 
-                htmlFor="password" 
-                className="block text-sm font-medium text-gray-700"
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 dark:text-stone-300"
               >
                 Password
               </label>
-              <a 
-                href="#" 
-                className="text-xs text-blue-600 hover:text-blue-700 transition-colors"
+              <a
+                href="#"
+                className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
               >
                 Forgot password?
               </a>
@@ -150,7 +150,7 @@ export default function Login() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-stone-700 rounded-lg text-sm text-gray-900 dark:text-stone-100 bg-white dark:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               placeholder="••••••••"
             />
           </div>
@@ -185,7 +185,7 @@ export default function Login() {
           </div>
           
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-stone-400">
               Team members: use the credentials provided by your project lead.
             </p>
           </div>

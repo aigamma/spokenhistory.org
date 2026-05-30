@@ -239,6 +239,14 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
   });
 
   return (
+    // Container is dark-aware via the global .dark overrides on bg-white
+    // (-> #1c1917) and border-stone-200 (-> #292524). The SVG internals
+    // below use hardcoded hex paint (node fills, edge strokes, and white
+    // text halos) tuned for a light SVG background.
+    // TODO(dark-mode): re-tune RadialNetwork SVG paint for the dark
+    // surface, edge stroke (#a8a29e), inactive node fill (#78716c), the
+    // #1c1917 node outline (invisible on the dark card), and the white
+    // text-halo strokes that assume a light backdrop.
     <div className="rounded-lg border border-stone-200 bg-white overflow-hidden">
       <svg
         viewBox={`0 0 ${W} ${H}`}
@@ -375,7 +383,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
 function Header({ children }) {
   return (
     <h3 className="flex items-center gap-2 text-base font-medium text-stone-900 mb-3">
-      <Sparkles className="w-4 h-4 text-red-700" aria-hidden="true" />
+      <Sparkles className="w-4 h-4 text-red-700 dark:text-red-400" aria-hidden="true" />
       {children}
     </h3>
   );

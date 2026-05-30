@@ -94,21 +94,21 @@ export default function PeopleCatalog() {
 
   if (error) {
     return (
-      <div className="min-h-screen p-8" style={{ backgroundColor: '#EBEAE9' }}>
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-950">
         <p className="text-stone-700">Catalog index not yet generated. {error}</p>
       </div>
     );
   }
   if (!index) {
     return (
-      <div className="min-h-screen p-8" style={{ backgroundColor: '#EBEAE9' }}>
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-950">
         <p className="text-stone-700" role="status">Loading the catalog...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-950">
       <main id="main-content" tabIndex={-1} className="max-w-7xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
         <header className="mb-8">
           <p className="text-civil-red-body text-sm font-light font-mono mb-2">

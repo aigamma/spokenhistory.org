@@ -91,7 +91,7 @@ export default function CitationCard({
         )}
       </header>
 
-      <blockquote className="border-l-4 border-red-700 pl-4 py-1 mb-4 text-stone-800 italic">
+      <blockquote className="border-l-4 border-red-700 dark:border-red-400 pl-4 py-1 mb-4 text-stone-800 italic">
         &ldquo;{displayText}&rdquo;
       </blockquote>
 

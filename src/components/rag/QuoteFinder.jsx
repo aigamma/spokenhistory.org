@@ -93,7 +93,7 @@ export default function QuoteFinder({
   return (
     <section className={`rag-quote-finder ${className}`}>
       <div className="flex items-start gap-3 mb-4">
-        <Quote className="w-6 h-6 text-red-700 flex-shrink-0 mt-1" aria-hidden="true" />
+        <Quote className="w-6 h-6 text-red-700 dark:text-red-400 flex-shrink-0 mt-1" aria-hidden="true" />
         <div>
           <h2 className="text-xl font-medium text-stone-900">Find the source of a quote</h2>
           <p className="text-sm text-stone-600 mt-1">
@@ -110,7 +110,7 @@ export default function QuoteFinder({
           placeholder={placeholder}
           rows={4}
           maxLength={4000}
-          className="w-full px-4 py-3 text-base border border-stone-300 rounded-lg focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none transition-colors bg-white resize-y"
+          className="w-full px-4 py-3 text-base border border-stone-300 rounded-lg focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-700/30 dark:focus:ring-red-400/30 outline-none transition-colors bg-white dark:placeholder-stone-500 resize-y"
           aria-label="Quote to find"
         />
         <div className="flex items-center justify-between mt-2">
@@ -164,7 +164,7 @@ export default function QuoteFinder({
       </form>
 
       {error && (
-        <div className="mb-4 p-4 rounded-md bg-amber-50 border border-amber-200 text-amber-900 text-sm">
+        <div className="mb-4 p-4 rounded-md bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200 text-sm">
           {error}
         </div>
       )}

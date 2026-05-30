@@ -346,7 +346,7 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+            className="inline-flex items-center min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-stone-800 border border-stone-300 rounded hover:border-stone-500 transition-colors"
             aria-label="Close drill-down"
           >
             close ✕
@@ -466,6 +466,13 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
       </div>
 
       <div className="rounded-lg border border-stone-200 bg-white overflow-x-auto">
+        {/* TODO(dark-mode): SVG interior fills are hardcoded for light theme and
+            need dark variants read from a theme flag: the axis line ('#a8a29e'),
+            the pole labels (fill '#1c1917', which go dark-on-dark and disappear),
+            and the search-match dot labels (fill '#1c1917' with a 'rgba(255,255,255,0.95)'
+            stroke halo). The SVG element background itself inverts via the bg-white
+            container above; dot fills come from TIER_COLORS and are already
+            theme-safe. */}
         <svg
           width={W}
           height={H}
@@ -623,7 +630,7 @@ function CopyLinkButton() {
     <button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center gap-1 min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+      className="inline-flex items-center gap-1 min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-stone-800 border border-stone-300 rounded hover:border-stone-500 transition-colors"
       aria-label={copied ? 'Link copied to clipboard' : 'Copy permalink to this drill-down'}
     >
       <Icon className="w-3.5 h-3.5" aria-hidden="true" />

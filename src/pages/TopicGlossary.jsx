@@ -42,14 +42,14 @@ export default function TopicGlossary() {
 
   if (error) {
     return (
-      <div className="min-h-screen p-8" style={{ backgroundColor: '#EBEAE9' }}>
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-950">
         <p className="text-stone-700">Topic glossary not yet available. {error}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-950">
       <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
         <header className="mb-8">
           <p className="text-civil-red-body text-sm font-light font-mono mb-2">
@@ -75,7 +75,7 @@ export default function TopicGlossary() {
             placeholder="Search by topic, description, or interviewee…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
+            className="w-full px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 dark:bg-stone-900 dark:border-stone-700 dark:text-stone-100 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
             aria-label="Search topics by name, description, or interviewee"
           />
         </div>
@@ -97,7 +97,7 @@ export default function TopicGlossary() {
                   type="button"
                   onClick={() => setExpandedId(isExpanded ? null : c.cluster_id)}
                   aria-expanded={isExpanded}
-                  className="w-full text-left p-4 hover:bg-stone-50 transition-colors"
+                  className="w-full text-left p-4 hover:bg-stone-50 dark:hover:bg-stone-800 transition-colors"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">
@@ -165,7 +165,7 @@ export default function TopicGlossary() {
         <div className="mt-12">
           <Link
             to="/rag-explore?tab=themes"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 text-white rounded-md hover:bg-stone-800 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 text-white rounded-md hover:bg-stone-800 dark:bg-stone-800 dark:hover:bg-stone-700 dark:border dark:border-stone-700 transition-colors"
           >
             Explore RAG demo surfaces →
           </Link>

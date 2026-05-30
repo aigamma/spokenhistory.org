@@ -228,16 +228,15 @@ export default function ContentDirectory() {
       addSearchToCache, 
       getSearchFromCache 
     }}>
-      <div className="font-body" style={{ backgroundColor: '#EBEAE9', minHeight: '100vh' }}>
+      <div className="font-body bg-[#EBEAE9] dark:bg-stone-950" style={{ minHeight: '100vh' }}>
         <div className="max-w-7xl mx-auto px-6 pt-4 pb-8">
           {/* Page header */}
           <div className="mb-8">
-            <h1 style={{
+            <h1 className="text-black dark:text-stone-100" style={{
               fontFamily: 'Freight Text Pro, Lora, serif',
               fontWeight: 500,
               fontSize: 'clamp(28px, 4vw, 48px)',
-              lineHeight: '1.2',
-              color: 'black'
+              lineHeight: '1.2'
             }}>
               Content{' '}
               <span style={{
@@ -248,17 +247,17 @@ export default function ContentDirectory() {
                 Directory
               </span>
             </h1>
-            <p className="text-base text-black/70 max-w-3xl leading-relaxed mt-3" style={{
+            <p className="text-base text-black/70 dark:text-stone-300 max-w-3xl leading-relaxed mt-3" style={{
               fontFamily: 'Freight Text Pro, Lora, serif',
               fontWeight: 400
             }}>
               Browse and search through clips and people from the Civil Rights History Collection.
-              Visit the <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>Topics</a> page to explore keywords and topics.
+              Visit the <a href="#/topic-glossary" className="text-civil-red-body hover:underline">Topics</a> page to explore keywords and topics.
             </p>
           </div>
 
           {/* Stats summary */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 mb-8 border border-white/20">
+          <div className="bg-white/80 dark:bg-stone-900/80 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 mb-8 border border-white/20 dark:border-stone-700/40">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
               <div className="flex flex-col items-center p-4 rounded-xl" style={{ backgroundColor: 'rgba(242, 72, 60, 0.1)' }}>
                 <div className="text-2xl font-bold mb-2" style={{
@@ -267,13 +266,13 @@ export default function ContentDirectory() {
                 }}>
                   {statsData.peopleCount}
                 </div>
-                <div className="text-sm text-black/60 font-mono tracking-wide">
+                <div className="text-sm text-black/60 dark:text-stone-400 font-mono tracking-wide">
                   TOTAL PEOPLE
                 </div>
               </div>
-              <div className="text-sm text-black/60 text-center sm:text-right" style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}>
+              <div className="text-sm text-black/60 dark:text-stone-400 text-center sm:text-right" style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}>
                 For topic and keyword statistics, visit the{' '}
-                <a href="#/topic-glossary" className="text-civil-red-body hover:underline" style={{ color: '#B23E2F' }}>
+                <a href="#/topic-glossary" className="text-civil-red-body hover:underline">
                   Topics
                 </a>
               </div>
@@ -281,14 +280,14 @@ export default function ContentDirectory() {
           </div>
 
           {/* Tab Navigation */}
-          <div className="border-b border-black/20 mb-8">
+          <div className="border-b border-black/20 dark:border-stone-700 mb-8">
             <nav className="-mb-px flex space-x-8">
               <button
                 onClick={() => setActiveTab('clips')}
                 className={`pb-4 px-3 border-b-2 font-medium text-base transition-colors ${
                   activeTab === 'clips'
-                    ? 'text-black border-black'
-                    : 'border-transparent text-black/60 hover:text-black hover:border-black/30'
+                    ? 'text-black dark:text-stone-100 border-black dark:border-stone-100'
+                    : 'border-transparent text-black/60 dark:text-stone-400 hover:text-black dark:hover:text-stone-100 hover:border-black/30 dark:hover:border-stone-500'
                 }`}
                 style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}
               >
@@ -298,8 +297,8 @@ export default function ContentDirectory() {
                 onClick={() => setActiveTab('people')}
                 className={`pb-4 px-3 border-b-2 font-medium text-base transition-colors ${
                   activeTab === 'people'
-                    ? 'text-black border-black'
-                    : 'border-transparent text-black/60 hover:text-black hover:border-black/30'
+                    ? 'text-black dark:text-stone-100 border-black dark:border-stone-100'
+                    : 'border-transparent text-black/60 dark:text-stone-400 hover:text-black dark:hover:text-stone-100 hover:border-black/30 dark:hover:border-stone-500'
                 }`}
                 style={{ fontFamily: 'Freight Text Pro, Lora, serif' }}
               >

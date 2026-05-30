@@ -120,6 +120,11 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
   return (
     <>
       <div className="rounded-lg border border-stone-200 overflow-hidden bg-stone-50">
+        {/* TODO(dark-mode): SVG substrate fill is hardcoded '#fafaf9' inline; the
+            reference grid lines ('#e7e5e4') and the bubble labels (fill '#1c1917'
+            with '#fafaf9' stroke halo, below) need dark variants read from a theme
+            flag (e.g. document.documentElement.classList.contains('dark')) so the
+            chart interior inverts with the rest of the page. */}
         <svg
           width="100%"
           height={H}

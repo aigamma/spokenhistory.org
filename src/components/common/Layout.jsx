@@ -7,8 +7,7 @@ export default function Layout({ children }) {
   if (loading) {
     return (
       <div
-        className="h-screen flex items-center justify-center"
-        style={{ backgroundColor: '#EBEAE9' }}
+        className="h-screen flex items-center justify-center bg-[#EBEAE9] dark:bg-stone-950"
         role="status"
         aria-live="polite"
       >
@@ -23,7 +22,7 @@ export default function Layout({ children }) {
   }
   
   return (
-    <div className="min-h-screen w-full font-body" style={{ backgroundColor: '#EBEAE9' }}>
+    <div className="min-h-screen w-full font-body bg-[#EBEAE9] dark:bg-stone-950">
       {/* Skip-link for WCAG 2.2 SC 2.4.1 (Bypass Blocks). Visually
           hidden until focused via keyboard Tab; appears at the top-
           left as a high-contrast pill on focus. Keyboard users can

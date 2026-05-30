@@ -44,13 +44,13 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 min-h-screen font-sans flex flex-col items-center justify-center">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-stone-950 min-h-screen font-sans flex flex-col items-center justify-center">
       {/* Search header and form */}
       <div className="w-full max-w-3xl text-center mb-16">
-        <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+        <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text">
           Search Interviews
         </h1>
-        <p className="text-base leading-relaxed text-gray-600 mb-10 max-w-xl mx-auto">
+        <p className="text-base leading-relaxed text-gray-600 dark:text-stone-400 mb-10 max-w-xl mx-auto">
           Enter keywords separated by commas to find relevant interviews and create custom playlists
         </p>
         
@@ -60,7 +60,7 @@ export default function SearchPage() {
                 announce it; the input's label below carries the
                 accessible name. */}
             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-              <SearchIcon className="w-5 h-5 text-gray-500" aria-hidden="true" />
+              <SearchIcon className="w-5 h-5 text-gray-500 dark:text-stone-400" aria-hidden="true" />
             </div>
 
             {/* sr-only label gives the input an accessible name that
@@ -80,7 +80,7 @@ export default function SearchPage() {
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
               placeholder="civil rights, voting, education..."
-              className="w-full pl-12 pr-32 py-5 min-h-11 border border-gray-200 bg-white rounded-xl shadow-sm outline-none text-base text-gray-900 transition-all duration-300 focus:shadow-blue-300 focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-12 pr-32 py-5 min-h-11 border border-gray-200 dark:border-stone-700 bg-white dark:bg-stone-900 rounded-xl shadow-sm outline-none text-base text-gray-900 dark:text-stone-100 transition-all duration-300 focus:shadow-blue-300 focus:ring-2 focus:ring-blue-500"
               autoCapitalize="none"
               autoCorrect="off"
               aria-invalid={!!error}
@@ -106,7 +106,7 @@ export default function SearchPage() {
               id="search-error"
               role="alert"
               aria-live="assertive"
-              className="mt-3 text-sm text-red-700"
+              className="mt-3 text-sm text-red-700 dark:text-red-400"
             >
               {error}
             </div>
@@ -117,7 +117,7 @@ export default function SearchPage() {
       {/* Popular keywords section */}
       <div className="w-full max-w-3xl">
         <div className="bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-lg font-semibold mb-4 text-gray-900">
+          <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-stone-100">
             Popular Keywords
           </h2>
           <div className="flex flex-wrap gap-2" role="group" aria-label="Popular keyword shortcuts">
@@ -134,7 +134,7 @@ export default function SearchPage() {
                   setKeywords(keyword);
                   navigate(`/playlist-builder?keywords=${encodeURIComponent(keyword)}`);
                 }}
-                className="px-4 py-2 min-h-11 bg-gray-100 text-gray-700 rounded-lg text-sm border-none cursor-pointer transition-colors duration-200 hover:bg-blue-100 hover:text-blue-800"
+                className="px-4 py-2 min-h-11 bg-gray-100 dark:bg-stone-800 text-gray-700 dark:text-stone-300 rounded-lg text-sm border-none cursor-pointer transition-colors duration-200 hover:bg-blue-100 dark:hover:bg-blue-900 hover:text-blue-800 dark:hover:text-blue-200"
                 aria-label={`Browse playlist for ${keyword}`}
               >
                 {keyword}

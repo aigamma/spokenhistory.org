@@ -238,6 +238,17 @@ export default function PassageMap() {
     // swatch+name list; the hover gives per-dot topic. Adding
     // floating labels here would replicate exactly the failure mode
     // we're trying to avoid.
+    // TODO(dark-mode): this Plotly layout hardcodes a light-theme palette and needs
+    // a dark variant branched off a theme flag (e.g.
+    // document.documentElement.classList.contains('dark'), recomputed on mount and
+    // whenever the .dark class toggles). Specifically: paper_bgcolor ('#EBEAE9' cream
+    // chrome -> stone-950 '#0c0a09'), font.color ('#1c1917' -> stone-100 '#e7e5e4'),
+    // xaxis/yaxis title font.color ('#57534e'), axis color ('#1c1917'), gridcolor
+    // ('rgba(168,162,158,0.18)'), tickcolor ('#a8a29e'), and the x rangeslider
+    // bgcolor/bordercolor ('rgba(28,25,23,0.85)' / '#a8a29e'). plot_bgcolor is already
+    // a dark '#1c1917' (intentional dark plot well) and can stay or be nudged to
+    // stone-900; marker colors come from TOPIC_PALETTE and the HIGHLIGHT_COLOR brand
+    // red, which read on both themes.
     paper_bgcolor: '#EBEAE9',
     plot_bgcolor: '#1c1917',
     font: {
@@ -310,7 +321,7 @@ export default function PassageMap() {
         <button
           type="button"
           onClick={resetView}
-          className="px-3 py-1.5 rounded-md border border-stone-300 bg-white hover:bg-stone-50 text-xs text-stone-700"
+          className="px-3 py-1.5 rounded-md border border-stone-300 bg-white hover:bg-stone-50 dark:hover:bg-stone-800 text-xs text-stone-700"
         >
           Reset view
         </button>
@@ -321,7 +332,7 @@ export default function PassageMap() {
       </div>
 
       <div className="flex items-stretch gap-3">
-        <div className="flex-1 rounded-lg border border-stone-200 overflow-hidden shadow-sm" style={{ background: '#EBEAE9' }}>
+        <div className="flex-1 rounded-lg border border-stone-200 overflow-hidden shadow-sm bg-[#EBEAE9] dark:bg-stone-950">
           <Plot
             ref={plotRef}
             data={plotData}

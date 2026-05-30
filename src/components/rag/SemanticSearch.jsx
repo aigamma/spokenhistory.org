@@ -149,7 +149,7 @@ export default function SemanticSearch({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-12 pr-40 py-4 text-base border border-stone-300 rounded-lg focus:border-red-700 focus:ring-2 focus:ring-red-700/30 outline-none transition-colors bg-white"
+          className="w-full pl-12 pr-40 py-4 text-base border border-stone-300 rounded-lg focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-700/30 dark:focus:ring-red-400/30 outline-none transition-colors bg-white dark:placeholder-stone-500"
           aria-label="Search query"
           maxLength={4000}
         />
@@ -205,7 +205,7 @@ export default function SemanticSearch({
             type="checkbox"
             checked={dedupeByEntry}
             onChange={(e) => setDedupeByEntry(e.target.checked)}
-            className="rounded border-stone-400 text-red-700 focus:ring-red-700/30"
+            className="rounded border-stone-400 dark:border-stone-600 text-red-700 dark:text-red-400 focus:ring-red-700/30 dark:focus:ring-red-400/30"
           />
           <span>One passage per interviewee</span>
         </label>
@@ -256,7 +256,7 @@ export default function SemanticSearch({
       </div>
 
       {error && (
-        <div className="mb-4 p-4 rounded-md bg-amber-50 border border-amber-200 text-amber-900 text-sm">
+        <div className="mb-4 p-4 rounded-md bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-200 text-sm">
           {error}
         </div>
       )}

@@ -521,7 +521,7 @@ const PlaylistBuilder = () => {
     return (
       <div className="flex flex-col justify-center items-center h-64">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mb-4" />
-        <p className="text-gray-600">Loading first video...</p>
+        <p className="text-gray-600 dark:text-stone-400">Loading first video...</p>
       </div>
     );
   }
@@ -530,7 +530,7 @@ const PlaylistBuilder = () => {
   if (error) {
     return (
       <div className="max-w-7xl mx-auto p-4">
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+        <div className="bg-red-100 dark:bg-red-950/40 border border-red-400 dark:border-red-800 text-red-700 dark:text-red-300 px-4 py-3 rounded">
           <p>{error}</p>
         </div>
       </div>
@@ -628,7 +628,7 @@ const PlaylistBuilder = () => {
                   seekToTime={seekToTime}
                 />
               ) : (
-                <div className="w-full h-full bg-gray-400 flex items-center justify-center text-white text-xl">
+                <div className="w-full h-full bg-gray-400 dark:bg-stone-800 flex items-center justify-center text-white text-xl">
                   No video available
                 </div>
               )}
@@ -649,7 +649,7 @@ const PlaylistBuilder = () => {
                   onClick={handlePrevious}
                   aria-label="Previous chapter"
                 >
-                  <img src={ArrowLeftIcon} alt="" aria-hidden="true" className="w-5 h-4" />
+                  <img src={ArrowLeftIcon} alt="" aria-hidden="true" className="w-5 h-4 dark:invert" />
                   <span className="text-stone-900 text-lg sm:text-xl font-light font-mono">Prev. Chapter</span>
                 </button>
 
@@ -660,7 +660,7 @@ const PlaylistBuilder = () => {
                   aria-label="Next chapter"
                 >
                   <span className="text-stone-900 text-lg sm:text-xl font-light font-mono">Next Chapter</span>
-                  <img src={ArrowRightIcon} alt="" aria-hidden="true" className="w-5 h-4" />
+                  <img src={ArrowRightIcon} alt="" aria-hidden="true" className="w-5 h-4 dark:invert" />
                 </button>
               </div>
 
@@ -688,17 +688,17 @@ const PlaylistBuilder = () => {
                      <button
                        type="button"
                        key={index}
-                       className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-civil-red-strong hover:outline-civil-red-strong transition-colors duration-200 group bg-transparent"
+                       className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-stone-600 inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-civil-red-strong hover:outline-civil-red-strong transition-colors duration-200 group bg-transparent"
                        onClick={() => navigate(`?keywords=${encodeURIComponent(tag)}`)}
                        aria-label={`Filter playlist to topic ${tag}`}
                      >
-                       <span className="text-center text-black text-sm sm:text-base font-light font-['Chivo_Mono'] group-hover:text-white capitalize">
+                       <span className="text-center text-black dark:text-stone-100 text-sm sm:text-base font-light font-['Chivo_Mono'] group-hover:text-white capitalize">
                          {tag}
                        </span>
                      </button>
                    ))
                  ) : (
-                   <span className="text-gray-500 text-base font-light font-mono italic">
+                   <span className="text-gray-500 dark:text-stone-400 text-base font-light font-mono italic">
                      No topic tags available for this video
                    </span>
                  )}
@@ -719,7 +719,7 @@ const PlaylistBuilder = () => {
                 {/* Interviewee names. text-5xl was overlapping the
                     description on mobile. Now scales 3xl -> 5xl. */}
                 <div className="mb-6 flex-shrink-0">
-                  <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-semibold capitalize" style={{fontFamily: 'Inter, sans-serif'}}>
+                  <h2 className="text-black dark:text-stone-100 text-3xl sm:text-4xl md:text-5xl font-semibold capitalize" style={{fontFamily: 'Inter, sans-serif'}}>
                     {currentVideo.name}
                   </h2>
                 </div>
@@ -736,7 +736,7 @@ const PlaylistBuilder = () => {
                     chapter summary is long. On mobile/tablet the
                     description just sits beneath the heading and uses
                     its natural height (no cap, no scroll). */}
-                <div className="text-black text-lg sm:text-xl md:text-2xl font-normal leading-relaxed flex-1 pr-2 sm:pr-4 lg:max-h-[480px] lg:overflow-y-auto" style={{fontFamily: 'FreightText Pro, serif'}}>
+                <div className="text-black dark:text-stone-200 text-lg sm:text-xl md:text-2xl font-normal leading-relaxed flex-1 pr-2 sm:pr-4 lg:max-h-[480px] lg:overflow-y-auto" style={{fontFamily: 'FreightText Pro, serif'}}>
                   {currentVideo.summary}
                 </div>
               </>
@@ -750,7 +750,7 @@ const PlaylistBuilder = () => {
         <div className="w-full">
           <div className="mb-14">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-black text-3xl sm:text-4xl md:text-5xl font-medium" style={{fontFamily: 'Inter, sans-serif'}}>Playlist</h2>
+              <h2 className="text-black dark:text-stone-100 text-3xl sm:text-4xl md:text-5xl font-medium" style={{fontFamily: 'Inter, sans-serif'}}>Playlist</h2>
               {/* Playlist navigation arrows.
                   Hidden on mobile (user swipes the natural-scroll
                   carousel instead). Desktop pagination is unchanged. */}
@@ -762,7 +762,7 @@ const PlaylistBuilder = () => {
                   disabled={playlistStartIndex === 0 || isAnimating}
                   aria-label="Previous playlist items"
                 >
-                  <img src={SimpleArrowLeftIcon} alt="" aria-hidden="true" className="w-4 h-7" />
+                  <img src={SimpleArrowLeftIcon} alt="" aria-hidden="true" className="w-4 h-7 dark:invert" />
                 </button>
                 <button
                   type="button"
@@ -777,7 +777,7 @@ const PlaylistBuilder = () => {
                   })()}
                   aria-label="Next playlist items"
                 >
-                  <img src={SimpleArrowRightIcon} alt="" aria-hidden="true" className="w-4 h-7" />
+                  <img src={SimpleArrowRightIcon} alt="" aria-hidden="true" className="w-4 h-7 dark:invert" />
                 </button>
               </div>
             </div>
@@ -817,11 +817,11 @@ const PlaylistBuilder = () => {
                         now w-full inside the responsive item width with
                         aspect-video on mobile and the original h-72 at
                         sm. */}
-                    <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-300 rounded overflow-hidden">
+                    <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-300 dark:bg-stone-800 rounded overflow-hidden">
                       {video.thumbnailUrl ? (
                         <img className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src={video.thumbnailUrl} alt="" />
                       ) : (
-                        <div className="w-full h-full bg-zinc-300 transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                        <div className="w-full h-full bg-zinc-300 dark:bg-stone-800 transition-transform duration-300 ease-in-out group-hover:scale-110" />
                       )}
                     </div>
                     
@@ -873,9 +873,9 @@ const PlaylistBuilder = () => {
                     aria-label={`Browse playlist for related topic ${relatedTerm.topic}`}
                   >
                     <div className="flex flex-col items-center gap-3 w-full">
-                      <div className="w-full aspect-video sm:aspect-auto sm:h-72 border-2 border-black rounded overflow-hidden flex items-center justify-center">
+                      <div className="w-full aspect-video sm:aspect-auto sm:h-72 border-2 border-black dark:border-stone-600 rounded overflow-hidden flex items-center justify-center">
                         <div className="text-center p-4 sm:p-8">
-                          <div className="text-black text-2xl sm:text-3xl md:text-4xl font-bold capitalize" style={{fontFamily: 'Source Serif Pro, serif'}}>
+                          <div className="text-black dark:text-stone-100 text-2xl sm:text-3xl md:text-4xl font-bold capitalize" style={{fontFamily: 'Source Serif Pro, serif'}}>
                             {relatedTerm.topic}
                           </div>
                         </div>
@@ -891,10 +891,10 @@ const PlaylistBuilder = () => {
               {/* Background loading indicator for remaining videos */}
               {backgroundLoading && (
                 <div className="flex-shrink-0 w-[80vw] max-w-[504px] sm:w-[504px] flex flex-col items-center justify-center gap-3" role="status" aria-label="Loading more clips">
-                  <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-200 rounded overflow-hidden flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zinc-400" aria-hidden="true" />
+                  <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-200 dark:bg-stone-800 rounded overflow-hidden flex items-center justify-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zinc-400 dark:border-stone-500" aria-hidden="true" />
                   </div>
-                  <div className="text-zinc-500 text-base font-light font-mono">
+                  <div className="text-zinc-500 dark:text-stone-400 text-base font-light font-mono">
                     Loading more clips...
                   </div>
                 </div>

@@ -467,7 +467,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
             placeholder="Project a phrase onto the map (finds closest voice)…"
-            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-stone-900 dark:border-emerald-700 dark:text-stone-100"
             aria-label="Project a phrase onto the interview map"
             disabled={conceptLoading}
           />
@@ -492,13 +492,13 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
           </div>
         </div>
         {conceptError && (
-          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-1.5">
+          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 dark:text-amber-200 dark:bg-amber-950/40 dark:border-amber-800 rounded px-2 py-1 mt-1.5">
             {conceptError}
           </p>
         )}
         {conceptNearest && conceptQuery && !conceptError && (
-          <p className="text-xs text-emerald-900 mt-1.5">
-            <span className="text-emerald-700 font-medium">●</span>{' '}
+          <p className="text-xs text-emerald-900 dark:text-emerald-300 mt-1.5">
+            <span className="text-emerald-700 dark:text-emerald-400 font-medium">●</span>{' '}
             Closest voice to &ldquo;{conceptQuery}&rdquo;:{' '}
             <strong>{conceptNearest.entry_subject}</strong>{' '}
             (cosine similarity <span className="font-mono tabular-nums">{conceptNearest.similarity.toFixed(3)}</span>)
@@ -517,7 +517,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
                 key={ex}
                 type="button"
                 onClick={() => runExample(ex)}
-                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 transition-colors"
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-stone-900 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
               >
                 {ex}
               </button>
@@ -541,6 +541,14 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
       )}
 
       <div className="rounded-lg border border-stone-200 bg-stone-50 overflow-hidden">
+        {/* TODO(dark-mode): SVG substrate fill is hardcoded '#fafaf9' inline and the
+            interior fills are tuned for light theme; all need dark variants read from
+            a theme flag (e.g. document.documentElement.classList.contains('dark')):
+            the inline background, the quadrant guidelines ('#e7e5e4'), the empirical
+            axis labels ('#57534e'), and the dot name labels (fills '#1c1917' /
+            '#44403c' with a near-white 'rgba(250,250,249,0.95)' stroke halo, which go
+            dark-on-dark). Dot fills come from TIER_COLORS and the neighbor curves /
+            concept-query pin use brand + emerald accents that read on dark. */}
         <svg
           width="100%"
           viewBox={`0 0 ${W} ${H}`}
@@ -734,8 +742,8 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
           closure as Spectrum and Word Search: query → projection on
           the map (nearest centroid) → here are the voices that match. */}
       {conceptResults && conceptResults.length > 0 && conceptQuery && (
-        <aside className="mt-4 p-4 rounded-md border border-emerald-200 bg-white">
-          <p className="text-xs text-emerald-900 font-mono uppercase tracking-wide mb-2">
+        <aside className="mt-4 p-4 rounded-md border border-emerald-200 bg-white dark:border-emerald-800">
+          <p className="text-xs text-emerald-900 dark:text-emerald-200 font-mono uppercase tracking-wide mb-2">
             Top {conceptResults.length} retrieved passages for &ldquo;{conceptQuery}&rdquo;
           </p>
           <p className="text-sm text-stone-600 mb-3">
@@ -876,7 +884,7 @@ function InterviewMapDrillDown({ entry }) {
         </p>
       )}
       {error && (
-        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 rounded p-3">
+        <p className="text-sm text-amber-900 bg-amber-50 border border-amber-200 dark:text-amber-200 dark:bg-amber-950/40 dark:border-amber-800 rounded p-3">
           {error}
         </p>
       )}
