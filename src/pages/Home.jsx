@@ -2523,7 +2523,7 @@ export default function Home() {
           <h2 className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4'] mb-6 lg:mb-8">
             Discover the rest of the archive
           </h2>
-          <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] mb-6 lg:mb-8">136 Interviews · Library of Congress cross-referenced · ~15K time-anchored passages</p>
+          <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] mb-6 lg:mb-8">136 of the ~145-interview collection · Library of Congress cross-referenced · ~15K time-anchored passages</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link

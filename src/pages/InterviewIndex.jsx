@@ -108,7 +108,7 @@ export default function InterviewIndex() {
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            All 136 interviews in the corpus, each with its Library of Congress cross-reference status and a 3-sentence biographical capsule. Click an entry to open the embedding-space &quot;voices in conversation&quot; view.
+            All 136 interviews currently on the site, drawn from the Library of Congress and Smithsonian collection of roughly 145, each with its Library of Congress cross-reference status and a short biographical capsule. Click an entry to open the full interview.
           </p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
             {Object.values(
