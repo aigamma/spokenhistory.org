@@ -19,13 +19,14 @@
 
 import { ShieldCheck, AlertTriangle } from 'lucide-react';
 
-// The 6 tier values that appear in the corpus as of Pass 9 (2026-05-26):
-//   high                1
-//   medium             29
-//   low                67
-//   publication-block  18
-//   not-auditable      12
-//   ingestion-only      9
+// The 6 tier values, with the corpus distribution as of Pass 10 (2026-05-30,
+// "LoC verification IS the grade", see transcripts/AUDIT_LIMITATIONS.md):
+//   high               133   (LoC-verified; the bulk of the corpus)
+//   medium               0   (unused: a LoC-verified entry is high; an unverified one is flagged)
+//   low                  0   (unused)
+//   publication-block    1   (weak LoC match: Reverend Harry Blake)
+//   not-auditable        2   (source-audio limits: McClary, Lawson)
+//   ingestion-only       0   (all 9 ingestion entries reached LoC parity)
 export const TIER_VOCABULARY = [
   'high',
   'medium',
@@ -44,12 +45,12 @@ export const TIER_VOCABULARY = [
 //   or 800) + white text + brighter border (border-400 or 500) so the
 //   pill keeps its outline glow on a dark background.
 export const TIER_BADGE = {
-  'high':              { label: 'Audited · High confidence',           bg: 'bg-sky-50 dark:bg-sky-800',         text: 'text-sky-800 dark:text-white',         border: 'border-sky-200 dark:border-sky-400',         icon: ShieldCheck },
-  'medium':            { label: 'Audited · Medium confidence',         bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white',     border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
-  'low':               { label: 'Audited · Low confidence',            bg: 'bg-amber-50 dark:bg-amber-700',     text: 'text-amber-800 dark:text-white',       border: 'border-amber-200 dark:border-amber-400',     icon: AlertTriangle },
-  'publication-block': { label: 'Audited · Publication-blocker issues', bg: 'bg-red-50 dark:bg-red-800',         text: 'text-red-800 dark:text-white',         border: 'border-red-200 dark:border-red-400',         icon: AlertTriangle },
-  'not-auditable':     { label: 'Audited · Not externally verifiable',  bg: 'bg-violet-50 dark:bg-violet-800',   text: 'text-violet-800 dark:text-white',      border: 'border-violet-200 dark:border-violet-400',   icon: AlertTriangle },
-  'ingestion-only':    { label: 'Ingested · Not yet audited',           bg: 'bg-slate-50 dark:bg-slate-700',     text: 'text-slate-800 dark:text-white',       border: 'border-slate-200 dark:border-slate-400',     icon: AlertTriangle },
+  'high':              { label: 'LoC-Verified',                   bg: 'bg-sky-50 dark:bg-sky-800',         text: 'text-sky-800 dark:text-white',         border: 'border-sky-200 dark:border-sky-400',         icon: ShieldCheck },
+  'medium':            { label: 'Audited · Publication-Eligible', bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white',     border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
+  'low':               { label: 'Audited · Review Recommended',   bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white',     border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
+  'publication-block': { label: 'Weak LoC Match · Verify Passage', bg: 'bg-amber-50 dark:bg-amber-700',    text: 'text-amber-800 dark:text-white',       border: 'border-amber-200 dark:border-amber-400',     icon: AlertTriangle },
+  'not-auditable':     { label: 'Source-Audio Limited',           bg: 'bg-violet-50 dark:bg-violet-800',   text: 'text-violet-800 dark:text-white',      border: 'border-violet-200 dark:border-violet-400',   icon: AlertTriangle },
+  'ingestion-only':    { label: 'Ingested · LoC Pending',         bg: 'bg-slate-50 dark:bg-slate-700',     text: 'text-slate-800 dark:text-white',       border: 'border-slate-200 dark:border-slate-400',     icon: AlertTriangle },
 };
 
 // Raw hex colors for SVG fills on the Constellation scatter. Darker
@@ -125,16 +126,16 @@ export const SNIPPET_PROBLEM_TIERS = new Set(['publication-block']);
  * @returns {string}
  */
 export function fidelityNoteFor(provenance, tier) {
+  // Ingestion entry that never resolved a LoC source: genuinely still pending.
   if (tier === 'ingestion-only' || provenance === 'ingestion-only') {
-    return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.';
+    return 'Ingested but not yet cross-referenced against a Library of Congress source; verification pending.';
   }
-  if (provenance === 'audit-original') {
-    if (tier === 'high') return 'Audited transcript (Pass 1–9); minimal residual error expected, publishable as-is.';
-    if (tier === 'medium') return 'Audited transcript (Pass 1–9); publication-eligible with caveat note.';
-    if (tier === 'low') return 'Audited transcript (Pass 1–9); adversarial-ensemble review recommended before publication-grade attribution.';
-    if (tier === 'publication-block') return 'Audited transcript with documented publication-blocker issues; verify the specific passage against audio before citing.';
-    if (tier === 'not-auditable') return 'Audit pass completed but the entry cannot be fully verified against an external canonical source.';
-    return 'Audited transcript.';
-  }
-  return 'Provenance unknown.';
+  // Tier-driven notes. Apply to audit-original and ingestion-loc-verified alike: an
+  // ingestion entry that resolved a LoC source is at parity, so it reads by its tier.
+  if (tier === 'high') return 'Transcript cross-referenced against the Library of Congress published transcript and aligned; publication-ready.';
+  if (tier === 'medium') return 'Audited and LoC-cross-referenced; publication-eligible.';
+  if (tier === 'low') return 'Audited and LoC-cross-referenced; a closer review is recommended before publication-grade attribution.';
+  if (tier === 'publication-block') return 'LoC alignment was weak for this interview; verify the specific passage against the LoC source before citing.';
+  if (tier === 'not-auditable') return 'A source-audio limit (mid-sentence truncation or severe degradation) prevents full verification; the Library of Congress transcript hit the same limit on the same recording.';
+  return 'Audited transcript.';
 }

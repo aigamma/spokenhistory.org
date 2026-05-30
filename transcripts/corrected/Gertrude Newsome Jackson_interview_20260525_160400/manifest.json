@@ -46,18 +46,16 @@
   "ground_truth_corpus_version": "140 entries (post Phase D 2026-05-22)",
   "inferential_uncertainty": {
     "score": 0.0,
-    "confidence_tier": "ingestion-only",
+    "confidence_tier": "high",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.0,
       "low_confidence_residual_ratio": 0.0,
       "adversarial_flag_density": 0.0,
-      "cross_contamination_penalty": 0.0,
-      "audit_passes_complete": 0,
-      "loc_verification_credit": -0.0
+      "cross_contamination_penalty": 0.0
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "formula_reference": "transcripts/pass10_rescore.py (LoC verification retires audit-process noise; score = categorical + (1 - NOISE_RETIRE*loc_match)*noise; 2026-05-30)",
     "notes": "These entries were ingested 2026-05-25 via the streamlined Pass 8 LoC-healing-as-primary pipeline; they did not pass through the original Pass 1-7 audit journey. Pass 8 LoC alignment provides the primary correction substrate; additional audit signals (adversarial review, cross-contamination check, ground-truth-corpus validation) would need to be run separately to fill in this score.",
     "previous_score_v8": 0.0,
     "previous_tier_v8": "ingestion-only",
@@ -69,7 +67,25 @@
       "loc_apply_failure_count": 0,
       "credit_applied": 0.0,
       "tier_changed": false
+    },
+    "base_components_v8": {
+      "base": 0.0,
+      "truncation_penalty": 0.0,
+      "degradation_penalty": 0.0,
+      "low_confidence_residual_ratio": 0.0,
+      "adversarial_flag_density": 0.0,
+      "cross_contamination_penalty": 0.0
+    },
+    "previous_score_v9": 0.0,
+    "previous_tier_v9": "ingestion-only",
+    "pass10_metadata": {
+      "applied_date": "2026-05-30",
+      "noise_retire": 1.0,
+      "loc_match": 1.0,
+      "ingestion_parity": true,
+      "categorical_pin_reason": null,
+      "tier_changed": true
     }
   },
-  "entry_provenance": "ingestion-only"
+  "entry_provenance": "ingestion-loc-verified"
 }

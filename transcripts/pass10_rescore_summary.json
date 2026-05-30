@@ -1,9 +1,6 @@
 {
   "pass10_date": "2026-05-30",
-  "knobs": {
-    "xcont_decay": 0.1,
-    "adv_retire": 0.5
-  },
+  "noise_retire": 1.0,
   "total_entries": 136,
   "tier_distribution_before": {
     "low": 67,
@@ -14,13 +11,11 @@
     "high": 1
   },
   "tier_distribution_after": {
-    "medium": 87,
-    "low": 32,
-    "ingestion-only": 9,
-    "high": 6,
-    "not-auditable": 2
+    "high": 133,
+    "not-auditable": 2,
+    "publication-block": 1
   },
-  "tier_change_count": 92,
+  "tier_change_count": 133,
   "entries": [
     {
       "entry_number": 1,
@@ -28,8 +23,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3854,
       "cur_tier": "low",
-      "v10_score": 0.237,
-      "v10_tier": "medium",
+      "v10_score": 0.0411,
+      "v10_tier": "high",
       "loc_cov": 0.95,
       "tier_changed": true
     },
@@ -39,8 +34,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4023,
       "cur_tier": "low",
-      "v10_score": 0.2322,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -50,8 +45,8 @@
       "provenance": "audit-original",
       "cur_score": 0.416,
       "cur_tier": "low",
-      "v10_score": 0.2245,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -61,8 +56,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3956,
       "cur_tier": "low",
-      "v10_score": 0.2158,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -72,8 +67,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6198,
       "cur_tier": "publication-block",
-      "v10_score": 0.3254,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -83,10 +78,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2058,
       "cur_tier": "medium",
-      "v10_score": 0.1279,
-      "v10_tier": "medium",
+      "v10_score": 0.015,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 7,
@@ -94,10 +89,10 @@
       "provenance": "audit-original",
       "cur_score": 0.4308,
       "cur_tier": "low",
-      "v10_score": 0.4308,
-      "v10_tier": "low",
-      "loc_cov": 0.0,
-      "tier_changed": false
+      "v10_score": 0.0245,
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 8,
@@ -105,8 +100,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2931,
       "cur_tier": "low",
-      "v10_score": 0.1748,
-      "v10_tier": "medium",
+      "v10_score": 0.0175,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -116,8 +111,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3784,
       "cur_tier": "low",
-      "v10_score": 0.1277,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -127,8 +122,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5748,
       "cur_tier": "publication-block",
-      "v10_score": 0.3019,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -138,8 +133,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3913,
       "cur_tier": "low",
-      "v10_score": 0.2131,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -149,8 +144,8 @@
       "provenance": "audit-original",
       "cur_score": 0.76,
       "cur_tier": "not-auditable",
-      "v10_score": 0.358,
-      "v10_tier": "low",
+      "v10_score": 0.003,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -160,10 +155,10 @@
       "provenance": "audit-original",
       "cur_score": 0.476,
       "cur_tier": "low",
-      "v10_score": 0.265,
-      "v10_tier": "low",
+      "v10_score": 0.01,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 14,
@@ -171,8 +166,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3176,
       "cur_tier": "low",
-      "v10_score": 0.1843,
-      "v10_tier": "medium",
+      "v10_score": 0.01,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -182,8 +177,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4482,
       "cur_tier": "low",
-      "v10_score": 0.2361,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -193,10 +188,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1663,
       "cur_tier": "medium",
-      "v10_score": 0.1047,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 17,
@@ -204,8 +199,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2991,
       "cur_tier": "low",
-      "v10_score": 0.2053,
-      "v10_tier": "medium",
+      "v10_score": 0.0315,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -215,8 +210,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3228,
       "cur_tier": "low",
-      "v10_score": 0.1719,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -226,8 +221,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3195,
       "cur_tier": "low",
-      "v10_score": 0.1908,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -237,8 +232,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2951,
       "cur_tier": "low",
-      "v10_score": 0.183,
-      "v10_tier": "medium",
+      "v10_score": 0.02,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -248,8 +243,8 @@
       "provenance": "audit-original",
       "cur_score": 0.7076,
       "cur_tier": "not-auditable",
-      "v10_score": 0.2968,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -259,10 +254,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2157,
       "cur_tier": "medium",
-      "v10_score": 0.1363,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 23,
@@ -270,10 +265,10 @@
       "provenance": "audit-original",
       "cur_score": 0.4903,
       "cur_tier": "low",
-      "v10_score": 0.2637,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 24,
@@ -281,8 +276,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2811,
       "cur_tier": "low",
-      "v10_score": 0.1576,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -292,10 +287,10 @@
       "provenance": "audit-original",
       "cur_score": 0.4613,
       "cur_tier": "low",
-      "v10_score": 0.2636,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 26,
@@ -303,10 +298,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1816,
       "cur_tier": "medium",
-      "v10_score": 0.1413,
-      "v10_tier": "medium",
+      "v10_score": 0.027,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 27,
@@ -314,8 +309,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3224,
       "cur_tier": "low",
-      "v10_score": 0.1381,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -326,9 +321,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 29,
@@ -336,8 +331,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2823,
       "cur_tier": "low",
-      "v10_score": 0.1689,
-      "v10_tier": "medium",
+      "v10_score": 0.0155,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -347,8 +342,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2771,
       "cur_tier": "low",
-      "v10_score": 0.1819,
-      "v10_tier": "medium",
+      "v10_score": 0.0245,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -358,10 +353,10 @@
       "provenance": "audit-original",
       "cur_score": 0.473,
       "cur_tier": "low",
-      "v10_score": 0.25,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 33,
@@ -369,8 +364,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5726,
       "cur_tier": "publication-block",
-      "v10_score": 0.2753,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -380,8 +375,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4032,
       "cur_tier": "low",
-      "v10_score": 0.1812,
-      "v10_tier": "medium",
+      "v10_score": 0.032,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -391,8 +386,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2966,
       "cur_tier": "low",
-      "v10_score": 0.1638,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -402,8 +397,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3527,
       "cur_tier": "low",
-      "v10_score": 0.1889,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -413,8 +408,8 @@
       "provenance": "audit-original",
       "cur_score": 0.268,
       "cur_tier": "low",
-      "v10_score": 0.15,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -424,8 +419,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5955,
       "cur_tier": "publication-block",
-      "v10_score": 0.2429,
-      "v10_tier": "medium",
+      "v10_score": 0.0125,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -435,7 +430,7 @@
       "provenance": "audit-original",
       "cur_score": 0.1426,
       "cur_tier": "medium",
-      "v10_score": 0.0834,
+      "v10_score": 0.0,
       "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
@@ -446,8 +441,8 @@
       "provenance": "audit-original",
       "cur_score": 0.348,
       "cur_tier": "low",
-      "v10_score": 0.1875,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -457,7 +452,7 @@
       "provenance": "audit-original",
       "cur_score": 0.1494,
       "cur_tier": "medium",
-      "v10_score": 0.0916,
+      "v10_score": 0.0,
       "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
@@ -468,7 +463,7 @@
       "provenance": "audit-original",
       "cur_score": 0.1695,
       "cur_tier": "medium",
-      "v10_score": 0.0968,
+      "v10_score": 0.0,
       "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
@@ -479,9 +474,9 @@
       "provenance": "audit-original",
       "cur_score": 0.7231,
       "cur_tier": "not-auditable",
-      "v10_score": 0.4531,
-      "v10_tier": "low",
-      "loc_cov": 0.0,
+      "v10_score": 0.0,
+      "v10_tier": "high",
+      "loc_cov": 1.0,
       "tier_changed": true
     },
     {
@@ -490,8 +485,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3793,
       "cur_tier": "low",
-      "v10_score": 0.1272,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -501,8 +496,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3277,
       "cur_tier": "low",
-      "v10_score": 0.1808,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -513,9 +508,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 47,
@@ -523,8 +518,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4533,
       "cur_tier": "low",
-      "v10_score": 0.1989,
-      "v10_tier": "medium",
+      "v10_score": 0.0025,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -534,8 +529,8 @@
       "provenance": "audit-original",
       "cur_score": 0.767,
       "cur_tier": "not-auditable",
-      "v10_score": 0.32,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -545,8 +540,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3937,
       "cur_tier": "low",
-      "v10_score": 0.2154,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -556,8 +551,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6778,
       "cur_tier": "publication-block",
-      "v10_score": 0.3509,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -567,8 +562,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6064,
       "cur_tier": "publication-block",
-      "v10_score": 0.3162,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -578,8 +573,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5447,
       "cur_tier": "publication-block",
-      "v10_score": 0.2943,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -589,10 +584,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2235,
       "cur_tier": "medium",
-      "v10_score": 0.1268,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 54,
@@ -600,10 +595,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1438,
       "cur_tier": "medium",
-      "v10_score": 0.1154,
-      "v10_tier": "medium",
+      "v10_score": 0.023,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 55,
@@ -611,10 +606,10 @@
       "provenance": "audit-original",
       "cur_score": 0.168,
       "cur_tier": "medium",
-      "v10_score": 0.1,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 56,
@@ -622,8 +617,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3051,
       "cur_tier": "low",
-      "v10_score": 0.1645,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -633,8 +628,8 @@
       "provenance": "audit-original",
       "cur_score": 0.7356,
       "cur_tier": "not-auditable",
-      "v10_score": 0.3879,
-      "v10_tier": "low",
+      "v10_score": 0.011,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -644,8 +639,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4403,
       "cur_tier": "low",
-      "v10_score": 0.2341,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -655,7 +650,7 @@
       "provenance": "audit-original",
       "cur_score": 0.956,
       "cur_tier": "not-auditable",
-      "v10_score": 0.2425,
+      "v10_score": 0.0,
       "v10_tier": "not-auditable",
       "loc_cov": 1.0,
       "tier_changed": false
@@ -666,8 +661,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6984,
       "cur_tier": "publication-block",
-      "v10_score": 0.2647,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -677,10 +672,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2453,
       "cur_tier": "medium",
-      "v10_score": 0.1466,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 62,
@@ -688,8 +683,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3653,
       "cur_tier": "low",
-      "v10_score": 0.2067,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -699,8 +694,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4105,
       "cur_tier": "low",
-      "v10_score": 0.2436,
-      "v10_tier": "medium",
+      "v10_score": 0.0443,
+      "v10_tier": "high",
       "loc_cov": 0.9,
       "tier_changed": true
     },
@@ -711,9 +706,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 65,
@@ -721,8 +716,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4095,
       "cur_tier": "low",
-      "v10_score": 0.2222,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -732,8 +727,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6029,
       "cur_tier": "publication-block",
-      "v10_score": 0.1559,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -743,8 +738,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3921,
       "cur_tier": "low",
-      "v10_score": 0.1675,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -754,8 +749,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3552,
       "cur_tier": "low",
-      "v10_score": 0.2189,
-      "v10_tier": "medium",
+      "v10_score": 0.0215,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -765,8 +760,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4629,
       "cur_tier": "low",
-      "v10_score": 0.1927,
-      "v10_tier": "medium",
+      "v10_score": 0.0215,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -776,8 +771,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6285,
       "cur_tier": "publication-block",
-      "v10_score": 0.3297,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -787,8 +782,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3897,
       "cur_tier": "low",
-      "v10_score": 0.1798,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -798,8 +793,8 @@
       "provenance": "audit-original",
       "cur_score": 0.513,
       "cur_tier": "publication-block",
-      "v10_score": 0.3151,
-      "v10_tier": "low",
+      "v10_score": 0.0675,
+      "v10_tier": "high",
       "loc_cov": 0.9,
       "tier_changed": true
     },
@@ -809,8 +804,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2847,
       "cur_tier": "low",
-      "v10_score": 0.1623,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -820,10 +815,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2279,
       "cur_tier": "medium",
-      "v10_score": 0.1319,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 75,
@@ -831,10 +826,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2345,
       "cur_tier": "medium",
-      "v10_score": 0.1527,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 76,
@@ -842,10 +837,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1713,
       "cur_tier": "medium",
-      "v10_score": 0.1147,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 77,
@@ -853,8 +848,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6614,
       "cur_tier": "publication-block",
-      "v10_score": 0.3463,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -864,8 +859,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3416,
       "cur_tier": "low",
-      "v10_score": 0.1613,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -875,8 +870,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2925,
       "cur_tier": "low",
-      "v10_score": 0.1762,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -886,8 +881,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3308,
       "cur_tier": "low",
-      "v10_score": 0.2064,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -897,10 +892,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1896,
       "cur_tier": "medium",
-      "v10_score": 0.1142,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 82,
@@ -908,8 +903,8 @@
       "provenance": "audit-original",
       "cur_score": 0.451,
       "cur_tier": "low",
-      "v10_score": 0.2375,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -919,8 +914,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2629,
       "cur_tier": "low",
-      "v10_score": 0.1524,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -930,10 +925,10 @@
       "provenance": "audit-original",
       "cur_score": 0.4921,
       "cur_tier": "low",
-      "v10_score": 0.4921,
-      "v10_tier": "low",
-      "loc_cov": 0.0,
-      "tier_changed": false
+      "v10_score": 0.0,
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 85,
@@ -941,8 +936,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5591,
       "cur_tier": "publication-block",
-      "v10_score": 0.2906,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -952,10 +947,10 @@
       "provenance": "audit-original",
       "cur_score": 0.215,
       "cur_tier": "medium",
-      "v10_score": 0.125,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 87,
@@ -963,10 +958,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2401,
       "cur_tier": "medium",
-      "v10_score": 0.132,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 88,
@@ -974,7 +969,7 @@
       "provenance": "audit-original",
       "cur_score": 0.1145,
       "cur_tier": "medium",
-      "v10_score": 0.0734,
+      "v10_score": 0.0133,
       "v10_tier": "high",
       "loc_cov": 0.9,
       "tier_changed": true
@@ -985,10 +980,10 @@
       "provenance": "audit-original",
       "cur_score": 0.3385,
       "cur_tier": "low",
-      "v10_score": 0.3385,
-      "v10_tier": "low",
-      "loc_cov": 0.0,
-      "tier_changed": false
+      "v10_score": 0.0,
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 90,
@@ -996,10 +991,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2033,
       "cur_tier": "medium",
-      "v10_score": 0.1181,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 91,
@@ -1007,8 +1002,8 @@
       "provenance": "audit-original",
       "cur_score": 0.352,
       "cur_tier": "low",
-      "v10_score": 0.19,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1018,8 +1013,8 @@
       "provenance": "audit-original",
       "cur_score": 0.9081,
       "cur_tier": "not-auditable",
-      "v10_score": 0.3881,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1029,8 +1024,8 @@
       "provenance": "audit-original",
       "cur_score": 0.353,
       "cur_tier": "low",
-      "v10_score": 0.1915,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1040,10 +1035,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2179,
       "cur_tier": "medium",
-      "v10_score": 0.122,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 96,
@@ -1051,8 +1046,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5604,
       "cur_tier": "publication-block",
-      "v10_score": 0.3012,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1062,10 +1057,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2387,
       "cur_tier": "medium",
-      "v10_score": 0.1333,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 98,
@@ -1073,8 +1068,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3647,
       "cur_tier": "low",
-      "v10_score": 0.2308,
-      "v10_tier": "medium",
+      "v10_score": 0.025,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1084,8 +1079,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4076,
       "cur_tier": "low",
-      "v10_score": 0.2154,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1095,8 +1090,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5376,
       "cur_tier": "publication-block",
-      "v10_score": 0.2883,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1106,8 +1101,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4601,
       "cur_tier": "low",
-      "v10_score": 0.2315,
-      "v10_tier": "medium",
+      "v10_score": 0.023,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1117,8 +1112,8 @@
       "provenance": "audit-original",
       "cur_score": 0.7174,
       "cur_tier": "not-auditable",
-      "v10_score": 0.3916,
-      "v10_tier": "low",
+      "v10_score": 0.5079,
+      "v10_tier": "publication-block",
       "loc_cov": 0.3,
       "tier_changed": true
     },
@@ -1128,8 +1123,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4013,
       "cur_tier": "low",
-      "v10_score": 0.2136,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1139,8 +1134,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6161,
       "cur_tier": "publication-block",
-      "v10_score": 0.1785,
-      "v10_tier": "medium",
+      "v10_score": 0.012,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1150,8 +1145,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3,
       "cur_tier": "low",
-      "v10_score": 0.1947,
-      "v10_tier": "medium",
+      "v10_score": 0.0225,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1161,10 +1156,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1558,
       "cur_tier": "medium",
-      "v10_score": 0.1084,
-      "v10_tier": "medium",
+      "v10_score": 0.0197,
+      "v10_tier": "high",
       "loc_cov": 0.9,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 107,
@@ -1172,8 +1167,8 @@
       "provenance": "audit-original",
       "cur_score": 0.6025,
       "cur_tier": "publication-block",
-      "v10_score": 0.2012,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1183,10 +1178,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2222,
       "cur_tier": "medium",
-      "v10_score": 0.1236,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 109,
@@ -1205,8 +1200,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2674,
       "cur_tier": "low",
-      "v10_score": 0.1507,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1216,8 +1211,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4639,
       "cur_tier": "low",
-      "v10_score": 0.2475,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1227,8 +1222,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4553,
       "cur_tier": "low",
-      "v10_score": 0.2242,
-      "v10_tier": "medium",
+      "v10_score": 0.0489,
+      "v10_tier": "high",
       "loc_cov": 0.9,
       "tier_changed": true
     },
@@ -1238,10 +1233,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2327,
       "cur_tier": "medium",
-      "v10_score": 0.1429,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 114,
@@ -1249,8 +1244,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4075,
       "cur_tier": "low",
-      "v10_score": 0.2152,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1260,8 +1255,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2596,
       "cur_tier": "low",
-      "v10_score": 0.1453,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1271,8 +1266,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3362,
       "cur_tier": "low",
-      "v10_score": 0.2101,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1282,8 +1277,8 @@
       "provenance": "audit-original",
       "cur_score": 0.5547,
       "cur_tier": "publication-block",
-      "v10_score": 0.2514,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1293,8 +1288,8 @@
       "provenance": "audit-original",
       "cur_score": 0.7818,
       "cur_tier": "not-auditable",
-      "v10_score": 0.2919,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1304,10 +1299,10 @@
       "provenance": "audit-original",
       "cur_score": 0.1434,
       "cur_tier": "medium",
-      "v10_score": 0.1008,
-      "v10_tier": "medium",
+      "v10_score": 0.012,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 120,
@@ -1315,7 +1310,7 @@
       "provenance": "audit-original",
       "cur_score": 0.0986,
       "cur_tier": "high",
-      "v10_score": 0.0918,
+      "v10_score": 0.011,
       "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": false
@@ -1326,8 +1321,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2936,
       "cur_tier": "low",
-      "v10_score": 0.1703,
-      "v10_tier": "medium",
+      "v10_score": 0.012,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1337,8 +1332,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3924,
       "cur_tier": "low",
-      "v10_score": 0.1708,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1348,8 +1343,8 @@
       "provenance": "audit-original",
       "cur_score": 0.7411,
       "cur_tier": "not-auditable",
-      "v10_score": 0.3881,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1359,10 +1354,10 @@
       "provenance": "audit-original",
       "cur_score": 0.2193,
       "cur_tier": "medium",
-      "v10_score": 0.1464,
-      "v10_tier": "medium",
+      "v10_score": 0.0115,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 125,
@@ -1370,10 +1365,10 @@
       "provenance": "audit-original",
       "cur_score": 0.4994,
       "cur_tier": "low",
-      "v10_score": 0.2632,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 126,
@@ -1381,8 +1376,8 @@
       "provenance": "audit-original",
       "cur_score": 0.4237,
       "cur_tier": "low",
-      "v10_score": 0.1569,
-      "v10_tier": "medium",
+      "v10_score": 0.01,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1392,10 +1387,10 @@
       "provenance": "audit-original",
       "cur_score": 0.204,
       "cur_tier": "medium",
-      "v10_score": 0.1257,
-      "v10_tier": "medium",
+      "v10_score": 0.0095,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 128,
@@ -1403,7 +1398,7 @@
       "provenance": "audit-original",
       "cur_score": 0.1054,
       "cur_tier": "medium",
-      "v10_score": 0.0653,
+      "v10_score": 0.0,
       "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
@@ -1414,8 +1409,8 @@
       "provenance": "audit-original",
       "cur_score": 0.3025,
       "cur_tier": "low",
-      "v10_score": 0.2178,
-      "v10_tier": "medium",
+      "v10_score": 0.033,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1425,8 +1420,8 @@
       "provenance": "audit-original",
       "cur_score": 0.972,
       "cur_tier": "not-auditable",
-      "v10_score": 0.3165,
-      "v10_tier": "low",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1436,8 +1431,8 @@
       "provenance": "audit-original",
       "cur_score": 0.2955,
       "cur_tier": "low",
-      "v10_score": 0.1597,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
       "tier_changed": true
     },
@@ -1447,10 +1442,10 @@
       "provenance": "audit-original",
       "cur_score": 0.249,
       "cur_tier": "medium",
-      "v10_score": 0.136,
-      "v10_tier": "medium",
+      "v10_score": 0.0,
+      "v10_tier": "high",
       "loc_cov": 1.0,
-      "tier_changed": false
+      "tier_changed": true
     },
     {
       "entry_number": 133,
@@ -1459,9 +1454,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 134,
@@ -1470,9 +1465,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 135,
@@ -1481,9 +1476,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 136,
@@ -1492,9 +1487,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 137,
@@ -1503,9 +1498,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     },
     {
       "entry_number": 138,
@@ -1514,9 +1509,9 @@
       "cur_score": 0.0,
       "cur_tier": "ingestion-only",
       "v10_score": 0.0,
-      "v10_tier": "ingestion-only",
-      "loc_cov": null,
-      "tier_changed": false
+      "v10_tier": "high",
+      "loc_cov": 1.0,
+      "tier_changed": true
     }
   ]
 }

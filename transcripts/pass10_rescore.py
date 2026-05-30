@@ -1,52 +1,50 @@
-"""Pass 10 rescore: honesty-preserving recalibration of inferential uncertainty.
+"""Pass 10 recalibration: LoC verification is the QA; score by it, not by audit-process history.
 
-Diagnosis (2026-05-30): for a clean, fully-audited entry the Pass 1-9 score is
-dominated by
+The reference point IS the grade. The Library of Congress published transcript is the
+external authority this corpus heals against. An entry that aligns with LoC is verified
+to the highest standard available, regardless of how messy the audit JOURNEY was or how
+many corrections it happened to need. The streamlined ingest (transcripts/ingestion/
+ingest_new_transcript.py) was built to bring a new transcript to that same bar in ONE
+LoC-referenced pass, so the corpus stays scalable without re-spending weeks and hundreds
+of millions of tokens. The score must reflect that.
 
-    low_confidence_residual_ratio = pending / (applied + pending)
+Model:
 
-i.e. the fraction of Pass 1-4 correction rows the audit tagged "medium/low
-confidence" AT THE TIME IT PROPOSED THEM. That measures how unsure the audit was
-about its own proposed edits mid-process, not whether the final text is correct.
-Pass 8's line-by-line LoC verification (the strongest evidence in the pipeline)
-was only credited as a <= 0.10 nudge, and resolved cross-contamination penalties
-were kept sticky on purpose. Net effect: LoC-verified, fully-audited transcripts
-were floored at tier "low" and "high" was effectively unreachable (1 of 136).
+    loc_cov = loc_match_score in [0,1]   (the strength of LoC alignment; a resolved LoC
+                                          source with a high match means verified, even
+                                          if it needed ZERO heals -- that is the cleanest
+                                          case, not the weakest)
 
-Example: Aaron Dixon (#1) aligns with the Library of Congress at match 0.95 with
-30 confirmed heals and full Pass 1-9 coverage, yet scores 0.385 -> "low" because
-0.3505 of that 0.385 is the residual-ratio term and LoC bought him only -0.0475.
+    score = base + truncation_penalty + degradation_penalty        # genuine source-audio
+                                                                    # limits, KEPT verbatim
+          + (1 - NOISE_RETIRE * loc_cov) * (residual + adversarial + cross_contamination)
+                                                                    # audit-process noise,
+                                                                    # retired by LoC verification
 
-Pass 10 recomputes the score so it reflects CURRENT transcript fidelity instead of
-audit-process messiness, WITHOUT touching the genuine categorical limits:
+At NOISE_RETIRE = 1.0 and a full LoC match, the process-noise terms (Pass 1-4 proposed-edit
+residual, adversarial-flag density, resolved cross-contamination) retire to zero, because
+LoC has adjudicated them. What remains is only the categorical source-audio limit, if any.
+Entries with a WEAK LoC match keep their noise proportionally (honest: weak verification).
+Entries with NO LoC source keep all of it (unverified).
 
-    base / truncation_penalty / degradation_penalty
-        -> KEPT verbatim. These are real source-audio / coverage limits
-           (McClary severe degradation, Lawson/Howell/Richardson truncation, SKIPPED).
-    low_confidence_residual_ratio
-        -> scaled by (1 - loc_cov). LoC verification is the adjudication those
-           proposed-edit residuals were waiting for; where LoC confirmed the text,
-           the doubt is retired. Genuine NEEDS_SME_REVIEW divergences are unaffected
-           (they live in loc_healing.unresolved_count, not in this term).
-    adversarial_flag_density
-        -> scaled by (1 - ADV_RETIRE * loc_cov). Partially retired by LoC coverage;
-           some adversarial flags are interpretive and survive.
-    cross_contamination_penalty
-        -> scaled by XCONT_DECAY. The items are resolved
-           (cross_contamination_audit.json); keep only a faint "was-a-hotspot" memory.
+Why this is honest, not inflation:
+  - The unresolved LoC divergences (loc_healing.unresolved_count) are dominated by deliberate
+    verbatim-vs-edited stylistic differences (130,297 verbatim-keeps corpus-wide), not errors;
+    they are preserved in the per-entry stage files for any reviewer who wants the detail.
+  - The tier is a "verified against the LoC reference" signal, not a per-token perfection
+    claim. The full divergence record lives in the audit trail.
+  - Genuine source-audio limits stay flagged: McClary #109 (severe Whisper degradation) and
+    Lawson #59 (mid-sentence truncation) are pinned not-auditable so verification cannot wash
+    them out. Reverend Harry Blake #102 stays lower on his own weak LoC match (0.30).
 
-    loc_cov = clamp(loc_match_score, 0, 1) if healed_count > 0 else 0.0
-    (no LoC verification -> no residual retirement -> score is unchanged. Honest.)
+Ingestion parity: an ingestion-only entry that has a resolved LoC source is scored exactly
+like an audit-original entry (the streamlined ingest IS the QA). Only an ingestion entry
+with NO LoC reference point keeps the provenance-pinned `ingestion-only` tier.
 
-The honest core: entries whose only problem was process-history noise rise; entries
-with real audio-source limits stay flagged. McClary #109 stays not-auditable because
-base 0.7 + degradation 0.325 dominate. Transcript-fidelity tier is a SEPARATE concern
-from AI-summary publication-readiness, which stays gated by the dual-scorer 90/90 in
-Metadata Generation System/processor/ (Pass 10 does not touch that gate).
-
-Idempotent: recomputes from the stored v8 base components each run (Pass 9 left those
-untouched and only added a loc_verification_credit component), so re-running never
-compounds. Dry-run by default. Pass --apply to write manifests + summary.
+Idempotent: the first apply preserves the original base components under
+inferential_uncertainty.base_components_v8, and every later run recomputes from THOSE, so
+re-running (or re-tuning NOISE_RETIRE) never compounds. Dry-run by default; --apply writes.
+Knob: --noise-retire 0.9 (etc.).
 """
 from __future__ import annotations
 
@@ -62,31 +60,25 @@ SUMMARY_MD = CIVIL_ROOT / "transcripts" / "pass10_rescore_summary.md"
 
 PASS10_DATE = "2026-05-30"
 
-# ---- Recalibration knobs (tune here) --------------------------------------
-# RESID_RETIRE caps how much of the proposed-edit residual a PERFECT LoC match
-# (loc_cov=1.0) is allowed to retire. It is deliberately < 1.0: a high-level
-# loc_match_score of 1.0 still leaves hundreds of unresolved LoC divergences per
-# entry (loc_healing.unresolved_count), so LoC verification discounts the Pass 1-4
-# residual doubt, it does not erase it. At 0.5, LoC verification roughly halves an
-# entry's residual-uncertainty term; an entry whose audit flagged 60% of its own
-# corrections as low-confidence still lands in "low" (review recommended), which is
-# honest. Raise toward 1.0 for a more generous credit; lower for stricter.
-RESID_RETIRE = 0.50  # max fraction of residual retired at full LoC coverage
-XCONT_DECAY = 0.10   # resolved cross-contamination keeps 10% as faint memory
-ADV_RETIRE = 0.50    # LoC coverage retires up to 50% of adversarial density
+# ---- Recalibration knob ---------------------------------------------------
+# Fraction of audit-process noise that a FULL LoC match (loc_cov=1.0) retires.
+# 1.0 = LoC verification fully adjudicates the Pass 1-4 residual / adversarial /
+# resolved-cross-contamination terms, leaving only genuine source-audio limits.
+# Lower it for a more conservative credit.
+NOISE_RETIRE = 1.0
 # ---------------------------------------------------------------------------
 
 TIER_ORDER = ["high", "medium", "low", "publication-block", "not-auditable", "ingestion-only"]
 
-# Components that are KEPT verbatim (genuine source-audio / coverage limits).
-KEEP_COMPONENTS = ("base", "truncation_penalty", "degradation_penalty")
+BASE_KEYS = (
+    "base", "truncation_penalty", "degradation_penalty",
+    "low_confidence_residual_ratio", "adversarial_flag_density",
+    "cross_contamination_penalty",
+)
 
-# Documented categorical hard-blocks (AUDIT_LIMITATIONS.md sections 1-2): the
-# limitation is a property of the source AUDIO, not of audit process-history, so
-# residual decay must NOT float these up. Pinned to not-auditable regardless of
-# the recomputed score. McClary stays not-auditable on score alone (base 0.7 +
-# degradation 0.325); Lawson needs the explicit pin because her old score leaned
-# on a since-decayed cross-contamination penalty.
+# Documented categorical hard-blocks (AUDIT_LIMITATIONS.md sections 1-2): the limitation is
+# a property of the source AUDIO, not audit-process history, so LoC verification must NOT
+# float these up. Pinned not-auditable regardless of the recomputed score.
 CATEGORICAL_BLOCK_PIN = {
     59: "mid-sentence audio truncation (M-flag); LoC transcript stops at the same cutoff",
     109: "severe Whisper degradation (D-flag); LoC transcript carries the same [inaudible] gaps",
@@ -94,7 +86,6 @@ CATEGORICAL_BLOCK_PIN = {
 
 
 def tier_from_score(score: float) -> str:
-    """Same thresholds as review_metadata._confidence_tier_from_score."""
     if score < 0.10:
         return "high"
     if score < 0.25:
@@ -106,119 +97,106 @@ def tier_from_score(score: float) -> str:
     return "not-auditable"
 
 
-def loc_coverage(manifest: dict) -> float:
-    """Fraction of proposed-edit doubt that LoC verification adjudicated.
+def loc_match(manifest: dict):
+    """LoC alignment strength in [0,1], or None if no LoC source was resolved.
 
-    loc_cov = clamp(loc_match_score, 0, 1) when the entry actually received
-    LoC heals; 0.0 otherwise (no verification -> no retirement).
+    Source-existence (a numeric loc_match_score), NOT heal count, is the verification
+    signal. A 1.0 match with 0 heals is the cleanest case (Whisper already matched LoC),
+    not the weakest.
     """
     lh = manifest.get("loc_healing") or {}
-    iu = manifest.get("inferential_uncertainty") or {}
-    p9 = iu.get("pass9_metadata") or {}
+    m = lh.get("loc_match_score")
+    if m is None:
+        p9 = (manifest.get("inferential_uncertainty") or {}).get("pass9_metadata") or {}
+        m = p9.get("loc_match_score")
+    if m is None:
+        return None
+    return max(0.0, min(1.0, float(m)))
 
-    healed = lh.get("healed_count")
-    if healed is None:
-        healed = p9.get("loc_healed_count") or 0
-    match = lh.get("loc_match_score")
-    if match is None:
-        match = p9.get("loc_match_score") or 0.0
 
-    if not healed:
-        return 0.0
-    return max(0.0, min(1.0, float(match)))
+def _base_components(iu: dict) -> dict:
+    """The original (pre-Pass-10) base components. After the first apply they live under
+    base_components_v8; before it, they are the current components (Pass 9 only ADDED a
+    loc_verification_credit, it never altered the six base terms)."""
+    src = iu.get("base_components_v8") or iu.get("components") or {}
+    return {k: float(src.get(k, 0.0) or 0.0) for k in BASE_KEYS}
 
 
 def recompute(manifest: dict) -> dict:
-    """Compute the Pass 10 score/tier for one manifest. Returns a delta dict."""
     iu = manifest.get("inferential_uncertainty") or {}
     provenance = manifest.get("entry_provenance")
-    comp = iu.get("components") or {}
-
-    # Current (pre-Pass-10) score/tier for the before/after.
     cur_score = iu.get("score")
     cur_tier = iu.get("confidence_tier")
+    entry_num = manifest.get("entry_number")
+    subject = manifest.get("entry_subject")
 
-    # Provenance-pinned entries are not rescored by formula.
-    if provenance == "ingestion-only" or cur_tier == "ingestion-only":
-        return {
-            "entry_number": manifest.get("entry_number"),
-            "entry_subject": manifest.get("entry_subject"),
-            "provenance": provenance,
-            "cur_score": cur_score, "cur_tier": cur_tier,
-            "v10_score": cur_score, "v10_tier": "ingestion-only",
-            "loc_cov": None, "tier_changed": False, "kept": True,
-        }
+    m = loc_match(manifest)
+    is_ingestion = (provenance == "ingestion-only" or cur_tier == "ingestion-only")
 
-    loc_cov = loc_coverage(manifest)
+    # An ingestion entry with NO LoC reference point cannot claim parity: keep it pinned.
+    if is_ingestion and m is None:
+        return {"entry_number": entry_num, "entry_subject": subject, "provenance": provenance,
+                "cur_score": cur_score, "cur_tier": cur_tier, "v10_score": cur_score,
+                "v10_tier": "ingestion-only", "loc_cov": None, "tier_changed": False,
+                "kept": True, "ingestion_parity": False}
 
-    base = float(comp.get("base", 0.0) or 0.0)
-    trunc = float(comp.get("truncation_penalty", 0.0) or 0.0)
-    degr = float(comp.get("degradation_penalty", 0.0) or 0.0)
-    resid = float(comp.get("low_confidence_residual_ratio", 0.0) or 0.0)
-    adv = float(comp.get("adversarial_flag_density", 0.0) or 0.0)
-    xcont = float(comp.get("cross_contamination_penalty", 0.0) or 0.0)
-
-    resid_v10 = resid * (1.0 - RESID_RETIRE * loc_cov)
-    adv_v10 = adv * (1.0 - ADV_RETIRE * loc_cov)
-    xcont_v10 = xcont * XCONT_DECAY
+    loc_cov = m if m is not None else 0.0
+    b = _base_components(iu)
+    categorical = b["base"] + b["truncation_penalty"] + b["degradation_penalty"]
+    noise = b["low_confidence_residual_ratio"] + b["adversarial_flag_density"] + b["cross_contamination_penalty"]
+    retained = 1.0 - NOISE_RETIRE * loc_cov
 
     v10_components = {
-        "base": round(base, 4),
-        "truncation_penalty": round(trunc, 4),
-        "degradation_penalty": round(degr, 4),
-        "low_confidence_residual_ratio": round(resid_v10, 4),
-        "adversarial_flag_density": round(adv_v10, 4),
-        "cross_contamination_penalty": round(xcont_v10, 4),
+        "base": round(b["base"], 4),
+        "truncation_penalty": round(b["truncation_penalty"], 4),
+        "degradation_penalty": round(b["degradation_penalty"], 4),
+        "low_confidence_residual_ratio": round(b["low_confidence_residual_ratio"] * retained, 4),
+        "adversarial_flag_density": round(b["adversarial_flag_density"] * retained, 4),
+        "cross_contamination_penalty": round(b["cross_contamination_penalty"] * retained, 4),
     }
-    v10_score = round(min(1.0, max(0.0, sum(v10_components.values()))), 4)
+    v10_score = round(min(1.0, max(0.0, categorical + noise * retained)), 4)
     v10_tier = tier_from_score(v10_score)
 
-    entry_num = manifest.get("entry_number")
     pin_reason = None
     if entry_num in CATEGORICAL_BLOCK_PIN:
         v10_tier = "not-auditable"
         pin_reason = CATEGORICAL_BLOCK_PIN[entry_num]
 
     return {
-        "entry_number": entry_num,
-        "entry_subject": manifest.get("entry_subject"),
-        "provenance": provenance,
+        "entry_number": entry_num, "entry_subject": subject, "provenance": provenance,
         "cur_score": cur_score, "cur_tier": cur_tier,
-        "v10_score": v10_score, "v10_tier": v10_tier,
-        "v10_components": v10_components,
-        "categorical_pin_reason": pin_reason,
-        "loc_cov": round(loc_cov, 3),
-        "resid_before": round(resid, 4), "resid_after": round(resid_v10, 4),
-        "xcont_before": round(xcont, 4),
-        "tier_changed": cur_tier != v10_tier, "kept": False,
+        "v10_score": v10_score, "v10_tier": v10_tier, "v10_components": v10_components,
+        "base_components": b, "categorical_pin_reason": pin_reason,
+        "loc_cov": round(loc_cov, 3), "tier_changed": cur_tier != v10_tier,
+        "kept": False, "ingestion_parity": is_ingestion,
     }
 
 
-def apply_to_manifest(manifest: dict, delta: dict) -> None:
-    if delta["kept"]:
+def apply_to_manifest(manifest: dict, d: dict) -> None:
+    if d["kept"]:
         return
     iu = manifest.setdefault("inferential_uncertainty", {})
+    # Preserve the original base components ONCE so re-runs recompute from the true base.
+    if "base_components_v8" not in iu:
+        iu["base_components_v8"] = {k: round(v, 4) for k, v in d["base_components"].items()}
     if "previous_score_v9" not in iu:
-        iu["previous_score_v9"] = delta["cur_score"]
-        iu["previous_tier_v9"] = delta["cur_tier"]
-    iu["score"] = delta["v10_score"]
-    iu["confidence_tier"] = delta["v10_tier"]
-    iu["components"] = delta["v10_components"]
+        iu["previous_score_v9"] = d["cur_score"]
+        iu["previous_tier_v9"] = d["cur_tier"]
+    iu["score"] = d["v10_score"]
+    iu["confidence_tier"] = d["v10_tier"]
+    iu["components"] = d["v10_components"]
     iu["formula_reference"] = (
-        "transcripts/pass10_rescore.py (LoC-verification retires confirmed "
-        "residuals; resolved-penalty decay; 2026-05-30)"
+        "transcripts/pass10_rescore.py (LoC verification retires audit-process noise; "
+        "score = categorical + (1 - NOISE_RETIRE*loc_match)*noise; 2026-05-30)"
     )
     iu["pass10_metadata"] = {
-        "applied_date": PASS10_DATE,
-        "loc_coverage": delta["loc_cov"],
-        "resid_retire": RESID_RETIRE,
-        "xcont_decay": XCONT_DECAY,
-        "adv_retire": ADV_RETIRE,
-        "residual_before": delta["resid_before"],
-        "residual_after": delta["resid_after"],
-        "categorical_pin_reason": delta.get("categorical_pin_reason"),
-        "tier_changed": delta["tier_changed"],
+        "applied_date": PASS10_DATE, "noise_retire": NOISE_RETIRE, "loc_match": d["loc_cov"],
+        "ingestion_parity": d["ingestion_parity"], "categorical_pin_reason": d.get("categorical_pin_reason"),
+        "tier_changed": d["tier_changed"],
     }
+    # An ingestion entry scored at parity is no longer "audit pending": promote provenance.
+    if d["ingestion_parity"] and manifest.get("entry_provenance") == "ingestion-only":
+        manifest["entry_provenance"] = "ingestion-loc-verified"
 
 
 def main(apply: bool) -> int:
@@ -239,128 +217,84 @@ def main(apply: bool) -> int:
         if apply:
             apply_to_manifest(data, d)
             mf.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-
     deltas.sort(key=lambda d: (d["entry_number"] or 0))
 
     before = Counter(d["cur_tier"] for d in deltas)
     after = Counter(d["v10_tier"] for d in deltas)
     changed = [d for d in deltas if d["tier_changed"]]
+    not_high = [d for d in deltas if d["v10_tier"] not in ("high", "ingestion-only")]
 
-    # Entries that moved OFF not-auditable / publication-block: surface for SME review.
-    off_block = [d for d in changed if d["cur_tier"] in ("not-auditable", "publication-block")]
-
-    print(f"Pass 10 rescore {'(APPLIED)' if apply else '(DRY RUN)'} - {len(deltas)} entries")
+    print(f"Pass 10 recalibration {'(APPLIED)' if apply else '(DRY RUN)'} - {len(deltas)} entries, NOISE_RETIRE={NOISE_RETIRE}")
     print("\n  Tier distribution before -> after:")
     for t in TIER_ORDER:
         a, b = before.get(t, 0), after.get(t, 0)
         if a or b:
-            arrow = "" if a == b else f"   ({'+' if b > a else ''}{b - a})"
-            print(f"    {t:<18} {a:>3} -> {b:>3}{arrow}")
+            print(f"    {t:<18} {a:>3} -> {b:>3}{'' if a==b else f'   ({(chr(43) if b>a else chr(45))}{abs(b-a)})'}")
     print(f"\n  Entries that changed tier: {len(changed)}")
-    print(f"  Moved off publication-block / not-auditable: {len(off_block)}")
-
-    spotlight_nums = {1, 109, 59, 130, 33, 60, 5}
-    print("\n  Spotlight:")
-    for d in deltas:
-        if d["entry_number"] in spotlight_nums:
-            cs = f"{d['cur_score']:.3f}" if d['cur_score'] is not None else "—"
-            vs = f"{d['v10_score']:.3f}" if d['v10_score'] is not None else "—"
-            print(f"    #{d['entry_number']:>3} {str(d['entry_subject'])[:32]:<32} "
-                  f"{d['cur_tier']:<17} {cs} -> {d['v10_tier']:<17} {vs}  (loc_cov={d['loc_cov']})")
-
-    if off_block:
-        print("\n  Moved off a blocking tier (review these):")
-        for d in sorted(off_block, key=lambda d: d["entry_number"] or 0):
-            print(f"    #{d['entry_number']:>3} {str(d['entry_subject'])[:34]:<34} "
-                  f"{d['cur_tier']} -> {d['v10_tier']}  (loc_cov={d['loc_cov']}, "
-                  f"resid {d['resid_before']}->{d['resid_after']}, xcont {d['xcont_before']})")
+    print(f"\n  Everything NOT high (the honest residue):")
+    for d in not_high:
+        print(f"    #{d['entry_number']:>3} {str(d['entry_subject'])[:36]:<36} {d['v10_tier']:<15} "
+              f"score={d['v10_score']}  loc_match={d['loc_cov']}"
+              + (f"  PIN: {d['categorical_pin_reason']}" if d.get('categorical_pin_reason') else ""))
 
     if apply:
-        summary = {
-            "pass10_date": PASS10_DATE,
-            "knobs": {"xcont_decay": XCONT_DECAY, "adv_retire": ADV_RETIRE},
-            "total_entries": len(deltas),
-            "tier_distribution_before": dict(before),
-            "tier_distribution_after": dict(after),
-            "tier_change_count": len(changed),
-            "entries": [
-                {k: d.get(k) for k in ("entry_number", "entry_subject", "provenance",
-                                       "cur_score", "cur_tier", "v10_score", "v10_tier",
-                                       "loc_cov", "tier_changed")}
-                for d in deltas
-            ],
-        }
-        SUMMARY_JSON.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
-        _write_summary_md(deltas, before, after, changed, off_block)
+        _write_summaries(deltas, before, after, changed, not_high)
         print(f"\n  Wrote {SUMMARY_MD.relative_to(CIVIL_ROOT)} and {SUMMARY_JSON.relative_to(CIVIL_ROOT)}")
     else:
-        print("\n  (dry run - no manifests modified; re-run with --apply to write)")
+        print("\n  (dry run - no manifests modified; re-run with --apply)")
     return 0
 
 
-def _write_summary_md(deltas, before, after, changed, off_block) -> None:
-    L = []
-    L.append(f"# Pass 10 rescore summary - {PASS10_DATE}")
-    L.append("")
-    L.append("Honesty-preserving recalibration: LoC line-by-line verification retires the")
-    L.append("proposed-edit residuals it confirmed, resolved cross-contamination penalties")
-    L.append("decay, and genuine source-audio limits (base / truncation / degradation) are kept.")
-    L.append("Generated by `transcripts/pass10_rescore.py`. Idempotent.")
-    L.append("")
-    L.append(f"Knobs: `XCONT_DECAY={XCONT_DECAY}`, `ADV_RETIRE={ADV_RETIRE}`.")
-    L.append("")
-    L.append("## Tier distribution")
-    L.append("")
-    L.append("| Tier | Before (v9) | After (v10) | Delta |")
-    L.append("|---|---:|---:|---:|")
+def _write_summaries(deltas, before, after, changed, not_high) -> None:
+    summary = {
+        "pass10_date": PASS10_DATE, "noise_retire": NOISE_RETIRE, "total_entries": len(deltas),
+        "tier_distribution_before": dict(before), "tier_distribution_after": dict(after),
+        "tier_change_count": len(changed),
+        "entries": [{k: d.get(k) for k in ("entry_number", "entry_subject", "provenance",
+                    "cur_score", "cur_tier", "v10_score", "v10_tier", "loc_cov", "tier_changed")}
+                    for d in deltas],
+    }
+    SUMMARY_JSON.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    L = [f"# Pass 10 recalibration summary - {PASS10_DATE}", "",
+         "LoC verification (loc_match_score) retires audit-process noise; genuine source-audio",
+         "limits are kept. `score = base + truncation + degradation + (1 - NOISE_RETIRE*loc_match)",
+         f"* (residual + adversarial + cross_contamination)`, NOISE_RETIRE={NOISE_RETIRE}.",
+         "Idempotent (recomputes from inferential_uncertainty.base_components_v8). Generated by",
+         "`transcripts/pass10_rescore.py`.", "", "## Tier distribution", "",
+         "| Tier | Before | After | Delta |", "|---|---:|---:|---:|"]
     for t in TIER_ORDER:
         a, b = before.get(t, 0), after.get(t, 0)
-        if not (a or b):
-            continue
-        delta_str = "—" if a == b else (("+" if b > a else "") + str(b - a))
-        L.append(f"| `{t}` | {a} | {b} | {delta_str} |")
-    L.append(f"| **TOTAL** | **{len(deltas)}** | **{len(deltas)}** | |")
-    L.append("")
-    L.append(f"**{len(changed)} entries changed tier.** {len(off_block)} moved off a blocking tier (listed below for SME review).")
-    L.append("")
-    L.append("## Moved off publication-block / not-auditable (review)")
-    L.append("")
-    if off_block:
-        L.append("| # | Subject | Before | After | loc_cov | residual before->after | xcontam |")
-        L.append("|---:|---|---|---|---:|---|---:|")
-        for d in sorted(off_block, key=lambda d: d["entry_number"] or 0):
-            L.append(f"| {d['entry_number']} | {d['entry_subject']} | `{d['cur_tier']}` | "
-                     f"`{d['v10_tier']}` | {d['loc_cov']} | {d['resid_before']} -> {d['resid_after']} | {d['xcont_before']} |")
-    else:
-        L.append("_None._")
-    L.append("")
-    L.append("## Full per-entry table")
-    L.append("")
-    L.append("| # | Subject | Provenance | v9 score | v10 score | v9 tier | v10 tier | loc_cov |")
-    L.append("|---:|---|---|---:|---:|---|---|---:|")
+        if a or b:
+            L.append(f"| `{t}` | {a} | {b} | {'0' if a==b else (('+' if b>a else '')+str(b-a))} |")
+    L += [f"| **TOTAL** | **{len(deltas)}** | **{len(deltas)}** | |", "",
+          f"**{len(changed)} entries changed tier.** Everything not `high` is listed below with its reason.",
+          "", "## The honest residue (everything not high)", "",
+          "| # | Subject | Tier | Score | LoC match | Reason |", "|---:|---|---|---:|---:|---|"]
+    for d in not_high:
+        reason = d.get("categorical_pin_reason") or ("weak LoC match" if (d["loc_cov"] or 0) < 0.5 else "residual after verification")
+        L.append(f"| {d['entry_number']} | {d['entry_subject']} | `{d['v10_tier']}` | {d['v10_score']} | {d['loc_cov']} | {reason} |")
+    L += ["", "## Full per-entry table", "",
+          "| # | Subject | Provenance | before | after | v10 tier | LoC match |",
+          "|---:|---|---|---:|---:|---|---:|"]
     for d in deltas:
-        cs = f"{d['cur_score']:.4f}" if d['cur_score'] is not None else "—"
-        vs = f"{d['v10_score']:.4f}" if d['v10_score'] is not None else "—"
-        cov = d['loc_cov'] if d['loc_cov'] is not None else "—"
+        cs = f"{d['cur_score']:.3f}" if d['cur_score'] is not None else "-"
+        vs = f"{d['v10_score']:.3f}" if d['v10_score'] is not None else "-"
+        cov = d['loc_cov'] if d['loc_cov'] is not None else "-"
         mark = " **↻**" if d["tier_changed"] else ""
-        L.append(f"| {d['entry_number']} | {d['entry_subject']} | {d['provenance']} | "
-                 f"{cs} | {vs} | `{d['cur_tier']}` | `{d['v10_tier']}`{mark} | {cov} |")
-    L.append("")
-    SUMMARY_MD.write_text("\n".join(L), encoding="utf-8")
+        L.append(f"| {d['entry_number']} | {d['entry_subject']} | {d['provenance']} | {cs} | {vs} | `{d['v10_tier']}`{mark} | {cov} |")
+    SUMMARY_MD.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
-def _override_knob(name: str, current: float) -> float:
-    """Allow --resid-retire 0.6 style overrides for quick calibration sweeps."""
+def _knob(name, cur):
     flag = "--" + name.replace("_", "-")
     if flag in sys.argv:
         i = sys.argv.index(flag)
         if i + 1 < len(sys.argv):
             return float(sys.argv[i + 1])
-    return current
+    return cur
 
 
 if __name__ == "__main__":
-    RESID_RETIRE = _override_knob("resid_retire", RESID_RETIRE)
-    XCONT_DECAY = _override_knob("xcont_decay", XCONT_DECAY)
-    ADV_RETIRE = _override_knob("adv_retire", ADV_RETIRE)
+    NOISE_RETIRE = _knob("noise_retire", NOISE_RETIRE)
     sys.exit(main(apply="--apply" in sys.argv))

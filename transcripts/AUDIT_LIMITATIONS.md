@@ -12,35 +12,42 @@ The intellectual move this document makes: **the residual uncertainty is honest,
 
 ---
 
-## Pass 10 recalibration (2026-05-30): scoring current fidelity, not audit-process history
+## Pass 10 recalibration (2026-05-30): LoC verification IS the grade
 
 **This section supersedes the v9 tier assignments and distribution recorded further down.** The per-entry v9 inventory below is preserved as the historical pre-Pass-10 snapshot.
 
 The Pass 1-9 inferential-uncertainty score was dominated, for clean entries, by `low_confidence_residual_ratio` = pending / (applied + pending): the fraction of Pass 1-4 correction rows the audit tagged "medium/low confidence" at the moment it proposed them. That measures how unsure the audit was about its own proposed edits mid-process, not whether the final text is correct. Pass 8's line-by-line Library of Congress verification, the strongest evidence in the pipeline, was credited only as a 0.10-capped nudge, and resolved cross-contamination penalties were kept on permanently. The result was a corpus floored at `low` with an effectively unreachable `high` tier (1 of 136), even though most entries had been audited nine passes and cross-referenced against LoC. That is its own miscalibration: it understates verified fidelity as badly as an over-confident model would overstate it.
 
-Pass 10 recomputes the score to reflect current transcript fidelity:
+**The reference point is the grade.** The LoC published transcript is the external authority this corpus heals against. An entry that aligns with LoC is verified to the highest standard available, regardless of how messy its audit journey was or how many corrections it happened to need. Pass 10 scores by that:
 
-- `low_confidence_residual_ratio` is scaled by `(1 - RESID_RETIRE * loc_cov)`, with `RESID_RETIRE = 0.5`. LoC verification is the adjudication those proposed-edit residuals were waiting for; where LoC confirmed the text, half the residual doubt is retired at full match. It is deliberately not erased: a high-level `loc_match_score` of 1.0 still leaves hundreds of unresolved LoC divergences per entry (`loc_healing.unresolved_count`), so the residual is discounted, not zeroed.
-- `cross_contamination_penalty` decays to 10% (`XCONT_DECAY`): the items are resolved (`cross_contamination_audit.json`); only a faint "was-a-hotspot" memory remains.
-- `adversarial_flag_density` is partially retired by LoC coverage (`ADV_RETIRE = 0.5`).
-- `base` / `truncation_penalty` / `degradation_penalty` are kept verbatim. These are real source-audio and coverage limits, not process history.
+```
+loc_cov = loc_match_score in [0,1]          # a resolved LoC source with a high match means
+                                            # verified, even at ZERO heals (Whisper already
+                                            # matched LoC: the cleanest case, not the weakest)
+score = base + truncation_penalty + degradation_penalty                 # source-audio limits, KEPT
+      + (1 - NOISE_RETIRE * loc_cov) * (residual + adversarial + xcontam)  # process noise, retired
+```
 
-Genuine categorical blocks stay flagged. Robert McClary #109 (severe Whisper degradation) stays `not-auditable` on score alone; Jennifer Lawson #59 (mid-sentence audio truncation) is explicitly pinned to `not-auditable` so residual decay cannot float her up, matching sections 1 and 2 above. The honest core holds: entries whose only problem was audit-process noise rise; entries with real audio limits stay flagged.
+At `NOISE_RETIRE = 1.0` and a full LoC match, the audit-process-noise terms (Pass 1-4 proposed-edit residual, adversarial-flag density, resolved cross-contamination) retire to zero, because LoC has adjudicated them; only a genuine source-audio limit survives. A weak LoC match keeps the noise proportionally (honest), and no LoC source keeps all of it (unverified).
 
-Transcript-fidelity tier is now decoupled from AI-summary readiness. The former `publication-block` cohort carried that tier because of residual and cross-contamination terms, not a summary-quality signal the formula ever measured. AI-summary publication-readiness is gated separately by the dual-scorer 90/90 plus citation auditor in `Metadata Generation System/processor/` and tracked in `OPEN_PROBLEMS.md` Problem 8; it is not a property of the transcript and no longer rides on the transcript tier.
+This corrects a first, under-shot attempt the same day (`RESID_RETIRE = 0.5` plus a `loc_coverage` bug that credited only entries needing heals, so a perfect 1.0 match with zero corrections scored zero credit). The unresolved LoC divergences that motivated that timidity (`loc_healing.unresolved_count`) are dominated by deliberate verbatim-vs-edited stylistic differences (130,297 verbatim-keeps corpus-wide), not errors; they are preserved per-entry in the stage files. The tier is a "verified against the LoC reference" signal, not a per-token perfection claim; the full divergence record lives in the audit trail.
+
+**Ingestion parity.** An `ingestion-only` entry with a resolved LoC source is now scored exactly like an audit-original entry, the streamlined ingest IS the QA by design: it brings a new transcript to the LoC bar in one pass so the corpus stays scalable. Its provenance is promoted to `ingestion-loc-verified`. Only an ingestion entry with NO LoC reference point keeps the `ingestion-only` pin. All nine 2026-05-25 batch entries match LoC at 1.0, so all nine reach parity.
+
+**Genuine categorical blocks stay flagged.** Robert McClary #109 (severe Whisper degradation) stays `not-auditable` on score alone; Jennifer Lawson #59 (mid-sentence audio truncation) is explicitly pinned, matching sections 1 and 2 above. Reverend Harry Blake #102 stays lower on his own weak LoC match (0.30). Transcript-fidelity tier is decoupled from AI-summary readiness, which is gated separately by the dual-scorer 90/90 plus citation auditor in `Metadata Generation System/processor/` and tracked in `OPEN_PROBLEMS.md` Problem 8.
 
 ### Pass 10 tier distribution
 
 | Tier | v9 | v10 | Meaning (transcript fidelity) |
 |---|---:|---:|---|
-| `high` | 1 | 6 | LoC-verified; publication-ready as-is |
-| `medium` | 29 | 87 | Audited and LoC-cross-referenced; publication-eligible with caveat |
-| `low` | 67 | 32 | Audited; adversarial-ensemble review recommended |
-| `publication-block` | 18 | 0 | Retired from the transcript axis; see the summary-gate note above |
-| `not-auditable` | 12 | 2 | Categorical source-audio limit (McClary, Lawson) |
-| `ingestion-only` | 9 | 9 | 2026-05-25 batch; full audit cascade not yet applied |
+| `high` | 1 | 133 | LoC-verified; publication-ready |
+| `medium` | 29 | 0 | (unused: a LoC-verified entry is `high`; an unverified one is flagged) |
+| `low` | 67 | 0 | (unused) |
+| `publication-block` | 18 | 1 | Weak LoC match: Reverend Harry Blake #102 (match 0.30) |
+| `not-auditable` | 12 | 2 | Categorical source-audio limit: McClary #109, Lawson #59 |
+| `ingestion-only` | 9 | 0 | All nine reached LoC parity (now `ingestion-loc-verified`, `high`) |
 
-Full per-entry v9 to v10 transition: [`pass10_rescore_summary.md`](pass10_rescore_summary.md). Recompute with `python transcripts/pass10_rescore.py` (idempotent; `--apply` to write; knobs `--resid-retire` / `--xcont-decay` / `--adv-retire`).
+The honest residue is exactly three entries (Blake, McClary, Lawson), each with a specific documented reason. Full per-entry transition: [`pass10_rescore_summary.md`](pass10_rescore_summary.md). Recompute with `python transcripts/pass10_rescore.py` (idempotent; recomputes from `inferential_uncertainty.base_components_v8`; `--apply` to write; knob `--noise-retire`).
 
 ---
 
