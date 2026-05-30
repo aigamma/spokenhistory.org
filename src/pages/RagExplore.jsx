@@ -272,7 +272,7 @@ export default function RagExplore() {
             h1 (page) > h2 (each section) > h3 (tab-group labels in nav).
             Corpus stats (interview count, passage count, per-tier
             counts) sit immediately below the framing so visitors see
-            the substrate's scale + audit-tier vocabulary upfront,
+            the substrate's scale + cross-reference status upfront,
             instead of having to scroll to the bottom aside. */}
         <header className="mb-10">
           <h1
@@ -305,22 +305,28 @@ export default function RagExplore() {
               </span>
               <span aria-hidden className="text-stone-400 hidden sm:inline">·</span>
               <ul
-                aria-label="Audit-confidence tiers, with the interview count in each"
+                aria-label="Library of Congress cross-reference status, with the interview count in each"
                 className="flex flex-wrap gap-1.5 text-xs list-none p-0 m-0"
               >
-                {TIER_VOCABULARY.map((key) => {
-                  const badge = TIER_BADGE[key];
-                  return (
-                    <li key={key}>
-                      <span
-                        className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
-                      >
-                        <span className="font-medium tabular-nums">{stats.tiers[key] || 0}</span>
-                        <span>{key}</span>
-                      </span>
-                    </li>
-                  );
-                })}
+                {Object.values(
+                  TIER_VOCABULARY.reduce((acc, key) => {
+                    const n = stats.tiers[key] || 0;
+                    if (n === 0) return acc;
+                    const badge = TIER_BADGE[key];
+                    if (!acc[badge.label]) acc[badge.label] = { label: badge.label, count: 0, badge };
+                    acc[badge.label].count += n;
+                    return acc;
+                  }, {})
+                ).map(({ label, count, badge }) => (
+                  <li key={label}>
+                    <span
+                      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
+                    >
+                      <span className="font-medium tabular-nums">{count}</span>
+                      <span>{label}</span>
+                    </span>
+                  </li>
+                ))}
               </ul>
             </div>
           )}
@@ -719,7 +725,7 @@ export default function RagExplore() {
                 Quote of the Day
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                One quote rotates per day from 30 curated passages drawn from low/medium-tier audited interviews. Pre-curated; no LLM call per request. Click &quot;Next →&quot; to cycle.
+                One quote rotates per day from 30 curated passages drawn from the Library-of-Congress-cross-referenced corpus. Pre-curated; no LLM call per request. Click &quot;Next →&quot; to cycle.
               </p>
               <QuoteOfTheDay />
             </div>
@@ -764,7 +770,7 @@ export default function RagExplore() {
             Substrate: Pinecone Builder (civil-rights index) + Voyage AI voyage-3 embeddings
             + rerank-2. Live queries route through the /retrieve Netlify Function. The
             static precomputed JSON at /rag/constellation.json supplies the interviewee
-            roster, UMAP coordinates, and audit-tier counts for the views above. See{' '}
+            roster, UMAP coordinates, and per-interview cross-reference status for the views above. See{' '}
             <code className="font-mono">rag/INTERACTIVE_FEATURES_DESIGN.md</code> in the
             repo for the full architecture.
           </p>

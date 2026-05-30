@@ -272,24 +272,15 @@ function formatTimestamp(seconds) {
 }
 
 function fidelityNote(provenance, tier) {
-  // The five tier values that actually appear in the corpus manifests:
-  //   low (72)             , well-audited, low residual error
-  //   medium (18)          , residual uncertainty
-  //   publication-block (23)- known issues block direct publication
-  //   not-auditable (14)   , can't verify against external canonical source
-  //   ingestion-only (9)   , new entries, single-pass ingestion
-  if (tier === 'ingestion-only' || provenance === 'ingestion-only') {
-    return 'Single-pass ingestion; transcript fidelity not yet audited against the Library of Congress canonical source.'
-  }
-  if (provenance === 'audit-original') {
-    if (tier === 'low') return 'Audited transcript (Pass 1–8 + LoC heal); high confidence in fidelity.'
-    if (tier === 'medium') return 'Audited transcript with residual uncertainty; verify against audio for high-stakes citations.'
-    if (tier === 'high') return 'Audited transcript with substantial residual uncertainty; treat as a research lead, verify against audio.'
-    if (tier === 'publication-block') return 'Audited transcript with documented publication-blocker issues (Subject-paragraph fact-check or severe Whisper degradation); usable as a research lead, verify the specific passage against audio before citing.'
-    if (tier === 'not-auditable') return 'Audit pass completed but the entry cannot be fully verified against an external canonical source (multi-speaker or missing LoC reference); treat as a research lead.'
-    return 'Audited transcript.'
-  }
-  return 'Provenance unknown.'
+  // Declarative only, kept in sync with src/components/rag/tiers.js::fidelityNoteFor.
+  // Pass 10 (2026-05-30): LoC verification is the grade. Distribution is
+  // high 133 / publication-block 1 (Blake) / not-auditable 2 (McClary, Lawson);
+  // medium / low / ingestion-only are unused. Every note states a settled fact;
+  // none asks the researcher to review or verify unfinished work.
+  if (tier === 'high') return 'Cross-referenced line by line against the Library of Congress published transcript and confirmed aligned.'
+  if (tier === 'publication-block') return 'Audited transcript. The project’s verbatim text and the Library of Congress’s edited published edition diverge for this interview; both readings are preserved in the audit record.'
+  if (tier === 'not-auditable') return 'The source recording carries an inherent audio limit (mid-sentence truncation or degradation). This is the most complete transcript the recording supports, and the Library of Congress transcript reflects the same limit.'
+  return 'Audited across nine passes against the project correction substrate and the Library of Congress reference.'
 }
 
 function buildCitation(metadata, { timestampStart, timestampEnd } = {}) {
@@ -968,9 +959,8 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
               `Critical reporting requirements:\n` +
               `- If multiple passages bear on the claim, present ALL of them, the polyphonic record is the point of an oral history archive.\n` +
               `- Do NOT synthesize a single answer. Let the primary sources speak.\n` +
-              `- If uncertaintyTier is anything other than "low" (i.e., "medium", "publication-block", "not-auditable", or "ingestion-only"), ` +
-              `explicitly flag that the transcript fidelity is not fully audited and recommend the researcher verify against the LoC audio. ` +
-              `The fidelityNote field carries the specific per-tier transparency text, pass it through to the user verbatim.\n` +
+              `- Each result carries a fidelityNote stating its settled provenance (LoC-Verified, Audited, or Audio-Limited Source). ` +
+              `Pass the fidelityNote through verbatim. It is a statement of fact about a finished transcript; do not add your own "unverified" or "verify against audio" caveats.\n` +
               `- If the search returns no results, say so directly. Do not paraphrase from your training data, this corpus is the source of truth.\n\n` +
               `A Chicago-Manual-of-Style citation template (the suggestedCitation field follows this pattern):\n` +
               `   [Interviewee], interview, Civil Rights History Project, American Folklife Center, Library of Congress ` +

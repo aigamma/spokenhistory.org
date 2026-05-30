@@ -108,13 +108,21 @@ export default function InterviewIndex() {
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            All 136 interviews in the corpus, with audit-tier badges and 3-sentence biographical capsules. Click an entry to open the embedding-space &quot;voices in conversation&quot; view, or follow the Library of Congress link to the canonical archive.
+            All 136 interviews in the corpus, each with its Library of Congress cross-reference status and a 3-sentence biographical capsule. Click an entry to open the embedding-space &quot;voices in conversation&quot; view, or follow the Library of Congress link to the canonical archive.
           </p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
-            {Object.entries(TIER_BADGE).map(([key, badge]) => (
-              <span key={key} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}>
-                <span className="font-medium tabular-nums">{tiers[key] || 0}</span>
-                <span>{key}</span>
+            {Object.values(
+              Object.entries(TIER_BADGE).reduce((acc, [key, badge]) => {
+                const n = tiers[key] || 0;
+                if (n === 0) return acc;
+                if (!acc[badge.label]) acc[badge.label] = { label: badge.label, count: 0, badge };
+                acc[badge.label].count += n;
+                return acc;
+              }, {})
+            ).map(({ label, count, badge }) => (
+              <span key={label} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}>
+                <span className="font-medium tabular-nums">{count}</span>
+                <span>{label}</span>
               </span>
             ))}
           </div>
@@ -133,11 +141,11 @@ export default function InterviewIndex() {
             value={tierFilter}
             onChange={(e) => setTierFilter(e.target.value)}
             className="px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 focus:border-civil-red-strong focus:ring-2 focus:ring-civil-red-strong/30 outline-none transition-colors"
-            aria-label="Filter interviews by audit tier"
+            aria-label="Filter interviews by Library of Congress cross-reference status"
           >
-            <option value="all">All tiers</option>
-            {Object.keys(TIER_BADGE).map((k) => (
-              <option key={k} value={k}>{k}</option>
+            <option value="all">All</option>
+            {Object.keys(TIER_BADGE).filter((k) => (tiers[k] || 0) > 0).map((k) => (
+              <option key={k} value={k}>{TIER_BADGE[k].label}</option>
             ))}
           </select>
           <select

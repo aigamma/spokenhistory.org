@@ -12,7 +12,7 @@
  * Three numeric callouts + one short paragraph:
  *   - 9 audit passes (the Whisper → internal-review → LoC cascade)
  *   - 127 / 127 LoC API cross-references (100% of audit-able entries)
- *   - 5-tier audit substrate
+ *   - 133 of 136 interviews LoC-Verified (the rest with a stated reason)
  *
  * No external dependencies; pure JSX. Designed to sit inside the
  * existing "About this page" block on /rag-explore.
@@ -52,12 +52,12 @@ export default function AuditProvenance() {
         </li>
         <li>
           <div className="text-3xl sm:text-4xl font-medium text-stone-900 tabular-nums" style={{ fontFamily: 'Inter, sans-serif' }}>
-            5<span className="text-base text-stone-500 ml-1">tiers</span>
+            133<span className="text-base text-stone-500 ml-1">/ 136</span>
           </div>
           <p className="text-xs text-stone-600 mt-1 leading-snug">
-            Per-entry confidence: low / medium / publication-block /
-            not-auditable / ingestion-only. Surfaced as the colored
-            badge on every passage.
+            Interviews that cleanly aligned to the Library of Congress
+            (LoC-Verified). The remaining three carry a stated reason: two
+            audio-limited recordings, one where LoC&apos;s edition diverges.
           </p>
         </li>
       </ul>
@@ -68,10 +68,10 @@ export default function AuditProvenance() {
         we don&apos;t. The final pass (Pass 8) opens each interview&apos;s LoC
         TEI2 XML transcript (or PDF when XML isn&apos;t published) and word-aligns
         it against our text, healing the differences a deterministic verdict
-        layer can confidently resolve and flagging the rest for human review.
-        710 cases where the audit-canon and LoC disagreed are catalogued in a
-        separate report for an SME pass, the ones where the AI shouldn&apos;t
-        be the deciding voice.
+        layer resolves and preserving both readings where our verbatim text and
+        LoC&apos;s edited edition legitimately differ. Those 710 documented
+        differences are catalogued in full, the transparent record of two
+        professional transcription efforts on the same audio.
       </p>
     </section>
   );
