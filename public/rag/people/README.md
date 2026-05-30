@@ -1,4 +1,4 @@
-# Per-Person Pages — JSON Catalog
+# Per-Person Pages: JSON Catalog
 
 One JSON file per named individual on the site. Each file is loaded by the `/person/:slug` route's `PersonPage` component and rendered as a citation-bearing reference page. The catalog supports two `person_type` values: interviewees (have their own oral history in the Civil Rights History Project corpus) and external figures (discussed by interviewees but not themselves interviewed).
 
@@ -35,9 +35,9 @@ Two free-text fields on each page, and a different discipline for each:
 
 Surface what the embedding space finds about this person that the cultural record hasn't. Concretely, look at the precomputed substrate:
 
-- `/rag/related/entry-${N}.json` — top semantic neighbors of this person's passages.
-- `/rag/summaries/concept_axes.json` — this person's position on each named concept axis (with the pole labels).
-- `/rag/summaries/influence.json` — who-discussed-whom edges.
+- `/rag/related/entry-${N}.json`, top semantic neighbors of this person's passages.
+- `/rag/summaries/concept_axes.json`, this person's position on each named concept axis (with the pole labels).
+- `/rag/summaries/influence.json`, who-discussed-whom edges.
 
 Then write a paragraph that names ONE or TWO specific connections the embedding finds AND for which there's a meaningful surprise:
 
