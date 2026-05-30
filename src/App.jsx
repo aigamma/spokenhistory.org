@@ -19,6 +19,7 @@ import ReviewQueue from './pages/ReviewQueue'
 import RagExplore from './pages/RagExplore'
 import PersonPage from './pages/PersonPage'
 import PeopleCatalog from './pages/PeopleCatalog'
+import MachineAudit from './pages/MachineAudit'
 import NotFound from './pages/NotFound'
 
 
@@ -106,6 +107,17 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <RagExplore />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      {/* Machine Audit explainer (Dustin, 2026-05-30): how the AI
+          metadata is generated, where uncertainty exists, and how to
+          send a correction. Linked from the audit-tier indicators. */}
+      <Route path="/machine-audit" element={
+        <ProtectedRoute>
+          <Layout>
+            <MachineAudit />
           </Layout>
         </ProtectedRoute>
       } />

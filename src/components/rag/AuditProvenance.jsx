@@ -14,9 +14,11 @@
  *   - 127 / 127 LoC API cross-references (100% of audit-able entries)
  *   - 133 of 136 interviews LoC-Verified (the rest with a stated reason)
  *
- * No external dependencies; pure JSX. Designed to sit inside the
- * existing "About this page" block on /rag-explore.
+ * Designed to sit inside the existing "About this page" block on
+ * /rag-explore. Links out to the full Machine Audit explainer page.
  */
+
+import { Link } from 'react-router-dom';
 
 export default function AuditProvenance() {
   return (
@@ -72,6 +74,16 @@ export default function AuditProvenance() {
         LoC&apos;s edited edition legitimately differ. Those 710 documented
         differences are catalogued in full, the transparent record of two
         professional transcription efforts on the same audio.
+      </p>
+
+      <p className="mt-4">
+        <Link
+          to="/machine-audit"
+          className="inline-flex items-center gap-1 text-sm font-medium text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+        >
+          How was this generated? Read the full Machine Audit
+          <span aria-hidden="true">&rarr;</span>
+        </Link>
       </p>
     </section>
   );
