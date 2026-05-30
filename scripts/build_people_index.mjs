@@ -73,11 +73,38 @@ async function main() {
       const trimmed = data.role_summary.trim();
       summary.role_preview = trimmed.length > 140 ? trimmed.slice(0, 137) + '...' : trimmed;
     }
-    // Photo external URL (Wikimedia hot-link) for the browse-grid
-    // thumbnail. The full citation block stays on the catalog page
-    // itself; the index only needs the URL for the thumbnail render.
-    if (data.photo?.src_external) {
-      summary.photo_src = data.photo.src_external;
+    // Browse-grid thumbnail resolution. Priority:
+    //   1. photo.src_external  (a vetted open-licensed portrait of the subject)
+    //   2. photo.src_local     (a local portrait copy, if one is ever added)
+    //   3. the first gallery item NOT opted out via not_thumbnail
+    //      (an environment / association / scene image used as context)
+    // The full citation block always stays on the catalog page itself;
+    // the index only needs the URL plus a kind/alt for the thumbnail.
+    // photo_kind lets the /people grid distinguish a real portrait
+    // ('portrait') from a context image ('context') so it can caption or
+    // tooltip the latter and never imply the scene IS the person. A
+    // gallery item that depicts a DIFFERENT named individual (a portrait
+    // of an associated figure) must carry "not_thumbnail": true so it is
+    // never promoted into the subject's card.
+    let thumbSrc = data.photo?.src_external || data.photo?.src_local || null;
+    let thumbKind = thumbSrc ? 'portrait' : null;
+    let thumbAlt = null;
+    if (!thumbSrc && Array.isArray(data.gallery)) {
+      const g = data.gallery.find(
+        (it) => it && !it.not_thumbnail && (it.src_external || it.src_local),
+      );
+      if (g) {
+        thumbSrc = g.src_external || g.src_local;
+        thumbKind = 'context';
+        thumbAlt = (g.alt || g.caption || '').trim() || null;
+      }
+    }
+    if (thumbSrc) {
+      summary.photo_src = thumbSrc;
+      summary.photo_kind = thumbKind;
+      if (thumbAlt) {
+        summary.photo_alt = thumbAlt.length > 160 ? thumbAlt.slice(0, 157) + '...' : thumbAlt;
+      }
     }
     // born/died fields for the chip subtitle.
     if (Number.isFinite(data.born)) summary.born = data.born;

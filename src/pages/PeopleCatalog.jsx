@@ -187,7 +187,8 @@ export default function PeopleCatalog() {
                   {p.photo_src ? (
                     <img
                       src={p.photo_src}
-                      alt=""
+                      alt={p.photo_kind === 'context' ? (p.photo_alt || 'Related historical image') : ''}
+                      title={p.photo_kind === 'context' ? (p.photo_alt || undefined) : undefined}
                       className="w-12 h-12 rounded-md object-cover border border-stone-300 bg-stone-100 shrink-0"
                       loading="lazy"
                     />
