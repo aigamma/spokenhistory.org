@@ -364,3 +364,16 @@ a:focus-visible,
 /* Dark scrollbars (WebKit). */
 .dark ::-webkit-scrollbar { background-color: #27272a; }
 .dark ::-webkit-scrollbar-thumb { background-color: #52525b; border-radius: 4px; }
+
+/* Atlas (Leaflet) dark basemap blue tint. The keyless CARTO dark_all
+   basemap is a near-black neutral gray (low ocean/land contrast). This
+   filter colorizes it toward a blue-gray: sepia() injects chroma into
+   the neutral tiles, hue-rotate swings that chroma to blue, saturate
+   deepens it, brightness lifts it off black. Result: blueish ocean,
+   lighter blue-gray land, light blue-white labels, matching the
+   worldthought.com atlas. Scoped to the tile pane only, so the SVG
+   marker pane (the brand-red anchors) is unaffected. Tune the four
+   filter values here to adjust the exact blue. */
+.atlas-tiles-dark .leaflet-tile-pane {
+  filter: sepia(1) hue-rotate(178deg) saturate(1.7) brightness(1.08);
+}

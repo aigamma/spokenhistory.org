@@ -113,16 +113,25 @@ export default function AtlasMap({ anchors, selectedSlug, onSelect }) {
         zoom={ZOOM}
         scrollWheelZoom={false}
         style={{ height: '100%', width: '100%' }}
+        // In dark mode the tile pane gets a blue-tint CSS filter (see
+        // .atlas-tiles-dark in index.css): blueish ocean, lighter blue-
+        // gray land, matching worldthought.com. The filter lands only on
+        // the raster tiles; the SVG marker pane is a sibling, so the red
+        // anchors stay brand red.
+        className={isDark ? 'atlas-tiles-dark' : undefined}
       >
         {/* Light tiles keep the original OSM basemap byte-for-byte; the
-            dark branch swaps in CARTO's dark basemap. key forces a fresh
+            dark branch swaps in CARTO's keyless dark basemap, then the
+            .atlas-tiles-dark filter tints it blue. key forces a fresh
             TileLayer mount on theme toggle so the two never stack. */}
         <TileLayer
           key={isDark ? 'dark' : 'light'}
           url={isDark
             ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
             : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'}
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          attribution={isDark
+            ? '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+            : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
         />
         {markers.map((m) => {
           const isSelected = m.slug === selectedSlug;
