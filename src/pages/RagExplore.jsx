@@ -73,10 +73,10 @@ function useCorpusData() {
  * Page structure:
  *   - Page header: h1 + framing sentence + corpus-stats badges
  *     (interview count, passage count, per-tier counts).
- *   - Spectrum (always visible above the tab nav): 1D scatter of 136
- *     interview centroids along one chosen concept axis. Click a dot
- *     to drill into that interviewee's passages most aligned with the
- *     chosen pole.
+ *   - Spectrum (always visible above the tab nav): 2D scatter of 136
+ *     interview centroids across two chosen concept axes (one on each
+ *     of X and Y, both switchable). Click a dot to drill into that
+ *     interviewee's passages most aligned with the horizontal pole.
  *   - Grouped sticky tab nav. Four intent-labeled categories:
  *       Concept projection (Word Search / ConceptMatrix)
  *       Structural maps    (InterviewMap, Themes, Network, Atlas)
@@ -164,7 +164,7 @@ const TAB_GROUPS = [
   {
     label: 'Concept projection',
     tabs: ['lenses'],
-    footnote: 'Spectrum (one-axis lens) is the chart at the top of this page.',
+    footnote: 'Spectrum (two-axis lens) is the chart at the top of this page.',
   },
   {
     label: 'Structural maps',
@@ -342,11 +342,12 @@ export default function RagExplore() {
             Spectrum
           </h2>
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
-            Position of each dot reflects where that interviewee&apos;s voice falls along
-            one chosen concept axis (e.g. nonviolence vs. armed self-defense). The
-            placement is reproducible math: the same for every visitor, no model call per
-            dot. Switch axes below the chart to change the lens, or type a phrase in the
-            green box to project your own words onto the same scale.
+            Each dot is one interviewee, placed where their voice falls on two named
+            concept axes at once (by default, nonviolence vs. armed self-defense across,
+            individual conscience vs. collective discipline up and down). The placement is
+            reproducible math: the same for every visitor, no model call per dot. Pick any
+            concept for the horizontal and vertical lens in the panel beside the chart, or
+            click a dot to pull the passages that anchor it where it sits.
           </p>
           <ConceptSpectrum />
         </section>

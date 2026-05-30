@@ -804,7 +804,7 @@ export default function PersonPage() {
                     return (
                       <li key={axis.slug}>
                         <Link
-                          to={`/rag-explore?spectrumAxis=${axis.slug}&spectrumEntry=${person.entry_number}`}
+                          to={`/rag-explore?spectrumX=${axis.slug}&spectrumEntry=${person.entry_number}`}
                           className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded-md p-1 -m-1"
                         >
                           <div className="flex items-baseline justify-between mb-1.5">
