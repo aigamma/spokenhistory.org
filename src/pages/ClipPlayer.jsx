@@ -220,7 +220,7 @@ export default function ClipPlayer() {
       </div>
 
       {/* Clip Summary */}
-      <div className="bg-gray-50 border border-gray-200 dark:bg-stone-900 dark:border-stone-800 rounded-lg p-4 mt-4">
+      <div className="bg-gray-50 border border-gray-200 dark:bg-stone-800 dark:border-stone-800 rounded-lg p-4 mt-4">
         <p className="text-gray-800 dark:text-stone-200 leading-relaxed">{clipData.summary}</p>
       </div>
 

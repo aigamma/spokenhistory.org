@@ -119,7 +119,7 @@ function Label({ accent, hex, name, note, dark }) {
       {note && (
         <span
           className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
-          style={{ background: dark ? '#f5f5f4' : '#1c1917', color: dark ? '#0c0a09' : '#EBEAE9' }}
+          style={{ background: dark ? '#f5f5f4' : '#1c1917', color: dark ? '#1c1917' : '#EBEAE9' }}
         >
           {note}
         </span>
@@ -196,7 +196,7 @@ export default function SnippetColorLab() {
       </section>
 
       {/* Dark panel */}
-      <section style={{ backgroundColor: '#0c0a09' }} className="px-4 sm:px-6 py-10">
+      <section style={{ backgroundColor: '#1c1917' }} className="px-4 sm:px-6 py-10">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-wide font-mono font-semibold mb-1" style={{ color: '#fca5a5' }}>
             Dark Surface (Proposed Dark Theme)

@@ -296,7 +296,7 @@ export default function PeopleGrid() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="person-modal-title"
-          className="bg-white/95 dark:bg-stone-900/95 backdrop-blur-sm rounded-2xl shadow-xl max-w-md w-full overflow-hidden animate-fadeIn z-50 relative border border-white/30 dark:border-stone-700"
+          className="bg-white/95 dark:bg-stone-800/95 backdrop-blur-sm rounded-2xl shadow-xl max-w-md w-full overflow-hidden animate-fadeIn z-50 relative border border-white/30 dark:border-stone-700"
         >
           {/* Modal Header */}
           <div className="relative">
@@ -449,7 +449,7 @@ export default function PeopleGrid() {
     <>
       {/* Search header */}
       <div className="mb-6 max-w-xl mx-auto">
-        <div className="bg-white/80 dark:bg-stone-900/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-6 border border-white/20 dark:border-stone-700">
+        <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 mb-6 border border-white/20 dark:border-stone-700">
           <div className="text-center">
             <h2 className="text-lg font-semibold text-black dark:text-stone-100 mb-4" style={{
               fontFamily: 'Freight Text Pro, Lora, serif'
@@ -473,7 +473,7 @@ export default function PeopleGrid() {
       </div>
 
       {/* People Grid */}
-      <div className="bg-white/80 dark:bg-stone-900/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 dark:border-stone-700">
+      <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-white/20 dark:border-stone-700">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-x-4 gap-y-6">
             {filteredPeople.map((person) => (

@@ -263,7 +263,7 @@ export default function RagExplore() {
   }, [tab]);
 
   return (
-    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-950">
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-900">
       <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 focus:outline-none">
         {/* Page-level header. Without an h1 the document had no
             top-of-hierarchy heading, and a first-time visitor landed
@@ -353,7 +353,7 @@ export default function RagExplore() {
 
         <nav
           aria-label="Demo tabs"
-          className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-stone-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-stone-950/90"
+          className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-stone-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-stone-900/90"
         >
           <p className="text-xs text-stone-500 mb-3 font-mono uppercase tracking-wide">
             Pick a demo. Grouped by what each one does.

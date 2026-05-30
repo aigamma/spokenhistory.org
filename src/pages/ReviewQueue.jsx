@@ -136,7 +136,7 @@ export default function ReviewQueue() {
   if (loading) {
     return (
       <div
-        className="min-h-screen flex justify-center items-center bg-[#EBEAE9] dark:bg-stone-950"
+        className="min-h-screen flex justify-center items-center bg-[#EBEAE9] dark:bg-stone-900"
         role="status"
         aria-live="polite"
       >
@@ -152,8 +152,8 @@ export default function ReviewQueue() {
 
   if (error) {
     return (
-      <div className="min-h-screen flex justify-center items-center bg-[#EBEAE9] dark:bg-stone-950">
-        <div className="bg-white dark:bg-stone-900 border border-black dark:border-stone-700 px-6 py-4 text-black dark:text-stone-100" style={{ fontFamily: 'Source Serif Pro, serif' }}>
+      <div className="min-h-screen flex justify-center items-center bg-[#EBEAE9] dark:bg-stone-900">
+        <div className="bg-white dark:bg-stone-800 border border-black dark:border-stone-700 px-6 py-4 text-black dark:text-stone-100" style={{ fontFamily: 'Source Serif Pro, serif' }}>
           {error}
         </div>
       </div>
@@ -180,7 +180,7 @@ export default function ReviewQueue() {
 
 function ListView({ items, stats, onSelect }) {
   return (
-    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-950">
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-900">
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[48px] pt-3 pb-6">
         <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-[32px]">
           <h1 className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
@@ -209,7 +209,7 @@ function ListView({ items, stats, onSelect }) {
               <button
                 key={item.id}
                 onClick={() => onSelect(item.id)}
-                className="w-full text-left bg-white dark:bg-stone-900 border border-black dark:border-stone-700 text-black dark:text-stone-100 px-4 py-3 sm:px-6 sm:py-4 hover:bg-[#F2483C] hover:text-white dark:hover:bg-[#F2483C] dark:hover:text-white transition-colors group"
+                className="w-full text-left bg-white dark:bg-stone-800 border border-black dark:border-stone-700 text-black dark:text-stone-100 px-4 py-3 sm:px-6 sm:py-4 hover:bg-[#F2483C] hover:text-white dark:hover:bg-[#F2483C] dark:hover:text-white transition-colors group"
                 style={{ fontFamily: 'Source Serif Pro, serif' }}
               >
                 <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
@@ -247,7 +247,7 @@ function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setR
   const claims = item.claude_scores?.unsupported_claims || []
 
   return (
-    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-950">
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-900">
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-[48px] pt-3 pb-12">
         <button
           onClick={onBack}
@@ -284,7 +284,7 @@ function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setR
             <textarea
               value={editedSummary}
               onChange={(e) => setEditedSummary(e.target.value)}
-              className="w-full min-h-[300px] p-3 border border-black dark:border-stone-700 bg-white dark:bg-stone-900 text-black dark:text-stone-100 text-base leading-relaxed"
+              className="w-full min-h-[300px] p-3 border border-black dark:border-stone-700 bg-white dark:bg-stone-800 text-black dark:text-stone-100 text-base leading-relaxed"
               style={{ fontFamily: 'Source Serif Pro, serif' }}
             />
             <div className="mt-3 text-xs dark:text-stone-400" style={{ fontFamily: 'Chivo Mono, monospace' }}>
@@ -299,7 +299,7 @@ function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setR
               Source transcript (excerpt)
             </h2>
             <pre
-              className="w-full min-h-[300px] p-3 border border-black dark:border-stone-700 bg-white dark:bg-stone-900 text-black dark:text-stone-100 text-sm leading-relaxed overflow-auto whitespace-pre-wrap"
+              className="w-full min-h-[300px] p-3 border border-black dark:border-stone-700 bg-white dark:bg-stone-800 text-black dark:text-stone-100 text-sm leading-relaxed overflow-auto whitespace-pre-wrap"
               style={{ fontFamily: 'Source Serif Pro, serif' }}
             >
               {item.transcript_excerpt || '(no excerpt available)'}
@@ -314,7 +314,7 @@ function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setR
             </h2>
             <div className="flex flex-col gap-3">
               {claims.map((claim, idx) => (
-                <div key={idx} className="bg-white dark:bg-stone-900 border border-black dark:border-stone-700 p-3 sm:p-4">
+                <div key={idx} className="bg-white dark:bg-stone-800 border border-black dark:border-stone-700 p-3 sm:p-4">
                   <div className="flex items-baseline gap-2 mb-2">
                     <span
                       className="inline-block px-2 py-0.5 text-xs uppercase text-white"
@@ -346,7 +346,7 @@ function DetailView({ item, editedSummary, setEditedSummary, reviewerNotes, setR
             value={reviewerNotes}
             onChange={(e) => setReviewerNotes(e.target.value)}
             placeholder="Why you approved / rejected / sent back for revision. Recorded in the audit trail."
-            className="w-full min-h-[100px] p-3 border border-black dark:border-stone-700 bg-white dark:bg-stone-900 text-black dark:text-stone-100 dark:placeholder-stone-500 text-base leading-relaxed"
+            className="w-full min-h-[100px] p-3 border border-black dark:border-stone-700 bg-white dark:bg-stone-800 text-black dark:text-stone-100 dark:placeholder-stone-500 text-base leading-relaxed"
             style={{ fontFamily: 'Source Serif Pro, serif' }}
           />
         </section>

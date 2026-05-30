@@ -228,7 +228,7 @@ export default function ContentDirectory() {
       addSearchToCache, 
       getSearchFromCache 
     }}>
-      <div className="font-body bg-[#EBEAE9] dark:bg-stone-950" style={{ minHeight: '100vh' }}>
+      <div className="font-body bg-[#EBEAE9] dark:bg-stone-900" style={{ minHeight: '100vh' }}>
         <div className="max-w-7xl mx-auto px-6 pt-4 pb-8">
           {/* Page header */}
           <div className="mb-8">
@@ -257,7 +257,7 @@ export default function ContentDirectory() {
           </div>
 
           {/* Stats summary */}
-          <div className="bg-white/80 dark:bg-stone-900/80 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 mb-8 border border-white/20 dark:border-stone-700/40">
+          <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm rounded-2xl shadow-lg p-4 sm:p-8 mb-8 border border-white/20 dark:border-stone-700/40">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
               <div className="flex flex-col items-center p-4 rounded-xl" style={{ backgroundColor: 'rgba(242, 72, 60, 0.1)' }}>
                 <div className="text-2xl font-bold mb-2" style={{

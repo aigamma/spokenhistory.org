@@ -123,7 +123,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
     <>
       <div className="rounded-lg border border-stone-200 overflow-hidden bg-stone-50">
         {/* SVG substrate + interior fills branch on isDark (useIsDark): the inline
-            background ('#fafaf9' light / '#0c0a09' dark), the reference grid lines
+            background ('#fafaf9' light / '#1c1917' dark), the reference grid lines
             ('#e7e5e4' light / '#292524' dark), and the bubble labels (fill '#1c1917'
             light / '#f5f5f4' dark, with stroke halo '#fafaf9' light /
             'rgba(12,10,9,0.9)' dark) so the chart interior inverts with the rest of
@@ -134,7 +134,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
           viewBox={`0 0 ${W} ${H}`}
           role="img"
           aria-label="30 thematic clusters positioned at their centroids in the embedding space. Bubble size shows cluster member count; color shows dominant audit tier."
-          style={{ display: 'block', background: isDark ? '#0c0a09' : '#fafaf9' }}
+          style={{ display: 'block', background: isDark ? '#1c1917' : '#fafaf9' }}
         >
           {/* Soft reference grid */}
           <g aria-hidden="true">

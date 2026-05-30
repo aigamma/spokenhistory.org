@@ -45,7 +45,7 @@ export default function Visualizations() {
   const tabs = ['timeline', 'map'];
   
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-stone-950 min-h-screen font-body">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-stone-900 min-h-screen font-body">
       {/* Hero Section - Main title and introduction */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-heading font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text mb-6">

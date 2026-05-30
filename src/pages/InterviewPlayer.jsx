@@ -564,7 +564,7 @@ export default function InterviewPlayer() {
         />
       )}
       
-      <div className="w-full min-h-screen overflow-hidden bg-[#EBEAE9] dark:bg-stone-950">
+      <div className="w-full min-h-screen overflow-hidden bg-[#EBEAE9] dark:bg-stone-900">
         {/* Universal Header */}
         <Header />
 

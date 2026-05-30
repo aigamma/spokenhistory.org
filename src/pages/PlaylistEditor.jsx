@@ -130,7 +130,7 @@ export default function PlaylistEditor() {
                     id="playlist-summary-edit"
                     value={editedDescription}
                     onChange={(e) => setEditedDescription(e.target.value)}
-                    className="w-full h-40 p-2 border rounded dark:bg-stone-900 dark:border-stone-700 dark:text-stone-100 dark:placeholder-stone-500"
+                    className="w-full h-40 p-2 border rounded dark:bg-stone-800 dark:border-stone-700 dark:text-stone-100 dark:placeholder-stone-500"
                     aria-describedby="playlist-summary-heading"
                   />
                   <div className="flex justify-end space-x-2">

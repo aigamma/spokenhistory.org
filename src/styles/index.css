@@ -317,9 +317,10 @@ a:focus-visible,
 
    This block flips the common Tailwind utilities the pages share, so
    text, cards, surfaces, and borders get a coherent dark version
-   everywhere at once. Each page's ROOT background is made dark-aware in
-   the page itself (e.g. bg-[#EBEAE9] dark:bg-stone-950), since those are
-   set per page. Data-visualization interiors (Plotly / Leaflet / force-
+   everywhere at once. The dark page is charcoal #1c1917 (stone-900), not
+   near-black, with cards one step lighter (#292524) so they lift off it.
+   Each page's ROOT background is made dark-aware in the page itself (e.g.
+   bg-[#EBEAE9] dark:bg-stone-900), since those are set per page. Data-visualization interiors (Plotly / Leaflet / force-
    graph / SVG / canvas) set their colors in JS and are themed per
    component, not here.
 
@@ -331,11 +332,11 @@ a:focus-visible,
    --------------------------------------------------------------------- */
 
 /* Backdrop behind everything, in case a page root is not itself dark. */
-.dark body { background-color: #0c0a09; }
+.dark body { background-color: #1c1917; }
 
 /* Person page root uses a class rather than an inline background. */
 .person-page-root { background-color: #EBEAE9; }
-.dark .person-page-root { background-color: #0c0a09; }
+.dark .person-page-root { background-color: #1c1917; }
 
 /* Text */
 .dark .text-stone-900 { color: #f5f5f4; }
@@ -347,18 +348,18 @@ a:focus-visible,
 .dark .text-civil-red-body { color: #f87171; }
 
 /* Surfaces */
-.dark .bg-white { background-color: #1c1917; }
-.dark .bg-stone-50 { background-color: #1c1917; }
-.dark .bg-stone-100 { background-color: #292524; }
-.dark .bg-stone-200 { background-color: #292524; }
+.dark .bg-white { background-color: #292524; }
+.dark .bg-stone-50 { background-color: #292524; }
+.dark .bg-stone-100 { background-color: #312d2a; }
+.dark .bg-stone-200 { background-color: #44403c; }
 .dark .bg-red-50 { background-color: rgba(127, 29, 29, 0.22); }
 
 /* Borders */
-.dark .border-stone-100 { border-color: #292524; }
-.dark .border-stone-200 { border-color: #292524; }
-.dark .border-stone-300 { border-color: #44403c; }
+.dark .border-stone-100 { border-color: #312d2a; }
+.dark .border-stone-200 { border-color: #44403c; }
+.dark .border-stone-300 { border-color: #57534e; }
 .dark .border-stone-900 { border-color: #d6d3d1; }
 
 /* Dark scrollbars (WebKit). */
-.dark ::-webkit-scrollbar { background-color: #1c1917; }
-.dark ::-webkit-scrollbar-thumb { background-color: #44403c; border-radius: 4px; }
+.dark ::-webkit-scrollbar { background-color: #292524; }
+.dark ::-webkit-scrollbar-thumb { background-color: #57534e; border-radius: 4px; }

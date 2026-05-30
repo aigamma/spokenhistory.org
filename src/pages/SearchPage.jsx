@@ -44,7 +44,7 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-stone-950 min-h-screen font-sans flex flex-col items-center justify-center">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-stone-900 min-h-screen font-sans flex flex-col items-center justify-center">
       {/* Search header and form */}
       <div className="w-full max-w-3xl text-center mb-16">
         <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text">
@@ -80,7 +80,7 @@ export default function SearchPage() {
               value={keywords}
               onChange={(e) => setKeywords(e.target.value)}
               placeholder="civil rights, voting, education..."
-              className="w-full pl-12 pr-32 py-5 min-h-11 border border-gray-200 dark:border-stone-700 bg-white dark:bg-stone-900 rounded-xl shadow-sm outline-none text-base text-gray-900 dark:text-stone-100 transition-all duration-300 focus:shadow-blue-300 focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-12 pr-32 py-5 min-h-11 border border-gray-200 dark:border-stone-700 bg-white dark:bg-stone-800 rounded-xl shadow-sm outline-none text-base text-gray-900 dark:text-stone-100 transition-all duration-300 focus:shadow-blue-300 focus:ring-2 focus:ring-blue-500"
               autoCapitalize="none"
               autoCorrect="off"
               aria-invalid={!!error}

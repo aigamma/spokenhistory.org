@@ -367,14 +367,14 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
       />
       
       {/* Main overlay content */}
-      <div className={`w-full h-full relative overflow-hidden bg-[#EBEAE9] dark:bg-stone-950 transition-all duration-500 ease-out ${
+      <div className={`w-full h-full relative overflow-hidden bg-[#EBEAE9] dark:bg-stone-900 transition-all duration-500 ease-out ${
         isAnimating ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
       }`}>
         
         {/* Conditional Header - Standard header when results are loaded */}
         {(isSearching || results.length > 0) ? (
           /* Standard Universal Header */
-          <header className="relative bg-[#EBEAE9] dark:bg-stone-950">
+          <header className="relative bg-[#EBEAE9] dark:bg-stone-900">
             <div className="w-full px-4 sm:px-8 lg:px-12 py-6 lg:py-9">
               <div className="flex justify-between items-start">
                 {/* Logo/Title.
@@ -601,7 +601,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
             converted to a real <button>. */}
         {(isSearching || results.length > 0) && (
           <div
-            className="absolute left-0 right-0 bottom-0 overflow-y-auto bg-[#EBEAE9] dark:bg-stone-950"
+            className="absolute left-0 right-0 bottom-0 overflow-y-auto bg-[#EBEAE9] dark:bg-stone-900"
             style={{
               top: 'clamp(200px, 25vh, 220px)',
             }}

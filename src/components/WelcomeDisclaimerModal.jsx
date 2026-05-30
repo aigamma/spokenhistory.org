@@ -62,11 +62,11 @@ export default function WelcomeDisclaimerModal({ onClose }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="welcome-modal-title"
-        className="max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl bg-[#EBEAE9] dark:bg-stone-900"
+        className="max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl bg-[#EBEAE9] dark:bg-stone-800"
         onClick={handleModalClick}
       >
         {/* Header */}
-        <div className="sticky top-0 px-8 py-8 border-b-2 border-red-500 bg-[#EBEAE9] dark:bg-stone-900">
+        <div className="sticky top-0 px-8 py-8 border-b-2 border-red-500 bg-[#EBEAE9] dark:bg-stone-800">
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <h2 id="welcome-modal-title" className="text-black dark:text-stone-100 text-3xl lg:text-4xl font-medium font-['Inter'] leading-tight mb-2">
@@ -184,7 +184,7 @@ export default function WelcomeDisclaimerModal({ onClose }) {
         </div>
 
         {/* Footer / Action Button */}
-        <div className="sticky bottom-0 px-8 py-6 border-t-2 border-red-500 bg-[#EBEAE9] dark:bg-stone-900">
+        <div className="sticky bottom-0 px-8 py-6 border-t-2 border-red-500 bg-[#EBEAE9] dark:bg-stone-800">
           <button
             onClick={onClose}
             className="w-full px-8 py-4 border-2 border-civil-red-strong dark:border-red-400 text-civil-red-strong dark:text-red-400 text-lg lg:text-xl font-light font-['Chivo_Mono'] hover:bg-civil-red-strong hover:text-white dark:hover:bg-red-500 dark:hover:text-white transition-colors"

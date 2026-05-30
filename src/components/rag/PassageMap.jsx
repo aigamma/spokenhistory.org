@@ -247,7 +247,7 @@ export default function PassageMap() {
     // (intentional dark plot well so dots read on either page chrome).
     // Marker colors come from TOPIC_PALETTE and the HIGHLIGHT_COLOR
     // brand red, which read on both themes, so they are not branched.
-    paper_bgcolor: isDark ? '#0c0a09' : '#EBEAE9',
+    paper_bgcolor: isDark ? '#1c1917' : '#EBEAE9',
     plot_bgcolor: '#1c1917',
     font: {
       family: 'Inter, ui-sans-serif, system-ui, sans-serif',
@@ -330,7 +330,7 @@ export default function PassageMap() {
       </div>
 
       <div className="flex items-stretch gap-3">
-        <div className="flex-1 rounded-lg border border-stone-200 overflow-hidden shadow-sm bg-[#EBEAE9] dark:bg-stone-950">
+        <div className="flex-1 rounded-lg border border-stone-200 overflow-hidden shadow-sm bg-[#EBEAE9] dark:bg-stone-900">
           <Plot
             ref={plotRef}
             data={plotData}

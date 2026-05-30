@@ -60,7 +60,7 @@ const LandingCollageImage = () => {
 export default function About() {
   useDocumentTitle('About');
   return (
-    <div className="min-h-screen overflow-hidden bg-[#EBEAE9] dark:bg-stone-950">
+    <div className="min-h-screen overflow-hidden bg-[#EBEAE9] dark:bg-stone-900">
       {/* Main Content */}
       <div className="px-4 sm:px-8 lg:px-12">
         

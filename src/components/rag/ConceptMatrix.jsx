@@ -225,7 +225,7 @@ export default function ConceptMatrix() {
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
             placeholder="Project a phrase onto all 5 lenses…"
-            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-stone-900 dark:border-emerald-700 dark:text-stone-100"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-stone-800 dark:border-emerald-700 dark:text-stone-100"
             aria-label="Project a query phrase across all five lenses"
             disabled={conceptLoading}
           />
@@ -273,7 +273,7 @@ export default function ConceptMatrix() {
                 key={ex}
                 type="button"
                 onClick={() => runExample(ex)}
-                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-stone-900 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-stone-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
               >
                 {ex}
               </button>

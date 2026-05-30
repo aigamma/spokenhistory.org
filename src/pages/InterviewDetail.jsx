@@ -79,7 +79,7 @@ export default function InterviewDetail() {
 
   if (error) {
     return (
-      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-950">
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-900">
         <p className="text-stone-700">Failed to load this interview. {error}</p>
       </div>
     );
@@ -87,7 +87,7 @@ export default function InterviewDetail() {
 
   if (!neighbors) {
     return (
-      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-950">
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-900">
         <p className="text-stone-700">Loading…</p>
       </div>
     );
@@ -95,7 +95,7 @@ export default function InterviewDetail() {
 
   if (!entry) {
     return (
-      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-950">
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-900">
         <Link to="/interview-index" className="text-civil-red-body hover:underline inline-flex items-center gap-1">
           <ChevronLeft className="w-4 h-4" aria-hidden="true" /> Back to Interview Index
         </Link>
@@ -114,7 +114,7 @@ export default function InterviewDetail() {
   const themes = main?.key_themes || [];
 
   return (
-    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-950">
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-900">
       <main id="main-content" tabIndex={-1} className="max-w-4xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
         <Link
           to="/interview-index"

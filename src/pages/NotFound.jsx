@@ -19,10 +19,10 @@ export default function NotFound() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center p-4 font-body bg-[#EBEAE9] dark:bg-stone-950"
+      className="min-h-screen flex items-center justify-center p-4 font-body bg-[#EBEAE9] dark:bg-stone-900"
     >
       <main id="main-content" tabIndex={-1} className="max-w-lg w-full focus:outline-none">
-        <div className="bg-white dark:bg-stone-900 border-2 border-black dark:border-stone-700 p-6 sm:p-8 shadow-xl">
+        <div className="bg-white dark:bg-stone-800 border-2 border-black dark:border-stone-700 p-6 sm:p-8 shadow-xl">
           <p className="text-civil-red-body text-base font-light font-mono mb-2">
             404
           </p>

@@ -187,7 +187,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
   if (error) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="bg-white/80 dark:bg-stone-900/80 backdrop-blur-sm border border-white/40 dark:border-stone-700/40 text-black dark:text-stone-100 px-6 py-4 rounded-lg shadow-sm" style={{
+        <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm border border-white/40 dark:border-stone-700/40 text-black dark:text-stone-100 px-6 py-4 rounded-lg shadow-sm" style={{
           fontFamily: 'Freight Text Pro, Lora, serif'
         }}>
           {error}
@@ -237,7 +237,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
       </div>
 
       {/* Clip search results */}
-      <div className="bg-white/80 dark:bg-stone-900/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/20 dark:border-stone-700/40">
+      <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/20 dark:border-stone-700/40">
         {clipSearchLoading ? (
           // Loading state
           <div className="p-12 flex justify-center">

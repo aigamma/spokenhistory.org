@@ -77,8 +77,8 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-stone-950 py-12 px-6 font-sans">
-      <div className="max-w-md w-full bg-white dark:bg-stone-900 p-8 rounded-xl shadow-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-stone-900 py-12 px-6 font-sans">
+      <div className="max-w-md w-full bg-white dark:bg-stone-800 p-8 rounded-xl shadow-md">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-stone-100 mb-4">
             Sign in to your account

@@ -770,7 +770,7 @@ export default function Home() {
       <div
         ref={aiContentRef}
         data-feedback-section="Timeline Content"
-        className="w-full relative overflow-hidden bg-[#EBEAE9] dark:bg-stone-950"
+        className="w-full relative overflow-hidden bg-[#EBEAE9] dark:bg-stone-900"
       >
 
       {/* Hero Section */}
@@ -2513,7 +2513,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="text-center py-12 lg:py-16 bg-[#EBEAE9] dark:bg-stone-950">
+      <section className="text-center py-12 lg:py-16 bg-[#EBEAE9] dark:bg-stone-900">
         <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
           <h2 className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4'] mb-6 lg:mb-8">
             Discover the rest of the archive
