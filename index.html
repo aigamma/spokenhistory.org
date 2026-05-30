@@ -16,7 +16,20 @@
          Matches the brand red so the system UI feels continuous with
          the site. -->
     <meta name="theme-color" content="#F2483C" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Apply the saved light/dark choice before first paint to avoid a
+         flash of the wrong theme. Dark is opt-in via the header toggle
+         (stored as theme=dark in localStorage); the default is light. -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
 
     <!-- Open Graph tags for social sharing (Twitter / X, Facebook,
          LinkedIn, Slack, Discord, Bluesky, etc. all read these). -->

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X } from 'lucide-react';
+import { X, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../../hooks/useTheme';
 
 /**
  * Header, global nav for the protected app.
@@ -89,6 +90,7 @@ export default function Header() {
   const location = useLocation();
   const menuTriggerRef = useRef(null);
   const menuCloseRef = useRef(null);
+  const { isDark, toggle } = useTheme();
 
   // Esc-to-close + focus restoration for the slide-out menu. WCAG
   // 2.4.3 + ARIA Authoring Practices for dialogs: focus moves into
@@ -125,7 +127,7 @@ export default function Header() {
       {/* Header, a single row: pill nav strip on the left, search +
           hamburger on the right. The original 4xl wordmark is gone;
           the pills carry the site's identity now. */}
-      <header className="relative" style={{ backgroundColor: '#EBEAE9' }}>
+      <header className="relative bg-[#EBEAE9] dark:bg-stone-950">
         <div className="w-full px-4 sm:px-8 lg:px-12 py-4 sm:py-5">
           <div className="flex items-start justify-between gap-3 sm:gap-6">
             <nav
@@ -147,17 +149,37 @@ export default function Header() {
               ))}
             </nav>
 
-            <button
-              ref={menuTriggerRef}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMenuOpen}
-              aria-controls="site-navigation-menu"
-              className="inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium text-white shadow-sm transition-colors bg-red-600 hover:bg-red-700 flex-shrink-0"
-              style={{ fontFamily: 'Chivo Mono, monospace' }}
-            >
-              Menu
-            </button>
+            <div className="flex items-start gap-2 sm:gap-2.5 flex-shrink-0">
+              {/* Light/dark toggle, sits just left of Menu. Its label
+                  names the mode it switches TO (Dark when currently
+                  light, Light when currently dark) and the pill previews
+                  that target mode. */}
+              <button
+                type="button"
+                onClick={toggle}
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                className={
+                  'inline-flex items-center gap-1.5 min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors ' +
+                  (isDark ? 'bg-stone-200 text-stone-900 hover:bg-white' : 'bg-stone-800 text-white hover:bg-stone-900')
+                }
+                style={{ fontFamily: 'Chivo Mono, monospace' }}
+              >
+                {isDark ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}
+                {isDark ? 'Light' : 'Dark'}
+              </button>
+
+              <button
+                ref={menuTriggerRef}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMenuOpen}
+                aria-controls="site-navigation-menu"
+                className="inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium text-white shadow-sm transition-colors bg-red-600 hover:bg-red-700 flex-shrink-0"
+                style={{ fontFamily: 'Chivo Mono, monospace' }}
+              >
+                Menu
+              </button>
+            </div>
           </div>
         </div>
       </header>

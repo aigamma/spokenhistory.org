@@ -488,7 +488,7 @@ export default function PersonPage() {
   // is malformed.
   if (notFound) {
     return (
-      <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+      <div className="min-h-screen person-page-root">
         <main id="main-content" tabIndex={-1} className="max-w-3xl mx-auto px-4 sm:px-6 py-8 focus:outline-none">
           <button
             type="button"
@@ -521,7 +521,7 @@ export default function PersonPage() {
   // Loading view. The catalog JSON fetch is in flight.
   if (!person) {
     return (
-      <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+      <div className="min-h-screen person-page-root">
         <main id="main-content" tabIndex={-1} className="max-w-3xl mx-auto px-4 sm:px-6 py-8 focus:outline-none">
           <p className="text-sm text-stone-500" role="status">Loading…</p>
         </main>
@@ -552,7 +552,7 @@ export default function PersonPage() {
   const bodyGallery = heroFallbackImage ? galleryImages.slice(1) : galleryImages;
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#EBEAE9' }}>
+    <div className="min-h-screen person-page-root">
       <main id="main-content" tabIndex={-1} className="max-w-4xl mx-auto px-4 sm:px-6 py-8 focus:outline-none">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6">
           <button

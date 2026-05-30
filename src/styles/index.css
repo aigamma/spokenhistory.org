@@ -1,6 +1,15 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap');
 
+/* Class-based dark mode. The `dark:` variant responds to a `.dark` class
+   on <html> (set by the header toggle + the no-FOUC script in index.html),
+   not to the OS prefers-color-scheme media query. Dark is opt-in. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Keep UA widgets (scrollbars, form controls) in step with the theme. */
+html { color-scheme: light; }
+html.dark { color-scheme: dark; }
+
 /* ---------------------------------------------------------------------
    Tailwind v4 theme tokens.
 
@@ -38,12 +47,12 @@
    Person-page oral-history snippet card colors.
 
    PersonPage's SnippetCard reads these for its accent (the 6px left bar
-   + the quotation mark), card fill, and border. They switch on the
-   visitor's screen via prefers-color-scheme so the right blue shows
-   automatically, no toggle:
-     - light screen: blue-700 #1d4ed8 on a pale blue-50 fill
-     - dark screen:  blue-400 #60a5fa on a dark navy fill (matches the
-                     dark panel of the /snippet-colors comparison)
+   + the quotation mark), card fill, and border. They switch with the
+   site light/dark theme (the `.dark` class on <html>, driven by the
+   header toggle):
+     - light theme: blue-700 #1d4ed8 on a pale blue-50 fill
+     - dark theme:  blue-400 #60a5fa on a dark navy fill (matches the
+                    dark panel of the /snippet-colors comparison)
    The card's quote / lead-in / meta text is flipped to light on dark
    screens with Tailwind dark: variants in SnippetCard; these variables
    carry the surface colors. To recolor every snippet card at once, edit
@@ -59,15 +68,13 @@
   --snippet-problem-border: #fecaca;  /* red-200 */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --snippet-accent: #60a5fa;          /* blue-400 */
-    --snippet-fill: #2b3849;            /* dark navy */
-    --snippet-border: #3b587d;
-    --snippet-problem-accent: #f87171;  /* red-400 */
-    --snippet-problem-fill: #4c2c2b;
-    --snippet-problem-border: #7f4140;
-  }
+.dark {
+  --snippet-accent: #60a5fa;          /* blue-400 */
+  --snippet-fill: #2b3849;            /* dark navy */
+  --snippet-border: #3b587d;
+  --snippet-problem-accent: #f87171;  /* red-400 */
+  --snippet-problem-fill: #4c2c2b;
+  --snippet-problem-border: #7f4140;
 }
 
 @layer base {
@@ -302,3 +309,31 @@ a:focus-visible,
 .bg-civil-red-strong {
   background-color: var(--civil-red-strong);
 }
+
+/* ---------------------------------------------------------------------
+   Person-page dark theme (toggle-driven, class-based).
+
+   Scoped to .person-page-root so the rest of the still-light site is
+   untouched while dark mode rolls out page by page. Flips the stone
+   text, white surfaces, and borders the page uses; the audit-tier
+   badges and the snippet cards carry their own dark variants / CSS-
+   variable colors. Specificity (.dark .person-page-root .x, three
+   classes) beats the single-class Tailwind utilities, so no !important
+   is needed.
+   --------------------------------------------------------------------- */
+.person-page-root { background-color: #EBEAE9; }
+.dark .person-page-root { background-color: #0c0a09; }
+.dark .person-page-root .text-stone-900 { color: #f5f5f4; }
+.dark .person-page-root .text-stone-800 { color: #e7e5e4; }
+.dark .person-page-root .text-stone-700 { color: #d6d3d1; }
+.dark .person-page-root .text-stone-600 { color: #a8a29e; }
+.dark .person-page-root .text-stone-500 { color: #8d8681; }
+.dark .person-page-root .text-stone-400 { color: #6b6560; }
+.dark .person-page-root .text-civil-red-body { color: #f87171; }
+.dark .person-page-root .bg-white { background-color: #1c1917; }
+.dark .person-page-root .bg-stone-100 { background-color: #292524; }
+.dark .person-page-root .bg-stone-200 { background-color: #292524; }
+.dark .person-page-root .bg-red-50 { background-color: rgba(127, 29, 29, 0.22); }
+.dark .person-page-root .border-stone-200 { border-color: #292524; }
+.dark .person-page-root .border-stone-300 { border-color: #44403c; }
+.dark .person-page-root .border-stone-900 { border-color: #d6d3d1; }
