@@ -1,6 +1,6 @@
 # Audit limitations — fundamental constraints on transcript fidelity
 
-**Last updated:** 2026-05-26 (Pass 9 LoC-verification rescore)
+**Last updated:** 2026-05-30 (Pass 10 recalibration; supersedes the Pass 9 tiers, see the Pass 10 section below)
 **Scope:** All 136 entries in `transcripts/corrected/*/`
 **Companion documents:** [`AUDIT_TRAIL.md`](AUDIT_TRAIL.md), [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md), [`CLEANED_TRANSCRIPTS_REVIEW.md`](CLEANED_TRANSCRIPTS_REVIEW.md), [`pass9_rescore_summary.md`](pass9_rescore_summary.md)
 
@@ -9,6 +9,38 @@
 The Civil Rights History Project corpus has been audited across nine passes — eight of which fixed correctable errors, and one of which (Pass 8) cross-referenced our work against the Library of Congress's published transcripts. After all nine passes, 42 of 136 entries still carry residual uncertainty markers (29 `medium` and 12 `not-auditable`, with 1 entry — Robert McClary #109 — flagged categorically un-auditable due to severe Whisper degradation, plus 1 entry — Jennifer Lawson #59 — flagged categorically un-auditable due to mid-sentence audio truncation). This document explains what those residual markers reflect, why even the Library of Congress's professional transcribers encountered the same limits on the same source material, and what categorical issues no further audit work can resolve.
 
 The intellectual move this document makes: **the residual uncertainty is honest, not a project failure**. AI is not the bottleneck. The audio recordings themselves have limits — mid-sentence cutoffs, severe degradation, untranscribable speech — and those limits propagate to any transcript derived from them, whether produced by Whisper, by OpenAI's tuning loop, or by LoC's professional transcribers. The audit substrate's job is to identify and label those limits faithfully, not to paper over them.
+
+---
+
+## Pass 10 recalibration (2026-05-30): scoring current fidelity, not audit-process history
+
+**This section supersedes the v9 tier assignments and distribution recorded further down.** The per-entry v9 inventory below is preserved as the historical pre-Pass-10 snapshot.
+
+The Pass 1-9 inferential-uncertainty score was dominated, for clean entries, by `low_confidence_residual_ratio` = pending / (applied + pending): the fraction of Pass 1-4 correction rows the audit tagged "medium/low confidence" at the moment it proposed them. That measures how unsure the audit was about its own proposed edits mid-process, not whether the final text is correct. Pass 8's line-by-line Library of Congress verification, the strongest evidence in the pipeline, was credited only as a 0.10-capped nudge, and resolved cross-contamination penalties were kept on permanently. The result was a corpus floored at `low` with an effectively unreachable `high` tier (1 of 136), even though most entries had been audited nine passes and cross-referenced against LoC. That is its own miscalibration: it understates verified fidelity as badly as an over-confident model would overstate it.
+
+Pass 10 recomputes the score to reflect current transcript fidelity:
+
+- `low_confidence_residual_ratio` is scaled by `(1 - RESID_RETIRE * loc_cov)`, with `RESID_RETIRE = 0.5`. LoC verification is the adjudication those proposed-edit residuals were waiting for; where LoC confirmed the text, half the residual doubt is retired at full match. It is deliberately not erased: a high-level `loc_match_score` of 1.0 still leaves hundreds of unresolved LoC divergences per entry (`loc_healing.unresolved_count`), so the residual is discounted, not zeroed.
+- `cross_contamination_penalty` decays to 10% (`XCONT_DECAY`): the items are resolved (`cross_contamination_audit.json`); only a faint "was-a-hotspot" memory remains.
+- `adversarial_flag_density` is partially retired by LoC coverage (`ADV_RETIRE = 0.5`).
+- `base` / `truncation_penalty` / `degradation_penalty` are kept verbatim. These are real source-audio and coverage limits, not process history.
+
+Genuine categorical blocks stay flagged. Robert McClary #109 (severe Whisper degradation) stays `not-auditable` on score alone; Jennifer Lawson #59 (mid-sentence audio truncation) is explicitly pinned to `not-auditable` so residual decay cannot float her up, matching sections 1 and 2 above. The honest core holds: entries whose only problem was audit-process noise rise; entries with real audio limits stay flagged.
+
+Transcript-fidelity tier is now decoupled from AI-summary readiness. The former `publication-block` cohort carried that tier because of residual and cross-contamination terms, not a summary-quality signal the formula ever measured. AI-summary publication-readiness is gated separately by the dual-scorer 90/90 plus citation auditor in `Metadata Generation System/processor/` and tracked in `OPEN_PROBLEMS.md` Problem 8; it is not a property of the transcript and no longer rides on the transcript tier.
+
+### Pass 10 tier distribution
+
+| Tier | v9 | v10 | Meaning (transcript fidelity) |
+|---|---:|---:|---|
+| `high` | 1 | 6 | LoC-verified; publication-ready as-is |
+| `medium` | 29 | 87 | Audited and LoC-cross-referenced; publication-eligible with caveat |
+| `low` | 67 | 32 | Audited; adversarial-ensemble review recommended |
+| `publication-block` | 18 | 0 | Retired from the transcript axis; see the summary-gate note above |
+| `not-auditable` | 12 | 2 | Categorical source-audio limit (McClary, Lawson) |
+| `ingestion-only` | 9 | 9 | 2026-05-25 batch; full audit cascade not yet applied |
+
+Full per-entry v9 to v10 transition: [`pass10_rescore_summary.md`](pass10_rescore_summary.md). Recompute with `python transcripts/pass10_rescore.py` (idempotent; `--apply` to write; knobs `--resid-retire` / `--xcont-decay` / `--adv-retire`).
 
 ---
 
@@ -103,7 +135,9 @@ Full per-entry tier transition table: [`pass9_rescore_summary.md`](pass9_rescore
 
 ## The 5-tier audit vocabulary
 
-After Pass 9 the corpus distributes as:
+> **Historical (pre-Pass-10 / v9) snapshot.** The distribution and per-entry inventory in this and the following sections reflect the Pass 9 scoring. For the current tier assignments see the Pass 10 recalibration section near the top of this document. The vocabulary itself (the tier names and score bands) is unchanged by Pass 10; only the per-entry scores moved.
+
+After Pass 9 the corpus distributed as:
 
 | Tier | Count | Score range | Meaning |
 |---|---:|---|---|

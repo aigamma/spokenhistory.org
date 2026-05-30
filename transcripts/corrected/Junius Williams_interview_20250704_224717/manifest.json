@@ -847,18 +847,17 @@
   },
   "known_issues": [],
   "inferential_uncertainty": {
-    "score": 0.513,
-    "confidence_tier": "publication-block",
+    "score": 0.3151,
+    "confidence_tier": "low",
     "components": {
       "base": 0.0,
       "truncation_penalty": 0.0125,
       "degradation_penalty": 0.0,
-      "low_confidence_residual_ratio": 0.425,
-      "adversarial_flag_density": 0.125,
-      "cross_contamination_penalty": 0.0,
-      "loc_verification_credit": -0.0495
+      "low_confidence_residual_ratio": 0.2338,
+      "adversarial_flag_density": 0.0688,
+      "cross_contamination_penalty": 0.0
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "formula_reference": "transcripts/pass10_rescore.py (LoC-verification retires confirmed residuals; resolved-penalty decay; 2026-05-30)",
     "previous_score_v8": 0.5625,
     "previous_tier_v8": "publication-block",
     "pass9_metadata": {
@@ -869,6 +868,19 @@
       "loc_apply_failure_count": 0,
       "credit_applied": 0.0495,
       "tier_changed": false
+    },
+    "previous_score_v9": 0.513,
+    "previous_tier_v9": "publication-block",
+    "pass10_metadata": {
+      "applied_date": "2026-05-30",
+      "loc_coverage": 0.9,
+      "resid_retire": 0.5,
+      "xcont_decay": 0.1,
+      "adv_retire": 0.5,
+      "residual_before": 0.425,
+      "residual_after": 0.2338,
+      "categorical_pin_reason": null,
+      "tier_changed": true
     }
   },
   "adversarial_review_flag_count": 10,

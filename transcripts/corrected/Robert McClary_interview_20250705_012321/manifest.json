@@ -309,18 +309,17 @@
     "severe-whisper-degradation"
   ],
   "inferential_uncertainty": {
-    "score": 0.979,
+    "score": 1.0,
     "confidence_tier": "not-auditable",
     "components": {
       "base": 0.7,
       "truncation_penalty": 0.0,
       "degradation_penalty": 0.325,
-      "low_confidence_residual_ratio": 0.3684,
-      "adversarial_flag_density": 0.4211,
-      "cross_contamination_penalty": 0.0,
-      "loc_verification_credit": -0.021
+      "low_confidence_residual_ratio": 0.1842,
+      "adversarial_flag_density": 0.2105,
+      "cross_contamination_penalty": 0.0
     },
-    "formula_reference": "transcripts/AUDIT_TRAIL.md::Inferential scoring framework (Pass 9 LoC-verification credit, 2026-05-26)",
+    "formula_reference": "transcripts/pass10_rescore.py (LoC-verification retires confirmed residuals; resolved-penalty decay; 2026-05-30)",
     "previous_score_v8": 1.0,
     "previous_tier_v8": "not-auditable",
     "pass9_metadata": {
@@ -330,6 +329,19 @@
       "loc_healed_count": 1,
       "loc_apply_failure_count": 0,
       "credit_applied": 0.021,
+      "tier_changed": false
+    },
+    "previous_score_v9": 0.979,
+    "previous_tier_v9": "not-auditable",
+    "pass10_metadata": {
+      "applied_date": "2026-05-30",
+      "loc_coverage": 1.0,
+      "resid_retire": 0.5,
+      "xcont_decay": 0.1,
+      "adv_retire": 0.5,
+      "residual_before": 0.3684,
+      "residual_after": 0.1842,
+      "categorical_pin_reason": "severe Whisper degradation (D-flag); LoC transcript carries the same [inaudible] gaps",
       "tier_changed": false
     }
   },
