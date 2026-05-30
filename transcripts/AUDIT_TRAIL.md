@@ -34,6 +34,23 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+### 2026-05-30 ingestion: 4 new CRHP entries via the streamlined LoC-healing pipeline
+
+Four entries that had been committed to `raw/` but never run through correction were ingested via `transcripts/ingestion/ingest_new_transcript.py` (bootstrap raw/ -> corrected/, resolve LoC item) followed by `heal_one_entry.py heal_one` (Pass 8 conservative-first-pass discipline). All four matched their LoC item at score 1.0, and all four are confirmed CRHP interviews (the LoC `contributor` list includes "civil rights history project (u.s.)").
+
+| Subject | LoC item | Source | Our words | LoC words | Coverage | Heals | Preserved | SME-review |
+|---|---|---|---|---|---|---|---|---|
+| Louise Broadway | [2015669167](https://www.loc.gov/item/2015669167/) | XML | 4,775 | 4,869 | 98% (complete) | 8 | 107 | 392 |
+| Lucius Holloway, Sr., and Emma Kate Holloway (joint) | [2015669161](https://www.loc.gov/item/2015669161/) | XML | 4,873 | 4,929 | 99% (complete) | 7 | 109 | 453 |
+| Luis Zapata | [2015669194](https://www.loc.gov/item/2015669194/) | XML | 19,564 | 19,616 | 99.7% (complete) | 52 | 547 | 1,157 |
+| Glenda Funchess | [2016655407](https://www.loc.gov/item/2016655407/) | PDF fallback | 3,688 | 13,632 | ~27% (PARTIAL EXCERPT) | 12 | 114 | 334 |
+
+**Method notes.** The ingest script's inline heal step returned -1 on the single-entry index shape (its PDF-fallback hand-off expects a batch index), so the heal was run standalone with `heal_one_entry.py heal_one`, which succeeded for all four. Funchess has no LoC TEI2 XML; `resolve_pdf_fallback.py --only Funchess` extracted the 54-page / 14,447-word PDF transcript. Cue-count parity (SRT == VTT) verified for all four. `scripts/apply_corrections.py --dry-run` stays idempotent (the four new entries are skipped, 127/131, because their heals live in `corrected/` directly and are not yet backported to the master MD). The high SME-review counts are normal Pass 8 behavior: two independent transcriptions of a multi-hour interview diverge in hundreds of word-level spots that the conservative discipline defers to SME review rather than auto-applying.
+
+**Key finding, Glenda Funchess is a partial excerpt.** Our Whisper transcript spans only 00:00:00 to 00:23:38 (330 cues, 3,688 words, identical across .srt / .txt / .json), roughly the first quarter of the full LoC oral history. The student's source was evidently a ~23-minute YouTube excerpt, not the complete interview. The 12 conservative heals are valid for the overlapping portion; the unresolved-divergence count is dominated by LoC content the excerpt never reaches, not by transcription error. The other three entries are complete (98 to 99.7% word-count parity with LoC) and meet the same fidelity bar as the existing corpus.
+
+**Status: healed on-disk, NOT yet integrated into the live site.** The `corrected/` transcripts, `divergences/` catalogs, `loc_cache/` LoC sources, and `pass8_stage/` artifacts are committed. Live integration (Pass 10 rescore for tiers, `constellation.json` points, Pinecone transcript vectors, interview-index registration, per-person pages for the four new interviewees) is held pending a decision on (a) whether the Funchess excerpt should go live labeled as a partial, and (b) the scope of full onboarding. The stage files carry script-assigned placeholder entry numbers (`entry_000_*`, `entry_033_*`) to be renumbered when the entries are folded into the master MD.
+
 ### Session 9 — 2026-05-26: Pass 9 LoC-verification rescore + AUDIT_LIMITATIONS.md
 
 **End-of-session summary:** Pass 9 retired the pre-Pass-8 inferential-uncertainty scores. The original formula (Pass 1-7 audit signals) was authored before Pass 8 existed; it did not credit the Library of Congress's authoritative token-level confirmations. Pass 9 adds a single new component to the formula — `loc_verification_credit`, computed from Pass 8 outcomes — and re-tiers all 136 entries accordingly. 22 entries crossed tier boundaries. Pass 9 also produced two governance documents: `transcripts/AUDIT_LIMITATIONS.md` (categorical-limits report explaining the residual uncertainty as honest acknowledgment of audio-source constraints LoC also encountered) and `transcripts/pass9_rescore_summary.md` (the per-entry tier-transition table).

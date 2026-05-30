@@ -1,0 +1,42 @@
+{
+  "generated": "2026-05-30",
+  "script_version": "ingestion-1.0",
+  "raw_dir": "Lucius Holloway, Sr., and Emma Kate Holloway_interview_20250704_233000",
+  "entry_subject": "Lucius Holloway, Sr., and Emma Kate Holloway",
+  "ingestion": {
+    "ingestion_date": "2026-05-30",
+    "source": "transcripts/ingestion/ingest_new_transcript.py",
+    "notes": "Initial bootstrap from raw/. Heals applied via Pass 8 LoC architecture."
+  },
+  "applied_corrections": [],
+  "pending_context": [],
+  "skipped_rows": [],
+  "files_processed": [
+    "Lucius Holloway, Sr., and Emma Kate Holloway_interview_transcript_20250704_233000.srt",
+    "Lucius Holloway, Sr., and Emma Kate Holloway_interview_transcript_20250704_233000.txt",
+    "Lucius Holloway, Sr., and Emma Kate Holloway_interview_transcript_20250704_233000.vtt"
+  ],
+  "stats": {
+    "applied": 0,
+    "pending": 0,
+    "skipped": 0
+  },
+  "review_history": {
+    "correction_passes_complete": [],
+    "audit_sweeps_complete": [],
+    "pass_count_total": 1,
+    "ingestion_only": true
+  },
+  "known_issues": [],
+  "loc_healing": {
+    "applied_date": "2026-05-25",
+    "loc_item_url": "https://www.loc.gov/item/2015669161/",
+    "loc_xml_url": "https://tile.loc.gov/storage-services/service/afc/afc2010039/afc2010039_crhp0062_Holloway_transcript/afc2010039_crhp0062_Holloway_transcript.xml",
+    "loc_match_score": 1.0,
+    "divergence_count": 569,
+    "healed_count": 7,
+    "preserved_verbatim_count": 109,
+    "unresolved_count": 453,
+    "apply_failure_count": 0
+  }
+}

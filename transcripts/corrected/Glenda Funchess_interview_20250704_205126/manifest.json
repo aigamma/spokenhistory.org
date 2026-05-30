@@ -1,0 +1,42 @@
+{
+  "generated": "2026-05-30",
+  "script_version": "ingestion-1.0",
+  "raw_dir": "Glenda Funchess_interview_20250704_205126",
+  "entry_subject": "Glenda Funchess",
+  "ingestion": {
+    "ingestion_date": "2026-05-30",
+    "source": "transcripts/ingestion/ingest_new_transcript.py",
+    "notes": "Initial bootstrap from raw/. Heals applied via Pass 8 LoC architecture."
+  },
+  "applied_corrections": [],
+  "pending_context": [],
+  "skipped_rows": [],
+  "files_processed": [
+    "Glenda Funchess_interview_transcript_20250704_205126.srt",
+    "Glenda Funchess_interview_transcript_20250704_205126.txt",
+    "Glenda Funchess_interview_transcript_20250704_205126.vtt"
+  ],
+  "stats": {
+    "applied": 0,
+    "pending": 0,
+    "skipped": 0
+  },
+  "review_history": {
+    "correction_passes_complete": [],
+    "audit_sweeps_complete": [],
+    "pass_count_total": 1,
+    "ingestion_only": true
+  },
+  "known_issues": [],
+  "loc_healing": {
+    "applied_date": "2026-05-25",
+    "loc_item_url": "https://www.loc.gov/item/2016655407/",
+    "loc_xml_url": null,
+    "loc_match_score": 1.0,
+    "divergence_count": 460,
+    "healed_count": 12,
+    "preserved_verbatim_count": 114,
+    "unresolved_count": 334,
+    "apply_failure_count": 0
+  }
+}
