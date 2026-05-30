@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Visualizations from './pages/Visualizations'
 import Login from './pages/Login'
 import PlaylistBuilder from './pages/PlaylistBuilder'
+import StaticPlaylist from './pages/StaticPlaylist'
 import PlaylistEditor from './pages/PlaylistEditor'
 import SearchPage from './pages/SearchPage'
 import InterviewPlayer from './pages/InterviewPlayer'
@@ -47,10 +48,17 @@ export default function App() {
         </ProtectedRoute>
       } />
 
+      {/* /playlist-builder now renders the static, /rag/-backed
+          StaticPlaylist (Dustin, 2026-05-30). The old PlaylistBuilder read
+          from Firestore, which holds no content, so every "explore X"
+          playlist link on Home and elsewhere was dead. StaticPlaylist
+          filters /rag/playlist_index.json by ?keywords / ?topic / ?entry
+          and plays real, time-anchored clips. PlaylistBuilder is retained
+          in the tree for reference but no longer routed. */}
       <Route path="/playlist-builder" element={
         <ProtectedRoute>
           <Layout>
-            <PlaylistBuilder />
+            <StaticPlaylist />
           </Layout>
         </ProtectedRoute>
       } />

@@ -10,6 +10,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Play } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 
@@ -65,7 +66,12 @@ export default function TopicGlossary() {
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            Thirty thematic groupings derived from the embedding space, k-means partition of all 136 interview centroids. Each topic gathers voices whose testimony rhymes in the 1024-dimensional space, even when they never met. Click a topic to see its members.
+            A guide to the major stories and recurring themes across the collection:
+            childhood under segregation, family and community, the movement's turning
+            points, local organizing, faith, violence, and memory. Each topic gathers
+            interviewees whose testimony returns to the same subjects, even when they
+            never met. Open one to read what connects it and to play a stream of clips
+            from the voices inside it.
           </p>
         </header>
 
@@ -124,6 +130,20 @@ export default function TopicGlossary() {
                           className="font-mono text-civil-red-body hover:underline"
                         >
                           &ldquo;{c.starter_query}&rdquo;
+                        </Link>
+                      </p>
+                    )}
+                    {/* Each topic leads to a playlist (Dustin, 2026-05-30):
+                        play a stream of clips from every interview in the
+                        topic, via the static playlist on member entry numbers. */}
+                    {(c.members || []).some((m) => m.entry_number != null) && (
+                      <p className="mb-3">
+                        <Link
+                          to={`/playlist-builder?entries=${c.members.map((m) => m.entry_number).filter((n) => n != null).join(',')}&label=${encodeURIComponent(c.name)}`}
+                          className="inline-flex items-center gap-1.5 min-h-11 px-4 py-2 text-sm rounded-md bg-civil-red-strong text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                        >
+                          <Play className="w-4 h-4" aria-hidden="true" />
+                          Play clips from these {c.members.length} interviews
                         </Link>
                       </p>
                     )}
