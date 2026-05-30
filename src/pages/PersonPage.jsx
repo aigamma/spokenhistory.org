@@ -293,98 +293,6 @@ function renderBioWithCitationRefs(text, sources, matcher) {
   return parts;
 }
 
-// Interleaved narrative body. When a page carries an ordered `narrative`
-// array, prose discussion and snippet pull-quotes alternate down the page
-// instead of the quotes being dumped in one block ahead of the prose. Each
-// block is one of:
-//
-//   { type: 'prose',   text, heading? }   one discussion paragraph; `heading`
-//                                          is an optional small mono label.
-//   { type: 'snippet', ref }              renders interview_snippets[ref] as
-//                                          a SnippetCard (the verbatim quote +
-//                                          its bounded "Hear this in context"
-//                                          clip). The quotes stay the single
-//                                          verbatim-gated source of truth; the
-//                                          narrative only references them.
-//   { type: 'image',   ref }              renders bodyGallery[ref] as a
-//                                          centered figure in the flow.
-//
-// Prose runs through the same citation-ref + name-hyperlink renderer as the
-// bio, so [src: N] anchors and in-text figure names keep working. Any snippet
-// or gallery image the narrative does not reference still renders in a tail
-// after the woven body, so a migration mistake never silently drops a
-// verbatim quote or an image.
-function NarrativeBody({ narrative, person, peopleIndex, currentSlug, nameMatcher, bodyGallery }) {
-  const snippets = Array.isArray(person.interview_snippets) ? person.interview_snippets : [];
-  const usedSnippets = new Set();
-  const usedImages = new Set();
-
-  const blocks = narrative.map((block, i) => {
-    if (!block || !block.type) return null;
-    if (block.type === 'prose') {
-      if (!block.text) return null;
-      return (
-        <section key={`n-${i}`} className="mb-7">
-          {block.heading && (
-            <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
-              {block.heading}
-            </p>
-          )}
-          <p className="text-stone-800 text-base leading-relaxed" style={{ fontFamily: 'Source Serif 4, serif' }}>
-            {renderBioWithCitationRefs(block.text, person.sources, nameMatcher)}
-          </p>
-        </section>
-      );
-    }
-    if (block.type === 'snippet') {
-      const sn = snippets[block.ref];
-      if (!sn) return null;
-      usedSnippets.add(block.ref);
-      return (
-        <SnippetCard
-          key={`n-${i}`}
-          snippet={sn}
-          subjectName={person.display_name}
-          peopleIndex={peopleIndex}
-          currentSlug={currentSlug}
-        />
-      );
-    }
-    if (block.type === 'image') {
-      const img = bodyGallery[block.ref];
-      if (!img) return null;
-      usedImages.add(block.ref);
-      return <GalleryFigure key={`n-${i}`} image={img} />;
-    }
-    return null;
-  });
-
-  const leftoverSnippets = snippets
-    .map((sn, idx) => ({ sn, idx }))
-    .filter(({ idx }) => !usedSnippets.has(idx));
-  const leftoverImages = bodyGallery
-    .map((img, idx) => ({ img, idx }))
-    .filter(({ idx }) => !usedImages.has(idx));
-
-  return (
-    <>
-      {blocks}
-      {leftoverSnippets.map(({ sn, idx }) => (
-        <SnippetCard
-          key={`tail-sn-${idx}`}
-          snippet={sn}
-          subjectName={person.display_name}
-          peopleIndex={peopleIndex}
-          currentSlug={currentSlug}
-        />
-      ))}
-      {leftoverImages.map(({ img, idx }) => (
-        <GalleryFigure key={`tail-img-${idx}`} image={img} />
-      ))}
-    </>
-  );
-}
-
 export default function PersonPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -732,23 +640,6 @@ export default function PersonPage() {
             </section>
           )}
 
-          {/* Body. When a `narrative` array is present, prose discussion
-              and snippet pull-quotes are interleaved (the substantive-
-              discussion layout the catalog is moving to). When it is absent,
-              the page falls back to the earlier stacked layout: all snippets
-              in one Voices block, then the bio / movement / legacy prose.
-              The AI's-reading headline above renders in both cases. */}
-          {Array.isArray(person.narrative) && person.narrative.length > 0 ? (
-            <NarrativeBody
-              narrative={person.narrative}
-              person={person}
-              peopleIndex={peopleIndex}
-              currentSlug={slug}
-              nameMatcher={nameMatcher}
-              bodyGallery={bodyGallery}
-            />
-          ) : (
-            <>
           {/* Voices from the Archive. The page's primary substance:
               direct oral-history quotes pulled verbatim from the
               LoC-healed transcripts and rendered as tiered pull-quote
@@ -842,8 +733,6 @@ export default function PersonPage() {
           {bodyGallery.slice(2).map((img, i) => (
             <GalleryFigure key={`gallery-${i + 2}`} image={img} />
           ))}
-            </>
-          )}
         </div>
 
         {/* Cross-link manifest. Only renders for interviewees (need
