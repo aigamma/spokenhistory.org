@@ -74,15 +74,19 @@ const AXES = [
     },
   },
   {
+    // Northern is pole_a deliberately: pole_a renders at the top of the Y axis
+    // (and the left of the X axis) in ConceptSpectrum, and the geographic
+    // convention is north-up. Do not swap back. Slug stays 'southern-northern'
+    // so existing deep-links and the SHORT_LABELS key keep resolving.
     slug: 'southern-northern',
-    title: 'Southern struggle ↔ Northern struggle',
+    title: 'Northern struggle ↔ Southern struggle',
     pole_a: {
-      label: 'Southern struggle',
-      anchor: 'The southern civil rights struggle: Jim Crow segregation laws, sharecropper economy, sheriffs and Klan, voter registration in the rural Black Belt, the Mississippi Delta, Alabama Black Belt, segregated schools and public accommodations, lynching and racial terror.',
-    },
-    pole_b: {
       label: 'Northern struggle',
       anchor: 'The northern civil rights struggle: housing segregation, de facto school segregation, police brutality in northern cities, Chicago campaign 1966, Watts uprising 1965, the Black Power turn, urban unemployment, the limits of southern-strategy organizing in northern contexts.',
+    },
+    pole_b: {
+      label: 'Southern struggle',
+      anchor: 'The southern civil rights struggle: Jim Crow segregation laws, sharecropper economy, sheriffs and Klan, voter registration in the rural Black Belt, the Mississippi Delta, Alabama Black Belt, segregated schools and public accommodations, lynching and racial terror.',
     },
   },
   {

@@ -119,7 +119,7 @@ Axes:
 - Nonviolence as theology ↔ Armed self-defense
 - Sacred framing ↔ Secular framing
 - Tactical pragmatism ↔ Strategic vision
-- Southern struggle ↔ Northern struggle
+- Northern struggle ↔ Southern struggle
 - Individual conscience ↔ Collective discipline
 
 Data: `public/rag/summaries/concept_axes.json`. Math: `axis_vector = normalize(embed(pole_A) - embed(pole_B))`; position = `dot(centroid, axis_vector)`. Drill-down: `/retrieve` with `query = pole.anchor`, `filter = { entry_number: $eq: clicked_dot }`.

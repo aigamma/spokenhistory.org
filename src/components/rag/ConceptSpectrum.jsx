@@ -48,7 +48,7 @@ const SHORT_LABELS = {
   'nonviolence-self-defense': 'Nonviolence ↔ Self-Defense',
   'sacred-secular': 'Sacred ↔ Secular',
   'tactical-strategic': 'Tactical ↔ Strategic',
-  'southern-northern': 'Southern ↔ Northern',
+  'southern-northern': 'Northern ↔ Southern',
   'individual-collective': 'Individual ↔ Collective',
 };
 function shortLabel(ax) {
