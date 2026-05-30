@@ -28,7 +28,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, Play, ChevronUp, AlertTriangle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
+import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_FILL, SNIPPET_BORDER, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_FILL, SNIPPET_PROBLEM_BORDER, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 
@@ -137,6 +137,8 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   // issues, the genuine "really bad context" case.
   const isProblem = SNIPPET_PROBLEM_TIERS.has(snippet.audit_tier);
   const accent = isProblem ? SNIPPET_PROBLEM_ACCENT : SNIPPET_ACCENT;
+  const fill = isProblem ? SNIPPET_PROBLEM_FILL : SNIPPET_FILL;
+  const cardBorder = isProblem ? SNIPPET_PROBLEM_BORDER : SNIPPET_BORDER;
   const isAbout = snippet.relation === 'about';
   // Link the speaker to their own catalog page when one exists and it
   // is not this page. An about-card's speaker (another interviewee
@@ -148,8 +150,8 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   );
   return (
     <figure
-      className={`my-7 rounded-xl border ${isProblem ? 'border-red-200 bg-red-50' : 'border-stone-200 bg-white'}`}
-      style={{ borderLeftWidth: '6px', borderLeftColor: accent }}
+      className="my-7 rounded-xl border"
+      style={{ borderLeftWidth: '6px', borderLeftColor: accent, backgroundColor: fill, borderColor: cardBorder }}
     >
       <div className="p-5 sm:p-6">
         {snippet.lead_in && (

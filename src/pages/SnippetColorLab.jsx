@@ -32,15 +32,30 @@ const SNIP = {
   timestamp: '00:50:10',
 };
 
-// One card. accent colors the 6px left bar and the quotation mark only,
-// exactly as the production SnippetCard does; everything else is brand
-// red + sky, held constant so the accent is the only variable. surface
-// switches the card fill / text colors between the cream design and the
-// proposed dark theme. flag renders the red publication-block note.
+// Blend `hex` onto `base` with weight t (0..1) toward hex, returning a
+// solid hex. Used to tint each card's fill and border with its own
+// accent so the whole card reads as one color, not just the quote mark.
+function mix(hex, base, t) {
+  const h = parseInt(hex.slice(1), 16);
+  const b = parseInt(base.slice(1), 16);
+  const hr = (h >> 16) & 255, hg = (h >> 8) & 255, hb = h & 255;
+  const br = (b >> 16) & 255, bg = (b >> 8) & 255, bb = b & 255;
+  const r = Math.round(hr * t + br * (1 - t));
+  const g = Math.round(hg * t + bg * (1 - t));
+  const bl = Math.round(hb * t + bb * (1 - t));
+  return '#' + [r, g, bl].map((x) => x.toString(16).padStart(2, '0')).join('');
+}
+
+// One card. accent colors the 6px left bar and the quotation mark, AND
+// tints the card fill + border, so the whole card reads as one color
+// (the fix for "only the red one stands out"). The links stay brand red
+// + sky, held constant so the accent is the only variable. surface
+// switches the base the tint is blended onto, cream-white vs dark.
 function LabCard({ accent, surface, flag }) {
   const dark = surface === 'dark';
-  const cardBg = dark ? (flag ? 'rgba(127,29,29,0.18)' : '#1c1917') : flag ? '#fef2f2' : '#ffffff';
-  const borderColor = dark ? (flag ? '#7f1d1d' : '#292524') : flag ? '#fecaca' : '#e7e5e4';
+  const base = dark ? '#1c1917' : '#ffffff';
+  const cardBg = mix(accent, base, dark ? 0.22 : 0.11);
+  const borderColor = mix(accent, base, dark ? 0.45 : 0.34);
   const hearColor = dark ? '#f87171' : '#B23E2F';
   const locColor = dark ? '#7dd3fc' : '#075985';
   return (
