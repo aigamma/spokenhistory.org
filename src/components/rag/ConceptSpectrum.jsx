@@ -692,14 +692,33 @@ function Scatter2D({ xAxis, yAxis, profilesById, hover, setHover, selectedEntry,
   };
   const clearHover = () => setHover(null);
 
+  // The tooltip is a fixed-position portal. If the pointer ever leaves a
+  // dot without the per-dot onMouseLeave firing (fast exit off the chart
+  // edge, a re-sort moving the node, a wheel scroll), it would otherwise
+  // hang on screen and appear to follow the page. Clear it on any scroll
+  // or window blur, in addition to the container's onMouseLeave below.
+  useEffect(() => {
+    const clear = () => setHover(null);
+    window.addEventListener('scroll', clear, { passive: true, capture: true });
+    window.addEventListener('blur', clear);
+    return () => {
+      window.removeEventListener('scroll', clear, { capture: true });
+      window.removeEventListener('blur', clear);
+    };
+  }, [setHover]);
+
   return (
-    <div className="rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-2">
+    <div
+      className="rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-2"
+      onMouseLeave={clearHover}
+    >
       <svg
         width="100%"
         viewBox={`0 0 ${W} ${H}`}
         role="img"
         aria-label={`Two-axis concept scatter. Horizontal axis: ${xAxis.title}. Vertical axis: ${yAxis.title}. 136 interviewees plotted; click a dot to drill into that interview's passages.`}
         style={{ display: 'block', width: '100%', height: 'auto' }}
+        onMouseLeave={clearHover}
       >
         {/* Plot-area frame separates the dot field from the label margins. */}
         <rect x={PAD_L} y={PAD_T} width={innerW} height={innerH} fill="none" stroke={frameStroke} strokeWidth={1} />
