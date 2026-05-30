@@ -86,7 +86,7 @@ export default function FamousNames() {
                     'w-full text-left p-4 rounded-lg border-2 transition-all ' +
                     (isSelected
                       ? 'border-red-700 dark:border-red-400 bg-white shadow-md'
-                      : 'border-stone-200 bg-white hover:border-stone-400 dark:hover:border-stone-600 hover:shadow-sm')
+                      : 'border-stone-200 bg-white hover:border-stone-400 dark:hover:border-zinc-600 hover:shadow-sm')
                   }
                 >
                   <div className="flex items-start justify-between gap-2 mb-1">

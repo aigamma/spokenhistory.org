@@ -77,13 +77,13 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-stone-900 py-12 px-6 font-sans">
-      <div className="max-w-md w-full bg-white dark:bg-stone-800 p-8 rounded-xl shadow-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-zinc-900 py-12 px-6 font-sans">
+      <div className="max-w-md w-full bg-white dark:bg-zinc-800 p-8 rounded-xl shadow-md">
         <div className="mb-8">
-          <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-stone-100 mb-4">
+          <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-zinc-100 mb-4">
             Sign in to your account
           </h2>
-          <p className="text-sm text-center text-gray-500 dark:text-stone-400 mt-2">
+          <p className="text-sm text-center text-gray-500 dark:text-zinc-400 mt-2">
             Enter your credentials to access your account
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function Login() {
           <div className="mb-6">
             <label
               htmlFor="identifier"
-              className="block text-sm font-medium text-gray-700 dark:text-stone-300 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-zinc-300 mb-2"
             >
               Username or email
             </label>
@@ -119,7 +119,7 @@ export default function Login() {
               required
               value={identifier}
               onChange={(e) => setIdentifier(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-stone-700 rounded-lg text-sm text-gray-900 dark:text-stone-100 bg-white dark:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-zinc-700 rounded-lg text-sm text-gray-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               placeholder="username"
               autoCapitalize="none"
               autoCorrect="off"
@@ -131,7 +131,7 @@ export default function Login() {
             <div className="flex justify-between items-center mb-2">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 dark:text-stone-300"
+                className="block text-sm font-medium text-gray-700 dark:text-zinc-300"
               >
                 Password
               </label>
@@ -150,7 +150,7 @@ export default function Login() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-stone-700 rounded-lg text-sm text-gray-900 dark:text-stone-100 bg-white dark:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-zinc-700 rounded-lg text-sm text-gray-900 dark:text-zinc-100 bg-white dark:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               placeholder="••••••••"
             />
           </div>
@@ -185,7 +185,7 @@ export default function Login() {
           </div>
           
           <div className="mt-6 text-center">
-            <p className="text-sm text-gray-500 dark:text-stone-400">
+            <p className="text-sm text-gray-500 dark:text-zinc-400">
               Team members: use the credentials provided by your project lead.
             </p>
           </div>

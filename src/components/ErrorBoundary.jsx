@@ -51,11 +51,11 @@ class ErrorBoundary extends React.Component {
       const errorMessage = this.state.error?.message || 'An unexpected error occurred.';
       return (
         <div
-          className="min-h-screen flex items-center justify-center p-4 font-body bg-[#EBEAE9] dark:bg-stone-900"
+          className="min-h-screen flex items-center justify-center p-4 font-body bg-[#EBEAE9] dark:bg-zinc-900"
           role="alert"
           aria-live="assertive"
         >
-          <div className="max-w-md w-full bg-white dark:bg-stone-800 border-2 border-black dark:border-stone-700 p-6 shadow-xl">
+          <div className="max-w-md w-full bg-white dark:bg-zinc-800 border-2 border-black dark:border-zinc-700 p-6 shadow-xl">
             <h1 className="text-2xl font-bold mb-3 text-stone-900" style={{ fontFamily: 'Inter, sans-serif' }}>
               Something went wrong
             </h1>
@@ -64,7 +64,7 @@ class ErrorBoundary extends React.Component {
             </p>
             <details className="mb-5 text-sm text-stone-700">
               <summary className="cursor-pointer font-medium mb-1">Technical details</summary>
-              <code className="block whitespace-pre-wrap break-words mt-2 p-2 bg-gray-100 dark:bg-stone-800 rounded text-xs">
+              <code className="block whitespace-pre-wrap break-words mt-2 p-2 bg-gray-100 dark:bg-zinc-800 rounded text-xs">
                 {errorMessage}
               </code>
             </details>

@@ -347,7 +347,7 @@ function DrillDown({ selected, axis, results, loading, error, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-stone-800 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+            className="inline-flex items-center min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-zinc-800 border border-stone-300 rounded hover:border-stone-500 transition-colors"
             aria-label="Close drill-down"
           >
             close ✕
@@ -470,8 +470,8 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
       <div className="rounded-lg border border-stone-200 bg-white overflow-x-auto">
         {/* TODO(dark-mode): SVG interior fills are hardcoded for light theme and
             need dark variants read from a theme flag: the axis line ('#a8a29e'),
-            the pole labels (fill '#1c1917', which go dark-on-dark and disappear),
-            and the search-match dot labels (fill '#1c1917' with a 'rgba(255,255,255,0.95)'
+            the pole labels (fill '#18181b', which go dark-on-dark and disappear),
+            and the search-match dot labels (fill '#18181b' with a 'rgba(255,255,255,0.95)'
             stroke halo). The SVG element background itself inverts via the bg-white
             container above; dot fills come from TIER_COLORS and are already
             theme-safe. */}
@@ -496,10 +496,10 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
           {/* Pole labels at endpoints, lifted high above the scatter so
               they read as the axis extremes and never share vertical
               space with the dot row. */}
-          <text x={PAD_X} y={POLE_Y} fontSize="14" fill={isDark ? '#f5f5f4' : '#1c1917'} fontWeight="500" fontFamily="Inter, sans-serif">
+          <text x={PAD_X} y={POLE_Y} fontSize="14" fill={isDark ? '#f5f5f4' : '#18181b'} fontWeight="500" fontFamily="Inter, sans-serif">
             {axis.pole_a.label}
           </text>
-          <text x={W - PAD_X} y={POLE_Y} fontSize="14" fill={isDark ? '#f5f5f4' : '#1c1917'} fontWeight="500" fontFamily="Inter, sans-serif" textAnchor="end">
+          <text x={W - PAD_X} y={POLE_Y} fontSize="14" fill={isDark ? '#f5f5f4' : '#18181b'} fontWeight="500" fontFamily="Inter, sans-serif" textAnchor="end">
             {axis.pole_b.label}
           </text>
 
@@ -532,7 +532,7 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
                         ? 0.18
                         : 0.78
                   }
-                  stroke={isSelected ? '#1c1917' : isHover ? '#1c1917' : 'transparent'}
+                  stroke={isSelected ? '#18181b' : isHover ? '#18181b' : 'transparent'}
                   strokeWidth={isSelected ? 2 : 1.5}
                   onMouseEnter={(e) => handleEnter(p, e)}
                   onMouseMove={(e) => handleMove(p, e)}
@@ -560,7 +560,7 @@ function Axis({ axis, hover, setHover, selectedEntry, onSelect, matched }) {
                     y={cy + 18}
                     fontSize={11}
                     fontWeight={600}
-                    fill={isDark ? '#f5f5f4' : '#1c1917'}
+                    fill={isDark ? '#f5f5f4' : '#18181b'}
                     textAnchor="middle"
                     paintOrder="stroke"
                     stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(255,255,255,0.95)'}
@@ -632,7 +632,7 @@ function CopyLinkButton() {
     <button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center gap-1 min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-stone-800 border border-stone-300 rounded hover:border-stone-500 transition-colors"
+      className="inline-flex items-center gap-1 min-h-9 px-3 py-1.5 text-xs text-stone-700 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-zinc-800 border border-stone-300 rounded hover:border-stone-500 transition-colors"
       aria-label={copied ? 'Link copied to clipboard' : 'Copy permalink to this drill-down'}
     >
       <Icon className="w-3.5 h-3.5" aria-hidden="true" />

@@ -85,14 +85,14 @@ export default function InterviewIndex() {
 
   if (error) {
     return (
-      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-stone-900">
+      <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-zinc-900">
         <p className="text-stone-700">Failed to load the index. {error}</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-900">
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
       <main id="main-content" tabIndex={-1} className="max-w-7xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
         <header className="mb-8">
           <p className="text-civil-red-body text-sm font-light font-mono mb-2">
@@ -169,7 +169,7 @@ export default function InterviewIndex() {
         <div className="mt-12">
           <Link
             to="/rag-explore"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 dark:bg-stone-700 text-white rounded-md hover:bg-stone-800 dark:hover:bg-stone-600 transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 dark:bg-zinc-700 text-white rounded-md hover:bg-stone-800 dark:hover:bg-zinc-600 transition-colors"
           >
             Explore embedding-space features →
           </Link>

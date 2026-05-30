@@ -8,7 +8,7 @@ export default function ProtectedRoute({ children }) {
   if (loading) {
     return (
       <div
-        className="flex justify-center items-center min-h-screen bg-[#EBEAE9] dark:bg-stone-900"
+        className="flex justify-center items-center min-h-screen bg-[#EBEAE9] dark:bg-zinc-900"
         role="status"
         aria-live="polite"
       >

@@ -155,19 +155,19 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
     >
       <div className="p-5 sm:p-6">
         {snippet.lead_in && (
-          <p className="text-sm text-stone-600 dark:text-stone-300 mb-3 leading-snug">{snippet.lead_in}</p>
+          <p className="text-sm text-stone-600 dark:text-zinc-300 mb-3 leading-snug">{snippet.lead_in}</p>
         )}
         <div className="flex items-start gap-3">
           <Quote className="w-7 h-7 shrink-0 mt-1" style={{ color: accent }} aria-hidden="true" />
           <blockquote
-            className="text-stone-900 dark:text-stone-100 text-lg sm:text-xl leading-relaxed"
+            className="text-stone-900 dark:text-zinc-100 text-lg sm:text-xl leading-relaxed"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
             &ldquo;{snippet.quote}&rdquo;
           </blockquote>
         </div>
         <figcaption className="mt-4 sm:pl-10 text-sm">
-          <div className="text-stone-900 dark:text-stone-100">
+          <div className="text-stone-900 dark:text-zinc-100">
             {speakerHasPage ? (
               <Link
                 to={`/person/${speakerSlug}`}
@@ -179,10 +179,10 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               <span className="font-semibold">{snippet.speaker}</span>
             )}
             {isAbout && subjectName && (
-              <span className="font-normal text-stone-500 dark:text-stone-400"> on {subjectName}</span>
+              <span className="font-normal text-stone-500 dark:text-zinc-400"> on {subjectName}</span>
             )}
           </div>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1.5 text-stone-600 dark:text-stone-400">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1.5 text-stone-600 dark:text-zinc-400">
             {snippet.timestamp && (
               <span className="inline-flex items-center gap-1 tabular-nums">
                 <Clock className="w-3.5 h-3.5" aria-hidden="true" />

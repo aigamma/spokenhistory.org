@@ -225,8 +225,8 @@ const EmmettTillImage = () => {
 
   if (imageLoading) {
     return (
-      <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-        <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+      <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+        <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
       </div>
     );
   }
@@ -238,8 +238,8 @@ const EmmettTillImage = () => {
       className="w-full h-full object-contain"
     />
   ) : (
-    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
     </div>
   );
 };
@@ -770,7 +770,7 @@ export default function Home() {
       <div
         ref={aiContentRef}
         data-feedback-section="Timeline Content"
-        className="w-full relative overflow-hidden bg-[#EBEAE9] dark:bg-stone-900"
+        className="w-full relative overflow-hidden bg-[#EBEAE9] dark:bg-zinc-900"
       >
 
       {/* Hero Section */}
@@ -781,9 +781,9 @@ export default function Home() {
             <div className="lg:w-1/2 space-y-6 lg:space-y-8">
               {/* Main Title */}
               <h1 className="leading-tight max-w-2xl">
-                <span className="text-black dark:text-stone-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']">The </span>
+                <span className="text-black dark:text-zinc-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']">The </span>
                 <span className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4']">Civil Rights Movement</span>
-                <span className="text-black dark:text-stone-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']"> narrated by the activists, artists, and change-makers who were really there.</span>
+                <span className="text-black dark:text-zinc-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']"> narrated by the activists, artists, and change-makers who were really there.</span>
               </h1>
 
               {/* Statistics */}
@@ -795,8 +795,8 @@ export default function Home() {
             {/* Hero Images */}
             <div className="lg:w-1/2 relative h-[400px] sm:h-[500px] lg:h-[550px] xl:h-[650px] w-full lg:-mt-8 lg:-ml-16 z-50">
               {imageLoading ? (
-                <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                  <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                  <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                 </div>
               ) : landingImageUrl ? (
                 <img
@@ -805,8 +805,8 @@ export default function Home() {
                   alt="Civil Rights Movement Timeline Collage"
                 />
               ) : (
-                <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                  <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                  <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                 </div>
               )}
             </div>
@@ -861,7 +861,7 @@ export default function Home() {
             
 
             {/* Brown v. Board Quote */}
-            <p className="text-black dark:text-stone-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4'] leading-relaxed">
+            <p className="text-black dark:text-zinc-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4'] leading-relaxed">
             "We conclude that, in the field of public education, the doctrine of "<em>separate but equal</em>" has no place. Separate educational facilities are <em>inherently unequal</em>. Therefore, we hold that the plaintiffs and others similarly situated for whom the actions have been brought are, by reason of the segregation complained of, deprived of the equal protection of the laws guaranteed by the Fourteenth Amendment. This disposition makes unnecessary any discussion whether such segregation also <em>violates the Due Process Clause</em> of the Fourteenth Amendment."
             </p>
 
@@ -879,8 +879,8 @@ export default function Home() {
               {/* Pin Image - Absolutely positioned to the left */}
               <div className="hidden xl:block absolute left-[-500px] top-0" aria-hidden="true">
                 {marchForDemocraticSchoolsPinLoading ? (
-                  <div className="w-96 h-96 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                    <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                  <div className="w-96 h-96 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                    <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                   </div>
                 ) : marchForDemocraticSchoolsPinUrl ? (
                   <img 
@@ -889,13 +889,13 @@ export default function Home() {
                     alt="March for Democratic Schools Pin"
                   />
                 ) : (
-                  <div className="w-96 h-96 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                    <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                  <div className="w-96 h-96 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                    <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                   </div>
                 )}
               </div>
               
-              <p className="w-96 text-center text-black dark:text-stone-100 text-xl font-normal font-['Inter']">
+              <p className="w-96 text-center text-black dark:text-zinc-100 text-xl font-normal font-['Inter']">
               This landmark ruling by the Supreme Court ruled that State laws establishing racial segregation in public schools were violations of the Fourteenth Amendment's Equal Protection Clause. This struck down the "separate but equal" doctrine from Plessy v. Ferguson that had allowed states to mandate segregation in public spaces. The ruling required schools desegregate, a process that was often radicalizing for Black students, as they were subjected to extreme violence from the local White communities.
               </p>
             </div>
@@ -910,8 +910,8 @@ export default function Home() {
               {/* NOW Pin - Absolutely positioned to the right, higher up */}
               <div className="hidden xl:block absolute right-[-400px] top-[-280px]" aria-hidden="true">
                 {nowPinLoading ? (
-                  <div className="w-96 h-96 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[15deg]">
-                    <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                  <div className="w-96 h-96 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[15deg]">
+                    <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                   </div>
                 ) : nowPinUrl ? (
                   <img 
@@ -920,8 +920,8 @@ export default function Home() {
                     alt="NOW Pin"
                   />
                 ) : (
-                  <div className="w-96 h-96 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[15deg]">
-                    <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                  <div className="w-96 h-96 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[15deg]">
+                    <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                   </div>
                 )}
               </div>
@@ -951,11 +951,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("emmett till")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Lynching of Emmett Till</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Lynching of Emmett Till</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The brutal murder of 14-year-old Emmett Till in Mississippi became a pivotal catalyst in the civil rights movement, highlighting the pervasive racial violence and injustice in the United States. The extensive media coverage helped galvanize public opinion and energized activists to fight for racial equality.
                 </TopicLinkedText>
@@ -974,7 +974,7 @@ export default function Home() {
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   <EmmettTillImage />
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Emmett Till's mother, Mamie Till, at his funeral (Dave Mann)
                 </p>
               </Link>
@@ -1036,11 +1036,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("montgomery")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Montgomery Bus Boycott</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Montgomery Bus Boycott</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Initiated by Rosa Parks' refusal to give up her bus seat to a white man in Montgomery, Alabama, this pivotal event marked a significant moment in the Civil Rights Movement.
                 </TopicLinkedText>
@@ -1058,8 +1058,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("montgomery")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {montgomeryImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : montgomeryImageUrl ? (
                     <img
@@ -1068,12 +1068,12 @@ export default function Home() {
                       alt="Rosa Parks"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Rosa Parks gets fingerprinted (Gene Herrick)
                 </p>
               </Link>
@@ -1102,11 +1102,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("little rock")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Integration of Little Rock</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Integration of Little Rock</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Little Rock Nine's integration at Little Rock Central High School marked a significant point in the American civil rights movement, highlighting resistance to desegregation and federal intervention.
                 </TopicLinkedText>
@@ -1124,8 +1124,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("little rock")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {littleRockImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : littleRockImageUrl ? (
                     <img
@@ -1134,12 +1134,12 @@ export default function Home() {
                       alt="Elizabeth Eckford"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Elizabeth Eckford approaches Central High (Will Counts)
                 </p>
               </Link>
@@ -1202,11 +1202,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("sncc")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">SNCC & Student Organizing</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">SNCC & Student Organizing</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Student Nonviolent Coordinating Committee (SNCC) played a critical role in the Civil Rights Movement, known for organizing student activism for racial equality. The organization facilitated voter registration drives, sit-ins, and freedom rides and was a pivotal part of the movement's strategy for nonviolent direct action. The involvement of SNCC and similar groups has had lasting effects on the push for civil rights.
                 </TopicLinkedText>
@@ -1224,8 +1224,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("sncc")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {hRapBrownImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : hRapBrownImageUrl ? (
                     <img
@@ -1234,12 +1234,12 @@ export default function Home() {
                       alt="H. Rap Brown"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   H. Rap Brown, SNCC (Marion Trikosko)
                 </p>
               </Link>
@@ -1268,11 +1268,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom rides")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Freedom Riders</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Freedom Riders</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Sponsored by the Congress for Racial Equality (CORE) and the Student Nonviolent Coordinating Committee, Freedom Rides were a series of bus trips through the American South by civil rights activists who sought to challenge and desegregate interstate transportation facilities following Supreme Court rulings. Despite facing severe violence, the activists drew national attention to the civil rights struggle and forced federal intervention.
                 </TopicLinkedText>
@@ -1290,8 +1290,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom rides")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {freedomRiderImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : freedomRiderImageUrl ? (
                     <img
@@ -1300,12 +1300,12 @@ export default function Home() {
                       alt="Freedom Rider"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Greyhound bus attack (U.S. National Park Service)
                 </p>
               </Link>
@@ -1317,8 +1317,8 @@ export default function Home() {
             {/* SNCC Overcome Pin - Positioned to the left of the quote */}
             <div className="hidden xl:block absolute left-[-50px] top-[40px] z-50" aria-hidden="true">
               {snccOvercomePinLoading ? (
-                <div className="w-72 h-72 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                <div className="w-72 h-72 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                 </div>
               ) : snccOvercomePinUrl ? (
                 <img 
@@ -1327,8 +1327,8 @@ export default function Home() {
                   alt="SNCC Overcome Pin"
                 />
               ) : (
-                <div className="w-72 h-72 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                <div className="w-72 h-72 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                 </div>
               )}
             </div>
@@ -1362,11 +1362,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("medgar evers")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">The Murder of Medgar Evers</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">The Murder of Medgar Evers</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Medgar Evers, a prominent civil rights activist and field secretary for the NAACP, was assassinated outside his home in Jackson, Mississippi. His murder marked a turning point in the civil rights movement, increasing the urgency and determination of activists who faced growing hostility and violence. Evers' assassination underscored the dangers faced by those fighting for racial equality and galvanized ongoing efforts for civil rights legislation.
                 </TopicLinkedText>
@@ -1384,8 +1384,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("medgar evers")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {medgarEversImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : medgarEversImageUrl ? (
                     <img
@@ -1394,12 +1394,12 @@ export default function Home() {
                       alt="Medgar Evers"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors mt-6" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors mt-6" style={{ lineHeight: '100%' }}>
                   Medger Evers (Unknown)
                 </p>
               </Link>
@@ -1465,11 +1465,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("march on washington")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">March on Washington</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">March on Washington</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   This historic event was a major civil rights demonstration, where Martin Luther King Jr. delivered his iconic 'I Have a Dream' speech. It was pivotal in advocating for civil and economic rights for African Americans, showcasing the frustration with the Kennedy administration's inaction against racial violence.
                 </TopicLinkedText>
@@ -1487,8 +1487,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("march on washington")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {marchOnWashingtonImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : marchOnWashingtonImageUrl ? (
                     <img
@@ -1497,12 +1497,12 @@ export default function Home() {
                       alt="March on Washington"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Demonstrators march down the street (Marion Trikosko)
                 </p>
               </Link>
@@ -1514,8 +1514,8 @@ export default function Home() {
             {/* March on Washington Pin - Left side, higher above */}
             <div className="hidden xl:block absolute left-[-350px] top-[-150px] z-50" aria-hidden="true">
               {marchOnWashingtonPinLoading ? (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                 </div>
               ) : marchOnWashingtonPinUrl ? (
                 <img 
@@ -1524,8 +1524,8 @@ export default function Home() {
                   alt="March on Washington Pin"
                 />
               ) : (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                 </div>
               )}
             </div>
@@ -1533,8 +1533,8 @@ export default function Home() {
             {/* Washington Freedom March Pin - Left side, further below */}
             <div className="hidden xl:block absolute left-[-300px] top-[200px] z-50" aria-hidden="true">
               {washingtonFreedomMarchPinLoading ? (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                 </div>
               ) : washingtonFreedomMarchPinUrl ? (
                 <img 
@@ -1543,8 +1543,8 @@ export default function Home() {
                   alt="Washington Freedom March Pin"
                 />
               ) : (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                 </div>
               )}
             </div>
@@ -1552,8 +1552,8 @@ export default function Home() {
             {/* Emancipation March Pin - Right side, above */}
             <div className="hidden xl:block absolute right-[-350px] top-[-150px] z-50" aria-hidden="true">
               {emancipationMarchPinLoading ? (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                 </div>
               ) : emancipationMarchPinUrl ? (
                 <img 
@@ -1562,8 +1562,8 @@ export default function Home() {
                   alt="Emancipation March Pin"
                 />
               ) : (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                 </div>
               )}
             </div>
@@ -1571,8 +1571,8 @@ export default function Home() {
             {/* SNCC Vote Pin - Right side, below */}
             <div className="hidden xl:block absolute right-[-300px] top-[200px] z-50" aria-hidden="true">
               {snccVotePinLoading ? (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Loading pin...</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Loading pin...</span>
                 </div>
               ) : snccVotePinUrl ? (
                 <img 
@@ -1581,8 +1581,8 @@ export default function Home() {
                   alt="SNCC Vote Pin"
                 />
               ) : (
-                <div className="w-64 h-64 bg-gray-200 dark:bg-stone-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
-                  <span className="text-gray-500 dark:text-stone-400">Pin not available</span>
+                <div className="w-64 h-64 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center origin-top-left rotate-[-9.43deg]">
+                  <span className="text-gray-500 dark:text-zinc-400">Pin not available</span>
                 </div>
               )}
             </div>
@@ -1615,8 +1615,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom summer")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {freedomSummerImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : freedomSummerImageUrl ? (
                     <img
@@ -1625,12 +1625,12 @@ export default function Home() {
                       alt="Freedom Summer Voting"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left pl-12 hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left pl-12 hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   A woman voting (Marion Trikosko)
                 </p>
               </Link>
@@ -1640,11 +1640,11 @@ export default function Home() {
             <div className="space-y-4 lg:space-y-6">
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("freedom summer")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Freedom Summer</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Freedom Summer</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Freedom Summer was a 1964 voter registration drive organized by CORE, the NAACP, and SNCC aimed at increasing the number of registered Black voters in Mississippi. This grassroots effort was part of the larger civil rights movement striving for racial equality in voting rights and was characterized by significant activism and resistance. It included Freedom Schools, which acted as educational centers for prospective voters.
                 </TopicLinkedText>
@@ -1679,11 +1679,11 @@ export default function Home() {
             <div className="space-y-4 lg:space-y-6">
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("civil rights act")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Civil Rights Act of 1964</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Civil Rights Act of 1964</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Signed by Lyndon B. Johnson, this landmark act declared an official end to legal segregation, outlawing discrimination based on race, color, religion, sex, or national origin.
                 </TopicLinkedText>
@@ -1715,7 +1715,7 @@ export default function Home() {
                 href="https://archive.org/details/gov.archives.arc.2546045" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left underline hover:text-red-500 transition-colors block"
+                className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left underline hover:text-red-500 transition-colors block"
                 style={{ lineHeight: '100%' }}
               >
                 Law Enforcement confront peaceful demonstrators
@@ -1739,8 +1739,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("malcolm x")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {malcolmXImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : malcolmXImageUrl ? (
                     <img
@@ -1749,12 +1749,12 @@ export default function Home() {
                       alt="Malcolm X"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Malcolm X waits at Martin Luther King press conference (Marion Trikosko)
                 </p>
               </Link>
@@ -1771,11 +1771,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("malcolm x")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Assassination of Malcolm X</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Assassination of Malcolm X</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   While preparing to speak for the Organization of Afro-American Unity, activist Malcolm X was murdered. Malcolm X's uncompromising message of self-determination for African Americans laid the groundwork for organizations to make moves outside the legal framework of the American system. His international approach and recognition of the connection between Black American struggles and anti-imperial struggles in the Third World made him revolutionary within the Civil Rights Movement and brought him international acclaim.
                 </TopicLinkedText>
@@ -1796,7 +1796,7 @@ export default function Home() {
                 href="https://archive.org/details/youtube-VGx81G5taD0" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="absolute top-8 right-0 text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] underline hover:text-red-500 transition-colors z-10"
+                className="absolute top-8 right-0 text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] underline hover:text-red-500 transition-colors z-10"
                 style={{ lineHeight: '100%' }}
               >
                 Malcom X
@@ -1858,11 +1858,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/interviews?topic=${encodeURIComponent("Selma to Montgomery")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Selma to Montgomery</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Selma to Montgomery</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   Despite the legal end of segregation, there was little material change in many Southern States. In Alabama, African Americans were still disenfranchised as White officials employed tactics of intimidation and harassment to prevent them from exercising the right to vote. The murder of activist Jimmie Lee Jackson by state troopers sparked the 54-mile march from Selma to Montgomery. Demonstrators were met with state violence, resulting in media attention from across the country. President Lyndon B. Johnson used the attention to call for the passing of the Voting Rights Act of 1965, which was enacted on August 6th of that year.
                 </TopicLinkedText>
@@ -1880,8 +1880,8 @@ export default function Home() {
               <Link to={`/interviews?topic=${encodeURIComponent("Selma to Montgomery")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {selmaImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : selmaImageUrl ? (
                     <img
@@ -1890,12 +1890,12 @@ export default function Home() {
                       alt="Selma to Montgomery"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Protestors in Harlem show solidarity with Selma (Stanley Wolfson)
                 </p>
               </Link>
@@ -1935,7 +1935,7 @@ export default function Home() {
                   href="https://archive.org/details/gov.archives.arc.53422"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black dark:text-stone-100 font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors block mt-6 text-sm sm:text-base"
+                  className="text-black dark:text-zinc-100 font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors block mt-6 text-sm sm:text-base"
                   style={{
                     lineHeight: '100%',
                     textDecoration: 'underline',
@@ -1986,7 +1986,7 @@ export default function Home() {
                 href="https://archive.org/details/un-un-v38-r22" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left underline hover:text-red-500 transition-colors block"
+                className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left underline hover:text-red-500 transition-colors block"
                 style={{ lineHeight: '100%' }}
               >
                 Voting Rights Act
@@ -1997,11 +1997,11 @@ export default function Home() {
             <div className="space-y-4 lg:space-y-6">
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("voting rights act")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Voting Rights Act</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Voting Rights Act</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Voting Rights Act was a landmark act meant to enforce the constitutional voting rights of racial minorities, especially in the South.
                 </TopicLinkedText>
@@ -2045,11 +2045,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("black panther party")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Black Panther Party</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Black Panther Party</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Black Panther Party was established in 1966 as a revolutionary organization advocating for African American self-defense and community welfare programs. The Panthers' initiatives included the establishment of community social programs such as free breakfast for children and health clinics. The party was also known for its stance against police brutality and for promoting black empowerment. Women's roles in the party were significant, although challenges in gender dynamics existed.
                 </TopicLinkedText>
@@ -2067,8 +2067,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("black panther party")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {blackPantherImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : blackPantherImageUrl ? (
                     <img
@@ -2077,12 +2077,12 @@ export default function Home() {
                       alt="Black Panthers"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Black Panther Demonstration (Unknown)
                 </p>
               </Link>
@@ -2118,8 +2118,8 @@ export default function Home() {
               {/* Black Panther Pin - desktop only, otherwise floats off-screen */}
               <div className="hidden lg:block absolute -top-40 -right-32">
                 {pantherPinLoading ? (
-                  <div className="w-48 h-48 bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-stone-400 text-xs">Loading pin...</span>
+                  <div className="w-48 h-48 bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-zinc-400 text-xs">Loading pin...</span>
                   </div>
                 ) : pantherPinUrl ? (
                   <img
@@ -2128,8 +2128,8 @@ export default function Home() {
                     alt="Black Panther Pin"
                   />
                 ) : (
-                  <div className="w-48 h-48 bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-stone-400 text-xs">Pin not available</span>
+                  <div className="w-48 h-48 bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-zinc-400 text-xs">Pin not available</span>
                   </div>
                 )}
               </div>
@@ -2158,11 +2158,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/interviews?topic=${encodeURIComponent("Brown Berets")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Brown Berets</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Brown Berets</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Chicano Movement was a civil rights movement extending from the 1940s into the 1970s with the goal of achieving Mexican American empowerment, combating discrimination, and promoting cultural pride. It correlated with the broader push for civil rights and influenced identity politics and activism among Mexican Americans. The Brown Beret's modeled themselves after the Black Panther Party and played a major role in Chicano activism.
                 </TopicLinkedText>
@@ -2180,8 +2180,8 @@ export default function Home() {
               <Link to={`/interviews?topic=${encodeURIComponent("Brown Berets")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center relative z-10">
                   {brownBeretsImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : brownBeretsImageUrl ? (
                     <img
@@ -2190,12 +2190,12 @@ export default function Home() {
                       alt="Brown Berets"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Four brown berets (Unknown)
                 </p>
               </Link>
@@ -2224,11 +2224,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/interviews?topic=${encodeURIComponent("The Long Hot Summer")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">The Long Hot Summer</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">The Long Hot Summer</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The Long Hot Summer was a series of major civil disturbance occurring over the summer of 1967, spurred by racial tensions, poverty, and allegations of police brutality toward the African-American community. It was part of a wave of urban uprisings across the United States during the 1960s. This event significantly impacted the civil rights movement by highlighting systemic issues in urban areas and prompting calls for reform.
                 </TopicLinkedText>
@@ -2246,8 +2246,8 @@ export default function Home() {
               <Link to={`/interviews?topic=${encodeURIComponent("The Long Hot Summer")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {longHotSummerImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : longHotSummerImageUrl ? (
                     <img
@@ -2256,12 +2256,12 @@ export default function Home() {
                       alt="The Long Hot Summer"
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-left hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
                   Newark Rebellion (Al Lowe)
                 </p>
               </Link>
@@ -2290,11 +2290,11 @@ export default function Home() {
 
               {/* Title */}
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("martin luther king")}`}>
-                <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Assassination of MLK</h3>
+                <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Assassination of MLK</h3>
               </Link>
 
               {/* Description */}
-              <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+              <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                   The most prominent Civil Rights Activist of his era, and the leader of the movement at large, Dr. Martin Luther King Jr. was murdered after giving a speech in Memphis, Tennessee. Riots tore through the streets of major cities across the United States in response to the murder.
                 </TopicLinkedText>
@@ -2312,8 +2312,8 @@ export default function Home() {
               <Link to={`/playlist-builder?keywords=${encodeURIComponent("martin luther king")}`} className="block">
                 <div className="h-64 sm:h-80 lg:h-[500px] xl:h-[600px] flex items-center">
                   {mlkImageLoading ? (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Loading image...</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
                     </div>
                   ) : mlkImageUrl ? (
                     <img
@@ -2322,12 +2322,12 @@ export default function Home() {
                       alt="Martin Luther King Jr."
                     />
                   ) : (
-                    <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                      <span className="text-gray-500 dark:text-stone-400">Image not available</span>
+                    <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                      <span className="text-gray-500 dark:text-zinc-400">Image not available</span>
                     </div>
                   )}
                 </div>
-                <p className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors mt-6" style={{ lineHeight: '100%' }}>
+                <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors mt-6" style={{ lineHeight: '100%' }}>
                   Martin Luther King press conference (Marion Trikosko)
                 </p>
               </Link>
@@ -2340,8 +2340,8 @@ export default function Home() {
               {/* Man Poster - Top on mobile, left on desktop */}
               <div className="w-full max-w-[350px] aspect-[35/53] lg:h-[530px] lg:aspect-auto">
                 {manPosterLoading ? (
-                  <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-stone-400">Loading poster...</span>
+                  <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-zinc-400">Loading poster...</span>
                   </div>
                 ) : manPosterUrl ? (
                   <img
@@ -2350,8 +2350,8 @@ export default function Home() {
                     alt="Man Poster"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-stone-400">Poster not available</span>
+                  <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                    <span className="text-gray-500 dark:text-zinc-400">Poster not available</span>
                   </div>
                 )}
               </div>
@@ -2373,8 +2373,8 @@ export default function Home() {
                   {/* Honor King Poster */}
                   <div className="w-full max-w-[350px] aspect-[35/53] sm:h-[530px] sm:aspect-auto">
                     {honorKingPosterLoading ? (
-                      <div className="w-full h-full bg-gray-200 dark:bg-stone-800 animate-pulse flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-stone-400">Loading poster...</span>
+                      <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-zinc-400">Loading poster...</span>
                       </div>
                     ) : honorKingPosterUrl ? (
                       <img
@@ -2383,8 +2383,8 @@ export default function Home() {
                         alt="Honor King Poster"
                       />
                     ) : (
-                      <div className="w-full h-full bg-gray-200 dark:bg-stone-800 flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-stone-400">Poster not available</span>
+                      <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 flex items-center justify-center">
+                        <span className="text-gray-500 dark:text-zinc-400">Poster not available</span>
                       </div>
                     )}
                   </div>
@@ -2408,7 +2408,7 @@ export default function Home() {
                       href="https://archive.org/details/68riotsTBDreel/WJZ-NEWSFILM-001.mov"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black dark:text-stone-100 text-base font-light font-['Chivo_Mono'] text-center sm:text-left underline hover:text-red-500 transition-colors block"
+                      className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-center sm:text-left underline hover:text-red-500 transition-colors block"
                       style={{ lineHeight: '100%' }}
                     >
                       Baltimore Riots
@@ -2440,11 +2440,11 @@ export default function Home() {
 
                 {/* Title */}
                 <Link to={`/interviews?topic=${encodeURIComponent("Civil Rights Act of 1968")}`}>
-                  <h3 className="text-black dark:text-stone-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Civil Rights Act of 1968</h3>
+                  <h3 className="text-black dark:text-zinc-100 text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium font-['Inter'] leading-tight hover:text-red-500 transition-colors">Civil Rights Act of 1968</h3>
                 </Link>
 
                 {/* Description */}
-                <p className="text-black dark:text-stone-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
+                <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                   <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
                     Signed into law during the riots following Dr. King's assassination, this act expands upon the 1964 Civil Rights Act by declaring it illegal to discriminate in the rental and financing of housing, contributing to the development of equal housing opportunities.
                   </TopicLinkedText>
@@ -2513,7 +2513,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="text-center py-12 lg:py-16 bg-[#EBEAE9] dark:bg-stone-900">
+      <section className="text-center py-12 lg:py-16 bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
           <h2 className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4'] mb-6 lg:mb-8">
             Discover the rest of the archive

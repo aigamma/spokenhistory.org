@@ -160,7 +160,7 @@ export default function Constellation({
       >
         {/* TODO(dark-mode): SVG interior fills are hardcoded for light theme and
             need dark variants read from a theme flag: reference-grid stroke
-            ('#e5e5e5'), the region-centroid labels (fill '#1c1917' with a near-white
+            ('#e5e5e5'), the region-centroid labels (fill '#18181b' with a near-white
             'rgba(250,250,249,0.92)' stroke halo, which become dark-on-dark and
             invisible), and the hover-label halo. The SVG element background itself
             already inverts via the bg-stone-50 utility above. */}
@@ -208,7 +208,7 @@ export default function Constellation({
             stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(250,250,249,0.92)'}
             strokeWidth={4}
             strokeLinejoin="round"
-            fill={isDark ? '#f5f5f4' : '#1c1917'}
+            fill={isDark ? '#f5f5f4' : '#18181b'}
             opacity={0.85}
             style={{ pointerEvents: 'none' }}
           >
@@ -254,7 +254,7 @@ export default function Constellation({
               width={190}
               height={36}
               rx={4}
-              fill="#1c1917"
+              fill="#18181b"
               opacity={0.92}
             />
             <text

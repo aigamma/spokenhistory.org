@@ -110,7 +110,7 @@ export default function QuoteFinder({
           placeholder={placeholder}
           rows={4}
           maxLength={4000}
-          className="w-full px-4 py-3 text-base border border-stone-300 rounded-lg focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-700/30 dark:focus:ring-red-400/30 outline-none transition-colors bg-white dark:placeholder-stone-500 resize-y"
+          className="w-full px-4 py-3 text-base border border-stone-300 rounded-lg focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-700/30 dark:focus:ring-red-400/30 outline-none transition-colors bg-white dark:placeholder-zinc-500 resize-y"
           aria-label="Quote to find"
         />
         <div className="flex items-center justify-between mt-2">

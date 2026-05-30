@@ -53,7 +53,7 @@ function mix(hex, base, t) {
 // switches the base the tint is blended onto, cream-white vs dark.
 function LabCard({ accent, surface, flag }) {
   const dark = surface === 'dark';
-  const base = dark ? '#1c1917' : '#ffffff';
+  const base = dark ? '#18181b' : '#ffffff';
   const cardBg = mix(accent, base, dark ? 0.22 : 0.11);
   const borderColor = mix(accent, base, dark ? 0.45 : 0.34);
   const hearColor = dark ? '#f87171' : '#B23E2F';
@@ -114,12 +114,12 @@ function Label({ accent, hex, name, note, dark }) {
       style={{ color: dark ? '#a8a29e' : '#57534e' }}
     >
       <span className="inline-block w-3.5 h-3.5 rounded" style={{ background: accent }} aria-hidden="true" />
-      <span style={{ color: dark ? '#f5f5f4' : '#1c1917' }}>{name}</span>
+      <span style={{ color: dark ? '#f5f5f4' : '#18181b' }}>{name}</span>
       <span>{hex}</span>
       {note && (
         <span
           className="text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full"
-          style={{ background: dark ? '#f5f5f4' : '#1c1917', color: dark ? '#1c1917' : '#EBEAE9' }}
+          style={{ background: dark ? '#f5f5f4' : '#18181b', color: dark ? '#18181b' : '#EBEAE9' }}
         >
           {note}
         </span>
@@ -196,7 +196,7 @@ export default function SnippetColorLab() {
       </section>
 
       {/* Dark panel */}
-      <section style={{ backgroundColor: '#1c1917' }} className="px-4 sm:px-6 py-10">
+      <section style={{ backgroundColor: '#18181b' }} className="px-4 sm:px-6 py-10">
         <div className="max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-wide font-mono font-semibold mb-1" style={{ color: '#fca5a5' }}>
             Dark Surface (Proposed Dark Theme)

@@ -45,13 +45,13 @@ export default function Visualizations() {
   const tabs = ['timeline', 'map'];
   
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-stone-900 min-h-screen font-body">
+    <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-gray-50 dark:bg-zinc-900 min-h-screen font-body">
       {/* Hero Section - Main title and introduction */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-heading font-bold bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 text-transparent bg-clip-text mb-6">
           Interactive Visualizations
         </h1>
-        <p className="text-lg font-body text-gray-600 dark:text-stone-400 max-w-2xl mx-auto">
+        <p className="text-lg font-body text-gray-600 dark:text-zinc-400 max-w-2xl mx-auto">
           Explore civil rights history through interactive timeline and geographical mapping.
         </p>
       </div>
@@ -66,7 +66,7 @@ export default function Visualizations() {
           is currently selected. */}
       <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 mb-6">
         {/* Tab Navigation */}
-        <div className="border-b border-gray-200 dark:border-stone-800">
+        <div className="border-b border-gray-200 dark:border-zinc-800">
           <div role="tablist" aria-label="Visualization type" className="flex flex-wrap">
             {tabs.map((tab) => {
               const label = tab.charAt(0).toUpperCase() + tab.slice(1)
@@ -83,8 +83,8 @@ export default function Visualizations() {
                   onClick={() => setActiveTab(tab)}
                   className={`flex-1 py-4 px-3 min-h-11 text-sm text-center transition-all duration-300 cursor-pointer border-0 font-body ${
                     isActive
-                      ? 'bg-indigo-50 dark:bg-stone-800 text-blue-800 dark:text-blue-300 font-semibold border-b-2 border-blue-600 dark:border-blue-400'
-                      : 'bg-transparent text-gray-600 dark:text-stone-400 font-normal border-b-0 hover:text-gray-800 dark:hover:text-stone-200'
+                      ? 'bg-indigo-50 dark:bg-zinc-800 text-blue-800 dark:text-blue-300 font-semibold border-b-2 border-blue-600 dark:border-blue-400'
+                      : 'bg-transparent text-gray-600 dark:text-zinc-400 font-normal border-b-0 hover:text-gray-800 dark:hover:text-zinc-200'
                   }`}
                 >
                   {label}

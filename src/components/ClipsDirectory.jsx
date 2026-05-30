@@ -187,7 +187,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
   if (error) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm border border-white/40 dark:border-stone-700/40 text-black dark:text-stone-100 px-6 py-4 rounded-lg shadow-sm" style={{
+        <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm border border-white/40 dark:border-zinc-700/40 text-black dark:text-zinc-100 px-6 py-4 rounded-lg shadow-sm" style={{
           fontFamily: 'Freight Text Pro, Lora, serif'
         }}>
           {error}
@@ -201,7 +201,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
       {/* Search clips */}
       <div className="mb-6">
         <div className="max-w-lg">
-          <label className="block text-sm font-medium text-black/80 dark:text-stone-200 mb-2" style={{
+          <label className="block text-sm font-medium text-black/80 dark:text-zinc-200 mb-2" style={{
             fontFamily: 'Freight Text Pro, Lora, serif'
           }}>
             Search Clips by Keywords
@@ -212,7 +212,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
               placeholder="Enter keywords (comma separated)..."
               value={clipSearchTerm}
               onChange={(e) => setClipSearchTerm(e.target.value)}
-              className="flex-grow px-4 py-2.5 border border-black/20 dark:border-stone-700 rounded-l-lg shadow-sm text-sm dark:text-stone-100 focus:outline-none focus:ring-2 focus:border-black/40 dark:focus:border-stone-500 transition-colors bg-white/80 dark:bg-stone-800 backdrop-blur-sm"
+              className="flex-grow px-4 py-2.5 border border-black/20 dark:border-zinc-700 rounded-l-lg shadow-sm text-sm dark:text-zinc-100 focus:outline-none focus:ring-2 focus:border-black/40 dark:focus:border-zinc-500 transition-colors bg-white/80 dark:bg-zinc-800 backdrop-blur-sm"
               style={{
                 fontFamily: 'Freight Text Pro, Lora, serif'
               }}
@@ -237,7 +237,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
       </div>
 
       {/* Clip search results */}
-      <div className="bg-white/80 dark:bg-stone-800/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/20 dark:border-stone-700/40">
+      <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-white/20 dark:border-zinc-700/40">
         {clipSearchLoading ? (
           // Loading state
           <div className="p-12 flex justify-center">
@@ -248,7 +248,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
         ) : clipSearchPerformed ? (
           clipResults.length === 0 ? (
             // No results state
-            <div className="p-6 text-center text-black/60 dark:text-stone-400" style={{
+            <div className="p-6 text-center text-black/60 dark:text-zinc-400" style={{
               fontFamily: 'Freight Text Pro, Lora, serif'
             }}>
               No clips found matching your search keywords.
@@ -256,7 +256,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
           ) : (
             // Results display
             <div className="p-4">
-              <h2 className="text-lg font-semibold text-black dark:text-stone-100 mb-4" style={{
+              <h2 className="text-lg font-semibold text-black dark:text-zinc-100 mb-4" style={{
                 fontFamily: 'Freight Text Pro, Lora, serif'
               }}>
                 Found {clipResults.length} clip{clipResults.length !== 1 ? 's' : ''}
@@ -266,7 +266,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
                   <button
                     type="button"
                     key={clip.id}
-                    className="text-left bg-white/60 dark:bg-stone-800/60 rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow cursor-pointer border border-white/40 dark:border-stone-700/40 p-0"
+                    className="text-left bg-white/60 dark:bg-zinc-800/60 rounded-lg shadow overflow-hidden hover:shadow-md transition-shadow cursor-pointer border border-white/40 dark:border-zinc-700/40 p-0"
                     onClick={() => handleViewClip(clip.documentName, clip.id)}
                     aria-label={`Watch clip: ${clip.topic || clip.documentName}${clip.personName ? ` with ${clip.personName}` : ''}`}
                   >
@@ -304,12 +304,12 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
                       </h3>
                       
                       {/* Interviewee name */}
-                      <p className="text-sm text-black/60 dark:text-stone-400 mb-2 font-mono tracking-wide">
+                      <p className="text-sm text-black/60 dark:text-zinc-400 mb-2 font-mono tracking-wide">
                         {clip.personName}
                       </p>
 
                       {/* Summary text */}
-                      <p className="text-sm text-black/70 dark:text-stone-300 mb-3 line-clamp-2" style={{
+                      <p className="text-sm text-black/70 dark:text-zinc-300 mb-3 line-clamp-2" style={{
                         fontFamily: 'Freight Text Pro, Lora, serif'
                       }}>
                         {clip.summary}
@@ -343,7 +343,7 @@ export default function ClipsDirectory({ initialSearchTerm = '' }) {
           )
         ) : (
           // Initial state - no search performed yet
-          <div className="p-6 text-center text-black/60 dark:text-stone-400" style={{
+          <div className="p-6 text-center text-black/60 dark:text-zinc-400" style={{
             fontFamily: 'Freight Text Pro, Lora, serif'
           }}>
             Enter keywords above to search for relevant clips.

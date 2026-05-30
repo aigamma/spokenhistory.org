@@ -58,7 +58,7 @@ const TOPIC_PALETTE = [
   '#4A5A6E', // slate blue
 ];
 
-const BG_COLOR = '#1c1917'; // stone-900 atmospheric background
+const BG_COLOR = '#18181b'; // stone-900 atmospheric background
 const POINT_BASE_ALPHA = 0.78;
 const POINT_DIM_ALPHA = 0.12;
 const HIGHLIGHT_COLOR = '#F2483C';

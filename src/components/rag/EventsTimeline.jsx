@@ -127,7 +127,7 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
     marker: {
       color: colors,
       size: sizes,
-      line: { width: 1.5, color: '#1c1917' },
+      line: { width: 1.5, color: '#18181b' },
     },
     hovertemplate:
       '<b>%{customdata[0]}</b><br>' +
@@ -158,7 +158,7 @@ export default function EventsTimeline({ events, selectedSlug, onSelect }) {
     plot_bgcolor: '#ffffff',
     font: {
       family: 'Inter, ui-sans-serif, system-ui, sans-serif',
-      color: '#1c1917',
+      color: '#18181b',
       size: 11,
     },
     showlegend: false,

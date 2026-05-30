@@ -564,7 +564,7 @@ export default function InterviewPlayer() {
         />
       )}
       
-      <div className="w-full min-h-screen overflow-hidden bg-[#EBEAE9] dark:bg-stone-900">
+      <div className="w-full min-h-screen overflow-hidden bg-[#EBEAE9] dark:bg-zinc-900">
         {/* Universal Header */}
         <Header />
 
@@ -666,7 +666,7 @@ export default function InterviewPlayer() {
             {mainSummary && (
               <>
                 {/* Role */}
-                <div className="text-black dark:text-stone-100 text-xl sm:text-2xl font-normal leading-relaxed mb-6" style={{fontFamily: '"Source Serif 4", serif'}}>
+                <div className="text-black dark:text-zinc-100 text-xl sm:text-2xl font-normal leading-relaxed mb-6" style={{fontFamily: '"Source Serif 4", serif'}}>
                   {mainSummary.role || mainSummary.roleSimplified || 'No role information available'}
                 </div>
 
@@ -699,7 +699,7 @@ export default function InterviewPlayer() {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 space-y-8">
         <div className="w-full">
           <div className="mb-14">
-            <h2 className="text-black dark:text-stone-100 text-3xl sm:text-4xl md:text-5xl font-medium mb-6" style={{fontFamily: 'Inter, sans-serif'}}>Interview Chapters</h2>
+            <h2 className="text-black dark:text-zinc-100 text-3xl sm:text-4xl md:text-5xl font-medium mb-6" style={{fontFamily: 'Inter, sans-serif'}}>Interview Chapters</h2>
 
             {subSummaries.map((summary, index) => (
               <div key={summary.id || index} className="w-full mb-8">
@@ -728,11 +728,11 @@ export default function InterviewPlayer() {
                         <button
                           type="button"
                           key={idx}
-                          className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-stone-600 inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-gray-50 dark:hover:bg-stone-800 transition-colors duration-200"
+                          className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-zinc-600 inline-flex justify-center items-center gap-2.5 cursor-pointer hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors duration-200"
                           onClick={() => navigate(`/playlist-builder?keywords=${encodeURIComponent(keyword)}`)}
                           aria-label={`Browse playlist for keyword ${keyword}`}
                         >
-                          <span className="text-center text-black dark:text-stone-100 text-sm sm:text-base font-light font-['Chivo_Mono']">
+                          <span className="text-center text-black dark:text-zinc-100 text-sm sm:text-base font-light font-['Chivo_Mono']">
                             {keyword}
                           </span>
                         </button>
@@ -741,7 +741,7 @@ export default function InterviewPlayer() {
                   </div>
 
                   <div className="flex-1 w-full">
-                    <div className="text-black dark:text-stone-100 text-lg sm:text-xl md:text-2xl font-normal leading-relaxed" style={{fontFamily: '"Source Serif 4", serif'}}>
+                    <div className="text-black dark:text-zinc-100 text-lg sm:text-xl md:text-2xl font-normal leading-relaxed" style={{fontFamily: '"Source Serif 4", serif'}}>
                       {summary.summary}
                     </div>
                   </div>
@@ -765,7 +765,7 @@ export default function InterviewPlayer() {
         <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16">
           <div className="w-full">
             <div className="mb-8">
-              <div className="w-full h-px border-t border-black dark:border-stone-700 mb-6"></div>
+              <div className="w-full h-px border-t border-black dark:border-zinc-700 mb-6"></div>
               <div className="text-stone-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium" style={{fontFamily: 'Acumin Pro, Inter, sans-serif'}}>
                 <span className="text-stone-900">Related</span>
                 <span className="text-red-500"> </span>
@@ -794,7 +794,7 @@ export default function InterviewPlayer() {
                         height tracks the card width; explicit h-72 only
                         at sm and up where the multi-column grid keeps
                         each card narrow. */}
-                    <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-300 dark:bg-stone-800 mb-3 rounded overflow-hidden relative group-hover:opacity-90 transition-opacity">
+                    <div className="w-full aspect-video sm:aspect-auto sm:h-72 bg-zinc-300 dark:bg-zinc-800 mb-3 rounded overflow-hidden relative group-hover:opacity-90 transition-opacity">
                       {thumbnailUrl ? (
                         <img
                           src={thumbnailUrl}
@@ -802,8 +802,8 @@ export default function InterviewPlayer() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-zinc-300 dark:bg-stone-800">
-                          <span className="text-zinc-500 dark:text-stone-400 text-sm">No thumbnail</span>
+                        <div className="w-full h-full flex items-center justify-center bg-zinc-300 dark:bg-zinc-800">
+                          <span className="text-zinc-500 dark:text-zinc-400 text-sm">No thumbnail</span>
                         </div>
                       )}
                     </div>
@@ -843,7 +843,7 @@ export default function InterviewPlayer() {
               {/* Close button */}
               <button
                 onClick={() => setShowDescriptionModal(false)}
-                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full text-stone-900 hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors"
+                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full text-stone-900 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
                 aria-label="Close"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -857,7 +857,7 @@ export default function InterviewPlayer() {
                   Interview Description
                 </h2>
                 
-                <div className="text-black dark:text-stone-100 text-2xl font-normal leading-relaxed" style={{fontFamily: '"Source Serif 4", serif'}}>
+                <div className="text-black dark:text-zinc-100 text-2xl font-normal leading-relaxed" style={{fontFamily: '"Source Serif 4", serif'}}>
                   {mainSummary?.mainSummary || 'No description available'}
                 </div>
               </div>

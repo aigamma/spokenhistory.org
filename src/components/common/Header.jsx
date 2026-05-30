@@ -127,7 +127,7 @@ export default function Header() {
       {/* Header, a single row: pill nav strip on the left, search +
           hamburger on the right. The original 4xl wordmark is gone;
           the pills carry the site's identity now. */}
-      <header className="relative bg-[#EBEAE9] dark:bg-stone-900">
+      <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 py-4 sm:py-5">
           <div className="flex items-start justify-between gap-3 sm:gap-6">
             <nav

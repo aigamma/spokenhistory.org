@@ -367,14 +367,14 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
       />
       
       {/* Main overlay content */}
-      <div className={`w-full h-full relative overflow-hidden bg-[#EBEAE9] dark:bg-stone-900 transition-all duration-500 ease-out ${
+      <div className={`w-full h-full relative overflow-hidden bg-[#EBEAE9] dark:bg-zinc-900 transition-all duration-500 ease-out ${
         isAnimating ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4'
       }`}>
         
         {/* Conditional Header - Standard header when results are loaded */}
         {(isSearching || results.length > 0) ? (
           /* Standard Universal Header */
-          <header className="relative bg-[#EBEAE9] dark:bg-stone-900">
+          <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
             <div className="w-full px-4 sm:px-8 lg:px-12 py-6 lg:py-9">
               <div className="flex justify-between items-start">
                 {/* Logo/Title.
@@ -403,7 +403,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                 <button
                   onClick={handleClose}
                   aria-label="Close search"
-                  className="inline-flex items-center justify-center min-w-11 min-h-11 p-1 text-black dark:text-stone-100 hover:opacity-70 transition-opacity"
+                  className="inline-flex items-center justify-center min-w-11 min-h-11 p-1 text-black dark:text-zinc-100 hover:opacity-70 transition-opacity"
                 >
                   <X size={18} className="lg:w-6 lg:h-6" aria-hidden="true" />
                 </button>
@@ -422,9 +422,9 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
             <button
               onClick={handleClose}
               aria-label="Close search"
-              className="absolute top-4 right-4 sm:top-6 sm:right-12 z-10 min-w-11 min-h-11 flex items-center justify-center text-black dark:text-stone-100 hover:opacity-70 transition-opacity"
+              className="absolute top-4 right-4 sm:top-6 sm:right-12 z-10 min-w-11 min-h-11 flex items-center justify-center text-black dark:text-zinc-100 hover:opacity-70 transition-opacity"
             >
-              <div className="w-6 h-6 outline outline-2 outline-offset-[-1px] outline-black dark:outline-stone-100 flex items-center justify-center" aria-hidden="true">
+              <div className="w-6 h-6 outline outline-2 outline-offset-[-1px] outline-black dark:outline-zinc-100 flex items-center justify-center" aria-hidden="true">
                 <X size={24} strokeWidth={2} />
               </div>
             </button>
@@ -469,7 +469,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
               <label htmlFor="vector-search-input" className="sr-only">Search the archive</label>
               {/* Search label - only show when input is empty */}
               {!searchQuery && (
-                <div className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 text-black dark:text-stone-100 text-lg sm:text-xl md:text-2xl font-light font-['Inter'] pointer-events-none">
+                <div className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 text-black dark:text-zinc-100 text-lg sm:text-xl md:text-2xl font-light font-['Inter'] pointer-events-none">
                   Search
                 </div>
               )}
@@ -480,7 +480,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                 onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 placeholder=""
-                className="w-full h-full px-4 sm:px-6 text-black dark:text-stone-100 text-lg sm:text-xl md:text-2xl font-light font-['Inter'] bg-transparent border-none outline-none placeholder-gray-400 dark:placeholder-stone-500 flex items-center"
+                className="w-full h-full px-4 sm:px-6 text-black dark:text-zinc-100 text-lg sm:text-xl md:text-2xl font-light font-['Inter'] bg-transparent border-none outline-none placeholder-gray-400 dark:placeholder-zinc-500 flex items-center"
                 style={{ lineHeight: '56px' }}
                 autoFocus
                 role="combobox"
@@ -510,15 +510,15 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                     <li key={suggestion.id} role="option" aria-selected={index === selectedSuggestionIndex}>
                       <button
                         type="button"
-                        className={`w-full text-left px-4 sm:px-6 py-3 min-h-11 cursor-pointer transition-colors border-b border-gray-200 dark:border-stone-700 last:border-b-0 bg-transparent border-l-0 border-r-0 border-t-0 ${
+                        className={`w-full text-left px-4 sm:px-6 py-3 min-h-11 cursor-pointer transition-colors border-b border-gray-200 dark:border-zinc-700 last:border-b-0 bg-transparent border-l-0 border-r-0 border-t-0 ${
                           index === selectedSuggestionIndex
-                            ? 'bg-gray-100 dark:bg-stone-800'
-                            : 'hover:bg-gray-50 dark:hover:bg-stone-800'
+                            ? 'bg-gray-100 dark:bg-zinc-800'
+                            : 'hover:bg-gray-50 dark:hover:bg-zinc-800'
                         }`}
                         onClick={() => selectSuggestion(suggestion)}
                         onMouseEnter={() => setSelectedSuggestionIndex(index)}
                       >
-                        <span className="text-black dark:text-stone-100 text-lg sm:text-xl md:text-2xl font-light font-['Inter']">
+                        <span className="text-black dark:text-zinc-100 text-lg sm:text-xl md:text-2xl font-light font-['Inter']">
                           {suggestion.keyword}
                         </span>
                       </button>
@@ -532,11 +532,11 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
             <button
               type="submit"
               disabled={isSearching}
-              className="w-14 h-14 p-1.5 outline outline-1 outline-offset-[-1px] outline-stone-900 inline-flex justify-center items-center bg-white hover:bg-gray-50 dark:hover:bg-stone-800 transition-colors disabled:opacity-50"
+              className="w-14 h-14 p-1.5 outline outline-1 outline-offset-[-1px] outline-stone-900 inline-flex justify-center items-center bg-white hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors disabled:opacity-50"
             >
               <div className="w-12 h-12 relative flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full border-2 border-black dark:border-stone-100 relative">
-                  <div className="w-2.5 h-0.5 bg-black dark:bg-stone-100 absolute -bottom-1 -right-1 rotate-45 origin-left"></div>
+                <div className="w-6 h-6 rounded-full border-2 border-black dark:border-zinc-100 relative">
+                  <div className="w-2.5 h-0.5 bg-black dark:bg-zinc-100 absolute -bottom-1 -right-1 rotate-45 origin-left"></div>
                 </div>
               </div>
             </button>
@@ -564,14 +564,14 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                 <button
                   type="button"
                   key={suggestion}
-                  className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-stone-600 inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 dark:hover:bg-stone-800 transition-colors bg-transparent"
+                  className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-zinc-600 inline-flex justify-center items-center cursor-pointer hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors bg-transparent"
                   onClick={() => {
                     setSearchQuery(suggestion);
                     handleSearch({ preventDefault: () => {} });
                   }}
                   aria-label={`Search for ${suggestion}`}
                 >
-                  <span className="text-center text-black dark:text-stone-100 text-sm sm:text-base font-light font-['Chivo_Mono']">{suggestion}</span>
+                  <span className="text-center text-black dark:text-zinc-100 text-sm sm:text-base font-light font-['Chivo_Mono']">{suggestion}</span>
                 </button>
               ))}
               <button
@@ -601,14 +601,14 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
             converted to a real <button>. */}
         {(isSearching || results.length > 0) && (
           <div
-            className="absolute left-0 right-0 bottom-0 overflow-y-auto bg-[#EBEAE9] dark:bg-stone-900"
+            className="absolute left-0 right-0 bottom-0 overflow-y-auto bg-[#EBEAE9] dark:bg-zinc-900"
             style={{
               top: 'clamp(200px, 25vh, 220px)',
             }}
           >
             {isSearching ? (
               <div className="flex justify-center items-center py-12" role="status" aria-live="polite">
-                <div className="w-8 h-8 border-2 border-gray-300 dark:border-stone-700 border-t-black dark:border-t-stone-100 rounded-full animate-spin" aria-hidden="true"></div>
+                <div className="w-8 h-8 border-2 border-gray-300 dark:border-zinc-700 border-t-black dark:border-t-zinc-100 rounded-full animate-spin" aria-hidden="true"></div>
                 <span className="sr-only">Searching</span>
               </div>
             ) : results.length > 0 ? (
@@ -624,7 +624,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                         being exactly h-8 (32px), and on small viewports
                         the count text wrapped to two lines and got
                         clipped by the 32px container. */}
-                    <div className="w-full pb-2 border-b border-black dark:border-stone-700">
+                    <div className="w-full pb-2 border-b border-black dark:border-zinc-700">
                       <div className="text-civil-red-body text-base font-light font-['Chivo_Mono']">
                         {results.length} search results for "{searchQuery}"
                       </div>
@@ -637,7 +637,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                         width proportionally with the title. */}
                     <div className="w-full flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 lg:gap-12">
                       <div className="flex-1">
-                        <h2 className="text-black dark:text-stone-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
+                        <h2 className="text-black dark:text-zinc-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
                           {searchQuery}
                         </h2>
                       </div>
@@ -679,12 +679,12 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                     4xl -> 8xl; grid is 1 -> 2 -> 3 columns. */}
                 <div className="w-full mb-8 sm:mb-12">
                   <div className="w-full inline-flex flex-col justify-start items-start gap-4 sm:gap-6">
-                    <div className="w-full pb-2 border-b border-black dark:border-stone-700" />
+                    <div className="w-full pb-2 border-b border-black dark:border-zinc-700" />
                     <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
                       <span className="text-red-500">
                         {results.length.toString().padStart(2, '0')}
                       </span>
-                      <span className="text-black dark:text-stone-100"> Interviews</span>
+                      <span className="text-black dark:text-zinc-100"> Interviews</span>
                     </h2>
                   </div>
 
@@ -699,7 +699,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                         aria-label={`Watch clip with ${result.personName || 'unknown speaker'}: ${result.clipTitle || 'untitled segment'}`}
                       >
                         <div className="flex flex-col gap-4">
-                          <div className="w-full aspect-[4/3] bg-zinc-300 dark:bg-stone-800 relative overflow-hidden">
+                          <div className="w-full aspect-[4/3] bg-zinc-300 dark:bg-zinc-800 relative overflow-hidden">
                             {result.thumbnailUrl ? (
                               <img
                                 src={result.thumbnailUrl}
@@ -707,8 +707,8 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                               />
                             ) : (
-                              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400 dark:from-stone-700 dark:to-stone-800">
-                                <svg className="h-16 w-16 text-gray-500 dark:text-stone-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-300 to-gray-400 dark:from-zinc-700 dark:to-zinc-800">
+                                <svg className="h-16 w-16 text-gray-500 dark:text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                 </svg>
                               </div>
@@ -734,7 +734,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                     <button>s with aria-label. */}
                 <div className="w-full">
                   <div className="w-full inline-flex flex-col justify-start items-start gap-4 sm:gap-6">
-                    <div className="w-full pb-2 border-b border-black dark:border-stone-700" />
+                    <div className="w-full pb-2 border-b border-black dark:border-zinc-700" />
                     <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium font-['Acumin_Pro']">
                       <span className="text-red-500">
                         {Math.min(21, Array.from(new Set([
@@ -745,7 +745,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                           ...results.map(result => result.mainTopicCategory).filter(Boolean)
                         ])).length).toString().padStart(2, '0')}
                       </span>
-                      <span className="text-black dark:text-stone-100"> Related Topics</span>
+                      <span className="text-black dark:text-zinc-100"> Related Topics</span>
                     </h2>
                   </div>
 
@@ -761,7 +761,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                         <button
                           type="button"
                           key={i}
-                          className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-stone-600 inline-flex justify-center items-center bg-white hover:bg-gray-50 dark:hover:bg-stone-800 transition-colors cursor-pointer"
+                          className="px-4 sm:px-6 py-3 min-h-11 rounded-[50px] outline outline-1 outline-offset-[-1px] outline-black dark:outline-zinc-600 inline-flex justify-center items-center bg-white hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors cursor-pointer"
                           onClick={(e) => {
                             e.stopPropagation();
                             setSearchQuery(keyword);
@@ -769,7 +769,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                           }}
                           aria-label={`Search for ${keyword}`}
                         >
-                          <span className="text-center text-black dark:text-stone-100 text-sm sm:text-base font-light font-['Chivo_Mono']">
+                          <span className="text-center text-black dark:text-zinc-100 text-sm sm:text-base font-light font-['Chivo_Mono']">
                             {keyword}
                           </span>
                         </button>

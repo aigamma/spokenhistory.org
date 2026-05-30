@@ -263,7 +263,7 @@ export default function RagExplore() {
   }, [tab]);
 
   return (
-    <div className="min-h-screen bg-[#EBEAE9] dark:bg-stone-900">
+    <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
       <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 focus:outline-none">
         {/* Page-level header. Without an h1 the document had no
             top-of-hierarchy heading, and a first-time visitor landed
@@ -353,7 +353,7 @@ export default function RagExplore() {
 
         <nav
           aria-label="Demo tabs"
-          className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-stone-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-stone-900/90"
+          className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-zinc-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-zinc-900/90"
         >
           <p className="text-xs text-stone-500 mb-3 font-mono uppercase tracking-wide">
             Pick a demo. Grouped by what each one does.
@@ -532,7 +532,7 @@ export default function RagExplore() {
                             'inline-flex items-center min-h-9 px-3 py-1.5 text-sm rounded-full border-2 transition-colors ' +
                             (isActive
                               ? 'border-civil-red-strong bg-red-50 text-stone-900 font-medium'
-                              : 'border-stone-300 bg-white text-stone-700 hover:border-stone-400 dark:hover:border-stone-600 hover:bg-stone-50')
+                              : 'border-stone-300 bg-white text-stone-700 hover:border-stone-400 dark:hover:border-zinc-600 hover:bg-stone-50')
                           }
                         >
                           {e.name}
@@ -564,7 +564,7 @@ export default function RagExplore() {
                         setRelatedEntry(Number(numMatch[1]));
                       }
                     }}
-                    className="mt-1 block w-full sm:w-96 px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 dark:placeholder-stone-500 focus:border-civil-red-strong focus:outline-none focus:ring-2 focus:ring-red-200 dark:focus:ring-red-400/30"
+                    className="mt-1 block w-full sm:w-96 px-3 py-2 border border-stone-300 rounded-md bg-white text-stone-900 dark:placeholder-zinc-500 focus:border-civil-red-strong focus:outline-none focus:ring-2 focus:ring-red-200 dark:focus:ring-red-400/30"
                   />
                 </label>
                 {allInterviewees && (

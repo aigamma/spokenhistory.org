@@ -187,7 +187,7 @@ export default function ClipPlayer() {
         <h2 className="text-2xl font-semibold text-blue-800 dark:text-blue-300">
           {clipData.topic}
         </h2>
-        <div className="flex items-center text-sm text-gray-500 dark:text-stone-400">
+        <div className="flex items-center text-sm text-gray-500 dark:text-zinc-400">
           <Clock size={16} className="mr-2" />
           <span>{clipData.timestamp}</span>
         </div>
@@ -220,13 +220,13 @@ export default function ClipPlayer() {
       </div>
 
       {/* Clip Summary */}
-      <div className="bg-gray-50 border border-gray-200 dark:bg-stone-800 dark:border-stone-800 rounded-lg p-4 mt-4">
-        <p className="text-gray-800 dark:text-stone-200 leading-relaxed">{clipData.summary}</p>
+      <div className="bg-gray-50 border border-gray-200 dark:bg-zinc-800 dark:border-zinc-800 rounded-lg p-4 mt-4">
+        <p className="text-gray-800 dark:text-zinc-200 leading-relaxed">{clipData.summary}</p>
       </div>
 
       {/* Interviewee Role */}
       {mainSummary.role && (
-        <div className="text-gray-600 dark:text-stone-400 text-lg mt-6 italic">
+        <div className="text-gray-600 dark:text-zinc-400 text-lg mt-6 italic">
           {mainSummary.role}
         </div>
       )}

@@ -167,7 +167,7 @@ export default function TourMap({ tour, onSelectStop = null }) {
                   cy={s.cy}
                   r={isHover ? 18 : 14}
                   fill="#F2483C"
-                  stroke="#1c1917"
+                  stroke="#18181b"
                   strokeWidth={1.5}
                   style={{ cursor: onSelectStop ? 'pointer' : 'default', transition: 'r 90ms' }}
                   onMouseEnter={() => setHoverStop(s.entry_number)}
@@ -192,7 +192,7 @@ export default function TourMap({ tour, onSelectStop = null }) {
                   y={s.cy + 4}
                   fontSize={isHover ? 13 : 11}
                   fontWeight={isHover ? 600 : 500}
-                  fill="#1c1917"
+                  fill="#18181b"
                   paintOrder="stroke"
                   stroke="rgba(250,250,249,0.95)"
                   strokeWidth={3}

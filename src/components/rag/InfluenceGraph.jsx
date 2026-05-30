@@ -38,7 +38,7 @@ const H = 520;
 const COLOR_IN_CORPUS = '#F2483C';
 const COLOR_EXTERNAL = '#78716c';
 const COLOR_EDGE = '#d6d3d1';
-const COLOR_EDGE_HOVER = '#1c1917';
+const COLOR_EDGE_HOVER = '#18181b';
 const COLOR_LABEL_BG = 'rgba(255,255,255,0.92)';
 
 export default function InfluenceGraph({
@@ -145,7 +145,7 @@ export default function InfluenceGraph({
       .attr('r', (d) => radiusFor(d))
       .attr('fill', (d) => (d.in_corpus ? COLOR_IN_CORPUS : COLOR_EXTERNAL))
       .attr('fill-opacity', 0.85)
-      .attr('stroke', '#1c1917')
+      .attr('stroke', '#18181b')
       .attr('stroke-width', (d) => (d.id === selectedId ? 2 : 0.8))
       .attr('filter', (d) => (d.id === selectedId ? 'url(#glow-selected)' : null));
 
@@ -158,7 +158,7 @@ export default function InfluenceGraph({
       .attr('y', 4)
       .attr('font-size', 11)
       .attr('font-family', 'ui-sans-serif, system-ui, sans-serif')
-      .attr('fill', '#1c1917')
+      .attr('fill', '#18181b')
       .attr('paint-order', 'stroke')
       .attr('stroke', COLOR_LABEL_BG)
       .attr('stroke-width', 3)

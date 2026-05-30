@@ -469,7 +469,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
             placeholder="Project a phrase onto the map (finds closest voice)…"
-            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-stone-800 dark:border-emerald-700 dark:text-stone-100"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-zinc-800 dark:border-emerald-700 dark:text-zinc-100"
             aria-label="Project a phrase onto the interview map"
             disabled={conceptLoading}
           />
@@ -519,7 +519,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
                 key={ex}
                 type="button"
                 onClick={() => runExample(ex)}
-                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-stone-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-zinc-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
               >
                 {ex}
               </button>
@@ -544,9 +544,9 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
 
       <div className="rounded-lg border border-stone-200 bg-stone-50 overflow-hidden">
         {/* SVG substrate + interior fills branch on isDark (useIsDark): the inline
-            background ('#fafaf9' light / '#1c1917' dark), the quadrant guidelines
+            background ('#fafaf9' light / '#18181b' dark), the quadrant guidelines
             ('#e7e5e4' light / '#292524' dark), the empirical axis labels ('#57534e'
-            light / '#a8a29e' dark), and the dot name labels (fills '#1c1917' /
+            light / '#a8a29e' dark), and the dot name labels (fills '#18181b' /
             '#44403c' light -> '#f5f5f4' / '#d6d3d1' dark, with the stroke halo
             'rgba(250,250,249,0.95)' light / 'rgba(12,10,9,0.9)' dark). Dot fills come
             from TIER_COLORS and the neighbor curves / concept-query pin use brand +
@@ -557,7 +557,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
           viewBox={`0 0 ${W} ${H}`}
           role="img"
           aria-label="136 interviewees positioned in UMAP-projected embedding space, with empirically-derived axis labels and names."
-          style={{ display: 'block', background: isDark ? '#1c1917' : '#fafaf9' }}
+          style={{ display: 'block', background: isDark ? '#18181b' : '#fafaf9' }}
         >
           {/* Quadrant guidelines */}
           <line x1={PAD} y1={H / 2} x2={W - PAD} y2={H / 2} stroke={isDark ? '#292524' : '#e7e5e4'} strokeDasharray="3 5" />
@@ -674,7 +674,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
                     r={isFocus ? 8 : (isNeighbor ? 5.5 : (matched && isMatch ? 5.5 : 4))}
                     fill={isFocus ? '#F2483C' : tierColor}
                     fillOpacity={isFocus ? 1 : (isNeighbor ? 1 : baseAlpha)}
-                    stroke={isFocus ? '#1c1917' : 'transparent'}
+                    stroke={isFocus ? '#18181b' : 'transparent'}
                     strokeWidth={isFocus ? 1.5 : 0}
                   />
                   {/* Name label, render alongside the dot, with stroke
@@ -685,7 +685,7 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
                       y={cy + 4}
                       fontSize={isFocus ? 13 : (isNeighbor ? 11 : 10)}
                       fontWeight={isFocus ? 600 : (isNeighbor ? 600 : 400)}
-                      fill={isFocus ? (isDark ? '#f5f5f4' : '#1c1917') : (isNeighbor ? '#B23E2F' : (isDark ? '#d6d3d1' : '#44403c'))}
+                      fill={isFocus ? (isDark ? '#f5f5f4' : '#18181b') : (isNeighbor ? '#B23E2F' : (isDark ? '#d6d3d1' : '#44403c'))}
                       opacity={matched && !isMatch && !isNeighbor ? 0.2 : 1}
                       paintOrder="stroke"
                       stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(250,250,249,0.95)'}

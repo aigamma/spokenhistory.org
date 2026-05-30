@@ -157,7 +157,7 @@ export default function ForceDirectedTopicGraph({
     node.append('circle')
       .attr('r', d => d.radius)
       .attr('fill', d => d.isSearch ? searchNodeColor : topicNodeColor)
-      .attr('stroke', d => d.isSearch ? '#1c1917' : '#fff') // stone-900 for search, white for others
+      .attr('stroke', d => d.isSearch ? '#18181b' : '#fff') // stone-900 for search, white for others
       .attr('stroke-width', d => d.isSearch ? 3 : 2)
       .style('cursor', 'pointer')
       .on('mouseover', function(event, d) {
@@ -213,7 +213,7 @@ export default function ForceDirectedTopicGraph({
       .attr('font-size', d => d.isSearch ? searchFontSize : topicFontSize)
       .attr('font-weight', d => d.isSearch ? 'bold' : 'normal')
       .attr('font-family', 'Chivo Mono, monospace')
-      .attr('fill', '#1c1917') // stone-900
+      .attr('fill', '#18181b') // stone-900
       .attr('text-anchor', 'middle')
       .attr('dy', d => d.radius + 18)
       .style('pointer-events', 'none')

@@ -225,7 +225,7 @@ export default function ConceptMatrix() {
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
             placeholder="Project a phrase onto all 5 lenses…"
-            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-stone-800 dark:border-emerald-700 dark:text-stone-100"
+            className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-zinc-800 dark:border-emerald-700 dark:text-zinc-100"
             aria-label="Project a query phrase across all five lenses"
             disabled={conceptLoading}
           />
@@ -273,7 +273,7 @@ export default function ConceptMatrix() {
                 key={ex}
                 type="button"
                 onClick={() => runExample(ex)}
-                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-stone-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
+                className="px-2 py-0.5 rounded-full border border-emerald-300 bg-white text-emerald-800 hover:bg-emerald-50 hover:border-emerald-500 dark:bg-zinc-800 dark:border-emerald-700 dark:text-emerald-300 dark:hover:bg-emerald-950 dark:hover:border-emerald-500 transition-colors"
               >
                 {ex}
               </button>
@@ -468,7 +468,7 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
     <figure className="rounded-md border border-stone-200 bg-white overflow-hidden">
       {/* MiniScatter SVG interior fills branch on isDark (useIsDark): the two axis
           lines ('#d6d3d1' light / '#44403c' dark), the four pole labels ('#57534e'
-          light / '#a8a29e' dark), and the title strip ('#1c1917' light / '#f5f5f4'
+          light / '#a8a29e' dark), and the title strip ('#18181b' light / '#f5f5f4'
           dark). The query-marker white stroke halo stays white (reads on dark);
           dot fills come from TIER_COLORS and are theme-safe. */}
       <svg
@@ -519,7 +519,7 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
         <text
           x={W / 2} y={18}
           fontSize="11" textAnchor="middle"
-          fill={isDark ? '#f5f5f4' : '#1c1917'} fontWeight={500}
+          fill={isDark ? '#f5f5f4' : '#18181b'} fontWeight={500}
           fontFamily="Chivo Mono, ui-monospace, monospace"
         >
           {axisX.pole_a.label.split(' ')[0]} ↔ {axisX.pole_b.label.split(' ')[0]}
@@ -538,7 +538,7 @@ function MiniScatter({ axisX, axisY, profilesById, highlightEntry, onHover, onSe
               r={isFocus ? 6 : 3.2}
               fill={isFocus ? '#F2483C' : p.color}
               fillOpacity={isFocus ? 1 : (highlightEntry != null ? 0.25 : 0.78)}
-              stroke={isFocus ? '#1c1917' : 'transparent'}
+              stroke={isFocus ? '#18181b' : 'transparent'}
               strokeWidth={isFocus ? 1.5 : 0}
               style={{ cursor: 'pointer', transition: 'r 90ms, fill-opacity 90ms' }}
               onMouseEnter={() => onHover(p.entry_number)}
@@ -767,7 +767,7 @@ function FiveAxisRadar({ profile, axes }) {
 
         {/* Vertex dots */}
         {spokes.map((s, i) => (
-          <circle key={`vertex-${i}`} cx={s.vx} cy={s.vy} r={3.5} fill="#F2483C" stroke="#1c1917" strokeWidth={1} />
+          <circle key={`vertex-${i}`} cx={s.vx} cy={s.vy} r={3.5} fill="#F2483C" stroke="#18181b" strokeWidth={1} />
         ))}
 
         {/* Pole_b labels at the rim */}

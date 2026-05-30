@@ -242,12 +242,12 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
 
   return (
     // Container is dark-aware via the global .dark overrides on bg-white
-    // (-> #1c1917) and border-stone-200 (-> #292524). The SVG internals
+    // (-> #18181b) and border-stone-200 (-> #292524). The SVG internals
     // below use hardcoded hex paint (node fills, edge strokes, and white
     // text halos) tuned for a light SVG background.
     // TODO(dark-mode): re-tune RadialNetwork SVG paint for the dark
     // surface, edge stroke (#a8a29e), inactive node fill (#78716c), the
-    // #1c1917 node outline (invisible on the dark card), and the white
+    // #18181b node outline (invisible on the dark card), and the white
     // text-halo strokes that assume a light backdrop.
     <div className="rounded-lg border border-stone-200 bg-white overflow-hidden">
       <svg
@@ -296,7 +296,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
               cy={n.y}
               r={hoverIdx === i ? 11 : 8}
               fill={hoverIdx === i ? '#F2483C' : (isDark ? '#a8a29e' : '#78716c')}
-              stroke={isDark ? '#f5f5f4' : '#1c1917'}
+              stroke={isDark ? '#f5f5f4' : '#18181b'}
               strokeWidth={1.2}
               opacity={hoverIdx === -1 || hoverIdx === i ? 1 : 0.5}
             />
@@ -305,7 +305,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
               y={n.y + 4}
               fontSize={11}
               fontWeight={hoverIdx === i ? 600 : 500}
-              fill={isDark ? '#f5f5f4' : '#1c1917'}
+              fill={isDark ? '#f5f5f4' : '#18181b'}
               textAnchor={n.angle > -Math.PI / 2 && n.angle < Math.PI / 2 ? 'start' : 'end'}
               paintOrder="stroke"
               stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(255,255,255,0.95)'}
@@ -326,7 +326,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
             of system color-scheme. The original "near-white text on
             brand red" was ~2.6:1, well below WCAG AA. */}
         <g>
-          <circle cx={cx} cy={cy} r={20} fill="#F2483C" stroke={isDark ? '#f5f5f4' : '#1c1917'} strokeWidth={2} />
+          <circle cx={cx} cy={cy} r={20} fill="#F2483C" stroke={isDark ? '#f5f5f4' : '#18181b'} strokeWidth={2} />
           <text
             x={cx}
             y={cy + 4}
@@ -349,7 +349,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
             y={cy + 38}
             fontSize={13}
             fontWeight={600}
-            fill={isDark ? '#f5f5f4' : '#1c1917'}
+            fill={isDark ? '#f5f5f4' : '#18181b'}
             textAnchor="middle"
             paintOrder="stroke"
             stroke={isDark ? 'rgba(12,10,9,0.9)' : 'rgba(255,255,255,0.95)'}
@@ -365,7 +365,7 @@ function RadialNetwork({ focal, related, onNavigate = null }) {
         {/* Hover detail strip in the bottom */}
         {hoverIdx >= 0 && (
           <g>
-            <rect x={12} y={H - 38} width={W - 24} height={28} rx={4} fill="#1c1917" opacity={0.92} />
+            <rect x={12} y={H - 38} width={W - 24} height={28} rx={4} fill="#18181b" opacity={0.92} />
             <text
               x={20}
               y={H - 20}

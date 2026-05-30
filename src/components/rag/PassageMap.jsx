@@ -28,7 +28,7 @@
  *
  * Brand styling: Plotly's default theme is a neutral light gray.
  * We pass an explicit layout config that swaps in our cream
- * background (#EBEAE9), stone text (#1c1917), Chivo Mono / Inter
+ * background (#EBEAE9), stone text (#18181b), Chivo Mono / Inter
  * font stacks, and the warm topic palette already used by the
  * NomicProjection canvas version.
  */
@@ -243,15 +243,15 @@ export default function PassageMap() {
     // Dark-mode: the chrome colors below branch on isDark (from
     // useIsDark, reactive to the .dark class toggle). The light branch
     // is the original light-theme palette, kept byte-for-byte; only the
-    // dark branch is new. plot_bgcolor stays '#1c1917' on both themes
+    // dark branch is new. plot_bgcolor stays '#18181b' on both themes
     // (intentional dark plot well so dots read on either page chrome).
     // Marker colors come from TOPIC_PALETTE and the HIGHLIGHT_COLOR
     // brand red, which read on both themes, so they are not branched.
-    paper_bgcolor: isDark ? '#1c1917' : '#EBEAE9',
-    plot_bgcolor: '#1c1917',
+    paper_bgcolor: isDark ? '#18181b' : '#EBEAE9',
+    plot_bgcolor: '#18181b',
     font: {
       family: 'Inter, ui-sans-serif, system-ui, sans-serif',
-      color: isDark ? '#f5f5f4' : '#1c1917',
+      color: isDark ? '#f5f5f4' : '#18181b',
       size: 12,
     },
     showlegend: false,
@@ -264,7 +264,7 @@ export default function PassageMap() {
       showgrid: true,
       gridcolor: isDark ? 'rgba(120,113,108,0.25)' : 'rgba(168,162,158,0.18)',
       zeroline: false,
-      color: isDark ? '#e7e5e4' : '#1c1917',
+      color: isDark ? '#e7e5e4' : '#18181b',
       ticks: 'outside',
       tickcolor: isDark ? '#57534e' : '#a8a29e',
       // Native x-axis range slider, the marquee feature here.
@@ -284,7 +284,7 @@ export default function PassageMap() {
       showgrid: true,
       gridcolor: isDark ? 'rgba(120,113,108,0.25)' : 'rgba(168,162,158,0.18)',
       zeroline: false,
-      color: isDark ? '#e7e5e4' : '#1c1917',
+      color: isDark ? '#e7e5e4' : '#18181b',
       ticks: 'outside',
       tickcolor: isDark ? '#57534e' : '#a8a29e',
     },
@@ -319,7 +319,7 @@ export default function PassageMap() {
         <button
           type="button"
           onClick={resetView}
-          className="px-3 py-1.5 rounded-md border border-stone-300 bg-white hover:bg-stone-50 dark:hover:bg-stone-800 text-xs text-stone-700"
+          className="px-3 py-1.5 rounded-md border border-stone-300 bg-white hover:bg-stone-50 dark:hover:bg-zinc-800 text-xs text-stone-700"
         >
           Reset view
         </button>
@@ -330,7 +330,7 @@ export default function PassageMap() {
       </div>
 
       <div className="flex items-stretch gap-3">
-        <div className="flex-1 rounded-lg border border-stone-200 overflow-hidden shadow-sm bg-[#EBEAE9] dark:bg-stone-900">
+        <div className="flex-1 rounded-lg border border-stone-200 overflow-hidden shadow-sm bg-[#EBEAE9] dark:bg-zinc-900">
           <Plot
             ref={plotRef}
             data={plotData}

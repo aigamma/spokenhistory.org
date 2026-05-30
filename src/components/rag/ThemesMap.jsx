@@ -123,8 +123,8 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
     <>
       <div className="rounded-lg border border-stone-200 overflow-hidden bg-stone-50">
         {/* SVG substrate + interior fills branch on isDark (useIsDark): the inline
-            background ('#fafaf9' light / '#1c1917' dark), the reference grid lines
-            ('#e7e5e4' light / '#292524' dark), and the bubble labels (fill '#1c1917'
+            background ('#fafaf9' light / '#18181b' dark), the reference grid lines
+            ('#e7e5e4' light / '#292524' dark), and the bubble labels (fill '#18181b'
             light / '#f5f5f4' dark, with stroke halo '#fafaf9' light /
             'rgba(12,10,9,0.9)' dark) so the chart interior inverts with the rest of
             the page. */}
@@ -134,7 +134,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
           viewBox={`0 0 ${W} ${H}`}
           role="img"
           aria-label="30 thematic clusters positioned at their centroids in the embedding space. Bubble size shows cluster member count; color shows dominant audit tier."
-          style={{ display: 'block', background: isDark ? '#1c1917' : '#fafaf9' }}
+          style={{ display: 'block', background: isDark ? '#18181b' : '#fafaf9' }}
         >
           {/* Soft reference grid */}
           <g aria-hidden="true">
@@ -181,7 +181,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
                     r={r}
                     fill={color}
                     fillOpacity={isSelected ? 0.92 : isHover ? 0.85 : 0.7}
-                    stroke={isSelected ? '#1c1917' : '#1c1917'}
+                    stroke={isSelected ? '#18181b' : '#18181b'}
                     strokeWidth={isSelected ? 2.5 : 0.5}
                     style={{ cursor: 'pointer', transition: 'fill-opacity 120ms' }}
                     onMouseEnter={(e) => handleMouseEnter(c, e)}
@@ -205,7 +205,7 @@ export default function ThemesMap({ clusters, selectedId, onSelect }) {
                       y={cy + 4}
                       fontSize={Math.min(13, r * 0.55)}
                       textAnchor="middle"
-                      fill={isDark ? '#f5f5f4' : '#1c1917'}
+                      fill={isDark ? '#f5f5f4' : '#18181b'}
                       paintOrder="stroke"
                       stroke={isDark ? 'rgba(12,10,9,0.9)' : '#fafaf9'}
                       strokeWidth={2.5}

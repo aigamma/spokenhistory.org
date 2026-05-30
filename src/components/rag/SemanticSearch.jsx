@@ -149,7 +149,7 @@ export default function SemanticSearch({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
-          className="w-full pl-12 pr-40 py-4 text-base border border-stone-300 rounded-lg focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-700/30 dark:focus:ring-red-400/30 outline-none transition-colors bg-white dark:placeholder-stone-500"
+          className="w-full pl-12 pr-40 py-4 text-base border border-stone-300 rounded-lg focus:border-red-700 dark:focus:border-red-400 focus:ring-2 focus:ring-red-700/30 dark:focus:ring-red-400/30 outline-none transition-colors bg-white dark:placeholder-zinc-500"
           aria-label="Search query"
           maxLength={4000}
         />
@@ -205,7 +205,7 @@ export default function SemanticSearch({
             type="checkbox"
             checked={dedupeByEntry}
             onChange={(e) => setDedupeByEntry(e.target.checked)}
-            className="rounded border-stone-400 dark:border-stone-600 text-red-700 dark:text-red-400 focus:ring-red-700/30 dark:focus:ring-red-400/30"
+            className="rounded border-stone-400 dark:border-zinc-600 text-red-700 dark:text-red-400 focus:ring-red-700/30 dark:focus:ring-red-400/30"
           />
           <span>One passage per interviewee</span>
         </label>
