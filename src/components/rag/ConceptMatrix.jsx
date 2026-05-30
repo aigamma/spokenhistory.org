@@ -611,14 +611,9 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
         </div>
         <div className="flex items-center gap-3">
           {profile.loc_item_url && (
-            <a
-              href={profile.loc_item_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-civil-red-body hover:underline"
-            >
-              LoC catalog ↗
-            </a>
+            <span className="text-xs text-stone-500">
+              Library of Congress
+            </span>
           )}
           {locked && (
             <button

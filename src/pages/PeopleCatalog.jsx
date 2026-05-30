@@ -121,7 +121,7 @@ export default function PeopleCatalog() {
             People Catalog
           </h1>
           <p className="text-stone-700 max-w-3xl">
-            A citation-bearing reference page per named individual on the site, {counts ? counts.interviewees : ''} oral-history interviewees plus {counts ? counts.external_figures : ''} external figures the interviewees discuss. Each catalog page consolidates the bio, the AI's reading of the figure's embedding signature, the semantic neighbors, the concept-axis positions, and the cross-links into curated tours and the influence graph.
+            A citation-bearing reference page per named individual on the site, {counts ? counts.interviewees : ''} oral-history interviewees plus {counts ? counts.external_figures : ''} historic figures the interviewees discuss. Each catalog page consolidates the bio, the AI's reading of the figure's embedding signature, the semantic neighbors, the concept-axis positions, and the cross-links into curated tours and the influence graph.
           </p>
         </header>
 
@@ -141,7 +141,7 @@ export default function PeopleCatalog() {
             {[
               { key: 'all', label: 'All' },
               { key: 'interviewee', label: 'Interviewees' },
-              { key: 'external_figure', label: 'External figures' },
+              { key: 'external_figure', label: 'Historic Figures' },
             ].map(({ key, label }) => (
               <button
                 key={key}
@@ -207,7 +207,7 @@ export default function PeopleCatalog() {
                           <FileText className="w-3 h-3" aria-hidden="true" />
                         </span>
                       ) : (
-                        <span title="External figure (not interviewed)" className="inline-flex items-center text-stone-500">
+                        <span title="Historic figure (not interviewed)" className="inline-flex items-center text-stone-500">
                           <Users className="w-3 h-3" aria-hidden="true" />
                         </span>
                       )}

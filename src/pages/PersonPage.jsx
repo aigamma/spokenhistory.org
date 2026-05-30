@@ -203,15 +203,10 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               />
             )}
             {snippet.loc_url && (
-              <a
-                href={snippet.loc_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-semibold text-sky-800 dark:text-sky-300 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 rounded"
-              >
-                <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+              <span className="inline-flex items-center gap-1 font-semibold text-stone-600 dark:text-stone-400">
+                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
                 Library of Congress
-              </a>
+              </span>
             )}
           </div>
         </figcaption>
@@ -749,15 +744,10 @@ export default function PersonPage() {
                   Primary source
                 </h2>
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <a
-                    href={crossLinks.locItemUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-civil-red-body hover:underline font-medium"
-                  >
+                  <span className="inline-flex items-center gap-1 text-stone-700 dark:text-stone-300 font-medium">
+                    <FileText className="w-3.5 h-3.5" aria-hidden="true" />
                     Library of Congress item
-                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                  </a>
+                  </span>
                   {crossLinks.chunkCount > 0 && (
                     <span className="text-xs text-stone-600">
                       <span className="font-medium text-stone-900 tabular-nums">{crossLinks.chunkCount}</span> time-anchored passages in the corpus

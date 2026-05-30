@@ -14,7 +14,7 @@
  *     hovered/selected; opacity adapts to zoom level.
  *   - Pan + zoom via mouse drag and wheel.
  *   - Hover → cursor-anchored card showing entry subject + passage
- *     preview + audit tier + LoC link.
+ *     preview + audit tier + Library of Congress provenance label.
  *   - Topic legend on the right, click to filter to just that topic
  *     (dims everything else).
  *   - Search box: matches entry_subject / text_preview, highlights
@@ -486,9 +486,8 @@ function HoverCard({ hover }) {
           </div>
         )}
         {point.loc_item_url && (
-          <div className="text-xs text-stone-300 mt-2 inline-flex items-center gap-1">
-            <ExternalLink className="w-3 h-3" aria-hidden="true" />
-            <span>{point.loc_item_url.replace(/^https?:\/\//, '')}</span>
+          <div className="text-xs text-stone-300 mt-2">
+            Library of Congress
           </div>
         )}
       </div>

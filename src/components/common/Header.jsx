@@ -6,68 +6,32 @@ import { useTheme } from '../../hooks/useTheme';
 /**
  * Header, global nav for the protected app.
  *
- * Three pill links sit on the left (Timeline, Spectrum, Topics) and
- * a single red Menu pill sits in the far-right corner; clicking Menu
- * opens the slide-out drawer with the full route list. A pill (and
- * its corresponding entry in the slide-out menu) is hidden when the
- * user is already on the page that pill leads to, the rule is
- * "don't advertise the page you're on."
+ * The header is now just two controls: a Light/Dark toggle and a red
+ * Menu pill in the far-right corner. There are no top-of-page pill
+ * links anymore; clicking Menu opens the slide-out drawer that carries
+ * every destination. The drawer entry for the page the user is already
+ * on is grayed and non-interactive (marked aria-current) rather than
+ * hidden, so the menu keeps a constant shape and shows the user where
+ * they are.
  */
 
-// Top-of-page pills. Each entry carries its visual color and a matcher
-// that decides whether the pill maps to the current location. The
-// matcher matches on pathname and (for /rag-explore) on the ?tab=
-// search param. `defaultTab` lets the Spectrum pill self-hide when
-// the user is on /rag-explore with no ?tab= (the page defaults to
-// spectrum there).
-const NAV_ROUTES = [
-  {
-    label: 'Timeline',
-    to: '/',
-    bg: 'bg-emerald-700 hover:bg-emerald-800',
-    matchPath: '/',
-  },
-  {
-    label: 'Spectrum',
-    to: '/rag-explore?tab=spectrum',
-    bg: 'bg-violet-700 hover:bg-violet-800',
-    matchPath: '/rag-explore',
-    matchTab: 'spectrum',
-    defaultTab: true,
-  },
-  {
-    label: 'Topics',
-    to: '/topic-glossary',
-    bg: 'bg-sky-700 hover:bg-sky-800',
-    matchPath: '/topic-glossary',
-  },
-];
-
-// Slide-out menu items. Same shape as NAV_ROUTES so the same matcher
-// can hide the current page from this list too. The numbered prefix
-// (01., 02., ...) is assigned at render time after filtering so the
-// numbering stays contiguous regardless of which page is currently
-// hidden.
+// Slide-out menu items. Dustin (2026-05-30) asked to remove the
+// top-of-page pill links and let the single Menu drawer carry every
+// destination, so there is no NAV_ROUTES list anymore. "Spectrum" is
+// renamed "Ideological Spectrums", and the two technical sub-tab
+// entries ("Semantic Overlap", "Word Search") are dropped from the
+// menu in favor of content-level destinations. The numbered prefix
+// (01., 02., ...) is assigned at render time. The entry matching the
+// current page is grayed and non-interactive (not hidden), so the
+// numbering and the menu's overall shape stay constant across pages.
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   {
-    label: 'Spectrum',
+    label: 'Ideological Spectrums',
     to: '/rag-explore?tab=spectrum',
     matchPath: '/rag-explore',
     matchTab: 'spectrum',
     defaultTab: true,
-  },
-  {
-    label: 'Semantic Overlap',
-    to: '/rag-explore?tab=related',
-    matchPath: '/rag-explore',
-    matchTab: 'related',
-  },
-  {
-    label: 'Word Search',
-    to: '/rag-explore?tab=lenses',
-    matchPath: '/rag-explore',
-    matchTab: 'lenses',
   },
   { label: 'Interviews', to: '/interview-index', matchPath: '/interview-index' },
   { label: 'People', to: '/people', matchPath: '/people' },
@@ -119,36 +83,19 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
-  const visibleNav = NAV_ROUTES.filter((r) => !isCurrentRoute(r, location));
-  const visibleMenu = MENU_ROUTES.filter((r) => !isCurrentRoute(r, location));
+  // Every menu item renders below; the entry matching the current page
+  // is grayed and non-interactive (computed per-item) instead of being
+  // filtered out, so the drawer keeps a constant shape and numbering.
 
   return (
     <>
-      {/* Header, a single row: pill nav strip on the left, search +
-          hamburger on the right. The original 4xl wordmark is gone;
-          the pills carry the site's identity now. */}
+      {/* Header, a single row. The top-of-page pill nav is gone (Dustin,
+          2026-05-30); the row now carries only the Light/Dark toggle and
+          the Menu button, pinned to the right. Every destination lives
+          in the Menu drawer. */}
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 py-4 sm:py-5">
-          <div className="flex items-start justify-between gap-3 sm:gap-6">
-            <nav
-              aria-label="Featured demos"
-              className="flex flex-wrap items-center gap-2 sm:gap-2.5 flex-1 min-w-0"
-            >
-              {visibleNav.map((route) => (
-                <Link
-                  key={route.to}
-                  to={route.to}
-                  className={
-                    'inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium text-white shadow-sm transition-colors ' +
-                    route.bg
-                  }
-                  style={{ fontFamily: 'Chivo Mono, monospace' }}
-                >
-                  {route.label}
-                </Link>
-              ))}
-            </nav>
-
+          <div className="flex items-start justify-end gap-3 sm:gap-6">
             <div className="flex items-start gap-2 sm:gap-2.5 flex-shrink-0">
               {/* Light/dark toggle, sits just left of Menu. Its label
                   names the mode it switches TO (Dark when currently
@@ -219,26 +166,44 @@ export default function Header() {
             </button>
           </div>
 
-          {visibleMenu.map((item, idx) => {
+          {MENU_ROUTES.map((item, idx) => {
             const num = String(idx + 1).padStart(2, '0') + '.';
-            const isLast = idx === visibleMenu.length - 1;
+            const isLast = idx === MENU_ROUTES.length - 1;
+            const isCurrent = isCurrentRoute(item, location);
             return (
               <div key={item.to} className={`w-full ${!isLast ? 'border-b border-black' : ''}`}>
-                {/* Hover state inverts the row from black-on-red (drawer
-                    default) to white-on-black so the affordance is
-                    unambiguous in both light and dark OS modes. */}
-                <Link
-                  to={item.to}
-                  className="group flex items-center justify-between w-full px-2 py-2 -mx-2 text-black hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <div className="text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                    {num}
+                {isCurrent ? (
+                  // Current page: grayed and non-interactive (aria-current)
+                  // so the user sees where they are and cannot "navigate"
+                  // to the page they are already on.
+                  <div
+                    aria-current="page"
+                    className="flex items-center justify-between w-full px-2 py-2 -mx-2 text-black/40 cursor-default select-none"
+                  >
+                    <div className="text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                      {num}
+                    </div>
+                    <div className="text-right text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {item.label}
+                    </div>
                   </div>
-                  <div className="text-right text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
-                    {item.label}
-                  </div>
-                </Link>
+                ) : (
+                  /* Hover state inverts the row from black-on-red (drawer
+                     default) to white-on-black so the affordance is
+                     unambiguous in both light and dark OS modes. */
+                  <Link
+                    to={item.to}
+                    className="group flex items-center justify-between w-full px-2 py-2 -mx-2 text-black hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <div className="text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                      {num}
+                    </div>
+                    <div className="text-right text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {item.label}
+                    </div>
+                  </Link>
+                )}
               </div>
             );
           })}

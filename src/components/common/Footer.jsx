@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
  * This component provides:
  * 1. Project branding with "Civil Rights History Project" title
  * 2. Navigation links to main sections of the site
- * 3. External link to Library of Congress
+ * 3. Library of Congress attribution (plain text, no outbound link)
  * 4. Consistent styling and responsive design
  * 5. Proper accessibility attributes
  * 
@@ -94,15 +94,12 @@ export default function Footer() {
             >
               About
             </Link>
-            <a
-              href="https://www.loc.gov"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] hover:underline whitespace-nowrap"
+            <span
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl xl:text-2xl font-bold font-['Inter'] whitespace-nowrap"
               style={{ color: '#EBEAE9' }}
             >
               Library of Congress
-            </a>
+            </span>
           </nav>
         </div>
         

@@ -143,14 +143,14 @@ const VALID_TAB = (t) => {
 // heavier border. Spectrum is rendered above the tab nav as the page's
 // permanent headline surface, so it does NOT appear in this list.
 const TAB_ORDER = [
-  { id: 'lenses', label: 'Word Search', featured: true },
+  { id: 'lenses', label: 'Concept Lenses', featured: true },
   { id: 'map', label: 'Interview Map' },
-  { id: 'related', label: 'Semantic Overlap' },
+  { id: 'related', label: 'Related People' },
   { id: 'quote', label: 'Quote Finder' },
   { id: 'themes', label: 'Themes' },
   { id: 'names', label: 'Famous Names' },
-  { id: 'atlas', label: 'Atlas' },
-  { id: 'network', label: 'Network' },
+  { id: 'atlas', label: 'Places' },
+  { id: 'network', label: 'Influence' },
   { id: 'tours', label: 'Tours' },
   { id: 'quote-of-day', label: 'Quote of the Day' },
 ];
@@ -162,20 +162,20 @@ const TAB_ORDER = [
 // always-visible relative of the "Concept projection" group.
 const TAB_GROUPS = [
   {
-    label: 'Concept projection',
+    label: 'Concepts & Ideas',
     tabs: ['lenses'],
-    footnote: 'Spectrum (two-axis lens) is the chart at the top of this page.',
+    footnote: 'Ideological Spectrums (the two-axis lens) is the chart at the top of this page.',
   },
   {
-    label: 'Structural maps',
+    label: 'Maps of the Archive',
     tabs: ['map', 'themes', 'network', 'atlas'],
   },
   {
-    label: 'Find a passage',
+    label: 'Find a Moment',
     tabs: ['quote', 'related'],
   },
   {
-    label: 'Curated reading',
+    label: 'Curated Paths',
     tabs: ['tours', 'names', 'quote-of-day'],
   },
 ];
@@ -185,15 +185,15 @@ const TAB_GROUPS = [
 // demos) and for the in-page section heading. Keep in sync with the
 // tab buttons in <nav> below.
 const TAB_LABELS = {
-  lenses: 'Word Search',
+  lenses: 'Concept Lenses',
   quote: 'Quote Finder',
-  spectrum: 'Spectrum', // retained for back-compat; resolves to default tab
+  spectrum: 'Ideological Spectrums', // retained for back-compat; resolves to default tab
   map: 'Interview Map',
-  related: 'Semantic Overlap',
+  related: 'Related People',
   themes: 'Themes',
   names: 'Famous Names',
-  atlas: 'Atlas',
-  network: 'Network',
+  atlas: 'Places',
+  network: 'Influence',
   tours: 'Tours',
   'quote-of-day': 'Quote of the Day',
 };
@@ -218,7 +218,7 @@ export default function RagExplore() {
   // a single tab-pill highlight change deep in the page; surfacing the
   // active demo in the document title makes the navigation legible in
   // browser-tab/history UI too.
-  useDocumentTitle(`Explore the embeddings · ${TAB_LABELS[tab] || tab}`);
+  useDocumentTitle(`Explore the Interview Data · ${TAB_LABELS[tab] || tab}`);
 
   // React to navigation that changes the tab query param (Links from
   // other pages or browser back/forward).
@@ -279,16 +279,14 @@ export default function RagExplore() {
             className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Explore the Embeddings
+            Explore the Interview Data
           </h1>
           <p
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            Multiple lenses on the 136-interview Civil Rights History Project
-            corpus. The chart below places voices along one conceptual axis at
-            a time; tabs further down offer structural maps, passage-finding,
-            and curated readings of the same embedding substrate.
+            Below are a set of tools for exploring the data and learning
+            about the ideas in the interviews.
           </p>
           {stats && (
             <div className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 text-sm text-stone-700">
@@ -345,15 +343,18 @@ export default function RagExplore() {
             className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Spectrum
+            Ideological Spectrums
           </h2>
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
-            Each dot is one interviewee, placed where their voice falls on two named
-            concept axes at once (by default, nonviolence vs. armed self-defense across,
-            individual conscience vs. collective discipline up and down). The placement is
-            reproducible math: the same for every visitor, no model call per dot. Pick any
-            concept for the horizontal and vertical lens in the panel beside the chart, or
-            click a dot to pull the passages that anchor it where it sits.
+            The Civil Rights Movement held real debates inside it: whether to meet
+            violence with nonviolence or with armed self-defense, whether change came
+            from individual conscience or from collective discipline, from local people
+            or national organizations. Each dot is one interviewee, placed by where
+            their own words fall between two of those poles. Reading across a spectrum
+            shows who stood where, and which voices sat close together even though they
+            never met. Pick the two ideas you want to compare in the panel beside the
+            chart, then click any dot to hear the passages that put that person where
+            they sit.
           </p>
           <ConceptSpectrum />
         </section>
@@ -502,12 +503,13 @@ export default function RagExplore() {
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Semantic Overlap
+                Related People
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                For each interview, we precompute which other interviewees in the corpus
-                discuss semantically-related material. Pick a suggested interview below, or
-                search by name to choose from any of the {allInterviewees?.length || 136}.
+                Pick one interview and see which other voices in the collection return to
+                the same subjects, the people whose testimony rhymes with this one even
+                when they never met. Choose a suggested interview below, or search by name
+                to start from any of the {allInterviewees?.length || 136}.
               </p>
 
               {/* Picker: six hand-curated quick picks at top, then a
@@ -651,17 +653,14 @@ export default function RagExplore() {
           {tab === 'lenses' && (
             <div>
               <h2 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Word Search
+                Concept Lenses
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                UMAP and PCA put the corpus into 2D, but their axes mean
-                nothing, they&apos;re just &ldquo;directions of max variance.&rdquo;
-                This view does the opposite: four scatters, each with axes
-                that are <em>named human concepts</em> (nonviolence vs.
-                armed self-defense, sacred vs. secular framing, etc.).
-                Hover any voice in one chart and watch the same person
-                land at a different coordinate in the other three, that
-                shift is what the embedding space is actually telling us.
+                Four spectrums at once. Each chart sorts the same voices along a
+                different pair of ideas (nonviolence and armed self-defense, sacred
+                and secular framing, local and national focus). Follow one person
+                across the four charts and you can see how their testimony shifts
+                emphasis depending on which question you ask of it.
               </p>
               <ConceptMatrix />
             </div>

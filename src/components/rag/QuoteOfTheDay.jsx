@@ -69,10 +69,9 @@ export default function QuoteOfTheDay({ allowCycle = true }) {
           {q.context && <span className="text-stone-500 italic"> · {q.context}</span>}
         </div>
         {q.loc_item_url && (
-          <a href={q.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline">
-            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-            LoC
-          </a>
+          <span className="inline-flex items-center gap-1 text-xs text-stone-500">
+            Library of Congress
+          </span>
         )}
       </footer>
     </aside>

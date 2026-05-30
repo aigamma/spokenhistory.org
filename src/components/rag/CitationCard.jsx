@@ -4,8 +4,8 @@
  * Renders one citation-grade payload (the shape emitted by both the
  * Netlify /retrieve function and the MCP server) as a self-contained
  * card with the interviewee, the quoted passage, the timestamp range,
- * the LoC catalog link, the fidelity transparency note, and the
- * pre-formatted Chicago citation.
+ * the Library of Congress provenance label, the fidelity transparency
+ * note, and the pre-formatted Chicago citation.
  *
  * The same component is consumed by SemanticSearch, QuoteFinder, and
  * RelatedPassages. Keep the visual styling consistent across surfaces.
@@ -116,15 +116,9 @@ export default function CitationCard({
           </span>
         )}
         {locItemUrl && (
-          <a
-            href={locItemUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-civil-red-body hover:underline"
-          >
-            <ExternalLink className="w-4 h-4" aria-hidden="true" />
-            Library of Congress catalog
-          </a>
+          <span className="inline-flex items-center gap-1 text-stone-600">
+            Library of Congress
+          </span>
         )}
         {canHear && (
           <HearInContext

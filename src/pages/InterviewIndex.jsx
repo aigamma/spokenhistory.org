@@ -108,7 +108,7 @@ export default function InterviewIndex() {
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            All 136 interviews in the corpus, each with its Library of Congress cross-reference status and a 3-sentence biographical capsule. Click an entry to open the embedding-space &quot;voices in conversation&quot; view, or follow the Library of Congress link to the canonical archive.
+            All 136 interviews in the corpus, each with its Library of Congress cross-reference status and a 3-sentence biographical capsule. Click an entry to open the embedding-space &quot;voices in conversation&quot; view.
           </p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
             {Object.values(
@@ -230,15 +230,9 @@ function InterviewCard({ interview }) {
           </Link>
         )}
         {interview.loc_item_url && (
-          <a
-            href={interview.loc_item_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-civil-red-body hover:underline"
-          >
-            <ExternalLink className="w-3 h-3" aria-hidden="true" />
-            LoC catalog
-          </a>
+          <span className="inline-flex items-center gap-1 text-stone-500">
+            Library of Congress
+          </span>
         )}
       </div>
     </article>

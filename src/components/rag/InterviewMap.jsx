@@ -801,10 +801,9 @@ export default function InterviewMap({ onNavigateToRelated, onPlaceOnSpectrum } 
                   </button>
                 )}
                 {focus.loc_item_url && (
-                  <a href={focus.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-civil-red-body hover:underline">
-                    <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-                    LoC catalog
-                  </a>
+                  <span className="inline-flex items-center gap-1 text-xs text-stone-500">
+                    Library of Congress
+                  </span>
                 )}
               </div>
             </header>

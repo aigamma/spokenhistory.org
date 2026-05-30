@@ -244,10 +244,9 @@ function PassageCard({ passage }) {
       <div className="flex flex-wrap items-center gap-x-4 text-xs text-stone-700">
         {ts && <span className="inline-flex items-center gap-1"><Clock className="w-3.5 h-3.5" aria-hidden="true" />{ts}</span>}
         {passage.loc_item_url && (
-          <a href={passage.loc_item_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-civil-red-body hover:underline">
-            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-            LoC catalog
-          </a>
+          <span className="inline-flex items-center gap-1 text-stone-500">
+            Library of Congress
+          </span>
         )}
       </div>
     </article>

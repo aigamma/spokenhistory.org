@@ -76,26 +76,16 @@ export default function About() {
             <div className="space-y-6">
               <div className="text-left">
                 <span className="text-black dark:text-zinc-200 text-4xl font-normal font-['Source_Serif_Pro']">This site is a resource for exploring the Library of Congress </span>
-                <a 
-                  href="https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-red-500 text-4xl font-black font-['Source_Serif_Pro'] hover:underline"
-                >
+                <span className="text-red-500 text-4xl font-black font-['Source_Serif_Pro']">
                   Civil Rights History Project
-                </a>
+                </span>
                 <span className="text-black dark:text-zinc-200 text-4xl font-normal font-['Source_Serif_Pro']"> , offering new ways to navigate and connect the stories of those who lived through the movement.</span>
               </div>
               
               <p className="text-black dark:text-zinc-200 text-2xl font-medium font-['Lora'] leading-relaxed">
-              The <a 
-                href="https://www.loc.gov/collections/civil-rights-history-project/about-this-collection/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-red-500 font-black hover:underline"
-              >
+              The <span className="text-red-500 font-black">
                 Civil Rights History Project
-              </a> is a joint effort between the Library of Congress and the Smithsonian National Museum of African American History and Culture. Together, these institutions collected and preserved more than 145 video interviews-nearly 600 hours of first hand stories from participants in the American civil rights movement. Each interview captures deeply personal experiences of struggle, resilience, and change, forming one of the most significant oral history archives of the twentieth century. 
+              </span> is a joint effort between the Library of Congress and the Smithsonian National Museum of African American History and Culture. Together, these institutions collected and preserved more than 145 video interviews-nearly 600 hours of first hand stories from participants in the American civil rights movement. Each interview captures deeply personal experiences of struggle, resilience, and change, forming one of the most significant oral history archives of the twentieth century. 
               </p>
 
               <p className="text-black dark:text-zinc-200 text-2xl font-medium font-['Lora'] leading-relaxed">

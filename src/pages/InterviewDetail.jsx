@@ -197,17 +197,10 @@ export default function InterviewDetail() {
           />
         </div>
 
-        {entry.loc_item_url && (
-          <a
-            href={entry.loc_item_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-stone-900 text-white rounded-md hover:bg-stone-800 dark:bg-zinc-700 dark:hover:bg-zinc-600 transition-colors text-sm"
-          >
-            <ExternalLink className="w-4 h-4" aria-hidden="true" />
-            Library of Congress catalog page
-          </a>
-        )}
+        {/* The outbound "Library of Congress catalog page" button was
+            removed (Dustin, 2026-05-30: keep users on our site, the LoC
+            recording is already embedded above). The Library of Congress
+            remains credited in the video caption. */}
 
         {main?.summary && (
           <section className="mb-10">
