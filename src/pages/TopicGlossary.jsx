@@ -14,6 +14,25 @@ import { Play } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 
+// Major recurring themes drawn from the David Cline interview framework
+// (Dustin, 2026-05-30). Cline, the lead interviewer and scholar for the
+// Civil Rights History Project, identified these as the narratives that run
+// across the collection. Each is a curated entry point into a playlist of
+// clips. Keyword counts were verified against the clip index before wiring.
+const MAJOR_THEMES = [
+  { name: 'Family and Community', kw: 'family' },
+  { name: 'Growing Up Under Jim Crow', kw: 'segregation' },
+  { name: 'Education and Schools', kw: 'school' },
+  { name: 'Emmett Till and Generational Memory', kw: 'emmett till' },
+  { name: 'Youth and Student Activism', kw: 'student' },
+  { name: 'Faith and the Church', kw: 'church' },
+  { name: 'Voter Registration and Local Organizing', kw: 'voter registration' },
+  { name: 'Violence and State Repression', kw: 'violence' },
+  { name: 'Military Service', kw: 'military' },
+  { name: 'Migration', kw: 'migration' },
+  { name: 'Music and Culture', kw: 'music' },
+];
+
 export default function TopicGlossary() {
   useDocumentTitle('Topics');
   const [data, setData] = useState(null);
@@ -74,6 +93,30 @@ export default function TopicGlossary() {
             from the voices inside it.
           </p>
         </header>
+
+        <section className="mb-10" aria-label="Major themes in the collection">
+          <h2 className="text-stone-900 text-xl font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+            Major Themes in the Collection
+          </h2>
+          <p className="text-sm text-stone-600 mb-4 max-w-3xl">
+            The recurring narratives that run across the interviews, the throughlines the
+            project's lead interviewer identified. Each one opens a playlist of clips drawn
+            from every voice that returns to it.
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none p-0">
+            {MAJOR_THEMES.map((t) => (
+              <li key={t.kw}>
+                <Link
+                  to={`/playlist-builder?keywords=${encodeURIComponent(t.kw)}&label=${encodeURIComponent(t.name)}`}
+                  className="flex items-center gap-2 h-full rounded-md border border-stone-200 bg-white p-3 hover:border-civil-red-strong hover:bg-red-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                >
+                  <Play className="w-4 h-4 text-civil-red-strong shrink-0" aria-hidden="true" />
+                  <span className="text-sm font-medium text-stone-900">{t.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <div className="mb-6">
           <input

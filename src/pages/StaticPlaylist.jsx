@@ -119,15 +119,17 @@ export default function StaticPlaylist() {
   }, [index, keywords, topic, entryParam, entriesParam]);
 
   const subjectForEntry = entryParam && index?.videos?.[entryParam]?.subject;
-  const titleText = entriesParam
-    ? (labelParam || 'Selected Interviews')
-    : topic
-      ? `Clips: ${topic}`
-      : entryParam
-        ? `${subjectForEntry || `Interview #${entryParam}`}: Chapter Playlist`
-        : keywords
-          ? `Clips About “${keywords}”`
-          : 'All Clips';
+  const titleText = labelParam
+    ? labelParam
+    : entriesParam
+      ? 'Selected Interviews'
+      : topic
+        ? `Clips: ${topic}`
+        : entryParam
+          ? `${subjectForEntry || `Interview #${entryParam}`}: Chapter Playlist`
+          : keywords
+            ? `Clips About “${keywords}”`
+            : 'All Clips';
 
   const current = clips[selected];
 
