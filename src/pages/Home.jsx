@@ -787,7 +787,12 @@ export default function Home() {
               </h1>
 
               {/* Statistics */}
-              <p className="text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono']">145 Interviews</p>
+              <p className="text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono']">
+                <Link to="/interview-index" className="inline-flex items-center gap-2 text-civil-red-body hover:underline transition-colors">
+                  <span>145 Interviews</span>
+                  <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
+                </Link>
+              </p>
 
 
             </div>
