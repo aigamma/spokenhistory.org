@@ -43,6 +43,7 @@ import {
   useState,
 } from 'react';
 import { RotateCcw } from 'lucide-react';
+import { seekThenPlay } from '../utils/mediaClip';
 
 // Module-level cache of loc_video metadata keyed by entry number, so the
 // several snippet cards that can appear on one person page (and repeat
@@ -58,37 +59,6 @@ function loadLocVideo(entryNumber) {
     .catch(() => null);
   locVideoCache.set(entryNumber, p);
   return p;
-}
-
-/**
- * Seek an element to a time, then play once the seek has landed. Playing only
- * after `seeked` forces the browser to range-jump to the offset instead of
- * buffering sequentially from 0. Returns a cleanup function that detaches any
- * pending listeners.
- */
-function seekThenPlay(el, seconds, shouldPlay) {
-  const target = Math.max(0, Number(seconds) || 0);
-  const play = () => {
-    if (shouldPlay) el.play().catch(() => { /* autoplay blocked; controls remain */ });
-  };
-  // Already at (or effectively at) the target: just play.
-  if (target <= 0 || Math.abs(el.currentTime - target) < 0.4) {
-    play();
-    return () => {};
-  }
-  const onSeeked = () => {
-    el.removeEventListener('seeked', onSeeked);
-    play();
-  };
-  el.addEventListener('seeked', onSeeked);
-  try {
-    el.currentTime = target;
-  } catch {
-    // Seek rejected before load; detach and play from wherever we are.
-    el.removeEventListener('seeked', onSeeked);
-    play();
-  }
-  return () => el.removeEventListener('seeked', onSeeked);
 }
 
 /**

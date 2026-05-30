@@ -21,6 +21,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { parseTimestampRange } from '../utils/timeUtils';
+import { playWhenReady } from '../utils/mediaClip';
 
 const Html5VideoPlayer = ({
   video,
@@ -59,15 +60,18 @@ const Html5VideoPlayer = ({
     const { startSeconds } = boundaries;
 
     const onLoaded = () => {
+      // Seek to the clip start, but do NOT play here. Playback is driven by
+      // the isPlaying effect below via playWhenReady, which waits for this
+      // seek to land before calling play(). Playing while the seek is still
+      // pending makes the browser start from 0 and buffer sequentially up to
+      // the seek point, downloading most of a multi-hour file before a deep
+      // clip starts.
       try {
         if (startSeconds > 0) el.currentTime = startSeconds;
       } catch {
         // ignore, some sources don't allow seek before play
       }
       setIsReady(true);
-      if (isPlaying) {
-        el.play().catch(() => { /* autoplay block; user gesture needed */ });
-      }
     };
     el.addEventListener('loadedmetadata', onLoaded);
 
@@ -78,12 +82,14 @@ const Html5VideoPlayer = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sourceUrl]);
 
-  // External isPlaying changes -> sync to element
+  // External isPlaying changes -> sync to element. play() goes through
+  // playWhenReady so that if a seek (mount seek or a scrub) is still in
+  // flight, playback waits for it to land instead of buffering from 0.
   useEffect(() => {
     const el = videoRef.current;
     if (!el || !isReady) return;
     try {
-      if (isPlaying) el.play().catch(() => { /* user gesture needed */ });
+      if (isPlaying) playWhenReady(el);
       else el.pause();
     } catch { /* noop */ }
   }, [isPlaying, isReady]);
@@ -115,6 +121,7 @@ const Html5VideoPlayer = ({
         src={sourceUrl}
         poster={posterUrl || undefined}
         controls
+        preload="metadata"
         playsInline
         className="rounded-lg shadow-lg bg-black w-full h-full"
         onPlay={() => { if (onPlay) onPlay(); }}
