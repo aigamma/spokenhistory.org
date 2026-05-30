@@ -47,8 +47,10 @@ export function tsToSeconds(ts) {
  * @param {Object}  props
  * @param {number}  props.entryNumber       CRHP entry whose loc_video backs the clip.
  * @param {number}  props.startSeconds      Clip start, in seconds.
- * @param {number}  [props.endSeconds]      Clip end, in seconds. Omit for an
- *                                          open-ended play from the start.
+ * @param {number}  [props.endSeconds]      Clip end, in seconds. A missing,
+ *                                          backwards, or implausibly long value
+ *                                          (over MAX_CLIP_SECONDS) is replaced by
+ *                                          a short bounded window from the start.
  * @param {string}  [props.fullInterviewHref] Route to the full interview
  *                                          (deep-linked to the moment); shown
  *                                          beneath the player when provided.
@@ -57,6 +59,14 @@ export function tsToSeconds(ts) {
  * @param {string}  [props.buttonClassName] Override the button styling.
  * @returns {React.ReactElement|null}
  */
+// Hardest ceiling on any "Hear this in context" clip. An oral-history pull
+// quote runs at most ~90 seconds; anything longer means a missing, stale, or
+// mis-aligned end bound. Rather than ever play minutes of the source interview
+// (the regression the project manager flagged), clamp every clip here, the one
+// place every snippet surface funnels through, so the guarantee holds site-wide.
+const MAX_CLIP_SECONDS = 150;
+const FALLBACK_CLIP_SECONDS = 60;
+
 export default function HearInContext({
   entryNumber,
   startSeconds,
@@ -67,6 +77,16 @@ export default function HearInContext({
 }) {
   const [open, setOpen] = useState(false);
   if (entryNumber == null || startSeconds == null) return null;
+
+  // Use the supplied end only when it is present, after the start, and within
+  // the ceiling; otherwise play a short bounded window. This turns a null or
+  // implausible end into a few seconds of audio instead of an open-ended clip.
+  const boundedEnd =
+    endSeconds != null &&
+    endSeconds > startSeconds &&
+    endSeconds - startSeconds <= MAX_CLIP_SECONDS
+      ? endSeconds
+      : startSeconds + FALLBACK_CLIP_SECONDS;
 
   const btnClass =
     buttonClassName ||
@@ -97,7 +117,7 @@ export default function HearInContext({
           <LocVideoEmbed
             entryNumber={entryNumber}
             startSeconds={startSeconds}
-            endSeconds={endSeconds}
+            endSeconds={boundedEnd}
             autoPlay
           />
           {fullInterviewHref && (

@@ -146,14 +146,13 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   const speakerHasPage = Boolean(
     speakerSlug && speakerSlug !== currentSlug && peopleIndex?.by_slug?.[speakerSlug]
   );
-  // Bounded clip: seek to the quote's start cue and stop at its end. The
-  // end timestamp is precomputed per snippet (scripts/add_snippet_clip_bounds.py
-  // walks the source .srt cues); when it is absent (a snippet added before
-  // that pass, or a quote the script could not align) we fall back to a
-  // short window from the start so the affordance still plays something
-  // bounded rather than the rest of a multi-hour interview.
+  // Bounded clip: seek to the quote's start cue and stop at its end. The end is
+  // precomputed per snippet (scripts/add_snippet_clip_bounds.py walks the source
+  // .srt cues and caps the aligned span); it is null when a quote could not be
+  // aligned. HearInContext applies the final hard length clamp for every snippet
+  // surface, so passing the raw value (or null) here is safe.
   const startSec = tsToSeconds(snippet.timestamp);
-  const endSec = snippet.end_timestamp ? tsToSeconds(snippet.end_timestamp) : startSec + 60;
+  const endSec = snippet.end_timestamp ? tsToSeconds(snippet.end_timestamp) : null;
   return (
     <figure
       className="my-7 rounded-xl border"
