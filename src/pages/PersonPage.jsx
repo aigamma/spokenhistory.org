@@ -26,11 +26,10 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, Play, ChevronUp, AlertTriangle } from 'lucide-react';
+import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock, AlertTriangle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_FILL, SNIPPET_BORDER, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_FILL, SNIPPET_PROBLEM_BORDER, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
-import { convertTimestampToSeconds } from '../utils/timeUtils';
-import LocVideoEmbed from '../components/LocVideoEmbed';
+import HearInContext, { tsToSeconds } from '../components/HearInContext';
 
 /**
  * Helper: fetch JSON with a single attempt; resolves to null on any
@@ -128,7 +127,6 @@ function hyperlinkNames(text, matcher) {
 // verification. relation 'self' is the page subject speaking; 'about' is
 // another interviewee speaking about them.
 function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
-  const [showVideo, setShowVideo] = useState(false);
   if (!snippet || !snippet.quote) return null;
   // These pull-quotes are verbatim (gated by verify_person_snippets.py),
   // so the card no longer color-codes by the source transcript's audit
@@ -148,6 +146,14 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
   const speakerHasPage = Boolean(
     speakerSlug && speakerSlug !== currentSlug && peopleIndex?.by_slug?.[speakerSlug]
   );
+  // Bounded clip: seek to the quote's start cue and stop at its end. The
+  // end timestamp is precomputed per snippet (scripts/add_snippet_clip_bounds.py
+  // walks the source .srt cues); when it is absent (a snippet added before
+  // that pass, or a quote the script could not align) we fall back to a
+  // short window from the start so the affordance still plays something
+  // bounded rather than the rest of a multi-hour interview.
+  const startSec = tsToSeconds(snippet.timestamp);
+  const endSec = snippet.end_timestamp ? tsToSeconds(snippet.end_timestamp) : startSec + 60;
   return (
     <figure
       className="my-7 rounded-xl border"
@@ -190,24 +196,12 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
               </span>
             )}
             {snippet.source_entry != null && (
-              <button
-                type="button"
-                onClick={() => setShowVideo((v) => !v)}
-                aria-expanded={showVideo}
-                className="inline-flex items-center gap-1 font-semibold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
-              >
-                {showVideo ? (
-                  <>
-                    <ChevronUp className="w-3.5 h-3.5" aria-hidden="true" />
-                    Hide video
-                  </>
-                ) : (
-                  <>
-                    <Play className="w-3.5 h-3.5" aria-hidden="true" />
-                    Hear this in context
-                  </>
-                )}
-              </button>
+              <HearInContext
+                entryNumber={snippet.source_entry}
+                startSeconds={startSec}
+                endSeconds={endSec}
+                fullInterviewHref={`/interview/${snippet.source_entry}?t=${startSec}`}
+              />
             )}
             {snippet.loc_url && (
               <a
@@ -225,27 +219,6 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
             <div className="inline-flex items-center gap-1.5 mt-3 px-2 py-0.5 rounded border border-red-300 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-950 dark:text-red-300 text-xs font-medium">
               <AlertTriangle className="w-3.5 h-3.5" aria-hidden="true" />
               Source transcript flagged: verify this passage against the audio before citing.
-            </div>
-          )}
-          {/* Inline LoC video, revealed when the reader asks to hear the
-              quote in context. Seeks to the snippet timestamp and plays;
-              the button click above is the user gesture that lets the
-              audio start. A link to the full chaptered interview page sits
-              beneath it for readers who want the broader arc. */}
-          {showVideo && snippet.source_entry != null && (
-            <div className="mt-4">
-              <LocVideoEmbed
-                entryNumber={snippet.source_entry}
-                startSeconds={convertTimestampToSeconds(snippet.timestamp)}
-                autoPlay
-              />
-              <Link
-                to={`/interview/${snippet.source_entry}?t=${convertTimestampToSeconds(snippet.timestamp)}`}
-                className="inline-flex items-center gap-1 mt-2 font-semibold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
-              >
-                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
-                Open the full interview
-              </Link>
             </div>
           )}
         </figcaption>

@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import { ExternalLink, Clock } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
 import EventsTimeline from './EventsTimeline';
+import HearInContext from '../HearInContext';
 
 function formatTimestamp(seconds) {
   if (seconds == null) return null;
@@ -175,6 +176,14 @@ function EventPassage({ passage }) {
             <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
             LoC catalog
           </a>
+        )}
+        {passage.entry_number != null && passage.timestamp_start_seconds != null && (
+          <HearInContext
+            entryNumber={passage.entry_number}
+            startSeconds={passage.timestamp_start_seconds}
+            endSeconds={passage.timestamp_end_seconds ?? null}
+            fullInterviewHref={`/interview/${passage.entry_number}?t=${Math.floor(passage.timestamp_start_seconds)}`}
+          />
         )}
       </div>
     </article>

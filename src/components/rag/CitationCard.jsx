@@ -15,6 +15,7 @@ import { useState } from 'react';
 import { ExternalLink, Clock, AlertTriangle, Copy, Check, Info } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
 import { useCapsule } from './useCapsules';
+import HearInContext, { tsToSeconds } from '../HearInContext';
 
 /**
  * CitationCard, primary-source result card.
@@ -61,6 +62,17 @@ export default function CitationCard({
     : { label: 'Provenance unknown', bg: 'bg-stone-50', text: 'text-stone-700', border: 'border-stone-200', icon: AlertTriangle };
   const BadgeIcon = badge.icon;
   const capsule = useCapsule(entryNumber);
+
+  // Bounded-clip parameters. The retrieval payload carries both ends of the
+  // matched cue, so the clip plays exactly the passage; if only a start is
+  // present we fall back to a short window.
+  const clipStart = timestampStartStr ? tsToSeconds(timestampStartStr) : null;
+  const clipEnd = timestampEndStr
+    ? tsToSeconds(timestampEndStr)
+    : clipStart != null
+      ? clipStart + 60
+      : null;
+  const canHear = entryNumber != null && clipStart != null;
 
   return (
     <article
@@ -113,6 +125,14 @@ export default function CitationCard({
             <ExternalLink className="w-4 h-4" aria-hidden="true" />
             Library of Congress catalog
           </a>
+        )}
+        {canHear && (
+          <HearInContext
+            entryNumber={entryNumber}
+            startSeconds={clipStart}
+            endSeconds={clipEnd}
+            fullInterviewHref={`/interview/${entryNumber}?t=${clipStart}`}
+          />
         )}
       </div>
 

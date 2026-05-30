@@ -12,12 +12,13 @@
  *     has run for this entry. The page renders gracefully without it.
  */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { ExternalLink, ChevronLeft, Clock, FileText } from 'lucide-react';
+import { ExternalLink, ChevronLeft, Clock, FileText, Play } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
+import { tsToSeconds } from '../components/HearInContext';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import { TIER_BADGE, fidelityNoteFor } from '../components/rag/tiers';
 
@@ -33,6 +34,19 @@ export default function InterviewDetail() {
   const startSeconds = tParam
     ? (tParam.includes(':') ? convertTimestampToSeconds(tParam) : parseInt(tParam, 10) || 0)
     : 0;
+
+  // The hero video holds an imperative handle so a chapter row can seek it
+  // to that chapter's start and bound the clip to its end, without mounting
+  // a second multi-hour video element. Clicking a chapter scrolls the hero
+  // back into view and plays just that chapter.
+  const heroRef = useRef(null);
+  const heroWrapRef = useRef(null);
+  const playChapter = (ch) => {
+    const start = tsToSeconds(ch.start_time);
+    const end = ch.end_time ? tsToSeconds(ch.end_time) : null;
+    heroRef.current?.seek(start, { play: true, stopAt: end });
+    heroWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const [capsules, setCapsules] = useState(null);
   const [neighbors, setNeighbors] = useState(null);
@@ -174,8 +188,9 @@ export default function InterviewDetail() {
             the player to that moment. LocVideoEmbed fetches the loc_video
             block by entry number (cached), so its source stays stable
             regardless of when the rest of the pipeline output resolves. */}
-        <div className="mb-8">
+        <div className="mb-8" ref={heroWrapRef}>
           <LocVideoEmbed
+            ref={heroRef}
             entryNumber={n}
             startSeconds={startSeconds}
             autoPlay={startSeconds > 0}
@@ -252,12 +267,22 @@ export default function InterviewDetail() {
                       </span>
                       {ch.title}
                     </h3>
-                    {(ch.start_time || ch.end_time) && (
+                    {ch.start_time ? (
+                      <button
+                        type="button"
+                        onClick={() => playChapter(ch)}
+                        className="text-xs text-civil-red-body hover:text-civil-red-strong tabular-nums whitespace-nowrap inline-flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                        title="Play this chapter in the video above"
+                      >
+                        <Play className="w-3 h-3" aria-hidden="true" />
+                        {(ch.start_time || '').split(',')[0]}–{(ch.end_time || '').split(',')[0]}
+                      </button>
+                    ) : ch.end_time ? (
                       <span className="text-xs text-stone-500 tabular-nums whitespace-nowrap inline-flex items-center gap-1">
                         <Clock className="w-3 h-3" aria-hidden="true" />
-                        {(ch.start_time || '').split(',')[0]}–{(ch.end_time || '').split(',')[0]}
+                        –{(ch.end_time || '').split(',')[0]}
                       </span>
-                    )}
+                    ) : null}
                   </header>
                   {ch.main_topic_category && (
                     <p className="text-xs text-stone-500 uppercase tracking-wide mb-2 ml-8">
