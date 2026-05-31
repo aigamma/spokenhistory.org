@@ -22,7 +22,7 @@ STAGING = os.path.join(ROOT, "transcripts", "rechapter_staging")
 PIPELINE = os.path.join(ROOT, "public", "rag", "summaries", "pipeline_output")
 APPLY = "--apply" in sys.argv
 
-REQUIRED = ["chapter_number", "title", "summary", "main_topic_category",
+REQUIRED = ["chapter_number", "title", "topic", "summary", "main_topic_category",
             "keywords", "related_events", "start_time", "end_time"]
 CATEGORIES = {"Early Life", "Family History", "Education", "Geographic Context",
               "Religious Foundations", "Movement Entry", "Major Campaign",
@@ -48,7 +48,7 @@ def secs(ts):
 def validate(chapters):
     errs, warns = [], []
     if not isinstance(chapters, list) or not chapters:
-        return ["not a non-empty JSON array"], []
+        return ["not a non-empty JSON array"], [], []
     prev_end = None
     durs = []
     for i, ch in enumerate(chapters):

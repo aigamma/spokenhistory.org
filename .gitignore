@@ -83,3 +83,11 @@ Metadata Generation System/output_subagent/
 
 # Scratch dir for the thumbnail-sourcing pass (never committed)
 .photo_work/
+
+# Re-chapterization (Pass v4) per-entry block intermediates. blocks_<N>.json
+# and blocks_<N>.txt are deterministically regenerable from the entry's .srt
+# via scripts/extract_blocks.py, so they are dev-only scratch. The hand-authored
+# spec_<N>.json (chapter segmentation) and the staging output
+# (transcripts/rechapter_staging/entry_<N>.chapters.json) ARE committed.
+scripts/blocks_*.json
+scripts/blocks_*.txt
