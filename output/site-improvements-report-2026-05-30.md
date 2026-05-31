@@ -31,6 +31,10 @@
 | Carry forward lessons from the previous site | Partial, needs the old version to compare |
 | Build the not-yet-on-site interviews (to 140) | Queued next |
 | Apply David Cline guidance (themes, playlists, coordinate axes) | Themes and playlists done; coordinate axes follow-on |
+| Table of Contents page (phone) | Done, live |
+| Chapters grouped into parts (phone) | Done, live for all 21 re-chapterized so far |
+| Data Insights: Ideological Spectrums as the default toggle (phone) | Done, live |
+| Interview Index: fold the lone LoC-Verified into Audited (phone) | Done, live |
 
 ---
 
@@ -213,6 +217,36 @@ The second half of your document synthesizes the David Cline interview into hist
 - Helping users perceive the network of people, institutions, places, and ideas, Partial (the influence graph and the cross-link manifests on person pages do this today; a richer ecosystem view is a larger build).
 
 The editorial intent that runs through all of it (lead with the human narratives Cline identified, not the computational categories) is already applied to the Topics and Spectrum views (Sections 5 and 7).
+
+---
+
+## Additional Requests (Phone Guidance, 2026-05-30)
+
+These came in by phone after the written guidance, and are deployed except where noted.
+
+### A Table of Contents Page
+
+> A Table of Contents showing each of the interviews; clicking an interview expands to all of the named chapters, each a link to the proper chapter video segment. It should only load the length of the chapter or it can freeze for 5+ minutes buffering a multi-hour interview on LoC servers.
+
+**Deployed.** New page at Menu > Table of Contents. Every interview is one row; open it to see its chapters, and click a chapter to play that moment. The buffering concern is handled: each chapter (and each part) plays a bounded clip, the player seeks straight to the segment and fetches only its bytes through an HTTP range request, so even a four-and-a-half-hour interview opens to the right place at once instead of buffering the whole file.
+
+### Chapters Grouped Into Parts
+
+> Arrange the chapters into parts to declutter them rather than showing up to 250 chapters as a wall of text. A red-worded part heading separates the parts; clicking a part leads to its first chapter and can autoplay the whole part if they want to listen longer.
+
+**Deployed across every re-chapterized interview.** Each chapter now carries a part label, and consecutive chapters with the same label form a part with a red "Part N: title" heading. Charles McLaurin's 77 chapters, for example, read as twelve parts (Coming Up in Jackson; The Army; Finding the Movement in Jackson; through to The March Against Fear and Black Power). Clicking a chapter plays that moment; clicking a part plays it straight through, first chapter to last, as one bounded autoplay run for a longer listen. All 21 interviews re-chapterized so far are grouped into parts; the rest gain parts as the re-chapterization completes.
+
+### Data Insights, One Toggle Grouping
+
+> Put all the insights on one grouping with toggles rather than the Spectrum alone as a hero; the Spectrum becomes the default toggle. Rename RAG Insights to Data Insights. There should not be a "Concepts and Ideas" row, the whole page is data insights; "Ideological Spectrums" shows the hero spectrum and then the grid of four spectrum tables beneath it, as the default toggle.
+
+**Deployed.** The menu item and page are now "Data Insights." The page opens on a single default toggle, "Ideological Spectrums," which shows the two-axis spectrum and then the four-chart grid beneath it. The separate hero and the "Concepts and Ideas" row are gone; the spectrums lead, and the remaining views (Interview Map, Related People, Quote Finder, Themes, Places, Influence, Tours, Quote of the Day) sit in three grouped toggles below.
+
+### Interview Index Tier Label
+
+> At the top of the interview index it says "1 LoC-Verified / 123 Audited / 12 Audio-Limited Source." We do not need a category of one saying LoC-Verified; that can just become Audited.
+
+**Deployed.** The lone LoC-Verified count is folded into Audited, so the header now reads "124 Audited / 12 Audio-Limited Source," with the filter and the per-row badges grouped the same way. (The tier data this page reads predates the Pass 10 reclassification, which is why a single entry still carried the old label.)
 
 ---
 
