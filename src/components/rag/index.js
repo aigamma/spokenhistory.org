@@ -13,6 +13,7 @@
 export { default as CitationCard } from './CitationCard';
 export { default as SemanticSearch } from './SemanticSearch';
 export { default as QuoteFinder } from './QuoteFinder';
+export { default as ComparePerspectives } from './ComparePerspectives';
 export { default as RelatedPassages } from './RelatedPassages';
 export { default as Constellation } from './Constellation';
 // PolyphonicEvents + EventsTimeline removed from active surface

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import {
   QuoteFinder,
+  ComparePerspectives,
   Constellation,
   RelatedPassages,
   ConceptSpectrum,
@@ -105,7 +106,7 @@ function useCorpusData() {
 // Tab IDs are reflected in window.location.hash so URLs like
 // /rag-explore#map are shareable and deep-linkable.
 const TABS = [
-  'quote', 'map', 'related',
+  'quote', 'compare', 'map', 'related',
   'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
   'lenses',
@@ -145,6 +146,7 @@ const TAB_ORDER = [
   { id: 'map', label: 'Interview Map' },
   { id: 'related', label: 'Related People' },
   { id: 'quote', label: 'Quote Finder' },
+  { id: 'compare', label: 'Compare Voices' },
   { id: 'themes', label: 'Themes' },
   { id: 'names', label: 'Famous Names' },
   { id: 'atlas', label: 'Places' },
@@ -164,7 +166,7 @@ const TAB_GROUPS = [
   },
   {
     label: 'Find a Moment',
-    tabs: ['quote', 'related'],
+    tabs: ['quote', 'compare', 'related'],
   },
   {
     label: 'Curated Paths',
@@ -179,6 +181,7 @@ const TAB_GROUPS = [
 const TAB_LABELS = {
   lenses: 'Ideological Spectrums',
   quote: 'Quote Finder',
+  compare: 'Compare Voices',
   map: 'Interview Map',
   related: 'Related People',
   themes: 'Themes',
@@ -429,6 +432,12 @@ export default function RagExplore() {
           {tab === 'quote' && (
             <div>
               <QuoteFinder />
+            </div>
+          )}
+
+          {tab === 'compare' && (
+            <div>
+              <ComparePerspectives />
             </div>
           )}
 
