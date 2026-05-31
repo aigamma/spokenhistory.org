@@ -17,16 +17,16 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
-import { TIER_BADGE } from '../components/rag/tiers';
+import { TIER_BADGE, foldTinyTierCounts } from '../components/rag/tiers';
 
-// On the Interview Index the per-entry `tier` data predates the Pass 10
-// "LoC verification IS the grade" reclassification, so only one entry reads
-// 'high' (LoC-Verified). A lone "1 LoC-Verified" beside "123 Audited" reads as
-// an absurdity (Dustin, 2026-05-30), so this page folds 'high' into the Audited
-// bucket: 'high' borrows the Audited badge, and the breakdown + filter group by
-// label rather than raw tier key, so there is one "Audited" and one
-// "Audio-Limited Source", never a stray count of one.
-const INDEX_BADGE = { ...TIER_BADGE, high: TIER_BADGE.medium };
+// The per-entry `tier` data in neighbors.json is now reconciled to
+// constellation.json (the canonical post-reclassification distribution),
+// so 'high' is the LoC-verified bulk of the corpus, not a stray count of
+// one. INDEX_BADGE therefore equals TIER_BADGE: 'high' renders as its true
+// "LoC-Verified" label, matching the Explore (Data Insights) page exactly.
+// The breakdown + filter group by display label, and foldTinyTierCounts
+// still absorbs any sub-threshold bucket so no lone count-of-one pill shows.
+const INDEX_BADGE = TIER_BADGE;
 const labelOfTier = (tier) => INDEX_BADGE[tier]?.label || null;
 
 export default function InterviewIndex() {
@@ -93,6 +93,29 @@ export default function InterviewIndex() {
     return counts;
   }, [interviews]);
 
+  // Header summary pills, grouped by display label (so 'high' folds into the
+  // Audited badge) and then folded again so no tiny standalone bucket of one or
+  // two survives. foldTinyTierCounts merges any sub-threshold label into the
+  // largest one; the count is preserved and the absorbing label keeps its badge.
+  // The filter dropdown below still lists every label, this only governs the pills.
+  const pillGroups = useMemo(() => {
+    const byLabel = {};
+    for (const [key, badge] of Object.entries(INDEX_BADGE)) {
+      const n = tiers[key] || 0;
+      if (n === 0) continue;
+      if (!byLabel[badge.label]) byLabel[badge.label] = { count: 0, badge };
+      byLabel[badge.label].count += n;
+    }
+    const counts = {};
+    for (const [lbl, info] of Object.entries(byLabel)) counts[lbl] = info.count;
+    const folded = foldTinyTierCounts(counts);
+    return Object.entries(folded).map(([lbl, count]) => ({
+      label: lbl,
+      count,
+      badge: byLabel[lbl].badge,
+    }));
+  }, [tiers]);
+
   if (error) {
     return (
       <div className="min-h-screen p-8 bg-[#EBEAE9] dark:bg-zinc-900">
@@ -118,18 +141,10 @@ export default function InterviewIndex() {
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            All 136 interviews currently on the site, drawn from the Library of Congress and Smithsonian collection of roughly 145, each with its Library of Congress cross-reference status and a short biographical capsule. Click an entry to open the full interview.
+            All {interviews.length} interviews currently on the site, drawn from the Library of Congress and Smithsonian collection of roughly 145, each with its Library of Congress cross-reference status and a short biographical capsule. Click an entry to open the full interview.
           </p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
-            {Object.values(
-              Object.entries(INDEX_BADGE).reduce((acc, [key, badge]) => {
-                const n = tiers[key] || 0;
-                if (n === 0) return acc;
-                if (!acc[badge.label]) acc[badge.label] = { label: badge.label, count: 0, badge };
-                acc[badge.label].count += n;
-                return acc;
-              }, {})
-            ).map(({ label, count, badge }) => (
+            {pillGroups.map(({ label, count, badge }) => (
               <span key={label} className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}>
                 <span className="font-medium tabular-nums">{count}</span>
                 <span>{label}</span>

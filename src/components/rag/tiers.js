@@ -117,6 +117,53 @@ export const SNIPPET_PROBLEM_BORDER = 'var(--snippet-problem-border)';
 export const SNIPPET_PROBLEM_TIERS = new Set();
 
 /**
+ * Fold any audit-tier bucket whose count is below `min` into the bucket with
+ * the largest count, so the header summary pills never show an absurd lone
+ * bucket (for example a single pill reading "Audited: 1"; Dustin objected to
+ * exactly that on 2026-05-30). The returned object keeps the same
+ * displayLabel -> count shape and preserves the grand total; only buckets at or
+ * above `min` survive as standalone pills. With one bucket or fewer the input is
+ * returned unchanged. When every bucket is tiny they all collapse into the
+ * single largest one, which still avoids a stray one-off pill.
+ *
+ * This only governs the summary pills. A filter dropdown can keep every label.
+ *
+ * @param {Object<string, number>} labelCounts - displayLabel -> count
+ * @param {number} [min=3] - smallest count allowed to stand alone
+ * @returns {Object<string, number>}
+ */
+export function foldTinyTierCounts(labelCounts, min = 3) {
+  const entries = Object.entries(labelCounts || {});
+  if (entries.length <= 1) {
+    return { ...(labelCounts || {}) };
+  }
+
+  // The absorbing bucket is the one with the largest count (ties resolved by the
+  // first such label encountered), so folded counts land where they read best.
+  let majorLabel = entries[0][0];
+  let majorCount = entries[0][1];
+  for (const [label, count] of entries) {
+    if (count > majorCount) {
+      majorLabel = label;
+      majorCount = count;
+    }
+  }
+
+  const result = {};
+  let folded = 0;
+  for (const [label, count] of entries) {
+    if (label === majorLabel) continue;
+    if (count < min) {
+      folded += count;
+    } else {
+      result[label] = count;
+    }
+  }
+  result[majorLabel] = majorCount + folded;
+  return result;
+}
+
+/**
  * Per-tier fidelity-note text. Same logic as the server-side function
  * in mcp-server/server.mjs and netlify/functions/retrieve.mjs (those
  * stay inline because of Docker/Function isolation; React side is

@@ -1498,6 +1498,50 @@
       "loc_item_url": "https://www.loc.gov/item/2015669130/",
       "x": 0.29400917377937663,
       "y": 0.5941800749178123
+    },
+    {
+      "entry_number": 139,
+      "entry_subject": "Glenda Funchess",
+      "chunk_count": 0,
+      "entry_provenance": "streamlined-ingestion-2026-05-31",
+      "uncertainty_tier": "not-auditable",
+      "uncertainty_score": 0,
+      "loc_item_url": "https://www.loc.gov/item/2016655407/",
+      "x": 0.1146954,
+      "y": 0.2594316
+    },
+    {
+      "entry_number": 140,
+      "entry_subject": "Louise Broadway",
+      "chunk_count": 0,
+      "entry_provenance": "streamlined-ingestion-2026-05-31",
+      "uncertainty_tier": "ingestion-only",
+      "uncertainty_score": 0,
+      "loc_item_url": "https://www.loc.gov/item/2015669167/",
+      "x": 0.1146954,
+      "y": 0.2594316
+    },
+    {
+      "entry_number": 141,
+      "entry_subject": "Lucius Holloway, Sr., and Emma Kate Holloway",
+      "chunk_count": 0,
+      "entry_provenance": "streamlined-ingestion-2026-05-31",
+      "uncertainty_tier": "ingestion-only",
+      "uncertainty_score": 0,
+      "loc_item_url": "https://www.loc.gov/item/2015669161/",
+      "x": 0.1146954,
+      "y": 0.2594316
+    },
+    {
+      "entry_number": 142,
+      "entry_subject": "Luis Zapata",
+      "chunk_count": 0,
+      "entry_provenance": "streamlined-ingestion-2026-05-31",
+      "uncertainty_tier": "ingestion-only",
+      "uncertainty_score": 0,
+      "loc_item_url": "https://www.loc.gov/item/2015669194/",
+      "x": 0.1146954,
+      "y": 0.2594316
     }
   ],
   "notes": "x and y are normalized to [-1, 1]. The PCA is computed on entry-mean centroids (averaged across the per-entry chunk sample). It is a low-fidelity but dependency-free 2D layout; for production-grade visualization, consider replacing with UMAP via a Python preprocessor."

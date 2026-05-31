@@ -17,7 +17,7 @@ import {
   InterviewMap,
   AuditProvenance,
 } from '../components/rag';
-import { TIER_VOCABULARY, TIER_BADGE } from '../components/rag/tiers';
+import { TIER_VOCABULARY, TIER_BADGE, foldTinyTierCounts } from '../components/rag/tiers';
 
 /**
  * Single fetch of /rag/constellation.json (which carries one point per
@@ -300,25 +300,37 @@ export default function RagExplore() {
                 aria-label="Library of Congress cross-reference status, with the interview count in each"
                 className="flex flex-wrap gap-1.5 text-xs list-none p-0 m-0"
               >
-                {Object.values(
-                  TIER_VOCABULARY.reduce((acc, key) => {
+                {(() => {
+                  // Group raw tier counts by display label, then fold any
+                  // sub-threshold bucket into the largest one so the Explore
+                  // page never shows a lone count-of-one (or two) pill, exactly
+                  // like the Interview Index. byLabel keeps each label's badge;
+                  // foldTinyTierCounts operates on the plain label -> count map.
+                  const byLabel = TIER_VOCABULARY.reduce((acc, key) => {
                     const n = stats.tiers[key] || 0;
                     if (n === 0) return acc;
                     const badge = TIER_BADGE[key];
-                    if (!acc[badge.label]) acc[badge.label] = { label: badge.label, count: 0, badge };
+                    if (!acc[badge.label]) acc[badge.label] = { count: 0, badge };
                     acc[badge.label].count += n;
                     return acc;
-                  }, {})
-                ).map(({ label, count, badge }) => (
-                  <li key={label}>
-                    <span
-                      className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
-                    >
-                      <span className="font-medium tabular-nums">{count}</span>
-                      <span>{label}</span>
-                    </span>
-                  </li>
-                ))}
+                  }, {});
+                  const counts = {};
+                  for (const [lbl, info] of Object.entries(byLabel)) counts[lbl] = info.count;
+                  const folded = foldTinyTierCounts(counts);
+                  return Object.entries(folded).map(([label, count]) => {
+                    const badge = byLabel[label].badge;
+                    return (
+                      <li key={label}>
+                        <span
+                          className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full border ${badge.bg} ${badge.border} ${badge.text}`}
+                        >
+                          <span className="font-medium tabular-nums">{count}</span>
+                          <span>{label}</span>
+                        </span>
+                      </li>
+                    );
+                  });
+                })()}
               </ul>
             </div>
           )}
@@ -507,7 +519,7 @@ export default function RagExplore() {
                 Pick one interview and see which other voices in the collection return to
                 the same subjects, the people whose testimony rhymes with this one even
                 when they never met. Choose a suggested interview below, or search by name
-                to start from any of the {allInterviewees?.length || 136}.
+                to start from any of the {allInterviewees?.length || stats?.interviews || 'full set'}.
               </p>
 
               {/* Picker: six hand-curated quick picks at top, then a
