@@ -34,6 +34,30 @@ Per `docs/TRANSCRIPT_AUDIT_DESIGN.md`, each pass uses a three-stage cascade:
 
 ## Session log
 
+#### Onboarding of `Luis Zapata_interview_20250704_233645` as entry 142 (2026-05-31)
+
+**Subject:** Luis Zapata  
+**Tier:** ingestion-only  
+Onboarded end-to-end via `transcripts/ingestion/onboard_interview.py`: LoC heal, video resolution, granular parts-grouped chapters, summary, entry assembly, search ingest, and person-page networking. Idempotent.
+
+#### Onboarding of `Lucius Holloway, Sr., and Emma Kate Holloway_interview_20250704_233000` as entry 141 (2026-05-31)
+
+**Subject:** Lucius Holloway, Sr., and Emma Kate Holloway  
+**Tier:** ingestion-only  
+Onboarded end-to-end via `transcripts/ingestion/onboard_interview.py`: LoC heal, video resolution, granular parts-grouped chapters, summary, entry assembly, search ingest, and person-page networking. Idempotent.
+
+#### Onboarding of `Louise Broadway_interview_20250704_232808` as entry 140 (2026-05-31)
+
+**Subject:** Louise Broadway  
+**Tier:** ingestion-only  
+Onboarded end-to-end via `transcripts/ingestion/onboard_interview.py`: LoC heal, video resolution, granular parts-grouped chapters, summary, entry assembly, search ingest, and person-page networking. Idempotent.
+
+#### Onboarding of `Glenda Funchess_interview_20250704_205126` as entry 139 (2026-05-31)
+
+**Subject:** Glenda Funchess  
+**Tier:** not-auditable (partial excerpt)  
+Onboarded end-to-end via `transcripts/ingestion/onboard_interview.py`: LoC heal, video resolution, granular parts-grouped chapters, summary, entry assembly, search ingest, and person-page networking. Idempotent.
+
 ### 2026-05-30 ingestion: 4 new CRHP entries via the streamlined LoC-healing pipeline
 
 Four entries that had been committed to `raw/` but never run through correction were ingested via `transcripts/ingestion/ingest_new_transcript.py` (bootstrap raw/ -> corrected/, resolve LoC item) followed by `heal_one_entry.py heal_one` (Pass 8 conservative-first-pass discipline). All four matched their LoC item at score 1.0, and all four are confirmed CRHP interviews (the LoC `contributor` list includes "civil rights history project (u.s.)").

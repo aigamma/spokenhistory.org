@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "slug": "louise-broadway",
+  "person_type": "interviewee",
+  "entry_number": 140,
+  "display_name": "Louise Broadway",
+  "born": 1930,
+  "died": null,
+  "role_summary": "Baker County, Georgia movement participant; a secretary of the Baker County movement who recorded citizens' accounts of reprisals; later the first Black emergency-medical worker on the Baker County ambulance.",
+  "ai_reading": "The corpus indexes most of its Georgia voter-registration testimony through the better-documented Albany and Atlanta organizers, so the embedding work to date has had little local-witness material from rural Baker County, the county directly southwest of Albany where Rev. Charles Melvin Sherrod (entry 18) ran SNCC's southwest Georgia project. Broadway's interview supplies that vantage from the receiving end rather than the organizer's: she places \"Sherrod\" among the injured carried into the Albany medical office where she worked after the day she calls \"Bloody Saturday,\" and she names herself as a secretary who kept the movement's own notes on how citizens were treated. Her transcript is not yet in the search index that the precomputed neighbor and concept-axis substrate is built from, so no cosine-similarity reading exists for her yet; the defensible observation is structural, her testimony is the collection's ground-level Baker County complement to the Sherrods' organizer accounts (Rev. Charles Melvin Sherrod, entry 18; Shirley Miller Sherrod, entry 117), and it is the kind of local-secretary record that an embedding of the full corpus would be expected to pull toward that southwest Georgia cluster once ingested.",
+  "biographical_paragraph": "Louise Broadway was born in 1930 in Baker County, Georgia, near the town of Newton, the youngest of four children of a sharecropping family; she graduated from Newton Colored High School and married Grady Broadway Jr. in 1949 [src: 2]. She took part in the Baker County movement and served as one of its secretaries, taking notes as residents described how they and their children were treated, and she has said some of those notes are held at the East Baker Historical Society in Newton [src: 2]. After she and her husband enrolled their eldest child in the all-white school, the landowner her husband sharecropped for, whom she names as James Robert Rose, demanded the child be withdrawn and that the debt be settled before year's end; one of her sons was later beaten badly enough at school to require hospitalization [src: 2]. Broadway worked for many years for Dr. J. L. Shirley Jr., a physician in Albany, and was on hand when civil rights workers and residents injured during a day of mob violence she calls Bloody Saturday were brought to his office; among them, she says, was Sherrod, that is Rev. Charles Melvin Sherrod (entry 18), the SNCC organizer for southwest Georgia [src: 2]. She later completed an emergency-care course offered in Baker County in 1983 and became, by her account, the first Black person to work on the county ambulance [src: 2]. Her oral history was recorded on March 9, 2013 at Albany State University by Will Griffin of the Southern Oral History Program at the University of North Carolina at Chapel Hill, with videographer John Bishop, and is held by the Library of Congress as entry 140 of the Civil Rights History Project [src: 1].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Louise Broadway",
+      "speaker_slug": "louise-broadway",
+      "source_entry": 140,
+      "timestamp": "00:19:42",
+      "end_timestamp": "00:19:49",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669167/",
+      "lead_in": "Asked what she did inside the movement, Broadway describes her own role:",
+      "quote": "I was one of the secretaries of the Baker County movement."
+    },
+    {
+      "relation": "self",
+      "speaker": "Louise Broadway",
+      "speaker_slug": "louise-broadway",
+      "source_entry": 140,
+      "timestamp": "00:17:54",
+      "end_timestamp": "00:18:15",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669167/",
+      "lead_in": "On the day she calls Bloody Saturday, the injured were carried to the Albany medical office where she worked:",
+      "quote": "And some of these civil right workers and some of the citizens that was beaten up so bad, they brought some of them to Dr. J. L. Shirley's doing an office where I worked to be treated. He treated several just treated them for free."
+    },
+    {
+      "relation": "self",
+      "speaker": "Louise Broadway",
+      "speaker_slug": "louise-broadway",
+      "source_entry": 140,
+      "timestamp": "00:14:25",
+      "end_timestamp": "00:14:44",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669167/",
+      "lead_in": "After the family enrolled their eldest child in the all-white school, the landowner her husband sharecropped for moved to force a withdrawal:",
+      "quote": "So, when James Robert Rose heard about, we had signed the child to go, then he told my husband that if he didn't withdraw his name, then he was going to have to pay him everything."
+    },
+    {
+      "relation": "self",
+      "speaker": "Louise Broadway",
+      "speaker_slug": "louise-broadway",
+      "source_entry": 140,
+      "timestamp": "00:28:16",
+      "end_timestamp": "00:28:27",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669167/",
+      "lead_in": "After an outside organizer was struck and ordered to leave a registration march to the courthouse, Broadway describes the group's response:",
+      "quote": "But don't think that stopped us. We were right back down there that next morning. And we kept going till things got a little better about getting people registered."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669167/",
+      "title": "Louise Broadway oral history",
+      "publisher": "Civil Rights History Project, Library of Congress (American Folklife Center, AFC 2010/039)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669167/",
+      "title": "Louise Broadway, interviewed by Will Griffin, Albany, Georgia, March 9, 2013 (oral-history recording and transcript; the interviewee's own first-person testimony is the primary source for the biographical detail above)",
+      "publisher": "Civil Rights History Project, Smithsonian National Museum of African American History and Culture and the Library of Congress"
+    }
+  ]
+}

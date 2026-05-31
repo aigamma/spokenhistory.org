@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "slug": "luis-zapata",
+  "person_type": "interviewee",
+  "entry_number": 142,
+  "display_name": "Luis Zapata",
+  "born": null,
+  "died": null,
+  "role_summary": "Mexican American labor and community organizer; came from United Farm Workers organizing in California to spend roughly four years (about 1963-1967) in the Mississippi Delta on voter registration, Head Start, and the Mississippi Freedom Labor Union, based with SNCC and COFO out of Cleveland, Mississippi.",
+  "ai_reading": "Zapata occupies a position no other voice in this corpus does: a Mexican American organizer who arrived in the Black-led Mississippi Delta movement directly from the California farm-worker campaigns, and who narrates the two struggles as a single arc rather than as separate causes [src: 2, 3]. Where most Delta interviewees enter the movement through Mississippi churches, the NAACP, or SNCC's in-state recruiting, Zapata enters it through Cesar Chavez and a call for union organizers willing to go to Mississippi, then leaves it for hotel-and-restaurant union work in Washington, then for Grenada, Chiapas, and DC statehood organizing [src: 2, 3]. For an embedding model the consequence is testable rather than rhetorical: his transcript braids farm-labor vocabulary (strikes, crew bosses, wage demands, boycotts) into the standard Delta registration-and-Freedom-Democratic-Party narrative, so cosine similarity should pull his passages toward the corpus's labor-organizing and cross-movement language at the same time as its Sunflower County and Bolivar County place-grounding. His own testimony places him in the room with figures the archive already documents, Fannie Lou Hamer and the organizer he names as Miss Ruffin steering the Mississippi Freedom Labor Union meetings, Amzie Moore strategizing quietly in Cleveland, Bob Moses as the movement's intellectual, and Lawrence Guyot (entry 76) present for the Freedom Democratic Party work, but he frames himself throughout as a driver, fundraiser, and field organizer rather than a decision-maker, a self-described minion in a bottom-up organization [src: 2]. That deliberately ground-level register, captured here before the entry is vectorized, is the signal a later embedding pass will read.",
+  "biographical_paragraph": "Luis Zapata grew up in Orange County, California, the son of a mechanical engineer of Mexican descent and an Anglo mother, and learned organizing in the fields around San Jose, where he worked with the United Farm Workers under Cesar Chavez while a student at San Jose State [src: 2, 3]. When COFO and SNCC put out a call for union organizers willing to come to Mississippi to help start the Mississippi Freedom Labor Union, Zapata volunteered and dropped out of college; he spent roughly four years, about 1963 to 1967, based out of Cleveland, Mississippi [src: 2, 3]. The Mississippi Freedom Labor Union itself was founded in 1965 in Shaw, in the Delta, by cotton workers encouraged by SNCC field secretary Frank Smith and drawing on the example of the Mississippi Freedom Democratic Party; at its peak it counted roughly 1,350 members with about 350 on strike across six Delta counties, demanding $1.25 an hour against a prevailing wage near 30 cents [src: 4]. Zapata describes doing voter registration, getting Head Start programs going, raising money and clothing on fundraising trips north, and driving organizers and rural workers in donated cars, including a hearse the riders were told was an ambulance [src: 2]. He recalls working alongside Fannie Lou Hamer, the organizer he names as Miss Ruffin, Amzie Moore, and Lawrence Guyot (entry 76), and he locates the movement's strength in local women and ministers who could not as easily be fired by white employers [src: 2]. After leaving Mississippi he took up hotel-and-restaurant union work in Washington, DC, and later worked on the Mike Espy congressional campaign in the Delta, the Jesse Jackson presidential campaigns, the Grenada revolution, the Zapatista movement in Chiapas, the Sanctuary movement, and DC statehood politics [src: 2, 3]. His oral history is held by the Library of Congress as part of the Civil Rights History Project, recorded by Emilye Crosby in Silver Spring, Maryland, on June 27, 2013 [src: 1]; the recording is also held by the Smithsonian National Museum of African American History and Culture [src: 5].",
+  "interview_snippets": [
+    {
+      "relation": "self",
+      "speaker": "Luis Zapata",
+      "speaker_slug": "luis-zapata",
+      "source_entry": 142,
+      "timestamp": "00:07:49",
+      "end_timestamp": "00:08:02",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669194/",
+      "lead_in": "On how an organizer from the California farm-worker movement ended up in the Mississippi Delta, after a call went out for union volunteers:",
+      "quote": "I don't know who contacted Chavez, but Chavez said, meeting anybody want to go to Mississippi. And I said, what the heck, a campaign? Yeah, we were here because we were getting beaten up all the time by the guy. I didn't know they were going to shoot at us in Mississippi."
+    },
+    {
+      "relation": "self",
+      "speaker": "Luis Zapata",
+      "speaker_slug": "luis-zapata",
+      "source_entry": 142,
+      "timestamp": "00:21:00",
+      "end_timestamp": "00:21:10",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669194/",
+      "lead_in": "On adjusting his organizing pitch from movement ideology to the daily concerns of the people he was trying to sign up:",
+      "quote": "For me, of course, it was about we need to change the system. But if I talked about changing the system, people get glassy-eyed. They just wanted to have more money on the table because they couldn't feed their kids."
+    },
+    {
+      "relation": "self",
+      "speaker": "Luis Zapata",
+      "speaker_slug": "luis-zapata",
+      "source_entry": 142,
+      "timestamp": "00:23:32",
+      "end_timestamp": "00:23:49",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669194/",
+      "lead_in": "On why SNCC paid field staff almost nothing, a deliberate test of whether the community would support an organizer:",
+      "quote": "is if you couldn't live off the community, if people who were dirt-forward and didn't have anything, weren't willing to share their food and their enlarging, then you shouldn't be there. Either the community thought you were worthwhile or get you butt out."
+    },
+    {
+      "relation": "self",
+      "speaker": "Luis Zapata",
+      "speaker_slug": "luis-zapata",
+      "source_entry": 142,
+      "timestamp": "00:28:51",
+      "end_timestamp": "00:29:12",
+      "audit_tier": "ingestion-only",
+      "loc_url": "https://www.loc.gov/item/2015669194/",
+      "lead_in": "On Fannie Lou Hamer in the Delta meetings he attended:",
+      "quote": "I remember Fannie Lou would get so mad she and she chewed tobacco and she gets so mad she's spitting and spitting and spitting again. Everyone paid attention to her. Everyone listened to what she said. She probably was as much the backbone of what happened in that part of the Delta is anybody."
+    }
+  ],
+  "movement_context": "The Mississippi Freedom Labor Union Zapata organized formed in 1965 in Shaw, Mississippi, as cotton workers troubled by low wages and harsh conditions joined with COFO organizers; SNCC field secretary Frank Smith encouraged the early organizing, and the union drew directly on the model of the Mississippi Freedom Democratic Party [src: 4]. Members struck for $1.25 an hour where the going wage for chopping and picking cotton ran near 30 cents, and at its height the union reported roughly 1,350 members with about 350 on strike across six Delta counties [src: 4]. Roughly 80 striking families faced eviction; in January 1966 strikers built a tent settlement known as Strike City to draw northern support, though the strike fund was quickly exhausted [src: 4]. This is the wave of evictions, tent encampments, and air-base occupation Zapata refers to as having intensified while he was away raising money in the north [src: 2]. The union's leverage was real but narrow: mechanization had already displaced much Delta field labor, and cotton chopping and small-plantation picking were among the few tasks that still required hand labor, which is the constraint Zapata describes when he calls the union's wage gains a limited success [src: 2, 4].",
+  "gallery": [],
+  "sources": [
+    {
+      "url": "https://www.loc.gov/item/2015669194/",
+      "title": "Luis Zapata oral history interview conducted by Emilye Crosby in Silver Spring, Maryland, 2013 June 27",
+      "publisher": "Civil Rights History Project, American Folklife Center, Library of Congress (AFC 2010/039)"
+    },
+    {
+      "url": "https://www.loc.gov/item/2015669194/",
+      "title": "Luis Zapata oral history interview (full transcript)",
+      "publisher": "Civil Rights History Project, Library of Congress (interviewee testimony, recorded June 27, 2013); the primary source for the biographical and organizing details on this page"
+    },
+    {
+      "url": "https://www.crmvet.org/vet/zapatal.htm",
+      "title": "Luis Zapata",
+      "publisher": "Veterans of the Civil Rights Movement (crmvet.org), self-reported veteran profile (United Farm Workers under Cesar Chavez; Mississippi Freedom Labor Union based in Cleveland, Mississippi, 1963-1967; voter registration and the Democratic Party challenge; later Grenada, Chiapas, and Sanctuary-movement work)"
+    },
+    {
+      "url": "https://snccdigital.org/events/mississippi-freedom-labor-union-founded/",
+      "title": "Mississippi Freedom Labor Union founded",
+      "publisher": "SNCC Digital Gateway, Duke University (in collaboration with the SNCC Legacy Project); the source for the 1965 Shaw founding, the $1.25-an-hour demand, the six-county strike, and the January 1966 Strike City tent settlement"
+    },
+    {
+      "url": "https://nmaahc.si.edu/object/nmaahc_2011.174.95.1a-f",
+      "title": "Luis Zapata Oral History Interview",
+      "publisher": "Smithsonian National Museum of African American History and Culture, object nmaahc_2011.174.95.1a-f (the museum's record of the same Civil Rights History Project recording)"
+    }
+  ]
+}

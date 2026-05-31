@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "counts": {
-    "total": 198,
-    "interviewees": 161,
+    "total": 202,
+    "interviewees": 165,
     "external_figures": 37
   },
   "by_entry": {
@@ -1456,6 +1456,36 @@
       "photo_alt": "The surviving ruins of Bryant's Grocery and Meat Market in Money, Mississippi, photographed in 2018",
       "born": 1942,
       "died": 2017
+    },
+    "139": {
+      "slug": "glenda-funchess",
+      "display_name": "Glenda Funchess",
+      "person_type": "interviewee",
+      "entry_number": 139,
+      "role_preview": "Hattiesburg attorney; as a child, one of the first Black students to transfer into the city's white schools under freedom-of-choice deseg...",
+      "born": 1954
+    },
+    "140": {
+      "slug": "louise-broadway",
+      "display_name": "Louise Broadway",
+      "person_type": "interviewee",
+      "entry_number": 140,
+      "role_preview": "Baker County, Georgia movement participant; a secretary of the Baker County movement who recorded citizens' accounts of reprisals; later ...",
+      "born": 1930
+    },
+    "141": {
+      "slug": "lucius-holloway-sr-and-emma-kate-holloway",
+      "display_name": "Lucius Holloway, Sr., and Emma Kate Holloway",
+      "person_type": "interviewee",
+      "entry_number": 141,
+      "role_preview": "Terrell County, Georgia voter-registration organizers. Lucius Holloway Sr. (b. 1932): Korea-era Army veteran, post-office worker fired fo..."
+    },
+    "142": {
+      "slug": "luis-zapata",
+      "display_name": "Luis Zapata",
+      "person_type": "interviewee",
+      "entry_number": 142,
+      "role_preview": "Mexican American labor and community organizer; came from United Farm Workers organizing in California to spend roughly four years (about..."
     }
   },
   "by_slug": {
@@ -1714,7 +1744,7 @@
       "display_name": "Carolyn Miller",
       "person_type": "interviewee",
       "entry_number": 12,
-      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with James Miller (catalog entry 12, not-auditable tier).",
+      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with James Miller (catalog entry 12).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/7/78/Claiborne_County_Courthouse_and_Confederate_monument%2C_Port_Gibson%2C_Mississippi_2008.jpg",
       "photo_kind": "context",
       "photo_alt": "Claiborne County Courthouse, Port Gibson, Mississippi"
@@ -1852,7 +1882,7 @@
       "display_name": "Cynthia Anderson",
       "person_type": "interviewee",
       "entry_number": 25,
-      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with Fletcher Anderson (catalog entry 25, publication-block ...",
+      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with Fletcher Anderson (catalog entry 25).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/6/60/Robert_Hicks_House.jpg",
       "photo_kind": "context",
       "photo_alt": "Robert \"Bob\" Hicks House, Bogalusa, Louisiana"
@@ -1872,7 +1902,7 @@
       "display_name": "David Mercer Ackerman",
       "person_type": "interviewee",
       "entry_number": 135,
-      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with his wife Satoko Ito Ackerman (catalog entry 135, ingestion-onl...",
+      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with his wife Satoko Ito Ackerman (catalog entry 135).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Edmund_Pettus_Bridge_03.jpg",
       "photo_kind": "context",
       "photo_alt": "Edmund Pettus Bridge, Selma, Alabama"
@@ -2054,7 +2084,7 @@
       "display_name": "Emmett W. Bassett",
       "person_type": "interviewee",
       "entry_number": 38,
-      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with his wife Priscilla Tietjen Bassett (catalog entry 38, publicat...",
+      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with his wife Priscilla Tietjen Bassett (catalog entry 38).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Carnegie_Library%2C_Tuskegee_Institute%2C_Ala._1906_retouched.jpg",
       "photo_kind": "context",
       "photo_alt": "Carnegie Library, Tuskegee Institute, Alabama, 1906"
@@ -2118,7 +2148,7 @@
       "display_name": "Fletcher Anderson",
       "person_type": "interviewee",
       "entry_number": 25,
-      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with Cynthia Anderson (catalog entry 25, publication-block t...",
+      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with Cynthia Anderson (catalog entry 25).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/6/60/Robert_Hicks_House.jpg",
       "photo_kind": "context",
       "photo_alt": "Robert Bob Hicks House, Bogalusa, Louisiana"
@@ -2184,6 +2214,14 @@
       "photo_kind": "context",
       "photo_alt": "Arkansas Highway 1 in Marvell, Phillips County, Arkansas",
       "born": 1923
+    },
+    "glenda-funchess": {
+      "slug": "glenda-funchess",
+      "display_name": "Glenda Funchess",
+      "person_type": "interviewee",
+      "entry_number": 139,
+      "role_preview": "Hattiesburg attorney; as a child, one of the first Black students to transfer into the city's white schools under freedom-of-choice deseg...",
+      "born": 1954
     },
     "gloria-arellanes": {
       "slug": "gloria-arellanes",
@@ -2371,7 +2409,7 @@
       "display_name": "James Miller (CRHP)",
       "person_type": "interviewee",
       "entry_number": 12,
-      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with Carolyn Miller (catalog entry 12, not-auditable tier). ...",
+      "role_preview": "Civil Rights History Project interviewee; co-subject of a joint oral history with Carolyn Miller (catalog entry 12). The slug suffix dist...",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/4/4c/ClaiborneCourthousePortGibsonA.jpg",
       "photo_kind": "context",
       "photo_alt": "Claiborne County Courthouse, Port Gibson, Mississippi"
@@ -2412,7 +2450,7 @@
       "display_name": "Jeanette Smith",
       "person_type": "interviewee",
       "entry_number": 100,
-      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with Raylawni G. Branch (catalog entry 100, publication-block tier).",
+      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with Raylawni G. Branch (catalog entry 100).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/0/0b/USM_College_Hall_2016.jpg",
       "photo_kind": "context",
       "photo_alt": "College Hall, University of Southern Mississippi, Hattiesburg"
@@ -2716,6 +2754,28 @@
       "born": 1936,
       "died": 2019
     },
+    "louise-broadway": {
+      "slug": "louise-broadway",
+      "display_name": "Louise Broadway",
+      "person_type": "interviewee",
+      "entry_number": 140,
+      "role_preview": "Baker County, Georgia movement participant; a secretary of the Baker County movement who recorded citizens' accounts of reprisals; later ...",
+      "born": 1930
+    },
+    "lucius-holloway-sr-and-emma-kate-holloway": {
+      "slug": "lucius-holloway-sr-and-emma-kate-holloway",
+      "display_name": "Lucius Holloway, Sr., and Emma Kate Holloway",
+      "person_type": "interviewee",
+      "entry_number": 141,
+      "role_preview": "Terrell County, Georgia voter-registration organizers. Lucius Holloway Sr. (b. 1932): Korea-era Army veteran, post-office worker fired fo..."
+    },
+    "luis-zapata": {
+      "slug": "luis-zapata",
+      "display_name": "Luis Zapata",
+      "person_type": "interviewee",
+      "entry_number": 142,
+      "role_preview": "Mexican American labor and community organizer; came from United Farm Workers organizing in California to spend roughly four years (about..."
+    },
     "malcolm-x": {
       "slug": "malcolm-x",
       "display_name": "Malcolm X",
@@ -2986,7 +3046,7 @@
       "display_name": "Priscilla Tietjen Bassett",
       "person_type": "interviewee",
       "entry_number": 38,
-      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with her husband Emmett W. Bassett (catalog entry 38, publication-b...",
+      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with her husband Emmett W. Bassett (catalog entry 38).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/3/3d/View_of_Crowd_at_1963_March_on_Washington.jpg",
       "photo_kind": "context",
       "photo_alt": "Crowd gathered around the Reflecting Pool at the 1963 March on Washington"
@@ -3027,7 +3087,7 @@
       "display_name": "Raylawni G. Branch",
       "person_type": "interviewee",
       "entry_number": 100,
-      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with Jeanette Smith (catalog entry 100, publication-block tier).",
+      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with Jeanette Smith (catalog entry 100).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/0/0d/USM_Hattiesburg_2011.jpg",
       "photo_kind": "context",
       "photo_alt": "University of Southern Mississippi campus in Hattiesburg"
@@ -3222,7 +3282,7 @@
       "display_name": "Satoko Ito Ackerman",
       "person_type": "interviewee",
       "entry_number": 135,
-      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with her husband David Mercer Ackerman (catalog entry 135, ingestio...",
+      "role_preview": "Civil rights movement participant; co-subject of a joint oral history with her husband David Mercer Ackerman (catalog entry 135).",
       "photo_src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Selma_to_Montgomery_Marches.jpg",
       "photo_kind": "context",
       "photo_alt": "Civil rights marchers carrying American flags on the road from Selma to Montgomery, Alabama, in 1965"
@@ -3598,6 +3658,7 @@
     "geraldine crawford bennett toni breaux and willie elliot jenkins": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
     "geraldine crawford bennett": "geraldine-crawford-bennett",
     "gertrude newsome jackson": "gertrude-newsome-jackson",
+    "glenda funchess": "glenda-funchess",
     "gloria arellanes": "gloria-arellanes",
     "gloria claudette grinnell": "gloria-claudette-grinnell",
     "gloria hayes richardson dandridge": "gloria-hayes-richardson-dandridge",
@@ -3649,6 +3710,9 @@
     "linda fuller degelmann": "linda-fuller-degelmann",
     "lisa anderson todd": "lisa-anderson-todd",
     "lonnie c king": "lonnie-c-king",
+    "louise broadway": "louise-broadway",
+    "lucius holloway sr and emma kate holloway": "lucius-holloway-sr-and-emma-kate-holloway",
+    "luis zapata": "luis-zapata",
     "malcolm x": "malcolm-x",
     "mamie till mobley": "mamie-till-mobley",
     "maria varela": "maria-varela",
