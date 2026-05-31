@@ -11,7 +11,8 @@
 | Request | Status |
 |---|---|
 | Remove top nav, keep Light/Dark and Menu, merge into Menu | Done, live |
-| Rename Spectrum to Ideological Spectrums | Done, live |
+| Rename Spectrum to Ideological Spectrums (renamed Data Insights, latest phone guidance) | Done, live |
+| Data Insights: one toggle grouping, Spectrum as the default toggle (phone) | Done, live |
 | Gray out the current page in the menu (not hide it) | Done, live |
 | Explore page: "Explore the Interview Data" plus the new subtitle | Done, live |
 | Corpus count, 136 vs 145 | Done, honest framing, live (detail below) |
@@ -39,7 +40,7 @@
 >
 > Top of the embedding page, rename "Explore the Embeddings" to "Explore the Interview Data". Underneath that, replace "Multiple lenses on the 136-interview Civil Rights History Project corpus..." with "Below are a set of tools for exploring the data and learning about the ideas in the interviews." And 136 where said needs to say 145 since 9 new ones were added.
 
-**Deployed.** The three top-of-page pill links are gone; the header is just the Light/Dark toggle and the Menu button. Every destination lives in the one Menu drawer. "Spectrum" is renamed "Ideological Spectrums." The drawer keeps its full ordering and items, and the entry for the page you are on is grayed and non-interactive (and marked for screen readers as the current page) instead of disappearing, so the menu keeps a constant shape. On the Explore page the title is now "Explore the Interview Data" and the subtitle is your exact replacement copy.
+**Deployed.** The three top-of-page pill links are gone; the header is just the Light/Dark toggle and the Menu button. Every destination lives in the one Menu drawer. "Spectrum" is renamed "Data Insights" (your written note said "Ideological Spectrums"; a later phone note revised it to "Data Insights"). The drawer keeps its full ordering and items, and the entry for the page you are on is grayed and non-interactive (and marked for screen readers as the current page) instead of disappearing, so the menu keeps a constant shape. On the Explore page the title is now "Explore the Interview Data" and the subtitle is your exact replacement copy.
 
 **On 136 vs 145, an important accuracy note.** Before changing the number I checked the data, because the Smithsonian and LoC hold us to an accuracy standard. The nine interviews added around May 25 (Abernathy family, Alfred Moldovan, C. T. Vivian, the Ackermans, Geraldine Crawford Bennett and colleagues, Gertrude Newsome Jackson, John Dudley and colleagues, Myrtle Gonza Glascoe, Simeon Wright) are **already on the site**, under entry numbers 28, 46, 64, and 133 through 138. The corpus went from 127 to 136 when they were added, so the nine are counted in the 136, not missing from it. 145 is the size of the full Library of Congress and Smithsonian collection ("approximately 145 long-form oral history interviews," per the David Cline document), not our current holdings. There are four interviews with transcripts that are genuinely not on the site yet (Glenda Funchess, Louise Broadway, the Lucius Holloway Sr. and Emma Kate Holloway joint interview, Luis Zapata); building those would bring the site to 140. So rather than print "145 interviews" the site does not have, the copy reads honestly and still names your number: the Home hero now says "136 of the ~145-interview collection," and the Interview Index says "All 136 interviews currently on the site, drawn from the Library of Congress and Smithsonian collection of roughly 145." Reproducible via `scripts/diag_corpus_state.py`. If you want a true 140, I can build the four (queued, see the chapterization and four-interview notes below); a true 145 would require sourcing five more interviews we do not hold.
 
@@ -57,7 +58,7 @@
 
 > Use content-focused language rather than technical language. Terms like "spectrum," "semantic overlap," "word search," and "embeddings" describe the underlying technology, but they don't tell visitors much about what they can actually explore... Decisions: "Spectrum" >> "Ideological Spectrums". "Semantic Overlap" >> "Related People". On the menu, remove "Word Search" and "Semantic Overlap".
 
-**Deployed.** In the menu, the two technical sub-tab entries (Semantic Overlap, Word Search) are removed; Spectrum is renamed Ideological Spectrums. On the Explore page the tabs are renamed to content language: Semantic Overlap to "Related People," Word Search to "Concept Lenses," Atlas to "Places," Network to "Influence," and the tab groups now read "Concepts and Ideas," "Maps of the Archive," "Find a Moment," "Curated Paths."
+**Deployed.** In the menu, the two technical sub-tab entries (Semantic Overlap, Word Search) are removed; Spectrum is renamed Data Insights (your written note said Ideological Spectrums; a later phone note revised it to Data Insights). On the Explore page the tabs are renamed to content language: Semantic Overlap to "Related People," Word Search to "Concept Lenses," Atlas to "Places," Network to "Influence," and the tab groups now read "Concepts and Ideas," "Maps of the Archive," "Find a Moment," "Curated Paths."
 
 ---
 
@@ -72,7 +73,7 @@
 - **Events:** the event layer carries time-anchored passages with playable clips (Emmett Till, the 16th Street Baptist Church bombing, and the rest), and the Home-timeline event links now reach the working playlist. Done.
 - **Places:** the geographic layer carries time-anchored passages with playable clips per place. Done.
 - **People:** each person page surfaces that interviewee's own clips inline (play in place, plus an "open the full interview" link). A dedicated per-person playlist that gathers every mention of a person across all interviews is a contained follow-on. Mostly done.
-- **Concepts:** the Concept Lenses and Ideological Spectrums let a visitor drill from a concept into the passages that anchor it; a one-click "concept playlist" is the remaining follow-on piece. Partially done.
+- **Concepts:** the Concept Lenses and Data Insights spectrum let a visitor drill from a concept into the passages that anchor it; a one-click "concept playlist" is the remaining follow-on piece. Partially done.
 
 "Clicking on a topic should immediately bring users to relevant clips and interviews" is done: a topic now lands you on its clips in one step, which also reduces clicks throughout.
 
@@ -84,7 +85,9 @@ On **"make supporting materials secondary"**: the navigation now leads with cont
 
 > Editorialize the spectrum view. Right now it's visually impressive, but it's not always clear what visitors are supposed to learn from it. We should be more selective and explanatory, helping users understand why particular clusters, relationships, or themes matter rather than simply exposing the computational structure of the archive.
 
-**Deployed.** The Ideological Spectrums section now opens by naming the actual debates inside the movement that the axes represent (nonviolence versus armed self-defense, individual conscience versus collective discipline, local versus national) and tells the visitor what to look for: who stood where, and which voices sit close together even though they never met. It no longer leads with the reproducible-math framing.
+**Deployed.** The Data Insights spectrum (renamed from "Ideological Spectrums" per the latest phone guidance) now opens by naming the actual debates inside the movement that the axes represent (nonviolence versus armed self-defense, individual conscience versus collective discipline, local versus national) and tells the visitor what to look for: who stood where, and which voices sit close together even though they never met. It no longer leads with the reproducible-math framing.
+
+**Update (2026-05-30, phone guidance).** Two further changes you asked for by phone are in: the label is renamed from "RAG Insights" to **"Data Insights,"** and the spectrum is no longer a separate hero pinned above the tab nav. Every view, including the spectrum, now lives in **one toggle grouping**; "Data Insights" (the two-axis spectrum) is simply the **default toggle**, so the page opens on it and a visitor toggles to Concept Lenses, Related People, the maps, and the curated paths from the same row.
 
 ---
 

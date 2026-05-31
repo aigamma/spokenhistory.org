@@ -73,15 +73,14 @@ function useCorpusData() {
  * Page structure:
  *   - Page header: h1 + framing sentence + corpus-stats badges
  *     (interview count, passage count, per-tier counts).
- *   - Spectrum (always visible above the tab nav): 2D scatter of 136
- *     interview centroids across two chosen concept axes (one on each
- *     of X and Y, both switchable). Click a dot to drill into that
- *     interviewee's passages most aligned with the horizontal pole.
- *   - Grouped sticky tab nav. Four intent-labeled categories:
- *       Concept projection (Word Search / ConceptMatrix)
- *       Structural maps    (InterviewMap, Themes, Network, Atlas)
- *       Find a passage     (Quote Finder, Semantic Overlap)
- *       Curated reading    (Tours, Famous Names, Quote of the Day)
+ *   - Grouped sticky tab nav. Every view, including the Spectrum, is a
+ *     toggle here; there is no separate hero (Dustin, 2026-05-30).
+ *     "Data Insights" (the two-axis Concept Spectrum) is the default
+ *     toggle. Intent groups:
+ *       Concepts & Ideas    (Data Insights / Concept Lenses)
+ *       Maps of the Archive (InterviewMap, Themes, Network, Atlas)
+ *       Find a Moment       (Quote Finder, Related People)
+ *       Curated Paths       (Tours, Famous Names, Quote of the Day)
  *   - About This Page aside at the bottom carrying AuditProvenance
  *     (9 audit passes / 127 LoC cross-references / 5 tier vocabulary).
  *
@@ -123,26 +122,19 @@ const RELATED_DEMO_ENTRIES = [
   { number: 125, name: 'Wheeler Parker, Jr. (Emmett Till\'s cousin)' },
   { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
 ];
-// Default tab when no ?tab= param is provided. Semantic Overlap is
-// the simplest entry point: pick an interview, see which other voices
-// in the corpus discuss semantically-related material. The page opens
-// with Spectrum at the top (the headline surface) and Semantic Overlap
-// below the tab nav so visitors immediately see a worked example of
-// cross-interview retrieval without having to choose a query first.
-const DEFAULT_TAB = 'related';
-// 'spectrum' deep links resolve to the default tab because Spectrum
-// is rendered at the page top (always visible), not as a tab. So a
-// /rag-explore?tab=spectrum URL gives the user Spectrum (at top) +
-// the default surface below the tab nav.
-const VALID_TAB = (t) => {
-  if (t === 'spectrum') return DEFAULT_TAB;
-  return TABS.includes(t) ? t : DEFAULT_TAB;
-};
+// Default toggle when no ?tab= param is provided. Per Dustin
+// (2026-05-30) the Concept Spectrum (labeled "Data Insights") is no
+// longer a separate hero above the tab nav, it is simply the default
+// toggle in the grouping. A /rag-explore?tab=spectrum URL opens
+// directly on it.
+const DEFAULT_TAB = 'spectrum';
+const VALID_TAB = (t) => (TABS.includes(t) ? t : DEFAULT_TAB);
 
 // Pill nav metadata. `featured: true` adds the leading star and a
-// heavier border. Spectrum is rendered above the tab nav as the page's
-// permanent headline surface, so it does NOT appear in this list.
+// heavier border. The Concept Spectrum (labeled "Data Insights") is
+// the default toggle and leads the list.
 const TAB_ORDER = [
+  { id: 'spectrum', label: 'Data Insights', featured: true },
   { id: 'lenses', label: 'Concept Lenses', featured: true },
   { id: 'map', label: 'Interview Map' },
   { id: 'related', label: 'Related People' },
@@ -157,14 +149,13 @@ const TAB_ORDER = [
 
 // Group tabs by user intent so visitors see four taxonomies (each
 // with a label that teaches what the demos in it are FOR) instead
-// of a single flat ten-pill row. Order within each group is rough
-// "most useful first." The Spectrum chart at page-top is the
-// always-visible relative of the "Concept projection" group.
+// of a single flat eleven-pill row. Order within each group is rough
+// "most useful first." The Concept Spectrum ("Data Insights") leads
+// the "Concepts & Ideas" group as the default toggle.
 const TAB_GROUPS = [
   {
     label: 'Concepts & Ideas',
-    tabs: ['lenses'],
-    footnote: 'RAG Insights (the two-axis lens) is the chart at the top of this page.',
+    tabs: ['spectrum', 'lenses'],
   },
   {
     label: 'Maps of the Archive',
@@ -187,7 +178,7 @@ const TAB_GROUPS = [
 const TAB_LABELS = {
   lenses: 'Concept Lenses',
   quote: 'Quote Finder',
-  spectrum: 'RAG Insights', // retained for back-compat; resolves to default tab
+  spectrum: 'Data Insights',
   map: 'Interview Map',
   related: 'Related People',
   themes: 'Themes',
@@ -330,35 +321,9 @@ export default function RagExplore() {
           )}
         </header>
 
-        {/* Spectrum is the page's headline surface. It renders above
-            the tab nav so it's always the first thing visitors see;
-            tabs below let them explore alternative views without
-            displacing the headline. Filtered out of the tab nav below
-            since duplicating it as a tab label would be redundant.
-            The id is the scroll target for cross-tab "place this
-            interviewee on the spectrum" links from elsewhere on the
-            page (currently the Semantic Overlap tab). */}
-        <section id="spectrum-section" className="mb-8 scroll-mt-28">
-          <h2
-            className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            RAG Insights
-          </h2>
-          <p className="text-sm text-stone-600 mb-4 max-w-3xl">
-            The Civil Rights Movement held real debates inside it: whether to meet
-            violence with nonviolence or with armed self-defense, whether change came
-            from individual conscience or from collective discipline, from local people
-            or national organizations. Each dot is one interviewee, placed by where
-            their own words fall between two of those poles. Reading across a spectrum
-            shows who stood where, and which voices sat close together even though they
-            never met. Pick the two ideas you want to compare in the panel beside the
-            chart, then click any dot to hear the passages that put that person where
-            they sit.
-          </p>
-          <ConceptSpectrum />
-        </section>
-
+        {/* Spectrum is no longer a separate hero (Dustin, 2026-05-30);
+            it is the default "Data Insights" toggle rendered in the tab
+            body below, alongside every other view. */}
         <nav
           aria-label="Demo tabs"
           className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-zinc-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-zinc-900/90"
@@ -461,15 +426,15 @@ export default function RagExplore() {
                 }}
                 onPlaceOnSpectrum={(entryNumber) => {
                   // Pivot: from "this person on the map" to "this
-                  // person's position on the Concept Spectrum" (always
-                  // visible at the page top). Mirrors the Semantic
-                  // Overlap → Spectrum cross-tab button.
+                  // person's position on the Concept Spectrum" (the
+                  // default "Data Insights" toggle). Mirrors the
+                  // Related People → Spectrum cross-tab button. The
+                  // tab-change effect scrolls the spectrum into view.
                   const next = new URLSearchParams(searchParams);
                   next.set('spectrumEntry', String(entryNumber));
+                  next.set('tab', 'spectrum');
                   setSearchParams(next, { replace: false });
-                  document
-                    .getElementById('spectrum-section')
-                    ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  setTab('spectrum');
                 }}
               />
             </div>
@@ -607,16 +572,14 @@ export default function RagExplore() {
                     type="button"
                     onClick={() => {
                       const next = new URLSearchParams(searchParams);
-                      next.set('tab', 'related');
+                      next.set('tab', 'spectrum');
                       next.set('spectrumEntry', String(relatedEntry));
                       setSearchParams(next, { replace: false });
-                      document
-                        .getElementById('spectrum-section')
-                        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      setTab('spectrum');
                     }}
                     className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
                   >
-                    Place on Concept Spectrum &uarr;
+                    View on Data Insights &rarr;
                   </button>
                   <span aria-hidden className="text-stone-400">·</span>
                   <button
@@ -666,12 +629,28 @@ export default function RagExplore() {
             </div>
           )}
 
-          {/* Spectrum is rendered at the page top now, not as a tab.
-              The 'spectrum' tab id is still in the TABS list so deep
-              links like /rag-explore?tab=spectrum don't 404, they
-              just don't render a second copy here. The DEFAULT_TAB
-              is 'related' so the page opens with Spectrum (top) +
-              Semantic Overlap (below tab nav) by default. */}
+          {tab === 'spectrum' && (
+            <div id="spectrum-section">
+              <h2
+                className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                Data Insights
+              </h2>
+              <p className="text-sm text-stone-600 mb-4 max-w-3xl">
+                The Civil Rights Movement held real debates inside it: whether to meet
+                violence with nonviolence or with armed self-defense, whether change came
+                from individual conscience or from collective discipline, from local people
+                or national organizations. Each dot is one interviewee, placed by where
+                their own words fall between two of those poles. Reading across a spectrum
+                shows who stood where, and which voices sat close together even though they
+                never met. Pick the two ideas you want to compare in the panel beside the
+                chart, then click any dot to hear the passages that put that person where
+                they sit.
+              </p>
+              <ConceptSpectrum />
+            </div>
+          )}
 
           {tab === 'themes' && (
             <div>
