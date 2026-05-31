@@ -19,6 +19,16 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import { TIER_BADGE } from '../components/rag/tiers';
 
+// On the Interview Index the per-entry `tier` data predates the Pass 10
+// "LoC verification IS the grade" reclassification, so only one entry reads
+// 'high' (LoC-Verified). A lone "1 LoC-Verified" beside "123 Audited" reads as
+// an absurdity (Dustin, 2026-05-30), so this page folds 'high' into the Audited
+// bucket: 'high' borrows the Audited badge, and the breakdown + filter group by
+// label rather than raw tier key, so there is one "Audited" and one
+// "Audio-Limited Source", never a stray count of one.
+const INDEX_BADGE = { ...TIER_BADGE, high: TIER_BADGE.medium };
+const labelOfTier = (tier) => INDEX_BADGE[tier]?.label || null;
+
 export default function InterviewIndex() {
   useDocumentTitle('Interview Index');
   const [searchParams] = useSearchParams();
@@ -62,7 +72,7 @@ export default function InterviewIndex() {
 
   const filtered = useMemo(() => {
     let list = interviews;
-    if (tierFilter !== 'all') list = list.filter((i) => i.tier === tierFilter);
+    if (tierFilter !== 'all') list = list.filter((i) => labelOfTier(i.tier) === tierFilter);
     if (search.trim()) {
       const s = search.toLowerCase();
       list = list.filter((i) => i.name.toLowerCase().includes(s) || (i.capsule || '').toLowerCase().includes(s));
@@ -112,7 +122,7 @@ export default function InterviewIndex() {
           </p>
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
             {Object.values(
-              Object.entries(TIER_BADGE).reduce((acc, [key, badge]) => {
+              Object.entries(INDEX_BADGE).reduce((acc, [key, badge]) => {
                 const n = tiers[key] || 0;
                 if (n === 0) return acc;
                 if (!acc[badge.label]) acc[badge.label] = { label: badge.label, count: 0, badge };
@@ -144,8 +154,12 @@ export default function InterviewIndex() {
             aria-label="Filter interviews by Library of Congress cross-reference status"
           >
             <option value="all">All</option>
-            {Object.keys(TIER_BADGE).filter((k) => (tiers[k] || 0) > 0).map((k) => (
-              <option key={k} value={k}>{TIER_BADGE[k].label}</option>
+            {[...new Set(
+              Object.keys(tiers)
+                .filter((k) => (tiers[k] || 0) > 0 && INDEX_BADGE[k])
+                .map((k) => INDEX_BADGE[k].label)
+            )].map((label) => (
+              <option key={label} value={label}>{label}</option>
             ))}
           </select>
           <select
@@ -189,8 +203,8 @@ export default function InterviewIndex() {
 }
 
 function InterviewCard({ interview }) {
-  const tierKey = interview.tier in TIER_BADGE ? interview.tier : null;
-  const badge = tierKey ? TIER_BADGE[tierKey] : null;
+  const tierKey = interview.tier in INDEX_BADGE ? interview.tier : null;
+  const badge = tierKey ? INDEX_BADGE[tierKey] : null;
   return (
     <article className="border border-stone-200 rounded-lg bg-white p-5">
       <header className="flex items-start justify-between gap-3 mb-2">
