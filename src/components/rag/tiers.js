@@ -117,6 +117,43 @@ export const SNIPPET_PROBLEM_BORDER = 'var(--snippet-problem-border)';
 export const SNIPPET_PROBLEM_TIERS = new Set();
 
 /**
+ * Merge the "Audited" header bucket into "LoC-Verified" for the page-top
+ * summary pills only. LoC-Verified and Audited are both Library-of-Congress-
+ * checked states, so a small "Audited" pill beside the large "LoC-Verified"
+ * one reads as an anomaly rather than a real category (the project lead
+ * objected on 2026-05-30). Audio-Limited Source is a genuinely different
+ * caveat and passes through as its own pill. The per-card badges keep the
+ * finer LoC-Verified / Audited / Audio-Limited Source distinction; this fold
+ * is header-display only.
+ *
+ * The two label strings come straight from TIER_BADGE so the names stay in
+ * sync with the badge palette: TIER_BADGE.high.label is the absorbing bucket
+ * ("LoC-Verified") and TIER_BADGE.medium.label is the absorbed one ("Audited").
+ * Any zero/falsy count is dropped; every other label passes through unchanged.
+ *
+ * @param {Object<string, number>} labelCounts - displayLabel -> count
+ * @returns {Object<string, number>}
+ */
+export function summarizeAuditPills(labelCounts) {
+  const VERIFIED = TIER_BADGE['high'].label;    // 'LoC-Verified'
+  const AUDITED = TIER_BADGE['medium'].label;   // 'Audited'
+  const result = {};
+  let auditedExtra = 0;
+  for (const [label, count] of Object.entries(labelCounts || {})) {
+    if (!count) continue;
+    if (label === AUDITED) {
+      auditedExtra += count;
+      continue;
+    }
+    result[label] = (result[label] || 0) + count;
+  }
+  if (auditedExtra) {
+    result[VERIFIED] = (result[VERIFIED] || 0) + auditedExtra;
+  }
+  return result;
+}
+
+/**
  * Fold any audit-tier bucket whose count is below `min` into the bucket with
  * the largest count, so the header summary pills never show an absurd lone
  * bucket (for example a single pill reading "Audited: 1"; Dustin objected to

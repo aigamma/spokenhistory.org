@@ -17,15 +17,16 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ExternalLink } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
-import { TIER_BADGE, foldTinyTierCounts } from '../components/rag/tiers';
+import { TIER_BADGE, summarizeAuditPills } from '../components/rag/tiers';
 
 // The per-entry `tier` data in neighbors.json is now reconciled to
 // constellation.json (the canonical post-reclassification distribution),
 // so 'high' is the LoC-verified bulk of the corpus, not a stray count of
 // one. INDEX_BADGE therefore equals TIER_BADGE: 'high' renders as its true
 // "LoC-Verified" label, matching the Explore (Data Insights) page exactly.
-// The breakdown + filter group by display label, and foldTinyTierCounts
-// still absorbs any sub-threshold bucket so no lone count-of-one pill shows.
+// The breakdown + filter group by display label, and summarizeAuditPills
+// merges the "Audited" header bucket into "LoC-Verified" so the summary reads
+// as one LoC-checked bucket plus the distinct "Audio-Limited Source" pill.
 const INDEX_BADGE = TIER_BADGE;
 const labelOfTier = (tier) => INDEX_BADGE[tier]?.label || null;
 
@@ -93,11 +94,13 @@ export default function InterviewIndex() {
     return counts;
   }, [interviews]);
 
-  // Header summary pills, grouped by display label (so 'high' folds into the
-  // Audited badge) and then folded again so no tiny standalone bucket of one or
-  // two survives. foldTinyTierCounts merges any sub-threshold label into the
-  // largest one; the count is preserved and the absorbing label keeps its badge.
-  // The filter dropdown below still lists every label, this only governs the pills.
+  // Header summary pills, grouped by display label, then summarized so the
+  // "Audited" bucket merges into "LoC-Verified" (both are LoC-checked states;
+  // the small "Audited" pill beside the large "LoC-Verified" one read as an
+  // anomaly, the project lead objected on 2026-05-30). "Audio-Limited Source"
+  // stays its own pill. summarizeAuditPills operates on the plain label -> count
+  // map; the per-card badges keep the finer distinction. The filter dropdown
+  // below still lists every label, this only governs the header pills.
   const pillGroups = useMemo(() => {
     const byLabel = {};
     for (const [key, badge] of Object.entries(INDEX_BADGE)) {
@@ -108,11 +111,16 @@ export default function InterviewIndex() {
     }
     const counts = {};
     for (const [lbl, info] of Object.entries(byLabel)) counts[lbl] = info.count;
-    const folded = foldTinyTierCounts(counts);
-    return Object.entries(folded).map(([lbl, count]) => ({
+    const summarized = summarizeAuditPills(counts);
+    return Object.entries(summarized).map(([lbl, count]) => ({
       label: lbl,
       count,
-      badge: byLabel[lbl].badge,
+      // The merged "LoC-Verified" bucket always renders with the sky high-tier
+      // badge, even when some of its members came from Audited-tier rows that
+      // never produced their own LoC-Verified badge in byLabel.
+      badge: lbl === TIER_BADGE['high'].label
+        ? TIER_BADGE['high']
+        : byLabel[lbl].badge,
     }));
   }, [tiers]);
 

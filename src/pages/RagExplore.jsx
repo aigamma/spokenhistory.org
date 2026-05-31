@@ -17,7 +17,7 @@ import {
   InterviewMap,
   AuditProvenance,
 } from '../components/rag';
-import { TIER_VOCABULARY, TIER_BADGE, foldTinyTierCounts } from '../components/rag/tiers';
+import { TIER_VOCABULARY, TIER_BADGE, summarizeAuditPills } from '../components/rag/tiers';
 
 /**
  * Single fetch of /rag/constellation.json (which carries one point per
@@ -301,11 +301,14 @@ export default function RagExplore() {
                 className="flex flex-wrap gap-1.5 text-xs list-none p-0 m-0"
               >
                 {(() => {
-                  // Group raw tier counts by display label, then fold any
-                  // sub-threshold bucket into the largest one so the Explore
-                  // page never shows a lone count-of-one (or two) pill, exactly
-                  // like the Interview Index. byLabel keeps each label's badge;
-                  // foldTinyTierCounts operates on the plain label -> count map.
+                  // Group raw tier counts by display label, then merge the
+                  // "Audited" bucket into "LoC-Verified" so the Explore page
+                  // reads as one LoC-checked bucket plus the distinct
+                  // "Audio-Limited Source" caveat, exactly like the Interview
+                  // Index (the project lead objected to a small "Audited" pill
+                  // beside "LoC-Verified" on 2026-05-30). byLabel keeps each
+                  // label's badge; summarizeAuditPills operates on the plain
+                  // label -> count map.
                   const byLabel = TIER_VOCABULARY.reduce((acc, key) => {
                     const n = stats.tiers[key] || 0;
                     if (n === 0) return acc;
@@ -316,9 +319,15 @@ export default function RagExplore() {
                   }, {});
                   const counts = {};
                   for (const [lbl, info] of Object.entries(byLabel)) counts[lbl] = info.count;
-                  const folded = foldTinyTierCounts(counts);
-                  return Object.entries(folded).map(([label, count]) => {
-                    const badge = byLabel[label].badge;
+                  const summarized = summarizeAuditPills(counts);
+                  return Object.entries(summarized).map(([label, count]) => {
+                    // The merged "LoC-Verified" bucket always renders with the
+                    // sky high-tier badge, even when some of its members came
+                    // from Audited-tier rows whose own badge never landed in
+                    // byLabel (e.g. publication-block when high is absent).
+                    const badge = label === TIER_BADGE['high'].label
+                      ? TIER_BADGE['high']
+                      : byLabel[label].badge;
                     return (
                       <li key={label}>
                         <span
