@@ -164,7 +164,7 @@ const TAB_GROUPS = [
   {
     label: 'Concepts & Ideas',
     tabs: ['lenses'],
-    footnote: 'Ideological Spectrums (the two-axis lens) is the chart at the top of this page.',
+    footnote: 'RAG Insights (the two-axis lens) is the chart at the top of this page.',
   },
   {
     label: 'Maps of the Archive',
@@ -187,7 +187,7 @@ const TAB_GROUPS = [
 const TAB_LABELS = {
   lenses: 'Concept Lenses',
   quote: 'Quote Finder',
-  spectrum: 'Ideological Spectrums', // retained for back-compat; resolves to default tab
+  spectrum: 'RAG Insights', // retained for back-compat; resolves to default tab
   map: 'Interview Map',
   related: 'Related People',
   themes: 'Themes',
@@ -343,7 +343,7 @@ export default function RagExplore() {
             className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Ideological Spectrums
+            RAG Insights
           </h2>
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
             The Civil Rights Movement held real debates inside it: whether to meet

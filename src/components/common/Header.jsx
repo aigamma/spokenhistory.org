@@ -18,7 +18,7 @@ import { useTheme } from '../../hooks/useTheme';
 // Slide-out menu items. Dustin (2026-05-30) asked to remove the
 // top-of-page pill links and let the single Menu drawer carry every
 // destination, so there is no NAV_ROUTES list anymore. "Spectrum" is
-// renamed "Ideological Spectrums", and the two technical sub-tab
+// renamed "RAG Insights", and the two technical sub-tab
 // entries ("Semantic Overlap", "Word Search") are dropped from the
 // menu in favor of content-level destinations. The numbered prefix
 // (01., 02., ...) is assigned at render time. The entry matching the
@@ -27,7 +27,7 @@ import { useTheme } from '../../hooks/useTheme';
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   {
-    label: 'Ideological Spectrums',
+    label: 'RAG Insights',
     to: '/rag-explore?tab=spectrum',
     matchPath: '/rag-explore',
     matchTab: 'spectrum',
