@@ -73,11 +73,12 @@ function useCorpusData() {
  * Page structure:
  *   - Page header: h1 + framing sentence + corpus-stats badges
  *     (interview count, passage count, per-tier counts).
- *   - Grouped sticky tab nav. Every view, including the Spectrum, is a
- *     toggle here; there is no separate hero (Dustin, 2026-05-30).
- *     "Data Insights" (the two-axis Concept Spectrum) is the default
- *     toggle. Intent groups:
- *       Concepts & Ideas    (Data Insights / Concept Lenses)
+ *   - Sticky tab nav. "Ideological Spectrums" (the two-axis Concept
+ *     Spectrum hero + the four-chart ConceptMatrix grid) is the default
+ *     toggle, rendered as a standalone lead pill. The whole page is
+ *     "Data Insights" (the menu label), so there is no "Concepts &
+ *     Ideas" group (Dustin, 2026-05-30). The remaining toggles follow
+ *     in three intent groups:
  *       Maps of the Archive (InterviewMap, Themes, Network, Atlas)
  *       Find a Moment       (Quote Finder, Related People)
  *       Curated Paths       (Tours, Famous Names, Quote of the Day)
@@ -105,7 +106,7 @@ function useCorpusData() {
 // /rag-explore#map are shareable and deep-linkable.
 const TABS = [
   'quote', 'map', 'related',
-  'spectrum', 'names', 'themes',
+  'names', 'themes',
   'atlas', 'network', 'tours', 'quote-of-day',
   'lenses',
 ];
@@ -123,19 +124,24 @@ const RELATED_DEMO_ENTRIES = [
   { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
 ];
 // Default toggle when no ?tab= param is provided. Per Dustin
-// (2026-05-30) the Concept Spectrum (labeled "Data Insights") is no
-// longer a separate hero above the tab nav, it is simply the default
-// toggle in the grouping. A /rag-explore?tab=spectrum URL opens
-// directly on it.
-const DEFAULT_TAB = 'spectrum';
-const VALID_TAB = (t) => (TABS.includes(t) ? t : DEFAULT_TAB);
+// (2026-05-30) "Ideological Spectrums" is the default toggle: it shows
+// the two-axis Concept Spectrum hero and then the grid of four spectrum
+// charts beneath it. The whole page is "Data Insights" (the menu
+// label), so there is no separate Data Insights toggle and no
+// "Concepts & Ideas" group, the spectrums ARE the lead view. Legacy
+// /rag-explore?tab=spectrum links resolve to it.
+const DEFAULT_TAB = 'lenses';
+const VALID_TAB = (t) => {
+  if (t === 'spectrum') return 'lenses';
+  return TABS.includes(t) ? t : DEFAULT_TAB;
+};
 
 // Pill nav metadata. `featured: true` adds the leading star and a
-// heavier border. The Concept Spectrum (labeled "Data Insights") is
-// the default toggle and leads the list.
+// heavier border. "Ideological Spectrums" (the spectrum hero + the
+// four-chart grid) is the default toggle and renders as a standalone
+// featured lead pill above the grouped toggles.
 const TAB_ORDER = [
-  { id: 'spectrum', label: 'Data Insights', featured: true },
-  { id: 'lenses', label: 'Concept Lenses', featured: true },
+  { id: 'lenses', label: 'Ideological Spectrums', featured: true },
   { id: 'map', label: 'Interview Map' },
   { id: 'related', label: 'Related People' },
   { id: 'quote', label: 'Quote Finder' },
@@ -147,16 +153,11 @@ const TAB_ORDER = [
   { id: 'quote-of-day', label: 'Quote of the Day' },
 ];
 
-// Group tabs by user intent so visitors see four taxonomies (each
-// with a label that teaches what the demos in it are FOR) instead
-// of a single flat eleven-pill row. Order within each group is rough
-// "most useful first." The Concept Spectrum ("Data Insights") leads
-// the "Concepts & Ideas" group as the default toggle.
+// Group the remaining toggles by user intent. "Ideological Spectrums"
+// is NOT in a group, it renders as the lead featured pill above these
+// (Dustin, 2026-05-30: the whole page is data insights, so there is no
+// separate "Concepts & Ideas" row).
 const TAB_GROUPS = [
-  {
-    label: 'Concepts & Ideas',
-    tabs: ['spectrum', 'lenses'],
-  },
   {
     label: 'Maps of the Archive',
     tabs: ['map', 'themes', 'network', 'atlas'],
@@ -176,9 +177,8 @@ const TAB_GROUPS = [
 // demos) and for the in-page section heading. Keep in sync with the
 // tab buttons in <nav> below.
 const TAB_LABELS = {
-  lenses: 'Concept Lenses',
+  lenses: 'Ideological Spectrums',
   quote: 'Quote Finder',
-  spectrum: 'Data Insights',
   map: 'Interview Map',
   related: 'Related People',
   themes: 'Themes',
@@ -321,17 +321,41 @@ export default function RagExplore() {
           )}
         </header>
 
-        {/* Spectrum is no longer a separate hero (Dustin, 2026-05-30);
-            it is the default "Data Insights" toggle rendered in the tab
-            body below, alongside every other view. */}
+        {/* "Ideological Spectrums" (the spectrum hero + the four-chart
+            grid) is the default toggle, rendered as a standalone lead
+            pill below; the other toggles follow in three intent groups.
+            There is no "Concepts & Ideas" group, the whole page is Data
+            Insights (Dustin, 2026-05-30). */}
         <nav
           aria-label="Demo tabs"
           className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-zinc-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-zinc-900/90"
         >
           <p className="text-xs text-stone-500 mb-3 font-mono uppercase tracking-wide">
-            Pick a demo. Grouped by what each one does.
+            Pick a view. The spectrums lead; the rest are grouped by what they do.
           </p>
           <div className="space-y-2.5">
+            {/* Lead pill: "Ideological Spectrums" is the default view and
+                stands alone (no group label), since the whole page is
+                Data Insights and the spectrums are the headline. */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+              <button
+                type="button"
+                onClick={() => setTab('lenses')}
+                aria-pressed={tab === 'lenses'}
+                className={
+                  'inline-flex items-center min-h-11 px-4 sm:px-5 py-2 rounded-full border-2 text-sm sm:text-base font-medium transition-all ' +
+                  (tab === 'lenses'
+                    ? 'bg-civil-red-strong text-white border-civil-red-strong shadow-md ring-2 ring-red-300'
+                    : 'bg-white text-stone-900 border-stone-900 hover:bg-red-50 hover:border-civil-red-strong hover:text-civil-red-strong hover:ring-2 hover:ring-red-200')
+                }
+                style={{ fontFamily: 'Chivo Mono, monospace' }}
+              >
+                <span aria-hidden="true" className={'mr-1.5 ' + (tab === 'lenses' ? 'text-yellow-200' : 'text-civil-red-strong')}>
+                  ★
+                </span>
+                Ideological Spectrums
+              </button>
+            </div>
             {TAB_GROUPS.map((group) => {
               const groupId = `tabgroup-${group.label.toLowerCase().replace(/\s+/g, '-')}`;
               return (
@@ -426,15 +450,15 @@ export default function RagExplore() {
                 }}
                 onPlaceOnSpectrum={(entryNumber) => {
                   // Pivot: from "this person on the map" to "this
-                  // person's position on the Concept Spectrum" (the
-                  // default "Data Insights" toggle). Mirrors the
-                  // Related People → Spectrum cross-tab button. The
-                  // tab-change effect scrolls the spectrum into view.
+                  // person's position on the spectrum" (the default
+                  // "Ideological Spectrums" toggle). Mirrors the Related
+                  // People cross-tab button. The tab-change effect
+                  // scrolls the spectrum into view.
                   const next = new URLSearchParams(searchParams);
                   next.set('spectrumEntry', String(entryNumber));
-                  next.set('tab', 'spectrum');
+                  next.set('tab', 'lenses');
                   setSearchParams(next, { replace: false });
-                  setTab('spectrum');
+                  setTab('lenses');
                 }}
               />
             </div>
@@ -572,14 +596,14 @@ export default function RagExplore() {
                     type="button"
                     onClick={() => {
                       const next = new URLSearchParams(searchParams);
-                      next.set('tab', 'spectrum');
+                      next.set('tab', 'lenses');
                       next.set('spectrumEntry', String(relatedEntry));
                       setSearchParams(next, { replace: false });
-                      setTab('spectrum');
+                      setTab('lenses');
                     }}
                     className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
                   >
-                    View on Data Insights &rarr;
+                    View on the Spectrums &rarr;
                   </button>
                   <span aria-hidden className="text-stone-400">·</span>
                   <button
@@ -613,29 +637,19 @@ export default function RagExplore() {
           )}
 
 
+          {/* "Ideological Spectrums" is the default view: the two-axis
+              Concept Spectrum hero first, then the four-chart grid
+              (ConceptMatrix) beneath it. Merged from the old separate
+              "Data Insights" and "Concept Lenses" tabs (Dustin,
+              2026-05-30). The id is the scroll/landing target for the
+              cross-tab "place this person on the spectrum" buttons. */}
           {tab === 'lenses' && (
-            <div>
-              <h2 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Concept Lenses
-              </h2>
-              <p className="text-sm text-stone-600 mb-6 max-w-2xl">
-                Four spectrums at once. Each chart sorts the same voices along a
-                different pair of ideas (nonviolence and armed self-defense, sacred
-                and secular framing, local and national focus). Follow one person
-                across the four charts and you can see how their testimony shifts
-                emphasis depending on which question you ask of it.
-              </p>
-              <ConceptMatrix />
-            </div>
-          )}
-
-          {tab === 'spectrum' && (
             <div id="spectrum-section">
               <h2
                 className="text-stone-900 text-2xl sm:text-3xl font-medium mb-1"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                Data Insights
+                Ideological Spectrums
               </h2>
               <p className="text-sm text-stone-600 mb-4 max-w-3xl">
                 The Civil Rights Movement held real debates inside it: whether to meet
@@ -649,6 +663,20 @@ export default function RagExplore() {
                 they sit.
               </p>
               <ConceptSpectrum />
+
+              <div className="mt-12 border-t border-stone-300 pt-8">
+                <h3 className="text-stone-900 text-xl sm:text-2xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Compare Four Spectrums at Once
+                </h3>
+                <p className="text-sm text-stone-600 mb-6 max-w-2xl">
+                  The same voices sorted along four different pairs of ideas at once
+                  (nonviolence and armed self-defense, sacred and secular framing, local
+                  and national focus). Follow one person across the four charts and you can
+                  see how their testimony shifts emphasis depending on which question you
+                  ask of it.
+                </p>
+                <ConceptMatrix />
+              </div>
             </div>
           )}
 
