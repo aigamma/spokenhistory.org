@@ -21,6 +21,7 @@ import RagExplore from './pages/RagExplore'
 import PersonPage from './pages/PersonPage'
 import PeopleCatalog from './pages/PeopleCatalog'
 import MachineAudit from './pages/MachineAudit'
+import TableOfContents from './pages/TableOfContents'
 import NotFound from './pages/NotFound'
 
 
@@ -126,6 +127,19 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <MachineAudit />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      {/* Table of Contents (Dustin, 2026-05-30): every interview,
+          expandable to its named chapters grouped into parts; each
+          chapter and each part links to a bounded video segment so a
+          multi-hour interview opens to the right place without buffering
+          the whole file. Data: scripts/build_toc.py -> /rag/toc.json. */}
+      <Route path="/table-of-contents" element={
+        <ProtectedRoute>
+          <Layout>
+            <TableOfContents />
           </Layout>
         </ProtectedRoute>
       } />

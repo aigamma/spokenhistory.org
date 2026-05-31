@@ -3,8 +3,14 @@
 Reads:
   scripts/spec_<entry>.json   - [{start_block,end_block,title,topic,summary,
                                  main_topic_category,keywords,related_events,
-                                 acc?,coh?}], in order, covering every block.
+                                 part?,acc?,coh?}], in order, covering every block.
   scripts/blocks_<entry>.json  - the blocks (for cue-aligned start/end times).
+
+The optional `part` field groups chapters into named PARTS (Dustin, 2026-05-30):
+set `part` on the FIRST chapter of each part; every following chapter inherits it
+(forward-fill) until the next chapter that sets a new `part`. Parts declutter long
+interviews (a 77-chapter interview becomes ~12 scannable parts) and each part is
+itself playable as one bounded autoplay run from its first chapter to its last.
 
 Writes transcripts/rechapter_staging/entry_<entry>.chapters.json and validates
 that the spec covers blocks 0..N-1 with no gaps or overlaps.
@@ -30,9 +36,13 @@ for a, b in zip(spec, spec[1:]):
         print(f"FAIL entry {entry}: chapter ends before it starts ({a})"); sys.exit(1)
 
 out = []
+cur_part = None
 for i, ch in enumerate(spec):
+    if ch.get('part'):
+        cur_part = ch['part']  # forward-fill: this part runs until the next set
     out.append({
         'chapter_number': i + 1,
+        'part': cur_part,
         'title': ch['title'],
         'topic': ch['topic'],
         'summary': ch['summary'],
