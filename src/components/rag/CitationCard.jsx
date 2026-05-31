@@ -12,6 +12,7 @@
  */
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ExternalLink, Clock, AlertTriangle, Copy, Check, Info } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
 import { useCapsule } from './useCapsules';
@@ -135,6 +136,14 @@ export default function CitationCard({
         <div className="flex-1">
           <div className="font-medium text-xs uppercase tracking-wide mb-0.5">{badge.label}</div>
           <div className="text-xs leading-snug">{fidelityNote || 'Provenance unknown.'}</div>
+          {/* The audit badge is the Machine Audit indicator (Dustin,
+              2026-05-30): clicking through opens the explainer page. */}
+          <Link
+            to="/machine-audit"
+            className="inline-block text-xs font-medium underline mt-1 hover:opacity-80 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+          >
+            How was this generated?
+          </Link>
         </div>
       </div>
 
