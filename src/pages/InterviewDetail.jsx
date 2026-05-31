@@ -22,6 +22,38 @@ import { tsToSeconds } from '../components/HearInContext';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import { TIER_BADGE, fidelityNoteFor } from '../components/rag/tiers';
 
+/**
+ * Group a flat chapters[] array into PARTS, mirroring the Table of Contents
+ * page. A run of consecutive chapters sharing the same non-empty `part` value
+ * is one titled part. A leading (or any) run of chapters with no `part` value
+ * (null, absent, or empty after trimming) becomes an untitled group that the
+ * page renders flat, exactly as it did before the part-migration existed.
+ *
+ * Returns an array of { title, chapters }. `title` is the part name, or null
+ * for an untitled group. Each group preserves chapter order, so the part's
+ * span runs from its first chapter's start_time to its last chapter's
+ * end_time. Backwards compatible: an un-migrated interview (every chapter's
+ * `part` null/absent) collapses to a single untitled group, so the rendered
+ * output is one flat chapter list with no part headers.
+ */
+function groupChaptersByPart(chapters) {
+  const groups = [];
+  for (const ch of chapters) {
+    const raw = ch && ch.part;
+    const title = typeof raw === 'string' && raw.trim() ? raw.trim() : null;
+    const last = groups[groups.length - 1];
+    // Extend the current group when this chapter's part matches the group's
+    // (including the null-to-null case, so consecutive untitled chapters stay
+    // together); otherwise open a new group.
+    if (last && last.title === title) {
+      last.chapters.push(ch);
+    } else {
+      groups.push({ title, chapters: [ch] });
+    }
+  }
+  return groups;
+}
+
 export default function InterviewDetail() {
   const { entryNumber } = useParams();
   const n = parseInt(entryNumber, 10);
@@ -44,6 +76,22 @@ export default function InterviewDetail() {
   const playChapter = (ch) => {
     const start = tsToSeconds(ch.start_time);
     const end = ch.end_time ? tsToSeconds(ch.end_time) : null;
+    heroRef.current?.seek(start, { play: true, stopAt: end });
+    heroWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  // Play a whole part straight through: seek to the part's FIRST chapter
+  // start and bound playback to the part's LAST chapter end. Same hero handle
+  // and same HH:MM:SS,mmm-to-seconds conversion that playChapter uses, so the
+  // part run and a single chapter share one playback path (no whole-interview
+  // buffering, the player range-jumps to the part and stops at its end).
+  const playPart = (group) => {
+    const list = group.chapters;
+    if (!list || list.length === 0) return;
+    const first = list[0];
+    const lastWithEnd = [...list].reverse().find((c) => c.end_time);
+    const start = tsToSeconds(first.start_time);
+    const end = lastWithEnd ? tsToSeconds(lastWithEnd.end_time) : null;
     heroRef.current?.seek(start, { play: true, stopAt: end });
     heroWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -126,6 +174,12 @@ export default function InterviewDetail() {
   const main = pipeline?.main_summary;
   const chapters = pipeline?.chapters || [];
   const themes = main?.key_themes || [];
+
+  // Group the flat chapters into parts for the "Play Whole Part" controls.
+  // On un-migrated interviews this is a single untitled group, so the list
+  // renders flat exactly as before.
+  const partGroups = groupChaptersByPart(chapters);
+  const hasTitledPart = partGroups.some((g) => g.title);
 
   return (
     <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
@@ -250,52 +304,82 @@ export default function InterviewDetail() {
             <h2 className="text-stone-900 text-2xl font-medium mb-4" style={{ fontFamily: 'Inter, sans-serif' }}>
               Chapters ({chapters.length})
             </h2>
-            <ol className="space-y-3 list-none p-0">
-              {chapters.map((ch) => (
-                <li key={ch.chapter_number} className="border border-stone-200 rounded-md bg-white p-4">
-                  <header className="flex items-baseline justify-between gap-3 mb-1">
-                    <h3 className="text-base font-medium text-stone-900">
-                      <span className="text-civil-red-body font-mono mr-2 text-sm">
-                        {String(ch.chapter_number).padStart(2, '0')}
-                      </span>
-                      {ch.title}
-                    </h3>
-                    {ch.start_time ? (
-                      <button
-                        type="button"
-                        onClick={() => playChapter(ch)}
-                        className="text-xs text-civil-red-body hover:text-civil-red-strong tabular-nums whitespace-nowrap inline-flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
-                        title="Play this chapter in the video above"
-                      >
-                        <Play className="w-3 h-3" aria-hidden="true" />
-                        {(ch.start_time || '').split(',')[0]}–{(ch.end_time || '').split(',')[0]}
-                      </button>
-                    ) : ch.end_time ? (
-                      <span className="text-xs text-stone-500 tabular-nums whitespace-nowrap inline-flex items-center gap-1">
-                        <Clock className="w-3 h-3" aria-hidden="true" />
-                        –{(ch.end_time || '').split(',')[0]}
-                      </span>
-                    ) : null}
-                  </header>
-                  {ch.main_topic_category && (
-                    <p className="text-xs text-stone-500 uppercase tracking-wide mb-2 ml-8">
-                      {ch.main_topic_category}
-                    </p>
-                  )}
-                  {ch.summary && (
-                    <p className="text-sm text-stone-700 ml-8" style={{ fontFamily: 'Source Serif 4, serif' }}>
-                      {ch.summary}
-                    </p>
-                  )}
-                  {ch.keywords && (
-                    <p className="text-xs text-stone-500 mt-2 ml-8">
-                      <span className="uppercase tracking-wide">Keywords:</span>{' '}
-                      {Array.isArray(ch.keywords) ? ch.keywords.join(', ') : ch.keywords}
-                    </p>
-                  )}
-                </li>
-              ))}
-            </ol>
+            {hasTitledPart && (
+              <p className="text-sm text-stone-600 mb-4 max-w-2xl">
+                Chapters are grouped into parts. Play a single chapter, or use a part
+                header to listen to that whole part straight through in the video above.
+              </p>
+            )}
+            {partGroups.map((group, gi) => (
+              <div key={gi} className={gi > 0 ? 'mt-6' : ''}>
+                {group.title && (
+                  // Red part header, itself a "Play Whole Part" control: clicking
+                  // seeks the hero to this part's first chapter and stops at its
+                  // last chapter's end. Same red part-header family as the Table
+                  // of Contents page.
+                  <button
+                    type="button"
+                    onClick={() => playPart(group)}
+                    className="group w-full flex items-center gap-2 text-left mb-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                    title="Play this whole part in the video above"
+                  >
+                    <Play className="w-4 h-4 flex-shrink-0 text-civil-red-strong opacity-70 group-hover:opacity-100" aria-hidden="true" />
+                    <span className="text-civil-red-strong font-semibold text-sm uppercase tracking-wide group-hover:underline" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                      {group.title}
+                    </span>
+                    <span className="text-xs text-stone-400 font-normal normal-case">
+                      Play Whole Part
+                    </span>
+                  </button>
+                )}
+                <ol className="space-y-3 list-none p-0">
+                  {group.chapters.map((ch) => (
+                    <li key={ch.chapter_number} className="border border-stone-200 rounded-md bg-white p-4">
+                      <header className="flex items-baseline justify-between gap-3 mb-1">
+                        <h3 className="text-base font-medium text-stone-900">
+                          <span className="text-civil-red-body font-mono mr-2 text-sm">
+                            {String(ch.chapter_number).padStart(2, '0')}
+                          </span>
+                          {ch.title}
+                        </h3>
+                        {ch.start_time ? (
+                          <button
+                            type="button"
+                            onClick={() => playChapter(ch)}
+                            className="text-xs text-civil-red-body hover:text-civil-red-strong tabular-nums whitespace-nowrap inline-flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                            title="Play this chapter in the video above"
+                          >
+                            <Play className="w-3 h-3" aria-hidden="true" />
+                            {(ch.start_time || '').split(',')[0]}–{(ch.end_time || '').split(',')[0]}
+                          </button>
+                        ) : ch.end_time ? (
+                          <span className="text-xs text-stone-500 tabular-nums whitespace-nowrap inline-flex items-center gap-1">
+                            <Clock className="w-3 h-3" aria-hidden="true" />
+                            –{(ch.end_time || '').split(',')[0]}
+                          </span>
+                        ) : null}
+                      </header>
+                      {ch.main_topic_category && (
+                        <p className="text-xs text-stone-500 uppercase tracking-wide mb-2 ml-8">
+                          {ch.main_topic_category}
+                        </p>
+                      )}
+                      {ch.summary && (
+                        <p className="text-sm text-stone-700 ml-8" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                          {ch.summary}
+                        </p>
+                      )}
+                      {ch.keywords && (
+                        <p className="text-xs text-stone-500 mt-2 ml-8">
+                          <span className="uppercase tracking-wide">Keywords:</span>{' '}
+                          {Array.isArray(ch.keywords) ? ch.keywords.join(', ') : ch.keywords}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
           </section>
         )}
 
