@@ -7,7 +7,8 @@ This report walks through each site-improvement request in the order it was writ
 
 
 UPDATES FOR FEATURE REQUESTS
-
+- A K-12 curriculum feature where the vocabulary, complexity, and age-appropriate content is adjusted on a sliding scale.
+- 23 topic-linked essays onboarded from the public domain: 9 authors (2 women), nearly 200,000 words.
 - Removed the top nav, keep Light/Dark and Menu, merge into the Menu.
 - Renamed Spectrum (revised to "Data Insights" on the phone).
 - Data Insights made into one toggle grouping to simplify the page.
@@ -62,10 +63,7 @@ DAVID CLINE GUIDANCE UPDATES
 
 
 DISCUSSION ITEMS
-- A curriculum generating feature where a curriculum on civil rights would be
-    generated with a sliding scale from first grade through twelfth grade. The density and substance of the curriculum would be adjusted for difficulty and age-appropriate content.
 - Generate essays on family influence, intergenerational activism, community support, and youth activism.
 - "Age and activism" and "educational pathways" visualizations. The corpus has no structured birth-year or schooling-timeline data; these can't be built without data that doesn't exist.
-- Educational Pathways => curriculum recommendations?
 
 
