@@ -216,7 +216,7 @@ export default function TopicGlossary() {
                             <li key={idx} className="flex items-start gap-2">
                               <span className="text-stone-400">·</span>
                               <Link
-                                to={`/interview-index?search=${encodeURIComponent(name)}`}
+                                to={`/table-of-contents?q=${encodeURIComponent(name)}`}
                                 className="text-civil-red-body hover:underline transition-colors"
                               >
                                 {name}

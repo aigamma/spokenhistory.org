@@ -1,5 +1,5 @@
 // src/App.jsx
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/common/Layout'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import Home from './pages/Home'
@@ -14,7 +14,6 @@ import InterviewDetail from './pages/InterviewDetail'
 import ClipPlayer from './pages/ClipPlayer'
 import ContentDirectory from './pages/ContentDirectory'
 import TopicGlossary from './pages/TopicGlossary'
-import InterviewIndex from './pages/InterviewIndex'
 import About from './pages/About'
 import ReviewQueue from './pages/ReviewQueue'
 import RagExplore from './pages/RagExplore'
@@ -81,13 +80,13 @@ export default function App() {
         </ProtectedRoute>
       } />
 
-      <Route path="/interview-index" element={
-        <ProtectedRoute>
-          <Layout>
-            <InterviewIndex />
-          </Layout>
-        </ProtectedRoute>
-      } />
+      {/* The card-grid Interview Index was retired 2026-05-31 and merged
+          into the richer Table of Contents (parts, chapters, click-to-play,
+          plus the capsule + audit-tier badge absorbed from the old grid).
+          /interview-index now redirects so the existing in-app links and any
+          outstanding bookmarks land on the consolidated Interviews page
+          instead of 404ing. */}
+      <Route path="/interview-index" element={<Navigate to="/table-of-contents" replace />} />
 
       <Route path="/topic-glossary" element={
         <ProtectedRoute>

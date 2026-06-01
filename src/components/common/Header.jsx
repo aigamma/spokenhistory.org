@@ -24,18 +24,19 @@ import { useTheme } from '../../hooks/useTheme';
 // (01., 02., ...) is assigned at render time. The entry matching the
 // current page is grayed and non-interactive (not hidden), so the
 // numbering and the menu's overall shape stay constant across pages.
+//
+// 2026-05-31: the card-grid Interview Index was retired and merged into
+// the richer Table of Contents (parts, chapters, click-to-play). The
+// single "Interviews" entry now points at /table-of-contents, and the
+// old standalone "Table of Contents" entry plus the old
+// "Interviews" -> /interview-index entry are both gone.
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
-  {
-    label: 'Data Insights',
-    to: '/rag-explore',
-    matchPath: '/rag-explore',
-  },
-  { label: 'Interviews', to: '/interview-index', matchPath: '/interview-index' },
-  { label: 'Table of Contents', to: '/table-of-contents', matchPath: '/table-of-contents' },
-  { label: 'Curriculum', to: '/curriculum', matchPath: '/curriculum' },
-  { label: 'People', to: '/people', matchPath: '/people' },
+  { label: 'Interviews', to: '/table-of-contents', matchPath: '/table-of-contents' },
   { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
+  { label: 'People', to: '/people', matchPath: '/people' },
+  { label: 'Curriculum', to: '/curriculum', matchPath: '/curriculum' },
+  { label: 'Data Insights', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'About', to: '/about', matchPath: '/about' },
 ];
 

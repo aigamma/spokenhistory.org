@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronRight, Play, Film } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import LocVideoEmbed from '../components/LocVideoEmbed';
+import { TIER_BADGE } from '../components/rag/tiers';
 
 /**
- * TableOfContents, the /table-of-contents page (Dustin, 2026-05-30).
+ * TableOfContents, the /table-of-contents page and the site's single
+ * "Interviews" surface (Dustin, 2026-05-30; consolidated 2026-05-31).
  *
  * Every interview in the corpus, collapsed to a single row. Expand one and it
  * opens to its NAMED CHAPTERS, grouped into PARTS so a long interview reads as a
@@ -13,6 +15,11 @@ import LocVideoEmbed from '../components/LocVideoEmbed';
  * a link to its bounded video segment; each part is itself playable as one
  * bounded autoplay run from its first chapter to its last, for a visitor who
  * wants to listen longer than a single chapter.
+ *
+ * This page absorbed the retired card-grid Interview Index (2026-05-31): each
+ * closed row now also shows a one-line biographical capsule and the interview's
+ * audit-tier badge, so the collapsed list carries the grid's two useful signals
+ * without its redundant second browse surface.
  *
  * The critical performance rule (Dustin: a multi-hour LoC video can freeze for
  * 5+ minutes if you try to buffer the whole thing) is handled by LocVideoEmbed:
@@ -24,7 +31,9 @@ import LocVideoEmbed from '../components/LocVideoEmbed';
  * { entry, subject, duration_seconds, parts: [{ title, start, end, chapters:
  * [{ title, topic, start, end }] }] }. Times are seconds. An interview that has
  * not been re-chapterized has one part with title === null; we render its
- * chapters flat, without a part header.
+ * chapters flat, without a part header. The capsule comes from
+ * /rag/summaries/capsules.json (capsules[entry].capsule) and the tier from
+ * /rag/summaries/neighbors.json (neighbors[entry].tier), both keyed by entry.
  */
 
 function fmtClock(s) {
@@ -52,11 +61,19 @@ function cleanName(s) {
 }
 
 export default function TableOfContents() {
-  useDocumentTitle('Table of Contents');
+  useDocumentTitle('Interviews');
+  const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(null);
   const [status, setStatus] = useState('loading');
-  const [query, setQuery] = useState('');
+  // Seed the name filter from ?q= so /table-of-contents?q=Hamer arrives
+  // pre-filtered (Topics page and the retired Interview Index both deep-link
+  // this way). The input and the URL stay in sync from there.
+  const [query, setQuery] = useState(() => searchParams.get('q') || '');
   const [openEntry, setOpenEntry] = useState(null);
+  // Per-entry biographical capsule + audit tier, absorbed from the retired
+  // card-grid Interview Index. Both maps are keyed by entry number.
+  const [capsules, setCapsules] = useState({});
+  const [tiers, setTiers] = useState({});
   // The active clip: { entry, start, end, label, nonce }. nonce bumps on every
   // click so the player remounts and re-seeks even when re-selecting the same
   // segment; the mounting click is the user gesture that lets it autoplay.
@@ -65,13 +82,23 @@ export default function TableOfContents() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/rag/toc.json')
-      .then((r) => (r.ok ? r.json() : null))
-      .then((json) => {
+    Promise.all([
+      fetch('/rag/toc.json').then((r) => (r.ok ? r.json() : null)),
+      // Capsule + tier are enrichment, not load-bearing: a failed fetch leaves
+      // the rows without the extra line/badge but the chapter UI still works.
+      fetch('/rag/summaries/capsules.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      fetch('/rag/summaries/neighbors.json').then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ])
+      .then(([toc, caps, neighbors]) => {
         if (cancelled) return;
-        if (json?.interviews) {
-          setData(json);
+        if (toc?.interviews) {
+          setData(toc);
+          setCapsules(caps?.capsules || caps || {});
+          setTiers(neighbors || {});
           setStatus('ready');
+          // Open the first interview by default so a visitor immediately sees a
+          // row expand into its parts and chapters rather than a flat list.
+          setOpenEntry((cur) => (cur != null ? cur : toc.interviews[0]?.entry ?? null));
         } else {
           setStatus('error');
         }
@@ -79,6 +106,22 @@ export default function TableOfContents() {
       .catch(() => !cancelled && setStatus('error'));
     return () => { cancelled = true; };
   }, []);
+
+  // Keep the URL's ?q= in step with the filter box, so a filtered view is
+  // shareable/bookmarkable and the back button restores it. replace:true keeps
+  // each keystroke out of the history stack.
+  useEffect(() => {
+    const current = searchParams.get('q') || '';
+    const next = query.trim();
+    if (next === current.trim()) return;
+    const params = new URLSearchParams(searchParams);
+    if (next) params.set('q', next);
+    else params.delete('q');
+    setSearchParams(params, { replace: true });
+    // searchParams is intentionally omitted: this effect only fires on query
+    // changes; reading the latest searchParams inside is fine.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query]);
 
   const interviews = data?.interviews || [];
   const filtered = useMemo(() => {
@@ -109,7 +152,7 @@ export default function TableOfContents() {
             className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Table of Contents
+            Interviews
           </h1>
           <p
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
@@ -158,6 +201,12 @@ export default function TableOfContents() {
                 const isOpen = openEntry === iv.entry;
                 const name = cleanName(iv.subject);
                 const hasParts = iv.part_count > 0;
+                // Capsule + audit-tier badge, absorbed from the retired card
+                // grid. Capsule keys may be number or string; tiers map keys by
+                // the same entry number neighbors.json uses.
+                const capsule = (capsules[iv.entry] || capsules[String(iv.entry)])?.capsule || null;
+                const tierKey = tiers[iv.entry]?.tier ?? tiers[String(iv.entry)]?.tier ?? null;
+                const badge = tierKey && tierKey in TIER_BADGE ? TIER_BADGE[tierKey] : null;
                 return (
                   <li
                     key={iv.entry}
@@ -167,10 +216,16 @@ export default function TableOfContents() {
                       type="button"
                       onClick={() => toggleEntry(iv.entry)}
                       aria-expanded={isOpen}
-                      className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-stone-50 dark:hover:bg-zinc-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                      className={`w-full flex items-start gap-3 px-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-colors ${
+                        isOpen
+                          ? 'bg-red-50 dark:bg-zinc-700/60'
+                          : 'hover:bg-stone-50 dark:hover:bg-zinc-700/50'
+                      }`}
                     >
                       <ChevronRight
-                        className={`w-4 h-4 flex-shrink-0 text-stone-400 transition-transform ${isOpen ? 'rotate-90' : ''}`}
+                        className={`w-4 h-4 flex-shrink-0 mt-1 transition-transform ${
+                          isOpen ? 'rotate-90 text-civil-red-strong' : 'text-stone-400'
+                        }`}
                         aria-hidden="true"
                       />
                       <span className="flex-1 min-w-0">
@@ -182,6 +237,23 @@ export default function TableOfContents() {
                           {hasParts ? ` in ${iv.part_count} parts` : ''}
                           {iv.duration_seconds ? ` · ${fmtClock(iv.duration_seconds)}` : ''}
                         </span>
+                        {/* One-line biographical capsule, clamped so it never
+                            balloons the row height. */}
+                        {capsule && (
+                          <span
+                            className="block text-xs text-stone-600 dark:text-stone-400 mt-1 leading-snug overflow-hidden text-ellipsis whitespace-nowrap"
+                            style={{ fontFamily: 'Source Serif 4, serif' }}
+                          >
+                            {capsule}
+                          </span>
+                        )}
+                        {/* Audit-tier badge, same vocabulary + palette as the
+                            Data Insights surfaces (TIER_BADGE). */}
+                        {badge && (
+                          <span className={`mt-1.5 inline-flex items-center px-2 py-0.5 rounded-full text-[11px] border ${badge.bg} ${badge.border} ${badge.text}`}>
+                            {badge.label}
+                          </span>
+                        )}
                       </span>
                     </button>
 
