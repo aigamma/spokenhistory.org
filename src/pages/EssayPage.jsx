@@ -19,7 +19,7 @@
  * pattern PersonPage uses. When that file is absent the page still renders
  * (graceful degradation): a typographic hero, the text, and the topic links.
  */
-import { useEffect, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Sparkles, MessageSquareQuote, Play, ChevronUp, ArrowRight } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -235,6 +235,21 @@ export default function EssayPage() {
       .filter((t) => t && t.corpus_links && t.corpus_links.keyword);
   }, [essay, topicMap]);
 
+  // Distribute inline images down the body: image k lands after prose
+  // paragraph floor((k+1)*P/(N+1)), so they space out evenly through the text.
+  const inlineAt = useMemo(() => {
+    const imgs = Array.isArray(conn?.inline_images) ? conn.inline_images : [];
+    const m = new Map();
+    const P = prose.length;
+    if (!P || !imgs.length) return m;
+    imgs.forEach((img, k) => {
+      let idx = Math.max(1, Math.min(P - 1, Math.floor(((k + 1) * P) / (imgs.length + 1))));
+      while (m.has(idx) && idx < P - 1) idx += 1;
+      m.set(idx, img);
+    });
+    return m;
+  }, [conn, prose.length]);
+
   const primaryTopic = conn?.primary_topic || essay?.themes?.[0] || null;
   const accent = (primaryTopic && TOPIC_COLOR[primaryTopic]) || DEFAULT_ACCENT;
 
@@ -371,12 +386,18 @@ export default function EssayPage() {
             </div>
           )}
           {prose.map((p, i) => (
-            <p
-              key={i}
-              className={`mb-5 ${i === 0 ? 'first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:text-6xl first-letter:leading-[0.8] first-letter:font-semibold first-letter:text-stone-800' : ''}`}
-            >
-              {p.replace(/\s*\n\s*/g, ' ')}
-            </p>
+            <Fragment key={i}>
+              <p
+                className={`mb-5 ${i === 0 ? 'first-letter:float-left first-letter:mr-2 first-letter:mt-1 first-letter:text-6xl first-letter:leading-[0.8] first-letter:font-semibold first-letter:text-stone-800' : ''}`}
+              >
+                {p.replace(/\s*\n\s*/g, ' ')}
+              </p>
+              {inlineAt.get(i) && (
+                <div className="my-8 mx-auto max-w-2xl">
+                  <CitedFigure image={inlineAt.get(i)} />
+                </div>
+              )}
+            </Fragment>
           ))}
         </article>
 
@@ -431,6 +452,41 @@ export default function EssayPage() {
                     )}
                     {conn.top_voice.reason ? `. ${conn.top_voice.reason}` : '.'}
                   </p>
+                )}
+                {conn?.connections?.nearest_voices && conn.connections.nearest_voices.length > 0 && (
+                  <div className="mt-3">
+                    <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-1.5">
+                      Nearest voices by the embedding model
+                    </p>
+                    <ul className="flex flex-wrap gap-2 list-none p-0">
+                      {conn.connections.nearest_voices.map((v) => {
+                        const inner = (
+                          <>
+                            {v.subject}
+                            {v.score != null && (
+                              <span className="tabular-nums text-stone-400">{Number(v.score).toFixed(2)}</span>
+                            )}
+                          </>
+                        );
+                        return (
+                          <li key={v.entry}>
+                            {v.slug ? (
+                              <Link
+                                to={`/person/${v.slug}`}
+                                className="inline-flex items-center gap-1.5 rounded-full border border-stone-300 bg-white px-2.5 py-1 text-xs text-stone-700 hover:border-red-500"
+                              >
+                                {inner}
+                              </Link>
+                            ) : (
+                              <span className="inline-flex items-center gap-1.5 rounded-full border border-stone-300 bg-white px-2.5 py-1 text-xs text-stone-700">
+                                {inner}
+                              </span>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
                 )}
                 {conn?.shared_topics && conn.shared_topics.length > 0 && (
                   <div className="mt-3 flex flex-wrap gap-2">

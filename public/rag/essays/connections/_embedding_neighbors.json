@@ -1,0 +1,1570 @@
+{
+  "generated_note": "Embedding-derived nearest oral-history voices per essay (Voyage voyage-3 query embed, Pinecone civil-rights index, Voyage rerank-2, filtered to transcript passages). Internal precompute consumed by the EssayPage data-footer assembly.",
+  "model": "voyage-3 + rerank-2",
+  "neighbors": {
+    "cooper-voice-from-the-south": {
+      "nearest_voices": [
+        {
+          "entry": 25,
+          "subject": "Cynthia and Fletcher Anderson",
+          "slug": "cynthia-and-fletcher-anderson",
+          "top_score": 0.582,
+          "hits": 2,
+          "best_ts": 4351
+        },
+        {
+          "entry": 82,
+          "subject": "Marilyn Luper Hildreth",
+          "slug": "marilyn-luper-hildreth",
+          "top_score": 0.523,
+          "hits": 1,
+          "best_ts": 568
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.504,
+          "hits": 4,
+          "best_ts": 4265
+        },
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.492,
+          "hits": 2,
+          "best_ts": 2379
+        },
+        {
+          "entry": 7,
+          "subject": "Betty Garman Robinson",
+          "slug": "betty-garman-robinson",
+          "top_score": 0.486,
+          "hits": 2,
+          "best_ts": 7481.8
+        },
+        {
+          "entry": 46,
+          "subject": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins",
+          "slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+          "top_score": 0.477,
+          "hits": 2,
+          "best_ts": 2062.6
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.469,
+          "hits": 1,
+          "best_ts": 5720
+        },
+        {
+          "entry": 83,
+          "subject": "Martha Prescod Norman Noonan",
+          "slug": "martha-prescod-norman-noonan",
+          "top_score": 0.457,
+          "hits": 1,
+          "best_ts": 829
+        }
+      ]
+    },
+    "wells-the-red-record": {
+      "nearest_voices": [
+        {
+          "entry": 90,
+          "subject": "Mildred Bond Roxborough",
+          "slug": "mildred-bond-roxborough",
+          "top_score": 0.629,
+          "hits": 2,
+          "best_ts": 4330
+        },
+        {
+          "entry": 75,
+          "subject": "Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner)",
+          "slug": "ladners-joint-interview",
+          "top_score": 0.578,
+          "hits": 4,
+          "best_ts": 4128.16
+        },
+        {
+          "entry": 17,
+          "subject": "Charles McLaurin",
+          "slug": "charles-mclaurin",
+          "top_score": 0.551,
+          "hits": 4,
+          "best_ts": 7257
+        },
+        {
+          "entry": 45,
+          "subject": "Freeman A. Hrabowski III",
+          "slug": "freeman-a-hrabowski-iii",
+          "top_score": 0.547,
+          "hits": 1,
+          "best_ts": 1615
+        },
+        {
+          "entry": 30,
+          "subject": "Dorothy \"Dottie\" Foreman Zellner",
+          "slug": "dorothy-dottie-foreman-zellner",
+          "top_score": 0.543,
+          "hits": 2,
+          "best_ts": 4100
+        },
+        {
+          "entry": 134,
+          "subject": "C. T. Vivian",
+          "slug": "c-t-vivian",
+          "top_score": 0.543,
+          "hits": 1,
+          "best_ts": 9925.6
+        },
+        {
+          "entry": 60,
+          "subject": "Joan Trumpauer Mulholland",
+          "slug": "joan-trumpauer-mulholland",
+          "top_score": 0.535,
+          "hits": 1,
+          "best_ts": 415
+        },
+        {
+          "entry": 126,
+          "subject": "William G. Anderson",
+          "slug": "william-g-anderson",
+          "top_score": 0.527,
+          "hits": 1,
+          "best_ts": 3146
+        }
+      ]
+    },
+    "negro-problem-industrial-education-washington": {
+      "nearest_voices": [
+        {
+          "entry": 55,
+          "subject": "Harold K. Brown",
+          "slug": "harold-k-brown",
+          "top_score": 0.621,
+          "hits": 5,
+          "best_ts": 6956.22
+        },
+        {
+          "entry": 23,
+          "subject": "Clifford D. Browner Jr.",
+          "slug": "clifford-d-browner-jr",
+          "top_score": 0.602,
+          "hits": 1,
+          "best_ts": 581
+        },
+        {
+          "entry": 75,
+          "subject": "Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner)",
+          "slug": "ladners-joint-interview",
+          "top_score": 0.559,
+          "hits": 1,
+          "best_ts": 3214.56
+        },
+        {
+          "entry": 59,
+          "subject": "Jennifer Lawson",
+          "slug": "jennifer-lawson",
+          "top_score": 0.555,
+          "hits": 1,
+          "best_ts": 2204
+        },
+        {
+          "entry": 42,
+          "subject": "Evans Derrell Hopkins",
+          "slug": "evans-derrell-hopkins",
+          "top_score": 0.531,
+          "hits": 1,
+          "best_ts": 5823
+        },
+        {
+          "entry": 134,
+          "subject": "C. T. Vivian",
+          "slug": "c-t-vivian",
+          "top_score": 0.523,
+          "hits": 1,
+          "best_ts": 12749.8
+        },
+        {
+          "entry": 63,
+          "subject": "John Churchville",
+          "slug": "john-churchville",
+          "top_score": 0.52,
+          "hits": 2,
+          "best_ts": 707
+        },
+        {
+          "entry": 24,
+          "subject": "Courtland Cox",
+          "slug": "courtland-cox",
+          "top_score": 0.504,
+          "hits": 1,
+          "best_ts": 4596
+        }
+      ]
+    },
+    "dubois-souls-alexander-crummell": {
+      "nearest_voices": [
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.504,
+          "hits": 3,
+          "best_ts": 4265
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.484,
+          "hits": 4,
+          "best_ts": 2730
+        },
+        {
+          "entry": 102,
+          "subject": "Reverend Harry Blake",
+          "slug": "reverend-harry-blake",
+          "top_score": 0.467,
+          "hits": 1,
+          "best_ts": 1293
+        },
+        {
+          "entry": 19,
+          "subject": "Charles \"Chuck\" Siler",
+          "slug": "charles-chuck-siler",
+          "top_score": 0.465,
+          "hits": 1,
+          "best_ts": 1478
+        },
+        {
+          "entry": 78,
+          "subject": "Linda Fuller Degelmann",
+          "slug": "linda-fuller-degelmann",
+          "top_score": 0.457,
+          "hits": 2,
+          "best_ts": 3012
+        },
+        {
+          "entry": 107,
+          "subject": "Robert G. Clark Jr.",
+          "slug": "robert-g-clark-jr",
+          "top_score": 0.455,
+          "hits": 2,
+          "best_ts": 1179
+        },
+        {
+          "entry": 90,
+          "subject": "Mildred Bond Roxborough",
+          "slug": "mildred-bond-roxborough",
+          "top_score": 0.455,
+          "hits": 1,
+          "best_ts": 2939
+        },
+        {
+          "entry": 45,
+          "subject": "Freeman A. Hrabowski III",
+          "slug": "freeman-a-hrabowski-iii",
+          "top_score": 0.455,
+          "hits": 1,
+          "best_ts": 1902
+        }
+      ]
+    },
+    "dubois-souls-booker-t-washington": {
+      "nearest_voices": [
+        {
+          "entry": 64,
+          "subject": "John Dudley et al",
+          "slug": "john-dudley-et-al",
+          "top_score": 0.641,
+          "hits": 1,
+          "best_ts": 6279.2
+        },
+        {
+          "entry": 22,
+          "subject": "Dr. Cleveland Sellers",
+          "slug": "dr-cleveland-sellers",
+          "top_score": 0.629,
+          "hits": 2,
+          "best_ts": 160
+        },
+        {
+          "entry": 17,
+          "subject": "Charles McLaurin",
+          "slug": "charles-mclaurin",
+          "top_score": 0.602,
+          "hits": 3,
+          "best_ts": 272
+        },
+        {
+          "entry": 28,
+          "subject": "Abernathy family",
+          "slug": "abernathy-family",
+          "top_score": 0.602,
+          "hits": 1,
+          "best_ts": 6567
+        },
+        {
+          "entry": 59,
+          "subject": "Jennifer Lawson",
+          "slug": "jennifer-lawson",
+          "top_score": 0.598,
+          "hits": 2,
+          "best_ts": 2204
+        },
+        {
+          "entry": 121,
+          "subject": "Vernon Dahmer, Jr.",
+          "slug": "vernon-dahmer-jr",
+          "top_score": 0.594,
+          "hits": 1,
+          "best_ts": 2449.36
+        },
+        {
+          "entry": 52,
+          "subject": "Gwendolyn M. Patton",
+          "slug": "gwendolyn-m-patton",
+          "top_score": 0.59,
+          "hits": 3,
+          "best_ts": 373
+        },
+        {
+          "entry": 101,
+          "subject": "Reginald Robinson",
+          "slug": "reginald-robinson",
+          "top_score": 0.59,
+          "hits": 1,
+          "best_ts": 281
+        }
+      ]
+    },
+    "dubois-souls-spiritual-strivings": {
+      "nearest_voices": [
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.531,
+          "hits": 1,
+          "best_ts": 391
+        },
+        {
+          "entry": 137,
+          "subject": "Myrtle Gonza Glascoe",
+          "slug": "myrtle-gonza-glascoe",
+          "top_score": 0.461,
+          "hits": 2,
+          "best_ts": 4758.4
+        },
+        {
+          "entry": 94,
+          "subject": "Oliver W. Hill Jr.",
+          "slug": "oliver-w-hill-jr",
+          "top_score": 0.461,
+          "hits": 1,
+          "best_ts": 2389
+        },
+        {
+          "entry": 1,
+          "subject": "Aaron Dixon",
+          "slug": "aaron-dixon",
+          "top_score": 0.447,
+          "hits": 1,
+          "best_ts": 1630
+        },
+        {
+          "entry": 29,
+          "subject": "Dorothy Foreman Cotton",
+          "slug": "dorothy-foreman-cotton",
+          "top_score": 0.43,
+          "hits": 2,
+          "best_ts": 5864.18
+        },
+        {
+          "entry": 42,
+          "subject": "Evans Derrell Hopkins",
+          "slug": "evans-derrell-hopkins",
+          "top_score": 0.428,
+          "hits": 2,
+          "best_ts": 492
+        },
+        {
+          "entry": 7,
+          "subject": "Betty Garman Robinson",
+          "slug": "betty-garman-robinson",
+          "top_score": 0.422,
+          "hits": 2,
+          "best_ts": 3401
+        },
+        {
+          "entry": 55,
+          "subject": "Harold K. Brown",
+          "slug": "harold-k-brown",
+          "top_score": 0.422,
+          "hits": 1,
+          "best_ts": 343
+        }
+      ]
+    },
+    "dubois-souls-black-belt": {
+      "nearest_voices": [
+        {
+          "entry": 114,
+          "subject": "Sam Young, Jr.",
+          "slug": "sam-young-jr",
+          "top_score": 0.543,
+          "hits": 2,
+          "best_ts": 1605
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.539,
+          "hits": 2,
+          "best_ts": 4265
+        },
+        {
+          "entry": 67,
+          "subject": "Joseph Howell and Embry Howell",
+          "slug": "joseph-howell-and-embry-howell",
+          "top_score": 0.535,
+          "hits": 1,
+          "best_ts": 1845
+        },
+        {
+          "entry": 80,
+          "subject": "Lonnie C. King",
+          "slug": "lonnie-c-king",
+          "top_score": 0.523,
+          "hits": 1,
+          "best_ts": 9030
+        },
+        {
+          "entry": 73,
+          "subject": "Kathleen Cleaver",
+          "slug": "kathleen-cleaver",
+          "top_score": 0.516,
+          "hits": 1,
+          "best_ts": 4965
+        },
+        {
+          "entry": 126,
+          "subject": "William G. Anderson",
+          "slug": "william-g-anderson",
+          "top_score": 0.498,
+          "hits": 1,
+          "best_ts": 220
+        },
+        {
+          "entry": 66,
+          "subject": "Joseph Echols Lowery",
+          "slug": "joseph-echols-lowery",
+          "top_score": 0.48,
+          "hits": 1,
+          "best_ts": 2747
+        },
+        {
+          "entry": 91,
+          "subject": "Mildred Pitts Walter",
+          "slug": "mildred-pitts-walter",
+          "top_score": 0.479,
+          "hits": 1,
+          "best_ts": 4098.2
+        }
+      ]
+    },
+    "dubois-souls-coming-of-john": {
+      "nearest_voices": [
+        {
+          "entry": 54,
+          "subject": "H. Jack Geiger (partial read)",
+          "slug": "h-jack-geiger",
+          "top_score": 0.547,
+          "hits": 1,
+          "best_ts": 7912
+        },
+        {
+          "entry": 60,
+          "subject": "Joan Trumpauer Mulholland",
+          "slug": "joan-trumpauer-mulholland",
+          "top_score": 0.475,
+          "hits": 1,
+          "best_ts": 5664
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.461,
+          "hits": 3,
+          "best_ts": 4265
+        },
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.43,
+          "hits": 1,
+          "best_ts": 925
+        },
+        {
+          "entry": 64,
+          "subject": "John Dudley et al",
+          "slug": "john-dudley-et-al",
+          "top_score": 0.402,
+          "hits": 1,
+          "best_ts": 6736.8
+        },
+        {
+          "entry": 4,
+          "subject": "Audrey Nell Hamilton and JoeAnn Anderson Ulmer",
+          "slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+          "top_score": 0.4,
+          "hits": 1,
+          "best_ts": 1259.6
+        },
+        {
+          "entry": 24,
+          "subject": "Courtland Cox",
+          "slug": "courtland-cox",
+          "top_score": 0.395,
+          "hits": 1,
+          "best_ts": 3545
+        },
+        {
+          "entry": 6,
+          "subject": "Ben Caldwell",
+          "slug": "ben-caldwell",
+          "top_score": 0.377,
+          "hits": 1,
+          "best_ts": 6763.64
+        }
+      ]
+    },
+    "dubois-souls-dawn-of-freedom": {
+      "nearest_voices": [
+        {
+          "entry": 9,
+          "subject": "Simeon Booker and Moses Newson",
+          "slug": "simeon-booker-and-moses-newson",
+          "top_score": 0.543,
+          "hits": 1,
+          "best_ts": 1793
+        },
+        {
+          "entry": 33,
+          "subject": "Eddie Holloway",
+          "slug": "eddie-holloway",
+          "top_score": 0.52,
+          "hits": 1,
+          "best_ts": 2233
+        },
+        {
+          "entry": 7,
+          "subject": "Betty Garman Robinson",
+          "slug": "betty-garman-robinson",
+          "top_score": 0.508,
+          "hits": 1,
+          "best_ts": 6548.68
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.5,
+          "hits": 1,
+          "best_ts": 1809
+        },
+        {
+          "entry": 14,
+          "subject": "Cecil J. Williams",
+          "slug": "cecil-j-williams",
+          "top_score": 0.49,
+          "hits": 1,
+          "best_ts": 4583.64
+        },
+        {
+          "entry": 102,
+          "subject": "Reverend Harry Blake",
+          "slug": "reverend-harry-blake",
+          "top_score": 0.488,
+          "hits": 1,
+          "best_ts": 3379.88
+        },
+        {
+          "entry": 52,
+          "subject": "Gwendolyn M. Patton",
+          "slug": "gwendolyn-m-patton",
+          "top_score": 0.484,
+          "hits": 2,
+          "best_ts": 5758
+        },
+        {
+          "entry": 81,
+          "subject": "Maria Varela",
+          "slug": "maria-varela",
+          "top_score": 0.484,
+          "hits": 1,
+          "best_ts": 2615
+        }
+      ]
+    },
+    "dubois-souls-faith-of-the-fathers": {
+      "nearest_voices": [
+        {
+          "entry": 135,
+          "subject": "David Mercer Ackerman and Satoko Ito Ackerman",
+          "slug": "david-mercer-ackerman-and-satoko-ito-ackerman",
+          "top_score": 0.586,
+          "hits": 1,
+          "best_ts": 1643.6
+        },
+        {
+          "entry": 28,
+          "subject": "Abernathy family",
+          "slug": "abernathy-family",
+          "top_score": 0.555,
+          "hits": 2,
+          "best_ts": 1341.2
+        },
+        {
+          "entry": 127,
+          "subject": "William Lamar Strickland",
+          "slug": "william-lamar-strickland",
+          "top_score": 0.547,
+          "hits": 1,
+          "best_ts": 1913
+        },
+        {
+          "entry": 12,
+          "subject": "Carolyn Miller and James Miller",
+          "slug": "carolyn-miller-and-james-miller",
+          "top_score": 0.531,
+          "hits": 1,
+          "best_ts": 5481.22
+        },
+        {
+          "entry": 69,
+          "subject": "Judy Richardson",
+          "slug": "judy-richardson",
+          "top_score": 0.52,
+          "hits": 2,
+          "best_ts": 3138
+        },
+        {
+          "entry": 131,
+          "subject": "Worth W. Long",
+          "slug": "worth-w-long",
+          "top_score": 0.492,
+          "hits": 2,
+          "best_ts": 1699
+        },
+        {
+          "entry": 78,
+          "subject": "Linda Fuller Degelmann",
+          "slug": "linda-fuller-degelmann",
+          "top_score": 0.475,
+          "hits": 3,
+          "best_ts": 4446
+        },
+        {
+          "entry": 45,
+          "subject": "Freeman A. Hrabowski III",
+          "slug": "freeman-a-hrabowski-iii",
+          "top_score": 0.471,
+          "hits": 3,
+          "best_ts": 2889
+        }
+      ]
+    },
+    "dubois-souls-meaning-of-progress": {
+      "nearest_voices": [
+        {
+          "entry": 16,
+          "subject": "Charles F. (\"Chuck\") McDew",
+          "slug": "charles-f-chuck-mcdew",
+          "top_score": 0.578,
+          "hits": 1,
+          "best_ts": 4567
+        },
+        {
+          "entry": 84,
+          "subject": "Mary Jenkins",
+          "slug": "mary-jenkins",
+          "top_score": 0.566,
+          "hits": 2,
+          "best_ts": 571
+        },
+        {
+          "entry": 21,
+          "subject": "Clarence Magee",
+          "slug": "clarence-magee",
+          "top_score": 0.563,
+          "hits": 1,
+          "best_ts": 4927
+        },
+        {
+          "entry": 33,
+          "subject": "Eddie Holloway",
+          "slug": "eddie-holloway",
+          "top_score": 0.535,
+          "hits": 1,
+          "best_ts": 3620
+        },
+        {
+          "entry": 114,
+          "subject": "Sam Young, Jr.",
+          "slug": "sam-young-jr",
+          "top_score": 0.531,
+          "hits": 1,
+          "best_ts": 220
+        },
+        {
+          "entry": 123,
+          "subject": "Walter Bruce",
+          "slug": "walter-bruce",
+          "top_score": 0.527,
+          "hits": 1,
+          "best_ts": 2504
+        },
+        {
+          "entry": 96,
+          "subject": "Peggy Jean Connor",
+          "slug": "peggy-jean-connor",
+          "top_score": 0.516,
+          "hits": 1,
+          "best_ts": 1014
+        },
+        {
+          "entry": 140,
+          "subject": "Louise Broadway",
+          "slug": "louise-broadway",
+          "top_score": 0.512,
+          "hits": 2,
+          "best_ts": 103
+        }
+      ]
+    },
+    "dubois-souls-passing-of-the-first-born": {
+      "nearest_voices": [
+        {
+          "entry": 91,
+          "subject": "Mildred Pitts Walter",
+          "slug": "mildred-pitts-walter",
+          "top_score": 0.436,
+          "hits": 1,
+          "best_ts": 2547.4
+        },
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.43,
+          "hits": 1,
+          "best_ts": 350
+        },
+        {
+          "entry": 96,
+          "subject": "Peggy Jean Connor",
+          "slug": "peggy-jean-connor",
+          "top_score": 0.422,
+          "hits": 1,
+          "best_ts": 2356.42
+        },
+        {
+          "entry": 8,
+          "subject": "Bill Russell",
+          "slug": "bill-russell",
+          "top_score": 0.414,
+          "hits": 1,
+          "best_ts": 117
+        },
+        {
+          "entry": 28,
+          "subject": "Abernathy family",
+          "slug": "abernathy-family",
+          "top_score": 0.41,
+          "hits": 5,
+          "best_ts": 175.4
+        },
+        {
+          "entry": 75,
+          "subject": "Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner)",
+          "slug": "ladners-joint-interview",
+          "top_score": 0.402,
+          "hits": 1,
+          "best_ts": 7079.78
+        },
+        {
+          "entry": 50,
+          "subject": "Grace Hall Miller",
+          "slug": "grace-hall-miller",
+          "top_score": 0.387,
+          "hits": 4,
+          "best_ts": 928
+        },
+        {
+          "entry": 92,
+          "subject": "Nathaniel Hawthorne Jones",
+          "slug": "nathaniel-hawthorne-jones",
+          "top_score": 0.377,
+          "hits": 3,
+          "best_ts": 2559
+        }
+      ]
+    },
+    "dubois-souls-golden-fleece": {
+      "nearest_voices": [
+        {
+          "entry": 40,
+          "subject": "Esther M. A. Terry",
+          "slug": "esther-m-a-terry",
+          "top_score": 0.52,
+          "hits": 1,
+          "best_ts": 1719
+        },
+        {
+          "entry": 76,
+          "subject": "Lawrence Guyot",
+          "slug": "lawrence-guyot",
+          "top_score": 0.484,
+          "hits": 1,
+          "best_ts": 1260
+        },
+        {
+          "entry": 121,
+          "subject": "Vernon Dahmer, Jr.",
+          "slug": "vernon-dahmer-jr",
+          "top_score": 0.473,
+          "hits": 1,
+          "best_ts": 2898
+        },
+        {
+          "entry": 141,
+          "subject": "Lucius Holloway, Sr., and Emma Kate Holloway",
+          "slug": "lucius-holloway-sr-and-emma-kate-holloway",
+          "top_score": 0.447,
+          "hits": 1,
+          "best_ts": 343.88
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.439,
+          "hits": 2,
+          "best_ts": 1809
+        },
+        {
+          "entry": 12,
+          "subject": "Carolyn Miller and James Miller",
+          "slug": "carolyn-miller-and-james-miller",
+          "top_score": 0.428,
+          "hits": 1,
+          "best_ts": 4684.26
+        },
+        {
+          "entry": 11,
+          "subject": "Candie Carawan and Guy Hughes Carawan",
+          "slug": "candie-carawan-and-guy-hughes-carawan",
+          "top_score": 0.402,
+          "hits": 2,
+          "best_ts": 2365
+        },
+        {
+          "entry": 92,
+          "subject": "Nathaniel Hawthorne Jones",
+          "slug": "nathaniel-hawthorne-jones",
+          "top_score": 0.4,
+          "hits": 1,
+          "best_ts": 6638.18
+        }
+      ]
+    },
+    "dubois-souls-sons-of-master-and-man": {
+      "nearest_voices": [
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.43,
+          "hits": 5,
+          "best_ts": 6304
+        },
+        {
+          "entry": 26,
+          "subject": "Judge D'Army Bailey",
+          "slug": "judge-darmy-bailey",
+          "top_score": 0.43,
+          "hits": 1,
+          "best_ts": 8798
+        },
+        {
+          "entry": 45,
+          "subject": "Freeman A. Hrabowski III",
+          "slug": "freeman-a-hrabowski-iii",
+          "top_score": 0.428,
+          "hits": 2,
+          "best_ts": 1902
+        },
+        {
+          "entry": 137,
+          "subject": "Myrtle Gonza Glascoe",
+          "slug": "myrtle-gonza-glascoe",
+          "top_score": 0.426,
+          "hits": 3,
+          "best_ts": 4835.2
+        },
+        {
+          "entry": 125,
+          "subject": "Wheeler Parker, Jr.",
+          "slug": "wheeler-parker-jr",
+          "top_score": 0.414,
+          "hits": 1,
+          "best_ts": 3776
+        },
+        {
+          "entry": 55,
+          "subject": "Harold K. Brown",
+          "slug": "harold-k-brown",
+          "top_score": 0.412,
+          "hits": 1,
+          "best_ts": 691
+        },
+        {
+          "entry": 6,
+          "subject": "Ben Caldwell",
+          "slug": "ben-caldwell",
+          "top_score": 0.402,
+          "hits": 1,
+          "best_ts": 3633.72
+        },
+        {
+          "entry": 16,
+          "subject": "Charles F. (\"Chuck\") McDew",
+          "slug": "charles-f-chuck-mcdew",
+          "top_score": 0.395,
+          "hits": 1,
+          "best_ts": 4833
+        }
+      ]
+    },
+    "dubois-souls-sorrow-songs": {
+      "nearest_voices": [
+        {
+          "entry": 58,
+          "subject": "Jamila Jones",
+          "slug": "jamila-jones",
+          "top_score": 0.598,
+          "hits": 1,
+          "best_ts": 2133
+        },
+        {
+          "entry": 52,
+          "subject": "Gwendolyn M. Patton",
+          "slug": "gwendolyn-m-patton",
+          "top_score": 0.582,
+          "hits": 1,
+          "best_ts": 2282
+        },
+        {
+          "entry": 123,
+          "subject": "Walter Bruce",
+          "slug": "walter-bruce",
+          "top_score": 0.578,
+          "hits": 1,
+          "best_ts": 858
+        },
+        {
+          "entry": 11,
+          "subject": "Candie Carawan and Guy Hughes Carawan",
+          "slug": "candie-carawan-and-guy-hughes-carawan",
+          "top_score": 0.508,
+          "hits": 3,
+          "best_ts": 175
+        },
+        {
+          "entry": 48,
+          "subject": "Gloria Claudette Grinnell",
+          "slug": "gloria-claudette-grinnell",
+          "top_score": 0.504,
+          "hits": 1,
+          "best_ts": 1189
+        },
+        {
+          "entry": 45,
+          "subject": "Freeman A. Hrabowski III",
+          "slug": "freeman-a-hrabowski-iii",
+          "top_score": 0.479,
+          "hits": 1,
+          "best_ts": 2251
+        },
+        {
+          "entry": 69,
+          "subject": "Judy Richardson",
+          "slug": "judy-richardson",
+          "top_score": 0.477,
+          "hits": 1,
+          "best_ts": 3249
+        },
+        {
+          "entry": 60,
+          "subject": "Joan Trumpauer Mulholland",
+          "slug": "joan-trumpauer-mulholland",
+          "top_score": 0.473,
+          "hits": 1,
+          "best_ts": 200
+        }
+      ]
+    },
+    "dubois-souls-training-of-black-men": {
+      "nearest_voices": [
+        {
+          "entry": 62,
+          "subject": "John Carlos",
+          "slug": "john-carlos",
+          "top_score": 0.578,
+          "hits": 1,
+          "best_ts": 6327
+        },
+        {
+          "entry": 25,
+          "subject": "Cynthia and Fletcher Anderson",
+          "slug": "cynthia-and-fletcher-anderson",
+          "top_score": 0.547,
+          "hits": 3,
+          "best_ts": 4351
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.508,
+          "hits": 2,
+          "best_ts": 4386
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.5,
+          "hits": 4,
+          "best_ts": 4165
+        },
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.498,
+          "hits": 1,
+          "best_ts": 1390
+        },
+        {
+          "entry": 126,
+          "subject": "William G. Anderson",
+          "slug": "william-g-anderson",
+          "top_score": 0.496,
+          "hits": 1,
+          "best_ts": 3849
+        },
+        {
+          "entry": 137,
+          "subject": "Myrtle Gonza Glascoe",
+          "slug": "myrtle-gonza-glascoe",
+          "top_score": 0.492,
+          "hits": 2,
+          "best_ts": 4613.2
+        },
+        {
+          "entry": 91,
+          "subject": "Mildred Pitts Walter",
+          "slug": "mildred-pitts-walter",
+          "top_score": 0.479,
+          "hits": 1,
+          "best_ts": 3650.72
+        }
+      ]
+    },
+    "dubois-souls-wings-of-atalanta": {
+      "nearest_voices": [
+        {
+          "entry": 3,
+          "subject": "Annie Pearl Avery",
+          "slug": "annie-pearl-avery",
+          "top_score": 0.559,
+          "hits": 2,
+          "best_ts": 472
+        },
+        {
+          "entry": 114,
+          "subject": "Sam Young, Jr.",
+          "slug": "sam-young-jr",
+          "top_score": 0.559,
+          "hits": 1,
+          "best_ts": 2070
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.551,
+          "hits": 2,
+          "best_ts": 2216
+        },
+        {
+          "entry": 13,
+          "subject": "Carrie Lamar Young",
+          "slug": "carrie-lamar-young",
+          "top_score": 0.543,
+          "hits": 1,
+          "best_ts": 4362
+        },
+        {
+          "entry": 46,
+          "subject": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins",
+          "slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+          "top_score": 0.543,
+          "hits": 1,
+          "best_ts": 576.8
+        },
+        {
+          "entry": 81,
+          "subject": "Maria Varela",
+          "slug": "maria-varela",
+          "top_score": 0.539,
+          "hits": 1,
+          "best_ts": 1629
+        },
+        {
+          "entry": 107,
+          "subject": "Robert G. Clark Jr.",
+          "slug": "robert-g-clark-jr",
+          "top_score": 0.531,
+          "hits": 1,
+          "best_ts": 503
+        },
+        {
+          "entry": 80,
+          "subject": "Lonnie C. King",
+          "slug": "lonnie-c-king",
+          "top_score": 0.527,
+          "hits": 4,
+          "best_ts": 5048
+        }
+      ]
+    },
+    "negro-problem-representative-negroes-dunbar": {
+      "nearest_voices": [
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.547,
+          "hits": 1,
+          "best_ts": 1390
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.543,
+          "hits": 2,
+          "best_ts": 4386
+        },
+        {
+          "entry": 90,
+          "subject": "Mildred Bond Roxborough",
+          "slug": "mildred-bond-roxborough",
+          "top_score": 0.504,
+          "hits": 3,
+          "best_ts": 3738
+        },
+        {
+          "entry": 22,
+          "subject": "Dr. Cleveland Sellers",
+          "slug": "dr-cleveland-sellers",
+          "top_score": 0.498,
+          "hits": 1,
+          "best_ts": 6398.4
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.488,
+          "hits": 1,
+          "best_ts": 1917
+        },
+        {
+          "entry": 12,
+          "subject": "Carolyn Miller and James Miller",
+          "slug": "carolyn-miller-and-james-miller",
+          "top_score": 0.473,
+          "hits": 2,
+          "best_ts": 4684.26
+        },
+        {
+          "entry": 32,
+          "subject": "Dr. Doris Derby",
+          "slug": "dr-doris-derby",
+          "top_score": 0.463,
+          "hits": 1,
+          "best_ts": 6280
+        },
+        {
+          "entry": 115,
+          "subject": "Samuel Berry McKinney",
+          "slug": "samuel-berry-mckinney",
+          "top_score": 0.457,
+          "hits": 2,
+          "best_ts": 1475
+        }
+      ]
+    },
+    "negro-problem-characteristics-kealing": {
+      "nearest_voices": [
+        {
+          "entry": 137,
+          "subject": "Myrtle Gonza Glascoe",
+          "slug": "myrtle-gonza-glascoe",
+          "top_score": 0.578,
+          "hits": 3,
+          "best_ts": 4613.2
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.559,
+          "hits": 2,
+          "best_ts": 4122
+        },
+        {
+          "entry": 55,
+          "subject": "Harold K. Brown",
+          "slug": "harold-k-brown",
+          "top_score": 0.494,
+          "hits": 1,
+          "best_ts": 400
+        },
+        {
+          "entry": 25,
+          "subject": "Cynthia and Fletcher Anderson",
+          "slug": "cynthia-and-fletcher-anderson",
+          "top_score": 0.484,
+          "hits": 1,
+          "best_ts": 4130
+        },
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.479,
+          "hits": 1,
+          "best_ts": 4165
+        },
+        {
+          "entry": 26,
+          "subject": "Judge D'Army Bailey",
+          "slug": "judge-darmy-bailey",
+          "top_score": 0.467,
+          "hits": 3,
+          "best_ts": 9091.52
+        },
+        {
+          "entry": 6,
+          "subject": "Ben Caldwell",
+          "slug": "ben-caldwell",
+          "top_score": 0.463,
+          "hits": 1,
+          "best_ts": 5281.52
+        },
+        {
+          "entry": 131,
+          "subject": "Worth W. Long",
+          "slug": "worth-w-long",
+          "top_score": 0.461,
+          "hits": 1,
+          "best_ts": 928
+        }
+      ]
+    },
+    "negro-problem-disfranchisement-chesnutt": {
+      "nearest_voices": [
+        {
+          "entry": 112,
+          "subject": "Ruby Sales",
+          "slug": "ruby-sales",
+          "top_score": 0.578,
+          "hits": 1,
+          "best_ts": 4265
+        },
+        {
+          "entry": 92,
+          "subject": "Nathaniel Hawthorne Jones",
+          "slug": "nathaniel-hawthorne-jones",
+          "top_score": 0.563,
+          "hits": 2,
+          "best_ts": 2026
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.535,
+          "hits": 2,
+          "best_ts": 3493
+        },
+        {
+          "entry": 128,
+          "subject": "William Lucy",
+          "slug": "william-lucy",
+          "top_score": 0.535,
+          "hits": 1,
+          "best_ts": 4616
+        },
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.531,
+          "hits": 1,
+          "best_ts": 11164.12
+        },
+        {
+          "entry": 17,
+          "subject": "Charles McLaurin",
+          "slug": "charles-mclaurin",
+          "top_score": 0.527,
+          "hits": 2,
+          "best_ts": 11002
+        },
+        {
+          "entry": 52,
+          "subject": "Gwendolyn M. Patton",
+          "slug": "gwendolyn-m-patton",
+          "top_score": 0.508,
+          "hits": 2,
+          "best_ts": 5758
+        },
+        {
+          "entry": 122,
+          "subject": "Virginia Simms George",
+          "slug": "virginia-simms-george",
+          "top_score": 0.504,
+          "hits": 1,
+          "best_ts": 557
+        }
+      ]
+    },
+    "negro-problem-negro-and-the-law-smith": {
+      "nearest_voices": [
+        {
+          "entry": 75,
+          "subject": "Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner)",
+          "slug": "ladners-joint-interview",
+          "top_score": 0.582,
+          "hits": 1,
+          "best_ts": 3550.6
+        },
+        {
+          "entry": 2,
+          "subject": "Amos C. Brown",
+          "slug": "amos-c-brown",
+          "top_score": 0.563,
+          "hits": 3,
+          "best_ts": 3111
+        },
+        {
+          "entry": 125,
+          "subject": "Wheeler Parker, Jr.",
+          "slug": "wheeler-parker-jr",
+          "top_score": 0.559,
+          "hits": 1,
+          "best_ts": 3884
+        },
+        {
+          "entry": 25,
+          "subject": "Cynthia and Fletcher Anderson",
+          "slug": "cynthia-and-fletcher-anderson",
+          "top_score": 0.539,
+          "hits": 1,
+          "best_ts": 1732
+        },
+        {
+          "entry": 16,
+          "subject": "Charles F. (\"Chuck\") McDew",
+          "slug": "charles-f-chuck-mcdew",
+          "top_score": 0.527,
+          "hits": 1,
+          "best_ts": 4833
+        },
+        {
+          "entry": 4,
+          "subject": "Audrey Nell Hamilton and JoeAnn Anderson Ulmer",
+          "slug": "audrey-nell-hamilton-and-joeann-anderson-ulmer",
+          "top_score": 0.523,
+          "hits": 2,
+          "best_ts": 1201.12
+        },
+        {
+          "entry": 14,
+          "subject": "Cecil J. Williams",
+          "slug": "cecil-j-williams",
+          "top_score": 0.52,
+          "hits": 1,
+          "best_ts": 4583.64
+        },
+        {
+          "entry": 46,
+          "subject": "Geraldine Crawford Bennett, Toni Breaux, and Willie Elliot Jenkins",
+          "slug": "geraldine-crawford-bennett-toni-breaux-and-willie-elliot-jenkins",
+          "top_score": 0.516,
+          "hits": 2,
+          "best_ts": 4778.6
+        }
+      ]
+    },
+    "negro-problem-negros-place-fortune": {
+      "nearest_voices": [
+        {
+          "entry": 107,
+          "subject": "Robert G. Clark Jr.",
+          "slug": "robert-g-clark-jr",
+          "top_score": 0.535,
+          "hits": 1,
+          "best_ts": 1291
+        },
+        {
+          "entry": 42,
+          "subject": "Evans Derrell Hopkins",
+          "slug": "evans-derrell-hopkins",
+          "top_score": 0.498,
+          "hits": 3,
+          "best_ts": 1319
+        },
+        {
+          "entry": 75,
+          "subject": "Ladners joint interview (Dorie Ann Ladner + Joyce Ann Ladner)",
+          "slug": "ladners-joint-interview",
+          "top_score": 0.498,
+          "hits": 2,
+          "best_ts": 2870.64
+        },
+        {
+          "entry": 127,
+          "subject": "William Lamar Strickland",
+          "slug": "william-lamar-strickland",
+          "top_score": 0.496,
+          "hits": 1,
+          "best_ts": 1628
+        },
+        {
+          "entry": 80,
+          "subject": "Lonnie C. King",
+          "slug": "lonnie-c-king",
+          "top_score": 0.494,
+          "hits": 1,
+          "best_ts": 9030
+        },
+        {
+          "entry": 26,
+          "subject": "Judge D'Army Bailey",
+          "slug": "judge-darmy-bailey",
+          "top_score": 0.484,
+          "hits": 2,
+          "best_ts": 8798
+        },
+        {
+          "entry": 65,
+          "subject": "Johnnie Ruth McCullar",
+          "slug": "johnnie-ruth-mccullar",
+          "top_score": 0.484,
+          "hits": 1,
+          "best_ts": 3475.56
+        },
+        {
+          "entry": 137,
+          "subject": "Myrtle Gonza Glascoe",
+          "slug": "myrtle-gonza-glascoe",
+          "top_score": 0.477,
+          "hits": 4,
+          "best_ts": 4580.4
+        }
+      ]
+    },
+    "negro-problem-talented-tenth-dubois": {
+      "nearest_voices": [
+        {
+          "entry": 137,
+          "subject": "Myrtle Gonza Glascoe",
+          "slug": "myrtle-gonza-glascoe",
+          "top_score": 0.695,
+          "hits": 2,
+          "best_ts": 4669.6
+        },
+        {
+          "entry": 134,
+          "subject": "C. T. Vivian",
+          "slug": "c-t-vivian",
+          "top_score": 0.609,
+          "hits": 1,
+          "best_ts": 12749.8
+        },
+        {
+          "entry": 63,
+          "subject": "John Churchville",
+          "slug": "john-churchville",
+          "top_score": 0.543,
+          "hits": 1,
+          "best_ts": 3577
+        },
+        {
+          "entry": 16,
+          "subject": "Charles F. (\"Chuck\") McDew",
+          "slug": "charles-f-chuck-mcdew",
+          "top_score": 0.535,
+          "hits": 2,
+          "best_ts": 1404
+        },
+        {
+          "entry": 25,
+          "subject": "Cynthia and Fletcher Anderson",
+          "slug": "cynthia-and-fletcher-anderson",
+          "top_score": 0.527,
+          "hits": 3,
+          "best_ts": 4351
+        },
+        {
+          "entry": 91,
+          "subject": "Mildred Pitts Walter",
+          "slug": "mildred-pitts-walter",
+          "top_score": 0.527,
+          "hits": 1,
+          "best_ts": 172
+        },
+        {
+          "entry": 34,
+          "subject": "Ekwueme Michael Thelwell",
+          "slug": "ekwueme-michael-thelwell",
+          "top_score": 0.527,
+          "hits": 1,
+          "best_ts": 1390
+        },
+        {
+          "entry": 12,
+          "subject": "Carolyn Miller and James Miller",
+          "slug": "carolyn-miller-and-james-miller",
+          "top_score": 0.527,
+          "hits": 1,
+          "best_ts": 2094
+        }
+      ]
+    }
+  }
+}
