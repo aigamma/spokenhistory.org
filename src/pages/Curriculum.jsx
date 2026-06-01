@@ -310,7 +310,7 @@ export default function Curriculum() {
                       aria-pressed={active}
                       aria-label={gradeLabel(g)}
                       className={
-                        'flex-1 min-w-0 min-h-9 px-0.5 py-1 rounded text-xs sm:text-sm font-medium tabular-nums transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 ' +
+                        'flex-1 min-w-0 min-h-11 px-0.5 py-1 rounded text-xs sm:text-sm font-medium tabular-nums transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 ' +
                         (active
                           ? 'bg-red-600 text-white'
                           : 'text-stone-600 dark:text-stone-300 hover:bg-red-50 dark:hover:bg-zinc-700')

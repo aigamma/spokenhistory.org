@@ -90,7 +90,7 @@ export default function EssayPage() {
       <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
         <main id="main-content" className="mx-auto max-w-3xl px-4 py-16">
           <p className="text-stone-700 dark:text-stone-300">That essay was not found.</p>
-          <Link to="/essays" className="mt-4 inline-block text-civil-red-body hover:underline">Back to Essays</Link>
+          <Link to="/essays" className="mt-4 inline-flex min-h-11 items-center text-civil-red-body hover:underline">Back to Essays</Link>
         </main>
         <Footer />
       </div>
@@ -100,7 +100,7 @@ export default function EssayPage() {
   return (
     <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
       <main id="main-content" className="mx-auto max-w-3xl px-4 sm:px-6 py-10">
-        <Link to="/essays" className="text-sm text-civil-red-body hover:underline">Essays</Link>
+        <Link to="/essays" className="inline-flex min-h-11 items-center text-sm text-civil-red-body hover:underline">Essays</Link>
 
         <h1 className="mt-3 text-3xl sm:text-4xl font-semibold text-stone-900 dark:text-stone-100 leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
           {essay.title}
@@ -159,7 +159,7 @@ export default function EssayPage() {
 
         {/* The verbatim full text. white-space: pre-line preserves the author's
             line breaks (the verse epigraphs) within each paragraph block. */}
-        <article className="mt-8 max-w-none text-stone-900 dark:text-stone-100 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+        <article className="mt-8 max-w-none break-words text-stone-900 dark:text-stone-100 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
           {paragraphs.map((p, i) => (
             <p key={i} className="mb-4" style={{ whiteSpace: 'pre-line' }}>{p}</p>
           ))}

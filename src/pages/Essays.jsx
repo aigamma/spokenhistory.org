@@ -115,7 +115,7 @@ export default function Essays() {
               <button
                 type="button"
                 onClick={() => setParams({})}
-                className="mt-6 text-sm text-civil-red-body hover:underline"
+                className="mt-6 inline-flex min-h-11 items-center text-sm text-civil-red-body hover:underline"
               >
                 Show all topics
               </button>
