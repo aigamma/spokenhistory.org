@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "slug": "cooper-voice-from-the-south",
+  "primary_topic": "womens-leadership",
+  "hero_image": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/c/c8/A_J_Cooper.jpg",
+    "alt": "Portrait of Anna Julia Cooper",
+    "caption": "Anna Julia Cooper.",
+    "photographer": "C. M. Bell",
+    "date_taken": "circa 1902",
+    "repository": "Library of Congress, C. M. Bell Studio Collection",
+    "license": "Public domain (Library of Congress, no known copyright restrictions; published before 1931)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:A_J_Cooper.jpg"
+  },
+  "inline_images": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Anna_J._Cooper_50303v.jpg",
+      "alt": "Studio portrait of Anna Julia Cooper as a young woman, late 1880s",
+      "caption": "Anna Julia Cooper, photographed in Oberlin, Ohio around 1888, the educator and scholar whose 1892 A Voice from the South argued for Black women's higher education and leadership.",
+      "photographer": "Falor & Smedley studio, Oberlin, Ohio",
+      "date_taken": "circa 1888-1889",
+      "repository": "Library of Congress, Prints and Photographs Division (LC-DIG-ppmsca-50303)",
+      "license": "Public domain (published before 1929; no known restrictions on publication)",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Anna_J._Cooper_50303v.jpg"
+    }
+  ],
+  "related_chapters": [
+    {
+      "entry": 40,
+      "subject": "Esther M. A. Terry",
+      "slug": "esther-m-a-terry",
+      "part_title": "The Plan Born at Bennett",
+      "chapter_title": "It Was Not Spontaneous",
+      "topic": "Crediting the Bennett Women",
+      "start": 3481.0,
+      "end": 3713.0,
+      "why": "Cooper argues that the education and organized agency of Black women drive racial progress, and Terry credits the women of Bennett College as the deliberate planners of the Greensboro sit-in."
+    },
+    {
+      "entry": 29,
+      "subject": "Dorothy Foreman Cotton",
+      "slug": "dorothy-foreman-cotton",
+      "part_title": "The Only Woman at the Table",
+      "chapter_title": "The Only Woman at the Table",
+      "topic": "Power She Knew She Had",
+      "start": 4620.0,
+      "end": 4857.0,
+      "why": "Cooper insists a woman's voice belongs in the councils that shape her people's future, and Cotton recounts holding her place as the only woman in SCLC's inner leadership circle."
+    },
+    {
+      "entry": 25,
+      "subject": "Cynthia and Fletcher Anderson",
+      "slug": "cynthia-and-fletcher-anderson",
+      "part_title": "Strong Women, and the Deacon Ranks",
+      "chapter_title": "A Movement Where Women Had a Voice",
+      "topic": "Women in the Movement",
+      "start": 2051.0,
+      "end": 2339.0,
+      "why": "Cooper's central claim is that the race rises only as its women are heard, and this chapter turns directly on the place women held in the Bogalusa movement."
+    },
+    {
+      "entry": 50,
+      "subject": "Grace Hall Miller",
+      "slug": "grace-hall-miller",
+      "part_title": "Shirley Sherrod and a Family's History",
+      "chapter_title": "If You Don't Know Your History",
+      "topic": "Teaching the Young and a Legacy",
+      "start": 2870.0,
+      "end": 3039.0,
+      "why": "Cooper ties women's leadership to teaching the next generation, and Miller, mother of Shirley Sherrod, speaks of passing history and purpose to the young."
+    },
+    {
+      "entry": 69,
+      "subject": "Judy Richardson",
+      "slug": "judy-richardson",
+      "part_title": "No Minutes Until Freedom Comes",
+      "chapter_title": "No Minutes Until Freedom Comes",
+      "topic": "The Women's Sit-In",
+      "start": 7287.0,
+      "end": 7465.0,
+      "why": "Cooper frames women as agents rather than bystanders of reform, and this chapter centers on a sit-in carried by women in the SNCC office."
+    },
+    {
+      "entry": 53,
+      "subject": "Gwendolyn Zoharah Simmons (born Gwen Robinson)",
+      "slug": "gwendolyn-zoharah-simmons",
+      "part_title": "Waiting on You All My Life",
+      "chapter_title": "She Was the Driving Force",
+      "topic": "Two Women Who Took Them In",
+      "start": 1381.0,
+      "end": 1529.0,
+      "why": "Cooper credits unheralded women as the engine of community uplift, and Simmons, a Freedom Summer project director, names the women who sustained the Laurel project."
+    }
+  ],
+  "top_voice": {
+    "entry": 40,
+    "subject": "Esther M. A. Terry",
+    "slug": "esther-m-a-terry",
+    "reason": "Terry joins Cooper's argument that educated Black women are the deliberate authors of progress: a Bennett College student in the Greensboro sit-in who became a chair of Afro-American Studies."
+  },
+  "closing_image": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/4/46/Bennett_College.jpg",
+    "alt": "Bennett College, Greensboro, North Carolina, 1910 archival photograph",
+    "caption": "Bennett College, Greensboro, North Carolina, 1910 archival photograph. Esther M. A. Terry is the corpus voice this essay connects to most.",
+    "photographer": "Unknown (W. N. Hartshorn and George W. Penniman, eds., institutional source book)",
+    "date_taken": "1910",
+    "repository": "Wikimedia Commons",
+    "license": "Public domain (published before January 1, 1931)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bennett_College.jpg"
+  },
+  "connections": {
+    "summary": "Across the Civil Rights History Project, the oral histories below take up the questions A Voice from the South raises. Our embedding model places it nearest the testimony of Cynthia and Fletcher Anderson, Marilyn Luper Hildreth, and Ruby Sales.",
+    "method": "embedding",
+    "nearest_voices": [
+      {
+        "entry": 25,
+        "subject": "Cynthia and Fletcher Anderson",
+        "slug": "cynthia-and-fletcher-anderson",
+        "score": 0.582
+      },
+      {
+        "entry": 82,
+        "subject": "Marilyn Luper Hildreth",
+        "slug": "marilyn-luper-hildreth",
+        "score": 0.523
+      },
+      {
+        "entry": 112,
+        "subject": "Ruby Sales",
+        "slug": "ruby-sales",
+        "score": 0.504
+      },
+      {
+        "entry": 34,
+        "subject": "Ekwueme Michael Thelwell",
+        "slug": "ekwueme-michael-thelwell",
+        "score": 0.492
+      },
+      {
+        "entry": 7,
+        "subject": "Betty Garman Robinson",
+        "slug": "betty-garman-robinson",
+        "score": 0.486
+      }
+    ]
+  },
+  "shared_topics": [
+    "womens-leadership",
+    "education-and-schools",
+    "intergenerational-activism",
+    "identity-and-double-consciousness"
+  ]
+}
