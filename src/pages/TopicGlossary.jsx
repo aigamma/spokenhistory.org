@@ -31,6 +31,12 @@ const MAJOR_THEMES = [
   { name: 'Military Service', kw: 'military' },
   { name: 'Migration', kw: 'migration' },
   { name: 'Music and Culture', kw: 'music' },
+  { name: 'High School Activists', kw: 'high school' },
+  { name: 'Churches as Organizing Spaces', kw: 'mass meeting' },
+  { name: 'Media and the Movement', kw: 'press' },
+  { name: 'Funding the Movement', kw: 'funding' },
+  { name: 'Local Movement Stories', kw: 'community' },
+  { name: 'Coming of Age in the Movement', kw: 'childhood' },
 ];
 
 export default function TopicGlossary() {
