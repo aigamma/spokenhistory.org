@@ -17,6 +17,16 @@ function fmtClock(s) {
   return (h > 0 ? `${h}:` : '') + `${mm}:${String(sec).padStart(2, '0')}`;
 }
 
+// Per-grade quantity ramps: higher grades get MORE, so the climb is visible
+// rather than lateral. Discussion questions equal the grade number (K and 1
+// get one, grade 12 gets twelve); vocabulary and objectives ramp up more
+// gently. The band supplies an ordered foundational-to-advanced pool; the
+// grade slices how many of it the student sees, and how far up the difficulty.
+const qCount = (g) => Math.max(1, g);
+const vCount = (g) => Math.min(10, Math.max(3, 3 + Math.floor(g / 2)));
+const oCount = (g) => Math.min(6, Math.max(2, 2 + Math.floor(g / 3)));
+const headFirst = (arr, n) => (Array.isArray(arr) ? arr.slice(0, Math.max(0, n)) : []);
+
 /**
  * Curriculum, the /curriculum page: the grade-leveled curriculum generator.
  *
@@ -31,9 +41,11 @@ function fmtClock(s) {
  *     person cards), activities, discussion questions, an assessment, an
  *     age-appropriateness content note, and standards.
  *   - grade_tuning{}: one entry PER grade ("0".."12") that tunes the band core
- *     to a single grade: reading level, essential question, vocabulary, and a
- *     scaffolding line. Sliding within a band keeps the band core but swaps the
- *     tuning, so per-grade specificity is visible even inside one band.
+ *     to a single grade: reading level, essential question, and a scaffolding
+ *     line. The grade ALSO scales QUANTITY by slicing the band's ordered pools
+ *     (discussion questions equal the grade number; vocabulary and objectives
+ *     ramp up too), so higher grades carry more, ordered foundational to
+ *     advanced, and the climb is visible even inside one band.
  *
  * The page renders the MERGE of band core + grade tuning for the selected
  * grade. Clip materials play as bounded LoC segments via LocVideoEmbed (seek to
@@ -391,12 +403,15 @@ export default function Curriculum() {
                 </>
               )}
 
-              {/* Learning Objectives (band). */}
-              {band && Array.isArray(band.objectives) && band.objectives.length > 0 && (
+              {/* Learning Objectives (band pool, sliced by grade). */}
+              {band && headFirst(band.objectives, oCount(grade)).length > 0 && (
                 <>
                   <SectionHeading>Learning Objectives</SectionHeading>
+                  <p className="-mt-1 mb-2 text-xs text-stone-500 dark:text-stone-400">
+                    {headFirst(band.objectives, oCount(grade)).length} for {gradeLabel(grade)}.
+                  </p>
                   <ul className="list-disc pl-6 space-y-1.5 text-stone-800 dark:text-stone-200">
-                    {band.objectives.map((obj, i) => (
+                    {headFirst(band.objectives, oCount(grade)).map((obj, i) => (
                       <li key={i} className="leading-relaxed">
                         {obj}
                       </li>
@@ -405,14 +420,16 @@ export default function Curriculum() {
                 </>
               )}
 
-              {/* Vocabulary (per-grade tuning). */}
-              {tuning &&
-                Array.isArray(tuning.vocabulary) &&
-                tuning.vocabulary.length > 0 && (
+              {/* Vocabulary (band pool, sliced by grade so higher grades get
+                  more terms). */}
+              {band && headFirst(band.vocabulary, vCount(grade)).length > 0 && (
                   <>
                     <SectionHeading>Vocabulary</SectionHeading>
+                    <p className="-mt-1 mb-2 text-xs text-stone-500 dark:text-stone-400">
+                      {headFirst(band.vocabulary, vCount(grade)).length} terms for {gradeLabel(grade)}.
+                    </p>
                     <dl className="space-y-2">
-                      {tuning.vocabulary.map((v, i) => (
+                      {headFirst(band.vocabulary, vCount(grade)).map((v, i) => (
                         <div
                           key={i}
                           className="sm:flex sm:gap-3 rounded-md bg-white dark:bg-zinc-800 border border-stone-200 dark:border-zinc-700 px-3 py-2"
@@ -551,14 +568,16 @@ export default function Curriculum() {
                 </>
               )}
 
-              {/* Discussion Questions (band). */}
-              {band &&
-                Array.isArray(band.discussion_questions) &&
-                band.discussion_questions.length > 0 && (
+              {/* Discussion Questions (band pool, sliced to the grade number:
+                  K and 1 get one, grade 12 gets twelve, ordered by depth). */}
+              {band && headFirst(band.discussion_questions, qCount(grade)).length > 0 && (
                   <>
                     <SectionHeading>Discussion Questions</SectionHeading>
+                    <p className="-mt-1 mb-2 text-xs text-stone-500 dark:text-stone-400">
+                      {headFirst(band.discussion_questions, qCount(grade)).length} for {gradeLabel(grade)}, ordered from most accessible to most demanding.
+                    </p>
                     <ul className="list-disc pl-6 space-y-1.5 text-stone-800 dark:text-stone-200">
-                      {band.discussion_questions.map((q, i) => (
+                      {headFirst(band.discussion_questions, qCount(grade)).map((q, i) => (
                         <li key={i} className="leading-relaxed">
                           {q}
                         </li>
