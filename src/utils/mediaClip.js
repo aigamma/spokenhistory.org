@@ -41,19 +41,44 @@ export function seekThenPlay(el, seconds, shouldPlay) {
     play();
     return () => {};
   }
-  const onSeeked = () => {
-    el.removeEventListener('seeked', onSeeked);
-    play();
-  };
-  el.addEventListener('seeked', onSeeked);
+  // Register the seek FIRST so `target` becomes the official playback position.
+  // The browser then range-jumps to the clip's byte offset when it plays
+  // instead of streaming from byte 0 up to the clip (the load-the-whole-file
+  // regression). LoC MP4s are faststart with byte-range support, so this is a
+  // small fetch at the clip offset.
   try {
     el.currentTime = target;
   } catch {
-    // Seek rejected before load; detach and play from wherever we are.
-    el.removeEventListener('seeked', onSeeked);
+    // Seekable position not available yet; play from where we are.
     play();
+    return () => {};
   }
-  return () => el.removeEventListener('seeked', onSeeked);
+  // Start playback as soon as data at the new position is ready, triggering on
+  // the FIRST of `seeked`, `canplay`, or a short timeout rather than on
+  // `seeked` alone. A deep seek into a multi-hour recording is slow (and
+  // sometimes fails) to fire `seeked`, and gating playback on it exclusively
+  // left the clip frozen on its poster, the "comes up but nothing plays" bug.
+  // currentTime is already `target`, so whichever fires first, playback still
+  // begins at the clip and stays byte-bounded.
+  let started = false;
+  let timer = null;
+  const start = () => {
+    if (started) return;
+    started = true;
+    el.removeEventListener('seeked', start);
+    el.removeEventListener('canplay', start);
+    if (timer) clearTimeout(timer);
+    play();
+  };
+  el.addEventListener('seeked', start);
+  el.addEventListener('canplay', start);
+  timer = setTimeout(start, 1500);
+  return () => {
+    started = true;
+    el.removeEventListener('seeked', start);
+    el.removeEventListener('canplay', start);
+    if (timer) clearTimeout(timer);
+  };
 }
 
 /**
@@ -66,13 +91,26 @@ export function seekThenPlay(el, seconds, shouldPlay) {
  */
 export function playWhenReady(el) {
   if (!el) return;
-  if (el.seeking) {
-    const onSeeked = () => {
-      el.removeEventListener('seeked', onSeeked);
-      el.play().catch(() => { /* autoplay blocked; controls remain */ });
-    };
-    el.addEventListener('seeked', onSeeked);
-  } else {
-    el.play().catch(() => { /* autoplay blocked; controls remain */ });
+  const play = () => el.play().catch(() => { /* autoplay blocked; controls remain */ });
+  if (!el.seeking) {
+    play();
+    return;
   }
+  // A seek is in flight; play once data at the seek target is ready. Trigger on
+  // the first of `seeked` / `canplay` with a timeout backstop so a slow or
+  // missing `seeked` never strands playback. Playing while still seeking is
+  // safe: the element resumes at its seek target, never at 0.
+  let started = false;
+  let timer = null;
+  const start = () => {
+    if (started) return;
+    started = true;
+    el.removeEventListener('seeked', start);
+    el.removeEventListener('canplay', start);
+    if (timer) clearTimeout(timer);
+    play();
+  };
+  el.addEventListener('seeked', start);
+  el.addEventListener('canplay', start);
+  timer = setTimeout(start, 1500);
 }

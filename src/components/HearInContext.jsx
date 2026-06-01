@@ -55,7 +55,7 @@ export function tsToSeconds(ts) {
  *                                          (deep-linked to the moment); shown
  *                                          beneath the player when provided.
  * @param {string}  [props.label]           Button label (default
- *                                          "Hear this in context").
+ *                                          "See this in context").
  * @param {string}  [props.buttonClassName] Override the button styling.
  * @returns {React.ReactElement|null}
  */
@@ -72,7 +72,7 @@ export default function HearInContext({
   startSeconds,
   endSeconds = null,
   fullInterviewHref = null,
-  label = 'Hear this in context',
+  label = 'See this in context',
   buttonClassName = '',
 }) {
   const [open, setOpen] = useState(false);
