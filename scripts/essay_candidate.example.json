@@ -1,0 +1,32 @@
+{
+  "_comment": "Worked example of an essay candidate record for scripts/intake_essay_candidate.py --from-json and scripts/onboard_essay.py --from-json. This file is intentionally NOT in public/rag/essays/ (the index builder and sources report scan that directory for per-essay JSON, so a stray example there would pollute the catalog). Copy it, edit it, and feed it to the intake/onboard scripts. The license MUST be verified on the SPECIFIC item and must permit derivative use; No-Derivatives / paywalled / unknown licenses are refused by the gate. Remove the underscore-prefixed fields (they are documentation, not schema) before use, or leave them: the scripts ignore unknown keys.",
+  "slug": "douglass-narrative",
+  "title": "Narrative of the Life of Frederick Douglass, an American Slave",
+  "authors": ["Frederick Douglass"],
+  "year": 1845,
+  "venue": "Anti-Slavery Office, Boston",
+  "collection": null,
+  "license": {
+    "type": "public-domain",
+    "url": "https://www.gutenberg.org/ebooks/23",
+    "note": "Published 1845; public domain in the United States. Verify the SPECIFIC item, not the repository."
+  },
+  "source": {
+    "kind": "gutenberg-whole",
+    "book_id": 23,
+    "book_url": "https://www.gutenberg.org/cache/epub/23/pg23.txt"
+  },
+  "themes": ["family-influence", "identity-and-double-consciousness", "justice-and-resistance"],
+  "rationale": "Why it fits: a foundational first-person narrative whose themes of family separation, literacy as resistance, and the interior experience of bondage echo the oral histories. Recorded for the scalable expansion path if the essays layer broadens to first-person narratives.",
+  "proposer": "example (replace with your name or handle)",
+  "status": "candidate",
+  "_field_notes": {
+    "slug": "lowercase-hyphenated, unique across the manifest; this is the filename stem for text/<slug>.txt and <slug>.json",
+    "authors": "list of strings; use [] only for a corporate or anonymous work (then the venue carries attribution)",
+    "license.type": "one of the gate's qualifying tiers: public-domain, us-government-public-domain, cc0, cc-by, cc-by-sa, cc-by-nc, cc-by-nc-sa",
+    "source.kind": "gutenberg-chapter (one essay located by chapter_title + optional chapter_roman) or gutenberg-whole (a whole work); pdf-url / url are recorded but need a format adapter to host, see README",
+    "themes": "topic ids that exist in public/rag/essays/topics.json; cross-linking into the corpus is keyed on these",
+    "rationale": "the why-it-fits, for the curation record and the sources report",
+    "proposer": "who suggested it"
+  }
+}

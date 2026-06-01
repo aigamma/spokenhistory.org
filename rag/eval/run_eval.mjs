@@ -178,7 +178,7 @@ async function getDirectRetriever() {
 async function runDirect(retrieve, row) {
   const topN = clampInt(row.topN, 1, 50, 8);
   const dedupe = row.dedupeByEntry === true;
-  const filter = entryFilter(row);
+  const filter = buildFilter(row);
   // Over-fetch when deduping so distinct interviewees still fill topN.
   const fetchN = dedupe ? Math.min(topN * 4, 50) : topN;
   const topK = Math.max(fetchN * 3, 30);
@@ -217,11 +217,21 @@ async function runHttp(url, row) {
   return results.map(normalizeResult);
 }
 
-function entryFilter(row) {
-  if (row.entry_number == null) return null;
-  const n = Number(row.entry_number);
-  if (!Number.isFinite(n) || n < 1) return null;
-  return { entry_number: { $eq: Math.floor(n) } };
+function buildFilter(row) {
+  const f = {};
+  if (row.entry_number != null) {
+    const n = Number(row.entry_number);
+    if (Number.isFinite(n) && n >= 1) f.entry_number = { $eq: Math.floor(n) };
+  }
+  // Match the production passage-flow behavior: exclude person-page and
+  // essay-segment vectors so a passage assertion is not shadowed by a
+  // person or essay hit (those carry display_name, not entry_subject). A
+  // golden row can opt in with includePersons or includeEssays.
+  const exclude = [];
+  if (!row.includePersons) exclude.push('person');
+  if (!row.includeEssays) exclude.push('essay');
+  if (exclude.length) f.content_type = { $nin: exclude };
+  return Object.keys(f).length ? f : null;
 }
 
 function dedupeByEntry(results, max) {
