@@ -4,8 +4,21 @@ import { Printer, Film, User, Info, BookOpen } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 
+// Format seconds as M:SS or H:MM:SS for the print-only clip citation. In print
+// the playable LocVideoEmbed is hidden (a video box is dead on paper), so a
+// teacher gets a timestamped reference to the interview instead.
+function fmtClock(s) {
+  if (s == null || !isFinite(s)) return '';
+  const t = Math.max(0, Math.round(s));
+  const h = Math.floor(t / 3600);
+  const m = Math.floor((t % 3600) / 60);
+  const sec = t % 60;
+  const mm = h > 0 ? String(m).padStart(2, '0') : String(m);
+  return (h > 0 ? `${h}:` : '') + `${mm}:${String(sec).padStart(2, '0')}`;
+}
+
 /**
- * Curriculum, the /curriculum page: a curriculum-generator pilot.
+ * Curriculum, the /curriculum page: the grade-leveled curriculum generator.
  *
  * A teacher slides to a grade (K through 12) and the page assembles a
  * grade-leveled lesson unit out of the archive's primary-source oral
@@ -168,7 +181,7 @@ export default function Curriculum() {
             className="text-civil-red-body dark:text-red-400 text-xs sm:text-sm font-semibold uppercase tracking-wide mb-2"
             style={{ fontFamily: 'Chivo Mono, monospace' }}
           >
-            Curriculum Pilot
+            Civil Rights History Project · Curriculum
           </p>
           <h1
             className="text-stone-900 dark:text-stone-100 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
@@ -328,25 +341,24 @@ export default function Curriculum() {
                     : ''}
                 </h2>
                 {band && (band.concept || band.skill_focus) && (
-                  <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
+                  <div className="mt-2 space-y-1 text-sm text-stone-600 dark:text-stone-400">
                     {band.concept && (
-                      <span>
+                      <p>
                         <span className="font-semibold text-stone-700 dark:text-stone-300">
                           Concept:
                         </span>{' '}
                         {band.concept}
-                      </span>
+                      </p>
                     )}
-                    {band.concept && band.skill_focus ? '  ·  ' : ''}
                     {band.skill_focus && (
-                      <span>
+                      <p>
                         <span className="font-semibold text-stone-700 dark:text-stone-300">
                           Skill Focus:
                         </span>{' '}
                         {band.skill_focus}
-                      </span>
+                      </p>
                     )}
-                  </p>
+                  </div>
                 )}
                 {tuning && tuning.reading_level && (
                   <p className="mt-2 text-sm text-stone-600 dark:text-stone-400">
@@ -444,11 +456,24 @@ export default function Curriculum() {
                               )}
                             </div>
                             {hasEntry ? (
-                              <LocVideoEmbed
-                                entryNumber={m.entry_number}
-                                startSeconds={m.start_seconds || 0}
-                                endSeconds={m.end_seconds ?? null}
-                              />
+                              <>
+                                <div className="print:hidden">
+                                  <LocVideoEmbed
+                                    entryNumber={m.entry_number}
+                                    startSeconds={m.start_seconds || 0}
+                                    endSeconds={m.end_seconds ?? null}
+                                  />
+                                </div>
+                                <p className="hidden print:block text-sm text-stone-700">
+                                  Clip reference: Interview {m.entry_number}
+                                  {m.start_seconds != null
+                                    ? `, ${fmtClock(m.start_seconds)} to ${fmtClock(
+                                        m.end_seconds ?? m.start_seconds,
+                                      )}`
+                                    : ''}
+                                  . Play it on the Civil Rights History Project site.
+                                </p>
+                              </>
                             ) : (
                               <p className="text-sm text-stone-500">
                                 This clip is not yet linked to an interview.
@@ -552,13 +577,21 @@ export default function Curriculum() {
                 </>
               )}
 
-              {/* Content Note (band): the age-appropriateness note, in a calm,
-                  clearly-labeled box. Not an alarm color, a neutral amber. */}
+              {/* Age-appropriateness and content: its own clearly-labeled
+                  section explaining how difficult material is graded by
+                  developmental band, then the per-grade specifics. */}
               {band && band.content_note && (
                 <div className="mt-8 rounded-lg border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/30 p-4">
-                  <p className="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-semibold text-sm mb-1">
+                  <p className="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-semibold text-sm mb-2">
                     <Info className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    Content Note for Educators
+                    Age-Appropriateness and Difficult Content
+                  </p>
+                  <p className="text-sm text-amber-900/90 dark:text-amber-100/90 leading-relaxed mb-2">
+                    This lesson grades difficult material by developmental band. The
+                    civil rights record includes racial violence, including the
+                    murders and lynchings that drove the movement; that material is
+                    engaged directly only at the bands developmentally ready for it,
+                    and routed around at the younger grades. At this grade:
                   </p>
                   <p className="text-sm text-amber-900/90 dark:text-amber-100/90 leading-relaxed">
                     {band.content_note}
