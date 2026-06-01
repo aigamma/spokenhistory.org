@@ -4,7 +4,7 @@
   "date_range": "August 28, 1963",
   "query": "march on washington august 1963 lincoln memorial dream speech jobs and freedom",
   "blurb": "Some 250,000 people gathered at the Lincoln Memorial on August 28, 1963, behind a coalition of civil-rights, labor, and religious organizations. Witnesses describe the scale, the organizing, and the rhetoric.",
-  "generated": "2026-05-26",
+  "generated": "2026-06-01",
   "passages": [
     {
       "entry_number": 73,
@@ -14,11 +14,11 @@
       "timestamp_end_seconds": 948,
       "loc_item_url": "https://www.loc.gov/item/2015669150/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.3247,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6992,
-      "pinecone_score": 0.5539
+      "pinecone_score": 0.5542
     },
     {
       "entry_number": 20,
@@ -28,11 +28,11 @@
       "timestamp_end_seconds": 8832,
       "loc_item_url": "https://www.loc.gov/item/2015669183/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.3461,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0.02,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6602,
-      "pinecone_score": 0.5024
+      "pinecone_score": 0.5014
     },
     {
       "entry_number": 119,
@@ -42,11 +42,11 @@
       "timestamp_end_seconds": 6611.48,
       "loc_item_url": "https://www.loc.gov/item/2015669142/",
       "suggested_citation": null,
-      "uncertainty_tier": "medium",
-      "uncertainty_score": 0.1894,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0.012,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6602,
-      "pinecone_score": 0.4982
+      "pinecone_score": 0.4976
     },
     {
       "entry_number": 60,
@@ -56,11 +56,11 @@
       "timestamp_end_seconds": 6302,
       "loc_item_url": "https://www.loc.gov/item/2015669178/",
       "suggested_citation": null,
-      "uncertainty_tier": "not-auditable",
-      "uncertainty_score": 0.7694,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6406,
-      "pinecone_score": 0.5655
+      "pinecone_score": 0.5665
     },
     {
       "entry_number": 23,
@@ -70,11 +70,11 @@
       "timestamp_end_seconds": 2035,
       "loc_item_url": "https://www.loc.gov/item/2015669160/",
       "suggested_citation": null,
-      "uncertainty_tier": "publication-block",
-      "uncertainty_score": 0.5273,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6133,
-      "pinecone_score": 0.5186
+      "pinecone_score": 0.5203
     },
     {
       "entry_number": 128,
@@ -84,11 +84,11 @@
       "timestamp_end_seconds": 2915,
       "loc_item_url": "https://www.loc.gov/item/2015669193/",
       "suggested_citation": null,
-      "uncertainty_tier": "medium",
-      "uncertainty_score": 0.1304,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6055,
-      "pinecone_score": 0.5712
+      "pinecone_score": 0.5714
     },
     {
       "entry_number": 80,
@@ -98,11 +98,11 @@
       "timestamp_end_seconds": 8570,
       "loc_item_url": "https://www.loc.gov/item/2015669189/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.4128,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.5977,
-      "pinecone_score": 0.5038
+      "pinecone_score": 0.5043
     },
     {
       "entry_number": 28,
@@ -112,11 +112,11 @@
       "timestamp_end_seconds": 6246.8,
       "loc_item_url": "https://www.loc.gov/item/2015669207/",
       "suggested_citation": null,
-      "uncertainty_tier": "ingestion-only",
+      "uncertainty_tier": "high",
       "uncertainty_score": 0,
-      "entry_provenance": "ingestion-only",
+      "entry_provenance": "ingestion-loc-verified",
       "rerank_score": 0.5898,
-      "pinecone_score": 0.5044
+      "pinecone_score": 0.504
     }
   ]
 }

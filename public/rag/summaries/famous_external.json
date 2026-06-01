@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26",
+  "generated": "2026-06-01",
   "figures": [
     {
       "slug": "ella-baker",
@@ -14,11 +14,11 @@
           "timestamp_end_seconds": 2426,
           "loc_item_url": "https://www.loc.gov/item/2015669101/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2363,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7266,
-          "pinecone_score": 0.4955
+          "pinecone_score": 0.4967
         },
         {
           "entry_number": 120,
@@ -28,11 +28,11 @@
           "timestamp_end_seconds": 3096,
           "loc_item_url": "https://www.loc.gov/item/2016655417/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.1726,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.011,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7227,
-          "pinecone_score": 0.6133
+          "pinecone_score": 0.6135
         },
         {
           "entry_number": 22,
@@ -42,11 +42,11 @@
           "timestamp_end_seconds": 4599,
           "loc_item_url": "https://www.loc.gov/item/2015669180/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2727,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7188,
-          "pinecone_score": 0.5075
+          "pinecone_score": 0.5096
         },
         {
           "entry_number": 101,
@@ -56,25 +56,11 @@
           "timestamp_end_seconds": 1579,
           "loc_item_url": "https://www.loc.gov/item/2016655421/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5201,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.023,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7188,
-          "pinecone_score": 0.4976
-        },
-        {
-          "entry_number": 66,
-          "entry_subject": "Joseph Echols Lowery",
-          "text_preview": "And Martin called Attorney General and they dispatched law enforcement to the church and disaster was avoided. But that was the beginning of SCLC who we decided that we'd have a South-wide organization and we could strengthen each other and spread the movement across the nation. And Dr. King was elected president and I",
-          "timestamp_start_seconds": 1007,
-          "timestamp_end_seconds": 1067,
-          "loc_item_url": "https://www.loc.gov/item/2015669122/",
-          "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.6319,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.7148,
-          "pinecone_score": 0.4906
+          "pinecone_score": 0.4991
         },
         {
           "entry_number": 76,
@@ -84,11 +70,11 @@
           "timestamp_end_seconds": 2068,
           "loc_item_url": "https://www.loc.gov/item/2015669104/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2293,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7109,
-          "pinecone_score": 0.532
+          "pinecone_score": 0.5331
         },
         {
           "entry_number": 69,
@@ -98,11 +84,11 @@
           "timestamp_end_seconds": 2862,
           "loc_item_url": "https://www.loc.gov/item/2016655418/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5239,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0215,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7109,
-          "pinecone_score": 0.5324
+          "pinecone_score": 0.5338
         },
         {
           "entry_number": 17,
@@ -112,11 +98,25 @@
           "timestamp_end_seconds": 8453,
           "loc_item_url": "https://www.loc.gov/item/2016655412/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3791,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0315,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7031,
-          "pinecone_score": 0.4975
+          "pinecone_score": 0.4985
+        },
+        {
+          "entry_number": 66,
+          "entry_subject": "Joseph Echols Lowery",
+          "text_preview": "In those early first few years late 50s for SCLC much of the day-to-day work through the late 50s was carried by Miss Ella Baker. Ella was I guess the first real executive director full time executive director that we had. We had a fellow named (Rev.) John L. Tilley who came out of Baltimore who had done an effective v",
+          "timestamp_start_seconds": 1293,
+          "timestamp_end_seconds": 1349,
+          "loc_item_url": "https://www.loc.gov/item/2015669122/",
+          "suggested_citation": null,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
+          "entry_provenance": "audit-original",
+          "rerank_score": 0.7031,
+          "pinecone_score": 0.554
         }
       ]
     },
@@ -133,11 +133,11 @@
           "timestamp_end_seconds": 5868.3,
           "loc_item_url": "https://www.loc.gov/item/2015669141/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4367,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.025,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8047,
-          "pinecone_score": 0.5872
+          "pinecone_score": 0.587
         },
         {
           "entry_number": 75,
@@ -147,8 +147,8 @@
           "timestamp_end_seconds": 403,
           "loc_item_url": "https://www.loc.gov/item/2015669153/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3055,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7773,
           "pinecone_score": 0.522
@@ -161,8 +161,8 @@
           "timestamp_end_seconds": 2172.12,
           "loc_item_url": "https://www.loc.gov/item/2015669180/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2727,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7695,
           "pinecone_score": 0.5488
@@ -175,8 +175,8 @@
           "timestamp_end_seconds": 1364,
           "loc_item_url": "https://www.loc.gov/item/2015669175/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2078,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.023,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7578,
           "pinecone_score": 0.5164
@@ -189,11 +189,25 @@
           "timestamp_end_seconds": 2916,
           "loc_item_url": "https://www.loc.gov/item/2015669107/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7344,
           "pinecone_score": 0.5805
+        },
+        {
+          "entry_number": 24,
+          "entry_subject": null,
+          "text_preview": "Name: Courtland Cox Role: SNCC program coordinator and Howard University NAG member; coordinated transport for the 1963 March on Washington; Lowndes County Freedom Party organizer with Stokely Carmichael. At Howard University in the early 1960s, Courtland Cox joined the Nonviolent Action Group (NAG), the campus arm o",
+          "timestamp_start_seconds": null,
+          "timestamp_end_seconds": null,
+          "loc_item_url": null,
+          "suggested_citation": null,
+          "uncertainty_tier": null,
+          "uncertainty_score": null,
+          "entry_provenance": null,
+          "rerank_score": 0.7305,
+          "pinecone_score": 0.5043
         },
         {
           "entry_number": 80,
@@ -203,25 +217,11 @@
           "timestamp_end_seconds": 4153,
           "loc_item_url": "https://www.loc.gov/item/2015669189/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4128,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7188,
           "pinecone_score": 0.5317
-        },
-        {
-          "entry_number": 129,
-          "entry_subject": "William S. Leventhal",
-          "text_preview": "But so we have this wonderful orientation. If you're having the book, or I'll tell you who was there at the orientation, it's amazing, amazing. I consider it the best week of education in American history. That's a big statement. Let me tell you who was there. Dr. King spoke to us. Bayard Rustin organized A. Philip Ran",
-          "timestamp_start_seconds": 2621,
-          "timestamp_end_seconds": 2670,
-          "loc_item_url": "https://www.loc.gov/item/2015669181/",
-          "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4025,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.6914,
-          "pinecone_score": 0.5237
         }
       ]
     },
@@ -238,11 +238,11 @@
           "timestamp_end_seconds": 2249,
           "loc_item_url": "https://www.loc.gov/item/2015669178/",
           "suggested_citation": null,
-          "uncertainty_tier": "not-auditable",
-          "uncertainty_score": 0.7694,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8281,
-          "pinecone_score": 0.6987
+          "pinecone_score": 0.6991
         },
         {
           "entry_number": 80,
@@ -252,11 +252,11 @@
           "timestamp_end_seconds": 6318,
           "loc_item_url": "https://www.loc.gov/item/2015669189/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4128,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8086,
-          "pinecone_score": 0.597
+          "pinecone_score": 0.5961
         },
         {
           "entry_number": 27,
@@ -266,11 +266,11 @@
           "timestamp_end_seconds": 1695,
           "loc_item_url": "https://www.loc.gov/item/2016655423/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3564,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7813,
-          "pinecone_score": 0.5937
+          "pinecone_score": 0.5939
         },
         {
           "entry_number": 134,
@@ -280,11 +280,11 @@
           "timestamp_end_seconds": 2556.2,
           "loc_item_url": "https://www.loc.gov/item/2015669105/",
           "suggested_citation": null,
-          "uncertainty_tier": "ingestion-only",
+          "uncertainty_tier": "high",
           "uncertainty_score": 0,
-          "entry_provenance": "ingestion-only",
+          "entry_provenance": "ingestion-loc-verified",
           "rerank_score": 0.7461,
-          "pinecone_score": 0.6554
+          "pinecone_score": 0.6553
         },
         {
           "entry_number": 57,
@@ -294,11 +294,11 @@
           "timestamp_end_seconds": 2846,
           "loc_item_url": "https://www.loc.gov/item/2015669113/",
           "suggested_citation": null,
-          "uncertainty_tier": "not-auditable",
-          "uncertainty_score": 0.7646,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.011,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7344,
-          "pinecone_score": 0.5663
+          "pinecone_score": 0.5652
         }
       ]
     },
@@ -315,11 +315,11 @@
           "timestamp_end_seconds": 4789,
           "loc_item_url": "https://www.loc.gov/item/2016655417/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.1726,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.011,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8789,
-          "pinecone_score": 0.6624
+          "pinecone_score": 0.6636
         },
         {
           "entry_number": 101,
@@ -329,11 +329,11 @@
           "timestamp_end_seconds": 955,
           "loc_item_url": "https://www.loc.gov/item/2016655421/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5201,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.023,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8477,
-          "pinecone_score": 0.5932
+          "pinecone_score": 0.5953
         },
         {
           "entry_number": 17,
@@ -343,11 +343,11 @@
           "timestamp_end_seconds": 6279,
           "loc_item_url": "https://www.loc.gov/item/2016655412/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3791,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0315,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8438,
-          "pinecone_score": 0.5657
+          "pinecone_score": 0.5663
         },
         {
           "entry_number": 61,
@@ -357,25 +357,11 @@
           "timestamp_end_seconds": 2729,
           "loc_item_url": "https://www.loc.gov/item/2015669199/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2933,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8281,
-          "pinecone_score": 0.7048
-        },
-        {
-          "entry_number": 76,
-          "entry_subject": "Lawrence Guyot",
-          "text_preview": "And I say, I give no quarter, they give no quarter. And then this is 64. In 66, that same uncle runs for Alderman in Paschristin. So you get an idea of the impact of the 1965 Voting Rights Act. A moment ago, you said you ran into SNCC. Tell me about running into SNCC. How did that happen? Who embodied SNCC for you? Dor",
-          "timestamp_start_seconds": 814,
-          "timestamp_end_seconds": 872,
-          "loc_item_url": "https://www.loc.gov/item/2015669104/",
-          "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2293,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.7734,
-          "pinecone_score": 0.5946
+          "pinecone_score": 0.7055
         }
       ]
     },
@@ -392,11 +378,11 @@
           "timestamp_end_seconds": 6175,
           "loc_item_url": "https://www.loc.gov/item/2016655418/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5239,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0215,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8398,
-          "pinecone_score": 0.5987
+          "pinecone_score": 0.5986
         },
         {
           "entry_number": 44,
@@ -406,11 +392,11 @@
           "timestamp_end_seconds": 4975,
           "loc_item_url": "https://www.loc.gov/item/2016655420/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4143,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8203,
-          "pinecone_score": 0.5307
+          "pinecone_score": 0.5292
         },
         {
           "entry_number": 124,
@@ -420,11 +406,11 @@
           "timestamp_end_seconds": 1288,
           "loc_item_url": "https://www.loc.gov/item/2015669191/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2813,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0115,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7969,
-          "pinecone_score": 0.6048
+          "pinecone_score": 0.6041
         },
         {
           "entry_number": 52,
@@ -434,11 +420,25 @@
           "timestamp_end_seconds": 4370,
           "loc_item_url": "https://www.loc.gov/item/2015669119/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5887,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7734,
-          "pinecone_score": 0.6633
+          "pinecone_score": 0.6639
+        },
+        {
+          "entry_number": 7,
+          "entry_subject": null,
+          "text_preview": "Name: Betty Garman Robinson Role: SNCC Atlanta national-office staff (1964-1966); Northern Coordinator of the Friends of SNCC chapter network and SNCC's fundraising under Executive Secretary James Forman; later a Baltimore community organizer. Betty Garman Robinson came to civil rights organizing from the Northern ca",
+          "timestamp_start_seconds": null,
+          "timestamp_end_seconds": null,
+          "loc_item_url": null,
+          "suggested_citation": null,
+          "uncertainty_tier": null,
+          "uncertainty_score": null,
+          "entry_provenance": null,
+          "rerank_score": 0.75,
+          "pinecone_score": 0.5264
         },
         {
           "entry_number": 34,
@@ -448,25 +448,11 @@
           "timestamp_end_seconds": 5395.92,
           "loc_item_url": "https://www.loc.gov/item/2015669203/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4902,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.032,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7461,
-          "pinecone_score": 0.6472
-        },
-        {
-          "entry_number": 53,
-          "entry_subject": "Gwendolyn Zoharah Simmons (born Gwen Robinson)",
-          "text_preview": "So those three months, you know, had a profound impact on me in terms of, hey, there's a whole another thought process about what black folks need to do that's not about integration, which I didn't know anything about, you know. So, okay, that happens. But then Julian Bond is elected, duly elected and not permitted to",
-          "timestamp_start_seconds": 3539,
-          "timestamp_end_seconds": 3598,
-          "loc_item_url": "https://www.loc.gov/item/2015669148/",
-          "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2535,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.7305,
-          "pinecone_score": 0.5349
+          "pinecone_score": 0.6455
         }
       ]
     },
@@ -483,8 +469,8 @@
           "timestamp_end_seconds": 6033,
           "loc_item_url": "https://www.loc.gov/item/2015669192/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3525,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8672,
           "pinecone_score": 0.5551
@@ -497,11 +483,11 @@
           "timestamp_end_seconds": 5925,
           "loc_item_url": "https://www.loc.gov/item/2015669119/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5887,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8086,
-          "pinecone_score": 0.4874
+          "pinecone_score": 0.4865
         },
         {
           "entry_number": 75,
@@ -511,11 +497,11 @@
           "timestamp_end_seconds": 5557.78,
           "loc_item_url": "https://www.loc.gov/item/2015669153/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3055,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7969,
-          "pinecone_score": 0.5239
+          "pinecone_score": 0.5229
         },
         {
           "entry_number": 41,
@@ -525,11 +511,11 @@
           "timestamp_end_seconds": 3839,
           "loc_item_url": "https://www.loc.gov/item/2015669171/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.1834,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7891,
-          "pinecone_score": 0.5183
+          "pinecone_score": 0.5184
         },
         {
           "entry_number": 22,
@@ -539,11 +525,11 @@
           "timestamp_end_seconds": 3909.72,
           "loc_item_url": "https://www.loc.gov/item/2015669180/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2727,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7891,
-          "pinecone_score": 0.566
+          "pinecone_score": 0.5652
         },
         {
           "entry_number": 123,
@@ -553,11 +539,11 @@
           "timestamp_end_seconds": 2126,
           "loc_item_url": "https://www.loc.gov/item/2015669170/",
           "suggested_citation": null,
-          "uncertainty_tier": "not-auditable",
-          "uncertainty_score": 0.7761,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7852,
-          "pinecone_score": 0.4948
+          "pinecone_score": 0.4955
         },
         {
           "entry_number": 127,
@@ -567,11 +553,11 @@
           "timestamp_end_seconds": 3517,
           "loc_item_url": "https://www.loc.gov/item/2015669154/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.242,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0095,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7695,
-          "pinecone_score": 0.458
+          "pinecone_score": 0.4581
         },
         {
           "entry_number": 24,
@@ -581,11 +567,11 @@
           "timestamp_end_seconds": 2232,
           "loc_item_url": "https://www.loc.gov/item/2015669129/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3151,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7695,
-          "pinecone_score": 0.4904
+          "pinecone_score": 0.4909
         }
       ]
     },
@@ -602,8 +588,8 @@
           "timestamp_end_seconds": 6452,
           "loc_item_url": "https://www.loc.gov/item/2016655418/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5239,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0215,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8008,
           "pinecone_score": 0.5588
@@ -616,8 +602,8 @@
           "timestamp_end_seconds": 1293,
           "loc_item_url": "https://www.loc.gov/item/2015669122/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.6319,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7383,
           "pinecone_score": 0.5655
@@ -630,11 +616,11 @@
           "timestamp_end_seconds": 1011,
           "loc_item_url": "https://www.loc.gov/item/2015669181/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4025,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.033,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7305,
-          "pinecone_score": 0.5668
+          "pinecone_score": 0.5682
         },
         {
           "entry_number": 132,
@@ -644,8 +630,8 @@
           "timestamp_end_seconds": 1625,
           "loc_item_url": "https://www.loc.gov/item/2016655400/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.272,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7266,
           "pinecone_score": 0.5788
@@ -658,8 +644,8 @@
           "timestamp_end_seconds": 3601,
           "loc_item_url": "https://www.loc.gov/item/2015669179/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3049,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7188,
           "pinecone_score": 0.616
@@ -672,9 +658,9 @@
           "timestamp_end_seconds": 9411.8,
           "loc_item_url": "https://www.loc.gov/item/2015669105/",
           "suggested_citation": null,
-          "uncertainty_tier": "ingestion-only",
+          "uncertainty_tier": "high",
           "uncertainty_score": 0,
-          "entry_provenance": "ingestion-only",
+          "entry_provenance": "ingestion-loc-verified",
           "rerank_score": 0.7031,
           "pinecone_score": 0.6109
         },
@@ -686,8 +672,8 @@
           "timestamp_end_seconds": 6834.8,
           "loc_item_url": "https://www.loc.gov/item/2016655415/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4308,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0245,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6914,
           "pinecone_score": 0.5734
@@ -707,11 +693,11 @@
           "timestamp_end_seconds": 6337,
           "loc_item_url": "https://www.loc.gov/item/2015669154/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.242,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0095,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6875,
-          "pinecone_score": 0.6073
+          "pinecone_score": 0.6084
         },
         {
           "entry_number": 34,
@@ -721,11 +707,11 @@
           "timestamp_end_seconds": 3896,
           "loc_item_url": "https://www.loc.gov/item/2015669203/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4902,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.032,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6328,
-          "pinecone_score": 0.5458
+          "pinecone_score": 0.5447
         },
         {
           "entry_number": 62,
@@ -735,11 +721,11 @@
           "timestamp_end_seconds": 3496,
           "loc_item_url": "https://www.loc.gov/item/2015669202/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4133,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.625,
-          "pinecone_score": 0.6156
+          "pinecone_score": 0.6153
         },
         {
           "entry_number": 63,
@@ -749,11 +735,11 @@
           "timestamp_end_seconds": 3968,
           "loc_item_url": "https://www.loc.gov/item/2015669132/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4429,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0443,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6094,
-          "pinecone_score": 0.5402
+          "pinecone_score": 0.5399
         },
         {
           "entry_number": 129,
@@ -763,11 +749,11 @@
           "timestamp_end_seconds": 9184,
           "loc_item_url": "https://www.loc.gov/item/2015669181/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4025,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.033,
           "entry_provenance": "audit-original",
           "rerank_score": 0.5977,
-          "pinecone_score": 0.5537
+          "pinecone_score": 0.5539
         }
       ]
     },
@@ -784,11 +770,11 @@
           "timestamp_end_seconds": 664,
           "loc_item_url": "https://www.loc.gov/item/2016655418/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5239,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0215,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8359,
-          "pinecone_score": 0.607
+          "pinecone_score": 0.6074
         },
         {
           "entry_number": 17,
@@ -798,11 +784,11 @@
           "timestamp_end_seconds": 16523.6,
           "loc_item_url": "https://www.loc.gov/item/2016655412/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3791,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0315,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8242,
-          "pinecone_score": 0.6834
+          "pinecone_score": 0.6845
         },
         {
           "entry_number": 53,
@@ -812,11 +798,11 @@
           "timestamp_end_seconds": 3991,
           "loc_item_url": "https://www.loc.gov/item/2015669148/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2535,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8164,
-          "pinecone_score": 0.6304
+          "pinecone_score": 0.6302
         },
         {
           "entry_number": 83,
@@ -826,11 +812,11 @@
           "timestamp_end_seconds": 4986,
           "loc_item_url": "https://www.loc.gov/item/2015669179/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3049,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8125,
-          "pinecone_score": 0.6563
+          "pinecone_score": 0.6566
         },
         {
           "entry_number": 44,
@@ -840,11 +826,11 @@
           "timestamp_end_seconds": 5250,
           "loc_item_url": "https://www.loc.gov/item/2016655420/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4143,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8086,
-          "pinecone_score": 0.5949
+          "pinecone_score": 0.5961
         },
         {
           "entry_number": 68,
@@ -854,25 +840,11 @@
           "timestamp_end_seconds": 8696,
           "loc_item_url": "https://www.loc.gov/item/2016655419/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4162,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0215,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7891,
-          "pinecone_score": 0.5845
-        },
-        {
-          "entry_number": 72,
-          "entry_subject": "Junius Williams",
-          "text_preview": "And there were various SNCC operatives there, I don't know who they were, who they all were. Only when I recognized was Stokely Carmichael Carmichael. And he said, what the hell are you going to sell my phone? We need you here at Montgomery. And then he explained that they were doing a parallel operation, because they",
-          "timestamp_start_seconds": 3972,
-          "timestamp_end_seconds": 4027,
-          "loc_item_url": "https://www.loc.gov/item/2015669136/",
-          "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5625,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.7852,
-          "pinecone_score": 0.6092
+          "pinecone_score": 0.5854
         }
       ]
     },
@@ -889,11 +861,11 @@
           "timestamp_end_seconds": 3613,
           "loc_item_url": "https://www.loc.gov/item/2015669139/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3223,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0155,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8203,
-          "pinecone_score": 0.6776
+          "pinecone_score": 0.6778
         },
         {
           "entry_number": 7,
@@ -903,11 +875,11 @@
           "timestamp_end_seconds": 9005.8,
           "loc_item_url": "https://www.loc.gov/item/2016655415/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4308,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0245,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6875,
-          "pinecone_score": 0.6011
+          "pinecone_score": 0.6005
         },
         {
           "entry_number": 11,
@@ -917,11 +889,11 @@
           "timestamp_end_seconds": 2836.48,
           "loc_item_url": "https://www.loc.gov/item/2015669151/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4263,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6836,
-          "pinecone_score": 0.6223
+          "pinecone_score": 0.6217
         },
         {
           "entry_number": 96,
@@ -931,11 +903,11 @@
           "timestamp_end_seconds": 214,
           "loc_item_url": "https://www.loc.gov/item/2016655402/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.6024,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6406,
-          "pinecone_score": 0.4568
+          "pinecone_score": 0.4573
         }
       ]
     },
@@ -952,8 +924,8 @@
           "timestamp_end_seconds": 1289,
           "loc_item_url": "https://www.loc.gov/item/2016655419/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4162,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0215,
           "entry_provenance": "audit-original",
           "rerank_score": 0.793,
           "pinecone_score": 0.5632
@@ -966,8 +938,8 @@
           "timestamp_end_seconds": 2856,
           "loc_item_url": "https://www.loc.gov/item/2015669171/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.1834,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7852,
           "pinecone_score": 0.5959
@@ -980,8 +952,8 @@
           "timestamp_end_seconds": 4079,
           "loc_item_url": "https://www.loc.gov/item/2015669199/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2933,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7852,
           "pinecone_score": 0.5852
@@ -994,8 +966,8 @@
           "timestamp_end_seconds": 5719,
           "loc_item_url": "https://www.loc.gov/item/2015669159/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4643,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7617,
           "pinecone_score": 0.5963
@@ -1008,8 +980,8 @@
           "timestamp_end_seconds": 3414,
           "loc_item_url": "https://www.loc.gov/item/2015669101/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2363,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7617,
           "pinecone_score": 0.5584
@@ -1022,8 +994,8 @@
           "timestamp_end_seconds": 1553,
           "loc_item_url": "https://www.loc.gov/item/2015669173/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4949,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7617,
           "pinecone_score": 0.6528
@@ -1036,25 +1008,11 @@
           "timestamp_end_seconds": 3059,
           "loc_item_url": "https://www.loc.gov/item/2015669177/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.367,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0225,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7422,
           "pinecone_score": 0.5795
-        },
-        {
-          "entry_number": 76,
-          "entry_subject": "Lawrence Guyot",
-          "text_preview": "And they were not going to allow us to go back and have pictures taken. Unfortunately, as far as it is, I believe that there are two things that saved our lives. One, Roberta Galler, and other people from across the country start calling in to ask to speak to us. The other, let them know that other people know they're",
-          "timestamp_start_seconds": 1831,
-          "timestamp_end_seconds": 1890,
-          "loc_item_url": "https://www.loc.gov/item/2015669104/",
-          "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2293,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.7383,
-          "pinecone_score": 0.5485
         }
       ]
     },
@@ -1064,6 +1022,20 @@
       "query": "Thurgood Marshall NAACP LDF Brown v Board Supreme Court",
       "passages": [
         {
+          "entry_number": 56,
+          "entry_subject": null,
+          "text_preview": "Name: Jack Greenberg Role: NAACP Legal Defense Fund Director-Counsel 1961-1984, succeeding Thurgood Marshall; co-counsel on Brown v. Board of Education (1954) and co-counsel in the Meredith v. Fair litigation that desegregated the University of Mississippi (1962); Vice Dean of Columbia Law School. Greenberg succeeded",
+          "timestamp_start_seconds": null,
+          "timestamp_end_seconds": null,
+          "loc_item_url": null,
+          "suggested_citation": null,
+          "uncertainty_tier": null,
+          "uncertainty_score": null,
+          "entry_provenance": null,
+          "rerank_score": 0.7305,
+          "pinecone_score": 0.4675
+        },
+        {
           "entry_number": 14,
           "entry_subject": "Cecil J. Williams",
           "text_preview": "And he inspires then in about 1955 the community of Orangeburg to be one of the first in the nation to encourage their parents, the parents, to send their children in a test of the Supreme Court ruling. So Orangeburg again becomes an early testing ground of the Brown versus Board of Education promise. And so, can you t",
@@ -1071,11 +1043,39 @@
           "timestamp_end_seconds": 2911,
           "loc_item_url": "https://www.loc.gov/item/2015669125/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3586,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.01,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7148,
-          "pinecone_score": 0.4944
+          "pinecone_score": 0.4951
+        },
+        {
+          "entry_number": 15,
+          "entry_subject": null,
+          "text_preview": "Name: Cecilia Suyat Marshall Role: Private secretary at the NAACP national office (1948-1955); contributor to the Brown v. Board of Education legal work. Cecilia Suyat Marshall worked the NAACP's national office in New York from 1948 to 1955 as private secretary to Dr. Gloster B. Current, the NAACP's director of bran",
+          "timestamp_start_seconds": null,
+          "timestamp_end_seconds": null,
+          "loc_item_url": null,
+          "suggested_citation": null,
+          "uncertainty_tier": null,
+          "uncertainty_score": null,
+          "entry_provenance": null,
+          "rerank_score": 0.7109,
+          "pinecone_score": 0.5339
+        },
+        {
+          "entry_number": 108,
+          "entry_subject": null,
+          "text_preview": "Name: Robert L. Carter Role: NAACP General Counsel 1956-1968 (successor to Thurgood Marshall); argued for Oliver Brown in Brown v. Board of Education (1954); U.S. District Judge for the Southern District of New York (Nixon appointee, 1972-2012); argued 22 Supreme Court cases and won 21. Born in Caryville, Florida, in",
+          "timestamp_start_seconds": null,
+          "timestamp_end_seconds": null,
+          "loc_item_url": null,
+          "suggested_citation": null,
+          "uncertainty_tier": null,
+          "uncertainty_score": null,
+          "entry_provenance": null,
+          "rerank_score": 0.7109,
+          "pinecone_score": 0.5092
         },
         {
           "entry_number": 94,
@@ -1085,67 +1085,11 @@
           "timestamp_end_seconds": 792,
           "loc_item_url": "https://www.loc.gov/item/2015669201/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2439,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.707,
-          "pinecone_score": 0.5018
-        },
-        {
-          "entry_number": 15,
-          "entry_subject": "Cecilia Suyat Marshall",
-          "text_preview": "Well, I worked in the branch department, so I didn't have anything to do with the little graphics. But when they ran short of help for this, the Brown v. Board of Education versus Board, they needed a center graphic help. And I was there with, well, we were in the same office anyhow. And all the other cases. I remember",
-          "timestamp_start_seconds": 442,
-          "timestamp_end_seconds": 502,
-          "loc_item_url": "https://www.loc.gov/item/2015669196/",
-          "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4722,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.6719,
-          "pinecone_score": 0.5589
-        },
-        {
-          "entry_number": 57,
-          "entry_subject": "James Oscar Jones",
-          "text_preview": "And when she learned about what people were doing, she would come back to church and talk to church people about what we need to do is we need to get the men together to do this and women get together because that's the kind of thing she would learn from the end of the SAP meeting. Do you remember, say, let us think a",
-          "timestamp_start_seconds": 607,
-          "timestamp_end_seconds": 667,
-          "loc_item_url": "https://www.loc.gov/item/2015669113/",
-          "suggested_citation": null,
-          "uncertainty_tier": "not-auditable",
-          "uncertainty_score": 0.7646,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.6602,
-          "pinecone_score": 0.5337
-        },
-        {
-          "entry_number": 108,
-          "entry_subject": "Robert L. Carter",
-          "text_preview": "we were worth the bother with, you know... NAACP. But... when the Brown case was decided... there went after us... on the thesis that if they... could outlaw the association, that... that were in the problem for them. Um... So... I heard that I spent a lot of time fighting to... keep the NAACP... and... a lot of time,",
-          "timestamp_start_seconds": 9365.06,
-          "timestamp_end_seconds": 9425.06,
-          "loc_item_url": "https://www.loc.gov/item/2015669100/",
-          "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2472,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.6563,
-          "pinecone_score": 0.4994
-        },
-        {
-          "entry_number": 56,
-          "entry_subject": "Jack Greenberg",
-          "text_preview": "At that time, I might say, we were part of the NAACP. We were a separate independent part, though the independence caused some tension between us and Roy Wilkins, the head of the NAACP. But nevertheless, independent. In 1957, we were related to tax exemption. We spun off, became entirely independent as the NAACP Legal",
-          "timestamp_start_seconds": 373,
-          "timestamp_end_seconds": 430,
-          "loc_item_url": "https://www.loc.gov/item/2015669133/",
-          "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3291,
-          "entry_provenance": "audit-original",
-          "rerank_score": 0.6523,
-          "pinecone_score": 0.4595
+          "pinecone_score": 0.5029
         }
       ]
     },
@@ -1162,8 +1106,8 @@
           "timestamp_end_seconds": 4207,
           "loc_item_url": "https://www.loc.gov/item/2015669156/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.8984,
           "pinecone_score": 0.6486
@@ -1176,8 +1120,8 @@
           "timestamp_end_seconds": 7989,
           "loc_item_url": "https://www.loc.gov/item/2015669186/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4329,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0411,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7969,
           "pinecone_score": 0.5425
@@ -1190,8 +1134,8 @@
           "timestamp_end_seconds": 6425,
           "loc_item_url": "https://www.loc.gov/item/2015669150/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3247,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7813,
           "pinecone_score": 0.527
@@ -1211,8 +1155,8 @@
           "timestamp_end_seconds": 5593,
           "loc_item_url": "https://www.loc.gov/item/2015669154/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.242,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0095,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6563,
           "pinecone_score": 0.4258
@@ -1225,8 +1169,8 @@
           "timestamp_end_seconds": 3366.04,
           "loc_item_url": "https://www.loc.gov/item/2015669158/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.38,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6406,
           "pinecone_score": 0.4868
@@ -1239,8 +1183,8 @@
           "timestamp_end_seconds": 3826,
           "loc_item_url": "https://www.loc.gov/item/2015669106/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4895,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0489,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6406,
           "pinecone_score": 0.3955
@@ -1253,9 +1197,9 @@
           "timestamp_end_seconds": 10378.8,
           "loc_item_url": "https://www.loc.gov/item/2015669105/",
           "suggested_citation": null,
-          "uncertainty_tier": "ingestion-only",
+          "uncertainty_tier": "high",
           "uncertainty_score": 0,
-          "entry_provenance": "ingestion-only",
+          "entry_provenance": "ingestion-loc-verified",
           "rerank_score": 0.6172,
           "pinecone_score": 0.439
         },
@@ -1267,8 +1211,8 @@
           "timestamp_end_seconds": 9651.12,
           "loc_item_url": "https://www.loc.gov/item/2015669203/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.4902,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.032,
           "entry_provenance": "audit-original",
           "rerank_score": 0.5977,
           "pinecone_score": 0.4607
@@ -1288,8 +1232,8 @@
           "timestamp_end_seconds": 2555,
           "loc_item_url": "https://www.loc.gov/item/2016655417/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.1726,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.011,
           "entry_provenance": "audit-original",
           "rerank_score": 0.7188,
           "pinecone_score": 0.5772
@@ -1302,8 +1246,8 @@
           "timestamp_end_seconds": 2035,
           "loc_item_url": "https://www.loc.gov/item/2015669160/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5273,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6992,
           "pinecone_score": 0.53
@@ -1316,8 +1260,8 @@
           "timestamp_end_seconds": 2938,
           "loc_item_url": "https://www.loc.gov/item/2015669136/",
           "suggested_citation": null,
-          "uncertainty_tier": "publication-block",
-          "uncertainty_score": 0.5625,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0675,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6836,
           "pinecone_score": 0.5147
@@ -1330,11 +1274,11 @@
           "timestamp_end_seconds": 2127,
           "loc_item_url": "https://www.loc.gov/item/2015669129/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.3151,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.668,
-          "pinecone_score": 0.5597
+          "pinecone_score": 0.5602
         },
         {
           "entry_number": 54,
@@ -1344,8 +1288,8 @@
           "timestamp_end_seconds": 5213,
           "loc_item_url": "https://www.loc.gov/item/2015669175/",
           "suggested_citation": null,
-          "uncertainty_tier": "medium",
-          "uncertainty_score": 0.2078,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.023,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6641,
           "pinecone_score": 0.5794
@@ -1358,8 +1302,8 @@
           "timestamp_end_seconds": 2057.24,
           "loc_item_url": "https://www.loc.gov/item/2015669180/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.2727,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6641,
           "pinecone_score": 0.4967
@@ -1372,8 +1316,8 @@
           "timestamp_end_seconds": 6562,
           "loc_item_url": "https://www.loc.gov/item/2015669177/",
           "suggested_citation": null,
-          "uncertainty_tier": "low",
-          "uncertainty_score": 0.367,
+          "uncertainty_tier": "high",
+          "uncertainty_score": 0.0225,
           "entry_provenance": "audit-original",
           "rerank_score": 0.6367,
           "pinecone_score": 0.493

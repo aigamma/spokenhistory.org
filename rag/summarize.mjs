@@ -137,29 +137,39 @@ async function regenerateCapsules({ entries = null } = {}) {
   const targets = entries ? entryList.filter((e) => entries.includes(e.entry_number)) : entryList;
   console.log(`Regenerating capsules for ${targets.length} entries...`);
 
-  const out = {};
+  // capsules.json schema: { generated, total_entries, model, capsules: { <entry_number>: {...} } }
+  // Read the existing wrapper so a targeted regen merges into the per-entry map
+  // instead of clobbering it or writing entries at the top level.
+  let wrapper = { generated: '', total_entries: 0, model: MODEL, capsules: {} };
   if (existsSync(join(SUMMARIES_DIR, 'capsules.json'))) {
     const existing = JSON.parse(readFileSync(join(SUMMARIES_DIR, 'capsules.json'), 'utf-8'));
-    Object.assign(out, existing);
+    if (existing && typeof existing === 'object' && existing.capsules) {
+      wrapper = existing;
+    } else if (existing && typeof existing === 'object') {
+      // Legacy flat map { <entry_number>: {...} }: migrate into the wrapper shape.
+      wrapper.capsules = existing;
+    }
   }
 
   for (const e of targets) {
     process.stdout.write(`  #${e.entry_number} ${e.entry_subject} ... `);
     try {
       const capsule = await generateCapsule(e);
-      out[e.entry_number] = capsule;
+      wrapper.capsules[e.entry_number] = capsule;
       console.log('ok');
     } catch (err) {
       console.log(`ERROR: ${err.message}`);
     }
   }
 
+  wrapper.generated = new Date().toISOString().slice(0, 10);
+  wrapper.total_entries = Object.keys(wrapper.capsules).length;
   writeFileSync(
     join(SUMMARIES_DIR, 'capsules.json'),
-    JSON.stringify(out, null, 2),
+    JSON.stringify(wrapper, null, 2),
     'utf-8',
   );
-  console.log(`Wrote ${Object.keys(out).length} capsules to capsules.json`);
+  console.log(`Wrote ${wrapper.total_entries} capsules to capsules.json`);
 }
 
 // ---------------------------------------------------------------------------

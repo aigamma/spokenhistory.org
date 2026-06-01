@@ -1,8 +1,8 @@
 {
   "generated": "2026-05-26",
-  "node_count": 151,
-  "edge_count": 214,
-  "in_corpus_count": 136,
+  "node_count": 155,
+  "edge_count": 216,
+  "in_corpus_count": 140,
   "external_count": 15,
   "nodes": [
     {
@@ -62,7 +62,7 @@
     },
     {
       "id": "in:6",
-      "name": "Ben Caldwell (PARTIAL)",
+      "name": "Ben Caldwell",
       "kind": "interviewee",
       "in_corpus": true,
       "entry_number": 6,
@@ -73,7 +73,7 @@
     },
     {
       "id": "in:7",
-      "name": "Betty Garman Robinson (PARTIAL)",
+      "name": "Betty Garman Robinson",
       "kind": "interviewee",
       "in_corpus": true,
       "entry_number": 7,
@@ -828,7 +828,7 @@
       "tier": "medium",
       "provenance": "audit-original",
       "loc_item_url": "https://www.loc.gov/item/2015669104/",
-      "discussed_by_count": 11
+      "discussed_by_count": 12
     },
     {
       "id": "in:77",
@@ -1502,6 +1502,50 @@
       "discussed_by_count": 1
     },
     {
+      "id": "in:139",
+      "name": "Glenda Funchess",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 139,
+      "tier": "not-auditable",
+      "provenance": "streamlined-ingestion-2026-05-31",
+      "loc_item_url": "https://www.loc.gov/item/2016655407/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:140",
+      "name": "Louise Broadway",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 140,
+      "tier": "ingestion-only",
+      "provenance": "streamlined-ingestion-2026-05-31",
+      "loc_item_url": "https://www.loc.gov/item/2015669167/",
+      "discussed_by_count": 0
+    },
+    {
+      "id": "in:141",
+      "name": "Lucius Holloway, Sr., and Emma Kate Holloway",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 141,
+      "tier": "ingestion-only",
+      "provenance": "streamlined-ingestion-2026-05-31",
+      "loc_item_url": "https://www.loc.gov/item/2015669161/",
+      "discussed_by_count": 1
+    },
+    {
+      "id": "in:142",
+      "name": "Luis Zapata",
+      "kind": "interviewee",
+      "in_corpus": true,
+      "entry_number": 142,
+      "tier": "ingestion-only",
+      "provenance": "streamlined-ingestion-2026-05-31",
+      "loc_item_url": "https://www.loc.gov/item/2015669194/",
+      "discussed_by_count": 0
+    },
+    {
       "id": "ext:ella-baker",
       "name": "Ella Baker",
       "kind": "external",
@@ -1879,6 +1923,11 @@
       "count": 2
     },
     {
+      "from": "in:65",
+      "to": "in:141",
+      "count": 2
+    },
+    {
       "from": "in:67",
       "to": "in:18",
       "count": 2
@@ -2222,6 +2271,11 @@
       "from": "in:138",
       "to": "in:125",
       "count": 2
+    },
+    {
+      "from": "in:142",
+      "to": "in:76",
+      "count": 1
     },
     {
       "from": "in:90",

@@ -4,7 +4,7 @@
   "date_range": "April 4, 1968",
   "query": "dr king assassination memphis lorraine motel april 1968 reaction grief",
   "blurb": "Dr. Martin Luther King Jr. was shot at the Lorraine Motel in Memphis on April 4, 1968. Movement contemporaries describe where they were and what they did in the hours and days after.",
-  "generated": "2026-05-26",
+  "generated": "2026-06-01",
   "passages": [
     {
       "entry_number": 26,
@@ -14,8 +14,8 @@
       "timestamp_end_seconds": 5584,
       "loc_item_url": "https://www.loc.gov/item/2015669197/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.2556,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0.027,
       "entry_provenance": "audit-original",
       "rerank_score": 0.7188,
       "pinecone_score": 0.5799
@@ -28,9 +28,9 @@
       "timestamp_end_seconds": 5874.4,
       "loc_item_url": "https://www.loc.gov/item/2015669207/",
       "suggested_citation": null,
-      "uncertainty_tier": "ingestion-only",
+      "uncertainty_tier": "high",
       "uncertainty_score": 0,
-      "entry_provenance": "ingestion-only",
+      "entry_provenance": "ingestion-loc-verified",
       "rerank_score": 0.6953,
       "pinecone_score": 0.5558
     },
@@ -42,8 +42,8 @@
       "timestamp_end_seconds": 3204,
       "loc_item_url": "https://www.loc.gov/item/2015669193/",
       "suggested_citation": null,
-      "uncertainty_tier": "medium",
-      "uncertainty_score": 0.1304,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6875,
       "pinecone_score": 0.6344
@@ -56,11 +56,11 @@
       "timestamp_end_seconds": 5435,
       "loc_item_url": "https://www.loc.gov/item/2016655419/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.4162,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0.0215,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6875,
-      "pinecone_score": 0.5501
+      "pinecone_score": 0.5512
     },
     {
       "entry_number": 24,
@@ -70,11 +70,11 @@
       "timestamp_end_seconds": 5499.04,
       "loc_item_url": "https://www.loc.gov/item/2015669129/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.3151,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6641,
-      "pinecone_score": 0.544
+      "pinecone_score": 0.5443
     },
     {
       "entry_number": 1,
@@ -84,8 +84,8 @@
       "timestamp_end_seconds": 2587,
       "loc_item_url": "https://www.loc.gov/item/2015669186/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.4329,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0.0411,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6133,
       "pinecone_score": 0.509
@@ -98,8 +98,8 @@
       "timestamp_end_seconds": 5653,
       "loc_item_url": "https://www.loc.gov/item/2015669148/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.2535,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.5781,
       "pinecone_score": 0.5386
@@ -112,8 +112,8 @@
       "timestamp_end_seconds": 2933,
       "loc_item_url": "https://www.loc.gov/item/2015669156/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.3,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.5781,
       "pinecone_score": 0.5398

@@ -4,7 +4,7 @@
   "date_range": "August 28, 1955",
   "query": "emmett till money mississippi 1955 abduction murder open casket trial bryant",
   "blurb": "The fourteen-year-old Chicago boy abducted from his great-uncle's home in Money, Mississippi on August 28, 1955, and murdered. Wheeler Parker Jr. is the last living witness; he and others describe the events and what followed.",
-  "generated": "2026-05-26",
+  "generated": "2026-06-01",
   "passages": [
     {
       "entry_number": 38,
@@ -14,8 +14,8 @@
       "timestamp_end_seconds": 4008,
       "loc_item_url": "https://www.loc.gov/item/2015669137/",
       "suggested_citation": null,
-      "uncertainty_tier": "publication-block",
-      "uncertainty_score": 0.6335,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0.0125,
       "entry_provenance": "audit-original",
       "rerank_score": 0.7148,
       "pinecone_score": 0.569
@@ -28,8 +28,8 @@
       "timestamp_end_seconds": 120,
       "loc_item_url": "https://www.loc.gov/item/2015669110/",
       "suggested_citation": null,
-      "uncertainty_tier": "publication-block",
-      "uncertainty_score": 0.5264,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6719,
       "pinecone_score": 0.4784
@@ -42,8 +42,8 @@
       "timestamp_end_seconds": 3957.64,
       "loc_item_url": "https://www.loc.gov/item/2015669153/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.3055,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6719,
       "pinecone_score": 0.5202
@@ -56,25 +56,11 @@
       "timestamp_end_seconds": 4637.2,
       "loc_item_url": "https://www.loc.gov/item/2015669109/",
       "suggested_citation": null,
-      "uncertainty_tier": "ingestion-only",
+      "uncertainty_tier": "high",
       "uncertainty_score": 0,
-      "entry_provenance": "ingestion-only",
+      "entry_provenance": "ingestion-loc-verified",
       "rerank_score": 0.668,
       "pinecone_score": 0.5015
-    },
-    {
-      "entry_number": 70,
-      "entry_subject": "Julia Matilda Burns",
-      "text_preview": "Well, let me just go with this because it was time here in the 1950s. And there is racial violence going on. And asking everybody about the Emmett Till case and what you remember about it. Recalling the Emmett Till case. I'm not good at the date now. But anyway, 55, 55, I was finishing high school that year. We used to",
-      "timestamp_start_seconds": 564,
-      "timestamp_end_seconds": 624,
-      "loc_item_url": "https://www.loc.gov/item/2015669172/",
-      "suggested_citation": null,
-      "uncertainty_tier": "publication-block",
-      "uncertainty_score": 0.6595,
-      "entry_provenance": "audit-original",
-      "rerank_score": 0.6094,
-      "pinecone_score": 0.4846
     }
   ]
 }

@@ -4,7 +4,7 @@
   "date_range": "September 15, 1963",
   "query": "sixteenth street baptist church bombing birmingham september 1963 four girls killed",
   "blurb": "A Ku Klux Klan bomb killed four Black girls and injured many at the 16th Street Baptist Church in Birmingham, Alabama, on September 15, 1963. Interviewees recall the day and its aftermath.",
-  "generated": "2026-05-26",
+  "generated": "2026-06-01",
   "passages": [
     {
       "entry_number": 102,
@@ -14,11 +14,11 @@
       "timestamp_end_seconds": 2595.84,
       "loc_item_url": "https://www.loc.gov/item/2015669206/",
       "suggested_citation": null,
-      "uncertainty_tier": "not-auditable",
-      "uncertainty_score": 0.7255,
+      "uncertainty_tier": "publication-block",
+      "uncertainty_score": 0.5079,
       "entry_provenance": "audit-original",
       "rerank_score": 0.7813,
-      "pinecone_score": 0.4964
+      "pinecone_score": 0.496
     },
     {
       "entry_number": 28,
@@ -28,11 +28,11 @@
       "timestamp_end_seconds": 5494.4,
       "loc_item_url": "https://www.loc.gov/item/2015669207/",
       "suggested_citation": null,
-      "uncertainty_tier": "ingestion-only",
+      "uncertainty_tier": "high",
       "uncertainty_score": 0,
-      "entry_provenance": "ingestion-only",
+      "entry_provenance": "ingestion-loc-verified",
       "rerank_score": 0.7813,
-      "pinecone_score": 0.5156
+      "pinecone_score": 0.5155
     },
     {
       "entry_number": 3,
@@ -42,11 +42,11 @@
       "timestamp_end_seconds": 3296,
       "loc_item_url": "https://www.loc.gov/item/2015669118/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.449,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.7422,
-      "pinecone_score": 0.4824
+      "pinecone_score": 0.4834
     },
     {
       "entry_number": 22,
@@ -56,8 +56,8 @@
       "timestamp_end_seconds": 2455.64,
       "loc_item_url": "https://www.loc.gov/item/2015669180/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.2727,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.707,
       "pinecone_score": 0.4681
@@ -70,11 +70,11 @@
       "timestamp_end_seconds": 3171,
       "loc_item_url": "https://www.loc.gov/item/2015669131/",
       "suggested_citation": null,
-      "uncertainty_tier": "low",
-      "uncertainty_score": 0.3617,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.7031,
-      "pinecone_score": 0.4245
+      "pinecone_score": 0.4236
     },
     {
       "entry_number": 60,
@@ -84,11 +84,11 @@
       "timestamp_end_seconds": 6359,
       "loc_item_url": "https://www.loc.gov/item/2015669178/",
       "suggested_citation": null,
-      "uncertainty_tier": "not-auditable",
-      "uncertainty_score": 0.7694,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6953,
-      "pinecone_score": 0.4663
+      "pinecone_score": 0.4667
     },
     {
       "entry_number": 33,
@@ -98,11 +98,11 @@
       "timestamp_end_seconds": 1908,
       "loc_item_url": "https://www.loc.gov/item/2016655406/",
       "suggested_citation": null,
-      "uncertainty_tier": "publication-block",
-      "uncertainty_score": 0.6306,
+      "uncertainty_tier": "high",
+      "uncertainty_score": 0,
       "entry_provenance": "audit-original",
       "rerank_score": 0.6914,
-      "pinecone_score": 0.4509
+      "pinecone_score": 0.4511
     },
     {
       "entry_number": 134,
@@ -112,11 +112,11 @@
       "timestamp_end_seconds": 10481.8,
       "loc_item_url": "https://www.loc.gov/item/2015669105/",
       "suggested_citation": null,
-      "uncertainty_tier": "ingestion-only",
+      "uncertainty_tier": "high",
       "uncertainty_score": 0,
-      "entry_provenance": "ingestion-only",
+      "entry_provenance": "ingestion-loc-verified",
       "rerank_score": 0.6836,
-      "pinecone_score": 0.4387
+      "pinecone_score": 0.4396
     }
   ]
 }
