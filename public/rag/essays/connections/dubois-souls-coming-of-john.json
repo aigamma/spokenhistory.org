@@ -12,6 +12,18 @@
     "license": "Public domain; NPG digital image released CC0",
     "source_url": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg"
   },
+  "inline_images": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/5/54/Bazoline_Estelle_Usher%2C_Atlanta_University_student%2C_half-length_portrait%2C_facing_front_LCCN98518739.jpg",
+      "alt": "Bazoline Estelle Usher, an Atlanta University student, half-length portrait, 1900",
+      "caption": "An Atlanta University student photographed in 1900, evoking the Northern schooling that transforms and estranges Du Bois's young protagonist in Of the Coming of John.",
+      "photographer": "African American Photographs Assembled for the 1900 Paris Exposition (Daniel Murray Collection)",
+      "date_taken": "1900",
+      "repository": "Library of Congress, Prints and Photographs Division",
+      "license": "Public domain",
+      "source_url": "https://www.loc.gov/item/98518739/"
+    }
+  ],
   "related_chapters": [
     {
       "entry": 40,
@@ -89,20 +101,52 @@
   "closing_image": {
     "src_external": "https://upload.wikimedia.org/wikipedia/commons/4/46/Bennett_College.jpg",
     "alt": "Bennett College, Greensboro, North Carolina, 1910 archival photograph",
-    "caption": "Bennett College in 1910. Esther M. A. Terry, the archive voice this essay sits closest to, left her family's farm in Warren County for Bennett, borne up by her community much as Du Bois's John leaves Altamaha for school.",
-    "photographer": "Unknown (W. N. Hartshorn and George W. Penniman, eds.)",
+    "caption": "Bennett College, Greensboro, North Carolina, 1910 archival photograph. Esther M. A. Terry is the corpus voice this essay connects to most.",
+    "photographer": "Unknown (W. N. Hartshorn and George W. Penniman, eds., institutional source book)",
     "date_taken": "1910",
     "repository": "Wikimedia Commons",
     "license": "Public domain (published before January 1, 1931)",
     "source_url": "https://commons.wikimedia.org/wiki/File:Bennett_College.jpg"
   },
   "connections": {
-    "summary": "Half a century before the sit-ins, Du Bois told the story of a gifted young man whose education lifts him out of his rural community and then estranges him from it, ending in violence. The oral histories below take up the same turns of that arc in the voices of people who lived them: the family sacrifice that sent a child to college, the first shock of the color line, the founding of a school, the long way home, and a lynching in the family.",
-    "method": "curated"
+    "summary": "Across the Civil Rights History Project, the oral histories below take up the questions Of the Coming of John raises. Our embedding model places it nearest the testimony of H. Jack Geiger, Joan Trumpauer Mulholland, and Ruby Sales.",
+    "method": "embedding",
+    "nearest_voices": [
+      {
+        "entry": 54,
+        "subject": "H. Jack Geiger",
+        "slug": "h-jack-geiger",
+        "score": 0.547
+      },
+      {
+        "entry": 60,
+        "subject": "Joan Trumpauer Mulholland",
+        "slug": "joan-trumpauer-mulholland",
+        "score": 0.475
+      },
+      {
+        "entry": 112,
+        "subject": "Ruby Sales",
+        "slug": "ruby-sales",
+        "score": 0.461
+      },
+      {
+        "entry": 34,
+        "subject": "Ekwueme Michael Thelwell",
+        "slug": "ekwueme-michael-thelwell",
+        "score": 0.43
+      },
+      {
+        "entry": 64,
+        "subject": "John Dudley et al",
+        "slug": "john-dudley-et-al",
+        "score": 0.402
+      }
+    ]
   },
   "shared_topics": [
-    "education-and-schools",
     "youth-student-activism",
+    "education-and-schools",
     "family-influence"
   ]
 }
