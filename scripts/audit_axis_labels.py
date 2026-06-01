@@ -15,13 +15,15 @@ uniformly across all five axes. Anchors that fix the orientation:
     which is therefore Armed Self-Defense (pole_b); Ralph Abernathy, a
     nonviolent minister, is at +0.91 = Nonviolence as Theology (pole_a).
   * sacred-secular: Abernathy +1.00 = Sacred (pole_a).
-  * southern-northern: Michael D. McCarty (Chicago) -1.00 = Northern (pole_b).
+  * southern-northern: Michael D. McCarty (Chicago) +1.00 = Northern (pole_a).
+    (Re-synced 2026-05-31: the precompute now makes Northern pole_a/positive,
+    so positive = Northern Struggle, negative = Southern Struggle.)
 
 So pole_a (POSITIVE) by axis:
   nonviolence-self-defense -> Nonviolence as Theology
   sacred-secular           -> Sacred / Theological Framing
   tactical-strategic       -> Tactical Pragmatism
-  southern-northern        -> Southern Struggle
+  southern-northern        -> Northern Struggle
   individual-collective    -> Individual Conscience
 and pole_b (NEGATIVE) is the opposite of each.
 
@@ -54,12 +56,12 @@ KEYWORDS = [
     ("strategic", "tactical-strategic", "b"),
     ("tactical pragmatism", "tactical-strategic", "a"),
     ("tactical", "tactical-strategic", "a"),
-    ("northern struggle", "southern-northern", "b"),
-    ("northern pole", "southern-northern", "b"),
-    ("northern", "southern-northern", "b"),
-    ("southern struggle", "southern-northern", "a"),
-    ("southern pole", "southern-northern", "a"),
-    ("southern", "southern-northern", "a"),
+    ("northern struggle", "southern-northern", "a"),
+    ("northern pole", "southern-northern", "a"),
+    ("northern", "southern-northern", "a"),
+    ("southern struggle", "southern-northern", "b"),
+    ("southern pole", "southern-northern", "b"),
+    ("southern", "southern-northern", "b"),
     ("collective discipline", "individual-collective", "b"),
     ("collective", "individual-collective", "b"),
     ("individual conscience", "individual-collective", "a"),
