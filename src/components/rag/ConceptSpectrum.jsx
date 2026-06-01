@@ -32,6 +32,7 @@ import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
+import FiveAxisRadar from './FiveAxisRadar';
 
 // Default lenses. X is the page's signature framing (nonviolence vs
 // armed self-defense); Y is a second, orthogonal-feeling dimension
@@ -205,6 +206,24 @@ export default function ConceptSpectrum() {
   const yAxis = axesBySlug?.get(ySlug) || null;
   const selectedProfile = selectedEntry != null ? profilesById?.get(selectedEntry) : null;
 
+  // The voice whose full multi-axis fingerprint renders below the chart:
+  // the locked dot if there is one, otherwise the hovered dot. Mirrors the
+  // Data Insights matrix (ConceptMatrix), where the radar previews on hover
+  // and pins on lock. hover.p carries only the two active-axis coordinates,
+  // so resolve the full per-axis profile by entry number.
+  const hoverProfile = hover?.p?.entry_number != null
+    ? (profilesById?.get(hover.p.entry_number) || null)
+    : null;
+  const focusProfile = selectedProfile ?? hoverProfile;
+  // Normalized [-1, 1] position per axis slug, the shape FiveAxisRadar
+  // wants. profilesById stores { n, raw } per slug; the radar plots n.
+  const radarPositions = useMemo(() => {
+    if (!focusProfile?.pos) return null;
+    const m = {};
+    for (const slug in focusProfile.pos) m[slug] = focusProfile.pos[slug].n;
+    return m;
+  }, [focusProfile]);
+
   // Run the drill-down whenever the selection or the horizontal axis
   // changes. The X pole the interviewee leans toward becomes the semantic
   // query; the entry filter constrains results to that interview only.
@@ -302,6 +321,20 @@ export default function ConceptSpectrum() {
         xShort={shortLabel(xAxis)}
         yShort={shortLabel(yAxis)}
       />
+
+      {/* The hovered-or-locked voice's full multi-axis fingerprint. The
+          two-axis scatter shows where a voice sits on the two chosen
+          lenses; this radar shows where the same voice sits on EVERY
+          concept axis at once, so the drill-down is read against the
+          whole shape, not just the two active dimensions. */}
+      {focusProfile && radarPositions && (
+        <SpectrumRadar
+          profile={focusProfile}
+          axes={data.axes}
+          positions={radarPositions}
+          locked={selectedEntry != null}
+        />
+      )}
 
       {selectedProfile && (
         <DrillDown
@@ -482,6 +515,33 @@ function AxisPickerGroup({ legend, letter, axes, currentSlug, otherSlug, otherLe
         })}
       </div>
     </div>
+  );
+}
+
+/**
+ * SpectrumRadar, the below-chart panel that renders the focused voice's
+ * full multi-axis fingerprint (the shared FiveAxisRadar) under a compact
+ * header. "Focused" is the locked dot, or the hovered dot when nothing is
+ * locked, so the radar previews on hover and pins on click, the same
+ * interaction the Data Insights matrix (ConceptMatrix) uses. The two-axis
+ * scatter answers "where on these two lenses"; this answers "where on all
+ * of them," so the position never reads as just two numbers.
+ */
+function SpectrumRadar({ profile, axes, positions, locked }) {
+  return (
+    <aside className="mt-5 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4">
+      <header className="text-center mb-1">
+        <h3 className="text-base font-medium text-stone-900 dark:text-zinc-50" style={{ fontFamily: 'Inter, sans-serif' }}>
+          {profile.entry_subject}
+        </h3>
+        <p className="text-xs text-stone-500 dark:text-zinc-400" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+          Entry #{profile.entry_number}
+          {profile.tier ? ` · audit tier ${profile.tier}` : ''}
+          {locked ? ' · locked, passages below' : ' · hovering, click a dot to lock'}
+        </p>
+      </header>
+      <FiveAxisRadar axes={axes} positions={positions} subject={profile.entry_subject} />
+    </aside>
   );
 }
 

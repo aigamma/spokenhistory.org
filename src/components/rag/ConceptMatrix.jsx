@@ -37,6 +37,7 @@ import { TIER_COLORS } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
+import FiveAxisRadar from './FiveAxisRadar';
 
 // Strategic pair selection, the concept axes give many possible pairs;
 // we surface four that read as distinct conceptual quadrants of the
@@ -630,7 +631,7 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
       {/* Radar polygon, the voice's multi-dimensional "fingerprint" in
           one visually distinctive shape. Renders ABOVE the bar chart
           so readers see the shape first, then the exact values. */}
-      <FiveAxisRadar profile={profile} axes={axes} />
+      <FiveAxisRadar axes={axes} positions={profile.positions} subject={profile.entry_subject} />
 
       {/* Horizontal mini-axes, one bar per concept axis showing
           this interviewee's position along it. Kept below the radar
@@ -672,131 +673,6 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
 
       {locked && <StrongestAxisDrillDown profile={profile} axes={axes} />}
     </aside>
-  );
-}
-
-/**
- * FiveAxisRadar, small SVG radar polygon showing the voice's
- * per-axis fingerprint (one spoke per concept axis in the data).
- * Each spoke runs from the center (pole_a end, position -1) outward
- * to the rim (pole_b end, position +1). The voice's polygon vertex
- * on each spoke is plotted at the position mapped to [0, 1] radial
- * distance.
- *
- * Two reads in one shape:
- *   - The polygon's overall "shape" tells the eye which dimensions
- *     this voice is extreme on (long spokes = strong pole_b, short
- *     spokes = strong pole_a, all-medium = neutral profile).
- *   - The same data is below in numeric bars for exact reads.
- *
- * Pure SVG, no library. Pole labels at the outer rim use short
- * text so they fit around a small chart without colliding.
- */
-function FiveAxisRadar({ profile, axes }) {
-  const isDark = useIsDark();
-  const SIZE = 260;
-  const cx = SIZE / 2;
-  const cy = SIZE / 2;
-  const rMax = SIZE * 0.35;
-  // n spokes, angles starting from -π/2 (straight up) and rotating
-  // clockwise so the first axis sits at the top.
-  const n = axes.length;
-  const spokes = axes.map((ax, i) => {
-    const angle = -Math.PI / 2 + (i / n) * Math.PI * 2;
-    const pos = profile.positions[ax.slug];
-    // Map [-1, +1] → [0, 1] radial fraction. High position (+1) = closer to
-    // pole_a per the projection math; here we put pole_a at the CENTER (r=0)
-    // and pole_b at the RIM (r=rMax) so the rim labels (pole_b) match the
-    // long-spoke direction. A long spoke = strong pole_b; short spoke =
-    // strong pole_a; baseline midring = neutral.
-    const r = typeof pos === 'number' ? rMax * ((1 - pos) / 2) : 0;
-    return {
-      ax,
-      angle,
-      pos,
-      // Voice's vertex (data point).
-      vx: cx + r * Math.cos(angle),
-      vy: cy + r * Math.sin(angle),
-      // Outer rim point (where pole_b label sits).
-      rimX: cx + rMax * Math.cos(angle),
-      rimY: cy + rMax * Math.sin(angle),
-      // Halfway point (the position=0 baseline).
-      midX: cx + (rMax / 2) * Math.cos(angle),
-      midY: cy + (rMax / 2) * Math.sin(angle),
-    };
-  });
-
-  const polygonPath = spokes
-    .map((s, i) => `${i === 0 ? 'M' : 'L'} ${s.vx.toFixed(1)} ${s.vy.toFixed(1)}`)
-    .join(' ') + ' Z';
-  const baselinePath = spokes
-    .map((s, i) => `${i === 0 ? 'M' : 'L'} ${s.midX.toFixed(1)} ${s.midY.toFixed(1)}`)
-    .join(' ') + ' Z';
-
-  return (
-    <figure className="mb-5">
-      <svg
-        viewBox={`0 0 ${SIZE} ${SIZE + 30}`}
-        width="100%"
-        style={{ maxWidth: 360, display: 'block', margin: '0 auto' }}
-        role="img"
-        aria-label={`Radar polygon of ${profile.entry_subject}'s position on ${axes.length} concept axes. Each spoke runs from the center (pole_a end) outward to the rim (pole_b end).`}
-      >
-        {/* Radar SVG gridlines/labels branch on isDark (useIsDark): rim + spoke
-            gridlines ('#e7e5e4' light / '#292524' dark), the neutral-baseline
-            polygon stroke ('#a8a29e' light / '#57534e' dark), and the pole_b rim
-            labels ('#44403c' light / '#a8a29e' dark). The voice polygon fill/
-            stroke ('#F2483C' / '#B23E2F') and vertex dots are brand colors and read
-            acceptably on dark. */}
-        {/* Outer rim circle and spoke gridlines */}
-        <circle cx={cx} cy={cy} r={rMax} fill="none" stroke={isDark ? '#292524' : '#e7e5e4'} strokeWidth={1} />
-        <circle cx={cx} cy={cy} r={rMax / 2} fill="none" stroke={isDark ? '#292524' : '#e7e5e4'} strokeDasharray="2 3" strokeWidth={1} />
-        {spokes.map((s, i) => (
-          <line key={`spoke-${i}`} x1={cx} y1={cy} x2={s.rimX} y2={s.rimY} stroke={isDark ? '#292524' : '#e7e5e4'} strokeWidth={1} />
-        ))}
-
-        {/* Faint baseline polygon at position=0 on all axes */}
-        <path d={baselinePath} fill="none" stroke={isDark ? '#57534e' : '#a8a29e'} strokeDasharray="3 3" strokeWidth={1} opacity={0.6} />
-
-        {/* The voice's polygon (fingerprint) */}
-        <path d={polygonPath} fill="#F2483C" fillOpacity={0.22} stroke="#B23E2F" strokeWidth={1.8} strokeLinejoin="round" />
-
-        {/* Vertex dots */}
-        {spokes.map((s, i) => (
-          <circle key={`vertex-${i}`} cx={s.vx} cy={s.vy} r={3.5} fill="#F2483C" stroke="#18181b" strokeWidth={1} />
-        ))}
-
-        {/* Pole_b labels at the rim */}
-        {spokes.map((s, i) => {
-          // Anchor labels based on which quadrant they're in so they
-          // don't extend off-canvas.
-          const dx = Math.cos(s.angle);
-          const dy = Math.sin(s.angle);
-          const lx = cx + (rMax + 8) * dx;
-          const ly = cy + (rMax + 8) * dy;
-          const anchor = dx > 0.3 ? 'start' : dx < -0.3 ? 'end' : 'middle';
-          const dyAdjust = dy < -0.3 ? -4 : dy > 0.3 ? 12 : 4;
-          return (
-            <text
-              key={`label-${i}`}
-              x={lx}
-              y={ly + dyAdjust - 4}
-              fontSize={9}
-              textAnchor={anchor}
-              fill={isDark ? '#a8a29e' : '#44403c'}
-              fontFamily="Inter, ui-sans-serif, system-ui, sans-serif"
-            >
-              {s.ax.pole_b.label}
-            </text>
-          );
-        })}
-      </svg>
-      <figcaption className="text-xs text-stone-500 text-center mt-1 px-2">
-        {axes.length}-axis fingerprint. Each spoke runs from the center (the
-        opposite pole) outward to the labeled pole. Dashed inner ring
-        is the all-neutral baseline.
-      </figcaption>
-    </figure>
   );
 }
 
