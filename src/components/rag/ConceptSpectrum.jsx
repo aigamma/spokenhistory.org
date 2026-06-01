@@ -41,6 +41,13 @@ import FiveAxisRadar from './FiveAxisRadar';
 const DEFAULT_X = 'nonviolence-self-defense';
 const DEFAULT_Y = 'individual-collective';
 
+// The radar fingerprint below the chart is permanent and never blank; when
+// no dot is hovered or locked it shows this voice. Entry 22 (Dr. Cleveland
+// Sellers) is a recognizable SNCC organizer whose fingerprint is the most
+// asymmetric in the corpus (the widest spread across the seven axes), so the
+// default shape is visually interesting rather than a neutral blob.
+const DEFAULT_RADAR_ENTRY = 22;
+
 // Compact two-word labels for the axis toggle pills. The chart itself
 // uses the full pole labels; the pills stay short so the control panel
 // reads at a glance. Falls back to first-word-of-each-pole if a slug
@@ -206,15 +213,24 @@ export default function ConceptSpectrum() {
   const yAxis = axesBySlug?.get(ySlug) || null;
   const selectedProfile = selectedEntry != null ? profilesById?.get(selectedEntry) : null;
 
-  // The voice whose full multi-axis fingerprint renders below the chart:
-  // the locked dot if there is one, otherwise the hovered dot. Mirrors the
-  // Data Insights matrix (ConceptMatrix), where the radar previews on hover
-  // and pins on lock. hover.p carries only the two active-axis coordinates,
+  // The radar fingerprint below the chart is a PERMANENT fixture, never
+  // blank: hovering a dot previews it, a locked dot pins it, and with
+  // neither it falls back to a default voice so there is always a shape on
+  // screen to study. hover.p carries only the two active-axis coordinates,
   // so resolve the full per-axis profile by entry number.
   const hoverProfile = hover?.p?.entry_number != null
     ? (profilesById?.get(hover.p.entry_number) || null)
     : null;
-  const focusProfile = selectedProfile ?? hoverProfile;
+  // Default voice when nothing is hovered or locked. Falls back to the first
+  // profile if the data no longer carries DEFAULT_RADAR_ENTRY.
+  const defaultProfile = useMemo(() => {
+    if (!profilesById) return null;
+    return profilesById.get(DEFAULT_RADAR_ENTRY) || profilesById.values().next().value || null;
+  }, [profilesById]);
+  // Hover overrides everything (a transient preview); otherwise the locked
+  // dot; otherwise the default. focusMode drives the panel's hint line.
+  const focusProfile = hoverProfile ?? selectedProfile ?? defaultProfile;
+  const focusMode = hoverProfile ? 'hover' : selectedProfile ? 'locked' : 'default';
   // Normalized [-1, 1] position per axis slug, the shape FiveAxisRadar
   // wants. profilesById stores { n, raw } per slug; the radar plots n.
   const radarPositions = useMemo(() => {
@@ -322,17 +338,18 @@ export default function ConceptSpectrum() {
         yShort={shortLabel(yAxis)}
       />
 
-      {/* The hovered-or-locked voice's full multi-axis fingerprint. The
-          two-axis scatter shows where a voice sits on the two chosen
-          lenses; this radar shows where the same voice sits on EVERY
-          concept axis at once, so the drill-down is read against the
-          whole shape, not just the two active dimensions. */}
+      {/* A voice's full multi-axis fingerprint, kept on screen permanently
+          (defaults to a sample voice, hovering any dot overrides it). The
+          two-axis scatter shows where a voice sits on the two chosen lenses;
+          this radar shows where the same voice sits on EVERY concept axis at
+          once, so the position is read against the whole shape, not just the
+          two active dimensions. */}
       {focusProfile && radarPositions && (
         <SpectrumRadar
           profile={focusProfile}
           axes={data.axes}
           positions={radarPositions}
-          locked={selectedEntry != null}
+          mode={focusMode}
         />
       )}
 
@@ -519,15 +536,20 @@ function AxisPickerGroup({ legend, letter, axes, currentSlug, otherSlug, otherLe
 }
 
 /**
- * SpectrumRadar, the below-chart panel that renders the focused voice's
- * full multi-axis fingerprint (the shared FiveAxisRadar) under a compact
- * header. "Focused" is the locked dot, or the hovered dot when nothing is
- * locked, so the radar previews on hover and pins on click, the same
- * interaction the Data Insights matrix (ConceptMatrix) uses. The two-axis
- * scatter answers "where on these two lenses"; this answers "where on all
- * of them," so the position never reads as just two numbers.
+ * SpectrumRadar, the permanent below-chart panel that renders the focused
+ * voice's full multi-axis fingerprint (the shared FiveAxisRadar) under a
+ * compact header. It is never blank: `mode` is 'hover' while a dot is
+ * hovered, 'locked' once a dot is clicked (passages render below), and
+ * 'default' otherwise (a sample voice so the shape is always on screen).
+ * The two-axis scatter answers "where on these two lenses"; this answers
+ * "where on all of them," so the position never reads as just two numbers.
  */
-function SpectrumRadar({ profile, axes, positions, locked }) {
+function SpectrumRadar({ profile, axes, positions, mode }) {
+  const hint = mode === 'locked'
+    ? ' · locked, passages below'
+    : mode === 'hover'
+      ? ' · previewing on hover'
+      : ' · sample voice, hover any dot or click to pin';
   return (
     <aside className="mt-5 rounded-lg border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 p-4">
       <header className="text-center mb-1">
@@ -537,7 +559,7 @@ function SpectrumRadar({ profile, axes, positions, locked }) {
         <p className="text-xs text-stone-500 dark:text-zinc-400" style={{ fontFamily: 'Chivo Mono, monospace' }}>
           Entry #{profile.entry_number}
           {profile.tier ? ` · audit tier ${profile.tier}` : ''}
-          {locked ? ' · locked, passages below' : ' · hovering, click a dot to lock'}
+          {hint}
         </p>
       </header>
       <FiveAxisRadar axes={axes} positions={positions} subject={profile.entry_subject} />
