@@ -94,3 +94,38 @@ The ONE human decision is the per-item license verification, recorded on the can
 ## Provenance
 
 `output/essays-sources-report.md` lists every hosted essay with citation, license, and source, plus the documented candidates. It is the institutional provenance record and the reporting export.
+
+## Per-essay connections (the EssayPage cross-archive layer)
+
+Each essay page (`src/pages/EssayPage.jsx`) renders as an image-led integration hub from a per-essay file at `connections/<slug>.json`, the same precomputed-substrate pattern the person pages use. That file carries:
+
+- `hero_image`: a cited public-domain portrait of the author (the `photo` schema from the person catalog: `src_external`, `alt`, `caption`, `photographer`, `date_taken`, `repository`, `license`, `source_url`).
+- `inline_images[]`: 1 to 2 cited public-domain period images woven through the body (a one-room school, cotton sharecroppers, the Fisk Jubilee Singers, and so on). Same schema.
+- `related_chapters[]`: 5 to 6 oral-history chapters, each `{ entry, subject, slug, part_title, chapter_title, topic, start, end, why }`, rendered as click-to-play `LocVideoEmbed` cards (the Table of Contents model). Every tuple is validated against `toc.json`.
+- `top_voice` + `closing_image`: the single closest corpus voice and a cited closing image (that voice's portrait, or a fallback gallery image from their person page).
+- `connections`: `{ summary, method, nearest_voices[] }`, the data-driven footer. `nearest_voices` is embedding-derived (one cosine score per voice).
+- `primary_topic`, `shared_topics`: topic ids from `topics.json`.
+
+### How it is built
+
+The connections files are assembled deterministically from committed inputs by `scripts/build_essay_connections.py`. The inputs live under `connections/` with an underscore prefix and are NOT read by the app:
+
+- `_author_portraits.json`: the 9 author hero portraits, sourced as verified public-domain images via the person-page image workflow in `public/rag/people/README.md`.
+- `_inline_g*.json`: the inline period images, keyed by slug.
+- `_curation_g*.json`: the curated chapter picks plus `top_voice` per essay (a Claude editorial pass, the same kind of editorial layer as `tours.json` and `quotes.json`).
+- `_embedding_neighbors.json`: the embedding-derived nearest voices, produced by `rag/precompute_essay_connections.mjs` (Voyage `voyage-3` query embed, Pinecone `civil-rights` index, `rerank-2`, filtered to `chunk_type='transcript_segment'`).
+
+The assembler validates every chapter `(entry, chapter_title, start)` against `toc.json` and overrides `start` / `end` / `topic` / `part_title` / `subject` with toc's authoritative values, strips `(PARTIAL)` tags and em dashes from our chrome (this directory sits under `essays/`, which `strip_em_dashes.mjs` skips to protect the verbatim essay bodies, so the assembler strips its own chrome), and resolves the closing image from the top voice's person page.
+
+### Regenerate
+
+```
+# refresh embedding neighbors (needs rag/.env.local: Pinecone + Voyage)
+node --env-file=rag/.env.local rag/precompute_essay_connections.mjs
+# rebuild every connections file from the inputs
+python scripts/build_essay_connections.py
+```
+
+### Image discipline
+
+Public domain or open license only, fully cited, identical to the person catalog (`public/rag/people/README.md`). Wikimedia `upload.wikimedia.org` URLs are copied verbatim (the `/x/xx/` segment is an MD5 prefix of the filename; recompute and compare it, never hand-write it). Library of Congress `tile.loc.gov` media URLs are allowed and are accessed linearly (the `feedback_linear_loc_api` discipline). After adding images, verify URL integrity: the MD5 prefix for every Wikimedia URL, and a live 200/206 check for the LoC tiles.
