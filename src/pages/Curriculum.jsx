@@ -126,6 +126,10 @@ export default function Curriculum() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(null);
   const [status, setStatus] = useState('loading');
+  // Click-to-play: which clip's player is mounted. Only one mounts at a time,
+  // and only on an explicit click, so no clip ever buffers (or plays audio) in
+  // the background. Cleared when the grade changes (band materials swap).
+  const [playingKey, setPlayingKey] = useState(null);
 
   // Selected grade: seeded from ?grade= (clamped) on first render, default 5.
   const [grade, setGrade] = useState(() =>
@@ -162,6 +166,11 @@ export default function Curriculum() {
     next.set('grade', String(grade));
     setSearchParams(next, { replace: true });
   }, [grade, searchParams, setSearchParams]);
+
+  // Changing grade swaps the band's materials, so unmount any playing clip.
+  useEffect(() => {
+    setPlayingKey(null);
+  }, [grade]);
 
   const band = useMemo(
     () => (data ? bandForGrade(data.bands, grade) : null),
@@ -454,6 +463,7 @@ export default function Curriculum() {
                     {band.materials.map((m, i) => {
                       if (m && m.type === 'clip') {
                         const hasEntry = m.entry_number != null;
+                        const clipKey = `${m.entry_number}-${m.start_seconds ?? 0}-${i}`;
                         return (
                           <div
                             key={i}
@@ -474,13 +484,28 @@ export default function Curriculum() {
                             </div>
                             {hasEntry ? (
                               <>
-                                <div className="print:hidden">
-                                  <LocVideoEmbed
-                                    entryNumber={m.entry_number}
-                                    startSeconds={m.start_seconds || 0}
-                                    endSeconds={m.end_seconds ?? null}
-                                  />
-                                </div>
+                                {playingKey === clipKey ? (
+                                  <div className="print:hidden">
+                                    <LocVideoEmbed
+                                      entryNumber={m.entry_number}
+                                      startSeconds={m.start_seconds || 0}
+                                      endSeconds={m.end_seconds ?? null}
+                                      autoPlay
+                                    />
+                                  </div>
+                                ) : (
+                                  <button
+                                    type="button"
+                                    onClick={() => setPlayingKey(clipKey)}
+                                    className="print:hidden inline-flex items-center gap-2 rounded-md bg-civil-red-strong px-3 py-2 text-sm font-medium text-white hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                                  >
+                                    <Film className="w-4 h-4" aria-hidden="true" />
+                                    Play Clip
+                                    {m.start_seconds != null && m.end_seconds != null
+                                      ? ` (${fmtClock(m.end_seconds - m.start_seconds)})`
+                                      : ''}
+                                  </button>
+                                )}
                                 <p className="hidden print:block text-sm text-stone-700">
                                   Clip reference: Interview {m.entry_number}
                                   {m.start_seconds != null
