@@ -1,0 +1,142 @@
+{
+  "_comment": "Golden retrieval set for the civil-rights corpus. Each row is one query plus an `expect` block of assertions the runner checks against the live retrieval (rag/eval/run_eval.mjs). Assertions are deliberately loose where retrieval rank can legitimately shift between reingests (prefer top_speaker_substring / must_include_entry / min_top_score over brittle exact-rank checks) and tight only where a metadata filter pins the result. Entry numbers below were verified against public/rag/toc.json on 2026-06-01. See README.md in this directory for the assertion vocabulary and how to add a query.",
+  "_tier_order_best_to_worst": ["low", "medium", "high", "publication-block", "ingestion-only", "not-auditable"],
+  "queries": [
+    {
+      "query": "nonviolence as theology vs. tactic",
+      "expect": {
+        "min_top_score": 0.4,
+        "max_top_tier": "not-auditable"
+      },
+      "topN": 3,
+      "note": "Canonical demo query (DEMO_SCRIPT.md). Open-ended thematic retrieval; the demo surfaces SNCC voices framing nonviolence as belief vs. method. Loose score floor only, the exact top voice can shift across reingests."
+    },
+    {
+      "query": "nonviolence as a way of life rather than a strategy",
+      "expect": {
+        "must_include_entry": [66],
+        "min_top_score": 0.4
+      },
+      "topN": 6,
+      "dedupeByEntry": true,
+      "note": "Joseph Echols Lowery (entry 66) was the documented hit for nonviolence-as-theology in the MCP smoke test. Deduped so distinct interviewees fill the slots; assert he appears somewhere in the top 6, not that he ranks first."
+    },
+    {
+      "query": "my cousin Emmett Till",
+      "expect": {
+        "top_entry_number": 125,
+        "top_speaker_substring": "Wheeler Parker"
+      },
+      "topN": 3,
+      "entry_number": 125,
+      "note": "Metadata-filter precision demo (DEMO_SCRIPT.md). The entry_number filter pins retrieval to Wheeler Parker, Jr. (entry 125), so both the top entry number and the speaker are deterministic and safe to assert exactly."
+    },
+    {
+      "query": "the dreamer can be killed but not the dream",
+      "expect": {
+        "must_include_entry": [28],
+        "top_speaker_substring": "Abernathy"
+      },
+      "topN": 3,
+      "note": "Quote-finder pattern (DEMO_SCRIPT.md): a half-remembered paraphrase should resolve to the canonical primary source, Ralph David Abernathy in the Abernathy family interview (entry 28)."
+    },
+    {
+      "query": "bloody sunday edmund pettus bridge first-person account",
+      "expect": {
+        "must_include_entry": [133],
+        "min_top_score": 0.4
+      },
+      "topN": 5,
+      "note": "Alfred Moldovan (entry 133) describes the medical-team response on Bloody Sunday (DEMO_SCRIPT.md). Asserted as must_include rather than top-1 because several interviewees speak to this event and rank order is not guaranteed."
+    },
+    {
+      "query": "bloody sunday edmund pettus bridge first-person account",
+      "expect": {
+        "min_top_score": 0.4,
+        "min_distinct_entries": 3
+      },
+      "topN": 4,
+      "dedupeByEntry": true,
+      "note": "Same event, polyphonic view. dedupeByEntry should return one passage per interviewee; this row checks the deduped path yields at least three distinct voices on a heavily-covered event."
+    },
+    {
+      "query": "sixteenth street baptist church bombing september 1963 four girls killed",
+      "expect": {
+        "min_top_score": 0.4,
+        "max_top_tier": "not-auditable"
+      },
+      "topN": 3,
+      "note": "Topical event retrieval anchored to a specific dated atrocity (precompute_panels.mjs event slug 16th-street-baptist-bombing-1963). Score floor plus tier ceiling; no single speaker is canonical here."
+    },
+    {
+      "query": "freedom summer mississippi 1964 voter registration freedom schools",
+      "expect": {
+        "min_top_score": 0.4,
+        "min_distinct_entries": 3
+      },
+      "topN": 4,
+      "dedupeByEntry": true,
+      "note": "Freedom Summer is one of the most heavily covered campaigns in the corpus; the deduped query should comfortably surface three or more distinct interviewees."
+    },
+    {
+      "query": "young SNCC organizers turning away from nonviolence toward Black Power",
+      "expect": {
+        "min_top_score": 0.4,
+        "min_distinct_entries": 3
+      },
+      "topN": 4,
+      "dedupeByEntry": true,
+      "note": "Multi-perspective surfacing on a contested ideological turn (demo-queries.sh black-power). Polyphonic check: at least three distinct voices, loose score floor."
+    },
+    {
+      "query": "Dr. Martin Luther King assassination Memphis Lorraine Motel April 1968 grief and reaction",
+      "expect": {
+        "min_top_score": 0.4
+      },
+      "topN": 3,
+      "note": "Widely-discussed event (precompute_panels.mjs mlk-assassination-1968). Many interviewees recall where they were; only a score floor is safe to assert."
+    },
+    {
+      "query": "voting rights act 1965 federal enforcement preclearance",
+      "expect": {
+        "min_top_score": 0.4
+      },
+      "topN": 3,
+      "note": "Legislative-outcome retrieval (precompute_panels.mjs voting-rights-act-1965). Confirms the index resolves a policy-level query, not only event narrative."
+    },
+    {
+      "query": "Black Panther Party Oakland armed self-defense police patrols",
+      "expect": {
+        "min_top_score": 0.4
+      },
+      "topN": 3,
+      "note": "Distinctive west-coast / BPP facet (Aaron Dixon, Elmer Dixon, Kathleen Cleaver cluster). Guards against a reingest that silently drops or mis-embeds the BPP interviews. Score floor only."
+    },
+    {
+      "query": "Highlander Folk School citizenship schools teaching people to read to register to vote",
+      "expect": {
+        "min_top_score": 0.35
+      },
+      "topN": 3,
+      "note": "Narrow, lower-frequency topic (citizenship-education pipeline). Slightly lower score floor because the vocabulary is specific; presence of any solid match is the signal."
+    },
+    {
+      "query": "sharecropping plantation economy and the cost of registering to vote in the Mississippi Delta",
+      "expect": {
+        "min_top_score": 0.4,
+        "min_distinct_entries": 3
+      },
+      "topN": 4,
+      "dedupeByEntry": true,
+      "note": "Geographic + economic facet (precompute_panels.mjs geography slug mississippi-delta). Deduped multi-voice check on a regionally-anchored theme."
+    },
+    {
+      "query": "March on Washington for Jobs and Freedom August 1963 Lincoln Memorial",
+      "expect": {
+        "min_top_score": 0.4
+      },
+      "topN": 3,
+      "note": "High-recognition national event (precompute_panels.mjs march-on-washington-1963). Sanity floor that the single most iconic event still retrieves strongly after a reingest."
+    }
+  ]
+}
