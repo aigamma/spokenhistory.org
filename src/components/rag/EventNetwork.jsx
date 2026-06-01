@@ -320,7 +320,7 @@ function EventNetworkGraph({
     // Labels: every event node is labeled (events are the headline content and
     // there are only ~67 of them). Person labels are omitted by default to
     // avoid an ant-line of names over the dense interviewee cloud; the person
-    // name is in the hover <title> and the selection panel.
+    // name appears in the details panel when a person node is clicked.
     nodeSel
       .filter((d) => d.kind === 'event')
       .append('text')
@@ -362,12 +362,10 @@ function EventNetworkGraph({
         }
       });
 
-    // <title> for native tooltip + screen reader.
-    nodeSel.append('title').text((d) =>
-      d.kind === 'event'
-        ? `${d.label}\nEngaged by ${d.interviewee_count} ${d.interviewee_count === 1 ? 'interviewee' : 'interviewees'}\nClick to hear the clips`
-        : `${d.label}\nInterview #${d.entry_number}\nClick to open the interview`,
-    );
+    // No per-node <title>: the native browser tooltip popped up over the graph
+    // on every hover and blocked the network. Event nodes carry always-on
+    // labels, a clicked node opens its details/route, and the SVG has a
+    // graph-level aria-label for assistive tech.
 
     // Drag, restart while dragging so the dragged node's pull is felt.
     const dragBehavior = d3

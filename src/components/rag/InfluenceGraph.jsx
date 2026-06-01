@@ -183,10 +183,10 @@ export default function InfluenceGraph({
         if (onSelect) onSelect(d);
       });
 
-    // <title> for native browser tooltip + screen reader.
-    nodeSel.append('title').text((d) =>
-      `${d.name}\n${d.in_corpus ? 'In corpus' : 'External figure'}\nDiscussed by ${d.discussed_by_count} other ${d.discussed_by_count === 1 ? 'interview' : 'interviews'}`,
-    );
+    // No per-node <title>: the native browser tooltip popped up over the graph
+    // on every hover and blocked the network. Node identity comes from the
+    // always-on labels plus the click-to-open details panel below; the SVG
+    // carries a graph-level aria-label for assistive tech.
 
     // Drag, restart the simulation while dragging so the dragged
     // node's pull is felt by its neighbors.

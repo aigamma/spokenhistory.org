@@ -125,7 +125,7 @@ function TourStop({ stop, idx, tourTitle }) {
         type="button"
         onClick={() => setExpanded((e) => !e)}
         aria-expanded={expanded}
-        className="w-full text-left p-4 hover:bg-stone-50 transition-colors"
+        className="w-full text-left p-4"
       >
         <header className="flex items-baseline justify-between gap-2 mb-1">
           <h4 className="text-base font-medium text-stone-900">

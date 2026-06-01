@@ -15,7 +15,6 @@ import {
   QuoteOfTheDay,
   TourPages,
   ConceptMatrix,
-  InterviewMap,
   AuditProvenance,
 } from '../components/rag';
 import { TIER_VOCABULARY, TIER_BADGE, summarizeAuditPills } from '../components/rag/tiers';
@@ -81,7 +80,7 @@ function useCorpusData() {
  *     "Data Insights" (the menu label), so there is no "Concepts &
  *     Ideas" group (Dustin, 2026-05-30). The remaining toggles follow
  *     in three intent groups:
- *       Maps of the Archive (InterviewMap, Themes, Network, Atlas)
+ *       Maps of the Archive (Themes, Network, Atlas)
  *       Find a Moment       (Quote Finder, Related People)
  *       Curated Paths       (Tours, Famous Names, Quote of the Day)
  *   - About This Page aside at the bottom carrying AuditProvenance
@@ -98,16 +97,16 @@ function useCorpusData() {
  * tier), /rag/related/entry-N.json (semantic neighbors per entry),
  * and /rag/summaries/*.json (themes, tours, famous-names, etc).
  *
- * The legacy Constellation tab (a PCA-based scatter) was replaced by
- * InterviewMap (the UMAP-substrate scatter with names labeled and
- * a search field). Constellation is still imported and gated on a
- * never-true tab id so the component code path stays warm but the
- * surface is not user-reachable.
+ * The legacy Constellation tab (a PCA-based scatter) and the later
+ * InterviewMap (UMAP scatter) were both retired from the nav.
+ * Constellation is still imported and gated on a never-true tab id so
+ * the component code path stays warm but the surface is not
+ * user-reachable.
  */
 // Tab IDs are reflected in window.location.hash so URLs like
 // /rag-explore#map are shareable and deep-linkable.
 const TABS = [
-  'quote', 'compare', 'map', 'related',
+  'quote', 'compare', 'related',
   'names', 'themes',
   'atlas', 'network', 'events', 'tours', 'quote-of-day',
   'lenses',
@@ -144,7 +143,6 @@ const VALID_TAB = (t) => {
 // featured lead pill above the grouped toggles.
 const TAB_ORDER = [
   { id: 'lenses', label: 'Ideological Spectrums', featured: true },
-  { id: 'map', label: 'Interview Map' },
   { id: 'related', label: 'Related People' },
   { id: 'quote', label: 'Quote Finder' },
   { id: 'compare', label: 'Compare Voices' },
@@ -164,7 +162,7 @@ const TAB_ORDER = [
 const TAB_GROUPS = [
   {
     label: 'Maps of the Archive',
-    tabs: ['map', 'themes', 'network', 'events', 'atlas'],
+    tabs: ['themes', 'network', 'events', 'atlas'],
   },
   {
     label: 'Find a Moment',
@@ -184,7 +182,6 @@ const TAB_LABELS = {
   lenses: 'Ideological Spectrums',
   quote: 'Quote Finder',
   compare: 'Compare Voices',
-  map: 'Interview Map',
   related: 'Related People',
   themes: 'Themes',
   names: 'Famous Names',
@@ -465,45 +462,12 @@ export default function RagExplore() {
             </div>
           )}
 
-          {tab === 'map' && (
-            <div>
-              <h2
-                className="text-stone-900 text-2xl sm:text-3xl font-medium mb-3"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                Interview Map
-              </h2>
-              <InterviewMap
-                onNavigateToRelated={(entryNumber) => {
-                  // Pivot: from "this person on the map" to "this
-                  // person's semantic neighbors" in Semantic Overlap.
-                  setRelatedEntry(entryNumber);
-                  setSearchInput('');
-                  setTab('related');
-                }}
-                onPlaceOnSpectrum={(entryNumber) => {
-                  // Pivot: from "this person on the map" to "this
-                  // person's position on the spectrum" (the default
-                  // "Ideological Spectrums" toggle). Mirrors the Related
-                  // People cross-tab button. The tab-change effect
-                  // scrolls the spectrum into view.
-                  const next = new URLSearchParams(searchParams);
-                  next.set('spectrumEntry', String(entryNumber));
-                  next.set('tab', 'lenses');
-                  setSearchParams(next, { replace: false });
-                  setTab('lenses');
-                }}
-              />
-            </div>
-          )}
-
           {/* Legacy Constellation block, kept gated on a never-true
               tab id so the component import stays warm but the surface
               is not user-reachable. The old PCA-based Constellation
-              gave Eric a "sphere of dots with no axis guidance" UX;
-              InterviewMap above replaces it with the Atlas UMAP at
-              interview-scale + names labeled + search + empirical
-              axis labels. */}
+              gave Eric a "sphere of dots with no axis guidance" UX; it
+              and the later Interview Map surface were both retired from
+              the nav. */}
           {tab === '__legacy_constellation_disabled__' && (
             <div>
               <Constellation
@@ -607,16 +571,12 @@ export default function RagExplore() {
                 )}
               </div>
 
-              {/* Cross-tab affordance. The same person can be viewed
-                  through two other surfaces on this page:
-                    - Concept Spectrum (one-axis lens at the top of the
-                      page) via the ?spectrumEntry=N param that
-                      ConceptSpectrum reads.
-                    - Interview Map (UMAP scatter on the 'map' tab) via
-                      the ?entry=N param that InterviewMap reads on
-                      first render after data loads.
-                  Buttons set the URL params (so the receiving component
-                  picks up the entry) and switch tab / scroll as needed. */}
+              {/* Cross-tab affordance. The same person can be placed on
+                  the Concept Spectrum (the lens at the top of the page)
+                  via the ?spectrumEntry=N param that ConceptSpectrum
+                  reads. The button sets the URL param (so the receiving
+                  component picks up the entry) and switches tab / scrolls
+                  as needed. */}
               {relatedEntry != null && (
                 <div className="mb-6 flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm">
                   <span className="text-stone-600">Currently exploring:</span>
@@ -637,20 +597,6 @@ export default function RagExplore() {
                     className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
                   >
                     View on the Spectrums &rarr;
-                  </button>
-                  <span aria-hidden className="text-stone-400">·</span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      const next = new URLSearchParams(searchParams);
-                      next.set('tab', 'map');
-                      next.set('entry', String(relatedEntry));
-                      setSearchParams(next, { replace: false });
-                      setTab('map');
-                    }}
-                    className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline font-medium"
-                  >
-                    View on Interview Map &rarr;
                   </button>
                 </div>
               )}
