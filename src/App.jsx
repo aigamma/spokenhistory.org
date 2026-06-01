@@ -22,6 +22,7 @@ import PersonPage from './pages/PersonPage'
 import PeopleCatalog from './pages/PeopleCatalog'
 import MachineAudit from './pages/MachineAudit'
 import TableOfContents from './pages/TableOfContents'
+import Curriculum from './pages/Curriculum'
 import NotFound from './pages/NotFound'
 
 
@@ -140,6 +141,22 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <TableOfContents />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      {/* Curriculum pilot (2026-05-31): a teacher slides to a grade
+          (K through 12) and the page assembles a grade-leveled lesson
+          unit out of the archive. Band core (objectives, materials,
+          activities) merges with per-grade tuning (reading level,
+          essential question, vocabulary, scaffolding). Clip materials
+          play as bounded LoC segments via LocVideoEmbed. Data:
+          public/rag/curriculum/youth-and-student-activism.json, loaded
+          defensively so the page degrades gracefully while authored. */}
+      <Route path="/curriculum" element={
+        <ProtectedRoute>
+          <Layout>
+            <Curriculum />
           </Layout>
         </ProtectedRoute>
       } />
