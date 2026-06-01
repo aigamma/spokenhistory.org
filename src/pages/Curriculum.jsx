@@ -126,15 +126,6 @@ export default function Curriculum() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(null);
   const [status, setStatus] = useState('loading');
-  // Click-to-play: which clip's player is mounted. Only one mounts at a time,
-  // and only on an explicit click, so no clip ever buffers (or plays audio) in
-  // the background. The key persists across grade changes so a clip stays
-  // expanded while you slide between grades in the same band (a stale key from
-  // another band matches nothing and renders no player). This is what lets a
-  // presenter keep a clip open while stepping through grades to show the
-  // per-grade variance in the lesson body above.
-  const [playingKey, setPlayingKey] = useState(null);
-
   // Selected grade: seeded from ?grade= (clamped) on first render, default 5.
   const [grade, setGrade] = useState(() =>
     normalizeGrade(searchParams.get('grade'), DEFAULT_GRADE),
@@ -533,11 +524,18 @@ export default function Curriculum() {
               )}
 
               {/* Materials: clips (bounded LoC player) + person cards (band).
-                  Placed last (just above Sources) so the tall, expandable video
-                  players sit at the foot of the lesson. Everything that varies
-                  grade to grade reads above them, which keeps the per-grade
-                  variance grouped and scannable during a demo while a clip can
-                  stay open below. */}
+                  Placed last (just above Sources) so the tall video players sit
+                  at the foot of the lesson, after every grade-varying section.
+                  The players render EXPANDED on load (no click-to-play gate):
+                  now that they live at the end, a reader scrolling down meets
+                  them straight away, so hiding them behind a button only made a
+                  video an accidental easter egg. Reading the discussion
+                  questions and the rest of the plan before reaching the footage
+                  is also the intended order, watch critically, not passively.
+                  Expanding all is cheap and quiet: each player is preload
+                  "metadata" with autoPlay off, so it fetches only its poster
+                  plus the seek index and never plays audio until the reader
+                  presses play (then the bounded-clip stop still applies). */}
               {band && Array.isArray(band.materials) && band.materials.length > 0 && (
                 <>
                   <SectionHeading>Materials From the Archive</SectionHeading>
@@ -545,7 +543,10 @@ export default function Curriculum() {
                     {band.materials.map((m, i) => {
                       if (m && m.type === 'clip') {
                         const hasEntry = m.entry_number != null;
-                        const clipKey = `${m.entry_number}-${m.start_seconds ?? 0}-${i}`;
+                        const clipLen =
+                          m.start_seconds != null && m.end_seconds != null
+                            ? fmtClock(m.end_seconds - m.start_seconds)
+                            : null;
                         return (
                           <div
                             key={i}
@@ -558,36 +559,23 @@ export default function Curriculum() {
                               >
                                 {m.clip_title || 'Archive Clip'}
                               </p>
-                              {m.interviewee && (
+                              {(m.interviewee || clipLen) && (
                                 <p className="text-sm text-stone-500 dark:text-stone-400">
                                   {m.interviewee}
+                                  {m.interviewee && clipLen ? ' · ' : ''}
+                                  {clipLen ? `Clip length ${clipLen}` : ''}
                                 </p>
                               )}
                             </div>
                             {hasEntry ? (
                               <>
-                                {playingKey === clipKey ? (
-                                  <div className="print:hidden">
-                                    <LocVideoEmbed
-                                      entryNumber={m.entry_number}
-                                      startSeconds={m.start_seconds || 0}
-                                      endSeconds={m.end_seconds ?? null}
-                                      autoPlay
-                                    />
-                                  </div>
-                                ) : (
-                                  <button
-                                    type="button"
-                                    onClick={() => setPlayingKey(clipKey)}
-                                    className="print:hidden inline-flex items-center gap-2 rounded-md bg-civil-red-strong px-3 py-2 text-sm font-medium text-white hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
-                                  >
-                                    <Film className="w-4 h-4" aria-hidden="true" />
-                                    Play Clip
-                                    {m.start_seconds != null && m.end_seconds != null
-                                      ? ` (${fmtClock(m.end_seconds - m.start_seconds)})`
-                                      : ''}
-                                  </button>
-                                )}
+                                <div className="print:hidden">
+                                  <LocVideoEmbed
+                                    entryNumber={m.entry_number}
+                                    startSeconds={m.start_seconds || 0}
+                                    endSeconds={m.end_seconds ?? null}
+                                  />
+                                </div>
                                 <p className="hidden print:block text-sm text-stone-700">
                                   Clip reference: Interview {m.entry_number}
                                   {m.start_seconds != null
