@@ -128,7 +128,11 @@ export default function Curriculum() {
   const [status, setStatus] = useState('loading');
   // Click-to-play: which clip's player is mounted. Only one mounts at a time,
   // and only on an explicit click, so no clip ever buffers (or plays audio) in
-  // the background. Cleared when the grade changes (band materials swap).
+  // the background. The key persists across grade changes so a clip stays
+  // expanded while you slide between grades in the same band (a stale key from
+  // another band matches nothing and renders no player). This is what lets a
+  // presenter keep a clip open while stepping through grades to show the
+  // per-grade variance in the lesson body above.
   const [playingKey, setPlayingKey] = useState(null);
 
   // Selected grade: seeded from ?grade= (clamped) on first render, default 5.
@@ -166,11 +170,6 @@ export default function Curriculum() {
     next.set('grade', String(grade));
     setSearchParams(next, { replace: true });
   }, [grade, searchParams, setSearchParams]);
-
-  // Changing grade swaps the band's materials, so unmount any playing clip.
-  useEffect(() => {
-    setPlayingKey(null);
-  }, [grade]);
 
   const band = useMemo(
     () => (data ? bandForGrade(data.bands, grade) : null),
@@ -455,7 +454,90 @@ export default function Curriculum() {
                   </>
                 )}
 
-              {/* Materials: clips (bounded LoC player) + person cards (band). */}
+              {/* Activities (band, numbered). */}
+              {band && Array.isArray(band.activities) && band.activities.length > 0 && (
+                <>
+                  <SectionHeading>Activities</SectionHeading>
+                  <ol className="list-decimal pl-6 space-y-2 text-stone-800 dark:text-stone-200">
+                    {band.activities.map((a, i) => (
+                      <li key={i} className="leading-relaxed pl-1">
+                        {a}
+                      </li>
+                    ))}
+                  </ol>
+                </>
+              )}
+
+              {/* Discussion Questions (band pool, sliced to the grade number:
+                  K and 1 get one, grade 12 gets twelve, ordered by depth). */}
+              {band && headFirst(band.discussion_questions, qCount(grade)).length > 0 && (
+                  <>
+                    <SectionHeading>Discussion Questions</SectionHeading>
+                    <p className="-mt-1 mb-2 text-xs text-stone-500 dark:text-stone-400">
+                      {headFirst(band.discussion_questions, qCount(grade)).length} for {gradeLabel(grade)}, ordered from most accessible to most demanding.
+                    </p>
+                    <ul className="list-disc pl-6 space-y-1.5 text-stone-800 dark:text-stone-200">
+                      {headFirst(band.discussion_questions, qCount(grade)).map((q, i) => (
+                        <li key={i} className="leading-relaxed">
+                          {q}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+
+              {/* Assessment (band). */}
+              {band && band.assessment && (
+                <>
+                  <SectionHeading>Assessment</SectionHeading>
+                  <p className="text-stone-800 dark:text-stone-200 leading-relaxed">
+                    {band.assessment}
+                  </p>
+                </>
+              )}
+
+              {/* Age-appropriateness and content: its own clearly-labeled
+                  section explaining how difficult material is graded by
+                  developmental band, then the per-grade specifics. */}
+              {band && band.content_note && (
+                <div className="mt-8 rounded-lg border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/30 p-4">
+                  <p className="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-semibold text-sm mb-2">
+                    <Info className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                    Age-Appropriateness and Difficult Content
+                  </p>
+                  <p className="text-sm text-amber-900/90 dark:text-amber-100/90 leading-relaxed mb-2">
+                    This lesson grades difficult material by developmental band. The
+                    civil rights record includes racial violence, including the
+                    murders and lynchings that drove the movement; that material is
+                    engaged directly only at the bands developmentally ready for it,
+                    and routed around at the younger grades. At this grade:
+                  </p>
+                  <p className="text-sm text-amber-900/90 dark:text-amber-100/90 leading-relaxed">
+                    {band.content_note}
+                  </p>
+                </div>
+              )}
+
+              {/* Standards (band) if present. */}
+              {band && Array.isArray(band.standards) && band.standards.length > 0 && (
+                <>
+                  <SectionHeading>Standards Alignment</SectionHeading>
+                  <ul className="list-disc pl-6 space-y-1 text-stone-700 dark:text-stone-300 text-sm">
+                    {band.standards.map((s, i) => (
+                      <li key={i} className="leading-relaxed">
+                        {s}
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              {/* Materials: clips (bounded LoC player) + person cards (band).
+                  Placed last (just above Sources) so the tall, expandable video
+                  players sit at the foot of the lesson. Everything that varies
+                  grade to grade reads above them, which keeps the per-grade
+                  variance grouped and scannable during a demo while a clip can
+                  stay open below. */}
               {band && Array.isArray(band.materials) && band.materials.length > 0 && (
                 <>
                   <SectionHeading>Materials From the Archive</SectionHeading>
@@ -576,84 +658,6 @@ export default function Curriculum() {
                       return null;
                     })}
                   </div>
-                </>
-              )}
-
-              {/* Activities (band, numbered). */}
-              {band && Array.isArray(band.activities) && band.activities.length > 0 && (
-                <>
-                  <SectionHeading>Activities</SectionHeading>
-                  <ol className="list-decimal pl-6 space-y-2 text-stone-800 dark:text-stone-200">
-                    {band.activities.map((a, i) => (
-                      <li key={i} className="leading-relaxed pl-1">
-                        {a}
-                      </li>
-                    ))}
-                  </ol>
-                </>
-              )}
-
-              {/* Discussion Questions (band pool, sliced to the grade number:
-                  K and 1 get one, grade 12 gets twelve, ordered by depth). */}
-              {band && headFirst(band.discussion_questions, qCount(grade)).length > 0 && (
-                  <>
-                    <SectionHeading>Discussion Questions</SectionHeading>
-                    <p className="-mt-1 mb-2 text-xs text-stone-500 dark:text-stone-400">
-                      {headFirst(band.discussion_questions, qCount(grade)).length} for {gradeLabel(grade)}, ordered from most accessible to most demanding.
-                    </p>
-                    <ul className="list-disc pl-6 space-y-1.5 text-stone-800 dark:text-stone-200">
-                      {headFirst(band.discussion_questions, qCount(grade)).map((q, i) => (
-                        <li key={i} className="leading-relaxed">
-                          {q}
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-
-              {/* Assessment (band). */}
-              {band && band.assessment && (
-                <>
-                  <SectionHeading>Assessment</SectionHeading>
-                  <p className="text-stone-800 dark:text-stone-200 leading-relaxed">
-                    {band.assessment}
-                  </p>
-                </>
-              )}
-
-              {/* Age-appropriateness and content: its own clearly-labeled
-                  section explaining how difficult material is graded by
-                  developmental band, then the per-grade specifics. */}
-              {band && band.content_note && (
-                <div className="mt-8 rounded-lg border border-amber-300 dark:border-amber-700/60 bg-amber-50 dark:bg-amber-950/30 p-4">
-                  <p className="flex items-center gap-2 text-amber-900 dark:text-amber-200 font-semibold text-sm mb-2">
-                    <Info className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
-                    Age-Appropriateness and Difficult Content
-                  </p>
-                  <p className="text-sm text-amber-900/90 dark:text-amber-100/90 leading-relaxed mb-2">
-                    This lesson grades difficult material by developmental band. The
-                    civil rights record includes racial violence, including the
-                    murders and lynchings that drove the movement; that material is
-                    engaged directly only at the bands developmentally ready for it,
-                    and routed around at the younger grades. At this grade:
-                  </p>
-                  <p className="text-sm text-amber-900/90 dark:text-amber-100/90 leading-relaxed">
-                    {band.content_note}
-                  </p>
-                </div>
-              )}
-
-              {/* Standards (band) if present. */}
-              {band && Array.isArray(band.standards) && band.standards.length > 0 && (
-                <>
-                  <SectionHeading>Standards Alignment</SectionHeading>
-                  <ul className="list-disc pl-6 space-y-1 text-stone-700 dark:text-stone-300 text-sm">
-                    {band.standards.map((s, i) => (
-                      <li key={i} className="leading-relaxed">
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
                 </>
               )}
 
