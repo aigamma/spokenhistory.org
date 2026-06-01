@@ -26,6 +26,7 @@ export { default as FamousNames } from './FamousNames';
 export { default as ThemesBrowser } from './ThemesBrowser';
 export { default as GeographicAtlas } from './GeographicAtlas';
 export { default as InfluenceList } from './InfluenceList';
+export { default as EventNetwork } from './EventNetwork';
 export { default as QuoteOfTheDay } from './QuoteOfTheDay';
 export { default as TourPages } from './TourPages';
 // NomicProjection (custom canvas) and PassageMap (Plotly scattergl)

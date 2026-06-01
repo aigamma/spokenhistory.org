@@ -11,6 +11,7 @@ import {
   ThemesBrowser,
   GeographicAtlas,
   InfluenceList,
+  EventNetwork,
   QuoteOfTheDay,
   TourPages,
   ConceptMatrix,
@@ -108,7 +109,7 @@ function useCorpusData() {
 const TABS = [
   'quote', 'compare', 'map', 'related',
   'names', 'themes',
-  'atlas', 'network', 'tours', 'quote-of-day',
+  'atlas', 'network', 'events', 'tours', 'quote-of-day',
   'lenses',
 ];
 
@@ -151,6 +152,7 @@ const TAB_ORDER = [
   { id: 'names', label: 'Famous Names' },
   { id: 'atlas', label: 'Places' },
   { id: 'network', label: 'Influence' },
+  { id: 'events', label: 'Events and Activism' },
   { id: 'tours', label: 'Tours' },
   { id: 'quote-of-day', label: 'Quote of the Day' },
 ];
@@ -162,7 +164,7 @@ const TAB_ORDER = [
 const TAB_GROUPS = [
   {
     label: 'Maps of the Archive',
-    tabs: ['map', 'themes', 'network', 'atlas'],
+    tabs: ['map', 'themes', 'network', 'events', 'atlas'],
   },
   {
     label: 'Find a Moment',
@@ -188,6 +190,7 @@ const TAB_LABELS = {
   names: 'Famous Names',
   atlas: 'Places',
   network: 'Influence',
+  events: 'Events and Activism',
   tours: 'Tours',
   'quote-of-day': 'Quote of the Day',
 };
@@ -743,6 +746,15 @@ export default function RagExplore() {
                 Influence Network
               </h2>
               <InfluenceList />
+            </div>
+          )}
+
+          {tab === 'events' && (
+            <div>
+              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                Events and Activism
+              </h2>
+              <EventNetwork />
             </div>
           )}
 
