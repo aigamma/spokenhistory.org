@@ -124,10 +124,10 @@ export default function EssayPage() {
             {essay.license?.note ? ` (${essay.license.note})` : ''}
           </div>
           {essay.source_url && (
-            <div className="mt-1">
-              <a href={essay.source_url} target="_blank" rel="noopener noreferrer" className="text-civil-red-body hover:underline">
-                View the original source
-              </a>
+            <div className="mt-1 text-stone-500">
+              Digitized full text via {(() => {
+                try { return new URL(essay.source_url).hostname.replace(/^www\./, ''); } catch { return 'the cited source'; }
+              })()}.
             </div>
           )}
           <div className="mt-1 text-stone-500">Reproduced in full from a public-domain or open-license source.</div>
