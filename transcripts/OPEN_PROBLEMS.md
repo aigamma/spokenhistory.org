@@ -1,6 +1,6 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
-**Last updated:** 2026-06-01 (Problem 10 logged: onboarding-pipeline integration gaps + related/ stale for entries 139-142, from the documentation-heal + onboarding review)
+**Last updated:** 2026-06-01 (Problem 10 logged, then 10a + 10b RESOLVED the same day: related/ backfilled for entries 139-142, all corpus-global artifacts regenerated, person vectors re-synced/pruned, and onboarding gained a `network` stage. 10c heal-engine defects and 10d LoC name canonicalization remain OPEN.)
 **Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~12.2 MB post-Pass-7 apply-back)
 **Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (378 valid entries after Session 7 Phase 2 Pass 7 proposal expansion)
 **Hard deadline:** 2026-05-27 WWU team meeting (3 days from this writing)
@@ -570,13 +570,17 @@ Any future agent loading this project will inherit these defaults automatically.
 
 ---
 
-## Problem 10: Onboarding pipeline does not fully network new interviews (related/ stale for 139-142) -- **OPEN (logged 2026-06-01)**
+## Problem 10: Onboarding pipeline does not fully network new interviews (related/ stale for 139-142) -- **PARTIALLY RESOLVED 2026-06-01 (10a + 10b closed; 10c + 10d still OPEN)**
 
 Surfaced by the 2026-06-01 documentation-heal and onboarding-pipeline review. Full analysis and priority order in `transcripts/ingestion/ONBOARDING_REVIEW.md`.
 
 **10a. `public/rag/related/` is stale for the 4 newest interviews.** The directory has `entry-1.json` through `entry-138.json` but is MISSING `entry-139.json` through `entry-142.json` (Glenda Funchess, Louise Broadway, the Lucius Holloway Sr. and Emma Kate Holloway joint, Luis Zapata). `PersonPage.jsx` fetches `/rag/related/entry-<N>.json` and swallows the 404, so those four person pages render with an empty "related people" section. Fix: `node --env-file=rag/.env.local rag/precompute.mjs --feature related` (needs Voyage and Pinecone credentials), then redeploy.
 
+**RESOLVED 2026-06-01:** Backfilled via `node --env-file=rag/.env.local rag/precompute.mjs --entries 139,140,141,142 --feature related`; `related/` now covers entries 1-142. The same pass regenerated the other artifacts that were stale at entry 138 (`centroids`, `constellation`, `ideological_spectrums`, `geography` plus events and famous-external panels, `influence`, `capsules`) and deterministically assigned 139-142 into their nearest existing `clusters` entry (cosine 0.90+ each). Person vectors were re-synced (203 current) and 127 stale pre-edit person vectors pruned from Pinecone.
+
 **10b. `onboard_interview.py` rebuilds only a subset of derived artifacts.** It rebuilds `toc.json`, `playlist_index.json`, and the Pinecone vectors, and scaffolds a person stub, but does NOT rebuild `related/`, `centroids.json`, `constellation.json`, `clusters/tours/quotes/capsules.json`, `influence.json`, `geography.json`, `event_network.json`, `ideological_spectrums.json`, or `people/index.json`. A newly onboarded interview is therefore absent from the embedding map, related passages, the influence graph, the geographic atlas, the events network, the ideological spectrums, the tours and quotes, and the /people browse index until those are rebuilt by hand. Fix: add a final `network` stage to the pipeline, gated on `rag/.env.local` like the `ingest` stage. Interim workaround: the "After Onboarding" checklist in `transcripts/ingestion/README.md`.
+
+**RESOLVED 2026-06-01:** `onboard_interview.py` now has a `network` stage (stage 14, between `indexes` and `audit`) that rebuilds the full derived set in one command, gated on `rag/.env.local` exactly like `ingest`, with `--skip-networking` to opt out. New deterministic builder `scripts/build_entry_list.py` rebuilds the gitignored `_entry_list.json` that `influence` and `capsules` read. `tours.json` and `quotes.json` stay a manual editorial pass (the status block prints a reminder). See `transcripts/ingestion/ONBOARDING_REVIEW.md` gap A. Caveat: the `clusters` rebuild only re-NAMES the existing k-means clusters; folding a new entry into the cluster STRUCTURE still needs the separate, not-yet-scripted k-means step that writes `clusters_raw.json`.
 
 **10c. Heal-engine defects (`heal_one_entry.py`).**
 - Hardcoded `applied_date: "2026-05-25"` (and `**Date:** 2026-05-25` in the stage file): every newly onboarded entry is stamped with a false healing date. Fix: use `date.today().isoformat()`.

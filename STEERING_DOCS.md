@@ -13,7 +13,7 @@
 | Tier | What it is | When to read | Documents |
 |---|---|---|---|
 | **1. Orientation** | "Read these first." Where you are, what's been done, who the audience is. | New contributor; presentation prep; stakeholder briefing. | `CLAUDE.md`, `README.md`, `PRESENTATION_REFERENCE.md` |
-| **2. Active reference** | "Read these when you're building or running a specific subsystem." Architecture decisions, operations runbooks, design specs that are still load-bearing. | Doing audit / RAG / frontend / deploy / accessibility work. | `docs/*.md`, `rag/README.md`, `rag/INTERACTIVE_FEATURES_DESIGN.md`, `rag/OPERATIONS.md`, `rag/ENDPOINTS.md`, `rag/NEXT_SESSION_PICKUP.md`, `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md`, `mcp-server/CODEX_SETUP.md`, `rag/SHOWCASE.md` |
+| **2. Active reference** | "Read these when you're building or running a specific subsystem." Architecture decisions, operations runbooks, design specs that are still load-bearing. | Doing audit / RAG / frontend / deploy / accessibility work. | `docs/*.md`, `rag/README.md`, `rag/INTERACTIVE_FEATURES_DESIGN.md`, `rag/OPERATIONS.md`, `rag/ENDPOINTS.md`, `rag/NEXT_SESSION_PICKUP.md`, `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md`, `mcp-server/CODEX_SETUP.md`, `rag/SHOWCASE.md`, `functions/README.md`, `netlify/functions/README.md` |
 | **3. Lessons learned** | "Read these to understand *why* we made the choices we made." Distilled error categories, conceptual breakthroughs, decision records. | Avoiding past mistakes; teaching the audit cascade; institutional credibility briefings. | `lessons_learned.md`, `docs/RAG_SUBSTRATE_DECISION.md` |
 | **4. Demo prep** | "Read these the day of the presentation." Talking points, demo scripts, conference-specific briefings. | The day before, the morning of, or while at the podium. | `rag/CONFERENCE_PREP.md`, `rag/DEMO_SCRIPT.md` |
 | **5. Provenance / historical record** | "Read these only if you need to reconstruct what was audited, by whom, when, with what coverage." The institutional-credibility instrument. | External review (Smithsonian / LoC) wants to verify rigor; replacement engineer is reconstructing history. | `transcripts/AUDIT_TRAIL.md`, `transcripts/OPEN_PROBLEMS.md`, `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md`, `transcripts/loc_healing/COVERAGE_REPORT.md`, `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md`, per-pass stage files |
@@ -69,6 +69,10 @@ The conceptual-map briefing for the WWU presentation. Eight conceptual breakthro
 - `mcp-server/README.md`, Engineering reference (Pinecone+Voyage rewire, env vars, citation-payload shape).
 - `mcp-server/USAGE_GUIDE.md`, End-user / researcher / Anthropic-Connector-Directory submission doc. Worked examples for grant citation, quote verification, curriculum dev.
 - `mcp-server/CODEX_SETUP.md`, Connecting the MCP server to Codex and other tool-only MCP clients (env vars, the `civil-rights` index, the six-tool verify step).
+
+### Serverless functions
+- `functions/README.md`, Cloud Functions (Firebase) layer documentation.
+- `netlify/functions/README.md`, Netlify Function endpoints (e.g., `retrieve.mjs` semantic-search proxy).
 
 ### Pipeline (Python)
 - `Metadata Generation System/Metadata Generation Documentation.md`, Original 7-step pipeline doc.

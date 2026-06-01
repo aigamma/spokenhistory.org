@@ -36,7 +36,22 @@ The historical context matters. The original 127-entry corpus was corrected over
 
 This is the part that matters for the next project. The findings below are ordered by impact.
 
-### A. Site Integration Is Incomplete; "Networked" Is Overstated
+### A. Site Integration Is Incomplete; "Networked" Is Overstated, **RESOLVED 2026-06-01**
+
+**Resolved 2026-06-01.** A `network` stage (stage 14, between `indexes` and `audit`) now rebuilds the full derived cross-link set in one command, so a newly onboarded interview is genuinely networked into every site surface rather than landing half-integrated. The stage runs two groups in strict dependency order:
+
+- **Deterministic (no network, always run):** `_entry_list.json` (see below), `influence.json` (`rag/precompute_influence.py`), `event_network.json` (`scripts/build_event_network.py`), `people/index.json` (`scripts/build_people_index.mjs`).
+- **Credentialed (Pinecone / Voyage / Anthropic; gated on `rag/.env.local` exactly like `ingest`):** `related/entry-<N>.json` (per-entry, targeting the new N), `centroids.json` then `constellation.json` (order enforced: constellation reads centroids), `ideological_spectrums.json` via `precompute_concept_axes.mjs` then `add_concept_axes.mjs` (order enforced: the add step re-appends the extra axes the recompute drops), the geography + canonical-event + famous-external panels (`precompute_panels.mjs`), the per-entry capsule (`summarize.mjs capsules --entries=<N>`), and cluster names (`summarize.mjs clusters`).
+
+Three implementation notes:
+
+- **`_entry_list.json` now has a committed, deterministic builder, `scripts/build_entry_list.py`.** It had none before: it was produced once by an ad hoc step during the 2026-05-26 build and went stale at entry 138 while the corpus reached 142. Because both `precompute_influence.py` and `summarize.mjs` (capsules) read it, the `network` stage rebuilds it FIRST so the new entry appears in the speaker roster and the capsule target list.
+- **`clusters.json` regeneration re-NAMES the existing k-means clusters** (from `clusters_raw.json`); it does NOT re-run k-means against the new vectors. Folding a new entry into the cluster STRUCTURE still needs the separate, not-yet-scripted k-means step that writes `clusters_raw.json`. This limit is documented inline at the call site.
+- **`tours.json` and `quotes.json` are deliberately NOT wired.** Their regeneration is editorial (`summarize.mjs` prints a "use a Claude Code session with subagents" message for them). The status block always prints a reminder that a new interview considered for a Tour or the Quote rotation needs a manual editorial subagent pass.
+
+An operator can opt out of the corpus-global rebuilds with `--skip-networking` (they cost Pinecone/Voyage/Anthropic calls and time); the default runs them, which is the whole point of a one-command full onboarding. When networking is skipped, or when `rag/.env.local` is absent so only the deterministic artifacts ran, the status block prints the exact commands to finish the rebuild later. A single failing builder warns rather than aborting, so it does not strand the rest of the networking. The original analysis that motivated this fix is preserved verbatim below.
+
+---
 
 The docstring says the pipeline leaves the interview "onboarded, healed, chaptered, assembled, search-ingested, and networked." The first five are true. "Networked" is not, or only partly. The pipeline rebuilds exactly four things: `toc.json`, `playlist_index.json`, the Pinecone passage vectors (via `rag/ingest.mjs`), and a thin person-page stub.
 
@@ -55,7 +70,7 @@ It does **not** rebuild the derived cross-link artifacts that the rest of the si
 
 **This is not hypothetical. It already happened.** The four newest interviews (entries 139 through 142) were onboarded through this pipeline, yet `public/rag/related/` contains files only for entries 1 through 138. `PersonPage.jsx` fetches `/rag/related/entry-${N}.json` and swallows the 404 through `fetchJsonOrNull`, so the four newest person pages render with their "related people" section silently empty. Meanwhile `people/index.json` does contain all four (it was rebuilt by hand), and `constellation.json` has all 140 points. So the derived layer is in a partially-rebuilt, internally-inconsistent state: a person ran some rebuilds by hand and forgot others. That is the exact failure mode of a pipeline that rebuilds some-but-not-all derived artifacts. The pipeline that claims to be the single entry point creates the false confidence that nothing else needs running.
 
-**Recommendation.** Add a final `network` stage that runs the full derived-artifact rebuild, gated the same way the `ingest` stage is gated on `rag/.env.local`: run what can run, and for the steps that need Voyage or Pinecone credentials, either run them or print the exact commands and mark them pending in the status block. At minimum, the pipeline must not finish with a clean "onboarded" status while leaving the new entry absent from half the site. Until that stage exists, the post-onboard checklist in `README.md` is mandatory, not optional.
+**Recommendation (implemented 2026-06-01, see the resolution note above).** Add a final `network` stage that runs the full derived-artifact rebuild, gated the same way the `ingest` stage is gated on `rag/.env.local`: run what can run, and for the steps that need Voyage or Pinecone credentials, either run them or print the exact commands and mark them pending in the status block. At minimum, the pipeline must not finish with a clean "onboarded" status while leaving the new entry absent from half the site.
 
 ### B. The Healing Date Is Hardcoded
 
@@ -119,19 +134,23 @@ raw/<Subject>_interview_<YYYYMMDD>_<HHMMSS>/   (.srt + .txt + .vtt [+ .summary.t
   [11] ingest   -> Voyage embeddings -> Pinecone civil-rights index
   [12] person   -> public/rag/people/<slug>.json  (thin stub; needs real authoring)
   [13] indexes  -> rebuild toc.json + playlist_index.json
-  [14] audit    -> AUDIT_TRAIL.md note
-  [15] status
+  [14] network  -> rebuild every derived cross-link artifact (AUTOMATED 2026-06-01; --skip-networking to opt out)
+        |          deterministic (always): _entry_list.json, influence.json, event_network.json, people/index.json
+        |          credentialed (gated on rag/.env.local, like ingest):
+        |            rag/precompute.mjs --entries <N> --feature related   (related/entry-<N>.json)
+        |            rag/precompute.mjs --feature centroids                (centroids.json)
+        |            rag/precompute.mjs --feature constellation            (constellation.json; after centroids)
+        |            rag/precompute_concept_axes.mjs then add_concept_axes.mjs  (ideological_spectrums.json; order matters)
+        |            rag/precompute_panels.mjs                             (geography + events + famous_external)
+        |            rag/summarize.mjs capsules --entries=<N>              (capsules.json, per-entry)
+        |            rag/summarize.mjs clusters                            (clusters.json re-name only; k-means not re-run)
+  [15] audit    -> AUDIT_TRAIL.md note
+  [16] status   -> reports networking state + prints any pending rebuild commands
         |
-        |   ** NOT YET AUTOMATED, run by hand after onboarding (see gap A): **
+        |   ** STILL MANUAL (editorial, not scriptable): tours.json + quotes.json **
+        |   ** if entry <N> should join a guided Tour or the Quote rotation, run a **
+        |   ** Claude Code subagent pass (summarize.mjs prints the same instruction). **
         v
-  rag/precompute.mjs                  (related/, centroids.json, constellation.json)
-  rag/summarize.mjs                   (clusters, tours, quotes, capsules)
-  rag/precompute_influence.py         (influence.json)
-  rag/precompute_panels.mjs           (geography.json)
-  scripts/build_event_network.py      (event_network.json)
-  rag/precompute_concept_axes.mjs     (ideological_spectrums.json)
-  scripts/build_people_index.mjs      (people/index.json)
-        |
         |   ** Author the real person page (bio, ai_reading, verbatim snippets, sources) **
         |   ** per public/rag/people/README.md, then re-run build_people_index + persons ingest **
         v
@@ -144,11 +163,11 @@ raw/<Subject>_interview_<YYYYMMDD>_<HHMMSS>/   (.srt + .txt + .vtt [+ .summary.t
 
 The cleaning engine is the real achievement and it is sound: deterministic, LoC-authoritative, conservative, and free of the stochastic guesswork that the first eight passes paid so much for. That goal is met.
 
-The pipeline's claim to carry an interview "all the way onto the live site" is roughly seventy percent true. It lands the interview page, its chapters and clips, and raw semantic search. It does not yet land the interview in the embedding map, the related-passages panel, the influence graph, the geographic atlas, the events network, the ideological spectrums, the tours, the quote rotation, or even the `/people` browse index, and it scaffolds the person page only as a stub. The evidence that this matters is already in the tree: entries 139 through 142 are half-integrated.
+As of 2026-06-01 the pipeline's claim to carry an interview "all the way onto the live site" is substantially true. The new `network` stage (gap A, resolved above) lands the interview in the embedding map, the related-passages panel, the influence graph, the geographic atlas, the events network, the ideological spectrums, the capsule rotation, and the `/people` browse index, in the same command. What remains manual is editorial by design: the guided tours, the quote rotation, and the real (non-stub) person page. The half-integration that entries 139 through 142 exhibited is the failure mode the `network` stage exists to prevent on every future onboarding (those four entries still need a one-time credentialed `network`-equivalent rebuild to backfill, see `transcripts/OPEN_PROBLEMS.md`).
 
-The next integration project is well-defined by the gaps above, in priority order:
+The remaining integration work, in priority order:
 
-1. Add the derived-artifact rebuild as a final pipeline stage (gap A), so onboarding genuinely finishes the networking it claims.
+1. ~~Add the derived-artifact rebuild as a final pipeline stage (gap A).~~ **Done 2026-06-01.** Onboarding now finishes the networking it claims; tours + quotes stay a deliberate manual editorial pass.
 2. Add LoC subject-name canonicalization (gap D), closing the last hand-correction from the old passes.
 3. Fix the hardcoded healing date and the `entry_000` stage filename (gaps B and C), so the audit trail does not lie.
 4. Decide the policy on multi-word name healing versus SME review (gap E), and wire an em-dash guard into assembly (gap G).

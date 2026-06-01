@@ -32,8 +32,14 @@ PIPELINE STAGES (each idempotent; --redo <stage> forces one to re-run)
                 so the interviewee is networked into /people  writes a thin stub + an
                                                               authoring checklist otherwise)
   13. indexes   rebuild public/rag/playlist_index.json + toc.json
-  14. audit     append an ingestion note to AUDIT_TRAIL.md
-  15. status    print what is done and what (if anything) still needs an author
+  14. network   rebuild every derived cross-link artifact so the new entry is
+                fully networked into the rest of the site (related/, centroids,
+                constellation, ideological_spectrums, geography + event panels,
+                influence, event_network, clusters, capsules, people/index).
+                The Pinecone/Voyage/Anthropic steps are gated on rag/.env.local
+                exactly like `ingest`; pass --skip-networking to opt out.
+  15. audit     append an ingestion note to AUDIT_TRAIL.md
+  16. status    print what is done and what (if anything) still needs an author
 
 THE TWO AUTHORED INPUTS (stages 8 and 12) are deliberately not auto-generated.
 The Smithsonian / LoC bar requires the chapter segmentation and the
@@ -49,7 +55,8 @@ Usage:
   python transcripts/ingestion/onboard_interview.py "<dir>" --partial      # mark a partial-excerpt transcript
   python transcripts/ingestion/onboard_interview.py "<dir>" --redo assemble
   python transcripts/ingestion/onboard_interview.py "<dir>" --stop-after chapters
-  python transcripts/ingestion/onboard_interview.py "<dir>" --skip-ingest  # do everything but the paid Pinecone write
+  python transcripts/ingestion/onboard_interview.py "<dir>" --skip-ingest      # do everything but the paid Pinecone write
+  python transcripts/ingestion/onboard_interview.py "<dir>" --skip-networking  # skip the corpus-global derived-artifact rebuilds
 """
 from __future__ import annotations
 
@@ -81,7 +88,8 @@ USER_AGENT = "civil-rights-onboard-script eric@aigamma.com"
 LOC_DELAY = 1.5
 
 STAGES = ["locate", "bootstrap", "resolve", "heal", "number", "video", "blocks",
-          "chapters", "summary", "assemble", "ingest", "person", "indexes", "audit", "status"]
+          "chapters", "summary", "assemble", "ingest", "person", "indexes", "network",
+          "audit", "status"]
 
 
 # Reuse the proven sub-steps from ingest_new_transcript.py rather than duplicate.
@@ -392,6 +400,89 @@ def stage_indexes() -> None:
             log("indexes", f"  WARN {script} rc={rc.returncode}: {rc.stderr[-200:]}")
 
 
+def _net_step(label: str, cmd: list[str], tail_chars: int = 240) -> None:
+    """Run one derived-artifact rebuild, log its last output line, and WARN
+    (never abort) on a non-zero exit. A single failing artifact must not strand
+    the rest of the networking, the operator can re-run the one command from the
+    status block. Mirrors the tolerance of stage_indexes / stage_ingest."""
+    rc = run(cmd)
+    out = (rc.stdout or "").strip()
+    tail = out.splitlines()[-1] if out else ""
+    log("network", f"{label}: {tail[:tail_chars]}")
+    if rc.returncode != 0:
+        log("network", f"  WARN {label} rc={rc.returncode}: {(rc.stderr or '')[-240:]}")
+
+
+def stage_network(n: int, skip: bool) -> None:
+    """Rebuild every derived cross-link artifact so the new entry is networked
+    into the whole site, not just toc/playlist/search.
+
+    Two groups, run in strict dependency order:
+
+      Deterministic (no network, always run): _entry_list.json, influence.json,
+      event_network.json, people/index.json.
+
+      Credentialed (Pinecone / Voyage / Anthropic; gated on rag/.env.local
+      exactly like the ingest stage): related/<entry-N>.json, centroids.json,
+      constellation.json, ideological_spectrums.json, geography + event +
+      famous-external panels, and the per-entry capsule + cluster names.
+
+    The whole stage is idempotent: every builder rewrites its output from the
+    current corpus, so re-running simply reproduces the same files. Pass
+    --skip-networking to opt out of the corpus-global rebuilds (they cost
+    Pinecone/Voyage/Anthropic calls and time); the status block then prints the
+    exact commands to run them later."""
+    if skip:
+        log("network", "skipped (--skip-networking); the status block prints the rebuild commands to run later")
+        return
+
+    # _entry_list.json MUST be rebuilt before influence + capsules read it, so
+    # the new entry appears in the speaker roster and the capsule target list.
+    _net_step("_entry_list.json", [sys.executable, str(SCRIPTS / "build_entry_list.py")])
+
+    # Deterministic, no-network rebuilds (safe even without credentials).
+    _net_step("influence.json", [sys.executable, str(ROOT / "rag" / "precompute_influence.py")])
+    _net_step("event_network.json", [sys.executable, str(SCRIPTS / "build_event_network.py")])
+    _net_step("people/index.json", ["node", str(SCRIPTS / "build_people_index.mjs")])
+
+    # Credentialed rebuilds, gated like stage_ingest.
+    if not rag_env():
+        log("network", "rag/.env.local missing; skipped the Pinecone/Voyage/Anthropic rebuilds "
+                       "(related, centroids, constellation, ideological_spectrums, panels, capsules, clusters). "
+                       "Run them when credentials are available, see the status block for the commands.")
+        return
+
+    log("network", "rag/.env.local present; running the Pinecone/Voyage/Anthropic rebuilds ...")
+    # related is per-entry: target only the new entry (the others are unchanged).
+    _net_step(f"related/entry-{n}.json",
+              ["node", "--env-file=rag/.env.local", "rag/precompute.mjs", "--entries", str(n), "--feature", "related"])
+    # centroids BEFORE constellation (constellation reads centroids.json).
+    _net_step("centroids.json",
+              ["node", "--env-file=rag/.env.local", "rag/precompute.mjs", "--feature", "centroids"])
+    _net_step("constellation.json",
+              ["node", "--env-file=rag/.env.local", "rag/precompute.mjs", "--feature", "constellation"])
+    # concept axes BEFORE add_concept_axes (the add_ step re-appends the extra
+    # axes that the recompute drops; running them out of order loses those axes).
+    _net_step("ideological_spectrums.json (base 5 axes)",
+              ["node", "--env-file=rag/.env.local", "rag/precompute_concept_axes.mjs"])
+    _net_step("ideological_spectrums.json (extra axes)",
+              ["node", "--env-file=rag/.env.local", "rag/add_concept_axes.mjs"])
+    # geography + canonical-event + famous-external panels (one script).
+    _net_step("geography + event + famous-external panels",
+              ["node", "--env-file=rag/.env.local", "rag/precompute_panels.mjs"])
+    # capsule for the new entry (per-entry; Anthropic). summarize.mjs reads the
+    # freshly rebuilt _entry_list.json above, so the new entry is a valid target.
+    _net_step(f"capsules.json (entry {n})",
+              ["node", "--env-file=rag/.env.local", "rag/summarize.mjs", "capsules", f"--entries={n}"])
+    # cluster names re-derived from clusters_raw.json (Anthropic). NOTE: this
+    # re-NAMES the existing k-means clusters; it does NOT re-run k-means against
+    # the new vectors. Folding a new entry into the cluster STRUCTURE needs the
+    # separate (not-yet-scripted) k-means step that writes clusters_raw.json.
+    _net_step("clusters.json (re-name)",
+              ["node", "--env-file=rag/.env.local", "rag/summarize.mjs", "clusters"])
+    log("network", "derived-artifact rebuilds complete (tours + quotes still need a manual editorial pass, see status)")
+
+
 def stage_audit(entry_dir: str, subject: str, n: int, partial: bool) -> None:
     at = TRANSCRIPTS / "AUDIT_TRAIL.md"
     if not at.is_file():
@@ -422,6 +513,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--partial", action="store_true", help="mark a partial-excerpt transcript")
     ap.add_argument("--joint", action="store_true", help="joint interview (person page may stay a thin stub)")
     ap.add_argument("--skip-ingest", action="store_true", help="do everything but the paid Pinecone write")
+    ap.add_argument("--skip-networking", action="store_true",
+                    help="skip the corpus-global derived-artifact rebuilds (related, centroids, "
+                         "constellation, ideological_spectrums, panels, influence, event_network, "
+                         "clusters, capsules, people/index); they cost Pinecone/Voyage/Anthropic calls")
     ap.add_argument("--stop-after", choices=STAGES, default=None)
     ap.add_argument("--redo", choices=STAGES, default=None, help="(informational) force-rerun is per-stage manual")
     args = ap.parse_args(argv)
@@ -469,6 +564,9 @@ def main(argv: list[str] | None = None) -> int:
     stage_indexes()
     if args.stop_after == "indexes":
         return 0
+    stage_network(n, args.skip_networking)
+    if args.stop_after == "network":
+        return 0
     stage_audit(args.entry_dir, subject, n, args.partial)
 
     # status
@@ -476,13 +574,43 @@ def main(argv: list[str] | None = None) -> int:
     pj = PEOPLE_DIR / f"{slugify(subject)}.json"
     if pj.is_file():
         person_stub = json.loads(pj.read_text(encoding="utf-8")).get("_stub", False)
+    networked = (not args.skip_networking) and rag_env()
     print(f"\n== onboarded entry {n}: {subject} ==")
     print(f"  interview page + chapters + clips: live after deploy")
     print(f"  search index: {'ingested' if (rag_env() and not args.skip_ingest) else 'PENDING (run rag/ingest.mjs)'}")
+    if args.skip_networking:
+        net_status = "SKIPPED (--skip-networking)"
+    elif networked:
+        net_status = "rebuilt (related, centroids, constellation, spectrums, panels, influence, events, clusters, capsules, people/index)"
+    else:
+        net_status = "PARTIAL (deterministic artifacts rebuilt; credentialed rebuilds PENDING, rag/.env.local missing)"
+    print(f"  derived networking: {net_status}")
     print(f"  person page: {'STUB written, needs bio + snippets + sources' if person_stub else 'present'}")
     print(f"  remaining authored work: {'full person page (bio, ai_reading, verbatim snippets, sources)' if person_stub else 'none'}")
-    print(f"  commit corrected/{args.entry_dir}/, scripts/spec_{n}.json, the staging files, the entry_{n}.json, "
-          f"public/rag/people/{slugify(subject)}.json, and the rebuilt indexes together.")
+
+    # tours + quotes are editorial and NOT scriptable (summarize.mjs prints a
+    # "use a Claude Code session with subagents" message for them). Always remind.
+    print(f"  EDITORIAL (not scripted): if entry {n} should be considered for a guided Tour or the "
+          f"Quote rotation, run a manual Claude Code subagent pass to update tours.json / quotes.json.")
+
+    # If the credentialed networking did not run, print the exact commands so a
+    # later operator (or a credentialed re-run) finishes the networking.
+    if args.skip_networking or not rag_env():
+        print(f"\n  Derived-artifact rebuilds still to run for entry {n} "
+              f"(re-run the whole pipeline with credentials, or run individually):")
+        print(f"    node --env-file=rag/.env.local rag/precompute.mjs --entries {n} --feature related")
+        print(f"    node --env-file=rag/.env.local rag/precompute.mjs --feature centroids")
+        print(f"    node --env-file=rag/.env.local rag/precompute.mjs --feature constellation")
+        print(f"    node --env-file=rag/.env.local rag/precompute_concept_axes.mjs")
+        print(f"    node --env-file=rag/.env.local rag/add_concept_axes.mjs")
+        print(f"    node --env-file=rag/.env.local rag/precompute_panels.mjs")
+        print(f"    node --env-file=rag/.env.local rag/summarize.mjs capsules --entries={n}")
+        print(f"    node --env-file=rag/.env.local rag/summarize.mjs clusters")
+        print(f"    python scripts/build_entry_list.py && python rag/precompute_influence.py")
+        print(f"    python scripts/build_event_network.py && node scripts/build_people_index.mjs")
+
+    print(f"\n  commit corrected/{args.entry_dir}/, scripts/spec_{n}.json, the staging files, the entry_{n}.json, "
+          f"public/rag/people/{slugify(subject)}.json, and the rebuilt indexes + derived artifacts together.")
     return 0
 
 
