@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "slug": "dubois-souls-sorrow-songs",
+  "primary_topic": "music-and-culture",
+  "hero_image": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/6a/W.E.B._Du_Bois_by_James_E._Purdy%2C_1907_%283x4%29.jpg",
+    "alt": "Portrait of W. E. B. Du Bois, 1907",
+    "caption": "W. E. B. Du Bois in 1907, four years after The Souls of Black Folk appeared.",
+    "photographer": "James E. Purdy",
+    "date_taken": "1907",
+    "repository": "National Portrait Gallery, Smithsonian Institution",
+    "license": "Public domain; NPG digital image released CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg"
+  },
+  "inline_images": [
+    {
+      "src_external": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Jubilee_Singers%2C_Fisk_University%2C_Nashville%2C_Tenn._LCCN2010647805.jpg",
+      "alt": "Studio group portrait of the Fisk University Jubilee Singers, circa 1870s",
+      "caption": "The Fisk Jubilee Singers of Nashville, whose concert tours carried the spirituals to the world, the very sorrow songs Du Bois exalts as America's most original art in this closing chapter.",
+      "photographer": "Published by the American Missionary Association",
+      "date_taken": "between 1870 and 1880",
+      "repository": "Library of Congress, Prints and Photographs Division (LCCN 2010647805)",
+      "license": "Public domain",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Jubilee_Singers,_Fisk_University,_Nashville,_Tenn._LCCN2010647805.jpg"
+    }
+  ],
+  "related_chapters": [
+    {
+      "entry": 11,
+      "subject": "Candie Carawan and Guy Hughes Carawan",
+      "slug": "candie-carawan-and-guy-hughes-carawan",
+      "part_title": "From California to the Movement",
+      "chapter_title": "Adapting Church Songs Into Freedom Songs",
+      "topic": "Birth of Freedom Songs",
+      "start": 856.0,
+      "end": 976.0,
+      "why": "Du Bois traces how the spirituals carried a people's faith and longing; the Carawans describe adapting church songs into the freedom songs of the movement."
+    },
+    {
+      "entry": 58,
+      "subject": "Jamila Jones",
+      "slug": "jamila-jones",
+      "part_title": "From the Trio to Harambee",
+      "chapter_title": "This Little Light of Mine",
+      "topic": "Songs That Carried the Message",
+      "start": 1583.0,
+      "end": 1722.0,
+      "why": "The essay hears the sorrow songs as a message sung from the heart; Jones recounts the songs, including This Little Light of Mine, that carried the movement's message."
+    },
+    {
+      "entry": 97,
+      "subject": "Pete Seeger",
+      "slug": "pete-seeger",
+      "part_title": "How the Song Traveled",
+      "chapter_title": "You Don't Have the Song Right",
+      "topic": "We Shall Overcome's Origins",
+      "start": 972.0,
+      "end": 1140.0,
+      "why": "Du Bois follows a song's passage down the generations and into the wider world; Seeger traces the origins and traveling of We Shall Overcome."
+    },
+    {
+      "entry": 41,
+      "subject": "Euvester Simpson",
+      "slug": "euvester-simpson",
+      "part_title": "The Winona Jail",
+      "chapter_title": "Walk With Me, Lord",
+      "topic": "A Washcloth and a Gospel Song",
+      "start": 2592.0,
+      "end": 2719.0,
+      "why": "The essay reads the spirituals as faith voiced amid suffering; Simpson recounts singing the gospel song Walk With Me, Lord through a night in the Winona jail."
+    },
+    {
+      "entry": 68,
+      "subject": "Juadine Henderson",
+      "slug": "juadine-henderson",
+      "part_title": "Meeting the Movement",
+      "chapter_title": "Freedom in the Air",
+      "topic": "Singing Freedom Songs",
+      "start": 953.0,
+      "end": 1075.0,
+      "why": "Du Bois describes song as the people's collective voice rising in hope; Henderson recounts the freedom songs and the sense of freedom in the air at mass meetings."
+    },
+    {
+      "entry": 123,
+      "subject": "Walter Bruce",
+      "slug": "walter-bruce",
+      "part_title": "A Carpenter and a Gospel Singer",
+      "chapter_title": "Fifty-Four Years of Singing",
+      "topic": "The Gospel Group and Movement Music",
+      "start": 760.0,
+      "end": 932.0,
+      "why": "The essay honors a sacred-song tradition carried across a lifetime; Bruce recounts fifty-four years of gospel singing tied to the movement."
+    }
+  ],
+  "top_voice": {
+    "entry": 41,
+    "subject": "Euvester Simpson",
+    "slug": "euvester-simpson",
+    "reason": "Simpson singing a gospel song through a night of jailhouse suffering embodies the essay's reading of the sorrow songs as faith voiced amid trouble and hope."
+  },
+  "closing_image": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/0/02/Fannie_Lou_Hamer_1964-08-22.jpg",
+    "alt": "Fannie Lou Hamer at the Democratic National Convention, Atlantic City, August 22, 1964",
+    "caption": "Fannie Lou Hamer at the Democratic National Convention, Atlantic City, August 22, 1964. Euvester Simpson is the corpus voice this essay connects to most.",
+    "photographer": "Warren K. Leffler (U.S. News & World Report)",
+    "date_taken": "1964-08-22",
+    "repository": "Wikimedia Commons (via Library of Congress, U.S. News & World Report collection, digital ID ds.07134)",
+    "license": "Public domain (Library of Congress: no known copyright restrictions; U.S. News & World Report dedicated all rights to the public upon donation)",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Fannie_Lou_Hamer_1964-08-22.jpg"
+  },
+  "connections": {
+    "summary": "Across the Civil Rights History Project, the oral histories below take up the questions Of the Sorrow Songs raises. Our embedding model places it nearest the testimony of Jamila Jones, Gwendolyn M. Patton, and Walter Bruce.",
+    "method": "embedding",
+    "nearest_voices": [
+      {
+        "entry": 58,
+        "subject": "Jamila Jones",
+        "slug": "jamila-jones",
+        "score": 0.598
+      },
+      {
+        "entry": 52,
+        "subject": "Gwendolyn M. Patton",
+        "slug": "gwendolyn-m-patton",
+        "score": 0.582
+      },
+      {
+        "entry": 123,
+        "subject": "Walter Bruce",
+        "slug": "walter-bruce",
+        "score": 0.578
+      },
+      {
+        "entry": 11,
+        "subject": "Candie Carawan and Guy Hughes Carawan",
+        "slug": "candie-carawan-and-guy-hughes-carawan",
+        "score": 0.508
+      },
+      {
+        "entry": 48,
+        "subject": "Gloria Claudette Grinnell",
+        "slug": "gloria-claudette-grinnell",
+        "score": 0.504
+      }
+    ]
+  },
+  "shared_topics": [
+    "music-and-culture",
+    "faith-and-church"
+  ]
+}
