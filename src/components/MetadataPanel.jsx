@@ -6,8 +6,8 @@
  * and managing updates to Firebase.
  */
 
-import React, { useState } from 'react';
-import { doc, updateDoc, collection } from 'firebase/firestore';
+import { useState } from 'react';
+import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
 
 /**

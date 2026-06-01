@@ -36,8 +36,6 @@ export default function MedgarEversToMarchOnWashingtonConnector({ fromRef, toRef
         
         const firstElbowX = startX + horizontalDistance1;
         const firstElbowY = startY + verticalDistance1;
-        const secondElbowX = endX;
-        const secondElbowY = firstElbowY;
         
         const segments = [
           // Horizontal segment right from Medgar Evers date

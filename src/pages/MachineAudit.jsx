@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Info, ArrowLeft, FileText, Scale, Library, AlertCircle, Mail } from 'lucide-react';
+import { ShieldCheck, ArrowLeft, FileText, Scale, Library, AlertCircle, Mail } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import { TIER_BADGE, TIER_VOCABULARY, fidelityNoteFor } from '../components/rag/tiers';
@@ -234,7 +234,7 @@ export default function MachineAudit() {
             The Library of Congress Cross-Reference
           </h2>
           <p className="text-stone-800 text-base leading-relaxed mb-4" style={{ fontFamily: 'Source Serif 4, serif' }}>
-            The final and strongest check lines each interview up against the Library of Congress's own
+            The final and strongest check lines each interview up against the Library of Congress&apos;s own
             published transcript, word by word. Where the recognition pass and the Library of Congress text
             disagree, clean recognition errors are healed automatically inside the existing timestamps, and
             anything ambiguous is preserved for a human to review. The healing never silently overturns a

@@ -14,7 +14,6 @@
  */
 
 import { useEffect, useState, useRef, useMemo } from 'react';
-import { Search as SearchIcon, X } from 'lucide-react';
 import { loadConstellation } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';
 import { TIER_COLORS, SETTLED_STATES } from './tiers';
@@ -96,7 +95,7 @@ export default function Constellation({
     const result = [];
     for (const c of clusters) {
       if ((c.size || 0) < 3) continue;
-      const members = c.members || (c.member_entry_subjects || []).map((s, i) => ({ entry_subject: s, entry_number: null }));
+      const members = c.members || (c.member_entry_subjects || []).map((s) => ({ entry_subject: s, entry_number: null }));
       let sumX = 0, sumY = 0, n = 0;
       for (const m of members) {
         const pt = pointById.get(m.entry_number);

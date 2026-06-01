@@ -41,13 +41,11 @@ export default function BlackPantherToBrownBeretsConnector({ fromRef, toRef }) {
         const point1X = startX + horizontalDistance1; // After first right
         const point1Y = startY;
         
-        const point2X = point1X;
         const point2Y = startY + verticalDistance1; // After first down
         
         const point3X = point1X - horizontalDistance2; // After first left
         const point3Y = point2Y;
         
-        const point4X = point3X;
         const point4Y = point2Y + verticalDistance2; // After second down
         
         const segments = [

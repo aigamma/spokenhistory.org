@@ -26,7 +26,6 @@ export default function BrownBeretsToLongHotSummerConnector({ fromRef, toRef }) 
         const startY = fromRect.top + fromRect.height / 2 + scrollTop - 147;
 
         // End at top of Long Hot Summer date badge
-        const endX = toRect.left + toRect.width / 2;
         const endY = toRect.top + scrollTop - 147;
 
         // Calculate path: right → down

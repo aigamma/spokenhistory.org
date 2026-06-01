@@ -6,7 +6,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink, Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react';
 import { TIER_BADGE, TIER_VOCABULARY, SETTLED_STATES } from './tiers';
 import AtlasMap from './AtlasMap';
 

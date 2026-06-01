@@ -567,7 +567,7 @@ export default function Curriculum() {
                                 </span>
                               )}
                               <span className="mt-1 inline-block text-xs font-medium text-civil-red-body dark:text-red-400">
-                                Read This Person's Page
+                                Read This Person&apos;s Page
                               </span>
                             </span>
                           </Link>

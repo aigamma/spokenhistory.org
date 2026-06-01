@@ -25,7 +25,6 @@ export default function MarchOnWashingtonDateToQuoteConnector({ fromRef, toRef }
         const startY = fromRect.top + fromRect.height / 2 + scrollTop -148;
 
         // End above the quote (center horizontally)
-        const endX = toRect.left + toRect.width / 2;
         const endY = toRect.top + scrollTop - 175; // 20px above the quote
 
         // Calculate elbow points for right -> down path with ellipse (1 elbow)
@@ -34,7 +33,6 @@ export default function MarchOnWashingtonDateToQuoteConnector({ fromRef, toRef }
         const verticalDistance = endY - startY - 10; // Vertical drop to above quote (minus ellipse space)
         
         const elbowX = startX + horizontalDistance;
-        const elbowY = startY;
         
         const segments = [
           // Horizontal segment right from date badge

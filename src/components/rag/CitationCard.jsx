@@ -13,7 +13,7 @@
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Clock, AlertTriangle, Copy, Check, Info } from 'lucide-react';
+import { Clock, AlertTriangle, Copy, Check, Info } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
 import { useCapsule } from './useCapsules';
 import HearInContext, { tsToSeconds } from '../HearInContext';
@@ -37,6 +37,12 @@ export default function CitationCard({
   showCitation = true,
   className = '',
 }) {
+  // Hooks must run unconditionally before any early return (Rules of
+  // Hooks). payload can be null on the first render; useCapsule treats a
+  // null entry_number as "no capsule" and returns null, so hoisting the
+  // call above the guard is behavior-preserving.
+  const capsule = useCapsule(payload?.entryNumber);
+
   if (!payload) return null;
 
   const {
@@ -62,7 +68,6 @@ export default function CitationCard({
     ? TIER_BADGE[tierKey]
     : { label: 'Provenance unknown', bg: 'bg-stone-50', text: 'text-stone-700', border: 'border-stone-200', icon: AlertTriangle };
   const BadgeIcon = badge.icon;
-  const capsule = useCapsule(entryNumber);
 
   // Bounded-clip parameters. The retrieval payload carries both ends of the
   // matched cue, so the clip plays exactly the passage; if only a start is

@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, getDoc, collection, getDocs, query, where, orderBy, limit } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy, limit } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 import { getFunctions } from 'firebase/functions'
@@ -9,7 +9,6 @@ import {
   getActiveCollection, 
   validateMappedData,
   processKeywords,
-  normalizeDocumentId,
   getDocumentIdVariants
 } from './collectionMapper.js'
 

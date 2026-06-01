@@ -26,7 +26,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ExternalLink, ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock } from 'lucide-react';
+import { ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_FILL, SNIPPET_BORDER, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_FILL, SNIPPET_PROBLEM_BORDER, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
 import HearInContext, { tsToSeconds } from '../components/HearInContext';

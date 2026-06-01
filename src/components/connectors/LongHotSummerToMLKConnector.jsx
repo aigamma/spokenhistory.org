@@ -37,8 +37,6 @@ export default function LongHotSummerToMLKConnector({ fromRef, toRef }) {
         
         const firstElbowX = startX + horizontalDistance1;
         const firstElbowY = startY + verticalDistance1;
-        const secondElbowX = endX;
-        const secondElbowY = firstElbowY;
         
         const segments = [
           // 1. Horizontal segment right from Long Hot Summer date

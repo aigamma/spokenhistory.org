@@ -6,8 +6,8 @@
  * synchronizing with the parent component, and handling playback controls.
  */
 
-import React, { useEffect, useRef, useState } from "react";
-import { extractVideoId, convertTimestampToSeconds, extractStartTimestamp, parseTimestampRange } from "../utils/timeUtils";
+import { useEffect, useRef, useState } from "react";
+import { extractVideoId, parseTimestampRange } from "../utils/timeUtils";
 import Html5VideoPlayer from "./Html5VideoPlayer";
 
 // URL-type detector: returns true when the source URL is a direct

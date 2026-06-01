@@ -8,7 +8,7 @@
  * - Background loading of remaining content
  */
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { parseTimestampRange } from "../utils/timeUtils";
 import VideoPlayer from "../components/VideoPlayer";

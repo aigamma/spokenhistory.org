@@ -6,7 +6,7 @@
  * to provide a seamless media playback experience with custom controls.
  */
 
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { getInterviewData, getInterviewSegments, getAllInterviews } from '../services/firebase'
 import { useAuth } from '../contexts/AuthContext'
@@ -122,7 +122,7 @@ export default function InterviewPlayer() {
     
     // Handle metadataV2 format: "01:26:43,000 - 02:38:35,000"
     // Extract the start time (before the " - ")
-    const timeStr = timestamp.split(' - ')[0].replace(/[\[\]]/g, '').replace(',000', '').trim()
+    const timeStr = timestamp.split(' - ')[0].replace(/[[\]]/g, '').replace(',000', '').trim()
     const parts = timeStr.split(':').map(Number)
     
     if (parts.length === 3) {
@@ -137,7 +137,7 @@ export default function InterviewPlayer() {
   const extractStartTimestamp = (timestamp) => {
     if (!timestamp) return '00:00'
     // Handle both formats: "[HH:MM:SS - HH:MM:SS]" and "HH:MM:SS,000 - HH:MM:SS,000"
-    const cleanTimestamp = timestamp.replace(/[\[\]]/g, '').replace(',000', '')
+    const cleanTimestamp = timestamp.replace(/[[\]]/g, '').replace(',000', '')
     const parts = cleanTimestamp.split(' - ')
     return parts.length >= 1 ? parts[0].trim() : '00:00'
   }
@@ -713,7 +713,7 @@ export default function InterviewPlayer() {
                   disabled={!playerReady}
                   aria-label={`Jump to chapter ${index + 1}`}
                 >
-                  Chapter {String(index + 1).padStart(2, '0')} | {summary.timestamp ? summary.timestamp.split(' - ')[0].replace(/[\[\]]/g, '').replace(',000', '').trim() : 'Unknown time'}
+                  Chapter {String(index + 1).padStart(2, '0')} | {summary.timestamp ? summary.timestamp.split(' - ')[0].replace(/[[\]]/g, '').replace(',000', '').trim() : 'Unknown time'}
                 </button>
 
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">

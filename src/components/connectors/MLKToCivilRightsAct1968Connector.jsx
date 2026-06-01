@@ -41,7 +41,6 @@ export default function MLKToCivilRightsAct1968Connector({ fromRef, toRef }) {
         const firstElbowX = startX + horizontalDistance1;
         const firstElbowY = startY;
         
-        const secondElbowX = firstElbowX;
         const secondElbowY = startY + verticalDistance1;
         
         const thirdElbowX = firstElbowX - horizontalDistance2;
@@ -50,7 +49,6 @@ export default function MLKToCivilRightsAct1968Connector({ fromRef, toRef }) {
         const fourthElbowX = thirdElbowX;
         const fourthElbowY = secondElbowY + verticalDistance2;
         
-        const fifthElbowX = endX;
         const fifthElbowY = fourthElbowY;
         
         const segments = [

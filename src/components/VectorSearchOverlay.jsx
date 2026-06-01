@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search as SearchIcon, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { searchClipsByTopic } from '../services/embeddings';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../services/firebase';
@@ -626,7 +626,7 @@ export default function VectorSearchOverlay({ isOpen, onClose }) {
                         clipped by the 32px container. */}
                     <div className="w-full pb-2 border-b border-black dark:border-zinc-700">
                       <div className="text-civil-red-body text-base font-light font-['Chivo_Mono']">
-                        {results.length} search results for "{searchQuery}"
+                        {results.length} search results for &quot;{searchQuery}&quot;
                       </div>
                     </div>
 

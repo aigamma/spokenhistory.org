@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink, Copy, Check } from 'lucide-react';
+import { Copy, Check } from 'lucide-react';
 
 function dayOfYear() {
   const now = new Date();

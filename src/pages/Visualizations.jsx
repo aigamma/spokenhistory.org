@@ -7,7 +7,6 @@
  */
 
 import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
 import VisualizationContainer from '../components/visualization/VisualizationContainer.jsx';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
@@ -31,11 +30,6 @@ export default function Visualizations() {
    */
   const [activeTab, setActiveTab] = useState('timeline');
   
-  /**
-   * Authentication context to access user information
-   * @type {Object} User authentication data and functions
-   */
-  const { user } = useAuth();
   
   /**
    * Array of available visualization tabs

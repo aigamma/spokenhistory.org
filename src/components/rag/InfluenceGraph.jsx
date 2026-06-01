@@ -201,7 +201,7 @@ export default function InfluenceGraph({
         d.fx = event.x;
         d.fy = event.y;
       })
-      .on('end', (event, d) => {
+      .on('end', (event) => {
         if (!event.active) simulation.alphaTarget(0);
         // Don't auto-release: leaving fx/fy set lets the user park
         // a node where they want it. A double-click clears the pin.

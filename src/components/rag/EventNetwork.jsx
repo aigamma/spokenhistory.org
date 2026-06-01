@@ -379,7 +379,7 @@ function EventNetworkGraph({
         d.fx = event.x;
         d.fy = event.y;
       })
-      .on('end', (event, d) => {
+      .on('end', (event) => {
         if (!event.active) simulation.alphaTarget(0);
         // Leave fx/fy set so the user can park a node; double-click clears it.
       });

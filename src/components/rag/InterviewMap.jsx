@@ -36,7 +36,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Search as SearchIcon, X, ExternalLink, Loader2 } from 'lucide-react';
+import { Search as SearchIcon, X, Loader2 } from 'lucide-react';
 import { TIER_COLORS, TIER_VOCABULARY } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';

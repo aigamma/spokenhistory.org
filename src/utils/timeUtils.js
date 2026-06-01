@@ -98,7 +98,7 @@ export function parseTimestampRange(timestampRange) {
   if (!timestampRange) return { startSeconds: 0, endSeconds: 0 };
   
   // Remove brackets if present (legacy format)
-  const cleanTimestamp = timestampRange.replace(/[\[\]]/g, '');
+  const cleanTimestamp = timestampRange.replace(/[[\]]/g, '');
   
   const parts = cleanTimestamp.split('-').map(part => part.trim());
   if (parts.length !== 2) return { startSeconds: 0, endSeconds: 0 };

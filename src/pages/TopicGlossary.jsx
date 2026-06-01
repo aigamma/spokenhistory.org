@@ -92,7 +92,7 @@ export default function TopicGlossary() {
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
             A guide to the major stories and recurring themes across the collection:
-            childhood under segregation, family and community, the movement's turning
+            childhood under segregation, family and community, the movement&apos;s turning
             points, local organizing, faith, violence, and memory. Each topic gathers
             interviewees whose testimony returns to the same subjects, even when they
             never met. Open one to read what connects it and to play a stream of clips
@@ -106,7 +106,7 @@ export default function TopicGlossary() {
           </h2>
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
             The recurring narratives that run across the interviews, the throughlines the
-            project's lead interviewer identified. Each one opens a playlist of clips drawn
+            project&apos;s lead interviewer identified. Each one opens a playlist of clips drawn
             from every voice that returns to it.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none p-0">

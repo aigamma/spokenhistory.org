@@ -33,10 +33,7 @@ export default function MarchOnWashingtonGifToDateConnector({ fromRef, toRef }) 
         const horizontalDistance = Math.abs(startX - endX); // Distance to go left to date badge
         const verticalDistance2 = endY - (startY + verticalDistance1); // Final vertical drop to date badge
         
-        const firstElbowX = startX;
         const firstElbowY = startY + verticalDistance1;
-        const secondElbowX = endX;
-        const secondElbowY = firstElbowY;
         
         const segments = [
           // First vertical segment down from GIF center

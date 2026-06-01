@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FaPlay, FaPause, FaStepForward, FaStepBackward, FaCompress, FaExpand, FaTimes } from 'react-icons/fa';
 
 const VideoPanel = ({ 
@@ -7,7 +7,6 @@ const VideoPanel = ({
   videoUrl, 
   summaries, 
   documentName,
-  currentTimestamp,
   setCurrentTimestamp
 }) => {
   const [isMinimized, setIsMinimized] = useState(false);

@@ -12,7 +12,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, GitBranch, List, Loader2, FileText } from 'lucide-react';
+import { GitBranch, List, Loader2, FileText } from 'lucide-react';
 import InfluenceGraph from './InfluenceGraph';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';

@@ -30,7 +30,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ExternalLink, Search as SearchIcon, X } from 'lucide-react';
+import { Search as SearchIcon, X } from 'lucide-react';
 
 // Render dimensions. The canvas uses devicePixelRatio for sharpness;
 // the CSS dimensions are these values, the backing-store pixels are

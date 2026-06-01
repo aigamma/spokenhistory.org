@@ -14,7 +14,7 @@
 
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Clock, FileText } from 'lucide-react';
+import { Clock, FileText } from 'lucide-react';
 import { TIER_BADGE, TIER_VOCABULARY, SETTLED_STATES } from './tiers';
 
 // Hand-curated role/era line per figure. The famous_external.json

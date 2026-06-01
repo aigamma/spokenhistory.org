@@ -6,7 +6,7 @@
  * required format, and renders an interactive timeline with links to relevant interviews.
  */
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../services/firebase";
 import "timelinejs3/compiled/css/timeline.css";
@@ -216,7 +216,7 @@ export default function TimelineVisualization() {
       
       <div className="bg-indigo-50 rounded-xl p-4 px-6 border-l-4 border-indigo-500">
         <p className="text-sm leading-relaxed text-indigo-800 m-0">
-          <strong>Tip:</strong> Click on any event to see details, and use the "Relevant Interviews" button to find related interview recordings.
+          <strong>Tip:</strong> Click on any event to see details, and use the &quot;Relevant Interviews&quot; button to find related interview recordings.
         </p>
       </div>
     </div>

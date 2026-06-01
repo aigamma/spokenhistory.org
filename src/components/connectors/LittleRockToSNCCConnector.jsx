@@ -25,7 +25,6 @@ export default function LittleRockToSNCCConnector({ fromRef, toRef, horizontalOf
         const startY = fromRect.top + fromRect.height / 2 + scrollTop - 148;
 
         // End at center top of SNCC date badge
-        const endX = toRect.left + toRect.width / 2;
         const endY = toRect.top + scrollTop - 98;
 
         // Calculate center point for the path with horizontal offset

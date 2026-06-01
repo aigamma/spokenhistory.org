@@ -44,9 +44,6 @@ export default function SelmaToVotingRightsActConnector({ fromRef, toRef }) {
         const secondElbowX = firstElbowX - horizontalDistance2;
         const secondElbowY = firstElbowY + verticalDistance2;
         
-        const thirdElbowX = endX;
-        const thirdElbowY = secondElbowY;
-        
         const segments = [
           // 1. Horizontal segment right from Selma date
           {

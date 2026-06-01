@@ -34,8 +34,6 @@ import WelcomeDisclaimerModal from '../components/WelcomeDisclaimerModal';
 import { useInlineFeedback } from '../hooks/useInlineFeedback';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
-// Simple feedback - just save to Firestore
-const FEEDBACK_ENABLED = true;
 
 /**
  * Simple Ray Component - Easy positioning with Tailwind classes
@@ -867,7 +865,7 @@ export default function Home() {
 
             {/* Brown v. Board Quote */}
             <p className="text-black dark:text-zinc-100 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4'] leading-relaxed">
-            "We conclude that, in the field of public education, the doctrine of "<em>separate but equal</em>" has no place. Separate educational facilities are <em>inherently unequal</em>. Therefore, we hold that the plaintiffs and others similarly situated for whom the actions have been brought are, by reason of the segregation complained of, deprived of the equal protection of the laws guaranteed by the Fourteenth Amendment. This disposition makes unnecessary any discussion whether such segregation also <em>violates the Due Process Clause</em> of the Fourteenth Amendment."
+            &quot;We conclude that, in the field of public education, the doctrine of &quot;<em>separate but equal</em>&quot; has no place. Separate educational facilities are <em>inherently unequal</em>. Therefore, we hold that the plaintiffs and others similarly situated for whom the actions have been brought are, by reason of the segregation complained of, deprived of the equal protection of the laws guaranteed by the Fourteenth Amendment. This disposition makes unnecessary any discussion whether such segregation also <em>violates the Due Process Clause</em> of the Fourteenth Amendment.&quot;
             </p>
 
             {/* Title - Enhanced for first event */}
@@ -901,7 +899,7 @@ export default function Home() {
               </div>
               
               <p className="w-96 text-center text-black dark:text-zinc-100 text-xl font-normal font-['Inter']">
-              This landmark ruling by the Supreme Court ruled that State laws establishing racial segregation in public schools were violations of the Fourteenth Amendment's Equal Protection Clause. This struck down the "separate but equal" doctrine from Plessy v. Ferguson that had allowed states to mandate segregation in public spaces. The ruling required schools desegregate, a process that was often radicalizing for Black students, as they were subjected to extreme violence from the local White communities.
+              This landmark ruling by the Supreme Court ruled that State laws establishing racial segregation in public schools were violations of the Fourteenth Amendment&apos;s Equal Protection Clause. This struck down the &quot;separate but equal&quot; doctrine from Plessy v. Ferguson that had allowed states to mandate segregation in public spaces. The ruling required schools desegregate, a process that was often radicalizing for Black students, as they were subjected to extreme violence from the local White communities.
               </p>
             </div>
 
@@ -980,7 +978,7 @@ export default function Home() {
                   <EmmettTillImage />
                 </div>
                 <p className="text-black dark:text-zinc-100 text-base font-light font-['Chivo_Mono'] text-right hover:text-red-500 transition-colors" style={{ lineHeight: '100%' }}>
-                  Emmett Till's mother, Mamie Till, at his funeral (Dave Mann)
+                  Emmett Till&apos;s mother, Mamie Till, at his funeral (Dave Mann)
                 </p>
               </Link>
             </div>
@@ -1005,7 +1003,7 @@ export default function Home() {
           >
             <div className="space-y-3 sm:space-y-4 lg:space-y-5">
               <p className="font-normal font-['Source_Serif_4'] text-left leading-relaxed text-xl sm:text-2xl md:text-3xl lg:text-[40px] lg:leading-tight" style={{ color: '#1E1E1E' }}>
-                "I remember being with [Mamie Till] when we stayed up all night waiting on the body to come in from, uh, Mississippi. And when it did come in, she demanded that the body be open, 'so they – the world can see what they did to my boy.'"
+                &quot;I remember being with [Mamie Till] when we stayed up all night waiting on the body to come in from, uh, Mississippi. And when it did come in, she demanded that the body be open, &apos;so they – the world can see what they did to my boy.&apos;&quot;
               </p>
               <cite className="font-normal font-['Source_Serif_4'] not-italic text-left block text-xl sm:text-2xl md:text-3xl lg:text-[40px]" style={{ color: '#1E1E1E' }}>
                , Simeon Booker
@@ -1047,7 +1045,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  Initiated by Rosa Parks' refusal to give up her bus seat to a white man in Montgomery, Alabama, this pivotal event marked a significant moment in the Civil Rights Movement.
+                  Initiated by Rosa Parks&apos; refusal to give up her bus seat to a white man in Montgomery, Alabama, this pivotal event marked a significant moment in the Civil Rights Movement.
                 </TopicLinkedText>
               </p>
 
@@ -1113,7 +1111,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  The Little Rock Nine's integration at Little Rock Central High School marked a significant point in the American civil rights movement, highlighting resistance to desegregation and federal intervention.
+                  The Little Rock Nine&apos;s integration at Little Rock Central High School marked a significant point in the American civil rights movement, highlighting resistance to desegregation and federal intervention.
                 </TopicLinkedText>
               </p>
 
@@ -1154,7 +1152,7 @@ export default function Home() {
           {/* Quote - Positioned above GIF and to the left */}
           <div className="mt-32 lg:mt-40 -ml-2 sm:-ml-4 lg:-ml-6">
             <div className="w-full max-w-[600px] justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl font-normal font-['Source_Serif_4']">
-              "[Elizabeth Eckford] said something that any fifteen year old kid would say... 'I never thought people could be so cruel.'"
+              &quot;[Elizabeth Eckford] said something that any fifteen year old kid would say... &apos;I never thought people could be so cruel.&apos;&quot;
             </div>
           </div>
           
@@ -1178,7 +1176,7 @@ export default function Home() {
           {/* Second Quote - Positioned below GIF and to the right */}
           <div className="mt-12 lg:mt-16 flex justify-end -mr-2 sm:-mr-4 lg:-mr-6">
             <div className="w-full max-w-[600px] justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl font-normal font-['Source_Serif_4']">
-              "I never thought people could be so cruel.", Moses J. Newson
+              &quot;I never thought people could be so cruel.&quot;, Moses J. Newson
             </div>
           </div>
         </div>
@@ -1213,7 +1211,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  The Student Nonviolent Coordinating Committee (SNCC) played a critical role in the Civil Rights Movement, known for organizing student activism for racial equality. The organization facilitated voter registration drives, sit-ins, and freedom rides and was a pivotal part of the movement's strategy for nonviolent direct action. The involvement of SNCC and similar groups has had lasting effects on the push for civil rights.
+                  The Student Nonviolent Coordinating Committee (SNCC) played a critical role in the Civil Rights Movement, known for organizing student activism for racial equality. The organization facilitated voter registration drives, sit-ins, and freedom rides and was a pivotal part of the movement&apos;s strategy for nonviolent direct action. The involvement of SNCC and similar groups has had lasting effects on the push for civil rights.
                 </TopicLinkedText>
               </p>
 
@@ -1340,7 +1338,7 @@ export default function Home() {
             
             <div className="w-full max-w-[800px]">
               <p className="text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Source_Serif_4']">
-                "When you stepped off that bus and you looked around and you saw these people crawling around, trying to get the smoke out of their chest, and people crawling and coughing and gagging, it was one of those sights that make you wonder why Americans are doing that sort of thing to fellow Americans who were just trying to exercise their rights."
+                &quot;When you stepped off that bus and you looked around and you saw these people crawling around, trying to get the smoke out of their chest, and people crawling and coughing and gagging, it was one of those sights that make you wonder why Americans are doing that sort of thing to fellow Americans who were just trying to exercise their rights.&quot;
               </p>
             </div>
           </div>
@@ -1373,7 +1371,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  Medgar Evers, a prominent civil rights activist and field secretary for the NAACP, was assassinated outside his home in Jackson, Mississippi. His murder marked a turning point in the civil rights movement, increasing the urgency and determination of activists who faced growing hostility and violence. Evers' assassination underscored the dangers faced by those fighting for racial equality and galvanized ongoing efforts for civil rights legislation.
+                  Medgar Evers, a prominent civil rights activist and field secretary for the NAACP, was assassinated outside his home in Jackson, Mississippi. His murder marked a turning point in the civil rights movement, increasing the urgency and determination of activists who faced growing hostility and violence. Evers&apos; assassination underscored the dangers faced by those fighting for racial equality and galvanized ongoing efforts for civil rights legislation.
                 </TopicLinkedText>
               </p>
 
@@ -1476,7 +1474,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  This historic event was a major civil rights demonstration, where Martin Luther King Jr. delivered his iconic 'I Have a Dream' speech. It was pivotal in advocating for civil and economic rights for African Americans, showcasing the frustration with the Kennedy administration's inaction against racial violence.
+                  This historic event was a major civil rights demonstration, where Martin Luther King Jr. delivered his iconic &apos;I Have a Dream&apos; speech. It was pivotal in advocating for civil and economic rights for African Americans, showcasing the frustration with the Kennedy administration&apos;s inaction against racial violence.
                 </TopicLinkedText>
               </p>
 
@@ -1593,7 +1591,7 @@ export default function Home() {
             </div>
             
             <div ref={marchOnWashingtonQuoteRef} className="w-full max-w-[905px] text-center justify-start text-stone-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal font-['Source_Serif_4']">
-              "And so what I remember first was seeing all those people. It was an incredible sight. A nineteen year-old from Mississippi who had never seen huge numbers. In fact no one on that platform had seen numbers like that before. But I remember seeing people march, coming and coming and coming and they just kept coming. "
+              &quot;And so what I remember first was seeing all those people. It was an incredible sight. A nineteen year-old from Mississippi who had never seen huge numbers. In fact no one on that platform had seen numbers like that before. But I remember seeing people march, coming and coming and coming and they just kept coming. &quot;
             </div>
           </div>
         </div>
@@ -1782,7 +1780,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  While preparing to speak for the Organization of Afro-American Unity, activist Malcolm X was murdered. Malcolm X's uncompromising message of self-determination for African Americans laid the groundwork for organizations to make moves outside the legal framework of the American system. His international approach and recognition of the connection between Black American struggles and anti-imperial struggles in the Third World made him revolutionary within the Civil Rights Movement and brought him international acclaim.
+                  While preparing to speak for the Organization of Afro-American Unity, activist Malcolm X was murdered. Malcolm X&apos;s uncompromising message of self-determination for African Americans laid the groundwork for organizations to make moves outside the legal framework of the American system. His international approach and recognition of the connection between Black American struggles and anti-imperial struggles in the Third World made him revolutionary within the Civil Rights Movement and brought him international acclaim.
                 </TopicLinkedText>
               </p>
 
@@ -1826,7 +1824,7 @@ export default function Home() {
           <div className="mt-12 lg:mt-16 flex justify-start -ml-2 sm:-ml-4 lg:-ml-6">
             <div className="w-full max-w-[1608px] justify-start">
               <p className="text-stone-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']">
-                "In the same way that Marx is the fundamental critic of capitalism, and Fanon is the fundamental critic of colonialism, to my mind, Malcolm is the fundamental critic of American racism."
+                &quot;In the same way that Marx is the fundamental critic of capitalism, and Fanon is the fundamental critic of colonialism, to my mind, Malcolm is the fundamental critic of American racism.&quot;
               </p>
               <cite className="text-stone-900 text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] not-italic block mt-4">
                 William Strickland
@@ -1911,7 +1909,7 @@ export default function Home() {
           <div className="mt-24 lg:mt-32 flex flex-col lg:flex-row -ml-2 sm:-ml-4 lg:-ml-6">
             {/* Quote - Top on mobile, left on desktop */}
             <div className="w-full lg:w-[804px] justify-start text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Source_Serif_4']">
-              "I was the only one that crossed the bridge and got to the other side and went into houses to drag people out, you know, who had been, had been gassed. I can still smell the gas. Uh, the shoes and the things laying on the side and the, the goons with their clubs lining the road, along with the, with the National Guard
+              &quot;I was the only one that crossed the bridge and got to the other side and went into houses to drag people out, you know, who had been, had been gassed. I can still smell the gas. Uh, the shoes and the things laying on the side and the, the goons with their clubs lining the road, along with the, with the National Guard
             </div>
 
             {/* Selma GIF - Bottom on mobile, right on desktop */}
@@ -1931,7 +1929,7 @@ export default function Home() {
               </div>
               <div className="mt-4 lg:-ml-16">
                 <p className="text-stone-900 font-normal font-['Source_Serif_4'] text-xl sm:text-2xl md:text-3xl lg:text-[40px] lg:whitespace-nowrap" style={{ lineHeight: '100%', letterSpacing: '-1%' }}>
-                  – it was a horrible scene, horrible scene. "
+                  – it was a horrible scene, horrible scene. &quot;
                 </p>
                 <p className="text-stone-900 font-light font-['Chivo_Mono'] text-right mt-8 lg:mt-12 text-base sm:text-lg md:text-xl lg:text-2xl" style={{ lineHeight: '100%' }}>
                   Dr. Alfred Moldovan
@@ -2056,7 +2054,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  The Black Panther Party was established in 1966 as a revolutionary organization advocating for African American self-defense and community welfare programs. The Panthers' initiatives included the establishment of community social programs such as free breakfast for children and health clinics. The party was also known for its stance against police brutality and for promoting black empowerment. Women's roles in the party were significant, although challenges in gender dynamics existed.
+                  The Black Panther Party was established in 1966 as a revolutionary organization advocating for African American self-defense and community welfare programs. The Panthers&apos; initiatives included the establishment of community social programs such as free breakfast for children and health clinics. The party was also known for its stance against police brutality and for promoting black empowerment. Women&apos;s roles in the party were significant, although challenges in gender dynamics existed.
                 </TopicLinkedText>
               </p>
 
@@ -2099,7 +2097,7 @@ export default function Home() {
             {/* Quote - Top on mobile, left on desktop */}
             <div className="w-full lg:w-[804px] relative">
               <p className="text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal font-['Source_Serif_4']">
-                "Essentially, the Black Panther Party was a twentieth-century version of the hopes and demands and desires of an oppressed black community, rearticulated in a new set of words."
+                &quot;Essentially, the Black Panther Party was a twentieth-century version of the hopes and demands and desires of an oppressed black community, rearticulated in a new set of words.&quot;
               </p>
               <p className="mt-4 text-stone-900 font-light font-['Chivo_Mono'] text-lg sm:text-xl lg:text-2xl lg:absolute lg:bottom-0 lg:left-0 lg:mt-0" style={{ lineHeight: '100%' }}>
                 Kathleen Cleaver
@@ -2169,7 +2167,7 @@ export default function Home() {
               {/* Description */}
               <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                 <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                  The Chicano Movement was a civil rights movement extending from the 1940s into the 1970s with the goal of achieving Mexican American empowerment, combating discrimination, and promoting cultural pride. It correlated with the broader push for civil rights and influenced identity politics and activism among Mexican Americans. The Brown Beret's modeled themselves after the Black Panther Party and played a major role in Chicano activism.
+                  The Chicano Movement was a civil rights movement extending from the 1940s into the 1970s with the goal of achieving Mexican American empowerment, combating discrimination, and promoting cultural pride. It correlated with the broader push for civil rights and influenced identity politics and activism among Mexican Americans. The Brown Beret&apos;s modeled themselves after the Black Panther Party and played a major role in Chicano activism.
                 </TopicLinkedText>
               </p>
 
@@ -2365,7 +2363,7 @@ export default function Home() {
               <div className="mt-8 lg:mt-0 lg:ml-8 xl:ml-12 w-full lg:w-auto">
                 {/* Quote */}
                 <div className="w-full max-w-[350px] mx-auto lg:mx-0 justify-start text-stone-900 text-xl sm:text-2xl lg:text-3xl font-normal font-['Source_Serif_4'] mb-8">
-                  "...[Martin] was saying that the change that must happen was not legal. The change that must happen was moral and spiritual, right, and that was the basis upon which we were move..."
+                  &quot;...[Martin] was saying that the change that must happen was not legal. The change that must happen was moral and spiritual, right, and that was the basis upon which we were move...&quot;
                 </div>
 
                 {/* Citation */}
@@ -2451,7 +2449,7 @@ export default function Home() {
                 {/* Description */}
                 <p className="text-black dark:text-zinc-100 text-lg sm:text-xl lg:text-2xl xl:text-3xl font-normal font-['Source_Serif_4'] leading-relaxed">
                   <TopicLinkedText linkClassName="text-civil-red-body hover:underline cursor-pointer font-medium">
-                    Signed into law during the riots following Dr. King's assassination, this act expands upon the 1964 Civil Rights Act by declaring it illegal to discriminate in the rental and financing of housing, contributing to the development of equal housing opportunities.
+                    Signed into law during the riots following Dr. King&apos;s assassination, this act expands upon the 1964 Civil Rights Act by declaring it illegal to discriminate in the rental and financing of housing, contributing to the development of equal housing opportunities.
                   </TopicLinkedText>
                 </p>
 
@@ -2486,7 +2484,7 @@ export default function Home() {
           
           {/* Quote */}
           <div className="mt-8 flex justify-center px-4 sm:px-6 lg:px-0">
-            <div className="w-full max-w-[876px] text-center justify-start text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4']">"The movement was pointing out America's hypocrisy. Them brothers and sisters who went out, and came back, and brought knowledge and stuff, empowered us over a long period of time. It empowered us. And by them empowering us, man, it took our psyche to another level."</div>
+            <div className="w-full max-w-[876px] text-center justify-start text-stone-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal font-['Source_Serif_4']">&quot;The movement was pointing out America&apos;s hypocrisy. Them brothers and sisters who went out, and came back, and brought knowledge and stuff, empowered us over a long period of time. It empowered us. And by them empowering us, man, it took our psyche to another level.&quot;</div>
           </div>
           
           {/* Selma Get Right GIF - Centered */}

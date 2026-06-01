@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { ExternalLink, Clock } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { TIER_BADGE } from './tiers';
 import EventsTimeline from './EventsTimeline';
 import HearInContext from '../HearInContext';

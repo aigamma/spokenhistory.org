@@ -34,7 +34,6 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
 import { useIsDark } from '../../hooks/useTheme';
 
 // Match NomicProjection's palette so users see consistent topic
@@ -44,8 +43,6 @@ const TOPIC_PALETTE = [
   '#2E5C70', '#3B4276', '#65467A', '#8C3F5C',
   '#3B6E59', '#665A3A', '#5C3F2D', '#4A5A6E',
 ];
-
-const HIGHLIGHT_COLOR = '#F2483C';
 
 export default function PassageMap() {
   const isDark = useIsDark();

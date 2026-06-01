@@ -6,7 +6,7 @@
  * It implements a windowed display to handle large playlists efficiently.
  */
 
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { parseTimestampRange, formatTime, extractVideoId } from "../utils/timeUtils";
 
 /**

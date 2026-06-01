@@ -121,7 +121,7 @@ export default function PeopleCatalog() {
             People Catalog
           </h1>
           <p className="text-stone-700 max-w-3xl">
-            A citation-bearing reference page per named individual on the site, {counts ? counts.interviewees : ''} oral-history interviewees plus {counts ? counts.external_figures : ''} historic figures the interviewees discuss. Each catalog page consolidates the bio, the AI's reading of the figure's embedding signature, the semantic neighbors, the concept-axis positions, and the cross-links into curated tours and the influence graph.
+            A citation-bearing reference page per named individual on the site, {counts ? counts.interviewees : ''} oral-history interviewees plus {counts ? counts.external_figures : ''} historic figures the interviewees discuss. Each catalog page consolidates the bio, the AI&apos;s reading of the figure&apos;s embedding signature, the semantic neighbors, the concept-axis positions, and the cross-links into curated tours and the influence graph.
           </p>
         </header>
 

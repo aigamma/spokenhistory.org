@@ -49,7 +49,6 @@ export const mapInterviewData = (data, sourceCollection) => {
     return {
       id: data.id,
       documentName: data.documentName,
-      mainSummary: data.mainSummary,
       role: data.role,
       roleSimplified: data.roleSimplified || data.role,
       videoEmbedLink: data.videoEmbedLink,
@@ -169,7 +168,7 @@ function extractStartTime(timestamp) {
   if (!timestamp) return '';
   
   // Handle both formats: "[HH:MM:SS - HH:MM:SS]" and "HH:MM:SS,000 - HH:MM:SS,000"
-  const cleanTimestamp = timestamp.replace(/[\[\]]/g, ''); // Remove brackets
+  const cleanTimestamp = timestamp.replace(/[[\]]/g, ''); // Remove brackets
   const parts = cleanTimestamp.split(' - ');
   
   if (parts.length >= 1) {
@@ -187,7 +186,7 @@ function extractStartTime(timestamp) {
 function extractEndTime(timestamp) {
   if (!timestamp) return '';
   
-  const cleanTimestamp = timestamp.replace(/[\[\]]/g, '');
+  const cleanTimestamp = timestamp.replace(/[[\]]/g, '');
   const parts = cleanTimestamp.split(' - ');
   
   if (parts.length >= 2) {
@@ -312,7 +311,7 @@ export const convertTimestampFormat = (legacyTimestamp) => {
   if (!legacyTimestamp) return '';
   
   // Remove brackets and split
-  const cleanTimestamp = legacyTimestamp.replace(/[\[\]]/g, '');
+  const cleanTimestamp = legacyTimestamp.replace(/[[\]]/g, '');
   const parts = cleanTimestamp.split(' - ');
   
   if (parts.length === 2) {

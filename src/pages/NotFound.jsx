@@ -36,7 +36,7 @@ export default function NotFound() {
             className="text-stone-900 text-base sm:text-lg mb-2"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            The URL you typed or the link you followed doesn't match any page on this site.
+            The URL you typed or the link you followed doesn&apos;t match any page on this site.
           </p>
           {attemptedPath && attemptedPath !== '/' && (
             <p className="text-sm text-stone-700 mb-6 font-mono break-all">

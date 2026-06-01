@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Footer from '../components/common/Footer';
 import WWULogo from '../assetts/logos/wwu-logo--full-color_2.png';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -146,7 +145,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   className="hover:text-red-500 transition-colors"
                 >
-                  Dustin O'Hara, PhD
+                  Dustin O&apos;Hara, PhD
                 </a>
               </h3>
             </div>

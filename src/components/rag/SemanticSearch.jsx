@@ -10,7 +10,7 @@
  * optional entry_number filter for "search within one interviewee."
  */
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Search as SearchIcon, Loader2, X } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';

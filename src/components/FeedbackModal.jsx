@@ -157,7 +157,7 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
               Selected Text
             </label>
             <div className="bg-gray-50 border border-gray-300 rounded-md p-3 text-sm text-gray-700 max-h-32 overflow-y-auto">
-              "{selectedText}"
+              &quot;{selectedText}&quot;
             </div>
           </div>
 
@@ -188,7 +188,7 @@ export default function FeedbackModal({ selectedText, sectionLabel, onSubmit, on
           {/* Issue Description */}
           <div>
             <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
-              What's the issue? <span className="text-red-500">*</span>
+              What&apos;s the issue? <span className="text-red-500">*</span>
             </label>
             <textarea
               id="description"

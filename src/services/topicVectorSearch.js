@@ -3,7 +3,7 @@
  * Handles vectorization and semantic search for topics on the Topics page
  */
 
-import { collection, doc, setDoc, getDoc, getDocs, query, where } from 'firebase/firestore';
+import { collection, doc, setDoc, getDoc, getDocs } from 'firebase/firestore';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import { db } from './firebase';
 

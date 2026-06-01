@@ -6,7 +6,7 @@
  * navigation options to related content.
  */
 
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useSearchParams, useNavigate } from 'react-router-dom'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from '../services/firebase'
@@ -68,7 +68,7 @@ export default function ClipPlayer() {
    */
   const convertTimestampToSeconds = (timestamp) => {
     if (!timestamp) return 0
-    const timeStr = timestamp.split(' - ')[0].replace(/[\[\]]/g, '').trim()
+    const timeStr = timestamp.split(' - ')[0].replace(/[[\]]/g, '').trim()
     const parts = timeStr.split(':').map(Number)
     return parts.length === 3
       ? parts[0] * 3600 + parts[1] * 60 + parts[2]

@@ -1,7 +1,7 @@
 // src/pages/PlaylistEditor.jsx
 import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { collection, getDocs, doc, getDoc, updateDoc } from 'firebase/firestore'
+import { doc, updateDoc } from 'firebase/firestore'
 import { db } from '../services/firebase'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 import { useDocumentTitle } from '../hooks/useDocumentTitle'
