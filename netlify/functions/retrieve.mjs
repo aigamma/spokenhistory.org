@@ -172,12 +172,12 @@ function formatTimestamp(seconds) {
 
 function fidelityNote(provenance, tier) {
   // Declarative only, kept in sync with src/components/rag/tiers.js::fidelityNoteFor.
-  // Pass 10 (2026-05-30): LoC verification is the grade. Distribution is
-  // high 133 / publication-block 1 (Blake) / not-auditable 2 (McClary, Lawson);
-  // medium / low / ingestion-only are unused. Every note states a settled fact;
-  // none asks the reader to review or verify unfinished work.
+  // LoC verification is the grade; the labels collapse to two settled states.
+  // Distribution (140 interviews): high 133 / ingestion-only 3 / publication-block 1
+  // (Blake) all render LoC-Verified; not-auditable 3 is Audio-Limited Source. Every
+  // note states a settled fact; none asks the reader to review unfinished work.
   if (tier === 'high') return 'Cross-referenced line by line against the Library of Congress published transcript and confirmed aligned.';
-  if (tier === 'publication-block') return 'Audited transcript. The project’s verbatim text and the Library of Congress’s edited published edition diverge for this interview; both readings are preserved in the audit record.';
+  if (tier === 'publication-block') return 'Cross-referenced against the Library of Congress published transcript. Where the Library’s lightly edited edition differs from the verbatim recording, both readings are preserved in the audit record.';
   if (tier === 'not-auditable') return 'The source recording carries an inherent audio limit (mid-sentence truncation or degradation). This is the most complete transcript the recording supports, and the Library of Congress transcript reflects the same limit.';
   return 'Audited across nine passes against the project correction substrate and the Library of Congress reference.';
 }

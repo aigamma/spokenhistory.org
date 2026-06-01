@@ -15,6 +15,7 @@ import {
   TIER_VOCABULARY,
   TIER_BADGE,
   TIER_COLORS,
+  SETTLED_STATES,
   fidelityNoteFor,
 } from './tiers.js';
 
@@ -50,14 +51,29 @@ test('fidelityNoteFor returns a non-empty string for every tier', () => {
     const note = fidelityNoteFor('audit-original', tier);
     assert.ok(typeof note === 'string' && note.length > 0, `fidelityNoteFor returned empty for tier="${tier}"`);
   }
-  // ingestion-only special case: should match regardless of provenance
+  // ingestion-only renders as LoC-Verified (new-pipeline entries at LoC parity);
+  // its note references the Library of Congress.
   const note = fidelityNoteFor('audit-original', 'ingestion-only');
-  assert.match(note, /Single-pass ingestion/);
+  assert.match(note, /Library of Congress/i);
 });
 
 test('fidelityNoteFor handles unknown tiers gracefully', () => {
   const audited = fidelityNoteFor('audit-original', 'completely-unknown-tier');
-  assert.ok(audited.length > 0, 'should fall back to a generic audited-transcript note');
-  const provenance = fidelityNoteFor(null, null);
-  assert.match(provenance, /unknown/i, 'should say provenance unknown when both fields are null');
+  assert.ok(audited.length > 0, 'should fall back to a generic settled note');
+  const nullish = fidelityNoteFor(null, null);
+  assert.ok(nullish.length > 0, 'should still return a settled note when both fields are null');
+});
+
+test('SETTLED_STATES collapses every tier into exactly two display states', () => {
+  assert.equal(SETTLED_STATES.length, 2);
+  assert.deepStrictEqual(
+    SETTLED_STATES.map((s) => s.label).sort(),
+    ['Audio-Limited Source', 'LoC-Verified'],
+  );
+  // every tier key is covered exactly once across the two states
+  assert.deepStrictEqual(
+    SETTLED_STATES.flatMap((s) => s.tiers).sort(),
+    [...TIER_VOCABULARY].sort(),
+  );
+  for (const s of SETTLED_STATES) assert.match(s.color, /^#[0-9a-fA-F]{6}$/);
 });

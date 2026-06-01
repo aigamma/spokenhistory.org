@@ -19,14 +19,17 @@
 
 import { ShieldCheck, Info } from 'lucide-react';
 
-// The 6 tier values, with the corpus distribution as of Pass 10 (2026-05-30,
-// "LoC verification IS the grade", see transcripts/AUDIT_LIMITATIONS.md):
-//   high               133   (LoC-verified; the bulk of the corpus)
-//   medium               0   (unused: a LoC-verified entry is high; an unverified one is flagged)
-//   low                  0   (unused)
-//   publication-block    1   (Reverend Harry Blake: audited 9 passes, LoC's edited edition diverges from the recording)
-//   not-auditable        2   (source-audio limits: McClary, Lawson)
-//   ingestion-only       0   (all 9 ingestion entries reached LoC parity)
+// The 6 tier KEYS still flow through from the manifests, but they render as only
+// TWO settled states (see TIER_BADGE): every Library-of-Congress-cross-referenced
+// interview is "LoC-Verified", and "not-auditable" is "Audio-Limited Source".
+// Corpus distribution as of 2026-06 (140 interviews):
+//   high               133   -> LoC-Verified
+//   ingestion-only       3   -> LoC-Verified (new-pipeline entries, at LoC parity)
+//   publication-block    1   -> LoC-Verified (Reverend Harry Blake; the LoC edited
+//                              edition differs from the recording, both preserved)
+//   medium / low         0   -> LoC-Verified (unused)
+//   not-auditable        3   -> Audio-Limited Source (permanent source-audio limit)
+// So the site reports 137 LoC-Verified + 3 Audio-Limited Source.
 export const TIER_VOCABULARY = [
   'high',
   'medium',
@@ -45,17 +48,24 @@ export const TIER_VOCABULARY = [
 //   or 800) + white text + brighter border (border-400 or 500) so the
 //   pill keeps its outline glow on a dark background.
 // Every entry is a finished, Library-of-Congress-cross-referenced transcript. The
-// badge states WHAT an entry is, never an action a reader must take. There are three
-// settled states: LoC-Verified (cleanly aligned to LoC), Audited (audited nine passes;
-// LoC's edited edition may differ), and Audio-Limited Source (the recording itself has a
-// permanent limit). No warning icons, no "review" / "verify" call-to-action.
+// badge states WHAT an entry is, never an action a reader must take. There are two
+// settled states: LoC-Verified (cross-referenced against the Library of Congress) and
+// Audio-Limited Source (the recording itself has a permanent limit). No warning icons,
+// no "review" / "verify" call-to-action.
+// Two settled states only. Every LoC-cross-referenced interview reads as
+// "LoC-Verified" (there is no middle "Audited" rung: a Library-of-Congress
+// check is the grade, so the tier keys that used to label "Audited" now all
+// render LoC-Verified). "Audio-Limited Source" is the one genuinely different
+// state, a permanent limit in the source recording. Per-entry nuance (for
+// example where the Library's edited edition differs from the recording) lives
+// in the fidelity note, not in a separate badge rung.
 export const TIER_BADGE = {
-  'high':              { label: 'LoC-Verified',         bg: 'bg-sky-50 dark:bg-sky-800',         text: 'text-sky-800 dark:text-white',     border: 'border-sky-200 dark:border-sky-400',         icon: ShieldCheck },
-  'medium':            { label: 'Audited',              bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white', border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
-  'low':               { label: 'Audited',              bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white', border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
-  'publication-block': { label: 'Audited',              bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white', border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
-  'not-auditable':     { label: 'Audio-Limited Source', bg: 'bg-slate-50 dark:bg-slate-700',     text: 'text-slate-700 dark:text-white',   border: 'border-slate-200 dark:border-slate-400',     icon: Info },
-  'ingestion-only':    { label: 'Audited',              bg: 'bg-emerald-50 dark:bg-emerald-800', text: 'text-emerald-800 dark:text-white', border: 'border-emerald-200 dark:border-emerald-400', icon: ShieldCheck },
+  'high':              { label: 'LoC-Verified',         bg: 'bg-sky-50 dark:bg-sky-800',     text: 'text-sky-800 dark:text-white',   border: 'border-sky-200 dark:border-sky-400',     icon: ShieldCheck },
+  'medium':            { label: 'LoC-Verified',         bg: 'bg-sky-50 dark:bg-sky-800',     text: 'text-sky-800 dark:text-white',   border: 'border-sky-200 dark:border-sky-400',     icon: ShieldCheck },
+  'low':               { label: 'LoC-Verified',         bg: 'bg-sky-50 dark:bg-sky-800',     text: 'text-sky-800 dark:text-white',   border: 'border-sky-200 dark:border-sky-400',     icon: ShieldCheck },
+  'publication-block': { label: 'LoC-Verified',         bg: 'bg-sky-50 dark:bg-sky-800',     text: 'text-sky-800 dark:text-white',   border: 'border-sky-200 dark:border-sky-400',     icon: ShieldCheck },
+  'not-auditable':     { label: 'Audio-Limited Source', bg: 'bg-slate-50 dark:bg-slate-700', text: 'text-slate-700 dark:text-white', border: 'border-slate-200 dark:border-slate-400', icon: Info },
+  'ingestion-only':    { label: 'LoC-Verified',         bg: 'bg-sky-50 dark:bg-sky-800',     text: 'text-sky-800 dark:text-white',   border: 'border-sky-200 dark:border-sky-400',     icon: ShieldCheck },
 };
 
 // Raw hex colors for SVG fills on the Constellation scatter. Darker
@@ -63,17 +73,30 @@ export const TIER_BADGE = {
 // background, different brightness from the badge palette above
 // because the contexts demand different luminance.
 //
-// Three settled states, no alarm colors: sky = LoC-Verified, emerald = Audited,
-// slate = Audio-Limited Source. A glance at the map reads "finished corpus," not
-// "work remaining."
+// Two settled states, no alarm colors: sky = LoC-Verified, slate = Audio-Limited
+// Source. A glance at the map reads "finished corpus," not "work remaining."
 export const TIER_COLORS = {
-  'high': '#0369a1',                 // sky-700     (LoC-Verified)
-  'medium': '#047857',               // emerald-700 (Audited)
-  'low': '#047857',                  // emerald-700 (Audited)
-  'publication-block': '#047857',    // emerald-700 (Audited)
-  'not-auditable': '#475569',        // slate-600   (Audio-Limited Source)
-  'ingestion-only': '#047857',       // emerald-700 (Audited)
+  'high': '#0369a1',                 // sky-700   (LoC-Verified)
+  'medium': '#0369a1',               // sky-700   (LoC-Verified)
+  'low': '#0369a1',                  // sky-700   (LoC-Verified)
+  'publication-block': '#0369a1',    // sky-700   (LoC-Verified)
+  'not-auditable': '#475569',        // slate-600 (Audio-Limited Source)
+  'ingestion-only': '#0369a1',       // sky-700   (LoC-Verified)
 };
+
+// The two settled display states, derived from TIER_BADGE so there is one
+// source of truth. Each pairs a label with its Constellation color and the set
+// of raw tier keys that render under it, so legends show two swatches (not six
+// tier keys) and tier filters can toggle a whole state at once.
+export const SETTLED_STATES = (() => {
+  const byLabel = new Map();
+  for (const key of TIER_VOCABULARY) {
+    const label = TIER_BADGE[key].label;
+    if (!byLabel.has(label)) byLabel.set(label, { label, color: TIER_COLORS[key], tiers: [] });
+    byLabel.get(label).tiers.push(key);
+  }
+  return Array.from(byLabel.values());
+})();
 
 // ---- Person-page oral-history snippet cards -------------------------
 //
@@ -118,13 +141,12 @@ export const SNIPPET_PROBLEM_TIERS = new Set();
 
 /**
  * Merge the "Audited" header bucket into "LoC-Verified" for the page-top
- * summary pills only. LoC-Verified and Audited are both Library-of-Congress-
- * checked states, so a small "Audited" pill beside the large "LoC-Verified"
- * one reads as an anomaly rather than a real category (the project lead
- * objected on 2026-05-30). Audio-Limited Source is a genuinely different
- * caveat and passes through as its own pill. The per-card badges keep the
- * finer LoC-Verified / Audited / Audio-Limited Source distinction; this fold
- * is header-display only.
+ * summary pills. NOTE (2026-06): the badge vocabulary itself has since
+ * collapsed to two states (see TIER_BADGE), so "Audited" now resolves to the
+ * same label as "LoC-Verified" and this function is effectively a pass-through.
+ * It is kept for the existing call site and in case a future tier ever
+ * reintroduces a distinct bucket. Audio-Limited Source remains a genuinely
+ * different caveat and passes through as its own pill.
  *
  * The two label strings come straight from TIER_BADGE so the names stay in
  * sync with the badge palette: TIER_BADGE.high.label is the absorbing bucket
@@ -214,7 +236,7 @@ export function fidelityNoteFor(provenance, tier) {
   // Declarative only. Every note states a settled fact about the transcript; none
   // asks the reader to review, verify, or otherwise complete unfinished work.
   if (tier === 'high') return 'Cross-referenced line by line against the Library of Congress published transcript and confirmed aligned.';
-  if (tier === 'publication-block') return 'Audited transcript. The project’s verbatim text and the Library of Congress’s edited published edition diverge for this interview; both readings are preserved in the audit record.';
+  if (tier === 'publication-block') return 'Cross-referenced against the Library of Congress published transcript. Where the Library’s lightly edited edition differs from the verbatim recording, both readings are preserved in the audit record.';
   if (tier === 'not-auditable') return 'The source recording carries an inherent audio limit (mid-sentence truncation or degradation). This is the most complete transcript the recording supports, and the Library of Congress transcript reflects the same limit.';
   // medium / low / ingestion-loc-verified / ingestion-only and any fallback:
   return 'Audited across nine passes against the project correction substrate and the Library of Congress reference.';

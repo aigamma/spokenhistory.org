@@ -261,7 +261,6 @@ export default function MachineAudit() {
           <div className="space-y-3">
             {(settledStates || [
               { label: 'LoC-Verified', badge: TIER_BADGE['high'], note: fidelityNoteFor(null, 'high'), count: null },
-              { label: 'Audited', badge: TIER_BADGE['publication-block'], note: fidelityNoteFor(null, 'publication-block'), count: null },
               { label: 'Audio-Limited Source', badge: TIER_BADGE['not-auditable'], note: fidelityNoteFor(null, 'not-auditable'), count: null },
             ]).map(({ label, badge, note, count }) => {
               const BadgeIcon = badge.icon;
@@ -311,7 +310,7 @@ export default function MachineAudit() {
             inputs we have.
           </p>
           <a
-            href="mailto:eric@aigamma.com?subject=Civil%20Rights%20History%20Project%3A%20metadata%20correction&body=Interview%20or%20page%3A%20%0AWhat%20looks%20wrong%3A%20%0AThe%20correction%3A%20%0ASource%20(optional)%3A%20"
+            href="mailto:support@aigamma.com?subject=Civil%20Rights%20History%20Project%3A%20metadata%20correction&body=Interview%20or%20page%3A%20%0AWhat%20looks%20wrong%3A%20%0AThe%20correction%3A%20%0ASource%20(optional)%3A%20"
             className="inline-flex items-center gap-2 min-h-11 px-4 py-2 rounded-md bg-civil-red-strong text-white text-sm font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
           >
             <Mail className="w-4 h-4" aria-hidden="true" />

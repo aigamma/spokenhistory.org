@@ -28,7 +28,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useSearchParams } from 'react-router-dom';
 import { Loader2, Link2, Check, ArrowLeftRight, Search } from 'lucide-react';
-import { TIER_COLORS } from './tiers';
+import { TIER_COLORS, SETTLED_STATES } from './tiers';
 import { retrieve } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
@@ -397,14 +397,14 @@ export default function ConceptSpectrum() {
           from Constellation.jsx. */}
       <div className="flex flex-wrap gap-3 mt-6 mb-6 text-xs text-stone-700" aria-label="Audit-tier color legend">
         <span className="font-medium text-stone-900">Dot color (audit tier):</span>
-        {Object.entries(TIER_COLORS).map(([tier, color]) => (
-          <span key={tier} className="inline-flex items-center gap-1">
+        {SETTLED_STATES.map(({ label, color }) => (
+          <span key={label} className="inline-flex items-center gap-1">
             <span
               className="inline-block w-3 h-3 rounded-full"
               style={{ backgroundColor: color, opacity: 0.85 }}
               aria-hidden="true"
             />
-            {tier}
+            {label}
           </span>
         ))}
       </div>

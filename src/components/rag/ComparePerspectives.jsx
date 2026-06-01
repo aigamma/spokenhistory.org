@@ -27,7 +27,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Users, Loader2 } from 'lucide-react';
 import { retrieve } from '../../services/ragClient';
 import CitationCard from './CitationCard';
-import { TIER_VOCABULARY, TIER_COLORS } from './tiers';
+import { TIER_VOCABULARY, SETTLED_STATES } from './tiers';
 
 // Example topics for the ComparePerspectives demo. Each is chosen to return
 // a diverse spread of interviewees (a recurring subject across the archive
@@ -211,12 +211,12 @@ export default function ComparePerspectives({
           </p>
 
           <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
-            <span className="text-stone-500">Audit tier:</span>
-            {TIER_VOCABULARY.map((tier) => {
-              const active = allowedTiers.has(tier);
+            <span className="text-stone-500">Audit state:</span>
+            {SETTLED_STATES.map((state) => {
+              const active = state.tiers.every((t) => allowedTiers.has(t));
               return (
                 <label
-                  key={tier}
+                  key={state.label}
                   className={
                     'inline-flex items-center gap-1.5 px-2 py-1 rounded-full border cursor-pointer transition-opacity ' +
                     (active ? 'border-stone-700 bg-white' : 'border-stone-200 bg-stone-50 opacity-50')
@@ -227,13 +227,14 @@ export default function ComparePerspectives({
                     checked={active}
                     onChange={() => {
                       const next = new Set(allowedTiers);
-                      if (active) next.delete(tier); else next.add(tier);
+                      if (active) state.tiers.forEach((t) => next.delete(t));
+                      else state.tiers.forEach((t) => next.add(t));
                       setAllowedTiers(next);
                     }}
                     className="sr-only"
                   />
-                  <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: TIER_COLORS[tier] }} aria-hidden="true" />
-                  <span>{tier}</span>
+                  <span className="inline-block w-2 h-2 rounded-full" style={{ backgroundColor: state.color }} aria-hidden="true" />
+                  <span>{state.label}</span>
                 </label>
               );
             })}

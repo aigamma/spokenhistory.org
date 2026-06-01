@@ -17,7 +17,7 @@ import { useEffect, useState, useRef, useMemo } from 'react';
 import { Search as SearchIcon, X } from 'lucide-react';
 import { loadConstellation } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';
-import { TIER_COLORS, TIER_BADGE } from './tiers';
+import { TIER_COLORS, SETTLED_STATES } from './tiers';
 
 // Fetch clusters.json once and cache per-session; the file is shared
 // with ThemesBrowser + ThemesMap and is small (~30 cluster objects).
@@ -286,18 +286,14 @@ export default function Constellation({
       </figcaption>
       <div className="flex flex-wrap gap-3 mt-3 text-xs text-stone-700" aria-label="Audit fidelity legend">
         <span className="font-medium text-stone-900">Audit tier:</span>
-        {Object.entries(TIER_COLORS).map(([tier, color]) => (
-          <span
-            key={tier}
-            className="inline-flex items-center gap-1"
-            title={TIER_BADGE[tier]?.label || tier}
-          >
+        {SETTLED_STATES.map(({ label, color }) => (
+          <span key={label} className="inline-flex items-center gap-1">
             <span
               className="inline-block w-3 h-3 rounded-full"
               style={{ backgroundColor: color, opacity: 0.75 }}
               aria-hidden="true"
             />
-            {tier}
+            {label}
           </span>
         ))}
       </div>
