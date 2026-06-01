@@ -21,6 +21,8 @@ import PeopleCatalog from './pages/PeopleCatalog'
 import MachineAudit from './pages/MachineAudit'
 import TableOfContents from './pages/TableOfContents'
 import Curriculum from './pages/Curriculum'
+import Essays from './pages/Essays'
+import EssayPage from './pages/EssayPage'
 import NotFound from './pages/NotFound'
 
 
@@ -155,6 +157,27 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <Curriculum />
+          </Layout>
+        </ProtectedRoute>
+      } />
+
+      {/* Curated essays (2026-06-01): public-domain and openly-licensed essays
+          that illuminate the archive's themes, reproduced in full with citation
+          and license, and cross-linked to the oral histories. /essays is the
+          data-driven index (grouped by topic; ?topic= filters to one);
+          /essays/:slug renders one essay as an integration hub. Data:
+          public/rag/essays/ (built by scripts/build_essays_index.mjs). */}
+      <Route path="/essays" element={
+        <ProtectedRoute>
+          <Layout>
+            <Essays />
+          </Layout>
+        </ProtectedRoute>
+      } />
+      <Route path="/essays/:slug" element={
+        <ProtectedRoute>
+          <Layout>
+            <EssayPage />
           </Layout>
         </ProtectedRoute>
       } />

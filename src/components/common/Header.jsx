@@ -36,6 +36,7 @@ const MENU_ROUTES = [
   { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
   { label: 'People', to: '/people', matchPath: '/people' },
   { label: 'Curriculum', to: '/curriculum', matchPath: '/curriculum' },
+  { label: 'Essays', to: '/essays', matchPath: '/essays' },
   { label: 'Data Insights', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'About', to: '/about', matchPath: '/about' },
 ];

@@ -91,3 +91,6 @@ Metadata Generation System/output_subagent/
 # (transcripts/rechapter_staging/entry_<N>.chapters.json) ARE committed.
 scripts/blocks_*.json
 scripts/blocks_*.txt
+
+# Essay harvest cache (reproducible Gutenberg downloads)
+scripts/_essay_scratch/

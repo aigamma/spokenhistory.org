@@ -76,6 +76,7 @@ The conceptual-map briefing for the WWU presentation. Eight conceptual breakthro
 
 ### Per-person pages catalog
 - `public/rag/people/README.md`, Schema + catalog purpose (integration hub, not biography) + writing discipline (Wikipedia is fact-check only; anti-idempotent prose; cite every claim). Required reading before adding a person page or modifying `src/pages/PersonPage.jsx`.
+- `public/rag/essays/README.md`, The curated-essays layer (`/essays`): the licensing gate (derivative use required, so No-Derivatives is excluded), the manifest-driven harvest/index/ingest/report pipeline, and the verbatim-reproduction rule. Read before adding an essay or touching the essays pipeline.
 
 ---
 

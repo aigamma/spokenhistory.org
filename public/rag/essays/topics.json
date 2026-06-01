@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "note": "Extensible topic taxonomy for the curated-essays layer. Each topic maps to corpus cross-link primitives (a Topics-page keyword, tour slugs, cluster ids) so EssayPage derives related interviews, clips, and tours at render time. Add topics freely; nothing downstream hardcodes this list. corpus_links.keyword feeds /playlist-builder?keywords=; tour_slugs match public/rag/summaries/tours.json; cluster_ids match public/rag/summaries/clusters.json.",
+  "topics": [
+    {
+      "id": "family-influence",
+      "label": "Family Influence",
+      "description": "How parents, grandparents, and kin shaped the people who joined the movement, and what the movement asked of families.",
+      "corpus_links": { "keyword": "family", "tour_slugs": ["children-of-the-movement"], "cluster_ids": [12, 5] }
+    },
+    {
+      "id": "intergenerational-activism",
+      "label": "Intergenerational Activism",
+      "description": "The transmission of organizing knowledge between older mentors and younger activists, and the debates between generations over strategy.",
+      "corpus_links": { "keyword": "childhood", "tour_slugs": ["children-of-the-movement", "women-shaping-sncc", "highlander-folk-school"], "cluster_ids": [6, 19] }
+    },
+    {
+      "id": "community-support",
+      "label": "Community Support",
+      "description": "The local institutions and mutual networks (churches, cooperatives, neighborhoods, benevolent associations) that sustained organizing.",
+      "corpus_links": { "keyword": "community", "tour_slugs": ["black-church-as-infrastructure", "mississippi-voter-registration"], "cluster_ids": [7, 13, 0] }
+    },
+    {
+      "id": "youth-student-activism",
+      "label": "Youth and Student Activism",
+      "description": "Young people and students as organizers, from schoolhouse walkouts to sit-ins and the founding of student movements.",
+      "corpus_links": { "keyword": "student", "tour_slugs": ["children-of-the-movement"], "cluster_ids": [24, 12] }
+    },
+    {
+      "id": "faith-and-church",
+      "label": "Faith and the Church",
+      "description": "Religious belief and the Black church as both spiritual ground and organizing infrastructure for the movement.",
+      "corpus_links": { "keyword": "church", "tour_slugs": ["black-church-as-infrastructure", "theological-foundations-nonviolence"], "cluster_ids": [26] }
+    },
+    {
+      "id": "education-and-schools",
+      "label": "Education and Schools",
+      "description": "Schooling, teachers, citizenship education, and the long struggle over who gets educated and how.",
+      "corpus_links": { "keyword": "school", "tour_slugs": ["highlander-folk-school"], "cluster_ids": [6, 19] }
+    },
+    {
+      "id": "identity-and-double-consciousness",
+      "label": "Identity and Double Consciousness",
+      "description": "The interior experience of race in America, the foundational frame Du Bois named double consciousness, which the oral histories revisit in their own words.",
+      "corpus_links": { "keyword": "identity", "tour_slugs": [], "cluster_ids": [] }
+    },
+    {
+      "id": "music-and-culture",
+      "label": "Music and Culture",
+      "description": "Song, the sorrow songs, and cultural expression as carriers of memory and as fuel for organizing.",
+      "corpus_links": { "keyword": "music", "tour_slugs": ["highlander-folk-school"], "cluster_ids": [18] }
+    },
+    {
+      "id": "womens-leadership",
+      "label": "Women's Leadership",
+      "description": "Black women as organizers, educators, and theorists of the struggle, from nineteenth-century essayists to the women who shaped SNCC.",
+      "corpus_links": { "keyword": "women", "tour_slugs": ["women-shaping-sncc"], "cluster_ids": [25, 4] }
+    },
+    {
+      "id": "justice-and-resistance",
+      "label": "Justice and Resistance",
+      "description": "Confronting racial violence and the law, from anti-lynching journalism to the witness and legal record the movement built.",
+      "corpus_links": { "keyword": "violence", "tour_slugs": ["emmett-till-witnesses"], "cluster_ids": [5] }
+    }
+  ]
+}

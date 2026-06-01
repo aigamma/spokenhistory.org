@@ -109,6 +109,10 @@ const summary = [];
 for (const file of targets) {
   const ext = path.extname(file).toLowerCase();
   if (!EXTENSIONS.has(ext)) continue;
+  // Never sweep the curated-essays layer: the essay bodies and their excerpts
+  // are VERBATIM reproductions of public-domain / open-license works, so their
+  // original punctuation (including em dashes) must be preserved.
+  if (file.replace(/\\/g, '/').includes('/public/rag/essays/')) continue;
   let content;
   try {
     content = fs.readFileSync(file, 'utf8');

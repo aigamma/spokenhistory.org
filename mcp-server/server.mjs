@@ -395,7 +395,7 @@ function toCitationPayload(result) {
   }
 }
 
-async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null, dedupe_by_entry = false, include_persons = false }) {
+async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null, dedupe_by_entry = false, include_persons = false, include_essays = false }) {
   if (typeof query !== 'string') {
     throw new Error('query must be a string')
   }
@@ -422,17 +422,20 @@ async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = 
     filter = { entry_number: { $eq: Math.floor(n) } }
   }
 
-  // By default, exclude per-person catalog vectors (content_type='person').
-  // The civil-rights Pinecone index ingests two content types: archive
-  // transcript passages (no content_type field) and per-person catalog
-  // pages. Archive-focused search tools (this one) need to exclude
-  // person vectors so existing ranked-passage UX is unchanged. Pinecone's
-  // $ne matches records where the field is absent, so existing passage
-  // vectors pass unchanged. Override with include_persons=true for a
-  // cross-content search.
-  if (!include_persons) {
-    const excludePersons = { content_type: { $ne: 'person' } }
-    filter = filter == null ? excludePersons : { ...filter, ...excludePersons }
+  // By default, exclude non-passage vectors. The civil-rights Pinecone index
+  // ingests archive transcript passages (no content_type field) plus two
+  // special types: per-person catalog pages (content_type='person') and
+  // curated essays (content_type='essay'). Archive-focused search tools (this
+  // one) exclude both so the ranked-passage UX is unchanged. $nin matches
+  // records where content_type is absent, so passages pass unchanged. Admit
+  // each special type via include_persons / include_essays for a cross-content
+  // search.
+  const excludedTypes = []
+  if (!include_persons) excludedTypes.push('person')
+  if (!include_essays) excludedTypes.push('essay')
+  if (excludedTypes.length) {
+    const excl = { content_type: { $nin: excludedTypes } }
+    filter = filter == null ? excl : { ...filter, ...excl }
   }
 
   // Stage-1 net: ask Pinecone for 3× the desired limit so the
@@ -704,6 +707,10 @@ const TOOL_DEFINITIONS = [
         include_persons: {
           type: 'boolean',
           description: 'Optional: when true, per-person catalog vectors (content_type="person") are included in the result set alongside archive passages. Default false so the tool returns ranked passages only, the citation-grade use case this tool was built for. Turn on for a cross-content search that surfaces both passage matches and the person page(s) most semantically relevant to the query.',
+        },
+        include_essays: {
+          type: 'boolean',
+          description: 'Optional: when true, curated-essay vectors (content_type="essay") are included in the result set alongside archive passages. Default false so the tool returns ranked passages only. Turn on for a cross-content search that also surfaces the public-domain and open-license essays whose text is most semantically relevant to the query.',
         },
       },
       required: ['query'],

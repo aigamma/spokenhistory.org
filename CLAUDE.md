@@ -411,6 +411,25 @@ Memory items saved this session:
 - `feedback_no_idle_waiting.md`, don't idle during background tasks; do parallel work.
 - `reference_netlify_mcp_envvar_secret.md`, the `is_secret=true + context="all"` silent-fail pitfall.
 
+## Curated essays layer (2026-06-01)
+
+`/essays` is a content type: curated, real, academically-attributable essays that illuminate the archive's themes, reproduced in full with citation and license, and cross-linked into the corpus. There is NO AI-generated essay prose; every essay is a third-party public-domain or open-license work (AI editorializing on a formal archive would cast suspicion on the well-sourced rest of the site). A director at UCLA requested featured essays; the four he named (family influence, intergenerational activism, community support, youth/student activism) were examples, not limits. **Read `public/rag/essays/README.md` before touching this layer.**
+
+Seed collection: 23 essays from 9 authors (two women), all public domain. W. E. B. Du Bois (the 14 essays of *The Souls of Black Folk*); the 7 essays of *The Negro Problem* (Booker T. Washington, Du Bois's "The Talented Tenth," Charles Chesnutt, Wilford Smith, H. T. Kealing, Paul Laurence Dunbar, T. Thomas Fortune); Anna Julia Cooper's *A Voice from the South*; Ida B. Wells's *The Red Record*.
+
+**The licensing gate is the controlling rule:** the license must permit DERIVATIVE use, because embedding a text into the search index is a derivative use, so No-Derivatives licenses (CC BY-ND, CC BY-NC-ND, which is why the SNCC Digital Gateway tier is out) are categorically excluded. NonCommercial is acceptable for this non-commercial academic project. Qualifying tiers: public domain, US-government works, CC0, CC BY, CC BY-NC, and ShareAlike variants. Paywalled work is excluded entirely. Verify the SPECIFIC item, not the repository.
+
+**Verbatim reproduction:** the essay body is the author's verbatim text, so its original punctuation (em dashes, curly quotes) is preserved; the project's writing rules apply only to OUR chrome (page headings, abstracts, topic descriptions). `scripts/strip_em_dashes.mjs` skips `public/rag/essays/` so a sweep never corrupts a reproduction.
+
+**Pipeline (manifest-driven, idempotent, scalable; the broader oral-history platform reuses it):**
+- `public/rag/essays/manifest.json` is the curation source of truth (one verified row per source); `topics.json` is the extensible topic taxonomy that drives cross-linking.
+- `python scripts/harvest_essays.py` fetches and extracts verified rows into `text/<slug>.txt` + `<slug>.json` (license-gated; refuses non-qualifying rows).
+- `node scripts/build_essays_index.mjs` builds `index.json` (the `/essays` UI reads it).
+- `node --env-file=rag/.env.local rag/ingest.mjs --essays-only` chunks and embeds into Pinecone as `content_type='essay'` (excluded from passage/people flows by default; opt in via `includeEssays` / `include_essays`). 869 essay-segment vectors as of the seed ingest.
+- `node scripts/build_essays_sources_report.mjs` writes `output/essays-sources-report.md`, the provenance record and reporting export.
+
+UI: `src/pages/Essays.jsx` (`/essays`, data-driven index grouped by topic; `?topic=` filters), `src/pages/EssayPage.jsx` (`/essays/:slug`, one essay as an integration hub with attribution and derived corpus cross-links). Nav: "Essays" in `Header.jsx`. The Topics page links through via `/essays?topic=<id>`.
+
 ## Site-improvement pass (2026-05-30, Dustin request batch)
 
 A batch of PM (Dustin) site-improvement requests was implemented and pushed to production (`origin/master` -> Netlify -> **robotlogic.org**). Full request-by-request report at `output/site-improvements-report-2026-05-30.md`. Durable facts a future agent needs:

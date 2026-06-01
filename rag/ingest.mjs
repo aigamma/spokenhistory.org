@@ -460,6 +460,95 @@ async function buildGroundTruthVectors() {
 }
 
 // ---------------------------------------------------------------------------
+// Curated-essay vectors (chunks of the /essays layer)
+// ---------------------------------------------------------------------------
+//
+// The curated public-domain / open-license essays at public/rag/essays/*.json
+// (bodies under public/rag/essays/text/<slug>.txt) are chunked into ~280-word
+// windows and embedded, each carrying content_type='essay' so archive-focused
+// retrieval flows filter them out by default (the filter lives in
+// src/services/ragClient.js and mcp-server/server.mjs). This is the
+// worldthought/Gutenberg parallel: real full texts ingested as searchable
+// vectors. Chunking, rather than one-vector-per-essay, keeps long works like
+// Cooper's A Voice from the South searchable at passage granularity.
+function chunkEssayText(text, targetWords = 280) {
+  const paras = text.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+  const chunks = [];
+  let buf = [];
+  let count = 0;
+  for (const p of paras) {
+    const w = p.split(/\s+/).length;
+    if (count + w > targetWords && buf.length) {
+      chunks.push(buf.join('\n\n'));
+      buf = [];
+      count = 0;
+    }
+    buf.push(p);
+    count += w;
+  }
+  if (buf.length) chunks.push(buf.join('\n\n'));
+  return chunks;
+}
+
+async function buildEssayVectors() {
+  const essaysDir = join(REPO_ROOT, 'public', 'rag', 'essays');
+  const reserved = new Set(['manifest.json', 'topics.json', 'index.json']);
+  let files;
+  try {
+    files = await readdir(essaysDir);
+  } catch (e) {
+    console.warn(`[ingest] essays catalog not found at ${essaysDir}; skipping`);
+    return [];
+  }
+  const vectors = [];
+  for (const f of files) {
+    if (!f.endsWith('.json') || reserved.has(f)) continue;
+    let data;
+    try {
+      data = JSON.parse(await readFile(join(essaysDir, f), 'utf8'));
+    } catch (e) {
+      console.warn(`[ingest] essay ${f} malformed; skipping (${e.message})`);
+      continue;
+    }
+    const slug = data.slug || f.replace(/\.json$/, '');
+    let body;
+    try {
+      body = await readFile(join(essaysDir, 'text', `${slug}.txt`), 'utf8');
+    } catch (e) {
+      console.warn(`[ingest] essay text for ${slug} not found; skipping`);
+      continue;
+    }
+    const authors = Array.isArray(data.authors) ? data.authors.join(', ') : '';
+    const chunks = chunkEssayText(body);
+    for (let i = 0; i < chunks.length; i++) {
+      const text = chunks[i];
+      if (!text.trim()) continue;
+      const hash = hashContent(text);
+      const id = deterministicId('essay_segment', null, `essays/${slug}`, i, hash);
+      vectors.push({
+        id,
+        metadata: {
+          content_type: 'essay',
+          chunk_type: 'essay_segment',
+          slug,
+          title: data.title || slug,
+          authors,
+          year: data.year ?? 0,
+          license_type: data.license?.type || 'unknown',
+          themes: Array.isArray(data.themes) ? data.themes : [],
+          source_path: `public/rag/essays/text/${slug}.txt`,
+          chunk_index: i,
+          content_hash: hash,
+          text,
+        },
+        text,
+      });
+    }
+  }
+  return vectors;
+}
+
+// ---------------------------------------------------------------------------
 // CLI argument parsing
 // ---------------------------------------------------------------------------
 
@@ -469,6 +558,8 @@ function parseArgs(argv) {
     includeGroundTruth: false,
     includePersons: false,
     personsOnly: false,
+    includeEssays: false,
+    essaysOnly: false,
     prune: false,
     forcePrune: false,
     dryRun: false,
@@ -489,6 +580,12 @@ function parseArgs(argv) {
       // the much-larger archive index.
       args.personsOnly = true;
       args.includePersons = true;
+    } else if (a === '--include-essays') {
+      args.includeEssays = true;
+    } else if (a === '--essays-only') {
+      // Skip transcript walk; only ingest the curated-essay vectors.
+      args.essaysOnly = true;
+      args.includeEssays = true;
     } else if (a === '--prune') {
       args.prune = true;
     } else if (a === '--force-prune') {
@@ -537,13 +634,15 @@ async function main() {
   if (args.includeGroundTruth) console.log('[ingest] --include-ground-truth');
   if (args.includePersons) console.log('[ingest] --include-persons');
   if (args.personsOnly) console.log('[ingest] --persons-only (skipping transcript walk)');
+  if (args.includeEssays) console.log('[ingest] --include-essays');
+  if (args.essaysOnly) console.log('[ingest] --essays-only (skipping transcript walk)');
   if (args.prune) console.log('[ingest] --prune');
   if (args.dryRun) console.log('[ingest] --dry-run (no Pinecone writes)');
 
   // Build the expected vector set across all sources for this run.
   const expectedById = new Map();
 
-  if (!args.personsOnly) {
+  if (!args.personsOnly && !args.essaysOnly) {
     // Verify corrected/ exists; without it, the ingest has nothing to do.
     try {
       await stat(CORRECTED_TRANSCRIPTS_ROOT);
@@ -584,6 +683,12 @@ async function main() {
     console.log(`[ingest] person-pages: ${personVectors.length} catalog-page vectors`);
   }
 
+  if (args.includeEssays && (!args.entries || args.entries.size === 0)) {
+    const essayVectors = await buildEssayVectors();
+    for (const v of essayVectors) expectedById.set(v.id, v);
+    console.log(`[ingest] essays: ${essayVectors.length} essay-segment vectors`);
+  }
+
   // Diff against Pinecone's current state for idempotency.
   const existingIds = await listAllVectorIds(args.namespace);
   const toEmbedIds = [];
@@ -598,8 +703,10 @@ async function main() {
   // ground-truth vectors are similarly scope-protected.
   const orphanScope = (id) => {
     if (args.personsOnly) return id.startsWith('person_page::');
+    if (args.essaysOnly) return id.startsWith('essay_segment::');
     if (!args.includePersons && id.startsWith('person_page::')) return false;
     if (!args.includeGroundTruth && id.startsWith('ground_truth_fact::')) return false;
+    if (!args.includeEssays && id.startsWith('essay_segment::')) return false;
     return true;
   };
   const orphaned = [...existingIds].filter((id) => orphanScope(id) && !expectedById.has(id));

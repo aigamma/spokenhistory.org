@@ -1,0 +1,848 @@
+{
+  "schema_version": 1,
+  "note": "Curation manifest for the essays layer, the source of truth the harvest pipeline reads. One row per source. status: candidate | verified | hosted | excluded. The license MUST permit derivative use (embedding into the search index is a derivative use), so No-Derivatives licenses are excluded; NonCommercial is acceptable for this non-commercial academic project. scripts/harvest_essays.py processes only rows whose status is 'verified' (or already 'hosted') and whose license qualifies. Adding content means adding verified rows here; nothing in code hardcodes this list.",
+  "license_gate": {
+    "qualifies": [
+      "public-domain",
+      "us-government-public-domain",
+      "cc0",
+      "cc-by",
+      "cc-by-sa",
+      "cc-by-nc",
+      "cc-by-nc-sa"
+    ],
+    "excluded": [
+      "cc-by-nd",
+      "cc-by-nc-nd",
+      "all-rights-reserved",
+      "paywalled",
+      "unknown"
+    ]
+  },
+  "sources": [
+    {
+      "slug": "dubois-souls-spiritual-strivings",
+      "title": "Of Our Spiritual Strivings",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "I",
+        "chapter_title": "Of Our Spiritual Strivings"
+      },
+      "themes": [
+        "identity-and-double-consciousness",
+        "intergenerational-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "c41577a3763e77cc",
+      "word_count": 3087
+    },
+    {
+      "slug": "dubois-souls-dawn-of-freedom",
+      "title": "Of the Dawn of Freedom",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "II",
+        "chapter_title": "Of the Dawn of Freedom"
+      },
+      "themes": [
+        "community-support",
+        "education-and-schools"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "d1a4e838d6a99837",
+      "word_count": 7228
+    },
+    {
+      "slug": "dubois-souls-booker-t-washington",
+      "title": "Of Mr. Booker T. Washington and Others",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "III",
+        "chapter_title": "Of Mr. Booker T. Washington and Others"
+      },
+      "themes": [
+        "intergenerational-activism",
+        "education-and-schools"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "00de65c31ac2c06c",
+      "word_count": 4692
+    },
+    {
+      "slug": "dubois-souls-meaning-of-progress",
+      "title": "Of the Meaning of Progress",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "IV",
+        "chapter_title": "Of the Meaning of Progress"
+      },
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "04eb79e8e6d0e7d0",
+      "word_count": 3824
+    },
+    {
+      "slug": "dubois-souls-wings-of-atalanta",
+      "title": "Of the Wings of Atalanta",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "V",
+        "chapter_title": "Of the Wings of Atalanta"
+      },
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "fbfa47da8bcd327a",
+      "word_count": 3354
+    },
+    {
+      "slug": "dubois-souls-training-of-black-men",
+      "title": "Of the Training of Black Men",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "VI",
+        "chapter_title": "Of the Training of Black Men"
+      },
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "25a017a2f1852c7b",
+      "word_count": 5565
+    },
+    {
+      "slug": "dubois-souls-black-belt",
+      "title": "Of the Black Belt",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "VII",
+        "chapter_title": "Of the Black Belt"
+      },
+      "themes": [
+        "community-support"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "f61c76e156c8b938",
+      "word_count": 6655
+    },
+    {
+      "slug": "dubois-souls-golden-fleece",
+      "title": "Of the Quest of the Golden Fleece",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "VIII",
+        "chapter_title": "Of the Quest of the Golden Fleece"
+      },
+      "themes": [
+        "community-support"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "71251333b3a78434",
+      "word_count": 7540
+    },
+    {
+      "slug": "dubois-souls-sons-of-master-and-man",
+      "title": "Of the Sons of Master and Man",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "IX",
+        "chapter_title": "Of the Sons of Master and Man"
+      },
+      "themes": [
+        "community-support",
+        "intergenerational-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "a4a4c98167997816",
+      "word_count": 6943
+    },
+    {
+      "slug": "dubois-souls-faith-of-the-fathers",
+      "title": "Of the Faith of the Fathers",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "X",
+        "chapter_title": "Of the Faith of the Fathers"
+      },
+      "themes": [
+        "faith-and-church",
+        "community-support"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "ec9d289e27a1a147",
+      "word_count": 4625
+    },
+    {
+      "slug": "dubois-souls-passing-of-the-first-born",
+      "title": "Of the Passing of the First-Born",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "XI",
+        "chapter_title": "Of the Passing of the First-Born"
+      },
+      "themes": [
+        "family-influence"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "9449a34d0ac7642b",
+      "word_count": 2037
+    },
+    {
+      "slug": "dubois-souls-alexander-crummell",
+      "title": "Of Alexander Crummell",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "XII",
+        "chapter_title": "Of Alexander Crummell"
+      },
+      "themes": [
+        "intergenerational-activism",
+        "faith-and-church"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "f12c05ee6536efa3",
+      "word_count": 3283
+    },
+    {
+      "slug": "dubois-souls-coming-of-john",
+      "title": "Of the Coming of John",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "XIII",
+        "chapter_title": "Of the Coming of John"
+      },
+      "themes": [
+        "youth-student-activism",
+        "education-and-schools",
+        "family-influence"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "f59572628351b87c",
+      "word_count": 5818
+    },
+    {
+      "slug": "dubois-souls-sorrow-songs",
+      "title": "Of the Sorrow Songs",
+      "collection": "The Souls of Black Folk",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "A. C. McClurg and Co., Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/408"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 408,
+        "book_url": "https://www.gutenberg.org/cache/epub/408/pg408.txt",
+        "chapter_roman": "XIV",
+        "chapter_title": "Of the Sorrow Songs"
+      },
+      "themes": [
+        "music-and-culture",
+        "faith-and-church"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "5b31c69c228592e2",
+      "word_count": 3365
+    },
+    {
+      "slug": "negro-problem-industrial-education-washington",
+      "title": "Industrial Education for the Negro",
+      "collection": "The Negro Problem",
+      "authors": [
+        "Booker T. Washington"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "Industrial Education for the Negro"
+      },
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "fce2d3413800d71d",
+      "word_count": 3658
+    },
+    {
+      "slug": "negro-problem-talented-tenth-dubois",
+      "title": "The Talented Tenth",
+      "collection": "The Negro Problem",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "The Talented Tenth"
+      },
+      "themes": [
+        "education-and-schools",
+        "intergenerational-activism",
+        "youth-student-activism"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "37c0618bd41d3c7e",
+      "word_count": 7320
+    },
+    {
+      "slug": "negro-problem-disfranchisement-chesnutt",
+      "title": "The Disfranchisement of the Negro",
+      "collection": "The Negro Problem",
+      "authors": [
+        "Charles W. Chesnutt"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "The Disfranchisement of the Negro"
+      },
+      "themes": [
+        "community-support",
+        "justice-and-resistance"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "49bd1b286ae1fa99",
+      "word_count": 8051
+    },
+    {
+      "slug": "negro-problem-negro-and-the-law-smith",
+      "title": "The Negro and the Law",
+      "collection": "The Negro Problem",
+      "authors": [
+        "Wilford H. Smith"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "The Negro and the Law"
+      },
+      "themes": [
+        "justice-and-resistance",
+        "community-support"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "0f3b09d7157741a8",
+      "word_count": 5848
+    },
+    {
+      "slug": "negro-problem-characteristics-kealing",
+      "title": "The Characteristics of the Negro People",
+      "collection": "The Negro Problem",
+      "authors": [
+        "H. T. Kealing"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "The Characteristics of the Negro People"
+      },
+      "themes": [
+        "identity-and-double-consciousness"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "43b0d4e3e53239e4",
+      "word_count": 3857
+    },
+    {
+      "slug": "negro-problem-representative-negroes-dunbar",
+      "title": "Representative American Negroes",
+      "collection": "The Negro Problem",
+      "authors": [
+        "Paul Laurence Dunbar"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "Representative American Negroes"
+      },
+      "themes": [
+        "intergenerational-activism",
+        "identity-and-double-consciousness"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "7c0cf9f70825fd87",
+      "word_count": 3726
+    },
+    {
+      "slug": "negro-problem-negros-place-fortune",
+      "title": "The Negro's Place in American Life at the Present Day",
+      "collection": "The Negro Problem",
+      "authors": [
+        "T. Thomas Fortune"
+      ],
+      "year": 1903,
+      "venue": "James Pott and Company, New York",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1903; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/15041"
+      },
+      "source": {
+        "kind": "gutenberg-chapter",
+        "book_id": 15041,
+        "book_url": "https://www.gutenberg.org/cache/epub/15041/pg15041.txt",
+        "chapter_title": "The Negro's Place in American Life at the Present Day"
+      },
+      "themes": [
+        "community-support",
+        "identity-and-double-consciousness"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "e4f66d6c4030ec9a",
+      "word_count": 3984
+    },
+    {
+      "slug": "cooper-voice-from-the-south",
+      "title": "A Voice from the South",
+      "collection": "A Voice from the South, by a Black Woman of the South",
+      "authors": [
+        "Anna Julia Cooper"
+      ],
+      "year": 1892,
+      "venue": "Aldine Printing House, Xenia, Ohio",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1892; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/61741"
+      },
+      "source": {
+        "kind": "gutenberg-whole",
+        "book_id": 61741,
+        "book_url": "https://www.gutenberg.org/cache/epub/61741/pg61741.txt"
+      },
+      "themes": [
+        "womens-leadership",
+        "education-and-schools",
+        "intergenerational-activism",
+        "identity-and-double-consciousness"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "9034f8299170b16e",
+      "word_count": 60311
+    },
+    {
+      "slug": "wells-the-red-record",
+      "title": "The Red Record: Tabulated Statistics and Alleged Causes of Lynching in the United States",
+      "collection": null,
+      "authors": [
+        "Ida B. Wells-Barnett"
+      ],
+      "year": 1895,
+      "venue": "Donohue and Henneberry, Chicago",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1895; public domain in the United States.",
+        "url": "https://www.gutenberg.org/ebooks/14977"
+      },
+      "source": {
+        "kind": "gutenberg-whole",
+        "book_id": 14977,
+        "book_url": "https://www.gutenberg.org/cache/epub/14977/pg14977.txt"
+      },
+      "themes": [
+        "justice-and-resistance",
+        "womens-leadership",
+        "community-support"
+      ],
+      "status": "hosted",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)",
+      "harvested_date": "2026-06-01",
+      "content_hash": "58ce5233d7737f9f",
+      "word_count": 34217
+    },
+    {
+      "slug": "douglass-narrative",
+      "title": "Narrative of the Life of Frederick Douglass, an American Slave",
+      "authors": [
+        "Frederick Douglass"
+      ],
+      "year": 1845,
+      "venue": "Anti-Slavery Office, Boston",
+      "license": {
+        "type": "public-domain",
+        "note": "Published 1845; public domain. Candidate: a memoir rather than an essay; host only if the essays collection broadens to first-person narratives."
+      },
+      "source": {
+        "kind": "gutenberg-whole",
+        "book_id": 23,
+        "book_url": "https://www.gutenberg.org/cache/epub/23/pg23.txt"
+      },
+      "themes": [
+        "family-influence",
+        "identity-and-double-consciousness",
+        "justice-and-resistance"
+      ],
+      "status": "candidate",
+      "license_verified_date": "2026-06-01",
+      "verified_by": "opus-4.8 (Gutenberg public-domain confirmation)"
+    },
+    {
+      "slug": "nps-racial-voting-rights",
+      "title": "Civil Rights in America: Racial Voting Rights",
+      "authors": [
+        "National Park Service",
+        "Organization of American Historians"
+      ],
+      "year": 2007,
+      "venue": "U.S. National Park Service, National Historic Landmarks Program",
+      "license": {
+        "type": "us-government-public-domain",
+        "note": "US-government work; public domain. Confirm the canonical PDF URL before harvest."
+      },
+      "source": {
+        "kind": "pdf-url",
+        "url": ""
+      },
+      "themes": [
+        "community-support",
+        "youth-student-activism"
+      ],
+      "status": "candidate",
+      "license_verified_date": null,
+      "verified_by": null
+    },
+    {
+      "slug": "nps-racial-desegregation-public-accommodations",
+      "title": "Civil Rights in America: Racial Desegregation of Public Accommodations",
+      "authors": [
+        "National Park Service",
+        "Organization of American Historians"
+      ],
+      "year": 2009,
+      "venue": "U.S. National Park Service, National Historic Landmarks Program",
+      "license": {
+        "type": "us-government-public-domain",
+        "note": "US-government work; public domain. Confirm the canonical PDF URL before harvest."
+      },
+      "source": {
+        "kind": "pdf-url",
+        "url": ""
+      },
+      "themes": [
+        "community-support",
+        "youth-student-activism"
+      ],
+      "status": "candidate",
+      "license_verified_date": null,
+      "verified_by": null
+    },
+    {
+      "slug": "cambridge-making-of-a-movement-nashville",
+      "title": "The Making of a Movement: An Intergenerational Mobilization Model of the Nonviolent Nashville Civil Rights Movement",
+      "authors": [],
+      "year": 2021,
+      "venue": "Social Science History (Cambridge University Press)",
+      "license": {
+        "type": "unknown",
+        "note": "Possibly CC-BY; verify the SPECIFIC article's license before any harvest. Excluded until verified."
+      },
+      "source": {
+        "kind": "url",
+        "url": "https://www.cambridge.org/core/journals/social-science-history"
+      },
+      "themes": [
+        "intergenerational-activism",
+        "youth-student-activism"
+      ],
+      "status": "candidate",
+      "license_verified_date": null,
+      "verified_by": null
+    }
+  ]
+}

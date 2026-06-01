@@ -1,0 +1,606 @@
+{
+  "schema_version": 1,
+  "generated": "2026-06-01",
+  "counts": {
+    "essays": 23,
+    "topics": 10,
+    "authors": 9
+  },
+  "topics": [
+    {
+      "id": "family-influence",
+      "label": "Family Influence",
+      "description": "How parents, grandparents, and kin shaped the people who joined the movement, and what the movement asked of families.",
+      "corpus_links": {
+        "keyword": "family",
+        "tour_slugs": [
+          "children-of-the-movement"
+        ],
+        "cluster_ids": [
+          12,
+          5
+        ]
+      },
+      "essay_count": 2,
+      "essay_slugs": [
+        "dubois-souls-coming-of-john",
+        "dubois-souls-passing-of-the-first-born"
+      ]
+    },
+    {
+      "id": "intergenerational-activism",
+      "label": "Intergenerational Activism",
+      "description": "The transmission of organizing knowledge between older mentors and younger activists, and the debates between generations over strategy.",
+      "corpus_links": {
+        "keyword": "childhood",
+        "tour_slugs": [
+          "children-of-the-movement",
+          "women-shaping-sncc",
+          "highlander-folk-school"
+        ],
+        "cluster_ids": [
+          6,
+          19
+        ]
+      },
+      "essay_count": 7,
+      "essay_slugs": [
+        "cooper-voice-from-the-south",
+        "dubois-souls-alexander-crummell",
+        "dubois-souls-booker-t-washington",
+        "dubois-souls-spiritual-strivings",
+        "dubois-souls-sons-of-master-and-man",
+        "negro-problem-representative-negroes-dunbar",
+        "negro-problem-talented-tenth-dubois"
+      ]
+    },
+    {
+      "id": "community-support",
+      "label": "Community Support",
+      "description": "The local institutions and mutual networks (churches, cooperatives, neighborhoods, benevolent associations) that sustained organizing.",
+      "corpus_links": {
+        "keyword": "community",
+        "tour_slugs": [
+          "black-church-as-infrastructure",
+          "mississippi-voter-registration"
+        ],
+        "cluster_ids": [
+          7,
+          13,
+          0
+        ]
+      },
+      "essay_count": 9,
+      "essay_slugs": [
+        "wells-the-red-record",
+        "dubois-souls-black-belt",
+        "dubois-souls-dawn-of-freedom",
+        "dubois-souls-faith-of-the-fathers",
+        "dubois-souls-golden-fleece",
+        "dubois-souls-sons-of-master-and-man",
+        "negro-problem-disfranchisement-chesnutt",
+        "negro-problem-negro-and-the-law-smith",
+        "negro-problem-negros-place-fortune"
+      ]
+    },
+    {
+      "id": "youth-student-activism",
+      "label": "Youth and Student Activism",
+      "description": "Young people and students as organizers, from schoolhouse walkouts to sit-ins and the founding of student movements.",
+      "corpus_links": {
+        "keyword": "student",
+        "tour_slugs": [
+          "children-of-the-movement"
+        ],
+        "cluster_ids": [
+          24,
+          12
+        ]
+      },
+      "essay_count": 6,
+      "essay_slugs": [
+        "negro-problem-industrial-education-washington",
+        "dubois-souls-coming-of-john",
+        "dubois-souls-meaning-of-progress",
+        "dubois-souls-training-of-black-men",
+        "dubois-souls-wings-of-atalanta",
+        "negro-problem-talented-tenth-dubois"
+      ]
+    },
+    {
+      "id": "faith-and-church",
+      "label": "Faith and the Church",
+      "description": "Religious belief and the Black church as both spiritual ground and organizing infrastructure for the movement.",
+      "corpus_links": {
+        "keyword": "church",
+        "tour_slugs": [
+          "black-church-as-infrastructure",
+          "theological-foundations-nonviolence"
+        ],
+        "cluster_ids": [
+          26
+        ]
+      },
+      "essay_count": 3,
+      "essay_slugs": [
+        "dubois-souls-alexander-crummell",
+        "dubois-souls-faith-of-the-fathers",
+        "dubois-souls-sorrow-songs"
+      ]
+    },
+    {
+      "id": "education-and-schools",
+      "label": "Education and Schools",
+      "description": "Schooling, teachers, citizenship education, and the long struggle over who gets educated and how.",
+      "corpus_links": {
+        "keyword": "school",
+        "tour_slugs": [
+          "highlander-folk-school"
+        ],
+        "cluster_ids": [
+          6,
+          19
+        ]
+      },
+      "essay_count": 9,
+      "essay_slugs": [
+        "cooper-voice-from-the-south",
+        "negro-problem-industrial-education-washington",
+        "dubois-souls-booker-t-washington",
+        "dubois-souls-coming-of-john",
+        "dubois-souls-dawn-of-freedom",
+        "dubois-souls-meaning-of-progress",
+        "dubois-souls-training-of-black-men",
+        "dubois-souls-wings-of-atalanta",
+        "negro-problem-talented-tenth-dubois"
+      ]
+    },
+    {
+      "id": "identity-and-double-consciousness",
+      "label": "Identity and Double Consciousness",
+      "description": "The interior experience of race in America, the foundational frame Du Bois named double consciousness, which the oral histories revisit in their own words.",
+      "corpus_links": {
+        "keyword": "identity",
+        "tour_slugs": [],
+        "cluster_ids": []
+      },
+      "essay_count": 5,
+      "essay_slugs": [
+        "cooper-voice-from-the-south",
+        "dubois-souls-spiritual-strivings",
+        "negro-problem-representative-negroes-dunbar",
+        "negro-problem-characteristics-kealing",
+        "negro-problem-negros-place-fortune"
+      ]
+    },
+    {
+      "id": "music-and-culture",
+      "label": "Music and Culture",
+      "description": "Song, the sorrow songs, and cultural expression as carriers of memory and as fuel for organizing.",
+      "corpus_links": {
+        "keyword": "music",
+        "tour_slugs": [
+          "highlander-folk-school"
+        ],
+        "cluster_ids": [
+          18
+        ]
+      },
+      "essay_count": 1,
+      "essay_slugs": [
+        "dubois-souls-sorrow-songs"
+      ]
+    },
+    {
+      "id": "womens-leadership",
+      "label": "Women's Leadership",
+      "description": "Black women as organizers, educators, and theorists of the struggle, from nineteenth-century essayists to the women who shaped SNCC.",
+      "corpus_links": {
+        "keyword": "women",
+        "tour_slugs": [
+          "women-shaping-sncc"
+        ],
+        "cluster_ids": [
+          25,
+          4
+        ]
+      },
+      "essay_count": 2,
+      "essay_slugs": [
+        "cooper-voice-from-the-south",
+        "wells-the-red-record"
+      ]
+    },
+    {
+      "id": "justice-and-resistance",
+      "label": "Justice and Resistance",
+      "description": "Confronting racial violence and the law, from anti-lynching journalism to the witness and legal record the movement built.",
+      "corpus_links": {
+        "keyword": "violence",
+        "tour_slugs": [
+          "emmett-till-witnesses"
+        ],
+        "cluster_ids": [
+          5
+        ]
+      },
+      "essay_count": 3,
+      "essay_slugs": [
+        "wells-the-red-record",
+        "negro-problem-disfranchisement-chesnutt",
+        "negro-problem-negro-and-the-law-smith"
+      ]
+    }
+  ],
+  "essays": [
+    {
+      "slug": "cooper-voice-from-the-south",
+      "title": "A Voice from the South",
+      "authors": [
+        "Anna Julia Cooper"
+      ],
+      "year": 1892,
+      "collection": "A Voice from the South, by a Black Woman of the South",
+      "themes": [
+        "womens-leadership",
+        "education-and-schools",
+        "intergenerational-activism",
+        "identity-and-double-consciousness"
+      ],
+      "excerpt": "[Illustration: Yours sincerely A. J. Cooper.] A VOICE FROM THE SOUTH. BY A BLACK WOMAN OF THE SOUTH. XENIA, OHIO: THE ALDINE PRINTING HOUSE. 1892. COPYRIGHT 1892 BY ANNA JULIA COOPER. A VOICE FROM THE SOUTH. “WITH REGRET I FORGET IF THE SONG BE LIVING...",
+      "word_count": 60311,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "wells-the-red-record",
+      "title": "The Red Record: Tabulated Statistics and Alleged Causes of Lynching in the United States",
+      "authors": [
+        "Ida B. Wells-Barnett"
+      ],
+      "year": 1895,
+      "collection": null,
+      "themes": [
+        "justice-and-resistance",
+        "womens-leadership",
+        "community-support"
+      ],
+      "excerpt": "Produced by Suzanne Shell, Melissa Er-Raqabi and the Online Distributed Proofreading Team at https://www.pgdp.net The Red Record: Tabulated Statistics and Alleged Causes of Lynching in the United States By Ida B. Wells-Barnett 1895 [Transcriber's Note: This pamphlet was first published in 1895 but was subsequently...",
+      "word_count": 34217,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-industrial-education-washington",
+      "title": "Industrial Education for the Negro",
+      "authors": [
+        "Booker T. Washington"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "excerpt": "_ By BOOKER T. WASHINGTON, Principal of Tuskegee Institute The necessity for the race's learning the difference between being worked and working. He would not confine the Negro to industrial life, but believes that the very best service which any one can render to what...",
+      "word_count": 3658,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-alexander-crummell",
+      "title": "Of Alexander Crummell",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "intergenerational-activism",
+        "faith-and-church"
+      ],
+      "excerpt": "Then from the Dawn it seemed there came, but faint As from beyond the limit of the world, Like the last echo born of a great cry, Sounds, as if some fair city were one voice Around a king returning from his wars. TENNYSON. [Illustration]...",
+      "word_count": 3283,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-booker-t-washington",
+      "title": "Of Mr. Booker T. Washington and Others",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "intergenerational-activism",
+        "education-and-schools"
+      ],
+      "excerpt": "From birth till death enslaved; in word, in deed, unmanned! ****** Hereditary bondsmen! Know ye not Who would be free themselves must strike the blow? BYRON. [Illustration] Easily the most striking thing in the history of the American Negro since 1876 is the ascendancy of...",
+      "word_count": 4692,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-spiritual-strivings",
+      "title": "Of Our Spiritual Strivings",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "identity-and-double-consciousness",
+        "intergenerational-activism"
+      ],
+      "excerpt": "O water, voice of my heart, crying in the sand, All night long crying with a mournful cry, As I lie and listen, and cannot understand The voice of my heart in my side or the voice of the sea, O water, crying for rest,...",
+      "word_count": 3087,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-black-belt",
+      "title": "Of the Black Belt",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "community-support"
+      ],
+      "excerpt": "I am black but comely, O ye daughters of Jerusalem, As the tents of Kedar, as the curtains of Solomon. Look not upon me, because I am black, Because the sun hath looked upon me: My mother’s children were angry with me; They made me...",
+      "word_count": 6655,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-coming-of-john",
+      "title": "Of the Coming of John",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "youth-student-activism",
+        "education-and-schools",
+        "family-influence"
+      ],
+      "excerpt": "What bring they ’neath the midnight, Beside the River-sea? They bring the human heart wherein No nightly calm can be; That droppeth never with the wind, Nor drieth with the dew; O calm it, God; thy calm is broad To cover spirits too. The river...",
+      "word_count": 5818,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-dawn-of-freedom",
+      "title": "Of the Dawn of Freedom",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "community-support",
+        "education-and-schools"
+      ],
+      "excerpt": "Careless seems the great Avenger; History’s lessons but record One death-grapple in the darkness ’Twixt old systems and the Word; Truth forever on the scaffold, Wrong forever on the throne; Yet that scaffold sways the future, And behind the dim unknown Standeth God within the...",
+      "word_count": 7228,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-faith-of-the-fathers",
+      "title": "Of the Faith of the Fathers",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "faith-and-church",
+        "community-support"
+      ],
+      "excerpt": "Dim face of Beauty haunting all the world, Fair face of Beauty all too fair to see, Where the lost stars adown the heavens are hurled,— There, there alone for thee May white peace be. Beauty, sad face of Beauty, Mystery, Wonder, What are these...",
+      "word_count": 4625,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-meaning-of-progress",
+      "title": "Of the Meaning of Progress",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "excerpt": "Willst Du Deine Macht verkünden, Wähle sie die frei von Sünden, Steh’n in Deinem ew’gen Haus! Deine Geister sende aus! Die Unsterblichen, die Reinen, Die nicht fühlen, die nicht weinen! Nicht die zarte Jungfrau wähle, Nicht der Hirtin weiche Seele! SCHILLER. [Illustration] Once upon a...",
+      "word_count": 3824,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-passing-of-the-first-born",
+      "title": "Of the Passing of the First-Born",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "family-influence"
+      ],
+      "excerpt": "O sister, sister, thy first-begotten, The hands that cling and the feet that follow, The voice of the child’s blood crying yet, _Who hath remembered me? who hath forgotten?_ Thou hast forgotten, O summer swallow, But the world shall end when I forget. SWINBURNE. [Illustration]...",
+      "word_count": 2037,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-golden-fleece",
+      "title": "Of the Quest of the Golden Fleece",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "community-support"
+      ],
+      "excerpt": "But the Brute said in his breast, “Till the mills I grind have ceased, The riches shall be dust of dust, dry ashes be the feast! “On the strong and cunning few Cynic favors I will strew; I will stuff their maw with overplus until...",
+      "word_count": 7540,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-sons-of-master-and-man",
+      "title": "Of the Sons of Master and Man",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "community-support",
+        "intergenerational-activism"
+      ],
+      "excerpt": "Life treads on life, and heart on heart; We press too close in church and mart To keep a dream or grave apart. MRS. BROWNING. [Illustration] The world-old phenomenon of the contact of diverse races of men is to have new exemplification during the new...",
+      "word_count": 6943,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-sorrow-songs",
+      "title": "Of the Sorrow Songs",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "music-and-culture",
+        "faith-and-church"
+      ],
+      "excerpt": "I walk through the churchyard To lay this body down; I know moon-rise, I know star-rise; I walk in the moonlight, I walk in the starlight; I’ll lie in the grave and stretch out my arms, I’ll go to judgment in the evening of the...",
+      "word_count": 3365,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-training-of-black-men",
+      "title": "Of the Training of Black Men",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "excerpt": "Why, if the Soul can fling the Dust aside, And naked on the Air of Heaven ride, Were’t not a Shame—were’t not a Shame for him In this clay carcase crippled to abide? OMAR KHAYYÁM (FITZGERALD). [Illustration] From the shimmering swirl of waters where many,...",
+      "word_count": 5565,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "dubois-souls-wings-of-atalanta",
+      "title": "Of the Wings of Atalanta",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Souls of Black Folk",
+      "themes": [
+        "education-and-schools",
+        "youth-student-activism"
+      ],
+      "excerpt": "O black boy of Atlanta! But half was spoken; The slave’s chains and the master’s Alike are broken; The one curse of the races Held both in tether; They are rising—all are rising— The black and white together. WHITTIER. [Illustration] South of the North, yet...",
+      "word_count": 3354,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-representative-negroes-dunbar",
+      "title": "Representative American Negroes",
+      "authors": [
+        "Paul Laurence Dunbar"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "intergenerational-activism",
+        "identity-and-double-consciousness"
+      ],
+      "excerpt": "_ By PAUL LAURENCE DUNBAR An enumeration of some of the noteworthy American Negroes of to-day and yesterday, with some account of their lives and their work. In this paper Mr. Dunbar has turned out his largest and most successful picture of the colored people....",
+      "word_count": 3726,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-characteristics-kealing",
+      "title": "The Characteristics of the Negro People",
+      "authors": [
+        "H. T. Kealing"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "identity-and-double-consciousness"
+      ],
+      "excerpt": "_ By H.T. KEALING A frank statement of the virtues and failings of the race, indicating very clearly the evils which must be overcome, and the good which must be developed, if success is really to attend the effort to uplift them. [Illustration: H.T. KEALING.]...",
+      "word_count": 3857,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-disfranchisement-chesnutt",
+      "title": "The Disfranchisement of the Negro",
+      "authors": [
+        "Charles W. Chesnutt"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "community-support",
+        "justice-and-resistance"
+      ],
+      "excerpt": "_ By CHARLES W. CHESNUTT In this paper the author presents a straightforward statement of facts concerning the disfranchisement of the Negro in the Southern States. Mr. Chesnutt, who is too well known as a writer to need any introduction to an American audience, puts...",
+      "word_count": 8051,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-negro-and-the-law-smith",
+      "title": "The Negro and the Law",
+      "authors": [
+        "Wilford H. Smith"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "justice-and-resistance",
+        "community-support"
+      ],
+      "excerpt": "_ By WILFORD H. SMITH The law and how it is dodged by enactments infringing upon the rights guaranteed to the freedmen by constitutional amendment. A powerful plea for justice for the Negro. [Illustration: WILFORD H. SMITH.] The colored people in the United States are...",
+      "word_count": 5848,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-negros-place-fortune",
+      "title": "The Negro's Place in American Life at the Present Day",
+      "authors": [
+        "T. Thomas Fortune"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "community-support",
+        "identity-and-double-consciousness"
+      ],
+      "excerpt": "_ BY T. THOMAS FORTUNE Considering the two hundred and forty-five years of his slavery and the comparatively short time he has enjoyed the opportunities of freedom, his place in American life at the present day is creditable to him and promising for the future....",
+      "word_count": 3984,
+      "license_type": "public-domain"
+    },
+    {
+      "slug": "negro-problem-talented-tenth-dubois",
+      "title": "The Talented Tenth",
+      "authors": [
+        "W. E. B. Du Bois"
+      ],
+      "year": 1903,
+      "collection": "The Negro Problem",
+      "themes": [
+        "education-and-schools",
+        "intergenerational-activism",
+        "youth-student-activism"
+      ],
+      "excerpt": "_ By PROF. W.E. BURGHARDT DuBOIS A strong plea for the higher education of the Negro, which those who are interested in the future of the freedmen cannot afford to ignore. Prof. DuBois produces ample evidence to prove conclusively the truth of his statement that...",
+      "word_count": 7320,
+      "license_type": "public-domain"
+    }
+  ]
+}

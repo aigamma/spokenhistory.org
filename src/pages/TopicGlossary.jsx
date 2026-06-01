@@ -45,6 +45,7 @@ export default function TopicGlossary() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [expandedId, setExpandedId] = useState(null);
+  const [essays, setEssays] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -52,6 +53,17 @@ export default function TopicGlossary() {
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found'))))
       .then((j) => { if (!cancelled) setData(j); })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
+    return () => { cancelled = true; };
+  }, []);
+
+  // Curated-essays index, loaded defensively so the Topics page links through
+  // to /essays. If the catalog is absent the section simply does not render.
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/rag/essays/index.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => { if (!cancelled) setEssays(j); })
+      .catch(() => {});
     return () => { cancelled = true; };
   }, []);
 
@@ -123,6 +135,38 @@ export default function TopicGlossary() {
             ))}
           </ul>
         </section>
+
+        {essays?.topics?.length > 0 && (
+          <section className="mb-10" aria-label="Curated essays">
+            <h2 className="text-stone-900 text-xl font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+              Curated Essays
+            </h2>
+            <p className="text-sm text-stone-600 mb-4 max-w-3xl">
+              Public-domain and openly-licensed essays that illuminate these themes, reproduced in full with full
+              citation and license. Open one to read it and to follow its links into the oral histories.
+            </p>
+            <ul className="flex flex-wrap gap-2 list-none p-0">
+              {essays.topics.map((t) => (
+                <li key={t.id}>
+                  <Link
+                    to={`/essays?topic=${encodeURIComponent(t.id)}`}
+                    className="inline-flex items-center rounded-full border border-stone-200 bg-white px-3 py-1 text-sm text-stone-700 hover:border-civil-red-strong hover:bg-red-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                  >
+                    {t.label} <span className="ml-1 text-stone-400">({t.essay_count})</span>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  to="/essays"
+                  className="inline-flex items-center rounded-full border border-civil-red-strong bg-white px-3 py-1 text-sm text-civil-red-body hover:bg-red-50 transition-colors"
+                >
+                  All essays
+                </Link>
+              </li>
+            </ul>
+          </section>
+        )}
 
         <div className="mb-6">
           <input
