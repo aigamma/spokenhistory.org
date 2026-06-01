@@ -1,6 +1,6 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
-**Last updated:** 2026-05-24 Session 7 Phase 2 (Problem 8 fully RESOLVED; Pass 7 ground-truth corpus proposals expanded and validated)
+**Last updated:** 2026-06-01 (Problem 10 logged: onboarding-pipeline integration gaps + related/ stale for entries 139-142, from the documentation-heal + onboarding review)
 **Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~12.2 MB post-Pass-7 apply-back)
 **Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (378 valid entries after Session 7 Phase 2 Pass 7 proposal expansion)
 **Hard deadline:** 2026-05-27 WWU team meeting (3 days from this writing)
@@ -567,3 +567,19 @@ Project memory: `C:\Users\erica\.claude\projects\C--civil\memory\` — has the n
 Global CLAUDE.md and project CLAUDE.md both have the Pacing constraints section: no `/loop` for backlogs, parallel subagents preferred, `/schedule` (cron) for multi-hour persistence.
 
 Any future agent loading this project will inherit these defaults automatically.
+
+---
+
+## Problem 10: Onboarding pipeline does not fully network new interviews (related/ stale for 139-142) -- **OPEN (logged 2026-06-01)**
+
+Surfaced by the 2026-06-01 documentation-heal and onboarding-pipeline review. Full analysis and priority order in `transcripts/ingestion/ONBOARDING_REVIEW.md`.
+
+**10a. `public/rag/related/` is stale for the 4 newest interviews.** The directory has `entry-1.json` through `entry-138.json` but is MISSING `entry-139.json` through `entry-142.json` (Glenda Funchess, Louise Broadway, the Lucius Holloway Sr. and Emma Kate Holloway joint, Luis Zapata). `PersonPage.jsx` fetches `/rag/related/entry-<N>.json` and swallows the 404, so those four person pages render with an empty "related people" section. Fix: `node --env-file=rag/.env.local rag/precompute.mjs --feature related` (needs Voyage and Pinecone credentials), then redeploy.
+
+**10b. `onboard_interview.py` rebuilds only a subset of derived artifacts.** It rebuilds `toc.json`, `playlist_index.json`, and the Pinecone vectors, and scaffolds a person stub, but does NOT rebuild `related/`, `centroids.json`, `constellation.json`, `clusters/tours/quotes/capsules.json`, `influence.json`, `geography.json`, `event_network.json`, `ideological_spectrums.json`, or `people/index.json`. A newly onboarded interview is therefore absent from the embedding map, related passages, the influence graph, the geographic atlas, the events network, the ideological spectrums, the tours and quotes, and the /people browse index until those are rebuilt by hand. Fix: add a final `network` stage to the pipeline, gated on `rag/.env.local` like the `ingest` stage. Interim workaround: the "After Onboarding" checklist in `transcripts/ingestion/README.md`.
+
+**10c. Heal-engine defects (`heal_one_entry.py`).**
+- Hardcoded `applied_date: "2026-05-25"` (and `**Date:** 2026-05-25` in the stage file): every newly onboarded entry is stamped with a false healing date. Fix: use `date.today().isoformat()`.
+- `guess_entry_number` returns 0 for an entry not yet in the master MD, so new entries get an `entry_000_<slug>.md` stage filename. Fix: thread the assigned entry_number from `onboard_interview.py` into the heal step.
+
+**10d. No LoC subject-name canonicalization.** The interviewee name is taken from the directory and propagates unchanged into `entry_<N>.json`, the person slug, and the display name; LoC's catalogued spelling is never reconciled. This is the one hand-correction the old passes performed that the streamlined pipeline does not. Fix: after `resolve`, compare LoC's catalogued name to ours and surface or record the canonical form. See ONBOARDING_REVIEW.md gap D.

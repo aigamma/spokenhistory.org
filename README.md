@@ -20,7 +20,7 @@ The Smithsonian has been scrutinizing AI-generated summaries for hallucinations;
 - **Dual-scorer publication gate.** `processor/claude_scorer.py` runs Claude Opus 4.7 as an independent second-opinion scorer after the OpenAI tuning loop; the publication threshold is now 90/90 on BOTH scorers (up from 80/80 on one). Disagreement routes to human review rather than auto-publishing. Enable with `USE_DUAL_SCORING=1` env var. See `processor/dual_scoring_helper.py` for the dispatch.
 - **Per-claim citation audit.** `processor/citation_check.py` checks every factual claim in a summary against the transcript text. Unsupported claims block publication and surface in the review queue with severity-coded annotations.
 - **Human-review queue.** Failed-gate summaries land in Firestore `review_queue` (producer: `processor/review_queue.py`). Reviewers triage at `/review-queue` (consumer: `src/pages/ReviewQueue.jsx`), approve, reject, or send back for revision.
-- **Ground-truth corpus.** `Metadata Generation System/civil_rights_facts.json` now has 60 entries (51 with alias lists) covering Big Six leadership, SCLC inner circle, foundational pre-Movement intellectuals (Du Bois, Wells, Murray, Height), major events, and legal precedents (Plessy → Brown → Loving). Validate with `python scripts/validate_facts.py`.
+- **Ground-truth corpus.** `Metadata Generation System/civil_rights_facts.json` now has 378 entries (396 aliases) covering Big Six leadership, SCLC inner circle, foundational pre-Movement intellectuals (Du Bois, Wells, Murray, Height), major events, and legal precedents (Plessy, Brown, Loving). Validate with `python scripts/validate_facts.py`.
 - **Pipeline-to-Firestore bridge.** `scripts/pipeline-to-firestore.mjs` takes a JSON output from the pipeline and writes it into the new Firebase project's `interviewIndex/{slug}/subSummaries/{chapter_NN}` schema. `--dry-run` validates shape without auth.
 - **Sample-transcript driver.** `Metadata Generation System/run_sample.py` runs the smallest .srt end-to-end as a single-command integration test. Measured cost on a 152-line transcript: $0.035, runtime 64.6s, first-attempt OpenAI score 85/80 (passed the 80/80 threshold without dual-scorer revisions).
 - **Comprehensive mobile + WCAG 2.2 AA audit.** Every primary page and major component swept for tap targets, orientation handling, focus indicators, and color contrast. New utility class `.text-civil-red-body` (#B23E2F, 4.86:1 on cream) for small red text where the brand red (#F2483C, 3.05:1) fails normal-text AA. The `MobileAdvisory` "best on desktop" banner removed because the audit closed every issue it was hedging against.
@@ -31,7 +31,7 @@ The Smithsonian has been scrutinizing AI-generated summaries for hallucinations;
 - **Skip-link, focus management, modal dialog patterns.** `<Layout>` carries a WCAG 2.4.1 skip-link to `#main-content`. All 5 site modals (Header menu / VectorSearchOverlay / WelcomeDisclaimerModal / FeedbackModal / PeopleGrid person-detail) implement the WAI-ARIA dialog focus pattern: Esc-to-close, focus-enter on open, focus-restore to trigger on close.
 - **Production polish.** `alert()` extinct across the React app (replaced with inline `role="alert"` for errors and natural modal dismissal for success). `vite.config.js` strips `console.log / console.debug / console.info` from production bundles via esbuild pure-call elimination (preserves `console.error` / `console.warn`).
 - **Daily pa11y-ci CI workflow.** `.github/workflows/a11y.yml` runs an automated WCAG 2.2 AA scan against the staging deploy daily at 09:00 UTC + workflow_dispatch. First-run result (2026-05-22): 5/5 URLs passed, 0 errors across axe + htmlcs runners.
-- **Citation-grade RAG layer.** `rag/` (Pinecone + Voyage AI substrate, 15,464 .srt-anchored vectors across 136 interviews) + `netlify/functions/retrieve.mjs` (public retrieval endpoint with `entry_number` shortcut + `dedupeByEntry` polyphonic option) + `src/components/rag/` (SemanticSearch, QuoteFinder, RelatedPassages, Constellation, CitationCard) + `/rag-explore` demo page with 4 tabs. Every retrieval result carries a Library of Congress catalog URL, exact audio timestamp range, audit-tier transparency badge (5-tier vocabulary: low / medium / publication-block / not-auditable / ingestion-only), and a pre-formatted Chicago-style citation block. `mcp-server/` is rewired to the same substrate and locally smoke-tested; Fly.io deploy pending. See `rag/README.md`, `rag/DEMO_SCRIPT.md`, `rag/OPERATIONS.md`, `mcp-server/USAGE_GUIDE.md`.
+- **Citation-grade RAG layer.** `rag/` (Pinecone + Voyage AI substrate, approximately 16K .srt-anchored vectors across 140 interviews plus one vector per person reference page) + `netlify/functions/retrieve.mjs` (public retrieval endpoint with `entry_number` shortcut + `dedupeByEntry` polyphonic option) + `src/components/rag/` (SemanticSearch, QuoteFinder, RelatedPassages, Constellation, CitationCard) + `/rag-explore` demo page with 4 tabs. Every retrieval result carries a Library of Congress catalog URL, exact audio timestamp range, audit-tier transparency badge (5-tier vocabulary: low / medium / publication-block / not-auditable / ingestion-only), and a pre-formatted Chicago-style citation block. `mcp-server/` is rewired to the same substrate and locally smoke-tested; Fly.io deploy pending. See `rag/README.md`, `rag/DEMO_SCRIPT.md`, `rag/OPERATIONS.md`, `mcp-server/USAGE_GUIDE.md`.
 
 **For contributors and operators:** see `CLAUDE.md` for the canonical project guide (architecture, validation commands, defensive patterns, accessibility tokens, current sprint status, deployment chain), `docs/ACCESSIBILITY.md` for the WCAG 2.2 AA audit report, and `docs/DEPLOYMENT.md` for the step-by-step operator deployment guide.
 
@@ -104,20 +104,31 @@ Then open `http://localhost:5000` in your browser and follow the step-by-step UI
 
 ## Frontend Pages
 
-### Home (`/`)
-A custom-built, scroll-driven civil rights history timeline spanning the 1950s through the late 1960s. Each major event, from the murder of Emmett Till through the Civil Rights Act of 1968, is presented with historical photographs, looping archival video clips (served from Cloudinary), quotes, and decade headers. Animated line connectors drawn in SVG thread the events together visually as the user scrolls. The page also embeds topic-linked text passages. A welcome disclaimer modal is shown on first visit.
+The app uses a single drawer menu (one Menu button; items: Timeline, Interviews, Topics, People, Curriculum, Data Insights, About) and reads its data from static JSON committed under `public/rag/`. Highlights:
 
-### Interview Index (`/interview-index`)
-A card grid of every interview in the collection, showing each interviewee's name, thumbnail, and duration. Supports name-based keyword search and semantic vector search (toggled via a switch), as well as sorting by name or duration. Each card links through to the Interview Player.
+### Timeline (`/`)
+A custom-built, scroll-driven civil rights history timeline spanning the 1950s through the late 1960s. Each major event, from the murder of Emmett Till through the Civil Rights Act of 1968, is presented with historical photographs, looping archival video clips, quotes, and decade headers. Animated SVG line connectors thread the events together as the user scrolls. A welcome disclaimer modal is shown on first visit.
 
-### Playlist Builder (`/playlist-builder`)
-The primary exploration tool. Given a keyword, it assembles a sequential playlist of relevant interview segments drawn from across the collection, using progressive loading so the first clip begins playing immediately while the rest load in the background. Features a related-terms panel, shuffle playback, and inline user feedback.
+### Interviews (`/table-of-contents`)
+The Table of Contents for all 140 interviews. Each interview expands to its named chapters grouped into parts; every chapter and part links to a bounded video segment so a multi-hour interview opens to the right place without buffering the whole file. This page absorbed the earlier card-grid Interview Index (which now redirects here) and carries each interview's capsule and audit-tier badge.
 
-### Topic Glossary (`/topic-glossary`)
-A card-based directory of AI-curated civil rights topics drawn from the `events_and_topics` Firestore collection. Topics are categorized as concepts, places, people, events, organizations, or legal terms, and can be filtered by category, sorted by importance or usage count, and searched by keyword or semantic vector search. Clicking a topic launches its clips directly in the Playlist Builder. Also includes a force-directed topic relationship graph.
+### Playlist (`/playlist-builder`)
+A static playlist surface that reads `public/rag/playlist_index.json` (one entry per chapter across the 140 interviews) and filters by `?keywords=`, `?topic=`, `?entry=`, or `?entries=`. Each clip plays as a Library of Congress video segment bounded to its start and end.
 
-### Explore the embeddings (`/rag-explore`)
-Four-tab demo of the citation-grade retrieval layer (added 2026-05-26). Semantic search returns ranked passages with full primary-source attribution (interviewee, exact audio timestamp, Library of Congress catalog URL, audit-tier transparency badge, pre-formatted Chicago citation). Quote-finder lets researchers paste a half-remembered quote and get the canonical source attribution. Embedding-space map renders all 136 interview centroids as a 2D PCA scatter color-coded by audit tier, interviewees who never met but whose words cluster thematically appear as nearby dots. Related-interviewees panel surfaces cross-corpus thematic kinship per entry. Backed by [Pinecone Builder](https://www.pinecone.io/) (civil-rights index) + [Voyage AI](https://www.voyageai.com/) (voyage-3 embeddings + rerank-2). See `rag/DEMO_SCRIPT.md` for the stakeholder one-pager and `mcp-server/USAGE_GUIDE.md` for the matching MCP-connector documentation.
+### Topics (`/topic-glossary`)
+A directory of recurring civil rights themes and AI-curated topics, leading with curated playlists. Selecting a topic opens its clips in the Playlist surface.
+
+### People (`/people`, `/person/:slug`)
+A catalog of 202 reference pages (165 interviewees plus 37 historic figures discussed in the interviews). Each person page is a citation-bearing integration hub: a biographical paragraph, an embedding-derived "AI reading," verbatim interview snippets with in-context clips, semantic neighbors, concept-axis positions, influence-graph edges, and a sources list.
+
+### Curriculum (`/curriculum`)
+A K-12 lesson generator: a teacher slides to a grade band and the page assembles a grade-leveled lesson unit (objectives, materials, activities, vocabulary) out of the archive, with clip materials playing as bounded LoC segments.
+
+### Data Insights (`/rag-explore`)
+The interactive demo of the citation-grade retrieval layer. Semantic search returns ranked passages with full primary-source attribution (interviewee, exact audio timestamp, audit-tier transparency badge, pre-formatted Chicago citation). The Ideological Spectrums place each voice on seven embedding-derived concept axes (for example Nonviolence-as-Theology versus Armed Self-Defense). An embedding-space map renders the interview centroids as a 2D scatter so interviewees who never met but whose words cluster thematically appear as nearby dots. Backed by [Pinecone](https://www.pinecone.io/) (civil-rights index) and [Voyage AI](https://www.voyageai.com/) (voyage-3 embeddings + rerank-2). See `rag/DEMO_SCRIPT.md` and `mcp-server/USAGE_GUIDE.md`.
+
+### Machine Audit (`/machine-audit`)
+An explainer of how the AI metadata is generated, the 90/90 dual-scorer publication gate, the Library of Congress cross-reference, where uncertainty remains, and how to send a correction.
 
 ---
 

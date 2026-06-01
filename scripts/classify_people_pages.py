@@ -23,7 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PEOPLE = ROOT / "public" / "rag" / "people"
-AXES = ROOT / "public" / "rag" / "summaries" / "concept_axes.json"
+AXES = ROOT / "public" / "rag" / "summaries" / "ideological_spectrums.json"
 
 KEYWORDS = [
     ("armed self-defense", "nonviolence-self-defense", "b"),

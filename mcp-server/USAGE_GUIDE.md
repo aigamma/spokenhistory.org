@@ -2,7 +2,7 @@
 
 **The Library of Congress / Smithsonian NMAAHC civil rights oral history archive, accessible from inside Claude.**
 
-This connector exposes 136 long-form oral history interviews (600+ hours of audio, ~5 million words of transcribed text) collected by the [Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project/), a joint initiative of the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture, as a structured, queryable resource that Claude can search and cite from any MCP-compatible client.
+This connector exposes 140 long-form oral history interviews (600+ hours of audio, ~5 million words of transcribed text) collected by the [Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project/), a joint initiative of the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture, as a structured, queryable resource that Claude can search and cite from any MCP-compatible client.
 
 It is not a chatbot. It is a **primary-source citation oracle**: every answer Claude can give using this connector is grounded in an actual interviewee's words, anchored to a Library of Congress catalog URL, and timestamped to the exact audio offset where the quote occurs.
 
@@ -23,11 +23,11 @@ The corpus's distinctive value: many of these interviewees have since passed awa
 
 ## What's in the corpus
 
-- **136 interviewees** including SCLC inner circle, SNCC organizers, Black Panther leaders, MFDP delegates, Highlander Folk School alumni, foundational pre-Movement intellectuals (Du Bois generation), independent Black church leaders, and witnesses to specific events (Selma, Birmingham, Emmett Till, Freedom Summer, Bloody Sunday)
+- **140 interviewees** including SCLC inner circle, SNCC organizers, Black Panther leaders, MFDP delegates, Highlander Folk School alumni, foundational pre-Movement intellectuals (Du Bois generation), independent Black church leaders, and witnesses to specific events (Selma, Birmingham, Emmett Till, Freedom Summer, Bloody Sunday)
 - **600+ hours of audio**, transcribed via Whisper, then audited
-- **The audit substrate** (see "Transparency" below): 127 of the 136 interviews went through an 8-pass audit cascade culminating in word-level alignment against the Library of Congress's own published transcripts. The other 9 (added 2026-05-25) are single-pass ingestions awaiting their full audit cycle.
+- **The audit substrate** (see "Transparency" below): the original 127 interviews went through an 8-pass audit cascade culminating in word-level alignment against the Library of Congress's own published transcripts. Interviews added since then are ingested via the streamlined single-pass pipeline (LoC cross-reference + conservative auto-heal). Every entry is cross-referenced against the LoC's own published transcript where one exists.
 - **Library of Congress catalog URLs** for every entry, so every citation deep-links to the verifiable source
-- **Embedding substrate**: Voyage AI voyage-3 (1024-dim, retrieval-tuned) on Pinecone Builder; second-stage rerank-2 for query-relevance scoring
+- **Embedding substrate**: Voyage AI voyage-3 (1024-dim, retrieval-tuned) on a Pinecone index (`civil-rights`, cosine); second-stage rerank-2 for query-relevance scoring. The index holds ≈16K `.srt`-anchored passage vectors across the 140 interviews, plus one vector per person reference page (verify exact count against Pinecone)
 
 ---
 
@@ -64,7 +64,9 @@ Any client supporting the StreamableHTTP transport works. The endpoint is `POST 
 
 ---
 
-## The three tools
+## The three primitive tools
+
+The connector exposes six tools in total: the three primitives below, plus the three research-pattern tools described in the next section. The research patterns are also registered as MCP prompts for clients that route prompts to the model.
 
 ### `search_transcripts`
 
@@ -129,7 +131,7 @@ Pull every chunk of one interview, stitched back into the original transcript or
 
 ### `list_leaders`
 
-The corpus roster. Returns entry_number + name + LoC catalog URL + audit provenance for each of the 136 interviewees. Use to discover whom to query, or to confirm whether a specific figure is in the collection.
+The corpus roster. Returns entry_number + name + LoC catalog URL + audit provenance for each of the 140 interviewees. Use to discover whom to query, or to confirm whether a specific figure is in the collection.
 
 ```jsonc
 // Input
@@ -149,9 +151,9 @@ The corpus roster. Returns entry_number + name + LoC catalog URL + audit provena
 
 ---
 
-## The three research prompts
+## The three research patterns
 
-Each MCP client renders prompts as ready-to-run conversation starters. The connecting LLM (Claude) follows the workflow they encode.
+These three patterns are registered both as MCP tools (callable directly by clients that do not route prompts to the model, such as Codex Desktop) and as MCP prompts (rendered as ready-to-run conversation starters by clients that route prompts). Either way, the connecting LLM (Claude) follows the workflow they encode.
 
 ### `source_for_claim`, the citation oracle pattern
 
@@ -272,23 +274,25 @@ When using a passage in a formal academic context, also cite the interviewer's n
 
 ## Transparency: audit provenance and uncertainty tiers
 
-Not all 136 entries in the corpus carry the same fidelity guarantees. Every result from the connector includes two transparency fields:
+Not all 140 entries in the corpus carry the same fidelity guarantees. Every result from the connector includes two transparency fields:
 
 ### `entryProvenance`
 
-- **`audit-original`** (127 entries): went through the full Pass 1–8 audit cascade, including word-level alignment against the Library of Congress's own published transcripts (Pass 8 LoC canonical-archive cross-reference, applied 2026-05-25). These are the entries you can cite with the highest confidence.
+- **`audit-original`** (the original 127 interviews): went through the full Pass 1–8 audit cascade, including word-level alignment against the Library of Congress's own published transcripts (Pass 8 LoC canonical-archive cross-reference). These are the entries you can cite with the highest confidence.
 
-- **`ingestion-only`** (9 entries, added 2026-05-25): came in via the streamlined Pass-8-only ingestion pipeline. They have the LoC alignment but not the seven preceding audit passes. Treat them as research leads; verify against the LoC audio for high-stakes citations.
+- **`ingestion-only`**: came in via the streamlined single-pass ingestion pipeline. They have the LoC alignment but not the seven preceding audit passes. Treat them as research leads; verify against the LoC audio for high-stakes citations.
 
 ### `uncertaintyTier`
 
-Per-entry classification derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty). See `transcripts/AUDIT_TRAIL.md::Inferential scoring framework` in the project repo for the full formula. Five values appear in the corpus as of 2026-05-25 (counts in parentheses):
+Per-entry classification derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty). See `transcripts/AUDIT_TRAIL.md::Inferential scoring framework` in the project repo for the full formula. Five values appear in the corpus:
 
-- **`low`** (72), well-audited, low residual error rate. Cite freely.
-- **`medium`** (18), audited, residual uncertainty. Verify against audio for high-stakes citations.
-- **`publication-block`** (23), audited, but documented issues (Subject-paragraph fact-check errors, severe Whisper degradation, or mid-sentence source truncations) block direct publication. Usable as a research lead; verify the specific passage against audio before citing.
-- **`not-auditable`** (14), audited but the entry cannot be fully verified against an external canonical source (multi-speaker, no LoC reference, etc.). Treat as a research lead.
-- **`ingestion-only`** (9), single-pass ingestion via the streamlined 2026-05-25 pipeline; not yet through the full audit cascade. Verify against audio for any citation.
+- **`low`**, well-audited, low residual error rate. Cite freely.
+- **`medium`**, audited, residual uncertainty. Verify against audio for high-stakes citations.
+- **`publication-block`**, audited, but documented issues (Subject-paragraph fact-check errors, severe Whisper degradation, or mid-sentence source truncations) block direct publication. Usable as a research lead; verify the specific passage against audio before citing.
+- **`not-auditable`**, audited but the entry cannot be fully verified against an external canonical source (multi-speaker, no LoC reference, etc.). Treat as a research lead.
+- **`ingestion-only`**, single-pass ingestion via the streamlined pipeline; not yet through the full audit cascade. Verify against audio for any citation.
+
+For end users, the project's site collapses these five raw tiers into two settled display states: **LoC-Verified** (≈137 interviews, cross-referenced against the Library of Congress published transcript) and **Audio-Limited Source** (3 interviews whose recordings carry an inherent audio limit such as mid-sentence truncation or degradation). The raw five-value tier is still what the connector returns on each result.
 
 The `fidelityNote` field renders this as a human-readable sentence so the LLM can pass the transparency directly through to the user.
 
@@ -309,7 +313,7 @@ This honesty is load-bearing for the academic-citation use case. A connector tha
 
 - **Hybrid lexical+semantic retrieval**, currently dense-only via Voyage embeddings. Once Pinecone Builder's sparse-vector support is configured at the index level, results will fuse BM25 + cosine similarity for an additional accuracy lift on rare-name queries.
 - **OAuth 2.1 authentication**, currently the endpoint is public. For Anthropic Connector Directory inclusion + per-user audit trails, OAuth is the next add.
-- **Coverage extensions**, the 9 ingestion-only entries will graduate to audit-original as the seven-pass audit cascade is re-run on them. New interviews collected by the Civil Rights History Project will be ingested via the streamlined Pass 8 pipeline.
+- **Coverage extensions**, new interviews collected by the Civil Rights History Project are ingested via the streamlined single-pass pipeline (LoC cross-reference + conservative auto-heal), which catches the same Whisper-error class the original seven-pass cascade was built to discover. Any remaining ingestion-only entries can be promoted toward audit-original as further review passes are applied.
 - **Multi-archive federation**, if other oral-history archives (StoryCorps, Smithsonian Folklife Festival recordings, the Southern Oral History Program) become MCP-accessible with comparable citation metadata, we'd publish federation guidance so researchers can search multiple archives from one Claude session.
 
 ---

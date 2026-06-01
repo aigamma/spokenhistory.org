@@ -20,7 +20,7 @@ Title headlines (page titles, tab labels, chart titles, section headings, tour t
 
 **Eric is on Claude Max 20x with consistent unused weekly headroom** and pre-paid overage credits that have never been touched. Do not throttle token usage, insert sleep gaps between iterations, or split independent work across wakeups to conserve prompt cache. Optimize for **wall-clock time and visible progress**, not tokens or cache hit rate.
 
-**Hard deadline 2026-05-27 is 5–6 days away as of 2026-05-22.** Pace work accordingly.
+**The 2026-05-27 WWU team meeting has passed; as of 2026-06-01 the next external milestone is the London conference (June 2026).** Pace work accordingly.
 
 **Do not use `/loop` for backlog work.** `/loop` is for event-gated polling (CI runs, file watches, remote queues) or calendar cadences (daily, weekly). For "burn through N known independent items," spawn N parallel `Agent` subagents in a single message, wall-clock = slowest single subagent, not the sum. An 89-item transcript-audit backlog finishes in ~10 minutes via parallel subagents, not hours of 270s sleep pulses.
 
@@ -42,39 +42,38 @@ If you discover a new constraint mid-session (a writing-style rule, a sourcing d
 
 The principle applies to itself: this section was added to `CLAUDE.md` rather than living only in agent memory because the rule about durable docs is itself a durable insight.
 
-## Current sprint status (as of 2026-05-21)
+## Current state (2026-06-01)
 
-**Hard deadline: Wednesday 2026-05-27 team meeting at WWU.**
+The site is built out and live. The 2026-05-27 WWU team meeting and the May overhaul are behind us; the next external milestone is the London conference (June 2026).
 
-Staging deploy: https://civil-rights-staging.netlify.app, live, Firebase-backed (project `civil-rights-history-project`, Firestore `nam7`), Email/Password auth gate (Eric admin + `wwu`/`civilrights` team-shared). Firestore is empty of content; pipeline has not yet been run on the 135 raw Whisper transcripts in `transcripts/raw/`.
+**Corpus: 140 interviews**, all re-chapterized into granular chapters grouped into "parts." Entry IDs span 1-142 (gaps at 31 and 95). Authoritative count: `public/rag/toc.json` (`count: 140`, `rechaptered_count: 140`).
 
-What's done as of 2026-05-21: dual-scorer + citation auditor + human-review queue substrate (commits 297f47d, ecde562, 5bcb591, f50bbdb, 297f47d, 50dcf49); 60-entry ground-truth corpus with cross-entry collision validator (commits 4358213, 781d67a, 77d4503); Cloud Functions + MCP server + Firestore rules code complete; comprehensive mobile + WCAG 2.2 AA audit applied across 8 pages and components (commits 150da11 through 783d419). MobileAdvisory banner removed (783d419), site no longer needs the "best on desktop" hedge.
+**The site is static-JSON-backed, not Firestore-content-backed.** The React app reads per-interview metadata from `public/rag/summaries/pipeline_output/entry_<N>.json` and the derived aggregates under `public/rag/` (`toc.json`, `playlist_index.json`, `related/`, `centroids.json`, `constellation.json`, `summaries/*.json`, `people/`, `curriculum/`). Firestore (project `civil-rights-history-project`, `nam7`, Email/Password auth: Eric admin + `wwu`/`civilrights` team-shared) now backs only the auth gate and the currently-unused `review_queue` collection. The earlier "Firestore is empty, pipeline not yet run" status is obsolete: the pipeline ran, and its output is committed as static JSON in the repo.
 
-What needs operational action (not code work):
-1. **Generate a Firebase service-account JSON.** Firebase Console > Project settings > Service accounts > Generate new private key. Save to a gitignored path (scripts/firebase/ is already gitignored). Required for the next steps.
-2. **Deploy Cloud Functions to new Firebase project.** Requires Blaze billing on `civil-rights-history-project` + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`.
-3. **Deploy MCP server to Fly.io.** Requires `flyctl auth login` then `fly deploy` in `mcp-server/`.
-4. **Run pipeline on the 135 transcripts.** From the project root: `python "Metadata Generation System/run_sample.py"` runs the smallest transcript end-to-end and dumps JSON. The Flask UI at `python app.py` handles batch submission. Cost ~$0.04 per transcript at the dual-scoring + citation-audit threshold (measured on the 2026-05-22 PoC: Maynard E. Moore, 152-line .srt, ran in 64.6s, cost $0.0348, scored Accuracy 85 / Quality 80 on the OpenAI scorer's first attempt). At ~$0.04 per transcript, the full 135-transcript corpus is ~$5.40.
-5. **Push pipeline outputs to Firestore.** `node scripts/pipeline-to-firestore.mjs --input <pipeline.json> --service-account <sa.json>` writes the JSON into interviewIndex/{slug}/subSummaries/{chapter_NN} in the new Firebase. --dry-run validates the shape without auth.
-6. **Open PR to upstream** `jsovelove/civil-rights-history-project`. Currently 118 commits ahead.
+**Search is live.** Pinecone index `civil-rights` (Voyage `voyage-3`, 1024-dim, cosine) + `rerank-2`, fronted by `netlify/functions/retrieve.mjs`. It holds `.srt`-anchored passage vectors plus one vector per person page (`content_type='person'`, excluded from passage flows unless `include_persons` is set). The person-vector push is done.
 
-Complete deployment chain (post-2026-05-22):
-- Python pipeline (Metadata Generation System/run_sample.py) -> JSON dump
-- Node bridge (scripts/pipeline-to-firestore.mjs) -> Firestore writes
-- React app (src/) reads Firestore via VITE_FIREBASE_* env vars
-- Cloud Functions (functions/) provide vector search + feedback submission once deployed
+**Deployed:** frontend to **robotlogic.org** (production, Netlify, `master`) and `civil-rights-staging.netlify.app` (staging).
 
-What's NOT load-bearing for Wednesday: any further mobile polish, any further accessibility sweep, any further pipeline hardening. The five-track core overhaul is done; what remains is ops + content generation.
+**Still outstanding (ops, not code):**
+- Deploy Cloud Functions to `civil-rights-history-project` (Blaze billing + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`). The live search path does NOT depend on these; it runs through the Netlify function + Pinecone.
+- Deploy the MCP server to Fly.io (`flyctl auth login` then `fly deploy` in `mcp-server/`). The server is rewired to Pinecone+Voyage and locally smoke-tested.
+- Open the PR to upstream `jsovelove/civil-rights-history-project`.
+
+**Known data / integration gaps (see `transcripts/OPEN_PROBLEMS.md` + `transcripts/ingestion/ONBOARDING_REVIEW.md`):**
+- `public/rag/related/` covers entries 1-138; the 4 newest (139-142) lack semantic-neighbor precompute, so their PersonPage "related people" sections render empty. Regenerate: `node --env-file=rag/.env.local rag/precompute.mjs --feature related`.
+- `transcripts/ingestion/onboard_interview.py` (the master onboarding pipeline) rebuilds only `toc.json`, `playlist_index.json`, the Pinecone vectors, and a person stub. The other derived artifacts (`related/`, `centroids`/`constellation`, `clusters`/`tours`/`quotes`/`capsules`, `influence`, `geography`, `event_network`, `ideological_spectrums`, `people/index.json`) must still be rebuilt by hand after onboarding.
+
+Data-build scripts (run from repo root after a corpus change): `scripts/build_toc.py`, `scripts/build_playlist_index.py`, `scripts/build_people_index.mjs`, `scripts/build_event_network.py`; plus the Pinecone-derived precompute in `rag/precompute.mjs`, `rag/precompute_concept_axes.mjs`, `rag/precompute_influence.py`, `rag/precompute_panels.mjs`, and `rag/summarize.mjs`.
 
 ## Architecture
 
 Five subsystems, each in its own directory:
 
-- **`src/`** -- React 18 + Vite frontend. Pages: Home (scroll-driven timeline), Interview Index (card grid with semantic search), Playlist Builder (cross-interview clip assembly), Topic Glossary (force-directed graph of AI-curated topics), RAG Explore (interactive embedding-substrate demos at `/rag-explore`), Person Pages (`/person/:slug`, citation-bearing reference page per named individual, see `public/rag/people/README.md`), Review Queue (admin UI for the human-review gate).
+- **`src/`** -- React 18 + Vite frontend, drawer-only navigation (a single Menu button; items: Timeline, Interviews, Topics, People, Curriculum, Data Insights, About). Reads the static JSON under `public/rag/`. Key pages: Home (`/`, scroll-driven timeline), Interviews (`/table-of-contents`, the per-interview Table of Contents with parts and chapters and click-to-play; it absorbed the retired card-grid Interview Index, which now redirects here), Static Playlist (`/playlist-builder`, time-anchored clips from `playlist_index.json`), Topic Glossary (`/topic-glossary`), People catalog and Person Pages (`/people` and `/person/:slug`, citation-bearing reference page per named individual, see `public/rag/people/README.md`), Curriculum (`/curriculum`, K-12 lesson generator), Data Insights / RAG Explore (`/rag-explore`, the embedding-substrate demos including the Ideological Spectrums), Machine Audit (`/machine-audit`, how the AI metadata is made and where uncertainty remains), Visualizations (`/visualizations`), Content Directory (`/content-directory`), About (`/about`), Review Queue (`/review-queue`, admin UI for the human-review gate), plus `/interview/:entryNumber`, `/interview-player`, `/clip-player`, and a proper 404.
 - **`functions/`** -- Firebase Cloud Functions (Node.js). `generateEmbedding`, `vectorSearch`, `submitCannyFeedback`. The OpenAI key lives here, not in the client bundle.
 - **`Metadata Generation System/`** -- Standalone Python/Flask 7-step pipeline (blocking → labeling → TOC → chapterization → summarization → tuning → engagement). This is the hallucination hot zone.
 - **`mcp-server/`** -- Node MCP server exposing the archive via six tools: three primitives (`search_transcripts`, `get_transcript`, `list_leaders`) plus three research-pattern tools (`compare_perspectives`, `trace_evolution`, `source_for_claim`). The research patterns are also registered as MCP prompts for prompt-routing clients. Deployable to Fly.io.
-- **`scripts/`** -- Admin scripts (Firestore migration, Firebase data tools, vectorization). Do not delete without explicit confirmation; some are reference material.
+- **`scripts/`** -- Admin and data-build scripts. The corpus-derived static artifacts are (re)built here: `build_toc.py` (toc.json), `build_playlist_index.py` (playlist_index.json), `build_people_index.mjs` (people/index.json), `build_event_network.py` (event_network.json), the re-chapterization tooling (`merge_rechapter.py`, `expand_chapters.py`, `add_parts.py`, `build_rechapter_map.py`), the person-page gates (`verify_person_snippets.py`, `audit_axis_labels.py`, `classify_people_pages.py`), `strip_em_dashes.mjs`, and `diag_corpus_state.py` (the corpus-state diagnostic). Legacy Firestore/Firebase migration and media scripts also live here. Do not delete without explicit confirmation; some are reference material.
 
 ### Civil Rights MCP usage in Codex Desktop
 
@@ -106,7 +105,7 @@ The publication threshold is 90/90 on BOTH scorers independently. Disagreement (
 
 ## Ground-truth corpus
 
-`Metadata Generation System/civil_rights_facts.json` -- 60 entries (51 with alias lists) covering Big Six leaders, SCLC inner circle, foundational pre-Movement intellectuals (Du Bois, Wells, Murray, Height), major events, legal precedents (Brown, Plessy, Loving), and LBJ as federal-executive grounding. `processor/shared.py::get_relevant_facts` consults this corpus to ground the LLM scorer's accuracy claims.
+`Metadata Generation System/civil_rights_facts.json` -- 378 entries (396 aliases) covering Big Six leaders, SCLC inner circle, foundational pre-Movement intellectuals (Du Bois, Wells, Murray, Height), major events, legal precedents (Brown, Plessy, Loving), LBJ as federal-executive grounding, and the regional movement figures surfaced across the 140-interview corpus. `processor/shared.py::get_relevant_facts` consults this corpus to ground the LLM scorer's accuracy claims.
 
 Validate with `python scripts/validate_facts.py` (runs in `Metadata Generation System/`).
 
@@ -121,7 +120,7 @@ The transcript-audit work has accumulated four core governance documents at `tra
 | `transcripts/AUDIT_TRAIL.md` | Longitudinal effort log across sessions, agents, and models. Records WHAT was done, WHEN, BY WHOM, with WHAT COVERAGE. The data substrate for inferential error-rate scoring. | **Per-phase incremental updates, not session-end-only.** Every multi-step session creates a new `### Session N` entry near the top of the `## Session log` section. Each phase appends a sub-section as it completes (not when the whole session ends). Follow the "Session entry template" at the bottom of the file. |
 | `transcripts/OPEN_PROBLEMS.md` | Active punch-list of what still needs doing. Numbered Problems (1, 2, 3, ...), never delete, only annotate as RESOLVED with a dated sub-section that preserves the original entry below. | Mark resolved Problems with `## Problem N, <title>, **RESOLVED YYYY-MM-DD (Phase/Session reference)**` followed by a `### Resolved YYYY-MM-DD <date qualifier>` sub-section, then a preserved-for-history sub-section. New problems get appended as `## Problem N+1` with current `**Last updated:** YYYY-MM-DD` at the top of the file. |
 | `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` | The corrections overlay, per-entry Pass 1/2/3/4 tables with row IDs, Whisper renderings, canonical corrections, confidence tiers, source attribution. ~9.3 MB, ~26,000+ lines as of 2026-05-22. | **Non-destructive overlay**: `transcripts/raw/` files are NEVER modified. Corrections accumulate here. Per-entry tables use the row-ID convention `<entry>.<row>` for Pass 1, `<entry>.P2.<row>` for Pass 2, `<entry>.P3.<row>` for Pass 3, `<entry>.P4.<row>` for Pass 4, and `<target>.P2.RELOC[<source>.P2.<row>]` for cross-contamination relocations. Confidence tiers: `correct` / `high` / `medium` / `low` / `speaker-originating` / `flagged-for-adversarial-review` / `n/a`. |
-| `Metadata Generation System/civil_rights_facts.json` | Ground-truth corpus (140 entries, 291 aliases as of 2026-05-22). Used by `processor/shared.py::get_relevant_facts` to ground the LLM scorer's accuracy claims. | **Additions only, no deletions of existing entries.** Validate after every edit with `cd "Metadata Generation System" && python scripts/validate_facts.py`. The validator catches schema regressions and alias collisions. |
+| `Metadata Generation System/civil_rights_facts.json` | Ground-truth corpus (378 entries, 396 aliases as of 2026-06-01). Used by `processor/shared.py::get_relevant_facts` to ground the LLM scorer's accuracy claims. | **Additions only, no deletions of existing entries.** Validate after every edit with `cd "Metadata Generation System" && python scripts/validate_facts.py`. The validator catches schema regressions and alias collisions. |
 
 ### Per-phase update protocol for AUDIT_TRAIL.md
 
@@ -162,18 +161,24 @@ If two sessions are running in parallel (which has happened, Session 3 + Session
 
 ## Streamlined ingestion for new transcripts (DEPRECATES Passes 1-7 for new entries)
 
-`transcripts/ingestion/README.md` + `transcripts/ingestion/ingest_new_transcript.py` together replace the seven-pass improvised journey for any new transcript that arrives in the corpus AFTER 2026-05-25. The seven-pass journey on the original 127 was largely about discovering Whisper failure patterns and building the ground-truth substrate; that substrate now exists, so new interviews can be corrected in ONE pass.
+`transcripts/ingestion/README.md` is the canonical onboarding doc. The seven-pass improvised journey on the original 127 entries was largely about discovering Whisper failure patterns and building the ground-truth substrate; that substrate now exists, so a new interview is corrected in ONE deterministic pass against the Library of Congress reference text and carried the rest of the way onto the live site by a single master pipeline.
 
-**The single command** that ingests a new entry:
+**The single command** that onboards a new entry end-to-end:
 ```
-python transcripts/ingestion/ingest_new_transcript.py "<Subject>_interview_<YYYYMMDD>_<HHMMSS>"
+python transcripts/ingestion/onboard_interview.py "<Subject>_interview_<YYYYMMDD>_<HHMMSS>"
 ```
 
-Does: validate raw structure → bootstrap `corrected/<entry>/` from raw → resolve LoC item (XML first, PDF fallback, direct-URL override available via `--loc-item-url`) → run `heal_one_entry.py heal_one` → write per-entry stage file → append ingestion note to AUDIT_TRAIL.md.
+`onboard_interview.py` is a master, idempotent, 15-stage pipeline (every stage checks for its own output and skips work already done, so it is safe to re-run): locate, bootstrap raw to corrected, resolve LoC item, LoC heal, assign entry_number, resolve LoC video, extract cue blocks, expand chapters, attach summary, assemble `entry_<N>.json`, ingest vectors to Pinecone, scaffold the person page, rebuild `toc.json` and `playlist_index.json`, append an AUDIT_TRAIL note, print status. It reuses `ingest_new_transcript.py` (the bootstrap and LoC-heal sub-step) rather than duplicating it.
+
+**Two inputs are authored, not auto-generated.** The Smithsonian / LoC bar requires reviewable segmentation and a citation-bearing page, so the pipeline STOPS and tells you exactly what to write, then carries it the rest of the way on the next run: the granular, parts-grouped chapter spec at `scripts/spec_<N>.json` (stage 8) and the 2-3 paragraph summary at `transcripts/rechapter_staging/entry_<N>.summary.txt` (stage 9). The person page (stage 12) is scaffolded as a thin stub and needs a real bio, `ai_reading`, verbatim snippets, and sources per `public/rag/people/README.md`.
+
+**The cleaning is deterministic, not guesswork.** The heal aligns our Whisper `.srt` word-for-word against LoC's authoritative transcript and applies ONLY the rule-classified `ASR_ERROR_HEAL` divergences (no model is called in the onboarding path); everything else is preserved verbatim or flagged `NEEDS_SME_REVIEW`. This is the deliberate replacement for the expensive, stochastic internal-guess passes that preceded LoC integration.
+
+**Known gap (see `transcripts/ingestion/ONBOARDING_REVIEW.md`):** `onboard_interview.py` rebuilds `toc.json`, `playlist_index.json`, and the Pinecone vectors, but NOT the other derived cross-link artifacts (`related/`, `centroids` / `constellation`, `clusters` / `tours` / `quotes` / `capsules`, `influence`, `geography`, `event_network`, `ideological_spectrums`, `people/index.json`). Until that is wired in, run those rebuilds by hand after onboarding so the new interview is fully networked into every site surface.
 
 **Do NOT run Passes 1-7 on new transcripts.** That pipeline was designed before LoC integration existed. The Pass 8 architecture (LoC heal + conservative auto-apply + SME review of flagged divergences) catches the same Whisper-error class with much less hand-tuning. The legacy Pass 1-7 documentation in `transcripts/AUDIT_TRAIL.md` is historical record for the 127-entry corpus; it is not a template for new work.
 
-**Format adapters** for non-Whisper input (PDF-only transcripts, plain text, WhisperX JSON) are documented in `transcripts/ingestion/README.md`, TODO section noting the synthesized-timestamp fallback for text-only sources (which loses fine-grained playlist-generator clip precision; avoid unless audio is unavailable).
+**Format adapters** for non-Whisper input (PDF-only transcripts, plain text, WhisperX JSON) are documented in `transcripts/ingestion/README.md`, including the synthesized-timestamp fallback for text-only sources (which loses fine-grained playlist-clip precision; avoid unless audio is unavailable).
 
 ### Why this discipline matters
 
@@ -191,7 +196,7 @@ The Smithsonian (NMAAHC) and Library of Congress are gating publication on AI-ha
 
 **For a one-page hierarchy view: see `STEERING_DOCS.md` at the project root.** It ranks every document by tier (Orientation / Active reference / Lessons learned / Demo prep / Provenance / Deprecated) with a "when to read what" cheat sheet. Read that first if you're new; the per-document breakdown below is the deep-dive supplement.
 
-The project has ~17 human-facing markdown documents plus ~440 per-entry staging files. The staging files are machine-generated (Pass 2/3/4 supervisor outputs + per-entry slices), new agents should NOT read them as documentation; they're audit artifacts consumed by merge scripts. The human-facing documents are:
+The project has ~20 human-facing markdown documents plus ~440 per-entry staging files. The staging files are machine-generated (Pass 2/3/4 supervisor outputs + per-entry slices), new agents should NOT read them as documentation; they're audit artifacts consumed by merge scripts. The human-facing documents are:
 
 ### Root-level
 
@@ -209,7 +214,7 @@ The project has ~17 human-facing markdown documents plus ~440 per-entry staging 
 | File | Purpose |
 |---|---|
 | `docs/ACCESSIBILITY.md` | WCAG 2.2 AA + mobile audit findings + accessibility-token reference (`text-civil-red-body`, focus-visible rule, prefers-reduced-motion handling) |
-| `docs/DEPLOYMENT.md` | End-to-end deployment chain (Python pipeline → Node bridge → Firestore → React + Cloud Functions + MCP server) |
+| `docs/DEPLOYMENT.md` | End-to-end deployment chain. Current data path: authored inputs + raw transcript, `onboard_interview.py`, static `entry_<N>.json` plus the derived `public/rag/` artifacts, served by Netlify; Pinecone for search; Firestore for auth and the review queue only; Cloud Functions and MCP server optional. |
 | `docs/TRANSCRIPT_AUDIT_DESIGN.md` | Original architectural design for the three-stage audit cascade (exact/alias match → phonetic+edit-distance fuzzy → LLM disambiguation). Read this before adding new audit infrastructure. |
 | `docs/WEAVIATE_INTEGRATION_DESIGN.md` | Original RAG-substrate design when the plan was Weaviate. **HISTORICAL**, the substrate decision pivoted to Pinecone Builder + Voyage AI on 2026-05-22. Kept for design-decision provenance. Current substrate documented in `docs/RAG_SUBSTRATE_DECISION.md` and `rag/README.md`. |
 | `docs/RAG_SUBSTRATE_DECISION.md` | The decision record explaining why Pinecone Builder + Voyage AI was chosen over self-hosted Weaviate / Supabase pgvector. Covers alternatives considered, weighting criteria, what was explicitly deferred, and migration triggers that should re-open the decision. |
@@ -267,10 +272,10 @@ One JSON file per named individual on the site, loaded by the `/person/:slug` ro
 
 Searchability rollout: the catalog JSON gets ingested into the main `civil-rights` Pinecone index as **one vector per person** (embedding `display_name + role_summary + biographical_paragraph + ai_reading` as a single document), with `content_type: 'person'` metadata. Existing archive-focused retrieval flows (Quote Finder, Semantic Overlap, ConceptSpectrum drill-down, ConceptMatrix concept-query, InterviewMap concept-query, Tour Pages, Themes Browser, Influence drill-down) filter out `content_type='person'` so their existing ranked-passage UX is unchanged. A new site-wide search bar or "find a person" affordance can pass `includePersons: true` (client) / `include_persons: true` (MCP server) to query without the filter and render mixed results with a "Person" or "Passage" badge per result.
 
-**Status (updated 2026-05-29):** Catalog at 198 pages (161 interviewees + 37 external figures), 100% bio coverage, verbatim interview-snippet coverage on all non-stub pages (1005 quotes, all gated by `scripts/verify_person_snippets.py`), 0 reversed concept-axis labels (`scripts/audit_axis_labels.py` clean), and full portrait/environment hero imagery (0 bare pages). The exclusion filter is implemented at both layers (`src/services/ragClient.js::retrieve` and `mcp-server/server.mjs::searchTranscripts`) as of commit 6f446a7. The ingestion command path is implemented in `rag/ingest.mjs` as of commit 7cbf643:
-- `node --env-file=.env.local rag/ingest.mjs --persons-only` ingests the 191 person-page vectors without touching the transcript index.
+**Status (updated 2026-06-01):** Catalog at 202 pages (165 interviewees + 37 external figures), 100% bio coverage, verbatim interview-snippet coverage on all non-stub pages (1000+ quotes, gated by `scripts/verify_person_snippets.py`), 0 reversed concept-axis labels (`scripts/audit_axis_labels.py` clean), and full portrait/environment hero imagery (0 bare pages). The exclusion filter is implemented at both layers (`src/services/ragClient.js::retrieve` and `mcp-server/server.mjs::searchTranscripts`) as of commit 6f446a7. The ingestion command path is implemented in `rag/ingest.mjs` as of commit 7cbf643:
+- `node --env-file=.env.local rag/ingest.mjs --persons-only` ingests the person-page vectors (one per page, currently 202) without touching the transcript index.
 - `node --env-file=.env.local rag/ingest.mjs --include-persons` performs a normal transcript ingest and the person-catalog ingest in the same run.
-**The person-vector Pinecone push is DONE (2026-05-29):** 199 catalog-page vectors were upserted to the `civil-rights` index (model voyage-3, `content_type='person'`, 0 orphaned) using Eric's Voyage + Pinecone credentials in `rag/.env.local`. Re-runs are idempotent on content hash and only re-embed changed pages, so re-run `node --env-file=rag/.env.local rag/ingest.mjs --persons-only` after any future person-page content edit (bio, role_summary, or ai_reading change) to keep the vectors in sync.
+**The person-vector Pinecone push is DONE (2026-05-29):** the catalog-page vectors were upserted to the `civil-rights` index (model voyage-3, `content_type='person'`, 0 orphaned) using Eric's Voyage + Pinecone credentials in `rag/.env.local`. The catalog has since grown to 202 pages, so re-run `node --env-file=rag/.env.local rag/ingest.mjs --persons-only` to sync the newest pages (entries 139-142 plus any edits). Re-runs are idempotent on content hash and only re-embed changed pages.
 
 ### Component-level `README.md` files
 
@@ -283,8 +288,11 @@ Searchability rollout: the catalog JSON gets ingested into the main `civil-right
 | `rag/ENDPOINTS.md` | One-page lookup reference. Live URLs (including tab-hash deep-links), backend identifiers (Pinecone index host, Netlify siteId, etc.), `/retrieve` body params + response shape, required env vars, regenerate-artifacts commands. |
 | `rag/NEXT_SESSION_PICKUP.md` | Fresh-eyes 5-minute orientation for an agent resuming work. Priority read order, what's admin-blocked vs open code work, three patterns worth knowing, things NOT to do, two-step health check to run on resume. **Read this first if you're a new agent or returning to this codebase after a break.** |
 | `rag/OPERATIONS.md` | Operations runbook: key-rotation procedures (Voyage + Pinecone), what to monitor day-of-conference, abuse-response playbook, reingestion-after-corpus-changes recipe, cost ceiling + worst-case-abuse estimates, disaster-recovery procedure. |
+| `rag/SHOWCASE.md` | Feature-by-feature showcase of the interactive RAG surfaces: the math behind the Ideological Spectrums (`ideological_spectrums.json`), the per-feature data files and drill-down query contracts, and the regenerate commands. |
+| `rag/ATLAS_PROVENANCE.md` | Provenance record for `public/rag/atlas_projection.json` (the one Nomic Atlas UMAP projection produced before the account was canceled on 2026-05-27; the replacement path is umap-learn). |
 | `mcp-server/README.md` | Engineering reference for the MCP server (post-2026-05-25 Pinecone+Voyage rewire). Architecture, local dev, deployment, env vars, citation-payload shape. |
 | `mcp-server/USAGE_GUIDE.md` | End-user / researcher / Anthropic-Connector-Directory submission doc. Audience, what's in the corpus, connection setup, three worked examples (grant citation, quote verification, curriculum dev), citation format reference (Chicago/APA/MLA), provenance/transparency notes. **Read this if asked about how to use the MCP connector or its value proposition.** |
+| `mcp-server/CODEX_SETUP.md` | Step-by-step setup for connecting the MCP server to Codex and other tool-only MCP clients (env vars, the `civil-rights` Pinecone index, voyage-3 + rerank-2, and the six-tool verify step). |
 | `netlify/functions/README.md` | Netlify Function endpoints (server-side proxies that keep API keys out of the client bundle). Currently: `retrieve.mjs` for the public semantic-search proxy used by the frontend RAG components. |
 | `functions/README.md` | Cloud Functions (Firebase) layer documentation |
 
@@ -377,7 +385,7 @@ The interactive RAG layer is live in staging. The following are operational fact
 
 ### What's deployed and running
 
-- **Pinecone index `civil-rights`** (1024-dim, cosine, AWS us-east-1), created via REST API on 2026-05-25 23:00 UTC. **Co-mingled with `worldthought` in the same Pinecone project** (shared host hash `odc9z70`); separating into project-scoped keys is a follow-on (see `rag/.env.local` header for the migration path). Index is **Ready** and **populated**: 15,464 vectors (`.srt`-only after the 2026-05-26 prune that dropped `.txt` + `.vtt` duplicates).
+- **Pinecone index `civil-rights`** (1024-dim, cosine, AWS us-east-1), created via REST API on 2026-05-25 23:00 UTC. **Co-mingled with `worldthought` in the same Pinecone project** (shared host hash `odc9z70`); separating into project-scoped keys is a follow-on (see `rag/.env.local` header for the migration path). Index is **Ready** and **populated**: 15,464 passage vectors as of 2026-05-26 (`.srt`-only after the prune that dropped `.txt` + `.vtt` duplicates). That count has since grown with the corpus reaching 140 plus the per-person vectors; the current total is ≈16K (verify against the Pinecone console).
 - **Netlify `civil-rights-staging` env vars**, `PINECONE_API_KEY`, `PINECONE_HOST`, `PINECONE_INDEX`, `VOYAGE_API_KEY`, `VOYAGE_MODEL`, `VOYAGE_RERANK_MODEL` all set via Netlify MCP. The first attempt with `envVarIsSecret: true` failed silently for the API keys, they were re-upserted as non-secret. **Lesson:** when Netlify env-var setting "succeeds" but the value never appears in subsequent `getAllEnvVars` listings, the secret-flag + `context: "all"` combination silently rejects the upsert.
 - **`/retrieve` Netlify Function**, deployed at `b935c03`+. After env var fix, requires another deploy to cycle the function's `process.env` snapshot. Empty-commit pushes are the trigger.
 - **`/rag-explore` page**, three-tab demo of SemanticSearch + QuoteFinder + Constellation, gated behind ProtectedRoute. Live at `https://civil-rights-staging.netlify.app/rag-explore`.
@@ -407,11 +415,11 @@ Memory items saved this session:
 
 A batch of PM (Dustin) site-improvement requests was implemented and pushed to production (`origin/master` -> Netlify -> **robotlogic.org**). Full request-by-request report at `output/site-improvements-report-2026-05-30.md`. Durable facts a future agent needs:
 
-- **`/playlist-builder` is now STATIC, not Firestore.** The old `PlaylistBuilder.jsx` (and `InterviewPlayer.jsx`, `ClipPlayer.jsx`) read from Firestore, which is empty, so every `/playlist-builder?keywords=...` link (roughly 50 on Home alone, plus Topics and others) was dead. The route now renders `src/pages/StaticPlaylist.jsx`, which reads `public/rag/playlist_index.json` (1,781 clips = every chapter across the 136 interviews, regenerated by `scripts/build_playlist_index.py`). It filters by `?keywords=` / `?q=` / `?topic=` / `?entry=` / `?entries=N,M&label=` and plays each clip via `LocVideoEmbed` bounded to its start/end. `PlaylistBuilder.jsx` is retained but no longer routed. **Re-run `scripts/build_playlist_index.py` after any re-chapterization** so the clip index tracks the new chapter boundaries.
-- **Corpus count is 136, NOT 145.** Verified via `scripts/diag_corpus_state.py`. The corpus was 127; the 9 transcripts dated 2026-05-25 are already fully integrated (entries 28, 46, 64, 133-138), giving 136. 145 is the approximate full LoC/Smithsonian collection size, not our holdings. Four transcripts (Glenda Funchess, Louise Broadway, the Lucius Holloway Sr. and Emma Kate Holloway joint, Luis Zapata) have corrected SRTs but no entry number / pipeline output / page; building them reaches 140. On-site copy now says "136 of the ~145-interview collection."
+- **`/playlist-builder` is now STATIC, not Firestore.** The old `PlaylistBuilder.jsx` (and `InterviewPlayer.jsx`, `ClipPlayer.jsx`) read from Firestore, which is empty, so every `/playlist-builder?keywords=...` link (roughly 50 on Home alone, plus Topics and others) was dead. The route now renders `src/pages/StaticPlaylist.jsx`, which reads `public/rag/playlist_index.json` (every chapter across the 140 interviews, regenerated by `scripts/build_playlist_index.py`; the clip count grew when the corpus was re-chapterized into granular chapters). It filters by `?keywords=` / `?q=` / `?topic=` / `?entry=` / `?entries=N,M&label=` and plays each clip via `LocVideoEmbed` bounded to its start/end. `PlaylistBuilder.jsx` is retained but no longer routed. **Re-run `scripts/build_playlist_index.py` after any re-chapterization** so the clip index tracks the new chapter boundaries.
+- **Corpus count is now 140** (verify via `scripts/diag_corpus_state.py`). History: 127 originally; the 9 transcripts dated 2026-05-25 brought it to 136 (entries 28, 46, 64, 133-138); the 4 that had corrected SRTs but no pipeline output (Glenda Funchess, Louise Broadway, the Lucius Holloway Sr. and Emma Kate Holloway joint, Luis Zapata) were then built as entries 139-142, reaching 140. Entry IDs span 1-142 with gaps at 31 and 95. 145 is the approximate full LoC/Smithsonian collection size, not our holdings. On-site copy was updated to the 140 count (commit `66fda23`).
 - **New page `/machine-audit`** (`src/pages/MachineAudit.jsx`): explains the pipeline, the 90/90 dual-scorer gate, the LoC cross-reference, the settled audit states (live counts from constellation), where uncertainty remains, and a mailto correction path. Linked from `AuditProvenance`.
 - **Navigation is drawer-only** (`Header.jsx`): top pill links removed, current page grayed via `aria-current` (not hidden), "Spectrum" renamed "Ideological Spectrums," the technical sub-tab menu entries (Semantic Overlap, Word Search) dropped. Explore-page tabs use content language (Related People, Concept Lenses, Places, Influence).
 - **All outbound loc.gov catalog links removed site-wide** (16 files). Textual "Library of Congress" attribution kept as plain text; `tile.loc.gov` media sources and the person-page `sources[]` citations are untouched, so the citation substrate is intact.
 - **Topics page** leads with David Cline's recurring-narrative themes as curated playlists; "External Figures" renamed "Historic Figures" on `/people`.
-- **Designed but NOT run** (need Eric's go): full-corpus re-chapterization into 2-4 minute chapters (LOW blast radius, only rewrites `chapters[]` in each `entry_N.json` plus the clip index; the search index/maps/clusters are built from fixed time windows, not chapter boundaries; ideal via a Workflow on Max capacity), and building the 4 missing interviews (chapters/summary/pages are doable via subagents; the Voyage->Pinecone search-index step is blocked by the AV-vs-node issue, see the `reference_av_blocks_dev_server` memory).
+- **Completed since this batch (2026-05-31):** the full-corpus re-chapterization into granular parts-grouped chapters ran across all 140 interviews (commit `3404a7d`), and the 4 previously-missing interviews were built as entries 139-142 via the master onboarding pipeline `transcripts/ingestion/onboard_interview.py` (commit `becd128`), taking the corpus from 136 to 140. Residual: the `related/` semantic-neighbor precompute for entries 139-142 still needs a credentialed `node --env-file=rag/.env.local rag/precompute.mjs --feature related` run (see `transcripts/OPEN_PROBLEMS.md`).
 - **Local `vite build` is unusable** (AV segfaults node mid-transform, even unsandboxed). Verification this pass used per-file `./node_modules/.bin/esbuild <file> --format=esm` parse checks plus targeted greps; the Netlify build is the deploy gate (it will not deploy a broken build, so production is protected).

@@ -34,7 +34,7 @@ import { embedQuery } from './embed.mjs';
 
 const REPO_ROOT = fileURLToPath(new URL('..', import.meta.url));
 const CENTROIDS_PATH = join(REPO_ROOT, 'public', 'rag', 'centroids.json');
-const OUT_PATH = join(REPO_ROOT, 'public', 'rag', 'summaries', 'concept_axes.json');
+const OUT_PATH = join(REPO_ROOT, 'public', 'rag', 'summaries', 'ideological_spectrums.json');
 
 const AXES = [
   {

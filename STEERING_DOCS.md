@@ -4,7 +4,7 @@
 
 **Audience:** WWU team, NMAAHC + LoC collaborators, any new contributor (human or AI agent).
 
-**Last updated:** 2026-05-28 (catalog at 191 pages, 100% bio coverage; content_type filter implemented at both client and MCP server; `rag/ingest.mjs --include-persons / --persons-only` operational).
+**Last updated:** 2026-06-01 (corpus at 140 interviews, all re-chapterized; person catalog at 202 pages; the site is static-JSON-backed with Pinecone search; new-interview onboarding runs through `transcripts/ingestion/onboard_interview.py`).
 
 ---
 
@@ -13,7 +13,7 @@
 | Tier | What it is | When to read | Documents |
 |---|---|---|---|
 | **1. Orientation** | "Read these first." Where you are, what's been done, who the audience is. | New contributor; presentation prep; stakeholder briefing. | `CLAUDE.md`, `README.md`, `PRESENTATION_REFERENCE.md` |
-| **2. Active reference** | "Read these when you're building or running a specific subsystem." Architecture decisions, operations runbooks, design specs that are still load-bearing. | Doing audit / RAG / frontend / deploy / accessibility work. | `docs/*.md`, `rag/README.md`, `rag/INTERACTIVE_FEATURES_DESIGN.md`, `rag/OPERATIONS.md`, `rag/ENDPOINTS.md`, `rag/NEXT_SESSION_PICKUP.md`, `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md` |
+| **2. Active reference** | "Read these when you're building or running a specific subsystem." Architecture decisions, operations runbooks, design specs that are still load-bearing. | Doing audit / RAG / frontend / deploy / accessibility work. | `docs/*.md`, `rag/README.md`, `rag/INTERACTIVE_FEATURES_DESIGN.md`, `rag/OPERATIONS.md`, `rag/ENDPOINTS.md`, `rag/NEXT_SESSION_PICKUP.md`, `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md`, `mcp-server/CODEX_SETUP.md`, `rag/SHOWCASE.md` |
 | **3. Lessons learned** | "Read these to understand *why* we made the choices we made." Distilled error categories, conceptual breakthroughs, decision records. | Avoiding past mistakes; teaching the audit cascade; institutional credibility briefings. | `lessons_learned.md`, `docs/RAG_SUBSTRATE_DECISION.md` |
 | **4. Demo prep** | "Read these the day of the presentation." Talking points, demo scripts, conference-specific briefings. | The day before, the morning of, or while at the podium. | `rag/CONFERENCE_PREP.md`, `rag/DEMO_SCRIPT.md` |
 | **5. Provenance / historical record** | "Read these only if you need to reconstruct what was audited, by whom, when, with what coverage." The institutional-credibility instrument. | External review (Smithsonian / LoC) wants to verify rigor; replacement engineer is reconstructing history. | `transcripts/AUDIT_TRAIL.md`, `transcripts/OPEN_PROBLEMS.md`, `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md`, `transcripts/loc_healing/COVERAGE_REPORT.md`, `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md`, per-pass stage files |
@@ -51,28 +51,31 @@ The conceptual-map briefing for the WWU presentation. Eight conceptual breakthro
 ## Tier 2: Active reference (build / operate the subsystems)
 
 ### Architecture + decisions
-- `docs/ACCESSIBILITY.md` — WCAG 2.2 AA audit + the brand color contrast tokens. Read before touching any UI styling.
-- `docs/DEPLOYMENT.md` — End-to-end deployment chain (Python pipeline → Node bridge → Firestore → React + Cloud Functions + MCP server).
-- `docs/TRANSCRIPT_AUDIT_DESIGN.md` — Original three-stage audit cascade design.
-- `docs/RAG_SUBSTRATE_DECISION.md` — Why Pinecone + Voyage AI was chosen over self-hosted alternatives.
+- `docs/ACCESSIBILITY.md`, WCAG 2.2 AA audit + the brand color contrast tokens. Read before touching any UI styling.
+- `docs/DEPLOYMENT.md`, End-to-end deployment chain. Current data path: authored inputs and raw transcript, then `onboard_interview.py`, then the static `entry_<N>.json` plus the derived `public/rag/` artifacts, served by Netlify; Pinecone for search; Firestore for auth and the review queue only.
+- `docs/TRANSCRIPT_AUDIT_DESIGN.md`, Original three-stage audit cascade design.
+- `docs/RAG_SUBSTRATE_DECISION.md`, Why Pinecone + Voyage AI was chosen over self-hosted alternatives.
 
 ### RAG layer
-- `rag/README.md` — Architecture + setup + metadata schema. Read before touching `rag/ingest.mjs` / `rag/retrieve.mjs`.
-- `rag/INTERACTIVE_FEATURES_DESIGN.md` — Substrate → precompute → UI architecture for the interactive RAG components (SemanticSearch, QuoteFinder, RelatedPassages, Constellation, Spectrum, Word Search, Interview Map).
-- `rag/ENDPOINTS.md` — Live URLs + backend identifiers + `/retrieve` body/response shape.
-- `rag/OPERATIONS.md` — Key-rotation, monitoring, abuse-response, reingestion recipes, cost ceilings, disaster recovery.
-- `rag/NEXT_SESSION_PICKUP.md` — Fresh-eyes 5-minute orientation for an agent resuming work.
+- `rag/README.md`, Architecture + setup + metadata schema. Read before touching `rag/ingest.mjs` / `rag/retrieve.mjs`.
+- `rag/INTERACTIVE_FEATURES_DESIGN.md`, Substrate, precompute, and UI architecture for the interactive RAG components (SemanticSearch, QuoteFinder, RelatedPassages, Constellation, and the Ideological Spectrums).
+- `rag/ENDPOINTS.md`, Live URLs + backend identifiers + `/retrieve` body/response shape.
+- `rag/OPERATIONS.md`, Key-rotation, monitoring, abuse-response, reingestion recipes, cost ceilings, disaster recovery.
+- `rag/NEXT_SESSION_PICKUP.md`, Fresh-eyes 5-minute orientation for an agent resuming work.
+- `rag/SHOWCASE.md`, Feature-by-feature showcase of the interactive RAG surfaces (the Ideological Spectrums math, the per-feature data files, and the regenerate commands).
+- `rag/ATLAS_PROVENANCE.md`, Provenance for the frozen Nomic Atlas UMAP projection (`public/rag/atlas_projection.json`; the account was canceled on 2026-05-27, replacement path is umap-learn).
 
 ### MCP server
-- `mcp-server/README.md` — Engineering reference (Pinecone+Voyage rewire, env vars, citation-payload shape).
-- `mcp-server/USAGE_GUIDE.md` — End-user / researcher / Anthropic-Connector-Directory submission doc. Worked examples for grant citation, quote verification, curriculum dev.
+- `mcp-server/README.md`, Engineering reference (Pinecone+Voyage rewire, env vars, citation-payload shape).
+- `mcp-server/USAGE_GUIDE.md`, End-user / researcher / Anthropic-Connector-Directory submission doc. Worked examples for grant citation, quote verification, curriculum dev.
+- `mcp-server/CODEX_SETUP.md`, Connecting the MCP server to Codex and other tool-only MCP clients (env vars, the `civil-rights` index, the six-tool verify step).
 
 ### Pipeline (Python)
-- `Metadata Generation System/Metadata Generation Documentation.md` — Original 7-step pipeline doc.
-- `Metadata Generation System/StandardizedRubric_1.md` — Smithsonian-grade scoring rubric.
+- `Metadata Generation System/Metadata Generation Documentation.md`, Original 7-step pipeline doc.
+- `Metadata Generation System/StandardizedRubric_1.md`, Smithsonian-grade scoring rubric.
 
 ### Per-person pages catalog
-- `public/rag/people/README.md` — Schema + catalog purpose (integration hub, not biography) + writing discipline (Wikipedia is fact-check only; anti-idempotent prose; cite every claim). Required reading before adding a person page or modifying `src/pages/PersonPage.jsx`.
+- `public/rag/people/README.md`, Schema + catalog purpose (integration hub, not biography) + writing discipline (Wikipedia is fact-check only; anti-idempotent prose; cite every claim). Required reading before adding a person page or modifying `src/pages/PersonPage.jsx`.
 
 ---
 
@@ -105,18 +108,18 @@ These exist so a future reviewer can reconstruct exactly what was audited, by wh
 - An inferential-scoring framework needs the per-entry coverage matrix as input.
 
 ### Governance documents (`transcripts/`)
-- `transcripts/AUDIT_TRAIL.md` — Longitudinal effort log across sessions, agents, models. The substrate for inferential error-rate scoring.
-- `transcripts/OPEN_PROBLEMS.md` — Active punch-list. Numbered problems; never deleted, only annotated as RESOLVED.
-- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` — The ~12 MB master correction overlay. Per-entry Pass 1/2/3/4/5/6/7/8 tables with row IDs, confidence tiers, source attribution.
-- `Metadata Generation System/civil_rights_facts.json` — Ground-truth corpus (~140 entries, 291 aliases). Anchors the LLM scorer's accuracy claims.
+- `transcripts/AUDIT_TRAIL.md`, Longitudinal effort log across sessions, agents, models. The substrate for inferential error-rate scoring.
+- `transcripts/OPEN_PROBLEMS.md`, Active punch-list. Numbered problems; never deleted, only annotated as RESOLVED.
+- `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md`, The ~12 MB master correction overlay. Per-entry Pass 1/2/3/4/5/6/7/8 tables with row IDs, confidence tiers, source attribution.
+- `Metadata Generation System/civil_rights_facts.json`, Ground-truth corpus (~140 entries, 291 aliases). Anchors the LLM scorer's accuracy claims.
 
 ### Pass 8 (LoC healing) artifacts
-- `transcripts/loc_healing/COVERAGE_REPORT.md` — 127/127 entries healed; per-entry source kind, heal counts, failure-mode breakdown.
-- `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md` — 710 SME-reviewable conflicts where audit-canon disagrees with LoC's authoritative text.
-- `transcripts/pass8_stage/entry_<NNN>_<slug>.md` — Per-entry institutional-audit artifact (one file per healed entry).
+- `transcripts/loc_healing/COVERAGE_REPORT.md`, 127/127 entries healed; per-entry source kind, heal counts, failure-mode breakdown.
+- `transcripts/loc_healing/AUDIT_VS_LOC_DISAGREEMENTS.md`, 710 SME-reviewable conflicts where audit-canon disagrees with LoC's authoritative text.
+- `transcripts/pass8_stage/entry_<NNN>_<slug>.md`, Per-entry institutional-audit artifact (one file per healed entry).
 
 ### Per-pass staging
-- `transcripts/pass2_stage/`, `pass2_tail_stage/`, `pass3_stage/`, `pass4_stage/`, `pass5_stage/` — machine-generated intermediate audit artifacts. Read the merged result in `CLEANED_TRANSCRIPTS_REVIEW.md` instead.
+- `transcripts/pass2_stage/`, `pass2_tail_stage/`, `pass3_stage/`, `pass4_stage/`, `pass5_stage/`, machine-generated intermediate audit artifacts. Read the merged result in `CLEANED_TRANSCRIPTS_REVIEW.md` instead.
 
 ---
 
@@ -135,7 +138,7 @@ Original RAG substrate design when the plan was Weaviate. The substrate decision
 | Brief an external stakeholder | `PRESENTATION_REFERENCE.md` then `lessons_learned.md` |
 | Demo the live site | `rag/DEMO_SCRIPT.md` |
 | Edit audit overlays | `CLAUDE.md` § Audit documentation discipline, `transcripts/AUDIT_TRAIL.md` |
-| Ingest a new transcript | `transcripts/ingestion/README.md`, `CLAUDE.md` § Streamlined ingestion |
+| Onboard a new interview | `transcripts/ingestion/README.md` (run `transcripts/ingestion/onboard_interview.py`), `transcripts/ingestion/ONBOARDING_REVIEW.md`, `CLAUDE.md` § Streamlined ingestion |
 | Touch the RAG ingest/retrieval code | `rag/README.md` |
 | Build a new interactive surface | `rag/INTERACTIVE_FEATURES_DESIGN.md` |
 | Add or modify a per-person page | `public/rag/people/README.md` (catalog purpose + schema + writing discipline) |

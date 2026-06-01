@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-22
 **Decision:** Pinecone Builder ($20/mo) hosting both worldthought.com and the civil rights project as separate projects under one organization, with Voyage AI (voyage-3 embeddings + rerank-2) as the embedding / reranking layer.
-**Status:** Locked. Pinecone project to be provisioned by Eric; ingest scaffolding in `rag/` is implementation-ready.
+**Status:** Locked and live (as of 2026-06-01). The Pinecone index `civil-rights` (Voyage `voyage-3`, 1024-dim, cosine, plus `rerank-2`) is provisioned and populated, roughly 16K passage vectors across the 140-interview corpus plus one vector per person page (`content_type='person'`); verify the exact count against the Pinecone console. The decision below records the original 2026-05-22 reasoning. Implementation note: the index shipped co-mingled in the existing Pinecone project space rather than as the standalone `civil-rights-prod` project the plan below anticipated; see the `rag/.env.local` header and `rag/OPERATIONS.md` for current operational state.
 
 ## Context
 

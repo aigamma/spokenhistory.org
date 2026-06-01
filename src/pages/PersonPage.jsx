@@ -13,7 +13,7 @@
  *
  *   - LoC item URL + audit tier      <- /rag/constellation.json
  *   - Semantic-neighbor list         <- /rag/related/entry-${N}.json
- *   - Concept-axis positions         <- /rag/summaries/concept_axes.json
+ *   - Concept-axis positions         <- /rag/summaries/ideological_spectrums.json
  *   - Influence edges                <- /rag/summaries/influence.json
  *   - Tour appearances               <- /rag/summaries/tours.json
  *   - Geographic anchors             <- /rag/summaries/geography.json
@@ -341,7 +341,7 @@ export default function PersonPage() {
     Promise.all([
       fetchJsonOrNull('/rag/constellation.json'),
       fetchJsonOrNull(`/rag/related/entry-${person.entry_number}.json`),
-      fetchJsonOrNull('/rag/summaries/concept_axes.json'),
+      fetchJsonOrNull('/rag/summaries/ideological_spectrums.json'),
       fetchJsonOrNull('/rag/summaries/influence.json'),
       fetchJsonOrNull('/rag/summaries/tours.json'),
     ]).then(([constellation, related, conceptAxes, influence, tours]) => {

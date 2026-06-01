@@ -7,8 +7,9 @@ For internal use; not a stakeholder doc.
 
 | Path | What it is |
 |---|---|
-| `https://civil-rights-staging.netlify.app/` | The site root |
-| `https://civil-rights-staging.netlify.app/rag-explore` | The 4-tab RAG demo page (auth-gated) |
+| `https://robotlogic.org/` | Production site root (Netlify) |
+| `https://civil-rights-staging.netlify.app/` | Staging site root |
+| `https://civil-rights-staging.netlify.app/rag-explore` | The RAG demo page, "Data Insights" in the nav (auth-gated) |
 | `https://civil-rights-staging.netlify.app/rag-explore#search` | Semantic search tab (default) |
 | `https://civil-rights-staging.netlify.app/rag-explore?q=nonviolence#search` | Search tab with query pre-loaded + auto-executed (deep-linkable share URL) |
 | `https://civil-rights-staging.netlify.app/rag-explore#quote` | Quote-finder tab |
@@ -17,7 +18,7 @@ For internal use; not a stakeholder doc.
 | `https://civil-rights-staging.netlify.app/retrieve` | POST endpoint for live retrieval (also `/.netlify/functions/retrieve`) |
 | `https://civil-rights-staging.netlify.app/rag/constellation.json` | 2D PCA scatter data |
 | `https://civil-rights-staging.netlify.app/rag/centroids.json` | Per-entry mean embeddings (1024-dim) |
-| `https://civil-rights-staging.netlify.app/rag/related/entry-<N>.json` | Per-entry related-passages (136 files) |
+| `https://civil-rights-staging.netlify.app/rag/related/entry-<N>.json` | Per-entry related-passages (one file per interview; re-run precompute after a re-ingest so the set tracks the 140-interview corpus) |
 
 ## Backend identifiers
 
@@ -25,7 +26,7 @@ For internal use; not a stakeholder doc.
 |---|---|
 | Pinecone index name | `civil-rights` |
 | Pinecone index host | `https://civil-rights-odc9z70.svc.aped-4627-b74a.pinecone.io` |
-| Pinecone vector count | 15,464 (`.srt`-only) |
+| Pinecone vector count | ≈16K `.srt`-anchored passage vectors across 140 interviews, plus one vector per person page (`content_type='person'`, ~202) (verify exact count against Pinecone) |
 | Pinecone region | `aws-us-east-1` |
 | Pinecone dimension | 1024 |
 | Pinecone metric | cosine |
@@ -33,7 +34,7 @@ For internal use; not a stakeholder doc.
 | Voyage rerank model | `rerank-2` |
 | Netlify project name | `civil-rights-staging` |
 | Netlify siteId | `c0f91bc7-5e3d-46ba-82bb-e44cb8fd47e9` |
-| Firebase project | `civil-rights-history-project` (Firestore in `nam7`) |
+| Firebase project | `civil-rights-history-project` (Firestore in `nam7`; backs only the auth gate and the unused review queue, not interview content, which is static JSON under `public/rag/`) |
 | MCP server (when deployed) | `mcp.civilrightshistory.org` or `civil-rights-history-mcp.fly.dev` (TBD per fly.toml) |
 
 ## `/retrieve` body parameters
@@ -46,7 +47,8 @@ For internal use; not a stakeholder doc.
   "entry_number": null,                    // optional shortcut for single-entry filter
   "filter": null,                          // optional Pinecone metadata filter object
   "namespace": "",                         // optional Pinecone namespace
-  "dedupeByEntry": false                   // optional, one passage per interviewee
+  "dedupeByEntry": false,                  // optional, one passage per interviewee
+  "includePersons": false                  // optional; when true, include person-page vectors (content_type='person'), which are filtered out by default
 }
 ```
 

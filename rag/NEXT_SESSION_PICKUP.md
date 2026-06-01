@@ -2,22 +2,27 @@
 
 If you're a fresh agent or returning to this work after a break, read
 this doc first. It's the 5-minute orientation for "where things stand
-and what should happen next." Everything below was true as of session
-close 2026-05-26.
+and what should happen next." Last reviewed 2026-06-01.
 
 ## State of the world (one paragraph)
 
-The civil rights RAG layer is **live and working** on
-`https://civil-rights-staging.netlify.app`. Pinecone civil-rights
-index holds 15,464 SRT-only vectors covering 136 interviews. The
-`/retrieve` Netlify function returns citation-grade payloads
-(interviewee, LoC catalog URL, exact timestamp range, audit tier,
-Chicago-style suggestedCitation block). The `/rag-explore` page
-has 4 tabs (semantic search, quote-finder, embedding-space scatter,
-related interviewees) all backed by live data. The MCP server code
-is rewired against the same substrate and smoke-tested locally; it
-hasn't been deployed to Fly.io yet because flyctl isn't installed
-on Eric's machine.
+The civil rights RAG layer is **live and working**, in production on
+`https://robotlogic.org` and staging on
+`https://civil-rights-staging.netlify.app`. The Pinecone civil-rights
+index holds ≈16K `.srt`-anchored passage vectors covering the 140
+interviews (verify exact count against Pinecone; it was 15,464 at the
+136-interview point), plus one vector per person page
+(`content_type='person'`, ~202). Per-interview data is STATIC JSON, not
+Firestore: the React app reads `public/rag/summaries/pipeline_output/entry_<N>.json`
+plus derived aggregates under `public/rag/` (Firestore backs only the
+auth gate and the unused review queue). The `/retrieve` Netlify function
+returns citation-grade payloads (interviewee, LoC catalog URL, exact
+timestamp range, audit tier, Chicago-style suggestedCitation block). The
+`/rag-explore` page (surfaced as "Data Insights" in the nav) has tabs for
+semantic search, quote-finding, the embedding-space scatter, and related
+interviewees, all backed by live data. The MCP server code is rewired
+against the same substrate and smoke-tested locally; it hasn't been
+deployed to Fly.io yet because flyctl isn't installed on Eric's machine.
 
 ## Read these first (priority order)
 
@@ -47,10 +52,12 @@ relevant credentials):
 ## What's NOT blocked (open code work, if asked)
 
 - **Wire `<SemanticSearch>` or `<RelatedPassages>` into the existing
-  pages** (`src/pages/InterviewIndex.jsx`, `src/pages/InterviewPlayer.jsx`).
-  The components are built and tested via `/rag-explore`. Integration
-  into existing pages was intentionally deferred because it's
-  Eric-decision-shaped: where should the components surface?
+  pages** (`src/pages/TableOfContents.jsx`, the `/table-of-contents`
+  "Interviews" page that absorbed the retired card-grid Interview Index;
+  and `src/pages/InterviewPlayer.jsx`). The components are built and
+  tested via `/rag-explore`. Integration into existing pages was
+  intentionally deferred because it's Eric-decision-shaped: where should
+  the components surface?
 - **Port the same RAG layer to worldthought.com**. Architecture
   documented in `rag/INTERACTIVE_FEATURES_DESIGN.md::Portability to
   worldthought.com`. The patches needed are well-scoped (~half-day
@@ -78,11 +85,15 @@ relevant credentials):
 
 3. **Pre-existing audit substrate** lives in `transcripts/`, 8
    passes of audit work culminating in word-level alignment against
-   the Library of Congress's published transcripts. The current
-   tier distribution (low 72 / medium 18 / publication-block 23 /
-   not-auditable 14 / ingestion-only 9) is the per-entry confidence
+   the Library of Congress's published transcripts. The five tier
+   values (low / medium / publication-block / not-auditable /
+   ingestion-only; per-tier counts shift as new interviews ingest,
+   verify against current manifests) are the per-entry confidence
    classification flowing through Pinecone metadata and surfacing
-   as colored badges on every citation card.
+   as colored badges on every citation card. The user-facing
+   `/rag-explore` UI collapses these into two settled states,
+   "LoC-Verified" (137) and "Audio-Limited" (3), for a 140-interview
+   total.
 
 ## Things NOT to do
 
@@ -100,9 +111,10 @@ relevant credentials):
   upsert (verified pitfall, saved as
   `reference_netlify_mcp_envvar_secret.md` in memory).
 - Don't strip the audit-fidelity transparency from any citation
-  surface. The 5-tier visibility is load-bearing for the academic-
-  citation use case, without it, the connector becomes a
-  hallucination risk.
+  surface. The per-tier audit signal (five values in the substrate,
+  collapsed to two settled states in the UI: LoC-Verified and
+  Audio-Limited) is load-bearing for the academic-citation use case,
+  without it, the connector becomes a hallucination risk.
 
 ## Two things worth verifying on session resume
 
@@ -115,7 +127,8 @@ bash scripts/demo-queries.sh nonviolence
 curl -sS -H "Api-Key: ${PINECONE_API_KEY}" -H "X-Pinecone-API-Version: 2024-07" \
   https://civil-rights-odc9z70.svc.aped-4627-b74a.pinecone.io/describe_index_stats \
   | python -c "import json, sys; print('vector count:', json.load(sys.stdin)['totalVectorCount'])"
-# Expected: 15464
+# Expected: ≈16K passage vectors across 140 interviews + ~202 person vectors
+# (it was 15,464 at the 136-interview .srt-only point; verify the current total)
 ```
 
 If either of those breaks, the issue is operational (key rotated,

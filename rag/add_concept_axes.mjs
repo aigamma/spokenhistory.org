@@ -1,7 +1,7 @@
 // rag/add_concept_axes.mjs
 //
 // Append two concept axes, Local <-> National and Grassroots <-> Institutional,
-// to the existing public/rag/summaries/concept_axes.json WITHOUT recomputing
+// to the existing public/rag/summaries/ideological_spectrums.json WITHOUT recomputing
 // the five already-shipped axes. The five keep their exact positions and their
 // Title Case titles; this script only embeds the two new pole pairs, projects
 // every interview centroid onto each new axis (the same math as
@@ -22,7 +22,7 @@ import { embedQuery } from './embed.mjs';
 
 const REPO_ROOT = fileURLToPath(new URL('..', import.meta.url));
 const CENTROIDS_PATH = join(REPO_ROOT, 'public', 'rag', 'centroids.json');
-const OUT_PATH = join(REPO_ROOT, 'public', 'rag', 'summaries', 'concept_axes.json');
+const OUT_PATH = join(REPO_ROOT, 'public', 'rag', 'summaries', 'ideological_spectrums.json');
 
 // pole_a renders at the top of the Y axis and the left of the X axis in
 // ConceptSpectrum, so Local and Grassroots are pole_a (read left-to-right as

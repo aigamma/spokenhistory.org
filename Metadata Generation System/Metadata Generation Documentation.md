@@ -34,7 +34,7 @@ Then open `http://localhost:5000` in your browser.
 The UI walks through each pipeline step one at a time. Each step page shows the current output and lets you:
 
 - **Re-run** the step (useful if you edit the prompt or want a fresh generation)
-- **Edit prompts live** — system and user prompts are loaded from `processor_prompts/` but can be modified in the text areas before re-running
+- **Edit prompts live**, system and user prompts are loaded from `processor_prompts/` but can be modified in the text areas before re-running
 - **Toggle steps** on or off on the upload page (e.g. skip engagement scoring for a quick run)
 
 Pipeline state is stored per browser session and resets on server restart. **Batch processing** is also supported: on the upload page you can upload a `.zip` of multiple `.srt` files, which are processed sequentially with a progress view.
@@ -45,7 +45,7 @@ Pipeline state is stored per browser session and resets on server restart. **Bat
 
 Steps are declared in `processor/step_registry.py`. Each `PipelineStep` defines its id, display name, order, the state keys it `requires` as inputs, the state keys it `produces`, and whether it can be disabled. The app and templates read from the registry to build navigation, enforce dependencies, and skip disabled steps.
 
-To add a new pipeline step, create `processor/my_step.py`, add prompts to `processor_prompts/` if needed, and call `register_step()` — no modification of existing code required.
+To add a new pipeline step, create `processor/my_step.py`, add prompts to `processor_prompts/` if needed, and call `register_step()`, no modification of existing code required.
 
 ---
 
@@ -76,17 +76,17 @@ Because prompts are separate files, they can be edited without touching Python c
 
 `ProcessorContext` (in `processor/shared.py`) is the shared config object passed to every module. It initialises once at upload time and holds:
 
-- **OpenAI client** — reads `OPENAI_API_KEY` from environment or from the key entered in the UI
-- **`chapter_block_size`** — number of SRT segments per text block (default: 23)
-- **`min_chapter_words`** — chapters shorter than this are skipped during summarization (default: 75)
-- **Rubric** — loads [`StandardizedRubric_1.md`](StandardizedRubric_1.md) into memory for use in scoring prompts
-- **Historical facts** — loads `civil_rights_facts.json` (a dictionary of known events and verified summaries)
-- **Standard keywords** — fetches the keyword collection from Firestore (`events_and_topics` collection) for keyword matching during chapter generation
-- **`toc_model`** — OpenAI model used for labeling/TOC steps (default: `gpt-4o-mini`)
+- **OpenAI client**, reads `OPENAI_API_KEY` from environment or from the key entered in the UI
+- **`chapter_block_size`**, number of SRT segments per text block (default: 23)
+- **`min_chapter_words`**, chapters shorter than this are skipped during summarization (default: 75)
+- **Rubric**, loads [`StandardizedRubric_1.md`](StandardizedRubric_1.md) into memory for use in scoring prompts
+- **Historical facts**: loads `civil_rights_facts.json` (378 ground-truth entries, 396 aliases as of 2026-06-01: civil rights people, events, and verified summaries, with alias lists for name matching). Validate with `cd "Metadata Generation System" && python scripts/validate_facts.py`
+- **Standard keywords**, fetches the keyword collection from Firestore (`events_and_topics` collection) for keyword matching during chapter generation
+- **`toc_model`**, OpenAI model used for labeling/TOC steps (default: `gpt-4o-mini`)
 
 ---
 
-## Step 1 — Blocking
+## Step 1, Blocking
 
 Interview transcripts are stored as SRT files. `srt_parser.py` parses the file into a list of `SRTSegment` objects, each with a segment index, start time, end time, and text.
 
@@ -137,7 +137,7 @@ Blocking also computes cheap interview metadata (duration, word count, average W
 
 ---
 
-## Step 2 — Topic Labeling
+## Step 2, Topic Labeling
 
 `_label_text_blocks_for_toc` (in `processor/labeling.py`) sends all text blocks to the OpenAI API in one call. Each block is assigned one of five fixed `MAIN_TOPICS` and three subtopics. The results are stored as `block_topics`.
 
@@ -164,11 +164,11 @@ Prompts: `label_text_blocks_for_toc_system.txt` / `_user.txt`
 
 ---
 
-## Step 3 — TOC Building
+## Step 3, TOC Building
 
 `_build_hierarchical_toc` (in `processor/toc.py`) takes `block_topics` and merges contiguous blocks that share the same main topic into single TOC entries. Subtopics within each merged entry are also merged when consecutive blocks share the same leading subtopic.
 
-**Phase 1 — Merge by main topic:**
+**Phase 1, Merge by main topic:**
 ```python
 # merge contiguous blocks by main topic
 current = None
@@ -207,7 +207,7 @@ toc = [
 ]
 ```
 
-**Phase 2 — Merge subtopics within each entry:**
+**Phase 2, Merge subtopics within each entry:**
 
 For each TOC entry, the blocks it spans are looped through and subtopics are merged when consecutive blocks share the same leading subtopic label:
 
@@ -251,9 +251,9 @@ The function returns `{"toc": [...], "topic_index": {...}}` where `topic_index` 
 
 ---
 
-## Step 4 — Chapterization
+## Step 4, Chapterization
 
-`_detect_topic_transitions` (in `processor/chapterization.py`) sends the text blocks and block topics to the OpenAI API and asks it to identify natural chapter break points. Passing `block_topics` into the prompt improves quality — the model can see the full range of topics from the TOC and make more coherent breaks.
+`_detect_topic_transitions` (in `processor/chapterization.py`) sends the text blocks and block topics to the OpenAI API and asks it to identify natural chapter break points. Passing `block_topics` into the prompt improves quality, the model can see the full range of topics from the TOC and make more coherent breaks.
 
 If there are two or fewer blocks, all content is treated as a single chapter.
 
@@ -263,19 +263,19 @@ The model is asked to return a JSON list of chapters, each with `start_block`, `
 chapter_breaks = [(0, 45), (46, 91), (92, 134), ...]
 ```
 
-A `chapter_breaks_preview` is also generated — a list of chapter dicts with timestamps, word counts, and a short text snippet — used by the Engagement step and displayed in the UI.
+A `chapter_breaks_preview` is also generated, a list of chapter dicts with timestamps, word counts, and a short text snippet, used by the Engagement step and displayed in the UI.
 
 Prompts: `detect_topic_transitions_system.txt` / `_user.txt`
 
 ---
 
-## Step 5 — Summarization
+## Step 5, Summarization
 
 Summarization generates both the main interview summary and individual chapter summaries. Scoring and regeneration are handled separately in the Tuning step (Step 6).
 
 ### Main Summary
 
-`generate_main_summary` (in `processor/summarization.py`) sends the first 12,000 characters of the plaintext transcript to `gpt-4o`. The prompt instructs the model to write naturally about what the person experienced — avoiding meta-language like "in this interview" — and to return structured JSON:
+`generate_main_summary` (in `processor/summarization.py`) sends the first 12,000 characters of the plaintext transcript to `gpt-4o`. The prompt instructs the model to write naturally about what the person experienced, avoiding meta-language like "in this interview", and to return structured JSON:
 
 ```json
 {
@@ -295,7 +295,7 @@ Prompts: `generate_main_summary_system.txt` / `_user.txt`
 
 `generate_single_chapter` performs four sub-tasks:
 
-**1. Generate summary + keywords** — sends up to 4,000 characters of chapter text to `gpt-4o`. Returns:
+**1. Generate summary + keywords**, sends up to 4,000 characters of chapter text to `gpt-4o`. Returns:
 ```json
 {
     "title": "Chapter title",
@@ -304,24 +304,24 @@ Prompts: `generate_main_summary_system.txt` / `_user.txt`
 }
 ```
 
-**2. Assign topic category + related events** — a second call to `assign_metadata` classifies the chapter into one of the five `MAIN_TOPICS` and identifies which of the 18 named `CIVIL_RIGHTS_EVENTS` are relevant. Event validation then removes any event whose significant words don't actually appear in the chapter text.
+**2. Assign topic category + related events**, a second call to `assign_metadata` classifies the chapter into one of the five `MAIN_TOPICS` and identifies which of the 18 named `CIVIL_RIGHTS_EVENTS` are relevant. Event validation then removes any event whose significant words don't actually appear in the chapter text.
 
-**3. Keyword matching** — AI-suggested keywords are matched to the standardized Firestore keyword collection using a three-tier fallback:
+**3. Keyword matching**, AI-suggested keywords are matched to the standardized Firestore keyword collection using a three-tier fallback:
 - Exact match
 - Substring match (shortest matching standard keyword wins)
 - Fuzzy match using `SequenceMatcher` (threshold: 0.6 similarity)
 
 Each match is scored by combining position weight (earlier = higher), match quality, specificity, and a penalty for overly generic terms (e.g. "civil rights", "activism"). The top 3 keywords by relevance score are kept.
 
-**4. Historical facts grounding** — `civil_rights_facts.json` facts relevant to the chapter text are appended to the prompt, same as for the main summary.
+**4. Historical facts grounding**, `civil_rights_facts.json` facts relevant to the chapter text are appended to the prompt, same as for the main summary.
 
 Prompts: `generate_chapter_system.txt` / `_user.txt`, `assign_metadata_system.txt` / `_user.txt`
 
 ---
 
-## Step 6 — Tuning
+## Step 6, Tuning
 
-Tuning (`processor/tuning.py`) is a separate step that runs after Summarization. It scores the main summary and each chapter summary against a standardized rubric, then iteratively regenerates any that fall below threshold — up to 3 attempts each.
+Tuning (`processor/tuning.py`) is a separate step that runs after Summarization. It scores the main summary and each chapter summary against a standardized rubric, then iteratively regenerates any that fall below threshold, up to 3 attempts each.
 
 ### Scoring
 
@@ -342,9 +342,9 @@ Tuning (`processor/tuning.py`) is a separate step that runs after Summarization.
 ```
 
 **Accuracy (0–100):**
-- Component A (0–40): Concrete details — names, dates, locations, pronouns
-- Component B (0–30): Causal/interpretive accuracy — who did what, why, relationships
-- Component C (0–30): Quotations/paraphrasing — preserves meaning and emphasis
+- Component A (0–40): Concrete details, names, dates, locations, pronouns
+- Component B (0–30): Causal/interpretive accuracy, who did what, why, relationships
+- Component C (0–30): Quotations/paraphrasing, preserves meaning and emphasis
 
 **Quality / Completeness (0–100):**
 - Component A (0–40): Coverage of major themes (target: 70–80%+ of content)
@@ -365,7 +365,7 @@ for attempt in range(max_retries):          # default: 3
     qual = scores.get('quality_score', 0)
 
     if acc >= accuracy_threshold and qual >= quality_threshold:   # default: both 80
-        break                               # passed — stop retrying
+        break                               # passed, stop retrying
 
     issues = scores.get('errors', [])
     summary = regenerate_with_feedback(ctx, summary, issues, content_type, transcript)
@@ -381,7 +381,7 @@ Prompts: `score_summary_system.txt` / `_user.txt`, `score_chapter_system.txt` / 
 
 ---
 
-## Step 7 — Engagement Scoring
+## Step 7, Engagement Scoring
 
 `run_engagement_scoring` (in `processor/engagement.py`) evaluates the interview as a whole for audience engagement across four dimensions, producing a single structured JSON report. It uses `gpt-4o-mini` and takes the plaintext transcript, chapter previews, and main summary as input.
 
@@ -505,3 +505,9 @@ After the complete pipeline runs, the Results page assembles all session state i
     }
 }
 ```
+
+### Where the Output Goes (Current State, 2026-06-01)
+
+The live site no longer ingests this per-interview JSON into Firestore as the content store. Each interview's output is committed as static JSON under `public/rag/summaries/pipeline_output/entry_<N>.json` and served by Netlify. Search is powered by the Pinecone `civil-rights` index (Voyage `voyage-3` embeddings), which the passages are ingested into separately. The only remaining Firestore reads in this pipeline are inputs, not outputs: the standardized keyword collection (`events_and_topics`) used during keyword matching (see ProcessorContext above).
+
+For NEW interviews, this Flask UI is no longer the hand-run entry point. The canonical path is the master idempotent pipeline `transcripts/ingestion/onboard_interview.py`, which takes a new submission all the way onto the live site (LoC-audit healing, chapterization, assembly of `entry_<N>.json`, and the Voyage to Pinecone search ingest) in one re-runnable command. See `transcripts/ingestion/README.md`. The 7-step pipeline documented above remains the engine for the summarization and scoring stages and the reference for how each metadata field is produced.

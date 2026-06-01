@@ -3,7 +3,7 @@
 must match the actual sign of that page's position on the axis.
 
 THE CONVENTION (proven empirically, not assumed). In
-public/rag/summaries/concept_axes.json each axis lists pole_a first and
+public/rag/summaries/ideological_spectrums.json each axis lists pole_a first and
 pole_b second, and position_normalized is oriented so that:
 
     position_normalized POSITIVE  -> pole_a   (the first-listed pole)
@@ -42,7 +42,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PEOPLE = ROOT / "public" / "rag" / "people"
-AXES = ROOT / "public" / "rag" / "summaries" / "concept_axes.json"
+AXES = ROOT / "public" / "rag" / "summaries" / "ideological_spectrums.json"
 
 # keyword (lowercased substring of a "toward ..." phrase) -> (axis slug, expected pole)
 KEYWORDS = [

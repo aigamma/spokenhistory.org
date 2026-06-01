@@ -1,13 +1,13 @@
 # RAG demo, what to show stakeholders
 
-A one-pager for the Wednesday WWU meeting (or any future demo). All
-the surfaces below are live on `https://civil-rights-staging.netlify.app`
-unless otherwise noted.
+A one-pager for the WWU meeting (or any future demo). The surfaces below
+are live in production on `https://robotlogic.org` and staging on
+`https://civil-rights-staging.netlify.app` unless otherwise noted.
 
 ## In one sentence
 
-136 oral-history interviews from the Library of Congress / Smithsonian
-Civil Rights History Project, ~15,000 time-anchored passages indexed
+140 oral-history interviews from the Library of Congress / Smithsonian
+Civil Rights History Project, ≈16K time-anchored passages indexed
 in Pinecone, available as (1) a public semantic-search endpoint with
 citation-grade metadata, (2) a 2D map of the corpus in embedding space,
 and (3) an MCP connector for researchers using Claude (when deployed).
@@ -47,12 +47,11 @@ Connector Directory.
 
 Same page, **Embedding-space map** tab.
 
-- 136 dots, color-coded by audit tier:
-  - **Green (72)**, low uncertainty, well-audited
-  - **Amber (18)**, medium uncertainty
-  - **Red (23)**, publication-block tier (known issues)
-  - **Violet (14)**, not externally verifiable
-  - **Slate (9)**, ingestion-only (added 2026-05-25)
+- 140 dots, color-coded by the settled audit state:
+  - **LoC-Verified (137)**, healed against the Library of Congress's
+    published transcript for that interview
+  - **Audio-Limited (3)**, no machine-readable LoC transcript to verify
+    against, so fidelity is bounded by the audio
 - Hover any dot for the interviewee's name and chunk count.
 
 The talking point: this is the "philosophy of embedding" demo. Two
@@ -84,8 +83,9 @@ relationships were computed by the model, not curated by hand.
 
 | | |
 |---|---|
-| Interviews indexed | 136 |
-| Total time-anchored passages | ~15,464 |
+| Interviews indexed | 140 |
+| Total time-anchored passages | ≈16K (verify exact count against Pinecone) |
+| Person reference pages indexed | 202 (165 interviewees + 37 external Historic Figures) |
 | Embedding model | Voyage AI voyage-3 (1024-dim, retrieval-tuned) |
 | Reranker | Voyage rerank-2 (cross-encoder) |
 | Vector store | Pinecone Builder serverless |
@@ -98,14 +98,14 @@ relationships were computed by the model, not curated by hand.
 For the meeting, these three exercise distinct facets:
 
 1. **`nonviolence as theology vs. tactic`**, 3 distinct SNCC voices,
-   all tier=low. Shows the polyphonic record.
+   all LoC-Verified. Shows the polyphonic record.
 2. **`my cousin Emmett Till`** with entry_number filter on Wheeler
    Parker Jr., three time-anchored Wheeler Parker passages from the
    moments before the abduction. Shows the metadata-filter precision.
-3. **`Bloody Sunday Edmund Pettus Bridge`**, Alfred Moldovan (an
-   ingestion-only entry) describing the medical-team response.
-   Shows the system handles new ingestion-only entries with a
-   different audit-tier badge.
+3. **`Bloody Sunday Edmund Pettus Bridge`**, Alfred Moldovan describing
+   the medical-team response. Shows the system handling a range of
+   interviews with the per-result audit-state badge (LoC-Verified vs
+   Audio-Limited).
 
 (All seven canonical demo queries live in `scripts/demo-queries.sh`.)
 
@@ -155,22 +155,16 @@ in CLAUDE.md under "Operational state." The big quality wins:
 - Cap the citation card with a per-tier audit badge so researchers
   know exactly which tier they're citing from.
 
-## What changed for the `/playlist-builder` surface (2026-05-26)
+## The `/playlist-builder` surface (now static)
 
-The legacy grad-student playlist row didn't survive the new-Firebase
-rebuild, the underlying curation data was discarded with the prior
-project's experimental residue. The replacement surface inherits the
-same UI but its ordering is now driven by the RAG substrate:
-
-- **Hero clip** chosen by audit tier (Pass 9 LoC-verification rank) so
-  the playlist opens on the most-confident transcript for the keyword.
-- **"Up next" recommendations** ranked by **cosine similarity** between
-  the hero interview's Voyage AI embedding and the embedding of every
-  other candidate interview, pulled from the precomputed neighbors map
-  (`/rag/summaries/neighbors.json`). The previous implementation
-  randomly shuffled segments on every page load; the new ordering is
-  deterministic and semantically meaningful.
-- **Same speaker continuation**: other chapters of the hero's own
-  interview come second in chronological order before the cross-speaker
-  cosine-similarity tail, so a viewer who wants more from the same
-  speaker stays with their narrative rather than jumping immediately.
+The legacy grad-student playlist row read from Firestore, which is empty
+of content, so every `/playlist-builder?keywords=...` deep-link (roughly
+50 on the Home page alone, plus Topics and others) was dead. The route
+now renders `src/pages/StaticPlaylist.jsx`, which reads
+`public/rag/playlist_index.json` (every chapter across the 140
+interviews; regenerated by `scripts/build_playlist_index.py`). It filters
+by `?keywords=` / `?q=` / `?topic=` / `?entry=` / `?entries=N,M&label=`
+and plays each clip bounded to its start/end timestamp. The old
+`PlaylistBuilder.jsx` is retained but no longer routed. Re-run
+`scripts/build_playlist_index.py` after any re-chapterization so the clip
+index tracks the new chapter boundaries.

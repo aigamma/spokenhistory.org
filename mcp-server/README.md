@@ -28,9 +28,11 @@ This README is for engineers maintaining the server.
    + rerank-2)        index, query)      built from manifests)
 ```
 
-Three tools: `search_transcripts`, `get_transcript`, `list_leaders`. Three
-prompts: `compare_perspectives`, `trace_evolution`, `source_for_claim`. All
-defined in `server.mjs`.
+Six tools: three primitives (`search_transcripts`, `get_transcript`,
+`list_leaders`) and three research-pattern tools (`compare_perspectives`,
+`trace_evolution`, `source_for_claim`). The three research patterns are
+ALSO registered as MCP prompts for clients that route prompts to the
+model. All defined in `server.mjs`.
 
 ## Local development
 
@@ -51,14 +53,17 @@ To regenerate the static `data/leaders.json` roster after corpus changes:
 
 ```bash
 npm run build:leaders
-# Reads transcripts/corrected/<dir>/manifest.json across all 136 entries
+# Reads transcripts/corrected/<dir>/manifest.json across all 140 entries
 # and emits data/leaders.json. Commit the result so the Docker image
 # build picks it up.
 ```
 
 ## Deployment
 
-Fly.io is the default target. See `fly.toml` for the full quickstart.
+Fly.io is the default target. The server is rewired to Pinecone + Voyage
+and has been smoke-tested locally, but as of the last operational note
+the Fly.io deploy was still pending (blocked on `flyctl` install +
+interactive `flyctl auth login`). See `fly.toml` for the full quickstart.
 Summary:
 
 1. `flyctl auth login`
@@ -103,7 +108,7 @@ this shape (see `toCitationPayload` in `server.mjs`):
   timestampStartStr, timestampEndStr,
   // transparency
   entryProvenance,         // 'audit-original' | 'ingestion-only'
-  uncertaintyTier,         // 'low' | 'medium' | 'high' | 'ingestion-only'
+  uncertaintyTier,         // 'low' | 'medium' | 'publication-block' | 'not-auditable' | 'ingestion-only'
   uncertaintyScore,        // numeric, 0.0–~0.5
   fidelityNote,            // human-readable one-line
   // ranking

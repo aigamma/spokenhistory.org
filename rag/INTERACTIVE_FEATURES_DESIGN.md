@@ -2,13 +2,16 @@
 
 **Audience:** engineers picking up this work (could be a fresh agent, a
 human contributor, or the worldthought.com team adapting the pattern to
-their own corpus). Status as of **2026-05-25**.
+their own corpus). Last reviewed **2026-06-01**.
 
-The scaffolding for an interactive "connection-display" layer on top of
-the civil-rights RAG substrate is complete and pushed. This doc explains
-the architecture, the contract each piece exposes, what's blocked on
-operational steps (Pinecone provisioning + first ingest), and how the
-same pattern ports to worldthought.com.
+The interactive "connection-display" layer on top of the civil-rights
+RAG substrate is built, deployed, and live (production at robotlogic.org,
+staging at civil-rights-staging.netlify.app). This doc explains the
+architecture, the contract each piece exposes, and how the same pattern
+ports to worldthought.com. The Pinecone index is provisioned and ingested
+(≈16K `.srt`-anchored passage vectors across the 140 interviews, plus one
+vector per person page); the remaining open items are wiring choices and
+the Fly.io MCP deploy, not the substrate itself.
 
 ## One substrate, three layers, two consumers
 
@@ -188,7 +191,7 @@ Requirements:
 <Constellation
   width={720}
   height={720}
-  onSelect={(point) => navigate(`/interviews/${point.entry_number}`)}
+  onSelect={(point) => navigate(`/interview/${point.entry_number}`)}
 />
 ```
 
@@ -206,7 +209,7 @@ Requirements:
 1. Pinecone civil-rights project + index provisioned in console (admin)
    ↓
 2. node --env-file=rag/.env.local rag/ingest.mjs
-   (writes ~70k chunks to Pinecone; one-time + idempotent re-ingest)
+   (writes ≈16K `.srt`-anchored chunks to Pinecone; one-time + idempotent re-ingest)
    ↓
 3. node --env-file=rag/.env.local rag/precompute.mjs
    (writes public/rag/related/*.json, centroids.json, constellation.json)
@@ -317,7 +320,9 @@ Read order for a fresh agent:
 5. `mcp-server/USAGE_GUIDE.md` (the audience-facing connector pitch).
 
 If you're picking up the wiring task, putting these components into
-the actual React pages, start with `src/pages/InterviewIndex.jsx` and
-`src/pages/Interview*.jsx` to find natural integration points for
-`<RelatedPassages>` and `<SemanticSearch>`. The `<Constellation>` is a
-landing-page / `/explore` candidate.
+the actual React pages, start with `src/pages/TableOfContents.jsx` (the
+`/table-of-contents` "Interviews" page that absorbed the retired
+card-grid Interview Index) and `src/pages/Interview*.jsx` to find natural
+integration points for `<RelatedPassages>` and `<SemanticSearch>`. The
+`<Constellation>` already backs the embedding-space map on `/rag-explore`
+(the "Data Insights" page).

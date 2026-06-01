@@ -122,7 +122,7 @@ Axes:
 - Northern struggle ↔ Southern struggle
 - Individual conscience ↔ Collective discipline
 
-Data: `public/rag/summaries/concept_axes.json`. Math: `axis_vector = normalize(embed(pole_A) - embed(pole_B))`; position = `dot(centroid, axis_vector)`. Drill-down: `/retrieve` with `query = pole.anchor`, `filter = { entry_number: $eq: clicked_dot }`.
+Data: `public/rag/summaries/ideological_spectrums.json`. Math: `axis_vector = normalize(embed(pole_A) - embed(pole_B))`; position = `dot(centroid, axis_vector)`. Drill-down: `/retrieve` with `query = pole.anchor`, `filter = { entry_number: $eq: clicked_dot }`.
 
 ### 4b. Concept Lenses ★ (`#lenses`), the default tab below the nav
 
@@ -132,7 +132,7 @@ What it demonstrates: **the multi-lens revelation.** Nomic Atlas and every other
 
 This is the thing the conference is pitched on that nobody else builds.
 
-Data: `public/rag/summaries/concept_axes.json` (the same file as Spectrum). Drill-down: `/retrieve` with `query = strongest_axis.pole.anchor` (auto-picked from the interviewee's 5 positions; whichever has the largest |position|), `filter = { entry_number: $eq: clicked_dot }`.
+Data: `public/rag/summaries/ideological_spectrums.json` (the same file as Spectrum). Drill-down: `/retrieve` with `query = strongest_axis.pole.anchor` (auto-picked from the interviewee's 5 positions; whichever has the largest |position|), `filter = { entry_number: $eq: clicked_dot }`.
 
 ### 5. Interview map (`#map`), replaces the old Constellation tab
 
@@ -262,7 +262,7 @@ events/_index.json            8 events × {slug, title, date, blurb, voice_count
 events/<slug>.json            per-event: blurb + 8 retrieved passages
 famous_external.json          15 external figures × passages
 geography.json                12 anchors × passages
-concept_axes.json             5 axes × {pole_a, pole_b, raw_range, 136 positions}
+ideological_spectrums.json             5 axes × {pole_a, pole_b, raw_range, 136 positions}
 influence.json                151 nodes + 214 edges
 tours.json                    10 tours × {title, subtitle, body, path[], closing}
 quotes.json                   30 quotes × {entry_subject, quote, context, loc_item_url}

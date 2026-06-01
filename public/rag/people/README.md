@@ -36,7 +36,7 @@ Two free-text fields on each page, and a different discipline for each:
 Surface what the embedding space finds about this person that the cultural record hasn't. Concretely, look at the precomputed substrate:
 
 - `/rag/related/entry-${N}.json`, top semantic neighbors of this person's passages.
-- `/rag/summaries/concept_axes.json`, this person's position on each named concept axis (with the pole labels).
+- `/rag/summaries/ideological_spectrums.json`, this person's position on each named concept axis (with the pole labels).
 - `/rag/summaries/influence.json`, who-discussed-whom edges.
 
 Then write a paragraph that names ONE or TWO specific connections the embedding finds AND for which there's a meaningful surprise:
@@ -49,7 +49,7 @@ Frame the observation explicitly as **embedding-derived**: "Cosine similarity in
 
 ### Concept-axis sign convention (CRITICAL, do not guess)
 
-When `ai_reading` cites a position on one of the five concept axes from `/rag/summaries/concept_axes.json`, the pole label MUST match this convention: **`position_normalized` POSITIVE = pole_a (the first-listed pole); NEGATIVE = pole_b**, uniformly on every axis. Pole_a (positive) by axis:
+When `ai_reading` cites a position on one of the five concept axes from `/rag/summaries/ideological_spectrums.json`, the pole label MUST match this convention: **`position_normalized` POSITIVE = pole_a (the first-listed pole); NEGATIVE = pole_b**, uniformly on every axis. Pole_a (positive) by axis:
 
 | axis | POSITIVE (pole_a) | NEGATIVE (pole_b) |
 |---|---|---|
@@ -136,7 +136,7 @@ The older `movement_context` and `legacy_and_reception` essay fields (on pages b
   // AI's reading. Headline content; names a specific embedding-
   // derived observation about this person that the cultural record
   // hasn't foregrounded. Drawn from /rag/related/entry-${N}.json,
-  // /rag/summaries/concept_axes.json, and /rag/summaries/influence.json.
+  // /rag/summaries/ideological_spectrums.json, and /rag/summaries/influence.json.
   // Always framed as embedding-derived, not historical fact.
   "ai_reading": "Despite Dixon's hard cultural association with the Black Panther Party, the embedding space in this corpus puts his testimony closest by cosine similarity to organizers whose framing is community-service rather than revolutionary politics; his passages cluster with Charles McLaurin's (entry 17) Mississippi voter-registration material more readily than with the BPP-internal rhetoric of Kathleen Cleaver (entry 73). The Free Breakfast for Children and clinic-organizing language seems to dominate his vector signature over the party-line content.",
 
@@ -226,8 +226,8 @@ The JSON does NOT duplicate data that already lives elsewhere on the site. The c
 
 - **LoC item URL + audit-tier badge** from `/rag/constellation.json` (keyed by `entry_number`).
 - **Semantic-neighbor list** from `/rag/related/entry-${entry_number}.json` (the precomputed top-related interviews per entry).
-- **Concept-axis positions** from `/rag/summaries/concept_axes.json` (per-axis position for this entry).
-- **ConceptMatrix coordinates** from `/rag/summaries/concept_axes.json` (used by the four-chart matrix).
+- **Concept-axis positions** from `/rag/summaries/ideological_spectrums.json` (per-axis position for this entry).
+- **ConceptMatrix coordinates** from `/rag/summaries/ideological_spectrums.json` (used by the four-chart matrix).
 - **Influence edges** (who-discussed-whom) from `/rag/summaries/influence.json` (in-edges + out-edges).
 - **Tour appearances** from `/rag/summaries/tours.json` (tours that feature this person).
 - **Geographic anchors** from `/rag/summaries/geography.json` (places associated).

@@ -93,9 +93,9 @@ Every vector carries these fields (some optional):
 | `entry_number` | int | yes for transcript_segment + summary_chapter |
 | `entry_subject` | string | yes for transcript_segment + summary_chapter |
 | `entry_provenance` | enum: `audit-original` \| `ingestion-only` | yes for transcript_segment (added 2026-05-25) |
-| `inferential_uncertainty_score` | float (0.0 = no evidence of error, higher = more residual uncertainty) | when manifest carries it (all 136 entries as of 2026-05-25) |
+| `inferential_uncertainty_score` | float (0.0 = no evidence of error, higher = more residual uncertainty) | when manifest carries it (all 140 entries) |
 | `inferential_uncertainty_tier` | enum: `low` \| `medium` \| `publication-block` \| `not-auditable` \| `ingestion-only` | same as score |
-| `loc_item_url` | string (Library of Congress canonical archive URL) | when LoC healing was applied (all 136 entries) |
+| `loc_item_url` | string (Library of Congress canonical archive URL) | when LoC healing was applied (all 140 entries) |
 | `source_path` | string (repo-relative) | yes |
 | `source_ext` | string (`.txt`, `.srt`, `.vtt`, `.json`) | yes for transcript_segment |
 | `chunk_index` | int | yes |
@@ -106,12 +106,15 @@ Every vector carries these fields (some optional):
 | `cue_count` | int | only for time-aware chunks |
 | `canonical_name` | string | only for ground_truth_fact |
 | `aliases` | string[] | only for ground_truth_fact |
+| `content_type` | enum: `person` | only for person-page vectors (one per person page); absent on transcript/fact vectors |
+
+The index also holds one vector per person page (the per-person reference pages under `public/rag/people/`), embedded with `content_type: 'person'`. Archive-focused retrieval flows filter these out by default; a site-wide "find a person" affordance passes `includePersons: true` to include them. See `public/rag/people/README.md` for the person-vector ingest path (`rag/ingest.mjs --persons-only`).
 
 ### Why the provenance / uncertainty / LoC fields are in the metadata
 
-`entry_provenance` lets retrieval differentiate the 127 entries that went through the full Pass 1–8 audit cascade (`audit-original`) from the 9 entries that came in via the 2026-05-25 streamlined ingestion (`ingestion-only`). For Smithsonian-grade publication, an LLM answer that draws from an audit-original chunk can cite the audit overlay; an answer drawn from an ingestion-only chunk should be hedged. Putting the flag in the chunk metadata avoids a second Firestore round-trip at answer time.
+`entry_provenance` lets retrieval differentiate the 127 entries that went through the full Pass 1–8 audit cascade (`audit-original`) from the entries that came in via the streamlined ingestion (`ingestion-only`). For Smithsonian-grade publication, an LLM answer that draws from an audit-original chunk can cite the audit overlay; an answer drawn from an ingestion-only chunk should be hedged. Putting the flag in the chunk metadata keeps it available at answer time without a second lookup.
 
-`inferential_uncertainty_score` + `inferential_uncertainty_tier` carry the per-entry residual-error estimate defined in `transcripts/AUDIT_TRAIL.md::Inferential scoring framework`. The five tier values that appear in the corpus are `low` (72 entries), `medium` (18), `publication-block` (23), `not-auditable` (14), and `ingestion-only` (9). Retrieval can use the tier as a coarse filter (e.g., `tier: {$eq: "low"}` to bias toward publication-grade entries) or weight rerank by score.
+`inferential_uncertainty_score` + `inferential_uncertainty_tier` carry the per-entry residual-error estimate defined in `transcripts/AUDIT_TRAIL.md::Inferential scoring framework`. The five tier values that appear in the corpus are `low`, `medium`, `publication-block`, `not-auditable`, and `ingestion-only` (per-tier counts shift as new interviews are ingested; verify against the current manifests). Retrieval can use the tier as a coarse filter (e.g., `tier: {$eq: "low"}` to bias toward publication-grade entries) or weight rerank by score. Note: the user-facing `/rag-explore` UI collapses these five into two settled states, "LoC-Verified" (137) and "Audio-Limited" (3), for a 140-interview total.
 
 `loc_item_url` carries the Library of Congress canonical archive URL for the entry. When an LLM answer cites a chunk, the UI can deep-link to the LoC item so a downstream reader can verify the source.
 
@@ -216,25 +219,26 @@ the same.
 
 | Item | Frequency | Cost |
 |---|---|---|
-| One-time ingest (15.5K chunks × ~500 tokens) | once | ~$0.80 in Voyage embedding |
+| One-time ingest (≈16K chunks × ~500 tokens) | once | ~$0.80 in Voyage embedding |
 | Steady-state query embedding (~3–15K queries/mo × ~20 tokens) | monthly | <$0.02 |
 | Voyage rerank-2 on top-K retrievals | monthly | ~$1–3 |
 | Pinecone Builder (covers civil-rights + worldthought) | monthly | $20 flat |
 | **Total monthly RAG infrastructure** | | **~$22–25** |
 
-## Status as of 2026-05-26
+## Status as of 2026-06-01
 
 - ✅ Phase 4 scaffolding complete (this directory)
 - ✅ Pass 1-8 audit complete on the original 127-entry corpus (Pass 8 = LoC canonical-archive cross-reference; see `transcripts/AUDIT_TRAIL.md` Session 8)
-- ✅ +9 ingestion-only entries added 2026-05-25 from Dustin's student batch (6 genuinely new + 3 SKIPPED/DEFERRED revivals). See `transcripts/ingestion/README.md`. Corpus now 136 entries.
-- ✅ `corrected/` is downstream-ready: every entry has `.srt + .txt + .vtt + manifest.json` with the same schema (verified by `transcripts/ingestion/verify_corpus_unified.py`). All 136 manifests carry `entry_number`, `entry_subject`, and `entry_provenance` (`audit-original` or `ingestion-only`).
-- ✅ `rag/ingest.mjs` updated 2026-05-25 to discover entries via BOTH master MD `**Source**:` lines AND fallback to `manifest.json::entry_number` for the 9 ingestion-only entries (which don't have master MD entry headings yet). `SKIPPED_ENTRIES` reduced to `{31, 95}` since #28, #46, #64 now have content.
-- ✅ `rag/ingest.mjs` second 2026-05-25 update: (a) fixed a pre-existing infinite-loop bug in the master-MD heading-walker (double-`exec` pattern interacted with the global-regex auto-reset of `lastIndex` on null match, replaced with `matchAll` materialization); (b) propagates `entry_provenance`, `inferential_uncertainty_score`, `inferential_uncertainty_tier`, and `loc_item_url` from each manifest into the Pinecone metadata for downstream filtering and LoC-citation linking; (c) drops phantom byDir records whose source directories don't exist on disk so the entry count is honest. Final entry map: 127 audit-original + 9 ingestion-only = 136, matching corrected/ exactly.
+- ✅ Corpus now 140 interviews (entry IDs 1-142, gaps at 31 and 95). Authoritative count lives in `public/rag/toc.json` (`count: 140`, `rechaptered_count: 140`); all 140 are re-chapterized into granular chapters grouped into parts. The 127 audit-original entries went through the full Pass 1-8 cascade; the remainder came in via the streamlined LoC-heal ingestion. See `transcripts/ingestion/README.md`.
+- ✅ Per-interview data is STATIC JSON, not Firestore. The React app reads `public/rag/summaries/pipeline_output/entry_<N>.json` plus derived aggregates under `public/rag/`. Firestore backs only the auth gate and the (currently unused) review queue.
+- ✅ `corrected/` is downstream-ready: every entry has `.srt + .txt + .vtt + manifest.json` with the same schema (verified by `transcripts/ingestion/verify_corpus_unified.py`). Manifests carry `entry_number`, `entry_subject`, and `entry_provenance` (`audit-original` or `ingestion-only`).
+- ✅ `rag/ingest.mjs` discovers entries via BOTH master MD `**Source**:` lines AND fallback to `manifest.json::entry_number` for ingestion-only entries (which don't have master MD entry headings yet). `SKIPPED_ENTRIES` is `{31, 95}`.
+- ✅ `rag/ingest.mjs` propagates `entry_provenance`, `inferential_uncertainty_score`, `inferential_uncertainty_tier`, and `loc_item_url` from each manifest into the Pinecone metadata for downstream filtering and LoC-citation linking, and drops phantom byDir records whose source directories don't exist on disk so the entry count is honest.
 - ✅ **Pinecone civil-rights index provisioned 2026-05-25 23:00 UTC.** Index name `civil-rights`, dim 1024, cosine, aws-us-east-1, Builder serverless. Co-mingled with `worldthought` in the same project (shared host hash `odc9z70`), provisional, see `rag/.env.local` for migration path to separate `civil-rights-prod` project.
-- ✅ **First ingest complete 2026-05-25.** Initial run: 40,710 vectors across `.srt`/`.txt`/`.vtt`. **Subsequent 2026-05-26 prune:** dropped `.txt` + `.vtt` (near-duplicate re-encodings of the same Whisper output) → 15,464 `.srt`-only vectors. Every retrieval result now time-anchored.
-- ✅ **Precompute artifacts published** under `public/rag/`: 136 `related/entry-N.json` files (per-chunk top-5 cross-entry passages + per-entry related-entry summary), `centroids.json` (per-entry mean embeddings with tier/provenance/loc URL), `constellation.json` (2D PCA scatter for visualization).
-- ✅ **`/retrieve` Netlify Function deployed.** Citation-grade payloads with `entry_number` shortcut + `dedupeByEntry` polyphonic option. Live at `https://civil-rights-staging.netlify.app/retrieve`.
-- ✅ **`/rag-explore` page deployed** (auth-gated). Four tabs: Semantic search, Quote-finder, Embedding-space map (constellation), Related interviewees. Audit-tier color signal consistent across header pills, citation card badges, and SVG dots.
+- ✅ **Ingest complete.** An earlier run held 40,710 vectors across `.srt`/`.txt`/`.vtt`; the `.txt`/`.vtt` near-duplicates were pruned, leaving `.srt`-only passage vectors (15,464 at the 136-interview point; now ≈16K across the 140 interviews, verify exact count against Pinecone). The catalog also pushes one vector per person page (`content_type='person'`, ~202 vectors). Every retrieval result is time-anchored.
+- ✅ **Precompute artifacts published** under `public/rag/`: per-entry `related/entry-N.json` files (per-chunk top-5 cross-entry passages + per-entry related-entry summary), `centroids.json` (per-entry mean embeddings with tier/provenance/loc URL), `constellation.json` (2D PCA scatter for visualization). Re-run `rag/precompute.mjs` after a re-chapterization or re-ingest so these track the current 140-interview corpus.
+- ✅ **`/retrieve` Netlify Function deployed.** Citation-grade payloads with `entry_number` shortcut + `dedupeByEntry` polyphonic option. Live at `https://civil-rights-staging.netlify.app/retrieve`; production frontend at robotlogic.org.
+- ✅ **`/rag-explore` page deployed** (auth-gated), surfaced in the nav as "Data Insights". Tabs cover semantic search, quote-finding, the embedding-space map (constellation), and related interviewees. Audit-tier color signal consistent across header pills, citation card badges, and SVG dots.
 - ✅ **MCP server rewired** to Pinecone+Voyage (commit `2c05cd8`). Smoke-tested locally 2026-05-26 (search_transcripts call with `dedupe_by_entry:true` returned Lowery on nonviolence-as-theology with full Chicago citation). Fly.io deploy blocked on Eric installing `flyctl`.
 - ⏳ Anthropic Connector Directory submission: requires OAuth 2.1 on the MCP `/mcp` endpoint. Skeleton notes the plug-in point. Post-conference.
 
@@ -258,7 +262,7 @@ The application-layer code in this directory (`shared.mjs`, `ingest.mjs`, `retri
 
 A Nomic Atlas Plus account was active from 2026-05-26 through approximately
 2026-05-27 to compute a UMAP projection + auto-labeled topic model on the
-15,464-passage corpus. The static output is preserved in
+then-15,464-passage corpus (136 interviews at the time). The static output is preserved in
 `public/rag/atlas_projection.json` (5.10 MB, in git). After Atlas was
 canceled, no further Atlas calls happen on the public site, the JSON is
 the only piece that ever mattered for visualization, and it lives forever.

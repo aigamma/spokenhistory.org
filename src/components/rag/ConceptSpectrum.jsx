@@ -20,7 +20,7 @@
  * horizontal pole the voice leans toward, the RAG demonstration the page
  * promises.
  *
- * Loads /rag/summaries/concept_axes.json (static). Drill-down passages
+ * Loads /rag/summaries/ideological_spectrums.json (static). Drill-down passages
  * come from /retrieve (Netlify Function, Pinecone + Voyage rerank).
  */
 
@@ -94,7 +94,7 @@ export default function ConceptSpectrum() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/rag/summaries/concept_axes.json')
+    fetch('/rag/summaries/ideological_spectrums.json')
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found'))))
       .then((j) => { if (!cancelled) setData(j); })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });

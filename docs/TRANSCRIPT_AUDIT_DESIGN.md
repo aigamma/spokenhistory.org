@@ -1,8 +1,10 @@
 # Transcript Audit Design
 
-A recurring quality-assurance pass on the 135 raw Whisper transcripts in `transcripts/raw/`. Catches Whisper transcription errors that the existing dual-scorer + citation-auditor gate can't see, because that gate scores generated summaries against transcripts, and if the transcript itself is wrong, the gate has nothing to compare against.
+> **Status (2026-06-01): historical design record, partly superseded.** This document is the ORIGINAL design for the three-stage audit cascade (exact/alias match, phonetic + edit-distance fuzzy match, LLM disambiguation). The cascade's ideas informed the seven-pass audit that ran on the original 127-entry corpus. **For NEW interviews, the live correction pipeline is no longer this design.** It is the LoC-healing path: `transcripts/ingestion/onboard_interview.py` (which calls `transcripts/loc_healing/heal_one_entry.py`) aligns our Whisper-derived transcript against the Library of Congress's own published transcript and applies deterministic, conservative-first-pass corrections with **no model in the loop**. That path supersedes the seven-pass approach for any transcript arriving after 2026-05-25. The corpus is now 140 interviews. Read the sections below for the original architectural reasoning; read `transcripts/ingestion/README.md` and `transcripts/loc_healing/COVERAGE_REPORT.md` for what actually ships today.
 
-This document is the handoff design. The next agent reading this should be able to implement the system end-to-end without re-deriving any architectural decision.
+A recurring quality-assurance pass on the raw Whisper transcripts in `transcripts/raw/`. Catches Whisper transcription errors that the existing dual-scorer + citation-auditor gate can't see, because that gate scores generated summaries against transcripts, and if the transcript itself is wrong, the gate has nothing to compare against.
+
+This document is the handoff design as it stood when the audit was first scoped. It is retained for its architectural reasoning; the implemented pipeline diverged toward the LoC-healing path described in the status note above.
 
 ## Why this exists
 
@@ -54,7 +56,7 @@ Routing decision:
 - `combined in [0.65, 0.85]` → escalate to Stage 3 (LLM disambiguation)
 - `combined < 0.65` → no match; the candidate is either unknown or a name not in the ground-truth corpus
 
-Cost: free. ~50ms per transcript for the full token sweep against 60 canonical names + 138 aliases.
+Cost: free. ~50ms per transcript for the full token sweep against the ground-truth corpus (60 canonical names + 138 aliases at design time; 378 entries + 396 aliases today).
 
 Library dependency: `jellyfish`, Apache 2.0, pure-Python, ~80KB. Add to `Metadata Generation System/requirements.txt`.
 
@@ -87,7 +89,7 @@ Why Claude Haiku 4.5:
 - Lowest-cost model in the Anthropic family ($1 / $5 per MTok input/output as of 2026-05)
 - The task is small and well-bounded, Haiku handles it cleanly
 - Continues the project's pattern of using Anthropic as the adversarial / verification layer alongside OpenAI for generation
-- At ~$0.001 per transcript, cost is negligible. The full 135-transcript sweep is ~$0.15.
+- At ~$0.001 per transcript, cost is negligible. A full sweep of the design-time 135-transcript corpus is ~$0.15 (the corpus is 140 today, so the figure scales proportionally).
 
 **Always on.** No env-var gating. Stage 3 always runs. The marginal cost is below the threshold the project should worry about (the per-transcript summarization pass already costs $0.04). If cadence becomes the concern, drop the sweep frequency, that's a workflow-file edit, not a module-level decision.
 
@@ -294,9 +296,9 @@ The most important trigger to get right is **on changes to `civil_rights_facts.j
 
 ### Future direction: Voyage AI semantic similarity stage
 
-Once Weaviate + Voyage AI is operational (see `docs/WEAVIATE_INTEGRATION_DESIGN.md`), a fourth stage becomes possible:
+The retrieval substrate is now Pinecone + Voyage AI (the Weaviate plan referenced in this section was not adopted; see `docs/RAG_SUBSTRATE_DECISION.md` for the pivot and `rag/README.md` for the live substrate). With that substrate live, a fourth stage becomes possible:
 
-**Stage 2.5, semantic similarity check.** For each Stage 2 candidate scoring in [0.65, 0.85] (the LLM-escalation band), embed the surrounding context with Voyage AI and search the `TranscriptSegment` Weaviate collection for the top-K semantically-similar passages. If those passages mention any canonical fact (via Stage 1 match), the candidate is probably an error referencing that fact. This catches collisions where phonetic + edit-distance fail but the context unambiguously identifies the speaker's referent.
+**Stage 2.5, semantic similarity check.** For each Stage 2 candidate scoring in [0.65, 0.85] (the LLM-escalation band), embed the surrounding context with Voyage AI and search the Pinecone `civil-rights` index for the top-K semantically-similar passages. If those passages mention any canonical fact (via Stage 1 match), the candidate is probably an error referencing that fact. This catches collisions where phonetic + edit-distance fail but the context unambiguously identifies the speaker's referent.
 
 This is additive, not a replacement for Stage 3, semantic similarity tells you "the candidate is about Fact X"; LLM disambiguation tells you "the candidate IS Fact X-spelled-wrong." Both signals improve accuracy.
 
@@ -321,9 +323,11 @@ Voyage AI also offers a reranker (`rerank-2`) that can re-score Stage 2's top-3 
 
 ### Cost projection
 
+Estimated at design time against the 135-transcript corpus (140 today; the per-sweep figure scales proportionally).
+
 | Cadence | API cost per sweep | Monthly | Annual |
 |---|---|---|---|
-| Nightly cron | $0.15 (Haiku 4.5 Stage 3 on 135 transcripts) | $4.50 | $54 |
+| Nightly cron | $0.15 (Haiku 4.5 Stage 3 on the design-time 135 transcripts) | $4.50 | $54 |
 | Weekly cron | $0.15 | $0.65 | $7.80 |
 | On-PR + monthly cron | $0.15 + churn | $1-3 | $12-36 |
 
@@ -339,7 +343,7 @@ Honest scope limits, flag these in the reviewer UI so reviewers know not to expe
 
 - **Cross-transcript phonetic disambiguation.** If "Stokey Carmickle" appears in 10 transcripts, each audit runs independently. A future v2 could pool candidates across the corpus and use the aggregate to boost confidence (10 transcripts independently flagging the same span at 0.83 is stronger evidence than any single one), but v1 is per-transcript for simplicity.
 
-- **Disambiguation of speakers with overlapping names.** Two interviewees both named "James Wilson" would each get audit files but no cross-reference linking them. Acceptable for the current corpus, none of the 135 interviewees share names.
+- **Disambiguation of speakers with overlapping names.** Two interviewees both named "James Wilson" would each get audit files but no cross-reference linking them. Acceptable for the corpus this design was scoped against (the original 127-entry corpus; the corpus is 140 today), where no interviewees shared names.
 
 ### Acceptance criteria for the next agent
 
@@ -357,11 +361,11 @@ That's the clean handoff.
 
 ## See also
 
-- `docs/WEAVIATE_INTEGRATION_DESIGN.md`, the RAG retrieval substrate this design integrates with (Stage 2.5 semantic similarity, plus the corpus-wide grounding the Weaviate-backed pipeline enables)
-- `docs/DEPLOYMENT.md`, operator-level setup; will be extended with the audit module's setup once implemented
+- `docs/RAG_SUBSTRATE_DECISION.md` and `rag/README.md`, the live RAG retrieval substrate (Pinecone + Voyage) the Stage 2.5 idea would integrate with. `docs/WEAVIATE_INTEGRATION_DESIGN.md` is the deprecated/historical predecessor design referenced above.
+- `docs/DEPLOYMENT.md`, operator-level setup. The live correction pipeline for new interviews is the LoC-healing path it documents under "Onboarding a new interview," not the module designed here.
 - `docs/ACCESSIBILITY.md`, the WCAG 2.2 AA audit report from the May 2026 overhaul, which established the documentation style this doc follows
 - `CLAUDE.md`, project-wide architectural notes for Claude Code agents
-- `Metadata Generation System/civil_rights_facts.json`, the ground-truth corpus the audit grounds against (60 entries, 51 with aliases, 138 aliases total)
+- `Metadata Generation System/civil_rights_facts.json`, the ground-truth corpus the audit grounds against (60 entries / 138 aliases when this design was written; 378 entries / 396 aliases as of 2026-06-01)
 - `Metadata Generation System/processor/shared.py::get_relevant_facts`, the existing exact-match fact resolver this design extends
 - `Metadata Generation System/processor/citation_check.py`, `claude_scorer.py`, `dual_scoring_helper.py`, the downstream consumers whose system prompts get the corrections block
 - `src/pages/ReviewQueue.jsx`, the existing reviewer UI pattern that `TranscriptAuditReview.jsx` mirrors

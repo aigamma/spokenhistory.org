@@ -9,6 +9,15 @@ one-shot compute we needed; the static output is now ours forever.
 This document records WHAT came out of Atlas, WHERE it lives, and
 HOW to regenerate it without Atlas if the corpus ever changes.
 
+**Snapshot note:** the projection is frozen at the corpus state of
+2026-05-27, when there were 136 interviews and 15,464 `.srt`-anchored
+passages. The live corpus has since grown to 140 interviews. The row
+counts and 136-interview figures below describe the contents of the
+static `atlas_projection.json` file as it stands; they are intentionally
+NOT bumped to 140. Regenerate the projection (see the `umap-learn`
+recipe at the bottom) to bring the map current with the 140-interview
+corpus.
+
 ## What Atlas produced
 
 A single static file:
@@ -55,8 +64,9 @@ The Atlas projection JSON powers two visualization tabs on
 
   2. **Interview map**, `src/components/rag/InterviewMap.jsx`
      aggregates the same passages by `entry_number` to produce 136
-     interview centroids with names labeled, then derives empirical
-     axis labels from which topic dominates each pole.
+     interview centroids (the frozen-snapshot count) with names labeled,
+     then derives empirical axis labels from which topic dominates each
+     pole.
 
 Both components fetch `/rag/atlas_projection.json` at mount; nothing
 else depends on Atlas being reachable.

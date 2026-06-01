@@ -57,7 +57,7 @@ Day-of-conference / day-of-demo, watch these signals (~5-min cadence):
      -H "X-Pinecone-API-Version: 2024-07" \
      https://civil-rights-odc9z70.svc.aped-4627-b74a.pinecone.io/describe_index_stats
    ```
-   Should return `totalVectorCount: 15464`. Drift means something destructive happened, investigate immediately before re-ingesting.
+   Should return a `totalVectorCount` in the neighborhood of ≈16K `.srt`-anchored passage vectors across the 140 interviews plus ~202 person-page vectors (verify the exact current count against Pinecone; it was 15,464 at the 136-interview `.srt`-only point). A sudden drop means something destructive happened, investigate immediately before re-ingesting.
 
 3. **Latest CI run on master**
    ```bash

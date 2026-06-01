@@ -152,7 +152,7 @@ export default function ConceptMatrix() {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/rag/summaries/concept_axes.json')
+    fetch('/rag/summaries/ideological_spectrums.json')
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found'))))
       .then((j) => { if (!cancelled) setData(j); })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
@@ -408,7 +408,7 @@ export default function ConceptMatrix() {
       </div>
 
       <footer className="text-xs text-stone-500 border-t border-stone-200 pt-3 mt-6 max-w-3xl">
-        Source: <code className="font-mono">public/rag/summaries/concept_axes.json</code>.
+        Source: <code className="font-mono">public/rag/summaries/ideological_spectrums.json</code>.
         Each axis vector is{' '}
         <code className="font-mono">normalize(embedding(pole_A) - embedding(pole_B))</code>;
         each interview&apos;s position is the dot product of its centroid with that vector,
