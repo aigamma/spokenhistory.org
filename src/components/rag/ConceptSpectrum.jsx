@@ -50,6 +50,8 @@ const SHORT_LABELS = {
   'tactical-strategic': 'Tactical ↔ Strategic',
   'southern-northern': 'Northern ↔ Southern',
   'individual-collective': 'Individual ↔ Collective',
+  'local-national': 'Local ↔ National',
+  'grassroots-institutional': 'Grassroots ↔ Institutional',
 };
 function shortLabel(ax) {
   return (

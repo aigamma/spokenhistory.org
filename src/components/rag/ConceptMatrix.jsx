@@ -14,8 +14,8 @@
  *
  * This component flips the framing. Instead of one un-labeled projection,
  * show many projections where every axis has a hand-curated name. We
- * already have rag/precompute_concept_axes.mjs computing 5 such axes
- *, each defined by two pole descriptions whose unit-difference vector
+ * already have rag/precompute_concept_axes.mjs computing a set of such
+ * axes, each defined by two pole descriptions whose unit-difference vector
  * is the axis. Project every interview onto each axis (a dot product
  * with that vector) and plot pairs as 2D scatters.
  *
@@ -38,8 +38,8 @@ import { retrieve } from '../../services/ragClient';
 import { useIsDark } from '../../hooks/useTheme';
 import CitationCard from './CitationCard';
 
-// Strategic pair selection, five axes give ten possible pairs; we
-// surface four that read as distinct conceptual quadrants of the
+// Strategic pair selection, the concept axes give many possible pairs;
+// we surface four that read as distinct conceptual quadrants of the
 // movement's intellectual space.
 const AXIS_PAIRS = [
   ['nonviolence-self-defense', 'sacred-secular'],
@@ -158,7 +158,7 @@ export default function ConceptMatrix() {
     return () => { cancelled = true; };
   }, []);
 
-  // Build entry_number → full profile (all 5 axis positions + meta).
+  // Build entry_number → full profile (all axis positions + meta).
   const profilesById = useMemo(() => {
     if (!data?.axes) return null;
     const map = new Map();
@@ -212,7 +212,7 @@ export default function ConceptMatrix() {
         UMAP, so the structure you see is interpretable.{' '}
         <strong>Hover any dot</strong> to watch the same voice move
         across the other three lenses. <strong>Click</strong> to lock the
-        highlight and see the full five-axis profile below.
+        highlight and see the full {data.axes.length}-axis profile below.
       </p>
 
       {/* Concept-query projection input, type a phrase and watch a
@@ -224,9 +224,9 @@ export default function ConceptMatrix() {
             type="text"
             value={conceptInput}
             onChange={(e) => setConceptInput(e.target.value)}
-            placeholder="Project a phrase onto all 5 lenses…"
+            placeholder={`Project a phrase onto all ${data.axes.length} lenses…`}
             className="w-full pl-3 pr-24 py-2 text-sm border border-emerald-400 rounded-md focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/30 outline-none bg-white dark:bg-zinc-800 dark:border-emerald-700 dark:text-zinc-100"
-            aria-label="Project a query phrase across all five lenses"
+            aria-label={`Project a query phrase across all ${data.axes.length} lenses`}
             disabled={conceptLoading}
           />
           <div className="absolute right-1.5 top-1/2 -translate-y-1/2 flex items-center gap-1">
@@ -283,12 +283,12 @@ export default function ConceptMatrix() {
       </form>
 
       {/* Cross-axis summary: when a query is active, show where the
-          same 1024-dim embedding lands on all 5 concept axes as
-          horizontal bars. One embedding, five conceptual readings. */}
+          same 1024-dim embedding lands on every concept axis as
+          horizontal bars. One embedding, many conceptual readings. */}
       {queryProjections && conceptQuery && (
         <div className="mb-5 p-4 rounded-md border border-emerald-200 bg-emerald-50/50 dark:border-emerald-800 dark:bg-emerald-950/40">
           <p className="text-xs text-emerald-900 dark:text-emerald-200 font-mono uppercase tracking-wide mb-3">
-            Query &ldquo;{conceptQuery}&rdquo; on all 5 spectrums
+            Query &ldquo;{conceptQuery}&rdquo; on all {data.axes.length} spectrums
           </p>
           <ul className="space-y-2">
             {data.axes.map((ax) => {
@@ -331,7 +331,7 @@ export default function ConceptMatrix() {
             })}
           </ul>
           <p className="text-xs text-stone-500 mt-3">
-            Same 1,024-dim embedding, five conceptual axes. The green tick on each bar is where your query lands relative to each axis&apos;s poles.
+            Same 1,024-dim embedding, {data.axes.length} conceptual axes. The green tick on each bar is where your query lands relative to each axis&apos;s poles.
           </p>
         </div>
       )}
@@ -370,7 +370,7 @@ export default function ConceptMatrix() {
       )}
 
       {/* Top retrieved passages for the same query, closes the loop:
-          query → geometric projection on 5 lenses → here are the voices
+          query → geometric projection on every lens → here are the voices
           that match. */}
       {conceptResults && conceptResults.length > 0 && conceptQuery && (
         <aside className="mt-5 p-4 rounded-md border border-emerald-200 bg-white dark:border-emerald-800">
@@ -627,12 +627,12 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
         </div>
       </header>
 
-      {/* Radar polygon, the voice's 5-dimensional "fingerprint" in
+      {/* Radar polygon, the voice's multi-dimensional "fingerprint" in
           one visually distinctive shape. Renders ABOVE the bar chart
           so readers see the shape first, then the exact values. */}
       <FiveAxisRadar profile={profile} axes={axes} />
 
-      {/* Five horizontal mini-axes, one bar per concept axis showing
+      {/* Horizontal mini-axes, one bar per concept axis showing
           this interviewee's position along it. Kept below the radar
           for exact numeric readouts and accessibility. */}
       <div className="space-y-2.5 mt-5">
@@ -677,10 +677,11 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
 
 /**
  * FiveAxisRadar, small SVG radar polygon showing the voice's
- * 5-axis fingerprint. Each spoke runs from the center (pole_a end,
- * position -1) outward to the rim (pole_b end, position +1). The
- * voice's polygon vertex on each spoke is plotted at the position
- * mapped to [0, 1] radial distance.
+ * per-axis fingerprint (one spoke per concept axis in the data).
+ * Each spoke runs from the center (pole_a end, position -1) outward
+ * to the rim (pole_b end, position +1). The voice's polygon vertex
+ * on each spoke is plotted at the position mapped to [0, 1] radial
+ * distance.
  *
  * Two reads in one shape:
  *   - The polygon's overall "shape" tells the eye which dimensions
@@ -689,7 +690,7 @@ function FiveAxisProfile({ profile, axes, locked, onClear }) {
  *   - The same data is below in numeric bars for exact reads.
  *
  * Pure SVG, no library. Pole labels at the outer rim use short
- * text so 5 labels fit around a small chart without colliding.
+ * text so they fit around a small chart without colliding.
  */
 function FiveAxisRadar({ profile, axes }) {
   const isDark = useIsDark();
@@ -739,7 +740,7 @@ function FiveAxisRadar({ profile, axes }) {
         width="100%"
         style={{ maxWidth: 360, display: 'block', margin: '0 auto' }}
         role="img"
-        aria-label={`Radar polygon of ${profile.entry_subject}'s position on five concept axes. Each spoke runs from the center (pole_a end) outward to the rim (pole_b end).`}
+        aria-label={`Radar polygon of ${profile.entry_subject}'s position on ${axes.length} concept axes. Each spoke runs from the center (pole_a end) outward to the rim (pole_b end).`}
       >
         {/* Radar SVG gridlines/labels branch on isDark (useIsDark): rim + spoke
             gridlines ('#e7e5e4' light / '#292524' dark), the neutral-baseline
@@ -791,7 +792,7 @@ function FiveAxisRadar({ profile, axes }) {
         })}
       </svg>
       <figcaption className="text-xs text-stone-500 text-center mt-1 px-2">
-        5-axis fingerprint. Each spoke runs from the center (the
+        {axes.length}-axis fingerprint. Each spoke runs from the center (the
         opposite pole) outward to the labeled pole. Dashed inner ring
         is the all-neutral baseline.
       </figcaption>
@@ -807,7 +808,7 @@ function FiveAxisRadar({ profile, axes }) {
  *
  * Mirrors the Spectrum drill-down pattern but auto-picks the axis
  * instead of asking the user to choose, the ConceptMatrix view is
- * already presenting all 5 axes simultaneously, so we use the
+ * already presenting every concept axis simultaneously, so we use the
  * stand-out one as the query anchor.
  */
 function StrongestAxisDrillDown({ profile, axes }) {
