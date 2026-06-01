@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "slug": "dubois-souls-meaning-of-progress",
+  "primary_topic": "education-and-schools",
+  "hero_image": {
+    "src_external": "https://upload.wikimedia.org/wikipedia/commons/6/6a/W.E.B._Du_Bois_by_James_E._Purdy%2C_1907_%283x4%29.jpg",
+    "alt": "Portrait of W. E. B. Du Bois, 1907",
+    "caption": "W. E. B. Du Bois in 1907, four years after The Souls of Black Folk appeared.",
+    "photographer": "James E. Purdy",
+    "date_taken": "1907",
+    "repository": "National Portrait Gallery, Smithsonian Institution",
+    "license": "Public domain; NPG digital image released CC0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:W.E.B._Du_Bois_by_James_E._Purdy,_1907_(3x4).jpg"
+  },
+  "inline_images": [
+    {
+      "src_external": "https://tile.loc.gov/storage-services/service/pnp/fsa/8b23000/8b23700/8b23707v.jpg",
+      "alt": "A teacher and her pupils inside a one-room rural Black school, Creek County, Oklahoma, 1940",
+      "caption": "A teacher and her pupils in a one-room rural Black school, photographed by Russell Lee in 1940, echoing the country schoolhouse and the young scholars Du Bois recalls teaching in Of the Meaning of Progress.",
+      "photographer": "Russell Lee",
+      "date_taken": "February 1940",
+      "repository": "Library of Congress, Prints and Photographs Division (Farm Security Administration/Office of War Information Collection)",
+      "license": "Public domain (Library of Congress: No known restrictions; FSA/OWI photograph)",
+      "source_url": "https://www.loc.gov/item/2017785181/"
+    }
+  ],
+  "related_chapters": [
+    {
+      "entry": 140,
+      "subject": "Louise Broadway",
+      "slug": "louise-broadway",
+      "part_title": "Growing Up in Baker County",
+      "chapter_title": "Seven Grades in One Church Sanctuary",
+      "topic": "A One-Room Church School",
+      "start": 195.0,
+      "end": 334.0,
+      "why": "The essay recounts teaching a one-room rural school held near the country church; Broadway describes seven grades taught in a single church sanctuary in Baker County."
+    },
+    {
+      "entry": 102,
+      "subject": "Reverend Harry Blake",
+      "slug": "reverend-harry-blake",
+      "part_title": "Reared on the Plantation",
+      "chapter_title": "I Taught the Mule My Language",
+      "topic": "A One-Room School and the Mule",
+      "start": 173.0,
+      "end": 295.0,
+      "why": "The essay sets schooling against farm labor in a log-cabin schoolhouse; Blake recalls a one-room plantation school where book learning shared the day with the mule and the field."
+    },
+    {
+      "entry": 41,
+      "subject": "Euvester Simpson",
+      "slug": "euvester-simpson",
+      "part_title": "Delta Roots",
+      "chapter_title": "A School Built So Black Kids Could Pick Cotton",
+      "topic": "Delta Schooling and Split Sessions",
+      "start": 298.0,
+      "end": 423.0,
+      "why": "The essay watches the school dwindle whenever the crops needed the children; Simpson describes split-session Delta schooling scheduled so Black children could pick cotton."
+    },
+    {
+      "entry": 12,
+      "subject": "Carolyn Miller and James Miller",
+      "slug": "carolyn-miller-and-james-miller",
+      "part_title": "School, Fair Street, and a Near-Lynching",
+      "chapter_title": "All-Black Schools and a Teacher Who Fed the Children",
+      "topic": "The Community School",
+      "start": 1513.0,
+      "end": 1854.0,
+      "why": "The essay measures progress through the devotion of teachers to poor rural pupils; the Millers recall an all-Black community school and a teacher who fed the children."
+    },
+    {
+      "entry": 29,
+      "subject": "Dorothy Foreman Cotton",
+      "slug": "dorothy-foreman-cotton",
+      "part_title": "Ms. Rosa Gray",
+      "chapter_title": "There's Your Ready Girl",
+      "topic": "A Teacher's Influence",
+      "start": 760.0,
+      "end": 928.0,
+      "why": "The essay lingers on the teacher who recognizes a child's longing to learn, as Du Bois did with Josie; Cotton recounts a teacher whose belief in her shaped her path."
+    },
+    {
+      "entry": 21,
+      "subject": "Clarence Magee",
+      "slug": "clarence-magee",
+      "part_title": "A Sharecropper's Son",
+      "chapter_title": "A Father Who Vowed His Children Would Read",
+      "topic": "Education and Self-Sufficiency",
+      "start": 171.0,
+      "end": 433.0,
+      "why": "The essay frames book learning as the steep path out of compulsory ignorance; Magee, a sharecropper's son, recounts a father who vowed his children would learn to read."
+    }
+  ],
+  "top_voice": {
+    "entry": 140,
+    "subject": "Louise Broadway",
+    "slug": "louise-broadway",
+    "reason": "Her one-room church schoolhouse holding seven grades is the closest living counterpart to the rural log-cabin school Du Bois taught in the essay."
+  },
+  "closing_image": null,
+  "connections": {
+    "summary": "Across the Civil Rights History Project, the oral histories below take up the questions Of the Meaning of Progress raises. Our embedding model places it nearest the testimony of Charles F. (\"Chuck\") McDew, Mary Jenkins, and Clarence Magee.",
+    "method": "embedding",
+    "nearest_voices": [
+      {
+        "entry": 16,
+        "subject": "Charles F. (\"Chuck\") McDew",
+        "slug": "charles-f-chuck-mcdew",
+        "score": 0.578
+      },
+      {
+        "entry": 84,
+        "subject": "Mary Jenkins",
+        "slug": "mary-jenkins",
+        "score": 0.566
+      },
+      {
+        "entry": 21,
+        "subject": "Clarence Magee",
+        "slug": "clarence-magee",
+        "score": 0.563
+      },
+      {
+        "entry": 33,
+        "subject": "Eddie Holloway",
+        "slug": "eddie-holloway",
+        "score": 0.535
+      },
+      {
+        "entry": 114,
+        "subject": "Sam Young, Jr.",
+        "slug": "sam-young-jr",
+        "score": 0.531
+      }
+    ]
+  },
+  "shared_topics": [
+    "education-and-schools",
+    "youth-student-activism"
+  ]
+}
