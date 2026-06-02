@@ -284,7 +284,6 @@ export default function TopicGlossary() {
           </Link>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

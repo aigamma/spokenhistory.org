@@ -139,7 +139,6 @@ export default function Essays() {
           </>
         )}
       </main>
-      <Footer />
     </div>
   );
 }

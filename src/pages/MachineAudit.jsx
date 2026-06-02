@@ -327,7 +327,6 @@ export default function MachineAudit() {
           </ul>
         </nav>
       </main>
-      <Footer />
     </div>
   );
 }

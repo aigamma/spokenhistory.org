@@ -269,7 +269,6 @@ export default function EssayPage() {
           <p className="text-stone-700 dark:text-stone-300">That essay was not found.</p>
           <Link to="/essays" className="mt-4 inline-flex min-h-11 items-center text-civil-red-body hover:underline">Back to Essays</Link>
         </main>
-        <Footer />
       </div>
     );
   }
@@ -516,7 +515,6 @@ export default function EssayPage() {
           </section>
         )}
       </main>
-      <Footer />
     </div>
   );
 }

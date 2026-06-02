@@ -1,9 +1,10 @@
 import { useAuth } from '../../contexts/AuthContext'
 import Header from './Header'
+import Footer from './Footer'
 
 export default function Layout({ children }) {
   const { loading } = useAuth()
-  
+
   if (loading) {
     return (
       <div
@@ -20,9 +21,9 @@ export default function Layout({ children }) {
       </div>
     )
   }
-  
+
   return (
-    <div className="min-h-screen w-full font-body bg-[#EBEAE9] dark:bg-zinc-900">
+    <div className="min-h-screen w-full font-body bg-[#EBEAE9] dark:bg-zinc-900 flex flex-col">
       {/* Skip-link for WCAG 2.2 SC 2.4.1 (Bypass Blocks). Visually
           hidden until focused via keyboard Tab; appears at the top-
           left as a high-contrast pill on focus. Keyboard users can
@@ -45,9 +46,13 @@ export default function Layout({ children }) {
         Skip to main content
       </a>
       <Header />
-      <main id="main-content" tabIndex={-1} className="w-full focus:outline-none">
+      {/* flex-1 keeps the global Footer pinned to the bottom on short pages
+          (Dustin, 2026-06-02: the footer is now mounted once here instead of
+          per-page, so it appears on every Layout-wrapped route). */}
+      <main id="main-content" tabIndex={-1} className="w-full flex-1 focus:outline-none">
         {children}
       </main>
+      <Footer />
     </div>
   )
 }

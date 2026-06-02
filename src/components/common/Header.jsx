@@ -32,15 +32,19 @@ import ShareButton from '../ShareButton';
 // single "Interviews" entry now points at /table-of-contents, and the
 // old standalone "Table of Contents" entry plus the old
 // "Interviews" -> /interview-index entry are both gone.
+// 2026-06-02 (Dustin): the main menu is reduced to four destinations.
+// Topics is renamed "Table of Contents"; Interviews and People are merged into
+// one "Interviews & People" entry; and Essays / Data Insights / Methodology /
+// About now live in the global footer sitemap (Footer.jsx) instead of the menu.
+// NOTE: the labels intentionally do NOT match their route names. "Table of
+// Contents" routes at /topic-glossary and "Interviews & People" routes at
+// /table-of-contents; the routes were left stable because many in-app deep
+// links target them, so only the visible labels changed (flagged to Eric).
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
-  { label: 'Interviews', to: '/table-of-contents', matchPath: '/table-of-contents' },
-  { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
-  { label: 'People', to: '/people', matchPath: '/people' },
-  { label: 'Curriculum', to: '/curriculum', matchPath: '/curriculum' },
-  { label: 'Essays', to: '/essays', matchPath: '/essays' },
-  { label: 'Data Insights', to: '/rag-explore', matchPath: '/rag-explore' },
-  { label: 'About', to: '/about', matchPath: '/about' },
+  { label: 'Table of Contents', to: '/topic-glossary', matchPath: '/topic-glossary' },
+  { label: 'Interviews & People', to: '/table-of-contents', matchPath: '/table-of-contents' },
+  { label: 'K-12 Curriculum', to: '/curriculum', matchPath: '/curriculum' },
 ];
 
 function isCurrentRoute(route, location) {
@@ -103,7 +107,25 @@ export default function Header() {
           drawer. */}
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 sm:pt-4 pb-2.5">
-          <div className="flex items-center justify-end gap-2 sm:gap-2.5">
+          <div className="flex items-center justify-between gap-2 sm:gap-2.5">
+            {/* Return-home link in the upper-left corner (Dustin, 2026-06-02).
+                Plain-text "Return Home" for now; this is the slot where Eric
+                will drop a logo image later. It shares the chrome row with the
+                controls on the right (justify-between), so it reads as the
+                top-left home affordance aligned with the top navigation. */}
+            <Link
+              to="/"
+              aria-label="Civil Rights History Project, return to the homepage"
+              className="inline-flex items-center min-h-11 px-1 -mx-1 text-sm sm:text-base font-bold text-stone-800 dark:text-zinc-100 hover:text-civil-red-body dark:hover:text-red-400 transition-colors"
+              style={{ fontFamily: 'Chivo Mono, monospace' }}
+            >
+              Return Home
+            </Link>
+
+            {/* Right-side chrome cluster: share, search, theme toggle, menu,
+                grouped so justify-between keeps the home link at the left edge
+                and these pinned to the right. */}
+            <div className="flex items-center gap-2 sm:gap-2.5">
             {/* Share this page: copies the current URL, the answer to "share
                 whatever page you are on." On the interview, Table of Contents,
                 and playlist pages the URL also carries the open section or
@@ -162,6 +184,7 @@ export default function Header() {
               >
                 Menu
               </button>
+            </div>
             </div>
           </div>
         </div>

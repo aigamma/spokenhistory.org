@@ -245,7 +245,6 @@ export default function PeopleCatalog() {
           <p className="text-stone-500 mt-6">No matches. Clear the search or change the filter.</p>
         )}
       </main>
-      <Footer />
     </div>
   );
 }
