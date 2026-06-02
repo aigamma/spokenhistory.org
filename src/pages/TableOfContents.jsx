@@ -229,6 +229,23 @@ export default function TableOfContents() {
           )}
         </header>
 
+        {/* "Interviews & People" section toggle (Dustin, 2026-06-02): this is
+            the interviews view; the other two open the People catalog, filtered
+            to the historic figures the interviewees discuss, or to everyone. The
+            three together make Interviews and People read as one section that
+            defaults to the interviews. */}
+        <nav className="flex flex-wrap items-center gap-2 mb-6 text-sm" aria-label="Interviews and People views">
+          <span aria-current="page" className="px-3 py-1.5 rounded-full border border-civil-red-strong bg-red-50 text-civil-red-body font-medium">
+            Interviews
+          </span>
+          <Link to="/people?type=external_figure" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors">
+            Historic Figures Mentioned
+          </Link>
+          <Link to="/people" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors">
+            All People
+          </Link>
+        </nav>
+
         {status === 'loading' && (
           <div className="py-16 flex justify-center" role="status">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-civil-red-strong" />

@@ -13,7 +13,7 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Search, FileText, Users, UserCircle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
@@ -24,8 +24,15 @@ export default function PeopleCatalog() {
   const [index, setIndex] = useState(null);
   const [tiersByEntry, setTiersByEntry] = useState(null);
   const [error, setError] = useState(null);
+  const [searchParams] = useSearchParams();
   const [search, setSearch] = useState('');
-  const [typeFilter, setTypeFilter] = useState('all');
+  // Seed the type filter from ?type= so the "Interviews & People" toggle can
+  // deep-link straight to the historic figures the interviewees discuss
+  // (Dustin, 2026-06-02). Only the known filter values are honored.
+  const [typeFilter, setTypeFilter] = useState(() => {
+    const t = searchParams.get('type');
+    return t === 'interviewee' || t === 'external_figure' ? t : 'all';
+  });
   const [sortBy, setSortBy] = useState('surname');
 
   useEffect(() => {
@@ -124,6 +131,19 @@ export default function PeopleCatalog() {
             A citation-bearing reference page per named individual on the site, {counts ? counts.interviewees : ''} oral-history interviewees plus {counts ? counts.external_figures : ''} historic figures the interviewees discuss. Each catalog page consolidates the bio, the AI&apos;s reading of the figure&apos;s embedding signature, the semantic neighbors, the concept-axis positions, and the cross-links into curated tours and the influence graph.
           </p>
         </header>
+
+        {/* "Interviews & People" section toggle (Dustin, 2026-06-02): the People
+            catalog is the people side of the merged section; this links back to
+            the interviews view. The All / Interviewees / Historic Figures filter
+            below switches within the people. */}
+        <nav className="flex flex-wrap items-center gap-2 mb-6 text-sm" aria-label="Interviews and People views">
+          <Link to="/table-of-contents" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors">
+            Interviews
+          </Link>
+          <span aria-current="page" className="px-3 py-1.5 rounded-full border border-civil-red-strong bg-red-50 text-civil-red-body font-medium">
+            People
+          </span>
+        </nav>
 
         <div className="flex flex-wrap items-center gap-3 mb-6">
           <div className="relative flex-1 min-w-[200px] max-w-md">
