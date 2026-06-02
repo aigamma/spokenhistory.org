@@ -90,6 +90,9 @@ export default function StaticPlaylist() {
   const playParam = (searchParams.get('play') || '').trim();
 
   const [index, setIndex] = useState(null);
+  // Person catalog index, loaded for the interviewee portrait thumbnails in the
+  // clip-list group headers (the playlist index itself carries no images).
+  const [peopleIndex, setPeopleIndex] = useState(null);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(0);
   const [userInitiated, setUserInitiated] = useState(false);
@@ -111,6 +114,17 @@ export default function StaticPlaylist() {
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error('playlist index not found'))))
       .then((j) => { if (!cancelled) setIndex(j); })
       .catch((e) => { if (!cancelled) setError(e.message || 'failed'); });
+    return () => { cancelled = true; };
+  }, []);
+
+  // People catalog (portraits), loaded defensively: a miss just leaves the
+  // group-header thumbnails on the icon fallback.
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/rag/people/index.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => { if (!cancelled && j) setPeopleIndex(j); })
+      .catch(() => {});
     return () => { cancelled = true; };
   }, []);
 
@@ -203,12 +217,17 @@ export default function StaticPlaylist() {
     return out;
   }, [clips]);
 
-  // Optional poster image for an interview's group header thumbnail. The
-  // current playlist_index.json videos map carries no image field (only
-  // subject/tier/has_video/duration_seconds), so this returns null today and
-  // the header falls back to a UserCircle icon; it is written to pick up a
-  // poster/poster_url/image automatically if a future index build adds one.
+  // Interviewee portrait for a group-header thumbnail. The playlist index has no
+  // images, so this reads the person catalog (by_entry -> photo_src, or via the
+  // entry's slug into by_slug), the same source the People catalog and interview
+  // pages use. Falls back to a poster on the playlist index if a future build
+  // adds one, then to null (the header then shows a UserCircle icon).
   const posterFor = (entryNumber) => {
+    const be = peopleIndex?.by_entry?.[entryNumber];
+    if (be?.photo_src) return be.photo_src;
+    const slug = be?.slug;
+    const bs = slug ? peopleIndex?.by_slug?.[slug] : null;
+    if (bs?.photo_src) return bs.photo_src;
     const v = index?.videos?.[entryNumber];
     return (v && (v.poster || v.poster_url || v.image)) || null;
   };
