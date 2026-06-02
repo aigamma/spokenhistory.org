@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { X, Moon, Sun } from 'lucide-react';
+import { Search, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
-import GlobalSearch from '../GlobalSearch';
+import { useSearch } from '../../context/SearchProvider';
 import ShareButton from '../ShareButton';
 
 /**
@@ -59,6 +59,7 @@ export default function Header() {
   const menuTriggerRef = useRef(null);
   const menuCloseRef = useRef(null);
   const { isDark, toggle } = useTheme();
+  const { openSearch } = useSearch();
 
   // Esc-to-close + focus restoration for the slide-out menu. WCAG
   // 2.4.3 + ARIA Authoring Practices for dialogs: focus moves into
@@ -94,11 +95,12 @@ export default function Header() {
   return (
     <>
       {/* Header. The top-of-page pill nav is gone (Dustin, 2026-05-30); the
-          chrome row carries the Light/Dark toggle and the Menu button, pinned
-          right, now preceded by a "share this page" control. Below it runs an
-          always-visible, low-prominence semantic search that spans the top of
-          every framed page (it funnels to a playlist, interviews, and clips).
-          Every navigation destination still lives in the Menu drawer. */}
+          chrome row carries a "share this page" control, the Light/Dark toggle,
+          a Search trigger, and the Menu button, pinned right. The Search
+          trigger opens the site-wide command palette (Cmd/Ctrl+K or "/"), which
+          federates the RAG passage search with the Firebase database and the
+          static catalogs. Every navigation destination still lives in the Menu
+          drawer. */}
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 sm:pt-4 pb-2.5">
           <div className="flex items-center justify-end gap-2 sm:gap-2.5">
@@ -132,6 +134,24 @@ export default function Header() {
                 {isDark ? 'Light' : 'Dark'}
               </button>
 
+              {/* Search trigger: opens the site-wide command palette. The
+                  palette is mounted at the App root and also responds to
+                  Cmd/Ctrl+K and "/". */}
+              <button
+                type="button"
+                onClick={openSearch}
+                aria-label="Search the archive"
+                aria-keyshortcuts="Control+K Meta+K"
+                className="inline-flex items-center gap-2 min-w-11 min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 border border-stone-300 dark:border-zinc-600 hover:bg-white dark:hover:bg-zinc-800"
+                style={{ fontFamily: 'Chivo Mono, monospace' }}
+              >
+                <Search className="w-4 h-4" aria-hidden="true" />
+                <span className="hidden sm:inline">Search</span>
+                <kbd className="hidden md:inline-block text-[11px] text-stone-400 border border-stone-300/70 dark:border-zinc-600 rounded px-1 py-0.5">
+                  ⌘K
+                </kbd>
+              </button>
+
               <button
                 ref={menuTriggerRef}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -144,13 +164,6 @@ export default function Header() {
                 Menu
               </button>
             </div>
-          </div>
-          {/* Always-visible semantic search across the top of the page,
-              deliberately quiet (a hairline and a muted magnifier). Tap to
-              type; the dropdown funnels to a playlist, interviews, and
-              time-anchored clips. */}
-          <div className="mt-2 sm:mt-2.5">
-            <GlobalSearch />
           </div>
         </div>
       </header>

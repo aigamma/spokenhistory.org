@@ -4,7 +4,7 @@ The Civil Rights History Project is a collaborative undertaking. This file recor
 
 If you contributed and aren't listed below, please open a pull request adding yourself in the appropriate section, or ask anyone already listed to add you.
 
-_Last updated: 2026-05-22. This roster is reconciled with the Project Team and Student Interns sections on the live About page (`src/pages/About.jsx`); the two surfaces are kept in sync._
+_Last updated: 2026-06-02. This roster is reconciled with the Project Team and Student Interns sections on the live About page (`src/pages/About.jsx`); the two surfaces are kept in sync._
 
 ---
 
@@ -15,6 +15,8 @@ _Last updated: 2026-05-22. This roster is reconciled with the Project Team and S
 - **Jack Sovelove** ([@jsovelove](https://github.com/jsovelove)), Co-Principal Investigator and Software Developer. Co-lead and primary architect. Built the foundation of every layer of the system: the 7-step Python/Flask metadata-generation pipeline (blocking, labeling, TOC building, chapterization, summarization, iterative tuning, engagement scoring), the React frontend (interview index, playlist builder, topic glossary, scroll-driven civil rights timeline), the Firebase Firestore + Cloud Functions backend, the vector-search and embedding infrastructure, the feedback-reporting flow (Canny integration, captcha, popup), and the standardized rubric for summary quality evaluation. Authored or co-authored the great majority of documentation in the repository.
 
 - **Sofia Choi**, Designer & Visual Curation. Established the visual language that the rest of the team builds within: the cream + civil-rights-red palette (#EBEAE9 background, #F2483C accent), the Inter / Source Serif Pro / Source Serif 4 / Chivo Mono / Lora typographic stack, and the visual treatment of the scroll-driven landing-page timeline. (Distinct from Sophia Zhuk, who is in the Student Interns section below.)
+
+- **Eric Allione** ([@aigamma](https://github.com/aigamma)), AI Engineer. Built the federated archive search (the command-palette search that unifies the Pinecone + Voyage semantic layer with the Firebase database across interviews, people, topics, the timeline, essays, and time-anchored passages), and led the May 2026 Smithsonian-grade quality overhaul and the WCAG 2.2 AA accessibility audit. Full contribution log under "May 2026 Smithsonian-Grade Overhaul" below.
 
 ## Student Interns
 

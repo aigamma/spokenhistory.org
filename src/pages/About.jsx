@@ -163,7 +163,13 @@ export default function About() {
               </p>
               <h3 className="text-stone-900 text-4xl font-bold font-['Source_Serif_Pro']">Sofia Choi</h3>
             </div>
-        
+
+            {/* Team Member 4 */}
+            <div>
+              <p className="text-stone-900 text-base font-light font-['Chivo_Mono'] mb-2">AI Engineer</p>
+              <h3 className="text-stone-900 text-4xl font-bold font-['Source_Serif_Pro']">Eric Allione</h3>
+            </div>
+
           </div>
         </div>
 

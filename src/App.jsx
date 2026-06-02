@@ -24,11 +24,13 @@ import Curriculum from './pages/Curriculum'
 import Essays from './pages/Essays'
 import EssayPage from './pages/EssayPage'
 import NotFound from './pages/NotFound'
+import { SearchProvider } from './context/SearchProvider'
+import CommandPalette from './components/CommandPalette'
 
 
 export default function App() {
   return (
-    <>
+    <SearchProvider>
       <Routes>
       {/* Public routes */}
       <Route path="/login" element={<Login />} />
@@ -50,13 +52,15 @@ export default function App() {
         </ProtectedRoute>
       } />
 
-      {/* /playlist-builder now renders the static, /rag/-backed
-          StaticPlaylist (Dustin, 2026-05-30). The old PlaylistBuilder read
-          from Firestore, which holds no content, so every "explore X"
-          playlist link on Home and elsewhere was dead. StaticPlaylist
-          filters /rag/playlist_index.json by ?keywords / ?topic / ?entry
-          and plays real, time-anchored clips. PlaylistBuilder is retained
-          in the tree for reference but no longer routed. */}
+      {/* /playlist-builder renders the static, /rag/-backed StaticPlaylist
+          (Dustin, 2026-05-30). The site's per-page rendering was moved onto the
+          committed static JSON under /rag/, so StaticPlaylist filters
+          /rag/playlist_index.json by ?keywords / ?topic / ?entry and plays
+          real, time-anchored clips. (Firestore itself is populated and is now
+          read live by the federated command-palette search; it is simply not
+          the render path for these clips.) The old Firestore-backed
+          PlaylistBuilder is retained in the tree for reference but no longer
+          routed. */}
       <Route path="/playlist-builder" element={
         <ProtectedRoute>
           <Layout>
@@ -246,6 +250,7 @@ export default function App() {
           first place. */}
       <Route path="*" element={<NotFound />} />
     </Routes>
-    </>
+      <CommandPalette />
+    </SearchProvider>
   )
 }
