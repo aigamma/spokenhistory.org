@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Play, Clock, FileText, ChevronLeft, ChevronRight, List } from 'lucide-react';
+import { Play, Clock, FileText, ChevronLeft, ChevronRight, List, UserCircle } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
@@ -93,6 +93,9 @@ export default function StaticPlaylist() {
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(0);
   const [userInitiated, setUserInitiated] = useState(false);
+  // Clip-relative playback fraction (0..1) of the ACTIVE clip, fed by
+  // LocVideoEmbed's onProgress, drives the thin bar pinned to the active card.
+  const [progress, setProgress] = useState(0);
   const listRef = useRef(null);
 
   const heading = topic
@@ -112,7 +115,10 @@ export default function StaticPlaylist() {
   }, []);
 
   // Reset selection + autoplay gate whenever the query changes.
-  useEffect(() => { setSelected(0); setUserInitiated(false); }, [keywords, topic, entryParam, entriesParam]);
+  useEffect(() => { setSelected(0); setUserInitiated(false); setProgress(0); }, [keywords, topic, entryParam, entriesParam]);
+  // Clear the progress bar whenever the active clip changes, so a new card
+  // starts empty rather than inheriting the previous clip's fill.
+  useEffect(() => { setProgress(0); }, [selected]);
 
   const clips = useMemo(() => {
     if (!index?.clips) return [];
@@ -174,6 +180,38 @@ export default function StaticPlaylist() {
   const relatedTopics = stats.subtopics
     .filter((t) => !topic || t.toLowerCase() !== topic.toLowerCase())
     .slice(0, 6);
+
+  // Featured Clips (Dustin, 2026-06-02): the first clip of each of the first 3
+  // distinct interviews in curated order, so the panel opens with 3 diverse,
+  // representative voices rather than three clips from the same interview.
+  // These are indices INTO the single `clips` array (where entry_number first
+  // changes), so playing one keeps the "Clip X of N" counter correct; we never
+  // build a second clips array. Only meaningful when the list is long enough to
+  // warrant a split (clips.length > 6); below that the list is short enough to
+  // read whole and the Featured section is hidden.
+  const featuredIndices = useMemo(() => {
+    if (clips.length <= 6) return [];
+    const out = [];
+    let prevEntry = null;
+    for (let i = 0; i < clips.length && out.length < 3; i++) {
+      const e = clips[i].entry_number;
+      if (e !== prevEntry) {
+        out.push(i);
+        prevEntry = e;
+      }
+    }
+    return out;
+  }, [clips]);
+
+  // Optional poster image for an interview's group header thumbnail. The
+  // current playlist_index.json videos map carries no image field (only
+  // subject/tier/has_video/duration_seconds), so this returns null today and
+  // the header falls back to a UserCircle icon; it is written to pick up a
+  // poster/poster_url/image automatically if a future index build adds one.
+  const posterFor = (entryNumber) => {
+    const v = index?.videos?.[entryNumber];
+    return (v && (v.poster || v.poster_url || v.image)) || null;
+  };
 
   // Restore the shared clip (?play=<entry>_<startSeconds>) once the filtered
   // clips exist, so a shared link lands on that clip instead of the first.
@@ -291,6 +329,7 @@ export default function StaticPlaylist() {
                 endSeconds={current.end_seconds || undefined}
                 autoPlay={userInitiated}
                 onClipEnd={() => { if (selected < clips.length - 1) playClip(selected + 1); }}
+                onProgress={setProgress}
               />
 
               <div className="mt-4">
@@ -392,48 +431,153 @@ export default function StaticPlaylist() {
                 <List className="w-4 h-4" aria-hidden="true" />
                 In This Playlist
               </h2>
+
+              {/* Featured Clips: 3 diverse representative voices (first clip of
+                  the first 3 distinct interviews). Shown only on longer lists;
+                  each button plays its index into the single `clips` array so
+                  the "Clip X of N" counter stays correct. */}
+              {featuredIndices.length > 0 && (
+                <div className="mb-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-wide font-mono text-stone-500 mb-2">
+                    Featured Clips
+                  </h3>
+                  <ol className="space-y-2 list-none p-0">
+                    {featuredIndices.map((i) => {
+                      const c = clips[i];
+                      const dur = fmtDuration(c.start_seconds, c.end_seconds);
+                      const isActive = i === selected;
+                      const tier = index.videos?.[c.entry_number]?.tier;
+                      return (
+                        <li key={`feat-${c.entry_number}-${c.chapter_number}-${i}`} className="relative">
+                          <button
+                            type="button"
+                            onClick={() => playClip(i)}
+                            aria-current={isActive ? 'true' : undefined}
+                            className={
+                              'w-full text-left rounded-md border p-3 transition-colors ' +
+                              (isActive
+                                ? 'border-civil-red-strong bg-red-50'
+                                : 'border-stone-200 bg-white hover:bg-stone-50')
+                            }
+                          >
+                            <div className="flex items-start gap-2">
+                              <span className="mt-0.5 shrink-0">
+                                <Play className={'w-3.5 h-3.5 ' + (isActive ? 'text-civil-red-strong' : 'text-stone-400')} aria-hidden="true" />
+                              </span>
+                              <div className="min-w-0 flex-1">
+                                <div className="text-sm font-medium text-stone-900 leading-snug">{c.title}</div>
+                                <div className="text-xs text-stone-500 mt-0.5 flex items-center gap-2 flex-wrap">
+                                  <span className="truncate">{c.subject}</span>
+                                  {dur && (
+                                    <span className="inline-flex items-center gap-0.5 tabular-nums">
+                                      <Clock className="w-3 h-3" aria-hidden="true" /> {dur}
+                                    </span>
+                                  )}
+                                  {tier && TIER_COLORS[tier] && (
+                                    <span
+                                      className="w-2 h-2 rounded-full border border-stone-300 shrink-0"
+                                      style={{ backgroundColor: TIER_COLORS[tier] }}
+                                      title={`Audit tier: ${tier}`}
+                                    />
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </button>
+                          {isActive && (
+                            <span
+                              aria-hidden="true"
+                              className="pointer-events-none absolute bottom-0 left-0 h-0.5 bg-civil-red-strong rounded-b-md transition-[width] duration-150 ease-linear"
+                              style={{ width: `${Math.round(progress * 100)}%` }}
+                            />
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
+              )}
+
+              <h3 className="text-xs font-semibold uppercase tracking-wide font-mono text-stone-500 mb-2">
+                All Related Clips
+              </h3>
               <ol ref={listRef} className="space-y-2 list-none p-0 max-h-[32rem] overflow-y-auto pr-1">
                 {clips.map((c, i) => {
                   const dur = fmtDuration(c.start_seconds, c.end_seconds);
                   const isActive = i === selected;
                   const tier = index.videos?.[c.entry_number]?.tier;
+                  // First appearance of an interviewee's run: render a labeled
+                  // group header with a sparse thumbnail (poster if the index
+                  // has one, otherwise a UserCircle icon). Header rows only,
+                  // never per clip, so the run reads as one labeled group.
+                  const isGroupStart = i === 0 || clips[i - 1].entry_number !== c.entry_number;
+                  const poster = isGroupStart ? posterFor(c.entry_number) : null;
                   return (
-                    <li key={`${c.entry_number}-${c.chapter_number}-${i}`} className="relative">
-                      <button
-                        type="button"
-                        onClick={() => playClip(i)}
-                        aria-current={isActive ? 'true' : undefined}
-                        className={
-                          'w-full text-left rounded-md border p-3 transition-colors ' +
-                          (isActive
-                            ? 'border-civil-red-strong bg-red-50'
-                            : 'border-stone-200 bg-white hover:bg-stone-50')
-                        }
-                      >
-                        <div className="flex items-start gap-2">
-                          <span className="mt-0.5 shrink-0">
-                            <Play className={'w-3.5 h-3.5 ' + (isActive ? 'text-civil-red-strong' : 'text-stone-400')} aria-hidden="true" />
-                          </span>
-                          <div className="min-w-0 flex-1">
-                            <div className="text-sm font-medium text-stone-900 leading-snug">{c.title}</div>
-                            <div className="text-xs text-stone-500 mt-0.5 flex items-center gap-2 flex-wrap">
-                              <span className="truncate">{c.subject}</span>
-                              {dur && (
-                                <span className="inline-flex items-center gap-0.5 tabular-nums">
-                                  <Clock className="w-3 h-3" aria-hidden="true" /> {dur}
-                                </span>
-                              )}
-                              {tier && TIER_COLORS[tier] && (
-                                <span
-                                  className="w-2 h-2 rounded-full border border-stone-300 shrink-0"
-                                  style={{ backgroundColor: TIER_COLORS[tier] }}
-                                  title={`Audit tier: ${tier}`}
-                                />
-                              )}
+                    <li key={`${c.entry_number}-${c.chapter_number}-${i}`} className="relative list-none">
+                      {isGroupStart && (
+                        <div className="flex items-center gap-2 px-1 pt-2 pb-1">
+                          {poster ? (
+                            <img
+                              src={poster}
+                              alt=""
+                              aria-hidden="true"
+                              className="w-8 h-8 rounded object-cover border border-stone-300 shrink-0"
+                            />
+                          ) : (
+                            <span className="w-8 h-8 rounded border border-stone-300 bg-stone-100 flex items-center justify-center shrink-0">
+                              <UserCircle className="w-5 h-5 text-stone-400" aria-hidden="true" />
+                            </span>
+                          )}
+                          <span className="text-xs font-semibold text-stone-700 truncate">{c.subject}</span>
+                        </div>
+                      )}
+                      <div className="relative">
+                        <button
+                          type="button"
+                          onClick={() => playClip(i)}
+                          aria-current={isActive ? 'true' : undefined}
+                          className={
+                            'w-full text-left rounded-md border p-3 transition-colors ' +
+                            (isActive
+                              ? 'border-civil-red-strong bg-red-50'
+                              : 'border-stone-200 bg-white hover:bg-stone-50')
+                          }
+                        >
+                          <div className="flex items-start gap-2">
+                            <span className="mt-0.5 shrink-0">
+                              <Play className={'w-3.5 h-3.5 ' + (isActive ? 'text-civil-red-strong' : 'text-stone-400')} aria-hidden="true" />
+                            </span>
+                            <div className="min-w-0 flex-1">
+                              <div className="text-sm font-medium text-stone-900 leading-snug">{c.title}</div>
+                              <div className="text-xs text-stone-500 mt-0.5 flex items-center gap-2 flex-wrap">
+                                <span className="truncate">{c.subject}</span>
+                                {dur && (
+                                  <span className="inline-flex items-center gap-0.5 tabular-nums">
+                                    <Clock className="w-3 h-3" aria-hidden="true" /> {dur}
+                                  </span>
+                                )}
+                                {tier && TIER_COLORS[tier] && (
+                                  <span
+                                    className="w-2 h-2 rounded-full border border-stone-300 shrink-0"
+                                    style={{ backgroundColor: TIER_COLORS[tier] }}
+                                    title={`Audit tier: ${tier}`}
+                                  />
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </button>
+                        </button>
+                        {/* Thin (2px) clip-progress bar pinned to the bottom of
+                            the ACTIVE card only, fed by LocVideoEmbed.onProgress
+                            (timeupdate). No extra listener, so no added latency. */}
+                        {isActive && (
+                          <span
+                            aria-hidden="true"
+                            className="pointer-events-none absolute bottom-0 left-0 h-0.5 bg-civil-red-strong rounded-b-md transition-[width] duration-150 ease-linear"
+                            style={{ width: `${Math.round(progress * 100)}%` }}
+                          />
+                        )}
+                      </div>
                     </li>
                   );
                 })}

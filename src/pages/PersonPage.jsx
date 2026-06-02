@@ -25,7 +25,7 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, Navigate } from 'react-router-dom';
 import { ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quote, Clock } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_FILL, SNIPPET_BORDER, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_FILL, SNIPPET_PROBLEM_BORDER, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
@@ -491,6 +491,19 @@ export default function PersonPage() {
     );
   }
 
+  // Page merge (2026-06-02): an interviewee's catalog content now lives ON the
+  // interview page (/interview/:entryNumber), which is the single page for each
+  // interviewee. So once the JSON has loaded, an interviewee WITH a CRHP entry
+  // number hard-redirects into that interview page; InterviewDetail layers this
+  // page's biography, AI's reading, verbatim snippets, and sources onto itself,
+  // so nothing is lost by the redirect. External figures (no entry_number, never
+  // interviewed) keep their own page and render exactly as before. The redirect
+  // is below the loading and not-found guards above, so it never fires while the
+  // fetch is in flight and never fires for an external figure.
+  if (person.person_type === 'interviewee' && person.entry_number != null) {
+    return <Navigate to={`/interview/${person.entry_number}`} replace />;
+  }
+
   const tierBadge = crossLinks?.uncertaintyTier
     ? TIER_BADGE[crossLinks.uncertaintyTier]
     : null;
@@ -837,7 +850,7 @@ export default function PersonPage() {
               <article>
                 <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
-                  Related People
+                  Related Topics
                 </h2>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-none p-0 mb-3">
                   {crossLinks.related.map((r) => {

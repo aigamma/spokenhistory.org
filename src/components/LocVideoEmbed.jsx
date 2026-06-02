@@ -75,6 +75,12 @@ function loadLocVideo(entryNumber) {
  * @param {string}   [props.className]    Extra classes on the wrapper.
  * @param {boolean}  [props.showCaption]  Render the LoC caption below the
  *                                        player (default true).
+ * @param {Function} [props.onProgress]   Called on timeupdate with the
+ *                                        clip-relative fraction (0..1):
+ *                                        (currentTime - startSeconds) /
+ *                                        (endSeconds - startSeconds), clamped.
+ *                                        Lets a parent draw a clip progress bar
+ *                                        without owning the element.
  * @param {React.Ref} ref                 Imperative handle exposing
  *                                        seek(seconds, { play, stopAt }).
  */
@@ -88,6 +94,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
     className = '',
     showCaption = true,
     onClipEnd = null,
+    onProgress = null,
   },
   ref,
 ) {
@@ -107,6 +114,13 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
   useEffect(() => {
     onClipEndRef.current = onClipEnd;
   }, [onClipEnd]);
+  // Latest onProgress kept in a ref for the same reason: the timeupdate
+  // listener subscribes once per ready state and reads the current callback
+  // here, so a parent re-render does not force a re-subscribe.
+  const onProgressRef = useRef(onProgress);
+  useEffect(() => {
+    onProgressRef.current = onProgress;
+  }, [onProgress]);
 
   const hasClipBound =
     endSeconds != null && endSeconds > 0 && endSeconds > startSeconds;
@@ -205,6 +219,18 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
       if (typeof onClipEndRef.current === 'function') onClipEndRef.current();
     };
     const onTimeUpdate = () => {
+      // Clip-relative progress (0..1) for an optional parent progress bar.
+      // timeupdate already fires during normal playback, so this adds no
+      // listener and no latency. Guard against a missing or zero-length clip.
+      if (typeof onProgressRef.current === 'function') {
+        const span = endSeconds - startSeconds;
+        if (hasClipBound && span > 0) {
+          let frac = (el.currentTime - startSeconds) / span;
+          if (frac < 0) frac = 0;
+          else if (frac > 1) frac = 1;
+          onProgressRef.current(frac);
+        }
+      }
       const stopAt = stopAtRef.current;
       if (stopAt != null && el.currentTime >= stopAt) {
         el.pause();
@@ -221,7 +247,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
       el.removeEventListener('timeupdate', onTimeUpdate);
       el.removeEventListener('ended', onEnded);
     };
-  }, [status, locVideo]);
+  }, [status, locVideo, hasClipBound, startSeconds, endSeconds]);
 
   const replayClip = () => {
     const el = videoRef.current;

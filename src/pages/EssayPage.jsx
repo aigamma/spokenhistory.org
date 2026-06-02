@@ -110,11 +110,16 @@ function CitedFigure({ image, eager = false }) {
 // a row that, on click, mounts a bounded LocVideoEmbed that range-jumps to the
 // chapter start and pauses at its end, so only the clip's bytes load even from
 // a multi-hour interview.
-function VoiceCard({ chapter, accent }) {
+function VoiceCard({ chapter, accent, hasPersonPage }) {
   const [open, setOpen] = useState(false);
   const start = Number(chapter.start) || 0;
   const end = chapter.end != null ? Number(chapter.end) : null;
   const firstName = (chapter.subject || '').split(' ')[0];
+  // Only link "About {firstName}" when the slug resolves to a real person page.
+  // hasPersonPage(slug) returns true when the people index is loaded and the
+  // slug is known; when the index is unavailable it returns true so we fall
+  // back to the prior behavior rather than dropping a possibly-valid link.
+  const showAbout = chapter.slug && (typeof hasPersonPage === 'function' ? hasPersonPage(chapter.slug) : true);
   return (
     <li
       className="rounded-lg border border-stone-300 bg-white overflow-hidden"
@@ -151,7 +156,7 @@ function VoiceCard({ chapter, accent }) {
               <><Play className="w-4 h-4" aria-hidden="true" /> Play this chapter</>
             )}
           </button>
-          {chapter.slug && (
+          {showAbout && (
             <Link to={`/person/${chapter.slug}`} className="text-sm text-stone-500 hover:text-civil-red-body hover:underline">
               About {firstName}
             </Link>
@@ -183,6 +188,11 @@ export default function EssayPage() {
   const [topics, setTopics] = useState([]);
   const [conn, setConn] = useState(null);
   const [status, setStatus] = useState('loading');
+  // Valid person-page slugs, loaded defensively so a VoiceCard never links to a
+  // /person page that does not exist (the source of the reported 404). null
+  // means "index unavailable", in which case we fall back to the prior behavior
+  // and render the About link as before, so this hardening never makes it worse.
+  const [personSlugs, setPersonSlugs] = useState(null);
 
   useDocumentTitle(essay?.title || 'Essay');
 
@@ -210,6 +220,29 @@ export default function EssayPage() {
       cancelled = true;
     };
   }, [slug]);
+
+  // Load the people index once and keep the set of valid slugs. The index has a
+  // by_slug map keyed by slug; we accept either that map's keys or a plain
+  // people array as the source of slugs, and we leave personSlugs null on any
+  // failure so VoiceCard falls back to its prior behavior.
+  useEffect(() => {
+    let cancelled = false;
+    fetchJsonOrNull('/rag/people/index.json').then((idx) => {
+      if (cancelled || !idx) return;
+      let slugs = null;
+      if (idx.by_slug && typeof idx.by_slug === 'object') {
+        slugs = new Set(Object.keys(idx.by_slug));
+      } else if (Array.isArray(idx.people)) {
+        slugs = new Set(idx.people.map((p) => p && p.slug).filter(Boolean));
+      } else if (Array.isArray(idx)) {
+        slugs = new Set(idx.map((p) => p && p.slug).filter(Boolean));
+      }
+      if (slugs && slugs.size > 0) setPersonSlugs(slugs);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const topicMap = useMemo(() => new Map(topics.map((t) => [t.id, t])), [topics]);
 
@@ -252,6 +285,14 @@ export default function EssayPage() {
 
   const primaryTopic = conn?.primary_topic || essay?.themes?.[0] || null;
   const accent = (primaryTopic && TOPIC_COLOR[primaryTopic]) || DEFAULT_ACCENT;
+
+  // Predicate the VoiceCards use to decide whether to render an "About" link.
+  // When the people index has not loaded (personSlugs is null), return true so
+  // the prior behavior is preserved; once loaded, gate on the known-slug set.
+  const hasPersonPage = useMemo(() => {
+    if (!personSlugs) return () => true;
+    return (s) => personSlugs.has(s);
+  }, [personSlugs]);
 
   if (status === 'loading') {
     return (
@@ -413,7 +454,7 @@ export default function EssayPage() {
             </p>
             <ul className="mt-4 space-y-3 list-none p-0">
               {chapters.map((c, i) => (
-                <VoiceCard key={i} chapter={c} accent={accent} />
+                <VoiceCard key={i} chapter={c} accent={accent} hasPersonPage={hasPersonPage} />
               ))}
             </ul>
           </section>

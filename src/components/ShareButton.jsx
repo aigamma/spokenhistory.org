@@ -4,8 +4,10 @@
  * Builds an absolute URL from an in-app path (or computes one on click via
  * getUrl, for a moving target like the current playback position) and hands it
  * to shareOrCopy: the device share sheet on phones, the clipboard on desktop.
- * Flips to a "Link copied" state for ~1.8s after a copy so the action is
+ * Flips to a "Link copied" state for ~2.5s after a copy so the action is
  * visibly confirmed, and announces the copy to assistive tech via aria-live.
+ * If the URL resolves empty, or the copy fails, it shows a failed state that
+ * tells the reader to copy the link manually.
  *
  * Used by the interview page (chapter/part marks, page share, copy-this-moment),
  * the Table of Contents and Static Playlist (per-clip share), HearInContext
@@ -48,13 +50,20 @@ export default function ShareButton({
       e.stopPropagation();
       const raw = getUrl ? getUrl() : url;
       const abs = buildShareUrl(raw);
+      // Nothing to share (empty/falsy URL): show the failed state instead of
+      // copying an empty string or a bare origin.
+      if (!abs) {
+        setState('failed');
+        setTimeout(() => setState('idle'), 2500);
+        return;
+      }
       const result = await shareOrCopy({ url: abs, title, text });
       if (result === 'copied') {
         setState('copied');
-        setTimeout(() => setState('idle'), 1800);
+        setTimeout(() => setState('idle'), 2500);
       } else if (result === 'failed') {
         setState('failed');
-        setTimeout(() => setState('idle'), 2200);
+        setTimeout(() => setState('idle'), 2500);
       }
       // 'shared' (the native sheet handled it) needs no inline feedback.
     },
@@ -63,9 +72,14 @@ export default function ShareButton({
 
   const copied = state === 'copied';
   const failed = state === 'failed';
+  const failedLabel = 'Copy failed, try again';
   const Icon = copied ? Check : failed ? AlertCircle : Share2;
-  const currentLabel = copied ? copiedLabel : failed ? 'Copy failed' : label;
-  const aria = copied ? copiedLabel : `${label}${title ? `: ${title}` : ''}`;
+  const currentLabel = copied ? copiedLabel : failed ? failedLabel : label;
+  const aria = copied
+    ? copiedLabel
+    : failed
+    ? `${failedLabel}. Copy the link manually.`
+    : `${label}${title ? `: ${title}` : ''}`;
 
   const base =
     'inline-flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded';
@@ -81,16 +95,16 @@ export default function ShareButton({
       type="button"
       onClick={onClick}
       className={`${base} ${byVariant[variant] || byVariant.button} ${
-        copied ? 'text-emerald-600 dark:text-emerald-400' : ''
-      } ${className}`}
+        copied ? 'font-semibold text-emerald-600 dark:text-emerald-400' : ''
+      } ${failed ? 'text-amber-700 dark:text-amber-400' : ''} ${className}`}
       aria-label={aria}
-      title={currentLabel}
+      title={failed ? `${failedLabel}. Copy the link manually.` : currentLabel}
     >
       <Icon className={iconClassName} aria-hidden="true" />
       {variant !== 'icon' && <span>{currentLabel}</span>}
-      {/* Announce the copy without relying on the visual icon swap. */}
+      {/* Announce the outcome without relying on the visual icon swap. */}
       <span className="sr-only" role="status" aria-live="polite">
-        {copied ? copiedLabel : failed ? 'Copy failed' : ''}
+        {copied ? copiedLabel : failed ? `${failedLabel}. Copy the link manually.` : ''}
       </span>
     </button>
   );

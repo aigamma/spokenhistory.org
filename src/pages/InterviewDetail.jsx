@@ -23,12 +23,12 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { ChevronLeft, Clock, FileText, Play, Hash, Check } from 'lucide-react';
+import { ChevronLeft, Clock, FileText, Play, Hash, Check, Quote, MessageSquareQuote } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
-import { tsToSeconds } from '../components/HearInContext';
+import HearInContext, { tsToSeconds } from '../components/HearInContext';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import { buildShareUrl, shareOrCopy } from '../utils/share';
 import { TIER_BADGE, fidelityNoteFor } from '../components/rag/tiers';
@@ -76,6 +76,46 @@ function groupChaptersByPart(chapters) {
     }
   }
   return groups;
+}
+
+/**
+ * Render a catalog prose field (biography, AI's reading) that carries inline
+ * `[src: N]` citation markers, turning each marker into a small superscript link
+ * to the matching entry in the Sources list (#source-N) below. A marker whose
+ * index has no matching source renders as faint plain text, so a stray ref never
+ * breaks the paragraph. Mirrors PersonPage's renderBioWithCitationRefs, minus the
+ * cross-person name hyperlinking (which is a PersonPage concern). Returns an
+ * array of strings and JSX nodes suitable for inclusion in a paragraph.
+ */
+function renderProseWithCitationRefs(text, sources) {
+  if (!text) return null;
+  const parts = [];
+  let last = 0;
+  const re = /\[src:\s*(\d+)\]/g;
+  let m;
+  while ((m = re.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    const num = Number(m[1]);
+    const sourceExists = sources && sources[num - 1];
+    if (sourceExists) {
+      parts.push(
+        <sup key={`cite-${m.index}`} className="text-xs">
+          <a
+            href={`#source-${num}`}
+            className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline"
+            aria-label={`Citation ${num}`}
+          >
+            [{num}]
+          </a>
+        </sup>
+      );
+    } else {
+      parts.push(<span key={`cite-${m.index}`} className="text-xs text-stone-400">[{num}]</span>);
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
 }
 
 /**
@@ -195,6 +235,12 @@ export default function InterviewDetail() {
   const [pipelineMissing, setPipelineMissing] = useState(false);
   const [error, setError] = useState(null);
   const [peopleIndex, setPeopleIndex] = useState(null);
+  // The interviewee's catalog content (biography, AI's reading, verbatim
+  // snippets, sources), fetched from /rag/people/<slug>.json and layered onto
+  // this page. The /person/:slug page hard-redirects interviewees here, so this
+  // is where that content now lives. Null until resolved; a failed fetch leaves
+  // it null and the page renders unchanged (the catalog sections just omit).
+  const [personPage, setPersonPage] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -296,6 +342,27 @@ export default function InterviewDetail() {
     if (target.flag) setTimeout(() => setHighlight(null), 4000);
   }, [entry, pipeline, pipelineMissing, startSeconds, endSeconds]);
 
+  // Layer the interviewee's catalog page onto this interview. Resolve the slug
+  // via the people index (by_entry is keyed by entry number, and respects the
+  // joint-page preference), then fetch /rag/people/<slug>.json defensively. A
+  // missing index entry or a failed fetch simply leaves personPage null, so the
+  // page renders exactly as it did before. The /person/:slug route redirects
+  // interviewees back here, so this fetch is how that catalog content (bio,
+  // AI's reading, verbatim snippets, sources) reaches the reader.
+  useEffect(() => {
+    const slug = peopleIndex?.by_entry?.[n]?.slug;
+    if (!slug) {
+      setPersonPage(null);
+      return undefined;
+    }
+    let cancelled = false;
+    fetch(`/rag/people/${slug}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null)
+      .then((data) => { if (!cancelled) setPersonPage(data || null); });
+    return () => { cancelled = true; };
+  }, [peopleIndex, n]);
+
   useDocumentTitle(entry ? `${entry.entry_subject}, Interview` : 'Interview');
 
   if (error) {
@@ -365,20 +432,12 @@ export default function InterviewDetail() {
                 url={`/interview/${n}`}
                 title={interviewTitle}
               />
-              {/* Jump to the integrated catalog page (the /person/:slug
-                  page that consolidates the interviewee's AI's-reading,
-                  semantic neighbors, concept-axis positions, influence
-                  edges, and tour appearances; the catalog index resolves
-                  joint-interview entries to their canonical joint page). */}
-              {peopleIndex?.by_entry?.[entry.entry_number]?.slug && (
-                <Link
-                  to={`/person/${peopleIndex.by_entry[entry.entry_number].slug}`}
-                  className="inline-flex items-center gap-1 text-sm text-civil-red-body hover:text-civil-red-strong focus:outline-none focus-visible:underline"
-                >
-                  <FileText className="w-3.5 h-3.5" aria-hidden="true" />
-                  Full catalog page
-                </Link>
-              )}
+              {/* The former "Full catalog page" link to /person/:slug was
+                  removed (2026-06-02): the catalog page now redirects
+                  interviewees back to this interview page, and its content
+                  (biography, AI's reading, verbatim snippets, sources) is
+                  layered onto this page below, so the link would only loop
+                  back here. */}
             </div>
           </div>
           <h1
@@ -403,6 +462,15 @@ export default function InterviewDetail() {
             </p>
           )}
           <p className="text-xs text-stone-500 mt-3">{fidelity}</p>
+          {/* Orienting note (2026-06-02): one plain-language line under the
+              title that tells the reader how the pieces of this page relate.
+              Factual, no evaluative adjectives. */}
+          <p
+            className="text-sm text-stone-600 mt-4 max-w-3xl italic"
+            style={{ fontFamily: 'Source Serif 4, serif' }}
+          >
+            This page is the home for this interview: the recording plays above and is broken into chapters below, followed by the interviewee&apos;s biography, archival quotes, and sources. Related interviews and topics are listed at the end, and any essays that draw on this testimony link back here.
+          </p>
         </header>
 
         {/* Video hero. The Library of Congress serves the full interview
@@ -609,10 +677,138 @@ export default function InterviewDetail() {
           </section>
         )}
 
+        {/* Interviewee catalog content (2026-06-02): the biography, the AI's
+            reading, the verbatim oral-history snippets, and the sources, layered
+            on from /rag/people/<slug>.json. The /person/:slug page redirects
+            interviewees here, so this is where that content now lives. Each
+            section renders only when its field is present; a missing catalog
+            page leaves personPage null and none of this renders. */}
+        {personPage && (
+          <>
+            {personPage.biographical_paragraph && (
+              <section className="mb-10">
+                <h2 className="text-stone-900 text-2xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  About {entry.entry_subject}
+                </h2>
+                <p
+                  className="text-stone-800 text-base leading-relaxed"
+                  style={{ fontFamily: 'Source Serif 4, serif' }}
+                >
+                  {renderProseWithCitationRefs(personPage.biographical_paragraph, personPage.sources)}
+                </p>
+              </section>
+            )}
+
+            {personPage.ai_reading && (
+              <section className="mb-10">
+                <h2 className="text-stone-900 text-xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  What the embedding finds
+                </h2>
+                <div className="border-l-4 border-civil-red-strong pl-5 py-1">
+                  <p
+                    className="text-stone-800 text-base leading-relaxed"
+                    style={{ fontFamily: 'Source Serif 4, serif' }}
+                  >
+                    {renderProseWithCitationRefs(personPage.ai_reading, personPage.sources)}
+                  </p>
+                </div>
+              </section>
+            )}
+
+            {Array.isArray(personPage.interview_snippets) && personPage.interview_snippets.length > 0 && (
+              <section className="mb-10">
+                <h2 className="text-stone-900 text-2xl font-medium mb-3 flex items-center gap-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  <MessageSquareQuote className="w-6 h-6 text-civil-red-strong" aria-hidden="true" />
+                  Voices from the Archive
+                </h2>
+                <p className="text-sm text-stone-600 mb-4 max-w-2xl">
+                  Quoted verbatim from the Civil Rights History Project oral histories, each gated against the corpus transcript it came from. Play any clip to hear it in the recording above.
+                </p>
+                <div className="space-y-6">
+                  {personPage.interview_snippets.map((sn, i) => {
+                    if (!sn || !sn.quote) return null;
+                    const startSec = tsToSeconds(sn.timestamp);
+                    const endSec = sn.end_timestamp ? tsToSeconds(sn.end_timestamp) : null;
+                    const isAbout = sn.relation === 'about';
+                    return (
+                      <figure
+                        key={i}
+                        className="rounded-xl border border-stone-200 bg-white p-5 sm:p-6 border-l-[6px] border-l-civil-red-strong"
+                      >
+                        {sn.lead_in && (
+                          <p className="text-sm text-stone-600 mb-3 leading-snug">{sn.lead_in}</p>
+                        )}
+                        <div className="flex items-start gap-3">
+                          <Quote className="w-7 h-7 shrink-0 mt-1 text-civil-red-strong" aria-hidden="true" />
+                          <blockquote
+                            className="text-stone-900 text-lg sm:text-xl leading-relaxed"
+                            style={{ fontFamily: 'Source Serif 4, serif' }}
+                          >
+                            &ldquo;{sn.quote}&rdquo;
+                          </blockquote>
+                        </div>
+                        <figcaption className="mt-4 sm:pl-10 text-sm">
+                          <div className="text-stone-900">
+                            <span className="font-semibold">{sn.speaker}</span>
+                            {isAbout && (
+                              <span className="font-normal text-stone-500"> on {entry.entry_subject}</span>
+                            )}
+                          </div>
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1.5 text-stone-600">
+                            {sn.timestamp && (
+                              <span className="inline-flex items-center gap-1 tabular-nums">
+                                <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+                                {sn.timestamp}
+                              </span>
+                            )}
+                            {sn.source_entry != null && (
+                              <HearInContext
+                                entryNumber={sn.source_entry}
+                                startSeconds={startSec}
+                                endSeconds={endSec}
+                                fullInterviewHref={`/interview/${sn.source_entry}?t=${startSec}`}
+                                defaultOpen
+                              />
+                            )}
+                            {sn.loc_url && (
+                              <span className="inline-flex items-center gap-1 font-semibold text-stone-600">
+                                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                                Library of Congress
+                              </span>
+                            )}
+                          </div>
+                        </figcaption>
+                      </figure>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+
+            {Array.isArray(personPage.sources) && personPage.sources.length > 0 && (
+              <section className="mb-10 border-t border-stone-300 pt-6">
+                <h2 className="text-stone-900 text-xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  Sources
+                </h2>
+                <ol className="text-sm space-y-2 list-decimal pl-5">
+                  {personPage.sources.map((s, i) => (
+                    <li key={i} id={`source-${i + 1}`} className="text-stone-800">
+                      <span className="text-stone-900">{s.title}</span>
+                      {s.publisher && (
+                        <span className="text-stone-500 ml-1">({s.publisher})</span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
+          </>
+        )}
+
         {entry.neighbors && entry.neighbors.length > 0 && (
           <section className="mb-10">
             <h2 className="text-stone-900 text-xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Related Interviews
+              Related Topics
             </h2>
             <p className="text-sm text-stone-600 mb-4 max-w-2xl">
               Other interviewees whose testimony returns to the same themes, surfaced by comparing the interviews in the embedding space.

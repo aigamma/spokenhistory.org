@@ -51,6 +51,12 @@ async function writeClipboard(text) {
     // Fall through to the legacy path (older browsers or insecure contexts).
   }
   try {
+    // execCommand('copy') and the Clipboard API can both fail when the document
+    // is not the focused surface (e.g. focus is in a devtools pane or another
+    // frame). Re-focus the window before selecting the textarea.
+    if (typeof window !== 'undefined' && typeof window.focus === 'function') {
+      window.focus();
+    }
     const ta = document.createElement('textarea');
     ta.value = text;
     ta.setAttribute('readonly', '');
@@ -74,16 +80,22 @@ async function writeClipboard(text) {
  * @returns {Promise<'shared'|'copied'|'failed'>} how the link was delivered.
  */
 export async function shareOrCopy({ url, title, text }) {
-  if (prefersNativeShare()) {
-    try {
-      await navigator.share({ url, title, text });
-      return 'shared';
-    } catch (e) {
-      // The user dismissing the sheet is a no-op, not a failure.
-      if (e && e.name === 'AbortError') return 'shared';
-      // Any other native-share error falls back to the clipboard path below.
+  try {
+    if (prefersNativeShare()) {
+      try {
+        await navigator.share({ url, title, text });
+        return 'shared';
+      } catch (e) {
+        // The user dismissing the sheet is a no-op, not a failure.
+        if (e && e.name === 'AbortError') return 'shared';
+        // Any other native-share error falls back to the clipboard path below.
+      }
     }
+    const ok = await writeClipboard(url);
+    return ok ? 'copied' : 'failed';
+  } catch {
+    // Never throw out of the share path: a caller-facing 'failed' lets the UI
+    // tell the reader to copy the link manually.
+    return 'failed';
   }
-  const ok = await writeClipboard(url);
-  return ok ? 'copied' : 'failed';
 }

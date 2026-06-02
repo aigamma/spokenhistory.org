@@ -30,6 +30,7 @@ const SITEMAP = [
   { label: 'Essays', to: '/essays' },
   { label: 'Data Insights', to: '/rag-explore' },
   { label: 'Methodology', to: '/machine-audit' },
+  { label: 'Technical Documentation', href: 'https://github.com/jsovelove/civil-rights-history-project' },
   { label: 'About', to: '/about' },
 ];
 
@@ -59,16 +60,29 @@ export default function Footer() {
               the prior footer's compromise. min-h-11 keeps every tap target at
               least 44x44 even where the glyphs are smaller. */}
           <nav className="flex flex-wrap justify-center lg:justify-end gap-x-4 gap-y-1 sm:gap-x-5 lg:gap-x-6 max-w-2xl" aria-label="Footer sitemap">
-            {SITEMAP.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl font-bold font-['Inter'] hover:underline"
-                style={{ color: '#EBEAE9' }}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {SITEMAP.map((item) =>
+              item.href ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl font-bold font-['Inter'] hover:underline"
+                  style={{ color: '#EBEAE9' }}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl font-bold font-['Inter'] hover:underline"
+                  style={{ color: '#EBEAE9' }}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
             <span
               className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl font-bold font-['Inter'] whitespace-nowrap"
               style={{ color: '#EBEAE9' }}
