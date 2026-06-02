@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
+import GlobalSearch from '../GlobalSearch';
+import ShareButton from '../ShareButton';
 
 /**
  * Header, global nav for the protected app.
@@ -91,14 +93,27 @@ export default function Header() {
 
   return (
     <>
-      {/* Header, a single row. The top-of-page pill nav is gone (Dustin,
-          2026-05-30); the row now carries only the Light/Dark toggle and
-          the Menu button, pinned to the right. Every destination lives
-          in the Menu drawer. */}
+      {/* Header. The top-of-page pill nav is gone (Dustin, 2026-05-30); the
+          chrome row carries the Light/Dark toggle and the Menu button, pinned
+          right, now preceded by a "share this page" control. Below it runs an
+          always-visible, low-prominence semantic search that spans the top of
+          every framed page (it funnels to a playlist, interviews, and clips).
+          Every navigation destination still lives in the Menu drawer. */}
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
-        <div className="w-full px-4 sm:px-8 lg:px-12 py-4 sm:py-5">
-          <div className="flex items-start justify-end gap-3 sm:gap-6">
-            <div className="flex items-start gap-2 sm:gap-2.5 flex-shrink-0">
+        <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 sm:pt-4 pb-2.5">
+          <div className="flex items-center justify-end gap-2 sm:gap-2.5">
+            {/* Share this page: copies the current URL, the answer to "share
+                whatever page you are on." On the interview, Table of Contents,
+                and playlist pages the URL also carries the open section or
+                clip, so this shares the exact view, not just the route. */}
+            <ShareButton
+              variant="icon"
+              getUrl={() => (typeof window !== 'undefined' ? window.location.href : '/')}
+              label="Share this page"
+              iconClassName="w-4 h-4"
+              className="min-w-11 min-h-11 justify-center rounded-full border border-stone-300 dark:border-zinc-600 bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 shadow-sm"
+            />
+            <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
               {/* Light/dark toggle, sits just left of Menu. Its label
                   names the mode it switches TO (Dark when currently
                   light, Light when currently dark) and the pill previews
@@ -129,6 +144,13 @@ export default function Header() {
                 Menu
               </button>
             </div>
+          </div>
+          {/* Always-visible semantic search across the top of the page,
+              deliberately quiet (a hairline and a muted magnifier). Tap to
+              type; the dropdown funnels to a playlist, interviews, and
+              time-anchored clips. */}
+          <div className="mt-2 sm:mt-2.5">
+            <GlobalSearch />
           </div>
         </div>
       </header>

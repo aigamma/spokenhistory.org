@@ -27,6 +27,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, ChevronUp, FileText } from 'lucide-react';
 import LocVideoEmbed from './LocVideoEmbed';
+import ShareButton from './ShareButton';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 
 /**
@@ -120,15 +121,26 @@ export default function HearInContext({
             endSeconds={boundedEnd}
             autoPlay
           />
-          {fullInterviewHref && (
-            <Link
-              to={fullInterviewHref}
-              className="inline-flex items-center gap-1 mt-2 font-semibold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
-            >
-              <FileText className="w-3.5 h-3.5" aria-hidden="true" />
-              Open the full interview
-            </Link>
-          )}
+          <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
+            {fullInterviewHref && (
+              <Link
+                to={fullInterviewHref}
+                className="inline-flex items-center gap-1 font-semibold text-civil-red-body dark:text-red-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+              >
+                <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                Open the full interview
+              </Link>
+            )}
+            {/* Share this exact passage. The link opens the interview page
+                seeked to the clip and bounded to its end, so a recipient
+                lands on the same segment, not the top of a multi-hour file. */}
+            <ShareButton
+              variant="inline"
+              label="Copy link to this clip"
+              title="oral history clip"
+              url={`/interview/${entryNumber}?t=${Math.round(startSeconds)}&end=${Math.round(boundedEnd)}`}
+            />
+          </div>
         </div>
       )}
     </>

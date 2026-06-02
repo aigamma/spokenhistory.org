@@ -124,6 +124,14 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
         if (el.readyState >= 1) run();
         else el.addEventListener('loadedmetadata', run, { once: true });
       },
+      // Current playhead position in seconds, so a parent (the interview page)
+      // can build a "link to this moment" from wherever the reader has scrubbed
+      // to. Returns 0 before the element exists or has a valid time.
+      getCurrentTime() {
+        const el = videoRef.current;
+        const t = el ? el.currentTime : 0;
+        return Number.isFinite(t) ? t : 0;
+      },
     }),
     [],
   );

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronRight, Play, Film } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import LocVideoEmbed from '../components/LocVideoEmbed';
+import ShareButton from '../components/ShareButton';
 import { TIER_BADGE } from '../components/rag/tiers';
 
 /**
@@ -79,6 +80,14 @@ export default function TableOfContents() {
   // segment; the mounting click is the user gesture that lets it autoplay.
   const [clip, setClip] = useState(null);
   const playerWrapRef = useRef(null);
+  // A shared link can arrive deep: ?entry=12 opens that interview, and an
+  // optional &t=/&end= cues a specific chapter or part. Restored once after the
+  // data loads (didRestoreRef), so later in-page clicks that rewrite these
+  // params never re-trigger the restore.
+  const deepEntry = searchParams.get('entry');
+  const deepT = searchParams.get('t');
+  const deepEnd = searchParams.get('end');
+  const didRestoreRef = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -123,6 +132,46 @@ export default function TableOfContents() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
 
+  // Restore a shared deep-link (?entry=&t=&end=) once the data is ready: open
+  // the named interview and, when a start time is given, cue that clip (its
+  // label recovered by matching the time against the interview's parts and
+  // chapters). Browser autoplay policy holds the clip until the reader presses
+  // play, since a fresh navigation carries no user gesture; it is cued either
+  // way. One-shot via didRestoreRef.
+  useEffect(() => {
+    if (didRestoreRef.current) return;
+    if (status !== 'ready' || !data?.interviews) return;
+    didRestoreRef.current = true;
+    const e = deepEntry != null ? Number(deepEntry) : NaN;
+    if (Number.isNaN(e)) return;
+    const iv = data.interviews.find((x) => x.entry === e);
+    if (!iv) return;
+    setOpenEntry(e);
+    const tNum = deepT != null ? Number(deepT) : NaN;
+    if (Number.isNaN(tNum)) return;
+    let label = 'Shared clip';
+    let end = deepEnd != null && !Number.isNaN(Number(deepEnd)) ? Number(deepEnd) : null;
+    for (let pi = 0; pi < (iv.parts || []).length; pi++) {
+      const part = iv.parts[pi];
+      if (Math.round(part.start) === Math.round(tNum)) {
+        if (part.title) label = `Part ${pi + 1}: ${part.title}`;
+        if (end == null) end = part.end;
+        break;
+      }
+      const ch = (part.chapters || []).find((c) => Math.round(c.start) === Math.round(tNum));
+      if (ch) {
+        label = ch.title;
+        if (end == null) end = ch.end;
+        break;
+      }
+    }
+    setClip({ entry: e, start: tNum, end, label, nonce: 1 });
+    requestAnimationFrame(() => {
+      playerWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status, data]);
+
   const interviews = data?.interviews || [];
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -138,6 +187,15 @@ export default function TableOfContents() {
 
   function playClip(entry, start, end, label) {
     setClip((c) => ({ entry, start, end, label, nonce: (c?.nonce || 0) + 1 }));
+    // Reflect the active clip in the URL (replace, no history spam) so the page
+    // is shareable and bookmarkable at this exact segment. The ?q= filter, if
+    // any, is preserved.
+    const params = new URLSearchParams(searchParams);
+    params.set('entry', String(entry));
+    params.set('t', String(Math.round(start)));
+    if (end != null) params.set('end', String(Math.round(end)));
+    else params.delete('end');
+    setSearchParams(params, { replace: true });
     // Bring the player into view; it renders at the top of the expanded section.
     requestAnimationFrame(() => {
       playerWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -288,34 +346,52 @@ export default function TableOfContents() {
                             <Film className="w-4 h-4" aria-hidden="true" />
                             Watch the full interview
                           </Link>
+                          {/* Share this interview, opened here at the Table of
+                              Contents. Each part and chapter below shares a
+                              single segment. */}
+                          <ShareButton
+                            variant="inline"
+                            label="Share"
+                            title={`${name}, oral history`}
+                            url={`/table-of-contents?entry=${iv.entry}`}
+                          />
                         </div>
 
                         {iv.parts.map((part, pi) => (
                           <div key={pi} className={pi > 0 ? 'mt-4' : ''}>
                             {part.title && (
-                              // Red part header, itself a play control: clicking
-                              // plays the whole part as one bounded autoplay run.
-                              <button
-                                type="button"
-                                onClick={() => playClip(iv.entry, part.start, part.end, `Part ${pi + 1}: ${part.title}`)}
-                                className="group w-full flex items-center gap-2 text-left mb-1.5 focus:outline-none"
-                              >
-                                <Play className="w-3.5 h-3.5 flex-shrink-0 text-civil-red-strong opacity-70 group-hover:opacity-100" aria-hidden="true" />
-                                <span className="text-civil-red-strong font-semibold text-sm uppercase tracking-wide group-hover:underline" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                                  Part {pi + 1}: {part.title}
-                                </span>
-                                <span className="text-xs text-stone-400 font-normal normal-case">
-                                  play all · {fmtLen(part.start, part.end)}
-                                </span>
-                              </button>
+                              // Red part header: the title plays the whole part
+                              // as one bounded autoplay run; the trailing share
+                              // mark copies a link straight to this part.
+                              <div className="group flex items-center gap-1.5 mb-1.5">
+                                <button
+                                  type="button"
+                                  onClick={() => playClip(iv.entry, part.start, part.end, `Part ${pi + 1}: ${part.title}`)}
+                                  className="flex items-center gap-2 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                                >
+                                  <Play className="w-3.5 h-3.5 flex-shrink-0 text-civil-red-strong opacity-70 group-hover:opacity-100" aria-hidden="true" />
+                                  <span className="text-civil-red-strong font-semibold text-sm uppercase tracking-wide group-hover:underline" style={{ fontFamily: 'Chivo Mono, monospace' }}>
+                                    Part {pi + 1}: {part.title}
+                                  </span>
+                                  <span className="text-xs text-stone-400 font-normal normal-case">
+                                    play all · {fmtLen(part.start, part.end)}
+                                  </span>
+                                </button>
+                                <ShareButton
+                                  variant="icon"
+                                  title={`Part ${pi + 1}: ${part.title}`}
+                                  url={`/table-of-contents?entry=${iv.entry}&t=${Math.round(part.start)}&end=${Math.round(part.end)}`}
+                                  className="opacity-60 group-hover:opacity-100 focus-visible:opacity-100 shrink-0"
+                                />
+                              </div>
                             )}
                             <ul className="list-none p-0 m-0 sm:pl-5 space-y-0.5">
                               {part.chapters.map((ch, ci) => (
-                                <li key={ci}>
+                                <li key={ci} className="group flex items-center gap-1">
                                   <button
                                     type="button"
                                     onClick={() => playClip(iv.entry, ch.start, ch.end, ch.title)}
-                                    className="w-full flex items-baseline gap-2 px-2 py-1.5 -mx-2 rounded text-left hover:bg-red-50 dark:hover:bg-zinc-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                                    className="flex-1 min-w-0 flex items-baseline gap-2 px-2 py-1.5 -mx-2 rounded text-left hover:bg-red-50 dark:hover:bg-zinc-700/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
                                   >
                                     <Play className="w-3 h-3 flex-shrink-0 translate-y-0.5 text-stone-400" aria-hidden="true" />
                                     <span className="flex-1 min-w-0 text-sm text-stone-800 dark:text-stone-200">
@@ -325,6 +401,12 @@ export default function TableOfContents() {
                                       {fmtLen(ch.start, ch.end)}
                                     </span>
                                   </button>
+                                  <ShareButton
+                                    variant="icon"
+                                    title={ch.title}
+                                    url={`/table-of-contents?entry=${iv.entry}&t=${Math.round(ch.start)}&end=${Math.round(ch.end)}`}
+                                    className="opacity-0 group-hover:opacity-100 focus-visible:opacity-100 shrink-0"
+                                  />
                                 </li>
                               ))}
                             </ul>

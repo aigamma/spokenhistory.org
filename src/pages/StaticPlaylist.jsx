@@ -4,6 +4,7 @@ import { Play, Clock, FileText, ChevronLeft, ChevronRight, List } from 'lucide-r
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
+import ShareButton from '../components/ShareButton';
 import { TIER_COLORS } from '../components/rag/tiers';
 
 /**
@@ -47,12 +48,15 @@ function tokenize(s) {
 }
 
 export default function StaticPlaylist() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const keywords = (searchParams.get('keywords') || searchParams.get('q') || '').trim();
   const topic = (searchParams.get('topic') || '').trim();
   const entryParam = searchParams.get('entry');
   const entriesParam = (searchParams.get('entries') || '').trim();
   const labelParam = (searchParams.get('label') || '').trim();
+  // ?play=<entry>_<startSeconds> selects one clip in the filtered list, so a
+  // shared playlist link reopens on the exact clip rather than the first one.
+  const playParam = (searchParams.get('play') || '').trim();
 
   const [index, setIndex] = useState(null);
   const [error, setError] = useState(null);
@@ -118,6 +122,21 @@ export default function StaticPlaylist() {
     return all;
   }, [index, keywords, topic, entryParam, entriesParam]);
 
+  // Restore the shared clip (?play=<entry>_<startSeconds>) once the filtered
+  // clips exist, so a shared link lands on that clip instead of the first.
+  useEffect(() => {
+    if (!playParam || clips.length === 0) return;
+    const [a, b] = playParam.split('_');
+    const pe = Number(a);
+    const ps = Number(b);
+    if (Number.isNaN(pe) || Number.isNaN(ps)) return;
+    const idx = clips.findIndex(
+      (c) => c.entry_number === pe && Math.round(c.start_seconds || 0) === Math.round(ps),
+    );
+    if (idx >= 0) setSelected(idx);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clips, playParam]);
+
   const subjectForEntry = entryParam && index?.videos?.[entryParam]?.subject;
   const titleText = labelParam
     ? labelParam
@@ -136,6 +155,20 @@ export default function StaticPlaylist() {
   const playClip = (i) => {
     setSelected(i);
     setUserInitiated(true);
+    const c = clips[i];
+    if (c) {
+      const params = new URLSearchParams(searchParams);
+      params.set('play', `${c.entry_number}_${Math.round(c.start_seconds || 0)}`);
+      setSearchParams(params, { replace: true });
+    }
+  };
+
+  // Absolute share URL for one clip: the current filter plus a ?play= pointing
+  // at that clip, so the recipient reopens this playlist on this segment.
+  const clipShareUrl = (c) => {
+    const params = new URLSearchParams(searchParams);
+    params.set('play', `${c.entry_number}_${Math.round(c.start_seconds || 0)}`);
+    return `/playlist-builder?${params.toString()}`;
   };
 
   if (error) {
@@ -239,6 +272,15 @@ export default function StaticPlaylist() {
                     <FileText className="w-4 h-4" aria-hidden="true" />
                     Watch the Full Interview
                   </Link>
+                  {/* Share this clip: the link reopens the playlist on this
+                      exact segment. getUrl reads the live filter + selection. */}
+                  <ShareButton
+                    variant="button"
+                    label="Share this clip"
+                    title={current.title}
+                    className="min-h-11"
+                    getUrl={() => clipShareUrl(current)}
+                  />
                 </div>
               </div>
             </div>
@@ -255,13 +297,19 @@ export default function StaticPlaylist() {
                   const isActive = i === selected;
                   const tier = index.videos?.[c.entry_number]?.tier;
                   return (
-                    <li key={`${c.entry_number}-${c.chapter_number}-${i}`}>
+                    <li key={`${c.entry_number}-${c.chapter_number}-${i}`} className="relative group">
+                      <ShareButton
+                        variant="icon"
+                        title={c.title}
+                        getUrl={() => clipShareUrl(c)}
+                        className="absolute top-1.5 right-1.5 z-10 bg-white/85 dark:bg-zinc-900/70 opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
+                      />
                       <button
                         type="button"
                         onClick={() => playClip(i)}
                         aria-current={isActive ? 'true' : undefined}
                         className={
-                          'w-full text-left rounded-md border p-3 transition-colors ' +
+                          'w-full text-left rounded-md border p-3 pr-9 transition-colors ' +
                           (isActive
                             ? 'border-civil-red-strong bg-red-50'
                             : 'border-stone-200 bg-white hover:bg-stone-50')
