@@ -4,7 +4,8 @@ import { Search, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 import { useSearch } from '../../context/SearchProvider';
 import ShareButton from '../ShareButton';
-import SiteLogo from '../../assetts/logos/crhp-home-logo.png';
+import SiteLogoDark from '../../assetts/logos/crhp-home-logo.png';
+import SiteLogoLight from '../../assetts/logos/crhp-home-logo-light.png';
 
 /**
  * Header, global nav for the protected app.
@@ -112,9 +113,9 @@ export default function Header() {
             {/* Home logo in the upper-left corner (Eric, 2026-06-02). The
                 wordmark links home on every page EXCEPT the homepage itself,
                 where it would only re-navigate to the page you are already on
-                (Eric's call). The art is white/red on a dark field (RGBA), so it
-                sits on a dark badge to stay legible on the cream light-mode
-                header as well as in dark mode. It is allowed to stand a little
+                (Eric's call). A light wordmark (dark text) shows in light mode
+                and the white-on-dark wordmark in dark mode, swapped on the
+                theme, so each reads natively on its own header. It is allowed to stand a little
                 taller than the nav pills; max-w-full + object-contain let it
                 shrink to fit on narrow screens instead of crowding the controls.
                 On the homepage an empty span holds the left slot so
@@ -123,10 +124,10 @@ export default function Header() {
               <Link
                 to="/"
                 aria-label="Civil Rights History Project, return to the homepage"
-                className="inline-flex items-center shrink min-w-0 rounded-md bg-stone-900 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                className="inline-flex items-center shrink min-w-0 rounded-md overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
               >
                 <img
-                  src={SiteLogo}
+                  src={isDark ? SiteLogoDark : SiteLogoLight}
                   alt="Civil Rights History Project, home"
                   className="block h-12 sm:h-14 lg:h-16 w-auto max-w-full object-contain"
                 />
