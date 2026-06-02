@@ -9,9 +9,13 @@
  */
 
 /**
- * Turn a relative in-app path (e.g. "/interview/142#chapter-5") into an
- * absolute URL rooted at the current origin. Absolute URLs pass through
- * unchanged.
+ * Turn a relative in-app path (e.g. "/interview/142?t=120") into an absolute,
+ * shareable URL. The app runs under a HashRouter, so every in-app route lives
+ * after "/#": a bare path must be shared as "<origin>/#<path>", otherwise the
+ * link opens with an empty hash and the router falls back to the home route.
+ * This is the fix for shared clip, interview, and directory links all landing
+ * on the homepage. Absolute (http) URLs and already-hash-rooted paths pass
+ * through unchanged.
  *
  * @param {string} pathWithQuery
  * @returns {string}
@@ -20,8 +24,11 @@ export function buildShareUrl(pathWithQuery) {
   const p = String(pathWithQuery || '');
   if (/^https?:\/\//i.test(p)) return p;
   if (typeof window === 'undefined' || !window.location) return p;
-  const path = p.startsWith('/') || p.startsWith('#') || p.startsWith('?') ? p : `/${p}`;
-  return `${window.location.origin}${path}`;
+  const origin = window.location.origin;
+  if (p.startsWith('/#')) return `${origin}${p}`;   // already hash-rooted
+  if (p.startsWith('#')) return `${origin}/${p}`;   // "#/route" -> "<origin>/#/route"
+  const path = p.startsWith('/') ? p : `/${p}`;
+  return `${origin}/#${path}`;
 }
 
 /**

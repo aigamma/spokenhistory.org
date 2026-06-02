@@ -1,10 +1,11 @@
-# Netlify SPA fallback — serve index.html for any unknown path so the
-# React Router (BrowserRouter) handles client-side routing. Without this,
-# direct GETs / bookmarks / shared links to client-side routes
-# (/about, /interview-index, /rag-explore, etc.) return 404 from
-# Netlify's edge before React ever loads.
+# Netlify SPA fallback: serve index.html for any path so the React app loads.
+# The app uses a HashRouter (routes live after "/#", e.g. /#/interview/142), so
+# the server normally only ever sees "/". This catch-all still matters so a
+# hashless URL (a typed address or an old shared link) does not 404 at Netlify's
+# edge before React loads; the app then resolves it client-side. NOTE: shareable
+# links MUST be hash-rooted (/#/...) to reopen the right view; see buildShareUrl
+# in src/utils/share.js.
 #
-# /retrieve and /.netlify/functions/* are still handled by the
-# Function runtime — Netlify routes function paths before applying
-# this catch-all.
+# /retrieve and /.netlify/functions/* are still handled by the Function runtime
+# (Netlify routes function paths before this catch-all).
 /*    /index.html   200
