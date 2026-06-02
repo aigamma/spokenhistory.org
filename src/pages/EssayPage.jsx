@@ -316,7 +316,7 @@ export default function EssayPage() {
               {chapters.length > 0 && (
                 <a href="#voices" className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: accent }}>
                   <Sparkles className="w-4 h-4" aria-hidden="true" />
-                  {chapters.length} oral histories take up this essay
+                  Hear {chapters.length} oral histories connected to this essay
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
               )}

@@ -612,10 +612,10 @@ export default function InterviewDetail() {
         {entry.neighbors && entry.neighbors.length > 0 && (
           <section className="mb-10">
             <h2 className="text-stone-900 text-xl font-medium mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
-              Semantic Overlap
+              Related Interviews
             </h2>
             <p className="text-sm text-stone-600 mb-4 max-w-2xl">
-              These interviewees discuss thematically related material, surfaced by embedding-space proximity (cosine similarity over 1024-dim Voyage-3 vectors).
+              Other interviewees whose testimony returns to the same themes, surfaced by comparing the interviews in the embedding space.
             </p>
             <ul className="space-y-2 list-none p-0">
               {entry.neighbors.map((nb) => {

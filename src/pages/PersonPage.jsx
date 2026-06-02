@@ -200,6 +200,7 @@ function SnippetCard({ snippet, subjectName, peopleIndex, currentSlug }) {
                 startSeconds={startSec}
                 endSeconds={endSec}
                 fullInterviewHref={`/interview/${snippet.source_entry}?t=${startSec}`}
+                defaultOpen
               />
             )}
             {snippet.loc_url && (
@@ -836,7 +837,7 @@ export default function PersonPage() {
               <article>
                 <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
-                  Semantic neighbors in the corpus
+                  Related People
                 </h2>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-none p-0 mb-3">
                   {crossLinks.related.map((r) => {

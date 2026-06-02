@@ -19,33 +19,41 @@ import Footer from '../components/common/Footer';
 // Civil Rights History Project, identified these as the narratives that run
 // across the collection. Each is a curated entry point into a playlist of
 // clips. Keyword counts were verified against the clip index before wiring.
+// Each theme carries a one-line blurb shown in the orientation panel when the
+// card is opened (Dustin, 2026-06-02), so a visitor reads what the theme covers
+// before the playlist loads. Blurbs are factual and archive-grounded (no
+// evaluative adjectives), per the project's narration discipline.
 const MAJOR_THEMES = [
-  { name: 'Family and Community', kw: 'family' },
-  { name: 'Growing Up Under Jim Crow', kw: 'segregation' },
-  { name: 'Education and Schools', kw: 'school' },
-  { name: 'Emmett Till and Generational Memory', kw: 'emmett till' },
-  { name: 'Youth and Student Activism', kw: 'student' },
-  { name: 'Faith and the Church', kw: 'church' },
-  { name: 'Voter Registration and Local Organizing', kw: 'voter registration' },
-  { name: 'Violence and State Repression', kw: 'violence' },
-  { name: 'Military Service', kw: 'military' },
-  { name: 'Migration', kw: 'migration' },
-  { name: 'Music and Culture', kw: 'music' },
-  { name: 'High School Activists', kw: 'high school' },
-  { name: 'Churches as Organizing Spaces', kw: 'mass meeting' },
-  { name: 'Media and the Movement', kw: 'press' },
-  { name: 'Funding the Movement', kw: 'funding' },
-  { name: 'Local Movement Stories', kw: 'community' },
-  { name: 'Coming of Age in the Movement', kw: 'childhood' },
+  { name: 'Family and Community', kw: 'family', blurb: 'How households, kin networks, and neighborhoods shaped interviewees before and during the movement.' },
+  { name: 'Growing Up Under Jim Crow', kw: 'segregation', blurb: 'Childhood and daily life under legal segregation, recalled by the people who lived it.' },
+  { name: 'Education and Schools', kw: 'school', blurb: 'Segregated and desegregating schools, the teachers inside them, and the fight for equal education.' },
+  { name: 'Emmett Till and Generational Memory', kw: 'emmett till', blurb: 'How the 1955 murder of Emmett Till is remembered across the interviews and carried between generations.' },
+  { name: 'Youth and Student Activism', kw: 'student', blurb: 'Students and young people organizing sit-ins, marches, and voter drives.' },
+  { name: 'Faith and the Church', kw: 'church', blurb: 'The place of churches, faith, and clergy in sustaining the movement.' },
+  { name: 'Voter Registration and Local Organizing', kw: 'voter registration', blurb: 'Registering Black voters and building local movement organizations, county by county.' },
+  { name: 'Violence and State Repression', kw: 'violence', blurb: 'Encounters with white-supremacist violence, police, and state power.' },
+  { name: 'Military Service', kw: 'military', blurb: 'Military service and its ties to civil-rights consciousness and organizing.' },
+  { name: 'Migration', kw: 'migration', blurb: 'Movement between South and North and the communities that migration built.' },
+  { name: 'Music and Culture', kw: 'music', blurb: 'Freedom songs, music, and cultural expression within the movement.' },
+  { name: 'High School Activists', kw: 'high school', blurb: 'High-school-age participants and the role of secondary schools in local movements.' },
+  { name: 'Churches as Organizing Spaces', kw: 'mass meeting', blurb: 'Mass meetings and the use of churches as gathering and organizing spaces.' },
+  { name: 'Media and the Movement', kw: 'press', blurb: 'The press, photography, and how coverage shaped the movement and its memory.' },
+  { name: 'Funding the Movement', kw: 'funding', blurb: 'How local movements and organizations were financed and sustained.' },
+  { name: 'Local Movement Stories', kw: 'community', blurb: 'Community-level accounts of organizing that the national narrative often leaves out.' },
+  { name: 'Coming of Age in the Movement', kw: 'childhood', blurb: 'Interviewees who grew up inside the movement and came of age within it.' },
 ];
 
 export default function TopicGlossary() {
-  useDocumentTitle('Topics');
+  useDocumentTitle('Table of Contents');
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState('');
   const [expandedId, setExpandedId] = useState(null);
   const [essays, setEssays] = useState(null);
+  // The major theme the visitor has opened for orientation. Clicking a theme
+  // card opens a short explanation plus a Play button here, BEFORE the playlist
+  // loads (Dustin, 2026-06-02), instead of jumping straight to the playlist.
+  const [selectedTheme, setSelectedTheme] = useState(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -97,7 +105,7 @@ export default function TopicGlossary() {
             className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-4"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Topics
+            Table of Contents
           </h1>
           <p
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
@@ -118,22 +126,59 @@ export default function TopicGlossary() {
           </h2>
           <p className="text-sm text-stone-600 mb-4 max-w-3xl">
             The recurring narratives that run across the interviews, the throughlines the
-            project&apos;s lead interviewer identified. Each one opens a playlist of clips drawn
-            from every voice that returns to it.
+            project&apos;s lead interviewer identified. Open one to read what it covers, then
+            play a stream of clips drawn from every voice that returns to it.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 list-none p-0">
-            {MAJOR_THEMES.map((t) => (
-              <li key={t.kw}>
-                <Link
-                  to={`/playlist-builder?keywords=${encodeURIComponent(t.kw)}&label=${encodeURIComponent(t.name)}`}
-                  className="flex items-center gap-2 h-full rounded-md border border-stone-200 bg-white p-3 hover:border-civil-red-strong hover:bg-red-50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
-                >
-                  <Play className="w-4 h-4 text-civil-red-strong shrink-0" aria-hidden="true" />
-                  <span className="text-sm font-medium text-stone-900">{t.name}</span>
-                </Link>
-              </li>
-            ))}
+            {MAJOR_THEMES.map((t) => {
+              const active = selectedTheme?.kw === t.kw;
+              return (
+                <li key={t.kw}>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedTheme(active ? null : t)}
+                    aria-pressed={active}
+                    className={
+                      'flex items-center gap-2 w-full h-full text-left rounded-md border p-3 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 ' +
+                      (active
+                        ? 'border-civil-red-strong bg-red-50'
+                        : 'border-stone-200 bg-white hover:border-civil-red-strong hover:bg-red-50')
+                    }
+                  >
+                    <Play className="w-4 h-4 text-civil-red-strong shrink-0" aria-hidden="true" />
+                    <span className="text-sm font-medium text-stone-900">{t.name}</span>
+                  </button>
+                </li>
+              );
+            })}
           </ul>
+
+          {/* Orientation panel (Dustin, 2026-06-02): a short explanation of the
+              opened theme and a Play button, shown before the playlist loads so
+              the visitor knows what they are about to hear. */}
+          {selectedTheme && (
+            <div className="mt-3 rounded-md border border-civil-red-strong bg-white p-4">
+              <h3 className="text-lg font-medium text-stone-900 mb-1">{selectedTheme.name}</h3>
+              <p className="text-sm text-stone-700 mb-4 max-w-3xl" style={{ fontFamily: 'Source Serif 4, serif' }}>
+                {selectedTheme.blurb}
+              </p>
+              <div className="flex flex-wrap items-center gap-3">
+                <Link
+                  to={`/playlist-builder?keywords=${encodeURIComponent(selectedTheme.kw)}&label=${encodeURIComponent(selectedTheme.name)}`}
+                  className="inline-flex items-center gap-1.5 min-h-11 px-4 py-2 text-sm rounded-md bg-civil-red-strong text-white font-medium hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                >
+                  <Play className="w-4 h-4" aria-hidden="true" />
+                  Play this playlist
+                </Link>
+                <Link
+                  to="/table-of-contents"
+                  className="inline-flex items-center min-h-11 px-1 text-sm text-civil-red-body hover:underline"
+                >
+                  Or browse the interviews
+                </Link>
+              </div>
+            </div>
+          )}
         </section>
 
         {essays?.topics?.length > 0 && (
@@ -215,17 +260,6 @@ export default function TopicGlossary() {
 
                 {isExpanded && (
                   <div className="border-t border-stone-100 p-4 bg-stone-50">
-                    {c.starter_query && (
-                      <p className="text-sm mb-3">
-                        <span className="text-stone-600">Try this query: </span>
-                        <Link
-                          to={`/rag-explore#search`}
-                          className="font-mono text-civil-red-body hover:underline"
-                        >
-                          &ldquo;{c.starter_query}&rdquo;
-                        </Link>
-                      </p>
-                    )}
                     {/* Each topic leads to a playlist (Dustin, 2026-05-30):
                         play a stream of clips from every interview in the
                         topic, via the static playlist on member entry numbers. */}
@@ -275,14 +309,6 @@ export default function TopicGlossary() {
           })}
         </div>
 
-        <div className="mt-12">
-          <Link
-            to="/rag-explore?tab=themes"
-            className="inline-flex items-center gap-2 px-5 py-3 bg-stone-900 text-white rounded-md hover:bg-stone-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:border dark:border-zinc-700 transition-colors"
-          >
-            Explore RAG demo surfaces →
-          </Link>
-        </div>
       </main>
     </div>
   );

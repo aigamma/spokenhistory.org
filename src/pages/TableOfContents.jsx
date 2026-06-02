@@ -105,9 +105,10 @@ export default function TableOfContents() {
           setCapsules(caps?.capsules || caps || {});
           setTiers(neighbors || {});
           setStatus('ready');
-          // Open the first interview by default so a visitor immediately sees a
-          // row expand into its parts and chapters rather than a flat list.
-          setOpenEntry((cur) => (cur != null ? cur : toc.interviews[0]?.entry ?? null));
+          // All interviews start COLLAPSED (Dustin, 2026-06-02): the visitor
+          // sees the full scannable list first and expands the one they want,
+          // instead of Aaron Dixon (entry 1) loading pre-expanded. A shared
+          // deep link (?entry=) still opens its target via the restore effect.
         } else {
           setStatus('error');
         }

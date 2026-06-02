@@ -75,8 +75,14 @@ export default function HearInContext({
   fullInterviewHref = null,
   label = 'See this in context',
   buttonClassName = '',
+  defaultOpen = false,
 }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(defaultOpen);
+  // Track whether the reader opened the clip themselves. A default-open clip
+  // (the People pages and the K-12 curriculum, Dustin 2026-06-02) renders the
+  // player ready but does NOT autoplay; only a click-to-open begins playback
+  // (and browsers gate autoplay on a user gesture anyway).
+  const [userOpened, setUserOpened] = useState(false);
   if (entryNumber == null || startSeconds == null) return null;
 
   // Use the supplied end only when it is present, after the start, and within
@@ -97,7 +103,7 @@ export default function HearInContext({
     <>
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => { setOpen((v) => !v); setUserOpened(true); }}
         aria-expanded={open}
         className={btnClass}
       >
@@ -119,7 +125,7 @@ export default function HearInContext({
             entryNumber={entryNumber}
             startSeconds={startSeconds}
             endSeconds={boundedEnd}
-            autoPlay
+            autoPlay={userOpened}
           />
           <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1">
             {fullInterviewHref && (
