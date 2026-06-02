@@ -115,6 +115,23 @@ export default function Header() {
               iconClassName="w-4 h-4"
               className="min-w-11 min-h-11 justify-center rounded-full border border-stone-300 dark:border-zinc-600 bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 shadow-sm"
             />
+
+            {/* Search trigger: a quiet icon button (matching the Share control
+                beside it) that opens the site-wide command palette. The palette
+                is mounted at the App root and also responds to Cmd/Ctrl+K and
+                "/". Eric (2026-06-02) asked for a neat upper-right icon in place
+                of the old full-width, always-visible header search bar. */}
+            <button
+              type="button"
+              onClick={openSearch}
+              aria-label="Search the archive"
+              aria-keyshortcuts="Control+K Meta+K"
+              title="Search the archive (Ctrl/Cmd+K)"
+              className="inline-flex items-center justify-center min-w-11 min-h-11 rounded-full border border-stone-300 dark:border-zinc-600 bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 shadow-sm transition-colors hover:bg-white dark:hover:bg-zinc-800"
+            >
+              <Search className="w-4 h-4" aria-hidden="true" />
+            </button>
+
             <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
               {/* Light/dark toggle, sits just left of Menu. Its label
                   names the mode it switches TO (Dark when currently
@@ -132,24 +149,6 @@ export default function Header() {
               >
                 {isDark ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}
                 {isDark ? 'Light' : 'Dark'}
-              </button>
-
-              {/* Search trigger: opens the site-wide command palette. The
-                  palette is mounted at the App root and also responds to
-                  Cmd/Ctrl+K and "/". */}
-              <button
-                type="button"
-                onClick={openSearch}
-                aria-label="Search the archive"
-                aria-keyshortcuts="Control+K Meta+K"
-                className="inline-flex items-center gap-2 min-w-11 min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 border border-stone-300 dark:border-zinc-600 hover:bg-white dark:hover:bg-zinc-800"
-                style={{ fontFamily: 'Chivo Mono, monospace' }}
-              >
-                <Search className="w-4 h-4" aria-hidden="true" />
-                <span className="hidden sm:inline">Search</span>
-                <kbd className="hidden md:inline-block text-[11px] text-stone-400 border border-stone-300/70 dark:border-zinc-600 rounded px-1 py-0.5">
-                  ⌘K
-                </kbd>
               </button>
 
               <button
