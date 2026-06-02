@@ -47,6 +47,37 @@ function tokenize(s) {
     .filter(Boolean);
 }
 
+function fmtMinutes(sec) {
+  const m = Math.round((sec || 0) / 60);
+  if (m < 1) return 'under a minute';
+  if (m < 60) return `${m} min`;
+  const h = Math.floor(m / 60);
+  const rem = m % 60;
+  return rem ? `${h} hr ${rem} min` : `${h} hr`;
+}
+
+// Curated default ordering (Dustin, 2026-06-02): group a result set by interview
+// (entry_number), order the groups by how many clips each contributes to this
+// filter (most first), then by entry number, and keep chapter order within a
+// group. This clusters each interviewee's clips together (so a run from one
+// voice reads as a group) and surfaces the interviews that speak most to the
+// filter first, replacing the old alphabetical default that always put Aaron
+// Dixon (entry 1) at the top.
+function curatedOrder(hits) {
+  const groups = new Map();
+  for (const c of hits) {
+    const k = c.entry_number;
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(c);
+  }
+  for (const arr of groups.values()) {
+    arr.sort((a, b) => (a.chapter_number || 0) - (b.chapter_number || 0));
+  }
+  return [...groups.entries()]
+    .sort((a, b) => (b[1].length - a[1].length) || (a[0] - b[0]))
+    .flatMap(([, arr]) => arr);
+}
+
 export default function StaticPlaylist() {
   const [searchParams, setSearchParams] = useSearchParams();
   const keywords = (searchParams.get('keywords') || searchParams.get('q') || '').trim();
@@ -102,7 +133,7 @@ export default function StaticPlaylist() {
     }
     if (topic) {
       const t = topic.toLowerCase();
-      return all.filter((c) => (c.topic_category || '').toLowerCase() === t);
+      return curatedOrder(all.filter((c) => (c.topic_category || '').toLowerCase() === t));
     }
     if (keywords) {
       const phrase = keywords.toLowerCase();
@@ -117,10 +148,32 @@ export default function StaticPlaylist() {
           return words.every((w) => text.includes(w));
         });
       }
-      return hits;
+      return curatedOrder(hits);
     }
-    return all;
+    return curatedOrder(all);
   }, [index, keywords, topic, entryParam, entriesParam]);
+
+  // Playlist-level metrics (Dustin, 2026-06-02): interviewee count, total
+  // listening time, and the subtopics present, computed from the filtered set.
+  const stats = useMemo(() => {
+    const entries = new Set();
+    let totalSec = 0;
+    const topicCounts = new Map();
+    for (const c of clips) {
+      entries.add(c.entry_number);
+      const d = (c.end_seconds || 0) - (c.start_seconds || 0);
+      if (d > 0) totalSec += d;
+      const tc = c.topic_category;
+      if (tc) topicCounts.set(tc, (topicCounts.get(tc) || 0) + 1);
+    }
+    const subtopics = [...topicCounts.entries()].sort((a, b) => b[1] - a[1]).map(([k]) => k);
+    return { interviewees: entries.size, totalSec, subtopics };
+  }, [clips]);
+  // Other topics present in this playlist, each linking to its own playlist
+  // (Dustin's "related topics below the player"); excludes the current topic.
+  const relatedTopics = stats.subtopics
+    .filter((t) => !topic || t.toLowerCase() !== topic.toLowerCase())
+    .slice(0, 6);
 
   // Restore the shared clip (?play=<entry>_<startSeconds>) once the filtered
   // clips exist, so a shared link lands on that clip instead of the first.
@@ -192,11 +245,26 @@ export default function StaticPlaylist() {
           <h1 className="text-stone-900 text-2xl sm:text-3xl md:text-4xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
             {titleText}
           </h1>
-          {index && (
-            <p className="text-sm text-stone-600">
-              {clips.length} {clips.length === 1 ? 'clip' : 'clips'}
-              {clips.length > 0 && ', drawn straight from the interviews. Play one, then read or watch the full interview behind it.'}
-            </p>
+          {index && clips.length > 0 && (
+            <div className="text-sm text-stone-600">
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                <span><span className="font-medium text-stone-900 tabular-nums">{clips.length}</span> {clips.length === 1 ? 'clip' : 'clips'}</span>
+                <span aria-hidden="true" className="text-stone-300">·</span>
+                <span><span className="font-medium text-stone-900 tabular-nums">{stats.interviewees}</span> {stats.interviewees === 1 ? 'interviewee' : 'interviewees'}</span>
+                {stats.totalSec > 0 && (
+                  <>
+                    <span aria-hidden="true" className="text-stone-300">·</span>
+                    <span><span className="font-medium text-stone-900 tabular-nums">{fmtMinutes(stats.totalSec)}</span> total</span>
+                  </>
+                )}
+              </p>
+              {stats.subtopics.length > 0 && (
+                <p className="mt-1 text-stone-500">Subtopics: {stats.subtopics.slice(0, 5).join(', ')}</p>
+              )}
+            </div>
+          )}
+          {index && clips.length === 0 && (
+            <p className="text-sm text-stone-600">No clips match this yet.</p>
           )}
         </header>
 
@@ -222,6 +290,7 @@ export default function StaticPlaylist() {
                 startSeconds={current.start_seconds || 0}
                 endSeconds={current.end_seconds || undefined}
                 autoPlay={userInitiated}
+                onClipEnd={() => { if (selected < clips.length - 1) playClip(selected + 1); }}
               />
 
               <div className="mt-4">
@@ -283,6 +352,38 @@ export default function StaticPlaylist() {
                   />
                 </div>
               </div>
+
+              {/* Patterns across this playlist (Dustin, 2026-06-02): a concise,
+                  text-only read (no charts) on who is in it and what recurs,
+                  plus related topics that open their own playlists. */}
+              {clips.length > 1 && (
+                <div className="mt-6 rounded-md border border-stone-200 bg-white p-4">
+                  <h3 className="text-sm font-semibold uppercase tracking-wide font-mono text-stone-700 mb-2">
+                    About This Playlist
+                  </h3>
+                  <p className="text-sm text-stone-700 leading-relaxed">
+                    These {clips.length} clips come from {stats.interviewees} {stats.interviewees === 1 ? 'interviewee' : 'interviewees'}
+                    {stats.totalSec > 0 ? ` and run about ${fmtMinutes(stats.totalSec)} in total` : ''}.
+                    {stats.subtopics.length > 1 ? ` The subtopics that recur most are ${stats.subtopics.slice(0, 3).join(', ')}.` : ''}
+                  </p>
+                  {relatedTopics.length > 0 && (
+                    <div className="mt-3">
+                      <p className="text-xs uppercase tracking-wide text-stone-500 mb-1.5">Related topics</p>
+                      <div className="flex flex-wrap gap-2">
+                        {relatedTopics.map((t) => (
+                          <Link
+                            key={t}
+                            to={`/playlist-builder?topic=${encodeURIComponent(t)}`}
+                            className="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-sm text-stone-700 hover:border-civil-red-strong hover:bg-red-50 transition-colors"
+                          >
+                            {t}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Clip list (the playlist) */}
@@ -297,19 +398,13 @@ export default function StaticPlaylist() {
                   const isActive = i === selected;
                   const tier = index.videos?.[c.entry_number]?.tier;
                   return (
-                    <li key={`${c.entry_number}-${c.chapter_number}-${i}`} className="relative group">
-                      <ShareButton
-                        variant="icon"
-                        title={c.title}
-                        getUrl={() => clipShareUrl(c)}
-                        className="absolute top-1.5 right-1.5 z-10 bg-white/85 dark:bg-zinc-900/70 opacity-0 group-hover:opacity-100 focus-visible:opacity-100"
-                      />
+                    <li key={`${c.entry_number}-${c.chapter_number}-${i}`} className="relative">
                       <button
                         type="button"
                         onClick={() => playClip(i)}
                         aria-current={isActive ? 'true' : undefined}
                         className={
-                          'w-full text-left rounded-md border p-3 pr-9 transition-colors ' +
+                          'w-full text-left rounded-md border p-3 transition-colors ' +
                           (isActive
                             ? 'border-civil-red-strong bg-red-50'
                             : 'border-stone-200 bg-white hover:bg-stone-50')

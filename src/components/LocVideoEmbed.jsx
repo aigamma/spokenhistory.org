@@ -87,6 +87,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
     autoPlay = false,
     className = '',
     showCaption = true,
+    onClipEnd = null,
   },
   ref,
 ) {
@@ -99,6 +100,13 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
   // render. Disarmed (set null) the instant it fires, so a reader who presses
   // play again is not bounced back at the boundary.
   const stopAtRef = useRef(null);
+  // Latest onClipEnd kept in a ref so the timeupdate/ended listeners (which
+  // subscribe once per ready state) always call the current callback without
+  // having to re-subscribe on every parent re-render.
+  const onClipEndRef = useRef(onClipEnd);
+  useEffect(() => {
+    onClipEndRef.current = onClipEnd;
+  }, [onClipEnd]);
 
   const hasClipBound =
     endSeconds != null && endSeconds > 0 && endSeconds > startSeconds;
@@ -193,15 +201,26 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
   useEffect(() => {
     const el = videoRef.current;
     if (!el || status !== 'ready') return undefined;
+    const fireClipEnd = () => {
+      if (typeof onClipEndRef.current === 'function') onClipEndRef.current();
+    };
     const onTimeUpdate = () => {
       const stopAt = stopAtRef.current;
       if (stopAt != null && el.currentTime >= stopAt) {
         el.pause();
         stopAtRef.current = null;
+        // Notify the parent so a playlist can auto-advance to the next clip.
+        fireClipEnd();
       }
     };
+    // An open-ended clip (no stop mark) advances when the source itself ends.
+    const onEnded = () => fireClipEnd();
     el.addEventListener('timeupdate', onTimeUpdate);
-    return () => el.removeEventListener('timeupdate', onTimeUpdate);
+    el.addEventListener('ended', onEnded);
+    return () => {
+      el.removeEventListener('timeupdate', onTimeUpdate);
+      el.removeEventListener('ended', onEnded);
+    };
   }, [status, locVideo]);
 
   const replayClip = () => {
