@@ -266,6 +266,54 @@ const EmmettTillVideo = () => {
 
 
 /**
+ * HeroQuote, the homepage "Quote of the Day": one verbatim passage from the
+ * archive, randomly selected on each visit (so it rotates visit to visit),
+ * shown large with its attribution. Reads the curated, Library-of-Congress
+ * cross-referenced /rag/summaries/quotes.json. Prefers the shorter passages so
+ * the hero stays tight, and falls back to the full set if none are short.
+ */
+function HeroQuote() {
+  const [quote, setQuote] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/rag/summaries/quotes.json')
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error('not found'))))
+      .then((j) => {
+        if (cancelled) return;
+        const all = Array.isArray(j?.quotes) ? j.quotes : [];
+        if (all.length === 0) return;
+        const short = all.filter((q) => (q.quote || '').length <= 320);
+        const pool = short.length ? short : all;
+        setQuote(pool[Math.floor(Math.random() * pool.length)]);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (!quote) return null;
+
+  return (
+    <figure className="max-w-2xl border-l-4 border-civil-red-strong pl-5">
+      <figcaption className="text-civil-red-body text-xs sm:text-sm font-medium uppercase tracking-wide font-['Chivo_Mono'] mb-3">
+        Quote of the Day
+      </figcaption>
+      <blockquote className="text-black dark:text-zinc-100 text-xl sm:text-2xl lg:text-3xl font-normal font-['Source_Serif_4'] leading-snug">
+        &ldquo;{quote.quote}&rdquo;
+      </blockquote>
+      <div className="mt-3 text-sm sm:text-base text-stone-700 dark:text-zinc-300">
+        <span className="font-medium text-stone-900 dark:text-zinc-100">{quote.entry_subject}</span>
+        {quote.context ? (
+          <span className="text-stone-500 dark:text-zinc-400 italic"> · {quote.context}</span>
+        ) : null}
+      </div>
+    </figure>
+  );
+}
+
+/**
  * Home - Timeline-based landing page matching Figma design
  */
 export default function Home() {
@@ -774,29 +822,38 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative px-4 sm:px-8 lg:px-12 pt-2 pb-12 lg:pt-3 lg:pb-16 flex flex-col z-10">
         <div className="w-full mt-2 lg:mt-3">
-          <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
-            {/* Text Content */}
-            <div className="lg:w-1/2 space-y-6 lg:space-y-8">
-              {/* Main Title */}
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
+            {/* Editorial stack: tagline, Quote of the Day, single primary action
+                (Dustin, 2026-06-02 afternoon). The three competing entry points
+                (145 Interviews, View Timeline, Explore the Collection) collapse
+                into one button that funnels to the Table of Contents, the primary
+                entry into the archive. */}
+            <div className="lg:w-1/2 space-y-7 lg:space-y-9">
+              {/* Tagline */}
               <h1 className="leading-tight max-w-2xl">
                 <span className="text-black dark:text-zinc-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']">The </span>
                 <span className="text-red-500 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold font-['Source_Serif_4']">Civil Rights Movement</span>
-                <span className="text-black dark:text-zinc-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']"> narrated by the activists, artists, and change-makers who were really there.</span>
+                <span className="text-black dark:text-zinc-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']"> narrated by the activists, artists, educators, organizers, and changemakers who lived it.</span>
               </h1>
 
-              {/* Statistics */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono']">
-                <Link to="/interview-index" className="inline-flex items-center gap-2 text-civil-red-body hover:underline transition-colors">
-                  <span>145 Interviews</span>
-                  <img src={arrowRightIcon} alt="" className="w-5 h-4" aria-hidden="true" />
+              {/* Large, randomly-selected rotating Quote of the Day with attribution. */}
+              <HeroQuote />
+
+              {/* Single primary action. timelineRef stays on it so the decorative
+                  SmartRay that links the hero down to the timeline keeps its anchor. */}
+              <div ref={timelineRef} className="pt-1">
+                <Link
+                  to="/topic-glossary"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-civil-red-strong bg-civil-red-strong text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-800 hover:border-red-800 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                >
+                  Explore the Collection
+                  <span aria-hidden="true">→</span>
                 </Link>
-              </p>
-
-
+              </div>
             </div>
 
             {/* Hero Images */}
-            <div className="lg:w-1/2 relative h-[400px] sm:h-[500px] lg:h-[550px] xl:h-[650px] w-full lg:-mt-8 lg:-ml-16 z-50">
+            <div className="lg:w-1/2 relative h-[320px] sm:h-[420px] lg:h-[500px] xl:h-[560px] w-full z-10">
               {imageLoading ? (
                 <div className="w-full h-full bg-gray-200 dark:bg-zinc-800 animate-pulse flex items-center justify-center">
                   <span className="text-gray-500 dark:text-zinc-400">Loading image...</span>
@@ -814,28 +871,6 @@ export default function Home() {
               )}
             </div>
           </div>
-        </div>
-
-        {/* View Timeline link + Explore the Collection, normal flow at all viewports */}
-        <div className="mt-8 lg:mt-12 z-50 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center">
-          <button
-            ref={timelineRef}
-            onClick={() => {
-              timelineStartRef.current?.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-            }}
-            className="inline-block text-civil-red-body text-lg sm:text-xl lg:text-2xl font-light font-['Chivo_Mono'] hover:underline cursor-pointer bg-transparent border-none p-0"
-          >
-            View the Timeline
-          </button>
-          <Link
-            to="/rag-explore"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-civil-red-strong bg-civil-red-strong text-white text-base lg:text-lg font-medium font-['Chivo_Mono'] hover:bg-red-800 hover:border-red-800 transition-colors"
-          >
-            Explore the Collection →
-          </Link>
         </div>
       </section>
 

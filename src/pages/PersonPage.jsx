@@ -288,6 +288,7 @@ export default function PersonPage() {
   const [person, setPerson] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const [crossLinks, setCrossLinks] = useState(null);
+  const [externalLinks, setExternalLinks] = useState(null);
   const [peopleIndex, setPeopleIndex] = useState(null);
 
   // Always load the people index. PersonPage runs for both interviewees
@@ -322,6 +323,7 @@ export default function PersonPage() {
     setPerson(null);
     setNotFound(false);
     setCrossLinks(null);
+    setExternalLinks(null);
     fetchJsonOrNull(`/rag/people/${slug}.json`).then((data) => {
       if (cancelled) return;
       if (!data) {
@@ -443,6 +445,135 @@ export default function PersonPage() {
     });
     return () => { cancelled = true; };
   }, [person, peopleIndex]);
+
+  // Derive the external-figure surfaces. External figures have no
+  // entry_number, so they never run the interviewee crossLinks effect
+  // above (no LoC item, no semantic neighbors, no concept axes). Their
+  // connections instead come from two precomputed corpus artifacts:
+  //
+  //   - /rag/summaries/famous_external.json: the passages across the
+  //     corpus that name this figure (entry_number, entry_subject, and
+  //     numeric start/end seconds where the cue was aligned). This is
+  //     the richer source and the one that carries timestamps, so it
+  //     drives both the appears-in passage list and the discussed-by
+  //     roster.
+  //   - /rag/summaries/influence.json: the who-discussed-whom graph.
+  //     Edges run FROM an interviewee (in:N) TO this figure (ext:slug).
+  //     The interviewees on those edges are the same discussers; their
+  //     OTHER out-edges to ext: figures give the figures co-discussed by
+  //     the same voices, which is a figure-to-figure connection the
+  //     passage list alone does not surface.
+  //
+  // famous_external slugs, influence ext-node slugs, and people-index
+  // slugs are the same string for every covered figure, so the page's
+  // own slug keys all three directly. A figure absent from both files
+  // (most of the catalog's external figures) yields nothing here and the
+  // sections are omitted; no empty headings render.
+  useEffect(() => {
+    if (!person || person.person_type !== 'external_figure') return undefined;
+    let cancelled = false;
+    Promise.all([
+      fetchJsonOrNull('/rag/summaries/famous_external.json'),
+      fetchJsonOrNull('/rag/summaries/influence.json'),
+    ]).then(([famous, influence]) => {
+      if (cancelled) return;
+
+      const fig = (famous?.figures || []).find((f) => f.slug === slug) || null;
+
+      // Resolve an entry_number to its interviewee name + catalog summary,
+      // preferring the people index (joint-page aware) and falling back to
+      // the passage's own entry_subject when the index has no record.
+      const nameForEntry = (entryNumber, fallback) =>
+        peopleIndex?.by_entry?.[entryNumber]?.display_name || fallback || `Entry #${entryNumber}`;
+
+      // Where this figure appears: one row per passage that names the
+      // figure, deep-linked to the bounded clip when the cue carries a
+      // numeric start. Passages whose entry_subject is null are person-
+      // vector stubs that leaked into the precompute (their text begins
+      // "Name: ... Role: ..."); they carry no real timestamp, so they are
+      // dropped from the passage list rather than shown as a bare link.
+      const appearsIn = (fig?.passages || [])
+        .filter((p) => p.entry_number != null && p.entry_subject)
+        .map((p, i) => {
+          const startSec = Number.isFinite(p.timestamp_start_seconds)
+            ? Math.round(p.timestamp_start_seconds)
+            : null;
+          return {
+            key: `${p.entry_number}-${i}`,
+            entry_number: p.entry_number,
+            entry_subject: nameForEntry(p.entry_number, p.entry_subject),
+            startSec,
+            href:
+              startSec != null
+                ? `/interview/${p.entry_number}?t=${startSec}`
+                : `/interview/${p.entry_number}`,
+          };
+        });
+
+      // Discussed-by roster: the distinct interviewees who name this
+      // figure, drawn from the influence edges to ext:slug and unioned
+      // with the famous_external passage entries (so a discusser present
+      // in only one source still appears). Each resolves to an interviewee
+      // people card that opens their interview page.
+      const extId = `ext:${slug}`;
+      const discusserEntries = new Set();
+      for (const e of influence?.edges || []) {
+        if (e.to === extId && typeof e.from === 'string' && e.from.startsWith('in:')) {
+          discusserEntries.add(Number(e.from.slice(3)));
+        }
+      }
+      for (const p of fig?.passages || []) {
+        if (p.entry_number != null && p.entry_subject) discusserEntries.add(p.entry_number);
+      }
+      const discussedBy = [...discusserEntries]
+        .map((entryNumber) => {
+          const rec = peopleIndex?.by_entry?.[entryNumber] || null;
+          return {
+            entry_number: entryNumber,
+            display_name: rec?.display_name || nameForEntry(entryNumber, null),
+            photo_src: rec?.photo_src || null,
+            role_preview: rec?.role_preview || null,
+          };
+        })
+        .sort((a, b) => (a.display_name || '').localeCompare(b.display_name || ''));
+
+      // Co-discussed figures: other ext: figures that the SAME interviewees
+      // discuss, ranked by how many of those shared voices name each one.
+      // This is the figure-to-figure connection (Ella Baker and Bob Moses
+      // surface together because the same interviewees name both), distinct
+      // from the discussed-by interviewee roster above.
+      const nodesById = new Map((influence?.nodes || []).map((n) => [n.id, n]));
+      const coCounts = new Map();
+      for (const e of influence?.edges || []) {
+        if (
+          typeof e.from === 'string' &&
+          discusserEntries.has(Number(e.from.slice(3))) &&
+          typeof e.to === 'string' &&
+          e.to.startsWith('ext:') &&
+          e.to !== extId
+        ) {
+          coCounts.set(e.to, (coCounts.get(e.to) || 0) + (e.count || 1));
+        }
+      }
+      const coDiscussedFigures = [...coCounts.entries()]
+        .map(([id, count]) => {
+          const node = nodesById.get(id);
+          const figSlug = id.slice(4);
+          const rec = peopleIndex?.by_slug?.[figSlug] || null;
+          return {
+            slug: figSlug,
+            display_name: rec?.display_name || node?.name || figSlug,
+            photo_src: rec?.photo_src || null,
+            hasPage: Boolean(rec),
+            count,
+          };
+        })
+        .sort((a, b) => b.count - a.count || a.display_name.localeCompare(b.display_name));
+
+      setExternalLinks({ appearsIn, discussedBy, coDiscussedFigures });
+    });
+    return () => { cancelled = true; };
+  }, [person, peopleIndex, slug]);
 
   useDocumentTitle(person ? `${person.display_name}` : 'Person');
 
@@ -850,7 +981,7 @@ export default function PersonPage() {
               <article>
                 <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
                   <Users className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
-                  Related Topics
+                  Related People
                 </h2>
                 <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-none p-0 mb-3">
                   {crossLinks.related.map((r) => {
@@ -990,6 +1121,204 @@ export default function PersonPage() {
             )}
           </section>
         )}
+
+        {/* External-figure manifest. Renders only for historic figures
+            (no entry_number, so the interviewee crossLinks block above is
+            null for them). Two distinct surfaces, both derived from the
+            corpus: Related People (the individuals connected to this
+            figure) and Where This Figure Appears in the Archive (the
+            specific interview passages that name them, deep-linked to
+            bounded clips). Each sub-section renders only when it has data,
+            so a figure with no corpus connections shows no empty headings. */}
+        {externalLinks &&
+          (externalLinks.discussedBy.length > 0 ||
+            externalLinks.coDiscussedFigures.length > 0 ||
+            externalLinks.appearsIn.length > 0) && (
+            <section className="mb-12 space-y-8">
+
+              {/* Related People: the interviewees who name this figure, plus
+                  the other historic figures those same voices discuss. The
+                  interviewee cards open the interview page; the figure cards
+                  open the figure's reference page. */}
+              {(externalLinks.discussedBy.length > 0 ||
+                externalLinks.coDiscussedFigures.length > 0) && (
+                <article>
+                  <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-3 flex items-center gap-1.5">
+                    <Users className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
+                    Related People
+                  </h2>
+
+                  {externalLinks.discussedBy.length > 0 && (
+                    <>
+                      <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                        Interviewees who discuss {person.display_name}
+                      </p>
+                      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-none p-0 mb-5">
+                        {externalLinks.discussedBy.map((d) => {
+                          const initial = (d.display_name || '?').trim().charAt(0).toUpperCase();
+                          return (
+                            <li key={d.entry_number}>
+                              <Link
+                                to={`/interview/${d.entry_number}`}
+                                className="flex items-center gap-3 p-2 rounded-md border border-stone-200 bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-shadow"
+                                title={d.role_preview || d.display_name}
+                              >
+                                {d.photo_src ? (
+                                  <img
+                                    src={d.photo_src}
+                                    alt=""
+                                    className="w-12 h-12 rounded-md object-cover border border-stone-300 bg-stone-100 shrink-0"
+                                    loading="lazy"
+                                  />
+                                ) : (
+                                  <div
+                                    aria-hidden="true"
+                                    className="w-12 h-12 rounded-md flex items-center justify-center shrink-0"
+                                    style={{ backgroundColor: '#F2483C' }}
+                                  >
+                                    <span
+                                      className="text-xl font-medium"
+                                      style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
+                                    >
+                                      {initial}
+                                    </span>
+                                  </div>
+                                )}
+                                <div className="min-w-0 flex-1">
+                                  <div className="text-sm leading-tight text-stone-800 truncate">
+                                    {d.display_name}
+                                  </div>
+                                  <div className="text-xs text-stone-500 mt-0.5">Interviewee</div>
+                                </div>
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </>
+                  )}
+
+                  {externalLinks.coDiscussedFigures.length > 0 && (
+                    <>
+                      <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-2">
+                        Historic figures discussed by the same voices
+                      </p>
+                      <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 list-none p-0">
+                        {externalLinks.coDiscussedFigures.map((f) => {
+                          const initial = (f.display_name || '?').trim().charAt(0).toUpperCase();
+                          const card = (
+                            <>
+                              {f.photo_src ? (
+                                <img
+                                  src={f.photo_src}
+                                  alt=""
+                                  className="w-12 h-12 rounded-md object-cover border border-stone-300 bg-stone-100 shrink-0"
+                                  loading="lazy"
+                                />
+                              ) : (
+                                <div
+                                  aria-hidden="true"
+                                  className="w-12 h-12 rounded-md flex items-center justify-center shrink-0"
+                                  style={{ backgroundColor: '#F2483C' }}
+                                >
+                                  <span
+                                    className="text-xl font-medium"
+                                    style={{ color: '#EBEAE9', fontFamily: 'Source Serif 4, serif' }}
+                                  >
+                                    {initial}
+                                  </span>
+                                </div>
+                              )}
+                              <div className="min-w-0 flex-1">
+                                <div className="text-sm leading-tight text-stone-800 truncate">
+                                  {f.display_name}
+                                </div>
+                                <div className="text-xs text-stone-500 tabular-nums mt-0.5">
+                                  {f.count} shared {f.count === 1 ? 'voice' : 'voices'}
+                                </div>
+                              </div>
+                            </>
+                          );
+                          return (
+                            <li key={f.slug}>
+                              {f.hasPage ? (
+                                <Link
+                                  to={`/person/${f.slug}`}
+                                  className="flex items-center gap-3 p-2 rounded-md border border-stone-200 bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 transition-shadow"
+                                  title={`Discussed by ${f.count} of the same voices`}
+                                >
+                                  {card}
+                                </Link>
+                              ) : (
+                                <div className="flex items-center gap-3 p-2 rounded-md border border-stone-200 bg-white">
+                                  {card}
+                                </div>
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </>
+                  )}
+                </article>
+              )}
+
+              {/* Where This Figure Appears in the Archive: the interview
+                  passages that name the figure. Each row links to the source
+                  interview; where the cue carries a numeric start, a bounded
+                  "Hear this in context" clip plays just that passage and the
+                  row deep-links to the moment. Distinct from Related People
+                  above: this is the passage list, not the roster of people. */}
+              {externalLinks.appearsIn.length > 0 && (
+                <article>
+                  <h2 className="text-stone-900 text-sm font-semibold uppercase tracking-wide font-mono mb-1 flex items-center gap-1.5">
+                    <MessageSquareQuote className="w-4 h-4 text-civil-red-strong" aria-hidden="true" />
+                    Where This Figure Appears in the Archive
+                  </h2>
+                  <p className="text-sm text-stone-500 mb-4">
+                    Interviews whose transcripts name {person.display_name}. Open any interview, or play the bounded clip where a timestamp is recorded.
+                  </p>
+                  <ul className="space-y-3 list-none p-0">
+                    {externalLinks.appearsIn.map((a) => {
+                      const mm = a.startSec != null ? Math.floor(a.startSec / 60) : null;
+                      const ss = a.startSec != null ? String(a.startSec % 60).padStart(2, '0') : null;
+                      return (
+                        <li
+                          key={a.key}
+                          className="border border-stone-200 rounded-lg bg-white p-4"
+                        >
+                          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                            <Link
+                              to={a.href}
+                              className="text-sm font-medium text-stone-900 hover:text-civil-red-strong focus:outline-none focus-visible:underline"
+                            >
+                              {a.entry_subject}
+                            </Link>
+                            <span className="text-xs text-stone-500">CRHP entry #{a.entry_number}</span>
+                          </div>
+                          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2 text-sm text-stone-600">
+                            {mm != null && (
+                              <span className="inline-flex items-center gap-1 tabular-nums">
+                                <Clock className="w-3.5 h-3.5" aria-hidden="true" />
+                                {mm}:{ss}
+                              </span>
+                            )}
+                            {a.startSec != null && (
+                              <HearInContext
+                                entryNumber={a.entry_number}
+                                startSeconds={a.startSec}
+                                fullInterviewHref={a.href}
+                              />
+                            )}
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </article>
+              )}
+            </section>
+          )}
 
         {/* Sources list. The [src: N] refs in the bio paragraph anchor
             to #source-N inside this list, so a reader can click any

@@ -2,33 +2,26 @@
  * @fileoverview Common Footer for the Civil Rights History Project.
  *
  * Mounted ONCE globally in Layout (Dustin, 2026-06-02) so every framed page
- * carries the same footer sitemap; individual pages no longer render their own
+ * carries the same footer; individual pages no longer render their own
  * <Footer/>. The two header-less routes that fall outside Layout
  * (InterviewDetail, InterviewPlayer) still render it directly.
  *
- * The footer is now the secondary-navigation home for the destinations Dustin
- * pulled out of the four-item main menu (Essays, Data Insights, Methodology,
- * About). It carries the full site map plus the Library of Congress
- * attribution (plain text, no outbound loc.gov link, per the site-wide policy).
- *
- * Naming note: Dustin's IA renames the /topic-glossary page to "Table of
- * Contents" and routes "Interviews" at /table-of-contents, so the labels below
- * intentionally do NOT match their route names. Routes were left stable because
- * dozens of in-app deep links target them; only the visible labels changed.
+ * The footer is the secondary-navigation home for the destinations that are NOT
+ * in the five-item primary nav (Dustin, 2026-06-02 afternoon): Essays,
+ * Methodology, Technical Documentation, and About. The five primary sections
+ * (Timeline, Table of Contents, Explore Interview Data, People & Interviews,
+ * K-12 Curriculum) now live in the header Menu drawer. The footer also carries
+ * the Library of Congress attribution as plain text (no outbound loc.gov link,
+ * per the site-wide policy).
  */
 
 import { Link } from 'react-router-dom';
 
-// One sitemap entry per destination. Order: the four primary sections first
-// (matching the main menu), then the secondary destinations moved out of it.
+// One sitemap entry per secondary destination. The five primary sections live
+// in the header Menu drawer (Header.jsx); the footer holds the rest, then the
+// Library of Congress attribution is appended after the loop below.
 const SITEMAP = [
-  { label: 'Timeline', to: '/' },
-  { label: 'Table of Contents', to: '/topic-glossary' },
-  { label: 'Interviews', to: '/table-of-contents' },
-  { label: 'People', to: '/people' },
-  { label: 'K-12 Curriculum', to: '/curriculum' },
   { label: 'Essays', to: '/essays' },
-  { label: 'Data Insights', to: '/rag-explore' },
   { label: 'Methodology', to: '/machine-audit' },
   { label: 'Technical Documentation', href: 'https://github.com/jsovelove/civil-rights-history-project' },
   { label: 'About', to: '/about' },

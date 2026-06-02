@@ -7,7 +7,6 @@ import {
   Constellation,
   RelatedPassages,
   ConceptSpectrum,
-  FamousNames,
   ThemesBrowser,
   GeographicAtlas,
   InfluenceList,
@@ -69,20 +68,21 @@ function useCorpusData() {
 }
 
 /**
- * RagExplore, landing page for the interactive RAG features layer.
+ * RagExplore, the "Explore Interview Data" primary nav destination.
  *
  * Page structure:
  *   - Page header: h1 + framing sentence + corpus-stats badges
  *     (interview count, passage count, per-tier counts).
  *   - Sticky tab nav. "Ideological Spectrums" (the two-axis Concept
  *     Spectrum hero + the four-chart ConceptMatrix grid) is the default
- *     toggle, rendered as a standalone lead pill. The whole page is
- *     "Data Insights" (the menu label), so there is no "Concepts &
- *     Ideas" group (Dustin, 2026-05-30). The remaining toggles follow
- *     in three intent groups:
- *       Maps of the Archive (Themes, Network, Atlas)
- *       Find a Moment       (Quote Finder, Related People)
- *       Curated Paths       (Tours, Famous Names, Quote of the Day)
+ *     toggle, rendered as a standalone lead pill. The remaining toggles
+ *     follow in three intent groups, with "Maps of the Archive" as the
+ *     primary grouping (each map reads as its own substantial
+ *     destination):
+ *       Maps of the Archive (Themes, Influence, Events and Activism,
+ *                            Places, Related People)
+ *       Find a Moment       (Quote Finder, Compare Voices)
+ *       Curated Paths       (Tours, Quote of the Day)
  *   - About This Page aside at the bottom carrying AuditProvenance
  *     (9 audit passes / 127 LoC cross-references / 5 tier vocabulary).
  *
@@ -95,7 +95,7 @@ function useCorpusData() {
  * Pinecone + Voyage rerank). Static precomputed artifacts live at
  * /rag/constellation.json (interview roster + UMAP coords + audit
  * tier), /rag/related/entry-N.json (semantic neighbors per entry),
- * and /rag/summaries/*.json (themes, tours, famous-names, etc).
+ * and /rag/summaries/*.json (themes, tours, etc).
  *
  * The legacy Constellation tab (a PCA-based scatter) and the later
  * InterviewMap (UMAP scatter) were both retired from the nav.
@@ -107,7 +107,7 @@ function useCorpusData() {
 // /rag-explore#map are shareable and deep-linkable.
 const TABS = [
   'quote', 'compare', 'related',
-  'names', 'themes',
+  'themes',
   'atlas', 'network', 'events', 'tours', 'quote-of-day',
   'lenses',
 ];
@@ -124,13 +124,11 @@ const RELATED_DEMO_ENTRIES = [
   { number: 125, name: 'Wheeler Parker, Jr. (Emmett Till\'s cousin)' },
   { number: 60, name: 'Joan Trumpauer Mulholland (Freedom Rider)' },
 ];
-// Default toggle when no ?tab= param is provided. Per Dustin
-// (2026-05-30) "Ideological Spectrums" is the default toggle: it shows
-// the two-axis Concept Spectrum hero and then the grid of four spectrum
-// charts beneath it. The whole page is "Data Insights" (the menu
-// label), so there is no separate Data Insights toggle and no
-// "Concepts & Ideas" group, the spectrums ARE the lead view. Legacy
-// /rag-explore?tab=spectrum links resolve to it.
+// Default toggle when no ?tab= param is provided. "Ideological
+// Spectrums" is the default toggle: it shows the two-axis Concept
+// Spectrum hero and then the grid of four spectrum charts beneath it.
+// It is the lead view and the featured pill above "Maps of the
+// Archive". Legacy /rag-explore?tab=spectrum links resolve to it.
 const DEFAULT_TAB = 'lenses';
 const VALID_TAB = (t) => {
   if (t === 'spectrum') return 'lenses';
@@ -147,7 +145,6 @@ const TAB_ORDER = [
   { id: 'quote', label: 'Quote Finder' },
   { id: 'compare', label: 'Compare Voices' },
   { id: 'themes', label: 'Themes' },
-  { id: 'names', label: 'Famous Names' },
   { id: 'atlas', label: 'Places' },
   { id: 'network', label: 'Influence' },
   { id: 'events', label: 'Events and Activism' },
@@ -156,21 +153,24 @@ const TAB_ORDER = [
 ];
 
 // Group the remaining toggles by user intent. "Ideological Spectrums"
-// is NOT in a group, it renders as the lead featured pill above these
-// (Dustin, 2026-05-30: the whole page is data insights, so there is no
-// separate "Concepts & Ideas" row).
+// is NOT in a group, it renders as the lead featured pill above these.
+// "Maps of the Archive" is the primary grouping: each entry is its own
+// substantial, full-width map destination (Themes, Influence, Events
+// and Activism, Places, and the Related People network), deep-linkable
+// via ?tab=. The Ideological Spectrums lead pill is the sixth map and
+// renders above this group.
 const TAB_GROUPS = [
   {
     label: 'Maps of the Archive',
-    tabs: ['themes', 'network', 'events', 'atlas'],
+    tabs: ['themes', 'network', 'events', 'atlas', 'related'],
   },
   {
     label: 'Find a Moment',
-    tabs: ['quote', 'compare', 'related'],
+    tabs: ['quote', 'compare'],
   },
   {
     label: 'Curated Paths',
-    tabs: ['tours', 'names', 'quote-of-day'],
+    tabs: ['tours', 'quote-of-day'],
   },
 ];
 
@@ -184,7 +184,6 @@ const TAB_LABELS = {
   compare: 'Compare Voices',
   related: 'Related People',
   themes: 'Themes',
-  names: 'Famous Names',
   atlas: 'Places',
   network: 'Influence',
   events: 'Events and Activism',
@@ -207,12 +206,11 @@ export default function RagExplore() {
   const [tab, setTab] = useState(() => VALID_TAB(tabParam));
   const [relatedEntry, setRelatedEntry] = useState(RELATED_DEMO_ENTRIES[0].number);
 
-  // Dynamic title: "Explore the embeddings · <active tab>". The
-  // user-visible feedback when navigating from a menu link is otherwise
-  // a single tab-pill highlight change deep in the page; surfacing the
-  // active demo in the document title makes the navigation legible in
-  // browser-tab/history UI too.
-  useDocumentTitle(`Explore the Interview Data · ${TAB_LABELS[tab] || tab}`);
+  // Dynamic title: "Explore Interview Data · <active tab>". The page is
+  // a primary nav destination, so the document title leads with that
+  // name; appending the active view keeps the navigation legible in
+  // browser-tab/history UI when a visitor moves between views.
+  useDocumentTitle(`Explore Interview Data · ${TAB_LABELS[tab] || tab}`);
 
   // React to navigation that changes the tab query param (Links from
   // other pages or browser back/forward).
@@ -273,7 +271,7 @@ export default function RagExplore() {
             className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Explore the Interview Data
+            Explore Interview Data
           </h1>
           <p
             className="text-stone-700 text-base sm:text-lg max-w-3xl"
@@ -347,20 +345,20 @@ export default function RagExplore() {
 
         {/* "Ideological Spectrums" (the spectrum hero + the four-chart
             grid) is the default toggle, rendered as a standalone lead
-            pill below; the other toggles follow in three intent groups.
-            There is no "Concepts & Ideas" group, the whole page is Data
-            Insights (Dustin, 2026-05-30). */}
+            pill below and counted as one of the maps; the other toggles
+            follow in three intent groups, with "Maps of the Archive" as
+            the primary grouping. */}
         <nav
-          aria-label="Demo tabs"
+          aria-label="Explore Interview Data views"
           className="sticky top-0 z-30 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-3 pb-4 mb-8 backdrop-blur border-t border-stone-300/50 dark:border-zinc-800/60 bg-[rgba(235,234,233,0.94)] dark:bg-zinc-900/90"
         >
           <p className="text-xs text-stone-500 mb-3 font-mono uppercase tracking-wide">
-            Pick a view. The spectrums lead; the rest are grouped by what they do.
+            Pick a view. Maps of the archive are the main destinations; the rest are grouped by what they do.
           </p>
           <div className="space-y-2.5">
             {/* Lead pill: "Ideological Spectrums" is the default view and
-                stands alone (no group label), since the whole page is
-                Data Insights and the spectrums are the headline. */}
+                stands alone above the group labels, the featured first
+                map of the archive and the page's headline view. */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <button
                 type="button"
@@ -665,15 +663,6 @@ export default function RagExplore() {
                 Thematic Clusters
               </h2>
               <ThemesBrowser />
-            </div>
-          )}
-
-          {tab === 'names' && (
-            <div>
-              <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Famous Figures (Not in Corpus)
-              </h2>
-              <FamousNames />
             </div>
           )}
 

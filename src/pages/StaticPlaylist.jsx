@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Play, Clock, FileText, ChevronLeft, ChevronRight, List, UserCircle } from 'lucide-react';
+import { Play, Clock, FileText, ChevronLeft, ChevronRight, List, UserCircle, Sparkles } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
 import { TIER_COLORS } from '../components/rag/tiers';
+import { COLLECTION_NAME, findPlaylist, relatedPlaylists, playlistHref } from '../data/archiveThemes';
 
 /**
  * StaticPlaylist, the /playlist-builder route.
@@ -29,6 +30,12 @@ import { TIER_COLORS } from '../components/rag/tiers';
  * people, and places can all link here and land the visitor on real clips
  * and the interviews behind them. Re-run scripts/build_playlist_index.py to
  * regenerate the clip set after a re-chapterization pass.
+ *
+ * Vocabulary (Dustin, 2026-06-02 afternoon): the site standardizes on
+ * Collection > Theme > Playlist > Video Clips. This page renders one Playlist
+ * (its Theme is named in the breadcrumb when the playlist belongs to the
+ * curated taxonomy in src/data/archiveThemes.js) made of Video Clips, and the
+ * "Related Playlists" block offers two close siblings plus one cross-theme pick.
  */
 
 function fmtDuration(startSec, endSec) {
@@ -195,6 +202,42 @@ export default function StaticPlaylist() {
     .filter((t) => !topic || t.toLowerCase() !== topic.toLowerCase())
     .slice(0, 6);
 
+  // Related Playlists (Dustin, 2026-06-02 afternoon): two closely related
+  // playlists (siblings in this playlist's theme) plus one unexpected but
+  // relevant (the lead playlist of another theme), for lateral discovery. When
+  // the current view is not a taxonomy playlist (a cluster-derived ?entries=
+  // selection, say), fall back to the topics present in this set, each opening
+  // its own playlist.
+  const relatedPlaylistItems = (() => {
+    const rel = relatedPlaylists({ label: labelParam, topic, keywords });
+    if (rel) {
+      const items = rel.close.map((p) => ({
+        key: `close-${p.id}`,
+        to: playlistHref(p),
+        label: p.name,
+        title: `Closely related, from ${p.themeName}`,
+        unexpected: false,
+      }));
+      if (rel.surprise) {
+        items.push({
+          key: `surprise-${rel.surprise.id}`,
+          to: playlistHref(rel.surprise),
+          label: rel.surprise.name,
+          title: `An unexpected connection, from ${rel.surprise.themeName}`,
+          unexpected: true,
+        });
+      }
+      return items;
+    }
+    return relatedTopics.map((t) => ({
+      key: `topic-${t}`,
+      to: `/playlist-builder?topic=${encodeURIComponent(t)}&label=${encodeURIComponent(t)}`,
+      label: t,
+      title: 'A topic that recurs in this playlist',
+      unexpected: false,
+    }));
+  })();
+
   // Featured Clips (Dustin, 2026-06-02): the first clip of each of the first 3
   // distinct interviews in curated order, so the panel opens with 3 diverse,
   // representative voices rather than three clips from the same interview.
@@ -248,17 +291,23 @@ export default function StaticPlaylist() {
   }, [clips, playParam]);
 
   const subjectForEntry = entryParam && index?.videos?.[entryParam]?.subject;
+  // The H1 is the Playlist's name; the breadcrumb above it names the object as a
+  // Playlist (and its Theme when known), so the title itself stays a plain name.
   const titleText = labelParam
     ? labelParam
     : entriesParam
       ? 'Selected Interviews'
       : topic
-        ? `Clips: ${topic}`
+        ? topic
         : entryParam
           ? `${subjectForEntry || `Interview #${entryParam}`}: Chapter Playlist`
           : keywords
-            ? `Clips About “${keywords}”`
-            : 'All Clips';
+            ? `“${keywords}”`
+            : 'All Video Clips';
+
+  // Situate this playlist in the Collection > Theme > Playlist hierarchy so the
+  // breadcrumb can name its theme; null for cluster-derived or ad-hoc views.
+  const currentTheme = findPlaylist({ label: labelParam, topic, keywords });
 
   const current = clips[selected];
 
@@ -296,8 +345,13 @@ export default function StaticPlaylist() {
     <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
       <main id="main-content" tabIndex={-1} className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 focus:outline-none">
         <header className="mb-6">
+          {/* Breadcrumb situating this object in the Collection > Theme >
+              Playlist hierarchy (Dustin, 2026-06-02 afternoon). The Theme is
+              named when the playlist belongs to the curated taxonomy. */}
           <p className="text-civil-red-body text-sm font-light font-mono mb-2">
-            Civil Rights History Project · Playlist
+            {COLLECTION_NAME}
+            {currentTheme?.theme?.name ? ` · ${currentTheme.theme.name}` : ''}
+            {' · Playlist'}
           </p>
           <h1 className="text-stone-900 text-2xl sm:text-3xl md:text-4xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
             {titleText}
@@ -305,7 +359,7 @@ export default function StaticPlaylist() {
           {index && clips.length > 0 && (
             <div className="text-sm text-stone-600">
               <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                <span><span className="font-medium text-stone-900 tabular-nums">{clips.length}</span> {clips.length === 1 ? 'clip' : 'clips'}</span>
+                <span><span className="font-medium text-stone-900 tabular-nums">{clips.length}</span> {clips.length === 1 ? 'video clip' : 'video clips'}</span>
                 <span aria-hidden="true" className="text-stone-300">·</span>
                 <span><span className="font-medium text-stone-900 tabular-nums">{stats.interviewees}</span> {stats.interviewees === 1 ? 'interviewee' : 'interviewees'}</span>
                 {stats.totalSec > 0 && (
@@ -321,7 +375,7 @@ export default function StaticPlaylist() {
             </div>
           )}
           {index && clips.length === 0 && (
-            <p className="text-sm text-stone-600">No clips match this yet.</p>
+            <p className="text-sm text-stone-600">No video clips match this yet.</p>
           )}
         </header>
 
@@ -329,7 +383,7 @@ export default function StaticPlaylist() {
 
         {index && clips.length === 0 && (
           <div className="rounded-lg border border-stone-200 bg-white p-6">
-            <p className="text-stone-700 mb-3">No clips match this yet.</p>
+            <p className="text-stone-700 mb-3">No video clips match this yet.</p>
             <div className="flex flex-wrap gap-3 text-sm">
               <Link to="/interview-index" className="text-civil-red-body hover:underline">Browse all interviews</Link>
               <Link to="/topic-glossary" className="text-civil-red-body hover:underline">Browse topics</Link>
@@ -353,7 +407,7 @@ export default function StaticPlaylist() {
 
               <div className="mt-4">
                 <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-1">
-                  Clip {selected + 1} of {clips.length}
+                  Video Clip {selected + 1} of {clips.length}
                   {fmtDuration(current.start_seconds, current.end_seconds) && (
                     <span className="ml-2 inline-flex items-center gap-1 text-stone-600">
                       <Clock className="w-3 h-3" aria-hidden="true" />
@@ -424,17 +478,21 @@ export default function StaticPlaylist() {
                     {stats.totalSec > 0 ? ` and run about ${fmtMinutes(stats.totalSec)} in total` : ''}.
                     {stats.subtopics.length > 1 ? ` The subtopics that recur most are ${stats.subtopics.slice(0, 3).join(', ')}.` : ''}
                   </p>
-                  {relatedTopics.length > 0 && (
+                  {relatedPlaylistItems.length > 0 && (
                     <div className="mt-3">
-                      <p className="text-xs uppercase tracking-wide text-stone-500 mb-1.5">Related topics</p>
+                      <p className="text-xs uppercase tracking-wide text-stone-500 mb-1.5">Related Playlists</p>
                       <div className="flex flex-wrap gap-2">
-                        {relatedTopics.map((t) => (
+                        {relatedPlaylistItems.map((it) => (
                           <Link
-                            key={t}
-                            to={`/playlist-builder?topic=${encodeURIComponent(t)}`}
-                            className="inline-flex items-center rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-sm text-stone-700 hover:border-civil-red-strong hover:bg-red-50 transition-colors"
+                            key={it.key}
+                            to={it.to}
+                            title={it.title}
+                            className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-sm text-stone-700 hover:border-civil-red-strong hover:bg-red-50 transition-colors"
                           >
-                            {t}
+                            {it.unexpected && (
+                              <Sparkles className="w-3 h-3 text-civil-red-body" aria-hidden="true" />
+                            )}
+                            {it.label}
                           </Link>
                         ))}
                       </div>
@@ -458,7 +516,7 @@ export default function StaticPlaylist() {
               {featuredIndices.length > 0 && (
                 <div className="mb-4">
                   <h3 className="text-xs font-semibold uppercase tracking-wide font-mono text-stone-500 mb-2">
-                    Featured Clips
+                    Featured Video Clips
                   </h3>
                   <ol className="space-y-2 list-none p-0">
                     {featuredIndices.map((i) => {
@@ -518,7 +576,7 @@ export default function StaticPlaylist() {
               )}
 
               <h3 className="text-xs font-semibold uppercase tracking-wide font-mono text-stone-500 mb-2">
-                All Related Clips
+                Video Clips
               </h3>
               <ol ref={listRef} className="space-y-2 list-none p-0 max-h-[32rem] overflow-y-auto pr-1">
                 {clips.map((c, i) => {

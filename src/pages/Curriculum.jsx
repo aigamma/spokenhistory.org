@@ -195,32 +195,20 @@ export default function Curriculum() {
             Civil Rights History Project · Curriculum
           </p>
           <h1
-            className="text-stone-900 dark:text-stone-100 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
+            className="text-stone-900 dark:text-stone-100 text-3xl sm:text-4xl font-medium mb-1 leading-tight"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            {data?.title || 'Youth and Student Activism'}
+            K-12 Curriculum
           </h1>
-          {data?.subtitle && (
-            <p
-              className="text-stone-700 dark:text-stone-300 text-base sm:text-lg max-w-3xl mb-3"
-              style={{ fontFamily: 'Source Serif 4, serif' }}
-            >
-              {data.subtitle}
-            </p>
-          )}
-          {data?.overview && (
-            <p
-              className="text-stone-700 dark:text-stone-300 text-base max-w-3xl leading-relaxed"
-              style={{ fontFamily: 'Source Serif 4, serif' }}
-            >
-              {data.overview}
-            </p>
-          )}
-          <p className="mt-4 text-sm text-stone-500 dark:text-stone-400 max-w-3xl leading-relaxed">
-            This is an AI-assisted, educator-reviewed lesson built from
-            primary-source oral histories in the Civil Rights History Project
-            archive. Review each clip and adapt the plan for your classroom
-            before teaching.
+          {/* The specific topic is the subtitle (Dustin, 2026-06-02 afternoon):
+              the page title generalizes to the curriculum surface and the topic
+              sits beneath it, immediately above the grade picker. The longer
+              overview and the AI-assisted disclaimer move below the picker. */}
+          <p
+            className="text-stone-700 dark:text-stone-300 text-lg sm:text-xl max-w-3xl"
+            style={{ fontFamily: 'Source Serif 4, serif' }}
+          >
+            {data?.title || 'Youth and Student Activism'}
           </p>
         </header>
 
@@ -322,6 +310,33 @@ export default function Curriculum() {
                 })}
               </div>
             </section>
+
+            {/* Lesson overview and the AI-assisted disclaimer, moved here so the
+                path from the title to grade selection stays direct, then the
+                context for the assembled lesson follows the picker (Dustin,
+                2026-06-02 afternoon). */}
+            {data?.subtitle && (
+              <p
+                className="mb-3 text-stone-700 dark:text-stone-300 text-base max-w-3xl leading-relaxed"
+                style={{ fontFamily: 'Source Serif 4, serif' }}
+              >
+                {data.subtitle}
+              </p>
+            )}
+            {data?.overview && (
+              <p
+                className="mb-3 text-stone-700 dark:text-stone-300 text-base max-w-3xl leading-relaxed"
+                style={{ fontFamily: 'Source Serif 4, serif' }}
+              >
+                {data.overview}
+              </p>
+            )}
+            <p className="mb-6 text-sm text-stone-500 dark:text-stone-400 max-w-3xl leading-relaxed">
+              This is an AI-assisted, educator-reviewed lesson built from
+              primary-source oral histories in the Civil Rights History Project
+              archive. Review each clip and adapt the plan for your classroom
+              before teaching.
+            </p>
 
             {/* Print button. Hidden on paper. */}
             <div className="print:hidden mb-6 flex justify-end">

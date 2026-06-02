@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, X, Moon, Sun } from 'lucide-react';
+import { Search, X, Moon, Sun, Home } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 import { useSearch } from '../../context/SearchProvider';
 import ShareButton from '../ShareButton';
-import SiteLogoDark from '../../assetts/logos/crhp-home-logo.png';
-import SiteLogoLight from '../../assetts/logos/crhp-home-logo-light.png';
 
 /**
  * Header, global nav for the protected app.
@@ -34,18 +32,28 @@ import SiteLogoLight from '../../assetts/logos/crhp-home-logo-light.png';
 // single "Interviews" entry now points at /table-of-contents, and the
 // old standalone "Table of Contents" entry plus the old
 // "Interviews" -> /interview-index entry are both gone.
-// 2026-06-02 (Dustin): the main menu is reduced to four destinations.
-// Topics is renamed "Table of Contents"; Interviews and People are merged into
-// one "Interviews & People" entry; and Essays / Data Insights / Methodology /
-// About now live in the global footer sitemap (Footer.jsx) instead of the menu.
-// NOTE: the labels intentionally do NOT match their route names. "Table of
-// Contents" routes at /topic-glossary and "Interviews & People" routes at
-// /table-of-contents; the routes were left stable because many in-app deep
-// links target them, so only the visible labels changed (flagged to Eric).
+// 2026-06-02 (Dustin, afternoon): the main menu is set to FIVE destinations,
+// re-promoting "Explore Interview Data" out of the footer and splitting the
+// morning's combined "Interviews & People" entry back into a People-led
+// section. Order, label -> route:
+//   Timeline               -> /               (the scroll-driven home timeline)
+//   Table of Contents      -> /topic-glossary (the nested themes-and-playlists book)
+//   Explore Interview Data -> /rag-explore    (the maps and retrieval surfaces)
+//   People & Interviews    -> /people         (People Catalog: browses the oral-history
+//                                              interviewees and the historic figures they discuss)
+//   K-12 Curriculum        -> /curriculum
+// Essays, About, Methodology, and Technical Documentation stay in the global
+// footer sitemap (Footer.jsx). NOTE: the visible labels intentionally do NOT
+// all match their route names. "Table of Contents" routes at /topic-glossary
+// (the thematic book); the per-interview chapter browse keeps the stable
+// /table-of-contents route and is reached from People & Interviews. Routes were
+// left stable because many in-app deep links target them, so only the labels
+// changed (flagged to Eric).
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   { label: 'Table of Contents', to: '/topic-glossary', matchPath: '/topic-glossary' },
-  { label: 'Interviews & People', to: '/table-of-contents', matchPath: '/table-of-contents' },
+  { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
+  { label: 'People & Interviews', to: '/people', matchPath: '/people' },
   { label: 'K-12 Curriculum', to: '/curriculum', matchPath: '/curriculum' },
 ];
 
@@ -110,27 +118,22 @@ export default function Header() {
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 sm:pt-4 pb-2.5">
           <div className="flex items-center justify-between gap-2 sm:gap-2.5">
-            {/* Home logo in the upper-left corner (Eric, 2026-06-02). The
-                wordmark links home on every page EXCEPT the homepage itself,
-                where it would only re-navigate to the page you are already on
-                (Eric's call). A light wordmark (dark text) shows in light mode
-                and the white-on-dark wordmark in dark mode, swapped on the
-                theme, so each reads natively on its own header. It is allowed to stand a little
-                taller than the nav pills; max-w-full + object-contain let it
-                shrink to fit on narrow screens instead of crowding the controls.
-                On the homepage an empty span holds the left slot so
-                justify-between still pins the controls to the right. */}
+            {/* Return-home control in the upper-left corner (Dustin, 2026-06-02
+                afternoon). The wordmark graphic was removed; a plain text-plus-icon
+                "Home" link carries the return-home function so it survives without
+                the graphic. It shows on every page EXCEPT the homepage itself,
+                where returning home is a no-op (Eric's earlier call); on the
+                homepage an empty span holds the left slot so justify-between still
+                pins the controls to the right. */}
             {location.pathname !== '/' ? (
               <Link
                 to="/"
-                aria-label="Civil Rights History Project, return to the homepage"
-                className="inline-flex items-center shrink min-w-0 rounded-md overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                aria-label="Return to the homepage"
+                className="inline-flex items-center gap-1.5 min-h-11 px-3 -ml-1 rounded-full text-sm sm:text-base font-medium text-stone-700 dark:text-zinc-200 hover:bg-white/70 dark:hover:bg-zinc-800/70 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                style={{ fontFamily: 'Chivo Mono, monospace' }}
               >
-                <img
-                  src={isDark ? SiteLogoDark : SiteLogoLight}
-                  alt="Civil Rights History Project, home"
-                  className="block h-12 sm:h-14 lg:h-16 w-auto max-w-full object-contain"
-                />
+                <Home className="w-4 h-4" aria-hidden="true" />
+                Home
               </Link>
             ) : (
               <span aria-hidden="true" />
