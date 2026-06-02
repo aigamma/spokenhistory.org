@@ -41,7 +41,7 @@ Essays
 
 Sharing
 - Replaced the multiple per-clip share buttons with a single share button by the player.
-- Share made more robust, with a clearer confirmation and a manual-copy fallback.
+- Fixed the share bug: the site uses a hash router, but share links were built without the # (for example /table-of-contents?entry=3 instead of /#/table-of-contents?entry=3), so shared clip, interview, and directory links opened the homepage. Shared links are now hash-rooted and reopen the exact view. The per-clip cleanup, clearer confirmation, and manual-copy fallback remain.
 
 JUDGMENT CALLS AND ANYTHING NOT DONE EXACTLY AS ASKED (and why)
 
@@ -50,8 +50,8 @@ JUDGMENT CALLS AND ANYTHING NOT DONE EXACTLY AS ASKED (and why)
 - Interviews and People merge: built as one section with toggles (interviews by default), not a single fused page, because the two render very differently (chapter lists versus people cards). I can fully fuse them if that is what you meant.
 - Menu labels versus page addresses: renaming Topics to Table of Contents means the menu labels no longer match the internal page addresses. I left the addresses unchanged so existing links and bookmarks keep working.
 - Featured clips and curated order: chosen automatically by relevance, not hand-picked. If you want specific clips featured for big topics like Education, send the picks and I will pin them.
-- Interviewee thumbnails: the data has no photos for these yet, so each new interviewee shows a simple placeholder icon. Real thumbnails need one image field added to the data.
+- Interviewee thumbnails: now resolved. The playlist group headers pull the real interviewee portraits from the People catalog (the same source the People page uses); the placeholder icon shows only for the rare person with no photo.
 - Technical Documentation: there is no documentation page yet, so the footer link points to the project's GitHub repository. Happy to point it elsewhere.
 - Essay 404: I could not reproduce the exact 404 from the code (the phrase links to an in-page jump, and the data checked out), so I hardened the most likely cause. If it still happens, send me the exact URL.
-- Share reliability: the code looked correct, so I could not pin down a specific failure. I added robustness and clearer feedback. If it still misbehaves, tell me the browser and what actually happens.
+- Share reliability: now resolved. The cause was the hash-router issue above (links built without the #), not a browser-specific problem, so no browser detail is needed. Shared links now resolve to the right view.
 - Faster autoplay on advance: improved, but clips from different interviews still load a new video each time, which is inherent. A deeper fix is possible if the lag is still noticeable to you.
