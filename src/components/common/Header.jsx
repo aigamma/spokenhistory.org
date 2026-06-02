@@ -4,6 +4,7 @@ import { Search, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 import { useSearch } from '../../context/SearchProvider';
 import ShareButton from '../ShareButton';
+import SiteLogo from '../../assetts/logos/crhp-home-logo.png';
 
 /**
  * Header, global nav for the protected app.
@@ -108,19 +109,31 @@ export default function Header() {
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 sm:pt-4 pb-2.5">
           <div className="flex items-center justify-between gap-2 sm:gap-2.5">
-            {/* Return-home link in the upper-left corner (Dustin, 2026-06-02).
-                Plain-text "Return Home" for now; this is the slot where Eric
-                will drop a logo image later. It shares the chrome row with the
-                controls on the right (justify-between), so it reads as the
-                top-left home affordance aligned with the top navigation. */}
-            <Link
-              to="/"
-              aria-label="Civil Rights History Project, return to the homepage"
-              className="inline-flex items-center min-h-11 px-1 -mx-1 text-sm sm:text-base font-bold text-stone-800 dark:text-zinc-100 hover:text-civil-red-body dark:hover:text-red-400 transition-colors"
-              style={{ fontFamily: 'Chivo Mono, monospace' }}
-            >
-              Return Home
-            </Link>
+            {/* Home logo in the upper-left corner (Eric, 2026-06-02). The
+                wordmark links home on every page EXCEPT the homepage itself,
+                where it would only re-navigate to the page you are already on
+                (Eric's call). The art is white/red on a dark field (RGBA), so it
+                sits on a dark badge to stay legible on the cream light-mode
+                header as well as in dark mode. It is allowed to stand a little
+                taller than the nav pills; max-w-full + object-contain let it
+                shrink to fit on narrow screens instead of crowding the controls.
+                On the homepage an empty span holds the left slot so
+                justify-between still pins the controls to the right. */}
+            {location.pathname !== '/' ? (
+              <Link
+                to="/"
+                aria-label="Civil Rights History Project, return to the homepage"
+                className="inline-flex items-center shrink min-w-0 rounded-md bg-stone-900 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+              >
+                <img
+                  src={SiteLogo}
+                  alt="Civil Rights History Project, home"
+                  className="block h-12 sm:h-14 lg:h-16 w-auto max-w-full object-contain"
+                />
+              </Link>
+            ) : (
+              <span aria-hidden="true" />
+            )}
 
             {/* Right-side chrome cluster: share, search, theme toggle, menu,
                 grouped so justify-between keeps the home link at the left edge
