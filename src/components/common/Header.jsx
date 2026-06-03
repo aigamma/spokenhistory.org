@@ -41,14 +41,16 @@ import ShareButton from '../ShareButton';
 // click-to-play page at /table-of-contents) is re-surfaced as its own primary
 // item, "Interviews"; the themes-and-playlists book that had taken the "Table
 // of Contents" label is renamed "Topics"; and the people page, stripped of
-// interviewees (now browsed under Interviews), becomes "Historical Figures
-// Referenced in Interviews" (route still /people). Order, label -> route:
-//   Timeline                                    -> /                  (scroll-driven home timeline)
-//   Interviews                                  -> /table-of-contents (per-interview chapter index, click-to-play)
-//   Topics                                      -> /topic-glossary    (the nested themes-and-playlists book)
-//   Historical Figures Referenced in Interviews -> /people            (external figures, each -> its /person page)
-//   Explore Interview Data                      -> /rag-explore       (the maps and retrieval surfaces)
-//   K-12 Curriculum                             -> /curriculum
+// interviewees (now browsed under Interviews), holds only the historic figures
+// (route still /people). Its PAGE title is "Historical Figures Referenced in
+// Interviews", but the MENU label is just "People" (Eric, 2026-06-03), another
+// deliberate label/page mismatch. Order, menu label -> route:
+//   Timeline               -> /                  (scroll-driven home timeline)
+//   Interviews             -> /table-of-contents (per-interview chapter index, click-to-play)
+//   Topics                 -> /topic-glossary    (the nested themes-and-playlists book)
+//   People                 -> /people            (page title "Historical Figures Referenced in Interviews"; figures -> /person)
+//   Explore Interview Data -> /rag-explore       (the maps and retrieval surfaces)
+//   K-12 Curriculum        -> /curriculum
 // Essays, About, Methodology, and Technical Documentation stay in the global
 // footer sitemap (Footer.jsx). NOTE: the visible labels still do NOT all match
 // their route names, kept stable because many in-app deep links target them.
@@ -58,7 +60,7 @@ const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   { label: 'Interviews', to: '/table-of-contents', matchPath: '/table-of-contents' },
   { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
-  { label: 'Historical Figures Referenced in Interviews', to: '/people', matchPath: '/people' },
+  { label: 'People', to: '/people', matchPath: '/people' },
   { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'K-12 Curriculum', to: '/curriculum', matchPath: '/curriculum' },
 ];
