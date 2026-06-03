@@ -743,8 +743,12 @@ export default function RagExplore() {
           {/* Corpus stats + tier badges that previously sat here are
               now rendered in the page-top <header>, where a first-time
               visitor sees them BEFORE scrolling past Spectrum + every
-              demo tab. AuditProvenance stays in this aside as the
-              deeper "why you can trust the substrate" credentialing. */}
+              demo tab. AuditProvenance is now just a single quiet line
+              linking to the full Machine Audit (Eric, 2026-06-03): the big
+              "Why you can trust these passages" stat block was cut because
+              the same detail lives on /machine-audit with live counts, the
+              page-top header already carries the headline stats, and the
+              inline numbers had gone stale as the corpus grew past them. */}
           <AuditProvenance />
         </aside>
 
