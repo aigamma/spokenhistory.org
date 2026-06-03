@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ChevronRight, Play, Film } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -8,7 +8,18 @@ import { TIER_BADGE } from '../components/rag/tiers';
 import PlaylistPanel from '../components/PlaylistPanel';
 import AddToPlaylistButton from '../components/AddToPlaylistButton';
 import { PlaylistProvider, usePlaylist } from '../context/PlaylistProvider';
-import { fromClipsParam, toClipsParam, rehydrateClip, buildIndexMap, buildTocIndex } from '../utils/clipTokens';
+import PlaylistGenerator from '../components/PlaylistGenerator';
+import PlaylistLibrary from '../components/PlaylistLibrary';
+import { retrieve } from '../services/ragClient';
+import {
+  fromClipsParam,
+  toClipsParam,
+  rehydrateClip,
+  buildIndexMap,
+  buildTocIndex,
+  normalizeClip,
+  MAX_CLIPS_PER_PLAYLIST,
+} from '../utils/clipTokens';
 
 /**
  * TableOfContents, the /table-of-contents page and the site's single
@@ -68,6 +79,21 @@ function cleanName(s) {
   return (s || '').replace(/\s*\(PARTIAL\)\s*$/i, '').trim();
 }
 
+// Match a playlist_index clip against a taxonomy query (an exact topic_category
+// bucket, or a whole-phrase keyword search over the clip's text), the same
+// matching the static playlist page uses, so a generated topic playlist lines
+// up with what the topic link would show.
+function clipMatchesQuery(c, query) {
+  if (query && query.topic) return (c.topic_category || '').toLowerCase() === query.topic.toLowerCase();
+  if (query && query.keywords) {
+    const phrase = query.keywords.toLowerCase();
+    const text =
+      `${c.title || ''} ${c.summary || ''} ${(c.keywords || []).join(' ')} ${(c.related_events || []).join(' ')} ${c.topic_category || ''} ${c.subject || ''}`.toLowerCase();
+    return text.includes(phrase);
+  }
+  return false;
+}
+
 function TableOfContentsInner() {
   useDocumentTitle('Interviews');
   const [searchParams, setSearchParams] = useSearchParams();
@@ -104,6 +130,11 @@ function TableOfContentsInner() {
   // the URL<->working effects below never re-trigger one another.
   const syncedRef = useRef(null);
   const playlistInitRef = useRef(false);
+  // Playlist generation (topic + loose semantic phrase) state.
+  const [genBusy, setGenBusy] = useState(false);
+  const [genError, setGenError] = useState('');
+  const plIndexPromiseRef = useRef(null);
+  const playlistSectionRef = useRef(null);
   const playerWrapRef = useRef(null);
   // A shared link can arrive deep: ?entry=12 opens that interview, and an
   // optional &t=/&end= cues a specific chapter or part. Restored once after the
@@ -295,6 +326,93 @@ function TableOfContentsInner() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clipsParam]);
 
+  // Fetch the clip index once (cached on a promise ref), for topic generation
+  // and exact rehydration labels. Shared by both generators so the file is
+  // fetched at most once.
+  const ensurePlIndex = useCallback(async () => {
+    if (plIndex) return plIndex;
+    if (!plIndexPromiseRef.current) {
+      plIndexPromiseRef.current = fetch('/rag/playlist_index.json')
+        .then((r) => (r.ok ? r.json() : null))
+        .catch(() => null);
+    }
+    const j = await plIndexPromiseRef.current;
+    if (j) setPlIndex(j);
+    return j;
+  }, [plIndex]);
+
+  // Generate a ready-made playlist from a curated topic: filter the clip index
+  // and materialize an editable ?clips= snapshot the reader can then reorder.
+  const generateFromTopic = useCallback(
+    async (query, label) => {
+      setGenError('');
+      setGenBusy(true);
+      try {
+        const idx = await ensurePlIndex();
+        if (!idx || !Array.isArray(idx.clips)) {
+          setGenError('The clip index is unavailable right now.');
+          return;
+        }
+        const hits = idx.clips.filter((c) => clipMatchesQuery(c, query));
+        hits.sort((a, b) => a.entry_number - b.entry_number || (a.chapter_number || 0) - (b.chapter_number || 0));
+        if (!hits.length) {
+          setGenError('No clips matched that topic yet.');
+          return;
+        }
+        const refs = hits.slice(0, MAX_CLIPS_PER_PLAYLIST).map((c) => ({
+          entry: c.entry_number,
+          start: c.start_seconds,
+          end: c.end_seconds,
+          label: c.title,
+          subject: c.subject,
+        }));
+        setClips(refs, label);
+        requestAnimationFrame(() => playlistSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      } catch {
+        setGenError('Could not build that playlist.');
+      } finally {
+        setGenBusy(false);
+      }
+    },
+    [ensurePlIndex, setClips],
+  );
+
+  // Generate a playlist of snippets from a loose semantic phrase: a live
+  // retrieval, deduped, materialized as an editable ?clips= snapshot. Snippet
+  // starts fall mid-chapter, so their labels resolve to the containing chapter.
+  const generateFromPhrase = useCallback(
+    async (phrase) => {
+      setGenError('');
+      setGenBusy(true);
+      try {
+        const res = await retrieve(phrase, { topN: 24 });
+        const results = (res && res.results) || [];
+        const seen = new Set();
+        const refs = [];
+        for (const r of results) {
+          const ref = normalizeClip(r);
+          if (!ref) continue;
+          const k = `${ref.e}_${ref.s}`;
+          if (seen.has(k)) continue;
+          seen.add(k);
+          refs.push(ref);
+        }
+        if (!refs.length) {
+          setGenError('No clips matched that phrase. Try different words.');
+          return;
+        }
+        ensurePlIndex();
+        setClips(refs, `"${phrase}"`);
+        requestAnimationFrame(() => playlistSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+      } catch {
+        setGenError('Search is unavailable right now. Please try again.');
+      } finally {
+        setGenBusy(false);
+      }
+    },
+    [ensurePlIndex, setClips],
+  );
+
   function toggleEntry(entry) {
     setOpenEntry((cur) => (cur === entry ? null : entry));
     // Closing an interview clears any clip that belonged to it.
@@ -365,24 +483,37 @@ function TableOfContentsInner() {
         {status === 'ready' && (
           <>
             {playlistClips.length > 0 && (
-              <PlaylistPanel
-                clips={playlistClips}
-                title={working.title}
-                onRename={rename}
-                onRemove={removeClip}
-                onReorder={reorder}
-                onClear={clearWorking}
-                onSave={() => saveToLibrary(null, playlistClips)}
-                onUpdateSaved={() => updateLibraryEntry(working.libraryId, { title: working.title, clips: playlistClips })}
-                libraryId={working.libraryId}
-                storageAvailable={storageAvailable}
-                shareGetUrl={() => {
-                  const cp = toClipsParam(working.clips);
-                  const t = working.title ? `&title=${encodeURIComponent(working.title)}` : '';
-                  return `/table-of-contents?clips=${cp}${t}`;
-                }}
-              />
+              <div ref={playlistSectionRef}>
+                <PlaylistPanel
+                  clips={playlistClips}
+                  title={working.title}
+                  onRename={rename}
+                  onRemove={removeClip}
+                  onReorder={reorder}
+                  onClear={clearWorking}
+                  onSave={() => saveToLibrary(null, playlistClips)}
+                  onUpdateSaved={() => updateLibraryEntry(working.libraryId, { title: working.title, clips: playlistClips })}
+                  libraryId={working.libraryId}
+                  storageAvailable={storageAvailable}
+                  shareGetUrl={() => {
+                    const cp = toClipsParam(working.clips);
+                    const t = working.title ? `&title=${encodeURIComponent(working.title)}` : '';
+                    return `/table-of-contents?clips=${cp}${t}`;
+                  }}
+                />
+              </div>
             )}
+            <PlaylistGenerator
+              onGenerateTopic={generateFromTopic}
+              onGeneratePhrase={generateFromPhrase}
+              busy={genBusy}
+              error={genError}
+            />
+            <PlaylistLibrary
+              onOpen={() =>
+                requestAnimationFrame(() => playlistSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+              }
+            />
             <label className="block mb-5">
               <span className="sr-only">Filter interviews by name</span>
               <input
