@@ -5,6 +5,8 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
 import { TIER_BADGE } from '../components/rag/tiers';
+import PlaylistPanel from '../components/PlaylistPanel';
+import { fromClipsParam, rehydrateClip, buildIndexMap, buildTocIndex } from '../utils/clipTokens';
 
 /**
  * TableOfContents, the /table-of-contents page and the site's single
@@ -82,6 +84,9 @@ export default function TableOfContents() {
   // click so the player remounts and re-seeks even when re-selecting the same
   // segment; the mounting click is the user gesture that lets it autoplay.
   const [clip, setClip] = useState(null);
+  // Playlist mode (?clips=): the secondary playlist_index.json is loaded lazily
+  // only when a playlist is present, for exact clip labels + interviewee names.
+  const [plIndex, setPlIndex] = useState(null);
   const playerWrapRef = useRef(null);
   // A shared link can arrive deep: ?entry=12 opens that interview, and an
   // optional &t=/&end= cues a specific chapter or part. Restored once after the
@@ -90,6 +95,8 @@ export default function TableOfContents() {
   const deepEntry = searchParams.get('entry');
   const deepT = searchParams.get('t');
   const deepEnd = searchParams.get('end');
+  // Playlist mode: an ordered list of clips encoded in ?clips= (src/utils/clipTokens.js).
+  const clipsParam = (searchParams.get('clips') || '').trim();
   const didRestoreRef = useRef(false);
 
   useEffect(() => {
@@ -119,6 +126,20 @@ export default function TableOfContents() {
       .catch(() => !cancelled && setStatus('error'));
     return () => { cancelled = true; };
   }, []);
+
+  // Playlist mode loads the clip index lazily (only when ?clips= is present),
+  // for exact per-clip labels and interviewee names; rehydrateClip falls back
+  // to toc.json (already loaded) for anything it misses, so the panel renders
+  // even before this resolves.
+  useEffect(() => {
+    if (!clipsParam || plIndex) return undefined;
+    let cancelled = false;
+    fetch('/rag/playlist_index.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => { if (!cancelled && j) setPlIndex(j); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [clipsParam, plIndex]);
 
   // Keep the URL's ?q= in step with the filter box, so a filtered view is
   // shareable/bookmarkable and the back button restores it. replace:true keeps
@@ -187,6 +208,19 @@ export default function TableOfContents() {
     // alphabetical regardless of the data file's order (Eric, 2026-06-03).
     return base.sort((a, b) => cleanName(a.subject).localeCompare(cleanName(b.subject)));
   }, [interviews, query]);
+
+  // The active playlist (?clips=) rehydrated to render-ready clips, in URL
+  // order. Labels come from the exact index clip when available, otherwise the
+  // containing chapter in toc.json (semantic snippets fall mid-chapter).
+  const playlistClips = useMemo(() => {
+    if (!clipsParam) return null;
+    const refs = fromClipsParam(clipsParam);
+    if (!refs.length) return [];
+    const idxMap = plIndex ? buildIndexMap(plIndex) : null;
+    const tocMap = buildTocIndex(data);
+    return refs.map((r) => rehydrateClip(r, idxMap, tocMap, plIndex?.videos));
+  }, [clipsParam, plIndex, data]);
+  const playlistTitle = (searchParams.get('title') || '').trim() || 'Your Playlist';
 
   function toggleEntry(entry) {
     setOpenEntry((cur) => (cur === entry ? null : entry));
@@ -257,6 +291,9 @@ export default function TableOfContents() {
 
         {status === 'ready' && (
           <>
+            {playlistClips && playlistClips.length > 0 && (
+              <PlaylistPanel clips={playlistClips} title={playlistTitle} />
+            )}
             <label className="block mb-5">
               <span className="sr-only">Filter interviews by name</span>
               <input
