@@ -9,13 +9,16 @@ import { auth } from '../services/firebase'
 // Create context
 const AuthContext = createContext()
 
-// Client-side bypass for the team-shared credential. Firebase Auth rejects
-// logins from origins not listed in its Authorized Domains, which blocks the
-// production custom domain (spokenhistory.org) until that list is updated in the
-// Firebase Console. This bypass lets the gated UI work regardless of origin;
-// actual data security is enforced by Firestore rules + App Check, not this
-// gate. The password is the same team-shared value already published in the
-// repo's CLAUDE.md and rag/SHOWCASE.md, so no new exposure.
+// Client-side bypass for the team-shared credential. The team login is a
+// shared password with NO backing Firebase user (the identifier
+// wwu@civilrightsproject.local is not a registered account), so it is verified
+// here client-side and works on any origin. Note: Firebase's Authorized Domains
+// list only gates OAuth-redirect sign-in (Phone, Google, third-party) and
+// email-link, not plain Email/Password, so neither this gate nor the admin
+// Email/Password login depends on the custom domain being authorized. Actual
+// data security is enforced by Firestore rules + App Check, not this gate. The
+// password is the same team-shared value already published in the repo's
+// CLAUDE.md and rag/SHOWCASE.md, so no new exposure.
 const TEAM_EMAIL = 'wwu@civilrightsproject.local'
 const TEAM_PASSWORD = 'civilrights'
 const TEAM_SESSION_KEY = 'civilrights:teamSession'
