@@ -83,6 +83,18 @@ Skip-link in `src/components/common/Layout.jsx` -- visually hidden until focused
 
 Global rule in `src/index.css` neutralizes animation + transition durations to 0.01ms for users who have the OS preference enabled. Catches users with vestibular disorders, motion sensitivity, or low-power devices.
 
+### Pause Animations control (WCAG 2.2.2 Pause, Stop, Hide), 2026-06-03
+
+The `prefers-reduced-motion` rule above only follows the OS setting and, by construction, cannot pause a `<video>`: it collapses CSS animation and transition durations, but video playback is not a CSS animation. The landing-page timeline auto-plays continuous, looping motion (about eleven period "GIF" videos plus a few infinite CSS animations) that runs well past five seconds, so SC 2.2.2 wants an in-page mechanism to pause it. A header toggle now provides one, and the same preference keeps the content-dense footer calm.
+
+- **Preference plumbing** (`src/hooks/useAnimationPreference.js`): mirrors the light/dark theme idiom exactly. A writer hook (`useAnimationPreference`) toggles and persists the choice to `localStorage` (`animationsPaused`); a read-only hook (`useAnimationsPaused`) subscribes via `MutationObserver`. The choice is reflected onto `data-animations-paused` on `<html>`. With no stored choice the default follows the OS `prefers-reduced-motion` setting, so a motion-sensitive visitor lands on an already-calm page without having to find the control first.
+- **No-FOUC** (`index.html`): an inline script sets `data-animations-paused` before first paint, beside the theme script, so a paused visitor never sees a flash of motion on load.
+- **CSS freeze** (`src/styles/index.css`): `html[data-animations-paused="true"]` sets `animation-play-state: paused` on keyframe animations while leaving interactive transitions (the menu slide, hover shifts) responsive, so the UI never feels broken. Loading spinners (`.animate-spin`) are exempt so a "still working" indicator is never frozen into looking hung.
+- **The control** (`src/components/common/Header.jsx`): a clear "Pause Animations" / "Play Animations" pill in the top-right chrome cluster, between Search and the Dark toggle. Icon plus label name the action the button performs; `aria-pressed` reflects state; the visible label shows from the `sm` breakpoint up, with the narrowest phones getting the icon alone (full label kept in `aria-label`/`title`) to keep the row from overflowing.
+- **Video pause + calm footer** (`src/pages/Home.jsx`): because CSS cannot pause a `<video>`, the timeline pauses its decorative videos in JS off the same preference, scoped via a `data-animation-scope="timeline"` attribute so a user-initiated interview player is never touched. When the toggle is paused, every decorative video is paused with a guard that re-pauses any the browser autoplay tries to restart. When motion is allowed, a zero-height sentinel just above the global footer is observed (`IntersectionObserver`, bottom `rootMargin` arms it about half a viewport early) so all decorative motion freezes as the reader nears the bottom: the dense footer reads against a still backdrop instead of looping motion in peripheral vision.
+
+Shipped 2026-06-03 (commit `b7cc1da`). Serves the same audiences as `prefers-reduced-motion` (vestibular disorders, motion sensitivity, low-power devices) plus anyone who simply wants the page to hold still, and it reaches the looping videos that the OS-level CSS rule cannot.
+
 ### Mobile responsiveness
 
 - **`useViewport` hook** (`src/hooks/useViewport.js`) exposes `isMobile / isTablet / isDesktop / isPortrait / isLandscape / isShortLandscape` driven by `matchMedia('(orientation: landscape)')` + window resize + orientationchange events.
