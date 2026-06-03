@@ -141,10 +141,13 @@ export default function Header() {
               <span aria-hidden="true" />
             )}
 
-            {/* Right-side chrome cluster: share, search, theme toggle, menu,
-                grouped so justify-between keeps the home link at the left edge
-                and these pinned to the right. */}
-            <div className="flex items-center gap-2 sm:gap-2.5">
+            {/* Right-side chrome cluster: share, search, Pause Animations,
+                theme toggle, menu, grouped so justify-between keeps the home
+                link at the left edge and these pinned to the right. flex-wrap +
+                justify-end let the row drop the Dark+Menu group onto a neat
+                second right-aligned line on the narrowest phones rather than
+                clipping the always-visible "Pause Animations" label. */}
+            <div className="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2.5">
             {/* Share this page: copies the current URL, the answer to "share
                 whatever page you are on." On the interview, Table of Contents,
                 and playlist pages the URL also carries the open section or
@@ -202,7 +205,15 @@ export default function Header() {
               {animationsPaused
                 ? <Play className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                 : <Pause className="w-4 h-4 flex-shrink-0" aria-hidden="true" />}
-              <span className="hidden sm:inline">
+              {/* Label is visible at EVERY width, including the narrowest
+                  phones (Eric, 2026-06-03): a motion-sensitive visitor has to
+                  be able to SEE that a pause exists, or they bounce (or resort
+                  to an ad blocker to kill the videos) before they find a bare
+                  icon. whitespace-nowrap keeps the two words together; the
+                  chrome row wraps the whole pill instead of breaking the text.
+                  Room is made by shrinking the Dark toggle to its icon below
+                  sm and letting the row wrap. */}
+              <span className="whitespace-nowrap">
                 {animationsPaused ? 'Play Animations' : 'Pause Animations'}
               </span>
             </button>
@@ -217,13 +228,16 @@ export default function Header() {
                 onClick={toggle}
                 aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
                 className={
-                  'inline-flex items-center gap-1.5 min-h-11 px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors ' +
+                  'inline-flex items-center justify-center gap-1.5 min-w-11 min-h-11 px-3 sm:px-5 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors ' +
                   (isDark ? 'bg-stone-200 text-stone-900 hover:bg-white' : 'bg-stone-800 text-white hover:bg-stone-900')
                 }
                 style={{ fontFamily: 'Chivo Mono, monospace' }}
               >
-                {isDark ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}
-                {isDark ? 'Light' : 'Dark'}
+                {isDark ? <Sun className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> : <Moon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />}
+                {/* Text drops below sm so "Pause Animations" keeps its full
+                    label on phones; the Moon/Sun icon plus the aria-label carry
+                    the control on small screens. */}
+                <span className="hidden sm:inline">{isDark ? 'Light' : 'Dark'}</span>
               </button>
 
               <button
