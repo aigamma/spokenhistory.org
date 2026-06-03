@@ -36,27 +36,29 @@ import ShareButton from '../ShareButton';
 // re-promoting "Explore Interview Data" out of the footer and splitting the
 // morning's combined "Interviews & People" entry back into a People-led
 // section.
-// 2026-06-03 (Eric): "People & Interviews" moved ABOVE "Explore Interview
-// Data" so the human-facing browse (the interviewees and the figures they
-// discuss) precedes the analytical maps-and-retrieval surface. Order,
-// label -> route:
-//   Timeline               -> /               (the scroll-driven home timeline)
-//   Table of Contents      -> /topic-glossary (the nested themes-and-playlists book)
-//   People & Interviews    -> /people         (People Catalog: browses the oral-history
-//                                              interviewees and the historic figures they discuss)
-//   Explore Interview Data -> /rag-explore    (the maps and retrieval surfaces)
-//   K-12 Curriculum        -> /curriculum
+// 2026-06-03 (Eric, later batch): the merged "People & Interviews" experiment
+// was undone. The per-interview chapter index (the collapsed, alphabetical,
+// click-to-play page at /table-of-contents) is re-surfaced as its own primary
+// item, "Interviews"; the themes-and-playlists book that had taken the "Table
+// of Contents" label is renamed "Topics"; and the people page, stripped of
+// interviewees (now browsed under Interviews), becomes "Historical Figures
+// Referenced in Interviews" (route still /people). Order, label -> route:
+//   Timeline                                    -> /                  (scroll-driven home timeline)
+//   Interviews                                  -> /table-of-contents (per-interview chapter index, click-to-play)
+//   Topics                                      -> /topic-glossary    (the nested themes-and-playlists book)
+//   Historical Figures Referenced in Interviews -> /people            (external figures, each -> its /person page)
+//   Explore Interview Data                      -> /rag-explore       (the maps and retrieval surfaces)
+//   K-12 Curriculum                             -> /curriculum
 // Essays, About, Methodology, and Technical Documentation stay in the global
-// footer sitemap (Footer.jsx). NOTE: the visible labels intentionally do NOT
-// all match their route names. "Table of Contents" routes at /topic-glossary
-// (the thematic book); the per-interview chapter browse keeps the stable
-// /table-of-contents route and is reached from People & Interviews. Routes were
-// left stable because many in-app deep links target them, so only the labels
-// changed (flagged to Eric).
+// footer sitemap (Footer.jsx). NOTE: the visible labels still do NOT all match
+// their route names, kept stable because many in-app deep links target them.
+// "Interviews" routes at /table-of-contents (the per-interview chapter index);
+// "Topics" routes at /topic-glossary (the thematic themes-and-playlists book).
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
-  { label: 'Table of Contents', to: '/topic-glossary', matchPath: '/topic-glossary' },
-  { label: 'People & Interviews', to: '/people', matchPath: '/people' },
+  { label: 'Interviews', to: '/table-of-contents', matchPath: '/table-of-contents' },
+  { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
+  { label: 'Historical Figures Referenced in Interviews', to: '/people', matchPath: '/people' },
   { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'K-12 Curriculum', to: '/curriculum', matchPath: '/curriculum' },
 ];

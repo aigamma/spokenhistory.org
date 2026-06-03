@@ -669,18 +669,28 @@ export default function PersonPage() {
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             Back
           </button>
-          {/* Anchor link to the catalog browse page. When the visitor
-              arrived via a direct URL (a shared link, a search result,
-              a bookmark) navigate(-1) goes back to the document.referrer
-              which may be outside the site; this link gives a reliable
-              in-site path to the catalog index. */}
-          <Link
-            to="/people"
-            className="inline-flex items-center gap-1 text-sm text-stone-700 hover:text-stone-900 focus:outline-none focus-visible:underline"
-          >
-            <Users className="w-4 h-4" aria-hidden="true" />
-            All people
-          </Link>
+          {/* Anchor link to a browse page (navigate(-1) can leave the site when
+              the visitor arrived via a direct/shared link). Context-aware after
+              the 2026-06-03 split: /people now holds ONLY the historic figures,
+              so an interviewee's reference page points at the Interviews chapter
+              index (their browse home) and an external figure points at /people. */}
+          {person.person_type === 'interviewee' ? (
+            <Link
+              to="/table-of-contents"
+              className="inline-flex items-center gap-1 text-sm text-stone-700 hover:text-stone-900 focus:outline-none focus-visible:underline"
+            >
+              <Users className="w-4 h-4" aria-hidden="true" />
+              All interviews
+            </Link>
+          ) : (
+            <Link
+              to="/people"
+              className="inline-flex items-center gap-1 text-sm text-stone-700 hover:text-stone-900 focus:outline-none focus-visible:underline"
+            >
+              <Users className="w-4 h-4" aria-hidden="true" />
+              Historical figures
+            </Link>
+          )}
         </div>
 
         {/* Identity block: name + dates + tier, full width above

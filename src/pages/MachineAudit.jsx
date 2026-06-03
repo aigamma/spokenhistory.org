@@ -321,8 +321,8 @@ export default function MachineAudit() {
         <nav aria-label="Related pages" className="text-sm text-stone-600 border-t border-stone-200 pt-6">
           <p className="mb-2 font-medium text-stone-900">See Also</p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2 list-none p-0">
-            <li><Link to="/interview-index" className="text-civil-red-body hover:underline">Browse the Interviews</Link></li>
-            <li><Link to="/people" className="text-civil-red-body hover:underline">People Catalog</Link></li>
+            <li><Link to="/table-of-contents" className="text-civil-red-body hover:underline">Browse the Interviews</Link></li>
+            <li><Link to="/people" className="text-civil-red-body hover:underline">Historical Figures Referenced in Interviews</Link></li>
             <li><Link to="/rag-explore" className="text-civil-red-body hover:underline">Explore the Interview Data</Link></li>
           </ul>
         </nav>

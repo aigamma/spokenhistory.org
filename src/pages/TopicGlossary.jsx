@@ -211,17 +211,18 @@ export default function TopicGlossary() {
           )}
         </div>
 
-        {/* The per-interview chapter index and the people catalog live under
-            People & Interviews now; keep them reachable from the archive's front door. */}
+        {/* The per-interview chapter index (Interviews) and the historic-figures
+            catalog are their own destinations now; keep them reachable from the
+            archive's front door. */}
         <div className="mt-12 pt-6 border-t border-stone-300 dark:border-zinc-700">
           <p className="text-sm text-stone-600 dark:text-stone-400">
-            Looking for a specific person or interview?{' '}
-            <Link to="/people" className="text-civil-red-body hover:underline">
-              Browse People and Interviews
-            </Link>{' '}
-            or{' '}
+            Looking for a specific interview or figure?{' '}
             <Link to="/table-of-contents" className="text-civil-red-body hover:underline">
-              open the full interview index
+              Browse the Interviews
+            </Link>{' '}
+            or the{' '}
+            <Link to="/people" className="text-civil-red-body hover:underline">
+              Historical Figures Referenced in Interviews
             </Link>
             .
           </p>

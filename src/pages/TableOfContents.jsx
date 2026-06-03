@@ -8,7 +8,10 @@ import { TIER_BADGE } from '../components/rag/tiers';
 
 /**
  * TableOfContents, the /table-of-contents page and the site's single
- * "Interviews" surface (Dustin, 2026-05-30; consolidated 2026-05-31).
+ * "Interviews" surface (Dustin, 2026-05-30; consolidated 2026-05-31;
+ * re-surfaced 2026-06-03 as a primary nav item, "Interviews", after the
+ * short-lived People/Interviews merge was undone, and pinned to alphabetical
+ * order by interviewee name).
  *
  * Every interview in the corpus, collapsed to a single row. Expand one and it
  * opens to its NAMED CHAPTERS, grouped into PARTS so a long interview reads as a
@@ -176,8 +179,13 @@ export default function TableOfContents() {
   const interviews = data?.interviews || [];
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return interviews;
-    return interviews.filter((iv) => cleanName(iv.subject).toLowerCase().includes(q));
+    const base = q
+      ? interviews.filter((iv) => cleanName(iv.subject).toLowerCase().includes(q))
+      : interviews.slice();
+    // Pin an explicit alphabetical order by cleaned interviewee name. toc.json
+    // already arrives alphabetical, but sorting here guarantees the page stays
+    // alphabetical regardless of the data file's order (Eric, 2026-06-03).
+    return base.sort((a, b) => cleanName(a.subject).localeCompare(cleanName(b.subject)));
   }, [interviews, query]);
 
   function toggleEntry(entry) {
@@ -228,23 +236,6 @@ export default function TableOfContents() {
             </p>
           )}
         </header>
-
-        {/* "Interviews & People" section toggle (Dustin, 2026-06-02): this is
-            the interviews view; the other two open the People catalog, filtered
-            to the historic figures the interviewees discuss, or to everyone. The
-            three together make Interviews and People read as one section that
-            defaults to the interviews. */}
-        <nav className="flex flex-wrap items-center gap-2 mb-6 text-sm" aria-label="Interviews and People views">
-          <span aria-current="page" className="px-3 py-1.5 rounded-full border border-civil-red-strong bg-red-50 text-civil-red-body font-medium">
-            Interviews
-          </span>
-          <Link to="/people?type=external_figure" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
-            Historic Figures Mentioned
-          </Link>
-          <Link to="/people" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
-            All People
-          </Link>
-        </nav>
 
         {status === 'loading' && (
           <div className="py-16 flex justify-center" role="status">
