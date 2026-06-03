@@ -6,7 +6,9 @@ import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
 import { TIER_BADGE } from '../components/rag/tiers';
 import PlaylistPanel from '../components/PlaylistPanel';
-import { fromClipsParam, rehydrateClip, buildIndexMap, buildTocIndex } from '../utils/clipTokens';
+import AddToPlaylistButton from '../components/AddToPlaylistButton';
+import { PlaylistProvider, usePlaylist } from '../context/PlaylistProvider';
+import { fromClipsParam, toClipsParam, rehydrateClip, buildIndexMap, buildTocIndex } from '../utils/clipTokens';
 
 /**
  * TableOfContents, the /table-of-contents page and the site's single
@@ -66,7 +68,7 @@ function cleanName(s) {
   return (s || '').replace(/\s*\(PARTIAL\)\s*$/i, '').trim();
 }
 
-export default function TableOfContents() {
+function TableOfContentsInner() {
   useDocumentTitle('Interviews');
   const [searchParams, setSearchParams] = useSearchParams();
   const [data, setData] = useState(null);
@@ -87,6 +89,21 @@ export default function TableOfContents() {
   // Playlist mode (?clips=): the secondary playlist_index.json is loaded lazily
   // only when a playlist is present, for exact clip labels + interviewee names.
   const [plIndex, setPlIndex] = useState(null);
+  const {
+    working,
+    setClips,
+    rename,
+    removeClip,
+    reorder,
+    clearWorking,
+    saveToLibrary,
+    updateLibraryEntry,
+    storageAvailable,
+  } = usePlaylist();
+  // syncedRef holds the ?clips=+title the working playlist currently mirrors, so
+  // the URL<->working effects below never re-trigger one another.
+  const syncedRef = useRef(null);
+  const playlistInitRef = useRef(false);
   const playerWrapRef = useRef(null);
   // A shared link can arrive deep: ?entry=12 opens that interview, and an
   // optional &t=/&end= cues a specific chapter or part. Restored once after the
@@ -132,14 +149,14 @@ export default function TableOfContents() {
   // to toc.json (already loaded) for anything it misses, so the panel renders
   // even before this resolves.
   useEffect(() => {
-    if (!clipsParam || plIndex) return undefined;
+    if ((!clipsParam && !working.clips.length) || plIndex) return undefined;
     let cancelled = false;
     fetch('/rag/playlist_index.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => { if (!cancelled && j) setPlIndex(j); })
       .catch(() => {});
     return () => { cancelled = true; };
-  }, [clipsParam, plIndex]);
+  }, [clipsParam, working.clips.length, plIndex]);
 
   // Keep the URL's ?q= in step with the filter box, so a filtered view is
   // shareable/bookmarkable and the back button restores it. replace:true keeps
@@ -209,18 +226,74 @@ export default function TableOfContents() {
     return base.sort((a, b) => cleanName(a.subject).localeCompare(cleanName(b.subject)));
   }, [interviews, query]);
 
-  // The active playlist (?clips=) rehydrated to render-ready clips, in URL
-  // order. Labels come from the exact index clip when available, otherwise the
-  // containing chapter in toc.json (semantic snippets fall mid-chapter).
+  // The working playlist rehydrated to render-ready clips, in order. Labels come
+  // from the exact index clip when available, otherwise the containing chapter
+  // in toc.json (semantic snippets fall mid-chapter).
   const playlistClips = useMemo(() => {
-    if (!clipsParam) return null;
-    const refs = fromClipsParam(clipsParam);
-    if (!refs.length) return [];
+    if (!working.clips.length) return [];
     const idxMap = plIndex ? buildIndexMap(plIndex) : null;
     const tocMap = buildTocIndex(data);
-    return refs.map((r) => rehydrateClip(r, idxMap, tocMap, plIndex?.videos));
-  }, [clipsParam, plIndex, data]);
-  const playlistTitle = (searchParams.get('title') || '').trim() || 'Your Playlist';
+    return working.clips.map((r) => rehydrateClip(r, idxMap, tocMap, plIndex?.videos));
+  }, [working.clips, plIndex, data]);
+
+  // ---- Playlist <-> URL sync ----------------------------------------------
+  // The working playlist (PlaylistProvider, localStorage-backed) is mirrored to
+  // and from ?clips= so the address bar is always a shareable bookmark. A shared
+  // ?clips= link wins on arrival; after that, edits write the URL and
+  // back/forward reloads working. The shared syncedRef sentinel holds the value
+  // both sides agree on, so neither effect re-triggers the other.
+  const buildSig = (cp, t) => `${cp}|${t || ''}`;
+
+  useEffect(() => {
+    if (playlistInitRef.current || status !== 'ready') return;
+    playlistInitRef.current = true;
+    const urlTitle = (searchParams.get('title') || '').trim();
+    if (clipsParam) {
+      setClips(fromClipsParam(clipsParam), urlTitle);
+      syncedRef.current = buildSig(clipsParam, urlTitle);
+    } else if (working.clips.length) {
+      const cp = toClipsParam(working.clips);
+      syncedRef.current = buildSig(cp, working.title);
+      const params = new URLSearchParams(searchParams);
+      params.set('clips', cp);
+      if (working.title) params.set('title', working.title);
+      setSearchParams(params, { replace: true });
+    } else {
+      syncedRef.current = buildSig('', '');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
+
+  // working -> URL (favorites, edits, generation, clears).
+  useEffect(() => {
+    if (!playlistInitRef.current) return;
+    const cp = working.clips.length ? toClipsParam(working.clips) : '';
+    const sig = buildSig(cp, working.clips.length ? working.title : '');
+    if (sig === syncedRef.current) return;
+    syncedRef.current = sig;
+    const params = new URLSearchParams(searchParams);
+    if (working.clips.length) {
+      params.set('clips', cp);
+      if (working.title) params.set('title', working.title);
+      else params.delete('title');
+    } else {
+      params.delete('clips');
+      params.delete('title');
+    }
+    setSearchParams(params, { replace: true });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [working]);
+
+  // URL -> working (back/forward to a different ?clips=).
+  useEffect(() => {
+    if (!playlistInitRef.current) return;
+    const urlTitle = (searchParams.get('title') || '').trim();
+    const sig = buildSig(clipsParam, urlTitle);
+    if (sig === syncedRef.current) return;
+    syncedRef.current = sig;
+    setClips(fromClipsParam(clipsParam), urlTitle);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clipsParam]);
 
   function toggleEntry(entry) {
     setOpenEntry((cur) => (cur === entry ? null : entry));
@@ -291,8 +364,24 @@ export default function TableOfContents() {
 
         {status === 'ready' && (
           <>
-            {playlistClips && playlistClips.length > 0 && (
-              <PlaylistPanel clips={playlistClips} title={playlistTitle} />
+            {playlistClips.length > 0 && (
+              <PlaylistPanel
+                clips={playlistClips}
+                title={working.title}
+                onRename={rename}
+                onRemove={removeClip}
+                onReorder={reorder}
+                onClear={clearWorking}
+                onSave={() => saveToLibrary(null, playlistClips)}
+                onUpdateSaved={() => updateLibraryEntry(working.libraryId, { title: working.title, clips: playlistClips })}
+                libraryId={working.libraryId}
+                storageAvailable={storageAvailable}
+                shareGetUrl={() => {
+                  const cp = toClipsParam(working.clips);
+                  const t = working.title ? `&title=${encodeURIComponent(working.title)}` : '';
+                  return `/table-of-contents?clips=${cp}${t}`;
+                }}
+              />
             )}
             <label className="block mb-5">
               <span className="sr-only">Filter interviews by name</span>
@@ -434,6 +523,11 @@ export default function TableOfContents() {
                                   url={`/table-of-contents?entry=${iv.entry}&t=${Math.round(part.start)}&end=${Math.round(part.end)}`}
                                   className="opacity-60 group-hover:opacity-100 focus-visible:opacity-100 shrink-0"
                                 />
+                                <AddToPlaylistButton
+                                  variant="icon"
+                                  clip={{ entry: iv.entry, start: part.start, end: part.end, label: `Part ${pi + 1}: ${part.title}`, subject: name }}
+                                  className="opacity-60 group-hover:opacity-100 focus-visible:opacity-100 shrink-0"
+                                />
                               </div>
                             )}
                             <ul className="list-none p-0 m-0 sm:pl-5 space-y-0.5">
@@ -458,6 +552,11 @@ export default function TableOfContents() {
                                     url={`/table-of-contents?entry=${iv.entry}&t=${Math.round(ch.start)}&end=${Math.round(ch.end)}`}
                                     className="opacity-0 group-hover:opacity-100 focus-visible:opacity-100 shrink-0"
                                   />
+                                  <AddToPlaylistButton
+                                    variant="icon"
+                                    clip={{ entry: iv.entry, start: ch.start, end: ch.end, label: ch.title, subject: name }}
+                                    className="opacity-0 group-hover:opacity-100 focus-visible:opacity-100 shrink-0"
+                                  />
                                 </li>
                               ))}
                             </ul>
@@ -477,5 +576,13 @@ export default function TableOfContents() {
         )}
       </main>
     </div>
+  );
+}
+
+export default function TableOfContents() {
+  return (
+    <PlaylistProvider>
+      <TableOfContentsInner />
+    </PlaylistProvider>
   );
 }
