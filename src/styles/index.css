@@ -290,6 +290,22 @@ a:focus-visible,
   }
 }
 
+/* In-page "Pause Animations" toggle (the header control). Distinct from
+   the OS prefers-reduced-motion query above: this is an explicit, persisted
+   user choice reflected as data-animations-paused="true" on <html> by
+   src/hooks/useAnimationPreference.js. It freezes infinite/looping CSS
+   keyframe animations in place while leaving interactive transitions (the
+   menu slide, hover color shifts) responsive, so the UI does not feel
+   broken. The decorative looping timeline videos are paused separately in
+   JS (CSS cannot pause a <video>; see src/pages/Home.jsx). Loading spinners
+   (.animate-spin) are exempt so a "still working" indicator is never frozen
+   into looking hung. */
+html[data-animations-paused="true"] *:not(.animate-spin),
+html[data-animations-paused="true"] *:not(.animate-spin)::before,
+html[data-animations-paused="true"] *:not(.animate-spin)::after {
+  animation-play-state: paused !important;
+}
+
 /* Pinch-zoom + browser-level zoom safety guard against unwanted
    horizontal scrolling on phone-sized viewports. Pages that need
    horizontal scroll opt in with .allow-overflow-x on the root. */

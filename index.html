@@ -31,6 +31,28 @@
       })();
     </script>
 
+    <!-- Apply the saved "Pause Animations" choice before first paint, so a
+         visitor who paused (or whose OS asks for reduced motion) never sees
+         a flash of looping motion on load. Stored as animationsPaused in
+         localStorage by the header toggle; with no stored choice we follow
+         the OS prefers-reduced-motion setting. Mirrored as
+         data-animations-paused on <html> (CSS reads it to freeze keyframe
+         animations; the timeline page reads it in JS to pause its videos). -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('animationsPaused');
+          var paused = stored === 'true'
+            || (stored == null
+                && window.matchMedia
+                && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+          document.documentElement.setAttribute(
+            'data-animations-paused', paused ? 'true' : 'false'
+          );
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- Open Graph tags for social sharing (Twitter / X, Facebook,
          LinkedIn, Slack, Discord, Bluesky, etc. all read these). -->
     <meta property="og:type" content="website" />

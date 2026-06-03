@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, X, Moon, Sun, Home } from 'lucide-react';
+import { Search, X, Moon, Sun, Home, Pause, Play } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
+import { useAnimationPreference } from '../../hooks/useAnimationPreference';
 import { useSearch } from '../../context/SearchProvider';
 import ShareButton from '../ShareButton';
 
@@ -73,6 +74,7 @@ export default function Header() {
   const menuTriggerRef = useRef(null);
   const menuCloseRef = useRef(null);
   const { isDark, toggle } = useTheme();
+  const { paused: animationsPaused, toggle: toggleAnimations } = useAnimationPreference();
   const { openSearch } = useSearch();
 
   // Esc-to-close + focus restoration for the slide-out menu. WCAG
@@ -169,6 +171,40 @@ export default function Header() {
               className="inline-flex items-center justify-center min-w-11 min-h-11 rounded-full border border-stone-300 dark:border-zinc-600 bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 shadow-sm transition-colors hover:bg-white dark:hover:bg-zinc-800"
             >
               <Search className="w-4 h-4" aria-hidden="true" />
+            </button>
+
+            {/* Pause Animations toggle. The landing-page timeline auto-plays
+                looping motion (the period "GIF" videos plus a few infinite CSS
+                animations); WCAG 2.2.2 (Pause, Stop, Hide) wants an in-page way
+                to stop it, which the OS-only prefers-reduced-motion rule cannot
+                provide (and CSS cannot pause a <video>). This persists the
+                choice and reflects it onto <html data-animations-paused>; the
+                timeline pauses its videos off that, the stylesheet freezes
+                keyframe animations off it. The icon + label name the action the
+                button performs: Pause while motion is running, Play once paused.
+                Text shows from sm up; the narrowest phones get the icon alone to
+                keep the chrome row from overflowing (full label stays in
+                aria-label/title). */}
+            <button
+              type="button"
+              onClick={toggleAnimations}
+              aria-pressed={animationsPaused}
+              aria-label={animationsPaused ? 'Play animations' : 'Pause animations'}
+              title={animationsPaused ? 'Resume page animations' : 'Pause page animations'}
+              className={
+                'inline-flex items-center gap-1.5 min-w-11 min-h-11 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors ' +
+                (animationsPaused
+                  ? 'bg-stone-800 text-white border border-stone-800 hover:bg-stone-900'
+                  : 'bg-white/70 dark:bg-zinc-800/70 text-stone-700 dark:text-zinc-200 border border-stone-300 dark:border-zinc-600 hover:bg-white dark:hover:bg-zinc-800')
+              }
+              style={{ fontFamily: 'Chivo Mono, monospace' }}
+            >
+              {animationsPaused
+                ? <Play className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                : <Pause className="w-4 h-4 flex-shrink-0" aria-hidden="true" />}
+              <span className="hidden sm:inline">
+                {animationsPaused ? 'Play Animations' : 'Pause Animations'}
+              </span>
             </button>
 
             <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">

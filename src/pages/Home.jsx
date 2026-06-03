@@ -33,6 +33,7 @@ import SelectionFeedbackButton from '../components/SelectionFeedbackButton';
 import WelcomeDisclaimerModal from '../components/WelcomeDisclaimerModal';
 import { useInlineFeedback } from '../hooks/useInlineFeedback';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
+import { useAnimationsPaused } from '../hooks/useAnimationPreference';
 
 
 /**
@@ -319,6 +320,64 @@ function HeroQuote() {
 export default function Home() {
   useDocumentTitle(null); // Home page uses bare site name as its title
   const { user } = useAuth();
+
+  // Honor the header "Pause Animations" control AND keep the footer zone calm.
+  // The decorative timeline motion is mostly auto-playing, looping <video>
+  // elements (the period "GIFs"), which neither the prefers-reduced-motion CSS
+  // nor the data-animations-paused stylesheet rule can stop, since CSS cannot
+  // pause a <video>. Everything here is scoped via data-animation-scope so a
+  // user-initiated interview player elsewhere is never touched.
+  const animationsPaused = useAnimationsPaused();
+  const footerSentinelRef = useRef(null);
+  useEffect(() => {
+    const root = document.querySelector('[data-animation-scope="timeline"]');
+    if (!root) return undefined;
+    const videos = Array.from(root.querySelectorAll('video'));
+    if (videos.length === 0) return undefined;
+
+    const playAll = () => videos.forEach((v) => {
+      const p = v.play();
+      if (p && typeof p.catch === 'function') p.catch(() => {});
+    });
+    const pauseAll = () => videos.forEach((v) => v.pause());
+
+    // The header toggle wins outright: stop every decorative video and
+    // re-pause any that autoplay tries to (re)start (after buffering, or on
+    // re-entering the viewport), so "paused" stays paused without a flash.
+    if (animationsPaused) {
+      const repause = (e) => e.target.pause();
+      videos.forEach((v) => {
+        v.pause();
+        v.addEventListener('play', repause);
+      });
+      return () => videos.forEach((v) => v.removeEventListener('play', repause));
+    }
+
+    // Motion is allowed, but freeze all of it as the reader nears the bottom
+    // of the page, so the dense footer is read against a still backdrop
+    // instead of looping motion in peripheral vision (Eric, 2026-06-03,
+    // accessibility: the footer carries a lot of content and deserves a calm
+    // surround). A zero-height sentinel sits just above the global footer; the
+    // bottom rootMargin arms the pause about half a viewport early, so the
+    // motion is already still by the time the footer scrolls into view rather
+    // than stopping in front of the reader. Scrolling back up resumes it.
+    const sentinel = footerSentinelRef.current;
+    if (!sentinel || typeof IntersectionObserver === 'undefined') {
+      playAll();
+      return undefined;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const nearFooter = entries.some((e) => e.isIntersecting);
+        if (nearFooter) pauseAll();
+        else playAll();
+      },
+      { rootMargin: '0px 0px 50% 0px' }
+    );
+    io.observe(sentinel);
+    return () => io.disconnect();
+  }, [animationsPaused]);
   const [landingImageUrl, setLandingImageUrl] = useState(null);
   const [imageLoading, setImageLoading] = useState(true);
   const timelineRef = useRef(null);
@@ -816,6 +875,7 @@ export default function Home() {
       <div
         ref={aiContentRef}
         data-feedback-section="Timeline Content"
+        data-animation-scope="timeline"
         className="w-full relative overflow-hidden bg-[#EBEAE9] dark:bg-zinc-900"
       >
 
@@ -2581,6 +2641,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Zero-height sentinel just above the global footer. The video
+          pause/resume effect observes it so decorative motion is already
+          still by the time the dense footer is in view, no looping motion in
+          the reader's peripheral vision while they read the footer. */}
+      <div ref={footerSentinelRef} aria-hidden="true" className="h-px w-full" />
     </div>
     </>
   );
