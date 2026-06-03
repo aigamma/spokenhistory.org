@@ -85,7 +85,7 @@ import re
 from pathlib import Path
 from typing import Optional
 
-CIVIL_ROOT = Path(r"C:\civil")
+CIVIL_ROOT = Path(r"D:\civil")
 AUDIT_TRAIL = CIVIL_ROOT / "transcripts" / "AUDIT_TRAIL.md"
 ADVERSARIAL_FEED = CIVIL_ROOT / "transcripts" / "adversarial_review_feed.json"
 CROSS_CONTAMINATION_AUDIT = CIVIL_ROOT / "transcripts" / "cross_contamination_audit.json"

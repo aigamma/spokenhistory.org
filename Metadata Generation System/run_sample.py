@@ -37,7 +37,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 if sys.stderr.encoding and sys.stderr.encoding.lower() != "utf-8":
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-# Load env from C:\civil\.env. The dotenv pattern keeps the script
+# Load env from D:\civil\.env. The dotenv pattern keeps the script
 # usable from any cwd as long as the .env sits at the project root.
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 ENV_PATH = PROJECT_ROOT / ".env"

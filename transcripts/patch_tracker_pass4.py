@@ -3,7 +3,7 @@
 import re
 from pathlib import Path
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
 SKIP = {28, 31, 46, 64, 95}
 
 content = MASTER.read_text(encoding="utf-8")

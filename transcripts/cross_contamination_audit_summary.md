@@ -1,7 +1,7 @@
 # Cross-contamination follow-on audit summary
 
 **Generated:** 2026-05-22 (Session 3 follow-on at user request)
-**Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md`
+**Master overlay:** `D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md`
 **Audit JSON:** `transcripts/cross_contamination_audit.json`
 **Fix script:** `transcripts/fix_cross_contamination_pass4.py`
 

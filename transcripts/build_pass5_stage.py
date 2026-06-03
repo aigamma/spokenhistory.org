@@ -25,7 +25,7 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-CIVIL_ROOT = Path(r"C:\civil")
+CIVIL_ROOT = Path(r"D:\civil")
 AUDIT_JSON = CIVIL_ROOT / "transcripts" / "layer5_fidelity_audit.json"
 MASTER_MD = CIVIL_ROOT / "transcripts" / "CLEANED_TRANSCRIPTS_REVIEW.md"
 OUT_DIR = CIVIL_ROOT / "transcripts" / "pass5_stage"

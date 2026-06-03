@@ -51,7 +51,7 @@ except ImportError:
     print("ERROR: rapidfuzz not installed. pip install rapidfuzz", file=sys.stderr)
     sys.exit(2)
 
-ROOT = Path(r"C:\civil")
+ROOT = Path(r"D:\civil")
 RAW_DIR = ROOT / "transcripts" / "raw"
 OUT_JSON = ROOT / "transcripts" / "layer5_fidelity_audit.json"
 

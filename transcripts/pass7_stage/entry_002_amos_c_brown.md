@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Agent:** Claude Sonnet 4.6 (Pass 7 PRR)
-**Slice:** C:\civil\transcripts\per_entry_slices\entry_002_amos_c_brown.md
+**Slice:** D:\civil\transcripts\per_entry_slices\entry_002_amos_c_brown.md
 **Transcript:** Amos C. Brown_interview_20250704_172044
 
 ---

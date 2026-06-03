@@ -26,7 +26,7 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-CIVIL_ROOT = Path(r"C:\civil")
+CIVIL_ROOT = Path(r"D:\civil")
 MASTER_MD = CIVIL_ROOT / "transcripts" / "CLEANED_TRANSCRIPTS_REVIEW.md"
 
 STAGING_DIRS = [

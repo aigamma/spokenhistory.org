@@ -40,7 +40,7 @@ function check(label, fn) {
 }
 
 // 1. .env exists with both API keys.
-check('.env present at C:\\civil\\.env', () => {
+check('.env present at D:\\civil\\.env', () => {
   const envPath = path.join(PROJECT_ROOT, '.env')
   if (!fs.existsSync(envPath)) throw new Error('.env file missing')
   return ''

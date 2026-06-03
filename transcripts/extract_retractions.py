@@ -19,10 +19,10 @@ import re
 from pathlib import Path
 
 STAGE_DIRS = {
-    "Pass 2": Path(r"C:\civil\transcripts\pass2_stage"),
-    "Pass 2 tail": Path(r"C:\civil\transcripts\pass2_tail_stage"),
-    "Pass 3": Path(r"C:\civil\transcripts\pass3_stage"),
-    "Pass 4": Path(r"C:\civil\transcripts\pass4_stage"),
+    "Pass 2": Path(r"D:\civil\transcripts\pass2_stage"),
+    "Pass 2 tail": Path(r"D:\civil\transcripts\pass2_tail_stage"),
+    "Pass 3": Path(r"D:\civil\transcripts\pass3_stage"),
+    "Pass 4": Path(r"D:\civil\transcripts\pass4_stage"),
 }
 
 # Sections we look in. Pass 4-only retractions live here:
@@ -351,7 +351,7 @@ def main() -> int:
 
     consolidated.sort(key=lambda c: (c["entry_number"], c["row_id"]))
 
-    output_path = Path(r"C:\civil\transcripts\retraction_candidates_raw.json")
+    output_path = Path(r"D:\civil\transcripts\retraction_candidates_raw.json")
     output_path.write_text(json.dumps(consolidated, indent=2), encoding="utf-8")
 
     print(f"Scanned {file_count} staging files")

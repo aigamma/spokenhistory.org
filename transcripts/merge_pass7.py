@@ -38,7 +38,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 sys.path.insert(0, str(Path(__file__).parent))
 import fix_layer5_findings as helpers  # noqa: E402
 
-CIVIL_ROOT = Path(r"C:\civil")
+CIVIL_ROOT = Path(r"D:\civil")
 MASTER = CIVIL_ROOT / "transcripts" / "CLEANED_TRANSCRIPTS_REVIEW.md"
 PASS7_STAGE_DIR = CIVIL_ROOT / "transcripts" / "pass7_stage"
 LEDGER_V2_OUT = CIVIL_ROOT / "transcripts" / "readiness_ledger_v2.json"

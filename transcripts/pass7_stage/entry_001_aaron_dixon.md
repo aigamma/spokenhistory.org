@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Agent:** Claude Sonnet 4.6 (Pass 7 PRR serial subagent)
-**Slice source:** `C:\civil\transcripts\per_entry_slices\entry_001_aaron_dixon.md`
+**Slice source:** `D:\civil\transcripts\per_entry_slices\entry_001_aaron_dixon.md`
 **Transcript source:** `Aaron Dixon_interview_20250704_170306`
 
 ---

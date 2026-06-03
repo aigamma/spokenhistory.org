@@ -203,7 +203,7 @@ The resolver was tested on Aaron Dixon and returned `status: ok` with `match_sco
 
 ## Recommended starting prompt for the fresh session
 
-Paste the following into a fresh Claude Code session in `C:\civil`:
+Paste the following into a fresh Claude Code session in `D:\civil`:
 
 > Execute `transcripts/session_prompts/NEXT_SESSION_PROMPT.md` end-to-end. Resume from wherever the LoC cache shows progress. Process linearly, with the polite delay. Commit + push every 5-10 entries. Verify content; do not trust exit status. Stop if you encounter the spelling-discrepancy surprise described in the Edge Cases section or if LoC returns 403/429. Report final coverage when done.
 

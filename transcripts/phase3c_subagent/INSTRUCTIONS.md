@@ -12,16 +12,16 @@ A prior session that read multiple transcripts in a single agent context caused 
 
 **You may read EXACTLY these files:**
 1. The transcript .srt file at the path given in your task message
-2. `C:\civil\transcripts\phase3c_subagent\INSTRUCTIONS.md` (this file)
-3. `C:\civil\Metadata Generation System\StandardizedRubric_1.md` (scoring rubric)
-4. `C:\civil\Metadata Generation System\processor_prompts\engagement_schema.txt` (engagement output shape)
-5. `C:\civil\Metadata Generation System\processor_prompts\engagement_rubric.txt` (engagement scoring criteria)
-6. `C:\civil\Metadata Generation System\processor_prompts\engagement_system.txt` (engagement system prompt)
-7. `C:\civil\Metadata Generation System\civil_rights_facts.json` (ground-truth corpus, 378 entries)
+2. `D:\civil\transcripts\phase3c_subagent\INSTRUCTIONS.md` (this file)
+3. `D:\civil\Metadata Generation System\StandardizedRubric_1.md` (scoring rubric)
+4. `D:\civil\Metadata Generation System\processor_prompts\engagement_schema.txt` (engagement output shape)
+5. `D:\civil\Metadata Generation System\processor_prompts\engagement_rubric.txt` (engagement scoring criteria)
+6. `D:\civil\Metadata Generation System\processor_prompts\engagement_system.txt` (engagement system prompt)
+7. `D:\civil\Metadata Generation System\civil_rights_facts.json` (ground-truth corpus, 378 entries)
 
 **You may NEVER read:**
-- Any other transcript file under `C:\civil\transcripts\raw\` or `C:\civil\transcripts\corrected\`
-- `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (master audit overlay)
+- Any other transcript file under `D:\civil\transcripts\raw\` or `D:\civil\transcripts\corrected\`
+- `D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (master audit overlay)
 - Any other `transcripts/pass*_stage/` file (per-entry audit slices for other entries)
 - Any other `Metadata Generation System/batch_output/*.json` file (sibling subagents' outputs)
 
@@ -79,7 +79,7 @@ A coherent main summary covering the full interview. Schema:
 
 ### Step 6: Self-score (main summary + each chapter)
 
-Read `C:\civil\Metadata Generation System\StandardizedRubric_1.md` for the scoring rubric. Apply it to the main summary and each chapter.
+Read `D:\civil\Metadata Generation System\StandardizedRubric_1.md` for the scoring rubric. Apply it to the main summary and each chapter.
 
 Output `quality_metrics` per summary with:
 - `accuracy_score`: 0–100
@@ -99,9 +99,9 @@ Output `quality_metrics` per summary with:
 ### Step 7: Engagement scoring (full rubric)
 
 Read these three files:
-- `C:\civil\Metadata Generation System\processor_prompts\engagement_system.txt` (system prompt)
-- `C:\civil\Metadata Generation System\processor_prompts\engagement_rubric.txt` (criteria)
-- `C:\civil\Metadata Generation System\processor_prompts\engagement_schema.txt` (output JSON shape)
+- `D:\civil\Metadata Generation System\processor_prompts\engagement_system.txt` (system prompt)
+- `D:\civil\Metadata Generation System\processor_prompts\engagement_rubric.txt` (criteria)
+- `D:\civil\Metadata Generation System\processor_prompts\engagement_schema.txt` (output JSON shape)
 
 Produce `engagement_scores` matching the schema in `engagement_schema.txt` **exactly**. This is a detailed 100-point rubric across four dimensions: narrative quality (30), historical value (25), accessibility (20), educational impact (25). For each sub-dimension, provide evidence quotes from the transcript with segment numbers and timestamps. Skip no fields — the schema is the contract.
 
@@ -140,7 +140,7 @@ Be conservative. When in doubt, partially_supported.
 
 ### Step 9: Cross-reference against ground-truth facts (optional but recommended)
 
-Read `C:\civil\Metadata Generation System\civil_rights_facts.json` (378-entry ground-truth corpus). For any named person, event, or organization in your main_summary or chapters, verify the canonical spelling and relationship facts against this corpus. If your output names an entity that the corpus knows about under a different canonical form, use the corpus form. If your output claims a relationship that contradicts the corpus, **demote the claim's citation_audit status to `unsupported`** and add an entry to `quality_metrics.errors` like "Contradicts civil_rights_facts.json: <entity> — <details>".
+Read `D:\civil\Metadata Generation System\civil_rights_facts.json` (378-entry ground-truth corpus). For any named person, event, or organization in your main_summary or chapters, verify the canonical spelling and relationship facts against this corpus. If your output names an entity that the corpus knows about under a different canonical form, use the corpus form. If your output claims a relationship that contradicts the corpus, **demote the claim's citation_audit status to `unsupported`** and add an entry to `quality_metrics.errors` like "Contradicts civil_rights_facts.json: <entity> — <details>".
 
 ### Step 10: Publication decision
 

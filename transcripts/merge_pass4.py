@@ -12,8 +12,8 @@ Progress Tracker row's Pass 4 column.
 import re
 from pathlib import Path
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
-STAGE = Path(r"C:\civil\transcripts\pass4_stage")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+STAGE = Path(r"D:\civil\transcripts\pass4_stage")
 
 SKIP = {28, 31, 46, 64, 95}
 entries_to_merge = [n for n in range(1, 133) if n not in SKIP]

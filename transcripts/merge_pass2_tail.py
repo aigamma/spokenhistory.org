@@ -6,8 +6,8 @@ Tail-sweep blocks insert AFTER the existing Pass 2 corrections table but BEFORE 
 import re
 from pathlib import Path
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
-STAGE = Path(r"C:\civil\transcripts\pass2_tail_stage")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+STAGE = Path(r"D:\civil\transcripts\pass2_tail_stage")
 
 PARTIAL_READS = [1, 6, 7, 8, 12, 13, 14, 17, 20, 26, 29, 30, 34, 38]
 

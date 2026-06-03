@@ -27,9 +27,9 @@ import re
 from pathlib import Path
 from typing import Optional
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
-RAW_CANDIDATES = Path(r"C:\civil\transcripts\retraction_candidates_raw.json")
-AUDIT_OUT = Path(r"C:\civil\transcripts\cross_contamination_audit.json")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+RAW_CANDIDATES = Path(r"D:\civil\transcripts\retraction_candidates_raw.json")
+AUDIT_OUT = Path(r"D:\civil\transcripts\cross_contamination_audit.json")
 
 # Known false-positive overrides: (entry_number, row_id) -> reason
 # These rows look like retraction candidates but are NOT:

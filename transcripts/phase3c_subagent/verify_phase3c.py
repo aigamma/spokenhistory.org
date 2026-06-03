@@ -9,8 +9,8 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-OUT = Path(r'C:\civil\Metadata Generation System\batch_output')
-SRC = Path(r'C:\civil\transcripts\corrected')
+OUT = Path(r'D:\civil\Metadata Generation System\batch_output')
+SRC = Path(r'D:\civil\transcripts\corrected')
 
 print("=" * 70)
 print("PHASE 3c CONTENT VERIFICATION (127 transcripts)")

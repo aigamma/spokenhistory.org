@@ -15,7 +15,7 @@ from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Iterable
 
-MASTER_MD = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+MASTER_MD = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
 
 # ---------------------------------------------------------------------------
 # Data classes

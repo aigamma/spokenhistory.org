@@ -17,7 +17,7 @@ validation report. Exit non-zero if any essay lacks a hero or has zero chapters.
 """
 import json, os, glob, re, sys
 
-ROOT = r"C:/civil"
+ROOT = r"D:/civil"
 ESS = os.path.join(ROOT, "public/rag/essays")
 CONN = os.path.join(ESS, "connections")
 PEOPLE = os.path.join(ROOT, "public/rag/people")

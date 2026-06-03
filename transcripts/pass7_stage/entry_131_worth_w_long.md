@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-24
 **Agent:** Claude Sonnet 4.6 (Pass 7 PRR serial subagent)
-**Slice source:** `C:\civil\transcripts\per_entry_slices\entry_131_worth_w_long.md`
+**Slice source:** `D:\civil\transcripts\per_entry_slices\entry_131_worth_w_long.md`
 **Transcript source:** `Worth W. Long_interview_20250705_025732`
 
 ---

@@ -8,8 +8,8 @@ import sys
 import mutate_transcript
 
 def run_qa_batch(start_idx, end_idx):
-    corrected_dir = Path(r"C:\civil\transcripts\corrected")
-    facts_path = Path(r"C:\civil\Metadata Generation System\civil_rights_facts.json")
+    corrected_dir = Path(r"D:\civil\transcripts\corrected")
+    facts_path = Path(r"D:\civil\Metadata Generation System\civil_rights_facts.json")
     
     # Load facts
     try:

@@ -3,8 +3,8 @@
 import re
 from pathlib import Path
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
-STAGE = Path(r"C:\civil\transcripts\pass2_stage")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+STAGE = Path(r"D:\civil\transcripts\pass2_stage")
 
 SKIP = {46, 64, 95}
 entries_to_merge = [n for n in range(43, 133) if n not in SKIP]

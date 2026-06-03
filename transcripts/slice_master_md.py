@@ -16,10 +16,10 @@ import json
 import re
 from pathlib import Path
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
-OUT_DIR = Path(r"C:\civil\transcripts\per_entry_slices")
-PASS3_DIR = Path(r"C:\civil\transcripts\pass3_stage")
-RAW_DIR = Path(r"C:\civil\transcripts\raw")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+OUT_DIR = Path(r"D:\civil\transcripts\per_entry_slices")
+PASS3_DIR = Path(r"D:\civil\transcripts\pass3_stage")
+RAW_DIR = Path(r"D:\civil\transcripts\raw")
 
 SKIP = {28, 31, 46, 64, 95}
 ENTRY_RANGE = range(1, 133)

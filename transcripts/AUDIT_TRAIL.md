@@ -1586,12 +1586,12 @@ When adding a new session, copy and fill out:
 
 | Purpose | Path |
 |---|---|
-| This file (effort log) | `C:\civil\transcripts\AUDIT_TRAIL.md` |
-| Per-entry corrections overlay | `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` |
-| Open punch-list | `C:\civil\transcripts\OPEN_PROBLEMS.md` |
-| Ground-truth corpus | `C:\civil\Metadata Generation System\civil_rights_facts.json` |
-| Audit design doc | `C:\civil\docs\TRANSCRIPT_AUDIT_DESIGN.md` |
-| Per-entry Pass 2 staging | `C:\civil\transcripts\pass2_stage\entry_NN.md` |
-| Per-entry Pass 2 tail-sweep staging | `C:\civil\transcripts\pass2_tail_stage\entry_NN.md` |
-| Per-entry Pass 3 staging | `C:\civil\transcripts\pass3_stage\entry_NN.md` |
-| Merge scripts | `C:\civil\transcripts\merge_pass2.py`, `merge_pass2_tail.py`, `merge_pass3.py` |
+| This file (effort log) | `D:\civil\transcripts\AUDIT_TRAIL.md` |
+| Per-entry corrections overlay | `D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` |
+| Open punch-list | `D:\civil\transcripts\OPEN_PROBLEMS.md` |
+| Ground-truth corpus | `D:\civil\Metadata Generation System\civil_rights_facts.json` |
+| Audit design doc | `D:\civil\docs\TRANSCRIPT_AUDIT_DESIGN.md` |
+| Per-entry Pass 2 staging | `D:\civil\transcripts\pass2_stage\entry_NN.md` |
+| Per-entry Pass 2 tail-sweep staging | `D:\civil\transcripts\pass2_tail_stage\entry_NN.md` |
+| Per-entry Pass 3 staging | `D:\civil\transcripts\pass3_stage\entry_NN.md` |
+| Merge scripts | `D:\civil\transcripts\merge_pass2.py`, `merge_pass2_tail.py`, `merge_pass3.py` |

@@ -55,7 +55,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
 sys.path.insert(0, str(Path(__file__).parent))
 import fix_layer5_findings as helpers  # noqa: E402
 
-CIVIL_ROOT = Path(r"C:\civil")
+CIVIL_ROOT = Path(r"D:\civil")
 MASTER = CIVIL_ROOT / "transcripts" / "CLEANED_TRANSCRIPTS_REVIEW.md"
 TRACK3_DIR = CIVIL_ROOT / "transcripts" / "low_conf_resolutions"
 TRACK4_DIR = CIVIL_ROOT / "transcripts" / "layer5_pending_resolutions"

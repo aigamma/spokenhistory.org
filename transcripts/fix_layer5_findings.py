@@ -44,7 +44,7 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
-CIVIL_ROOT = Path(r"C:\civil")
+CIVIL_ROOT = Path(r"D:\civil")
 MASTER = CIVIL_ROOT / "transcripts" / "CLEANED_TRANSCRIPTS_REVIEW.md"
 LAYER5_JSON = CIVIL_ROOT / "transcripts" / "layer5_fidelity_audit.json"
 FACTS_CORPUS = CIVIL_ROOT / "Metadata Generation System" / "civil_rights_facts.json"

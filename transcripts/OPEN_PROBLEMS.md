@@ -1,8 +1,8 @@
 # OPEN_PROBLEMS — Civil Rights History Project transcript audit cleanup
 
 **Last updated:** 2026-06-01 (Problem 10 logged, then 10a + 10b RESOLVED the same day: related/ backfilled for entries 139-142, all corpus-global artifacts regenerated, person vectors re-synced/pruned, and onboarding gained a `network` stage. 10c heal-engine defects and 10d LoC name canonicalization remain OPEN.)
-**Master overlay:** `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~12.2 MB post-Pass-7 apply-back)
-**Ground-truth corpus:** `C:\civil\Metadata Generation System\civil_rights_facts.json` (378 valid entries after Session 7 Phase 2 Pass 7 proposal expansion)
+**Master overlay:** `D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` (~12.2 MB post-Pass-7 apply-back)
+**Ground-truth corpus:** `D:\civil\Metadata Generation System\civil_rights_facts.json` (378 valid entries after Session 7 Phase 2 Pass 7 proposal expansion)
 **Hard deadline:** 2026-05-27 WWU team meeting (3 days from this writing)
 
 ## Current audit state
@@ -144,7 +144,7 @@ Top 10 by recurrence: Stokely Carmichael (6), SNCC (6), Medgar Evers (5), Thurgo
 
 Pass 3 supervisors surfaced roughly 500 new Whisper-failure patterns that should be added to the "Cross-corpus recurring error patterns" section at the top of the master MD (sections A–I). Patterns currently live only inside individual Pass 3 blocks.
 
-**Source files:** `C:\civil\transcripts\pass3_stage\entry_*.md` — each contains a "Pass 3 missed-pattern catches" sub-section.
+**Source files:** `D:\civil\transcripts\pass3_stage\entry_*.md` — each contains a "Pass 3 missed-pattern catches" sub-section.
 
 **Sample high-priority additions surfaced across multiple Pass 3 reports:**
 - "Reverend Avenue → Reverend Abernathy" (Cotton #29 tail, 9+ recurrences — single most-damaging un-cataloged pattern)
@@ -205,7 +205,7 @@ Categories surfaced:
 - Cross-corpus name-overlap ambiguities (e.g., Bobby Seale vs. cousin Bobby Harris in #52)
 - Specialized vocabulary (military jargon, legal Latin, medical terminology, foreign-language transliterations)
 
-**Suggested implementation:** subagent to aggregate + write to `C:\civil\transcripts\adversarial_review_feed.json`. ~15 minutes wall-clock.
+**Suggested implementation:** subagent to aggregate + write to `D:\civil\transcripts\adversarial_review_feed.json`. ~15 minutes wall-clock.
 
 ---
 
@@ -254,7 +254,7 @@ These are speakers misspeaking facts, not Whisper errors. The audit preserves th
 
 **Phase 3 — preprocessing layer:** `scripts/apply_corrections.py` (992 lines, 26 passing pytest cases) parses the audit overlay's per-entry Pass 1/2/3 correction tables, applies `correct`/`high` confidence substitutions to raw transcripts (.txt/.srt/.vtt with timestamp preservation), and routes `medium`/`low`/`flagged-for-adversarial-review`/`speaker-originating` rows to a `manifest.json` `pending_context` array for downstream LLM-prompt augmentation. Non-destructive (`transcripts/raw/` never modified), idempotent, parallelizable per-entry. Handles the Phase 1a-introduced `<target>.P2.RELOC[<source>.P2.<row>]` relocated row IDs.
 
-**Phase 4 — RAG substrate:** Substrate decision is **Pinecone Builder + Voyage AI** (voyage-3 1024-dim + rerank-2). Full decision rationale + alternatives considered in `docs/RAG_SUBSTRATE_DECISION.md`. Scaffolding in `C:\civil\rag\` (964 lines across shared.mjs / chunker.mjs / embed.mjs / ingest.mjs / retrieve.mjs / .env.example / README.md, 31 passing node:test cases). Pattern mirrors `worldthought.com/scripts/rag/` for consistency. Substrate-adapter portability documented for future migration if needed.
+**Phase 4 — RAG substrate:** Substrate decision is **Pinecone Builder + Voyage AI** (voyage-3 1024-dim + rerank-2). Full decision rationale + alternatives considered in `docs/RAG_SUBSTRATE_DECISION.md`. Scaffolding in `D:\civil\rag\` (964 lines across shared.mjs / chunker.mjs / embed.mjs / ingest.mjs / retrieve.mjs / .env.example / README.md, 31 passing node:test cases). Pattern mirrors `worldthought.com/scripts/rag/` for consistency. Substrate-adapter portability documented for future migration if needed.
 
 **Remaining operational actions (Eric):**
 1. Provision Pinecone civil-rights-prod project + civil-rights index (1024-dim cosine, sparse+dense hybrid if available on Builder)
@@ -528,15 +528,15 @@ The overlay is fit for downstream LLM grounding and Smithsonian/LoC review **pro
 
 | Purpose | Path |
 |---|---|
-| Master overlay (all corrections) | `C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` |
+| Master overlay (all corrections) | `D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md` |
 | Cross-corpus error catalog | Top of master MD, sections A–I |
-| Ground-truth corpus | `C:\civil\Metadata Generation System\civil_rights_facts.json` |
-| Pass 2 staging files | `C:\civil\transcripts\pass2_stage\entry_NN.md` |
-| Pass 2 tail-sweep staging | `C:\civil\transcripts\pass2_tail_stage\entry_NN.md` |
-| Pass 3 staging files | `C:\civil\transcripts\pass3_stage\entry_NN.md` |
-| Audit design doc | `C:\civil\docs\TRANSCRIPT_AUDIT_DESIGN.md` |
-| Weaviate integration design | `C:\civil\docs\WEAVIATE_INTEGRATION_DESIGN.md` |
-| Project pacing constraints | `C:\civil\CLAUDE.md` |
+| Ground-truth corpus | `D:\civil\Metadata Generation System\civil_rights_facts.json` |
+| Pass 2 staging files | `D:\civil\transcripts\pass2_stage\entry_NN.md` |
+| Pass 2 tail-sweep staging | `D:\civil\transcripts\pass2_tail_stage\entry_NN.md` |
+| Pass 3 staging files | `D:\civil\transcripts\pass3_stage\entry_NN.md` |
+| Audit design doc | `D:\civil\docs\TRANSCRIPT_AUDIT_DESIGN.md` |
+| Weaviate integration design | `D:\civil\docs\WEAVIATE_INTEGRATION_DESIGN.md` |
+| Project pacing constraints | `D:\civil\CLAUDE.md` |
 | Global pacing constraints | `C:\Users\erica\.claude\CLAUDE.md` |
 
 ---

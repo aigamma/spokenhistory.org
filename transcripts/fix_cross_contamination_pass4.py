@@ -33,8 +33,8 @@ if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
-MASTER = Path(r"C:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
-AUDIT = Path(r"C:\civil\transcripts\cross_contamination_audit.json")
+MASTER = Path(r"D:\civil\transcripts\CLEANED_TRANSCRIPTS_REVIEW.md")
+AUDIT = Path(r"D:\civil\transcripts\cross_contamination_audit.json")
 
 
 def entry_section_bounds(content: str, n: int) -> tuple[int, int]:

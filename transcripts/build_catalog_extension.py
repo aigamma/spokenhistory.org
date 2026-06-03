@@ -10,13 +10,13 @@ comments) before re-emitting. Does NOT modify the existing A-I sections
 or any per-entry tables.
 
 Run:
-    python C:/civil/transcripts/build_catalog_extension.py
+    python D:/civil/transcripts/build_catalog_extension.py
 
 Inputs:
-    C:/civil/transcripts/pass3_stage/entry_*.md
+    D:/civil/transcripts/pass3_stage/entry_*.md
 Outputs:
     Appends a "Cross-corpus catalog - Phase 1b back-fill extension" subsection
-    to C:/civil/transcripts/CLEANED_TRANSCRIPTS_REVIEW.md, inserted between
+    to D:/civil/transcripts/CLEANED_TRANSCRIPTS_REVIEW.md, inserted between
     section I and the "---" / Progress Tracker that follows.
 """
 from __future__ import annotations
@@ -28,7 +28,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 # Paths
 # ---------------------------------------------------------------------------
-ROOT = Path(r"C:/civil/transcripts")
+ROOT = Path(r"D:/civil/transcripts")
 STAGE_DIR = ROOT / "pass3_stage"
 MASTER_MD = ROOT / "CLEANED_TRANSCRIPTS_REVIEW.md"
 
