@@ -97,6 +97,6 @@ Re-open this decision if any of these become true:
 
 - Pinecone pricing: https://www.pinecone.io/pricing (verified 2026-05-22; Builder $20/mo, Standard $50/mo min)
 - Voyage AI pricing: https://www.voyageai.com/pricing (voyage-3 $0.06/1M tokens; rerank-2 similar)
-- Worldthought.com Pinecone integration: `C:\worldthought.com\scripts\rag\` (the pattern this project's `rag/` mirrors)
+- Worldthought.com Pinecone integration: `D:\worldthought.com\scripts\rag\` (the pattern this project's `rag/` mirrors)
 - Aigamma.com Supabase pgvector integration: `tbxhvpoyyyhbvoyefggu` project, `rag_documents` table (Eric's lead Supabase showcase)
 - Long-form substrate analysis conducted in conversation between Eric and Claude on 2026-05-22; key trade-offs are summarized above without that conversation's full provenance.

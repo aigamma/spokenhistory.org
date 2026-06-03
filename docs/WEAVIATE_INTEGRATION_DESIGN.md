@@ -24,7 +24,7 @@ This design is consciously informed by two of Eric's prior RAG implementations. 
 
 ### worldthought.com (Pinecone + Voyage AI), the closest analog
 
-`C:\worldthought.com` is a 7-day proof-of-concept (750+ commits) that uses Pinecone + `voyage-3` embeddings to power chat over public-domain philosophical texts (Hegel, Kant, Aristotle, etc.). Direct precedent for the Voyage AI integration.
+`D:\worldthought.com` is a 7-day proof-of-concept (750+ commits) that uses Pinecone + `voyage-3` embeddings to power chat over public-domain philosophical texts (Hegel, Kant, Aristotle, etc.). Direct precedent for the Voyage AI integration.
 
 **Patterns to copy directly:**
 
@@ -55,7 +55,7 @@ This design is consciously informed by two of Eric's prior RAG implementations. 
 
 ### aigamma.com (Supabase pgvector), the efficiency patterns
 
-`C:\aigamma.com` uses Postgres + pgvector with `gte-small` (384d) embeddings inside Supabase Edge Runtime. Different vector store, different embedder, but several patterns are vendor-neutral and directly applicable.
+`D:\aigamma.com` uses Postgres + pgvector with `gte-small` (384d) embeddings inside Supabase Edge Runtime. Different vector store, different embedder, but several patterns are vendor-neutral and directly applicable.
 
 **Patterns to copy:**
 
@@ -742,8 +742,8 @@ Honest scope:
 - `docs/TRANSCRIPT_AUDIT_DESIGN.md`, the upstream transcript quality pipeline. Catches Whisper errors before they pollute the embeddings.
 - `docs/DEPLOYMENT.md`, operator-level setup. Will be extended with Weaviate + Voyage AI setup once implemented.
 - `CLAUDE.md`, project-wide architectural notes.
-- `C:\worldthought.com`, the closest sibling implementation (Pinecone + voyage-3). Key files: `scripts/rag/ingest.mjs`, `scripts/rag/shared.mjs`, `netlify/functions/chat.mjs`, `CLAUDE.md` (sections 41-122).
-- `C:\aigamma.com`, the efficiency-pattern reference (Supabase pgvector + gte-small). Key files: `docs/rag-architecture.md`, `scripts/rag/ingest.mjs`, `netlify/functions/chat.mjs`, `.github/workflows/refresh-rag.yml`.
+- `D:\worldthought.com`, the closest sibling implementation (Pinecone + voyage-3). Key files: `scripts/rag/ingest.mjs`, `scripts/rag/shared.mjs`, `netlify/functions/chat.mjs`, `CLAUDE.md` (sections 41-122).
+- `D:\aigamma.com`, the efficiency-pattern reference (Supabase pgvector + gte-small). Key files: `docs/rag-architecture.md`, `scripts/rag/ingest.mjs`, `netlify/functions/chat.mjs`, `.github/workflows/refresh-rag.yml`.
 - `functions/index.js`, the current Cloud Function that this design replaces. Lines 122-317 (`performVectorSearch`) collapse to ~30 lines once Weaviate is the backend.
 - `mcp-server/server.mjs`, the MCP server's `searchTranscripts` tool; refactored to share the adapter with the Cloud Function.
 - [Weaviate docs](https://weaviate.io/developers/weaviate), particularly the Hybrid Search and Backup module pages.
