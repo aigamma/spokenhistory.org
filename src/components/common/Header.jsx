@@ -49,8 +49,8 @@ import ShareButton from '../ShareButton';
 //   Interviews             -> /table-of-contents (per-interview chapter index, click-to-play)
 //   Topics                 -> /topic-glossary    (the nested themes-and-playlists book)
 //   People                 -> /people            (page title "Historical Figures Referenced in Interviews"; figures -> /person)
-//   Explore Interview Data -> /rag-explore       (the maps and retrieval surfaces)
 //   K-12 Curriculum        -> /curriculum
+//   Explore Interview Data -> /rag-explore       (the maps and retrieval surfaces; bottom row, Eric 2026-06-03)
 // Essays, About, Methodology, and Technical Documentation stay in the global
 // footer sitemap (Footer.jsx). NOTE: the visible labels still do NOT all match
 // their route names, kept stable because many in-app deep links target them.
@@ -61,8 +61,8 @@ const MENU_ROUTES = [
   { label: 'Interviews', to: '/table-of-contents', matchPath: '/table-of-contents' },
   { label: 'Topics', to: '/topic-glossary', matchPath: '/topic-glossary' },
   { label: 'People', to: '/people', matchPath: '/people' },
-  { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'K-12 Curriculum', to: '/curriculum', matchPath: '/curriculum' },
+  { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
 ];
 
 function isCurrentRoute(route, location) {

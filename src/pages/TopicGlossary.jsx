@@ -1,6 +1,7 @@
 /**
- * @fileoverview TopicGlossary, the Table of Contents: the primary entry into
- * the archive (Dustin, 2026-06-02 afternoon).
+ * @fileoverview TopicGlossary, the Topics page (Dustin, 2026-06-02 afternoon;
+ * nav label and page header renamed from "Table of Contents" to "Topics" on
+ * 2026-06-03). Route stays /topic-glossary. A primary entry into the archive.
  *
  * The page opens with a search bar, then a structured overview, then a nested,
  * book-style table of contents: broad Themes as sections, with specific
@@ -25,7 +26,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { THEMES, playlistHref } from '../data/archiveThemes';
 
 export default function TopicGlossary() {
-  useDocumentTitle('Table of Contents');
+  useDocumentTitle('Topics');
   const [search, setSearch] = useState('');
 
   // Filter the book by the search text. A theme matched by its own name or
@@ -69,13 +70,13 @@ export default function TopicGlossary() {
       >
         <header className="mb-6">
           <p className="text-civil-red-body text-sm font-light font-mono mb-2">
-            Civil Rights History Project · Table of Contents
+            Civil Rights History Project · Topics
           </p>
           <h1
             className="text-stone-900 dark:text-stone-100 text-3xl sm:text-4xl md:text-5xl font-medium mb-4"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
-            Table of Contents
+            Topics
           </h1>
           <p
             className="text-stone-700 dark:text-stone-300 text-base sm:text-lg max-w-3xl"
