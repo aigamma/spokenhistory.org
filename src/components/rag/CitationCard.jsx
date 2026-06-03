@@ -186,7 +186,7 @@ function CopyButton({ text }) {
     <button
       type="button"
       onClick={handleClick}
-      className="inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-600 hover:text-stone-900 hover:bg-stone-50 rounded transition-colors shrink-0"
+      className="inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-600 hover:text-stone-900 hover:bg-stone-50 dark:hover:bg-zinc-800 rounded transition-colors shrink-0"
       aria-label={copied ? 'Copied' : 'Copy citation to clipboard'}
     >
       <Icon className="w-3.5 h-3.5" aria-hidden="true" />

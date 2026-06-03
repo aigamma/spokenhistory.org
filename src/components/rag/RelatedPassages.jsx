@@ -186,7 +186,7 @@ export default function RelatedPassages({
               className={
                 'w-full flex items-center justify-between gap-4 py-2 px-3 rounded-md border text-left transition-colors ' +
                 (onNavigateToEntry
-                  ? 'bg-stone-50 border-stone-200 hover:bg-white hover:border-civil-red-strong cursor-pointer'
+                  ? 'bg-stone-50 border-stone-200 hover:bg-white dark:hover:bg-zinc-700 hover:border-civil-red-strong cursor-pointer'
                   : 'bg-stone-50 border-stone-200 cursor-default')
               }
             >

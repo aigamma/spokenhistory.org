@@ -1110,7 +1110,7 @@ export default function PersonPage() {
                     <li key={t.slug}>
                       <Link
                         to={`/rag-explore?tab=tours&tour=${t.slug}`}
-                        className="inline-flex items-center px-3 py-1 rounded-full border border-stone-900 bg-white text-stone-900 text-sm hover:bg-stone-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+                        className="inline-flex items-center px-3 py-1 rounded-full border border-stone-900 bg-white text-stone-900 text-sm hover:bg-stone-100 dark:hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
                       >
                         {t.title}
                       </Link>

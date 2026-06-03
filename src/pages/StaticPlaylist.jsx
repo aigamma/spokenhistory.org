@@ -430,7 +430,7 @@ export default function StaticPlaylist() {
                     type="button"
                     onClick={() => playClip(Math.max(0, selected - 1))}
                     disabled={selected === 0}
-                    className="inline-flex items-center gap-1 min-h-11 px-3 py-2 text-sm rounded-md border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="inline-flex items-center gap-1 min-h-11 px-3 py-2 text-sm rounded-md border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     <ChevronLeft className="w-4 h-4" aria-hidden="true" /> Previous clip
                   </button>
@@ -438,7 +438,7 @@ export default function StaticPlaylist() {
                     type="button"
                     onClick={() => playClip(Math.min(clips.length - 1, selected + 1))}
                     disabled={selected === clips.length - 1}
-                    className="inline-flex items-center gap-1 min-h-11 px-3 py-2 text-sm rounded-md border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="inline-flex items-center gap-1 min-h-11 px-3 py-2 text-sm rounded-md border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     Next clip <ChevronRight className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -534,7 +534,7 @@ export default function StaticPlaylist() {
                               'w-full text-left rounded-md border p-3 transition-colors ' +
                               (isActive
                                 ? 'border-civil-red-strong bg-red-50'
-                                : 'border-stone-200 bg-white hover:bg-stone-50')
+                                : 'border-stone-200 bg-white hover:bg-stone-50 dark:hover:bg-zinc-800')
                             }
                           >
                             <div className="flex items-start gap-2">
@@ -617,7 +617,7 @@ export default function StaticPlaylist() {
                             'w-full text-left rounded-md border p-3 transition-colors ' +
                             (isActive
                               ? 'border-civil-red-strong bg-red-50'
-                              : 'border-stone-200 bg-white hover:bg-stone-50')
+                              : 'border-stone-200 bg-white hover:bg-stone-50 dark:hover:bg-zinc-800')
                           }
                         >
                           <div className="flex items-start gap-2">

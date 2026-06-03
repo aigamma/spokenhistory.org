@@ -58,7 +58,7 @@ export default function ThemesBrowser() {
             aria-pressed={mode === 'map'}
             className={
               'inline-flex items-center gap-1.5 px-3 py-1.5 text-sm transition-colors ' +
-              (mode === 'map' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50')
+              (mode === 'map' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800')
             }
           >
             <LayoutGrid className="w-3.5 h-3.5" aria-hidden="true" />
@@ -70,7 +70,7 @@ export default function ThemesBrowser() {
             aria-pressed={mode === 'list'}
             className={
               'inline-flex items-center gap-1.5 px-3 py-1.5 text-sm transition-colors border-l border-stone-300 ' +
-              (mode === 'list' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50')
+              (mode === 'list' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800')
             }
           >
             <List className="w-3.5 h-3.5" aria-hidden="true" />
@@ -105,7 +105,7 @@ export default function ThemesBrowser() {
                   type="button"
                   onClick={() => setExpandedId(isExpanded ? null : c.cluster_id)}
                   aria-expanded={isExpanded}
-                  className="w-full text-left p-4 hover:bg-stone-50 transition-colors"
+                  className="w-full text-left p-4 hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="flex-1">

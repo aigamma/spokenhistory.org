@@ -525,7 +525,7 @@ export default function RagExplore() {
                             'inline-flex items-center min-h-9 px-3 py-1.5 text-sm rounded-full border-2 transition-colors ' +
                             (isActive
                               ? 'border-civil-red-strong bg-red-50 text-stone-900 font-medium'
-                              : 'border-stone-300 bg-white text-stone-700 hover:border-stone-400 dark:hover:border-zinc-600 hover:bg-stone-50')
+                              : 'border-stone-300 bg-white text-stone-700 hover:border-stone-400 dark:hover:border-zinc-600 hover:bg-stone-50 dark:hover:bg-zinc-800')
                           }
                         >
                           {e.name}

@@ -238,10 +238,10 @@ export default function TableOfContents() {
           <span aria-current="page" className="px-3 py-1.5 rounded-full border border-civil-red-strong bg-red-50 text-civil-red-body font-medium">
             Interviews
           </span>
-          <Link to="/people?type=external_figure" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors">
+          <Link to="/people?type=external_figure" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
             Historic Figures Mentioned
           </Link>
-          <Link to="/people" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors">
+          <Link to="/people" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
             All People
           </Link>
         </nav>

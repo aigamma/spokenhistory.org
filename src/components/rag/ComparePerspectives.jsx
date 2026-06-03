@@ -147,7 +147,7 @@ export default function ComparePerspectives({
                   setError(null);
                   setHasSearched(false);
                 }}
-                className="px-3 py-2 text-sm text-stone-600 hover:text-stone-900 hover:bg-stone-100 rounded-md transition-colors"
+                className="px-3 py-2 text-sm text-stone-600 hover:text-stone-900 hover:bg-stone-100 dark:hover:bg-zinc-800 rounded-md transition-colors"
                 aria-label="Clear topic"
               >
                 Clear
@@ -177,7 +177,7 @@ export default function ComparePerspectives({
               type="button"
               onClick={() => handleSampleClick(s)}
               disabled={isLoading}
-              className="px-2.5 py-1 rounded-full border border-stone-300 bg-white hover:bg-stone-50 hover:border-stone-400 transition-colors disabled:opacity-40 text-left"
+              className="px-2.5 py-1 rounded-full border border-stone-300 bg-white hover:bg-stone-50 dark:hover:bg-zinc-800 hover:border-stone-400 transition-colors disabled:opacity-40 text-left"
             >
               {s}
             </button>

@@ -100,7 +100,7 @@ export default function EventNetwork() {
             aria-pressed={mode === 'graph'}
             className={
               'inline-flex items-center gap-1.5 px-3 py-1.5 text-sm transition-colors ' +
-              (mode === 'graph' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50')
+              (mode === 'graph' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800')
             }
           >
             <GitBranch className="w-3.5 h-3.5" aria-hidden="true" />
@@ -112,7 +112,7 @@ export default function EventNetwork() {
             aria-pressed={mode === 'list'}
             className={
               'inline-flex items-center gap-1.5 px-3 py-1.5 text-sm transition-colors border-l border-stone-300 ' +
-              (mode === 'list' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50')
+              (mode === 'list' ? 'bg-stone-900 text-white' : 'bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800')
             }
           >
             <List className="w-3.5 h-3.5" aria-hidden="true" />

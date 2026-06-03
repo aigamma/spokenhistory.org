@@ -85,7 +85,7 @@ export default function ShareButton({
     'inline-flex items-center gap-1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded';
   const byVariant = {
     button:
-      'min-h-9 px-3 py-1.5 text-xs font-medium border border-stone-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 text-stone-700 dark:text-zinc-200 hover:bg-stone-50 hover:border-stone-500',
+      'min-h-9 px-3 py-1.5 text-xs font-medium border border-stone-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 text-stone-700 dark:text-zinc-200 hover:bg-stone-50 dark:hover:bg-zinc-800 hover:border-stone-500',
     icon: 'p-1.5 text-stone-400 hover:text-stone-700 dark:text-zinc-500 dark:hover:text-zinc-200 hover:bg-stone-100 dark:hover:bg-zinc-800',
     inline: 'text-xs font-medium text-civil-red-body dark:text-red-400 hover:underline',
   };

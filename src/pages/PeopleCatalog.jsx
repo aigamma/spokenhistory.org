@@ -144,7 +144,7 @@ export default function PeopleCatalog() {
             the interviews view. The All / Interviewees / Historic Figures filter
             below switches within the people. */}
         <nav className="flex flex-wrap items-center gap-2 mb-6 text-sm" aria-label="Interviews and People views">
-          <Link to="/table-of-contents" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 transition-colors">
+          <Link to="/table-of-contents" className="px-3 py-1.5 rounded-full border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
             Interviews
           </Link>
           <span aria-current="page" className="px-3 py-1.5 rounded-full border border-civil-red-strong bg-red-50 text-civil-red-body font-medium">
@@ -180,7 +180,7 @@ export default function PeopleCatalog() {
                   'px-3 py-1.5 rounded-full text-sm border transition-colors ' +
                   (typeFilter === key
                     ? 'border-civil-red-strong bg-red-50 text-civil-red-body'
-                    : 'border-stone-300 bg-white text-stone-700 hover:bg-stone-50')
+                    : 'border-stone-300 bg-white text-stone-700 hover:bg-stone-50 dark:hover:bg-zinc-800')
                 }
               >
                 {label}
