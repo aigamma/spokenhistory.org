@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, X, Moon, Sun, Home, Pause, Play } from 'lucide-react';
+import { X, Moon, Sun, Home, Pause, Play } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 import { useAnimationPreference } from '../../hooks/useAnimationPreference';
-import { useSearch } from '../../context/SearchProvider';
 import ShareButton from '../ShareButton';
 
 /**
@@ -36,12 +35,16 @@ import ShareButton from '../ShareButton';
 // 2026-06-02 (Dustin, afternoon): the main menu is set to FIVE destinations,
 // re-promoting "Explore Interview Data" out of the footer and splitting the
 // morning's combined "Interviews & People" entry back into a People-led
-// section. Order, label -> route:
+// section.
+// 2026-06-03 (Eric): "People & Interviews" moved ABOVE "Explore Interview
+// Data" so the human-facing browse (the interviewees and the figures they
+// discuss) precedes the analytical maps-and-retrieval surface. Order,
+// label -> route:
 //   Timeline               -> /               (the scroll-driven home timeline)
 //   Table of Contents      -> /topic-glossary (the nested themes-and-playlists book)
-//   Explore Interview Data -> /rag-explore    (the maps and retrieval surfaces)
 //   People & Interviews    -> /people         (People Catalog: browses the oral-history
 //                                              interviewees and the historic figures they discuss)
+//   Explore Interview Data -> /rag-explore    (the maps and retrieval surfaces)
 //   K-12 Curriculum        -> /curriculum
 // Essays, About, Methodology, and Technical Documentation stay in the global
 // footer sitemap (Footer.jsx). NOTE: the visible labels intentionally do NOT
@@ -53,8 +56,8 @@ import ShareButton from '../ShareButton';
 const MENU_ROUTES = [
   { label: 'Timeline', to: '/', matchPath: '/' },
   { label: 'Table of Contents', to: '/topic-glossary', matchPath: '/topic-glossary' },
-  { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'People & Interviews', to: '/people', matchPath: '/people' },
+  { label: 'Explore Interview Data', to: '/rag-explore', matchPath: '/rag-explore' },
   { label: 'K-12 Curriculum', to: '/curriculum', matchPath: '/curriculum' },
 ];
 
@@ -75,7 +78,6 @@ export default function Header() {
   const menuCloseRef = useRef(null);
   const { isDark, toggle } = useTheme();
   const { paused: animationsPaused, toggle: toggleAnimations } = useAnimationPreference();
-  const { openSearch } = useSearch();
 
   // Esc-to-close + focus restoration for the slide-out menu. WCAG
   // 2.4.3 + ARIA Authoring Practices for dialogs: focus moves into
@@ -111,12 +113,12 @@ export default function Header() {
   return (
     <>
       {/* Header. The top-of-page pill nav is gone (Dustin, 2026-05-30); the
-          chrome row carries a "share this page" control, the Light/Dark toggle,
-          a Search trigger, and the Menu button, pinned right. The Search
-          trigger opens the site-wide command palette (Cmd/Ctrl+K or "/"), which
-          federates the RAG passage search with the Firebase database and the
-          static catalogs. Every navigation destination still lives in the Menu
-          drawer. */}
+          chrome row carries a "share this page" control, a "Pause Animations"
+          toggle (timeline page only), the Light/Dark toggle, and the Menu
+          button, pinned right. Every navigation destination lives in the Menu
+          drawer. The site-wide command palette is no longer surfaced as a
+          header button (Eric, 2026-06-03); it stays mounted at the App root
+          and opens via Cmd/Ctrl+K or "/". */}
       <header className="relative bg-[#EBEAE9] dark:bg-zinc-900">
         <div className="w-full px-4 sm:px-8 lg:px-12 pt-3 sm:pt-4 pb-2.5">
           <div className="flex items-center justify-between gap-2 sm:gap-2.5">
@@ -141,12 +143,12 @@ export default function Header() {
               <span aria-hidden="true" />
             )}
 
-            {/* Right-side chrome cluster: share, search, Pause Animations,
-                theme toggle, menu, grouped so justify-between keeps the home
-                link at the left edge and these pinned to the right. flex-wrap +
-                justify-end let the row drop the Dark+Menu group onto a neat
+            {/* Right-side chrome cluster: share, Pause Animations (timeline page
+                only), theme toggle, menu, grouped so justify-between keeps the
+                home link at the left edge and these pinned to the right. flex-wrap
+                + justify-end let the row drop the Dark+Menu group onto a neat
                 second right-aligned line on the narrowest phones rather than
-                clipping the always-visible "Pause Animations" label. */}
+                clipping the "Pause Animations" label. */}
             <div className="flex flex-wrap items-center justify-end gap-1.5 sm:gap-2.5">
             {/* Share this page: copies the current URL, the answer to "share
                 whatever page you are on." On the interview, Table of Contents,
@@ -160,34 +162,24 @@ export default function Header() {
               className="min-w-11 min-h-11 justify-center rounded-full border border-stone-300 dark:border-zinc-600 bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 shadow-sm"
             />
 
-            {/* Search trigger: a quiet icon button (matching the Share control
-                beside it) that opens the site-wide command palette. The palette
-                is mounted at the App root and also responds to Cmd/Ctrl+K and
-                "/". Eric (2026-06-02) asked for a neat upper-right icon in place
-                of the old full-width, always-visible header search bar. */}
-            <button
-              type="button"
-              onClick={openSearch}
-              aria-label="Search the archive"
-              aria-keyshortcuts="Control+K Meta+K"
-              title="Search the archive (Ctrl/Cmd+K)"
-              className="inline-flex items-center justify-center min-w-11 min-h-11 rounded-full border border-stone-300 dark:border-zinc-600 bg-white/70 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-300 shadow-sm transition-colors hover:bg-white dark:hover:bg-zinc-800"
-            >
-              <Search className="w-4 h-4" aria-hidden="true" />
-            </button>
-
-            {/* Pause Animations toggle. The landing-page timeline auto-plays
-                looping motion (the period "GIF" videos plus a few infinite CSS
-                animations); WCAG 2.2.2 (Pause, Stop, Hide) wants an in-page way
-                to stop it, which the OS-only prefers-reduced-motion rule cannot
-                provide (and CSS cannot pause a <video>). This persists the
-                choice and reflects it onto <html data-animations-paused>; the
-                timeline pauses its videos off that, the stylesheet freezes
-                keyframe animations off it. The icon + label name the action the
-                button performs: Pause while motion is running, Play once paused.
-                Text shows from sm up; the narrowest phones get the icon alone to
-                keep the chrome row from overflowing (full label stays in
-                aria-label/title). */}
+            {/* Pause Animations toggle. RENDERED ONLY ON THE TIMELINE PAGE
+                ("/"), Eric 2026-06-03: the looping decorative motion (the period
+                "GIF" videos plus a few infinite CSS animations) lives on the
+                landing-page timeline, so the control belongs where the motion
+                is, not on every page where "Pause Animations" would have nothing
+                to pause. WCAG 2.2.2 (Pause, Stop, Hide) wants an in-page way to
+                stop motion that auto-plays and loops, which the OS-only
+                prefers-reduced-motion rule cannot provide (and CSS cannot pause a
+                <video>). The default is animations ON unless the OS asks for
+                reduced motion (see useAnimationPreference + the no-FOUC script in
+                index.html), so the button reads "Pause Animations", a clear and
+                discoverable affordance, rather than the murkier "Play
+                Animations". This persists the choice and reflects it onto <html
+                data-animations-paused>; the timeline pauses its videos off that,
+                the stylesheet freezes keyframe animations off it. The icon +
+                label name the action the button performs: Pause while motion is
+                running, Play once paused. */}
+            {location.pathname === '/' && (
             <button
               type="button"
               onClick={toggleAnimations}
@@ -217,6 +209,7 @@ export default function Header() {
                 {animationsPaused ? 'Play Animations' : 'Pause Animations'}
               </span>
             </button>
+            )}
 
             <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
               {/* Light/dark toggle, sits just left of Menu. Its label
