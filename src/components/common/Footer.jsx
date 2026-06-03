@@ -8,7 +8,7 @@
  *
  * The footer is the secondary-navigation home for the destinations that are NOT
  * in the five-item primary nav (Dustin, 2026-06-02 afternoon): Essays,
- * Methodology, Technical Documentation, and About. The five primary sections
+ * Methodology, GitHub, and About. The five primary sections
  * (Timeline, Table of Contents, Explore Interview Data, People & Interviews,
  * K-12 Curriculum) now live in the header Menu drawer.
  *
@@ -25,7 +25,7 @@ import { Link } from 'react-router-dom';
 const SITEMAP = [
   { label: 'Essays', to: '/essays' },
   { label: 'Methodology', to: '/machine-audit' },
-  { label: 'Technical Documentation', href: 'https://github.com/jsovelove/civil-rights-history-project' },
+  { label: 'GitHub', href: 'https://github.com/jsovelove/civil-rights-history-project' },
   { label: 'About', to: '/about' },
 ];
 
