@@ -15,8 +15,11 @@
  *
  * Interaction:
  *  - Drag a node to pin it (d3-drag).
- *  - Click a node → onSelect(node) fires (parent can scroll details
- *    panel into view).
+ *  - Click a node: the parent navigates an interviewee to their interview;
+ *    an external figure (no interview of their own) is selected so its details
+ *    panel and "who discusses them" drill-down open. Reported through a ref so
+ *    a selection never re-runs the build effect (re-running it would restart
+ *    the simulation: the old jitter).
  *  - Hover → fade non-neighbors so the node's local subgraph stands
  *    out without losing global context.
  *  - Mouse-wheel + drag pans/zooms via d3-zoom; double-click recenters.
@@ -49,6 +52,16 @@ export default function InfluenceGraph({
   minLabelDegree = 4,
 }) {
   const svgRef = useRef(null);
+  // Keep onSelect + selectedId in refs so the heavy build effect below does NOT
+  // list them as dependencies. Clicking a node updates selectedId in the parent;
+  // if selectedId were a dependency, the effect would re-run, wipe the SVG, and
+  // restart the force simulation on every click, which is the "jitter" a
+  // selection used to cause. With refs the graph is built only when its DATA
+  // changes, and a separate lightweight effect repaints just the selected node.
+  const onSelectRef = useRef(onSelect);
+  const selectedIdRef = useRef(selectedId);
+  const nodeSelRef = useRef(null);
+  useEffect(() => { onSelectRef.current = onSelect; }, [onSelect]);
 
   useEffect(() => {
     if (!svgRef.current) return undefined;
@@ -139,6 +152,9 @@ export default function InfluenceGraph({
       .join('g')
       .attr('class', 'node')
       .style('cursor', 'pointer');
+    // Expose the node selection so the selection-styling effect can repaint the
+    // glow on the selected node without rebuilding the whole graph.
+    nodeSelRef.current = nodeSel;
 
     nodeSel
       .append('circle')
@@ -146,8 +162,8 @@ export default function InfluenceGraph({
       .attr('fill', (d) => (d.in_corpus ? COLOR_IN_CORPUS : COLOR_EXTERNAL))
       .attr('fill-opacity', 0.85)
       .attr('stroke', '#18181b')
-      .attr('stroke-width', (d) => (d.id === selectedId ? 2 : 0.8))
-      .attr('filter', (d) => (d.id === selectedId ? 'url(#glow-selected)' : null));
+      .attr('stroke-width', (d) => (d.id === selectedIdRef.current ? 2 : 0.8))
+      .attr('filter', (d) => (d.id === selectedIdRef.current ? 'url(#glow-selected)' : null));
 
     // Labels (only on the top-degree nodes to avoid ant-line clutter).
     nodeSel
@@ -180,7 +196,12 @@ export default function InfluenceGraph({
         linkSel.attr('opacity', 0.6).attr('stroke', COLOR_EDGE);
       })
       .on('click', function handleClick(_event, d) {
-        if (onSelect) onSelect(d);
+        // Report the click to the parent, which navigates an interviewee to
+        // their interview and selects an external figure so the details panel
+        // and its "who discusses them" drill-down open. Read through a ref so
+        // this handler is never an effect dependency (see the jitter note above).
+        const fn = onSelectRef.current;
+        if (fn) fn(d);
       });
 
     // No per-node <title>: the native browser tooltip popped up over the graph
@@ -245,7 +266,19 @@ export default function InfluenceGraph({
     return () => {
       simulation.stop();
     };
-  }, [nodesIn, edgesIn, selectedId, onSelect, minLabelDegree]);
+  }, [nodesIn, edgesIn, minLabelDegree]);
+
+  // Repaint only the selected node's outline + glow when the selection changes,
+  // without rebuilding the graph or restarting the simulation (the jitter fix).
+  useEffect(() => {
+    selectedIdRef.current = selectedId;
+    const nodeSel = nodeSelRef.current;
+    if (!nodeSel) return;
+    nodeSel
+      .select('circle')
+      .attr('stroke-width', (d) => (d.id === selectedId ? 2 : 0.8))
+      .attr('filter', (d) => (d.id === selectedId ? 'url(#glow-selected)' : null));
+  }, [selectedId]);
 
   return (
     <div className="rounded-lg border border-stone-200 bg-stone-50 overflow-hidden">
@@ -255,7 +288,7 @@ export default function InfluenceGraph({
         height={H}
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label="Network graph of who-discussed-whom across the 136-interview corpus. Drag nodes to reposition; scroll to zoom."
+        aria-label="Network graph of who-discussed-whom across the corpus. Click an interviewee to open their interview, or an external figure to see who discusses them; drag nodes to reposition; scroll to zoom."
         style={{ display: 'block', background: '#fafaf9' }}
       />
       <div className="px-3 py-2 text-xs text-stone-500 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-stone-200 bg-white">
@@ -268,7 +301,7 @@ export default function InfluenceGraph({
           External (discussed only)
         </span>
         <span className="text-stone-400">·</span>
-        <span>Drag to reposition · scroll to zoom · double-click to unpin</span>
+        <span>Click an interviewee to open their interview · drag to reposition · scroll to zoom · double-click to unpin</span>
       </div>
     </div>
   );

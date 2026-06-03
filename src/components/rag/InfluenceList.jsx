@@ -11,7 +11,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GitBranch, List, Loader2, FileText } from 'lucide-react';
 import InfluenceGraph from './InfluenceGraph';
 import { retrieve } from '../../services/ragClient';
@@ -46,6 +46,7 @@ function resolveCatalogSlug(node, peopleIndex) {
 }
 
 export default function InfluenceList() {
+  const navigate = useNavigate();
   const [data, setData] = useState(null);
   const [peopleIndex, setPeopleIndex] = useState(null);
   const [error, setError] = useState(null);
@@ -76,6 +77,19 @@ export default function InfluenceList() {
   const topList = view === 'corpus' ? inCorpus : external;
   const selectedNode = selectedId ? data.nodes.find((n) => n.id === selectedId) : null;
 
+  // Activate a graph node. An in-corpus interviewee clicks straight through to
+  // their interview, mirroring the Events and Activism graph's click-through.
+  // An external figure has no interview of their own, so clicking selects it,
+  // which opens the inline details panel and its live "who discusses them"
+  // drill-down (the panel also links to the figure's catalog page).
+  const handleActivate = (n) => {
+    if (n.in_corpus && n.entry_number != null) {
+      navigate(`/interview/${n.entry_number}`);
+      return;
+    }
+    setSelectedId(n.id === selectedId ? null : n.id);
+  };
+
   return (
     <div className="rag-influence">
       <p className="text-sm text-stone-600 mb-6 max-w-2xl">
@@ -85,6 +99,8 @@ export default function InfluenceList() {
         Brand-red dots are interviewees who have their own oral history; gray dots are
         figures discussed by others but not interviewed themselves (Ella Baker, Bayard Rustin,
         Bob Moses, and others whose voices reach the archive only through who-knew-whom).
+        Click an interviewee to open their interview, or an external figure to see who
+        across the archive discusses them.
       </p>
 
       {/* View-mode toggle */}
@@ -123,7 +139,7 @@ export default function InfluenceList() {
             nodes={data.nodes}
             edges={data.edges || []}
             selectedId={selectedId}
-            onSelect={(n) => setSelectedId(n.id === selectedId ? null : n.id)}
+            onSelect={handleActivate}
           />
           {selectedNode && (
             <aside className="mt-3 px-4 py-3 rounded-md border border-stone-200 bg-white text-sm">
