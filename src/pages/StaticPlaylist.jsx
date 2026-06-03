@@ -100,6 +100,11 @@ export default function StaticPlaylist() {
   // Person catalog index, loaded for the interviewee portrait thumbnails in the
   // clip-list group headers (the playlist index itself carries no images).
   const [peopleIndex, setPeopleIndex] = useState(null);
+  // Cosine neighbors (entry-level, neighbors.json) power "Recommended Clips";
+  // the entry -> figures map (inverted from famous_external.json) powers the
+  // "Historic figures discussed" new-tab links. Both load defensively.
+  const [neighbors, setNeighbors] = useState(null);
+  const [figuresByEntry, setFiguresByEntry] = useState(null);
   const [error, setError] = useState(null);
   const [selected, setSelected] = useState(0);
   const [userInitiated, setUserInitiated] = useState(false);
@@ -131,6 +136,35 @@ export default function StaticPlaylist() {
     fetch('/rag/people/index.json')
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => { if (!cancelled && j) setPeopleIndex(j); })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, []);
+
+  // Recommendation + figure data, both optional (the page works without either).
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/rag/summaries/neighbors.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => { if (!cancelled && j) setNeighbors(j); })
+      .catch(() => {});
+    fetch('/rag/summaries/famous_external.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled || !j?.figures) return;
+        // Invert figures[].passages[].entry_number -> entry: [{slug, name}],
+        // deduped per entry, so a clip's interview can list the figures it
+        // discusses.
+        const map = {};
+        for (const f of j.figures) {
+          for (const p of f.passages || []) {
+            const e = p.entry_number;
+            if (e == null) continue;
+            if (!map[e]) map[e] = [];
+            if (!map[e].some((x) => x.slug === f.slug)) map[e].push({ slug: f.slug, name: f.name });
+          }
+        }
+        setFiguresByEntry(map);
+      })
       .catch(() => {});
     return () => { cancelled = true; };
   }, []);
@@ -260,6 +294,36 @@ export default function StaticPlaylist() {
     return out;
   }, [clips]);
 
+  // Recommended Clips (cosine): the interviews most similar to the ones in this
+  // playlist (neighbors.json entry-level cosine), excluding interviews already
+  // present, each represented by its longest clip (which skips the short "From
+  // the Library of Congress..." intro chapter). This is the lateral "watch
+  // next" rail; a per-clip cosine precompute (from related/ per-chunk neighbors)
+  // is the later quality upgrade.
+  const recommendedClips = useMemo(() => {
+    if (!neighbors || !index?.clips || clips.length === 0) return [];
+    const present = new Set(clips.map((c) => c.entry_number));
+    const best = new Map();
+    for (const e of present) {
+      const rec = neighbors[e] || neighbors[String(e)];
+      for (const nb of rec?.neighbors || []) {
+        if (present.has(nb.entry_number)) continue;
+        const prev = best.get(nb.entry_number) || 0;
+        if ((nb.similarity || 0) > prev) best.set(nb.entry_number, nb.similarity || 0);
+      }
+    }
+    const ranked = [...best.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
+    const out = [];
+    for (const [e] of ranked) {
+      const candidates = index.clips.filter((c) => c.entry_number === e);
+      if (candidates.length === 0) continue;
+      const rep = candidates.reduce((a, b) =>
+        (((b.end_seconds || 0) - (b.start_seconds || 0)) > ((a.end_seconds || 0) - (a.start_seconds || 0)) ? b : a));
+      out.push(rep);
+    }
+    return out;
+  }, [neighbors, index, clips]);
+
   // Interviewee portrait for a group-header thumbnail. The playlist index has no
   // images, so this reads the person catalog (by_entry -> photo_src, or via the
   // entry's slug into by_slug), the same source the People catalog and interview
@@ -310,6 +374,9 @@ export default function StaticPlaylist() {
   const currentTheme = findPlaylist({ label: labelParam, topic, keywords });
 
   const current = clips[selected];
+  // Historic figures discussed in the current clip's interview (entry-level),
+  // for the new-tab links beside the now-playing detail.
+  const figuresForCurrent = (current && figuresByEntry?.[current.entry_number]) || [];
 
   const playClip = (i) => {
     setSelected(i);
@@ -425,6 +492,28 @@ export default function StaticPlaylist() {
                   <p className="text-sm text-stone-700 leading-relaxed mb-4 max-w-2xl">{current.summary}</p>
                 )}
 
+                {/* Historic figures discussed in this interview, linked to their
+                    reference pages and opened in a NEW TAB so the video keeps
+                    playing while the reader pulls up the figure (Dustin's flow). */}
+                {figuresForCurrent.length > 0 && (
+                  <p className="text-sm text-stone-600 mb-4 max-w-2xl">
+                    <span className="text-stone-500">Historic figures discussed: </span>
+                    {figuresForCurrent.map((f, i) => (
+                      <span key={f.slug}>
+                        {i > 0 && ', '}
+                        <Link
+                          to={`/person/${f.slug}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-civil-red-body hover:underline"
+                        >
+                          {f.name}
+                        </Link>
+                      </span>
+                    ))}
+                  </p>
+                )}
+
                 <div className="flex flex-wrap items-center gap-3">
                   <button
                     type="button"
@@ -498,6 +587,41 @@ export default function StaticPlaylist() {
                       </div>
                     </div>
                   )}
+                </div>
+              )}
+
+              {/* Recommended Clips (cosine): a lateral "watch next" rail of clips
+                  from the interviews most closely related to this playlist, by
+                  embedding similarity (neighbors.json). Each opens that
+                  interview's chapter playlist landing on the clip, so the visitor
+                  keeps hopping through the archive inside the player. */}
+              {recommendedClips.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-sm font-semibold uppercase tracking-wide font-mono text-stone-700 mb-1 flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4 text-civil-red-body" aria-hidden="true" />
+                    Recommended Clips
+                  </h3>
+                  <p className="text-xs text-stone-500 mb-3">
+                    From the interviews most closely related to this playlist, by embedding similarity.
+                  </p>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 list-none p-0 m-0">
+                    {recommendedClips.map((rc) => (
+                      <li key={`rec-${rc.entry_number}-${rc.chapter_number}`}>
+                        <Link
+                          to={`/playlist-builder?entry=${rc.entry_number}&play=${rc.entry_number}_${Math.round(rc.start_seconds || 0)}`}
+                          className="group block h-full rounded-md border border-stone-200 bg-white p-3 hover:border-civil-red-strong hover:bg-red-50 transition-colors"
+                        >
+                          <div className="flex items-start gap-2">
+                            <Play className="w-3.5 h-3.5 mt-0.5 text-stone-400 group-hover:text-civil-red-strong shrink-0" aria-hidden="true" />
+                            <div className="min-w-0 flex-1">
+                              <div className="text-sm font-medium text-stone-900 leading-snug line-clamp-2">{rc.title}</div>
+                              <div className="text-xs text-stone-500 mt-0.5 truncate">{rc.subject}</div>
+                            </div>
+                          </div>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>

@@ -213,18 +213,23 @@ export default function TableOfContents() {
 
   return (
     <div className="min-h-screen bg-[#EBEAE9] dark:bg-zinc-900">
-      <main id="main-content" tabIndex={-1} className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 focus:outline-none">
+      <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 sm:px-6 py-12 focus:outline-none">
+        {/* Full-width header band, kept consistent with the Historical Figures
+            page (PeopleCatalog): same eyebrow + Inter H1 sizing + stone intro +
+            container width, so the two sibling pages read as one family even
+            though the body below differs (a single-column list here, a card grid
+            there). Eric, 2026-06-03. */}
         <header className="mb-8">
+          <p className="text-civil-red-body text-sm font-light font-mono mb-2">
+            Civil Rights History Project · Interviews
+          </p>
           <h1
-            className="text-stone-900 text-3xl sm:text-4xl font-medium mb-2 leading-tight"
+            className="text-stone-900 text-3xl sm:text-4xl md:text-5xl font-medium mb-4 leading-tight"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             Interviews
           </h1>
-          <p
-            className="text-stone-700 text-base sm:text-lg max-w-3xl"
-            style={{ fontFamily: 'Source Serif 4, serif' }}
-          >
+          <p className="text-stone-700 max-w-3xl">
             Every interview in the collection. Open one to see its chapters, grouped
             into parts. Click any chapter to play that moment, or a part to play it
             straight through. Only the segment you pick loads, so even a multi-hour
