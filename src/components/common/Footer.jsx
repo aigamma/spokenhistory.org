@@ -10,16 +10,18 @@
  * in the five-item primary nav (Dustin, 2026-06-02 afternoon): Essays,
  * Methodology, Technical Documentation, and About. The five primary sections
  * (Timeline, Table of Contents, Explore Interview Data, People & Interviews,
- * K-12 Curriculum) now live in the header Menu drawer. The footer also carries
- * the Library of Congress attribution as plain text (no outbound loc.gov link,
- * per the site-wide policy).
+ * K-12 Curriculum) now live in the header Menu drawer.
+ *
+ * The footer previously also carried a plain-text "Library of Congress"
+ * attribution, removed 2026-06-02 (Dustin): it was unlinked and was forcing the
+ * sitemap to wrap to a second row. LoC attribution still lives in page copy and
+ * the person-page citations.
  */
 
 import { Link } from 'react-router-dom';
 
 // One sitemap entry per secondary destination. The five primary sections live
-// in the header Menu drawer (Header.jsx); the footer holds the rest, then the
-// Library of Congress attribution is appended after the loop below.
+// in the header Menu drawer (Header.jsx); the footer holds the rest.
 const SITEMAP = [
   { label: 'Essays', to: '/essays' },
   { label: 'Methodology', to: '/machine-audit' },
@@ -76,12 +78,6 @@ export default function Footer() {
                 </Link>
               )
             )}
-            <span
-              className="inline-flex items-center min-h-11 px-1 -mx-1 text-base sm:text-lg lg:text-xl font-bold font-['Inter'] whitespace-nowrap"
-              style={{ color: '#EBEAE9' }}
-            >
-              Library of Congress
-            </span>
           </nav>
         </div>
 
