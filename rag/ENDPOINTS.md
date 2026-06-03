@@ -7,7 +7,7 @@ For internal use; not a stakeholder doc.
 
 | Path | What it is |
 |---|---|
-| `https://robotlogic.org/` | Production site root (Netlify) |
+| `https://spokenhistory.org/` | Production site root (Netlify) |
 | `https://civil-rights-staging.netlify.app/` | Staging site root |
 | `https://civil-rights-staging.netlify.app/rag-explore` | The RAG demo page, "Data Insights" in the nav (auth-gated) |
 | `https://civil-rights-staging.netlify.app/rag-explore#search` | Semantic search tab (default) |

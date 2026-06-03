@@ -1,7 +1,7 @@
 # RAG demo, what to show stakeholders
 
 A one-pager for the WWU meeting (or any future demo). The surfaces below
-are live in production on `https://robotlogic.org` and staging on
+are live in production on `https://spokenhistory.org` and staging on
 `https://civil-rights-staging.netlify.app` unless otherwise noted.
 
 ## In one sentence

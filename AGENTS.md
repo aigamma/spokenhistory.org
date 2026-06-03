@@ -1,6 +1,6 @@
-# Civil Rights History Project — agent instructions
+# Civil Rights History Project: agent instructions
 
-This is the agent-discovery entry point for the **Civil Rights History Project** (`aigamma/civil-rights-history-project` on GitHub). The project is an open-source AI system that transforms the Library of Congress Civil Rights History Project oral history archive (135 interviews, 600+ hours, produced with the Smithsonian NMAAHC) into structured searchable metadata. The Smithsonian/LoC quality bar is "publication-grade," not "good enough for a research demo."
+This is the agent-discovery entry point for the **Civil Rights History Project** (`aigamma/spokenhistory.org` on GitHub). The project is an open-source AI system that transforms the Library of Congress Civil Rights History Project oral history archive (135 interviews, 600+ hours, produced with the Smithsonian NMAAHC) into structured searchable metadata. The Smithsonian/LoC quality bar is "publication-grade," not "good enough for a research demo."
 
 ## Authoritative source
 

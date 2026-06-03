@@ -23,7 +23,7 @@
 //      a deployed /retrieve endpoint instead. The URL comes from
 //      RETRIEVE_URL and defaults to production:
 //
-//        RETRIEVE_URL=https://robotlogic.org/retrieve \
+//        RETRIEVE_URL=https://spokenhistory.org/retrieve \
 //          node rag/eval/run_eval.mjs --http
 //
 // The two backends return different field casings (the in-process path
@@ -97,7 +97,7 @@ Usage:
 
 Flags:
   --http              POST to a deployed /retrieve endpoint (RETRIEVE_URL,
-                      default https://robotlogic.org/retrieve) instead of
+                      default https://spokenhistory.org/retrieve) instead of
                       importing retrieve.mjs in-process.
   --http-on-error     Try the in-process path first; fall back to HTTP if it
                       throws a credential or connection error.
@@ -386,7 +386,7 @@ async function main() {
     }
   }
 
-  const httpUrl = process.env.RETRIEVE_URL || 'https://robotlogic.org/retrieve';
+  const httpUrl = process.env.RETRIEVE_URL || 'https://spokenhistory.org/retrieve';
 
   // Resolve the backend. Default is the in-process retrieve() import; if
   // that import fails (missing creds module, etc.) and --http-on-error

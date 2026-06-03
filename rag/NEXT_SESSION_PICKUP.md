@@ -7,7 +7,7 @@ and what should happen next." Last reviewed 2026-06-01.
 ## State of the world (one paragraph)
 
 The civil rights RAG layer is **live and working**, in production on
-`https://robotlogic.org` and staging on
+`https://spokenhistory.org` and staging on
 `https://civil-rights-staging.netlify.app`. The Pinecone civil-rights
 index holds ≈16K `.srt`-anchored passage vectors covering the 140
 interviews (verify exact count against Pinecone; it was 15,464 at the

@@ -5,7 +5,7 @@ human contributor, or the worldthought.com team adapting the pattern to
 their own corpus). Last reviewed **2026-06-01**.
 
 The interactive "connection-display" layer on top of the civil-rights
-RAG substrate is built, deployed, and live (production at robotlogic.org,
+RAG substrate is built, deployed, and live (production at spokenhistory.org,
 staging at civil-rights-staging.netlify.app). This doc explains the
 architecture, the contract each piece exposes, and how the same pattern
 ports to worldthought.com. The Pinecone index is provisioned and ingested

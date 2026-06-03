@@ -43,7 +43,7 @@ should gate on.
 
 | Flag | Effect |
 |---|---|
-| `--http` | Skip the in-process import and POST each query to a deployed `/retrieve` endpoint instead. The URL comes from `RETRIEVE_URL` and defaults to `https://robotlogic.org/retrieve`. Useful when you do not have the Voyage and Pinecone keys locally but want to validate the live deployment. |
+| `--http` | Skip the in-process import and POST each query to a deployed `/retrieve` endpoint instead. The URL comes from `RETRIEVE_URL` and defaults to `https://spokenhistory.org/retrieve`. Useful when you do not have the Voyage and Pinecone keys locally but want to validate the live deployment. |
 | `--http-on-error` | Try the in-process path first; fall back to HTTP only if the import fails to resolve credentials. |
 | `--json` | Emit a machine-readable JSON report on stdout and suppress the human-readable per-query lines. For wiring the harness into other tooling. |
 | `--query "<substr>"` | Run only the golden queries whose text contains `<substr>` (case-insensitive). Repeatable. Handy for iterating on one query. |
@@ -53,7 +53,7 @@ Examples:
 
 ```bash
 # Validate the live production endpoint without local credentials.
-RETRIEVE_URL=https://robotlogic.org/retrieve \
+RETRIEVE_URL=https://spokenhistory.org/retrieve \
   node rag/eval/run_eval.mjs --http
 
 # Run just the Emmett Till query, in-process.

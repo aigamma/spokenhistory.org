@@ -61,7 +61,7 @@ Day-of-conference / day-of-demo, watch these signals (~5-min cadence):
 
 3. **Latest CI run on master**
    ```bash
-   gh run list --repo aigamma/civil-rights-history-project --workflow=ci.yml --limit 1
+   gh run list --repo aigamma/spokenhistory.org --workflow=ci.yml --limit 1
    ```
    Should be `success`. A failure means a recent commit broke parse-checks or the tiers.test.mjs unit tests.
 

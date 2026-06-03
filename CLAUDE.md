@@ -52,12 +52,14 @@ The site is built out and live. The 2026-05-27 WWU team meeting and the May over
 
 **Search is live.** Pinecone index `civil-rights` (Voyage `voyage-3`, 1024-dim, cosine) + `rerank-2`, fronted by `netlify/functions/retrieve.mjs`. It holds `.srt`-anchored passage vectors plus one vector per person page (`content_type='person'`, excluded from passage flows unless `include_persons` is set). The person-vector push is done.
 
-**Deployed:** frontend to **robotlogic.org** (production, Netlify, `master`) and `civil-rights-staging.netlify.app` (staging).
+**Deployed:** frontend to **spokenhistory.org** (production, Netlify, `master`) and `civil-rights-staging.netlify.app` (staging). **spokenhistory.org replaces robotlogic.org** as the production domain (cut over 2026-06-02).
+
+**Repository (2026-06-02):** the project is now a standalone GitHub repo at **`aigamma/spokenhistory.org`**, which is the canonical `origin`. The prior `aigamma/civil-rights-history-project` is kept as the `civil-rights-old` remote; `jsovelove/civil-rights-history-project` remains as `upstream` for provenance only (the Dustin-authorized takeover means we are NOT opening a PR upstream). The user-facing name still reads "Civil Rights History Project" pending a deliberate rename (it collides with the Library of Congress's own program name). One Firebase console follow-up remains: add `spokenhistory.org` under Authentication, Authorized Domains so the admin Email/Password login works on the new domain (the `wwu`/`civilrights` team-shared gate already works on any origin via the client-side bypass in `src/contexts/AuthContext.jsx`).
 
 **Still outstanding (ops, not code):**
 - Deploy Cloud Functions to `civil-rights-history-project` (Blaze billing + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`). The live search path does NOT depend on these; it runs through the Netlify function + Pinecone.
 - Deploy the MCP server to Fly.io (`flyctl auth login` then `fly deploy` in `mcp-server/`). The server is rewired to Pinecone+Voyage and locally smoke-tested.
-- Open the PR to upstream `jsovelove/civil-rights-history-project`.
+- (Obsolete) The earlier plan to open a PR to upstream `jsovelove/civil-rights-history-project` no longer applies: the project is now a standalone repo at `aigamma/spokenhistory.org` (Dustin-authorized takeover, 2026-06-02). `upstream` is retained only for provenance.
 
 **Known data / integration gaps (see `transcripts/OPEN_PROBLEMS.md` + `transcripts/ingestion/ONBOARDING_REVIEW.md`):**
 - **CLOSED 2026-06-01:** `public/rag/related/` now covers entries 1-142 (the 139-142 backfill ran 2026-06-01, and the same pass regenerated the corpus-global artifacts that were stale at entry 138: `centroids`/`constellation`, `ideological_spectrums`, `geography`/events/panels, `influence`, `capsules`, and a deterministic nearest-cluster assignment of 139-142 into `clusters`). The `network` stage now rebuilds `related/` for every new entry automatically, so this gap will not recur.

@@ -60,7 +60,7 @@ The corpus's distinctive value: many of these interviewees have since passed awa
 
 Any client supporting the StreamableHTTP transport works. The endpoint is `POST /mcp`; the JSON-RPC schema follows the MCP spec.
 
-> The exact public URL above is illustrative, see the project's latest deploy at https://github.com/aigamma/civil-rights-history-project for the live endpoint.
+> The exact public URL above is illustrative, see the project's latest deploy at https://github.com/aigamma/spokenhistory.org for the live endpoint.
 
 ---
 
@@ -322,7 +322,7 @@ This honesty is load-bearing for the academic-citation use case. A connector tha
 
 This is open-source software. The project repository, including audit governance documents and the full transcript overlay, is at:
 
-> https://github.com/aigamma/civil-rights-history-project
+> https://github.com/aigamma/spokenhistory.org
 
 Issues, corrections, and pull requests welcome. For misattribution reports, please include the `entry_number`, the timestamp range, the disputed text, and your evidence. The audit team treats these as high-priority signal.
 

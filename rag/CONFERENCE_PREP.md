@@ -4,7 +4,7 @@ Status: **2026-06-01**, corpus at 140 interviews (entry IDs 1-142, gaps
 at 31 and 95; authoritative count in `public/rag/toc.json`), RAG
 application layer complete and deployed (chunker, embedder, ingest
 pipeline, retrieval). The Pinecone index is provisioned and ingested;
-the site is live in production at robotlogic.org and staging at
+the site is live in production at spokenhistory.org and staging at
 civil-rights-staging.netlify.app.
 
 The WWU team is presenting at a London conference next month. The

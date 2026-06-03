@@ -17,8 +17,8 @@
 #      (optional) flyctl secrets set VOYAGE_RERANK_MODEL=rerank-2
 #      (optional) flyctl secrets set MCP_RERANK_ENABLED=true
 #   7. flyctl deploy
-#   8. Configure the custom domain in Fly: flyctl certs add mcp.robotlogic.org
-#      then add the CNAME record at robotlogic.org's registrar pointing
+#   8. Configure the custom domain in Fly: flyctl certs add mcp.spokenhistory.org
+#      then add the CNAME record at spokenhistory.org's registrar pointing
 #      mcp -> <appname>.fly.dev (or the AAAA records Fly returns).
 #
 # The post-2026-05-25 rewire removed the Firebase Admin + OpenAI

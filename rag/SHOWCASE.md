@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-27 (for the 2026-05-27 WWU team meeting and the London conference). Substantially revised from the 2026-05-26 version.
 **Live demo URL:** https://civil-rights-staging.netlify.app/rag-explore (Email/Password gated: Eric admin + `wwu` / `civilrights` team-shared)
-**Production URL:** https://robotlogic.org/#/rag-explore
+**Production URL:** https://spokenhistory.org/#/rag-explore
 **Branch:** master at the most recent commit; layout now Spectrum-at-top, Concept Lenses default tab.
 
 ## What this document is

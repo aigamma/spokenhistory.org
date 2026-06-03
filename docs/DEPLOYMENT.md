@@ -21,7 +21,7 @@ authored inputs + raw Whisper transcript
 
 Semantic search runs on a separate path: the per-interview passages and the person pages are embedded with Voyage `voyage-3` and upserted into the Pinecone index `civil-rights`; the frontend queries them through the `netlify/functions/retrieve.mjs` server-side proxy (which keeps the Pinecone + Voyage keys out of the client bundle).
 
-The corpus is **140 interviews** (entry IDs 1 to 142, with gaps at 31 and 95). Production deploys to **robotlogic.org** (Netlify, `master` branch); staging is **civil-rights-staging.netlify.app**.
+The corpus is **140 interviews** (entry IDs 1 to 142, with gaps at 31 and 95). Production deploys to **spokenhistory.org** (Netlify, `master` branch); staging is **civil-rights-staging.netlify.app**. The repo is the standalone `aigamma/spokenhistory.org`; production cut over from robotlogic.org on 2026-06-02.
 
 ## Prerequisites
 
@@ -30,15 +30,15 @@ The corpus is **140 interviews** (entry IDs 1 to 142, with gaps at 31 and 95). P
 - `firebase-tools` CLI (`npm install -g firebase-tools`)
 - `flyctl` CLI (`brew install flyctl` on Mac, or the Windows installer)
 - `gh` GitHub CLI (`brew install gh` or scoop/winget)
-- `git` configured with credentials for github.com/aigamma/civil-rights-history-project
+- `git` configured with credentials for github.com/aigamma/spokenhistory.org
 
 ## One-time setup (~30 minutes total)
 
 ### 1. Clone the repo + install dependencies (~3 minutes)
 
 ```bash
-git clone git@github.com:aigamma/civil-rights-history-project.git
-cd civil-rights-history-project
+git clone git@github.com:aigamma/spokenhistory.org.git
+cd spokenhistory.org
 npm install
 cd functions && npm install && cd ..
 cd mcp-server && npm install && cd ..
@@ -109,7 +109,7 @@ After deploy, the MCP server is at `civil-rights-mcp.fly.dev` (or whatever the f
 
 ### 8. Confirm Netlify is current + check env vars (~1 minute)
 
-Production deploys to **robotlogic.org** from the `master` branch; **civil-rights-staging.netlify.app** is the staging mirror.
+Production deploys to **spokenhistory.org** from the `master` branch; **civil-rights-staging.netlify.app** is the staging mirror.
 
 - Open the Netlify project dashboard (https://app.netlify.com/projects/civil-rights-staging for staging)
 - Confirm the latest commit shown matches `git log -1 --format=%H` on your local `master`
@@ -162,15 +162,9 @@ python "Metadata Generation System/run_sample.py"                   # smallest t
 
 Expected per-transcript cost: **~$0.04 in OpenAI + Anthropic API credits**, ~64 seconds wall-clock. Measured on the 152-line Maynard E. Moore PoC on 2026-05-22.
 
-## Pushing to upstream (`jsovelove/civil-rights-history-project`)
+## Repository status: standalone (no upstream PR)
 
-```bash
-gh pr create --base master --head master \
-    --title "Smithsonian-grade overhaul: static-JSON content path + dual-scorer + citation auditor + WCAG 2.2 AA audit" \
-    --body "$(cat docs/ACCESSIBILITY.md | head -50)"
-```
-
-Many commits ahead (verify with `git rev-list --count upstream/master..master`). Recommend opening as a draft PR first so the upstream maintainer (`jsovelove`) can review the structure before the full diff lands.
+As of 2026-06-02 this is a **standalone repository** at `aigamma/spokenhistory.org` (the Dustin-authorized takeover). The earlier plan to open a pull request against `jsovelove/civil-rights-history-project` no longer applies. The `upstream` remote (`jsovelove/...`) is retained for provenance only; the `civil-rights-old` remote points at the prior `aigamma/civil-rights-history-project`. Day-to-day work pushes to `origin` (`aigamma/spokenhistory.org`).
 
 ## Troubleshooting
 

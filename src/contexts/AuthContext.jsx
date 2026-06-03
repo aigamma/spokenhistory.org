@@ -11,7 +11,7 @@ const AuthContext = createContext()
 
 // Client-side bypass for the team-shared credential. Firebase Auth rejects
 // logins from origins not listed in its Authorized Domains, which blocks the
-// production custom domain (robotlogic.org) until that list is updated in the
+// production custom domain (spokenhistory.org) until that list is updated in the
 // Firebase Console. This bypass lets the gated UI work regardless of origin;
 // actual data security is enforced by Firestore rules + App Check, not this
 // gate. The password is the same team-shared value already published in the
