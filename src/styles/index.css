@@ -348,7 +348,18 @@ a:focus-visible,
 .dark .text-stone-400 { color: #71717a; }
 .dark .text-civil-red-body { color: #f87171; }
 
-/* Surfaces */
+/* Surfaces.
+
+   CAVEAT (the source of a recurring dark-mode bug): these overrides match
+   the BASE utility class only (.dark .bg-white), NOT Tailwind's state
+   variants. `hover:bg-stone-50` compiles to a different selector,
+   `.hover\:bg-stone-50:hover`, which `.dark .bg-stone-50` does not match,
+   so an unguarded `hover:bg-stone-50 / -stone-100 / hover:bg-white`
+   repaints LIGHT on hover in dark mode and, under the remapped light-gray
+   text, reads as blinding white-on-white. Any hover/focus background in a
+   component must carry its own explicit variant, e.g.
+   `hover:bg-stone-50 dark:hover:bg-zinc-800` (zinc-800 == the resting dark
+   surface below, so the hover stays imperceptible, matching light mode). */
 .dark .bg-white { background-color: #27272a; }
 .dark .bg-stone-50 { background-color: #27272a; }
 .dark .bg-stone-100 { background-color: #212124; }
