@@ -38,6 +38,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
+import ClipCountdown from '../components/ClipCountdown';
 import HearInContext, { tsToSeconds } from '../components/HearInContext';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import { buildShareUrl, shareOrCopy } from '../utils/share';
@@ -238,6 +239,13 @@ export default function InterviewDetail() {
   const [openParts, setOpenParts] = useState(() => new Set());
   // Run the arrival jump (seek + scroll + highlight) exactly once per load.
   const didArriveRef = useRef(false);
+  // The snippet currently bounded in the hero (a played chapter/part, or an
+  // arrival ?t&end), as { start, end, duration, label }, plus its clip-relative
+  // playback fraction (0..1). These drive the "time left in this clip" countdown
+  // ring under the video. Null when the full, unbounded interview is playing
+  // (there is no snippet to count down). See the polling effect below.
+  const [activeClip, setActiveClip] = useState(null);
+  const [clipProgress, setClipProgress] = useState(0);
 
   // Reflect the current section in the address bar without a router navigation
   // (no scroll jump, no history spam), so the URL alone stays shareable while
@@ -268,6 +276,7 @@ export default function InterviewDetail() {
     const start = tsToSeconds(ch.start_time);
     const end = ch.end_time ? tsToSeconds(ch.end_time) : null;
     heroRef.current?.seek(start, { play: true, stopAt: end });
+    setActiveClip(end != null && end > start ? { start, end, duration: end - start, label: ch.title } : null);
     setHighlight(`chapter-${ch.chapter_number}`);
     syncHash(`chapter-${ch.chapter_number}`);
     if (scroll) heroWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -286,6 +295,7 @@ export default function InterviewDetail() {
     const start = tsToSeconds(first.start_time);
     const end = lastWithEnd ? tsToSeconds(lastWithEnd.end_time) : null;
     heroRef.current?.seek(start, { play: true, stopAt: end });
+    setActiveClip(end != null && end > start ? { start, end, duration: end - start, label: group.title || 'This part' } : null);
     setHighlight(`part-${gi + 1}`);
     syncHash(`part-${gi + 1}`);
     if (scroll) heroWrapRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -369,6 +379,7 @@ export default function InterviewDetail() {
           end: ch.end_time ? tsToSeconds(ch.end_time) : null,
           scrollId: `chapter-${num}`,
           flag: `chapter-${num}`,
+          label: ch.title,
         };
         openPartIdx = partGroups.findIndex((g) =>
           g.chapters.some((c) => c.chapter_number === num),
@@ -385,6 +396,7 @@ export default function InterviewDetail() {
           end: lastWithEnd ? tsToSeconds(lastWithEnd.end_time) : null,
           scrollId: `part-${idx + 1}`,
           flag: `part-${idx + 1}`,
+          label: group.title || 'This part',
         };
         openPartIdx = idx;
       }
@@ -394,6 +406,7 @@ export default function InterviewDetail() {
         end: endSeconds > startSeconds ? endSeconds : null,
         scrollId: null,
         flag: null,
+        label: 'Selected clip',
       };
     }
 
@@ -413,6 +426,14 @@ export default function InterviewDetail() {
     // Seek and bound (best effort: a fresh navigation has no user gesture, so
     // the browser may hold autoplay; the clip is still cued to the right spot).
     heroRef.current?.seek(target.start, { play: true, stopAt: target.end });
+    if (target.end != null && target.end > target.start) {
+      setActiveClip({
+        start: target.start,
+        end: target.end,
+        duration: target.end - target.start,
+        label: target.label || 'Selected clip',
+      });
+    }
     if (target.flag) setHighlight(target.flag);
     // Defer the scroll so a just-opened part has rendered its chapters.
     setTimeout(() => {
@@ -442,6 +463,29 @@ export default function InterviewDetail() {
       .then((data) => { if (!cancelled) setPersonPage(data || null); });
     return () => { cancelled = true; };
   }, [peopleIndex, n]);
+
+  // Drive the countdown ring while a bounded snippet is active. The hero is one
+  // long-lived element played imperatively, so its onProgress prop tracks the
+  // page-level ?t/&end bound, not a clicked chapter; reading getCurrentTime
+  // against the active clip's own start/end is the reliable feed. A light 500ms
+  // poll (reading one property) is plenty for a seconds countdown and adds no
+  // media listener. Clears when no snippet is active.
+  useEffect(() => {
+    if (!activeClip || !(activeClip.duration > 0)) {
+      setClipProgress(0);
+      return undefined;
+    }
+    const tick = () => {
+      const now = heroRef.current?.getCurrentTime?.() ?? 0;
+      let frac = (now - activeClip.start) / activeClip.duration;
+      if (!Number.isFinite(frac) || frac < 0) frac = 0;
+      else if (frac > 1) frac = 1;
+      setClipProgress(frac);
+    };
+    tick();
+    const id = setInterval(tick, 500);
+    return () => clearInterval(id);
+  }, [activeClip]);
 
   useDocumentTitle(entry ? `${entry.entry_subject}, Interview` : 'Interview');
 
@@ -542,6 +586,21 @@ export default function InterviewDetail() {
             autoPlay={startSeconds > 0}
           />
         </div>
+
+        {/* Time-left countdown for the active snippet (Eric, 2026-06-03): when a
+            chapter or part is playing in the hero above, a depleting ring shows
+            the seconds remaining in that snippet. Shown only while a bounded clip
+            is active (the full interview is not a snippet). Mobile-friendly: a
+            compact row that sits directly under the video. */}
+        {activeClip && activeClip.duration > 0 && (
+          <div className="mb-3 flex items-center gap-3 rounded-md border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-3">
+            <ClipCountdown progress={clipProgress} durationSeconds={activeClip.duration} size={56} />
+            <div className="min-w-0">
+              <p className="text-xs uppercase tracking-wide font-mono text-stone-500">Time left in this clip</p>
+              <p className="text-sm font-medium text-stone-900 dark:text-stone-100 truncate">{activeClip.label}</p>
+            </div>
+          </div>
+        )}
 
         {/* Grab a link to wherever the playhead is right now, the answer to
             "the URL does not change as I scrub": this reads the live position
