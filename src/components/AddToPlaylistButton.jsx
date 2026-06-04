@@ -11,7 +11,7 @@
  * membership, so the button is in sync with the playlist on every render.
  */
 import { useState, useCallback } from 'react';
-import { ListPlus, Check } from 'lucide-react';
+import { Plus, Check } from 'lucide-react';
 import { normalizeClip, dedupeKey } from '../utils/clipTokens';
 import { usePlaylist } from '../context/PlaylistProvider';
 
@@ -51,7 +51,7 @@ export default function AddToPlaylistButton({ clip, variant = 'icon', className 
 
   if (!ref) return null;
 
-  const Icon = inList ? Check : ListPlus;
+  const Icon = inList ? Check : Plus;
   const text = label || (inList ? 'In playlist' : 'Add to playlist');
   const aria = `${inList ? 'Remove from' : 'Add to'} playlist${ref.t ? `: ${ref.t}` : ''}`;
 
