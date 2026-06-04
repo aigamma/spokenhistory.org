@@ -25,9 +25,23 @@ import { Play, Search } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { THEMES, playlistHref } from '../data/archiveThemes';
 
+// How many playlists to show per theme before the "Show all" expander. The
+// taxonomy runs deep (13 themes, ~95 playlists), so each theme opens with a few
+// representative playlists and expands on request, keeping the book scannable.
+const INITIAL_VISIBLE = 4;
+
 export default function TopicGlossary() {
   useDocumentTitle('Topics');
   const [search, setSearch] = useState('');
+  // Themes the reader has expanded to reveal all of their playlists.
+  const [expandedThemes, setExpandedThemes] = useState(() => new Set());
+  const toggleTheme = (id) =>
+    setExpandedThemes((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
 
   // Filter the book by the search text. A theme matched by its own name or
   // blurb keeps all of its playlists; otherwise only the playlists whose name
@@ -145,7 +159,12 @@ export default function TopicGlossary() {
         {/* The nested book: each theme is a section, its playlists nested beneath,
             every playlist linking directly to its stream of clips. */}
         <div className="space-y-10">
-          {sections.map(({ theme, index, playlists }) => (
+          {sections.map(({ theme, index, playlists }) => {
+            const searching = Boolean(search.trim());
+            const isExpanded = expandedThemes.has(theme.id);
+            const visiblePlaylists =
+              searching || isExpanded ? playlists : playlists.slice(0, INITIAL_VISIBLE);
+            return (
             <section
               key={theme.id}
               id={`theme-${theme.id}`}
@@ -173,7 +192,7 @@ export default function TopicGlossary() {
                 )}
               </div>
               <ul className="space-y-2 list-none p-0">
-                {playlists.map((p) => (
+                {visiblePlaylists.map((p) => (
                   <li key={p.id}>
                     <Link
                       to={playlistHref(p)}
@@ -202,8 +221,21 @@ export default function TopicGlossary() {
                   </li>
                 ))}
               </ul>
+              {!searching && playlists.length > INITIAL_VISIBLE && (
+                <div className="mt-3">
+                  <button
+                    type="button"
+                    onClick={() => toggleTheme(theme.id)}
+                    aria-expanded={isExpanded}
+                    className="text-sm font-medium text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
+                  >
+                    {isExpanded ? 'Show fewer' : `Show all ${playlists.length} playlists`}
+                  </button>
+                </div>
+              )}
             </section>
-          ))}
+            );
+          })}
 
           {sections.length === 0 && (
             <p className="text-stone-600 dark:text-stone-400">
