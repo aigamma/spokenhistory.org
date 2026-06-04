@@ -5,6 +5,7 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
+import ClipCountdown from '../components/ClipCountdown';
 import { TIER_COLORS } from '../components/rag/tiers';
 import { COLLECTION_NAME, findPlaylist, relatedPlaylists, playlistHref } from '../data/archiveThemes';
 
@@ -473,21 +474,34 @@ export default function StaticPlaylist() {
               />
 
               <div className="mt-4">
-                <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-1">
-                  Video Clip {selected + 1} of {clips.length}
-                  {fmtDuration(current.start_seconds, current.end_seconds) && (
-                    <span className="ml-2 inline-flex items-center gap-1 text-stone-600">
-                      <Clock className="w-3 h-3" aria-hidden="true" />
-                      {fmtDuration(current.start_seconds, current.end_seconds)}
-                    </span>
-                  )}
-                </p>
-                <h2 className="text-stone-900 text-xl font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
-                  {current.title}
-                </h2>
-                <p className="text-sm text-stone-600 mb-3">
-                  From the interview with <span className="font-medium text-stone-800">{current.subject}</span>
-                </p>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-1">
+                      Video Clip {selected + 1} of {clips.length}
+                      {fmtDuration(current.start_seconds, current.end_seconds) && (
+                        <span className="ml-2 inline-flex items-center gap-1 text-stone-600">
+                          <Clock className="w-3 h-3" aria-hidden="true" />
+                          {fmtDuration(current.start_seconds, current.end_seconds)}
+                        </span>
+                      )}
+                    </p>
+                    <h2 className="text-stone-900 text-xl font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {current.title}
+                    </h2>
+                    <p className="text-sm text-stone-600 mb-3">
+                      From the interview with <span className="font-medium text-stone-800">{current.subject}</span>
+                    </p>
+                  </div>
+                  {/* Countdown ring (Eric, 2026-06-03): the seconds left in this
+                      snippet, in the open space beside the clip detail. Fed by the
+                      same onProgress fraction as the per-card bar, so no extra cost.
+                      Wraps below the title on narrow screens. */}
+                  <ClipCountdown
+                    progress={progress}
+                    durationSeconds={(current.end_seconds || 0) - (current.start_seconds || 0)}
+                    className="mt-0.5"
+                  />
+                </div>
                 {current.summary && (
                   <p className="text-sm text-stone-700 leading-relaxed mb-4 max-w-2xl">{current.summary}</p>
                 )}
@@ -688,7 +702,7 @@ export default function StaticPlaylist() {
                           {isActive && (
                             <span
                               aria-hidden="true"
-                              className="pointer-events-none absolute bottom-0 left-0 h-0.5 bg-civil-red-strong rounded-b-md transition-[width] duration-150 ease-linear"
+                              className="pointer-events-none absolute bottom-0 left-0 h-1 bg-civil-red-strong rounded-b-md transition-[width] duration-150 ease-linear"
                               style={{ width: `${Math.round(progress * 100)}%` }}
                             />
                           )}
@@ -774,7 +788,7 @@ export default function StaticPlaylist() {
                         {isActive && (
                           <span
                             aria-hidden="true"
-                            className="pointer-events-none absolute bottom-0 left-0 h-0.5 bg-civil-red-strong rounded-b-md transition-[width] duration-150 ease-linear"
+                            className="pointer-events-none absolute bottom-0 left-0 h-1 bg-civil-red-strong rounded-b-md transition-[width] duration-150 ease-linear"
                             style={{ width: `${Math.round(progress * 100)}%` }}
                           />
                         )}
