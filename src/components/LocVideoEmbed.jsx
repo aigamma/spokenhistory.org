@@ -323,14 +323,17 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
           Your browser does not support embedded video. The interview is
           available at <a href={sourceUrl}>the Library of Congress</a>.
         </video>
-        {/* Built-in "time left" countdown, pinned to the lower-right of the video
-            so it is visible while watching. Shown whenever the player has a
-            bounded clip (a snippet), whether bounded by start/end props (every
+        {/* Built-in "time left" countdown, pinned to the TOP-right corner of the
+            video. The native controls (play, timeline, volume, and the fullscreen
+            button) all sit along the bottom edge, with fullscreen in the
+            bottom-right, so a lower-right badge covers the fullscreen icon; the
+            top edge is the only control-free corner. Shown whenever the player has
+            a bounded clip (a snippet), whether bounded by start/end props (every
             embed) or by an imperative seek (the interview hero's chapters), so it
             appears on every clip surface without per-page wiring. pointer-events-
-            none so it never blocks the native controls. */}
+            none so it never blocks the controls. */}
         {showCountdown && clipBound && clipBound.duration > 0 && (
-          <div className="pointer-events-none absolute bottom-3 right-3 z-10">
+          <div className="pointer-events-none absolute top-3 right-3 z-10">
             <ClipCountdown progress={clipFrac} durationSeconds={clipBound.duration} size={56} onDark />
           </div>
         )}
