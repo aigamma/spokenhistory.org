@@ -471,37 +471,34 @@ export default function StaticPlaylist() {
                 autoPlay={userInitiated}
                 onClipEnd={() => { if (selected < clips.length - 1) playClip(selected + 1); }}
                 onProgress={setProgress}
+                overlay={
+                  ((current.end_seconds || 0) - (current.start_seconds || 0)) > 0 ? (
+                    <ClipCountdown
+                      progress={progress}
+                      durationSeconds={(current.end_seconds || 0) - (current.start_seconds || 0)}
+                      size={56}
+                      onDark
+                    />
+                  ) : null
+                }
               />
 
               <div className="mt-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="min-w-0">
-                    <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-1">
-                      Video Clip {selected + 1} of {clips.length}
-                      {fmtDuration(current.start_seconds, current.end_seconds) && (
-                        <span className="ml-2 inline-flex items-center gap-1 text-stone-600">
-                          <Clock className="w-3 h-3" aria-hidden="true" />
-                          {fmtDuration(current.start_seconds, current.end_seconds)}
-                        </span>
-                      )}
-                    </p>
-                    <h2 className="text-stone-900 text-xl font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
-                      {current.title}
-                    </h2>
-                    <p className="text-sm text-stone-600 mb-3">
-                      From the interview with <span className="font-medium text-stone-800">{current.subject}</span>
-                    </p>
-                  </div>
-                  {/* Countdown ring (Eric, 2026-06-03): the seconds left in this
-                      snippet, in the open space beside the clip detail. Fed by the
-                      same onProgress fraction as the per-card bar, so no extra cost.
-                      Wraps below the title on narrow screens. */}
-                  <ClipCountdown
-                    progress={progress}
-                    durationSeconds={(current.end_seconds || 0) - (current.start_seconds || 0)}
-                    className="mt-0.5"
-                  />
-                </div>
+                <p className="text-xs uppercase tracking-wide font-mono text-stone-500 mb-1">
+                  Video Clip {selected + 1} of {clips.length}
+                  {fmtDuration(current.start_seconds, current.end_seconds) && (
+                    <span className="ml-2 inline-flex items-center gap-1 text-stone-600">
+                      <Clock className="w-3 h-3" aria-hidden="true" />
+                      {fmtDuration(current.start_seconds, current.end_seconds)}
+                    </span>
+                  )}
+                </p>
+                <h2 className="text-stone-900 text-xl font-medium mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  {current.title}
+                </h2>
+                <p className="text-sm text-stone-600 mb-3">
+                  From the interview with <span className="font-medium text-stone-800">{current.subject}</span>
+                </p>
                 {current.summary && (
                   <p className="text-sm text-stone-700 leading-relaxed mb-4 max-w-2xl">{current.summary}</p>
                 )}

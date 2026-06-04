@@ -584,23 +584,18 @@ export default function InterviewDetail() {
             startSeconds={startSeconds}
             endSeconds={endSeconds > startSeconds ? endSeconds : null}
             autoPlay={startSeconds > 0}
+            overlay={
+              activeClip && activeClip.duration > 0 ? (
+                <ClipCountdown
+                  progress={clipProgress}
+                  durationSeconds={activeClip.duration}
+                  size={56}
+                  onDark
+                />
+              ) : null
+            }
           />
         </div>
-
-        {/* Time-left countdown for the active snippet (Eric, 2026-06-03): when a
-            chapter or part is playing in the hero above, a depleting ring shows
-            the seconds remaining in that snippet. Shown only while a bounded clip
-            is active (the full interview is not a snippet). Mobile-friendly: a
-            compact row that sits directly under the video. */}
-        {activeClip && activeClip.duration > 0 && (
-          <div className="mb-3 flex items-center gap-3 rounded-md border border-stone-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-3">
-            <ClipCountdown progress={clipProgress} durationSeconds={activeClip.duration} size={56} />
-            <div className="min-w-0">
-              <p className="text-xs uppercase tracking-wide font-mono text-stone-500">Time left in this clip</p>
-              <p className="text-sm font-medium text-stone-900 dark:text-stone-100 truncate">{activeClip.label}</p>
-            </div>
-          </div>
-        )}
 
         {/* Grab a link to wherever the playhead is right now, the answer to
             "the URL does not change as I scrub": this reads the live position

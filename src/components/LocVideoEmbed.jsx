@@ -95,6 +95,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
     showCaption = true,
     onClipEnd = null,
     onProgress = null,
+    overlay = null,
   },
   ref,
 ) {
@@ -286,7 +287,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
 
   return (
     <div className={className}>
-      <div className="w-full aspect-video rounded-lg overflow-hidden bg-black shadow">
+      <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black shadow">
         <video
           ref={videoRef}
           src={sourceUrl}
@@ -299,6 +300,14 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
           Your browser does not support embedded video. The interview is
           available at <a href={sourceUrl}>the Library of Congress</a>.
         </video>
+        {/* Corner overlay slot (e.g. the clip countdown ring), pinned to the
+            lower-right of the video so it is visible while watching.
+            pointer-events-none so it never blocks the native video controls. */}
+        {overlay && (
+          <div className="pointer-events-none absolute bottom-3 right-3 z-10">
+            {overlay}
+          </div>
+        )}
       </div>
       {/* Controls below the player, never overlapping the native play button.
           "Replay clip" re-seeks to the clip start and re-arms the stop mark. */}
