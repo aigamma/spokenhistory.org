@@ -177,18 +177,19 @@ export default function Header() {
                 <video>). The default is animations ON unless the OS asks for
                 reduced motion (see useAnimationPreference + the no-FOUC script in
                 index.html), so the button reads "Pause Animations", a clear and
-                discoverable affordance, rather than the murkier "Play
-                Animations". This persists the choice and reflects it onto <html
-                data-animations-paused>; the timeline pauses its videos off that,
-                the stylesheet freezes keyframe animations off it. The icon +
-                label name the action the button performs: Pause while motion is
-                running, Play once paused. */}
+                discoverable affordance, rather than leading with the resume-state
+                "Allow Animations" label. This persists the choice and reflects it
+                onto <html data-animations-paused>; the timeline pauses its videos
+                off that, the stylesheet freezes keyframe animations off it. The
+                icon + label name the action the button performs: Pause while
+                motion is running, Allow once paused (the icon is a Play
+                triangle). */}
             {location.pathname === '/' && (
             <button
               type="button"
               onClick={toggleAnimations}
               aria-pressed={animationsPaused}
-              aria-label={animationsPaused ? 'Play animations' : 'Pause animations'}
+              aria-label={animationsPaused ? 'Allow animations' : 'Pause animations'}
               title={animationsPaused ? 'Resume page animations' : 'Pause page animations'}
               className={
                 'inline-flex items-center gap-1.5 min-w-11 min-h-11 px-3 sm:px-4 py-2 rounded-full text-sm sm:text-base font-medium shadow-sm transition-colors ' +
@@ -210,7 +211,7 @@ export default function Header() {
                   Room is made by shrinking the Dark toggle to its icon below
                   sm and letting the row wrap. */}
               <span className="whitespace-nowrap">
-                {animationsPaused ? 'Play Animations' : 'Pause Animations'}
+                {animationsPaused ? 'Allow Animations' : 'Pause Animations'}
               </span>
             </button>
             )}
