@@ -5,7 +5,6 @@ import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
-import ClipCountdown from '../components/ClipCountdown';
 import { TIER_COLORS } from '../components/rag/tiers';
 import { COLLECTION_NAME, findPlaylist, relatedPlaylists, playlistHref } from '../data/archiveThemes';
 
@@ -471,16 +470,6 @@ export default function StaticPlaylist() {
                 autoPlay={userInitiated}
                 onClipEnd={() => { if (selected < clips.length - 1) playClip(selected + 1); }}
                 onProgress={setProgress}
-                overlay={
-                  ((current.end_seconds || 0) - (current.start_seconds || 0)) > 0 ? (
-                    <ClipCountdown
-                      progress={progress}
-                      durationSeconds={(current.end_seconds || 0) - (current.start_seconds || 0)}
-                      size={56}
-                      onDark
-                    />
-                  ) : null
-                }
               />
 
               <div className="mt-4">

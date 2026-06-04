@@ -44,6 +44,7 @@ import {
 } from 'react';
 import { RotateCcw } from 'lucide-react';
 import { seekThenPlay } from '../utils/mediaClip';
+import ClipCountdown from './ClipCountdown';
 
 // Module-level cache of loc_video metadata keyed by entry number, so the
 // several snippet cards that can appear on one person page (and repeat
@@ -95,13 +96,23 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
     showCaption = true,
     onClipEnd = null,
     onProgress = null,
-    overlay = null,
+    showCountdown = true,
   },
   ref,
 ) {
   const [locVideo, setLocVideo] = useState(locVideoProp);
   const [status, setStatus] = useState(locVideoProp ? 'ready' : 'loading');
   const videoRef = useRef(null);
+  // The clip currently bounded in the player as { start, end, duration }, or
+  // null when the source plays open-ended. Set from the start/end props AND from
+  // an imperative seek({ stopAt }), so the built-in countdown ring works whether
+  // a parent bounds the clip by props (HearInContext, the playlist player) or by
+  // calling seek() on a long-lived element (the interview page hero). Mirrored to
+  // a ref so the high-frequency timeupdate handler reads it without re-subscribing.
+  const [clipBound, setClipBound] = useState(null);
+  const clipBoundRef = useRef(null);
+  // Clip-relative playback fraction (0..1) of the bounded clip; drives the ring.
+  const [clipFrac, setClipFrac] = useState(0);
   // The active clip-stop mark in seconds, or null for open-ended. Held in a
   // ref so the high-frequency timeupdate handler reads the current value
   // without re-subscribing, and so an imperative seek can re-arm it without a
@@ -130,6 +141,12 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
   // imperative seek's stop mark survives unrelated re-renders.
   useEffect(() => {
     stopAtRef.current = hasClipBound ? endSeconds : null;
+    const bound = hasClipBound
+      ? { start: startSeconds, end: endSeconds, duration: endSeconds - startSeconds }
+      : null;
+    clipBoundRef.current = bound;
+    setClipBound(bound);
+    setClipFrac(0);
   }, [hasClipBound, endSeconds, startSeconds]);
 
   // Imperative handle for parents that own the element (InterviewDetail's
@@ -142,7 +159,12 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
         const el = videoRef.current;
         if (!el) return;
         const target = Math.max(0, Number(seconds) || 0);
-        stopAtRef.current = stopAt != null && stopAt > target ? stopAt : null;
+        const bounded = stopAt != null && stopAt > target;
+        stopAtRef.current = bounded ? stopAt : null;
+        const bound = bounded ? { start: target, end: stopAt, duration: stopAt - target } : null;
+        clipBoundRef.current = bound;
+        setClipBound(bound);
+        setClipFrac(0);
         const run = () => seekThenPlay(el, target, play);
         if (el.readyState >= 1) run();
         else el.addEventListener('loadedmetadata', run, { once: true });
@@ -220,17 +242,18 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
       if (typeof onClipEndRef.current === 'function') onClipEndRef.current();
     };
     const onTimeUpdate = () => {
-      // Clip-relative progress (0..1) for an optional parent progress bar.
-      // timeupdate already fires during normal playback, so this adds no
-      // listener and no latency. Guard against a missing or zero-length clip.
-      if (typeof onProgressRef.current === 'function') {
-        const span = endSeconds - startSeconds;
-        if (hasClipBound && span > 0) {
-          let frac = (el.currentTime - startSeconds) / span;
-          if (frac < 0) frac = 0;
-          else if (frac > 1) frac = 1;
-          onProgressRef.current(frac);
-        }
+      // Clip-relative progress (0..1) drives the built-in countdown ring and any
+      // parent progress bar (onProgress). Uses the active bound (prop- or
+      // seek-derived) read from a ref, so it tracks the right clip on every
+      // surface. timeupdate already fires during playback, so this adds no
+      // listener and no latency. Guards a missing or zero-length clip.
+      const bound = clipBoundRef.current;
+      if (bound && bound.duration > 0) {
+        let frac = (el.currentTime - bound.start) / bound.duration;
+        if (frac < 0) frac = 0;
+        else if (frac > 1) frac = 1;
+        setClipFrac(frac);
+        if (typeof onProgressRef.current === 'function') onProgressRef.current(frac);
       }
       const stopAt = stopAtRef.current;
       if (stopAt != null && el.currentTime >= stopAt) {
@@ -300,12 +323,15 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
           Your browser does not support embedded video. The interview is
           available at <a href={sourceUrl}>the Library of Congress</a>.
         </video>
-        {/* Corner overlay slot (e.g. the clip countdown ring), pinned to the
-            lower-right of the video so it is visible while watching.
-            pointer-events-none so it never blocks the native video controls. */}
-        {overlay && (
+        {/* Built-in "time left" countdown, pinned to the lower-right of the video
+            so it is visible while watching. Shown whenever the player has a
+            bounded clip (a snippet), whether bounded by start/end props (every
+            embed) or by an imperative seek (the interview hero's chapters), so it
+            appears on every clip surface without per-page wiring. pointer-events-
+            none so it never blocks the native controls. */}
+        {showCountdown && clipBound && clipBound.duration > 0 && (
           <div className="pointer-events-none absolute bottom-3 right-3 z-10">
-            {overlay}
+            <ClipCountdown progress={clipFrac} durationSeconds={clipBound.duration} size={56} onDark />
           </div>
         )}
       </div>
