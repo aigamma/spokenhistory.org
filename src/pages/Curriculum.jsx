@@ -208,7 +208,7 @@ export default function Curriculum() {
             className="text-stone-700 dark:text-stone-300 text-lg sm:text-xl max-w-3xl"
             style={{ fontFamily: 'Source Serif 4, serif' }}
           >
-            {data?.title || 'Youth and Student Activism'}
+            {data?.title || 'Youth and Student Education'}
           </p>
         </header>
 

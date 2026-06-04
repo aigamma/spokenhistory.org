@@ -36,7 +36,7 @@ Eric's constraint to the project: showcase advanced RAG features **without a cha
 | 9 | Geographic atlas | `atlas` | pre-computed + Leaflet map |, | 45 s |
 | 10 | Influence network | `network` | pre-computed + live drill-down | ✓ click node | 30 s |
 | 11 | Curated tours | `tours` | pre-computed + live drill-down | ✓ click stop | 60 s |
-| 12 | Quote of the day | `quote-of-day` | pre-computed (rotation + AI headline) |, | 15 s |
+| 12 | Featured Quote | `quote-of-day` | pre-computed (rotation + AI headline) |, | 15 s |
 
 ★ = the headline demo. Spectrum sits above the tab nav so it's seen alongside whatever tab is open.
 
@@ -210,7 +210,7 @@ What it demonstrates: the museum-curator framing. AI did discovery; humans did c
 
 Data: `public/rag/summaries/tours.json`.
 
-### 12. Quote of the day (`#quote-of-day`)
+### 12. Featured Quote (`#quote-of-day`)
 
 What it does: rotates one quote per day from a curated set of 30 (drawn only from low/medium/high audit-tier interviews). Click "Next →" to cycle through.
 

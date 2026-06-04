@@ -267,7 +267,7 @@ const EmmettTillVideo = () => {
 
 
 /**
- * HeroQuote, the homepage "Quote of the Day": one verbatim passage from the
+ * HeroQuote, the homepage "Featured Quote": one verbatim passage from the
  * archive, randomly selected on each visit (so it rotates visit to visit),
  * shown large with its attribution. Reads the curated, Library-of-Congress
  * cross-referenced /rag/summaries/quotes.json. Prefers the shorter passages so
@@ -299,7 +299,7 @@ function HeroQuote() {
   return (
     <figure className="max-w-2xl border-l-4 border-civil-red-strong pl-5">
       <figcaption className="text-civil-red-body text-xs sm:text-sm font-medium uppercase tracking-wide font-['Chivo_Mono'] mb-3">
-        Quote of the Day
+        Featured Quote
       </figcaption>
       <blockquote className="text-black dark:text-zinc-100 text-xl sm:text-2xl lg:text-3xl font-normal font-['Source_Serif_4'] leading-snug">
         &ldquo;{quote.quote}&rdquo;
@@ -883,7 +883,7 @@ export default function Home() {
       <section className="relative px-4 sm:px-8 lg:px-12 pt-2 pb-12 lg:pt-3 lg:pb-16 flex flex-col z-10">
         <div className="w-full mt-2 lg:mt-3">
           <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
-            {/* Editorial stack: tagline, Quote of the Day, single primary action
+            {/* Editorial stack: tagline, Featured Quote, single primary action
                 (Dustin, 2026-06-02 afternoon). The three competing entry points
                 (145 Interviews, View Timeline, Explore the Collection) collapse
                 into one button that funnels to the Table of Contents, the primary
@@ -896,7 +896,7 @@ export default function Home() {
                 <span className="text-black dark:text-zinc-100 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal font-['Source_Serif_4']"> narrated by the activists, artists, educators, organizers, and changemakers who lived it.</span>
               </h1>
 
-              {/* Large, randomly-selected rotating Quote of the Day with attribution. */}
+              {/* Large, randomly-selected rotating Featured Quote with attribution. */}
               <HeroQuote />
 
               {/* Single primary action. timelineRef stays on it so the decorative

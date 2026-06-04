@@ -61,7 +61,7 @@ It does **not** rebuild the derived cross-link artifacts that the rest of the si
 |---|---|---|
 | `related/entry-<N>.json` | `rag/precompute.mjs --feature related` | PersonPage "related people"; RelatedPassages |
 | `centroids.json`, `constellation.json` | `rag/precompute.mjs` | Embedding-space map |
-| `clusters.json`, `tours.json`, `quotes.json`, `capsules.json` | `rag/summarize.mjs` | Tours, Quote of the Day, capsules, clusters |
+| `clusters.json`, `tours.json`, `quotes.json`, `capsules.json` | `rag/summarize.mjs` | Tours, Featured Quote, capsules, clusters |
 | `influence.json` | `rag/precompute_influence.py` | Influence graph |
 | `geography.json` | `rag/precompute_panels.mjs` | Geographic atlas |
 | `event_network.json` | `scripts/build_event_network.py` | Events network |

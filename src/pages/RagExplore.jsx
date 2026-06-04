@@ -82,7 +82,7 @@ function useCorpusData() {
  *       Maps of the Archive (Themes, Influence, Events and Activism,
  *                            Places, Related People)
  *       Find a Moment       (Quote Finder, Compare Voices)
- *       Curated Paths       (Tours, Quote of the Day)
+ *       Curated Paths       (Tours, Featured Quote)
  *   - About This Page aside at the bottom carrying AuditProvenance
  *     (9 audit passes / 127 LoC cross-references / 5 tier vocabulary).
  *
@@ -149,7 +149,7 @@ const TAB_ORDER = [
   { id: 'network', label: 'Influence' },
   { id: 'events', label: 'Events and Activism' },
   { id: 'tours', label: 'Tours' },
-  { id: 'quote-of-day', label: 'Quote of the Day' },
+  { id: 'quote-of-day', label: 'Featured Quote' },
 ];
 
 // Group the remaining toggles by user intent. "Ideological Spectrums"
@@ -188,7 +188,7 @@ const TAB_LABELS = {
   network: 'Influence',
   events: 'Events and Activism',
   tours: 'Tours',
-  'quote-of-day': 'Quote of the Day',
+  'quote-of-day': 'Featured Quote',
 };
 
 export default function RagExplore() {
@@ -705,7 +705,7 @@ export default function RagExplore() {
           {tab === 'quote-of-day' && (
             <div>
               <h2 className="text-stone-900 text-xl font-medium mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
-                Quote of the Day
+                Featured Quote
               </h2>
               <p className="text-sm text-stone-600 mb-6 max-w-2xl">
                 One quote rotates per day from 30 curated passages drawn from the Library-of-Congress-cross-referenced corpus. Pre-curated; no LLM call per request. Click &quot;Next →&quot; to cycle.
