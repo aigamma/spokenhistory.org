@@ -6,7 +6,6 @@ import Home from './pages/Home'
 import Visualizations from './pages/Visualizations'
 import Login from './pages/Login'
 import StaticPlaylist from './pages/StaticPlaylist'
-import PlaylistEditor from './pages/PlaylistEditor'
 import SearchPage from './pages/SearchPage'
 import InterviewPlayer from './pages/InterviewPlayer'
 import InterviewDetail from './pages/InterviewDetail'
@@ -65,14 +64,6 @@ export default function App() {
         <ProtectedRoute>
           <Layout>
             <StaticPlaylist />
-          </Layout>
-        </ProtectedRoute>
-      } />
-
-      <Route path="/playlist-editor" element={
-        <ProtectedRoute>
-          <Layout>
-            <PlaylistEditor />
           </Layout>
         </ProtectedRoute>
       } />

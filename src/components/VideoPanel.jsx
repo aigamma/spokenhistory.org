@@ -13,7 +13,7 @@ const VideoPanel = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoDuration, setVideoDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-  const [playerReady, setPlayerReady] = useState(false);
+  const [, setPlayerReady] = useState(false);
   const videoRef = useRef(null);
   const timeUpdateIntervalRef = useRef(null);
 

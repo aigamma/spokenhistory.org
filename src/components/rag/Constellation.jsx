@@ -53,7 +53,7 @@ export default function Constellation({
   // Regions are shown by default, they're the educational layer that
   // makes the abstract 2D space readable. User can toggle off if the
   // label clutter gets in the way of point-level inspection.
-  const [showRegions, setShowRegions] = useState(true);
+  const [showRegions] = useState(true);
   const svgRef = useRef(null);
   const isDark = useIsDark();
 

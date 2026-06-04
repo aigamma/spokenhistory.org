@@ -35,7 +35,7 @@ export default function ContentDirectory() {
   // Active tab state (clips or people)
   const [activeTab, setActiveTab] = useState('clips');
   // Search term state for the clips tab
-  const [clipSearchTerm, setClipSearchTerm] = useState('');
+  const [clipSearchTerm] = useState('');
   // Collection statistics for display
   const [statsData, setStatsData] = useState({
     keywordCount: 0,
@@ -187,38 +187,6 @@ export default function ContentDirectory() {
     const THIRTY_MINUTES = 30 * 60 * 1000;
     
     return cacheAge < THIRTY_MINUTES ? cachedSearch.results : null;
-  };
-
-  /**
-   * Navigates to the clips tab with a specific search term
-   * 
-   * This function is used to link from keywords to their associated clips,
-   * providing cross-navigation between directory sections.
-   * 
-   * @param {string} searchTerm - The search term to apply in the clips tab
-   */
-  const navigateToClips = (searchTerm) => {
-    // First change the tab, then update the search term to trigger the search effect
-    setActiveTab('clips');
-    // Use setTimeout to ensure the tab change happens first
-    setTimeout(() => {
-      setClipSearchTerm(searchTerm ? searchTerm.trim() : '');
-    }, 10);
-  };
-
-  /**
-   * Formats seconds into a human-readable time string
-   * 
-   * @param {number} seconds - Time in seconds
-   * @returns {string} Formatted time string (HH:MM:SS or MM:SS)
-   */
-  const formatTime = (seconds) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-    return hrs > 0
-      ? `${hrs}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`
-      : `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   return (

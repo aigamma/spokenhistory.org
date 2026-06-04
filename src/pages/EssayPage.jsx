@@ -23,7 +23,6 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Sparkles, MessageSquareQuote, Play, ChevronUp, ArrowRight } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 
 function fetchJsonOrNull(url) {

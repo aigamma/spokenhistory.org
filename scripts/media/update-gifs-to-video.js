@@ -45,23 +45,6 @@ Object.keys(videoMapping).forEach(key => {
 // ============================================================================
 
 /**
- * Create a video component JSX string
- */
-function createVideoComponent(videoUrls, altText, className = 'w-full h-full object-contain') {
-  return `<video 
-      autoPlay 
-      loop 
-      muted 
-      playsInline
-      className="${className}"
-      aria-label="${altText}"
-    >
-      <source src="${videoUrls.mp4}" type="video/mp4" />
-      <source src="${videoUrls.webm}" type="video/webm" />
-    </video>`;
-}
-
-/**
  * Find and update GIF references in Home.jsx
  */
 function updateHomePageGifs() {

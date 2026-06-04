@@ -46,7 +46,7 @@ export default function ClipPlayer() {
       : (mainSummary?.name || documentName || 'Clip')
   )
   const [error, setError] = useState(null)
-  const [playerReady, setPlayerReady] = useState(false)
+  const [, setPlayerReady] = useState(false)
   const playerRef = useRef(null)
 
   /**

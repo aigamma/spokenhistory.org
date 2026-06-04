@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Play, Clock, FileText, ChevronLeft, ChevronRight, List, UserCircle, Sparkles } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import Footer from '../components/common/Footer';
 import LocVideoEmbed from '../components/LocVideoEmbed';
 import ShareButton from '../components/ShareButton';
 import { TIER_COLORS } from '../components/rag/tiers';
@@ -351,7 +350,6 @@ export default function StaticPlaylist() {
       (c) => c.entry_number === pe && Math.round(c.start_seconds || 0) === Math.round(ps),
     );
     if (idx >= 0) setSelected(idx);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clips, playParam]);
 
   const subjectForEntry = entryParam && index?.videos?.[entryParam]?.subject;

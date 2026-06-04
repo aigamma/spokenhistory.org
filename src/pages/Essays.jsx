@@ -13,7 +13,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import Footer from '../components/common/Footer';
 
 function fetchJsonOrNull(url) {
   return fetch(url).then((r) => (r.ok ? r.json() : null)).catch(() => null);

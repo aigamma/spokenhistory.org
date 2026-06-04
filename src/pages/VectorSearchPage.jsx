@@ -21,23 +21,6 @@ export default function VectorSearchPage() {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  /**
-   * Extracts YouTube video ID from various YouTube URL formats
-   * 
-   * @param {string} videoEmbedLink - YouTube URL
-   * @returns {string|null} YouTube video ID or null if not valid
-   */
-  const extractVideoId = (videoEmbedLink) => {
-    if (!videoEmbedLink) return null;
-    
-    // Regular expression to handle various YouTube URL formats
-    const regExp = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#&?]*).*/;
-    const match = videoEmbedLink.match(regExp);
-    
-    // Standard YouTube IDs are 11 characters
-    return (match && match[2].length === 11) ? match[2] : null;
-  };
-
   // Note: fetchResultMetadata function is now handled by enhanceSearchResults from firebase service
 
   /**

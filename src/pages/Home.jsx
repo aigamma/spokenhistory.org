@@ -8,7 +8,6 @@
 import { useAuth } from '../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import Footer from '../components/common/Footer';
 import arrowRightIcon from '../assetts/vectors/arrow right.svg';
 import EmmettToMontgomeryConnector from '../components/connectors/EmmettToMontgomeryConnector';
 import MontgomeryToLittleRockConnector from '../components/connectors/MontgomeryToLittleRockConnector';
@@ -35,64 +34,6 @@ import { useInlineFeedback } from '../hooks/useInlineFeedback';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { useAnimationsPaused } from '../hooks/useAnimationPreference';
 
-
-/**
- * Simple Ray Component - Easy positioning with Tailwind classes
- */
-const Ray = ({
-  position = "top-10 left-10",
-  horizontal = 100,
-  vertical = 80,
-  direction = "right-down",
-  opacity = "opacity-30",
-  color = "bg-red-500"
-}) => {
-  const getRayElements = () => {
-    switch (direction) {
-      case "right-down":
-        return (
-          <>
-            <div className={`w-[${horizontal}px] h-px ${color}`} />
-            <div className={`w-px h-[${vertical}px] ${color} ml-[${horizontal}px]`} />
-          </>
-        );
-      case "down-right":
-        return (
-          <>
-            <div className={`w-px h-[${vertical}px] ${color}`} />
-            <div className={`w-[${horizontal}px] h-px ${color} mt-[${vertical}px]`} />
-          </>
-        );
-      case "left-down":
-        return (
-          <>
-            <div className={`w-[${horizontal}px] h-px ${color} -ml-[${horizontal}px]`} />
-            <div className={`w-px h-[${vertical}px] ${color} -ml-[${horizontal}px]`} />
-          </>
-        );
-      case "up-right":
-        return (
-          <>
-            <div className={`w-px h-[${vertical}px] ${color} -mt-[${vertical}px]`} />
-            <div className={`w-[${horizontal}px] h-px ${color}`} />
-          </>
-        );
-      default:
-        return (
-          <>
-            <div className={`w-[${horizontal}px] h-px ${color}`} />
-            <div className={`w-px h-[${vertical}px] ${color} ml-[${horizontal}px]`} />
-          </>
-        );
-    }
-  };
-
-  return (
-    <div className={`absolute ${opacity} pointer-events-none ${position}`}>
-      {getRayElements()}
-    </div>
-  );
-};
 
 /**
  * SmartRay Component - Automatically positions ray from element to screen center

@@ -55,7 +55,6 @@ export default function ReviewQueue() {
 
   useEffect(() => {
     loadData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   async function loadData() {

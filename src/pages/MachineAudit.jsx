@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, ArrowLeft, FileText, Scale, Library, AlertCircle, Mail } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
-import Footer from '../components/common/Footer';
 import { TIER_BADGE, TIER_VOCABULARY, fidelityNoteFor } from '../components/rag/tiers';
 
 /**

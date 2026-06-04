@@ -83,7 +83,7 @@ const YouTubeVideoPlayer = ({
   const containerRef = useRef(null);
   const timerIntervalRef = useRef(null);
   const [isPlayerReady, setIsPlayerReady] = useState(false);
-  const [playerState, setPlayerState] = useState(null);
+  const [, setPlayerState] = useState(null);
   const seekTimeRef = useRef(null);
   
   /**

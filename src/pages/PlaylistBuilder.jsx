@@ -71,11 +71,11 @@ const PlaylistBuilder = () => {
   const [loading, setLoading] = useState(true);
   const [backgroundLoading, setBackgroundLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [totalClipsForKeyword, setTotalClipsForKeyword] = useState(0);
+  const [, setTotalClipsForKeyword] = useState(0);
   
   // Player control states
   const [isPlaying, setIsPlaying] = useState(true);
-  const [currentTime, setCurrentTime] = useState(0);
+  const [, setCurrentTime] = useState(0);
   const [seekToTime, setSeekToTime] = useState(null);
   
   // Related terms state
@@ -85,16 +85,13 @@ const PlaylistBuilder = () => {
   // "Up Next" feature state
   const [availableKeywords, setAvailableKeywords] = useState([]);
   const [nextKeyword, setNextKeyword] = useState("");
-  const [nextKeywordThumbnail, setNextKeywordThumbnail] = useState("");
+  const [, setNextKeywordThumbnail] = useState("");
   const [playlistEnded, setPlaylistEnded] = useState(false);
   
   // Playlist navigation state
   const [playlistStartIndex, setPlaylistStartIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3); // Dynamic based on screen width
   const [isAnimating, setIsAnimating] = useState(false);
-  
-  // Topic tags state - always visible now
-  const [showTopicTags, setShowTopicTags] = useState(true);
   
   // Refs for managing timeouts
   const autoplayTimeoutRef = useRef(null);
@@ -241,7 +238,7 @@ const PlaylistBuilder = () => {
       await getPlaylistProgressive(
         [keyword],
         // onFirstVideo - called immediately with first video
-        (firstVideo, totalCount) => {
+        (firstVideo) => {
           console.log(`First video loaded for "${keyword}":`, firstVideo.name);
           
           // Validate first video
@@ -369,15 +366,6 @@ const PlaylistBuilder = () => {
   };
 
   /**
-   * Navigate to next keyword playlist
-   */
-  const handlePlayNextKeyword = () => {
-    if (nextKeyword) {
-      navigate(`?keywords=${encodeURIComponent(nextKeyword)}`);
-    }
-  };
-
-  /**
    * Navigation handlers
    */
   const handleNext = () => {
@@ -453,13 +441,6 @@ const PlaylistBuilder = () => {
       return null;
     }
     return videoQueue[currentVideoIndex];
-  };
-
-  /**
-   * Toggle topic tags visibility - no longer needed since always visible
-   */
-  const handleToggleTopicTags = () => {
-    // Topic tags are now always visible
   };
 
   /**

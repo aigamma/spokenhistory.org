@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Footer from '../components/common/Footer';
 import WWULogo from '../assetts/logos/wwu-logo--full-color_2.png';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
@@ -166,7 +165,7 @@ export default function About() {
 
             {/* Team Member 4 */}
             <div>
-              <p className="text-stone-900 text-base font-light font-['Chivo_Mono'] mb-2">AI Engineer</p>
+              <p className="text-stone-900 text-base font-light font-['Chivo_Mono'] mb-2">AI Engineering Lead</p>
               <h3 className="text-stone-900 text-4xl font-bold font-['Source_Serif_Pro']">Eric Allione</h3>
             </div>
 

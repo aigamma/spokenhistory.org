@@ -329,49 +329,15 @@ export async function vectorSearch(query, limit = 10) {
 
 
 /**
- * Calculate cosine similarity between two vectors
- * @param {Array} vec1 - First vector
- * @param {Array} vec2 - Second vector
- * @returns {number} - Similarity score between 0 and 1
- */
-function cosineSimilarity(vec1, vec2) {
-  if (vec1.length !== vec2.length) {
-    console.error(`Vector dimension mismatch: ${vec1.length} vs ${vec2.length}`);
-    throw new Error('Vector dimensions do not match');
-  }
-  
-  let dotProduct = 0;
-  let mag1 = 0;
-  let mag2 = 0;
-  
-  for (let i = 0; i < vec1.length; i++) {
-    dotProduct += vec1[i] * vec2[i];
-    mag1 += vec1[i] * vec1[i];
-    mag2 += vec2[i] * vec2[i];
-  }
-  
-  mag1 = Math.sqrt(mag1);
-  mag2 = Math.sqrt(mag2);
-  
-  if (mag1 === 0 || mag2 === 0) {
-    console.warn('Zero magnitude vector found in similarity calculation');
-    return 0;
-  }
-  
-  return dotProduct / (mag1 * mag2);
-}
-
-/**
  * OPTIMIZED CLIP VECTORIZATION - Generates embeddings specifically for clip search
  * This function focuses on creating the best possible vectors for finding clips by topic
  * 
  * @param {string} sourceCollection - Collection to process ('interviewSummaries' or 'metadataV2')
  * @param {function} progressCallback - Progress updates
  * @param {function} statusCallback - Status updates
- * @param {boolean} clipsOnly - If true, only process clips/segments (recommended)
  * @returns {Promise<void>}
  */
-export async function generateClipEmbeddings(sourceCollection = null, progressCallback, statusCallback, clipsOnly = true) {
+export async function generateClipEmbeddings(sourceCollection = null, progressCallback, statusCallback) {
   try {
     const collectionName = sourceCollection || getActiveCollection();
     console.log(`🎬 Starting CLIP-FOCUSED embedding generation from ${collectionName}...`);
@@ -614,8 +580,7 @@ export async function searchClipsByTopic(query, options = {}) {
   const {
     limit = 15,
     category = null,
-    role = null,
-    segmentsOnly = true
+    role = null
   } = options;
 
   console.log(`🔍 Searching clips for topic: "${query}"`);

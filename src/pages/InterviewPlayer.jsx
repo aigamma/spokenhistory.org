@@ -51,8 +51,8 @@ export default function InterviewPlayer() {
   const [relatedInterviews, setRelatedInterviews] = useState([])
   
   // Player control states
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [currentTime, setCurrentTime] = useState(0)
+  const [, setIsPlaying] = useState(false)
+  const [, setCurrentTime] = useState(0)
   const [totalDuration, setTotalDuration] = useState(0)
   const [currentSegmentIndex, setCurrentSegmentIndex] = useState(0)
   const [seekToTime, setSeekToTime] = useState(null)
@@ -197,27 +197,6 @@ export default function InterviewPlayer() {
     
     return 0 // Default to first segment if none found
   }
-
-  /**
-   * Initialize related terms cache
-   */
-  useEffect(() => {
-    const initializeRelatedTerms = async () => {
-      try {
-        console.log('Initializing related terms for interview player...');
-        const relatedTerms = await calculateRelatedTerms();
-        setRelatedTermsCache(relatedTerms);
-        
-        // Get available topics from the related terms cache
-        const topics = Object.keys(relatedTerms).map(topic => ({ keyword: topic }));
-        setAvailableTopics(topics);
-      } catch (error) {
-        console.error('Error initializing related terms:', error);
-      }
-    };
-
-    initializeRelatedTerms();
-  }, []);
 
   /**
    * --- Data Fetching ---
@@ -500,26 +479,6 @@ export default function InterviewPlayer() {
 
   
   /**
-   * Formats seconds into a human-readable time string
-   * 
-   * @param {number} seconds - Time in seconds
-   * @returns {string} Formatted time string (MM:SS or HH:MM:SS)
-   */
-  const formatTime = (seconds) => {
-    if (isNaN(seconds)) return '00:00';
-    
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-    
-    if (hours > 0) {
-      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    }
-    return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  }
-
-
-  /**
    * --- Rendering ---
    */
   
@@ -542,8 +501,6 @@ export default function InterviewPlayer() {
       </div>
     )
   }
-
-  const hasSegments = subSummaries.length > 0;
 
   return (
     <>

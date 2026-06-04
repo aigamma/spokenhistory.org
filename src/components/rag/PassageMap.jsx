@@ -49,7 +49,7 @@ export default function PassageMap() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [Plot, setPlot] = useState(null);
-  const [hover, setHover] = useState(null);
+  const [, setHover] = useState(null);
   const plotRef = useRef(null);
 
   // The current x/y window. Initialized once we have data; updated by
