@@ -1,5 +1,11 @@
 # Civil Rights MCP Setup for Codex
 
+> **New here? Read [`GETTING_STARTED.md`](./GETTING_STARTED.md) first.** It is the
+> canonical, from-scratch guide (what MCP is, why Codex needs the `mcp-remote`
+> bridge, copy-paste config, a verify step, the eight tools with examples, and
+> troubleshooting). This file is the condensed Codex reference plus the
+> local-development (stdio-from-a-clone) path for contributors.
+
 There are two ways to use the Civil Rights History Project MCP server:
 
 1. **Remote (recommended, no clone):** connect to the live server at

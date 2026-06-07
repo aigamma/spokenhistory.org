@@ -21,6 +21,7 @@ USER node
 COPY --from=deps --chown=node:node /app/node_modules ./node_modules
 COPY --chown=node:node package.json ./
 COPY --chown=node:node server.mjs ./
+COPY --chown=node:node lib.mjs ./
 # data/leaders.json is the pre-baked roster for the list_leaders tool.
 # Regenerate via `npm run build:leaders` (reads transcripts/corrected/
 # manifests in the parent repo); commit the result so the Docker image

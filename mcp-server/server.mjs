@@ -92,10 +92,27 @@ import {
   ListToolsRequestSchema,
   ListPromptsRequestSchema,
   GetPromptRequestSchema,
+  ListResourcesRequestSchema,
+  ListResourceTemplatesRequestSchema,
+  ReadResourceRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js'
 import { readFile } from 'node:fs/promises'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import {
+  MAX_QUERY_LENGTH,
+  DEFAULT_LIMIT,
+  clampLimit,
+  normalizeLeaderName,
+  leaderDisplayName,
+  fidelityNote,
+  buildCitation,
+  toCitationPayload,
+  buildContentFilter,
+  dedupeByEntry,
+  createLruCache,
+  createRateLimiter,
+} from './lib.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -143,6 +160,37 @@ function voyageHeaders() {
   }
 }
 
+// ── fetch with timeout ─────────────────────────────────────────────
+// A hung upstream (Voyage / Pinecone) would otherwise block the request
+// forever, holding a Fly machine and the client connection open. AbortController
+// caps each call so a stalled dependency fails fast instead of hanging.
+const EMBED_TIMEOUT_MS = Number(process.env.MCP_EMBED_TIMEOUT_MS) || 20000
+const QUERY_TIMEOUT_MS = Number(process.env.MCP_QUERY_TIMEOUT_MS) || 20000
+const RERANK_TIMEOUT_MS = Number(process.env.MCP_RERANK_TIMEOUT_MS) || 30000
+
+async function fetchWithTimeout(url, options, timeoutMs) {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeoutMs)
+  try {
+    return await fetch(url, { ...options, signal: controller.signal })
+  } catch (err) {
+    if (err?.name === 'AbortError') {
+      throw new Error(`upstream_timeout after ${timeoutMs}ms: ${url}`)
+    }
+    throw err
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
+// ── Caches ─────────────────────────────────────────────────────────
+// Memoize query embeddings and retrieval results so a repeated identical query
+// (common in demos and in the research-pattern tools that call searchTranscripts
+// internally) does not re-bill Voyage + Pinecone. In-process, TTL-bounded.
+const CACHE_TTL_MS = Number(process.env.MCP_CACHE_TTL_MS) || 10 * 60 * 1000
+const _embedCache = createLruCache({ max: 500, ttlMs: CACHE_TTL_MS })
+const _retrieveCache = createLruCache({ max: 500, ttlMs: CACHE_TTL_MS })
+
 // ── Voyage query embedding ─────────────────────────────────────────
 // Mirrors rag/embed.mjs::embedQuery. input_type='query' routes through
 // Voyage's retrieval-tuned query encoder (not the document encoder used
@@ -152,20 +200,28 @@ const EMBED_RETRY_MAX = 3
 const EMBED_RETRY_BACKOFF_MS = 500
 
 async function embedQuery(query) {
+  const cached = _embedCache.get(query)
+  if (cached) return cached
   let attempt = 0
   while (true) {
-    const res = await fetch(VOYAGE_EMBED_ENDPOINT, {
-      method: 'POST',
-      headers: voyageHeaders(),
-      body: JSON.stringify({
-        input: [query],
-        model: VOYAGE_MODEL,
-        input_type: 'query',
-      }),
-    })
+    const res = await fetchWithTimeout(
+      VOYAGE_EMBED_ENDPOINT,
+      {
+        method: 'POST',
+        headers: voyageHeaders(),
+        body: JSON.stringify({
+          input: [query],
+          model: VOYAGE_MODEL,
+          input_type: 'query',
+        }),
+      },
+      EMBED_TIMEOUT_MS,
+    )
     if (res.ok) {
       const data = await res.json()
-      return data?.data?.[0]?.embedding
+      const embedding = data?.data?.[0]?.embedding
+      if (embedding) _embedCache.set(query, embedding)
+      return embedding
     }
     const isTransient = res.status >= 500 || res.status === 429
     const body = await res.text().catch(() => '')
@@ -189,11 +245,15 @@ async function pineconeQuery(queryVector, { topK = 30, filter = null, namespace 
     namespace,
   }
   if (filter) body.filter = filter
-  const res = await fetch(`${PINECONE_HOST}/query`, {
-    method: 'POST',
-    headers: pineconeHeaders(),
-    body: JSON.stringify(body),
-  })
+  const res = await fetchWithTimeout(
+    `${PINECONE_HOST}/query`,
+    {
+      method: 'POST',
+      headers: pineconeHeaders(),
+      body: JSON.stringify(body),
+    },
+    QUERY_TIMEOUT_MS,
+  )
   if (!res.ok) {
     const text = await res.text().catch(() => '')
     throw new Error(`pinecone_query_failed status=${res.status} body=${text.slice(0, 300)}`)
@@ -207,17 +267,21 @@ async function pineconeQuery(queryVector, { topK = 30, filter = null, namespace 
 
 async function voyageRerank(query, documents, { topN = 10 } = {}) {
   if (!Array.isArray(documents) || documents.length === 0) return []
-  const res = await fetch(VOYAGE_RERANK_ENDPOINT, {
-    method: 'POST',
-    headers: voyageHeaders(),
-    body: JSON.stringify({
-      query,
-      documents,
-      model: VOYAGE_RERANK_MODEL,
-      top_k: Math.min(topN, documents.length),
-      return_documents: true,
-    }),
-  })
+  const res = await fetchWithTimeout(
+    VOYAGE_RERANK_ENDPOINT,
+    {
+      method: 'POST',
+      headers: voyageHeaders(),
+      body: JSON.stringify({
+        query,
+        documents,
+        model: VOYAGE_RERANK_MODEL,
+        top_k: Math.min(topN, documents.length),
+        return_documents: true,
+      }),
+    },
+    RERANK_TIMEOUT_MS,
+  )
   if (!res.ok) {
     const text = await res.text().catch(() => '')
     throw new Error(`voyage_rerank_failed status=${res.status} body=${text.slice(0, 300)}`)
@@ -232,6 +296,15 @@ async function voyageRerank(query, documents, { topN = 10 } = {}) {
 // ── Composed two-stage retrieval ───────────────────────────────────
 
 async function retrieve(query, { topK = 30, topN = 10, filter = null } = {}) {
+  const cacheKey = JSON.stringify({ query, topK, topN, filter })
+  const cached = _retrieveCache.get(cacheKey)
+  if (cached) return cached
+  const result = await retrieveUncached(query, { topK, topN, filter })
+  _retrieveCache.set(cacheKey, result)
+  return result
+}
+
+async function retrieveUncached(query, { topK = 30, topN = 10, filter = null } = {}) {
   const queryVec = await embedQuery(query)
   const matches = await pineconeQuery(queryVec, { topK, filter })
   if (!RERANK_ENABLED || matches.length === 0) {
@@ -257,46 +330,9 @@ async function retrieve(query, { topK = 30, topN = 10, filter = null } = {}) {
   })
 }
 
-// ── Citation formatting ────────────────────────────────────────────
-// Build a Chicago-Manual-of-Style-style citation block from a chunk's
-// Pinecone metadata. This is the academic-grade representation the
-// MCP client (Claude) needs in order to cite primary sources rigorously.
-
-function formatTimestamp(seconds) {
-  if (seconds == null || !Number.isFinite(seconds)) return null
-  const total = Math.floor(seconds)
-  const h = Math.floor(total / 3600)
-  const m = Math.floor((total % 3600) / 60)
-  const s = total % 60
-  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`
-}
-
-function fidelityNote(provenance, tier) {
-  // Declarative only, kept in sync with src/components/rag/tiers.js::fidelityNoteFor.
-  // LoC verification is the grade; the labels collapse to two settled states.
-  // Distribution (140 interviews): high 133 / ingestion-only 3 / publication-block 1
-  // (Blake) all render LoC-Verified; not-auditable 3 is Audio-Limited Source. Every
-  // note states a settled fact; none asks the researcher to review unfinished work.
-  if (tier === 'high') return 'Cross-referenced line by line against the Library of Congress published transcript and confirmed aligned.'
-  if (tier === 'publication-block') return 'Cross-referenced against the Library of Congress published transcript. Where the Library’s lightly edited edition differs from the verbatim recording, both readings are preserved in the audit record.'
-  if (tier === 'not-auditable') return 'The source recording carries an inherent audio limit (mid-sentence truncation or degradation). This is the most complete transcript the recording supports, and the Library of Congress transcript reflects the same limit.'
-  return 'Audited across nine passes against the project correction substrate and the Library of Congress reference.'
-}
-
-function buildCitation(metadata, { timestampStart, timestampEnd } = {}) {
-  const interviewee = metadata.entry_subject || 'Unknown interviewee'
-  const locUrl = metadata.loc_item_url || null
-  const tsStartStr = formatTimestamp(timestampStart)
-  const tsEndStr = formatTimestamp(timestampEnd)
-  const tsRange = tsStartStr && tsEndStr ? `${tsStartStr}–${tsEndStr}` : tsStartStr || ''
-  const archiveClause = locUrl ? `, ${locUrl}` : ''
-  const tsClause = tsRange ? `, at ${tsRange}` : ''
-  return (
-    `${interviewee}, interview, Civil Rights History Project, American Folklife Center, ` +
-    `Library of Congress in association with the Smithsonian National Museum of African American ` +
-    `History and Culture${archiveClause}${tsClause}.`
-  )
-}
+// Citation formatting (formatTimestamp / fidelityNote / buildCitation) and the
+// citation-payload shaper (toCitationPayload) are pure functions and live in
+// lib.mjs so they can be unit-tested without booting the server.
 
 // ── Pre-baked leaders directory ────────────────────────────────────
 // Generated at build time from transcripts/corrected/<dir>/manifest.json
@@ -319,81 +355,39 @@ async function loadLeaders() {
   return _leadersCache
 }
 
-// Hard caps and floors on user-supplied parameters. The MCP client is
-// usually a well-behaved LLM but the surface is internet-facing so we
-// validate as if it were any other public endpoint. The query cap of
-// 4000 chars is roughly the upper bound of useful semantic-search
-// queries (text-embedding-3-small accepts up to 8191 tokens but most
-// useful queries are short) and prevents one client from running up a
-// large OpenAI embeddings bill by sending a megabyte of text. The limit
-// cap of 50 prevents one query from pulling the entire ranked corpus
-// over the wire when the model probably only needed the top 10.
-const MAX_QUERY_LENGTH = 4000
-const MAX_LIMIT = 50
-const DEFAULT_LIMIT = 10
-const MIN_LIMIT = 1
+// People catalog (interviewees + external figures), baked from
+// public/rag/people/index.json via build-people.mjs. Backs list_people.
+let _peopleCache = null
+async function loadPeople() {
+  if (_peopleCache) return _peopleCache
+  const path = join(__dirname, 'data', 'people.json')
+  try {
+    _peopleCache = JSON.parse(await readFile(path, 'utf8'))
+  } catch (e) {
+    console.warn(`[mcp] people.json not found at ${path}; list_people will return []. Regenerate via build-people.mjs.`)
+    _peopleCache = []
+  }
+  return _peopleCache
+}
 
-function clampLimit(rawLimit) {
-  const n = Number(rawLimit)
-  if (!Number.isFinite(n)) return DEFAULT_LIMIT
-  return Math.max(MIN_LIMIT, Math.min(MAX_LIMIT, Math.floor(n)))
+// Curated-essays catalog ({ topics, essays }), baked from
+// public/rag/essays/index.json via build-essays.mjs. Backs list_essays.
+let _essaysCache = null
+async function loadEssays() {
+  if (_essaysCache) return _essaysCache
+  const path = join(__dirname, 'data', 'essays.json')
+  try {
+    _essaysCache = JSON.parse(await readFile(path, 'utf8'))
+  } catch (e) {
+    console.warn(`[mcp] essays.json not found at ${path}; list_essays will return {topics:[],essays:[]}. Regenerate via build-essays.mjs.`)
+    _essaysCache = { topics: [], essays: [] }
+  }
+  return _essaysCache
 }
 
 // ── Tool implementations ────────────────────────────────────────────
-
-// Convert a Pinecone retrieve() result into the citation-grade payload
-// shape that the MCP tool returns. Centralized so search_transcripts
-// and get_transcript both produce consistent fields.
-function toCitationPayload(result) {
-  const m = result.metadata || {}
-  const text = result.text || m.text || ''
-  const timestampStart = Number.isFinite(m.timestamp_start_seconds) ? m.timestamp_start_seconds : null
-  const timestampEnd = Number.isFinite(m.timestamp_end_seconds) ? m.timestamp_end_seconds : null
-  const provenance = m.entry_provenance || null
-  const uncertaintyTier = m.inferential_uncertainty_tier || null
-  const uncertaintyScore = Number.isFinite(m.inferential_uncertainty_score) ? m.inferential_uncertainty_score : null
-  return {
-    // identity
-    id: result.id,
-    entryNumber: m.entry_number ?? null,
-    entrySubject: m.entry_subject || null,
-    chunkIndex: m.chunk_index ?? null,
-
-    // passage
-    text,
-    textPreview: text.length > 200 ? text.slice(0, 200) + '…' : text,
-
-    // citation
-    locItemUrl: m.loc_item_url || null,
-    timestampStart,
-    timestampEnd,
-    timestampStartStr: formatTimestamp(timestampStart),
-    timestampEndStr: formatTimestamp(timestampEnd),
-
-    // transparency
-    entryProvenance: provenance,
-    uncertaintyTier,
-    uncertaintyScore,
-    fidelityNote: fidelityNote(provenance, uncertaintyTier),
-
-    // ranking
-    pineconeScore: result.pineconeScore ?? null,
-    rerankScore: result.rerankScore ?? null,
-    similarity: result.rerankScore ?? result.pineconeScore ?? null,
-
-    // pre-formatted citation block
-    suggestedCitation: buildCitation(m, { timestampStart, timestampEnd }),
-
-    // legacy-compat fields for existing prompts that reference these names
-    interviewName: m.entry_subject || null,
-    documentId: m.entry_number != null ? `entry-${m.entry_number}` : null,
-    timestamp: formatTimestamp(timestampStart) || '',
-    type: m.chunk_type || 'clip',
-    videoEmbedLink: null,
-    sourcePath: m.source_path || null,
-    sourceExt: m.source_ext || null,
-  }
-}
+// Parameter caps/floors (MAX_QUERY_LENGTH, DEFAULT_LIMIT, clampLimit) and the
+// citation-payload shaper (toCitationPayload) are pure and imported from lib.mjs.
 
 async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = null, dedupe_by_entry = false, include_persons = false, include_essays = false }) {
   if (typeof query !== 'string') {
@@ -410,33 +404,21 @@ async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = 
   }
   const clampedLimit = clampLimit(limit)
 
-  // Optional metadata filter: restrict the search to a specific entry.
-  // Useful when the client already knows which interview to draw from
-  // (e.g., "what does Wheeler Parker say specifically about Bryant's store?").
-  let filter = null
+  // Validate the optional single-interview restriction, then delegate the
+  // (entry_number + content_type) filter assembly to the pure builder in lib.mjs.
+  let entryNumber = null
   if (entry_number != null) {
     const n = Number(entry_number)
     if (!Number.isFinite(n) || n < 1) {
       throw new Error('entry_number must be a positive integer')
     }
-    filter = { entry_number: { $eq: Math.floor(n) } }
+    entryNumber = Math.floor(n)
   }
-
-  // By default, exclude non-passage vectors. The civil-rights Pinecone index
-  // ingests archive transcript passages (no content_type field) plus two
-  // special types: per-person catalog pages (content_type='person') and
-  // curated essays (content_type='essay'). Archive-focused search tools (this
-  // one) exclude both so the ranked-passage UX is unchanged. $nin matches
-  // records where content_type is absent, so passages pass unchanged. Admit
-  // each special type via include_persons / include_essays for a cross-content
-  // search.
-  const excludedTypes = []
-  if (!include_persons) excludedTypes.push('person')
-  if (!include_essays) excludedTypes.push('essay')
-  if (excludedTypes.length) {
-    const excl = { content_type: { $nin: excludedTypes } }
-    filter = filter == null ? excl : { ...filter, ...excl }
-  }
+  const filter = buildContentFilter({
+    entryNumber,
+    includePersons: include_persons,
+    includeEssays: include_essays,
+  })
 
   // Stage-1 net: ask Pinecone for 3× the desired limit so the
   // stage-2 reranker has enough candidates to discriminate. When
@@ -447,16 +429,7 @@ async function searchTranscripts({ query, limit = DEFAULT_LIMIT, entry_number = 
   const results = await retrieve(trimmed, { topK, topN: baseFetch, filter })
 
   if (dedupe_by_entry) {
-    const seen = new Set()
-    const filtered = []
-    for (const r of results) {
-      const en = r.metadata?.entry_number
-      if (en == null || seen.has(en)) continue
-      seen.add(en)
-      filtered.push(r)
-      if (filtered.length >= clampedLimit) break
-    }
-    return filtered.map(toCitationPayload)
+    return dedupeByEntry(results, clampedLimit).map(toCitationPayload)
   }
   return results.slice(0, clampedLimit).map(toCitationPayload)
 }
@@ -537,16 +510,37 @@ async function listLeaders({ limit = 200 }) {
   return all.slice(0, safeLimit)
 }
 
-function leaderDisplayName(leader) {
-  return leader.name || leader.entry_subject || leader.entrySubject || ''
+// leaderDisplayName + normalizeLeaderName are pure and imported from lib.mjs.
+
+async function listPeople({ limit = 250, person_type = null } = {}) {
+  const n = Number(limit)
+  const safeLimit = Number.isFinite(n) && n > 0 ? Math.min(Math.floor(n), 500) : 250
+  let people = await loadPeople()
+  if (person_type === 'interviewee' || person_type === 'external_figure') {
+    people = people.filter((p) => p.person_type === person_type)
+  }
+  return people.slice(0, safeLimit)
 }
 
-function normalizeLeaderName(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim()
-    .replace(/\s+/g, ' ')
+async function listEssays({ topic = null } = {}) {
+  const catalog = await loadEssays()
+  if (!topic || typeof topic !== 'string') {
+    return catalog
+  }
+  const t = topic.toLowerCase().trim()
+  const matchedTopic = (catalog.topics || []).find(
+    (x) => x.id === t || (x.label && x.label.toLowerCase() === t),
+  )
+  if (!matchedTopic) {
+    // Fall back to matching essays by theme tag so a near-miss topic still works.
+    const essays = (catalog.essays || []).filter((e) =>
+      (e.themes || []).some((th) => th.toLowerCase() === t),
+    )
+    return { topic, matched: false, topics: catalog.topics, essays }
+  }
+  const slugs = new Set(matchedTopic.essay_slugs || [])
+  const essays = (catalog.essays || []).filter((e) => slugs.has(e.slug))
+  return { topic: matchedTopic.label, matched: true, topic_detail: matchedTopic, essays }
 }
 
 // ── Research-pattern tools (compare_perspectives / trace_evolution /
@@ -665,12 +659,13 @@ async function sourceForClaim({ claim }) {
 const mcpServer = new Server(
   {
     name: 'civil-rights-history-archive',
-    version: '0.1.0',
+    version: '0.2.0',
   },
   {
     capabilities: {
       tools: {},
       prompts: {},
+      resources: {},
     },
   },
 )
@@ -749,6 +744,43 @@ const TOOL_DEFINITIONS = [
         limit: {
           type: 'number',
           description: 'Maximum number of records to return (default 200, max 500). The corpus currently has 136 entries.',
+        },
+      },
+    },
+  },
+  {
+    name: 'list_people',
+    description:
+      'List the people catalog: the 165 interviewees PLUS the 37 external historical figures who are discussed in the archive but not themselves interviewed (e.g., Martin Luther King Jr., Ella Baker, Malcolm X). ' +
+      'Each record has slug, display_name, person_type ("interviewee" or "external_figure"), entry_number (for interviewees; null for external figures), a short role_preview, and birth/death years where known. ' +
+      'Use person_type to filter to just one group. This complements list_leaders (interviewees only) by also surfacing the figures the movement was built around. To pull the passages where an external figure is discussed, pass their name as the query to search_transcripts, or set include_persons:true to retrieve their catalog page directly.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        limit: {
+          type: 'number',
+          description: 'Maximum number of records to return (default 250, max 500). The catalog currently has 202 people.',
+        },
+        person_type: {
+          type: 'string',
+          description: 'Optional filter: "interviewee" (people with an oral history in the corpus) or "external_figure" (people discussed but not interviewed). Omit to return both.',
+        },
+      },
+    },
+  },
+  {
+    name: 'list_essays',
+    description:
+      'List the curated essays layer: 23 public-domain / open-license essays (W. E. B. Du Bois, Booker T. Washington, Anna Julia Cooper, Ida B. Wells, and others) reproduced in full and cross-linked into the archive, organized under 10 thematic topics. ' +
+      'With no argument, returns { topics, essays } (each essay has slug, title, authors, year, collection, themes). ' +
+      'Pass a topic id or label (e.g., "youth-student-activism", "Family Influence") to return just the essays under that theme. ' +
+      'Use this to find primary-text reading that illuminates a theme; pass an essay\'s subject as a query to search_transcripts (with include_essays:true) to retrieve passages from the essay body itself.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        topic: {
+          type: 'string',
+          description: 'Optional topic id or label to filter by (e.g., "education", "Intergenerational Activism"). Omit to return the full catalog plus the topic taxonomy.',
         },
       },
     },
@@ -857,6 +889,10 @@ mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
       result = await getTranscript(args || {})
     } else if (name === 'list_leaders') {
       result = await listLeaders(args || {})
+    } else if (name === 'list_people') {
+      result = await listPeople(args || {})
+    } else if (name === 'list_essays') {
+      result = await listEssays(args || {})
     } else if (name === 'compare_perspectives') {
       result = await comparePerspectives(args || {})
     } else if (name === 'trace_evolution') {
@@ -870,8 +906,18 @@ mcpServer.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
     }
   } catch (err) {
+    // Distinguish a degraded upstream (Voyage / Pinecone unreachable, timed out,
+    // or rate-limited) from a caller-side problem (bad arguments) so the client
+    // can tell "the service is having trouble, retry later" from "fix the
+    // request". The upstream helpers throw tagged messages; match on those.
+    const msg = err?.message || String(err)
+    const isUpstream = /voyage_embed_failed|pinecone_query_failed|voyage_rerank_failed|upstream_timeout/.test(msg)
+    const prefix = isUpstream
+      ? `Tool ${name} could not reach a backend service (this is a transient server-side issue, please retry): `
+      : `Tool ${name} failed: `
+    console.error(`[mcp] tool_error tool=${name} upstream=${isUpstream} msg=${msg}`)
     return {
-      content: [{ type: 'text', text: `Tool ${name} failed: ${err.message}` }],
+      content: [{ type: 'text', text: prefix + msg }],
       isError: true,
     }
   }
@@ -980,14 +1026,186 @@ mcpServer.setRequestHandler(GetPromptRequestSchema, async (request) => {
   throw new Error(`Unknown prompt: ${name}`)
 })
 
+// ── MCP resources ───────────────────────────────────────────────────
+// Resource-aware clients (e.g. Claude Desktop) can browse and read these
+// without issuing tool calls. We expose static catalogs (roster, people,
+// essays, a corpus overview) and a transcript resource template that reuses
+// the existing getTranscript path. Reading a transcript resource still hits
+// Pinecone; the catalog resources are served from the baked JSON.
+
+const RESOURCES = [
+  {
+    uri: 'civilrights://corpus/overview',
+    name: 'Corpus overview',
+    description: 'Counts, audit-tier legend, and what the archive contains.',
+    mimeType: 'application/json',
+  },
+  {
+    uri: 'civilrights://leaders',
+    name: 'Interviewee roster',
+    description: 'All interviewees with entry_number, name, LoC catalog URL, and audit provenance.',
+    mimeType: 'application/json',
+  },
+  {
+    uri: 'civilrights://people',
+    name: 'People catalog',
+    description: 'Interviewees plus external historical figures discussed in the archive.',
+    mimeType: 'application/json',
+  },
+  {
+    uri: 'civilrights://essays',
+    name: 'Curated essays catalog',
+    description: 'Public-domain / open-license essays and the thematic topic taxonomy.',
+    mimeType: 'application/json',
+  },
+]
+
+const RESOURCE_TEMPLATES = [
+  {
+    uriTemplate: 'civilrights://transcript/{entry_number}',
+    name: 'Full interview transcript',
+    description: 'Every chunk of one interview, stitched in order with citation metadata. entry_number is 1-142 (use list_leaders / list_people to discover it).',
+    mimeType: 'application/json',
+  },
+]
+
+mcpServer.setRequestHandler(ListResourcesRequestSchema, async () => ({ resources: RESOURCES }))
+mcpServer.setRequestHandler(ListResourceTemplatesRequestSchema, async () => ({
+  resourceTemplates: RESOURCE_TEMPLATES,
+}))
+
+mcpServer.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+  const { uri } = request.params
+  const asJson = (value) => ({
+    contents: [{ uri, mimeType: 'application/json', text: JSON.stringify(value, null, 2) }],
+  })
+
+  if (uri === 'civilrights://leaders') return asJson(await loadLeaders())
+  if (uri === 'civilrights://people') return asJson(await loadPeople())
+  if (uri === 'civilrights://essays') return asJson(await loadEssays())
+  if (uri === 'civilrights://corpus/overview') {
+    const [leaders, people, essays] = await Promise.all([loadLeaders(), loadPeople(), loadEssays()])
+    return asJson({
+      name: 'Civil Rights History Project oral history archive',
+      source: 'Library of Congress American Folklife Center + Smithsonian NMAAHC',
+      interviews: leaders.length,
+      people: {
+        total: people.length,
+        interviewees: people.filter((p) => p.person_type === 'interviewee').length,
+        external_figures: people.filter((p) => p.person_type === 'external_figure').length,
+      },
+      essays: (essays.essays || []).length,
+      essay_topics: (essays.topics || []).length,
+      audit_tier_legend: {
+        high: 'Cross-referenced line by line against the Library of Congress published transcript.',
+        'publication-block': 'LoC edition differs from the verbatim recording; both readings preserved.',
+        'not-auditable': 'Source recording carries an inherent audio limit (truncation or degradation).',
+        'ingestion-only': 'Added via the streamlined LoC-heal ingestion path; not through the full Pass 1-8 cascade.',
+      },
+      tools: TOOL_DEFINITIONS.map((t) => t.name),
+    })
+  }
+
+  const m = uri.match(/^civilrights:\/\/transcript\/(\d+)$/)
+  if (m) {
+    const transcript = await getTranscript({ entry_number: Number(m[1]) })
+    return asJson(transcript)
+  }
+
+  throw new Error(`Unknown resource: ${uri}`)
+})
+
 // ── HTTP transport via Express ──────────────────────────────────────
 
 const app = express()
+// Fly terminates TLS at its edge and forwards X-Forwarded-For; trust it so
+// req.ip is the real client IP (the rate limiter keys on it).
+app.set('trust proxy', true)
+
+// CORS: the endpoint is public and read-only, so a permissive policy is fine
+// and lets browser-based MCP clients / the MCP Inspector connect. Preflight is
+// answered before any heavier middleware.
+app.use((req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*')
+  res.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+  res.set('Access-Control-Allow-Headers', 'Content-Type, Accept, Mcp-Session-Id, Last-Event-ID')
+  res.set('Access-Control-Expose-Headers', 'Mcp-Session-Id')
+  if (req.method === 'OPTIONS') return res.status(204).end()
+  next()
+})
+
 app.use(express.json({ limit: '4mb' }))
 
-// Health endpoint for deployment-environment probes (uptime monitors,
-// load balancers).
+// Structured per-request logging (HTTP mode only; never reaches stdio). Logs
+// metadata ONLY, never query text, honoring the connector's no-query-logging
+// promise: the JSON-RPC method and tool/resource name are protocol identifiers,
+// not user content.
+app.use((req, res, next) => {
+  const start = Date.now()
+  res.on('finish', () => {
+    const rec = {
+      t: new Date().toISOString(),
+      ip: req.ip,
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      ms: Date.now() - start,
+    }
+    if (req.path === '/mcp' && req.body && typeof req.body === 'object') {
+      rec.rpc = req.body.method || null
+      if (req.body.params && req.body.params.name) rec.tool = req.body.params.name
+    }
+    console.log(JSON.stringify(rec))
+  })
+  next()
+})
+
+// ── Rate limiter (cost guard, not auth) ────────────────────────────
+// In-process per-IP token bucket. Caps Voyage + Pinecone spend from scraping
+// or a hammering client; legitimate single-user usage is unaffected. Per
+// machine, so it is a soft cost guard layered on Fly's concurrency limits, not
+// a security boundary.
+const RL_CAPACITY = Number(process.env.MCP_RATE_BURST) || 30
+const RL_REFILL_PER_SEC = Number(process.env.MCP_RATE_REFILL_PER_SEC) || 1 // 60/min
+const _rateLimiter = createRateLimiter({ capacity: RL_CAPACITY, refillPerSec: RL_REFILL_PER_SEC })
+
+function rateLimit(req, res, next) {
+  const { allowed, retryAfter } = _rateLimiter.take(req.ip || 'unknown')
+  if (allowed) return next()
+  res.set('Retry-After', String(retryAfter))
+  return res.status(429).json({
+    jsonrpc: '2.0',
+    error: { code: -32029, message: `Rate limit exceeded. Retry after ${retryAfter}s.` },
+    id: req.body?.id ?? null,
+  })
+}
+
+// Liveness probe: trivial, must stay cheap so scale-to-zero wakeups are fast.
 app.get('/healthz', (req, res) => res.json({ ok: true }))
+
+// Readiness probe: reports config presence + loaded roster counts WITHOUT
+// touching Voyage / Pinecone (so it does not tax a cold wake or bill upstreams).
+app.get('/readyz', async (req, res) => {
+  try {
+    const [leaders, people, essays] = await Promise.all([loadLeaders(), loadPeople(), loadEssays()])
+    res.json({
+      ok: true,
+      config: {
+        pinecone: Boolean(PINECONE_API_KEY && PINECONE_HOST),
+        voyage: Boolean(VOYAGE_API_KEY),
+        rerank: RERANK_ENABLED,
+      },
+      rosters: {
+        leaders: leaders.length,
+        people: people.length,
+        essays: (essays.essays || []).length,
+      },
+      caches: { embed: _embedCache.size, retrieve: _retrieveCache.size },
+    })
+  } catch (err) {
+    res.status(500).json({ ok: false, error: err?.message || String(err) })
+  }
+})
 
 // MCP endpoint. The StreamableHTTPServerTransport handles the SSE
 // upgrade and the bidirectional message stream over HTTP per the MCP
@@ -1001,7 +1219,28 @@ app.get('/healthz', (req, res) => res.json({ ok: true }))
 // and return a clean JSON 500 to the client rather than letting the
 // rejection propagate as an unhandled promise that could crash the
 // Node process under default --unhandled-rejections=throw behavior.
-app.post('/mcp', async (req, res) => {
+// This stateless server has no server-initiated SSE stream and no session to
+// terminate, so GET and DELETE on /mcp are not supported. Answer them with a
+// clean JSON-RPC 405 (+ Allow header) instead of Express's default 404 HTML,
+// which some clients probe for and mis-handle.
+app.get('/mcp', (req, res) => {
+  res.set('Allow', 'POST')
+  res.status(405).json({
+    jsonrpc: '2.0',
+    error: { code: -32000, message: 'Method Not Allowed: this MCP endpoint is stateless; use POST /mcp.' },
+    id: null,
+  })
+})
+app.delete('/mcp', (req, res) => {
+  res.set('Allow', 'POST')
+  res.status(405).json({
+    jsonrpc: '2.0',
+    error: { code: -32000, message: 'Method Not Allowed: this MCP endpoint is stateless; there is no session to delete.' },
+    id: null,
+  })
+})
+
+app.post('/mcp', rateLimit, async (req, res) => {
   const transport = new StreamableHTTPServerTransport({
     sessionIdGenerator: undefined, // stateless mode; each request is independent
   })
@@ -1057,7 +1296,35 @@ if (useStdio) {
   console.error('[mcp] stdio transport ready')
 } else {
   const PORT = parseInt(process.env.PORT, 10) || 3001
-  app.listen(PORT, () => {
+  const server = app.listen(PORT, () => {
     console.log(`Civil Rights History MCP server listening on :${PORT}`)
   })
+
+  // Periodically drop idle rate-limiter buckets so memory does not grow with
+  // the number of distinct client IPs seen. unref() so it never holds the
+  // process open on its own.
+  const sweepTimer = setInterval(() => _rateLimiter.sweep(), 10 * 60 * 1000)
+  sweepTimer.unref()
+
+  // Graceful shutdown: Fly sends SIGTERM (then SIGINT) on deploy/scale-down.
+  // Stop accepting new connections and let in-flight tool calls drain before
+  // exiting, instead of being hard-killed mid-response.
+  let shuttingDown = false
+  for (const signal of ['SIGTERM', 'SIGINT']) {
+    process.on(signal, () => {
+      if (shuttingDown) return
+      shuttingDown = true
+      console.log(`[mcp] ${signal} received, draining connections...`)
+      clearInterval(sweepTimer)
+      server.close(() => {
+        console.log('[mcp] closed cleanly')
+        process.exit(0)
+      })
+      // Hard cap so a stuck connection cannot block shutdown forever.
+      setTimeout(() => {
+        console.error('[mcp] drain timeout, forcing exit')
+        process.exit(0)
+      }, 10000).unref()
+    })
+  }
 }

@@ -35,7 +35,7 @@ For internal use; not a stakeholder doc.
 | Netlify project name | `civil-rights-staging` |
 | Netlify siteId | `c0f91bc7-5e3d-46ba-82bb-e44cb8fd47e9` |
 | Firebase project | `civil-rights-history-project` (Firestore in `nam7`; backs only the auth gate and the unused review queue, not interview content, which is static JSON under `public/rag/`) |
-| MCP server (when deployed) | `mcp.civilrightshistory.org` or `civil-rights-history-mcp.fly.dev` (TBD per fly.toml) |
+| MCP server (live) | `https://mcp.spokenhistory.org/mcp` (custom domain) or `https://civil-rights-history-mcp.fly.dev/mcp` (always-available Fly URL). See `mcp-server/GETTING_STARTED.md`. |
 
 ## `/retrieve` body parameters
 

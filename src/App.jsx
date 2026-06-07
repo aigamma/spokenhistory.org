@@ -5,6 +5,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute'
 import Home from './pages/Home'
 import Visualizations from './pages/Visualizations'
 import Login from './pages/Login'
+import Connect from './pages/Connect'
 import StaticPlaylist from './pages/StaticPlaylist'
 import SearchPage from './pages/SearchPage'
 import InterviewPlayer from './pages/InterviewPlayer'
@@ -33,6 +34,11 @@ export default function App() {
       <Routes>
       {/* Public routes */}
       <Route path="/login" element={<Login />} />
+
+      {/* PUBLIC: the MCP connector onboarding page. Deliberately NOT wrapped in
+          ProtectedRoute so outside researchers (not logged-in team members) can
+          reach it and connect the archive to their own AI tools. */}
+      <Route path="/connect" element={<Connect />} />
 
       {/* Protected routes */}
       <Route path="/" element={

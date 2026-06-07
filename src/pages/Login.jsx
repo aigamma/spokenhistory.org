@@ -188,6 +188,17 @@ export default function Login() {
             <p className="text-sm text-gray-500 dark:text-zinc-400">
               Team members: use the credentials provided by your project lead.
             </p>
+            <p className="mt-3 text-sm text-gray-500 dark:text-zinc-400">
+              Researchers and developers: you can search and cite this archive from your own
+              AI tools (Codex, Claude Desktop, claude.ai) with no account.{' '}
+              <a
+                href="/connect"
+                className="text-blue-600 underline hover:no-underline dark:text-blue-400"
+              >
+                See how to connect
+              </a>
+              .
+            </p>
           </div>
         </form>
       </div>

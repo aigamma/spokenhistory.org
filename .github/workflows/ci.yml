@@ -74,7 +74,12 @@ jobs:
           node --check index.js
 
       - name: Node syntax check on MCP server
-        run: node --check mcp-server/server.mjs
+        run: |
+          node --check mcp-server/server.mjs
+          node --check mcp-server/lib.mjs
+          node --check mcp-server/build-leaders.mjs
+          node --check mcp-server/build-people.mjs
+          node --check mcp-server/build-essays.mjs
 
       - name: Node syntax check on Netlify Function
         run: node --check netlify/functions/retrieve.mjs
@@ -106,8 +111,28 @@ jobs:
             exit 1;
           }
 
+      - name: MCP baked-roster drift check (leaders/people/essays)
+        # Re-run the roster builders and fail if any baked data/*.json
+        # differs from the committed copy. The MCP list_leaders / list_people
+        # / list_essays tools ship these pre-computed rosters in the Docker
+        # image; this catches a corpus or catalog change landing without the
+        # roster being regenerated (which would silently ship a stale roster,
+        # so a new interviewee would be missing from list_leaders and
+        # trace_evolution would fail to resolve them).
+        run: |
+          node mcp-server/build-leaders.mjs
+          node mcp-server/build-people.mjs
+          node mcp-server/build-essays.mjs
+          git diff --exit-code mcp-server/data/ || {
+            echo "::error::mcp-server/data/*.json is out of date. Run \`npm run build:data\` in mcp-server/ and commit the result.";
+            exit 1;
+          }
+
       - name: Unit tests (node:test on rag/ shared modules)
         run: node --test src/components/rag/tiers.test.mjs
+
+      - name: MCP server unit tests (node:test on lib.mjs)
+        run: node --test mcp-server/test/
 
   python:
     name: Metadata Generation System (Python parse)

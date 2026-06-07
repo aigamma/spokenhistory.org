@@ -55,6 +55,8 @@ const EXPECTED_TOOLS = [
   'search_transcripts',
   'get_transcript',
   'list_leaders',
+  'list_people',
+  'list_essays',
   'compare_perspectives',
   'trace_evolution',
   'source_for_claim',

@@ -47,9 +47,11 @@ primary_region = "sjc"   # San Jose. Nearest active West-Coast region to Eric
   force_https = true
   auto_stop_machines = "stop"
   auto_start_machines = true
-  min_machines_running = 0   # Scale to zero when idle to save cost;
-                              # raise to 1 if cold-start latency on a demo
-                              # call becomes a problem at the conference.
+  min_machines_running = 0   # Scale to zero when idle to save cost. The
+                              # tradeoff is a ~1-2s cold start on the first
+                              # request after an idle period; raise to 1 for a
+                              # latency-sensitive window (e.g. a live demo),
+                              # then set back to 0.
 
   [http_service.concurrency]
     type = "requests"

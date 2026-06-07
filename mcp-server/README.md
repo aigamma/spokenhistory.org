@@ -3,12 +3,17 @@
 Remote MCP server exposing the Library of Congress / Smithsonian NMAAHC
 civil rights oral history archive via the Model Context Protocol.
 
-**End-user documentation:** see [`USAGE_GUIDE.md`](./USAGE_GUIDE.md), the
-audience-facing guide that explains the tools, the citation patterns,
-and the worked examples. Read that first if you are evaluating the
-connector for use in Claude Desktop / claude.ai / another MCP client.
+**Just want to use it?** Read [`GETTING_STARTED.md`](./GETTING_STARTED.md), the
+from-scratch guide (what MCP is, connecting from Codex / Claude Desktop /
+claude.ai, the tools with examples, troubleshooting). For the deeper
+researcher-facing guide (worked examples, citation formats) see
+[`USAGE_GUIDE.md`](./USAGE_GUIDE.md).
 
 This README is for engineers maintaining the server.
+
+Pure logic (citation formatting, the metadata-filter builder, dedupe, the LRU
+cache, and the rate limiter) lives in `lib.mjs`, which is side-effect free and
+unit-tested in `test/`. `server.mjs` is IO + wiring and imports from it.
 
 ## Architecture
 
@@ -28,11 +33,18 @@ This README is for engineers maintaining the server.
    + rerank-2)        index, query)      built from manifests)
 ```
 
-Six tools: three primitives (`search_transcripts`, `get_transcript`,
-`list_leaders`) and three research-pattern tools (`compare_perspectives`,
-`trace_evolution`, `source_for_claim`). The three research patterns are
-ALSO registered as MCP prompts for clients that route prompts to the
-model. All defined in `server.mjs`.
+Eight tools: five primitives (`search_transcripts`, `get_transcript`,
+`list_leaders`, `list_people`, `list_essays`) and three research-pattern tools
+(`compare_perspectives`, `trace_evolution`, `source_for_claim`). The three
+research patterns are ALSO registered as MCP prompts for clients that route
+prompts to the model. The server additionally exposes MCP **resources**
+(`civilrights://corpus/overview`, `civilrights://leaders`,
+`civilrights://people`, `civilrights://essays`, and a
+`civilrights://transcript/{entry_number}` template) for resource-aware clients.
+`list_people` and `list_essays` are backed by pre-baked rosters
+(`data/people.json`, `data/essays.json`) built by `build-people.mjs` /
+`build-essays.mjs`; regenerate all three rosters with `npm run build:data`. All
+defined in `server.mjs`.
 
 ## Local development
 
@@ -150,6 +162,10 @@ case. Do not strip them in a future refactor without an explicit reason.
 | `VOYAGE_MODEL` | no | default `voyage-3` |
 | `VOYAGE_RERANK_MODEL` | no | default `rerank-2` |
 | `MCP_RERANK_ENABLED` | no | default `true`; set `false` to skip stage 2 |
+| `MCP_RATE_BURST` | no | per-IP rate-limit burst, default 30 |
+| `MCP_RATE_REFILL_PER_SEC` | no | per-IP refill rate, default 1 (60/min) |
+| `MCP_CACHE_TTL_MS` | no | embedding + result cache TTL, default 600000 (10 min) |
+| `MCP_EMBED_TIMEOUT_MS` / `MCP_QUERY_TIMEOUT_MS` / `MCP_RERANK_TIMEOUT_MS` | no | upstream fetch timeouts (default 20000 / 20000 / 30000) |
 | `PORT` | no | default 3001 |
 
 Authentication on the `/mcp` endpoint is currently open. For Anthropic

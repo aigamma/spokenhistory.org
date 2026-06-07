@@ -66,9 +66,10 @@ The conceptual-map briefing for the WWU presentation. Eight conceptual breakthro
 - `rag/ATLAS_PROVENANCE.md`, Provenance for the frozen Nomic Atlas UMAP projection (`public/rag/atlas_projection.json`; the account was canceled on 2026-05-27, replacement path is umap-learn).
 
 ### MCP server
-- `mcp-server/README.md`, Engineering reference (Pinecone+Voyage rewire, env vars, citation-payload shape).
+- `mcp-server/GETTING_STARTED.md`, **From-scratch usage guide (start here to connect).** What MCP is, connecting from Codex / Claude Desktop / claude.ai, the eight tools with examples, citation-payload walkthrough, troubleshooting. The server is live at `https://mcp.spokenhistory.org/mcp`.
+- `mcp-server/README.md`, Engineering reference (Pinecone+Voyage rewire, env vars, citation-payload shape, `lib.mjs` pure-logic split, deploy via `.github/workflows/deploy-mcp.yml`).
 - `mcp-server/USAGE_GUIDE.md`, End-user / researcher / Anthropic-Connector-Directory submission doc. Worked examples for grant citation, quote verification, curriculum dev.
-- `mcp-server/CODEX_SETUP.md`, Connecting the MCP server to Codex and other tool-only MCP clients (env vars, the `civil-rights` index, the six-tool verify step).
+- `mcp-server/CODEX_SETUP.md`, Condensed Codex reference + the local-development (stdio-from-a-clone) path for contributors.
 
 ### Serverless functions
 - `functions/README.md`, Cloud Functions (Firebase) layer documentation.
