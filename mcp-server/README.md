@@ -60,21 +60,36 @@ npm run build:leaders
 
 ## Deployment
 
-Fly.io is the default target. The server is rewired to Pinecone + Voyage
-and has been smoke-tested locally, but as of the last operational note
-the Fly.io deploy was still pending (blocked on `flyctl` install +
-interactive `flyctl auth login`). See `fly.toml` for the full quickstart.
-Summary:
+**Live (2026-06-07):** the server is deployed on Fly.io as app
+`civil-rights-history-mcp` in region `sjc`, reachable at:
 
-1. `flyctl auth login`
-2. `flyctl secrets set PINECONE_API_KEY=... PINECONE_HOST=... VOYAGE_API_KEY=...`
-3. `flyctl deploy`
-4. Configure custom domain via `flyctl certs add <hostname>`
+- `https://mcp.spokenhistory.org/mcp` (custom domain; live once the
+  registrar A/AAAA records for `mcp` resolve to Fly)
+- `https://civil-rights-history-mcp.fly.dev/mcp` (always available)
+
+Health probe: `GET /healthz` -> `{"ok":true}`.
+
+**Deploys are push-to-deploy.** The canonical mechanism is
+`.github/workflows/deploy-mcp.yml`: any push to `master` that touches
+`mcp-server/**` rebuilds the image on Fly's remote builder and rolls it
+out. No local checkout or `flyctl` is required to ship a change. The
+workflow authenticates with the `FLY_API_TOKEN` repo secret (an
+app-scoped Fly deploy token from `fly tokens create deploy -a
+civil-rights-history-mcp`). It also exposes a manual "Run workflow"
+button (`workflow_dispatch`).
+
+**Manual deploy (fallback / one-off):** from this directory,
+`flyctl deploy --remote-only`. Runtime secrets (`PINECONE_API_KEY`,
+`PINECONE_HOST`, `PINECONE_INDEX`, `VOYAGE_API_KEY`, `VOYAGE_MODEL`,
+`VOYAGE_RERANK_MODEL`) are already set as Fly secrets; manage them with
+`flyctl secrets list / set / import -a civil-rights-history-mcp`. See
+`fly.toml` for the full provisioning quickstart.
 
 The Docker image is self-contained (the retrieval logic is inlined into
 `server.mjs`, no parent-dir COPY needed). VM size is shared-cpu-1x with
 256 MB; the in-process working set is small since Voyage + Pinecone are
-HTTP services.
+HTTP services. The app scales to zero when idle (`min_machines_running =
+0`), so the first call after an idle period has a ~1-2s cold start.
 
 ## Substrate notes (post-2026-05-25 rewire)
 

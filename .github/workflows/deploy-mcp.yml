@@ -1,0 +1,54 @@
+name: Deploy MCP server
+
+# Portable, push-to-deploy pipeline for the Civil Rights History Project
+# remote MCP server (mcp-server/). On every push to master that touches
+# the server (or this workflow), Fly's remote builder rebuilds the image
+# and rolls it out to the civil-rights-history-mcp app. This is what makes
+# the server "portable": deploys ship from GitHub, with no local checkout
+# or flyctl install required.
+#
+# Manual runs (including the very first deploy) are available via the
+# "Run workflow" button (workflow_dispatch).
+#
+# Requires one repo secret: FLY_API_TOKEN, an app-scoped Fly deploy token
+# created with `fly tokens create deploy -a civil-rights-history-mcp`.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'mcp-server/**'
+      - '.github/workflows/deploy-mcp.yml'
+  workflow_dispatch:
+
+# Only one deploy at a time; a newer push cancels an in-flight rollout so
+# the latest commit is what reaches production.
+concurrency:
+  group: deploy-mcp
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build + deploy to Fly.io
+    runs-on: ubuntu-latest
+    # The deploy job only matters on the canonical repo, not on forks that
+    # would lack the FLY_API_TOKEN secret.
+    if: github.repository == 'aigamma/spokenhistory.org'
+    concurrency:
+      group: deploy-mcp-${{ github.ref }}
+      cancel-in-progress: true
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy
+        working-directory: mcp-server
+        # --remote-only uses Fly's builder, so the runner needs no Docker
+        # daemon. The fly.toml in this directory carries the app name,
+        # region, scale-to-zero config, and health check.
+        run: flyctl deploy --remote-only --config fly.toml

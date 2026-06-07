@@ -27,8 +27,10 @@
 # is baked into the image at build time.
 
 app = "civil-rights-history-mcp"
-primary_region = "sea"   # Seattle. Close to Eric in the Pacific Northwest;
-                         # adjust if the team's geographic center shifts.
+primary_region = "sjc"   # San Jose. Nearest active West-Coast region to Eric
+                         # in the Pacific Northwest (Fly deprecated "sea"/Seattle
+                         # for new resources on 2026-06). Adjust if the team's
+                         # geographic center shifts.
 
 [build]
   dockerfile = "Dockerfile"

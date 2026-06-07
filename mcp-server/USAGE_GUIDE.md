@@ -42,7 +42,7 @@ The corpus's distinctive value: many of these interviewees have since passed awa
 {
   "mcpServers": {
     "civil-rights-history": {
-      "url": "https://mcp.civilrightshistory.org/mcp"
+      "url": "https://mcp.spokenhistory.org/mcp"
     }
   }
 }
@@ -53,14 +53,19 @@ The corpus's distinctive value: many of these interviewees have since passed awa
 ### claude.ai Custom Connector
 
 1. Settings → Connectors → Add Custom Connector
-2. URL: `https://mcp.civilrightshistory.org/mcp`
+2. URL: `https://mcp.spokenhistory.org/mcp`
 3. Save. The tools appear in the chat composer.
 
 ### Other MCP-compatible clients
 
 Any client supporting the StreamableHTTP transport works. The endpoint is `POST /mcp`; the JSON-RPC schema follows the MCP spec.
 
-> The exact public URL above is illustrative, see the project's latest deploy at https://github.com/aigamma/spokenhistory.org for the live endpoint.
+> Live endpoint: `https://mcp.spokenhistory.org/mcp` (custom domain). The
+> direct Fly URL `https://civil-rights-history-mcp.fly.dev/mcp` is always
+> available and is the right one to use if the custom domain's DNS has not
+> propagated yet. The endpoint is open (no auth) and stateless. The server
+> scales to zero when idle, so the first request after a quiet period may
+> take ~1-2 seconds to wake the machine.
 
 ---
 

@@ -1,7 +1,41 @@
 # Civil Rights MCP Setup for Codex
 
-This file sets up the Civil Rights History Project MCP server as a local
-stdio server for Codex.
+There are two ways to use the Civil Rights History Project MCP server:
+
+1. **Remote (recommended, no clone):** connect to the live server at
+   `https://mcp.spokenhistory.org/mcp` (or the always-available Fly URL
+   `https://civil-rights-history-mcp.fly.dev/mcp`). No repository checkout,
+   no Node install, no API keys on your machine. This is the right choice
+   for almost everyone. See "Remote connection" just below.
+2. **Local stdio (development fallback):** run `node server.mjs --stdio`
+   from a local clone. Use this only when you are developing the server
+   itself or need to point it at a different index. See "Local stdio setup".
+
+## Remote connection (recommended)
+
+Any client that speaks the StreamableHTTP transport can connect to the
+hosted endpoint directly. For Codex and other tool-only clients that
+expect a local command, use the `mcp-remote` bridge:
+
+```toml
+[mcp_servers.civil_rights]
+command = "npx"
+args = ["-y", "mcp-remote", "https://mcp.spokenhistory.org/mcp"]
+startup_timeout_sec = 120
+```
+
+For Claude Desktop / claude.ai, just add the URL
+`https://mcp.spokenhistory.org/mcp` as a custom connector (see
+`USAGE_GUIDE.md` → "How to connect"). The endpoint is open (no auth) and
+scales to zero when idle, so the first call after a quiet period may take
+~1-2 seconds.
+
+---
+
+## Local stdio setup (development fallback)
+
+The rest of this document covers running the server locally from a clone.
+Only do this if the remote endpoint does not fit your use case.
 
 ## Prerequisites
 

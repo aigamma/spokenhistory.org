@@ -58,7 +58,7 @@ The site is built out and live. The 2026-05-27 WWU team meeting and the May over
 
 **Still outstanding (ops, not code):**
 - Deploy Cloud Functions to `civil-rights-history-project` (Blaze billing + `firebase functions:secrets:set OPENAI_API_KEY` + `firebase deploy --only functions`). The live search path does NOT depend on these; it runs through the Netlify function + Pinecone.
-- Deploy the MCP server to Fly.io (`flyctl auth login` then `fly deploy` in `mcp-server/`). The server is rewired to Pinecone+Voyage and locally smoke-tested.
+- **DONE 2026-06-07:** the MCP server is deployed to Fly.io and live. Remote endpoint: **`https://mcp.spokenhistory.org/mcp`** (custom domain; DNS cutover pending the registrar A/AAAA records, see below) and the always-available Fly URL **`https://civil-rights-history-mcp.fly.dev/mcp`**. App `civil-rights-history-mcp`, region `sjc`, scale-to-zero. Deploys are now push-to-deploy via `.github/workflows/deploy-mcp.yml` (any push to `master` touching `mcp-server/**` rebuilds on Fly's remote builder), so no local checkout or flyctl is needed to ship. The only manual step left is adding the `mcp.spokenhistory.org` DNS records at the registrar (`A -> 66.241.125.9`, `AAAA -> 2a09:8280:1::122:8e4c:0`).
 - (Obsolete) The earlier plan to open a PR to upstream `jsovelove/civil-rights-history-project` no longer applies: the project is now a standalone repo at `aigamma/spokenhistory.org` (Dustin-authorized takeover, 2026-06-02). `upstream` is retained only for provenance.
 
 **Known data / integration gaps (see `transcripts/OPEN_PROBLEMS.md` + `transcripts/ingestion/ONBOARDING_REVIEW.md`):**
@@ -355,7 +355,7 @@ These directories contain one file per audit-able entry per pass. They are inter
 - **Frontend**: Netlify, connected to `master` branch. `VITE_FIREBASE_*` env vars are required (no hardcoded fallbacks). `SECRETS_SCAN_OMIT_KEYS` must list those six keys or the secrets scanner blocks the deploy.
 - **Firebase**: project ID `civil-rights-history-project` (the new clean one, replacing legacy `llm-hyper-audio`). Firestore in `nam7` multi-region. Email/Password auth. Rules in `firestore.rules` cover 12 collections; push with `firebase deploy --only firestore:rules`.
 - **Cloud Functions**: not yet deployed to the new project. Will require Blaze billing + `firebase functions:secrets:set OPENAI_API_KEY`.
-- **MCP server**: Fly.io. Requires `flyctl auth login`. Dockerfile + fly.toml + .dockerignore in `mcp-server/`.
+- **MCP server**: Fly.io, DEPLOYED (2026-06-07). App `civil-rights-history-mcp`, region `sjc`, live at `https://mcp.spokenhistory.org/mcp` (+ `https://civil-rights-history-mcp.fly.dev/mcp`). Dockerfile + fly.toml + .dockerignore in `mcp-server/`. Runtime secrets (`PINECONE_*`, `VOYAGE_*`) are Fly secrets; push-to-deploy via `.github/workflows/deploy-mcp.yml` (repo secret `FLY_API_TOKEN`).
 
 ## Defensive patterns established in the overhaul
 
@@ -394,7 +394,7 @@ The interactive RAG layer is live in staging. The following are operational fact
 
 ### What's NOT deployed
 
-- **MCP server (Fly.io)**, `flyctl` is not installed on Eric's machine; `flyctl auth login` is interactive. Blocked on Eric installing the CLI + authenticating. The server code is rewired (commit `2c05cd8`) and ready to deploy. **Verified working locally** on 2026-05-26: started `node server.mjs` on port 3099 against the live Pinecone index, hit `/healthz` (200 `{ok:true}`), called `tools/call` with `search_transcripts({query:"nonviolence as theology", dedupe_by_entry:true})` via the proper `Accept: application/json, text/event-stream` header, got a clean citation-grade response (Joseph Echols Lowery on nonviolence-as-theology, timestamp 00:26:57, full Chicago citation block).
+- **(OBSOLETE 2026-06-07) MCP server (Fly.io) is now DEPLOYED and live.** This bullet previously read "flyctl not installed / blocked on interactive login"; that is no longer true. flyctl v0.4.58 is installed and authenticated as `eric@aigamma.com`, the app `civil-rights-history-mcp` is deployed in region `sjc` (the original `sea`/Seattle region was deprecated by Fly), and the same `search_transcripts({query:"nonviolence as theology", dedupe_by_entry:true})` smoke test now passes against the LIVE remote endpoint (`https://civil-rights-history-mcp.fly.dev/mcp`), returning the Joseph Echols Lowery citation-grade payload (entry 66, LoC item `2015669122`). Future deploys are automated via `.github/workflows/deploy-mcp.yml`. See the "Still outstanding -> DONE 2026-06-07" bullet above for the full state.
 - **Pinecone civil-rights as a SEPARATE project from worldthought**, would require Eric to provision via the Pinecone console + generate a new project-scoped API key. Current setup is functional but cohabitating in the worldthought project space.
 
 ### Post-23:00 quality-pass follow-on
