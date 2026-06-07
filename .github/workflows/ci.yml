@@ -132,7 +132,12 @@ jobs:
         run: node --test src/components/rag/tiers.test.mjs
 
       - name: MCP server unit tests (node:test on lib.mjs)
-        run: node --test mcp-server/test/
+        # Run from the package dir so node:test auto-discovers test/*.test.mjs.
+        # (Passing a bare directory path to `node --test` is interpreted as a
+        # script to execute on Node 24, not a discovery root.)
+        run: |
+          cd mcp-server
+          node --test
 
   python:
     name: Metadata Generation System (Python parse)
