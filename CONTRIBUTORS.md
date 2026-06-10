@@ -1,4 +1,4 @@
-# Contributors
+﻿# Contributors
 
 The Civil Rights History Project is a collaborative undertaking. This file records contributions across all phases of the project's development. We recognize code, design, research, prompt engineering, documentation, infrastructure, and curatorial work, all of it counts, and all of it is welcome.
 
@@ -52,7 +52,7 @@ _Last updated: 2026-06-02. This roster is reconciled with the Project Team and S
 
 ## Source Materials and Research Partners
 
-- **[Library of Congress Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project)**, Source of the original 600+ hours of interview content, including the 131 oral histories currently in this repository.
+- **[Library of Congress Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project)**, Source of the interview content: roughly 250 hours of video across ~145 published oral histories, 140 of which are currently in this repository.
 
 - **[Smithsonian National Museum of African American History and Culture (NMAAHC)](https://nmaahc.si.edu/)**, Co-producers of the Civil Rights History Project oral history collection in collaboration with the Library of Congress.
 

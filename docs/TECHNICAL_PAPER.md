@@ -1,13 +1,17 @@
 ---
 title: "Time-Anchored Testimony"
 subtitle: "The Technical Architecture of an AI-Curated Civil Rights Oral History Archive"
-author: "The Spoken History Project (spokenhistory.org)"
-date: "2026-06-10"
+author:
+  - "Dustin O'Hara, PhD (Principal Investigator & Project Director)"
+  - "Jack Sovelove (Co-Principal Investigator & Software Developer)"
+  - "Eric Allione (AI Engineering Lead)"
+  - "Sophia Zhuk (Software Developer)"
+  - "University of California, Los Angeles"
+  - "Prepared under the supervision of the Library of Congress"
+date: "10 June 2026"
 ---
 
-# Time-Anchored Testimony: The Technical Architecture of an AI-Curated Civil Rights Oral History Archive
-
-**Status:** living technical reference. Quantitative claims were independently re-derived against the repository at commit `78a113f` on 2026-06-10 unless a different as-of date is stated. Counts that track a growing corpus (vector totals, catalog sizes) are snapshots and carry their dates. Appendix A inventories every number with its source artifact.
+**Status:** living technical reference. Quantitative claims were independently re-derived against the repository at commit `78a113f` on 2026-06-10 unless a different as-of date is stated. Counts that track a growing corpus (vector totals, catalog sizes) are snapshots and carry their dates. Appendix A inventories every number with its source artifact. Citations follow MLA style (9th edition): archival recordings are identified in the text by their Library of Congress item identifiers, with full entries in the Works Cited.
 
 ## Abstract
 
@@ -29,7 +33,7 @@ The thesis of this paper is an engineering claim: every capability described in 
 
 ## 2. The Corpus and Its Provenance
 
-The corpus comprises **140 interviews** from the Library of Congress Civil Rights History Project collection (American Folklife Center, AFC 2010/039), produced in collaboration with the Smithsonian NMAAHC. Entry identifiers span 1 to 142 with two deliberate gaps (31, a duplicate identifier whose interview is carried as the joint entry 75, and 95, a multi-speaker joint interview whose source directory arrived empty), a detail worth recording because computing the corpus size from the maximum identifier is a recurring error. The full LoC collection is approximately 145 items; this corpus holds the 140 with usable transcripts, roughly 250 hours of video and two million words of spoken testimony (1.98 million words in the corrected transcripts; the LoC editions of the same interviews run 2.16 million). Some project materials describe the collection as 600 or more hours; the published collection's own time-anchored data measures a factor of 2.5 lower, and this paper uses the measured figures throughout.
+The corpus comprises **140 interviews** from the Library of Congress Civil Rights History Project collection (American Folklife Center, AFC 2010/039), produced in collaboration with the Smithsonian NMAAHC. Entry identifiers span 1 to 142 with two deliberate gaps (31, a duplicate identifier whose interview is carried as the joint entry 75, and 95, a multi-speaker joint interview whose source directory arrived empty), a detail worth recording because computing the corpus size from the maximum identifier is a recurring error. The full LoC collection is approximately 145 items; this corpus holds the 140 with usable transcripts, roughly 250 hours of video and two million words of spoken testimony (1.98 million words in the corrected transcripts; the LoC editions of the same interviews run 2.16 million). Earlier project materials described the collection as 600 or more hours; the published collection's own time-anchored data measures a factor of 2.5 lower, this paper uses the measured figures throughout, and the project's documentation was corrected to match on 2026-06-10.
 
 The repository is organized as five subsystems: a React 18 frontend (`src/`), Firebase Cloud Functions (`functions/`), a standalone Python metadata-generation pipeline (`Metadata Generation System/`), a Node MCP server (`mcp-server/`), and the data-build scripts (`scripts/`, `rag/`, `transcripts/`). The deployed site at spokenhistory.org is static-JSON-backed: the render path reads per-interview JSON committed to the repository and served by Netlify, with the Pinecone vector index behind a server-side function for semantic search. The interview render path has no database dependency (a Firestore backend serves the movement timeline and parts of the federated search, and those sources fail soft), so the exploration surface degrades gracefully because most of it is files.
 
@@ -45,7 +49,7 @@ The foundational design decision in the entire system is that **a moment of test
 
 The client utility that builds these links states the invariant as the design center (`src/utils/clipLink.js`). Everything else in the system either produces these tuples or consumes them.
 
-The temporal grid comes from Whisper ASR. Each interview was transcribed into a triple of formats (`.srt`, `.txt`, `.vtt`); the SubRip `.srt` file is the canonical substrate because its cues carry comma-millisecond timestamps (`00:01:24,000 --> 00:01:41,000`) at roughly five-second granularity across the recording. The corrected transcript directory for each entry preserves all three formats plus a provenance manifest.
+The temporal grid comes from Whisper ASR (Radford et al.). Each interview was transcribed into a triple of formats (`.srt`, `.txt`, `.vtt`); the SubRip `.srt` file is the canonical substrate because its cues carry comma-millisecond timestamps (`00:01:24,000 --> 00:01:41,000`) at roughly five-second granularity across the recording. The corrected transcript directory for each entry preserves all three formats plus a provenance manifest.
 
 Above the cues sits an authored segmentation layer. A deterministic script collapses the corrected SRT into approximately 40-second cue blocks whose boundary timestamps are copied verbatim from the first and last cue of each block (`scripts/extract_blocks.py`). A chapter specification is then authored over those blocks in a supervised editorial pass (titles, topics, and summaries are model-drafted and human-reviewed), and `scripts/expand_chapters.py` expands it into chapters whose `start_time` and `end_time` are the verbatim cue-block timestamps, validating that the specification covers every block with no gaps and no overlaps. This separation is load-bearing for the project's hallucination posture: **the language model authors chapter titles, topics, and summaries, but it never authors a timestamp.** Time anchors are deterministic all the way down to Whisper's cue boundaries.
 
@@ -249,7 +253,7 @@ Every figure in this paper, with its source artifact and verification status. "V
 | Figure | Value | Source | Status |
 |---|---|---|---|
 | Interviews in corpus | 140 (IDs 1-142, gaps at 31 and 95) | `public/rag/toc.json` (`count`, `rechaptered_count`) | Verified 2026-06-10 |
-| Collection scale | ~250 hours of video (toc.json durations sum to 250.9 h; chapter coverage 239.0 h) and ~2.0M transcribed words in the 140 holdings; full LoC collection ~145 items. Project docs' "600+ hours / ~5M words" could not be reconciled against measured holdings | `public/rag/toc.json`, corrected transcript word counts | Verified 2026-06-10 |
+| Collection scale | ~250 hours of video (toc.json durations sum to 250.9 h; chapter coverage 239.0 h) and ~2.0M transcribed words in the 140 holdings; full LoC collection ~145 items. Earlier project docs' "600+ hours / ~5M words" could not be reconciled against measured holdings and were corrected project-wide on 2026-06-10 | `public/rag/toc.json`, corrected transcript word counts | Verified 2026-06-10 |
 | Chapters / parts | 4,932 chapters in 1,387 parts | `public/rag/toc.json` sums | Verified 2026-06-10 |
 | Playable clips | 4,932 (one per chapter) | `public/rag/playlist_index.json` | Verified 2026-06-10 |
 | Entry 1 scale | 67 chapters, 8 parts, 8,871-second video; 21,880 our words vs 21,077 LoC; 1,944 cues vs 540 turns; 2,222 divergences, 30 heals | `entry_1.json`, `Aaron_Dixon.divergences.json` | Verified 2026-06-10 |
@@ -330,6 +334,40 @@ cd mcp-server && node --test
 python docs/figures/technical-paper/generate_figures.py
 ```
 
-The governance documents that carry the full audit history are `transcripts/AUDIT_TRAIL.md` (longitudinal session log and the inferential scoring framework), `transcripts/OPEN_PROBLEMS.md` (the punch list), `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (the correction overlay), `transcripts/loc_healing/COVERAGE_REPORT.md` and `AUDIT_VS_LOC_DISAGREEMENTS.md` (Pass 8), and the per-entry stage files under `transcripts/pass*_stage/`. The DOCX edition of this paper regenerates from this Markdown source with pandoc 3.10: `pandoc docs/TECHNICAL_PAPER.md -o docs/TECHNICAL_PAPER.docx --from gfm+yaml_metadata_block --toc --toc-depth=2 --resource-path=docs` (run from the repository root). The figures regenerate from repository data via the script above, so both stay reproducible as the corpus grows.
+The governance documents that carry the full audit history are `transcripts/AUDIT_TRAIL.md` (longitudinal session log and the inferential scoring framework), `transcripts/OPEN_PROBLEMS.md` (the punch list), `transcripts/CLEANED_TRANSCRIPTS_REVIEW.md` (the correction overlay), `transcripts/loc_healing/COVERAGE_REPORT.md` and `AUDIT_VS_LOC_DISAGREEMENTS.md` (Pass 8), and the per-entry stage files under `transcripts/pass*_stage/`. The DOCX edition of this paper (Calibri, MLA page furniture with a running head and page numbers, double-spaced body, hanging-indent Works Cited) regenerates from this Markdown source with `python docs/build_technical_paper_docx.py` (run from the repository root; the script records the exact pandoc 3.10 invocation and applies the MLA formatting deterministically with python-docx). The figures regenerate from repository data via the script above, so the whole edition stays reproducible as the corpus grows.
 
-*Produced for the Spoken History Project, 2026-06-10. Live site: spokenhistory.org. MCP endpoint: mcp.spokenhistory.org/mcp. Collection: Civil Rights History Project, American Folklife Center, Library of Congress, in collaboration with the Smithsonian National Museum of African American History and Culture.*
+*Dustin O'Hara, PhD (Principal Investigator & Project Director); Jack Sovelove (Co-Principal Investigator & Software Developer); Eric Allione (AI Engineering Lead); Sophia Zhuk (Software Developer). Produced for the Spoken History Project at the University of California, Los Angeles, under the supervision of the Library of Congress, 10 June 2026. Live site: spokenhistory.org. MCP endpoint: mcp.spokenhistory.org/mcp. Collection: Civil Rights History Project, American Folklife Center, Library of Congress, in collaboration with the Smithsonian National Museum of African American History and Culture.*
+
+## Works Cited
+
+"Civil Rights History Project." *American Folklife Center, Library of Congress*, www.loc.gov/collections/civil-rights-history-project/. Accessed 10 June 2026.
+
+Cooper, Anna Julia. *A Voice from the South*. 1892. Reproduced at *Spoken History*, spokenhistory.org/#/essays.
+
+"difflib: Helpers for Computing Deltas." *Python 3 Documentation*, Python Software Foundation, docs.python.org/3/library/difflib.html. Accessed 10 June 2026.
+
+Dixon, Aaron. Oral history interview. *Civil Rights History Project*, American Folklife Center, Library of Congress, www.loc.gov/item/2015669186/. Accessed 10 June 2026.
+
+Du Bois, W. E. B. *The Souls of Black Folk*. A. C. McClurg, 1903.
+
+Lowery, Joseph Echols. Oral history interview. *Civil Rights History Project*, American Folklife Center, Library of Congress, www.loc.gov/item/2015669122/. Accessed 10 June 2026.
+
+MacFarlane, John. *Pandoc: A Universal Document Converter*. Version 3.10, pandoc.org. Accessed 10 June 2026.
+
+McLaurin, Charles. Oral history interview. *Civil Rights History Project*, American Folklife Center, Library of Congress, www.loc.gov/item/2016655412/. Accessed 10 June 2026.
+
+"Model Context Protocol." *Anthropic*, modelcontextprotocol.io. Accessed 10 June 2026.
+
+Pinecone Systems, Inc. *Pinecone Vector Database Documentation*. docs.pinecone.io. Accessed 10 June 2026.
+
+Radford, Alec, et al. "Robust Speech Recognition via Large-Scale Weak Supervision." *arXiv*, 2022, arxiv.org/abs/2212.04356.
+
+Spoken History Project. *spokenhistory.org repository*. GitHub, github.com/aigamma/spokenhistory.org. Accessed 10 June 2026.
+
+Voyage AI, Inc. *Voyage AI Documentation: voyage-3 and rerank-2*. docs.voyageai.com. Accessed 10 June 2026.
+
+Washington, Booker T., et al. *The Negro Problem*. James Pott & Company, 1903.
+
+"Web Content Accessibility Guidelines (WCAG) 2.2." *W3C Recommendation*, World Wide Web Consortium, 2023, www.w3.org/TR/WCAG22/.
+
+Wells-Barnett, Ida B. *The Red Record: Tabulated Statistics and Alleged Causes of Lynchings in the United States*. 1895. Reproduced at *Spoken History*, spokenhistory.org/#/essays.

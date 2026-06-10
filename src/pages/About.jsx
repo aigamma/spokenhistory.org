@@ -83,7 +83,7 @@ export default function About() {
               <p className="text-black dark:text-zinc-200 text-2xl font-medium font-['Lora'] leading-relaxed">
               The <span className="text-red-500 font-black">
                 Civil Rights History Project
-              </span> is a joint effort between the Library of Congress and the Smithsonian National Museum of African American History and Culture. Together, these institutions collected and preserved more than 145 video interviews-nearly 600 hours of first hand stories from participants in the American civil rights movement. Each interview captures deeply personal experiences of struggle, resilience, and change, forming one of the most significant oral history archives of the twentieth century. 
+              </span> is a joint effort between the Library of Congress and the Smithsonian National Museum of African American History and Culture. Together, these institutions collected and preserved roughly 145 video interviews, about 250 hours of first hand stories from participants in the American civil rights movement. Each interview captures deeply personal experiences of struggle, resilience, and change, forming one of the most significant oral history archives of the twentieth century. 
               </p>
 
               <p className="text-black dark:text-zinc-200 text-2xl font-medium font-['Lora'] leading-relaxed">

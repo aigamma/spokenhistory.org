@@ -17,7 +17,7 @@ then on the assistant can use that server's tools during a conversation.
 
 **This connector** is one such server. It exposes the Library of Congress /
 Smithsonian NMAAHC **Civil Rights History Project**: 140 long-form oral history
-interviews (600+ hours of recorded testimony from people who lived the movement)
+interviews (roughly 250 hours of recorded testimony from people who lived the movement)
 as searchable, citation-grade data. It is not a chatbot. It is a primary-source
 **citation oracle**: every answer your AI gives through it is grounded in an
 actual interviewee's words, anchored to a Library of Congress catalog URL, and

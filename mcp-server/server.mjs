@@ -14,11 +14,11 @@
  *     (mirrors rag/embed.mjs + rag/retrieve.mjs) so the Docker image
  *     stays self-contained, track those files as the canonical source.
  *
- * Six tools (three primitives + three research patterns):
+ * Eight tools (five primitives + three research patterns):
  *
  *   PRIMITIVES
  *   - search_transcripts(query, limit?, entry_number?, dedupe_by_entry?)
- *       Citation-grade semantic search across the 136-entry corpus.
+ *       Citation-grade semantic search across the 140-entry corpus.
  *       Returns ranked passages with FULL primary-source citation
  *       metadata: interviewee, Library of Congress catalog URL, audio
  *       timestamp range, audit provenance (audit-original vs
@@ -32,9 +32,16 @@
  *       citation-grade metadata as search.
  *
  *   - list_leaders(limit?)
- *       Roster of all 136 interviewees with entry_number, name, LoC
+ *       Roster of all 140 interviews with entry_number, name, LoC
  *       catalog URL, audit provenance. Backed by a pre-generated
  *       leaders.json baked into the Docker image (data/leaders.json).
+ *
+ *   - list_people(person_type?, limit?)
+ *       Full people catalog (interviewees + external figures), baked
+ *       from data/people.json.
+ *
+ *   - list_essays(topic?)
+ *       Curated public-domain essays catalog, baked from data/essays.json.
  *
  *   RESEARCH PATTERNS (also exposed as MCP prompts; see below)
  *   - compare_perspectives(topic)
@@ -338,7 +345,7 @@ async function retrieveUncached(query, { topK = 30, topN = 10, filter = null } =
 // Generated at build time from transcripts/corrected/<dir>/manifest.json
 // via mcp-server/build-leaders.mjs. Pinecone can't enumerate distinct
 // entry_subject values cheaply, so we ship a static roster instead.
-// The file is small (~30 KB for the current 136 entries).
+// The file is small (~30 KB for the current 140 entries).
 
 let _leadersCache = null
 
@@ -674,11 +681,11 @@ const TOOL_DEFINITIONS = [
   {
     name: 'search_transcripts',
     description:
-      'Citation-grade semantic search across the Library of Congress / Smithsonian NMAAHC civil rights oral history archive (136 interviews, 600+ hours). ' +
+      'Citation-grade semantic search across the Library of Congress / Smithsonian NMAAHC civil rights oral history archive (140 interviews, roughly 250 hours). ' +
       'Returns up to `limit` passages ranked by Voyage rerank-2 relevance, with every primary-source field a researcher needs to cite the result: ' +
       'interviewee name, audio timestamp range (timestampStart/timestampEnd in seconds plus HH:MM:SS strings), Library of Congress catalog URL (locItemUrl), ' +
       'audit provenance ("audit-original" for the 127 interviews that went through the full Pass 1-8 audit cascade vs "ingestion-only" for the 9 added 2026-05-25), ' +
-      'inferential-uncertainty tier ("low" / "medium" / "high" / "ingestion-only"), a one-line transcript-fidelity note (fidelityNote), and a Chicago-Manual-of-Style citation block (suggestedCitation). ' +
+      'inferential-uncertainty tier ("high" / "publication-block" / "not-auditable" / "ingestion-only"; "high" dominates after the LoC line-by-line cross-reference), a one-line transcript-fidelity note (fidelityNote), and a Chicago-Manual-of-Style citation block (suggestedCitation). ' +
       'Use entry_number to restrict the search to a single interview when the user already knows whose voice they want.',
     inputSchema: {
       type: 'object',
@@ -693,7 +700,7 @@ const TOOL_DEFINITIONS = [
         },
         entry_number: {
           type: 'number',
-          description: 'Optional: restrict the search to a specific interviewee by their corpus entry number (1-138). Use list_leaders to discover entry_numbers.',
+          description: 'Optional: restrict the search to a specific interviewee by their corpus entry number (1-142, with gaps at 31 and 95). Use list_leaders to discover entry_numbers.',
         },
         dedupe_by_entry: {
           type: 'boolean',
@@ -723,7 +730,7 @@ const TOOL_DEFINITIONS = [
       properties: {
         entry_number: {
           type: 'number',
-          description: 'The corpus entry number of the interview (1-138). Use list_leaders to discover entry_numbers.',
+          description: 'The corpus entry number of the interview (1-142, with gaps at 31 and 95). Use list_leaders to discover entry_numbers.',
         },
         interview_id: {
           type: 'string',
@@ -743,7 +750,7 @@ const TOOL_DEFINITIONS = [
       properties: {
         limit: {
           type: 'number',
-          description: 'Maximum number of records to return (default 200, max 500). The corpus currently has 136 entries.',
+          description: 'Maximum number of records to return (default 200, max 500). The corpus currently has 140 entries.',
         },
       },
     },

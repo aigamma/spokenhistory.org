@@ -121,8 +121,10 @@ this shape, keep it accurate.
 
 ### Tier-color palette is also duplicated
 
-The same 5-tier vocabulary (`low` / `medium` / `publication-block` /
-`not-auditable` / `ingestion-only`) maps to colors in four UI surfaces.
+The same tier vocabulary (now dominated by `high` after the Pass 10
+rescore: measured 2026-06-10 as `high` 133 / `not-auditable` 3 /
+`ingestion-only` 3 / `publication-block` 1; `low` and `medium` are
+earlier-era values) maps to colors in four UI surfaces.
 **Add a new tier value? Update all four:**
 
 1. `src/components/rag/CitationCard.jsx::TIER_BADGE`, Tailwind classes

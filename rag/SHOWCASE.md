@@ -1,6 +1,8 @@
 # RAG Showcase, Conference Presentation Brief
 
 **Date:** 2026-05-27 (for the 2026-05-27 WWU team meeting and the London conference). Substantially revised from the 2026-05-26 version.
+
+> **Count correction (2026-06-10):** this brief's counts are a 2026-05-27 snapshot of the then-136-entry corpus and have drifted. Measured current values: **140** interviews (entry IDs 1-142, gaps at 31 and 95); **7** concept axes with 140 positions each (`ideological_spectrums.json`); influence graph **155 nodes / 216 edges** (140 in-corpus + 15 external; 125 + 91 edges); `related/` covers **140** per-entry files; `neighbors.json` has 140 keys with top-5 arrays on 136 of them (139-142 pending a rerun); capsules and `_entry_list.json` cover 140. The demo narrative below is otherwise current; trust the artifacts for any number.
 **Live demo URL:** https://civil-rights-staging.netlify.app/rag-explore (Email/Password gated: Eric admin + `wwu` / `civilrights` team-shared)
 **Production URL:** https://spokenhistory.org/#/rag-explore
 **Branch:** master at the most recent commit; layout now Spectrum-at-top, Concept Lenses default tab.
@@ -251,19 +253,19 @@ The single chatbot-adjacent surface that DOES NOT EXIST: there is no `/chat` end
 ## Data files in `public/rag/summaries/`
 
 ```
-_entry_list.json              136 entries × {entry_number, entry_subject, dir, txt, loc_url, tier, provenance}
+_entry_list.json              140 entries × {entry_number, entry_subject, dir, txt, loc_url, tier, provenance}
 _batches/                     subagent assignment files (internal, gitignored not gitignored, present for traceability)
-capsules.json                 136 entries × 3-sentence biographical capsule
+capsules.json                 140 entries × 3-sentence biographical capsule
 capsules_batch_<1-7>.json     subagent intermediate outputs
 clusters.json                 30 k-means clusters × {name, description, starter_query, members}
-clusters_raw.json             same k-means math, no names
-neighbors.json                136 entries × top-5 thematic neighbors
+clusters_raw.json             same k-means math, no names (run at the 136-entry state; 139-142 folded in by nearest-centroid assignment)
+neighbors.json                140 entry keys × top-5 thematic neighbors (arrays on 136; 139-142 pending rerun)
 events/_index.json            8 events × {slug, title, date, blurb, voice_count}
 events/<slug>.json            per-event: blurb + 8 retrieved passages
 famous_external.json          15 external figures × passages
 geography.json                12 anchors × passages
-ideological_spectrums.json             5 axes × {pole_a, pole_b, raw_range, 136 positions}
-influence.json                151 nodes + 214 edges
+ideological_spectrums.json             7 axes × {pole_a, pole_b, raw_range, 140 positions}
+influence.json                155 nodes + 216 edges
 tours.json                    10 tours × {title, subtitle, body, path[], closing}
 quotes.json                   30 quotes × {entry_subject, quote, context, loc_item_url}
 ```

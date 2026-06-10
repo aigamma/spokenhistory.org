@@ -89,8 +89,8 @@ export default function Connect() {
           Use the Archive in Your AI Tools
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-stone-700">
-          The Civil Rights History Project oral history archive (140 interviews, 600+ hours of
-          testimony from the Library of Congress and the Smithsonian NMAAHC) is available as a
+          The Civil Rights History Project oral history archive (140 interviews, roughly 250 hours
+          of testimony from the Library of Congress and the Smithsonian NMAAHC) is available as a
           free, public connector for AI assistants. Point your tool at one URL and it can search
           and cite the archive: every result carries the interviewee, a Library of Congress
           catalog link, exact audio timestamps, and a ready-to-paste citation. There is no

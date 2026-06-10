@@ -85,9 +85,10 @@ relevant credentials):
 
 3. **Pre-existing audit substrate** lives in `transcripts/`, 8
    passes of audit work culminating in word-level alignment against
-   the Library of Congress's published transcripts. The five tier
-   values (low / medium / publication-block / not-auditable /
-   ingestion-only; per-tier counts shift as new interviews ingest,
+   the Library of Congress's published transcripts. The tier
+   values (measured 2026-06-10: high 133 / not-auditable 3 /
+   ingestion-only 3 / publication-block 1; low and medium are
+   earlier-era values; counts shift as new interviews ingest,
    verify against current manifests) are the per-entry confidence
    classification flowing through Pinecone metadata and surfacing
    as colored badges on every citation card. The user-facing

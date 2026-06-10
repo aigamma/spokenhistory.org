@@ -1,6 +1,6 @@
 # Civil Rights History Project
 
-> Over 600 hours of civil rights oral history testimony from the people who lived and led the movement sits in the Library of Congress Civil Rights History Project collection, produced in collaboration with the Smithsonian National Museum of African American History and Culture (NMAAHC), public but difficult to navigate at scale. This project builds the infrastructure to change that: an open-source AI system that transforms long-form interview archives into transparent, interpretable public knowledge, with every generated summary, label, and interpretive decision traceable, auditable, and revisable. The goal is not to replace curatorial judgment but to augment it, making primary sources genuinely accessible for civic education, research, and institutional accountability.
+> Roughly 250 hours of civil rights oral history testimony from the people who lived and led the movement sits in the Library of Congress Civil Rights History Project collection, produced in collaboration with the Smithsonian National Museum of African American History and Culture (NMAAHC), public but difficult to navigate at scale. This project builds the infrastructure to change that: an open-source AI system that transforms long-form interview archives into transparent, interpretable public knowledge, with every generated summary, label, and interpretive decision traceable, auditable, and revisable. The goal is not to replace curatorial judgment but to augment it, making primary sources genuinely accessible for civic education, research, and institutional accountability.
 
 This repository contains two things:
 
@@ -8,7 +8,7 @@ This repository contains two things:
 
 2. **A metadata generation pipeline** (`Metadata Generation System/`), a standalone Python/Flask tool that processes raw interview transcripts through a 7-step AI pipeline to produce the structured metadata that the web app is built on. It generates chapter breaks, summaries, topic classifications, keywords, and engagement scores for each interview, and exports results as JSON ready for Firestore upload.
 
-**Live site:** https://www.civil-rights-history.org/
+**Live site:** https://spokenhistory.org/
 **Staging:** https://civil-rights-staging.netlify.app (Firebase project `civil-rights-history-project`)
 
 ---

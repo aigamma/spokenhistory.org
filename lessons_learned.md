@@ -1,7 +1,7 @@
-# Lessons Learned: Cleaning a Smithsonian-Grade Oral History Corpus
+﻿# Lessons Learned: Cleaning a Smithsonian-Grade Oral History Corpus
 
 **Project:** Civil Rights History Project metadata generation
-**Scope:** 127 audit-able interviews (~600 hours, 135 raw Whisper transcripts)
+**Scope:** 127 audit-able interviews (135 raw Whisper transcripts; the full published 140-interview corpus later measured roughly 250 hours of video)
 **Audit overlay:** ~12 MB master correction file, ~14,500 correction rows across 7 passes
 **Publication gate:** Library of Congress + Smithsonian NMAAHC, hallucination tolerance is essentially zero
 

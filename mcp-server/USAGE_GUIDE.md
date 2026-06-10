@@ -2,7 +2,7 @@
 
 **The Library of Congress / Smithsonian NMAAHC civil rights oral history archive, accessible from inside Claude.**
 
-This connector exposes 140 long-form oral history interviews (600+ hours of audio, ~5 million words of transcribed text) collected by the [Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project/), a joint initiative of the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture, as a structured, queryable resource that Claude can search and cite from any MCP-compatible client.
+This connector exposes 140 long-form oral history interviews (roughly 250 hours of audio and video, ~2 million words of transcribed text) collected by the [Civil Rights History Project](https://www.loc.gov/collections/civil-rights-history-project/), a joint initiative of the Library of Congress's American Folklife Center and the Smithsonian National Museum of African American History and Culture, as a structured, queryable resource that Claude can search and cite from any MCP-compatible client.
 
 It is not a chatbot. It is a **primary-source citation oracle**: every answer Claude can give using this connector is grounded in an actual interviewee's words, anchored to a Library of Congress catalog URL, and timestamped to the exact audio offset where the quote occurs.
 
@@ -24,10 +24,10 @@ The corpus's distinctive value: many of these interviewees have since passed awa
 ## What's in the corpus
 
 - **140 interviewees** including SCLC inner circle, SNCC organizers, Black Panther leaders, MFDP delegates, Highlander Folk School alumni, foundational pre-Movement intellectuals (Du Bois generation), independent Black church leaders, and witnesses to specific events (Selma, Birmingham, Emmett Till, Freedom Summer, Bloody Sunday)
-- **600+ hours of audio**, transcribed via Whisper, then audited
+- **Roughly 250 hours of audio and video**, transcribed via Whisper, then audited
 - **The audit substrate** (see "Transparency" below): the original 127 interviews went through an 8-pass audit cascade culminating in word-level alignment against the Library of Congress's own published transcripts. Interviews added since then are ingested via the streamlined single-pass pipeline (LoC cross-reference + conservative auto-heal). Every entry is cross-referenced against the LoC's own published transcript where one exists.
 - **Library of Congress catalog URLs** for every entry, so every citation deep-links to the verifiable source
-- **Embedding substrate**: Voyage AI voyage-3 (1024-dim, retrieval-tuned) on a Pinecone index (`civil-rights`, cosine); second-stage rerank-2 for query-relevance scoring. The index holds ≈16K `.srt`-anchored passage vectors across the 140 interviews, plus one vector per person reference page (verify exact count against Pinecone)
+- **Embedding substrate**: Voyage AI voyage-3 (1024-dim, retrieval-tuned) on a Pinecone index (`civil-rights`, cosine); second-stage rerank-2 for query-relevance scoring. The index holds 15,687 `.srt`-anchored passage vectors across the 140 interviews (live count 2026-06-10; grows with the corpus), plus one vector per person reference page
 
 ---
 
@@ -71,7 +71,7 @@ Any client supporting the StreamableHTTP transport works. The endpoint is `POST 
 
 ## The three primitive tools
 
-The connector exposes six tools in total: the three primitives below, plus the three research-pattern tools described in the next section. The research patterns are also registered as MCP prompts for clients that route prompts to the model.
+The connector exposes eight tools in total: the three core primitives below, two roster/catalog tools (`list_people` for the full people catalog and `list_essays` for the curated public-domain essays), plus the three research-pattern tools described in the next section. The research patterns are also registered as MCP prompts for clients that route prompts to the model.
 
 ### `search_transcripts`
 
@@ -285,23 +285,23 @@ Not all 140 entries in the corpus carry the same fidelity guarantees. Every resu
 
 - **`audit-original`** (the original 127 interviews): went through the full Pass 1–8 audit cascade, including word-level alignment against the Library of Congress's own published transcripts (Pass 8 LoC canonical-archive cross-reference). These are the entries you can cite with the highest confidence.
 
-- **`ingestion-only`**: came in via the streamlined single-pass ingestion pipeline. They have the LoC alignment but not the seven preceding audit passes. Treat them as research leads; verify against the LoC audio for high-stakes citations.
+- **`ingestion-loc-verified`**: came in via the streamlined single-pass ingestion pipeline. They have the LoC alignment but not the seven preceding audit passes. Treat them as research leads; verify against the LoC audio for high-stakes citations. (A few of the newest entries may briefly report a placeholder provenance pending metadata backfill.)
 
 ### `uncertaintyTier`
 
-Per-entry classification derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty). See `transcripts/AUDIT_TRAIL.md::Inferential scoring framework` in the project repo for the full formula. Five values appear in the corpus:
+Per-entry classification derived from the audit history (truncation penalty, degradation penalty, residual low-confidence row ratio, adversarial-review flag density, cross-contamination penalty, minus a verification credit from the LoC cross-reference). See `transcripts/AUDIT_TRAIL.md::Inferential scoring framework` in the project repo for the full formula. The measured distribution (2026-06-10) over 140 entries is high 133, not-auditable 3, ingestion-only 3, publication-block 1:
 
-- **`low`**, well-audited, low residual error rate. Cite freely.
-- **`medium`**, audited, residual uncertainty. Verify against audio for high-stakes citations.
+- **`high`**, the dominant tier: cross-referenced line by line against the Library of Congress's own published transcript. Cite freely.
 - **`publication-block`**, audited, but documented issues (Subject-paragraph fact-check errors, severe Whisper degradation, or mid-sentence source truncations) block direct publication. Usable as a research lead; verify the specific passage against audio before citing.
 - **`not-auditable`**, audited but the entry cannot be fully verified against an external canonical source (multi-speaker, no LoC reference, etc.). Treat as a research lead.
 - **`ingestion-only`**, single-pass ingestion via the streamlined pipeline; not yet through the full audit cascade. Verify against audio for any citation.
+- (`low` and `medium` were earlier-era values, superseded when the LoC cross-reference promoted the corpus to the current vocabulary; a result carrying them simply predates a metadata refresh.)
 
-For end users, the project's site collapses these five raw tiers into two settled display states: **LoC-Verified** (≈137 interviews, cross-referenced against the Library of Congress published transcript) and **Audio-Limited Source** (3 interviews whose recordings carry an inherent audio limit such as mid-sentence truncation or degradation). The raw five-value tier is still what the connector returns on each result.
+For end users, the project's site collapses these raw tiers into two settled display states: **LoC-Verified** (≈137 interviews, cross-referenced against the Library of Congress published transcript) and **Audio-Limited Source** (3 interviews whose recordings carry an inherent audio limit such as mid-sentence truncation or degradation). The raw tier is still what the connector returns on each result.
 
 The `fidelityNote` field renders this as a human-readable sentence so the LLM can pass the transparency directly through to the user.
 
-This honesty is load-bearing for the academic-citation use case. A connector that returns "Aaron Dixon said X" with no fidelity flag would be a hallucination risk. Returning the same passage WITH `entryProvenance: "audit-original"` and `uncertaintyTier: "low"` is publication-grade.
+This honesty is load-bearing for the academic-citation use case. A connector that returns "Aaron Dixon said X" with no fidelity flag would be a hallucination risk. Returning the same passage WITH `entryProvenance: "audit-original"` and `uncertaintyTier: "high"` is publication-grade.
 
 ---
 
