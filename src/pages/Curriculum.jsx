@@ -547,10 +547,13 @@ export default function Curriculum() {
                   video an accidental easter egg. Reading the discussion
                   questions and the rest of the plan before reaching the footage
                   is also the intended order, watch critically, not passively.
-                  Expanding all is cheap and quiet: each player is preload
-                  "metadata" with autoPlay off, so it fetches only its poster
-                  plus the seek index and never plays audio until the reader
-                  presses play (then the bounded-clip stop still applies). */}
+                  Each player is `lazy`: it sits at its poster and downloads
+                  nothing until the reader clicks it. That matters here because a
+                  lesson can lay out several clips at once, and each LoC moov
+                  atom (the whole-recording seek index) is multiple megabytes, so
+                  eager metadata loads would fire several multi-megabyte
+                  downloads in parallel at mount. On click the clip loads, seeks,
+                  and plays, with the bounded-clip stop still applied. */}
               {band && Array.isArray(band.materials) && band.materials.length > 0 && (
                 <>
                   <SectionHeading>Materials From the Archive</SectionHeading>
@@ -589,6 +592,7 @@ export default function Curriculum() {
                                     entryNumber={m.entry_number}
                                     startSeconds={m.start_seconds || 0}
                                     endSeconds={m.end_seconds ?? null}
+                                    lazy
                                   />
                                 </div>
                                 <p className="hidden print:block text-sm text-stone-700">

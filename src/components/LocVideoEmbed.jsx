@@ -29,6 +29,19 @@
  * a deep clip starts. Seeking first, then playing on `seeked`, keeps the
  * fetch bounded to the clip.
  *
+ * SLOW-LOAD NOTE. Even with faststart, the front-loaded moov atom is the seek
+ * index for the WHOLE recording, so it grows with duration: a 73-second clip
+ * carries a 40 KB moov, but a 2-3 hour interview carries a 3-4.6 MB moov. Any
+ * <video> that must seek (a bounded clip) or that preloads metadata has to
+ * download that entire atom before it can show a frame or honor a seek, which
+ * is why the long interviews feel slow while the short ones are instant. Two
+ * mitigations live here: (1) preload is adaptive, an unbounded, non-autoplay
+ * player (the interview-page hero on a cold load) uses preload="none" so the
+ * poster shows at once and the moov is fetched only when the reader presses
+ * play; (2) the `lazy` prop holds a player at its poster until clicked, so a
+ * page that lays out several clips (a curriculum lesson) does not fire off
+ * several multi-megabyte moov downloads in parallel at mount.
+ *
  * Used in:
  *   - HearInContext, expanded inline beneath a snippet / citation card.
  *   - InterviewDetail, as the page's video hero, with an imperative handle so
@@ -42,7 +55,7 @@ import {
   useRef,
   useState,
 } from 'react';
-import { RotateCcw } from 'lucide-react';
+import { RotateCcw, Play } from 'lucide-react';
 import { seekThenPlay } from '../utils/mediaClip';
 import ClipCountdown from './ClipCountdown';
 
@@ -82,6 +95,13 @@ function loadLocVideo(entryNumber) {
  *                                        (endSeconds - startSeconds), clamped.
  *                                        Lets a parent draw a clip progress bar
  *                                        without owning the element.
+ * @param {boolean}  [props.lazy]         Hold the player at its poster until
+ *                                        the reader clicks it; only then does
+ *                                        it load (its moov atom) and play. Use
+ *                                        on surfaces that render several players
+ *                                        at once so the page does not trigger
+ *                                        several multi-megabyte moov downloads
+ *                                        in parallel on mount.
  * @param {React.Ref} ref                 Imperative handle exposing
  *                                        seek(seconds, { play, stopAt }).
  */
@@ -97,6 +117,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
     onClipEnd = null,
     onProgress = null,
     showCountdown = true,
+    lazy = false,
   },
   ref,
 ) {
@@ -137,6 +158,24 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
   const hasClipBound =
     endSeconds != null && endSeconds > 0 && endSeconds > startSeconds;
 
+  // Lazy surfaces (e.g. a curriculum lesson laying out several clips at once)
+  // hold the player at its poster until clicked, so the page does not fire off
+  // several multi-megabyte moov-atom downloads at mount. "armed" is true once
+  // the player should actually load: immediately for a normal embed, only after
+  // the click for a lazy one. Until armed, the element neither seeks nor
+  // preloads, so a poster-only video costs nothing.
+  const [activated, setActivated] = useState(!lazy);
+  const armed = !lazy || activated;
+  const seekTarget = armed ? startSeconds : 0;
+  const effectiveAutoPlay = armed && (autoPlay || (lazy && activated));
+  // Adaptive preload: only fetch metadata (the moov atom) when the player will
+  // actually seek on mount or autoplay. An unbounded, non-autoplay player (the
+  // interview-page hero on a cold load, or a lazy poster pre-click) stays at
+  // preload="none" so the poster paints instantly and the moov is fetched only
+  // when the reader presses play.
+  const effectivePreload =
+    effectiveAutoPlay || seekTarget > 0 ? 'metadata' : 'none';
+
   // Keep the stop mark in sync with the props. Runs on prop change only, so an
   // imperative seek's stop mark survives unrelated re-renders.
   useEffect(() => {
@@ -167,7 +206,12 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
         setClipFrac(0);
         const run = () => seekThenPlay(el, target, play);
         if (el.readyState >= 1) run();
-        else el.addEventListener('loadedmetadata', run, { once: true });
+        else {
+          el.addEventListener('loadedmetadata', run, { once: true });
+          // A preload="none" hero (cold-load) will not load on its own; kick
+          // it so metadata arrives and the requested seek can land.
+          try { el.load(); } catch { /* noop */ }
+        }
       },
       // Current playhead position in seconds, so a parent (the interview page)
       // can build a "link to this moment" from wherever the reader has scrubbed
@@ -217,20 +261,30 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
   useEffect(() => {
     const el = videoRef.current;
     if (!el || status !== 'ready') return undefined;
+    // A lazy player not yet clicked stays unloaded: no seek, no moov fetch.
+    if (!armed) return undefined;
+    // An armed but unbounded, non-autoplay player (the cold-load hero) has
+    // nothing to do on mount, leave it at preload="none" so the moov is fetched
+    // only when the reader presses native play (which then plays from 0).
+    const needsLoad = seekTarget > 0 || effectiveAutoPlay;
+    if (!needsLoad) return undefined;
     let detach = () => {};
     const begin = () => {
-      detach = seekThenPlay(el, startSeconds, autoPlay);
+      detach = seekThenPlay(el, seekTarget, effectiveAutoPlay);
     };
     if (el.readyState >= 1) {
       begin();
     } else {
       el.addEventListener('loadedmetadata', begin, { once: true });
+      // With preload="none" (lazy just clicked) the element will not load on
+      // its own; kick it so metadata arrives and the seek can land.
+      try { el.load(); } catch { /* noop */ }
     }
     return () => {
       el.removeEventListener('loadedmetadata', begin);
       detach();
     };
-  }, [status, startSeconds, autoPlay, locVideo]);
+  }, [status, armed, seekTarget, effectiveAutoPlay, locVideo]);
 
   // Bounded-clip stop. Pause the instant playback crosses the stop mark, then
   // disarm so the reader can keep listening or scrub freely; "Replay clip"
@@ -316,7 +370,7 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
           src={sourceUrl}
           poster={locVideo.poster_url || undefined}
           controls
-          preload="metadata"
+          preload={effectivePreload}
           playsInline
           className="w-full h-full"
         >
@@ -332,10 +386,26 @@ const LocVideoEmbed = forwardRef(function LocVideoEmbed(
             embed) or by an imperative seek (the interview hero's chapters), so it
             appears on every clip surface without per-page wiring. pointer-events-
             none so it never blocks the controls. */}
-        {showCountdown && clipBound && clipBound.duration > 0 && (
+        {showCountdown && armed && clipBound && clipBound.duration > 0 && (
           <div className="pointer-events-none absolute top-3 right-3 z-10">
             <ClipCountdown progress={clipFrac} durationSeconds={clipBound.duration} size={56} onDark />
           </div>
+        )}
+        {/* Lazy poster-gate. Until the reader clicks, the element sits at
+            preload="none" showing only its poster, so a page with several
+            clips lays out instantly and downloads no video. The click is the
+            user gesture that lets the loaded clip autoplay with audio. */}
+        {lazy && !activated && (
+          <button
+            type="button"
+            onClick={() => setActivated(true)}
+            className="absolute inset-0 z-20 flex items-center justify-center bg-black/30 hover:bg-black/20 transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300"
+            aria-label="Load and play this clip"
+          >
+            <span className="rounded-full bg-white/90 p-4 shadow-lg transition-transform group-hover:scale-105">
+              <Play className="w-7 h-7 text-stone-900" aria-hidden="true" />
+            </span>
+          </button>
         )}
       </div>
       {/* Controls below the player, never overlapping the native play button.
