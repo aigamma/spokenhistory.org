@@ -25,7 +25,6 @@ import { Link } from 'react-router-dom';
 const SITEMAP = [
   { label: 'Essays', to: '/essays' },
   { label: 'Methodology', to: '/machine-audit' },
-  { label: 'Connect (AI Tools)', to: '/connect' },
   { label: 'GitHub', href: 'https://github.com/aigamma/spokenhistory.org' },
   { label: 'About', to: '/about' },
 ];
