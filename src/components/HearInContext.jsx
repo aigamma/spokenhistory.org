@@ -23,10 +23,10 @@
  * load, never the multi-hour file.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, ChevronUp, FileText } from 'lucide-react';
-import LocVideoEmbed from './LocVideoEmbed';
+import LocVideoEmbed, { prefetchLocVideoIndex } from './LocVideoEmbed';
 import ShareButton from './ShareButton';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 
@@ -83,6 +83,13 @@ export default function HearInContext({
   // player ready but does NOT autoplay; only a click-to-open begins playback
   // (and browsers gate autoplay on a user gesture anyway).
   const [userOpened, setUserOpened] = useState(false);
+  // Warm the shared loc_video index as soon as a "See this in context" control
+  // mounts, so by the time the reader clicks open the poster resolves with no
+  // fetch gap. The index fetch is deduped behind one cached promise, so the
+  // many cards on an Explore or person page trigger a single ~8 KB request.
+  useEffect(() => {
+    prefetchLocVideoIndex();
+  }, []);
   if (entryNumber == null || startSeconds == null) return null;
 
   // Use the supplied end only when it is present, after the start, and within

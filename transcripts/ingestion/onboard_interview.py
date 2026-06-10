@@ -31,7 +31,8 @@ PIPELINE STAGES (each idempotent; --redo <stage> forces one to re-run)
   12. person    scaffold public/rag/people/<slug>.json     (skips if a real page exists;
                 so the interviewee is networked into /people  writes a thin stub + an
                                                               authoring checklist otherwise)
-  13. indexes   rebuild public/rag/playlist_index.json + toc.json
+  13. indexes   rebuild public/rag/playlist_index.json + toc.json +
+                loc_video_index.json (the player's poster/seek metadata)
   14. network   rebuild every derived cross-link artifact so the new entry is
                 fully networked into the rest of the site (related/, centroids,
                 constellation, ideological_spectrums, geography + event panels,
@@ -398,6 +399,18 @@ def stage_indexes() -> None:
         log("indexes", f"{script}: {tail}")
         if rc.returncode != 0:
             log("indexes", f"  WARN {script} rc={rc.returncode}: {rc.stderr[-200:]}")
+    # Compact loc_video index (public/rag/loc_video_index.json): the five-field
+    # blocks LocVideoEmbed reads to paint a clip's poster and seek its bytes
+    # without pulling the whole per-entry pipeline JSON per snippet. Pure-local
+    # (no credentials), so it belongs here next to toc/playlist. It is a node
+    # script, hence run separately from the python loop above. The player has a
+    # per-entry fallback, so a stale index never breaks playback, but rebuilding
+    # it now keeps the new entry on the fast (instant-poster) path.
+    rc = run(["node", str(SCRIPTS / "build_loc_video_index.mjs")])
+    tail = rc.stdout.strip().splitlines()[-1] if rc.stdout.strip() else ""
+    log("indexes", f"build_loc_video_index.mjs: {tail}")
+    if rc.returncode != 0:
+        log("indexes", f"  WARN build_loc_video_index.mjs rc={rc.returncode}: {rc.stderr[-200:]}")
 
 
 def _net_step(label: str, cmd: list[str], tail_chars: int = 240) -> None:

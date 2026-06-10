@@ -59,17 +59,51 @@ import { RotateCcw, Play } from 'lucide-react';
 import { seekThenPlay } from '../utils/mediaClip';
 import ClipCountdown from './ClipCountdown';
 
-// Module-level cache of loc_video metadata keyed by entry number, so the
-// several snippet cards that can appear on one person page (and repeat
-// visits to the same interview) reuse a single fetch of the entry's
-// pipeline output rather than refetching a ~30 KB JSON per card.
-const locVideoCache = new Map();
+// Resolution of an entry's loc_video block is backed by ONE compact shared
+// index (public/rag/loc_video_index.json, ~8 KB gzipped, built by
+// scripts/build_loc_video_index.mjs) rather than the per-entry pipeline output.
+// Every snippet surface needs only the five-field loc_video block to paint its
+// poster and seek its clip; fetching the whole 37-71 KB per-entry JSON for that
+// was the redundant cost on pages that lay out clips from many interviews (the
+// Explore / Data Insights pages, a person page). With the index, the FIRST clip
+// on a session pays one tiny fetch and every clip after it (any entry) resolves
+// with no network, so the poster paints immediately, the way the interview-page
+// hero does. This changes only metadata resolution; the byte-bounded clip load
+// (moov atom + the clip's range, never the multi-GB file) is unchanged.
+const locVideoCache = new Map(); // entryNumber -> Promise<loc_video|null>
+let indexPromise = null; // shared one-shot fetch of the whole index
+
+function loadIndex() {
+  if (!indexPromise) {
+    indexPromise = fetch('/rag/loc_video_index.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+  }
+  return indexPromise;
+}
+
+// Warm the shared index ahead of an open so the first clip's poster paints with
+// no fetch gap. Safe to call many times: the fetch is deduped behind a single
+// cached promise. HearInContext calls this when a "See this in context" control
+// mounts, so the index is usually in hand before the reader clicks.
+export function prefetchLocVideoIndex() {
+  loadIndex();
+}
 
 function loadLocVideo(entryNumber) {
   if (locVideoCache.has(entryNumber)) return locVideoCache.get(entryNumber);
-  const p = fetch(`/rag/summaries/pipeline_output/entry_${entryNumber}.json`)
-    .then((r) => (r.ok ? r.json() : null))
-    .then((d) => (d && d.loc_video ? d.loc_video : null))
+  const p = loadIndex()
+    .then((idx) => {
+      const v = idx && idx[entryNumber];
+      if (v && (v.video_url || v.video_stream_url)) return v;
+      // Fallback for any entry not yet in the index (e.g. a freshly onboarded
+      // interview before the index is rebuilt): read its per-entry pipeline
+      // output directly, the original load path.
+      return fetch(`/rag/summaries/pipeline_output/entry_${entryNumber}.json`)
+        .then((r) => (r.ok ? r.json() : null))
+        .then((d) => (d && d.loc_video ? d.loc_video : null))
+        .catch(() => null);
+    })
     .catch(() => null);
   locVideoCache.set(entryNumber, p);
   return p;
