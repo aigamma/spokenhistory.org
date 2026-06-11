@@ -4,7 +4,7 @@
 
 **Audience:** WWU team, NMAAHC + LoC collaborators, any new contributor (human or AI agent).
 
-**Last updated:** 2026-06-10 (added `docs/TECHNICAL_PAPER.md`, the systems-level technical paper, to Tier 1; corpus at 140 interviews, all re-chapterized; person catalog at 202 pages; the site is static-JSON-backed with Pinecone search; new-interview onboarding runs through `transcripts/ingestion/onboard_interview.py`).
+**Last updated:** 2026-06-10 (added `docs/TECHNICAL_PAPER.md`, the systems-level technical paper, and `docs/CONFERENCE_PAPER.md`, its refined one-sitting conference edition, to Tier 1; corpus at 140 interviews, all re-chapterized; person catalog at 202 pages; the site is static-JSON-backed with Pinecone search; new-interview onboarding runs through `transcripts/ingestion/onboard_interview.py`).
 
 ---
 
@@ -12,7 +12,7 @@
 
 | Tier | What it is | When to read | Documents |
 |---|---|---|---|
-| **1. Orientation** | "Read these first." Where you are, what's been done, who the audience is. | New contributor; presentation prep; stakeholder briefing. | `CLAUDE.md`, `README.md`, `PRESENTATION_REFERENCE.md`, `docs/TECHNICAL_PAPER.md` |
+| **1. Orientation** | "Read these first." Where you are, what's been done, who the audience is. | New contributor; presentation prep; stakeholder briefing. | `CLAUDE.md`, `README.md`, `PRESENTATION_REFERENCE.md`, `docs/TECHNICAL_PAPER.md`, `docs/CONFERENCE_PAPER.md` |
 | **2. Active reference** | "Read these when you're building or running a specific subsystem." Architecture decisions, operations runbooks, design specs that are still load-bearing. | Doing audit / RAG / frontend / deploy / accessibility work. | `docs/*.md`, `rag/README.md`, `rag/INTERACTIVE_FEATURES_DESIGN.md`, `rag/OPERATIONS.md`, `rag/ENDPOINTS.md`, `rag/NEXT_SESSION_PICKUP.md`, `mcp-server/README.md`, `mcp-server/USAGE_GUIDE.md`, `mcp-server/CODEX_SETUP.md`, `rag/SHOWCASE.md`, `functions/README.md`, `netlify/functions/README.md` |
 | **3. Lessons learned** | "Read these to understand *why* we made the choices we made." Distilled error categories, conceptual breakthroughs, decision records. | Avoiding past mistakes; teaching the audit cascade; institutional credibility briefings. | `lessons_learned.md`, `docs/RAG_SUBSTRATE_DECISION.md` |
 | **4. Demo prep** | "Read these the day of the presentation." Talking points, demo scripts, conference-specific briefings. | The day before, the morning of, or while at the podium. | `rag/CONFERENCE_PREP.md`, `rag/DEMO_SCRIPT.md` |
@@ -48,6 +48,9 @@ The conceptual-map briefing for the WWU presentation. Eight conceptual breakthro
 
 ### `docs/TECHNICAL_PAPER.md` (+ `docs/TECHNICAL_PAPER.docx` and `docs/figures/technical-paper/`)
 The systems-level technical paper (2026-06-10, ~10,800 words, ten data-driven figures): how the architecture works end to end and what it enables that legacy archive technology could not. Written for technically literate external readers (digital humanities, archivists, engineers, institutional reviewers); the deep companion to `PRESENTATION_REFERENCE.md` and the right handout for the London conference audience. Every quantitative claim carries an as-of date and was independently re-derived against the repository (its Appendix A is the inventory; Appendix B the reproduction commands). The DOCX edition embeds the figures and is MLA-formatted (Calibri, running head with page numbers, Works Cited); both regenerate from the repo (`python docs/build_technical_paper_docx.py`, figures via `docs/figures/technical-paper/generate_figures.py`). Authored by Dustin O'Hara, PhD (PI & Project Director), Jack Sovelove (Co-PI & Software Developer), Eric Allione (AI Engineering Lead), and Sophia Zhuk (Software Developer), UCLA, under the supervision of the Library of Congress. Note: the paper uses measured corpus figures (roughly 250 hours / ~2.0M words for the 140 holdings) rather than the older "600+ hours / ~5M words" framing.
+
+### `docs/CONFERENCE_PAPER.md` (+ `docs/CONFERENCE_PAPER.docx`)
+"Improving the Experience of Observing Archived Data" (2026-06-10, ~8,300 words of prose), the conference edition of the technical paper, refined for a one-sitting read: same 15-section architecture, same authors, same verified figures and Appendix A inventory, with the prose condensed about 15%, the repetition of the swarm draft edited out, and all ten figures properly captioned (the earlier draft DOCX embedded them caption-less). This is the handout edition for the London conference (June 2026); `docs/TECHNICAL_PAPER.md` remains the standing, fuller reference. The DOCX regenerates with `python docs/build_conference_paper_docx.py` (reuses the technical edition's MLA pipeline so the two cannot drift in dress; figures shared from `docs/figures/technical-paper/`).
 
 ---
 
@@ -144,7 +147,7 @@ Original RAG substrate design when the plan was Weaviate. The substrate decision
 | You're about to... | Read first |
 |---|---|
 | Start contributing for the first time | `CLAUDE.md` |
-| Brief an external stakeholder | `PRESENTATION_REFERENCE.md` (slides) or `docs/TECHNICAL_PAPER.md` (systems paper), then `lessons_learned.md` |
+| Brief an external stakeholder | `PRESENTATION_REFERENCE.md` (slides), `docs/CONFERENCE_PAPER.md` (one-sitting paper), or `docs/TECHNICAL_PAPER.md` (full systems reference), then `lessons_learned.md` |
 | Demo the live site | `rag/DEMO_SCRIPT.md` |
 | Edit audit overlays | `CLAUDE.md` § Audit documentation discipline, `transcripts/AUDIT_TRAIL.md` |
 | Onboard a new interview | `transcripts/ingestion/README.md` (run `transcripts/ingestion/onboard_interview.py`), `transcripts/ingestion/ONBOARDING_REVIEW.md`, `CLAUDE.md` § Streamlined ingestion |
