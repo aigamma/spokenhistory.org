@@ -30,6 +30,7 @@ import { ArrowLeft, Compass, Users, MessageSquareQuote, BookOpen, FileText, Quot
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { TIER_BADGE, SNIPPET_ACCENT, SNIPPET_FILL, SNIPPET_BORDER, SNIPPET_PROBLEM_ACCENT, SNIPPET_PROBLEM_FILL, SNIPPET_PROBLEM_BORDER, SNIPPET_PROBLEM_TIERS } from '../components/rag/tiers';
 import HearInContext, { tsToSeconds } from '../components/HearInContext';
+import { scrollToId } from '../utils/hashScroll';
 
 /**
  * Helper: fetch JSON with a single attempt; resolves to null on any
@@ -264,6 +265,7 @@ function renderBioWithCitationRefs(text, sources, matcher) {
         <sup key={`cite-${m.index}`} className="text-xs">
           <a
             href={`#source-${n}`}
+            onClick={(e) => { e.preventDefault(); scrollToId(`source-${n}`); }}
             className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline"
             aria-label={`Citation ${n}`}
           >

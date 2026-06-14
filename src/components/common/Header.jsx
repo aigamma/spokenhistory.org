@@ -22,10 +22,11 @@ import ShareButton from '../ShareButton';
 // destination, so there is no NAV_ROUTES list anymore. "Spectrum" is
 // renamed "Data Insights", and the two technical sub-tab
 // entries ("Semantic Overlap", "Word Search") are dropped from the
-// menu in favor of content-level destinations. The numbered prefix
-// (01., 02., ...) is assigned at render time. The entry matching the
+// menu in favor of content-level destinations. The entry matching the
 // current page is grayed and non-interactive (not hidden), so the
-// numbering and the menu's overall shape stay constant across pages.
+// menu's overall shape stays constant across pages. (The 01./02./...
+// number prefix was removed 2026-06-13, Eric: it read as competing with
+// the Topics page's theme numbers.)
 //
 // 2026-05-31: the card-grid Interview Index was retired and merged into
 // the richer Table of Contents (parts, chapters, click-to-play). The
@@ -112,7 +113,7 @@ export default function Header() {
 
   // Every menu item renders below; the entry matching the current page
   // is grayed and non-interactive (computed per-item) instead of being
-  // filtered out, so the drawer keeps a constant shape and numbering.
+  // filtered out, so the drawer keeps a constant shape across pages.
 
   return (
     <>
@@ -291,7 +292,6 @@ export default function Header() {
           </div>
 
           {MENU_ROUTES.map((item, idx) => {
-            const num = String(idx + 1).padStart(2, '0') + '.';
             const isLast = idx === MENU_ROUTES.length - 1;
             const isCurrent = isCurrentRoute(item, location);
             return (
@@ -302,11 +302,8 @@ export default function Header() {
                   // to the page they are already on.
                   <div
                     aria-current="page"
-                    className="flex items-center justify-between w-full px-2 py-2 -mx-2 text-black/40 cursor-default select-none"
+                    className="flex items-center justify-end w-full px-2 py-2 -mx-2 text-black/40 cursor-default select-none"
                   >
-                    <div className="text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                      {num}
-                    </div>
                     <div className="text-right text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {item.label}
                     </div>
@@ -317,12 +314,9 @@ export default function Header() {
                      unambiguous in both light and dark OS modes. */
                   <Link
                     to={item.to}
-                    className="group flex items-center justify-between w-full px-2 py-2 -mx-2 text-black hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white transition-colors"
+                    className="group flex items-center justify-end w-full px-2 py-2 -mx-2 text-black hover:bg-black hover:text-white focus-visible:bg-black focus-visible:text-white transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <div className="text-base lg:text-lg font-light" style={{ fontFamily: 'Chivo Mono, monospace' }}>
-                      {num}
-                    </div>
                     <div className="text-right text-xl sm:text-2xl lg:text-3xl font-medium leading-tight" style={{ fontFamily: 'Inter, sans-serif' }}>
                       {item.label}
                     </div>

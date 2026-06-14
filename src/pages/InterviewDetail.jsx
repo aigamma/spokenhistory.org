@@ -41,6 +41,7 @@ import ShareButton from '../components/ShareButton';
 import HearInContext, { tsToSeconds } from '../components/HearInContext';
 import { convertTimestampToSeconds } from '../utils/timeUtils';
 import { buildShareUrl, shareOrCopy } from '../utils/share';
+import { scrollToId } from '../utils/hashScroll';
 import { TIER_BADGE, fidelityNoteFor } from '../components/rag/tiers';
 
 /**
@@ -117,6 +118,7 @@ function renderProseWithCitationRefs(text, sources) {
         <sup key={`cite-${m.index}`} className="text-xs">
           <a
             href={`#source-${num}`}
+            onClick={(e) => { e.preventDefault(); scrollToId(`source-${num}`); }}
             className="text-civil-red-body hover:underline focus:outline-none focus-visible:underline"
             aria-label={`Citation ${num}`}
           >

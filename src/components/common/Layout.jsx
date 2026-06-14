@@ -1,6 +1,7 @@
 import { useAuth } from '../../contexts/AuthContext'
 import Header from './Header'
 import Footer from './Footer'
+import { scrollToId } from '../../utils/hashScroll'
 
 export default function Layout({ children }) {
   const { loading } = useAuth()
@@ -38,8 +39,14 @@ export default function Layout({ children }) {
           tabIndex={-1} so the link target receives focus correctly
           when clicked (without tabIndex={-1}, focusing a non-
           interactive element via fragment-link is browser-inconsistent). */}
+      {/* The click is intercepted because the app runs under HashRouter: a bare
+          href="#main-content" would overwrite the router route and 404 instead
+          of jumping to the content. scrollToId moves focus to <main> (which
+          carries tabIndex={-1}) and scrolls it into view, the real Bypass-Blocks
+          behavior, without touching the route. */}
       <a
         href="#main-content"
+        onClick={(e) => { e.preventDefault(); scrollToId('main-content', { focus: true }); }}
         className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-stone-900 focus:text-white focus:rounded focus:outline focus:outline-2 focus:outline-offset-2"
         style={{ outlineColor: '#F2483C' }}
       >

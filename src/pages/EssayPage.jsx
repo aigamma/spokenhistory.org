@@ -24,6 +24,7 @@ import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Sparkles, MessageSquareQuote, Play, ChevronUp, ArrowRight } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import LocVideoEmbed from '../components/LocVideoEmbed';
+import { scrollToId } from '../utils/hashScroll';
 
 function fetchJsonOrNull(url) {
   return fetch(url).then((r) => (r.ok ? r.json() : null)).catch(() => null);
@@ -354,7 +355,7 @@ export default function EssayPage() {
                 {essay.collection ? <span className="text-stone-500"> · {essay.collection}</span> : null}
               </div>
               {chapters.length > 0 && (
-                <a href="#voices" className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: accent }}>
+                <a href="#voices" onClick={(e) => { e.preventDefault(); scrollToId('voices'); }} className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: accent }}>
                   <Sparkles className="w-4 h-4" aria-hidden="true" />
                   Hear {chapters.length} oral histories connected to this essay
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />

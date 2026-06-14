@@ -24,6 +24,7 @@ import { Link } from 'react-router-dom';
 import { Play, Search } from 'lucide-react';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { THEMES, playlistHref } from '../data/archiveThemes';
+import { scrollToId } from '../utils/hashScroll';
 
 // How many playlists to show per theme before the "Show all" expander. The
 // taxonomy runs deep (13 themes, ~95 playlists), so each theme opens with a few
@@ -138,12 +139,17 @@ export default function TopicGlossary() {
                   <span className="text-civil-red-body font-mono text-sm tabular-nums">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <a
-                    href={`#theme-${theme.id}`}
-                    className="text-stone-800 dark:text-stone-200 hover:text-civil-red-body hover:underline"
+                  {/* A button, not an <a href="#theme-...">: the app runs under
+                      HashRouter, so a raw fragment anchor would overwrite the
+                      router route and 404. scrollToId jumps to the section in
+                      place, leaving the route untouched. */}
+                  <button
+                    type="button"
+                    onClick={() => scrollToId(`theme-${theme.id}`)}
+                    className="text-left text-stone-800 dark:text-stone-200 hover:text-civil-red-body hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-red-300 rounded"
                   >
                     {theme.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ol>
